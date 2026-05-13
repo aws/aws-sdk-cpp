@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/AdditionalInferenceSpecificationDefinition.h>
 #include <aws/sagemaker/model/DriftCheckBaselines.h>
 #include <aws/sagemaker/model/InferenceSpecification.h>
+#include <aws/sagemaker/model/ManagedStorageType.h>
 #include <aws/sagemaker/model/MetadataProperties.h>
 #include <aws/sagemaker/model/ModelApprovalStatus.h>
 #include <aws/sagemaker/model/ModelLifeCycle.h>
@@ -549,6 +550,22 @@ class CreateModelPackageRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The storage type of the model package.</p>
+   */
+  inline ManagedStorageType GetManagedStorageType() const { return m_managedStorageType; }
+  inline bool ManagedStorageTypeHasBeenSet() const { return m_managedStorageTypeHasBeenSet; }
+  inline void SetManagedStorageType(ManagedStorageType value) {
+    m_managedStorageTypeHasBeenSet = true;
+    m_managedStorageType = value;
+  }
+  inline CreateModelPackageRequest& WithManagedStorageType(ManagedStorageType value) {
+    SetManagedStorageType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_modelPackageName;
 
@@ -597,6 +614,8 @@ class CreateModelPackageRequest : public SageMakerRequest {
   ModelPackageModelCard m_modelCard;
 
   ModelLifeCycle m_modelLifeCycle;
+
+  ManagedStorageType m_managedStorageType{ManagedStorageType::NOT_SET};
   bool m_modelPackageNameHasBeenSet = false;
   bool m_modelPackageGroupNameHasBeenSet = false;
   bool m_modelPackageDescriptionHasBeenSet = false;
@@ -621,6 +640,7 @@ class CreateModelPackageRequest : public SageMakerRequest {
   bool m_securityConfigHasBeenSet = false;
   bool m_modelCardHasBeenSet = false;
   bool m_modelLifeCycleHasBeenSet = false;
+  bool m_managedStorageTypeHasBeenSet = false;
 };
 
 }  // namespace Model

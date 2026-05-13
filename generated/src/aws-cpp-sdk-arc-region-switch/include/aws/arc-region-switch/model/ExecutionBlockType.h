@@ -24,7 +24,8 @@ enum class ExecutionBlockType {
   Route53HealthCheck,
   DocumentDb,
   RdsPromoteReadReplica,
-  RdsCreateCrossRegionReplica
+  RdsCreateCrossRegionReplica,
+  LambdaEventSourceMapping
 };
 
 namespace ExecutionBlockTypeMapper {

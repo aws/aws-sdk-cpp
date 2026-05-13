@@ -72,6 +72,10 @@ ExecutionBlockConfiguration& ExecutionBlockConfiguration::operator=(JsonView jso
     m_rdsCreateCrossRegionReadReplicaConfig = jsonValue.GetObject("rdsCreateCrossRegionReadReplicaConfig");
     m_rdsCreateCrossRegionReadReplicaConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lambdaEventSourceMappingConfig")) {
+    m_lambdaEventSourceMappingConfig = jsonValue.GetObject("lambdaEventSourceMappingConfig");
+    m_lambdaEventSourceMappingConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -128,6 +132,10 @@ JsonValue ExecutionBlockConfiguration::Jsonize() const {
 
   if (m_rdsCreateCrossRegionReadReplicaConfigHasBeenSet) {
     payload.WithObject("rdsCreateCrossRegionReadReplicaConfig", m_rdsCreateCrossRegionReadReplicaConfig.Jsonize());
+  }
+
+  if (m_lambdaEventSourceMappingConfigHasBeenSet) {
+    payload.WithObject("lambdaEventSourceMappingConfig", m_lambdaEventSourceMappingConfig.Jsonize());
   }
 
   return payload;

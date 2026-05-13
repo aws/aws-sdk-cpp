@@ -49,7 +49,10 @@ class UpdatePaymentCredentialProviderRequest : public BedrockAgentCoreControlReq
   ///@}
 
   ///@{
-
+  /**
+   * <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP,
+   * StripePrivy).</p>
+   */
   inline PaymentCredentialProviderVendorType GetCredentialProviderVendor() const { return m_credentialProviderVendor; }
   inline bool CredentialProviderVendorHasBeenSet() const { return m_credentialProviderVendorHasBeenSet; }
   inline void SetCredentialProviderVendor(PaymentCredentialProviderVendorType value) {
@@ -64,7 +67,7 @@ class UpdatePaymentCredentialProviderRequest : public BedrockAgentCoreControlReq
 
   ///@{
   /**
-   * <p>Configuration specific to the vendor, including API credentials</p>
+   * <p>Configuration specific to the vendor, including API credentials.</p>
    */
   inline const PaymentProviderConfigurationInput& GetProviderConfigurationInput() const { return m_providerConfigurationInput; }
   inline bool ProviderConfigurationInputHasBeenSet() const { return m_providerConfigurationInputHasBeenSet; }

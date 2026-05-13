@@ -156,6 +156,10 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator=(const Aws::Ama
     m_modelLifeCycle = jsonValue.GetObject("ModelLifeCycle");
     m_modelLifeCycleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ManagedStorageType")) {
+    m_managedStorageType = ManagedStorageTypeMapper::GetManagedStorageTypeForName(jsonValue.GetString("ManagedStorageType"));
+    m_managedStorageTypeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

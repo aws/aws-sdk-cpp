@@ -7,10 +7,15 @@
 #include <aws/core/utils/Waiter.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/rtbfabric/RTBFabricClient.h>
+#include <aws/rtbfabric/model/CertificateAssociationStatus.h>
+#include <aws/rtbfabric/model/GetCertificateAssociationRequest.h>
+#include <aws/rtbfabric/model/GetCertificateAssociationResult.h>
 #include <aws/rtbfabric/model/GetInboundExternalLinkRequest.h>
 #include <aws/rtbfabric/model/GetInboundExternalLinkResult.h>
 #include <aws/rtbfabric/model/GetLinkRequest.h>
 #include <aws/rtbfabric/model/GetLinkResult.h>
+#include <aws/rtbfabric/model/GetLinkRoutingRuleRequest.h>
+#include <aws/rtbfabric/model/GetLinkRoutingRuleResult.h>
 #include <aws/rtbfabric/model/GetOutboundExternalLinkRequest.h>
 #include <aws/rtbfabric/model/GetOutboundExternalLinkResult.h>
 #include <aws/rtbfabric/model/GetRequesterGatewayRequest.h>
@@ -20,6 +25,7 @@
 #include <aws/rtbfabric/model/LinkStatus.h>
 #include <aws/rtbfabric/model/RequesterGatewayStatus.h>
 #include <aws/rtbfabric/model/ResponderGatewayStatus.h>
+#include <aws/rtbfabric/model/RuleStatus.h>
 
 #include <algorithm>
 
@@ -29,6 +35,88 @@ namespace RTBFabric {
 template <typename DerivedClient = RTBFabricClient>
 class RTBFabricWaiter {
  public:
+  Aws::Utils::WaiterOutcome<Model::GetCertificateAssociationOutcome> WaitUntilCertificateAssociated(
+      const Model::GetCertificateAssociationRequest& request) {
+    using OutcomeT = Model::GetCertificateAssociationOutcome;
+    using RequestT = Model::GetCertificateAssociationRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CertificateAssociatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ASSOCIATED"),
+        [](const Model::GetCertificateAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::CertificateAssociationStatusMapper::GetNameForCertificateAssociationStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "CertificateAssociatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ResourceNotFoundException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CertificateAssociatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetCertificateAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::CertificateAssociationStatusMapper::GetNameForCertificateAssociationStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CertificateAssociatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DISASSOCIATED"),
+        [](const Model::GetCertificateAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::CertificateAssociationStatusMapper::GetNameForCertificateAssociationStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CertificateAssociatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("PENDING_DISASSOCIATION"),
+        [](const Model::GetCertificateAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::CertificateAssociationStatusMapper::GetNameForCertificateAssociationStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetCertificateAssociation(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(15, 8, std::move(acceptors), operation, "WaitUntilCertificateAssociated");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetCertificateAssociationOutcome> WaitUntilCertificateDisassociated(
+      const Model::GetCertificateAssociationRequest& request) {
+    using OutcomeT = Model::GetCertificateAssociationOutcome;
+    using RequestT = Model::GetCertificateAssociationRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CertificateDisassociatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DISASSOCIATED"),
+        [](const Model::GetCertificateAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::CertificateAssociationStatusMapper::GetNameForCertificateAssociationStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "CertificateDisassociatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CertificateDisassociatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetCertificateAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::CertificateAssociationStatusMapper::GetNameForCertificateAssociationStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CertificateDisassociatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("PENDING_ASSOCIATION"),
+        [](const Model::GetCertificateAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::CertificateAssociationStatusMapper::GetNameForCertificateAssociationStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetCertificateAssociation(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(15, 8, std::move(acceptors), operation, "WaitUntilCertificateDisassociated");
+    return waiter.Wait(request);
+  }
+
   Aws::Utils::WaiterOutcome<Model::GetInboundExternalLinkOutcome> WaitUntilInboundExternalLinkActive(
       const Model::GetInboundExternalLinkRequest& request) {
     using OutcomeT = Model::GetInboundExternalLinkOutcome;
@@ -211,6 +299,65 @@ class RTBFabricWaiter {
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetLink(req); };
     Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 4, std::move(acceptors), operation, "WaitUntilLinkDeleted");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetLinkRoutingRuleOutcome> WaitUntilLinkRoutingRuleActive(
+      const Model::GetLinkRoutingRuleRequest& request) {
+    using OutcomeT = Model::GetLinkRoutingRuleOutcome;
+    using RequestT = Model::GetLinkRoutingRuleRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LinkRoutingRuleActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
+        [](const Model::GetLinkRoutingRuleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RuleStatusMapper::GetNameForRuleStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LinkRoutingRuleActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetLinkRoutingRuleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RuleStatusMapper::GetNameForRuleStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LinkRoutingRuleActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETED"),
+        [](const Model::GetLinkRoutingRuleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RuleStatusMapper::GetNameForRuleStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetLinkRoutingRule(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilLinkRoutingRuleActive");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetLinkRoutingRuleOutcome> WaitUntilLinkRoutingRuleDeleted(
+      const Model::GetLinkRoutingRuleRequest& request) {
+    using OutcomeT = Model::GetLinkRoutingRuleOutcome;
+    using RequestT = Model::GetLinkRoutingRuleRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LinkRoutingRuleDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
+        [](const Model::GetLinkRoutingRuleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RuleStatusMapper::GetNameForRuleStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "LinkRoutingRuleDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LinkRoutingRuleDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetLinkRoutingRuleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RuleStatusMapper::GetNameForRuleStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetLinkRoutingRule(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilLinkRoutingRuleDeleted");
     return waiter.Wait(request);
   }
 

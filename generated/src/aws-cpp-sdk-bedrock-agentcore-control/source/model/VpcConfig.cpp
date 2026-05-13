@@ -32,6 +32,10 @@ VpcConfig& VpcConfig::operator=(JsonView jsonValue) {
     }
     m_subnetsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("requireServiceS3Endpoint")) {
+    m_requireServiceS3Endpoint = jsonValue.GetBool("requireServiceS3Endpoint");
+    m_requireServiceS3EndpointHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -52,6 +56,10 @@ JsonValue VpcConfig::Jsonize() const {
       subnetsJsonList[subnetsIndex].AsString(m_subnets[subnetsIndex]);
     }
     payload.WithArray("subnets", std::move(subnetsJsonList));
+  }
+
+  if (m_requireServiceS3EndpointHasBeenSet) {
+    payload.WithBool("requireServiceS3Endpoint", m_requireServiceS3Endpoint);
   }
 
   return payload;

@@ -21,7 +21,7 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>Coinbase CDP configuration output with secret ARNs</p><p><h3>See Also:</h3>
+ * <p>Coinbase CDP configuration output with secret ARNs.</p><p><h3>See Also:</h3>
  * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CoinbaseCdpConfigurationOutput">AWS
  * API Reference</a></p>

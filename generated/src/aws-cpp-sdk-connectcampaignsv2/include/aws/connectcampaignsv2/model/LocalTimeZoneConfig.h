@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
+#include <aws/connectcampaignsv2/model/LocalTimeZoneDetectionScope.h>
 #include <aws/connectcampaignsv2/model/LocalTimeZoneDetectionType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -69,12 +70,29 @@ class LocalTimeZoneConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline LocalTimeZoneDetectionScope GetLocalTimeZoneDetectionScope() const { return m_localTimeZoneDetectionScope; }
+  inline bool LocalTimeZoneDetectionScopeHasBeenSet() const { return m_localTimeZoneDetectionScopeHasBeenSet; }
+  inline void SetLocalTimeZoneDetectionScope(LocalTimeZoneDetectionScope value) {
+    m_localTimeZoneDetectionScopeHasBeenSet = true;
+    m_localTimeZoneDetectionScope = value;
+  }
+  inline LocalTimeZoneConfig& WithLocalTimeZoneDetectionScope(LocalTimeZoneDetectionScope value) {
+    SetLocalTimeZoneDetectionScope(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_defaultTimeZone;
 
   Aws::Vector<LocalTimeZoneDetectionType> m_localTimeZoneDetection;
+
+  LocalTimeZoneDetectionScope m_localTimeZoneDetectionScope{LocalTimeZoneDetectionScope::NOT_SET};
   bool m_defaultTimeZoneHasBeenSet = false;
   bool m_localTimeZoneDetectionHasBeenSet = false;
+  bool m_localTimeZoneDetectionScopeHasBeenSet = false;
 };
 
 }  // namespace Model

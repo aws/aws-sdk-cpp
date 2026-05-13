@@ -62,6 +62,24 @@ class AssociateWhatsAppBusinessAccountResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The ID of the WhatsApp Business Account that was linked to your Amazon Web
+   * Services account.</p>
+   */
+  inline const Aws::String& GetLinkedWhatsAppBusinessAccountId() const { return m_linkedWhatsAppBusinessAccountId; }
+  template <typename LinkedWhatsAppBusinessAccountIdT = Aws::String>
+  void SetLinkedWhatsAppBusinessAccountId(LinkedWhatsAppBusinessAccountIdT&& value) {
+    m_linkedWhatsAppBusinessAccountIdHasBeenSet = true;
+    m_linkedWhatsAppBusinessAccountId = std::forward<LinkedWhatsAppBusinessAccountIdT>(value);
+  }
+  template <typename LinkedWhatsAppBusinessAccountIdT = Aws::String>
+  AssociateWhatsAppBusinessAccountResult& WithLinkedWhatsAppBusinessAccountId(LinkedWhatsAppBusinessAccountIdT&& value) {
+    SetLinkedWhatsAppBusinessAccountId(std::forward<LinkedWhatsAppBusinessAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -82,10 +100,13 @@ class AssociateWhatsAppBusinessAccountResult {
 
   int m_statusCode{0};
 
+  Aws::String m_linkedWhatsAppBusinessAccountId;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_signupCallbackResultHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
+  bool m_linkedWhatsAppBusinessAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

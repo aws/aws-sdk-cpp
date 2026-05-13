@@ -51,7 +51,10 @@ class CodeInterpreterNetworkConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The VPC configuration for the code interpreter. This configuration is
+   * required when the network mode is set to <code>VPC</code>.</p>
+   */
   inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
   inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
   template <typename VpcConfigT = VpcConfig>

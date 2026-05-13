@@ -20,8 +20,8 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>StripePrivy configuration - credentials provided by Stripe +
- * Privy</p><p><h3>See Also:</h3>   <a
+ * <p>Stripe Privy configuration — credentials provided by Stripe and
+ * Privy.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/StripePrivyConfigurationInput">AWS
  * API Reference</a></p>
  */

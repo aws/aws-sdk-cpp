@@ -47,6 +47,10 @@ DescribeModelPackageGroupResult& DescribeModelPackageGroupResult::operator=(cons
         ModelPackageGroupStatusMapper::GetModelPackageGroupStatusForName(jsonValue.GetString("ModelPackageGroupStatus"));
     m_modelPackageGroupStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ManagedConfiguration")) {
+    m_managedConfiguration = jsonValue.GetObject("ManagedConfiguration");
+    m_managedConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

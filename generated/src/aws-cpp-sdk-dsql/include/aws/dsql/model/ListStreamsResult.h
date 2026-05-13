@@ -1,0 +1,104 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dsql/DSQL_EXPORTS.h>
+#include <aws/dsql/model/StreamSummary.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace DSQL {
+namespace Model {
+class ListStreamsResult {
+ public:
+  AWS_DSQL_API ListStreamsResult() = default;
+  AWS_DSQL_API ListStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DSQL_API ListStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>If nextToken is returned, there are more results available. The value of
+   * nextToken is a unique pagination token for each page. To retrieve the next page,
+   * make the call again using the returned token.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListStreamsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An array of the returned streams.</p>
+   */
+  inline const Aws::Vector<StreamSummary>& GetStreams() const { return m_streams; }
+  template <typename StreamsT = Aws::Vector<StreamSummary>>
+  void SetStreams(StreamsT&& value) {
+    m_streamsHasBeenSet = true;
+    m_streams = std::forward<StreamsT>(value);
+  }
+  template <typename StreamsT = Aws::Vector<StreamSummary>>
+  ListStreamsResult& WithStreams(StreamsT&& value) {
+    SetStreams(std::forward<StreamsT>(value));
+    return *this;
+  }
+  template <typename StreamsT = StreamSummary>
+  ListStreamsResult& AddStreams(StreamsT&& value) {
+    m_streamsHasBeenSet = true;
+    m_streams.emplace_back(std::forward<StreamsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListStreamsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_nextToken;
+
+  Aws::Vector<StreamSummary> m_streams;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_streamsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace DSQL
+}  // namespace Aws

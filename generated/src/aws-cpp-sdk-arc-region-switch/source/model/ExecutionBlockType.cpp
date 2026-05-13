@@ -28,6 +28,7 @@ static const int Route53HealthCheck_HASH = HashingUtils::HashString("Route53Heal
 static const int DocumentDb_HASH = HashingUtils::HashString("DocumentDb");
 static const int RdsPromoteReadReplica_HASH = HashingUtils::HashString("RdsPromoteReadReplica");
 static const int RdsCreateCrossRegionReplica_HASH = HashingUtils::HashString("RdsCreateCrossRegionReplica");
+static const int LambdaEventSourceMapping_HASH = HashingUtils::HashString("LambdaEventSourceMapping");
 
 ExecutionBlockType GetExecutionBlockTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -57,6 +58,8 @@ ExecutionBlockType GetExecutionBlockTypeForName(const Aws::String& name) {
     return ExecutionBlockType::RdsPromoteReadReplica;
   } else if (hashCode == RdsCreateCrossRegionReplica_HASH) {
     return ExecutionBlockType::RdsCreateCrossRegionReplica;
+  } else if (hashCode == LambdaEventSourceMapping_HASH) {
+    return ExecutionBlockType::LambdaEventSourceMapping;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -97,6 +100,8 @@ Aws::String GetNameForExecutionBlockType(ExecutionBlockType enumValue) {
       return "RdsPromoteReadReplica";
     case ExecutionBlockType::RdsCreateCrossRegionReplica:
       return "RdsCreateCrossRegionReplica";
+    case ExecutionBlockType::LambdaEventSourceMapping:
+      return "LambdaEventSourceMapping";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

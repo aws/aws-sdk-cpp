@@ -136,6 +136,30 @@ class ResourceSpec {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the SageMaker AI Training Plan to use for this app. When you
+   * specify a training plan, the app launches on reserved GPU capacity. This field
+   * is supported for JupyterLab and CodeEditor app types.</p> <p>For more
+   * information about how to reserve GPU capacity with SageMaker AI Training Plans,
+   * see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/training-plan-utilization-for-studio-apps.html">Using
+   * training plans in Studio applications</a>.</p>
+   */
+  inline const Aws::String& GetTrainingPlanArn() const { return m_trainingPlanArn; }
+  inline bool TrainingPlanArnHasBeenSet() const { return m_trainingPlanArnHasBeenSet; }
+  template <typename TrainingPlanArnT = Aws::String>
+  void SetTrainingPlanArn(TrainingPlanArnT&& value) {
+    m_trainingPlanArnHasBeenSet = true;
+    m_trainingPlanArn = std::forward<TrainingPlanArnT>(value);
+  }
+  template <typename TrainingPlanArnT = Aws::String>
+  ResourceSpec& WithTrainingPlanArn(TrainingPlanArnT&& value) {
+    SetTrainingPlanArn(std::forward<TrainingPlanArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sageMakerImageArn;
 
@@ -146,11 +170,14 @@ class ResourceSpec {
   AppInstanceType m_instanceType{AppInstanceType::NOT_SET};
 
   Aws::String m_lifecycleConfigArn;
+
+  Aws::String m_trainingPlanArn;
   bool m_sageMakerImageArnHasBeenSet = false;
   bool m_sageMakerImageVersionArnHasBeenSet = false;
   bool m_sageMakerImageVersionAliasHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
   bool m_lifecycleConfigArnHasBeenSet = false;
+  bool m_trainingPlanArnHasBeenSet = false;
 };
 
 }  // namespace Model

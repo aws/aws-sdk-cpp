@@ -84,6 +84,10 @@ TrainingJob& TrainingJob::operator=(JsonView jsonValue) {
     m_resourceConfig = jsonValue.GetObject("ResourceConfig");
     m_resourceConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("WarmPoolStatus")) {
+    m_warmPoolStatus = jsonValue.GetObject("WarmPoolStatus");
+    m_warmPoolStatusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("VpcConfig")) {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
     m_vpcConfigHasBeenSet = true;
@@ -278,6 +282,10 @@ JsonValue TrainingJob::Jsonize() const {
 
   if (m_resourceConfigHasBeenSet) {
     payload.WithObject("ResourceConfig", m_resourceConfig.Jsonize());
+  }
+
+  if (m_warmPoolStatusHasBeenSet) {
+    payload.WithObject("WarmPoolStatus", m_warmPoolStatus.Jsonize());
   }
 
   if (m_vpcConfigHasBeenSet) {

@@ -360,11 +360,6 @@ GetWhatsAppMessageMediaOutcome SocialMessagingClient::GetWhatsAppMessageMedia(co
 
 GetWhatsAppMessageTemplateOutcome SocialMessagingClient::GetWhatsAppMessageTemplate(
     const GetWhatsAppMessageTemplateRequest& request) const {
-  if (!request.MetaTemplateIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("GetWhatsAppMessageTemplate", "Required field: MetaTemplateId, is not set");
-    return GetWhatsAppMessageTemplateOutcome(Aws::Client::AWSError<SocialMessagingErrors>(
-        SocialMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MetaTemplateId]", false));
-  }
   if (!request.IdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetWhatsAppMessageTemplate", "Required field: Id, is not set");
     return GetWhatsAppMessageTemplateOutcome(Aws::Client::AWSError<SocialMessagingErrors>(

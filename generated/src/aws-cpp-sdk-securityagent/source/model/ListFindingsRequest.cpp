@@ -23,6 +23,10 @@ Aws::String ListFindingsRequest::SerializePayload() const {
     payload.WithString("pentestJobId", m_pentestJobId);
   }
 
+  if (m_codeReviewJobIdHasBeenSet) {
+    payload.WithString("codeReviewJobId", m_codeReviewJobId);
+  }
+
   if (m_agentSpaceIdHasBeenSet) {
     payload.WithString("agentSpaceId", m_agentSpaceId);
   }

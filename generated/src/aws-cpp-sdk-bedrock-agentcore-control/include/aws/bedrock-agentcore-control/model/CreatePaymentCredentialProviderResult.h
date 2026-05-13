@@ -49,7 +49,9 @@ class CreatePaymentCredentialProviderResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The vendor type for the created payment credential provider.</p>
+   */
   inline PaymentCredentialProviderVendorType GetCredentialProviderVendor() const { return m_credentialProviderVendor; }
   inline void SetCredentialProviderVendor(PaymentCredentialProviderVendorType value) {
     m_credentialProviderVendorHasBeenSet = true;
@@ -82,7 +84,7 @@ class CreatePaymentCredentialProviderResult {
   ///@{
   /**
    * <p>Output configuration (contains secret ARNs, excludes actual secret
-   * values)</p>
+   * values).</p>
    */
   inline const PaymentProviderConfigurationOutput& GetProviderConfigurationOutput() const { return m_providerConfigurationOutput; }
   template <typename ProviderConfigurationOutputT = PaymentProviderConfigurationOutput>

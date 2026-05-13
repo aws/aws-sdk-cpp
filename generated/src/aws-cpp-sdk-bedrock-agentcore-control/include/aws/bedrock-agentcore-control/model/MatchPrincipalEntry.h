@@ -21,8 +21,7 @@ namespace Model {
 
 /**
  * <p>Union for principal matching. Currently supports IAM principal ARN glob
- * matching. Extensible for future principal types (e.g., OAuth client
- * ID).</p><p><h3>See Also:</h3>   <a
+ * matching.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/MatchPrincipalEntry">AWS
  * API Reference</a></p>
  */

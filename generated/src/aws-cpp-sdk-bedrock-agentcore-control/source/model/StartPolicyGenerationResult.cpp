@@ -54,16 +54,16 @@ StartPolicyGenerationResult& StartPolicyGenerationResult::operator=(const Aws::A
     m_status = PolicyGenerationStatusMapper::GetPolicyGenerationStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("findings")) {
+    m_findings = jsonValue.GetString("findings");
+    m_findingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("statusReasons")) {
     Aws::Utils::Array<JsonView> statusReasonsJsonList = jsonValue.GetArray("statusReasons");
     for (unsigned statusReasonsIndex = 0; statusReasonsIndex < statusReasonsJsonList.GetLength(); ++statusReasonsIndex) {
       m_statusReasons.push_back(statusReasonsJsonList[statusReasonsIndex].AsString());
     }
     m_statusReasonsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("findings")) {
-    m_findings = jsonValue.GetString("findings");
-    m_findingsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

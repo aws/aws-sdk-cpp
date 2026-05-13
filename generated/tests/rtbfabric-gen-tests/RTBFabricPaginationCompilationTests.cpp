@@ -8,8 +8,10 @@
 
 #include <aws/rtbfabric/RTBFabricClientPagination.h>
 #include <aws/rtbfabric/RTBFabricPaginationBase.h>
+#include <aws/rtbfabric/model/ListLinkRoutingRulesPaginationTraits.h>
 #include <aws/rtbfabric/model/ListRequesterGatewaysPaginationTraits.h>
 #include <aws/rtbfabric/model/ListResponderGatewaysPaginationTraits.h>
+#include <aws/rtbfabric/model/ListCertificateAssociationsPaginationTraits.h>
 #include <aws/rtbfabric/model/ListLinksPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

@@ -21,9 +21,13 @@
 /* Service model headers required in SecurityAgentClient header */
 #include <aws/core/NoResult.h>
 #include <aws/securityagent/model/AddArtifactResult.h>
+#include <aws/securityagent/model/BatchDeleteCodeReviewsResult.h>
 #include <aws/securityagent/model/BatchDeletePentestsResult.h>
 #include <aws/securityagent/model/BatchGetAgentSpacesResult.h>
 #include <aws/securityagent/model/BatchGetArtifactMetadataResult.h>
+#include <aws/securityagent/model/BatchGetCodeReviewJobTasksResult.h>
+#include <aws/securityagent/model/BatchGetCodeReviewJobsResult.h>
+#include <aws/securityagent/model/BatchGetCodeReviewsResult.h>
 #include <aws/securityagent/model/BatchGetFindingsResult.h>
 #include <aws/securityagent/model/BatchGetPentestJobTasksResult.h>
 #include <aws/securityagent/model/BatchGetPentestJobsResult.h>
@@ -32,6 +36,7 @@
 #include <aws/securityagent/model/CreateAgentSpaceResult.h>
 #include <aws/securityagent/model/CreateApplicationRequest.h>
 #include <aws/securityagent/model/CreateApplicationResult.h>
+#include <aws/securityagent/model/CreateCodeReviewResult.h>
 #include <aws/securityagent/model/CreateIntegrationResult.h>
 #include <aws/securityagent/model/CreateMembershipResult.h>
 #include <aws/securityagent/model/CreatePentestResult.h>
@@ -50,6 +55,9 @@
 #include <aws/securityagent/model/ListApplicationsRequest.h>
 #include <aws/securityagent/model/ListApplicationsResult.h>
 #include <aws/securityagent/model/ListArtifactsResult.h>
+#include <aws/securityagent/model/ListCodeReviewJobTasksResult.h>
+#include <aws/securityagent/model/ListCodeReviewJobsForCodeReviewResult.h>
+#include <aws/securityagent/model/ListCodeReviewsResult.h>
 #include <aws/securityagent/model/ListDiscoveredEndpointsResult.h>
 #include <aws/securityagent/model/ListFindingsResult.h>
 #include <aws/securityagent/model/ListIntegratedResourcesResult.h>
@@ -63,12 +71,15 @@
 #include <aws/securityagent/model/ListTargetDomainsRequest.h>
 #include <aws/securityagent/model/ListTargetDomainsResult.h>
 #include <aws/securityagent/model/StartCodeRemediationResult.h>
+#include <aws/securityagent/model/StartCodeReviewJobResult.h>
 #include <aws/securityagent/model/StartPentestJobResult.h>
+#include <aws/securityagent/model/StopCodeReviewJobResult.h>
 #include <aws/securityagent/model/StopPentestJobResult.h>
 #include <aws/securityagent/model/TagResourceResult.h>
 #include <aws/securityagent/model/UntagResourceResult.h>
 #include <aws/securityagent/model/UpdateAgentSpaceResult.h>
 #include <aws/securityagent/model/UpdateApplicationResult.h>
+#include <aws/securityagent/model/UpdateCodeReviewResult.h>
 #include <aws/securityagent/model/UpdateFindingResult.h>
 #include <aws/securityagent/model/UpdateIntegratedResourcesResult.h>
 #include <aws/securityagent/model/UpdatePentestResult.h>
@@ -108,9 +119,13 @@ using SecurityAgentEndpointProvider = Aws::SecurityAgent::Endpoint::SecurityAgen
 namespace Model {
 /* Service model forward declarations required in SecurityAgentClient header */
 class AddArtifactRequest;
+class BatchDeleteCodeReviewsRequest;
 class BatchDeletePentestsRequest;
 class BatchGetAgentSpacesRequest;
 class BatchGetArtifactMetadataRequest;
+class BatchGetCodeReviewJobTasksRequest;
+class BatchGetCodeReviewJobsRequest;
+class BatchGetCodeReviewsRequest;
 class BatchGetFindingsRequest;
 class BatchGetPentestJobTasksRequest;
 class BatchGetPentestJobsRequest;
@@ -118,6 +133,7 @@ class BatchGetPentestsRequest;
 class BatchGetTargetDomainsRequest;
 class CreateAgentSpaceRequest;
 class CreateApplicationRequest;
+class CreateCodeReviewRequest;
 class CreateIntegrationRequest;
 class CreateMembershipRequest;
 class CreatePentestRequest;
@@ -135,6 +151,9 @@ class InitiateProviderRegistrationRequest;
 class ListAgentSpacesRequest;
 class ListApplicationsRequest;
 class ListArtifactsRequest;
+class ListCodeReviewJobTasksRequest;
+class ListCodeReviewJobsForCodeReviewRequest;
+class ListCodeReviewsRequest;
 class ListDiscoveredEndpointsRequest;
 class ListFindingsRequest;
 class ListIntegratedResourcesRequest;
@@ -146,12 +165,15 @@ class ListPentestsRequest;
 class ListTagsForResourceRequest;
 class ListTargetDomainsRequest;
 class StartCodeRemediationRequest;
+class StartCodeReviewJobRequest;
 class StartPentestJobRequest;
+class StopCodeReviewJobRequest;
 class StopPentestJobRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAgentSpaceRequest;
 class UpdateApplicationRequest;
+class UpdateCodeReviewRequest;
 class UpdateFindingRequest;
 class UpdateIntegratedResourcesRequest;
 class UpdatePentestRequest;
@@ -161,9 +183,13 @@ class VerifyTargetDomainRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<AddArtifactResult, SecurityAgentError> AddArtifactOutcome;
+typedef Aws::Utils::Outcome<BatchDeleteCodeReviewsResult, SecurityAgentError> BatchDeleteCodeReviewsOutcome;
 typedef Aws::Utils::Outcome<BatchDeletePentestsResult, SecurityAgentError> BatchDeletePentestsOutcome;
 typedef Aws::Utils::Outcome<BatchGetAgentSpacesResult, SecurityAgentError> BatchGetAgentSpacesOutcome;
 typedef Aws::Utils::Outcome<BatchGetArtifactMetadataResult, SecurityAgentError> BatchGetArtifactMetadataOutcome;
+typedef Aws::Utils::Outcome<BatchGetCodeReviewJobTasksResult, SecurityAgentError> BatchGetCodeReviewJobTasksOutcome;
+typedef Aws::Utils::Outcome<BatchGetCodeReviewJobsResult, SecurityAgentError> BatchGetCodeReviewJobsOutcome;
+typedef Aws::Utils::Outcome<BatchGetCodeReviewsResult, SecurityAgentError> BatchGetCodeReviewsOutcome;
 typedef Aws::Utils::Outcome<BatchGetFindingsResult, SecurityAgentError> BatchGetFindingsOutcome;
 typedef Aws::Utils::Outcome<BatchGetPentestJobTasksResult, SecurityAgentError> BatchGetPentestJobTasksOutcome;
 typedef Aws::Utils::Outcome<BatchGetPentestJobsResult, SecurityAgentError> BatchGetPentestJobsOutcome;
@@ -171,6 +197,7 @@ typedef Aws::Utils::Outcome<BatchGetPentestsResult, SecurityAgentError> BatchGet
 typedef Aws::Utils::Outcome<BatchGetTargetDomainsResult, SecurityAgentError> BatchGetTargetDomainsOutcome;
 typedef Aws::Utils::Outcome<CreateAgentSpaceResult, SecurityAgentError> CreateAgentSpaceOutcome;
 typedef Aws::Utils::Outcome<CreateApplicationResult, SecurityAgentError> CreateApplicationOutcome;
+typedef Aws::Utils::Outcome<CreateCodeReviewResult, SecurityAgentError> CreateCodeReviewOutcome;
 typedef Aws::Utils::Outcome<CreateIntegrationResult, SecurityAgentError> CreateIntegrationOutcome;
 typedef Aws::Utils::Outcome<CreateMembershipResult, SecurityAgentError> CreateMembershipOutcome;
 typedef Aws::Utils::Outcome<CreatePentestResult, SecurityAgentError> CreatePentestOutcome;
@@ -188,6 +215,9 @@ typedef Aws::Utils::Outcome<InitiateProviderRegistrationResult, SecurityAgentErr
 typedef Aws::Utils::Outcome<ListAgentSpacesResult, SecurityAgentError> ListAgentSpacesOutcome;
 typedef Aws::Utils::Outcome<ListApplicationsResult, SecurityAgentError> ListApplicationsOutcome;
 typedef Aws::Utils::Outcome<ListArtifactsResult, SecurityAgentError> ListArtifactsOutcome;
+typedef Aws::Utils::Outcome<ListCodeReviewJobTasksResult, SecurityAgentError> ListCodeReviewJobTasksOutcome;
+typedef Aws::Utils::Outcome<ListCodeReviewJobsForCodeReviewResult, SecurityAgentError> ListCodeReviewJobsForCodeReviewOutcome;
+typedef Aws::Utils::Outcome<ListCodeReviewsResult, SecurityAgentError> ListCodeReviewsOutcome;
 typedef Aws::Utils::Outcome<ListDiscoveredEndpointsResult, SecurityAgentError> ListDiscoveredEndpointsOutcome;
 typedef Aws::Utils::Outcome<ListFindingsResult, SecurityAgentError> ListFindingsOutcome;
 typedef Aws::Utils::Outcome<ListIntegratedResourcesResult, SecurityAgentError> ListIntegratedResourcesOutcome;
@@ -199,12 +229,15 @@ typedef Aws::Utils::Outcome<ListPentestsResult, SecurityAgentError> ListPentests
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, SecurityAgentError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListTargetDomainsResult, SecurityAgentError> ListTargetDomainsOutcome;
 typedef Aws::Utils::Outcome<StartCodeRemediationResult, SecurityAgentError> StartCodeRemediationOutcome;
+typedef Aws::Utils::Outcome<StartCodeReviewJobResult, SecurityAgentError> StartCodeReviewJobOutcome;
 typedef Aws::Utils::Outcome<StartPentestJobResult, SecurityAgentError> StartPentestJobOutcome;
+typedef Aws::Utils::Outcome<StopCodeReviewJobResult, SecurityAgentError> StopCodeReviewJobOutcome;
 typedef Aws::Utils::Outcome<StopPentestJobResult, SecurityAgentError> StopPentestJobOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, SecurityAgentError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, SecurityAgentError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAgentSpaceResult, SecurityAgentError> UpdateAgentSpaceOutcome;
 typedef Aws::Utils::Outcome<UpdateApplicationResult, SecurityAgentError> UpdateApplicationOutcome;
+typedef Aws::Utils::Outcome<UpdateCodeReviewResult, SecurityAgentError> UpdateCodeReviewOutcome;
 typedef Aws::Utils::Outcome<UpdateFindingResult, SecurityAgentError> UpdateFindingOutcome;
 typedef Aws::Utils::Outcome<UpdateIntegratedResourcesResult, SecurityAgentError> UpdateIntegratedResourcesOutcome;
 typedef Aws::Utils::Outcome<UpdatePentestResult, SecurityAgentError> UpdatePentestOutcome;
@@ -214,9 +247,13 @@ typedef Aws::Utils::Outcome<VerifyTargetDomainResult, SecurityAgentError> Verify
 
 /* Service model Outcome callable definitions */
 typedef std::future<AddArtifactOutcome> AddArtifactOutcomeCallable;
+typedef std::future<BatchDeleteCodeReviewsOutcome> BatchDeleteCodeReviewsOutcomeCallable;
 typedef std::future<BatchDeletePentestsOutcome> BatchDeletePentestsOutcomeCallable;
 typedef std::future<BatchGetAgentSpacesOutcome> BatchGetAgentSpacesOutcomeCallable;
 typedef std::future<BatchGetArtifactMetadataOutcome> BatchGetArtifactMetadataOutcomeCallable;
+typedef std::future<BatchGetCodeReviewJobTasksOutcome> BatchGetCodeReviewJobTasksOutcomeCallable;
+typedef std::future<BatchGetCodeReviewJobsOutcome> BatchGetCodeReviewJobsOutcomeCallable;
+typedef std::future<BatchGetCodeReviewsOutcome> BatchGetCodeReviewsOutcomeCallable;
 typedef std::future<BatchGetFindingsOutcome> BatchGetFindingsOutcomeCallable;
 typedef std::future<BatchGetPentestJobTasksOutcome> BatchGetPentestJobTasksOutcomeCallable;
 typedef std::future<BatchGetPentestJobsOutcome> BatchGetPentestJobsOutcomeCallable;
@@ -224,6 +261,7 @@ typedef std::future<BatchGetPentestsOutcome> BatchGetPentestsOutcomeCallable;
 typedef std::future<BatchGetTargetDomainsOutcome> BatchGetTargetDomainsOutcomeCallable;
 typedef std::future<CreateAgentSpaceOutcome> CreateAgentSpaceOutcomeCallable;
 typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
+typedef std::future<CreateCodeReviewOutcome> CreateCodeReviewOutcomeCallable;
 typedef std::future<CreateIntegrationOutcome> CreateIntegrationOutcomeCallable;
 typedef std::future<CreateMembershipOutcome> CreateMembershipOutcomeCallable;
 typedef std::future<CreatePentestOutcome> CreatePentestOutcomeCallable;
@@ -241,6 +279,9 @@ typedef std::future<InitiateProviderRegistrationOutcome> InitiateProviderRegistr
 typedef std::future<ListAgentSpacesOutcome> ListAgentSpacesOutcomeCallable;
 typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
 typedef std::future<ListArtifactsOutcome> ListArtifactsOutcomeCallable;
+typedef std::future<ListCodeReviewJobTasksOutcome> ListCodeReviewJobTasksOutcomeCallable;
+typedef std::future<ListCodeReviewJobsForCodeReviewOutcome> ListCodeReviewJobsForCodeReviewOutcomeCallable;
+typedef std::future<ListCodeReviewsOutcome> ListCodeReviewsOutcomeCallable;
 typedef std::future<ListDiscoveredEndpointsOutcome> ListDiscoveredEndpointsOutcomeCallable;
 typedef std::future<ListFindingsOutcome> ListFindingsOutcomeCallable;
 typedef std::future<ListIntegratedResourcesOutcome> ListIntegratedResourcesOutcomeCallable;
@@ -252,12 +293,15 @@ typedef std::future<ListPentestsOutcome> ListPentestsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListTargetDomainsOutcome> ListTargetDomainsOutcomeCallable;
 typedef std::future<StartCodeRemediationOutcome> StartCodeRemediationOutcomeCallable;
+typedef std::future<StartCodeReviewJobOutcome> StartCodeReviewJobOutcomeCallable;
 typedef std::future<StartPentestJobOutcome> StartPentestJobOutcomeCallable;
+typedef std::future<StopCodeReviewJobOutcome> StopCodeReviewJobOutcomeCallable;
 typedef std::future<StopPentestJobOutcome> StopPentestJobOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAgentSpaceOutcome> UpdateAgentSpaceOutcomeCallable;
 typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
+typedef std::future<UpdateCodeReviewOutcome> UpdateCodeReviewOutcomeCallable;
 typedef std::future<UpdateFindingOutcome> UpdateFindingOutcomeCallable;
 typedef std::future<UpdateIntegratedResourcesOutcome> UpdateIntegratedResourcesOutcomeCallable;
 typedef std::future<UpdatePentestOutcome> UpdatePentestOutcomeCallable;
@@ -272,6 +316,9 @@ class SecurityAgentClient;
 typedef std::function<void(const SecurityAgentClient*, const Model::AddArtifactRequest&, const Model::AddArtifactOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AddArtifactResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::BatchDeleteCodeReviewsRequest&,
+                           const Model::BatchDeleteCodeReviewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchDeleteCodeReviewsResponseReceivedHandler;
 typedef std::function<void(const SecurityAgentClient*, const Model::BatchDeletePentestsRequest&, const Model::BatchDeletePentestsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchDeletePentestsResponseReceivedHandler;
@@ -281,6 +328,15 @@ typedef std::function<void(const SecurityAgentClient*, const Model::BatchGetAgen
 typedef std::function<void(const SecurityAgentClient*, const Model::BatchGetArtifactMetadataRequest&,
                            const Model::BatchGetArtifactMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchGetArtifactMetadataResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::BatchGetCodeReviewJobTasksRequest&,
+                           const Model::BatchGetCodeReviewJobTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetCodeReviewJobTasksResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::BatchGetCodeReviewJobsRequest&,
+                           const Model::BatchGetCodeReviewJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetCodeReviewJobsResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::BatchGetCodeReviewsRequest&, const Model::BatchGetCodeReviewsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetCodeReviewsResponseReceivedHandler;
 typedef std::function<void(const SecurityAgentClient*, const Model::BatchGetFindingsRequest&, const Model::BatchGetFindingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchGetFindingsResponseReceivedHandler;
@@ -302,6 +358,9 @@ typedef std::function<void(const SecurityAgentClient*, const Model::CreateAgentS
 typedef std::function<void(const SecurityAgentClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateApplicationResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::CreateCodeReviewRequest&, const Model::CreateCodeReviewOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateCodeReviewResponseReceivedHandler;
 typedef std::function<void(const SecurityAgentClient*, const Model::CreateIntegrationRequest&, const Model::CreateIntegrationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateIntegrationResponseReceivedHandler;
@@ -354,6 +413,16 @@ typedef std::function<void(const SecurityAgentClient*, const Model::ListApplicat
 typedef std::function<void(const SecurityAgentClient*, const Model::ListArtifactsRequest&, const Model::ListArtifactsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListArtifactsResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::ListCodeReviewJobTasksRequest&,
+                           const Model::ListCodeReviewJobTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCodeReviewJobTasksResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::ListCodeReviewJobsForCodeReviewRequest&,
+                           const Model::ListCodeReviewJobsForCodeReviewOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCodeReviewJobsForCodeReviewResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::ListCodeReviewsRequest&, const Model::ListCodeReviewsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCodeReviewsResponseReceivedHandler;
 typedef std::function<void(const SecurityAgentClient*, const Model::ListDiscoveredEndpointsRequest&,
                            const Model::ListDiscoveredEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDiscoveredEndpointsResponseReceivedHandler;
@@ -387,9 +456,15 @@ typedef std::function<void(const SecurityAgentClient*, const Model::ListTargetDo
 typedef std::function<void(const SecurityAgentClient*, const Model::StartCodeRemediationRequest&, const Model::StartCodeRemediationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartCodeRemediationResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::StartCodeReviewJobRequest&, const Model::StartCodeReviewJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartCodeReviewJobResponseReceivedHandler;
 typedef std::function<void(const SecurityAgentClient*, const Model::StartPentestJobRequest&, const Model::StartPentestJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartPentestJobResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::StopCodeReviewJobRequest&, const Model::StopCodeReviewJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopCodeReviewJobResponseReceivedHandler;
 typedef std::function<void(const SecurityAgentClient*, const Model::StopPentestJobRequest&, const Model::StopPentestJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopPentestJobResponseReceivedHandler;
@@ -405,6 +480,9 @@ typedef std::function<void(const SecurityAgentClient*, const Model::UpdateAgentS
 typedef std::function<void(const SecurityAgentClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateApplicationResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::UpdateCodeReviewRequest&, const Model::UpdateCodeReviewOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateCodeReviewResponseReceivedHandler;
 typedef std::function<void(const SecurityAgentClient*, const Model::UpdateFindingRequest&, const Model::UpdateFindingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateFindingResponseReceivedHandler;

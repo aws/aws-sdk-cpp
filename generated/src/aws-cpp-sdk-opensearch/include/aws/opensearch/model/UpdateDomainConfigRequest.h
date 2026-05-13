@@ -11,6 +11,7 @@
 #include <aws/opensearch/model/AIMLOptionsInput.h>
 #include <aws/opensearch/model/AdvancedSecurityOptionsInput.h>
 #include <aws/opensearch/model/AutoTuneOptions.h>
+#include <aws/opensearch/model/AutomatedSnapshotPauseRequestOptions.h>
 #include <aws/opensearch/model/ClusterConfig.h>
 #include <aws/opensearch/model/CognitoOptions.h>
 #include <aws/opensearch/model/DeploymentStrategyOptions.h>
@@ -485,6 +486,28 @@ class UpdateDomainConfigRequest : public OpenSearchServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the automated snapshot pause options for the domain.</p>
+   *  <p>Suspending snapshots reduces data protection. You cannot restore
+   * your domain to points in time when snapshots are suspended. Use this feature
+   * only for short-term operational needs such as migrations or maintenance
+   * windows.</p>  <p>Maximum suspension duration: 3 days.</p>
+   */
+  inline const AutomatedSnapshotPauseRequestOptions& GetAutomatedSnapshotPauseOptions() const { return m_automatedSnapshotPauseOptions; }
+  inline bool AutomatedSnapshotPauseOptionsHasBeenSet() const { return m_automatedSnapshotPauseOptionsHasBeenSet; }
+  template <typename AutomatedSnapshotPauseOptionsT = AutomatedSnapshotPauseRequestOptions>
+  void SetAutomatedSnapshotPauseOptions(AutomatedSnapshotPauseOptionsT&& value) {
+    m_automatedSnapshotPauseOptionsHasBeenSet = true;
+    m_automatedSnapshotPauseOptions = std::forward<AutomatedSnapshotPauseOptionsT>(value);
+  }
+  template <typename AutomatedSnapshotPauseOptionsT = AutomatedSnapshotPauseRequestOptions>
+  UpdateDomainConfigRequest& WithAutomatedSnapshotPauseOptions(AutomatedSnapshotPauseOptionsT&& value) {
+    SetAutomatedSnapshotPauseOptions(std::forward<AutomatedSnapshotPauseOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
@@ -529,6 +552,8 @@ class UpdateDomainConfigRequest : public OpenSearchServiceRequest {
   AIMLOptionsInput m_aIMLOptions;
 
   DeploymentStrategyOptions m_deploymentStrategyOptions;
+
+  AutomatedSnapshotPauseRequestOptions m_automatedSnapshotPauseOptions;
   bool m_domainNameHasBeenSet = false;
   bool m_clusterConfigHasBeenSet = false;
   bool m_eBSOptionsHasBeenSet = false;
@@ -551,6 +576,7 @@ class UpdateDomainConfigRequest : public OpenSearchServiceRequest {
   bool m_softwareUpdateOptionsHasBeenSet = false;
   bool m_aIMLOptionsHasBeenSet = false;
   bool m_deploymentStrategyOptionsHasBeenSet = false;
+  bool m_automatedSnapshotPauseOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

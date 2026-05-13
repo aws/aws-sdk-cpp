@@ -122,8 +122,9 @@ class CreateClusterRequest : public RedshiftRequest {
    * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
    * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
    * Guide</i>. </p> <p>Valid Values: <code>dc2.large</code> |
-   * <code>dc2.8xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> |
-   * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+   * <code>dc2.8xlarge</code>| <code>rg.xlarge</code> | <code>rg.4xlarge</code> |
+   * <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> |
+   * <code>ra3.16xlarge</code> </p>
    */
   inline const Aws::String& GetNodeType() const { return m_nodeType; }
   inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
@@ -345,7 +346,7 @@ class CreateClusterRequest : public RedshiftRequest {
    * automated snapshots are disabled. Even if automated snapshots are disabled, you
    * can still create manual snapshots when you want with
    * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
-   * RA3 node types. Set the automated retention period from 1-35 days.</p>
+   * RG or RA3 node types. Set the automated retention period from 1-35 days.</p>
    * <p>Default: <code>1</code> </p> <p>Constraints: Must be a value from 0 to
    * 35.</p>
    */
@@ -386,11 +387,11 @@ class CreateClusterRequest : public RedshiftRequest {
    * cluster is accessible only via the JDBC and ODBC connection strings. Part of the
    * connection string requires the port on which the cluster will listen for
    * incoming connections.</p> <p>Default: <code>5439</code> </p> <p>Valid Values:
-   * </p> <ul> <li> <p>For clusters with ra3 nodes - Select a port within the ranges
-   * <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing
-   * cluster with ra3 nodes, it isn't required that you change the port to these
-   * ranges.)</p> </li> <li> <p>For clusters with dc2 nodes - Select a port within
-   * the range <code>1150-65535</code>.</p> </li> </ul>
+   * </p> <ul> <li> <p>For clusters with RG or RA3 nodes - Select a port within the
+   * ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an
+   * existing cluster with RG or RA3 nodes, it isn't required that you change the
+   * port to these ranges.)</p> </li> <li> <p>For clusters with dc2 nodes - Select a
+   * port within the range <code>1150-65535</code>.</p> </li> </ul>
    */
   inline int GetPort() const { return m_port; }
   inline bool PortHasBeenSet() const { return m_portHasBeenSet; }

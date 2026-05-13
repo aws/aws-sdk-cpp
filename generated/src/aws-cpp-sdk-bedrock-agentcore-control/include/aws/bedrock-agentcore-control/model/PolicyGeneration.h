@@ -190,6 +190,24 @@ class PolicyGeneration {
 
   ///@{
   /**
+   * <p>Findings and insights from this policy generation process.</p>
+   */
+  inline const Aws::String& GetFindings() const { return m_findings; }
+  inline bool FindingsHasBeenSet() const { return m_findingsHasBeenSet; }
+  template <typename FindingsT = Aws::String>
+  void SetFindings(FindingsT&& value) {
+    m_findingsHasBeenSet = true;
+    m_findings = std::forward<FindingsT>(value);
+  }
+  template <typename FindingsT = Aws::String>
+  PolicyGeneration& WithFindings(FindingsT&& value) {
+    SetFindings(std::forward<FindingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Additional information about the generation status.</p>
    */
   inline const Aws::Vector<Aws::String>& GetStatusReasons() const { return m_statusReasons; }
@@ -211,24 +229,6 @@ class PolicyGeneration {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Findings and insights from this policy generation process.</p>
-   */
-  inline const Aws::String& GetFindings() const { return m_findings; }
-  inline bool FindingsHasBeenSet() const { return m_findingsHasBeenSet; }
-  template <typename FindingsT = Aws::String>
-  void SetFindings(FindingsT&& value) {
-    m_findingsHasBeenSet = true;
-    m_findings = std::forward<FindingsT>(value);
-  }
-  template <typename FindingsT = Aws::String>
-  PolicyGeneration& WithFindings(FindingsT&& value) {
-    SetFindings(std::forward<FindingsT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_policyEngineId;
 
@@ -246,9 +246,9 @@ class PolicyGeneration {
 
   PolicyGenerationStatus m_status{PolicyGenerationStatus::NOT_SET};
 
-  Aws::Vector<Aws::String> m_statusReasons;
-
   Aws::String m_findings;
+
+  Aws::Vector<Aws::String> m_statusReasons;
   bool m_policyEngineIdHasBeenSet = false;
   bool m_policyGenerationIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -257,8 +257,8 @@ class PolicyGeneration {
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
-  bool m_statusReasonsHasBeenSet = false;
   bool m_findingsHasBeenSet = false;
+  bool m_statusReasonsHasBeenSet = false;
 };
 
 }  // namespace Model

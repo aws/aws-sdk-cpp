@@ -89,43 +89,6 @@ class CreatePolicyResult {
 
   ///@{
   /**
-   * <p>The Cedar policy statement that was created. This is the validated policy
-   * definition that will be used for agent behavior control and access
-   * decisions.</p>
-   */
-  inline const PolicyDefinition& GetDefinition() const { return m_definition; }
-  template <typename DefinitionT = PolicyDefinition>
-  void SetDefinition(DefinitionT&& value) {
-    m_definitionHasBeenSet = true;
-    m_definition = std::forward<DefinitionT>(value);
-  }
-  template <typename DefinitionT = PolicyDefinition>
-  CreatePolicyResult& WithDefinition(DefinitionT&& value) {
-    SetDefinition(std::forward<DefinitionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The human-readable description of the policy's purpose and functionality.
-   * This helps administrators understand and manage the policy.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  CreatePolicyResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The timestamp when the policy was created. This is automatically set by the
    * service and used for auditing and lifecycle management.</p>
    */
@@ -197,6 +160,43 @@ class CreatePolicyResult {
 
   ///@{
   /**
+   * <p>The Cedar policy statement that was created. This is the validated policy
+   * definition that will be used for agent behavior control and access
+   * decisions.</p>
+   */
+  inline const PolicyDefinition& GetDefinition() const { return m_definition; }
+  template <typename DefinitionT = PolicyDefinition>
+  void SetDefinition(DefinitionT&& value) {
+    m_definitionHasBeenSet = true;
+    m_definition = std::forward<DefinitionT>(value);
+  }
+  template <typename DefinitionT = PolicyDefinition>
+  CreatePolicyResult& WithDefinition(DefinitionT&& value) {
+    SetDefinition(std::forward<DefinitionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The human-readable description of the policy's purpose and functionality.
+   * This helps administrators understand and manage the policy.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreatePolicyResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Additional information about the policy status. This provides details about
    * any failures or the current state of the policy creation process.</p>
    */
@@ -242,10 +242,6 @@ class CreatePolicyResult {
 
   Aws::String m_policyEngineId;
 
-  PolicyDefinition m_definition;
-
-  Aws::String m_description;
-
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -254,6 +250,10 @@ class CreatePolicyResult {
 
   PolicyStatus m_status{PolicyStatus::NOT_SET};
 
+  PolicyDefinition m_definition;
+
+  Aws::String m_description;
+
   Aws::Vector<Aws::String> m_statusReasons;
 
   Aws::String m_requestId;
@@ -261,12 +261,12 @@ class CreatePolicyResult {
   bool m_policyIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_policyEngineIdHasBeenSet = false;
-  bool m_definitionHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_policyArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_statusReasonsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

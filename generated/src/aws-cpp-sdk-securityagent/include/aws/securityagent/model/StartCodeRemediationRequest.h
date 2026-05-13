@@ -52,7 +52,8 @@ class StartCodeRemediationRequest : public SecurityAgentRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the pentest job that produced the findings.</p>
+   * <p>The unique identifier of the pentest job that produced the findings. Mutually
+   * exclusive with <code>codeReviewJobId</code>.</p>
    */
   inline const Aws::String& GetPentestJobId() const { return m_pentestJobId; }
   inline bool PentestJobIdHasBeenSet() const { return m_pentestJobIdHasBeenSet; }
@@ -64,6 +65,25 @@ class StartCodeRemediationRequest : public SecurityAgentRequest {
   template <typename PentestJobIdT = Aws::String>
   StartCodeRemediationRequest& WithPentestJobId(PentestJobIdT&& value) {
     SetPentestJobId(std::forward<PentestJobIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the code review job that produced the findings.
+   * Mutually exclusive with <code>pentestJobId</code>.</p>
+   */
+  inline const Aws::String& GetCodeReviewJobId() const { return m_codeReviewJobId; }
+  inline bool CodeReviewJobIdHasBeenSet() const { return m_codeReviewJobIdHasBeenSet; }
+  template <typename CodeReviewJobIdT = Aws::String>
+  void SetCodeReviewJobId(CodeReviewJobIdT&& value) {
+    m_codeReviewJobIdHasBeenSet = true;
+    m_codeReviewJobId = std::forward<CodeReviewJobIdT>(value);
+  }
+  template <typename CodeReviewJobIdT = Aws::String>
+  StartCodeRemediationRequest& WithCodeReviewJobId(CodeReviewJobIdT&& value) {
+    SetCodeReviewJobId(std::forward<CodeReviewJobIdT>(value));
     return *this;
   }
   ///@}
@@ -96,9 +116,12 @@ class StartCodeRemediationRequest : public SecurityAgentRequest {
 
   Aws::String m_pentestJobId;
 
+  Aws::String m_codeReviewJobId;
+
   Aws::Vector<Aws::String> m_findingIds;
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_pentestJobIdHasBeenSet = false;
+  bool m_codeReviewJobIdHasBeenSet = false;
   bool m_findingIdsHasBeenSet = false;
 };
 

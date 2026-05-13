@@ -30,14 +30,6 @@ Policy& Policy::operator=(JsonView jsonValue) {
     m_policyEngineId = jsonValue.GetString("policyEngineId");
     m_policyEngineIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("definition")) {
-    m_definition = jsonValue.GetObject("definition");
-    m_definitionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -53,6 +45,14 @@ Policy& Policy::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("status")) {
     m_status = PolicyStatusMapper::GetPolicyStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("definition")) {
+    m_definition = jsonValue.GetObject("definition");
+    m_definitionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("statusReasons")) {
     Aws::Utils::Array<JsonView> statusReasonsJsonList = jsonValue.GetArray("statusReasons");
@@ -79,14 +79,6 @@ JsonValue Policy::Jsonize() const {
     payload.WithString("policyEngineId", m_policyEngineId);
   }
 
-  if (m_definitionHasBeenSet) {
-    payload.WithObject("definition", m_definition.Jsonize());
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
-
   if (m_createdAtHasBeenSet) {
     payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
@@ -101,6 +93,14 @@ JsonValue Policy::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", PolicyStatusMapper::GetNameForPolicyStatus(m_status));
+  }
+
+  if (m_definitionHasBeenSet) {
+    payload.WithObject("definition", m_definition.Jsonize());
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   if (m_statusReasonsHasBeenSet) {

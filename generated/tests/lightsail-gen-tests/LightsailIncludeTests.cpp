@@ -428,6 +428,7 @@
 #include <aws/lightsail/model/OperationStatus.h>
 #include <aws/lightsail/model/OperationType.h>
 #include <aws/lightsail/model/Origin.h>
+#include <aws/lightsail/model/OriginIpAddressTypeEnum.h>
 #include <aws/lightsail/model/OriginProtocolPolicyEnum.h>
 #include <aws/lightsail/model/PasswordData.h>
 #include <aws/lightsail/model/PeerVpcRequest.h>

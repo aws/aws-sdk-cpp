@@ -134,6 +134,26 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
     m_flow = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Flow"));
     m_flowHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Apps")) {
+    m_apps = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Apps"));
+    m_appsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateApps")) {
+    m_createAndUpdateApps = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateApps"));
+    m_createAndUpdateAppsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareApps")) {
+    m_shareApps = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareApps"));
+    m_shareAppsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("InvokeAppsAIInference")) {
+    m_invokeAppsAIInference = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("InvokeAppsAIInference"));
+    m_invokeAppsAIInferenceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AccessAppsNativeDataStore")) {
+    m_accessAppsNativeDataStore = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("AccessAppsNativeDataStore"));
+    m_accessAppsNativeDataStoreHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("PublishWithoutApproval")) {
     m_publishWithoutApproval = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("PublishWithoutApproval"));
     m_publishWithoutApprovalHasBeenSet = true;
@@ -1072,6 +1092,26 @@ JsonValue Capabilities::Jsonize() const {
 
   if (m_flowHasBeenSet) {
     payload.WithString("Flow", CapabilityStateMapper::GetNameForCapabilityState(m_flow));
+  }
+
+  if (m_appsHasBeenSet) {
+    payload.WithString("Apps", CapabilityStateMapper::GetNameForCapabilityState(m_apps));
+  }
+
+  if (m_createAndUpdateAppsHasBeenSet) {
+    payload.WithString("CreateAndUpdateApps", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateApps));
+  }
+
+  if (m_shareAppsHasBeenSet) {
+    payload.WithString("ShareApps", CapabilityStateMapper::GetNameForCapabilityState(m_shareApps));
+  }
+
+  if (m_invokeAppsAIInferenceHasBeenSet) {
+    payload.WithString("InvokeAppsAIInference", CapabilityStateMapper::GetNameForCapabilityState(m_invokeAppsAIInference));
+  }
+
+  if (m_accessAppsNativeDataStoreHasBeenSet) {
+    payload.WithString("AccessAppsNativeDataStore", CapabilityStateMapper::GetNameForCapabilityState(m_accessAppsNativeDataStore));
   }
 
   if (m_publishWithoutApprovalHasBeenSet) {

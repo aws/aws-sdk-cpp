@@ -1991,6 +1991,39 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Retrieves a metadata-only summary of a specific policy engine without
+   * decrypting customer content. This lightweight read operation returns resource
+   * identifiers, status, timestamps, and the encryption key ARN, but does not
+   * include the description or status reasons. Because this operation does not
+   * require access to the customer's KMS key, it is suitable for resource discovery,
+   * inventory, and integration scenarios where only metadata is
+   * needed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicyEngineSummary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPolicyEngineSummaryOutcome GetPolicyEngineSummary(const Model::GetPolicyEngineSummaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPolicyEngineSummary that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetPolicyEngineSummaryRequestT = Model::GetPolicyEngineSummaryRequest>
+  Model::GetPolicyEngineSummaryOutcomeCallable GetPolicyEngineSummaryCallable(const GetPolicyEngineSummaryRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetPolicyEngineSummary, request);
+  }
+
+  /**
+   * An Async wrapper for GetPolicyEngineSummary that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetPolicyEngineSummaryRequestT = Model::GetPolicyEngineSummaryRequest>
+  void GetPolicyEngineSummaryAsync(const GetPolicyEngineSummaryRequestT& request,
+                                   const GetPolicyEngineSummaryResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetPolicyEngineSummary, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves information about a policy generation request within the AgentCore
    * Policy system. Policy generation converts natural language descriptions into
    * Cedar policy statements using AI-powered translation, enabling non-technical
@@ -2017,6 +2050,72 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void GetPolicyGenerationAsync(const GetPolicyGenerationRequestT& request, const GetPolicyGenerationResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::GetPolicyGeneration, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a metadata-only summary of a specific policy generation request
+   * without decrypting customer content. This lightweight read operation returns
+   * resource identifiers, status, timestamps, and findings, but does not include
+   * status reasons. Because this operation does not require access to the customer's
+   * KMS key, it is suitable for resource discovery, inventory, and integration
+   * scenarios where only metadata is needed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicyGenerationSummary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPolicyGenerationSummaryOutcome GetPolicyGenerationSummary(
+      const Model::GetPolicyGenerationSummaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPolicyGenerationSummary that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetPolicyGenerationSummaryRequestT = Model::GetPolicyGenerationSummaryRequest>
+  Model::GetPolicyGenerationSummaryOutcomeCallable GetPolicyGenerationSummaryCallable(
+      const GetPolicyGenerationSummaryRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetPolicyGenerationSummary, request);
+  }
+
+  /**
+   * An Async wrapper for GetPolicyGenerationSummary that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetPolicyGenerationSummaryRequestT = Model::GetPolicyGenerationSummaryRequest>
+  void GetPolicyGenerationSummaryAsync(const GetPolicyGenerationSummaryRequestT& request,
+                                       const GetPolicyGenerationSummaryResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetPolicyGenerationSummary, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a metadata-only summary of a specific policy without decrypting
+   * customer content. This lightweight read operation returns resource identifiers,
+   * status, and timestamps, but does not include the policy definition, description,
+   * or status reasons. Because this operation does not require access to the
+   * customer's KMS key, it is suitable for resource discovery, inventory, and
+   * integration scenarios where only metadata is needed.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicySummary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPolicySummaryOutcome GetPolicySummary(const Model::GetPolicySummaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPolicySummary that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetPolicySummaryRequestT = Model::GetPolicySummaryRequest>
+  Model::GetPolicySummaryOutcomeCallable GetPolicySummaryCallable(const GetPolicySummaryRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetPolicySummary, request);
+  }
+
+  /**
+   * An Async wrapper for GetPolicySummary that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetPolicySummaryRequestT = Model::GetPolicySummaryRequest>
+  void GetPolicySummaryAsync(const GetPolicySummaryRequestT& request, const GetPolicySummaryResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetPolicySummary, request, handler, context);
   }
 
   /**
@@ -2739,6 +2838,41 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Retrieves a paginated list of metadata-only policy engine summaries without
+   * decrypting customer content. This lightweight read operation returns resource
+   * identifiers, status, and timestamps for each policy engine, but does not include
+   * descriptions or status reasons. Because this operation does not require access
+   * to the customer's KMS key, it is suitable for resource discovery, inventory, and
+   * integration scenarios where only metadata is needed.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyEngineSummaries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPolicyEngineSummariesOutcome ListPolicyEngineSummaries(
+      const Model::ListPolicyEngineSummariesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListPolicyEngineSummaries that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPolicyEngineSummariesRequestT = Model::ListPolicyEngineSummariesRequest>
+  Model::ListPolicyEngineSummariesOutcomeCallable ListPolicyEngineSummariesCallable(
+      const ListPolicyEngineSummariesRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListPolicyEngineSummaries, request);
+  }
+
+  /**
+   * An Async wrapper for ListPolicyEngineSummaries that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListPolicyEngineSummariesRequestT = Model::ListPolicyEngineSummariesRequest>
+  void ListPolicyEngineSummariesAsync(const ListPolicyEngineSummariesResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                      const ListPolicyEngineSummariesRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListPolicyEngineSummaries, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves a list of policy engines within the AgentCore Policy system. This
    * operation supports pagination to help administrators discover and manage policy
    * engines across their account. Each policy engine serves as a container for
@@ -2802,6 +2936,41 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Retrieves a paginated list of metadata-only policy generation summaries
+   * within a policy engine without decrypting customer content. This lightweight
+   * read operation returns resource identifiers, status, timestamps, and findings
+   * for each policy generation, but does not include status reasons. Because this
+   * operation does not require access to the customer's KMS key, it is suitable for
+   * resource discovery, inventory, and integration scenarios where only metadata is
+   * needed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyGenerationSummaries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPolicyGenerationSummariesOutcome ListPolicyGenerationSummaries(
+      const Model::ListPolicyGenerationSummariesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListPolicyGenerationSummaries that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListPolicyGenerationSummariesRequestT = Model::ListPolicyGenerationSummariesRequest>
+  Model::ListPolicyGenerationSummariesOutcomeCallable ListPolicyGenerationSummariesCallable(
+      const ListPolicyGenerationSummariesRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListPolicyGenerationSummaries, request);
+  }
+
+  /**
+   * An Async wrapper for ListPolicyGenerationSummaries that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListPolicyGenerationSummariesRequestT = Model::ListPolicyGenerationSummariesRequest>
+  void ListPolicyGenerationSummariesAsync(const ListPolicyGenerationSummariesRequestT& request,
+                                          const ListPolicyGenerationSummariesResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListPolicyGenerationSummaries, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves a list of policy generation requests within the AgentCore Policy
    * system. This operation supports pagination and filtering to help track and
    * manage AI-powered policy generation operations.</p><p><h3>See Also:</h3>   <a
@@ -2830,8 +2999,41 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Retrieves a paginated list of metadata-only policy summaries within a policy
+   * engine without decrypting customer content. This lightweight read operation
+   * returns resource identifiers, status, and timestamps for each policy, but does
+   * not include policy definitions, descriptions, or status reasons. Because this
+   * operation does not require access to the customer's KMS key, it is suitable for
+   * resource discovery, inventory, and integration scenarios where only metadata is
+   * needed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicySummaries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPolicySummariesOutcome ListPolicySummaries(const Model::ListPolicySummariesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListPolicySummaries that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPolicySummariesRequestT = Model::ListPolicySummariesRequest>
+  Model::ListPolicySummariesOutcomeCallable ListPolicySummariesCallable(const ListPolicySummariesRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListPolicySummaries, request);
+  }
+
+  /**
+   * An Async wrapper for ListPolicySummaries that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListPolicySummariesRequestT = Model::ListPolicySummariesRequest>
+  void ListPolicySummariesAsync(const ListPolicySummariesRequestT& request, const ListPolicySummariesResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListPolicySummaries, request, handler, context);
+  }
+
+  /**
    * <p>Lists all registries in the account. You can optionally filter results by
-   * status using the <code>status</code> parameter.</p><p><h3>See Also:</h3>   <a
+   * status using the <code>status</code> parameter, or by authorizer type using the
+   * <code>authorizerType</code> parameter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListRegistries">AWS
    * API Reference</a></p>
    */

@@ -127,7 +127,7 @@ class RestoreFromClusterSnapshotRequest : public RedshiftRequest {
    * <p>The port number on which the cluster accepts connections.</p> <p>Default: The
    * same port as the original cluster.</p> <p>Valid values: For clusters with DC2
    * nodes, must be within the range <code>1150</code>-<code>65535</code>. For
-   * clusters with ra3 nodes, must be within the ranges
+   * clusters with RG or RA3 nodes, must be within the ranges
    * <code>5431</code>-<code>5455</code> or <code>8191</code>-<code>8215</code>.</p>
    */
   inline int GetPort() const { return m_port; }
@@ -403,7 +403,7 @@ class RestoreFromClusterSnapshotRequest : public RedshiftRequest {
    * automated snapshots are disabled. Even if automated snapshots are disabled, you
    * can still create manual snapshots when you want with
    * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
-   * RA3 node types. Set the automated retention period from 1-35 days.</p>
+   * RG or RA3 node types. Set the automated retention period from 1-35 days.</p>
    * <p>Default: The value selected for the cluster from which the snapshot was
    * taken.</p> <p>Constraints: Must be a value from 0 to 35.</p>
    */

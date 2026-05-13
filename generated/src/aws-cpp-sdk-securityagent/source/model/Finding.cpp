@@ -34,6 +34,14 @@ Finding& Finding::operator=(JsonView jsonValue) {
     m_pentestJobId = jsonValue.GetString("pentestJobId");
     m_pentestJobIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("codeReviewId")) {
+    m_codeReviewId = jsonValue.GetString("codeReviewId");
+    m_codeReviewIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("codeReviewJobId")) {
+    m_codeReviewJobId = jsonValue.GetString("codeReviewJobId");
+    m_codeReviewJobIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("taskId")) {
     m_taskId = jsonValue.GetString("taskId");
     m_taskIdHasBeenSet = true;
@@ -82,6 +90,13 @@ Finding& Finding::operator=(JsonView jsonValue) {
     m_lastUpdatedBy = jsonValue.GetString("lastUpdatedBy");
     m_lastUpdatedByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("codeLocations")) {
+    Aws::Utils::Array<JsonView> codeLocationsJsonList = jsonValue.GetArray("codeLocations");
+    for (unsigned codeLocationsIndex = 0; codeLocationsIndex < codeLocationsJsonList.GetLength(); ++codeLocationsIndex) {
+      m_codeLocations.push_back(codeLocationsJsonList[codeLocationsIndex].AsObject());
+    }
+    m_codeLocationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -110,6 +125,14 @@ JsonValue Finding::Jsonize() const {
 
   if (m_pentestJobIdHasBeenSet) {
     payload.WithString("pentestJobId", m_pentestJobId);
+  }
+
+  if (m_codeReviewIdHasBeenSet) {
+    payload.WithString("codeReviewId", m_codeReviewId);
+  }
+
+  if (m_codeReviewJobIdHasBeenSet) {
+    payload.WithString("codeReviewJobId", m_codeReviewJobId);
   }
 
   if (m_taskIdHasBeenSet) {
@@ -158,6 +181,14 @@ JsonValue Finding::Jsonize() const {
 
   if (m_lastUpdatedByHasBeenSet) {
     payload.WithString("lastUpdatedBy", m_lastUpdatedBy);
+  }
+
+  if (m_codeLocationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> codeLocationsJsonList(m_codeLocations.size());
+    for (unsigned codeLocationsIndex = 0; codeLocationsIndex < codeLocationsJsonList.GetLength(); ++codeLocationsIndex) {
+      codeLocationsJsonList[codeLocationsIndex].AsObject(m_codeLocations[codeLocationsIndex].Jsonize());
+    }
+    payload.WithArray("codeLocations", std::move(codeLocationsJsonList));
   }
 
   if (m_createdAtHasBeenSet) {

@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ManagedConfiguration.h>
 #include <aws/sagemaker/model/ModelPackageGroupStatus.h>
 #include <aws/sagemaker/model/UserContext.h>
 
@@ -129,6 +130,23 @@ class DescribeModelPackageGroupResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The managed configuration of the model package group.</p>
+   */
+  inline const ManagedConfiguration& GetManagedConfiguration() const { return m_managedConfiguration; }
+  template <typename ManagedConfigurationT = ManagedConfiguration>
+  void SetManagedConfiguration(ManagedConfigurationT&& value) {
+    m_managedConfigurationHasBeenSet = true;
+    m_managedConfiguration = std::forward<ManagedConfigurationT>(value);
+  }
+  template <typename ManagedConfigurationT = ManagedConfiguration>
+  DescribeModelPackageGroupResult& WithManagedConfiguration(ManagedConfigurationT&& value) {
+    SetManagedConfiguration(std::forward<ManagedConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -157,6 +175,8 @@ class DescribeModelPackageGroupResult {
 
   ModelPackageGroupStatus m_modelPackageGroupStatus{ModelPackageGroupStatus::NOT_SET};
 
+  ManagedConfiguration m_managedConfiguration;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelPackageGroupNameHasBeenSet = false;
@@ -165,6 +185,7 @@ class DescribeModelPackageGroupResult {
   bool m_creationTimeHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_modelPackageGroupStatusHasBeenSet = false;
+  bool m_managedConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -79,12 +79,53 @@ class VpcConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> <p>This field applies only to Agent Runtimes. It is not applicable to
+   * Browsers or Code Interpreters.</p>  <p>Controls whether a service-managed
+   * Amazon S3 gateway endpoint is provisioned in the VPC network topology for the
+   * agent runtime. This gateway is used by Amazon Bedrock AgentCore Runtime to
+   * download code and container images during agent startup.</p> <p>Starting May 5,
+   * 2026, Amazon Bedrock AgentCore Runtime is gradually rolling out a change to how
+   * network isolation is configured for VPC mode agents. Agent runtimes created on
+   * or after this rollout will no longer include the service-managed Amazon S3
+   * gateway. Instead, all network access, including to Amazon S3, is governed
+   * exclusively by your VPC configuration. This field cannot be set on agent
+   * runtimes created after the rollout. Passing this field in an
+   * <code>UpdateAgentRuntime</code> request for these agent runtimes returns a
+   * <code>ValidationException</code>.</p> <p>Agent runtimes created before the
+   * rollout are not affected and continue to operate with the service-managed Amazon
+   * S3 gateway. To enforce full VPC network isolation on these existing agent
+   * runtimes, set this field to <code>false</code> via the
+   * <code>UpdateAgentRuntime</code> API. Before opting out, ensure your VPC provides
+   * the Amazon S3 access required for agent startup. If this field is not specified
+   * or is set to <code>true</code>, the service-managed Amazon S3 gateway remains
+   * provisioned.</p> <p>This field is only supported in the
+   * <code>UpdateAgentRuntime</code> API for pre-rollout agent runtimes. Passing this
+   * field in a <code>CreateAgentRuntime</code> request returns a
+   * <code>ValidationException</code>.</p></p>
+   */
+  inline bool GetRequireServiceS3Endpoint() const { return m_requireServiceS3Endpoint; }
+  inline bool RequireServiceS3EndpointHasBeenSet() const { return m_requireServiceS3EndpointHasBeenSet; }
+  inline void SetRequireServiceS3Endpoint(bool value) {
+    m_requireServiceS3EndpointHasBeenSet = true;
+    m_requireServiceS3Endpoint = value;
+  }
+  inline VpcConfig& WithRequireServiceS3Endpoint(bool value) {
+    SetRequireServiceS3Endpoint(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_securityGroups;
 
   Aws::Vector<Aws::String> m_subnets;
+
+  bool m_requireServiceS3Endpoint{false};
   bool m_securityGroupsHasBeenSet = false;
   bool m_subnetsHasBeenSet = false;
+  bool m_requireServiceS3EndpointHasBeenSet = false;
 };
 
 }  // namespace Model

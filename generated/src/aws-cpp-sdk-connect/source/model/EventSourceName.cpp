@@ -28,6 +28,10 @@ static const int OnMetricDataUpdate_HASH = HashingUtils::HashString("OnMetricDat
 static const int OnCaseCreate_HASH = HashingUtils::HashString("OnCaseCreate");
 static const int OnCaseUpdate_HASH = HashingUtils::HashString("OnCaseUpdate");
 static const int OnSlaBreach_HASH = HashingUtils::HashString("OnSlaBreach");
+static const int OnAlertUpdate_HASH = HashingUtils::HashString("OnAlertUpdate");
+static const int OnSchedulePublish_HASH = HashingUtils::HashString("OnSchedulePublish");
+static const int OnScheduleUpdate_HASH = HashingUtils::HashString("OnScheduleUpdate");
+static const int OnScheduleTimeOffRequestActivity_HASH = HashingUtils::HashString("OnScheduleTimeOffRequestActivity");
 
 EventSourceName GetEventSourceNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -57,6 +61,14 @@ EventSourceName GetEventSourceNameForName(const Aws::String& name) {
     return EventSourceName::OnCaseUpdate;
   } else if (hashCode == OnSlaBreach_HASH) {
     return EventSourceName::OnSlaBreach;
+  } else if (hashCode == OnAlertUpdate_HASH) {
+    return EventSourceName::OnAlertUpdate;
+  } else if (hashCode == OnSchedulePublish_HASH) {
+    return EventSourceName::OnSchedulePublish;
+  } else if (hashCode == OnScheduleUpdate_HASH) {
+    return EventSourceName::OnScheduleUpdate;
+  } else if (hashCode == OnScheduleTimeOffRequestActivity_HASH) {
+    return EventSourceName::OnScheduleTimeOffRequestActivity;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -97,6 +109,14 @@ Aws::String GetNameForEventSourceName(EventSourceName enumValue) {
       return "OnCaseUpdate";
     case EventSourceName::OnSlaBreach:
       return "OnSlaBreach";
+    case EventSourceName::OnAlertUpdate:
+      return "OnAlertUpdate";
+    case EventSourceName::OnSchedulePublish:
+      return "OnSchedulePublish";
+    case EventSourceName::OnScheduleUpdate:
+      return "OnScheduleUpdate";
+    case EventSourceName::OnScheduleTimeOffRequestActivity:
+      return "OnScheduleTimeOffRequestActivity";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

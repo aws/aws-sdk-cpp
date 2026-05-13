@@ -30,4 +30,16 @@ void GetWhatsAppMessageTemplateRequest::AddQueryStringParameters(URI& uri) const
     uri.AddQueryStringParameter("id", ss.str());
     ss.str("");
   }
+
+  if (m_templateNameHasBeenSet) {
+    ss << m_templateName;
+    uri.AddQueryStringParameter("templateName", ss.str());
+    ss.str("");
+  }
+
+  if (m_templateLanguageCodeHasBeenSet) {
+    ss << m_templateLanguageCode;
+    uri.AddQueryStringParameter("templateLanguageCode", ss.str());
+    ss.str("");
+  }
 }

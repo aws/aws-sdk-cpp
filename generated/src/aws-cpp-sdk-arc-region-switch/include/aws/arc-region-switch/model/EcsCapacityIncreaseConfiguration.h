@@ -95,7 +95,8 @@ class EcsCapacityIncreaseConfiguration {
 
   ///@{
   /**
-   * <p>The target percentage specified for the configuration.</p>
+   * <p>The target percentage specified for the configuration. The default is
+   * 100.</p>
    */
   inline int GetTargetPercent() const { return m_targetPercent; }
   inline bool TargetPercentHasBeenSet() const { return m_targetPercentHasBeenSet; }

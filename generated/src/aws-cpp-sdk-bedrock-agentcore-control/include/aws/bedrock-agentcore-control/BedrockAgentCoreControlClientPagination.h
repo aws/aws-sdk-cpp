@@ -26,9 +26,12 @@
 #include <aws/bedrock-agentcore-control/model/ListPaymentCredentialProvidersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPaymentManagersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPoliciesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicyEngineSummariesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicyGenerationSummariesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicySummariesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListRegistriesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListRegistryRecordsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesPaginationTraits.h>
@@ -98,12 +101,21 @@ using ListPoliciesPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCore
 using ListPolicyEnginesPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListPolicyEnginesRequest,
                                       Pagination::ListPolicyEnginesPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListPolicyEngineSummariesPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListPolicyEngineSummariesRequest,
+                                      Pagination::ListPolicyEngineSummariesPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListPolicyGenerationAssetsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListPolicyGenerationAssetsRequest,
                                       Pagination::ListPolicyGenerationAssetsPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListPolicyGenerationsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListPolicyGenerationsRequest,
                                       Pagination::ListPolicyGenerationsPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListPolicyGenerationSummariesPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListPolicyGenerationSummariesRequest,
+                                      Pagination::ListPolicyGenerationSummariesPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListPolicySummariesPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListPolicySummariesRequest,
+                                      Pagination::ListPolicySummariesPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListRegistriesPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListRegistriesRequest,
                                       Pagination::ListRegistriesPaginationTraits<BedrockAgentCoreControlClient>>;

@@ -18,6 +18,7 @@ namespace PurchaseOptionMapper {
 static const int ONDEMAND_HASH = HashingUtils::HashString("ONDEMAND");
 static const int SPOT_HASH = HashingUtils::HashString("SPOT");
 static const int CAPACITY_BLOCK_HASH = HashingUtils::HashString("CAPACITY_BLOCK");
+static const int INTERRUPTIBLE_CAPACITY_RESERVATION_HASH = HashingUtils::HashString("INTERRUPTIBLE_CAPACITY_RESERVATION");
 
 PurchaseOption GetPurchaseOptionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ PurchaseOption GetPurchaseOptionForName(const Aws::String& name) {
     return PurchaseOption::SPOT;
   } else if (hashCode == CAPACITY_BLOCK_HASH) {
     return PurchaseOption::CAPACITY_BLOCK;
+  } else if (hashCode == INTERRUPTIBLE_CAPACITY_RESERVATION_HASH) {
+    return PurchaseOption::INTERRUPTIBLE_CAPACITY_RESERVATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForPurchaseOption(PurchaseOption enumValue) {
       return "SPOT";
     case PurchaseOption::CAPACITY_BLOCK:
       return "CAPACITY_BLOCK";
+    case PurchaseOption::INTERRUPTIBLE_CAPACITY_RESERVATION:
+      return "INTERRUPTIBLE_CAPACITY_RESERVATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

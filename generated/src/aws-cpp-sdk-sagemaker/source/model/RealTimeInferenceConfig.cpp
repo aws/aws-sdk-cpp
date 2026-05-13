@@ -19,7 +19,7 @@ RealTimeInferenceConfig::RealTimeInferenceConfig(JsonView jsonValue) { *this = j
 
 RealTimeInferenceConfig& RealTimeInferenceConfig::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("InstanceType")) {
-    m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(jsonValue.GetString("InstanceType"));
+    m_instanceType = ProductionVariantInstanceTypeMapper::GetProductionVariantInstanceTypeForName(jsonValue.GetString("InstanceType"));
     m_instanceTypeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("InstanceCount")) {
@@ -33,7 +33,7 @@ JsonValue RealTimeInferenceConfig::Jsonize() const {
   JsonValue payload;
 
   if (m_instanceTypeHasBeenSet) {
-    payload.WithString("InstanceType", InstanceTypeMapper::GetNameForInstanceType(m_instanceType));
+    payload.WithString("InstanceType", ProductionVariantInstanceTypeMapper::GetNameForProductionVariantInstanceType(m_instanceType));
   }
 
   if (m_instanceCountHasBeenSet) {

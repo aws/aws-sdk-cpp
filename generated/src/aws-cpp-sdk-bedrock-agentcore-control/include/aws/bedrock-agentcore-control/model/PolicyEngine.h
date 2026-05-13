@@ -87,26 +87,6 @@ class PolicyEngine {
 
   ///@{
   /**
-   * <p>A human-readable description of the policy engine's purpose and scope.
-   * Limited to 4,096 characters, this helps administrators understand the policy
-   * engine's role in the overall governance strategy.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  PolicyEngine& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The timestamp when the policy engine was originally created. This is
    * automatically set by the service and used for auditing and lifecycle
    * management.</p>
@@ -182,6 +162,45 @@ class PolicyEngine {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy
+   * engine data.</p>
+   */
+  inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
+  inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
+  template <typename EncryptionKeyArnT = Aws::String>
+  void SetEncryptionKeyArn(EncryptionKeyArnT&& value) {
+    m_encryptionKeyArnHasBeenSet = true;
+    m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value);
+  }
+  template <typename EncryptionKeyArnT = Aws::String>
+  PolicyEngine& WithEncryptionKeyArn(EncryptionKeyArnT&& value) {
+    SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A human-readable description of the policy engine's purpose and scope.
+   * Limited to 4,096 characters, this helps administrators understand the policy
+   * engine's role in the overall governance strategy.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  PolicyEngine& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Additional information about the policy engine status. This provides details
    * about any failures or the current state of the policy engine lifecycle.</p>
    */
@@ -204,31 +223,10 @@ class PolicyEngine {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy
-   * engine data.</p>
-   */
-  inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
-  inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
-  template <typename EncryptionKeyArnT = Aws::String>
-  void SetEncryptionKeyArn(EncryptionKeyArnT&& value) {
-    m_encryptionKeyArnHasBeenSet = true;
-    m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value);
-  }
-  template <typename EncryptionKeyArnT = Aws::String>
-  PolicyEngine& WithEncryptionKeyArn(EncryptionKeyArnT&& value) {
-    SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_policyEngineId;
 
   Aws::String m_name;
-
-  Aws::String m_description;
 
   Aws::Utils::DateTime m_createdAt{};
 
@@ -238,18 +236,20 @@ class PolicyEngine {
 
   PolicyEngineStatus m_status{PolicyEngineStatus::NOT_SET};
 
-  Aws::Vector<Aws::String> m_statusReasons;
-
   Aws::String m_encryptionKeyArn;
+
+  Aws::String m_description;
+
+  Aws::Vector<Aws::String> m_statusReasons;
   bool m_policyEngineIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_policyEngineArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
-  bool m_statusReasonsHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusReasonsHasBeenSet = false;
 };
 
 }  // namespace Model

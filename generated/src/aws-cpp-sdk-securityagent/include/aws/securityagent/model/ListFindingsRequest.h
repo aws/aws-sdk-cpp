@@ -71,6 +71,25 @@ class ListFindingsRequest : public SecurityAgentRequest {
 
   ///@{
   /**
+   * <p>The unique identifier of the code review job to list findings for. Mutually
+   * exclusive with pentestJobId.</p>
+   */
+  inline const Aws::String& GetCodeReviewJobId() const { return m_codeReviewJobId; }
+  inline bool CodeReviewJobIdHasBeenSet() const { return m_codeReviewJobIdHasBeenSet; }
+  template <typename CodeReviewJobIdT = Aws::String>
+  void SetCodeReviewJobId(CodeReviewJobIdT&& value) {
+    m_codeReviewJobIdHasBeenSet = true;
+    m_codeReviewJobId = std::forward<CodeReviewJobIdT>(value);
+  }
+  template <typename CodeReviewJobIdT = Aws::String>
+  ListFindingsRequest& WithCodeReviewJobId(CodeReviewJobIdT&& value) {
+    SetCodeReviewJobId(std::forward<CodeReviewJobIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique identifier of the agent space.</p>
    */
   inline const Aws::String& GetAgentSpaceId() const { return m_agentSpaceId; }
@@ -195,6 +214,8 @@ class ListFindingsRequest : public SecurityAgentRequest {
 
   Aws::String m_pentestJobId;
 
+  Aws::String m_codeReviewJobId;
+
   Aws::String m_agentSpaceId;
 
   Aws::String m_nextToken;
@@ -210,6 +231,7 @@ class ListFindingsRequest : public SecurityAgentRequest {
   Aws::String m_name;
   bool m_maxResultsHasBeenSet = false;
   bool m_pentestJobIdHasBeenSet = false;
+  bool m_codeReviewJobIdHasBeenSet = false;
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_riskTypeHasBeenSet = false;

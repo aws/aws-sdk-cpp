@@ -58,6 +58,9 @@
 #include <aws/opensearch/model/AutoTuneState.h>
 #include <aws/opensearch/model/AutoTuneStatus.h>
 #include <aws/opensearch/model/AutoTuneType.h>
+#include <aws/opensearch/model/AutomatedSnapshotPauseOptions.h>
+#include <aws/opensearch/model/AutomatedSnapshotPauseOptionsStatus.h>
+#include <aws/opensearch/model/AutomatedSnapshotPauseRequestOptions.h>
 #include <aws/opensearch/model/AvailabilityZoneInfo.h>
 #include <aws/opensearch/model/CancelDomainConfigChangeRequest.h>
 #include <aws/opensearch/model/CancelDomainConfigChangeResult.h>
@@ -312,6 +315,7 @@
 #include <aws/opensearch/model/PackageType.h>
 #include <aws/opensearch/model/PackageVendingOptions.h>
 #include <aws/opensearch/model/PackageVersionHistory.h>
+#include <aws/opensearch/model/PauseState.h>
 #include <aws/opensearch/model/PluginProperties.h>
 #include <aws/opensearch/model/PrincipalType.h>
 #include <aws/opensearch/model/PrometheusDirectQueryDataSource.h>

@@ -26,10 +26,6 @@ PolicyEngine& PolicyEngine::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -46,16 +42,20 @@ PolicyEngine& PolicyEngine::operator=(JsonView jsonValue) {
     m_status = PolicyEngineStatusMapper::GetPolicyEngineStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("encryptionKeyArn")) {
+    m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
+    m_encryptionKeyArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("statusReasons")) {
     Aws::Utils::Array<JsonView> statusReasonsJsonList = jsonValue.GetArray("statusReasons");
     for (unsigned statusReasonsIndex = 0; statusReasonsIndex < statusReasonsJsonList.GetLength(); ++statusReasonsIndex) {
       m_statusReasons.push_back(statusReasonsJsonList[statusReasonsIndex].AsString());
     }
     m_statusReasonsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("encryptionKeyArn")) {
-    m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
-    m_encryptionKeyArnHasBeenSet = true;
   }
   return *this;
 }
@@ -69,10 +69,6 @@ JsonValue PolicyEngine::Jsonize() const {
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
   }
 
   if (m_createdAtHasBeenSet) {
@@ -91,16 +87,20 @@ JsonValue PolicyEngine::Jsonize() const {
     payload.WithString("status", PolicyEngineStatusMapper::GetNameForPolicyEngineStatus(m_status));
   }
 
+  if (m_encryptionKeyArnHasBeenSet) {
+    payload.WithString("encryptionKeyArn", m_encryptionKeyArn);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
   if (m_statusReasonsHasBeenSet) {
     Aws::Utils::Array<JsonValue> statusReasonsJsonList(m_statusReasons.size());
     for (unsigned statusReasonsIndex = 0; statusReasonsIndex < statusReasonsJsonList.GetLength(); ++statusReasonsIndex) {
       statusReasonsJsonList[statusReasonsIndex].AsString(m_statusReasons[statusReasonsIndex]);
     }
     payload.WithArray("statusReasons", std::move(statusReasonsJsonList));
-  }
-
-  if (m_encryptionKeyArnHasBeenSet) {
-    payload.WithString("encryptionKeyArn", m_encryptionKeyArn);
   }
 
   return payload;

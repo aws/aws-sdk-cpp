@@ -246,6 +246,7 @@
 #include <aws/sagemaker/model/ClusterConfigMode.h>
 #include <aws/sagemaker/model/ClusterEbsVolumeConfig.h>
 #include <aws/sagemaker/model/ClusterEventDetail.h>
+#include <aws/sagemaker/model/ClusterEventLevel.h>
 #include <aws/sagemaker/model/ClusterEventResourceType.h>
 #include <aws/sagemaker/model/ClusterEventSummary.h>
 #include <aws/sagemaker/model/ClusterFsxLustreConfig.h>
@@ -807,6 +808,7 @@
 #include <aws/sagemaker/model/EventMetadata.h>
 #include <aws/sagemaker/model/EventSortBy.h>
 #include <aws/sagemaker/model/ExecutionRoleIdentityConfig.h>
+#include <aws/sagemaker/model/ExecutionRoleSessionNameMode.h>
 #include <aws/sagemaker/model/ExecutionStatus.h>
 #include <aws/sagemaker/model/Experiment.h>
 #include <aws/sagemaker/model/ExperimentConfig.h>
@@ -970,6 +972,7 @@
 #include <aws/sagemaker/model/InstancePlacementConfig.h>
 #include <aws/sagemaker/model/InstancePool.h>
 #include <aws/sagemaker/model/InstancePoolSummary.h>
+#include <aws/sagemaker/model/InstanceRequirementsEniConfiguration.h>
 #include <aws/sagemaker/model/InstanceType.h>
 #include <aws/sagemaker/model/IntegerParameterRange.h>
 #include <aws/sagemaker/model/IntegerParameterRangeSpecification.h>
@@ -1196,8 +1199,10 @@
 #include <aws/sagemaker/model/MIGProfileType.h>
 #include <aws/sagemaker/model/MLflowConfiguration.h>
 #include <aws/sagemaker/model/MaintenanceStatus.h>
+#include <aws/sagemaker/model/ManagedConfiguration.h>
 #include <aws/sagemaker/model/ManagedInstanceScalingScaleInStrategy.h>
 #include <aws/sagemaker/model/ManagedInstanceScalingStatus.h>
+#include <aws/sagemaker/model/ManagedStorageType.h>
 #include <aws/sagemaker/model/MemberDefinition.h>
 #include <aws/sagemaker/model/MetadataProperties.h>
 #include <aws/sagemaker/model/MetricData.h>

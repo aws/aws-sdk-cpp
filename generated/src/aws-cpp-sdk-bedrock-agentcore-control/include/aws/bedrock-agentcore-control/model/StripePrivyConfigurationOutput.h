@@ -21,7 +21,7 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>StripePrivy configuration output with secret ARNs</p><p><h3>See Also:</h3>
+ * <p>Stripe Privy configuration output with secret ARNs.</p><p><h3>See Also:</h3>
  * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/StripePrivyConfigurationOutput">AWS
  * API Reference</a></p>

@@ -169,11 +169,10 @@ class ComputeEnvironmentDetail {
    * within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
    * state continue to progress normally. Managed compute environments in the
    * <code>DISABLED</code> state don't scale out. </p>  <p>Compute environments
-   * in a <code>DISABLED</code> state may continue to incur billing charges. To
-   * prevent additional charges, turn off and then delete the compute environment.
-   * For more information, see <a
-   * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
-   * in the <i>Batch User Guide</i>.</p>  <p>When an instance is idle, the
+   * in a <code>DISABLED</code> state may continue to incur billing charges, for
+   * example, if they have running instances due to jobs that are still executing or
+   * a non-zero <code>minvCpus</code> setting. To prevent additional charges, disable
+   * and delete the compute environment.</p>  <p>When an instance is idle, the
    * instance scales down to the <code>minvCpus</code> value. However, the instance
    * size doesn't change. For example, consider a <code>c5.8xlarge</code> instance
    * with a <code>minvCpus</code> value of <code>4</code> and a

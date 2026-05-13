@@ -9,6 +9,9 @@
 #include <aws/securityagent/model/ListAgentSpacesPaginationTraits.h>
 #include <aws/securityagent/model/ListApplicationsPaginationTraits.h>
 #include <aws/securityagent/model/ListArtifactsPaginationTraits.h>
+#include <aws/securityagent/model/ListCodeReviewJobTasksPaginationTraits.h>
+#include <aws/securityagent/model/ListCodeReviewJobsForCodeReviewPaginationTraits.h>
+#include <aws/securityagent/model/ListCodeReviewsPaginationTraits.h>
 #include <aws/securityagent/model/ListDiscoveredEndpointsPaginationTraits.h>
 #include <aws/securityagent/model/ListFindingsPaginationTraits.h>
 #include <aws/securityagent/model/ListIntegratedResourcesPaginationTraits.h>
@@ -28,6 +31,14 @@ using ListApplicationsPaginator = Aws::Utils::Pagination::Paginator<SecurityAgen
                                                                     Pagination::ListApplicationsPaginationTraits<SecurityAgentClient>>;
 using ListArtifactsPaginator = Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListArtifactsRequest,
                                                                  Pagination::ListArtifactsPaginationTraits<SecurityAgentClient>>;
+using ListCodeReviewJobsForCodeReviewPaginator =
+    Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListCodeReviewJobsForCodeReviewRequest,
+                                      Pagination::ListCodeReviewJobsForCodeReviewPaginationTraits<SecurityAgentClient>>;
+using ListCodeReviewJobTasksPaginator =
+    Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListCodeReviewJobTasksRequest,
+                                      Pagination::ListCodeReviewJobTasksPaginationTraits<SecurityAgentClient>>;
+using ListCodeReviewsPaginator = Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListCodeReviewsRequest,
+                                                                   Pagination::ListCodeReviewsPaginationTraits<SecurityAgentClient>>;
 using ListDiscoveredEndpointsPaginator =
     Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListDiscoveredEndpointsRequest,
                                       Pagination::ListDiscoveredEndpointsPaginationTraits<SecurityAgentClient>>;

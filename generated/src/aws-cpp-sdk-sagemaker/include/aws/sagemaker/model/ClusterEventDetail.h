@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ClusterEventLevel.h>
 #include <aws/sagemaker/model/ClusterEventResourceType.h>
 #include <aws/sagemaker/model/EventDetails.h>
 
@@ -196,6 +197,23 @@ class ClusterEventDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The severity level of the event. Valid values are <code>Info</code>,
+   * <code>Warn</code>, and <code>Error</code>.</p>
+   */
+  inline ClusterEventLevel GetEventLevel() const { return m_eventLevel; }
+  inline bool EventLevelHasBeenSet() const { return m_eventLevelHasBeenSet; }
+  inline void SetEventLevel(ClusterEventLevel value) {
+    m_eventLevelHasBeenSet = true;
+    m_eventLevel = value;
+  }
+  inline ClusterEventDetail& WithEventLevel(ClusterEventLevel value) {
+    SetEventLevel(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_eventId;
 
@@ -214,6 +232,8 @@ class ClusterEventDetail {
   EventDetails m_eventDetails;
 
   Aws::String m_description;
+
+  ClusterEventLevel m_eventLevel{ClusterEventLevel::NOT_SET};
   bool m_eventIdHasBeenSet = false;
   bool m_clusterArnHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
@@ -223,6 +243,7 @@ class ClusterEventDetail {
   bool m_eventTimeHasBeenSet = false;
   bool m_eventDetailsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_eventLevelHasBeenSet = false;
 };
 
 }  // namespace Model

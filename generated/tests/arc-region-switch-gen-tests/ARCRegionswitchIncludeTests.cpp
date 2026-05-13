@@ -47,6 +47,8 @@
 #include <aws/arc-region-switch/model/EksResourceScalingConfiguration.h>
 #include <aws/arc-region-switch/model/EksResourceScalingUngraceful.h>
 #include <aws/arc-region-switch/model/EvaluationStatus.h>
+#include <aws/arc-region-switch/model/EventSourceMapping.h>
+#include <aws/arc-region-switch/model/EventSourceMappingAction.h>
 #include <aws/arc-region-switch/model/ExecutionAction.h>
 #include <aws/arc-region-switch/model/ExecutionApprovalConfiguration.h>
 #include <aws/arc-region-switch/model/ExecutionBlockConfiguration.h>
@@ -72,6 +74,9 @@
 #include <aws/arc-region-switch/model/GlobalAuroraUngracefulBehavior.h>
 #include <aws/arc-region-switch/model/KubernetesResourceType.h>
 #include <aws/arc-region-switch/model/KubernetesScalingResource.h>
+#include <aws/arc-region-switch/model/LambdaEventSourceMappingConfiguration.h>
+#include <aws/arc-region-switch/model/LambdaEventSourceMappingUngraceful.h>
+#include <aws/arc-region-switch/model/LambdaEventSourceMappingUngracefulBehavior.h>
 #include <aws/arc-region-switch/model/LambdaUngraceful.h>
 #include <aws/arc-region-switch/model/LambdaUngracefulBehavior.h>
 #include <aws/arc-region-switch/model/Lambdas.h>

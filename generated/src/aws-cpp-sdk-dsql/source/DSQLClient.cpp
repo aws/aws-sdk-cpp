@@ -21,12 +21,16 @@
 #include <aws/dsql/DSQLEndpointProvider.h>
 #include <aws/dsql/DSQLErrorMarshaller.h>
 #include <aws/dsql/model/CreateClusterRequest.h>
+#include <aws/dsql/model/CreateStreamRequest.h>
 #include <aws/dsql/model/DeleteClusterPolicyRequest.h>
 #include <aws/dsql/model/DeleteClusterRequest.h>
+#include <aws/dsql/model/DeleteStreamRequest.h>
 #include <aws/dsql/model/GetClusterPolicyRequest.h>
 #include <aws/dsql/model/GetClusterRequest.h>
+#include <aws/dsql/model/GetStreamRequest.h>
 #include <aws/dsql/model/GetVpcEndpointServiceNameRequest.h>
 #include <aws/dsql/model/ListClustersRequest.h>
+#include <aws/dsql/model/ListStreamsRequest.h>
 #include <aws/dsql/model/ListTagsForResourceRequest.h>
 #include <aws/dsql/model/PutClusterPolicyRequest.h>
 #include <aws/dsql/model/TagResourceRequest.h>
@@ -194,6 +198,23 @@ CreateClusterOutcome DSQLClient::CreateCluster(const CreateClusterRequest& reque
   return result.IsSuccess() ? CreateClusterOutcome(result.GetResultWithOwnership()) : CreateClusterOutcome(std::move(result.GetError()));
 }
 
+CreateStreamOutcome DSQLClient::CreateStream(const CreateStreamRequest& request) const {
+  if (!request.ClusterIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateStream", "Required field: ClusterIdentifier, is not set");
+    return CreateStreamOutcome(Aws::Client::AWSError<DSQLErrors>(DSQLErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                 "Missing required field [ClusterIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/stream/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStreamOutcome(result.GetResultWithOwnership()) : CreateStreamOutcome(std::move(result.GetError()));
+}
+
 DeleteClusterOutcome DSQLClient::DeleteCluster(const DeleteClusterRequest& request) const {
   if (!request.IdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteCluster", "Required field: Identifier, is not set");
@@ -228,6 +249,29 @@ DeleteClusterPolicyOutcome DSQLClient::DeleteClusterPolicy(const DeleteClusterPo
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteClusterPolicyOutcome(result.GetResultWithOwnership())
                             : DeleteClusterPolicyOutcome(std::move(result.GetError()));
+}
+
+DeleteStreamOutcome DSQLClient::DeleteStream(const DeleteStreamRequest& request) const {
+  if (!request.ClusterIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteStream", "Required field: ClusterIdentifier, is not set");
+    return DeleteStreamOutcome(Aws::Client::AWSError<DSQLErrors>(DSQLErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                 "Missing required field [ClusterIdentifier]", false));
+  }
+  if (!request.StreamIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteStream", "Required field: StreamIdentifier, is not set");
+    return DeleteStreamOutcome(Aws::Client::AWSError<DSQLErrors>(DSQLErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                 "Missing required field [StreamIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/stream/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStreamIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteStreamOutcome(result.GetResultWithOwnership()) : DeleteStreamOutcome(std::move(result.GetError()));
 }
 
 GetClusterOutcome DSQLClient::GetCluster(const GetClusterRequest& request) const {
@@ -266,6 +310,29 @@ GetClusterPolicyOutcome DSQLClient::GetClusterPolicy(const GetClusterPolicyReque
                             : GetClusterPolicyOutcome(std::move(result.GetError()));
 }
 
+GetStreamOutcome DSQLClient::GetStream(const GetStreamRequest& request) const {
+  if (!request.ClusterIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetStream", "Required field: ClusterIdentifier, is not set");
+    return GetStreamOutcome(Aws::Client::AWSError<DSQLErrors>(DSQLErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                              "Missing required field [ClusterIdentifier]", false));
+  }
+  if (!request.StreamIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetStream", "Required field: StreamIdentifier, is not set");
+    return GetStreamOutcome(Aws::Client::AWSError<DSQLErrors>(DSQLErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                              "Missing required field [StreamIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/stream/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStreamIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStreamOutcome(result.GetResultWithOwnership()) : GetStreamOutcome(std::move(result.GetError()));
+}
+
 GetVpcEndpointServiceNameOutcome DSQLClient::GetVpcEndpointServiceName(const GetVpcEndpointServiceNameRequest& request) const {
   if (!request.IdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetVpcEndpointServiceName", "Required field: Identifier, is not set");
@@ -293,6 +360,23 @@ ListClustersOutcome DSQLClient::ListClusters(const ListClustersRequest& request)
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListClustersOutcome(result.GetResultWithOwnership()) : ListClustersOutcome(std::move(result.GetError()));
+}
+
+ListStreamsOutcome DSQLClient::ListStreams(const ListStreamsRequest& request) const {
+  if (!request.ClusterIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListStreams", "Required field: ClusterIdentifier, is not set");
+    return ListStreamsOutcome(Aws::Client::AWSError<DSQLErrors>(DSQLErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                "Missing required field [ClusterIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/stream/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStreamsOutcome(result.GetResultWithOwnership()) : ListStreamsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome DSQLClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {

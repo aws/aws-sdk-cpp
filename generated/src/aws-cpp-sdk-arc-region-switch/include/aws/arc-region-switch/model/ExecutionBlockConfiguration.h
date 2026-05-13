@@ -13,6 +13,7 @@
 #include <aws/arc-region-switch/model/EksResourceScalingConfiguration.h>
 #include <aws/arc-region-switch/model/ExecutionApprovalConfiguration.h>
 #include <aws/arc-region-switch/model/GlobalAuroraConfiguration.h>
+#include <aws/arc-region-switch/model/LambdaEventSourceMappingConfiguration.h>
 #include <aws/arc-region-switch/model/RdsCreateCrossRegionReplicaConfiguration.h>
 #include <aws/arc-region-switch/model/RdsPromoteReadReplicaConfiguration.h>
 #include <aws/arc-region-switch/model/RegionSwitchPlanConfiguration.h>
@@ -280,6 +281,24 @@ class ExecutionBlockConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A Lambda event source mapping execution block.</p>
+   */
+  inline const LambdaEventSourceMappingConfiguration& GetLambdaEventSourceMappingConfig() const { return m_lambdaEventSourceMappingConfig; }
+  inline bool LambdaEventSourceMappingConfigHasBeenSet() const { return m_lambdaEventSourceMappingConfigHasBeenSet; }
+  template <typename LambdaEventSourceMappingConfigT = LambdaEventSourceMappingConfiguration>
+  void SetLambdaEventSourceMappingConfig(LambdaEventSourceMappingConfigT&& value) {
+    m_lambdaEventSourceMappingConfigHasBeenSet = true;
+    m_lambdaEventSourceMappingConfig = std::forward<LambdaEventSourceMappingConfigT>(value);
+  }
+  template <typename LambdaEventSourceMappingConfigT = LambdaEventSourceMappingConfiguration>
+  ExecutionBlockConfiguration& WithLambdaEventSourceMappingConfig(LambdaEventSourceMappingConfigT&& value) {
+    SetLambdaEventSourceMappingConfig(std::forward<LambdaEventSourceMappingConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CustomActionLambdaConfiguration m_customActionLambdaConfig;
 
@@ -306,6 +325,8 @@ class ExecutionBlockConfiguration {
   RdsPromoteReadReplicaConfiguration m_rdsPromoteReadReplicaConfig;
 
   RdsCreateCrossRegionReplicaConfiguration m_rdsCreateCrossRegionReadReplicaConfig;
+
+  LambdaEventSourceMappingConfiguration m_lambdaEventSourceMappingConfig;
   bool m_customActionLambdaConfigHasBeenSet = false;
   bool m_ec2AsgCapacityIncreaseConfigHasBeenSet = false;
   bool m_executionApprovalConfigHasBeenSet = false;
@@ -319,6 +340,7 @@ class ExecutionBlockConfiguration {
   bool m_documentDbConfigHasBeenSet = false;
   bool m_rdsPromoteReadReplicaConfigHasBeenSet = false;
   bool m_rdsCreateCrossRegionReadReplicaConfigHasBeenSet = false;
+  bool m_lambdaEventSourceMappingConfigHasBeenSet = false;
 };
 
 }  // namespace Model

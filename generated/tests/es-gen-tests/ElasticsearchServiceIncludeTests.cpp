@@ -39,6 +39,9 @@
 #include <aws/es/model/AutoTuneState.h>
 #include <aws/es/model/AutoTuneStatus.h>
 #include <aws/es/model/AutoTuneType.h>
+#include <aws/es/model/AutomatedSnapshotPauseOptions.h>
+#include <aws/es/model/AutomatedSnapshotPauseOptionsStatus.h>
+#include <aws/es/model/AutomatedSnapshotPauseRequestOptions.h>
 #include <aws/es/model/CancelDomainConfigChangeRequest.h>
 #include <aws/es/model/CancelDomainConfigChangeResult.h>
 #include <aws/es/model/CancelElasticsearchServiceSoftwareUpdateRequest.h>
@@ -177,6 +180,7 @@
 #include <aws/es/model/PackageStatus.h>
 #include <aws/es/model/PackageType.h>
 #include <aws/es/model/PackageVersionHistory.h>
+#include <aws/es/model/PauseState.h>
 #include <aws/es/model/PrincipalType.h>
 #include <aws/es/model/PropertyValueType.h>
 #include <aws/es/model/PurchaseReservedElasticsearchInstanceOfferingRequest.h>

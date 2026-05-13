@@ -10,6 +10,9 @@
 #include <aws/securityagent/model/ListAgentSpacesPaginationTraits.h>
 #include <aws/securityagent/model/ListApplicationsPaginationTraits.h>
 #include <aws/securityagent/model/ListArtifactsPaginationTraits.h>
+#include <aws/securityagent/model/ListCodeReviewJobTasksPaginationTraits.h>
+#include <aws/securityagent/model/ListCodeReviewJobsForCodeReviewPaginationTraits.h>
+#include <aws/securityagent/model/ListCodeReviewsPaginationTraits.h>
 #include <aws/securityagent/model/ListDiscoveredEndpointsPaginationTraits.h>
 #include <aws/securityagent/model/ListFindingsPaginationTraits.h>
 #include <aws/securityagent/model/ListIntegratedResourcesPaginationTraits.h>
@@ -61,6 +64,42 @@ class SecurityAgentPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListArtifactsRequest,
                                              Pagination::ListArtifactsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for ListCodeReviewJobsForCodeReview operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCodeReviewJobsForCodeReviewRequest,
+                                    Pagination::ListCodeReviewJobsForCodeReviewPaginationTraits<DerivedClient>>
+  ListCodeReviewJobsForCodeReviewPaginator(const Model::ListCodeReviewJobsForCodeReviewRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCodeReviewJobsForCodeReviewRequest,
+                                             Pagination::ListCodeReviewJobsForCodeReviewPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListCodeReviewJobTasks operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCodeReviewJobTasksRequest,
+                                    Pagination::ListCodeReviewJobTasksPaginationTraits<DerivedClient>>
+  ListCodeReviewJobTasksPaginator(const Model::ListCodeReviewJobTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCodeReviewJobTasksRequest,
+                                             Pagination::ListCodeReviewJobTasksPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListCodeReviews operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCodeReviewsRequest,
+                                    Pagination::ListCodeReviewsPaginationTraits<DerivedClient>>
+  ListCodeReviewsPaginator(const Model::ListCodeReviewsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCodeReviewsRequest,
+                                             Pagination::ListCodeReviewsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                         request};
   }
 
   /**

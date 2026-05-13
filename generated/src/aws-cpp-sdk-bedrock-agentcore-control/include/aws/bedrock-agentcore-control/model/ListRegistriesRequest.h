@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/RegistryAuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/RegistryStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -92,15 +93,36 @@ class ListRegistriesRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filter registries by their authorizer type. Possible values are
+   * <code>CUSTOM_JWT</code> and <code>AWS_IAM</code>. For more information about
+   * authorizer types, see the <code>RegistryAuthorizerType</code> enum.</p>
+   */
+  inline RegistryAuthorizerType GetAuthorizerType() const { return m_authorizerType; }
+  inline bool AuthorizerTypeHasBeenSet() const { return m_authorizerTypeHasBeenSet; }
+  inline void SetAuthorizerType(RegistryAuthorizerType value) {
+    m_authorizerTypeHasBeenSet = true;
+    m_authorizerType = value;
+  }
+  inline ListRegistriesRequest& WithAuthorizerType(RegistryAuthorizerType value) {
+    SetAuthorizerType(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_maxResults{0};
 
   Aws::String m_nextToken;
 
   RegistryStatus m_status{RegistryStatus::NOT_SET};
+
+  RegistryAuthorizerType m_authorizerType{RegistryAuthorizerType::NOT_SET};
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_authorizerTypeHasBeenSet = false;
 };
 
 }  // namespace Model

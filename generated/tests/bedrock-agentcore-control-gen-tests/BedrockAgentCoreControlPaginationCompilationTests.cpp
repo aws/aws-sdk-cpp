@@ -11,6 +11,7 @@
 #include <aws/bedrock-agentcore-control/model/ListHarnessesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicyEngineSummariesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowsersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListApiKeyCredentialProvidersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListRegistryRecordsPaginationTraits.h>
@@ -18,6 +19,7 @@
 #include <aws/bedrock-agentcore-control/model/ListPaymentCredentialProvidersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicyGenerationSummariesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPaymentManagersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPaymentConnectorsPaginationTraits.h>
@@ -29,6 +31,7 @@
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicySummariesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayRulesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsPaginationTraits.h>

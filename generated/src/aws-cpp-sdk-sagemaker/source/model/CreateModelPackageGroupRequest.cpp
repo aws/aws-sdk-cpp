@@ -31,6 +31,10 @@ Aws::String CreateModelPackageGroupRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_managedConfigurationHasBeenSet) {
+    payload.WithObject("ManagedConfiguration", m_managedConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

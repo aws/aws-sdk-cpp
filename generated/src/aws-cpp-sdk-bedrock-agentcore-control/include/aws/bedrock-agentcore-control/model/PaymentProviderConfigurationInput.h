@@ -21,8 +21,8 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>PROVIDER CONFIGURATION INPUT - Contains secrets for
- * creation/update</p><p><h3>See Also:</h3>   <a
+ * <p>Provider configuration input — contains secrets for creation and update.
+ * Varies by vendor type.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/PaymentProviderConfigurationInput">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,9 @@ class PaymentProviderConfigurationInput {
   AWS_BEDROCKAGENTCORECONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The Coinbase CDP configuration.</p>
+   */
   inline const CoinbaseCdpConfigurationInput& GetCoinbaseCdpConfiguration() const { return m_coinbaseCdpConfiguration; }
   inline bool CoinbaseCdpConfigurationHasBeenSet() const { return m_coinbaseCdpConfigurationHasBeenSet; }
   template <typename CoinbaseCdpConfigurationT = CoinbaseCdpConfigurationInput>
@@ -50,7 +52,9 @@ class PaymentProviderConfigurationInput {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The Stripe Privy configuration.</p>
+   */
   inline const StripePrivyConfigurationInput& GetStripePrivyConfiguration() const { return m_stripePrivyConfiguration; }
   inline bool StripePrivyConfigurationHasBeenSet() const { return m_stripePrivyConfigurationHasBeenSet; }
   template <typename StripePrivyConfigurationT = StripePrivyConfigurationInput>

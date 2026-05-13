@@ -73,8 +73,11 @@
 #include <aws/bedrock-agentcore-control/model/GetPaymentCredentialProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetPaymentManagerRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyEngineRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetPolicyEngineSummaryRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyGenerationRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetPolicyGenerationSummaryRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetPolicySummaryRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetRegistryRecordRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetRegistryRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetResourcePolicyRequest.h>
@@ -101,9 +104,12 @@
 #include <aws/bedrock-agentcore-control/model/ListPaymentCredentialProvidersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListPaymentManagersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListPoliciesRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicyEngineSummariesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicyGenerationSummariesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicySummariesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListRegistriesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListRegistryRecordsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListTagsForResourceRequest.h>
@@ -1459,6 +1465,24 @@ GetPolicyEngineOutcome BedrockAgentCoreControlClient::GetPolicyEngine(const GetP
                             : GetPolicyEngineOutcome(std::move(result.GetError()));
 }
 
+GetPolicyEngineSummaryOutcome BedrockAgentCoreControlClient::GetPolicyEngineSummary(const GetPolicyEngineSummaryRequest& request) const {
+  if (!request.PolicyEngineIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPolicyEngineSummary", "Required field: PolicyEngineId, is not set");
+    return GetPolicyEngineSummaryOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyEngineId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy-engine-summaries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyEngineId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPolicyEngineSummaryOutcome(result.GetResultWithOwnership())
+                            : GetPolicyEngineSummaryOutcome(std::move(result.GetError()));
+}
+
 GetPolicyGenerationOutcome BedrockAgentCoreControlClient::GetPolicyGeneration(const GetPolicyGenerationRequest& request) const {
   if (!request.PolicyGenerationIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetPolicyGeneration", "Required field: PolicyGenerationId, is not set");
@@ -1482,6 +1506,57 @@ GetPolicyGenerationOutcome BedrockAgentCoreControlClient::GetPolicyGeneration(co
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetPolicyGenerationOutcome(result.GetResultWithOwnership())
                             : GetPolicyGenerationOutcome(std::move(result.GetError()));
+}
+
+GetPolicyGenerationSummaryOutcome BedrockAgentCoreControlClient::GetPolicyGenerationSummary(
+    const GetPolicyGenerationSummaryRequest& request) const {
+  if (!request.PolicyGenerationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPolicyGenerationSummary", "Required field: PolicyGenerationId, is not set");
+    return GetPolicyGenerationSummaryOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyGenerationId]", false));
+  }
+  if (!request.PolicyEngineIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPolicyGenerationSummary", "Required field: PolicyEngineId, is not set");
+    return GetPolicyGenerationSummaryOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyEngineId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy-engines/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyEngineId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy-generation-summaries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyGenerationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPolicyGenerationSummaryOutcome(result.GetResultWithOwnership())
+                            : GetPolicyGenerationSummaryOutcome(std::move(result.GetError()));
+}
+
+GetPolicySummaryOutcome BedrockAgentCoreControlClient::GetPolicySummary(const GetPolicySummaryRequest& request) const {
+  if (!request.PolicyEngineIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPolicySummary", "Required field: PolicyEngineId, is not set");
+    return GetPolicySummaryOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyEngineId]", false));
+  }
+  if (!request.PolicyIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPolicySummary", "Required field: PolicyId, is not set");
+    return GetPolicySummaryOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy-engines/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyEngineId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy-summaries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPolicySummaryOutcome(result.GetResultWithOwnership())
+                            : GetPolicySummaryOutcome(std::move(result.GetError()));
 }
 
 GetRegistryOutcome BedrockAgentCoreControlClient::GetRegistry(const GetRegistryRequest& request) const {
@@ -1854,6 +1929,18 @@ ListPoliciesOutcome BedrockAgentCoreControlClient::ListPolicies(const ListPolici
   return result.IsSuccess() ? ListPoliciesOutcome(result.GetResultWithOwnership()) : ListPoliciesOutcome(std::move(result.GetError()));
 }
 
+ListPolicyEngineSummariesOutcome BedrockAgentCoreControlClient::ListPolicyEngineSummaries(
+    const ListPolicyEngineSummariesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy-engine-summaries");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPolicyEngineSummariesOutcome(result.GetResultWithOwnership())
+                            : ListPolicyEngineSummariesOutcome(std::move(result.GetError()));
+}
+
 ListPolicyEnginesOutcome BedrockAgentCoreControlClient::ListPolicyEngines(const ListPolicyEnginesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1892,6 +1979,26 @@ ListPolicyGenerationAssetsOutcome BedrockAgentCoreControlClient::ListPolicyGener
                             : ListPolicyGenerationAssetsOutcome(std::move(result.GetError()));
 }
 
+ListPolicyGenerationSummariesOutcome BedrockAgentCoreControlClient::ListPolicyGenerationSummaries(
+    const ListPolicyGenerationSummariesRequest& request) const {
+  if (!request.PolicyEngineIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListPolicyGenerationSummaries", "Required field: PolicyEngineId, is not set");
+    return ListPolicyGenerationSummariesOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyEngineId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy-engines/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyEngineId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy-generation-summaries");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPolicyGenerationSummariesOutcome(result.GetResultWithOwnership())
+                            : ListPolicyGenerationSummariesOutcome(std::move(result.GetError()));
+}
+
 ListPolicyGenerationsOutcome BedrockAgentCoreControlClient::ListPolicyGenerations(const ListPolicyGenerationsRequest& request) const {
   if (!request.PolicyEngineIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListPolicyGenerations", "Required field: PolicyEngineId, is not set");
@@ -1909,6 +2016,25 @@ ListPolicyGenerationsOutcome BedrockAgentCoreControlClient::ListPolicyGeneration
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListPolicyGenerationsOutcome(result.GetResultWithOwnership())
                             : ListPolicyGenerationsOutcome(std::move(result.GetError()));
+}
+
+ListPolicySummariesOutcome BedrockAgentCoreControlClient::ListPolicySummaries(const ListPolicySummariesRequest& request) const {
+  if (!request.PolicyEngineIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListPolicySummaries", "Required field: PolicyEngineId, is not set");
+    return ListPolicySummariesOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyEngineId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy-engines/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyEngineId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy-summaries");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPolicySummariesOutcome(result.GetResultWithOwnership())
+                            : ListPolicySummariesOutcome(std::move(result.GetError()));
 }
 
 ListRegistriesOutcome BedrockAgentCoreControlClient::ListRegistries(const ListRegistriesRequest& request) const {

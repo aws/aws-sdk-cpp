@@ -170,6 +170,26 @@ class LinkedWhatsAppBusinessAccount {
 
   ///@{
   /**
+   * <p>The onboarding status for the Marketing Messages API. This value is fetched
+   * from Meta and indicates whether the WhatsApp Business Account is onboarded for
+   * Meta's Marketing Messages API.</p>
+   */
+  inline const Aws::String& GetMarketingMessagesOnboardingStatus() const { return m_marketingMessagesOnboardingStatus; }
+  inline bool MarketingMessagesOnboardingStatusHasBeenSet() const { return m_marketingMessagesOnboardingStatusHasBeenSet; }
+  template <typename MarketingMessagesOnboardingStatusT = Aws::String>
+  void SetMarketingMessagesOnboardingStatus(MarketingMessagesOnboardingStatusT&& value) {
+    m_marketingMessagesOnboardingStatusHasBeenSet = true;
+    m_marketingMessagesOnboardingStatus = std::forward<MarketingMessagesOnboardingStatusT>(value);
+  }
+  template <typename MarketingMessagesOnboardingStatusT = Aws::String>
+  LinkedWhatsAppBusinessAccount& WithMarketingMessagesOnboardingStatus(MarketingMessagesOnboardingStatusT&& value) {
+    SetMarketingMessagesOnboardingStatus(std::forward<MarketingMessagesOnboardingStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The phone numbers associated with the Linked WhatsApp Business Account.</p>
    */
   inline const Aws::Vector<WhatsAppPhoneNumberSummary>& GetPhoneNumbers() const { return m_phoneNumbers; }
@@ -206,6 +226,8 @@ class LinkedWhatsAppBusinessAccount {
 
   Aws::Vector<WhatsAppBusinessAccountEventDestination> m_eventDestinations;
 
+  Aws::String m_marketingMessagesOnboardingStatus;
+
   Aws::Vector<WhatsAppPhoneNumberSummary> m_phoneNumbers;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
@@ -214,6 +236,7 @@ class LinkedWhatsAppBusinessAccount {
   bool m_linkDateHasBeenSet = false;
   bool m_wabaNameHasBeenSet = false;
   bool m_eventDestinationsHasBeenSet = false;
+  bool m_marketingMessagesOnboardingStatusHasBeenSet = false;
   bool m_phoneNumbersHasBeenSet = false;
 };
 

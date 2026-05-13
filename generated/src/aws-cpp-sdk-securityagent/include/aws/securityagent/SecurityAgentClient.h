@@ -118,6 +118,34 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Deletes one or more code reviews from an agent space.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDeleteCodeReviews">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchDeleteCodeReviewsOutcome BatchDeleteCodeReviews(const Model::BatchDeleteCodeReviewsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchDeleteCodeReviews that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchDeleteCodeReviewsRequestT = Model::BatchDeleteCodeReviewsRequest>
+  Model::BatchDeleteCodeReviewsOutcomeCallable BatchDeleteCodeReviewsCallable(const BatchDeleteCodeReviewsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::BatchDeleteCodeReviews, request);
+  }
+
+  /**
+   * An Async wrapper for BatchDeleteCodeReviews that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchDeleteCodeReviewsRequestT = Model::BatchDeleteCodeReviewsRequest>
+  void BatchDeleteCodeReviewsAsync(const BatchDeleteCodeReviewsRequestT& request,
+                                   const BatchDeleteCodeReviewsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::BatchDeleteCodeReviews, request, handler, context);
+  }
+
+  /**
    * <p>Deletes one or more pentests from an agent space.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDeletePentests">AWS
@@ -197,6 +225,91 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
                                      const BatchGetArtifactMetadataResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityAgentClient::BatchGetArtifactMetadata, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about one or more tasks within a code review
+   * job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetCodeReviewJobTasks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetCodeReviewJobTasksOutcome BatchGetCodeReviewJobTasks(
+      const Model::BatchGetCodeReviewJobTasksRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetCodeReviewJobTasks that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename BatchGetCodeReviewJobTasksRequestT = Model::BatchGetCodeReviewJobTasksRequest>
+  Model::BatchGetCodeReviewJobTasksOutcomeCallable BatchGetCodeReviewJobTasksCallable(
+      const BatchGetCodeReviewJobTasksRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::BatchGetCodeReviewJobTasks, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetCodeReviewJobTasks that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchGetCodeReviewJobTasksRequestT = Model::BatchGetCodeReviewJobTasksRequest>
+  void BatchGetCodeReviewJobTasksAsync(const BatchGetCodeReviewJobTasksRequestT& request,
+                                       const BatchGetCodeReviewJobTasksResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::BatchGetCodeReviewJobTasks, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about one or more code review jobs in an agent
+   * space.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetCodeReviewJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetCodeReviewJobsOutcome BatchGetCodeReviewJobs(const Model::BatchGetCodeReviewJobsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetCodeReviewJobs that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchGetCodeReviewJobsRequestT = Model::BatchGetCodeReviewJobsRequest>
+  Model::BatchGetCodeReviewJobsOutcomeCallable BatchGetCodeReviewJobsCallable(const BatchGetCodeReviewJobsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::BatchGetCodeReviewJobs, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetCodeReviewJobs that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchGetCodeReviewJobsRequestT = Model::BatchGetCodeReviewJobsRequest>
+  void BatchGetCodeReviewJobsAsync(const BatchGetCodeReviewJobsRequestT& request,
+                                   const BatchGetCodeReviewJobsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::BatchGetCodeReviewJobs, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about one or more code reviews in an agent
+   * space.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetCodeReviews">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetCodeReviewsOutcome BatchGetCodeReviews(const Model::BatchGetCodeReviewsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetCodeReviews that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchGetCodeReviewsRequestT = Model::BatchGetCodeReviewsRequest>
+  Model::BatchGetCodeReviewsOutcomeCallable BatchGetCodeReviewsCallable(const BatchGetCodeReviewsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::BatchGetCodeReviews, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetCodeReviews that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename BatchGetCodeReviewsRequestT = Model::BatchGetCodeReviewsRequest>
+  void BatchGetCodeReviewsAsync(const BatchGetCodeReviewsRequestT& request, const BatchGetCodeReviewsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::BatchGetCodeReviews, request, handler, context);
   }
 
   /**
@@ -389,6 +502,34 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                               const CreateApplicationRequestT& request = {}) const {
     return SubmitAsync(&SecurityAgentClient::CreateApplication, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new code review configuration in an agent space. A code review
+   * defines the parameters for automated security-focused code
+   * analysis.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateCodeReview">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCodeReviewOutcome CreateCodeReview(const Model::CreateCodeReviewRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCodeReview that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateCodeReviewRequestT = Model::CreateCodeReviewRequest>
+  Model::CreateCodeReviewOutcomeCallable CreateCodeReviewCallable(const CreateCodeReviewRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::CreateCodeReview, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCodeReview that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateCodeReviewRequestT = Model::CreateCodeReviewRequest>
+  void CreateCodeReviewAsync(const CreateCodeReviewRequestT& request, const CreateCodeReviewResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::CreateCodeReview, request, handler, context);
   }
 
   /**
@@ -848,6 +989,90 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Returns a paginated list of task summaries for the specified code review job,
+   * optionally filtered by step name or category.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListCodeReviewJobTasks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCodeReviewJobTasksOutcome ListCodeReviewJobTasks(const Model::ListCodeReviewJobTasksRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListCodeReviewJobTasks that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListCodeReviewJobTasksRequestT = Model::ListCodeReviewJobTasksRequest>
+  Model::ListCodeReviewJobTasksOutcomeCallable ListCodeReviewJobTasksCallable(const ListCodeReviewJobTasksRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::ListCodeReviewJobTasks, request);
+  }
+
+  /**
+   * An Async wrapper for ListCodeReviewJobTasks that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListCodeReviewJobTasksRequestT = Model::ListCodeReviewJobTasksRequest>
+  void ListCodeReviewJobTasksAsync(const ListCodeReviewJobTasksRequestT& request,
+                                   const ListCodeReviewJobTasksResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::ListCodeReviewJobTasks, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a paginated list of code review job summaries for the specified code
+   * review configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListCodeReviewJobsForCodeReview">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCodeReviewJobsForCodeReviewOutcome ListCodeReviewJobsForCodeReview(
+      const Model::ListCodeReviewJobsForCodeReviewRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListCodeReviewJobsForCodeReview that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListCodeReviewJobsForCodeReviewRequestT = Model::ListCodeReviewJobsForCodeReviewRequest>
+  Model::ListCodeReviewJobsForCodeReviewOutcomeCallable ListCodeReviewJobsForCodeReviewCallable(
+      const ListCodeReviewJobsForCodeReviewRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::ListCodeReviewJobsForCodeReview, request);
+  }
+
+  /**
+   * An Async wrapper for ListCodeReviewJobsForCodeReview that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListCodeReviewJobsForCodeReviewRequestT = Model::ListCodeReviewJobsForCodeReviewRequest>
+  void ListCodeReviewJobsForCodeReviewAsync(const ListCodeReviewJobsForCodeReviewRequestT& request,
+                                            const ListCodeReviewJobsForCodeReviewResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::ListCodeReviewJobsForCodeReview, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a paginated list of code review summaries for the specified agent
+   * space.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListCodeReviews">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCodeReviewsOutcome ListCodeReviews(const Model::ListCodeReviewsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListCodeReviews that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListCodeReviewsRequestT = Model::ListCodeReviewsRequest>
+  Model::ListCodeReviewsOutcomeCallable ListCodeReviewsCallable(const ListCodeReviewsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::ListCodeReviews, request);
+  }
+
+  /**
+   * An Async wrapper for ListCodeReviews that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListCodeReviewsRequestT = Model::ListCodeReviewsRequest>
+  void ListCodeReviewsAsync(const ListCodeReviewsRequestT& request, const ListCodeReviewsResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::ListCodeReviews, request, handler, context);
+  }
+
+  /**
    * <p>Returns a paginated list of endpoints discovered during a pentest job
    * execution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListDiscoveredEndpoints">AWS
@@ -1148,6 +1373,34 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Starts a new code review job for a code review configuration. The job
+   * executes the security-focused code analysis defined in the code
+   * review.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StartCodeReviewJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartCodeReviewJobOutcome StartCodeReviewJob(const Model::StartCodeReviewJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartCodeReviewJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartCodeReviewJobRequestT = Model::StartCodeReviewJobRequest>
+  Model::StartCodeReviewJobOutcomeCallable StartCodeReviewJobCallable(const StartCodeReviewJobRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::StartCodeReviewJob, request);
+  }
+
+  /**
+   * An Async wrapper for StartCodeReviewJob that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartCodeReviewJobRequestT = Model::StartCodeReviewJobRequest>
+  void StartCodeReviewJobAsync(const StartCodeReviewJobRequestT& request, const StartCodeReviewJobResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::StartCodeReviewJob, request, handler, context);
+  }
+
+  /**
    * <p>Starts a new pentest job for a pentest configuration. The job executes the
    * security tests defined in the pentest.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StartPentestJob">AWS
@@ -1171,6 +1424,33 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   void StartPentestJobAsync(const StartPentestJobRequestT& request, const StartPentestJobResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityAgentClient::StartPentestJob, request, handler, context);
+  }
+
+  /**
+   * <p>Stops a running code review job. The job transitions to a stopping state and
+   * then to stopped after cleanup completes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StopCodeReviewJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopCodeReviewJobOutcome StopCodeReviewJob(const Model::StopCodeReviewJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopCodeReviewJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopCodeReviewJobRequestT = Model::StopCodeReviewJobRequest>
+  Model::StopCodeReviewJobOutcomeCallable StopCodeReviewJobCallable(const StopCodeReviewJobRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::StopCodeReviewJob, request);
+  }
+
+  /**
+   * An Async wrapper for StopCodeReviewJob that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StopCodeReviewJobRequestT = Model::StopCodeReviewJobRequest>
+  void StopCodeReviewJobAsync(const StopCodeReviewJobRequestT& request, const StopCodeReviewJobResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::StopCodeReviewJob, request, handler, context);
   }
 
   /**
@@ -1302,6 +1582,32 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   void UpdateApplicationAsync(const UpdateApplicationRequestT& request, const UpdateApplicationResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityAgentClient::UpdateApplication, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing code review configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateCodeReview">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCodeReviewOutcome UpdateCodeReview(const Model::UpdateCodeReviewRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCodeReview that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateCodeReviewRequestT = Model::UpdateCodeReviewRequest>
+  Model::UpdateCodeReviewOutcomeCallable UpdateCodeReviewCallable(const UpdateCodeReviewRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::UpdateCodeReview, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCodeReview that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateCodeReviewRequestT = Model::UpdateCodeReviewRequest>
+  void UpdateCodeReviewAsync(const UpdateCodeReviewRequestT& request, const UpdateCodeReviewResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::UpdateCodeReview, request, handler, context);
   }
 
   /**

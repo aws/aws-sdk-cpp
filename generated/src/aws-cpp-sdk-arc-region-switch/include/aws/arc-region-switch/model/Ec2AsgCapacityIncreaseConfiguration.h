@@ -95,7 +95,8 @@ class Ec2AsgCapacityIncreaseConfiguration {
 
   ///@{
   /**
-   * <p>The target percentage that you specify for EC2 Auto Scaling groups.</p>
+   * <p>The target percentage that you specify for EC2 Auto Scaling groups. The
+   * default is 100.</p>
    */
   inline int GetTargetPercent() const { return m_targetPercent; }
   inline bool TargetPercentHasBeenSet() const { return m_targetPercentHasBeenSet; }

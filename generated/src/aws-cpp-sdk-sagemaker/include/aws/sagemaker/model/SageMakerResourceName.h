@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class SageMakerResourceName { NOT_SET, training_job, hyperpod_cluster, endpoint };
+enum class SageMakerResourceName { NOT_SET, training_job, hyperpod_cluster, endpoint, studio_apps };
 
 namespace SageMakerResourceNameMapper {
 AWS_SAGEMAKER_API SageMakerResourceName GetSageMakerResourceNameForName(const Aws::String& name);

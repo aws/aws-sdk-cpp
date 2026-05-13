@@ -20,8 +20,8 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>Coinbase CDP configuration - credentials provided by Coinbase Developer
- * Platform</p><p><h3>See Also:</h3>   <a
+ * <p>Coinbase CDP configuration — credentials provided by Coinbase Developer
+ * Platform.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CoinbaseCdpConfigurationInput">AWS
  * API Reference</a></p>
  */

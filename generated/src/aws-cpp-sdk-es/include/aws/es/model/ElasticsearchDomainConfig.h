@@ -10,6 +10,7 @@
 #include <aws/es/model/AdvancedOptionsStatus.h>
 #include <aws/es/model/AdvancedSecurityOptionsStatus.h>
 #include <aws/es/model/AutoTuneOptionsStatus.h>
+#include <aws/es/model/AutomatedSnapshotPauseOptionsStatus.h>
 #include <aws/es/model/ChangeProgressDetails.h>
 #include <aws/es/model/CognitoOptionsStatus.h>
 #include <aws/es/model/DeploymentStrategyOptionsStatus.h>
@@ -372,6 +373,24 @@ class ElasticsearchDomainConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies <code>AutomatedSnapshotPauseOptions</code> for the domain. </p>
+   */
+  inline const AutomatedSnapshotPauseOptionsStatus& GetAutomatedSnapshotPauseOptions() const { return m_automatedSnapshotPauseOptions; }
+  inline bool AutomatedSnapshotPauseOptionsHasBeenSet() const { return m_automatedSnapshotPauseOptionsHasBeenSet; }
+  template <typename AutomatedSnapshotPauseOptionsT = AutomatedSnapshotPauseOptionsStatus>
+  void SetAutomatedSnapshotPauseOptions(AutomatedSnapshotPauseOptionsT&& value) {
+    m_automatedSnapshotPauseOptionsHasBeenSet = true;
+    m_automatedSnapshotPauseOptions = std::forward<AutomatedSnapshotPauseOptionsT>(value);
+  }
+  template <typename AutomatedSnapshotPauseOptionsT = AutomatedSnapshotPauseOptionsStatus>
+  ElasticsearchDomainConfig& WithAutomatedSnapshotPauseOptions(AutomatedSnapshotPauseOptionsT&& value) {
+    SetAutomatedSnapshotPauseOptions(std::forward<AutomatedSnapshotPauseOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ElasticsearchVersionStatus m_elasticsearchVersion;
 
@@ -406,6 +425,8 @@ class ElasticsearchDomainConfig {
   Aws::Vector<ModifyingProperties> m_modifyingProperties;
 
   DeploymentStrategyOptionsStatus m_deploymentStrategyOptions;
+
+  AutomatedSnapshotPauseOptionsStatus m_automatedSnapshotPauseOptions;
   bool m_elasticsearchVersionHasBeenSet = false;
   bool m_elasticsearchClusterConfigHasBeenSet = false;
   bool m_eBSOptionsHasBeenSet = false;
@@ -423,6 +444,7 @@ class ElasticsearchDomainConfig {
   bool m_changeProgressDetailsHasBeenSet = false;
   bool m_modifyingPropertiesHasBeenSet = false;
   bool m_deploymentStrategyOptionsHasBeenSet = false;
+  bool m_automatedSnapshotPauseOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

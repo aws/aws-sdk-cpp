@@ -9,16 +9,19 @@
 #include <aws/securityagent/SecurityAgentClientPagination.h>
 #include <aws/securityagent/SecurityAgentPaginationBase.h>
 #include <aws/securityagent/model/ListTargetDomainsPaginationTraits.h>
-#include <aws/securityagent/model/ListPentestJobTasksPaginationTraits.h>
+#include <aws/securityagent/model/ListCodeReviewsPaginationTraits.h>
 #include <aws/securityagent/model/ListApplicationsPaginationTraits.h>
+#include <aws/securityagent/model/ListCodeReviewJobsForCodeReviewPaginationTraits.h>
+#include <aws/securityagent/model/ListPentestsPaginationTraits.h>
+#include <aws/securityagent/model/ListDiscoveredEndpointsPaginationTraits.h>
+#include <aws/securityagent/model/ListIntegrationsPaginationTraits.h>
+#include <aws/securityagent/model/ListCodeReviewJobTasksPaginationTraits.h>
+#include <aws/securityagent/model/ListPentestJobTasksPaginationTraits.h>
 #include <aws/securityagent/model/ListFindingsPaginationTraits.h>
 #include <aws/securityagent/model/ListArtifactsPaginationTraits.h>
 #include <aws/securityagent/model/ListIntegratedResourcesPaginationTraits.h>
 #include <aws/securityagent/model/ListPentestJobsForPentestPaginationTraits.h>
 #include <aws/securityagent/model/ListMembershipsPaginationTraits.h>
-#include <aws/securityagent/model/ListPentestsPaginationTraits.h>
-#include <aws/securityagent/model/ListDiscoveredEndpointsPaginationTraits.h>
-#include <aws/securityagent/model/ListIntegrationsPaginationTraits.h>
 #include <aws/securityagent/model/ListAgentSpacesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

@@ -24,6 +24,14 @@ Aws::String UpdateWhatsAppMessageTemplateRequest::SerializePayload() const {
     payload.WithString("metaTemplateId", m_metaTemplateId);
   }
 
+  if (m_templateNameHasBeenSet) {
+    payload.WithString("templateName", m_templateName);
+  }
+
+  if (m_templateLanguageCodeHasBeenSet) {
+    payload.WithString("templateLanguageCode", m_templateLanguageCode);
+  }
+
   if (m_parameterFormatHasBeenSet) {
     payload.WithString("parameterFormat", m_parameterFormat);
   }

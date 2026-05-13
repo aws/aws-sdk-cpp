@@ -49,6 +49,10 @@ LinkedWhatsAppBusinessAccountSummary& LinkedWhatsAppBusinessAccountSummary::oper
     }
     m_eventDestinationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("marketingMessagesOnboardingStatus")) {
+    m_marketingMessagesOnboardingStatus = jsonValue.GetString("marketingMessagesOnboardingStatus");
+    m_marketingMessagesOnboardingStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -85,6 +89,10 @@ JsonValue LinkedWhatsAppBusinessAccountSummary::Jsonize() const {
       eventDestinationsJsonList[eventDestinationsIndex].AsObject(m_eventDestinations[eventDestinationsIndex].Jsonize());
     }
     payload.WithArray("eventDestinations", std::move(eventDestinationsJsonList));
+  }
+
+  if (m_marketingMessagesOnboardingStatusHasBeenSet) {
+    payload.WithString("marketingMessagesOnboardingStatus", m_marketingMessagesOnboardingStatus);
   }
 
   return payload;

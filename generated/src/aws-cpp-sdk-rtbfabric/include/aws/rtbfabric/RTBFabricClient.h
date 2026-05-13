@@ -115,6 +115,33 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Associates an ACM certificate with a responder gateway.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/AssociateCertificate">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateCertificateOutcome AssociateCertificate(const Model::AssociateCertificateRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateCertificate that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AssociateCertificateRequestT = Model::AssociateCertificateRequest>
+  Model::AssociateCertificateOutcomeCallable AssociateCertificateCallable(const AssociateCertificateRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::AssociateCertificate, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateCertificate that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AssociateCertificateRequestT = Model::AssociateCertificateRequest>
+  void AssociateCertificateAsync(const AssociateCertificateRequestT& request, const AssociateCertificateResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::AssociateCertificate, request, handler, context);
+  }
+
+  /**
    * <p>Creates an inbound external link.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/CreateInboundExternalLink">AWS
    * API Reference</a></p>
@@ -167,6 +194,35 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   void CreateLinkAsync(const CreateLinkRequestT& request, const CreateLinkResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&RTBFabricClient::CreateLink, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a routing rule for a link.</p> <p>Routing rules use priority-based
+   * evaluation where lower priority numbers are evaluated first. Each rule specifies
+   * conditions that must all match for the rule to apply.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/CreateLinkRoutingRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateLinkRoutingRuleOutcome CreateLinkRoutingRule(const Model::CreateLinkRoutingRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateLinkRoutingRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateLinkRoutingRuleRequestT = Model::CreateLinkRoutingRuleRequest>
+  Model::CreateLinkRoutingRuleOutcomeCallable CreateLinkRoutingRuleCallable(const CreateLinkRoutingRuleRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::CreateLinkRoutingRule, request);
+  }
+
+  /**
+   * An Async wrapper for CreateLinkRoutingRule that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateLinkRoutingRuleRequestT = Model::CreateLinkRoutingRuleRequest>
+  void CreateLinkRoutingRuleAsync(const CreateLinkRoutingRuleRequestT& request, const CreateLinkRoutingRuleResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::CreateLinkRoutingRule, request, handler, context);
   }
 
   /**
@@ -308,6 +364,32 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes a routing rule from a link.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/DeleteLinkRoutingRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteLinkRoutingRuleOutcome DeleteLinkRoutingRule(const Model::DeleteLinkRoutingRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteLinkRoutingRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteLinkRoutingRuleRequestT = Model::DeleteLinkRoutingRuleRequest>
+  Model::DeleteLinkRoutingRuleOutcomeCallable DeleteLinkRoutingRuleCallable(const DeleteLinkRoutingRuleRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::DeleteLinkRoutingRule, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteLinkRoutingRule that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteLinkRoutingRuleRequestT = Model::DeleteLinkRoutingRuleRequest>
+  void DeleteLinkRoutingRuleAsync(const DeleteLinkRoutingRuleRequestT& request, const DeleteLinkRoutingRuleResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::DeleteLinkRoutingRule, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an outbound external link.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/DeleteOutboundExternalLink">AWS
    * API Reference</a></p>
@@ -391,6 +473,63 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Removes a certificate association from a responder gateway.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/DisassociateCertificate">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateCertificateOutcome DisassociateCertificate(const Model::DisassociateCertificateRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateCertificate that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DisassociateCertificateRequestT = Model::DisassociateCertificateRequest>
+  Model::DisassociateCertificateOutcomeCallable DisassociateCertificateCallable(const DisassociateCertificateRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::DisassociateCertificate, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateCertificate that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisassociateCertificateRequestT = Model::DisassociateCertificateRequest>
+  void DisassociateCertificateAsync(const DisassociateCertificateRequestT& request,
+                                    const DisassociateCertificateResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::DisassociateCertificate, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the details of a certificate association with a responder
+   * gateway.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetCertificateAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCertificateAssociationOutcome GetCertificateAssociation(const Model::GetCertificateAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCertificateAssociation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetCertificateAssociationRequestT = Model::GetCertificateAssociationRequest>
+  Model::GetCertificateAssociationOutcomeCallable GetCertificateAssociationCallable(
+      const GetCertificateAssociationRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::GetCertificateAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for GetCertificateAssociation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetCertificateAssociationRequestT = Model::GetCertificateAssociationRequest>
+  void GetCertificateAssociationAsync(const GetCertificateAssociationRequestT& request,
+                                      const GetCertificateAssociationResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::GetCertificateAssociation, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves information about an inbound external link.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetInboundExternalLink">AWS
@@ -443,6 +582,33 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   void GetLinkAsync(const GetLinkRequestT& request, const GetLinkResponseReceivedHandler& handler,
                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&RTBFabricClient::GetLink, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the details of a routing rule for a link.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetLinkRoutingRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetLinkRoutingRuleOutcome GetLinkRoutingRule(const Model::GetLinkRoutingRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetLinkRoutingRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetLinkRoutingRuleRequestT = Model::GetLinkRoutingRuleRequest>
+  Model::GetLinkRoutingRuleOutcomeCallable GetLinkRoutingRuleCallable(const GetLinkRoutingRuleRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::GetLinkRoutingRule, request);
+  }
+
+  /**
+   * An Async wrapper for GetLinkRoutingRule that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetLinkRoutingRuleRequestT = Model::GetLinkRoutingRuleRequest>
+  void GetLinkRoutingRuleAsync(const GetLinkRoutingRuleRequestT& request, const GetLinkRoutingRuleResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::GetLinkRoutingRule, request, handler, context);
   }
 
   /**
@@ -525,6 +691,62 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   void GetResponderGatewayAsync(const GetResponderGatewayRequestT& request, const GetResponderGatewayResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&RTBFabricClient::GetResponderGateway, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the certificate associations for a responder gateway.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListCertificateAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCertificateAssociationsOutcome ListCertificateAssociations(
+      const Model::ListCertificateAssociationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListCertificateAssociations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListCertificateAssociationsRequestT = Model::ListCertificateAssociationsRequest>
+  Model::ListCertificateAssociationsOutcomeCallable ListCertificateAssociationsCallable(
+      const ListCertificateAssociationsRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::ListCertificateAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for ListCertificateAssociations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListCertificateAssociationsRequestT = Model::ListCertificateAssociationsRequest>
+  void ListCertificateAssociationsAsync(const ListCertificateAssociationsRequestT& request,
+                                        const ListCertificateAssociationsResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::ListCertificateAssociations, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the routing rules for a link.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListLinkRoutingRules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListLinkRoutingRulesOutcome ListLinkRoutingRules(const Model::ListLinkRoutingRulesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListLinkRoutingRules that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListLinkRoutingRulesRequestT = Model::ListLinkRoutingRulesRequest>
+  Model::ListLinkRoutingRulesOutcomeCallable ListLinkRoutingRulesCallable(const ListLinkRoutingRulesRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::ListLinkRoutingRules, request);
+  }
+
+  /**
+   * An Async wrapper for ListLinkRoutingRules that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListLinkRoutingRulesRequestT = Model::ListLinkRoutingRulesRequest>
+  void ListLinkRoutingRulesAsync(const ListLinkRoutingRulesRequestT& request, const ListLinkRoutingRulesResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::ListLinkRoutingRules, request, handler, context);
   }
 
   /**
@@ -763,6 +985,32 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   void UpdateLinkModuleFlowAsync(const UpdateLinkModuleFlowRequestT& request, const UpdateLinkModuleFlowResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&RTBFabricClient::UpdateLinkModuleFlow, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a routing rule for a link.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/UpdateLinkRoutingRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateLinkRoutingRuleOutcome UpdateLinkRoutingRule(const Model::UpdateLinkRoutingRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateLinkRoutingRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateLinkRoutingRuleRequestT = Model::UpdateLinkRoutingRuleRequest>
+  Model::UpdateLinkRoutingRuleOutcomeCallable UpdateLinkRoutingRuleCallable(const UpdateLinkRoutingRuleRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::UpdateLinkRoutingRule, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateLinkRoutingRule that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateLinkRoutingRuleRequestT = Model::UpdateLinkRoutingRuleRequest>
+  void UpdateLinkRoutingRuleAsync(const UpdateLinkRoutingRuleRequestT& request, const UpdateLinkRoutingRuleResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::UpdateLinkRoutingRule, request, handler, context);
   }
 
   /**

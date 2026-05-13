@@ -9,6 +9,7 @@
 #include <aws/dsql/DSQLClientPagination.h>
 #include <aws/dsql/DSQLPaginationBase.h>
 #include <aws/dsql/model/ListClustersPaginationTraits.h>
+#include <aws/dsql/model/ListStreamsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

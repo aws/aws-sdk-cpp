@@ -26,9 +26,12 @@
 #include <aws/bedrock-agentcore-control/model/ListPaymentCredentialProvidersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPaymentManagersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPoliciesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicyEngineSummariesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicyGenerationSummariesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicySummariesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListRegistriesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListRegistryRecordsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesPaginationTraits.h>
@@ -302,6 +305,18 @@ class BedrockAgentCoreControlPaginationBase {
   }
 
   /**
+   * Create a paginator for ListPolicyEngineSummaries operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyEngineSummariesRequest,
+                                    Pagination::ListPolicyEngineSummariesPaginationTraits<DerivedClient>>
+  ListPolicyEngineSummariesPaginator(const Model::ListPolicyEngineSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyEngineSummariesRequest,
+                                             Pagination::ListPolicyEngineSummariesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListPolicyGenerationAssets operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyGenerationAssetsRequest,
@@ -322,6 +337,30 @@ class BedrockAgentCoreControlPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyGenerationsRequest,
                                              Pagination::ListPolicyGenerationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListPolicyGenerationSummaries operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyGenerationSummariesRequest,
+                                    Pagination::ListPolicyGenerationSummariesPaginationTraits<DerivedClient>>
+  ListPolicyGenerationSummariesPaginator(const Model::ListPolicyGenerationSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyGenerationSummariesRequest,
+                                             Pagination::ListPolicyGenerationSummariesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListPolicySummaries operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicySummariesRequest,
+                                    Pagination::ListPolicySummariesPaginationTraits<DerivedClient>>
+  ListPolicySummariesPaginator(const Model::ListPolicySummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicySummariesRequest,
+                                             Pagination::ListPolicySummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 
