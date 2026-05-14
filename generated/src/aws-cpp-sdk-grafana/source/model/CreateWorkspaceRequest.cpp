@@ -114,6 +114,10 @@ Aws::String CreateWorkspaceRequest::SerializePayload() const {
     payload.WithString("grafanaVersion", m_grafanaVersion);
   }
 
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("ipAddressType", IPAddressTypeMapper::GetNameForIPAddressType(m_ipAddressType));
+  }
+
   if (m_kmsKeyIdHasBeenSet) {
     payload.WithString("kmsKeyId", m_kmsKeyId);
   }

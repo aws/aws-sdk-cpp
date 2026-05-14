@@ -123,6 +123,26 @@ class GetCatalogsRequest : public GlueRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>When <code>true</code>, the response only includes catalogs that can contain
+   * databases. Some catalogs are organizational containers that hold only other
+   * catalogs, not databases. When this parameter is set to <code>true</code>, those
+   * container-only catalogs are excluded, and only catalogs capable of containing
+   * databases are returned. Defaults to <code>false</code>.</p>
+   */
+  inline bool GetHasDatabases() const { return m_hasDatabases; }
+  inline bool HasDatabasesHasBeenSet() const { return m_hasDatabasesHasBeenSet; }
+  inline void SetHasDatabases(bool value) {
+    m_hasDatabasesHasBeenSet = true;
+    m_hasDatabases = value;
+  }
+  inline GetCatalogsRequest& WithHasDatabases(bool value) {
+    SetHasDatabases(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_parentCatalogId;
 
@@ -133,11 +153,14 @@ class GetCatalogsRequest : public GlueRequest {
   bool m_recursive{false};
 
   bool m_includeRoot{false};
+
+  bool m_hasDatabases{false};
   bool m_parentCatalogIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_recursiveHasBeenSet = false;
   bool m_includeRootHasBeenSet = false;
+  bool m_hasDatabasesHasBeenSet = false;
 };
 
 }  // namespace Model

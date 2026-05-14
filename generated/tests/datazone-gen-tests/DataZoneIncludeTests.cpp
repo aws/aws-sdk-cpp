@@ -150,6 +150,8 @@
 #include <aws/datazone/model/CreateGroupProfileResult.h>
 #include <aws/datazone/model/CreateListingChangeSetRequest.h>
 #include <aws/datazone/model/CreateListingChangeSetResult.h>
+#include <aws/datazone/model/CreateNotebookRequest.h>
+#include <aws/datazone/model/CreateNotebookResult.h>
 #include <aws/datazone/model/CreateProjectFromProjectProfilePolicyGrantDetail.h>
 #include <aws/datazone/model/CreateProjectMembershipRequest.h>
 #include <aws/datazone/model/CreateProjectMembershipResult.h>
@@ -225,6 +227,8 @@
 #include <aws/datazone/model/DeleteGlossaryTermResult.h>
 #include <aws/datazone/model/DeleteListingRequest.h>
 #include <aws/datazone/model/DeleteListingResult.h>
+#include <aws/datazone/model/DeleteNotebookRequest.h>
+#include <aws/datazone/model/DeleteNotebookResult.h>
 #include <aws/datazone/model/DeleteProjectMembershipRequest.h>
 #include <aws/datazone/model/DeleteProjectMembershipResult.h>
 #include <aws/datazone/model/DeleteProjectProfileRequest.h>
@@ -284,6 +288,7 @@
 #include <aws/datazone/model/EqualToExpression.h>
 #include <aws/datazone/model/EventSummary.h>
 #include <aws/datazone/model/FailureCause.h>
+#include <aws/datazone/model/FileFormat.h>
 #include <aws/datazone/model/Filter.h>
 #include <aws/datazone/model/FilterClause.h>
 #include <aws/datazone/model/FilterExpression.h>
@@ -350,6 +355,10 @@
 #include <aws/datazone/model/GetListingResult.h>
 #include <aws/datazone/model/GetMetadataGenerationRunRequest.h>
 #include <aws/datazone/model/GetMetadataGenerationRunResult.h>
+#include <aws/datazone/model/GetNotebookExportRequest.h>
+#include <aws/datazone/model/GetNotebookExportResult.h>
+#include <aws/datazone/model/GetNotebookRequest.h>
+#include <aws/datazone/model/GetNotebookResult.h>
 #include <aws/datazone/model/GetNotebookRunRequest.h>
 #include <aws/datazone/model/GetNotebookRunResult.h>
 #include <aws/datazone/model/GetProjectProfileRequest.h>
@@ -481,6 +490,8 @@
 #include <aws/datazone/model/ListMetadataGenerationRunsResult.h>
 #include <aws/datazone/model/ListNotebookRunsRequest.h>
 #include <aws/datazone/model/ListNotebookRunsResult.h>
+#include <aws/datazone/model/ListNotebooksRequest.h>
+#include <aws/datazone/model/ListNotebooksResult.h>
 #include <aws/datazone/model/ListNotificationsRequest.h>
 #include <aws/datazone/model/ListNotificationsResult.h>
 #include <aws/datazone/model/ListPolicyGrantsRequest.h>
@@ -537,9 +548,14 @@
 #include <aws/datazone/model/NotEqualToExpression.h>
 #include <aws/datazone/model/NotInExpression.h>
 #include <aws/datazone/model/NotLikeExpression.h>
+#include <aws/datazone/model/NotebookError.h>
+#include <aws/datazone/model/NotebookExportError.h>
+#include <aws/datazone/model/NotebookExportStatus.h>
 #include <aws/datazone/model/NotebookRunError.h>
 #include <aws/datazone/model/NotebookRunStatus.h>
 #include <aws/datazone/model/NotebookRunSummary.h>
+#include <aws/datazone/model/NotebookStatus.h>
+#include <aws/datazone/model/NotebookSummary.h>
 #include <aws/datazone/model/NotificationOutput.h>
 #include <aws/datazone/model/NotificationResource.h>
 #include <aws/datazone/model/NotificationResourceType.h>
@@ -550,6 +566,7 @@
 #include <aws/datazone/model/OAuth2Properties.h>
 #include <aws/datazone/model/OpenLineageRunEventSummary.h>
 #include <aws/datazone/model/OpenLineageRunState.h>
+#include <aws/datazone/model/OutputLocation.h>
 #include <aws/datazone/model/OverallDeploymentStatus.h>
 #include <aws/datazone/model/OverrideDomainUnitOwnersPolicyGrantDetail.h>
 #include <aws/datazone/model/OverrideProjectOwnersPolicyGrantDetail.h>
@@ -642,6 +659,7 @@
 #include <aws/datazone/model/RuleTargetType.h>
 #include <aws/datazone/model/RuleType.h>
 #include <aws/datazone/model/RunStatisticsForAssets.h>
+#include <aws/datazone/model/S3Destination.h>
 #include <aws/datazone/model/S3Permission.h>
 #include <aws/datazone/model/S3PropertiesInput.h>
 #include <aws/datazone/model/S3PropertiesOutput.h>
@@ -674,6 +692,7 @@
 #include <aws/datazone/model/SortFieldProject.h>
 #include <aws/datazone/model/SortKey.h>
 #include <aws/datazone/model/SortOrder.h>
+#include <aws/datazone/model/SourceLocation.h>
 #include <aws/datazone/model/SparkEmrPropertiesInput.h>
 #include <aws/datazone/model/SparkEmrPropertiesOutput.h>
 #include <aws/datazone/model/SparkEmrPropertiesPatch.h>
@@ -685,6 +704,10 @@
 #include <aws/datazone/model/StartDataSourceRunResult.h>
 #include <aws/datazone/model/StartMetadataGenerationRunRequest.h>
 #include <aws/datazone/model/StartMetadataGenerationRunResult.h>
+#include <aws/datazone/model/StartNotebookExportRequest.h>
+#include <aws/datazone/model/StartNotebookExportResult.h>
+#include <aws/datazone/model/StartNotebookImportRequest.h>
+#include <aws/datazone/model/StartNotebookImportResult.h>
 #include <aws/datazone/model/StartNotebookRunRequest.h>
 #include <aws/datazone/model/StartNotebookRunResult.h>
 #include <aws/datazone/model/Status.h>
@@ -762,6 +785,8 @@
 #include <aws/datazone/model/UpdateGlossaryTermResult.h>
 #include <aws/datazone/model/UpdateGroupProfileRequest.h>
 #include <aws/datazone/model/UpdateGroupProfileResult.h>
+#include <aws/datazone/model/UpdateNotebookRequest.h>
+#include <aws/datazone/model/UpdateNotebookResult.h>
 #include <aws/datazone/model/UpdateProjectProfileRequest.h>
 #include <aws/datazone/model/UpdateProjectProfileResult.h>
 #include <aws/datazone/model/UpdateProjectRequest.h>

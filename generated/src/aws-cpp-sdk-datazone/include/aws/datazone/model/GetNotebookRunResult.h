@@ -58,7 +58,7 @@ class GetNotebookRunResult {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon DataZone domain.</p>
+   * <p>The identifier of the Amazon SageMaker Unified Studio domain.</p>
    */
   inline const Aws::String& GetDomainId() const { return m_domainId; }
   template <typename DomainIdT = Aws::String>

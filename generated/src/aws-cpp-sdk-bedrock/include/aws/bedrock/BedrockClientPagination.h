@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock/BedrockClient.h>
+#include <aws/bedrock/model/ListAdvancedPromptOptimizationJobsPaginationTraits.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPoliciesPaginationTraits.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPolicyBuildWorkflowsPaginationTraits.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPolicyTestCasesPaginationTraits.h>
@@ -28,6 +29,9 @@
 namespace Aws {
 namespace Bedrock {
 
+using ListAdvancedPromptOptimizationJobsPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockClient, Model::ListAdvancedPromptOptimizationJobsRequest,
+                                      Pagination::ListAdvancedPromptOptimizationJobsPaginationTraits<BedrockClient>>;
 using ListAutomatedReasoningPoliciesPaginator =
     Aws::Utils::Pagination::Paginator<BedrockClient, Model::ListAutomatedReasoningPoliciesRequest,
                                       Pagination::ListAutomatedReasoningPoliciesPaginationTraits<BedrockClient>>;

@@ -23,8 +23,8 @@ namespace DataZone {
 namespace Model {
 
 /**
- * <p>The summary of a notebook run in Amazon DataZone.</p><p><h3>See Also:</h3>
- * <a
+ * <p>The summary of a notebook run in Amazon SageMaker Unified
+ * Studio.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/NotebookRunSummary">AWS
  * API Reference</a></p>
  */
@@ -55,7 +55,7 @@ class NotebookRunSummary {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon DataZone domain.</p>
+   * <p>The identifier of the Amazon SageMaker Unified Studio domain.</p>
    */
   inline const Aws::String& GetDomainId() const { return m_domainId; }
   inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }

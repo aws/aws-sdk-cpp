@@ -31,6 +31,12 @@ Aws::String UpdateTrustStore2020_05_31Request::SerializePayload() const {
 Aws::Http::HeaderValueCollection UpdateTrustStore2020_05_31Request::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
+  if (m_useClientCertificateOCSPEndpointHasBeenSet) {
+    ss << std::boolalpha << m_useClientCertificateOCSPEndpoint;
+    headers.emplace("useclientcertificateocspendpoint", ss.str());
+    ss.str("");
+  }
+
   if (m_ifMatchHasBeenSet) {
     ss << m_ifMatch;
     headers.emplace("if-match", ss.str());

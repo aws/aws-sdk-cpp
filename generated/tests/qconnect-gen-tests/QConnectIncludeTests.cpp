@@ -117,6 +117,7 @@
 #include <aws/qconnect/model/CreateQuickResponseResult.h>
 #include <aws/qconnect/model/CreateSessionRequest.h>
 #include <aws/qconnect/model/CreateSessionResult.h>
+#include <aws/qconnect/model/CrossRegionStatus.h>
 #include <aws/qconnect/model/CustomerProfileAttributes.h>
 #include <aws/qconnect/model/DataDetails.h>
 #include <aws/qconnect/model/DataReference.h>
@@ -267,6 +268,8 @@
 #include <aws/qconnect/model/ListMessageTemplatesResult.h>
 #include <aws/qconnect/model/ListMessagesRequest.h>
 #include <aws/qconnect/model/ListMessagesResult.h>
+#include <aws/qconnect/model/ListModelsRequest.h>
+#include <aws/qconnect/model/ListModelsResult.h>
 #include <aws/qconnect/model/ListQuickResponsesRequest.h>
 #include <aws/qconnect/model/ListQuickResponsesResult.h>
 #include <aws/qconnect/model/ListSpansRequest.h>
@@ -298,6 +301,8 @@
 #include <aws/qconnect/model/MessageTemplateSummary.h>
 #include <aws/qconnect/model/MessageTemplateVersionSummary.h>
 #include <aws/qconnect/model/MessageType.h>
+#include <aws/qconnect/model/ModelLifecycle.h>
+#include <aws/qconnect/model/ModelSummary.h>
 #include <aws/qconnect/model/NoteTakingAIAgentConfiguration.h>
 #include <aws/qconnect/model/NotesChunkDataDetails.h>
 #include <aws/qconnect/model/NotesDataDetails.h>

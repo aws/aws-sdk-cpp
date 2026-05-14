@@ -21,6 +21,7 @@
 #include <aws/qconnect/model/ListMessageTemplateVersionsPaginationTraits.h>
 #include <aws/qconnect/model/ListMessageTemplatesPaginationTraits.h>
 #include <aws/qconnect/model/ListMessagesPaginationTraits.h>
+#include <aws/qconnect/model/ListModelsPaginationTraits.h>
 #include <aws/qconnect/model/ListQuickResponsesPaginationTraits.h>
 #include <aws/qconnect/model/ListSpansPaginationTraits.h>
 #include <aws/qconnect/model/SearchContentPaginationTraits.h>
@@ -65,6 +66,8 @@ using ListMessageTemplatesPaginator = Aws::Utils::Pagination::Paginator<QConnect
 using ListMessageTemplateVersionsPaginator =
     Aws::Utils::Pagination::Paginator<QConnectClient, Model::ListMessageTemplateVersionsRequest,
                                       Pagination::ListMessageTemplateVersionsPaginationTraits<QConnectClient>>;
+using ListModelsPaginator =
+    Aws::Utils::Pagination::Paginator<QConnectClient, Model::ListModelsRequest, Pagination::ListModelsPaginationTraits<QConnectClient>>;
 using ListQuickResponsesPaginator = Aws::Utils::Pagination::Paginator<QConnectClient, Model::ListQuickResponsesRequest,
                                                                       Pagination::ListQuickResponsesPaginationTraits<QConnectClient>>;
 using ListSpansPaginator =

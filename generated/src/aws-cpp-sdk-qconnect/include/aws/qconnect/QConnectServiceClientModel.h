@@ -83,6 +83,7 @@
 #include <aws/qconnect/model/ListMessageTemplateVersionsResult.h>
 #include <aws/qconnect/model/ListMessageTemplatesResult.h>
 #include <aws/qconnect/model/ListMessagesResult.h>
+#include <aws/qconnect/model/ListModelsResult.h>
 #include <aws/qconnect/model/ListQuickResponsesResult.h>
 #include <aws/qconnect/model/ListSpansResult.h>
 #include <aws/qconnect/model/ListTagsForResourceResult.h>
@@ -207,6 +208,7 @@ class ListKnowledgeBasesRequest;
 class ListMessageTemplateVersionsRequest;
 class ListMessageTemplatesRequest;
 class ListMessagesRequest;
+class ListModelsRequest;
 class ListQuickResponsesRequest;
 class ListSpansRequest;
 class ListTagsForResourceRequest;
@@ -301,6 +303,7 @@ typedef Aws::Utils::Outcome<ListKnowledgeBasesResult, QConnectError> ListKnowled
 typedef Aws::Utils::Outcome<ListMessageTemplateVersionsResult, QConnectError> ListMessageTemplateVersionsOutcome;
 typedef Aws::Utils::Outcome<ListMessageTemplatesResult, QConnectError> ListMessageTemplatesOutcome;
 typedef Aws::Utils::Outcome<ListMessagesResult, QConnectError> ListMessagesOutcome;
+typedef Aws::Utils::Outcome<ListModelsResult, QConnectError> ListModelsOutcome;
 typedef Aws::Utils::Outcome<ListQuickResponsesResult, QConnectError> ListQuickResponsesOutcome;
 typedef Aws::Utils::Outcome<ListSpansResult, QConnectError> ListSpansOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, QConnectError> ListTagsForResourceOutcome;
@@ -395,6 +398,7 @@ typedef std::future<ListKnowledgeBasesOutcome> ListKnowledgeBasesOutcomeCallable
 typedef std::future<ListMessageTemplateVersionsOutcome> ListMessageTemplateVersionsOutcomeCallable;
 typedef std::future<ListMessageTemplatesOutcome> ListMessageTemplatesOutcomeCallable;
 typedef std::future<ListMessagesOutcome> ListMessagesOutcomeCallable;
+typedef std::future<ListModelsOutcome> ListModelsOutcomeCallable;
 typedef std::future<ListQuickResponsesOutcome> ListQuickResponsesOutcomeCallable;
 typedef std::future<ListSpansOutcome> ListSpansOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -619,6 +623,9 @@ typedef std::function<void(const QConnectClient*, const Model::ListMessageTempla
 typedef std::function<void(const QConnectClient*, const Model::ListMessagesRequest&, const Model::ListMessagesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListMessagesResponseReceivedHandler;
+typedef std::function<void(const QConnectClient*, const Model::ListModelsRequest&, const Model::ListModelsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListModelsResponseReceivedHandler;
 typedef std::function<void(const QConnectClient*, const Model::ListQuickResponsesRequest&, const Model::ListQuickResponsesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListQuickResponsesResponseReceivedHandler;

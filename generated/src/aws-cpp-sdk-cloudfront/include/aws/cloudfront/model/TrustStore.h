@@ -154,6 +154,23 @@ class TrustStore {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A Boolean that determines whether the trust store uses the CA certificate's
+   * OCSP endpoint to check certificate revocation status.</p>
+   */
+  inline bool GetUseClientCertificateOCSPEndpoint() const { return m_useClientCertificateOCSPEndpoint; }
+  inline bool UseClientCertificateOCSPEndpointHasBeenSet() const { return m_useClientCertificateOCSPEndpointHasBeenSet; }
+  inline void SetUseClientCertificateOCSPEndpoint(bool value) {
+    m_useClientCertificateOCSPEndpointHasBeenSet = true;
+    m_useClientCertificateOCSPEndpoint = value;
+  }
+  inline TrustStore& WithUseClientCertificateOCSPEndpoint(bool value) {
+    SetUseClientCertificateOCSPEndpoint(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -168,6 +185,8 @@ class TrustStore {
   Aws::Utils::DateTime m_lastModifiedTime{};
 
   Aws::String m_reason;
+
+  bool m_useClientCertificateOCSPEndpoint{false};
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -175,6 +194,7 @@ class TrustStore {
   bool m_numberOfCaCertificatesHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
+  bool m_useClientCertificateOCSPEndpointHasBeenSet = false;
 };
 
 }  // namespace Model

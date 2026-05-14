@@ -133,6 +133,10 @@ WorkspaceDescription& WorkspaceDescription::operator=(JsonView jsonValue) {
     m_grafanaToken = jsonValue.GetString("grafanaToken");
     m_grafanaTokenHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ipAddressType")) {
+    m_ipAddressType = IPAddressTypeMapper::GetIPAddressTypeForName(jsonValue.GetString("ipAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
@@ -261,6 +265,10 @@ JsonValue WorkspaceDescription::Jsonize() const {
 
   if (m_grafanaTokenHasBeenSet) {
     payload.WithString("grafanaToken", m_grafanaToken);
+  }
+
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("ipAddressType", IPAddressTypeMapper::GetNameForIPAddressType(m_ipAddressType));
   }
 
   if (m_kmsKeyIdHasBeenSet) {

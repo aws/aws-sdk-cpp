@@ -7,8 +7,10 @@
 #include <aws/bedrock/BedrockClient.h>
 #include <aws/bedrock/BedrockEndpointProvider.h>
 #include <aws/bedrock/BedrockErrorMarshaller.h>
+#include <aws/bedrock/model/BatchDeleteAdvancedPromptOptimizationJobRequest.h>
 #include <aws/bedrock/model/BatchDeleteEvaluationJobRequest.h>
 #include <aws/bedrock/model/CancelAutomatedReasoningPolicyBuildWorkflowRequest.h>
+#include <aws/bedrock/model/CreateAdvancedPromptOptimizationJobRequest.h>
 #include <aws/bedrock/model/CreateAutomatedReasoningPolicyRequest.h>
 #include <aws/bedrock/model/CreateAutomatedReasoningPolicyTestCaseRequest.h>
 #include <aws/bedrock/model/CreateAutomatedReasoningPolicyVersionRequest.h>
@@ -43,6 +45,7 @@
 #include <aws/bedrock/model/DeleteResourcePolicyRequest.h>
 #include <aws/bedrock/model/DeregisterMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/ExportAutomatedReasoningPolicyVersionRequest.h>
+#include <aws/bedrock/model/GetAdvancedPromptOptimizationJobRequest.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyAnnotationsRequest.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyBuildWorkflowRequest.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest.h>
@@ -68,6 +71,7 @@
 #include <aws/bedrock/model/GetProvisionedModelThroughputRequest.h>
 #include <aws/bedrock/model/GetResourcePolicyRequest.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessRequest.h>
+#include <aws/bedrock/model/ListAdvancedPromptOptimizationJobsRequest.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPoliciesRequest.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPolicyBuildWorkflowsRequest.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPolicyTestCasesRequest.h>
@@ -96,6 +100,7 @@
 #include <aws/bedrock/model/RegisterMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/StartAutomatedReasoningPolicyBuildWorkflowRequest.h>
 #include <aws/bedrock/model/StartAutomatedReasoningPolicyTestWorkflowRequest.h>
+#include <aws/bedrock/model/StopAdvancedPromptOptimizationJobRequest.h>
 #include <aws/bedrock/model/StopEvaluationJobRequest.h>
 #include <aws/bedrock/model/StopModelCustomizationJobRequest.h>
 #include <aws/bedrock/model/StopModelInvocationJobRequest.h>
@@ -298,6 +303,17 @@ BedrockClient::InvokeOperationOutcome BedrockClient::InvokeServiceOperation(
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
+BatchDeleteAdvancedPromptOptimizationJobOutcome BedrockClient::BatchDeleteAdvancedPromptOptimizationJob(
+    const BatchDeleteAdvancedPromptOptimizationJobRequest& request) const {
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/advanced-prompt-optimization-job/batch-delete");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteAdvancedPromptOptimizationJobOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteAdvancedPromptOptimizationJobOutcome(std::move(result.GetError()));
+}
 BatchDeleteEvaluationJobOutcome BedrockClient::BatchDeleteEvaluationJob(const BatchDeleteEvaluationJobRequest& request) const {
   auto result = InvokeServiceOperation(
       request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/evaluation-jobs/batch-delete"); },
@@ -330,6 +346,15 @@ CancelAutomatedReasoningPolicyBuildWorkflowOutcome BedrockClient::CancelAutomate
       Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CancelAutomatedReasoningPolicyBuildWorkflowOutcome(result.GetResultWithOwnership())
                             : CancelAutomatedReasoningPolicyBuildWorkflowOutcome(std::move(result.GetError()));
+}
+CreateAdvancedPromptOptimizationJobOutcome BedrockClient::CreateAdvancedPromptOptimizationJob(
+    const CreateAdvancedPromptOptimizationJobRequest& request) const {
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/advanced-prompt-optimization-jobs"); },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAdvancedPromptOptimizationJobOutcome(result.GetResultWithOwnership())
+                            : CreateAdvancedPromptOptimizationJobOutcome(std::move(result.GetError()));
 }
 CreateAutomatedReasoningPolicyOutcome BedrockClient::CreateAutomatedReasoningPolicy(
     const CreateAutomatedReasoningPolicyRequest& request) const {
@@ -798,6 +823,24 @@ ExportAutomatedReasoningPolicyVersionOutcome BedrockClient::ExportAutomatedReaso
       Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ExportAutomatedReasoningPolicyVersionOutcome(result.GetResultWithOwnership())
                             : ExportAutomatedReasoningPolicyVersionOutcome(std::move(result.GetError()));
+}
+GetAdvancedPromptOptimizationJobOutcome BedrockClient::GetAdvancedPromptOptimizationJob(
+    const GetAdvancedPromptOptimizationJobRequest& request) const {
+  if (!request.JobIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAdvancedPromptOptimizationJob", "Required field: JobIdentifier, is not set");
+    return GetAdvancedPromptOptimizationJobOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/advanced-prompt-optimization-jobs/");
+        resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAdvancedPromptOptimizationJobOutcome(result.GetResultWithOwnership())
+                            : GetAdvancedPromptOptimizationJobOutcome(std::move(result.GetError()));
 }
 GetAutomatedReasoningPolicyOutcome BedrockClient::GetAutomatedReasoningPolicy(const GetAutomatedReasoningPolicyRequest& request) const {
   if (!request.PolicyArnHasBeenSet()) {
@@ -1269,6 +1312,15 @@ GetUseCaseForModelAccessOutcome BedrockClient::GetUseCaseForModelAccess(const Ge
   return result.IsSuccess() ? GetUseCaseForModelAccessOutcome(result.GetResultWithOwnership())
                             : GetUseCaseForModelAccessOutcome(std::move(result.GetError()));
 }
+ListAdvancedPromptOptimizationJobsOutcome BedrockClient::ListAdvancedPromptOptimizationJobs(
+    const ListAdvancedPromptOptimizationJobsRequest& request) const {
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/advanced-prompt-optimization-jobs"); },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAdvancedPromptOptimizationJobsOutcome(result.GetResultWithOwnership())
+                            : ListAdvancedPromptOptimizationJobsOutcome(std::move(result.GetError()));
+}
 ListAutomatedReasoningPoliciesOutcome BedrockClient::ListAutomatedReasoningPolicies(
     const ListAutomatedReasoningPoliciesRequest& request) const {
   auto result = InvokeServiceOperation(
@@ -1578,6 +1630,25 @@ StartAutomatedReasoningPolicyTestWorkflowOutcome BedrockClient::StartAutomatedRe
       Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartAutomatedReasoningPolicyTestWorkflowOutcome(result.GetResultWithOwnership())
                             : StartAutomatedReasoningPolicyTestWorkflowOutcome(std::move(result.GetError()));
+}
+StopAdvancedPromptOptimizationJobOutcome BedrockClient::StopAdvancedPromptOptimizationJob(
+    const StopAdvancedPromptOptimizationJobRequest& request) const {
+  if (!request.JobIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopAdvancedPromptOptimizationJob", "Required field: JobIdentifier, is not set");
+    return StopAdvancedPromptOptimizationJobOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/advanced-prompt-optimization-jobs/");
+        resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
+        resolvedEndpoint.AddPathSegments("/stop");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopAdvancedPromptOptimizationJobOutcome(result.GetResultWithOwnership())
+                            : StopAdvancedPromptOptimizationJobOutcome(std::move(result.GetError()));
 }
 StopEvaluationJobOutcome BedrockClient::StopEvaluationJob(const StopEvaluationJobRequest& request) const {
   if (!request.JobIdentifierHasBeenSet()) {

@@ -17,6 +17,7 @@ namespace ViewerMtlsModeMapper {
 
 static const int required_HASH = HashingUtils::HashString("required");
 static const int optional_HASH = HashingUtils::HashString("optional");
+static const int passthrough_HASH = HashingUtils::HashString("passthrough");
 
 ViewerMtlsMode GetViewerMtlsModeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ViewerMtlsMode GetViewerMtlsModeForName(const Aws::String& name) {
     return ViewerMtlsMode::required;
   } else if (hashCode == optional_HASH) {
     return ViewerMtlsMode::optional;
+  } else if (hashCode == passthrough_HASH) {
+    return ViewerMtlsMode::passthrough;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForViewerMtlsMode(ViewerMtlsMode enumValue) {
       return "required";
     case ViewerMtlsMode::optional:
       return "optional";
+    case ViewerMtlsMode::passthrough:
+      return "passthrough";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

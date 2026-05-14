@@ -54,6 +54,14 @@ NetworkMigrationCodeGenerationSegment& NetworkMigrationCodeGenerationSegment::op
     }
     m_artifactsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("referencedSegments")) {
+    Aws::Utils::Array<JsonView> referencedSegmentsJsonList = jsonValue.GetArray("referencedSegments");
+    for (unsigned referencedSegmentsIndex = 0; referencedSegmentsIndex < referencedSegmentsJsonList.GetLength();
+         ++referencedSegmentsIndex) {
+      m_referencedSegments.push_back(referencedSegmentsJsonList[referencedSegmentsIndex].AsString());
+    }
+    m_referencedSegmentsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
@@ -99,6 +107,15 @@ JsonValue NetworkMigrationCodeGenerationSegment::Jsonize() const {
       artifactsJsonList[artifactsIndex].AsObject(m_artifacts[artifactsIndex].Jsonize());
     }
     payload.WithArray("artifacts", std::move(artifactsJsonList));
+  }
+
+  if (m_referencedSegmentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> referencedSegmentsJsonList(m_referencedSegments.size());
+    for (unsigned referencedSegmentsIndex = 0; referencedSegmentsIndex < referencedSegmentsJsonList.GetLength();
+         ++referencedSegmentsIndex) {
+      referencedSegmentsJsonList[referencedSegmentsIndex].AsString(m_referencedSegments[referencedSegmentsIndex]);
+    }
+    payload.WithArray("referencedSegments", std::move(referencedSegmentsJsonList));
   }
 
   if (m_createdAtHasBeenSet) {

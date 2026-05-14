@@ -19,8 +19,10 @@
 /* End of generic header includes */
 
 /* Service model headers required in BedrockClient header */
+#include <aws/bedrock/model/BatchDeleteAdvancedPromptOptimizationJobResult.h>
 #include <aws/bedrock/model/BatchDeleteEvaluationJobResult.h>
 #include <aws/bedrock/model/CancelAutomatedReasoningPolicyBuildWorkflowResult.h>
+#include <aws/bedrock/model/CreateAdvancedPromptOptimizationJobResult.h>
 #include <aws/bedrock/model/CreateAutomatedReasoningPolicyResult.h>
 #include <aws/bedrock/model/CreateAutomatedReasoningPolicyTestCaseResult.h>
 #include <aws/bedrock/model/CreateAutomatedReasoningPolicyVersionResult.h>
@@ -56,6 +58,7 @@
 #include <aws/bedrock/model/DeleteResourcePolicyResult.h>
 #include <aws/bedrock/model/DeregisterMarketplaceModelEndpointResult.h>
 #include <aws/bedrock/model/ExportAutomatedReasoningPolicyVersionResult.h>
+#include <aws/bedrock/model/GetAdvancedPromptOptimizationJobResult.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyAnnotationsResult.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyBuildWorkflowResult.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyBuildWorkflowResultAssetsResult.h>
@@ -83,6 +86,8 @@
 #include <aws/bedrock/model/GetResourcePolicyResult.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessRequest.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessResult.h>
+#include <aws/bedrock/model/ListAdvancedPromptOptimizationJobsRequest.h>
+#include <aws/bedrock/model/ListAdvancedPromptOptimizationJobsResult.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPoliciesRequest.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPoliciesResult.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPolicyBuildWorkflowsResult.h>
@@ -127,6 +132,7 @@
 #include <aws/bedrock/model/RegisterMarketplaceModelEndpointResult.h>
 #include <aws/bedrock/model/StartAutomatedReasoningPolicyBuildWorkflowResult.h>
 #include <aws/bedrock/model/StartAutomatedReasoningPolicyTestWorkflowResult.h>
+#include <aws/bedrock/model/StopAdvancedPromptOptimizationJobResult.h>
 #include <aws/bedrock/model/StopEvaluationJobResult.h>
 #include <aws/bedrock/model/StopModelCustomizationJobResult.h>
 #include <aws/bedrock/model/StopModelInvocationJobResult.h>
@@ -172,8 +178,10 @@ using BedrockEndpointProvider = Aws::Bedrock::Endpoint::BedrockEndpointProvider;
 
 namespace Model {
 /* Service model forward declarations required in BedrockClient header */
+class BatchDeleteAdvancedPromptOptimizationJobRequest;
 class BatchDeleteEvaluationJobRequest;
 class CancelAutomatedReasoningPolicyBuildWorkflowRequest;
+class CreateAdvancedPromptOptimizationJobRequest;
 class CreateAutomatedReasoningPolicyRequest;
 class CreateAutomatedReasoningPolicyTestCaseRequest;
 class CreateAutomatedReasoningPolicyVersionRequest;
@@ -208,6 +216,7 @@ class DeleteProvisionedModelThroughputRequest;
 class DeleteResourcePolicyRequest;
 class DeregisterMarketplaceModelEndpointRequest;
 class ExportAutomatedReasoningPolicyVersionRequest;
+class GetAdvancedPromptOptimizationJobRequest;
 class GetAutomatedReasoningPolicyRequest;
 class GetAutomatedReasoningPolicyAnnotationsRequest;
 class GetAutomatedReasoningPolicyBuildWorkflowRequest;
@@ -233,6 +242,7 @@ class GetPromptRouterRequest;
 class GetProvisionedModelThroughputRequest;
 class GetResourcePolicyRequest;
 class GetUseCaseForModelAccessRequest;
+class ListAdvancedPromptOptimizationJobsRequest;
 class ListAutomatedReasoningPoliciesRequest;
 class ListAutomatedReasoningPolicyBuildWorkflowsRequest;
 class ListAutomatedReasoningPolicyTestCasesRequest;
@@ -261,6 +271,7 @@ class PutUseCaseForModelAccessRequest;
 class RegisterMarketplaceModelEndpointRequest;
 class StartAutomatedReasoningPolicyBuildWorkflowRequest;
 class StartAutomatedReasoningPolicyTestWorkflowRequest;
+class StopAdvancedPromptOptimizationJobRequest;
 class StopEvaluationJobRequest;
 class StopModelCustomizationJobRequest;
 class StopModelInvocationJobRequest;
@@ -276,9 +287,11 @@ class UpdateProvisionedModelThroughputRequest;
 /* End of service model forward declarations required in BedrockClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<BatchDeleteAdvancedPromptOptimizationJobResult, BedrockError> BatchDeleteAdvancedPromptOptimizationJobOutcome;
 typedef Aws::Utils::Outcome<BatchDeleteEvaluationJobResult, BedrockError> BatchDeleteEvaluationJobOutcome;
 typedef Aws::Utils::Outcome<CancelAutomatedReasoningPolicyBuildWorkflowResult, BedrockError>
     CancelAutomatedReasoningPolicyBuildWorkflowOutcome;
+typedef Aws::Utils::Outcome<CreateAdvancedPromptOptimizationJobResult, BedrockError> CreateAdvancedPromptOptimizationJobOutcome;
 typedef Aws::Utils::Outcome<CreateAutomatedReasoningPolicyResult, BedrockError> CreateAutomatedReasoningPolicyOutcome;
 typedef Aws::Utils::Outcome<CreateAutomatedReasoningPolicyTestCaseResult, BedrockError> CreateAutomatedReasoningPolicyTestCaseOutcome;
 typedef Aws::Utils::Outcome<CreateAutomatedReasoningPolicyVersionResult, BedrockError> CreateAutomatedReasoningPolicyVersionOutcome;
@@ -314,6 +327,7 @@ typedef Aws::Utils::Outcome<DeleteProvisionedModelThroughputResult, BedrockError
 typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, BedrockError> DeleteResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<DeregisterMarketplaceModelEndpointResult, BedrockError> DeregisterMarketplaceModelEndpointOutcome;
 typedef Aws::Utils::Outcome<ExportAutomatedReasoningPolicyVersionResult, BedrockError> ExportAutomatedReasoningPolicyVersionOutcome;
+typedef Aws::Utils::Outcome<GetAdvancedPromptOptimizationJobResult, BedrockError> GetAdvancedPromptOptimizationJobOutcome;
 typedef Aws::Utils::Outcome<GetAutomatedReasoningPolicyResult, BedrockError> GetAutomatedReasoningPolicyOutcome;
 typedef Aws::Utils::Outcome<GetAutomatedReasoningPolicyAnnotationsResult, BedrockError> GetAutomatedReasoningPolicyAnnotationsOutcome;
 typedef Aws::Utils::Outcome<GetAutomatedReasoningPolicyBuildWorkflowResult, BedrockError> GetAutomatedReasoningPolicyBuildWorkflowOutcome;
@@ -340,6 +354,7 @@ typedef Aws::Utils::Outcome<GetPromptRouterResult, BedrockError> GetPromptRouter
 typedef Aws::Utils::Outcome<GetProvisionedModelThroughputResult, BedrockError> GetProvisionedModelThroughputOutcome;
 typedef Aws::Utils::Outcome<GetResourcePolicyResult, BedrockError> GetResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<GetUseCaseForModelAccessResult, BedrockError> GetUseCaseForModelAccessOutcome;
+typedef Aws::Utils::Outcome<ListAdvancedPromptOptimizationJobsResult, BedrockError> ListAdvancedPromptOptimizationJobsOutcome;
 typedef Aws::Utils::Outcome<ListAutomatedReasoningPoliciesResult, BedrockError> ListAutomatedReasoningPoliciesOutcome;
 typedef Aws::Utils::Outcome<ListAutomatedReasoningPolicyBuildWorkflowsResult, BedrockError>
     ListAutomatedReasoningPolicyBuildWorkflowsOutcome;
@@ -370,6 +385,7 @@ typedef Aws::Utils::Outcome<RegisterMarketplaceModelEndpointResult, BedrockError
 typedef Aws::Utils::Outcome<StartAutomatedReasoningPolicyBuildWorkflowResult, BedrockError>
     StartAutomatedReasoningPolicyBuildWorkflowOutcome;
 typedef Aws::Utils::Outcome<StartAutomatedReasoningPolicyTestWorkflowResult, BedrockError> StartAutomatedReasoningPolicyTestWorkflowOutcome;
+typedef Aws::Utils::Outcome<StopAdvancedPromptOptimizationJobResult, BedrockError> StopAdvancedPromptOptimizationJobOutcome;
 typedef Aws::Utils::Outcome<StopEvaluationJobResult, BedrockError> StopEvaluationJobOutcome;
 typedef Aws::Utils::Outcome<StopModelCustomizationJobResult, BedrockError> StopModelCustomizationJobOutcome;
 typedef Aws::Utils::Outcome<StopModelInvocationJobResult, BedrockError> StopModelInvocationJobOutcome;
@@ -385,8 +401,10 @@ typedef Aws::Utils::Outcome<UpdateProvisionedModelThroughputResult, BedrockError
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<BatchDeleteAdvancedPromptOptimizationJobOutcome> BatchDeleteAdvancedPromptOptimizationJobOutcomeCallable;
 typedef std::future<BatchDeleteEvaluationJobOutcome> BatchDeleteEvaluationJobOutcomeCallable;
 typedef std::future<CancelAutomatedReasoningPolicyBuildWorkflowOutcome> CancelAutomatedReasoningPolicyBuildWorkflowOutcomeCallable;
+typedef std::future<CreateAdvancedPromptOptimizationJobOutcome> CreateAdvancedPromptOptimizationJobOutcomeCallable;
 typedef std::future<CreateAutomatedReasoningPolicyOutcome> CreateAutomatedReasoningPolicyOutcomeCallable;
 typedef std::future<CreateAutomatedReasoningPolicyTestCaseOutcome> CreateAutomatedReasoningPolicyTestCaseOutcomeCallable;
 typedef std::future<CreateAutomatedReasoningPolicyVersionOutcome> CreateAutomatedReasoningPolicyVersionOutcomeCallable;
@@ -421,6 +439,7 @@ typedef std::future<DeleteProvisionedModelThroughputOutcome> DeleteProvisionedMo
 typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
 typedef std::future<DeregisterMarketplaceModelEndpointOutcome> DeregisterMarketplaceModelEndpointOutcomeCallable;
 typedef std::future<ExportAutomatedReasoningPolicyVersionOutcome> ExportAutomatedReasoningPolicyVersionOutcomeCallable;
+typedef std::future<GetAdvancedPromptOptimizationJobOutcome> GetAdvancedPromptOptimizationJobOutcomeCallable;
 typedef std::future<GetAutomatedReasoningPolicyOutcome> GetAutomatedReasoningPolicyOutcomeCallable;
 typedef std::future<GetAutomatedReasoningPolicyAnnotationsOutcome> GetAutomatedReasoningPolicyAnnotationsOutcomeCallable;
 typedef std::future<GetAutomatedReasoningPolicyBuildWorkflowOutcome> GetAutomatedReasoningPolicyBuildWorkflowOutcomeCallable;
@@ -447,6 +466,7 @@ typedef std::future<GetPromptRouterOutcome> GetPromptRouterOutcomeCallable;
 typedef std::future<GetProvisionedModelThroughputOutcome> GetProvisionedModelThroughputOutcomeCallable;
 typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
 typedef std::future<GetUseCaseForModelAccessOutcome> GetUseCaseForModelAccessOutcomeCallable;
+typedef std::future<ListAdvancedPromptOptimizationJobsOutcome> ListAdvancedPromptOptimizationJobsOutcomeCallable;
 typedef std::future<ListAutomatedReasoningPoliciesOutcome> ListAutomatedReasoningPoliciesOutcomeCallable;
 typedef std::future<ListAutomatedReasoningPolicyBuildWorkflowsOutcome> ListAutomatedReasoningPolicyBuildWorkflowsOutcomeCallable;
 typedef std::future<ListAutomatedReasoningPolicyTestCasesOutcome> ListAutomatedReasoningPolicyTestCasesOutcomeCallable;
@@ -475,6 +495,7 @@ typedef std::future<PutUseCaseForModelAccessOutcome> PutUseCaseForModelAccessOut
 typedef std::future<RegisterMarketplaceModelEndpointOutcome> RegisterMarketplaceModelEndpointOutcomeCallable;
 typedef std::future<StartAutomatedReasoningPolicyBuildWorkflowOutcome> StartAutomatedReasoningPolicyBuildWorkflowOutcomeCallable;
 typedef std::future<StartAutomatedReasoningPolicyTestWorkflowOutcome> StartAutomatedReasoningPolicyTestWorkflowOutcomeCallable;
+typedef std::future<StopAdvancedPromptOptimizationJobOutcome> StopAdvancedPromptOptimizationJobOutcomeCallable;
 typedef std::future<StopEvaluationJobOutcome> StopEvaluationJobOutcomeCallable;
 typedef std::future<StopModelCustomizationJobOutcome> StopModelCustomizationJobOutcomeCallable;
 typedef std::future<StopModelInvocationJobOutcome> StopModelInvocationJobOutcomeCallable;
@@ -493,6 +514,10 @@ typedef std::future<UpdateProvisionedModelThroughputOutcome> UpdateProvisionedMo
 class BedrockClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const BedrockClient*, const Model::BatchDeleteAdvancedPromptOptimizationJobRequest&,
+                           const Model::BatchDeleteAdvancedPromptOptimizationJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchDeleteAdvancedPromptOptimizationJobResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::BatchDeleteEvaluationJobRequest&,
                            const Model::BatchDeleteEvaluationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchDeleteEvaluationJobResponseReceivedHandler;
@@ -500,6 +525,10 @@ typedef std::function<void(const BedrockClient*, const Model::CancelAutomatedRea
                            const Model::CancelAutomatedReasoningPolicyBuildWorkflowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelAutomatedReasoningPolicyBuildWorkflowResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::CreateAdvancedPromptOptimizationJobRequest&,
+                           const Model::CreateAdvancedPromptOptimizationJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateAdvancedPromptOptimizationJobResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::CreateAutomatedReasoningPolicyRequest&,
                            const Model::CreateAutomatedReasoningPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -618,6 +647,10 @@ typedef std::function<void(const BedrockClient*, const Model::ExportAutomatedRea
                            const Model::ExportAutomatedReasoningPolicyVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ExportAutomatedReasoningPolicyVersionResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::GetAdvancedPromptOptimizationJobRequest&,
+                           const Model::GetAdvancedPromptOptimizationJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAdvancedPromptOptimizationJobResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::GetAutomatedReasoningPolicyRequest&,
                            const Model::GetAutomatedReasoningPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAutomatedReasoningPolicyResponseReceivedHandler;
@@ -702,6 +735,10 @@ typedef std::function<void(const BedrockClient*, const Model::GetResourcePolicyR
 typedef std::function<void(const BedrockClient*, const Model::GetUseCaseForModelAccessRequest&,
                            const Model::GetUseCaseForModelAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetUseCaseForModelAccessResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::ListAdvancedPromptOptimizationJobsRequest&,
+                           const Model::ListAdvancedPromptOptimizationJobsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAdvancedPromptOptimizationJobsResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::ListAutomatedReasoningPoliciesRequest&,
                            const Model::ListAutomatedReasoningPoliciesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -799,6 +836,10 @@ typedef std::function<void(const BedrockClient*, const Model::StartAutomatedReas
                            const Model::StartAutomatedReasoningPolicyTestWorkflowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartAutomatedReasoningPolicyTestWorkflowResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::StopAdvancedPromptOptimizationJobRequest&,
+                           const Model::StopAdvancedPromptOptimizationJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopAdvancedPromptOptimizationJobResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::StopEvaluationJobRequest&, const Model::StopEvaluationJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopEvaluationJobResponseReceivedHandler;

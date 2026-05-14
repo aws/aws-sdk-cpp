@@ -22,6 +22,7 @@
 #include <aws/qconnect/model/ListMessageTemplateVersionsPaginationTraits.h>
 #include <aws/qconnect/model/ListMessageTemplatesPaginationTraits.h>
 #include <aws/qconnect/model/ListMessagesPaginationTraits.h>
+#include <aws/qconnect/model/ListModelsPaginationTraits.h>
 #include <aws/qconnect/model/ListQuickResponsesPaginationTraits.h>
 #include <aws/qconnect/model/ListSpansPaginationTraits.h>
 #include <aws/qconnect/model/SearchContentPaginationTraits.h>
@@ -209,6 +210,17 @@ class QConnectPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMessageTemplateVersionsRequest,
                                              Pagination::ListMessageTemplateVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListModels operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListModelsRequest, Pagination::ListModelsPaginationTraits<DerivedClient>>
+  ListModelsPaginator(const Model::ListModelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListModelsRequest,
+                                             Pagination::ListModelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                    request};
   }
 
   /**

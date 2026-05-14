@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/bedrock/model/ListAdvancedPromptOptimizationJobsPaginationTraits.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPoliciesPaginationTraits.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPolicyBuildWorkflowsPaginationTraits.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPolicyTestCasesPaginationTraits.h>
@@ -34,6 +35,18 @@ namespace Bedrock {
 template <typename DerivedClient>
 class BedrockPaginationBase {
  public:
+  /**
+   * Create a paginator for ListAdvancedPromptOptimizationJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAdvancedPromptOptimizationJobsRequest,
+                                    Pagination::ListAdvancedPromptOptimizationJobsPaginationTraits<DerivedClient>>
+  ListAdvancedPromptOptimizationJobsPaginator(const Model::ListAdvancedPromptOptimizationJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAdvancedPromptOptimizationJobsRequest,
+                                             Pagination::ListAdvancedPromptOptimizationJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListAutomatedReasoningPolicies operation
    */

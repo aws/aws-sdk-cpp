@@ -18,6 +18,10 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/AccountEnforcedGuardrailInferenceInputConfiguration.h>
 #include <aws/bedrock/model/AccountEnforcedGuardrailOutputConfiguration.h>
+#include <aws/bedrock/model/AdvancedPromptOptimizationInputConfig.h>
+#include <aws/bedrock/model/AdvancedPromptOptimizationJobStatus.h>
+#include <aws/bedrock/model/AdvancedPromptOptimizationJobSummary.h>
+#include <aws/bedrock/model/AdvancedPromptOptimizationOutputConfig.h>
 #include <aws/bedrock/model/AgreementAvailability.h>
 #include <aws/bedrock/model/AgreementStatus.h>
 #include <aws/bedrock/model/ApplicationType.h>
@@ -121,6 +125,10 @@
 #include <aws/bedrock/model/AutomatedReasoningPolicyUpdateVariableMutation.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyVariableReport.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyWorkflowTypeContent.h>
+#include <aws/bedrock/model/BatchDeleteAdvancedPromptOptimizationJobError.h>
+#include <aws/bedrock/model/BatchDeleteAdvancedPromptOptimizationJobItem.h>
+#include <aws/bedrock/model/BatchDeleteAdvancedPromptOptimizationJobRequest.h>
+#include <aws/bedrock/model/BatchDeleteAdvancedPromptOptimizationJobResult.h>
 #include <aws/bedrock/model/BatchDeleteEvaluationJobError.h>
 #include <aws/bedrock/model/BatchDeleteEvaluationJobItem.h>
 #include <aws/bedrock/model/BatchDeleteEvaluationJobRequest.h>
@@ -132,6 +140,8 @@
 #include <aws/bedrock/model/CloudWatchConfig.h>
 #include <aws/bedrock/model/CommitmentDuration.h>
 #include <aws/bedrock/model/ConfigurationOwner.h>
+#include <aws/bedrock/model/CreateAdvancedPromptOptimizationJobRequest.h>
+#include <aws/bedrock/model/CreateAdvancedPromptOptimizationJobResult.h>
 #include <aws/bedrock/model/CreateAutomatedReasoningPolicyRequest.h>
 #include <aws/bedrock/model/CreateAutomatedReasoningPolicyResult.h>
 #include <aws/bedrock/model/CreateAutomatedReasoningPolicyTestCaseRequest.h>
@@ -248,6 +258,8 @@
 #include <aws/bedrock/model/FoundationModelLifecycleStatus.h>
 #include <aws/bedrock/model/FoundationModelSummary.h>
 #include <aws/bedrock/model/GenerationConfiguration.h>
+#include <aws/bedrock/model/GetAdvancedPromptOptimizationJobRequest.h>
+#include <aws/bedrock/model/GetAdvancedPromptOptimizationJobResult.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyAnnotationsRequest.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyAnnotationsResult.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyBuildWorkflowRequest.h>
@@ -353,6 +365,7 @@
 #include <aws/bedrock/model/HumanWorkflowConfig.h>
 #include <aws/bedrock/model/ImplicitFilterConfiguration.h>
 #include <aws/bedrock/model/ImportedModelSummary.h>
+#include <aws/bedrock/model/InferenceConfiguration.h>
 #include <aws/bedrock/model/InferenceProfileModel.h>
 #include <aws/bedrock/model/InferenceProfileModelSource.h>
 #include <aws/bedrock/model/InferenceProfileStatus.h>
@@ -369,6 +382,8 @@
 #include <aws/bedrock/model/KnowledgeBaseVectorSearchConfiguration.h>
 #include <aws/bedrock/model/LambdaGraderConfig.h>
 #include <aws/bedrock/model/LegalTerm.h>
+#include <aws/bedrock/model/ListAdvancedPromptOptimizationJobsRequest.h>
+#include <aws/bedrock/model/ListAdvancedPromptOptimizationJobsResult.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPoliciesRequest.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPoliciesResult.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPolicyBuildWorkflowsRequest.h>
@@ -416,6 +431,7 @@
 #include <aws/bedrock/model/MarketplaceModelEndpointSummary.h>
 #include <aws/bedrock/model/MetadataAttributeSchema.h>
 #include <aws/bedrock/model/MetadataConfigurationForReranking.h>
+#include <aws/bedrock/model/ModelConfiguration.h>
 #include <aws/bedrock/model/ModelCopyJobStatus.h>
 #include <aws/bedrock/model/ModelCopyJobSummary.h>
 #include <aws/bedrock/model/ModelCustomization.h>
@@ -494,6 +510,8 @@
 #include <aws/bedrock/model/StartAutomatedReasoningPolicyTestWorkflowResult.h>
 #include <aws/bedrock/model/Status.h>
 #include <aws/bedrock/model/StatusDetails.h>
+#include <aws/bedrock/model/StopAdvancedPromptOptimizationJobRequest.h>
+#include <aws/bedrock/model/StopAdvancedPromptOptimizationJobResult.h>
 #include <aws/bedrock/model/StopEvaluationJobRequest.h>
 #include <aws/bedrock/model/StopEvaluationJobResult.h>
 #include <aws/bedrock/model/StopModelCustomizationJobRequest.h>

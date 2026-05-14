@@ -29,6 +29,7 @@
 #include <aws/datazone/model/ListLineageNodeHistoryPaginationTraits.h>
 #include <aws/datazone/model/ListMetadataGenerationRunsPaginationTraits.h>
 #include <aws/datazone/model/ListNotebookRunsPaginationTraits.h>
+#include <aws/datazone/model/ListNotebooksPaginationTraits.h>
 #include <aws/datazone/model/ListNotificationsPaginationTraits.h>
 #include <aws/datazone/model/ListPolicyGrantsPaginationTraits.h>
 #include <aws/datazone/model/ListProjectMembershipsPaginationTraits.h>
@@ -315,6 +316,17 @@ class DataZonePaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotebookRunsRequest,
                                              Pagination::ListNotebookRunsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
+  }
+
+  /**
+   * Create a paginator for ListNotebooks operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotebooksRequest, Pagination::ListNotebooksPaginationTraits<DerivedClient>>
+  ListNotebooksPaginator(const Model::ListNotebooksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotebooksRequest,
+                                             Pagination::ListNotebooksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                       request};
   }
 
   /**

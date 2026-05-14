@@ -50,6 +50,7 @@
 #include <aws/datazone/model/CreateGlossaryTermRequest.h>
 #include <aws/datazone/model/CreateGroupProfileRequest.h>
 #include <aws/datazone/model/CreateListingChangeSetRequest.h>
+#include <aws/datazone/model/CreateNotebookRequest.h>
 #include <aws/datazone/model/CreateProjectMembershipRequest.h>
 #include <aws/datazone/model/CreateProjectProfileRequest.h>
 #include <aws/datazone/model/CreateProjectRequest.h>
@@ -77,6 +78,7 @@
 #include <aws/datazone/model/DeleteGlossaryRequest.h>
 #include <aws/datazone/model/DeleteGlossaryTermRequest.h>
 #include <aws/datazone/model/DeleteListingRequest.h>
+#include <aws/datazone/model/DeleteNotebookRequest.h>
 #include <aws/datazone/model/DeleteProjectMembershipRequest.h>
 #include <aws/datazone/model/DeleteProjectProfileRequest.h>
 #include <aws/datazone/model/DeleteProjectRequest.h>
@@ -114,6 +116,8 @@
 #include <aws/datazone/model/GetLineageNodeRequest.h>
 #include <aws/datazone/model/GetListingRequest.h>
 #include <aws/datazone/model/GetMetadataGenerationRunRequest.h>
+#include <aws/datazone/model/GetNotebookExportRequest.h>
+#include <aws/datazone/model/GetNotebookRequest.h>
 #include <aws/datazone/model/GetNotebookRunRequest.h>
 #include <aws/datazone/model/GetProjectProfileRequest.h>
 #include <aws/datazone/model/GetProjectRequest.h>
@@ -146,6 +150,7 @@
 #include <aws/datazone/model/ListLineageNodeHistoryRequest.h>
 #include <aws/datazone/model/ListMetadataGenerationRunsRequest.h>
 #include <aws/datazone/model/ListNotebookRunsRequest.h>
+#include <aws/datazone/model/ListNotebooksRequest.h>
 #include <aws/datazone/model/ListNotificationsRequest.h>
 #include <aws/datazone/model/ListPolicyGrantsRequest.h>
 #include <aws/datazone/model/ListProjectMembershipsRequest.h>
@@ -175,6 +180,8 @@
 #include <aws/datazone/model/SearchUserProfilesRequest.h>
 #include <aws/datazone/model/StartDataSourceRunRequest.h>
 #include <aws/datazone/model/StartMetadataGenerationRunRequest.h>
+#include <aws/datazone/model/StartNotebookExportRequest.h>
+#include <aws/datazone/model/StartNotebookImportRequest.h>
 #include <aws/datazone/model/StartNotebookRunRequest.h>
 #include <aws/datazone/model/StopNotebookRunRequest.h>
 #include <aws/datazone/model/TagResourceRequest.h>
@@ -192,6 +199,7 @@
 #include <aws/datazone/model/UpdateGlossaryRequest.h>
 #include <aws/datazone/model/UpdateGlossaryTermRequest.h>
 #include <aws/datazone/model/UpdateGroupProfileRequest.h>
+#include <aws/datazone/model/UpdateNotebookRequest.h>
 #include <aws/datazone/model/UpdateProjectProfileRequest.h>
 #include <aws/datazone/model/UpdateProjectRequest.h>
 #include <aws/datazone/model/UpdateRootDomainUnitOwnerRequest.h>
@@ -1051,6 +1059,24 @@ CreateListingChangeSetOutcome DataZoneClient::CreateListingChangeSet(const Creat
                             : CreateListingChangeSetOutcome(std::move(result.GetError()));
 }
 
+CreateNotebookOutcome DataZoneClient::CreateNotebook(const CreateNotebookRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateNotebook", "Required field: DomainIdentifier, is not set");
+    return CreateNotebookOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [DomainIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/notebooks");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNotebookOutcome(result.GetResultWithOwnership()) : CreateNotebookOutcome(std::move(result.GetError()));
+}
+
 CreateProjectOutcome DataZoneClient::CreateProject(const CreateProjectRequest& request) const {
   if (!request.DomainIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateProject", "Required field: DomainIdentifier, is not set");
@@ -1686,6 +1712,30 @@ DeleteListingOutcome DataZoneClient::DeleteListing(const DeleteListingRequest& r
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteListingOutcome(result.GetResultWithOwnership()) : DeleteListingOutcome(std::move(result.GetError()));
+}
+
+DeleteNotebookOutcome DataZoneClient::DeleteNotebook(const DeleteNotebookRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteNotebook", "Required field: DomainIdentifier, is not set");
+    return DeleteNotebookOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteNotebook", "Required field: Identifier, is not set");
+    return DeleteNotebookOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [Identifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/notebooks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNotebookOutcome(result.GetResultWithOwnership()) : DeleteNotebookOutcome(std::move(result.GetError()));
 }
 
 DeleteProjectOutcome DataZoneClient::DeleteProject(const DeleteProjectRequest& request) const {
@@ -2647,6 +2697,55 @@ GetMetadataGenerationRunOutcome DataZoneClient::GetMetadataGenerationRun(const G
                             : GetMetadataGenerationRunOutcome(std::move(result.GetError()));
 }
 
+GetNotebookOutcome DataZoneClient::GetNotebook(const GetNotebookRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetNotebook", "Required field: DomainIdentifier, is not set");
+    return GetNotebookOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                    "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetNotebook", "Required field: Identifier, is not set");
+    return GetNotebookOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                    "Missing required field [Identifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/notebooks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNotebookOutcome(result.GetResultWithOwnership()) : GetNotebookOutcome(std::move(result.GetError()));
+}
+
+GetNotebookExportOutcome DataZoneClient::GetNotebookExport(const GetNotebookExportRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetNotebookExport", "Required field: DomainIdentifier, is not set");
+    return GetNotebookExportOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetNotebookExport", "Required field: Identifier, is not set");
+    return GetNotebookExportOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [Identifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/notebook-exports/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNotebookExportOutcome(result.GetResultWithOwnership())
+                            : GetNotebookExportOutcome(std::move(result.GetError()));
+}
+
 GetNotebookRunOutcome DataZoneClient::GetNotebookRun(const GetNotebookRunRequest& request) const {
   if (!request.DomainIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetNotebookRun", "Required field: DomainIdentifier, is not set");
@@ -3425,6 +3524,29 @@ ListNotebookRunsOutcome DataZoneClient::ListNotebookRuns(const ListNotebookRunsR
                             : ListNotebookRunsOutcome(std::move(result.GetError()));
 }
 
+ListNotebooksOutcome DataZoneClient::ListNotebooks(const ListNotebooksRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListNotebooks", "Required field: DomainIdentifier, is not set");
+    return ListNotebooksOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.OwningProjectIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListNotebooks", "Required field: OwningProjectIdentifier, is not set");
+    return ListNotebooksOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [OwningProjectIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/notebooks");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNotebooksOutcome(result.GetResultWithOwnership()) : ListNotebooksOutcome(std::move(result.GetError()));
+}
+
 ListNotificationsOutcome DataZoneClient::ListNotifications(const ListNotificationsRequest& request) const {
   if (!request.DomainIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListNotifications", "Required field: DomainIdentifier, is not set");
@@ -4112,6 +4234,44 @@ StartMetadataGenerationRunOutcome DataZoneClient::StartMetadataGenerationRun(con
                             : StartMetadataGenerationRunOutcome(std::move(result.GetError()));
 }
 
+StartNotebookExportOutcome DataZoneClient::StartNotebookExport(const StartNotebookExportRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartNotebookExport", "Required field: DomainIdentifier, is not set");
+    return StartNotebookExportOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [DomainIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/notebook-exports");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartNotebookExportOutcome(result.GetResultWithOwnership())
+                            : StartNotebookExportOutcome(std::move(result.GetError()));
+}
+
+StartNotebookImportOutcome DataZoneClient::StartNotebookImport(const StartNotebookImportRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartNotebookImport", "Required field: DomainIdentifier, is not set");
+    return StartNotebookImportOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [DomainIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/notebook-imports");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartNotebookImportOutcome(result.GetResultWithOwnership())
+                            : StartNotebookImportOutcome(std::move(result.GetError()));
+}
+
 StartNotebookRunOutcome DataZoneClient::StartNotebookRun(const StartNotebookRunRequest& request) const {
   if (!request.DomainIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("StartNotebookRun", "Required field: DomainIdentifier, is not set");
@@ -4524,6 +4684,30 @@ UpdateGroupProfileOutcome DataZoneClient::UpdateGroupProfile(const UpdateGroupPr
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateGroupProfileOutcome(result.GetResultWithOwnership())
                             : UpdateGroupProfileOutcome(std::move(result.GetError()));
+}
+
+UpdateNotebookOutcome DataZoneClient::UpdateNotebook(const UpdateNotebookRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateNotebook", "Required field: DomainIdentifier, is not set");
+    return UpdateNotebookOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateNotebook", "Required field: Identifier, is not set");
+    return UpdateNotebookOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [Identifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/notebooks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateNotebookOutcome(result.GetResultWithOwnership()) : UpdateNotebookOutcome(std::move(result.GetError()));
 }
 
 UpdateProjectOutcome DataZoneClient::UpdateProject(const UpdateProjectRequest& request) const {

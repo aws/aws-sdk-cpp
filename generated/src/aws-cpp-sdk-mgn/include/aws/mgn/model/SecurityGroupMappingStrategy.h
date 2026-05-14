@@ -10,7 +10,7 @@
 namespace Aws {
 namespace mgn {
 namespace Model {
-enum class SecurityGroupMappingStrategy { NOT_SET, MAP, SKIP };
+enum class SecurityGroupMappingStrategy { NOT_SET, MAP, SKIP, MAP_DHCP };
 
 namespace SecurityGroupMappingStrategyMapper {
 AWS_MGN_API SecurityGroupMappingStrategy GetSecurityGroupMappingStrategyForName(const Aws::String& name);
