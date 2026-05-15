@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
+#include <aws/mediapackagev2/model/DashAvailabilityStartTimeConfiguration.h>
 #include <aws/mediapackagev2/model/DashBaseUrl.h>
 #include <aws/mediapackagev2/model/DashCompactness.h>
 #include <aws/mediapackagev2/model/DashDrmSignaling.h>
@@ -409,6 +410,27 @@ class GetDashManifestConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for the DASH <code>availabilityStartTime</code> attribute
+   * of the Media Presentation Description (MPD).</p>
+   */
+  inline const DashAvailabilityStartTimeConfiguration& GetAvailabilityStartTimeConfiguration() const {
+    return m_availabilityStartTimeConfiguration;
+  }
+  inline bool AvailabilityStartTimeConfigurationHasBeenSet() const { return m_availabilityStartTimeConfigurationHasBeenSet; }
+  template <typename AvailabilityStartTimeConfigurationT = DashAvailabilityStartTimeConfiguration>
+  void SetAvailabilityStartTimeConfiguration(AvailabilityStartTimeConfigurationT&& value) {
+    m_availabilityStartTimeConfigurationHasBeenSet = true;
+    m_availabilityStartTimeConfiguration = std::forward<AvailabilityStartTimeConfigurationT>(value);
+  }
+  template <typename AvailabilityStartTimeConfigurationT = DashAvailabilityStartTimeConfiguration>
+  GetDashManifestConfiguration& WithAvailabilityStartTimeConfiguration(AvailabilityStartTimeConfigurationT&& value) {
+    SetAvailabilityStartTimeConfiguration(std::forward<AvailabilityStartTimeConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_manifestName;
 
@@ -447,6 +469,8 @@ class GetDashManifestConfiguration {
   DashSubtitleConfiguration m_subtitleConfiguration;
 
   UriPathType m_uriPathType{UriPathType::NOT_SET};
+
+  DashAvailabilityStartTimeConfiguration m_availabilityStartTimeConfiguration;
   bool m_manifestNameHasBeenSet = false;
   bool m_urlHasBeenSet = false;
   bool m_manifestWindowSecondsHasBeenSet = false;
@@ -466,6 +490,7 @@ class GetDashManifestConfiguration {
   bool m_compactnessHasBeenSet = false;
   bool m_subtitleConfigurationHasBeenSet = false;
   bool m_uriPathTypeHasBeenSet = false;
+  bool m_availabilityStartTimeConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

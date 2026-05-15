@@ -101,6 +101,10 @@ CreateDashManifestConfiguration& CreateDashManifestConfiguration::operator=(Json
     m_uriPathType = UriPathTypeMapper::GetUriPathTypeForName(jsonValue.GetString("UriPathType"));
     m_uriPathTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AvailabilityStartTimeConfiguration")) {
+    m_availabilityStartTimeConfiguration = jsonValue.GetObject("AvailabilityStartTimeConfiguration");
+    m_availabilityStartTimeConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -191,6 +195,10 @@ JsonValue CreateDashManifestConfiguration::Jsonize() const {
 
   if (m_uriPathTypeHasBeenSet) {
     payload.WithString("UriPathType", UriPathTypeMapper::GetNameForUriPathType(m_uriPathType));
+  }
+
+  if (m_availabilityStartTimeConfigurationHasBeenSet) {
+    payload.WithObject("AvailabilityStartTimeConfiguration", m_availabilityStartTimeConfiguration.Jsonize());
   }
 
   return payload;

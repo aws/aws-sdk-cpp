@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/model/DeliveryModel.h>
+#include <aws/partnercentral-selling/model/ExpectedContractDuration.h>
 #include <aws/partnercentral-selling/model/ExpectedCustomerSpend.h>
 #include <aws/partnercentral-selling/model/SalesActivity.h>
 
@@ -89,6 +90,26 @@ class ProjectView {
 
   ///@{
   /**
+   * <p>Optional. The expected contract duration for this opportunity, representing
+   * the anticipated length of the contract in the unit specified by
+   * <code>Term</code>.</p>
+   */
+  inline const ExpectedContractDuration& GetExpectedContractDuration() const { return m_expectedContractDuration; }
+  inline bool ExpectedContractDurationHasBeenSet() const { return m_expectedContractDurationHasBeenSet; }
+  template <typename ExpectedContractDurationT = ExpectedContractDuration>
+  void SetExpectedContractDuration(ExpectedContractDurationT&& value) {
+    m_expectedContractDurationHasBeenSet = true;
+    m_expectedContractDuration = std::forward<ExpectedContractDurationT>(value);
+  }
+  template <typename ExpectedContractDurationT = ExpectedContractDuration>
+  ProjectView& WithExpectedContractDuration(ExpectedContractDurationT&& value) {
+    SetExpectedContractDuration(std::forward<ExpectedContractDurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> Specifies the proposed solution focus or type of workload for the project.
    * </p>
    */
@@ -155,6 +176,8 @@ class ProjectView {
 
   Aws::Vector<ExpectedCustomerSpend> m_expectedCustomerSpend;
 
+  ExpectedContractDuration m_expectedContractDuration;
+
   Aws::String m_customerUseCase;
 
   Aws::Vector<SalesActivity> m_salesActivities;
@@ -162,6 +185,7 @@ class ProjectView {
   Aws::String m_otherSolutionDescription;
   bool m_deliveryModelsHasBeenSet = false;
   bool m_expectedCustomerSpendHasBeenSet = false;
+  bool m_expectedContractDurationHasBeenSet = false;
   bool m_customerUseCaseHasBeenSet = false;
   bool m_salesActivitiesHasBeenSet = false;
   bool m_otherSolutionDescriptionHasBeenSet = false;
