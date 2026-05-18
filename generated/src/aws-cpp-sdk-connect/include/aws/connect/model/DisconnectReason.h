@@ -20,7 +20,7 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>Contains details about why a contact was disconnected. Only Amazon Connect
+ * <p>Contains details about why a contact was disconnected. Only Connect Customer
  * outbound campaigns can provide this field.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisconnectReason">AWS
  * API Reference</a></p>

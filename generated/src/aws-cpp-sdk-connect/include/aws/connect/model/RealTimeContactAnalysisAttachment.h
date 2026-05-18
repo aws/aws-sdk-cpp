@@ -55,7 +55,7 @@ class RealTimeContactAnalysisAttachment {
    * <p>Describes the MIME file type of the attachment. For a list of supported file
    * types, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
-   * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+   * specifications</a> in the <i>Connect Customer Administrator Guide</i>.</p>
    */
   inline const Aws::String& GetContentType() const { return m_contentType; }
   inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }

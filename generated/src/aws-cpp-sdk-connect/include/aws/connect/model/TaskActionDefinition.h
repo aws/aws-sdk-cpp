@@ -37,7 +37,7 @@ class TaskActionDefinition {
   /**
    * <p>The name. Supports variable injection. For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath
-   * reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+   * reference</a> in the <i>Connect Customer Administrators Guide</i>.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -57,7 +57,7 @@ class TaskActionDefinition {
   /**
    * <p>The description. Supports variable injection. For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath
-   * reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+   * reference</a> in the <i>Connect Customer Administrators Guide</i>.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }

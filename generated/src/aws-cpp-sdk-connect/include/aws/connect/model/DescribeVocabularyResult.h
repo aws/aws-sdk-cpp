@@ -30,7 +30,7 @@ class DescribeVocabularyResult {
 
   ///@{
   /**
-   * <p>A list of specific words that you want Contact Lens for Amazon Connect to
+   * <p>A list of specific words that you want Contact Lens for Connect Customer to
    * recognize in your audio input. They are generally domain-specific words and
    * phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
    */

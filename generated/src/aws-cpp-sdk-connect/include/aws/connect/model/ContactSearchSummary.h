@@ -210,8 +210,8 @@ class ContactSearchSummary {
 
   ///@{
   /**
-   * <p>The timestamp when the customer endpoint disconnected from Amazon
-   * Connect.</p>
+   * <p>The timestamp when the customer endpoint disconnected from Connect
+   * Customer.</p>
    */
   inline const Aws::Utils::DateTime& GetDisconnectTimestamp() const { return m_disconnectTimestamp; }
   inline bool DisconnectTimestampHasBeenSet() const { return m_disconnectTimestampHasBeenSet; }

@@ -49,8 +49,8 @@ class ListPhoneNumbersV2Result {
 
   ///@{
   /**
-   * <p>Information about phone numbers that have been claimed to your Amazon Connect
-   * instances or traffic distribution groups.</p>
+   * <p>Information about phone numbers that have been claimed to your Connect
+   * Customer instances or traffic distribution groups.</p>
    */
   inline const Aws::Vector<ListPhoneNumbersSummary>& GetListPhoneNumbersSummaryList() const { return m_listPhoneNumbersSummaryList; }
   template <typename ListPhoneNumbersSummaryListT = Aws::Vector<ListPhoneNumbersSummary>>

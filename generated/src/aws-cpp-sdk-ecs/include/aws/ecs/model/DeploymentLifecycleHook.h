@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/DeploymentLifecycleHookStage.h>
+#include <aws/ecs/model/DeploymentLifecycleHookTargetType.h>
+#include <aws/ecs/model/DeploymentLifecycleHookTimeoutConfiguration.h>
 
 #include <utility>
 
@@ -38,6 +40,28 @@ class DeploymentLifecycleHook {
   AWS_ECS_API DeploymentLifecycleHook(Aws::Utils::Json::JsonView jsonValue);
   AWS_ECS_API DeploymentLifecycleHook& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The type of action the lifecycle hook performs. Valid values are:</p> <ul>
+   * <li> <p> <code>AWS_LAMBDA</code> - Invokes a Lambda function at the specified
+   * lifecycle stage. This is the default value.</p> </li> <li> <p>
+   * <code>PAUSE</code> - Pauses the deployment at the specified lifecycle stage
+   * until you call <code>ContinueServiceDeployment</code> to continue or roll
+   * back.</p> </li> </ul> <p>This field is optional. If not specified, the default
+   * value is <code>AWS_LAMBDA</code>.</p>
+   */
+  inline DeploymentLifecycleHookTargetType GetTargetType() const { return m_targetType; }
+  inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
+  inline void SetTargetType(DeploymentLifecycleHookTargetType value) {
+    m_targetTypeHasBeenSet = true;
+    m_targetType = value;
+  }
+  inline DeploymentLifecycleHook& WithTargetType(DeploymentLifecycleHookTargetType value) {
+    SetTargetType(value);
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -146,7 +170,29 @@ class DeploymentLifecycleHook {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timeout configuration for the lifecycle hook. This specifies how long
+   * Amazon ECS waits before taking the timeout action if the hook is not
+   * resolved.</p>
+   */
+  inline const DeploymentLifecycleHookTimeoutConfiguration& GetTimeoutConfiguration() const { return m_timeoutConfiguration; }
+  inline bool TimeoutConfigurationHasBeenSet() const { return m_timeoutConfigurationHasBeenSet; }
+  template <typename TimeoutConfigurationT = DeploymentLifecycleHookTimeoutConfiguration>
+  void SetTimeoutConfiguration(TimeoutConfigurationT&& value) {
+    m_timeoutConfigurationHasBeenSet = true;
+    m_timeoutConfiguration = std::forward<TimeoutConfigurationT>(value);
+  }
+  template <typename TimeoutConfigurationT = DeploymentLifecycleHookTimeoutConfiguration>
+  DeploymentLifecycleHook& WithTimeoutConfiguration(TimeoutConfigurationT&& value) {
+    SetTimeoutConfiguration(std::forward<TimeoutConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
+  DeploymentLifecycleHookTargetType m_targetType{DeploymentLifecycleHookTargetType::NOT_SET};
+
   Aws::String m_hookTargetArn;
 
   Aws::String m_roleArn;
@@ -154,10 +200,14 @@ class DeploymentLifecycleHook {
   Aws::Vector<DeploymentLifecycleHookStage> m_lifecycleStages;
 
   Aws::Utils::Document m_hookDetails;
+
+  DeploymentLifecycleHookTimeoutConfiguration m_timeoutConfiguration;
+  bool m_targetTypeHasBeenSet = false;
   bool m_hookTargetArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_lifecycleStagesHasBeenSet = false;
   bool m_hookDetailsHasBeenSet = false;
+  bool m_timeoutConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -33,7 +33,7 @@ class CreateIntegrationAssociationRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -70,8 +70,8 @@ class CreateIntegrationAssociationRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the integration.</p>  <p>When
-   * integrating with Amazon Web Services End User Messaging, the Amazon Connect and
-   * Amazon Web Services End User Messaging instances must be in the same
+   * integrating with Amazon Web Services End User Messaging, the Connect Customer
+   * and Amazon Web Services End User Messaging instances must be in the same
    * account.</p>
    */
   inline const Aws::String& GetIntegrationArn() const { return m_integrationArn; }

@@ -22,7 +22,7 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>Information about Amazon Connect Wisdom.</p><p><h3>See Also:</h3>   <a
+ * <p>Information about Connect Customer Wisdom.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/WisdomInfo">AWS
  * API Reference</a></p>
  */

@@ -20,6 +20,7 @@
 #include <aws/ecs/ECSClient.h>
 #include <aws/ecs/ECSEndpointProvider.h>
 #include <aws/ecs/ECSErrorMarshaller.h>
+#include <aws/ecs/model/ContinueServiceDeploymentRequest.h>
 #include <aws/ecs/model/CreateCapacityProviderRequest.h>
 #include <aws/ecs/model/CreateClusterRequest.h>
 #include <aws/ecs/model/CreateDaemonRequest.h>
@@ -243,6 +244,12 @@ ECSClient::InvokeOperationOutcome ECSClient::InvokeServiceOperation(const Amazon
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+}
+
+ContinueServiceDeploymentOutcome ECSClient::ContinueServiceDeployment(const ContinueServiceDeploymentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ContinueServiceDeploymentOutcome(result.GetResultWithOwnership())
+                            : ContinueServiceDeploymentOutcome(std::move(result.GetError()));
 }
 
 CreateCapacityProviderOutcome ECSClient::CreateCapacityProvider(const CreateCapacityProviderRequest& request) const {

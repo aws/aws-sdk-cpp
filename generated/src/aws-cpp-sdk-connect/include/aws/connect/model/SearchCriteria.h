@@ -129,7 +129,7 @@ class SearchCriteria {
 
   ///@{
   /**
-   * <p>Search criteria based on analysis outputs from Amazon Connect Contact
+   * <p>Search criteria based on analysis outputs from Connect Customer Contact
    * Lens.</p>
    */
   inline const ContactAnalysis& GetContactAnalysis() const { return m_contactAnalysis; }
@@ -234,12 +234,12 @@ class SearchCriteria {
    * <p>The search criteria based on user-defined contact attributes that have been
    * configured for contact search. For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search
-   * by custom contact attributes</a> in the <i>Amazon Connect Administrator
+   * by custom contact attributes</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p>  <p>To use <code>SearchableContactAttributes</code> in
    * a search request, the <code>GetContactAttributes</code> action is required to
    * perform an API request. For more information, see <a
    * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions
-   * defined by Amazon Connect.</p>
+   * defined by Connect Customer.</p>
    */
   inline const SearchableContactAttributes& GetSearchableContactAttributes() const { return m_searchableContactAttributes; }
   inline bool SearchableContactAttributesHasBeenSet() const { return m_searchableContactAttributesHasBeenSet; }

@@ -31,7 +31,7 @@ class BatchDisassociateAnalyticsDataSetRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -76,9 +76,9 @@ class BatchDisassociateAnalyticsDataSetRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The identifier of the target account. Use to disassociate a dataset from a
-   * different account than the one containing the Amazon Connect instance. If not
+   * different account than the one containing the Connect Customer instance. If not
    * specified, by default this value is the Amazon Web Services account that has the
-   * Amazon Connect instance.</p>
+   * Connect Customer instance.</p>
    */
   inline const Aws::String& GetTargetAccountId() const { return m_targetAccountId; }
   inline bool TargetAccountIdHasBeenSet() const { return m_targetAccountIdHasBeenSet; }

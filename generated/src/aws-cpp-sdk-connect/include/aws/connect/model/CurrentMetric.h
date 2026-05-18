@@ -25,7 +25,7 @@ namespace Model {
  * <p>Contains information about a real-time metric. For a description of each
  * metric, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
- * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+ * definitions</a> in the <i>Connect Customer Administrator Guide</i>.</p>
  *  <p>Only one of either the Name or MetricId is required.</p>
  * <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CurrentMetric">AWS

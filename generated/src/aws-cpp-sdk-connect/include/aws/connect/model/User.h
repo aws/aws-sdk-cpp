@@ -30,7 +30,7 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>Contains information about a user account for an Amazon Connect
+ * <p>Contains information about a user account for an Connect Customer
  * instance.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/User">AWS API
  * Reference</a></p>

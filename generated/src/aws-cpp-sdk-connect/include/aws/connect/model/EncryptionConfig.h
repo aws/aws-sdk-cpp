@@ -51,8 +51,8 @@ class EncryptionConfig {
   ///@{
   /**
    * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
-   * full ARN of the encryption key, not just the ID.</p> <p>Amazon Connect supports
-   * only KMS keys with the default key spec of <a
+   * full ARN of the encryption key, not just the ID.</p> <p>Connect Customer
+   * supports only KMS keys with the default key spec of <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
    * <code>SYMMETRIC_DEFAULT</code> </a>. </p>
    */

@@ -35,7 +35,7 @@ class GetCurrentMetricDataRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -137,11 +137,11 @@ class GetCurrentMetricDataRequest : public ConnectRequest {
    * metric. The following metrics are available. For a description of all the
    * metrics, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-   * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>  <p>
-   * MetricId should be used to reference custom metrics or out of the box metrics as
-   * Arn. If using MetricId, the limit is 10 MetricId per request.</p>  <dl>
-   * <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
-   * metrics report: <a
+   * definitions</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+   * <p> MetricId should be used to reference custom metrics or out of the box
+   * metrics as Arn. If using MetricId, the limit is 10 MetricId per request.</p>
+   *  <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> <p>Name
+   * in real-time metrics report: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#aftercallwork-real-time">ACW</a>
    * </p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
    * real-time metrics report: <a

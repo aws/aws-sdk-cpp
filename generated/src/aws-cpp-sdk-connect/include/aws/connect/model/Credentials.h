@@ -34,7 +34,8 @@ class Credentials {
 
   ///@{
   /**
-   * <p>An access token generated for a federated user to access Amazon Connect.</p>
+   * <p>An access token generated for a federated user to access Connect
+   * Customer.</p>
    */
   inline const Aws::String& GetAccessToken() const { return m_accessToken; }
   inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
@@ -53,7 +54,7 @@ class Credentials {
   ///@{
   /**
    * <p>A token generated with an expiration time for the session a user is logged in
-   * to Amazon Connect.</p>
+   * to Connect Customer.</p>
    */
   inline const Aws::Utils::DateTime& GetAccessTokenExpiration() const { return m_accessTokenExpiration; }
   inline bool AccessTokenExpirationHasBeenSet() const { return m_accessTokenExpirationHasBeenSet; }
@@ -71,7 +72,7 @@ class Credentials {
 
   ///@{
   /**
-   * <p>Renews a token generated for a user to access the Amazon Connect
+   * <p>Renews a token generated for a user to access the Connect Customer
    * instance.</p>
    */
   inline const Aws::String& GetRefreshToken() const { return m_refreshToken; }

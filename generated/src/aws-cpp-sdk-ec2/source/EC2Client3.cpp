@@ -60,6 +60,7 @@
 #include <aws/ec2/model/DescribeIpamByoasnRequest.h>
 #include <aws/ec2/model/DescribeIpamExternalResourceVerificationTokensRequest.h>
 #include <aws/ec2/model/DescribeIpamPoliciesRequest.h>
+#include <aws/ec2/model/DescribeIpamPoolAllocationsRequest.h>
 #include <aws/ec2/model/DescribeIpamPoolsRequest.h>
 #include <aws/ec2/model/DescribeIpamPrefixListResolverTargetsRequest.h>
 #include <aws/ec2/model/DescribeIpamPrefixListResolversRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/DescribeSnapshotAttributeRequest.h>
 #include <aws/ec2/model/DescribeSnapshotTierStatusRequest.h>
 #include <aws/ec2/model/DescribeSnapshotsRequest.h>
-#include <aws/ec2/model/DescribeSpotDatafeedSubscriptionRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -375,6 +375,12 @@ DescribeIpamPoliciesOutcome EC2Client::DescribeIpamPolicies(const DescribeIpamPo
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeIpamPoliciesOutcome(result.GetResultWithOwnership())
                             : DescribeIpamPoliciesOutcome(std::move(result.GetError()));
+}
+
+DescribeIpamPoolAllocationsOutcome EC2Client::DescribeIpamPoolAllocations(const DescribeIpamPoolAllocationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeIpamPoolAllocationsOutcome(result.GetResultWithOwnership())
+                            : DescribeIpamPoolAllocationsOutcome(std::move(result.GetError()));
 }
 
 DescribeIpamPoolsOutcome EC2Client::DescribeIpamPools(const DescribeIpamPoolsRequest& request) const {
@@ -752,11 +758,4 @@ DescribeSnapshotsOutcome EC2Client::DescribeSnapshots(const DescribeSnapshotsReq
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeSnapshotsOutcome(result.GetResultWithOwnership())
                             : DescribeSnapshotsOutcome(std::move(result.GetError()));
-}
-
-DescribeSpotDatafeedSubscriptionOutcome EC2Client::DescribeSpotDatafeedSubscription(
-    const DescribeSpotDatafeedSubscriptionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSpotDatafeedSubscriptionOutcome(result.GetResultWithOwnership())
-                            : DescribeSpotDatafeedSubscriptionOutcome(std::move(result.GetError()));
 }

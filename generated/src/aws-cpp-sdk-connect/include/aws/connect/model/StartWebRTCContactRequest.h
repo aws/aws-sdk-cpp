@@ -36,7 +36,7 @@ class StartWebRTCContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>A custom key-value pair using an attribute map. The attributes are standard
-   * Amazon Connect attributes, and can be accessed in flows just like any other
+   * Connect Customer attributes, and can be accessed in flows just like any other
    * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
    * key-value pairs per contact. Attribute keys can include only alphanumeric, -,
    * and _ characters.</p>
@@ -87,7 +87,7 @@ class StartWebRTCContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The identifier of the flow for the call. To see the ContactFlowId in the
-   * Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+   * Connect Customer admin website, on the navigation menu go to <b>Routing</b>,
    * <b>Flows</b>. Choose the flow. On the flow page, under the name of the flow,
    * choose <b>Show additional flow information</b>. The ContactFlowId is the last
    * part of the ARN, shown here in bold: </p>
@@ -110,7 +110,7 @@ class StartWebRTCContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -165,7 +165,7 @@ class StartWebRTCContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The unique identifier for an Amazon Connect contact. This identifier is
+   * <p>The unique identifier for an Connect Customer contact. This identifier is
    * related to the contact starting.</p>
    */
   inline const Aws::String& GetRelatedContactId() const { return m_relatedContactId; }

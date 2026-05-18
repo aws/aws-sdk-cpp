@@ -28,6 +28,7 @@
 #include <aws/quicksight/model/ActionConnectorType.h>
 #include <aws/quicksight/model/ActiveIAMPolicyAssignment.h>
 #include <aws/quicksight/model/AdHocFilteringOption.h>
+#include <aws/quicksight/model/AdditionalNotes.h>
 #include <aws/quicksight/model/AggFunction.h>
 #include <aws/quicksight/model/AggType.h>
 #include <aws/quicksight/model/AggregateOperation.h>
@@ -256,6 +257,8 @@
 #include <aws/quicksight/model/ColumnOrderingType.h>
 #include <aws/quicksight/model/ColumnRole.h>
 #include <aws/quicksight/model/ColumnSchema.h>
+#include <aws/quicksight/model/ColumnSemanticProperty.h>
+#include <aws/quicksight/model/ColumnSemanticType.h>
 #include <aws/quicksight/model/ColumnSort.h>
 #include <aws/quicksight/model/ColumnTag.h>
 #include <aws/quicksight/model/ColumnTagName.h>
@@ -370,6 +373,7 @@
 #include <aws/quicksight/model/CustomContentVisual.h>
 #include <aws/quicksight/model/CustomFilterConfiguration.h>
 #include <aws/quicksight/model/CustomFilterListConfiguration.h>
+#include <aws/quicksight/model/CustomInstruction.h>
 #include <aws/quicksight/model/CustomInstructions.h>
 #include <aws/quicksight/model/CustomNarrativeOptions.h>
 #include <aws/quicksight/model/CustomParameterValues.h>
@@ -444,6 +448,8 @@
 #include <aws/quicksight/model/DataSetRefreshProperties.h>
 #include <aws/quicksight/model/DataSetSchema.h>
 #include <aws/quicksight/model/DataSetSearchFilter.h>
+#include <aws/quicksight/model/DataSetSemanticDescription.h>
+#include <aws/quicksight/model/DataSetSemanticMetadata.h>
 #include <aws/quicksight/model/DataSetStringComparisonFilterCondition.h>
 #include <aws/quicksight/model/DataSetStringComparisonFilterOperator.h>
 #include <aws/quicksight/model/DataSetStringFilterCondition.h>
@@ -933,6 +939,7 @@
 #include <aws/quicksight/model/IngestionRequestType.h>
 #include <aws/quicksight/model/IngestionStatus.h>
 #include <aws/quicksight/model/IngestionType.h>
+#include <aws/quicksight/model/InlineCustomInstruction.h>
 #include <aws/quicksight/model/InnerFilter.h>
 #include <aws/quicksight/model/InputColumn.h>
 #include <aws/quicksight/model/InputColumnDataType.h>
@@ -1407,6 +1414,7 @@
 #include <aws/quicksight/model/SessionTag.h>
 #include <aws/quicksight/model/SetParameterValueConfiguration.h>
 #include <aws/quicksight/model/ShapeConditionalFormat.h>
+#include <aws/quicksight/model/SharedColumnSemanticMetadata.h>
 #include <aws/quicksight/model/SharedViewConfigurations.h>
 #include <aws/quicksight/model/SharingModel.h>
 #include <aws/quicksight/model/Sheet.h>
@@ -1537,6 +1545,7 @@
 #include <aws/quicksight/model/TablePathElement.h>
 #include <aws/quicksight/model/TablePinnedFieldOptions.h>
 #include <aws/quicksight/model/TableRowConditionalFormatting.h>
+#include <aws/quicksight/model/TableSemanticMetadata.h>
 #include <aws/quicksight/model/TableSideBorderOptions.h>
 #include <aws/quicksight/model/TableSortConfiguration.h>
 #include <aws/quicksight/model/TableStyleTarget.h>
@@ -1773,6 +1782,7 @@
 #include <aws/quicksight/model/UpdateVPCConnectionRequest.h>
 #include <aws/quicksight/model/UpdateVPCConnectionResult.h>
 #include <aws/quicksight/model/UploadSettings.h>
+#include <aws/quicksight/model/UploadedDocumentMetadata.h>
 #include <aws/quicksight/model/User.h>
 #include <aws/quicksight/model/UserIdentifier.h>
 #include <aws/quicksight/model/UserRole.h>

@@ -37,7 +37,7 @@ class ListQuickConnectsRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. Both
    * Instance ID and Instance ARN are supported input formats. </p>
@@ -94,7 +94,7 @@ class ListQuickConnectsRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The type of quick connect. In the Amazon Connect admin website, when you
+   * <p>The type of quick connect. In the Connect Customer admin website, when you
    * create a quick connect, you are prompted to assign one of the following types:
    * Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
    */

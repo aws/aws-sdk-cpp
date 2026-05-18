@@ -239,6 +239,26 @@ class AnalyzerSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The service principal that manages this analyzer (for example,
+   * <code>securityhubv2.amazonaws.com</code>). This field is only present for
+   * service-linked analyzers and is not included for customer-managed analyzers.</p>
+   */
+  inline const Aws::String& GetManagedBy() const { return m_managedBy; }
+  inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
+  template <typename ManagedByT = Aws::String>
+  void SetManagedBy(ManagedByT&& value) {
+    m_managedByHasBeenSet = true;
+    m_managedBy = std::forward<ManagedByT>(value);
+  }
+  template <typename ManagedByT = Aws::String>
+  AnalyzerSummary& WithManagedBy(ManagedByT&& value) {
+    SetManagedBy(std::forward<ManagedByT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -259,6 +279,8 @@ class AnalyzerSummary {
   StatusReason m_statusReason;
 
   AnalyzerConfiguration m_configuration;
+
+  Aws::String m_managedBy;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
@@ -269,6 +291,7 @@ class AnalyzerSummary {
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
 };
 
 }  // namespace Model

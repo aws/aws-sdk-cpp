@@ -49,7 +49,7 @@ class SearchAvailablePhoneNumbersResult {
 
   ///@{
   /**
-   * <p>A list of available phone numbers that you can claim to your Amazon Connect
+   * <p>A list of available phone numbers that you can claim to your Connect Customer
    * instance or traffic distribution group.</p>
    */
   inline const Aws::Vector<AvailableNumberSummary>& GetAvailableNumbersList() const { return m_availableNumbersList; }

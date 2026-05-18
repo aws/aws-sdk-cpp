@@ -39,7 +39,7 @@ class EvaluationMetadata {
 
   ///@{
   /**
-   * <p>The identifier of the contact in this instance of Amazon Connect. </p>
+   * <p>The identifier of the contact in this instance of Connect Customer. </p>
    */
   inline const Aws::String& GetContactId() const { return m_contactId; }
   inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }

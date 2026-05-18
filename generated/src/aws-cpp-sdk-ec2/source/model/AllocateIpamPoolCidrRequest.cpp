@@ -57,6 +57,14 @@ Aws::String AllocateIpamPoolCidrRequest::SerializePayload() const {
     }
   }
 
+  if (m_tagSpecificationsHasBeenSet) {
+    unsigned tagSpecificationsCount = 1;
+    for (auto& item : m_tagSpecifications) {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

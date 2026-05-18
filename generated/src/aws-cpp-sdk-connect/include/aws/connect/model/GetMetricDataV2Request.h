@@ -36,7 +36,7 @@ class GetMetricDataV2Request : public ConnectRequest {
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the resource. This includes the
-   * <code>instanceId</code> an Amazon Connect instance.</p>
+   * <code>instanceId</code> an Connect Customer instance.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -103,9 +103,9 @@ class GetMetricDataV2Request : public ConnectRequest {
    * | <code>THIRTY_MIN</code> | <code>HOUR</code> | <code>DAY</code> |
    * <code>WEEK</code> | <code>TOTAL</code>. </p> <p>For example, if
    * <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>,
-   * <code>StartTime</code> and <code>EndTime</code> differs by 1 day, then Amazon
-   * Connect returns 48 results in the response. Each result is aggregated by the
-   * THIRTY_MIN period. By default Amazon Connect aggregates results based on the
+   * <code>StartTime</code> and <code>EndTime</code> differs by 1 day, then Connect
+   * Customer returns 48 results in the response. Each result is aggregated by the
+   * THIRTY_MIN period. By default Connect Customer aggregates results based on the
    * <code>TOTAL</code> interval period. </p> <p>The following list describes
    * restrictions on <code>StartTime</code> and <code>EndTime</code> based on which
    * <code>IntervalPeriod</code> is requested. </p> <ul> <li> <p>
@@ -172,9 +172,9 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <code>ROUTING_STEP_EXPRESSION</code> | <code>TEST_CASE</code> |
    * <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> |
    * <code>TEST_CASE_EXECUTION_RESULT</code> | <code>TEST_CASE_EXECUTION_STATE</code>
-   * </p>  <p>The following filter keys correspond to Amazon Connect resources
-   * and are used for authorizing requests. A <code>GetMetricDataV2</code> request
-   * requires at least one of these filters:</p> <p> <code>QUEUE</code>,
+   * </p>  <p>The following filter keys correspond to Connect Customer
+   * resources and are used for authorizing requests. A <code>GetMetricDataV2</code>
+   * request requires at least one of these filters:</p> <p> <code>QUEUE</code>,
    * <code>ROUTING_PROFILE</code>, <code>AGENT</code>,
    * <code>AGENT_HIERARCHY_LEVEL_ONE</code>, <code>AGENT_HIERARCHY_LEVEL_TWO</code>,
    * <code>AGENT_HIERARCHY_LEVEL_THREE</code>,
@@ -211,7 +211,7 @@ class GetMetricDataV2Request : public ConnectRequest {
    * ARNs are valid filter values for the <code>CAMPAIGN</code> filter key.</p> </li>
    * <li> <p>To filter by phone number, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create
-   * a historical metrics report</a> in the <i>Amazon Connect Administrator
+   * a historical metrics report</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p> </li> </ul>
    */
   inline const Aws::Vector<FilterV2>& GetFilters() const { return m_filters; }
@@ -299,7 +299,7 @@ class GetMetricDataV2Request : public ConnectRequest {
    * for each metric. The following historical metrics are available. For a
    * description of each metric, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-   * definition</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+   * definition</a> in the <i>Connect Customer Administrator Guide</i>.</p>
    * <p>MetricId should be used to reference custom metrics or out of the box metrics
    * as Arn. If using MetricId, the limit is 20 MetricId per request.</p>
    * <dl> <dt>ABANDONMENT_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid groupings and

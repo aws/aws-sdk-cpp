@@ -30,11 +30,11 @@ class ListTagsForResourceRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the resource. All Amazon Connect resources
-   * (instances, queues, flows, routing profiles, etc) have an ARN. To locate the ARN
-   * for an instance, for example, see <a
+   * <p>The Amazon Resource Name (ARN) of the resource. All Connect Customer
+   * resources (instances, queues, flows, routing profiles, etc) have an ARN. To
+   * locate the ARN for an instance, for example, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">Find
-   * your Amazon Connect instance ID/ARN</a>. </p>
+   * your Connect Customer instance ID/ARN</a>. </p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

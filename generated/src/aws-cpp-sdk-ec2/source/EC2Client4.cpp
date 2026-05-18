@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeSpotDatafeedSubscriptionRequest.h>
 #include <aws/ec2/model/DescribeSpotFleetInstancesRequest.h>
 #include <aws/ec2/model/DescribeSpotFleetRequestHistoryRequest.h>
 #include <aws/ec2/model/DescribeSpotFleetRequestsRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/DisassociateVpcCidrBlockRequest.h>
 #include <aws/ec2/model/EnableAddressTransferRequest.h>
 #include <aws/ec2/model/EnableAllowedImagesSettingsRequest.h>
-#include <aws/ec2/model/EnableAwsNetworkPerformanceMetricSubscriptionRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,13 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeSpotDatafeedSubscriptionOutcome EC2Client::DescribeSpotDatafeedSubscription(
+    const DescribeSpotDatafeedSubscriptionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSpotDatafeedSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DescribeSpotDatafeedSubscriptionOutcome(std::move(result.GetError()));
+}
 
 DescribeSpotFleetInstancesOutcome EC2Client::DescribeSpotFleetInstances(const DescribeSpotFleetInstancesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -762,11 +769,4 @@ EnableAllowedImagesSettingsOutcome EC2Client::EnableAllowedImagesSettings(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? EnableAllowedImagesSettingsOutcome(result.GetResultWithOwnership())
                             : EnableAllowedImagesSettingsOutcome(std::move(result.GetError()));
-}
-
-EnableAwsNetworkPerformanceMetricSubscriptionOutcome EC2Client::EnableAwsNetworkPerformanceMetricSubscription(
-    const EnableAwsNetworkPerformanceMetricSubscriptionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? EnableAwsNetworkPerformanceMetricSubscriptionOutcome(result.GetResultWithOwnership())
-                            : EnableAwsNetworkPerformanceMetricSubscriptionOutcome(std::move(result.GetError()));
 }

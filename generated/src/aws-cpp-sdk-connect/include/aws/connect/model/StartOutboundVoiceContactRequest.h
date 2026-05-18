@@ -58,7 +58,7 @@ class StartOutboundVoiceContactRequest : public ConnectRequest {
    * <p>A description of the voice contact that appears in the agent's snapshot in
    * the CCP logs. For more information about CCP logs, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download
-   * and review CCP logs</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+   * and review CCP logs</a> in the <i>Connect Customer Administrator Guide</i>.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -146,7 +146,7 @@ class StartOutboundVoiceContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-   * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+   * the Connect Customer admin website, on the navigation menu go to <b>Routing</b>,
    * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
    * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
    * last part of the ARN, shown here in bold: </p>
@@ -169,7 +169,7 @@ class StartOutboundVoiceContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -212,7 +212,7 @@ class StartOutboundVoiceContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The phone number associated with the Amazon Connect instance, in E.164
+   * <p>The phone number associated with the Connect Customer instance, in E.164
    * format. If you do not specify a source phone number, you must specify a
    * queue.</p>
    */
@@ -254,7 +254,7 @@ class StartOutboundVoiceContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>A custom key-value pair using an attribute map. The attributes are standard
-   * Amazon Connect attributes, and can be accessed in flows just like any other
+   * Connect Customer attributes, and can be accessed in flows just like any other
    * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
    * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
    * and underscore characters.</p>
@@ -318,7 +318,7 @@ class StartOutboundVoiceContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>Denotes the class of traffic. Calls with different traffic types are handled
-   * differently by Amazon Connect. The default value is <code>GENERAL</code>. Use
+   * differently by Connect Customer. The default value is <code>GENERAL</code>. Use
    * <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to
    * <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
    */

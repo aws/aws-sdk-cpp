@@ -35,7 +35,7 @@ class RoutingCriteria {
 
   ///@{
   /**
-   * <p>List of routing steps. When Amazon Connect does not find an available agent
+   * <p>List of routing steps. When Connect Customer does not find an available agent
    * meeting the requirements in a step for a given step duration, the routing
    * criteria will move on to the next step sequentially until a join is completed
    * with an agent. When all steps are exhausted, the contact will be offered to any

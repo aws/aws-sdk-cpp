@@ -209,7 +209,7 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS
-   * supports 4-16 hosts per environment.</p> <p>This action can only be used after
+   * supports 4-32 hosts per environment.</p> <p>This action can only be used after
    * the Amazon EVS environment is deployed.</p> <p>You can use the
    * <code>dedicatedHostId</code> parameter to specify an Amazon EC2 Dedicated Host
    * for ESX host creation.</p> <p> You can use the <code>placementGroupId</code>

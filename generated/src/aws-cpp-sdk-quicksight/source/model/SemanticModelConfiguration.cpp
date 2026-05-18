@@ -25,6 +25,13 @@ SemanticModelConfiguration& SemanticModelConfiguration::operator=(JsonView jsonV
     }
     m_tableMapHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SemanticMetadata")) {
+    Aws::Utils::Array<JsonView> semanticMetadataJsonList = jsonValue.GetArray("SemanticMetadata");
+    for (unsigned semanticMetadataIndex = 0; semanticMetadataIndex < semanticMetadataJsonList.GetLength(); ++semanticMetadataIndex) {
+      m_semanticMetadata.push_back(semanticMetadataJsonList[semanticMetadataIndex].AsObject());
+    }
+    m_semanticMetadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +44,14 @@ JsonValue SemanticModelConfiguration::Jsonize() const {
       tableMapJsonMap.WithObject(tableMapItem.first, tableMapItem.second.Jsonize());
     }
     payload.WithObject("TableMap", std::move(tableMapJsonMap));
+  }
+
+  if (m_semanticMetadataHasBeenSet) {
+    Aws::Utils::Array<JsonValue> semanticMetadataJsonList(m_semanticMetadata.size());
+    for (unsigned semanticMetadataIndex = 0; semanticMetadataIndex < semanticMetadataJsonList.GetLength(); ++semanticMetadataIndex) {
+      semanticMetadataJsonList[semanticMetadataIndex].AsObject(m_semanticMetadata[semanticMetadataIndex].Jsonize());
+    }
+    payload.WithArray("SemanticMetadata", std::move(semanticMetadataJsonList));
   }
 
   return payload;

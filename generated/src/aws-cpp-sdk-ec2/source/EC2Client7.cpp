@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/RegisterInstanceEventNotificationAttributesRequest.h>
+#include <aws/ec2/model/RegisterTransitGatewayMulticastGroupMembersRequest.h>
 #include <aws/ec2/model/RegisterTransitGatewayMulticastGroupSourcesRequest.h>
 #include <aws/ec2/model/RejectCapacityReservationBillingOwnershipRequest.h>
 #include <aws/ec2/model/RejectTransitGatewayClientVpnAttachmentRequest.h>
@@ -94,6 +96,20 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+RegisterInstanceEventNotificationAttributesOutcome EC2Client::RegisterInstanceEventNotificationAttributes(
+    const RegisterInstanceEventNotificationAttributesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterInstanceEventNotificationAttributesOutcome(result.GetResultWithOwnership())
+                            : RegisterInstanceEventNotificationAttributesOutcome(std::move(result.GetError()));
+}
+
+RegisterTransitGatewayMulticastGroupMembersOutcome EC2Client::RegisterTransitGatewayMulticastGroupMembers(
+    const RegisterTransitGatewayMulticastGroupMembersRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterTransitGatewayMulticastGroupMembersOutcome(result.GetResultWithOwnership())
+                            : RegisterTransitGatewayMulticastGroupMembersOutcome(std::move(result.GetError()));
+}
 
 RegisterTransitGatewayMulticastGroupSourcesOutcome EC2Client::RegisterTransitGatewayMulticastGroupSources(
     const RegisterTransitGatewayMulticastGroupSourcesRequest& request) const {

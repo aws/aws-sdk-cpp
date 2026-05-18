@@ -14,8 +14,10 @@
 #include <aws/accessanalyzer/model/CreateAccessPreviewRequest.h>
 #include <aws/accessanalyzer/model/CreateAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/CreateArchiveRuleRequest.h>
+#include <aws/accessanalyzer/model/CreateServiceLinkedAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/DeleteAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/DeleteArchiveRuleRequest.h>
+#include <aws/accessanalyzer/model/DeleteServiceLinkedAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/GenerateFindingRecommendationRequest.h>
 #include <aws/accessanalyzer/model/GetAccessPreviewRequest.h>
 #include <aws/accessanalyzer/model/GetAnalyzedResourceRequest.h>
@@ -314,6 +316,18 @@ CreateArchiveRuleOutcome AccessAnalyzerClient::CreateArchiveRule(const CreateArc
                             : CreateArchiveRuleOutcome(std::move(result.GetError()));
 }
 
+CreateServiceLinkedAnalyzerOutcome AccessAnalyzerClient::CreateServiceLinkedAnalyzer(
+    const CreateServiceLinkedAnalyzerRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/service-linked-analyzer");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateServiceLinkedAnalyzerOutcome(result.GetResultWithOwnership())
+                            : CreateServiceLinkedAnalyzerOutcome(std::move(result.GetError()));
+}
+
 DeleteAnalyzerOutcome AccessAnalyzerClient::DeleteAnalyzer(const DeleteAnalyzerRequest& request) const {
   if (!request.AnalyzerNameHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteAnalyzer", "Required field: AnalyzerName, is not set");
@@ -354,6 +368,25 @@ DeleteArchiveRuleOutcome AccessAnalyzerClient::DeleteArchiveRule(const DeleteArc
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteArchiveRuleOutcome(result.GetResultWithOwnership())
                             : DeleteArchiveRuleOutcome(std::move(result.GetError()));
+}
+
+DeleteServiceLinkedAnalyzerOutcome AccessAnalyzerClient::DeleteServiceLinkedAnalyzer(
+    const DeleteServiceLinkedAnalyzerRequest& request) const {
+  if (!request.AnalyzerNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteServiceLinkedAnalyzer", "Required field: AnalyzerName, is not set");
+    return DeleteServiceLinkedAnalyzerOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(
+        AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalyzerName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/service-linked-analyzer/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalyzerName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteServiceLinkedAnalyzerOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceLinkedAnalyzerOutcome(std::move(result.GetError()));
 }
 
 GenerateFindingRecommendationOutcome AccessAnalyzerClient::GenerateFindingRecommendation(

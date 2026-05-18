@@ -20,7 +20,7 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>This API is in preview release for Amazon Connect and is subject to
+ * <p>This API is in preview release for Connect Customer and is subject to
  * change.</p> <p>Information about associations that are successfully created:
  * <code>DataSetId</code>, <code>TargetAccountId</code>,
  * <code>ResourceShareId</code>, <code>ResourceShareArn</code>. </p><p><h3>See

@@ -30,7 +30,7 @@ class DescribePhoneNumberResult {
 
   ///@{
   /**
-   * <p>Information about a phone number that's been claimed to your Amazon Connect
+   * <p>Information about a phone number that's been claimed to your Connect Customer
    * instance or traffic distribution group.</p>
    */
   inline const ClaimedPhoneNumberSummary& GetClaimedPhoneNumberSummary() const { return m_claimedPhoneNumberSummary; }

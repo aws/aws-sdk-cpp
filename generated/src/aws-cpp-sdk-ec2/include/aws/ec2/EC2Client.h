@@ -11482,6 +11482,45 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Describes IPAM pool allocations. You can describe all allocations owned by
+   * you across all pools, or you can describe specific allocations by ID.</p> <p>If
+   * you specify <code>IpamPoolAllocationIds</code>, the results include only the
+   * specified allocations. If you do not specify <code>IpamPoolAllocationIds</code>,
+   * the results include all allocations owned by you. You can use
+   * <code>Filters</code> to narrow the results.</p>  <p>This action returns
+   * only allocations directly owned by you. To view all allocations in a pool you
+   * own or that has been shared with you, including allocations owned by other
+   * accounts, use <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPoolAllocations.html">GetIpamPoolAllocations</a>.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPoolAllocations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeIpamPoolAllocationsOutcome DescribeIpamPoolAllocations(
+      const Model::DescribeIpamPoolAllocationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeIpamPoolAllocations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeIpamPoolAllocationsRequestT = Model::DescribeIpamPoolAllocationsRequest>
+  Model::DescribeIpamPoolAllocationsOutcomeCallable DescribeIpamPoolAllocationsCallable(
+      const DescribeIpamPoolAllocationsRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeIpamPoolAllocations, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeIpamPoolAllocations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeIpamPoolAllocationsRequestT = Model::DescribeIpamPoolAllocationsRequest>
+  void DescribeIpamPoolAllocationsAsync(const DescribeIpamPoolAllocationsResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const DescribeIpamPoolAllocationsRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeIpamPoolAllocations, request, handler, context);
+  }
+
+  /**
    * <p>Get information about your IPAM pools.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">AWS
    * API Reference</a></p>
@@ -21197,6 +21236,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   void ModifyIpamPoolAsync(const ModifyIpamPoolRequestT& request, const ModifyIpamPoolResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::ModifyIpamPool, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies the description of an IPAM pool allocation. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/ipam/modify-alloc-ipam.html">Modify
+   * an IPAM pool allocation</a> in the <i>Amazon VPC IPAM User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPoolAllocation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyIpamPoolAllocationOutcome ModifyIpamPoolAllocation(const Model::ModifyIpamPoolAllocationRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyIpamPoolAllocation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ModifyIpamPoolAllocationRequestT = Model::ModifyIpamPoolAllocationRequest>
+  Model::ModifyIpamPoolAllocationOutcomeCallable ModifyIpamPoolAllocationCallable(const ModifyIpamPoolAllocationRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyIpamPoolAllocation, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyIpamPoolAllocation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ModifyIpamPoolAllocationRequestT = Model::ModifyIpamPoolAllocationRequest>
+  void ModifyIpamPoolAllocationAsync(const ModifyIpamPoolAllocationRequestT& request,
+                                     const ModifyIpamPoolAllocationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyIpamPoolAllocation, request, handler, context);
   }
 
   /**

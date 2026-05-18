@@ -118,7 +118,8 @@ enum class ResourceType {
   secondary_network,
   secondary_subnet,
   capacity_manager_data_export,
-  vpn_concentrator
+  vpn_concentrator,
+  ipam_pool_allocation
 };
 
 namespace ResourceTypeMapper {

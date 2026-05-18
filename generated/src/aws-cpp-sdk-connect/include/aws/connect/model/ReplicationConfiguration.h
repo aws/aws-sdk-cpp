@@ -22,13 +22,13 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>Details about the status of the replication of a source Amazon Connect
+ * <p>Details about the status of the replication of a source Connect Customer
  * instance across Amazon Web Services Regions. Use these details to understand the
  * general status of a given replication. For information about why a replication
  * process may fail, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html#why-replicateinstance-fails">Why
  * a ReplicateInstance call fails</a> in the <i>Create a replica of your existing
- * Amazon Connect instance</i> topic in the <i>Amazon Connect Administrator
+ * Connect Customer instance</i> topic in the <i>Connect Customer Administrator
  * Guide</i>. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReplicationConfiguration">AWS
  * API Reference</a></p>
@@ -43,7 +43,7 @@ class ReplicationConfiguration {
   ///@{
   /**
    * <p>A list of replication status summaries. The summaries contain details about
-   * the replication of configuration information for Amazon Connect resources, for
+   * the replication of configuration information for Connect Customer resources, for
    * each Amazon Web Services Region.</p>
    */
   inline const Aws::Vector<ReplicationStatusSummary>& GetReplicationStatusSummaryList() const { return m_replicationStatusSummaryList; }
@@ -68,7 +68,7 @@ class ReplicationConfiguration {
 
   ///@{
   /**
-   * <p>The Amazon Web Services Region where the source Amazon Connect instance was
+   * <p>The Amazon Web Services Region where the source Connect Customer instance was
    * created. This is the Region where the <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ReplicateInstance.html">ReplicateInstance</a>
    * API was called to start the replication process.</p>
@@ -89,12 +89,12 @@ class ReplicationConfiguration {
 
   ///@{
   /**
-   * <p>The URL that is used to sign-in to your Amazon Connect instance according to
-   * your traffic distribution group configuration. For more information about
+   * <p>The URL that is used to sign-in to your Connect Customer instance according
+   * to your traffic distribution group configuration. For more information about
    * sign-in and traffic distribution groups, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Important
    * things to know</a> in the <i>Create traffic distribution groups</i> topic in the
-   * <i>Amazon Connect Administrator Guide</i>. </p>
+   * <i>Connect Customer Administrator Guide</i>. </p>
    */
   inline const Aws::String& GetGlobalSignInEndpoint() const { return m_globalSignInEndpoint; }
   inline bool GlobalSignInEndpointHasBeenSet() const { return m_globalSignInEndpointHasBeenSet; }

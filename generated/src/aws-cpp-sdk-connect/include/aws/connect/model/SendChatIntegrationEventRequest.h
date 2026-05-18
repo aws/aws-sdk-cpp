@@ -53,10 +53,10 @@ class SendChatIntegrationEventRequest : public ConnectRequest {
   ///@{
   /**
    * <p>Chat system identifier, used in part to uniquely identify chat. This is
-   * associated with the Amazon Connect instance and flow to be used to start chats.
-   * For Server Migration Service, this is the phone number destination of inbound
-   * Server Migration Service messages represented by an Amazon Web Services End User
-   * Messaging phone number ARN.</p>
+   * associated with the Connect Customer instance and flow to be used to start
+   * chats. For Server Migration Service, this is the phone number destination of
+   * inbound Server Migration Service messages represented by an Amazon Web Services
+   * End User Messaging phone number ARN.</p>
    */
   inline const Aws::String& GetDestinationId() const { return m_destinationId; }
   inline bool DestinationIdHasBeenSet() const { return m_destinationIdHasBeenSet; }

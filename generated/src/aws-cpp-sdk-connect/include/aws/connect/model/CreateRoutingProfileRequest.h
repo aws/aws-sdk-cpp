@@ -36,7 +36,7 @@ class CreateRoutingProfileRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -116,8 +116,8 @@ class CreateRoutingProfileRequest : public ConnectRequest {
    * that can be passed during a CreateRoutingProfile API request. It is different
    * from the quota of 50 queues per routing profile per instance that is listed in
    * <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-   * Connect service quotas</a>. </p>
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+   * Customer service quotas</a>. </p>
    */
   inline const Aws::Vector<RoutingProfileQueueConfig>& GetQueueConfigs() const { return m_queueConfigs; }
   inline bool QueueConfigsHasBeenSet() const { return m_queueConfigsHasBeenSet; }
@@ -146,7 +146,7 @@ class CreateRoutingProfileRequest : public ConnectRequest {
    * routing profile. The limit of 10 array members applies to the maximum number of
    * RoutingProfileManualAssignmentQueueConfig objects that can be passed during a
    * CreateRoutingProfile API request. It is different from the quota of 50 queues
-   * per routing profile per instance that is listed in Amazon Connect service
+   * per routing profile per instance that is listed in Connect Customer service
    * quotas.</p> <p>Note: Use this config for chat, email, and task contacts. It does
    * not support voice contacts.</p>
    */

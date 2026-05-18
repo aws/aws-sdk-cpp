@@ -36,7 +36,7 @@ class NotificationRecipientType {
   ///@{
   /**
    * <p>The tags used to organize, track, or control access for this resource. For
-   * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+   * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Connect Customer users
    * with the specified tags will be notified.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetUserTags() const { return m_userTags; }

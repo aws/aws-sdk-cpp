@@ -31,7 +31,7 @@ class SearchResourceTagsResult {
 
   ///@{
   /**
-   * <p>A list of tags used in the Amazon Connect instance.</p>
+   * <p>A list of tags used in the Connect Customer instance.</p>
    */
   inline const Aws::Vector<TagSet>& GetTags() const { return m_tags; }
   template <typename TagsT = Aws::Vector<TagSet>>

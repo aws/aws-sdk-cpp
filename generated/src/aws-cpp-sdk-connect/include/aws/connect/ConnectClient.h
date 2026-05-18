@@ -17,24 +17,24 @@ namespace Aws {
 namespace Connect {
 /**
  * <ul> <li> <p> <a
- * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html">Amazon
- * Connect actions</a> </p> </li> <li> <p> <a
- * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Service.html">Amazon
- * Connect data types</a> </p> </li> </ul> <p>Amazon Connect is a cloud-based
+ * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html">Connect
+ * Customer actions</a> </p> </li> <li> <p> <a
+ * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Service.html">Connect
+ * Customer data types</a> </p> </li> </ul> <p>Connect Customer is a cloud-based
  * contact center solution that you use to set up and manage a customer contact
- * center and provide reliable customer engagement at any scale.</p> <p>Amazon
- * Connect provides metrics and real-time reporting that enable you to optimize
+ * center and provide reliable customer engagement at any scale.</p> <p>Connect
+ * Customer provides metrics and real-time reporting that enable you to optimize
  * contact routing. You can also resolve customer issues more efficiently by
  * getting customers in touch with the appropriate agents.</p> <p>There are limits
- * to the number of Amazon Connect resources that you can create. There are also
+ * to the number of Connect Customer resources that you can create. There are also
  * limits to the number of requests that you can make per second. For more
  * information, see <a
- * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
- * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
- * <p>You can use an endpoint to connect programmatically to an Amazon Web Services
- * service. For a list of Amazon Connect endpoints, see <a
- * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
- * Connect Endpoints</a>.</p>
+ * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+ * Customer Service Quotas</a> in the <i>Connect Customer Administrator
+ * Guide</i>.</p> <p>You can use an endpoint to connect programmatically to an
+ * Amazon Web Services service. For a list of Connect Customer endpoints, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+ * Customer Endpoints</a>.</p>
  */
 class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>,
@@ -94,9 +94,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   virtual ~ConnectClient();
 
   /**
-   * <p>Activates an evaluation form in the specified Amazon Connect instance. After
-   * the evaluation form is activated, it is available to start new evaluations based
-   * on the form. </p><p><h3>See Also:</h3>   <a
+   * <p>Activates an evaluation form in the specified Connect Customer instance.
+   * After the evaluation form is activated, it is available to start new evaluations
+   * based on the form. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ActivateEvaluationForm">AWS
    * API Reference</a></p>
    */
@@ -123,7 +123,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Associates the specified dataset for a Amazon Connect instance with the
+   * <p>Associates the specified dataset for a Connect Customer instance with the
    * target account. You can associate only one dataset in a single
    * call.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateAnalyticsDataSet">AWS
@@ -153,8 +153,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
-   * change.</p> <p>Associates an approved origin to an Amazon Connect
+   * <p>This API is in preview release for Connect Customer and is subject to
+   * change.</p> <p>Associates an approved origin to an Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin">AWS
    * API Reference</a></p>
@@ -182,8 +182,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
-   * change.</p> <p>Allows the specified Amazon Connect instance to access the
+   * <p>This API is in preview release for Connect Customer and is subject to
+   * change.</p> <p>Allows the specified Connect Customer instance to access the
    * specified Amazon Lex or Amazon Lex V2 bot.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateBot">AWS
    * API Reference</a></p>
@@ -226,11 +226,11 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * properly configured to support your intended use cases.</p> </li> <li> <p>The
    * service quota <i>Queues per routing profile per instance</i> applies to manually
    * assigned queues, too. For more information about this quota, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-   * Connect quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p> </li>
-   * </ul> <p> <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+   * Customer quotas</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+   * </li> </ul> <p> <b>Endpoints</b>: See <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateContactWithUser">AWS
    * API Reference</a></p>
    */
@@ -257,9 +257,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Associates an existing vocabulary as the default. Contact Lens for Amazon
-   * Connect uses the vocabulary in post-call and real-time analysis sessions for the
-   * given language.</p><p><h3>See Also:</h3>   <a
+   * <p>Associates an existing vocabulary as the default. Contact Lens for Connect
+   * Customer uses the vocabulary in post-call and real-time analysis sessions for
+   * the given language.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateDefaultVocabulary">AWS
    * API Reference</a></p>
    */
@@ -288,9 +288,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Associates an email address alias with an existing email address in an Amazon
-   * Connect instance. This creates a forwarding relationship where emails sent to
-   * the alias email address are automatically forwarded to the primary email
+   * <p>Associates an email address alias with an existing email address in an
+   * Connect Customer instance. This creates a forwarding relationship where emails
+   * sent to the alias email address are automatically forwarded to the primary email
    * address. </p> <p> <b>Use cases</b> </p> <p>Following are common uses cases for
    * this API:</p> <ul> <li> <p> <b>Unified customer support</b>: Create multiple
    * entry points (for example, support@example.com, help@example.com,
@@ -299,8 +299,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * Forward emails from legacy department addresses (for example, sales@example.com,
    * info@example.com) to a centralized customer service email during organizational
    * restructuring.</p> </li> <li> <p> <b>Brand management</b>: Enable you to use
-   * familiar brand-specific email addresses that forward to the appropriate Amazon
-   * Connect instance email address.</p> </li> </ul> <p> <b>Important things to
+   * familiar brand-specific email addresses that forward to the appropriate Connect
+   * Customer instance email address.</p> </li> </ul> <p> <b>Important things to
    * know</b> </p> <ul> <li> <p>Each email address can have a maximum of one alias.
    * You cannot create multiple aliases for the same email address. </p> </li> <li>
    * <p>If the alias email address already receives direct emails, it continues to
@@ -313,11 +313,11 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * to verify).</p> </li> <li> <p>The timestamp of when the association
    * occurred.</p> </li> <li> <p>The status of the forwarding configuration.</p>
    * </li> </ul> <p> <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p> <p> <b>Related operations</b> </p> <ul>
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p> <p> <b>Related operations</b> </p> <ul>
    * <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>:
-   * Removes the alias association between two email addresses in an Amazon Connect
+   * Removes the alias association between two email addresses in an Connect Customer
    * instance.</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
    * View current alias configurations for an email address.</p> </li> <li> <p> <a
@@ -419,7 +419,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Associates a storage resource type for the first time. You can
    * only associate one type of storage configuration in a single call. This means,
    * for example, that you can't define an instance with multiple S3 buckets for
@@ -455,8 +455,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
-   * change.</p> <p>Allows the specified Amazon Connect instance to access the
+   * <p>This API is in preview release for Connect Customer and is subject to
+   * change.</p> <p>Allows the specified Connect Customer instance to access the
    * specified Lambda function.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction">AWS
    * API Reference</a></p>
@@ -484,8 +484,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
-   * change.</p> <p>Allows the specified Amazon Connect instance to access the
+   * <p>This API is in preview release for Connect Customer and is subject to
+   * change.</p> <p>Allows the specified Connect Customer instance to access the
    * specified Amazon Lex V1 bot. This API only supports the association of Amazon
    * Lex V1 bots.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot">AWS
@@ -512,7 +512,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Associates a flow with a phone number claimed to your Amazon Connect
+   * <p>Associates a flow with a phone number claimed to your Connect Customer
    * instance.</p>  <p>If the number is claimed to a traffic distribution
    * group, and you are calling this API using an instance in the Amazon Web Services
    * Region where the traffic distribution group was created, you can use either a
@@ -558,7 +558,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * queue.</p> <p> <b>Important things to know</b> </p> <ul> <li> <p>You can
    * associate up to 49 additional email addresses with a single queue, plus 1
    * default outbound email address, for a total of 50.</p> </li> <li> <p>The email
-   * addresses must already exist in the Amazon Connect instance before they can be
+   * addresses must already exist in the Connect Customer instance before they can be
    * associated with a queue.</p> </li> <li> <p>Agents will be able to select from
    * these associated email addresses when handling email contacts in the queue.</p>
    * </li> <li> <p>For inbound email contacts, agents can select from email addresses
@@ -654,7 +654,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Associates a security key to the instance.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey">AWS
@@ -799,7 +799,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Associates a list of analytics datasets for a given Amazon Connect instance
+   * <p>Associates a list of analytics datasets for a given Connect Customer instance
    * to a target account. You can associate multiple datasets in a single
    * call.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchAssociateAnalyticsDataSet">AWS
@@ -929,7 +929,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Removes a list of analytics datasets associated with a given Amazon Connect
+   * <p>Removes a list of analytics datasets associated with a given Connect Customer
    * instance. You can disassociate multiple datasets in a single call.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDisassociateAnalyticsDataSet">AWS
@@ -1019,9 +1019,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>Only the Amazon Connect outbound campaigns service principal is
+   *  <p>Only the Connect Customer outbound campaigns service principal is
    * allowed to assume a role in your account and call this API.</p>
-   * <p>Allows you to create a batch of contacts in Amazon Connect. The outbound
+   * <p>Allows you to create a batch of contacts in Connect Customer. The outbound
    * campaigns capability ingests dial requests via the <a
    * href="https://docs.aws.amazon.com/connect-outbound/latest/APIReference/API_PutDialRequestBatch.html">PutDialRequestBatch</a>
    * API. It then uses BatchPutContact to create contacts corresponding to those dial
@@ -1083,14 +1083,14 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Claims an available phone number to your Amazon Connect instance or traffic
+   * <p>Claims an available phone number to your Connect Customer instance or traffic
    * distribution group. You can call this API only in the same Amazon Web Services
-   * Region where the Amazon Connect instance or traffic distribution group was
+   * Region where the Connect Customer instance or traffic distribution group was
    * created.</p> <p>For more information about how to use this operation, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html">Claim
    * a phone number in your country</a> and <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-numbers-traffic-distribution-groups.html">Claim
-   * phone numbers to traffic distribution groups</a> in the <i>Amazon Connect
+   * phone numbers to traffic distribution groups</a> in the <i>Connect Customer
    * Administrator Guide</i>. </p>  <p>You can call the <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchAvailablePhoneNumbers.html">SearchAvailablePhoneNumbers</a>
    * API for available phone numbers that you can claim. Call the <a
@@ -1166,7 +1166,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates an agent status for the specified Amazon Connect
+   * <p>Creates an agent status for the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateAgentStatus">AWS
    * API Reference</a></p>
@@ -1231,10 +1231,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a flow for the specified Amazon Connect instance.</p> <p>You can also
-   * create and update flows using the <a
-   * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-   * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a flow for the specified Connect Customer instance.</p> <p>You can
+   * also create and update flows using the <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+   * Customer Flow language</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlow">AWS
    * API Reference</a></p>
    */
@@ -1260,7 +1260,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a flow module for the specified Amazon Connect instance.
+   * <p>Creates a flow module for the specified Connect Customer instance.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModule">AWS
    * API Reference</a></p>
@@ -1442,10 +1442,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Create new email address in the specified Amazon Connect instance. For more
+   * <p>Create new email address in the specified Connect Customer instance. For more
    * information about email addresses, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
-   * email addresses</a> in the Amazon Connect Administrator Guide.</p><p><h3>See
+   * email addresses</a> in the Connect Customer Administrator Guide.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEmailAddress">AWS
    * API Reference</a></p>
@@ -1472,8 +1472,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates an evaluation form in the specified Amazon Connect instance. The form
-   * can be used to define questions related to agent performance, and create
+   * <p>Creates an evaluation form in the specified Connect Customer instance. The
+   * form can be used to define questions related to agent performance, and create
    * sections to organize such questions. Question and section identifiers cannot be
    * duplicated within the same evaluation form.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEvaluationForm">AWS
@@ -1528,7 +1528,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates an hours of operation override in an Amazon Connect hours of
+   * <p>Creates an hours of operation override in an Connect Customer hours of
    * operation resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperationOverride">AWS
    * API Reference</a></p>
@@ -1558,15 +1558,15 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
-   * change.</p> <p>Initiates an Amazon Connect instance with all the supported
+   * <p>This API is in preview release for Connect Customer and is subject to
+   * change.</p> <p>Initiates an Connect Customer instance with all the supported
    * channels enabled. It does not attach any storage, such as Amazon Simple Storage
    * Service (Amazon S3) or Amazon Kinesis. It also does not allow for any
-   * configurations on features, such as Contact Lens for Amazon Connect. </p> <p>For
-   * more information, see <a
+   * configurations on features, such as Contact Lens for Connect Customer. </p>
+   * <p>For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html">Create
-   * an Amazon Connect instance</a> in the <i>Amazon Connect Administrator
-   * Guide</i>.</p> <p>Amazon Connect enforces a limit on the total number of
+   * an Connect Customer instance</a> in the <i>Connect Customer Administrator
+   * Guide</i>.</p> <p>Connect Customer enforces a limit on the total number of
    * instances that you can create or delete in 30 days. If you exceed this limit,
    * you will get an error message indicating there has been an excessive number of
    * attempts at creating or deleting instances. You must wait 30 days before you can
@@ -1596,7 +1596,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates an Amazon Web Services resource association with an Amazon Connect
+   * <p>Creates an Amazon Web Services resource association with an Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
    * API Reference</a></p>
@@ -1689,7 +1689,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Enables rehydration of chats for the lifespan of a contact. For more
    * information about chat rehydration, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
-   * persistent chat</a> in the <i>Amazon Connect Administrator Guide</i>.
+   * persistent chat</a> in the <i>Connect Customer Administrator Guide</i>.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePersistentContactAssociation">AWS
    * API Reference</a></p>
@@ -1719,11 +1719,11 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a new predefined attribute for the specified Amazon Connect instance.
-   * A <i>predefined attribute</i> is made up of a name and a value.</p> <p>For the
-   * predefined attributes per instance quota, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-   * Connect quotas</a>.</p> <p> <b>Use cases</b> </p> <p>Following are common uses
+   * <p>Creates a new predefined attribute for the specified Connect Customer
+   * instance. A <i>predefined attribute</i> is made up of a name and a value.</p>
+   * <p>For the predefined attributes per instance quota, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+   * Customer quotas</a>.</p> <p> <b>Use cases</b> </p> <p>Following are common uses
    * cases for this API:</p> <ul> <li> <p>Create an attribute for routing proficiency
    * (for example, agent certification) that has predefined values (for example, a
    * list of possible certifications). For more information, see <a
@@ -1735,8 +1735,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
    * contact segment attributes</a>.</p> </li> </ul> <p> <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePredefinedAttribute">AWS
    * API Reference</a></p>
    */
@@ -1767,7 +1767,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Creates a prompt. For more information about prompts, such as supported file
    * types and maximum length, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create
-   * prompts</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
+   * prompts</a> in the <i>Connect Customer Administrator Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePrompt">AWS
    * API Reference</a></p>
@@ -1797,8 +1797,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * real-time push notifications. For more information about push notifications, see
    * <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-push-notifications-for-mobile-chat.html">Set
-   * up push notifications in Amazon Connect for mobile chat</a> in the <i>Amazon
-   * Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * up push notifications in Connect Customer for mobile chat</a> in the <i>Connect
+   * Customer Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePushNotificationRegistration">AWS
    * API Reference</a></p>
    */
@@ -1827,9 +1827,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a new queue for the specified Amazon Connect instance.</p>
+   * <p>Creates a new queue for the specified Connect Customer instance.</p>
    *  <ul> <li> <p>If the phone number is claimed to a traffic
-   * distribution group that was created in the same Region as the Amazon Connect
+   * distribution group that was created in the same Region as the Connect Customer
    * instance where you are calling this API, then you can use a full phone number
    * ARN or a UUID for <code>OutboundCallerIdNumberId</code>. However, if the phone
    * number is claimed to a traffic distribution group that is in one Region, and you
@@ -1871,7 +1871,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a quick connect for the specified Amazon Connect
+   * <p>Creates a quick connect for the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect">AWS
    * API Reference</a></p>
@@ -1924,7 +1924,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a rule for the specified Amazon Connect instance.</p> <p>Use the <a
+   * <p>Creates a rule for the specified Connect Customer instance.</p> <p>Use the <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
    * Function language</a> to code conditions for the rule. </p><p><h3>See Also:</h3>
    * <a
@@ -1955,8 +1955,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Creates a security profile.</p> <p>For information about security profiles,
    * see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-   * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of
-   * the API name and user interface name of the security profile permissions, see <a
+   * Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping
+   * of the API name and user interface name of the security profile permissions, see
+   * <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
    * of security profile permissions</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateSecurityProfile">AWS
@@ -1984,7 +1985,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a new task template in the specified Amazon Connect
+   * <p>Creates a new task template in the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTaskTemplate">AWS
    * API Reference</a></p>
@@ -2037,7 +2038,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a traffic distribution group given an Amazon Connect instance that
+   * <p>Creates a traffic distribution group given an Connect Customer instance that
    * has been replicated.</p>  <p>The <code>SignInConfig</code> distribution is
    * available only on a default <code>TrafficDistributionGroup</code> (see the
    * <code>IsDefault</code> parameter in the <a
@@ -2048,7 +2049,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * is returned.</p>  <p>For more information about creating traffic
    * distribution groups, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set
-   * up traffic distribution groups</a> in the <i>Amazon Connect Administrator
+   * up traffic distribution groups</a> in the <i>Connect Customer Administrator
    * Guide</i>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTrafficDistributionGroup">AWS
    * API Reference</a></p>
@@ -2104,12 +2105,12 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a user account for the specified Amazon Connect instance.</p>
+   * <p>Creates a user account for the specified Connect Customer instance.</p>
    *  <p>Certain <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
    * parameters are required in some situations. For example, <code>Email</code>,
    * <code>FirstName</code> and <code>LastName</code> are required if you are using
-   * Amazon Connect or SAML for identity management.</p>
+   * Connect Customer or SAML for identity management.</p>
    * <p>Fields in <code>PhoneConfig</code> cannot be set simultaneously with their
    * corresponding channel-specific configuration parameters. Specifically:</p> <ul>
    * <li> <p> <code>PhoneConfig.AutoAccept</code> conflicts with
@@ -2124,10 +2125,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <code>AfterContactWorkConfigs</code>, <code>PhoneNumberConfigs</code>,
    * <code>PersistentConnectionConfigs</code>, and
    * <code>VoiceEnhancementConfigs</code> for per-channel configuration.</p>
-   * <p>For information about how to create users using the Amazon Connect admin
+   * <p>For information about how to create users using the Connect Customer admin
    * website, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
-   * Users</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
+   * Users</a> in the <i>Connect Customer Administrator Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUser">AWS
    * API Reference</a></p>
@@ -2243,11 +2244,11 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a custom vocabulary associated with your Amazon Connect instance. You
-   * can set a custom vocabulary to be your default vocabulary for a given language.
-   * Contact Lens for Amazon Connect uses the default vocabulary in post-call and
-   * real-time contact analysis sessions for that language.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Creates a custom vocabulary associated with your Connect Customer instance.
+   * You can set a custom vocabulary to be your default vocabulary for a given
+   * language. Contact Lens for Connect Customer uses the default vocabulary in
+   * post-call and real-time contact analysis sessions for that
+   * language.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateVocabulary">AWS
    * API Reference</a></p>
    */
@@ -2327,7 +2328,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deactivates an evaluation form in the specified Amazon Connect instance.
+   * <p>Deactivates an evaluation form in the specified Connect Customer instance.
    * After a form is deactivated, it is no longer available for users to start new
    * evaluations based on the form. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeactivateEvaluationForm">AWS
@@ -2384,7 +2385,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a contact evaluation in the specified Amazon Connect
+   * <p>Deletes a contact evaluation in the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactEvaluation">AWS
    * API Reference</a></p>
@@ -2412,7 +2413,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a flow for the specified Amazon Connect instance.</p><p><h3>See
+   * <p>Deletes a flow for the specified Connect Customer instance.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlow">AWS
    * API Reference</a></p>
@@ -2614,7 +2615,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes email address from the specified Amazon Connect
+   * <p>Deletes email address from the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEmailAddress">AWS
    * API Reference</a></p>
@@ -2641,7 +2642,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes an evaluation form in the specified Amazon Connect instance. </p>
+   * <p>Deletes an evaluation form in the specified Connect Customer instance. </p>
    * <ul> <li> <p>If the version property is provided, only the specified version of
    * the evaluation form is deleted.</p> </li> <li> <p>If no version is provided,
    * then the full form (all versions) is deleted.</p> </li> </ul><p><h3>See
@@ -2698,7 +2699,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes an hours of operation override in an Amazon Connect hours of
+   * <p>Deletes an hours of operation override in an Connect Customer hours of
    * operation resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperationOverride">AWS
    * API Reference</a></p>
@@ -2728,11 +2729,12 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
-   * change.</p> <p>Deletes the Amazon Connect instance. For more information, see <a
+   * <p>This API is in preview release for Connect Customer and is subject to
+   * change.</p> <p>Deletes the Connect Customer instance. For more information, see
+   * <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-connect-instance.html">Delete
-   * your Amazon Connect instance</a> in the <i>Amazon Connect Administrator
-   * Guide</i>.</p> <p>Amazon Connect enforces a limit on the total number of
+   * your Connect Customer instance</a> in the <i>Connect Customer Administrator
+   * Guide</i>.</p> <p>Connect Customer enforces a limit on the total number of
    * instances that you can create or delete in 30 days. If you exceed this limit,
    * you will get an error message indicating there has been an excessive number of
    * attempts at creating or deleting instances. You must wait 30 days before you can
@@ -2762,7 +2764,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes an Amazon Web Services resource association from an Amazon Connect
+   * <p>Deletes an Amazon Web Services resource association from an Connect Customer
    * instance. The association must not have any use cases associated with
    * it.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">AWS
@@ -2821,7 +2823,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a predefined attribute from the specified Amazon Connect
+   * <p>Deletes a predefined attribute from the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePredefinedAttribute">AWS
    * API Reference</a></p>
@@ -2936,10 +2938,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * related to the deleted users. This will help you:</p> <ul> <li> <p>Avoid
    * dangling resources that impact your service quotas.</p> </li> <li> <p>Remove
    * deleted users so they don't appear to agents as transfer options.</p> </li> <li>
-   * <p>Avoid the disruption of other Amazon Connect processes, such as instance
+   * <p>Avoid the disruption of other Connect Customer processes, such as instance
    * replication and syncing if you're using <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Amazon
-   * Connect Global Resiliency</a>. </p> </li> </ul> <p><h3>See
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Connect
+   * Customer Global Resiliency</a>. </p> </li> </ul> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect">AWS
    * API Reference</a></p>
@@ -2992,7 +2994,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a rule for the specified Amazon Connect instance.</p><p><h3>See
+   * <p>Deletes a rule for the specified Connect Customer instance.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRule">AWS
    * API Reference</a></p>
@@ -3100,7 +3102,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * Region where the traffic distribution group is created.</p> <p>For more
    * information about deleting traffic distribution groups, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete
-   * traffic distribution groups</a> in the <i>Amazon Connect Administrator
+   * traffic distribution groups</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTrafficDistributionGroup">AWS
    * API Reference</a></p>
@@ -3156,20 +3158,20 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a user account from the specified Amazon Connect instance.</p> <p>For
-   * information about what happens to a user's data when their account is deleted,
-   * see <a
+   * <p>Deletes a user account from the specified Connect Customer instance.</p>
+   * <p>For information about what happens to a user's data when their account is
+   * deleted, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete
-   * Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect
+   * Users from Your Connect Customer Instance</a> in the <i>Connect Customer
    * Administrator Guide</i>.</p>  <p>After calling DeleteUser, call <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteQuickConnect.html">DeleteQuickConnect</a>
    * to delete any records related to the deleted users. This will help you:</p> <ul>
    * <li> <p>Avoid dangling resources that impact your service quotas.</p> </li> <li>
    * <p>Remove deleted users so they don't appear to agents as transfer options.</p>
-   * </li> <li> <p>Avoid the disruption of other Amazon Connect processes, such as
+   * </li> <li> <p>Avoid the disruption of other Connect Customer processes, such as
    * instance replication and syncing if you're using <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Amazon
-   * Connect Global Resiliency</a>. </p> </li> </ul> <p><h3>See
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Connect
+   * Customer Global Resiliency</a>. </p> </li> </ul> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUser">AWS
    * API Reference</a></p>
@@ -3409,7 +3411,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Describes the attached files configuration for the specified Amazon Connect
+   * <p>Describes the attached files configuration for the specified Connect Customer
    * instance and attachment scope.</p> <p>If a custom configuration exists for the
    * specified attachment scope, the custom configuration is returned. If no custom
    * configuration exists, the default configuration values for that attachment scope
@@ -3442,7 +3444,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to change.
+   * <p>This API is in preview release for Connect Customer and is subject to change.
    * To request access to this API, contact Amazon Web Services Support.</p>
    * <p>Describes the target authentication profile.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAuthenticationProfile">AWS
@@ -3473,7 +3475,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Describes the specified contact. </p> <p> <b>Use cases</b> </p>
    * <p>Following are common uses cases for this API:</p> <ul> <li> <p>Retrieve
    * contact information such as the caller's phone number and the specific number
@@ -3488,12 +3490,12 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * event stream</a>. </p> </li> </ul> <p> <b>Important things to know</b> </p> <ul>
    * <li> <p> <code>SystemEndpoint</code> is not populated for contacts with
    * initiation method of MONITOR, QUEUE_TRANSFER, or CALLBACK</p> </li> <li>
-   * <p>Contact information remains available in Amazon Connect for 24 months from
+   * <p>Contact information remains available in Connect Customer for 24 months from
    * the <code>InitiationTimestamp</code>, and then it is deleted. Only contact
-   * information that is available in Amazon Connect is returned by this API.</p>
+   * information that is available in Connect Customer is returned by this API.</p>
    * </li> </ul> <p> <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">AWS
    * API Reference</a></p>
    */
@@ -3518,7 +3520,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Describes a contact evaluation in the specified Amazon Connect
+   * <p>Describes a contact evaluation in the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactEvaluation">AWS
    * API Reference</a></p>
@@ -3549,8 +3551,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Describes the specified flow.</p> <p>You can also create and update flows
    * using the <a
-   * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-   * Connect Flow language</a>.</p> <p>Use the <code>$SAVED</code> alias in the
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+   * Customer Flow language</a>.</p> <p>Use the <code>$SAVED</code> alias in the
    * request to describe the <code>SAVED</code> content of a Flow. For example,
    * <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. After a flow is published,
    * <code>$SAVED</code> needs to be supplied to view saved content that has not been
@@ -3710,7 +3712,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Describe email address form the specified Amazon Connect
+   * <p>Describe email address form the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEmailAddress">AWS
    * API Reference</a></p>
@@ -3737,9 +3739,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Describes an evaluation form in the specified Amazon Connect instance. If the
-   * version property is not provided, the latest version of the evaluation form is
-   * described.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an evaluation form in the specified Connect Customer instance. If
+   * the version property is not provided, the latest version of the evaluation form
+   * is described.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEvaluationForm">AWS
    * API Reference</a></p>
    */
@@ -3822,7 +3824,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Returns the current state of the specified instance identifier.
    * It tracks the instance while it is being created and returns an error status, if
    * applicable. </p> <p>If an instance is not created successfully, the instance
@@ -3854,7 +3856,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Describes the specified instance attribute.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute">AWS
@@ -3884,7 +3886,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Retrieves the current storage configurations for the specified
    * resource type, association ID, and instance ID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig">AWS
@@ -3942,17 +3944,17 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Gets details and status of a phone number that’s claimed to your Amazon
-   * Connect instance or traffic distribution group.</p>  <p>If the number
-   * is claimed to a traffic distribution group, and you are calling in the Amazon
-   * Web Services Region where the traffic distribution group was created, you can
-   * use either a phone number ARN or UUID value for the <code>PhoneNumberId</code>
-   * URI request parameter. However, if the number is claimed to a traffic
-   * distribution group and you are calling this API in the alternate Amazon Web
-   * Services Region associated with the traffic distribution group, you must provide
-   * a full phone number ARN. If a UUID is provided in this scenario, you receive a
-   * <code>ResourceNotFoundException</code>.</p> <p><h3>See Also:</h3>
-   * <a
+   * <p>Gets details and status of a phone number that’s claimed to your Connect
+   * Customer instance or traffic distribution group.</p>  <p>If the
+   * number is claimed to a traffic distribution group, and you are calling in the
+   * Amazon Web Services Region where the traffic distribution group was created, you
+   * can use either a phone number ARN or UUID value for the
+   * <code>PhoneNumberId</code> URI request parameter. However, if the number is
+   * claimed to a traffic distribution group and you are calling this API in the
+   * alternate Amazon Web Services Region associated with the traffic distribution
+   * group, you must provide a full phone number ARN. If a UUID is provided in this
+   * scenario, you receive a <code>ResourceNotFoundException</code>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePhoneNumber">AWS
    * API Reference</a></p>
    */
@@ -3978,8 +3980,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Describes a predefined attribute for the specified Amazon Connect instance. A
-   * <i>predefined attribute</i> is made up of a name and a value. You can use
+   * <p>Describes a predefined attribute for the specified Connect Customer instance.
+   * A <i>predefined attribute</i> is made up of a name and a value. You can use
    * predefined attributes for:</p> <ul> <li> <p>Routing proficiency (for example,
    * agent certification) that has predefined values (for example, a list of possible
    * certifications). For more information, see <a
@@ -3990,10 +3992,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
    * contact segment attributes</a>.</p> </li> </ul> <p>For the predefined attributes
    * per instance quota, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-   * Connect quotas</a>.</p> <p> <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+   * Customer quotas</a>.</p> <p> <b>Endpoints</b>: See <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePredefinedAttribute">AWS
    * API Reference</a></p>
    */
@@ -4130,7 +4132,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Describes a rule for the specified Amazon Connect instance.</p><p><h3>See
+   * <p>Describes a rule for the specified Connect Customer instance.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeRule">AWS
    * API Reference</a></p>
@@ -4159,8 +4161,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Gets basic information about the security profile.</p> <p>For information
    * about security profiles, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-   * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of
-   * the API name and user interface name of the security profile permissions, see <a
+   * Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping
+   * of the API name and user interface name of the security profile permissions, see
+   * <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
    * of security profile permissions</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeSecurityProfile">AWS
@@ -4249,7 +4252,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Describes the specified user. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-   * the instance ID in the Amazon Connect console</a> (it’s the final part of the
+   * the instance ID in the Connect Customer console</a> (it’s the final part of the
    * ARN). The console does not display the user IDs. Instead, list the users and
    * note the IDs provided in the output.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUser">AWS
@@ -4305,7 +4308,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Describes the hierarchy structure of the specified Amazon Connect
+   * <p>Describes the hierarchy structure of the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyStructure">AWS
    * API Reference</a></p>
@@ -4335,15 +4338,15 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Retrieves the view for the specified Amazon Connect instance and view
+   * <p>Retrieves the view for the specified Connect Customer instance and view
    * identifier.</p> <p>The view identifier can be supplied as a ViewId or ARN.</p>
    * <p> <code>$SAVED</code> needs to be supplied if a view is unpublished.</p>
    * <p>The view identifier can contain an optional qualifier, for example,
    * <code>&lt;view-id&gt;:$SAVED</code>, which is either an actual version number or
-   * an Amazon Connect managed qualifier <code>$SAVED | $LATEST</code>. If it is not
-   * supplied, then <code>$LATEST</code> is assumed for customer managed views and an
-   * error is returned if there is no published content available. Version 1 is
-   * assumed for Amazon Web Services managed views.</p><p><h3>See Also:</h3>   <a
+   * an Connect Customer managed qualifier <code>$SAVED | $LATEST</code>. If it is
+   * not supplied, then <code>$LATEST</code> is assumed for customer managed views
+   * and an error is returned if there is no published content available. Version 1
+   * is assumed for Amazon Web Services managed views.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeView">AWS
    * API Reference</a></p>
    */
@@ -4421,7 +4424,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Removes the dataset ID associated with a given Amazon Connect
+   * <p>Removes the dataset ID associated with a given Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateAnalyticsDataSet">AWS
    * API Reference</a></p>
@@ -4451,9 +4454,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
-   * change.</p> <p>Revokes access to integrated applications from Amazon
-   * Connect.</p><p><h3>See Also:</h3>   <a
+   * <p>This API is in preview release for Connect Customer and is subject to
+   * change.</p> <p>Revokes access to integrated applications from Connect
+   * Customer.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin">AWS
    * API Reference</a></p>
    */
@@ -4482,7 +4485,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Revokes authorization from the specified instance to access the
    * specified Amazon Lex or Amazon Lex V2 bot. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateBot">AWS
@@ -4509,8 +4512,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Removes the alias association between two email addresses in an Amazon
-   * Connect instance. After disassociation, emails sent to the former alias email
+   * <p>Removes the alias association between two email addresses in an Connect
+   * Customer instance. After disassociation, emails sent to the former alias email
    * address are no longer forwarded to the primary email address. Both email
    * addresses continue to exist independently and can receive emails directly.</p>
    * <p> <b>Use cases</b> </p> <p>Following are common uses cases for this API:</p>
@@ -4534,12 +4537,12 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * disassociated. The response returns an empty body.</p> </li> <li> <p>The
    * timestamp of when the disassociation occurred.</p> </li> </ul> <p>
    * <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p> <p> <b>Related operations</b> </p> <ul>
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p> <p> <b>Related operations</b> </p> <ul>
    * <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateEmailAddressAlias.html">AssociateEmailAddressAlias</a>:
-   * Associates an email address alias with an existing email address in an Amazon
-   * Connect instance.</p> </li> <li> <p> <a
+   * Associates an email address alias with an existing email address in an Connect
+   * Customer instance.</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
    * View current alias configurations for an email address.</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
@@ -4641,7 +4644,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Removes the storage type configurations for the specified
    * resource type and association ID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig">AWS
@@ -4672,7 +4675,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Remove the Lambda function from the dropdown options available in
    * the relevant flow blocks.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">AWS
@@ -4703,7 +4706,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Revokes authorization from the specified instance to access the
    * specified Amazon Lex bot.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot">AWS
@@ -4731,8 +4734,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Removes the flow association from a phone number claimed to your Amazon
-   * Connect instance.</p>  <p>If the number is claimed to a traffic
+   * <p>Removes the flow association from a phone number claimed to your Connect
+   * Customer instance.</p>  <p>If the number is claimed to a traffic
    * distribution group, and you are calling this API using an instance in the Amazon
    * Web Services Region where the traffic distribution group was created, you can
    * use either a full phone number ARN or UUID value for the
@@ -4871,7 +4874,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Deletes the specified security key.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey">AWS
    * API Reference</a></p>
@@ -5152,10 +5155,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Metrics are only available while the contact is actively in queue.</p> </li>
    * <li> <p>For more information, see the <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Position
-   * in queue</a> metric in the <i>Amazon Connect Administrator Guide</i>. </p> </li>
-   * </ul> <p> <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * in queue</a> metric in the <i>Connect Customer Administrator Guide</i>. </p>
+   * </li> </ul> <p> <b>Endpoints</b>: See <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactMetrics">AWS
    * API Reference</a></p>
    */
@@ -5181,10 +5184,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Gets the real-time metric data from the specified Amazon Connect
+   * <p>Gets the real-time metric data from the specified Connect Customer
    * instance.</p> <p>For a description of each metric, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-   * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+   * definitions</a> in the <i>Connect Customer Administrator Guide</i>.</p>
    * <p>When you make a successful API request, you can expect the following metric
    * values in the response:</p> <ol> <li> <p> <b>Metric value is null</b>: The
    * calculation cannot be performed due to divide by zero or insufficient data</p>
@@ -5222,7 +5225,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Gets the real-time active user data from the specified Amazon Connect
+   * <p>Gets the real-time active user data from the specified Connect Customer
    * instance. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentUserData">AWS
    * API Reference</a></p>
@@ -5279,17 +5282,17 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Supports SAML sign-in for Amazon Connect. Retrieves a token for federation.
-   * The token is for the Amazon Connect user which corresponds to the IAM
+   * <p>Supports SAML sign-in for Connect Customer. Retrieves a token for federation.
+   * The token is for the Connect Customer user which corresponds to the IAM
    * credentials that were used to invoke this action. </p> <p>For more information
-   * about how SAML sign-in works in Amazon Connect, see <a
+   * about how SAML sign-in works in Connect Customer, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml.html
-   * ">Configure SAML with IAM for Amazon Connect in the <i>Amazon Connect
+   * ">Configure SAML with IAM for Connect Customer in the <i>Connect Customer
    * Administrator Guide</i>.</a> </p>  <p>This API doesn't support root users.
    * If you try to invoke GetFederationToken with root credentials, an error message
    * similar to the following one appears: </p> <p> <code>Provided identity:
-   * Principal: .... User: .... cannot be used for federation with Amazon
-   * Connect</code> </p> <p><h3>See Also:</h3>   <a
+   * Principal: .... User: .... cannot be used for federation with Connect
+   * Customer</code> </p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFederationToken">AWS
    * API Reference</a></p>
    */
@@ -5342,10 +5345,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Gets historical metric data from the specified Amazon Connect instance.</p>
+   * <p>Gets historical metric data from the specified Connect Customer instance.</p>
    * <p>For a description of each historical metric, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-   * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+   * definitions</a> in the <i>Connect Customer Administrator Guide</i>.</p>
    * <p>We recommend using the <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricDataV2.html">GetMetricDataV2</a>
    * API. It provides more flexibility, features, and the ability to query longer
@@ -5379,7 +5382,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Gets metric data from the specified Amazon Connect instance. </p> <p>
+   * <p>Gets metric data from the specified Connect Customer instance. </p> <p>
    * <code>GetMetricDataV2</code> offers more features than <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>,
    * the previous version of this API. It has new metrics, offers filtering at a
@@ -5389,7 +5392,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * agent queues.</p> <p>For a description of the historical metrics that are
    * supported by <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-   * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+   * definitions</a> in the <i>Connect Customer Administrator Guide</i>.</p>
    * <p>When you make a successful API request, you can expect the following metric
    * values in the response:</p> <ol> <li> <p> <b>Metric value is null</b>: The
    * calculation cannot be performed due to divide by zero or insufficient data</p>
@@ -5452,7 +5455,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Gets details about a specific task template in the specified Amazon Connect
+   * <p>Gets details about a specific task template in the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTaskTemplate">AWS
    * API Reference</a></p>
@@ -5538,8 +5541,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Imports a claimed phone number from an external service, such as Amazon Web
-   * Services End User Messaging, into an Amazon Connect instance. You can call this
-   * API only in the same Amazon Web Services Region where the Amazon Connect
+   * Services End User Messaging, into an Connect Customer instance. You can call
+   * this API only in the same Amazon Web Services Region where the Connect Customer
    * instance was created.</p>  <p>Call the <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
    * API to verify the status of a previous <code>ImportPhoneNumber</code> operation.
@@ -5635,8 +5638,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists the association status of requested dataset ID for a given Amazon
-   * Connect instance.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists the association status of requested dataset ID for a given Connect
+   * Customer instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataAssociations">AWS
    * API Reference</a></p>
    */
@@ -5665,8 +5668,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists the data lake datasets available to associate with for a given Amazon
-   * Connect instance.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists the data lake datasets available to associate with for a given Connect
+   * Customer instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataLakeDataSets">AWS
    * API Reference</a></p>
    */
@@ -5695,7 +5698,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Returns a paginated list of all approved origins associated with
    * the instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins">AWS
@@ -5752,7 +5755,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Provides summary information about the attached files configurations for the
-   * specified Amazon Connect instance.</p> <p>This API returns effective
+   * specified Connect Customer instance.</p> <p>This API returns effective
    * configurations (custom overrides or defaults) for each attachment scope. If no
    * custom configuration exists for a scope, the default configuration values are
    * returned.</p><p><h3>See Also:</h3>   <a
@@ -5784,10 +5787,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to change.
+   * <p>This API is in preview release for Connect Customer and is subject to change.
    * To request access to this API, contact Amazon Web Services Support.</p>
    * <p>Provides summary information about the authentication profiles in a specified
-   * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
+   * Connect Customer instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAuthenticationProfiles">AWS
    * API Reference</a></p>
    */
@@ -5816,7 +5819,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>For the specified version of Amazon Lex, returns a paginated list
    * of all the Amazon Lex bots currently associated with the instance. Use this API
    * to return both Amazon Lex V1 and V2 bots.</p><p><h3>See Also:</h3>   <a
@@ -5878,7 +5881,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists contact evaluations in the specified Amazon Connect
+   * <p>Lists contact evaluations in the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactEvaluations">AWS
    * API Reference</a></p>
@@ -5966,8 +5969,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Provides information about the flow modules for the specified Amazon Connect
-   * instance.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the flow modules for the specified Connect
+   * Customer instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModules">AWS
    * API Reference</a></p>
    */
@@ -5994,8 +5997,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns all the available versions for the specified Amazon Connect instance
-   * and flow identifier.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns all the available versions for the specified Connect Customer
+   * instance and flow identifier.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowVersions">AWS
    * API Reference</a></p>
    */
@@ -6022,12 +6025,13 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Provides information about the flows for the specified Amazon Connect
+   * <p>Provides information about the flows for the specified Connect Customer
    * instance.</p> <p>You can also create and update flows using the <a
-   * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-   * Connect Flow language</a>.</p> <p>For more information about flows, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+   * Customer Flow language</a>.</p> <p>For more information about flows, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a>
-   * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * in the <i>Connect Customer Administrator Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlows">AWS
    * API Reference</a></p>
    */
@@ -6053,7 +6057,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>For the specified <code>referenceTypes</code>, returns a list of
    * references associated with the contact. <i>References</i> are links to documents
    * that are related to a contact, such as emails, attachments, or
@@ -6199,7 +6203,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists the default vocabularies for the specified Amazon Connect
+   * <p>Lists the default vocabularies for the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDefaultVocabularies">AWS
    * API Reference</a></p>
@@ -6257,7 +6261,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists versions of an evaluation form in the specified Amazon Connect
+   * <p>Lists versions of an evaluation form in the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationFormVersions">AWS
    * API Reference</a></p>
@@ -6287,7 +6291,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists evaluation forms in the specified Amazon Connect
+   * <p>Lists evaluation forms in the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationForms">AWS
    * API Reference</a></p>
@@ -6369,10 +6373,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Provides information about the hours of operation for the specified Amazon
-   * Connect instance.</p> <p>For more information about hours of operation, see <a
+   * <p>Provides information about the hours of operation for the specified Connect
+   * Customer instance.</p> <p>For more information about hours of operation, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set
-   * the Hours of Operation for a Queue</a> in the <i>Amazon Connect Administrator
+   * the Hours of Operation for a Queue</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperations">AWS
    * API Reference</a></p>
@@ -6399,7 +6403,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Returns a paginated list of all attribute types for the given
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceAttributes">AWS
@@ -6428,7 +6432,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Returns a paginated list of storage configs for the identified
    * instance and resource type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceStorageConfigs">AWS
@@ -6459,7 +6463,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Return a list of instances which are in active state,
    * creation-in-progress state, and failed state. Instances that aren't successfully
    * created (they are in a failed state) are returned only for 24 hours after the
@@ -6490,8 +6494,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Provides summary information about the Amazon Web Services resource
-   * associations for the specified Amazon Connect instance.</p><p><h3>See Also:</h3>
-   * <a
+   * associations for the specified Connect Customer instance.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">AWS
    * API Reference</a></p>
    */
@@ -6520,7 +6524,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Returns a paginated list of all Lambda functions that display in
    * the dropdown options in the relevant flow blocks.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">AWS
@@ -6548,7 +6552,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Returns a paginated list of all the Amazon Lex V1 bots currently
    * associated with the instance. To return both Amazon Lex V1 and V2 bots, use the
    * <a
@@ -6605,10 +6609,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Provides information about the phone numbers for the specified Amazon Connect
-   * instance. </p> <p>For more information about phone numbers, see <a
+   * <p>Provides information about the phone numbers for the specified Connect
+   * Customer instance. </p> <p>For more information about phone numbers, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
-   * Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect
+   * Up Phone Numbers for Your Contact Center</a> in the <i>Connect Customer
    * Administrator Guide</i>.</p>  <ul> <li> <p>We recommend using <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
    * to return phone number types. ListPhoneNumbers doesn't support number types
@@ -6648,13 +6652,13 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists phone numbers claimed to your Amazon Connect instance or traffic
+   * <p>Lists phone numbers claimed to your Connect Customer instance or traffic
    * distribution group. If the provided <code>TargetArn</code> is a traffic
    * distribution group, you can call this API in both Amazon Web Services Regions
    * associated with traffic distribution group.</p> <p>For more information about
    * phone numbers, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
-   * Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect
+   * Up Phone Numbers for Your Contact Center</a> in the <i>Connect Customer
    * Administrator Guide</i>.</p>  <ul> <li> <p>When given an instance ARN,
    * <code>ListPhoneNumbersV2</code> returns only the phone numbers claimed to the
    * instance.</p> </li> <li> <p>When given a traffic distribution group ARN
@@ -6686,7 +6690,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists predefined attributes for the specified Amazon Connect instance. A
+   * <p>Lists predefined attributes for the specified Connect Customer instance. A
    * <i>predefined attribute</i> is made up of a name and a value. You can use
    * predefined attributes for:</p> <ul> <li> <p>Routing proficiency (for example,
    * agent certification) that has predefined values (for example, a list of possible
@@ -6698,10 +6702,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
    * contact segment attributes</a>.</p> </li> </ul> <p>For the predefined attributes
    * per instance quota, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-   * Connect quotas</a>.</p> <p> <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+   * Customer quotas</a>.</p> <p> <b>Endpoints</b>: See <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPredefinedAttributes">AWS
    * API Reference</a></p>
    */
@@ -6728,7 +6732,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Provides information about the prompts for the specified Amazon Connect
+   * <p>Provides information about the prompts for the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPrompts">AWS
    * API Reference</a></p>
@@ -6821,14 +6825,14 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Provides information about the queues for the specified Amazon Connect
+   * <p>Provides information about the queues for the specified Connect Customer
    * instance.</p> <p>If you do not specify a <code>QueueTypes</code> parameter, both
    * standard and agent queues are returned. This might cause an unexpected
    * truncation of results if you have more than 1000 agents and you limit the number
    * of results of the API call in code.</p> <p>For more information about queues,
    * see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
-   * Standard and Agent</a> in the <i>Amazon Connect Administrator
+   * Standard and Agent</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueues">AWS
    * API Reference</a></p>
@@ -6854,8 +6858,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Provides information about the quick connects for the specified Amazon
-   * Connect instance. </p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the quick connects for the specified Connect
+   * Customer instance. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects">AWS
    * API Reference</a></p>
    */
@@ -6922,14 +6926,14 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * invalid request exception will be thrown).</p> <p>For information about how
    * manual contact assignment works in the agent workspace, see the <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
-   * the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon
-   * Connect Administrator Guide</i>. </p> </li> </ul> <p> <b>Important things to
+   * the Worklist app in the Connect Customer agent workspace</a> in the <i>Connect
+   * Customer Administrator Guide</i>. </p> </li> </ul> <p> <b>Important things to
    * know</b> </p> <ul> <li> <p>This API only returns the manual assignment queues
    * associated with a routing profile. Use the ListRoutingProfileQueues API to list
    * the auto assignment queues for the routing profile.</p> </li> </ul> <p>
    * <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfileManualAssignmentQueues">AWS
    * API Reference</a></p>
    */
@@ -6988,12 +6992,12 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Provides summary information about the routing profiles for the specified
-   * Amazon Connect instance.</p> <p>For more information about routing profiles, see
-   * <a
+   * Connect Customer instance.</p> <p>For more information about routing profiles,
+   * see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing
    * Profiles</a> and <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create
-   * a Routing Profile</a> in the <i>Amazon Connect Administrator
+   * a Routing Profile</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfiles">AWS
    * API Reference</a></p>
@@ -7020,7 +7024,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>List all rules for the specified Amazon Connect instance.</p><p><h3>See
+   * <p>List all rules for the specified Connect Customer instance.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRules">AWS
    * API Reference</a></p>
@@ -7046,7 +7050,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Returns a paginated list of all security keys associated with the
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys">AWS
@@ -7137,8 +7141,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Lists the permissions granted to a security profile.</p> <p>For information
    * about security profiles, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-   * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of
-   * the API name and user interface name of the security profile permissions, see <a
+   * Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping
+   * of the API name and user interface name of the security profile permissions, see
+   * <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
    * of security profile permissions</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfilePermissions">AWS
@@ -7170,11 +7175,12 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Provides summary information about the security profiles for the specified
-   * Amazon Connect instance.</p> <p>For more information about security profiles,
+   * Connect Customer instance.</p> <p>For more information about security profiles,
    * see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-   * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of
-   * the API name and user interface name of the security profile permissions, see <a
+   * Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping
+   * of the API name and user interface name of the security profile permissions, see
+   * <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
    * of security profile permissions</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfiles">AWS
@@ -7204,8 +7210,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Lists the tags for the specified resource.</p> <p>For sample policies that
    * use tags, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-   * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Connect
+   * Customer Identity-Based Policy Examples</a> in the <i>Connect Customer
    * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTagsForResource">AWS
    * API Reference</a></p>
@@ -7232,8 +7238,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists task templates for the specified Amazon Connect instance.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Lists task templates for the specified Connect Customer
+   * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTaskTemplates">AWS
    * API Reference</a></p>
    */
@@ -7430,10 +7436,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Provides summary information about the hierarchy groups for the specified
-   * Amazon Connect instance.</p> <p>For more information about agent hierarchies,
+   * Connect Customer instance.</p> <p>For more information about agent hierarchies,
    * see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set
-   * Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator
+   * Up Agent Hierarchies</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserHierarchyGroups">AWS
    * API Reference</a></p>
@@ -7514,8 +7520,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Provides summary information about the users for the specified Amazon Connect
-   * instance.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides summary information about the users for the specified Connect
+   * Customer instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUsers">AWS
    * API Reference</a></p>
    */
@@ -7540,8 +7546,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns all the available versions for the specified Amazon Connect instance
-   * and view identifier.</p> <p>Results will be sorted from highest to
+   * <p>Returns all the available versions for the specified Connect Customer
+   * instance and view identifier.</p> <p>Results will be sorted from highest to
    * lowest.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViewVersions">AWS
    * API Reference</a></p>
@@ -7726,13 +7732,13 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Changes the current status of a user or agent in Amazon Connect. If the agent
-   * is currently handling a contact, this sets the agent's next status.</p> <p>For
-   * more information, see <a
+   * <p>Changes the current status of a user or agent in Connect Customer. If the
+   * agent is currently handling a contact, this sets the agent's next status.</p>
+   * <p>For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html">Agent
    * status</a> and <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-next-status.html">Set
-   * your next status</a> in the <i>Amazon Connect Administrator
+   * your next status</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PutUserStatus">AWS
    * API Reference</a></p>
@@ -7758,11 +7764,11 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Releases a phone number previously claimed to an Amazon Connect instance or
+   * <p>Releases a phone number previously claimed to an Connect Customer instance or
    * traffic distribution group. You can call this API only in the Amazon Web
    * Services Region where the number was claimed.</p>  <p>To release
    * phone numbers from a traffic distribution group, use the
-   * <code>ReleasePhoneNumber</code> API, not the Amazon Connect admin website.</p>
+   * <code>ReleasePhoneNumber</code> API, not the Connect Customer admin website.</p>
    * <p>After releasing a phone number, the phone number enters into a cooldown
    * period for up to 180 days. It cannot be searched for or claimed again until the
    * period has ended. If you accidentally release a phone number, contact Amazon Web
@@ -7804,13 +7810,13 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Replicates an Amazon Connect instance in the specified Amazon Web Services
-   * Region and copies configuration information for Amazon Connect resources across
-   * Amazon Web Services Regions. </p> <p>For more information about replicating an
-   * Amazon Connect instance, see <a
+   * <p>Replicates an Connect Customer instance in the specified Amazon Web Services
+   * Region and copies configuration information for Connect Customer resources
+   * across Amazon Web Services Regions. </p> <p>For more information about
+   * replicating an Connect Customer instance, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create
-   * a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect
-   * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * a replica of your existing Connect Customer instance</a> in the <i>Connect
+   * Customer Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReplicateInstance">AWS
    * API Reference</a></p>
    */
@@ -7893,7 +7899,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches AgentStatuses in an Amazon Connect instance, with optional
+   * <p>Searches AgentStatuses in an Connect Customer instance, with optional
    * filtering.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAgentStatuses">AWS
    * API Reference</a></p>
@@ -7920,8 +7926,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches for available phone numbers that you can claim to your Amazon
-   * Connect instance or traffic distribution group. If the provided
+   * <p>Searches for available phone numbers that you can claim to your Connect
+   * Customer instance or traffic distribution group. If the provided
    * <code>TargetArn</code> is a traffic distribution group, you can call this API in
    * both Amazon Web Services Regions associated with the traffic distribution
    * group.</p><p><h3>See Also:</h3>   <a
@@ -7953,7 +7959,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches contact evaluations in an Amazon Connect instance, with optional
+   * <p>Searches contact evaluations in an Connect Customer instance, with optional
    * filtering. </p> <p> <b>Use cases</b> </p> <p>Following are common uses cases for
    * this API:</p> <ul> <li> <p>Find contact evaluations by using specific search
    * criteria.</p> </li> <li> <p>Find contact evaluations that are tagged with a
@@ -7962,8 +7968,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * changes to resource (create, update or delete). If you don't see updated
    * information for recently changed contact evaluations, try calling the API again
    * in a few seconds.</p> </li> </ul> <p> <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactEvaluations">AWS
    * API Reference</a></p>
    */
@@ -7990,7 +7996,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches the flow modules in an Amazon Connect instance, with optional
+   * <p>Searches the flow modules in an Connect Customer instance, with optional
    * filtering.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlowModules">AWS
    * API Reference</a></p>
@@ -8018,7 +8024,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches the flows in an Amazon Connect instance, with optional
+   * <p>Searches the flows in an Connect Customer instance, with optional
    * filtering.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlows">AWS
    * API Reference</a></p>
@@ -8045,7 +8051,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches contacts in an Amazon Connect instance.</p><p><h3>See Also:</h3>
+   * <p>Searches contacts in an Connect Customer instance.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContacts">AWS
    * API Reference</a></p>
@@ -8127,7 +8133,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches evaluation forms in an Amazon Connect instance, with optional
+   * <p>Searches evaluation forms in an Connect Customer instance, with optional
    * filtering.</p> <p> <b>Use cases</b> </p> <p>Following are common uses cases for
    * this API:</p> <ul> <li> <p>List all evaluation forms in an instance.</p> </li>
    * <li> <p>Find all evaluation forms that meet specific criteria, such as Title,
@@ -8137,8 +8143,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * time to index changes to resource (create, update or delete). If you don't see
    * updated information for recently changed contact evaluations, try calling the
    * API again in a few seconds.</p> </li> </ul> <p> <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEvaluationForms">AWS
    * API Reference</a></p>
    */
@@ -8193,8 +8199,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches the hours of operation in an Amazon Connect instance, with optional
-   * filtering.</p><p><h3>See Also:</h3>   <a
+   * <p>Searches the hours of operation in an Connect Customer instance, with
+   * optional filtering.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperations">AWS
    * API Reference</a></p>
    */
@@ -8262,10 +8268,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
    * contact segment attributes</a>.</p> </li> </ul> <p>For the predefined attributes
    * per instance quota, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-   * Connect quotas</a>.</p> <p> <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+   * Customer quotas</a>.</p> <p> <b>Endpoints</b>: See <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPredefinedAttributes">AWS
    * API Reference</a></p>
    */
@@ -8294,7 +8300,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches prompts in an Amazon Connect instance, with optional
+   * <p>Searches prompts in an Connect Customer instance, with optional
    * filtering.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPrompts">AWS
    * API Reference</a></p>
@@ -8320,7 +8326,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches queues in an Amazon Connect instance, with optional
+   * <p>Searches queues in an Connect Customer instance, with optional
    * filtering.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQueues">AWS
    * API Reference</a></p>
@@ -8346,7 +8352,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches quick connects in an Amazon Connect instance, with optional
+   * <p>Searches quick connects in an Connect Customer instance, with optional
    * filtering.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQuickConnects">AWS
    * API Reference</a></p>
@@ -8373,7 +8379,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches tags used in an Amazon Connect instance using optional search
+   * <p>Searches tags used in an Connect Customer instance using optional search
    * criteria.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchResourceTags">AWS
    * API Reference</a></p>
@@ -8400,7 +8406,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches routing profiles in an Amazon Connect instance, with optional
+   * <p>Searches routing profiles in an Connect Customer instance, with optional
    * filtering.</p>  <p> <code>SearchRoutingProfiles</code> does not populate
    * LastModifiedRegion, LastModifiedTime, MediaConcurrencies.CrossChannelBehavior,
    * and AgentAvailabilityTimer in its response, but <a
@@ -8431,11 +8437,12 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches security profiles in an Amazon Connect instance, with optional
+   * <p>Searches security profiles in an Connect Customer instance, with optional
    * filtering.</p> <p>For information about security profiles, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-   * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of
-   * the API name and user interface name of the security profile permissions, see <a
+   * Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping
+   * of the API name and user interface name of the security profile permissions, see
+   * <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
    * of security profile permissions</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchSecurityProfiles">AWS
@@ -8490,7 +8497,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches UserHierarchyGroups in an Amazon Connect instance, with optional
+   * <p>Searches UserHierarchyGroups in an Connect Customer instance, with optional
    * filtering.</p>  <p>The UserHierarchyGroup with <code>"LevelId":
    * "0"</code> is the foundation for building levels on top of an instance. It is
    * not user-definable, nor is it visible in the UI.</p> <p><h3>See
@@ -8522,7 +8529,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches users in an Amazon Connect instance, with optional filtering. </p>
+   * <p>Searches users in an Connect Customer instance, with optional filtering. </p>
    *  <p> <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.
    * </p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUsers">AWS
@@ -8575,7 +8582,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches for vocabularies within a specific Amazon Connect instance using
+   * <p>Searches for vocabularies within a specific Connect Customer instance using
    * <code>State</code>, <code>NameStartsWith</code>, and
    * <code>LanguageCode</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchVocabularies">AWS
@@ -8661,8 +8668,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Processes chat integration events from Amazon Web Services or external
-   * integrations to Amazon Connect. A chat integration event includes:</p> <ul> <li>
-   * <p>SourceId, DestinationId, and Subtype: a set of identifiers, uniquely
+   * integrations to Connect Customer. A chat integration event includes:</p> <ul>
+   * <li> <p>SourceId, DestinationId, and Subtype: a set of identifiers, uniquely
    * representing a chat</p> </li> <li> <p> ChatEvent: details of the chat action to
    * perform such as sending a message, event, or disconnecting from a chat</p> </li>
    * </ul> <p>When a chat integration event is sent with chat identifiers that do not
@@ -8699,9 +8706,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Send outbound email for outbound campaigns. For more information about
    * outbound campaigns, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html">Set
-   * up Amazon Connect outbound campaigns</a>.</p>  <p>Only the Amazon Connect
-   * outbound campaigns service principal is allowed to assume a role in your account
-   * and call this API.</p> <p><h3>See Also:</h3>   <a
+   * up Connect Customer outbound campaigns</a>.</p>  <p>Only the Connect
+   * Customer outbound campaigns service principal is allowed to assume a role in
+   * your account and call this API.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendOutboundEmail">AWS
    * API Reference</a></p>
    */
@@ -8730,10 +8737,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Provides a pre-signed Amazon S3 URL in response for uploading your
    * content.</p>  <p>You may only use this API to upload attachments to
    * an <a
-   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon
-   * Connect Case</a> or <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Amazon
-   * Connect Email</a>. </p> <p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
+   * Customer Case</a> or <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Connect
+   * Customer Email</a>. </p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAttachedFileUpload">AWS
    * API Reference</a></p>
    */
@@ -8763,9 +8770,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Initiates a flow to start a new chat for the customer. Response of this API
    * provides a token required to obtain credentials from the <a
    * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-   * API in the Amazon Connect Participant Service.</p> <p>When a new chat contact is
-   * successfully created, clients must subscribe to the participant’s connection for
-   * the created chat within 5 minutes. This is achieved by invoking <a
+   * API in the Connect Customer Participant Service.</p> <p>When a new chat contact
+   * is successfully created, clients must subscribe to the participant’s connection
+   * for the created chat within 5 minutes. This is achieved by invoking <a
    * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
    * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in the
    * following situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS
@@ -8777,13 +8784,13 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <code>ChatDurationInMinutes</code> parameter and receive a 400 error, your
    * account may not support the ability to configure custom chat durations. For more
    * information, contact Amazon Web Services Support. </p> <p>For more information
-   * about chat, see the following topics in the <i>Amazon Connect Administrator
+   * about chat, see the following topics in the <i>Connect Customer Administrator
    * Guide</i>: </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
-   * Web and mobile messaging capabilities in Amazon Connect</a> </p> </li> <li> <p>
-   * <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-   * Connect Chat security best practices</a> </p> </li> </ul><p><h3>See Also:</h3>
+   * Web and mobile messaging capabilities in Connect Customer</a> </p> </li> <li>
+   * <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+   * Customer Chat security best practices</a> </p> </li> </ul><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartChatContact">AWS
    * API Reference</a></p>
@@ -8810,7 +8817,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Starts an empty evaluation in the specified Amazon Connect instance, using
+   * <p>Starts an empty evaluation in the specified Connect Customer instance, using
    * the given evaluation form for the particular contact. The evaluation form
    * version used for the contact evaluation corresponds to the currently activated
    * version. If no version is activated for the evaluation form, the contact
@@ -8916,14 +8923,14 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p> Initiates real-time message streaming for a new chat contact.</p> <p> For
    * more information about message streaming, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable
-   * real-time chat message streaming</a> in the <i>Amazon Connect Administrator
+   * real-time chat message streaming</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p> <p>For more information about chat, see the following topics in
-   * the <i>Amazon Connect Administrator Guide</i>: </p> <ul> <li> <p> <a
+   * the <i>Connect Customer Administrator Guide</i>: </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
-   * Web and mobile messaging capabilities in Amazon Connect</a> </p> </li> <li> <p>
-   * <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-   * Connect Chat security best practices</a> </p> </li> </ul><p><h3>See Also:</h3>
+   * Web and mobile messaging capabilities in Connect Customer</a> </p> </li> <li>
+   * <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+   * Customer Chat security best practices</a> </p> </li> </ul><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactStreaming">AWS
    * API Reference</a></p>
@@ -8988,8 +8995,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * agent, or it can also deflect an ongoing contact to an outbound SMS or WhatsApp
    * contact by using the <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
-   * Flow Action.</p> <p>For more information about using SMS or WhatsApp in Amazon
-   * Connect, see the following topics in the <i>Amazon Connect Administrator
+   * Flow Action.</p> <p>For more information about using SMS or WhatsApp in Connect
+   * Customer, see the following topics in the <i>Connect Customer Administrator
    * Guide</i>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-sms-messaging.html">Set
    * up SMS messaging</a> </p> </li> <li> <p> <a
@@ -9065,16 +9072,16 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * a 447 prefix are not allowed by default. Before you can dial these UK mobile
    * numbers, you must submit a service quota increase request. For more information,
    * see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-   * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+   * Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
    * </p>   <p>Campaign calls are not allowed by default. Before you can
    * make a call with <code>TrafficType</code> = <code>CAMPAIGN</code>, you must
    * submit a service quota increase request to the quota <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
-   * Connect campaigns</a>. </p>   <p>For Preview dialing mode, only the
-   * Amazon Connect outbound campaigns service principal is allowed to assume a role
-   * in your account and call this API with OutboundStrategy. </p> <p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Connect
+   * Customer campaigns</a>. </p>   <p>For Preview dialing mode, only
+   * the Amazon Connect outbound campaigns service principal is allowed to assume a
+   * role in your account and call this API with OutboundStrategy. </p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
    * API Reference</a></p>
    */
@@ -9106,7 +9113,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * sharing, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set
    * up in-app, web, video calling, and screen sharing capabilities</a> in the
-   * <i>Amazon Connect Administrator Guide</i>. </p><p><h3>See Also:</h3>   <a
+   * <i>Connect Customer Administrator Guide</i>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartScreenSharing">AWS
    * API Reference</a></p>
    */
@@ -9135,8 +9142,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Initiates a flow to start a new task contact. For more information about task
    * contacts, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html">Concepts:
-   * Tasks in Amazon Connect</a> in the <i>Amazon Connect Administrator Guide</i>.
-   * </p> <p>When using <code>PreviousContactId</code> and
+   * Tasks in Connect Customer</a> in the <i>Connect Customer Administrator
+   * Guide</i>. </p> <p>When using <code>PreviousContactId</code> and
    * <code>RelatedContactId</code> input parameters, note the following:</p> <ul>
    * <li> <p> <code>PreviousContactId</code> </p> <ul> <li> <p>Any updates to
    * user-defined task contact attributes on any contact linked through the same
@@ -9154,14 +9161,14 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <code>TaskTemplateID</code>. Only one parameter is required as long as the task
    * template has a flow configured to run it. If more than one parameter is
    * specified, or only the <code>TaskTemplateID</code> is specified but it does not
-   * have a flow configured, the request returns an error because Amazon Connect
+   * have a flow configured, the request returns an error because Connect Customer
    * cannot identify the unique flow to run when the task is created.</p> <p>A
    * <code>ServiceQuotaExceededException</code> occurs when the number of open tasks
    * exceeds the active tasks quota or there are already 12 tasks referencing the
    * same <code>PreviousContactId</code>. For more information about service quotas
    * for task contacts, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-   * Connect service quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+   * Customer service quotas</a> in the <i>Connect Customer Administrator Guide</i>.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact">AWS
    * API Reference</a></p>
@@ -9217,7 +9224,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Places an inbound in-app, web, or video call to a contact, and then initiates
    * the flow. It performs the actions in the flow that are specified (in
-   * ContactFlowId) and present in the Amazon Connect instance (specified as
+   * ContactFlowId) and present in the Connect Customer instance (specified as
    * InstanceId).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartWebRTCContact">AWS
    * API Reference</a></p>
@@ -9391,7 +9398,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Submits a contact evaluation in the specified Amazon Connect instance.
+   * <p>Submits a contact evaluation in the specified Connect Customer instance.
    * Answers included in the request are merged with existing answers for the given
    * evaluation. If no answers or notes are passed, the evaluation is submitted with
    * the existing answers and notes. You can delete an answer or note by passing an
@@ -9462,7 +9469,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Adds the specified tags to the contact resource. For more information about
    * this API is used, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set
-   * up granular billing for a detailed view of your Amazon Connect usage</a>.
+   * up granular billing for a detailed view of your Connect Customer usage</a>.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagContact">AWS
    * API Reference</a></p>
@@ -9493,10 +9500,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * flows, agent statuses, hours of operation, phone numbers, security profiles, and
    * task templates. For a complete list, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
-   * resources in Amazon Connect</a>.</p> <p>For sample policies that use tags, see
+   * resources in Connect Customer</a>.</p> <p>For sample policies that use tags, see
    * <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-   * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Connect
+   * Customer Identity-Based Policy Examples</a> in the <i>Connect Customer
    * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagResource">AWS
    * API Reference</a></p>
@@ -9562,7 +9569,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Removes the specified tags from the contact resource. For more information
    * about this API is used, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set
-   * up granular billing for a detailed view of your Amazon Connect
+   * up granular billing for a detailed view of your Connect Customer
    * usage</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UntagContact">AWS
    * API Reference</a></p>
@@ -9640,7 +9647,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the attached files configuration for the specified Amazon Connect
+   * <p>Updates the attached files configuration for the specified Connect Customer
    * instance and attachment scope.</p> <p>If no instance-specific configuration
    * exists, this operation creates one. Partial updates are supported—only specified
    * fields are updated, while unspecified fields retain their current
@@ -9673,7 +9680,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to change.
+   * <p>This API is in preview release for Connect Customer and is subject to change.
    * To request access to this API, contact Amazon Web Services Support.</p>
    * <p>Updates the selected authentication profile.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAuthenticationProfile">AWS
@@ -9704,7 +9711,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Adds or updates user-defined contact information associated with
    * the specified contact. At least one field to be updated must be present in the
    * request.</p>  <p>You can add or update user-defined contact
@@ -9740,14 +9747,14 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * can update the customer's name or the reason the customer called. You can add
    * notes about steps that the agent took during the call that display to the next
    * agent that takes the call. You can also update attributes for a contact using
-   * data from your CRM application and save the data with the contact in Amazon
-   * Connect. You could also flag calls for additional analysis, such as legal review
-   * or to identify abusive callers.</p> <p>Contact attributes are available in
-   * Amazon Connect for 24 months, and are then deleted. For information about
+   * data from your CRM application and save the data with the contact in Connect
+   * Customer. You could also flag calls for additional analysis, such as legal
+   * review or to identify abusive callers.</p> <p>Contact attributes are available
+   * in Connect Customer for 24 months, and are then deleted. For information about
    * contact record retention and the maximum size of the contact record attributes
    * section, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
-   * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+   * specifications</a> in the <i>Connect Customer Administrator Guide</i>.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
    * API Reference</a></p>
@@ -9775,7 +9782,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates details about a contact evaluation in the specified Amazon Connect
+   * <p>Updates details about a contact evaluation in the specified Connect Customer
    * instance. A contact evaluation must be in draft state. Answers included in the
    * request are merged with existing answers for the given evaluation. An answer or
    * note can be deleted by passing an empty object (<code>{}</code>) to the question
@@ -9808,8 +9815,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Updates the specified flow.</p> <p>You can also create and update flows using
    * the <a
-   * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-   * Connect Flow language</a>.</p> <p>Use the <code>$SAVED</code> alias in the
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+   * Customer Flow language</a>.</p> <p>Use the <code>$SAVED</code> alias in the
    * request to describe the <code>SAVED</code> content of a Flow. For example,
    * <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. After a flow is published,
    * <code>$SAVED</code> needs to be supplied to view saved content that has not been
@@ -9898,8 +9905,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates specified flow module for the specified Amazon Connect instance. </p>
-   * <p>Use the <code>$SAVED</code> alias in the request to describe the
+   * <p>Updates specified flow module for the specified Connect Customer instance.
+   * </p> <p>Use the <code>$SAVED</code> alias in the request to describe the
    * <code>SAVED</code> content of a Flow. For example,
    * <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. After a flow is published,
    * <code>$SAVED</code> needs to be supplied to view saved content that has not been
@@ -9963,8 +9970,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>The name of the flow.</p> <p>You can also create and update flows using the
    * <a
-   * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-   * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+   * Customer Flow language</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowName">AWS
    * API Reference</a></p>
    */
@@ -10156,7 +10163,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Updates an email address metadata. For more information about email
    * addresses, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
-   * email addresses</a> in the Amazon Connect Administrator Guide.</p><p><h3>See
+   * email addresses</a> in the Connect Customer Administrator Guide.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEmailAddressMetadata">AWS
    * API Reference</a></p>
@@ -10187,7 +10194,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Updates details about a specific evaluation form version in the specified
-   * Amazon Connect instance. Question and section identifiers cannot be duplicated
+   * Connect Customer instance. Question and section identifiers cannot be duplicated
    * within the same evaluation form.</p> <p>This operation does not support partial
    * updates. Instead it does a full update of evaluation form content.</p><p><h3>See
    * Also:</h3>   <a
@@ -10272,7 +10279,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Updates the value for the specified attribute type.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceAttribute">AWS
@@ -10301,7 +10308,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>This API is in preview release for Amazon Connect and is subject to
+   * <p>This API is in preview release for Connect Customer and is subject to
    * change.</p> <p>Updates an existing configuration for a resource type. This API
    * is idempotent.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceStorageConfig">AWS
@@ -10362,11 +10369,11 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Instructs Amazon Connect to resume the authentication process. The subsequent
-   * actions depend on the request body contents:</p> <ul> <li> <p> <b>If a code is
-   * provided</b>: Connect retrieves the identity information from Amazon Cognito and
-   * imports it into Connect Customer Profiles.</p> </li> <li> <p> <b>If an error is
-   * provided</b>: The error branch of the Authenticate Customer block is
+   * <p>Instructs Connect Customer to resume the authentication process. The
+   * subsequent actions depend on the request body contents:</p> <ul> <li> <p> <b>If
+   * a code is provided</b>: Connect retrieves the identity information from Amazon
+   * Cognito and imports it into Connect Customer Profiles.</p> </li> <li> <p> <b>If
+   * an error is provided</b>: The error branch of the Authenticate Customer block is
    * executed.</p> </li> </ul>  <p>The API returns a success response to
    * acknowledge the request. However, the interaction and exchange of identity
    * information occur asynchronously after the response is returned.</p>
@@ -10435,8 +10442,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates your claimed phone number from its current Amazon Connect instance or
-   * traffic distribution group to another Amazon Connect instance or traffic
+   * <p>Updates your claimed phone number from its current Connect Customer instance
+   * or traffic distribution group to another Connect Customer instance or traffic
    * distribution group in the same Amazon Web Services Region.</p>
    * <p>After using this API, you must verify that the phone number is attached to
    * the correct flow in the target instance or traffic distribution group. You need
@@ -10503,11 +10510,11 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates a predefined attribute for the specified Amazon Connect instance. A
+   * <p>Updates a predefined attribute for the specified Connect Customer instance. A
    * <i>predefined attribute</i> is made up of a name and a value.</p> <p>For the
    * predefined attributes per instance quota, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-   * Connect quotas</a>.</p> <p> <b>Use cases</b> </p> <p>Following are common uses
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+   * Customer quotas</a>.</p> <p> <b>Use cases</b> </p> <p>Following are common uses
    * cases for this API:</p> <ul> <li> <p>Update routing proficiency (for example,
    * agent certification) that has predefined values (for example, a list of possible
    * certifications). For more information, see <a
@@ -10519,8 +10526,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
    * contact segment attributes</a>.</p> </li> </ul> <p> <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePredefinedAttribute">AWS
    * API Reference</a></p>
    */
@@ -10659,8 +10666,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Updates the outbound caller ID name, number, and outbound whisper flow for a
    * specified queue.</p>  <ul> <li> <p>If the phone number is claimed to
-   * a traffic distribution group that was created in the same Region as the Amazon
-   * Connect instance where you are calling this API, then you can use a full phone
+   * a traffic distribution group that was created in the same Region as the Connect
+   * Customer instance where you are calling this API, then you can use a full phone
    * number ARN or a UUID for <code>OutboundCallerIdNumberId</code>. However, if the
    * phone number is claimed to a traffic distribution group that is in one Region,
    * and you are calling this API from an instance in another Amazon Web Services
@@ -10971,7 +10978,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates a rule for the specified Amazon Connect instance.</p> <p>Use the <a
+   * <p>Updates a rule for the specified Connect Customer instance.</p> <p>Use the <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
    * Function language</a> to code conditions for the rule. </p><p><h3>See Also:</h3>
    * <a
@@ -11002,8 +11009,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Updates a security profile.</p> <p>For information about security profiles,
    * see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-   * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of
-   * the API name and user interface name of the security profile permissions, see <a
+   * Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping
+   * of the API name and user interface name of the security profile permissions, see
+   * <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
    * of security profile permissions</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateSecurityProfile">AWS
@@ -11031,8 +11039,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates details about a specific task template in the specified Amazon
-   * Connect instance. This operation does not support partial updates. Instead it
+   * <p>Updates details about a specific task template in the specified Connect
+   * Customer instance. This operation does not support partial updates. Instead it
    * does a full update of template content.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTaskTemplate">AWS
    * API Reference</a></p>
@@ -11103,7 +11111,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * distribution group, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
    * telephony traffic distribution across Amazon Web Services Regions </a> in the
-   * <i>Amazon Connect Administrator Guide</i>. </p> <p> <b>Important things to
+   * <i>Connect Customer Administrator Guide</i>. </p> <p> <b>Important things to
    * know</b> </p> <ul> <li> <p>Invoke the UpdateTrafficDistribution API in the
    * region that should handle traffic.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTrafficDistribution">AWS
@@ -11258,7 +11266,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * to the attacker's email address, and then reset the password through email. For
    * more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
-   * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator
+   * Practices for Security Profiles</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserIdentityInfo">AWS
    * API Reference</a></p>
@@ -11438,13 +11446,13 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the view content of the given view identifier in the specified Amazon
-   * Connect instance.</p> <p>It performs content validation if <code>Status</code>
-   * is set to <code>SAVED</code> and performs full content validation if
-   * <code>Status</code> is <code>PUBLISHED</code>. Note that the <code>$SAVED</code>
-   * alias' content will always be updated, but the <code>$LATEST</code> alias'
-   * content will only be updated if <code>Status</code> is
-   * <code>PUBLISHED</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the view content of the given view identifier in the specified
+   * Connect Customer instance.</p> <p>It performs content validation if
+   * <code>Status</code> is set to <code>SAVED</code> and performs full content
+   * validation if <code>Status</code> is <code>PUBLISHED</code>. Note that the
+   * <code>$SAVED</code> alias' content will always be updated, but the
+   * <code>$LATEST</code> alias' content will only be updated if <code>Status</code>
+   * is <code>PUBLISHED</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewContent">AWS
    * API Reference</a></p>
    */

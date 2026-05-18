@@ -35,8 +35,8 @@ class ListViewVersionsRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
-   * the ARN of the instance.</p>
+   * <p>The identifier of the Connect Customer instance. You can find the instanceId
+   * in the ARN of the instance.</p>
    */
   inline const Aws::String& GetInstanceId() const { return m_instanceId; }
   inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }

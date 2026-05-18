@@ -64,7 +64,7 @@ class CreateUserRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The password for the user account. A password is required if you are using
-   * Amazon Connect for identity management. Otherwise, it is an error to include a
+   * Connect Customer for identity management. Otherwise, it is an error to include a
    * password.</p>
    */
   inline const Aws::String& GetPassword() const { return m_password; }
@@ -124,14 +124,14 @@ class CreateUserRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The identifier of the user account in the directory used for identity
-   * management. If Amazon Connect cannot access the directory, you can specify this
-   * identifier to authenticate users. If you include the identifier, we assume that
-   * Amazon Connect cannot access the directory. Otherwise, the identity information
-   * is used to authenticate users from your directory.</p> <p>This parameter is
-   * required if you are using an existing directory for identity management in
-   * Amazon Connect when Amazon Connect cannot access your directory to authenticate
-   * users. If you are using SAML for identity management and include this parameter,
-   * an error is returned.</p>
+   * management. If Connect Customer cannot access the directory, you can specify
+   * this identifier to authenticate users. If you include the identifier, we assume
+   * that Connect Customer cannot access the directory. Otherwise, the identity
+   * information is used to authenticate users from your directory.</p> <p>This
+   * parameter is required if you are using an existing directory for identity
+   * management in Connect Customer when Connect Customer cannot access your
+   * directory to authenticate users. If you are using SAML for identity management
+   * and include this parameter, an error is returned.</p>
    */
   inline const Aws::String& GetDirectoryUserId() const { return m_directoryUserId; }
   inline bool DirectoryUserIdHasBeenSet() const { return m_directoryUserIdHasBeenSet; }
@@ -209,7 +209,7 @@ class CreateUserRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */

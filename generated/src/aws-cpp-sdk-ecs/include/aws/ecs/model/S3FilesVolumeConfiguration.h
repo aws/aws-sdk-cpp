@@ -27,8 +27,9 @@ namespace Model {
  * Guide</i>.</p>  <p>Your task definition must include a Task IAM Role.
  * See <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-files-prereq-policies.html#s3-files-prereq-iam-compute-role">
- * IAM role for attaching your file system to AWS compute resources</a> for
- * required permissions.</p> <p><h3>See Also:</h3>   <a
+ * IAM role for attaching your file system to Amazon Web Services compute
+ * resources</a> for required permissions.</p> <p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/S3FilesVolumeConfiguration">AWS
  * API Reference</a></p>
  */

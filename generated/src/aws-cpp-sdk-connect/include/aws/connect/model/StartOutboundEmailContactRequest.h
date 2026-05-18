@@ -34,7 +34,7 @@ class StartOutboundEmailContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -54,7 +54,7 @@ class StartOutboundEmailContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the contact in this instance of Amazon Connect. </p>
+   * <p>The identifier of the contact in this instance of Connect Customer. </p>
    */
   inline const Aws::String& GetContactId() const { return m_contactId; }
   inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
@@ -72,7 +72,7 @@ class StartOutboundEmailContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The email address associated with the Amazon Connect instance.</p>
+   * <p>The email address associated with the Connect Customer instance.</p>
    */
   inline const EmailAddressInfo& GetFromEmailAddress() const { return m_fromEmailAddress; }
   inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }

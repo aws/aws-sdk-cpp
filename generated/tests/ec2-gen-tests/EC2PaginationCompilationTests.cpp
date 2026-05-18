@@ -67,6 +67,7 @@
 #include <aws/ec2/model/DescribeLocalGatewayVirtualInterfaceGroupsPaginationTraits.h>
 #include <aws/ec2/model/DescribeScheduledInstancesPaginationTraits.h>
 #include <aws/ec2/model/DescribeRouteTablesPaginationTraits.h>
+#include <aws/ec2/model/DescribeIpamPoolAllocationsPaginationTraits.h>
 #include <aws/ec2/model/GetCapacityManagerMetricDataPaginationTraits.h>
 #include <aws/ec2/model/DescribeSnapshotsPaginationTraits.h>
 #include <aws/ec2/model/DescribeVpcEndpointConnectionNotificationsPaginationTraits.h>

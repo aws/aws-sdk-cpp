@@ -117,6 +117,11 @@ VolumeModification& VolumeModification::operator=(const XmlNode& xmlNode) {
                            Aws::Utils::DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
     }
+    XmlNode operatorNode = resultNode.FirstChild("operator");
+    if (!operatorNode.IsNull()) {
+      m_operator = operatorNode;
+      m_operatorHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -192,6 +197,12 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
     oStream << location << index << locationValue
             << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
+
+  if (m_operatorHasBeenSet) {
+    Aws::StringStream operatorLocationAndMemberSs;
+    operatorLocationAndMemberSs << location << index << locationValue << ".Operator";
+    m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
+  }
 }
 
 void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -246,6 +257,11 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if (m_endTimeHasBeenSet) {
     oStream << location << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if (m_operatorHasBeenSet) {
+    Aws::String operatorLocationAndMember(location);
+    operatorLocationAndMember += ".Operator";
+    m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
   }
 }
 

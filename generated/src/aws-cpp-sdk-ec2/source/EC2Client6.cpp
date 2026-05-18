@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/ImportSnapshotRequest.h>
 #include <aws/ec2/model/ImportVolumeRequest.h>
 #include <aws/ec2/model/ListImagesInRecycleBinRequest.h>
 #include <aws/ec2/model/ListSnapshotsInRecycleBinRequest.h>
@@ -51,6 +52,7 @@
 #include <aws/ec2/model/ModifyInstanceNetworkPerformanceOptionsRequest.h>
 #include <aws/ec2/model/ModifyInstancePlacementRequest.h>
 #include <aws/ec2/model/ModifyIpamPolicyAllocationRulesRequest.h>
+#include <aws/ec2/model/ModifyIpamPoolAllocationRequest.h>
 #include <aws/ec2/model/ModifyIpamPoolRequest.h>
 #include <aws/ec2/model/ModifyIpamPrefixListResolverRequest.h>
 #include <aws/ec2/model/ModifyIpamPrefixListResolverTargetRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/PurchaseScheduledInstancesRequest.h>
 #include <aws/ec2/model/RebootInstancesRequest.h>
 #include <aws/ec2/model/RegisterImageRequest.h>
-#include <aws/ec2/model/RegisterInstanceEventNotificationAttributesRequest.h>
-#include <aws/ec2/model/RegisterTransitGatewayMulticastGroupMembersRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,11 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ImportSnapshotOutcome EC2Client::ImportSnapshot(const ImportSnapshotRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportSnapshotOutcome(result.GetResultWithOwnership()) : ImportSnapshotOutcome(std::move(result.GetError()));
+}
 
 ImportVolumeOutcome EC2Client::ImportVolume(const ImportVolumeRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -329,6 +334,12 @@ ModifyIpamPolicyAllocationRulesOutcome EC2Client::ModifyIpamPolicyAllocationRule
 ModifyIpamPoolOutcome EC2Client::ModifyIpamPool(const ModifyIpamPoolRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyIpamPoolOutcome(result.GetResultWithOwnership()) : ModifyIpamPoolOutcome(std::move(result.GetError()));
+}
+
+ModifyIpamPoolAllocationOutcome EC2Client::ModifyIpamPoolAllocation(const ModifyIpamPoolAllocationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyIpamPoolAllocationOutcome(result.GetResultWithOwnership())
+                            : ModifyIpamPoolAllocationOutcome(std::move(result.GetError()));
 }
 
 ModifyIpamPrefixListResolverOutcome EC2Client::ModifyIpamPrefixListResolver(const ModifyIpamPrefixListResolverRequest& request) const {
@@ -738,18 +749,4 @@ RebootInstancesOutcome EC2Client::RebootInstances(const RebootInstancesRequest& 
 RegisterImageOutcome EC2Client::RegisterImage(const RegisterImageRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RegisterImageOutcome(result.GetResultWithOwnership()) : RegisterImageOutcome(std::move(result.GetError()));
-}
-
-RegisterInstanceEventNotificationAttributesOutcome EC2Client::RegisterInstanceEventNotificationAttributes(
-    const RegisterInstanceEventNotificationAttributesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RegisterInstanceEventNotificationAttributesOutcome(result.GetResultWithOwnership())
-                            : RegisterInstanceEventNotificationAttributesOutcome(std::move(result.GetError()));
-}
-
-RegisterTransitGatewayMulticastGroupMembersOutcome EC2Client::RegisterTransitGatewayMulticastGroupMembers(
-    const RegisterTransitGatewayMulticastGroupMembersRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RegisterTransitGatewayMulticastGroupMembersOutcome(result.GetResultWithOwnership())
-                            : RegisterTransitGatewayMulticastGroupMembersOutcome(std::move(result.GetError()));
 }

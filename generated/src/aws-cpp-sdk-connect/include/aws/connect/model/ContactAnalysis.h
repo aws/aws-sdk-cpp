@@ -21,7 +21,7 @@ namespace Model {
 
 /**
  * <p>A structure that defines search criteria for contacts using analysis outputs
- * from Amazon Connect Contact Lens.</p><p><h3>See Also:</h3>   <a
+ * from Connect Customer Contact Lens.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactAnalysis">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,7 @@ class ContactAnalysis {
 
   ///@{
   /**
-   * <p>Search criteria based on transcript analyzed by Amazon Connect Contact
+   * <p>Search criteria based on transcript analyzed by Connect Customer Contact
    * Lens.</p>
    */
   inline const Transcript& GetTranscript() const { return m_transcript; }

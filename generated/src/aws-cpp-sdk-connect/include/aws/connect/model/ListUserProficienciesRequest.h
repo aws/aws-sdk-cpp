@@ -35,7 +35,7 @@ class ListUserProficienciesRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can find the instance ID
+   * <p>The identifier of the Connect Customer instance. You can find the instance ID
    * in the Amazon Resource Name (ARN) of the instance.</p>
    */
   inline const Aws::String& GetInstanceId() const { return m_instanceId; }

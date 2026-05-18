@@ -59,6 +59,17 @@ IpamPoolAllocation& IpamPoolAllocation::operator=(const XmlNode& xmlNode) {
       m_resourceOwner = Aws::Utils::Xml::DecodeEscapedXmlText(resourceOwnerNode.GetText());
       m_resourceOwnerHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if (!tagsNode.IsNull()) {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
+      while (!tagsMember.IsNull()) {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -95,6 +106,15 @@ void IpamPoolAllocation::OutputToStream(Aws::OStream& oStream, const char* locat
   if (m_resourceOwnerHasBeenSet) {
     oStream << location << index << locationValue << ".ResourceOwner=" << StringUtils::URLEncode(m_resourceOwner.c_str()) << "&";
   }
+
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
+  }
 }
 
 void IpamPoolAllocation::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -120,6 +140,14 @@ void IpamPoolAllocation::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if (m_resourceOwnerHasBeenSet) {
     oStream << location << ".ResourceOwner=" << StringUtils::URLEncode(m_resourceOwner.c_str()) << "&";
+  }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
   }
 }
 

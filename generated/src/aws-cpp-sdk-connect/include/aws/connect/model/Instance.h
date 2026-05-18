@@ -25,7 +25,7 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>The Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
+ * <p>The Connect Customer instance.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Instance">AWS
  * API Reference</a></p>
  */
@@ -38,7 +38,7 @@ class Instance {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -212,7 +212,7 @@ class Instance {
 
   ///@{
   /**
-   * <p>This URL allows contact center users to access the Amazon Connect admin
+   * <p>This URL allows contact center users to access the Connect Customer admin
    * website.</p>
    */
   inline const Aws::String& GetInstanceAccessUrl() const { return m_instanceAccessUrl; }

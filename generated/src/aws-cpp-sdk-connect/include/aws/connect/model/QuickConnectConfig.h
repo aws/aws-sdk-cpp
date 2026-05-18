@@ -38,7 +38,7 @@ class QuickConnectConfig {
 
   ///@{
   /**
-   * <p>The type of quick connect. In the Amazon Connect admin website, when you
+   * <p>The type of quick connect. In the Connect Customer admin website, when you
    * create a quick connect, you are prompted to assign one of the following types:
    * Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
    */

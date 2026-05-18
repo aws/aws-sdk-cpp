@@ -24,8 +24,8 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>Information about a phone number that has been claimed to your Amazon Connect
- * instance or traffic distribution group.</p><p><h3>See Also:</h3>   <a
+ * <p>Information about a phone number that has been claimed to your Connect
+ * Customer instance or traffic distribution group.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ClaimedPhoneNumberSummary">AWS
  * API Reference</a></p>
  */
@@ -143,7 +143,7 @@ class ClaimedPhoneNumberSummary {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+   * <p>The Amazon Resource Name (ARN) for Connect Customer instances or traffic
    * distribution groups that phone number inbound traffic is routed through.</p>
    */
   inline const Aws::String& GetTargetArn() const { return m_targetArn; }
@@ -162,8 +162,8 @@ class ClaimedPhoneNumberSummary {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
-   * to. You can <a
+   * <p>The identifier of the Connect Customer instance that phone numbers are
+   * claimed to. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */

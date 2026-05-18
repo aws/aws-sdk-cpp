@@ -25,7 +25,7 @@ namespace Model {
  * participants present over the call. For more information, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set
  * up in-app, web, video calling, and screen sharing capabilities</a> in the
- * <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+ * <i>Connect Customer Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ParticipantCapabilities">AWS
  * API Reference</a></p>
  */

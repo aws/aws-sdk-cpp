@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/IpamPoolAllocationResourceType.h>
+#include <aws/ec2/model/Tag.h>
 
 #include <utility>
 
@@ -161,6 +163,30 @@ class IpamPoolAllocation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tags for the IPAM pool allocation.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  IpamPoolAllocation& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  IpamPoolAllocation& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_cidr;
 
@@ -175,6 +201,8 @@ class IpamPoolAllocation {
   Aws::String m_resourceRegion;
 
   Aws::String m_resourceOwner;
+
+  Aws::Vector<Tag> m_tags;
   bool m_cidrHasBeenSet = false;
   bool m_ipamPoolAllocationIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -182,6 +210,7 @@ class IpamPoolAllocation {
   bool m_resourceTypeHasBeenSet = false;
   bool m_resourceRegionHasBeenSet = false;
   bool m_resourceOwnerHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -54,9 +54,12 @@
 #include <aws/accessanalyzer/model/CreateAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/CreateAnalyzerResult.h>
 #include <aws/accessanalyzer/model/CreateArchiveRuleRequest.h>
+#include <aws/accessanalyzer/model/CreateServiceLinkedAnalyzerRequest.h>
+#include <aws/accessanalyzer/model/CreateServiceLinkedAnalyzerResult.h>
 #include <aws/accessanalyzer/model/Criterion.h>
 #include <aws/accessanalyzer/model/DeleteAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/DeleteArchiveRuleRequest.h>
+#include <aws/accessanalyzer/model/DeleteServiceLinkedAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/DynamodbStreamConfiguration.h>
 #include <aws/accessanalyzer/model/DynamodbTableConfiguration.h>
 #include <aws/accessanalyzer/model/EbsSnapshotConfiguration.h>

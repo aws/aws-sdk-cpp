@@ -73,7 +73,7 @@ class DeletePushNotificationRegistrationRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the contact within the Amazon Connect instance.</p>
+   * <p>The identifier of the contact within the Connect Customer instance.</p>
    */
   inline const Aws::String& GetContactId() const { return m_contactId; }
   inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }

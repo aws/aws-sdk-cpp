@@ -21,7 +21,7 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>This API is in preview release for Amazon Connect and is subject to change.
+ * <p>This API is in preview release for Connect Customer and is subject to change.
  * To request access to this API, contact Amazon Web Services Support.</p> <p>A
  * summary of a given authentication profile.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AuthenticationProfileSummary">AWS
@@ -91,8 +91,8 @@ class AuthenticationProfileSummary {
   ///@{
   /**
    * <p>Shows whether the authentication profile is the default authentication
-   * profile for the Amazon Connect instance. The default authentication profile
-   * applies to all agents in an Amazon Connect instance, unless overridden by
+   * profile for the Connect Customer instance. The default authentication profile
+   * applies to all agents in an Connect Customer instance, unless overridden by
    * another authentication profile.</p>
    */
   inline bool GetIsDefault() const { return m_isDefault; }

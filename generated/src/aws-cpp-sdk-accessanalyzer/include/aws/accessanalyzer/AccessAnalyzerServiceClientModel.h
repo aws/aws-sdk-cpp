@@ -25,6 +25,7 @@
 #include <aws/accessanalyzer/model/CheckNoPublicAccessSdkResult.h>
 #include <aws/accessanalyzer/model/CreateAccessPreviewResult.h>
 #include <aws/accessanalyzer/model/CreateAnalyzerResult.h>
+#include <aws/accessanalyzer/model/CreateServiceLinkedAnalyzerResult.h>
 #include <aws/accessanalyzer/model/GetAccessPreviewResult.h>
 #include <aws/accessanalyzer/model/GetAnalyzedResourceResult.h>
 #include <aws/accessanalyzer/model/GetAnalyzerResult.h>
@@ -92,8 +93,10 @@ class CheckNoPublicAccessRequest;
 class CreateAccessPreviewRequest;
 class CreateAnalyzerRequest;
 class CreateArchiveRuleRequest;
+class CreateServiceLinkedAnalyzerRequest;
 class DeleteAnalyzerRequest;
 class DeleteArchiveRuleRequest;
+class DeleteServiceLinkedAnalyzerRequest;
 class GenerateFindingRecommendationRequest;
 class GetAccessPreviewRequest;
 class GetAnalyzedResourceRequest;
@@ -132,8 +135,10 @@ typedef Aws::Utils::Outcome<CheckNoPublicAccessSdkResult, AccessAnalyzerError> C
 typedef Aws::Utils::Outcome<CreateAccessPreviewResult, AccessAnalyzerError> CreateAccessPreviewOutcome;
 typedef Aws::Utils::Outcome<CreateAnalyzerResult, AccessAnalyzerError> CreateAnalyzerOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> CreateArchiveRuleOutcome;
+typedef Aws::Utils::Outcome<CreateServiceLinkedAnalyzerResult, AccessAnalyzerError> CreateServiceLinkedAnalyzerOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> DeleteAnalyzerOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> DeleteArchiveRuleOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> DeleteServiceLinkedAnalyzerOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> GenerateFindingRecommendationOutcome;
 typedef Aws::Utils::Outcome<GetAccessPreviewResult, AccessAnalyzerError> GetAccessPreviewOutcome;
 typedef Aws::Utils::Outcome<GetAnalyzedResourceResult, AccessAnalyzerError> GetAnalyzedResourceOutcome;
@@ -172,8 +177,10 @@ typedef std::future<CheckNoPublicAccessOutcome> CheckNoPublicAccessOutcomeCallab
 typedef std::future<CreateAccessPreviewOutcome> CreateAccessPreviewOutcomeCallable;
 typedef std::future<CreateAnalyzerOutcome> CreateAnalyzerOutcomeCallable;
 typedef std::future<CreateArchiveRuleOutcome> CreateArchiveRuleOutcomeCallable;
+typedef std::future<CreateServiceLinkedAnalyzerOutcome> CreateServiceLinkedAnalyzerOutcomeCallable;
 typedef std::future<DeleteAnalyzerOutcome> DeleteAnalyzerOutcomeCallable;
 typedef std::future<DeleteArchiveRuleOutcome> DeleteArchiveRuleOutcomeCallable;
+typedef std::future<DeleteServiceLinkedAnalyzerOutcome> DeleteServiceLinkedAnalyzerOutcomeCallable;
 typedef std::future<GenerateFindingRecommendationOutcome> GenerateFindingRecommendationOutcomeCallable;
 typedef std::future<GetAccessPreviewOutcome> GetAccessPreviewOutcomeCallable;
 typedef std::future<GetAnalyzedResourceOutcome> GetAnalyzedResourceOutcomeCallable;
@@ -231,12 +238,18 @@ typedef std::function<void(const AccessAnalyzerClient*, const Model::CreateAnaly
 typedef std::function<void(const AccessAnalyzerClient*, const Model::CreateArchiveRuleRequest&, const Model::CreateArchiveRuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateArchiveRuleResponseReceivedHandler;
+typedef std::function<void(const AccessAnalyzerClient*, const Model::CreateServiceLinkedAnalyzerRequest&,
+                           const Model::CreateServiceLinkedAnalyzerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateServiceLinkedAnalyzerResponseReceivedHandler;
 typedef std::function<void(const AccessAnalyzerClient*, const Model::DeleteAnalyzerRequest&, const Model::DeleteAnalyzerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAnalyzerResponseReceivedHandler;
 typedef std::function<void(const AccessAnalyzerClient*, const Model::DeleteArchiveRuleRequest&, const Model::DeleteArchiveRuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteArchiveRuleResponseReceivedHandler;
+typedef std::function<void(const AccessAnalyzerClient*, const Model::DeleteServiceLinkedAnalyzerRequest&,
+                           const Model::DeleteServiceLinkedAnalyzerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteServiceLinkedAnalyzerResponseReceivedHandler;
 typedef std::function<void(const AccessAnalyzerClient*, const Model::GenerateFindingRecommendationRequest&,
                            const Model::GenerateFindingRecommendationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

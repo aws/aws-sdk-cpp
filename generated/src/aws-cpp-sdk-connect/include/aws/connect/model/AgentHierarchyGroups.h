@@ -24,7 +24,7 @@ namespace Model {
  * <p>A structure that defines search criteria for contacts using agent hierarchy
  * group levels. For more information about agent hierarchies, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set
- * Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator
+ * Up Agent Hierarchies</a> in the <i>Connect Customer Administrator
  * Guide</i>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AgentHierarchyGroups">AWS
  * API Reference</a></p>

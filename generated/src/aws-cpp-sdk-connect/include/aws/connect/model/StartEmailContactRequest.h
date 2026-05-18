@@ -39,7 +39,7 @@ class StartEmailContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -77,7 +77,7 @@ class StartEmailContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The email address associated with the Amazon Connect instance.</p>
+   * <p>The email address associated with the Connect Customer instance.</p>
    */
   inline const Aws::String& GetDestinationEmailAddress() const { return m_destinationEmailAddress; }
   inline bool DestinationEmailAddressHasBeenSet() const { return m_destinationEmailAddressHasBeenSet; }
@@ -222,10 +222,10 @@ class StartEmailContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The identifier of the flow for initiating the emails. To see the
-   * ContactFlowId in the Amazon Connect admin website, on the navigation menu go to
-   * <b>Routing</b>, <b>Flows</b>. Choose the flow. On the flow page, under the name
-   * of the flow, choose <b>Show additional flow information</b>. The ContactFlowId
-   * is the last part of the ARN, shown here in bold: </p>
+   * ContactFlowId in the Connect Customer admin website, on the navigation menu go
+   * to <b>Routing</b>, <b>Flows</b>. Choose the flow. On the flow page, under the
+   * name of the flow, choose <b>Show additional flow information</b>. The
+   * ContactFlowId is the last part of the ARN, shown here in bold: </p>
    * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
    * </p>
    */
@@ -269,7 +269,7 @@ class StartEmailContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>A custom key-value pair using an attribute map. The attributes are standard
-   * Amazon Connect attributes, and can be accessed in flows just like any other
+   * Connect Customer attributes, and can be accessed in flows just like any other
    * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
    * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
    * and underscore characters.</p>
@@ -297,7 +297,7 @@ class StartEmailContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>A set of system defined key-value pairs stored on individual contact segments
-   * using an attribute map. The attributes are standard Amazon Connect attributes.
+   * using an attribute map. The attributes are standard Connect Customer attributes.
    * They can be accessed in flows.</p> <p>Attribute keys can include only
    * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
    * such as <code>connect:Guide</code>.</p>  <p>To set contact expiry, a

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/TagSpecification.h>
 
 #include <utility>
 
@@ -222,6 +223,36 @@ class AllocateIpamPoolCidrRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The key/value combination of a tag assigned to the resource. Use the tag key
+   * in the filter name and the tag value as the filter value. For example, to find
+   * all resources that have a tag with the key <code>Owner</code> and the value
+   * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+   * <code>TeamA</code> for the filter value.</p> <p>If you specify tags, the request
+   * is authorized against the allocation resource in addition to the pool
+   * resource.</p>
+   */
+  inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
+  inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  void SetTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications = std::forward<TagSpecificationsT>(value);
+  }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  AllocateIpamPoolCidrRequest& WithTagSpecifications(TagSpecificationsT&& value) {
+    SetTagSpecifications(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  template <typename TagSpecificationsT = TagSpecification>
+  AllocateIpamPoolCidrRequest& AddTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
 
@@ -240,6 +271,8 @@ class AllocateIpamPoolCidrRequest : public EC2Request {
   Aws::Vector<Aws::String> m_allowedCidrs;
 
   Aws::Vector<Aws::String> m_disallowedCidrs;
+
+  Aws::Vector<TagSpecification> m_tagSpecifications;
   bool m_dryRunHasBeenSet = false;
   bool m_ipamPoolIdHasBeenSet = false;
   bool m_cidrHasBeenSet = false;
@@ -249,6 +282,7 @@ class AllocateIpamPoolCidrRequest : public EC2Request {
   bool m_previewNextCidrHasBeenSet = false;
   bool m_allowedCidrsHasBeenSet = false;
   bool m_disallowedCidrsHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
 };
 
 }  // namespace Model

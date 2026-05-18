@@ -94,7 +94,7 @@ class ContactFlowModule {
    * <p>The JSON string that represents the content of the flow. For an example, see
    * <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-   * flow in Amazon Connect Flow language</a>. </p>
+   * flow in Connect Customer Flow language</a>. </p>
    */
   inline const Aws::String& GetContent() const { return m_content; }
   inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }

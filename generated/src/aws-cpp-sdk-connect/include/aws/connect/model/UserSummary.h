@@ -70,7 +70,7 @@ class UserSummary {
 
   ///@{
   /**
-   * <p>The Amazon Connect user name of the user account.</p>
+   * <p>The Connect Customer user name of the user account.</p>
    */
   inline const Aws::String& GetUsername() const { return m_username; }
   inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }

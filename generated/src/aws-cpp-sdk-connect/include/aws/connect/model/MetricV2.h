@@ -80,7 +80,7 @@ class MetricV2 {
   ///@{
   /**
    * <p>Historical metrics or custom metrics can be referenced via this field. This
-   * field is a valid Amazon Connect Arn or a UUID</p>
+   * field is a valid Connect Customer Arn or a UUID</p>
    */
   inline const Aws::String& GetMetricId() const { return m_metricId; }
   inline bool MetricIdHasBeenSet() const { return m_metricIdHasBeenSet; }

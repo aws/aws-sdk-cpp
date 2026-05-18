@@ -931,6 +931,8 @@
 #include <aws/ec2/model/DescribeIpamExternalResourceVerificationTokensResponse.h>
 #include <aws/ec2/model/DescribeIpamPoliciesRequest.h>
 #include <aws/ec2/model/DescribeIpamPoliciesResponse.h>
+#include <aws/ec2/model/DescribeIpamPoolAllocationsRequest.h>
+#include <aws/ec2/model/DescribeIpamPoolAllocationsResponse.h>
 #include <aws/ec2/model/DescribeIpamPoolsRequest.h>
 #include <aws/ec2/model/DescribeIpamPoolsResponse.h>
 #include <aws/ec2/model/DescribeIpamPrefixListResolverTargetsRequest.h>
@@ -2012,6 +2014,8 @@
 #include <aws/ec2/model/ModifyInstancePlacementResponse.h>
 #include <aws/ec2/model/ModifyIpamPolicyAllocationRulesRequest.h>
 #include <aws/ec2/model/ModifyIpamPolicyAllocationRulesResponse.h>
+#include <aws/ec2/model/ModifyIpamPoolAllocationRequest.h>
+#include <aws/ec2/model/ModifyIpamPoolAllocationResponse.h>
 #include <aws/ec2/model/ModifyIpamPoolRequest.h>
 #include <aws/ec2/model/ModifyIpamPoolResponse.h>
 #include <aws/ec2/model/ModifyIpamPrefixListResolverRequest.h>

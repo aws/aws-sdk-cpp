@@ -19,6 +19,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in ECSClient header */
+#include <aws/ecs/model/ContinueServiceDeploymentResult.h>
 #include <aws/ecs/model/CreateCapacityProviderResult.h>
 #include <aws/ecs/model/CreateClusterRequest.h>
 #include <aws/ecs/model/CreateClusterResult.h>
@@ -144,6 +145,7 @@ using ECSEndpointProvider = Aws::ECS::Endpoint::ECSEndpointProvider;
 
 namespace Model {
 /* Service model forward declarations required in ECSClient header */
+class ContinueServiceDeploymentRequest;
 class CreateCapacityProviderRequest;
 class CreateClusterRequest;
 class CreateDaemonRequest;
@@ -223,6 +225,7 @@ class UpdateTaskSetRequest;
 /* End of service model forward declarations required in ECSClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<ContinueServiceDeploymentResult, ECSError> ContinueServiceDeploymentOutcome;
 typedef Aws::Utils::Outcome<CreateCapacityProviderResult, ECSError> CreateCapacityProviderOutcome;
 typedef Aws::Utils::Outcome<CreateClusterResult, ECSError> CreateClusterOutcome;
 typedef Aws::Utils::Outcome<CreateDaemonResult, ECSError> CreateDaemonOutcome;
@@ -302,6 +305,7 @@ typedef Aws::Utils::Outcome<UpdateTaskSetResult, ECSError> UpdateTaskSetOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<ContinueServiceDeploymentOutcome> ContinueServiceDeploymentOutcomeCallable;
 typedef std::future<CreateCapacityProviderOutcome> CreateCapacityProviderOutcomeCallable;
 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
 typedef std::future<CreateDaemonOutcome> CreateDaemonOutcomeCallable;
@@ -384,6 +388,9 @@ typedef std::future<UpdateTaskSetOutcome> UpdateTaskSetOutcomeCallable;
 class ECSClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const ECSClient*, const Model::ContinueServiceDeploymentRequest&, const Model::ContinueServiceDeploymentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ContinueServiceDeploymentResponseReceivedHandler;
 typedef std::function<void(const ECSClient*, const Model::CreateCapacityProviderRequest&, const Model::CreateCapacityProviderOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCapacityProviderResponseReceivedHandler;

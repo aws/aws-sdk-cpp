@@ -36,7 +36,7 @@ class UpdateContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -137,8 +137,8 @@ class UpdateContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>A set of system defined key-value pairs stored on individual contact segments
-   * (unique contact ID) using an attribute map. The attributes are standard Amazon
-   * Connect attributes. They can be accessed in flows.</p> <p>Attribute keys can
+   * (unique contact ID) using an attribute map. The attributes are standard Connect
+   * Customer attributes. They can be accessed in flows.</p> <p>Attribute keys can
    * include only alphanumeric, -, and _.</p> <p>This field can be used to show
    * channel subtype, such as <code>connect:Guide</code>.</p> <p>Contact Expiry, and
    * user-defined attributes (String - String) that are defined in predefined
@@ -170,8 +170,8 @@ class UpdateContactRequest : public ConnectRequest {
    * only be updated for external audio contacts. It is used when you integrate
    * third-party systems with Contact Lens for analytics. For more information, see
    * <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
-   * Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect
+   * Customer Contact Lens integration</a> in the <i> Connect Customer Administrator
    * Guide</i>.</p>
    */
   inline const QueueInfoInput& GetQueueInfo() const { return m_queueInfo; }
@@ -194,8 +194,8 @@ class UpdateContactRequest : public ConnectRequest {
    * only be updated for external audio contacts. It is used when you integrate
    * third-party systems with Contact Lens for analytics. For more information, see
    * <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
-   * Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect
+   * Customer Contact Lens integration</a> in the <i> Connect Customer Administrator
    * Guide</i>.</p>
    */
   inline const UserInfo& GetUserInfo() const { return m_userInfo; }
@@ -218,8 +218,8 @@ class UpdateContactRequest : public ConnectRequest {
    * external audio contacts, this is usually the end customer's phone number. This
    * value can only be updated for external audio contacts. For more information, see
    * <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
-   * Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect
+   * Customer Contact Lens integration</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p>
    */
   inline const Endpoint& GetCustomerEndpoint() const { return m_customerEndpoint; }
@@ -242,8 +242,8 @@ class UpdateContactRequest : public ConnectRequest {
    * contacts, this is the phone number of the external system such as the contact
    * center. This value can only be updated for external audio contacts. For more
    * information, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
-   * Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect
+   * Customer Contact Lens integration</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p>
    */
   inline const Endpoint& GetSystemEndpoint() const { return m_systemEndpoint; }

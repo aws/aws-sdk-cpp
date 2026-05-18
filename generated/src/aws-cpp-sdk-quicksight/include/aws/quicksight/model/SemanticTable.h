@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/RowLevelPermissionConfiguration.h>
+#include <aws/quicksight/model/TableSemanticMetadata.h>
 
 #include <utility>
 
@@ -88,15 +89,36 @@ class SemanticTable {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The column-level semantic metadata for this semantic table.</p>
+   */
+  inline const TableSemanticMetadata& GetSemanticMetadata() const { return m_semanticMetadata; }
+  inline bool SemanticMetadataHasBeenSet() const { return m_semanticMetadataHasBeenSet; }
+  template <typename SemanticMetadataT = TableSemanticMetadata>
+  void SetSemanticMetadata(SemanticMetadataT&& value) {
+    m_semanticMetadataHasBeenSet = true;
+    m_semanticMetadata = std::forward<SemanticMetadataT>(value);
+  }
+  template <typename SemanticMetadataT = TableSemanticMetadata>
+  SemanticTable& WithSemanticMetadata(SemanticMetadataT&& value) {
+    SetSemanticMetadata(std::forward<SemanticMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_alias;
 
   Aws::String m_destinationTableId;
 
   RowLevelPermissionConfiguration m_rowLevelPermissionConfiguration;
+
+  TableSemanticMetadata m_semanticMetadata;
   bool m_aliasHasBeenSet = false;
   bool m_destinationTableIdHasBeenSet = false;
   bool m_rowLevelPermissionConfigurationHasBeenSet = false;
+  bool m_semanticMetadataHasBeenSet = false;
 };
 
 }  // namespace Model
