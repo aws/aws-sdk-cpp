@@ -22,7 +22,8 @@ enum class PostRegisterServiceSupportedService {
   mcpserverdatadog,
   mcpserver,
   mcpserversplunk,
-  azureidentity
+  azureidentity,
+  mcpserversigv4
 };
 
 namespace PostRegisterServiceSupportedServiceMapper {

@@ -21,8 +21,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Available session limits. Currently only budget is supported.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>The available spending limits for a payment session.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/AvailableLimits">AWS
  * API Reference</a></p>
  */
@@ -35,7 +35,7 @@ class AvailableLimits {
 
   ///@{
   /**
-   * <p>The available spend amount for this session.</p>
+   * <p>The remaining available amount that can be spent.</p>
    */
   inline const Amount& GetAvailableSpendAmount() const { return m_availableSpendAmount; }
   inline bool AvailableSpendAmountHasBeenSet() const { return m_availableSpendAmountHasBeenSet; }

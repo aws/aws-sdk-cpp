@@ -30,8 +30,8 @@ class GetResourcePaymentTokenResult {
 
   ///@{
   /**
-   * <p>Vendor-specific token response output Contains all response data in a
-   * type-safe, vendor-specific structure</p>
+   * <p>Vendor-specific token response output. Contains all response data in a
+   * type-safe, vendor-specific structure.</p>
    */
   inline const PaymentTokenResponseOutput& GetPaymentTokenResponse() const { return m_paymentTokenResponse; }
   template <typename PaymentTokenResponseT = PaymentTokenResponseOutput>

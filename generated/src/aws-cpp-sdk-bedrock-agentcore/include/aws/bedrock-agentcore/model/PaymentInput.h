@@ -20,7 +20,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Payment request details union</p><p><h3>See Also:</h3>   <a
+ * <p>The payment input details, which vary by payment type.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/PaymentInput">AWS
  * API Reference</a></p>
  */
@@ -32,7 +33,9 @@ class PaymentInput {
   AWS_BEDROCKAGENTCORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>Input for a crypto X402 payment.</p>
+   */
   inline const CryptoX402PaymentInput& GetCryptoX402() const { return m_cryptoX402; }
   inline bool CryptoX402HasBeenSet() const { return m_cryptoX402HasBeenSet; }
   template <typename CryptoX402T = CryptoX402PaymentInput>

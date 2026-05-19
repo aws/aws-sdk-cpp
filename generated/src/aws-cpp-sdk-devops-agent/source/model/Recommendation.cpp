@@ -58,6 +58,14 @@ Recommendation& Recommendation::operator=(JsonView jsonValue) {
     m_additionalContext = jsonValue.GetString("additionalContext");
     m_additionalContextHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rankPosition")) {
+    m_rankPosition = jsonValue.GetInteger("rankPosition");
+    m_rankPositionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("rankedAt")) {
+    m_rankedAt = jsonValue.GetString("rankedAt");
+    m_rankedAtHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -114,6 +122,14 @@ JsonValue Recommendation::Jsonize() const {
 
   if (m_additionalContextHasBeenSet) {
     payload.WithString("additionalContext", m_additionalContext);
+  }
+
+  if (m_rankPositionHasBeenSet) {
+    payload.WithInteger("rankPosition", m_rankPosition);
+  }
+
+  if (m_rankedAtHasBeenSet) {
+    payload.WithString("rankedAt", m_rankedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if (m_createdAtHasBeenSet) {

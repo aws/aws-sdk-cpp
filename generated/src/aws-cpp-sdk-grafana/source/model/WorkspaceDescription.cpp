@@ -141,6 +141,10 @@ WorkspaceDescription& WorkspaceDescription::operator=(JsonView jsonValue) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("degradedWorkspaceReason")) {
+    m_degradedWorkspaceReason = jsonValue.GetString("degradedWorkspaceReason");
+    m_degradedWorkspaceReasonHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -273,6 +277,10 @@ JsonValue WorkspaceDescription::Jsonize() const {
 
   if (m_kmsKeyIdHasBeenSet) {
     payload.WithString("kmsKeyId", m_kmsKeyId);
+  }
+
+  if (m_degradedWorkspaceReasonHasBeenSet) {
+    payload.WithString("degradedWorkspaceReason", m_degradedWorkspaceReason);
   }
 
   return payload;

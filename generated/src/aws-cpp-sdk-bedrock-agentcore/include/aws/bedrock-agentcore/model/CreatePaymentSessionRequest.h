@@ -17,7 +17,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Request structure for creating a payment session</p><p><h3>See Also:</h3>
+ * <p>Request structure for creating a payment session.</p><p><h3>See Also:</h3>
  * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreatePaymentSessionRequest">AWS
  * API Reference</a></p>
@@ -126,7 +126,8 @@ class CreatePaymentSessionRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>Idempotency token to ensure request uniqueness.</p>
+   * <p>A unique, case-sensitive identifier that you provide to ensure the
+   * idempotency of the request.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

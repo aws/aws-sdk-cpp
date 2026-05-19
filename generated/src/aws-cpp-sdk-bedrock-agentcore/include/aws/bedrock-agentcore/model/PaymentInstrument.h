@@ -24,7 +24,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Represents a payment instrument</p><p><h3>See Also:</h3>   <a
+ * <p>Represents a payment instrument.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/PaymentInstrument">AWS
  * API Reference</a></p>
  */

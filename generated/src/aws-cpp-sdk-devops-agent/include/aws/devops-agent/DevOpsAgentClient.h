@@ -16,15 +16,14 @@
 namespace Aws {
 namespace DevOpsAgent {
 /**
- * <p>AWS DevOps Agent is a frontier agent that resolves and proactively prevents
- * incidents, continuously improving reliability and performance. AWS DevOps Agent
- * investigates incidents and identifies operational improvements as an experienced
- * DevOps engineer.</p> <p>The agent works by:</p> <ul> <li>Learning your resources
- * and their relationships.</li> <li>Working with your observability tools,
- * runbooks, code repositories, and CI/CD pipelines.</li> <li>Correlating
- * telemetry, code, and deployment data to understand relationships between your
- * application resources.</li> <li>Supporting applications in multicloud and hybrid
- * environments.</li> </ul>
+ * <p>AWS DevOps Agent is your always-available operations teammate. It resolves
+ * and proactively prevents incidents, optimizes application reliability and
+ * performance, and handles on-demand SRE tasks across AWS, multicloud, and
+ * on-premises environments. AWS DevOps Agent investigates incidents as an
+ * experienced DevOps engineer would. It learns your applications and their
+ * relationships. It works with your observability tools, runbooks, code
+ * repositories, and CI/CD pipelines. The agent correlates telemetry, code, and
+ * deployment data across all of them. </p>
  */
 class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<DevOpsAgentClient>,

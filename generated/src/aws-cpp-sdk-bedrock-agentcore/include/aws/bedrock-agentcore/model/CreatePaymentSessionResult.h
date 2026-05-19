@@ -23,7 +23,7 @@ class JsonValue;
 namespace BedrockAgentCore {
 namespace Model {
 /**
- * <p>Response structure for creating a payment session</p><p><h3>See Also:</h3>
+ * <p>Response structure for creating a payment session.</p><p><h3>See Also:</h3>
  * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreatePaymentSessionResponse">AWS
  * API Reference</a></p>
@@ -35,7 +35,9 @@ class CreatePaymentSessionResult {
   AWS_BEDROCKAGENTCORE_API CreatePaymentSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
-
+  /**
+   * <p>The created payment session.</p>
+   */
   inline const PaymentSession& GetPaymentSession() const { return m_paymentSession; }
   template <typename PaymentSessionT = PaymentSession>
   void SetPaymentSession(PaymentSessionT&& value) {

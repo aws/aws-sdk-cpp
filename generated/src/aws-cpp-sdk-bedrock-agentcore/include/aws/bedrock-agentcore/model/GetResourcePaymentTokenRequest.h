@@ -31,8 +31,7 @@ class GetResourcePaymentTokenRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>Workload access token for authorization. Named workloadIdentityToken for
-   * consistency with APIKey and OAuth2CredentialProvider.</p>
+   * <p>Workload access token for authorization.</p>
    */
   inline const Aws::String& GetWorkloadIdentityToken() const { return m_workloadIdentityToken; }
   inline bool WorkloadIdentityTokenHasBeenSet() const { return m_workloadIdentityTokenHasBeenSet; }
@@ -50,7 +49,7 @@ class GetResourcePaymentTokenRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>Name of the payment credential provider to use</p>
+   * <p>Name of the payment credential provider to use.</p>
    */
   inline const Aws::String& GetResourceCredentialProviderName() const { return m_resourceCredentialProviderName; }
   inline bool ResourceCredentialProviderNameHasBeenSet() const { return m_resourceCredentialProviderNameHasBeenSet; }
@@ -68,8 +67,8 @@ class GetResourcePaymentTokenRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>Vendor-specific token request input Contains all request parameters in a
-   * type-safe, vendor-specific structure</p>
+   * <p>Vendor-specific token request input. Contains all request parameters in a
+   * type-safe, vendor-specific structure.</p>
    */
   inline const PaymentTokenRequestInput& GetPaymentTokenRequest() const { return m_paymentTokenRequest; }
   inline bool PaymentTokenRequestHasBeenSet() const { return m_paymentTokenRequestHasBeenSet; }

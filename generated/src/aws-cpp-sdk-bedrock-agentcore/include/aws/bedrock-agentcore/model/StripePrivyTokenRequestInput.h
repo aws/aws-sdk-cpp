@@ -20,7 +20,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>StripePrivy token request parameters</p><p><h3>See Also:</h3>   <a
+ * <p>Stripe Privy token request parameters.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StripePrivyTokenRequestInput">AWS
  * API Reference</a></p>
  */
@@ -33,7 +33,7 @@ class StripePrivyTokenRequestInput {
 
   ///@{
   /**
-   * <p>Optional - defaults to &quot;api.privy.io&quot;</p>
+   * <p>The host for the Privy API request. Defaults to "api.privy.io".</p>
    */
   inline const Aws::String& GetRequestHost() const { return m_requestHost; }
   inline bool RequestHostHasBeenSet() const { return m_requestHostHasBeenSet; }
@@ -69,7 +69,7 @@ class StripePrivyTokenRequestInput {
 
   ///@{
   /**
-   * <p>Request body JSON for the Privy API call</p>
+   * <p>Request body JSON for the Privy API call.</p>
    */
   inline const Aws::String& GetRequestBody() const { return m_requestBody; }
   inline bool RequestBodyHasBeenSet() const { return m_requestBodyHasBeenSet; }
@@ -87,7 +87,7 @@ class StripePrivyTokenRequestInput {
 
   ///@{
   /**
-   * <p>Set to true to generate privy-authorization-signature</p>
+   * <p>Set to true to generate privy-authorization-signature.</p>
    */
   inline bool GetIncludeAuthorizationSignature() const { return m_includeAuthorizationSignature; }
   inline bool IncludeAuthorizationSignatureHasBeenSet() const { return m_includeAuthorizationSignatureHasBeenSet; }

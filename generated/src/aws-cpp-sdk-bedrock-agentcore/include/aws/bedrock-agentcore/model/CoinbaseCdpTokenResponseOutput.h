@@ -20,7 +20,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Coinbase CDP token response</p><p><h3>See Also:</h3>   <a
+ * <p>Coinbase CDP token response.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CoinbaseCdpTokenResponseOutput">AWS
  * API Reference</a></p>
  */
@@ -33,7 +33,7 @@ class CoinbaseCdpTokenResponseOutput {
 
   ///@{
   /**
-   * <p>Bearer Token for Authorization header</p>
+   * <p>Bearer Token for Authorization header.</p>
    */
   inline const Aws::String& GetBearerToken() const { return m_bearerToken; }
   inline bool BearerTokenHasBeenSet() const { return m_bearerTokenHasBeenSet; }
@@ -51,7 +51,7 @@ class CoinbaseCdpTokenResponseOutput {
 
   ///@{
   /**
-   * <p>Wallet Auth Token for X-Wallet-Auth header</p>
+   * <p>Wallet Auth Token for X-Wallet-Auth header.</p>
    */
   inline const Aws::String& GetWalletAuthToken() const { return m_walletAuthToken; }
   inline bool WalletAuthTokenHasBeenSet() const { return m_walletAuthTokenHasBeenSet; }

@@ -23,7 +23,7 @@ class JsonValue;
 namespace BedrockAgentCore {
 namespace Model {
 /**
- * <p>Response structure for getting a payment instrument</p><p><h3>See Also:</h3>
+ * <p>Response structure for getting a payment instrument.</p><p><h3>See Also:</h3>
  * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentInstrumentResponse">AWS
  * API Reference</a></p>
@@ -35,7 +35,9 @@ class GetPaymentInstrumentResult {
   AWS_BEDROCKAGENTCORE_API GetPaymentInstrumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
-
+  /**
+   * <p>The payment instrument details.</p>
+   */
   inline const PaymentInstrument& GetPaymentInstrument() const { return m_paymentInstrument; }
   template <typename PaymentInstrumentT = PaymentInstrument>
   void SetPaymentInstrument(PaymentInstrumentT&& value) {

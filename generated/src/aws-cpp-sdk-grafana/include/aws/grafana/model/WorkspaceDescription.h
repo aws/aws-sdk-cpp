@@ -591,6 +591,25 @@ class WorkspaceDescription {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If the workspace is in the <code>DEGRADED</code> status, this field describes
+   * the reason the workspace is degraded.</p>
+   */
+  inline const Aws::String& GetDegradedWorkspaceReason() const { return m_degradedWorkspaceReason; }
+  inline bool DegradedWorkspaceReasonHasBeenSet() const { return m_degradedWorkspaceReasonHasBeenSet; }
+  template <typename DegradedWorkspaceReasonT = Aws::String>
+  void SetDegradedWorkspaceReason(DegradedWorkspaceReasonT&& value) {
+    m_degradedWorkspaceReasonHasBeenSet = true;
+    m_degradedWorkspaceReason = std::forward<DegradedWorkspaceReasonT>(value);
+  }
+  template <typename DegradedWorkspaceReasonT = Aws::String>
+  WorkspaceDescription& WithDegradedWorkspaceReason(DegradedWorkspaceReasonT&& value) {
+    SetDegradedWorkspaceReason(std::forward<DegradedWorkspaceReasonT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AccountAccessType m_accountAccessType{AccountAccessType::NOT_SET};
 
@@ -645,6 +664,8 @@ class WorkspaceDescription {
   IPAddressType m_ipAddressType{IPAddressType::NOT_SET};
 
   Aws::String m_kmsKeyId;
+
+  Aws::String m_degradedWorkspaceReason;
   bool m_accountAccessTypeHasBeenSet = false;
   bool m_createdHasBeenSet = false;
   bool m_dataSourcesHasBeenSet = false;
@@ -672,6 +693,7 @@ class WorkspaceDescription {
   bool m_grafanaTokenHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
+  bool m_degradedWorkspaceReasonHasBeenSet = false;
 };
 
 }  // namespace Model

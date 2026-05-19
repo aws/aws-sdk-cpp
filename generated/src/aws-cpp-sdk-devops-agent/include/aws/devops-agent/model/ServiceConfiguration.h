@@ -16,6 +16,7 @@
 #include <aws/devops-agent/model/MCPServerDatadogConfiguration.h>
 #include <aws/devops-agent/model/MCPServerGrafanaConfiguration.h>
 #include <aws/devops-agent/model/MCPServerNewRelicConfiguration.h>
+#include <aws/devops-agent/model/MCPServerSigV4Configuration.h>
 #include <aws/devops-agent/model/MCPServerSplunkConfiguration.h>
 #include <aws/devops-agent/model/PagerDutyConfiguration.h>
 #include <aws/devops-agent/model/ServiceNowConfiguration.h>
@@ -334,6 +335,24 @@ class ServiceConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>SigV4-authenticated MCP server integration configuration.</p>
+   */
+  inline const MCPServerSigV4Configuration& GetMcpserversigv4() const { return m_mcpserversigv4; }
+  inline bool Mcpserversigv4HasBeenSet() const { return m_mcpserversigv4HasBeenSet; }
+  template <typename Mcpserversigv4T = MCPServerSigV4Configuration>
+  void SetMcpserversigv4(Mcpserversigv4T&& value) {
+    m_mcpserversigv4HasBeenSet = true;
+    m_mcpserversigv4 = std::forward<Mcpserversigv4T>(value);
+  }
+  template <typename Mcpserversigv4T = MCPServerSigV4Configuration>
+  ServiceConfiguration& WithMcpserversigv4(Mcpserversigv4T&& value) {
+    SetMcpserversigv4(std::forward<Mcpserversigv4T>(value));
+    return *this;
+  }
+  ///@}
  private:
   SourceAwsConfiguration m_sourceAws;
 
@@ -366,6 +385,8 @@ class ServiceConfiguration {
   MCPServerGrafanaConfiguration m_mcpservergrafana;
 
   PagerDutyConfiguration m_pagerduty;
+
+  MCPServerSigV4Configuration m_mcpserversigv4;
   bool m_sourceAwsHasBeenSet = false;
   bool m_awsHasBeenSet = false;
   bool m_githubHasBeenSet = false;
@@ -382,6 +403,7 @@ class ServiceConfiguration {
   bool m_azuredevopsHasBeenSet = false;
   bool m_mcpservergrafanaHasBeenSet = false;
   bool m_pagerdutyHasBeenSet = false;
+  bool m_mcpserversigv4HasBeenSet = false;
 };
 
 }  // namespace Model

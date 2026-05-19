@@ -21,7 +21,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Money amount with currency</p><p><h3>See Also:</h3>   <a
+ * <p>Represents a monetary amount with a currency.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/Amount">AWS
  * API Reference</a></p>
  */
@@ -52,7 +52,7 @@ class Amount {
 
   ///@{
   /**
-   * <p>The currency code for this amount.</p>
+   * <p>The currency code for the amount.</p>
    */
   inline Currency GetCurrency() const { return m_currency; }
   inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }

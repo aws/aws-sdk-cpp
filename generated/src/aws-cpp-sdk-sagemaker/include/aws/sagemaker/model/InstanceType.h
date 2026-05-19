@@ -184,7 +184,9 @@ enum class InstanceType {
   ml_g6_12xlarge,
   ml_g6_16xlarge,
   ml_g6_24xlarge,
-  ml_g6_48xlarge
+  ml_g6_48xlarge,
+  ml_p5_4xlarge,
+  ml_p5en_48xlarge
 };
 
 namespace InstanceTypeMapper {

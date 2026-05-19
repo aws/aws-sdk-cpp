@@ -21,7 +21,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Coinbase CDP token request parameters</p><p><h3>See Also:</h3>   <a
+ * <p>Coinbase CDP token request parameters.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CoinbaseCdpTokenRequestInput">AWS
  * API Reference</a></p>
  */
@@ -50,7 +50,7 @@ class CoinbaseCdpTokenRequestInput {
 
   ///@{
   /**
-   * <p>Optional - defaults to &quot;api.cdp.coinbase.com&quot;</p>
+   * <p>The host for the payment API request. Defaults to "api.cdp.coinbase.com".</p>
    */
   inline const Aws::String& GetRequestHost() const { return m_requestHost; }
   inline bool RequestHostHasBeenSet() const { return m_requestHostHasBeenSet; }
@@ -87,7 +87,7 @@ class CoinbaseCdpTokenRequestInput {
   ///@{
   /**
    * <p>Set to true for wallet write operations (requires walletSecret
-   * configured)</p>
+   * configured).</p>
    */
   inline bool GetIncludeWalletAuthToken() const { return m_includeWalletAuthToken; }
   inline bool IncludeWalletAuthTokenHasBeenSet() const { return m_includeWalletAuthTokenHasBeenSet; }
@@ -103,7 +103,7 @@ class CoinbaseCdpTokenRequestInput {
 
   ///@{
   /**
-   * <p>Request body JSON - used to generate wallet auth JWT</p>
+   * <p>Request body JSON — used to generate wallet auth JWT.</p>
    */
   inline const Aws::String& GetRequestBody() const { return m_requestBody; }
   inline bool RequestBodyHasBeenSet() const { return m_requestBodyHasBeenSet; }

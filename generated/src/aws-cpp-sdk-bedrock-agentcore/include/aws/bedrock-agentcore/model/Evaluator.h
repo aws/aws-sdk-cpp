@@ -20,7 +20,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>An evaluator to run against sessions</p><p><h3>See Also:</h3>   <a
+ * <p>An evaluator to run against sessions.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/Evaluator">AWS
  * API Reference</a></p>
  */

@@ -32,6 +32,11 @@ static const int CRYPTOMINING_IP_HASH = HashingUtils::HashString("CRYPTOMINING_I
 static const int CRYPTOMINING_DOMAIN_HASH = HashingUtils::HashString("CRYPTOMINING_DOMAIN");
 static const int CRYPTOMINING_PROCESS_HASH = HashingUtils::HashString("CRYPTOMINING_PROCESS");
 static const int MALICIOUS_FILE_HASH = HashingUtils::HashString("MALICIOUS_FILE");
+static const int VULNERABILITY_HASH = HashingUtils::HashString("VULNERABILITY");
+static const int MALICIOUS_PACKAGE_HASH = HashingUtils::HashString("MALICIOUS_PACKAGE");
+static const int MISCONFIGURATION_HASH = HashingUtils::HashString("MISCONFIGURATION");
+static const int REACHABILITY_HASH = HashingUtils::HashString("REACHABILITY");
+static const int SENSITIVE_DATA_HASH = HashingUtils::HashString("SENSITIVE_DATA");
 
 IndicatorType GetIndicatorTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -69,6 +74,16 @@ IndicatorType GetIndicatorTypeForName(const Aws::String& name) {
     return IndicatorType::CRYPTOMINING_PROCESS;
   } else if (hashCode == MALICIOUS_FILE_HASH) {
     return IndicatorType::MALICIOUS_FILE;
+  } else if (hashCode == VULNERABILITY_HASH) {
+    return IndicatorType::VULNERABILITY;
+  } else if (hashCode == MALICIOUS_PACKAGE_HASH) {
+    return IndicatorType::MALICIOUS_PACKAGE;
+  } else if (hashCode == MISCONFIGURATION_HASH) {
+    return IndicatorType::MISCONFIGURATION;
+  } else if (hashCode == REACHABILITY_HASH) {
+    return IndicatorType::REACHABILITY;
+  } else if (hashCode == SENSITIVE_DATA_HASH) {
+    return IndicatorType::SENSITIVE_DATA;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -117,6 +132,16 @@ Aws::String GetNameForIndicatorType(IndicatorType enumValue) {
       return "CRYPTOMINING_PROCESS";
     case IndicatorType::MALICIOUS_FILE:
       return "MALICIOUS_FILE";
+    case IndicatorType::VULNERABILITY:
+      return "VULNERABILITY";
+    case IndicatorType::MALICIOUS_PACKAGE:
+      return "MALICIOUS_PACKAGE";
+    case IndicatorType::MISCONFIGURATION:
+      return "MISCONFIGURATION";
+    case IndicatorType::REACHABILITY:
+      return "REACHABILITY";
+    case IndicatorType::SENSITIVE_DATA:
+      return "SENSITIVE_DATA";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

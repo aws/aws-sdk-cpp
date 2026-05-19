@@ -20,7 +20,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Session spending limits</p><p><h3>See Also:</h3>   <a
+ * <p>The spending limits configuration for a payment session.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/SessionLimits">AWS
  * API Reference</a></p>
  */
@@ -33,7 +34,7 @@ class SessionLimits {
 
   ///@{
   /**
-   * <p>The maximum amount that can be spent in this session.</p>
+   * <p>The maximum amount that can be spent in the session.</p>
    */
   inline const Amount& GetMaxSpendAmount() const { return m_maxSpendAmount; }
   inline bool MaxSpendAmountHasBeenSet() const { return m_maxSpendAmountHasBeenSet; }

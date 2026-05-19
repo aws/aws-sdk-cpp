@@ -15,7 +15,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Request structure for getting a payment instrument</p><p><h3>See Also:</h3>
+ * <p>Request structure for getting a payment instrument.</p><p><h3>See Also:</h3>
  * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentInstrumentRequest">AWS
  * API Reference</a></p>

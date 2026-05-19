@@ -18,7 +18,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Request structure for processing a payment</p><p><h3>See Also:</h3>   <a
+ * <p>Request structure for processing a payment.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ProcessPaymentRequest">AWS
  * API Reference</a></p>
  */
@@ -74,7 +74,7 @@ class ProcessPaymentRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The ARN of the payment manager handling this payment.</p>
+   * <p>The ARN of the payment manager.</p>
    */
   inline const Aws::String& GetPaymentManagerArn() const { return m_paymentManagerArn; }
   inline bool PaymentManagerArnHasBeenSet() const { return m_paymentManagerArnHasBeenSet; }
@@ -92,7 +92,7 @@ class ProcessPaymentRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The ID of the payment session for this transaction.</p>
+   * <p>The ID of the payment session.</p>
    */
   inline const Aws::String& GetPaymentSessionId() const { return m_paymentSessionId; }
   inline bool PaymentSessionIdHasBeenSet() const { return m_paymentSessionIdHasBeenSet; }
@@ -110,7 +110,7 @@ class ProcessPaymentRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The ID of the payment instrument to use for this transaction.</p>
+   * <p>The ID of the payment instrument to use.</p>
    */
   inline const Aws::String& GetPaymentInstrumentId() const { return m_paymentInstrumentId; }
   inline bool PaymentInstrumentIdHasBeenSet() const { return m_paymentInstrumentIdHasBeenSet; }
@@ -128,7 +128,7 @@ class ProcessPaymentRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The type of payment being processed.</p>
+   * <p>The type of payment to process.</p>
    */
   inline PaymentType GetPaymentType() const { return m_paymentType; }
   inline bool PaymentTypeHasBeenSet() const { return m_paymentTypeHasBeenSet; }
@@ -162,7 +162,8 @@ class ProcessPaymentRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>Idempotency token to ensure request uniqueness.</p>
+   * <p>A unique, case-sensitive identifier that you provide to ensure the
+   * idempotency of the request.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
