@@ -744,6 +744,10 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
 #else
             curl_easy_setopt(connectionHandle, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1);
 #endif
+
+#if defined(PLATFORM_WINDOWS) && LIBCURL_VERSION_NUM >= 0x074600 // 7.70.0
+            curl_easy_setopt(connectionHandle, CURLOPT_SSL_OPTIONS, CURLSSLOPT_REVOKE_BEST_EFFORT);
+#endif
         }
         else
         {
