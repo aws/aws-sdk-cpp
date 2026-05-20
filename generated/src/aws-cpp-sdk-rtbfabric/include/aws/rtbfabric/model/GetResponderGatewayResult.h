@@ -336,15 +336,16 @@ class GetResponderGatewayResult {
 
   ///@{
   /**
-   * <p>The count of inbound links for the responder gateway.</p>
+   * <p>The count of requested links waiting for the responder gateway to accept or
+   * reject.</p>
    */
-  inline int GetInboundLinksCount() const { return m_inboundLinksCount; }
-  inline void SetInboundLinksCount(int value) {
-    m_inboundLinksCountHasBeenSet = true;
-    m_inboundLinksCount = value;
+  inline int GetLinksRequestedCount() const { return m_linksRequestedCount; }
+  inline void SetLinksRequestedCount(int value) {
+    m_linksRequestedCountHasBeenSet = true;
+    m_linksRequestedCount = value;
   }
-  inline GetResponderGatewayResult& WithInboundLinksCount(int value) {
-    SetInboundLinksCount(value);
+  inline GetResponderGatewayResult& WithLinksRequestedCount(int value) {
+    SetLinksRequestedCount(value);
     return *this;
   }
   ///@}
@@ -433,7 +434,7 @@ class GetResponderGatewayResult {
 
   int m_totalLinksCount{0};
 
-  int m_inboundLinksCount{0};
+  int m_linksRequestedCount{0};
 
   GatewayType m_gatewayType{GatewayType::NOT_SET};
 
@@ -458,7 +459,7 @@ class GetResponderGatewayResult {
   bool m_tagsHasBeenSet = false;
   bool m_activeLinksCountHasBeenSet = false;
   bool m_totalLinksCountHasBeenSet = false;
-  bool m_inboundLinksCountHasBeenSet = false;
+  bool m_linksRequestedCountHasBeenSet = false;
   bool m_gatewayTypeHasBeenSet = false;
   bool m_externalInboundEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

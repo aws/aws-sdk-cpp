@@ -37,7 +37,7 @@ class InlineGroundTruth {
 
   ///@{
   /**
-   * <p>assertions for evaluation, reuses common model EvaluationContentList</p>
+   * <p>Assertions for evaluation, reuses common model EvaluationContentList.</p>
    */
   inline const Aws::Vector<EvaluationContent>& GetAssertions() const { return m_assertions; }
   inline bool AssertionsHasBeenSet() const { return m_assertionsHasBeenSet; }

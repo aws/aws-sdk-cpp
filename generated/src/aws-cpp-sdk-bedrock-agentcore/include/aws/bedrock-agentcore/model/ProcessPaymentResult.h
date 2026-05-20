@@ -26,7 +26,7 @@ class JsonValue;
 namespace BedrockAgentCore {
 namespace Model {
 /**
- * <p>Response structure for processing a payment</p><p><h3>See Also:</h3>   <a
+ * <p>Response structure for processing a payment.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ProcessPaymentResponse">AWS
  * API Reference</a></p>
  */
@@ -38,7 +38,7 @@ class ProcessPaymentResult {
 
   ///@{
   /**
-   * <p>The unique ID of the processed payment transaction.</p>
+   * <p>The unique identifier of the processed payment.</p>
    */
   inline const Aws::String& GetProcessPaymentId() const { return m_processPaymentId; }
   template <typename ProcessPaymentIdT = Aws::String>
@@ -55,7 +55,7 @@ class ProcessPaymentResult {
 
   ///@{
   /**
-   * <p>The ARN of the payment manager that processed this payment.</p>
+   * <p>The ARN of the payment manager.</p>
    */
   inline const Aws::String& GetPaymentManagerArn() const { return m_paymentManagerArn; }
   template <typename PaymentManagerArnT = Aws::String>
@@ -72,7 +72,7 @@ class ProcessPaymentResult {
 
   ///@{
   /**
-   * <p>The ID of the payment session for this transaction.</p>
+   * <p>The ID of the payment session used.</p>
    */
   inline const Aws::String& GetPaymentSessionId() const { return m_paymentSessionId; }
   template <typename PaymentSessionIdT = Aws::String>
@@ -89,7 +89,7 @@ class ProcessPaymentResult {
 
   ///@{
   /**
-   * <p>The ID of the payment instrument used for this transaction.</p>
+   * <p>The ID of the payment instrument used.</p>
    */
   inline const Aws::String& GetPaymentInstrumentId() const { return m_paymentInstrumentId; }
   template <typename PaymentInstrumentIdT = Aws::String>
@@ -106,7 +106,7 @@ class ProcessPaymentResult {
 
   ///@{
   /**
-   * <p>The type of payment that was processed.</p>
+   * <p>The type of payment processed.</p>
    */
   inline PaymentType GetPaymentType() const { return m_paymentType; }
   inline void SetPaymentType(PaymentType value) {
@@ -121,7 +121,7 @@ class ProcessPaymentResult {
 
   ///@{
   /**
-   * <p>The status of the payment transaction.</p>
+   * <p>The status of the payment.</p>
    */
   inline PaymentStatus GetStatus() const { return m_status; }
   inline void SetStatus(PaymentStatus value) {

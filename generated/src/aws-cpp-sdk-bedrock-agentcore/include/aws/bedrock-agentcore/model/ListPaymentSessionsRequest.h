@@ -15,7 +15,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Request structure for listing payment sessions</p><p><h3>See Also:</h3>   <a
+ * <p>Request structure for listing payment sessions.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListPaymentSessionsRequest">AWS
  * API Reference</a></p>
  */

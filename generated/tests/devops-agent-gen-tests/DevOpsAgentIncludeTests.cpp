@@ -129,6 +129,9 @@
 #include <aws/devops-agent/model/MCPServerNewRelicConfiguration.h>
 #include <aws/devops-agent/model/MCPServerOAuth3LOConfig.h>
 #include <aws/devops-agent/model/MCPServerOAuthClientCredentialsConfig.h>
+#include <aws/devops-agent/model/MCPServerSigV4AuthorizationConfig.h>
+#include <aws/devops-agent/model/MCPServerSigV4Configuration.h>
+#include <aws/devops-agent/model/MCPServerSigV4ServiceDetails.h>
 #include <aws/devops-agent/model/MCPServerSplunkConfiguration.h>
 #include <aws/devops-agent/model/Message.h>
 #include <aws/devops-agent/model/MonitorAccountType.h>
@@ -163,6 +166,7 @@
 #include <aws/devops-agent/model/RegisteredGithubServiceDetails.h>
 #include <aws/devops-agent/model/RegisteredGrafanaServerDetails.h>
 #include <aws/devops-agent/model/RegisteredMCPServerDetails.h>
+#include <aws/devops-agent/model/RegisteredMCPServerSigV4Details.h>
 #include <aws/devops-agent/model/RegisteredNewRelicDetails.h>
 #include <aws/devops-agent/model/RegisteredPagerDutyDetails.h>
 #include <aws/devops-agent/model/RegisteredService.h>

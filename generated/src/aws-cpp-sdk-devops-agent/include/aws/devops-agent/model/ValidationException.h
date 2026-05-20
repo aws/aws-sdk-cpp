@@ -22,9 +22,8 @@ namespace DevOpsAgent {
 namespace Model {
 
 /**
- * <p>A standard error for input validation failures. This should be thrown by
- * services when a member of the input structure falls outside of the modeled or
- * documented constraints.</p><p><h3>See Also:</h3>   <a
+ * <p>The input fails to satisfy the constraints specified by the
+ * service.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ValidationException">AWS
  * API Reference</a></p>
  */

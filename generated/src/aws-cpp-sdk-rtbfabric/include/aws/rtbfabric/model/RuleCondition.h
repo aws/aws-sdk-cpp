@@ -21,9 +21,9 @@ namespace RTBFabric {
 namespace Model {
 
 /**
- * <p>Conditions bag for a routing rule. All non-null fields must match (AND
- * logic). At least one field must be set (enforced by CP).</p><p><h3>See
- * Also:</h3>   <a
+ * <p>The conditions for a routing rule. All specified fields must match for the
+ * rule to apply (AND logic). At least one condition field must be
+ * set.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/RuleCondition">AWS
  * API Reference</a></p>
  */
@@ -36,7 +36,7 @@ class RuleCondition {
 
   ///@{
   /**
-   * <p>Exact host match — RFC 3986 unreserved characters</p>
+   * <p>The exact host header value to match.</p>
    */
   inline const Aws::String& GetHostHeader() const { return m_hostHeader; }
   inline bool HostHeaderHasBeenSet() const { return m_hostHeaderHasBeenSet; }
@@ -54,7 +54,8 @@ class RuleCondition {
 
   ///@{
   /**
-   * <p>Wildcard host pattern (e.g., *.example.com) — RFC 3986 unreserved plus *</p>
+   * <p>A wildcard pattern for host header matching (for example,
+   * <code>*.example.com</code>).</p>
    */
   inline const Aws::String& GetHostHeaderWildcard() const { return m_hostHeaderWildcard; }
   inline bool HostHeaderWildcardHasBeenSet() const { return m_hostHeaderWildcardHasBeenSet; }
@@ -72,8 +73,8 @@ class RuleCondition {
 
   ///@{
   /**
-   * <p>Path prefix matching — strict starts-with, no wildcard (preferred for new
-   * rules). Must start with /; RFC 3986 unreserved plus /</p>
+   * <p>The path prefix to match. The request path must start with this value. Must
+   * start with <code>/</code>.</p>
    */
   inline const Aws::String& GetPathPrefix() const { return m_pathPrefix; }
   inline bool PathPrefixHasBeenSet() const { return m_pathPrefixHasBeenSet; }
@@ -91,7 +92,7 @@ class RuleCondition {
 
   ///@{
   /**
-   * <p>Exact path match — must start with /; RFC 3986 unreserved plus /</p>
+   * <p>The exact path to match. Must start with <code>/</code>.</p>
    */
   inline const Aws::String& GetPathExact() const { return m_pathExact; }
   inline bool PathExactHasBeenSet() const { return m_pathExactHasBeenSet; }
@@ -109,7 +110,7 @@ class RuleCondition {
 
   ///@{
   /**
-   * <p>Query string key=value pair match (single pair)</p>
+   * <p>A query string key-value pair that must be present and match exactly.</p>
    */
   inline const QueryStringKeyValuePair& GetQueryStringEquals() const { return m_queryStringEquals; }
   inline bool QueryStringEqualsHasBeenSet() const { return m_queryStringEqualsHasBeenSet; }
@@ -127,8 +128,8 @@ class RuleCondition {
 
   ///@{
   /**
-   * <p>Query string key presence check (any value accepted) — RFC 3986 unreserved
-   * characters</p>
+   * <p>A query string key that must be present in the request (any value is
+   * accepted).</p>
    */
   inline const Aws::String& GetQueryStringExists() const { return m_queryStringExists; }
   inline bool QueryStringExistsHasBeenSet() const { return m_queryStringExistsHasBeenSet; }

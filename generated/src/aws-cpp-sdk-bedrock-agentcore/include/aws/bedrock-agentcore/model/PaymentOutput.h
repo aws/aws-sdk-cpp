@@ -20,8 +20,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Payment response payload union. We will support versioning by introducing
- * other model in this union</p><p><h3>See Also:</h3>   <a
+ * <p>The payment output details, which vary by payment type.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/PaymentOutput">AWS
  * API Reference</a></p>
  */
@@ -33,7 +33,9 @@ class PaymentOutput {
   AWS_BEDROCKAGENTCORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>Output from a crypto X402 payment.</p>
+   */
   inline const CryptoX402PaymentOutput& GetCryptoX402() const { return m_cryptoX402; }
   inline bool CryptoX402HasBeenSet() const { return m_cryptoX402HasBeenSet; }
   template <typename CryptoX402T = CryptoX402PaymentOutput>

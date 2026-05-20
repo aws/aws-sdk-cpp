@@ -23,7 +23,7 @@ namespace RTBFabric {
 namespace Model {
 
 /**
- * <p>Summary of a routing rule for list responses</p><p><h3>See Also:</h3>   <a
+ * <p>A summary of a link routing rule.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/LinkRoutingRuleSummary">AWS
  * API Reference</a></p>
  */

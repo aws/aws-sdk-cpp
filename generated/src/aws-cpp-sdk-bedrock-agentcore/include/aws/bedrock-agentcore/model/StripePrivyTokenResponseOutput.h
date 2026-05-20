@@ -20,8 +20,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>StripePrivy token response containing appId, basicAuthToken, and optionally
- * authorizationSignature</p><p><h3>See Also:</h3>   <a
+ * <p>Stripe Privy token response containing appId, basicAuthToken, and optionally
+ * authorizationSignature.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StripePrivyTokenResponseOutput">AWS
  * API Reference</a></p>
  */
@@ -35,7 +35,7 @@ class StripePrivyTokenResponseOutput {
   ///@{
   /**
    * <p>Base64-encoded ECDSA P-256 authorization signature (only present when
-   * includeAuthorizationSignature is true)</p>
+   * includeAuthorizationSignature is true).</p>
    */
   inline const Aws::String& GetAuthorizationSignature() const { return m_authorizationSignature; }
   inline bool AuthorizationSignatureHasBeenSet() const { return m_authorizationSignatureHasBeenSet; }
@@ -53,8 +53,7 @@ class StripePrivyTokenResponseOutput {
 
   ///@{
   /**
-   * <p>Unix timestamp in milliseconds when the authorization signature expires. Set
-   * as privy-request-expiry header.</p>
+   * <p>Unix timestamp in milliseconds when the authorization signature expires.</p>
    */
   inline long long GetRequestExpiry() const { return m_requestExpiry; }
   inline bool RequestExpiryHasBeenSet() const { return m_requestExpiryHasBeenSet; }
@@ -70,7 +69,7 @@ class StripePrivyTokenResponseOutput {
 
   ///@{
   /**
-   * <p>The Privy app ID for the privy-app-id header</p>
+   * <p>The Privy app ID for the privy-app-id header.</p>
    */
   inline const Aws::String& GetAppId() const { return m_appId; }
   inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
@@ -89,7 +88,7 @@ class StripePrivyTokenResponseOutput {
   ///@{
   /**
    * <p>Base64-encoded Basic Auth token (appId:appSecret) for the Authorization
-   * header</p>
+   * header.</p>
    */
   inline const Aws::String& GetBasicAuthToken() const { return m_basicAuthToken; }
   inline bool BasicAuthTokenHasBeenSet() const { return m_basicAuthTokenHasBeenSet; }

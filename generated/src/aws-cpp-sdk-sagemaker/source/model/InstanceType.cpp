@@ -188,6 +188,8 @@ static const int ml_g6_12xlarge_HASH = HashingUtils::HashString("ml.g6.12xlarge"
 static const int ml_g6_16xlarge_HASH = HashingUtils::HashString("ml.g6.16xlarge");
 static const int ml_g6_24xlarge_HASH = HashingUtils::HashString("ml.g6.24xlarge");
 static const int ml_g6_48xlarge_HASH = HashingUtils::HashString("ml.g6.48xlarge");
+static const int ml_p5_4xlarge_HASH = HashingUtils::HashString("ml.p5.4xlarge");
+static const int ml_p5en_48xlarge_HASH = HashingUtils::HashString("ml.p5en.48xlarge");
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -717,6 +719,12 @@ static bool GetEnumForNameHelper1(int hashCode, InstanceType& enumValue) {
     return true;
   } else if (hashCode == ml_g6_48xlarge_HASH) {
     enumValue = InstanceType::ml_g6_48xlarge;
+    return true;
+  } else if (hashCode == ml_p5_4xlarge_HASH) {
+    enumValue = InstanceType::ml_p5_4xlarge;
+    return true;
+  } else if (hashCode == ml_p5en_48xlarge_HASH) {
+    enumValue = InstanceType::ml_p5en_48xlarge;
     return true;
   }
   return false;
@@ -1248,6 +1256,12 @@ static bool GetNameForEnumHelper1(InstanceType enumValue, Aws::String& value) {
       return true;
     case InstanceType::ml_g6_48xlarge:
       value = "ml.g6.48xlarge";
+      return true;
+    case InstanceType::ml_p5_4xlarge:
+      value = "ml.p5.4xlarge";
+      return true;
+    case InstanceType::ml_p5en_48xlarge:
+      value = "ml.p5en.48xlarge";
       return true;
     default:
       return false;

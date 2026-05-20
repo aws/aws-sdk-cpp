@@ -20,7 +20,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Where to pull ground truth from</p><p><h3>See Also:</h3>   <a
+ * <p>Where to pull ground truth from.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GroundTruthSource">AWS
  * API Reference</a></p>
  */

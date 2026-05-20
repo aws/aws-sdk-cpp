@@ -20,7 +20,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Where to pull session spans from</p><p><h3>See Also:</h3>   <a
+ * <p>Configuration for the data source used in evaluation.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DataSourceConfig">AWS
  * API Reference</a></p>
  */

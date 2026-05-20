@@ -34,7 +34,7 @@ class LinkedAccountOAuth2 {
 
   ///@{
   /**
-   * <p>Google OAuth2 authentication</p>
+   * <p>Google OAuth2 authentication.</p>
    */
   inline const OAuth2Authentication& GetGoogle() const { return m_google; }
   inline bool GoogleHasBeenSet() const { return m_googleHasBeenSet; }
@@ -52,7 +52,7 @@ class LinkedAccountOAuth2 {
 
   ///@{
   /**
-   * <p>Apple OAuth2 authentication</p>
+   * <p>Apple OAuth2 authentication.</p>
    */
   inline const OAuth2Authentication& GetApple() const { return m_apple; }
   inline bool AppleHasBeenSet() const { return m_appleHasBeenSet; }
@@ -70,7 +70,7 @@ class LinkedAccountOAuth2 {
 
   ///@{
   /**
-   * <p>X (formerly Twitter) OAuth2 authentication</p>
+   * <p>X (formerly Twitter) OAuth2 authentication.</p>
    */
   inline const OAuth2Authentication& GetX() const { return m_x; }
   inline bool XHasBeenSet() const { return m_xHasBeenSet; }
@@ -88,7 +88,7 @@ class LinkedAccountOAuth2 {
 
   ///@{
   /**
-   * <p>Telegram OAuth2 authentication</p>
+   * <p>Telegram OAuth2 authentication.</p>
    */
   inline const OAuth2Authentication& GetTelegram() const { return m_telegram; }
   inline bool TelegramHasBeenSet() const { return m_telegramHasBeenSet; }
@@ -106,7 +106,7 @@ class LinkedAccountOAuth2 {
 
   ///@{
   /**
-   * <p>GitHub OAuth2 authentication</p>
+   * <p>GitHub OAuth2 authentication.</p>
    */
   inline const OAuth2Authentication& GetGithub() const { return m_github; }
   inline bool GithubHasBeenSet() const { return m_githubHasBeenSet; }

@@ -23,7 +23,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Embedded Crypto wallet instrument details</p><p><h3>See Also:</h3>   <a
+ * <p>Embedded crypto wallet instrument details.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/EmbeddedCryptoWallet">AWS
  * API Reference</a></p>
  */
@@ -37,7 +37,7 @@ class EmbeddedCryptoWallet {
   ///@{
   /**
    * <p>The blockchain network for this embedded crypto wallet. Supported networks:
-   * ETHEREUM, SOLANA</p>
+   * ETHEREUM, SOLANA.</p>
    */
   inline CryptoWalletNetwork GetNetwork() const { return m_network; }
   inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
@@ -53,9 +53,8 @@ class EmbeddedCryptoWallet {
 
   ///@{
   /**
-   * <p>List of linkedAccounts linked to this wallet. Each linkedAccount represents a
-   * way the end user can authenticate to this wallet. Can be empty when adding a new
-   * linkedAccount to an existing wallet.</p>
+   * <p>List of linked accounts linked to this wallet. Each represents a way the end
+   * user can authenticate to this wallet.</p>
    */
   inline const Aws::Vector<LinkedAccount>& GetLinkedAccounts() const { return m_linkedAccounts; }
   inline bool LinkedAccountsHasBeenSet() const { return m_linkedAccountsHasBeenSet; }
@@ -97,9 +96,8 @@ class EmbeddedCryptoWallet {
 
   ///@{
   /**
-   * <p>URL for the end user to complete a provider-specific action (e.g., wallet
-   * linking, onboarding). Returned by the payment connector during instrument
-   * creation.</p>
+   * <p>URL for the end user to complete a provider-specific action such as wallet
+   * linking or onboarding.</p>
    */
   inline const Aws::String& GetRedirectUrl() const { return m_redirectUrl; }
   inline bool RedirectUrlHasBeenSet() const { return m_redirectUrlHasBeenSet; }

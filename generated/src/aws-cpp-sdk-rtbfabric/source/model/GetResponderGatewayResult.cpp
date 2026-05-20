@@ -99,9 +99,9 @@ GetResponderGatewayResult& GetResponderGatewayResult::operator=(const Aws::Amazo
     m_totalLinksCount = jsonValue.GetInteger("totalLinksCount");
     m_totalLinksCountHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("inboundLinksCount")) {
-    m_inboundLinksCount = jsonValue.GetInteger("inboundLinksCount");
-    m_inboundLinksCountHasBeenSet = true;
+  if (jsonValue.ValueExists("linksRequestedCount")) {
+    m_linksRequestedCount = jsonValue.GetInteger("linksRequestedCount");
+    m_linksRequestedCountHasBeenSet = true;
   }
   if (jsonValue.ValueExists("gatewayType")) {
     m_gatewayType = GatewayTypeMapper::GetGatewayTypeForName(jsonValue.GetString("gatewayType"));

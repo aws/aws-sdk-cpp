@@ -20,7 +20,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>LinkedAccount using a phone number in E.164 format.</p><p><h3>See Also:</h3>
+ * <p>Linked account using a phone number in E.164 format.</p><p><h3>See Also:</h3>
  * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/LinkedAccountSms">AWS
  * API Reference</a></p>
@@ -34,8 +34,7 @@ class LinkedAccountSms {
 
   ///@{
   /**
-   * <p>The phone number in E.164 format (e.g., +1234567890). Must be a valid E.164
-   * formatted phone number starting with + and containing 1-15 digits.</p>
+   * <p>The phone number in E.164 format (e.g., +1234567890).</p>
    */
   inline const Aws::String& GetPhoneNumber() const { return m_phoneNumber; }
   inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }

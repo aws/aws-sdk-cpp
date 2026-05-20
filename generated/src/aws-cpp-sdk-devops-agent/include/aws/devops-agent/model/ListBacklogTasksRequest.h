@@ -55,12 +55,11 @@ class ListBacklogTasksRequest : public DevOpsAgentRequest {
 
   ///@{
   /**
-   * <p>Filter criteria to apply when listing tasks</p> <p>Filtering
-   * restrictions:</p> <ul> <li>Each filter field list is limited to a single
-   * value</li> <li>Filtering by Priority and Status at the same time when not
-   * filtering by Type is not permitted</li> <li>Timestamp filters (createdAfter,
-   * createdBefore) can be combined with other filters when not sorting by
-   * priority</li> </ul>
+   * <p>Filter criteria to apply when listing tasks Filtering restrictions: - Each
+   * filter field list is limited to a single value - Filtering by Priority and
+   * Status at the same time when not filtering by Type is not permitted - Timestamp
+   * filters (createdAfter, createdBefore) can be combined with other filters when
+   * not sorting by priority</p>
    */
   inline const TaskFilter& GetFilter() const { return m_filter; }
   inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
@@ -113,10 +112,9 @@ class ListBacklogTasksRequest : public DevOpsAgentRequest {
 
   ///@{
   /**
-   * <p>Field to sort by</p> <pre><code>Sorting restrictions: </code></pre> <ul>
-   * <li>Only sorting on createdAt is supported when using priority or status filters
-   * alone.</li> <li>Sorting by priority is not supported when using Timestamp
-   * filters (createdAfter, createdBefore)</li> </ul>
+   * <p>Field to sort by Sorting restrictions: - Only sorting on createdAt is
+   * supported when using priority or status filters alone. - Sorting by priority is
+   * not supported when using Timestamp filters (createdAfter, createdBefore)</p>
    */
   inline TaskSortField GetSortField() const { return m_sortField; }
   inline bool SortFieldHasBeenSet() const { return m_sortFieldHasBeenSet; }

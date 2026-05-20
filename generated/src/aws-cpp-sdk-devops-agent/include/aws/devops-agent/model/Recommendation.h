@@ -212,6 +212,40 @@ class Recommendation {
 
   ///@{
   /**
+   * <p>Position in ranked list (1 = highest priority)</p>
+   */
+  inline int GetRankPosition() const { return m_rankPosition; }
+  inline bool RankPositionHasBeenSet() const { return m_rankPositionHasBeenSet; }
+  inline void SetRankPosition(int value) {
+    m_rankPositionHasBeenSet = true;
+    m_rankPosition = value;
+  }
+  inline Recommendation& WithRankPosition(int value) {
+    SetRankPosition(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Timestamp when the recommendation was last ranked</p>
+   */
+  inline const Aws::Utils::DateTime& GetRankedAt() const { return m_rankedAt; }
+  inline bool RankedAtHasBeenSet() const { return m_rankedAtHasBeenSet; }
+  template <typename RankedAtT = Aws::Utils::DateTime>
+  void SetRankedAt(RankedAtT&& value) {
+    m_rankedAtHasBeenSet = true;
+    m_rankedAt = std::forward<RankedAtT>(value);
+  }
+  template <typename RankedAtT = Aws::Utils::DateTime>
+  Recommendation& WithRankedAt(RankedAtT&& value) {
+    SetRankedAt(std::forward<RankedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Timestamp when this recommendation was created</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -282,6 +316,10 @@ class Recommendation {
 
   Aws::String m_additionalContext;
 
+  int m_rankPosition{0};
+
+  Aws::Utils::DateTime m_rankedAt{};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -297,6 +335,8 @@ class Recommendation {
   bool m_priorityHasBeenSet = false;
   bool m_goalVersionHasBeenSet = false;
   bool m_additionalContextHasBeenSet = false;
+  bool m_rankPositionHasBeenSet = false;
+  bool m_rankedAtHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_versionHasBeenSet = false;

@@ -252,7 +252,8 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Create a new payment instrument for a connector</p><p><h3>See Also:</h3>   <a
+   * <p>Create a new payment instrument for a connector.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreatePaymentInstrument">AWS
    * API Reference</a></p>
    */
@@ -279,7 +280,7 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Create a new payment manager session</p><p><h3>See Also:</h3>   <a
+   * <p>Create a new payment session.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreatePaymentSession">AWS
    * API Reference</a></p>
    */
@@ -415,21 +416,8 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Delete a payment instrument</p> <p>Marks a payment instrument as deleted by
-   * updating its status to DELETED. This is a soft delete operation that preserves
-   * the record in the database for audit and compliance purposes. The record remains
-   * queryable for audit purposes but is excluded from normal list and get
-   * operations.</p> <p>Deleting an already-deleted or non-existent instrument
-   * returns ResourceNotFoundException (404).</p> <p>Authorization: The caller must
-   * own the instrument (accountId, userId, and paymentManagerId must match). If
-   * authorization fails, a 403 Forbidden error is returned.</p> <p>Timestamp
-   * Management: The updatedAt timestamp is set to the current time, while createdAt
-   * is preserved. The version field is incremented for optimistic locking.</p>
-   * <p>Errors:</p> <ul> <li>ResourceNotFoundException: The instrument does not exist
-   * or is already deleted</li> <li>AccessDeniedException: The caller is not
-   * authorized to delete this instrument</li> <li>ValidationException: Required
-   * fields are missing or invalid</li> <li>InternalServerException: An unexpected
-   * server error occurred</li> </ul><p><h3>See Also:</h3>   <a
+   * <p>Deletes a payment instrument. This is a soft delete operation that preserves
+   * the record for audit and compliance purposes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeletePaymentInstrument">AWS
    * API Reference</a></p>
    */
@@ -456,17 +444,8 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Delete a payment manager session</p> <p>Permanently removes a payment session
-   * record from the database. This is a hard delete operation that removes the
-   * session completely.</p> <p>Deleting a non-existent or already-deleted session
-   * returns ResourceNotFoundException (404).</p> <p>Authorization: The caller must
-   * own the session (accountId, userId, and paymentManagerId must match). If
-   * authorization fails, a 403 Forbidden error is returned.</p> <p>Errors:</p> <ul>
-   * <li>ResourceNotFoundException: The session does not exist or has already been
-   * deleted</li> <li>AccessDeniedException: The caller is not authorized to delete
-   * this session</li> <li>ValidationException: Required fields are missing or
-   * invalid</li> <li>InternalServerException: An unexpected server error
-   * occurred</li> </ul><p><h3>See Also:</h3>   <a
+   * <p>Deletes a payment session. This permanently removes the payment session
+   * record.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeletePaymentSession">AWS
    * API Reference</a></p>
    */
@@ -761,7 +740,7 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Get a payment instrument by ID</p><p><h3>See Also:</h3>   <a
+   * <p>Get a payment instrument by ID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentInstrument">AWS
    * API Reference</a></p>
    */
@@ -787,7 +766,7 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Get the balance of a payment instrument</p><p><h3>See Also:</h3>   <a
+   * <p>Get the balance of a payment instrument.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentInstrumentBalance">AWS
    * API Reference</a></p>
    */
@@ -816,7 +795,7 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Get a payment session</p><p><h3>See Also:</h3>   <a
+   * <p>Get a payment session.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentSession">AWS
    * API Reference</a></p>
    */
@@ -1478,7 +1457,7 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>List payment instruments for a manager</p><p><h3>See Also:</h3>   <a
+   * <p>List payment instruments for a manager.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListPaymentInstruments">AWS
    * API Reference</a></p>
    */
@@ -1505,7 +1484,7 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>List payment manager sessions</p><p><h3>See Also:</h3>   <a
+   * <p>List payment sessions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListPaymentSessions">AWS
    * API Reference</a></p>
    */
@@ -1589,7 +1568,8 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Process a payment transaction</p><p><h3>See Also:</h3>   <a
+   * <p>Processes a payment using a payment instrument within a payment
+   * session.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ProcessPayment">AWS
    * API Reference</a></p>
    */

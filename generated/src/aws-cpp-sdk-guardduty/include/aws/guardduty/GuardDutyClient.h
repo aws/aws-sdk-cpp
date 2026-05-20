@@ -403,10 +403,10 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Creates a new threat entity set. In a threat entity set, you can provide
-   * known malicious IP addresses and domains for your Amazon Web Services
-   * environment. GuardDuty generates findings based on the entries in the threat
-   * entity sets. Only users of the administrator account can manage entity sets,
-   * which automatically apply to member accounts.</p><p><h3>See Also:</h3>   <a
+   * known malicious threat entities for your Amazon Web Services environment.
+   * GuardDuty generates findings based on the entries in the threat entity sets.
+   * Only users of the administrator account can manage entity sets, which
+   * automatically apply to member accounts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatEntitySet">AWS
    * API Reference</a></p>
    */

@@ -23,7 +23,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>A single token balance entry</p><p><h3>See Also:</h3>   <a
+ * <p>A single token balance entry.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/TokenBalance">AWS
  * API Reference</a></p>
  */

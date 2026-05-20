@@ -20,7 +20,8 @@ namespace RTBFabric {
 namespace Model {
 
 /**
- * <p>Key-value pair for query string matching</p><p><h3>See Also:</h3>   <a
+ * <p>A key-value pair for query string matching in a routing rule
+ * condition.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/QueryStringKeyValuePair">AWS
  * API Reference</a></p>
  */
@@ -33,7 +34,8 @@ class QueryStringKeyValuePair {
 
   ///@{
   /**
-   * <p>RFC 3986 unreserved characters</p>
+   * <p>The key of the query string parameter to match. Must contain only RFC 3986
+   * unreserved characters.</p>
    */
   inline const Aws::String& GetKey() const { return m_key; }
   inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
@@ -51,7 +53,8 @@ class QueryStringKeyValuePair {
 
   ///@{
   /**
-   * <p>RFC 3986 unreserved characters</p>
+   * <p>The value of the query string parameter to match. Must contain only RFC 3986
+   * unreserved characters.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

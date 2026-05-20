@@ -20,7 +20,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>LinkedAccount using an email address.</p><p><h3>See Also:</h3>   <a
+ * <p>Linked account using an email address.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/LinkedAccountEmail">AWS
  * API Reference</a></p>
  */
@@ -33,7 +33,8 @@ class LinkedAccountEmail {
 
   ///@{
   /**
-   * <p>The email address used for linkedAccount. Must be a valid email format.</p>
+   * <p>The email address used for the linked account. Must be a valid email
+   * format.</p>
    */
   inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
   inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }

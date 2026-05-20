@@ -21,7 +21,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>X402 payment requirement output</p><p><h3>See Also:</h3>   <a
+ * <p>The output from a crypto X402 payment.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CryptoX402PaymentOutput">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,7 @@ class CryptoX402PaymentOutput {
 
   ///@{
   /**
-   * <p>The X402 protocol version (e.g., &quot;1&quot;, &quot;2&quot;)</p>
+   * <p>The version of the X402 protocol.</p>
    */
   inline const Aws::String& GetVersion() const { return m_version; }
   inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
@@ -52,7 +52,7 @@ class CryptoX402PaymentOutput {
 
   ///@{
   /**
-   * <p>This can hold any JSON-like object</p>
+   * <p>The X402 payment response payload.</p>
    */
   inline Aws::Utils::DocumentView GetPayload() const { return m_payload; }
   inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
