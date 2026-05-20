@@ -65,6 +65,7 @@ private:
     unsigned m_proxyPort = 0;
     Aws::String m_nonProxyHosts;
     bool m_verifySSL = true;
+    bool m_allowCrlOffline = false;
     Aws::String m_caPath;
     Aws::String m_caFile;
     Aws::String m_proxyCaPath;
