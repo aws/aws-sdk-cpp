@@ -16,19 +16,19 @@
 namespace Aws {
 namespace CustomerProfiles {
 /**
- * <fullname>Amazon Connect Customer Profiles</fullname> <ul> <li> <p> <a
+ * <fullname>Connect Customer Customer Profiles</fullname> <ul> <li> <p> <a
  * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Customer_Profiles.html">Customer
  * Profiles actions</a> </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Customer_Profiles.html">Customer
- * Profiles data types</a> </p> </li> </ul> <p>Amazon Connect Customer Profiles is
- * a unified customer profile for your contact center that has pre-built connectors
- * powered by AppFlow that make it easy to combine customer information from third
- * party applications, such as Salesforce (CRM), ServiceNow (ITSM), and your
- * enterprise resource planning (ERP), with contact history from your Amazon
- * Connect contact center. </p> <p>For more information about the Amazon Connect
+ * Profiles data types</a> </p> </li> </ul> <p>Connect Customer Customer Profiles
+ * is a unified customer profile for your contact center that has pre-built
+ * connectors powered by AppFlow that make it easy to combine customer information
+ * from third party applications, such as Salesforce (CRM), ServiceNow (ITSM), and
+ * your enterprise resource planning (ERP), with contact history from your Connect
+ * Customer contact center. </p> <p>For more information about the Connect Customer
  * Customer Profiles feature, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html">Use
- * Customer Profiles</a> in the <i>Amazon Connect Administrator's Guide</i>. </p>
+ * Customer Profiles</a> in the <i>Connect Customer Administrator's Guide</i>. </p>
  */
 class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<CustomerProfilesClient>,
@@ -214,8 +214,8 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
    * <p>Creates a domain, which is a container for all customer data, such as
    * customer profile attributes, object types, profile keys, and encryption keys.
    * You can create multiple domains, and each domain can have multiple third-party
-   * integrations.</p> <p>Each Amazon Connect instance can be associated with only
-   * one domain. Multiple Amazon Connect instances can be associated with one
+   * integrations.</p> <p>Each Connect Customer instance can be associated with only
+   * one domain. Multiple Connect Customer instances can be associated with one
    * domain.</p> <p>Use this API or <a
    * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
    * to enable <a
@@ -284,7 +284,7 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
 
   /**
    * <p>Creates an event stream, which is a subscription to real-time events, such as
-   * when profiles are created and updated through Amazon Connect Customer
+   * when profiles are created and updated through Connect Customer Customer
    * Profiles.</p> <p>Each event stream can be associated with only one Kinesis Data
    * Stream destination in the same region and Amazon Web Services account as the
    * customer profiles domain</p><p><h3>See Also:</h3>   <a

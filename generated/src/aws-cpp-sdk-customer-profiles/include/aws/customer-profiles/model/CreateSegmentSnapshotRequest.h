@@ -122,7 +122,7 @@ class CreateSegmentSnapshotRequest : public CustomerProfilesRequest {
   ///@{
   /**
    * <p>The destination to which the segment will be exported. This field must be
-   * provided if the request is not submitted from the Amazon Connect Admin
+   * provided if the request is not submitted from the Connect Customer Admin
    * Website.</p>
    */
   inline const Aws::String& GetDestinationUri() const { return m_destinationUri; }

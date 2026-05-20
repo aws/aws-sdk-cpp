@@ -22,6 +22,10 @@ KekValidationRequest& KekValidationRequest::operator=(JsonView jsonValue) {
     m_deriveKeyAlgorithm = SymmetricKeyAlgorithmMapper::GetSymmetricKeyAlgorithmForName(jsonValue.GetString("DeriveKeyAlgorithm"));
     m_deriveKeyAlgorithmHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RandomKeyMaxLength")) {
+    m_randomKeyMaxLength = RandomKeyMaxLengthMapper::GetRandomKeyMaxLengthForName(jsonValue.GetString("RandomKeyMaxLength"));
+    m_randomKeyMaxLengthHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue KekValidationRequest::Jsonize() const {
 
   if (m_deriveKeyAlgorithmHasBeenSet) {
     payload.WithString("DeriveKeyAlgorithm", SymmetricKeyAlgorithmMapper::GetNameForSymmetricKeyAlgorithm(m_deriveKeyAlgorithm));
+  }
+
+  if (m_randomKeyMaxLengthHasBeenSet) {
+    payload.WithString("RandomKeyMaxLength", RandomKeyMaxLengthMapper::GetNameForRandomKeyMaxLength(m_randomKeyMaxLength));
   }
 
   return payload;

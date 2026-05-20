@@ -32,6 +32,10 @@ GrantConstraints& GrantConstraints::operator=(JsonView jsonValue) {
     }
     m_encryptionContextEqualsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SourceArn")) {
+    m_sourceArn = jsonValue.GetString("SourceArn");
+    m_sourceArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -52,6 +56,10 @@ JsonValue GrantConstraints::Jsonize() const {
       encryptionContextEqualsJsonMap.WithString(encryptionContextEqualsItem.first, encryptionContextEqualsItem.second);
     }
     payload.WithObject("EncryptionContextEquals", std::move(encryptionContextEqualsJsonMap));
+  }
+
+  if (m_sourceArnHasBeenSet) {
+    payload.WithString("SourceArn", m_sourceArn);
   }
 
   return payload;

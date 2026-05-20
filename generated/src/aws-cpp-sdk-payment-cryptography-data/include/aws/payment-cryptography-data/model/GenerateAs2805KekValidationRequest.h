@@ -51,8 +51,8 @@ class GenerateAs2805KekValidationRequest : public PaymentCryptographyDataRequest
 
   ///@{
   /**
-   * <p>Parameter information for generating a random key for KEK validation to
-   * perform node-to-node initialization.</p>
+   * <p>Defines whether to generate a KEK validation request or KEK validation
+   * response for node-to-node initialization.</p>
    */
   inline const As2805KekValidationType& GetKekValidationType() const { return m_kekValidationType; }
   inline bool KekValidationTypeHasBeenSet() const { return m_kekValidationTypeHasBeenSet; }

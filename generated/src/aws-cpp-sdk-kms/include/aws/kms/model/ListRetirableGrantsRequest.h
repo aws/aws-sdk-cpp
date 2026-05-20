@@ -81,6 +81,8 @@ class ListRetirableGrantsRequest : public KMSRequest {
    * assumed role users. For help with the ARN syntax for a principal, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
    * ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+   * <p>You must specify either <code>RetiringPrincipal</code> or
+   * <code>RetiringServicePrincipal</code>, but not both.</p>
    */
   inline const Aws::String& GetRetiringPrincipal() const { return m_retiringPrincipal; }
   inline bool RetiringPrincipalHasBeenSet() const { return m_retiringPrincipalHasBeenSet; }
@@ -95,15 +97,39 @@ class ListRetirableGrantsRequest : public KMSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The retiring service principal for which to list grants. This filter is only
+   * usable by callers in a service principal.</p> <p>You must specify either
+   * <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not
+   * both.</p>
+   */
+  inline const Aws::String& GetRetiringServicePrincipal() const { return m_retiringServicePrincipal; }
+  inline bool RetiringServicePrincipalHasBeenSet() const { return m_retiringServicePrincipalHasBeenSet; }
+  template <typename RetiringServicePrincipalT = Aws::String>
+  void SetRetiringServicePrincipal(RetiringServicePrincipalT&& value) {
+    m_retiringServicePrincipalHasBeenSet = true;
+    m_retiringServicePrincipal = std::forward<RetiringServicePrincipalT>(value);
+  }
+  template <typename RetiringServicePrincipalT = Aws::String>
+  ListRetirableGrantsRequest& WithRetiringServicePrincipal(RetiringServicePrincipalT&& value) {
+    SetRetiringServicePrincipal(std::forward<RetiringServicePrincipalT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_limit{0};
 
   Aws::String m_marker;
 
   Aws::String m_retiringPrincipal;
+
+  Aws::String m_retiringServicePrincipal;
   bool m_limitHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_retiringPrincipalHasBeenSet = false;
+  bool m_retiringServicePrincipalHasBeenSet = false;
 };
 
 }  // namespace Model

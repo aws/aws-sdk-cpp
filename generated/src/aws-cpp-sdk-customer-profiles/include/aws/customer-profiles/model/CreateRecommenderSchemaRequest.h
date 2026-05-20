@@ -71,8 +71,8 @@ class CreateRecommenderSchemaRequest : public CustomerProfilesRequest {
   ///@{
   /**
    * <p>A map of dataset type to column definitions that specifies which data columns
-   * to include in the schema. Currently only the <code>_webAnalytics</code> key is
-   * supported.</p>
+   * to include in the schema. The <code>_webAnalytics</code> and
+   * <code>_catalogItem</code> keys are supported.</p>
    */
   inline const Aws::Map<Aws::String, Aws::Vector<RecommenderSchemaField>>& GetFields() const { return m_fields; }
   inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }

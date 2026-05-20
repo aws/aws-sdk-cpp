@@ -57,6 +57,7 @@
 #include <aws/kms/model/ListKeysRequest.h>
 #include <aws/kms/model/ListKeysResult.h>
 #include <aws/kms/model/ListResourceTagsResult.h>
+#include <aws/kms/model/ListRetirableGrantsRequest.h>
 #include <aws/kms/model/ListRetirableGrantsResult.h>
 #include <aws/kms/model/ReEncryptResult.h>
 #include <aws/kms/model/ReplicateKeyResult.h>

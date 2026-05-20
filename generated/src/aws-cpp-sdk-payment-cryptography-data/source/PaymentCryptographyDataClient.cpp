@@ -23,6 +23,7 @@
 #include <aws/payment-cryptography-data/model/DecryptDataRequest.h>
 #include <aws/payment-cryptography-data/model/EncryptDataRequest.h>
 #include <aws/payment-cryptography-data/model/GenerateAs2805KekValidationRequest.h>
+#include <aws/payment-cryptography-data/model/GenerateAuthRequestCryptogramRequest.h>
 #include <aws/payment-cryptography-data/model/GenerateCardValidationDataRequest.h>
 #include <aws/payment-cryptography-data/model/GenerateMacEmvPinChangeRequest.h>
 #include <aws/payment-cryptography-data/model/GenerateMacRequest.h>
@@ -243,6 +244,18 @@ GenerateAs2805KekValidationOutcome PaymentCryptographyDataClient::GenerateAs2805
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GenerateAs2805KekValidationOutcome(result.GetResultWithOwnership())
                             : GenerateAs2805KekValidationOutcome(std::move(result.GetError()));
+}
+
+GenerateAuthRequestCryptogramOutcome PaymentCryptographyDataClient::GenerateAuthRequestCryptogram(
+    const GenerateAuthRequestCryptogramRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cryptogram/generate");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateAuthRequestCryptogramOutcome(result.GetResultWithOwnership())
+                            : GenerateAuthRequestCryptogramOutcome(std::move(result.GetError()));
 }
 
 GenerateCardValidationDataOutcome PaymentCryptographyDataClient::GenerateCardValidationData(

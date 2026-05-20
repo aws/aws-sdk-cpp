@@ -49,5 +49,11 @@ Aws::Http::HeaderValueCollection InvokeModelRequest::GetRequestSpecificHeaders()
     headers.emplace("x-amzn-bedrock-service-tier", ServiceTierTypeMapper::GetNameForServiceTierType(m_serviceTier));
   }
 
+  if (m_requestMetadataHasBeenSet) {
+    ss << m_requestMetadata;
+    headers.emplace("x-amzn-bedrock-request-metadata", ss.str());
+    ss.str("");
+  }
+
   return headers;
 }

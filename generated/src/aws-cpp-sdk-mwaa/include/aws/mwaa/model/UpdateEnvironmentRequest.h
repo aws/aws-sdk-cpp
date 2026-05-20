@@ -516,7 +516,10 @@ class UpdateEnvironmentRequest : public MWAARequest {
    * <p>The Apache Airflow <i>Web server</i> access mode. For more information, refer
    * to <a
    * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
-   * Airflow access modes</a>.</p>
+   * Airflow access modes</a>.</p> <p>If set to <code>PUBLIC_AND_PRIVATE</code>,
+   * creates both a public network load balancer (NLB) for browser access and a
+   * private VPC endpoint (VPCE) for worker-to-webserver communication. This mode is
+   * only available for Apache Airflow version 3.2 and later.</p>
    */
   inline WebserverAccessMode GetWebserverAccessMode() const { return m_webserverAccessMode; }
   inline bool WebserverAccessModeHasBeenSet() const { return m_webserverAccessModeHasBeenSet; }

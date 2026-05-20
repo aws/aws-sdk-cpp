@@ -117,7 +117,8 @@ class ListGrantsRequest : public KMSRequest {
   ///@{
   /**
    * <p>Returns only grants where the specified principal is the grantee principal
-   * for the grant.</p>
+   * for the grant.</p> <p>You can specify either <code>GranteePrincipal</code> or
+   * <code>GranteeServicePrincipal</code>, but not both.</p>
    */
   inline const Aws::String& GetGranteePrincipal() const { return m_granteePrincipal; }
   inline bool GranteePrincipalHasBeenSet() const { return m_granteePrincipalHasBeenSet; }
@@ -132,6 +133,28 @@ class ListGrantsRequest : public KMSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Returns only grants where the specified Amazon Web Services service principal
+   * is the grantee service principal for the grant. This filter is only usable by
+   * callers in a service principal.</p> <p>You can specify either
+   * <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not
+   * both.</p>
+   */
+  inline const Aws::String& GetGranteeServicePrincipal() const { return m_granteeServicePrincipal; }
+  inline bool GranteeServicePrincipalHasBeenSet() const { return m_granteeServicePrincipalHasBeenSet; }
+  template <typename GranteeServicePrincipalT = Aws::String>
+  void SetGranteeServicePrincipal(GranteeServicePrincipalT&& value) {
+    m_granteeServicePrincipalHasBeenSet = true;
+    m_granteeServicePrincipal = std::forward<GranteeServicePrincipalT>(value);
+  }
+  template <typename GranteeServicePrincipalT = Aws::String>
+  ListGrantsRequest& WithGranteeServicePrincipal(GranteeServicePrincipalT&& value) {
+    SetGranteeServicePrincipal(std::forward<GranteeServicePrincipalT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_limit{0};
 
@@ -142,11 +165,14 @@ class ListGrantsRequest : public KMSRequest {
   Aws::String m_grantId;
 
   Aws::String m_granteePrincipal;
+
+  Aws::String m_granteeServicePrincipal;
   bool m_limitHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_keyIdHasBeenSet = false;
   bool m_grantIdHasBeenSet = false;
   bool m_granteePrincipalHasBeenSet = false;
+  bool m_granteeServicePrincipalHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -131,8 +131,11 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
    * types for specific data operations</a> in the <i>Amazon Web Services Payment
    * Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation
-   * can't be used across different Amazon Web Services accounts.</p> <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a>EncryptData</a> </p> </li> <li> <p> <a
+   * supports cross-account use when the key has a resource-based policy that grants
+   * access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>EncryptData</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
@@ -206,8 +209,11 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
    * types for specific data operations</a> in the <i>Amazon Web Services Payment
    * Cryptography User Guide</i>.</p> <p> <b>Cross-account use</b>: This operation
-   * can't be used across different Amazon Web Services accounts.</p> <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a>DecryptData</a> </p> </li> <li> <p> <a
+   * supports cross-account use when the key has a resource-based policy that grants
+   * access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>DecryptData</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
@@ -237,33 +243,44 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
   }
 
   /**
-   * <p>Establishes node-to-node initialization between payment processing nodes such
-   * as an acquirer, issuer or payment network using Australian Standard 2805
-   * (AS2805).</p> <p>During node-to-node initialization, both communicating nodes
-   * must validate that they possess the correct Key Encrypting Keys (KEKs) before
-   * proceeding with session key exchange. In AS2805, the sending KEK (KEKs) of one
-   * node corresponds to the receiving KEK (KEKr) of its partner node. Each node uses
-   * its KEK to encrypt and decrypt session keys exchanged between the nodes. A KEK
-   * can be created or imported into Amazon Web Services Payment Cryptography using
-   * either the <a
+   * <p>Generates a <code>KekValidationRequest</code> or a
+   * <code>KekValidationResponse</code> for node-to-node initialization between
+   * payment processing nodes using <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/as2805.html">Australian
+   * Standard 2805 (AS2805)</a>.</p> <p>During node-to-node initialization, both
+   * communicating nodes must validate that they possess the correct Key Encrypting
+   * Keys (KEKs) before proceeding with session key exchange. In AS2805, the sending
+   * KEK (KEKs) of one node corresponds to the receiving KEK (KEKr) of its partner
+   * node. Each node uses its KEK to encrypt and decrypt session keys exchanged
+   * between the nodes. A KEK can be created or imported into Amazon Web Services
+   * Payment Cryptography using either the <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
    * or <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
-   * operations.</p> <p>The node initiating communication can use
-   * <code>GenerateAS2805KekValidation</code> to generate a combined KEK validation
-   * request and KEK validation response to send to the partnering node for
-   * validation. When invoked, the API internally generates a random sending key
-   * encrypted under KEKs and provides a receiving key encrypted under KEKr as
-   * response. The initiating node sends the response returned by this API to its
-   * partner for validation.</p> <p>For information about valid keys for this
-   * operation, see <a
+   * operations.</p> <p>To use <code>GenerateAs2805KekValidation</code> to generate a
+   * KEK validation request, set <code>KekValidationType</code> to
+   * <code>KekValidationRequest</code>. This operation returns both
+   * <code>RandomKeySend</code> (KRs) and <code>RandomKeyReceive</code> (KRr) as
+   * response values. The partnering node receives the KRs, uses its KEKr to decrypt
+   * it, and generates a KRr which is an inverted value of KRs. The node receiving
+   * the KRr validates it against its own KRr generated during KEK validation request
+   * outside of Amazon Web Services Payment Cryptography.</p> <p>You can also use
+   * this operation to generate a KEK validation response, by setting
+   * <code>KekValidationType</code> to <code>KekValidationResponse</code> and
+   * providing the incoming KRs. This operation then calculates a KRr. To learn more
+   * about more about node-to-node initialization, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/as2805.kekvalidation.html">Validation
+   * of KEK</a> in the <i>Amazon Web Services Payment Cryptography User
+   * Guide</i>.</p> <p>For information about valid keys for this operation, see <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
    * key attributes</a> and <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
    * types for specific data operations</a> in the <i>Amazon Web Services Payment
    * Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation
-   * can't be used across different Amazon Web Services accounts.</p><p><h3>See
-   * Also:</h3>   <a
+   * supports cross-account use when the key has a resource-based policy that grants
+   * access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateAs2805KekValidation">AWS
    * API Reference</a></p>
    */
@@ -292,6 +309,62 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
   }
 
   /**
+   * <p>Generates an Authorization Request Cryptogram (ARQC) for an EMV chip payment
+   * card authorization. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/data-operations.generateauthrequestcryptogram.html">Generate
+   * auth request cryptogram</a> in the <i>Amazon Web Services Payment Cryptography
+   * User Guide</i>.</p> <p>ARQC generation uses an Issuer Master Key (IMK) for
+   * application cryptograms (TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS) to derive a session
+   * key, which is then used to generate the cryptogram from the provided transaction
+   * data (when applicable). To use this operation, you must first create or import
+   * an IMK-AC key by calling <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
+   * The <code>KeyModesOfUse</code> should be set to <code>DeriveKey</code> for the
+   * IMK-AC encryption key.</p>  <p>This operation is intended for
+   * development and testing scenarios only. It is not recommended to use this
+   * operation as a substitute for card-based cryptogram generation in production
+   * payment flows.</p>  <p>For information about valid keys for this
+   * operation, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
+   * key attributes</a> and <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
+   * types for specific data operations</a> in the <i>Amazon Web Services Payment
+   * Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation
+   * supports cross-account use when the key has a resource-based policy that grants
+   * access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>VerifyAuthRequestCryptogram</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateAuthRequestCryptogram">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GenerateAuthRequestCryptogramOutcome GenerateAuthRequestCryptogram(
+      const Model::GenerateAuthRequestCryptogramRequest& request) const;
+
+  /**
+   * A Callable wrapper for GenerateAuthRequestCryptogram that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GenerateAuthRequestCryptogramRequestT = Model::GenerateAuthRequestCryptogramRequest>
+  Model::GenerateAuthRequestCryptogramOutcomeCallable GenerateAuthRequestCryptogramCallable(
+      const GenerateAuthRequestCryptogramRequestT& request) const {
+    return SubmitCallable(&PaymentCryptographyDataClient::GenerateAuthRequestCryptogram, request);
+  }
+
+  /**
+   * An Async wrapper for GenerateAuthRequestCryptogram that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GenerateAuthRequestCryptogramRequestT = Model::GenerateAuthRequestCryptogramRequest>
+  void GenerateAuthRequestCryptogramAsync(const GenerateAuthRequestCryptogramRequestT& request,
+                                          const GenerateAuthRequestCryptogramResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PaymentCryptographyDataClient::GenerateAuthRequestCryptogram, request, handler, context);
+  }
+
+  /**
    * <p>Generates card-related validation data using algorithms such as Card
    * Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2),
    * or Card Security Codes (CSC). For more information, see <a
@@ -314,8 +387,10 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
    * types for specific data operations</a> in the <i>Amazon Web Services Payment
    * Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation
-   * can't be used across different Amazon Web Services accounts.</p> <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a
+   * supports cross-account use when the key has a resource-based policy that grants
+   * access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
    * </p> </li> <li> <p> <a>VerifyCardValidationData</a> </p> </li> </ul><p><h3>See
    * Also:</h3>   <a
@@ -366,9 +441,11 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
    * types for specific data operations</a> in the <i>Amazon Web Services Payment
    * Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation
-   * can't be used across different Amazon Web Services accounts.</p> <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a>VerifyMac</a> </p> </li> </ul><p><h3>See
-   * Also:</h3>   <a
+   * supports cross-account use when the key has a resource-based policy that grants
+   * access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>VerifyMac</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateMac">AWS
    * API Reference</a></p>
    */
@@ -415,9 +492,12 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * does not involve PIN change. When assigning IAM permissions, it is important to
    * understand that <a>EncryptData</a> using EMV keys and <a>GenerateMac</a> perform
    * similar functions to this command.</p>  <p> <b>Cross-account use</b>:
-   * This operation can't be used across different Amazon Web Services accounts.</p>
-   * <p> <b>Related operations:</b> </p> <ul> <li> <p> <a>EncryptData</a> </p> </li>
-   * <li> <p> <a>GenerateMac</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * This operation supports cross-account use when the key has a resource-based
+   * policy that grants access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>EncryptData</a> </p> </li> <li> <p> <a>GenerateMac</a> </p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateMacEmvPinChange">AWS
    * API Reference</a></p>
    */
@@ -468,10 +548,13 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
    * types for specific data operations</a> in the <i>Amazon Web Services Payment
    * Cryptography User Guide</i>.</p> <p> <b>Cross-account use</b>: This operation
-   * can't be used across different Amazon Web Services accounts.</p> <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a>GenerateCardValidationData</a> </p> </li>
-   * <li> <p> <a>TranslatePinData</a> </p> </li> <li> <p> <a>VerifyPinData</a> </p>
-   * </li> </ul><p><h3>See Also:</h3>   <a
+   * supports cross-account use when the key has a resource-based policy that grants
+   * access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>GenerateCardValidationData</a> </p> </li> <li> <p> <a>TranslatePinData</a>
+   * </p> </li> <li> <p> <a>VerifyPinData</a> </p> </li> </ul><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GeneratePinData">AWS
    * API Reference</a></p>
    */
@@ -526,9 +609,11 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
    * types for specific data operations</a> in the <i>Amazon Web Services Payment
    * Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation
-   * can't be used across different Amazon Web Services accounts.</p> <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a>DecryptData</a> </p> </li> <li> <p>
-   * <a>EncryptData</a> </p> </li> <li> <p> <a
+   * supports cross-account use when the key has a resource-based policy that grants
+   * access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>DecryptData</a> </p> </li> <li> <p> <a>EncryptData</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
@@ -582,8 +667,10 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
    * types for specific data operations</a> in the <i>Amazon Web Services Payment
    * Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation
-   * can't be used across different Amazon Web Services accounts.</p> <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a
+   * supports cross-account use when the key has a resource-based policy that grants
+   * access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a>
@@ -657,10 +744,13 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * Cryptography User Guide</i>.</p>  <p>Amazon Web Services Payment
    * Cryptography currently supports ISO PIN block 4 translation for PIN block built
    * using legacy PAN length. That is, PAN is the right most 12 digits excluding the
-   * check digits.</p>  <p> <b>Cross-account use</b>: This operation can't be
-   * used across different Amazon Web Services accounts.</p> <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a>GeneratePinData</a> </p> </li> <li> <p>
-   * <a>VerifyPinData</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * check digits.</p>  <p> <b>Cross-account use</b>: This operation supports
+   * cross-account use when the key has a resource-based policy that grants access.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>GeneratePinData</a> </p> </li> <li> <p> <a>VerifyPinData</a> </p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/TranslatePinData">AWS
    * API Reference</a></p>
    */
@@ -709,9 +799,12 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
    * types for specific data operations</a> in the <i>Amazon Web Services Payment
    * Cryptography User Guide</i>.</p> <p> <b>Cross-account use</b>: This operation
-   * can't be used across different Amazon Web Services accounts.</p> <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a>VerifyCardValidationData</a> </p> </li>
-   * <li> <p> <a>VerifyPinData</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * supports cross-account use when the key has a resource-based policy that grants
+   * access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>VerifyCardValidationData</a> </p> </li> <li> <p> <a>VerifyPinData</a> </p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyAuthRequestCryptogram">AWS
    * API Reference</a></p>
    */
@@ -759,10 +852,13 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
    * types for specific data operations</a> in the <i>Amazon Web Services Payment
    * Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation
-   * can't be used across different Amazon Web Services accounts.</p> <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a>GenerateCardValidationData</a> </p> </li>
-   * <li> <p> <a>VerifyAuthRequestCryptogram</a> </p> </li> <li> <p>
-   * <a>VerifyPinData</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * supports cross-account use when the key has a resource-based policy that grants
+   * access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>GenerateCardValidationData</a> </p> </li> <li> <p>
+   * <a>VerifyAuthRequestCryptogram</a> </p> </li> <li> <p> <a>VerifyPinData</a> </p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyCardValidationData">AWS
    * API Reference</a></p>
    */
@@ -801,9 +897,11 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
    * types for specific data operations</a> in the <i>Amazon Web Services Payment
    * Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation
-   * can't be used across different Amazon Web Services accounts.</p> <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a>GenerateMac</a> </p> </li> </ul><p><h3>See
-   * Also:</h3>   <a
+   * supports cross-account use when the key has a resource-based policy that grants
+   * access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>GenerateMac</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyMac">AWS
    * API Reference</a></p>
    */
@@ -844,9 +942,12 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
    * types for specific data operations</a> in the <i>Amazon Web Services Payment
    * Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation
-   * can't be used across different Amazon Web Services accounts.</p> <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a>GeneratePinData</a> </p> </li> <li> <p>
-   * <a>TranslatePinData</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * supports cross-account use when the key has a resource-based policy that grants
+   * access. For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+   * policies</a>.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>GeneratePinData</a> </p> </li> <li> <p> <a>TranslatePinData</a> </p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyPinData">AWS
    * API Reference</a></p>
    */

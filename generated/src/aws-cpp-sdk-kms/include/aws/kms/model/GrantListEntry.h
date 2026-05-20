@@ -111,13 +111,15 @@ class GrantListEntry {
 
   ///@{
   /**
-   * <p>The identity that gets the permissions in the grant.</p> <p>The
-   * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
-   * usually contains the user or role designated as the grantee principal in the
-   * grant. However, when the grantee principal in the grant is an Amazon Web
-   * Services service, the <code>GranteePrincipal</code> field contains the <a
+   * <p>The identity that gets the permissions in the grant.</p> <p>When a grant is
+   * created with the <code>GranteePrincipal</code> field, the
+   * <code>ListGrants</code> response usually contains the user or role designated as
+   * the grantee principal in the grant. However, if the grantee principal is an
+   * Amazon Web Services service, the <code>GranteePrincipal</code> field contains an
+   * Amazon Web Services <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
-   * principal</a>, which might represent several different grantee principals.</p>
+   * principal</a>, which might correspond to several different grantee principals,
+   * such as an IAM user, IAM role, or Amazon Web Services account.</p>
    */
   inline const Aws::String& GetGranteePrincipal() const { return m_granteePrincipal; }
   inline bool GranteePrincipalHasBeenSet() const { return m_granteePrincipalHasBeenSet; }
@@ -194,8 +196,8 @@ class GrantListEntry {
 
   ///@{
   /**
-   * <p>A list of key-value pairs that must be present in the encryption context of
-   * certain subsequent operations that the grant allows.</p>
+   * <p>The constraints on the grant, such as encryption context pairs or a
+   * SourceArn, that restrict the subsequent operations the grant allows.</p>
    */
   inline const GrantConstraints& GetConstraints() const { return m_constraints; }
   inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
@@ -207,6 +209,46 @@ class GrantListEntry {
   template <typename ConstraintsT = GrantConstraints>
   GrantListEntry& WithConstraints(ConstraintsT&& value) {
     SetConstraints(std::forward<ConstraintsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+   * principal</a> that gets the permissions in the grant.</p>
+   */
+  inline const Aws::String& GetGranteeServicePrincipal() const { return m_granteeServicePrincipal; }
+  inline bool GranteeServicePrincipalHasBeenSet() const { return m_granteeServicePrincipalHasBeenSet; }
+  template <typename GranteeServicePrincipalT = Aws::String>
+  void SetGranteeServicePrincipal(GranteeServicePrincipalT&& value) {
+    m_granteeServicePrincipalHasBeenSet = true;
+    m_granteeServicePrincipal = std::forward<GranteeServicePrincipalT>(value);
+  }
+  template <typename GranteeServicePrincipalT = Aws::String>
+  GrantListEntry& WithGranteeServicePrincipal(GranteeServicePrincipalT&& value) {
+    SetGranteeServicePrincipal(std::forward<GranteeServicePrincipalT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+   * principal</a> that can retire the grant.</p>
+   */
+  inline const Aws::String& GetRetiringServicePrincipal() const { return m_retiringServicePrincipal; }
+  inline bool RetiringServicePrincipalHasBeenSet() const { return m_retiringServicePrincipalHasBeenSet; }
+  template <typename RetiringServicePrincipalT = Aws::String>
+  void SetRetiringServicePrincipal(RetiringServicePrincipalT&& value) {
+    m_retiringServicePrincipalHasBeenSet = true;
+    m_retiringServicePrincipal = std::forward<RetiringServicePrincipalT>(value);
+  }
+  template <typename RetiringServicePrincipalT = Aws::String>
+  GrantListEntry& WithRetiringServicePrincipal(RetiringServicePrincipalT&& value) {
+    SetRetiringServicePrincipal(std::forward<RetiringServicePrincipalT>(value));
     return *this;
   }
   ///@}
@@ -228,6 +270,10 @@ class GrantListEntry {
   Aws::Vector<GrantOperation> m_operations;
 
   GrantConstraints m_constraints;
+
+  Aws::String m_granteeServicePrincipal;
+
+  Aws::String m_retiringServicePrincipal;
   bool m_keyIdHasBeenSet = false;
   bool m_grantIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -237,6 +283,8 @@ class GrantListEntry {
   bool m_issuingAccountHasBeenSet = false;
   bool m_operationsHasBeenSet = false;
   bool m_constraintsHasBeenSet = false;
+  bool m_granteeServicePrincipalHasBeenSet = false;
+  bool m_retiringServicePrincipalHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -27,6 +27,10 @@ Aws::String ListRetirableGrantsRequest::SerializePayload() const {
     payload.WithString("RetiringPrincipal", m_retiringPrincipal);
   }
 
+  if (m_retiringServicePrincipalHasBeenSet) {
+    payload.WithString("RetiringServicePrincipal", m_retiringServicePrincipal);
+  }
+
   return payload.View().WriteReadable();
 }
 

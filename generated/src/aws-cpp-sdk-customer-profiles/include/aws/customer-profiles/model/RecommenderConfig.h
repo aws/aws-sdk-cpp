@@ -56,7 +56,8 @@ class RecommenderConfig {
 
   ///@{
   /**
-   * <p>How often the recommender should retrain its model with new data.</p>
+   * <p>How often the recommender should retrain its model with new data. If set to
+   * 0, automatic retraining will not be enabled.</p>
    */
   inline int GetTrainingFrequency() const { return m_trainingFrequency; }
   inline bool TrainingFrequencyHasBeenSet() const { return m_trainingFrequencyHasBeenSet; }
@@ -91,12 +92,15 @@ class RecommenderConfig {
 
   ///@{
   /**
-   * <p>A map of dataset type to a list of column names to train on. The column names
-   * must be a subset of the columns defined in the recommender schema. If not
-   * specified, all columns in the schema are used for training. The following
-   * columns are always included and do not need to be specified:
-   * <code>Item.Id</code>, <code>ItemList[].Id</code>, <code>EventTimestamp</code>,
-   * <code>EventType</code>, and <code>EventValue</code>.</p>
+   * <p>A map of dataset type to a list of column names to train on. The
+   * <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported. The
+   * column names must be a subset of the columns defined in the recommender schema.
+   * If not specified, all columns in the schema are used for training. The following
+   * columns are always included in training and do not need to be specified:
+   * <code>Item.Id</code>, <code>EventTimestamp</code>, and <code>EventType</code>
+   * for <code>_webAnalytics</code>; <code>Id</code> for <code>_catalogItem</code>.
+   * Mutually exclusive with ExcludedColumns — both cannot be specified in the same
+   * request.</p>
    */
   inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetIncludedColumns() const { return m_includedColumns; }
   inline bool IncludedColumnsHasBeenSet() const { return m_includedColumnsHasBeenSet; }
@@ -117,6 +121,38 @@ class RecommenderConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A map of dataset type to a list of column names to exclude from training. The
+   * <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported. The
+   * column names must be valid columns defined in the recommender schema. All
+   * columns in the schema except the listed columns will be used for training. The
+   * following columns are mandatory and cannot be excluded: <code>Item.Id</code>,
+   * <code>EventTimestamp</code>, and <code>EventType</code> for
+   * <code>_webAnalytics</code>; <code>Id</code> for <code>_catalogItem</code>.
+   * Mutually exclusive with IncludedColumns — both cannot be specified in the same
+   * request.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetExcludedColumns() const { return m_excludedColumns; }
+  inline bool ExcludedColumnsHasBeenSet() const { return m_excludedColumnsHasBeenSet; }
+  template <typename ExcludedColumnsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+  void SetExcludedColumns(ExcludedColumnsT&& value) {
+    m_excludedColumnsHasBeenSet = true;
+    m_excludedColumns = std::forward<ExcludedColumnsT>(value);
+  }
+  template <typename ExcludedColumnsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+  RecommenderConfig& WithExcludedColumns(ExcludedColumnsT&& value) {
+    SetExcludedColumns(std::forward<ExcludedColumnsT>(value));
+    return *this;
+  }
+  template <typename ExcludedColumnsKeyT = Aws::String, typename ExcludedColumnsValueT = Aws::Vector<Aws::String>>
+  RecommenderConfig& AddExcludedColumns(ExcludedColumnsKeyT&& key, ExcludedColumnsValueT&& value) {
+    m_excludedColumnsHasBeenSet = true;
+    m_excludedColumns.emplace(std::forward<ExcludedColumnsKeyT>(key), std::forward<ExcludedColumnsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EventsConfig m_eventsConfig;
 
@@ -125,10 +161,13 @@ class RecommenderConfig {
   InferenceConfig m_inferenceConfig;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_includedColumns;
+
+  Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_excludedColumns;
   bool m_eventsConfigHasBeenSet = false;
   bool m_trainingFrequencyHasBeenSet = false;
   bool m_inferenceConfigHasBeenSet = false;
   bool m_includedColumnsHasBeenSet = false;
+  bool m_excludedColumnsHasBeenSet = false;
 };
 
 }  // namespace Model

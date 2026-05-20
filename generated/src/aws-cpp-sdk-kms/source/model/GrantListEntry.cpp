@@ -57,6 +57,14 @@ GrantListEntry& GrantListEntry::operator=(JsonView jsonValue) {
     m_constraints = jsonValue.GetObject("Constraints");
     m_constraintsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GranteeServicePrincipal")) {
+    m_granteeServicePrincipal = jsonValue.GetString("GranteeServicePrincipal");
+    m_granteeServicePrincipalHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RetiringServicePrincipal")) {
+    m_retiringServicePrincipal = jsonValue.GetString("RetiringServicePrincipal");
+    m_retiringServicePrincipalHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -101,6 +109,14 @@ JsonValue GrantListEntry::Jsonize() const {
 
   if (m_constraintsHasBeenSet) {
     payload.WithObject("Constraints", m_constraints.Jsonize());
+  }
+
+  if (m_granteeServicePrincipalHasBeenSet) {
+    payload.WithString("GranteeServicePrincipal", m_granteeServicePrincipal);
+  }
+
+  if (m_retiringServicePrincipalHasBeenSet) {
+    payload.WithString("RetiringServicePrincipal", m_retiringServicePrincipal);
   }
 
   return payload;

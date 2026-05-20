@@ -443,8 +443,12 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
    * create and manage grants. When authorizing access to a KMS key, grants are
    * considered along with key policies and IAM policies. Grants are often used for
    * temporary permissions because you can create one, use its permissions, and
-   * delete it without changing your key policies or IAM policies. </p> <p>For
-   * detailed information about grants, including grant terminology, see <a
+   * delete it without changing your key policies or IAM policies. </p> <p>You can
+   * create a grant for an Amazon Web Services principal (IAM user, IAM role, or
+   * Amazon Web Services account) by specifying the <code>GranteePrincipal</code>
+   * parameter. You can also create a grant for an Amazon Web Services service
+   * principal by specifying the <code>GranteeServicePrincipal</code> parameter.</p>
+   * <p>For detailed information about grants, including grant terminology, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
    * in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For
    * examples of creating grants in several programming languages, see <a
@@ -2543,23 +2547,31 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Gets a list of all grants for the specified KMS key. </p> <p>You must specify
-   * the KMS key in all requests. You can filter the grant list by grant ID or
-   * grantee principal.</p> <p>For detailed information about grants, including grant
-   * terminology, see <a
+   * the KMS key in all requests. You can filter the grant list by grant ID, grantee
+   * principal, or grantee service principal.</p> <p>For detailed information about
+   * grants, including grant terminology, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
    * in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For
    * examples of creating grants in several programming languages, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/example_kms_CreateGrant_section.html">Use
-   * CreateGrant with an Amazon Web Services SDK or CLI</a>. </p>  <p>The
-   * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
-   * usually contains the user or role designated as the grantee principal in the
-   * grant. However, when the grantee principal in the grant is an Amazon Web
-   * Services service, the <code>GranteePrincipal</code> field contains the <a
+   * CreateGrant with an Amazon Web Services SDK or CLI</a>. </p>  <p>When a
+   * grant is created with the <code>GranteePrincipal</code> field, the
+   * <code>ListGrants</code> response usually contains the user or role designated as
+   * the grantee principal in the grant. However, if the grantee principal is an
+   * Amazon Web Services service, the <code>GranteePrincipal</code> field contains an
+   * Amazon Web Services <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
-   * principal</a>, which might represent several different grantee principals.</p>
-   *  <p> <b>Cross-account use</b>: Yes. To perform this operation on a KMS
-   * key in a different Amazon Web Services account, specify the key ARN in the value
-   * of the <code>KeyId</code> parameter.</p> <p> <b>Required permissions</b>: <a
+   * principal</a>, which might correspond to several different grantee principals,
+   * such as an IAM user, IAM role, or Amazon Web Services account.</p> <p>When a
+   * grant is created with the <code>GranteeServicePrincipal</code> field, the
+   * <code>ListGrants</code> response always includes a
+   * <code>GranteeServicePrincipal</code> that indicates the grantee is actually an
+   * Amazon Web Services <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+   * principal</a>.</p>  <p> <b>Cross-account use</b>: Yes. To perform this
+   * operation on a KMS key in a different Amazon Web Services account, specify the
+   * key ARN in the value of the <code>KeyId</code> parameter.</p> <p> <b>Required
+   * permissions</b>: <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListGrants</a>
    * (key policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
    * <a>CreateGrant</a> </p> </li> <li> <p> <a>ListRetirableGrants</a> </p> </li>
@@ -2755,12 +2767,13 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Returns information about all grants in the Amazon Web Services account and
-   * Region that have the specified retiring principal. </p> <p>You can specify any
-   * principal in your Amazon Web Services account. The grants that are returned
-   * include grants for KMS keys in your Amazon Web Services account and other Amazon
-   * Web Services accounts. You might use this operation to determine which grants
-   * you may retire. To retire a grant, use the <a>RetireGrant</a> operation.</p>
-   * <p>For detailed information about grants, including grant terminology, see <a
+   * Region that have the specified retiring principal or retiring service principal.
+   * </p> <p>You can specify any principal in your Amazon Web Services account. The
+   * grants that are returned include grants for KMS keys in your Amazon Web Services
+   * account and other Amazon Web Services accounts. You might use this operation to
+   * determine which grants you may retire. To retire a grant, use the
+   * <a>RetireGrant</a> operation.</p> <p>For detailed information about grants,
+   * including grant terminology, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
    * in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For
    * examples of creating grants in several programming languages, see <a
@@ -2775,30 +2788,33 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
    * permission) in any Amazon Web Services account other than your own.</p> <p>
    * <b>Required permissions</b>: <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListRetirableGrants</a>
-   * (IAM policy) in your Amazon Web Services account.</p>  <p>KMS authorizes
+   * (IAM policy) in your Amazon Web Services account.</p>  <p>When listing
+   * retirable grants by <code>RetiringPrincipal</code>, KMS authorizes
    * <code>ListRetirableGrants</code> requests by evaluating the caller account's
    * kms:ListRetirableGrants permissions. The authorized resource in
    * <code>ListRetirableGrants</code> calls is the retiring principal specified in
    * the request. KMS does not evaluate the caller's permissions to verify their
    * access to any KMS keys or grants that might be returned by the
-   * <code>ListRetirableGrants</code> call.</p>  <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p>
-   * <a>ListGrants</a> </p> </li> <li> <p> <a>RetireGrant</a> </p> </li> <li> <p>
-   * <a>RevokeGrant</a> </p> </li> </ul> <p> <b>Eventual consistency</b>: The KMS API
-   * follows an eventual consistency model. For more information, see <a
+   * <code>ListRetirableGrants</code> call.</p> <p>The
+   * <code>RetiringServicePrincipal</code> filter is only usable by callers in a
+   * service principal.</p>  <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>CreateGrant</a> </p> </li> <li> <p> <a>ListGrants</a> </p> </li> <li> <p>
+   * <a>RetireGrant</a> </p> </li> <li> <p> <a>RevokeGrant</a> </p> </li> </ul> <p>
+   * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
    * eventual consistency</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">AWS
    * API Reference</a></p>
    */
-  virtual Model::ListRetirableGrantsOutcome ListRetirableGrants(const Model::ListRetirableGrantsRequest& request) const;
+  virtual Model::ListRetirableGrantsOutcome ListRetirableGrants(const Model::ListRetirableGrantsRequest& request = {}) const;
 
   /**
    * A Callable wrapper for ListRetirableGrants that returns a future to the operation so that it can be executed in parallel to other
    * requests.
    */
   template <typename ListRetirableGrantsRequestT = Model::ListRetirableGrantsRequest>
-  Model::ListRetirableGrantsOutcomeCallable ListRetirableGrantsCallable(const ListRetirableGrantsRequestT& request) const {
+  Model::ListRetirableGrantsOutcomeCallable ListRetirableGrantsCallable(const ListRetirableGrantsRequestT& request = {}) const {
     return SubmitCallable(&KMSClient::ListRetirableGrants, request);
   }
 
@@ -2807,8 +2823,9 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
    * has finished.
    */
   template <typename ListRetirableGrantsRequestT = Model::ListRetirableGrantsRequest>
-  void ListRetirableGrantsAsync(const ListRetirableGrantsRequestT& request, const ListRetirableGrantsResponseReceivedHandler& handler,
-                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void ListRetirableGrantsAsync(const ListRetirableGrantsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const ListRetirableGrantsRequestT& request = {}) const {
     return SubmitAsync(&KMSClient::ListRetirableGrants, request, handler, context);
   }
 
@@ -2910,10 +2927,14 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
    * state. For details, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
    * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-   * <p> <b>Cross-account use</b>: Yes. The source KMS key and destination KMS key
-   * can be in different Amazon Web Services accounts. Either or both KMS keys can be
-   * in a different account than the caller. To specify a KMS key in a different
-   * account, use the <a
+   *  <p>When using grants with <code>SourceArn</code> constraints for
+   * <code>ReEncrypt</code> operations, the grants on both the source KMS key (for
+   * <code>ReEncryptFrom</code>) and the destination KMS key (for
+   * <code>ReEncryptTo</code>) must specify the same <code>SourceArn</code> value.
+   * </p>  <p> <b>Cross-account use</b>: Yes. The source KMS key and
+   * destination KMS key can be in different Amazon Web Services accounts. Either or
+   * both KMS keys can be in a different account than the caller. To specify a KMS
+   * key in a different account, use the <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
    * ARN</a> or <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-alias-ARN">alias
