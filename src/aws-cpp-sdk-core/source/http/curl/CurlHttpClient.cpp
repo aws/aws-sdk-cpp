@@ -750,6 +750,8 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             {
                 curl_easy_setopt(connectionHandle, CURLOPT_SSL_OPTIONS, CURLSSLOPT_REVOKE_BEST_EFFORT);
             }
+#else
+            AWS_UNREFERENCED_PARAM(m_allowCrlOffline);
 #endif
         }
         else
