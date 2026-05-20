@@ -302,12 +302,6 @@ namespace Aws
              */
             bool verifySSL = true;
             /**
-             * If set to true, the SDK will not fail SSL connections when Certificate Revocation
-             * List (CRL) servers are unreachable. Only applies on Windows when using the curl
-             * HTTP client with Schannel. Off by default to maintain strict revocation checking.
-             */
-            bool allowCrlOffline = false;
-            /**
              * If your Certificate Authority path is different from the default, you can tell
              * clients that aren't using the default trust store where to find your CA trust store.
              * If you are on windows or apple, you likely don't want this.
@@ -493,6 +487,17 @@ namespace Aws
                */
               bool useAnonymousAuth = false;
             } winHTTPOptions;
+
+            /**
+             * Configuration that is specifically used for the curl http client
+             */
+            struct CurlOptions {
+              /**
+               * If set to true, SSL connections will use best-effort revocation checking,
+               * proceeding even when CRL servers are unreachable. Off by default.
+               */
+              bool revokeBestEffort = false;
+            } curlOptions;
 
           /**
             * The AWS account ID. Used for account-based endpoint routing. An AWS account ID has a format like 111122223333.
