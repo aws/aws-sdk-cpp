@@ -745,13 +745,17 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1);
 #endif
 
-#if defined(PLATFORM_WINDOWS) && LIBCURL_VERSION_NUM >= 0x074600 // 7.70.0
+#if LIBCURL_VERSION_NUM >= 0x074600 // 7.70.0
             if (m_revokeBestEffort)
             {
                 curl_easy_setopt(connectionHandle, CURLOPT_SSL_OPTIONS, CURLSSLOPT_REVOKE_BEST_EFFORT);
             }
 #else
-            (void)m_revokeBestEffort;
+            if (m_revokeBestEffort)
+            {
+                AWS_LOGSTREAM_WARN(CURL_HTTP_CLIENT_TAG,
+                    "curlOptions.revokeBestEffort requires libcurl >= 7.70.0");
+            }
 #endif
         }
         else
