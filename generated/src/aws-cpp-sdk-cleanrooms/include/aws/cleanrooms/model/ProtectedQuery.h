@@ -255,6 +255,24 @@ class ProtectedQuery {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The account ID of the member that pays for the query compute costs.</p>
+   */
+  inline const Aws::String& GetQueryComputePayerAccountId() const { return m_queryComputePayerAccountId; }
+  inline bool QueryComputePayerAccountIdHasBeenSet() const { return m_queryComputePayerAccountIdHasBeenSet; }
+  template <typename QueryComputePayerAccountIdT = Aws::String>
+  void SetQueryComputePayerAccountId(QueryComputePayerAccountIdT&& value) {
+    m_queryComputePayerAccountIdHasBeenSet = true;
+    m_queryComputePayerAccountId = std::forward<QueryComputePayerAccountIdT>(value);
+  }
+  template <typename QueryComputePayerAccountIdT = Aws::String>
+  ProtectedQuery& WithQueryComputePayerAccountId(QueryComputePayerAccountIdT&& value) {
+    SetQueryComputePayerAccountId(std::forward<QueryComputePayerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -279,6 +297,8 @@ class ProtectedQuery {
   DifferentialPrivacyParameters m_differentialPrivacy;
 
   ComputeConfiguration m_computeConfiguration;
+
+  Aws::String m_queryComputePayerAccountId;
   bool m_idHasBeenSet = false;
   bool m_membershipIdHasBeenSet = false;
   bool m_membershipArnHasBeenSet = false;
@@ -291,6 +311,7 @@ class ProtectedQuery {
   bool m_errorHasBeenSet = false;
   bool m_differentialPrivacyHasBeenSet = false;
   bool m_computeConfigurationHasBeenSet = false;
+  bool m_queryComputePayerAccountIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/cleanrooms/model/MembershipProtectedJobResultConfiguration.h>
 #include <aws/cleanrooms/model/MembershipProtectedQueryResultConfiguration.h>
 #include <aws/cleanrooms/model/MembershipQueryLogStatus.h>
+#include <aws/cleanrooms/model/UpdateMembershipPaymentConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -126,6 +127,24 @@ class UpdateMembershipRequest : public CleanRoomsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The payment configuration to update for the membership.</p>
+   */
+  inline const UpdateMembershipPaymentConfiguration& GetMembershipPaymentConfiguration() const { return m_membershipPaymentConfiguration; }
+  inline bool MembershipPaymentConfigurationHasBeenSet() const { return m_membershipPaymentConfigurationHasBeenSet; }
+  template <typename MembershipPaymentConfigurationT = UpdateMembershipPaymentConfiguration>
+  void SetMembershipPaymentConfiguration(MembershipPaymentConfigurationT&& value) {
+    m_membershipPaymentConfigurationHasBeenSet = true;
+    m_membershipPaymentConfiguration = std::forward<MembershipPaymentConfigurationT>(value);
+  }
+  template <typename MembershipPaymentConfigurationT = UpdateMembershipPaymentConfiguration>
+  UpdateMembershipRequest& WithMembershipPaymentConfiguration(MembershipPaymentConfigurationT&& value) {
+    SetMembershipPaymentConfiguration(std::forward<MembershipPaymentConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_membershipIdentifier;
 
@@ -136,11 +155,14 @@ class UpdateMembershipRequest : public CleanRoomsRequest {
   MembershipProtectedQueryResultConfiguration m_defaultResultConfiguration;
 
   MembershipProtectedJobResultConfiguration m_defaultJobResultConfiguration;
+
+  UpdateMembershipPaymentConfiguration m_membershipPaymentConfiguration;
   bool m_membershipIdentifierHasBeenSet = false;
   bool m_queryLogStatusHasBeenSet = false;
   bool m_jobLogStatusHasBeenSet = false;
   bool m_defaultResultConfigurationHasBeenSet = false;
   bool m_defaultJobResultConfigurationHasBeenSet = false;
+  bool m_membershipPaymentConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

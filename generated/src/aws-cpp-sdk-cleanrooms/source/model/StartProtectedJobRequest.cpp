@@ -31,5 +31,9 @@ Aws::String StartProtectedJobRequest::SerializePayload() const {
     payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
   }
 
+  if (m_jobComputePayerAccountIdHasBeenSet) {
+    payload.WithString("jobComputePayerAccountId", m_jobComputePayerAccountId);
+  }
+
   return payload.View().WriteReadable();
 }

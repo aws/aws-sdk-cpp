@@ -333,6 +333,25 @@ class CreateTrainedModelRequest : public CleanRoomsMLRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The account ID of the member that is responsible for paying for model
+   * training costs.</p>
+   */
+  inline const Aws::String& GetMlModelTrainingPayerAccountId() const { return m_mlModelTrainingPayerAccountId; }
+  inline bool MlModelTrainingPayerAccountIdHasBeenSet() const { return m_mlModelTrainingPayerAccountIdHasBeenSet; }
+  template <typename MlModelTrainingPayerAccountIdT = Aws::String>
+  void SetMlModelTrainingPayerAccountId(MlModelTrainingPayerAccountIdT&& value) {
+    m_mlModelTrainingPayerAccountIdHasBeenSet = true;
+    m_mlModelTrainingPayerAccountId = std::forward<MlModelTrainingPayerAccountIdT>(value);
+  }
+  template <typename MlModelTrainingPayerAccountIdT = Aws::String>
+  CreateTrainedModelRequest& WithMlModelTrainingPayerAccountId(MlModelTrainingPayerAccountIdT&& value) {
+    SetMlModelTrainingPayerAccountId(std::forward<MlModelTrainingPayerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_membershipIdentifier;
 
@@ -359,6 +378,8 @@ class CreateTrainedModelRequest : public CleanRoomsMLRequest {
   Aws::String m_kmsKeyArn;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::String m_mlModelTrainingPayerAccountId;
   bool m_membershipIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
@@ -372,6 +393,7 @@ class CreateTrainedModelRequest : public CleanRoomsMLRequest {
   bool m_descriptionHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_mlModelTrainingPayerAccountIdHasBeenSet = false;
 };
 
 }  // namespace Model

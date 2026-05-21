@@ -65,6 +65,7 @@
 #include <aws/verifiedpermissions/model/DeletePolicyStoreResult.h>
 #include <aws/verifiedpermissions/model/DeletePolicyTemplateRequest.h>
 #include <aws/verifiedpermissions/model/DeletePolicyTemplateResult.h>
+#include <aws/verifiedpermissions/model/DeletionMode.h>
 #include <aws/verifiedpermissions/model/DeletionProtection.h>
 #include <aws/verifiedpermissions/model/DeterminingPolicyItem.h>
 #include <aws/verifiedpermissions/model/EncryptionSettings.h>

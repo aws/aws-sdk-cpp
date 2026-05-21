@@ -83,6 +83,41 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   virtual ~BedrockAgentCoreControlClient();
 
   /**
+   * <p>Adds examples to the dataset's DRAFT.</p> <p><strong>Validation:</strong> All
+   * examples are validated against the dataset's schemaType before any writes occur.
+   * If any example fails validation, the entire batch is rejected with
+   * ValidationException — no examples are written (all-or-nothing semantics).</p>
+   * <p><strong>Asynchronous:</strong> Operates in-place on DRAFT. No version bump
+   * occurs. Use CreateDatasetVersion to publish DRAFT as a new numbered version.</p>
+   * <p><strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY)
+   * if the dataset status is not in {DRAFT, ACTIVE}.</p> <p><strong>Request size
+   * limit:</strong> Max 5 MB total request body. Max 1000 examples per
+   * call.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/AddDatasetExamples">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AddDatasetExamplesOutcome AddDatasetExamples(const Model::AddDatasetExamplesRequest& request) const;
+
+  /**
+   * A Callable wrapper for AddDatasetExamples that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AddDatasetExamplesRequestT = Model::AddDatasetExamplesRequest>
+  Model::AddDatasetExamplesOutcomeCallable AddDatasetExamplesCallable(const AddDatasetExamplesRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::AddDatasetExamples, request);
+  }
+
+  /**
+   * An Async wrapper for AddDatasetExamples that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename AddDatasetExamplesRequestT = Model::AddDatasetExamplesRequest>
+  void AddDatasetExamplesAsync(const AddDatasetExamplesRequestT& request, const AddDatasetExamplesResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::AddDatasetExamples, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Amazon Bedrock AgentCore Runtime.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateAgentRuntime">AWS
    * API Reference</a></p>
@@ -274,6 +309,67 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                                       const CreateConfigurationBundleResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::CreateConfigurationBundle, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new Dataset resource asynchronously.</p> <p>Returns immediately
+   * with status CREATING. Poll GetDataset until status transitions to ACTIVE or
+   * CREATE_FAILED (with failureReason).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateDataset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateDatasetRequestT = Model::CreateDatasetRequest>
+  Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const CreateDatasetRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreateDataset, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDataset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateDatasetRequestT = Model::CreateDatasetRequest>
+  void CreateDatasetAsync(const CreateDatasetRequestT& request, const CreateDatasetResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreateDataset, request, handler, context);
+  }
+
+  /**
+   * <p>Publishes the current DRAFT as a new numbered version.</p> <p>Snapshots the
+   * DRAFT examples as the next version (1, 2, 3, ...). The DRAFT is preserved and
+   * remains editable after publishing. Returns immediately with status UPDATING.
+   * Poll GetDataset until status transitions to ACTIVE (draftStatus=UNMODIFIED) or
+   * UPDATE_FAILED.</p> <p><strong>State guard:</strong> Returns ConflictException
+   * (DATASET_NOT_READY) if status is in {CREATING, UPDATING, DELETING}, or
+   * DATASET_IN_FAILED_STATE if status is in {CREATE_FAILED, DELETE_FAILED}.</p>
+   * <p><strong>Quota:</strong> MAX_VERSIONS_PER_DATASET applies to published
+   * versions only (not DRAFT).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateDatasetVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDatasetVersionOutcome CreateDatasetVersion(const Model::CreateDatasetVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDatasetVersion that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateDatasetVersionRequestT = Model::CreateDatasetVersionRequest>
+  Model::CreateDatasetVersionOutcomeCallable CreateDatasetVersionCallable(const CreateDatasetVersionRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreateDatasetVersion, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDatasetVersion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateDatasetVersionRequestT = Model::CreateDatasetVersionRequest>
+  void CreateDatasetVersionAsync(const CreateDatasetVersionRequestT& request, const CreateDatasetVersionResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreateDatasetVersion, request, handler, context);
   }
 
   /**
@@ -937,6 +1033,84 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                                       const DeleteConfigurationBundleResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::DeleteConfigurationBundle, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a dataset version or an entire dataset (all versions + name claim).
+   * Asynchronous 202.</p> <p><strong>State transitions:</strong></p> <ul> <li>If
+   * <code>datasetVersion</code> is absent (full delete): status transitions to
+   * DELETING immediately.</li> <li>If <code>datasetVersion</code> is provided
+   * (version-specific delete): status transitions to UPDATING.</li> </ul>
+   * <p><strong>State guard (full delete):</strong> Returns ConflictException
+   * (DATASET_NOT_READY) if the dataset status is in {CREATING, UPDATING}. Deletion
+   * is allowed from ACTIVE, CREATE_FAILED, UPDATE_FAILED, and DELETE_FAILED
+   * states.</p> <p><strong>State guard (version-specific delete):</strong> Returns
+   * ConflictException (DATASET_NOT_READY) if the dataset status is not in {ACTIVE,
+   * CREATE_FAILED, UPDATE_FAILED}.</p> <p>Fails with ConflictException
+   * (REFERENCED_BY_EVAL_JOB) if referenced by an active evaluation job (full delete
+   * only).</p> <p>If the delete workflow fails after retries, status is set to
+   * DELETE_FAILED (full delete) or UPDATE_FAILED (version-specific delete). Calling
+   * DeleteDataset on a DELETE_FAILED dataset re-triggers the delete workflow
+   * (idempotent retry path).</p> <p><strong>Version parameter:</strong></p> <ul>
+   * <li>If <code>datasetVersion</code> is absent: deletes ALL versions and the
+   * Dataset record itself.</li> <li>If <code>datasetVersion</code> is provided:
+   * deletes only that specific DatasetVersion. Returns ResourceNotFoundException if
+   * the specified version does not exist.</li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteDataset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteDatasetRequestT = Model::DeleteDatasetRequest>
+  Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const DeleteDatasetRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeleteDataset, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDataset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteDatasetRequestT = Model::DeleteDatasetRequest>
+  void DeleteDatasetAsync(const DeleteDatasetRequestT& request, const DeleteDatasetResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeleteDataset, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes specific examples by ID from DRAFT.</p>
+   * <p><strong>Validation:</strong> All example IDs are validated before any deletes
+   * occur. If any ID does not exist in DRAFT, the entire batch is rejected with
+   * ResourceNotFoundException — no examples are deleted (all-or-nothing
+   * semantics).</p> <p><strong>Asynchronous:</strong> Operates in-place on DRAFT. No
+   * version bump occurs. Use CreateDatasetVersion to publish DRAFT as a new numbered
+   * version.</p> <p><strong>State guard:</strong> Returns ConflictException
+   * (DATASET_NOT_READY) if the dataset status is not in {DRAFT,
+   * ACTIVE}.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteDatasetExamples">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDatasetExamplesOutcome DeleteDatasetExamples(const Model::DeleteDatasetExamplesRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDatasetExamples that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteDatasetExamplesRequestT = Model::DeleteDatasetExamplesRequest>
+  Model::DeleteDatasetExamplesOutcomeCallable DeleteDatasetExamplesCallable(const DeleteDatasetExamplesRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeleteDatasetExamples, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDatasetExamples that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteDatasetExamplesRequestT = Model::DeleteDatasetExamplesRequest>
+  void DeleteDatasetExamplesAsync(const DeleteDatasetExamplesRequestT& request, const DeleteDatasetExamplesResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeleteDatasetExamples, request, handler, context);
   }
 
   /**
@@ -1632,6 +1806,46 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                                           const GetConfigurationBundleVersionResponseReceivedHandler& handler,
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::GetConfigurationBundleVersion, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves dataset metadata only.</p> <p>Use
+   * <code>?datasetVersion=DRAFT</code> or <code>?datasetVersion=N</code> to retrieve
+   * a specific version's metadata. If absent, defaults to DRAFT (the mutable working
+   * copy). Returns ResourceNotFoundException if the specified version is not
+   * found.</p> <p><strong>Initial state after CreateDataset:</strong> When
+   * CreateDataset completes successfully (status transitions to ACTIVE), only a
+   * DRAFT working copy exists. No published versions exist until
+   * CreateDatasetVersion is called. At this point draftStatus is MODIFIED because
+   * the DRAFT has content that has never been published.</p> <p><strong>Default
+   * version behavior:</strong> When <code>datasetVersion</code> is omitted, the
+   * operation returns the DRAFT working copy. To retrieve a specific published
+   * version, pass the version number as a string (e.g.
+   * <code>?datasetVersion=1</code>).</p> <p><strong>State guard:</strong> Allowed
+   * for all statuses including DELETING. Returns the dataset record with its current
+   * status so callers can observe the deletion in progress.</p> <p>For paginated
+   * example IDs use ListDatasetExamples.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetDataset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDatasetOutcome GetDataset(const Model::GetDatasetRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetDatasetRequestT = Model::GetDatasetRequest>
+  Model::GetDatasetOutcomeCallable GetDatasetCallable(const GetDatasetRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetDataset, request);
+  }
+
+  /**
+   * An Async wrapper for GetDataset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetDatasetRequestT = Model::GetDatasetRequest>
+  void GetDatasetAsync(const GetDatasetRequestT& request, const GetDatasetResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetDataset, request, handler, context);
   }
 
   /**
@@ -2503,6 +2717,96 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                      const ListConfigurationBundlesRequestT& request = {}) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::ListConfigurationBundles, request, handler, context);
+  }
+
+  /**
+   * <p>Returns paginated examples from the dataset.</p> <p><strong>Version-pinned
+   * pagination:</strong> The server embeds the resolved version in the
+   * <code>nextToken</code>. Once pagination begins, all subsequent pages are pinned
+   * to that version regardless of concurrent mutations or whether
+   * <code>datasetVersion</code> is passed on subsequent requests. The
+   * <code>datasetVersion</code> query parameter is only used for the first request
+   * (when <code>nextToken</code> is absent); if omitted, defaults to DRAFT.</p>
+   * <p><strong>State guard:</strong> Allowed for all statuses including
+   * DELETING.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListDatasetExamples">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDatasetExamplesOutcome ListDatasetExamples(const Model::ListDatasetExamplesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDatasetExamples that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDatasetExamplesRequestT = Model::ListDatasetExamplesRequest>
+  Model::ListDatasetExamplesOutcomeCallable ListDatasetExamplesCallable(const ListDatasetExamplesRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListDatasetExamples, request);
+  }
+
+  /**
+   * An Async wrapper for ListDatasetExamples that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListDatasetExamplesRequestT = Model::ListDatasetExamplesRequest>
+  void ListDatasetExamplesAsync(const ListDatasetExamplesRequestT& request, const ListDatasetExamplesResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListDatasetExamples, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all published versions of a dataset, sorted by version number
+   * descending (newest first). Does not include the DRAFT working copy.</p>
+   * <p><strong>State guard:</strong> Allowed for all statuses including
+   * DELETING.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListDatasetVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDatasetVersionsOutcome ListDatasetVersions(const Model::ListDatasetVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDatasetVersions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDatasetVersionsRequestT = Model::ListDatasetVersionsRequest>
+  Model::ListDatasetVersionsOutcomeCallable ListDatasetVersionsCallable(const ListDatasetVersionsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListDatasetVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListDatasetVersions that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListDatasetVersionsRequestT = Model::ListDatasetVersionsRequest>
+  void ListDatasetVersionsAsync(const ListDatasetVersionsRequestT& request, const ListDatasetVersionsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListDatasetVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all datasets in the caller's account, paginated. No presigned URLs in
+   * list results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListDatasets">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListDatasetsRequestT = Model::ListDatasetsRequest>
+  Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListDatasets, request);
+  }
+
+  /**
+   * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListDatasetsRequestT = Model::ListDatasetsRequest>
+  void ListDatasetsAsync(const ListDatasetsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                         const ListDatasetsRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListDatasets, request, handler, context);
   }
 
   /**
@@ -3476,6 +3780,72 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                                       const UpdateConfigurationBundleResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::UpdateConfigurationBundle, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a dataset's metadata. Synchronous operation. Only provided fields are
+   * updated; omitted fields remain unchanged.</p> <p>To modify dataset content, use
+   * AddDatasetExamples, UpdateDatasetExamples, or DeleteDatasetExamples.</p>
+   * <p>Cannot update: name, schemaType, kmsKeyArn (immutable after
+   * creation).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateDataset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDatasetOutcome UpdateDataset(const Model::UpdateDatasetRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateDatasetRequestT = Model::UpdateDatasetRequest>
+  Model::UpdateDatasetOutcomeCallable UpdateDatasetCallable(const UpdateDatasetRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdateDataset, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDataset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateDatasetRequestT = Model::UpdateDatasetRequest>
+  void UpdateDatasetAsync(const UpdateDatasetRequestT& request, const UpdateDatasetResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdateDataset, request, handler, context);
+  }
+
+  /**
+   * <p>Updates multiple existing examples in-place on DRAFT.</p>
+   * <p><strong>Validation:</strong> All examples are validated against the dataset's
+   * schemaType before any writes occur. If any example fails validation, the entire
+   * batch is rejected with ValidationException — no examples are updated
+   * (all-or-nothing semantics).</p> <p><strong>Asynchronous:</strong> Operates
+   * in-place on DRAFT. No version bump occurs. Use CreateDatasetVersion to publish
+   * DRAFT as a new numbered version.</p> <p>Fails with ResourceNotFoundException if
+   * any exampleId does not exist in DRAFT. To add new examples, use
+   * AddDatasetExamples instead.</p> <p><strong>State guard:</strong> Returns
+   * ConflictException (DATASET_NOT_READY) if the dataset status is not in {DRAFT,
+   * ACTIVE}.</p> <p><strong>Request size limit:</strong> Max 5 MB total request
+   * body. Max 1000 examples per call.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateDatasetExamples">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDatasetExamplesOutcome UpdateDatasetExamples(const Model::UpdateDatasetExamplesRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDatasetExamples that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateDatasetExamplesRequestT = Model::UpdateDatasetExamplesRequest>
+  Model::UpdateDatasetExamplesOutcomeCallable UpdateDatasetExamplesCallable(const UpdateDatasetExamplesRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdateDatasetExamples, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDatasetExamples that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateDatasetExamplesRequestT = Model::UpdateDatasetExamplesRequest>
+  void UpdateDatasetExamplesAsync(const UpdateDatasetExamplesRequestT& request, const UpdateDatasetExamplesResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdateDatasetExamples, request, handler, context);
   }
 
   /**

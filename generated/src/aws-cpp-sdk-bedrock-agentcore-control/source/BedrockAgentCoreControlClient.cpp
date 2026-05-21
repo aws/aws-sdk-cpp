@@ -6,6 +6,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlClient.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlEndpointProvider.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlErrorMarshaller.h>
+#include <aws/bedrock-agentcore-control/model/AddDatasetExamplesRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateApiKeyCredentialProviderRequest.h>
@@ -13,6 +14,8 @@
 #include <aws/bedrock-agentcore-control/model/CreateBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateConfigurationBundleRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateDatasetRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateDatasetVersionRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayRuleRequest.h>
@@ -36,6 +39,8 @@
 #include <aws/bedrock-agentcore-control/model/DeleteBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteConfigurationBundleRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteDatasetExamplesRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteDatasetRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayRuleRequest.h>
@@ -61,6 +66,7 @@
 #include <aws/bedrock-agentcore-control/model/GetCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleVersionRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetDatasetRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayRuleRequest.h>
@@ -92,6 +98,9 @@
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetExamplesRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetVersionsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayRulesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsRequest.h>
@@ -125,6 +134,8 @@
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateApiKeyCredentialProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateConfigurationBundleRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateDatasetExamplesRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateDatasetRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayRuleRequest.h>
@@ -319,6 +330,25 @@ BedrockAgentCoreControlClient::InvokeOperationOutcome BedrockAgentCoreControlCli
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+AddDatasetExamplesOutcome BedrockAgentCoreControlClient::AddDatasetExamples(const AddDatasetExamplesRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("AddDatasetExamples", "Required field: DatasetId, is not set");
+    return AddDatasetExamplesOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/examples/add");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddDatasetExamplesOutcome(result.GetResultWithOwnership())
+                            : AddDatasetExamplesOutcome(std::move(result.GetError()));
+}
+
 CreateAgentRuntimeOutcome BedrockAgentCoreControlClient::CreateAgentRuntime(const CreateAgentRuntimeRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -404,6 +434,35 @@ CreateConfigurationBundleOutcome BedrockAgentCoreControlClient::CreateConfigurat
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateConfigurationBundleOutcome(result.GetResultWithOwnership())
                             : CreateConfigurationBundleOutcome(std::move(result.GetError()));
+}
+
+CreateDatasetOutcome BedrockAgentCoreControlClient::CreateDataset(const CreateDatasetRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetOutcome(result.GetResultWithOwnership()) : CreateDatasetOutcome(std::move(result.GetError()));
+}
+
+CreateDatasetVersionOutcome BedrockAgentCoreControlClient::CreateDatasetVersion(const CreateDatasetVersionRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateDatasetVersion", "Required field: DatasetId, is not set");
+    return CreateDatasetVersionOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetVersionOutcome(result.GetResultWithOwnership())
+                            : CreateDatasetVersionOutcome(std::move(result.GetError()));
 }
 
 CreateEvaluatorOutcome BedrockAgentCoreControlClient::CreateEvaluator(const CreateEvaluatorRequest& request) const {
@@ -746,6 +805,42 @@ DeleteConfigurationBundleOutcome BedrockAgentCoreControlClient::DeleteConfigurat
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteConfigurationBundleOutcome(result.GetResultWithOwnership())
                             : DeleteConfigurationBundleOutcome(std::move(result.GetError()));
+}
+
+DeleteDatasetOutcome BedrockAgentCoreControlClient::DeleteDataset(const DeleteDatasetRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDataset", "Required field: DatasetId, is not set");
+    return DeleteDatasetOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDatasetOutcome(result.GetResultWithOwnership()) : DeleteDatasetOutcome(std::move(result.GetError()));
+}
+
+DeleteDatasetExamplesOutcome BedrockAgentCoreControlClient::DeleteDatasetExamples(const DeleteDatasetExamplesRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDatasetExamples", "Required field: DatasetId, is not set");
+    return DeleteDatasetExamplesOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/examples/delete");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDatasetExamplesOutcome(result.GetResultWithOwnership())
+                            : DeleteDatasetExamplesOutcome(std::move(result.GetError()));
 }
 
 DeleteEvaluatorOutcome BedrockAgentCoreControlClient::DeleteEvaluator(const DeleteEvaluatorRequest& request) const {
@@ -1217,6 +1312,23 @@ GetConfigurationBundleVersionOutcome BedrockAgentCoreControlClient::GetConfigura
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetConfigurationBundleVersionOutcome(result.GetResultWithOwnership())
                             : GetConfigurationBundleVersionOutcome(std::move(result.GetError()));
+}
+
+GetDatasetOutcome BedrockAgentCoreControlClient::GetDataset(const GetDatasetRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDataset", "Required field: DatasetId, is not set");
+    return GetDatasetOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDatasetOutcome(result.GetResultWithOwnership()) : GetDatasetOutcome(std::move(result.GetError()));
 }
 
 GetEvaluatorOutcome BedrockAgentCoreControlClient::GetEvaluator(const GetEvaluatorRequest& request) const {
@@ -1767,6 +1879,54 @@ ListConfigurationBundlesOutcome BedrockAgentCoreControlClient::ListConfiguration
                             : ListConfigurationBundlesOutcome(std::move(result.GetError()));
 }
 
+ListDatasetExamplesOutcome BedrockAgentCoreControlClient::ListDatasetExamples(const ListDatasetExamplesRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDatasetExamples", "Required field: DatasetId, is not set");
+    return ListDatasetExamplesOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/examples");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDatasetExamplesOutcome(result.GetResultWithOwnership())
+                            : ListDatasetExamplesOutcome(std::move(result.GetError()));
+}
+
+ListDatasetVersionsOutcome BedrockAgentCoreControlClient::ListDatasetVersions(const ListDatasetVersionsRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDatasetVersions", "Required field: DatasetId, is not set");
+    return ListDatasetVersionsOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDatasetVersionsOutcome(result.GetResultWithOwnership())
+                            : ListDatasetVersionsOutcome(std::move(result.GetError()));
+}
+
+ListDatasetsOutcome BedrockAgentCoreControlClient::ListDatasets(const ListDatasetsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDatasetsOutcome(result.GetResultWithOwnership()) : ListDatasetsOutcome(std::move(result.GetError()));
+}
+
 ListEvaluatorsOutcome BedrockAgentCoreControlClient::ListEvaluators(const ListEvaluatorsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -2302,6 +2462,42 @@ UpdateConfigurationBundleOutcome BedrockAgentCoreControlClient::UpdateConfigurat
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateConfigurationBundleOutcome(result.GetResultWithOwnership())
                             : UpdateConfigurationBundleOutcome(std::move(result.GetError()));
+}
+
+UpdateDatasetOutcome BedrockAgentCoreControlClient::UpdateDataset(const UpdateDatasetRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDataset", "Required field: DatasetId, is not set");
+    return UpdateDatasetOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDatasetOutcome(result.GetResultWithOwnership()) : UpdateDatasetOutcome(std::move(result.GetError()));
+}
+
+UpdateDatasetExamplesOutcome BedrockAgentCoreControlClient::UpdateDatasetExamples(const UpdateDatasetExamplesRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDatasetExamples", "Required field: DatasetId, is not set");
+    return UpdateDatasetExamplesOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/examples/update");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDatasetExamplesOutcome(result.GetResultWithOwnership())
+                            : UpdateDatasetExamplesOutcome(std::move(result.GetError()));
 }
 
 UpdateEvaluatorOutcome BedrockAgentCoreControlClient::UpdateEvaluator(const UpdateEvaluatorRequest& request) const {

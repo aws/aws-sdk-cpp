@@ -74,6 +74,10 @@ TrainedModelInferenceJobSummary& TrainedModelInferenceJobSummary::operator=(Json
     m_logsStatusDetails = jsonValue.GetString("logsStatusDetails");
     m_logsStatusDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mlModelInferencePayerAccountId")) {
+    m_mlModelInferencePayerAccountId = jsonValue.GetString("mlModelInferencePayerAccountId");
+    m_mlModelInferencePayerAccountIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetString("createTime");
     m_createTimeHasBeenSet = true;
@@ -142,6 +146,10 @@ JsonValue TrainedModelInferenceJobSummary::Jsonize() const {
 
   if (m_logsStatusDetailsHasBeenSet) {
     payload.WithString("logsStatusDetails", m_logsStatusDetails);
+  }
+
+  if (m_mlModelInferencePayerAccountIdHasBeenSet) {
+    payload.WithString("mlModelInferencePayerAccountId", m_mlModelInferencePayerAccountId);
   }
 
   if (m_createTimeHasBeenSet) {

@@ -29,6 +29,7 @@
 #include <aws/evs/model/DeleteEnvironmentHostResult.h>
 #include <aws/evs/model/DeleteEnvironmentResult.h>
 #include <aws/evs/model/DisassociateEipFromVlanResult.h>
+#include <aws/evs/model/GetDepotUrlResult.h>
 #include <aws/evs/model/GetEnvironmentResult.h>
 #include <aws/evs/model/GetVersionsRequest.h>
 #include <aws/evs/model/GetVersionsResult.h>
@@ -85,6 +86,7 @@ class DeleteEnvironmentRequest;
 class DeleteEnvironmentConnectorRequest;
 class DeleteEnvironmentHostRequest;
 class DisassociateEipFromVlanRequest;
+class GetDepotUrlRequest;
 class GetEnvironmentRequest;
 class GetVersionsRequest;
 class ListEnvironmentConnectorsRequest;
@@ -109,6 +111,7 @@ typedef Aws::Utils::Outcome<DeleteEnvironmentResult, EVSError> DeleteEnvironment
 typedef Aws::Utils::Outcome<DeleteEnvironmentConnectorResult, EVSError> DeleteEnvironmentConnectorOutcome;
 typedef Aws::Utils::Outcome<DeleteEnvironmentHostResult, EVSError> DeleteEnvironmentHostOutcome;
 typedef Aws::Utils::Outcome<DisassociateEipFromVlanResult, EVSError> DisassociateEipFromVlanOutcome;
+typedef Aws::Utils::Outcome<GetDepotUrlResult, EVSError> GetDepotUrlOutcome;
 typedef Aws::Utils::Outcome<GetEnvironmentResult, EVSError> GetEnvironmentOutcome;
 typedef Aws::Utils::Outcome<GetVersionsResult, EVSError> GetVersionsOutcome;
 typedef Aws::Utils::Outcome<ListEnvironmentConnectorsResult, EVSError> ListEnvironmentConnectorsOutcome;
@@ -133,6 +136,7 @@ typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
 typedef std::future<DeleteEnvironmentConnectorOutcome> DeleteEnvironmentConnectorOutcomeCallable;
 typedef std::future<DeleteEnvironmentHostOutcome> DeleteEnvironmentHostOutcomeCallable;
 typedef std::future<DisassociateEipFromVlanOutcome> DisassociateEipFromVlanOutcomeCallable;
+typedef std::future<GetDepotUrlOutcome> GetDepotUrlOutcomeCallable;
 typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
 typedef std::future<GetVersionsOutcome> GetVersionsOutcomeCallable;
 typedef std::future<ListEnvironmentConnectorsOutcome> ListEnvironmentConnectorsOutcomeCallable;
@@ -180,6 +184,9 @@ typedef std::function<void(const EVSClient*, const Model::DeleteEnvironmentHostR
 typedef std::function<void(const EVSClient*, const Model::DisassociateEipFromVlanRequest&, const Model::DisassociateEipFromVlanOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateEipFromVlanResponseReceivedHandler;
+typedef std::function<void(const EVSClient*, const Model::GetDepotUrlRequest&, const Model::GetDepotUrlOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDepotUrlResponseReceivedHandler;
 typedef std::function<void(const EVSClient*, const Model::GetEnvironmentRequest&, const Model::GetEnvironmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetEnvironmentResponseReceivedHandler;

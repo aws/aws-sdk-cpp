@@ -17,6 +17,8 @@
 #include <aws/bedrock-agentcore-control/model/A2aDescriptor.h>
 #include <aws/bedrock-agentcore-control/model/Action.h>
 #include <aws/bedrock-agentcore-control/model/ActorTokenContentType.h>
+#include <aws/bedrock-agentcore-control/model/AddDatasetExamplesRequest.h>
+#include <aws/bedrock-agentcore-control/model/AddDatasetExamplesResult.h>
 #include <aws/bedrock-agentcore-control/model/AgentCardDefinition.h>
 #include <aws/bedrock-agentcore-control/model/AgentManagedRuntimeType.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntime.h>
@@ -96,6 +98,10 @@
 #include <aws/bedrock-agentcore-control/model/CreateCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateConfigurationBundleRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateConfigurationBundleResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateDatasetRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateDatasetResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateDatasetVersionRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateDatasetVersionResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateEvaluatorResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayRequest.h>
@@ -147,6 +153,11 @@
 #include <aws/bedrock-agentcore-control/model/CustomReflectionConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CustomReflectionConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/DataSourceConfig.h>
+#include <aws/bedrock-agentcore-control/model/DataSourceType.h>
+#include <aws/bedrock-agentcore-control/model/DatasetSchemaType.h>
+#include <aws/bedrock-agentcore-control/model/DatasetStatus.h>
+#include <aws/bedrock-agentcore-control/model/DatasetSummary.h>
+#include <aws/bedrock-agentcore-control/model/DatasetVersionSummary.h>
 #include <aws/bedrock-agentcore-control/model/DeleteAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteAgentRuntimeRequest.h>
@@ -161,6 +172,10 @@
 #include <aws/bedrock-agentcore-control/model/DeleteCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteConfigurationBundleRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteConfigurationBundleResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteDatasetExamplesRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteDatasetExamplesResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteDatasetRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteEvaluatorResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayRequest.h>
@@ -198,6 +213,7 @@
 #include <aws/bedrock-agentcore-control/model/DeleteWorkloadIdentityResult.h>
 #include <aws/bedrock-agentcore-control/model/DescriptorType.h>
 #include <aws/bedrock-agentcore-control/model/Descriptors.h>
+#include <aws/bedrock-agentcore-control/model/DraftStatus.h>
 #include <aws/bedrock-agentcore-control/model/EfsAccessPointConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/EndpointIpAddressType.h>
 #include <aws/bedrock-agentcore-control/model/EpisodicConsolidationOverride.h>
@@ -254,6 +270,8 @@
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleResult.h>
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleVersionRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleVersionResult.h>
+#include <aws/bedrock-agentcore-control/model/GetDatasetRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/GetEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetEvaluatorResult.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayRequest.h>
@@ -342,6 +360,7 @@
 #include <aws/bedrock-agentcore-control/model/IncludedOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/IndexedKey.h>
 #include <aws/bedrock-agentcore-control/model/InferenceConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/InlineExamplesSource.h>
 #include <aws/bedrock-agentcore-control/model/InterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InterceptorInputConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InvocationConfiguration.h>
@@ -372,6 +391,12 @@
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesResult.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetExamplesRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetExamplesResult.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetVersionsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetVersionsResult.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayRulesRequest.h>
@@ -529,6 +554,7 @@
 #include <aws/bedrock-agentcore-control/model/S3Configuration.h>
 #include <aws/bedrock-agentcore-control/model/S3FilesAccessPointConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/S3Location.h>
+#include <aws/bedrock-agentcore-control/model/S3Source.h>
 #include <aws/bedrock-agentcore-control/model/SalesforceOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/SalesforceOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/SamplingConfig.h>
@@ -610,6 +636,10 @@
 #include <aws/bedrock-agentcore-control/model/UpdateApiKeyCredentialProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateConfigurationBundleRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateConfigurationBundleResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateDatasetExamplesRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateDatasetExamplesResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateDatasetRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateEvaluatorResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayRequest.h>

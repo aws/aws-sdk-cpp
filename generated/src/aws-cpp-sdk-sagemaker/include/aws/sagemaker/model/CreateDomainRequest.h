@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/AuthMode.h>
 #include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <aws/sagemaker/model/DomainSettings.h>
+#include <aws/sagemaker/model/HomeEfsFileSystemCreation.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <aws/sagemaker/model/TagPropagation.h>
 #include <aws/sagemaker/model/UserSettings.h>
@@ -255,6 +256,25 @@ class CreateDomainRequest : public SageMakerRequest {
 
   ///@{
   /**
+   * <p>Indicates whether to create a home EFS file system for the domain. Defaults
+   * to <code>Enabled</code>. Set to <code>Disabled</code> to skip EFS creation and
+   * reduce domain creation time. You can enable EFS later by calling
+   * <code>UpdateDomain</code>.</p>
+   */
+  inline HomeEfsFileSystemCreation GetHomeEfsFileSystemCreation() const { return m_homeEfsFileSystemCreation; }
+  inline bool HomeEfsFileSystemCreationHasBeenSet() const { return m_homeEfsFileSystemCreationHasBeenSet; }
+  inline void SetHomeEfsFileSystemCreation(HomeEfsFileSystemCreation value) {
+    m_homeEfsFileSystemCreationHasBeenSet = true;
+    m_homeEfsFileSystemCreation = value;
+  }
+  inline CreateDomainRequest& WithHomeEfsFileSystemCreation(HomeEfsFileSystemCreation value) {
+    SetHomeEfsFileSystemCreation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether custom tag propagation is supported for the domain.
    * Defaults to <code>DISABLED</code>.</p>
    */
@@ -308,6 +328,8 @@ class CreateDomainRequest : public SageMakerRequest {
 
   AppSecurityGroupManagement m_appSecurityGroupManagement{AppSecurityGroupManagement::NOT_SET};
 
+  HomeEfsFileSystemCreation m_homeEfsFileSystemCreation{HomeEfsFileSystemCreation::NOT_SET};
+
   TagPropagation m_tagPropagation{TagPropagation::NOT_SET};
 
   DefaultSpaceSettings m_defaultSpaceSettings;
@@ -321,6 +343,7 @@ class CreateDomainRequest : public SageMakerRequest {
   bool m_appNetworkAccessTypeHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_appSecurityGroupManagementHasBeenSet = false;
+  bool m_homeEfsFileSystemCreationHasBeenSet = false;
   bool m_tagPropagationHasBeenSet = false;
   bool m_defaultSpaceSettingsHasBeenSet = false;
 };

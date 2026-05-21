@@ -120,6 +120,24 @@ class StartProtectedJobRequest : public CleanRoomsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The account ID of the member that pays for the job compute costs.</p>
+   */
+  inline const Aws::String& GetJobComputePayerAccountId() const { return m_jobComputePayerAccountId; }
+  inline bool JobComputePayerAccountIdHasBeenSet() const { return m_jobComputePayerAccountIdHasBeenSet; }
+  template <typename JobComputePayerAccountIdT = Aws::String>
+  void SetJobComputePayerAccountId(JobComputePayerAccountIdT&& value) {
+    m_jobComputePayerAccountIdHasBeenSet = true;
+    m_jobComputePayerAccountId = std::forward<JobComputePayerAccountIdT>(value);
+  }
+  template <typename JobComputePayerAccountIdT = Aws::String>
+  StartProtectedJobRequest& WithJobComputePayerAccountId(JobComputePayerAccountIdT&& value) {
+    SetJobComputePayerAccountId(std::forward<JobComputePayerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ProtectedJobType m_type{ProtectedJobType::NOT_SET};
 
@@ -130,11 +148,14 @@ class StartProtectedJobRequest : public CleanRoomsRequest {
   ProtectedJobResultConfigurationInput m_resultConfiguration;
 
   ProtectedJobComputeConfiguration m_computeConfiguration;
+
+  Aws::String m_jobComputePayerAccountId;
   bool m_typeHasBeenSet = false;
   bool m_membershipIdentifierHasBeenSet = false;
   bool m_jobParametersHasBeenSet = false;
   bool m_resultConfigurationHasBeenSet = false;
   bool m_computeConfigurationHasBeenSet = false;
+  bool m_jobComputePayerAccountIdHasBeenSet = false;
 };
 
 }  // namespace Model

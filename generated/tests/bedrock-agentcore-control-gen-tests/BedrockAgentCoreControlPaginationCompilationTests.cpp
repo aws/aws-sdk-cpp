@@ -29,11 +29,14 @@
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListMemoriesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetExamplesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicySummariesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayRulesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowserProfilesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListRegistriesPaginationTraits.h>

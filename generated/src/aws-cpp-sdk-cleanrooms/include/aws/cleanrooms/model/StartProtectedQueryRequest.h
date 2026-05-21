@@ -120,6 +120,24 @@ class StartProtectedQueryRequest : public CleanRoomsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The account ID of the member that pays for the query compute costs.</p>
+   */
+  inline const Aws::String& GetQueryComputePayerAccountId() const { return m_queryComputePayerAccountId; }
+  inline bool QueryComputePayerAccountIdHasBeenSet() const { return m_queryComputePayerAccountIdHasBeenSet; }
+  template <typename QueryComputePayerAccountIdT = Aws::String>
+  void SetQueryComputePayerAccountId(QueryComputePayerAccountIdT&& value) {
+    m_queryComputePayerAccountIdHasBeenSet = true;
+    m_queryComputePayerAccountId = std::forward<QueryComputePayerAccountIdT>(value);
+  }
+  template <typename QueryComputePayerAccountIdT = Aws::String>
+  StartProtectedQueryRequest& WithQueryComputePayerAccountId(QueryComputePayerAccountIdT&& value) {
+    SetQueryComputePayerAccountId(std::forward<QueryComputePayerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ProtectedQueryType m_type{ProtectedQueryType::NOT_SET};
 
@@ -130,11 +148,14 @@ class StartProtectedQueryRequest : public CleanRoomsRequest {
   ProtectedQueryResultConfiguration m_resultConfiguration;
 
   ComputeConfiguration m_computeConfiguration;
+
+  Aws::String m_queryComputePayerAccountId;
   bool m_typeHasBeenSet = false;
   bool m_membershipIdentifierHasBeenSet = false;
   bool m_sqlParametersHasBeenSet = false;
   bool m_resultConfigurationHasBeenSet = false;
   bool m_computeConfigurationHasBeenSet = false;
+  bool m_queryComputePayerAccountIdHasBeenSet = false;
 };
 
 }  // namespace Model

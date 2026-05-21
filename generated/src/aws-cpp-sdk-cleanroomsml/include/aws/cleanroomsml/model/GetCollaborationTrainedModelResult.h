@@ -351,6 +351,24 @@ class GetCollaborationTrainedModelResult {
 
   ///@{
   /**
+   * <p>The account ID of the member that is responsible for paying for model
+   * training costs.</p>
+   */
+  inline const Aws::String& GetMlModelTrainingPayerAccountId() const { return m_mlModelTrainingPayerAccountId; }
+  template <typename MlModelTrainingPayerAccountIdT = Aws::String>
+  void SetMlModelTrainingPayerAccountId(MlModelTrainingPayerAccountIdT&& value) {
+    m_mlModelTrainingPayerAccountIdHasBeenSet = true;
+    m_mlModelTrainingPayerAccountId = std::forward<MlModelTrainingPayerAccountIdT>(value);
+  }
+  template <typename MlModelTrainingPayerAccountIdT = Aws::String>
+  GetCollaborationTrainedModelResult& WithMlModelTrainingPayerAccountId(MlModelTrainingPayerAccountIdT&& value) {
+    SetMlModelTrainingPayerAccountId(std::forward<MlModelTrainingPayerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time at which the trained model was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
@@ -453,6 +471,8 @@ class GetCollaborationTrainedModelResult {
 
   Aws::String m_trainingContainerImageDigest;
 
+  Aws::String m_mlModelTrainingPayerAccountId;
+
   Aws::Utils::DateTime m_createTime{};
 
   Aws::Utils::DateTime m_updateTime{};
@@ -479,6 +499,7 @@ class GetCollaborationTrainedModelResult {
   bool m_logsStatusHasBeenSet = false;
   bool m_logsStatusDetailsHasBeenSet = false;
   bool m_trainingContainerImageDigestHasBeenSet = false;
+  bool m_mlModelTrainingPayerAccountIdHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
   bool m_creatorAccountIdHasBeenSet = false;

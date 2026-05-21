@@ -71,5 +71,9 @@ Aws::String StartTrainedModelInferenceJobRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_mlModelInferencePayerAccountIdHasBeenSet) {
+    payload.WithString("mlModelInferencePayerAccountId", m_mlModelInferencePayerAccountId);
+  }
+
   return payload.View().WriteReadable();
 }

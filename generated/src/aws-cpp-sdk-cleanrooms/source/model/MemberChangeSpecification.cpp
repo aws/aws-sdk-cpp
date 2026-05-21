@@ -29,6 +29,14 @@ MemberChangeSpecification& MemberChangeSpecification::operator=(JsonView jsonVal
     }
     m_memberAbilitiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mlMemberAbilities")) {
+    m_mlMemberAbilities = jsonValue.GetObject("mlMemberAbilities");
+    m_mlMemberAbilitiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("paymentConfiguration")) {
+    m_paymentConfiguration = jsonValue.GetObject("paymentConfiguration");
+    m_paymentConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("displayName")) {
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
@@ -50,6 +58,14 @@ JsonValue MemberChangeSpecification::Jsonize() const {
           MemberAbilityMapper::GetNameForMemberAbility(m_memberAbilities[memberAbilitiesIndex]));
     }
     payload.WithArray("memberAbilities", std::move(memberAbilitiesJsonList));
+  }
+
+  if (m_mlMemberAbilitiesHasBeenSet) {
+    payload.WithObject("mlMemberAbilities", m_mlMemberAbilities.Jsonize());
+  }
+
+  if (m_paymentConfigurationHasBeenSet) {
+    payload.WithObject("paymentConfiguration", m_paymentConfiguration.Jsonize());
   }
 
   if (m_displayNameHasBeenSet) {

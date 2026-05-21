@@ -75,11 +75,14 @@ class ComputeResource {
    * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
    * strategies</a> in the <i>Batch User Guide</i>.</p>  <p>This parameter
    * isn't applicable to jobs that are running on Fargate resources. Don't specify
-   * it.</p>  <dl> <dt>BEST_FIT (default)</dt> <dd> <p>Batch selects an
-   * instance type that best fits the needs of the jobs with a preference for the
-   * lowest-cost instance type. If additional instances of the selected instance type
-   * aren't available, Batch waits for the additional instances to be available. If
-   * there aren't enough instances available or the user is reaching <a
+   * it.</p>   <p>This parameter is required for Amazon EKS compute
+   * environments. For Amazon ECS compute environments, if this parameter isn't
+   * specified, the <code>BEST_FIT</code> allocation strategy is used by default.</p>
+   *  <dl> <dt>BEST_FIT (default)</dt> <dd> <p>Batch selects an instance type
+   * that best fits the needs of the jobs with a preference for the lowest-cost
+   * instance type. If additional instances of the selected instance type aren't
+   * available, Batch waits for the additional instances to be available. If there
+   * aren't enough instances available or the user is reaching <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
    * EC2 service limits</a>, additional jobs aren't run until the currently running
    * jobs are completed. This allocation strategy keeps costs lower but can limit

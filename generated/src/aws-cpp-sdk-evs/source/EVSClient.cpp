@@ -30,6 +30,7 @@
 #include <aws/evs/model/DeleteEnvironmentHostRequest.h>
 #include <aws/evs/model/DeleteEnvironmentRequest.h>
 #include <aws/evs/model/DisassociateEipFromVlanRequest.h>
+#include <aws/evs/model/GetDepotUrlRequest.h>
 #include <aws/evs/model/GetEnvironmentRequest.h>
 #include <aws/evs/model/GetVersionsRequest.h>
 #include <aws/evs/model/ListEnvironmentConnectorsRequest.h>
@@ -248,6 +249,11 @@ DisassociateEipFromVlanOutcome EVSClient::DisassociateEipFromVlan(const Disassoc
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisassociateEipFromVlanOutcome(result.GetResultWithOwnership())
                             : DisassociateEipFromVlanOutcome(std::move(result.GetError()));
+}
+
+GetDepotUrlOutcome EVSClient::GetDepotUrl(const GetDepotUrlRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDepotUrlOutcome(result.GetResultWithOwnership()) : GetDepotUrlOutcome(std::move(result.GetError()));
 }
 
 GetEnvironmentOutcome EVSClient::GetEnvironment(const GetEnvironmentRequest& request) const {

@@ -436,6 +436,7 @@
 #include <aws/cleanrooms/model/UpdateIdMappingTableResult.h>
 #include <aws/cleanrooms/model/UpdateIdNamespaceAssociationRequest.h>
 #include <aws/cleanrooms/model/UpdateIdNamespaceAssociationResult.h>
+#include <aws/cleanrooms/model/UpdateMembershipPaymentConfiguration.h>
 #include <aws/cleanrooms/model/UpdateMembershipRequest.h>
 #include <aws/cleanrooms/model/UpdateMembershipResult.h>
 #include <aws/cleanrooms/model/UpdatePrivacyBudgetTemplateRequest.h>

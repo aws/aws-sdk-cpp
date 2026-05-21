@@ -54,5 +54,9 @@ Aws::String CreateMLInputChannelRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_payerConfigurationHasBeenSet) {
+    payload.WithObject("payerConfiguration", m_payerConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

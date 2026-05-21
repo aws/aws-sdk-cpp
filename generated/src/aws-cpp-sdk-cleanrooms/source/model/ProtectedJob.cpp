@@ -62,6 +62,10 @@ ProtectedJob& ProtectedJob::operator=(JsonView jsonValue) {
     m_computeConfiguration = jsonValue.GetObject("computeConfiguration");
     m_computeConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jobComputePayerAccountId")) {
+    m_jobComputePayerAccountId = jsonValue.GetString("jobComputePayerAccountId");
+    m_jobComputePayerAccountIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +114,10 @@ JsonValue ProtectedJob::Jsonize() const {
 
   if (m_computeConfigurationHasBeenSet) {
     payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
+  }
+
+  if (m_jobComputePayerAccountIdHasBeenSet) {
+    payload.WithString("jobComputePayerAccountId", m_jobComputePayerAccountId);
   }
 
   return payload;

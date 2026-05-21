@@ -169,6 +169,7 @@
 #include <aws/cleanroomsml/model/ModelInferenceDataSource.h>
 #include <aws/cleanroomsml/model/ModelTrainingDataChannel.h>
 #include <aws/cleanroomsml/model/NoiseLevelType.h>
+#include <aws/cleanroomsml/model/PayerConfiguration.h>
 #include <aws/cleanroomsml/model/PolicyExistenceCondition.h>
 #include <aws/cleanroomsml/model/PrivacyBudgets.h>
 #include <aws/cleanroomsml/model/PrivacyConfiguration.h>

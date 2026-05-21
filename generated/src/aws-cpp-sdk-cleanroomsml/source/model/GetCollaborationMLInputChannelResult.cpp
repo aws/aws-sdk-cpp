@@ -79,6 +79,10 @@ GetCollaborationMLInputChannelResult& GetCollaborationMLInputChannelResult::oper
     m_syntheticDataConfiguration = jsonValue.GetObject("syntheticDataConfiguration");
     m_syntheticDataConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("payerConfiguration")) {
+    m_payerConfiguration = jsonValue.GetObject("payerConfiguration");
+    m_payerConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetString("createTime");
     m_createTimeHasBeenSet = true;

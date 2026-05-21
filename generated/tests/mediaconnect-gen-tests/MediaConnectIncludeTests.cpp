@@ -232,6 +232,7 @@
 #include <aws/mediaconnect/model/NdiDiscoveryServerConfig.h>
 #include <aws/mediaconnect/model/NdiMediaInfo.h>
 #include <aws/mediaconnect/model/NdiMediaStreamInfo.h>
+#include <aws/mediaconnect/model/NdiOutputTimecodeSource.h>
 #include <aws/mediaconnect/model/NdiSourceInfo.h>
 #include <aws/mediaconnect/model/NdiSourceMetadataInfo.h>
 #include <aws/mediaconnect/model/NdiSourceSettings.h>

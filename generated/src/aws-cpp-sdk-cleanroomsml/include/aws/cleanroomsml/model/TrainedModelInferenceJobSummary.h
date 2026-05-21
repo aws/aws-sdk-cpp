@@ -290,6 +290,25 @@ class TrainedModelInferenceJobSummary {
 
   ///@{
   /**
+   * <p>The account ID of the member that is responsible for paying for model
+   * inference costs.</p>
+   */
+  inline const Aws::String& GetMlModelInferencePayerAccountId() const { return m_mlModelInferencePayerAccountId; }
+  inline bool MlModelInferencePayerAccountIdHasBeenSet() const { return m_mlModelInferencePayerAccountIdHasBeenSet; }
+  template <typename MlModelInferencePayerAccountIdT = Aws::String>
+  void SetMlModelInferencePayerAccountId(MlModelInferencePayerAccountIdT&& value) {
+    m_mlModelInferencePayerAccountIdHasBeenSet = true;
+    m_mlModelInferencePayerAccountId = std::forward<MlModelInferencePayerAccountIdT>(value);
+  }
+  template <typename MlModelInferencePayerAccountIdT = Aws::String>
+  TrainedModelInferenceJobSummary& WithMlModelInferencePayerAccountId(MlModelInferencePayerAccountIdT&& value) {
+    SetMlModelInferencePayerAccountId(std::forward<MlModelInferencePayerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time at which the trained model inference job was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
@@ -353,6 +372,8 @@ class TrainedModelInferenceJobSummary {
 
   Aws::String m_logsStatusDetails;
 
+  Aws::String m_mlModelInferencePayerAccountId;
+
   Aws::Utils::DateTime m_createTime{};
 
   Aws::Utils::DateTime m_updateTime{};
@@ -370,6 +391,7 @@ class TrainedModelInferenceJobSummary {
   bool m_metricsStatusDetailsHasBeenSet = false;
   bool m_logsStatusHasBeenSet = false;
   bool m_logsStatusDetailsHasBeenSet = false;
+  bool m_mlModelInferencePayerAccountIdHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };

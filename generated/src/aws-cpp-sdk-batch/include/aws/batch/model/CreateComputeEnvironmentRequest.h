@@ -78,7 +78,8 @@ class CreateComputeEnvironmentRequest : public BatchRequest {
 
   ///@{
   /**
-   * <p>The state of the compute environment. If the state is <code>ENABLED</code>,
+   * <p>The state of the compute environment. A compute environment must be created
+   * in the <code>ENABLED</code> state.</p> <p>If the state is <code>ENABLED</code>,
    * then the compute environment accepts jobs from a queue and can scale out
    * automatically based on queues.</p> <p>If the state is <code>ENABLED</code>, then
    * the Batch scheduler can attempt to place jobs from an associated job queue on
@@ -165,11 +166,14 @@ class CreateComputeEnvironmentRequest : public BatchRequest {
    * default for your compute environment unless you specify a different role here.
    * If the Batch service-linked role doesn't exist in your account, and no role is
    * specified here, the service attempts to create the Batch service-linked role in
-   * your account.</p>  <p>If your specified role has a path other than
-   * <code>/</code>, then you must specify either the full role ARN (recommended) or
-   * prefix the role name with the path. For example, if a role with the name
-   * <code>bar</code> has a path of <code>/foo/</code>, specify <code>/foo/bar</code>
-   * as the role name. For more information, see <a
+   * your account.</p> <p>This automatic service-linked role creation only applies to
+   * <code>MANAGED</code> compute environments. For <code>UNMANAGED</code> compute
+   * environments, you must explicitly specify a <code>serviceRole</code>.</p>
+   *  <p>If your specified role has a path other than <code>/</code>,
+   * then you must specify either the full role ARN (recommended) or prefix the role
+   * name with the path. For example, if a role with the name <code>bar</code> has a
+   * path of <code>/foo/</code>, specify <code>/foo/bar</code> as the role name. For
+   * more information, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
    * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
    * you created your Batch service role, its ARN might contain the

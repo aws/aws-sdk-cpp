@@ -15,6 +15,7 @@
 #include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <aws/sagemaker/model/DomainSettings.h>
 #include <aws/sagemaker/model/DomainStatus.h>
+#include <aws/sagemaker/model/HomeEfsFileSystemCreation.h>
 #include <aws/sagemaker/model/TagPropagation.h>
 #include <aws/sagemaker/model/UserSettings.h>
 
@@ -391,6 +392,21 @@ class DescribeDomainResult {
 
   ///@{
   /**
+   * <p>Indicates whether a home EFS file system is created for the domain.</p>
+   */
+  inline HomeEfsFileSystemCreation GetHomeEfsFileSystemCreation() const { return m_homeEfsFileSystemCreation; }
+  inline void SetHomeEfsFileSystemCreation(HomeEfsFileSystemCreation value) {
+    m_homeEfsFileSystemCreationHasBeenSet = true;
+    m_homeEfsFileSystemCreation = value;
+  }
+  inline DescribeDomainResult& WithHomeEfsFileSystemCreation(HomeEfsFileSystemCreation value) {
+    SetHomeEfsFileSystemCreation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether custom tag propagation is supported for the domain.</p>
    */
   inline TagPropagation GetTagPropagation() const { return m_tagPropagation; }
@@ -478,6 +494,8 @@ class DescribeDomainResult {
 
   AppSecurityGroupManagement m_appSecurityGroupManagement{AppSecurityGroupManagement::NOT_SET};
 
+  HomeEfsFileSystemCreation m_homeEfsFileSystemCreation{HomeEfsFileSystemCreation::NOT_SET};
+
   TagPropagation m_tagPropagation{TagPropagation::NOT_SET};
 
   DefaultSpaceSettings m_defaultSpaceSettings;
@@ -504,6 +522,7 @@ class DescribeDomainResult {
   bool m_vpcIdHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_appSecurityGroupManagementHasBeenSet = false;
+  bool m_homeEfsFileSystemCreationHasBeenSet = false;
   bool m_tagPropagationHasBeenSet = false;
   bool m_defaultSpaceSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

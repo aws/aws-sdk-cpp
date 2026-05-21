@@ -106,5 +106,10 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const {
     payload.WithObject("routerIntegrationTransitEncryption", m_routerIntegrationTransitEncryption.Jsonize());
   }
 
+  if (m_ndiOutputTimecodeSourceHasBeenSet) {
+    payload.WithString("ndiOutputTimecodeSource",
+                       NdiOutputTimecodeSourceMapper::GetNameForNdiOutputTimecodeSource(m_ndiOutputTimecodeSource));
+  }
+
   return payload.View().WriteReadable();
 }

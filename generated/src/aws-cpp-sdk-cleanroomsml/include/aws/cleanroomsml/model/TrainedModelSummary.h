@@ -241,6 +241,25 @@ class TrainedModelSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The account ID of the member that is responsible for paying for model
+   * training costs.</p>
+   */
+  inline const Aws::String& GetMlModelTrainingPayerAccountId() const { return m_mlModelTrainingPayerAccountId; }
+  inline bool MlModelTrainingPayerAccountIdHasBeenSet() const { return m_mlModelTrainingPayerAccountIdHasBeenSet; }
+  template <typename MlModelTrainingPayerAccountIdT = Aws::String>
+  void SetMlModelTrainingPayerAccountId(MlModelTrainingPayerAccountIdT&& value) {
+    m_mlModelTrainingPayerAccountIdHasBeenSet = true;
+    m_mlModelTrainingPayerAccountId = std::forward<MlModelTrainingPayerAccountIdT>(value);
+  }
+  template <typename MlModelTrainingPayerAccountIdT = Aws::String>
+  TrainedModelSummary& WithMlModelTrainingPayerAccountId(MlModelTrainingPayerAccountIdT&& value) {
+    SetMlModelTrainingPayerAccountId(std::forward<MlModelTrainingPayerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
 
@@ -263,6 +282,8 @@ class TrainedModelSummary {
   TrainedModelStatus m_status{TrainedModelStatus::NOT_SET};
 
   Aws::String m_configuredModelAlgorithmAssociationArn;
+
+  Aws::String m_mlModelTrainingPayerAccountId;
   bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
   bool m_trainedModelArnHasBeenSet = false;
@@ -274,6 +295,7 @@ class TrainedModelSummary {
   bool m_collaborationIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
+  bool m_mlModelTrainingPayerAccountIdHasBeenSet = false;
 };
 
 }  // namespace Model

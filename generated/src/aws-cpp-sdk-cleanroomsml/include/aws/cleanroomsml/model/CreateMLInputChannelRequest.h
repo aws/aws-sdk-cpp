@@ -7,6 +7,7 @@
 #include <aws/cleanroomsml/CleanRoomsMLRequest.h>
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/cleanroomsml/model/InputChannel.h>
+#include <aws/cleanroomsml/model/PayerConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -203,6 +204,25 @@ class CreateMLInputChannelRequest : public CleanRoomsMLRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The payer configuration for the ML input channel. Determines which member
+   * account pays for compute and synthetic data costs.</p>
+   */
+  inline const PayerConfiguration& GetPayerConfiguration() const { return m_payerConfiguration; }
+  inline bool PayerConfigurationHasBeenSet() const { return m_payerConfigurationHasBeenSet; }
+  template <typename PayerConfigurationT = PayerConfiguration>
+  void SetPayerConfiguration(PayerConfigurationT&& value) {
+    m_payerConfigurationHasBeenSet = true;
+    m_payerConfiguration = std::forward<PayerConfigurationT>(value);
+  }
+  template <typename PayerConfigurationT = PayerConfiguration>
+  CreateMLInputChannelRequest& WithPayerConfiguration(PayerConfigurationT&& value) {
+    SetPayerConfiguration(std::forward<PayerConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_membershipIdentifier;
 
@@ -219,6 +239,8 @@ class CreateMLInputChannelRequest : public CleanRoomsMLRequest {
   Aws::String m_kmsKeyArn;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  PayerConfiguration m_payerConfiguration;
   bool m_membershipIdentifierHasBeenSet = false;
   bool m_configuredModelAlgorithmAssociationsHasBeenSet = false;
   bool m_inputChannelHasBeenSet = false;
@@ -227,6 +249,7 @@ class CreateMLInputChannelRequest : public CleanRoomsMLRequest {
   bool m_descriptionHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_payerConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

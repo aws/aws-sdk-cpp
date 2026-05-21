@@ -122,6 +122,10 @@ GetTrainedModelInferenceJobResult& GetTrainedModelInferenceJobResult::operator=(
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mlModelInferencePayerAccountId")) {
+    m_mlModelInferencePayerAccountId = jsonValue.GetString("mlModelInferencePayerAccountId");
+    m_mlModelInferencePayerAccountIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

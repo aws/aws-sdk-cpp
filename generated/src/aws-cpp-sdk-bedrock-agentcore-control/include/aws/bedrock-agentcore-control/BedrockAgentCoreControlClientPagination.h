@@ -14,6 +14,9 @@
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetExamplesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetVersionsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayRulesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsPaginationTraits.h>
@@ -66,6 +69,14 @@ using ListConfigurationBundlesPaginator =
 using ListConfigurationBundleVersionsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListConfigurationBundleVersionsRequest,
                                       Pagination::ListConfigurationBundleVersionsPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListDatasetExamplesPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListDatasetExamplesRequest,
+                                      Pagination::ListDatasetExamplesPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListDatasetsPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListDatasetsRequest,
+                                                                Pagination::ListDatasetsPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListDatasetVersionsPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListDatasetVersionsRequest,
+                                      Pagination::ListDatasetVersionsPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListEvaluatorsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListEvaluatorsRequest,
                                       Pagination::ListEvaluatorsPaginationTraits<BedrockAgentCoreControlClient>>;

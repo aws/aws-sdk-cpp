@@ -85,6 +85,11 @@ Transport& Transport::operator=(JsonView jsonValue) {
     m_ndiSourceSettings = jsonValue.GetObject("ndiSourceSettings");
     m_ndiSourceSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ndiOutputTimecodeSource")) {
+    m_ndiOutputTimecodeSource =
+        NdiOutputTimecodeSourceMapper::GetNdiOutputTimecodeSourceForName(jsonValue.GetString("ndiOutputTimecodeSource"));
+    m_ndiOutputTimecodeSourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -157,6 +162,11 @@ JsonValue Transport::Jsonize() const {
 
   if (m_ndiSourceSettingsHasBeenSet) {
     payload.WithObject("ndiSourceSettings", m_ndiSourceSettings.Jsonize());
+  }
+
+  if (m_ndiOutputTimecodeSourceHasBeenSet) {
+    payload.WithString("ndiOutputTimecodeSource",
+                       NdiOutputTimecodeSourceMapper::GetNameForNdiOutputTimecodeSource(m_ndiOutputTimecodeSource));
   }
 
   return payload;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/cleanroomsml/model/MLInputChannelStatus.h>
+#include <aws/cleanroomsml/model/PayerConfiguration.h>
 #include <aws/cleanroomsml/model/PrivacyBudgets.h>
 #include <aws/cleanroomsml/model/StatusDetails.h>
 #include <aws/cleanroomsml/model/SyntheticDataConfiguration.h>
@@ -244,6 +245,23 @@ class GetCollaborationMLInputChannelResult {
 
   ///@{
   /**
+   * <p>The payer configuration for the ML input channel.</p>
+   */
+  inline const PayerConfiguration& GetPayerConfiguration() const { return m_payerConfiguration; }
+  template <typename PayerConfigurationT = PayerConfiguration>
+  void SetPayerConfiguration(PayerConfigurationT&& value) {
+    m_payerConfigurationHasBeenSet = true;
+    m_payerConfiguration = std::forward<PayerConfigurationT>(value);
+  }
+  template <typename PayerConfigurationT = PayerConfiguration>
+  GetCollaborationMLInputChannelResult& WithPayerConfiguration(PayerConfigurationT&& value) {
+    SetPayerConfiguration(std::forward<PayerConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time at which the ML input channel was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
@@ -334,6 +352,8 @@ class GetCollaborationMLInputChannelResult {
 
   SyntheticDataConfiguration m_syntheticDataConfiguration;
 
+  PayerConfiguration m_payerConfiguration;
+
   Aws::Utils::DateTime m_createTime{};
 
   Aws::Utils::DateTime m_updateTime{};
@@ -354,6 +374,7 @@ class GetCollaborationMLInputChannelResult {
   bool m_privacyBudgetsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_syntheticDataConfigurationHasBeenSet = false;
+  bool m_payerConfigurationHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
   bool m_creatorAccountIdHasBeenSet = false;

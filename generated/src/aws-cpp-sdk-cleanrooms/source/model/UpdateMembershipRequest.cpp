@@ -31,5 +31,9 @@ Aws::String UpdateMembershipRequest::SerializePayload() const {
     payload.WithObject("defaultJobResultConfiguration", m_defaultJobResultConfiguration.Jsonize());
   }
 
+  if (m_membershipPaymentConfigurationHasBeenSet) {
+    payload.WithObject("membershipPaymentConfiguration", m_membershipPaymentConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
