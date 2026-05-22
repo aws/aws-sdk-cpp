@@ -207,6 +207,7 @@
 #include <aws/qconnect/model/GetSessionRequest.h>
 #include <aws/qconnect/model/GetSessionResult.h>
 #include <aws/qconnect/model/GroupingConfiguration.h>
+#include <aws/qconnect/model/GuardrailAction.h>
 #include <aws/qconnect/model/GuardrailContentFilterConfig.h>
 #include <aws/qconnect/model/GuardrailContentFilterType.h>
 #include <aws/qconnect/model/GuardrailContextualGroundingFilterConfig.h>
@@ -216,8 +217,11 @@
 #include <aws/qconnect/model/GuardrailManagedWordsType.h>
 #include <aws/qconnect/model/GuardrailPiiEntityConfig.h>
 #include <aws/qconnect/model/GuardrailPiiEntityType.h>
+#include <aws/qconnect/model/GuardrailPolicyResult.h>
+#include <aws/qconnect/model/GuardrailPolicyType.h>
 #include <aws/qconnect/model/GuardrailRegexConfig.h>
 #include <aws/qconnect/model/GuardrailSensitiveInformationAction.h>
+#include <aws/qconnect/model/GuardrailSource.h>
 #include <aws/qconnect/model/GuardrailTopicConfig.h>
 #include <aws/qconnect/model/GuardrailTopicType.h>
 #include <aws/qconnect/model/GuardrailWordConfig.h>
@@ -402,6 +406,7 @@
 #include <aws/qconnect/model/Span.h>
 #include <aws/qconnect/model/SpanAttributes.h>
 #include <aws/qconnect/model/SpanCitation.h>
+#include <aws/qconnect/model/SpanGuardrailAssessment.h>
 #include <aws/qconnect/model/SpanMessage.h>
 #include <aws/qconnect/model/SpanMessageValue.h>
 #include <aws/qconnect/model/SpanReasoningValue.h>

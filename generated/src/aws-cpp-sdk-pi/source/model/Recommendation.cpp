@@ -26,6 +26,10 @@ Recommendation& Recommendation::operator=(JsonView jsonValue) {
     m_recommendationDescription = jsonValue.GetString("RecommendationDescription");
     m_recommendationDescriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RecommendationDetails")) {
+    m_recommendationDetails = jsonValue.GetString("RecommendationDetails");
+    m_recommendationDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue Recommendation::Jsonize() const {
 
   if (m_recommendationDescriptionHasBeenSet) {
     payload.WithString("RecommendationDescription", m_recommendationDescription);
+  }
+
+  if (m_recommendationDetailsHasBeenSet) {
+    payload.WithString("RecommendationDetails", m_recommendationDetails);
   }
 
   return payload;

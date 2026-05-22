@@ -11,6 +11,7 @@
 #include <aws/pi/model/GetResourceMetricsPaginationTraits.h>
 #include <aws/pi/model/ListAvailableResourceDimensionsPaginationTraits.h>
 #include <aws/pi/model/ListAvailableResourceMetricsPaginationTraits.h>
+#include <aws/pi/model/ListPerformanceAnalysisReportRecommendationsPaginationTraits.h>
 #include <aws/pi/model/ListPerformanceAnalysisReportsPaginationTraits.h>
 
 #include <memory>
@@ -66,6 +67,18 @@ class PIPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAvailableResourceMetricsRequest,
                                              Pagination::ListAvailableResourceMetricsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListPerformanceAnalysisReportRecommendations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPerformanceAnalysisReportRecommendationsRequest,
+                                    Pagination::ListPerformanceAnalysisReportRecommendationsPaginationTraits<DerivedClient>>
+  ListPerformanceAnalysisReportRecommendationsPaginator(const Model::ListPerformanceAnalysisReportRecommendationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPerformanceAnalysisReportRecommendationsRequest,
+                                             Pagination::ListPerformanceAnalysisReportRecommendationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

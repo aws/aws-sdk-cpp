@@ -97,6 +97,10 @@ Finding& Finding::operator=(JsonView jsonValue) {
     }
     m_codeLocationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("verificationScript")) {
+    m_verificationScript = jsonValue.GetObject("verificationScript");
+    m_verificationScriptHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -189,6 +193,10 @@ JsonValue Finding::Jsonize() const {
       codeLocationsJsonList[codeLocationsIndex].AsObject(m_codeLocations[codeLocationsIndex].Jsonize());
     }
     payload.WithArray("codeLocations", std::move(codeLocationsJsonList));
+  }
+
+  if (m_verificationScriptHasBeenSet) {
+    payload.WithObject("verificationScript", m_verificationScript.Jsonize());
   }
 
   if (m_createdAtHasBeenSet) {

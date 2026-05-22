@@ -815,6 +815,9 @@
 #include <aws/datazone/model/UserSearchType.h>
 #include <aws/datazone/model/UserType.h>
 #include <aws/datazone/model/UsernamePassword.h>
+#include <aws/datazone/model/VpcPropertiesInput.h>
+#include <aws/datazone/model/VpcPropertiesOutput.h>
+#include <aws/datazone/model/VpcPropertiesPatch.h>
 #include <aws/datazone/model/WorkflowsMwaaPropertiesInput.h>
 #include <aws/datazone/model/WorkflowsMwaaPropertiesOutput.h>
 #include <aws/datazone/model/WorkflowsServerlessPropertiesInput.h>

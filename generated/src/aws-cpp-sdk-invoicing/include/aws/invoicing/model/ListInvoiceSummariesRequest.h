@@ -72,9 +72,8 @@ class ListInvoiceSummariesRequest : public InvoicingRequest {
 
   ///@{
   /**
-   * <p>The token to retrieve the next set of results. Amazon Web Services provides
-   * the token when the response from a previous call has more results than the
-   * maximum page size.</p>
+   * <p>The token for the next set of results. (You received this token from a
+   * previous call.)</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

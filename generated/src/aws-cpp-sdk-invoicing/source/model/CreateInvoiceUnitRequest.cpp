@@ -43,6 +43,10 @@ Aws::String CreateInvoiceUnitRequest::SerializePayload() const {
     payload.WithArray("ResourceTags", std::move(resourceTagsJsonList));
   }
 
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
+  }
+
   return payload.View().WriteReadable();
 }
 

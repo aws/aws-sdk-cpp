@@ -33,7 +33,8 @@ enum class ConnectionType {
   VERTICA,
   WORKFLOWS_MWAA,
   AMAZON_Q,
-  MLFLOW
+  MLFLOW,
+  VPC
 };
 
 namespace ConnectionTypeMapper {

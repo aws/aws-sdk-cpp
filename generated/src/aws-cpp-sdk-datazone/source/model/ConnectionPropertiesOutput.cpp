@@ -70,6 +70,10 @@ ConnectionPropertiesOutput& ConnectionPropertiesOutput::operator=(JsonView jsonV
     m_lakehouseProperties = jsonValue.GetObject("lakehouseProperties");
     m_lakehousePropertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vpcProperties")) {
+    m_vpcProperties = jsonValue.GetObject("vpcProperties");
+    m_vpcPropertiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -126,6 +130,10 @@ JsonValue ConnectionPropertiesOutput::Jsonize() const {
 
   if (m_lakehousePropertiesHasBeenSet) {
     payload.WithObject("lakehouseProperties", m_lakehouseProperties.Jsonize());
+  }
+
+  if (m_vpcPropertiesHasBeenSet) {
+    payload.WithObject("vpcProperties", m_vpcProperties.Jsonize());
   }
 
   return payload;

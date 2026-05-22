@@ -17,6 +17,10 @@ Aws::String ModifyInstanceAttributeRequest::SerializePayload() const {
     m_sourceDestCheck.OutputToStream(ss, "SourceDestCheck");
   }
 
+  if (m_enclaveOptionsHasBeenSet) {
+    m_enclaveOptions.OutputToStream(ss, "EnclaveOptions");
+  }
+
   if (m_disableApiStopHasBeenSet) {
     m_disableApiStop.OutputToStream(ss, "DisableApiStop");
   }

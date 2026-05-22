@@ -13,6 +13,7 @@
 #include <aws/securityagent/model/ConfidenceLevel.h>
 #include <aws/securityagent/model/FindingStatus.h>
 #include <aws/securityagent/model/RiskLevel.h>
+#include <aws/securityagent/model/VerificationScript.h>
 
 #include <utility>
 
@@ -390,6 +391,25 @@ class Finding {
 
   ///@{
   /**
+   * <p>The verification script metadata for reproducing the finding, including
+   * download URL, instructions, and required environment variables.</p>
+   */
+  inline const VerificationScript& GetVerificationScript() const { return m_verificationScript; }
+  inline bool VerificationScriptHasBeenSet() const { return m_verificationScriptHasBeenSet; }
+  template <typename VerificationScriptT = VerificationScript>
+  void SetVerificationScript(VerificationScriptT&& value) {
+    m_verificationScriptHasBeenSet = true;
+    m_verificationScript = std::forward<VerificationScriptT>(value);
+  }
+  template <typename VerificationScriptT = VerificationScript>
+  Finding& WithVerificationScript(VerificationScriptT&& value) {
+    SetVerificationScript(std::forward<VerificationScriptT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the finding was created, in UTC format.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -462,6 +482,8 @@ class Finding {
 
   Aws::Vector<CodeLocation> m_codeLocations;
 
+  VerificationScript m_verificationScript;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -484,6 +506,7 @@ class Finding {
   bool m_codeRemediationTaskHasBeenSet = false;
   bool m_lastUpdatedByHasBeenSet = false;
   bool m_codeLocationsHasBeenSet = false;
+  bool m_verificationScriptHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

@@ -191,7 +191,6 @@
 #include <aws/ec2/model/BaselinePerformanceFactorsRequest.h>
 #include <aws/ec2/model/BatchState.h>
 #include <aws/ec2/model/BgpStatus.h>
-#include <aws/ec2/model/BlobAttributeValue.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/BlockDeviceMappingResponse.h>
 #include <aws/ec2/model/BlockPublicAccessMode.h>
@@ -2492,6 +2491,7 @@
 #include <aws/ec2/model/SecondarySubnetCidrBlockAssociationState.h>
 #include <aws/ec2/model/SecondarySubnetIpv4CidrBlockAssociation.h>
 #include <aws/ec2/model/SecondarySubnetState.h>
+#include <aws/ec2/model/SecureBlobAttributeValue.h>
 #include <aws/ec2/model/SecurityGroup.h>
 #include <aws/ec2/model/SecurityGroupForVpc.h>
 #include <aws/ec2/model/SecurityGroupIdentifier.h>

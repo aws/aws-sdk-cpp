@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/invoicing/InvoicingRequest.h>
@@ -204,6 +205,25 @@ class PutProcurementPortalPreferenceRequest : public InvoicingRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that you provide to ensure idempotency of
+   * the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  PutProcurementPortalPreferenceRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_procurementPortalPreferenceArn;
 
@@ -222,6 +242,8 @@ class PutProcurementPortalPreferenceRequest : public InvoicingRequest {
   bool m_purchaseOrderRetrievalEnabled{false};
 
   Aws::Vector<Contact> m_contacts;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_procurementPortalPreferenceArnHasBeenSet = false;
   bool m_selectorHasBeenSet = false;
   bool m_procurementPortalSharedSecretHasBeenSet = false;
@@ -231,6 +253,7 @@ class PutProcurementPortalPreferenceRequest : public InvoicingRequest {
   bool m_einvoiceDeliveryPreferenceHasBeenSet = false;
   bool m_purchaseOrderRetrievalEnabledHasBeenSet = false;
   bool m_contactsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

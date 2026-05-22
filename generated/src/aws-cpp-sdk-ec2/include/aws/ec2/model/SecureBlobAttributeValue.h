@@ -19,32 +19,32 @@ class XmlNode;
 namespace EC2 {
 namespace Model {
 
-class BlobAttributeValue {
+class SecureBlobAttributeValue {
  public:
-  AWS_EC2_API BlobAttributeValue() = default;
-  AWS_EC2_API BlobAttributeValue(const Aws::Utils::Xml::XmlNode& xmlNode);
-  AWS_EC2_API BlobAttributeValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_EC2_API SecureBlobAttributeValue() = default;
+  AWS_EC2_API SecureBlobAttributeValue(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_EC2_API SecureBlobAttributeValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
   AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
   AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
   ///@{
 
-  inline const Aws::Utils::ByteBuffer& GetValue() const { return m_value; }
+  inline const Aws::Utils::CryptoBuffer& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-  template <typename ValueT = Aws::Utils::ByteBuffer>
+  template <typename ValueT = Aws::Utils::CryptoBuffer>
   void SetValue(ValueT&& value) {
     m_valueHasBeenSet = true;
     m_value = std::forward<ValueT>(value);
   }
-  template <typename ValueT = Aws::Utils::ByteBuffer>
-  BlobAttributeValue& WithValue(ValueT&& value) {
+  template <typename ValueT = Aws::Utils::CryptoBuffer>
+  SecureBlobAttributeValue& WithValue(ValueT&& value) {
     SetValue(std::forward<ValueT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::Utils::ByteBuffer m_value{};
+  Aws::Utils::CryptoBuffer m_value{};
   bool m_valueHasBeenSet = false;
 };
 

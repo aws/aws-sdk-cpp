@@ -230,6 +230,8 @@
 #include <aws/securityagent/model/ValidationException.h>
 #include <aws/securityagent/model/ValidationExceptionField.h>
 #include <aws/securityagent/model/VerificationDetails.h>
+#include <aws/securityagent/model/VerificationScript.h>
+#include <aws/securityagent/model/VerificationScriptEnvVar.h>
 #include <aws/securityagent/model/VerifyTargetDomainRequest.h>
 #include <aws/securityagent/model/VerifyTargetDomainResult.h>
 #include <aws/securityagent/model/VpcConfig.h>

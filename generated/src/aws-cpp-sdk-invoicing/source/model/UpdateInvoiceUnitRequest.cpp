@@ -31,6 +31,10 @@ Aws::String UpdateInvoiceUnitRequest::SerializePayload() const {
     payload.WithObject("Rule", m_rule.Jsonize());
   }
 
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
+  }
+
   return payload.View().WriteReadable();
 }
 
