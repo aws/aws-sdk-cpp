@@ -488,6 +488,17 @@ namespace Aws
               bool useAnonymousAuth = false;
             } winHTTPOptions;
 
+            /**
+             * Configuration that is specifically used for the curl http client
+             */
+            struct CurlOptions {
+              /**
+               * If set to true, SSL connections will use best-effort revocation checking,
+               * proceeding even when CRL servers are unreachable. Off by default.
+               */
+              bool revokeBestEffort = false;
+            } curlOptions;
+
           /**
             * The AWS account ID. Used for account-based endpoint routing. An AWS account ID has a format like 111122223333.
             * Account-based endpoint routing provides better request performance for some services.

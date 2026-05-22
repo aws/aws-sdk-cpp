@@ -608,7 +608,7 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_proxySSLCertPath(clientConfig.proxySSLCertPath), m_proxySSLCertType(clientConfig.proxySSLCertType),
     m_proxySSLKeyPath(clientConfig.proxySSLKeyPath), m_proxySSLKeyType(clientConfig.proxySSLKeyType),
     m_proxyKeyPasswd(clientConfig.proxySSLKeyPassword),
-    m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath),
+    m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_revokeBestEffort(clientConfig.curlOptions.revokeBestEffort), m_caPath(clientConfig.caPath),
     m_caFile(clientConfig.caFile), m_proxyCaPath(clientConfig.proxyCaPath), m_proxyCaFile(clientConfig.proxyCaFile),
     m_disableExpectHeader(clientConfig.disableExpectHeader),
     m_enableHttpClientTrace(clientConfig.enableHttpClientTrace || FORCE_ENABLE_CURL_LOGGING),
@@ -743,6 +743,19 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
 #else
             curl_easy_setopt(connectionHandle, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1);
+#endif
+
+#if LIBCURL_VERSION_NUM >= 0x074600 // 7.70.0
+            if (m_revokeBestEffort)
+            {
+                curl_easy_setopt(connectionHandle, CURLOPT_SSL_OPTIONS, CURLSSLOPT_REVOKE_BEST_EFFORT);
+            }
+#else
+            if (m_revokeBestEffort)
+            {
+                AWS_LOGSTREAM_WARN(CURL_HTTP_CLIENT_TAG,
+                    "curlOptions.revokeBestEffort requires libcurl >= 7.70.0");
+            }
 #endif
         }
         else
