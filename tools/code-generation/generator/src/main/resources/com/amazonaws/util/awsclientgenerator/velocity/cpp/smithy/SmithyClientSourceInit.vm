@@ -63,7 +63,7 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
         {
 #if($serviceModel.metadata.serviceId == "S3")
             [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
-                  auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig);
+                  auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig());
                   return {
 #foreach($entry in $AuthSchemeMapEntries)
 #if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
@@ -77,9 +77,9 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
 #else
 #foreach($entry in $AuthSchemeMapEntries)
     #if($entry.contains("smithy::BearerTokenAuthScheme") && $serviceModel.metadata.signingName == "bedrock")
-        {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig), GetServiceName(), clientConfiguration.region}},
+        {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.ResolveCredentialProviderConfig()), GetServiceName(), clientConfiguration.region}},
     #else
-        {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
+        {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.ResolveCredentialProviderConfig()}},
     #end
 #end
 #end
@@ -124,9 +124,9 @@ ${className}::${className}(const AWSCredentials& credentials,
             {${entry}{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
 #else
     #if($serviceModel.metadata.signingName == "bedrock")
-            {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig), GetServiceName(), clientConfiguration.region}}
+            {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.ResolveCredentialProviderConfig()), GetServiceName(), clientConfiguration.region}}
     #else
-            {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}}
+            {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.ResolveCredentialProviderConfig()}}
     #end
 #end
 #end
@@ -192,7 +192,7 @@ ${className}::${className}(const Aws::Client::ClientConfiguration& clientConfigu
       Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
       {
             [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
-                  auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig);
+                  auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig());
                   return {
 #foreach($entry in $AuthSchemeMapEntries)
 #if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
@@ -275,7 +275,7 @@ ${className}::${className}(const ${className} &rhs) :
     Aws::Client::ClientWithAsyncTemplateMethods<S3Client>(), AwsSmithyClientT(rhs) {
      m_authSchemes =
           [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
-            auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig);
+            auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig());
             return {
 #foreach($entry in $AuthSchemeMapEntries)
 #if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
@@ -306,9 +306,9 @@ ${className}::${className}(const Aws::Client::ClientConfiguration& clientConfigu
       {
 #foreach($entry in $AuthSchemeMapEntries)
     #if($entry.contains("smithy::BearerTokenAuthScheme") && $serviceModel.metadata.signingName == "bedrock")
-        {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig), GetServiceName(), clientConfiguration.region}},
+        {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.ResolveCredentialProviderConfig()), GetServiceName(), clientConfiguration.region}},
     #else
-        {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
+        {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.ResolveCredentialProviderConfig()}},
     #end
 #end
       })
@@ -333,9 +333,9 @@ ${className}::${className}(const AWSCredentials& credentials,
           {$entry{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
 #else
     #if($entry.contains("smithy::BearerTokenAuthScheme") && $serviceModel.metadata.signingName == "bedrock")
-        {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig), GetServiceName(), clientConfiguration.region}},
+        {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.ResolveCredentialProviderConfig()), GetServiceName(), clientConfiguration.region}},
     #else
-        {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}}
+        {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.ResolveCredentialProviderConfig()}}
     #end
 
 #end
@@ -361,9 +361,9 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
           {$entry{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}},
 #else
     #if($serviceModel.metadata.serviceId == "Bedrock" || $serviceModel.metadata.serviceId == "Bedrock Runtime" || $serviceModel.metadata.serviceId == "Bedrock Agent" || $serviceModel.metadata.serviceId == "Bedrock Agent Runtime")
-        {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig), GetServiceName(), clientConfiguration.region}}
+        {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.ResolveCredentialProviderConfig()), GetServiceName(), clientConfiguration.region}}
     #else
-        {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}}
+        {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.ResolveCredentialProviderConfig()}}
     #end
 #end
 #end

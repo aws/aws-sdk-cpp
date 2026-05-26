@@ -116,16 +116,16 @@ const char* BedrockAgentClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
 BedrockAgentClient::BedrockAgentClient(const BedrockAgent::BedrockAgentClientConfiguration& clientConfiguration,
                                        std::shared_ptr<BedrockAgentEndpointProviderBase> endpointProvider)
-    : AwsSmithyClientT(
-          clientConfiguration, GetServiceName(), "Bedrock Agent", Aws::Http::CreateHttpClient(clientConfiguration),
-          Aws::MakeShared<BedrockAgentErrorMarshaller>(ALLOCATION_TAG),
-          endpointProvider ? endpointProvider : Aws::MakeShared<BedrockAgentEndpointProvider>(ALLOCATION_TAG),
-          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
-          }) {}
+    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "Bedrock Agent", Aws::Http::CreateHttpClient(clientConfiguration),
+                       Aws::MakeShared<BedrockAgentErrorMarshaller>(ALLOCATION_TAG),
+                       endpointProvider ? endpointProvider : Aws::MakeShared<BedrockAgentEndpointProvider>(ALLOCATION_TAG),
+                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+                       {
+                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+                            smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                                    clientConfiguration.ResolveCredentialProviderConfig()}},
+                       }) {}
 
 BedrockAgentClient::BedrockAgentClient(const AWSCredentials& credentials,
                                        std::shared_ptr<BedrockAgentEndpointProviderBase> endpointProvider,
@@ -159,15 +159,16 @@ BedrockAgentClient::BedrockAgentClient(const std::shared_ptr<AWSCredentialsProvi
 
 /* Legacy constructors due deprecation */
 BedrockAgentClient::BedrockAgentClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : AwsSmithyClientT(
-          clientConfiguration, GetServiceName(), "Bedrock Agent", Aws::Http::CreateHttpClient(clientConfiguration),
-          Aws::MakeShared<BedrockAgentErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<BedrockAgentEndpointProvider>(ALLOCATION_TAG),
-          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
-          }) {}
+    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "Bedrock Agent", Aws::Http::CreateHttpClient(clientConfiguration),
+                       Aws::MakeShared<BedrockAgentErrorMarshaller>(ALLOCATION_TAG),
+                       Aws::MakeShared<BedrockAgentEndpointProvider>(ALLOCATION_TAG),
+                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+                       {
+                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+                            smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                                    clientConfiguration.ResolveCredentialProviderConfig()}},
+                       }) {}
 
 BedrockAgentClient::BedrockAgentClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(

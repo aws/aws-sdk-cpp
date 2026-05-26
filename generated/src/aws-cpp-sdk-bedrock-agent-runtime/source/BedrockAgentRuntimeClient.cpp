@@ -76,16 +76,16 @@ const char* BedrockAgentRuntimeClient::GetAllocationTag() { return ALLOCATION_TA
 
 BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const BedrockAgentRuntime::BedrockAgentRuntimeClientConfiguration& clientConfiguration,
                                                      std::shared_ptr<BedrockAgentRuntimeEndpointProviderBase> endpointProvider)
-    : AwsSmithyClientT(
-          clientConfiguration, GetServiceName(), "Bedrock Agent Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
-          Aws::MakeShared<BedrockAgentRuntimeErrorMarshaller>(ALLOCATION_TAG),
-          endpointProvider ? endpointProvider : Aws::MakeShared<BedrockAgentRuntimeEndpointProvider>(ALLOCATION_TAG),
-          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
-          }) {}
+    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "Bedrock Agent Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
+                       Aws::MakeShared<BedrockAgentRuntimeErrorMarshaller>(ALLOCATION_TAG),
+                       endpointProvider ? endpointProvider : Aws::MakeShared<BedrockAgentRuntimeEndpointProvider>(ALLOCATION_TAG),
+                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+                       {
+                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+                            smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                                    clientConfiguration.ResolveCredentialProviderConfig()}},
+                       }) {}
 
 BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const AWSCredentials& credentials,
                                                      std::shared_ptr<BedrockAgentRuntimeEndpointProviderBase> endpointProvider,
@@ -119,16 +119,16 @@ BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const std::shared_ptr<AWSCr
 
 /* Legacy constructors due deprecation */
 BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : AwsSmithyClientT(
-          clientConfiguration, GetServiceName(), "Bedrock Agent Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
-          Aws::MakeShared<BedrockAgentRuntimeErrorMarshaller>(ALLOCATION_TAG),
-          Aws::MakeShared<BedrockAgentRuntimeEndpointProvider>(ALLOCATION_TAG),
-          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
-          }) {}
+    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "Bedrock Agent Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
+                       Aws::MakeShared<BedrockAgentRuntimeErrorMarshaller>(ALLOCATION_TAG),
+                       Aws::MakeShared<BedrockAgentRuntimeEndpointProvider>(ALLOCATION_TAG),
+                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+                       {
+                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+                            smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                                    clientConfiguration.ResolveCredentialProviderConfig()}},
+                       }) {}
 
 BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const AWSCredentials& credentials,
                                                      const Aws::Client::ClientConfiguration& clientConfiguration)

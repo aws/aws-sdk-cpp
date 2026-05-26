@@ -142,12 +142,12 @@ const char* S3ControlClient::GetAllocationTag() { return ALLOCATION_TAG; }
 S3ControlClient::S3ControlClient(const S3Control::S3ControlClientConfiguration& clientConfiguration,
                                  std::shared_ptr<S3ControlEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region),
-                    Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent,
-                    /*doubleEncodeValue*/ false),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region),
+                                                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent,
+                                                 /*doubleEncodeValue*/ false),
                 Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG)) {
@@ -184,12 +184,12 @@ S3ControlClient::S3ControlClient(const std::shared_ptr<AWSCredentialsProvider>& 
 /* Legacy constructors due deprecation */
 S3ControlClient::S3ControlClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region),
-                    Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent,
-                    /*doubleEncodeValue*/ false),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region),
+                                                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent,
+                                                 /*doubleEncodeValue*/ false),
                 Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG)) {

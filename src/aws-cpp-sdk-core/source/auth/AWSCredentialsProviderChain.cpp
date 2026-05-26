@@ -90,7 +90,7 @@ DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCr
 DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config) : AWSCredentialsProviderChain()
 {
     AddProvider(Aws::MakeShared<EnvironmentAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
-    AddProvider(Aws::MakeShared<ProfileCredentialsProvider>(DefaultCredentialsProviderChainTag,config.profile.c_str()));
+    AddProvider(Aws::MakeShared<ProfileCredentialsProvider>(DefaultCredentialsProviderChainTag, config));
     AddProvider(Aws::MakeShared<STSAssumeRoleWebIdentityCredentialsProvider>(DefaultCredentialsProviderChainTag, config));
     AddProvider(Aws::MakeShared<SSOCredentialsProvider>(DefaultCredentialsProviderChainTag,config.profile));
     AddProvider(Aws::MakeShared<LoginCredentialsProvider>(DefaultCredentialsProviderChainTag, config));
