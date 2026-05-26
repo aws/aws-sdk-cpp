@@ -65,6 +65,10 @@ GetEnvironmentBlueprintConfigurationResult& GetEnvironmentBlueprintConfiguration
     }
     m_regionalParametersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("allowUserProvidedConfigurations")) {
+    m_allowUserProvidedConfigurations = jsonValue.GetBool("allowUserProvidedConfigurations");
+    m_allowUserProvidedConfigurationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -72,6 +76,14 @@ GetEnvironmentBlueprintConfigurationResult& GetEnvironmentBlueprintConfiguration
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("resourceConfigurations")) {
+    Aws::Utils::Array<JsonView> resourceConfigurationsJsonList = jsonValue.GetArray("resourceConfigurations");
+    for (unsigned resourceConfigurationsIndex = 0; resourceConfigurationsIndex < resourceConfigurationsJsonList.GetLength();
+         ++resourceConfigurationsIndex) {
+      m_resourceConfigurations.push_back(resourceConfigurationsJsonList[resourceConfigurationsIndex].AsObject());
+    }
+    m_resourceConfigurationsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("provisioningConfigurations")) {
     Aws::Utils::Array<JsonView> provisioningConfigurationsJsonList = jsonValue.GetArray("provisioningConfigurations");

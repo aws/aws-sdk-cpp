@@ -19,6 +19,10 @@ Aws::String StartScanJobRequest::SerializePayload() const {
     payload.WithString("BackupVaultName", m_backupVaultName);
   }
 
+  if (m_continuousScanEndTimeHasBeenSet) {
+    payload.WithDouble("ContinuousScanEndTime", m_continuousScanEndTime.SecondsWithMSPrecision());
+  }
+
   if (m_iamRoleArnHasBeenSet) {
     payload.WithString("IamRoleArn", m_iamRoleArn);
   }

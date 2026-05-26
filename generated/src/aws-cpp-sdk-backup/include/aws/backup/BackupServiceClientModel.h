@@ -55,6 +55,7 @@
 #include <aws/backup/model/GetBackupVaultAccessPolicyResult.h>
 #include <aws/backup/model/GetBackupVaultNotificationsResult.h>
 #include <aws/backup/model/GetLegalHoldResult.h>
+#include <aws/backup/model/GetPITRMalwareScanResultsResult.h>
 #include <aws/backup/model/GetRecoveryPointIndexDetailsResult.h>
 #include <aws/backup/model/GetRecoveryPointRestoreMetadataResult.h>
 #include <aws/backup/model/GetRestoreJobMetadataResult.h>
@@ -209,6 +210,7 @@ class GetBackupSelectionRequest;
 class GetBackupVaultAccessPolicyRequest;
 class GetBackupVaultNotificationsRequest;
 class GetLegalHoldRequest;
+class GetPITRMalwareScanResultsRequest;
 class GetRecoveryPointIndexDetailsRequest;
 class GetRecoveryPointRestoreMetadataRequest;
 class GetRestoreJobMetadataRequest;
@@ -320,6 +322,7 @@ typedef Aws::Utils::Outcome<GetBackupSelectionResult, BackupError> GetBackupSele
 typedef Aws::Utils::Outcome<GetBackupVaultAccessPolicyResult, BackupError> GetBackupVaultAccessPolicyOutcome;
 typedef Aws::Utils::Outcome<GetBackupVaultNotificationsResult, BackupError> GetBackupVaultNotificationsOutcome;
 typedef Aws::Utils::Outcome<GetLegalHoldResult, BackupError> GetLegalHoldOutcome;
+typedef Aws::Utils::Outcome<GetPITRMalwareScanResultsResult, BackupError> GetPITRMalwareScanResultsOutcome;
 typedef Aws::Utils::Outcome<GetRecoveryPointIndexDetailsResult, BackupError> GetRecoveryPointIndexDetailsOutcome;
 typedef Aws::Utils::Outcome<GetRecoveryPointRestoreMetadataResult, BackupError> GetRecoveryPointRestoreMetadataOutcome;
 typedef Aws::Utils::Outcome<GetRestoreJobMetadataResult, BackupError> GetRestoreJobMetadataOutcome;
@@ -431,6 +434,7 @@ typedef std::future<GetBackupSelectionOutcome> GetBackupSelectionOutcomeCallable
 typedef std::future<GetBackupVaultAccessPolicyOutcome> GetBackupVaultAccessPolicyOutcomeCallable;
 typedef std::future<GetBackupVaultNotificationsOutcome> GetBackupVaultNotificationsOutcomeCallable;
 typedef std::future<GetLegalHoldOutcome> GetLegalHoldOutcomeCallable;
+typedef std::future<GetPITRMalwareScanResultsOutcome> GetPITRMalwareScanResultsOutcomeCallable;
 typedef std::future<GetRecoveryPointIndexDetailsOutcome> GetRecoveryPointIndexDetailsOutcomeCallable;
 typedef std::future<GetRecoveryPointRestoreMetadataOutcome> GetRecoveryPointRestoreMetadataOutcomeCallable;
 typedef std::future<GetRestoreJobMetadataOutcome> GetRestoreJobMetadataOutcomeCallable;
@@ -651,6 +655,9 @@ typedef std::function<void(const BackupClient*, const Model::GetBackupVaultNotif
 typedef std::function<void(const BackupClient*, const Model::GetLegalHoldRequest&, const Model::GetLegalHoldOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetLegalHoldResponseReceivedHandler;
+typedef std::function<void(const BackupClient*, const Model::GetPITRMalwareScanResultsRequest&,
+                           const Model::GetPITRMalwareScanResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPITRMalwareScanResultsResponseReceivedHandler;
 typedef std::function<void(const BackupClient*, const Model::GetRecoveryPointIndexDetailsRequest&,
                            const Model::GetRecoveryPointIndexDetailsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

@@ -35,7 +35,8 @@ class ScanResultInfo {
   ///@{
   /**
    * <p>The status of the scan results.</p> <p>Valid values:
-   * <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code>.</p>
+   * <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code> |
+   * <code>UNKNOWN</code>.</p>
    */
   inline ScanResultStatus GetScanResultStatus() const { return m_scanResultStatus; }
   inline bool ScanResultStatusHasBeenSet() const { return m_scanResultStatusHasBeenSet; }

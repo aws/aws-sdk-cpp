@@ -606,6 +606,7 @@
 #include <aws/datazone/model/PutDataExportConfigurationResult.h>
 #include <aws/datazone/model/PutEnvironmentBlueprintConfigurationRequest.h>
 #include <aws/datazone/model/PutEnvironmentBlueprintConfigurationResult.h>
+#include <aws/datazone/model/PutResourceConfiguration.h>
 #include <aws/datazone/model/QueryGraphRequest.h>
 #include <aws/datazone/model/QueryGraphResult.h>
 #include <aws/datazone/model/RecommendationConfiguration.h>
@@ -641,6 +642,7 @@
 #include <aws/datazone/model/RemovePolicyGrantResult.h>
 #include <aws/datazone/model/ResolutionStrategy.h>
 #include <aws/datazone/model/Resource.h>
+#include <aws/datazone/model/ResourceConfiguration.h>
 #include <aws/datazone/model/ResourceTag.h>
 #include <aws/datazone/model/ResourceTagParameter.h>
 #include <aws/datazone/model/ResourceTagSource.h>

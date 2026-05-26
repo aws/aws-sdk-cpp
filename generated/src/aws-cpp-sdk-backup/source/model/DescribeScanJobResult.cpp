@@ -38,6 +38,14 @@ DescribeScanJobResult& DescribeScanJobResult::operator=(const Aws::AmazonWebServ
     m_completionDate = jsonValue.GetDouble("CompletionDate");
     m_completionDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContinuousScanEndTime")) {
+    m_continuousScanEndTime = jsonValue.GetDouble("ContinuousScanEndTime");
+    m_continuousScanEndTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ContinuousScanStartTime")) {
+    m_continuousScanStartTime = jsonValue.GetDouble("ContinuousScanStartTime");
+    m_continuousScanStartTimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CreatedBy")) {
     m_createdBy = jsonValue.GetObject("CreatedBy");
     m_createdByHasBeenSet = true;

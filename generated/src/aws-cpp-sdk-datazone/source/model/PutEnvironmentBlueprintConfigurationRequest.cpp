@@ -47,6 +47,19 @@ Aws::String PutEnvironmentBlueprintConfigurationRequest::SerializePayload() cons
     payload.WithObject("regionalParameters", std::move(regionalParametersJsonMap));
   }
 
+  if (m_resourceConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceConfigurationsJsonList(m_resourceConfigurations.size());
+    for (unsigned resourceConfigurationsIndex = 0; resourceConfigurationsIndex < resourceConfigurationsJsonList.GetLength();
+         ++resourceConfigurationsIndex) {
+      resourceConfigurationsJsonList[resourceConfigurationsIndex].AsObject(m_resourceConfigurations[resourceConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("resourceConfigurations", std::move(resourceConfigurationsJsonList));
+  }
+
+  if (m_allowUserProvidedConfigurationsHasBeenSet) {
+    payload.WithBool("allowUserProvidedConfigurations", m_allowUserProvidedConfigurations);
+  }
+
   if (m_globalParametersHasBeenSet) {
     JsonValue globalParametersJsonMap;
     for (auto& globalParametersItem : m_globalParameters) {

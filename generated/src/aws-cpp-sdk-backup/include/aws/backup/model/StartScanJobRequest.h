@@ -8,6 +8,7 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/MalwareScanner.h>
 #include <aws/backup/model/ScanMode.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -47,6 +48,24 @@ class StartScanJobRequest : public BackupRequest {
   template <typename BackupVaultNameT = Aws::String>
   StartScanJobRequest& WithBackupVaultName(BackupVaultNameT&& value) {
     SetBackupVaultName(std::forward<BackupVaultNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The point in time the scan job will scan up to for a continuous backup.</p>
+   */
+  inline const Aws::Utils::DateTime& GetContinuousScanEndTime() const { return m_continuousScanEndTime; }
+  inline bool ContinuousScanEndTimeHasBeenSet() const { return m_continuousScanEndTimeHasBeenSet; }
+  template <typename ContinuousScanEndTimeT = Aws::Utils::DateTime>
+  void SetContinuousScanEndTime(ContinuousScanEndTimeT&& value) {
+    m_continuousScanEndTimeHasBeenSet = true;
+    m_continuousScanEndTime = std::forward<ContinuousScanEndTimeT>(value);
+  }
+  template <typename ContinuousScanEndTimeT = Aws::Utils::DateTime>
+  StartScanJobRequest& WithContinuousScanEndTime(ContinuousScanEndTimeT&& value) {
+    SetContinuousScanEndTime(std::forward<ContinuousScanEndTimeT>(value));
     return *this;
   }
   ///@}
@@ -188,6 +207,8 @@ class StartScanJobRequest : public BackupRequest {
  private:
   Aws::String m_backupVaultName;
 
+  Aws::Utils::DateTime m_continuousScanEndTime{};
+
   Aws::String m_iamRoleArn;
 
   Aws::String m_idempotencyToken;
@@ -202,6 +223,7 @@ class StartScanJobRequest : public BackupRequest {
 
   Aws::String m_scannerRoleArn;
   bool m_backupVaultNameHasBeenSet = false;
+  bool m_continuousScanEndTimeHasBeenSet = false;
   bool m_iamRoleArnHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = false;
   bool m_malwareScannerHasBeenSet = false;

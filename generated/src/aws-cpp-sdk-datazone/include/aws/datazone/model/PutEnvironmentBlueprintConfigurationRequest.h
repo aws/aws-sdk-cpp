@@ -10,6 +10,7 @@
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/ProvisioningConfiguration.h>
+#include <aws/datazone/model/PutResourceConfiguration.h>
 
 #include <utility>
 
@@ -171,6 +172,47 @@ class PutEnvironmentBlueprintConfigurationRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The resource configurations of the environment blueprint.</p>
+   */
+  inline const Aws::Vector<PutResourceConfiguration>& GetResourceConfigurations() const { return m_resourceConfigurations; }
+  inline bool ResourceConfigurationsHasBeenSet() const { return m_resourceConfigurationsHasBeenSet; }
+  template <typename ResourceConfigurationsT = Aws::Vector<PutResourceConfiguration>>
+  void SetResourceConfigurations(ResourceConfigurationsT&& value) {
+    m_resourceConfigurationsHasBeenSet = true;
+    m_resourceConfigurations = std::forward<ResourceConfigurationsT>(value);
+  }
+  template <typename ResourceConfigurationsT = Aws::Vector<PutResourceConfiguration>>
+  PutEnvironmentBlueprintConfigurationRequest& WithResourceConfigurations(ResourceConfigurationsT&& value) {
+    SetResourceConfigurations(std::forward<ResourceConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ResourceConfigurationsT = PutResourceConfiguration>
+  PutEnvironmentBlueprintConfigurationRequest& AddResourceConfigurations(ResourceConfigurationsT&& value) {
+    m_resourceConfigurationsHasBeenSet = true;
+    m_resourceConfigurations.emplace_back(std::forward<ResourceConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether user-provided resource configurations are allowed for the
+   * environment blueprint.</p>
+   */
+  inline bool GetAllowUserProvidedConfigurations() const { return m_allowUserProvidedConfigurations; }
+  inline bool AllowUserProvidedConfigurationsHasBeenSet() const { return m_allowUserProvidedConfigurationsHasBeenSet; }
+  inline void SetAllowUserProvidedConfigurations(bool value) {
+    m_allowUserProvidedConfigurationsHasBeenSet = true;
+    m_allowUserProvidedConfigurations = value;
+  }
+  inline PutEnvironmentBlueprintConfigurationRequest& WithAllowUserProvidedConfigurations(bool value) {
+    SetAllowUserProvidedConfigurations(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Region-agnostic environment blueprint parameters. </p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetGlobalParameters() const { return m_globalParameters; }
@@ -231,6 +273,10 @@ class PutEnvironmentBlueprintConfigurationRequest : public DataZoneRequest {
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_regionalParameters;
 
+  Aws::Vector<PutResourceConfiguration> m_resourceConfigurations;
+
+  bool m_allowUserProvidedConfigurations{false};
+
   Aws::Map<Aws::String, Aws::String> m_globalParameters;
 
   Aws::Vector<ProvisioningConfiguration> m_provisioningConfigurations;
@@ -241,6 +287,8 @@ class PutEnvironmentBlueprintConfigurationRequest : public DataZoneRequest {
   bool m_environmentRolePermissionBoundaryHasBeenSet = false;
   bool m_enabledRegionsHasBeenSet = false;
   bool m_regionalParametersHasBeenSet = false;
+  bool m_resourceConfigurationsHasBeenSet = false;
+  bool m_allowUserProvidedConfigurationsHasBeenSet = false;
   bool m_globalParametersHasBeenSet = false;
   bool m_provisioningConfigurationsHasBeenSet = false;
 };

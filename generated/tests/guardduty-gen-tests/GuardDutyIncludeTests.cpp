@@ -56,6 +56,7 @@
 #include <aws/guardduty/model/Container.h>
 #include <aws/guardduty/model/ContainerFindingResource.h>
 #include <aws/guardduty/model/ContainerInstanceDetails.h>
+#include <aws/guardduty/model/ContinuousScanDetails.h>
 #include <aws/guardduty/model/Country.h>
 #include <aws/guardduty/model/CoverageEc2InstanceDetails.h>
 #include <aws/guardduty/model/CoverageEcsClusterDetails.h>
@@ -399,6 +400,7 @@
 #include <aws/guardduty/model/ScanCondition.h>
 #include <aws/guardduty/model/ScanConditionPair.h>
 #include <aws/guardduty/model/ScanConfiguration.h>
+#include <aws/guardduty/model/ScanConfigurationContinuousScanDetails.h>
 #include <aws/guardduty/model/ScanConfigurationRecoveryPoint.h>
 #include <aws/guardduty/model/ScanCriterionKey.h>
 #include <aws/guardduty/model/ScanDetections.h>

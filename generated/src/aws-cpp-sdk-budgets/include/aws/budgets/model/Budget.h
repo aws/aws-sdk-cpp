@@ -52,7 +52,9 @@ class Budget {
   /**
    * <p>The name of a budget. The name must be unique within an account. The
    * <code>:</code> and <code>\</code> characters, and the "/action/" substring,
-   * aren't allowed in <code>BudgetName</code>.</p>
+   * aren't allowed in <code>BudgetName</code>.</p> <p>Budget names are validated for
+   * content. Names that contain phone numbers, URLs, or email addresses combined
+   * with certain terms may be rejected.</p>
    */
   inline const Aws::String& GetBudgetName() const { return m_budgetName; }
   inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
