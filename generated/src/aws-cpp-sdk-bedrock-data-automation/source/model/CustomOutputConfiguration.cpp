@@ -25,6 +25,10 @@ CustomOutputConfiguration& CustomOutputConfiguration::operator=(JsonView jsonVal
     }
     m_blueprintsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("document")) {
+    m_document = jsonValue.GetObject("document");
+    m_documentHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +41,10 @@ JsonValue CustomOutputConfiguration::Jsonize() const {
       blueprintsJsonList[blueprintsIndex].AsObject(m_blueprints[blueprintsIndex].Jsonize());
     }
     payload.WithArray("blueprints", std::move(blueprintsJsonList));
+  }
+
+  if (m_documentHasBeenSet) {
+    payload.WithObject("document", m_document.Jsonize());
   }
 
   return payload;

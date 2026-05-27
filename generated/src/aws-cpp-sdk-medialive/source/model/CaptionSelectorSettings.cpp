@@ -46,6 +46,10 @@ CaptionSelectorSettings& CaptionSelectorSettings::operator=(JsonView jsonValue) 
     m_teletextSourceSettings = jsonValue.GetObject("teletextSourceSettings");
     m_teletextSourceSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("smartSubtitleSourceSettings")) {
+    m_smartSubtitleSourceSettings = jsonValue.GetObject("smartSubtitleSourceSettings");
+    m_smartSubtitleSourceSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue CaptionSelectorSettings::Jsonize() const {
 
   if (m_teletextSourceSettingsHasBeenSet) {
     payload.WithObject("teletextSourceSettings", m_teletextSourceSettings.Jsonize());
+  }
+
+  if (m_smartSubtitleSourceSettingsHasBeenSet) {
+    payload.WithObject("smartSubtitleSourceSettings", m_smartSubtitleSourceSettings.Jsonize());
   }
 
   return payload;

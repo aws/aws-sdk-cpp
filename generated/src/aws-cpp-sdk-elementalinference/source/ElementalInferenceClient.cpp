@@ -21,14 +21,20 @@
 #include <aws/elementalinference/ElementalInferenceEndpointProvider.h>
 #include <aws/elementalinference/ElementalInferenceErrorMarshaller.h>
 #include <aws/elementalinference/model/AssociateFeedRequest.h>
+#include <aws/elementalinference/model/CreateDictionaryRequest.h>
 #include <aws/elementalinference/model/CreateFeedRequest.h>
+#include <aws/elementalinference/model/DeleteDictionaryRequest.h>
 #include <aws/elementalinference/model/DeleteFeedRequest.h>
 #include <aws/elementalinference/model/DisassociateFeedRequest.h>
+#include <aws/elementalinference/model/ExportDictionaryEntriesRequest.h>
+#include <aws/elementalinference/model/GetDictionaryRequest.h>
 #include <aws/elementalinference/model/GetFeedRequest.h>
+#include <aws/elementalinference/model/ListDictionariesRequest.h>
 #include <aws/elementalinference/model/ListFeedsRequest.h>
 #include <aws/elementalinference/model/ListTagsForResourceRequest.h>
 #include <aws/elementalinference/model/TagResourceRequest.h>
 #include <aws/elementalinference/model/UntagResourceRequest.h>
+#include <aws/elementalinference/model/UpdateDictionaryRequest.h>
 #include <aws/elementalinference/model/UpdateFeedRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -207,6 +213,17 @@ AssociateFeedOutcome ElementalInferenceClient::AssociateFeed(const AssociateFeed
   return result.IsSuccess() ? AssociateFeedOutcome(result.GetResultWithOwnership()) : AssociateFeedOutcome(std::move(result.GetError()));
 }
 
+CreateDictionaryOutcome ElementalInferenceClient::CreateDictionary(const CreateDictionaryRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/dictionary");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDictionaryOutcome(result.GetResultWithOwnership())
+                            : CreateDictionaryOutcome(std::move(result.GetError()));
+}
+
 CreateFeedOutcome ElementalInferenceClient::CreateFeed(const CreateFeedRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -215,6 +232,24 @@ CreateFeedOutcome ElementalInferenceClient::CreateFeed(const CreateFeedRequest& 
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateFeedOutcome(result.GetResultWithOwnership()) : CreateFeedOutcome(std::move(result.GetError()));
+}
+
+DeleteDictionaryOutcome ElementalInferenceClient::DeleteDictionary(const DeleteDictionaryRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDictionary", "Required field: Id, is not set");
+    return DeleteDictionaryOutcome(Aws::Client::AWSError<ElementalInferenceErrors>(
+        ElementalInferenceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/dictionary/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDictionaryOutcome(result.GetResultWithOwnership())
+                            : DeleteDictionaryOutcome(std::move(result.GetError()));
 }
 
 DeleteFeedOutcome ElementalInferenceClient::DeleteFeed(const DeleteFeedRequest& request) const {
@@ -253,6 +288,42 @@ DisassociateFeedOutcome ElementalInferenceClient::DisassociateFeed(const Disasso
                             : DisassociateFeedOutcome(std::move(result.GetError()));
 }
 
+ExportDictionaryEntriesOutcome ElementalInferenceClient::ExportDictionaryEntries(const ExportDictionaryEntriesRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ExportDictionaryEntries", "Required field: Id, is not set");
+    return ExportDictionaryEntriesOutcome(Aws::Client::AWSError<ElementalInferenceErrors>(
+        ElementalInferenceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/dictionary/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/entries/export");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ExportDictionaryEntriesOutcome(result.GetResultWithOwnership())
+                            : ExportDictionaryEntriesOutcome(std::move(result.GetError()));
+}
+
+GetDictionaryOutcome ElementalInferenceClient::GetDictionary(const GetDictionaryRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDictionary", "Required field: Id, is not set");
+    return GetDictionaryOutcome(Aws::Client::AWSError<ElementalInferenceErrors>(ElementalInferenceErrors::MISSING_PARAMETER,
+                                                                                "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/dictionary/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDictionaryOutcome(result.GetResultWithOwnership()) : GetDictionaryOutcome(std::move(result.GetError()));
+}
+
 GetFeedOutcome ElementalInferenceClient::GetFeed(const GetFeedRequest& request) const {
   if (!request.IdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetFeed", "Required field: Id, is not set");
@@ -268,6 +339,17 @@ GetFeedOutcome ElementalInferenceClient::GetFeed(const GetFeedRequest& request) 
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetFeedOutcome(result.GetResultWithOwnership()) : GetFeedOutcome(std::move(result.GetError()));
+}
+
+ListDictionariesOutcome ElementalInferenceClient::ListDictionaries(const ListDictionariesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/dictionaries");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDictionariesOutcome(result.GetResultWithOwnership())
+                            : ListDictionariesOutcome(std::move(result.GetError()));
 }
 
 ListFeedsOutcome ElementalInferenceClient::ListFeeds(const ListFeedsRequest& request) const {
@@ -335,6 +417,24 @@ UntagResourceOutcome ElementalInferenceClient::UntagResource(const UntagResource
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateDictionaryOutcome ElementalInferenceClient::UpdateDictionary(const UpdateDictionaryRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDictionary", "Required field: Id, is not set");
+    return UpdateDictionaryOutcome(Aws::Client::AWSError<ElementalInferenceErrors>(
+        ElementalInferenceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/dictionary/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDictionaryOutcome(result.GetResultWithOwnership())
+                            : UpdateDictionaryOutcome(std::move(result.GetError()));
 }
 
 UpdateFeedOutcome ElementalInferenceClient::UpdateFeed(const UpdateFeedRequest& request) const {

@@ -17,6 +17,7 @@ namespace ResourceTypeMapper {
 
 static const int GPU_HASH = HashingUtils::HashString("GPU");
 static const int InferenceAccelerator_HASH = HashingUtils::HashString("InferenceAccelerator");
+static const int NeuronDevice_HASH = HashingUtils::HashString("NeuronDevice");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::GPU;
   } else if (hashCode == InferenceAccelerator_HASH) {
     return ResourceType::InferenceAccelerator;
+  } else if (hashCode == NeuronDevice_HASH) {
+    return ResourceType::NeuronDevice;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "GPU";
     case ResourceType::InferenceAccelerator:
       return "InferenceAccelerator";
+    case ResourceType::NeuronDevice:
+      return "NeuronDevice";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

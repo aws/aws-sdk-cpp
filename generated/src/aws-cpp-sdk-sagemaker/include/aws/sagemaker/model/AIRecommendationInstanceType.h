@@ -50,7 +50,8 @@ enum class AIRecommendationInstanceType {
   ml_p5_4xlarge,
   ml_p5_48xlarge,
   ml_p5e_48xlarge,
-  ml_p5en_48xlarge
+  ml_p5en_48xlarge,
+  ml_p6_b200_48xlarge
 };
 
 namespace AIRecommendationInstanceTypeMapper {

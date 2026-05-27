@@ -73,6 +73,7 @@
 #include <aws/bedrock-data-automation/model/DeleteEntitiesInfo.h>
 #include <aws/bedrock-data-automation/model/DesiredModality.h>
 #include <aws/bedrock-data-automation/model/DocumentBoundingBox.h>
+#include <aws/bedrock-data-automation/model/DocumentCustomOutputConfiguration.h>
 #include <aws/bedrock-data-automation/model/DocumentExtractionGranularity.h>
 #include <aws/bedrock-data-automation/model/DocumentExtractionGranularityType.h>
 #include <aws/bedrock-data-automation/model/DocumentOutputAdditionalFileFormat.h>

@@ -29,7 +29,7 @@ class DisassociateFeedResult {
 
   ///@{
   /**
-   * <p>The ID of the feed where you deleted the associated resource.</p>
+   * <p>The ARN of the feed.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   template <typename ArnT = Aws::String>
@@ -46,7 +46,7 @@ class DisassociateFeedResult {
 
   ///@{
   /**
-   * <p>The ARN of the resource that you deleted.</p>
+   * <p>The ID of the feed.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
   template <typename IdT = Aws::String>

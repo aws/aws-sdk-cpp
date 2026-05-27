@@ -65,7 +65,7 @@ class DeleteFeedResult {
   ///@{
   /**
    * <p>The current status of the feed. When deletion of the feed has succeeded, the
-   * status will be DELETED.</p>
+   * status will be DELETED. </p>
    */
   inline FeedStatus GetStatus() const { return m_status; }
   inline void SetStatus(FeedStatus value) {

@@ -31,7 +31,7 @@ class ListFeedsResult {
 
   ///@{
   /**
-   * <p>A list of feed summaries.</p>
+   * <p>A list of FeedSummary objects.</p>
    */
   inline const Aws::Vector<FeedSummary>& GetFeeds() const { return m_feeds; }
   template <typename FeedsT = Aws::Vector<FeedSummary>>
@@ -58,7 +58,7 @@ class ListFeedsResult {
    * example, you submit a list request with MaxResults set at 5. The service returns
    * the first batch of results (up to 5) and a NextToken value. To see the next
    * batch of results, you can submit the list request a second time and specify the
-   * NextToken value.</p>
+   * NextToken value. </p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

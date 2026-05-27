@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ECS {
 namespace Model {
-enum class PlatformDeviceType { NOT_SET, GPU };
+enum class PlatformDeviceType { NOT_SET, GPU, NEURON_DEVICE };
 
 namespace PlatformDeviceTypeMapper {
 AWS_ECS_API PlatformDeviceType GetPlatformDeviceTypeForName(const Aws::String& name);

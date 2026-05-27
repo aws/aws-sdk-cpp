@@ -23,7 +23,7 @@ namespace Model {
 
 /**
  * <p>Contains configuration information about one output in a feed. It is used in
- * the AssociateFeed and the CreateFeed actions.</p><p><h3>See Also:</h3>   <a
+ * the AssociateFeed and the CreateFeed actions. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateOutput">AWS
  * API Reference</a></p>
  */
@@ -54,11 +54,10 @@ class CreateOutput {
 
   ///@{
   /**
-   * <p>A typed property for an output in a feed. It is used in the CreateFeed and
-   * AssociateFeed actions. It identifies the action for Elemental Inference to
-   * perform. It also provides a repository for the results of that action. For
-   * example, CroppingConfig output will contain the metadata for the crop feature.
-   * </p>
+   * <p>A typed property for an output in a feed. It identifies the action for
+   * Elemental Inference to perform. It also provides a repository for the results of
+   * that action. For example, CroppingConfig output will contain the metadata for
+   * the crop feature. </p>
    */
   inline const OutputConfig& GetOutputConfig() const { return m_outputConfig; }
   inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }

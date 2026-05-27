@@ -57,6 +57,10 @@ DescribeClusterResult& DescribeClusterResult::operator=(const Aws::AmazonWebServ
     }
     m_restrictedInstanceGroupsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RestrictedInstanceGroupsConfig")) {
+    m_restrictedInstanceGroupsConfig = jsonValue.GetObject("RestrictedInstanceGroupsConfig");
+    m_restrictedInstanceGroupsConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("VpcConfig")) {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
     m_vpcConfigHasBeenSet = true;

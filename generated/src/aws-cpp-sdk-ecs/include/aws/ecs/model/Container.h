@@ -367,6 +367,30 @@ class Container {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IDs of each Neuron device assigned to the container.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetNeuronDeviceIds() const { return m_neuronDeviceIds; }
+  inline bool NeuronDeviceIdsHasBeenSet() const { return m_neuronDeviceIdsHasBeenSet; }
+  template <typename NeuronDeviceIdsT = Aws::Vector<Aws::String>>
+  void SetNeuronDeviceIds(NeuronDeviceIdsT&& value) {
+    m_neuronDeviceIdsHasBeenSet = true;
+    m_neuronDeviceIds = std::forward<NeuronDeviceIdsT>(value);
+  }
+  template <typename NeuronDeviceIdsT = Aws::Vector<Aws::String>>
+  Container& WithNeuronDeviceIds(NeuronDeviceIdsT&& value) {
+    SetNeuronDeviceIds(std::forward<NeuronDeviceIdsT>(value));
+    return *this;
+  }
+  template <typename NeuronDeviceIdsT = Aws::String>
+  Container& AddNeuronDeviceIds(NeuronDeviceIdsT&& value) {
+    m_neuronDeviceIdsHasBeenSet = true;
+    m_neuronDeviceIds.emplace_back(std::forward<NeuronDeviceIdsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_containerArn;
 
@@ -401,6 +425,8 @@ class Container {
   Aws::String m_memoryReservation;
 
   Aws::Vector<Aws::String> m_gpuIds;
+
+  Aws::Vector<Aws::String> m_neuronDeviceIds;
   bool m_containerArnHasBeenSet = false;
   bool m_taskArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -418,6 +444,7 @@ class Container {
   bool m_memoryHasBeenSet = false;
   bool m_memoryReservationHasBeenSet = false;
   bool m_gpuIdsHasBeenSet = false;
+  bool m_neuronDeviceIdsHasBeenSet = false;
 };
 
 }  // namespace Model

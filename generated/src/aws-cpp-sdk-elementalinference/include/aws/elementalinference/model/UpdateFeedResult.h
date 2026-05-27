@@ -109,7 +109,7 @@ class UpdateFeedResult {
   ///@{
   /**
    * <p>The array of outputs in the feed. You might have left this array unchanged,
-   * or you might have changed it.</p>
+   * or you might have changed it. </p>
    */
   inline const Aws::Vector<GetOutput>& GetOutputs() const { return m_outputs; }
   template <typename OutputsT = Aws::Vector<GetOutput>>
@@ -132,7 +132,7 @@ class UpdateFeedResult {
 
   ///@{
   /**
-   * <p>The status of the output.</p>
+   * <p>The status of the feed.</p>
    */
   inline FeedStatus GetStatus() const { return m_status; }
   inline void SetStatus(FeedStatus value) {
@@ -147,10 +147,7 @@ class UpdateFeedResult {
 
   ///@{
   /**
-   * <p>True means that the output was originally created in the feed by the
-   * AssociateFeed operation. False means it was created using CreateFeed or
-   * UpdateFeed. You will need this value if you use the UpdateFeed operation to
-   * modify the list of outputs in the feed.</p>
+   * <p>Information about the resource that is associated with the feed, if any.</p>
    */
   inline const FeedAssociation& GetAssociation() const { return m_association; }
   template <typename AssociationT = FeedAssociation>
@@ -167,7 +164,7 @@ class UpdateFeedResult {
 
   ///@{
   /**
-   * <p>The name of the resource currently associated with the feed, if any.</p>
+   * <p>The tags associated with the feed.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   template <typename TagsT = Aws::Map<Aws::String, Aws::String>>

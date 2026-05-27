@@ -37,6 +37,10 @@ Aws::String CreateClusterRequest::SerializePayload() const {
     payload.WithArray("RestrictedInstanceGroups", std::move(restrictedInstanceGroupsJsonList));
   }
 
+  if (m_restrictedInstanceGroupsConfigHasBeenSet) {
+    payload.WithObject("RestrictedInstanceGroupsConfig", m_restrictedInstanceGroupsConfig.Jsonize());
+  }
+
   if (m_vpcConfigHasBeenSet) {
     payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
   }

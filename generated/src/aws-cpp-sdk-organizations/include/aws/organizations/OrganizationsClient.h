@@ -141,8 +141,17 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_accept-decline-invite.html">Responding
    * to invitations</a> and <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/manage-begin-all-features-standard-migration.html#manage-approve-all-features-invite">Enabling
-   * all features</a> in the <i>Organizations User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * all features</a> in the <i>Organizations User Guide</i>.</p> <p>When a handshake
+   * is accepted, Organizations logs membership events in CloudTrail, available only
+   * in the management account's event history. If the account was standalone and
+   * joined a new organization, an <code>AccountJoinedOrganization</code> event is
+   * logged with <code>joinedMethod:Invited</code> and <code>joinedTime</code>
+   * fields. If the account departed one organization and joined another, both an
+   * <code>AccountDepartedOrganization</code> event with
+   * <code>departedMethod:Left</code> and <code>departedTime</code> and an
+   * <code>AccountJoinedOrganization</code> event with
+   * <code>joinedMethod:Invited</code> and <code>joinedTime</code> are logged in
+   * their respective management accounts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AcceptHandshake">AWS
    * API Reference</a></p>
    */
@@ -294,8 +303,13 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * will close both accounts. To learn important pre-closure details, see <a
    * href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/Closing-govcloud-account.html">
    * Closing an Amazon Web Services GovCloud (US) account</a> in the <i> Amazon Web
-   * Services GovCloud User Guide</i>.</p> </li> </ul> <p><h3>See Also:</h3>
-   * <a
+   * Services GovCloud User Guide</i>.</p> </li> </ul>  <p>After the permanent
+   * termination of the account after the 90-day waiting period, Organizations logs a
+   * membership event in CloudTrail. The event is an
+   * <code>AccountDepartedOrganization</code> event with
+   * <code>departedMethod:Cleaned</code> and <code>departedTime</code>. This event is
+   * available only in the management account's event history.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CloseAccount">AWS
    * API Reference</a></p>
    */
@@ -334,10 +348,15 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * For information on using CloudTrail with Organizations, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging
    * and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.</p>
-   * </li> </ul> <p>The user who calls the API to create an account must have the
-   * <code>organizations:CreateAccount</code> permission. If you enabled all features
-   * in the organization, Organizations creates the required service-linked role
-   * named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a
+   * </li> </ul> <p>Additionally, the <code>AccountJoinedOrganization</code> event is
+   * logged in CloudTrail and is available only in the management account's event
+   * history. This event includes <code>joinedMethod:Created</code> and
+   * <code>joinedTime</code> fields to provide context on how and when the account
+   * joined the organization.</p> <p>The user who calls the API to create an account
+   * must have the <code>organizations:CreateAccount</code> permission. If you
+   * enabled all features in the organization, Organizations creates the required
+   * service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations
    * and service-linked roles</a> in the <i>Organizations User Guide</i>.</p> <p>If
    * the request includes tags, then the requester must have the
@@ -455,20 +474,24 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * information on using CloudTrail with Organizations, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html">Logging
    * and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.</p>
-   * </li> </ul> <p/> <p>When you call the <code>CreateGovCloudAccount</code> action,
-   * you create two accounts: a standalone account in the Amazon Web Services
-   * GovCloud (US) Region and an associated account in the commercial Region for
-   * billing and support purposes. The account in the commercial Region is
-   * automatically a member of the organization whose credentials made the request.
-   * Both accounts are associated with the same email address.</p> <p>A role is
-   * created in the new account in the commercial Region that allows the management
-   * account in the organization in the commercial Region to assume it. An Amazon Web
-   * Services GovCloud (US) account is then created and associated with the
-   * commercial account that you just created. A role is also created in the new
-   * Amazon Web Services GovCloud (US) account that can be assumed by the Amazon Web
-   * Services GovCloud (US) account that is associated with the management account of
-   * the commercial organization. For more information and to view a diagram that
-   * explains how account access works, see <a
+   * </li> </ul> <p>Additionally, the <code>AccountJoinedOrganization</code> event is
+   * logged in CloudTrail and is available only in the management account's event
+   * history only for the linked commercial account. This event includes
+   * <code>joinedMethod:Created</code> and <code>joinedTime</code> fields to provide
+   * context on how and when the account joined the organization.</p> <p/> <p>When
+   * you call the <code>CreateGovCloudAccount</code> action, you create two accounts:
+   * a standalone account in the Amazon Web Services GovCloud (US) Region and an
+   * associated account in the commercial Region for billing and support purposes.
+   * The account in the commercial Region is automatically a member of the
+   * organization whose credentials made the request. Both accounts are associated
+   * with the same email address.</p> <p>A role is created in the new account in the
+   * commercial Region that allows the management account in the organization in the
+   * commercial Region to assume it. An Amazon Web Services GovCloud (US) account is
+   * then created and associated with the commercial account that you just created. A
+   * role is also created in the new Amazon Web Services GovCloud (US) account that
+   * can be assumed by the Amazon Web Services GovCloud (US) account that is
+   * associated with the management account of the commercial organization. For more
+   * information and to view a diagram that explains how account access works, see <a
    * href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a>
    * in the <i>Amazon Web Services GovCloud User Guide</i>.</p> <p>For more
    * information about creating accounts, see <a
@@ -545,7 +568,12 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * choose to create the organization supporting only the consolidated billing
    * features by setting the <code>FeatureSet</code> parameter to
    * <code>CONSOLIDATED_BILLING</code>, no policy types are enabled by default and
-   * you can't use organization policies.</p><p><h3>See Also:</h3>   <a
+   * you can't use organization policies.</p> <p>The
+   * <code>AccountJoinedOrganization</code> event is logged in CloudTrail and is
+   * available only in the management account's event history. This event includes
+   * <code>joinedMethod:Invited</code> and <code>joinedTime</code> fields to provide
+   * context on how and when the account joined the organization.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganization">AWS
    * API Reference</a></p>
    */
@@ -673,7 +701,12 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   /**
    * <p>Deletes the organization. You can delete an organization only by using
    * credentials from the management account. The organization must be empty of
-   * member accounts.</p><p><h3>See Also:</h3>   <a
+   * member accounts.</p> <p>When an organization is deleted, Organizations logs a
+   * membership event in CloudTrail. The event is an
+   * <code>AccountDepartedOrganization</code> event with
+   * <code>departedMethod:Left</code> and <code>departedTime</code>. This event is
+   * available only in the management account's event history.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">AWS
    * API Reference</a></p>
    */
@@ -1471,10 +1504,14 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * operation is performed by the account that wants to leave. To remove a member
    * account as a user in the management account, use
    * <a>RemoveAccountFromOrganization</a> instead.</p> <p>You can only call from
-   * operation from a member account.</p>  <ul> <li> <p>The management
-   * account in an organization with all features enabled can set service control
-   * policies (SCPs) that can restrict what administrators of member accounts can do.
-   * This includes preventing them from successfully calling
+   * operation from a member account.</p> <p>When an account leaves an organization,
+   * Organizations logs a membership event in CloudTrail. The event is an
+   * <code>AccountDepartedOrganization</code> event with
+   * <code>departedMethod:Left</code> and <code>departedTime</code>. This event is
+   * available only in the management account's event history.</p>  <ul>
+   * <li> <p>The management account in an organization with all features enabled can
+   * set service control policies (SCPs) that can restrict what administrators of
+   * member accounts can do. This includes preventing them from successfully calling
    * <code>LeaveOrganization</code> and leaving the organization.</p> </li> <li>
    * <p>You can leave an organization as a member account only if the account is
    * configured with the information required to operate as a standalone account.
@@ -2341,12 +2378,16 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * expenses accrued by the member account after it's removed from the
    * organization.</p> <p>You can only call this operation from the management
    * account. Member accounts can remove themselves with <a>LeaveOrganization</a>
-   * instead.</p>  <ul> <li> <p>You can remove an account from your
-   * organization only if the account is configured with the information required to
-   * operate as a standalone account. When you create an account in an organization
-   * using the Organizations console, API, or CLI commands, the information required
-   * of standalone accounts is <i>not</i> automatically collected. For more
-   * information, see <a
+   * instead.</p> <p>When an account is removed from an organization, Organizations
+   * logs a membership event in CloudTrail. The event is an
+   * <code>AccountDepartedOrganization</code> event with
+   * <code>departedMethod:Removed</code> and <code>departedTime</code>. This event is
+   * available only in the management account's event history.</p>  <ul>
+   * <li> <p>You can remove an account from your organization only if the account is
+   * configured with the information required to operate as a standalone account.
+   * When you create an account in an organization using the Organizations console,
+   * API, or CLI commands, the information required of standalone accounts is
+   * <i>not</i> automatically collected. For more information, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
    * before removing an account from an organization</a> in the <i>Organizations User
    * Guide</i>.</p> </li> <li> <p>The account that you want to leave must not be a

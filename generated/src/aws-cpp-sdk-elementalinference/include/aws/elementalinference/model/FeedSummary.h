@@ -23,7 +23,7 @@ namespace Model {
 
 /**
  * <p>Contains configuration information about a feed. It is used in the ListFeeds
- * action.</p><p><h3>See Also:</h3>   <a
+ * response. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/FeedSummary">AWS
  * API Reference</a></p>
  */

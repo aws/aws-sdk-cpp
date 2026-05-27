@@ -50,6 +50,10 @@ ReservedCapacitySummary& ReservedCapacitySummary::operator=(JsonView jsonValue) 
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
     m_availabilityZoneHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AvailabilityZoneId")) {
+    m_availabilityZoneId = jsonValue.GetString("AvailabilityZoneId");
+    m_availabilityZoneIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DurationHours")) {
     m_durationHours = jsonValue.GetInt64("DurationHours");
     m_durationHoursHasBeenSet = true;
@@ -102,6 +106,10 @@ JsonValue ReservedCapacitySummary::Jsonize() const {
 
   if (m_availabilityZoneHasBeenSet) {
     payload.WithString("AvailabilityZone", m_availabilityZone);
+  }
+
+  if (m_availabilityZoneIdHasBeenSet) {
+    payload.WithString("AvailabilityZoneId", m_availabilityZoneId);
   }
 
   if (m_durationHoursHasBeenSet) {
