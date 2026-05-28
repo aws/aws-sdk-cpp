@@ -544,6 +544,8 @@ ClientConfiguration::ClientConfiguration(bool /*useSmartDefaults*/, const char* 
 }
 
 std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String retryMode) {
+    const bool newRetriesEnabled = Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026") == "true";
+
     if (retryMode.empty())
     {
         retryMode = Aws::Environment::GetEnv("AWS_RETRY_MODE");
@@ -552,35 +554,46 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String re
     {
         retryMode = Aws::Config::GetCachedConfigValue("retry_mode");
     }
+    if (newRetriesEnabled && retryMode.empty())
+    {
+        retryMode = "standard";
+    }
 
     std::shared_ptr<RetryStrategy> retryStrategy;
     if (retryMode == "standard")
     {
-        if (maxAttempts < 0)
+        long attempts = (maxAttempts < 0) ? 3 : maxAttempts;
+        if (newRetriesEnabled)
         {
-            // negative value set above force usage of default max attempts
-            retryStrategy = Aws::MakeShared<StandardRetryStrategy>(CLIENT_CONFIG_TAG);
+            auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(CLIENT_CONFIG_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
+            retryStrategy = Aws::MakeShared<StandardRetryStrategy>(CLIENT_CONFIG_TAG, quota, attempts, 0.05);
         }
         else
         {
-            retryStrategy = Aws::MakeShared<StandardRetryStrategy>(CLIENT_CONFIG_TAG, maxAttempts);
+            retryStrategy = Aws::MakeShared<StandardRetryStrategy>(CLIENT_CONFIG_TAG, attempts);
         }
     }
     else if (retryMode == "adaptive")
     {
-        if (maxAttempts < 0)
+        long attempts = (maxAttempts < 0) ? 3 : maxAttempts;
+        if (newRetriesEnabled)
         {
-            // negative value set above force usage of default max attempts
-            retryStrategy = Aws::MakeShared<AdaptiveRetryStrategy>(CLIENT_CONFIG_TAG);
+            auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(CLIENT_CONFIG_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
+            retryStrategy = Aws::MakeShared<AdaptiveRetryStrategy>(CLIENT_CONFIG_TAG, quota, attempts, 0.05);
         }
         else
         {
-            retryStrategy = Aws::MakeShared<AdaptiveRetryStrategy>(CLIENT_CONFIG_TAG, maxAttempts);
+            retryStrategy = Aws::MakeShared<AdaptiveRetryStrategy>(CLIENT_CONFIG_TAG, attempts);
         }
     }
     else
     {
         retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(CLIENT_CONFIG_TAG);
+    }
+
+    if (newRetriesEnabled)
+    {
+        AWS_LOGSTREAM_INFO(CLIENT_CONFIG_TAG, "Retry Behavior 2.1 active (AWS_NEW_RETRIES_2026=true), mode=" << retryMode);
     }
 
     return retryStrategy;

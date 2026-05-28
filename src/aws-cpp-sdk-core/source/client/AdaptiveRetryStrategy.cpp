@@ -169,6 +169,10 @@ namespace Aws
                 StandardRetryStrategy(retryQuotaContainer, maxAttempts)
         {}
 
+        AdaptiveRetryStrategy::AdaptiveRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts, double transientBackoffBaseSec) :
+                StandardRetryStrategy(retryQuotaContainer, maxAttempts, transientBackoffBaseSec)
+        {}
+
         bool AdaptiveRetryStrategy::HasSendToken()
         {
             return m_retryTokenBucket.Acquire(1, m_fastFail);

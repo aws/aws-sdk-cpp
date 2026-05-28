@@ -141,6 +141,8 @@ public:
 
     const char* GetStrategyName() const override { return "adaptive";}
 
+    AdaptiveRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts, double transientBackoffBaseSec);
+
 protected:
     RetryTokenBucket m_retryTokenBucket;
     bool m_fastFail = false;

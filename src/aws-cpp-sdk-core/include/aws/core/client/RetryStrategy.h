@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <memory>
 
@@ -102,10 +103,17 @@ namespace Aws
             virtual int GetRetryQuota() const = 0;
         };
 
+        enum class RetryCostClassification
+        {
+            REQUEST_TIMEOUT_BASED,
+            THROTTLE_BASED
+        };
+
         class AWS_CORE_API DefaultRetryQuotaContainer : public RetryQuotaContainer
         {
         public:
             DefaultRetryQuotaContainer();
+            DefaultRetryQuotaContainer(int retryCost, int throttlingRetryCost, RetryCostClassification classification);
             virtual ~DefaultRetryQuotaContainer() = default;
             virtual bool AcquireRetryQuota(int capacityAmount) override;
             virtual bool AcquireRetryQuota(const AWSError<CoreErrors>& error) override;
@@ -116,6 +124,9 @@ namespace Aws
         protected:
             mutable Aws::Utils::Threading::ReaderWriterLock m_retryQuotaLock;
             int m_retryQuota;
+            int m_retryCost;
+            int m_throttlingRetryCost;
+            RetryCostClassification m_classification;
         };
 
         class AWS_CORE_API StandardRetryStrategy : public RetryStrategy
@@ -123,6 +134,8 @@ namespace Aws
         public:
             StandardRetryStrategy(long maxAttempts = 3);
             StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts = 3);
+            StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts, double transientBackoffBaseSec);
+            virtual ~StandardRetryStrategy();
 
             virtual void RequestBookkeeping(const HttpResponseOutcome& httpResponseOutcome) override;
             virtual void RequestBookkeeping(const HttpResponseOutcome& httpResponseOutcome, const AWSError<CoreErrors>& lastError) override;
@@ -138,6 +151,10 @@ namespace Aws
         protected:
             std::shared_ptr<RetryQuotaContainer> m_retryQuotaContainer;
             long m_maxAttempts;
+
+        private:
+            struct RetryImpl;
+            Aws::UniquePtr<RetryImpl> m_impl;
         };
     } // namespace Client
 } // namespace Aws
