@@ -407,18 +407,18 @@ namespace Aws
             bool isRetry = !handle->GetMultiPartId().empty();
             uint64_t sentBytes = 0;
 
-            const auto fullObjectHashCalculator = [](const std::shared_ptr<TransferHandle>& handle, bool isRetry, S3::Model::ChecksumAlgorithm algorithm) -> std::shared_ptr<Aws::Utils::Crypto::Hash> {
+            const auto fullObjectHashCalculator = [](const std::shared_ptr<TransferHandle>& handle, bool isRetry,
+                                                     S3::Model::ChecksumAlgorithm algorithm) -> std::shared_ptr<Aws::Utils::Crypto::Hash> {
                 if (handle->GetChecksum().empty() && !isRetry) {
-                    if (algorithm == S3::Model::ChecksumAlgorithm::CRC32 || algorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
+                    if (algorithm == S3::Model::ChecksumAlgorithm::CRC64NVME) {
+                      return Aws::MakeShared<Aws::Utils::Crypto::CRC64>("TransferManager");
+                    }
+                    if (algorithm == S3::Model::ChecksumAlgorithm::CRC32) {
                         return Aws::MakeShared<Aws::Utils::Crypto::CRC32>("TransferManager");
                     }
-                    if (algorithm == S3::Model::ChecksumAlgorithm::SHA1) {
-                        return Aws::MakeShared<Aws::Utils::Crypto::Sha1>("TransferManager");
+                    if (algorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
+                        return Aws::MakeShared<Aws::Utils::Crypto::CRC32C>("TransferManager");
                     }
-                    if (algorithm == S3::Model::ChecksumAlgorithm::SHA256) {
-                        return Aws::MakeShared<Aws::Utils::Crypto::Sha256>("TransferManager");
-                    }
-                    return Aws::MakeShared<Aws::Utils::Crypto::CRC64>("TransferManager");
                 }
                 return nullptr;
             }(handle, isRetry, m_transferConfig.checksumAlgorithm);
@@ -431,6 +431,10 @@ namespace Aws
               createMultipartRequest.SetContentType(handle->GetContentType());
               createMultipartRequest.SetKey(handle->GetKey());
               createMultipartRequest.SetMetadata(handle->GetMetadata());
+
+              if (fullObjectHashCalculator) {
+                createMultipartRequest.SetChecksumType(Aws::S3::Model::ChecksumType::FULL_OBJECT);
+              }
 
               auto createMultipartResponse = m_transferConfig.s3Client->CreateMultipartUpload(createMultipartRequest);
               if (createMultipartResponse.IsSuccess()) {
