@@ -23,6 +23,10 @@ Aws::String CreateImportedImageRequest::SerializePayload() const {
     payload.WithString("SourceAmiId", m_sourceAmiId);
   }
 
+  if (m_workspaceImageIdHasBeenSet) {
+    payload.WithString("WorkspaceImageId", m_workspaceImageId);
+  }
+
   if (m_iamRoleArnHasBeenSet) {
     payload.WithString("IamRoleArn", m_iamRoleArn);
   }

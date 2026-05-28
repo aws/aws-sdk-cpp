@@ -179,7 +179,9 @@ class InvokeHarnessStreamOutput {
   ///@}
 
   ///@{
-
+  /**
+   * <p>An error returned by the runtime container during agent execution.</p>
+   */
   inline const BedrockAgentCoreError& GetRuntimeClientError() const { return m_runtimeClientError; }
   inline bool RuntimeClientErrorHasBeenSet() const { return m_runtimeClientErrorHasBeenSet; }
   template <typename RuntimeClientErrorT = BedrockAgentCoreError>

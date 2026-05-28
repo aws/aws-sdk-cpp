@@ -33,7 +33,7 @@ class GroundTruthSource {
 
   ///@{
   /**
-   * <p>Provide ground truth inline</p>
+   * <p>Inline ground truth data provided directly in the request.</p>
    */
   inline const InlineGroundTruth& GetInline() const { return m_inline; }
   inline bool InlineHasBeenSet() const { return m_inlineHasBeenSet; }

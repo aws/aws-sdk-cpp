@@ -69,7 +69,9 @@ class HarnessGatewayOutboundAuth {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Use OAuth credentials for outbound authentication to the gateway.</p>
+   */
   inline const OAuthCredentialProvider& GetOauth() const { return m_oauth; }
   inline bool OauthHasBeenSet() const { return m_oauthHasBeenSet; }
   template <typename OauthT = OAuthCredentialProvider>

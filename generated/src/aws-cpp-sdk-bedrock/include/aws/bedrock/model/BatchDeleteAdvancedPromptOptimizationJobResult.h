@@ -39,7 +39,7 @@ class BatchDeleteAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>List of errors encountered during batch deletion.</p>
+   * <p>A list of errors encountered during batch deletion.</p>
    */
   inline const Aws::Vector<BatchDeleteAdvancedPromptOptimizationJobError>& GetErrors() const { return m_errors; }
   template <typename ErrorsT = Aws::Vector<BatchDeleteAdvancedPromptOptimizationJobError>>
@@ -62,7 +62,7 @@ class BatchDeleteAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>List of successfully deleted advanced prompt optimization jobs.</p>
+   * <p>A list of successfully deleted advanced prompt optimization jobs.</p>
    */
   inline const Aws::Vector<BatchDeleteAdvancedPromptOptimizationJobItem>& GetAdvancedPromptOptimizationJobs() const {
     return m_advancedPromptOptimizationJobs;

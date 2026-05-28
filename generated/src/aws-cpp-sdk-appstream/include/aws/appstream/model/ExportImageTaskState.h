@@ -10,7 +10,7 @@
 namespace Aws {
 namespace AppStream {
 namespace Model {
-enum class ExportImageTaskState { NOT_SET, EXPORTING, COMPLETED, FAILED };
+enum class ExportImageTaskState { NOT_SET, EXPORTING, COMPLETED, FAILED, TIMED_OUT };
 
 namespace ExportImageTaskStateMapper {
 AWS_APPSTREAM_API ExportImageTaskState GetExportImageTaskStateForName(const Aws::String& name);

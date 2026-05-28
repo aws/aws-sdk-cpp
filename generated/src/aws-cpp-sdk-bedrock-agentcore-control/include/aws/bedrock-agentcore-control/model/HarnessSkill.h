@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/HarnessSkillGitSource.h>
+#include <aws/bedrock-agentcore-control/model/HarnessSkillS3Source.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -48,9 +50,51 @@ class HarnessSkill {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An S3 source containing the skill.</p>
+   */
+  inline const HarnessSkillS3Source& GetS3() const { return m_s3; }
+  inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
+  template <typename S3T = HarnessSkillS3Source>
+  void SetS3(S3T&& value) {
+    m_s3HasBeenSet = true;
+    m_s3 = std::forward<S3T>(value);
+  }
+  template <typename S3T = HarnessSkillS3Source>
+  HarnessSkill& WithS3(S3T&& value) {
+    SetS3(std::forward<S3T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A git repository containing the skill.</p>
+   */
+  inline const HarnessSkillGitSource& GetGit() const { return m_git; }
+  inline bool GitHasBeenSet() const { return m_gitHasBeenSet; }
+  template <typename GitT = HarnessSkillGitSource>
+  void SetGit(GitT&& value) {
+    m_gitHasBeenSet = true;
+    m_git = std::forward<GitT>(value);
+  }
+  template <typename GitT = HarnessSkillGitSource>
+  HarnessSkill& WithGit(GitT&& value) {
+    SetGit(std::forward<GitT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_path;
+
+  HarnessSkillS3Source m_s3;
+
+  HarnessSkillGitSource m_git;
   bool m_pathHasBeenSet = false;
+  bool m_s3HasBeenSet = false;
+  bool m_gitHasBeenSet = false;
 };
 
 }  // namespace Model

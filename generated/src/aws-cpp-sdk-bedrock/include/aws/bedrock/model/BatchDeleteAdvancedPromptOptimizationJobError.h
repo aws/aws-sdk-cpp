@@ -20,8 +20,8 @@ namespace Bedrock {
 namespace Model {
 
 /**
- * <p>Batch deletion error for an advanced prompt optimization job.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Contains information about an error that occurred when deleting an advanced
+ * prompt optimization job.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteAdvancedPromptOptimizationJobError">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,7 @@ class BatchDeleteAdvancedPromptOptimizationJobError {
 
   ///@{
   /**
-   * <p>Identifier of the job that failed to delete.</p>
+   * <p>The identifier of the job that could not be deleted.</p>
    */
   inline const Aws::String& GetJobIdentifier() const { return m_jobIdentifier; }
   inline bool JobIdentifierHasBeenSet() const { return m_jobIdentifierHasBeenSet; }
@@ -52,7 +52,7 @@ class BatchDeleteAdvancedPromptOptimizationJobError {
 
   ///@{
   /**
-   * <p>Error code for the deletion failure.</p>
+   * <p>The error code for the deletion failure.</p>
    */
   inline const Aws::String& GetCode() const { return m_code; }
   inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
@@ -70,7 +70,7 @@ class BatchDeleteAdvancedPromptOptimizationJobError {
 
   ///@{
   /**
-   * <p>Error message describing the deletion failure.</p>
+   * <p>A message describing the error.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }

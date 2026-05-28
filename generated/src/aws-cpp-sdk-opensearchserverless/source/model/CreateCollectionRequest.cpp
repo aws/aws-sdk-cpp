@@ -51,6 +51,10 @@ Aws::String CreateCollectionRequest::SerializePayload() const {
     payload.WithObject("encryptionConfig", m_encryptionConfig.Jsonize());
   }
 
+  if (m_deletionProtectionHasBeenSet) {
+    payload.WithString("deletionProtection", DeletionProtectionMapper::GetNameForDeletionProtection(m_deletionProtection));
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

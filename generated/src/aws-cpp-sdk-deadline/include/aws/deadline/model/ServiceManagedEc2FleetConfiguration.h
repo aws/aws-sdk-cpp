@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
+#include <aws/deadline/model/PersistentVolumeConfiguration.h>
 #include <aws/deadline/model/ServiceManagedEc2AutoScalingConfiguration.h>
 #include <aws/deadline/model/ServiceManagedEc2InstanceCapabilities.h>
 #include <aws/deadline/model/ServiceManagedEc2InstanceMarketOptions.h>
@@ -110,6 +111,24 @@ class ServiceManagedEc2FleetConfiguration {
 
   ///@{
   /**
+   * <p>The persistent volume configuration for the service managed EC2 fleet.</p>
+   */
+  inline const PersistentVolumeConfiguration& GetPersistentVolumeConfiguration() const { return m_persistentVolumeConfiguration; }
+  inline bool PersistentVolumeConfigurationHasBeenSet() const { return m_persistentVolumeConfigurationHasBeenSet; }
+  template <typename PersistentVolumeConfigurationT = PersistentVolumeConfiguration>
+  void SetPersistentVolumeConfiguration(PersistentVolumeConfigurationT&& value) {
+    m_persistentVolumeConfigurationHasBeenSet = true;
+    m_persistentVolumeConfiguration = std::forward<PersistentVolumeConfigurationT>(value);
+  }
+  template <typename PersistentVolumeConfigurationT = PersistentVolumeConfiguration>
+  ServiceManagedEc2FleetConfiguration& WithPersistentVolumeConfiguration(PersistentVolumeConfigurationT&& value) {
+    SetPersistentVolumeConfiguration(std::forward<PersistentVolumeConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The auto scaling configuration settings for the service managed EC2
    * fleet.</p>
    */
@@ -135,11 +154,14 @@ class ServiceManagedEc2FleetConfiguration {
 
   Aws::String m_storageProfileId;
 
+  PersistentVolumeConfiguration m_persistentVolumeConfiguration;
+
   ServiceManagedEc2AutoScalingConfiguration m_autoScalingConfiguration;
   bool m_instanceCapabilitiesHasBeenSet = false;
   bool m_instanceMarketOptionsHasBeenSet = false;
   bool m_vpcConfigurationHasBeenSet = false;
   bool m_storageProfileIdHasBeenSet = false;
+  bool m_persistentVolumeConfigurationHasBeenSet = false;
   bool m_autoScalingConfigurationHasBeenSet = false;
 };
 

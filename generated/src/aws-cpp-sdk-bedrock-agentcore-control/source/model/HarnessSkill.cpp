@@ -22,6 +22,14 @@ HarnessSkill& HarnessSkill::operator=(JsonView jsonValue) {
     m_path = jsonValue.GetString("path");
     m_pathHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("s3")) {
+    m_s3 = jsonValue.GetObject("s3");
+    m_s3HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("git")) {
+    m_git = jsonValue.GetObject("git");
+    m_gitHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +38,14 @@ JsonValue HarnessSkill::Jsonize() const {
 
   if (m_pathHasBeenSet) {
     payload.WithString("path", m_path);
+  }
+
+  if (m_s3HasBeenSet) {
+    payload.WithObject("s3", m_s3.Jsonize());
+  }
+
+  if (m_gitHasBeenSet) {
+    payload.WithObject("git", m_git.Jsonize());
   }
 
   return payload;

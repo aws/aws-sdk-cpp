@@ -35,7 +35,8 @@ class BatchDeleteAdvancedPromptOptimizationJobRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>List of advanced prompt optimization job identifiers to delete.</p>
+   * <p>A list of advanced prompt optimization job identifiers (ARNs or IDs) to
+   * delete.</p>
    */
   inline const Aws::Vector<Aws::String>& GetJobIdentifiers() const { return m_jobIdentifiers; }
   inline bool JobIdentifiersHasBeenSet() const { return m_jobIdentifiersHasBeenSet; }

@@ -34,7 +34,7 @@ class DataSourceConfig {
 
   ///@{
   /**
-   * <p>Pull session spans from CloudWatch</p>
+   * <p>Configuration for pulling agent session traces from CloudWatch Logs.</p>
    */
   inline const CloudWatchLogsSource& GetCloudWatchLogs() const { return m_cloudWatchLogs; }
   inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }

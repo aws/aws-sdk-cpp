@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/CollectionGroupCapacityLimits.h>
+#include <aws/opensearchserverless/model/CurrentCapacity.h>
+#include <aws/opensearchserverless/model/ServerlessGeneration.h>
 #include <aws/opensearchserverless/model/StandbyReplicas.h>
 #include <aws/opensearchserverless/model/Tag.h>
 
@@ -184,6 +186,24 @@ class CollectionGroupDetail {
 
   ///@{
   /**
+   * <p>Current search and indexing capacity for the collection group.</p>
+   */
+  inline const CurrentCapacity& GetCurrentCapacity() const { return m_currentCapacity; }
+  inline bool CurrentCapacityHasBeenSet() const { return m_currentCapacityHasBeenSet; }
+  template <typename CurrentCapacityT = CurrentCapacity>
+  void SetCurrentCapacity(CurrentCapacityT&& value) {
+    m_currentCapacityHasBeenSet = true;
+    m_currentCapacity = std::forward<CurrentCapacityT>(value);
+  }
+  template <typename CurrentCapacityT = CurrentCapacity>
+  CollectionGroupDetail& WithCurrentCapacity(CurrentCapacityT&& value) {
+    SetCurrentCapacity(std::forward<CurrentCapacityT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The number of collections associated with the collection group.</p>
    */
   inline int GetNumberOfCollections() const { return m_numberOfCollections; }
@@ -194,6 +214,22 @@ class CollectionGroupDetail {
   }
   inline CollectionGroupDetail& WithNumberOfCollections(int value) {
     SetNumberOfCollections(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The generation of Amazon OpenSearch Serverless for the collection group.</p>
+   */
+  inline ServerlessGeneration GetGeneration() const { return m_generation; }
+  inline bool GenerationHasBeenSet() const { return m_generationHasBeenSet; }
+  inline void SetGeneration(ServerlessGeneration value) {
+    m_generationHasBeenSet = true;
+    m_generation = value;
+  }
+  inline CollectionGroupDetail& WithGeneration(ServerlessGeneration value) {
+    SetGeneration(value);
     return *this;
   }
   ///@}
@@ -214,7 +250,11 @@ class CollectionGroupDetail {
 
   CollectionGroupCapacityLimits m_capacityLimits;
 
+  CurrentCapacity m_currentCapacity;
+
   int m_numberOfCollections{0};
+
+  ServerlessGeneration m_generation{ServerlessGeneration::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -223,7 +263,9 @@ class CollectionGroupDetail {
   bool m_tagsHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_capacityLimitsHasBeenSet = false;
+  bool m_currentCapacityHasBeenSet = false;
   bool m_numberOfCollectionsHasBeenSet = false;
+  bool m_generationHasBeenSet = false;
 };
 
 }  // namespace Model

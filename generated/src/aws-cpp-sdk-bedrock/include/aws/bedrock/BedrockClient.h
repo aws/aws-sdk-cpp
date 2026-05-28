@@ -94,7 +94,7 @@ class AWS_BEDROCK_API BedrockClient
   virtual ~BedrockClient();
 
   /**
-   * <p>Batch delete the specified advanced prompt optimization jobs.</p><p><h3>See
+   * <p>Deletes one or more advanced prompt optimization jobs.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteAdvancedPromptOptimizationJob">AWS
    * API Reference</a></p>
@@ -187,8 +187,9 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
-   * <p>Creates an asynchronous batch job for advanced prompt
-   * optimization.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates an advanced prompt optimization job. The job optimizes your prompt
+   * templates for specific models using your evaluation dataset and
+   * criteria.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAdvancedPromptOptimizationJob">AWS
    * API Reference</a></p>
    */
@@ -316,9 +317,16 @@ class AWS_BEDROCK_API BedrockClient
 
   /**
    * <p>Creates a new custom model in Amazon Bedrock. After the model is active, you
-   * can use it for inference.</p> <p>To use the model for inference, you must
-   * purchase Provisioned Throughput for it. You can't use On-demand inference with
-   * these custom models. For more information about Provisioned Throughput, see <a
+   * can use it for inference.</p> <p>You can provide the model data source in one of
+   * the following ways:</p> <ul> <li> <p> <code>customModelDataSource</code> —
+   * Specify a SageMaker AI model package ARN. Amazon Bedrock resolves the model
+   * package to retrieve the model artifacts. This is the preferred method for new
+   * SageMaker AI training outputs.</p> </li> <li> <p> <code>modelSourceConfig</code>
+   * — Specify an Amazon S3 URI pointing to the Amazon-managed Amazon S3 bucket
+   * containing your model artifacts.</p> </li> </ul> <p>To use the model for
+   * inference, you must purchase Provisioned Throughput for it. You can't use
+   * On-demand inference with these custom models. For more information about
+   * Provisioned Throughput, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
    * Throughput</a>.</p> <p>The model appears in <code>ListCustomModels</code> with a
    * <code>customizationType</code> of <code>imported</code>. To track the status of
@@ -1319,8 +1327,8 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
-   * <p>Retrieves the details and status of an advanced prompt optimization
-   * job.</p><p><h3>See Also:</h3>   <a
+   * <p>Gets information about an advanced prompt optimization job.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAdvancedPromptOptimizationJob">AWS
    * API Reference</a></p>
    */
@@ -2096,7 +2104,7 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
-   * <p>Lists all advanced prompt optimization jobs for the account.</p><p><h3>See
+   * <p>Lists the advanced prompt optimization jobs in your account.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAdvancedPromptOptimizationJobs">AWS
    * API Reference</a></p>
@@ -2998,7 +3006,7 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
-   * <p>Stops an in-progress advanced prompt optimization job.</p><p><h3>See
+   * <p>Stops an advanced prompt optimization job that is in progress.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopAdvancedPromptOptimizationJob">AWS
    * API Reference</a></p>

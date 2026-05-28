@@ -40,7 +40,7 @@ class GetAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>ARN of the advanced prompt optimization job.</p>
+   * <p>The Amazon Resource Name (ARN) of the advanced prompt optimization job.</p>
    */
   inline const Aws::String& GetJobArn() const { return m_jobArn; }
   template <typename JobArnT = Aws::String>
@@ -57,7 +57,7 @@ class GetAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>Name of the advanced prompt optimization job.</p>
+   * <p>The name of the advanced prompt optimization job.</p>
    */
   inline const Aws::String& GetJobName() const { return m_jobName; }
   template <typename JobNameT = Aws::String>
@@ -74,7 +74,7 @@ class GetAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>Description of the advanced prompt optimization job.</p>
+   * <p>The description of the advanced prompt optimization job.</p>
    */
   inline const Aws::String& GetJobDescription() const { return m_jobDescription; }
   template <typename JobDescriptionT = Aws::String>
@@ -91,7 +91,7 @@ class GetAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>Status of the advanced prompt optimization job.</p>
+   * <p>The status of the advanced prompt optimization job.</p>
    */
   inline AdvancedPromptOptimizationJobStatus GetJobStatus() const { return m_jobStatus; }
   inline void SetJobStatus(AdvancedPromptOptimizationJobStatus value) {
@@ -106,7 +106,7 @@ class GetAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>Input data configuration for the advanced prompt optimization job.</p>
+   * <p>The input data configuration for the optimization job.</p>
    */
   inline const AdvancedPromptOptimizationInputConfig& GetInputConfig() const { return m_inputConfig; }
   template <typename InputConfigT = AdvancedPromptOptimizationInputConfig>
@@ -123,7 +123,7 @@ class GetAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>Output data configuration for the advanced prompt optimization job.</p>
+   * <p>The output data configuration for the optimization job.</p>
    */
   inline const AdvancedPromptOptimizationOutputConfig& GetOutputConfig() const { return m_outputConfig; }
   template <typename OutputConfigT = AdvancedPromptOptimizationOutputConfig>
@@ -140,7 +140,8 @@ class GetAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>KMS key ARN used for encrypting output data.</p>
+   * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the output
+   * data.</p>
    */
   inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
   template <typename EncryptionKeyArnT = Aws::String>
@@ -157,7 +158,7 @@ class GetAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>Creation time of the advanced prompt optimization job.</p>
+   * <p>The time at which the advanced prompt optimization job was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
   template <typename CreationTimeT = Aws::Utils::DateTime>
@@ -174,7 +175,7 @@ class GetAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>Last modified time of the advanced prompt optimization job.</p>
+   * <p>The time at which the advanced prompt optimization job was last modified.</p>
    */
   inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
   template <typename LastModifiedTimeT = Aws::Utils::DateTime>
@@ -191,7 +192,7 @@ class GetAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>Failure message if the advanced prompt optimization job failed.</p>
+   * <p>If the job failed, a message describing the reason for the failure.</p>
    */
   inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
   template <typename FailureMessageT = Aws::String>
@@ -208,7 +209,7 @@ class GetAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>Model configurations for advanced prompt optimization.</p>
+   * <p>The model configurations used in the optimization job.</p>
    */
   inline const Aws::Vector<ModelConfiguration>& GetModelConfigurations() const { return m_modelConfigurations; }
   template <typename ModelConfigurationsT = Aws::Vector<ModelConfiguration>>

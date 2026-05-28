@@ -35,6 +35,26 @@ class ComputeNodeGroupSlurmConfigurationRequest {
 
   ///@{
   /**
+   * <p>The time (in seconds) before an idle node is scaled down. If not specified,
+   * the cluster-level setting applies. This overrides the cluster-level
+   * <code>scaleDownIdleTimeInSeconds</code> setting. A value of <code>-1</code>
+   * removes the override and applies the cluster-level setting to this compute node
+   * group. Requires Slurm version 25.11 or later.</p>
+   */
+  inline int GetScaleDownIdleTimeInSeconds() const { return m_scaleDownIdleTimeInSeconds; }
+  inline bool ScaleDownIdleTimeInSecondsHasBeenSet() const { return m_scaleDownIdleTimeInSecondsHasBeenSet; }
+  inline void SetScaleDownIdleTimeInSeconds(int value) {
+    m_scaleDownIdleTimeInSecondsHasBeenSet = true;
+    m_scaleDownIdleTimeInSeconds = value;
+  }
+  inline ComputeNodeGroupSlurmConfigurationRequest& WithScaleDownIdleTimeInSeconds(int value) {
+    SetScaleDownIdleTimeInSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Additional Slurm-specific configuration that directly maps to Slurm
    * settings.</p>
    */
@@ -58,7 +78,10 @@ class ComputeNodeGroupSlurmConfigurationRequest {
   }
   ///@}
  private:
+  int m_scaleDownIdleTimeInSeconds{0};
+
   Aws::Vector<SlurmCustomSetting> m_slurmCustomSettings;
+  bool m_scaleDownIdleTimeInSecondsHasBeenSet = false;
   bool m_slurmCustomSettingsHasBeenSet = false;
 };
 

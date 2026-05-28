@@ -21,7 +21,9 @@ namespace Bedrock {
 namespace Model {
 
 /**
- * <p>Inference configuration for a model.</p><p><h3>See Also:</h3>   <a
+ * <p>Base inference parameters to pass to a model. For more information, see <a
+ * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+ * parameters for foundation models</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/InferenceConfiguration">AWS
  * API Reference</a></p>
  */
@@ -34,7 +36,8 @@ class InferenceConfiguration {
 
   ///@{
   /**
-   * <p>The maximum number of tokens to generate.</p>
+   * <p>The maximum number of tokens to allow in the generated response. The default
+   * value is the maximum allowed value for the model that you are using.</p>
    */
   inline int GetMaxTokens() const { return m_maxTokens; }
   inline bool MaxTokensHasBeenSet() const { return m_maxTokensHasBeenSet; }
@@ -50,7 +53,10 @@ class InferenceConfiguration {
 
   ///@{
   /**
-   * <p>The temperature for sampling.</p>
+   * <p>The likelihood of the model selecting higher-probability options while
+   * generating a response. A lower value makes the model more likely to choose
+   * higher-probability options, while a higher value makes the model more likely to
+   * choose lower-probability options.</p>
    */
   inline double GetTemperature() const { return m_temperature; }
   inline bool TemperatureHasBeenSet() const { return m_temperatureHasBeenSet; }
@@ -66,7 +72,10 @@ class InferenceConfiguration {
 
   ///@{
   /**
-   * <p>The top-p value for nucleus sampling.</p>
+   * <p>The percentage of most-likely candidates that the model considers for the
+   * next token. For example, if you choose a value of 0.8 for <code>topP</code>, the
+   * model selects from the top 80% of the probability distribution of tokens that
+   * could be next in the sequence.</p>
    */
   inline double GetTopP() const { return m_topP; }
   inline bool TopPHasBeenSet() const { return m_topPHasBeenSet; }
@@ -82,7 +91,8 @@ class InferenceConfiguration {
 
   ///@{
   /**
-   * <p>Stop sequences that end generation.</p>
+   * <p>A list of stop sequences. A stop sequence is a sequence of characters that
+   * causes the model to stop generating the response.</p>
    */
   inline const Aws::Vector<Aws::String>& GetStopSequences() const { return m_stopSequences; }
   inline bool StopSequencesHasBeenSet() const { return m_stopSequencesHasBeenSet; }

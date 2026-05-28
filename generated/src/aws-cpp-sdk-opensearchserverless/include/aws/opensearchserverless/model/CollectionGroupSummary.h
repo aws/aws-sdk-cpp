@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/CollectionGroupCapacityLimits.h>
+#include <aws/opensearchserverless/model/ServerlessGeneration.h>
 
 #include <utility>
 
@@ -133,6 +134,22 @@ class CollectionGroupSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The generation of Amazon OpenSearch Serverless for the collection group.</p>
+   */
+  inline ServerlessGeneration GetGeneration() const { return m_generation; }
+  inline bool GenerationHasBeenSet() const { return m_generationHasBeenSet; }
+  inline void SetGeneration(ServerlessGeneration value) {
+    m_generationHasBeenSet = true;
+    m_generation = value;
+  }
+  inline CollectionGroupSummary& WithGeneration(ServerlessGeneration value) {
+    SetGeneration(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -145,12 +162,15 @@ class CollectionGroupSummary {
   long long m_createdDate{0};
 
   CollectionGroupCapacityLimits m_capacityLimits;
+
+  ServerlessGeneration m_generation{ServerlessGeneration::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_numberOfCollectionsHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_capacityLimitsHasBeenSet = false;
+  bool m_generationHasBeenSet = false;
 };
 
 }  // namespace Model

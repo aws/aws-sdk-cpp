@@ -37,7 +37,10 @@ class EvaluationReferenceInput {
   AWS_BEDROCKAGENTCORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p> The span context that identifies which session or trace this reference input
+   * applies to, used for correlating ground truth with agent output. </p>
+   */
   inline const Context& GetContext() const { return m_context; }
   inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
   template <typename ContextT = Context>

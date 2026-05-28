@@ -39,6 +39,10 @@ Aws::String CreateCollectionGroupRequest::SerializePayload() const {
     payload.WithObject("capacityLimits", m_capacityLimits.Jsonize());
   }
 
+  if (m_generationHasBeenSet) {
+    payload.WithString("generation", ServerlessGenerationMapper::GetNameForServerlessGeneration(m_generation));
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

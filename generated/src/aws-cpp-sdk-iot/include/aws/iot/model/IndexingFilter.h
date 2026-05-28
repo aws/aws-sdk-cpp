@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/IoT_EXPORTS.h>
+#include <aws/iot/model/ConnectivityFilter.h>
 #include <aws/iot/model/GeoLocationTarget.h>
 
 #include <utility>
@@ -102,12 +103,34 @@ class IndexingFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Provides additional connectivity filter selections for the fleet indexing
+   * configuration.</p>
+   */
+  inline const ConnectivityFilter& GetConnectivity() const { return m_connectivity; }
+  inline bool ConnectivityHasBeenSet() const { return m_connectivityHasBeenSet; }
+  template <typename ConnectivityT = ConnectivityFilter>
+  void SetConnectivity(ConnectivityT&& value) {
+    m_connectivityHasBeenSet = true;
+    m_connectivity = std::forward<ConnectivityT>(value);
+  }
+  template <typename ConnectivityT = ConnectivityFilter>
+  IndexingFilter& WithConnectivity(ConnectivityT&& value) {
+    SetConnectivity(std::forward<ConnectivityT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_namedShadowNames;
 
   Aws::Vector<GeoLocationTarget> m_geoLocations;
+
+  ConnectivityFilter m_connectivity;
   bool m_namedShadowNamesHasBeenSet = false;
   bool m_geoLocationsHasBeenSet = false;
+  bool m_connectivityHasBeenSet = false;
 };
 
 }  // namespace Model

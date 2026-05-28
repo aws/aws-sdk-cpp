@@ -8,6 +8,7 @@
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/CollectionStatus.h>
 #include <aws/opensearchserverless/model/CollectionType.h>
+#include <aws/opensearchserverless/model/DeletionProtection.h>
 #include <aws/opensearchserverless/model/StandbyReplicas.h>
 #include <aws/opensearchserverless/model/VectorOptions.h>
 
@@ -177,6 +178,23 @@ class CreateCollectionDetail {
 
   ///@{
   /**
+   * <p>Indicates whether deletion protection is <code>ENABLED</code> or
+   * <code>DISABLED</code> for the collection.</p>
+   */
+  inline DeletionProtection GetDeletionProtection() const { return m_deletionProtection; }
+  inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+  inline void SetDeletionProtection(DeletionProtection value) {
+    m_deletionProtectionHasBeenSet = true;
+    m_deletionProtection = value;
+  }
+  inline CreateCollectionDetail& WithDeletionProtection(DeletionProtection value) {
+    SetDeletionProtection(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration options for vector search capabilities in the collection.</p>
    */
   inline const VectorOptions& GetVectorOptions() const { return m_vectorOptions; }
@@ -259,6 +277,8 @@ class CreateCollectionDetail {
 
   StandbyReplicas m_standbyReplicas{StandbyReplicas::NOT_SET};
 
+  DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
+
   VectorOptions m_vectorOptions;
 
   long long m_createdDate{0};
@@ -274,6 +294,7 @@ class CreateCollectionDetail {
   bool m_arnHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_standbyReplicasHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
   bool m_vectorOptionsHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;

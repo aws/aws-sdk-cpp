@@ -34,6 +34,14 @@ HarnessBedrockModelConfig& HarnessBedrockModelConfig::operator=(JsonView jsonVal
     m_topP = jsonValue.GetDouble("topP");
     m_topPHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("apiFormat")) {
+    m_apiFormat = HarnessBedrockApiFormatMapper::GetHarnessBedrockApiFormatForName(jsonValue.GetString("apiFormat"));
+    m_apiFormatHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("additionalParams")) {
+    m_additionalParams = jsonValue.GetObject("additionalParams");
+    m_additionalParamsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +62,16 @@ JsonValue HarnessBedrockModelConfig::Jsonize() const {
 
   if (m_topPHasBeenSet) {
     payload.WithDouble("topP", m_topP);
+  }
+
+  if (m_apiFormatHasBeenSet) {
+    payload.WithString("apiFormat", HarnessBedrockApiFormatMapper::GetNameForHarnessBedrockApiFormat(m_apiFormat));
+  }
+
+  if (m_additionalParamsHasBeenSet) {
+    if (!m_additionalParams.View().IsNull()) {
+      payload.WithObject("additionalParams", JsonValue(m_additionalParams.View()));
+    }
   }
 
   return payload;

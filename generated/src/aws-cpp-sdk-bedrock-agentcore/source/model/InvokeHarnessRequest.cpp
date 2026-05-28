@@ -90,6 +90,12 @@ Aws::Http::HeaderValueCollection InvokeHarnessRequest::GetRequestSpecificHeaders
     ss.str("");
   }
 
+  if (m_runtimeUserIdHasBeenSet) {
+    ss << m_runtimeUserId;
+    headers.emplace("x-amzn-bedrock-agentcore-runtime-user-id", ss.str());
+    ss.str("");
+  }
+
   return headers;
 }
 

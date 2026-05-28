@@ -36,7 +36,8 @@ class CreateAdvancedPromptOptimizationJobResult {
 
   ///@{
   /**
-   * <p>ARN of the created advanced prompt optimization job.</p>
+   * <p>The Amazon Resource Name (ARN) of the created advanced prompt optimization
+   * job.</p>
    */
   inline const Aws::String& GetJobArn() const { return m_jobArn; }
   template <typename JobArnT = Aws::String>

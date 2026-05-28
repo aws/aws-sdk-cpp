@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
+#include <aws/controlcatalog/model/ControlParameterRequirement.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -83,9 +84,29 @@ class ControlParameter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the parameter is required or optional when you enable the
+   * control.</p>
+   */
+  inline ControlParameterRequirement GetRequirement() const { return m_requirement; }
+  inline bool RequirementHasBeenSet() const { return m_requirementHasBeenSet; }
+  inline void SetRequirement(ControlParameterRequirement value) {
+    m_requirementHasBeenSet = true;
+    m_requirement = value;
+  }
+  inline ControlParameter& WithRequirement(ControlParameterRequirement value) {
+    SetRequirement(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
+
+  ControlParameterRequirement m_requirement{ControlParameterRequirement::NOT_SET};
   bool m_nameHasBeenSet = false;
+  bool m_requirementHasBeenSet = false;
 };
 
 }  // namespace Model

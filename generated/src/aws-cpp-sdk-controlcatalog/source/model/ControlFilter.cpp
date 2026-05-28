@@ -22,6 +22,13 @@ ControlFilter& ControlFilter::operator=(JsonView jsonValue) {
     m_implementations = jsonValue.GetObject("Implementations");
     m_implementationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GovernedProviders")) {
+    Aws::Utils::Array<JsonView> governedProvidersJsonList = jsonValue.GetArray("GovernedProviders");
+    for (unsigned governedProvidersIndex = 0; governedProvidersIndex < governedProvidersJsonList.GetLength(); ++governedProvidersIndex) {
+      m_governedProviders.push_back(governedProvidersJsonList[governedProvidersIndex].AsString());
+    }
+    m_governedProvidersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +37,14 @@ JsonValue ControlFilter::Jsonize() const {
 
   if (m_implementationsHasBeenSet) {
     payload.WithObject("Implementations", m_implementations.Jsonize());
+  }
+
+  if (m_governedProvidersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> governedProvidersJsonList(m_governedProviders.size());
+    for (unsigned governedProvidersIndex = 0; governedProvidersIndex < governedProvidersJsonList.GetLength(); ++governedProvidersIndex) {
+      governedProvidersJsonList[governedProvidersIndex].AsString(m_governedProviders[governedProvidersIndex]);
+    }
+    payload.WithArray("GovernedProviders", std::move(governedProvidersJsonList));
   }
 
   return payload;

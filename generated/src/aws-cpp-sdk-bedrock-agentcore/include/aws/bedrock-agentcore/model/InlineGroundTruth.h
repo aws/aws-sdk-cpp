@@ -61,8 +61,7 @@ class InlineGroundTruth {
 
   ///@{
   /**
-   * <p>expectedTrajectory for evaluation, reuses common model
-   * EvaluationExpectedTrajectory</p>
+   * <p>The expected tool call sequence for trajectory evaluation.</p>
    */
   inline const EvaluationExpectedTrajectory& GetExpectedTrajectory() const { return m_expectedTrajectory; }
   inline bool ExpectedTrajectoryHasBeenSet() const { return m_expectedTrajectoryHasBeenSet; }

@@ -50,6 +50,10 @@ CreateCollectionDetail& CreateCollectionDetail::operator=(JsonView jsonValue) {
     m_standbyReplicas = StandbyReplicasMapper::GetStandbyReplicasForName(jsonValue.GetString("standbyReplicas"));
     m_standbyReplicasHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("deletionProtection")) {
+    m_deletionProtection = DeletionProtectionMapper::GetDeletionProtectionForName(jsonValue.GetString("deletionProtection"));
+    m_deletionProtectionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("vectorOptions")) {
     m_vectorOptions = jsonValue.GetObject("vectorOptions");
     m_vectorOptionsHasBeenSet = true;
@@ -102,6 +106,10 @@ JsonValue CreateCollectionDetail::Jsonize() const {
 
   if (m_standbyReplicasHasBeenSet) {
     payload.WithString("standbyReplicas", StandbyReplicasMapper::GetNameForStandbyReplicas(m_standbyReplicas));
+  }
+
+  if (m_deletionProtectionHasBeenSet) {
+    payload.WithString("deletionProtection", DeletionProtectionMapper::GetNameForDeletionProtection(m_deletionProtection));
   }
 
   if (m_vectorOptionsHasBeenSet) {

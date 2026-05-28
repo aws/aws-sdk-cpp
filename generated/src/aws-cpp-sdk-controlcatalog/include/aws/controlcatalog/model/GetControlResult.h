@@ -9,6 +9,7 @@
 #include <aws/controlcatalog/model/ControlParameter.h>
 #include <aws/controlcatalog/model/ControlSeverity.h>
 #include <aws/controlcatalog/model/ImplementationDetails.h>
+#include <aws/controlcatalog/model/ParameterRequirementSummary.h>
 #include <aws/controlcatalog/model/RegionConfiguration.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
@@ -178,6 +179,23 @@ class GetControlResult {
 
   ///@{
   /**
+   * <p>A summary that indicates whether the control requires parameters, accepts
+   * optional parameters, or does not support parameters. Use this field to determine
+   * whether you need to supply parameter values when you enable the control.</p>
+   */
+  inline ParameterRequirementSummary GetParameterRequirementSummary() const { return m_parameterRequirementSummary; }
+  inline void SetParameterRequirementSummary(ParameterRequirementSummary value) {
+    m_parameterRequirementSummaryHasBeenSet = true;
+    m_parameterRequirementSummary = value;
+  }
+  inline GetControlResult& WithParameterRequirementSummary(ParameterRequirementSummary value) {
+    SetParameterRequirementSummary(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Returns an array of <code>ControlParameter</code> objects that specify the
    * parameters a control supports. An empty list is returned for controls that don’t
    * support parameters. </p>
@@ -221,13 +239,14 @@ class GetControlResult {
 
   ///@{
   /**
-   * <p>A list of Amazon Web Services resource types that are governed by this
-   * control. This information helps you understand which controls can govern certain
-   * types of resources, and conversely, which resources are affected when the
-   * control is implemented. The resources are represented as Amazon Web Services
-   * CloudFormation resource types. If <code>GovernedResources</code> cannot be
-   * represented by available CloudFormation resource types, it’s returned as an
-   * empty list.</p>
+   * <p>A list of resource types that are governed by this control. This information
+   * helps you understand which controls can govern certain types of resources, and
+   * conversely, which resources are affected when the control is implemented. For
+   * Amazon Web Services controls, the resources are represented as CloudFormation
+   * resource types. For non-Amazon Web Services controls, the resources are
+   * represented in a provider-specific format. If <code>GovernedResources</code>
+   * cannot be represented by available resource types, it’s returned as an empty
+   * list.</p>
    */
   inline const Aws::Vector<Aws::String>& GetGovernedResources() const { return m_governedResources; }
   template <typename GovernedResourcesT = Aws::Vector<Aws::String>>
@@ -244,6 +263,31 @@ class GetControlResult {
   GetControlResult& AddGovernedResources(GovernedResourcesT&& value) {
     m_governedResourcesHasBeenSet = true;
     m_governedResources.emplace_back(std::forward<GovernedResourcesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of providers whose resources are governed by this control. For
+   * example, a value of <code>AWS</code> indicates that the control governs Amazon
+   * Web Services resources.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetGovernedProviders() const { return m_governedProviders; }
+  template <typename GovernedProvidersT = Aws::Vector<Aws::String>>
+  void SetGovernedProviders(GovernedProvidersT&& value) {
+    m_governedProvidersHasBeenSet = true;
+    m_governedProviders = std::forward<GovernedProvidersT>(value);
+  }
+  template <typename GovernedProvidersT = Aws::Vector<Aws::String>>
+  GetControlResult& WithGovernedProviders(GovernedProvidersT&& value) {
+    SetGovernedProviders(std::forward<GovernedProvidersT>(value));
+    return *this;
+  }
+  template <typename GovernedProvidersT = Aws::String>
+  GetControlResult& AddGovernedProviders(GovernedProvidersT&& value) {
+    m_governedProvidersHasBeenSet = true;
+    m_governedProviders.emplace_back(std::forward<GovernedProvidersT>(value));
     return *this;
   }
   ///@}
@@ -281,11 +325,15 @@ class GetControlResult {
 
   ImplementationDetails m_implementation;
 
+  ParameterRequirementSummary m_parameterRequirementSummary{ParameterRequirementSummary::NOT_SET};
+
   Aws::Vector<ControlParameter> m_parameters;
 
   Aws::Utils::DateTime m_createTime{};
 
   Aws::Vector<Aws::String> m_governedResources;
+
+  Aws::Vector<Aws::String> m_governedProviders;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
@@ -297,9 +345,11 @@ class GetControlResult {
   bool m_severityHasBeenSet = false;
   bool m_regionConfigurationHasBeenSet = false;
   bool m_implementationHasBeenSet = false;
+  bool m_parameterRequirementSummaryHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
   bool m_governedResourcesHasBeenSet = false;
+  bool m_governedProvidersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

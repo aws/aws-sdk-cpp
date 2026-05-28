@@ -57,9 +57,7 @@ class CreateImportedImageRequest : public AppStreamRequest {
 
   ///@{
   /**
-   * <p>The ID of the EC2 AMI to import. The AMI must meet specific requirements
-   * including Windows Server 2022 Full Base, UEFI boot mode, TPM 2.0 support, and
-   * proper drivers.</p>
+   * <p>The ID of the EC2 AMI to import.</p>
    */
   inline const Aws::String& GetSourceAmiId() const { return m_sourceAmiId; }
   inline bool SourceAmiIdHasBeenSet() const { return m_sourceAmiIdHasBeenSet; }
@@ -71,6 +69,24 @@ class CreateImportedImageRequest : public AppStreamRequest {
   template <typename SourceAmiIdT = Aws::String>
   CreateImportedImageRequest& WithSourceAmiId(SourceAmiIdT&& value) {
     SetSourceAmiId(std::forward<SourceAmiIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Workspaces Image to import.</p>
+   */
+  inline const Aws::String& GetWorkspaceImageId() const { return m_workspaceImageId; }
+  inline bool WorkspaceImageIdHasBeenSet() const { return m_workspaceImageIdHasBeenSet; }
+  template <typename WorkspaceImageIdT = Aws::String>
+  void SetWorkspaceImageId(WorkspaceImageIdT&& value) {
+    m_workspaceImageIdHasBeenSet = true;
+    m_workspaceImageId = std::forward<WorkspaceImageIdT>(value);
+  }
+  template <typename WorkspaceImageIdT = Aws::String>
+  CreateImportedImageRequest& WithWorkspaceImageId(WorkspaceImageIdT&& value) {
+    SetWorkspaceImageId(std::forward<WorkspaceImageIdT>(value));
     return *this;
   }
   ///@}
@@ -246,6 +262,8 @@ class CreateImportedImageRequest : public AppStreamRequest {
 
   Aws::String m_sourceAmiId;
 
+  Aws::String m_workspaceImageId;
+
   Aws::String m_iamRoleArn;
 
   Aws::String m_description;
@@ -263,6 +281,7 @@ class CreateImportedImageRequest : public AppStreamRequest {
   bool m_dryRun{false};
   bool m_nameHasBeenSet = false;
   bool m_sourceAmiIdHasBeenSet = false;
+  bool m_workspaceImageIdHasBeenSet = false;
   bool m_iamRoleArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;

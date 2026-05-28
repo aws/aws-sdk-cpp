@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
+#include <aws/opensearchserverless/model/DeletionProtection.h>
 #include <aws/opensearchserverless/model/VectorOptions.h>
 
 #include <utility>
@@ -88,6 +89,24 @@ class UpdateCollectionRequest : public OpenSearchServerlessRequest {
 
   ///@{
   /**
+   * <p>Indicates whether to enable or disable deletion protection for the
+   * collection. When set to <code>ENABLED</code>, the collection cannot be
+   * deleted.</p>
+   */
+  inline DeletionProtection GetDeletionProtection() const { return m_deletionProtection; }
+  inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+  inline void SetDeletionProtection(DeletionProtection value) {
+    m_deletionProtectionHasBeenSet = true;
+    m_deletionProtection = value;
+  }
+  inline UpdateCollectionRequest& WithDeletionProtection(DeletionProtection value) {
+    SetDeletionProtection(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -110,10 +129,13 @@ class UpdateCollectionRequest : public OpenSearchServerlessRequest {
 
   VectorOptions m_vectorOptions;
 
+  DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_idHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_vectorOptionsHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

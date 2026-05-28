@@ -39,7 +39,7 @@ class CreateAdvancedPromptOptimizationJobRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>Name of the advanced prompt optimization job.</p>
+   * <p>A name for the advanced prompt optimization job.</p>
    */
   inline const Aws::String& GetJobName() const { return m_jobName; }
   inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
@@ -57,7 +57,7 @@ class CreateAdvancedPromptOptimizationJobRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>Description of the advanced prompt optimization job.</p>
+   * <p>A description of the advanced prompt optimization job.</p>
    */
   inline const Aws::String& GetJobDescription() const { return m_jobDescription; }
   inline bool JobDescriptionHasBeenSet() const { return m_jobDescriptionHasBeenSet; }
@@ -75,7 +75,9 @@ class CreateAdvancedPromptOptimizationJobRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>Idempotency token for the request.</p>
+   * <p>A unique, case-sensitive identifier to ensure that the API request completes
+   * no more than one time. If this token matches a previous request, Amazon Bedrock
+   * ignores the request but does not return an error.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -93,7 +95,8 @@ class CreateAdvancedPromptOptimizationJobRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>Input data configuration for the advanced prompt optimization job.</p>
+   * <p>Specifies the S3 location of your JSONL input file containing prompt
+   * templates and evaluation samples.</p>
    */
   inline const AdvancedPromptOptimizationInputConfig& GetInputConfig() const { return m_inputConfig; }
   inline bool InputConfigHasBeenSet() const { return m_inputConfigHasBeenSet; }
@@ -111,7 +114,7 @@ class CreateAdvancedPromptOptimizationJobRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>Output data configuration for the advanced prompt optimization job.</p>
+   * <p>Specifies the S3 location where optimization results will be stored.</p>
    */
   inline const AdvancedPromptOptimizationOutputConfig& GetOutputConfig() const { return m_outputConfig; }
   inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
@@ -129,7 +132,9 @@ class CreateAdvancedPromptOptimizationJobRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>KMS key ARN for encrypting output data.</p>
+   * <p>The Amazon Resource Name (ARN) of the KMS key used for encrypting the output
+   * data. If not specified, the output is encrypted with an Amazon-owned KMS
+   * key.</p>
    */
   inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
   inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
@@ -147,7 +152,7 @@ class CreateAdvancedPromptOptimizationJobRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>Tags to associate with the job.</p>
+   * <p>Tags to associate with the advanced prompt optimization job.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -171,7 +176,8 @@ class CreateAdvancedPromptOptimizationJobRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>Model configurations for advanced prompt optimization.</p>
+   * <p>A list of model configurations specifying the target models for prompt
+   * optimization. You can specify up to 5 models.</p>
    */
   inline const Aws::Vector<ModelConfiguration>& GetModelConfigurations() const { return m_modelConfigurations; }
   inline bool ModelConfigurationsHasBeenSet() const { return m_modelConfigurationsHasBeenSet; }

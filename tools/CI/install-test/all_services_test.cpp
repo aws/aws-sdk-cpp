@@ -329,6 +329,7 @@
 #include <aws/rekognition/RekognitionClient.h>
 #include <aws/repostspace/RepostspaceClient.h>
 #include <aws/resiliencehub/ResilienceHubClient.h>
+#include <aws/resiliencehubv2/Resiliencehubv2Client.h>
 #include <aws/resource-explorer-2/ResourceExplorer2Client.h>
 #include <aws/resource-groups/ResourceGroupsClient.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIClient.h>

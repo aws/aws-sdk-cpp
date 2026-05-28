@@ -18,6 +18,10 @@ namespace Model {
 ComputeNodeGroupSlurmConfigurationRequest::ComputeNodeGroupSlurmConfigurationRequest(JsonView jsonValue) { *this = jsonValue; }
 
 ComputeNodeGroupSlurmConfigurationRequest& ComputeNodeGroupSlurmConfigurationRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("scaleDownIdleTimeInSeconds")) {
+    m_scaleDownIdleTimeInSeconds = jsonValue.GetInteger("scaleDownIdleTimeInSeconds");
+    m_scaleDownIdleTimeInSecondsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("slurmCustomSettings")) {
     Aws::Utils::Array<JsonView> slurmCustomSettingsJsonList = jsonValue.GetArray("slurmCustomSettings");
     for (unsigned slurmCustomSettingsIndex = 0; slurmCustomSettingsIndex < slurmCustomSettingsJsonList.GetLength();
@@ -31,6 +35,10 @@ ComputeNodeGroupSlurmConfigurationRequest& ComputeNodeGroupSlurmConfigurationReq
 
 JsonValue ComputeNodeGroupSlurmConfigurationRequest::Jsonize() const {
   JsonValue payload;
+
+  if (m_scaleDownIdleTimeInSecondsHasBeenSet) {
+    payload.WithInteger("scaleDownIdleTimeInSeconds", m_scaleDownIdleTimeInSeconds);
+  }
 
   if (m_slurmCustomSettingsHasBeenSet) {
     Aws::Utils::Array<JsonValue> slurmCustomSettingsJsonList(m_slurmCustomSettings.size());

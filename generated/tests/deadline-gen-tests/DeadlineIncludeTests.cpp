@@ -170,6 +170,8 @@
 #include <aws/deadline/model/DeleteQueueResult.h>
 #include <aws/deadline/model/DeleteStorageProfileRequest.h>
 #include <aws/deadline/model/DeleteStorageProfileResult.h>
+#include <aws/deadline/model/DeleteVolumeRequest.h>
+#include <aws/deadline/model/DeleteVolumeResult.h>
 #include <aws/deadline/model/DeleteWorkerRequest.h>
 #include <aws/deadline/model/DeleteWorkerResult.h>
 #include <aws/deadline/model/DependencyConsumerResolutionStatus.h>
@@ -183,6 +185,7 @@
 #include <aws/deadline/model/DisassociateMemberFromJobResult.h>
 #include <aws/deadline/model/DisassociateMemberFromQueueRequest.h>
 #include <aws/deadline/model/DisassociateMemberFromQueueResult.h>
+#include <aws/deadline/model/EbsVolumeType.h>
 #include <aws/deadline/model/Ec2EbsVolume.h>
 #include <aws/deadline/model/Ec2MarketType.h>
 #include <aws/deadline/model/EnvironmentDetailsEntity.h>
@@ -245,6 +248,8 @@
 #include <aws/deadline/model/GetStorageProfileResult.h>
 #include <aws/deadline/model/GetTaskRequest.h>
 #include <aws/deadline/model/GetTaskResult.h>
+#include <aws/deadline/model/GetVolumeRequest.h>
+#include <aws/deadline/model/GetVolumeResult.h>
 #include <aws/deadline/model/GetWorkerRequest.h>
 #include <aws/deadline/model/GetWorkerResult.h>
 #include <aws/deadline/model/HostConfiguration.h>
@@ -330,6 +335,8 @@
 #include <aws/deadline/model/ListTagsForResourceResult.h>
 #include <aws/deadline/model/ListTasksRequest.h>
 #include <aws/deadline/model/ListTasksResult.h>
+#include <aws/deadline/model/ListVolumesRequest.h>
+#include <aws/deadline/model/ListVolumesResult.h>
 #include <aws/deadline/model/ListWorkersRequest.h>
 #include <aws/deadline/model/ListWorkersResult.h>
 #include <aws/deadline/model/LogConfiguration.h>
@@ -345,6 +352,7 @@
 #include <aws/deadline/model/PathFormat.h>
 #include <aws/deadline/model/PathMappingRule.h>
 #include <aws/deadline/model/Period.h>
+#include <aws/deadline/model/PersistentVolumeConfiguration.h>
 #include <aws/deadline/model/PosixUser.h>
 #include <aws/deadline/model/PrincipalType.h>
 #include <aws/deadline/model/PriorityBalancedSchedulingConfiguration.h>
@@ -488,6 +496,8 @@
 #include <aws/deadline/model/ValidationException.h>
 #include <aws/deadline/model/ValidationExceptionField.h>
 #include <aws/deadline/model/ValidationExceptionReason.h>
+#include <aws/deadline/model/VolumeState.h>
+#include <aws/deadline/model/VolumeSummary.h>
 #include <aws/deadline/model/VpcConfiguration.h>
 #include <aws/deadline/model/WeightedBalancedSchedulingConfiguration.h>
 #include <aws/deadline/model/WindowsUser.h>

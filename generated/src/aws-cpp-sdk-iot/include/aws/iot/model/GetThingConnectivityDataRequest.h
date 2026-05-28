@@ -45,9 +45,31 @@ class GetThingConnectivityDataRequest : public IoTRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp,
+   * vpcEndpointId) should be included in the GetThingConnectivityData response. Set
+   * to <code>true</code> to include socket information. Set to <code>false</code> to
+   * omit socket information. By default, this is set to <code>false</code>.</p>
+   */
+  inline bool GetIncludeSocketInformation() const { return m_includeSocketInformation; }
+  inline bool IncludeSocketInformationHasBeenSet() const { return m_includeSocketInformationHasBeenSet; }
+  inline void SetIncludeSocketInformation(bool value) {
+    m_includeSocketInformationHasBeenSet = true;
+    m_includeSocketInformation = value;
+  }
+  inline GetThingConnectivityDataRequest& WithIncludeSocketInformation(bool value) {
+    SetIncludeSocketInformation(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_thingName;
+
+  bool m_includeSocketInformation{false};
   bool m_thingNameHasBeenSet = false;
+  bool m_includeSocketInformationHasBeenSet = false;
 };
 
 }  // namespace Model

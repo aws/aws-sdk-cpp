@@ -328,6 +328,7 @@
 #include <aws/bedrock-agentcore-control/model/HarnessAgentCoreMemoryRetrievalConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessAgentCoreRuntimeEnvironment.h>
 #include <aws/bedrock-agentcore-control/model/HarnessAgentCoreRuntimeEnvironmentRequest.h>
+#include <aws/bedrock-agentcore-control/model/HarnessBedrockApiFormat.h>
 #include <aws/bedrock-agentcore-control/model/HarnessBedrockModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessEnvironmentArtifact.h>
 #include <aws/bedrock-agentcore-control/model/HarnessEnvironmentProvider.h>
@@ -335,11 +336,16 @@
 #include <aws/bedrock-agentcore-control/model/HarnessGatewayOutboundAuth.h>
 #include <aws/bedrock-agentcore-control/model/HarnessGeminiModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessInlineFunctionConfig.h>
+#include <aws/bedrock-agentcore-control/model/HarnessLiteLlmModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessMemoryConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/HarnessModelConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/HarnessOpenAiApiFormat.h>
 #include <aws/bedrock-agentcore-control/model/HarnessOpenAiModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessRemoteMcpConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessSkill.h>
+#include <aws/bedrock-agentcore-control/model/HarnessSkillGitAuth.h>
+#include <aws/bedrock-agentcore-control/model/HarnessSkillGitSource.h>
+#include <aws/bedrock-agentcore-control/model/HarnessSkillS3Source.h>
 #include <aws/bedrock-agentcore-control/model/HarnessSlidingWindowConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/HarnessStatus.h>
 #include <aws/bedrock-agentcore-control/model/HarnessSummarizationConfiguration.h>

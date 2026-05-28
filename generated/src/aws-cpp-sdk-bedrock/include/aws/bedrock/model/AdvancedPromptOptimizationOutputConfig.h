@@ -20,7 +20,7 @@ namespace Bedrock {
 namespace Model {
 
 /**
- * <p>Output data configuration for the advanced prompt optimization
+ * <p>Contains the output data configuration for an advanced prompt optimization
  * job.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/AdvancedPromptOptimizationOutputConfig">AWS
  * API Reference</a></p>
@@ -34,7 +34,7 @@ class AdvancedPromptOptimizationOutputConfig {
 
   ///@{
   /**
-   * <p>S3 URI prefix for the output location.</p>
+   * <p>The S3 URI prefix where the optimization results will be written.</p>
    */
   inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
   inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }

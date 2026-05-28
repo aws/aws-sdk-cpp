@@ -27,6 +27,10 @@ Aws::String UpdateCollectionRequest::SerializePayload() const {
     payload.WithObject("vectorOptions", m_vectorOptions.Jsonize());
   }
 
+  if (m_deletionProtectionHasBeenSet) {
+    payload.WithString("deletionProtection", DeletionProtectionMapper::GetNameForDeletionProtection(m_deletionProtection));
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

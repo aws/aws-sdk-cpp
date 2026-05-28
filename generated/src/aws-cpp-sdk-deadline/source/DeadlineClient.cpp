@@ -64,6 +64,7 @@
 #include <aws/deadline/model/DeleteQueueLimitAssociationRequest.h>
 #include <aws/deadline/model/DeleteQueueRequest.h>
 #include <aws/deadline/model/DeleteStorageProfileRequest.h>
+#include <aws/deadline/model/DeleteVolumeRequest.h>
 #include <aws/deadline/model/DeleteWorkerRequest.h>
 #include <aws/deadline/model/DisassociateMemberFromFarmRequest.h>
 #include <aws/deadline/model/DisassociateMemberFromFleetRequest.h>
@@ -88,6 +89,7 @@
 #include <aws/deadline/model/GetStorageProfileForQueueRequest.h>
 #include <aws/deadline/model/GetStorageProfileRequest.h>
 #include <aws/deadline/model/GetTaskRequest.h>
+#include <aws/deadline/model/GetVolumeRequest.h>
 #include <aws/deadline/model/GetWorkerRequest.h>
 #include <aws/deadline/model/ListAvailableMeteredProductsRequest.h>
 #include <aws/deadline/model/ListBudgetsRequest.h>
@@ -117,6 +119,7 @@
 #include <aws/deadline/model/ListStorageProfilesRequest.h>
 #include <aws/deadline/model/ListTagsForResourceRequest.h>
 #include <aws/deadline/model/ListTasksRequest.h>
+#include <aws/deadline/model/ListVolumesRequest.h>
 #include <aws/deadline/model/ListWorkersRequest.h>
 #include <aws/deadline/model/PutMeteredProductRequest.h>
 #include <aws/deadline/model/SearchJobsRequest.h>
@@ -1251,6 +1254,37 @@ DeleteStorageProfileOutcome DeadlineClient::DeleteStorageProfile(const DeleteSto
                             : DeleteStorageProfileOutcome(std::move(result.GetError()));
 }
 
+DeleteVolumeOutcome DeadlineClient::DeleteVolume(const DeleteVolumeRequest& request) const {
+  if (!request.FarmIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteVolume", "Required field: FarmId, is not set");
+    return DeleteVolumeOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                     "Missing required field [FarmId]", false));
+  }
+  if (!request.FleetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteVolume", "Required field: FleetId, is not set");
+    return DeleteVolumeOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                     "Missing required field [FleetId]", false));
+  }
+  if (!request.VolumeIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteVolume", "Required field: VolumeId, is not set");
+    return DeleteVolumeOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                     "Missing required field [VolumeId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/volumes/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVolumeId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVolumeOutcome(result.GetResultWithOwnership()) : DeleteVolumeOutcome(std::move(result.GetError()));
+}
+
 DeleteWorkerOutcome DeadlineClient::DeleteWorker(const DeleteWorkerRequest& request) const {
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteWorker", "Required field: FarmId, is not set");
@@ -1942,6 +1976,37 @@ GetTaskOutcome DeadlineClient::GetTask(const GetTaskRequest& request) const {
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetTaskOutcome(result.GetResultWithOwnership()) : GetTaskOutcome(std::move(result.GetError()));
+}
+
+GetVolumeOutcome DeadlineClient::GetVolume(const GetVolumeRequest& request) const {
+  if (!request.FarmIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetVolume", "Required field: FarmId, is not set");
+    return GetVolumeOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                  "Missing required field [FarmId]", false));
+  }
+  if (!request.FleetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetVolume", "Required field: FleetId, is not set");
+    return GetVolumeOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                  "Missing required field [FleetId]", false));
+  }
+  if (!request.VolumeIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetVolume", "Required field: VolumeId, is not set");
+    return GetVolumeOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                  "Missing required field [VolumeId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/volumes/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVolumeId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVolumeOutcome(result.GetResultWithOwnership()) : GetVolumeOutcome(std::move(result.GetError()));
 }
 
 GetWorkerOutcome DeadlineClient::GetWorker(const GetWorkerRequest& request) const {
@@ -2643,6 +2708,31 @@ ListTasksOutcome DeadlineClient::ListTasks(const ListTasksRequest& request) cons
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListTasksOutcome(result.GetResultWithOwnership()) : ListTasksOutcome(std::move(result.GetError()));
+}
+
+ListVolumesOutcome DeadlineClient::ListVolumes(const ListVolumesRequest& request) const {
+  if (!request.FarmIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListVolumes", "Required field: FarmId, is not set");
+    return ListVolumesOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                    "Missing required field [FarmId]", false));
+  }
+  if (!request.FleetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListVolumes", "Required field: FleetId, is not set");
+    return ListVolumesOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                    "Missing required field [FleetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/volumes");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVolumesOutcome(result.GetResultWithOwnership()) : ListVolumesOutcome(std::move(result.GetError()));
 }
 
 ListWorkersOutcome DeadlineClient::ListWorkers(const ListWorkersRequest& request) const {

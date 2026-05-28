@@ -33,7 +33,7 @@ class GetAdvancedPromptOptimizationJobRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>ARN or ID of the advanced prompt optimization job.</p>
+   * <p>The ARN or ID of the advanced prompt optimization job.</p>
    */
   inline const Aws::String& GetJobIdentifier() const { return m_jobIdentifier; }
   inline bool JobIdentifierHasBeenSet() const { return m_jobIdentifierHasBeenSet; }

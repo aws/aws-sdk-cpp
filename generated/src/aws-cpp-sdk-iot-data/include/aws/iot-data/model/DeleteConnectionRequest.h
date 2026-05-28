@@ -36,7 +36,9 @@ class DeleteConnectionRequest : public IoTDataPlaneRequest {
   ///@{
   /**
    * <p>The unique identifier of the MQTT client to disconnect. The client ID can't
-   * start with a dollar sign ($).</p>
+   * start with a dollar sign ($).</p> <p>MQTT client IDs must be URL encoded
+   * (percent-encoded) when they contain characters that are not valid in HTTP
+   * requests, such as spaces, forward slashes (/), and UTF-8 characters.</p>
    */
   inline const Aws::String& GetClientId() const { return m_clientId; }
   inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
@@ -54,11 +56,13 @@ class DeleteConnectionRequest : public IoTDataPlaneRequest {
 
   ///@{
   /**
-   * <p>Specifies whether to remove the client's session state when disconnecting.
-   * Set to <code>TRUE</code> to delete all session information, including
-   * subscriptions and queued messages. Set to <code>FALSE</code> to preserve the
-   * session state. By default, this is set to <code>FALSE</code> (preserves the
-   * session state).</p>
+   * <p>Specifies whether to remove the client's persistent session state when
+   * disconnecting. Set to <code>TRUE</code> to delete all session information,
+   * including subscriptions and queued messages. Set to <code>FALSE</code> to
+   * preserve the session state for <a
+   * href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html#mqtt-persistent-sessions">persistent
+   * sessions</a>. For clean sessions this parameter will be ignored. By default,
+   * this is set to <code>FALSE</code> (preserves the session state).</p>
    */
   inline bool GetCleanSession() const { return m_cleanSession; }
   inline bool CleanSessionHasBeenSet() const { return m_cleanSessionHasBeenSet; }
@@ -76,9 +80,9 @@ class DeleteConnectionRequest : public IoTDataPlaneRequest {
   /**
    * <p>Controls if Amazon Web Services IoT Core publishes the client's Last Will and
    * Testament (LWT) message upon disconnection. Set to <code>TRUE</code> to prevent
-   * publishing the LWT message. Set to <code>FALSE</code> to allow publishing. By
-   * default, this is set to <code>FALSE</code> (allows publishing the LWT
-   * message).</p>
+   * publishing the LWT message. Set to <code>FALSE</code> to ensure that LWT is
+   * published. By default, this is set to <code>FALSE</code> (LWT message is
+   * published).</p>
    */
   inline bool GetPreventWillMessage() const { return m_preventWillMessage; }
   inline bool PreventWillMessageHasBeenSet() const { return m_preventWillMessageHasBeenSet; }

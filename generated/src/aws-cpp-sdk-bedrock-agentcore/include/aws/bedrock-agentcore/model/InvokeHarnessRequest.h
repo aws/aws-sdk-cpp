@@ -109,6 +109,25 @@ class InvokeHarnessRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
+   * <p>An identifier for the end user making the request. This value is passed
+   * through to the runtime container.</p>
+   */
+  inline const Aws::String& GetRuntimeUserId() const { return m_runtimeUserId; }
+  inline bool RuntimeUserIdHasBeenSet() const { return m_runtimeUserIdHasBeenSet; }
+  template <typename RuntimeUserIdT = Aws::String>
+  void SetRuntimeUserId(RuntimeUserIdT&& value) {
+    m_runtimeUserIdHasBeenSet = true;
+    m_runtimeUserId = std::forward<RuntimeUserIdT>(value);
+  }
+  template <typename RuntimeUserIdT = Aws::String>
+  InvokeHarnessRequest& WithRuntimeUserId(RuntimeUserIdT&& value) {
+    SetRuntimeUserId(std::forward<RuntimeUserIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The messages to send to the agent.</p>
    */
   inline const Aws::Vector<HarnessMessage>& GetMessages() const { return m_messages; }
@@ -324,6 +343,8 @@ class InvokeHarnessRequest : public BedrockAgentCoreRequest {
 
   Aws::String m_runtimeSessionId;
 
+  Aws::String m_runtimeUserId;
+
   Aws::Vector<HarnessMessage> m_messages;
 
   HarnessModelConfiguration m_model;
@@ -348,6 +369,7 @@ class InvokeHarnessRequest : public BedrockAgentCoreRequest {
 
   bool m_harnessArnHasBeenSet = false;
   bool m_runtimeSessionIdHasBeenSet = false;
+  bool m_runtimeUserIdHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
   bool m_modelHasBeenSet = false;
   bool m_systemPromptHasBeenSet = false;

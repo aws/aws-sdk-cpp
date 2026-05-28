@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -103,6 +104,24 @@ class ConfigurationBundleSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when the configuration bundle was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  ConfigurationBundleSummary& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_bundleArn;
 
@@ -111,10 +130,13 @@ class ConfigurationBundleSummary {
   Aws::String m_bundleName;
 
   Aws::String m_description;
+
+  Aws::Utils::DateTime m_createdAt{};
   bool m_bundleArnHasBeenSet = false;
   bool m_bundleIdHasBeenSet = false;
   bool m_bundleNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -34,6 +34,10 @@ ConfigurationBundleSummary& ConfigurationBundleSummary::operator=(JsonView jsonV
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue ConfigurationBundleSummary::Jsonize() const {
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   return payload;

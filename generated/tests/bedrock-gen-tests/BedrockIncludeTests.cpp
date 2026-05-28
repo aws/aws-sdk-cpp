@@ -179,6 +179,7 @@
 #include <aws/bedrock/model/CustomMetricBedrockEvaluatorModel.h>
 #include <aws/bedrock/model/CustomMetricDefinition.h>
 #include <aws/bedrock/model/CustomMetricEvaluatorModelConfig.h>
+#include <aws/bedrock/model/CustomModelDataSource.h>
 #include <aws/bedrock/model/CustomModelDeploymentStatus.h>
 #include <aws/bedrock/model/CustomModelDeploymentSummary.h>
 #include <aws/bedrock/model/CustomModelDeploymentUpdateDetails.h>
@@ -449,6 +450,7 @@
 #include <aws/bedrock/model/ModelInvocationJobSummary.h>
 #include <aws/bedrock/model/ModelInvocationType.h>
 #include <aws/bedrock/model/ModelModality.h>
+#include <aws/bedrock/model/ModelPackageArnDataSource.h>
 #include <aws/bedrock/model/ModelStatus.h>
 #include <aws/bedrock/model/Offer.h>
 #include <aws/bedrock/model/OfferType.h>

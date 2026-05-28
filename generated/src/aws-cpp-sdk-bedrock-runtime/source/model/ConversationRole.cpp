@@ -17,6 +17,7 @@ namespace ConversationRoleMapper {
 
 static const int user_HASH = HashingUtils::HashString("user");
 static const int assistant_HASH = HashingUtils::HashString("assistant");
+static const int system_HASH = HashingUtils::HashString("system");
 
 ConversationRole GetConversationRoleForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ConversationRole GetConversationRoleForName(const Aws::String& name) {
     return ConversationRole::user;
   } else if (hashCode == assistant_HASH) {
     return ConversationRole::assistant;
+  } else if (hashCode == system_HASH) {
+    return ConversationRole::system;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForConversationRole(ConversationRole enumValue) {
       return "user";
     case ConversationRole::assistant:
       return "assistant";
+    case ConversationRole::system:
+      return "system";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

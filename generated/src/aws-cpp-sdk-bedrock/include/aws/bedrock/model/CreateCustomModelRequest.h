@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/BedrockRequest.h>
 #include <aws/bedrock/Bedrock_EXPORTS.h>
+#include <aws/bedrock/model/CustomModelDataSource.h>
 #include <aws/bedrock/model/ModelDataSource.h>
 #include <aws/bedrock/model/Tag.h>
 #include <aws/core/utils/UUID.h>
@@ -71,6 +72,28 @@ class CreateCustomModelRequest : public BedrockRequest {
 
   ///@{
   /**
+   * <p>The data source for the custom model. Use this field to specify a SageMaker
+   * AI model package ARN as the source for your custom model. Amazon Bedrock
+   * resolves the model package to retrieve the model artifacts.</p> <p>You can
+   * specify either <code>customModelDataSource</code> or
+   * <code>modelSourceConfig</code>, but not both.</p>
+   */
+  inline const CustomModelDataSource& GetCustomModelDataSource() const { return m_customModelDataSource; }
+  inline bool CustomModelDataSourceHasBeenSet() const { return m_customModelDataSourceHasBeenSet; }
+  template <typename CustomModelDataSourceT = CustomModelDataSource>
+  void SetCustomModelDataSource(CustomModelDataSourceT&& value) {
+    m_customModelDataSourceHasBeenSet = true;
+    m_customModelDataSource = std::forward<CustomModelDataSourceT>(value);
+  }
+  template <typename CustomModelDataSourceT = CustomModelDataSource>
+  CreateCustomModelRequest& WithCustomModelDataSource(CustomModelDataSourceT&& value) {
+    SetCustomModelDataSource(std::forward<CustomModelDataSourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to encrypt the
    * custom model. If you don't provide a KMS key, Amazon Bedrock uses an Amazon Web
    * Services-managed KMS key to encrypt the model. </p> <p>If you provide a customer
@@ -101,7 +124,10 @@ class CreateCustomModelRequest : public BedrockRequest {
    * specified). For more information, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-import-iam-role.html">Setting
    * up an IAM service role for importing models</a> in the Amazon Bedrock User
-   * Guide.</p>
+   * Guide.</p> <p>This field is required when you use <code>modelSourceConfig</code>
+   * with an Amazon S3 data source. It is not required when you use
+   * <code>customModelDataSource</code> with a model package ARN, because Amazon
+   * Bedrock uses its own credentials to access the model artifacts.</p>
    */
   inline const Aws::String& GetRoleArn() const { return m_roleArn; }
   inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -173,6 +199,8 @@ class CreateCustomModelRequest : public BedrockRequest {
 
   ModelDataSource m_modelSourceConfig;
 
+  CustomModelDataSource m_customModelDataSource;
+
   Aws::String m_modelKmsKeyArn;
 
   Aws::String m_roleArn;
@@ -182,6 +210,7 @@ class CreateCustomModelRequest : public BedrockRequest {
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_modelNameHasBeenSet = false;
   bool m_modelSourceConfigHasBeenSet = false;
+  bool m_customModelDataSourceHasBeenSet = false;
   bool m_modelKmsKeyArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_modelTagsHasBeenSet = false;

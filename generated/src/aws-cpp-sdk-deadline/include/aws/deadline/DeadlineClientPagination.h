@@ -34,6 +34,7 @@
 #include <aws/deadline/model/ListStorageProfilesForQueuePaginationTraits.h>
 #include <aws/deadline/model/ListStorageProfilesPaginationTraits.h>
 #include <aws/deadline/model/ListTasksPaginationTraits.h>
+#include <aws/deadline/model/ListVolumesPaginationTraits.h>
 #include <aws/deadline/model/ListWorkersPaginationTraits.h>
 
 namespace Aws {
@@ -101,6 +102,8 @@ using ListStorageProfilesForQueuePaginator =
                                       Pagination::ListStorageProfilesForQueuePaginationTraits<DeadlineClient>>;
 using ListTasksPaginator =
     Aws::Utils::Pagination::Paginator<DeadlineClient, Model::ListTasksRequest, Pagination::ListTasksPaginationTraits<DeadlineClient>>;
+using ListVolumesPaginator =
+    Aws::Utils::Pagination::Paginator<DeadlineClient, Model::ListVolumesRequest, Pagination::ListVolumesPaginationTraits<DeadlineClient>>;
 using ListWorkersPaginator =
     Aws::Utils::Pagination::Paginator<DeadlineClient, Model::ListWorkersRequest, Pagination::ListWorkersPaginationTraits<DeadlineClient>>;
 

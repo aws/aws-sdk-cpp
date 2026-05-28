@@ -22,6 +22,7 @@
 #include <aws/customer-profiles/model/AddProfileKeyResult.h>
 #include <aws/customer-profiles/model/BatchGetCalculatedAttributeForProfileResult.h>
 #include <aws/customer-profiles/model/BatchGetProfileResult.h>
+#include <aws/customer-profiles/model/BatchPutProfileObjectResult.h>
 #include <aws/customer-profiles/model/CreateCalculatedAttributeDefinitionResult.h>
 #include <aws/customer-profiles/model/CreateDomainLayoutResult.h>
 #include <aws/customer-profiles/model/CreateDomainResult.h>
@@ -164,6 +165,7 @@ namespace Model {
 class AddProfileKeyRequest;
 class BatchGetCalculatedAttributeForProfileRequest;
 class BatchGetProfileRequest;
+class BatchPutProfileObjectRequest;
 class CreateCalculatedAttributeDefinitionRequest;
 class CreateDomainRequest;
 class CreateDomainLayoutRequest;
@@ -274,6 +276,7 @@ typedef Aws::Utils::Outcome<AddProfileKeyResult, CustomerProfilesError> AddProfi
 typedef Aws::Utils::Outcome<BatchGetCalculatedAttributeForProfileResult, CustomerProfilesError>
     BatchGetCalculatedAttributeForProfileOutcome;
 typedef Aws::Utils::Outcome<BatchGetProfileResult, CustomerProfilesError> BatchGetProfileOutcome;
+typedef Aws::Utils::Outcome<BatchPutProfileObjectResult, CustomerProfilesError> BatchPutProfileObjectOutcome;
 typedef Aws::Utils::Outcome<CreateCalculatedAttributeDefinitionResult, CustomerProfilesError> CreateCalculatedAttributeDefinitionOutcome;
 typedef Aws::Utils::Outcome<CreateDomainResult, CustomerProfilesError> CreateDomainOutcome;
 typedef Aws::Utils::Outcome<CreateDomainLayoutResult, CustomerProfilesError> CreateDomainLayoutOutcome;
@@ -383,6 +386,7 @@ typedef Aws::Utils::Outcome<UpdateRecommenderResult, CustomerProfilesError> Upda
 typedef std::future<AddProfileKeyOutcome> AddProfileKeyOutcomeCallable;
 typedef std::future<BatchGetCalculatedAttributeForProfileOutcome> BatchGetCalculatedAttributeForProfileOutcomeCallable;
 typedef std::future<BatchGetProfileOutcome> BatchGetProfileOutcomeCallable;
+typedef std::future<BatchPutProfileObjectOutcome> BatchPutProfileObjectOutcomeCallable;
 typedef std::future<CreateCalculatedAttributeDefinitionOutcome> CreateCalculatedAttributeDefinitionOutcomeCallable;
 typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
 typedef std::future<CreateDomainLayoutOutcome> CreateDomainLayoutOutcomeCallable;
@@ -502,6 +506,9 @@ typedef std::function<void(const CustomerProfilesClient*, const Model::BatchGetC
 typedef std::function<void(const CustomerProfilesClient*, const Model::BatchGetProfileRequest&, const Model::BatchGetProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchGetProfileResponseReceivedHandler;
+typedef std::function<void(const CustomerProfilesClient*, const Model::BatchPutProfileObjectRequest&,
+                           const Model::BatchPutProfileObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchPutProfileObjectResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::CreateCalculatedAttributeDefinitionRequest&,
                            const Model::CreateCalculatedAttributeDefinitionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

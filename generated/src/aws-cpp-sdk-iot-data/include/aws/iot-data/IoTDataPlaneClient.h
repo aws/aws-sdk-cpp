@@ -92,8 +92,10 @@ class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClien
   /**
    * <p>Disconnects a connected MQTT client from Amazon Web Services IoT Core. When
    * you disconnect a client, Amazon Web Services IoT Core closes the client's
-   * network connection and optionally cleans the session state.</p><p><h3>See
-   * Also:</h3>   <a
+   * network connection and optionally cleans the session state.</p> <p>Requires
+   * permission to access the <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteConnection</a>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteConnection">AWS
    * API Reference</a></p>
    */
@@ -147,6 +149,34 @@ class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClien
   void DeleteThingShadowAsync(const DeleteThingShadowRequestT& request, const DeleteThingShadowResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IoTDataPlaneClient::DeleteThingShadow, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves connection information for the specified MQTT client.</p>
+   * <p>Requires permission to access the <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetConnection</a>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetConnection">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetConnectionOutcome GetConnection(const Model::GetConnectionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetConnectionRequestT = Model::GetConnectionRequest>
+  Model::GetConnectionOutcomeCallable GetConnectionCallable(const GetConnectionRequestT& request) const {
+    return SubmitCallable(&IoTDataPlaneClient::GetConnection, request);
+  }
+
+  /**
+   * An Async wrapper for GetConnection that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetConnectionRequestT = Model::GetConnectionRequest>
+  void GetConnectionAsync(const GetConnectionRequestT& request, const GetConnectionResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IoTDataPlaneClient::GetConnection, request, handler, context);
   }
 
   /**
@@ -283,6 +313,36 @@ class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Returns a list of all subscriptions for MQTT clients with active sessions,
+   * including offline clients with persistent sessions.</p> <p>Requires permission
+   * to access the <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSubscriptions</a>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListSubscriptions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSubscriptionsOutcome ListSubscriptions(const Model::ListSubscriptionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListSubscriptions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListSubscriptionsRequestT = Model::ListSubscriptionsRequest>
+  Model::ListSubscriptionsOutcomeCallable ListSubscriptionsCallable(const ListSubscriptionsRequestT& request) const {
+    return SubmitCallable(&IoTDataPlaneClient::ListSubscriptions, request);
+  }
+
+  /**
+   * An Async wrapper for ListSubscriptions that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListSubscriptionsRequestT = Model::ListSubscriptionsRequest>
+  void ListSubscriptionsAsync(const ListSubscriptionsRequestT& request, const ListSubscriptionsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IoTDataPlaneClient::ListSubscriptions, request, handler, context);
+  }
+
+  /**
    * <p>Publishes an MQTT message.</p> <p>Requires permission to access the <a
    * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">Publish</a>
    * action.</p> <p>For more information about MQTT messages, see <a
@@ -312,6 +372,40 @@ class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClien
   void PublishAsync(const PublishRequestT& request, const PublishResponseReceivedHandler& handler,
                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IoTDataPlaneClient::Publish, request, handler, context);
+  }
+
+  /**
+   * <p>Sends an MQTT message directly to a specific client identified by its client
+   * ID.</p> <p> <code>SendDirectMessage</code> targets a single client ID. The
+   * receiving client does not need to subscribe to the topic, but the receiver's
+   * policy must allow <code>iot:Receive</code> on the specified topic.</p>
+   * <p>Requires permission to access the <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SendDirectMessage</a>
+   * action.</p> <p>For more information about messaging costs, see <a
+   * href="http://aws.amazon.com/iot-core/pricing/">Amazon Web Services IoT Core
+   * pricing</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/SendDirectMessage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendDirectMessageOutcome SendDirectMessage(const Model::SendDirectMessageRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendDirectMessage that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SendDirectMessageRequestT = Model::SendDirectMessageRequest>
+  Model::SendDirectMessageOutcomeCallable SendDirectMessageCallable(const SendDirectMessageRequestT& request) const {
+    return SubmitCallable(&IoTDataPlaneClient::SendDirectMessage, request);
+  }
+
+  /**
+   * An Async wrapper for SendDirectMessage that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename SendDirectMessageRequestT = Model::SendDirectMessageRequest>
+  void SendDirectMessageAsync(const SendDirectMessageRequestT& request, const SendDirectMessageResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IoTDataPlaneClient::SendDirectMessage, request, handler, context);
   }
 
   /**

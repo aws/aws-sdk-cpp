@@ -1,0 +1,157 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehubv2/Resiliencehubv2Request.h>
+#include <aws/resiliencehubv2/Resiliencehubv2_EXPORTS.h>
+#include <aws/resiliencehubv2/model/QueryGranularity.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace resiliencehubv2 {
+namespace Model {
+
+/**
+ */
+class ListDependenciesRequest : public Resiliencehubv2Request {
+ public:
+  AWS_RESILIENCEHUBV2_API ListDependenciesRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListDependencies"; }
+
+  AWS_RESILIENCEHUBV2_API Aws::String SerializePayload() const override;
+
+  AWS_RESILIENCEHUBV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
+
+  inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
+  inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
+  template <typename ServiceArnT = Aws::String>
+  void SetServiceArn(ServiceArnT&& value) {
+    m_serviceArnHasBeenSet = true;
+    m_serviceArn = std::forward<ServiceArnT>(value);
+  }
+  template <typename ServiceArnT = Aws::String>
+  ListDependenciesRequest& WithServiceArn(ServiceArnT&& value) {
+    SetServiceArn(std::forward<ServiceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The start time for the dependency query range.</p>
+   */
+  inline const Aws::Utils::DateTime& GetQueryRangeStartTime() const { return m_queryRangeStartTime; }
+  inline bool QueryRangeStartTimeHasBeenSet() const { return m_queryRangeStartTimeHasBeenSet; }
+  template <typename QueryRangeStartTimeT = Aws::Utils::DateTime>
+  void SetQueryRangeStartTime(QueryRangeStartTimeT&& value) {
+    m_queryRangeStartTimeHasBeenSet = true;
+    m_queryRangeStartTime = std::forward<QueryRangeStartTimeT>(value);
+  }
+  template <typename QueryRangeStartTimeT = Aws::Utils::DateTime>
+  ListDependenciesRequest& WithQueryRangeStartTime(QueryRangeStartTimeT&& value) {
+    SetQueryRangeStartTime(std::forward<QueryRangeStartTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The end time for the dependency query range.</p>
+   */
+  inline const Aws::Utils::DateTime& GetQueryRangeEndTime() const { return m_queryRangeEndTime; }
+  inline bool QueryRangeEndTimeHasBeenSet() const { return m_queryRangeEndTimeHasBeenSet; }
+  template <typename QueryRangeEndTimeT = Aws::Utils::DateTime>
+  void SetQueryRangeEndTime(QueryRangeEndTimeT&& value) {
+    m_queryRangeEndTimeHasBeenSet = true;
+    m_queryRangeEndTime = std::forward<QueryRangeEndTimeT>(value);
+  }
+  template <typename QueryRangeEndTimeT = Aws::Utils::DateTime>
+  ListDependenciesRequest& WithQueryRangeEndTime(QueryRangeEndTimeT&& value) {
+    SetQueryRangeEndTime(std::forward<QueryRangeEndTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The granularity for the dependency query range.</p>
+   */
+  inline QueryGranularity GetQueryRangeGranularity() const { return m_queryRangeGranularity; }
+  inline bool QueryRangeGranularityHasBeenSet() const { return m_queryRangeGranularityHasBeenSet; }
+  inline void SetQueryRangeGranularity(QueryGranularity value) {
+    m_queryRangeGranularityHasBeenSet = true;
+    m_queryRangeGranularity = value;
+  }
+  inline ListDependenciesRequest& WithQueryRangeGranularity(QueryGranularity value) {
+    SetQueryRangeGranularity(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListDependenciesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListDependenciesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_serviceArn;
+
+  Aws::Utils::DateTime m_queryRangeStartTime{};
+
+  Aws::Utils::DateTime m_queryRangeEndTime{};
+
+  QueryGranularity m_queryRangeGranularity{QueryGranularity::NOT_SET};
+
+  int m_maxResults{0};
+
+  Aws::String m_nextToken;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_queryRangeStartTimeHasBeenSet = false;
+  bool m_queryRangeEndTimeHasBeenSet = false;
+  bool m_queryRangeGranularityHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace resiliencehubv2
+}  // namespace Aws

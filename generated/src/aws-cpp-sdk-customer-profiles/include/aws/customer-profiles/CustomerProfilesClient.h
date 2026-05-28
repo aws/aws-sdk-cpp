@@ -175,6 +175,41 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Adds multiple profile objects to a domain of a given ObjectType in a single
+   * API call.</p> <p>When adding a specific profile object, like a Contact Record,
+   * an inferred profile can get created if it is not mapped to an existing profile.
+   * The resulting profile will only have a phone number populated in the standard
+   * ProfileObject. Any additional Contact Records with the same phone number will be
+   * mapped to the same inferred profile.</p> <p>When a ProfileObject is created and
+   * if a ProfileObjectType already exists for the ProfileObject, it will provide
+   * data to a standard profile depending on the ProfileObjectType definition.</p>
+   * <p>BatchPutProfileObject needs an ObjectType, which can be created using
+   * PutProfileObjectType.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchPutProfileObject">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchPutProfileObjectOutcome BatchPutProfileObject(const Model::BatchPutProfileObjectRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchPutProfileObject that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchPutProfileObjectRequestT = Model::BatchPutProfileObjectRequest>
+  Model::BatchPutProfileObjectOutcomeCallable BatchPutProfileObjectCallable(const BatchPutProfileObjectRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::BatchPutProfileObject, request);
+  }
+
+  /**
+   * An Async wrapper for BatchPutProfileObject that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchPutProfileObjectRequestT = Model::BatchPutProfileObjectRequest>
+  void BatchPutProfileObjectAsync(const BatchPutProfileObjectRequestT& request, const BatchPutProfileObjectResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::BatchPutProfileObject, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new calculated attribute definition. After creation, new object
    * data ingested into Customer Profiles will be included in the calculated
    * attribute, which can be retrieved for a profile using the <a

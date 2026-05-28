@@ -1,0 +1,183 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/core/utils/Document.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace BedrockAgentCoreControl {
+namespace Model {
+
+/**
+ * <p>Configuration for a LiteLLM model provider, enabling connection to
+ * third-party model providers.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/HarnessLiteLlmModelConfig">AWS
+ * API Reference</a></p>
+ */
+class HarnessLiteLlmModelConfig {
+ public:
+  AWS_BEDROCKAGENTCORECONTROL_API HarnessLiteLlmModelConfig() = default;
+  AWS_BEDROCKAGENTCORECONTROL_API HarnessLiteLlmModelConfig(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCKAGENTCORECONTROL_API HarnessLiteLlmModelConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCKAGENTCORECONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The LiteLLM model identifier (e.g., "anthropic/claude-3-sonnet").</p>
+   */
+  inline const Aws::String& GetModelId() const { return m_modelId; }
+  inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
+  template <typename ModelIdT = Aws::String>
+  void SetModelId(ModelIdT&& value) {
+    m_modelIdHasBeenSet = true;
+    m_modelId = std::forward<ModelIdT>(value);
+  }
+  template <typename ModelIdT = Aws::String>
+  HarnessLiteLlmModelConfig& WithModelId(ModelIdT&& value) {
+    SetModelId(std::forward<ModelIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the API key in AgentCore Identity for authenticating with the
+   * model provider.</p>
+   */
+  inline const Aws::String& GetApiKeyArn() const { return m_apiKeyArn; }
+  inline bool ApiKeyArnHasBeenSet() const { return m_apiKeyArnHasBeenSet; }
+  template <typename ApiKeyArnT = Aws::String>
+  void SetApiKeyArn(ApiKeyArnT&& value) {
+    m_apiKeyArnHasBeenSet = true;
+    m_apiKeyArn = std::forward<ApiKeyArnT>(value);
+  }
+  template <typename ApiKeyArnT = Aws::String>
+  HarnessLiteLlmModelConfig& WithApiKeyArn(ApiKeyArnT&& value) {
+    SetApiKeyArn(std::forward<ApiKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The base URL for the model provider's API endpoint.</p>
+   */
+  inline const Aws::String& GetApiBase() const { return m_apiBase; }
+  inline bool ApiBaseHasBeenSet() const { return m_apiBaseHasBeenSet; }
+  template <typename ApiBaseT = Aws::String>
+  void SetApiBase(ApiBaseT&& value) {
+    m_apiBaseHasBeenSet = true;
+    m_apiBase = std::forward<ApiBaseT>(value);
+  }
+  template <typename ApiBaseT = Aws::String>
+  HarnessLiteLlmModelConfig& WithApiBase(ApiBaseT&& value) {
+    SetApiBase(std::forward<ApiBaseT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of tokens to allow in the generated response per
+   * iteration.</p>
+   */
+  inline int GetMaxTokens() const { return m_maxTokens; }
+  inline bool MaxTokensHasBeenSet() const { return m_maxTokensHasBeenSet; }
+  inline void SetMaxTokens(int value) {
+    m_maxTokensHasBeenSet = true;
+    m_maxTokens = value;
+  }
+  inline HarnessLiteLlmModelConfig& WithMaxTokens(int value) {
+    SetMaxTokens(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The temperature to set when calling the model.</p>
+   */
+  inline double GetTemperature() const { return m_temperature; }
+  inline bool TemperatureHasBeenSet() const { return m_temperatureHasBeenSet; }
+  inline void SetTemperature(double value) {
+    m_temperatureHasBeenSet = true;
+    m_temperature = value;
+  }
+  inline HarnessLiteLlmModelConfig& WithTemperature(double value) {
+    SetTemperature(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The topP set when calling the model.</p>
+   */
+  inline double GetTopP() const { return m_topP; }
+  inline bool TopPHasBeenSet() const { return m_topPHasBeenSet; }
+  inline void SetTopP(double value) {
+    m_topPHasBeenSet = true;
+    m_topP = value;
+  }
+  inline HarnessLiteLlmModelConfig& WithTopP(double value) {
+    SetTopP(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Provider-specific parameters passed through to the model provider
+   * unchanged.</p>
+   */
+  inline Aws::Utils::DocumentView GetAdditionalParams() const { return m_additionalParams; }
+  inline bool AdditionalParamsHasBeenSet() const { return m_additionalParamsHasBeenSet; }
+  template <typename AdditionalParamsT = Aws::Utils::Document>
+  void SetAdditionalParams(AdditionalParamsT&& value) {
+    m_additionalParamsHasBeenSet = true;
+    m_additionalParams = std::forward<AdditionalParamsT>(value);
+  }
+  template <typename AdditionalParamsT = Aws::Utils::Document>
+  HarnessLiteLlmModelConfig& WithAdditionalParams(AdditionalParamsT&& value) {
+    SetAdditionalParams(std::forward<AdditionalParamsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_modelId;
+
+  Aws::String m_apiKeyArn;
+
+  Aws::String m_apiBase;
+
+  int m_maxTokens{0};
+
+  double m_temperature{0.0};
+
+  double m_topP{0.0};
+
+  Aws::Utils::Document m_additionalParams;
+  bool m_modelIdHasBeenSet = false;
+  bool m_apiKeyArnHasBeenSet = false;
+  bool m_apiBaseHasBeenSet = false;
+  bool m_maxTokensHasBeenSet = false;
+  bool m_temperatureHasBeenSet = false;
+  bool m_topPHasBeenSet = false;
+  bool m_additionalParamsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

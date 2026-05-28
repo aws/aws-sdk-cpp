@@ -46,6 +46,10 @@ UpdateCollectionGroupDetail& UpdateCollectionGroupDetail::operator=(JsonView jso
     m_lastModifiedDate = jsonValue.GetInt64("lastModifiedDate");
     m_lastModifiedDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("generation")) {
+    m_generation = ServerlessGenerationMapper::GetServerlessGenerationForName(jsonValue.GetString("generation"));
+    m_generationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue UpdateCollectionGroupDetail::Jsonize() const {
 
   if (m_lastModifiedDateHasBeenSet) {
     payload.WithInt64("lastModifiedDate", m_lastModifiedDate);
+  }
+
+  if (m_generationHasBeenSet) {
+    payload.WithString("generation", ServerlessGenerationMapper::GetNameForServerlessGeneration(m_generation));
   }
 
   return payload;

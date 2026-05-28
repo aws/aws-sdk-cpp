@@ -10,7 +10,7 @@
 namespace Aws {
 namespace AppStream {
 namespace Model {
-enum class ImageType { NOT_SET, CUSTOM, NATIVE };
+enum class ImageType { NOT_SET, CUSTOM, NATIVE, BYOL };
 
 namespace ImageTypeMapper {
 AWS_APPSTREAM_API ImageType GetImageTypeForName(const Aws::String& name);

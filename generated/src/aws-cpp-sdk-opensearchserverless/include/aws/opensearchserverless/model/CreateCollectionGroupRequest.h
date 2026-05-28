@@ -10,6 +10,7 @@
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/CollectionGroupCapacityLimits.h>
+#include <aws/opensearchserverless/model/ServerlessGeneration.h>
 #include <aws/opensearchserverless/model/StandbyReplicas.h>
 #include <aws/opensearchserverless/model/Tag.h>
 
@@ -134,6 +135,23 @@ class CreateCollectionGroupRequest : public OpenSearchServerlessRequest {
 
   ///@{
   /**
+   * <p>The generation of Amazon OpenSearch Serverless for the collection group.
+   * Valid values are <code>CLASSIC</code> and <code>NEXTGEN</code>.</p>
+   */
+  inline ServerlessGeneration GetGeneration() const { return m_generation; }
+  inline bool GenerationHasBeenSet() const { return m_generationHasBeenSet; }
+  inline void SetGeneration(ServerlessGeneration value) {
+    m_generationHasBeenSet = true;
+    m_generation = value;
+  }
+  inline CreateCollectionGroupRequest& WithGeneration(ServerlessGeneration value) {
+    SetGeneration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -160,12 +178,15 @@ class CreateCollectionGroupRequest : public OpenSearchServerlessRequest {
 
   CollectionGroupCapacityLimits m_capacityLimits;
 
+  ServerlessGeneration m_generation{ServerlessGeneration::NOT_SET};
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_nameHasBeenSet = false;
   bool m_standbyReplicasHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_capacityLimitsHasBeenSet = false;
+  bool m_generationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

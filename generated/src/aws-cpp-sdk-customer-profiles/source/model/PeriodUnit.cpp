@@ -15,6 +15,7 @@ namespace CustomerProfiles {
 namespace Model {
 namespace PeriodUnitMapper {
 
+static const int MINUTES_HASH = HashingUtils::HashString("MINUTES");
 static const int HOURS_HASH = HashingUtils::HashString("HOURS");
 static const int DAYS_HASH = HashingUtils::HashString("DAYS");
 static const int WEEKS_HASH = HashingUtils::HashString("WEEKS");
@@ -22,7 +23,9 @@ static const int MONTHS_HASH = HashingUtils::HashString("MONTHS");
 
 PeriodUnit GetPeriodUnitForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == HOURS_HASH) {
+  if (hashCode == MINUTES_HASH) {
+    return PeriodUnit::MINUTES;
+  } else if (hashCode == HOURS_HASH) {
     return PeriodUnit::HOURS;
   } else if (hashCode == DAYS_HASH) {
     return PeriodUnit::DAYS;
@@ -44,6 +47,8 @@ Aws::String GetNameForPeriodUnit(PeriodUnit enumValue) {
   switch (enumValue) {
     case PeriodUnit::NOT_SET:
       return {};
+    case PeriodUnit::MINUTES:
+      return "MINUTES";
     case PeriodUnit::HOURS:
       return "HOURS";
     case PeriodUnit::DAYS:

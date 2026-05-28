@@ -40,7 +40,7 @@ class ListAdvancedPromptOptimizationJobsRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>Maximum number of results to return.</p>
+   * <p>The maximum number of results to return in the response.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -56,7 +56,9 @@ class ListAdvancedPromptOptimizationJobsRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>Pagination token for the next page of results.</p>
+   * <p>If the total number of results is greater than the <code>maxResults</code>
+   * value provided in the request, use this token in a subsequent request to get the
+   * next set of results.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -74,7 +76,7 @@ class ListAdvancedPromptOptimizationJobsRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>Field to sort by in the returned list of jobs.</p>
+   * <p>The field to sort the results by.</p>
    */
   inline SortJobsBy GetSortBy() const { return m_sortBy; }
   inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
@@ -90,7 +92,7 @@ class ListAdvancedPromptOptimizationJobsRequest : public BedrockRequest {
 
   ///@{
   /**
-   * <p>Sort order for the results.</p>
+   * <p>The sort order for the results.</p>
    */
   inline SortOrder GetSortOrder() const { return m_sortOrder; }
   inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }

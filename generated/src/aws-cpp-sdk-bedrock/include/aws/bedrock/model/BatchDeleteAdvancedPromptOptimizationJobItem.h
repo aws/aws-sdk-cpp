@@ -21,8 +21,8 @@ namespace Bedrock {
 namespace Model {
 
 /**
- * <p>Successfully deleted advanced prompt optimization job.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Contains information about a successfully deleted advanced prompt
+ * optimization job.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteAdvancedPromptOptimizationJobItem">AWS
  * API Reference</a></p>
  */
@@ -35,7 +35,7 @@ class BatchDeleteAdvancedPromptOptimizationJobItem {
 
   ///@{
   /**
-   * <p>Identifier of the deleted job.</p>
+   * <p>The identifier of the deleted job.</p>
    */
   inline const Aws::String& GetJobIdentifier() const { return m_jobIdentifier; }
   inline bool JobIdentifierHasBeenSet() const { return m_jobIdentifierHasBeenSet; }
@@ -53,7 +53,7 @@ class BatchDeleteAdvancedPromptOptimizationJobItem {
 
   ///@{
   /**
-   * <p>Status of the deleted job.</p>
+   * <p>The status of the deleted job.</p>
    */
   inline AdvancedPromptOptimizationJobStatus GetJobStatus() const { return m_jobStatus; }
   inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }

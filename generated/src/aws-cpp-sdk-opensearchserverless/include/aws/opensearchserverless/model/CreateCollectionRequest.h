@@ -10,6 +10,7 @@
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/CollectionType.h>
+#include <aws/opensearchserverless/model/DeletionProtection.h>
 #include <aws/opensearchserverless/model/EncryptionConfig.h>
 #include <aws/opensearchserverless/model/StandbyReplicas.h>
 #include <aws/opensearchserverless/model/Tag.h>
@@ -186,6 +187,23 @@ class CreateCollectionRequest : public OpenSearchServerlessRequest {
 
   ///@{
   /**
+   * <p>Indicates whether to enable deletion protection for the collection. When set
+   * to <code>ENABLED</code>, the collection cannot be deleted.</p>
+   */
+  inline DeletionProtection GetDeletionProtection() const { return m_deletionProtection; }
+  inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+  inline void SetDeletionProtection(DeletionProtection value) {
+    m_deletionProtectionHasBeenSet = true;
+    m_deletionProtection = value;
+  }
+  inline CreateCollectionRequest& WithDeletionProtection(DeletionProtection value) {
+    SetDeletionProtection(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -218,6 +236,8 @@ class CreateCollectionRequest : public OpenSearchServerlessRequest {
 
   EncryptionConfig m_encryptionConfig;
 
+  DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
@@ -227,6 +247,7 @@ class CreateCollectionRequest : public OpenSearchServerlessRequest {
   bool m_vectorOptionsHasBeenSet = false;
   bool m_collectionGroupNameHasBeenSet = false;
   bool m_encryptionConfigHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

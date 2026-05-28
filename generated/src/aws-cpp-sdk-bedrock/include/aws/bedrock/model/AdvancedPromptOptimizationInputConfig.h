@@ -20,7 +20,7 @@ namespace Bedrock {
 namespace Model {
 
 /**
- * <p>Input data configuration for the advanced prompt optimization
+ * <p>Contains the input data configuration for an advanced prompt optimization
  * job.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/AdvancedPromptOptimizationInputConfig">AWS
  * API Reference</a></p>
@@ -34,7 +34,8 @@ class AdvancedPromptOptimizationInputConfig {
 
   ///@{
   /**
-   * <p>S3 URI of the input JSONL file.</p>
+   * <p>The S3 URI of the JSONL input file containing prompt templates and evaluation
+   * samples.</p>
    */
   inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
   inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }

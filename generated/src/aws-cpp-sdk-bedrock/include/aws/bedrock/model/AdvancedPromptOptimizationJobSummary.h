@@ -22,7 +22,8 @@ namespace Bedrock {
 namespace Model {
 
 /**
- * <p>Summary of an advanced prompt optimization job.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains a summary of an advanced prompt optimization job.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/AdvancedPromptOptimizationJobSummary">AWS
  * API Reference</a></p>
  */
@@ -35,7 +36,7 @@ class AdvancedPromptOptimizationJobSummary {
 
   ///@{
   /**
-   * <p>ARN of the advanced prompt optimization job.</p>
+   * <p>The Amazon Resource Name (ARN) of the job.</p>
    */
   inline const Aws::String& GetJobArn() const { return m_jobArn; }
   inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
@@ -53,7 +54,7 @@ class AdvancedPromptOptimizationJobSummary {
 
   ///@{
   /**
-   * <p>Name of the advanced prompt optimization job.</p>
+   * <p>The name of the job.</p>
    */
   inline const Aws::String& GetJobName() const { return m_jobName; }
   inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
@@ -71,7 +72,7 @@ class AdvancedPromptOptimizationJobSummary {
 
   ///@{
   /**
-   * <p>Status of the advanced prompt optimization job.</p>
+   * <p>The status of the job.</p>
    */
   inline AdvancedPromptOptimizationJobStatus GetJobStatus() const { return m_jobStatus; }
   inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
@@ -87,7 +88,7 @@ class AdvancedPromptOptimizationJobSummary {
 
   ///@{
   /**
-   * <p>Creation time of the advanced prompt optimization job.</p>
+   * <p>The time at which the job was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
   inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
@@ -105,7 +106,7 @@ class AdvancedPromptOptimizationJobSummary {
 
   ///@{
   /**
-   * <p>Last modified time of the advanced prompt optimization job.</p>
+   * <p>The time at which the job was last modified.</p>
    */
   inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
   inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }

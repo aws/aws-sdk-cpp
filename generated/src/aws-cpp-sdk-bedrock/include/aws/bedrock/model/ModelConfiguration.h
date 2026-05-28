@@ -23,7 +23,8 @@ namespace Bedrock {
 namespace Model {
 
 /**
- * <p>Configuration for a model used in advanced prompt optimization.</p><p><h3>See
+ * <p>Contains the configuration for a model used in an advanced prompt
+ * optimization job, including the model ID and inference parameters.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ModelConfiguration">AWS
  * API Reference</a></p>
@@ -37,7 +38,7 @@ class ModelConfiguration {
 
   ///@{
   /**
-   * <p>The model ID.</p>
+   * <p>The ID of the model to use for optimization.</p>
    */
   inline const Aws::String& GetModelId() const { return m_modelId; }
   inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
@@ -55,7 +56,8 @@ class ModelConfiguration {
 
   ///@{
   /**
-   * <p>Inference configuration for the model.</p>
+   * <p>The inference configuration for the model, including parameters such as
+   * maximum tokens, temperature, and top-p.</p>
    */
   inline const InferenceConfiguration& GetInferenceConfig() const { return m_inferenceConfig; }
   inline bool InferenceConfigHasBeenSet() const { return m_inferenceConfigHasBeenSet; }
@@ -73,7 +75,8 @@ class ModelConfiguration {
 
   ///@{
   /**
-   * <p>Additional model request fields.</p>
+   * <p>Additional model request fields. Use this to pass model-specific parameters
+   * that are not included in the standard inference configuration.</p>
    */
   inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetAdditionalModelRequestFields() const {
     return m_additionalModelRequestFields;

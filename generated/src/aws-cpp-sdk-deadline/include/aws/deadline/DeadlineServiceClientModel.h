@@ -63,6 +63,7 @@
 #include <aws/deadline/model/DeleteQueueLimitAssociationResult.h>
 #include <aws/deadline/model/DeleteQueueResult.h>
 #include <aws/deadline/model/DeleteStorageProfileResult.h>
+#include <aws/deadline/model/DeleteVolumeResult.h>
 #include <aws/deadline/model/DeleteWorkerResult.h>
 #include <aws/deadline/model/DisassociateMemberFromFarmResult.h>
 #include <aws/deadline/model/DisassociateMemberFromFleetResult.h>
@@ -87,6 +88,7 @@
 #include <aws/deadline/model/GetStorageProfileForQueueResult.h>
 #include <aws/deadline/model/GetStorageProfileResult.h>
 #include <aws/deadline/model/GetTaskResult.h>
+#include <aws/deadline/model/GetVolumeResult.h>
 #include <aws/deadline/model/GetWorkerResult.h>
 #include <aws/deadline/model/ListAvailableMeteredProductsRequest.h>
 #include <aws/deadline/model/ListAvailableMeteredProductsResult.h>
@@ -120,6 +122,7 @@
 #include <aws/deadline/model/ListStorageProfilesResult.h>
 #include <aws/deadline/model/ListTagsForResourceResult.h>
 #include <aws/deadline/model/ListTasksResult.h>
+#include <aws/deadline/model/ListVolumesResult.h>
 #include <aws/deadline/model/ListWorkersResult.h>
 #include <aws/deadline/model/PutMeteredProductResult.h>
 #include <aws/deadline/model/SearchJobsResult.h>
@@ -223,6 +226,7 @@ class DeleteQueueEnvironmentRequest;
 class DeleteQueueFleetAssociationRequest;
 class DeleteQueueLimitAssociationRequest;
 class DeleteStorageProfileRequest;
+class DeleteVolumeRequest;
 class DeleteWorkerRequest;
 class DisassociateMemberFromFarmRequest;
 class DisassociateMemberFromFleetRequest;
@@ -247,6 +251,7 @@ class GetStepRequest;
 class GetStorageProfileRequest;
 class GetStorageProfileForQueueRequest;
 class GetTaskRequest;
+class GetVolumeRequest;
 class GetWorkerRequest;
 class ListAvailableMeteredProductsRequest;
 class ListBudgetsRequest;
@@ -276,6 +281,7 @@ class ListStorageProfilesRequest;
 class ListStorageProfilesForQueueRequest;
 class ListTagsForResourceRequest;
 class ListTasksRequest;
+class ListVolumesRequest;
 class ListWorkersRequest;
 class PutMeteredProductRequest;
 class SearchJobsRequest;
@@ -349,6 +355,7 @@ typedef Aws::Utils::Outcome<DeleteQueueEnvironmentResult, DeadlineError> DeleteQ
 typedef Aws::Utils::Outcome<DeleteQueueFleetAssociationResult, DeadlineError> DeleteQueueFleetAssociationOutcome;
 typedef Aws::Utils::Outcome<DeleteQueueLimitAssociationResult, DeadlineError> DeleteQueueLimitAssociationOutcome;
 typedef Aws::Utils::Outcome<DeleteStorageProfileResult, DeadlineError> DeleteStorageProfileOutcome;
+typedef Aws::Utils::Outcome<DeleteVolumeResult, DeadlineError> DeleteVolumeOutcome;
 typedef Aws::Utils::Outcome<DeleteWorkerResult, DeadlineError> DeleteWorkerOutcome;
 typedef Aws::Utils::Outcome<DisassociateMemberFromFarmResult, DeadlineError> DisassociateMemberFromFarmOutcome;
 typedef Aws::Utils::Outcome<DisassociateMemberFromFleetResult, DeadlineError> DisassociateMemberFromFleetOutcome;
@@ -373,6 +380,7 @@ typedef Aws::Utils::Outcome<GetStepResult, DeadlineError> GetStepOutcome;
 typedef Aws::Utils::Outcome<GetStorageProfileResult, DeadlineError> GetStorageProfileOutcome;
 typedef Aws::Utils::Outcome<GetStorageProfileForQueueResult, DeadlineError> GetStorageProfileForQueueOutcome;
 typedef Aws::Utils::Outcome<GetTaskResult, DeadlineError> GetTaskOutcome;
+typedef Aws::Utils::Outcome<GetVolumeResult, DeadlineError> GetVolumeOutcome;
 typedef Aws::Utils::Outcome<GetWorkerResult, DeadlineError> GetWorkerOutcome;
 typedef Aws::Utils::Outcome<ListAvailableMeteredProductsResult, DeadlineError> ListAvailableMeteredProductsOutcome;
 typedef Aws::Utils::Outcome<ListBudgetsResult, DeadlineError> ListBudgetsOutcome;
@@ -402,6 +410,7 @@ typedef Aws::Utils::Outcome<ListStorageProfilesResult, DeadlineError> ListStorag
 typedef Aws::Utils::Outcome<ListStorageProfilesForQueueResult, DeadlineError> ListStorageProfilesForQueueOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, DeadlineError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListTasksResult, DeadlineError> ListTasksOutcome;
+typedef Aws::Utils::Outcome<ListVolumesResult, DeadlineError> ListVolumesOutcome;
 typedef Aws::Utils::Outcome<ListWorkersResult, DeadlineError> ListWorkersOutcome;
 typedef Aws::Utils::Outcome<PutMeteredProductResult, DeadlineError> PutMeteredProductOutcome;
 typedef Aws::Utils::Outcome<SearchJobsResult, DeadlineError> SearchJobsOutcome;
@@ -475,6 +484,7 @@ typedef std::future<DeleteQueueEnvironmentOutcome> DeleteQueueEnvironmentOutcome
 typedef std::future<DeleteQueueFleetAssociationOutcome> DeleteQueueFleetAssociationOutcomeCallable;
 typedef std::future<DeleteQueueLimitAssociationOutcome> DeleteQueueLimitAssociationOutcomeCallable;
 typedef std::future<DeleteStorageProfileOutcome> DeleteStorageProfileOutcomeCallable;
+typedef std::future<DeleteVolumeOutcome> DeleteVolumeOutcomeCallable;
 typedef std::future<DeleteWorkerOutcome> DeleteWorkerOutcomeCallable;
 typedef std::future<DisassociateMemberFromFarmOutcome> DisassociateMemberFromFarmOutcomeCallable;
 typedef std::future<DisassociateMemberFromFleetOutcome> DisassociateMemberFromFleetOutcomeCallable;
@@ -499,6 +509,7 @@ typedef std::future<GetStepOutcome> GetStepOutcomeCallable;
 typedef std::future<GetStorageProfileOutcome> GetStorageProfileOutcomeCallable;
 typedef std::future<GetStorageProfileForQueueOutcome> GetStorageProfileForQueueOutcomeCallable;
 typedef std::future<GetTaskOutcome> GetTaskOutcomeCallable;
+typedef std::future<GetVolumeOutcome> GetVolumeOutcomeCallable;
 typedef std::future<GetWorkerOutcome> GetWorkerOutcomeCallable;
 typedef std::future<ListAvailableMeteredProductsOutcome> ListAvailableMeteredProductsOutcomeCallable;
 typedef std::future<ListBudgetsOutcome> ListBudgetsOutcomeCallable;
@@ -528,6 +539,7 @@ typedef std::future<ListStorageProfilesOutcome> ListStorageProfilesOutcomeCallab
 typedef std::future<ListStorageProfilesForQueueOutcome> ListStorageProfilesForQueueOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListTasksOutcome> ListTasksOutcomeCallable;
+typedef std::future<ListVolumesOutcome> ListVolumesOutcomeCallable;
 typedef std::future<ListWorkersOutcome> ListWorkersOutcomeCallable;
 typedef std::future<PutMeteredProductOutcome> PutMeteredProductOutcomeCallable;
 typedef std::future<SearchJobsOutcome> SearchJobsOutcomeCallable;
@@ -692,6 +704,9 @@ typedef std::function<void(const DeadlineClient*, const Model::DeleteQueueLimitA
 typedef std::function<void(const DeadlineClient*, const Model::DeleteStorageProfileRequest&, const Model::DeleteStorageProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteStorageProfileResponseReceivedHandler;
+typedef std::function<void(const DeadlineClient*, const Model::DeleteVolumeRequest&, const Model::DeleteVolumeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteVolumeResponseReceivedHandler;
 typedef std::function<void(const DeadlineClient*, const Model::DeleteWorkerRequest&, const Model::DeleteWorkerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteWorkerResponseReceivedHandler;
@@ -765,6 +780,9 @@ typedef std::function<void(const DeadlineClient*, const Model::GetStorageProfile
 typedef std::function<void(const DeadlineClient*, const Model::GetTaskRequest&, const Model::GetTaskOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTaskResponseReceivedHandler;
+typedef std::function<void(const DeadlineClient*, const Model::GetVolumeRequest&, const Model::GetVolumeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetVolumeResponseReceivedHandler;
 typedef std::function<void(const DeadlineClient*, const Model::GetWorkerRequest&, const Model::GetWorkerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetWorkerResponseReceivedHandler;
@@ -853,6 +871,9 @@ typedef std::function<void(const DeadlineClient*, const Model::ListTagsForResour
 typedef std::function<void(const DeadlineClient*, const Model::ListTasksRequest&, const Model::ListTasksOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTasksResponseReceivedHandler;
+typedef std::function<void(const DeadlineClient*, const Model::ListVolumesRequest&, const Model::ListVolumesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListVolumesResponseReceivedHandler;
 typedef std::function<void(const DeadlineClient*, const Model::ListWorkersRequest&, const Model::ListWorkersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListWorkersResponseReceivedHandler;

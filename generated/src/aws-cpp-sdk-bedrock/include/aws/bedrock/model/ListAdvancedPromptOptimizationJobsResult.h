@@ -37,7 +37,7 @@ class ListAdvancedPromptOptimizationJobsResult {
 
   ///@{
   /**
-   * <p>List of advanced prompt optimization job summaries.</p>
+   * <p>A list of advanced prompt optimization job summaries.</p>
    */
   inline const Aws::Vector<AdvancedPromptOptimizationJobSummary>& GetJobSummaries() const { return m_jobSummaries; }
   template <typename JobSummariesT = Aws::Vector<AdvancedPromptOptimizationJobSummary>>
@@ -60,7 +60,9 @@ class ListAdvancedPromptOptimizationJobsResult {
 
   ///@{
   /**
-   * <p>Pagination token for the next page of results.</p>
+   * <p>If the total number of results is greater than the <code>maxResults</code>
+   * value provided in the request, use this token in a subsequent request to get the
+   * next set of results.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

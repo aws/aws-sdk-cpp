@@ -45,6 +45,11 @@ ControlSummary& ControlSummary::operator=(JsonView jsonValue) {
     m_severity = ControlSeverityMapper::GetControlSeverityForName(jsonValue.GetString("Severity"));
     m_severityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ParameterRequirementSummary")) {
+    m_parameterRequirementSummary =
+        ParameterRequirementSummaryMapper::GetParameterRequirementSummaryForName(jsonValue.GetString("ParameterRequirementSummary"));
+    m_parameterRequirementSummaryHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Implementation")) {
     m_implementation = jsonValue.GetObject("Implementation");
     m_implementationHasBeenSet = true;
@@ -59,6 +64,13 @@ ControlSummary& ControlSummary::operator=(JsonView jsonValue) {
       m_governedResources.push_back(governedResourcesJsonList[governedResourcesIndex].AsString());
     }
     m_governedResourcesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GovernedProviders")) {
+    Aws::Utils::Array<JsonView> governedProvidersJsonList = jsonValue.GetArray("GovernedProviders");
+    for (unsigned governedProvidersIndex = 0; governedProvidersIndex < governedProvidersJsonList.GetLength(); ++governedProvidersIndex) {
+      m_governedProviders.push_back(governedProvidersJsonList[governedProvidersIndex].AsString());
+    }
+    m_governedProvidersHasBeenSet = true;
   }
   return *this;
 }
@@ -94,6 +106,11 @@ JsonValue ControlSummary::Jsonize() const {
     payload.WithString("Severity", ControlSeverityMapper::GetNameForControlSeverity(m_severity));
   }
 
+  if (m_parameterRequirementSummaryHasBeenSet) {
+    payload.WithString("ParameterRequirementSummary",
+                       ParameterRequirementSummaryMapper::GetNameForParameterRequirementSummary(m_parameterRequirementSummary));
+  }
+
   if (m_implementationHasBeenSet) {
     payload.WithObject("Implementation", m_implementation.Jsonize());
   }
@@ -108,6 +125,14 @@ JsonValue ControlSummary::Jsonize() const {
       governedResourcesJsonList[governedResourcesIndex].AsString(m_governedResources[governedResourcesIndex]);
     }
     payload.WithArray("GovernedResources", std::move(governedResourcesJsonList));
+  }
+
+  if (m_governedProvidersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> governedProvidersJsonList(m_governedProviders.size());
+    for (unsigned governedProvidersIndex = 0; governedProvidersIndex < governedProvidersJsonList.GetLength(); ++governedProvidersIndex) {
+      governedProvidersJsonList[governedProvidersIndex].AsString(m_governedProviders[governedProvidersIndex]);
+    }
+    payload.WithArray("GovernedProviders", std::move(governedProvidersJsonList));
   }
 
   return payload;

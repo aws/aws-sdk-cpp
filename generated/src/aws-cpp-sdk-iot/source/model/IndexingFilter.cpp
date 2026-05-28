@@ -32,6 +32,10 @@ IndexingFilter& IndexingFilter::operator=(JsonView jsonValue) {
     }
     m_geoLocationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("connectivity")) {
+    m_connectivity = jsonValue.GetObject("connectivity");
+    m_connectivityHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -52,6 +56,10 @@ JsonValue IndexingFilter::Jsonize() const {
       geoLocationsJsonList[geoLocationsIndex].AsObject(m_geoLocations[geoLocationsIndex].Jsonize());
     }
     payload.WithArray("geoLocations", std::move(geoLocationsJsonList));
+  }
+
+  if (m_connectivityHasBeenSet) {
+    payload.WithObject("connectivity", m_connectivity.Jsonize());
   }
 
   return payload;
