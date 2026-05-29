@@ -339,6 +339,8 @@
 #include <aws/quicksight/model/CreateIngestionResult.h>
 #include <aws/quicksight/model/CreateNamespaceRequest.h>
 #include <aws/quicksight/model/CreateNamespaceResult.h>
+#include <aws/quicksight/model/CreateOAuthClientApplicationRequest.h>
+#include <aws/quicksight/model/CreateOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/CreateRefreshScheduleRequest.h>
 #include <aws/quicksight/model/CreateRefreshScheduleResult.h>
 #include <aws/quicksight/model/CreateRoleMembershipRequest.h>
@@ -558,6 +560,8 @@
 #include <aws/quicksight/model/DeleteIdentityPropagationConfigResult.h>
 #include <aws/quicksight/model/DeleteNamespaceRequest.h>
 #include <aws/quicksight/model/DeleteNamespaceResult.h>
+#include <aws/quicksight/model/DeleteOAuthClientApplicationRequest.h>
+#include <aws/quicksight/model/DeleteOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/DeleteRefreshScheduleRequest.h>
 #include <aws/quicksight/model/DeleteRefreshScheduleResult.h>
 #include <aws/quicksight/model/DeleteRoleCustomPermissionRequest.h>
@@ -660,6 +664,8 @@
 #include <aws/quicksight/model/DescribeKeyRegistrationResult.h>
 #include <aws/quicksight/model/DescribeNamespaceRequest.h>
 #include <aws/quicksight/model/DescribeNamespaceResult.h>
+#include <aws/quicksight/model/DescribeOAuthClientApplicationRequest.h>
+#include <aws/quicksight/model/DescribeOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/DescribeQPersonalizationConfigurationRequest.h>
 #include <aws/quicksight/model/DescribeQPersonalizationConfigurationResult.h>
 #include <aws/quicksight/model/DescribeQuickSightQSearchConfigurationRequest.h>
@@ -1054,6 +1060,8 @@
 #include <aws/quicksight/model/ListIngestionsResult.h>
 #include <aws/quicksight/model/ListNamespacesRequest.h>
 #include <aws/quicksight/model/ListNamespacesResult.h>
+#include <aws/quicksight/model/ListOAuthClientApplicationsRequest.h>
+#include <aws/quicksight/model/ListOAuthClientApplicationsResult.h>
 #include <aws/quicksight/model/ListRefreshSchedulesRequest.h>
 #include <aws/quicksight/model/ListRefreshSchedulesResult.h>
 #include <aws/quicksight/model/ListRoleMembershipsRequest.h>
@@ -1151,6 +1159,9 @@
 #include <aws/quicksight/model/NumericalAggregationFunction.h>
 #include <aws/quicksight/model/NumericalDimensionField.h>
 #include <aws/quicksight/model/NumericalMeasureField.h>
+#include <aws/quicksight/model/OAuthClientApplication.h>
+#include <aws/quicksight/model/OAuthClientApplicationSummary.h>
+#include <aws/quicksight/model/OAuthClientAuthenticationType.h>
 #include <aws/quicksight/model/OAuthClientCredentials.h>
 #include <aws/quicksight/model/OAuthParameters.h>
 #include <aws/quicksight/model/OracleParameters.h>
@@ -1741,6 +1752,8 @@
 #include <aws/quicksight/model/UpdateIpRestrictionResult.h>
 #include <aws/quicksight/model/UpdateKeyRegistrationRequest.h>
 #include <aws/quicksight/model/UpdateKeyRegistrationResult.h>
+#include <aws/quicksight/model/UpdateOAuthClientApplicationRequest.h>
+#include <aws/quicksight/model/UpdateOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/UpdatePublicSharingSettingsRequest.h>
 #include <aws/quicksight/model/UpdatePublicSharingSettingsResult.h>
 #include <aws/quicksight/model/UpdateQPersonalizationConfigurationRequest.h>

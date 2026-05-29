@@ -568,6 +568,8 @@
 #include <aws/bedrock-agentcore-control/model/SchemaType.h>
 #include <aws/bedrock-agentcore-control/model/SearchType.h>
 #include <aws/bedrock-agentcore-control/model/Secret.h>
+#include <aws/bedrock-agentcore-control/model/SecretReference.h>
+#include <aws/bedrock-agentcore-control/model/SecretSourceType.h>
 #include <aws/bedrock-agentcore-control/model/SecretsManagerLocation.h>
 #include <aws/bedrock-agentcore-control/model/SelfManagedConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/SelfManagedConfigurationInput.h>

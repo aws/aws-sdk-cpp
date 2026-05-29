@@ -72,6 +72,10 @@ Aws::String UpdateFirewallRuleRequest::SerializePayload() const {
     payload.WithString("ConfidenceThreshold", ConfidenceThresholdMapper::GetNameForConfidenceThreshold(m_confidenceThreshold));
   }
 
+  if (m_firewallRuleTypeHasBeenSet) {
+    payload.WithObject("FirewallRuleType", m_firewallRuleType.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

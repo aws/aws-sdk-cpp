@@ -28,6 +28,14 @@ GetOauth2CredentialProviderResult& GetOauth2CredentialProviderResult::operator=(
     m_clientSecretArn = jsonValue.GetObject("clientSecretArn");
     m_clientSecretArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("clientSecretJsonKey")) {
+    m_clientSecretJsonKey = jsonValue.GetString("clientSecretJsonKey");
+    m_clientSecretJsonKeyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("clientSecretSource")) {
+    m_clientSecretSource = SecretSourceTypeMapper::GetSecretSourceTypeForName(jsonValue.GetString("clientSecretSource"));
+    m_clientSecretSourceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;

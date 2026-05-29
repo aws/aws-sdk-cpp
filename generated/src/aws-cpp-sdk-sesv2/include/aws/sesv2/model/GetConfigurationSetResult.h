@@ -157,7 +157,7 @@ class GetConfigurationSetResult {
   ///@{
   /**
    * <p>An object that contains information about the suppression list preferences
-   * for your account.</p>
+   * for your account or for a specific tenant.</p>
    */
   inline const SuppressionOptions& GetSuppressionOptions() const { return m_suppressionOptions; }
   template <typename SuppressionOptionsT = SuppressionOptions>

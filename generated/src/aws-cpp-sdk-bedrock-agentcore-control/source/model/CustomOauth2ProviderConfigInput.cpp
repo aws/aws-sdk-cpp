@@ -30,6 +30,23 @@ CustomOauth2ProviderConfigInput& CustomOauth2ProviderConfigInput::operator=(Json
     m_clientSecret = jsonValue.GetString("clientSecret");
     m_clientSecretHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("clientSecretConfig")) {
+    m_clientSecretConfig = jsonValue.GetObject("clientSecretConfig");
+    m_clientSecretConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("clientSecretSource")) {
+    m_clientSecretSource = SecretSourceTypeMapper::GetSecretSourceTypeForName(jsonValue.GetString("clientSecretSource"));
+    m_clientSecretSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("onBehalfOfTokenExchangeConfig")) {
+    m_onBehalfOfTokenExchangeConfig = jsonValue.GetObject("onBehalfOfTokenExchangeConfig");
+    m_onBehalfOfTokenExchangeConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("clientAuthenticationMethod")) {
+    m_clientAuthenticationMethod =
+        ClientAuthenticationMethodTypeMapper::GetClientAuthenticationMethodTypeForName(jsonValue.GetString("clientAuthenticationMethod"));
+    m_clientAuthenticationMethodHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("privateEndpoint")) {
     m_privateEndpoint = jsonValue.GetObject("privateEndpoint");
     m_privateEndpointHasBeenSet = true;
@@ -41,15 +58,6 @@ CustomOauth2ProviderConfigInput& CustomOauth2ProviderConfigInput::operator=(Json
       m_privateEndpointOverrides.push_back(privateEndpointOverridesJsonList[privateEndpointOverridesIndex].AsObject());
     }
     m_privateEndpointOverridesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("onBehalfOfTokenExchangeConfig")) {
-    m_onBehalfOfTokenExchangeConfig = jsonValue.GetObject("onBehalfOfTokenExchangeConfig");
-    m_onBehalfOfTokenExchangeConfigHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("clientAuthenticationMethod")) {
-    m_clientAuthenticationMethod =
-        ClientAuthenticationMethodTypeMapper::GetClientAuthenticationMethodTypeForName(jsonValue.GetString("clientAuthenticationMethod"));
-    m_clientAuthenticationMethodHasBeenSet = true;
   }
   return *this;
 }
@@ -69,6 +77,23 @@ JsonValue CustomOauth2ProviderConfigInput::Jsonize() const {
     payload.WithString("clientSecret", m_clientSecret);
   }
 
+  if (m_clientSecretConfigHasBeenSet) {
+    payload.WithObject("clientSecretConfig", m_clientSecretConfig.Jsonize());
+  }
+
+  if (m_clientSecretSourceHasBeenSet) {
+    payload.WithString("clientSecretSource", SecretSourceTypeMapper::GetNameForSecretSourceType(m_clientSecretSource));
+  }
+
+  if (m_onBehalfOfTokenExchangeConfigHasBeenSet) {
+    payload.WithObject("onBehalfOfTokenExchangeConfig", m_onBehalfOfTokenExchangeConfig.Jsonize());
+  }
+
+  if (m_clientAuthenticationMethodHasBeenSet) {
+    payload.WithString("clientAuthenticationMethod",
+                       ClientAuthenticationMethodTypeMapper::GetNameForClientAuthenticationMethodType(m_clientAuthenticationMethod));
+  }
+
   if (m_privateEndpointHasBeenSet) {
     payload.WithObject("privateEndpoint", m_privateEndpoint.Jsonize());
   }
@@ -81,15 +106,6 @@ JsonValue CustomOauth2ProviderConfigInput::Jsonize() const {
           m_privateEndpointOverrides[privateEndpointOverridesIndex].Jsonize());
     }
     payload.WithArray("privateEndpointOverrides", std::move(privateEndpointOverridesJsonList));
-  }
-
-  if (m_onBehalfOfTokenExchangeConfigHasBeenSet) {
-    payload.WithObject("onBehalfOfTokenExchangeConfig", m_onBehalfOfTokenExchangeConfig.Jsonize());
-  }
-
-  if (m_clientAuthenticationMethodHasBeenSet) {
-    payload.WithString("clientAuthenticationMethod",
-                       ClientAuthenticationMethodTypeMapper::GetNameForClientAuthenticationMethodType(m_clientAuthenticationMethod));
   }
 
   return payload;

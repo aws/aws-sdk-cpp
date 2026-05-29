@@ -135,6 +135,7 @@
 #include <aws/sesv2/model/PutEmailIdentityFeedbackAttributesResult.h>
 #include <aws/sesv2/model/PutEmailIdentityMailFromAttributesResult.h>
 #include <aws/sesv2/model/PutSuppressedDestinationResult.h>
+#include <aws/sesv2/model/PutTenantSuppressionAttributesResult.h>
 #include <aws/sesv2/model/SendBulkEmailResult.h>
 #include <aws/sesv2/model/SendCustomVerificationEmailResult.h>
 #include <aws/sesv2/model/SendEmailResult.h>
@@ -278,6 +279,7 @@ class PutEmailIdentityDkimSigningAttributesRequest;
 class PutEmailIdentityFeedbackAttributesRequest;
 class PutEmailIdentityMailFromAttributesRequest;
 class PutSuppressedDestinationRequest;
+class PutTenantSuppressionAttributesRequest;
 class SendBulkEmailRequest;
 class SendCustomVerificationEmailRequest;
 class SendEmailRequest;
@@ -391,6 +393,7 @@ typedef Aws::Utils::Outcome<PutEmailIdentityDkimSigningAttributesResult, SESV2Er
 typedef Aws::Utils::Outcome<PutEmailIdentityFeedbackAttributesResult, SESV2Error> PutEmailIdentityFeedbackAttributesOutcome;
 typedef Aws::Utils::Outcome<PutEmailIdentityMailFromAttributesResult, SESV2Error> PutEmailIdentityMailFromAttributesOutcome;
 typedef Aws::Utils::Outcome<PutSuppressedDestinationResult, SESV2Error> PutSuppressedDestinationOutcome;
+typedef Aws::Utils::Outcome<PutTenantSuppressionAttributesResult, SESV2Error> PutTenantSuppressionAttributesOutcome;
 typedef Aws::Utils::Outcome<SendBulkEmailResult, SESV2Error> SendBulkEmailOutcome;
 typedef Aws::Utils::Outcome<SendCustomVerificationEmailResult, SESV2Error> SendCustomVerificationEmailOutcome;
 typedef Aws::Utils::Outcome<SendEmailResult, SESV2Error> SendEmailOutcome;
@@ -505,6 +508,7 @@ typedef std::future<PutEmailIdentityDkimSigningAttributesOutcome> PutEmailIdenti
 typedef std::future<PutEmailIdentityFeedbackAttributesOutcome> PutEmailIdentityFeedbackAttributesOutcomeCallable;
 typedef std::future<PutEmailIdentityMailFromAttributesOutcome> PutEmailIdentityMailFromAttributesOutcomeCallable;
 typedef std::future<PutSuppressedDestinationOutcome> PutSuppressedDestinationOutcomeCallable;
+typedef std::future<PutTenantSuppressionAttributesOutcome> PutTenantSuppressionAttributesOutcomeCallable;
 typedef std::future<SendBulkEmailOutcome> SendBulkEmailOutcomeCallable;
 typedef std::future<SendCustomVerificationEmailOutcome> SendCustomVerificationEmailOutcomeCallable;
 typedef std::future<SendEmailOutcome> SendEmailOutcomeCallable;
@@ -844,6 +848,10 @@ typedef std::function<void(const SESV2Client*, const Model::PutEmailIdentityMail
 typedef std::function<void(const SESV2Client*, const Model::PutSuppressedDestinationRequest&, const Model::PutSuppressedDestinationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutSuppressedDestinationResponseReceivedHandler;
+typedef std::function<void(const SESV2Client*, const Model::PutTenantSuppressionAttributesRequest&,
+                           const Model::PutTenantSuppressionAttributesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutTenantSuppressionAttributesResponseReceivedHandler;
 typedef std::function<void(const SESV2Client*, const Model::SendBulkEmailRequest&, const Model::SendBulkEmailOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SendBulkEmailResponseReceivedHandler;

@@ -188,6 +188,10 @@ GetRunResult& GetRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValu
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
     m_vpcConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("engineSettings")) {
+    m_engineSettings = jsonValue.GetObject("engineSettings");
+    m_engineSettingsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

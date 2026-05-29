@@ -26,9 +26,26 @@ StripePrivyConfigurationInput& StripePrivyConfigurationInput::operator=(JsonView
     m_appSecret = jsonValue.GetString("appSecret");
     m_appSecretHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("appSecretSource")) {
+    m_appSecretSource = SecretSourceTypeMapper::GetSecretSourceTypeForName(jsonValue.GetString("appSecretSource"));
+    m_appSecretSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("appSecretConfig")) {
+    m_appSecretConfig = jsonValue.GetObject("appSecretConfig");
+    m_appSecretConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("authorizationPrivateKey")) {
     m_authorizationPrivateKey = jsonValue.GetString("authorizationPrivateKey");
     m_authorizationPrivateKeyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("authorizationPrivateKeySource")) {
+    m_authorizationPrivateKeySource =
+        SecretSourceTypeMapper::GetSecretSourceTypeForName(jsonValue.GetString("authorizationPrivateKeySource"));
+    m_authorizationPrivateKeySourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("authorizationPrivateKeyConfig")) {
+    m_authorizationPrivateKeyConfig = jsonValue.GetObject("authorizationPrivateKeyConfig");
+    m_authorizationPrivateKeyConfigHasBeenSet = true;
   }
   if (jsonValue.ValueExists("authorizationId")) {
     m_authorizationId = jsonValue.GetString("authorizationId");
@@ -48,8 +65,25 @@ JsonValue StripePrivyConfigurationInput::Jsonize() const {
     payload.WithString("appSecret", m_appSecret);
   }
 
+  if (m_appSecretSourceHasBeenSet) {
+    payload.WithString("appSecretSource", SecretSourceTypeMapper::GetNameForSecretSourceType(m_appSecretSource));
+  }
+
+  if (m_appSecretConfigHasBeenSet) {
+    payload.WithObject("appSecretConfig", m_appSecretConfig.Jsonize());
+  }
+
   if (m_authorizationPrivateKeyHasBeenSet) {
     payload.WithString("authorizationPrivateKey", m_authorizationPrivateKey);
+  }
+
+  if (m_authorizationPrivateKeySourceHasBeenSet) {
+    payload.WithString("authorizationPrivateKeySource",
+                       SecretSourceTypeMapper::GetNameForSecretSourceType(m_authorizationPrivateKeySource));
+  }
+
+  if (m_authorizationPrivateKeyConfigHasBeenSet) {
+    payload.WithObject("authorizationPrivateKeyConfig", m_authorizationPrivateKeyConfig.Jsonize());
   }
 
   if (m_authorizationIdHasBeenSet) {

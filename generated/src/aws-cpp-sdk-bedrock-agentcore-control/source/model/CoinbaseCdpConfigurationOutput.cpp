@@ -26,9 +26,25 @@ CoinbaseCdpConfigurationOutput& CoinbaseCdpConfigurationOutput::operator=(JsonVi
     m_apiKeySecretArn = jsonValue.GetObject("apiKeySecretArn");
     m_apiKeySecretArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("apiKeySecretJsonKey")) {
+    m_apiKeySecretJsonKey = jsonValue.GetString("apiKeySecretJsonKey");
+    m_apiKeySecretJsonKeyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("apiKeySecretSource")) {
+    m_apiKeySecretSource = SecretSourceTypeMapper::GetSecretSourceTypeForName(jsonValue.GetString("apiKeySecretSource"));
+    m_apiKeySecretSourceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("walletSecretArn")) {
     m_walletSecretArn = jsonValue.GetObject("walletSecretArn");
     m_walletSecretArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("walletSecretJsonKey")) {
+    m_walletSecretJsonKey = jsonValue.GetString("walletSecretJsonKey");
+    m_walletSecretJsonKeyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("walletSecretSource")) {
+    m_walletSecretSource = SecretSourceTypeMapper::GetSecretSourceTypeForName(jsonValue.GetString("walletSecretSource"));
+    m_walletSecretSourceHasBeenSet = true;
   }
   return *this;
 }
@@ -44,8 +60,24 @@ JsonValue CoinbaseCdpConfigurationOutput::Jsonize() const {
     payload.WithObject("apiKeySecretArn", m_apiKeySecretArn.Jsonize());
   }
 
+  if (m_apiKeySecretJsonKeyHasBeenSet) {
+    payload.WithString("apiKeySecretJsonKey", m_apiKeySecretJsonKey);
+  }
+
+  if (m_apiKeySecretSourceHasBeenSet) {
+    payload.WithString("apiKeySecretSource", SecretSourceTypeMapper::GetNameForSecretSourceType(m_apiKeySecretSource));
+  }
+
   if (m_walletSecretArnHasBeenSet) {
     payload.WithObject("walletSecretArn", m_walletSecretArn.Jsonize());
+  }
+
+  if (m_walletSecretJsonKeyHasBeenSet) {
+    payload.WithString("walletSecretJsonKey", m_walletSecretJsonKey);
+  }
+
+  if (m_walletSecretSourceHasBeenSet) {
+    payload.WithString("walletSecretSource", SecretSourceTypeMapper::GetNameForSecretSourceType(m_walletSecretSource));
   }
 
   return payload;

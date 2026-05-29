@@ -162,7 +162,12 @@ class CreateConfigurationSetRequest : public SESV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>An object that contains information about the suppression list preferences
+   * for the configuration set. You can optionally include a
+   * <code>SuppressionScope</code> to override the tenant or account suppression
+   * scope for emails sent using this configuration set.</p>
+   */
   inline const SuppressionOptions& GetSuppressionOptions() const { return m_suppressionOptions; }
   inline bool SuppressionOptionsHasBeenSet() const { return m_suppressionOptionsHasBeenSet; }
   template <typename SuppressionOptionsT = SuppressionOptions>

@@ -87,6 +87,10 @@ FirewallRule& FirewallRule::operator=(JsonView jsonValue) {
     m_confidenceThreshold = ConfidenceThresholdMapper::GetConfidenceThresholdForName(jsonValue.GetString("ConfidenceThreshold"));
     m_confidenceThresholdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FirewallRuleType")) {
+    m_firewallRuleType = jsonValue.GetObject("FirewallRuleType");
+    m_firewallRuleTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -160,6 +164,10 @@ JsonValue FirewallRule::Jsonize() const {
 
   if (m_confidenceThresholdHasBeenSet) {
     payload.WithString("ConfidenceThreshold", ConfidenceThresholdMapper::GetNameForConfidenceThreshold(m_confidenceThreshold));
+  }
+
+  if (m_firewallRuleTypeHasBeenSet) {
+    payload.WithObject("FirewallRuleType", m_firewallRuleType.Jsonize());
   }
 
   return payload;

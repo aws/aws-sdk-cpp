@@ -29,6 +29,7 @@
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsPaginationTraits.h>
 #include <aws/quicksight/model/ListIngestionsPaginationTraits.h>
 #include <aws/quicksight/model/ListNamespacesPaginationTraits.h>
+#include <aws/quicksight/model/ListOAuthClientApplicationsPaginationTraits.h>
 #include <aws/quicksight/model/ListRoleMembershipsPaginationTraits.h>
 #include <aws/quicksight/model/ListTemplateAliasesPaginationTraits.h>
 #include <aws/quicksight/model/ListTemplateVersionsPaginationTraits.h>
@@ -309,6 +310,18 @@ class QuickSightPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNamespacesRequest,
                                              Pagination::ListNamespacesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
+  }
+
+  /**
+   * Create a paginator for ListOAuthClientApplications operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOAuthClientApplicationsRequest,
+                                    Pagination::ListOAuthClientApplicationsPaginationTraits<DerivedClient>>
+  ListOAuthClientApplicationsPaginator(const Model::ListOAuthClientApplicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOAuthClientApplicationsRequest,
+                                             Pagination::ListOAuthClientApplicationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

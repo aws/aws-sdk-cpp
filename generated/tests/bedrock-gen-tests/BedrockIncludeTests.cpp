@@ -99,6 +99,7 @@
 #include <aws/bedrock/model/AutomatedReasoningPolicyGeneratedTestCase.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyGeneratedTestCases.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyIngestContentAnnotation.h>
+#include <aws/bedrock/model/AutomatedReasoningPolicyIterativeRefinementContent.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyMutation.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyPlanning.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyReportSourceDocument.h>

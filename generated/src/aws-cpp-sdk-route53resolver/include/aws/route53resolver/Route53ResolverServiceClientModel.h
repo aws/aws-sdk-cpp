@@ -23,6 +23,9 @@
 #include <aws/route53resolver/model/AssociateResolverEndpointIpAddressResult.h>
 #include <aws/route53resolver/model/AssociateResolverQueryLogConfigResult.h>
 #include <aws/route53resolver/model/AssociateResolverRuleResult.h>
+#include <aws/route53resolver/model/BatchCreateFirewallRuleResult.h>
+#include <aws/route53resolver/model/BatchDeleteFirewallRuleResult.h>
+#include <aws/route53resolver/model/BatchUpdateFirewallRuleResult.h>
 #include <aws/route53resolver/model/CreateFirewallDomainListResult.h>
 #include <aws/route53resolver/model/CreateFirewallRuleGroupResult.h>
 #include <aws/route53resolver/model/CreateFirewallRuleResult.h>
@@ -66,6 +69,8 @@
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsResult.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupsRequest.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupsResult.h>
+#include <aws/route53resolver/model/ListFirewallRuleTypesRequest.h>
+#include <aws/route53resolver/model/ListFirewallRuleTypesResult.h>
 #include <aws/route53resolver/model/ListFirewallRulesResult.h>
 #include <aws/route53resolver/model/ListOutpostResolversRequest.h>
 #include <aws/route53resolver/model/ListOutpostResolversResult.h>
@@ -136,6 +141,9 @@ class AssociateFirewallRuleGroupRequest;
 class AssociateResolverEndpointIpAddressRequest;
 class AssociateResolverQueryLogConfigRequest;
 class AssociateResolverRuleRequest;
+class BatchCreateFirewallRuleRequest;
+class BatchDeleteFirewallRuleRequest;
+class BatchUpdateFirewallRuleRequest;
 class CreateFirewallDomainListRequest;
 class CreateFirewallRuleRequest;
 class CreateFirewallRuleGroupRequest;
@@ -175,6 +183,7 @@ class ListFirewallDomainListsRequest;
 class ListFirewallDomainsRequest;
 class ListFirewallRuleGroupAssociationsRequest;
 class ListFirewallRuleGroupsRequest;
+class ListFirewallRuleTypesRequest;
 class ListFirewallRulesRequest;
 class ListOutpostResolversRequest;
 class ListResolverConfigsRequest;
@@ -207,6 +216,9 @@ typedef Aws::Utils::Outcome<AssociateFirewallRuleGroupResult, Route53ResolverErr
 typedef Aws::Utils::Outcome<AssociateResolverEndpointIpAddressResult, Route53ResolverError> AssociateResolverEndpointIpAddressOutcome;
 typedef Aws::Utils::Outcome<AssociateResolverQueryLogConfigResult, Route53ResolverError> AssociateResolverQueryLogConfigOutcome;
 typedef Aws::Utils::Outcome<AssociateResolverRuleResult, Route53ResolverError> AssociateResolverRuleOutcome;
+typedef Aws::Utils::Outcome<BatchCreateFirewallRuleResult, Route53ResolverError> BatchCreateFirewallRuleOutcome;
+typedef Aws::Utils::Outcome<BatchDeleteFirewallRuleResult, Route53ResolverError> BatchDeleteFirewallRuleOutcome;
+typedef Aws::Utils::Outcome<BatchUpdateFirewallRuleResult, Route53ResolverError> BatchUpdateFirewallRuleOutcome;
 typedef Aws::Utils::Outcome<CreateFirewallDomainListResult, Route53ResolverError> CreateFirewallDomainListOutcome;
 typedef Aws::Utils::Outcome<CreateFirewallRuleResult, Route53ResolverError> CreateFirewallRuleOutcome;
 typedef Aws::Utils::Outcome<CreateFirewallRuleGroupResult, Route53ResolverError> CreateFirewallRuleGroupOutcome;
@@ -246,6 +258,7 @@ typedef Aws::Utils::Outcome<ListFirewallDomainListsResult, Route53ResolverError>
 typedef Aws::Utils::Outcome<ListFirewallDomainsResult, Route53ResolverError> ListFirewallDomainsOutcome;
 typedef Aws::Utils::Outcome<ListFirewallRuleGroupAssociationsResult, Route53ResolverError> ListFirewallRuleGroupAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListFirewallRuleGroupsResult, Route53ResolverError> ListFirewallRuleGroupsOutcome;
+typedef Aws::Utils::Outcome<ListFirewallRuleTypesResult, Route53ResolverError> ListFirewallRuleTypesOutcome;
 typedef Aws::Utils::Outcome<ListFirewallRulesResult, Route53ResolverError> ListFirewallRulesOutcome;
 typedef Aws::Utils::Outcome<ListOutpostResolversResult, Route53ResolverError> ListOutpostResolversOutcome;
 typedef Aws::Utils::Outcome<ListResolverConfigsResult, Route53ResolverError> ListResolverConfigsOutcome;
@@ -279,6 +292,9 @@ typedef std::future<AssociateFirewallRuleGroupOutcome> AssociateFirewallRuleGrou
 typedef std::future<AssociateResolverEndpointIpAddressOutcome> AssociateResolverEndpointIpAddressOutcomeCallable;
 typedef std::future<AssociateResolverQueryLogConfigOutcome> AssociateResolverQueryLogConfigOutcomeCallable;
 typedef std::future<AssociateResolverRuleOutcome> AssociateResolverRuleOutcomeCallable;
+typedef std::future<BatchCreateFirewallRuleOutcome> BatchCreateFirewallRuleOutcomeCallable;
+typedef std::future<BatchDeleteFirewallRuleOutcome> BatchDeleteFirewallRuleOutcomeCallable;
+typedef std::future<BatchUpdateFirewallRuleOutcome> BatchUpdateFirewallRuleOutcomeCallable;
 typedef std::future<CreateFirewallDomainListOutcome> CreateFirewallDomainListOutcomeCallable;
 typedef std::future<CreateFirewallRuleOutcome> CreateFirewallRuleOutcomeCallable;
 typedef std::future<CreateFirewallRuleGroupOutcome> CreateFirewallRuleGroupOutcomeCallable;
@@ -318,6 +334,7 @@ typedef std::future<ListFirewallDomainListsOutcome> ListFirewallDomainListsOutco
 typedef std::future<ListFirewallDomainsOutcome> ListFirewallDomainsOutcomeCallable;
 typedef std::future<ListFirewallRuleGroupAssociationsOutcome> ListFirewallRuleGroupAssociationsOutcomeCallable;
 typedef std::future<ListFirewallRuleGroupsOutcome> ListFirewallRuleGroupsOutcomeCallable;
+typedef std::future<ListFirewallRuleTypesOutcome> ListFirewallRuleTypesOutcomeCallable;
 typedef std::future<ListFirewallRulesOutcome> ListFirewallRulesOutcomeCallable;
 typedef std::future<ListOutpostResolversOutcome> ListOutpostResolversOutcomeCallable;
 typedef std::future<ListResolverConfigsOutcome> ListResolverConfigsOutcomeCallable;
@@ -363,6 +380,15 @@ typedef std::function<void(const Route53ResolverClient*, const Model::AssociateR
 typedef std::function<void(const Route53ResolverClient*, const Model::AssociateResolverRuleRequest&,
                            const Model::AssociateResolverRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateResolverRuleResponseReceivedHandler;
+typedef std::function<void(const Route53ResolverClient*, const Model::BatchCreateFirewallRuleRequest&,
+                           const Model::BatchCreateFirewallRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchCreateFirewallRuleResponseReceivedHandler;
+typedef std::function<void(const Route53ResolverClient*, const Model::BatchDeleteFirewallRuleRequest&,
+                           const Model::BatchDeleteFirewallRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchDeleteFirewallRuleResponseReceivedHandler;
+typedef std::function<void(const Route53ResolverClient*, const Model::BatchUpdateFirewallRuleRequest&,
+                           const Model::BatchUpdateFirewallRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchUpdateFirewallRuleResponseReceivedHandler;
 typedef std::function<void(const Route53ResolverClient*, const Model::CreateFirewallDomainListRequest&,
                            const Model::CreateFirewallDomainListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateFirewallDomainListResponseReceivedHandler;
@@ -489,6 +515,9 @@ typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewa
 typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewallRuleGroupsRequest&,
                            const Model::ListFirewallRuleGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFirewallRuleGroupsResponseReceivedHandler;
+typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewallRuleTypesRequest&,
+                           const Model::ListFirewallRuleTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListFirewallRuleTypesResponseReceivedHandler;
 typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewallRulesRequest&, const Model::ListFirewallRulesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFirewallRulesResponseReceivedHandler;

@@ -20,7 +20,11 @@
 #include <aws/quicksight/QuickSightClient.h>
 #include <aws/quicksight/QuickSightEndpointProvider.h>
 #include <aws/quicksight/QuickSightErrorMarshaller.h>
+#include <aws/quicksight/model/UpdateDashboardPermissionsRequest.h>
+#include <aws/quicksight/model/UpdateDashboardPublishedVersionRequest.h>
+#include <aws/quicksight/model/UpdateDashboardsQAConfigurationRequest.h>
 #include <aws/quicksight/model/UpdateDataSetPermissionsRequest.h>
+#include <aws/quicksight/model/UpdateDataSetRequest.h>
 #include <aws/quicksight/model/UpdateDataSourcePermissionsRequest.h>
 #include <aws/quicksight/model/UpdateDataSourceRequest.h>
 #include <aws/quicksight/model/UpdateDefaultQBusinessApplicationRequest.h>
@@ -32,6 +36,7 @@
 #include <aws/quicksight/model/UpdateIdentityPropagationConfigRequest.h>
 #include <aws/quicksight/model/UpdateIpRestrictionRequest.h>
 #include <aws/quicksight/model/UpdateKeyRegistrationRequest.h>
+#include <aws/quicksight/model/UpdateOAuthClientApplicationRequest.h>
 #include <aws/quicksight/model/UpdatePublicSharingSettingsRequest.h>
 #include <aws/quicksight/model/UpdateQPersonalizationConfigurationRequest.h>
 #include <aws/quicksight/model/UpdateQuickSightQSearchConfigurationRequest.h>
@@ -63,6 +68,109 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UpdateDashboardPermissionsOutcome QuickSightClient::UpdateDashboardPermissions(const UpdateDashboardPermissionsRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDashboardPermissions", "Required field: AwsAccountId, is not set");
+    return UpdateDashboardPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(
+        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.DashboardIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDashboardPermissions", "Required field: DashboardId, is not set");
+    return UpdateDashboardPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(
+        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/dashboards/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDashboardId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDashboardPermissionsOutcome(result.GetResultWithOwnership())
+                            : UpdateDashboardPermissionsOutcome(std::move(result.GetError()));
+}
+
+UpdateDashboardPublishedVersionOutcome QuickSightClient::UpdateDashboardPublishedVersion(
+    const UpdateDashboardPublishedVersionRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDashboardPublishedVersion", "Required field: AwsAccountId, is not set");
+    return UpdateDashboardPublishedVersionOutcome(Aws::Client::AWSError<QuickSightErrors>(
+        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.DashboardIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDashboardPublishedVersion", "Required field: DashboardId, is not set");
+    return UpdateDashboardPublishedVersionOutcome(Aws::Client::AWSError<QuickSightErrors>(
+        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
+  }
+  if (!request.VersionNumberHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDashboardPublishedVersion", "Required field: VersionNumber, is not set");
+    return UpdateDashboardPublishedVersionOutcome(Aws::Client::AWSError<QuickSightErrors>(
+        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/dashboards/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDashboardId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionNumber());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDashboardPublishedVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateDashboardPublishedVersionOutcome(std::move(result.GetError()));
+}
+
+UpdateDashboardsQAConfigurationOutcome QuickSightClient::UpdateDashboardsQAConfiguration(
+    const UpdateDashboardsQAConfigurationRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDashboardsQAConfiguration", "Required field: AwsAccountId, is not set");
+    return UpdateDashboardsQAConfigurationOutcome(Aws::Client::AWSError<QuickSightErrors>(
+        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/dashboards-qa-configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDashboardsQAConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateDashboardsQAConfigurationOutcome(std::move(result.GetError()));
+}
+
+UpdateDataSetOutcome QuickSightClient::UpdateDataSet(const UpdateDataSetRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDataSet", "Required field: AwsAccountId, is not set");
+    return UpdateDataSetOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.DataSetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDataSet", "Required field: DataSetId, is not set");
+    return UpdateDataSetOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [DataSetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-sets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDataSetOutcome(result.GetResultWithOwnership()) : UpdateDataSetOutcome(std::move(result.GetError()));
+}
 
 UpdateDataSetPermissionsOutcome QuickSightClient::UpdateDataSetPermissions(const UpdateDataSetPermissionsRequest& request) const {
   if (!request.AwsAccountIdHasBeenSet()) {
@@ -362,6 +470,32 @@ UpdateKeyRegistrationOutcome QuickSightClient::UpdateKeyRegistration(const Updat
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateKeyRegistrationOutcome(result.GetResultWithOwnership())
                             : UpdateKeyRegistrationOutcome(std::move(result.GetError()));
+}
+
+UpdateOAuthClientApplicationOutcome QuickSightClient::UpdateOAuthClientApplication(
+    const UpdateOAuthClientApplicationRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateOAuthClientApplication", "Required field: AwsAccountId, is not set");
+    return UpdateOAuthClientApplicationOutcome(Aws::Client::AWSError<QuickSightErrors>(
+        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.OAuthClientApplicationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateOAuthClientApplication", "Required field: OAuthClientApplicationId, is not set");
+    return UpdateOAuthClientApplicationOutcome(Aws::Client::AWSError<QuickSightErrors>(
+        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OAuthClientApplicationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/oauth-client-applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOAuthClientApplicationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateOAuthClientApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateOAuthClientApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdatePublicSharingSettingsOutcome QuickSightClient::UpdatePublicSharingSettings(const UpdatePublicSharingSettingsRequest& request) const {

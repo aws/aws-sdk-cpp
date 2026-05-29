@@ -8,6 +8,7 @@
 
 #include <aws/quicksight/QuickSightClientPagination.h>
 #include <aws/quicksight/QuickSightPaginationBase.h>
+#include <aws/quicksight/model/ListOAuthClientApplicationsPaginationTraits.h>
 #include <aws/quicksight/model/ListDashboardsPaginationTraits.h>
 #include <aws/quicksight/model/ListAnalysesPaginationTraits.h>
 #include <aws/quicksight/model/ListThemeVersionsPaginationTraits.h>

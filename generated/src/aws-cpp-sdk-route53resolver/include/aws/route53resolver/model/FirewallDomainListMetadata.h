@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
+#include <aws/route53resolver/model/DomainListType.h>
 
 #include <utility>
 
@@ -128,6 +129,40 @@ class FirewallDomainListMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the managed domain list, for example <code>THREAT</code>.</p>
+   */
+  inline DomainListType GetManagedListType() const { return m_managedListType; }
+  inline bool ManagedListTypeHasBeenSet() const { return m_managedListTypeHasBeenSet; }
+  inline void SetManagedListType(DomainListType value) {
+    m_managedListTypeHasBeenSet = true;
+    m_managedListType = value;
+  }
+  inline FirewallDomainListMetadata& WithManagedListType(DomainListType value) {
+    SetManagedListType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The category of the domain list.</p>
+   */
+  inline const Aws::String& GetCategory() const { return m_category; }
+  inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+  template <typename CategoryT = Aws::String>
+  void SetCategory(CategoryT&& value) {
+    m_categoryHasBeenSet = true;
+    m_category = std::forward<CategoryT>(value);
+  }
+  template <typename CategoryT = Aws::String>
+  FirewallDomainListMetadata& WithCategory(CategoryT&& value) {
+    SetCategory(std::forward<CategoryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -138,11 +173,17 @@ class FirewallDomainListMetadata {
   Aws::String m_creatorRequestId;
 
   Aws::String m_managedOwnerName;
+
+  DomainListType m_managedListType{DomainListType::NOT_SET};
+
+  Aws::String m_category;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_creatorRequestIdHasBeenSet = false;
   bool m_managedOwnerNameHasBeenSet = false;
+  bool m_managedListTypeHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
 };
 
 }  // namespace Model

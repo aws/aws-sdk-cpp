@@ -116,6 +116,7 @@
 #include <aws/sesv2/model/PutEmailIdentityFeedbackAttributesRequest.h>
 #include <aws/sesv2/model/PutEmailIdentityMailFromAttributesRequest.h>
 #include <aws/sesv2/model/PutSuppressedDestinationRequest.h>
+#include <aws/sesv2/model/PutTenantSuppressionAttributesRequest.h>
 #include <aws/sesv2/model/SendBulkEmailRequest.h>
 #include <aws/sesv2/model/SendCustomVerificationEmailRequest.h>
 #include <aws/sesv2/model/SendEmailRequest.h>
@@ -1809,6 +1810,18 @@ PutSuppressedDestinationOutcome SESV2Client::PutSuppressedDestination(const PutS
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutSuppressedDestinationOutcome(result.GetResultWithOwnership())
                             : PutSuppressedDestinationOutcome(std::move(result.GetError()));
+}
+
+PutTenantSuppressionAttributesOutcome SESV2Client::PutTenantSuppressionAttributes(
+    const PutTenantSuppressionAttributesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/tenant/suppression");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutTenantSuppressionAttributesOutcome(result.GetResultWithOwnership())
+                            : PutTenantSuppressionAttributesOutcome(std::move(result.GetError()));
 }
 
 SendBulkEmailOutcome SESV2Client::SendBulkEmail(const SendBulkEmailRequest& request) const {

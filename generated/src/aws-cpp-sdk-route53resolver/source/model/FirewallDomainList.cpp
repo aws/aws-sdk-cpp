@@ -58,6 +58,14 @@ FirewallDomainList& FirewallDomainList::operator=(JsonView jsonValue) {
     m_modificationTime = jsonValue.GetString("ModificationTime");
     m_modificationTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Category")) {
+    m_category = jsonValue.GetString("Category");
+    m_categoryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ManagedListType")) {
+    m_managedListType = DomainListTypeMapper::GetDomainListTypeForName(jsonValue.GetString("ManagedListType"));
+    m_managedListTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +110,14 @@ JsonValue FirewallDomainList::Jsonize() const {
 
   if (m_modificationTimeHasBeenSet) {
     payload.WithString("ModificationTime", m_modificationTime);
+  }
+
+  if (m_categoryHasBeenSet) {
+    payload.WithString("Category", m_category);
+  }
+
+  if (m_managedListTypeHasBeenSet) {
+    payload.WithString("ManagedListType", DomainListTypeMapper::GetNameForDomainListType(m_managedListType));
   }
 
   return payload;

@@ -45,6 +45,10 @@ Tenant& Tenant::operator=(JsonView jsonValue) {
     m_sendingStatus = SendingStatusMapper::GetSendingStatusForName(jsonValue.GetString("SendingStatus"));
     m_sendingStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SuppressionAttributes")) {
+    m_suppressionAttributes = jsonValue.GetObject("SuppressionAttributes");
+    m_suppressionAttributesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -77,6 +81,10 @@ JsonValue Tenant::Jsonize() const {
 
   if (m_sendingStatusHasBeenSet) {
     payload.WithString("SendingStatus", SendingStatusMapper::GetNameForSendingStatus(m_sendingStatus));
+  }
+
+  if (m_suppressionAttributesHasBeenSet) {
+    payload.WithObject("SuppressionAttributes", m_suppressionAttributes.Jsonize());
   }
 
   return payload;

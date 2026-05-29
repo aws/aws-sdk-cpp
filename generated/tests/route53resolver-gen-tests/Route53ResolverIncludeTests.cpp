@@ -24,11 +24,21 @@
 #include <aws/route53resolver/model/AssociateResolverRuleRequest.h>
 #include <aws/route53resolver/model/AssociateResolverRuleResult.h>
 #include <aws/route53resolver/model/AutodefinedReverseFlag.h>
+#include <aws/route53resolver/model/BatchCreateFirewallRuleError.h>
+#include <aws/route53resolver/model/BatchCreateFirewallRuleRequest.h>
+#include <aws/route53resolver/model/BatchCreateFirewallRuleResult.h>
+#include <aws/route53resolver/model/BatchDeleteFirewallRuleError.h>
+#include <aws/route53resolver/model/BatchDeleteFirewallRuleRequest.h>
+#include <aws/route53resolver/model/BatchDeleteFirewallRuleResult.h>
+#include <aws/route53resolver/model/BatchUpdateFirewallRuleError.h>
+#include <aws/route53resolver/model/BatchUpdateFirewallRuleRequest.h>
+#include <aws/route53resolver/model/BatchUpdateFirewallRuleResult.h>
 #include <aws/route53resolver/model/BlockOverrideDnsType.h>
 #include <aws/route53resolver/model/BlockResponse.h>
 #include <aws/route53resolver/model/ConfidenceThreshold.h>
 #include <aws/route53resolver/model/CreateFirewallDomainListRequest.h>
 #include <aws/route53resolver/model/CreateFirewallDomainListResult.h>
+#include <aws/route53resolver/model/CreateFirewallRuleEntry.h>
 #include <aws/route53resolver/model/CreateFirewallRuleGroupRequest.h>
 #include <aws/route53resolver/model/CreateFirewallRuleGroupResult.h>
 #include <aws/route53resolver/model/CreateFirewallRuleRequest.h>
@@ -43,6 +53,7 @@
 #include <aws/route53resolver/model/CreateResolverRuleResult.h>
 #include <aws/route53resolver/model/DeleteFirewallDomainListRequest.h>
 #include <aws/route53resolver/model/DeleteFirewallDomainListResult.h>
+#include <aws/route53resolver/model/DeleteFirewallRuleEntry.h>
 #include <aws/route53resolver/model/DeleteFirewallRuleGroupRequest.h>
 #include <aws/route53resolver/model/DeleteFirewallRuleGroupResult.h>
 #include <aws/route53resolver/model/DeleteFirewallRuleRequest.h>
@@ -64,7 +75,11 @@
 #include <aws/route53resolver/model/DisassociateResolverRuleRequest.h>
 #include <aws/route53resolver/model/DisassociateResolverRuleResult.h>
 #include <aws/route53resolver/model/DnsThreatProtection.h>
+#include <aws/route53resolver/model/DnsThreatProtectionRuleTypeConfig.h>
+#include <aws/route53resolver/model/DomainListType.h>
 #include <aws/route53resolver/model/Filter.h>
+#include <aws/route53resolver/model/FirewallAdvancedContentCategoryConfig.h>
+#include <aws/route53resolver/model/FirewallAdvancedThreatCategoryConfig.h>
 #include <aws/route53resolver/model/FirewallConfig.h>
 #include <aws/route53resolver/model/FirewallDomainImportOperation.h>
 #include <aws/route53resolver/model/FirewallDomainList.h>
@@ -79,6 +94,8 @@
 #include <aws/route53resolver/model/FirewallRuleGroupAssociationStatus.h>
 #include <aws/route53resolver/model/FirewallRuleGroupMetadata.h>
 #include <aws/route53resolver/model/FirewallRuleGroupStatus.h>
+#include <aws/route53resolver/model/FirewallRuleType.h>
+#include <aws/route53resolver/model/FirewallRuleTypeDefinition.h>
 #include <aws/route53resolver/model/GetFirewallConfigRequest.h>
 #include <aws/route53resolver/model/GetFirewallConfigResult.h>
 #include <aws/route53resolver/model/GetFirewallDomainListRequest.h>
@@ -127,6 +144,8 @@
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsResult.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupsRequest.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupsResult.h>
+#include <aws/route53resolver/model/ListFirewallRuleTypesRequest.h>
+#include <aws/route53resolver/model/ListFirewallRuleTypesResult.h>
 #include <aws/route53resolver/model/ListFirewallRulesRequest.h>
 #include <aws/route53resolver/model/ListFirewallRulesResult.h>
 #include <aws/route53resolver/model/ListOutpostResolversRequest.h>
@@ -194,6 +213,7 @@
 #include <aws/route53resolver/model/UpdateFirewallConfigResult.h>
 #include <aws/route53resolver/model/UpdateFirewallDomainsRequest.h>
 #include <aws/route53resolver/model/UpdateFirewallDomainsResult.h>
+#include <aws/route53resolver/model/UpdateFirewallRuleEntry.h>
 #include <aws/route53resolver/model/UpdateFirewallRuleGroupAssociationRequest.h>
 #include <aws/route53resolver/model/UpdateFirewallRuleGroupAssociationResult.h>
 #include <aws/route53resolver/model/UpdateFirewallRuleRequest.h>

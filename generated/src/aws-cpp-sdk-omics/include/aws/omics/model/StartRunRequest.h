@@ -465,6 +465,26 @@ class StartRunRequest : public OmicsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Engine-specific settings for the workflow run. Use this field to specify
+   * configuration options that are specific to the workflow engine (for example,
+   * Nextflow profiles).</p>
+   */
+  inline Aws::Utils::DocumentView GetEngineSettings() const { return m_engineSettings; }
+  inline bool EngineSettingsHasBeenSet() const { return m_engineSettingsHasBeenSet; }
+  template <typename EngineSettingsT = Aws::Utils::Document>
+  void SetEngineSettings(EngineSettingsT&& value) {
+    m_engineSettingsHasBeenSet = true;
+    m_engineSettings = std::forward<EngineSettingsT>(value);
+  }
+  template <typename EngineSettingsT = Aws::Utils::Document>
+  StartRunRequest& WithEngineSettings(EngineSettingsT&& value) {
+    SetEngineSettings(std::forward<EngineSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_workflowId;
 
@@ -507,6 +527,8 @@ class StartRunRequest : public OmicsRequest {
   NetworkingMode m_networkingMode{NetworkingMode::NOT_SET};
 
   Aws::String m_configurationName;
+
+  Aws::Utils::Document m_engineSettings;
   bool m_workflowIdHasBeenSet = false;
   bool m_workflowTypeHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
@@ -528,6 +550,7 @@ class StartRunRequest : public OmicsRequest {
   bool m_workflowVersionNameHasBeenSet = false;
   bool m_networkingModeHasBeenSet = false;
   bool m_configurationNameHasBeenSet = false;
+  bool m_engineSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

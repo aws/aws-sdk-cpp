@@ -674,6 +674,35 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates an OAuthClientApplication.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateOAuthClientApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateOAuthClientApplicationOutcome CreateOAuthClientApplication(
+      const Model::CreateOAuthClientApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateOAuthClientApplication that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateOAuthClientApplicationRequestT = Model::CreateOAuthClientApplicationRequest>
+  Model::CreateOAuthClientApplicationOutcomeCallable CreateOAuthClientApplicationCallable(
+      const CreateOAuthClientApplicationRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::CreateOAuthClientApplication, request);
+  }
+
+  /**
+   * An Async wrapper for CreateOAuthClientApplication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateOAuthClientApplicationRequestT = Model::CreateOAuthClientApplicationRequest>
+  void CreateOAuthClientApplicationAsync(const CreateOAuthClientApplicationRequestT& request,
+                                         const CreateOAuthClientApplicationResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::CreateOAuthClientApplication, request, handler, context);
+  }
+
+  /**
    * <p>Creates a refresh schedule for a dataset. You can create up to 5 different
    * schedules for a single dataset.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRefreshSchedule">AWS
@@ -1520,6 +1549,35 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void DeleteNamespaceAsync(const DeleteNamespaceRequestT& request, const DeleteNamespaceResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::DeleteNamespace, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an OAuthClientApplication.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteOAuthClientApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteOAuthClientApplicationOutcome DeleteOAuthClientApplication(
+      const Model::DeleteOAuthClientApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteOAuthClientApplication that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteOAuthClientApplicationRequestT = Model::DeleteOAuthClientApplicationRequest>
+  Model::DeleteOAuthClientApplicationOutcomeCallable DeleteOAuthClientApplicationCallable(
+      const DeleteOAuthClientApplicationRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::DeleteOAuthClientApplication, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteOAuthClientApplication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteOAuthClientApplicationRequestT = Model::DeleteOAuthClientApplicationRequest>
+  void DeleteOAuthClientApplicationAsync(const DeleteOAuthClientApplicationRequestT& request,
+                                         const DeleteOAuthClientApplicationResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::DeleteOAuthClientApplication, request, handler, context);
   }
 
   /**
@@ -3046,6 +3104,35 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Describes an OAuthClientApplication.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeOAuthClientApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeOAuthClientApplicationOutcome DescribeOAuthClientApplication(
+      const Model::DescribeOAuthClientApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeOAuthClientApplication that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeOAuthClientApplicationRequestT = Model::DescribeOAuthClientApplicationRequest>
+  Model::DescribeOAuthClientApplicationOutcomeCallable DescribeOAuthClientApplicationCallable(
+      const DescribeOAuthClientApplicationRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::DescribeOAuthClientApplication, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeOAuthClientApplication that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeOAuthClientApplicationRequestT = Model::DescribeOAuthClientApplicationRequest>
+  void DescribeOAuthClientApplicationAsync(const DescribeOAuthClientApplicationRequestT& request,
+                                           const DescribeOAuthClientApplicationResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::DescribeOAuthClientApplication, request, handler, context);
+  }
+
+  /**
    * <p>Describes a personalization configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeQPersonalizationConfiguration">AWS
    * API Reference</a></p>
@@ -4467,6 +4554,36 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void ListNamespacesAsync(const ListNamespacesRequestT& request, const ListNamespacesResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::ListNamespaces, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all OAuthClientApplications in the current Amazon Web Services Region
+   * that belong to this Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListOAuthClientApplications">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListOAuthClientApplicationsOutcome ListOAuthClientApplications(
+      const Model::ListOAuthClientApplicationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListOAuthClientApplications that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListOAuthClientApplicationsRequestT = Model::ListOAuthClientApplicationsRequest>
+  Model::ListOAuthClientApplicationsOutcomeCallable ListOAuthClientApplicationsCallable(
+      const ListOAuthClientApplicationsRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::ListOAuthClientApplications, request);
+  }
+
+  /**
+   * An Async wrapper for ListOAuthClientApplications that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListOAuthClientApplicationsRequestT = Model::ListOAuthClientApplicationsRequest>
+  void ListOAuthClientApplicationsAsync(const ListOAuthClientApplicationsRequestT& request,
+                                        const ListOAuthClientApplicationsResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::ListOAuthClientApplications, request, handler, context);
   }
 
   /**
@@ -6462,6 +6579,35 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void UpdateKeyRegistrationAsync(const UpdateKeyRegistrationRequestT& request, const UpdateKeyRegistrationResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::UpdateKeyRegistration, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an OAuthClientApplication.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateOAuthClientApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateOAuthClientApplicationOutcome UpdateOAuthClientApplication(
+      const Model::UpdateOAuthClientApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateOAuthClientApplication that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateOAuthClientApplicationRequestT = Model::UpdateOAuthClientApplicationRequest>
+  Model::UpdateOAuthClientApplicationOutcomeCallable UpdateOAuthClientApplicationCallable(
+      const UpdateOAuthClientApplicationRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::UpdateOAuthClientApplication, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateOAuthClientApplication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateOAuthClientApplicationRequestT = Model::UpdateOAuthClientApplicationRequest>
+  void UpdateOAuthClientApplicationAsync(const UpdateOAuthClientApplicationRequestT& request,
+                                         const UpdateOAuthClientApplicationResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::UpdateOAuthClientApplication, request, handler, context);
   }
 
   /**

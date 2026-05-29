@@ -34,6 +34,10 @@ SuppressedDestination& SuppressedDestination::operator=(JsonView jsonValue) {
     m_attributes = jsonValue.GetObject("Attributes");
     m_attributesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TenantName")) {
+    m_tenantName = jsonValue.GetString("TenantName");
+    m_tenantNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue SuppressedDestination::Jsonize() const {
 
   if (m_attributesHasBeenSet) {
     payload.WithObject("Attributes", m_attributes.Jsonize());
+  }
+
+  if (m_tenantNameHasBeenSet) {
+    payload.WithString("TenantName", m_tenantName);
   }
 
   return payload;

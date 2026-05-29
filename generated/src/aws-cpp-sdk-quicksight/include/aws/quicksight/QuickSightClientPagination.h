@@ -28,6 +28,7 @@
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsPaginationTraits.h>
 #include <aws/quicksight/model/ListIngestionsPaginationTraits.h>
 #include <aws/quicksight/model/ListNamespacesPaginationTraits.h>
+#include <aws/quicksight/model/ListOAuthClientApplicationsPaginationTraits.h>
 #include <aws/quicksight/model/ListRoleMembershipsPaginationTraits.h>
 #include <aws/quicksight/model/ListTemplateAliasesPaginationTraits.h>
 #include <aws/quicksight/model/ListTemplateVersionsPaginationTraits.h>
@@ -104,6 +105,9 @@ using ListIngestionsPaginator = Aws::Utils::Pagination::Paginator<QuickSightClie
                                                                   Pagination::ListIngestionsPaginationTraits<QuickSightClient>>;
 using ListNamespacesPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListNamespacesRequest,
                                                                   Pagination::ListNamespacesPaginationTraits<QuickSightClient>>;
+using ListOAuthClientApplicationsPaginator =
+    Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListOAuthClientApplicationsRequest,
+                                      Pagination::ListOAuthClientApplicationsPaginationTraits<QuickSightClient>>;
 using ListRoleMembershipsPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListRoleMembershipsRequest,
                                                                        Pagination::ListRoleMembershipsPaginationTraits<QuickSightClient>>;
 using ListTemplateAliasesPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListTemplateAliasesRequest,

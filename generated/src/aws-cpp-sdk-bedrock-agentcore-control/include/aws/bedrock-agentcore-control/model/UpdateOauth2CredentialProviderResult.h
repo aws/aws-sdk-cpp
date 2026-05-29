@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/CredentialProviderVendorType.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/Secret.h>
+#include <aws/bedrock-agentcore-control/model/SecretSourceType.h>
 #include <aws/bedrock-agentcore-control/model/Status.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
@@ -48,6 +49,41 @@ class UpdateOauth2CredentialProviderResult {
   template <typename ClientSecretArnT = Secret>
   UpdateOauth2CredentialProviderResult& WithClientSecretArn(ClientSecretArnT&& value) {
     SetClientSecretArn(std::forward<ClientSecretArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The JSON key used to extract the client secret value from the AWS Secrets
+   * Manager secret.</p>
+   */
+  inline const Aws::String& GetClientSecretJsonKey() const { return m_clientSecretJsonKey; }
+  template <typename ClientSecretJsonKeyT = Aws::String>
+  void SetClientSecretJsonKey(ClientSecretJsonKeyT&& value) {
+    m_clientSecretJsonKeyHasBeenSet = true;
+    m_clientSecretJsonKey = std::forward<ClientSecretJsonKeyT>(value);
+  }
+  template <typename ClientSecretJsonKeyT = Aws::String>
+  UpdateOauth2CredentialProviderResult& WithClientSecretJsonKey(ClientSecretJsonKeyT&& value) {
+    SetClientSecretJsonKey(std::forward<ClientSecretJsonKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The source type of the client secret. Either <code>MANAGED</code> if the
+   * secret is managed by the service, or <code>EXTERNAL</code> if managed by the
+   * user in AWS Secrets Manager.</p>
+   */
+  inline SecretSourceType GetClientSecretSource() const { return m_clientSecretSource; }
+  inline void SetClientSecretSource(SecretSourceType value) {
+    m_clientSecretSourceHasBeenSet = true;
+    m_clientSecretSource = value;
+  }
+  inline UpdateOauth2CredentialProviderResult& WithClientSecretSource(SecretSourceType value) {
+    SetClientSecretSource(value);
     return *this;
   }
   ///@}
@@ -205,6 +241,10 @@ class UpdateOauth2CredentialProviderResult {
  private:
   Secret m_clientSecretArn;
 
+  Aws::String m_clientSecretJsonKey;
+
+  SecretSourceType m_clientSecretSource{SecretSourceType::NOT_SET};
+
   Aws::String m_name;
 
   CredentialProviderVendorType m_credentialProviderVendor{CredentialProviderVendorType::NOT_SET};
@@ -224,6 +264,8 @@ class UpdateOauth2CredentialProviderResult {
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clientSecretArnHasBeenSet = false;
+  bool m_clientSecretJsonKeyHasBeenSet = false;
+  bool m_clientSecretSourceHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_credentialProviderVendorHasBeenSet = false;
   bool m_credentialProviderArnHasBeenSet = false;

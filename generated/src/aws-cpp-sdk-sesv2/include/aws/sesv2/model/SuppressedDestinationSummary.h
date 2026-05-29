@@ -36,7 +36,8 @@ class SuppressedDestinationSummary {
 
   ///@{
   /**
-   * <p>The email address that's on the suppression list for your account.</p>
+   * <p>The email address that's on the suppression list for your account or for a
+   * specific tenant.</p>
    */
   inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
   inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
@@ -55,7 +56,7 @@ class SuppressedDestinationSummary {
   ///@{
   /**
    * <p>The reason that the address was added to the suppression list for your
-   * account.</p>
+   * account or for a specific tenant.</p>
    */
   inline SuppressionListReason GetReason() const { return m_reason; }
   inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }

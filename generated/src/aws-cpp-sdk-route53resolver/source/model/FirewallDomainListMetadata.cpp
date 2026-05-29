@@ -38,6 +38,14 @@ FirewallDomainListMetadata& FirewallDomainListMetadata::operator=(JsonView jsonV
     m_managedOwnerName = jsonValue.GetString("ManagedOwnerName");
     m_managedOwnerNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ManagedListType")) {
+    m_managedListType = DomainListTypeMapper::GetDomainListTypeForName(jsonValue.GetString("ManagedListType"));
+    m_managedListTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Category")) {
+    m_category = jsonValue.GetString("Category");
+    m_categoryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +70,14 @@ JsonValue FirewallDomainListMetadata::Jsonize() const {
 
   if (m_managedOwnerNameHasBeenSet) {
     payload.WithString("ManagedOwnerName", m_managedOwnerName);
+  }
+
+  if (m_managedListTypeHasBeenSet) {
+    payload.WithString("ManagedListType", DomainListTypeMapper::GetNameForDomainListType(m_managedListType));
+  }
+
+  if (m_categoryHasBeenSet) {
+    payload.WithString("Category", m_category);
   }
 
   return payload;

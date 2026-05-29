@@ -16,7 +16,9 @@ enum class AutomatedReasoningPolicyBuildWorkflowType {
   REFINE_POLICY,
   IMPORT_POLICY,
   GENERATE_FIDELITY_REPORT,
-  GENERATE_POLICY_SCENARIOS
+  GENERATE_POLICY_SCENARIOS,
+  RESOLVE_POLICY_AMBIGUITIES,
+  ITERATIVELY_REFINE_POLICY
 };
 
 namespace AutomatedReasoningPolicyBuildWorkflowTypeMapper {

@@ -23,5 +23,9 @@ Aws::String PutSuppressedDestinationRequest::SerializePayload() const {
     payload.WithString("Reason", SuppressionListReasonMapper::GetNameForSuppressionListReason(m_reason));
   }
 
+  if (m_tenantNameHasBeenSet) {
+    payload.WithString("TenantName", m_tenantName);
+  }
+
   return payload.View().WriteReadable();
 }

@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/model/Accelerators.h>
 #include <aws/omics/model/ContainerRegistryMap.h>
@@ -441,6 +442,59 @@ class GetWorkflowResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The list of Nextflow profiles that are available for this workflow. Profiles
+   * allow you to select predefined configuration settings at runtime.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetProfiles() const { return m_profiles; }
+  template <typename ProfilesT = Aws::Vector<Aws::String>>
+  void SetProfiles(ProfilesT&& value) {
+    m_profilesHasBeenSet = true;
+    m_profiles = std::forward<ProfilesT>(value);
+  }
+  template <typename ProfilesT = Aws::Vector<Aws::String>>
+  GetWorkflowResult& WithProfiles(ProfilesT&& value) {
+    SetProfiles(std::forward<ProfilesT>(value));
+    return *this;
+  }
+  template <typename ProfilesT = Aws::String>
+  GetWorkflowResult& AddProfiles(ProfilesT&& value) {
+    m_profilesHasBeenSet = true;
+    m_profiles.emplace_back(std::forward<ProfilesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A mapping of profile names to their parameter templates. Each profile defines
+   * its own set of parameters that you can use when starting a run with that
+   * profile.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::Map<Aws::String, WorkflowParameter>>& GetProfileParameterTemplates() const {
+    return m_profileParameterTemplates;
+  }
+  template <typename ProfileParameterTemplatesT = Aws::Map<Aws::String, Aws::Map<Aws::String, WorkflowParameter>>>
+  void SetProfileParameterTemplates(ProfileParameterTemplatesT&& value) {
+    m_profileParameterTemplatesHasBeenSet = true;
+    m_profileParameterTemplates = std::forward<ProfileParameterTemplatesT>(value);
+  }
+  template <typename ProfileParameterTemplatesT = Aws::Map<Aws::String, Aws::Map<Aws::String, WorkflowParameter>>>
+  GetWorkflowResult& WithProfileParameterTemplates(ProfileParameterTemplatesT&& value) {
+    SetProfileParameterTemplates(std::forward<ProfileParameterTemplatesT>(value));
+    return *this;
+  }
+  template <typename ProfileParameterTemplatesKeyT = Aws::String,
+            typename ProfileParameterTemplatesValueT = Aws::Map<Aws::String, WorkflowParameter>>
+  GetWorkflowResult& AddProfileParameterTemplates(ProfileParameterTemplatesKeyT&& key, ProfileParameterTemplatesValueT&& value) {
+    m_profileParameterTemplatesHasBeenSet = true;
+    m_profileParameterTemplates.emplace(std::forward<ProfileParameterTemplatesKeyT>(key),
+                                        std::forward<ProfileParameterTemplatesValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -503,6 +557,10 @@ class GetWorkflowResult {
 
   Aws::String m_readmePath;
 
+  Aws::Vector<Aws::String> m_profiles;
+
+  Aws::Map<Aws::String, Aws::Map<Aws::String, WorkflowParameter>> m_profileParameterTemplates;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -528,6 +586,8 @@ class GetWorkflowResult {
   bool m_readmeHasBeenSet = false;
   bool m_definitionRepositoryDetailsHasBeenSet = false;
   bool m_readmePathHasBeenSet = false;
+  bool m_profilesHasBeenSet = false;
+  bool m_profileParameterTemplatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

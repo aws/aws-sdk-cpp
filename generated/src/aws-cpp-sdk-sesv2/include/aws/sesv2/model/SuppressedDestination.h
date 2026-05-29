@@ -24,7 +24,8 @@ namespace Model {
 
 /**
  * <p>An object that contains information about an email address that is on the
- * suppression list for your account.</p><p><h3>See Also:</h3>   <a
+ * suppression list for your account or for a specific tenant.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SuppressedDestination">AWS
  * API Reference</a></p>
  */
@@ -37,7 +38,8 @@ class SuppressedDestination {
 
   ///@{
   /**
-   * <p>The email address that is on the suppression list for your account.</p>
+   * <p>The email address that is on the suppression list for your account or for a
+   * specific tenant.</p>
    */
   inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
   inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
@@ -56,7 +58,7 @@ class SuppressedDestination {
   ///@{
   /**
    * <p>The reason that the address was added to the suppression list for your
-   * account.</p>
+   * account or for a specific tenant.</p>
    */
   inline SuppressionListReason GetReason() const { return m_reason; }
   inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
@@ -92,7 +94,8 @@ class SuppressedDestination {
   ///@{
   /**
    * <p>An optional value that can contain additional information about the reasons
-   * that the address was added to the suppression list for your account.</p>
+   * that the address was added to the suppression list for your account or for a
+   * specific tenant.</p>
    */
   inline const SuppressedDestinationAttributes& GetAttributes() const { return m_attributes; }
   inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
@@ -107,6 +110,26 @@ class SuppressedDestination {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the tenant that the suppressed destination belongs to. This field
+   * is present only when the suppressed destination is on a tenant's suppression
+   * list.</p>
+   */
+  inline const Aws::String& GetTenantName() const { return m_tenantName; }
+  inline bool TenantNameHasBeenSet() const { return m_tenantNameHasBeenSet; }
+  template <typename TenantNameT = Aws::String>
+  void SetTenantName(TenantNameT&& value) {
+    m_tenantNameHasBeenSet = true;
+    m_tenantName = std::forward<TenantNameT>(value);
+  }
+  template <typename TenantNameT = Aws::String>
+  SuppressedDestination& WithTenantName(TenantNameT&& value) {
+    SetTenantName(std::forward<TenantNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_emailAddress;
 
@@ -115,10 +138,13 @@ class SuppressedDestination {
   Aws::Utils::DateTime m_lastUpdateTime{};
 
   SuppressedDestinationAttributes m_attributes;
+
+  Aws::String m_tenantName;
   bool m_emailAddressHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
   bool m_lastUpdateTimeHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
+  bool m_tenantNameHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -38,6 +38,7 @@
 #include <aws/quicksight/model/CreateIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/CreateIngestionResult.h>
 #include <aws/quicksight/model/CreateNamespaceResult.h>
+#include <aws/quicksight/model/CreateOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/CreateRefreshScheduleResult.h>
 #include <aws/quicksight/model/CreateRoleMembershipResult.h>
 #include <aws/quicksight/model/CreateTemplateAliasResult.h>
@@ -67,6 +68,7 @@
 #include <aws/quicksight/model/DeleteIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/DeleteIdentityPropagationConfigResult.h>
 #include <aws/quicksight/model/DeleteNamespaceResult.h>
+#include <aws/quicksight/model/DeleteOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/DeleteRefreshScheduleResult.h>
 #include <aws/quicksight/model/DeleteRoleCustomPermissionResult.h>
 #include <aws/quicksight/model/DeleteRoleMembershipResult.h>
@@ -118,6 +120,7 @@
 #include <aws/quicksight/model/DescribeIpRestrictionResult.h>
 #include <aws/quicksight/model/DescribeKeyRegistrationResult.h>
 #include <aws/quicksight/model/DescribeNamespaceResult.h>
+#include <aws/quicksight/model/DescribeOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/DescribeQPersonalizationConfigurationResult.h>
 #include <aws/quicksight/model/DescribeQuickSightQSearchConfigurationResult.h>
 #include <aws/quicksight/model/DescribeRefreshScheduleResult.h>
@@ -165,6 +168,7 @@
 #include <aws/quicksight/model/ListIdentityPropagationConfigsResult.h>
 #include <aws/quicksight/model/ListIngestionsResult.h>
 #include <aws/quicksight/model/ListNamespacesResult.h>
+#include <aws/quicksight/model/ListOAuthClientApplicationsResult.h>
 #include <aws/quicksight/model/ListRefreshSchedulesResult.h>
 #include <aws/quicksight/model/ListRoleMembershipsResult.h>
 #include <aws/quicksight/model/ListSelfUpgradesResult.h>
@@ -231,6 +235,7 @@
 #include <aws/quicksight/model/UpdateIdentityPropagationConfigResult.h>
 #include <aws/quicksight/model/UpdateIpRestrictionResult.h>
 #include <aws/quicksight/model/UpdateKeyRegistrationResult.h>
+#include <aws/quicksight/model/UpdateOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/UpdatePublicSharingSettingsResult.h>
 #include <aws/quicksight/model/UpdateQPersonalizationConfigurationResult.h>
 #include <aws/quicksight/model/UpdateQuickSightQSearchConfigurationResult.h>
@@ -303,6 +308,7 @@ class CreateGroupMembershipRequest;
 class CreateIAMPolicyAssignmentRequest;
 class CreateIngestionRequest;
 class CreateNamespaceRequest;
+class CreateOAuthClientApplicationRequest;
 class CreateRefreshScheduleRequest;
 class CreateRoleMembershipRequest;
 class CreateTemplateRequest;
@@ -332,6 +338,7 @@ class DeleteGroupMembershipRequest;
 class DeleteIAMPolicyAssignmentRequest;
 class DeleteIdentityPropagationConfigRequest;
 class DeleteNamespaceRequest;
+class DeleteOAuthClientApplicationRequest;
 class DeleteRefreshScheduleRequest;
 class DeleteRoleCustomPermissionRequest;
 class DeleteRoleMembershipRequest;
@@ -383,6 +390,7 @@ class DescribeIngestionRequest;
 class DescribeIpRestrictionRequest;
 class DescribeKeyRegistrationRequest;
 class DescribeNamespaceRequest;
+class DescribeOAuthClientApplicationRequest;
 class DescribeQPersonalizationConfigurationRequest;
 class DescribeQuickSightQSearchConfigurationRequest;
 class DescribeRefreshScheduleRequest;
@@ -430,6 +438,7 @@ class ListIAMPolicyAssignmentsForUserRequest;
 class ListIdentityPropagationConfigsRequest;
 class ListIngestionsRequest;
 class ListNamespacesRequest;
+class ListOAuthClientApplicationsRequest;
 class ListRefreshSchedulesRequest;
 class ListRoleMembershipsRequest;
 class ListSelfUpgradesRequest;
@@ -496,6 +505,7 @@ class UpdateIAMPolicyAssignmentRequest;
 class UpdateIdentityPropagationConfigRequest;
 class UpdateIpRestrictionRequest;
 class UpdateKeyRegistrationRequest;
+class UpdateOAuthClientApplicationRequest;
 class UpdatePublicSharingSettingsRequest;
 class UpdateQPersonalizationConfigurationRequest;
 class UpdateQuickSightQSearchConfigurationRequest;
@@ -538,6 +548,7 @@ typedef Aws::Utils::Outcome<CreateGroupMembershipResult, QuickSightError> Create
 typedef Aws::Utils::Outcome<CreateIAMPolicyAssignmentResult, QuickSightError> CreateIAMPolicyAssignmentOutcome;
 typedef Aws::Utils::Outcome<CreateIngestionResult, QuickSightError> CreateIngestionOutcome;
 typedef Aws::Utils::Outcome<CreateNamespaceResult, QuickSightError> CreateNamespaceOutcome;
+typedef Aws::Utils::Outcome<CreateOAuthClientApplicationResult, QuickSightError> CreateOAuthClientApplicationOutcome;
 typedef Aws::Utils::Outcome<CreateRefreshScheduleResult, QuickSightError> CreateRefreshScheduleOutcome;
 typedef Aws::Utils::Outcome<CreateRoleMembershipResult, QuickSightError> CreateRoleMembershipOutcome;
 typedef Aws::Utils::Outcome<CreateTemplateResult, QuickSightError> CreateTemplateOutcome;
@@ -567,6 +578,7 @@ typedef Aws::Utils::Outcome<DeleteGroupMembershipResult, QuickSightError> Delete
 typedef Aws::Utils::Outcome<DeleteIAMPolicyAssignmentResult, QuickSightError> DeleteIAMPolicyAssignmentOutcome;
 typedef Aws::Utils::Outcome<DeleteIdentityPropagationConfigResult, QuickSightError> DeleteIdentityPropagationConfigOutcome;
 typedef Aws::Utils::Outcome<DeleteNamespaceResult, QuickSightError> DeleteNamespaceOutcome;
+typedef Aws::Utils::Outcome<DeleteOAuthClientApplicationResult, QuickSightError> DeleteOAuthClientApplicationOutcome;
 typedef Aws::Utils::Outcome<DeleteRefreshScheduleResult, QuickSightError> DeleteRefreshScheduleOutcome;
 typedef Aws::Utils::Outcome<DeleteRoleCustomPermissionResult, QuickSightError> DeleteRoleCustomPermissionOutcome;
 typedef Aws::Utils::Outcome<DeleteRoleMembershipResult, QuickSightError> DeleteRoleMembershipOutcome;
@@ -618,6 +630,7 @@ typedef Aws::Utils::Outcome<DescribeIngestionResult, QuickSightError> DescribeIn
 typedef Aws::Utils::Outcome<DescribeIpRestrictionResult, QuickSightError> DescribeIpRestrictionOutcome;
 typedef Aws::Utils::Outcome<DescribeKeyRegistrationResult, QuickSightError> DescribeKeyRegistrationOutcome;
 typedef Aws::Utils::Outcome<DescribeNamespaceResult, QuickSightError> DescribeNamespaceOutcome;
+typedef Aws::Utils::Outcome<DescribeOAuthClientApplicationResult, QuickSightError> DescribeOAuthClientApplicationOutcome;
 typedef Aws::Utils::Outcome<DescribeQPersonalizationConfigurationResult, QuickSightError> DescribeQPersonalizationConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeQuickSightQSearchConfigurationResult, QuickSightError> DescribeQuickSightQSearchConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeRefreshScheduleResult, QuickSightError> DescribeRefreshScheduleOutcome;
@@ -666,6 +679,7 @@ typedef Aws::Utils::Outcome<ListIAMPolicyAssignmentsForUserResult, QuickSightErr
 typedef Aws::Utils::Outcome<ListIdentityPropagationConfigsResult, QuickSightError> ListIdentityPropagationConfigsOutcome;
 typedef Aws::Utils::Outcome<ListIngestionsResult, QuickSightError> ListIngestionsOutcome;
 typedef Aws::Utils::Outcome<ListNamespacesResult, QuickSightError> ListNamespacesOutcome;
+typedef Aws::Utils::Outcome<ListOAuthClientApplicationsResult, QuickSightError> ListOAuthClientApplicationsOutcome;
 typedef Aws::Utils::Outcome<ListRefreshSchedulesResult, QuickSightError> ListRefreshSchedulesOutcome;
 typedef Aws::Utils::Outcome<ListRoleMembershipsResult, QuickSightError> ListRoleMembershipsOutcome;
 typedef Aws::Utils::Outcome<ListSelfUpgradesResult, QuickSightError> ListSelfUpgradesOutcome;
@@ -732,6 +746,7 @@ typedef Aws::Utils::Outcome<UpdateIAMPolicyAssignmentResult, QuickSightError> Up
 typedef Aws::Utils::Outcome<UpdateIdentityPropagationConfigResult, QuickSightError> UpdateIdentityPropagationConfigOutcome;
 typedef Aws::Utils::Outcome<UpdateIpRestrictionResult, QuickSightError> UpdateIpRestrictionOutcome;
 typedef Aws::Utils::Outcome<UpdateKeyRegistrationResult, QuickSightError> UpdateKeyRegistrationOutcome;
+typedef Aws::Utils::Outcome<UpdateOAuthClientApplicationResult, QuickSightError> UpdateOAuthClientApplicationOutcome;
 typedef Aws::Utils::Outcome<UpdatePublicSharingSettingsResult, QuickSightError> UpdatePublicSharingSettingsOutcome;
 typedef Aws::Utils::Outcome<UpdateQPersonalizationConfigurationResult, QuickSightError> UpdateQPersonalizationConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateQuickSightQSearchConfigurationResult, QuickSightError> UpdateQuickSightQSearchConfigurationOutcome;
@@ -774,6 +789,7 @@ typedef std::future<CreateGroupMembershipOutcome> CreateGroupMembershipOutcomeCa
 typedef std::future<CreateIAMPolicyAssignmentOutcome> CreateIAMPolicyAssignmentOutcomeCallable;
 typedef std::future<CreateIngestionOutcome> CreateIngestionOutcomeCallable;
 typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
+typedef std::future<CreateOAuthClientApplicationOutcome> CreateOAuthClientApplicationOutcomeCallable;
 typedef std::future<CreateRefreshScheduleOutcome> CreateRefreshScheduleOutcomeCallable;
 typedef std::future<CreateRoleMembershipOutcome> CreateRoleMembershipOutcomeCallable;
 typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
@@ -803,6 +819,7 @@ typedef std::future<DeleteGroupMembershipOutcome> DeleteGroupMembershipOutcomeCa
 typedef std::future<DeleteIAMPolicyAssignmentOutcome> DeleteIAMPolicyAssignmentOutcomeCallable;
 typedef std::future<DeleteIdentityPropagationConfigOutcome> DeleteIdentityPropagationConfigOutcomeCallable;
 typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
+typedef std::future<DeleteOAuthClientApplicationOutcome> DeleteOAuthClientApplicationOutcomeCallable;
 typedef std::future<DeleteRefreshScheduleOutcome> DeleteRefreshScheduleOutcomeCallable;
 typedef std::future<DeleteRoleCustomPermissionOutcome> DeleteRoleCustomPermissionOutcomeCallable;
 typedef std::future<DeleteRoleMembershipOutcome> DeleteRoleMembershipOutcomeCallable;
@@ -854,6 +871,7 @@ typedef std::future<DescribeIngestionOutcome> DescribeIngestionOutcomeCallable;
 typedef std::future<DescribeIpRestrictionOutcome> DescribeIpRestrictionOutcomeCallable;
 typedef std::future<DescribeKeyRegistrationOutcome> DescribeKeyRegistrationOutcomeCallable;
 typedef std::future<DescribeNamespaceOutcome> DescribeNamespaceOutcomeCallable;
+typedef std::future<DescribeOAuthClientApplicationOutcome> DescribeOAuthClientApplicationOutcomeCallable;
 typedef std::future<DescribeQPersonalizationConfigurationOutcome> DescribeQPersonalizationConfigurationOutcomeCallable;
 typedef std::future<DescribeQuickSightQSearchConfigurationOutcome> DescribeQuickSightQSearchConfigurationOutcomeCallable;
 typedef std::future<DescribeRefreshScheduleOutcome> DescribeRefreshScheduleOutcomeCallable;
@@ -901,6 +919,7 @@ typedef std::future<ListIAMPolicyAssignmentsForUserOutcome> ListIAMPolicyAssignm
 typedef std::future<ListIdentityPropagationConfigsOutcome> ListIdentityPropagationConfigsOutcomeCallable;
 typedef std::future<ListIngestionsOutcome> ListIngestionsOutcomeCallable;
 typedef std::future<ListNamespacesOutcome> ListNamespacesOutcomeCallable;
+typedef std::future<ListOAuthClientApplicationsOutcome> ListOAuthClientApplicationsOutcomeCallable;
 typedef std::future<ListRefreshSchedulesOutcome> ListRefreshSchedulesOutcomeCallable;
 typedef std::future<ListRoleMembershipsOutcome> ListRoleMembershipsOutcomeCallable;
 typedef std::future<ListSelfUpgradesOutcome> ListSelfUpgradesOutcomeCallable;
@@ -967,6 +986,7 @@ typedef std::future<UpdateIAMPolicyAssignmentOutcome> UpdateIAMPolicyAssignmentO
 typedef std::future<UpdateIdentityPropagationConfigOutcome> UpdateIdentityPropagationConfigOutcomeCallable;
 typedef std::future<UpdateIpRestrictionOutcome> UpdateIpRestrictionOutcomeCallable;
 typedef std::future<UpdateKeyRegistrationOutcome> UpdateKeyRegistrationOutcomeCallable;
+typedef std::future<UpdateOAuthClientApplicationOutcome> UpdateOAuthClientApplicationOutcomeCallable;
 typedef std::future<UpdatePublicSharingSettingsOutcome> UpdatePublicSharingSettingsOutcomeCallable;
 typedef std::future<UpdateQPersonalizationConfigurationOutcome> UpdateQPersonalizationConfigurationOutcomeCallable;
 typedef std::future<UpdateQuickSightQSearchConfigurationOutcome> UpdateQuickSightQSearchConfigurationOutcomeCallable;
@@ -1052,6 +1072,10 @@ typedef std::function<void(const QuickSightClient*, const Model::CreateIngestion
 typedef std::function<void(const QuickSightClient*, const Model::CreateNamespaceRequest&, const Model::CreateNamespaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateNamespaceResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::CreateOAuthClientApplicationRequest&,
+                           const Model::CreateOAuthClientApplicationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateOAuthClientApplicationResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::CreateRefreshScheduleRequest&, const Model::CreateRefreshScheduleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateRefreshScheduleResponseReceivedHandler;
@@ -1143,6 +1167,10 @@ typedef std::function<void(const QuickSightClient*, const Model::DeleteIdentityP
 typedef std::function<void(const QuickSightClient*, const Model::DeleteNamespaceRequest&, const Model::DeleteNamespaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteNamespaceResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DeleteOAuthClientApplicationRequest&,
+                           const Model::DeleteOAuthClientApplicationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteOAuthClientApplicationResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::DeleteRefreshScheduleRequest&, const Model::DeleteRefreshScheduleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRefreshScheduleResponseReceivedHandler;
@@ -1310,6 +1338,10 @@ typedef std::function<void(const QuickSightClient*, const Model::DescribeKeyRegi
 typedef std::function<void(const QuickSightClient*, const Model::DescribeNamespaceRequest&, const Model::DescribeNamespaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeNamespaceResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DescribeOAuthClientApplicationRequest&,
+                           const Model::DescribeOAuthClientApplicationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeOAuthClientApplicationResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::DescribeQPersonalizationConfigurationRequest&,
                            const Model::DescribeQPersonalizationConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1461,6 +1493,9 @@ typedef std::function<void(const QuickSightClient*, const Model::ListIngestionsR
 typedef std::function<void(const QuickSightClient*, const Model::ListNamespacesRequest&, const Model::ListNamespacesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListNamespacesResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::ListOAuthClientApplicationsRequest&,
+                           const Model::ListOAuthClientApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListOAuthClientApplicationsResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::ListRefreshSchedulesRequest&, const Model::ListRefreshSchedulesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRefreshSchedulesResponseReceivedHandler;
@@ -1667,6 +1702,10 @@ typedef std::function<void(const QuickSightClient*, const Model::UpdateIpRestric
 typedef std::function<void(const QuickSightClient*, const Model::UpdateKeyRegistrationRequest&, const Model::UpdateKeyRegistrationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateKeyRegistrationResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::UpdateOAuthClientApplicationRequest&,
+                           const Model::UpdateOAuthClientApplicationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateOAuthClientApplicationResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::UpdatePublicSharingSettingsRequest&,
                            const Model::UpdatePublicSharingSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdatePublicSharingSettingsResponseReceivedHandler;

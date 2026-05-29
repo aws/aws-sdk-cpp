@@ -719,6 +719,23 @@ class GetRunResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The engine-specific settings for the workflow run.</p>
+   */
+  inline Aws::Utils::DocumentView GetEngineSettings() const { return m_engineSettings; }
+  template <typename EngineSettingsT = Aws::Utils::Document>
+  void SetEngineSettings(EngineSettingsT&& value) {
+    m_engineSettingsHasBeenSet = true;
+    m_engineSettings = std::forward<EngineSettingsT>(value);
+  }
+  template <typename EngineSettingsT = Aws::Utils::Document>
+  GetRunResult& WithEngineSettings(EngineSettingsT&& value) {
+    SetEngineSettings(std::forward<EngineSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -815,6 +832,8 @@ class GetRunResult {
 
   VpcConfigResponse m_vpcConfig;
 
+  Aws::Utils::Document m_engineSettings;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -857,6 +876,7 @@ class GetRunResult {
   bool m_networkingModeHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
+  bool m_engineSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

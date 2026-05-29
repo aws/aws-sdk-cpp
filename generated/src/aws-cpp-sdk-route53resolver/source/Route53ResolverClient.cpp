@@ -24,6 +24,9 @@
 #include <aws/route53resolver/model/AssociateResolverEndpointIpAddressRequest.h>
 #include <aws/route53resolver/model/AssociateResolverQueryLogConfigRequest.h>
 #include <aws/route53resolver/model/AssociateResolverRuleRequest.h>
+#include <aws/route53resolver/model/BatchCreateFirewallRuleRequest.h>
+#include <aws/route53resolver/model/BatchDeleteFirewallRuleRequest.h>
+#include <aws/route53resolver/model/BatchUpdateFirewallRuleRequest.h>
 #include <aws/route53resolver/model/CreateFirewallDomainListRequest.h>
 #include <aws/route53resolver/model/CreateFirewallRuleGroupRequest.h>
 #include <aws/route53resolver/model/CreateFirewallRuleRequest.h>
@@ -63,6 +66,7 @@
 #include <aws/route53resolver/model/ListFirewallDomainsRequest.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsRequest.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupsRequest.h>
+#include <aws/route53resolver/model/ListFirewallRuleTypesRequest.h>
 #include <aws/route53resolver/model/ListFirewallRulesRequest.h>
 #include <aws/route53resolver/model/ListOutpostResolversRequest.h>
 #include <aws/route53resolver/model/ListResolverConfigsRequest.h>
@@ -268,6 +272,24 @@ AssociateResolverRuleOutcome Route53ResolverClient::AssociateResolverRule(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AssociateResolverRuleOutcome(result.GetResultWithOwnership())
                             : AssociateResolverRuleOutcome(std::move(result.GetError()));
+}
+
+BatchCreateFirewallRuleOutcome Route53ResolverClient::BatchCreateFirewallRule(const BatchCreateFirewallRuleRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : BatchCreateFirewallRuleOutcome(std::move(result.GetError()));
+}
+
+BatchDeleteFirewallRuleOutcome Route53ResolverClient::BatchDeleteFirewallRule(const BatchDeleteFirewallRuleRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteFirewallRuleOutcome(std::move(result.GetError()));
+}
+
+BatchUpdateFirewallRuleOutcome Route53ResolverClient::BatchUpdateFirewallRule(const BatchUpdateFirewallRuleRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateFirewallRuleOutcome(std::move(result.GetError()));
 }
 
 CreateFirewallDomainListOutcome Route53ResolverClient::CreateFirewallDomainList(const CreateFirewallDomainListRequest& request) const {
@@ -513,6 +535,12 @@ ListFirewallRuleGroupsOutcome Route53ResolverClient::ListFirewallRuleGroups(cons
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListFirewallRuleGroupsOutcome(result.GetResultWithOwnership())
                             : ListFirewallRuleGroupsOutcome(std::move(result.GetError()));
+}
+
+ListFirewallRuleTypesOutcome Route53ResolverClient::ListFirewallRuleTypes(const ListFirewallRuleTypesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFirewallRuleTypesOutcome(result.GetResultWithOwnership())
+                            : ListFirewallRuleTypesOutcome(std::move(result.GetError()));
 }
 
 ListFirewallRulesOutcome Route53ResolverClient::ListFirewallRules(const ListFirewallRulesRequest& request) const {

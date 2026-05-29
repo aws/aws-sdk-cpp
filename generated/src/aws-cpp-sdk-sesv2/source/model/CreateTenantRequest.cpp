@@ -27,5 +27,9 @@ Aws::String CreateTenantRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_suppressionAttributesHasBeenSet) {
+    payload.WithObject("SuppressionAttributes", m_suppressionAttributes.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

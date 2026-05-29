@@ -49,6 +49,10 @@ CreateTenantResult& CreateTenantResult::operator=(const Aws::AmazonWebServiceRes
     m_sendingStatus = SendingStatusMapper::GetSendingStatusForName(jsonValue.GetString("SendingStatus"));
     m_sendingStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SuppressionAttributes")) {
+    m_suppressionAttributes = jsonValue.GetObject("SuppressionAttributes");
+    m_suppressionAttributesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

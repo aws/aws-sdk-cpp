@@ -11,6 +11,7 @@
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/SendingStatus.h>
 #include <aws/sesv2/model/Tag.h>
+#include <aws/sesv2/model/TenantSuppressionAttributes.h>
 
 #include <utility>
 
@@ -145,6 +146,21 @@ class CreateTenantResult {
 
   ///@{
 
+  inline const TenantSuppressionAttributes& GetSuppressionAttributes() const { return m_suppressionAttributes; }
+  template <typename SuppressionAttributesT = TenantSuppressionAttributes>
+  void SetSuppressionAttributes(SuppressionAttributesT&& value) {
+    m_suppressionAttributesHasBeenSet = true;
+    m_suppressionAttributes = std::forward<SuppressionAttributesT>(value);
+  }
+  template <typename SuppressionAttributesT = TenantSuppressionAttributes>
+  CreateTenantResult& WithSuppressionAttributes(SuppressionAttributesT&& value) {
+    SetSuppressionAttributes(std::forward<SuppressionAttributesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
   void SetRequestId(RequestIdT&& value) {
@@ -172,6 +188,8 @@ class CreateTenantResult {
 
   SendingStatus m_sendingStatus{SendingStatus::NOT_SET};
 
+  TenantSuppressionAttributes m_suppressionAttributes;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tenantNameHasBeenSet = false;
@@ -180,6 +198,7 @@ class CreateTenantResult {
   bool m_createdTimestampHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_sendingStatusHasBeenSet = false;
+  bool m_suppressionAttributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

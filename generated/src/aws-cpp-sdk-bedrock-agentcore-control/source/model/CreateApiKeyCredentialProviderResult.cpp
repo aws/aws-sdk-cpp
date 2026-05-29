@@ -29,6 +29,14 @@ CreateApiKeyCredentialProviderResult& CreateApiKeyCredentialProviderResult::oper
     m_apiKeySecretArn = jsonValue.GetObject("apiKeySecretArn");
     m_apiKeySecretArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("apiKeySecretJsonKey")) {
+    m_apiKeySecretJsonKey = jsonValue.GetString("apiKeySecretJsonKey");
+    m_apiKeySecretJsonKeyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("apiKeySecretSource")) {
+    m_apiKeySecretSource = SecretSourceTypeMapper::GetSecretSourceTypeForName(jsonValue.GetString("apiKeySecretSource"));
+    m_apiKeySecretSourceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
