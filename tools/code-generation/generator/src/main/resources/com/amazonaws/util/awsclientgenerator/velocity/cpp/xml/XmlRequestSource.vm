@@ -12,7 +12,13 @@
 \#include <aws/core/utils/xml/XmlSerializer.h>
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
 \#include <aws/core/utils/UnreferencedParam.h>
-#if($shape.hasQueryStringMembers())
+#set($needsURIHeader = $shape.hasQueryStringMembers())
+#if(!$needsURIHeader)
+#foreach($member in $shape.members.entrySet())
+#if($member.value.requiresHeaderEncoding())#set($needsURIHeader = true)#end
+#end
+#end
+#if($needsURIHeader)
 \#include <aws/core/http/URI.h>
 #end
 #foreach($header in $typeInfo.sourceIncludes)
@@ -40,7 +46,7 @@
 using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
-#if($shape.hasQueryStringMembers())
+#if($needsURIHeader)
 using namespace Aws::Http;
 #end
 
