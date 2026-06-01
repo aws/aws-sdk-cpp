@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
 #include <aws/marketplace-agreement/model/Acceptor.h>
 #include <aws/marketplace-agreement/model/AgreementStatus.h>
+#include <aws/marketplace-agreement/model/Entitlement.h>
 #include <aws/marketplace-agreement/model/ProposalSummary.h>
 #include <aws/marketplace-agreement/model/Proposer.h>
 
@@ -199,6 +201,30 @@ class AgreementViewSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of entitlements associated with the agreement.</p>
+   */
+  inline const Aws::Vector<Entitlement>& GetEntitlements() const { return m_entitlements; }
+  inline bool EntitlementsHasBeenSet() const { return m_entitlementsHasBeenSet; }
+  template <typename EntitlementsT = Aws::Vector<Entitlement>>
+  void SetEntitlements(EntitlementsT&& value) {
+    m_entitlementsHasBeenSet = true;
+    m_entitlements = std::forward<EntitlementsT>(value);
+  }
+  template <typename EntitlementsT = Aws::Vector<Entitlement>>
+  AgreementViewSummary& WithEntitlements(EntitlementsT&& value) {
+    SetEntitlements(std::forward<EntitlementsT>(value));
+    return *this;
+  }
+  template <typename EntitlementsT = Entitlement>
+  AgreementViewSummary& AddEntitlements(EntitlementsT&& value) {
+    m_entitlementsHasBeenSet = true;
+    m_entitlements.emplace_back(std::forward<EntitlementsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_agreementId;
 
@@ -217,6 +243,8 @@ class AgreementViewSummary {
   ProposalSummary m_proposalSummary;
 
   AgreementStatus m_status{AgreementStatus::NOT_SET};
+
+  Aws::Vector<Entitlement> m_entitlements;
   bool m_agreementIdHasBeenSet = false;
   bool m_acceptanceTimeHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
@@ -226,6 +254,7 @@ class AgreementViewSummary {
   bool m_proposerHasBeenSet = false;
   bool m_proposalSummaryHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_entitlementsHasBeenSet = false;
 };
 
 }  // namespace Model

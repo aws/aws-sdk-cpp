@@ -38,6 +38,13 @@ UserPoolDescriptionType& UserPoolDescriptionType::operator=(JsonView jsonValue) 
     m_creationDate = jsonValue.GetDouble("CreationDate");
     m_creationDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ReplicaRegions")) {
+    Aws::Utils::Array<JsonView> replicaRegionsJsonList = jsonValue.GetArray("ReplicaRegions");
+    for (unsigned replicaRegionsIndex = 0; replicaRegionsIndex < replicaRegionsJsonList.GetLength(); ++replicaRegionsIndex) {
+      m_replicaRegions.push_back(replicaRegionsJsonList[replicaRegionsIndex].AsString());
+    }
+    m_replicaRegionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +69,14 @@ JsonValue UserPoolDescriptionType::Jsonize() const {
 
   if (m_creationDateHasBeenSet) {
     payload.WithDouble("CreationDate", m_creationDate.SecondsWithMSPrecision());
+  }
+
+  if (m_replicaRegionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> replicaRegionsJsonList(m_replicaRegions.size());
+    for (unsigned replicaRegionsIndex = 0; replicaRegionsIndex < replicaRegionsJsonList.GetLength(); ++replicaRegionsIndex) {
+      replicaRegionsJsonList[replicaRegionsIndex].AsString(m_replicaRegions[replicaRegionsIndex]);
+    }
+    payload.WithArray("ReplicaRegions", std::move(replicaRegionsJsonList));
   }
 
   return payload;

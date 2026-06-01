@@ -30,6 +30,10 @@ CreateUserPoolDomainResult& CreateUserPoolDomainResult::operator=(const Aws::Ama
     m_cloudFrontDomain = jsonValue.GetString("CloudFrontDomain");
     m_cloudFrontDomainHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Routing")) {
+    m_routing = jsonValue.GetObject("Routing");
+    m_routingHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

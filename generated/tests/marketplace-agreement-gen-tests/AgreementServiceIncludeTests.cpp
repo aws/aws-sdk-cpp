@@ -62,6 +62,7 @@
 #include <aws/marketplace-agreement/model/DescribeAgreementResult.h>
 #include <aws/marketplace-agreement/model/Dimension.h>
 #include <aws/marketplace-agreement/model/DocumentItem.h>
+#include <aws/marketplace-agreement/model/Entitlement.h>
 #include <aws/marketplace-agreement/model/EstimatedCharges.h>
 #include <aws/marketplace-agreement/model/EstimatedTaxes.h>
 #include <aws/marketplace-agreement/model/ExpectedCharge.h>

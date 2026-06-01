@@ -136,6 +136,14 @@ Aws::String CreateUserPoolRequest::SerializePayload() const {
     payload.WithString("UserPoolTier", UserPoolTierTypeMapper::GetNameForUserPoolTierType(m_userPoolTier));
   }
 
+  if (m_keyConfigurationHasBeenSet) {
+    payload.WithObject("KeyConfiguration", m_keyConfiguration.Jsonize());
+  }
+
+  if (m_issuerConfigurationHasBeenSet) {
+    payload.WithObject("IssuerConfiguration", m_issuerConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

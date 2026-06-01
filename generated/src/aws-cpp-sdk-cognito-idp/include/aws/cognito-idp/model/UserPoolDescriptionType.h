@@ -8,6 +8,7 @@
 #include <aws/cognito-idp/model/LambdaConfigType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -128,6 +129,31 @@ class UserPoolDescriptionType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of Amazon Web Services Regions where replicas of this user pool
+   * exist.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetReplicaRegions() const { return m_replicaRegions; }
+  inline bool ReplicaRegionsHasBeenSet() const { return m_replicaRegionsHasBeenSet; }
+  template <typename ReplicaRegionsT = Aws::Vector<Aws::String>>
+  void SetReplicaRegions(ReplicaRegionsT&& value) {
+    m_replicaRegionsHasBeenSet = true;
+    m_replicaRegions = std::forward<ReplicaRegionsT>(value);
+  }
+  template <typename ReplicaRegionsT = Aws::Vector<Aws::String>>
+  UserPoolDescriptionType& WithReplicaRegions(ReplicaRegionsT&& value) {
+    SetReplicaRegions(std::forward<ReplicaRegionsT>(value));
+    return *this;
+  }
+  template <typename ReplicaRegionsT = Aws::String>
+  UserPoolDescriptionType& AddReplicaRegions(ReplicaRegionsT&& value) {
+    m_replicaRegionsHasBeenSet = true;
+    m_replicaRegions.emplace_back(std::forward<ReplicaRegionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -138,11 +164,14 @@ class UserPoolDescriptionType {
   Aws::Utils::DateTime m_lastModifiedDate{};
 
   Aws::Utils::DateTime m_creationDate{};
+
+  Aws::Vector<Aws::String> m_replicaRegions;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_lambdaConfigHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
+  bool m_replicaRegionsHasBeenSet = false;
 };
 
 }  // namespace Model

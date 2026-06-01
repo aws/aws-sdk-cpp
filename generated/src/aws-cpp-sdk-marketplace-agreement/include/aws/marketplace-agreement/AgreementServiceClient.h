@@ -21,15 +21,7 @@ namespace AgreementService {
  * solutions and run their businesses. The AWS Marketplace Agreement Service
  * provides an API interface that helps AWS Marketplace sellers and buyers manage
  * their product-related agreements, including listing, searching, creating, and
- * filtering agreements.</p> <p>To manage agreements in AWS Marketplace, you must
- * ensure that your AWS Identity and Access Management (IAM) policies and roles are
- * set up. The user must have the required policies/permissions that allow them to
- * carry out the actions in AWS:</p> <ul> <li> <p> <code>DescribeAgreement</code> –
- * Grants permission to users to obtain detailed meta data about any of their
- * agreements.</p> </li> <li> <p> <code>GetAgreementTerms</code> – Grants
- * permission to users to obtain details about the terms of an agreement.</p> </li>
- * <li> <p> <code>SearchAgreements</code> – Grants permission to users to search
- * through all their agreements.</p> </li> </ul>
+ * filtering agreements.</p>
  */
 class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<AgreementServiceClient>,

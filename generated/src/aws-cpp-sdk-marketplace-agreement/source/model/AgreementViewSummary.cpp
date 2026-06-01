@@ -54,6 +54,13 @@ AgreementViewSummary& AgreementViewSummary::operator=(JsonView jsonValue) {
     m_status = AgreementStatusMapper::GetAgreementStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("entitlements")) {
+    Aws::Utils::Array<JsonView> entitlementsJsonList = jsonValue.GetArray("entitlements");
+    for (unsigned entitlementsIndex = 0; entitlementsIndex < entitlementsJsonList.GetLength(); ++entitlementsIndex) {
+      m_entitlements.push_back(entitlementsJsonList[entitlementsIndex].AsObject());
+    }
+    m_entitlementsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +101,14 @@ JsonValue AgreementViewSummary::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", AgreementStatusMapper::GetNameForAgreementStatus(m_status));
+  }
+
+  if (m_entitlementsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> entitlementsJsonList(m_entitlements.size());
+    for (unsigned entitlementsIndex = 0; entitlementsIndex < entitlementsJsonList.GetLength(); ++entitlementsIndex) {
+      entitlementsJsonList[entitlementsIndex].AsObject(m_entitlements[entitlementsIndex].Jsonize());
+    }
+    payload.WithArray("entitlements", std::move(entitlementsJsonList));
   }
 
   return payload;

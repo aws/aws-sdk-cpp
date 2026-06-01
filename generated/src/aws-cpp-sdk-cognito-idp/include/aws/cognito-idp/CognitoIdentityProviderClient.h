@@ -2009,6 +2009,44 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Creates a replica of an existing user pool in a specified Amazon Web Services
+   * Region. The replica enables multi-region replication for high availability and
+   * disaster recovery. To create a replica, you must have permissions to create user
+   * pools in the target Region.</p>  <p>Amazon Cognito evaluates Identity and
+   * Access Management (IAM) policies in requests for this API operation. For this
+   * operation, you must use IAM credentials to authorize requests, and you must
+   * grant yourself the corresponding IAM permission in a policy.</p> <p
+   * class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolReplica">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateUserPoolReplicaOutcome CreateUserPoolReplica(const Model::CreateUserPoolReplicaRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateUserPoolReplica that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateUserPoolReplicaRequestT = Model::CreateUserPoolReplicaRequest>
+  Model::CreateUserPoolReplicaOutcomeCallable CreateUserPoolReplicaCallable(const CreateUserPoolReplicaRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::CreateUserPoolReplica, request);
+  }
+
+  /**
+   * An Async wrapper for CreateUserPoolReplica that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateUserPoolReplicaRequestT = Model::CreateUserPoolReplicaRequest>
+  void CreateUserPoolReplicaAsync(const CreateUserPoolReplicaRequestT& request, const CreateUserPoolReplicaResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::CreateUserPoolReplica, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a group from the specified user pool. When you delete a group, that
    * group no longer contributes to users' <code>cognito:preferred_group</code> or
    * <code>cognito:groups</code> claims, and no longer influence access-control
@@ -2395,6 +2433,43 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   void DeleteUserPoolDomainAsync(const DeleteUserPoolDomainRequestT& request, const DeleteUserPoolDomainResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CognitoIdentityProviderClient::DeleteUserPoolDomain, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a secondary replica user pool. You can only delete replicas that are
+   * in the INACTIVE status. This operation must be called from the primary
+   * Region.</p>  <p>Amazon Cognito evaluates Identity and Access Management
+   * (IAM) policies in requests for this API operation. For this operation, you must
+   * use IAM credentials to authorize requests, and you must grant yourself the
+   * corresponding IAM permission in a policy.</p> <p class="title"> <b>Learn
+   * more</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolReplica">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteUserPoolReplicaOutcome DeleteUserPoolReplica(const Model::DeleteUserPoolReplicaRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteUserPoolReplica that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteUserPoolReplicaRequestT = Model::DeleteUserPoolReplicaRequest>
+  Model::DeleteUserPoolReplicaOutcomeCallable DeleteUserPoolReplicaCallable(const DeleteUserPoolReplicaRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::DeleteUserPoolReplica, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteUserPoolReplica that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteUserPoolReplicaRequestT = Model::DeleteUserPoolReplicaRequest>
+  void DeleteUserPoolReplicaAsync(const DeleteUserPoolReplicaRequestT& request, const DeleteUserPoolReplicaResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::DeleteUserPoolReplica, request, handler, context);
   }
 
   /**
@@ -3759,6 +3834,43 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Lists all replicas for a user pool, including both primary and secondary
+   * replicas. We recommend using pagination to ensure that the operation returns
+   * quickly and successfully.</p>  <p>Amazon Cognito evaluates Identity and
+   * Access Management (IAM) policies in requests for this API operation. For this
+   * operation, you must use IAM credentials to authorize requests, and you must
+   * grant yourself the corresponding IAM permission in a policy.</p> <p
+   * class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolReplicas">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListUserPoolReplicasOutcome ListUserPoolReplicas(const Model::ListUserPoolReplicasRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListUserPoolReplicas that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListUserPoolReplicasRequestT = Model::ListUserPoolReplicasRequest>
+  Model::ListUserPoolReplicasOutcomeCallable ListUserPoolReplicasCallable(const ListUserPoolReplicasRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::ListUserPoolReplicas, request);
+  }
+
+  /**
+   * An Async wrapper for ListUserPoolReplicas that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListUserPoolReplicasRequestT = Model::ListUserPoolReplicasRequest>
+  void ListUserPoolReplicasAsync(const ListUserPoolReplicasRequestT& request, const ListUserPoolReplicasResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::ListUserPoolReplicas, request, handler, context);
+  }
+
+  /**
    * <p>Lists user pools and their details in the current Amazon Web Services
    * account.</p>  <p>Amazon Cognito evaluates Identity and Access Management
    * (IAM) policies in requests for this API operation. For this operation, you must
@@ -4100,7 +4212,11 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
    * <code>UserPoolAddOns</code> in an <code>UpdateUserPool</code> request. To
    * activate this setting, your user pool must be on the <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
-   * Plus tier</a>.</p><p><h3>See Also:</h3>   <a
+   * Plus tier</a>.</p> <p>In secondary regions for user pools with multi-region
+   * replication, only the <code>SourceARN</code> and <code>From</code> attributes of
+   * <code>NotifyConfiguration</code> can be modified to configure region-specific
+   * SES integration. All other risk configuration settings must match the existing
+   * values to maintain consistency across replicas.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration">AWS
    * API Reference</a></p>
    */
@@ -4868,19 +4984,22 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
    * <p>Updates the configuration of a user pool. To avoid setting parameters to
    * Amazon Cognito defaults, construct this API request to pass the existing
    * configuration of your user pool, modified to include the changes that you want
-   * to make.</p>  <p>With the exception of <code>UserPoolTier</code>, if
-   * you don't provide a value for an attribute, Amazon Cognito sets it to its
-   * default value.</p>   <p>This action might generate an SMS text
-   * message. Starting June 1, 2021, US telecom carriers require you to register an
-   * origination phone number before you can send SMS messages to US phone numbers.
-   * If you use SMS text messages in Amazon Cognito, you must register a phone number
-   * with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
-   * Pinpoint</a>. Amazon Cognito uses the registered number automatically.
-   * Otherwise, Amazon Cognito users who must receive SMS messages might not be able
-   * to sign up, activate their accounts, or sign in.</p> <p>If you have never used
-   * SMS text messages with Amazon Cognito or any other Amazon Web Services service,
-   * Amazon Simple Notification Service might place your account in the SMS sandbox.
-   * In <i> <a
+   * to make.</p>  <p>If you don't provide a value for an attribute,
+   * Amazon Cognito sets it to its default value.</p>  <p>In secondary
+   * regions for user pools with multi-region replication, regional configurations
+   * for email, SMS, Lambda functions, and tags can be updated. Both global and
+   * regional settings must be provided as inputs, with global settings required to
+   * match existing values to maintain consistency across replicas.</p>
+   * <p>This action might generate an SMS text message. Starting June 1, 2021, US
+   * telecom carriers require you to register an origination phone number before you
+   * can send SMS messages to US phone numbers. If you use SMS text messages in
+   * Amazon Cognito, you must register a phone number with <a
+   * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
+   * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
+   * users who must receive SMS messages might not be able to sign up, activate their
+   * accounts, or sign in.</p> <p>If you have never used SMS text messages with
+   * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
+   * Notification Service might place your account in the SMS sandbox. In <i> <a
    * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
    * mode</a> </i>, you can send messages only to verified phone numbers. After you
    * test your app while in the sandbox environment, you can move out of the sandbox
@@ -5015,6 +5134,43 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   void UpdateUserPoolDomainAsync(const UpdateUserPoolDomainRequestT& request, const UpdateUserPoolDomainResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CognitoIdentityProviderClient::UpdateUserPoolDomain, request, handler, context);
+  }
+
+  /**
+   * <p>Updates replica-specific settings for a user pool replica. You can modify the
+   * status to activate or deactivate the replica. This request can be made in both
+   * primary and secondary regions of the user pool.</p>  <p>Amazon Cognito
+   * evaluates Identity and Access Management (IAM) policies in requests for this API
+   * operation. For this operation, you must use IAM credentials to authorize
+   * requests, and you must grant yourself the corresponding IAM permission in a
+   * policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolReplica">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateUserPoolReplicaOutcome UpdateUserPoolReplica(const Model::UpdateUserPoolReplicaRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateUserPoolReplica that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateUserPoolReplicaRequestT = Model::UpdateUserPoolReplicaRequest>
+  Model::UpdateUserPoolReplicaOutcomeCallable UpdateUserPoolReplicaCallable(const UpdateUserPoolReplicaRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::UpdateUserPoolReplica, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateUserPoolReplica that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateUserPoolReplicaRequestT = Model::UpdateUserPoolReplicaRequest>
+  void UpdateUserPoolReplicaAsync(const UpdateUserPoolReplicaRequestT& request, const UpdateUserPoolReplicaResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::UpdateUserPoolReplica, request, handler, context);
   }
 
   /**

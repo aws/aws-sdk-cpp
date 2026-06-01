@@ -29,6 +29,12 @@
 #include <aws/quicksight/model/ActiveIAMPolicyAssignment.h>
 #include <aws/quicksight/model/AdHocFilteringOption.h>
 #include <aws/quicksight/model/AdditionalNotes.h>
+#include <aws/quicksight/model/Agent.h>
+#include <aws/quicksight/model/AgentLifecycle.h>
+#include <aws/quicksight/model/AgentOwnershipFilterAttribute.h>
+#include <aws/quicksight/model/AgentSearchFilter.h>
+#include <aws/quicksight/model/AgentStatus.h>
+#include <aws/quicksight/model/AgentSummary.h>
 #include <aws/quicksight/model/AggFunction.h>
 #include <aws/quicksight/model/AggType.h>
 #include <aws/quicksight/model/AggregateOperation.h>
@@ -278,6 +284,7 @@
 #include <aws/quicksight/model/ComparisonFormatConfiguration.h>
 #include <aws/quicksight/model/ComparisonMethod.h>
 #include <aws/quicksight/model/ComparisonMethodType.h>
+#include <aws/quicksight/model/ComparisonOperator.h>
 #include <aws/quicksight/model/Computation.h>
 #include <aws/quicksight/model/ConcurrentUpdatingException.h>
 #include <aws/quicksight/model/ConditionalFormattingColor.h>
@@ -312,6 +319,8 @@
 #include <aws/quicksight/model/CreateAccountSubscriptionResult.h>
 #include <aws/quicksight/model/CreateActionConnectorRequest.h>
 #include <aws/quicksight/model/CreateActionConnectorResult.h>
+#include <aws/quicksight/model/CreateAgentRequest.h>
+#include <aws/quicksight/model/CreateAgentResult.h>
 #include <aws/quicksight/model/CreateAnalysisRequest.h>
 #include <aws/quicksight/model/CreateAnalysisResult.h>
 #include <aws/quicksight/model/CreateBrandRequest.h>
@@ -325,6 +334,8 @@
 #include <aws/quicksight/model/CreateDataSetResult.h>
 #include <aws/quicksight/model/CreateDataSourceRequest.h>
 #include <aws/quicksight/model/CreateDataSourceResult.h>
+#include <aws/quicksight/model/CreateFlowRequest.h>
+#include <aws/quicksight/model/CreateFlowResult.h>
 #include <aws/quicksight/model/CreateFolderMembershipRequest.h>
 #include <aws/quicksight/model/CreateFolderMembershipResult.h>
 #include <aws/quicksight/model/CreateFolderRequest.h>
@@ -345,6 +356,8 @@
 #include <aws/quicksight/model/CreateRefreshScheduleResult.h>
 #include <aws/quicksight/model/CreateRoleMembershipRequest.h>
 #include <aws/quicksight/model/CreateRoleMembershipResult.h>
+#include <aws/quicksight/model/CreateSpaceRequest.h>
+#include <aws/quicksight/model/CreateSpaceResult.h>
 #include <aws/quicksight/model/CreateTemplateAliasRequest.h>
 #include <aws/quicksight/model/CreateTemplateAliasResult.h>
 #include <aws/quicksight/model/CreateTemplateRequest.h>
@@ -380,6 +393,10 @@
 #include <aws/quicksight/model/CustomNarrativeOptions.h>
 #include <aws/quicksight/model/CustomParameterValues.h>
 #include <aws/quicksight/model/CustomPermissions.h>
+#include <aws/quicksight/model/CustomPromptInput.h>
+#include <aws/quicksight/model/CustomPromptInputParameters.h>
+#include <aws/quicksight/model/CustomPromptInterface.h>
+#include <aws/quicksight/model/CustomPromptProfile.h>
 #include <aws/quicksight/model/CustomSql.h>
 #include <aws/quicksight/model/CustomValuesConfiguration.h>
 #include <aws/quicksight/model/CustomerManagedKeyUnavailableException.h>
@@ -528,6 +545,8 @@
 #include <aws/quicksight/model/DeleteAccountSubscriptionResult.h>
 #include <aws/quicksight/model/DeleteActionConnectorRequest.h>
 #include <aws/quicksight/model/DeleteActionConnectorResult.h>
+#include <aws/quicksight/model/DeleteAgentRequest.h>
+#include <aws/quicksight/model/DeleteAgentResult.h>
 #include <aws/quicksight/model/DeleteAnalysisRequest.h>
 #include <aws/quicksight/model/DeleteAnalysisResult.h>
 #include <aws/quicksight/model/DeleteBrandAssignmentRequest.h>
@@ -546,6 +565,8 @@
 #include <aws/quicksight/model/DeleteDataSourceResult.h>
 #include <aws/quicksight/model/DeleteDefaultQBusinessApplicationRequest.h>
 #include <aws/quicksight/model/DeleteDefaultQBusinessApplicationResult.h>
+#include <aws/quicksight/model/DeleteFlowRequest.h>
+#include <aws/quicksight/model/DeleteFlowResult.h>
 #include <aws/quicksight/model/DeleteFolderMembershipRequest.h>
 #include <aws/quicksight/model/DeleteFolderMembershipResult.h>
 #include <aws/quicksight/model/DeleteFolderRequest.h>
@@ -568,6 +589,8 @@
 #include <aws/quicksight/model/DeleteRoleCustomPermissionResult.h>
 #include <aws/quicksight/model/DeleteRoleMembershipRequest.h>
 #include <aws/quicksight/model/DeleteRoleMembershipResult.h>
+#include <aws/quicksight/model/DeleteSpaceRequest.h>
+#include <aws/quicksight/model/DeleteSpaceResult.h>
 #include <aws/quicksight/model/DeleteTemplateAliasRequest.h>
 #include <aws/quicksight/model/DeleteTemplateAliasResult.h>
 #include <aws/quicksight/model/DeleteTemplateRequest.h>
@@ -600,6 +623,10 @@
 #include <aws/quicksight/model/DescribeActionConnectorPermissionsResult.h>
 #include <aws/quicksight/model/DescribeActionConnectorRequest.h>
 #include <aws/quicksight/model/DescribeActionConnectorResult.h>
+#include <aws/quicksight/model/DescribeAgentPermissionsRequest.h>
+#include <aws/quicksight/model/DescribeAgentPermissionsResult.h>
+#include <aws/quicksight/model/DescribeAgentRequest.h>
+#include <aws/quicksight/model/DescribeAgentResult.h>
 #include <aws/quicksight/model/DescribeAnalysisDefinitionRequest.h>
 #include <aws/quicksight/model/DescribeAnalysisDefinitionResult.h>
 #include <aws/quicksight/model/DescribeAnalysisPermissionsRequest.h>
@@ -644,6 +671,8 @@
 #include <aws/quicksight/model/DescribeDataSourceResult.h>
 #include <aws/quicksight/model/DescribeDefaultQBusinessApplicationRequest.h>
 #include <aws/quicksight/model/DescribeDefaultQBusinessApplicationResult.h>
+#include <aws/quicksight/model/DescribeFlowRequest.h>
+#include <aws/quicksight/model/DescribeFlowResult.h>
 #include <aws/quicksight/model/DescribeFolderPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeFolderPermissionsResult.h>
 #include <aws/quicksight/model/DescribeFolderRequest.h>
@@ -676,6 +705,10 @@
 #include <aws/quicksight/model/DescribeRoleCustomPermissionResult.h>
 #include <aws/quicksight/model/DescribeSelfUpgradeConfigurationRequest.h>
 #include <aws/quicksight/model/DescribeSelfUpgradeConfigurationResult.h>
+#include <aws/quicksight/model/DescribeSpacePermissionsRequest.h>
+#include <aws/quicksight/model/DescribeSpacePermissionsResult.h>
+#include <aws/quicksight/model/DescribeSpaceRequest.h>
+#include <aws/quicksight/model/DescribeSpaceResult.h>
 #include <aws/quicksight/model/DescribeTemplateAliasRequest.h>
 #include <aws/quicksight/model/DescribeTemplateAliasResult.h>
 #include <aws/quicksight/model/DescribeTemplateDefinitionRequest.h>
@@ -730,6 +763,8 @@
 #include <aws/quicksight/model/ExportToCSVOption.h>
 #include <aws/quicksight/model/ExportWithHiddenFieldsOption.h>
 #include <aws/quicksight/model/FailedKeyRegistrationEntry.h>
+#include <aws/quicksight/model/FailedSpaceResourceOperation.h>
+#include <aws/quicksight/model/FailedToUpdateAssociation.h>
 #include <aws/quicksight/model/FieldBarSeriesItem.h>
 #include <aws/quicksight/model/FieldBasedTooltip.h>
 #include <aws/quicksight/model/FieldComboSeriesItem.h>
@@ -772,6 +807,7 @@
 #include <aws/quicksight/model/FilterTextFieldControl.h>
 #include <aws/quicksight/model/FilterVisualScope.h>
 #include <aws/quicksight/model/FiltersOperation.h>
+#include <aws/quicksight/model/FlowDetail.h>
 #include <aws/quicksight/model/FlowPublishState.h>
 #include <aws/quicksight/model/FlowSummary.h>
 #include <aws/quicksight/model/Folder.h>
@@ -1017,6 +1053,8 @@
 #include <aws/quicksight/model/LinkSharingConfiguration.h>
 #include <aws/quicksight/model/ListActionConnectorsRequest.h>
 #include <aws/quicksight/model/ListActionConnectorsResult.h>
+#include <aws/quicksight/model/ListAgentsRequest.h>
+#include <aws/quicksight/model/ListAgentsResult.h>
 #include <aws/quicksight/model/ListAnalysesRequest.h>
 #include <aws/quicksight/model/ListAnalysesResult.h>
 #include <aws/quicksight/model/ListAssetBundleExportJobsRequest.h>
@@ -1068,6 +1106,10 @@
 #include <aws/quicksight/model/ListRoleMembershipsResult.h>
 #include <aws/quicksight/model/ListSelfUpgradesRequest.h>
 #include <aws/quicksight/model/ListSelfUpgradesResult.h>
+#include <aws/quicksight/model/ListSpaceResourcesRequest.h>
+#include <aws/quicksight/model/ListSpaceResourcesResult.h>
+#include <aws/quicksight/model/ListSpacesRequest.h>
+#include <aws/quicksight/model/ListSpacesResult.h>
 #include <aws/quicksight/model/ListTagsForResourceRequest.h>
 #include <aws/quicksight/model/ListTagsForResourceResult.h>
 #include <aws/quicksight/model/ListTemplateAliasesRequest.h>
@@ -1377,6 +1419,8 @@
 #include <aws/quicksight/model/ScrollBarOptions.h>
 #include <aws/quicksight/model/SearchActionConnectorsRequest.h>
 #include <aws/quicksight/model/SearchActionConnectorsResult.h>
+#include <aws/quicksight/model/SearchAgentsRequest.h>
+#include <aws/quicksight/model/SearchAgentsResult.h>
 #include <aws/quicksight/model/SearchAnalysesRequest.h>
 #include <aws/quicksight/model/SearchAnalysesResult.h>
 #include <aws/quicksight/model/SearchDashboardsRequest.h>
@@ -1393,6 +1437,8 @@
 #include <aws/quicksight/model/SearchFoldersResult.h>
 #include <aws/quicksight/model/SearchGroupsRequest.h>
 #include <aws/quicksight/model/SearchGroupsResult.h>
+#include <aws/quicksight/model/SearchSpacesRequest.h>
+#include <aws/quicksight/model/SearchSpacesResult.h>
 #include <aws/quicksight/model/SearchTopicsRequest.h>
 #include <aws/quicksight/model/SearchTopicsResult.h>
 #include <aws/quicksight/model/SecondaryValueOptions.h>
@@ -1491,6 +1537,17 @@
 #include <aws/quicksight/model/SnowflakeParameters.h>
 #include <aws/quicksight/model/SortDirection.h>
 #include <aws/quicksight/model/SourceTable.h>
+#include <aws/quicksight/model/SpaceContributor.h>
+#include <aws/quicksight/model/SpaceDetails.h>
+#include <aws/quicksight/model/SpaceQuickSightResource.h>
+#include <aws/quicksight/model/SpaceQuickSightResourceDetails.h>
+#include <aws/quicksight/model/SpaceQuickSightResourceType.h>
+#include <aws/quicksight/model/SpaceQuickSightSearchFilterName.h>
+#include <aws/quicksight/model/SpaceQuicksightSearchFilter.h>
+#include <aws/quicksight/model/SpaceResourceOperation.h>
+#include <aws/quicksight/model/SpaceResourceSummary.h>
+#include <aws/quicksight/model/SpaceSearchOperator.h>
+#include <aws/quicksight/model/SpaceSummary.h>
 #include <aws/quicksight/model/Spacing.h>
 #include <aws/quicksight/model/SparkParameters.h>
 #include <aws/quicksight/model/SparklineAxisBehavior.h>
@@ -1518,6 +1575,7 @@
 #include <aws/quicksight/model/StaticFileSource.h>
 #include <aws/quicksight/model/StaticFileUrlSourceOptions.h>
 #include <aws/quicksight/model/Status.h>
+#include <aws/quicksight/model/StepAliasMapping.h>
 #include <aws/quicksight/model/StringDatasetParameter.h>
 #include <aws/quicksight/model/StringDatasetParameterDefaultValues.h>
 #include <aws/quicksight/model/StringDefaultValues.h>
@@ -1702,6 +1760,10 @@
 #include <aws/quicksight/model/UpdateActionConnectorPermissionsResult.h>
 #include <aws/quicksight/model/UpdateActionConnectorRequest.h>
 #include <aws/quicksight/model/UpdateActionConnectorResult.h>
+#include <aws/quicksight/model/UpdateAgentPermissionsRequest.h>
+#include <aws/quicksight/model/UpdateAgentPermissionsResult.h>
+#include <aws/quicksight/model/UpdateAgentRequest.h>
+#include <aws/quicksight/model/UpdateAgentResult.h>
 #include <aws/quicksight/model/UpdateAnalysisPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateAnalysisPermissionsResult.h>
 #include <aws/quicksight/model/UpdateAnalysisRequest.h>
@@ -1738,6 +1800,8 @@
 #include <aws/quicksight/model/UpdateDefaultQBusinessApplicationResult.h>
 #include <aws/quicksight/model/UpdateFlowPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateFlowPermissionsResult.h>
+#include <aws/quicksight/model/UpdateFlowRequest.h>
+#include <aws/quicksight/model/UpdateFlowResult.h>
 #include <aws/quicksight/model/UpdateFolderPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateFolderPermissionsResult.h>
 #include <aws/quicksight/model/UpdateFolderRequest.h>
@@ -1770,6 +1834,12 @@
 #include <aws/quicksight/model/UpdateSelfUpgradeConfigurationResult.h>
 #include <aws/quicksight/model/UpdateSelfUpgradeRequest.h>
 #include <aws/quicksight/model/UpdateSelfUpgradeResult.h>
+#include <aws/quicksight/model/UpdateSpacePermissionsRequest.h>
+#include <aws/quicksight/model/UpdateSpacePermissionsResult.h>
+#include <aws/quicksight/model/UpdateSpaceRequest.h>
+#include <aws/quicksight/model/UpdateSpaceResourcesRequest.h>
+#include <aws/quicksight/model/UpdateSpaceResourcesResult.h>
+#include <aws/quicksight/model/UpdateSpaceResult.h>
 #include <aws/quicksight/model/UpdateTemplateAliasRequest.h>
 #include <aws/quicksight/model/UpdateTemplateAliasResult.h>
 #include <aws/quicksight/model/UpdateTemplatePermissionsRequest.h>

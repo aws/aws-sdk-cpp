@@ -170,6 +170,14 @@ UserPoolType& UserPoolType::operator=(JsonView jsonValue) {
     m_userPoolTier = UserPoolTierTypeMapper::GetUserPoolTierTypeForName(jsonValue.GetString("UserPoolTier"));
     m_userPoolTierHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("KeyConfiguration")) {
+    m_keyConfiguration = jsonValue.GetObject("KeyConfiguration");
+    m_keyConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IssuerConfiguration")) {
+    m_issuerConfiguration = jsonValue.GetObject("IssuerConfiguration");
+    m_issuerConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -331,6 +339,14 @@ JsonValue UserPoolType::Jsonize() const {
 
   if (m_userPoolTierHasBeenSet) {
     payload.WithString("UserPoolTier", UserPoolTierTypeMapper::GetNameForUserPoolTierType(m_userPoolTier));
+  }
+
+  if (m_keyConfigurationHasBeenSet) {
+    payload.WithObject("KeyConfiguration", m_keyConfiguration.Jsonize());
+  }
+
+  if (m_issuerConfigurationHasBeenSet) {
+    payload.WithObject("IssuerConfiguration", m_issuerConfiguration.Jsonize());
   }
 
   return payload;

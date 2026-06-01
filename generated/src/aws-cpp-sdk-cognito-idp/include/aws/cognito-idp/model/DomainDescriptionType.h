@@ -7,6 +7,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/CustomDomainConfigType.h>
 #include <aws/cognito-idp/model/DomainStatusType.h>
+#include <aws/cognito-idp/model/RoutingType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -199,6 +200,26 @@ class DomainDescriptionType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The routing configuration for the domain, including failover settings for
+   * multi-region deployments. Currently only <code>Failover</code> configurations
+   * are allowed.</p>
+   */
+  inline const RoutingType& GetRouting() const { return m_routing; }
+  inline bool RoutingHasBeenSet() const { return m_routingHasBeenSet; }
+  template <typename RoutingT = RoutingType>
+  void SetRouting(RoutingT&& value) {
+    m_routingHasBeenSet = true;
+    m_routing = std::forward<RoutingT>(value);
+  }
+  template <typename RoutingT = RoutingType>
+  DomainDescriptionType& WithRouting(RoutingT&& value) {
+    SetRouting(std::forward<RoutingT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userPoolId;
 
@@ -217,6 +238,8 @@ class DomainDescriptionType {
   CustomDomainConfigType m_customDomainConfig;
 
   int m_managedLoginVersion{0};
+
+  RoutingType m_routing;
   bool m_userPoolIdHasBeenSet = false;
   bool m_aWSAccountIdHasBeenSet = false;
   bool m_domainHasBeenSet = false;
@@ -226,6 +249,7 @@ class DomainDescriptionType {
   bool m_statusHasBeenSet = false;
   bool m_customDomainConfigHasBeenSet = false;
   bool m_managedLoginVersionHasBeenSet = false;
+  bool m_routingHasBeenSet = false;
 };
 
 }  // namespace Model
