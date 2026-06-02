@@ -18,6 +18,41 @@ using namespace Aws::Http;
 
 static const char ALLOCATION_TAG[] = "RetryBehaviorTest";
 
+class TestThrottleBasedQuotaContainer : public RetryQuotaContainer
+{
+public:
+    TestThrottleBasedQuotaContainer() : m_retryQuota(500) {}
+
+    bool AcquireRetryQuota(int capacityAmount) override
+    {
+        if (capacityAmount > m_retryQuota) return false;
+        m_retryQuota -= capacityAmount;
+        return true;
+    }
+
+    bool AcquireRetryQuota(const AWSError<CoreErrors>& error) override
+    {
+        int capacityAmount = error.ShouldThrottle() ? 5 : 14;
+        return AcquireRetryQuota(capacityAmount);
+    }
+
+    void ReleaseRetryQuota(int capacityAmount) override
+    {
+        m_retryQuota = std::min(m_retryQuota + capacityAmount, 500);
+    }
+
+    void ReleaseRetryQuota(const AWSError<CoreErrors>& error) override
+    {
+        int capacityAmount = error.ShouldThrottle() ? 5 : 14;
+        ReleaseRetryQuota(capacityAmount);
+    }
+
+    int GetRetryQuota() const override { return m_retryQuota; }
+
+private:
+    int m_retryQuota;
+};
+
 class RetryBehaviorTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 };
@@ -49,8 +84,8 @@ static AWSError<CoreErrors> MakeTransientErrorWithRetryAfter(const Aws::String& 
 // SEP Test 1: Retry eventually succeeds, quota restored
 TEST_F(RetryBehaviorTest, RetryEventuallySucceeds)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 3, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 3);
 
     ASSERT_EQ(500, quota->GetRetryQuota());
 
@@ -66,8 +101,8 @@ TEST_F(RetryBehaviorTest, RetryEventuallySucceeds)
 // SEP Test 2: Max attempts reached
 TEST_F(RetryBehaviorTest, MaxAttemptsReached)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 3, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 3);
 
     ASSERT_TRUE(strategy.ShouldRetry(MakeTransientError(), 0));
     ASSERT_TRUE(strategy.ShouldRetry(MakeTransientError(), 1));
@@ -78,8 +113,8 @@ TEST_F(RetryBehaviorTest, MaxAttemptsReached)
 // SEP Test 3: Quota reached after 1 retry
 TEST_F(RetryBehaviorTest, QuotaReachedAfterRetry)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     // Drain quota to 10
     ASSERT_TRUE(quota->AcquireRetryQuota(490));
@@ -92,8 +127,8 @@ TEST_F(RetryBehaviorTest, QuotaReachedAfterRetry)
 // SEP Test 4: Zero quota, no retries
 TEST_F(RetryBehaviorTest, ZeroQuotaNoRetries)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     ASSERT_TRUE(quota->AcquireRetryQuota(500));
     ASSERT_EQ(0, quota->GetRetryQuota());
@@ -105,8 +140,8 @@ TEST_F(RetryBehaviorTest, ZeroQuotaNoRetries)
 // SEP Test 5: Exponential timing (transient, 50ms base)
 TEST_F(RetryBehaviorTest, ExponentialBackoffTransient)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     auto error = MakeTransientError();
     // Backoff is randomized, but must be within [0, x * 2^i * 1000]ms
@@ -123,8 +158,8 @@ TEST_F(RetryBehaviorTest, ExponentialBackoffTransient)
 // SEP Test 6: Max backoff cap at 20s
 TEST_F(RetryBehaviorTest, MaxBackoffCap)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 100, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 100);
 
     auto error = MakeTransientError();
     // At i=30, 0.05 * 2^30 = 53687091.2s which exceeds 20s cap
@@ -135,8 +170,8 @@ TEST_F(RetryBehaviorTest, MaxBackoffCap)
 // SEP Test 7: Quota exhaustion mid-sequence
 TEST_F(RetryBehaviorTest, QuotaExhaustionMidSequence)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 100, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 100);
 
     // Drain to 20 tokens
     ASSERT_TRUE(quota->AcquireRetryQuota(480));
@@ -154,8 +189,8 @@ TEST_F(RetryBehaviorTest, QuotaExhaustionMidSequence)
 // SEP Test 8: Quota recovery (stateful multi-request sequence)
 TEST_F(RetryBehaviorTest, QuotaRecoveryStateful)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(URI("http://www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     std::shared_ptr<HttpResponse> httpResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
@@ -189,8 +224,8 @@ TEST_F(RetryBehaviorTest, QuotaRecoveryStateful)
 // SEP Test 9: Multi-threaded quota sharing (verify shared state)
 TEST_F(RetryBehaviorTest, SharedQuotaAcrossRequests)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     // Simulate two concurrent requests both acquiring from same quota
     // Request A: transient retry, costs 14, quota = 486
@@ -212,8 +247,8 @@ TEST_F(RetryBehaviorTest, SharedQuotaAcrossRequests)
 // SEP Test 10: Throttling costs (5 tokens) and backoff (1000ms base)
 TEST_F(RetryBehaviorTest, ThrottlingCostsAndBackoff)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     // Throttling error costs 5 tokens
     ASSERT_TRUE(strategy.ShouldRetry(MakeThrottlingError(), 0));
@@ -231,31 +266,31 @@ TEST_F(RetryBehaviorTest, ThrottlingCostsAndBackoff)
     ASSERT_LE(delay, 2000);
 }
 
-// SEP Test 11: DynamoDB tuning (25ms base, 4 max attempts)
+// SEP Test 11: DynamoDB tuning (maxAttempts=4, 25ms base deferred to follow-up)
 TEST_F(RetryBehaviorTest, DynamoDBTuning)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 4, 0.025);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 4);
 
     ASSERT_EQ(4, strategy.GetMaxAttempts());
 
     auto error = MakeTransientError();
-    // i=0: [0, 25ms]
+    // i=0: [0, 50ms] (25ms base deferred)
     long delay = strategy.CalculateDelayBeforeNextRetry(error, 0);
     ASSERT_GE(delay, 0);
-    ASSERT_LE(delay, 25);
+    ASSERT_LE(delay, 50);
 
-    // i=1: [0, 50ms]
+    // i=1: [0, 100ms]
     delay = strategy.CalculateDelayBeforeNextRetry(error, 1);
     ASSERT_GE(delay, 0);
-    ASSERT_LE(delay, 50);
+    ASSERT_LE(delay, 100);
 }
 
 // SEP Test 12: Long-polling transient + empty quota (backoff applied)
 TEST_F(RetryBehaviorTest, LongPollingTransientEmptyQuota)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     // Drain quota
     ASSERT_TRUE(quota->AcquireRetryQuota(500));
@@ -275,8 +310,8 @@ TEST_F(RetryBehaviorTest, LongPollingTransientEmptyQuota)
 // SEP Test 13: Long-polling throttling + empty quota (backoff applied)
 TEST_F(RetryBehaviorTest, LongPollingThrottlingEmptyQuota)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     // Drain quota
     ASSERT_TRUE(quota->AcquireRetryQuota(500));
@@ -296,8 +331,8 @@ TEST_F(RetryBehaviorTest, LongPollingThrottlingEmptyQuota)
 // SEP Test 14: Long-polling max attempts exceeded (no delay)
 TEST_F(RetryBehaviorTest, LongPollingMaxAttemptsExceeded)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 3, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 3);
 
     // At retries=2, max attempts (3) is reached
     ASSERT_FALSE(strategy.ShouldRetry(MakeTransientError(), 2));
@@ -307,8 +342,8 @@ TEST_F(RetryBehaviorTest, LongPollingMaxAttemptsExceeded)
 // SEP Test 15: Long-polling success (no delay)
 TEST_F(RetryBehaviorTest, LongPollingSuccess)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(URI("http://www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     std::shared_ptr<HttpResponse> httpResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
@@ -322,8 +357,8 @@ TEST_F(RetryBehaviorTest, LongPollingSuccess)
 // SEP Test 16: Long-polling non-retryable error (no delay)
 TEST_F(RetryBehaviorTest, LongPollingNonRetryableError)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     // Non-retryable error: ShouldRetry returns false
     ASSERT_FALSE(strategy.ShouldRetry(MakeNonRetryableError(), 0));
@@ -334,8 +369,8 @@ TEST_F(RetryBehaviorTest, LongPollingNonRetryableError)
 // SEP Test 17: retry-after header honored
 TEST_F(RetryBehaviorTest, RetryAfterHeaderHonored)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     // Header value 1500ms, at i=0 t_i is in [0, 50ms]
     // clamped to max(t_i, min(1.5, 5 + t_i)) = 1.5s = 1500ms
@@ -349,8 +384,8 @@ TEST_F(RetryBehaviorTest, RetryAfterHeaderHonored)
 // SEP Test 18: retry-after floor clamped (value 0 clamped up to t_i)
 TEST_F(RetryBehaviorTest, RetryAfterFloorClamped)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     auto error = MakeTransientErrorWithRetryAfter("0");
     // Header is 0ms, gets clamped up to t_i
@@ -363,8 +398,8 @@ TEST_F(RetryBehaviorTest, RetryAfterFloorClamped)
 // SEP Test 19: retry-after ceiling clamped (value 10000ms clamped to 5+t_i)
 TEST_F(RetryBehaviorTest, RetryAfterCeilingClamped)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     auto error = MakeTransientErrorWithRetryAfter("10000");
     // Header is 10000ms = 10s, exceeds 5 + t_i (max ~5.05s at i=0)
@@ -378,8 +413,8 @@ TEST_F(RetryBehaviorTest, RetryAfterCeilingClamped)
 // SEP Test 20: Invalid retry-after falls back to exponential backoff
 TEST_F(RetryBehaviorTest, InvalidRetryAfterFallsBack)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     // "abc" parses to 0 via atoll, which gets clamped to t_i
     auto error = MakeTransientErrorWithRetryAfter("abc");
@@ -411,8 +446,8 @@ TEST_F(RetryBehaviorTest, LegacyBehaviorUnchanged)
 // Verify throttle-based classification: throttling costs 5, transient costs 14
 TEST_F(RetryBehaviorTest, ThrottleBasedClassification)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     // Transient costs 14
     ASSERT_TRUE(strategy.ShouldRetry(MakeTransientError(), 0));
@@ -443,8 +478,8 @@ TEST_F(RetryBehaviorTest, LegacyClassification)
 // Non-retryable errors are not retried regardless of gate
 TEST_F(RetryBehaviorTest, NonRetryableNotRetried)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     ASSERT_FALSE(strategy.ShouldRetry(MakeNonRetryableError(), 0));
     ASSERT_EQ(500, quota->GetRetryQuota());
@@ -453,8 +488,8 @@ TEST_F(RetryBehaviorTest, NonRetryableNotRetried)
 // Verify RequestBookkeeping releases correct tokens on success
 TEST_F(RetryBehaviorTest, RequestBookkeepingReleasesTokens)
 {
-    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG, 14, 5, RetryCostClassification::THROTTLE_BASED);
-    StandardRetryStrategy strategy(quota, 10, 0.05);
+    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
+    StandardRetryStrategy strategy(quota, 10);
 
     std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(URI("http://www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     std::shared_ptr<HttpResponse> httpResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, httpRequest);

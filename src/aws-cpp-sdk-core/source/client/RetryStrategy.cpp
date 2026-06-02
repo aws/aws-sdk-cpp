@@ -23,6 +23,34 @@ namespace Aws
         struct StandardRetryStrategy::RetryImpl
         {
             bool newRetriesEnabled = false;
+
+            long CalculateDelay(const AWSError<CoreErrors>& error, long attemptedRetries) const
+            {
+                if (!newRetriesEnabled)
+                {
+                    AWS_UNREFERENCED_PARAM(error);
+                    // Maximum left shift factor is capped by ceil(log2(max_delay)), to avoid wrap-around and overflow into negative values:
+                    return std::min(static_cast<int>(Aws::Utils::GetRandomValue() % 1000) * (1 << std::min(attemptedRetries, 15L)), 20000);
+                }
+
+                double x = error.ShouldThrottle() ? 1.0 : 0.05;
+                double exponentialPart = x * static_cast<double>(1L << std::min(attemptedRetries, 30L));
+                double cappedPart = std::min(exponentialPart, 20.0);
+
+                double b = static_cast<double>(Aws::Utils::GetRandomValue() % 10000) / 10000.0;
+                double t_i = b * cappedPart;
+
+                const auto& headers = error.GetResponseHeaders();
+                auto it = headers.find("x-amz-retry-after");
+                if (it != headers.end())
+                {
+                    double headerSec = static_cast<double>(Aws::Utils::StringUtils::ConvertToInt64(it->second.c_str())) / 1000.0;
+                    double clamped = std::max(t_i, std::min(headerSec, 5.0 + t_i));
+                    return static_cast<long>(clamped * 1000.0);
+                }
+
+                return static_cast<long>(t_i * 1000.0);
+            }
         };
 
         StandardRetryStrategy::StandardRetryStrategy(long maxAttempts)
@@ -67,30 +95,7 @@ namespace Aws
 
         long StandardRetryStrategy::CalculateDelayBeforeNextRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const
         {
-            if (!m_impl->newRetriesEnabled)
-            {
-                AWS_UNREFERENCED_PARAM(error);
-                // Maximum left shift factor is capped by ceil(log2(max_delay)), to avoid wrap-around and overflow into negative values:
-                return std::min(static_cast<int>(Aws::Utils::GetRandomValue() % 1000) * (1 << std::min(attemptedRetries, 15L)), 20000);
-            }
-
-            double x = error.ShouldThrottle() ? 1.0 : 0.05;
-            double exponentialPart = x * static_cast<double>(1L << std::min(attemptedRetries, 30L));
-            double cappedPart = std::min(exponentialPart, 20.0);
-
-            double b = static_cast<double>(Aws::Utils::GetRandomValue() % 10000) / 10000.0;
-            double t_i = b * cappedPart;
-
-            const auto& headers = error.GetResponseHeaders();
-            auto it = headers.find("x-amz-retry-after");
-            if (it != headers.end())
-            {
-                double headerSec = static_cast<double>(Aws::Utils::StringUtils::ConvertToInt64(it->second.c_str())) / 1000.0;
-                double clamped = std::max(t_i, std::min(headerSec, 5.0 + t_i));
-                return static_cast<long>(clamped * 1000.0);
-            }
-
-            return static_cast<long>(t_i * 1000.0);
+            return m_impl->CalculateDelay(error, attemptedRetries);
         }
 
         DefaultRetryQuotaContainer::DefaultRetryQuotaContainer() : m_retryQuota(INITIAL_RETRY_TOKENS)
