@@ -103,17 +103,10 @@ namespace Aws
             virtual int GetRetryQuota() const = 0;
         };
 
-        enum class RetryCostClassification
-        {
-            REQUEST_TIMEOUT_BASED,
-            THROTTLE_BASED
-        };
-
         class AWS_CORE_API DefaultRetryQuotaContainer : public RetryQuotaContainer
         {
         public:
             DefaultRetryQuotaContainer();
-            DefaultRetryQuotaContainer(int retryCost, int throttlingRetryCost, RetryCostClassification classification);
             virtual ~DefaultRetryQuotaContainer() = default;
             virtual bool AcquireRetryQuota(int capacityAmount) override;
             virtual bool AcquireRetryQuota(const AWSError<CoreErrors>& error) override;
@@ -124,9 +117,6 @@ namespace Aws
         protected:
             mutable Aws::Utils::Threading::ReaderWriterLock m_retryQuotaLock;
             int m_retryQuota;
-            int m_retryCost;
-            int m_throttlingRetryCost;
-            RetryCostClassification m_classification;
         };
 
         class AWS_CORE_API StandardRetryStrategy : public RetryStrategy
@@ -134,7 +124,6 @@ namespace Aws
         public:
             StandardRetryStrategy(long maxAttempts = 3);
             StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts = 3);
-            StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts, double transientBackoffBaseSec);
             virtual ~StandardRetryStrategy();
 
             virtual void RequestBookkeeping(const HttpResponseOutcome& httpResponseOutcome) override;

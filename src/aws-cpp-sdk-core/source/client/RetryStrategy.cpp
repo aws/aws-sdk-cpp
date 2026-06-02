@@ -20,95 +20,20 @@ namespace Aws
         static const int RETRY_COST = 5;
         static const int TIMEOUT_RETRY_COST = 10;
 
-        // ---- DefaultRetryQuotaContainer ----
-
-        DefaultRetryQuotaContainer::DefaultRetryQuotaContainer()
-            : m_retryQuota(INITIAL_RETRY_TOKENS),
-              m_retryCost(RETRY_COST),
-              m_throttlingRetryCost(TIMEOUT_RETRY_COST),
-              m_classification(RetryCostClassification::REQUEST_TIMEOUT_BASED)
-        {}
-
-        DefaultRetryQuotaContainer::DefaultRetryQuotaContainer(int retryCost, int throttlingRetryCost, RetryCostClassification classification)
-            : m_retryQuota(INITIAL_RETRY_TOKENS),
-              m_retryCost(retryCost),
-              m_throttlingRetryCost(throttlingRetryCost),
-              m_classification(classification)
-        {}
-
-        bool DefaultRetryQuotaContainer::AcquireRetryQuota(int capacityAmount)
-        {
-            WriterLockGuard guard(m_retryQuotaLock);
-
-            if (capacityAmount > m_retryQuota)
-            {
-                return false;
-            }
-            m_retryQuota -= capacityAmount;
-            return true;
-        }
-
-        bool DefaultRetryQuotaContainer::AcquireRetryQuota(const AWSError<CoreErrors>& error)
-        {
-            int capacityAmount;
-            if (m_classification == RetryCostClassification::THROTTLE_BASED)
-            {
-                capacityAmount = error.ShouldThrottle() ? m_throttlingRetryCost : m_retryCost;
-            }
-            else
-            {
-                capacityAmount = error.GetErrorType() == CoreErrors::REQUEST_TIMEOUT ? TIMEOUT_RETRY_COST : RETRY_COST;
-            }
-            return AcquireRetryQuota(capacityAmount);
-        }
-
-        void DefaultRetryQuotaContainer::ReleaseRetryQuota(int capacityAmount)
-        {
-            WriterLockGuard guard(m_retryQuotaLock);
-            m_retryQuota = (std::min)(m_retryQuota + capacityAmount, INITIAL_RETRY_TOKENS);
-        }
-
-        void DefaultRetryQuotaContainer::ReleaseRetryQuota(const AWSError<CoreErrors>& error)
-        {
-            int capacityAmount;
-            if (m_classification == RetryCostClassification::THROTTLE_BASED)
-            {
-                capacityAmount = error.ShouldThrottle() ? m_throttlingRetryCost : m_retryCost;
-            }
-            else
-            {
-                capacityAmount = error.GetErrorType() == CoreErrors::REQUEST_TIMEOUT ? TIMEOUT_RETRY_COST : RETRY_COST;
-            }
-            ReleaseRetryQuota(capacityAmount);
-        }
-
-        // ---- StandardRetryStrategy pimpl ----
-
         struct StandardRetryStrategy::RetryImpl
         {
             bool newRetriesEnabled = false;
-            double transientBackoffBaseSec = 0.05;
         };
 
         StandardRetryStrategy::StandardRetryStrategy(long maxAttempts)
-            : m_retryQuotaContainer(Aws::MakeShared<DefaultRetryQuotaContainer>("StandardRetryStrategy")),
-              m_maxAttempts(maxAttempts),
-              m_impl(Aws::MakeUnique<RetryImpl>("StandardRetryStrategy"))
-        {}
+            : m_retryQuotaContainer(Aws::MakeShared<DefaultRetryQuotaContainer>("StandardRetryStrategy")), m_maxAttempts(maxAttempts),
+              m_impl(Aws::MakeUnique<RetryImpl>("StandardRetryStrategy")) {}
 
         StandardRetryStrategy::StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts)
-            : m_retryQuotaContainer(retryQuotaContainer),
-              m_maxAttempts(maxAttempts),
-              m_impl(Aws::MakeUnique<RetryImpl>("StandardRetryStrategy"))
-        {}
-
-        StandardRetryStrategy::StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts, double transientBackoffBaseSec)
-            : m_retryQuotaContainer(retryQuotaContainer),
-              m_maxAttempts(maxAttempts),
+            : m_retryQuotaContainer(retryQuotaContainer), m_maxAttempts(maxAttempts),
               m_impl(Aws::MakeUnique<RetryImpl>("StandardRetryStrategy"))
         {
             m_impl->newRetriesEnabled = true;
-            m_impl->transientBackoffBaseSec = transientBackoffBaseSec;
         }
 
         StandardRetryStrategy::~StandardRetryStrategy() = default;
@@ -145,12 +70,13 @@ namespace Aws
             if (!m_impl->newRetriesEnabled)
             {
                 AWS_UNREFERENCED_PARAM(error);
-                return (std::min)(static_cast<int>(Aws::Utils::GetRandomValue() % 1000) * (1 << (std::min)(attemptedRetries, 15L)), 20000);
+                // Maximum left shift factor is capped by ceil(log2(max_delay)), to avoid wrap-around and overflow into negative values:
+                return std::min(static_cast<int>(Aws::Utils::GetRandomValue() % 1000) * (1 << std::min(attemptedRetries, 15L)), 20000);
             }
 
-            double x = error.ShouldThrottle() ? 1.0 : m_impl->transientBackoffBaseSec;
-            double exponentialPart = x * static_cast<double>(1L << (std::min)(attemptedRetries, 30L));
-            double cappedPart = (std::min)(exponentialPart, 20.0);
+            double x = error.ShouldThrottle() ? 1.0 : 0.05;
+            double exponentialPart = x * static_cast<double>(1L << std::min(attemptedRetries, 30L));
+            double cappedPart = std::min(exponentialPart, 20.0);
 
             double b = static_cast<double>(Aws::Utils::GetRandomValue() % 10000) / 10000.0;
             double t_i = b * cappedPart;
@@ -160,12 +86,47 @@ namespace Aws
             if (it != headers.end())
             {
                 double headerSec = static_cast<double>(Aws::Utils::StringUtils::ConvertToInt64(it->second.c_str())) / 1000.0;
-                double clamped = (std::max)(t_i, (std::min)(headerSec, 5.0 + t_i));
+                double clamped = std::max(t_i, std::min(headerSec, 5.0 + t_i));
                 return static_cast<long>(clamped * 1000.0);
             }
 
             return static_cast<long>(t_i * 1000.0);
         }
 
+        DefaultRetryQuotaContainer::DefaultRetryQuotaContainer() : m_retryQuota(INITIAL_RETRY_TOKENS)
+        {}
+
+        bool DefaultRetryQuotaContainer::AcquireRetryQuota(int capacityAmount)
+        {
+            WriterLockGuard guard(m_retryQuotaLock);
+
+            if (capacityAmount > m_retryQuota)
+            {
+                return false;
+            }
+            else
+            {
+                m_retryQuota -= capacityAmount;
+                return true;
+            }
+        }
+
+        bool DefaultRetryQuotaContainer::AcquireRetryQuota(const AWSError<CoreErrors>& error)
+        {
+            int capacityAmount = error.GetErrorType() == CoreErrors::REQUEST_TIMEOUT ? TIMEOUT_RETRY_COST : RETRY_COST;
+            return AcquireRetryQuota(capacityAmount);
+        }
+
+        void DefaultRetryQuotaContainer::ReleaseRetryQuota(int capacityAmount)
+        {
+            WriterLockGuard guard(m_retryQuotaLock);
+            m_retryQuota = (std::min)(m_retryQuota + capacityAmount, INITIAL_RETRY_TOKENS);
+        }
+
+        void DefaultRetryQuotaContainer::ReleaseRetryQuota(const AWSError<CoreErrors>& error)
+        {
+            int capacityAmount = error.GetErrorType() == CoreErrors::REQUEST_TIMEOUT ? TIMEOUT_RETRY_COST : RETRY_COST;
+            ReleaseRetryQuota(capacityAmount);
+        }
     }
 }
