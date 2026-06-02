@@ -18,6 +18,13 @@ namespace Model {
 RoutePedestrianLegDetails::RoutePedestrianLegDetails(JsonView jsonValue) { *this = jsonValue; }
 
 RoutePedestrianLegDetails& RoutePedestrianLegDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AfterTravelSteps")) {
+    Aws::Utils::Array<JsonView> afterTravelStepsJsonList = jsonValue.GetArray("AfterTravelSteps");
+    for (unsigned afterTravelStepsIndex = 0; afterTravelStepsIndex < afterTravelStepsJsonList.GetLength(); ++afterTravelStepsIndex) {
+      m_afterTravelSteps.push_back(afterTravelStepsJsonList[afterTravelStepsIndex].AsObject());
+    }
+    m_afterTravelStepsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Arrival")) {
     m_arrival = jsonValue.GetObject("Arrival");
     m_arrivalHasBeenSet = true;
@@ -64,6 +71,14 @@ RoutePedestrianLegDetails& RoutePedestrianLegDetails::operator=(JsonView jsonVal
 
 JsonValue RoutePedestrianLegDetails::Jsonize() const {
   JsonValue payload;
+
+  if (m_afterTravelStepsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> afterTravelStepsJsonList(m_afterTravelSteps.size());
+    for (unsigned afterTravelStepsIndex = 0; afterTravelStepsIndex < afterTravelStepsJsonList.GetLength(); ++afterTravelStepsIndex) {
+      afterTravelStepsJsonList[afterTravelStepsIndex].AsObject(m_afterTravelSteps[afterTravelStepsIndex].Jsonize());
+    }
+    payload.WithArray("AfterTravelSteps", std::move(afterTravelStepsJsonList));
+  }
 
   if (m_arrivalHasBeenSet) {
     payload.WithObject("Arrival", m_arrival.Jsonize());

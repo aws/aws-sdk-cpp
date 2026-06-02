@@ -50,7 +50,7 @@ class RoutePassThroughWaypoint {
 
   ///@{
   /**
-   * <p>The place details.</p>
+   * <p>Place details corresponding to the pass-through waypoint.</p>
    */
   inline const RoutePassThroughPlace& GetPlace() const { return m_place; }
   inline bool PlaceHasBeenSet() const { return m_placeHasBeenSet; }

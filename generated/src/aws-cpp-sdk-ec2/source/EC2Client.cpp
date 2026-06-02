@@ -84,6 +84,7 @@
 #include <aws/ec2/model/CopyVolumesRequest.h>
 #include <aws/ec2/model/CreateCapacityManagerDataExportRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationBySplittingRequest.h>
+#include <aws/ec2/model/CreateCapacityReservationCancellationQuoteRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationFleetRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationRequest.h>
 #include <aws/ec2/model/CreateCarrierGatewayRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/CreateLaunchTemplateRequest.h>
 #include <aws/ec2/model/CreateLaunchTemplateVersionRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteRequest.h>
-#include <aws/ec2/model/CreateLocalGatewayRouteTableRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -688,6 +688,13 @@ CreateCapacityReservationBySplittingOutcome EC2Client::CreateCapacityReservation
                             : CreateCapacityReservationBySplittingOutcome(std::move(result.GetError()));
 }
 
+CreateCapacityReservationCancellationQuoteOutcome EC2Client::CreateCapacityReservationCancellationQuote(
+    const CreateCapacityReservationCancellationQuoteRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCapacityReservationCancellationQuoteOutcome(result.GetResultWithOwnership())
+                            : CreateCapacityReservationCancellationQuoteOutcome(std::move(result.GetError()));
+}
+
 CreateCapacityReservationFleetOutcome EC2Client::CreateCapacityReservationFleet(
     const CreateCapacityReservationFleetRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -888,10 +895,4 @@ CreateLocalGatewayRouteOutcome EC2Client::CreateLocalGatewayRoute(const CreateLo
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateLocalGatewayRouteOutcome(result.GetResultWithOwnership())
                             : CreateLocalGatewayRouteOutcome(std::move(result.GetError()));
-}
-
-CreateLocalGatewayRouteTableOutcome EC2Client::CreateLocalGatewayRouteTable(const CreateLocalGatewayRouteTableRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateLocalGatewayRouteTableOutcome(result.GetResultWithOwnership())
-                            : CreateLocalGatewayRouteTableOutcome(std::move(result.GetError()));
 }

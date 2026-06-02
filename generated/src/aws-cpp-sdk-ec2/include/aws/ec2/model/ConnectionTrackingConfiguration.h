@@ -38,8 +38,9 @@ class ConnectionTrackingConfiguration {
   ///@{
   /**
    * <p>Timeout (in seconds) for idle TCP connections in an established state. Min:
-   * 60 seconds. Max: 432000 seconds (5 days). Default: 432000 seconds. Recommended:
-   * Less than 432000 seconds.</p>
+   * 60 seconds. Max: 432000 seconds (5 days). Default: 350 seconds for Nitro v6
+   * instance types (excluding P6e-GB200); 432000 seconds for all other instance
+   * types (including P6e-GB200). Recommended: Less than 432000 seconds.</p>
    */
   inline int GetTcpEstablishedTimeout() const { return m_tcpEstablishedTimeout; }
   inline bool TcpEstablishedTimeoutHasBeenSet() const { return m_tcpEstablishedTimeoutHasBeenSet; }

@@ -12,6 +12,7 @@
 #include <aws/lambda/model/CapacityProviderScalingConfig.h>
 #include <aws/lambda/model/CapacityProviderVpcConfig.h>
 #include <aws/lambda/model/InstanceRequirements.h>
+#include <aws/lambda/model/PropagateTags.h>
 
 #include <utility>
 
@@ -169,6 +170,25 @@ class CreateCapacityProviderRequest : public LambdaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tag propagation configuration for the capacity provider. Specifies tags
+   * to apply to managed resources at launch.</p>
+   */
+  inline const PropagateTags& GetPropagateTags() const { return m_propagateTags; }
+  inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
+  template <typename PropagateTagsT = PropagateTags>
+  void SetPropagateTags(PropagateTagsT&& value) {
+    m_propagateTagsHasBeenSet = true;
+    m_propagateTags = std::forward<PropagateTagsT>(value);
+  }
+  template <typename PropagateTagsT = PropagateTags>
+  CreateCapacityProviderRequest& WithPropagateTags(PropagateTagsT&& value) {
+    SetPropagateTags(std::forward<PropagateTagsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityProviderName;
 
@@ -183,6 +203,8 @@ class CreateCapacityProviderRequest : public LambdaRequest {
   Aws::String m_kmsKeyArn;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  PropagateTags m_propagateTags;
   bool m_capacityProviderNameHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
   bool m_permissionsConfigHasBeenSet = false;
@@ -190,6 +212,7 @@ class CreateCapacityProviderRequest : public LambdaRequest {
   bool m_capacityProviderScalingConfigHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_propagateTagsHasBeenSet = false;
 };
 
 }  // namespace Model

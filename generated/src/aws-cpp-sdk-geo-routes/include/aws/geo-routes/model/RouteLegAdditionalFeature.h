@@ -20,7 +20,10 @@ enum class RouteLegAdditionalFeature {
   TravelStepInstructions,
   TruckRoadTypes,
   TypicalDuration,
-  Zones
+  Zones,
+  Bookings,
+  IntermediateStops,
+  NextDepartures
 };
 
 namespace RouteLegAdditionalFeatureMapper {

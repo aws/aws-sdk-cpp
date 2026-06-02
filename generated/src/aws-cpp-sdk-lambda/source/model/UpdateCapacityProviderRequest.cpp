@@ -19,5 +19,9 @@ Aws::String UpdateCapacityProviderRequest::SerializePayload() const {
     payload.WithObject("CapacityProviderScalingConfig", m_capacityProviderScalingConfig.Jsonize());
   }
 
+  if (m_propagateTagsHasBeenSet) {
+    payload.WithObject("PropagateTags", m_propagateTags.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

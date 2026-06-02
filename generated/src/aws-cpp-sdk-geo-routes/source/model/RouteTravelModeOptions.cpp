@@ -34,6 +34,14 @@ RouteTravelModeOptions& RouteTravelModeOptions::operator=(JsonView jsonValue) {
     m_truck = jsonValue.GetObject("Truck");
     m_truckHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Intermodal")) {
+    m_intermodal = jsonValue.GetObject("Intermodal");
+    m_intermodalHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Transit")) {
+    m_transit = jsonValue.GetObject("Transit");
+    m_transitHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +62,14 @@ JsonValue RouteTravelModeOptions::Jsonize() const {
 
   if (m_truckHasBeenSet) {
     payload.WithObject("Truck", m_truck.Jsonize());
+  }
+
+  if (m_intermodalHasBeenSet) {
+    payload.WithObject("Intermodal", m_intermodal.Jsonize());
+  }
+
+  if (m_transitHasBeenSet) {
+    payload.WithObject("Transit", m_transit.Jsonize());
   }
 
   return payload;

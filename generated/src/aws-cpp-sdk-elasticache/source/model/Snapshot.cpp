@@ -177,6 +177,12 @@ Snapshot& Snapshot::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataTieringNode.GetText()).c_str()));
       m_dataTieringHasBeenSet = true;
     }
+    XmlNode durabilityNode = resultNode.FirstChild("Durability");
+    if (!durabilityNode.IsNull()) {
+      m_durability = DurabilityMapper::GetDurabilityForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durabilityNode.GetText()).c_str()));
+      m_durabilityHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -308,6 +314,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
     oStream << location << index << locationValue
             << ".DataTiering=" << StringUtils::URLEncode(DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering)) << "&";
   }
+
+  if (m_durabilityHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Durability=" << StringUtils::URLEncode(DurabilityMapper::GetNameForDurability(m_durability)) << "&";
+  }
 }
 
 void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -402,6 +413,9 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if (m_dataTieringHasBeenSet) {
     oStream << location << ".DataTiering=" << StringUtils::URLEncode(DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering))
             << "&";
+  }
+  if (m_durabilityHasBeenSet) {
+    oStream << location << ".Durability=" << StringUtils::URLEncode(DurabilityMapper::GetNameForDurability(m_durability)) << "&";
   }
 }
 

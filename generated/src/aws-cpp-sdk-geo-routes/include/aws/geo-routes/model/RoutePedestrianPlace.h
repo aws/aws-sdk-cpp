@@ -7,7 +7,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
+#include <aws/geo-routes/model/RouteAccessPointDetails.h>
+#include <aws/geo-routes/model/RoutePedestrianPlaceType.h>
 #include <aws/geo-routes/model/RouteSideOfStreet.h>
+#include <aws/geo-routes/model/RouteStationDetails.h>
 
 #include <utility>
 
@@ -33,6 +36,24 @@ class RoutePedestrianPlace {
   AWS_GEOROUTES_API RoutePedestrianPlace(Aws::Utils::Json::JsonView jsonValue);
   AWS_GEOROUTES_API RoutePedestrianPlace& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>Details of the access point.</p>
+   */
+  inline const RouteAccessPointDetails& GetAccessPointDetails() const { return m_accessPointDetails; }
+  inline bool AccessPointDetailsHasBeenSet() const { return m_accessPointDetailsHasBeenSet; }
+  template <typename AccessPointDetailsT = RouteAccessPointDetails>
+  void SetAccessPointDetails(AccessPointDetailsT&& value) {
+    m_accessPointDetailsHasBeenSet = true;
+    m_accessPointDetails = std::forward<AccessPointDetailsT>(value);
+  }
+  template <typename AccessPointDetailsT = RouteAccessPointDetails>
+  RoutePedestrianPlace& WithAccessPointDetails(AccessPointDetailsT&& value) {
+    SetAccessPointDetails(std::forward<AccessPointDetailsT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -117,6 +138,40 @@ class RoutePedestrianPlace {
 
   ///@{
   /**
+   * <p>Details about the station.</p>
+   */
+  inline const RouteStationDetails& GetStationDetails() const { return m_stationDetails; }
+  inline bool StationDetailsHasBeenSet() const { return m_stationDetailsHasBeenSet; }
+  template <typename StationDetailsT = RouteStationDetails>
+  void SetStationDetails(StationDetailsT&& value) {
+    m_stationDetailsHasBeenSet = true;
+    m_stationDetails = std::forward<StationDetailsT>(value);
+  }
+  template <typename StationDetailsT = RouteStationDetails>
+  RoutePedestrianPlace& WithStationDetails(StationDetailsT&& value) {
+    SetStationDetails(std::forward<StationDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the place.</p>
+   */
+  inline RoutePedestrianPlaceType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(RoutePedestrianPlaceType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline RoutePedestrianPlace& WithType(RoutePedestrianPlaceType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Index of the waypoint in the request.</p>
    */
   inline int GetWaypointIndex() const { return m_waypointIndex; }
@@ -131,6 +186,8 @@ class RoutePedestrianPlace {
   }
   ///@}
  private:
+  RouteAccessPointDetails m_accessPointDetails;
+
   Aws::String m_name;
 
   Aws::Vector<double> m_originalPosition;
@@ -139,11 +196,18 @@ class RoutePedestrianPlace {
 
   RouteSideOfStreet m_sideOfStreet{RouteSideOfStreet::NOT_SET};
 
+  RouteStationDetails m_stationDetails;
+
+  RoutePedestrianPlaceType m_type{RoutePedestrianPlaceType::NOT_SET};
+
   int m_waypointIndex{0};
+  bool m_accessPointDetailsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_originalPositionHasBeenSet = false;
   bool m_positionHasBeenSet = false;
   bool m_sideOfStreetHasBeenSet = false;
+  bool m_stationDetailsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_waypointIndexHasBeenSet = false;
 };
 

@@ -124,6 +124,21 @@ RuntimeContext& RuntimeContext::operator=(JsonView jsonValue) {
     m_threatFilePath = jsonValue.GetString("threatFilePath");
     m_threatFilePathHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("fileOperation")) {
+    m_fileOperation = jsonValue.GetString("fileOperation");
+    m_fileOperationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("filePath")) {
+    m_filePath = jsonValue.GetString("filePath");
+    m_filePathHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("relatedFilePaths")) {
+    Aws::Utils::Array<JsonView> relatedFilePathsJsonList = jsonValue.GetArray("relatedFilePaths");
+    for (unsigned relatedFilePathsIndex = 0; relatedFilePathsIndex < relatedFilePathsJsonList.GetLength(); ++relatedFilePathsIndex) {
+      m_relatedFilePaths.push_back(relatedFilePathsJsonList[relatedFilePathsIndex].AsString());
+    }
+    m_relatedFilePathsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -236,6 +251,22 @@ JsonValue RuntimeContext::Jsonize() const {
 
   if (m_threatFilePathHasBeenSet) {
     payload.WithString("threatFilePath", m_threatFilePath);
+  }
+
+  if (m_fileOperationHasBeenSet) {
+    payload.WithString("fileOperation", m_fileOperation);
+  }
+
+  if (m_filePathHasBeenSet) {
+    payload.WithString("filePath", m_filePath);
+  }
+
+  if (m_relatedFilePathsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> relatedFilePathsJsonList(m_relatedFilePaths.size());
+    for (unsigned relatedFilePathsIndex = 0; relatedFilePathsIndex < relatedFilePathsJsonList.GetLength(); ++relatedFilePathsIndex) {
+      relatedFilePathsJsonList[relatedFilePathsIndex].AsString(m_relatedFilePaths[relatedFilePathsIndex]);
+    }
+    payload.WithArray("relatedFilePaths", std::move(relatedFilePathsJsonList));
   }
 
   return payload;

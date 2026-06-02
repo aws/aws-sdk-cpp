@@ -9,6 +9,7 @@
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/ClusterMode.h>
+#include <aws/elasticache/model/Durability.h>
 #include <aws/elasticache/model/IpDiscovery.h>
 #include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <aws/elasticache/model/NetworkType.h>
@@ -781,15 +782,13 @@ class CreateReplicationGroupRequest : public ElastiCacheRequest {
 
   ///@{
   /**
-   * <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-   * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
-   * replication group is created. To enable encryption at rest on a replication
-   * group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code>
-   * when you create the replication group. </p> <p> <b>Required:</b> Only available
-   * when creating a replication group in an Amazon VPC using Valkey <code>7.2</code>
-   * and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code>
-   * and later.</p> <p>Default: <code>true</code> when using Valkey,
-   * <code>false</code> when using Redis OSS</p>
+   * <p>A flag that enables encryption at-rest on the replication group when set to
+   * <code>true</code>. In some cases, encryption at-rest may be enabled even when
+   * this value is false. Use <code>StorageEncryptionType</code> to view the
+   * effective encryption state of a cluster.</p> <p>You cannot modify the value of
+   * <code>AtRestEncryptionEnabled</code> after the replication group is created.</p>
+   * <p>Default: <code>true</code> when using Valkey, <code>false</code> when using
+   * Redis OSS</p>
    */
   inline bool GetAtRestEncryptionEnabled() const { return m_atRestEncryptionEnabled; }
   inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
@@ -995,6 +994,27 @@ class CreateReplicationGroupRequest : public ElastiCacheRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the durability setting for the replication group. When set to
+   * <code>default</code>, the service determines the effective durability based on
+   * the engine version, cluster mode, and other parameters. The resolved setting is
+   * reflected in the <code>EffectiveDurability</code> property of the replication
+   * group. For more information, see <a
+   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+   */
+  inline Durability GetDurability() const { return m_durability; }
+  inline bool DurabilityHasBeenSet() const { return m_durabilityHasBeenSet; }
+  inline void SetDurability(Durability value) {
+    m_durabilityHasBeenSet = true;
+    m_durability = value;
+  }
+  inline CreateReplicationGroupRequest& WithDurability(Durability value) {
+    SetDurability(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_replicationGroupId;
 
@@ -1073,6 +1093,8 @@ class CreateReplicationGroupRequest : public ElastiCacheRequest {
   ClusterMode m_clusterMode{ClusterMode::NOT_SET};
 
   Aws::String m_serverlessCacheSnapshotName;
+
+  Durability m_durability{Durability::NOT_SET};
   bool m_replicationGroupIdHasBeenSet = false;
   bool m_replicationGroupDescriptionHasBeenSet = false;
   bool m_globalReplicationGroupIdHasBeenSet = false;
@@ -1112,6 +1134,7 @@ class CreateReplicationGroupRequest : public ElastiCacheRequest {
   bool m_transitEncryptionModeHasBeenSet = false;
   bool m_clusterModeHasBeenSet = false;
   bool m_serverlessCacheSnapshotNameHasBeenSet = false;
+  bool m_durabilityHasBeenSet = false;
 };
 
 }  // namespace Model

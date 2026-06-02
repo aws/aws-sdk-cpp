@@ -4453,8 +4453,11 @@ class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Retrieves the live connectivity status per device.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Retrieves the live connectivity status per device. If a device has never
+   * connected to IoT Core or was disconnected for more than 1 hour before fleet
+   * indexing's <code>thingConnectivityIndexingMode</code> was enabled, the response
+   * will have the <code>connected</code> field set to <code>false</code> with no
+   * additional session details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetThingConnectivityData">AWS
    * API Reference</a></p>
    */
@@ -6778,7 +6781,12 @@ class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>The query search index.</p> <p>Requires permission to access the <a
+   * <p>Searches the specified index.</p> <p>If a device has never connected to IoT
+   * Core or was disconnected for more than 1 hour before fleet indexing's
+   * <code>thingConnectivityIndexingMode</code> was enabled, the
+   * <code>connectivity</code> object for this device in the response will have the
+   * <code>connected</code> field set to <code>false</code> with no additional
+   * session details.</p> <p>Requires permission to access the <a
    * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SearchIndex</a>
    * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SearchIndex">AWS API

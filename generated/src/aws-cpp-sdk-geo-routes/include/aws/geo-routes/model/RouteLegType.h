@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GeoRoutes {
 namespace Model {
-enum class RouteLegType { NOT_SET, Ferry, Pedestrian, Vehicle };
+enum class RouteLegType { NOT_SET, Ferry, Pedestrian, Vehicle, Rental, Taxi, Transit };
 
 namespace RouteLegTypeMapper {
 AWS_GEOROUTES_API RouteLegType GetRouteLegTypeForName(const Aws::String& name);

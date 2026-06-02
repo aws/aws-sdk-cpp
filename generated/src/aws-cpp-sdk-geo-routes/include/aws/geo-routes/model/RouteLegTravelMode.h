@@ -10,7 +10,29 @@
 namespace Aws {
 namespace GeoRoutes {
 namespace Model {
-enum class RouteLegTravelMode { NOT_SET, Car, Ferry, Pedestrian, Scooter, Truck, CarShuttleTrain };
+enum class RouteLegTravelMode {
+  NOT_SET,
+  Car,
+  Ferry,
+  Pedestrian,
+  Scooter,
+  Truck,
+  CarShuttleTrain,
+  AerialTramway,
+  Airplane,
+  Bus,
+  BusRapidTransit,
+  CityTrain,
+  FunicularRailway,
+  HighSpeedTrain,
+  IntercityTrain,
+  InterregionalTrain,
+  LightRail,
+  Monorail,
+  PrivateBus,
+  RegionalTrain,
+  Subway
+};
 
 namespace RouteLegTravelModeMapper {
 AWS_GEOROUTES_API RouteLegTravelMode GetRouteLegTravelModeForName(const Aws::String& name);

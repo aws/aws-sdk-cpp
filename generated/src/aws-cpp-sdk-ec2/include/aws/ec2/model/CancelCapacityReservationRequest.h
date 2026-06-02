@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/ApplyCancellationCharges.h>
 
 #include <utility>
 
@@ -68,12 +69,58 @@ class CancelCapacityReservationRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the cancellation charge type to apply when cancelling a
+   * future-dated Capacity Reservation during its commitment duration. Possible
+   * values include <code>commitment-wind-down</code>, which continues billing for
+   * the remaining commitment duration without delivering capacity.</p>
+   */
+  inline ApplyCancellationCharges GetApplyCancellationCharges() const { return m_applyCancellationCharges; }
+  inline bool ApplyCancellationChargesHasBeenSet() const { return m_applyCancellationChargesHasBeenSet; }
+  inline void SetApplyCancellationCharges(ApplyCancellationCharges value) {
+    m_applyCancellationChargesHasBeenSet = true;
+    m_applyCancellationCharges = value;
+  }
+  inline CancelCapacityReservationRequest& WithApplyCancellationCharges(ApplyCancellationCharges value) {
+    SetApplyCancellationCharges(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the cancellation quote to use for the cancellation. You can
+   * generate a cancellation quote by using the
+   * <code>CreateCapacityReservationCancellationQuote</code> action. The cancellation
+   * quote must be in an <code>active</code> state.</p>
+   */
+  inline const Aws::String& GetQuoteId() const { return m_quoteId; }
+  inline bool QuoteIdHasBeenSet() const { return m_quoteIdHasBeenSet; }
+  template <typename QuoteIdT = Aws::String>
+  void SetQuoteId(QuoteIdT&& value) {
+    m_quoteIdHasBeenSet = true;
+    m_quoteId = std::forward<QuoteIdT>(value);
+  }
+  template <typename QuoteIdT = Aws::String>
+  CancelCapacityReservationRequest& WithQuoteId(QuoteIdT&& value) {
+    SetQuoteId(std::forward<QuoteIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityReservationId;
 
   bool m_dryRun{false};
+
+  ApplyCancellationCharges m_applyCancellationCharges{ApplyCancellationCharges::NOT_SET};
+
+  Aws::String m_quoteId;
   bool m_capacityReservationIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
+  bool m_applyCancellationChargesHasBeenSet = false;
+  bool m_quoteIdHasBeenSet = false;
 };
 
 }  // namespace Model

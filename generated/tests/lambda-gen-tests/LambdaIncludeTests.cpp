@@ -274,6 +274,8 @@
 #include <aws/lambda/model/PackageType.h>
 #include <aws/lambda/model/PolicyLengthExceededException.h>
 #include <aws/lambda/model/PreconditionFailedException.h>
+#include <aws/lambda/model/PropagateTags.h>
+#include <aws/lambda/model/PropagateTagsMode.h>
 #include <aws/lambda/model/ProvisionedConcurrencyConfigListItem.h>
 #include <aws/lambda/model/ProvisionedConcurrencyConfigNotFoundException.h>
 #include <aws/lambda/model/ProvisionedConcurrencyStatusEnum.h>

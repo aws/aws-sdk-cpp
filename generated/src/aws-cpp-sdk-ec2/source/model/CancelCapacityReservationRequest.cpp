@@ -21,6 +21,15 @@ Aws::String CancelCapacityReservationRequest::SerializePayload() const {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
+  if (m_applyCancellationChargesHasBeenSet) {
+    ss << "ApplyCancellationCharges="
+       << StringUtils::URLEncode(ApplyCancellationChargesMapper::GetNameForApplyCancellationCharges(m_applyCancellationCharges)) << "&";
+  }
+
+  if (m_quoteIdHasBeenSet) {
+    ss << "QuoteId=" << StringUtils::URLEncode(m_quoteId.c_str()) << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

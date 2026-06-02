@@ -17,8 +17,15 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Provides the circle that was used while calculating the route.</p><p><h3>See
- * Also:</h3>   <a
+ * <p> <code>AutoCircle</code> requests the route matrix service to define a
+ * <code>Circle</code> boundary that best attempts to include most waypoints
+ * (<code>Origins</code> and <code>Destinations</code>) using the
+ * <code>AutoCircle</code> settings. Any waypoints outside of the auto-defined
+ * <code>Circle</code> boundary will be considered out of the routing boundary,
+ * which results in a route matrix entry error.</p> <p> <code>AutoCircle</code> is
+ * only used in the request to configure a <code>Circle</code> for the route
+ * calculation. The derived <code>Circle</code> will also be provided in the
+ * response.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteMatrixAutoCircle">AWS
  * API Reference</a></p>
  */
@@ -31,7 +38,12 @@ class RouteMatrixAutoCircle {
 
   ///@{
   /**
-   * <p>The margin provided for the calculation.</p>
+   * <p>The minimal distance, in meters, between any waypoint and the perimeter of
+   * the circle auto-defined for the boundary. Some margin is usually recommended so
+   * that the routing has enough leeway to travel from one waypoint to another
+   * optimally without conflicting with the routing boundary.</p> <p>The total of
+   * <code>MaxRadius</code> and <code>Margin</code> must be less than or equal to
+   * 200,000 meters.</p>
    */
   inline long long GetMargin() const { return m_margin; }
   inline bool MarginHasBeenSet() const { return m_marginHasBeenSet; }
@@ -47,7 +59,10 @@ class RouteMatrixAutoCircle {
 
   ///@{
   /**
-   * <p>The maximum size of the radius provided for the calculation.</p>
+   * <p>The maximum radius, in meters, that the auto-defined <code>Circle</code>
+   * boundary should have, before the <code>Margin</code> distance is added to the
+   * circle.</p> <p>The total of <code>MaxRadius</code> and <code>Margin</code> must
+   * be less than or equal to 200,000 meters.</p>
    */
   inline long long GetMaxRadius() const { return m_maxRadius; }
   inline bool MaxRadiusHasBeenSet() const { return m_maxRadiusHasBeenSet; }

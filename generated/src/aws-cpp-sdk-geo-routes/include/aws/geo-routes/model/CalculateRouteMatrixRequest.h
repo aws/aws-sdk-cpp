@@ -126,12 +126,26 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>List of destinations for the route.</p>  <p>Route calculations are
-   * billed for each origin and destination pair. If you use a large matrix of
-   * origins and destinations, your costs will increase accordingly. For more
-   * information, see <a
+   * <p>List of destinations for the route in World Geodetic System (WGS 84) format:
+   * [longitude, latitude].</p>  <p>Route calculations are billed for each
+   * origin and destination pair. If you use a large matrix of origins and
+   * destinations, your costs will increase accordingly. For more information, see <a
    * href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes
    * pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+   * <p>The maximum number of destinations depends on the routing boundary
+   * configuration:</p> <ul> <li> <p>With <code>RoutingBoundary.Geometry</code> set:
+   * maximum 500 destinations</p> </li> <li> <p>With
+   * <code>RoutingBoundary.Unbounded</code> set to <code>true</code>: maximum 100
+   * destinations</p> </li> <li> <p>For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>:
+   * maximum 350 destinations</p> </li> </ul> <p>The total matrix size (origins ×
+   * destinations) must not exceed:</p> <ul> <li> <p>With
+   * <code>RoutingBoundary.Geometry</code>: 160,000</p> </li> <li> <p>With
+   * <code>RoutingBoundary.Unbounded</code>: 100</p> </li> <li> <p>For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>:
+   * 122,500</p> </li> </ul>
    */
   inline const Aws::Vector<RouteMatrixDestination>& GetDestinations() const { return m_destinations; }
   inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
@@ -214,12 +228,26 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>The position for the origin in World Geodetic System (WGS 84) format:
+   * <p>List of origins for the route in World Geodetic System (WGS 84) format:
    * [longitude, latitude].</p>  <p>Route calculations are billed for each
    * origin and destination pair. Using a large amount of Origins in a request can
    * lead you to incur unexpected charges. For more information, see <a
    * href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes
    * pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+   * <p>The maximum number of origins depends on the routing boundary
+   * configuration:</p> <ul> <li> <p>With <code>RoutingBoundary.Geometry</code> set:
+   * maximum 500 origins</p> </li> <li> <p>With
+   * <code>RoutingBoundary.Unbounded</code> set to <code>true</code>: maximum 15
+   * origins</p> </li> <li> <p>For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>:
+   * maximum 350 origins</p> </li> </ul> <p>The total matrix size (origins ×
+   * destinations) must not exceed:</p> <ul> <li> <p>With
+   * <code>RoutingBoundary.Geometry</code>: 160,000</p> </li> <li> <p>With
+   * <code>RoutingBoundary.Unbounded</code>: 100</p> </li> <li> <p>For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>:
+   * 122,500</p> </li> </ul>
    */
   inline const Aws::Vector<RouteMatrixOrigin>& GetOrigins() const { return m_origins; }
   inline bool OriginsHasBeenSet() const { return m_originsHasBeenSet; }
@@ -248,9 +276,10 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
    * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
    * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
    * support only <code>Unbounded</code> set to <code>true</code>. </p> <p>Default
-   * value: <code>Unbounded set to true</code> </p>  <p>When request routing
-   * boundary was set as AutoCircle, the response routing boundary will return Circle
-   * derived from the AutoCircle settings.</p>
+   * value: <code>Unbounded set to true</code> </p>  <p>When
+   * <code>AutoCircle</code> is set in the request, the response routing boundary
+   * will return <code>Circle</code> derived from the <code>AutoCircle</code>
+   * settings.</p>
    */
   inline const RouteMatrixBoundary& GetRoutingBoundary() const { return m_routingBoundary; }
   inline bool RoutingBoundaryHasBeenSet() const { return m_routingBoundaryHasBeenSet; }

@@ -33,6 +33,10 @@ GetRecordsResult& GetRecordsResult::operator=(const Aws::AmazonWebServiceResult<
     m_nextShardIterator = jsonValue.GetString("nextShardIterator");
     m_nextShardIteratorHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("iteratorDescription")) {
+    m_iteratorDescription = jsonValue.GetObject("iteratorDescription");
+    m_iteratorDescriptionHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

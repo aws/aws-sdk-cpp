@@ -10,7 +10,15 @@
 namespace Aws {
 namespace GeoRoutes {
 namespace Model {
-enum class RouteResponseNoticeCode { NOT_SET, MainLanguageNotFound, Other, TravelTimeExceedsDriverWorkHours };
+enum class RouteResponseNoticeCode {
+  NOT_SET,
+  MainLanguageNotFound,
+  Other,
+  TravelTimeExceedsDriverWorkHours,
+  TransitDataUnavailable,
+  TransitRouteUnavailable,
+  NoTransitStationsFound
+};
 
 namespace RouteResponseNoticeCodeMapper {
 AWS_GEOROUTES_API RouteResponseNoticeCode GetRouteResponseNoticeCodeForName(const Aws::String& name);

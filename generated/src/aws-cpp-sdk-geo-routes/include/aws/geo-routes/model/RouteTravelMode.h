@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GeoRoutes {
 namespace Model {
-enum class RouteTravelMode { NOT_SET, Car, Pedestrian, Scooter, Truck };
+enum class RouteTravelMode { NOT_SET, Car, Pedestrian, Scooter, Truck, Intermodal, Transit };
 
 namespace RouteTravelModeMapper {
 AWS_GEOROUTES_API RouteTravelMode GetRouteTravelModeForName(const Aws::String& name);

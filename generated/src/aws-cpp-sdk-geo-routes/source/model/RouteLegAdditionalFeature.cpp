@@ -24,6 +24,9 @@ static const int TravelStepInstructions_HASH = HashingUtils::HashString("TravelS
 static const int TruckRoadTypes_HASH = HashingUtils::HashString("TruckRoadTypes");
 static const int TypicalDuration_HASH = HashingUtils::HashString("TypicalDuration");
 static const int Zones_HASH = HashingUtils::HashString("Zones");
+static const int Bookings_HASH = HashingUtils::HashString("Bookings");
+static const int IntermediateStops_HASH = HashingUtils::HashString("IntermediateStops");
+static const int NextDepartures_HASH = HashingUtils::HashString("NextDepartures");
 
 RouteLegAdditionalFeature GetRouteLegAdditionalFeatureForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +48,12 @@ RouteLegAdditionalFeature GetRouteLegAdditionalFeatureForName(const Aws::String&
     return RouteLegAdditionalFeature::TypicalDuration;
   } else if (hashCode == Zones_HASH) {
     return RouteLegAdditionalFeature::Zones;
+  } else if (hashCode == Bookings_HASH) {
+    return RouteLegAdditionalFeature::Bookings;
+  } else if (hashCode == IntermediateStops_HASH) {
+    return RouteLegAdditionalFeature::IntermediateStops;
+  } else if (hashCode == NextDepartures_HASH) {
+    return RouteLegAdditionalFeature::NextDepartures;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +86,12 @@ Aws::String GetNameForRouteLegAdditionalFeature(RouteLegAdditionalFeature enumVa
       return "TypicalDuration";
     case RouteLegAdditionalFeature::Zones:
       return "Zones";
+    case RouteLegAdditionalFeature::Bookings:
+      return "Bookings";
+    case RouteLegAdditionalFeature::IntermediateStops:
+      return "IntermediateStops";
+    case RouteLegAdditionalFeature::NextDepartures:
+      return "NextDepartures";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -10,6 +10,7 @@
 #include <aws/geo-routes/model/RoutePassThroughWaypoint.h>
 #include <aws/geo-routes/model/RouteToll.h>
 #include <aws/geo-routes/model/RouteTollSystem.h>
+#include <aws/geo-routes/model/RouteVehicleAfterTravelStep.h>
 #include <aws/geo-routes/model/RouteVehicleArrival.h>
 #include <aws/geo-routes/model/RouteVehicleDeparture.h>
 #include <aws/geo-routes/model/RouteVehicleIncident.h>
@@ -43,6 +44,31 @@ class RouteVehicleLegDetails {
   AWS_GEOROUTES_API RouteVehicleLegDetails(Aws::Utils::Json::JsonView jsonValue);
   AWS_GEOROUTES_API RouteVehicleLegDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>Steps of a leg that must be performed after the travel portion of the
+   * leg.</p>
+   */
+  inline const Aws::Vector<RouteVehicleAfterTravelStep>& GetAfterTravelSteps() const { return m_afterTravelSteps; }
+  inline bool AfterTravelStepsHasBeenSet() const { return m_afterTravelStepsHasBeenSet; }
+  template <typename AfterTravelStepsT = Aws::Vector<RouteVehicleAfterTravelStep>>
+  void SetAfterTravelSteps(AfterTravelStepsT&& value) {
+    m_afterTravelStepsHasBeenSet = true;
+    m_afterTravelSteps = std::forward<AfterTravelStepsT>(value);
+  }
+  template <typename AfterTravelStepsT = Aws::Vector<RouteVehicleAfterTravelStep>>
+  RouteVehicleLegDetails& WithAfterTravelSteps(AfterTravelStepsT&& value) {
+    SetAfterTravelSteps(std::forward<AfterTravelStepsT>(value));
+    return *this;
+  }
+  template <typename AfterTravelStepsT = RouteVehicleAfterTravelStep>
+  RouteVehicleLegDetails& AddAfterTravelSteps(AfterTravelStepsT&& value) {
+    m_afterTravelStepsHasBeenSet = true;
+    m_afterTravelSteps.emplace_back(std::forward<AfterTravelStepsT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -343,6 +369,8 @@ class RouteVehicleLegDetails {
   }
   ///@}
  private:
+  Aws::Vector<RouteVehicleAfterTravelStep> m_afterTravelSteps;
+
   RouteVehicleArrival m_arrival;
 
   RouteVehicleDeparture m_departure;
@@ -366,6 +394,7 @@ class RouteVehicleLegDetails {
   Aws::Vector<Aws::String> m_truckRoadTypes;
 
   Aws::Vector<RouteZone> m_zones;
+  bool m_afterTravelStepsHasBeenSet = false;
   bool m_arrivalHasBeenSet = false;
   bool m_departureHasBeenSet = false;
   bool m_incidentsHasBeenSet = false;

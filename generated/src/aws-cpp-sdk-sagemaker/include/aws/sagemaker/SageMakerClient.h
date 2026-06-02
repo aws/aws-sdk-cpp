@@ -1759,6 +1759,48 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a model customization job in Amazon SageMaker. A job runs a workload
+   * based on the job category and configuration you provide. You specify the job
+   * category, a schema-versioned configuration document, and an IAM role that grants
+   * Amazon SageMaker permission to access resources on your behalf.</p> <p>Use the
+   * <code>AgentRFT</code> category to fine-tune a model using multi-turn
+   * reinforcement learning with reward signals. Use the
+   * <code>AgentRFTEvaluation</code> category to evaluate a fine-tuned or base model
+   * by running multi-turn rollouts against a held-out prompt dataset and computing
+   * metrics such as pass@k and mean reward.</p> <p>Before creating a job, call
+   * <code>ListJobSchemaVersions</code> and <code>DescribeJobSchemaVersion</code> to
+   * retrieve the configuration schema for your job category. The
+   * <code>JobConfigDocument</code> must conform to the schema specified by
+   * <code>JobConfigSchemaVersion</code>.</p> <p>The following operations are related
+   * to <code>CreateJob</code>:</p> <ul> <li> <p> <code>DescribeJob</code> </p> </li>
+   * <li> <p> <code>ListJobs</code> </p> </li> <li> <p> <code>StopJob</code> </p>
+   * </li> <li> <p> <code>DeleteJob</code> </p> </li> <li> <p>
+   * <code>ListJobSchemaVersions</code> </p> </li> <li> <p>
+   * <code>DescribeJobSchemaVersion</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateJobRequestT = Model::CreateJobRequest>
+  Model::CreateJobOutcomeCallable CreateJobCallable(const CreateJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::CreateJob, request);
+  }
+
+  /**
+   * An Async wrapper for CreateJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateJobRequestT = Model::CreateJobRequest>
+  void CreateJobAsync(const CreateJobRequestT& request, const CreateJobResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::CreateJob, request, handler, context);
+  }
+
+  /**
    * <p>Creates a job that uses workers to label the data objects in your input
    * dataset. You can use the labeled data to train machine learning models. </p>
    * <p>You can select your workforce from one of three providers:</p> <ul> <li> <p>A
@@ -3962,6 +4004,35 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes a job. This operation is idempotent. If the job is currently running,
+   * you must stop it before deleting it by calling <code>StopJob</code>.</p> <p>The
+   * following operations are related to <code>DeleteJob</code>:</p> <ul> <li> <p>
+   * <code>CreateJob</code> </p> </li> <li> <p> <code>StopJob</code> </p> </li> <li>
+   * <p> <code>DescribeJob</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteJobOutcome DeleteJob(const Model::DeleteJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteJobRequestT = Model::DeleteJobRequest>
+  Model::DeleteJobOutcomeCallable DeleteJobCallable(const DeleteJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DeleteJob, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteJobRequestT = Model::DeleteJobRequest>
+  void DeleteJobAsync(const DeleteJobRequestT& request, const DeleteJobResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DeleteJob, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an MLflow App.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowApp">AWS
    * API Reference</a></p>
@@ -5849,6 +5920,72 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                                 const DescribeInferenceRecommendationsJobResponseReceivedHandler& handler,
                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::DescribeInferenceRecommendationsJob, request, handler, context);
+  }
+
+  /**
+   * <p>Returns detailed information about a job, including its current status,
+   * secondary status, configuration, and timestamps. Use
+   * <code>SecondaryStatus</code> for granular progress tracking and
+   * <code>SecondaryStatusTransitions</code> to see the full history of status
+   * changes with timestamps.</p> <p>The following operations are related to
+   * <code>DescribeJob</code>:</p> <ul> <li> <p> <code>CreateJob</code> </p> </li>
+   * <li> <p> <code>ListJobs</code> </p> </li> <li> <p> <code>StopJob</code> </p>
+   * </li> <li> <p> <code>DeleteJob</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeJobOutcome DescribeJob(const Model::DescribeJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeJobRequestT = Model::DescribeJobRequest>
+  Model::DescribeJobOutcomeCallable DescribeJobCallable(const DescribeJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeJob, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeJobRequestT = Model::DescribeJobRequest>
+  void DescribeJobAsync(const DescribeJobRequestT& request, const DescribeJobResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeJob, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the JSON schema for a specified job category and schema version. Use
+   * this schema to validate your <code>JobConfigDocument</code> before calling
+   * <code>CreateJob</code>. If you don't specify a schema version, the latest
+   * version is returned. The schema defines required fields, allowed values, and
+   * constraints for the job configuration.</p> <p>The following operations are
+   * related to <code>DescribeJobSchemaVersion</code>:</p> <ul> <li> <p>
+   * <code>ListJobSchemaVersions</code> </p> </li> <li> <p> <code>CreateJob</code>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeJobSchemaVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeJobSchemaVersionOutcome DescribeJobSchemaVersion(const Model::DescribeJobSchemaVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeJobSchemaVersion that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeJobSchemaVersionRequestT = Model::DescribeJobSchemaVersionRequest>
+  Model::DescribeJobSchemaVersionOutcomeCallable DescribeJobSchemaVersionCallable(const DescribeJobSchemaVersionRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeJobSchemaVersion, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeJobSchemaVersion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeJobSchemaVersionRequestT = Model::DescribeJobSchemaVersionRequest>
+  void DescribeJobSchemaVersionAsync(const DescribeJobSchemaVersionRequestT& request,
+                                     const DescribeJobSchemaVersionResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeJobSchemaVersion, request, handler, context);
   }
 
   /**
@@ -8384,6 +8521,67 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists available configuration schema versions for a specified job category.
+   * Use the schema versions with <code>DescribeJobSchemaVersion</code> to retrieve
+   * the full schema document.</p> <p>The following operations are related to
+   * <code>ListJobSchemaVersions</code>:</p> <ul> <li> <p>
+   * <code>DescribeJobSchemaVersion</code> </p> </li> <li> <p> <code>CreateJob</code>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListJobSchemaVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListJobSchemaVersionsOutcome ListJobSchemaVersions(const Model::ListJobSchemaVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListJobSchemaVersions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListJobSchemaVersionsRequestT = Model::ListJobSchemaVersionsRequest>
+  Model::ListJobSchemaVersionsOutcomeCallable ListJobSchemaVersionsCallable(const ListJobSchemaVersionsRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::ListJobSchemaVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListJobSchemaVersions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListJobSchemaVersionsRequestT = Model::ListJobSchemaVersionsRequest>
+  void ListJobSchemaVersionsAsync(const ListJobSchemaVersionsRequestT& request, const ListJobSchemaVersionsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::ListJobSchemaVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists jobs in a specified category. You can filter results by creation time,
+   * last modified time, name, and status. Results are sorted by the field you
+   * specify in <code>SortBy</code>. Use pagination to retrieve large result sets
+   * efficiently.</p> <p>The following operations are related to
+   * <code>ListJobs</code>:</p> <ul> <li> <p> <code>CreateJob</code> </p> </li> <li>
+   * <p> <code>DescribeJob</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListJobsRequestT = Model::ListJobsRequest>
+  Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::ListJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListJobsRequestT = Model::ListJobsRequest>
+  void ListJobsAsync(const ListJobsRequestT& request, const ListJobsResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::ListJobs, request, handler, context);
+  }
+
+  /**
    * <p>Gets a list of labeling jobs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLabelingJobs">AWS
    * API Reference</a></p>
@@ -10456,6 +10654,38 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                             const StopInferenceRecommendationsJobResponseReceivedHandler& handler,
                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::StopInferenceRecommendationsJob, request, handler, context);
+  }
+
+  /**
+   * <p>Stops a running job. When you call <code>StopJob</code>, Amazon SageMaker
+   * sets the job status to <code>Stopping</code>. After the job stops, the status
+   * changes to <code>Stopped</code>. Partial results may be available in the output
+   * location if the job was in progress. To delete a stopped job, call
+   * <code>DeleteJob</code>.</p> <p>The following operations are related to
+   * <code>StopJob</code>:</p> <ul> <li> <p> <code>CreateJob</code> </p> </li> <li>
+   * <p> <code>DescribeJob</code> </p> </li> <li> <p> <code>DeleteJob</code> </p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopJobOutcome StopJob(const Model::StopJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StopJobRequestT = Model::StopJobRequest>
+  Model::StopJobOutcomeCallable StopJobCallable(const StopJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::StopJob, request);
+  }
+
+  /**
+   * An Async wrapper for StopJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StopJobRequestT = Model::StopJobRequest>
+  void StopJobAsync(const StopJobRequestT& request, const StopJobResponseReceivedHandler& handler,
+                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::StopJob, request, handler, context);
   }
 
   /**
