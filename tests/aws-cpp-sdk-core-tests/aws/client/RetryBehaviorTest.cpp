@@ -4,6 +4,7 @@
  */
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
@@ -55,6 +56,7 @@ private:
 
 class RetryBehaviorTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
+    Aws::Environment::EnvironmentRAII m_env{{{"AWS_NEW_RETRIES_2026", "true"}}};
 };
 
 static AWSError<CoreErrors> MakeTransientError()
@@ -376,8 +378,13 @@ TEST_F(RetryBehaviorTest, InvalidRetryAfterFallsBack)
     ASSERT_LE(delay, 50);
 }
 
+class RetryBehaviorLegacyTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+    Aws::Environment::EnvironmentRAII m_env{{{"AWS_NEW_RETRIES_2026", ""}}};
+};
+
 // Verify legacy behavior unchanged when gate is off (old constructors)
-TEST_F(RetryBehaviorTest, LegacyBehaviorUnchanged)
+TEST_F(RetryBehaviorLegacyTest, LegacyBehaviorUnchanged)
 {
     StandardRetryStrategy strategy(3);
 
@@ -412,7 +419,7 @@ TEST_F(RetryBehaviorTest, ThrottleBasedClassification)
 }
 
 // Verify legacy classification: REQUEST_TIMEOUT costs 10, others cost 5
-TEST_F(RetryBehaviorTest, LegacyClassification)
+TEST_F(RetryBehaviorLegacyTest, LegacyClassification)
 {
     DefaultRetryQuotaContainer quota;
 
