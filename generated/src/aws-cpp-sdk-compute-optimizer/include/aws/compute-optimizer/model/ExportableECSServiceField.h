@@ -39,7 +39,8 @@ enum class ExportableECSServiceField {
   EffectiveRecommendationPreferencesSavingsEstimationMode,
   RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
   RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
-  RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
+  RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts,
+  EffectiveRecommendationPreferencesLookBackPeriod
 };
 
 namespace ExportableECSServiceFieldMapper {

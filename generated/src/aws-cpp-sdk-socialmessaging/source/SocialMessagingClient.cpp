@@ -21,25 +21,35 @@
 #include <aws/socialmessaging/SocialMessagingEndpointProvider.h>
 #include <aws/socialmessaging/SocialMessagingErrorMarshaller.h>
 #include <aws/socialmessaging/model/AssociateWhatsAppBusinessAccountRequest.h>
+#include <aws/socialmessaging/model/CreateWhatsAppFlowRequest.h>
 #include <aws/socialmessaging/model/CreateWhatsAppMessageTemplateFromLibraryRequest.h>
 #include <aws/socialmessaging/model/CreateWhatsAppMessageTemplateMediaRequest.h>
 #include <aws/socialmessaging/model/CreateWhatsAppMessageTemplateRequest.h>
+#include <aws/socialmessaging/model/DeleteWhatsAppFlowRequest.h>
 #include <aws/socialmessaging/model/DeleteWhatsAppMessageMediaRequest.h>
 #include <aws/socialmessaging/model/DeleteWhatsAppMessageTemplateRequest.h>
+#include <aws/socialmessaging/model/DeprecateWhatsAppFlowRequest.h>
 #include <aws/socialmessaging/model/DisassociateWhatsAppBusinessAccountRequest.h>
 #include <aws/socialmessaging/model/GetLinkedWhatsAppBusinessAccountPhoneNumberRequest.h>
 #include <aws/socialmessaging/model/GetLinkedWhatsAppBusinessAccountRequest.h>
+#include <aws/socialmessaging/model/GetWhatsAppFlowPreviewRequest.h>
+#include <aws/socialmessaging/model/GetWhatsAppFlowRequest.h>
 #include <aws/socialmessaging/model/GetWhatsAppMessageMediaRequest.h>
 #include <aws/socialmessaging/model/GetWhatsAppMessageTemplateRequest.h>
 #include <aws/socialmessaging/model/ListLinkedWhatsAppBusinessAccountsRequest.h>
 #include <aws/socialmessaging/model/ListTagsForResourceRequest.h>
+#include <aws/socialmessaging/model/ListWhatsAppFlowAssetsRequest.h>
+#include <aws/socialmessaging/model/ListWhatsAppFlowsRequest.h>
 #include <aws/socialmessaging/model/ListWhatsAppMessageTemplatesRequest.h>
 #include <aws/socialmessaging/model/ListWhatsAppTemplateLibraryRequest.h>
 #include <aws/socialmessaging/model/PostWhatsAppMessageMediaRequest.h>
+#include <aws/socialmessaging/model/PublishWhatsAppFlowRequest.h>
 #include <aws/socialmessaging/model/PutWhatsAppBusinessAccountEventDestinationsRequest.h>
 #include <aws/socialmessaging/model/SendWhatsAppMessageRequest.h>
 #include <aws/socialmessaging/model/TagResourceRequest.h>
 #include <aws/socialmessaging/model/UntagResourceRequest.h>
+#include <aws/socialmessaging/model/UpdateWhatsAppFlowAssetsRequest.h>
+#include <aws/socialmessaging/model/UpdateWhatsAppFlowRequest.h>
 #include <aws/socialmessaging/model/UpdateWhatsAppMessageTemplateRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -211,6 +221,17 @@ AssociateWhatsAppBusinessAccountOutcome SocialMessagingClient::AssociateWhatsApp
                             : AssociateWhatsAppBusinessAccountOutcome(std::move(result.GetError()));
 }
 
+CreateWhatsAppFlowOutcome SocialMessagingClient::CreateWhatsAppFlow(const CreateWhatsAppFlowRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/flow/create");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWhatsAppFlowOutcome(result.GetResultWithOwnership())
+                            : CreateWhatsAppFlowOutcome(std::move(result.GetError()));
+}
+
 CreateWhatsAppMessageTemplateOutcome SocialMessagingClient::CreateWhatsAppMessageTemplate(
     const CreateWhatsAppMessageTemplateRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -245,6 +266,28 @@ CreateWhatsAppMessageTemplateMediaOutcome SocialMessagingClient::CreateWhatsAppM
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateWhatsAppMessageTemplateMediaOutcome(result.GetResultWithOwnership())
                             : CreateWhatsAppMessageTemplateMediaOutcome(std::move(result.GetError()));
+}
+
+DeleteWhatsAppFlowOutcome SocialMessagingClient::DeleteWhatsAppFlow(const DeleteWhatsAppFlowRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteWhatsAppFlow", "Required field: Id, is not set");
+    return DeleteWhatsAppFlowOutcome(Aws::Client::AWSError<SocialMessagingErrors>(
+        SocialMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.FlowIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteWhatsAppFlow", "Required field: FlowId, is not set");
+    return DeleteWhatsAppFlowOutcome(Aws::Client::AWSError<SocialMessagingErrors>(
+        SocialMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/flow");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWhatsAppFlowOutcome(result.GetResultWithOwnership())
+                            : DeleteWhatsAppFlowOutcome(std::move(result.GetError()));
 }
 
 DeleteWhatsAppMessageMediaOutcome SocialMessagingClient::DeleteWhatsAppMessageMedia(
@@ -291,6 +334,17 @@ DeleteWhatsAppMessageTemplateOutcome SocialMessagingClient::DeleteWhatsAppMessag
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteWhatsAppMessageTemplateOutcome(result.GetResultWithOwnership())
                             : DeleteWhatsAppMessageTemplateOutcome(std::move(result.GetError()));
+}
+
+DeprecateWhatsAppFlowOutcome SocialMessagingClient::DeprecateWhatsAppFlow(const DeprecateWhatsAppFlowRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/flow/deprecate");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeprecateWhatsAppFlowOutcome(result.GetResultWithOwnership())
+                            : DeprecateWhatsAppFlowOutcome(std::move(result.GetError()));
 }
 
 DisassociateWhatsAppBusinessAccountOutcome SocialMessagingClient::DisassociateWhatsAppBusinessAccount(
@@ -345,6 +399,50 @@ GetLinkedWhatsAppBusinessAccountPhoneNumberOutcome SocialMessagingClient::GetLin
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetLinkedWhatsAppBusinessAccountPhoneNumberOutcome(result.GetResultWithOwnership())
                             : GetLinkedWhatsAppBusinessAccountPhoneNumberOutcome(std::move(result.GetError()));
+}
+
+GetWhatsAppFlowOutcome SocialMessagingClient::GetWhatsAppFlow(const GetWhatsAppFlowRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetWhatsAppFlow", "Required field: Id, is not set");
+    return GetWhatsAppFlowOutcome(Aws::Client::AWSError<SocialMessagingErrors>(SocialMessagingErrors::MISSING_PARAMETER,
+                                                                               "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.FlowIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetWhatsAppFlow", "Required field: FlowId, is not set");
+    return GetWhatsAppFlowOutcome(Aws::Client::AWSError<SocialMessagingErrors>(
+        SocialMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/flow");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWhatsAppFlowOutcome(result.GetResultWithOwnership())
+                            : GetWhatsAppFlowOutcome(std::move(result.GetError()));
+}
+
+GetWhatsAppFlowPreviewOutcome SocialMessagingClient::GetWhatsAppFlowPreview(const GetWhatsAppFlowPreviewRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetWhatsAppFlowPreview", "Required field: Id, is not set");
+    return GetWhatsAppFlowPreviewOutcome(Aws::Client::AWSError<SocialMessagingErrors>(
+        SocialMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.FlowIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetWhatsAppFlowPreview", "Required field: FlowId, is not set");
+    return GetWhatsAppFlowPreviewOutcome(Aws::Client::AWSError<SocialMessagingErrors>(
+        SocialMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/flow/preview");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWhatsAppFlowPreviewOutcome(result.GetResultWithOwnership())
+                            : GetWhatsAppFlowPreviewOutcome(std::move(result.GetError()));
 }
 
 GetWhatsAppMessageMediaOutcome SocialMessagingClient::GetWhatsAppMessageMedia(const GetWhatsAppMessageMediaRequest& request) const {
@@ -405,6 +503,45 @@ ListTagsForResourceOutcome SocialMessagingClient::ListTagsForResource(const List
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
+ListWhatsAppFlowAssetsOutcome SocialMessagingClient::ListWhatsAppFlowAssets(const ListWhatsAppFlowAssetsRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListWhatsAppFlowAssets", "Required field: Id, is not set");
+    return ListWhatsAppFlowAssetsOutcome(Aws::Client::AWSError<SocialMessagingErrors>(
+        SocialMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.FlowIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListWhatsAppFlowAssets", "Required field: FlowId, is not set");
+    return ListWhatsAppFlowAssetsOutcome(Aws::Client::AWSError<SocialMessagingErrors>(
+        SocialMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/flow/assets");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWhatsAppFlowAssetsOutcome(result.GetResultWithOwnership())
+                            : ListWhatsAppFlowAssetsOutcome(std::move(result.GetError()));
+}
+
+ListWhatsAppFlowsOutcome SocialMessagingClient::ListWhatsAppFlows(const ListWhatsAppFlowsRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListWhatsAppFlows", "Required field: Id, is not set");
+    return ListWhatsAppFlowsOutcome(Aws::Client::AWSError<SocialMessagingErrors>(
+        SocialMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/flow/list");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWhatsAppFlowsOutcome(result.GetResultWithOwnership())
+                            : ListWhatsAppFlowsOutcome(std::move(result.GetError()));
+}
+
 ListWhatsAppMessageTemplatesOutcome SocialMessagingClient::ListWhatsAppMessageTemplates(
     const ListWhatsAppMessageTemplatesRequest& request) const {
   if (!request.IdHasBeenSet()) {
@@ -452,6 +589,17 @@ PostWhatsAppMessageMediaOutcome SocialMessagingClient::PostWhatsAppMessageMedia(
                             : PostWhatsAppMessageMediaOutcome(std::move(result.GetError()));
 }
 
+PublishWhatsAppFlowOutcome SocialMessagingClient::PublishWhatsAppFlow(const PublishWhatsAppFlowRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/flow/publish");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishWhatsAppFlowOutcome(result.GetResultWithOwnership())
+                            : PublishWhatsAppFlowOutcome(std::move(result.GetError()));
+}
+
 PutWhatsAppBusinessAccountEventDestinationsOutcome SocialMessagingClient::PutWhatsAppBusinessAccountEventDestinations(
     const PutWhatsAppBusinessAccountEventDestinationsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -493,6 +641,28 @@ UntagResourceOutcome SocialMessagingClient::UntagResource(const UntagResourceReq
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateWhatsAppFlowOutcome SocialMessagingClient::UpdateWhatsAppFlow(const UpdateWhatsAppFlowRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/flow/update");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWhatsAppFlowOutcome(result.GetResultWithOwnership())
+                            : UpdateWhatsAppFlowOutcome(std::move(result.GetError()));
+}
+
+UpdateWhatsAppFlowAssetsOutcome SocialMessagingClient::UpdateWhatsAppFlowAssets(const UpdateWhatsAppFlowAssetsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/flow/assets/update");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWhatsAppFlowAssetsOutcome(result.GetResultWithOwnership())
+                            : UpdateWhatsAppFlowAssetsOutcome(std::move(result.GetError()));
 }
 
 UpdateWhatsAppMessageTemplateOutcome SocialMessagingClient::UpdateWhatsAppMessageTemplate(

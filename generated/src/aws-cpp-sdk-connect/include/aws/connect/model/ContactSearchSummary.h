@@ -8,6 +8,7 @@
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/ContactInitiationMethod.h>
 #include <aws/connect/model/ContactSearchSummaryAgentInfo.h>
+#include <aws/connect/model/ContactSearchSummaryAiAgentInfo.h>
 #include <aws/connect/model/ContactSearchSummaryQueueInfo.h>
 #include <aws/connect/model/ContactSearchSummarySegmentAttributeValue.h>
 #include <aws/connect/model/GlobalResiliencyMetadata.h>
@@ -15,6 +16,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -348,6 +350,30 @@ class ContactSearchSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about the AI agents involved in the contact.</p>
+   */
+  inline const Aws::Vector<ContactSearchSummaryAiAgentInfo>& GetAiAgentInfo() const { return m_aiAgentInfo; }
+  inline bool AiAgentInfoHasBeenSet() const { return m_aiAgentInfoHasBeenSet; }
+  template <typename AiAgentInfoT = Aws::Vector<ContactSearchSummaryAiAgentInfo>>
+  void SetAiAgentInfo(AiAgentInfoT&& value) {
+    m_aiAgentInfoHasBeenSet = true;
+    m_aiAgentInfo = std::forward<AiAgentInfoT>(value);
+  }
+  template <typename AiAgentInfoT = Aws::Vector<ContactSearchSummaryAiAgentInfo>>
+  ContactSearchSummary& WithAiAgentInfo(AiAgentInfoT&& value) {
+    SetAiAgentInfo(std::forward<AiAgentInfoT>(value));
+    return *this;
+  }
+  template <typename AiAgentInfoT = ContactSearchSummaryAiAgentInfo>
+  ContactSearchSummary& AddAiAgentInfo(AiAgentInfoT&& value) {
+    m_aiAgentInfoHasBeenSet = true;
+    m_aiAgentInfo.emplace_back(std::forward<AiAgentInfoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -380,6 +406,8 @@ class ContactSearchSummary {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   GlobalResiliencyMetadata m_globalResiliencyMetadata;
+
+  Aws::Vector<ContactSearchSummaryAiAgentInfo> m_aiAgentInfo;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_initialContactIdHasBeenSet = false;
@@ -396,6 +424,7 @@ class ContactSearchSummary {
   bool m_routingCriteriaHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_globalResiliencyMetadataHasBeenSet = false;
+  bool m_aiAgentInfoHasBeenSet = false;
 };
 
 }  // namespace Model

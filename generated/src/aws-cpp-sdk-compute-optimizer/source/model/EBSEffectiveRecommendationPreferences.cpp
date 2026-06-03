@@ -36,6 +36,15 @@ EBSEffectiveRecommendationPreferences& EBSEffectiveRecommendationPreferences::op
               if (initialKeyStr == "savingsEstimationMode") {
                 m_savingsEstimationMode = EBSSavingsEstimationMode(decoder);
                 m_savingsEstimationModeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "lookBackPeriod") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_lookBackPeriod = LookBackPeriodPreferenceMapper::GetLookBackPeriodPreferenceForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_lookBackPeriodHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -66,6 +75,15 @@ EBSEffectiveRecommendationPreferences& EBSEffectiveRecommendationPreferences::op
             if (initialKeyStr == "savingsEstimationMode") {
               m_savingsEstimationMode = EBSSavingsEstimationMode(decoder);
               m_savingsEstimationModeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "lookBackPeriod") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_lookBackPeriod = LookBackPeriodPreferenceMapper::GetLookBackPeriodPreferenceForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_lookBackPeriodHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -85,12 +103,21 @@ void EBSEffectiveRecommendationPreferences::CborEncode(Aws::Crt::Cbor::CborEncod
   if (m_savingsEstimationModeHasBeenSet) {
     mapSize++;
   }
+  if (m_lookBackPeriodHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
   if (m_savingsEstimationModeHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("savingsEstimationMode"));
     m_savingsEstimationMode.CborEncode(encoder);
+  }
+
+  if (m_lookBackPeriodHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("lookBackPeriod"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(LookBackPeriodPreferenceMapper::GetNameForLookBackPeriodPreference(m_lookBackPeriod).c_str()));
   }
 }
 

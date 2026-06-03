@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/ECSSavingsEstimationMode.h>
+#include <aws/compute-optimizer/model/LookBackPeriodPreference.h>
 #include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
@@ -50,9 +51,29 @@ class ECSEffectiveRecommendationPreferences {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The number of days the Amazon ECS service utilization metrics were analyzed.
+   * </p>
+   */
+  inline LookBackPeriodPreference GetLookBackPeriod() const { return m_lookBackPeriod; }
+  inline bool LookBackPeriodHasBeenSet() const { return m_lookBackPeriodHasBeenSet; }
+  inline void SetLookBackPeriod(LookBackPeriodPreference value) {
+    m_lookBackPeriodHasBeenSet = true;
+    m_lookBackPeriod = value;
+  }
+  inline ECSEffectiveRecommendationPreferences& WithLookBackPeriod(LookBackPeriodPreference value) {
+    SetLookBackPeriod(value);
+    return *this;
+  }
+  ///@}
  private:
   ECSSavingsEstimationMode m_savingsEstimationMode;
+
+  LookBackPeriodPreference m_lookBackPeriod{LookBackPeriodPreference::NOT_SET};
   bool m_savingsEstimationModeHasBeenSet = false;
+  bool m_lookBackPeriodHasBeenSet = false;
 };
 
 }  // namespace Model

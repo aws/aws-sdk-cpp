@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/Ec2ScanModeState.h>
+#include <aws/inspector2/model/VMScannerState.h>
 
 #include <utility>
 
@@ -50,9 +51,31 @@ class Ec2ConfigurationState {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains details about the state of the Amazon Inspector VM
+   * scanner.</p>
+   */
+  inline const VMScannerState& GetVmScannerState() const { return m_vmScannerState; }
+  inline bool VmScannerStateHasBeenSet() const { return m_vmScannerStateHasBeenSet; }
+  template <typename VmScannerStateT = VMScannerState>
+  void SetVmScannerState(VmScannerStateT&& value) {
+    m_vmScannerStateHasBeenSet = true;
+    m_vmScannerState = std::forward<VmScannerStateT>(value);
+  }
+  template <typename VmScannerStateT = VMScannerState>
+  Ec2ConfigurationState& WithVmScannerState(VmScannerStateT&& value) {
+    SetVmScannerState(std::forward<VmScannerStateT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Ec2ScanModeState m_scanModeState;
+
+  VMScannerState m_vmScannerState;
   bool m_scanModeStateHasBeenSet = false;
+  bool m_vmScannerStateHasBeenSet = false;
 };
 
 }  // namespace Model

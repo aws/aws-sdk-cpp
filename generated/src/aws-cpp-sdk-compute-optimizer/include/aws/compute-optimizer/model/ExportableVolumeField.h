@@ -46,7 +46,8 @@ enum class ExportableVolumeField {
   EffectiveRecommendationPreferencesSavingsEstimationMode,
   RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
   RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
-  RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
+  RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts,
+  EffectiveRecommendationPreferencesLookBackPeriod
 };
 
 namespace ExportableVolumeFieldMapper {

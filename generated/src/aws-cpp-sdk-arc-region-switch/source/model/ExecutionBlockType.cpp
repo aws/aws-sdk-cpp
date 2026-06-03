@@ -29,6 +29,9 @@ static const int DocumentDb_HASH = HashingUtils::HashString("DocumentDb");
 static const int RdsPromoteReadReplica_HASH = HashingUtils::HashString("RdsPromoteReadReplica");
 static const int RdsCreateCrossRegionReplica_HASH = HashingUtils::HashString("RdsCreateCrossRegionReplica");
 static const int LambdaEventSourceMapping_HASH = HashingUtils::HashString("LambdaEventSourceMapping");
+static const int AuroraServerlessScaling_HASH = HashingUtils::HashString("AuroraServerlessScaling");
+static const int AuroraProvisionedScaling_HASH = HashingUtils::HashString("AuroraProvisionedScaling");
+static const int NeptuneGlobalDatabase_HASH = HashingUtils::HashString("NeptuneGlobalDatabase");
 
 ExecutionBlockType GetExecutionBlockTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -60,6 +63,12 @@ ExecutionBlockType GetExecutionBlockTypeForName(const Aws::String& name) {
     return ExecutionBlockType::RdsCreateCrossRegionReplica;
   } else if (hashCode == LambdaEventSourceMapping_HASH) {
     return ExecutionBlockType::LambdaEventSourceMapping;
+  } else if (hashCode == AuroraServerlessScaling_HASH) {
+    return ExecutionBlockType::AuroraServerlessScaling;
+  } else if (hashCode == AuroraProvisionedScaling_HASH) {
+    return ExecutionBlockType::AuroraProvisionedScaling;
+  } else if (hashCode == NeptuneGlobalDatabase_HASH) {
+    return ExecutionBlockType::NeptuneGlobalDatabase;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -102,6 +111,12 @@ Aws::String GetNameForExecutionBlockType(ExecutionBlockType enumValue) {
       return "RdsCreateCrossRegionReplica";
     case ExecutionBlockType::LambdaEventSourceMapping:
       return "LambdaEventSourceMapping";
+    case ExecutionBlockType::AuroraServerlessScaling:
+      return "AuroraServerlessScaling";
+    case ExecutionBlockType::AuroraProvisionedScaling:
+      return "AuroraProvisionedScaling";
+    case ExecutionBlockType::NeptuneGlobalDatabase:
+      return "NeptuneGlobalDatabase";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -22,6 +22,10 @@ Ec2ConfigurationState& Ec2ConfigurationState::operator=(JsonView jsonValue) {
     m_scanModeState = jsonValue.GetObject("scanModeState");
     m_scanModeStateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vmScannerState")) {
+    m_vmScannerState = jsonValue.GetObject("vmScannerState");
+    m_vmScannerStateHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue Ec2ConfigurationState::Jsonize() const {
 
   if (m_scanModeStateHasBeenSet) {
     payload.WithObject("scanModeState", m_scanModeState.Jsonize());
+  }
+
+  if (m_vmScannerStateHasBeenSet) {
+    payload.WithObject("vmScannerState", m_vmScannerState.Jsonize());
   }
 
   return payload;

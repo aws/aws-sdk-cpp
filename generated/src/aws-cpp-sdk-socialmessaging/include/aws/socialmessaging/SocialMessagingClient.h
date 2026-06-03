@@ -149,6 +149,36 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Creates a new WhatsApp Flow. Flows enable businesses to create rich,
+   * interactive forms and experiences that users can complete without leaving
+   * WhatsApp. The Flow is created in DRAFT status. If <code>publish</code> is set to
+   * <code>true</code> and a valid <code>flowJson</code> is provided, the Flow is
+   * published immediately.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppFlow">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateWhatsAppFlowOutcome CreateWhatsAppFlow(const Model::CreateWhatsAppFlowRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateWhatsAppFlow that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateWhatsAppFlowRequestT = Model::CreateWhatsAppFlowRequest>
+  Model::CreateWhatsAppFlowOutcomeCallable CreateWhatsAppFlowCallable(const CreateWhatsAppFlowRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::CreateWhatsAppFlow, request);
+  }
+
+  /**
+   * An Async wrapper for CreateWhatsAppFlow that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateWhatsAppFlowRequestT = Model::CreateWhatsAppFlowRequest>
+  void CreateWhatsAppFlowAsync(const CreateWhatsAppFlowRequestT& request, const CreateWhatsAppFlowResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::CreateWhatsAppFlow, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new WhatsApp message template from a custom definition.</p>
    * <p>Amazon Web Services End User Messaging Social does not store any WhatsApp
    * message template content.</p> <p><h3>See Also:</h3>   <a
@@ -241,6 +271,34 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Deletes a WhatsApp Flow permanently. Only Flows in DRAFT status can be
+   * deleted. Published or deprecated Flows cannot be deleted.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DeleteWhatsAppFlow">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteWhatsAppFlowOutcome DeleteWhatsAppFlow(const Model::DeleteWhatsAppFlowRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteWhatsAppFlow that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteWhatsAppFlowRequestT = Model::DeleteWhatsAppFlowRequest>
+  Model::DeleteWhatsAppFlowOutcomeCallable DeleteWhatsAppFlowCallable(const DeleteWhatsAppFlowRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::DeleteWhatsAppFlow, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteWhatsAppFlow that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteWhatsAppFlowRequestT = Model::DeleteWhatsAppFlowRequest>
+  void DeleteWhatsAppFlowAsync(const DeleteWhatsAppFlowRequestT& request, const DeleteWhatsAppFlowResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::DeleteWhatsAppFlow, request, handler, context);
+  }
+
+  /**
    * <p>Delete a media object from the WhatsApp service. If the object is still in an
    * Amazon S3 bucket you should delete it from there too.</p><p><h3>See Also:</h3>
    * <a
@@ -298,6 +356,34 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
                                           const DeleteWhatsAppMessageTemplateResponseReceivedHandler& handler,
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SocialMessagingClient::DeleteWhatsAppMessageTemplate, request, handler, context);
+  }
+
+  /**
+   * <p>Deprecates a published WhatsApp Flow, marking it as no longer recommended for
+   * use. The Flow must be in PUBLISHED status. This is an irreversible
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DeprecateWhatsAppFlow">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeprecateWhatsAppFlowOutcome DeprecateWhatsAppFlow(const Model::DeprecateWhatsAppFlowRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeprecateWhatsAppFlow that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeprecateWhatsAppFlowRequestT = Model::DeprecateWhatsAppFlowRequest>
+  Model::DeprecateWhatsAppFlowOutcomeCallable DeprecateWhatsAppFlowCallable(const DeprecateWhatsAppFlowRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::DeprecateWhatsAppFlow, request);
+  }
+
+  /**
+   * An Async wrapper for DeprecateWhatsAppFlow that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeprecateWhatsAppFlowRequestT = Model::DeprecateWhatsAppFlowRequest>
+  void DeprecateWhatsAppFlowAsync(const DeprecateWhatsAppFlowRequestT& request, const DeprecateWhatsAppFlowResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::DeprecateWhatsAppFlow, request, handler, context);
   }
 
   /**
@@ -389,6 +475,61 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
       const GetLinkedWhatsAppBusinessAccountPhoneNumberResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SocialMessagingClient::GetLinkedWhatsAppBusinessAccountPhoneNumber, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the metadata and status of a WhatsApp Flow, including validation
+   * errors, preview information, and health status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppFlow">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetWhatsAppFlowOutcome GetWhatsAppFlow(const Model::GetWhatsAppFlowRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetWhatsAppFlow that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetWhatsAppFlowRequestT = Model::GetWhatsAppFlowRequest>
+  Model::GetWhatsAppFlowOutcomeCallable GetWhatsAppFlowCallable(const GetWhatsAppFlowRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::GetWhatsAppFlow, request);
+  }
+
+  /**
+   * An Async wrapper for GetWhatsAppFlow that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetWhatsAppFlowRequestT = Model::GetWhatsAppFlowRequest>
+  void GetWhatsAppFlowAsync(const GetWhatsAppFlowRequestT& request, const GetWhatsAppFlowResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::GetWhatsAppFlow, request, handler, context);
+  }
+
+  /**
+   * <p>Generates a web preview URL for testing a WhatsApp Flow before publishing.
+   * Preview URLs expire in 30 days and can be shared with stakeholders for
+   * review.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppFlowPreview">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetWhatsAppFlowPreviewOutcome GetWhatsAppFlowPreview(const Model::GetWhatsAppFlowPreviewRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetWhatsAppFlowPreview that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetWhatsAppFlowPreviewRequestT = Model::GetWhatsAppFlowPreviewRequest>
+  Model::GetWhatsAppFlowPreviewOutcomeCallable GetWhatsAppFlowPreviewCallable(const GetWhatsAppFlowPreviewRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::GetWhatsAppFlowPreview, request);
+  }
+
+  /**
+   * An Async wrapper for GetWhatsAppFlowPreview that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetWhatsAppFlowPreviewRequestT = Model::GetWhatsAppFlowPreviewRequest>
+  void GetWhatsAppFlowPreviewAsync(const GetWhatsAppFlowPreviewRequestT& request,
+                                   const GetWhatsAppFlowPreviewResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::GetWhatsAppFlowPreview, request, handler, context);
   }
 
   /**
@@ -510,6 +651,63 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Lists the assets (Flow JSON definition) of a WhatsApp Flow with presigned
+   * download URLs. Download URLs are generated by Meta and expire after a short
+   * period.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListWhatsAppFlowAssets">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListWhatsAppFlowAssetsOutcome ListWhatsAppFlowAssets(const Model::ListWhatsAppFlowAssetsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListWhatsAppFlowAssets that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListWhatsAppFlowAssetsRequestT = Model::ListWhatsAppFlowAssetsRequest>
+  Model::ListWhatsAppFlowAssetsOutcomeCallable ListWhatsAppFlowAssetsCallable(const ListWhatsAppFlowAssetsRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::ListWhatsAppFlowAssets, request);
+  }
+
+  /**
+   * An Async wrapper for ListWhatsAppFlowAssets that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListWhatsAppFlowAssetsRequestT = Model::ListWhatsAppFlowAssetsRequest>
+  void ListWhatsAppFlowAssetsAsync(const ListWhatsAppFlowAssetsRequestT& request,
+                                   const ListWhatsAppFlowAssetsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::ListWhatsAppFlowAssets, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all WhatsApp Flows for a WhatsApp Business Account. Returns summary
+   * information including Flow ID, name, status, and categories.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListWhatsAppFlows">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListWhatsAppFlowsOutcome ListWhatsAppFlows(const Model::ListWhatsAppFlowsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListWhatsAppFlows that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListWhatsAppFlowsRequestT = Model::ListWhatsAppFlowsRequest>
+  Model::ListWhatsAppFlowsOutcomeCallable ListWhatsAppFlowsCallable(const ListWhatsAppFlowsRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::ListWhatsAppFlows, request);
+  }
+
+  /**
+   * An Async wrapper for ListWhatsAppFlows that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListWhatsAppFlowsRequestT = Model::ListWhatsAppFlowsRequest>
+  void ListWhatsAppFlowsAsync(const ListWhatsAppFlowsRequestT& request, const ListWhatsAppFlowsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::ListWhatsAppFlows, request, handler, context);
+  }
+
+  /**
    * <p>Lists WhatsApp message templates for a specific WhatsApp Business
    * Account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListWhatsAppMessageTemplates">AWS
@@ -601,6 +799,34 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
                                      const PostWhatsAppMessageMediaResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SocialMessagingClient::PostWhatsAppMessageMedia, request, handler, context);
+  }
+
+  /**
+   * <p>Publishes a WhatsApp Flow, making it available for use in template messages.
+   * The Flow must be in DRAFT status with valid Flow JSON that passes Meta's
+   * validation. This is an irreversible operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/PublishWhatsAppFlow">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PublishWhatsAppFlowOutcome PublishWhatsAppFlow(const Model::PublishWhatsAppFlowRequest& request) const;
+
+  /**
+   * A Callable wrapper for PublishWhatsAppFlow that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PublishWhatsAppFlowRequestT = Model::PublishWhatsAppFlowRequest>
+  Model::PublishWhatsAppFlowOutcomeCallable PublishWhatsAppFlowCallable(const PublishWhatsAppFlowRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::PublishWhatsAppFlow, request);
+  }
+
+  /**
+   * An Async wrapper for PublishWhatsAppFlow that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PublishWhatsAppFlowRequestT = Model::PublishWhatsAppFlowRequest>
+  void PublishWhatsAppFlowAsync(const PublishWhatsAppFlowRequestT& request, const PublishWhatsAppFlowResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::PublishWhatsAppFlow, request, handler, context);
   }
 
   /**
@@ -716,6 +942,64 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SocialMessagingClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the metadata of a WhatsApp Flow, such as its name or categories. This
+   * does not update the Flow JSON definition. Use <a
+   * href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UpdateWhatsAppFlowAssets.html">UpdateWhatsAppFlowAssets</a>
+   * to update the Flow JSON.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UpdateWhatsAppFlow">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateWhatsAppFlowOutcome UpdateWhatsAppFlow(const Model::UpdateWhatsAppFlowRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateWhatsAppFlow that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateWhatsAppFlowRequestT = Model::UpdateWhatsAppFlowRequest>
+  Model::UpdateWhatsAppFlowOutcomeCallable UpdateWhatsAppFlowCallable(const UpdateWhatsAppFlowRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::UpdateWhatsAppFlow, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateWhatsAppFlow that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateWhatsAppFlowRequestT = Model::UpdateWhatsAppFlowRequest>
+  void UpdateWhatsAppFlowAsync(const UpdateWhatsAppFlowRequestT& request, const UpdateWhatsAppFlowResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::UpdateWhatsAppFlow, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the Flow JSON definition (assets) of a WhatsApp Flow. Updating a
+   * published Flow's assets reverts it to DRAFT status, requiring
+   * re-publishing.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UpdateWhatsAppFlowAssets">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateWhatsAppFlowAssetsOutcome UpdateWhatsAppFlowAssets(const Model::UpdateWhatsAppFlowAssetsRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateWhatsAppFlowAssets that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateWhatsAppFlowAssetsRequestT = Model::UpdateWhatsAppFlowAssetsRequest>
+  Model::UpdateWhatsAppFlowAssetsOutcomeCallable UpdateWhatsAppFlowAssetsCallable(const UpdateWhatsAppFlowAssetsRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::UpdateWhatsAppFlowAssets, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateWhatsAppFlowAssets that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateWhatsAppFlowAssetsRequestT = Model::UpdateWhatsAppFlowAssetsRequest>
+  void UpdateWhatsAppFlowAssetsAsync(const UpdateWhatsAppFlowAssetsRequestT& request,
+                                     const UpdateWhatsAppFlowAssetsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::UpdateWhatsAppFlowAssets, request, handler, context);
   }
 
   /**

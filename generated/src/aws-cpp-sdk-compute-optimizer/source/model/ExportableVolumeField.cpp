@@ -68,6 +68,8 @@ static const int RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscou
     HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
 static const int RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts_HASH =
     HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
+static const int EffectiveRecommendationPreferencesLookBackPeriod_HASH =
+    HashingUtils::HashString("EffectiveRecommendationPreferencesLookBackPeriod");
 
 ExportableVolumeField GetExportableVolumeFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -141,6 +143,8 @@ ExportableVolumeField GetExportableVolumeFieldForName(const Aws::String& name) {
     return ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts;
   } else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts_HASH) {
     return ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts;
+  } else if (hashCode == EffectiveRecommendationPreferencesLookBackPeriod_HASH) {
+    return ExportableVolumeField::EffectiveRecommendationPreferencesLookBackPeriod;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -225,6 +229,8 @@ Aws::String GetNameForExportableVolumeField(ExportableVolumeField enumValue) {
       return "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts";
     case ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts:
       return "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts";
+    case ExportableVolumeField::EffectiveRecommendationPreferencesLookBackPeriod:
+      return "EffectiveRecommendationPreferencesLookBackPeriod";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

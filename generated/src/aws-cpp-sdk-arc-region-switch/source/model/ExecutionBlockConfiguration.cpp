@@ -76,6 +76,18 @@ ExecutionBlockConfiguration& ExecutionBlockConfiguration::operator=(JsonView jso
     m_lambdaEventSourceMappingConfig = jsonValue.GetObject("lambdaEventSourceMappingConfig");
     m_lambdaEventSourceMappingConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("auroraServerlessScalingConfig")) {
+    m_auroraServerlessScalingConfig = jsonValue.GetObject("auroraServerlessScalingConfig");
+    m_auroraServerlessScalingConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("auroraProvisionedScalingConfig")) {
+    m_auroraProvisionedScalingConfig = jsonValue.GetObject("auroraProvisionedScalingConfig");
+    m_auroraProvisionedScalingConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("neptuneGlobalDatabaseConfig")) {
+    m_neptuneGlobalDatabaseConfig = jsonValue.GetObject("neptuneGlobalDatabaseConfig");
+    m_neptuneGlobalDatabaseConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -136,6 +148,18 @@ JsonValue ExecutionBlockConfiguration::Jsonize() const {
 
   if (m_lambdaEventSourceMappingConfigHasBeenSet) {
     payload.WithObject("lambdaEventSourceMappingConfig", m_lambdaEventSourceMappingConfig.Jsonize());
+  }
+
+  if (m_auroraServerlessScalingConfigHasBeenSet) {
+    payload.WithObject("auroraServerlessScalingConfig", m_auroraServerlessScalingConfig.Jsonize());
+  }
+
+  if (m_auroraProvisionedScalingConfigHasBeenSet) {
+    payload.WithObject("auroraProvisionedScalingConfig", m_auroraProvisionedScalingConfig.Jsonize());
+  }
+
+  if (m_neptuneGlobalDatabaseConfigHasBeenSet) {
+    payload.WithObject("neptuneGlobalDatabaseConfig", m_neptuneGlobalDatabaseConfig.Jsonize());
   }
 
   return payload;
