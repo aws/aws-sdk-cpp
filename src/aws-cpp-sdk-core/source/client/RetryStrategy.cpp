@@ -6,6 +6,8 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/internal/RetryStrategyImpl.h>
+#include <aws/core/platform/Environment.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/local/Random.h>
@@ -22,20 +24,28 @@ namespace Aws
 
         struct StandardRetryStrategy::RetryImpl
         {
-            bool newRetriesEnabled = false;
+            virtual ~RetryImpl() = default;
+            virtual long CalculateDelay(const AWSError<CoreErrors>& error, long attemptedRetries) const = 0;
+        };
 
-            long CalculateDelay(const AWSError<CoreErrors>& error, long attemptedRetries) const
+        namespace {
+        struct LegacyRetryImpl : StandardRetryStrategy::RetryImpl
+        {
+            long CalculateDelay(const AWSError<CoreErrors>& error, long attemptedRetries) const override
             {
-                if (!newRetriesEnabled)
-                {
-                    AWS_UNREFERENCED_PARAM(error);
-                    // Maximum left shift factor is capped by ceil(log2(max_delay)), to avoid wrap-around and overflow into negative values:
-                    return std::min(static_cast<int>(Aws::Utils::GetRandomValue() % 1000) * (1 << std::min(attemptedRetries, 15L)), 20000);
-                }
+                AWS_UNREFERENCED_PARAM(error);
+                // Maximum left shift factor is capped by ceil(log2(max_delay)), to avoid wrap-around and overflow into negative values:
+                return std::min(static_cast<int>(Aws::Utils::GetRandomValue() % 1000) * (1 << std::min(attemptedRetries, 15L)), 20000);
+            }
+        };
 
+        struct NewRetriesImpl : StandardRetryStrategy::RetryImpl
+        {
+            long CalculateDelay(const AWSError<CoreErrors>& error, long attemptedRetries) const override
+            {
                 double x = error.ShouldThrottle() ? 1.0 : 0.05;
-                double exponentialPart = x * static_cast<double>(1L << std::min(attemptedRetries, 30L));
-                double cappedPart = std::min(exponentialPart, 20.0);
+                double exponentialPart = x * static_cast<double>(1L << (std::min)(attemptedRetries, 30L));
+                double cappedPart = (std::min)(exponentialPart, 20.0);
 
                 double b = static_cast<double>(Aws::Utils::GetRandomValue() % 10000) / 10000.0;
                 double t_i = b * cappedPart;
@@ -45,24 +55,40 @@ namespace Aws
                 if (it != headers.end())
                 {
                     double headerSec = static_cast<double>(Aws::Utils::StringUtils::ConvertToInt64(it->second.c_str())) / 1000.0;
-                    double clamped = std::max(t_i, std::min(headerSec, 5.0 + t_i));
+                    double clamped = (std::max)(t_i, (std::min)(headerSec, 5.0 + t_i));
                     return static_cast<long>(clamped * 1000.0);
                 }
 
                 return static_cast<long>(t_i * 1000.0);
             }
         };
+        } // anonymous namespace
+
+        static Aws::UniquePtr<StandardRetryStrategy::RetryImpl> CreateRetryImpl()
+        {
+            if (Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026") == "true")
+            {
+                return Aws::MakeUnique<NewRetriesImpl>("StandardRetryStrategy");
+            }
+            return Aws::MakeUnique<LegacyRetryImpl>("StandardRetryStrategy");
+        }
+
+        static std::shared_ptr<RetryQuotaContainer> CreateQuotaContainer()
+        {
+            if (Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026") == "true")
+            {
+                return Aws::MakeShared<ThrottleBasedRetryQuotaContainer>("StandardRetryStrategy");
+            }
+            return Aws::MakeShared<DefaultRetryQuotaContainer>("StandardRetryStrategy");
+        }
 
         StandardRetryStrategy::StandardRetryStrategy(long maxAttempts)
-            : m_retryQuotaContainer(Aws::MakeShared<DefaultRetryQuotaContainer>("StandardRetryStrategy")), m_maxAttempts(maxAttempts),
-              m_impl(Aws::MakeUnique<RetryImpl>("StandardRetryStrategy")) {}
+            : m_retryQuotaContainer(CreateQuotaContainer()), m_maxAttempts(maxAttempts),
+              m_impl(CreateRetryImpl()) {}
 
         StandardRetryStrategy::StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts)
             : m_retryQuotaContainer(retryQuotaContainer), m_maxAttempts(maxAttempts),
-              m_impl(Aws::MakeUnique<RetryImpl>("StandardRetryStrategy"))
-        {
-            m_impl->newRetriesEnabled = true;
-        }
+              m_impl(CreateRetryImpl()) {}
 
         StandardRetryStrategy::~StandardRetryStrategy() = default;
 
@@ -133,5 +159,6 @@ namespace Aws
             int capacityAmount = error.GetErrorType() == CoreErrors::REQUEST_TIMEOUT ? TIMEOUT_RETRY_COST : RETRY_COST;
             ReleaseRetryQuota(capacityAmount);
         }
+
     }
 }

@@ -137,12 +137,13 @@ namespace Aws
 
             const char* GetStrategyName() const override { return "standard";}
 
+            struct RetryImpl;
+
         protected:
             std::shared_ptr<RetryQuotaContainer> m_retryQuotaContainer;
             long m_maxAttempts;
 
         private:
-            struct RetryImpl;
             Aws::UniquePtr<RetryImpl> m_impl;
         };
     } // namespace Client
