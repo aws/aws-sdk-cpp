@@ -266,24 +266,24 @@ TEST_F(RetryBehaviorTest, ThrottlingCostsAndBackoff)
     ASSERT_LE(delay, 2000);
 }
 
-// SEP Test 11: DynamoDB tuning (maxAttempts=4, 25ms base deferred to follow-up)
+// SEP Test 11: DynamoDB tuning (25ms base, 4 max attempts)
 TEST_F(RetryBehaviorTest, DynamoDBTuning)
 {
     auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
-    StandardRetryStrategy strategy(quota, 4);
+    StandardRetryStrategy strategy(quota, 4, 0.025);
 
     ASSERT_EQ(4, strategy.GetMaxAttempts());
 
     auto error = MakeTransientError();
-    // i=0: [0, 50ms] (25ms base deferred)
+    // i=0: [0, 25ms]
     long delay = strategy.CalculateDelayBeforeNextRetry(error, 0);
     ASSERT_GE(delay, 0);
-    ASSERT_LE(delay, 50);
+    ASSERT_LE(delay, 25);
 
-    // i=1: [0, 100ms]
+    // i=1: [0, 50ms]
     delay = strategy.CalculateDelayBeforeNextRetry(error, 1);
     ASSERT_GE(delay, 0);
-    ASSERT_LE(delay, 100);
+    ASSERT_LE(delay, 50);
 }
 
 // SEP Test 12: Long-polling transient + empty quota (backoff applied)
@@ -328,43 +328,12 @@ TEST_F(RetryBehaviorTest, LongPollingThrottlingEmptyQuota)
     ASSERT_LE(delay, 1000);
 }
 
-// SEP Test 14: Long-polling max attempts exceeded (no delay)
-TEST_F(RetryBehaviorTest, LongPollingMaxAttemptsExceeded)
-{
-    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
-    StandardRetryStrategy strategy(quota, 3);
+// TODO: SEP Tests 14, 15, 16 require integration tests that exercise the full pipeline
+// with a mock HTTP client to verify the pipeline does NOT sleep in these scenarios:
+// - Test 14: Long-polling max attempts exceeded (no delay before returning)
+// - Test 15: Long-polling success (no delay before returning)
+// - Test 16: Long-polling non-retryable error (no delay before returning)
 
-    // At retries=2, max attempts (3) is reached
-    ASSERT_FALSE(strategy.ShouldRetry(MakeTransientError(), 2));
-    // Pipeline would NOT apply long-polling backoff because retries+1 >= maxAttempts
-}
-
-// SEP Test 15: Long-polling success (no delay)
-TEST_F(RetryBehaviorTest, LongPollingSuccess)
-{
-    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
-    StandardRetryStrategy strategy(quota, 10);
-
-    std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(URI("http://www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    std::shared_ptr<HttpResponse> httpResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
-    HttpResponseOutcome httpResponseOutcome(httpResponse);
-
-    // Successful request, no retry needed, no delay
-    strategy.RequestBookkeeping(httpResponseOutcome);
-    ASSERT_EQ(500, quota->GetRetryQuota());
-}
-
-// SEP Test 16: Long-polling non-retryable error (no delay)
-TEST_F(RetryBehaviorTest, LongPollingNonRetryableError)
-{
-    auto quota = Aws::MakeShared<TestThrottleBasedQuotaContainer>(ALLOCATION_TAG);
-    StandardRetryStrategy strategy(quota, 10);
-
-    // Non-retryable error: ShouldRetry returns false
-    ASSERT_FALSE(strategy.ShouldRetry(MakeNonRetryableError(), 0));
-    // Pipeline would NOT apply long-polling backoff because error.ShouldRetry() is false
-    ASSERT_EQ(500, quota->GetRetryQuota());
-}
 
 // SEP Test 17: retry-after header honored
 TEST_F(RetryBehaviorTest, RetryAfterHeaderHonored)

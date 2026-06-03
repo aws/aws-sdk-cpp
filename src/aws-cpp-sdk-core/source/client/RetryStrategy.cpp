@@ -23,6 +23,7 @@ namespace Aws
         struct StandardRetryStrategy::RetryImpl
         {
             bool newRetriesEnabled = false;
+            double transientBackoffBaseSec = 0.05;
 
             long CalculateDelay(const AWSError<CoreErrors>& error, long attemptedRetries) const
             {
@@ -33,7 +34,7 @@ namespace Aws
                     return std::min(static_cast<int>(Aws::Utils::GetRandomValue() % 1000) * (1 << std::min(attemptedRetries, 15L)), 20000);
                 }
 
-                double x = error.ShouldThrottle() ? 1.0 : 0.05;
+                double x = error.ShouldThrottle() ? 1.0 : transientBackoffBaseSec;
                 double exponentialPart = x * static_cast<double>(1L << std::min(attemptedRetries, 30L));
                 double cappedPart = std::min(exponentialPart, 20.0);
 
@@ -62,6 +63,14 @@ namespace Aws
               m_impl(Aws::MakeUnique<RetryImpl>("StandardRetryStrategy"))
         {
             m_impl->newRetriesEnabled = true;
+        }
+
+        StandardRetryStrategy::StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts, double transientBackoffBaseSec)
+            : m_retryQuotaContainer(retryQuotaContainer), m_maxAttempts(maxAttempts),
+              m_impl(Aws::MakeUnique<RetryImpl>("StandardRetryStrategy"))
+        {
+            m_impl->newRetriesEnabled = true;
+            m_impl->transientBackoffBaseSec = transientBackoffBaseSec;
         }
 
         StandardRetryStrategy::~StandardRetryStrategy() = default;
