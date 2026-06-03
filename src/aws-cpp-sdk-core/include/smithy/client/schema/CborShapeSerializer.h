@@ -1,43 +1,47 @@
 #pragma once
 
+#include <aws/core/Core_EXPORTS.h>
 #include <smithy/client/schema/ShapeSerializer.h>
-#include <aws/crt/cbor/Cbor.h>
+
+#include <memory>
 
 namespace smithy {
-    namespace schema {
-        class AWS_CORE_API CborShapeSerializer : public ShapeSerializer {
-        public:
-            CborShapeSerializer() = default;
+namespace schema {
 
-            void BeginStructure(const Schema& schema) override;
-            void EndStructure() override;
+class AWS_CORE_API CborShapeSerializer : public ShapeSerializer {
+ public:
+  CborShapeSerializer();
+  ~CborShapeSerializer();
 
-            void WriteBoolean(const FieldSchema& field, bool value) override;
-            void WriteInteger(const FieldSchema& field, int value) override;
-            void WriteLong(const FieldSchema& field, int64_t value) override;
-            void WriteDouble(const FieldSchema& field, double value) override;
-            void WriteString(const FieldSchema& field, const Aws::String& value) override;
-            void WriteTimestamp(const FieldSchema& field, const Aws::Utils::DateTime& value) override;
-            void WriteBlob(const FieldSchema& field, const Aws::Utils::ByteBuffer& value) override;
-            void WriteEnum(const FieldSchema& field, int value) override;
-            void WriteNull(const FieldSchema& field) override;
+  void BeginStructure(const Schema& schema) override;
+  void EndStructure() override;
 
-            void BeginList(const FieldSchema& field, size_t count) override;
-            void EndList() override;
+  void WriteBoolean(const Schema& schema, bool value) override;
+  void WriteInteger(const Schema& schema, int value) override;
+  void WriteLong(const Schema& schema, int64_t value) override;
+  void WriteDouble(const Schema& schema, double value) override;
+  void WriteString(const Schema& schema, const Aws::String& value) override;
+  void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) override;
+  void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) override;
+  void WriteEnum(const Schema& schema, int value) override;
+  void WriteNull(const Schema& schema) override;
 
-            void BeginMap(const FieldSchema& field,size_t count) override;
-            void WriteMapKey(const Aws::String& key) override;
-            void EndMap() override;
+  void BeginList(const Schema& schema, size_t count) override;
+  void EndList() override;
 
-            void BeginNestedStructure(const FieldSchema& field) override;
-            void EndNestedStructure() override;
+  void BeginMap(const Schema& schema, size_t count) override;
+  void WriteMapKey(const Aws::String& key) override;
+  void EndMap() override;
 
-            Aws::String GetPayload() const;
-        private:
-            void WriteKey(const chat* key);
+  void BeginNestedStructure(const Schema& schema) override;
+  void EndNestedStructure() override;
 
-            Aws::Crt::Cbor::CborEncoder m_encoder;
-            size_t m_structFieldCount = 0;
-        };
-    };
-}
+  Aws::String GetPayload() const;
+
+ private:
+  struct Impl;
+  std::unique_ptr<Impl> m_impl;
+};
+
+}  // namespace schema
+}  // namespace smithy

@@ -1,51 +1,46 @@
 #pragma once
 
 #include <smithy/client/schema/ShapeSerializer.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
+#include <memory>
 
 namespace smithy {
-    namespace schema {
-        class XmlShapeSerializer : public ShapeSerializer {
-            XmlShapeSerializer() = default;
+namespace schema {
 
-            void BeginStructure(const Schema& schema) override;
-            void EndStructure() override;
+class XmlShapeSerializer : public ShapeSerializer {
+ public:
+  XmlShapeSerializer();
+  ~XmlShapeSerializer();
 
-            void WriteBoolean(const FieldSchema& field, bool value) override;
-            void WriteInteger(const FieldSchema& field, int value) override;
-            void WriteLong(const FieldSchema& field, int64_t value) override;
-            void WriteDouble(const FieldSchema& field, double value) override;
-            void WriteString(const FieldSchema& field, const Aws::String& value) override;
-            void WriteTimestamp(const FieldSchema& field, const Aws::Utils::DateTime& value) override;
-            void WriteBlob(const FieldSchema& field, const Aws::Utils::ByteBuffer& value) override;
-            void WriteEnum(const FieldSchema& field, int value) override;
-            void WriteNull(const FieldSchema& field) override;
+  void BeginStructure(const Schema& schema) override;
+  void EndStructure() override;
 
-            void BeginList(const FieldSchema& field, size_t count) override;
-            void EndList() override;
+  void WriteBoolean(const Schema& schema, bool value) override;
+  void WriteInteger(const Schema& schema, int value) override;
+  void WriteLong(const Schema& schema, int64_t value) override;
+  void WriteDouble(const Schema& schema, double value) override;
+  void WriteString(const Schema& schema, const Aws::String& value) override;
+  void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) override;
+  void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) override;
+  void WriteEnum(const Schema& schema, int value) override;
+  void WriteNull(const Schema& schema) override;
 
-            void BeginMap(const FieldSchema& field,size_t count) override;
-            void WriteMapKey(const Aws::String& key) override;
-            void EndMap() override;
+  void BeginList(const Schema& schema, size_t count) override;
+  void EndList() override;
 
-            void BeginNestedStructure(const FieldSchema& field) override;
-            void EndNestedStructure() override;
+  void BeginMap(const Schema& schema, size_t count) override;
+  void WriteMapKey(const Aws::String& key) override;
+  void EndMap() override;
 
-            Aws::String GetPayload() const;
+  void BeginNestedStructure(const Schema& schema) override;
+  void EndNestedStructure() override;
 
-        private:
-            Aws::OStringStream m_stream;
-            struct StackEntry {
-                const char* elementName;
-                bool isList;
-                bool isMap;
-                bool isFlattened;
-            };
-            Aws::Vector<StackEntry> m_stack;
-            Aws::String m_currentMapKey;
-        };
-    }
-}
+  Aws::String GetPayload() const;
+
+ private:
+  struct Impl;
+  std::unique_ptr<Impl> m_impl;
+};
+
+}  // namespace schema
+}  // namespace smithy
