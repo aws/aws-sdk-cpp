@@ -92,7 +92,7 @@ class ListRoute53HealthChecksRequest : public ARCRegionswitchRequest {
 
   ///@{
   /**
-   * <p>The number of objects that you want to return with this call.</p>
+   * <p>The maximum number of results to return in the response.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

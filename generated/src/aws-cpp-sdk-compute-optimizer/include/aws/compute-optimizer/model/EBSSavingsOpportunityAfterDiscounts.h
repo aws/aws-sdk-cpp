@@ -53,7 +53,7 @@ class EBSSavingsOpportunityAfterDiscounts {
   ///@{
   /**
    * <p> The estimated monthly savings possible as a percentage of monthly cost by
-   * adopting Compute Optimizer��s Amazon EBS volume recommendations. This saving
+   * adopting Compute Optimizer’s Amazon EBS volume recommendations. This saving
    * includes any applicable discounts. </p>
    */
   inline const EBSEstimatedMonthlySavings& GetEstimatedMonthlySavings() const { return m_estimatedMonthlySavings; }

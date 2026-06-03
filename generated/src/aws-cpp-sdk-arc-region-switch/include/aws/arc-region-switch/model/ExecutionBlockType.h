@@ -25,7 +25,10 @@ enum class ExecutionBlockType {
   DocumentDb,
   RdsPromoteReadReplica,
   RdsCreateCrossRegionReplica,
-  LambdaEventSourceMapping
+  LambdaEventSourceMapping,
+  AuroraServerlessScaling,
+  AuroraProvisionedScaling,
+  NeptuneGlobalDatabase
 };
 
 namespace ExecutionBlockTypeMapper {

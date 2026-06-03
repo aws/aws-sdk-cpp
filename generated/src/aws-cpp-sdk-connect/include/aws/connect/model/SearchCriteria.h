@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/AgentHierarchyGroups.h>
+#include <aws/connect/model/AiAgentsCriteria.h>
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/ContactAnalysis.h>
 #include <aws/connect/model/ContactInitiationMethod.h>
@@ -312,6 +313,24 @@ class SearchCriteria {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>AI Agent search criteria definitions.</p>
+   */
+  inline const AiAgentsCriteria& GetAiAgents() const { return m_aiAgents; }
+  inline bool AiAgentsHasBeenSet() const { return m_aiAgentsHasBeenSet; }
+  template <typename AiAgentsT = AiAgentsCriteria>
+  void SetAiAgents(AiAgentsT&& value) {
+    m_aiAgentsHasBeenSet = true;
+    m_aiAgents = std::forward<AiAgentsT>(value);
+  }
+  template <typename AiAgentsT = AiAgentsCriteria>
+  SearchCriteria& WithAiAgents(AiAgentsT&& value) {
+    SetAiAgents(std::forward<AiAgentsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   NameCriteria m_name;
 
@@ -338,6 +357,8 @@ class SearchCriteria {
   Aws::Vector<Aws::String> m_activeRegions;
 
   ControlPlaneTagFilter m_contactTags;
+
+  AiAgentsCriteria m_aiAgents;
   bool m_nameHasBeenSet = false;
   bool m_agentIdsHasBeenSet = false;
   bool m_agentHierarchyGroupsHasBeenSet = false;
@@ -351,6 +372,7 @@ class SearchCriteria {
   bool m_searchableSegmentAttributesHasBeenSet = false;
   bool m_activeRegionsHasBeenSet = false;
   bool m_contactTagsHasBeenSet = false;
+  bool m_aiAgentsHasBeenSet = false;
 };
 
 }  // namespace Model

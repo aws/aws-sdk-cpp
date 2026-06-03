@@ -450,6 +450,8 @@
 #include <aws/inspector2/model/Usage.h>
 #include <aws/inspector2/model/UsageTotal.h>
 #include <aws/inspector2/model/UsageType.h>
+#include <aws/inspector2/model/VMScannerState.h>
+#include <aws/inspector2/model/VMScannerStatus.h>
 #include <aws/inspector2/model/ValidationException.h>
 #include <aws/inspector2/model/ValidationExceptionField.h>
 #include <aws/inspector2/model/ValidationExceptionReason.h>

@@ -152,6 +152,26 @@ class SavingsPlansPurchaseAnalysisConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the target Savings Plans coverage as a percentage from
+   * <code>10</code> to <code>100</code>. This field is required when
+   * <code>AnalysisType</code> is <code>TARGET_AVERAGE_COVERAGE</code>. It defines
+   * the target average hourly coverage that the recommended Savings Plans commitment
+   * should achieve over the lookback period.</p>
+   */
+  inline int GetSavingsPlansTargetCoverage() const { return m_savingsPlansTargetCoverage; }
+  inline bool SavingsPlansTargetCoverageHasBeenSet() const { return m_savingsPlansTargetCoverageHasBeenSet; }
+  inline void SetSavingsPlansTargetCoverage(int value) {
+    m_savingsPlansTargetCoverageHasBeenSet = true;
+    m_savingsPlansTargetCoverage = value;
+  }
+  inline SavingsPlansPurchaseAnalysisConfiguration& WithSavingsPlansTargetCoverage(int value) {
+    SetSavingsPlansTargetCoverage(value);
+    return *this;
+  }
+  ///@}
  private:
   AccountScope m_accountScope{AccountScope::NOT_SET};
 
@@ -164,12 +184,15 @@ class SavingsPlansPurchaseAnalysisConfiguration {
   Aws::Vector<Aws::String> m_savingsPlansToExclude;
 
   DateInterval m_lookBackTimePeriod;
+
+  int m_savingsPlansTargetCoverage{0};
   bool m_accountScopeHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
   bool m_analysisTypeHasBeenSet = false;
   bool m_savingsPlansToAddHasBeenSet = false;
   bool m_savingsPlansToExcludeHasBeenSet = false;
   bool m_lookBackTimePeriodHasBeenSet = false;
+  bool m_savingsPlansTargetCoverageHasBeenSet = false;
 };
 
 }  // namespace Model

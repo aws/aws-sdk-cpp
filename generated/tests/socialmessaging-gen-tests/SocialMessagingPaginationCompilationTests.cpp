@@ -11,6 +11,8 @@
 #include <aws/socialmessaging/model/ListLinkedWhatsAppBusinessAccountsPaginationTraits.h>
 #include <aws/socialmessaging/model/ListWhatsAppMessageTemplatesPaginationTraits.h>
 #include <aws/socialmessaging/model/ListWhatsAppTemplateLibraryPaginationTraits.h>
+#include <aws/socialmessaging/model/ListWhatsAppFlowAssetsPaginationTraits.h>
+#include <aws/socialmessaging/model/ListWhatsAppFlowsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

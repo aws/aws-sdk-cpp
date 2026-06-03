@@ -96,7 +96,9 @@ class GetEffectiveRecommendationPreferencesResult {
    * resource are analyzed. </p> <p>To validate that the preference is applied to
    * your last generated set of recommendations, review the
    * <code>effectiveRecommendationPreferences</code> value in the response of the
-   * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+   * GetAutoScalingGroupRecommendations, GetEC2InstanceRecommendations,
+   * GetEBSVolumeRecommendations, GetECSServiceRecommendations, or
+   * GetRDSDatabaseRecommendations actions.</p>
    */
   inline LookBackPeriodPreference GetLookBackPeriod() const { return m_lookBackPeriod; }
   inline void SetLookBackPeriod(LookBackPeriodPreference value) {

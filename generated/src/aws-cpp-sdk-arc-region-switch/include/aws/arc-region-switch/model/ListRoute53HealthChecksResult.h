@@ -54,11 +54,9 @@ class ListRoute53HealthChecksResult {
 
   ///@{
   /**
-   * <p>Specifies that you want to receive the next page of results. Valid only if
-   * you received a <code>nextToken</code> response in the previous request. If you
-   * did, it indicates that more output is available. Set this parameter to the value
-   * provided by the previous call's <code>nextToken</code> response to request the
-   * next page of results.</p>
+   * <p>A pagination token. A response may contain no results while still including a
+   * <code>nextToken</code>. Continue paginating until <code>nextToken</code> is null
+   * to retrieve all results.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

@@ -49,6 +49,10 @@ SavingsPlansPurchaseAnalysisConfiguration& SavingsPlansPurchaseAnalysisConfigura
     m_lookBackTimePeriod = jsonValue.GetObject("LookBackTimePeriod");
     m_lookBackTimePeriodHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SavingsPlansTargetCoverage")) {
+    m_savingsPlansTargetCoverage = jsonValue.GetInteger("SavingsPlansTargetCoverage");
+    m_savingsPlansTargetCoverageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue SavingsPlansPurchaseAnalysisConfiguration::Jsonize() const {
 
   if (m_lookBackTimePeriodHasBeenSet) {
     payload.WithObject("LookBackTimePeriod", m_lookBackTimePeriod.Jsonize());
+  }
+
+  if (m_savingsPlansTargetCoverageHasBeenSet) {
+    payload.WithInteger("SavingsPlansTargetCoverage", m_savingsPlansTargetCoverage);
   }
 
   return payload;

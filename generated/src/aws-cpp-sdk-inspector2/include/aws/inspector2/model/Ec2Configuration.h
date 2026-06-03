@@ -47,9 +47,28 @@ class Ec2Configuration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Whether to activate Amazon Inspector VM scanner for Amazon EC2 scanning.</p>
+   */
+  inline bool GetActivateVMScanner() const { return m_activateVMScanner; }
+  inline bool ActivateVMScannerHasBeenSet() const { return m_activateVMScannerHasBeenSet; }
+  inline void SetActivateVMScanner(bool value) {
+    m_activateVMScannerHasBeenSet = true;
+    m_activateVMScanner = value;
+  }
+  inline Ec2Configuration& WithActivateVMScanner(bool value) {
+    SetActivateVMScanner(value);
+    return *this;
+  }
+  ///@}
  private:
   Ec2ScanMode m_scanMode{Ec2ScanMode::NOT_SET};
+
+  bool m_activateVMScanner{false};
   bool m_scanModeHasBeenSet = false;
+  bool m_activateVMScannerHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -17,6 +17,7 @@ namespace AnalysisTypeMapper {
 
 static const int MAX_SAVINGS_HASH = HashingUtils::HashString("MAX_SAVINGS");
 static const int CUSTOM_COMMITMENT_HASH = HashingUtils::HashString("CUSTOM_COMMITMENT");
+static const int TARGET_AVERAGE_COVERAGE_HASH = HashingUtils::HashString("TARGET_AVERAGE_COVERAGE");
 
 AnalysisType GetAnalysisTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ AnalysisType GetAnalysisTypeForName(const Aws::String& name) {
     return AnalysisType::MAX_SAVINGS;
   } else if (hashCode == CUSTOM_COMMITMENT_HASH) {
     return AnalysisType::CUSTOM_COMMITMENT;
+  } else if (hashCode == TARGET_AVERAGE_COVERAGE_HASH) {
+    return AnalysisType::TARGET_AVERAGE_COVERAGE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForAnalysisType(AnalysisType enumValue) {
       return "MAX_SAVINGS";
     case AnalysisType::CUSTOM_COMMITMENT:
       return "CUSTOM_COMMITMENT";
+    case AnalysisType::TARGET_AVERAGE_COVERAGE:
+      return "TARGET_AVERAGE_COVERAGE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

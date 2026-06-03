@@ -25,6 +25,8 @@
 #include <aws/arc-region-switch/model/ArcRoutingControlState.h>
 #include <aws/arc-region-switch/model/Asg.h>
 #include <aws/arc-region-switch/model/AssociatedAlarm.h>
+#include <aws/arc-region-switch/model/AuroraProvisionedScalingConfiguration.h>
+#include <aws/arc-region-switch/model/AuroraServerlessScalingConfiguration.h>
 #include <aws/arc-region-switch/model/CancelPlanExecutionRequest.h>
 #include <aws/arc-region-switch/model/CancelPlanExecutionResult.h>
 #include <aws/arc-region-switch/model/CreatePlanRequest.h>
@@ -95,6 +97,10 @@
 #include <aws/arc-region-switch/model/ListTagsForResourceRequest.h>
 #include <aws/arc-region-switch/model/ListTagsForResourceResult.h>
 #include <aws/arc-region-switch/model/MinimalWorkflow.h>
+#include <aws/arc-region-switch/model/NeptuneDefaultBehavior.h>
+#include <aws/arc-region-switch/model/NeptuneGlobalDatabaseConfiguration.h>
+#include <aws/arc-region-switch/model/NeptuneUngraceful.h>
+#include <aws/arc-region-switch/model/NeptuneUngracefulBehavior.h>
 #include <aws/arc-region-switch/model/ParallelExecutionBlockConfiguration.h>
 #include <aws/arc-region-switch/model/Plan.h>
 #include <aws/arc-region-switch/model/RdsCreateCrossRegionReplicaConfiguration.h>
