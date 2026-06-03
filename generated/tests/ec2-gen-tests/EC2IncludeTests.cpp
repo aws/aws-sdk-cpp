@@ -86,6 +86,7 @@
 #include <aws/ec2/model/AnalysisSecurityGroupRule.h>
 #include <aws/ec2/model/AnalysisStatus.h>
 #include <aws/ec2/model/ApplianceModeSupportValue.h>
+#include <aws/ec2/model/ApplyCancellationCharges.h>
 #include <aws/ec2/model/ApplySecurityGroupsToClientVpnTargetNetworkRequest.h>
 #include <aws/ec2/model/ApplySecurityGroupsToClientVpnTargetNetworkResponse.h>
 #include <aws/ec2/model/ArchitectureType.h>
@@ -233,6 +234,7 @@
 #include <aws/ec2/model/CancelSpotInstanceRequestState.h>
 #include <aws/ec2/model/CancelSpotInstanceRequestsRequest.h>
 #include <aws/ec2/model/CancelSpotInstanceRequestsResponse.h>
+#include <aws/ec2/model/CancellationTerms.h>
 #include <aws/ec2/model/CancelledSpotInstanceRequest.h>
 #include <aws/ec2/model/CapacityAllocation.h>
 #include <aws/ec2/model/CapacityAllocationMetadataEntry.h>
@@ -255,7 +257,10 @@
 #include <aws/ec2/model/CapacityReservation.h>
 #include <aws/ec2/model/CapacityReservationBillingRequest.h>
 #include <aws/ec2/model/CapacityReservationBillingRequestStatus.h>
+#include <aws/ec2/model/CapacityReservationCancellationQuote.h>
+#include <aws/ec2/model/CapacityReservationCancellationQuoteState.h>
 #include <aws/ec2/model/CapacityReservationCommitmentInfo.h>
+#include <aws/ec2/model/CapacityReservationConfiguration.h>
 #include <aws/ec2/model/CapacityReservationDeliveryPreference.h>
 #include <aws/ec2/model/CapacityReservationFleet.h>
 #include <aws/ec2/model/CapacityReservationFleetCancellationState.h>
@@ -350,6 +355,8 @@
 #include <aws/ec2/model/CreateCapacityManagerDataExportResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationBySplittingRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationBySplittingResponse.h>
+#include <aws/ec2/model/CreateCapacityReservationCancellationQuoteRequest.h>
+#include <aws/ec2/model/CreateCapacityReservationCancellationQuoteResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationFleetRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationFleetResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationRequest.h>
@@ -812,6 +819,8 @@
 #include <aws/ec2/model/DescribeCapacityManagerDataExportsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsResponse.h>
+#include <aws/ec2/model/DescribeCapacityReservationCancellationQuotesRequest.h>
+#include <aws/ec2/model/DescribeCapacityReservationCancellationQuotesResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationTopologyRequest.h>

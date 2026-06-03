@@ -17,7 +17,8 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Provides a summary of a pedestrian route step.</p><p><h3>See Also:</h3>   <a
+ * <p>Summary including duration and distance for the entire leg.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RoutePedestrianOverviewSummary">AWS
  * API Reference</a></p>
  */
@@ -30,7 +31,7 @@ class RoutePedestrianOverviewSummary {
 
   ///@{
   /**
-   * <p>Distance of the step.</p>
+   * <p>Distance of the entire leg.</p> <p> <b>Unit</b>: <code>meters</code> </p>
    */
   inline long long GetDistance() const { return m_distance; }
   inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
@@ -46,7 +47,7 @@ class RoutePedestrianOverviewSummary {
 
   ///@{
   /**
-   * <p>Duration of the step.</p>
+   * <p>Duration of the entire leg.</p> <p> <b>Unit</b>: <code>seconds</code> </p>
    */
   inline long long GetDuration() const { return m_duration; }
   inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }

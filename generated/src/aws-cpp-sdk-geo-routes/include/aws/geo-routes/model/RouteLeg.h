@@ -11,6 +11,9 @@
 #include <aws/geo-routes/model/RouteLegTravelMode.h>
 #include <aws/geo-routes/model/RouteLegType.h>
 #include <aws/geo-routes/model/RoutePedestrianLegDetails.h>
+#include <aws/geo-routes/model/RouteRentalLegDetails.h>
+#include <aws/geo-routes/model/RouteTaxiLegDetails.h>
+#include <aws/geo-routes/model/RouteTransitLegDetails.h>
 #include <aws/geo-routes/model/RouteVehicleLegDetails.h>
 
 #include <utility>
@@ -172,6 +175,66 @@ class RouteLeg {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Details related to the rental leg.</p>  <p>Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers.</p>
+   */
+  inline const RouteRentalLegDetails& GetRentalLegDetails() const { return m_rentalLegDetails; }
+  inline bool RentalLegDetailsHasBeenSet() const { return m_rentalLegDetailsHasBeenSet; }
+  template <typename RentalLegDetailsT = RouteRentalLegDetails>
+  void SetRentalLegDetails(RentalLegDetailsT&& value) {
+    m_rentalLegDetailsHasBeenSet = true;
+    m_rentalLegDetails = std::forward<RentalLegDetailsT>(value);
+  }
+  template <typename RentalLegDetailsT = RouteRentalLegDetails>
+  RouteLeg& WithRentalLegDetails(RentalLegDetailsT&& value) {
+    SetRentalLegDetails(std::forward<RentalLegDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Details related to the taxi leg.</p>  <p>Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers.</p>
+   */
+  inline const RouteTaxiLegDetails& GetTaxiLegDetails() const { return m_taxiLegDetails; }
+  inline bool TaxiLegDetailsHasBeenSet() const { return m_taxiLegDetailsHasBeenSet; }
+  template <typename TaxiLegDetailsT = RouteTaxiLegDetails>
+  void SetTaxiLegDetails(TaxiLegDetailsT&& value) {
+    m_taxiLegDetailsHasBeenSet = true;
+    m_taxiLegDetails = std::forward<TaxiLegDetailsT>(value);
+  }
+  template <typename TaxiLegDetailsT = RouteTaxiLegDetails>
+  RouteLeg& WithTaxiLegDetails(TaxiLegDetailsT&& value) {
+    SetTaxiLegDetails(std::forward<TaxiLegDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Details related to the transit leg.</p>
+   */
+  inline const RouteTransitLegDetails& GetTransitLegDetails() const { return m_transitLegDetails; }
+  inline bool TransitLegDetailsHasBeenSet() const { return m_transitLegDetailsHasBeenSet; }
+  template <typename TransitLegDetailsT = RouteTransitLegDetails>
+  void SetTransitLegDetails(TransitLegDetailsT&& value) {
+    m_transitLegDetailsHasBeenSet = true;
+    m_transitLegDetails = std::forward<TransitLegDetailsT>(value);
+  }
+  template <typename TransitLegDetailsT = RouteTransitLegDetails>
+  RouteLeg& WithTransitLegDetails(TransitLegDetailsT&& value) {
+    SetTransitLegDetails(std::forward<TransitLegDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RouteFerryLegDetails m_ferryLegDetails;
 
@@ -186,6 +249,12 @@ class RouteLeg {
   RouteLegType m_type{RouteLegType::NOT_SET};
 
   RouteVehicleLegDetails m_vehicleLegDetails;
+
+  RouteRentalLegDetails m_rentalLegDetails;
+
+  RouteTaxiLegDetails m_taxiLegDetails;
+
+  RouteTransitLegDetails m_transitLegDetails;
   bool m_ferryLegDetailsHasBeenSet = false;
   bool m_geometryHasBeenSet = false;
   bool m_languageHasBeenSet = false;
@@ -193,6 +262,9 @@ class RouteLeg {
   bool m_travelModeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_vehicleLegDetailsHasBeenSet = false;
+  bool m_rentalLegDetailsHasBeenSet = false;
+  bool m_taxiLegDetailsHasBeenSet = false;
+  bool m_transitLegDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

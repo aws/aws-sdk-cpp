@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/CreateLocalGatewayRouteTableRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVpcAssociationRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceGroupRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceGroupRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceRequest.h>
-#include <aws/ec2/model/DeleteManagedPrefixListRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+CreateLocalGatewayRouteTableOutcome EC2Client::CreateLocalGatewayRouteTable(const CreateLocalGatewayRouteTableRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocalGatewayRouteTableOutcome(result.GetResultWithOwnership())
+                            : CreateLocalGatewayRouteTableOutcome(std::move(result.GetError()));
+}
 
 CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome EC2Client::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(
     const CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const {
@@ -742,10 +748,4 @@ DeleteLocalGatewayVirtualInterfaceGroupOutcome EC2Client::DeleteLocalGatewayVirt
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteLocalGatewayVirtualInterfaceGroupOutcome(result.GetResultWithOwnership())
                             : DeleteLocalGatewayVirtualInterfaceGroupOutcome(std::move(result.GetError()));
-}
-
-DeleteManagedPrefixListOutcome EC2Client::DeleteManagedPrefixList(const DeleteManagedPrefixListRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteManagedPrefixListOutcome(result.GetResultWithOwnership())
-                            : DeleteManagedPrefixListOutcome(std::move(result.GetError()));
 }

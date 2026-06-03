@@ -93,8 +93,9 @@ class CalculateRouteMatrixResult {
   /**
    * <p>Boundary within which the matrix is to be calculated. All data, origins and
    * destinations outside the boundary are considered invalid.</p>  <p>When
-   * request routing boundary was set as AutoCircle, the response routing boundary
-   * will return Circle derived from the AutoCircle settings.</p>
+   * <code>AutoCircle</code> is set in the request, the response routing boundary
+   * will return <code>Circle</code> derived from the <code>AutoCircle</code>
+   * settings.</p>
    */
   inline const RouteMatrixBoundary& GetRoutingBoundary() const { return m_routingBoundary; }
   template <typename RoutingBoundaryT = RouteMatrixBoundary>

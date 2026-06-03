@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/geo-routes/model/RoutePassThroughWaypoint.h>
+#include <aws/geo-routes/model/RoutePedestrianAfterTravelStep.h>
 #include <aws/geo-routes/model/RoutePedestrianArrival.h>
 #include <aws/geo-routes/model/RoutePedestrianDeparture.h>
 #include <aws/geo-routes/model/RoutePedestrianNotice.h>
@@ -37,6 +38,31 @@ class RoutePedestrianLegDetails {
   AWS_GEOROUTES_API RoutePedestrianLegDetails(Aws::Utils::Json::JsonView jsonValue);
   AWS_GEOROUTES_API RoutePedestrianLegDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>Steps of a leg that must be performed after the travel portion of the
+   * leg.</p>
+   */
+  inline const Aws::Vector<RoutePedestrianAfterTravelStep>& GetAfterTravelSteps() const { return m_afterTravelSteps; }
+  inline bool AfterTravelStepsHasBeenSet() const { return m_afterTravelStepsHasBeenSet; }
+  template <typename AfterTravelStepsT = Aws::Vector<RoutePedestrianAfterTravelStep>>
+  void SetAfterTravelSteps(AfterTravelStepsT&& value) {
+    m_afterTravelStepsHasBeenSet = true;
+    m_afterTravelSteps = std::forward<AfterTravelStepsT>(value);
+  }
+  template <typename AfterTravelStepsT = Aws::Vector<RoutePedestrianAfterTravelStep>>
+  RoutePedestrianLegDetails& WithAfterTravelSteps(AfterTravelStepsT&& value) {
+    SetAfterTravelSteps(std::forward<AfterTravelStepsT>(value));
+    return *this;
+  }
+  template <typename AfterTravelStepsT = RoutePedestrianAfterTravelStep>
+  RoutePedestrianLegDetails& AddAfterTravelSteps(AfterTravelStepsT&& value) {
+    m_afterTravelStepsHasBeenSet = true;
+    m_afterTravelSteps.emplace_back(std::forward<AfterTravelStepsT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -198,6 +224,8 @@ class RoutePedestrianLegDetails {
   }
   ///@}
  private:
+  Aws::Vector<RoutePedestrianAfterTravelStep> m_afterTravelSteps;
+
   RoutePedestrianArrival m_arrival;
 
   RoutePedestrianDeparture m_departure;
@@ -211,6 +239,7 @@ class RoutePedestrianLegDetails {
   RoutePedestrianSummary m_summary;
 
   Aws::Vector<RoutePedestrianTravelStep> m_travelSteps;
+  bool m_afterTravelStepsHasBeenSet = false;
   bool m_arrivalHasBeenSet = false;
   bool m_departureHasBeenSet = false;
   bool m_noticesHasBeenSet = false;

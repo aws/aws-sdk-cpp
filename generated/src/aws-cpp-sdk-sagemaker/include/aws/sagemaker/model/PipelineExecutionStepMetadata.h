@@ -18,6 +18,7 @@
 #include <aws/sagemaker/model/EndpointStepMetadata.h>
 #include <aws/sagemaker/model/FailStepMetadata.h>
 #include <aws/sagemaker/model/InferenceComponentMetadata.h>
+#include <aws/sagemaker/model/JobStepMetadata.h>
 #include <aws/sagemaker/model/LambdaStepMetadata.h>
 #include <aws/sagemaker/model/LineageMetadata.h>
 #include <aws/sagemaker/model/ModelStepMetadata.h>
@@ -486,6 +487,24 @@ class PipelineExecutionStepMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The metadata for a SageMaker job used in a pipeline execution step.</p>
+   */
+  inline const JobStepMetadata& GetJob() const { return m_job; }
+  inline bool JobHasBeenSet() const { return m_jobHasBeenSet; }
+  template <typename JobT = JobStepMetadata>
+  void SetJob(JobT&& value) {
+    m_jobHasBeenSet = true;
+    m_job = std::forward<JobT>(value);
+  }
+  template <typename JobT = JobStepMetadata>
+  PipelineExecutionStepMetadata& WithJob(JobT&& value) {
+    SetJob(std::forward<JobT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TrainingJobStepMetadata m_trainingJob;
 
@@ -530,6 +549,8 @@ class PipelineExecutionStepMetadata {
   InferenceComponentMetadata m_inferenceComponent;
 
   LineageMetadata m_lineage;
+
+  JobStepMetadata m_job;
   bool m_trainingJobHasBeenSet = false;
   bool m_processingJobHasBeenSet = false;
   bool m_transformJobHasBeenSet = false;
@@ -552,6 +573,7 @@ class PipelineExecutionStepMetadata {
   bool m_bedrockModelImportHasBeenSet = false;
   bool m_inferenceComponentHasBeenSet = false;
   bool m_lineageHasBeenSet = false;
+  bool m_jobHasBeenSet = false;
 };
 
 }  // namespace Model

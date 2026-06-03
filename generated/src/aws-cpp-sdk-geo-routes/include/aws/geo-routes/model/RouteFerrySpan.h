@@ -106,7 +106,7 @@ class RouteFerrySpan {
 
   ///@{
   /**
-   * <p>Provides an array of names of the ferry span in available languages.</p>
+   * <p>Names of the ferry span in available languages.</p>
    */
   inline const Aws::Vector<LocalizedString>& GetNames() const { return m_names; }
   inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }

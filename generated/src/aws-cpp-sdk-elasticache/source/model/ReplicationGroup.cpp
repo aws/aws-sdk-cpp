@@ -155,6 +155,12 @@ ReplicationGroup& ReplicationGroup::operator=(const XmlNode& xmlNode) {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
       m_kmsKeyIdHasBeenSet = true;
     }
+    XmlNode storageEncryptionTypeNode = resultNode.FirstChild("StorageEncryptionType");
+    if (!storageEncryptionTypeNode.IsNull()) {
+      m_storageEncryptionType = StorageEncryptionTypeMapper::GetStorageEncryptionTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptionTypeNode.GetText()).c_str()));
+      m_storageEncryptionTypeHasBeenSet = true;
+    }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if (!aRNNode.IsNull()) {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
@@ -229,6 +235,18 @@ ReplicationGroup& ReplicationGroup::operator=(const XmlNode& xmlNode) {
     if (!engineNode.IsNull()) {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+    }
+    XmlNode durabilityNode = resultNode.FirstChild("Durability");
+    if (!durabilityNode.IsNull()) {
+      m_durability = DurabilityMapper::GetDurabilityForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durabilityNode.GetText()).c_str()));
+      m_durabilityHasBeenSet = true;
+    }
+    XmlNode effectiveDurabilityNode = resultNode.FirstChild("EffectiveDurability");
+    if (!effectiveDurabilityNode.IsNull()) {
+      m_effectiveDurability = EffectiveDurabilityMapper::GetEffectiveDurabilityForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(effectiveDurabilityNode.GetText()).c_str()));
+      m_effectiveDurabilityHasBeenSet = true;
     }
   }
 
@@ -343,6 +361,11 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
     oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
+  }
+
   if (m_aRNHasBeenSet) {
     oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
@@ -401,6 +424,16 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if (m_engineHasBeenSet) {
     oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+
+  if (m_durabilityHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Durability=" << StringUtils::URLEncode(DurabilityMapper::GetNameForDurability(m_durability)) << "&";
+  }
+
+  if (m_effectiveDurabilityHasBeenSet) {
+    oStream << location << index << locationValue << ".EffectiveDurability="
+            << StringUtils::URLEncode(EffectiveDurabilityMapper::GetNameForEffectiveDurability(m_effectiveDurability)) << "&";
   }
 }
 
@@ -488,6 +521,10 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if (m_kmsKeyIdHasBeenSet) {
     oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
+  }
   if (m_aRNHasBeenSet) {
     oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
@@ -531,6 +568,13 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if (m_engineHasBeenSet) {
     oStream << location << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+  if (m_durabilityHasBeenSet) {
+    oStream << location << ".Durability=" << StringUtils::URLEncode(DurabilityMapper::GetNameForDurability(m_durability)) << "&";
+  }
+  if (m_effectiveDurabilityHasBeenSet) {
+    oStream << location << ".EffectiveDurability="
+            << StringUtils::URLEncode(EffectiveDurabilityMapper::GetNameForEffectiveDurability(m_effectiveDurability)) << "&";
   }
 }
 

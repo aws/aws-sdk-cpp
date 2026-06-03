@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/EnableAddressTransferRequest.h>
+#include <aws/ec2/model/EnableAllowedImagesSettingsRequest.h>
 #include <aws/ec2/model/EnableAwsNetworkPerformanceMetricSubscriptionRequest.h>
 #include <aws/ec2/model/EnableCapacityManagerRequest.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/GetVpnTunnelReplacementStatusRequest.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListRequest.h>
 #include <aws/ec2/model/ImportImageRequest.h>
-#include <aws/ec2/model/ImportInstanceRequest.h>
-#include <aws/ec2/model/ImportKeyPairRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,18 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+EnableAddressTransferOutcome EC2Client::EnableAddressTransfer(const EnableAddressTransferRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableAddressTransferOutcome(result.GetResultWithOwnership())
+                            : EnableAddressTransferOutcome(std::move(result.GetError()));
+}
+
+EnableAllowedImagesSettingsOutcome EC2Client::EnableAllowedImagesSettings(const EnableAllowedImagesSettingsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableAllowedImagesSettingsOutcome(result.GetResultWithOwnership())
+                            : EnableAllowedImagesSettingsOutcome(std::move(result.GetError()));
+}
 
 EnableAwsNetworkPerformanceMetricSubscriptionOutcome EC2Client::EnableAwsNetworkPerformanceMetricSubscription(
     const EnableAwsNetworkPerformanceMetricSubscriptionRequest& request) const {
@@ -758,14 +770,4 @@ ImportClientVpnClientCertificateRevocationListOutcome EC2Client::ImportClientVpn
 ImportImageOutcome EC2Client::ImportImage(const ImportImageRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ImportImageOutcome(result.GetResultWithOwnership()) : ImportImageOutcome(std::move(result.GetError()));
-}
-
-ImportInstanceOutcome EC2Client::ImportInstance(const ImportInstanceRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ImportInstanceOutcome(result.GetResultWithOwnership()) : ImportInstanceOutcome(std::move(result.GetError()));
-}
-
-ImportKeyPairOutcome EC2Client::ImportKeyPair(const ImportKeyPairRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ImportKeyPairOutcome(result.GetResultWithOwnership()) : ImportKeyPairOutcome(std::move(result.GetError()));
 }

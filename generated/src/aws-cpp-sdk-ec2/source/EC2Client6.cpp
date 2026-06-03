@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/ImportInstanceRequest.h>
+#include <aws/ec2/model/ImportKeyPairRequest.h>
 #include <aws/ec2/model/ImportSnapshotRequest.h>
 #include <aws/ec2/model/ImportVolumeRequest.h>
 #include <aws/ec2/model/ListImagesInRecycleBinRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/PurchaseHostReservationRequest.h>
 #include <aws/ec2/model/PurchaseReservedInstancesOfferingRequest.h>
 #include <aws/ec2/model/PurchaseScheduledInstancesRequest.h>
-#include <aws/ec2/model/RebootInstancesRequest.h>
-#include <aws/ec2/model/RegisterImageRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,16 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ImportInstanceOutcome EC2Client::ImportInstance(const ImportInstanceRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportInstanceOutcome(result.GetResultWithOwnership()) : ImportInstanceOutcome(std::move(result.GetError()));
+}
+
+ImportKeyPairOutcome EC2Client::ImportKeyPair(const ImportKeyPairRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportKeyPairOutcome(result.GetResultWithOwnership()) : ImportKeyPairOutcome(std::move(result.GetError()));
+}
 
 ImportSnapshotOutcome EC2Client::ImportSnapshot(const ImportSnapshotRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -738,15 +748,4 @@ PurchaseScheduledInstancesOutcome EC2Client::PurchaseScheduledInstances(const Pu
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PurchaseScheduledInstancesOutcome(result.GetResultWithOwnership())
                             : PurchaseScheduledInstancesOutcome(std::move(result.GetError()));
-}
-
-RebootInstancesOutcome EC2Client::RebootInstances(const RebootInstancesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RebootInstancesOutcome(result.GetResultWithOwnership())
-                            : RebootInstancesOutcome(std::move(result.GetError()));
-}
-
-RegisterImageOutcome EC2Client::RegisterImage(const RegisterImageRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RegisterImageOutcome(result.GetResultWithOwnership()) : RegisterImageOutcome(std::move(result.GetError()));
 }

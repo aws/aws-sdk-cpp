@@ -17,7 +17,8 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Summarized details of the leg.</p><p><h3>See Also:</h3>   <a
+ * <p>Summary including duration and distance for the entire leg.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteVehicleOverviewSummary">AWS
  * API Reference</a></p>
  */
@@ -48,7 +49,7 @@ class RouteVehicleOverviewSummary {
 
   ///@{
   /**
-   * <p>Distance of the step.</p>
+   * <p>Distance of the entire leg.</p> <p> <b>Unit</b>: <code>meters</code> </p>
    */
   inline long long GetDistance() const { return m_distance; }
   inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
@@ -64,7 +65,7 @@ class RouteVehicleOverviewSummary {
 
   ///@{
   /**
-   * <p>Duration of the step.</p> <p> <b>Unit</b>: <code>seconds</code> </p>
+   * <p>Duration of the entire leg.</p> <p> <b>Unit</b>: <code>seconds</code> </p>
    */
   inline long long GetDuration() const { return m_duration; }
   inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
@@ -80,8 +81,8 @@ class RouteVehicleOverviewSummary {
 
   ///@{
   /**
-   * <p>Duration of the computed span under typical traffic congestion. </p> <p>
-   * <b>Unit</b>: <code>seconds</code> </p>
+   * <p>Duration of the leg under typical traffic congestion.</p> <p> <b>Unit</b>:
+   * <code>seconds</code> </p>
    */
   inline long long GetTypicalDuration() const { return m_typicalDuration; }
   inline bool TypicalDurationHasBeenSet() const { return m_typicalDurationHasBeenSet; }

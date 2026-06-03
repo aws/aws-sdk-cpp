@@ -69,6 +69,12 @@ ServerlessCache& ServerlessCache::operator=(const XmlNode& xmlNode) {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
       m_kmsKeyIdHasBeenSet = true;
     }
+    XmlNode storageEncryptionTypeNode = resultNode.FirstChild("StorageEncryptionType");
+    if (!storageEncryptionTypeNode.IsNull()) {
+      m_storageEncryptionType = StorageEncryptionTypeMapper::GetStorageEncryptionTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptionTypeNode.GetText()).c_str()));
+      m_storageEncryptionTypeHasBeenSet = true;
+    }
     XmlNode securityGroupIdsNode = resultNode.FirstChild("SecurityGroupIds");
     if (!securityGroupIdsNode.IsNull()) {
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("SecurityGroupId");
@@ -174,6 +180,11 @@ void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location
     oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
+  }
+
   if (m_securityGroupIdsHasBeenSet) {
     unsigned securityGroupIdsIdx = 1;
     for (auto& item : m_securityGroupIds) {
@@ -254,6 +265,10 @@ void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if (m_kmsKeyIdHasBeenSet) {
     oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
   }
   if (m_securityGroupIdsHasBeenSet) {
     unsigned securityGroupIdsIdx = 1;

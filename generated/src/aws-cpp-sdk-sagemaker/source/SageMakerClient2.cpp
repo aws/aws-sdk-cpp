@@ -20,7 +20,11 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/DescribeOptimizationJobRequest.h>
+#include <aws/sagemaker/model/DescribePartnerAppRequest.h>
+#include <aws/sagemaker/model/DescribePipelineDefinitionForExecutionRequest.h>
 #include <aws/sagemaker/model/DescribePipelineExecutionRequest.h>
+#include <aws/sagemaker/model/DescribePipelineRequest.h>
 #include <aws/sagemaker/model/DescribeProcessingJobRequest.h>
 #include <aws/sagemaker/model/DescribeProjectRequest.h>
 #include <aws/sagemaker/model/DescribeReservedCapacityRequest.h>
@@ -90,6 +94,8 @@
 #include <aws/sagemaker/model/ListInferenceExperimentsRequest.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsRequest.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsRequest.h>
+#include <aws/sagemaker/model/ListJobSchemaVersionsRequest.h>
+#include <aws/sagemaker/model/ListJobsRequest.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamRequest.h>
 #include <aws/sagemaker/model/ListLabelingJobsRequest.h>
 #include <aws/sagemaker/model/ListLineageGroupsRequest.h>
@@ -114,12 +120,6 @@
 #include <aws/sagemaker/model/ListOptimizationJobsRequest.h>
 #include <aws/sagemaker/model/ListPartnerAppsRequest.h>
 #include <aws/sagemaker/model/ListPipelineExecutionStepsRequest.h>
-#include <aws/sagemaker/model/ListPipelineExecutionsRequest.h>
-#include <aws/sagemaker/model/ListPipelineParametersForExecutionRequest.h>
-#include <aws/sagemaker/model/ListPipelineVersionsRequest.h>
-#include <aws/sagemaker/model/ListPipelinesRequest.h>
-#include <aws/sagemaker/model/ListProcessingJobsRequest.h>
-#include <aws/sagemaker/model/ListProjectsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,31 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeOptimizationJobOutcome SageMakerClient::DescribeOptimizationJob(const DescribeOptimizationJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOptimizationJobOutcome(result.GetResultWithOwnership())
+                            : DescribeOptimizationJobOutcome(std::move(result.GetError()));
+}
+
+DescribePartnerAppOutcome SageMakerClient::DescribePartnerApp(const DescribePartnerAppRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePartnerAppOutcome(result.GetResultWithOwnership())
+                            : DescribePartnerAppOutcome(std::move(result.GetError()));
+}
+
+DescribePipelineOutcome SageMakerClient::DescribePipeline(const DescribePipelineRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePipelineOutcome(result.GetResultWithOwnership())
+                            : DescribePipelineOutcome(std::move(result.GetError()));
+}
+
+DescribePipelineDefinitionForExecutionOutcome SageMakerClient::DescribePipelineDefinitionForExecution(
+    const DescribePipelineDefinitionForExecutionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePipelineDefinitionForExecutionOutcome(result.GetResultWithOwnership())
+                            : DescribePipelineDefinitionForExecutionOutcome(std::move(result.GetError()));
+}
 
 DescribePipelineExecutionOutcome SageMakerClient::DescribePipelineExecution(const DescribePipelineExecutionRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -547,6 +572,17 @@ ListInferenceRecommendationsJobsOutcome SageMakerClient::ListInferenceRecommenda
                             : ListInferenceRecommendationsJobsOutcome(std::move(result.GetError()));
 }
 
+ListJobSchemaVersionsOutcome SageMakerClient::ListJobSchemaVersions(const ListJobSchemaVersionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListJobSchemaVersionsOutcome(result.GetResultWithOwnership())
+                            : ListJobSchemaVersionsOutcome(std::move(result.GetError()));
+}
+
+ListJobsOutcome SageMakerClient::ListJobs(const ListJobsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListJobsOutcome(result.GetResultWithOwnership()) : ListJobsOutcome(std::move(result.GetError()));
+}
+
 ListLabelingJobsOutcome SageMakerClient::ListLabelingJobs(const ListLabelingJobsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListLabelingJobsOutcome(result.GetResultWithOwnership())
@@ -689,39 +725,4 @@ ListPipelineExecutionStepsOutcome SageMakerClient::ListPipelineExecutionSteps(co
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListPipelineExecutionStepsOutcome(result.GetResultWithOwnership())
                             : ListPipelineExecutionStepsOutcome(std::move(result.GetError()));
-}
-
-ListPipelineExecutionsOutcome SageMakerClient::ListPipelineExecutions(const ListPipelineExecutionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListPipelineExecutionsOutcome(result.GetResultWithOwnership())
-                            : ListPipelineExecutionsOutcome(std::move(result.GetError()));
-}
-
-ListPipelineParametersForExecutionOutcome SageMakerClient::ListPipelineParametersForExecution(
-    const ListPipelineParametersForExecutionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListPipelineParametersForExecutionOutcome(result.GetResultWithOwnership())
-                            : ListPipelineParametersForExecutionOutcome(std::move(result.GetError()));
-}
-
-ListPipelineVersionsOutcome SageMakerClient::ListPipelineVersions(const ListPipelineVersionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListPipelineVersionsOutcome(result.GetResultWithOwnership())
-                            : ListPipelineVersionsOutcome(std::move(result.GetError()));
-}
-
-ListPipelinesOutcome SageMakerClient::ListPipelines(const ListPipelinesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListPipelinesOutcome(result.GetResultWithOwnership()) : ListPipelinesOutcome(std::move(result.GetError()));
-}
-
-ListProcessingJobsOutcome SageMakerClient::ListProcessingJobs(const ListProcessingJobsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListProcessingJobsOutcome(result.GetResultWithOwnership())
-                            : ListProcessingJobsOutcome(std::move(result.GetError()));
-}
-
-ListProjectsOutcome SageMakerClient::ListProjects(const ListProjectsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListProjectsOutcome(result.GetResultWithOwnership()) : ListProjectsOutcome(std::move(result.GetError()));
 }

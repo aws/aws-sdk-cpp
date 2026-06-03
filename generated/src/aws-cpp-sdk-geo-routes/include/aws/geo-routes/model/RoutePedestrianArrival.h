@@ -37,7 +37,7 @@ class RoutePedestrianArrival {
 
   ///@{
   /**
-   * <p>The place details.</p>
+   * <p>Place details corresponding to the arrival.</p>
    */
   inline const RoutePedestrianPlace& GetPlace() const { return m_place; }
   inline bool PlaceHasBeenSet() const { return m_placeHasBeenSet; }
@@ -55,7 +55,7 @@ class RoutePedestrianArrival {
 
   ///@{
   /**
-   * <p>The time.</p>
+   * <p>The arrival time.</p>
    */
   inline const Aws::String& GetTime() const { return m_time; }
   inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }

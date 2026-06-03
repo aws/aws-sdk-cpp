@@ -398,6 +398,8 @@
 #include <aws/sagemaker/model/CreateInferenceExperimentResult.h>
 #include <aws/sagemaker/model/CreateInferenceRecommendationsJobRequest.h>
 #include <aws/sagemaker/model/CreateInferenceRecommendationsJobResult.h>
+#include <aws/sagemaker/model/CreateJobRequest.h>
+#include <aws/sagemaker/model/CreateJobResult.h>
 #include <aws/sagemaker/model/CreateLabelingJobRequest.h>
 #include <aws/sagemaker/model/CreateLabelingJobResult.h>
 #include <aws/sagemaker/model/CreateMlflowAppRequest.h>
@@ -541,6 +543,8 @@
 #include <aws/sagemaker/model/DeleteInferenceComponentRequest.h>
 #include <aws/sagemaker/model/DeleteInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/DeleteInferenceExperimentResult.h>
+#include <aws/sagemaker/model/DeleteJobRequest.h>
+#include <aws/sagemaker/model/DeleteJobResult.h>
 #include <aws/sagemaker/model/DeleteMlflowAppRequest.h>
 #include <aws/sagemaker/model/DeleteMlflowAppResult.h>
 #include <aws/sagemaker/model/DeleteMlflowTrackingServerRequest.h>
@@ -663,6 +667,10 @@
 #include <aws/sagemaker/model/DescribeInferenceExperimentResult.h>
 #include <aws/sagemaker/model/DescribeInferenceRecommendationsJobRequest.h>
 #include <aws/sagemaker/model/DescribeInferenceRecommendationsJobResult.h>
+#include <aws/sagemaker/model/DescribeJobRequest.h>
+#include <aws/sagemaker/model/DescribeJobResult.h>
+#include <aws/sagemaker/model/DescribeJobSchemaVersionRequest.h>
+#include <aws/sagemaker/model/DescribeJobSchemaVersionResult.h>
 #include <aws/sagemaker/model/DescribeLabelingJobRequest.h>
 #include <aws/sagemaker/model/DescribeLabelingJobResult.h>
 #include <aws/sagemaker/model/DescribeLineageGroupRequest.h>
@@ -983,6 +991,13 @@
 #include <aws/sagemaker/model/IntegerParameterRange.h>
 #include <aws/sagemaker/model/IntegerParameterRangeSpecification.h>
 #include <aws/sagemaker/model/IsTrackingServerActive.h>
+#include <aws/sagemaker/model/JobCategory.h>
+#include <aws/sagemaker/model/JobConfigSchemaVersionSummary.h>
+#include <aws/sagemaker/model/JobSecondaryStatus.h>
+#include <aws/sagemaker/model/JobSecondaryStatusTransition.h>
+#include <aws/sagemaker/model/JobStatus.h>
+#include <aws/sagemaker/model/JobStepMetadata.h>
+#include <aws/sagemaker/model/JobSummary.h>
 #include <aws/sagemaker/model/JobType.h>
 #include <aws/sagemaker/model/JoinSource.h>
 #include <aws/sagemaker/model/JupyterLabAppImageConfig.h>
@@ -1106,6 +1121,10 @@
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsRequest.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsResult.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsSortBy.h>
+#include <aws/sagemaker/model/ListJobSchemaVersionsRequest.h>
+#include <aws/sagemaker/model/ListJobSchemaVersionsResult.h>
+#include <aws/sagemaker/model/ListJobsRequest.h>
+#include <aws/sagemaker/model/ListJobsResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamRequest.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamSortByOptions.h>
@@ -1656,6 +1675,8 @@
 #include <aws/sagemaker/model/StopInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/StopInferenceExperimentResult.h>
 #include <aws/sagemaker/model/StopInferenceRecommendationsJobRequest.h>
+#include <aws/sagemaker/model/StopJobRequest.h>
+#include <aws/sagemaker/model/StopJobResult.h>
 #include <aws/sagemaker/model/StopLabelingJobRequest.h>
 #include <aws/sagemaker/model/StopMlflowTrackingServerRequest.h>
 #include <aws/sagemaker/model/StopMlflowTrackingServerResult.h>

@@ -182,7 +182,7 @@ GeoRoutesClient::InvokeOperationOutcome GeoRoutesClient::InvokeServiceOperation(
 CalculateIsolinesOutcome GeoRoutesClient::CalculateIsolines(const CalculateIsolinesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/isolines");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/isolines");
   };
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
@@ -193,7 +193,7 @@ CalculateIsolinesOutcome GeoRoutesClient::CalculateIsolines(const CalculateIsoli
 CalculateRouteMatrixOutcome GeoRoutesClient::CalculateRouteMatrix(const CalculateRouteMatrixRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/route-matrix");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/route-matrix");
   };
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
@@ -204,7 +204,7 @@ CalculateRouteMatrixOutcome GeoRoutesClient::CalculateRouteMatrix(const Calculat
 CalculateRoutesOutcome GeoRoutesClient::CalculateRoutes(const CalculateRoutesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/routes");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/routes");
   };
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
@@ -215,7 +215,7 @@ CalculateRoutesOutcome GeoRoutesClient::CalculateRoutes(const CalculateRoutesReq
 OptimizeWaypointsOutcome GeoRoutesClient::OptimizeWaypoints(const OptimizeWaypointsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/optimize-waypoints");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/optimize-waypoints");
   };
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
@@ -226,7 +226,7 @@ OptimizeWaypointsOutcome GeoRoutesClient::OptimizeWaypoints(const OptimizeWaypoi
 SnapToRoadsOutcome GeoRoutesClient::SnapToRoads(const SnapToRoadsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/snap-to-roads");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/snap-to-roads");
   };
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);

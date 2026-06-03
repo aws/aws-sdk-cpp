@@ -44,6 +44,18 @@ RouteVehiclePlace& RouteVehiclePlace::operator=(JsonView jsonValue) {
     m_waypointIndex = jsonValue.GetInteger("WaypointIndex");
     m_waypointIndexHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AccessPointDetails")) {
+    m_accessPointDetails = jsonValue.GetObject("AccessPointDetails");
+    m_accessPointDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StationDetails")) {
+    m_stationDetails = jsonValue.GetObject("StationDetails");
+    m_stationDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Type")) {
+    m_type = RouteVehiclePlaceTypeMapper::GetRouteVehiclePlaceTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -76,6 +88,18 @@ JsonValue RouteVehiclePlace::Jsonize() const {
 
   if (m_waypointIndexHasBeenSet) {
     payload.WithInteger("WaypointIndex", m_waypointIndex);
+  }
+
+  if (m_accessPointDetailsHasBeenSet) {
+    payload.WithObject("AccessPointDetails", m_accessPointDetails.Jsonize());
+  }
+
+  if (m_stationDetailsHasBeenSet) {
+    payload.WithObject("StationDetails", m_stationDetails.Jsonize());
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", RouteVehiclePlaceTypeMapper::GetNameForRouteVehiclePlaceType(m_type));
   }
 
   return payload;

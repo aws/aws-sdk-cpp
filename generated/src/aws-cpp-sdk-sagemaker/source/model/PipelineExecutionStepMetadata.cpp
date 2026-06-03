@@ -106,6 +106,10 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator=(JsonView
     m_lineage = jsonValue.GetObject("Lineage");
     m_lineageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Job")) {
+    m_job = jsonValue.GetObject("Job");
+    m_jobHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -198,6 +202,10 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const {
 
   if (m_lineageHasBeenSet) {
     payload.WithObject("Lineage", m_lineage.Jsonize());
+  }
+
+  if (m_jobHasBeenSet) {
+    payload.WithObject("Job", m_job.Jsonize());
   }
 
   return payload;

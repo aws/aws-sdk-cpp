@@ -50,6 +50,10 @@ CapacityProvider& CapacityProvider::operator=(JsonView jsonValue) {
     m_lastModified = jsonValue.GetString("LastModified");
     m_lastModifiedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PropagateTags")) {
+    m_propagateTags = jsonValue.GetObject("PropagateTags");
+    m_propagateTagsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue CapacityProvider::Jsonize() const {
 
   if (m_lastModifiedHasBeenSet) {
     payload.WithString("LastModified", m_lastModified);
+  }
+
+  if (m_propagateTagsHasBeenSet) {
+    payload.WithObject("PropagateTags", m_propagateTags.Jsonize());
   }
 
   return payload;

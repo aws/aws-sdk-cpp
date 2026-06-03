@@ -20,6 +20,8 @@
 #include <aws/keyspacesstreams/model/GetShardIteratorResult.h>
 #include <aws/keyspacesstreams/model/GetStreamRequest.h>
 #include <aws/keyspacesstreams/model/GetStreamResult.h>
+#include <aws/keyspacesstreams/model/IteratorDescription.h>
+#include <aws/keyspacesstreams/model/IteratorPosition.h>
 #include <aws/keyspacesstreams/model/KeyspacesCell.h>
 #include <aws/keyspacesstreams/model/KeyspacesCellMapDefinition.h>
 #include <aws/keyspacesstreams/model/KeyspacesCellValue.h>

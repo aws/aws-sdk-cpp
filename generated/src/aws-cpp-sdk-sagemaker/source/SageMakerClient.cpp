@@ -66,6 +66,7 @@
 #include <aws/sagemaker/model/CreateInferenceComponentRequest.h>
 #include <aws/sagemaker/model/CreateInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/CreateInferenceRecommendationsJobRequest.h>
+#include <aws/sagemaker/model/CreateJobRequest.h>
 #include <aws/sagemaker/model/CreateLabelingJobRequest.h>
 #include <aws/sagemaker/model/CreateMlflowAppRequest.h>
 #include <aws/sagemaker/model/CreateMlflowTrackingServerRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/sagemaker/model/DeleteDeviceFleetRequest.h>
 #include <aws/sagemaker/model/DeleteDomainRequest.h>
 #include <aws/sagemaker/model/DeleteEdgeDeploymentPlanRequest.h>
-#include <aws/sagemaker/model/DeleteEdgeDeploymentStageRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -541,6 +541,11 @@ CreateInferenceRecommendationsJobOutcome SageMakerClient::CreateInferenceRecomme
                             : CreateInferenceRecommendationsJobOutcome(std::move(result.GetError()));
 }
 
+CreateJobOutcome SageMakerClient::CreateJob(const CreateJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateJobOutcome(result.GetResultWithOwnership()) : CreateJobOutcome(std::move(result.GetError()));
+}
+
 CreateLabelingJobOutcome SageMakerClient::CreateLabelingJob(const CreateLabelingJobRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateLabelingJobOutcome(result.GetResultWithOwnership())
@@ -854,10 +859,4 @@ DeleteEdgeDeploymentPlanOutcome SageMakerClient::DeleteEdgeDeploymentPlan(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteEdgeDeploymentPlanOutcome(result.GetResultWithOwnership())
                             : DeleteEdgeDeploymentPlanOutcome(std::move(result.GetError()));
-}
-
-DeleteEdgeDeploymentStageOutcome SageMakerClient::DeleteEdgeDeploymentStage(const DeleteEdgeDeploymentStageRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteEdgeDeploymentStageOutcome(result.GetResultWithOwnership())
-                            : DeleteEdgeDeploymentStageOutcome(std::move(result.GetError()));
 }

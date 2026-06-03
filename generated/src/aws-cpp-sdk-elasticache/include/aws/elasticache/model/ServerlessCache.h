@@ -12,6 +12,7 @@
 #include <aws/elasticache/model/CacheUsageLimits.h>
 #include <aws/elasticache/model/Endpoint.h>
 #include <aws/elasticache/model/NetworkType.h>
+#include <aws/elasticache/model/StorageEncryptionType.h>
 
 #include <utility>
 
@@ -199,6 +200,25 @@ class ServerlessCache {
   template <typename KmsKeyIdT = Aws::String>
   ServerlessCache& WithKmsKeyId(KmsKeyIdT&& value) {
     SetKmsKeyId(std::forward<KmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates the type of encryption for data stored at rest in the serverless
+   * cache. Serverless caches are always encrypted at rest. The value is
+   * <code>sse-elasticache</code> if an ElastiCache service-managed key is used, or
+   * <code>sse-kms</code> if a customer-managed KMS key is used.</p>
+   */
+  inline StorageEncryptionType GetStorageEncryptionType() const { return m_storageEncryptionType; }
+  inline bool StorageEncryptionTypeHasBeenSet() const { return m_storageEncryptionTypeHasBeenSet; }
+  inline void SetStorageEncryptionType(StorageEncryptionType value) {
+    m_storageEncryptionTypeHasBeenSet = true;
+    m_storageEncryptionType = value;
+  }
+  inline ServerlessCache& WithStorageEncryptionType(StorageEncryptionType value) {
+    SetStorageEncryptionType(value);
     return *this;
   }
   ///@}
@@ -399,6 +419,8 @@ class ServerlessCache {
 
   Aws::String m_kmsKeyId;
 
+  StorageEncryptionType m_storageEncryptionType{StorageEncryptionType::NOT_SET};
+
   Aws::Vector<Aws::String> m_securityGroupIds;
 
   Endpoint m_endpoint;
@@ -425,6 +447,7 @@ class ServerlessCache {
   bool m_fullEngineVersionHasBeenSet = false;
   bool m_cacheUsageLimitsHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
+  bool m_storageEncryptionTypeHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
   bool m_readerEndpointHasBeenSet = false;

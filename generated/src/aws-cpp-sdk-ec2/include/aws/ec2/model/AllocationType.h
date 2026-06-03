@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class AllocationType { NOT_SET, used, future };
+enum class AllocationType { NOT_SET, used, future, cancelling };
 
 namespace AllocationTypeMapper {
 AWS_EC2_API AllocationType GetAllocationTypeForName(const Aws::String& name);

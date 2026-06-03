@@ -11,6 +11,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/AutomaticFailoverStatus.h>
 #include <aws/elasticache/model/DataTieringStatus.h>
+#include <aws/elasticache/model/Durability.h>
 #include <aws/elasticache/model/NodeSnapshot.h>
 
 #include <utility>
@@ -640,6 +641,25 @@ class Snapshot {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The durability setting of the cluster when the snapshot was taken. When
+   * restoring from this snapshot, the cluster uses this durability setting unless
+   * overridden in the restore request. For more information, see <a
+   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+   */
+  inline Durability GetDurability() const { return m_durability; }
+  inline bool DurabilityHasBeenSet() const { return m_durabilityHasBeenSet; }
+  inline void SetDurability(Durability value) {
+    m_durabilityHasBeenSet = true;
+    m_durability = value;
+  }
+  inline Snapshot& WithDurability(Durability value) {
+    SetDurability(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_snapshotName;
 
@@ -696,6 +716,8 @@ class Snapshot {
   Aws::String m_aRN;
 
   DataTieringStatus m_dataTiering{DataTieringStatus::NOT_SET};
+
+  Durability m_durability{Durability::NOT_SET};
   bool m_snapshotNameHasBeenSet = false;
   bool m_replicationGroupIdHasBeenSet = false;
   bool m_replicationGroupDescriptionHasBeenSet = false;
@@ -724,6 +746,7 @@ class Snapshot {
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
   bool m_dataTieringHasBeenSet = false;
+  bool m_durabilityHasBeenSet = false;
 };
 
 }  // namespace Model

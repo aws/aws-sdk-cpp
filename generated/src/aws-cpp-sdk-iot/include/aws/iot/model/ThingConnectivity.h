@@ -51,11 +51,7 @@ class ThingConnectivity {
   ///@{
   /**
    * <p>The epoch time (in milliseconds) when the thing last connected or
-   * disconnected. If the thing has been disconnected for approximately an hour, the
-   * time value might be missing. When you enable or update the indexing
-   * configuration, this value might be <code>0</code> (the Unix epoch time) for
-   * devices that have never connected or have been disconnected for more than an
-   * hour.</p>
+   * disconnected.</p>
    */
   inline long long GetTimestamp() const { return m_timestamp; }
   inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
@@ -71,9 +67,7 @@ class ThingConnectivity {
 
   ///@{
   /**
-   * <p>The reason why the client is disconnected. When you enable or update the
-   * indexing configuration, this value might be missing for devices that have never
-   * connected or have been disconnected for more than an hour.</p>
+   * <p>The reason that the client is disconnected.</p>
    */
   inline const Aws::String& GetDisconnectReason() const { return m_disconnectReason; }
   inline bool DisconnectReasonHasBeenSet() const { return m_disconnectReasonHasBeenSet; }

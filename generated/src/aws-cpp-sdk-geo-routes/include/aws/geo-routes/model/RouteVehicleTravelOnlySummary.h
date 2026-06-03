@@ -64,8 +64,8 @@ class RouteVehicleTravelOnlySummary {
 
   ///@{
   /**
-   * <p>Duration of the computed span under typical traffic congestion.</p> <p>
-   * <b>Unit</b>: <code>seconds</code> </p>
+   * <p>Duration of the leg under typical traffic congestion.</p> <p> <b>Unit</b>:
+   * <code>seconds</code> </p>
    */
   inline long long GetTypicalDuration() const { return m_typicalDuration; }
   inline bool TypicalDurationHasBeenSet() const { return m_typicalDurationHasBeenSet; }

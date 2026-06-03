@@ -35,7 +35,7 @@ class RouteVehicleDeparture {
 
   ///@{
   /**
-   * <p>The place details.</p>
+   * <p>Place details corresponding to the departure.</p>
    */
   inline const RouteVehiclePlace& GetPlace() const { return m_place; }
   inline bool PlaceHasBeenSet() const { return m_placeHasBeenSet; }

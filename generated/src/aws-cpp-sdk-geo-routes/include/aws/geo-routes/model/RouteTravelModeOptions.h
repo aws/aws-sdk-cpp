@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/geo-routes/model/RouteCarOptions.h>
+#include <aws/geo-routes/model/RouteIntermodalOptions.h>
 #include <aws/geo-routes/model/RoutePedestrianOptions.h>
 #include <aws/geo-routes/model/RouteScooterOptions.h>
+#include <aws/geo-routes/model/RouteTransitOptions.h>
 #include <aws/geo-routes/model/RouteTruckOptions.h>
 
 #include <utility>
@@ -110,6 +112,50 @@ class RouteTravelModeOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Travel mode options when the provided travel mode is
+   * <code>Intermodal</code>.</p>  <p>Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers.</p>
+   */
+  inline const RouteIntermodalOptions& GetIntermodal() const { return m_intermodal; }
+  inline bool IntermodalHasBeenSet() const { return m_intermodalHasBeenSet; }
+  template <typename IntermodalT = RouteIntermodalOptions>
+  void SetIntermodal(IntermodalT&& value) {
+    m_intermodalHasBeenSet = true;
+    m_intermodal = std::forward<IntermodalT>(value);
+  }
+  template <typename IntermodalT = RouteIntermodalOptions>
+  RouteTravelModeOptions& WithIntermodal(IntermodalT&& value) {
+    SetIntermodal(std::forward<IntermodalT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Travel mode options when the provided travel mode is
+   * <code>Transit</code>.</p>  <p>Not supported in <code>ap-southeast-1</code>
+   * and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers.</p>
+   */
+  inline const RouteTransitOptions& GetTransit() const { return m_transit; }
+  inline bool TransitHasBeenSet() const { return m_transitHasBeenSet; }
+  template <typename TransitT = RouteTransitOptions>
+  void SetTransit(TransitT&& value) {
+    m_transitHasBeenSet = true;
+    m_transit = std::forward<TransitT>(value);
+  }
+  template <typename TransitT = RouteTransitOptions>
+  RouteTravelModeOptions& WithTransit(TransitT&& value) {
+    SetTransit(std::forward<TransitT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RouteCarOptions m_car;
 
@@ -118,10 +164,16 @@ class RouteTravelModeOptions {
   RouteScooterOptions m_scooter;
 
   RouteTruckOptions m_truck;
+
+  RouteIntermodalOptions m_intermodal;
+
+  RouteTransitOptions m_transit;
   bool m_carHasBeenSet = false;
   bool m_pedestrianHasBeenSet = false;
   bool m_scooterHasBeenSet = false;
   bool m_truckHasBeenSet = false;
+  bool m_intermodalHasBeenSet = false;
+  bool m_transitHasBeenSet = false;
 };
 
 }  // namespace Model

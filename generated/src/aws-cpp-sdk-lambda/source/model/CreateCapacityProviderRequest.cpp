@@ -47,5 +47,9 @@ Aws::String CreateCapacityProviderRequest::SerializePayload() const {
     payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
+  if (m_propagateTagsHasBeenSet) {
+    payload.WithObject("PropagateTags", m_propagateTags.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
