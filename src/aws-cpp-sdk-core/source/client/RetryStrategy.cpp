@@ -159,6 +159,5 @@ namespace Aws
             int capacityAmount = error.GetErrorType() == CoreErrors::REQUEST_TIMEOUT ? TIMEOUT_RETRY_COST : RETRY_COST;
             ReleaseRetryQuota(capacityAmount);
         }
-
     }
 }
