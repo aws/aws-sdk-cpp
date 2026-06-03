@@ -124,7 +124,6 @@ namespace Aws
         public:
             StandardRetryStrategy(long maxAttempts = 3);
             StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts = 3);
-            StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts, double transientBackoffBaseSec);
             virtual ~StandardRetryStrategy();
 
             virtual void RequestBookkeeping(const HttpResponseOutcome& httpResponseOutcome) override;
