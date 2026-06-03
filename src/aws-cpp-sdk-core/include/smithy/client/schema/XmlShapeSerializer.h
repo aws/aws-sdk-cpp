@@ -7,7 +7,7 @@
 namespace smithy {
 namespace schema {
 
-class XmlShapeSerializer : public ShapeSerializer {
+class XmlShapeSerializer final : public ShapeSerializer {
  public:
   XmlShapeSerializer();
   ~XmlShapeSerializer();

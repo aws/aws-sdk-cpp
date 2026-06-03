@@ -7,7 +7,7 @@
 namespace smithy {
 namespace schema {
 
-class QueryShapeSerializer : public ShapeSerializer {
+class QueryShapeSerializer final : public ShapeSerializer {
  public:
   QueryShapeSerializer(const Aws::String& action, const Aws::String& version);
   ~QueryShapeSerializer();

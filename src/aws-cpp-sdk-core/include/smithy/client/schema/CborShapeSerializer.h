@@ -8,7 +8,7 @@
 namespace smithy {
 namespace schema {
 
-class AWS_CORE_API CborShapeSerializer : public ShapeSerializer {
+class AWS_CORE_API CborShapeSerialize final : public ShapeSerializer {
  public:
   CborShapeSerializer();
   ~CborShapeSerializer();
