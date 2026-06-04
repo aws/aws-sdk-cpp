@@ -5,6 +5,7 @@
 
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
@@ -126,3 +127,161 @@ TEST_F(RetryStrategyTest, TestStandardRetryStrategy)
     retryStrategy.RequestBookkeeping(httpResponse, requestTimeoutError);
     ASSERT_EQ(500, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 }
+
+class NewRetriesStrategyTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+    Aws::Environment::EnvironmentRAII m_env{{{"AWS_NEW_RETRIES_2026", "true"}}};
+};
+
+// SEP Test Case 1, 9, 10
+TEST_F(NewRetriesStrategyTest, ThrottleBasedCostClassification)
+{
+    MockStandardRetryStrategy retryStrategy;
+    AWSError<CoreErrors> transientError(CoreErrors::NETWORK_CONNECTION, true);
+    AWSError<CoreErrors> throttlingError(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING);
+
+    ASSERT_EQ(500, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+
+    // Transient error costs 14 tokens
+    ASSERT_TRUE(retryStrategy.ShouldRetry(transientError, 0));
+    ASSERT_EQ(486, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+
+    // Throttling error costs 5 tokens
+    ASSERT_TRUE(retryStrategy.ShouldRetry(throttlingError, 0));
+    ASSERT_EQ(481, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+}
+
+// SEP Test Case 3
+TEST_F(NewRetriesStrategyTest, QuotaExhaustionWithNewCosts)
+{
+    MockStandardRetryStrategy retryStrategy;
+    AWSError<CoreErrors> transientError(CoreErrors::NETWORK_CONNECTION, true);
+
+    // Drain to 10 tokens
+    ASSERT_TRUE(retryStrategy.GetRetryQuotaContainer()->AcquireRetryQuota(490));
+    ASSERT_EQ(10, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+
+    // Can't acquire 14 tokens for transient error
+    ASSERT_FALSE(retryStrategy.ShouldRetry(transientError, 0));
+}
+
+// SEP Test Case 8
+TEST_F(NewRetriesStrategyTest, QuotaRecoveryOnSuccess)
+{
+    MockStandardRetryStrategy retryStrategy;
+    AWSError<CoreErrors> transientError(CoreErrors::NETWORK_CONNECTION, true);
+
+    std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(URI("http://www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    std::shared_ptr<HttpResponse> httpResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
+    HttpResponseOutcome httpResponseOutcome(httpResponse);
+
+    // Retry costs 14, quota = 486
+    ASSERT_TRUE(retryStrategy.ShouldRetry(transientError, 0));
+    ASSERT_EQ(486, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+
+    // Success releases 14, quota = 500
+    retryStrategy.RequestBookkeeping(httpResponseOutcome, transientError);
+    ASSERT_EQ(500, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+}
+
+// SEP Test Case 5
+TEST_F(NewRetriesStrategyTest, ExponentialBackoffTransient)
+{
+    MockStandardRetryStrategy retryStrategy;
+    AWSError<CoreErrors> transientError(CoreErrors::NETWORK_CONNECTION, true);
+
+    // Backoff with 50ms base: [0, 50ms] at i=0, [0, 100ms] at i=1, etc.
+    for (int i = 0; i < 4; ++i)
+    {
+        long delay = retryStrategy.CalculateDelayBeforeNextRetry(transientError, i);
+        long maxDelay = static_cast<long>(0.05 * (1L << i) * 1000.0);
+        ASSERT_GE(delay, 0) << "Retry " << i;
+        ASSERT_LE(delay, maxDelay) << "Retry " << i;
+    }
+}
+
+// SEP Test Case 10
+TEST_F(NewRetriesStrategyTest, ExponentialBackoffThrottling)
+{
+    MockStandardRetryStrategy retryStrategy;
+    AWSError<CoreErrors> throttlingError(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING);
+
+    // Backoff with 1000ms base: [0, 1000ms] at i=0, [0, 2000ms] at i=1
+    long delay = retryStrategy.CalculateDelayBeforeNextRetry(throttlingError, 0);
+    ASSERT_GE(delay, 0);
+    ASSERT_LE(delay, 1000);
+
+    delay = retryStrategy.CalculateDelayBeforeNextRetry(throttlingError, 1);
+    ASSERT_GE(delay, 0);
+    ASSERT_LE(delay, 2000);
+}
+
+// SEP Test Case 6
+TEST_F(NewRetriesStrategyTest, MaxBackoffCap)
+{
+    MockStandardRetryStrategy retryStrategy;
+    AWSError<CoreErrors> transientError(CoreErrors::NETWORK_CONNECTION, true);
+
+    // At high retry index, cap at 20s
+    long delay = retryStrategy.CalculateDelayBeforeNextRetry(transientError, 30);
+    ASSERT_LE(delay, 20000);
+}
+
+// SEP Test Case 17
+TEST_F(NewRetriesStrategyTest, RetryAfterHeaderHonored)
+{
+    MockStandardRetryStrategy retryStrategy;
+    AWSError<CoreErrors> error(CoreErrors::NETWORK_CONNECTION, true);
+    HeaderValueCollection headers;
+    headers["x-amz-retry-after"] = "1500";
+    error.SetResponseHeaders(headers);
+
+    long delay = retryStrategy.CalculateDelayBeforeNextRetry(error, 0);
+    ASSERT_GE(delay, 0);
+    ASSERT_LE(delay, 5050);
+}
+
+// SEP Test Case 18
+TEST_F(NewRetriesStrategyTest, RetryAfterFloorClamped)
+{
+    MockStandardRetryStrategy retryStrategy;
+    AWSError<CoreErrors> error(CoreErrors::NETWORK_CONNECTION, true);
+    HeaderValueCollection headers;
+    headers["x-amz-retry-after"] = "0";
+    error.SetResponseHeaders(headers);
+
+    long delay = retryStrategy.CalculateDelayBeforeNextRetry(error, 0);
+    ASSERT_GE(delay, 0);
+    ASSERT_LE(delay, 50);
+}
+
+// SEP Test Case 19
+TEST_F(NewRetriesStrategyTest, RetryAfterCeilingClamped)
+{
+    MockStandardRetryStrategy retryStrategy;
+    AWSError<CoreErrors> error(CoreErrors::NETWORK_CONNECTION, true);
+    HeaderValueCollection headers;
+    headers["x-amz-retry-after"] = "10000";
+    error.SetResponseHeaders(headers);
+
+    long delay = retryStrategy.CalculateDelayBeforeNextRetry(error, 0);
+    ASSERT_GE(delay, 0);
+    ASSERT_LE(delay, 5050);
+}
+
+// SEP Test Case 20
+TEST_F(NewRetriesStrategyTest, InvalidRetryAfterFallsBack)
+{
+    MockStandardRetryStrategy retryStrategy;
+    AWSError<CoreErrors> error(CoreErrors::NETWORK_CONNECTION, true);
+    HeaderValueCollection headers;
+    headers["x-amz-retry-after"] = "abc";
+    error.SetResponseHeaders(headers);
+
+    long delay = retryStrategy.CalculateDelayBeforeNextRetry(error, 0);
+    ASSERT_GE(delay, 0);
+    ASSERT_LE(delay, 50);
+}
+
+// TODO: SEP Test 11 (DynamoDB 25ms base) deferred to next PR.
+// TODO: SEP Tests 14-16 (long-polling pipeline behavior) require integration tests.
