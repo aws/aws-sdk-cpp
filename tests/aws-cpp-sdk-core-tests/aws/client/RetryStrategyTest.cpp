@@ -133,22 +133,19 @@ class NewRetriesStrategyTest : public Aws::Testing::AwsCppSdkGTestSuite
     Aws::Environment::EnvironmentRAII m_env{{{"AWS_NEW_RETRIES_2026", "true"}}};
 };
 
-// SEP Test Case 1, 9, 10
-TEST_F(NewRetriesStrategyTest, ThrottleBasedCostClassification)
+// SEP Test Case 1
+TEST_F(NewRetriesStrategyTest, TransientRetryCost)
 {
     MockStandardRetryStrategy retryStrategy;
     AWSError<CoreErrors> transientError(CoreErrors::NETWORK_CONNECTION, true);
-    AWSError<CoreErrors> throttlingError(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING);
 
     ASSERT_EQ(500, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 
-    // Transient error costs 14 tokens
     ASSERT_TRUE(retryStrategy.ShouldRetry(transientError, 0));
     ASSERT_EQ(486, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 
-    // Throttling error costs 5 tokens
-    ASSERT_TRUE(retryStrategy.ShouldRetry(throttlingError, 0));
-    ASSERT_EQ(481, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+    ASSERT_TRUE(retryStrategy.ShouldRetry(transientError, 1));
+    ASSERT_EQ(472, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 }
 
 // SEP Test Case 3
@@ -163,6 +160,33 @@ TEST_F(NewRetriesStrategyTest, QuotaExhaustionWithNewCosts)
 
     // Can't acquire 14 tokens for transient error
     ASSERT_FALSE(retryStrategy.ShouldRetry(transientError, 0));
+}
+
+// SEP Test Case 5
+TEST_F(NewRetriesStrategyTest, ExponentialBackoffTransient)
+{
+    MockStandardRetryStrategy retryStrategy;
+    AWSError<CoreErrors> transientError(CoreErrors::NETWORK_CONNECTION, true);
+
+    // Backoff with 50ms base: [0, 50ms] at i=0, [0, 100ms] at i=1, etc.
+    for (int i = 0; i < 4; ++i)
+    {
+        long delay = retryStrategy.CalculateDelayBeforeNextRetry(transientError, i);
+        long maxDelay = static_cast<long>(0.05 * (1L << i) * 1000.0);
+        ASSERT_GE(delay, 0) << "Retry " << i;
+        ASSERT_LE(delay, maxDelay) << "Retry " << i;
+    }
+}
+
+// SEP Test Case 6
+TEST_F(NewRetriesStrategyTest, MaxBackoffCap)
+{
+    MockStandardRetryStrategy retryStrategy;
+    AWSError<CoreErrors> transientError(CoreErrors::NETWORK_CONNECTION, true);
+
+    // At high retry index, cap at 20s
+    long delay = retryStrategy.CalculateDelayBeforeNextRetry(transientError, 30);
+    ASSERT_LE(delay, 20000);
 }
 
 // SEP Test Case 8
@@ -184,20 +208,16 @@ TEST_F(NewRetriesStrategyTest, QuotaRecoveryOnSuccess)
     ASSERT_EQ(500, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 }
 
-// SEP Test Case 5
-TEST_F(NewRetriesStrategyTest, ExponentialBackoffTransient)
+// SEP Test Case 9
+TEST_F(NewRetriesStrategyTest, ThrottlingRetryCost)
 {
     MockStandardRetryStrategy retryStrategy;
-    AWSError<CoreErrors> transientError(CoreErrors::NETWORK_CONNECTION, true);
+    AWSError<CoreErrors> throttlingError(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING);
 
-    // Backoff with 50ms base: [0, 50ms] at i=0, [0, 100ms] at i=1, etc.
-    for (int i = 0; i < 4; ++i)
-    {
-        long delay = retryStrategy.CalculateDelayBeforeNextRetry(transientError, i);
-        long maxDelay = static_cast<long>(0.05 * (1L << i) * 1000.0);
-        ASSERT_GE(delay, 0) << "Retry " << i;
-        ASSERT_LE(delay, maxDelay) << "Retry " << i;
-    }
+    ASSERT_EQ(500, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+
+    ASSERT_TRUE(retryStrategy.ShouldRetry(throttlingError, 0));
+    ASSERT_EQ(495, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 }
 
 // SEP Test Case 10
@@ -214,17 +234,6 @@ TEST_F(NewRetriesStrategyTest, ExponentialBackoffThrottling)
     delay = retryStrategy.CalculateDelayBeforeNextRetry(throttlingError, 1);
     ASSERT_GE(delay, 0);
     ASSERT_LE(delay, 2000);
-}
-
-// SEP Test Case 6
-TEST_F(NewRetriesStrategyTest, MaxBackoffCap)
-{
-    MockStandardRetryStrategy retryStrategy;
-    AWSError<CoreErrors> transientError(CoreErrors::NETWORK_CONNECTION, true);
-
-    // At high retry index, cap at 20s
-    long delay = retryStrategy.CalculateDelayBeforeNextRetry(transientError, 30);
-    ASSERT_LE(delay, 20000);
 }
 
 // SEP Test Case 17
@@ -283,5 +292,6 @@ TEST_F(NewRetriesStrategyTest, InvalidRetryAfterFallsBack)
     ASSERT_LE(delay, 50);
 }
 
-// TODO: SEP Test 11 (DynamoDB 25ms base) deferred to next PR.
-// TODO: SEP Tests 14-16 (long-polling pipeline behavior) require integration tests.
+// SEP Test Cases 2, 4, 7 are covered by TestStandardRetryStrategy above (same behavior with/without gate).
+// TODO: SEP Test Case 11 (DynamoDB 25ms base) deferred to next PR.
+// TODO: SEP Test Cases 12-16 (long-polling) require pipeline integration tests.

@@ -17,9 +17,6 @@ using namespace Aws::Utils::Threading;
 using namespace Aws::Client;
 
 static const char RETRY_STRATEGY_TAG[] = "StandardRetryStrategy";
-static const int INITIAL_RETRY_TOKENS = 500;
-static const int RETRY_COST = 5;
-static const int TIMEOUT_RETRY_COST = 10;
 
 namespace Aws
 {
@@ -104,6 +101,10 @@ namespace Aws
 {
     namespace Client
     {
+        static const int INITIAL_RETRY_TOKENS = 500;
+        static const int RETRY_COST = 5;
+        static const int TIMEOUT_RETRY_COST = 10;
+
         StandardRetryStrategy::StandardRetryStrategy(long maxAttempts)
             : m_retryQuotaContainer(CreateQuotaContainer()), m_maxAttempts(maxAttempts),
               m_impl(CreateRetryImpl()) {}
