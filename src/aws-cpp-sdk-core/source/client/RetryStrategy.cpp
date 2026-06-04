@@ -11,8 +11,11 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/local/Random.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 using namespace Aws::Utils::Threading;
+
+static const char RETRY_STRATEGY_TAG[] = "StandardRetryStrategy";
 
 namespace Aws
 {
@@ -21,6 +24,11 @@ namespace Aws
         static const int INITIAL_RETRY_TOKENS = 500;
         static const int RETRY_COST = 5;
         static const int TIMEOUT_RETRY_COST = 10;
+
+        static bool IsNewRetriesEnabled()
+        {
+            return Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true";
+        }
 
         struct StandardRetryStrategy::RetryImpl
         {
@@ -54,7 +62,12 @@ namespace Aws
                 auto it = headers.find("x-amz-retry-after");
                 if (it != headers.end())
                 {
-                    double headerSec = static_cast<double>(Aws::Utils::StringUtils::ConvertToInt64(it->second.c_str())) / 1000.0;
+                    long long headerMs = Aws::Utils::StringUtils::ConvertToInt64(it->second.c_str());
+                    if (headerMs < 0)
+                    {
+                        AWS_LOGSTREAM_DEBUG(RETRY_STRATEGY_TAG, "Ignoring invalid x-amz-retry-after value: " << it->second);
+                    }
+                    double headerSec = static_cast<double>(headerMs) / 1000.0;
                     double clamped = (std::max)(t_i, (std::min)(headerSec, 5.0 + t_i));
                     return static_cast<long>(clamped * 1000.0);
                 }
@@ -66,7 +79,7 @@ namespace Aws
 
         static Aws::UniquePtr<StandardRetryStrategy::RetryImpl> CreateRetryImpl()
         {
-            if (Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026") == "true")
+            if (IsNewRetriesEnabled())
             {
                 return Aws::MakeUnique<NewRetriesImpl>("StandardRetryStrategy");
             }
@@ -75,7 +88,7 @@ namespace Aws
 
         static std::shared_ptr<RetryQuotaContainer> CreateQuotaContainer()
         {
-            if (Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026") == "true")
+            if (IsNewRetriesEnabled())
             {
                 return Aws::MakeShared<ThrottleBasedRetryQuotaContainer>("StandardRetryStrategy");
             }
