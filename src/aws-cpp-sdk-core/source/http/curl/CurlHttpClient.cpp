@@ -851,6 +851,13 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
                 curl_easy_setopt(connectionHandle, CURLOPT_PROGRESSDATA, &readContext);
 #endif
             }
+
+            if (request->HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) &&
+                request->GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER).find(Aws::Http::AWS_CHUNKED_VALUE) != Aws::String::npos)
+            {
+                curl_easy_setopt(connectionHandle, CURLOPT_FRESH_CONNECT, 1L);
+                curl_easy_setopt(connectionHandle, CURLOPT_FORBID_REUSE, 1L);
+            }
         }
 
         ByteBuffer errorBuffer(CURL_ERROR_SIZE);
