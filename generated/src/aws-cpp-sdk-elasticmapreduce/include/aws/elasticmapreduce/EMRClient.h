@@ -816,6 +816,60 @@ class AWS_EMR_API EMRClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns detailed information about a session.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSessionOutcome GetSession(const Model::GetSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSession that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetSessionRequestT = Model::GetSessionRequest>
+  Model::GetSessionOutcomeCallable GetSessionCallable(const GetSessionRequestT& request) const {
+    return SubmitCallable(&EMRClient::GetSession, request);
+  }
+
+  /**
+   * An Async wrapper for GetSession that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetSessionRequestT = Model::GetSessionRequest>
+  void GetSessionAsync(const GetSessionRequestT& request, const GetSessionResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EMRClient::GetSession, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the Spark Connect endpoint URL and a time-limited authentication
+   * token for the specified session. Use the endpoint and token to connect a PySpark
+   * client to the session. Call this operation again when the token expires to
+   * obtain a new one.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetSessionEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSessionEndpointOutcome GetSessionEndpoint(const Model::GetSessionEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSessionEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetSessionEndpointRequestT = Model::GetSessionEndpointRequest>
+  Model::GetSessionEndpointOutcomeCallable GetSessionEndpointCallable(const GetSessionEndpointRequestT& request) const {
+    return SubmitCallable(&EMRClient::GetSessionEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for GetSessionEndpoint that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetSessionEndpointRequestT = Model::GetSessionEndpointRequest>
+  void GetSessionEndpointAsync(const GetSessionEndpointRequestT& request, const GetSessionEndpointResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EMRClient::GetSessionEndpoint, request, handler, context);
+  }
+
+  /**
    * <p>Fetches mapping details for the specified Amazon EMR Studio and identity
    * (user or group).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetStudioSessionMapping">AWS
@@ -1076,6 +1130,32 @@ class AWS_EMR_API EMRClient : public Aws::Client::AWSJsonClient,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                        const ListSecurityConfigurationsRequestT& request = {}) const {
     return SubmitAsync(&EMRClient::ListSecurityConfigurations, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the sessions on a cluster. You can filter the results by session state.
+   * Newer sessions are returned first.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSessions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSessionsOutcome ListSessions(const Model::ListSessionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListSessions that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListSessionsRequestT = Model::ListSessionsRequest>
+  Model::ListSessionsOutcomeCallable ListSessionsCallable(const ListSessionsRequestT& request) const {
+    return SubmitCallable(&EMRClient::ListSessions, request);
+  }
+
+  /**
+   * An Async wrapper for ListSessions that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListSessionsRequestT = Model::ListSessionsRequest>
+  void ListSessionsAsync(const ListSessionsRequestT& request, const ListSessionsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EMRClient::ListSessions, request, handler, context);
   }
 
   /**
@@ -1768,6 +1848,34 @@ class AWS_EMR_API EMRClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates and starts a new Spark Connect session on the specified cluster. The
+   * cluster must be in the <code>RUNNING</code> or <code>WAITING</code> state and
+   * have sessions enabled. This operation is supported in Amazon EMR Spark 8.0.0 and
+   * later.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StartSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartSessionOutcome StartSession(const Model::StartSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartSession that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StartSessionRequestT = Model::StartSessionRequest>
+  Model::StartSessionOutcomeCallable StartSessionCallable(const StartSessionRequestT& request) const {
+    return SubmitCallable(&EMRClient::StartSession, request);
+  }
+
+  /**
+   * An Async wrapper for StartSession that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StartSessionRequestT = Model::StartSessionRequest>
+  void StartSessionAsync(const StartSessionRequestT& request, const StartSessionResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EMRClient::StartSession, request, handler, context);
+  }
+
+  /**
    * <p>Stops a notebook execution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StopNotebookExecution">AWS
    * API Reference</a></p>
@@ -1825,6 +1933,34 @@ class AWS_EMR_API EMRClient : public Aws::Client::AWSJsonClient,
   void TerminateJobFlowsAsync(const TerminateJobFlowsRequestT& request, const TerminateJobFlowsResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EMRClient::TerminateJobFlows, request, handler, context);
+  }
+
+  /**
+   * <p>Terminates an active session. After you call this operation, the session
+   * enters the <code>TERMINATING</code> state and then transitions to
+   * <code>TERMINATED</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TerminateSessionOutcome TerminateSession(const Model::TerminateSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for TerminateSession that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename TerminateSessionRequestT = Model::TerminateSessionRequest>
+  Model::TerminateSessionOutcomeCallable TerminateSessionCallable(const TerminateSessionRequestT& request) const {
+    return SubmitCallable(&EMRClient::TerminateSession, request);
+  }
+
+  /**
+   * An Async wrapper for TerminateSession that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename TerminateSessionRequestT = Model::TerminateSessionRequest>
+  void TerminateSessionAsync(const TerminateSessionRequestT& request, const TerminateSessionResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EMRClient::TerminateSession, request, handler, context);
   }
 
   /**

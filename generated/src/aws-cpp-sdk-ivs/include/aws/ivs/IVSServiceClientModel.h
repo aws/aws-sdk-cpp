@@ -60,6 +60,7 @@
 #include <aws/ivs/model/StopStreamResult.h>
 #include <aws/ivs/model/TagResourceResult.h>
 #include <aws/ivs/model/UntagResourceResult.h>
+#include <aws/ivs/model/UpdateAdConfigurationResult.h>
 #include <aws/ivs/model/UpdateChannelResult.h>
 #include <aws/ivs/model/UpdatePlaybackRestrictionPolicyResult.h>
 /* End of service model headers required in IVSClient header */
@@ -133,6 +134,7 @@ class StartViewerSessionRevocationRequest;
 class StopStreamRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateAdConfigurationRequest;
 class UpdateChannelRequest;
 class UpdatePlaybackRestrictionPolicyRequest;
 /* End of service model forward declarations required in IVSClient header */
@@ -176,6 +178,7 @@ typedef Aws::Utils::Outcome<StartViewerSessionRevocationResult, IVSError> StartV
 typedef Aws::Utils::Outcome<StopStreamResult, IVSError> StopStreamOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, IVSError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, IVSError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateAdConfigurationResult, IVSError> UpdateAdConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateChannelResult, IVSError> UpdateChannelOutcome;
 typedef Aws::Utils::Outcome<UpdatePlaybackRestrictionPolicyResult, IVSError> UpdatePlaybackRestrictionPolicyOutcome;
 /* End of service model Outcome class definitions */
@@ -219,6 +222,7 @@ typedef std::future<StartViewerSessionRevocationOutcome> StartViewerSessionRevoc
 typedef std::future<StopStreamOutcome> StopStreamOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateAdConfigurationOutcome> UpdateAdConfigurationOutcomeCallable;
 typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
 typedef std::future<UpdatePlaybackRestrictionPolicyOutcome> UpdatePlaybackRestrictionPolicyOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -349,6 +353,9 @@ typedef std::function<void(const IVSClient*, const Model::TagResourceRequest&, c
 typedef std::function<void(const IVSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const IVSClient*, const Model::UpdateAdConfigurationRequest&, const Model::UpdateAdConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateAdConfigurationResponseReceivedHandler;
 typedef std::function<void(const IVSClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateChannelResponseReceivedHandler;

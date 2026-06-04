@@ -755,6 +755,22 @@ class Cluster {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether Spark Connect sessions are enabled on the cluster.</p>
+   */
+  inline bool GetSessionEnabled() const { return m_sessionEnabled; }
+  inline bool SessionEnabledHasBeenSet() const { return m_sessionEnabledHasBeenSet; }
+  inline void SetSessionEnabled(bool value) {
+    m_sessionEnabledHasBeenSet = true;
+    m_sessionEnabled = value;
+  }
+  inline Cluster& WithSessionEnabled(bool value) {
+    SetSessionEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -827,6 +843,8 @@ class Cluster {
   bool m_extendedSupport{false};
 
   MonitoringConfiguration m_monitoringConfiguration;
+
+  bool m_sessionEnabled{false};
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -863,6 +881,7 @@ class Cluster {
   bool m_ebsRootVolumeThroughputHasBeenSet = false;
   bool m_extendedSupportHasBeenSet = false;
   bool m_monitoringConfigurationHasBeenSet = false;
+  bool m_sessionEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

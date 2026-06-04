@@ -6158,7 +6158,13 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Describes the content, creation time, and security configuration of an Amazon
-   * SageMaker Model Card.</p><p><h3>See Also:</h3>   <a
+   * SageMaker Model Card.</p>  <p>To retrieve only metadata about a model
+   * card without requiring <code>kms:Decrypt</code> permission on the associated
+   * customer-managed Amazon Web Services KMS key, set <code>IncludedData</code> to
+   * <code>MetadataOnly</code>. The default is <code>AllData</code>, which returns
+   * the full model card <code>Content</code> and requires <code>kms:Decrypt</code>
+   * permission when a customer-managed key is configured.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCard">AWS
    * API Reference</a></p>
    */
@@ -6250,10 +6256,13 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
    *  <p>If you provided a KMS Key ID when you created your model package,
    * you will see the <a
    * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html">KMS
-   * Decrypt</a> API call in your CloudTrail logs when you use this API.</p>
-   *  <p>To create models in SageMaker, buyers can subscribe to model
-   * packages listed on Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>
-   * <a
+   * Decrypt</a> API call in your CloudTrail logs when you use this API. To call this
+   * operation without requiring <code>kms:Decrypt</code> permission on the
+   * customer-managed key, set <code>IncludedData</code> to
+   * <code>MetadataOnly</code>; the response is returned with the embedded
+   * <code>ModelCard.ModelCardContent</code> field sanitized.</p>  <p>To
+   * create models in SageMaker, buyers can subscribe to model packages listed on
+   * Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackage">AWS
    * API Reference</a></p>
    */

@@ -83,6 +83,10 @@ Aws::String CreateSessionRequest::SerializePayload() const {
     payload.WithString("RequestOrigin", m_requestOrigin);
   }
 
+  if (m_sessionTypeHasBeenSet) {
+    payload.WithString("SessionType", SessionTypeMapper::GetNameForSessionType(m_sessionType));
+  }
+
   return payload.View().WriteReadable();
 }
 

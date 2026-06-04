@@ -19,6 +19,10 @@ Aws::String DescribeModelPackageRequest::SerializePayload() const {
     payload.WithString("ModelPackageName", m_modelPackageName);
   }
 
+  if (m_includedDataHasBeenSet) {
+    payload.WithString("IncludedData", IncludedDataMapper::GetNameForIncludedData(m_includedData));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -20,16 +20,16 @@ namespace ConnectParticipant {
  * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Participant_Service.html">Participant
  * Service actions</a> </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Participant_Service.html">Participant
- * Service data types</a> </p> </li> </ul> <p>Amazon Connect is an easy-to-use
+ * Service data types</a> </p> </li> </ul> <p>Connect Customer is an easy-to-use
  * omnichannel cloud contact center service that enables companies of any size to
- * deliver superior customer service at a lower cost. Amazon Connect communications
- * capabilities make it easy for companies to deliver personalized interactions
- * across communication channels, including chat. </p> <p>Use the Amazon Connect
- * Participant Service to manage participants (for example, agents, customers, and
- * managers listening in), and to send messages and events within a chat contact.
- * The APIs in the service enable the following: sending chat messages, attachment
- * sharing, managing a participant's connection state and message events, and
- * retrieving chat transcripts.</p>
+ * deliver superior customer service at a lower cost. Connect Customer
+ * communications capabilities make it easy for companies to deliver personalized
+ * interactions across communication channels, including chat. </p> <p>Use the
+ * Connect Customer Participant Service to manage participants (for example,
+ * agents, customers, and managers listening in), and to send messages and events
+ * within a chat contact. The APIs in the service enable the following: sending
+ * chat messages, attachment sharing, managing a participant's connection state and
+ * message events, and retrieving chat transcripts.</p>
  */
 class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<ConnectParticipantClient>,
@@ -133,8 +133,8 @@ class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::
    * pre-signed URL provided in StartAttachmentUpload API. A conflict exception is
    * thrown when an attachment with that identifier is already being uploaded.</p>
    * <p>For security recommendations, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-   * Connect Chat security best practices</a>. </p>  <p>
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+   * Customer Chat security best practices</a>. </p>  <p>
    * <code>ConnectionToken</code> is used for invoking this API instead of
    * <code>ParticipantToken</code>.</p>  <p>The Amazon Connect Participant
    * Service APIs do not use <a
@@ -168,11 +168,11 @@ class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::
   /**
    * <p>Creates the participant's connection. </p> <p>For security recommendations,
    * see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-   * Connect Chat security best practices</a>. </p> <p>For WebRTC security
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+   * Customer Chat security best practices</a>. </p> <p>For WebRTC security
    * recommendations, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-webrtc-security">Amazon
-   * Connect WebRTC security best practices</a>. </p>  <p>
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-webrtc-security">Connect
+   * Customer WebRTC security best practices</a>. </p>  <p>
    * <code>ParticipantToken</code> is used for invoking this API instead of
    * <code>ConnectionToken</code>.</p>  <p>The participant token is valid for
    * the lifetime of the participant – until they are part of a contact. For WebRTC
@@ -249,8 +249,8 @@ class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::
   /**
    * <p>Retrieves the view for the specified view token.</p> <p>For security
    * recommendations, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-   * Connect Chat security best practices</a>. </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+   * Customer Chat security best practices</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DescribeView">AWS
    * API Reference</a></p>
    */
@@ -276,8 +276,8 @@ class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::
 
   /**
    * <p>Disconnects a participant. </p> <p>For security recommendations, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-   * Connect Chat security best practices</a>. </p>  <p>
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+   * Customer Chat security best practices</a>. </p>  <p>
    * <code>ConnectionToken</code> is used for invoking this API instead of
    * <code>ParticipantToken</code>.</p>  <p>The Amazon Connect Participant
    * Service APIs do not use <a
@@ -311,8 +311,8 @@ class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::
    * <p>Provides a pre-signed URL for download of a completed attachment. This is an
    * asynchronous API for use with active contacts.</p> <p>For security
    * recommendations, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-   * Connect Chat security best practices</a>. </p>  <ul> <li> <p>The
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+   * Customer Chat security best practices</a>. </p>  <ul> <li> <p>The
    * participant role <code>CUSTOM_BOT</code> is not permitted to access attachments
    * customers may upload. An <code>AccessDeniedException</code> can indicate that
    * the participant may be a CUSTOM_BOT, and it doesn't have access to
@@ -348,8 +348,8 @@ class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::
    * <p>Retrieves the AuthenticationUrl for the current authentication session for
    * the AuthenticateCustomer flow block. </p> <p>For security recommendations, see
    * <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-   * Connect Chat security best practices</a>.</p>  <ul> <li> <p>This API can
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+   * Customer Chat security best practices</a>.</p>  <ul> <li> <p>This API can
    * only be called within one minute of receiving the authenticationInitiated
    * event.</p> </li> <li> <p>The current supported channel is chat. This API is not
    * supported for Apple Messages for Business, WhatsApp, or SMS chats.</p> </li>
@@ -388,8 +388,8 @@ class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::
    * persistent chat, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
    * persistent chat</a>. </p> <p>For security recommendations, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-   * Connect Chat security best practices</a>. </p> <p>If you have a process that
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+   * Customer Chat security best practices</a>. </p> <p>If you have a process that
    * consumes events in the transcript of an chat that has ended, note that chat
    * transcripts contain the following event content types if the event has occurred
    * during the chat session:</p> <ul> <li> <p>
@@ -442,8 +442,8 @@ class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::
    * participants in the chat. Using the SendEvent API for message receipts when a
    * supervisor is barged-in will result in a conflict exception.</p> <p>For security
    * recommendations, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-   * Connect Chat security best practices</a>. </p>  <p>
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+   * Customer Chat security best practices</a>. </p>  <p>
    * <code>ConnectionToken</code> is used for invoking this API instead of
    * <code>ParticipantToken</code>.</p>  <p>The Amazon Connect Participant
    * Service APIs do not use <a
@@ -474,8 +474,8 @@ class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::
 
   /**
    * <p>Sends a message.</p> <p>For security recommendations, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-   * Connect Chat security best practices</a>. </p>  <p>
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+   * Customer Chat security best practices</a>. </p>  <p>
    * <code>ConnectionToken</code> is used for invoking this API instead of
    * <code>ParticipantToken</code>.</p>  <p>The Amazon Connect Participant
    * Service APIs do not use <a
@@ -507,8 +507,8 @@ class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::
   /**
    * <p>Provides a pre-signed Amazon S3 URL in response for uploading the file
    * directly to S3.</p> <p>For security recommendations, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-   * Connect Chat security best practices</a>. </p>  <p>
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+   * Customer Chat security best practices</a>. </p>  <p>
    * <code>ConnectionToken</code> is used for invoking this API instead of
    * <code>ParticipantToken</code>.</p>  <p>The Amazon Connect Participant
    * Service APIs do not use <a

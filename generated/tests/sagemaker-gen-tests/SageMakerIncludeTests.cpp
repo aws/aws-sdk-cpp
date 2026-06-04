@@ -937,6 +937,7 @@
 #include <aws/sagemaker/model/ImageVersionStatus.h>
 #include <aws/sagemaker/model/ImportHubContentRequest.h>
 #include <aws/sagemaker/model/ImportHubContentResult.h>
+#include <aws/sagemaker/model/IncludedData.h>
 #include <aws/sagemaker/model/InferenceComponentAvailabilityZoneBalance.h>
 #include <aws/sagemaker/model/InferenceComponentCapacitySize.h>
 #include <aws/sagemaker/model/InferenceComponentCapacitySizeType.h>
@@ -991,6 +992,7 @@
 #include <aws/sagemaker/model/IntegerParameterRange.h>
 #include <aws/sagemaker/model/IntegerParameterRangeSpecification.h>
 #include <aws/sagemaker/model/IsTrackingServerActive.h>
+#include <aws/sagemaker/model/Job.h>
 #include <aws/sagemaker/model/JobCategory.h>
 #include <aws/sagemaker/model/JobConfigSchemaVersionSummary.h>
 #include <aws/sagemaker/model/JobSecondaryStatus.h>

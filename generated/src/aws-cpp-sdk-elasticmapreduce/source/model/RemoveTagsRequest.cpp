@@ -27,6 +27,10 @@ Aws::String RemoveTagsRequest::SerializePayload() const {
     payload.WithArray("TagKeys", std::move(tagKeysJsonList));
   }
 
+  if (m_clusterIdHasBeenSet) {
+    payload.WithString("ClusterId", m_clusterId);
+  }
+
   return payload.View().WriteReadable();
 }
 

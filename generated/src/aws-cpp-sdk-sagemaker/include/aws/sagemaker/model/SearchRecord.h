@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/FeatureGroup.h>
 #include <aws/sagemaker/model/FeatureMetadata.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobSearchEntity.h>
+#include <aws/sagemaker/model/Job.h>
 #include <aws/sagemaker/model/ModelCard.h>
 #include <aws/sagemaker/model/ModelDashboardModel.h>
 #include <aws/sagemaker/model/ModelPackage.h>
@@ -322,6 +323,22 @@ class SearchRecord {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const Job& GetJob() const { return m_job; }
+  inline bool JobHasBeenSet() const { return m_jobHasBeenSet; }
+  template <typename JobT = Job>
+  void SetJob(JobT&& value) {
+    m_jobHasBeenSet = true;
+    m_job = std::forward<JobT>(value);
+  }
+  template <typename JobT = Job>
+  SearchRecord& WithJob(JobT&& value) {
+    SetJob(std::forward<JobT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TrainingJob m_trainingJob;
 
@@ -354,6 +371,8 @@ class SearchRecord {
   ModelCard m_modelCard;
 
   ModelDashboardModel m_model;
+
+  Job m_job;
   bool m_trainingJobHasBeenSet = false;
   bool m_experimentHasBeenSet = false;
   bool m_trialHasBeenSet = false;
@@ -370,6 +389,7 @@ class SearchRecord {
   bool m_hyperParameterTuningJobHasBeenSet = false;
   bool m_modelCardHasBeenSet = false;
   bool m_modelHasBeenSet = false;
+  bool m_jobHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -179,7 +179,7 @@ class VoiceConnector {
 
   ///@{
   /**
-   * <p>The connectors for use with Amazon Connect.</p>
+   * <p>The connectors for use with Connect Customer.</p>
    */
   inline VoiceConnectorIntegrationType GetIntegrationType() const { return m_integrationType; }
   inline bool IntegrationTypeHasBeenSet() const { return m_integrationTypeHasBeenSet; }

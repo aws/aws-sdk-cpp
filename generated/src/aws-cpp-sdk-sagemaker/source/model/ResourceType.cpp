@@ -33,6 +33,7 @@ static const int Project_HASH = HashingUtils::HashString("Project");
 static const int HyperParameterTuningJob_HASH = HashingUtils::HashString("HyperParameterTuningJob");
 static const int ModelCard_HASH = HashingUtils::HashString("ModelCard");
 static const int PipelineVersion_HASH = HashingUtils::HashString("PipelineVersion");
+static const int Job_HASH = HashingUtils::HashString("Job");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -72,6 +73,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::ModelCard;
   } else if (hashCode == PipelineVersion_HASH) {
     return ResourceType::PipelineVersion;
+  } else if (hashCode == Job_HASH) {
+    return ResourceType::Job;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -122,6 +125,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "ModelCard";
     case ResourceType::PipelineVersion:
       return "PipelineVersion";
+    case ResourceType::Job:
+      return "Job";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

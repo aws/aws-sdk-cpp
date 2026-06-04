@@ -20,7 +20,7 @@ namespace WorkSpaces {
 namespace Model {
 
 /**
- * <p>Describes an Amazon Connect client add-in.</p><p><h3>See Also:</h3>   <a
+ * <p>Describes an Connect Customer client add-in.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ConnectClientAddIn">AWS
  * API Reference</a></p>
  */

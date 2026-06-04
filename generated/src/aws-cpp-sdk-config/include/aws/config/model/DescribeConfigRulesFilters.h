@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/EvaluationMode.h>
+#include <aws/config/model/RuleEvaluationVisibility.h>
 
 #include <utility>
 
@@ -51,9 +52,28 @@ class DescribeConfigRulesFilters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filters the results by <code>RuleEvaluationVisibility</code>.</p>
+   */
+  inline RuleEvaluationVisibility GetRuleEvaluationVisibility() const { return m_ruleEvaluationVisibility; }
+  inline bool RuleEvaluationVisibilityHasBeenSet() const { return m_ruleEvaluationVisibilityHasBeenSet; }
+  inline void SetRuleEvaluationVisibility(RuleEvaluationVisibility value) {
+    m_ruleEvaluationVisibilityHasBeenSet = true;
+    m_ruleEvaluationVisibility = value;
+  }
+  inline DescribeConfigRulesFilters& WithRuleEvaluationVisibility(RuleEvaluationVisibility value) {
+    SetRuleEvaluationVisibility(value);
+    return *this;
+  }
+  ///@}
  private:
   EvaluationMode m_evaluationMode{EvaluationMode::NOT_SET};
+
+  RuleEvaluationVisibility m_ruleEvaluationVisibility{RuleEvaluationVisibility::NOT_SET};
   bool m_evaluationModeHasBeenSet = false;
+  bool m_ruleEvaluationVisibilityHasBeenSet = false;
 };
 
 }  // namespace Model

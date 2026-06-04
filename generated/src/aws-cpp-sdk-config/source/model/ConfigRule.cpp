@@ -66,6 +66,11 @@ ConfigRule& ConfigRule::operator=(JsonView jsonValue) {
     }
     m_evaluationModesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RuleEvaluationVisibility")) {
+    m_ruleEvaluationVisibility =
+        RuleEvaluationVisibilityMapper::GetRuleEvaluationVisibilityForName(jsonValue.GetString("RuleEvaluationVisibility"));
+    m_ruleEvaluationVisibilityHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -119,6 +124,11 @@ JsonValue ConfigRule::Jsonize() const {
       evaluationModesJsonList[evaluationModesIndex].AsObject(m_evaluationModes[evaluationModesIndex].Jsonize());
     }
     payload.WithArray("EvaluationModes", std::move(evaluationModesJsonList));
+  }
+
+  if (m_ruleEvaluationVisibilityHasBeenSet) {
+    payload.WithString("RuleEvaluationVisibility",
+                       RuleEvaluationVisibilityMapper::GetNameForRuleEvaluationVisibility(m_ruleEvaluationVisibility));
   }
 
   return payload;

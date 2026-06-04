@@ -160,7 +160,7 @@ class SetTopicAttributesRequest : public SNSRequest {
    * deduplication is across the entire topic. This is the default value and
    * maintains existing behavior, with a maximum throughput of 3000 messages per
    * second or 20MB per second, whichever comes first.</p> </li> <li> <p>
-   * <code>MessageGroup</code> �� The scope of deduplication is within each
+   * <code>MessageGroup</code> ��� The scope of deduplication is within each
    * individual message group, which enables higher throughput per topic subject to
    * regional quotas. For more information on quotas or to request an increase, see
    * <a href="https://docs.aws.amazon.com/general/latest/gr/sns.html">Amazon SNS

@@ -37,8 +37,8 @@ class SearchResourcesRequest : public WorkDocsRequest {
 
   ///@{
   /**
-   * <p>Amazon WorkDocs authentication token. Not required when using Amazon Web
-   * Services administrator credentials to access the API.</p>
+   * <p>WorkDocs authentication token. Not required when using Amazon Web Services
+   * administrator credentials to access the API.</p>
    */
   inline const Aws::String& GetAuthenticationToken() const { return m_authenticationToken; }
   inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }

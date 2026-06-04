@@ -175,6 +175,10 @@ Cluster& Cluster::operator=(JsonView jsonValue) {
     m_monitoringConfiguration = jsonValue.GetObject("MonitoringConfiguration");
     m_monitoringConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SessionEnabled")) {
+    m_sessionEnabled = jsonValue.GetBool("SessionEnabled");
+    m_sessionEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -339,6 +343,10 @@ JsonValue Cluster::Jsonize() const {
 
   if (m_monitoringConfigurationHasBeenSet) {
     payload.WithObject("MonitoringConfiguration", m_monitoringConfiguration.Jsonize());
+  }
+
+  if (m_sessionEnabledHasBeenSet) {
+    payload.WithBool("SessionEnabled", m_sessionEnabled);
   }
 
   return payload;

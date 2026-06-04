@@ -29,6 +29,7 @@
 #include <aws/glue/model/GetCrawlerRequest.h>
 #include <aws/glue/model/GetCrawlersRequest.h>
 #include <aws/glue/model/GetCustomEntityTypeRequest.h>
+#include <aws/glue/model/GetDashboardUrlRequest.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsRequest.h>
 #include <aws/glue/model/GetDataQualityModelRequest.h>
 #include <aws/glue/model/GetDataQualityModelResultRequest.h>
@@ -69,6 +70,7 @@
 #include <aws/glue/model/GetSchemaVersionsDiffRequest.h>
 #include <aws/glue/model/GetSecurityConfigurationRequest.h>
 #include <aws/glue/model/GetSecurityConfigurationsRequest.h>
+#include <aws/glue/model/GetSessionEndpointRequest.h>
 #include <aws/glue/model/GetSessionRequest.h>
 #include <aws/glue/model/GetStatementRequest.h>
 #include <aws/glue/model/GetTableOptimizerRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/glue/model/ListUsageProfilesRequest.h>
 #include <aws/glue/model/ListWorkflowsRequest.h>
 #include <aws/glue/model/ModifyIntegrationRequest.h>
-#include <aws/glue/model/PutDataCatalogEncryptionSettingsRequest.h>
-#include <aws/glue/model/PutDataQualityProfileAnnotationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -181,6 +181,12 @@ GetCustomEntityTypeOutcome GlueClient::GetCustomEntityType(const GetCustomEntity
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetCustomEntityTypeOutcome(result.GetResultWithOwnership())
                             : GetCustomEntityTypeOutcome(std::move(result.GetError()));
+}
+
+GetDashboardUrlOutcome GlueClient::GetDashboardUrl(const GetDashboardUrlRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDashboardUrlOutcome(result.GetResultWithOwnership())
+                            : GetDashboardUrlOutcome(std::move(result.GetError()));
 }
 
 GetDataCatalogEncryptionSettingsOutcome GlueClient::GetDataCatalogEncryptionSettings(
@@ -415,6 +421,12 @@ GetSecurityConfigurationsOutcome GlueClient::GetSecurityConfigurations(const Get
 GetSessionOutcome GlueClient::GetSession(const GetSessionRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetSessionOutcome(result.GetResultWithOwnership()) : GetSessionOutcome(std::move(result.GetError()));
+}
+
+GetSessionEndpointOutcome GlueClient::GetSessionEndpoint(const GetSessionEndpointRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSessionEndpointOutcome(result.GetResultWithOwnership())
+                            : GetSessionEndpointOutcome(std::move(result.GetError()));
 }
 
 GetStatementOutcome GlueClient::GetStatement(const GetStatementRequest& request) const {
@@ -691,18 +703,4 @@ ModifyIntegrationOutcome GlueClient::ModifyIntegration(const ModifyIntegrationRe
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyIntegrationOutcome(result.GetResultWithOwnership())
                             : ModifyIntegrationOutcome(std::move(result.GetError()));
-}
-
-PutDataCatalogEncryptionSettingsOutcome GlueClient::PutDataCatalogEncryptionSettings(
-    const PutDataCatalogEncryptionSettingsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? PutDataCatalogEncryptionSettingsOutcome(result.GetResultWithOwnership())
-                            : PutDataCatalogEncryptionSettingsOutcome(std::move(result.GetError()));
-}
-
-PutDataQualityProfileAnnotationOutcome GlueClient::PutDataQualityProfileAnnotation(
-    const PutDataQualityProfileAnnotationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? PutDataQualityProfileAnnotationOutcome(result.GetResultWithOwnership())
-                            : PutDataQualityProfileAnnotationOutcome(std::move(result.GetError()));
 }

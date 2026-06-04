@@ -577,6 +577,23 @@ class SecurityGroupSettings {
 
   ///@{
   /**
+   * <p>Maximum session duration in minutes for non-SSO users. Set to 0 to disable.
+   * Valid range is 60 to 525600 (1 hour to 365 days).</p>
+   */
+  inline int GetMaxNonSsoSessionMinutes() const { return m_maxNonSsoSessionMinutes; }
+  inline bool MaxNonSsoSessionMinutesHasBeenSet() const { return m_maxNonSsoSessionMinutesHasBeenSet; }
+  inline void SetMaxNonSsoSessionMinutes(int value) {
+    m_maxNonSsoSessionMinutesHasBeenSet = true;
+    m_maxNonSsoSessionMinutes = value;
+  }
+  inline SecurityGroupSettings& WithMaxNonSsoSessionMinutes(int value) {
+    SetMaxNonSsoSessionMinutes(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The local federation mode controlling how users can communicate with other
    * networks. Values: 0 (none), 1 (federated), 2 (restricted).</p>
    */
@@ -746,6 +763,8 @@ class SecurityGroupSettings {
 
   int m_ssoMaxIdleMinutes{0};
 
+  int m_maxNonSsoSessionMinutes{0};
+
   int m_federationMode{0};
 
   int m_lockoutThreshold{0};
@@ -785,6 +804,7 @@ class SecurityGroupSettings {
   bool m_showMasterRecoveryKeyHasBeenSet = false;
   bool m_shredderHasBeenSet = false;
   bool m_ssoMaxIdleMinutesHasBeenSet = false;
+  bool m_maxNonSsoSessionMinutesHasBeenSet = false;
   bool m_federationModeHasBeenSet = false;
   bool m_lockoutThresholdHasBeenSet = false;
   bool m_permittedNetworksHasBeenSet = false;

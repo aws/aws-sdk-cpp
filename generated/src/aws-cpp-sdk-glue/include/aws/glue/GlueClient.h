@@ -3186,6 +3186,32 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the URL for the Spark monitoring dashboard for a Glue
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDashboardUrl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDashboardUrlOutcome GetDashboardUrl(const Model::GetDashboardUrlRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDashboardUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetDashboardUrlRequestT = Model::GetDashboardUrlRequest>
+  Model::GetDashboardUrlOutcomeCallable GetDashboardUrlCallable(const GetDashboardUrlRequestT& request) const {
+    return SubmitCallable(&GlueClient::GetDashboardUrl, request);
+  }
+
+  /**
+   * An Async wrapper for GetDashboardUrl that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetDashboardUrlRequestT = Model::GetDashboardUrlRequest>
+  void GetDashboardUrlAsync(const GetDashboardUrlRequestT& request, const GetDashboardUrlResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::GetDashboardUrl, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the security configuration for a specified catalog.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings">AWS
@@ -4344,6 +4370,33 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   void GetSessionAsync(const GetSessionRequestT& request, const GetSessionResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GlueClient::GetSession, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the Spark Connect endpoint URL and authentication token for an
+   * interactive session.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSessionEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSessionEndpointOutcome GetSessionEndpoint(const Model::GetSessionEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSessionEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetSessionEndpointRequestT = Model::GetSessionEndpointRequest>
+  Model::GetSessionEndpointOutcomeCallable GetSessionEndpointCallable(const GetSessionEndpointRequestT& request) const {
+    return SubmitCallable(&GlueClient::GetSessionEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for GetSessionEndpoint that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetSessionEndpointRequestT = Model::GetSessionEndpointRequest>
+  void GetSessionEndpointAsync(const GetSessionEndpointRequestT& request, const GetSessionEndpointResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::GetSessionEndpoint, request, handler, context);
   }
 
   /**

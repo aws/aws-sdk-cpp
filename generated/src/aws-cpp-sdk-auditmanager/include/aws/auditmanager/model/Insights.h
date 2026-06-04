@@ -67,8 +67,8 @@ class Insights {
   /**
    * <p>The number of compliance check evidence that Audit Manager classified as
    * non-compliant on the <code>lastUpdated</code> date. This includes evidence that
-   * was collected from Security Hub with a <i>Fail</i> ruling, or collected from
-   * Config with a <i>Non-compliant</i> ruling. </p>
+   * was collected from Security Hub CSPM with a <i>Fail</i> ruling, or collected
+   * from Config with a <i>Non-compliant</i> ruling. </p>
    */
   inline int GetNoncompliantEvidenceCount() const { return m_noncompliantEvidenceCount; }
   inline bool NoncompliantEvidenceCountHasBeenSet() const { return m_noncompliantEvidenceCountHasBeenSet; }
@@ -86,8 +86,8 @@ class Insights {
   /**
    * <p>The number of compliance check evidence that Audit Manager classified as
    * compliant on the <code>lastUpdated</code> date. This includes evidence that was
-   * collected from Security Hub with a <i>Pass</i> ruling, or collected from Config
-   * with a <i>Compliant</i> ruling. </p>
+   * collected from Security Hub CSPM with a <i>Pass</i> ruling, or collected from
+   * Config with a <i>Compliant</i> ruling. </p>
    */
   inline int GetCompliantEvidenceCount() const { return m_compliantEvidenceCount; }
   inline bool CompliantEvidenceCountHasBeenSet() const { return m_compliantEvidenceCountHasBeenSet; }
@@ -104,8 +104,8 @@ class Insights {
   ///@{
   /**
    * <p>The number of evidence without a compliance check ruling. Evidence is
-   * inconclusive when the associated control uses Security Hub or Config as a data
-   * source but you didn't enable those services. This is also the case when a
+   * inconclusive when the associated control uses Security Hub CSPM or Config as a
+   * data source but you didn't enable those services. This is also the case when a
    * control uses a data source that doesn’t support compliance checks (for example:
    * manual evidence, API calls, or CloudTrail). </p>  <p>If evidence has a
    * compliance check status of <i>not applicable</i>, it's classed as

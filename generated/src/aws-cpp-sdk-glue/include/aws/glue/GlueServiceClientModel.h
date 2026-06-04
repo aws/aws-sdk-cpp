@@ -140,6 +140,7 @@
 #include <aws/glue/model/GetCrawlersRequest.h>
 #include <aws/glue/model/GetCrawlersResult.h>
 #include <aws/glue/model/GetCustomEntityTypeResult.h>
+#include <aws/glue/model/GetDashboardUrlResult.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsRequest.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsResult.h>
 #include <aws/glue/model/GetDataQualityModelResult.h>
@@ -191,6 +192,7 @@
 #include <aws/glue/model/GetSecurityConfigurationResult.h>
 #include <aws/glue/model/GetSecurityConfigurationsRequest.h>
 #include <aws/glue/model/GetSecurityConfigurationsResult.h>
+#include <aws/glue/model/GetSessionEndpointResult.h>
 #include <aws/glue/model/GetSessionResult.h>
 #include <aws/glue/model/GetStatementResult.h>
 #include <aws/glue/model/GetTableOptimizerResult.h>
@@ -480,6 +482,7 @@ class GetCrawlerRequest;
 class GetCrawlerMetricsRequest;
 class GetCrawlersRequest;
 class GetCustomEntityTypeRequest;
+class GetDashboardUrlRequest;
 class GetDataCatalogEncryptionSettingsRequest;
 class GetDataQualityModelRequest;
 class GetDataQualityModelResultRequest;
@@ -521,6 +524,7 @@ class GetSchemaVersionsDiffRequest;
 class GetSecurityConfigurationRequest;
 class GetSecurityConfigurationsRequest;
 class GetSessionRequest;
+class GetSessionEndpointRequest;
 class GetStatementRequest;
 class GetTableRequest;
 class GetTableOptimizerRequest;
@@ -748,6 +752,7 @@ typedef Aws::Utils::Outcome<GetCrawlerResult, GlueError> GetCrawlerOutcome;
 typedef Aws::Utils::Outcome<GetCrawlerMetricsResult, GlueError> GetCrawlerMetricsOutcome;
 typedef Aws::Utils::Outcome<GetCrawlersResult, GlueError> GetCrawlersOutcome;
 typedef Aws::Utils::Outcome<GetCustomEntityTypeResult, GlueError> GetCustomEntityTypeOutcome;
+typedef Aws::Utils::Outcome<GetDashboardUrlResult, GlueError> GetDashboardUrlOutcome;
 typedef Aws::Utils::Outcome<GetDataCatalogEncryptionSettingsResult, GlueError> GetDataCatalogEncryptionSettingsOutcome;
 typedef Aws::Utils::Outcome<GetDataQualityModelResult, GlueError> GetDataQualityModelOutcome;
 typedef Aws::Utils::Outcome<GetDataQualityModelResultResult, GlueError> GetDataQualityModelResultOutcome;
@@ -789,6 +794,7 @@ typedef Aws::Utils::Outcome<GetSchemaVersionsDiffResult, GlueError> GetSchemaVer
 typedef Aws::Utils::Outcome<GetSecurityConfigurationResult, GlueError> GetSecurityConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetSecurityConfigurationsResult, GlueError> GetSecurityConfigurationsOutcome;
 typedef Aws::Utils::Outcome<GetSessionResult, GlueError> GetSessionOutcome;
+typedef Aws::Utils::Outcome<GetSessionEndpointResult, GlueError> GetSessionEndpointOutcome;
 typedef Aws::Utils::Outcome<GetStatementResult, GlueError> GetStatementOutcome;
 typedef Aws::Utils::Outcome<GetTableResult, GlueError> GetTableOutcome;
 typedef Aws::Utils::Outcome<GetTableOptimizerResult, GlueError> GetTableOptimizerOutcome;
@@ -1016,6 +1022,7 @@ typedef std::future<GetCrawlerOutcome> GetCrawlerOutcomeCallable;
 typedef std::future<GetCrawlerMetricsOutcome> GetCrawlerMetricsOutcomeCallable;
 typedef std::future<GetCrawlersOutcome> GetCrawlersOutcomeCallable;
 typedef std::future<GetCustomEntityTypeOutcome> GetCustomEntityTypeOutcomeCallable;
+typedef std::future<GetDashboardUrlOutcome> GetDashboardUrlOutcomeCallable;
 typedef std::future<GetDataCatalogEncryptionSettingsOutcome> GetDataCatalogEncryptionSettingsOutcomeCallable;
 typedef std::future<GetDataQualityModelOutcome> GetDataQualityModelOutcomeCallable;
 typedef std::future<GetDataQualityModelResultOutcome> GetDataQualityModelResultOutcomeCallable;
@@ -1057,6 +1064,7 @@ typedef std::future<GetSchemaVersionsDiffOutcome> GetSchemaVersionsDiffOutcomeCa
 typedef std::future<GetSecurityConfigurationOutcome> GetSecurityConfigurationOutcomeCallable;
 typedef std::future<GetSecurityConfigurationsOutcome> GetSecurityConfigurationsOutcomeCallable;
 typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
+typedef std::future<GetSessionEndpointOutcome> GetSessionEndpointOutcomeCallable;
 typedef std::future<GetStatementOutcome> GetStatementOutcomeCallable;
 typedef std::future<GetTableOutcome> GetTableOutcomeCallable;
 typedef std::future<GetTableOptimizerOutcome> GetTableOptimizerOutcomeCallable;
@@ -1520,6 +1528,9 @@ typedef std::function<void(const GlueClient*, const Model::GetCrawlersRequest&, 
 typedef std::function<void(const GlueClient*, const Model::GetCustomEntityTypeRequest&, const Model::GetCustomEntityTypeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCustomEntityTypeResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::GetDashboardUrlRequest&, const Model::GetDashboardUrlOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDashboardUrlResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::GetDataCatalogEncryptionSettingsRequest&,
                            const Model::GetDataCatalogEncryptionSettingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1650,6 +1661,9 @@ typedef std::function<void(const GlueClient*, const Model::GetSecurityConfigurat
 typedef std::function<void(const GlueClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSessionResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::GetSessionEndpointRequest&, const Model::GetSessionEndpointOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSessionEndpointResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::GetStatementRequest&, const Model::GetStatementOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetStatementResponseReceivedHandler;

@@ -14,6 +14,7 @@
 #include <aws/elasticmapreduce/model/ListNotebookExecutionsPaginationTraits.h>
 #include <aws/elasticmapreduce/model/ListReleaseLabelsPaginationTraits.h>
 #include <aws/elasticmapreduce/model/ListSecurityConfigurationsPaginationTraits.h>
+#include <aws/elasticmapreduce/model/ListSessionsPaginationTraits.h>
 #include <aws/elasticmapreduce/model/ListStepsPaginationTraits.h>
 #include <aws/elasticmapreduce/model/ListStudioSessionMappingsPaginationTraits.h>
 #include <aws/elasticmapreduce/model/ListStudiosPaginationTraits.h>
@@ -39,6 +40,8 @@ using ListReleaseLabelsPaginator =
 using ListSecurityConfigurationsPaginator =
     Aws::Utils::Pagination::Paginator<EMRClient, Model::ListSecurityConfigurationsRequest,
                                       Pagination::ListSecurityConfigurationsPaginationTraits<EMRClient>>;
+using ListSessionsPaginator =
+    Aws::Utils::Pagination::Paginator<EMRClient, Model::ListSessionsRequest, Pagination::ListSessionsPaginationTraits<EMRClient>>;
 using ListStepsPaginator =
     Aws::Utils::Pagination::Paginator<EMRClient, Model::ListStepsRequest, Pagination::ListStepsPaginationTraits<EMRClient>>;
 using ListStudiosPaginator =

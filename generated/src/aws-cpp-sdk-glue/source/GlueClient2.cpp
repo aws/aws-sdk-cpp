@@ -20,6 +20,8 @@
 #include <aws/glue/GlueClient.h>
 #include <aws/glue/GlueEndpointProvider.h>
 #include <aws/glue/GlueErrorMarshaller.h>
+#include <aws/glue/model/PutDataCatalogEncryptionSettingsRequest.h>
+#include <aws/glue/model/PutDataQualityProfileAnnotationRequest.h>
 #include <aws/glue/model/PutResourcePolicyRequest.h>
 #include <aws/glue/model/PutSchemaVersionMetadataRequest.h>
 #include <aws/glue/model/PutWorkflowRunPropertiesRequest.h>
@@ -96,6 +98,20 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+PutDataCatalogEncryptionSettingsOutcome GlueClient::PutDataCatalogEncryptionSettings(
+    const PutDataCatalogEncryptionSettingsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDataCatalogEncryptionSettingsOutcome(result.GetResultWithOwnership())
+                            : PutDataCatalogEncryptionSettingsOutcome(std::move(result.GetError()));
+}
+
+PutDataQualityProfileAnnotationOutcome GlueClient::PutDataQualityProfileAnnotation(
+    const PutDataQualityProfileAnnotationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDataQualityProfileAnnotationOutcome(result.GetResultWithOwnership())
+                            : PutDataQualityProfileAnnotationOutcome(std::move(result.GetError()));
+}
 
 PutResourcePolicyOutcome GlueClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

@@ -281,7 +281,7 @@ class AssessmentEvidenceFolder {
   ///@{
   /**
    * <p> The number of evidence that falls under the compliance check category. This
-   * evidence is collected from Config or Security Hub. </p>
+   * evidence is collected from Config or Security Hub CSPM. </p>
    */
   inline int GetEvidenceByTypeComplianceCheckCount() const { return m_evidenceByTypeComplianceCheckCount; }
   inline bool EvidenceByTypeComplianceCheckCountHasBeenSet() const { return m_evidenceByTypeComplianceCheckCountHasBeenSet; }
@@ -297,8 +297,8 @@ class AssessmentEvidenceFolder {
 
   ///@{
   /**
-   * <p> The total number of issues that were reported directly from Security Hub,
-   * Config, or both. </p>
+   * <p> The total number of issues that were reported directly from Security Hub
+   * CSPM, Config, or both. </p>
    */
   inline int GetEvidenceByTypeComplianceCheckIssuesCount() const { return m_evidenceByTypeComplianceCheckIssuesCount; }
   inline bool EvidenceByTypeComplianceCheckIssuesCountHasBeenSet() const { return m_evidenceByTypeComplianceCheckIssuesCountHasBeenSet; }

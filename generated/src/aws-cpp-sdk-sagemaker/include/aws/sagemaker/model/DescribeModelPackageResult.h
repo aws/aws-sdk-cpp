@@ -570,7 +570,22 @@ class DescribeModelPackageResult {
    * package model card schema</a>. For more information about the model card
    * associated with the model package, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
-   * the Details of a Model Version</a>.</p>
+   * the Details of a Model Version</a>.</p> <p>When you set
+   * <code>IncludedData</code> to <code>MetadataOnly</code> in the request,
+   * <code>ModelCardStatus</code> is preserved and <code>ModelCardContent</code> is
+   * sanitized to include only the following JSON paths, when present in the model
+   * card:</p> <ul> <li> <p> <code>model_overview.model_id</code> </p> </li> <li> <p>
+   * <code>model_overview.model_name</code> </p> </li> <li> <p>
+   * <code>intended_uses.risk_rating</code> </p> </li> <li> <p>
+   * <code>model_package_details.model_package_group_name</code> </p> </li> <li> <p>
+   * <code>model_package_details.model_package_arn</code> </p> </li> </ul> <p>Because
+   * the <code>ModelPackageModelCard</code> schema does not include
+   * <code>model_package_details</code> and limits <code>model_overview</code> to
+   * <code>model_creator</code> and <code>model_artifact</code>, the sanitized
+   * <code>ModelCardContent</code> for a model package typically contains only
+   * <code>intended_uses.risk_rating</code> if it was provided when the model card
+   * was created. To retrieve the complete <code>ModelCardContent</code>, set
+   * <code>IncludedData</code> to <code>AllData</code> or omit the parameter.</p>
    */
   inline const ModelPackageModelCard& GetModelCard() const { return m_modelCard; }
   template <typename ModelCardT = ModelPackageModelCard>

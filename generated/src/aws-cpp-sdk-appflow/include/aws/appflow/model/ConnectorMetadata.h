@@ -380,7 +380,7 @@ class ConnectorMetadata {
 
   ///@{
   /**
-   * <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
+   * <p> The connector metadata specific to Connect Customer Customer Profiles. </p>
    */
   inline const CustomerProfilesMetadata& GetCustomerProfiles() const { return m_customerProfiles; }
   inline bool CustomerProfilesHasBeenSet() const { return m_customerProfilesHasBeenSet; }

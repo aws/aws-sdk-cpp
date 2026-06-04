@@ -77,12 +77,34 @@ class RemoveTagsRequest : public EMRRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the cluster that scopes the tag operation. Required when the
+   * resource being untagged is a session-scoped resource.</p>
+   */
+  inline const Aws::String& GetClusterId() const { return m_clusterId; }
+  inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+  template <typename ClusterIdT = Aws::String>
+  void SetClusterId(ClusterIdT&& value) {
+    m_clusterIdHasBeenSet = true;
+    m_clusterId = std::forward<ClusterIdT>(value);
+  }
+  template <typename ClusterIdT = Aws::String>
+  RemoveTagsRequest& WithClusterId(ClusterIdT&& value) {
+    SetClusterId(std::forward<ClusterIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resourceId;
 
   Aws::Vector<Aws::String> m_tagKeys;
+
+  Aws::String m_clusterId;
   bool m_resourceIdHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
+  bool m_clusterIdHasBeenSet = false;
 };
 
 }  // namespace Model

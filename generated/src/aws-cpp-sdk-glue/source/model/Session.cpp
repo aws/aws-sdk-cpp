@@ -101,6 +101,10 @@ Session& Session::operator=(JsonView jsonValue) {
     m_profileName = jsonValue.GetString("ProfileName");
     m_profileNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SessionType")) {
+    m_sessionType = SessionTypeMapper::GetSessionTypeForName(jsonValue.GetString("SessionType"));
+    m_sessionTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -189,6 +193,10 @@ JsonValue Session::Jsonize() const {
 
   if (m_profileNameHasBeenSet) {
     payload.WithString("ProfileName", m_profileName);
+  }
+
+  if (m_sessionTypeHasBeenSet) {
+    payload.WithString("SessionType", SessionTypeMapper::GetNameForSessionType(m_sessionType));
   }
 
   return payload;

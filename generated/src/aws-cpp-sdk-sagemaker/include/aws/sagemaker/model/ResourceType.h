@@ -29,7 +29,8 @@ enum class ResourceType {
   Project,
   HyperParameterTuningJob,
   ModelCard,
-  PipelineVersion
+  PipelineVersion,
+  Job
 };
 
 namespace ResourceTypeMapper {

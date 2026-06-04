@@ -1258,6 +1258,32 @@ class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Updates a specified ad configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdateAdConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAdConfigurationOutcome UpdateAdConfiguration(const Model::UpdateAdConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAdConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateAdConfigurationRequestT = Model::UpdateAdConfigurationRequest>
+  Model::UpdateAdConfigurationOutcomeCallable UpdateAdConfigurationCallable(const UpdateAdConfigurationRequestT& request) const {
+    return SubmitCallable(&IVSClient::UpdateAdConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAdConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateAdConfigurationRequestT = Model::UpdateAdConfigurationRequest>
+  void UpdateAdConfigurationAsync(const UpdateAdConfigurationRequestT& request, const UpdateAdConfigurationResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IVSClient::UpdateAdConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Updates a channel's configuration. Live channels cannot be updated. You must
    * stop the ongoing stream, update the channel, and restart the stream for the
    * changes to take effect.</p><p><h3>See Also:</h3>   <a

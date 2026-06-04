@@ -34,6 +34,10 @@ NetworkSettings& NetworkSettings::operator=(JsonView jsonValue) {
     m_enableTrustedDataFormat = jsonValue.GetBool("enableTrustedDataFormat");
     m_enableTrustedDataFormatHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("consentPopup")) {
+    m_consentPopup = jsonValue.GetObject("consentPopup");
+    m_consentPopupHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue NetworkSettings::Jsonize() const {
 
   if (m_enableTrustedDataFormatHasBeenSet) {
     payload.WithBool("enableTrustedDataFormat", m_enableTrustedDataFormat);
+  }
+
+  if (m_consentPopupHasBeenSet) {
+    payload.WithObject("consentPopup", m_consentPopup.Jsonize());
   }
 
   return payload;
