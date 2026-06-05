@@ -144,6 +144,8 @@
 #include <aws/quicksight/model/AssignmentStatus.h>
 #include <aws/quicksight/model/AthenaParameters.h>
 #include <aws/quicksight/model/AttributeAggregationFunction.h>
+#include <aws/quicksight/model/AudioExtractionConfiguration.h>
+#include <aws/quicksight/model/AudioExtractionStatus.h>
 #include <aws/quicksight/model/AuroraParameters.h>
 #include <aws/quicksight/model/AuroraPostgreSqlParameters.h>
 #include <aws/quicksight/model/AuthConfig.h>
@@ -184,6 +186,10 @@
 #include <aws/quicksight/model/BasicAuthConnectionMetadata.h>
 #include <aws/quicksight/model/BatchCreateTopicReviewedAnswerRequest.h>
 #include <aws/quicksight/model/BatchCreateTopicReviewedAnswerResult.h>
+#include <aws/quicksight/model/BatchDeleteKnowledgeBaseFailure.h>
+#include <aws/quicksight/model/BatchDeleteKnowledgeBaseRequest.h>
+#include <aws/quicksight/model/BatchDeleteKnowledgeBaseResult.h>
+#include <aws/quicksight/model/BatchDeleteKnowledgeBaseSuccess.h>
 #include <aws/quicksight/model/BatchDeleteTopicReviewedAnswerRequest.h>
 #include <aws/quicksight/model/BatchDeleteTopicReviewedAnswerResult.h>
 #include <aws/quicksight/model/BigQueryParameters.h>
@@ -221,6 +227,7 @@
 #include <aws/quicksight/model/CancelIngestionResult.h>
 #include <aws/quicksight/model/Capabilities.h>
 #include <aws/quicksight/model/CapabilityState.h>
+#include <aws/quicksight/model/CapacityBytesRangeFilter.h>
 #include <aws/quicksight/model/CascadingControlConfiguration.h>
 #include <aws/quicksight/model/CascadingControlSource.h>
 #include <aws/quicksight/model/CastColumnTypeOperation.h>
@@ -469,6 +476,7 @@
 #include <aws/quicksight/model/DataSetSearchFilter.h>
 #include <aws/quicksight/model/DataSetSemanticDescription.h>
 #include <aws/quicksight/model/DataSetSemanticMetadata.h>
+#include <aws/quicksight/model/DataSetStatus.h>
 #include <aws/quicksight/model/DataSetStringComparisonFilterCondition.h>
 #include <aws/quicksight/model/DataSetStringComparisonFilterOperator.h>
 #include <aws/quicksight/model/DataSetStringFilterCondition.h>
@@ -579,6 +587,8 @@
 #include <aws/quicksight/model/DeleteIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/DeleteIdentityPropagationConfigRequest.h>
 #include <aws/quicksight/model/DeleteIdentityPropagationConfigResult.h>
+#include <aws/quicksight/model/DeleteKnowledgeBaseRequest.h>
+#include <aws/quicksight/model/DeleteKnowledgeBaseResult.h>
 #include <aws/quicksight/model/DeleteNamespaceRequest.h>
 #include <aws/quicksight/model/DeleteNamespaceResult.h>
 #include <aws/quicksight/model/DeleteOAuthClientApplicationRequest.h>
@@ -691,6 +701,10 @@
 #include <aws/quicksight/model/DescribeIpRestrictionResult.h>
 #include <aws/quicksight/model/DescribeKeyRegistrationRequest.h>
 #include <aws/quicksight/model/DescribeKeyRegistrationResult.h>
+#include <aws/quicksight/model/DescribeKnowledgeBasePermissionsRequest.h>
+#include <aws/quicksight/model/DescribeKnowledgeBasePermissionsResult.h>
+#include <aws/quicksight/model/DescribeKnowledgeBaseRequest.h>
+#include <aws/quicksight/model/DescribeKnowledgeBaseResult.h>
 #include <aws/quicksight/model/DescribeNamespaceRequest.h>
 #include <aws/quicksight/model/DescribeNamespaceResult.h>
 #include <aws/quicksight/model/DescribeOAuthClientApplicationRequest.h>
@@ -962,6 +976,8 @@
 #include <aws/quicksight/model/ImageCustomAction.h>
 #include <aws/quicksight/model/ImageCustomActionOperation.h>
 #include <aws/quicksight/model/ImageCustomActionTrigger.h>
+#include <aws/quicksight/model/ImageExtractionConfiguration.h>
+#include <aws/quicksight/model/ImageExtractionStatus.h>
 #include <aws/quicksight/model/ImageInteractionOptions.h>
 #include <aws/quicksight/model/ImageMenuOption.h>
 #include <aws/quicksight/model/ImageSet.h>
@@ -1024,7 +1040,18 @@
 #include <aws/quicksight/model/KPIVisualLayoutOptions.h>
 #include <aws/quicksight/model/KPIVisualStandardLayout.h>
 #include <aws/quicksight/model/KPIVisualStandardLayoutType.h>
+#include <aws/quicksight/model/KbIngestionStatus.h>
+#include <aws/quicksight/model/KbTemplateConfiguration.h>
 #include <aws/quicksight/model/KeyPairCredentials.h>
+#include <aws/quicksight/model/KnowledgeBase.h>
+#include <aws/quicksight/model/KnowledgeBaseConfiguration.h>
+#include <aws/quicksight/model/KnowledgeBaseIngestionSummary.h>
+#include <aws/quicksight/model/KnowledgeBaseSearchFilter.h>
+#include <aws/quicksight/model/KnowledgeBaseSearchFilterName.h>
+#include <aws/quicksight/model/KnowledgeBaseSearchOperator.h>
+#include <aws/quicksight/model/KnowledgeBaseSortBy.h>
+#include <aws/quicksight/model/KnowledgeBaseSortByField.h>
+#include <aws/quicksight/model/KnowledgeBaseSummary.h>
 #include <aws/quicksight/model/LabelOptions.h>
 #include <aws/quicksight/model/LayerCustomAction.h>
 #include <aws/quicksight/model/LayerCustomActionOperation.h>
@@ -1096,6 +1123,8 @@
 #include <aws/quicksight/model/ListIdentityPropagationConfigsResult.h>
 #include <aws/quicksight/model/ListIngestionsRequest.h>
 #include <aws/quicksight/model/ListIngestionsResult.h>
+#include <aws/quicksight/model/ListKnowledgeBasesRequest.h>
+#include <aws/quicksight/model/ListKnowledgeBasesResult.h>
 #include <aws/quicksight/model/ListNamespacesRequest.h>
 #include <aws/quicksight/model/ListNamespacesResult.h>
 #include <aws/quicksight/model/ListOAuthClientApplicationsRequest.h>
@@ -1132,6 +1161,8 @@
 #include <aws/quicksight/model/ListTopicsResult.h>
 #include <aws/quicksight/model/ListUserGroupsRequest.h>
 #include <aws/quicksight/model/ListUserGroupsResult.h>
+#include <aws/quicksight/model/ListUsersIndexCapacityRequest.h>
+#include <aws/quicksight/model/ListUsersIndexCapacityResult.h>
 #include <aws/quicksight/model/ListUsersRequest.h>
 #include <aws/quicksight/model/ListUsersResult.h>
 #include <aws/quicksight/model/ListVPCConnectionsRequest.h>
@@ -1156,6 +1187,7 @@
 #include <aws/quicksight/model/MaximumMinimumComputation.h>
 #include <aws/quicksight/model/MaximumMinimumComputationType.h>
 #include <aws/quicksight/model/MeasureField.h>
+#include <aws/quicksight/model/MediaExtractionConfiguration.h>
 #include <aws/quicksight/model/MemberIdArnPair.h>
 #include <aws/quicksight/model/MemberType.h>
 #include <aws/quicksight/model/MetricComparisonComputation.h>
@@ -1437,6 +1469,8 @@
 #include <aws/quicksight/model/SearchFoldersResult.h>
 #include <aws/quicksight/model/SearchGroupsRequest.h>
 #include <aws/quicksight/model/SearchGroupsResult.h>
+#include <aws/quicksight/model/SearchKnowledgeBasesRequest.h>
+#include <aws/quicksight/model/SearchKnowledgeBasesResult.h>
 #include <aws/quicksight/model/SearchSpacesRequest.h>
 #include <aws/quicksight/model/SearchSpacesResult.h>
 #include <aws/quicksight/model/SearchTopicsRequest.h>
@@ -1536,6 +1570,7 @@
 #include <aws/quicksight/model/SnapshotUserConfigurationRedacted.h>
 #include <aws/quicksight/model/SnowflakeParameters.h>
 #include <aws/quicksight/model/SortDirection.h>
+#include <aws/quicksight/model/SortOrder.h>
 #include <aws/quicksight/model/SourceTable.h>
 #include <aws/quicksight/model/SpaceContributor.h>
 #include <aws/quicksight/model/SpaceDetails.h>
@@ -1816,6 +1851,8 @@
 #include <aws/quicksight/model/UpdateIpRestrictionResult.h>
 #include <aws/quicksight/model/UpdateKeyRegistrationRequest.h>
 #include <aws/quicksight/model/UpdateKeyRegistrationResult.h>
+#include <aws/quicksight/model/UpdateKnowledgeBasePermissionsRequest.h>
+#include <aws/quicksight/model/UpdateKnowledgeBasePermissionsResult.h>
 #include <aws/quicksight/model/UpdateOAuthClientApplicationRequest.h>
 #include <aws/quicksight/model/UpdateOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/UpdatePublicSharingSettingsRequest.h>
@@ -1868,6 +1905,11 @@
 #include <aws/quicksight/model/UploadedDocumentMetadata.h>
 #include <aws/quicksight/model/User.h>
 #include <aws/quicksight/model/UserIdentifier.h>
+#include <aws/quicksight/model/UserIndexCapacity.h>
+#include <aws/quicksight/model/UserIndexCapacityFilter.h>
+#include <aws/quicksight/model/UserIndexCapacitySortBy.h>
+#include <aws/quicksight/model/UserIndexCapacitySortOrder.h>
+#include <aws/quicksight/model/UserNameOrEmailFilter.h>
 #include <aws/quicksight/model/UserRole.h>
 #include <aws/quicksight/model/VPCConnection.h>
 #include <aws/quicksight/model/VPCConnectionAvailabilityStatus.h>
@@ -1878,6 +1920,9 @@
 #include <aws/quicksight/model/ValueColumnConfiguration.h>
 #include <aws/quicksight/model/ValueWhenUnsetOption.h>
 #include <aws/quicksight/model/VerticalTextAlignment.h>
+#include <aws/quicksight/model/VideoExtractionConfiguration.h>
+#include <aws/quicksight/model/VideoExtractionStatus.h>
+#include <aws/quicksight/model/VideoExtractionType.h>
 #include <aws/quicksight/model/Visibility.h>
 #include <aws/quicksight/model/VisibleRangeOptions.h>
 #include <aws/quicksight/model/Visual.h>

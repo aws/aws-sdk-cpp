@@ -112,8 +112,8 @@ class CmafImageBasedTrickPlaySettings {
 
   ///@{
   /**
-   * Number of thumbnails in each column of a tile image. Set a value between 2 and
-   * 2048. Must be divisible by 2.
+   * Number of thumbnails in each column of a tile image. Set a value between 1 and
+   * 2048.
    */
   inline int GetTileHeight() const { return m_tileHeight; }
   inline bool TileHeightHasBeenSet() const { return m_tileHeightHasBeenSet; }

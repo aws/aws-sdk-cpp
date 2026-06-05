@@ -21,6 +21,7 @@
 #include <aws/quicksight/QuickSightEndpointProvider.h>
 #include <aws/quicksight/QuickSightErrorMarshaller.h>
 #include <aws/quicksight/model/BatchCreateTopicReviewedAnswerRequest.h>
+#include <aws/quicksight/model/BatchDeleteKnowledgeBaseRequest.h>
 #include <aws/quicksight/model/BatchDeleteTopicReviewedAnswerRequest.h>
 #include <aws/quicksight/model/CancelIngestionRequest.h>
 #include <aws/quicksight/model/CreateAccountCustomizationRequest.h>
@@ -73,6 +74,7 @@
 #include <aws/quicksight/model/DeleteGroupRequest.h>
 #include <aws/quicksight/model/DeleteIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/DeleteIdentityPropagationConfigRequest.h>
+#include <aws/quicksight/model/DeleteKnowledgeBaseRequest.h>
 #include <aws/quicksight/model/DeleteNamespaceRequest.h>
 #include <aws/quicksight/model/DeleteOAuthClientApplicationRequest.h>
 #include <aws/quicksight/model/DeleteRefreshScheduleRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/quicksight/model/DescribeDataSetRequest.h>
 #include <aws/quicksight/model/DescribeDataSourcePermissionsRequest.h>
 #include <aws/quicksight/model/DescribeDataSourceRequest.h>
-#include <aws/quicksight/model/DescribeDefaultQBusinessApplicationRequest.h>
-#include <aws/quicksight/model/DescribeFlowRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -299,6 +299,25 @@ BatchCreateTopicReviewedAnswerOutcome QuickSightClient::BatchCreateTopicReviewed
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? BatchCreateTopicReviewedAnswerOutcome(result.GetResultWithOwnership())
                             : BatchCreateTopicReviewedAnswerOutcome(std::move(result.GetError()));
+}
+
+BatchDeleteKnowledgeBaseOutcome QuickSightClient::BatchDeleteKnowledgeBase(const BatchDeleteKnowledgeBaseRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchDeleteKnowledgeBase", "Required field: AwsAccountId, is not set");
+    return BatchDeleteKnowledgeBaseOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [AwsAccountId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/knowledge-bases/batch-delete");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteKnowledgeBaseOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteKnowledgeBaseOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteTopicReviewedAnswerOutcome QuickSightClient::BatchDeleteTopicReviewedAnswer(
@@ -1594,6 +1613,31 @@ DeleteIdentityPropagationConfigOutcome QuickSightClient::DeleteIdentityPropagati
                             : DeleteIdentityPropagationConfigOutcome(std::move(result.GetError()));
 }
 
+DeleteKnowledgeBaseOutcome QuickSightClient::DeleteKnowledgeBase(const DeleteKnowledgeBaseRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteKnowledgeBase", "Required field: AwsAccountId, is not set");
+    return DeleteKnowledgeBaseOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.KnowledgeBaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteKnowledgeBase", "Required field: KnowledgeBaseId, is not set");
+    return DeleteKnowledgeBaseOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [KnowledgeBaseId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/knowledge-bases/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKnowledgeBaseId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKnowledgeBaseOutcome(result.GetResultWithOwnership())
+                            : DeleteKnowledgeBaseOutcome(std::move(result.GetError()));
+}
+
 DeleteNamespaceOutcome QuickSightClient::DeleteNamespace(const DeleteNamespaceRequest& request) const {
   if (!request.AwsAccountIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteNamespace", "Required field: AwsAccountId, is not set");
@@ -2797,53 +2841,4 @@ DescribeDataSourcePermissionsOutcome QuickSightClient::DescribeDataSourcePermiss
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? DescribeDataSourcePermissionsOutcome(result.GetResultWithOwnership())
                             : DescribeDataSourcePermissionsOutcome(std::move(result.GetError()));
-}
-
-DescribeDefaultQBusinessApplicationOutcome QuickSightClient::DescribeDefaultQBusinessApplication(
-    const DescribeDefaultQBusinessApplicationRequest& request) const {
-  if (!request.AwsAccountIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DescribeDefaultQBusinessApplication", "Required field: AwsAccountId, is not set");
-    return DescribeDefaultQBusinessApplicationOutcome(Aws::Client::AWSError<QuickSightErrors>(
-        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/default-qbusiness-application");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? DescribeDefaultQBusinessApplicationOutcome(result.GetResultWithOwnership())
-                            : DescribeDefaultQBusinessApplicationOutcome(std::move(result.GetError()));
-}
-
-DescribeFlowOutcome QuickSightClient::DescribeFlow(const DescribeFlowRequest& request) const {
-  if (!request.AwsAccountIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DescribeFlow", "Required field: AwsAccountId, is not set");
-    return DescribeFlowOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                       "Missing required field [AwsAccountId]", false));
-  }
-  if (!request.FlowIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DescribeFlow", "Required field: FlowId, is not set");
-    return DescribeFlowOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                       "Missing required field [FlowId]", false));
-  }
-  if (!request.PublishStateHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DescribeFlow", "Required field: PublishState, is not set");
-    return DescribeFlowOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                       "Missing required field [PublishState]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/flows/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? DescribeFlowOutcome(result.GetResultWithOwnership()) : DescribeFlowOutcome(std::move(result.GetError()));
 }

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AICloudWatchLogs.h>
+#include <aws/sagemaker/model/AIMlflowConfig.h>
 
 #include <utility>
 
@@ -75,12 +76,33 @@ class AIBenchmarkOutputResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The MLflow tracking configuration for the job.</p>
+   */
+  inline const AIMlflowConfig& GetMlflowConfig() const { return m_mlflowConfig; }
+  inline bool MlflowConfigHasBeenSet() const { return m_mlflowConfigHasBeenSet; }
+  template <typename MlflowConfigT = AIMlflowConfig>
+  void SetMlflowConfig(MlflowConfigT&& value) {
+    m_mlflowConfigHasBeenSet = true;
+    m_mlflowConfig = std::forward<MlflowConfigT>(value);
+  }
+  template <typename MlflowConfigT = AIMlflowConfig>
+  AIBenchmarkOutputResult& WithMlflowConfig(MlflowConfigT&& value) {
+    SetMlflowConfig(std::forward<MlflowConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_s3OutputLocation;
 
   Aws::Vector<AICloudWatchLogs> m_cloudWatchLogs;
+
+  AIMlflowConfig m_mlflowConfig;
   bool m_s3OutputLocationHasBeenSet = false;
   bool m_cloudWatchLogsHasBeenSet = false;
+  bool m_mlflowConfigHasBeenSet = false;
 };
 
 }  // namespace Model

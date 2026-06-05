@@ -20,6 +20,7 @@ static const int AAC_HASH = HashingUtils::HashString("AAC");
 static const int AC3_HASH = HashingUtils::HashString("AC3");
 static const int EAC3_HASH = HashingUtils::HashString("EAC3");
 static const int FLAC_HASH = HashingUtils::HashString("FLAC");
+static const int MP2_HASH = HashingUtils::HashString("MP2");
 static const int MP3_HASH = HashingUtils::HashString("MP3");
 static const int OPUS_HASH = HashingUtils::HashString("OPUS");
 static const int PCM_HASH = HashingUtils::HashString("PCM");
@@ -55,6 +56,8 @@ Codec GetCodecForName(const Aws::String& name) {
     return Codec::EAC3;
   } else if (hashCode == FLAC_HASH) {
     return Codec::FLAC;
+  } else if (hashCode == MP2_HASH) {
+    return Codec::MP2;
   } else if (hashCode == MP3_HASH) {
     return Codec::MP3;
   } else if (hashCode == OPUS_HASH) {
@@ -123,6 +126,8 @@ Aws::String GetNameForCodec(Codec enumValue) {
       return "EAC3";
     case Codec::FLAC:
       return "FLAC";
+    case Codec::MP2:
+      return "MP2";
     case Codec::MP3:
       return "MP3";
     case Codec::OPUS:

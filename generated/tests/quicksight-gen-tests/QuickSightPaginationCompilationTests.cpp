@@ -19,6 +19,7 @@
 #include <aws/quicksight/model/ListCustomPermissionsPaginationTraits.h>
 #include <aws/quicksight/model/ListFoldersPaginationTraits.h>
 #include <aws/quicksight/model/SearchAnalysesPaginationTraits.h>
+#include <aws/quicksight/model/ListKnowledgeBasesPaginationTraits.h>
 #include <aws/quicksight/model/ListTemplateVersionsPaginationTraits.h>
 #include <aws/quicksight/model/ListAssetBundleImportJobsPaginationTraits.h>
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsForUserPaginationTraits.h>
@@ -26,6 +27,7 @@
 #include <aws/quicksight/model/ListDataSourcesPaginationTraits.h>
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsPaginationTraits.h>
 #include <aws/quicksight/model/SearchGroupsPaginationTraits.h>
+#include <aws/quicksight/model/SearchKnowledgeBasesPaginationTraits.h>
 #include <aws/quicksight/model/ListUserGroupsPaginationTraits.h>
 #include <aws/quicksight/model/SearchDashboardsPaginationTraits.h>
 #include <aws/quicksight/model/DescribeFolderResolvedPermissionsPaginationTraits.h>

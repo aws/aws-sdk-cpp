@@ -38,6 +38,10 @@ VideoProperties& VideoProperties::operator=(JsonView jsonValue) {
     m_frameRate = jsonValue.GetObject("frameRate");
     m_frameRateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("hdrMetadata")) {
+    m_hdrMetadata = jsonValue.GetObject("hdrMetadata");
+    m_hdrMetadataHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("height")) {
     m_height = jsonValue.GetInteger("height");
     m_heightHasBeenSet = true;
@@ -45,6 +49,10 @@ VideoProperties& VideoProperties::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("matrixCoefficients")) {
     m_matrixCoefficients = MatrixCoefficientsMapper::GetMatrixCoefficientsForName(jsonValue.GetString("matrixCoefficients"));
     m_matrixCoefficientsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("rotation")) {
+    m_rotation = jsonValue.GetInteger("rotation");
+    m_rotationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("transferCharacteristics")) {
     m_transferCharacteristics =
@@ -81,12 +89,20 @@ JsonValue VideoProperties::Jsonize() const {
     payload.WithObject("frameRate", m_frameRate.Jsonize());
   }
 
+  if (m_hdrMetadataHasBeenSet) {
+    payload.WithObject("hdrMetadata", m_hdrMetadata.Jsonize());
+  }
+
   if (m_heightHasBeenSet) {
     payload.WithInteger("height", m_height);
   }
 
   if (m_matrixCoefficientsHasBeenSet) {
     payload.WithString("matrixCoefficients", MatrixCoefficientsMapper::GetNameForMatrixCoefficients(m_matrixCoefficients));
+  }
+
+  if (m_rotationHasBeenSet) {
+    payload.WithInteger("rotation", m_rotation);
   }
 
   if (m_transferCharacteristicsHasBeenSet) {

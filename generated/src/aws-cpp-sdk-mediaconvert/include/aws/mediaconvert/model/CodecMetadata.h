@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/ColorPrimaries.h>
+#include <aws/mediaconvert/model/ContentLightLevel.h>
 #include <aws/mediaconvert/model/FrameRate.h>
 #include <aws/mediaconvert/model/MatrixCoefficients.h>
 #include <aws/mediaconvert/model/TransferCharacteristics.h>
@@ -118,6 +119,25 @@ class CodecMetadata {
 
   ///@{
   /**
+   * Content light level information (CTA-861.3). Describes the light level
+   * characteristics of the content.
+   */
+  inline const ContentLightLevel& GetContentLightLevel() const { return m_contentLightLevel; }
+  inline bool ContentLightLevelHasBeenSet() const { return m_contentLightLevelHasBeenSet; }
+  template <typename ContentLightLevelT = ContentLightLevel>
+  void SetContentLightLevel(ContentLightLevelT&& value) {
+    m_contentLightLevelHasBeenSet = true;
+    m_contentLightLevel = std::forward<ContentLightLevelT>(value);
+  }
+  template <typename ContentLightLevelT = ContentLightLevel>
+  CodecMetadata& WithContentLightLevel(ContentLightLevelT&& value) {
+    SetContentLightLevel(std::forward<ContentLightLevelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * The height in pixels as coded by the codec. This represents the actual encoded
    * video height as specified in the video stream headers.
    */
@@ -194,6 +214,25 @@ class CodecMetadata {
 
   ///@{
   /**
+   * The clockwise rotation angle of the video, in degrees, as specified in the codec
+   * bitstream via a Display Orientation SEI message (payload type 47 for both H.264
+   * and H.265). This field is null when the video essence does not contain a Display
+   * Orientation SEI message or when the rotation is 0 degrees.
+   */
+  inline int GetRotation() const { return m_rotation; }
+  inline bool RotationHasBeenSet() const { return m_rotationHasBeenSet; }
+  inline void SetRotation(int value) {
+    m_rotationHasBeenSet = true;
+    m_rotation = value;
+  }
+  inline CodecMetadata& WithRotation(int value) {
+    SetRotation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * The scanning method specified in the video essence, indicating whether the video
    * uses progressive or interlaced scanning.
    */
@@ -254,6 +293,8 @@ class CodecMetadata {
 
   ColorPrimaries m_colorPrimaries{ColorPrimaries::NOT_SET};
 
+  ContentLightLevel m_contentLightLevel;
+
   int m_height{0};
 
   Aws::String m_level;
@@ -261,6 +302,8 @@ class CodecMetadata {
   MatrixCoefficients m_matrixCoefficients{MatrixCoefficients::NOT_SET};
 
   Aws::String m_profile;
+
+  int m_rotation{0};
 
   Aws::String m_scanType;
 
@@ -271,10 +314,12 @@ class CodecMetadata {
   bool m_chromaSubsamplingHasBeenSet = false;
   bool m_codedFrameRateHasBeenSet = false;
   bool m_colorPrimariesHasBeenSet = false;
+  bool m_contentLightLevelHasBeenSet = false;
   bool m_heightHasBeenSet = false;
   bool m_levelHasBeenSet = false;
   bool m_matrixCoefficientsHasBeenSet = false;
   bool m_profileHasBeenSet = false;
+  bool m_rotationHasBeenSet = false;
   bool m_scanTypeHasBeenSet = false;
   bool m_transferCharacteristicsHasBeenSet = false;
   bool m_widthHasBeenSet = false;

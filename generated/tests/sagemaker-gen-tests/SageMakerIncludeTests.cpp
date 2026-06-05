@@ -26,6 +26,7 @@
 #include <aws/sagemaker/model/AICapacityReservationPreference.h>
 #include <aws/sagemaker/model/AICloudWatchLogs.h>
 #include <aws/sagemaker/model/AIDatasetConfig.h>
+#include <aws/sagemaker/model/AIMlflowConfig.h>
 #include <aws/sagemaker/model/AIModelSource.h>
 #include <aws/sagemaker/model/AIModelSourceS3.h>
 #include <aws/sagemaker/model/AIRecommendation.h>

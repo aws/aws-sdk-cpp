@@ -26,6 +26,10 @@ AIRecommendationOutputResult& AIRecommendationOutputResult::operator=(JsonView j
     m_modelPackageGroupIdentifier = jsonValue.GetString("ModelPackageGroupIdentifier");
     m_modelPackageGroupIdentifierHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MlflowConfig")) {
+    m_mlflowConfig = jsonValue.GetObject("MlflowConfig");
+    m_mlflowConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue AIRecommendationOutputResult::Jsonize() const {
 
   if (m_modelPackageGroupIdentifierHasBeenSet) {
     payload.WithString("ModelPackageGroupIdentifier", m_modelPackageGroupIdentifier);
+  }
+
+  if (m_mlflowConfigHasBeenSet) {
+    payload.WithObject("MlflowConfig", m_mlflowConfig.Jsonize());
   }
 
   return payload;

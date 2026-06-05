@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class HlsImageBasedTrickPlay { NOT_SET, NONE, THUMBNAIL, THUMBNAIL_AND_FULLFRAME, ADVANCED };
+enum class HlsImageBasedTrickPlay { NOT_SET, NONE, THUMBNAIL, THUMBNAIL_AND_FULLFRAME, ADVANCED, VARIANTS };
 
 namespace HlsImageBasedTrickPlayMapper {
 AWS_MEDIACONVERT_API HlsImageBasedTrickPlay GetHlsImageBasedTrickPlayForName(const Aws::String& name);

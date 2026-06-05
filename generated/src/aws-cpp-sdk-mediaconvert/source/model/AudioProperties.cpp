@@ -38,6 +38,10 @@ AudioProperties& AudioProperties::operator=(JsonView jsonValue) {
     m_languageCode = jsonValue.GetString("languageCode");
     m_languageCodeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("objectCount")) {
+    m_objectCount = jsonValue.GetInteger("objectCount");
+    m_objectCountHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sampleRate")) {
     m_sampleRate = jsonValue.GetInteger("sampleRate");
     m_sampleRateHasBeenSet = true;
@@ -66,6 +70,10 @@ JsonValue AudioProperties::Jsonize() const {
 
   if (m_languageCodeHasBeenSet) {
     payload.WithString("languageCode", m_languageCode);
+  }
+
+  if (m_objectCountHasBeenSet) {
+    payload.WithInteger("objectCount", m_objectCount);
   }
 
   if (m_sampleRateHasBeenSet) {

@@ -19,6 +19,7 @@ static const int NONE_HASH = HashingUtils::HashString("NONE");
 static const int THUMBNAIL_HASH = HashingUtils::HashString("THUMBNAIL");
 static const int THUMBNAIL_AND_FULLFRAME_HASH = HashingUtils::HashString("THUMBNAIL_AND_FULLFRAME");
 static const int ADVANCED_HASH = HashingUtils::HashString("ADVANCED");
+static const int VARIANTS_HASH = HashingUtils::HashString("VARIANTS");
 
 CmafImageBasedTrickPlay GetCmafImageBasedTrickPlayForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ CmafImageBasedTrickPlay GetCmafImageBasedTrickPlayForName(const Aws::String& nam
     return CmafImageBasedTrickPlay::THUMBNAIL_AND_FULLFRAME;
   } else if (hashCode == ADVANCED_HASH) {
     return CmafImageBasedTrickPlay::ADVANCED;
+  } else if (hashCode == VARIANTS_HASH) {
+    return CmafImageBasedTrickPlay::VARIANTS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForCmafImageBasedTrickPlay(CmafImageBasedTrickPlay enumValue)
       return "THUMBNAIL_AND_FULLFRAME";
     case CmafImageBasedTrickPlay::ADVANCED:
       return "ADVANCED";
+    case CmafImageBasedTrickPlay::VARIANTS:
+      return "VARIANTS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

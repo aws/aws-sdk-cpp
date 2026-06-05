@@ -839,9 +839,9 @@ class AWS_MEDIACONVERT_API MediaConvertClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * Add tags to a MediaConvert queue, preset, or job template. For information about
-   * tagging, see the User Guide at
-   * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
+   * Add tags to a MediaConvert queue, preset, job, or job template. For information
+   * about tagging, see the User Guide at
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-mediaconvert-resources.html.<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TagResource">AWS
    * API Reference</a></p>
@@ -867,9 +867,9 @@ class AWS_MEDIACONVERT_API MediaConvertClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * Remove tags from a MediaConvert queue, preset, or job template. For information
-   * about tagging, see the User Guide at
-   * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
+   * Remove tags from a MediaConvert queue, preset, job, or job template. For
+   * information about tagging, see the User Guide at
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-mediaconvert-resources.html.<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UntagResource">AWS
    * API Reference</a></p>

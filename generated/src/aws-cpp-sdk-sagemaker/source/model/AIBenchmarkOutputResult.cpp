@@ -29,6 +29,10 @@ AIBenchmarkOutputResult& AIBenchmarkOutputResult::operator=(JsonView jsonValue) 
     }
     m_cloudWatchLogsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MlflowConfig")) {
+    m_mlflowConfig = jsonValue.GetObject("MlflowConfig");
+    m_mlflowConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +49,10 @@ JsonValue AIBenchmarkOutputResult::Jsonize() const {
       cloudWatchLogsJsonList[cloudWatchLogsIndex].AsObject(m_cloudWatchLogs[cloudWatchLogsIndex].Jsonize());
     }
     payload.WithArray("CloudWatchLogs", std::move(cloudWatchLogsJsonList));
+  }
+
+  if (m_mlflowConfigHasBeenSet) {
+    payload.WithObject("MlflowConfig", m_mlflowConfig.Jsonize());
   }
 
   return payload;

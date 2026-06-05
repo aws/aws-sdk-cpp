@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/AIMlflowConfig.h>
 
 #include <utility>
 
@@ -49,9 +50,31 @@ class AIBenchmarkOutputConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The MLflow tracking configuration for the job. If you don't specify this
+   * parameter, MLflow tracking is disabled.</p>
+   */
+  inline const AIMlflowConfig& GetMlflowConfig() const { return m_mlflowConfig; }
+  inline bool MlflowConfigHasBeenSet() const { return m_mlflowConfigHasBeenSet; }
+  template <typename MlflowConfigT = AIMlflowConfig>
+  void SetMlflowConfig(MlflowConfigT&& value) {
+    m_mlflowConfigHasBeenSet = true;
+    m_mlflowConfig = std::forward<MlflowConfigT>(value);
+  }
+  template <typename MlflowConfigT = AIMlflowConfig>
+  AIBenchmarkOutputConfig& WithMlflowConfig(MlflowConfigT&& value) {
+    SetMlflowConfig(std::forward<MlflowConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_s3OutputLocation;
+
+  AIMlflowConfig m_mlflowConfig;
   bool m_s3OutputLocationHasBeenSet = false;
+  bool m_mlflowConfigHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -6,41 +6,41 @@
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/mediaconvert/model/HlsClearLead.h>
+#include <aws/quicksight/model/ImageExtractionStatus.h>
 
 using namespace Aws::Utils;
 
 namespace Aws {
-namespace MediaConvert {
+namespace QuickSight {
 namespace Model {
-namespace HlsClearLeadMapper {
+namespace ImageExtractionStatusMapper {
 
 static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
 static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
-HlsClearLead GetHlsClearLeadForName(const Aws::String& name) {
+ImageExtractionStatus GetImageExtractionStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == ENABLED_HASH) {
-    return HlsClearLead::ENABLED;
+    return ImageExtractionStatus::ENABLED;
   } else if (hashCode == DISABLED_HASH) {
-    return HlsClearLead::DISABLED;
+    return ImageExtractionStatus::DISABLED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
     overflowContainer->StoreOverflow(hashCode, name);
-    return static_cast<HlsClearLead>(hashCode);
+    return static_cast<ImageExtractionStatus>(hashCode);
   }
 
-  return HlsClearLead::NOT_SET;
+  return ImageExtractionStatus::NOT_SET;
 }
 
-Aws::String GetNameForHlsClearLead(HlsClearLead enumValue) {
+Aws::String GetNameForImageExtractionStatus(ImageExtractionStatus enumValue) {
   switch (enumValue) {
-    case HlsClearLead::NOT_SET:
+    case ImageExtractionStatus::NOT_SET:
       return {};
-    case HlsClearLead::ENABLED:
+    case ImageExtractionStatus::ENABLED:
       return "ENABLED";
-    case HlsClearLead::DISABLED:
+    case ImageExtractionStatus::DISABLED:
       return "DISABLED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
@@ -52,7 +52,7 @@ Aws::String GetNameForHlsClearLead(HlsClearLead enumValue) {
   }
 }
 
-}  // namespace HlsClearLeadMapper
+}  // namespace ImageExtractionStatusMapper
 }  // namespace Model
-}  // namespace MediaConvert
+}  // namespace QuickSight
 }  // namespace Aws

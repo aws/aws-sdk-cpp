@@ -133,6 +133,7 @@
 #include <aws/mediaconvert/model/CmafGroupSettings.h>
 #include <aws/mediaconvert/model/CmafImageBasedTrickPlay.h>
 #include <aws/mediaconvert/model/CmafImageBasedTrickPlaySettings.h>
+#include <aws/mediaconvert/model/CmafImageBasedTrickPlayVariant.h>
 #include <aws/mediaconvert/model/CmafInitializationVectorInManifest.h>
 #include <aws/mediaconvert/model/CmafIntervalCadence.h>
 #include <aws/mediaconvert/model/CmafKeyProviderType.h>
@@ -174,6 +175,7 @@
 #include <aws/mediaconvert/model/Container.h>
 #include <aws/mediaconvert/model/ContainerSettings.h>
 #include <aws/mediaconvert/model/ContainerType.h>
+#include <aws/mediaconvert/model/ContentLightLevel.h>
 #include <aws/mediaconvert/model/CopyProtectionAction.h>
 #include <aws/mediaconvert/model/CreateJobRequest.h>
 #include <aws/mediaconvert/model/CreateJobResult.h>
@@ -192,6 +194,7 @@
 #include <aws/mediaconvert/model/DashIsoHbbtvCompliance.h>
 #include <aws/mediaconvert/model/DashIsoImageBasedTrickPlay.h>
 #include <aws/mediaconvert/model/DashIsoImageBasedTrickPlaySettings.h>
+#include <aws/mediaconvert/model/DashIsoImageBasedTrickPlayVariant.h>
 #include <aws/mediaconvert/model/DashIsoIntervalCadence.h>
 #include <aws/mediaconvert/model/DashIsoMpdManifestBandwidthType.h>
 #include <aws/mediaconvert/model/DashIsoMpdProfile.h>
@@ -380,6 +383,7 @@
 #include <aws/mediaconvert/model/HDRToSDRToneMapper.h>
 #include <aws/mediaconvert/model/Hdr10Metadata.h>
 #include <aws/mediaconvert/model/Hdr10Plus.h>
+#include <aws/mediaconvert/model/HdrMetadata.h>
 #include <aws/mediaconvert/model/HlsAdMarkers.h>
 #include <aws/mediaconvert/model/HlsAdditionalManifest.h>
 #include <aws/mediaconvert/model/HlsAudioOnlyContainer.h>
@@ -388,7 +392,6 @@
 #include <aws/mediaconvert/model/HlsCaptionLanguageMapping.h>
 #include <aws/mediaconvert/model/HlsCaptionLanguageSetting.h>
 #include <aws/mediaconvert/model/HlsCaptionSegmentLengthControl.h>
-#include <aws/mediaconvert/model/HlsClearLead.h>
 #include <aws/mediaconvert/model/HlsClientCache.h>
 #include <aws/mediaconvert/model/HlsCodecSpecification.h>
 #include <aws/mediaconvert/model/HlsDescriptiveVideoServiceFlag.h>
@@ -399,6 +402,7 @@
 #include <aws/mediaconvert/model/HlsIFrameOnlyManifest.h>
 #include <aws/mediaconvert/model/HlsImageBasedTrickPlay.h>
 #include <aws/mediaconvert/model/HlsImageBasedTrickPlaySettings.h>
+#include <aws/mediaconvert/model/HlsImageBasedTrickPlayVariant.h>
 #include <aws/mediaconvert/model/HlsInitializationVectorInManifest.h>
 #include <aws/mediaconvert/model/HlsIntervalCadence.h>
 #include <aws/mediaconvert/model/HlsKeyProviderType.h>
@@ -487,6 +491,7 @@
 #include <aws/mediaconvert/model/M3u8PcrControl.h>
 #include <aws/mediaconvert/model/M3u8Scte35Source.h>
 #include <aws/mediaconvert/model/M3u8Settings.h>
+#include <aws/mediaconvert/model/MasteringDisplayColorVolume.h>
 #include <aws/mediaconvert/model/MatrixCoefficients.h>
 #include <aws/mediaconvert/model/Metadata.h>
 #include <aws/mediaconvert/model/MinBottomRenditionSize.h>

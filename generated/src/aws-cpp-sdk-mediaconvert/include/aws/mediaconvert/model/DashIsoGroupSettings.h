@@ -13,6 +13,7 @@
 #include <aws/mediaconvert/model/DashIsoHbbtvCompliance.h>
 #include <aws/mediaconvert/model/DashIsoImageBasedTrickPlay.h>
 #include <aws/mediaconvert/model/DashIsoImageBasedTrickPlaySettings.h>
+#include <aws/mediaconvert/model/DashIsoImageBasedTrickPlayVariant.h>
 #include <aws/mediaconvert/model/DashIsoMpdManifestBandwidthType.h>
 #include <aws/mediaconvert/model/DashIsoMpdProfile.h>
 #include <aws/mediaconvert/model/DashIsoPtsOffsetHandlingForBFrames.h>
@@ -271,11 +272,13 @@ class DashIsoGroupSettings {
    * Specify whether MediaConvert generates images for trick play. Keep the default
    * value, None, to not generate any images. Choose Thumbnail to generate tiled
    * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
-   * full-resolution images of single frames. MediaConvert adds an entry in the .mpd
-   * manifest for each set of images that you generate. A common application for
-   * these images is Roku trick mode. The thumbnails and full-frame images that
-   * MediaConvert creates with this feature are compatible with this Roku
-   * specification:
+   * full-resolution images of single frames. Choose Advanced to customize thumbnail
+   * and tile settings for a single trick play variant. Choose Variants to specify
+   * multiple trick play variants, each with its own thumbnail and tile settings.
+   * MediaConvert adds an entry in the .mpd manifest for each set of images that you
+   * generate. A common application for these images is Roku trick mode. The
+   * thumbnails and full-frame images that MediaConvert creates with this feature are
+   * compatible with this Roku specification:
    * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
    */
   inline DashIsoImageBasedTrickPlay GetImageBasedTrickPlay() const { return m_imageBasedTrickPlay; }
@@ -304,6 +307,34 @@ class DashIsoGroupSettings {
   template <typename ImageBasedTrickPlaySettingsT = DashIsoImageBasedTrickPlaySettings>
   DashIsoGroupSettings& WithImageBasedTrickPlaySettings(ImageBasedTrickPlaySettingsT&& value) {
     SetImageBasedTrickPlaySettings(std::forward<ImageBasedTrickPlaySettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Specify multiple image-based trick play variants. Each entry creates a separate
+   * set of JPEG tile images with its own resolution, tile layout, and cadence
+   * settings. Set imageBasedTrickPlay to VARIANTS when using this setting.
+   */
+  inline const Aws::Vector<DashIsoImageBasedTrickPlayVariant>& GetImageBasedTrickPlayVariants() const {
+    return m_imageBasedTrickPlayVariants;
+  }
+  inline bool ImageBasedTrickPlayVariantsHasBeenSet() const { return m_imageBasedTrickPlayVariantsHasBeenSet; }
+  template <typename ImageBasedTrickPlayVariantsT = Aws::Vector<DashIsoImageBasedTrickPlayVariant>>
+  void SetImageBasedTrickPlayVariants(ImageBasedTrickPlayVariantsT&& value) {
+    m_imageBasedTrickPlayVariantsHasBeenSet = true;
+    m_imageBasedTrickPlayVariants = std::forward<ImageBasedTrickPlayVariantsT>(value);
+  }
+  template <typename ImageBasedTrickPlayVariantsT = Aws::Vector<DashIsoImageBasedTrickPlayVariant>>
+  DashIsoGroupSettings& WithImageBasedTrickPlayVariants(ImageBasedTrickPlayVariantsT&& value) {
+    SetImageBasedTrickPlayVariants(std::forward<ImageBasedTrickPlayVariantsT>(value));
+    return *this;
+  }
+  template <typename ImageBasedTrickPlayVariantsT = DashIsoImageBasedTrickPlayVariant>
+  DashIsoGroupSettings& AddImageBasedTrickPlayVariants(ImageBasedTrickPlayVariantsT&& value) {
+    m_imageBasedTrickPlayVariantsHasBeenSet = true;
+    m_imageBasedTrickPlayVariants.emplace_back(std::forward<ImageBasedTrickPlayVariantsT>(value));
     return *this;
   }
   ///@}
@@ -555,6 +586,8 @@ class DashIsoGroupSettings {
 
   DashIsoImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
 
+  Aws::Vector<DashIsoImageBasedTrickPlayVariant> m_imageBasedTrickPlayVariants;
+
   int m_minBufferTime{0};
 
   double m_minFinalSegmentLength{0.0};
@@ -586,6 +619,7 @@ class DashIsoGroupSettings {
   bool m_hbbtvComplianceHasBeenSet = false;
   bool m_imageBasedTrickPlayHasBeenSet = false;
   bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
+  bool m_imageBasedTrickPlayVariantsHasBeenSet = false;
   bool m_minBufferTimeHasBeenSet = false;
   bool m_minFinalSegmentLengthHasBeenSet = false;
   bool m_mpdManifestBandwidthTypeHasBeenSet = false;

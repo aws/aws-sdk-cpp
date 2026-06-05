@@ -28,6 +28,7 @@
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsForUserPaginationTraits.h>
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsPaginationTraits.h>
 #include <aws/quicksight/model/ListIngestionsPaginationTraits.h>
+#include <aws/quicksight/model/ListKnowledgeBasesPaginationTraits.h>
 #include <aws/quicksight/model/ListNamespacesPaginationTraits.h>
 #include <aws/quicksight/model/ListOAuthClientApplicationsPaginationTraits.h>
 #include <aws/quicksight/model/ListRoleMembershipsPaginationTraits.h>
@@ -48,6 +49,7 @@
 #include <aws/quicksight/model/SearchFlowsPaginationTraits.h>
 #include <aws/quicksight/model/SearchFoldersPaginationTraits.h>
 #include <aws/quicksight/model/SearchGroupsPaginationTraits.h>
+#include <aws/quicksight/model/SearchKnowledgeBasesPaginationTraits.h>
 #include <aws/quicksight/model/SearchTopicsPaginationTraits.h>
 
 #include <memory>
@@ -302,6 +304,18 @@ class QuickSightPaginationBase {
   }
 
   /**
+   * Create a paginator for ListKnowledgeBases operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKnowledgeBasesRequest,
+                                    Pagination::ListKnowledgeBasesPaginationTraits<DerivedClient>>
+  ListKnowledgeBasesPaginator(const Model::ListKnowledgeBasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKnowledgeBasesRequest,
+                                             Pagination::ListKnowledgeBasesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListNamespaces operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNamespacesRequest, Pagination::ListNamespacesPaginationTraits<DerivedClient>>
@@ -527,6 +541,18 @@ class QuickSightPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchGroupsRequest,
                                              Pagination::SearchGroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
+  }
+
+  /**
+   * Create a paginator for SearchKnowledgeBases operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchKnowledgeBasesRequest,
+                                    Pagination::SearchKnowledgeBasesPaginationTraits<DerivedClient>>
+  SearchKnowledgeBasesPaginator(const Model::SearchKnowledgeBasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchKnowledgeBasesRequest,
+                                             Pagination::SearchKnowledgeBasesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

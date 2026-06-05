@@ -19,6 +19,7 @@ static const int NONE_HASH = HashingUtils::HashString("NONE");
 static const int THUMBNAIL_HASH = HashingUtils::HashString("THUMBNAIL");
 static const int THUMBNAIL_AND_FULLFRAME_HASH = HashingUtils::HashString("THUMBNAIL_AND_FULLFRAME");
 static const int ADVANCED_HASH = HashingUtils::HashString("ADVANCED");
+static const int VARIANTS_HASH = HashingUtils::HashString("VARIANTS");
 
 DashIsoImageBasedTrickPlay GetDashIsoImageBasedTrickPlayForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ DashIsoImageBasedTrickPlay GetDashIsoImageBasedTrickPlayForName(const Aws::Strin
     return DashIsoImageBasedTrickPlay::THUMBNAIL_AND_FULLFRAME;
   } else if (hashCode == ADVANCED_HASH) {
     return DashIsoImageBasedTrickPlay::ADVANCED;
+  } else if (hashCode == VARIANTS_HASH) {
+    return DashIsoImageBasedTrickPlay::VARIANTS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForDashIsoImageBasedTrickPlay(DashIsoImageBasedTrickPlay enum
       return "THUMBNAIL_AND_FULLFRAME";
     case DashIsoImageBasedTrickPlay::ADVANCED:
       return "ADVANCED";
+    case DashIsoImageBasedTrickPlay::VARIANTS:
+      return "VARIANTS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

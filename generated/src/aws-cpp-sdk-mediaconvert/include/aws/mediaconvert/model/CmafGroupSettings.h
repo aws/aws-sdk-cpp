@@ -13,6 +13,7 @@
 #include <aws/mediaconvert/model/CmafEncryptionSettings.h>
 #include <aws/mediaconvert/model/CmafImageBasedTrickPlay.h>
 #include <aws/mediaconvert/model/CmafImageBasedTrickPlaySettings.h>
+#include <aws/mediaconvert/model/CmafImageBasedTrickPlayVariant.h>
 #include <aws/mediaconvert/model/CmafManifestCompression.h>
 #include <aws/mediaconvert/model/CmafManifestDurationFormat.h>
 #include <aws/mediaconvert/model/CmafMpdManifestBandwidthType.h>
@@ -271,13 +272,16 @@ class CmafGroupSettings {
    * Specify whether MediaConvert generates images for trick play. Keep the default
    * value, None, to not generate any images. Choose Thumbnail to generate tiled
    * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
-   * full-resolution images of single frames. When you enable Write HLS manifest,
-   * MediaConvert creates a child manifest for each set of images that you generate
-   * and adds corresponding entries to the parent manifest. When you enable Write
-   * DASH manifest, MediaConvert adds an entry in the .mpd manifest for each set of
-   * images that you generate. A common application for these images is Roku trick
-   * mode. The thumbnails and full-frame images that MediaConvert creates with this
-   * feature are compatible with this Roku specification:
+   * full-resolution images of single frames. Choose Advanced to customize thumbnail
+   * and tile settings for a single trick play variant. Choose Variants to specify
+   * multiple trick play variants, each with its own thumbnail and tile settings.
+   * When you enable Write HLS manifest, MediaConvert creates a child manifest for
+   * each set of images that you generate and adds corresponding entries to the
+   * parent manifest. When you enable Write DASH manifest, MediaConvert adds an entry
+   * in the .mpd manifest for each set of images that you generate. A common
+   * application for these images is Roku trick mode. The thumbnails and full-frame
+   * images that MediaConvert creates with this feature are compatible with this Roku
+   * specification:
    * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
    */
   inline CmafImageBasedTrickPlay GetImageBasedTrickPlay() const { return m_imageBasedTrickPlay; }
@@ -306,6 +310,32 @@ class CmafGroupSettings {
   template <typename ImageBasedTrickPlaySettingsT = CmafImageBasedTrickPlaySettings>
   CmafGroupSettings& WithImageBasedTrickPlaySettings(ImageBasedTrickPlaySettingsT&& value) {
     SetImageBasedTrickPlaySettings(std::forward<ImageBasedTrickPlaySettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Specify multiple image-based trick play variants. Each entry creates a separate
+   * set of JPEG tile images with its own resolution, tile layout, and cadence
+   * settings. Set imageBasedTrickPlay to VARIANTS when using this setting.
+   */
+  inline const Aws::Vector<CmafImageBasedTrickPlayVariant>& GetImageBasedTrickPlayVariants() const { return m_imageBasedTrickPlayVariants; }
+  inline bool ImageBasedTrickPlayVariantsHasBeenSet() const { return m_imageBasedTrickPlayVariantsHasBeenSet; }
+  template <typename ImageBasedTrickPlayVariantsT = Aws::Vector<CmafImageBasedTrickPlayVariant>>
+  void SetImageBasedTrickPlayVariants(ImageBasedTrickPlayVariantsT&& value) {
+    m_imageBasedTrickPlayVariantsHasBeenSet = true;
+    m_imageBasedTrickPlayVariants = std::forward<ImageBasedTrickPlayVariantsT>(value);
+  }
+  template <typename ImageBasedTrickPlayVariantsT = Aws::Vector<CmafImageBasedTrickPlayVariant>>
+  CmafGroupSettings& WithImageBasedTrickPlayVariants(ImageBasedTrickPlayVariantsT&& value) {
+    SetImageBasedTrickPlayVariants(std::forward<ImageBasedTrickPlayVariantsT>(value));
+    return *this;
+  }
+  template <typename ImageBasedTrickPlayVariantsT = CmafImageBasedTrickPlayVariant>
+  CmafGroupSettings& AddImageBasedTrickPlayVariants(ImageBasedTrickPlayVariantsT&& value) {
+    m_imageBasedTrickPlayVariantsHasBeenSet = true;
+    m_imageBasedTrickPlayVariants.emplace_back(std::forward<ImageBasedTrickPlayVariantsT>(value));
     return *this;
   }
   ///@}
@@ -663,6 +693,8 @@ class CmafGroupSettings {
 
   CmafImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
 
+  Aws::Vector<CmafImageBasedTrickPlayVariant> m_imageBasedTrickPlayVariants;
+
   CmafManifestCompression m_manifestCompression{CmafManifestCompression::NOT_SET};
 
   CmafManifestDurationFormat m_manifestDurationFormat{CmafManifestDurationFormat::NOT_SET};
@@ -706,6 +738,7 @@ class CmafGroupSettings {
   bool m_fragmentLengthHasBeenSet = false;
   bool m_imageBasedTrickPlayHasBeenSet = false;
   bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
+  bool m_imageBasedTrickPlayVariantsHasBeenSet = false;
   bool m_manifestCompressionHasBeenSet = false;
   bool m_manifestDurationFormatHasBeenSet = false;
   bool m_minBufferTimeHasBeenSet = false;

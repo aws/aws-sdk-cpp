@@ -8,6 +8,7 @@
 #include <aws/mediaconvert/model/CodecMetadata.h>
 #include <aws/mediaconvert/model/ColorPrimaries.h>
 #include <aws/mediaconvert/model/FrameRate.h>
+#include <aws/mediaconvert/model/HdrMetadata.h>
 #include <aws/mediaconvert/model/MatrixCoefficients.h>
 #include <aws/mediaconvert/model/TransferCharacteristics.h>
 
@@ -130,6 +131,26 @@ class VideoProperties {
 
   ///@{
   /**
+   * HDR (High Dynamic Range) metadata extracted from the container, including
+   * mastering display color volume and content light level information. This
+   * metadata is present in HDR10 and similar HDR content.
+   */
+  inline const HdrMetadata& GetHdrMetadata() const { return m_hdrMetadata; }
+  inline bool HdrMetadataHasBeenSet() const { return m_hdrMetadataHasBeenSet; }
+  template <typename HdrMetadataT = HdrMetadata>
+  void SetHdrMetadata(HdrMetadataT&& value) {
+    m_hdrMetadataHasBeenSet = true;
+    m_hdrMetadata = std::forward<HdrMetadataT>(value);
+  }
+  template <typename HdrMetadataT = HdrMetadata>
+  VideoProperties& WithHdrMetadata(HdrMetadataT&& value) {
+    SetHdrMetadata(std::forward<HdrMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * The height of the video track, in pixels.
    */
   inline int GetHeight() const { return m_height; }
@@ -158,6 +179,26 @@ class VideoProperties {
   }
   inline VideoProperties& WithMatrixCoefficients(MatrixCoefficients value) {
     SetMatrixCoefficients(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * The clockwise rotation angle of the video track, in degrees, as derived from
+   * container-level metadata (e.g. the MP4 tkhd transformation matrix or the
+   * Matroska ProjectionPoseRoll element). Common values are 90, 180, and 270. This
+   * field is null when no rotation metadata is present or when the rotation is 0
+   * degrees. For MP4, non-standard transformation matrices also yield null.
+   */
+  inline int GetRotation() const { return m_rotation; }
+  inline bool RotationHasBeenSet() const { return m_rotationHasBeenSet; }
+  inline void SetRotation(int value) {
+    m_rotationHasBeenSet = true;
+    m_rotation = value;
+  }
+  inline VideoProperties& WithRotation(int value) {
+    SetRotation(value);
     return *this;
   }
   ///@}
@@ -206,9 +247,13 @@ class VideoProperties {
 
   FrameRate m_frameRate;
 
+  HdrMetadata m_hdrMetadata;
+
   int m_height{0};
 
   MatrixCoefficients m_matrixCoefficients{MatrixCoefficients::NOT_SET};
+
+  int m_rotation{0};
 
   TransferCharacteristics m_transferCharacteristics{TransferCharacteristics::NOT_SET};
 
@@ -218,8 +263,10 @@ class VideoProperties {
   bool m_codecMetadataHasBeenSet = false;
   bool m_colorPrimariesHasBeenSet = false;
   bool m_frameRateHasBeenSet = false;
+  bool m_hdrMetadataHasBeenSet = false;
   bool m_heightHasBeenSet = false;
   bool m_matrixCoefficientsHasBeenSet = false;
+  bool m_rotationHasBeenSet = false;
   bool m_transferCharacteristicsHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
