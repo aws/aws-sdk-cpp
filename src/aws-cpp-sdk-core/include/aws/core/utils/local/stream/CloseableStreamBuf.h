@@ -6,6 +6,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <cstdint>
 #include <memory>
 
 namespace Aws {
