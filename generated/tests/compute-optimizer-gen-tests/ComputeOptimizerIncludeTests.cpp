@@ -143,6 +143,7 @@
 #include <aws/compute-optimizer/model/Gpu.h>
 #include <aws/compute-optimizer/model/GpuInfo.h>
 #include <aws/compute-optimizer/model/Idle.h>
+#include <aws/compute-optimizer/model/IdleDimension.h>
 #include <aws/compute-optimizer/model/IdleEstimatedMonthlySavings.h>
 #include <aws/compute-optimizer/model/IdleFinding.h>
 #include <aws/compute-optimizer/model/IdleMetricName.h>

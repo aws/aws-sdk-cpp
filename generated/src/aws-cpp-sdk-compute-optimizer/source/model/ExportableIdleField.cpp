@@ -43,6 +43,26 @@ static const int UtilizationMetricsPacketsInFromSourceMaximum_HASH =
     HashingUtils::HashString("UtilizationMetricsPacketsInFromSourceMaximum");
 static const int UtilizationMetricsPacketsInFromDestinationMaximum_HASH =
     HashingUtils::HashString("UtilizationMetricsPacketsInFromDestinationMaximum");
+static const int UtilizationMetricsConsumedReadCapacityUnitsSum_HASH =
+    HashingUtils::HashString("UtilizationMetricsConsumedReadCapacityUnitsSum");
+static const int UtilizationMetricsConsumedWriteCapacityUnitsSum_HASH =
+    HashingUtils::HashString("UtilizationMetricsConsumedWriteCapacityUnitsSum");
+static const int UtilizationMetricsNewConnectionsSum_HASH = HashingUtils::HashString("UtilizationMetricsNewConnectionsSum");
+static const int UtilizationMetricsEngineCPUUtilizationMaximum_HASH =
+    HashingUtils::HashString("UtilizationMetricsEngineCPUUtilizationMaximum");
+static const int UtilizationMetricsCacheHitsSum_HASH = HashingUtils::HashString("UtilizationMetricsCacheHitsSum");
+static const int UtilizationMetricsCacheMissesSum_HASH = HashingUtils::HashString("UtilizationMetricsCacheMissesSum");
+static const int UtilizationMetricsKeyspaceHitsSum_HASH = HashingUtils::HashString("UtilizationMetricsKeyspaceHitsSum");
+static const int UtilizationMetricsKeyspaceMissesSum_HASH = HashingUtils::HashString("UtilizationMetricsKeyspaceMissesSum");
+static const int UtilizationMetricsIsIdleMinimum_HASH = HashingUtils::HashString("UtilizationMetricsIsIdleMinimum");
+static const int UtilizationMetricsUserConnectedSum_HASH = HashingUtils::HashString("UtilizationMetricsUserConnectedSum");
+static const int UtilizationMetricsInvocationsSum_HASH = HashingUtils::HashString("UtilizationMetricsInvocationsSum");
+static const int UtilizationMetricsGetTypeCmdsSum_HASH = HashingUtils::HashString("UtilizationMetricsGetTypeCmdsSum");
+static const int UtilizationMetricsSetTypeCmdsSum_HASH = HashingUtils::HashString("UtilizationMetricsSetTypeCmdsSum");
+static const int UtilizationMetricsElastiCacheProcessingUnitsSum_HASH =
+    HashingUtils::HashString("UtilizationMetricsElastiCacheProcessingUnitsSum");
+static const int UtilizationMetricsCurrConnectionsSum_HASH = HashingUtils::HashString("UtilizationMetricsCurrConnectionsSum");
+static const int UtilizationMetricsDatabaseConnectionsSum_HASH = HashingUtils::HashString("UtilizationMetricsDatabaseConnectionsSum");
 static const int Finding_HASH = HashingUtils::HashString("Finding");
 static const int FindingDescription_HASH = HashingUtils::HashString("FindingDescription");
 static const int Tags_HASH = HashingUtils::HashString("Tags");
@@ -89,6 +109,38 @@ ExportableIdleField GetExportableIdleFieldForName(const Aws::String& name) {
     return ExportableIdleField::UtilizationMetricsPacketsInFromSourceMaximum;
   } else if (hashCode == UtilizationMetricsPacketsInFromDestinationMaximum_HASH) {
     return ExportableIdleField::UtilizationMetricsPacketsInFromDestinationMaximum;
+  } else if (hashCode == UtilizationMetricsConsumedReadCapacityUnitsSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsConsumedReadCapacityUnitsSum;
+  } else if (hashCode == UtilizationMetricsConsumedWriteCapacityUnitsSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsConsumedWriteCapacityUnitsSum;
+  } else if (hashCode == UtilizationMetricsNewConnectionsSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsNewConnectionsSum;
+  } else if (hashCode == UtilizationMetricsEngineCPUUtilizationMaximum_HASH) {
+    return ExportableIdleField::UtilizationMetricsEngineCPUUtilizationMaximum;
+  } else if (hashCode == UtilizationMetricsCacheHitsSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsCacheHitsSum;
+  } else if (hashCode == UtilizationMetricsCacheMissesSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsCacheMissesSum;
+  } else if (hashCode == UtilizationMetricsKeyspaceHitsSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsKeyspaceHitsSum;
+  } else if (hashCode == UtilizationMetricsKeyspaceMissesSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsKeyspaceMissesSum;
+  } else if (hashCode == UtilizationMetricsIsIdleMinimum_HASH) {
+    return ExportableIdleField::UtilizationMetricsIsIdleMinimum;
+  } else if (hashCode == UtilizationMetricsUserConnectedSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsUserConnectedSum;
+  } else if (hashCode == UtilizationMetricsInvocationsSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsInvocationsSum;
+  } else if (hashCode == UtilizationMetricsGetTypeCmdsSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsGetTypeCmdsSum;
+  } else if (hashCode == UtilizationMetricsSetTypeCmdsSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsSetTypeCmdsSum;
+  } else if (hashCode == UtilizationMetricsElastiCacheProcessingUnitsSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsElastiCacheProcessingUnitsSum;
+  } else if (hashCode == UtilizationMetricsCurrConnectionsSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsCurrConnectionsSum;
+  } else if (hashCode == UtilizationMetricsDatabaseConnectionsSum_HASH) {
+    return ExportableIdleField::UtilizationMetricsDatabaseConnectionsSum;
   } else if (hashCode == Finding_HASH) {
     return ExportableIdleField::Finding;
   } else if (hashCode == FindingDescription_HASH) {
@@ -149,6 +201,38 @@ Aws::String GetNameForExportableIdleField(ExportableIdleField enumValue) {
       return "UtilizationMetricsPacketsInFromSourceMaximum";
     case ExportableIdleField::UtilizationMetricsPacketsInFromDestinationMaximum:
       return "UtilizationMetricsPacketsInFromDestinationMaximum";
+    case ExportableIdleField::UtilizationMetricsConsumedReadCapacityUnitsSum:
+      return "UtilizationMetricsConsumedReadCapacityUnitsSum";
+    case ExportableIdleField::UtilizationMetricsConsumedWriteCapacityUnitsSum:
+      return "UtilizationMetricsConsumedWriteCapacityUnitsSum";
+    case ExportableIdleField::UtilizationMetricsNewConnectionsSum:
+      return "UtilizationMetricsNewConnectionsSum";
+    case ExportableIdleField::UtilizationMetricsEngineCPUUtilizationMaximum:
+      return "UtilizationMetricsEngineCPUUtilizationMaximum";
+    case ExportableIdleField::UtilizationMetricsCacheHitsSum:
+      return "UtilizationMetricsCacheHitsSum";
+    case ExportableIdleField::UtilizationMetricsCacheMissesSum:
+      return "UtilizationMetricsCacheMissesSum";
+    case ExportableIdleField::UtilizationMetricsKeyspaceHitsSum:
+      return "UtilizationMetricsKeyspaceHitsSum";
+    case ExportableIdleField::UtilizationMetricsKeyspaceMissesSum:
+      return "UtilizationMetricsKeyspaceMissesSum";
+    case ExportableIdleField::UtilizationMetricsIsIdleMinimum:
+      return "UtilizationMetricsIsIdleMinimum";
+    case ExportableIdleField::UtilizationMetricsUserConnectedSum:
+      return "UtilizationMetricsUserConnectedSum";
+    case ExportableIdleField::UtilizationMetricsInvocationsSum:
+      return "UtilizationMetricsInvocationsSum";
+    case ExportableIdleField::UtilizationMetricsGetTypeCmdsSum:
+      return "UtilizationMetricsGetTypeCmdsSum";
+    case ExportableIdleField::UtilizationMetricsSetTypeCmdsSum:
+      return "UtilizationMetricsSetTypeCmdsSum";
+    case ExportableIdleField::UtilizationMetricsElastiCacheProcessingUnitsSum:
+      return "UtilizationMetricsElastiCacheProcessingUnitsSum";
+    case ExportableIdleField::UtilizationMetricsCurrConnectionsSum:
+      return "UtilizationMetricsCurrConnectionsSum";
+    case ExportableIdleField::UtilizationMetricsDatabaseConnectionsSum:
+      return "UtilizationMetricsDatabaseConnectionsSum";
     case ExportableIdleField::Finding:
       return "Finding";
     case ExportableIdleField::FindingDescription:

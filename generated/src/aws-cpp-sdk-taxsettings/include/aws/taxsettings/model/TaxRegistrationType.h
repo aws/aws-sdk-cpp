@@ -10,7 +10,7 @@
 namespace Aws {
 namespace TaxSettings {
 namespace Model {
-enum class TaxRegistrationType { NOT_SET, VAT, GST, CPF, CNPJ, SST, TIN, NRIC };
+enum class TaxRegistrationType { NOT_SET, VAT, GST, CPF, CNPJ, SST, TIN, NRIC, PAN, NIP };
 
 namespace TaxRegistrationTypeMapper {
 AWS_TAXSETTINGS_API TaxRegistrationType GetTaxRegistrationTypeForName(const Aws::String& name);

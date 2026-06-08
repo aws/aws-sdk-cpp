@@ -22,6 +22,8 @@ static const int CNPJ_HASH = HashingUtils::HashString("CNPJ");
 static const int SST_HASH = HashingUtils::HashString("SST");
 static const int TIN_HASH = HashingUtils::HashString("TIN");
 static const int NRIC_HASH = HashingUtils::HashString("NRIC");
+static const int PAN_HASH = HashingUtils::HashString("PAN");
+static const int NIP_HASH = HashingUtils::HashString("NIP");
 
 TaxRegistrationType GetTaxRegistrationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +41,10 @@ TaxRegistrationType GetTaxRegistrationTypeForName(const Aws::String& name) {
     return TaxRegistrationType::TIN;
   } else if (hashCode == NRIC_HASH) {
     return TaxRegistrationType::NRIC;
+  } else if (hashCode == PAN_HASH) {
+    return TaxRegistrationType::PAN;
+  } else if (hashCode == NIP_HASH) {
+    return TaxRegistrationType::NIP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +73,10 @@ Aws::String GetNameForTaxRegistrationType(TaxRegistrationType enumValue) {
       return "TIN";
     case TaxRegistrationType::NRIC:
       return "NRIC";
+    case TaxRegistrationType::PAN:
+      return "PAN";
+    case TaxRegistrationType::NIP:
+      return "NIP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

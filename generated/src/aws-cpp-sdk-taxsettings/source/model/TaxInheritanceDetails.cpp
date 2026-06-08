@@ -18,13 +18,13 @@ namespace Model {
 TaxInheritanceDetails::TaxInheritanceDetails(JsonView jsonValue) { *this = jsonValue; }
 
 TaxInheritanceDetails& TaxInheritanceDetails::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("inheritanceObtainedReason")) {
-    m_inheritanceObtainedReason = jsonValue.GetString("inheritanceObtainedReason");
-    m_inheritanceObtainedReasonHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("parentEntityId")) {
     m_parentEntityId = jsonValue.GetString("parentEntityId");
     m_parentEntityIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("inheritanceObtainedReason")) {
+    m_inheritanceObtainedReason = jsonValue.GetString("inheritanceObtainedReason");
+    m_inheritanceObtainedReasonHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ TaxInheritanceDetails& TaxInheritanceDetails::operator=(JsonView jsonValue) {
 JsonValue TaxInheritanceDetails::Jsonize() const {
   JsonValue payload;
 
-  if (m_inheritanceObtainedReasonHasBeenSet) {
-    payload.WithString("inheritanceObtainedReason", m_inheritanceObtainedReason);
-  }
-
   if (m_parentEntityIdHasBeenSet) {
     payload.WithString("parentEntityId", m_parentEntityId);
+  }
+
+  if (m_inheritanceObtainedReasonHasBeenSet) {
+    payload.WithString("inheritanceObtainedReason", m_inheritanceObtainedReason);
   }
 
   return payload;

@@ -54,6 +54,23 @@ class EnableOperatorAppResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The URL for operators to access the Operator App</p>
+   */
+  inline const Aws::String& GetOperatorAppUrl() const { return m_operatorAppUrl; }
+  template <typename OperatorAppUrlT = Aws::String>
+  void SetOperatorAppUrl(OperatorAppUrlT&& value) {
+    m_operatorAppUrlHasBeenSet = true;
+    m_operatorAppUrl = std::forward<OperatorAppUrlT>(value);
+  }
+  template <typename OperatorAppUrlT = Aws::String>
+  EnableOperatorAppResult& WithOperatorAppUrl(OperatorAppUrlT&& value) {
+    SetOperatorAppUrl(std::forward<OperatorAppUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const IamAuthConfiguration& GetIam() const { return m_iam; }
   template <typename IamT = IamAuthConfiguration>
@@ -117,6 +134,8 @@ class EnableOperatorAppResult {
  private:
   Aws::String m_agentSpaceId;
 
+  Aws::String m_operatorAppUrl;
+
   IamAuthConfiguration m_iam;
 
   IdcAuthConfiguration m_idc;
@@ -126,6 +145,7 @@ class EnableOperatorAppResult {
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agentSpaceIdHasBeenSet = false;
+  bool m_operatorAppUrlHasBeenSet = false;
   bool m_iamHasBeenSet = false;
   bool m_idcHasBeenSet = false;
   bool m_idpHasBeenSet = false;

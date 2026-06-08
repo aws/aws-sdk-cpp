@@ -72,22 +72,6 @@ class PutTaxExemptionRequest : public TaxSettingsRequest {
   ///@}
 
   ///@{
-
-  inline const ExemptionCertificate& GetExemptionCertificate() const { return m_exemptionCertificate; }
-  inline bool ExemptionCertificateHasBeenSet() const { return m_exemptionCertificateHasBeenSet; }
-  template <typename ExemptionCertificateT = ExemptionCertificate>
-  void SetExemptionCertificate(ExemptionCertificateT&& value) {
-    m_exemptionCertificateHasBeenSet = true;
-    m_exemptionCertificate = std::forward<ExemptionCertificateT>(value);
-  }
-  template <typename ExemptionCertificateT = ExemptionCertificate>
-  PutTaxExemptionRequest& WithExemptionCertificate(ExemptionCertificateT&& value) {
-    SetExemptionCertificate(std::forward<ExemptionCertificateT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
   /**
    * <p>The exemption type. Use the supported tax exemption type description. </p>
    */
@@ -104,18 +88,34 @@ class PutTaxExemptionRequest : public TaxSettingsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const ExemptionCertificate& GetExemptionCertificate() const { return m_exemptionCertificate; }
+  inline bool ExemptionCertificateHasBeenSet() const { return m_exemptionCertificateHasBeenSet; }
+  template <typename ExemptionCertificateT = ExemptionCertificate>
+  void SetExemptionCertificate(ExemptionCertificateT&& value) {
+    m_exemptionCertificateHasBeenSet = true;
+    m_exemptionCertificate = std::forward<ExemptionCertificateT>(value);
+  }
+  template <typename ExemptionCertificateT = ExemptionCertificate>
+  PutTaxExemptionRequest& WithExemptionCertificate(ExemptionCertificateT&& value) {
+    SetExemptionCertificate(std::forward<ExemptionCertificateT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
 
   Authority m_authority;
 
-  ExemptionCertificate m_exemptionCertificate;
-
   Aws::String m_exemptionType;
+
+  ExemptionCertificate m_exemptionCertificate;
   bool m_accountIdsHasBeenSet = false;
   bool m_authorityHasBeenSet = false;
-  bool m_exemptionCertificateHasBeenSet = false;
   bool m_exemptionTypeHasBeenSet = false;
+  bool m_exemptionCertificateHasBeenSet = false;
 };
 
 }  // namespace Model

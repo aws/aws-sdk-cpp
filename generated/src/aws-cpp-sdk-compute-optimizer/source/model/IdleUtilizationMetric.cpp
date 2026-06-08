@@ -54,6 +54,35 @@ IdleUtilizationMetric& IdleUtilizationMetric::operator=(const std::shared_ptr<Aw
                   m_value = val.value();
                 }
                 m_valueHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "dimensions") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_dimensions.push_back(IdleDimension(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_dimensions.push_back(IdleDimension(decoder));
+                    }
+                  }
+                }
+                m_dimensionsHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -105,6 +134,35 @@ IdleUtilizationMetric& IdleUtilizationMetric::operator=(const std::shared_ptr<Aw
                 m_value = val.value();
               }
               m_valueHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "dimensions") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_dimensions.push_back(IdleDimension(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_dimensions.push_back(IdleDimension(decoder));
+                  }
+                }
+              }
+              m_dimensionsHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -130,6 +188,9 @@ void IdleUtilizationMetric::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) con
   if (m_valueHasBeenSet) {
     mapSize++;
   }
+  if (m_dimensionsHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -146,6 +207,14 @@ void IdleUtilizationMetric::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) con
   if (m_valueHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("value"));
     encoder.WriteFloat(m_value);
+  }
+
+  if (m_dimensionsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("dimensions"));
+    encoder.WriteArrayStart(m_dimensions.size());
+    for (const auto& item_0 : m_dimensions) {
+      item_0.CborEncode(encoder);
+    }
   }
 }
 

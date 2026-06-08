@@ -22,9 +22,17 @@ AccountMetaData& AccountMetaData::operator=(JsonView jsonValue) {
     m_accountName = jsonValue.GetString("accountName");
     m_accountNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("seller")) {
+    m_seller = jsonValue.GetString("seller");
+    m_sellerHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("address")) {
     m_address = jsonValue.GetObject("address");
     m_addressHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("addressType")) {
+    m_addressType = AddressRoleTypeMapper::GetAddressRoleTypeForName(jsonValue.GetString("addressType"));
+    m_addressTypeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("addressRoleMap")) {
     Aws::Map<Aws::String, JsonView> addressRoleMapJsonMap = jsonValue.GetObject("addressRoleMap").GetAllObjects();
@@ -32,14 +40,6 @@ AccountMetaData& AccountMetaData::operator=(JsonView jsonValue) {
       m_addressRoleMap[AddressRoleTypeMapper::GetAddressRoleTypeForName(addressRoleMapItem.first)] = addressRoleMapItem.second.AsObject();
     }
     m_addressRoleMapHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("addressType")) {
-    m_addressType = AddressRoleTypeMapper::GetAddressRoleTypeForName(jsonValue.GetString("addressType"));
-    m_addressTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("seller")) {
-    m_seller = jsonValue.GetString("seller");
-    m_sellerHasBeenSet = true;
   }
   return *this;
 }
@@ -51,8 +51,16 @@ JsonValue AccountMetaData::Jsonize() const {
     payload.WithString("accountName", m_accountName);
   }
 
+  if (m_sellerHasBeenSet) {
+    payload.WithString("seller", m_seller);
+  }
+
   if (m_addressHasBeenSet) {
     payload.WithObject("address", m_address.Jsonize());
+  }
+
+  if (m_addressTypeHasBeenSet) {
+    payload.WithString("addressType", AddressRoleTypeMapper::GetNameForAddressRoleType(m_addressType));
   }
 
   if (m_addressRoleMapHasBeenSet) {
@@ -62,14 +70,6 @@ JsonValue AccountMetaData::Jsonize() const {
                                        addressRoleMapItem.second.Jsonize());
     }
     payload.WithObject("addressRoleMap", std::move(addressRoleMapJsonMap));
-  }
-
-  if (m_addressTypeHasBeenSet) {
-    payload.WithString("addressType", AddressRoleTypeMapper::GetNameForAddressRoleType(m_addressType));
-  }
-
-  if (m_sellerHasBeenSet) {
-    payload.WithString("seller", m_seller);
   }
 
   return payload;

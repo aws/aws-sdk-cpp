@@ -38,9 +38,9 @@ RegisteredMCPServerSigV4Details& RegisteredMCPServerSigV4Details::operator=(Json
     m_service = jsonValue.GetString("service");
     m_serviceHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("roleArn")) {
-    m_roleArn = jsonValue.GetString("roleArn");
-    m_roleArnHasBeenSet = true;
+  if (jsonValue.ValueExists("mcpRoleArn")) {
+    m_mcpRoleArn = jsonValue.GetString("mcpRoleArn");
+    m_mcpRoleArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("customHeaders")) {
     Aws::Map<Aws::String, JsonView> customHeadersJsonMap = jsonValue.GetObject("customHeaders").GetAllObjects();
@@ -75,8 +75,8 @@ JsonValue RegisteredMCPServerSigV4Details::Jsonize() const {
     payload.WithString("service", m_service);
   }
 
-  if (m_roleArnHasBeenSet) {
-    payload.WithString("roleArn", m_roleArn);
+  if (m_mcpRoleArnHasBeenSet) {
+    payload.WithString("mcpRoleArn", m_mcpRoleArn);
   }
 
   if (m_customHeadersHasBeenSet) {

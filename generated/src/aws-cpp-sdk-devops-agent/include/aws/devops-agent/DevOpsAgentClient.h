@@ -23,7 +23,7 @@ namespace DevOpsAgent {
  * experienced DevOps engineer would. It learns your applications and their
  * relationships. It works with your observability tools, runbooks, code
  * repositories, and CI/CD pipelines. The agent correlates telemetry, code, and
- * deployment data across all of them. </p>
+ * deployment data across all of them.</p>
  */
 class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<DevOpsAgentClient>,
@@ -141,6 +141,57 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a new asset in the specified agent space</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateAsset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAssetOutcome CreateAsset(const Model::CreateAssetRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAsset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateAssetRequestT = Model::CreateAssetRequest>
+  Model::CreateAssetOutcomeCallable CreateAssetCallable(const CreateAssetRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::CreateAsset, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAsset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateAssetRequestT = Model::CreateAssetRequest>
+  void CreateAssetAsync(const CreateAssetRequestT& request, const CreateAssetResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::CreateAsset, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a file in an asset</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateAssetFile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAssetFileOutcome CreateAssetFile(const Model::CreateAssetFileRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAssetFile that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateAssetFileRequestT = Model::CreateAssetFileRequest>
+  Model::CreateAssetFileOutcomeCallable CreateAssetFileCallable(const CreateAssetFileRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::CreateAssetFile, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAssetFile that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateAssetFileRequestT = Model::CreateAssetFileRequest>
+  void CreateAssetFileAsync(const CreateAssetFileRequestT& request, const CreateAssetFileResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::CreateAssetFile, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new backlog task in the specified agent space</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateBacklogTask">AWS
@@ -246,6 +297,57 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   void DeleteAgentSpaceAsync(const DeleteAgentSpaceRequestT& request, const DeleteAgentSpaceResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DevOpsAgentClient::DeleteAgentSpace, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an asset and all its files from the specified agent
+   * space</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeleteAsset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAssetOutcome DeleteAsset(const Model::DeleteAssetRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAsset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteAssetRequestT = Model::DeleteAssetRequest>
+  Model::DeleteAssetOutcomeCallable DeleteAssetCallable(const DeleteAssetRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::DeleteAsset, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAsset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteAssetRequestT = Model::DeleteAssetRequest>
+  void DeleteAssetAsync(const DeleteAssetRequestT& request, const DeleteAssetResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::DeleteAsset, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a file from an asset</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeleteAssetFile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAssetFileOutcome DeleteAssetFile(const Model::DeleteAssetFileRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAssetFile that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteAssetFileRequestT = Model::DeleteAssetFileRequest>
+  Model::DeleteAssetFileOutcomeCallable DeleteAssetFileCallable(const DeleteAssetFileRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::DeleteAssetFile, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAssetFile that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteAssetFileRequestT = Model::DeleteAssetFileRequest>
+  void DeleteAssetFileAsync(const DeleteAssetFileRequestT& request, const DeleteAssetFileResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::DeleteAssetFile, request, handler, context);
   }
 
   /**
@@ -467,6 +569,81 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Gets an asset from the specified agent space</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAsset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAssetOutcome GetAsset(const Model::GetAssetRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAsset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetAssetRequestT = Model::GetAssetRequest>
+  Model::GetAssetOutcomeCallable GetAssetCallable(const GetAssetRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::GetAsset, request);
+  }
+
+  /**
+   * An Async wrapper for GetAsset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetAssetRequestT = Model::GetAssetRequest>
+  void GetAssetAsync(const GetAssetRequestT& request, const GetAssetResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::GetAsset, request, handler, context);
+  }
+
+  /**
+   * <p>Gets an asset's content as a zip bundle</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAssetContent">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAssetContentOutcome GetAssetContent(const Model::GetAssetContentRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAssetContent that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetAssetContentRequestT = Model::GetAssetContentRequest>
+  Model::GetAssetContentOutcomeCallable GetAssetContentCallable(const GetAssetContentRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::GetAssetContent, request);
+  }
+
+  /**
+   * An Async wrapper for GetAssetContent that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetAssetContentRequestT = Model::GetAssetContentRequest>
+  void GetAssetContentAsync(const GetAssetContentRequestT& request, const GetAssetContentResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::GetAssetContent, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a file from an asset</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAssetFile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAssetFileOutcome GetAssetFile(const Model::GetAssetFileRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAssetFile that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetAssetFileRequestT = Model::GetAssetFileRequest>
+  Model::GetAssetFileOutcomeCallable GetAssetFileCallable(const GetAssetFileRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::GetAssetFile, request);
+  }
+
+  /**
+   * An Async wrapper for GetAssetFile that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetAssetFileRequestT = Model::GetAssetFileRequest>
+  void GetAssetFileAsync(const GetAssetFileRequestT& request, const GetAssetFileResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::GetAssetFile, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves given associations configured for a specific
    * AgentSpace.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAssociation">AWS
@@ -620,6 +797,109 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                             const ListAgentSpacesRequestT& request = {}) const {
     return SubmitAsync(&DevOpsAgentClient::ListAgentSpaces, request, handler, context);
+  }
+
+  /**
+   * <p>Lists files in an asset</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAssetFiles">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAssetFilesOutcome ListAssetFiles(const Model::ListAssetFilesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAssetFiles that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListAssetFilesRequestT = Model::ListAssetFilesRequest>
+  Model::ListAssetFilesOutcomeCallable ListAssetFilesCallable(const ListAssetFilesRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::ListAssetFiles, request);
+  }
+
+  /**
+   * An Async wrapper for ListAssetFiles that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListAssetFilesRequestT = Model::ListAssetFilesRequest>
+  void ListAssetFilesAsync(const ListAssetFilesRequestT& request, const ListAssetFilesResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::ListAssetFiles, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the supported asset types</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAssetTypes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAssetTypesOutcome ListAssetTypes(const Model::ListAssetTypesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAssetTypes that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListAssetTypesRequestT = Model::ListAssetTypesRequest>
+  Model::ListAssetTypesOutcomeCallable ListAssetTypesCallable(const ListAssetTypesRequestT& request = {}) const {
+    return SubmitCallable(&DevOpsAgentClient::ListAssetTypes, request);
+  }
+
+  /**
+   * An Async wrapper for ListAssetTypes that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListAssetTypesRequestT = Model::ListAssetTypesRequest>
+  void ListAssetTypesAsync(const ListAssetTypesResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const ListAssetTypesRequestT& request = {}) const {
+    return SubmitAsync(&DevOpsAgentClient::ListAssetTypes, request, handler, context);
+  }
+
+  /**
+   * <p>Lists versions of an asset in the specified agent space</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAssetVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAssetVersionsOutcome ListAssetVersions(const Model::ListAssetVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAssetVersions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAssetVersionsRequestT = Model::ListAssetVersionsRequest>
+  Model::ListAssetVersionsOutcomeCallable ListAssetVersionsCallable(const ListAssetVersionsRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::ListAssetVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListAssetVersions that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListAssetVersionsRequestT = Model::ListAssetVersionsRequest>
+  void ListAssetVersionsAsync(const ListAssetVersionsRequestT& request, const ListAssetVersionsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::ListAssetVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists assets in the specified agent space</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAssets">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAssetsOutcome ListAssets(const Model::ListAssetsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAssets that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListAssetsRequestT = Model::ListAssetsRequest>
+  Model::ListAssetsOutcomeCallable ListAssetsCallable(const ListAssetsRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::ListAssets, request);
+  }
+
+  /**
+   * An Async wrapper for ListAssets that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListAssetsRequestT = Model::ListAssetsRequest>
+  void ListAssetsAsync(const ListAssetsRequestT& request, const ListAssetsResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::ListAssets, request, handler, context);
   }
 
   /**
@@ -1066,6 +1346,56 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   void UpdateAgentSpaceAsync(const UpdateAgentSpaceRequestT& request, const UpdateAgentSpaceResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DevOpsAgentClient::UpdateAgentSpace, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an asset in the specified agent space</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateAsset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAssetOutcome UpdateAsset(const Model::UpdateAssetRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAsset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateAssetRequestT = Model::UpdateAssetRequest>
+  Model::UpdateAssetOutcomeCallable UpdateAssetCallable(const UpdateAssetRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::UpdateAsset, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAsset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateAssetRequestT = Model::UpdateAssetRequest>
+  void UpdateAssetAsync(const UpdateAssetRequestT& request, const UpdateAssetResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::UpdateAsset, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a file in an asset</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateAssetFile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAssetFileOutcome UpdateAssetFile(const Model::UpdateAssetFileRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAssetFile that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateAssetFileRequestT = Model::UpdateAssetFileRequest>
+  Model::UpdateAssetFileOutcomeCallable UpdateAssetFileCallable(const UpdateAssetFileRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::UpdateAssetFile, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAssetFile that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateAssetFileRequestT = Model::UpdateAssetFileRequest>
+  void UpdateAssetFileAsync(const UpdateAssetFileRequestT& request, const UpdateAssetFileResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::UpdateAssetFile, request, handler, context);
   }
 
   /**

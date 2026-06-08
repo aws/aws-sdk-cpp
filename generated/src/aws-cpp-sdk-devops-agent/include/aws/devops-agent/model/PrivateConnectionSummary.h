@@ -9,6 +9,7 @@
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
 #include <aws/devops-agent/model/PrivateConnectionStatus.h>
 #include <aws/devops-agent/model/PrivateConnectionType.h>
+#include <aws/devops-agent/model/ResourceConfigDnsResolution.h>
 
 #include <utility>
 
@@ -178,6 +179,41 @@ class PrivateConnectionSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>DNS resolution mode for the Private Connection's resource gateway.</p>
+   */
+  inline ResourceConfigDnsResolution GetDnsResolution() const { return m_dnsResolution; }
+  inline bool DnsResolutionHasBeenSet() const { return m_dnsResolutionHasBeenSet; }
+  inline void SetDnsResolution(ResourceConfigDnsResolution value) {
+    m_dnsResolutionHasBeenSet = true;
+    m_dnsResolution = value;
+  }
+  inline PrivateConnectionSummary& WithDnsResolution(ResourceConfigDnsResolution value) {
+    SetDnsResolution(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Message describing the reason for a failed Private Connection, if
+   * applicable.</p>
+   */
+  inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
+  inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
+  template <typename FailureMessageT = Aws::String>
+  void SetFailureMessage(FailureMessageT&& value) {
+    m_failureMessageHasBeenSet = true;
+    m_failureMessage = std::forward<FailureMessageT>(value);
+  }
+  template <typename FailureMessageT = Aws::String>
+  PrivateConnectionSummary& WithFailureMessage(FailureMessageT&& value) {
+    SetFailureMessage(std::forward<FailureMessageT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -194,6 +230,10 @@ class PrivateConnectionSummary {
   PrivateConnectionStatus m_status{PrivateConnectionStatus::NOT_SET};
 
   Aws::Utils::DateTime m_certificateExpiryTime{};
+
+  ResourceConfigDnsResolution m_dnsResolution{ResourceConfigDnsResolution::NOT_SET};
+
+  Aws::String m_failureMessage;
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_resourceGatewayIdHasBeenSet = false;
@@ -202,6 +242,8 @@ class PrivateConnectionSummary {
   bool m_resourceConfigurationIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_certificateExpiryTimeHasBeenSet = false;
+  bool m_dnsResolutionHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
 };
 
 }  // namespace Model

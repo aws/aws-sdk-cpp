@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/taxsettings/TaxSettings_EXPORTS.h>
+#include <aws/taxsettings/model/CustomerType.h>
 
 #include <utility>
 
@@ -31,6 +32,25 @@ class ItalyAdditionalInfo {
   AWS_TAXSETTINGS_API ItalyAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
   AWS_TAXSETTINGS_API ItalyAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p> Additional tax information to specify for a TRN in Italy. Use
+   * CodiceDestinatario to receive your invoices via web service (API) or FTP. </p>
+   */
+  inline const Aws::String& GetSdiAccountId() const { return m_sdiAccountId; }
+  inline bool SdiAccountIdHasBeenSet() const { return m_sdiAccountIdHasBeenSet; }
+  template <typename SdiAccountIdT = Aws::String>
+  void SetSdiAccountId(SdiAccountIdT&& value) {
+    m_sdiAccountIdHasBeenSet = true;
+    m_sdiAccountId = std::forward<SdiAccountIdT>(value);
+  }
+  template <typename SdiAccountIdT = Aws::String>
+  ItalyAdditionalInfo& WithSdiAccountId(SdiAccountIdT&& value) {
+    SetSdiAccountId(std::forward<SdiAccountIdT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -72,25 +92,6 @@ class ItalyAdditionalInfo {
 
   ///@{
   /**
-   * <p> Additional tax information to specify for a TRN in Italy. Use
-   * CodiceDestinatario to receive your invoices via web service (API) or FTP. </p>
-   */
-  inline const Aws::String& GetSdiAccountId() const { return m_sdiAccountId; }
-  inline bool SdiAccountIdHasBeenSet() const { return m_sdiAccountIdHasBeenSet; }
-  template <typename SdiAccountIdT = Aws::String>
-  void SetSdiAccountId(SdiAccountIdT&& value) {
-    m_sdiAccountIdHasBeenSet = true;
-    m_sdiAccountId = std::forward<SdiAccountIdT>(value);
-  }
-  template <typename SdiAccountIdT = Aws::String>
-  ItalyAdditionalInfo& WithSdiAccountId(SdiAccountIdT&& value) {
-    SetSdiAccountId(std::forward<SdiAccountIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>List of service tax codes for your TRN in Italy. You can use your customer
    * tax code as part of a VAT Group. </p>
    */
@@ -107,18 +108,38 @@ class ItalyAdditionalInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The customer type for tax registration in Italy. Valid values are
+   * <code>Business</code> or <code>Individual</code>.</p>
+   */
+  inline CustomerType GetCustomerType() const { return m_customerType; }
+  inline bool CustomerTypeHasBeenSet() const { return m_customerTypeHasBeenSet; }
+  inline void SetCustomerType(CustomerType value) {
+    m_customerTypeHasBeenSet = true;
+    m_customerType = value;
+  }
+  inline ItalyAdditionalInfo& WithCustomerType(CustomerType value) {
+    SetCustomerType(value);
+    return *this;
+  }
+  ///@}
  private:
+  Aws::String m_sdiAccountId;
+
   Aws::String m_cigNumber;
 
   Aws::String m_cupNumber;
 
-  Aws::String m_sdiAccountId;
-
   Aws::String m_taxCode;
+
+  CustomerType m_customerType{CustomerType::NOT_SET};
+  bool m_sdiAccountIdHasBeenSet = false;
   bool m_cigNumberHasBeenSet = false;
   bool m_cupNumberHasBeenSet = false;
-  bool m_sdiAccountIdHasBeenSet = false;
   bool m_taxCodeHasBeenSet = false;
+  bool m_customerTypeHasBeenSet = false;
 };
 
 }  // namespace Model

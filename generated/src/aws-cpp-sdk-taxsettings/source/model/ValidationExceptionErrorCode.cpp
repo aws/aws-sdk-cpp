@@ -20,6 +20,8 @@ static const int ExpiredToken_HASH = HashingUtils::HashString("ExpiredToken");
 static const int InvalidToken_HASH = HashingUtils::HashString("InvalidToken");
 static const int FieldValidationFailed_HASH = HashingUtils::HashString("FieldValidationFailed");
 static const int MissingInput_HASH = HashingUtils::HashString("MissingInput");
+static const int NonIndiaCustomerCanNotSetPAN_HASH = HashingUtils::HashString("NonIndiaCustomerCanNotSetPAN");
+static const int GSTExistenceBlockSetPAN_HASH = HashingUtils::HashString("GSTExistenceBlockSetPAN");
 
 ValidationExceptionErrorCode GetValidationExceptionErrorCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +35,10 @@ ValidationExceptionErrorCode GetValidationExceptionErrorCodeForName(const Aws::S
     return ValidationExceptionErrorCode::FieldValidationFailed;
   } else if (hashCode == MissingInput_HASH) {
     return ValidationExceptionErrorCode::MissingInput;
+  } else if (hashCode == NonIndiaCustomerCanNotSetPAN_HASH) {
+    return ValidationExceptionErrorCode::NonIndiaCustomerCanNotSetPAN;
+  } else if (hashCode == GSTExistenceBlockSetPAN_HASH) {
+    return ValidationExceptionErrorCode::GSTExistenceBlockSetPAN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +63,10 @@ Aws::String GetNameForValidationExceptionErrorCode(ValidationExceptionErrorCode 
       return "FieldValidationFailed";
     case ValidationExceptionErrorCode::MissingInput:
       return "MissingInput";
+    case ValidationExceptionErrorCode::NonIndiaCustomerCanNotSetPAN:
+      return "NonIndiaCustomerCanNotSetPAN";
+    case ValidationExceptionErrorCode::GSTExistenceBlockSetPAN:
+      return "GSTExistenceBlockSetPAN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

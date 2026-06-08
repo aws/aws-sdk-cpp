@@ -26,6 +26,10 @@ EnableOperatorAppResult& EnableOperatorAppResult::operator=(const Aws::AmazonWeb
     m_agentSpaceId = jsonValue.GetString("agentSpaceId");
     m_agentSpaceIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("operatorAppUrl")) {
+    m_operatorAppUrl = jsonValue.GetString("operatorAppUrl");
+    m_operatorAppUrlHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("iam")) {
     m_iam = jsonValue.GetObject("iam");
     m_iamHasBeenSet = true;

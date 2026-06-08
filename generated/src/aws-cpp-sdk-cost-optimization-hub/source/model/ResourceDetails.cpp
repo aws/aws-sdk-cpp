@@ -94,6 +94,30 @@ ResourceDetails& ResourceDetails::operator=(JsonView jsonValue) {
     m_natGateway = jsonValue.GetObject("natGateway");
     m_natGatewayHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dynamoDbTable")) {
+    m_dynamoDbTable = jsonValue.GetObject("dynamoDbTable");
+    m_dynamoDbTableHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("elastiCacheCluster")) {
+    m_elastiCacheCluster = jsonValue.GetObject("elastiCacheCluster");
+    m_elastiCacheClusterHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("memoryDbCluster")) {
+    m_memoryDbCluster = jsonValue.GetObject("memoryDbCluster");
+    m_memoryDbClusterHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("documentDbCluster")) {
+    m_documentDbCluster = jsonValue.GetObject("documentDbCluster");
+    m_documentDbClusterHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("workSpaces")) {
+    m_workSpaces = jsonValue.GetObject("workSpaces");
+    m_workSpacesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sageMakerEndpoint")) {
+    m_sageMakerEndpoint = jsonValue.GetObject("sageMakerEndpoint");
+    m_sageMakerEndpointHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -174,6 +198,30 @@ JsonValue ResourceDetails::Jsonize() const {
 
   if (m_natGatewayHasBeenSet) {
     payload.WithObject("natGateway", m_natGateway.Jsonize());
+  }
+
+  if (m_dynamoDbTableHasBeenSet) {
+    payload.WithObject("dynamoDbTable", m_dynamoDbTable.Jsonize());
+  }
+
+  if (m_elastiCacheClusterHasBeenSet) {
+    payload.WithObject("elastiCacheCluster", m_elastiCacheCluster.Jsonize());
+  }
+
+  if (m_memoryDbClusterHasBeenSet) {
+    payload.WithObject("memoryDbCluster", m_memoryDbCluster.Jsonize());
+  }
+
+  if (m_documentDbClusterHasBeenSet) {
+    payload.WithObject("documentDbCluster", m_documentDbCluster.Jsonize());
+  }
+
+  if (m_workSpacesHasBeenSet) {
+    payload.WithObject("workSpaces", m_workSpaces.Jsonize());
+  }
+
+  if (m_sageMakerEndpointHasBeenSet) {
+    payload.WithObject("sageMakerEndpoint", m_sageMakerEndpoint.Jsonize());
   }
 
   return payload;

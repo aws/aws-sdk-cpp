@@ -34,25 +34,6 @@ class VietnamAdditionalInfo {
 
   ///@{
   /**
-   * <p>The electronic transaction code number on the tax return document. This field
-   * must be provided for successful API operation.</p>
-   */
-  inline const Aws::String& GetElectronicTransactionCodeNumber() const { return m_electronicTransactionCodeNumber; }
-  inline bool ElectronicTransactionCodeNumberHasBeenSet() const { return m_electronicTransactionCodeNumberHasBeenSet; }
-  template <typename ElectronicTransactionCodeNumberT = Aws::String>
-  void SetElectronicTransactionCodeNumber(ElectronicTransactionCodeNumberT&& value) {
-    m_electronicTransactionCodeNumberHasBeenSet = true;
-    m_electronicTransactionCodeNumber = std::forward<ElectronicTransactionCodeNumberT>(value);
-  }
-  template <typename ElectronicTransactionCodeNumberT = Aws::String>
-  VietnamAdditionalInfo& WithElectronicTransactionCodeNumber(ElectronicTransactionCodeNumberT&& value) {
-    SetElectronicTransactionCodeNumber(std::forward<ElectronicTransactionCodeNumberT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The enterprise identification number for tax registration. This field must be
    * provided for successful API operation.</p>
    */
@@ -66,6 +47,25 @@ class VietnamAdditionalInfo {
   template <typename EnterpriseIdentificationNumberT = Aws::String>
   VietnamAdditionalInfo& WithEnterpriseIdentificationNumber(EnterpriseIdentificationNumberT&& value) {
     SetEnterpriseIdentificationNumber(std::forward<EnterpriseIdentificationNumberT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The electronic transaction code number on the tax return document. This field
+   * must be provided for successful API operation.</p>
+   */
+  inline const Aws::String& GetElectronicTransactionCodeNumber() const { return m_electronicTransactionCodeNumber; }
+  inline bool ElectronicTransactionCodeNumberHasBeenSet() const { return m_electronicTransactionCodeNumberHasBeenSet; }
+  template <typename ElectronicTransactionCodeNumberT = Aws::String>
+  void SetElectronicTransactionCodeNumber(ElectronicTransactionCodeNumberT&& value) {
+    m_electronicTransactionCodeNumberHasBeenSet = true;
+    m_electronicTransactionCodeNumber = std::forward<ElectronicTransactionCodeNumberT>(value);
+  }
+  template <typename ElectronicTransactionCodeNumberT = Aws::String>
+  VietnamAdditionalInfo& WithElectronicTransactionCodeNumber(ElectronicTransactionCodeNumberT&& value) {
+    SetElectronicTransactionCodeNumber(std::forward<ElectronicTransactionCodeNumberT>(value));
     return *this;
   }
   ///@}
@@ -108,15 +108,15 @@ class VietnamAdditionalInfo {
   }
   ///@}
  private:
-  Aws::String m_electronicTransactionCodeNumber;
-
   Aws::String m_enterpriseIdentificationNumber;
+
+  Aws::String m_electronicTransactionCodeNumber;
 
   Aws::String m_paymentVoucherNumber;
 
   Aws::String m_paymentVoucherNumberDate;
-  bool m_electronicTransactionCodeNumberHasBeenSet = false;
   bool m_enterpriseIdentificationNumberHasBeenSet = false;
+  bool m_electronicTransactionCodeNumberHasBeenSet = false;
   bool m_paymentVoucherNumberHasBeenSet = false;
   bool m_paymentVoucherNumberDateHasBeenSet = false;
 };

@@ -92,42 +92,6 @@ class Address {
 
   ///@{
   /**
-   * <p>The city that the address is in. </p>
-   */
-  inline const Aws::String& GetCity() const { return m_city; }
-  inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
-  template <typename CityT = Aws::String>
-  void SetCity(CityT&& value) {
-    m_cityHasBeenSet = true;
-    m_city = std::forward<CityT>(value);
-  }
-  template <typename CityT = Aws::String>
-  Address& WithCity(CityT&& value) {
-    SetCity(std::forward<CityT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The country code for the country that the address is in. </p>
-   */
-  inline const Aws::String& GetCountryCode() const { return m_countryCode; }
-  inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
-  template <typename CountryCodeT = Aws::String>
-  void SetCountryCode(CountryCodeT&& value) {
-    m_countryCodeHasBeenSet = true;
-    m_countryCode = std::forward<CountryCodeT>(value);
-  }
-  template <typename CountryCodeT = Aws::String>
-  Address& WithCountryCode(CountryCodeT&& value) {
-    SetCountryCode(std::forward<CountryCodeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The district or county the address is located. </p>  <p>For addresses
    * in Brazil, this parameter uses the name of the neighborhood. When you set a TRN
    * in Brazil, use <code>districtOrCounty</code> for the neighborhood name.</p>
@@ -149,18 +113,18 @@ class Address {
 
   ///@{
   /**
-   * <p> The postal code associated with the address. </p>
+   * <p>The city that the address is in. </p>
    */
-  inline const Aws::String& GetPostalCode() const { return m_postalCode; }
-  inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }
-  template <typename PostalCodeT = Aws::String>
-  void SetPostalCode(PostalCodeT&& value) {
-    m_postalCodeHasBeenSet = true;
-    m_postalCode = std::forward<PostalCodeT>(value);
+  inline const Aws::String& GetCity() const { return m_city; }
+  inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
+  template <typename CityT = Aws::String>
+  void SetCity(CityT&& value) {
+    m_cityHasBeenSet = true;
+    m_city = std::forward<CityT>(value);
   }
-  template <typename PostalCodeT = Aws::String>
-  Address& WithPostalCode(PostalCodeT&& value) {
-    SetPostalCode(std::forward<PostalCodeT>(value));
+  template <typename CityT = Aws::String>
+  Address& WithCity(CityT&& value) {
+    SetCity(std::forward<CityT>(value));
     return *this;
   }
   ///@}
@@ -185,6 +149,42 @@ class Address {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The postal code associated with the address. </p>
+   */
+  inline const Aws::String& GetPostalCode() const { return m_postalCode; }
+  inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }
+  template <typename PostalCodeT = Aws::String>
+  void SetPostalCode(PostalCodeT&& value) {
+    m_postalCodeHasBeenSet = true;
+    m_postalCode = std::forward<PostalCodeT>(value);
+  }
+  template <typename PostalCodeT = Aws::String>
+  Address& WithPostalCode(PostalCodeT&& value) {
+    SetPostalCode(std::forward<PostalCodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The country code for the country that the address is in. </p>
+   */
+  inline const Aws::String& GetCountryCode() const { return m_countryCode; }
+  inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
+  template <typename CountryCodeT = Aws::String>
+  void SetCountryCode(CountryCodeT&& value) {
+    m_countryCodeHasBeenSet = true;
+    m_countryCode = std::forward<CountryCodeT>(value);
+  }
+  template <typename CountryCodeT = Aws::String>
+  Address& WithCountryCode(CountryCodeT&& value) {
+    SetCountryCode(std::forward<CountryCodeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_addressLine1;
 
@@ -192,23 +192,23 @@ class Address {
 
   Aws::String m_addressLine3;
 
+  Aws::String m_districtOrCounty;
+
   Aws::String m_city;
 
-  Aws::String m_countryCode;
-
-  Aws::String m_districtOrCounty;
+  Aws::String m_stateOrRegion;
 
   Aws::String m_postalCode;
 
-  Aws::String m_stateOrRegion;
+  Aws::String m_countryCode;
   bool m_addressLine1HasBeenSet = false;
   bool m_addressLine2HasBeenSet = false;
   bool m_addressLine3HasBeenSet = false;
-  bool m_cityHasBeenSet = false;
-  bool m_countryCodeHasBeenSet = false;
   bool m_districtOrCountyHasBeenSet = false;
-  bool m_postalCodeHasBeenSet = false;
+  bool m_cityHasBeenSet = false;
   bool m_stateOrRegionHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_countryCodeHasBeenSet = false;
 };
 
 }  // namespace Model

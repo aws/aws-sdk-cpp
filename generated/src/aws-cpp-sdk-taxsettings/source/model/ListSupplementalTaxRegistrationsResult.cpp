@@ -25,16 +25,16 @@ ListSupplementalTaxRegistrationsResult& ListSupplementalTaxRegistrationsResult::
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("taxRegistrations")) {
     Aws::Utils::Array<JsonView> taxRegistrationsJsonList = jsonValue.GetArray("taxRegistrations");
     for (unsigned taxRegistrationsIndex = 0; taxRegistrationsIndex < taxRegistrationsJsonList.GetLength(); ++taxRegistrationsIndex) {
       m_taxRegistrations.push_back(taxRegistrationsJsonList[taxRegistrationsIndex].AsObject());
     }
     m_taxRegistrationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

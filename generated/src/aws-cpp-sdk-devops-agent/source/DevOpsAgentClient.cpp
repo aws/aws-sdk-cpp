@@ -23,10 +23,14 @@
 #include <aws/devops-agent/DevOpsAgentErrorMarshaller.h>
 #include <aws/devops-agent/model/AssociateServiceRequest.h>
 #include <aws/devops-agent/model/CreateAgentSpaceRequest.h>
+#include <aws/devops-agent/model/CreateAssetFileRequest.h>
+#include <aws/devops-agent/model/CreateAssetRequest.h>
 #include <aws/devops-agent/model/CreateBacklogTaskRequest.h>
 #include <aws/devops-agent/model/CreateChatRequest.h>
 #include <aws/devops-agent/model/CreatePrivateConnectionRequest.h>
 #include <aws/devops-agent/model/DeleteAgentSpaceRequest.h>
+#include <aws/devops-agent/model/DeleteAssetFileRequest.h>
+#include <aws/devops-agent/model/DeleteAssetRequest.h>
 #include <aws/devops-agent/model/DeletePrivateConnectionRequest.h>
 #include <aws/devops-agent/model/DeregisterServiceRequest.h>
 #include <aws/devops-agent/model/DescribePrivateConnectionRequest.h>
@@ -35,12 +39,19 @@
 #include <aws/devops-agent/model/EnableOperatorAppRequest.h>
 #include <aws/devops-agent/model/GetAccountUsageRequest.h>
 #include <aws/devops-agent/model/GetAgentSpaceRequest.h>
+#include <aws/devops-agent/model/GetAssetContentRequest.h>
+#include <aws/devops-agent/model/GetAssetFileRequest.h>
+#include <aws/devops-agent/model/GetAssetRequest.h>
 #include <aws/devops-agent/model/GetAssociationRequest.h>
 #include <aws/devops-agent/model/GetBacklogTaskRequest.h>
 #include <aws/devops-agent/model/GetOperatorAppRequest.h>
 #include <aws/devops-agent/model/GetRecommendationRequest.h>
 #include <aws/devops-agent/model/GetServiceRequest.h>
 #include <aws/devops-agent/model/ListAgentSpacesRequest.h>
+#include <aws/devops-agent/model/ListAssetFilesRequest.h>
+#include <aws/devops-agent/model/ListAssetTypesRequest.h>
+#include <aws/devops-agent/model/ListAssetVersionsRequest.h>
+#include <aws/devops-agent/model/ListAssetsRequest.h>
 #include <aws/devops-agent/model/ListAssociationsRequest.h>
 #include <aws/devops-agent/model/ListBacklogTasksRequest.h>
 #include <aws/devops-agent/model/ListChatsRequest.h>
@@ -58,6 +69,8 @@
 #include <aws/devops-agent/model/TagResourceRequest.h>
 #include <aws/devops-agent/model/UntagResourceRequest.h>
 #include <aws/devops-agent/model/UpdateAgentSpaceRequest.h>
+#include <aws/devops-agent/model/UpdateAssetFileRequest.h>
+#include <aws/devops-agent/model/UpdateAssetRequest.h>
 #include <aws/devops-agent/model/UpdateAssociationRequest.h>
 #include <aws/devops-agent/model/UpdateBacklogTaskRequest.h>
 #include <aws/devops-agent/model/UpdateGoalRequest.h>
@@ -249,6 +262,56 @@ CreateAgentSpaceOutcome DevOpsAgentClient::CreateAgentSpace(const CreateAgentSpa
                             : CreateAgentSpaceOutcome(std::move(result.GetError()));
 }
 
+CreateAssetOutcome DevOpsAgentClient::CreateAsset(const CreateAssetRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateAsset", "Required field: AgentSpaceId, is not set");
+    return CreateAssetOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [AgentSpaceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/asset/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assets");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssetOutcome(result.GetResultWithOwnership()) : CreateAssetOutcome(std::move(result.GetError()));
+}
+
+CreateAssetFileOutcome DevOpsAgentClient::CreateAssetFile(const CreateAssetFileRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateAssetFile", "Required field: AgentSpaceId, is not set");
+    return CreateAssetFileOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.AssetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateAssetFile", "Required field: AssetId, is not set");
+    return CreateAssetFileOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [AssetId]", false));
+  }
+  if (!request.PathHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateAssetFile", "Required field: Path, is not set");
+    return CreateAssetFileOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [Path]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/asset/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/files/");
+    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPath());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssetFileOutcome(result.GetResultWithOwnership())
+                            : CreateAssetFileOutcome(std::move(result.GetError()));
+}
+
 CreateBacklogTaskOutcome DevOpsAgentClient::CreateBacklogTask(const CreateBacklogTaskRequest& request) const {
   if (!request.AgentSpaceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateBacklogTask", "Required field: AgentSpaceId, is not set");
@@ -313,6 +376,62 @@ DeleteAgentSpaceOutcome DevOpsAgentClient::DeleteAgentSpace(const DeleteAgentSpa
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteAgentSpaceOutcome(result.GetResultWithOwnership())
                             : DeleteAgentSpaceOutcome(std::move(result.GetError()));
+}
+
+DeleteAssetOutcome DevOpsAgentClient::DeleteAsset(const DeleteAssetRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAsset", "Required field: AgentSpaceId, is not set");
+    return DeleteAssetOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.AssetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAsset", "Required field: AssetId, is not set");
+    return DeleteAssetOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [AssetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/asset/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssetOutcome(result.GetResultWithOwnership()) : DeleteAssetOutcome(std::move(result.GetError()));
+}
+
+DeleteAssetFileOutcome DevOpsAgentClient::DeleteAssetFile(const DeleteAssetFileRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAssetFile", "Required field: AgentSpaceId, is not set");
+    return DeleteAssetFileOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.AssetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAssetFile", "Required field: AssetId, is not set");
+    return DeleteAssetFileOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [AssetId]", false));
+  }
+  if (!request.PathHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAssetFile", "Required field: Path, is not set");
+    return DeleteAssetFileOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [Path]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/asset/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/files/");
+    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPath());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssetFileOutcome(result.GetResultWithOwnership())
+                            : DeleteAssetFileOutcome(std::move(result.GetError()));
 }
 
 DeletePrivateConnectionOutcome DevOpsAgentClient::DeletePrivateConnection(const DeletePrivateConnectionRequest& request) const {
@@ -460,6 +579,87 @@ GetAgentSpaceOutcome DevOpsAgentClient::GetAgentSpace(const GetAgentSpaceRequest
   return result.IsSuccess() ? GetAgentSpaceOutcome(result.GetResultWithOwnership()) : GetAgentSpaceOutcome(std::move(result.GetError()));
 }
 
+GetAssetOutcome DevOpsAgentClient::GetAsset(const GetAssetRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAsset", "Required field: AgentSpaceId, is not set");
+    return GetAssetOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                    "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.AssetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAsset", "Required field: AssetId, is not set");
+    return GetAssetOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                    "Missing required field [AssetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/asset/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssetOutcome(result.GetResultWithOwnership()) : GetAssetOutcome(std::move(result.GetError()));
+}
+
+GetAssetContentOutcome DevOpsAgentClient::GetAssetContent(const GetAssetContentRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAssetContent", "Required field: AgentSpaceId, is not set");
+    return GetAssetContentOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.AssetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAssetContent", "Required field: AssetId, is not set");
+    return GetAssetContentOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [AssetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/asset/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/content");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssetContentOutcome(result.GetResultWithOwnership())
+                            : GetAssetContentOutcome(std::move(result.GetError()));
+}
+
+GetAssetFileOutcome DevOpsAgentClient::GetAssetFile(const GetAssetFileRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAssetFile", "Required field: AgentSpaceId, is not set");
+    return GetAssetFileOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.AssetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAssetFile", "Required field: AssetId, is not set");
+    return GetAssetFileOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [AssetId]", false));
+  }
+  if (!request.PathHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAssetFile", "Required field: Path, is not set");
+    return GetAssetFileOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [Path]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/asset/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/files/");
+    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPath());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssetFileOutcome(result.GetResultWithOwnership()) : GetAssetFileOutcome(std::move(result.GetError()));
+}
+
 GetAssociationOutcome DevOpsAgentClient::GetAssociation(const GetAssociationRequest& request) const {
   if (!request.AgentSpaceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetAssociation", "Required field: AgentSpaceId, is not set");
@@ -577,6 +777,85 @@ ListAgentSpacesOutcome DevOpsAgentClient::ListAgentSpaces(const ListAgentSpacesR
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListAgentSpacesOutcome(result.GetResultWithOwnership())
                             : ListAgentSpacesOutcome(std::move(result.GetError()));
+}
+
+ListAssetFilesOutcome DevOpsAgentClient::ListAssetFiles(const ListAssetFilesRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAssetFiles", "Required field: AgentSpaceId, is not set");
+    return ListAssetFilesOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.AssetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAssetFiles", "Required field: AssetId, is not set");
+    return ListAssetFilesOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [AssetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/asset/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/files");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetFilesOutcome(result.GetResultWithOwnership()) : ListAssetFilesOutcome(std::move(result.GetError()));
+}
+
+ListAssetTypesOutcome DevOpsAgentClient::ListAssetTypes(const ListAssetTypesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/asset/types");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetTypesOutcome(result.GetResultWithOwnership()) : ListAssetTypesOutcome(std::move(result.GetError()));
+}
+
+ListAssetVersionsOutcome DevOpsAgentClient::ListAssetVersions(const ListAssetVersionsRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAssetVersions", "Required field: AgentSpaceId, is not set");
+    return ListAssetVersionsOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.AssetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAssetVersions", "Required field: AssetId, is not set");
+    return ListAssetVersionsOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [AssetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/asset/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetVersionsOutcome(result.GetResultWithOwnership())
+                            : ListAssetVersionsOutcome(std::move(result.GetError()));
+}
+
+ListAssetsOutcome DevOpsAgentClient::ListAssets(const ListAssetsRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAssets", "Required field: AgentSpaceId, is not set");
+    return ListAssetsOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [AgentSpaceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/asset/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assets");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetsOutcome(result.GetResultWithOwnership()) : ListAssetsOutcome(std::move(result.GetError()));
 }
 
 ListAssociationsOutcome DevOpsAgentClient::ListAssociations(const ListAssociationsRequest& request) const {
@@ -917,6 +1196,62 @@ UpdateAgentSpaceOutcome DevOpsAgentClient::UpdateAgentSpace(const UpdateAgentSpa
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateAgentSpaceOutcome(result.GetResultWithOwnership())
                             : UpdateAgentSpaceOutcome(std::move(result.GetError()));
+}
+
+UpdateAssetOutcome DevOpsAgentClient::UpdateAsset(const UpdateAssetRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAsset", "Required field: AgentSpaceId, is not set");
+    return UpdateAssetOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.AssetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAsset", "Required field: AssetId, is not set");
+    return UpdateAssetOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [AssetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/asset/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAssetOutcome(result.GetResultWithOwnership()) : UpdateAssetOutcome(std::move(result.GetError()));
+}
+
+UpdateAssetFileOutcome DevOpsAgentClient::UpdateAssetFile(const UpdateAssetFileRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAssetFile", "Required field: AgentSpaceId, is not set");
+    return UpdateAssetFileOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.AssetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAssetFile", "Required field: AssetId, is not set");
+    return UpdateAssetFileOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [AssetId]", false));
+  }
+  if (!request.PathHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAssetFile", "Required field: Path, is not set");
+    return UpdateAssetFileOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [Path]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/asset/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/files/");
+    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPath());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAssetFileOutcome(result.GetResultWithOwnership())
+                            : UpdateAssetFileOutcome(std::move(result.GetError()));
 }
 
 UpdateAssociationOutcome DevOpsAgentClient::UpdateAssociation(const UpdateAssociationRequest& request) const {

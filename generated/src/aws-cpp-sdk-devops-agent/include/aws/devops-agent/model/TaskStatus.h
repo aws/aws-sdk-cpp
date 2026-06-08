@@ -20,7 +20,8 @@ enum class TaskStatus {
   COMPLETED,
   FAILED,
   TIMED_OUT,
-  CANCELED
+  CANCELED,
+  SKIPPED
 };
 
 namespace TaskStatusMapper {

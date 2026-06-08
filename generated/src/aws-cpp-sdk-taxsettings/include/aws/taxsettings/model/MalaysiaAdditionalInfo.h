@@ -36,39 +36,6 @@ class MalaysiaAdditionalInfo {
 
   ///@{
   /**
-   * <p>The tax registration number (TRN) in Malaysia. </p> <p>For individual, you
-   * can specify the <code>taxInformationNumber</code> in
-   * <code>MalaysiaAdditionalInfo</code> with NRIC type, and a valid MyKad or NRIC
-   * number. For business, you must specify a <code>businessRegistrationNumber</code>
-   * in <code>MalaysiaAdditionalInfo</code> with a TIN type and tax identification
-   * number. For business resellers, you must specify a
-   * <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in
-   * <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and
-   * a valid SST number. </p> <p>For business resellers with service codes, you must
-   * specify <code>businessRegistrationNumber</code>,
-   * <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in
-   * <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service
-   * tax (SST) number. By using this API operation, Amazon Web Services registers
-   * your self-declaration that you’re an authorized business reseller registered
-   * with the Royal Malaysia Customs Department (RMCD), and have a valid SST
-   * number.</p>
-   */
-  inline const Aws::String& GetBusinessRegistrationNumber() const { return m_businessRegistrationNumber; }
-  inline bool BusinessRegistrationNumberHasBeenSet() const { return m_businessRegistrationNumberHasBeenSet; }
-  template <typename BusinessRegistrationNumberT = Aws::String>
-  void SetBusinessRegistrationNumber(BusinessRegistrationNumberT&& value) {
-    m_businessRegistrationNumberHasBeenSet = true;
-    m_businessRegistrationNumber = std::forward<BusinessRegistrationNumberT>(value);
-  }
-  template <typename BusinessRegistrationNumberT = Aws::String>
-  MalaysiaAdditionalInfo& WithBusinessRegistrationNumber(BusinessRegistrationNumberT&& value) {
-    SetBusinessRegistrationNumber(std::forward<BusinessRegistrationNumberT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>List of service tax codes for your TRN in Malaysia.</p>
    */
   inline const Aws::Vector<MalaysiaServiceTaxCode>& GetServiceTaxCodes() const { return m_serviceTaxCodes; }
@@ -120,15 +87,48 @@ class MalaysiaAdditionalInfo {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_businessRegistrationNumber;
 
+  ///@{
+  /**
+   * <p>The tax registration number (TRN) in Malaysia. </p> <p>For individual, you
+   * can specify the <code>taxInformationNumber</code> in
+   * <code>MalaysiaAdditionalInfo</code> with NRIC type, and a valid MyKad or NRIC
+   * number. For business, you must specify a <code>businessRegistrationNumber</code>
+   * in <code>MalaysiaAdditionalInfo</code> with a TIN type and tax identification
+   * number. For business resellers, you must specify a
+   * <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in
+   * <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and
+   * a valid SST number. </p> <p>For business resellers with service codes, you must
+   * specify <code>businessRegistrationNumber</code>,
+   * <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in
+   * <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service
+   * tax (SST) number. By using this API operation, Amazon Web Services registers
+   * your self-declaration that you’re an authorized business reseller registered
+   * with the Royal Malaysia Customs Department (RMCD), and have a valid SST
+   * number.</p>
+   */
+  inline const Aws::String& GetBusinessRegistrationNumber() const { return m_businessRegistrationNumber; }
+  inline bool BusinessRegistrationNumberHasBeenSet() const { return m_businessRegistrationNumberHasBeenSet; }
+  template <typename BusinessRegistrationNumberT = Aws::String>
+  void SetBusinessRegistrationNumber(BusinessRegistrationNumberT&& value) {
+    m_businessRegistrationNumberHasBeenSet = true;
+    m_businessRegistrationNumber = std::forward<BusinessRegistrationNumberT>(value);
+  }
+  template <typename BusinessRegistrationNumberT = Aws::String>
+  MalaysiaAdditionalInfo& WithBusinessRegistrationNumber(BusinessRegistrationNumberT&& value) {
+    SetBusinessRegistrationNumber(std::forward<BusinessRegistrationNumberT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::Vector<MalaysiaServiceTaxCode> m_serviceTaxCodes;
 
   Aws::String m_taxInformationNumber;
-  bool m_businessRegistrationNumberHasBeenSet = false;
+
+  Aws::String m_businessRegistrationNumber;
   bool m_serviceTaxCodesHasBeenSet = false;
   bool m_taxInformationNumberHasBeenSet = false;
+  bool m_businessRegistrationNumberHasBeenSet = false;
 };
 
 }  // namespace Model

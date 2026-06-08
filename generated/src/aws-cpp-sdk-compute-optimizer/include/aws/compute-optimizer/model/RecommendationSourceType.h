@@ -21,7 +21,13 @@ enum class RecommendationSourceType {
   RdsDBInstance,
   RdsDBInstanceStorage,
   AuroraDBClusterStorage,
-  NatGateway
+  NatGateway,
+  DynamoDBTable,
+  ElastiCacheCluster,
+  MemoryDBCluster,
+  DocumentDBCluster,
+  WorkSpaces,
+  SageMakerEndpoint
 };
 
 namespace RecommendationSourceTypeMapper {

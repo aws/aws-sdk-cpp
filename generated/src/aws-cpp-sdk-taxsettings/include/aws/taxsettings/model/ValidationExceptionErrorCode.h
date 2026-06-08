@@ -10,7 +10,16 @@
 namespace Aws {
 namespace TaxSettings {
 namespace Model {
-enum class ValidationExceptionErrorCode { NOT_SET, MalformedToken, ExpiredToken, InvalidToken, FieldValidationFailed, MissingInput };
+enum class ValidationExceptionErrorCode {
+  NOT_SET,
+  MalformedToken,
+  ExpiredToken,
+  InvalidToken,
+  FieldValidationFailed,
+  MissingInput,
+  NonIndiaCustomerCanNotSetPAN,
+  GSTExistenceBlockSetPAN
+};
 
 namespace ValidationExceptionErrorCodeMapper {
 AWS_TAXSETTINGS_API ValidationExceptionErrorCode GetValidationExceptionErrorCodeForName(const Aws::String& name);

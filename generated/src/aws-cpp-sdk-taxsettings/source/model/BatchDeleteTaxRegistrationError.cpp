@@ -22,13 +22,13 @@ BatchDeleteTaxRegistrationError& BatchDeleteTaxRegistrationError::operator=(Json
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("code")) {
-    m_code = jsonValue.GetString("code");
-    m_codeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("code")) {
+    m_code = jsonValue.GetString("code");
+    m_codeHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +40,12 @@ JsonValue BatchDeleteTaxRegistrationError::Jsonize() const {
     payload.WithString("accountId", m_accountId);
   }
 
-  if (m_codeHasBeenSet) {
-    payload.WithString("code", m_code);
-  }
-
   if (m_messageHasBeenSet) {
     payload.WithString("message", m_message);
+  }
+
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", m_code);
   }
 
   return payload;

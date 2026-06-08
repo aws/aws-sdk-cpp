@@ -54,6 +54,24 @@ class TaxExemption {
 
   ///@{
   /**
+   * <p>The tax exemption type. </p>
+   */
+  inline const TaxExemptionType& GetTaxExemptionType() const { return m_taxExemptionType; }
+  inline bool TaxExemptionTypeHasBeenSet() const { return m_taxExemptionTypeHasBeenSet; }
+  template <typename TaxExemptionTypeT = TaxExemptionType>
+  void SetTaxExemptionType(TaxExemptionTypeT&& value) {
+    m_taxExemptionTypeHasBeenSet = true;
+    m_taxExemptionType = std::forward<TaxExemptionTypeT>(value);
+  }
+  template <typename TaxExemptionTypeT = TaxExemptionType>
+  TaxExemption& WithTaxExemptionType(TaxExemptionTypeT&& value) {
+    SetTaxExemptionType(std::forward<TaxExemptionTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tax exemption effective date. </p>
    */
   inline const Aws::Utils::DateTime& GetEffectiveDate() const { return m_effectiveDate; }
@@ -90,22 +108,6 @@ class TaxExemption {
 
   ///@{
   /**
-   * <p>The tax exemption status. </p>
-   */
-  inline EntityExemptionAccountStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(EntityExemptionAccountStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline TaxExemption& WithStatus(EntityExemptionAccountStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The tax exemption recording time in the <code>TaxSettings</code> system. </p>
    */
   inline const Aws::Utils::DateTime& GetSystemEffectiveDate() const { return m_systemEffectiveDate; }
@@ -124,39 +126,37 @@ class TaxExemption {
 
   ///@{
   /**
-   * <p>The tax exemption type. </p>
+   * <p>The tax exemption status. </p>
    */
-  inline const TaxExemptionType& GetTaxExemptionType() const { return m_taxExemptionType; }
-  inline bool TaxExemptionTypeHasBeenSet() const { return m_taxExemptionTypeHasBeenSet; }
-  template <typename TaxExemptionTypeT = TaxExemptionType>
-  void SetTaxExemptionType(TaxExemptionTypeT&& value) {
-    m_taxExemptionTypeHasBeenSet = true;
-    m_taxExemptionType = std::forward<TaxExemptionTypeT>(value);
+  inline EntityExemptionAccountStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(EntityExemptionAccountStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename TaxExemptionTypeT = TaxExemptionType>
-  TaxExemption& WithTaxExemptionType(TaxExemptionTypeT&& value) {
-    SetTaxExemptionType(std::forward<TaxExemptionTypeT>(value));
+  inline TaxExemption& WithStatus(EntityExemptionAccountStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
  private:
   Authority m_authority;
 
+  TaxExemptionType m_taxExemptionType;
+
   Aws::Utils::DateTime m_effectiveDate{};
 
   Aws::Utils::DateTime m_expirationDate{};
 
-  EntityExemptionAccountStatus m_status{EntityExemptionAccountStatus::NOT_SET};
-
   Aws::Utils::DateTime m_systemEffectiveDate{};
 
-  TaxExemptionType m_taxExemptionType;
+  EntityExemptionAccountStatus m_status{EntityExemptionAccountStatus::NOT_SET};
   bool m_authorityHasBeenSet = false;
+  bool m_taxExemptionTypeHasBeenSet = false;
   bool m_effectiveDateHasBeenSet = false;
   bool m_expirationDateHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
   bool m_systemEffectiveDateHasBeenSet = false;
-  bool m_taxExemptionTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
 };
 
 }  // namespace Model

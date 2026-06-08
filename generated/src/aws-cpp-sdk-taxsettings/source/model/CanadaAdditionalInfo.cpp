@@ -18,6 +18,10 @@ namespace Model {
 CanadaAdditionalInfo::CanadaAdditionalInfo(JsonView jsonValue) { *this = jsonValue; }
 
 CanadaAdditionalInfo& CanadaAdditionalInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("provincialSalesTaxId")) {
+    m_provincialSalesTaxId = jsonValue.GetString("provincialSalesTaxId");
+    m_provincialSalesTaxIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("canadaQuebecSalesTaxNumber")) {
     m_canadaQuebecSalesTaxNumber = jsonValue.GetString("canadaQuebecSalesTaxNumber");
     m_canadaQuebecSalesTaxNumberHasBeenSet = true;
@@ -30,15 +34,15 @@ CanadaAdditionalInfo& CanadaAdditionalInfo::operator=(JsonView jsonValue) {
     m_isResellerAccount = jsonValue.GetBool("isResellerAccount");
     m_isResellerAccountHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("provincialSalesTaxId")) {
-    m_provincialSalesTaxId = jsonValue.GetString("provincialSalesTaxId");
-    m_provincialSalesTaxIdHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue CanadaAdditionalInfo::Jsonize() const {
   JsonValue payload;
+
+  if (m_provincialSalesTaxIdHasBeenSet) {
+    payload.WithString("provincialSalesTaxId", m_provincialSalesTaxId);
+  }
 
   if (m_canadaQuebecSalesTaxNumberHasBeenSet) {
     payload.WithString("canadaQuebecSalesTaxNumber", m_canadaQuebecSalesTaxNumber);
@@ -50,10 +54,6 @@ JsonValue CanadaAdditionalInfo::Jsonize() const {
 
   if (m_isResellerAccountHasBeenSet) {
     payload.WithBool("isResellerAccount", m_isResellerAccount);
-  }
-
-  if (m_provincialSalesTaxIdHasBeenSet) {
-    payload.WithString("provincialSalesTaxId", m_provincialSalesTaxId);
   }
 
   return payload;

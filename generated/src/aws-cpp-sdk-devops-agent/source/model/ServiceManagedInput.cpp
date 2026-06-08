@@ -59,6 +59,10 @@ ServiceManagedInput& ServiceManagedInput::operator=(JsonView jsonValue) {
     m_certificate = jsonValue.GetString("certificate");
     m_certificateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dnsResolution")) {
+    m_dnsResolution = ResourceConfigDnsResolutionMapper::GetResourceConfigDnsResolutionForName(jsonValue.GetString("dnsResolution"));
+    m_dnsResolutionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -107,6 +111,10 @@ JsonValue ServiceManagedInput::Jsonize() const {
 
   if (m_certificateHasBeenSet) {
     payload.WithString("certificate", m_certificate);
+  }
+
+  if (m_dnsResolutionHasBeenSet) {
+    payload.WithString("dnsResolution", ResourceConfigDnsResolutionMapper::GetNameForResourceConfigDnsResolution(m_dnsResolution));
   }
 
   return payload;

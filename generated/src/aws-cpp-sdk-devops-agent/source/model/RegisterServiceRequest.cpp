@@ -27,6 +27,14 @@ Aws::String RegisterServiceRequest::SerializePayload() const {
     payload.WithString("privateConnectionName", m_privateConnectionName);
   }
 
+  if (m_targetUrlPrivateConnectionNameHasBeenSet) {
+    payload.WithString("targetUrlPrivateConnectionName", m_targetUrlPrivateConnectionName);
+  }
+
+  if (m_exchangeUrlPrivateConnectionNameHasBeenSet) {
+    payload.WithString("exchangeUrlPrivateConnectionName", m_exchangeUrlPrivateConnectionName);
+  }
+
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }

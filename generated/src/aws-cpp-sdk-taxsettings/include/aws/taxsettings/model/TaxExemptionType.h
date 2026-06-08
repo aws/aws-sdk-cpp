@@ -35,24 +35,18 @@ class TaxExemptionType {
 
   ///@{
   /**
-   * <p>The tax exemption's applicable jurisdictions. </p>
+   * <p>The tax exemption's type display name. </p>
    */
-  inline const Aws::Vector<Authority>& GetApplicableJurisdictions() const { return m_applicableJurisdictions; }
-  inline bool ApplicableJurisdictionsHasBeenSet() const { return m_applicableJurisdictionsHasBeenSet; }
-  template <typename ApplicableJurisdictionsT = Aws::Vector<Authority>>
-  void SetApplicableJurisdictions(ApplicableJurisdictionsT&& value) {
-    m_applicableJurisdictionsHasBeenSet = true;
-    m_applicableJurisdictions = std::forward<ApplicableJurisdictionsT>(value);
+  inline const Aws::String& GetDisplayName() const { return m_displayName; }
+  inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+  template <typename DisplayNameT = Aws::String>
+  void SetDisplayName(DisplayNameT&& value) {
+    m_displayNameHasBeenSet = true;
+    m_displayName = std::forward<DisplayNameT>(value);
   }
-  template <typename ApplicableJurisdictionsT = Aws::Vector<Authority>>
-  TaxExemptionType& WithApplicableJurisdictions(ApplicableJurisdictionsT&& value) {
-    SetApplicableJurisdictions(std::forward<ApplicableJurisdictionsT>(value));
-    return *this;
-  }
-  template <typename ApplicableJurisdictionsT = Authority>
-  TaxExemptionType& AddApplicableJurisdictions(ApplicableJurisdictionsT&& value) {
-    m_applicableJurisdictionsHasBeenSet = true;
-    m_applicableJurisdictions.emplace_back(std::forward<ApplicableJurisdictionsT>(value));
+  template <typename DisplayNameT = Aws::String>
+  TaxExemptionType& WithDisplayName(DisplayNameT&& value) {
+    SetDisplayName(std::forward<DisplayNameT>(value));
     return *this;
   }
   ///@}
@@ -77,30 +71,36 @@ class TaxExemptionType {
 
   ///@{
   /**
-   * <p>The tax exemption's type display name. </p>
+   * <p>The tax exemption's applicable jurisdictions. </p>
    */
-  inline const Aws::String& GetDisplayName() const { return m_displayName; }
-  inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-  template <typename DisplayNameT = Aws::String>
-  void SetDisplayName(DisplayNameT&& value) {
-    m_displayNameHasBeenSet = true;
-    m_displayName = std::forward<DisplayNameT>(value);
+  inline const Aws::Vector<Authority>& GetApplicableJurisdictions() const { return m_applicableJurisdictions; }
+  inline bool ApplicableJurisdictionsHasBeenSet() const { return m_applicableJurisdictionsHasBeenSet; }
+  template <typename ApplicableJurisdictionsT = Aws::Vector<Authority>>
+  void SetApplicableJurisdictions(ApplicableJurisdictionsT&& value) {
+    m_applicableJurisdictionsHasBeenSet = true;
+    m_applicableJurisdictions = std::forward<ApplicableJurisdictionsT>(value);
   }
-  template <typename DisplayNameT = Aws::String>
-  TaxExemptionType& WithDisplayName(DisplayNameT&& value) {
-    SetDisplayName(std::forward<DisplayNameT>(value));
+  template <typename ApplicableJurisdictionsT = Aws::Vector<Authority>>
+  TaxExemptionType& WithApplicableJurisdictions(ApplicableJurisdictionsT&& value) {
+    SetApplicableJurisdictions(std::forward<ApplicableJurisdictionsT>(value));
+    return *this;
+  }
+  template <typename ApplicableJurisdictionsT = Authority>
+  TaxExemptionType& AddApplicableJurisdictions(ApplicableJurisdictionsT&& value) {
+    m_applicableJurisdictionsHasBeenSet = true;
+    m_applicableJurisdictions.emplace_back(std::forward<ApplicableJurisdictionsT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::Vector<Authority> m_applicableJurisdictions;
+  Aws::String m_displayName;
 
   Aws::String m_description;
 
-  Aws::String m_displayName;
-  bool m_applicableJurisdictionsHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+  Aws::Vector<Authority> m_applicableJurisdictions;
   bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_applicableJurisdictionsHasBeenSet = false;
 };
 
 }  // namespace Model

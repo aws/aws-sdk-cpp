@@ -7,15 +7,19 @@
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/cost-optimization-hub/model/AuroraDbClusterStorage.h>
 #include <aws/cost-optimization-hub/model/ComputeSavingsPlans.h>
+#include <aws/cost-optimization-hub/model/DocumentDbCluster.h>
 #include <aws/cost-optimization-hub/model/DynamoDbReservedCapacity.h>
+#include <aws/cost-optimization-hub/model/DynamoDbTable.h>
 #include <aws/cost-optimization-hub/model/EbsVolume.h>
 #include <aws/cost-optimization-hub/model/Ec2AutoScalingGroup.h>
 #include <aws/cost-optimization-hub/model/Ec2Instance.h>
 #include <aws/cost-optimization-hub/model/Ec2InstanceSavingsPlans.h>
 #include <aws/cost-optimization-hub/model/Ec2ReservedInstances.h>
 #include <aws/cost-optimization-hub/model/EcsService.h>
+#include <aws/cost-optimization-hub/model/ElastiCacheCluster.h>
 #include <aws/cost-optimization-hub/model/ElastiCacheReservedInstances.h>
 #include <aws/cost-optimization-hub/model/LambdaFunction.h>
+#include <aws/cost-optimization-hub/model/MemoryDbCluster.h>
 #include <aws/cost-optimization-hub/model/MemoryDbReservedInstances.h>
 #include <aws/cost-optimization-hub/model/NatGateway.h>
 #include <aws/cost-optimization-hub/model/OpenSearchReservedInstances.h>
@@ -23,7 +27,9 @@
 #include <aws/cost-optimization-hub/model/RdsDbInstanceStorage.h>
 #include <aws/cost-optimization-hub/model/RdsReservedInstances.h>
 #include <aws/cost-optimization-hub/model/RedshiftReservedInstances.h>
+#include <aws/cost-optimization-hub/model/SageMakerEndpoint.h>
 #include <aws/cost-optimization-hub/model/SageMakerSavingsPlans.h>
+#include <aws/cost-optimization-hub/model/WorkSpaces.h>
 
 #include <utility>
 
@@ -391,6 +397,114 @@ class ResourceDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The DynamoDB table recommendation details.</p>
+   */
+  inline const DynamoDbTable& GetDynamoDbTable() const { return m_dynamoDbTable; }
+  inline bool DynamoDbTableHasBeenSet() const { return m_dynamoDbTableHasBeenSet; }
+  template <typename DynamoDbTableT = DynamoDbTable>
+  void SetDynamoDbTable(DynamoDbTableT&& value) {
+    m_dynamoDbTableHasBeenSet = true;
+    m_dynamoDbTable = std::forward<DynamoDbTableT>(value);
+  }
+  template <typename DynamoDbTableT = DynamoDbTable>
+  ResourceDetails& WithDynamoDbTable(DynamoDbTableT&& value) {
+    SetDynamoDbTable(std::forward<DynamoDbTableT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ElastiCache cluster recommendation details.</p>
+   */
+  inline const ElastiCacheCluster& GetElastiCacheCluster() const { return m_elastiCacheCluster; }
+  inline bool ElastiCacheClusterHasBeenSet() const { return m_elastiCacheClusterHasBeenSet; }
+  template <typename ElastiCacheClusterT = ElastiCacheCluster>
+  void SetElastiCacheCluster(ElastiCacheClusterT&& value) {
+    m_elastiCacheClusterHasBeenSet = true;
+    m_elastiCacheCluster = std::forward<ElastiCacheClusterT>(value);
+  }
+  template <typename ElastiCacheClusterT = ElastiCacheCluster>
+  ResourceDetails& WithElastiCacheCluster(ElastiCacheClusterT&& value) {
+    SetElastiCacheCluster(std::forward<ElastiCacheClusterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The MemoryDB cluster recommendation details.</p>
+   */
+  inline const MemoryDbCluster& GetMemoryDbCluster() const { return m_memoryDbCluster; }
+  inline bool MemoryDbClusterHasBeenSet() const { return m_memoryDbClusterHasBeenSet; }
+  template <typename MemoryDbClusterT = MemoryDbCluster>
+  void SetMemoryDbCluster(MemoryDbClusterT&& value) {
+    m_memoryDbClusterHasBeenSet = true;
+    m_memoryDbCluster = std::forward<MemoryDbClusterT>(value);
+  }
+  template <typename MemoryDbClusterT = MemoryDbCluster>
+  ResourceDetails& WithMemoryDbCluster(MemoryDbClusterT&& value) {
+    SetMemoryDbCluster(std::forward<MemoryDbClusterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon DocumentDB cluster recommendation details.</p>
+   */
+  inline const DocumentDbCluster& GetDocumentDbCluster() const { return m_documentDbCluster; }
+  inline bool DocumentDbClusterHasBeenSet() const { return m_documentDbClusterHasBeenSet; }
+  template <typename DocumentDbClusterT = DocumentDbCluster>
+  void SetDocumentDbCluster(DocumentDbClusterT&& value) {
+    m_documentDbClusterHasBeenSet = true;
+    m_documentDbCluster = std::forward<DocumentDbClusterT>(value);
+  }
+  template <typename DocumentDbClusterT = DocumentDbCluster>
+  ResourceDetails& WithDocumentDbCluster(DocumentDbClusterT&& value) {
+    SetDocumentDbCluster(std::forward<DocumentDbClusterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The WorkSpaces recommendation details.</p>
+   */
+  inline const WorkSpaces& GetWorkSpaces() const { return m_workSpaces; }
+  inline bool WorkSpacesHasBeenSet() const { return m_workSpacesHasBeenSet; }
+  template <typename WorkSpacesT = WorkSpaces>
+  void SetWorkSpaces(WorkSpacesT&& value) {
+    m_workSpacesHasBeenSet = true;
+    m_workSpaces = std::forward<WorkSpacesT>(value);
+  }
+  template <typename WorkSpacesT = WorkSpaces>
+  ResourceDetails& WithWorkSpaces(WorkSpacesT&& value) {
+    SetWorkSpaces(std::forward<WorkSpacesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The SageMaker endpoint recommendation details.</p>
+   */
+  inline const SageMakerEndpoint& GetSageMakerEndpoint() const { return m_sageMakerEndpoint; }
+  inline bool SageMakerEndpointHasBeenSet() const { return m_sageMakerEndpointHasBeenSet; }
+  template <typename SageMakerEndpointT = SageMakerEndpoint>
+  void SetSageMakerEndpoint(SageMakerEndpointT&& value) {
+    m_sageMakerEndpointHasBeenSet = true;
+    m_sageMakerEndpoint = std::forward<SageMakerEndpointT>(value);
+  }
+  template <typename SageMakerEndpointT = SageMakerEndpoint>
+  ResourceDetails& WithSageMakerEndpoint(SageMakerEndpointT&& value) {
+    SetSageMakerEndpoint(std::forward<SageMakerEndpointT>(value));
+    return *this;
+  }
+  ///@}
  private:
   LambdaFunction m_lambdaFunction;
 
@@ -429,6 +543,18 @@ class ResourceDetails {
   MemoryDbReservedInstances m_memoryDbReservedInstances;
 
   NatGateway m_natGateway;
+
+  DynamoDbTable m_dynamoDbTable;
+
+  ElastiCacheCluster m_elastiCacheCluster;
+
+  MemoryDbCluster m_memoryDbCluster;
+
+  DocumentDbCluster m_documentDbCluster;
+
+  WorkSpaces m_workSpaces;
+
+  SageMakerEndpoint m_sageMakerEndpoint;
   bool m_lambdaFunctionHasBeenSet = false;
   bool m_ecsServiceHasBeenSet = false;
   bool m_ec2InstanceHasBeenSet = false;
@@ -448,6 +574,12 @@ class ResourceDetails {
   bool m_dynamoDbReservedCapacityHasBeenSet = false;
   bool m_memoryDbReservedInstancesHasBeenSet = false;
   bool m_natGatewayHasBeenSet = false;
+  bool m_dynamoDbTableHasBeenSet = false;
+  bool m_elastiCacheClusterHasBeenSet = false;
+  bool m_memoryDbClusterHasBeenSet = false;
+  bool m_documentDbClusterHasBeenSet = false;
+  bool m_workSpacesHasBeenSet = false;
+  bool m_sageMakerEndpointHasBeenSet = false;
 };
 
 }  // namespace Model

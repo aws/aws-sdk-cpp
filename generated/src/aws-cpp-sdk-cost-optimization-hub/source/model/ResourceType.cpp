@@ -34,6 +34,12 @@ static const int AuroraDbClusterStorage_HASH = HashingUtils::HashString("AuroraD
 static const int DynamoDbReservedCapacity_HASH = HashingUtils::HashString("DynamoDbReservedCapacity");
 static const int MemoryDbReservedInstances_HASH = HashingUtils::HashString("MemoryDbReservedInstances");
 static const int NatGateway_HASH = HashingUtils::HashString("NatGateway");
+static const int DynamoDBTable_HASH = HashingUtils::HashString("DynamoDBTable");
+static const int ElastiCacheCluster_HASH = HashingUtils::HashString("ElastiCacheCluster");
+static const int MemoryDBCluster_HASH = HashingUtils::HashString("MemoryDBCluster");
+static const int DocumentDBCluster_HASH = HashingUtils::HashString("DocumentDBCluster");
+static const int WorkSpaces_HASH = HashingUtils::HashString("WorkSpaces");
+static const int SageMakerEndpoint_HASH = HashingUtils::HashString("SageMakerEndpoint");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -75,6 +81,18 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::MemoryDbReservedInstances;
   } else if (hashCode == NatGateway_HASH) {
     return ResourceType::NatGateway;
+  } else if (hashCode == DynamoDBTable_HASH) {
+    return ResourceType::DynamoDBTable;
+  } else if (hashCode == ElastiCacheCluster_HASH) {
+    return ResourceType::ElastiCacheCluster;
+  } else if (hashCode == MemoryDBCluster_HASH) {
+    return ResourceType::MemoryDBCluster;
+  } else if (hashCode == DocumentDBCluster_HASH) {
+    return ResourceType::DocumentDBCluster;
+  } else if (hashCode == WorkSpaces_HASH) {
+    return ResourceType::WorkSpaces;
+  } else if (hashCode == SageMakerEndpoint_HASH) {
+    return ResourceType::SageMakerEndpoint;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -127,6 +145,18 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "MemoryDbReservedInstances";
     case ResourceType::NatGateway:
       return "NatGateway";
+    case ResourceType::DynamoDBTable:
+      return "DynamoDBTable";
+    case ResourceType::ElastiCacheCluster:
+      return "ElastiCacheCluster";
+    case ResourceType::MemoryDBCluster:
+      return "MemoryDBCluster";
+    case ResourceType::DocumentDBCluster:
+      return "DocumentDBCluster";
+    case ResourceType::WorkSpaces:
+      return "WorkSpaces";
+    case ResourceType::SageMakerEndpoint:
+      return "SageMakerEndpoint";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

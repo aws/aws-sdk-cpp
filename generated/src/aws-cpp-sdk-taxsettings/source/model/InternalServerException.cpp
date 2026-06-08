@@ -18,13 +18,13 @@ namespace Model {
 InternalServerException::InternalServerException(JsonView jsonValue) { *this = jsonValue; }
 
 InternalServerException& InternalServerException::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("errorCode")) {
-    m_errorCode = jsonValue.GetString("errorCode");
-    m_errorCodeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("errorCode")) {
+    m_errorCode = jsonValue.GetString("errorCode");
+    m_errorCodeHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ InternalServerException& InternalServerException::operator=(JsonView jsonValue) 
 JsonValue InternalServerException::Jsonize() const {
   JsonValue payload;
 
-  if (m_errorCodeHasBeenSet) {
-    payload.WithString("errorCode", m_errorCode);
-  }
-
   if (m_messageHasBeenSet) {
     payload.WithString("message", m_message);
+  }
+
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("errorCode", m_errorCode);
   }
 
   return payload;

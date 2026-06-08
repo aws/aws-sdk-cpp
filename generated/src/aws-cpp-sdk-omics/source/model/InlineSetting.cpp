@@ -49,6 +49,10 @@ InlineSetting& InlineSetting::operator=(JsonView jsonValue) {
     }
     m_runTagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("engineSettings")) {
+    m_engineSettings = jsonValue.GetObject("engineSettings");
+    m_engineSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -87,6 +91,12 @@ JsonValue InlineSetting::Jsonize() const {
       runTagsJsonMap.WithString(runTagsItem.first, runTagsItem.second);
     }
     payload.WithObject("runTags", std::move(runTagsJsonMap));
+  }
+
+  if (m_engineSettingsHasBeenSet) {
+    if (!m_engineSettings.View().IsNull()) {
+      payload.WithObject("engineSettings", JsonValue(m_engineSettings.View()));
+    }
   }
 
   return payload;

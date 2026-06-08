@@ -18,6 +18,14 @@ namespace Model {
 TaxExemptionType::TaxExemptionType(JsonView jsonValue) { *this = jsonValue; }
 
 TaxExemptionType& TaxExemptionType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("displayName")) {
+    m_displayName = jsonValue.GetString("displayName");
+    m_displayNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("applicableJurisdictions")) {
     Aws::Utils::Array<JsonView> applicableJurisdictionsJsonList = jsonValue.GetArray("applicableJurisdictions");
     for (unsigned applicableJurisdictionsIndex = 0; applicableJurisdictionsIndex < applicableJurisdictionsJsonList.GetLength();
@@ -26,19 +34,19 @@ TaxExemptionType& TaxExemptionType::operator=(JsonView jsonValue) {
     }
     m_applicableJurisdictionsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("displayName")) {
-    m_displayName = jsonValue.GetString("displayName");
-    m_displayNameHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue TaxExemptionType::Jsonize() const {
   JsonValue payload;
+
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("displayName", m_displayName);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
 
   if (m_applicableJurisdictionsHasBeenSet) {
     Aws::Utils::Array<JsonValue> applicableJurisdictionsJsonList(m_applicableJurisdictions.size());
@@ -48,14 +56,6 @@ JsonValue TaxExemptionType::Jsonize() const {
           m_applicableJurisdictions[applicableJurisdictionsIndex].Jsonize());
     }
     payload.WithArray("applicableJurisdictions", std::move(applicableJurisdictionsJsonList));
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
-
-  if (m_displayNameHasBeenSet) {
-    payload.WithString("displayName", m_displayName);
   }
 
   return payload;

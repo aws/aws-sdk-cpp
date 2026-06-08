@@ -55,25 +55,6 @@ class BatchDeleteTaxRegistrationError {
 
   ///@{
   /**
-   * <p> The error code for an individual failure in BatchDeleteTaxRegistration
-   * operation. </p>
-   */
-  inline const Aws::String& GetCode() const { return m_code; }
-  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-  template <typename CodeT = Aws::String>
-  void SetCode(CodeT&& value) {
-    m_codeHasBeenSet = true;
-    m_code = std::forward<CodeT>(value);
-  }
-  template <typename CodeT = Aws::String>
-  BatchDeleteTaxRegistrationError& WithCode(CodeT&& value) {
-    SetCode(std::forward<CodeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> The error message for an individual failure in the
    * <code>BatchDeleteTaxRegistration</code> operation. </p>
    */
@@ -90,15 +71,34 @@ class BatchDeleteTaxRegistrationError {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The error code for an individual failure in BatchDeleteTaxRegistration
+   * operation. </p>
+   */
+  inline const Aws::String& GetCode() const { return m_code; }
+  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+  template <typename CodeT = Aws::String>
+  void SetCode(CodeT&& value) {
+    m_codeHasBeenSet = true;
+    m_code = std::forward<CodeT>(value);
+  }
+  template <typename CodeT = Aws::String>
+  BatchDeleteTaxRegistrationError& WithCode(CodeT&& value) {
+    SetCode(std::forward<CodeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accountId;
 
-  Aws::String m_code;
-
   Aws::String m_message;
+
+  Aws::String m_code;
   bool m_accountIdHasBeenSet = false;
-  bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -34,24 +34,6 @@ class TaxRegistrationDocument {
 
   ///@{
   /**
-   * <p>The tax registration document. </p>
-   */
-  inline const TaxRegistrationDocFile& GetFile() const { return m_file; }
-  inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-  template <typename FileT = TaxRegistrationDocFile>
-  void SetFile(FileT&& value) {
-    m_fileHasBeenSet = true;
-    m_file = std::forward<FileT>(value);
-  }
-  template <typename FileT = TaxRegistrationDocFile>
-  TaxRegistrationDocument& WithFile(FileT&& value) {
-    SetFile(std::forward<FileT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon S3 location where your tax registration document is stored.</p>
    */
   inline const SourceS3Location& GetS3Location() const { return m_s3Location; }
@@ -67,12 +49,30 @@ class TaxRegistrationDocument {
     return *this;
   }
   ///@}
- private:
-  TaxRegistrationDocFile m_file;
 
+  ///@{
+  /**
+   * <p>The tax registration document. </p>
+   */
+  inline const TaxRegistrationDocFile& GetFile() const { return m_file; }
+  inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
+  template <typename FileT = TaxRegistrationDocFile>
+  void SetFile(FileT&& value) {
+    m_fileHasBeenSet = true;
+    m_file = std::forward<FileT>(value);
+  }
+  template <typename FileT = TaxRegistrationDocFile>
+  TaxRegistrationDocument& WithFile(FileT&& value) {
+    SetFile(std::forward<FileT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   SourceS3Location m_s3Location;
-  bool m_fileHasBeenSet = false;
+
+  TaxRegistrationDocFile m_file;
   bool m_s3LocationHasBeenSet = false;
+  bool m_fileHasBeenSet = false;
 };
 
 }  // namespace Model

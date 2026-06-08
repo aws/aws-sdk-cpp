@@ -124,19 +124,17 @@ class RegisteredMCPServerSigV4Details {
   ///@}
 
   ///@{
-  /**
-   * <p>IAM role ARN to assume for SigV4 signing.</p>
-   */
-  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
-  inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-  template <typename RoleArnT = Aws::String>
-  void SetRoleArn(RoleArnT&& value) {
-    m_roleArnHasBeenSet = true;
-    m_roleArn = std::forward<RoleArnT>(value);
+
+  inline const Aws::String& GetMcpRoleArn() const { return m_mcpRoleArn; }
+  inline bool McpRoleArnHasBeenSet() const { return m_mcpRoleArnHasBeenSet; }
+  template <typename McpRoleArnT = Aws::String>
+  void SetMcpRoleArn(McpRoleArnT&& value) {
+    m_mcpRoleArnHasBeenSet = true;
+    m_mcpRoleArn = std::forward<McpRoleArnT>(value);
   }
-  template <typename RoleArnT = Aws::String>
-  RegisteredMCPServerSigV4Details& WithRoleArn(RoleArnT&& value) {
-    SetRoleArn(std::forward<RoleArnT>(value));
+  template <typename McpRoleArnT = Aws::String>
+  RegisteredMCPServerSigV4Details& WithMcpRoleArn(McpRoleArnT&& value) {
+    SetMcpRoleArn(std::forward<McpRoleArnT>(value));
     return *this;
   }
   ///@}
@@ -175,7 +173,7 @@ class RegisteredMCPServerSigV4Details {
 
   Aws::String m_service;
 
-  Aws::String m_roleArn;
+  Aws::String m_mcpRoleArn;
 
   Aws::Map<Aws::String, Aws::String> m_customHeaders;
   bool m_nameHasBeenSet = false;
@@ -183,7 +181,7 @@ class RegisteredMCPServerSigV4Details {
   bool m_descriptionHasBeenSet = false;
   bool m_regionHasBeenSet = false;
   bool m_serviceHasBeenSet = false;
-  bool m_roleArnHasBeenSet = false;
+  bool m_mcpRoleArnHasBeenSet = false;
   bool m_customHeadersHasBeenSet = false;
 };
 

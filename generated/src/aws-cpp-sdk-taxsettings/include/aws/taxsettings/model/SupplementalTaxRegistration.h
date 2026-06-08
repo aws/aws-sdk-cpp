@@ -35,58 +35,6 @@ class SupplementalTaxRegistration {
   AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
-  inline const Address& GetAddress() const { return m_address; }
-  inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-  template <typename AddressT = Address>
-  void SetAddress(AddressT&& value) {
-    m_addressHasBeenSet = true;
-    m_address = std::forward<AddressT>(value);
-  }
-  template <typename AddressT = Address>
-  SupplementalTaxRegistration& WithAddress(AddressT&& value) {
-    SetAddress(std::forward<AddressT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> Unique authority ID for the supplemental TRN. </p>
-   */
-  inline const Aws::String& GetAuthorityId() const { return m_authorityId; }
-  inline bool AuthorityIdHasBeenSet() const { return m_authorityIdHasBeenSet; }
-  template <typename AuthorityIdT = Aws::String>
-  void SetAuthorityId(AuthorityIdT&& value) {
-    m_authorityIdHasBeenSet = true;
-    m_authorityId = std::forward<AuthorityIdT>(value);
-  }
-  template <typename AuthorityIdT = Aws::String>
-  SupplementalTaxRegistration& WithAuthorityId(AuthorityIdT&& value) {
-    SetAuthorityId(std::forward<AuthorityIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> The legal name associated with your TRN registration. </p>
-   */
-  inline const Aws::String& GetLegalName() const { return m_legalName; }
-  inline bool LegalNameHasBeenSet() const { return m_legalNameHasBeenSet; }
-  template <typename LegalNameT = Aws::String>
-  void SetLegalName(LegalNameT&& value) {
-    m_legalNameHasBeenSet = true;
-    m_legalName = std::forward<LegalNameT>(value);
-  }
-  template <typename LegalNameT = Aws::String>
-  SupplementalTaxRegistration& WithLegalName(LegalNameT&& value) {
-    SetLegalName(std::forward<LegalNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
   /**
    * <p> The supplemental TRN unique identifier. </p>
    */
@@ -122,6 +70,58 @@ class SupplementalTaxRegistration {
 
   ///@{
   /**
+   * <p> The legal name associated with your TRN registration. </p>
+   */
+  inline const Aws::String& GetLegalName() const { return m_legalName; }
+  inline bool LegalNameHasBeenSet() const { return m_legalNameHasBeenSet; }
+  template <typename LegalNameT = Aws::String>
+  void SetLegalName(LegalNameT&& value) {
+    m_legalNameHasBeenSet = true;
+    m_legalName = std::forward<LegalNameT>(value);
+  }
+  template <typename LegalNameT = Aws::String>
+  SupplementalTaxRegistration& WithLegalName(LegalNameT&& value) {
+    SetLegalName(std::forward<LegalNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Address& GetAddress() const { return m_address; }
+  inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+  template <typename AddressT = Address>
+  void SetAddress(AddressT&& value) {
+    m_addressHasBeenSet = true;
+    m_address = std::forward<AddressT>(value);
+  }
+  template <typename AddressT = Address>
+  SupplementalTaxRegistration& WithAddress(AddressT&& value) {
+    SetAddress(std::forward<AddressT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Unique authority ID for the supplemental TRN. </p>
+   */
+  inline const Aws::String& GetAuthorityId() const { return m_authorityId; }
+  inline bool AuthorityIdHasBeenSet() const { return m_authorityIdHasBeenSet; }
+  template <typename AuthorityIdT = Aws::String>
+  void SetAuthorityId(AuthorityIdT&& value) {
+    m_authorityIdHasBeenSet = true;
+    m_authorityId = std::forward<AuthorityIdT>(value);
+  }
+  template <typename AuthorityIdT = Aws::String>
+  SupplementalTaxRegistration& WithAuthorityId(AuthorityIdT&& value) {
+    SetAuthorityId(std::forward<AuthorityIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The status of your TRN. </p>
    */
   inline TaxRegistrationStatus GetStatus() const { return m_status; }
@@ -136,22 +136,22 @@ class SupplementalTaxRegistration {
   }
   ///@}
  private:
-  Address m_address;
-
-  Aws::String m_authorityId;
-
-  Aws::String m_legalName;
-
   Aws::String m_registrationId;
 
   SupplementalTaxRegistrationType m_registrationType{SupplementalTaxRegistrationType::NOT_SET};
 
+  Aws::String m_legalName;
+
+  Address m_address;
+
+  Aws::String m_authorityId;
+
   TaxRegistrationStatus m_status{TaxRegistrationStatus::NOT_SET};
-  bool m_addressHasBeenSet = false;
-  bool m_authorityIdHasBeenSet = false;
-  bool m_legalNameHasBeenSet = false;
   bool m_registrationIdHasBeenSet = false;
   bool m_registrationTypeHasBeenSet = false;
+  bool m_legalNameHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_authorityIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -18,18 +18,18 @@ namespace Model {
 IndonesiaAdditionalInfo::IndonesiaAdditionalInfo(JsonView jsonValue) { *this = jsonValue; }
 
 IndonesiaAdditionalInfo& IndonesiaAdditionalInfo::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("decisionNumber")) {
-    m_decisionNumber = jsonValue.GetString("decisionNumber");
-    m_decisionNumberHasBeenSet = true;
+  if (jsonValue.ValueExists("taxRegistrationNumberType")) {
+    m_taxRegistrationNumberType = IndonesiaTaxRegistrationNumberTypeMapper::GetIndonesiaTaxRegistrationNumberTypeForName(
+        jsonValue.GetString("taxRegistrationNumberType"));
+    m_taxRegistrationNumberTypeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ppnExceptionDesignationCode")) {
     m_ppnExceptionDesignationCode = jsonValue.GetString("ppnExceptionDesignationCode");
     m_ppnExceptionDesignationCodeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("taxRegistrationNumberType")) {
-    m_taxRegistrationNumberType = IndonesiaTaxRegistrationNumberTypeMapper::GetIndonesiaTaxRegistrationNumberTypeForName(
-        jsonValue.GetString("taxRegistrationNumberType"));
-    m_taxRegistrationNumberTypeHasBeenSet = true;
+  if (jsonValue.ValueExists("decisionNumber")) {
+    m_decisionNumber = jsonValue.GetString("decisionNumber");
+    m_decisionNumberHasBeenSet = true;
   }
   return *this;
 }
@@ -37,17 +37,17 @@ IndonesiaAdditionalInfo& IndonesiaAdditionalInfo::operator=(JsonView jsonValue) 
 JsonValue IndonesiaAdditionalInfo::Jsonize() const {
   JsonValue payload;
 
-  if (m_decisionNumberHasBeenSet) {
-    payload.WithString("decisionNumber", m_decisionNumber);
+  if (m_taxRegistrationNumberTypeHasBeenSet) {
+    payload.WithString("taxRegistrationNumberType",
+                       IndonesiaTaxRegistrationNumberTypeMapper::GetNameForIndonesiaTaxRegistrationNumberType(m_taxRegistrationNumberType));
   }
 
   if (m_ppnExceptionDesignationCodeHasBeenSet) {
     payload.WithString("ppnExceptionDesignationCode", m_ppnExceptionDesignationCode);
   }
 
-  if (m_taxRegistrationNumberTypeHasBeenSet) {
-    payload.WithString("taxRegistrationNumberType",
-                       IndonesiaTaxRegistrationNumberTypeMapper::GetNameForIndonesiaTaxRegistrationNumberType(m_taxRegistrationNumberType));
+  if (m_decisionNumberHasBeenSet) {
+    payload.WithString("decisionNumber", m_decisionNumber);
   }
 
   return payload;

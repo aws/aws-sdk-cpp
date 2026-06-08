@@ -38,6 +38,7 @@
 #include <aws/mediapackagev2/model/CreateOriginEndpointRequest.h>
 #include <aws/mediapackagev2/model/CreateOriginEndpointResult.h>
 #include <aws/mediapackagev2/model/CustomAdType.h>
+#include <aws/mediapackagev2/model/DashAudioTimelinePattern.h>
 #include <aws/mediapackagev2/model/DashAvailabilityStartTimeConfiguration.h>
 #include <aws/mediapackagev2/model/DashBaseUrl.h>
 #include <aws/mediapackagev2/model/DashCompactness.h>

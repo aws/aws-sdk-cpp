@@ -22,13 +22,13 @@ SouthKoreaAdditionalInfo& SouthKoreaAdditionalInfo::operator=(JsonView jsonValue
     m_businessRepresentativeName = jsonValue.GetString("businessRepresentativeName");
     m_businessRepresentativeNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("itemOfBusiness")) {
-    m_itemOfBusiness = jsonValue.GetString("itemOfBusiness");
-    m_itemOfBusinessHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("lineOfBusiness")) {
     m_lineOfBusiness = jsonValue.GetString("lineOfBusiness");
     m_lineOfBusinessHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("itemOfBusiness")) {
+    m_itemOfBusiness = jsonValue.GetString("itemOfBusiness");
+    m_itemOfBusinessHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +40,12 @@ JsonValue SouthKoreaAdditionalInfo::Jsonize() const {
     payload.WithString("businessRepresentativeName", m_businessRepresentativeName);
   }
 
-  if (m_itemOfBusinessHasBeenSet) {
-    payload.WithString("itemOfBusiness", m_itemOfBusiness);
-  }
-
   if (m_lineOfBusinessHasBeenSet) {
     payload.WithString("lineOfBusiness", m_lineOfBusiness);
+  }
+
+  if (m_itemOfBusinessHasBeenSet) {
+    payload.WithString("itemOfBusiness", m_itemOfBusiness);
   }
 
   return payload;

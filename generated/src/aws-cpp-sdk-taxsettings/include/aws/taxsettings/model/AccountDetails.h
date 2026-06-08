@@ -55,18 +55,20 @@ class AccountDetails {
 
   ///@{
   /**
-   * <p> The meta data information associated with the account. </p>
+   * <p>Your TRN information. Instead of having full legal address, here TRN
+   * information will have jurisdiction details (for example, country code and
+   * state/region/province if applicable). </p>
    */
-  inline const AccountMetaData& GetAccountMetaData() const { return m_accountMetaData; }
-  inline bool AccountMetaDataHasBeenSet() const { return m_accountMetaDataHasBeenSet; }
-  template <typename AccountMetaDataT = AccountMetaData>
-  void SetAccountMetaData(AccountMetaDataT&& value) {
-    m_accountMetaDataHasBeenSet = true;
-    m_accountMetaData = std::forward<AccountMetaDataT>(value);
+  inline const TaxRegistrationWithJurisdiction& GetTaxRegistration() const { return m_taxRegistration; }
+  inline bool TaxRegistrationHasBeenSet() const { return m_taxRegistrationHasBeenSet; }
+  template <typename TaxRegistrationT = TaxRegistrationWithJurisdiction>
+  void SetTaxRegistration(TaxRegistrationT&& value) {
+    m_taxRegistrationHasBeenSet = true;
+    m_taxRegistration = std::forward<TaxRegistrationT>(value);
   }
-  template <typename AccountMetaDataT = AccountMetaData>
-  AccountDetails& WithAccountMetaData(AccountMetaDataT&& value) {
-    SetAccountMetaData(std::forward<AccountMetaDataT>(value));
+  template <typename TaxRegistrationT = TaxRegistrationWithJurisdiction>
+  AccountDetails& WithTaxRegistration(TaxRegistrationT&& value) {
+    SetTaxRegistration(std::forward<TaxRegistrationT>(value));
     return *this;
   }
   ///@}
@@ -91,35 +93,33 @@ class AccountDetails {
 
   ///@{
   /**
-   * <p>Your TRN information. Instead of having full legal address, here TRN
-   * information will have jurisdiction details (for example, country code and
-   * state/region/province if applicable). </p>
+   * <p> The meta data information associated with the account. </p>
    */
-  inline const TaxRegistrationWithJurisdiction& GetTaxRegistration() const { return m_taxRegistration; }
-  inline bool TaxRegistrationHasBeenSet() const { return m_taxRegistrationHasBeenSet; }
-  template <typename TaxRegistrationT = TaxRegistrationWithJurisdiction>
-  void SetTaxRegistration(TaxRegistrationT&& value) {
-    m_taxRegistrationHasBeenSet = true;
-    m_taxRegistration = std::forward<TaxRegistrationT>(value);
+  inline const AccountMetaData& GetAccountMetaData() const { return m_accountMetaData; }
+  inline bool AccountMetaDataHasBeenSet() const { return m_accountMetaDataHasBeenSet; }
+  template <typename AccountMetaDataT = AccountMetaData>
+  void SetAccountMetaData(AccountMetaDataT&& value) {
+    m_accountMetaDataHasBeenSet = true;
+    m_accountMetaData = std::forward<AccountMetaDataT>(value);
   }
-  template <typename TaxRegistrationT = TaxRegistrationWithJurisdiction>
-  AccountDetails& WithTaxRegistration(TaxRegistrationT&& value) {
-    SetTaxRegistration(std::forward<TaxRegistrationT>(value));
+  template <typename AccountMetaDataT = AccountMetaData>
+  AccountDetails& WithAccountMetaData(AccountMetaDataT&& value) {
+    SetAccountMetaData(std::forward<AccountMetaDataT>(value));
     return *this;
   }
   ///@}
  private:
   Aws::String m_accountId;
 
-  AccountMetaData m_accountMetaData;
+  TaxRegistrationWithJurisdiction m_taxRegistration;
 
   TaxInheritanceDetails m_taxInheritanceDetails;
 
-  TaxRegistrationWithJurisdiction m_taxRegistration;
+  AccountMetaData m_accountMetaData;
   bool m_accountIdHasBeenSet = false;
-  bool m_accountMetaDataHasBeenSet = false;
-  bool m_taxInheritanceDetailsHasBeenSet = false;
   bool m_taxRegistrationHasBeenSet = false;
+  bool m_taxInheritanceDetailsHasBeenSet = false;
+  bool m_accountMetaDataHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
+#include <aws/mediapackagev2/model/DashAudioTimelinePattern.h>
 #include <aws/mediapackagev2/model/DashAvailabilityStartTimeConfiguration.h>
 #include <aws/mediapackagev2/model/DashBaseUrl.h>
 #include <aws/mediapackagev2/model/DashCompactness.h>
@@ -377,6 +378,26 @@ class GetDashManifestConfiguration {
 
   ///@{
   /**
+   * <p>How MediaPackage represents the audio timeline in the DASH manifest, using
+   * DASH Segment Duration Patternization for audio adaptation sets.
+   * <code>PATTERNED</code> indicates that MediaPackage uses a pattern-based segment
+   * template for audio, reducing manifest size. <code>NONE</code> indicates that the
+   * manifest contains an explicit timeline for each audio segment.</p>
+   */
+  inline DashAudioTimelinePattern GetAudioTimelinePattern() const { return m_audioTimelinePattern; }
+  inline bool AudioTimelinePatternHasBeenSet() const { return m_audioTimelinePatternHasBeenSet; }
+  inline void SetAudioTimelinePattern(DashAudioTimelinePattern value) {
+    m_audioTimelinePatternHasBeenSet = true;
+    m_audioTimelinePattern = value;
+  }
+  inline GetDashManifestConfiguration& WithAudioTimelinePattern(DashAudioTimelinePattern value) {
+    SetAudioTimelinePattern(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The configuration for DASH subtitles.</p>
    */
   inline const DashSubtitleConfiguration& GetSubtitleConfiguration() const { return m_subtitleConfiguration; }
@@ -466,6 +487,8 @@ class GetDashManifestConfiguration {
 
   DashCompactness m_compactness{DashCompactness::NOT_SET};
 
+  DashAudioTimelinePattern m_audioTimelinePattern{DashAudioTimelinePattern::NOT_SET};
+
   DashSubtitleConfiguration m_subtitleConfiguration;
 
   UriPathType m_uriPathType{UriPathType::NOT_SET};
@@ -488,6 +511,7 @@ class GetDashManifestConfiguration {
   bool m_programInformationHasBeenSet = false;
   bool m_dvbSettingsHasBeenSet = false;
   bool m_compactnessHasBeenSet = false;
+  bool m_audioTimelinePatternHasBeenSet = false;
   bool m_subtitleConfigurationHasBeenSet = false;
   bool m_uriPathTypeHasBeenSet = false;
   bool m_availabilityStartTimeConfigurationHasBeenSet = false;

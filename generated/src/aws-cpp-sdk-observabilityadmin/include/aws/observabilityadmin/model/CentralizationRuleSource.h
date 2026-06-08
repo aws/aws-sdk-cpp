@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/observabilityadmin/model/SourceLogsConfiguration.h>
+#include <aws/observabilityadmin/model/SourceMetricsConfiguration.h>
 
 #include <utility>
 
@@ -95,15 +96,36 @@ class CentralizationRuleSource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Metric specific configuration for centralization source metrics.</p>
+   */
+  inline const SourceMetricsConfiguration& GetSourceMetricsConfiguration() const { return m_sourceMetricsConfiguration; }
+  inline bool SourceMetricsConfigurationHasBeenSet() const { return m_sourceMetricsConfigurationHasBeenSet; }
+  template <typename SourceMetricsConfigurationT = SourceMetricsConfiguration>
+  void SetSourceMetricsConfiguration(SourceMetricsConfigurationT&& value) {
+    m_sourceMetricsConfigurationHasBeenSet = true;
+    m_sourceMetricsConfiguration = std::forward<SourceMetricsConfigurationT>(value);
+  }
+  template <typename SourceMetricsConfigurationT = SourceMetricsConfiguration>
+  CentralizationRuleSource& WithSourceMetricsConfiguration(SourceMetricsConfigurationT&& value) {
+    SetSourceMetricsConfiguration(std::forward<SourceMetricsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_regions;
 
   Aws::String m_scope;
 
   SourceLogsConfiguration m_sourceLogsConfiguration;
+
+  SourceMetricsConfiguration m_sourceMetricsConfiguration;
   bool m_regionsHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
   bool m_sourceLogsConfigurationHasBeenSet = false;
+  bool m_sourceMetricsConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

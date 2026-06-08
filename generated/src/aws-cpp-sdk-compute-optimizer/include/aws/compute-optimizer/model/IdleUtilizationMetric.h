@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
+#include <aws/compute-optimizer/model/IdleDimension.h>
 #include <aws/compute-optimizer/model/IdleMetricName.h>
 #include <aws/compute-optimizer/model/MetricStatistic.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
@@ -92,15 +94,42 @@ class IdleUtilizationMetric {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The dimensions of the utilization metric.</p>
+   */
+  inline const Aws::Vector<IdleDimension>& GetDimensions() const { return m_dimensions; }
+  inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
+  template <typename DimensionsT = Aws::Vector<IdleDimension>>
+  void SetDimensions(DimensionsT&& value) {
+    m_dimensionsHasBeenSet = true;
+    m_dimensions = std::forward<DimensionsT>(value);
+  }
+  template <typename DimensionsT = Aws::Vector<IdleDimension>>
+  IdleUtilizationMetric& WithDimensions(DimensionsT&& value) {
+    SetDimensions(std::forward<DimensionsT>(value));
+    return *this;
+  }
+  template <typename DimensionsT = IdleDimension>
+  IdleUtilizationMetric& AddDimensions(DimensionsT&& value) {
+    m_dimensionsHasBeenSet = true;
+    m_dimensions.emplace_back(std::forward<DimensionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   IdleMetricName m_name{IdleMetricName::NOT_SET};
 
   MetricStatistic m_statistic{MetricStatistic::NOT_SET};
 
   double m_value{0.0};
+
+  Aws::Vector<IdleDimension> m_dimensions;
   bool m_nameHasBeenSet = false;
   bool m_statisticHasBeenSet = false;
   bool m_valueHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
 };
 
 }  // namespace Model

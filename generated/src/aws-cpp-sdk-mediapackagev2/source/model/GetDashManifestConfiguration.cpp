@@ -97,6 +97,11 @@ GetDashManifestConfiguration& GetDashManifestConfiguration::operator=(JsonView j
     m_compactness = DashCompactnessMapper::GetDashCompactnessForName(jsonValue.GetString("Compactness"));
     m_compactnessHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AudioTimelinePattern")) {
+    m_audioTimelinePattern =
+        DashAudioTimelinePatternMapper::GetDashAudioTimelinePatternForName(jsonValue.GetString("AudioTimelinePattern"));
+    m_audioTimelinePatternHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SubtitleConfiguration")) {
     m_subtitleConfiguration = jsonValue.GetObject("SubtitleConfiguration");
     m_subtitleConfigurationHasBeenSet = true;
@@ -195,6 +200,10 @@ JsonValue GetDashManifestConfiguration::Jsonize() const {
 
   if (m_compactnessHasBeenSet) {
     payload.WithString("Compactness", DashCompactnessMapper::GetNameForDashCompactness(m_compactness));
+  }
+
+  if (m_audioTimelinePatternHasBeenSet) {
+    payload.WithString("AudioTimelinePattern", DashAudioTimelinePatternMapper::GetNameForDashAudioTimelinePattern(m_audioTimelinePattern));
   }
 
   if (m_subtitleConfigurationHasBeenSet) {

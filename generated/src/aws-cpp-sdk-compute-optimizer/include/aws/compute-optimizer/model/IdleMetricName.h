@@ -23,7 +23,23 @@ enum class IdleMetricName {
   VolumeWriteOpsPerSecond,
   ActiveConnectionCount,
   PacketsInFromSource,
-  PacketsInFromDestination
+  PacketsInFromDestination,
+  ConsumedReadCapacityUnits,
+  ConsumedWriteCapacityUnits,
+  ConsumedChangeDataCaptureUnits,
+  NewConnections,
+  EngineCPUUtilization,
+  CacheHits,
+  CacheMisses,
+  KeyspaceHits,
+  KeyspaceMisses,
+  IsIdle,
+  UserConnected,
+  Invocations,
+  GetTypeCmds,
+  SetTypeCmds,
+  ElastiCacheProcessingUnits,
+  CurrConnections
 };
 
 namespace IdleMetricNameMapper {

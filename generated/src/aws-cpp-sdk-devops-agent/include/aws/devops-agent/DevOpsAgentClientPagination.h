@@ -7,6 +7,10 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/devops-agent/DevOpsAgentClient.h>
 #include <aws/devops-agent/model/ListAgentSpacesPaginationTraits.h>
+#include <aws/devops-agent/model/ListAssetFilesPaginationTraits.h>
+#include <aws/devops-agent/model/ListAssetTypesPaginationTraits.h>
+#include <aws/devops-agent/model/ListAssetVersionsPaginationTraits.h>
+#include <aws/devops-agent/model/ListAssetsPaginationTraits.h>
 #include <aws/devops-agent/model/ListAssociationsPaginationTraits.h>
 #include <aws/devops-agent/model/ListBacklogTasksPaginationTraits.h>
 #include <aws/devops-agent/model/ListExecutionsPaginationTraits.h>
@@ -19,6 +23,14 @@ namespace DevOpsAgent {
 
 using ListAgentSpacesPaginator = Aws::Utils::Pagination::Paginator<DevOpsAgentClient, Model::ListAgentSpacesRequest,
                                                                    Pagination::ListAgentSpacesPaginationTraits<DevOpsAgentClient>>;
+using ListAssetFilesPaginator = Aws::Utils::Pagination::Paginator<DevOpsAgentClient, Model::ListAssetFilesRequest,
+                                                                  Pagination::ListAssetFilesPaginationTraits<DevOpsAgentClient>>;
+using ListAssetsPaginator = Aws::Utils::Pagination::Paginator<DevOpsAgentClient, Model::ListAssetsRequest,
+                                                              Pagination::ListAssetsPaginationTraits<DevOpsAgentClient>>;
+using ListAssetTypesPaginator = Aws::Utils::Pagination::Paginator<DevOpsAgentClient, Model::ListAssetTypesRequest,
+                                                                  Pagination::ListAssetTypesPaginationTraits<DevOpsAgentClient>>;
+using ListAssetVersionsPaginator = Aws::Utils::Pagination::Paginator<DevOpsAgentClient, Model::ListAssetVersionsRequest,
+                                                                     Pagination::ListAssetVersionsPaginationTraits<DevOpsAgentClient>>;
 using ListAssociationsPaginator = Aws::Utils::Pagination::Paginator<DevOpsAgentClient, Model::ListAssociationsRequest,
                                                                     Pagination::ListAssociationsPaginationTraits<DevOpsAgentClient>>;
 using ListBacklogTasksPaginator = Aws::Utils::Pagination::Paginator<DevOpsAgentClient, Model::ListBacklogTasksRequest,

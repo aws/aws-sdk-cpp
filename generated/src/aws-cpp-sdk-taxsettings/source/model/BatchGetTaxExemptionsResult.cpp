@@ -22,19 +22,19 @@ BatchGetTaxExemptionsResult::BatchGetTaxExemptionsResult(const Aws::AmazonWebSer
 BatchGetTaxExemptionsResult& BatchGetTaxExemptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("failedAccounts")) {
-    Aws::Utils::Array<JsonView> failedAccountsJsonList = jsonValue.GetArray("failedAccounts");
-    for (unsigned failedAccountsIndex = 0; failedAccountsIndex < failedAccountsJsonList.GetLength(); ++failedAccountsIndex) {
-      m_failedAccounts.push_back(failedAccountsJsonList[failedAccountsIndex].AsString());
-    }
-    m_failedAccountsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("taxExemptionDetailsMap")) {
     Aws::Map<Aws::String, JsonView> taxExemptionDetailsMapJsonMap = jsonValue.GetObject("taxExemptionDetailsMap").GetAllObjects();
     for (auto& taxExemptionDetailsMapItem : taxExemptionDetailsMapJsonMap) {
       m_taxExemptionDetailsMap[taxExemptionDetailsMapItem.first] = taxExemptionDetailsMapItem.second.AsObject();
     }
     m_taxExemptionDetailsMapHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failedAccounts")) {
+    Aws::Utils::Array<JsonView> failedAccountsJsonList = jsonValue.GetArray("failedAccounts");
+    for (unsigned failedAccountsIndex = 0; failedAccountsIndex < failedAccountsJsonList.GetLength(); ++failedAccountsIndex) {
+      m_failedAccounts.push_back(failedAccountsJsonList[failedAccountsIndex].AsString());
+    }
+    m_failedAccountsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

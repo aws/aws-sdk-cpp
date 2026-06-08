@@ -35,24 +35,6 @@ class Jurisdiction {
 
   ///@{
   /**
-   * <p> The country code of the jurisdiction. </p>
-   */
-  inline const Aws::String& GetCountryCode() const { return m_countryCode; }
-  inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
-  template <typename CountryCodeT = Aws::String>
-  void SetCountryCode(CountryCodeT&& value) {
-    m_countryCodeHasBeenSet = true;
-    m_countryCode = std::forward<CountryCodeT>(value);
-  }
-  template <typename CountryCodeT = Aws::String>
-  Jurisdiction& WithCountryCode(CountryCodeT&& value) {
-    SetCountryCode(std::forward<CountryCodeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> The state, region, or province associated with the country of the
    * jurisdiction, if applicable. </p>
    */
@@ -69,12 +51,30 @@ class Jurisdiction {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_countryCode;
 
+  ///@{
+  /**
+   * <p> The country code of the jurisdiction. </p>
+   */
+  inline const Aws::String& GetCountryCode() const { return m_countryCode; }
+  inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
+  template <typename CountryCodeT = Aws::String>
+  void SetCountryCode(CountryCodeT&& value) {
+    m_countryCodeHasBeenSet = true;
+    m_countryCode = std::forward<CountryCodeT>(value);
+  }
+  template <typename CountryCodeT = Aws::String>
+  Jurisdiction& WithCountryCode(CountryCodeT&& value) {
+    SetCountryCode(std::forward<CountryCodeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_stateOrRegion;
-  bool m_countryCodeHasBeenSet = false;
+
+  Aws::String m_countryCode;
   bool m_stateOrRegionHasBeenSet = false;
+  bool m_countryCodeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -57,6 +57,14 @@ UpdatePrivateConnectionCertificateResult& UpdatePrivateConnectionCertificateResu
     m_certificateExpiryTime = jsonValue.GetString("certificateExpiryTime");
     m_certificateExpiryTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dnsResolution")) {
+    m_dnsResolution = ResourceConfigDnsResolutionMapper::GetResourceConfigDnsResolutionForName(jsonValue.GetString("dnsResolution"));
+    m_dnsResolutionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failureMessage")) {
+    m_failureMessage = jsonValue.GetString("failureMessage");
+    m_failureMessageHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -33,6 +33,10 @@ CentralizationRuleSource& CentralizationRuleSource::operator=(JsonView jsonValue
     m_sourceLogsConfiguration = jsonValue.GetObject("SourceLogsConfiguration");
     m_sourceLogsConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SourceMetricsConfiguration")) {
+    m_sourceMetricsConfiguration = jsonValue.GetObject("SourceMetricsConfiguration");
+    m_sourceMetricsConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +57,10 @@ JsonValue CentralizationRuleSource::Jsonize() const {
 
   if (m_sourceLogsConfigurationHasBeenSet) {
     payload.WithObject("SourceLogsConfiguration", m_sourceLogsConfiguration.Jsonize());
+  }
+
+  if (m_sourceMetricsConfigurationHasBeenSet) {
+    payload.WithObject("SourceMetricsConfiguration", m_sourceMetricsConfiguration.Jsonize());
   }
 
   return payload;

@@ -18,13 +18,13 @@ namespace Model {
 VietnamAdditionalInfo::VietnamAdditionalInfo(JsonView jsonValue) { *this = jsonValue; }
 
 VietnamAdditionalInfo& VietnamAdditionalInfo::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("electronicTransactionCodeNumber")) {
-    m_electronicTransactionCodeNumber = jsonValue.GetString("electronicTransactionCodeNumber");
-    m_electronicTransactionCodeNumberHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("enterpriseIdentificationNumber")) {
     m_enterpriseIdentificationNumber = jsonValue.GetString("enterpriseIdentificationNumber");
     m_enterpriseIdentificationNumberHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("electronicTransactionCodeNumber")) {
+    m_electronicTransactionCodeNumber = jsonValue.GetString("electronicTransactionCodeNumber");
+    m_electronicTransactionCodeNumberHasBeenSet = true;
   }
   if (jsonValue.ValueExists("paymentVoucherNumber")) {
     m_paymentVoucherNumber = jsonValue.GetString("paymentVoucherNumber");
@@ -40,12 +40,12 @@ VietnamAdditionalInfo& VietnamAdditionalInfo::operator=(JsonView jsonValue) {
 JsonValue VietnamAdditionalInfo::Jsonize() const {
   JsonValue payload;
 
-  if (m_electronicTransactionCodeNumberHasBeenSet) {
-    payload.WithString("electronicTransactionCodeNumber", m_electronicTransactionCodeNumber);
-  }
-
   if (m_enterpriseIdentificationNumberHasBeenSet) {
     payload.WithString("enterpriseIdentificationNumber", m_enterpriseIdentificationNumber);
+  }
+
+  if (m_electronicTransactionCodeNumberHasBeenSet) {
+    payload.WithString("electronicTransactionCodeNumber", m_electronicTransactionCodeNumber);
   }
 
   if (m_paymentVoucherNumberHasBeenSet) {

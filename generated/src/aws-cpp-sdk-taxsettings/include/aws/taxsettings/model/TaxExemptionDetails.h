@@ -35,6 +35,30 @@ class TaxExemptionDetails {
 
   ///@{
   /**
+   * <p>Tax exemptions. </p>
+   */
+  inline const Aws::Vector<TaxExemption>& GetTaxExemptions() const { return m_taxExemptions; }
+  inline bool TaxExemptionsHasBeenSet() const { return m_taxExemptionsHasBeenSet; }
+  template <typename TaxExemptionsT = Aws::Vector<TaxExemption>>
+  void SetTaxExemptions(TaxExemptionsT&& value) {
+    m_taxExemptionsHasBeenSet = true;
+    m_taxExemptions = std::forward<TaxExemptionsT>(value);
+  }
+  template <typename TaxExemptionsT = Aws::Vector<TaxExemption>>
+  TaxExemptionDetails& WithTaxExemptions(TaxExemptionsT&& value) {
+    SetTaxExemptions(std::forward<TaxExemptionsT>(value));
+    return *this;
+  }
+  template <typename TaxExemptionsT = TaxExemption>
+  TaxExemptionDetails& AddTaxExemptions(TaxExemptionsT&& value) {
+    m_taxExemptionsHasBeenSet = true;
+    m_taxExemptions.emplace_back(std::forward<TaxExemptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The indicator if the tax exemption is inherited from the consolidated billing
    * family management account. </p>
    */
@@ -86,42 +110,18 @@ class TaxExemptionDetails {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Tax exemptions. </p>
-   */
-  inline const Aws::Vector<TaxExemption>& GetTaxExemptions() const { return m_taxExemptions; }
-  inline bool TaxExemptionsHasBeenSet() const { return m_taxExemptionsHasBeenSet; }
-  template <typename TaxExemptionsT = Aws::Vector<TaxExemption>>
-  void SetTaxExemptions(TaxExemptionsT&& value) {
-    m_taxExemptionsHasBeenSet = true;
-    m_taxExemptions = std::forward<TaxExemptionsT>(value);
-  }
-  template <typename TaxExemptionsT = Aws::Vector<TaxExemption>>
-  TaxExemptionDetails& WithTaxExemptions(TaxExemptionsT&& value) {
-    SetTaxExemptions(std::forward<TaxExemptionsT>(value));
-    return *this;
-  }
-  template <typename TaxExemptionsT = TaxExemption>
-  TaxExemptionDetails& AddTaxExemptions(TaxExemptionsT&& value) {
-    m_taxExemptionsHasBeenSet = true;
-    m_taxExemptions.emplace_back(std::forward<TaxExemptionsT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::Vector<TaxExemption> m_taxExemptions;
+
   bool m_heritageObtainedDetails{false};
 
   Aws::String m_heritageObtainedParentEntity;
 
   Aws::String m_heritageObtainedReason;
-
-  Aws::Vector<TaxExemption> m_taxExemptions;
+  bool m_taxExemptionsHasBeenSet = false;
   bool m_heritageObtainedDetailsHasBeenSet = false;
   bool m_heritageObtainedParentEntityHasBeenSet = false;
   bool m_heritageObtainedReasonHasBeenSet = false;
-  bool m_taxExemptionsHasBeenSet = false;
 };
 
 }  // namespace Model

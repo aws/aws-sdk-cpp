@@ -21,6 +21,12 @@ static const int EBSVolume_HASH = HashingUtils::HashString("EBSVolume");
 static const int ECSService_HASH = HashingUtils::HashString("ECSService");
 static const int RDSDBInstance_HASH = HashingUtils::HashString("RDSDBInstance");
 static const int NatGateway_HASH = HashingUtils::HashString("NatGateway");
+static const int DynamoDBTable_HASH = HashingUtils::HashString("DynamoDBTable");
+static const int ElastiCacheCluster_HASH = HashingUtils::HashString("ElastiCacheCluster");
+static const int MemoryDBCluster_HASH = HashingUtils::HashString("MemoryDBCluster");
+static const int DocumentDBCluster_HASH = HashingUtils::HashString("DocumentDBCluster");
+static const int WorkSpaces_HASH = HashingUtils::HashString("WorkSpaces");
+static const int SageMakerEndpoint_HASH = HashingUtils::HashString("SageMakerEndpoint");
 
 IdleRecommendationResourceType GetIdleRecommendationResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +42,18 @@ IdleRecommendationResourceType GetIdleRecommendationResourceTypeForName(const Aw
     return IdleRecommendationResourceType::RDSDBInstance;
   } else if (hashCode == NatGateway_HASH) {
     return IdleRecommendationResourceType::NatGateway;
+  } else if (hashCode == DynamoDBTable_HASH) {
+    return IdleRecommendationResourceType::DynamoDBTable;
+  } else if (hashCode == ElastiCacheCluster_HASH) {
+    return IdleRecommendationResourceType::ElastiCacheCluster;
+  } else if (hashCode == MemoryDBCluster_HASH) {
+    return IdleRecommendationResourceType::MemoryDBCluster;
+  } else if (hashCode == DocumentDBCluster_HASH) {
+    return IdleRecommendationResourceType::DocumentDBCluster;
+  } else if (hashCode == WorkSpaces_HASH) {
+    return IdleRecommendationResourceType::WorkSpaces;
+  } else if (hashCode == SageMakerEndpoint_HASH) {
+    return IdleRecommendationResourceType::SageMakerEndpoint;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +80,18 @@ Aws::String GetNameForIdleRecommendationResourceType(IdleRecommendationResourceT
       return "RDSDBInstance";
     case IdleRecommendationResourceType::NatGateway:
       return "NatGateway";
+    case IdleRecommendationResourceType::DynamoDBTable:
+      return "DynamoDBTable";
+    case IdleRecommendationResourceType::ElastiCacheCluster:
+      return "ElastiCacheCluster";
+    case IdleRecommendationResourceType::MemoryDBCluster:
+      return "MemoryDBCluster";
+    case IdleRecommendationResourceType::DocumentDBCluster:
+      return "DocumentDBCluster";
+    case IdleRecommendationResourceType::WorkSpaces:
+      return "WorkSpaces";
+    case IdleRecommendationResourceType::SageMakerEndpoint:
+      return "SageMakerEndpoint";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -10,7 +10,17 @@
 namespace Aws {
 namespace mgn {
 namespace Model {
-enum class SourceEnvironment { NOT_SET, NSX, VSPHERE, FORTIGATE_FIREWALL, PALO_ALTO_FIREWALL, CISCO_ACI, LOGICAL_MODEL, MODELIZE_IT };
+enum class SourceEnvironment {
+  NOT_SET,
+  NSX,
+  VSPHERE,
+  FORTIGATE_FIREWALL,
+  PALO_ALTO_FIREWALL,
+  CISCO_ACI,
+  LOGICAL_MODEL,
+  MODELIZE_IT,
+  AWS_DISCOVERY_COLLECTOR
+};
 
 namespace SourceEnvironmentMapper {
 AWS_MGN_API SourceEnvironment GetSourceEnvironmentForName(const Aws::String& name);
