@@ -137,7 +137,7 @@ namespace Aws
 
             const char* GetStrategyName() const override { return "standard";}
 
-            struct RetryImpl;
+            class RetryImpl;
 
         protected:
             std::shared_ptr<RetryQuotaContainer> m_retryQuotaContainer;
