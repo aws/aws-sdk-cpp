@@ -291,7 +291,3 @@ TEST_F(NewRetriesStrategyTest, InvalidRetryAfterFallsBack)
     ASSERT_GE(delay, 0);
     ASSERT_LE(delay, 50);
 }
-
-// SEP Test Cases 2, 4, 7 are covered by TestStandardRetryStrategy above (same behavior with/without gate).
-// TODO: SEP Test Case 11 (DynamoDB 25ms base) deferred to next PR.
-// TODO: SEP Test Cases 12-16 (long-polling) require pipeline integration tests.

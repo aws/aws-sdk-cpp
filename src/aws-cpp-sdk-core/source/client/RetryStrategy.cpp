@@ -16,8 +16,6 @@
 using namespace Aws::Utils::Threading;
 using namespace Aws::Client;
 
-static const char RETRY_STRATEGY_TAG[] = "StandardRetryStrategy";
-
 namespace Aws
 {
     namespace Client
@@ -32,6 +30,8 @@ namespace Aws
 }
 
 namespace {
+    const char RETRY_STRATEGY_TAG[] = "StandardRetryStrategy";
+
     bool IsNewRetriesEnabled()
     {
         return Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true";
@@ -44,7 +44,7 @@ namespace {
         {
             AWS_UNREFERENCED_PARAM(error);
             // Maximum left shift factor is capped by ceil(log2(max_delay)), to avoid wrap-around and overflow into negative values:
-            return std::min(static_cast<int>(Aws::Utils::GetRandomValue() % 1000) * (1 << std::min(attemptedRetries, 15L)), 20000);
+            return (std::min)(static_cast<int>(Aws::Utils::GetRandomValue() % 1000) * (1 << (std::min)(attemptedRetries, 15L)), 20000);
         }
     };
 
@@ -65,13 +65,13 @@ namespace {
             if (it != headers.end())
             {
                 long long headerMs = Aws::Utils::StringUtils::ConvertToInt64(it->second.c_str());
-                if (headerMs < 0)
+                if (headerMs >= 0)
                 {
-                    AWS_LOGSTREAM_DEBUG(RETRY_STRATEGY_TAG, "Ignoring invalid x-amz-retry-after value: " << it->second);
+                    double headerSec = static_cast<double>(headerMs) / 1000.0;
+                    double clamped = (std::max)(t_i, (std::min)(headerSec, 5.0 + t_i));
+                    return static_cast<long>(clamped * 1000.0);
                 }
-                double headerSec = static_cast<double>(headerMs) / 1000.0;
-                double clamped = (std::max)(t_i, (std::min)(headerSec, 5.0 + t_i));
-                return static_cast<long>(clamped * 1000.0);
+                AWS_LOGSTREAM_DEBUG(RETRY_STRATEGY_TAG, "Ignoring invalid x-amz-retry-after value: " << it->second);
             }
 
             return static_cast<long>(t_i * 1000.0);

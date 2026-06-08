@@ -15,15 +15,18 @@ namespace Aws
 {
     namespace Client
     {
-        static const int THROTTLE_BASED_RETRY_COST = 14;
-        static const int THROTTLE_BASED_THROTTLING_COST = 5;
-        static const int THROTTLE_BASED_INITIAL_TOKENS = 500;
+        struct QuotaConfig
+        {
+            int retryCost = 14;
+            int throttlingCost = 5;
+            int initialTokens = 500;
+        };
 
         class AWS_CORE_LOCAL ThrottleBasedRetryQuotaContainer : public RetryQuotaContainer
         {
         public:
-            ThrottleBasedRetryQuotaContainer(int retryCost = THROTTLE_BASED_RETRY_COST, int throttlingRetryCost = THROTTLE_BASED_THROTTLING_COST)
-                : m_retryQuota(THROTTLE_BASED_INITIAL_TOKENS), m_retryCost(retryCost), m_throttlingRetryCost(throttlingRetryCost) {}
+            ThrottleBasedRetryQuotaContainer(const QuotaConfig& config = QuotaConfig{})
+                : m_config(config), m_retryQuota(config.initialTokens) {}
 
             virtual ~ThrottleBasedRetryQuotaContainer() = default;
 
@@ -43,29 +46,28 @@ namespace Aws
 
             bool AcquireRetryQuota(const AWSError<CoreErrors>& error) override
             {
-                int capacityAmount = error.ShouldThrottle() ? m_throttlingRetryCost : m_retryCost;
+                int capacityAmount = error.ShouldThrottle() ? m_config.throttlingCost : m_config.retryCost;
                 return AcquireRetryQuota(capacityAmount);
             }
 
             void ReleaseRetryQuota(int capacityAmount) override
             {
                 Aws::Utils::Threading::WriterLockGuard guard(m_retryQuotaLock);
-                m_retryQuota = (std::min)(m_retryQuota + capacityAmount, THROTTLE_BASED_INITIAL_TOKENS);
+                m_retryQuota = (std::min)(m_retryQuota + capacityAmount, m_config.initialTokens);
             }
 
             void ReleaseRetryQuota(const AWSError<CoreErrors>& error) override
             {
-                int capacityAmount = error.ShouldThrottle() ? m_throttlingRetryCost : m_retryCost;
+                int capacityAmount = error.ShouldThrottle() ? m_config.throttlingCost : m_config.retryCost;
                 ReleaseRetryQuota(capacityAmount);
             }
 
             int GetRetryQuota() const override { return m_retryQuota; }
 
         private:
+            QuotaConfig m_config;
             mutable Aws::Utils::Threading::ReaderWriterLock m_retryQuotaLock;
             int m_retryQuota;
-            int m_retryCost;
-            int m_throttlingRetryCost;
         };
     } // namespace Client
 } // namespace Aws
