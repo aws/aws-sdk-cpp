@@ -1327,6 +1327,34 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
+   * <p>Returns the account-wide data retention mode for Amazon
+   * Bedrock.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAccountDataRetention">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAccountDataRetentionOutcome GetAccountDataRetention(const Model::GetAccountDataRetentionRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetAccountDataRetention that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAccountDataRetentionRequestT = Model::GetAccountDataRetentionRequest>
+  Model::GetAccountDataRetentionOutcomeCallable GetAccountDataRetentionCallable(const GetAccountDataRetentionRequestT& request = {}) const {
+    return SubmitCallable(&BedrockClient::GetAccountDataRetention, request);
+  }
+
+  /**
+   * An Async wrapper for GetAccountDataRetention that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAccountDataRetentionRequestT = Model::GetAccountDataRetentionRequest>
+  void GetAccountDataRetentionAsync(const GetAccountDataRetentionResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const GetAccountDataRetentionRequestT& request = {}) const {
+    return SubmitAsync(&BedrockClient::GetAccountDataRetention, request, handler, context);
+  }
+
+  /**
    * <p>Gets information about an advanced prompt optimization job.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAdvancedPromptOptimizationJob">AWS
@@ -2795,6 +2823,34 @@ class AWS_BEDROCK_API BedrockClient
   void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
+   * <p>Sets the account-wide data retention mode for Amazon Bedrock.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutAccountDataRetention">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAccountDataRetentionOutcome PutAccountDataRetention(const Model::PutAccountDataRetentionRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAccountDataRetention that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutAccountDataRetentionRequestT = Model::PutAccountDataRetentionRequest>
+  Model::PutAccountDataRetentionOutcomeCallable PutAccountDataRetentionCallable(const PutAccountDataRetentionRequestT& request) const {
+    return SubmitCallable(&BedrockClient::PutAccountDataRetention, request);
+  }
+
+  /**
+   * An Async wrapper for PutAccountDataRetention that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutAccountDataRetentionRequestT = Model::PutAccountDataRetentionRequest>
+  void PutAccountDataRetentionAsync(const PutAccountDataRetentionRequestT& request,
+                                    const PutAccountDataRetentionResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::PutAccountDataRetention, request, handler, context);
   }
 
   /**

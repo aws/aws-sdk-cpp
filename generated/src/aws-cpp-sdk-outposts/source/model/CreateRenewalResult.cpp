@@ -42,6 +42,10 @@ CreateRenewalResult& CreateRenewalResult::operator=(const Aws::AmazonWebServiceR
     m_monthlyRecurringPrice = jsonValue.GetDouble("MonthlyRecurringPrice");
     m_monthlyRecurringPriceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Currency")) {
+    m_currency = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("Currency"));
+    m_currencyHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

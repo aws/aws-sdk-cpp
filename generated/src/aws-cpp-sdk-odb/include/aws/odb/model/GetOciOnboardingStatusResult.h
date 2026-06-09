@@ -6,9 +6,12 @@
 #pragma once
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/odb/Odb_EXPORTS.h>
+#include <aws/odb/model/OciIamRole.h>
 #include <aws/odb/model/OciIdentityDomain.h>
 #include <aws/odb/model/OciOnboardingStatus.h>
+#include <aws/odb/model/SubscriptionError.h>
 
 #include <utility>
 
@@ -96,6 +99,93 @@ class GetOciOnboardingStatusResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The list of Amazon Web Services Identity and Access Management (IAM) service
+   * roles used for Autonomous Database integration with Oracle Cloud Infrastructure
+   * (OCI).</p>
+   */
+  inline const Aws::Vector<OciIamRole>& GetAutonomousDatabaseOciIntegrationIamRoles() const {
+    return m_autonomousDatabaseOciIntegrationIamRoles;
+  }
+  template <typename AutonomousDatabaseOciIntegrationIamRolesT = Aws::Vector<OciIamRole>>
+  void SetAutonomousDatabaseOciIntegrationIamRoles(AutonomousDatabaseOciIntegrationIamRolesT&& value) {
+    m_autonomousDatabaseOciIntegrationIamRolesHasBeenSet = true;
+    m_autonomousDatabaseOciIntegrationIamRoles = std::forward<AutonomousDatabaseOciIntegrationIamRolesT>(value);
+  }
+  template <typename AutonomousDatabaseOciIntegrationIamRolesT = Aws::Vector<OciIamRole>>
+  GetOciOnboardingStatusResult& WithAutonomousDatabaseOciIntegrationIamRoles(AutonomousDatabaseOciIntegrationIamRolesT&& value) {
+    SetAutonomousDatabaseOciIntegrationIamRoles(std::forward<AutonomousDatabaseOciIntegrationIamRolesT>(value));
+    return *this;
+  }
+  template <typename AutonomousDatabaseOciIntegrationIamRolesT = OciIamRole>
+  GetOciOnboardingStatusResult& AddAutonomousDatabaseOciIntegrationIamRoles(AutonomousDatabaseOciIntegrationIamRolesT&& value) {
+    m_autonomousDatabaseOciIntegrationIamRolesHasBeenSet = true;
+    m_autonomousDatabaseOciIntegrationIamRoles.emplace_back(std::forward<AutonomousDatabaseOciIntegrationIamRolesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the Oracle Cloud Infrastructure (OCI) tenancy that
+   * is linked to your Amazon Web Services account.</p>
+   */
+  inline const Aws::String& GetLinkedOciTenancyId() const { return m_linkedOciTenancyId; }
+  template <typename LinkedOciTenancyIdT = Aws::String>
+  void SetLinkedOciTenancyId(LinkedOciTenancyIdT&& value) {
+    m_linkedOciTenancyIdHasBeenSet = true;
+    m_linkedOciTenancyId = std::forward<LinkedOciTenancyIdT>(value);
+  }
+  template <typename LinkedOciTenancyIdT = Aws::String>
+  GetOciOnboardingStatusResult& WithLinkedOciTenancyId(LinkedOciTenancyIdT&& value) {
+    SetLinkedOciTenancyId(std::forward<LinkedOciTenancyIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the Oracle Cloud Infrastructure (OCI) compartment
+   * that is linked to your Amazon Web Services account.</p>
+   */
+  inline const Aws::String& GetLinkedOciCompartmentId() const { return m_linkedOciCompartmentId; }
+  template <typename LinkedOciCompartmentIdT = Aws::String>
+  void SetLinkedOciCompartmentId(LinkedOciCompartmentIdT&& value) {
+    m_linkedOciCompartmentIdHasBeenSet = true;
+    m_linkedOciCompartmentId = std::forward<LinkedOciCompartmentIdT>(value);
+  }
+  template <typename LinkedOciCompartmentIdT = Aws::String>
+  GetOciOnboardingStatusResult& WithLinkedOciCompartmentId(LinkedOciCompartmentIdT&& value) {
+    SetLinkedOciCompartmentId(std::forward<LinkedOciCompartmentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of errors that occurred during the subscription process for your
+   * Amazon Web Services account, if any.</p>
+   */
+  inline const Aws::Vector<SubscriptionError>& GetSubscriptionErrors() const { return m_subscriptionErrors; }
+  template <typename SubscriptionErrorsT = Aws::Vector<SubscriptionError>>
+  void SetSubscriptionErrors(SubscriptionErrorsT&& value) {
+    m_subscriptionErrorsHasBeenSet = true;
+    m_subscriptionErrors = std::forward<SubscriptionErrorsT>(value);
+  }
+  template <typename SubscriptionErrorsT = Aws::Vector<SubscriptionError>>
+  GetOciOnboardingStatusResult& WithSubscriptionErrors(SubscriptionErrorsT&& value) {
+    SetSubscriptionErrors(std::forward<SubscriptionErrorsT>(value));
+    return *this;
+  }
+  template <typename SubscriptionErrorsT = SubscriptionError>
+  GetOciOnboardingStatusResult& AddSubscriptionErrors(SubscriptionErrorsT&& value) {
+    m_subscriptionErrorsHasBeenSet = true;
+    m_subscriptionErrors.emplace_back(std::forward<SubscriptionErrorsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -120,12 +210,24 @@ class GetOciOnboardingStatusResult {
 
   OciIdentityDomain m_ociIdentityDomain;
 
+  Aws::Vector<OciIamRole> m_autonomousDatabaseOciIntegrationIamRoles;
+
+  Aws::String m_linkedOciTenancyId;
+
+  Aws::String m_linkedOciCompartmentId;
+
+  Aws::Vector<SubscriptionError> m_subscriptionErrors;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_existingTenancyActivationLinkHasBeenSet = false;
   bool m_newTenancyActivationLinkHasBeenSet = false;
   bool m_ociIdentityDomainHasBeenSet = false;
+  bool m_autonomousDatabaseOciIntegrationIamRolesHasBeenSet = false;
+  bool m_linkedOciTenancyIdHasBeenSet = false;
+  bool m_linkedOciCompartmentIdHasBeenSet = false;
+  bool m_subscriptionErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

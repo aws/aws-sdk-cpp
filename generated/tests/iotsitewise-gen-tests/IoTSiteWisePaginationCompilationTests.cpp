@@ -37,6 +37,7 @@
 #include <aws/iotsitewise/model/ExecuteQueryPaginationTraits.h>
 #include <aws/iotsitewise/model/ListExecutionsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListTimeSeriesPaginationTraits.h>
+#include <aws/iotsitewise/model/ListActionsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

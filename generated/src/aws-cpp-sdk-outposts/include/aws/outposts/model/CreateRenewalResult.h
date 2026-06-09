@@ -7,6 +7,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
+#include <aws/outposts/model/CurrencyCode.h>
 #include <aws/outposts/model/PaymentOption.h>
 #include <aws/outposts/model/PaymentTerm.h>
 
@@ -107,6 +108,21 @@ class CreateRenewalResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The currency of the renewal price.</p>
+   */
+  inline CurrencyCode GetCurrency() const { return m_currency; }
+  inline void SetCurrency(CurrencyCode value) {
+    m_currencyHasBeenSet = true;
+    m_currency = value;
+  }
+  inline CreateRenewalResult& WithCurrency(CurrencyCode value) {
+    SetCurrency(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -133,6 +149,8 @@ class CreateRenewalResult {
 
   double m_monthlyRecurringPrice{0.0};
 
+  CurrencyCode m_currency{CurrencyCode::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_paymentOptionHasBeenSet = false;
@@ -140,6 +158,7 @@ class CreateRenewalResult {
   bool m_outpostIdHasBeenSet = false;
   bool m_upfrontPriceHasBeenSet = false;
   bool m_monthlyRecurringPriceHasBeenSet = false;
+  bool m_currencyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

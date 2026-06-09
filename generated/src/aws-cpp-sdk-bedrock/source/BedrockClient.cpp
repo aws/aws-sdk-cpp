@@ -45,6 +45,7 @@
 #include <aws/bedrock/model/DeleteResourcePolicyRequest.h>
 #include <aws/bedrock/model/DeregisterMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/ExportAutomatedReasoningPolicyVersionRequest.h>
+#include <aws/bedrock/model/GetAccountDataRetentionRequest.h>
 #include <aws/bedrock/model/GetAdvancedPromptOptimizationJobRequest.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyAnnotationsRequest.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyBuildWorkflowRequest.h>
@@ -93,6 +94,7 @@
 #include <aws/bedrock/model/ListPromptRoutersRequest.h>
 #include <aws/bedrock/model/ListProvisionedModelThroughputsRequest.h>
 #include <aws/bedrock/model/ListTagsForResourceRequest.h>
+#include <aws/bedrock/model/PutAccountDataRetentionRequest.h>
 #include <aws/bedrock/model/PutEnforcedGuardrailConfigurationRequest.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationRequest.h>
 #include <aws/bedrock/model/PutResourcePolicyRequest.h>
@@ -826,6 +828,13 @@ ExportAutomatedReasoningPolicyVersionOutcome BedrockClient::ExportAutomatedReaso
   return result.IsSuccess() ? ExportAutomatedReasoningPolicyVersionOutcome(result.GetResultWithOwnership())
                             : ExportAutomatedReasoningPolicyVersionOutcome(std::move(result.GetError()));
 }
+GetAccountDataRetentionOutcome BedrockClient::GetAccountDataRetention(const GetAccountDataRetentionRequest& request) const {
+  auto result = InvokeServiceOperation(
+      request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/data-retention"); },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountDataRetentionOutcome(result.GetResultWithOwnership())
+                            : GetAccountDataRetentionOutcome(std::move(result.GetError()));
+}
 GetAdvancedPromptOptimizationJobOutcome BedrockClient::GetAdvancedPromptOptimizationJob(
     const GetAdvancedPromptOptimizationJobRequest& request) const {
   if (!request.JobIdentifierHasBeenSet()) {
@@ -1529,6 +1538,13 @@ ListTagsForResourceOutcome BedrockClient::ListTagsForResource(const ListTagsForR
       Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
+}
+PutAccountDataRetentionOutcome BedrockClient::PutAccountDataRetention(const PutAccountDataRetentionRequest& request) const {
+  auto result = InvokeServiceOperation(
+      request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/data-retention"); },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccountDataRetentionOutcome(result.GetResultWithOwnership())
+                            : PutAccountDataRetentionOutcome(std::move(result.GetError()));
 }
 PutEnforcedGuardrailConfigurationOutcome BedrockClient::PutEnforcedGuardrailConfiguration(
     const PutEnforcedGuardrailConfigurationRequest& request) const {

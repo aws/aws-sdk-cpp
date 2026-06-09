@@ -2604,7 +2604,10 @@
 #include <aws/ec2/model/SupportedRegionDetail.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/TagDescription.h>
+#include <aws/ec2/model/TagFieldSpecificationRequest.h>
+#include <aws/ec2/model/TagFieldSpecificationResponse.h>
 #include <aws/ec2/model/TagSpecification.h>
+#include <aws/ec2/model/TaggableResourceType.h>
 #include <aws/ec2/model/TargetCapacitySpecification.h>
 #include <aws/ec2/model/TargetCapacitySpecificationRequest.h>
 #include <aws/ec2/model/TargetCapacityUnitType.h>

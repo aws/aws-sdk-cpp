@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
+#include <aws/outposts/model/CurrencyCode.h>
 #include <aws/outposts/model/SubscriptionStatus.h>
 #include <aws/outposts/model/SubscriptionType.h>
 
@@ -159,6 +160,23 @@ class Subscription {
 
   ///@{
   /**
+   * <p>The currency of the subscription price. Currently only <code>USD</code> is
+   * supported.</p>
+   */
+  inline CurrencyCode GetCurrency() const { return m_currency; }
+  inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }
+  inline void SetCurrency(CurrencyCode value) {
+    m_currencyHasBeenSet = true;
+    m_currency = value;
+  }
+  inline Subscription& WithCurrency(CurrencyCode value) {
+    SetCurrency(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The amount you are billed each month in the subscription period.</p>
    */
   inline double GetMonthlyRecurringPrice() const { return m_monthlyRecurringPrice; }
@@ -202,6 +220,8 @@ class Subscription {
 
   Aws::Utils::DateTime m_endDate{};
 
+  CurrencyCode m_currency{CurrencyCode::NOT_SET};
+
   double m_monthlyRecurringPrice{0.0};
 
   double m_upfrontPrice{0.0};
@@ -211,6 +231,7 @@ class Subscription {
   bool m_orderIdsHasBeenSet = false;
   bool m_beginDateHasBeenSet = false;
   bool m_endDateHasBeenSet = false;
+  bool m_currencyHasBeenSet = false;
   bool m_monthlyRecurringPriceHasBeenSet = false;
   bool m_upfrontPriceHasBeenSet = false;
 };

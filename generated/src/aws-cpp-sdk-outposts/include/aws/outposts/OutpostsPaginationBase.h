@@ -15,8 +15,10 @@
 #include <aws/outposts/model/ListBlockingInstancesForCapacityTaskPaginationTraits.h>
 #include <aws/outposts/model/ListCapacityTasksPaginationTraits.h>
 #include <aws/outposts/model/ListCatalogItemsPaginationTraits.h>
+#include <aws/outposts/model/ListOrderableInstanceTypesPaginationTraits.h>
 #include <aws/outposts/model/ListOrdersPaginationTraits.h>
 #include <aws/outposts/model/ListOutpostsPaginationTraits.h>
+#include <aws/outposts/model/ListQuotesPaginationTraits.h>
 #include <aws/outposts/model/ListSitesPaginationTraits.h>
 
 #include <memory>
@@ -123,6 +125,18 @@ class OutpostsPaginationBase {
   }
 
   /**
+   * Create a paginator for ListOrderableInstanceTypes operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrderableInstanceTypesRequest,
+                                    Pagination::ListOrderableInstanceTypesPaginationTraits<DerivedClient>>
+  ListOrderableInstanceTypesPaginator(const Model::ListOrderableInstanceTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrderableInstanceTypesRequest,
+                                             Pagination::ListOrderableInstanceTypesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListOrders operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrdersRequest, Pagination::ListOrdersPaginationTraits<DerivedClient>>
@@ -142,6 +156,17 @@ class OutpostsPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOutpostsRequest,
                                              Pagination::ListOutpostsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
+  }
+
+  /**
+   * Create a paginator for ListQuotes operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQuotesRequest, Pagination::ListQuotesPaginationTraits<DerivedClient>>
+  ListQuotesPaginator(const Model::ListQuotesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQuotesRequest,
+                                             Pagination::ListQuotesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                    request};
   }
 
   /**

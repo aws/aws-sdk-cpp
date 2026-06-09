@@ -20,6 +20,7 @@
 #include <aws/monitoring/CloudWatchClient.h>
 #include <aws/monitoring/CloudWatchEndpointProvider.h>
 #include <aws/monitoring/CloudWatchErrorMarshaller.h>
+#include <aws/monitoring/model/AssociateDatasetKmsKeyRequest.h>
 #include <aws/monitoring/model/DeleteAlarmMuteRuleRequest.h>
 #include <aws/monitoring/model/DeleteAlarmsRequest.h>
 #include <aws/monitoring/model/DeleteAnomalyDetectorRequest.h>
@@ -34,10 +35,12 @@
 #include <aws/monitoring/model/DescribeInsightRulesRequest.h>
 #include <aws/monitoring/model/DisableAlarmActionsRequest.h>
 #include <aws/monitoring/model/DisableInsightRulesRequest.h>
+#include <aws/monitoring/model/DisassociateDatasetKmsKeyRequest.h>
 #include <aws/monitoring/model/EnableAlarmActionsRequest.h>
 #include <aws/monitoring/model/EnableInsightRulesRequest.h>
 #include <aws/monitoring/model/GetAlarmMuteRuleRequest.h>
 #include <aws/monitoring/model/GetDashboardRequest.h>
+#include <aws/monitoring/model/GetDatasetRequest.h>
 #include <aws/monitoring/model/GetInsightRuleReportRequest.h>
 #include <aws/monitoring/model/GetMetricDataRequest.h>
 #include <aws/monitoring/model/GetMetricStatisticsRequest.h>
@@ -220,6 +223,12 @@ CloudWatchClient::InvokeOperationOutcome CloudWatchClient::InvokeServiceOperatio
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+AssociateDatasetKmsKeyOutcome CloudWatchClient::AssociateDatasetKmsKey(const AssociateDatasetKmsKeyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateDatasetKmsKeyOutcome(result.GetResultWithOwnership())
+                            : AssociateDatasetKmsKeyOutcome(std::move(result.GetError()));
+}
+
 DeleteAlarmMuteRuleOutcome CloudWatchClient::DeleteAlarmMuteRule(const DeleteAlarmMuteRuleRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteAlarmMuteRuleOutcome(result.GetResultWithOwnership())
@@ -302,6 +311,12 @@ DisableInsightRulesOutcome CloudWatchClient::DisableInsightRules(const DisableIn
                             : DisableInsightRulesOutcome(std::move(result.GetError()));
 }
 
+DisassociateDatasetKmsKeyOutcome CloudWatchClient::DisassociateDatasetKmsKey(const DisassociateDatasetKmsKeyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateDatasetKmsKeyOutcome(result.GetResultWithOwnership())
+                            : DisassociateDatasetKmsKeyOutcome(std::move(result.GetError()));
+}
+
 EnableAlarmActionsOutcome CloudWatchClient::EnableAlarmActions(const EnableAlarmActionsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? EnableAlarmActionsOutcome(result.GetResultWithOwnership())
@@ -323,6 +338,11 @@ GetAlarmMuteRuleOutcome CloudWatchClient::GetAlarmMuteRule(const GetAlarmMuteRul
 GetDashboardOutcome CloudWatchClient::GetDashboard(const GetDashboardRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetDashboardOutcome(result.GetResultWithOwnership()) : GetDashboardOutcome(std::move(result.GetError()));
+}
+
+GetDatasetOutcome CloudWatchClient::GetDataset(const GetDatasetRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDatasetOutcome(result.GetResultWithOwnership()) : GetDatasetOutcome(std::move(result.GetError()));
 }
 
 GetInsightRuleReportOutcome CloudWatchClient::GetInsightRuleReport(const GetInsightRuleReportRequest& request) const {

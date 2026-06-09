@@ -20,6 +20,7 @@
 
 /* Service model headers required in CloudWatchClient header */
 #include <aws/core/NoResult.h>
+#include <aws/monitoring/model/AssociateDatasetKmsKeyResult.h>
 #include <aws/monitoring/model/DeleteAnomalyDetectorRequest.h>
 #include <aws/monitoring/model/DeleteAnomalyDetectorResult.h>
 #include <aws/monitoring/model/DeleteDashboardsResult.h>
@@ -36,9 +37,11 @@
 #include <aws/monitoring/model/DescribeInsightRulesRequest.h>
 #include <aws/monitoring/model/DescribeInsightRulesResult.h>
 #include <aws/monitoring/model/DisableInsightRulesResult.h>
+#include <aws/monitoring/model/DisassociateDatasetKmsKeyResult.h>
 #include <aws/monitoring/model/EnableInsightRulesResult.h>
 #include <aws/monitoring/model/GetAlarmMuteRuleResult.h>
 #include <aws/monitoring/model/GetDashboardResult.h>
+#include <aws/monitoring/model/GetDatasetResult.h>
 #include <aws/monitoring/model/GetInsightRuleReportResult.h>
 #include <aws/monitoring/model/GetMetricDataResult.h>
 #include <aws/monitoring/model/GetMetricStatisticsResult.h>
@@ -103,6 +106,7 @@ using CloudWatchEndpointProvider = Aws::CloudWatch::Endpoint::CloudWatchEndpoint
 
 namespace Model {
 /* Service model forward declarations required in CloudWatchClient header */
+class AssociateDatasetKmsKeyRequest;
 class DeleteAlarmMuteRuleRequest;
 class DeleteAlarmsRequest;
 class DeleteAnomalyDetectorRequest;
@@ -117,10 +121,12 @@ class DescribeAnomalyDetectorsRequest;
 class DescribeInsightRulesRequest;
 class DisableAlarmActionsRequest;
 class DisableInsightRulesRequest;
+class DisassociateDatasetKmsKeyRequest;
 class EnableAlarmActionsRequest;
 class EnableInsightRulesRequest;
 class GetAlarmMuteRuleRequest;
 class GetDashboardRequest;
+class GetDatasetRequest;
 class GetInsightRuleReportRequest;
 class GetMetricDataRequest;
 class GetMetricStatisticsRequest;
@@ -152,6 +158,7 @@ class UntagResourceRequest;
 /* End of service model forward declarations required in CloudWatchClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<AssociateDatasetKmsKeyResult, CloudWatchError> AssociateDatasetKmsKeyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> DeleteAlarmMuteRuleOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> DeleteAlarmsOutcome;
 typedef Aws::Utils::Outcome<DeleteAnomalyDetectorResult, CloudWatchError> DeleteAnomalyDetectorOutcome;
@@ -166,10 +173,12 @@ typedef Aws::Utils::Outcome<DescribeAnomalyDetectorsResult, CloudWatchError> Des
 typedef Aws::Utils::Outcome<DescribeInsightRulesResult, CloudWatchError> DescribeInsightRulesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> DisableAlarmActionsOutcome;
 typedef Aws::Utils::Outcome<DisableInsightRulesResult, CloudWatchError> DisableInsightRulesOutcome;
+typedef Aws::Utils::Outcome<DisassociateDatasetKmsKeyResult, CloudWatchError> DisassociateDatasetKmsKeyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> EnableAlarmActionsOutcome;
 typedef Aws::Utils::Outcome<EnableInsightRulesResult, CloudWatchError> EnableInsightRulesOutcome;
 typedef Aws::Utils::Outcome<GetAlarmMuteRuleResult, CloudWatchError> GetAlarmMuteRuleOutcome;
 typedef Aws::Utils::Outcome<GetDashboardResult, CloudWatchError> GetDashboardOutcome;
+typedef Aws::Utils::Outcome<GetDatasetResult, CloudWatchError> GetDatasetOutcome;
 typedef Aws::Utils::Outcome<GetInsightRuleReportResult, CloudWatchError> GetInsightRuleReportOutcome;
 typedef Aws::Utils::Outcome<GetMetricDataResult, CloudWatchError> GetMetricDataOutcome;
 typedef Aws::Utils::Outcome<GetMetricStatisticsResult, CloudWatchError> GetMetricStatisticsOutcome;
@@ -201,6 +210,7 @@ typedef Aws::Utils::Outcome<UntagResourceResult, CloudWatchError> UntagResourceO
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<AssociateDatasetKmsKeyOutcome> AssociateDatasetKmsKeyOutcomeCallable;
 typedef std::future<DeleteAlarmMuteRuleOutcome> DeleteAlarmMuteRuleOutcomeCallable;
 typedef std::future<DeleteAlarmsOutcome> DeleteAlarmsOutcomeCallable;
 typedef std::future<DeleteAnomalyDetectorOutcome> DeleteAnomalyDetectorOutcomeCallable;
@@ -215,10 +225,12 @@ typedef std::future<DescribeAnomalyDetectorsOutcome> DescribeAnomalyDetectorsOut
 typedef std::future<DescribeInsightRulesOutcome> DescribeInsightRulesOutcomeCallable;
 typedef std::future<DisableAlarmActionsOutcome> DisableAlarmActionsOutcomeCallable;
 typedef std::future<DisableInsightRulesOutcome> DisableInsightRulesOutcomeCallable;
+typedef std::future<DisassociateDatasetKmsKeyOutcome> DisassociateDatasetKmsKeyOutcomeCallable;
 typedef std::future<EnableAlarmActionsOutcome> EnableAlarmActionsOutcomeCallable;
 typedef std::future<EnableInsightRulesOutcome> EnableInsightRulesOutcomeCallable;
 typedef std::future<GetAlarmMuteRuleOutcome> GetAlarmMuteRuleOutcomeCallable;
 typedef std::future<GetDashboardOutcome> GetDashboardOutcomeCallable;
+typedef std::future<GetDatasetOutcome> GetDatasetOutcomeCallable;
 typedef std::future<GetInsightRuleReportOutcome> GetInsightRuleReportOutcomeCallable;
 typedef std::future<GetMetricDataOutcome> GetMetricDataOutcomeCallable;
 typedef std::future<GetMetricStatisticsOutcome> GetMetricStatisticsOutcomeCallable;
@@ -253,6 +265,9 @@ typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 class CloudWatchClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const CloudWatchClient*, const Model::AssociateDatasetKmsKeyRequest&,
+                           const Model::AssociateDatasetKmsKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateDatasetKmsKeyResponseReceivedHandler;
 typedef std::function<void(const CloudWatchClient*, const Model::DeleteAlarmMuteRuleRequest&, const Model::DeleteAlarmMuteRuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAlarmMuteRuleResponseReceivedHandler;
@@ -295,6 +310,9 @@ typedef std::function<void(const CloudWatchClient*, const Model::DisableAlarmAct
 typedef std::function<void(const CloudWatchClient*, const Model::DisableInsightRulesRequest&, const Model::DisableInsightRulesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisableInsightRulesResponseReceivedHandler;
+typedef std::function<void(const CloudWatchClient*, const Model::DisassociateDatasetKmsKeyRequest&,
+                           const Model::DisassociateDatasetKmsKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateDatasetKmsKeyResponseReceivedHandler;
 typedef std::function<void(const CloudWatchClient*, const Model::EnableAlarmActionsRequest&, const Model::EnableAlarmActionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     EnableAlarmActionsResponseReceivedHandler;
@@ -307,6 +325,9 @@ typedef std::function<void(const CloudWatchClient*, const Model::GetAlarmMuteRul
 typedef std::function<void(const CloudWatchClient*, const Model::GetDashboardRequest&, const Model::GetDashboardOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDashboardResponseReceivedHandler;
+typedef std::function<void(const CloudWatchClient*, const Model::GetDatasetRequest&, const Model::GetDatasetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDatasetResponseReceivedHandler;
 typedef std::function<void(const CloudWatchClient*, const Model::GetInsightRuleReportRequest&, const Model::GetInsightRuleReportOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetInsightRuleReportResponseReceivedHandler;

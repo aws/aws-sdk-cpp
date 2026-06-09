@@ -9,16 +9,18 @@
 #include <aws/outposts/OutpostsClientPagination.h>
 #include <aws/outposts/OutpostsPaginationBase.h>
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesPaginationTraits.h>
-#include <aws/outposts/model/ListOutpostsPaginationTraits.h>
-#include <aws/outposts/model/GetOutpostInstanceTypesPaginationTraits.h>
 #include <aws/outposts/model/GetOutpostBillingInformationPaginationTraits.h>
 #include <aws/outposts/model/ListOrdersPaginationTraits.h>
-#include <aws/outposts/model/ListBlockingInstancesForCapacityTaskPaginationTraits.h>
 #include <aws/outposts/model/ListCatalogItemsPaginationTraits.h>
-#include <aws/outposts/model/ListSitesPaginationTraits.h>
+#include <aws/outposts/model/ListQuotesPaginationTraits.h>
 #include <aws/outposts/model/ListAssetInstancesPaginationTraits.h>
-#include <aws/outposts/model/ListAssetsPaginationTraits.h>
 #include <aws/outposts/model/ListCapacityTasksPaginationTraits.h>
+#include <aws/outposts/model/ListOrderableInstanceTypesPaginationTraits.h>
+#include <aws/outposts/model/ListOutpostsPaginationTraits.h>
+#include <aws/outposts/model/GetOutpostInstanceTypesPaginationTraits.h>
+#include <aws/outposts/model/ListBlockingInstancesForCapacityTaskPaginationTraits.h>
+#include <aws/outposts/model/ListSitesPaginationTraits.h>
+#include <aws/outposts/model/ListAssetsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

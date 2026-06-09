@@ -91,6 +91,76 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   virtual ~CloudWatchClient();
 
   /**
+   * <p>Associates an Amazon Web Services Key Management Service (Amazon Web Services
+   * KMS) customer managed key with the specified dataset. After this operation
+   * completes, all data published to the dataset is encrypted at rest using the
+   * specified KMS key. Callers must have <code>kms:Decrypt</code> permission on the
+   * key to read the encrypted data.</p> <p>Only the <code>default</code> dataset is
+   * supported. The <code>default</code> dataset is implicit for every account in
+   * every Region — you do not need to create it before calling this operation.</p>
+   * <p>You can call <code>AssociateDatasetKmsKey</code> on a dataset that is already
+   * associated with a KMS key to replace the existing key with a different one. To
+   * replace a key, the caller must have <code>kms:Decrypt</code> permission on both
+   * the current key and the new key.</p> <p>The KMS key that you specify must meet
+   * all of the following requirements:</p> <ul> <li> <p>It must be a symmetric
+   * encryption KMS key (key spec <code>SYMMETRIC_DEFAULT</code>, key usage
+   * <code>ENCRYPT_DECRYPT</code>). Asymmetric keys, HMAC keys, and key material
+   * types other than <code>SYMMETRIC_DEFAULT</code> are not supported.</p> </li>
+   * <li> <p>It must be enabled and not pending deletion.</p> </li> <li> <p>Its key
+   * policy must grant the CloudWatch service principal
+   * (<code>cloudwatch.amazonaws.com</code>) these permissions:
+   * <code>kms:DescribeKey</code>, <code>kms:GenerateDataKey</code>,
+   * <code>kms:Encrypt</code>, <code>kms:Decrypt</code>, and
+   * <code>kms:ReEncrypt*</code>. Amazon CloudWatch requires these permissions to
+   * manage the data on your behalf.</p> </li> <li> <p>The calling principal must
+   * have <code>kms:Decrypt</code> permission on the key.</p> </li> <li> <p>It must
+   * be specified as a fully qualified key ARN. Key IDs, aliases, and alias ARNs are
+   * not accepted.</p> </li> <li> <p>It must be in the same Amazon Web Services
+   * Region as the dataset.</p> </li> </ul> <p>Before completing the association,
+   * Amazon CloudWatch validates the key by performing a series of dry-run KMS
+   * operations. Service-principal checks run first to verify that the key policy
+   * grants the required access to Amazon CloudWatch. These checks include
+   * <code>kms:DescribeKey</code>, <code>kms:GenerateDataKey</code>,
+   * <code>kms:Encrypt</code>, <code>kms:Decrypt</code>, and
+   * <code>kms:ReEncrypt*</code>. After those succeed, a <code>kms:Decrypt</code>
+   * dry-run is run with the caller's credentials to verify that the calling
+   * principal can use the key. When you are replacing an existing key, the caller's
+   * <code>kms:Decrypt</code> dry-run is run on the current key first, and only then
+   * on the new key.</p> <p>If any of these checks fails, the operation fails and the
+   * existing key association (if any) remains unchanged. Common failure causes
+   * include the key being disabled, the key policy not granting the required
+   * permissions to Amazon CloudWatch, or the caller lacking <code>kms:Decrypt</code>
+   * permission on the key.</p> <p>For more information about using customer managed
+   * keys with Amazon CloudWatch, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cmk-encryption.html">Encryption
+   * at rest with customer managed keys</a> in the <i>Amazon CloudWatch User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/AssociateDatasetKmsKey">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateDatasetKmsKeyOutcome AssociateDatasetKmsKey(const Model::AssociateDatasetKmsKeyRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateDatasetKmsKey that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AssociateDatasetKmsKeyRequestT = Model::AssociateDatasetKmsKeyRequest>
+  Model::AssociateDatasetKmsKeyOutcomeCallable AssociateDatasetKmsKeyCallable(const AssociateDatasetKmsKeyRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::AssociateDatasetKmsKey, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateDatasetKmsKey that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AssociateDatasetKmsKeyRequestT = Model::AssociateDatasetKmsKeyRequest>
+  void AssociateDatasetKmsKeyAsync(const AssociateDatasetKmsKeyRequestT& request,
+                                   const AssociateDatasetKmsKeyResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::AssociateDatasetKmsKey, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a specific alarm mute rule.</p> <p>When you delete a mute rule, any
    * alarms that are currently being muted by that rule are immediately unmuted. If
    * those alarms are in an ALARM state, their configured actions will trigger.</p>
@@ -532,6 +602,57 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   }
 
   /**
+   * <p>Removes the customer managed Amazon Web Services Key Management Service
+   * (Amazon Web Services KMS) key association from the specified dataset. After this
+   * operation completes, data that you publish to the dataset is encrypted at rest
+   * using an Amazon Web Services owned key managed by Amazon CloudWatch.</p> <p>Only
+   * the <code>default</code> dataset is supported. To call this operation, the
+   * dataset must currently have a customer managed KMS key associated with it. If
+   * the dataset has no associated KMS key, the operation fails with
+   * <code>ResourceNotFoundException</code>.</p> <p>Amazon CloudWatch performs a
+   * dry-run <code>kms:Decrypt</code> call on the key as part of this operation. This
+   * verifies that the caller is authorized to use the currently associated key. The
+   * caller must have <code>kms:Decrypt</code> permission on the currently associated
+   * key, and the key must be enabled and accessible. If the key has been disabled or
+   * scheduled for deletion, you must first re-enable or restore it before you can
+   * disassociate it from the dataset.</p>  <p>Disassociating a KMS key
+   * from a dataset does not immediately remove the <code>kms:Decrypt</code>
+   * requirement on data plane operations. For up to three hours after
+   * disassociation, callers must continue to have <code>kms:Decrypt</code>
+   * permission on the previously associated key. Some data may still be encrypted
+   * with that key during this window. After this enforcement window elapses, the
+   * <code>kms:Decrypt</code> requirement is lifted.</p>  <p>For more
+   * information about using customer managed keys with Amazon CloudWatch, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cmk-encryption.html">Encryption
+   * at rest with customer managed keys</a> in the <i>Amazon CloudWatch User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisassociateDatasetKmsKey">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateDatasetKmsKeyOutcome DisassociateDatasetKmsKey(const Model::DisassociateDatasetKmsKeyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateDatasetKmsKey that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DisassociateDatasetKmsKeyRequestT = Model::DisassociateDatasetKmsKeyRequest>
+  Model::DisassociateDatasetKmsKeyOutcomeCallable DisassociateDatasetKmsKeyCallable(
+      const DisassociateDatasetKmsKeyRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::DisassociateDatasetKmsKey, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateDatasetKmsKey that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisassociateDatasetKmsKeyRequestT = Model::DisassociateDatasetKmsKeyRequest>
+  void DisassociateDatasetKmsKeyAsync(const DisassociateDatasetKmsKeyRequestT& request,
+                                      const DisassociateDatasetKmsKeyResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::DisassociateDatasetKmsKey, request, handler, context);
+  }
+
+  /**
    * <p>Enables the actions for the specified alarms.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">AWS
    * API Reference</a></p>
@@ -646,6 +767,44 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   void GetDashboardAsync(const GetDashboardRequestT& request, const GetDashboardResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchClient::GetDashboard, request, handler, context);
+  }
+
+  /**
+   * <p>Returns information about the specified dataset. This includes its
+   * identifier, Amazon Resource Name (ARN), and any customer managed Amazon Web
+   * Services Key Management Service (Amazon Web Services KMS) key that is currently
+   * associated with it.</p> <p>Only the <code>default</code> dataset is supported.
+   * The <code>default</code> dataset is implicit for every account in every Region —
+   * you can call <code>GetDataset</code> for it without first creating it. If no
+   * customer managed KMS key has been associated with the dataset, the response
+   * omits the <code>KmsKeyArn</code> field, indicating that data is encrypted at
+   * rest using an Amazon Web Services owned key managed by Amazon CloudWatch.</p>
+   * <p>To associate a customer managed KMS key with a dataset, use <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_AssociateDatasetKmsKey.html">AssociateDatasetKmsKey</a>.
+   * To remove the association, use <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisassociateDatasetKmsKey.html">DisassociateDatasetKmsKey</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDataset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDatasetOutcome GetDataset(const Model::GetDatasetRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetDatasetRequestT = Model::GetDatasetRequest>
+  Model::GetDatasetOutcomeCallable GetDatasetCallable(const GetDatasetRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::GetDataset, request);
+  }
+
+  /**
+   * An Async wrapper for GetDataset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetDatasetRequestT = Model::GetDatasetRequest>
+  void GetDatasetAsync(const GetDatasetRequestT& request, const GetDatasetResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::GetDataset, request, handler, context);
   }
 
   /**

@@ -7,6 +7,12 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/odb/model/ListAutonomousDatabaseBackupsPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabaseCharacterSetsPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabaseClonesPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabasePeersPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabaseVersionsPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabasesPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousVirtualMachinesPaginationTraits.h>
 #include <aws/odb/model/ListCloudAutonomousVmClustersPaginationTraits.h>
 #include <aws/odb/model/ListCloudExadataInfrastructuresPaginationTraits.h>
@@ -27,6 +33,78 @@ namespace odb {
 template <typename DerivedClient>
 class OdbPaginationBase {
  public:
+  /**
+   * Create a paginator for ListAutonomousDatabaseBackups operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabaseBackupsRequest,
+                                    Pagination::ListAutonomousDatabaseBackupsPaginationTraits<DerivedClient>>
+  ListAutonomousDatabaseBackupsPaginator(const Model::ListAutonomousDatabaseBackupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabaseBackupsRequest,
+                                             Pagination::ListAutonomousDatabaseBackupsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAutonomousDatabaseCharacterSets operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabaseCharacterSetsRequest,
+                                    Pagination::ListAutonomousDatabaseCharacterSetsPaginationTraits<DerivedClient>>
+  ListAutonomousDatabaseCharacterSetsPaginator(const Model::ListAutonomousDatabaseCharacterSetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabaseCharacterSetsRequest,
+                                             Pagination::ListAutonomousDatabaseCharacterSetsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAutonomousDatabaseClones operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabaseClonesRequest,
+                                    Pagination::ListAutonomousDatabaseClonesPaginationTraits<DerivedClient>>
+  ListAutonomousDatabaseClonesPaginator(const Model::ListAutonomousDatabaseClonesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabaseClonesRequest,
+                                             Pagination::ListAutonomousDatabaseClonesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAutonomousDatabasePeers operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabasePeersRequest,
+                                    Pagination::ListAutonomousDatabasePeersPaginationTraits<DerivedClient>>
+  ListAutonomousDatabasePeersPaginator(const Model::ListAutonomousDatabasePeersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabasePeersRequest,
+                                             Pagination::ListAutonomousDatabasePeersPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAutonomousDatabases operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabasesRequest,
+                                    Pagination::ListAutonomousDatabasesPaginationTraits<DerivedClient>>
+  ListAutonomousDatabasesPaginator(const Model::ListAutonomousDatabasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabasesRequest,
+                                             Pagination::ListAutonomousDatabasesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAutonomousDatabaseVersions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabaseVersionsRequest,
+                                    Pagination::ListAutonomousDatabaseVersionsPaginationTraits<DerivedClient>>
+  ListAutonomousDatabaseVersionsPaginator(const Model::ListAutonomousDatabaseVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabaseVersionsRequest,
+                                             Pagination::ListAutonomousDatabaseVersionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListAutonomousVirtualMachines operation
    */
