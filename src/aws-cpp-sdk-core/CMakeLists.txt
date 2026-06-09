@@ -543,7 +543,15 @@ check_cxx_source_compiles("
             return 0;
         }" AWS_HAS_ALIGNED_ALLOC)
 
-add_library(${PROJECT_NAME} ${AWS_NATIVE_SDK_SRC})
+add_library(${PROJECT_NAME} ${AWS_NATIVE_SDK_SRC}
+        include/smithy/client/schema/ShapeSerializer.h
+        include/smithy/client/schema/CborShapeSerializer.h
+        include/smithy/client/schema/Schema.h
+        include/smithy/client/schema/JsonShapeSerializer.h
+        include/smithy/client/schema/QueryShapeSerializer.h
+        include/smithy/client/schema/XmlShapeSerializer.h
+        source/smithy/client/schema/JsonShapeSerializer.cpp
+)
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_MAJOR=${AWSSDK_VERSION_MAJOR}")
