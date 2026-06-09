@@ -47,6 +47,7 @@ if (peekType_${recursionDepth}.has_value() && (peekType_${recursionDepth}.value(
     auto mapSize_${recursionDepth} = decoder->PopNextMapStart();
     if(mapSize_${recursionDepth}.has_value()){
         for (size_t j_${recursionDepth} = 0; j_${recursionDepth} < mapSize_${recursionDepth}.value(); j_${recursionDepth}++) {
+        #set($mapKeyShape = $member.shape.mapKey.shape)
         #set($shapeMember = $member.shape.mapValue.shape)
         #set($recursionDepth= $recursionDepth + 1)
         #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborDecodeMapValue.vm")
@@ -68,6 +69,7 @@ if (peekType_${recursionDepth}.has_value() && (peekType_${recursionDepth}.value(
         }
         break;
       }
+      #set($mapKeyShape = $member.shape.mapKey.shape)
       #set($shapeMember = $member.shape.mapValue.shape)
       #set($recursionDepth= $recursionDepth + 1)
       #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborDecodeMapValue.vm")
