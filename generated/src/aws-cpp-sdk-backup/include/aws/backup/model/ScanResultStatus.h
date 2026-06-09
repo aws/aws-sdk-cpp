@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Backup {
 namespace Model {
-enum class ScanResultStatus { NOT_SET, NO_THREATS_FOUND, THREATS_FOUND };
+enum class ScanResultStatus { NOT_SET, NO_THREATS_FOUND, THREATS_FOUND, UNKNOWN };
 
 namespace ScanResultStatusMapper {
 AWS_BACKUP_API ScanResultStatus GetScanResultStatusForName(const Aws::String& name);

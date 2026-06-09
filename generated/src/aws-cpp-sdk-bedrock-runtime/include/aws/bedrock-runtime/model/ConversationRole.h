@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockRuntime {
 namespace Model {
-enum class ConversationRole { NOT_SET, user, assistant };
+enum class ConversationRole { NOT_SET, user, assistant, system };
 
 namespace ConversationRoleMapper {
 AWS_BEDROCKRUNTIME_API ConversationRole GetConversationRoleForName(const Aws::String& name);

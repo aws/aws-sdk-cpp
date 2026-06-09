@@ -21,8 +21,8 @@ namespace Model {
 
 /**
  * <p>Contains information about the resource that is associated with a feed. It is
- * used in the FeedSummary that is used in the response of a ListFeeds
- * action.</p><p><h3>See Also:</h3>   <a
+ * used in the FeedSummary that is used in the response of a ListFeeds action.
+ * </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/FeedAssociation">AWS
  * API Reference</a></p>
  */

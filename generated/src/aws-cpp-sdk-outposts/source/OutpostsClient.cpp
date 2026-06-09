@@ -24,9 +24,11 @@
 #include <aws/outposts/model/CancelOrderRequest.h>
 #include <aws/outposts/model/CreateOrderRequest.h>
 #include <aws/outposts/model/CreateOutpostRequest.h>
+#include <aws/outposts/model/CreateQuoteRequest.h>
 #include <aws/outposts/model/CreateRenewalRequest.h>
 #include <aws/outposts/model/CreateSiteRequest.h>
 #include <aws/outposts/model/DeleteOutpostRequest.h>
+#include <aws/outposts/model/DeleteQuoteRequest.h>
 #include <aws/outposts/model/DeleteSiteRequest.h>
 #include <aws/outposts/model/GetCapacityTaskRequest.h>
 #include <aws/outposts/model/GetCatalogItemRequest.h>
@@ -36,6 +38,7 @@
 #include <aws/outposts/model/GetOutpostInstanceTypesRequest.h>
 #include <aws/outposts/model/GetOutpostRequest.h>
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesRequest.h>
+#include <aws/outposts/model/GetQuoteRequest.h>
 #include <aws/outposts/model/GetRenewalPricingRequest.h>
 #include <aws/outposts/model/GetSiteAddressRequest.h>
 #include <aws/outposts/model/GetSiteRequest.h>
@@ -44,8 +47,10 @@
 #include <aws/outposts/model/ListBlockingInstancesForCapacityTaskRequest.h>
 #include <aws/outposts/model/ListCapacityTasksRequest.h>
 #include <aws/outposts/model/ListCatalogItemsRequest.h>
+#include <aws/outposts/model/ListOrderableInstanceTypesRequest.h>
 #include <aws/outposts/model/ListOrdersRequest.h>
 #include <aws/outposts/model/ListOutpostsRequest.h>
+#include <aws/outposts/model/ListQuotesRequest.h>
 #include <aws/outposts/model/ListSitesRequest.h>
 #include <aws/outposts/model/ListTagsForResourceRequest.h>
 #include <aws/outposts/model/StartCapacityTaskRequest.h>
@@ -54,6 +59,7 @@
 #include <aws/outposts/model/TagResourceRequest.h>
 #include <aws/outposts/model/UntagResourceRequest.h>
 #include <aws/outposts/model/UpdateOutpostRequest.h>
+#include <aws/outposts/model/UpdateQuoteRequest.h>
 #include <aws/outposts/model/UpdateSiteAddressRequest.h>
 #include <aws/outposts/model/UpdateSiteRackPhysicalPropertiesRequest.h>
 #include <aws/outposts/model/UpdateSiteRequest.h>
@@ -81,10 +87,10 @@ const char* OutpostsClient::GetAllocationTag() { return ALLOCATION_TAG; }
 OutpostsClient::OutpostsClient(const Outposts::OutpostsClientConfiguration& clientConfiguration,
                                std::shared_ptr<OutpostsEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<OutpostsErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OutpostsEndpointProvider>(ALLOCATION_TAG)) {
@@ -117,10 +123,10 @@ OutpostsClient::OutpostsClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 /* Legacy constructors due deprecation */
 OutpostsClient::OutpostsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<OutpostsErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<OutpostsEndpointProvider>(ALLOCATION_TAG)) {
@@ -274,6 +280,16 @@ CreateOutpostOutcome OutpostsClient::CreateOutpost(const CreateOutpostRequest& r
   return result.IsSuccess() ? CreateOutpostOutcome(result.GetResultWithOwnership()) : CreateOutpostOutcome(std::move(result.GetError()));
 }
 
+CreateQuoteOutcome OutpostsClient::CreateQuote(const CreateQuoteRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/quotes");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQuoteOutcome(result.GetResultWithOwnership()) : CreateQuoteOutcome(std::move(result.GetError()));
+}
+
 CreateRenewalOutcome OutpostsClient::CreateRenewal(const CreateRenewalRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -309,6 +325,23 @@ DeleteOutpostOutcome OutpostsClient::DeleteOutpost(const DeleteOutpostRequest& r
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteOutpostOutcome(result.GetResultWithOwnership()) : DeleteOutpostOutcome(std::move(result.GetError()));
+}
+
+DeleteQuoteOutcome OutpostsClient::DeleteQuote(const DeleteQuoteRequest& request) const {
+  if (!request.QuoteIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteQuote", "Required field: QuoteIdentifier, is not set");
+    return DeleteQuoteOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                    "Missing required field [QuoteIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/quotes/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuoteIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQuoteOutcome(result.GetResultWithOwnership()) : DeleteQuoteOutcome(std::move(result.GetError()));
 }
 
 DeleteSiteOutcome OutpostsClient::DeleteSite(const DeleteSiteRequest& request) const {
@@ -479,6 +512,23 @@ GetOutpostSupportedInstanceTypesOutcome OutpostsClient::GetOutpostSupportedInsta
                             : GetOutpostSupportedInstanceTypesOutcome(std::move(result.GetError()));
 }
 
+GetQuoteOutcome OutpostsClient::GetQuote(const GetQuoteRequest& request) const {
+  if (!request.QuoteIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetQuote", "Required field: QuoteIdentifier, is not set");
+    return GetQuoteOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                 "Missing required field [QuoteIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/quotes/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuoteIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQuoteOutcome(result.GetResultWithOwnership()) : GetQuoteOutcome(std::move(result.GetError()));
+}
+
 GetRenewalPricingOutcome OutpostsClient::GetRenewalPricing(const GetRenewalPricingRequest& request) const {
   if (!request.OutpostIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetRenewalPricing", "Required field: OutpostIdentifier, is not set");
@@ -624,6 +674,17 @@ ListCatalogItemsOutcome OutpostsClient::ListCatalogItems(const ListCatalogItemsR
                             : ListCatalogItemsOutcome(std::move(result.GetError()));
 }
 
+ListOrderableInstanceTypesOutcome OutpostsClient::ListOrderableInstanceTypes(const ListOrderableInstanceTypesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/instanceTypes");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOrderableInstanceTypesOutcome(result.GetResultWithOwnership())
+                            : ListOrderableInstanceTypesOutcome(std::move(result.GetError()));
+}
+
 ListOrdersOutcome OutpostsClient::ListOrders(const ListOrdersRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -642,6 +703,16 @@ ListOutpostsOutcome OutpostsClient::ListOutposts(const ListOutpostsRequest& requ
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListOutpostsOutcome(result.GetResultWithOwnership()) : ListOutpostsOutcome(std::move(result.GetError()));
+}
+
+ListQuotesOutcome OutpostsClient::ListQuotes(const ListQuotesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/quotes");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQuotesOutcome(result.GetResultWithOwnership()) : ListQuotesOutcome(std::move(result.GetError()));
 }
 
 ListSitesOutcome OutpostsClient::ListSites(const ListSitesRequest& request) const {
@@ -775,6 +846,23 @@ UpdateOutpostOutcome OutpostsClient::UpdateOutpost(const UpdateOutpostRequest& r
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateOutpostOutcome(result.GetResultWithOwnership()) : UpdateOutpostOutcome(std::move(result.GetError()));
+}
+
+UpdateQuoteOutcome OutpostsClient::UpdateQuote(const UpdateQuoteRequest& request) const {
+  if (!request.QuoteIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateQuote", "Required field: QuoteIdentifier, is not set");
+    return UpdateQuoteOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                    "Missing required field [QuoteIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/quotes/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuoteIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateQuoteOutcome(result.GetResultWithOwnership()) : UpdateQuoteOutcome(std::move(result.GetError()));
 }
 
 UpdateSiteOutcome OutpostsClient::UpdateSite(const UpdateSiteRequest& request) const {

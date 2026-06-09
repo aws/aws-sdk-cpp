@@ -110,6 +110,42 @@ class FindingSummary {
 
   ///@{
   /**
+   * <p>The unique identifier of the code review associated with the finding.</p>
+   */
+  inline const Aws::String& GetCodeReviewId() const { return m_codeReviewId; }
+  inline bool CodeReviewIdHasBeenSet() const { return m_codeReviewIdHasBeenSet; }
+  template <typename CodeReviewIdT = Aws::String>
+  void SetCodeReviewId(CodeReviewIdT&& value) {
+    m_codeReviewIdHasBeenSet = true;
+    m_codeReviewId = std::forward<CodeReviewIdT>(value);
+  }
+  template <typename CodeReviewIdT = Aws::String>
+  FindingSummary& WithCodeReviewId(CodeReviewIdT&& value) {
+    SetCodeReviewId(std::forward<CodeReviewIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the code review job that produced the finding.</p>
+   */
+  inline const Aws::String& GetCodeReviewJobId() const { return m_codeReviewJobId; }
+  inline bool CodeReviewJobIdHasBeenSet() const { return m_codeReviewJobIdHasBeenSet; }
+  template <typename CodeReviewJobIdT = Aws::String>
+  void SetCodeReviewJobId(CodeReviewJobIdT&& value) {
+    m_codeReviewJobIdHasBeenSet = true;
+    m_codeReviewJobId = std::forward<CodeReviewJobIdT>(value);
+  }
+  template <typename CodeReviewJobIdT = Aws::String>
+  FindingSummary& WithCodeReviewJobId(CodeReviewJobIdT&& value) {
+    SetCodeReviewJobId(std::forward<CodeReviewJobIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the finding.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -236,6 +272,10 @@ class FindingSummary {
 
   Aws::String m_pentestJobId;
 
+  Aws::String m_codeReviewId;
+
+  Aws::String m_codeReviewJobId;
+
   Aws::String m_name;
 
   FindingStatus m_status{FindingStatus::NOT_SET};
@@ -253,6 +293,8 @@ class FindingSummary {
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_pentestIdHasBeenSet = false;
   bool m_pentestJobIdHasBeenSet = false;
+  bool m_codeReviewIdHasBeenSet = false;
+  bool m_codeReviewJobIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_riskTypeHasBeenSet = false;

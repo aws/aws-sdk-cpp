@@ -54,6 +54,7 @@
 #include <aws/backup/model/GetBackupVaultAccessPolicyRequest.h>
 #include <aws/backup/model/GetBackupVaultNotificationsRequest.h>
 #include <aws/backup/model/GetLegalHoldRequest.h>
+#include <aws/backup/model/GetPITRMalwareScanResultsRequest.h>
 #include <aws/backup/model/GetRecoveryPointIndexDetailsRequest.h>
 #include <aws/backup/model/GetRecoveryPointRestoreMetadataRequest.h>
 #include <aws/backup/model/GetRestoreJobMetadataRequest.h>
@@ -152,10 +153,10 @@ const char* BackupClient::GetAllocationTag() { return ALLOCATION_TAG; }
 BackupClient::BackupClient(const Backup::BackupClientConfiguration& clientConfiguration,
                            std::shared_ptr<BackupEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<BackupErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BackupEndpointProvider>(ALLOCATION_TAG)) {
@@ -188,10 +189,10 @@ BackupClient::BackupClient(const std::shared_ptr<AWSCredentialsProvider>& creden
 /* Legacy constructors due deprecation */
 BackupClient::BackupClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<BackupErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<BackupEndpointProvider>(ALLOCATION_TAG)) {
@@ -1152,6 +1153,38 @@ GetLegalHoldOutcome BackupClient::GetLegalHold(const GetLegalHoldRequest& reques
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetLegalHoldOutcome(result.GetResultWithOwnership()) : GetLegalHoldOutcome(std::move(result.GetError()));
+}
+
+GetPITRMalwareScanResultsOutcome BackupClient::GetPITRMalwareScanResults(const GetPITRMalwareScanResultsRequest& request) const {
+  if (!request.RecoveryPointArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPITRMalwareScanResults", "Required field: RecoveryPointArn, is not set");
+    return GetPITRMalwareScanResultsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [RecoveryPointArn]", false));
+  }
+  if (!request.BackupVaultNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPITRMalwareScanResults", "Required field: BackupVaultName, is not set");
+    return GetPITRMalwareScanResultsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [BackupVaultName]", false));
+  }
+  if (!request.ScanEndTimeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPITRMalwareScanResults", "Required field: ScanEndTime, is not set");
+    return GetPITRMalwareScanResultsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [ScanEndTime]", false));
+  }
+  if (!request.MalwareScannerHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPITRMalwareScanResults", "Required field: MalwareScanner, is not set");
+    return GetPITRMalwareScanResultsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [MalwareScanner]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/scan/pitr-malware-scan-results");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPITRMalwareScanResultsOutcome(result.GetResultWithOwnership())
+                            : GetPITRMalwareScanResultsOutcome(std::move(result.GetError()));
 }
 
 GetRecoveryPointIndexDetailsOutcome BackupClient::GetRecoveryPointIndexDetails(const GetRecoveryPointIndexDetailsRequest& request) const {

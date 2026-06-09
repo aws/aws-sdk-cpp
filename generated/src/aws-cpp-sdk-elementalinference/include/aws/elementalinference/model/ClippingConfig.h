@@ -34,8 +34,9 @@ class ClippingConfig {
 
   ///@{
   /**
-   * <p>The metadata that is the result of the clip request to Elemental Inference.
-   * </p>
+   * <p>A string that you want Elemental Inference to always include in the event
+   * clipping metadata for this output. The string might identify the sports event in
+   * the source media, for example. </p>
    */
   inline const Aws::String& GetCallbackMetadata() const { return m_callbackMetadata; }
   inline bool CallbackMetadataHasBeenSet() const { return m_callbackMetadataHasBeenSet; }

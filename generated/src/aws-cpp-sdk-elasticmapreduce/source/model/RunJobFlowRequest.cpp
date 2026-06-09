@@ -185,6 +185,10 @@ Aws::String RunJobFlowRequest::SerializePayload() const {
     payload.WithObject("MonitoringConfiguration", m_monitoringConfiguration.Jsonize());
   }
 
+  if (m_sessionEnabledHasBeenSet) {
+    payload.WithBool("SessionEnabled", m_sessionEnabled);
+  }
+
   return payload.View().WriteReadable();
 }
 

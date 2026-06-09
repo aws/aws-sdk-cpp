@@ -23,6 +23,10 @@ Aws::String StartCodeRemediationRequest::SerializePayload() const {
     payload.WithString("pentestJobId", m_pentestJobId);
   }
 
+  if (m_codeReviewJobIdHasBeenSet) {
+    payload.WithString("codeReviewJobId", m_codeReviewJobId);
+  }
+
   if (m_findingIdsHasBeenSet) {
     Aws::Utils::Array<JsonValue> findingIdsJsonList(m_findingIds.size());
     for (unsigned findingIdsIndex = 0; findingIdsIndex < findingIdsJsonList.GetLength(); ++findingIdsIndex) {

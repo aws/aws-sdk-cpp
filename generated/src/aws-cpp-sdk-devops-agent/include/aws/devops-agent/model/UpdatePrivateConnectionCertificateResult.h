@@ -10,6 +10,7 @@
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
 #include <aws/devops-agent/model/PrivateConnectionStatus.h>
 #include <aws/devops-agent/model/PrivateConnectionType.h>
+#include <aws/devops-agent/model/ResourceConfigDnsResolution.h>
 
 #include <utility>
 
@@ -175,6 +176,39 @@ class UpdatePrivateConnectionCertificateResult {
   ///@}
 
   ///@{
+  /**
+   * <p>DNS resolution mode for the Private Connection's resource gateway.</p>
+   */
+  inline ResourceConfigDnsResolution GetDnsResolution() const { return m_dnsResolution; }
+  inline void SetDnsResolution(ResourceConfigDnsResolution value) {
+    m_dnsResolutionHasBeenSet = true;
+    m_dnsResolution = value;
+  }
+  inline UpdatePrivateConnectionCertificateResult& WithDnsResolution(ResourceConfigDnsResolution value) {
+    SetDnsResolution(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Message describing the reason for a failed Private Connection update, if
+   * applicable.</p>
+   */
+  inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
+  template <typename FailureMessageT = Aws::String>
+  void SetFailureMessage(FailureMessageT&& value) {
+    m_failureMessageHasBeenSet = true;
+    m_failureMessage = std::forward<FailureMessageT>(value);
+  }
+  template <typename FailureMessageT = Aws::String>
+  UpdatePrivateConnectionCertificateResult& WithFailureMessage(FailureMessageT&& value) {
+    SetFailureMessage(std::forward<FailureMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -207,6 +241,10 @@ class UpdatePrivateConnectionCertificateResult {
 
   Aws::Utils::DateTime m_certificateExpiryTime{};
 
+  ResourceConfigDnsResolution m_dnsResolution{ResourceConfigDnsResolution::NOT_SET};
+
+  Aws::String m_failureMessage;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nameHasBeenSet = false;
@@ -217,6 +255,8 @@ class UpdatePrivateConnectionCertificateResult {
   bool m_resourceConfigurationIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_certificateExpiryTimeHasBeenSet = false;
+  bool m_dnsResolutionHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

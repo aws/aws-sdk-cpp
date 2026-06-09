@@ -12,4 +12,12 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetThingConnectivityDataRequest::SerializePayload() const { return {}; }
+Aws::String GetThingConnectivityDataRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_includeSocketInformationHasBeenSet) {
+    payload.WithBool("includeSocketInformation", m_includeSocketInformation);
+  }
+
+  return payload.View().WriteReadable();
+}

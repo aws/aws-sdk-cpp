@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/MLMemberAbilities.h>
 #include <aws/cleanrooms/model/MemberAbility.h>
+#include <aws/cleanrooms/model/PaymentConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -83,6 +85,38 @@ class MemberChangeSpecification {
   ///@}
 
   ///@{
+
+  inline const MLMemberAbilities& GetMlMemberAbilities() const { return m_mlMemberAbilities; }
+  inline bool MlMemberAbilitiesHasBeenSet() const { return m_mlMemberAbilitiesHasBeenSet; }
+  template <typename MlMemberAbilitiesT = MLMemberAbilities>
+  void SetMlMemberAbilities(MlMemberAbilitiesT&& value) {
+    m_mlMemberAbilitiesHasBeenSet = true;
+    m_mlMemberAbilities = std::forward<MlMemberAbilitiesT>(value);
+  }
+  template <typename MlMemberAbilitiesT = MLMemberAbilities>
+  MemberChangeSpecification& WithMlMemberAbilities(MlMemberAbilitiesT&& value) {
+    SetMlMemberAbilities(std::forward<MlMemberAbilitiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const PaymentConfiguration& GetPaymentConfiguration() const { return m_paymentConfiguration; }
+  inline bool PaymentConfigurationHasBeenSet() const { return m_paymentConfigurationHasBeenSet; }
+  template <typename PaymentConfigurationT = PaymentConfiguration>
+  void SetPaymentConfiguration(PaymentConfigurationT&& value) {
+    m_paymentConfigurationHasBeenSet = true;
+    m_paymentConfiguration = std::forward<PaymentConfigurationT>(value);
+  }
+  template <typename PaymentConfigurationT = PaymentConfiguration>
+  MemberChangeSpecification& WithPaymentConfiguration(PaymentConfigurationT&& value) {
+    SetPaymentConfiguration(std::forward<PaymentConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>Specifies the display name that will be shown for this member in the
    * collaboration. While this field is required when inviting new members, it
@@ -107,9 +141,15 @@ class MemberChangeSpecification {
 
   Aws::Vector<MemberAbility> m_memberAbilities;
 
+  MLMemberAbilities m_mlMemberAbilities;
+
+  PaymentConfiguration m_paymentConfiguration;
+
   Aws::String m_displayName;
   bool m_accountIdHasBeenSet = false;
   bool m_memberAbilitiesHasBeenSet = false;
+  bool m_mlMemberAbilitiesHasBeenSet = false;
+  bool m_paymentConfigurationHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

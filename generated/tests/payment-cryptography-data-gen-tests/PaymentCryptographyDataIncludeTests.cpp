@@ -54,6 +54,8 @@
 #include <aws/payment-cryptography-data/model/EncryptionMode.h>
 #include <aws/payment-cryptography-data/model/GenerateAs2805KekValidationRequest.h>
 #include <aws/payment-cryptography-data/model/GenerateAs2805KekValidationResult.h>
+#include <aws/payment-cryptography-data/model/GenerateAuthRequestCryptogramRequest.h>
+#include <aws/payment-cryptography-data/model/GenerateAuthRequestCryptogramResult.h>
 #include <aws/payment-cryptography-data/model/GenerateCardValidationDataRequest.h>
 #include <aws/payment-cryptography-data/model/GenerateCardValidationDataResult.h>
 #include <aws/payment-cryptography-data/model/GenerateMacEmvPinChangeRequest.h>
@@ -90,6 +92,7 @@
 #include <aws/payment-cryptography-data/model/PinData.h>
 #include <aws/payment-cryptography-data/model/PinGenerationAttributes.h>
 #include <aws/payment-cryptography-data/model/PinVerificationAttributes.h>
+#include <aws/payment-cryptography-data/model/RandomKeyMaxLength.h>
 #include <aws/payment-cryptography-data/model/RandomKeySendVariantMask.h>
 #include <aws/payment-cryptography-data/model/ReEncryptDataRequest.h>
 #include <aws/payment-cryptography-data/model/ReEncryptDataResult.h>

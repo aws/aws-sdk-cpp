@@ -21,9 +21,13 @@
 #include <aws/securityagent/SecurityAgentEndpointProvider.h>
 #include <aws/securityagent/SecurityAgentErrorMarshaller.h>
 #include <aws/securityagent/model/AddArtifactRequest.h>
+#include <aws/securityagent/model/BatchDeleteCodeReviewsRequest.h>
 #include <aws/securityagent/model/BatchDeletePentestsRequest.h>
 #include <aws/securityagent/model/BatchGetAgentSpacesRequest.h>
 #include <aws/securityagent/model/BatchGetArtifactMetadataRequest.h>
+#include <aws/securityagent/model/BatchGetCodeReviewJobTasksRequest.h>
+#include <aws/securityagent/model/BatchGetCodeReviewJobsRequest.h>
+#include <aws/securityagent/model/BatchGetCodeReviewsRequest.h>
 #include <aws/securityagent/model/BatchGetFindingsRequest.h>
 #include <aws/securityagent/model/BatchGetPentestJobTasksRequest.h>
 #include <aws/securityagent/model/BatchGetPentestJobsRequest.h>
@@ -31,6 +35,7 @@
 #include <aws/securityagent/model/BatchGetTargetDomainsRequest.h>
 #include <aws/securityagent/model/CreateAgentSpaceRequest.h>
 #include <aws/securityagent/model/CreateApplicationRequest.h>
+#include <aws/securityagent/model/CreateCodeReviewRequest.h>
 #include <aws/securityagent/model/CreateIntegrationRequest.h>
 #include <aws/securityagent/model/CreateMembershipRequest.h>
 #include <aws/securityagent/model/CreatePentestRequest.h>
@@ -48,6 +53,9 @@
 #include <aws/securityagent/model/ListAgentSpacesRequest.h>
 #include <aws/securityagent/model/ListApplicationsRequest.h>
 #include <aws/securityagent/model/ListArtifactsRequest.h>
+#include <aws/securityagent/model/ListCodeReviewJobTasksRequest.h>
+#include <aws/securityagent/model/ListCodeReviewJobsForCodeReviewRequest.h>
+#include <aws/securityagent/model/ListCodeReviewsRequest.h>
 #include <aws/securityagent/model/ListDiscoveredEndpointsRequest.h>
 #include <aws/securityagent/model/ListFindingsRequest.h>
 #include <aws/securityagent/model/ListIntegratedResourcesRequest.h>
@@ -59,12 +67,15 @@
 #include <aws/securityagent/model/ListTagsForResourceRequest.h>
 #include <aws/securityagent/model/ListTargetDomainsRequest.h>
 #include <aws/securityagent/model/StartCodeRemediationRequest.h>
+#include <aws/securityagent/model/StartCodeReviewJobRequest.h>
 #include <aws/securityagent/model/StartPentestJobRequest.h>
+#include <aws/securityagent/model/StopCodeReviewJobRequest.h>
 #include <aws/securityagent/model/StopPentestJobRequest.h>
 #include <aws/securityagent/model/TagResourceRequest.h>
 #include <aws/securityagent/model/UntagResourceRequest.h>
 #include <aws/securityagent/model/UpdateAgentSpaceRequest.h>
 #include <aws/securityagent/model/UpdateApplicationRequest.h>
+#include <aws/securityagent/model/UpdateCodeReviewRequest.h>
 #include <aws/securityagent/model/UpdateFindingRequest.h>
 #include <aws/securityagent/model/UpdateIntegratedResourcesRequest.h>
 #include <aws/securityagent/model/UpdatePentestRequest.h>
@@ -94,10 +105,10 @@ const char* SecurityAgentClient::GetAllocationTag() { return ALLOCATION_TAG; }
 SecurityAgentClient::SecurityAgentClient(const SecurityAgent::SecurityAgentClientConfiguration& clientConfiguration,
                                          std::shared_ptr<SecurityAgentEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<SecurityAgentErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SecurityAgentEndpointProvider>(ALLOCATION_TAG)) {
@@ -131,10 +142,10 @@ SecurityAgentClient::SecurityAgentClient(const std::shared_ptr<AWSCredentialsPro
 /* Legacy constructors due deprecation */
 SecurityAgentClient::SecurityAgentClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<SecurityAgentErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<SecurityAgentEndpointProvider>(ALLOCATION_TAG)) {
@@ -235,6 +246,17 @@ AddArtifactOutcome SecurityAgentClient::AddArtifact(const AddArtifactRequest& re
   return result.IsSuccess() ? AddArtifactOutcome(result.GetResultWithOwnership()) : AddArtifactOutcome(std::move(result.GetError()));
 }
 
+BatchDeleteCodeReviewsOutcome SecurityAgentClient::BatchDeleteCodeReviews(const BatchDeleteCodeReviewsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/BatchDeleteCodeReviews");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteCodeReviewsOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteCodeReviewsOutcome(std::move(result.GetError()));
+}
+
 BatchDeletePentestsOutcome SecurityAgentClient::BatchDeletePentests(const BatchDeletePentestsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -266,6 +288,39 @@ BatchGetArtifactMetadataOutcome SecurityAgentClient::BatchGetArtifactMetadata(co
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? BatchGetArtifactMetadataOutcome(result.GetResultWithOwnership())
                             : BatchGetArtifactMetadataOutcome(std::move(result.GetError()));
+}
+
+BatchGetCodeReviewJobTasksOutcome SecurityAgentClient::BatchGetCodeReviewJobTasks(const BatchGetCodeReviewJobTasksRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/BatchGetCodeReviewJobTasks");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetCodeReviewJobTasksOutcome(result.GetResultWithOwnership())
+                            : BatchGetCodeReviewJobTasksOutcome(std::move(result.GetError()));
+}
+
+BatchGetCodeReviewJobsOutcome SecurityAgentClient::BatchGetCodeReviewJobs(const BatchGetCodeReviewJobsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/BatchGetCodeReviewJobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetCodeReviewJobsOutcome(result.GetResultWithOwnership())
+                            : BatchGetCodeReviewJobsOutcome(std::move(result.GetError()));
+}
+
+BatchGetCodeReviewsOutcome SecurityAgentClient::BatchGetCodeReviews(const BatchGetCodeReviewsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/BatchGetCodeReviews");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetCodeReviewsOutcome(result.GetResultWithOwnership())
+                            : BatchGetCodeReviewsOutcome(std::move(result.GetError()));
 }
 
 BatchGetFindingsOutcome SecurityAgentClient::BatchGetFindings(const BatchGetFindingsRequest& request) const {
@@ -343,6 +398,17 @@ CreateApplicationOutcome SecurityAgentClient::CreateApplication(const CreateAppl
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
                             : CreateApplicationOutcome(std::move(result.GetError()));
+}
+
+CreateCodeReviewOutcome SecurityAgentClient::CreateCodeReview(const CreateCodeReviewRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/CreateCodeReview");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCodeReviewOutcome(result.GetResultWithOwnership())
+                            : CreateCodeReviewOutcome(std::move(result.GetError()));
 }
 
 CreateIntegrationOutcome SecurityAgentClient::CreateIntegration(const CreateIntegrationRequest& request) const {
@@ -527,6 +593,40 @@ ListArtifactsOutcome SecurityAgentClient::ListArtifacts(const ListArtifactsReque
   return result.IsSuccess() ? ListArtifactsOutcome(result.GetResultWithOwnership()) : ListArtifactsOutcome(std::move(result.GetError()));
 }
 
+ListCodeReviewJobTasksOutcome SecurityAgentClient::ListCodeReviewJobTasks(const ListCodeReviewJobTasksRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListCodeReviewJobTasks");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCodeReviewJobTasksOutcome(result.GetResultWithOwnership())
+                            : ListCodeReviewJobTasksOutcome(std::move(result.GetError()));
+}
+
+ListCodeReviewJobsForCodeReviewOutcome SecurityAgentClient::ListCodeReviewJobsForCodeReview(
+    const ListCodeReviewJobsForCodeReviewRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListCodeReviewJobsForCodeReview");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCodeReviewJobsForCodeReviewOutcome(result.GetResultWithOwnership())
+                            : ListCodeReviewJobsForCodeReviewOutcome(std::move(result.GetError()));
+}
+
+ListCodeReviewsOutcome SecurityAgentClient::ListCodeReviews(const ListCodeReviewsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListCodeReviews");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCodeReviewsOutcome(result.GetResultWithOwnership())
+                            : ListCodeReviewsOutcome(std::move(result.GetError()));
+}
+
 ListDiscoveredEndpointsOutcome SecurityAgentClient::ListDiscoveredEndpoints(const ListDiscoveredEndpointsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -653,6 +753,17 @@ StartCodeRemediationOutcome SecurityAgentClient::StartCodeRemediation(const Star
                             : StartCodeRemediationOutcome(std::move(result.GetError()));
 }
 
+StartCodeReviewJobOutcome SecurityAgentClient::StartCodeReviewJob(const StartCodeReviewJobRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/StartCodeReviewJob");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCodeReviewJobOutcome(result.GetResultWithOwnership())
+                            : StartCodeReviewJobOutcome(std::move(result.GetError()));
+}
+
 StartPentestJobOutcome SecurityAgentClient::StartPentestJob(const StartPentestJobRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -662,6 +773,17 @@ StartPentestJobOutcome SecurityAgentClient::StartPentestJob(const StartPentestJo
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartPentestJobOutcome(result.GetResultWithOwnership())
                             : StartPentestJobOutcome(std::move(result.GetError()));
+}
+
+StopCodeReviewJobOutcome SecurityAgentClient::StopCodeReviewJob(const StopCodeReviewJobRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/StopCodeReviewJob");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopCodeReviewJobOutcome(result.GetResultWithOwnership())
+                            : StopCodeReviewJobOutcome(std::move(result.GetError()));
 }
 
 StopPentestJobOutcome SecurityAgentClient::StopPentestJob(const StopPentestJobRequest& request) const {
@@ -733,6 +855,17 @@ UpdateApplicationOutcome SecurityAgentClient::UpdateApplication(const UpdateAppl
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
                             : UpdateApplicationOutcome(std::move(result.GetError()));
+}
+
+UpdateCodeReviewOutcome SecurityAgentClient::UpdateCodeReview(const UpdateCodeReviewRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateCodeReview");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCodeReviewOutcome(result.GetResultWithOwnership())
+                            : UpdateCodeReviewOutcome(std::move(result.GetError()));
 }
 
 UpdateFindingOutcome SecurityAgentClient::UpdateFinding(const UpdateFindingRequest& request) const {

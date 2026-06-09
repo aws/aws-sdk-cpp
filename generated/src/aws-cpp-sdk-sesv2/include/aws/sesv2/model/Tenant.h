@@ -10,6 +10,7 @@
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/SendingStatus.h>
 #include <aws/sesv2/model/Tag.h>
+#include <aws/sesv2/model/TenantSuppressionAttributes.h>
 
 #include <utility>
 
@@ -147,6 +148,25 @@ class Tenant {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains information about the suppression list preferences
+   * for the tenant.</p>
+   */
+  inline const TenantSuppressionAttributes& GetSuppressionAttributes() const { return m_suppressionAttributes; }
+  inline bool SuppressionAttributesHasBeenSet() const { return m_suppressionAttributesHasBeenSet; }
+  template <typename SuppressionAttributesT = TenantSuppressionAttributes>
+  void SetSuppressionAttributes(SuppressionAttributesT&& value) {
+    m_suppressionAttributesHasBeenSet = true;
+    m_suppressionAttributes = std::forward<SuppressionAttributesT>(value);
+  }
+  template <typename SuppressionAttributesT = TenantSuppressionAttributes>
+  Tenant& WithSuppressionAttributes(SuppressionAttributesT&& value) {
+    SetSuppressionAttributes(std::forward<SuppressionAttributesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_tenantName;
 
@@ -159,12 +179,15 @@ class Tenant {
   Aws::Vector<Tag> m_tags;
 
   SendingStatus m_sendingStatus{SendingStatus::NOT_SET};
+
+  TenantSuppressionAttributes m_suppressionAttributes;
   bool m_tenantNameHasBeenSet = false;
   bool m_tenantIdHasBeenSet = false;
   bool m_tenantArnHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_sendingStatusHasBeenSet = false;
+  bool m_suppressionAttributesHasBeenSet = false;
 };
 
 }  // namespace Model

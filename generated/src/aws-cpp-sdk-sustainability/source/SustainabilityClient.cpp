@@ -45,12 +45,13 @@ const char* SustainabilityClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
 SustainabilityClient::SustainabilityClient(const Sustainability::SustainabilityClientConfiguration& clientConfiguration,
                                            std::shared_ptr<SustainabilityEndpointProviderBase> endpointProvider)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<SustainabilityErrorMarshaller>(ALLOCATION_TAG)),
+    : BASECLASS(
+          clientConfiguration,
+          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
+              ALLOCATION_TAG,
+              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+          Aws::MakeShared<SustainabilityErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SustainabilityEndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);
@@ -83,12 +84,13 @@ SustainabilityClient::SustainabilityClient(const std::shared_ptr<AWSCredentialsP
 
 /* Legacy constructors due deprecation */
 SustainabilityClient::SustainabilityClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<SustainabilityErrorMarshaller>(ALLOCATION_TAG)),
+    : BASECLASS(
+          clientConfiguration,
+          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
+              ALLOCATION_TAG,
+              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+          Aws::MakeShared<SustainabilityErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<SustainabilityEndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);

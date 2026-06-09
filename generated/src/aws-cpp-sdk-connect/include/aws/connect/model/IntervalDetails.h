@@ -58,9 +58,9 @@ class IntervalDetails {
    * | <code>THIRTY_MIN</code> | <code>HOUR</code> | <code>DAY</code> |
    * <code>WEEK</code> | <code>TOTAL</code>. </p> <p>For example, if
    * <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>,
-   * <code>StartTime</code> and <code>EndTime</code> differs by 1 day, then Amazon
-   * Connect returns 48 results in the response. Each result is aggregated by the
-   * THIRTY_MIN period. By default Amazon Connect aggregates results based on the
+   * <code>StartTime</code> and <code>EndTime</code> differs by 1 day, then Connect
+   * Customer returns 48 results in the response. Each result is aggregated by the
+   * THIRTY_MIN period. By default Connect Customer aggregates results based on the
    * <code>TOTAL</code> interval period. </p> <p>The following list describes
    * restrictions on <code>StartTime</code> and <code>EndTime</code> based on what
    * <code>IntervalPeriod</code> is requested. </p> <ul> <li> <p>

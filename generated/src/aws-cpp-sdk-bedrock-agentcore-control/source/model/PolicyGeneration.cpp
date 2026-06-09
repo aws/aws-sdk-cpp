@@ -50,16 +50,16 @@ PolicyGeneration& PolicyGeneration::operator=(JsonView jsonValue) {
     m_status = PolicyGenerationStatusMapper::GetPolicyGenerationStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("findings")) {
+    m_findings = jsonValue.GetString("findings");
+    m_findingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("statusReasons")) {
     Aws::Utils::Array<JsonView> statusReasonsJsonList = jsonValue.GetArray("statusReasons");
     for (unsigned statusReasonsIndex = 0; statusReasonsIndex < statusReasonsJsonList.GetLength(); ++statusReasonsIndex) {
       m_statusReasons.push_back(statusReasonsJsonList[statusReasonsIndex].AsString());
     }
     m_statusReasonsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("findings")) {
-    m_findings = jsonValue.GetString("findings");
-    m_findingsHasBeenSet = true;
   }
   return *this;
 }
@@ -99,16 +99,16 @@ JsonValue PolicyGeneration::Jsonize() const {
     payload.WithString("status", PolicyGenerationStatusMapper::GetNameForPolicyGenerationStatus(m_status));
   }
 
+  if (m_findingsHasBeenSet) {
+    payload.WithString("findings", m_findings);
+  }
+
   if (m_statusReasonsHasBeenSet) {
     Aws::Utils::Array<JsonValue> statusReasonsJsonList(m_statusReasons.size());
     for (unsigned statusReasonsIndex = 0; statusReasonsIndex < statusReasonsJsonList.GetLength(); ++statusReasonsIndex) {
       statusReasonsJsonList[statusReasonsIndex].AsString(m_statusReasons[statusReasonsIndex]);
     }
     payload.WithArray("statusReasons", std::move(statusReasonsJsonList));
-  }
-
-  if (m_findingsHasBeenSet) {
-    payload.WithString("findings", m_findings);
   }
 
   return payload;

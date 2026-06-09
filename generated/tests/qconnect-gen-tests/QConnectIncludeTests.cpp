@@ -117,6 +117,7 @@
 #include <aws/qconnect/model/CreateQuickResponseResult.h>
 #include <aws/qconnect/model/CreateSessionRequest.h>
 #include <aws/qconnect/model/CreateSessionResult.h>
+#include <aws/qconnect/model/CrossRegionStatus.h>
 #include <aws/qconnect/model/CustomerProfileAttributes.h>
 #include <aws/qconnect/model/DataDetails.h>
 #include <aws/qconnect/model/DataReference.h>
@@ -206,6 +207,7 @@
 #include <aws/qconnect/model/GetSessionRequest.h>
 #include <aws/qconnect/model/GetSessionResult.h>
 #include <aws/qconnect/model/GroupingConfiguration.h>
+#include <aws/qconnect/model/GuardrailAction.h>
 #include <aws/qconnect/model/GuardrailContentFilterConfig.h>
 #include <aws/qconnect/model/GuardrailContentFilterType.h>
 #include <aws/qconnect/model/GuardrailContextualGroundingFilterConfig.h>
@@ -215,8 +217,11 @@
 #include <aws/qconnect/model/GuardrailManagedWordsType.h>
 #include <aws/qconnect/model/GuardrailPiiEntityConfig.h>
 #include <aws/qconnect/model/GuardrailPiiEntityType.h>
+#include <aws/qconnect/model/GuardrailPolicyResult.h>
+#include <aws/qconnect/model/GuardrailPolicyType.h>
 #include <aws/qconnect/model/GuardrailRegexConfig.h>
 #include <aws/qconnect/model/GuardrailSensitiveInformationAction.h>
+#include <aws/qconnect/model/GuardrailSource.h>
 #include <aws/qconnect/model/GuardrailTopicConfig.h>
 #include <aws/qconnect/model/GuardrailTopicType.h>
 #include <aws/qconnect/model/GuardrailWordConfig.h>
@@ -267,6 +272,8 @@
 #include <aws/qconnect/model/ListMessageTemplatesResult.h>
 #include <aws/qconnect/model/ListMessagesRequest.h>
 #include <aws/qconnect/model/ListMessagesResult.h>
+#include <aws/qconnect/model/ListModelsRequest.h>
+#include <aws/qconnect/model/ListModelsResult.h>
 #include <aws/qconnect/model/ListQuickResponsesRequest.h>
 #include <aws/qconnect/model/ListQuickResponsesResult.h>
 #include <aws/qconnect/model/ListSpansRequest.h>
@@ -298,6 +305,8 @@
 #include <aws/qconnect/model/MessageTemplateSummary.h>
 #include <aws/qconnect/model/MessageTemplateVersionSummary.h>
 #include <aws/qconnect/model/MessageType.h>
+#include <aws/qconnect/model/ModelLifecycle.h>
+#include <aws/qconnect/model/ModelSummary.h>
 #include <aws/qconnect/model/NoteTakingAIAgentConfiguration.h>
 #include <aws/qconnect/model/NotesChunkDataDetails.h>
 #include <aws/qconnect/model/NotesDataDetails.h>
@@ -397,6 +406,7 @@
 #include <aws/qconnect/model/Span.h>
 #include <aws/qconnect/model/SpanAttributes.h>
 #include <aws/qconnect/model/SpanCitation.h>
+#include <aws/qconnect/model/SpanGuardrailAssessment.h>
 #include <aws/qconnect/model/SpanMessage.h>
 #include <aws/qconnect/model/SpanMessageValue.h>
 #include <aws/qconnect/model/SpanReasoningValue.h>

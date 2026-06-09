@@ -163,6 +163,10 @@ namespace client
                                 EndpointUpdateCallback&& endpointCallback
                                 ) const;
         void AppendToUserAgent(const Aws::String& valueToAppend);
+        virtual void DisableRequestProcessing();
+        virtual void EnableRequestProcessing();
+        inline virtual const char* GetServiceClientName() const { return m_serviceName.c_str(); }
+        inline virtual const std::shared_ptr<Aws::Http::HttpClient>& GetHttpClient() { return m_httpClient; }
 
     protected:
         template <typename OutcomeT, typename ClientT, typename RequestT, typename HandlerT>
@@ -212,11 +216,6 @@ namespace client
 
         virtual void HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx,
                                       std::shared_ptr<Aws::Http::HttpResponse> httpResponse) const;
-
-        inline virtual const char* GetServiceClientName() const { return m_serviceName.c_str(); }
-        inline virtual const std::shared_ptr<Aws::Http::HttpClient>& GetHttpClient() { return m_httpClient; }
-        virtual void DisableRequestProcessing();
-        virtual void EnableRequestProcessing();
 
         virtual ResolveEndpointOutcome ResolveEndpoint(const Aws::Endpoint::EndpointParameters& endpointParameters, EndpointUpdateCallback&& epCallback) const = 0;
         virtual SelectAuthSchemeOptionOutcome SelectAuthSchemeOption(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;

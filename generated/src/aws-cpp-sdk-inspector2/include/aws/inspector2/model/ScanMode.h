@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Inspector2 {
 namespace Model {
-enum class ScanMode { NOT_SET, EC2_SSM_AGENT_BASED, EC2_AGENTLESS };
+enum class ScanMode { NOT_SET, EC2_SSM_AGENT_BASED, EC2_AGENTLESS, EC2_INSPECTOR_AGENT_BASED };
 
 namespace ScanModeMapper {
 AWS_INSPECTOR2_API ScanMode GetScanModeForName(const Aws::String& name);

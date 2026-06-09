@@ -25,6 +25,12 @@ static const int RdsDBInstance_HASH = HashingUtils::HashString("RdsDBInstance");
 static const int RdsDBInstanceStorage_HASH = HashingUtils::HashString("RdsDBInstanceStorage");
 static const int AuroraDBClusterStorage_HASH = HashingUtils::HashString("AuroraDBClusterStorage");
 static const int NatGateway_HASH = HashingUtils::HashString("NatGateway");
+static const int DynamoDBTable_HASH = HashingUtils::HashString("DynamoDBTable");
+static const int ElastiCacheCluster_HASH = HashingUtils::HashString("ElastiCacheCluster");
+static const int MemoryDBCluster_HASH = HashingUtils::HashString("MemoryDBCluster");
+static const int DocumentDBCluster_HASH = HashingUtils::HashString("DocumentDBCluster");
+static const int WorkSpaces_HASH = HashingUtils::HashString("WorkSpaces");
+static const int SageMakerEndpoint_HASH = HashingUtils::HashString("SageMakerEndpoint");
 
 RecommendationSourceType GetRecommendationSourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +54,18 @@ RecommendationSourceType GetRecommendationSourceTypeForName(const Aws::String& n
     return RecommendationSourceType::AuroraDBClusterStorage;
   } else if (hashCode == NatGateway_HASH) {
     return RecommendationSourceType::NatGateway;
+  } else if (hashCode == DynamoDBTable_HASH) {
+    return RecommendationSourceType::DynamoDBTable;
+  } else if (hashCode == ElastiCacheCluster_HASH) {
+    return RecommendationSourceType::ElastiCacheCluster;
+  } else if (hashCode == MemoryDBCluster_HASH) {
+    return RecommendationSourceType::MemoryDBCluster;
+  } else if (hashCode == DocumentDBCluster_HASH) {
+    return RecommendationSourceType::DocumentDBCluster;
+  } else if (hashCode == WorkSpaces_HASH) {
+    return RecommendationSourceType::WorkSpaces;
+  } else if (hashCode == SageMakerEndpoint_HASH) {
+    return RecommendationSourceType::SageMakerEndpoint;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +100,18 @@ Aws::String GetNameForRecommendationSourceType(RecommendationSourceType enumValu
       return "AuroraDBClusterStorage";
     case RecommendationSourceType::NatGateway:
       return "NatGateway";
+    case RecommendationSourceType::DynamoDBTable:
+      return "DynamoDBTable";
+    case RecommendationSourceType::ElastiCacheCluster:
+      return "ElastiCacheCluster";
+    case RecommendationSourceType::MemoryDBCluster:
+      return "MemoryDBCluster";
+    case RecommendationSourceType::DocumentDBCluster:
+      return "DocumentDBCluster";
+    case RecommendationSourceType::WorkSpaces:
+      return "WorkSpaces";
+    case RecommendationSourceType::SageMakerEndpoint:
+      return "SageMakerEndpoint";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

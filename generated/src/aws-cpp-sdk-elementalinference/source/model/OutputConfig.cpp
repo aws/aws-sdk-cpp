@@ -26,6 +26,10 @@ OutputConfig& OutputConfig::operator=(JsonView jsonValue) {
     m_clipping = jsonValue.GetObject("clipping");
     m_clippingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("subtitling")) {
+    m_subtitling = jsonValue.GetObject("subtitling");
+    m_subtitlingHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue OutputConfig::Jsonize() const {
 
   if (m_clippingHasBeenSet) {
     payload.WithObject("clipping", m_clipping.Jsonize());
+  }
+
+  if (m_subtitlingHasBeenSet) {
+    payload.WithObject("subtitling", m_subtitling.Jsonize());
   }
 
   return payload;

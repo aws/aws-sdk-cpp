@@ -33,7 +33,7 @@ class UpdatePredefinedAttributeRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can find the instance ID
+   * <p>The identifier of the Connect Customer instance. You can find the instance ID
    * in the Amazon Resource Name (ARN) of the instance.</p>
    */
   inline const Aws::String& GetInstanceId() const { return m_instanceId; }
@@ -89,7 +89,7 @@ class UpdatePredefinedAttributeRequest : public ConnectRequest {
   ///@{
   /**
    * <p>Values that enable you to categorize your predefined attributes. You can use
-   * them in custom UI elements across the Amazon Connect admin website.</p>
+   * them in custom UI elements across the Connect Customer admin website.</p>
    */
   inline const Aws::Vector<Aws::String>& GetPurposes() const { return m_purposes; }
   inline bool PurposesHasBeenSet() const { return m_purposesHasBeenSet; }
@@ -115,7 +115,7 @@ class UpdatePredefinedAttributeRequest : public ConnectRequest {
   /**
    * <p>Custom metadata that is associated to predefined attributes to control
    * behavior in upstream services, such as controlling how a predefined attribute
-   * should be displayed in the Amazon Connect admin website.</p>
+   * should be displayed in the Connect Customer admin website.</p>
    */
   inline const InputPredefinedAttributeConfiguration& GetAttributeConfiguration() const { return m_attributeConfiguration; }
   inline bool AttributeConfigurationHasBeenSet() const { return m_attributeConfigurationHasBeenSet; }

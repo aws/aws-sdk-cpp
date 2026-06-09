@@ -39,6 +39,10 @@ Aws::String UpdateProcurementPortalPreferenceStatusRequest::SerializePayload() c
     payload.WithString("PurchaseOrderRetrievalPreferenceStatusReason", m_purchaseOrderRetrievalPreferenceStatusReason);
   }
 
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/NdiOutputTimecodeSource.h>
 #include <aws/mediaconnect/model/NdiSourceSettings.h>
 #include <aws/mediaconnect/model/Protocol.h>
 
@@ -326,6 +327,29 @@ class Transport {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timecode source for NDI output frames. For NDI outputs, this field is
+   * always present and defaults to <code>EMBEDDED_TIMECODE</code>.</p> <ul> <li> <p>
+   * <code>EMBEDDED_TIMECODE</code> - Preserves timecodes from the input transport
+   * stream. The timecodes must be embedded in the video stream as SEI timing
+   * messages. If no embedded timecode is detected, MediaConnect uses the UTC system
+   * time instead.</p> </li> <li> <p> <code>UTC_SYSTEM_TIME</code> - Generates
+   * timecodes based on the system clock time when each frame is sent.</p> </li>
+   * </ul>
+   */
+  inline NdiOutputTimecodeSource GetNdiOutputTimecodeSource() const { return m_ndiOutputTimecodeSource; }
+  inline bool NdiOutputTimecodeSourceHasBeenSet() const { return m_ndiOutputTimecodeSourceHasBeenSet; }
+  inline void SetNdiOutputTimecodeSource(NdiOutputTimecodeSource value) {
+    m_ndiOutputTimecodeSourceHasBeenSet = true;
+    m_ndiOutputTimecodeSource = value;
+  }
+  inline Transport& WithNdiOutputTimecodeSource(NdiOutputTimecodeSource value) {
+    SetNdiOutputTimecodeSource(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_cidrAllowList;
 
@@ -358,6 +382,8 @@ class Transport {
   Aws::String m_ndiProgramName;
 
   NdiSourceSettings m_ndiSourceSettings;
+
+  NdiOutputTimecodeSource m_ndiOutputTimecodeSource{NdiOutputTimecodeSource::NOT_SET};
   bool m_cidrAllowListHasBeenSet = false;
   bool m_maxBitrateHasBeenSet = false;
   bool m_maxLatencyHasBeenSet = false;
@@ -374,6 +400,7 @@ class Transport {
   bool m_ndiSpeedHqQualityHasBeenSet = false;
   bool m_ndiProgramNameHasBeenSet = false;
   bool m_ndiSourceSettingsHasBeenSet = false;
+  bool m_ndiOutputTimecodeSourceHasBeenSet = false;
 };
 
 }  // namespace Model

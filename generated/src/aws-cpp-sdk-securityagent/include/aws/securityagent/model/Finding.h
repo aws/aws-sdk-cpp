@@ -6,11 +6,14 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityagent/SecurityAgent_EXPORTS.h>
+#include <aws/securityagent/model/CodeLocation.h>
 #include <aws/securityagent/model/CodeRemediationTask.h>
 #include <aws/securityagent/model/ConfidenceLevel.h>
 #include <aws/securityagent/model/FindingStatus.h>
 #include <aws/securityagent/model/RiskLevel.h>
+#include <aws/securityagent/model/VerificationScript.h>
 
 #include <utility>
 
@@ -106,6 +109,42 @@ class Finding {
   template <typename PentestJobIdT = Aws::String>
   Finding& WithPentestJobId(PentestJobIdT&& value) {
     SetPentestJobId(std::forward<PentestJobIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the code review associated with the finding.</p>
+   */
+  inline const Aws::String& GetCodeReviewId() const { return m_codeReviewId; }
+  inline bool CodeReviewIdHasBeenSet() const { return m_codeReviewIdHasBeenSet; }
+  template <typename CodeReviewIdT = Aws::String>
+  void SetCodeReviewId(CodeReviewIdT&& value) {
+    m_codeReviewIdHasBeenSet = true;
+    m_codeReviewId = std::forward<CodeReviewIdT>(value);
+  }
+  template <typename CodeReviewIdT = Aws::String>
+  Finding& WithCodeReviewId(CodeReviewIdT&& value) {
+    SetCodeReviewId(std::forward<CodeReviewIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the code review job that produced the finding.</p>
+   */
+  inline const Aws::String& GetCodeReviewJobId() const { return m_codeReviewJobId; }
+  inline bool CodeReviewJobIdHasBeenSet() const { return m_codeReviewJobIdHasBeenSet; }
+  template <typename CodeReviewJobIdT = Aws::String>
+  void SetCodeReviewJobId(CodeReviewJobIdT&& value) {
+    m_codeReviewJobIdHasBeenSet = true;
+    m_codeReviewJobId = std::forward<CodeReviewJobIdT>(value);
+  }
+  template <typename CodeReviewJobIdT = Aws::String>
+  Finding& WithCodeReviewJobId(CodeReviewJobIdT&& value) {
+    SetCodeReviewJobId(std::forward<CodeReviewJobIdT>(value));
     return *this;
   }
   ///@}
@@ -327,6 +366,50 @@ class Finding {
 
   ///@{
   /**
+   * <p>The file locations involved in the vulnerability, as reported by the code
+   * scanner.</p>
+   */
+  inline const Aws::Vector<CodeLocation>& GetCodeLocations() const { return m_codeLocations; }
+  inline bool CodeLocationsHasBeenSet() const { return m_codeLocationsHasBeenSet; }
+  template <typename CodeLocationsT = Aws::Vector<CodeLocation>>
+  void SetCodeLocations(CodeLocationsT&& value) {
+    m_codeLocationsHasBeenSet = true;
+    m_codeLocations = std::forward<CodeLocationsT>(value);
+  }
+  template <typename CodeLocationsT = Aws::Vector<CodeLocation>>
+  Finding& WithCodeLocations(CodeLocationsT&& value) {
+    SetCodeLocations(std::forward<CodeLocationsT>(value));
+    return *this;
+  }
+  template <typename CodeLocationsT = CodeLocation>
+  Finding& AddCodeLocations(CodeLocationsT&& value) {
+    m_codeLocationsHasBeenSet = true;
+    m_codeLocations.emplace_back(std::forward<CodeLocationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The verification script metadata for reproducing the finding, including
+   * download URL, instructions, and required environment variables.</p>
+   */
+  inline const VerificationScript& GetVerificationScript() const { return m_verificationScript; }
+  inline bool VerificationScriptHasBeenSet() const { return m_verificationScriptHasBeenSet; }
+  template <typename VerificationScriptT = VerificationScript>
+  void SetVerificationScript(VerificationScriptT&& value) {
+    m_verificationScriptHasBeenSet = true;
+    m_verificationScript = std::forward<VerificationScriptT>(value);
+  }
+  template <typename VerificationScriptT = VerificationScript>
+  Finding& WithVerificationScript(VerificationScriptT&& value) {
+    SetVerificationScript(std::forward<VerificationScriptT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the finding was created, in UTC format.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -369,6 +452,10 @@ class Finding {
 
   Aws::String m_pentestJobId;
 
+  Aws::String m_codeReviewId;
+
+  Aws::String m_codeReviewJobId;
+
   Aws::String m_taskId;
 
   Aws::String m_name;
@@ -393,6 +480,10 @@ class Finding {
 
   Aws::String m_lastUpdatedBy;
 
+  Aws::Vector<CodeLocation> m_codeLocations;
+
+  VerificationScript m_verificationScript;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -400,6 +491,8 @@ class Finding {
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_pentestIdHasBeenSet = false;
   bool m_pentestJobIdHasBeenSet = false;
+  bool m_codeReviewIdHasBeenSet = false;
+  bool m_codeReviewJobIdHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -412,6 +505,8 @@ class Finding {
   bool m_attackScriptHasBeenSet = false;
   bool m_codeRemediationTaskHasBeenSet = false;
   bool m_lastUpdatedByHasBeenSet = false;
+  bool m_codeLocationsHasBeenSet = false;
+  bool m_verificationScriptHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

@@ -16,6 +16,7 @@
 #include <aws/datazone/model/S3PropertiesInput.h>
 #include <aws/datazone/model/SparkEmrPropertiesInput.h>
 #include <aws/datazone/model/SparkGluePropertiesInput.h>
+#include <aws/datazone/model/VpcPropertiesInput.h>
 #include <aws/datazone/model/WorkflowsMwaaPropertiesInput.h>
 #include <aws/datazone/model/WorkflowsServerlessPropertiesInput.h>
 
@@ -276,6 +277,24 @@ class ConnectionPropertiesInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The VPC properties of a connection.</p>
+   */
+  inline const VpcPropertiesInput& GetVpcProperties() const { return m_vpcProperties; }
+  inline bool VpcPropertiesHasBeenSet() const { return m_vpcPropertiesHasBeenSet; }
+  template <typename VpcPropertiesT = VpcPropertiesInput>
+  void SetVpcProperties(VpcPropertiesT&& value) {
+    m_vpcPropertiesHasBeenSet = true;
+    m_vpcProperties = std::forward<VpcPropertiesT>(value);
+  }
+  template <typename VpcPropertiesT = VpcPropertiesInput>
+  ConnectionPropertiesInput& WithVpcProperties(VpcPropertiesT&& value) {
+    SetVpcProperties(std::forward<VpcPropertiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AthenaPropertiesInput m_athenaProperties;
 
@@ -302,6 +321,8 @@ class ConnectionPropertiesInput {
   WorkflowsServerlessPropertiesInput m_workflowsServerlessProperties;
 
   LakehousePropertiesInput m_lakehouseProperties;
+
+  VpcPropertiesInput m_vpcProperties;
   bool m_athenaPropertiesHasBeenSet = false;
   bool m_gluePropertiesHasBeenSet = false;
   bool m_hyperPodPropertiesHasBeenSet = false;
@@ -315,6 +336,7 @@ class ConnectionPropertiesInput {
   bool m_workflowsMwaaPropertiesHasBeenSet = false;
   bool m_workflowsServerlessPropertiesHasBeenSet = false;
   bool m_lakehousePropertiesHasBeenSet = false;
+  bool m_vpcPropertiesHasBeenSet = false;
 };
 
 }  // namespace Model

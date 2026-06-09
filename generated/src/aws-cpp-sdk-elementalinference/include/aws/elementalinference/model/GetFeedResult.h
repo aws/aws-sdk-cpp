@@ -51,7 +51,7 @@ class GetFeedResult {
 
   ///@{
   /**
-   * <p>The name of the feed being queried.</p>
+   * <p>The name of the feed.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   template <typename NameT = Aws::String>
@@ -68,7 +68,7 @@ class GetFeedResult {
 
   ///@{
   /**
-   * <p>The ID of the feed being queried.</p>
+   * <p>The ID of the feed.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
   template <typename IdT = Aws::String>
@@ -85,7 +85,7 @@ class GetFeedResult {
 
   ///@{
   /**
-   * <p>The dataEndpoints of the feed being queried.</p>
+   * <p>The dataEndpoints of the feed.</p>
    */
   inline const Aws::Vector<Aws::String>& GetDataEndpoints() const { return m_dataEndpoints; }
   template <typename DataEndpointsT = Aws::Vector<Aws::String>>
@@ -108,7 +108,7 @@ class GetFeedResult {
 
   ///@{
   /**
-   * <p>An array of the outputs in the feed being queried.</p>
+   * <p>An array of the outputs in the feed.</p>
    */
   inline const Aws::Vector<GetOutput>& GetOutputs() const { return m_outputs; }
   template <typename OutputsT = Aws::Vector<GetOutput>>
@@ -131,7 +131,7 @@ class GetFeedResult {
 
   ///@{
   /**
-   * <p>The status of the feed being queried.</p>
+   * <p>The status of the feed.</p>
    */
   inline FeedStatus GetStatus() const { return m_status; }
   inline void SetStatus(FeedStatus value) {
@@ -146,8 +146,8 @@ class GetFeedResult {
 
   ///@{
   /**
-   * <p>Information about the resource, if any, associated with the feed being
-   * queried.</p>
+   * <p>Information about the resource that is associated with the feed. It's
+   * possible that there is no associated resource. This is not an error. </p>
    */
   inline const FeedAssociation& GetAssociation() const { return m_association; }
   template <typename AssociationT = FeedAssociation>
@@ -164,7 +164,7 @@ class GetFeedResult {
 
   ///@{
   /**
-   * <p>A list of the tags, if any, for the feed being queried.</p>
+   * <p>A list of the tags, if any, for the feed.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   template <typename TagsT = Aws::Map<Aws::String, Aws::String>>

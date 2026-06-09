@@ -21,21 +21,29 @@
 #include <aws/rtbfabric/RTBFabricEndpointProvider.h>
 #include <aws/rtbfabric/RTBFabricErrorMarshaller.h>
 #include <aws/rtbfabric/model/AcceptLinkRequest.h>
+#include <aws/rtbfabric/model/AssociateCertificateRequest.h>
 #include <aws/rtbfabric/model/CreateInboundExternalLinkRequest.h>
 #include <aws/rtbfabric/model/CreateLinkRequest.h>
+#include <aws/rtbfabric/model/CreateLinkRoutingRuleRequest.h>
 #include <aws/rtbfabric/model/CreateOutboundExternalLinkRequest.h>
 #include <aws/rtbfabric/model/CreateRequesterGatewayRequest.h>
 #include <aws/rtbfabric/model/CreateResponderGatewayRequest.h>
 #include <aws/rtbfabric/model/DeleteInboundExternalLinkRequest.h>
 #include <aws/rtbfabric/model/DeleteLinkRequest.h>
+#include <aws/rtbfabric/model/DeleteLinkRoutingRuleRequest.h>
 #include <aws/rtbfabric/model/DeleteOutboundExternalLinkRequest.h>
 #include <aws/rtbfabric/model/DeleteRequesterGatewayRequest.h>
 #include <aws/rtbfabric/model/DeleteResponderGatewayRequest.h>
+#include <aws/rtbfabric/model/DisassociateCertificateRequest.h>
+#include <aws/rtbfabric/model/GetCertificateAssociationRequest.h>
 #include <aws/rtbfabric/model/GetInboundExternalLinkRequest.h>
 #include <aws/rtbfabric/model/GetLinkRequest.h>
+#include <aws/rtbfabric/model/GetLinkRoutingRuleRequest.h>
 #include <aws/rtbfabric/model/GetOutboundExternalLinkRequest.h>
 #include <aws/rtbfabric/model/GetRequesterGatewayRequest.h>
 #include <aws/rtbfabric/model/GetResponderGatewayRequest.h>
+#include <aws/rtbfabric/model/ListCertificateAssociationsRequest.h>
+#include <aws/rtbfabric/model/ListLinkRoutingRulesRequest.h>
 #include <aws/rtbfabric/model/ListLinksRequest.h>
 #include <aws/rtbfabric/model/ListRequesterGatewaysRequest.h>
 #include <aws/rtbfabric/model/ListResponderGatewaysRequest.h>
@@ -45,6 +53,7 @@
 #include <aws/rtbfabric/model/UntagResourceRequest.h>
 #include <aws/rtbfabric/model/UpdateLinkModuleFlowRequest.h>
 #include <aws/rtbfabric/model/UpdateLinkRequest.h>
+#include <aws/rtbfabric/model/UpdateLinkRoutingRuleRequest.h>
 #include <aws/rtbfabric/model/UpdateRequesterGatewayRequest.h>
 #include <aws/rtbfabric/model/UpdateResponderGatewayRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -71,10 +80,10 @@ const char* RTBFabricClient::GetAllocationTag() { return ALLOCATION_TAG; }
 RTBFabricClient::RTBFabricClient(const RTBFabric::RTBFabricClientConfiguration& clientConfiguration,
                                  std::shared_ptr<RTBFabricEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<RTBFabricErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RTBFabricEndpointProvider>(ALLOCATION_TAG)) {
@@ -107,10 +116,10 @@ RTBFabricClient::RTBFabricClient(const std::shared_ptr<AWSCredentialsProvider>& 
 /* Legacy constructors due deprecation */
 RTBFabricClient::RTBFabricClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<RTBFabricErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<RTBFabricEndpointProvider>(ALLOCATION_TAG)) {
@@ -226,6 +235,25 @@ AcceptLinkOutcome RTBFabricClient::AcceptLink(const AcceptLinkRequest& request) 
   return result.IsSuccess() ? AcceptLinkOutcome(result.GetResultWithOwnership()) : AcceptLinkOutcome(std::move(result.GetError()));
 }
 
+AssociateCertificateOutcome RTBFabricClient::AssociateCertificate(const AssociateCertificateRequest& request) const {
+  if (!request.GatewayIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("AssociateCertificate", "Required field: GatewayId, is not set");
+    return AssociateCertificateOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [GatewayId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/responder-gateway/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/certificate");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateCertificateOutcome(result.GetResultWithOwnership())
+                            : AssociateCertificateOutcome(std::move(result.GetError()));
+}
+
 CreateInboundExternalLinkOutcome RTBFabricClient::CreateInboundExternalLink(const CreateInboundExternalLinkRequest& request) const {
   if (!request.GatewayIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateInboundExternalLink", "Required field: GatewayId, is not set");
@@ -261,6 +289,32 @@ CreateLinkOutcome RTBFabricClient::CreateLink(const CreateLinkRequest& request) 
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateLinkOutcome(result.GetResultWithOwnership()) : CreateLinkOutcome(std::move(result.GetError()));
+}
+
+CreateLinkRoutingRuleOutcome RTBFabricClient::CreateLinkRoutingRule(const CreateLinkRoutingRuleRequest& request) const {
+  if (!request.GatewayIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateLinkRoutingRule", "Required field: GatewayId, is not set");
+    return CreateLinkRoutingRuleOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [GatewayId]", false));
+  }
+  if (!request.LinkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateLinkRoutingRule", "Required field: LinkId, is not set");
+    return CreateLinkRoutingRuleOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [LinkId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/responder-gateway/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/link/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/routing-rule");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLinkRoutingRuleOutcome(result.GetResultWithOwnership())
+                            : CreateLinkRoutingRuleOutcome(std::move(result.GetError()));
 }
 
 CreateOutboundExternalLinkOutcome RTBFabricClient::CreateOutboundExternalLink(const CreateOutboundExternalLinkRequest& request) const {
@@ -353,6 +407,38 @@ DeleteLinkOutcome RTBFabricClient::DeleteLink(const DeleteLinkRequest& request) 
   return result.IsSuccess() ? DeleteLinkOutcome(result.GetResultWithOwnership()) : DeleteLinkOutcome(std::move(result.GetError()));
 }
 
+DeleteLinkRoutingRuleOutcome RTBFabricClient::DeleteLinkRoutingRule(const DeleteLinkRoutingRuleRequest& request) const {
+  if (!request.GatewayIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteLinkRoutingRule", "Required field: GatewayId, is not set");
+    return DeleteLinkRoutingRuleOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [GatewayId]", false));
+  }
+  if (!request.LinkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteLinkRoutingRule", "Required field: LinkId, is not set");
+    return DeleteLinkRoutingRuleOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [LinkId]", false));
+  }
+  if (!request.RuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteLinkRoutingRule", "Required field: RuleId, is not set");
+    return DeleteLinkRoutingRuleOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [RuleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/responder-gateway/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/link/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/routing-rule/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLinkRoutingRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteLinkRoutingRuleOutcome(std::move(result.GetError()));
+}
+
 DeleteOutboundExternalLinkOutcome RTBFabricClient::DeleteOutboundExternalLink(const DeleteOutboundExternalLinkRequest& request) const {
   if (!request.GatewayIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteOutboundExternalLink", "Required field: GatewayId, is not set");
@@ -414,6 +500,54 @@ DeleteResponderGatewayOutcome RTBFabricClient::DeleteResponderGateway(const Dele
                             : DeleteResponderGatewayOutcome(std::move(result.GetError()));
 }
 
+DisassociateCertificateOutcome RTBFabricClient::DisassociateCertificate(const DisassociateCertificateRequest& request) const {
+  if (!request.GatewayIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DisassociateCertificate", "Required field: GatewayId, is not set");
+    return DisassociateCertificateOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [GatewayId]", false));
+  }
+  if (!request.AcmCertificateArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DisassociateCertificate", "Required field: AcmCertificateArn, is not set");
+    return DisassociateCertificateOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [AcmCertificateArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/responder-gateway/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/certificate");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateCertificateOutcome(result.GetResultWithOwnership())
+                            : DisassociateCertificateOutcome(std::move(result.GetError()));
+}
+
+GetCertificateAssociationOutcome RTBFabricClient::GetCertificateAssociation(const GetCertificateAssociationRequest& request) const {
+  if (!request.GatewayIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetCertificateAssociation", "Required field: GatewayId, is not set");
+    return GetCertificateAssociationOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [GatewayId]", false));
+  }
+  if (!request.AcmCertificateArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetCertificateAssociation", "Required field: AcmCertificateArn, is not set");
+    return GetCertificateAssociationOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [AcmCertificateArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/responder-gateway/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/certificate");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCertificateAssociationOutcome(result.GetResultWithOwnership())
+                            : GetCertificateAssociationOutcome(std::move(result.GetError()));
+}
+
 GetInboundExternalLinkOutcome RTBFabricClient::GetInboundExternalLink(const GetInboundExternalLinkRequest& request) const {
   if (!request.GatewayIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetInboundExternalLink", "Required field: GatewayId, is not set");
@@ -461,6 +595,38 @@ GetLinkOutcome RTBFabricClient::GetLink(const GetLinkRequest& request) const {
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetLinkOutcome(result.GetResultWithOwnership()) : GetLinkOutcome(std::move(result.GetError()));
+}
+
+GetLinkRoutingRuleOutcome RTBFabricClient::GetLinkRoutingRule(const GetLinkRoutingRuleRequest& request) const {
+  if (!request.GatewayIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetLinkRoutingRule", "Required field: GatewayId, is not set");
+    return GetLinkRoutingRuleOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [GatewayId]", false));
+  }
+  if (!request.LinkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetLinkRoutingRule", "Required field: LinkId, is not set");
+    return GetLinkRoutingRuleOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [LinkId]", false));
+  }
+  if (!request.RuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetLinkRoutingRule", "Required field: RuleId, is not set");
+    return GetLinkRoutingRuleOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [RuleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/responder-gateway/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/link/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/routing-rule/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLinkRoutingRuleOutcome(result.GetResultWithOwnership())
+                            : GetLinkRoutingRuleOutcome(std::move(result.GetError()));
 }
 
 GetOutboundExternalLinkOutcome RTBFabricClient::GetOutboundExternalLink(const GetOutboundExternalLinkRequest& request) const {
@@ -522,6 +688,51 @@ GetResponderGatewayOutcome RTBFabricClient::GetResponderGateway(const GetRespond
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetResponderGatewayOutcome(result.GetResultWithOwnership())
                             : GetResponderGatewayOutcome(std::move(result.GetError()));
+}
+
+ListCertificateAssociationsOutcome RTBFabricClient::ListCertificateAssociations(const ListCertificateAssociationsRequest& request) const {
+  if (!request.GatewayIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListCertificateAssociations", "Required field: GatewayId, is not set");
+    return ListCertificateAssociationsOutcome(Aws::Client::AWSError<RTBFabricErrors>(
+        RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/responder-gateway/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/certificates");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCertificateAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListCertificateAssociationsOutcome(std::move(result.GetError()));
+}
+
+ListLinkRoutingRulesOutcome RTBFabricClient::ListLinkRoutingRules(const ListLinkRoutingRulesRequest& request) const {
+  if (!request.GatewayIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListLinkRoutingRules", "Required field: GatewayId, is not set");
+    return ListLinkRoutingRulesOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [GatewayId]", false));
+  }
+  if (!request.LinkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListLinkRoutingRules", "Required field: LinkId, is not set");
+    return ListLinkRoutingRulesOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [LinkId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/responder-gateway/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/link/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/routing-rules");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLinkRoutingRulesOutcome(result.GetResultWithOwnership())
+                            : ListLinkRoutingRulesOutcome(std::move(result.GetError()));
 }
 
 ListLinksOutcome RTBFabricClient::ListLinks(const ListLinksRequest& request) const {
@@ -694,6 +905,38 @@ UpdateLinkModuleFlowOutcome RTBFabricClient::UpdateLinkModuleFlow(const UpdateLi
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateLinkModuleFlowOutcome(result.GetResultWithOwnership())
                             : UpdateLinkModuleFlowOutcome(std::move(result.GetError()));
+}
+
+UpdateLinkRoutingRuleOutcome RTBFabricClient::UpdateLinkRoutingRule(const UpdateLinkRoutingRuleRequest& request) const {
+  if (!request.GatewayIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateLinkRoutingRule", "Required field: GatewayId, is not set");
+    return UpdateLinkRoutingRuleOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [GatewayId]", false));
+  }
+  if (!request.LinkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateLinkRoutingRule", "Required field: LinkId, is not set");
+    return UpdateLinkRoutingRuleOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [LinkId]", false));
+  }
+  if (!request.RuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateLinkRoutingRule", "Required field: RuleId, is not set");
+    return UpdateLinkRoutingRuleOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [RuleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/responder-gateway/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/link/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/routing-rule/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateLinkRoutingRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateLinkRoutingRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateRequesterGatewayOutcome RTBFabricClient::UpdateRequesterGateway(const UpdateRequesterGatewayRequest& request) const {

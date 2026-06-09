@@ -23,7 +23,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Summary of a payment instrument for list operations</p><p><h3>See Also:</h3>
+ * <p>Summary of a payment instrument for list operations.</p><p><h3>See Also:</h3>
  * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/PaymentInstrumentSummary">AWS
  * API Reference</a></p>

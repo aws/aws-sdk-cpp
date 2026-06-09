@@ -19,6 +19,7 @@
 #include <aws/opensearchserverless/model/AccessPolicySummary.h>
 #include <aws/opensearchserverless/model/AccessPolicyType.h>
 #include <aws/opensearchserverless/model/AccountSettingsDetail.h>
+#include <aws/opensearchserverless/model/AutoscalingStatus.h>
 #include <aws/opensearchserverless/model/BatchGetCollectionGroupRequest.h>
 #include <aws/opensearchserverless/model/BatchGetCollectionGroupResult.h>
 #include <aws/opensearchserverless/model/BatchGetCollectionRequest.h>
@@ -29,6 +30,7 @@
 #include <aws/opensearchserverless/model/BatchGetLifecyclePolicyResult.h>
 #include <aws/opensearchserverless/model/BatchGetVpcEndpointRequest.h>
 #include <aws/opensearchserverless/model/BatchGetVpcEndpointResult.h>
+#include <aws/opensearchserverless/model/CapacityDetails.h>
 #include <aws/opensearchserverless/model/CapacityLimits.h>
 #include <aws/opensearchserverless/model/CollectionDetail.h>
 #include <aws/opensearchserverless/model/CollectionErrorDetail.h>
@@ -60,6 +62,7 @@
 #include <aws/opensearchserverless/model/CreateVpcEndpointDetail.h>
 #include <aws/opensearchserverless/model/CreateVpcEndpointRequest.h>
 #include <aws/opensearchserverless/model/CreateVpcEndpointResult.h>
+#include <aws/opensearchserverless/model/CurrentCapacity.h>
 #include <aws/opensearchserverless/model/DeleteAccessPolicyRequest.h>
 #include <aws/opensearchserverless/model/DeleteAccessPolicyResult.h>
 #include <aws/opensearchserverless/model/DeleteCollectionDetail.h>
@@ -78,6 +81,7 @@
 #include <aws/opensearchserverless/model/DeleteVpcEndpointDetail.h>
 #include <aws/opensearchserverless/model/DeleteVpcEndpointRequest.h>
 #include <aws/opensearchserverless/model/DeleteVpcEndpointResult.h>
+#include <aws/opensearchserverless/model/DeletionProtection.h>
 #include <aws/opensearchserverless/model/EffectiveLifecyclePolicyDetail.h>
 #include <aws/opensearchserverless/model/EffectiveLifecyclePolicyErrorDetail.h>
 #include <aws/opensearchserverless/model/EncryptionConfig.h>
@@ -131,6 +135,7 @@
 #include <aws/opensearchserverless/model/SecurityPolicyStats.h>
 #include <aws/opensearchserverless/model/SecurityPolicySummary.h>
 #include <aws/opensearchserverless/model/SecurityPolicyType.h>
+#include <aws/opensearchserverless/model/ServerlessGeneration.h>
 #include <aws/opensearchserverless/model/ServerlessVectorAccelerationStatus.h>
 #include <aws/opensearchserverless/model/ServiceQuotaExceededException.h>
 #include <aws/opensearchserverless/model/StandbyReplicas.h>

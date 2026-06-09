@@ -2433,9 +2433,13 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * operation is used both for retrieving results from interactive queries and from
    * automated scheduled query executions. Scheduled queries use
    * <code>GetQueryResults</code> internally to retrieve query results for processing
-   * and delivery to configured destinations.</p> <p>If you are using CloudWatch
-   * cross-account observability, you can use this operation in a monitoring account
-   * to start queries in linked source accounts. For more information, see <a
+   * and delivery to configured destinations.</p> <p>You can retrieve up to 100,000
+   * log event results from a query, if available, by using pagination. Use the
+   * <code>nextToken</code> returned in the response to request additional pages of
+   * results, with each page returning up to 10,000 log events.</p> <p>If you are
+   * using CloudWatch cross-account observability, you can use this operation in a
+   * monitoring account to start queries in linked source accounts. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
    * cross-account observability</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">AWS

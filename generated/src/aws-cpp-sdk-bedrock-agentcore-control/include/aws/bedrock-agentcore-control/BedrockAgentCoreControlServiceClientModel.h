@@ -19,6 +19,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in BedrockAgentCoreControlClient header */
+#include <aws/bedrock-agentcore-control/model/AddDatasetExamplesResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateApiKeyCredentialProviderResult.h>
@@ -26,6 +27,8 @@
 #include <aws/bedrock-agentcore-control/model/CreateBrowserResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateConfigurationBundleResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateDatasetResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateDatasetVersionResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateEvaluatorResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayRuleResult.h>
@@ -49,6 +52,8 @@
 #include <aws/bedrock-agentcore-control/model/DeleteBrowserResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteConfigurationBundleResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteDatasetExamplesResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteEvaluatorResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayRuleResult.h>
@@ -74,6 +79,7 @@
 #include <aws/bedrock-agentcore-control/model/GetCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleResult.h>
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleVersionResult.h>
+#include <aws/bedrock-agentcore-control/model/GetDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/GetEvaluatorResult.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayResult.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayRuleResult.h>
@@ -86,8 +92,11 @@
 #include <aws/bedrock-agentcore-control/model/GetPaymentCredentialProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/GetPaymentManagerResult.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyEngineResult.h>
+#include <aws/bedrock-agentcore-control/model/GetPolicyEngineSummaryResult.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyGenerationResult.h>
+#include <aws/bedrock-agentcore-control/model/GetPolicyGenerationSummaryResult.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyResult.h>
+#include <aws/bedrock-agentcore-control/model/GetPolicySummaryResult.h>
 #include <aws/bedrock-agentcore-control/model/GetRegistryRecordResult.h>
 #include <aws/bedrock-agentcore-control/model/GetRegistryResult.h>
 #include <aws/bedrock-agentcore-control/model/GetResourcePolicyResult.h>
@@ -109,6 +118,10 @@
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesResult.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetExamplesResult.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetVersionsResult.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayRulesResult.h>
@@ -129,10 +142,14 @@
 #include <aws/bedrock-agentcore-control/model/ListPaymentManagersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListPaymentManagersResult.h>
 #include <aws/bedrock-agentcore-control/model/ListPoliciesResult.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicyEngineSummariesRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicyEngineSummariesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsResult.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicyGenerationSummariesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationsResult.h>
+#include <aws/bedrock-agentcore-control/model/ListPolicySummariesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListRegistriesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListRegistriesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListRegistryRecordsResult.h>
@@ -150,6 +167,8 @@
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateApiKeyCredentialProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateConfigurationBundleResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateDatasetExamplesResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateEvaluatorResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayRuleResult.h>
@@ -200,6 +219,7 @@ using BedrockAgentCoreControlEndpointProvider = Aws::BedrockAgentCoreControl::En
 
 namespace Model {
 /* Service model forward declarations required in BedrockAgentCoreControlClient header */
+class AddDatasetExamplesRequest;
 class CreateAgentRuntimeRequest;
 class CreateAgentRuntimeEndpointRequest;
 class CreateApiKeyCredentialProviderRequest;
@@ -207,6 +227,8 @@ class CreateBrowserRequest;
 class CreateBrowserProfileRequest;
 class CreateCodeInterpreterRequest;
 class CreateConfigurationBundleRequest;
+class CreateDatasetRequest;
+class CreateDatasetVersionRequest;
 class CreateEvaluatorRequest;
 class CreateGatewayRequest;
 class CreateGatewayRuleRequest;
@@ -230,6 +252,8 @@ class DeleteBrowserRequest;
 class DeleteBrowserProfileRequest;
 class DeleteCodeInterpreterRequest;
 class DeleteConfigurationBundleRequest;
+class DeleteDatasetRequest;
+class DeleteDatasetExamplesRequest;
 class DeleteEvaluatorRequest;
 class DeleteGatewayRequest;
 class DeleteGatewayRuleRequest;
@@ -255,6 +279,7 @@ class GetBrowserProfileRequest;
 class GetCodeInterpreterRequest;
 class GetConfigurationBundleRequest;
 class GetConfigurationBundleVersionRequest;
+class GetDatasetRequest;
 class GetEvaluatorRequest;
 class GetGatewayRequest;
 class GetGatewayRuleRequest;
@@ -268,7 +293,10 @@ class GetPaymentCredentialProviderRequest;
 class GetPaymentManagerRequest;
 class GetPolicyRequest;
 class GetPolicyEngineRequest;
+class GetPolicyEngineSummaryRequest;
 class GetPolicyGenerationRequest;
+class GetPolicyGenerationSummaryRequest;
+class GetPolicySummaryRequest;
 class GetRegistryRequest;
 class GetRegistryRecordRequest;
 class GetResourcePolicyRequest;
@@ -283,6 +311,9 @@ class ListBrowsersRequest;
 class ListCodeInterpretersRequest;
 class ListConfigurationBundleVersionsRequest;
 class ListConfigurationBundlesRequest;
+class ListDatasetExamplesRequest;
+class ListDatasetVersionsRequest;
+class ListDatasetsRequest;
 class ListEvaluatorsRequest;
 class ListGatewayRulesRequest;
 class ListGatewayTargetsRequest;
@@ -295,9 +326,12 @@ class ListPaymentConnectorsRequest;
 class ListPaymentCredentialProvidersRequest;
 class ListPaymentManagersRequest;
 class ListPoliciesRequest;
+class ListPolicyEngineSummariesRequest;
 class ListPolicyEnginesRequest;
 class ListPolicyGenerationAssetsRequest;
+class ListPolicyGenerationSummariesRequest;
 class ListPolicyGenerationsRequest;
+class ListPolicySummariesRequest;
 class ListRegistriesRequest;
 class ListRegistryRecordsRequest;
 class ListTagsForResourceRequest;
@@ -313,6 +347,8 @@ class UpdateAgentRuntimeRequest;
 class UpdateAgentRuntimeEndpointRequest;
 class UpdateApiKeyCredentialProviderRequest;
 class UpdateConfigurationBundleRequest;
+class UpdateDatasetRequest;
+class UpdateDatasetExamplesRequest;
 class UpdateEvaluatorRequest;
 class UpdateGatewayRequest;
 class UpdateGatewayRuleRequest;
@@ -333,6 +369,7 @@ class UpdateWorkloadIdentityRequest;
 /* End of service model forward declarations required in BedrockAgentCoreControlClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<AddDatasetExamplesResult, BedrockAgentCoreControlError> AddDatasetExamplesOutcome;
 typedef Aws::Utils::Outcome<CreateAgentRuntimeResult, BedrockAgentCoreControlError> CreateAgentRuntimeOutcome;
 typedef Aws::Utils::Outcome<CreateAgentRuntimeEndpointResult, BedrockAgentCoreControlError> CreateAgentRuntimeEndpointOutcome;
 typedef Aws::Utils::Outcome<CreateApiKeyCredentialProviderResult, BedrockAgentCoreControlError> CreateApiKeyCredentialProviderOutcome;
@@ -340,6 +377,8 @@ typedef Aws::Utils::Outcome<CreateBrowserResult, BedrockAgentCoreControlError> C
 typedef Aws::Utils::Outcome<CreateBrowserProfileResult, BedrockAgentCoreControlError> CreateBrowserProfileOutcome;
 typedef Aws::Utils::Outcome<CreateCodeInterpreterResult, BedrockAgentCoreControlError> CreateCodeInterpreterOutcome;
 typedef Aws::Utils::Outcome<CreateConfigurationBundleResult, BedrockAgentCoreControlError> CreateConfigurationBundleOutcome;
+typedef Aws::Utils::Outcome<CreateDatasetResult, BedrockAgentCoreControlError> CreateDatasetOutcome;
+typedef Aws::Utils::Outcome<CreateDatasetVersionResult, BedrockAgentCoreControlError> CreateDatasetVersionOutcome;
 typedef Aws::Utils::Outcome<CreateEvaluatorResult, BedrockAgentCoreControlError> CreateEvaluatorOutcome;
 typedef Aws::Utils::Outcome<CreateGatewayResult, BedrockAgentCoreControlError> CreateGatewayOutcome;
 typedef Aws::Utils::Outcome<CreateGatewayRuleResult, BedrockAgentCoreControlError> CreateGatewayRuleOutcome;
@@ -363,6 +402,8 @@ typedef Aws::Utils::Outcome<DeleteBrowserResult, BedrockAgentCoreControlError> D
 typedef Aws::Utils::Outcome<DeleteBrowserProfileResult, BedrockAgentCoreControlError> DeleteBrowserProfileOutcome;
 typedef Aws::Utils::Outcome<DeleteCodeInterpreterResult, BedrockAgentCoreControlError> DeleteCodeInterpreterOutcome;
 typedef Aws::Utils::Outcome<DeleteConfigurationBundleResult, BedrockAgentCoreControlError> DeleteConfigurationBundleOutcome;
+typedef Aws::Utils::Outcome<DeleteDatasetResult, BedrockAgentCoreControlError> DeleteDatasetOutcome;
+typedef Aws::Utils::Outcome<DeleteDatasetExamplesResult, BedrockAgentCoreControlError> DeleteDatasetExamplesOutcome;
 typedef Aws::Utils::Outcome<DeleteEvaluatorResult, BedrockAgentCoreControlError> DeleteEvaluatorOutcome;
 typedef Aws::Utils::Outcome<DeleteGatewayResult, BedrockAgentCoreControlError> DeleteGatewayOutcome;
 typedef Aws::Utils::Outcome<DeleteGatewayRuleResult, BedrockAgentCoreControlError> DeleteGatewayRuleOutcome;
@@ -388,6 +429,7 @@ typedef Aws::Utils::Outcome<GetBrowserProfileResult, BedrockAgentCoreControlErro
 typedef Aws::Utils::Outcome<GetCodeInterpreterResult, BedrockAgentCoreControlError> GetCodeInterpreterOutcome;
 typedef Aws::Utils::Outcome<GetConfigurationBundleResult, BedrockAgentCoreControlError> GetConfigurationBundleOutcome;
 typedef Aws::Utils::Outcome<GetConfigurationBundleVersionResult, BedrockAgentCoreControlError> GetConfigurationBundleVersionOutcome;
+typedef Aws::Utils::Outcome<GetDatasetResult, BedrockAgentCoreControlError> GetDatasetOutcome;
 typedef Aws::Utils::Outcome<GetEvaluatorResult, BedrockAgentCoreControlError> GetEvaluatorOutcome;
 typedef Aws::Utils::Outcome<GetGatewayResult, BedrockAgentCoreControlError> GetGatewayOutcome;
 typedef Aws::Utils::Outcome<GetGatewayRuleResult, BedrockAgentCoreControlError> GetGatewayRuleOutcome;
@@ -401,7 +443,10 @@ typedef Aws::Utils::Outcome<GetPaymentCredentialProviderResult, BedrockAgentCore
 typedef Aws::Utils::Outcome<GetPaymentManagerResult, BedrockAgentCoreControlError> GetPaymentManagerOutcome;
 typedef Aws::Utils::Outcome<GetPolicyResult, BedrockAgentCoreControlError> GetPolicyOutcome;
 typedef Aws::Utils::Outcome<GetPolicyEngineResult, BedrockAgentCoreControlError> GetPolicyEngineOutcome;
+typedef Aws::Utils::Outcome<GetPolicyEngineSummaryResult, BedrockAgentCoreControlError> GetPolicyEngineSummaryOutcome;
 typedef Aws::Utils::Outcome<GetPolicyGenerationResult, BedrockAgentCoreControlError> GetPolicyGenerationOutcome;
+typedef Aws::Utils::Outcome<GetPolicyGenerationSummaryResult, BedrockAgentCoreControlError> GetPolicyGenerationSummaryOutcome;
+typedef Aws::Utils::Outcome<GetPolicySummaryResult, BedrockAgentCoreControlError> GetPolicySummaryOutcome;
 typedef Aws::Utils::Outcome<GetRegistryResult, BedrockAgentCoreControlError> GetRegistryOutcome;
 typedef Aws::Utils::Outcome<GetRegistryRecordResult, BedrockAgentCoreControlError> GetRegistryRecordOutcome;
 typedef Aws::Utils::Outcome<GetResourcePolicyResult, BedrockAgentCoreControlError> GetResourcePolicyOutcome;
@@ -416,6 +461,9 @@ typedef Aws::Utils::Outcome<ListBrowsersResult, BedrockAgentCoreControlError> Li
 typedef Aws::Utils::Outcome<ListCodeInterpretersResult, BedrockAgentCoreControlError> ListCodeInterpretersOutcome;
 typedef Aws::Utils::Outcome<ListConfigurationBundleVersionsResult, BedrockAgentCoreControlError> ListConfigurationBundleVersionsOutcome;
 typedef Aws::Utils::Outcome<ListConfigurationBundlesResult, BedrockAgentCoreControlError> ListConfigurationBundlesOutcome;
+typedef Aws::Utils::Outcome<ListDatasetExamplesResult, BedrockAgentCoreControlError> ListDatasetExamplesOutcome;
+typedef Aws::Utils::Outcome<ListDatasetVersionsResult, BedrockAgentCoreControlError> ListDatasetVersionsOutcome;
+typedef Aws::Utils::Outcome<ListDatasetsResult, BedrockAgentCoreControlError> ListDatasetsOutcome;
 typedef Aws::Utils::Outcome<ListEvaluatorsResult, BedrockAgentCoreControlError> ListEvaluatorsOutcome;
 typedef Aws::Utils::Outcome<ListGatewayRulesResult, BedrockAgentCoreControlError> ListGatewayRulesOutcome;
 typedef Aws::Utils::Outcome<ListGatewayTargetsResult, BedrockAgentCoreControlError> ListGatewayTargetsOutcome;
@@ -428,9 +476,12 @@ typedef Aws::Utils::Outcome<ListPaymentConnectorsResult, BedrockAgentCoreControl
 typedef Aws::Utils::Outcome<ListPaymentCredentialProvidersResult, BedrockAgentCoreControlError> ListPaymentCredentialProvidersOutcome;
 typedef Aws::Utils::Outcome<ListPaymentManagersResult, BedrockAgentCoreControlError> ListPaymentManagersOutcome;
 typedef Aws::Utils::Outcome<ListPoliciesResult, BedrockAgentCoreControlError> ListPoliciesOutcome;
+typedef Aws::Utils::Outcome<ListPolicyEngineSummariesResult, BedrockAgentCoreControlError> ListPolicyEngineSummariesOutcome;
 typedef Aws::Utils::Outcome<ListPolicyEnginesResult, BedrockAgentCoreControlError> ListPolicyEnginesOutcome;
 typedef Aws::Utils::Outcome<ListPolicyGenerationAssetsResult, BedrockAgentCoreControlError> ListPolicyGenerationAssetsOutcome;
+typedef Aws::Utils::Outcome<ListPolicyGenerationSummariesResult, BedrockAgentCoreControlError> ListPolicyGenerationSummariesOutcome;
 typedef Aws::Utils::Outcome<ListPolicyGenerationsResult, BedrockAgentCoreControlError> ListPolicyGenerationsOutcome;
+typedef Aws::Utils::Outcome<ListPolicySummariesResult, BedrockAgentCoreControlError> ListPolicySummariesOutcome;
 typedef Aws::Utils::Outcome<ListRegistriesResult, BedrockAgentCoreControlError> ListRegistriesOutcome;
 typedef Aws::Utils::Outcome<ListRegistryRecordsResult, BedrockAgentCoreControlError> ListRegistryRecordsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockAgentCoreControlError> ListTagsForResourceOutcome;
@@ -446,6 +497,8 @@ typedef Aws::Utils::Outcome<UpdateAgentRuntimeResult, BedrockAgentCoreControlErr
 typedef Aws::Utils::Outcome<UpdateAgentRuntimeEndpointResult, BedrockAgentCoreControlError> UpdateAgentRuntimeEndpointOutcome;
 typedef Aws::Utils::Outcome<UpdateApiKeyCredentialProviderResult, BedrockAgentCoreControlError> UpdateApiKeyCredentialProviderOutcome;
 typedef Aws::Utils::Outcome<UpdateConfigurationBundleResult, BedrockAgentCoreControlError> UpdateConfigurationBundleOutcome;
+typedef Aws::Utils::Outcome<UpdateDatasetResult, BedrockAgentCoreControlError> UpdateDatasetOutcome;
+typedef Aws::Utils::Outcome<UpdateDatasetExamplesResult, BedrockAgentCoreControlError> UpdateDatasetExamplesOutcome;
 typedef Aws::Utils::Outcome<UpdateEvaluatorResult, BedrockAgentCoreControlError> UpdateEvaluatorOutcome;
 typedef Aws::Utils::Outcome<UpdateGatewayResult, BedrockAgentCoreControlError> UpdateGatewayOutcome;
 typedef Aws::Utils::Outcome<UpdateGatewayRuleResult, BedrockAgentCoreControlError> UpdateGatewayRuleOutcome;
@@ -466,6 +519,7 @@ typedef Aws::Utils::Outcome<UpdateWorkloadIdentityResult, BedrockAgentCoreContro
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<AddDatasetExamplesOutcome> AddDatasetExamplesOutcomeCallable;
 typedef std::future<CreateAgentRuntimeOutcome> CreateAgentRuntimeOutcomeCallable;
 typedef std::future<CreateAgentRuntimeEndpointOutcome> CreateAgentRuntimeEndpointOutcomeCallable;
 typedef std::future<CreateApiKeyCredentialProviderOutcome> CreateApiKeyCredentialProviderOutcomeCallable;
@@ -473,6 +527,8 @@ typedef std::future<CreateBrowserOutcome> CreateBrowserOutcomeCallable;
 typedef std::future<CreateBrowserProfileOutcome> CreateBrowserProfileOutcomeCallable;
 typedef std::future<CreateCodeInterpreterOutcome> CreateCodeInterpreterOutcomeCallable;
 typedef std::future<CreateConfigurationBundleOutcome> CreateConfigurationBundleOutcomeCallable;
+typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
+typedef std::future<CreateDatasetVersionOutcome> CreateDatasetVersionOutcomeCallable;
 typedef std::future<CreateEvaluatorOutcome> CreateEvaluatorOutcomeCallable;
 typedef std::future<CreateGatewayOutcome> CreateGatewayOutcomeCallable;
 typedef std::future<CreateGatewayRuleOutcome> CreateGatewayRuleOutcomeCallable;
@@ -496,6 +552,8 @@ typedef std::future<DeleteBrowserOutcome> DeleteBrowserOutcomeCallable;
 typedef std::future<DeleteBrowserProfileOutcome> DeleteBrowserProfileOutcomeCallable;
 typedef std::future<DeleteCodeInterpreterOutcome> DeleteCodeInterpreterOutcomeCallable;
 typedef std::future<DeleteConfigurationBundleOutcome> DeleteConfigurationBundleOutcomeCallable;
+typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
+typedef std::future<DeleteDatasetExamplesOutcome> DeleteDatasetExamplesOutcomeCallable;
 typedef std::future<DeleteEvaluatorOutcome> DeleteEvaluatorOutcomeCallable;
 typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
 typedef std::future<DeleteGatewayRuleOutcome> DeleteGatewayRuleOutcomeCallable;
@@ -521,6 +579,7 @@ typedef std::future<GetBrowserProfileOutcome> GetBrowserProfileOutcomeCallable;
 typedef std::future<GetCodeInterpreterOutcome> GetCodeInterpreterOutcomeCallable;
 typedef std::future<GetConfigurationBundleOutcome> GetConfigurationBundleOutcomeCallable;
 typedef std::future<GetConfigurationBundleVersionOutcome> GetConfigurationBundleVersionOutcomeCallable;
+typedef std::future<GetDatasetOutcome> GetDatasetOutcomeCallable;
 typedef std::future<GetEvaluatorOutcome> GetEvaluatorOutcomeCallable;
 typedef std::future<GetGatewayOutcome> GetGatewayOutcomeCallable;
 typedef std::future<GetGatewayRuleOutcome> GetGatewayRuleOutcomeCallable;
@@ -534,7 +593,10 @@ typedef std::future<GetPaymentCredentialProviderOutcome> GetPaymentCredentialPro
 typedef std::future<GetPaymentManagerOutcome> GetPaymentManagerOutcomeCallable;
 typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
 typedef std::future<GetPolicyEngineOutcome> GetPolicyEngineOutcomeCallable;
+typedef std::future<GetPolicyEngineSummaryOutcome> GetPolicyEngineSummaryOutcomeCallable;
 typedef std::future<GetPolicyGenerationOutcome> GetPolicyGenerationOutcomeCallable;
+typedef std::future<GetPolicyGenerationSummaryOutcome> GetPolicyGenerationSummaryOutcomeCallable;
+typedef std::future<GetPolicySummaryOutcome> GetPolicySummaryOutcomeCallable;
 typedef std::future<GetRegistryOutcome> GetRegistryOutcomeCallable;
 typedef std::future<GetRegistryRecordOutcome> GetRegistryRecordOutcomeCallable;
 typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
@@ -549,6 +611,9 @@ typedef std::future<ListBrowsersOutcome> ListBrowsersOutcomeCallable;
 typedef std::future<ListCodeInterpretersOutcome> ListCodeInterpretersOutcomeCallable;
 typedef std::future<ListConfigurationBundleVersionsOutcome> ListConfigurationBundleVersionsOutcomeCallable;
 typedef std::future<ListConfigurationBundlesOutcome> ListConfigurationBundlesOutcomeCallable;
+typedef std::future<ListDatasetExamplesOutcome> ListDatasetExamplesOutcomeCallable;
+typedef std::future<ListDatasetVersionsOutcome> ListDatasetVersionsOutcomeCallable;
+typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
 typedef std::future<ListEvaluatorsOutcome> ListEvaluatorsOutcomeCallable;
 typedef std::future<ListGatewayRulesOutcome> ListGatewayRulesOutcomeCallable;
 typedef std::future<ListGatewayTargetsOutcome> ListGatewayTargetsOutcomeCallable;
@@ -561,9 +626,12 @@ typedef std::future<ListPaymentConnectorsOutcome> ListPaymentConnectorsOutcomeCa
 typedef std::future<ListPaymentCredentialProvidersOutcome> ListPaymentCredentialProvidersOutcomeCallable;
 typedef std::future<ListPaymentManagersOutcome> ListPaymentManagersOutcomeCallable;
 typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
+typedef std::future<ListPolicyEngineSummariesOutcome> ListPolicyEngineSummariesOutcomeCallable;
 typedef std::future<ListPolicyEnginesOutcome> ListPolicyEnginesOutcomeCallable;
 typedef std::future<ListPolicyGenerationAssetsOutcome> ListPolicyGenerationAssetsOutcomeCallable;
+typedef std::future<ListPolicyGenerationSummariesOutcome> ListPolicyGenerationSummariesOutcomeCallable;
 typedef std::future<ListPolicyGenerationsOutcome> ListPolicyGenerationsOutcomeCallable;
+typedef std::future<ListPolicySummariesOutcome> ListPolicySummariesOutcomeCallable;
 typedef std::future<ListRegistriesOutcome> ListRegistriesOutcomeCallable;
 typedef std::future<ListRegistryRecordsOutcome> ListRegistryRecordsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -579,6 +647,8 @@ typedef std::future<UpdateAgentRuntimeOutcome> UpdateAgentRuntimeOutcomeCallable
 typedef std::future<UpdateAgentRuntimeEndpointOutcome> UpdateAgentRuntimeEndpointOutcomeCallable;
 typedef std::future<UpdateApiKeyCredentialProviderOutcome> UpdateApiKeyCredentialProviderOutcomeCallable;
 typedef std::future<UpdateConfigurationBundleOutcome> UpdateConfigurationBundleOutcomeCallable;
+typedef std::future<UpdateDatasetOutcome> UpdateDatasetOutcomeCallable;
+typedef std::future<UpdateDatasetExamplesOutcome> UpdateDatasetExamplesOutcomeCallable;
 typedef std::future<UpdateEvaluatorOutcome> UpdateEvaluatorOutcomeCallable;
 typedef std::future<UpdateGatewayOutcome> UpdateGatewayOutcomeCallable;
 typedef std::future<UpdateGatewayRuleOutcome> UpdateGatewayRuleOutcomeCallable;
@@ -602,6 +672,9 @@ typedef std::future<UpdateWorkloadIdentityOutcome> UpdateWorkloadIdentityOutcome
 class BedrockAgentCoreControlClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::AddDatasetExamplesRequest&,
+                           const Model::AddDatasetExamplesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AddDatasetExamplesResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateAgentRuntimeRequest&,
                            const Model::CreateAgentRuntimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAgentRuntimeResponseReceivedHandler;
@@ -624,6 +697,12 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Cr
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateConfigurationBundleRequest&,
                            const Model::CreateConfigurationBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateConfigurationBundleResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateDatasetResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateDatasetVersionRequest&,
+                           const Model::CreateDatasetVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateDatasetVersionResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateEvaluatorRequest&, const Model::CreateEvaluatorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateEvaluatorResponseReceivedHandler;
@@ -697,6 +776,12 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::De
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteConfigurationBundleRequest&,
                            const Model::DeleteConfigurationBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteConfigurationBundleResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteDatasetResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteDatasetExamplesRequest&,
+                           const Model::DeleteDatasetExamplesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteDatasetExamplesResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteEvaluatorRequest&, const Model::DeleteEvaluatorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteEvaluatorResponseReceivedHandler;
@@ -776,6 +861,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Ge
                            const Model::GetConfigurationBundleVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetConfigurationBundleVersionResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetDatasetRequest&, const Model::GetDatasetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDatasetResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetEvaluatorRequest&, const Model::GetEvaluatorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetEvaluatorResponseReceivedHandler;
@@ -816,9 +904,18 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Ge
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetPolicyEngineRequest&, const Model::GetPolicyEngineOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPolicyEngineResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetPolicyEngineSummaryRequest&,
+                           const Model::GetPolicyEngineSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPolicyEngineSummaryResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetPolicyGenerationRequest&,
                            const Model::GetPolicyGenerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPolicyGenerationResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetPolicyGenerationSummaryRequest&,
+                           const Model::GetPolicyGenerationSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPolicyGenerationSummaryResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetPolicySummaryRequest&,
+                           const Model::GetPolicySummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPolicySummaryResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetRegistryRequest&, const Model::GetRegistryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRegistryResponseReceivedHandler;
@@ -863,6 +960,15 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Li
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListConfigurationBundlesRequest&,
                            const Model::ListConfigurationBundlesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListConfigurationBundlesResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListDatasetExamplesRequest&,
+                           const Model::ListDatasetExamplesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDatasetExamplesResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListDatasetVersionsRequest&,
+                           const Model::ListDatasetVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDatasetVersionsResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListDatasetsRequest&, const Model::ListDatasetsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDatasetsResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListEvaluatorsRequest&, const Model::ListEvaluatorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEvaluatorsResponseReceivedHandler;
@@ -901,15 +1007,25 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Li
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPoliciesResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListPolicyEngineSummariesRequest&,
+                           const Model::ListPolicyEngineSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPolicyEngineSummariesResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListPolicyEnginesRequest&,
                            const Model::ListPolicyEnginesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPolicyEnginesResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListPolicyGenerationAssetsRequest&,
                            const Model::ListPolicyGenerationAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPolicyGenerationAssetsResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListPolicyGenerationSummariesRequest&,
+                           const Model::ListPolicyGenerationSummariesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPolicyGenerationSummariesResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListPolicyGenerationsRequest&,
                            const Model::ListPolicyGenerationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPolicyGenerationsResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListPolicySummariesRequest&,
+                           const Model::ListPolicySummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPolicySummariesResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListRegistriesRequest&, const Model::ListRegistriesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRegistriesResponseReceivedHandler;
@@ -957,6 +1073,12 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Up
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateConfigurationBundleRequest&,
                            const Model::UpdateConfigurationBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateConfigurationBundleResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateDatasetRequest&, const Model::UpdateDatasetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateDatasetResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateDatasetExamplesRequest&,
+                           const Model::UpdateDatasetExamplesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateDatasetExamplesResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateEvaluatorRequest&, const Model::UpdateEvaluatorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateEvaluatorResponseReceivedHandler;

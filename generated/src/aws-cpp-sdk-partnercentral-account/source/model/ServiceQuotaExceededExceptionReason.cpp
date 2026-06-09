@@ -22,6 +22,10 @@ static const int LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY_HASH =
 static const int LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION_HASH = HashingUtils::HashString("LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION");
 static const int LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION_HASH =
     HashingUtils::HashString("LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION");
+static const int LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY_HASH =
+    HashingUtils::HashString("LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY");
+static const int LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY_HASH =
+    HashingUtils::HashString("LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY");
 
 ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -35,6 +39,10 @@ ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForNam
     return ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION;
   } else if (hashCode == LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION_HASH) {
     return ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION;
+  } else if (hashCode == LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY_HASH) {
+    return ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY;
+  } else if (hashCode == LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY_HASH) {
+    return ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -59,6 +67,10 @@ Aws::String GetNameForServiceQuotaExceededExceptionReason(ServiceQuotaExceededEx
       return "LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION";
     case ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION:
       return "LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION";
+    case ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY:
+      return "LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY";
+    case ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY:
+      return "LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

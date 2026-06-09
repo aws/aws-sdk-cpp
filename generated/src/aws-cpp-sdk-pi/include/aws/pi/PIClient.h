@@ -371,6 +371,37 @@ class AWS_PI_API PIClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves recommendations for a performance analysis report.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReportRecommendations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPerformanceAnalysisReportRecommendationsOutcome ListPerformanceAnalysisReportRecommendations(
+      const Model::ListPerformanceAnalysisReportRecommendationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListPerformanceAnalysisReportRecommendations that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename ListPerformanceAnalysisReportRecommendationsRequestT = Model::ListPerformanceAnalysisReportRecommendationsRequest>
+  Model::ListPerformanceAnalysisReportRecommendationsOutcomeCallable ListPerformanceAnalysisReportRecommendationsCallable(
+      const ListPerformanceAnalysisReportRecommendationsRequestT& request) const {
+    return SubmitCallable(&PIClient::ListPerformanceAnalysisReportRecommendations, request);
+  }
+
+  /**
+   * An Async wrapper for ListPerformanceAnalysisReportRecommendations that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename ListPerformanceAnalysisReportRecommendationsRequestT = Model::ListPerformanceAnalysisReportRecommendationsRequest>
+  void ListPerformanceAnalysisReportRecommendationsAsync(
+      const ListPerformanceAnalysisReportRecommendationsRequestT& request,
+      const ListPerformanceAnalysisReportRecommendationsResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PIClient::ListPerformanceAnalysisReportRecommendations, request, handler, context);
+  }
+
+  /**
    * <p>Lists all the analysis reports created for the DB instance. The reports are
    * sorted based on the start time of each report.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReports">AWS

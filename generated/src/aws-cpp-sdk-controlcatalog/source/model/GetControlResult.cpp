@@ -57,6 +57,11 @@ GetControlResult& GetControlResult::operator=(const Aws::AmazonWebServiceResult<
     m_implementation = jsonValue.GetObject("Implementation");
     m_implementationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ParameterRequirementSummary")) {
+    m_parameterRequirementSummary =
+        ParameterRequirementSummaryMapper::GetParameterRequirementSummaryForName(jsonValue.GetString("ParameterRequirementSummary"));
+    m_parameterRequirementSummaryHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Parameters")) {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
     for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
@@ -74,6 +79,13 @@ GetControlResult& GetControlResult::operator=(const Aws::AmazonWebServiceResult<
       m_governedResources.push_back(governedResourcesJsonList[governedResourcesIndex].AsString());
     }
     m_governedResourcesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GovernedProviders")) {
+    Aws::Utils::Array<JsonView> governedProvidersJsonList = jsonValue.GetArray("GovernedProviders");
+    for (unsigned governedProvidersIndex = 0; governedProvidersIndex < governedProvidersJsonList.GetLength(); ++governedProvidersIndex) {
+      m_governedProviders.push_back(governedProvidersJsonList[governedProvidersIndex].AsString());
+    }
+    m_governedProvidersHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

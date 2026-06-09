@@ -127,6 +127,8 @@
 #include <aws/cognito-idp/model/CreateUserPoolClientResult.h>
 #include <aws/cognito-idp/model/CreateUserPoolDomainRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolDomainResult.h>
+#include <aws/cognito-idp/model/CreateUserPoolReplicaRequest.h>
+#include <aws/cognito-idp/model/CreateUserPoolReplicaResult.h>
 #include <aws/cognito-idp/model/CreateUserPoolRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolResult.h>
 #include <aws/cognito-idp/model/CustomDomainConfigType.h>
@@ -147,6 +149,8 @@
 #include <aws/cognito-idp/model/DeleteUserPoolClientSecretResult.h>
 #include <aws/cognito-idp/model/DeleteUserPoolDomainRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolDomainResult.h>
+#include <aws/cognito-idp/model/DeleteUserPoolReplicaRequest.h>
+#include <aws/cognito-idp/model/DeleteUserPoolReplicaResult.h>
 #include <aws/cognito-idp/model/DeleteUserPoolRequest.h>
 #include <aws/cognito-idp/model/DeleteUserRequest.h>
 #include <aws/cognito-idp/model/DeleteWebAuthnCredentialRequest.h>
@@ -183,6 +187,7 @@
 #include <aws/cognito-idp/model/EmailMfaConfigType.h>
 #include <aws/cognito-idp/model/EmailMfaSettingsType.h>
 #include <aws/cognito-idp/model/EmailSendingAccountType.h>
+#include <aws/cognito-idp/model/EncryptionKeyType.h>
 #include <aws/cognito-idp/model/EventContextDataType.h>
 #include <aws/cognito-idp/model/EventFeedbackType.h>
 #include <aws/cognito-idp/model/EventFilterType.h>
@@ -191,6 +196,7 @@
 #include <aws/cognito-idp/model/EventSourceName.h>
 #include <aws/cognito-idp/model/EventType.h>
 #include <aws/cognito-idp/model/ExplicitAuthFlowsType.h>
+#include <aws/cognito-idp/model/FailoverType.h>
 #include <aws/cognito-idp/model/FeatureType.h>
 #include <aws/cognito-idp/model/FeedbackValueType.h>
 #include <aws/cognito-idp/model/FirehoseConfigurationType.h>
@@ -232,6 +238,9 @@
 #include <aws/cognito-idp/model/InitiateAuthRequest.h>
 #include <aws/cognito-idp/model/InitiateAuthResult.h>
 #include <aws/cognito-idp/model/InvalidParameterException.h>
+#include <aws/cognito-idp/model/IssuerConfigurationType.h>
+#include <aws/cognito-idp/model/IssuerType.h>
+#include <aws/cognito-idp/model/KeyConfigurationType.h>
 #include <aws/cognito-idp/model/LambdaConfigType.h>
 #include <aws/cognito-idp/model/ListDevicesRequest.h>
 #include <aws/cognito-idp/model/ListDevicesResult.h>
@@ -251,6 +260,8 @@
 #include <aws/cognito-idp/model/ListUserPoolClientSecretsResult.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsResult.h>
+#include <aws/cognito-idp/model/ListUserPoolReplicasRequest.h>
+#include <aws/cognito-idp/model/ListUserPoolReplicasResult.h>
 #include <aws/cognito-idp/model/ListUserPoolsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolsResult.h>
 #include <aws/cognito-idp/model/ListUsersInGroupRequest.h>
@@ -280,6 +291,8 @@
 #include <aws/cognito-idp/model/RecoveryOptionNameType.h>
 #include <aws/cognito-idp/model/RecoveryOptionType.h>
 #include <aws/cognito-idp/model/RefreshTokenRotationType.h>
+#include <aws/cognito-idp/model/ReplicaRoleType.h>
+#include <aws/cognito-idp/model/ReplicaStatusType.h>
 #include <aws/cognito-idp/model/ResendConfirmationCodeRequest.h>
 #include <aws/cognito-idp/model/ResendConfirmationCodeResult.h>
 #include <aws/cognito-idp/model/ResourceServerScopeType.h>
@@ -292,6 +305,7 @@
 #include <aws/cognito-idp/model/RiskDecisionType.h>
 #include <aws/cognito-idp/model/RiskExceptionConfigurationType.h>
 #include <aws/cognito-idp/model/RiskLevelType.h>
+#include <aws/cognito-idp/model/RoutingType.h>
 #include <aws/cognito-idp/model/S3ConfigurationType.h>
 #include <aws/cognito-idp/model/SMSMfaSettingsType.h>
 #include <aws/cognito-idp/model/SchemaAttributeType.h>
@@ -342,6 +356,7 @@
 #include <aws/cognito-idp/model/UpdateIdentityProviderResult.h>
 #include <aws/cognito-idp/model/UpdateManagedLoginBrandingRequest.h>
 #include <aws/cognito-idp/model/UpdateManagedLoginBrandingResult.h>
+#include <aws/cognito-idp/model/UpdateReplicaStatusType.h>
 #include <aws/cognito-idp/model/UpdateResourceServerRequest.h>
 #include <aws/cognito-idp/model/UpdateResourceServerResult.h>
 #include <aws/cognito-idp/model/UpdateTermsRequest.h>
@@ -352,6 +367,8 @@
 #include <aws/cognito-idp/model/UpdateUserPoolClientResult.h>
 #include <aws/cognito-idp/model/UpdateUserPoolDomainRequest.h>
 #include <aws/cognito-idp/model/UpdateUserPoolDomainResult.h>
+#include <aws/cognito-idp/model/UpdateUserPoolReplicaRequest.h>
+#include <aws/cognito-idp/model/UpdateUserPoolReplicaResult.h>
 #include <aws/cognito-idp/model/UpdateUserPoolRequest.h>
 #include <aws/cognito-idp/model/UpdateUserPoolResult.h>
 #include <aws/cognito-idp/model/UserAttributeUpdateSettingsType.h>
@@ -364,6 +381,7 @@
 #include <aws/cognito-idp/model/UserPoolDescriptionType.h>
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
 #include <aws/cognito-idp/model/UserPoolPolicyType.h>
+#include <aws/cognito-idp/model/UserPoolReplicaType.h>
 #include <aws/cognito-idp/model/UserPoolTierType.h>
 #include <aws/cognito-idp/model/UserPoolType.h>
 #include <aws/cognito-idp/model/UserStatusType.h>

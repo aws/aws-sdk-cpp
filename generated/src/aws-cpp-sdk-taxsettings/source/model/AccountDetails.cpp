@@ -22,17 +22,17 @@ AccountDetails& AccountDetails::operator=(JsonView jsonValue) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("accountMetaData")) {
-    m_accountMetaData = jsonValue.GetObject("accountMetaData");
-    m_accountMetaDataHasBeenSet = true;
+  if (jsonValue.ValueExists("taxRegistration")) {
+    m_taxRegistration = jsonValue.GetObject("taxRegistration");
+    m_taxRegistrationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("taxInheritanceDetails")) {
     m_taxInheritanceDetails = jsonValue.GetObject("taxInheritanceDetails");
     m_taxInheritanceDetailsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("taxRegistration")) {
-    m_taxRegistration = jsonValue.GetObject("taxRegistration");
-    m_taxRegistrationHasBeenSet = true;
+  if (jsonValue.ValueExists("accountMetaData")) {
+    m_accountMetaData = jsonValue.GetObject("accountMetaData");
+    m_accountMetaDataHasBeenSet = true;
   }
   return *this;
 }
@@ -44,16 +44,16 @@ JsonValue AccountDetails::Jsonize() const {
     payload.WithString("accountId", m_accountId);
   }
 
-  if (m_accountMetaDataHasBeenSet) {
-    payload.WithObject("accountMetaData", m_accountMetaData.Jsonize());
+  if (m_taxRegistrationHasBeenSet) {
+    payload.WithObject("taxRegistration", m_taxRegistration.Jsonize());
   }
 
   if (m_taxInheritanceDetailsHasBeenSet) {
     payload.WithObject("taxInheritanceDetails", m_taxInheritanceDetails.Jsonize());
   }
 
-  if (m_taxRegistrationHasBeenSet) {
-    payload.WithObject("taxRegistration", m_taxRegistration.Jsonize());
+  if (m_accountMetaDataHasBeenSet) {
+    payload.WithObject("accountMetaData", m_accountMetaData.Jsonize());
   }
 
   return payload;

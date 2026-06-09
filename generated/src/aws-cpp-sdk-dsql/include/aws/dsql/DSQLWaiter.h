@@ -10,6 +10,9 @@
 #include <aws/dsql/model/ClusterStatus.h>
 #include <aws/dsql/model/GetClusterRequest.h>
 #include <aws/dsql/model/GetClusterResult.h>
+#include <aws/dsql/model/GetStreamRequest.h>
+#include <aws/dsql/model/GetStreamResult.h>
+#include <aws/dsql/model/StreamStatus.h>
 
 #include <algorithm>
 
@@ -45,6 +48,35 @@ class DSQLWaiter {
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetCluster(req); };
     Aws::Utils::Waiter<RequestT, OutcomeT> waiter(2, 60, std::move(acceptors), operation, "WaitUntilClusterNotExists");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetStreamOutcome> WaitUntilStreamActive(const Model::GetStreamRequest& request) {
+    using OutcomeT = Model::GetStreamOutcome;
+    using RequestT = Model::GetStreamRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "StreamActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
+        [](const Model::GetStreamOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::StreamStatusMapper::GetNameForStreamStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetStream(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(2, 60, std::move(acceptors), operation, "WaitUntilStreamActive");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetStreamOutcome> WaitUntilStreamNotExists(const Model::GetStreamRequest& request) {
+    using OutcomeT = Model::GetStreamOutcome;
+    using RequestT = Model::GetStreamRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("StreamNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS,
+                                                                                Aws::String("ResourceNotFoundException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetStream(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(2, 60, std::move(acceptors), operation, "WaitUntilStreamNotExists");
     return waiter.Wait(request);
   }
 };

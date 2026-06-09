@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PCS {
 namespace Model {
-enum class PurchaseOption { NOT_SET, ONDEMAND, SPOT, CAPACITY_BLOCK };
+enum class PurchaseOption { NOT_SET, ONDEMAND, SPOT, CAPACITY_BLOCK, INTERRUPTIBLE_CAPACITY_RESERVATION };
 
 namespace PurchaseOptionMapper {
 AWS_PCS_API PurchaseOption GetPurchaseOptionForName(const Aws::String& name);

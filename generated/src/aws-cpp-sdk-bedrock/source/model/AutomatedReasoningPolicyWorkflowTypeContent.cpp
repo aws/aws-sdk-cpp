@@ -33,6 +33,10 @@ AutomatedReasoningPolicyWorkflowTypeContent& AutomatedReasoningPolicyWorkflowTyp
     m_generateFidelityReportContent = jsonValue.GetObject("generateFidelityReportContent");
     m_generateFidelityReportContentHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("iterativeRefinementContent")) {
+    m_iterativeRefinementContent = jsonValue.GetObject("iterativeRefinementContent");
+    m_iterativeRefinementContentHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +57,10 @@ JsonValue AutomatedReasoningPolicyWorkflowTypeContent::Jsonize() const {
 
   if (m_generateFidelityReportContentHasBeenSet) {
     payload.WithObject("generateFidelityReportContent", m_generateFidelityReportContent.Jsonize());
+  }
+
+  if (m_iterativeRefinementContentHasBeenSet) {
+    payload.WithObject("iterativeRefinementContent", m_iterativeRefinementContent.Jsonize());
   }
 
   return payload;

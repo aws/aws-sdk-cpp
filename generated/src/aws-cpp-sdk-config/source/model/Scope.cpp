@@ -38,6 +38,13 @@ Scope& Scope::operator=(JsonView jsonValue) {
     m_complianceResourceId = jsonValue.GetString("ComplianceResourceId");
     m_complianceResourceIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ServicePrincipals")) {
+    Aws::Utils::Array<JsonView> servicePrincipalsJsonList = jsonValue.GetArray("ServicePrincipals");
+    for (unsigned servicePrincipalsIndex = 0; servicePrincipalsIndex < servicePrincipalsJsonList.GetLength(); ++servicePrincipalsIndex) {
+      m_servicePrincipals.push_back(servicePrincipalsJsonList[servicePrincipalsIndex].AsString());
+    }
+    m_servicePrincipalsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -63,6 +70,14 @@ JsonValue Scope::Jsonize() const {
 
   if (m_complianceResourceIdHasBeenSet) {
     payload.WithString("ComplianceResourceId", m_complianceResourceId);
+  }
+
+  if (m_servicePrincipalsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> servicePrincipalsJsonList(m_servicePrincipals.size());
+    for (unsigned servicePrincipalsIndex = 0; servicePrincipalsIndex < servicePrincipalsJsonList.GetLength(); ++servicePrincipalsIndex) {
+      servicePrincipalsJsonList[servicePrincipalsIndex].AsString(m_servicePrincipals[servicePrincipalsIndex]);
+    }
+    payload.WithArray("ServicePrincipals", std::move(servicePrincipalsJsonList));
   }
 
   return payload;

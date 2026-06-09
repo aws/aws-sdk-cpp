@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/observabilityadmin/model/DestinationLogsConfiguration.h>
+#include <aws/observabilityadmin/model/DestinationMetricsConfiguration.h>
 
 #include <utility>
 
@@ -88,15 +89,36 @@ class CentralizationRuleDestination {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Metric specific configuration for centralization destination metrics.</p>
+   */
+  inline const DestinationMetricsConfiguration& GetDestinationMetricsConfiguration() const { return m_destinationMetricsConfiguration; }
+  inline bool DestinationMetricsConfigurationHasBeenSet() const { return m_destinationMetricsConfigurationHasBeenSet; }
+  template <typename DestinationMetricsConfigurationT = DestinationMetricsConfiguration>
+  void SetDestinationMetricsConfiguration(DestinationMetricsConfigurationT&& value) {
+    m_destinationMetricsConfigurationHasBeenSet = true;
+    m_destinationMetricsConfiguration = std::forward<DestinationMetricsConfigurationT>(value);
+  }
+  template <typename DestinationMetricsConfigurationT = DestinationMetricsConfiguration>
+  CentralizationRuleDestination& WithDestinationMetricsConfiguration(DestinationMetricsConfigurationT&& value) {
+    SetDestinationMetricsConfiguration(std::forward<DestinationMetricsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_region;
 
   Aws::String m_account;
 
   DestinationLogsConfiguration m_destinationLogsConfiguration;
+
+  DestinationMetricsConfiguration m_destinationMetricsConfiguration;
   bool m_regionHasBeenSet = false;
   bool m_accountHasBeenSet = false;
   bool m_destinationLogsConfigurationHasBeenSet = false;
+  bool m_destinationMetricsConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

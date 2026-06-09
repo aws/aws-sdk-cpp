@@ -29,6 +29,7 @@
 #include <aws/pi/model/GetResourceMetricsRequest.h>
 #include <aws/pi/model/ListAvailableResourceDimensionsRequest.h>
 #include <aws/pi/model/ListAvailableResourceMetricsRequest.h>
+#include <aws/pi/model/ListPerformanceAnalysisReportRecommendationsRequest.h>
 #include <aws/pi/model/ListPerformanceAnalysisReportsRequest.h>
 #include <aws/pi/model/ListTagsForResourceRequest.h>
 #include <aws/pi/model/TagResourceRequest.h>
@@ -56,10 +57,10 @@ const char* PIClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
 PIClient::PIClient(const PI::PIClientConfiguration& clientConfiguration, std::shared_ptr<PIEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<PIErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PIEndpointProvider>(ALLOCATION_TAG)) {
@@ -91,10 +92,10 @@ PIClient::PIClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
 /* Legacy constructors due deprecation */
 PIClient::PIClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<PIErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<PIEndpointProvider>(ALLOCATION_TAG)) {
@@ -237,6 +238,13 @@ ListAvailableResourceMetricsOutcome PIClient::ListAvailableResourceMetrics(const
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListAvailableResourceMetricsOutcome(result.GetResultWithOwnership())
                             : ListAvailableResourceMetricsOutcome(std::move(result.GetError()));
+}
+
+ListPerformanceAnalysisReportRecommendationsOutcome PIClient::ListPerformanceAnalysisReportRecommendations(
+    const ListPerformanceAnalysisReportRecommendationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPerformanceAnalysisReportRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListPerformanceAnalysisReportRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ListPerformanceAnalysisReportsOutcome PIClient::ListPerformanceAnalysisReports(const ListPerformanceAnalysisReportsRequest& request) const {

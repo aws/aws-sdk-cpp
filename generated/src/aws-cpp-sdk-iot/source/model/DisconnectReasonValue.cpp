@@ -24,6 +24,7 @@ static const int FORBIDDEN_ACCESS_HASH = HashingUtils::HashString("FORBIDDEN_ACC
 static const int MQTT_KEEP_ALIVE_TIMEOUT_HASH = HashingUtils::HashString("MQTT_KEEP_ALIVE_TIMEOUT");
 static const int SERVER_ERROR_HASH = HashingUtils::HashString("SERVER_ERROR");
 static const int SERVER_INITIATED_DISCONNECT_HASH = HashingUtils::HashString("SERVER_INITIATED_DISCONNECT");
+static const int API_INITIATED_DISCONNECT_HASH = HashingUtils::HashString("API_INITIATED_DISCONNECT");
 static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
 static const int WEBSOCKET_TTL_EXPIRATION_HASH = HashingUtils::HashString("WEBSOCKET_TTL_EXPIRATION");
 static const int CUSTOMAUTH_TTL_EXPIRATION_HASH = HashingUtils::HashString("CUSTOMAUTH_TTL_EXPIRATION");
@@ -50,6 +51,8 @@ DisconnectReasonValue GetDisconnectReasonValueForName(const Aws::String& name) {
     return DisconnectReasonValue::SERVER_ERROR;
   } else if (hashCode == SERVER_INITIATED_DISCONNECT_HASH) {
     return DisconnectReasonValue::SERVER_INITIATED_DISCONNECT;
+  } else if (hashCode == API_INITIATED_DISCONNECT_HASH) {
+    return DisconnectReasonValue::API_INITIATED_DISCONNECT;
   } else if (hashCode == THROTTLED_HASH) {
     return DisconnectReasonValue::THROTTLED;
   } else if (hashCode == WEBSOCKET_TTL_EXPIRATION_HASH) {
@@ -92,6 +95,8 @@ Aws::String GetNameForDisconnectReasonValue(DisconnectReasonValue enumValue) {
       return "SERVER_ERROR";
     case DisconnectReasonValue::SERVER_INITIATED_DISCONNECT:
       return "SERVER_INITIATED_DISCONNECT";
+    case DisconnectReasonValue::API_INITIATED_DISCONNECT:
+      return "API_INITIATED_DISCONNECT";
     case DisconnectReasonValue::THROTTLED:
       return "THROTTLED";
     case DisconnectReasonValue::WEBSOCKET_TTL_EXPIRATION:

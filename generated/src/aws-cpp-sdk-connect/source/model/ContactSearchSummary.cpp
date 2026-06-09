@@ -88,6 +88,13 @@ ContactSearchSummary& ContactSearchSummary::operator=(JsonView jsonValue) {
     m_globalResiliencyMetadata = jsonValue.GetObject("GlobalResiliencyMetadata");
     m_globalResiliencyMetadataHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AiAgentInfo")) {
+    Aws::Utils::Array<JsonView> aiAgentInfoJsonList = jsonValue.GetArray("AiAgentInfo");
+    for (unsigned aiAgentInfoIndex = 0; aiAgentInfoIndex < aiAgentInfoJsonList.GetLength(); ++aiAgentInfoIndex) {
+      m_aiAgentInfo.push_back(aiAgentInfoJsonList[aiAgentInfoIndex].AsObject());
+    }
+    m_aiAgentInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -164,6 +171,14 @@ JsonValue ContactSearchSummary::Jsonize() const {
 
   if (m_globalResiliencyMetadataHasBeenSet) {
     payload.WithObject("GlobalResiliencyMetadata", m_globalResiliencyMetadata.Jsonize());
+  }
+
+  if (m_aiAgentInfoHasBeenSet) {
+    Aws::Utils::Array<JsonValue> aiAgentInfoJsonList(m_aiAgentInfo.size());
+    for (unsigned aiAgentInfoIndex = 0; aiAgentInfoIndex < aiAgentInfoJsonList.GetLength(); ++aiAgentInfoIndex) {
+      aiAgentInfoJsonList[aiAgentInfoIndex].AsObject(m_aiAgentInfo[aiAgentInfoIndex].Jsonize());
+    }
+    payload.WithArray("AiAgentInfo", std::move(aiAgentInfoJsonList));
   }
 
   return payload;

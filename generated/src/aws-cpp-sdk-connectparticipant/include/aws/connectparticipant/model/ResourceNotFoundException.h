@@ -68,7 +68,7 @@ class ResourceNotFoundException {
 
   ///@{
   /**
-   * <p>The type of Amazon Connect resource.</p>
+   * <p>The type of Connect Customer resource.</p>
    */
   inline ResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

@@ -17,6 +17,7 @@ namespace ImageTypeMapper {
 
 static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 static const int NATIVE_HASH = HashingUtils::HashString("NATIVE");
+static const int BYOL_HASH = HashingUtils::HashString("BYOL");
 
 ImageType GetImageTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ImageType GetImageTypeForName(const Aws::String& name) {
     return ImageType::CUSTOM;
   } else if (hashCode == NATIVE_HASH) {
     return ImageType::NATIVE;
+  } else if (hashCode == BYOL_HASH) {
+    return ImageType::BYOL;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForImageType(ImageType enumValue) {
       return "CUSTOM";
     case ImageType::NATIVE:
       return "NATIVE";
+    case ImageType::BYOL:
+      return "BYOL";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -19,13 +19,13 @@ namespace Model {
 ExemptionCertificate::ExemptionCertificate(JsonView jsonValue) { *this = jsonValue; }
 
 ExemptionCertificate& ExemptionCertificate::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("documentFile")) {
-    m_documentFile = HashingUtils::Base64Decode(jsonValue.GetString("documentFile"));
-    m_documentFileHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("documentName")) {
     m_documentName = jsonValue.GetString("documentName");
     m_documentNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("documentFile")) {
+    m_documentFile = HashingUtils::Base64Decode(jsonValue.GetString("documentFile"));
+    m_documentFileHasBeenSet = true;
   }
   return *this;
 }
@@ -33,12 +33,12 @@ ExemptionCertificate& ExemptionCertificate::operator=(JsonView jsonValue) {
 JsonValue ExemptionCertificate::Jsonize() const {
   JsonValue payload;
 
-  if (m_documentFileHasBeenSet) {
-    payload.WithString("documentFile", HashingUtils::Base64Encode(m_documentFile));
-  }
-
   if (m_documentNameHasBeenSet) {
     payload.WithString("documentName", m_documentName);
+  }
+
+  if (m_documentFileHasBeenSet) {
+    payload.WithString("documentFile", HashingUtils::Base64Encode(m_documentFile));
   }
 
   return payload;

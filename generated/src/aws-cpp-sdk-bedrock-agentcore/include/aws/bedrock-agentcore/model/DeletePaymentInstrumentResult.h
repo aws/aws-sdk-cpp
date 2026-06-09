@@ -23,9 +23,8 @@ class JsonValue;
 namespace BedrockAgentCore {
 namespace Model {
 /**
- * <p>Response structure for deleting a payment instrument</p> <p>Returns the
- * deletion status with HTTP 200 OK status code on successful soft
- * deletion.</p><p><h3>See Also:</h3>   <a
+ * <p>Response structure for deleting a payment instrument.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeletePaymentInstrumentResponse">AWS
  * API Reference</a></p>
  */

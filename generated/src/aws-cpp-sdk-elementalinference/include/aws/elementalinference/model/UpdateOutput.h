@@ -23,7 +23,7 @@ namespace Model {
 
 /**
  * <p>Contains configuration information about one output in a feed. It is used in
- * the UpdateFeed action.</p><p><h3>See Also:</h3>   <a
+ * the UpdateFeed action. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/UpdateOutput">AWS
  * API Reference</a></p>
  */
@@ -36,7 +36,7 @@ class UpdateOutput {
 
   ///@{
   /**
-   * <p>The name start here</p>
+   * <p>The name of the output.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -54,10 +54,10 @@ class UpdateOutput {
 
   ///@{
   /**
-   * <p>A typed property for an output in a feed. It is used in the UpdateFeed
-   * action. It identifies the action for Elemental Inference to perform. It also
-   * provides a repository for the results of that action. For example,
-   * CroppingConfig output will contain the metadata for the crop feature. </p>
+   * <p>A typed property for an output in a feed. It identifies the action for
+   * Elemental Inference to perform. It also provides a repository for the results of
+   * that action. For example, CroppingConfig output will contain the metadata for
+   * the crop feature. </p>
    */
   inline const OutputConfig& GetOutputConfig() const { return m_outputConfig; }
   inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
@@ -109,11 +109,12 @@ class UpdateOutput {
 
   ///@{
   /**
-   * <p>This property is set by the service when you add the output to the feed, and
-   * indicates how you added the output. True means that you used the AssociateFeed
-   * operation. False means that you used the CreateFeed or UpdateFeed operation. Use
-   * GetFeed to obtain the value. If the value is True, include this field here with
-   * a value of True. If the value is False, omit the field here.</p>
+   * <p>Elemental Inference originally sets this parameter to True if this output was
+   * created by AssociateFeed or to False if this output was created by CreateFeed or
+   * UpdateFeed. </p> <p>You must not change this value. Therefore, use GetFeed to
+   * determine the current value. Then in the UpdateFeed request, if the current
+   * value is True, include this parameter with a value of True. If it's False, omit
+   * the parameter. </p>
    */
   inline bool GetFromAssociation() const { return m_fromAssociation; }
   inline bool FromAssociationHasBeenSet() const { return m_fromAssociationHasBeenSet; }

@@ -56,6 +56,7 @@
 #include <aws/ec2/model/DescribeInstanceTypesPaginationTraits.h>
 #include <aws/ec2/model/DescribeInstancesPaginationTraits.h>
 #include <aws/ec2/model/DescribeInternetGatewaysPaginationTraits.h>
+#include <aws/ec2/model/DescribeIpamPoolAllocationsPaginationTraits.h>
 #include <aws/ec2/model/DescribeIpamPoolsPaginationTraits.h>
 #include <aws/ec2/model/DescribeIpamPrefixListResolverTargetsPaginationTraits.h>
 #include <aws/ec2/model/DescribeIpamPrefixListResolversPaginationTraits.h>
@@ -766,6 +767,18 @@ class EC2PaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInternetGatewaysRequest,
                                              Pagination::DescribeInternetGatewaysPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeIpamPoolAllocations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamPoolAllocationsRequest,
+                                    Pagination::DescribeIpamPoolAllocationsPaginationTraits<DerivedClient>>
+  DescribeIpamPoolAllocationsPaginator(const Model::DescribeIpamPoolAllocationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamPoolAllocationsRequest,
+                                             Pagination::DescribeIpamPoolAllocationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

@@ -140,7 +140,9 @@ class GetQueryResultsResult {
   /**
    * <p>If there are more log events remaining in the results, the response includes
    * a <code>nextToken</code>. You can use this token in a subsequent
-   * <code>GetQueryResults</code> request to get the next set of results.</p>
+   * <code>GetQueryResults</code> request to get the next set of results. You can
+   * retrieve up to 100,000 log event results from a query by paginating with this
+   * token.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

@@ -18,6 +18,9 @@ namespace RouteLegTypeMapper {
 static const int Ferry_HASH = HashingUtils::HashString("Ferry");
 static const int Pedestrian_HASH = HashingUtils::HashString("Pedestrian");
 static const int Vehicle_HASH = HashingUtils::HashString("Vehicle");
+static const int Rental_HASH = HashingUtils::HashString("Rental");
+static const int Taxi_HASH = HashingUtils::HashString("Taxi");
+static const int Transit_HASH = HashingUtils::HashString("Transit");
 
 RouteLegType GetRouteLegTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +30,12 @@ RouteLegType GetRouteLegTypeForName(const Aws::String& name) {
     return RouteLegType::Pedestrian;
   } else if (hashCode == Vehicle_HASH) {
     return RouteLegType::Vehicle;
+  } else if (hashCode == Rental_HASH) {
+    return RouteLegType::Rental;
+  } else if (hashCode == Taxi_HASH) {
+    return RouteLegType::Taxi;
+  } else if (hashCode == Transit_HASH) {
+    return RouteLegType::Transit;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +56,12 @@ Aws::String GetNameForRouteLegType(RouteLegType enumValue) {
       return "Pedestrian";
     case RouteLegType::Vehicle:
       return "Vehicle";
+    case RouteLegType::Rental:
+      return "Rental";
+    case RouteLegType::Taxi:
+      return "Taxi";
+    case RouteLegType::Transit:
+      return "Transit";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

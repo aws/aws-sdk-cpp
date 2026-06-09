@@ -113,6 +113,11 @@ AddOutputRequest& AddOutputRequest::operator=(JsonView jsonValue) {
     m_routerIntegrationTransitEncryption = jsonValue.GetObject("routerIntegrationTransitEncryption");
     m_routerIntegrationTransitEncryptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ndiOutputTimecodeSource")) {
+    m_ndiOutputTimecodeSource =
+        NdiOutputTimecodeSourceMapper::GetNdiOutputTimecodeSourceForName(jsonValue.GetString("ndiOutputTimecodeSource"));
+    m_ndiOutputTimecodeSourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -216,6 +221,11 @@ JsonValue AddOutputRequest::Jsonize() const {
 
   if (m_routerIntegrationTransitEncryptionHasBeenSet) {
     payload.WithObject("routerIntegrationTransitEncryption", m_routerIntegrationTransitEncryption.Jsonize());
+  }
+
+  if (m_ndiOutputTimecodeSourceHasBeenSet) {
+    payload.WithString("ndiOutputTimecodeSource",
+                       NdiOutputTimecodeSourceMapper::GetNameForNdiOutputTimecodeSource(m_ndiOutputTimecodeSource));
   }
 
   return payload;

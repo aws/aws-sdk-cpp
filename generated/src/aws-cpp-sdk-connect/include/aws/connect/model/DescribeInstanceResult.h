@@ -51,11 +51,11 @@ class DescribeInstanceResult {
    * <p>Status information about the replication process. This field is included only
    * when you are using the <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ReplicateInstance.html">ReplicateInstance</a>
-   * API to replicate an Amazon Connect instance across Amazon Web Services Regions.
-   * For information about replicating Amazon Connect instances, see <a
+   * API to replicate an Connect Customer instance across Amazon Web Services
+   * Regions. For information about replicating Connect Customer instances, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create
-   * a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect
-   * Administrator Guide</i>.</p>
+   * a replica of your existing Connect Customer instance</a> in the <i>Connect
+   * Customer Administrator Guide</i>.</p>
    */
   inline const ReplicationConfiguration& GetReplicationConfiguration() const { return m_replicationConfiguration; }
   template <typename ReplicationConfigurationT = ReplicationConfiguration>

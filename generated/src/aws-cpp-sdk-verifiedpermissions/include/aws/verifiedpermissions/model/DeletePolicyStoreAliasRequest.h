@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsRequest.h>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
+#include <aws/verifiedpermissions/model/DeletionMode.h>
 
 #include <utility>
 
@@ -49,9 +50,33 @@ class DeletePolicyStoreAliasRequest : public VerifiedPermissionsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the deletion mode for the policy store alias. The valid values
+   * are:</p> <ul> <li> <p> <b>SoftDelete</b> – The policy store alias enters the
+   * <code>PendingDeletion</code> state. This is the default behavior when no
+   * <code>deletionMode</code> is specified.</p> </li> <li> <p> <b>HardDelete</b> –
+   * The policy store alias is immediately deleted, bypassing the
+   * <code>PendingDeletion</code> state.</p> </li> </ul>
+   */
+  inline DeletionMode GetDeletionMode() const { return m_deletionMode; }
+  inline bool DeletionModeHasBeenSet() const { return m_deletionModeHasBeenSet; }
+  inline void SetDeletionMode(DeletionMode value) {
+    m_deletionModeHasBeenSet = true;
+    m_deletionMode = value;
+  }
+  inline DeletePolicyStoreAliasRequest& WithDeletionMode(DeletionMode value) {
+    SetDeletionMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_aliasName;
+
+  DeletionMode m_deletionMode{DeletionMode::NOT_SET};
   bool m_aliasNameHasBeenSet = false;
+  bool m_deletionModeHasBeenSet = false;
 };
 
 }  // namespace Model

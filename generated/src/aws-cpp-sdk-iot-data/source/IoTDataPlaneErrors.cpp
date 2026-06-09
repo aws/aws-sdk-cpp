@@ -18,6 +18,7 @@ namespace IoTDataPlaneErrorMapper {
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
+static const int GATEWAY_TIMEOUT_HASH = HashingUtils::HashString("GatewayTimeoutException");
 static const int UNSUPPORTED_DOCUMENT_ENCODING_HASH = HashingUtils::HashString("UnsupportedDocumentEncodingException");
 static const int METHOD_NOT_ALLOWED_HASH = HashingUtils::HashString("MethodNotAllowedException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
@@ -32,6 +33,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == UNAUTHORIZED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == GATEWAY_TIMEOUT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::GATEWAY_TIMEOUT), RetryableType::RETRYABLE);
   } else if (hashCode == UNSUPPORTED_DOCUMENT_ENCODING_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::UNSUPPORTED_DOCUMENT_ENCODING), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == METHOD_NOT_ALLOWED_HASH) {

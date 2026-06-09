@@ -177,7 +177,7 @@ class ServiceUnavailable {
 
   ///@{
   /**
-   * <p/>
+   * <p>The service is temporarily unavailable.</p>
    */
   inline const Aws::String& GetExceptionMessage() const { return m_exceptionMessage; }
   inline bool ExceptionMessageHasBeenSet() const { return m_exceptionMessageHasBeenSet; }

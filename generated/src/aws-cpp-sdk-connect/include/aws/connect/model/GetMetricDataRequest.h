@@ -35,7 +35,7 @@ class GetMetricDataRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -156,7 +156,7 @@ class GetMetricDataRequest : public ConnectRequest {
    * metric. The following historical metrics are available. For a description of
    * each metric, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-   * definition</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+   * definition</a> in the <i>Connect Customer Administrator Guide</i>.</p>
    * <p>This API does not support a contacts incoming metric (there's no
    * CONTACTS_INCOMING metric missing from the documented list). </p>  <dl>
    * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> <p>UI

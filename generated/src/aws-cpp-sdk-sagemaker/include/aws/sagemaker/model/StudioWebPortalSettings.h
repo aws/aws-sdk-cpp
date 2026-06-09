@@ -8,6 +8,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AppInstanceType.h>
 #include <aws/sagemaker/model/AppType.h>
+#include <aws/sagemaker/model/ExecutionRoleSessionNameMode.h>
 #include <aws/sagemaker/model/HiddenSageMakerImage.h>
 #include <aws/sagemaker/model/MlTools.h>
 
@@ -135,6 +136,28 @@ class StudioWebPortalSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The execution role session name mode. If this value is set to
+   * <code>USER_IDENTITY</code>, the session name of the execution role corresponds
+   * to the user's identity. For IAM domains, the session name is the IAM session
+   * name used to generate the presigned URL. For IAM Identity Center domains, the
+   * session name is the username of the associated IAM Identity Center user. If this
+   * value is set to <code>STATIC</code> or is not set, the session name defaults to
+   * <code>SageMaker</code>.</p>
+   */
+  inline ExecutionRoleSessionNameMode GetExecutionRoleSessionNameMode() const { return m_executionRoleSessionNameMode; }
+  inline bool ExecutionRoleSessionNameModeHasBeenSet() const { return m_executionRoleSessionNameModeHasBeenSet; }
+  inline void SetExecutionRoleSessionNameMode(ExecutionRoleSessionNameMode value) {
+    m_executionRoleSessionNameModeHasBeenSet = true;
+    m_executionRoleSessionNameMode = value;
+  }
+  inline StudioWebPortalSettings& WithExecutionRoleSessionNameMode(ExecutionRoleSessionNameMode value) {
+    SetExecutionRoleSessionNameMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<MlTools> m_hiddenMlTools;
 
@@ -143,10 +166,13 @@ class StudioWebPortalSettings {
   Aws::Vector<AppInstanceType> m_hiddenInstanceTypes;
 
   Aws::Vector<HiddenSageMakerImage> m_hiddenSageMakerImageVersionAliases;
+
+  ExecutionRoleSessionNameMode m_executionRoleSessionNameMode{ExecutionRoleSessionNameMode::NOT_SET};
   bool m_hiddenMlToolsHasBeenSet = false;
   bool m_hiddenAppTypesHasBeenSet = false;
   bool m_hiddenInstanceTypesHasBeenSet = false;
   bool m_hiddenSageMakerImageVersionAliasesHasBeenSet = false;
+  bool m_executionRoleSessionNameModeHasBeenSet = false;
 };
 
 }  // namespace Model

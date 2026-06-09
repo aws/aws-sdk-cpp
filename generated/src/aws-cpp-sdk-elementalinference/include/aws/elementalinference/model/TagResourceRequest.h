@@ -31,7 +31,7 @@ class TagResourceRequest : public ElementalInferenceRequest {
 
   ///@{
   /**
-   * <p>The ARN of the resource where you want to add tags. </p>
+   * <p>The ARN of the resource where you want to add tags.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

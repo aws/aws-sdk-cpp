@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/bedrock-data-automation/model/BlueprintItem.h>
+#include <aws/bedrock-data-automation/model/DocumentCustomOutputConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -53,9 +54,28 @@ class CustomOutputConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const DocumentCustomOutputConfiguration& GetDocument() const { return m_document; }
+  inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
+  template <typename DocumentT = DocumentCustomOutputConfiguration>
+  void SetDocument(DocumentT&& value) {
+    m_documentHasBeenSet = true;
+    m_document = std::forward<DocumentT>(value);
+  }
+  template <typename DocumentT = DocumentCustomOutputConfiguration>
+  CustomOutputConfiguration& WithDocument(DocumentT&& value) {
+    SetDocument(std::forward<DocumentT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<BlueprintItem> m_blueprints;
+
+  DocumentCustomOutputConfiguration m_document;
   bool m_blueprintsHasBeenSet = false;
+  bool m_documentHasBeenSet = false;
 };
 
 }  // namespace Model

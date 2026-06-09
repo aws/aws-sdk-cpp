@@ -83,7 +83,15 @@ class BatchConfig {
   /**
    * <p>Whether to allow batching messages from different MQTT topics into a single
    * HTTP request. By default, only messages from the same topic are batched
-   * together. The default value is <code>false</code>.</p>
+   * together. The default value is <code>false</code>.</p>  <p>When
+   * <code>batchAcrossTopics</code> is enabled, the error payload format changes: the
+   * <code>topic</code> field moves from the top level to inside each entry in the
+   * <code>payloadsWithMetadata</code> array, since each message in the batch may
+   * originate from a different topic.</p>   <p>Messages are always
+   * batched within the scope of the same account, rule name, target HTTP endpoint
+   * URL, and billing group. Messages that differ in any of these attributes are
+   * never combined into the same batch, regardless of the
+   * <code>batchAcrossTopics</code> setting.</p>
    */
   inline bool GetBatchAcrossTopics() const { return m_batchAcrossTopics; }
   inline bool BatchAcrossTopicsHasBeenSet() const { return m_batchAcrossTopicsHasBeenSet; }

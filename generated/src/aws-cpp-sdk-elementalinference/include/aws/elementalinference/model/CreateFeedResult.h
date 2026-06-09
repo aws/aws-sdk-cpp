@@ -51,7 +51,7 @@ class CreateFeedResult {
 
   ///@{
   /**
-   * <p>The name that you specified.</p>
+   * <p>The name that you specified in the request.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   template <typename NameT = Aws::String>
@@ -85,7 +85,10 @@ class CreateFeedResult {
 
   ///@{
   /**
-   * <p>A unique ARN that Elemental Inference assigns to the feed.</p>
+   * <p>An array of endpoints for the feed. Typically, there is only one endpoint.
+   * The feed receives source media at this endpoint (when the calling application
+   * calls PutMedia) and returns the resulting metadata to this endpoint (when the
+   * calling application calls GetMetadata). </p>
    */
   inline const Aws::Vector<Aws::String>& GetDataEndpoints() const { return m_dataEndpoints; }
   template <typename DataEndpointsT = Aws::Vector<Aws::String>>
@@ -108,7 +111,7 @@ class CreateFeedResult {
 
   ///@{
   /**
-   * <p>Data endpoints that Elemental Inference assigns to the feed.</p>
+   * <p>Repeats the outputs that you specified in the request.</p>
    */
   inline const Aws::Vector<GetOutput>& GetOutputs() const { return m_outputs; }
   template <typename OutputsT = Aws::Vector<GetOutput>>
@@ -132,7 +135,7 @@ class CreateFeedResult {
   ///@{
   /**
    * <p>The current status of the feed. After creation of the feed has succeeded, the
-   * status will be AVAILABLE.</p>
+   * status will be AVAILABLE. </p>
    */
   inline FeedStatus GetStatus() const { return m_status; }
   inline void SetStatus(FeedStatus value) {
@@ -148,7 +151,8 @@ class CreateFeedResult {
   ///@{
   /**
    * <p>The association for this feed. When you create the feed, this property is
-   * empty. You must associate a resource with the feed using AssociateFeed.</p>
+   * empty. You must associate a resource with the feed using AssociateFeed or
+   * UpdateFeed. </p>
    */
   inline const FeedAssociation& GetAssociation() const { return m_association; }
   template <typename AssociationT = FeedAssociation>

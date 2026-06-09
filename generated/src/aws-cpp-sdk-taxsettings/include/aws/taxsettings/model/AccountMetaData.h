@@ -55,6 +55,24 @@ class AccountMetaData {
   ///@}
 
   ///@{
+  /**
+   * <p> Seller information associated with the account. </p>
+   */
+  inline const Aws::String& GetSeller() const { return m_seller; }
+  inline bool SellerHasBeenSet() const { return m_sellerHasBeenSet; }
+  template <typename SellerT = Aws::String>
+  void SetSeller(SellerT&& value) {
+    m_sellerHasBeenSet = true;
+    m_seller = std::forward<SellerT>(value);
+  }
+  template <typename SellerT = Aws::String>
+  AccountMetaData& WithSeller(SellerT&& value) {
+    SetSeller(std::forward<SellerT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Address& GetAddress() const { return m_address; }
   inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
@@ -66,6 +84,22 @@ class AccountMetaData {
   template <typename AddressT = Address>
   AccountMetaData& WithAddress(AddressT&& value) {
     SetAddress(std::forward<AddressT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The type of address associated with the legal profile. </p>
+   */
+  inline AddressRoleType GetAddressType() const { return m_addressType; }
+  inline bool AddressTypeHasBeenSet() const { return m_addressTypeHasBeenSet; }
+  inline void SetAddressType(AddressRoleType value) {
+    m_addressTypeHasBeenSet = true;
+    m_addressType = value;
+  }
+  inline AccountMetaData& WithAddressType(AddressRoleType value) {
+    SetAddressType(value);
     return *this;
   }
   ///@}
@@ -93,55 +127,21 @@ class AccountMetaData {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p> The type of address associated with the legal profile. </p>
-   */
-  inline AddressRoleType GetAddressType() const { return m_addressType; }
-  inline bool AddressTypeHasBeenSet() const { return m_addressTypeHasBeenSet; }
-  inline void SetAddressType(AddressRoleType value) {
-    m_addressTypeHasBeenSet = true;
-    m_addressType = value;
-  }
-  inline AccountMetaData& WithAddressType(AddressRoleType value) {
-    SetAddressType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> Seller information associated with the account. </p>
-   */
-  inline const Aws::String& GetSeller() const { return m_seller; }
-  inline bool SellerHasBeenSet() const { return m_sellerHasBeenSet; }
-  template <typename SellerT = Aws::String>
-  void SetSeller(SellerT&& value) {
-    m_sellerHasBeenSet = true;
-    m_seller = std::forward<SellerT>(value);
-  }
-  template <typename SellerT = Aws::String>
-  AccountMetaData& WithSeller(SellerT&& value) {
-    SetSeller(std::forward<SellerT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_accountName;
 
-  Address m_address;
+  Aws::String m_seller;
 
-  Aws::Map<AddressRoleType, Jurisdiction> m_addressRoleMap;
+  Address m_address;
 
   AddressRoleType m_addressType{AddressRoleType::NOT_SET};
 
-  Aws::String m_seller;
+  Aws::Map<AddressRoleType, Jurisdiction> m_addressRoleMap;
   bool m_accountNameHasBeenSet = false;
-  bool m_addressHasBeenSet = false;
-  bool m_addressRoleMapHasBeenSet = false;
-  bool m_addressTypeHasBeenSet = false;
   bool m_sellerHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_addressTypeHasBeenSet = false;
+  bool m_addressRoleMapHasBeenSet = false;
 };
 
 }  // namespace Model

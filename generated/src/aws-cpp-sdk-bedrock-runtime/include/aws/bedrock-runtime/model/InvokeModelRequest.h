@@ -185,6 +185,24 @@ class InvokeModelRequest : public StreamingBedrockRuntimeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Key-value pairs that you can use to filter invocation logs.</p>
+   */
+  inline const Aws::String& GetRequestMetadata() const { return m_requestMetadata; }
+  inline bool RequestMetadataHasBeenSet() const { return m_requestMetadataHasBeenSet; }
+  template <typename RequestMetadataT = Aws::String>
+  void SetRequestMetadata(RequestMetadataT&& value) {
+    m_requestMetadataHasBeenSet = true;
+    m_requestMetadata = std::forward<RequestMetadataT>(value);
+  }
+  template <typename RequestMetadataT = Aws::String>
+  InvokeModelRequest& WithRequestMetadata(RequestMetadataT&& value) {
+    SetRequestMetadata(std::forward<RequestMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accept;
 
@@ -199,6 +217,8 @@ class InvokeModelRequest : public StreamingBedrockRuntimeRequest {
   PerformanceConfigLatency m_performanceConfigLatency{PerformanceConfigLatency::NOT_SET};
 
   ServiceTierType m_serviceTier{ServiceTierType::NOT_SET};
+
+  Aws::String m_requestMetadata;
   bool m_acceptHasBeenSet = false;
   bool m_modelIdHasBeenSet = false;
   bool m_traceHasBeenSet = false;
@@ -206,6 +226,7 @@ class InvokeModelRequest : public StreamingBedrockRuntimeRequest {
   bool m_guardrailVersionHasBeenSet = false;
   bool m_performanceConfigLatencyHasBeenSet = false;
   bool m_serviceTierHasBeenSet = false;
+  bool m_requestMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -86,6 +86,32 @@ class ComplianceDetails {
 
   ///@{
   /**
+   * <p>These tag keys are defined as required in the
+   * <code>report_required_tag_for</code> block of the effective tag policy, but are
+   * missing from the resource.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetMissingTagKeys() const { return m_missingTagKeys; }
+  inline bool MissingTagKeysHasBeenSet() const { return m_missingTagKeysHasBeenSet; }
+  template <typename MissingTagKeysT = Aws::Vector<Aws::String>>
+  void SetMissingTagKeys(MissingTagKeysT&& value) {
+    m_missingTagKeysHasBeenSet = true;
+    m_missingTagKeys = std::forward<MissingTagKeysT>(value);
+  }
+  template <typename MissingTagKeysT = Aws::Vector<Aws::String>>
+  ComplianceDetails& WithMissingTagKeys(MissingTagKeysT&& value) {
+    SetMissingTagKeys(std::forward<MissingTagKeysT>(value));
+    return *this;
+  }
+  template <typename MissingTagKeysT = Aws::String>
+  ComplianceDetails& AddMissingTagKeys(MissingTagKeysT&& value) {
+    m_missingTagKeysHasBeenSet = true;
+    m_missingTagKeys.emplace_back(std::forward<MissingTagKeysT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Whether a resource is compliant with the effective tag policy.</p>
    */
   inline bool GetComplianceStatus() const { return m_complianceStatus; }
@@ -104,9 +130,12 @@ class ComplianceDetails {
 
   Aws::Vector<Aws::String> m_keysWithNoncompliantValues;
 
+  Aws::Vector<Aws::String> m_missingTagKeys;
+
   bool m_complianceStatus{false};
   bool m_noncompliantKeysHasBeenSet = false;
   bool m_keysWithNoncompliantValuesHasBeenSet = false;
+  bool m_missingTagKeysHasBeenSet = false;
   bool m_complianceStatusHasBeenSet = false;
 };
 

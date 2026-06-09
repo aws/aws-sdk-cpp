@@ -31,6 +31,13 @@ Aws::String CreateTrustStore2020_05_31Request::SerializePayload() const {
     m_caCertificatesBundleSource.AddToNode(caCertificatesBundleSourceNode);
   }
 
+  if (m_useClientCertificateOCSPEndpointHasBeenSet) {
+    XmlNode useClientCertificateOCSPEndpointNode = parentNode.CreateChildElement("UseClientCertificateOCSPEndpoint");
+    ss << std::boolalpha << m_useClientCertificateOCSPEndpoint;
+    useClientCertificateOCSPEndpointNode.SetText(ss.str());
+    ss.str("");
+  }
+
   if (m_tagsHasBeenSet) {
     XmlNode tagsNode = parentNode.CreateChildElement("Tags");
     m_tags.AddToNode(tagsNode);

@@ -23,7 +23,7 @@ namespace Model {
 
 /**
  * <p>A structure that defines search criteria and matching logic to search for
- * contacts by matching text with transcripts analyzed by Amazon Connect Contact
+ * contacts by matching text with transcripts analyzed by Connect Customer Contact
  * Lens.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Transcript">AWS
  * API Reference</a></p>

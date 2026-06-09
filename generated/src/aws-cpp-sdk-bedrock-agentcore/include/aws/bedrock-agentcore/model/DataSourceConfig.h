@@ -20,7 +20,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Where to pull session spans from</p><p><h3>See Also:</h3>   <a
+ * <p>Configuration for the data source used in evaluation.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DataSourceConfig">AWS
  * API Reference</a></p>
  */
@@ -33,7 +34,7 @@ class DataSourceConfig {
 
   ///@{
   /**
-   * <p>Pull session spans from CloudWatch</p>
+   * <p>Configuration for pulling agent session traces from CloudWatch Logs.</p>
    */
   inline const CloudWatchLogsSource& GetCloudWatchLogs() const { return m_cloudWatchLogs; }
   inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }

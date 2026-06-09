@@ -147,6 +147,24 @@ class ProtectedQuerySummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The account ID of the member that pays for the query compute costs.</p>
+   */
+  inline const Aws::String& GetQueryComputePayerAccountId() const { return m_queryComputePayerAccountId; }
+  inline bool QueryComputePayerAccountIdHasBeenSet() const { return m_queryComputePayerAccountIdHasBeenSet; }
+  template <typename QueryComputePayerAccountIdT = Aws::String>
+  void SetQueryComputePayerAccountId(QueryComputePayerAccountIdT&& value) {
+    m_queryComputePayerAccountIdHasBeenSet = true;
+    m_queryComputePayerAccountId = std::forward<QueryComputePayerAccountIdT>(value);
+  }
+  template <typename QueryComputePayerAccountIdT = Aws::String>
+  ProtectedQuerySummary& WithQueryComputePayerAccountId(QueryComputePayerAccountIdT&& value) {
+    SetQueryComputePayerAccountId(std::forward<QueryComputePayerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -159,12 +177,15 @@ class ProtectedQuerySummary {
   ProtectedQueryStatus m_status{ProtectedQueryStatus::NOT_SET};
 
   Aws::Vector<ReceiverConfiguration> m_receiverConfigurations;
+
+  Aws::String m_queryComputePayerAccountId;
   bool m_idHasBeenSet = false;
   bool m_membershipIdHasBeenSet = false;
   bool m_membershipArnHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_receiverConfigurationsHasBeenSet = false;
+  bool m_queryComputePayerAccountIdHasBeenSet = false;
 };
 
 }  // namespace Model

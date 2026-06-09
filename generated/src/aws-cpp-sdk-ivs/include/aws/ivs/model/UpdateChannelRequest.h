@@ -92,7 +92,7 @@ class UpdateChannelRequest : public IVSRequest {
    * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
    * you exceed the allowable input resolution or bitrate, the stream probably will
    * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
-   * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+   * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/channel-types.html">Channel
    * Types</a>.</p>
    */
   inline ChannelType GetType() const { return m_type; }

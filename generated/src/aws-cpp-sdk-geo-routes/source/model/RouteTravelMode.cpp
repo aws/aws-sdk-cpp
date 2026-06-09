@@ -19,6 +19,8 @@ static const int Car_HASH = HashingUtils::HashString("Car");
 static const int Pedestrian_HASH = HashingUtils::HashString("Pedestrian");
 static const int Scooter_HASH = HashingUtils::HashString("Scooter");
 static const int Truck_HASH = HashingUtils::HashString("Truck");
+static const int Intermodal_HASH = HashingUtils::HashString("Intermodal");
+static const int Transit_HASH = HashingUtils::HashString("Transit");
 
 RouteTravelMode GetRouteTravelModeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +32,10 @@ RouteTravelMode GetRouteTravelModeForName(const Aws::String& name) {
     return RouteTravelMode::Scooter;
   } else if (hashCode == Truck_HASH) {
     return RouteTravelMode::Truck;
+  } else if (hashCode == Intermodal_HASH) {
+    return RouteTravelMode::Intermodal;
+  } else if (hashCode == Transit_HASH) {
+    return RouteTravelMode::Transit;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +58,10 @@ Aws::String GetNameForRouteTravelMode(RouteTravelMode enumValue) {
       return "Scooter";
     case RouteTravelMode::Truck:
       return "Truck";
+    case RouteTravelMode::Intermodal:
+      return "Intermodal";
+    case RouteTravelMode::Transit:
+      return "Transit";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

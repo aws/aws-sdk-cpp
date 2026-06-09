@@ -49,7 +49,7 @@ class DisassociateFeedRequest : public ElementalInferenceRequest {
 
   ///@{
   /**
-   * <p>The name of the resource currently associated with the feed'.</p>
+   * <p>The name of the resource currently associated with the feed.</p>
    */
   inline const Aws::String& GetAssociatedResourceName() const { return m_associatedResourceName; }
   inline bool AssociatedResourceNameHasBeenSet() const { return m_associatedResourceNameHasBeenSet; }
@@ -68,6 +68,9 @@ class DisassociateFeedRequest : public ElementalInferenceRequest {
   ///@{
   /**
    * <p>Set to true if you want to do a dry run of the disassociate action.</p>
+   * <p>Elemental Inference will validate that the real request would succeed without
+   * actually making any changes. A dry run catches errors such as missing IAM
+   * permissions. If the dry run fails, the action returns a 4xx error code. </p>
    */
   inline bool GetDryRun() const { return m_dryRun; }
   inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }

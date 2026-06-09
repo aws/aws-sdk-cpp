@@ -31,6 +31,10 @@ Aws::String CreateUserPoolDomainRequest::SerializePayload() const {
     payload.WithObject("CustomDomainConfig", m_customDomainConfig.Jsonize());
   }
 
+  if (m_routingHasBeenSet) {
+    payload.WithObject("Routing", m_routing.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

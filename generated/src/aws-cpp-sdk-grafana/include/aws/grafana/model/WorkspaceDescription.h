@@ -12,6 +12,7 @@
 #include <aws/grafana/model/AccountAccessType.h>
 #include <aws/grafana/model/AuthenticationSummary.h>
 #include <aws/grafana/model/DataSourceType.h>
+#include <aws/grafana/model/IPAddressType.h>
 #include <aws/grafana/model/LicenseType.h>
 #include <aws/grafana/model/NetworkAccessConfiguration.h>
 #include <aws/grafana/model/NotificationDestinationType.h>
@@ -557,6 +558,23 @@ class WorkspaceDescription {
 
   ///@{
   /**
+   * <p>The type of IP addresses supported for connection to the workspace. Valid
+   * values are <code>IPv4</code> and <code>DualStack</code>.</p>
+   */
+  inline IPAddressType GetIpAddressType() const { return m_ipAddressType; }
+  inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+  inline void SetIpAddressType(IPAddressType value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline WorkspaceDescription& WithIpAddressType(IPAddressType value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID or ARN of the Key Management Service key used for encrypting workspace
    * data.</p>
    */
@@ -570,6 +588,25 @@ class WorkspaceDescription {
   template <typename KmsKeyIdT = Aws::String>
   WorkspaceDescription& WithKmsKeyId(KmsKeyIdT&& value) {
     SetKmsKeyId(std::forward<KmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>If the workspace is in the <code>DEGRADED</code> status, this field describes
+   * the reason the workspace is degraded.</p>
+   */
+  inline const Aws::String& GetDegradedWorkspaceReason() const { return m_degradedWorkspaceReason; }
+  inline bool DegradedWorkspaceReasonHasBeenSet() const { return m_degradedWorkspaceReasonHasBeenSet; }
+  template <typename DegradedWorkspaceReasonT = Aws::String>
+  void SetDegradedWorkspaceReason(DegradedWorkspaceReasonT&& value) {
+    m_degradedWorkspaceReasonHasBeenSet = true;
+    m_degradedWorkspaceReason = std::forward<DegradedWorkspaceReasonT>(value);
+  }
+  template <typename DegradedWorkspaceReasonT = Aws::String>
+  WorkspaceDescription& WithDegradedWorkspaceReason(DegradedWorkspaceReasonT&& value) {
+    SetDegradedWorkspaceReason(std::forward<DegradedWorkspaceReasonT>(value));
     return *this;
   }
   ///@}
@@ -624,7 +661,11 @@ class WorkspaceDescription {
 
   Aws::String m_grafanaToken;
 
+  IPAddressType m_ipAddressType{IPAddressType::NOT_SET};
+
   Aws::String m_kmsKeyId;
+
+  Aws::String m_degradedWorkspaceReason;
   bool m_accountAccessTypeHasBeenSet = false;
   bool m_createdHasBeenSet = false;
   bool m_dataSourcesHasBeenSet = false;
@@ -650,7 +691,9 @@ class WorkspaceDescription {
   bool m_vpcConfigurationHasBeenSet = false;
   bool m_networkAccessControlHasBeenSet = false;
   bool m_grafanaTokenHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
+  bool m_degradedWorkspaceReasonHasBeenSet = false;
 };
 
 }  // namespace Model

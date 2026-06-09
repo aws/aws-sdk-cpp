@@ -48,6 +48,7 @@
 #include <aws/grafana/model/DescribeWorkspaceResult.h>
 #include <aws/grafana/model/DisassociateLicenseRequest.h>
 #include <aws/grafana/model/DisassociateLicenseResult.h>
+#include <aws/grafana/model/IPAddressType.h>
 #include <aws/grafana/model/IdpMetadata.h>
 #include <aws/grafana/model/InternalServerException.h>
 #include <aws/grafana/model/LicenseType.h>

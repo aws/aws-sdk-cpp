@@ -8,6 +8,7 @@
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/CapacityProviderScalingConfig.h>
+#include <aws/lambda/model/PropagateTags.h>
 
 #include <utility>
 
@@ -64,12 +65,31 @@ class UpdateCapacityProviderRequest : public LambdaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const PropagateTags& GetPropagateTags() const { return m_propagateTags; }
+  inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
+  template <typename PropagateTagsT = PropagateTags>
+  void SetPropagateTags(PropagateTagsT&& value) {
+    m_propagateTagsHasBeenSet = true;
+    m_propagateTags = std::forward<PropagateTagsT>(value);
+  }
+  template <typename PropagateTagsT = PropagateTags>
+  UpdateCapacityProviderRequest& WithPropagateTags(PropagateTagsT&& value) {
+    SetPropagateTags(std::forward<PropagateTagsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityProviderName;
 
   CapacityProviderScalingConfig m_capacityProviderScalingConfig;
+
+  PropagateTags m_propagateTags;
   bool m_capacityProviderNameHasBeenSet = false;
   bool m_capacityProviderScalingConfigHasBeenSet = false;
+  bool m_propagateTagsHasBeenSet = false;
 };
 
 }  // namespace Model

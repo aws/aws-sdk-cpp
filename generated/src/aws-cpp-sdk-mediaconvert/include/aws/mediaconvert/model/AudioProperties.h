@@ -119,6 +119,25 @@ class AudioProperties {
 
   ///@{
   /**
+   * The number of audio objects in an object-based or immersive audio track. This
+   * field is present for codecs that support object-based audio, such as E-AC-3 with
+   * Joint Object Coding (JOC) or IAMF. This field is null when the audio track does
+   * not contain object-based audio metadata.
+   */
+  inline int GetObjectCount() const { return m_objectCount; }
+  inline bool ObjectCountHasBeenSet() const { return m_objectCountHasBeenSet; }
+  inline void SetObjectCount(int value) {
+    m_objectCountHasBeenSet = true;
+    m_objectCount = value;
+  }
+  inline AudioProperties& WithObjectCount(int value) {
+    SetObjectCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * The sample rate of the audio track.
    */
   inline int GetSampleRate() const { return m_sampleRate; }
@@ -143,12 +162,15 @@ class AudioProperties {
 
   Aws::String m_languageCode;
 
+  int m_objectCount{0};
+
   int m_sampleRate{0};
   bool m_bitDepthHasBeenSet = false;
   bool m_bitRateHasBeenSet = false;
   bool m_channelsHasBeenSet = false;
   bool m_frameRateHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
+  bool m_objectCountHasBeenSet = false;
   bool m_sampleRateHasBeenSet = false;
 };
 

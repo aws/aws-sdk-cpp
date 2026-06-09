@@ -184,6 +184,34 @@ class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a quote for an Outpost. A quote provides pricing and configuration
+   * options based on the requested capacity. You can optionally associate the quote
+   * with an existing Outpost or create a standalone quote by specifying only the
+   * country code and requested capacities.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateQuote">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateQuoteOutcome CreateQuote(const Model::CreateQuoteRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateQuote that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateQuoteRequestT = Model::CreateQuoteRequest>
+  Model::CreateQuoteOutcomeCallable CreateQuoteCallable(const CreateQuoteRequestT& request) const {
+    return SubmitCallable(&OutpostsClient::CreateQuote, request);
+  }
+
+  /**
+   * An Async wrapper for CreateQuote that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateQuoteRequestT = Model::CreateQuoteRequest>
+  void CreateQuoteAsync(const CreateQuoteRequestT& request, const CreateQuoteResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OutpostsClient::CreateQuote, request, handler, context);
+  }
+
+  /**
    * <p>Creates a renewal contract for the specified Outpost.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateRenewal">AWS
@@ -257,6 +285,31 @@ class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
   void DeleteOutpostAsync(const DeleteOutpostRequestT& request, const DeleteOutpostResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OutpostsClient::DeleteOutpost, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified quote.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteQuote">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteQuoteOutcome DeleteQuote(const Model::DeleteQuoteRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteQuote that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteQuoteRequestT = Model::DeleteQuoteRequest>
+  Model::DeleteQuoteOutcomeCallable DeleteQuoteCallable(const DeleteQuoteRequestT& request) const {
+    return SubmitCallable(&OutpostsClient::DeleteQuote, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteQuote that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteQuoteRequestT = Model::DeleteQuoteRequest>
+  void DeleteQuoteAsync(const DeleteQuoteRequestT& request, const DeleteQuoteResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OutpostsClient::DeleteQuote, request, handler, context);
   }
 
   /**
@@ -510,6 +563,31 @@ class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Gets information about the specified quote.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetQuote">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetQuoteOutcome GetQuote(const Model::GetQuoteRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetQuote that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetQuoteRequestT = Model::GetQuoteRequest>
+  Model::GetQuoteOutcomeCallable GetQuoteCallable(const GetQuoteRequestT& request) const {
+    return SubmitCallable(&OutpostsClient::GetQuote, request);
+  }
+
+  /**
+   * An Async wrapper for GetQuote that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetQuoteRequestT = Model::GetQuoteRequest>
+  void GetQuoteAsync(const GetQuoteRequestT& request, const GetQuoteResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OutpostsClient::GetQuote, request, handler, context);
+  }
+
+  /**
    * <p>Gets all available renewal pricing options for the specified
    * Outpost.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetRenewalPricing">AWS
@@ -738,6 +816,36 @@ class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the instance types that can be ordered for an Outpost. You can filter
+   * the results by Outpost generation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOrderableInstanceTypes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListOrderableInstanceTypesOutcome ListOrderableInstanceTypes(
+      const Model::ListOrderableInstanceTypesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListOrderableInstanceTypes that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListOrderableInstanceTypesRequestT = Model::ListOrderableInstanceTypesRequest>
+  Model::ListOrderableInstanceTypesOutcomeCallable ListOrderableInstanceTypesCallable(
+      const ListOrderableInstanceTypesRequestT& request = {}) const {
+    return SubmitCallable(&OutpostsClient::ListOrderableInstanceTypes, request);
+  }
+
+  /**
+   * An Async wrapper for ListOrderableInstanceTypes that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListOrderableInstanceTypesRequestT = Model::ListOrderableInstanceTypesRequest>
+  void ListOrderableInstanceTypesAsync(const ListOrderableInstanceTypesResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                       const ListOrderableInstanceTypesRequestT& request = {}) const {
+    return SubmitAsync(&OutpostsClient::ListOrderableInstanceTypes, request, handler, context);
+  }
+
+  /**
    * <p>Lists the Outpost orders for your Amazon Web Services account.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOrders">AWS
@@ -792,6 +900,33 @@ class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                          const ListOutpostsRequestT& request = {}) const {
     return SubmitAsync(&OutpostsClient::ListOutposts, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the quotes for your Amazon Web Services account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListQuotes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListQuotesOutcome ListQuotes(const Model::ListQuotesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListQuotes that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListQuotesRequestT = Model::ListQuotesRequest>
+  Model::ListQuotesOutcomeCallable ListQuotesCallable(const ListQuotesRequestT& request = {}) const {
+    return SubmitCallable(&OutpostsClient::ListQuotes, request);
+  }
+
+  /**
+   * An Async wrapper for ListQuotes that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListQuotesRequestT = Model::ListQuotesRequest>
+  void ListQuotesAsync(const ListQuotesResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                       const ListQuotesRequestT& request = {}) const {
+    return SubmitAsync(&OutpostsClient::ListQuotes, request, handler, context);
   }
 
   /**
@@ -1013,6 +1148,33 @@ class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
   void UpdateOutpostAsync(const UpdateOutpostRequestT& request, const UpdateOutpostResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OutpostsClient::UpdateOutpost, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the specified quote. You can modify the requested capacities,
+   * constraints, payment options, payment terms, or Outpost
+   * association.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateQuote">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateQuoteOutcome UpdateQuote(const Model::UpdateQuoteRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateQuote that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateQuoteRequestT = Model::UpdateQuoteRequest>
+  Model::UpdateQuoteOutcomeCallable UpdateQuoteCallable(const UpdateQuoteRequestT& request) const {
+    return SubmitCallable(&OutpostsClient::UpdateQuote, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateQuote that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateQuoteRequestT = Model::UpdateQuoteRequest>
+  void UpdateQuoteAsync(const UpdateQuoteRequestT& request, const UpdateQuoteResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OutpostsClient::UpdateQuote, request, handler, context);
   }
 
   /**

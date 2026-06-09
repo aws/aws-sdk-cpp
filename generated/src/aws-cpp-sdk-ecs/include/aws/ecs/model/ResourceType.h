@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ECS {
 namespace Model {
-enum class ResourceType { NOT_SET, GPU, InferenceAccelerator };
+enum class ResourceType { NOT_SET, GPU, InferenceAccelerator, NeuronDevice };
 
 namespace ResourceTypeMapper {
 AWS_ECS_API ResourceType GetResourceTypeForName(const Aws::String& name);

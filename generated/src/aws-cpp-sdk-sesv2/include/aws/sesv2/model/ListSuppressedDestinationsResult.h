@@ -63,9 +63,10 @@ class ListSuppressedDestinationsResult {
   ///@{
   /**
    * <p>A token that indicates that there are additional email addresses on the
-   * suppression list for your account. To view additional suppressed addresses,
-   * issue another request to <code>ListSuppressedDestinations</code>, and pass this
-   * token in the <code>NextToken</code> parameter.</p>
+   * suppression list for your account or for the specified tenant. To view
+   * additional suppressed addresses, issue another request to
+   * <code>ListSuppressedDestinations</code>, and pass this token in the
+   * <code>NextToken</code> parameter.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

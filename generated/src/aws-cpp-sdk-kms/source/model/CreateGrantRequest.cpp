@@ -55,6 +55,14 @@ Aws::String CreateGrantRequest::SerializePayload() const {
     payload.WithBool("DryRun", m_dryRun);
   }
 
+  if (m_granteeServicePrincipalHasBeenSet) {
+    payload.WithString("GranteeServicePrincipal", m_granteeServicePrincipal);
+  }
+
+  if (m_retiringServicePrincipalHasBeenSet) {
+    payload.WithString("RetiringServicePrincipal", m_retiringServicePrincipal);
+  }
+
   return payload.View().WriteReadable();
 }
 

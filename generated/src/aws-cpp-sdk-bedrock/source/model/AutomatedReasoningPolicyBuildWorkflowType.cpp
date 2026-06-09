@@ -20,6 +20,8 @@ static const int REFINE_POLICY_HASH = HashingUtils::HashString("REFINE_POLICY");
 static const int IMPORT_POLICY_HASH = HashingUtils::HashString("IMPORT_POLICY");
 static const int GENERATE_FIDELITY_REPORT_HASH = HashingUtils::HashString("GENERATE_FIDELITY_REPORT");
 static const int GENERATE_POLICY_SCENARIOS_HASH = HashingUtils::HashString("GENERATE_POLICY_SCENARIOS");
+static const int RESOLVE_POLICY_AMBIGUITIES_HASH = HashingUtils::HashString("RESOLVE_POLICY_AMBIGUITIES");
+static const int ITERATIVELY_REFINE_POLICY_HASH = HashingUtils::HashString("ITERATIVELY_REFINE_POLICY");
 
 AutomatedReasoningPolicyBuildWorkflowType GetAutomatedReasoningPolicyBuildWorkflowTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +35,10 @@ AutomatedReasoningPolicyBuildWorkflowType GetAutomatedReasoningPolicyBuildWorkfl
     return AutomatedReasoningPolicyBuildWorkflowType::GENERATE_FIDELITY_REPORT;
   } else if (hashCode == GENERATE_POLICY_SCENARIOS_HASH) {
     return AutomatedReasoningPolicyBuildWorkflowType::GENERATE_POLICY_SCENARIOS;
+  } else if (hashCode == RESOLVE_POLICY_AMBIGUITIES_HASH) {
+    return AutomatedReasoningPolicyBuildWorkflowType::RESOLVE_POLICY_AMBIGUITIES;
+  } else if (hashCode == ITERATIVELY_REFINE_POLICY_HASH) {
+    return AutomatedReasoningPolicyBuildWorkflowType::ITERATIVELY_REFINE_POLICY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +63,10 @@ Aws::String GetNameForAutomatedReasoningPolicyBuildWorkflowType(AutomatedReasoni
       return "GENERATE_FIDELITY_REPORT";
     case AutomatedReasoningPolicyBuildWorkflowType::GENERATE_POLICY_SCENARIOS:
       return "GENERATE_POLICY_SCENARIOS";
+    case AutomatedReasoningPolicyBuildWorkflowType::RESOLVE_POLICY_AMBIGUITIES:
+      return "RESOLVE_POLICY_AMBIGUITIES";
+    case AutomatedReasoningPolicyBuildWorkflowType::ITERATIVELY_REFINE_POLICY:
+      return "ITERATIVELY_REFINE_POLICY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

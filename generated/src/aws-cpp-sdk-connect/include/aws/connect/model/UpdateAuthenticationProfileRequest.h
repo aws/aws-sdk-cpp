@@ -49,7 +49,7 @@ class UpdateAuthenticationProfileRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -108,7 +108,7 @@ class UpdateAuthenticationProfileRequest : public ConnectRequest {
    * <p>A list of IP address range strings that are allowed to access the instance.
    * For more information on how to configure IP addresses, see<a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure
-   * session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+   * session timeouts</a> in the <i>Connect Customer Administrator Guide</i>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAllowedIps() const { return m_allowedIps; }
   inline bool AllowedIpsHasBeenSet() const { return m_allowedIpsHasBeenSet; }
@@ -136,7 +136,7 @@ class UpdateAuthenticationProfileRequest : public ConnectRequest {
    * instance. For more information on how to configure IP addresses, For more
    * information on how to configure IP addresses, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure
-   * IP-based access control</a> in the <i>Amazon Connect Administrator Guide</i>.
+   * IP-based access control</a> in the <i>Connect Customer Administrator Guide</i>.
    * </p>
    */
   inline const Aws::Vector<Aws::String>& GetBlockedIps() const { return m_blockedIps; }

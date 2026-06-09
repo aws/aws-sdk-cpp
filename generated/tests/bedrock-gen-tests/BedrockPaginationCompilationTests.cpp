@@ -12,6 +12,7 @@
 #include <aws/bedrock/model/ListGuardrailsPaginationTraits.h>
 #include <aws/bedrock/model/ListEnforcedGuardrailsConfigurationPaginationTraits.h>
 #include <aws/bedrock/model/ListPromptRoutersPaginationTraits.h>
+#include <aws/bedrock/model/ListAdvancedPromptOptimizationJobsPaginationTraits.h>
 #include <aws/bedrock/model/ListImportedModelsPaginationTraits.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPolicyTestCasesPaginationTraits.h>
 #include <aws/bedrock/model/ListModelCopyJobsPaginationTraits.h>

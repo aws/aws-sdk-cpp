@@ -22,6 +22,7 @@ static const int INCOMPATIBLE_IDENTITY_VERIFICATION_STATUS_HASH = HashingUtils::
 static const int INVALID_ACCOUNT_LINKING_STATUS_HASH = HashingUtils::HashString("INVALID_ACCOUNT_LINKING_STATUS");
 static const int INVALID_ACCOUNT_STATE_HASH = HashingUtils::HashString("INVALID_ACCOUNT_STATE");
 static const int INCOMPATIBLE_DOMAIN_HASH = HashingUtils::HashString("INCOMPATIBLE_DOMAIN");
+static const int INELIGIBLE_ACCOUNT_TIER_HASH = HashingUtils::HashString("INELIGIBLE_ACCOUNT_TIER");
 
 BusinessValidationCode GetBusinessValidationCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ BusinessValidationCode GetBusinessValidationCodeForName(const Aws::String& name)
     return BusinessValidationCode::INVALID_ACCOUNT_STATE;
   } else if (hashCode == INCOMPATIBLE_DOMAIN_HASH) {
     return BusinessValidationCode::INCOMPATIBLE_DOMAIN;
+  } else if (hashCode == INELIGIBLE_ACCOUNT_TIER_HASH) {
+    return BusinessValidationCode::INELIGIBLE_ACCOUNT_TIER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForBusinessValidationCode(BusinessValidationCode enumValue) {
       return "INVALID_ACCOUNT_STATE";
     case BusinessValidationCode::INCOMPATIBLE_DOMAIN:
       return "INCOMPATIBLE_DOMAIN";
+    case BusinessValidationCode::INELIGIBLE_ACCOUNT_TIER:
+      return "INELIGIBLE_ACCOUNT_TIER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

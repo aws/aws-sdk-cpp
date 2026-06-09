@@ -198,8 +198,8 @@ class ContainerOverride {
   ///@{
   /**
    * <p>The type and amount of a resource to assign to a container, instead of the
-   * default value from the task definition. The only supported resource is a
-   * GPU.</p>
+   * default value from the task definition. The supported resources are GPUs and
+   * Neuron devices.</p>
    */
   inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const { return m_resourceRequirements; }
   inline bool ResourceRequirementsHasBeenSet() const { return m_resourceRequirementsHasBeenSet; }

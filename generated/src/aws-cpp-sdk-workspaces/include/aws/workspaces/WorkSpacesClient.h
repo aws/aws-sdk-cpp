@@ -319,10 +319,10 @@ class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a client-add-in for Amazon Connect within a directory. You can create
-   * only one Amazon Connect client add-in within a directory.</p> <p>This client
-   * add-in allows WorkSpaces users to seamlessly connect to Amazon
-   * Connect.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a client-add-in for Connect Customer within a directory. You can
+   * create only one Connect Customer client add-in within a directory.</p> <p>This
+   * client add-in allows WorkSpaces users to seamlessly connect to Connect
+   * Customer.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectClientAddIn">AWS
    * API Reference</a></p>
    */
@@ -690,7 +690,7 @@ class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a client-add-in for Amazon Connect that is configured within a
+   * <p>Deletes a client-add-in for Connect Customer that is configured within a
    * directory.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectClientAddIn">AWS
    * API Reference</a></p>
@@ -1146,7 +1146,7 @@ class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Retrieves a list of Amazon Connect client add-ins that have been
+   * <p>Retrieves a list of Connect Customer client add-ins that have been
    * created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectClientAddIns">AWS
    * API Reference</a></p>
@@ -2712,8 +2712,8 @@ class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates a Amazon Connect client add-in. Use this action to update the name
-   * and endpoint URL of a Amazon Connect client add-in.</p><p><h3>See Also:</h3>
+   * <p>Updates a Connect Customer client add-in. Use this action to update the name
+   * and endpoint URL of a Connect Customer client add-in.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectClientAddIn">AWS
    * API Reference</a></p>

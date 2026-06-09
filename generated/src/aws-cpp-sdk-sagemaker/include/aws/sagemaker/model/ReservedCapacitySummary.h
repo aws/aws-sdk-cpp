@@ -176,6 +176,24 @@ class ReservedCapacitySummary {
 
   ///@{
   /**
+   * <p>The Availability Zone ID of the reserved capacity.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  ReservedCapacitySummary& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The number of whole hours in the total duration for this reserved
    * capacity.</p>
    */
@@ -260,6 +278,8 @@ class ReservedCapacitySummary {
 
   Aws::String m_availabilityZone;
 
+  Aws::String m_availabilityZoneId;
+
   long long m_durationHours{0};
 
   long long m_durationMinutes{0};
@@ -275,6 +295,7 @@ class ReservedCapacitySummary {
   bool m_totalInstanceCountHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
   bool m_durationHoursHasBeenSet = false;
   bool m_durationMinutesHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;

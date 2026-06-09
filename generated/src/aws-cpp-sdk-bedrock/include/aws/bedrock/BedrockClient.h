@@ -94,6 +94,37 @@ class AWS_BEDROCK_API BedrockClient
   virtual ~BedrockClient();
 
   /**
+   * <p>Deletes one or more advanced prompt optimization jobs.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteAdvancedPromptOptimizationJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchDeleteAdvancedPromptOptimizationJobOutcome BatchDeleteAdvancedPromptOptimizationJob(
+      const Model::BatchDeleteAdvancedPromptOptimizationJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchDeleteAdvancedPromptOptimizationJob that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename BatchDeleteAdvancedPromptOptimizationJobRequestT = Model::BatchDeleteAdvancedPromptOptimizationJobRequest>
+  Model::BatchDeleteAdvancedPromptOptimizationJobOutcomeCallable BatchDeleteAdvancedPromptOptimizationJobCallable(
+      const BatchDeleteAdvancedPromptOptimizationJobRequestT& request) const {
+    return SubmitCallable(&BedrockClient::BatchDeleteAdvancedPromptOptimizationJob, request);
+  }
+
+  /**
+   * An Async wrapper for BatchDeleteAdvancedPromptOptimizationJob that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename BatchDeleteAdvancedPromptOptimizationJobRequestT = Model::BatchDeleteAdvancedPromptOptimizationJobRequest>
+  void BatchDeleteAdvancedPromptOptimizationJobAsync(
+      const BatchDeleteAdvancedPromptOptimizationJobRequestT& request,
+      const BatchDeleteAdvancedPromptOptimizationJobResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::BatchDeleteAdvancedPromptOptimizationJob, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a batch of evaluation jobs. An evaluation job can only be deleted if
    * it has following status <code>FAILED</code>, <code>COMPLETED</code>, and
    * <code>STOPPED</code>. You can request up to 25 model evaluation jobs be deleted
@@ -153,6 +184,37 @@ class AWS_BEDROCK_API BedrockClient
       const CancelAutomatedReasoningPolicyBuildWorkflowResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockClient::CancelAutomatedReasoningPolicyBuildWorkflow, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an advanced prompt optimization job. The job optimizes your prompt
+   * templates for specific models using your evaluation dataset and
+   * criteria.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAdvancedPromptOptimizationJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAdvancedPromptOptimizationJobOutcome CreateAdvancedPromptOptimizationJob(
+      const Model::CreateAdvancedPromptOptimizationJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAdvancedPromptOptimizationJob that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename CreateAdvancedPromptOptimizationJobRequestT = Model::CreateAdvancedPromptOptimizationJobRequest>
+  Model::CreateAdvancedPromptOptimizationJobOutcomeCallable CreateAdvancedPromptOptimizationJobCallable(
+      const CreateAdvancedPromptOptimizationJobRequestT& request) const {
+    return SubmitCallable(&BedrockClient::CreateAdvancedPromptOptimizationJob, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAdvancedPromptOptimizationJob that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename CreateAdvancedPromptOptimizationJobRequestT = Model::CreateAdvancedPromptOptimizationJobRequest>
+  void CreateAdvancedPromptOptimizationJobAsync(const CreateAdvancedPromptOptimizationJobRequestT& request,
+                                                const CreateAdvancedPromptOptimizationJobResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::CreateAdvancedPromptOptimizationJob, request, handler, context);
   }
 
   /**
@@ -255,9 +317,16 @@ class AWS_BEDROCK_API BedrockClient
 
   /**
    * <p>Creates a new custom model in Amazon Bedrock. After the model is active, you
-   * can use it for inference.</p> <p>To use the model for inference, you must
-   * purchase Provisioned Throughput for it. You can't use On-demand inference with
-   * these custom models. For more information about Provisioned Throughput, see <a
+   * can use it for inference.</p> <p>You can provide the model data source in one of
+   * the following ways:</p> <ul> <li> <p> <code>customModelDataSource</code> —
+   * Specify a SageMaker AI model package ARN. Amazon Bedrock resolves the model
+   * package to retrieve the model artifacts. This is the preferred method for new
+   * SageMaker AI training outputs.</p> </li> <li> <p> <code>modelSourceConfig</code>
+   * — Specify an Amazon S3 URI pointing to the Amazon-managed Amazon S3 bucket
+   * containing your model artifacts.</p> </li> </ul> <p>To use the model for
+   * inference, you must purchase Provisioned Throughput for it. You can't use
+   * On-demand inference with these custom models. For more information about
+   * Provisioned Throughput, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
    * Throughput</a>.</p> <p>The model appears in <code>ListCustomModels</code> with a
    * <code>customizationType</code> of <code>imported</code>. To track the status of
@@ -1258,6 +1327,64 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
+   * <p>Returns the account-wide data retention mode for Amazon
+   * Bedrock.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAccountDataRetention">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAccountDataRetentionOutcome GetAccountDataRetention(const Model::GetAccountDataRetentionRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetAccountDataRetention that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAccountDataRetentionRequestT = Model::GetAccountDataRetentionRequest>
+  Model::GetAccountDataRetentionOutcomeCallable GetAccountDataRetentionCallable(const GetAccountDataRetentionRequestT& request = {}) const {
+    return SubmitCallable(&BedrockClient::GetAccountDataRetention, request);
+  }
+
+  /**
+   * An Async wrapper for GetAccountDataRetention that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAccountDataRetentionRequestT = Model::GetAccountDataRetentionRequest>
+  void GetAccountDataRetentionAsync(const GetAccountDataRetentionResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const GetAccountDataRetentionRequestT& request = {}) const {
+    return SubmitAsync(&BedrockClient::GetAccountDataRetention, request, handler, context);
+  }
+
+  /**
+   * <p>Gets information about an advanced prompt optimization job.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAdvancedPromptOptimizationJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAdvancedPromptOptimizationJobOutcome GetAdvancedPromptOptimizationJob(
+      const Model::GetAdvancedPromptOptimizationJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAdvancedPromptOptimizationJob that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetAdvancedPromptOptimizationJobRequestT = Model::GetAdvancedPromptOptimizationJobRequest>
+  Model::GetAdvancedPromptOptimizationJobOutcomeCallable GetAdvancedPromptOptimizationJobCallable(
+      const GetAdvancedPromptOptimizationJobRequestT& request) const {
+    return SubmitCallable(&BedrockClient::GetAdvancedPromptOptimizationJob, request);
+  }
+
+  /**
+   * An Async wrapper for GetAdvancedPromptOptimizationJob that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetAdvancedPromptOptimizationJobRequestT = Model::GetAdvancedPromptOptimizationJobRequest>
+  void GetAdvancedPromptOptimizationJobAsync(const GetAdvancedPromptOptimizationJobRequestT& request,
+                                             const GetAdvancedPromptOptimizationJobResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::GetAdvancedPromptOptimizationJob, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves details about an Automated Reasoning policy or policy version.
    * Returns information including the policy definition, metadata, and
    * timestamps.</p><p><h3>See Also:</h3>   <a
@@ -2005,6 +2132,36 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
+   * <p>Lists the advanced prompt optimization jobs in your account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAdvancedPromptOptimizationJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAdvancedPromptOptimizationJobsOutcome ListAdvancedPromptOptimizationJobs(
+      const Model::ListAdvancedPromptOptimizationJobsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAdvancedPromptOptimizationJobs that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListAdvancedPromptOptimizationJobsRequestT = Model::ListAdvancedPromptOptimizationJobsRequest>
+  Model::ListAdvancedPromptOptimizationJobsOutcomeCallable ListAdvancedPromptOptimizationJobsCallable(
+      const ListAdvancedPromptOptimizationJobsRequestT& request = {}) const {
+    return SubmitCallable(&BedrockClient::ListAdvancedPromptOptimizationJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListAdvancedPromptOptimizationJobs that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListAdvancedPromptOptimizationJobsRequestT = Model::ListAdvancedPromptOptimizationJobsRequest>
+  void ListAdvancedPromptOptimizationJobsAsync(const ListAdvancedPromptOptimizationJobsResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                               const ListAdvancedPromptOptimizationJobsRequestT& request = {}) const {
+    return SubmitAsync(&BedrockClient::ListAdvancedPromptOptimizationJobs, request, handler, context);
+  }
+
+  /**
    * <p>Lists all Automated Reasoning policies in your account, with optional
    * filtering by policy ARN. This helps you manage and discover existing
    * policies.</p><p><h3>See Also:</h3>   <a
@@ -2669,6 +2826,34 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
+   * <p>Sets the account-wide data retention mode for Amazon Bedrock.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutAccountDataRetention">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAccountDataRetentionOutcome PutAccountDataRetention(const Model::PutAccountDataRetentionRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAccountDataRetention that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutAccountDataRetentionRequestT = Model::PutAccountDataRetentionRequest>
+  Model::PutAccountDataRetentionOutcomeCallable PutAccountDataRetentionCallable(const PutAccountDataRetentionRequestT& request) const {
+    return SubmitCallable(&BedrockClient::PutAccountDataRetention, request);
+  }
+
+  /**
+   * An Async wrapper for PutAccountDataRetention that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutAccountDataRetentionRequestT = Model::PutAccountDataRetentionRequest>
+  void PutAccountDataRetentionAsync(const PutAccountDataRetentionRequestT& request,
+                                    const PutAccountDataRetentionResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::PutAccountDataRetention, request, handler, context);
+  }
+
+  /**
    * <p>Sets the account-level enforced guardrail configuration.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutEnforcedGuardrailConfiguration">AWS
@@ -2874,6 +3059,36 @@ class AWS_BEDROCK_API BedrockClient
       const StartAutomatedReasoningPolicyTestWorkflowResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockClient::StartAutomatedReasoningPolicyTestWorkflow, request, handler, context);
+  }
+
+  /**
+   * <p>Stops an advanced prompt optimization job that is in progress.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopAdvancedPromptOptimizationJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopAdvancedPromptOptimizationJobOutcome StopAdvancedPromptOptimizationJob(
+      const Model::StopAdvancedPromptOptimizationJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopAdvancedPromptOptimizationJob that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename StopAdvancedPromptOptimizationJobRequestT = Model::StopAdvancedPromptOptimizationJobRequest>
+  Model::StopAdvancedPromptOptimizationJobOutcomeCallable StopAdvancedPromptOptimizationJobCallable(
+      const StopAdvancedPromptOptimizationJobRequestT& request) const {
+    return SubmitCallable(&BedrockClient::StopAdvancedPromptOptimizationJob, request);
+  }
+
+  /**
+   * An Async wrapper for StopAdvancedPromptOptimizationJob that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename StopAdvancedPromptOptimizationJobRequestT = Model::StopAdvancedPromptOptimizationJobRequest>
+  void StopAdvancedPromptOptimizationJobAsync(const StopAdvancedPromptOptimizationJobRequestT& request,
+                                              const StopAdvancedPromptOptimizationJobResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::StopAdvancedPromptOptimizationJob, request, handler, context);
   }
 
   /**

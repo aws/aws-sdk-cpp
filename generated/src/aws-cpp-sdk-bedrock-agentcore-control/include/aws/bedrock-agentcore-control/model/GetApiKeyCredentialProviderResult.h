@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/Secret.h>
+#include <aws/bedrock-agentcore-control/model/SecretSourceType.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -44,6 +45,41 @@ class GetApiKeyCredentialProviderResult {
   template <typename ApiKeySecretArnT = Secret>
   GetApiKeyCredentialProviderResult& WithApiKeySecretArn(ApiKeySecretArnT&& value) {
     SetApiKeySecretArn(std::forward<ApiKeySecretArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The JSON key used to extract the API key value from the AWS Secrets Manager
+   * secret.</p>
+   */
+  inline const Aws::String& GetApiKeySecretJsonKey() const { return m_apiKeySecretJsonKey; }
+  template <typename ApiKeySecretJsonKeyT = Aws::String>
+  void SetApiKeySecretJsonKey(ApiKeySecretJsonKeyT&& value) {
+    m_apiKeySecretJsonKeyHasBeenSet = true;
+    m_apiKeySecretJsonKey = std::forward<ApiKeySecretJsonKeyT>(value);
+  }
+  template <typename ApiKeySecretJsonKeyT = Aws::String>
+  GetApiKeyCredentialProviderResult& WithApiKeySecretJsonKey(ApiKeySecretJsonKeyT&& value) {
+    SetApiKeySecretJsonKey(std::forward<ApiKeySecretJsonKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The source type of the API key secret. Either <code>MANAGED</code> if the
+   * secret is managed by the service, or <code>EXTERNAL</code> if managed by the
+   * user in AWS Secrets Manager.</p>
+   */
+  inline SecretSourceType GetApiKeySecretSource() const { return m_apiKeySecretSource; }
+  inline void SetApiKeySecretSource(SecretSourceType value) {
+    m_apiKeySecretSourceHasBeenSet = true;
+    m_apiKeySecretSource = value;
+  }
+  inline GetApiKeyCredentialProviderResult& WithApiKeySecretSource(SecretSourceType value) {
+    SetApiKeySecretSource(value);
     return *this;
   }
   ///@}
@@ -135,6 +171,10 @@ class GetApiKeyCredentialProviderResult {
  private:
   Secret m_apiKeySecretArn;
 
+  Aws::String m_apiKeySecretJsonKey;
+
+  SecretSourceType m_apiKeySecretSource{SecretSourceType::NOT_SET};
+
   Aws::String m_name;
 
   Aws::String m_credentialProviderArn;
@@ -146,6 +186,8 @@ class GetApiKeyCredentialProviderResult {
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_apiKeySecretArnHasBeenSet = false;
+  bool m_apiKeySecretJsonKeyHasBeenSet = false;
+  bool m_apiKeySecretSourceHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_credentialProviderArnHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;

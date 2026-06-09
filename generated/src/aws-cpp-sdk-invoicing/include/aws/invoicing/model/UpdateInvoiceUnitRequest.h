@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/invoicing/InvoicingRequest.h>
 #include <aws/invoicing/Invoicing_EXPORTS.h>
@@ -103,6 +104,25 @@ class UpdateInvoiceUnitRequest : public InvoicingRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> A unique, case-sensitive identifier that you provide to ensure idempotency
+   * of the request. </p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateInvoiceUnitRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_invoiceUnitArn;
 
@@ -111,10 +131,13 @@ class UpdateInvoiceUnitRequest : public InvoicingRequest {
   bool m_taxInheritanceDisabled{false};
 
   InvoiceUnitRule m_rule;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_invoiceUnitArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_taxInheritanceDisabledHasBeenSet = false;
   bool m_ruleHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

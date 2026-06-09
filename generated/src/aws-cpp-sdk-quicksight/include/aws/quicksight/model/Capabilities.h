@@ -466,6 +466,86 @@ class Capabilities {
 
   ///@{
   /**
+   * <p>The ability to perform apps-related actions.</p>
+   */
+  inline CapabilityState GetApps() const { return m_apps; }
+  inline bool AppsHasBeenSet() const { return m_appsHasBeenSet; }
+  inline void SetApps(CapabilityState value) {
+    m_appsHasBeenSet = true;
+    m_apps = value;
+  }
+  inline Capabilities& WithApps(CapabilityState value) {
+    SetApps(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create or update apps.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateApps() const { return m_createAndUpdateApps; }
+  inline bool CreateAndUpdateAppsHasBeenSet() const { return m_createAndUpdateAppsHasBeenSet; }
+  inline void SetCreateAndUpdateApps(CapabilityState value) {
+    m_createAndUpdateAppsHasBeenSet = true;
+    m_createAndUpdateApps = value;
+  }
+  inline Capabilities& WithCreateAndUpdateApps(CapabilityState value) {
+    SetCreateAndUpdateApps(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share apps with other users.</p>
+   */
+  inline CapabilityState GetShareApps() const { return m_shareApps; }
+  inline bool ShareAppsHasBeenSet() const { return m_shareAppsHasBeenSet; }
+  inline void SetShareApps(CapabilityState value) {
+    m_shareAppsHasBeenSet = true;
+    m_shareApps = value;
+  }
+  inline Capabilities& WithShareApps(CapabilityState value) {
+    SetShareApps(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to add and invoke AI inference in new and existing apps.</p>
+   */
+  inline CapabilityState GetInvokeAppsAIInference() const { return m_invokeAppsAIInference; }
+  inline bool InvokeAppsAIInferenceHasBeenSet() const { return m_invokeAppsAIInferenceHasBeenSet; }
+  inline void SetInvokeAppsAIInference(CapabilityState value) {
+    m_invokeAppsAIInferenceHasBeenSet = true;
+    m_invokeAppsAIInference = value;
+  }
+  inline Capabilities& WithInvokeAppsAIInference(CapabilityState value) {
+    SetInvokeAppsAIInference(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to access the native data store for new and existing apps.</p>
+   */
+  inline CapabilityState GetAccessAppsNativeDataStore() const { return m_accessAppsNativeDataStore; }
+  inline bool AccessAppsNativeDataStoreHasBeenSet() const { return m_accessAppsNativeDataStoreHasBeenSet; }
+  inline void SetAccessAppsNativeDataStore(CapabilityState value) {
+    m_accessAppsNativeDataStoreHasBeenSet = true;
+    m_accessAppsNativeDataStore = value;
+  }
+  inline Capabilities& WithAccessAppsNativeDataStore(CapabilityState value) {
+    SetAccessAppsNativeDataStore(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ability to enable approvals for flow share.</p>
    */
   inline CapabilityState GetPublishWithoutApproval() const { return m_publishWithoutApproval; }
@@ -3667,6 +3747,16 @@ class Capabilities {
 
   CapabilityState m_flow{CapabilityState::NOT_SET};
 
+  CapabilityState m_apps{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateApps{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareApps{CapabilityState::NOT_SET};
+
+  CapabilityState m_invokeAppsAIInference{CapabilityState::NOT_SET};
+
+  CapabilityState m_accessAppsNativeDataStore{CapabilityState::NOT_SET};
+
   CapabilityState m_publishWithoutApproval{CapabilityState::NOT_SET};
 
   CapabilityState m_useBedrockModels{CapabilityState::NOT_SET};
@@ -4085,6 +4175,11 @@ class Capabilities {
   bool m_analysisHasBeenSet = false;
   bool m_automateHasBeenSet = false;
   bool m_flowHasBeenSet = false;
+  bool m_appsHasBeenSet = false;
+  bool m_createAndUpdateAppsHasBeenSet = false;
+  bool m_shareAppsHasBeenSet = false;
+  bool m_invokeAppsAIInferenceHasBeenSet = false;
+  bool m_accessAppsNativeDataStoreHasBeenSet = false;
   bool m_publishWithoutApprovalHasBeenSet = false;
   bool m_useBedrockModelsHasBeenSet = false;
   bool m_performFlowUiTaskHasBeenSet = false;

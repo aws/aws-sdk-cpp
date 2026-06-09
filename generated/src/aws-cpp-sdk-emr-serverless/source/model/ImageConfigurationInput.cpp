@@ -22,6 +22,10 @@ ImageConfigurationInput& ImageConfigurationInput::operator=(JsonView jsonValue) 
     m_imageUri = jsonValue.GetString("imageUri");
     m_imageUriHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("applicationLevelDigestResolution")) {
+    m_applicationLevelDigestResolution = jsonValue.GetBool("applicationLevelDigestResolution");
+    m_applicationLevelDigestResolutionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ImageConfigurationInput::Jsonize() const {
 
   if (m_imageUriHasBeenSet) {
     payload.WithString("imageUri", m_imageUri);
+  }
+
+  if (m_applicationLevelDigestResolutionHasBeenSet) {
+    payload.WithBool("applicationLevelDigestResolution", m_applicationLevelDigestResolution);
   }
 
   return payload;

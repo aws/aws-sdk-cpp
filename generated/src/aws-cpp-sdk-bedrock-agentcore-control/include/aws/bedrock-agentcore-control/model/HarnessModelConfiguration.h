@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/HarnessBedrockModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessGeminiModelConfig.h>
+#include <aws/bedrock-agentcore-control/model/HarnessLiteLlmModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessOpenAiModelConfig.h>
 
 #include <utility>
@@ -86,15 +87,37 @@ class HarnessModelConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The LiteLLM model configuration for connecting to third-party model
+   * providers.</p>
+   */
+  inline const HarnessLiteLlmModelConfig& GetLiteLlmModelConfig() const { return m_liteLlmModelConfig; }
+  inline bool LiteLlmModelConfigHasBeenSet() const { return m_liteLlmModelConfigHasBeenSet; }
+  template <typename LiteLlmModelConfigT = HarnessLiteLlmModelConfig>
+  void SetLiteLlmModelConfig(LiteLlmModelConfigT&& value) {
+    m_liteLlmModelConfigHasBeenSet = true;
+    m_liteLlmModelConfig = std::forward<LiteLlmModelConfigT>(value);
+  }
+  template <typename LiteLlmModelConfigT = HarnessLiteLlmModelConfig>
+  HarnessModelConfiguration& WithLiteLlmModelConfig(LiteLlmModelConfigT&& value) {
+    SetLiteLlmModelConfig(std::forward<LiteLlmModelConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   HarnessBedrockModelConfig m_bedrockModelConfig;
 
   HarnessOpenAiModelConfig m_openAiModelConfig;
 
   HarnessGeminiModelConfig m_geminiModelConfig;
+
+  HarnessLiteLlmModelConfig m_liteLlmModelConfig;
   bool m_bedrockModelConfigHasBeenSet = false;
   bool m_openAiModelConfigHasBeenSet = false;
   bool m_geminiModelConfigHasBeenSet = false;
+  bool m_liteLlmModelConfigHasBeenSet = false;
 };
 
 }  // namespace Model

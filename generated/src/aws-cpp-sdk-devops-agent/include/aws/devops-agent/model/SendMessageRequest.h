@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devops-agent/DevOpsAgentRequest.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
 #include <aws/devops-agent/model/SendMessageContext.h>
@@ -132,6 +133,30 @@ class SendMessageRequest : public DevOpsAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional list of asset identifiers to attach to the message</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAssetIds() const { return m_assetIds; }
+  inline bool AssetIdsHasBeenSet() const { return m_assetIdsHasBeenSet; }
+  template <typename AssetIdsT = Aws::Vector<Aws::String>>
+  void SetAssetIds(AssetIdsT&& value) {
+    m_assetIdsHasBeenSet = true;
+    m_assetIds = std::forward<AssetIdsT>(value);
+  }
+  template <typename AssetIdsT = Aws::Vector<Aws::String>>
+  SendMessageRequest& WithAssetIds(AssetIdsT&& value) {
+    SetAssetIds(std::forward<AssetIdsT>(value));
+    return *this;
+  }
+  template <typename AssetIdsT = Aws::String>
+  SendMessageRequest& AddAssetIds(AssetIdsT&& value) {
+    m_assetIdsHasBeenSet = true;
+    m_assetIds.emplace_back(std::forward<AssetIdsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_agentSpaceId;
 
@@ -140,6 +165,8 @@ class SendMessageRequest : public DevOpsAgentRequest {
   Aws::String m_content;
 
   SendMessageContext m_context;
+
+  Aws::Vector<Aws::String> m_assetIds;
   SendMessageHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
@@ -147,6 +174,7 @@ class SendMessageRequest : public DevOpsAgentRequest {
   bool m_executionIdHasBeenSet = false;
   bool m_contentHasBeenSet = false;
   bool m_contextHasBeenSet = false;
+  bool m_assetIdsHasBeenSet = false;
 };
 
 }  // namespace Model

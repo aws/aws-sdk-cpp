@@ -48,7 +48,7 @@ class InsertAdBreakRequest : public IVSRequest {
 
   ///@{
   /**
-   * <p>Maximum duration of the ad break, in seconds.</p>
+   * <p>Duration of the ad break, in seconds.</p>
    */
   inline int GetDurationSeconds() const { return m_durationSeconds; }
   inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }

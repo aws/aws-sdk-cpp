@@ -30,7 +30,7 @@ class UpdateContactFlowModuleContentRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -71,7 +71,7 @@ class UpdateContactFlowModuleContentRequest : public ConnectRequest {
    * <p>The JSON string that represents the content of the flow. For an example, see
    * <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-   * flow in Amazon Connect Flow language</a>. </p>
+   * flow in Connect Customer Flow language</a>. </p>
    */
   inline const Aws::String& GetContent() const { return m_content; }
   inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }

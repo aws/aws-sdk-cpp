@@ -30,10 +30,6 @@ GetPolicyEngineResult& GetPolicyEngineResult::operator=(const Aws::AmazonWebServ
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -50,16 +46,20 @@ GetPolicyEngineResult& GetPolicyEngineResult::operator=(const Aws::AmazonWebServ
     m_status = PolicyEngineStatusMapper::GetPolicyEngineStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("encryptionKeyArn")) {
+    m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
+    m_encryptionKeyArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("statusReasons")) {
     Aws::Utils::Array<JsonView> statusReasonsJsonList = jsonValue.GetArray("statusReasons");
     for (unsigned statusReasonsIndex = 0; statusReasonsIndex < statusReasonsJsonList.GetLength(); ++statusReasonsIndex) {
       m_statusReasons.push_back(statusReasonsJsonList[statusReasonsIndex].AsString());
     }
     m_statusReasonsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("encryptionKeyArn")) {
-    m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
-    m_encryptionKeyArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

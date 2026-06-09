@@ -110,7 +110,10 @@ class OAuthCredentialProvider {
    * <p>Specifies the kind of credentials to use for authorization:</p> <ul> <li> <p>
    * <code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p>
    * </li> <li> <p> <code>AUTHORIZATION_CODE</code> - Authorization with a token that
-   * is specific to an individual end user.</p> </li> </ul>
+   * is specific to an individual end user.</p> </li> <li> <p>
+   * <code>TOKEN_EXCHANGE</code> - Authorization using on-behalf-of token exchange.
+   * An inbound user token is exchanged for a downstream access token scoped to the
+   * target audience.</p> </li> </ul>
    */
   inline OAuthGrantType GetGrantType() const { return m_grantType; }
   inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }

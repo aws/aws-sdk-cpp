@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/DeploymentConfiguration.h>
+#include <aws/ecs/model/DeploymentLifecycleHookDetail.h>
 #include <aws/ecs/model/Rollback.h>
 #include <aws/ecs/model/ServiceDeploymentAlarms.h>
 #include <aws/ecs/model/ServiceDeploymentCircuitBreaker.h>
@@ -315,6 +316,30 @@ class ServiceDeployment {
   ///@}
 
   ///@{
+  /**
+   * <p>The details of the lifecycle hooks for the current service deployment.</p>
+   */
+  inline const Aws::Vector<DeploymentLifecycleHookDetail>& GetLifecycleHookDetails() const { return m_lifecycleHookDetails; }
+  inline bool LifecycleHookDetailsHasBeenSet() const { return m_lifecycleHookDetailsHasBeenSet; }
+  template <typename LifecycleHookDetailsT = Aws::Vector<DeploymentLifecycleHookDetail>>
+  void SetLifecycleHookDetails(LifecycleHookDetailsT&& value) {
+    m_lifecycleHookDetailsHasBeenSet = true;
+    m_lifecycleHookDetails = std::forward<LifecycleHookDetailsT>(value);
+  }
+  template <typename LifecycleHookDetailsT = Aws::Vector<DeploymentLifecycleHookDetail>>
+  ServiceDeployment& WithLifecycleHookDetails(LifecycleHookDetailsT&& value) {
+    SetLifecycleHookDetails(std::forward<LifecycleHookDetailsT>(value));
+    return *this;
+  }
+  template <typename LifecycleHookDetailsT = DeploymentLifecycleHookDetail>
+  ServiceDeployment& AddLifecycleHookDetails(LifecycleHookDetailsT&& value) {
+    m_lifecycleHookDetailsHasBeenSet = true;
+    m_lifecycleHookDetails.emplace_back(std::forward<LifecycleHookDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const DeploymentConfiguration& GetDeploymentConfiguration() const { return m_deploymentConfiguration; }
   inline bool DeploymentConfigurationHasBeenSet() const { return m_deploymentConfigurationHasBeenSet; }
@@ -412,6 +437,8 @@ class ServiceDeployment {
 
   ServiceDeploymentLifecycleStage m_lifecycleStage{ServiceDeploymentLifecycleStage::NOT_SET};
 
+  Aws::Vector<DeploymentLifecycleHookDetail> m_lifecycleHookDetails;
+
   DeploymentConfiguration m_deploymentConfiguration;
 
   Rollback m_rollback;
@@ -432,6 +459,7 @@ class ServiceDeployment {
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_lifecycleStageHasBeenSet = false;
+  bool m_lifecycleHookDetailsHasBeenSet = false;
   bool m_deploymentConfigurationHasBeenSet = false;
   bool m_rollbackHasBeenSet = false;
   bool m_deploymentCircuitBreakerHasBeenSet = false;

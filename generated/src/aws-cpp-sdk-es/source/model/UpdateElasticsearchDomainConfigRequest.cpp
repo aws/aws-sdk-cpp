@@ -84,5 +84,9 @@ Aws::String UpdateElasticsearchDomainConfigRequest::SerializePayload() const {
     payload.WithObject("DeploymentStrategyOptions", m_deploymentStrategyOptions.Jsonize());
   }
 
+  if (m_automatedSnapshotPauseOptionsHasBeenSet) {
+    payload.WithObject("AutomatedSnapshotPauseOptions", m_automatedSnapshotPauseOptions.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

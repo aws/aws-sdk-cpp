@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CloudFront {
 namespace Model {
-enum class ViewerMtlsMode { NOT_SET, required, optional };
+enum class ViewerMtlsMode { NOT_SET, required, optional, passthrough };
 
 namespace ViewerMtlsModeMapper {
 AWS_CLOUDFRONT_API ViewerMtlsMode GetViewerMtlsModeForName(const Aws::String& name);

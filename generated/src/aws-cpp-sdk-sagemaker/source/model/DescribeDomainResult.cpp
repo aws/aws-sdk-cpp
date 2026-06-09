@@ -106,6 +106,11 @@ DescribeDomainResult& DescribeDomainResult::operator=(const Aws::AmazonWebServic
         AppSecurityGroupManagementMapper::GetAppSecurityGroupManagementForName(jsonValue.GetString("AppSecurityGroupManagement"));
     m_appSecurityGroupManagementHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("HomeEfsFileSystemCreation")) {
+    m_homeEfsFileSystemCreation =
+        HomeEfsFileSystemCreationMapper::GetHomeEfsFileSystemCreationForName(jsonValue.GetString("HomeEfsFileSystemCreation"));
+    m_homeEfsFileSystemCreationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("TagPropagation")) {
     m_tagPropagation = TagPropagationMapper::GetTagPropagationForName(jsonValue.GetString("TagPropagation"));
     m_tagPropagationHasBeenSet = true;

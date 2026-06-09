@@ -8,6 +8,7 @@
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/CollectionStatus.h>
 #include <aws/opensearchserverless/model/CollectionType.h>
+#include <aws/opensearchserverless/model/DeletionProtection.h>
 #include <aws/opensearchserverless/model/VectorOptions.h>
 
 #include <utility>
@@ -188,6 +189,23 @@ class UpdateCollectionDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether deletion protection is <code>ENABLED</code> or
+   * <code>DISABLED</code> for the collection.</p>
+   */
+  inline DeletionProtection GetDeletionProtection() const { return m_deletionProtection; }
+  inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+  inline void SetDeletionProtection(DeletionProtection value) {
+    m_deletionProtectionHasBeenSet = true;
+    m_deletionProtection = value;
+  }
+  inline UpdateCollectionDetail& WithDeletionProtection(DeletionProtection value) {
+    SetDeletionProtection(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -206,6 +224,8 @@ class UpdateCollectionDetail {
   long long m_createdDate{0};
 
   long long m_lastModifiedDate{0};
+
+  DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -215,6 +235,7 @@ class UpdateCollectionDetail {
   bool m_arnHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -22,7 +22,7 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>This API is in preview release for Amazon Connect and is subject to
+ * <p>This API is in preview release for Connect Customer and is subject to
  * change.</p> <p>A third-party application's metadata.</p><p><h3>See Also:</h3>
  * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Application">AWS

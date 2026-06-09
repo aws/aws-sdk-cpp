@@ -20,6 +20,7 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/DeleteEdgeDeploymentStageRequest.h>
 #include <aws/sagemaker/model/DeleteEndpointConfigRequest.h>
 #include <aws/sagemaker/model/DeleteEndpointRequest.h>
 #include <aws/sagemaker/model/DeleteExperimentRequest.h>
@@ -34,6 +35,7 @@
 #include <aws/sagemaker/model/DeleteImageVersionRequest.h>
 #include <aws/sagemaker/model/DeleteInferenceComponentRequest.h>
 #include <aws/sagemaker/model/DeleteInferenceExperimentRequest.h>
+#include <aws/sagemaker/model/DeleteJobRequest.h>
 #include <aws/sagemaker/model/DeleteMlflowAppRequest.h>
 #include <aws/sagemaker/model/DeleteMlflowTrackingServerRequest.h>
 #include <aws/sagemaker/model/DeleteModelBiasJobDefinitionRequest.h>
@@ -101,6 +103,8 @@
 #include <aws/sagemaker/model/DescribeInferenceComponentRequest.h>
 #include <aws/sagemaker/model/DescribeInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/DescribeInferenceRecommendationsJobRequest.h>
+#include <aws/sagemaker/model/DescribeJobRequest.h>
+#include <aws/sagemaker/model/DescribeJobSchemaVersionRequest.h>
 #include <aws/sagemaker/model/DescribeLabelingJobRequest.h>
 #include <aws/sagemaker/model/DescribeLineageGroupRequest.h>
 #include <aws/sagemaker/model/DescribeMlflowAppRequest.h>
@@ -116,10 +120,6 @@
 #include <aws/sagemaker/model/DescribeMonitoringScheduleRequest.h>
 #include <aws/sagemaker/model/DescribeNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DescribeNotebookInstanceRequest.h>
-#include <aws/sagemaker/model/DescribeOptimizationJobRequest.h>
-#include <aws/sagemaker/model/DescribePartnerAppRequest.h>
-#include <aws/sagemaker/model/DescribePipelineDefinitionForExecutionRequest.h>
-#include <aws/sagemaker/model/DescribePipelineRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteEdgeDeploymentStageOutcome SageMakerClient::DeleteEdgeDeploymentStage(const DeleteEdgeDeploymentStageRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEdgeDeploymentStageOutcome(result.GetResultWithOwnership())
+                            : DeleteEdgeDeploymentStageOutcome(std::move(result.GetError()));
+}
 
 DeleteEndpointOutcome SageMakerClient::DeleteEndpoint(const DeleteEndpointRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -212,6 +218,11 @@ DeleteInferenceExperimentOutcome SageMakerClient::DeleteInferenceExperiment(cons
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteInferenceExperimentOutcome(result.GetResultWithOwnership())
                             : DeleteInferenceExperimentOutcome(std::move(result.GetError()));
+}
+
+DeleteJobOutcome SageMakerClient::DeleteJob(const DeleteJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteJobOutcome(result.GetResultWithOwnership()) : DeleteJobOutcome(std::move(result.GetError()));
 }
 
 DeleteMlflowAppOutcome SageMakerClient::DeleteMlflowApp(const DeleteMlflowAppRequest& request) const {
@@ -612,6 +623,17 @@ DescribeInferenceRecommendationsJobOutcome SageMakerClient::DescribeInferenceRec
                             : DescribeInferenceRecommendationsJobOutcome(std::move(result.GetError()));
 }
 
+DescribeJobOutcome SageMakerClient::DescribeJob(const DescribeJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeJobOutcome(result.GetResultWithOwnership()) : DescribeJobOutcome(std::move(result.GetError()));
+}
+
+DescribeJobSchemaVersionOutcome SageMakerClient::DescribeJobSchemaVersion(const DescribeJobSchemaVersionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeJobSchemaVersionOutcome(result.GetResultWithOwnership())
+                            : DescribeJobSchemaVersionOutcome(std::move(result.GetError()));
+}
+
 DescribeLabelingJobOutcome SageMakerClient::DescribeLabelingJob(const DescribeLabelingJobRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeLabelingJobOutcome(result.GetResultWithOwnership())
@@ -704,29 +726,4 @@ DescribeNotebookInstanceLifecycleConfigOutcome SageMakerClient::DescribeNotebook
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeNotebookInstanceLifecycleConfigOutcome(result.GetResultWithOwnership())
                             : DescribeNotebookInstanceLifecycleConfigOutcome(std::move(result.GetError()));
-}
-
-DescribeOptimizationJobOutcome SageMakerClient::DescribeOptimizationJob(const DescribeOptimizationJobRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeOptimizationJobOutcome(result.GetResultWithOwnership())
-                            : DescribeOptimizationJobOutcome(std::move(result.GetError()));
-}
-
-DescribePartnerAppOutcome SageMakerClient::DescribePartnerApp(const DescribePartnerAppRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribePartnerAppOutcome(result.GetResultWithOwnership())
-                            : DescribePartnerAppOutcome(std::move(result.GetError()));
-}
-
-DescribePipelineOutcome SageMakerClient::DescribePipeline(const DescribePipelineRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribePipelineOutcome(result.GetResultWithOwnership())
-                            : DescribePipelineOutcome(std::move(result.GetError()));
-}
-
-DescribePipelineDefinitionForExecutionOutcome SageMakerClient::DescribePipelineDefinitionForExecution(
-    const DescribePipelineDefinitionForExecutionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribePipelineDefinitionForExecutionOutcome(result.GetResultWithOwnership())
-                            : DescribePipelineDefinitionForExecutionOutcome(std::move(result.GetError()));
 }

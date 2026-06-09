@@ -70,7 +70,7 @@ class StartOutboundChatContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can find the instance ID
+   * <p>The identifier of the Connect Customer instance. You can find the instance ID
    * in the Amazon Resource Name (ARN) of the instance.</p>
    */
   inline const Aws::String& GetInstanceId() const { return m_instanceId; }
@@ -90,7 +90,7 @@ class StartOutboundChatContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>A set of system defined key-value pairs stored on individual contact segments
-   * using an attribute map. The attributes are standard Amazon Connect attributes.
+   * using an attribute map. The attributes are standard Connect Customer attributes.
    * They can be accessed in flows.</p> <ul> <li> <p>Attribute keys can include only
    * alphanumeric, <code>-</code>, and <code>_</code>.</p> </li> <li> <p>This field
    * can be used to show channel subtype, such as <code>connect:SMS</code> and
@@ -119,7 +119,7 @@ class StartOutboundChatContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>A custom key-value pair using an attribute map. The attributes are standard
-   * Amazon Connect attributes, and can be accessed in flows just like any other
+   * Connect Customer attributes, and can be accessed in flows just like any other
    * contact attributes.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
@@ -145,10 +145,10 @@ class StartOutboundChatContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The identifier of the flow for the call. To see the ContactFlowId in the
-   * Amazon Connect console user interface, on the navigation menu go to <b>Routing,
-   * Contact Flows</b>. Choose the flow. On the flow page, under the name of the
-   * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
-   * last part of the ARN, shown here in bold:</p> <ul> <li>
+   * Connect Customer console user interface, on the navigation menu go to
+   * <b>Routing, Contact Flows</b>. Choose the flow. On the flow page, under the name
+   * of the flow, choose <b>Show additional flow information</b>. The ContactFlowId
+   * is the last part of the ARN, shown here in bold:</p> <ul> <li>
    * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>123ec456-a007-89c0-1234-xxxxxxxxxxxx</b>
    * </p> </li> </ul>
    */
@@ -234,7 +234,7 @@ class StartOutboundChatContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The unique identifier for an Amazon Connect contact. This identifier is
+   * <p>The unique identifier for an Connect Customer contact. This identifier is
    * related to the contact starting.</p>
    */
   inline const Aws::String& GetRelatedContactId() const { return m_relatedContactId; }

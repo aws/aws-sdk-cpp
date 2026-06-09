@@ -14,6 +14,7 @@
 #include <aws/datazone/model/RedshiftPropertiesPatch.h>
 #include <aws/datazone/model/S3PropertiesPatch.h>
 #include <aws/datazone/model/SparkEmrPropertiesPatch.h>
+#include <aws/datazone/model/VpcPropertiesPatch.h>
 
 #include <utility>
 
@@ -200,6 +201,24 @@ class ConnectionPropertiesPatch {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The VPC properties of a connection properties patch.</p>
+   */
+  inline const VpcPropertiesPatch& GetVpcProperties() const { return m_vpcProperties; }
+  inline bool VpcPropertiesHasBeenSet() const { return m_vpcPropertiesHasBeenSet; }
+  template <typename VpcPropertiesT = VpcPropertiesPatch>
+  void SetVpcProperties(VpcPropertiesT&& value) {
+    m_vpcPropertiesHasBeenSet = true;
+    m_vpcProperties = std::forward<VpcPropertiesT>(value);
+  }
+  template <typename VpcPropertiesT = VpcPropertiesPatch>
+  ConnectionPropertiesPatch& WithVpcProperties(VpcPropertiesT&& value) {
+    SetVpcProperties(std::forward<VpcPropertiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AthenaPropertiesPatch m_athenaProperties;
 
@@ -218,6 +237,8 @@ class ConnectionPropertiesPatch {
   MlflowPropertiesPatch m_mlflowProperties;
 
   LakehousePropertiesPatch m_lakehouseProperties;
+
+  VpcPropertiesPatch m_vpcProperties;
   bool m_athenaPropertiesHasBeenSet = false;
   bool m_gluePropertiesHasBeenSet = false;
   bool m_iamPropertiesHasBeenSet = false;
@@ -227,6 +248,7 @@ class ConnectionPropertiesPatch {
   bool m_amazonQPropertiesHasBeenSet = false;
   bool m_mlflowPropertiesHasBeenSet = false;
   bool m_lakehousePropertiesHasBeenSet = false;
+  bool m_vpcPropertiesHasBeenSet = false;
 };
 
 }  // namespace Model

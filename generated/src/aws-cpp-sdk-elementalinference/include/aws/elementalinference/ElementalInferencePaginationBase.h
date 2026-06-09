@@ -7,6 +7,7 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/elementalinference/model/ListDictionariesPaginationTraits.h>
 #include <aws/elementalinference/model/ListFeedsPaginationTraits.h>
 
 #include <memory>
@@ -17,6 +18,18 @@ namespace ElementalInference {
 template <typename DerivedClient>
 class ElementalInferencePaginationBase {
  public:
+  /**
+   * Create a paginator for ListDictionaries operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDictionariesRequest,
+                                    Pagination::ListDictionariesPaginationTraits<DerivedClient>>
+  ListDictionariesPaginator(const Model::ListDictionariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDictionariesRequest,
+                                             Pagination::ListDictionariesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                          request};
+  }
+
   /**
    * Create a paginator for ListFeeds operation
    */

@@ -20,6 +20,7 @@ static const int PRE_SCALE_UP_HASH = HashingUtils::HashString("PRE_SCALE_UP");
 static const int POST_SCALE_UP_HASH = HashingUtils::HashString("POST_SCALE_UP");
 static const int TEST_TRAFFIC_SHIFT_HASH = HashingUtils::HashString("TEST_TRAFFIC_SHIFT");
 static const int POST_TEST_TRAFFIC_SHIFT_HASH = HashingUtils::HashString("POST_TEST_TRAFFIC_SHIFT");
+static const int PRE_PRODUCTION_TRAFFIC_SHIFT_HASH = HashingUtils::HashString("PRE_PRODUCTION_TRAFFIC_SHIFT");
 static const int PRODUCTION_TRAFFIC_SHIFT_HASH = HashingUtils::HashString("PRODUCTION_TRAFFIC_SHIFT");
 static const int POST_PRODUCTION_TRAFFIC_SHIFT_HASH = HashingUtils::HashString("POST_PRODUCTION_TRAFFIC_SHIFT");
 
@@ -35,6 +36,8 @@ DeploymentLifecycleHookStage GetDeploymentLifecycleHookStageForName(const Aws::S
     return DeploymentLifecycleHookStage::TEST_TRAFFIC_SHIFT;
   } else if (hashCode == POST_TEST_TRAFFIC_SHIFT_HASH) {
     return DeploymentLifecycleHookStage::POST_TEST_TRAFFIC_SHIFT;
+  } else if (hashCode == PRE_PRODUCTION_TRAFFIC_SHIFT_HASH) {
+    return DeploymentLifecycleHookStage::PRE_PRODUCTION_TRAFFIC_SHIFT;
   } else if (hashCode == PRODUCTION_TRAFFIC_SHIFT_HASH) {
     return DeploymentLifecycleHookStage::PRODUCTION_TRAFFIC_SHIFT;
   } else if (hashCode == POST_PRODUCTION_TRAFFIC_SHIFT_HASH) {
@@ -63,6 +66,8 @@ Aws::String GetNameForDeploymentLifecycleHookStage(DeploymentLifecycleHookStage 
       return "TEST_TRAFFIC_SHIFT";
     case DeploymentLifecycleHookStage::POST_TEST_TRAFFIC_SHIFT:
       return "POST_TEST_TRAFFIC_SHIFT";
+    case DeploymentLifecycleHookStage::PRE_PRODUCTION_TRAFFIC_SHIFT:
+      return "PRE_PRODUCTION_TRAFFIC_SHIFT";
     case DeploymentLifecycleHookStage::PRODUCTION_TRAFFIC_SHIFT:
       return "PRODUCTION_TRAFFIC_SHIFT";
     case DeploymentLifecycleHookStage::POST_PRODUCTION_TRAFFIC_SHIFT:

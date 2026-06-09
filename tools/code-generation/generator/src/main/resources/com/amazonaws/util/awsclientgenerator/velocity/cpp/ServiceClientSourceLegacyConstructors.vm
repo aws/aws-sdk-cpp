@@ -57,7 +57,7 @@
 #set($AdditionalServiceSpecificConfigLoadString = "Load${metadata.classNamePrefix}SpecificConfig(config);")
 #end
 #set($clientConfigurationNamespace = "Aws::Client")
-#set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig)")
+#set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig())")
 #set($simpleCredentialsProviderParam = "Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)")
 #set($hasEventStreamInputOperation = $serviceModel.hasStreamingRequestShapes())
 #set($signerToMake = "AWSAuthV4Signer")

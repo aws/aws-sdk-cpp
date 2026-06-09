@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
 #include <aws/controlcatalog/model/ImplementationFilter.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -53,9 +55,37 @@ class ControlFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A filter that narrows the results to controls that govern a specific
+   * provider's resources.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetGovernedProviders() const { return m_governedProviders; }
+  inline bool GovernedProvidersHasBeenSet() const { return m_governedProvidersHasBeenSet; }
+  template <typename GovernedProvidersT = Aws::Vector<Aws::String>>
+  void SetGovernedProviders(GovernedProvidersT&& value) {
+    m_governedProvidersHasBeenSet = true;
+    m_governedProviders = std::forward<GovernedProvidersT>(value);
+  }
+  template <typename GovernedProvidersT = Aws::Vector<Aws::String>>
+  ControlFilter& WithGovernedProviders(GovernedProvidersT&& value) {
+    SetGovernedProviders(std::forward<GovernedProvidersT>(value));
+    return *this;
+  }
+  template <typename GovernedProvidersT = Aws::String>
+  ControlFilter& AddGovernedProviders(GovernedProvidersT&& value) {
+    m_governedProvidersHasBeenSet = true;
+    m_governedProviders.emplace_back(std::forward<GovernedProvidersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ImplementationFilter m_implementations;
+
+  Aws::Vector<Aws::String> m_governedProviders;
   bool m_implementationsHasBeenSet = false;
+  bool m_governedProvidersHasBeenSet = false;
 };
 
 }  // namespace Model

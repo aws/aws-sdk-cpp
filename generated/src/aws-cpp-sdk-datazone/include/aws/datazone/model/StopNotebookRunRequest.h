@@ -31,8 +31,8 @@ class StopNotebookRunRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon DataZone domain in which the notebook run is
-   * stopped.</p>
+   * <p>The identifier of the Amazon SageMaker Unified Studio domain in which the
+   * notebook run is stopped.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
   inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }

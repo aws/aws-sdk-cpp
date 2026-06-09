@@ -18,13 +18,13 @@ namespace Model {
 Jurisdiction::Jurisdiction(JsonView jsonValue) { *this = jsonValue; }
 
 Jurisdiction& Jurisdiction::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("countryCode")) {
-    m_countryCode = jsonValue.GetString("countryCode");
-    m_countryCodeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("stateOrRegion")) {
     m_stateOrRegion = jsonValue.GetString("stateOrRegion");
     m_stateOrRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("countryCode")) {
+    m_countryCode = jsonValue.GetString("countryCode");
+    m_countryCodeHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ Jurisdiction& Jurisdiction::operator=(JsonView jsonValue) {
 JsonValue Jurisdiction::Jsonize() const {
   JsonValue payload;
 
-  if (m_countryCodeHasBeenSet) {
-    payload.WithString("countryCode", m_countryCode);
-  }
-
   if (m_stateOrRegionHasBeenSet) {
     payload.WithString("stateOrRegion", m_stateOrRegion);
+  }
+
+  if (m_countryCodeHasBeenSet) {
+    payload.WithString("countryCode", m_countryCode);
   }
 
   return payload;

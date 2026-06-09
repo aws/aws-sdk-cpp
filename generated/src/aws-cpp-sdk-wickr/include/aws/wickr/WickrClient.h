@@ -57,7 +57,18 @@ namespace Wickr {
  * <li> <p>Service errors are indicated by HTTP Status Code class of 5xx</p> </li>
  * </ol> <p>In this reference guide, the documentation for each API has an Errors
  * section that includes a brief discussion about HTTP status codes. We recommend
- * looking there as part of your investigation when you get an error.</p>
+ * looking there as part of your investigation when you get an error.</p> <p>
+ * <i>Regional availability</i> </p> <p>The Amazon Web Services Wickr API is
+ * available in several Amazon Web Services Regions and it provides an endpoint for
+ * each of these Regions. For a list of all the Regions and endpoints where the API
+ * is currently available, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/wickr.html">Amazon Web
+ * Services Wickr endpoints and quotas</a> in the <i>Amazon Web Services General
+ * Reference Guide</i>.</p>  <p>Wickr API endpoints are region-specific and
+ * include a region code in the format:
+ * <code>https://admin.wickr.[regioncode].amazonaws.com</code>. For example, for
+ * the US East (N.Virginia) <code>us-east-1</code>, the API endpoint is
+ * <code>https://admin.wickr.us-east-1.amazonaws.com</code>.</p>
  */
 class AWS_WICKR_API WickrClient : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<WickrClient>,

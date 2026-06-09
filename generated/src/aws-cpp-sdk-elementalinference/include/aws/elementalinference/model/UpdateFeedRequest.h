@@ -33,7 +33,7 @@ class UpdateFeedRequest : public ElementalInferenceRequest {
   ///@{
   /**
    * <p>Required. You can specify the existing name (to leave it unchanged) or a new
-   * name.</p>
+   * name. </p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

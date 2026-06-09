@@ -49,7 +49,7 @@ class UpdatePhoneNumberRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+   * <p>The Amazon Resource Name (ARN) for Connect Customer instances or traffic
    * distribution groups that phone number inbound traffic is routed through. You
    * must enter <code>InstanceId</code> or <code>TargetArn</code>. </p>
    */
@@ -69,8 +69,8 @@ class UpdatePhoneNumberRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
-   * to. You can <a
+   * <p>The identifier of the Connect Customer instance that phone numbers are
+   * claimed to. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You must
    * enter <code>InstanceId</code> or <code>TargetArn</code>. </p>

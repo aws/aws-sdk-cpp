@@ -19,6 +19,12 @@ Aws::String ListSuppressedDestinationsRequest::SerializePayload() const { return
 
 void ListSuppressedDestinationsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
+  if (m_tenantNameHasBeenSet) {
+    ss << m_tenantName;
+    uri.AddQueryStringParameter("TenantName", ss.str());
+    ss.str("");
+  }
+
   if (m_reasonsHasBeenSet) {
     for (const auto& item : m_reasons) {
       ss << SuppressionListReasonMapper::GetNameForSuppressionListReason(item);

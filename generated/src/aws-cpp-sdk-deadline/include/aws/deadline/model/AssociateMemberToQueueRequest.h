@@ -138,6 +138,25 @@ class AssociateMemberToQueueRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Region of the IAM Identity Center instance. If not provided, the service
+   * defaults to the Region of the farm.</p>
+   */
+  inline const Aws::String& GetIdentityCenterRegion() const { return m_identityCenterRegion; }
+  inline bool IdentityCenterRegionHasBeenSet() const { return m_identityCenterRegionHasBeenSet; }
+  template <typename IdentityCenterRegionT = Aws::String>
+  void SetIdentityCenterRegion(IdentityCenterRegionT&& value) {
+    m_identityCenterRegionHasBeenSet = true;
+    m_identityCenterRegion = std::forward<IdentityCenterRegionT>(value);
+  }
+  template <typename IdentityCenterRegionT = Aws::String>
+  AssociateMemberToQueueRequest& WithIdentityCenterRegion(IdentityCenterRegionT&& value) {
+    SetIdentityCenterRegion(std::forward<IdentityCenterRegionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
 
@@ -150,12 +169,15 @@ class AssociateMemberToQueueRequest : public DeadlineRequest {
   MembershipLevel m_membershipLevel{MembershipLevel::NOT_SET};
 
   Aws::String m_principalId;
+
+  Aws::String m_identityCenterRegion;
   bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
   bool m_principalTypeHasBeenSet = false;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_membershipLevelHasBeenSet = false;
   bool m_principalIdHasBeenSet = false;
+  bool m_identityCenterRegionHasBeenSet = false;
 };
 
 }  // namespace Model

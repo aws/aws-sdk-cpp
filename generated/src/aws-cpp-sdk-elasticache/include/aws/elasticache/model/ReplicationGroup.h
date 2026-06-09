@@ -12,6 +12,8 @@
 #include <aws/elasticache/model/AutomaticFailoverStatus.h>
 #include <aws/elasticache/model/ClusterMode.h>
 #include <aws/elasticache/model/DataTieringStatus.h>
+#include <aws/elasticache/model/Durability.h>
+#include <aws/elasticache/model/EffectiveDurability.h>
 #include <aws/elasticache/model/Endpoint.h>
 #include <aws/elasticache/model/GlobalReplicationGroupInfo.h>
 #include <aws/elasticache/model/IpDiscovery.h>
@@ -20,6 +22,7 @@
 #include <aws/elasticache/model/NetworkType.h>
 #include <aws/elasticache/model/NodeGroup.h>
 #include <aws/elasticache/model/ReplicationGroupPendingModifiedValues.h>
+#include <aws/elasticache/model/StorageEncryptionType.h>
 #include <aws/elasticache/model/TransitEncryptionMode.h>
 
 #include <utility>
@@ -404,13 +407,13 @@ class ReplicationGroup {
 
   ///@{
   /**
-   * <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
-   * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
-   * cluster is created. To enable encryption at-rest on a cluster you must set
-   * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
-   * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-   * group in an Amazon VPC using Redis OSS version <code>3.2.6</code>,
-   * <code>4.x</code> or later.</p> <p>Default: <code>false</code> </p>
+   * <p>A flag that enables encryption at-rest on the cluster when set to
+   * <code>true</code>. In some cases, encryption at-rest may be enabled even when
+   * this value is false. Use <code>StorageEncryptionType</code> to view the
+   * effective encryption state of a cluster.</p> <p>You cannot modify the value of
+   * <code>AtRestEncryptionEnabled</code> after the cluster is created.</p>
+   * <p>Default: <code>true</code> when using Valkey, <code>false</code> when using
+   * Redis OSS</p>
    */
   inline bool GetAtRestEncryptionEnabled() const { return m_atRestEncryptionEnabled; }
   inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
@@ -462,6 +465,25 @@ class ReplicationGroup {
   template <typename KmsKeyIdT = Aws::String>
   ReplicationGroup& WithKmsKeyId(KmsKeyIdT&& value) {
     SetKmsKeyId(std::forward<KmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates the type of encryption for data stored at rest in the replication
+   * group. The value is <code>none</code> if at-rest encryption is not enabled,
+   * <code>sse-elasticache</code> if an ElastiCache service-managed key is used, or
+   * <code>sse-kms</code> if a customer-managed KMS key is used.</p>
+   */
+  inline StorageEncryptionType GetStorageEncryptionType() const { return m_storageEncryptionType; }
+  inline bool StorageEncryptionTypeHasBeenSet() const { return m_storageEncryptionTypeHasBeenSet; }
+  inline void SetStorageEncryptionType(StorageEncryptionType value) {
+    m_storageEncryptionTypeHasBeenSet = true;
+    m_storageEncryptionType = value;
+  }
+  inline ReplicationGroup& WithStorageEncryptionType(StorageEncryptionType value) {
+    SetStorageEncryptionType(value);
     return *this;
   }
   ///@}
@@ -684,6 +706,44 @@ class ReplicationGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The durability setting of the replication group. For more information, see <a
+   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+   */
+  inline Durability GetDurability() const { return m_durability; }
+  inline bool DurabilityHasBeenSet() const { return m_durabilityHasBeenSet; }
+  inline void SetDurability(Durability value) {
+    m_durabilityHasBeenSet = true;
+    m_durability = value;
+  }
+  inline ReplicationGroup& WithDurability(Durability value) {
+    SetDurability(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The effective durability of the replication group. When
+   * <code>Durability</code> is set to <code>default</code>, the service resolves the
+   * actual durability based on the engine version, cluster mode, and other
+   * parameters. This field reflects the resolved value. For more information, see <a
+   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ConfiguringDurability.html">Configuring
+   * Durability</a>.</p>
+   */
+  inline EffectiveDurability GetEffectiveDurability() const { return m_effectiveDurability; }
+  inline bool EffectiveDurabilityHasBeenSet() const { return m_effectiveDurabilityHasBeenSet; }
+  inline void SetEffectiveDurability(EffectiveDurability value) {
+    m_effectiveDurabilityHasBeenSet = true;
+    m_effectiveDurability = value;
+  }
+  inline ReplicationGroup& WithEffectiveDurability(EffectiveDurability value) {
+    SetEffectiveDurability(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_replicationGroupId;
 
@@ -727,6 +787,8 @@ class ReplicationGroup {
 
   Aws::String m_kmsKeyId;
 
+  StorageEncryptionType m_storageEncryptionType{StorageEncryptionType::NOT_SET};
+
   Aws::String m_aRN;
 
   Aws::Vector<Aws::String> m_userGroupIds;
@@ -748,6 +810,10 @@ class ReplicationGroup {
   ClusterMode m_clusterMode{ClusterMode::NOT_SET};
 
   Aws::String m_engine;
+
+  Durability m_durability{Durability::NOT_SET};
+
+  EffectiveDurability m_effectiveDurability{EffectiveDurability::NOT_SET};
   bool m_replicationGroupIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_globalReplicationGroupInfoHasBeenSet = false;
@@ -769,6 +835,7 @@ class ReplicationGroup {
   bool m_atRestEncryptionEnabledHasBeenSet = false;
   bool m_memberClustersOutpostArnsHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
+  bool m_storageEncryptionTypeHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
   bool m_userGroupIdsHasBeenSet = false;
   bool m_logDeliveryConfigurationsHasBeenSet = false;
@@ -780,6 +847,8 @@ class ReplicationGroup {
   bool m_transitEncryptionModeHasBeenSet = false;
   bool m_clusterModeHasBeenSet = false;
   bool m_engineHasBeenSet = false;
+  bool m_durabilityHasBeenSet = false;
+  bool m_effectiveDurabilityHasBeenSet = false;
 };
 
 }  // namespace Model

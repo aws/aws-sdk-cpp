@@ -329,6 +329,7 @@
 #include <aws/rekognition/RekognitionClient.h>
 #include <aws/repostspace/RepostspaceClient.h>
 #include <aws/resiliencehub/ResilienceHubClient.h>
+#include <aws/resiliencehubv2/Resiliencehubv2Client.h>
 #include <aws/resource-explorer-2/ResourceExplorer2Client.h>
 #include <aws/resource-groups/ResourceGroupsClient.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIClient.h>
@@ -358,6 +359,7 @@
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2Client.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeClient.h>
 #include <aws/sagemaker/SageMakerClient.h>
+#include <aws/sagemakerjobruntime/SagemakerJobRuntimeClient.h>
 #include <aws/savingsplans/SavingsPlansClient.h>
 #include <aws/scheduler/SchedulerClient.h>
 #include <aws/schemas/SchemasClient.h>

@@ -30,6 +30,10 @@ DeleteCollectionDetail& DeleteCollectionDetail::operator=(JsonView jsonValue) {
     m_status = CollectionStatusMapper::GetCollectionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("deletionProtection")) {
+    m_deletionProtection = DeletionProtectionMapper::GetDeletionProtectionForName(jsonValue.GetString("deletionProtection"));
+    m_deletionProtectionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue DeleteCollectionDetail::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", CollectionStatusMapper::GetNameForCollectionStatus(m_status));
+  }
+
+  if (m_deletionProtectionHasBeenSet) {
+    payload.WithString("deletionProtection", DeletionProtectionMapper::GetNameForDeletionProtection(m_deletionProtection));
   }
 
   return payload;

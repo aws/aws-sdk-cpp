@@ -50,7 +50,7 @@ class UpdateContactAttributesRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -70,9 +70,9 @@ class UpdateContactAttributesRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
-   * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
-   * across all attributes for a contact. Attribute keys can include only
+   * <p>The Connect Customer attributes. These attributes can be accessed in flows
+   * just like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8
+   * bytes across all attributes for a contact. Attribute keys can include only
    * alphanumeric, dash, and underscore characters.</p> <p>In the <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Set
    * contact attributes</a> block, when the attributes for a contact exceed 32 KB,
@@ -84,7 +84,7 @@ class UpdateContactAttributesRequest : public ConnectRequest {
    * aren't needlessly persisting the 32 KB of information from one flow to another.
    * For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
-   * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+   * block: Set contact attributes</a> in the <i>Connect Customer Administrator
    * Guide</i>. </p> </li> </ul>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }

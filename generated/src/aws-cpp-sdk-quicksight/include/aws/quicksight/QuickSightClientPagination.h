@@ -27,7 +27,9 @@
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsForUserPaginationTraits.h>
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsPaginationTraits.h>
 #include <aws/quicksight/model/ListIngestionsPaginationTraits.h>
+#include <aws/quicksight/model/ListKnowledgeBasesPaginationTraits.h>
 #include <aws/quicksight/model/ListNamespacesPaginationTraits.h>
+#include <aws/quicksight/model/ListOAuthClientApplicationsPaginationTraits.h>
 #include <aws/quicksight/model/ListRoleMembershipsPaginationTraits.h>
 #include <aws/quicksight/model/ListTemplateAliasesPaginationTraits.h>
 #include <aws/quicksight/model/ListTemplateVersionsPaginationTraits.h>
@@ -46,6 +48,7 @@
 #include <aws/quicksight/model/SearchFlowsPaginationTraits.h>
 #include <aws/quicksight/model/SearchFoldersPaginationTraits.h>
 #include <aws/quicksight/model/SearchGroupsPaginationTraits.h>
+#include <aws/quicksight/model/SearchKnowledgeBasesPaginationTraits.h>
 #include <aws/quicksight/model/SearchTopicsPaginationTraits.h>
 
 namespace Aws {
@@ -102,8 +105,13 @@ using ListIAMPolicyAssignmentsForUserPaginator =
                                       Pagination::ListIAMPolicyAssignmentsForUserPaginationTraits<QuickSightClient>>;
 using ListIngestionsPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListIngestionsRequest,
                                                                   Pagination::ListIngestionsPaginationTraits<QuickSightClient>>;
+using ListKnowledgeBasesPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListKnowledgeBasesRequest,
+                                                                      Pagination::ListKnowledgeBasesPaginationTraits<QuickSightClient>>;
 using ListNamespacesPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListNamespacesRequest,
                                                                   Pagination::ListNamespacesPaginationTraits<QuickSightClient>>;
+using ListOAuthClientApplicationsPaginator =
+    Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListOAuthClientApplicationsRequest,
+                                      Pagination::ListOAuthClientApplicationsPaginationTraits<QuickSightClient>>;
 using ListRoleMembershipsPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListRoleMembershipsRequest,
                                                                        Pagination::ListRoleMembershipsPaginationTraits<QuickSightClient>>;
 using ListTemplateAliasesPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListTemplateAliasesRequest,
@@ -141,6 +149,8 @@ using SearchFoldersPaginator = Aws::Utils::Pagination::Paginator<QuickSightClien
                                                                  Pagination::SearchFoldersPaginationTraits<QuickSightClient>>;
 using SearchGroupsPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::SearchGroupsRequest,
                                                                 Pagination::SearchGroupsPaginationTraits<QuickSightClient>>;
+using SearchKnowledgeBasesPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::SearchKnowledgeBasesRequest,
+                                                                        Pagination::SearchKnowledgeBasesPaginationTraits<QuickSightClient>>;
 using SearchTopicsPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::SearchTopicsRequest,
                                                                 Pagination::SearchTopicsPaginationTraits<QuickSightClient>>;
 

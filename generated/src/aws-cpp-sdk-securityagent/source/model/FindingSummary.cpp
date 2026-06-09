@@ -34,6 +34,14 @@ FindingSummary& FindingSummary::operator=(JsonView jsonValue) {
     m_pentestJobId = jsonValue.GetString("pentestJobId");
     m_pentestJobIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("codeReviewId")) {
+    m_codeReviewId = jsonValue.GetString("codeReviewId");
+    m_codeReviewIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("codeReviewJobId")) {
+    m_codeReviewJobId = jsonValue.GetString("codeReviewJobId");
+    m_codeReviewJobIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
@@ -82,6 +90,14 @@ JsonValue FindingSummary::Jsonize() const {
 
   if (m_pentestJobIdHasBeenSet) {
     payload.WithString("pentestJobId", m_pentestJobId);
+  }
+
+  if (m_codeReviewIdHasBeenSet) {
+    payload.WithString("codeReviewId", m_codeReviewId);
+  }
+
+  if (m_codeReviewJobIdHasBeenSet) {
+    payload.WithString("codeReviewJobId", m_codeReviewJobId);
   }
 
   if (m_nameHasBeenSet) {

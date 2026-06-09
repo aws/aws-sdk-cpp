@@ -39,6 +39,10 @@ ModelPackageGroupSummary& ModelPackageGroupSummary::operator=(JsonView jsonValue
         ModelPackageGroupStatusMapper::GetModelPackageGroupStatusForName(jsonValue.GetString("ModelPackageGroupStatus"));
     m_modelPackageGroupStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ManagedConfiguration")) {
+    m_managedConfiguration = jsonValue.GetObject("ManagedConfiguration");
+    m_managedConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -64,6 +68,10 @@ JsonValue ModelPackageGroupSummary::Jsonize() const {
   if (m_modelPackageGroupStatusHasBeenSet) {
     payload.WithString("ModelPackageGroupStatus",
                        ModelPackageGroupStatusMapper::GetNameForModelPackageGroupStatus(m_modelPackageGroupStatus));
+  }
+
+  if (m_managedConfigurationHasBeenSet) {
+    payload.WithObject("ManagedConfiguration", m_managedConfiguration.Jsonize());
   }
 
   return payload;

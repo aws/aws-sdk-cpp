@@ -106,6 +106,44 @@ class RegisterServiceRequest : public DevOpsAgentRequest {
 
   ///@{
   /**
+   * <p>The name of the private connection to use for API calls (target URL) only.
+   * Cannot be specified when privateConnectionName is provided.</p>
+   */
+  inline const Aws::String& GetTargetUrlPrivateConnectionName() const { return m_targetUrlPrivateConnectionName; }
+  inline bool TargetUrlPrivateConnectionNameHasBeenSet() const { return m_targetUrlPrivateConnectionNameHasBeenSet; }
+  template <typename TargetUrlPrivateConnectionNameT = Aws::String>
+  void SetTargetUrlPrivateConnectionName(TargetUrlPrivateConnectionNameT&& value) {
+    m_targetUrlPrivateConnectionNameHasBeenSet = true;
+    m_targetUrlPrivateConnectionName = std::forward<TargetUrlPrivateConnectionNameT>(value);
+  }
+  template <typename TargetUrlPrivateConnectionNameT = Aws::String>
+  RegisterServiceRequest& WithTargetUrlPrivateConnectionName(TargetUrlPrivateConnectionNameT&& value) {
+    SetTargetUrlPrivateConnectionName(std::forward<TargetUrlPrivateConnectionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the private connection to use for OAuth token exchange requests
+   * only. Cannot be specified when privateConnectionName is provided.</p>
+   */
+  inline const Aws::String& GetExchangeUrlPrivateConnectionName() const { return m_exchangeUrlPrivateConnectionName; }
+  inline bool ExchangeUrlPrivateConnectionNameHasBeenSet() const { return m_exchangeUrlPrivateConnectionNameHasBeenSet; }
+  template <typename ExchangeUrlPrivateConnectionNameT = Aws::String>
+  void SetExchangeUrlPrivateConnectionName(ExchangeUrlPrivateConnectionNameT&& value) {
+    m_exchangeUrlPrivateConnectionNameHasBeenSet = true;
+    m_exchangeUrlPrivateConnectionName = std::forward<ExchangeUrlPrivateConnectionNameT>(value);
+  }
+  template <typename ExchangeUrlPrivateConnectionNameT = Aws::String>
+  RegisterServiceRequest& WithExchangeUrlPrivateConnectionName(ExchangeUrlPrivateConnectionNameT&& value) {
+    SetExchangeUrlPrivateConnectionName(std::forward<ExchangeUrlPrivateConnectionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The display name for the service registration.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -154,6 +192,10 @@ class RegisterServiceRequest : public DevOpsAgentRequest {
 
   Aws::String m_privateConnectionName;
 
+  Aws::String m_targetUrlPrivateConnectionName;
+
+  Aws::String m_exchangeUrlPrivateConnectionName;
+
   Aws::String m_name;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -161,6 +203,8 @@ class RegisterServiceRequest : public DevOpsAgentRequest {
   bool m_serviceDetailsHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_privateConnectionNameHasBeenSet = false;
+  bool m_targetUrlPrivateConnectionNameHasBeenSet = false;
+  bool m_exchangeUrlPrivateConnectionNameHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };

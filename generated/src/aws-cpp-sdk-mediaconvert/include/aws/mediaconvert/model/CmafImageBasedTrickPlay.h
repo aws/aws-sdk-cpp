@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class CmafImageBasedTrickPlay { NOT_SET, NONE, THUMBNAIL, THUMBNAIL_AND_FULLFRAME, ADVANCED };
+enum class CmafImageBasedTrickPlay { NOT_SET, NONE, THUMBNAIL, THUMBNAIL_AND_FULLFRAME, ADVANCED, VARIANTS };
 
 namespace CmafImageBasedTrickPlayMapper {
 AWS_MEDIACONVERT_API CmafImageBasedTrickPlay GetCmafImageBasedTrickPlayForName(const Aws::String& name);

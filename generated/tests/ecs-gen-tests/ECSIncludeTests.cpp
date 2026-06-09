@@ -69,6 +69,8 @@
 #include <aws/ecs/model/ContainerOverride.h>
 #include <aws/ecs/model/ContainerRestartPolicy.h>
 #include <aws/ecs/model/ContainerStateChange.h>
+#include <aws/ecs/model/ContinueServiceDeploymentRequest.h>
+#include <aws/ecs/model/ContinueServiceDeploymentResult.h>
 #include <aws/ecs/model/CpuManufacturer.h>
 #include <aws/ecs/model/CreateCapacityProviderRequest.h>
 #include <aws/ecs/model/CreateCapacityProviderResult.h>
@@ -139,7 +141,12 @@
 #include <aws/ecs/model/DeploymentControllerType.h>
 #include <aws/ecs/model/DeploymentEphemeralStorage.h>
 #include <aws/ecs/model/DeploymentLifecycleHook.h>
+#include <aws/ecs/model/DeploymentLifecycleHookAction.h>
+#include <aws/ecs/model/DeploymentLifecycleHookDetail.h>
 #include <aws/ecs/model/DeploymentLifecycleHookStage.h>
+#include <aws/ecs/model/DeploymentLifecycleHookStatus.h>
+#include <aws/ecs/model/DeploymentLifecycleHookTargetType.h>
+#include <aws/ecs/model/DeploymentLifecycleHookTimeoutConfiguration.h>
 #include <aws/ecs/model/DeploymentRolloutState.h>
 #include <aws/ecs/model/DeploymentStrategy.h>
 #include <aws/ecs/model/DeregisterContainerInstanceRequest.h>

@@ -25,6 +25,8 @@
 #include <aws/monitoring/model/AnomalyDetectorConfiguration.h>
 #include <aws/monitoring/model/AnomalyDetectorStateValue.h>
 #include <aws/monitoring/model/AnomalyDetectorType.h>
+#include <aws/monitoring/model/AssociateDatasetKmsKeyRequest.h>
+#include <aws/monitoring/model/AssociateDatasetKmsKeyResult.h>
 #include <aws/monitoring/model/ComparisonOperator.h>
 #include <aws/monitoring/model/CompositeAlarm.h>
 #include <aws/monitoring/model/DashboardEntry.h>
@@ -58,6 +60,8 @@
 #include <aws/monitoring/model/DisableAlarmActionsRequest.h>
 #include <aws/monitoring/model/DisableInsightRulesRequest.h>
 #include <aws/monitoring/model/DisableInsightRulesResult.h>
+#include <aws/monitoring/model/DisassociateDatasetKmsKeyRequest.h>
+#include <aws/monitoring/model/DisassociateDatasetKmsKeyResult.h>
 #include <aws/monitoring/model/EnableAlarmActionsRequest.h>
 #include <aws/monitoring/model/EnableInsightRulesRequest.h>
 #include <aws/monitoring/model/EnableInsightRulesResult.h>
@@ -69,6 +73,8 @@
 #include <aws/monitoring/model/GetAlarmMuteRuleResult.h>
 #include <aws/monitoring/model/GetDashboardRequest.h>
 #include <aws/monitoring/model/GetDashboardResult.h>
+#include <aws/monitoring/model/GetDatasetRequest.h>
+#include <aws/monitoring/model/GetDatasetResult.h>
 #include <aws/monitoring/model/GetInsightRuleReportRequest.h>
 #include <aws/monitoring/model/GetInsightRuleReportResult.h>
 #include <aws/monitoring/model/GetMetricDataRequest.h>

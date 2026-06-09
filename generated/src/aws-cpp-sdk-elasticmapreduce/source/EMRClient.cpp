@@ -45,6 +45,8 @@
 #include <aws/elasticmapreduce/model/GetManagedScalingPolicyRequest.h>
 #include <aws/elasticmapreduce/model/GetOnClusterAppUIPresignedURLRequest.h>
 #include <aws/elasticmapreduce/model/GetPersistentAppUIPresignedURLRequest.h>
+#include <aws/elasticmapreduce/model/GetSessionEndpointRequest.h>
+#include <aws/elasticmapreduce/model/GetSessionRequest.h>
 #include <aws/elasticmapreduce/model/GetStudioSessionMappingRequest.h>
 #include <aws/elasticmapreduce/model/ListBootstrapActionsRequest.h>
 #include <aws/elasticmapreduce/model/ListClustersRequest.h>
@@ -54,6 +56,7 @@
 #include <aws/elasticmapreduce/model/ListNotebookExecutionsRequest.h>
 #include <aws/elasticmapreduce/model/ListReleaseLabelsRequest.h>
 #include <aws/elasticmapreduce/model/ListSecurityConfigurationsRequest.h>
+#include <aws/elasticmapreduce/model/ListSessionsRequest.h>
 #include <aws/elasticmapreduce/model/ListStepsRequest.h>
 #include <aws/elasticmapreduce/model/ListStudioSessionMappingsRequest.h>
 #include <aws/elasticmapreduce/model/ListStudiosRequest.h>
@@ -75,8 +78,10 @@
 #include <aws/elasticmapreduce/model/SetUnhealthyNodeReplacementRequest.h>
 #include <aws/elasticmapreduce/model/SetVisibleToAllUsersRequest.h>
 #include <aws/elasticmapreduce/model/StartNotebookExecutionRequest.h>
+#include <aws/elasticmapreduce/model/StartSessionRequest.h>
 #include <aws/elasticmapreduce/model/StopNotebookExecutionRequest.h>
 #include <aws/elasticmapreduce/model/TerminateJobFlowsRequest.h>
+#include <aws/elasticmapreduce/model/TerminateSessionRequest.h>
 #include <aws/elasticmapreduce/model/UpdateStudioRequest.h>
 #include <aws/elasticmapreduce/model/UpdateStudioSessionMappingRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -102,10 +107,10 @@ const char* EMRClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
 EMRClient::EMRClient(const EMR::EMRClientConfiguration& clientConfiguration, std::shared_ptr<EMREndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<EMRErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EMREndpointProvider>(ALLOCATION_TAG)) {
@@ -137,10 +142,10 @@ EMRClient::EMRClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
 /* Legacy constructors due deprecation */
 EMRClient::EMRClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<EMRErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<EMREndpointProvider>(ALLOCATION_TAG)) {
@@ -374,6 +379,17 @@ GetPersistentAppUIPresignedURLOutcome EMRClient::GetPersistentAppUIPresignedURL(
                             : GetPersistentAppUIPresignedURLOutcome(std::move(result.GetError()));
 }
 
+GetSessionOutcome EMRClient::GetSession(const GetSessionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSessionOutcome(result.GetResultWithOwnership()) : GetSessionOutcome(std::move(result.GetError()));
+}
+
+GetSessionEndpointOutcome EMRClient::GetSessionEndpoint(const GetSessionEndpointRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSessionEndpointOutcome(result.GetResultWithOwnership())
+                            : GetSessionEndpointOutcome(std::move(result.GetError()));
+}
+
 GetStudioSessionMappingOutcome EMRClient::GetStudioSessionMapping(const GetStudioSessionMappingRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetStudioSessionMappingOutcome(result.GetResultWithOwnership())
@@ -424,6 +440,11 @@ ListSecurityConfigurationsOutcome EMRClient::ListSecurityConfigurations(const Li
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListSecurityConfigurationsOutcome(result.GetResultWithOwnership())
                             : ListSecurityConfigurationsOutcome(std::move(result.GetError()));
+}
+
+ListSessionsOutcome EMRClient::ListSessions(const ListSessionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSessionsOutcome(result.GetResultWithOwnership()) : ListSessionsOutcome(std::move(result.GetError()));
 }
 
 ListStepsOutcome EMRClient::ListSteps(const ListStepsRequest& request) const {
@@ -549,6 +570,11 @@ StartNotebookExecutionOutcome EMRClient::StartNotebookExecution(const StartNoteb
                             : StartNotebookExecutionOutcome(std::move(result.GetError()));
 }
 
+StartSessionOutcome EMRClient::StartSession(const StartSessionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSessionOutcome(result.GetResultWithOwnership()) : StartSessionOutcome(std::move(result.GetError()));
+}
+
 StopNotebookExecutionOutcome EMRClient::StopNotebookExecution(const StopNotebookExecutionRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StopNotebookExecutionOutcome(result.GetResultWithOwnership())
@@ -559,6 +585,12 @@ TerminateJobFlowsOutcome EMRClient::TerminateJobFlows(const TerminateJobFlowsReq
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? TerminateJobFlowsOutcome(result.GetResultWithOwnership())
                             : TerminateJobFlowsOutcome(std::move(result.GetError()));
+}
+
+TerminateSessionOutcome EMRClient::TerminateSession(const TerminateSessionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateSessionOutcome(result.GetResultWithOwnership())
+                            : TerminateSessionOutcome(std::move(result.GetError()));
 }
 
 UpdateStudioOutcome EMRClient::UpdateStudio(const UpdateStudioRequest& request) const {

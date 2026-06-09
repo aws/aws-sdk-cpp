@@ -22,13 +22,17 @@
 #include <aws/core/NoResult.h>
 #include <aws/dsql/model/CreateClusterRequest.h>
 #include <aws/dsql/model/CreateClusterResult.h>
+#include <aws/dsql/model/CreateStreamResult.h>
 #include <aws/dsql/model/DeleteClusterPolicyResult.h>
 #include <aws/dsql/model/DeleteClusterResult.h>
+#include <aws/dsql/model/DeleteStreamResult.h>
 #include <aws/dsql/model/GetClusterPolicyResult.h>
 #include <aws/dsql/model/GetClusterResult.h>
+#include <aws/dsql/model/GetStreamResult.h>
 #include <aws/dsql/model/GetVpcEndpointServiceNameResult.h>
 #include <aws/dsql/model/ListClustersRequest.h>
 #include <aws/dsql/model/ListClustersResult.h>
+#include <aws/dsql/model/ListStreamsResult.h>
 #include <aws/dsql/model/ListTagsForResourceResult.h>
 #include <aws/dsql/model/PutClusterPolicyResult.h>
 #include <aws/dsql/model/UpdateClusterResult.h>
@@ -66,12 +70,16 @@ using DSQLEndpointProvider = Aws::DSQL::Endpoint::DSQLEndpointProvider;
 namespace Model {
 /* Service model forward declarations required in DSQLClient header */
 class CreateClusterRequest;
+class CreateStreamRequest;
 class DeleteClusterRequest;
 class DeleteClusterPolicyRequest;
+class DeleteStreamRequest;
 class GetClusterRequest;
 class GetClusterPolicyRequest;
+class GetStreamRequest;
 class GetVpcEndpointServiceNameRequest;
 class ListClustersRequest;
+class ListStreamsRequest;
 class ListTagsForResourceRequest;
 class PutClusterPolicyRequest;
 class TagResourceRequest;
@@ -81,12 +89,16 @@ class UpdateClusterRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<CreateClusterResult, DSQLError> CreateClusterOutcome;
+typedef Aws::Utils::Outcome<CreateStreamResult, DSQLError> CreateStreamOutcome;
 typedef Aws::Utils::Outcome<DeleteClusterResult, DSQLError> DeleteClusterOutcome;
 typedef Aws::Utils::Outcome<DeleteClusterPolicyResult, DSQLError> DeleteClusterPolicyOutcome;
+typedef Aws::Utils::Outcome<DeleteStreamResult, DSQLError> DeleteStreamOutcome;
 typedef Aws::Utils::Outcome<GetClusterResult, DSQLError> GetClusterOutcome;
 typedef Aws::Utils::Outcome<GetClusterPolicyResult, DSQLError> GetClusterPolicyOutcome;
+typedef Aws::Utils::Outcome<GetStreamResult, DSQLError> GetStreamOutcome;
 typedef Aws::Utils::Outcome<GetVpcEndpointServiceNameResult, DSQLError> GetVpcEndpointServiceNameOutcome;
 typedef Aws::Utils::Outcome<ListClustersResult, DSQLError> ListClustersOutcome;
+typedef Aws::Utils::Outcome<ListStreamsResult, DSQLError> ListStreamsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, DSQLError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutClusterPolicyResult, DSQLError> PutClusterPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, DSQLError> TagResourceOutcome;
@@ -96,12 +108,16 @@ typedef Aws::Utils::Outcome<UpdateClusterResult, DSQLError> UpdateClusterOutcome
 
 /* Service model Outcome callable definitions */
 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
+typedef std::future<CreateStreamOutcome> CreateStreamOutcomeCallable;
 typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
 typedef std::future<DeleteClusterPolicyOutcome> DeleteClusterPolicyOutcomeCallable;
+typedef std::future<DeleteStreamOutcome> DeleteStreamOutcomeCallable;
 typedef std::future<GetClusterOutcome> GetClusterOutcomeCallable;
 typedef std::future<GetClusterPolicyOutcome> GetClusterPolicyOutcomeCallable;
+typedef std::future<GetStreamOutcome> GetStreamOutcomeCallable;
 typedef std::future<GetVpcEndpointServiceNameOutcome> GetVpcEndpointServiceNameOutcomeCallable;
 typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
+typedef std::future<ListStreamsOutcome> ListStreamsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutClusterPolicyOutcome> PutClusterPolicyOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -116,24 +132,36 @@ class DSQLClient;
 typedef std::function<void(const DSQLClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateClusterResponseReceivedHandler;
+typedef std::function<void(const DSQLClient*, const Model::CreateStreamRequest&, const Model::CreateStreamOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateStreamResponseReceivedHandler;
 typedef std::function<void(const DSQLClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteClusterResponseReceivedHandler;
 typedef std::function<void(const DSQLClient*, const Model::DeleteClusterPolicyRequest&, const Model::DeleteClusterPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteClusterPolicyResponseReceivedHandler;
+typedef std::function<void(const DSQLClient*, const Model::DeleteStreamRequest&, const Model::DeleteStreamOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteStreamResponseReceivedHandler;
 typedef std::function<void(const DSQLClient*, const Model::GetClusterRequest&, const Model::GetClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetClusterResponseReceivedHandler;
 typedef std::function<void(const DSQLClient*, const Model::GetClusterPolicyRequest&, const Model::GetClusterPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetClusterPolicyResponseReceivedHandler;
+typedef std::function<void(const DSQLClient*, const Model::GetStreamRequest&, const Model::GetStreamOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetStreamResponseReceivedHandler;
 typedef std::function<void(const DSQLClient*, const Model::GetVpcEndpointServiceNameRequest&,
                            const Model::GetVpcEndpointServiceNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetVpcEndpointServiceNameResponseReceivedHandler;
 typedef std::function<void(const DSQLClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListClustersResponseReceivedHandler;
+typedef std::function<void(const DSQLClient*, const Model::ListStreamsRequest&, const Model::ListStreamsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListStreamsResponseReceivedHandler;
 typedef std::function<void(const DSQLClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;

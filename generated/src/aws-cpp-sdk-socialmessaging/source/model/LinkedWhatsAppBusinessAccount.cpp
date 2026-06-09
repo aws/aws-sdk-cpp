@@ -49,6 +49,10 @@ LinkedWhatsAppBusinessAccount& LinkedWhatsAppBusinessAccount::operator=(JsonView
     }
     m_eventDestinationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("marketingMessagesOnboardingStatus")) {
+    m_marketingMessagesOnboardingStatus = jsonValue.GetString("marketingMessagesOnboardingStatus");
+    m_marketingMessagesOnboardingStatusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("phoneNumbers")) {
     Aws::Utils::Array<JsonView> phoneNumbersJsonList = jsonValue.GetArray("phoneNumbers");
     for (unsigned phoneNumbersIndex = 0; phoneNumbersIndex < phoneNumbersJsonList.GetLength(); ++phoneNumbersIndex) {
@@ -92,6 +96,10 @@ JsonValue LinkedWhatsAppBusinessAccount::Jsonize() const {
       eventDestinationsJsonList[eventDestinationsIndex].AsObject(m_eventDestinations[eventDestinationsIndex].Jsonize());
     }
     payload.WithArray("eventDestinations", std::move(eventDestinationsJsonList));
+  }
+
+  if (m_marketingMessagesOnboardingStatusHasBeenSet) {
+    payload.WithString("marketingMessagesOnboardingStatus", m_marketingMessagesOnboardingStatus);
   }
 
   if (m_phoneNumbersHasBeenSet) {

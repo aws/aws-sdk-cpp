@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String PutConfigurationSetSuppressionOptionsRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_suppressionScopeHasBeenSet) {
+    payload.WithString("SuppressionScope", SuppressionListScopeMapper::GetNameForSuppressionListScope(m_suppressionScope));
+  }
+
   if (m_suppressedReasonsHasBeenSet) {
     Aws::Utils::Array<JsonValue> suppressedReasonsJsonList(m_suppressedReasons.size());
     for (unsigned suppressedReasonsIndex = 0; suppressedReasonsIndex < suppressedReasonsJsonList.GetLength(); ++suppressedReasonsIndex) {

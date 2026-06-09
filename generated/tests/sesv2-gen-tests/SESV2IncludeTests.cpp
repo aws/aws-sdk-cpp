@@ -312,6 +312,8 @@
 #include <aws/sesv2/model/PutEmailIdentityMailFromAttributesResult.h>
 #include <aws/sesv2/model/PutSuppressedDestinationRequest.h>
 #include <aws/sesv2/model/PutSuppressedDestinationResult.h>
+#include <aws/sesv2/model/PutTenantSuppressionAttributesRequest.h>
+#include <aws/sesv2/model/PutTenantSuppressionAttributesResult.h>
 #include <aws/sesv2/model/QueryErrorCode.h>
 #include <aws/sesv2/model/RawMessage.h>
 #include <aws/sesv2/model/Recommendation.h>
@@ -355,6 +357,7 @@
 #include <aws/sesv2/model/SuppressionListDestination.h>
 #include <aws/sesv2/model/SuppressionListImportAction.h>
 #include <aws/sesv2/model/SuppressionListReason.h>
+#include <aws/sesv2/model/SuppressionListScope.h>
 #include <aws/sesv2/model/SuppressionOptions.h>
 #include <aws/sesv2/model/SuppressionValidationAttributes.h>
 #include <aws/sesv2/model/SuppressionValidationOptions.h>
@@ -365,6 +368,7 @@
 #include <aws/sesv2/model/Tenant.h>
 #include <aws/sesv2/model/TenantInfo.h>
 #include <aws/sesv2/model/TenantResource.h>
+#include <aws/sesv2/model/TenantSuppressionAttributes.h>
 #include <aws/sesv2/model/TestRenderEmailTemplateRequest.h>
 #include <aws/sesv2/model/TestRenderEmailTemplateResult.h>
 #include <aws/sesv2/model/TlsPolicy.h>

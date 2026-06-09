@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/ProvisioningConfiguration.h>
+#include <aws/datazone/model/ResourceConfiguration.h>
 
 #include <utility>
 
@@ -180,6 +181,23 @@ class EnvironmentBlueprintConfigurationItem {
 
   ///@{
   /**
+   * <p>Specifies whether user-provided resource configurations are allowed for the
+   * environment blueprint.</p>
+   */
+  inline bool GetAllowUserProvidedConfigurations() const { return m_allowUserProvidedConfigurations; }
+  inline bool AllowUserProvidedConfigurationsHasBeenSet() const { return m_allowUserProvidedConfigurationsHasBeenSet; }
+  inline void SetAllowUserProvidedConfigurations(bool value) {
+    m_allowUserProvidedConfigurationsHasBeenSet = true;
+    m_allowUserProvidedConfigurations = value;
+  }
+  inline EnvironmentBlueprintConfigurationItem& WithAllowUserProvidedConfigurations(bool value) {
+    SetAllowUserProvidedConfigurations(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp of when an environment blueprint was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -210,6 +228,30 @@ class EnvironmentBlueprintConfigurationItem {
   template <typename UpdatedAtT = Aws::Utils::DateTime>
   EnvironmentBlueprintConfigurationItem& WithUpdatedAt(UpdatedAtT&& value) {
     SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The resource configurations of the environment blueprint.</p>
+   */
+  inline const Aws::Vector<ResourceConfiguration>& GetResourceConfigurations() const { return m_resourceConfigurations; }
+  inline bool ResourceConfigurationsHasBeenSet() const { return m_resourceConfigurationsHasBeenSet; }
+  template <typename ResourceConfigurationsT = Aws::Vector<ResourceConfiguration>>
+  void SetResourceConfigurations(ResourceConfigurationsT&& value) {
+    m_resourceConfigurationsHasBeenSet = true;
+    m_resourceConfigurations = std::forward<ResourceConfigurationsT>(value);
+  }
+  template <typename ResourceConfigurationsT = Aws::Vector<ResourceConfiguration>>
+  EnvironmentBlueprintConfigurationItem& WithResourceConfigurations(ResourceConfigurationsT&& value) {
+    SetResourceConfigurations(std::forward<ResourceConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ResourceConfigurationsT = ResourceConfiguration>
+  EnvironmentBlueprintConfigurationItem& AddResourceConfigurations(ResourceConfigurationsT&& value) {
+    m_resourceConfigurationsHasBeenSet = true;
+    m_resourceConfigurations.emplace_back(std::forward<ResourceConfigurationsT>(value));
     return *this;
   }
   ///@}
@@ -252,9 +294,13 @@ class EnvironmentBlueprintConfigurationItem {
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_regionalParameters;
 
+  bool m_allowUserProvidedConfigurations{false};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
+
+  Aws::Vector<ResourceConfiguration> m_resourceConfigurations;
 
   Aws::Vector<ProvisioningConfiguration> m_provisioningConfigurations;
   bool m_domainIdHasBeenSet = false;
@@ -264,8 +310,10 @@ class EnvironmentBlueprintConfigurationItem {
   bool m_manageAccessRoleArnHasBeenSet = false;
   bool m_enabledRegionsHasBeenSet = false;
   bool m_regionalParametersHasBeenSet = false;
+  bool m_allowUserProvidedConfigurationsHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_resourceConfigurationsHasBeenSet = false;
   bool m_provisioningConfigurationsHasBeenSet = false;
 };
 

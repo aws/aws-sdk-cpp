@@ -54,9 +54,8 @@ class ListInvoiceSummariesResult {
 
   ///@{
   /**
-   * <p>The token to retrieve the next set of results. Amazon Web Services provides
-   * the token when the response from a previous call has more results than the
-   * maximum page size.</p>
+   * <p>The token to use to retrieve the next set of results, or null if there are no
+   * more results.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

@@ -10,6 +10,8 @@
 #include <aws/bedrock-agentcore-control/model/OnBehalfOfTokenExchangeConfigType.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpointOverride.h>
+#include <aws/bedrock-agentcore-control/model/SecretReference.h>
+#include <aws/bedrock-agentcore-control/model/SecretSourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -94,6 +96,82 @@ class CustomOauth2ProviderConfigInput {
 
   ///@{
   /**
+   * <p>A reference to the AWS Secrets Manager secret that stores the client secret.
+   * This includes the secret ID and the JSON key used to extract the client secret
+   * value from the secret. Required when <code>clientSecretSource</code> is set to
+   * <code>EXTERNAL</code>.</p>
+   */
+  inline const SecretReference& GetClientSecretConfig() const { return m_clientSecretConfig; }
+  inline bool ClientSecretConfigHasBeenSet() const { return m_clientSecretConfigHasBeenSet; }
+  template <typename ClientSecretConfigT = SecretReference>
+  void SetClientSecretConfig(ClientSecretConfigT&& value) {
+    m_clientSecretConfigHasBeenSet = true;
+    m_clientSecretConfig = std::forward<ClientSecretConfigT>(value);
+  }
+  template <typename ClientSecretConfigT = SecretReference>
+  CustomOauth2ProviderConfigInput& WithClientSecretConfig(ClientSecretConfigT&& value) {
+    SetClientSecretConfig(std::forward<ClientSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The source type of the client secret. Use <code>MANAGED</code> if the secret
+   * is managed by the service, or <code>EXTERNAL</code> if you manage the secret
+   * yourself in AWS Secrets Manager.</p>
+   */
+  inline SecretSourceType GetClientSecretSource() const { return m_clientSecretSource; }
+  inline bool ClientSecretSourceHasBeenSet() const { return m_clientSecretSourceHasBeenSet; }
+  inline void SetClientSecretSource(SecretSourceType value) {
+    m_clientSecretSourceHasBeenSet = true;
+    m_clientSecretSource = value;
+  }
+  inline CustomOauth2ProviderConfigInput& WithClientSecretSource(SecretSourceType value) {
+    SetClientSecretSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for on-behalf-of token exchange. This enables
+   * authentication flows that use RFC 8693 token exchange or RFC 7523 JWT
+   * authorization grants.</p>
+   */
+  inline const OnBehalfOfTokenExchangeConfigType& GetOnBehalfOfTokenExchangeConfig() const { return m_onBehalfOfTokenExchangeConfig; }
+  inline bool OnBehalfOfTokenExchangeConfigHasBeenSet() const { return m_onBehalfOfTokenExchangeConfigHasBeenSet; }
+  template <typename OnBehalfOfTokenExchangeConfigT = OnBehalfOfTokenExchangeConfigType>
+  void SetOnBehalfOfTokenExchangeConfig(OnBehalfOfTokenExchangeConfigT&& value) {
+    m_onBehalfOfTokenExchangeConfigHasBeenSet = true;
+    m_onBehalfOfTokenExchangeConfig = std::forward<OnBehalfOfTokenExchangeConfigT>(value);
+  }
+  template <typename OnBehalfOfTokenExchangeConfigT = OnBehalfOfTokenExchangeConfigType>
+  CustomOauth2ProviderConfigInput& WithOnBehalfOfTokenExchangeConfig(OnBehalfOfTokenExchangeConfigT&& value) {
+    SetOnBehalfOfTokenExchangeConfig(std::forward<OnBehalfOfTokenExchangeConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The client authentication method to use when authenticating with the token
+   * endpoint.</p>
+   */
+  inline ClientAuthenticationMethodType GetClientAuthenticationMethod() const { return m_clientAuthenticationMethod; }
+  inline bool ClientAuthenticationMethodHasBeenSet() const { return m_clientAuthenticationMethodHasBeenSet; }
+  inline void SetClientAuthenticationMethod(ClientAuthenticationMethodType value) {
+    m_clientAuthenticationMethodHasBeenSet = true;
+    m_clientAuthenticationMethod = value;
+  }
+  inline CustomOauth2ProviderConfigInput& WithClientAuthenticationMethod(ClientAuthenticationMethodType value) {
+    SetClientAuthenticationMethod(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The default private endpoint for the custom OAuth2 provider, enabling secure
    * connectivity through a VPC Lattice resource configuration.</p>
    */
@@ -135,43 +213,6 @@ class CustomOauth2ProviderConfigInput {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The configuration for on-behalf-of token exchange. This enables
-   * authentication flows that use RFC 8693 token exchange or RFC 7523 JWT
-   * authorization grants.</p>
-   */
-  inline const OnBehalfOfTokenExchangeConfigType& GetOnBehalfOfTokenExchangeConfig() const { return m_onBehalfOfTokenExchangeConfig; }
-  inline bool OnBehalfOfTokenExchangeConfigHasBeenSet() const { return m_onBehalfOfTokenExchangeConfigHasBeenSet; }
-  template <typename OnBehalfOfTokenExchangeConfigT = OnBehalfOfTokenExchangeConfigType>
-  void SetOnBehalfOfTokenExchangeConfig(OnBehalfOfTokenExchangeConfigT&& value) {
-    m_onBehalfOfTokenExchangeConfigHasBeenSet = true;
-    m_onBehalfOfTokenExchangeConfig = std::forward<OnBehalfOfTokenExchangeConfigT>(value);
-  }
-  template <typename OnBehalfOfTokenExchangeConfigT = OnBehalfOfTokenExchangeConfigType>
-  CustomOauth2ProviderConfigInput& WithOnBehalfOfTokenExchangeConfig(OnBehalfOfTokenExchangeConfigT&& value) {
-    SetOnBehalfOfTokenExchangeConfig(std::forward<OnBehalfOfTokenExchangeConfigT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The client authentication method to use when authenticating with the token
-   * endpoint.</p>
-   */
-  inline ClientAuthenticationMethodType GetClientAuthenticationMethod() const { return m_clientAuthenticationMethod; }
-  inline bool ClientAuthenticationMethodHasBeenSet() const { return m_clientAuthenticationMethodHasBeenSet; }
-  inline void SetClientAuthenticationMethod(ClientAuthenticationMethodType value) {
-    m_clientAuthenticationMethodHasBeenSet = true;
-    m_clientAuthenticationMethod = value;
-  }
-  inline CustomOauth2ProviderConfigInput& WithClientAuthenticationMethod(ClientAuthenticationMethodType value) {
-    SetClientAuthenticationMethod(value);
-    return *this;
-  }
-  ///@}
  private:
   Oauth2Discovery m_oauthDiscovery;
 
@@ -179,20 +220,26 @@ class CustomOauth2ProviderConfigInput {
 
   Aws::String m_clientSecret;
 
-  PrivateEndpoint m_privateEndpoint;
+  SecretReference m_clientSecretConfig;
 
-  Aws::Vector<PrivateEndpointOverride> m_privateEndpointOverrides;
+  SecretSourceType m_clientSecretSource{SecretSourceType::NOT_SET};
 
   OnBehalfOfTokenExchangeConfigType m_onBehalfOfTokenExchangeConfig;
 
   ClientAuthenticationMethodType m_clientAuthenticationMethod{ClientAuthenticationMethodType::NOT_SET};
+
+  PrivateEndpoint m_privateEndpoint;
+
+  Aws::Vector<PrivateEndpointOverride> m_privateEndpointOverrides;
   bool m_oauthDiscoveryHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
   bool m_clientSecretHasBeenSet = false;
-  bool m_privateEndpointHasBeenSet = false;
-  bool m_privateEndpointOverridesHasBeenSet = false;
+  bool m_clientSecretConfigHasBeenSet = false;
+  bool m_clientSecretSourceHasBeenSet = false;
   bool m_onBehalfOfTokenExchangeConfigHasBeenSet = false;
   bool m_clientAuthenticationMethodHasBeenSet = false;
+  bool m_privateEndpointHasBeenSet = false;
+  bool m_privateEndpointOverridesHasBeenSet = false;
 };
 
 }  // namespace Model

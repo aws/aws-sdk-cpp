@@ -22,6 +22,10 @@ GetOperatorAppResult::GetOperatorAppResult(const Aws::AmazonWebServiceResult<Jso
 GetOperatorAppResult& GetOperatorAppResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("operatorAppUrl")) {
+    m_operatorAppUrl = jsonValue.GetString("operatorAppUrl");
+    m_operatorAppUrlHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("iam")) {
     m_iam = jsonValue.GetObject("iam");
     m_iamHasBeenSet = true;

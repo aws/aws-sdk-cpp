@@ -11,6 +11,8 @@
 #include <aws/cognito-idp/model/DeletionProtectionType.h>
 #include <aws/cognito-idp/model/DeviceConfigurationType.h>
 #include <aws/cognito-idp/model/EmailConfigurationType.h>
+#include <aws/cognito-idp/model/IssuerConfigurationType.h>
+#include <aws/cognito-idp/model/KeyConfigurationType.h>
 #include <aws/cognito-idp/model/LambdaConfigType.h>
 #include <aws/cognito-idp/model/SchemaAttributeType.h>
 #include <aws/cognito-idp/model/SmsConfigurationType.h>
@@ -758,6 +760,43 @@ class UserPoolType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The key configuration for the user pool, including encryption settings.</p>
+   */
+  inline const KeyConfigurationType& GetKeyConfiguration() const { return m_keyConfiguration; }
+  inline bool KeyConfigurationHasBeenSet() const { return m_keyConfigurationHasBeenSet; }
+  template <typename KeyConfigurationT = KeyConfigurationType>
+  void SetKeyConfiguration(KeyConfigurationT&& value) {
+    m_keyConfigurationHasBeenSet = true;
+    m_keyConfiguration = std::forward<KeyConfigurationT>(value);
+  }
+  template <typename KeyConfigurationT = KeyConfigurationType>
+  UserPoolType& WithKeyConfiguration(KeyConfigurationT&& value) {
+    SetKeyConfiguration(std::forward<KeyConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The issuer configuration for the user pool, including token issuing
+   * settings.</p>
+   */
+  inline const IssuerConfigurationType& GetIssuerConfiguration() const { return m_issuerConfiguration; }
+  inline bool IssuerConfigurationHasBeenSet() const { return m_issuerConfigurationHasBeenSet; }
+  template <typename IssuerConfigurationT = IssuerConfigurationType>
+  void SetIssuerConfiguration(IssuerConfigurationT&& value) {
+    m_issuerConfigurationHasBeenSet = true;
+    m_issuerConfiguration = std::forward<IssuerConfigurationT>(value);
+  }
+  template <typename IssuerConfigurationT = IssuerConfigurationType>
+  UserPoolType& WithIssuerConfiguration(IssuerConfigurationT&& value) {
+    SetIssuerConfiguration(std::forward<IssuerConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -824,6 +863,10 @@ class UserPoolType {
   AccountRecoverySettingType m_accountRecoverySetting;
 
   UserPoolTierType m_userPoolTier{UserPoolTierType::NOT_SET};
+
+  KeyConfigurationType m_keyConfiguration;
+
+  IssuerConfigurationType m_issuerConfiguration;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_policiesHasBeenSet = false;
@@ -857,6 +900,8 @@ class UserPoolType {
   bool m_arnHasBeenSet = false;
   bool m_accountRecoverySettingHasBeenSet = false;
   bool m_userPoolTierHasBeenSet = false;
+  bool m_keyConfigurationHasBeenSet = false;
+  bool m_issuerConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

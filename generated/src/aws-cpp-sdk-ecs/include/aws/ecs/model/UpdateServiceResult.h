@@ -35,7 +35,12 @@ class UpdateServiceResult {
 
   ///@{
   /**
-   * <p>The full description of your service following the update call.</p>
+   * <p>The full description of your service following the update call.</p> <p>The
+   * response includes a <code>lifecycleHookDetails</code> field, which is an empty
+   * array when the service is created or updated. The values are populated when a
+   * lifecycle hook executes and are available as part of the service deployment
+   * details (<a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>).</p>
    */
   inline const Service& GetService() const { return m_service; }
   template <typename ServiceT = Service>

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/CollectionStatus.h>
+#include <aws/opensearchserverless/model/DeletionProtection.h>
 
 #include <utility>
 
@@ -84,15 +85,35 @@ class DeleteCollectionDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether deletion protection is <code>ENABLED</code> or
+   * <code>DISABLED</code> for the collection.</p>
+   */
+  inline DeletionProtection GetDeletionProtection() const { return m_deletionProtection; }
+  inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+  inline void SetDeletionProtection(DeletionProtection value) {
+    m_deletionProtectionHasBeenSet = true;
+    m_deletionProtection = value;
+  }
+  inline DeleteCollectionDetail& WithDeletionProtection(DeletionProtection value) {
+    SetDeletionProtection(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
   Aws::String m_name;
 
   CollectionStatus m_status{CollectionStatus::NOT_SET};
+
+  DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
 };
 
 }  // namespace Model

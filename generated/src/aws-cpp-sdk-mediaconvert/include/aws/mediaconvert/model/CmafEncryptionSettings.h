@@ -9,7 +9,6 @@
 #include <aws/mediaconvert/model/CmafEncryptionType.h>
 #include <aws/mediaconvert/model/CmafInitializationVectorInManifest.h>
 #include <aws/mediaconvert/model/CmafKeyProviderType.h>
-#include <aws/mediaconvert/model/HlsClearLead.h>
 #include <aws/mediaconvert/model/SpekeKeyProviderCmaf.h>
 #include <aws/mediaconvert/model/StaticKeyProvider.h>
 
@@ -39,28 +38,30 @@ class CmafEncryptionSettings {
 
   ///@{
   /**
-   * Enable Clear Lead DRM to reduce video startup latency by leaving the first
-   * segment unencrypted while DRM license retrieval occurs in parallel. This
-   * optimization allows immediate playback startup while maintaining content
-   * protection for the remainder of the stream. When enabled, the first output
-   * segment remains fully unencrypted, and encryption begins at the start of the
-   * second segment. The HLS manifest will omit #EXT-X-KEY tags during the clear
-   * segment and insert the first #EXT-X-KEY immediately before the first encrypted
-   * fragment. This feature is supported exclusively for CMAF HLS (fMP4) outputs and
-   * is compatible with all existing key provider integrations (SPEKE v1, SPEKE v2,
-   * and Static Key encryption). Supported codecs: H.264, H.265, and AV1 video
-   * codecs, and AAC audio codec. Choose Enabled to activate Clear Lead DRM
-   * optimization. Choose Disabled to use standard encryption where all segments are
-   * encrypted from the beginning.
+   * Reduce video startup latency by leaving initial segments unencrypted while DRM
+   * license retrieval occurs in parallel. This optimization allows immediate
+   * playback startup while maintaining content protection for the remainder of the
+   * stream. Specify the number of initial segments to leave unencrypted. Omit this
+   * field to disable Clear Lead. The HLS manifest will omit #EXT-X-KEY tags during
+   * clear segments and insert the first #EXT-X-KEY immediately before the first
+   * encrypted segment. Because encryption is applied at the fragment level, the
+   * actual duration of unencrypted content may be slightly longer than expected if
+   * the segment length is not evenly divisible by the fragment length. In such
+   * cases, encryption begins at the next fragment boundary after the specified clear
+   * lead segments, rather than at the exact segment boundary. This feature is
+   * supported exclusively for CMAF HLS (fMP4) outputs and is compatible with all
+   * existing key provider integrations (SPEKE v1, SPEKE v2, and Static Key
+   * encryption). Supported codecs: H.264, H.265, and AV1 video codecs, and AAC audio
+   * codec.
    */
-  inline HlsClearLead GetClearLead() const { return m_clearLead; }
-  inline bool ClearLeadHasBeenSet() const { return m_clearLeadHasBeenSet; }
-  inline void SetClearLead(HlsClearLead value) {
-    m_clearLeadHasBeenSet = true;
-    m_clearLead = value;
+  inline int GetClearLeadSegments() const { return m_clearLeadSegments; }
+  inline bool ClearLeadSegmentsHasBeenSet() const { return m_clearLeadSegmentsHasBeenSet; }
+  inline void SetClearLeadSegments(int value) {
+    m_clearLeadSegmentsHasBeenSet = true;
+    m_clearLeadSegments = value;
   }
-  inline CmafEncryptionSettings& WithClearLead(HlsClearLead value) {
-    SetClearLead(value);
+  inline CmafEncryptionSettings& WithClearLeadSegments(int value) {
+    SetClearLeadSegments(value);
     return *this;
   }
   ///@}
@@ -175,7 +176,7 @@ class CmafEncryptionSettings {
   }
   ///@}
  private:
-  HlsClearLead m_clearLead{HlsClearLead::NOT_SET};
+  int m_clearLeadSegments{0};
 
   Aws::String m_constantInitializationVector;
 
@@ -188,7 +189,7 @@ class CmafEncryptionSettings {
   StaticKeyProvider m_staticKeyProvider;
 
   CmafKeyProviderType m_type{CmafKeyProviderType::NOT_SET};
-  bool m_clearLeadHasBeenSet = false;
+  bool m_clearLeadSegmentsHasBeenSet = false;
   bool m_constantInitializationVectorHasBeenSet = false;
   bool m_encryptionMethodHasBeenSet = false;
   bool m_initializationVectorInManifestHasBeenSet = false;

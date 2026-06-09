@@ -30,6 +30,22 @@ ThingConnectivity& ThingConnectivity::operator=(JsonView jsonValue) {
     m_disconnectReason = jsonValue.GetString("disconnectReason");
     m_disconnectReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("keepAliveDuration")) {
+    m_keepAliveDuration = jsonValue.GetInteger("keepAliveDuration");
+    m_keepAliveDurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cleanSession")) {
+    m_cleanSession = jsonValue.GetBool("cleanSession");
+    m_cleanSessionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sessionExpiry")) {
+    m_sessionExpiry = jsonValue.GetInt64("sessionExpiry");
+    m_sessionExpiryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("clientId")) {
+    m_clientId = jsonValue.GetString("clientId");
+    m_clientIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +62,22 @@ JsonValue ThingConnectivity::Jsonize() const {
 
   if (m_disconnectReasonHasBeenSet) {
     payload.WithString("disconnectReason", m_disconnectReason);
+  }
+
+  if (m_keepAliveDurationHasBeenSet) {
+    payload.WithInteger("keepAliveDuration", m_keepAliveDuration);
+  }
+
+  if (m_cleanSessionHasBeenSet) {
+    payload.WithBool("cleanSession", m_cleanSession);
+  }
+
+  if (m_sessionExpiryHasBeenSet) {
+    payload.WithInt64("sessionExpiry", m_sessionExpiry);
+  }
+
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("clientId", m_clientId);
   }
 
   return payload;

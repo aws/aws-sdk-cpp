@@ -33,7 +33,7 @@ class SearchContactsRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of Amazon Connect instance. You can find the instance ID in
+   * <p>The identifier of Connect Customer instance. You can find the instance ID in
    * the Amazon Resource Name (ARN) of the instance.</p>
    */
   inline const Aws::String& GetInstanceId() const { return m_instanceId; }

@@ -468,6 +468,8 @@
 #include <aws/glue/model/GetCrawlersResult.h>
 #include <aws/glue/model/GetCustomEntityTypeRequest.h>
 #include <aws/glue/model/GetCustomEntityTypeResult.h>
+#include <aws/glue/model/GetDashboardUrlRequest.h>
+#include <aws/glue/model/GetDashboardUrlResult.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsRequest.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsResult.h>
 #include <aws/glue/model/GetDataQualityModelRequest.h>
@@ -548,6 +550,8 @@
 #include <aws/glue/model/GetSecurityConfigurationResult.h>
 #include <aws/glue/model/GetSecurityConfigurationsRequest.h>
 #include <aws/glue/model/GetSecurityConfigurationsResult.h>
+#include <aws/glue/model/GetSessionEndpointRequest.h>
+#include <aws/glue/model/GetSessionEndpointResult.h>
 #include <aws/glue/model/GetSessionRequest.h>
 #include <aws/glue/model/GetSessionResult.h>
 #include <aws/glue/model/GetStatementRequest.h>
@@ -590,6 +594,7 @@
 #include <aws/glue/model/GetWorkflowRunsResult.h>
 #include <aws/glue/model/GluePolicy.h>
 #include <aws/glue/model/GlueRecordType.h>
+#include <aws/glue/model/GlueResourceType.h>
 #include <aws/glue/model/GlueSchema.h>
 #include <aws/glue/model/GlueStudioSchemaColumn.h>
 #include <aws/glue/model/GlueTable.h>
@@ -896,7 +901,9 @@
 #include <aws/glue/model/SerDeInfo.h>
 #include <aws/glue/model/Session.h>
 #include <aws/glue/model/SessionCommand.h>
+#include <aws/glue/model/SessionEndpoint.h>
 #include <aws/glue/model/SessionStatus.h>
+#include <aws/glue/model/SessionType.h>
 #include <aws/glue/model/SettingSource.h>
 #include <aws/glue/model/SkewedInfo.h>
 #include <aws/glue/model/SnowflakeNodeData.h>

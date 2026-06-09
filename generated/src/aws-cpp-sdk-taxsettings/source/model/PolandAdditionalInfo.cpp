@@ -26,6 +26,11 @@ PolandAdditionalInfo& PolandAdditionalInfo::operator=(JsonView jsonValue) {
     m_isGroupVatEnabled = jsonValue.GetBool("isGroupVatEnabled");
     m_isGroupVatEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("taxRegistrationNumberType")) {
+    m_taxRegistrationNumberType =
+        PolandTaxRegistrationNumberTypeMapper::GetPolandTaxRegistrationNumberTypeForName(jsonValue.GetString("taxRegistrationNumberType"));
+    m_taxRegistrationNumberTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +43,11 @@ JsonValue PolandAdditionalInfo::Jsonize() const {
 
   if (m_isGroupVatEnabledHasBeenSet) {
     payload.WithBool("isGroupVatEnabled", m_isGroupVatEnabled);
+  }
+
+  if (m_taxRegistrationNumberTypeHasBeenSet) {
+    payload.WithString("taxRegistrationNumberType",
+                       PolandTaxRegistrationNumberTypeMapper::GetNameForPolandTaxRegistrationNumberType(m_taxRegistrationNumberType));
   }
 
   return payload;

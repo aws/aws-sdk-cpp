@@ -18,6 +18,7 @@ namespace SageMakerResourceNameMapper {
 static const int training_job_HASH = HashingUtils::HashString("training-job");
 static const int hyperpod_cluster_HASH = HashingUtils::HashString("hyperpod-cluster");
 static const int endpoint_HASH = HashingUtils::HashString("endpoint");
+static const int studio_apps_HASH = HashingUtils::HashString("studio-apps");
 
 SageMakerResourceName GetSageMakerResourceNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ SageMakerResourceName GetSageMakerResourceNameForName(const Aws::String& name) {
     return SageMakerResourceName::hyperpod_cluster;
   } else if (hashCode == endpoint_HASH) {
     return SageMakerResourceName::endpoint;
+  } else if (hashCode == studio_apps_HASH) {
+    return SageMakerResourceName::studio_apps;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForSageMakerResourceName(SageMakerResourceName enumValue) {
       return "hyperpod-cluster";
     case SageMakerResourceName::endpoint:
       return "endpoint";
+    case SageMakerResourceName::studio_apps:
+      return "studio-apps";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

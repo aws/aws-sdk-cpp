@@ -209,7 +209,7 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS
-   * supports 4-16 hosts per environment.</p> <p>This action can only be used after
+   * supports 4-32 hosts per environment.</p> <p>This action can only be used after
    * the Amazon EVS environment is deployed.</p> <p>You can use the
    * <code>dedicatedHostId</code> parameter to specify an Amazon EC2 Dedicated Host
    * for ESX host creation.</p> <p> You can use the <code>placementGroupId</code>
@@ -393,6 +393,36 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
                                     const DisassociateEipFromVlanResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EVSClient::DisassociateEipFromVlan, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a URL and authentication token for accessing the Amazon EVS Custom
+   * Addon depot. Configure the depot URL as a download source in vSphere Lifecycle
+   * Manager (vLCM) to sync and install the Amazon EVS Custom Addon.</p> <p>The depot
+   * URL remains active until you rotate the authentication token by calling this
+   * action with <code>rotate</code> set to <code>true</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/GetDepotUrl">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::GetDepotUrlOutcome GetDepotUrl(const Model::GetDepotUrlRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDepotUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetDepotUrlRequestT = Model::GetDepotUrlRequest>
+  Model::GetDepotUrlOutcomeCallable GetDepotUrlCallable(const GetDepotUrlRequestT& request) const {
+    return SubmitCallable(&EVSClient::GetDepotUrl, request);
+  }
+
+  /**
+   * An Async wrapper for GetDepotUrl that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetDepotUrlRequestT = Model::GetDepotUrlRequest>
+  void GetDepotUrlAsync(const GetDepotUrlRequestT& request, const GetDepotUrlResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EVSClient::GetDepotUrl, request, handler, context);
   }
 
   /**

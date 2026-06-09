@@ -11,12 +11,15 @@
 #include <utility>
 
 namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
 namespace SESV2 {
 namespace Model {
 
 /**
  * <p>A request to remove an email address from the suppression list for your
- * account.</p><p><h3>See Also:</h3>   <a
+ * account or for a specific tenant.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestinationRequest">AWS
  * API Reference</a></p>
  */
@@ -32,10 +35,12 @@ class DeleteSuppressedDestinationRequest : public SESV2Request {
 
   AWS_SESV2_API Aws::String SerializePayload() const override;
 
+  AWS_SESV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   ///@{
   /**
-   * <p>The suppressed email destination to remove from the account suppression
-   * list.</p>
+   * <p>The suppressed email destination to remove from the suppression list for your
+   * account or for the specified tenant.</p>
    */
   inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
   inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
@@ -50,9 +55,32 @@ class DeleteSuppressedDestinationRequest : public SESV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the tenant whose suppression list you want to remove the address
+   * from. If you omit this parameter, the address is removed from the account-level
+   * suppression list.</p>
+   */
+  inline const Aws::String& GetTenantName() const { return m_tenantName; }
+  inline bool TenantNameHasBeenSet() const { return m_tenantNameHasBeenSet; }
+  template <typename TenantNameT = Aws::String>
+  void SetTenantName(TenantNameT&& value) {
+    m_tenantNameHasBeenSet = true;
+    m_tenantName = std::forward<TenantNameT>(value);
+  }
+  template <typename TenantNameT = Aws::String>
+  DeleteSuppressedDestinationRequest& WithTenantName(TenantNameT&& value) {
+    SetTenantName(std::forward<TenantNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_emailAddress;
+
+  Aws::String m_tenantName;
   bool m_emailAddressHasBeenSet = false;
+  bool m_tenantNameHasBeenSet = false;
 };
 
 }  // namespace Model

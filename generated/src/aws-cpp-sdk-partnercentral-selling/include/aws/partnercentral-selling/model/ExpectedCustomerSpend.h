@@ -56,8 +56,11 @@ class ExpectedCustomerSpend {
 
   ///@{
   /**
-   * <p>Currency code for the expected customer spend. Supported currencies: USD,
-   * EUR</p>
+   * <p>Indicates the currency in which the revenue estimate is provided. This helps
+   * in understanding the financial impact across different markets. Accepted values
+   * are <code>USD</code> (US Dollars) and <code>EUR</code> (Euros). If the AWS
+   * Partition is <code>aws-eusc</code> (AWS European Sovereign Cloud), the currency
+   * code must be <code>EUR</code>.</p>
    */
   inline CurrencyCode GetCurrencyCode() const { return m_currencyCode; }
   inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }

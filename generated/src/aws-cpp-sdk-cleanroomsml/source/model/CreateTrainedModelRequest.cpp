@@ -86,5 +86,9 @@ Aws::String CreateTrainedModelRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_mlModelTrainingPayerAccountIdHasBeenSet) {
+    payload.WithString("mlModelTrainingPayerAccountId", m_mlModelTrainingPayerAccountId);
+  }
+
   return payload.View().WriteReadable();
 }

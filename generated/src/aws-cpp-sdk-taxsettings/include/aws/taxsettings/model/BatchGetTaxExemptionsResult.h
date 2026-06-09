@@ -32,29 +32,6 @@ class BatchGetTaxExemptionsResult {
 
   ///@{
   /**
-   * <p>The list of accounts that failed to get tax exemptions. </p>
-   */
-  inline const Aws::Vector<Aws::String>& GetFailedAccounts() const { return m_failedAccounts; }
-  template <typename FailedAccountsT = Aws::Vector<Aws::String>>
-  void SetFailedAccounts(FailedAccountsT&& value) {
-    m_failedAccountsHasBeenSet = true;
-    m_failedAccounts = std::forward<FailedAccountsT>(value);
-  }
-  template <typename FailedAccountsT = Aws::Vector<Aws::String>>
-  BatchGetTaxExemptionsResult& WithFailedAccounts(FailedAccountsT&& value) {
-    SetFailedAccounts(std::forward<FailedAccountsT>(value));
-    return *this;
-  }
-  template <typename FailedAccountsT = Aws::String>
-  BatchGetTaxExemptionsResult& AddFailedAccounts(FailedAccountsT&& value) {
-    m_failedAccountsHasBeenSet = true;
-    m_failedAccounts.emplace_back(std::forward<FailedAccountsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The tax exemption details map of accountId and tax exemption details. </p>
    */
   inline const Aws::Map<Aws::String, TaxExemptionDetails>& GetTaxExemptionDetailsMap() const { return m_taxExemptionDetailsMap; }
@@ -77,6 +54,29 @@ class BatchGetTaxExemptionsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The list of accounts that failed to get tax exemptions. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetFailedAccounts() const { return m_failedAccounts; }
+  template <typename FailedAccountsT = Aws::Vector<Aws::String>>
+  void SetFailedAccounts(FailedAccountsT&& value) {
+    m_failedAccountsHasBeenSet = true;
+    m_failedAccounts = std::forward<FailedAccountsT>(value);
+  }
+  template <typename FailedAccountsT = Aws::Vector<Aws::String>>
+  BatchGetTaxExemptionsResult& WithFailedAccounts(FailedAccountsT&& value) {
+    SetFailedAccounts(std::forward<FailedAccountsT>(value));
+    return *this;
+  }
+  template <typename FailedAccountsT = Aws::String>
+  BatchGetTaxExemptionsResult& AddFailedAccounts(FailedAccountsT&& value) {
+    m_failedAccountsHasBeenSet = true;
+    m_failedAccounts.emplace_back(std::forward<FailedAccountsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -93,14 +93,14 @@ class BatchGetTaxExemptionsResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::Vector<Aws::String> m_failedAccounts;
-
   Aws::Map<Aws::String, TaxExemptionDetails> m_taxExemptionDetailsMap;
+
+  Aws::Vector<Aws::String> m_failedAccounts;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_failedAccountsHasBeenSet = false;
   bool m_taxExemptionDetailsMapHasBeenSet = false;
+  bool m_failedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

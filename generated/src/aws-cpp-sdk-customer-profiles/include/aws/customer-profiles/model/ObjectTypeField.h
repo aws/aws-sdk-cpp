@@ -34,7 +34,7 @@ class ObjectTypeField {
 
   ///@{
   /**
-   * <p>A field of a ProfileObject. For example: _source.FirstName, where “_source���
+   * <p>A field of a ProfileObject. For example: _source.FirstName, where “_source”
    * is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that
    * ObjectType.</p>
    */

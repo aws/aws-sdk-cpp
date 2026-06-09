@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
+#include <aws/route53resolver/model/DomainListType.h>
 #include <aws/route53resolver/model/FirewallDomainListStatus.h>
 
 #include <utility>
@@ -216,6 +217,40 @@ class FirewallDomainList {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The category of the domain list.</p>
+   */
+  inline const Aws::String& GetCategory() const { return m_category; }
+  inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+  template <typename CategoryT = Aws::String>
+  void SetCategory(CategoryT&& value) {
+    m_categoryHasBeenSet = true;
+    m_category = std::forward<CategoryT>(value);
+  }
+  template <typename CategoryT = Aws::String>
+  FirewallDomainList& WithCategory(CategoryT&& value) {
+    SetCategory(std::forward<CategoryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the managed domain list, for example <code>THREAT</code>.</p>
+   */
+  inline DomainListType GetManagedListType() const { return m_managedListType; }
+  inline bool ManagedListTypeHasBeenSet() const { return m_managedListTypeHasBeenSet; }
+  inline void SetManagedListType(DomainListType value) {
+    m_managedListTypeHasBeenSet = true;
+    m_managedListType = value;
+  }
+  inline FirewallDomainList& WithManagedListType(DomainListType value) {
+    SetManagedListType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -236,6 +271,10 @@ class FirewallDomainList {
   Aws::String m_creationTime;
 
   Aws::String m_modificationTime;
+
+  Aws::String m_category;
+
+  DomainListType m_managedListType{DomainListType::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -246,6 +285,8 @@ class FirewallDomainList {
   bool m_creatorRequestIdHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_modificationTimeHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_managedListTypeHasBeenSet = false;
 };
 
 }  // namespace Model

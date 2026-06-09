@@ -26,6 +26,14 @@ MicrosoftOauth2ProviderConfigInput& MicrosoftOauth2ProviderConfigInput::operator
     m_clientSecret = jsonValue.GetString("clientSecret");
     m_clientSecretHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("clientSecretConfig")) {
+    m_clientSecretConfig = jsonValue.GetObject("clientSecretConfig");
+    m_clientSecretConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("clientSecretSource")) {
+    m_clientSecretSource = SecretSourceTypeMapper::GetSecretSourceTypeForName(jsonValue.GetString("clientSecretSource"));
+    m_clientSecretSourceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tenantId")) {
     m_tenantId = jsonValue.GetString("tenantId");
     m_tenantIdHasBeenSet = true;
@@ -42,6 +50,14 @@ JsonValue MicrosoftOauth2ProviderConfigInput::Jsonize() const {
 
   if (m_clientSecretHasBeenSet) {
     payload.WithString("clientSecret", m_clientSecret);
+  }
+
+  if (m_clientSecretConfigHasBeenSet) {
+    payload.WithObject("clientSecretConfig", m_clientSecretConfig.Jsonize());
+  }
+
+  if (m_clientSecretSourceHasBeenSet) {
+    payload.WithString("clientSecretSource", SecretSourceTypeMapper::GetNameForSecretSourceType(m_clientSecretSource));
   }
 
   if (m_tenantIdHasBeenSet) {

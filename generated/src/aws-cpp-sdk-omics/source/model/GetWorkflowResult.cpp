@@ -123,6 +123,25 @@ GetWorkflowResult& GetWorkflowResult::operator=(const Aws::AmazonWebServiceResul
     m_readmePath = jsonValue.GetString("readmePath");
     m_readmePathHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("profiles")) {
+    Aws::Utils::Array<JsonView> profilesJsonList = jsonValue.GetArray("profiles");
+    for (unsigned profilesIndex = 0; profilesIndex < profilesJsonList.GetLength(); ++profilesIndex) {
+      m_profiles.push_back(profilesJsonList[profilesIndex].AsString());
+    }
+    m_profilesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("profileParameterTemplates")) {
+    Aws::Map<Aws::String, JsonView> profileParameterTemplatesJsonMap = jsonValue.GetObject("profileParameterTemplates").GetAllObjects();
+    for (auto& profileParameterTemplatesItem : profileParameterTemplatesJsonMap) {
+      Aws::Map<Aws::String, JsonView> workflowParameterTemplate2JsonMap = profileParameterTemplatesItem.second.GetAllObjects();
+      Aws::Map<Aws::String, WorkflowParameter> workflowParameterTemplate2Map;
+      for (auto& workflowParameterTemplate2Item : workflowParameterTemplate2JsonMap) {
+        workflowParameterTemplate2Map[workflowParameterTemplate2Item.first] = workflowParameterTemplate2Item.second.AsObject();
+      }
+      m_profileParameterTemplates[profileParameterTemplatesItem.first] = std::move(workflowParameterTemplate2Map);
+    }
+    m_profileParameterTemplatesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

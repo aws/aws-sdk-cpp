@@ -44,6 +44,8 @@
 #include <aws/elasticmapreduce/model/GetManagedScalingPolicyResult.h>
 #include <aws/elasticmapreduce/model/GetOnClusterAppUIPresignedURLResult.h>
 #include <aws/elasticmapreduce/model/GetPersistentAppUIPresignedURLResult.h>
+#include <aws/elasticmapreduce/model/GetSessionEndpointResult.h>
+#include <aws/elasticmapreduce/model/GetSessionResult.h>
 #include <aws/elasticmapreduce/model/GetStudioSessionMappingResult.h>
 #include <aws/elasticmapreduce/model/ListBootstrapActionsResult.h>
 #include <aws/elasticmapreduce/model/ListClustersRequest.h>
@@ -57,6 +59,7 @@
 #include <aws/elasticmapreduce/model/ListReleaseLabelsResult.h>
 #include <aws/elasticmapreduce/model/ListSecurityConfigurationsRequest.h>
 #include <aws/elasticmapreduce/model/ListSecurityConfigurationsResult.h>
+#include <aws/elasticmapreduce/model/ListSessionsResult.h>
 #include <aws/elasticmapreduce/model/ListStepsResult.h>
 #include <aws/elasticmapreduce/model/ListStudioSessionMappingsRequest.h>
 #include <aws/elasticmapreduce/model/ListStudioSessionMappingsResult.h>
@@ -75,6 +78,8 @@
 #include <aws/elasticmapreduce/model/RemoveTagsResult.h>
 #include <aws/elasticmapreduce/model/RunJobFlowResult.h>
 #include <aws/elasticmapreduce/model/StartNotebookExecutionResult.h>
+#include <aws/elasticmapreduce/model/StartSessionResult.h>
+#include <aws/elasticmapreduce/model/TerminateSessionResult.h>
 /* End of service model headers required in EMRClient header */
 
 namespace Aws {
@@ -133,6 +138,8 @@ class GetClusterSessionCredentialsRequest;
 class GetManagedScalingPolicyRequest;
 class GetOnClusterAppUIPresignedURLRequest;
 class GetPersistentAppUIPresignedURLRequest;
+class GetSessionRequest;
+class GetSessionEndpointRequest;
 class GetStudioSessionMappingRequest;
 class ListBootstrapActionsRequest;
 class ListClustersRequest;
@@ -142,6 +149,7 @@ class ListInstancesRequest;
 class ListNotebookExecutionsRequest;
 class ListReleaseLabelsRequest;
 class ListSecurityConfigurationsRequest;
+class ListSessionsRequest;
 class ListStepsRequest;
 class ListStudioSessionMappingsRequest;
 class ListStudiosRequest;
@@ -163,8 +171,10 @@ class SetTerminationProtectionRequest;
 class SetUnhealthyNodeReplacementRequest;
 class SetVisibleToAllUsersRequest;
 class StartNotebookExecutionRequest;
+class StartSessionRequest;
 class StopNotebookExecutionRequest;
 class TerminateJobFlowsRequest;
+class TerminateSessionRequest;
 class UpdateStudioRequest;
 class UpdateStudioSessionMappingRequest;
 /* End of service model forward declarations required in EMRClient header */
@@ -195,6 +205,8 @@ typedef Aws::Utils::Outcome<GetClusterSessionCredentialsResult, EMRError> GetClu
 typedef Aws::Utils::Outcome<GetManagedScalingPolicyResult, EMRError> GetManagedScalingPolicyOutcome;
 typedef Aws::Utils::Outcome<GetOnClusterAppUIPresignedURLResult, EMRError> GetOnClusterAppUIPresignedURLOutcome;
 typedef Aws::Utils::Outcome<GetPersistentAppUIPresignedURLResult, EMRError> GetPersistentAppUIPresignedURLOutcome;
+typedef Aws::Utils::Outcome<GetSessionResult, EMRError> GetSessionOutcome;
+typedef Aws::Utils::Outcome<GetSessionEndpointResult, EMRError> GetSessionEndpointOutcome;
 typedef Aws::Utils::Outcome<GetStudioSessionMappingResult, EMRError> GetStudioSessionMappingOutcome;
 typedef Aws::Utils::Outcome<ListBootstrapActionsResult, EMRError> ListBootstrapActionsOutcome;
 typedef Aws::Utils::Outcome<ListClustersResult, EMRError> ListClustersOutcome;
@@ -204,6 +216,7 @@ typedef Aws::Utils::Outcome<ListInstancesResult, EMRError> ListInstancesOutcome;
 typedef Aws::Utils::Outcome<ListNotebookExecutionsResult, EMRError> ListNotebookExecutionsOutcome;
 typedef Aws::Utils::Outcome<ListReleaseLabelsResult, EMRError> ListReleaseLabelsOutcome;
 typedef Aws::Utils::Outcome<ListSecurityConfigurationsResult, EMRError> ListSecurityConfigurationsOutcome;
+typedef Aws::Utils::Outcome<ListSessionsResult, EMRError> ListSessionsOutcome;
 typedef Aws::Utils::Outcome<ListStepsResult, EMRError> ListStepsOutcome;
 typedef Aws::Utils::Outcome<ListStudioSessionMappingsResult, EMRError> ListStudioSessionMappingsOutcome;
 typedef Aws::Utils::Outcome<ListStudiosResult, EMRError> ListStudiosOutcome;
@@ -225,8 +238,10 @@ typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetTerminationProtectionOut
 typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetUnhealthyNodeReplacementOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetVisibleToAllUsersOutcome;
 typedef Aws::Utils::Outcome<StartNotebookExecutionResult, EMRError> StartNotebookExecutionOutcome;
+typedef Aws::Utils::Outcome<StartSessionResult, EMRError> StartSessionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> StopNotebookExecutionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> TerminateJobFlowsOutcome;
+typedef Aws::Utils::Outcome<TerminateSessionResult, EMRError> TerminateSessionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> UpdateStudioOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> UpdateStudioSessionMappingOutcome;
 /* End of service model Outcome class definitions */
@@ -257,6 +272,8 @@ typedef std::future<GetClusterSessionCredentialsOutcome> GetClusterSessionCreden
 typedef std::future<GetManagedScalingPolicyOutcome> GetManagedScalingPolicyOutcomeCallable;
 typedef std::future<GetOnClusterAppUIPresignedURLOutcome> GetOnClusterAppUIPresignedURLOutcomeCallable;
 typedef std::future<GetPersistentAppUIPresignedURLOutcome> GetPersistentAppUIPresignedURLOutcomeCallable;
+typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
+typedef std::future<GetSessionEndpointOutcome> GetSessionEndpointOutcomeCallable;
 typedef std::future<GetStudioSessionMappingOutcome> GetStudioSessionMappingOutcomeCallable;
 typedef std::future<ListBootstrapActionsOutcome> ListBootstrapActionsOutcomeCallable;
 typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
@@ -266,6 +283,7 @@ typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
 typedef std::future<ListNotebookExecutionsOutcome> ListNotebookExecutionsOutcomeCallable;
 typedef std::future<ListReleaseLabelsOutcome> ListReleaseLabelsOutcomeCallable;
 typedef std::future<ListSecurityConfigurationsOutcome> ListSecurityConfigurationsOutcomeCallable;
+typedef std::future<ListSessionsOutcome> ListSessionsOutcomeCallable;
 typedef std::future<ListStepsOutcome> ListStepsOutcomeCallable;
 typedef std::future<ListStudioSessionMappingsOutcome> ListStudioSessionMappingsOutcomeCallable;
 typedef std::future<ListStudiosOutcome> ListStudiosOutcomeCallable;
@@ -287,8 +305,10 @@ typedef std::future<SetTerminationProtectionOutcome> SetTerminationProtectionOut
 typedef std::future<SetUnhealthyNodeReplacementOutcome> SetUnhealthyNodeReplacementOutcomeCallable;
 typedef std::future<SetVisibleToAllUsersOutcome> SetVisibleToAllUsersOutcomeCallable;
 typedef std::future<StartNotebookExecutionOutcome> StartNotebookExecutionOutcomeCallable;
+typedef std::future<StartSessionOutcome> StartSessionOutcomeCallable;
 typedef std::future<StopNotebookExecutionOutcome> StopNotebookExecutionOutcomeCallable;
 typedef std::future<TerminateJobFlowsOutcome> TerminateJobFlowsOutcomeCallable;
+typedef std::future<TerminateSessionOutcome> TerminateSessionOutcomeCallable;
 typedef std::future<UpdateStudioOutcome> UpdateStudioOutcomeCallable;
 typedef std::future<UpdateStudioSessionMappingOutcome> UpdateStudioSessionMappingOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -377,6 +397,12 @@ typedef std::function<void(const EMRClient*, const Model::GetPersistentAppUIPres
                            const Model::GetPersistentAppUIPresignedURLOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPersistentAppUIPresignedURLResponseReceivedHandler;
+typedef std::function<void(const EMRClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSessionResponseReceivedHandler;
+typedef std::function<void(const EMRClient*, const Model::GetSessionEndpointRequest&, const Model::GetSessionEndpointOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSessionEndpointResponseReceivedHandler;
 typedef std::function<void(const EMRClient*, const Model::GetStudioSessionMappingRequest&, const Model::GetStudioSessionMappingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetStudioSessionMappingResponseReceivedHandler;
@@ -404,6 +430,9 @@ typedef std::function<void(const EMRClient*, const Model::ListReleaseLabelsReque
 typedef std::function<void(const EMRClient*, const Model::ListSecurityConfigurationsRequest&,
                            const Model::ListSecurityConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSecurityConfigurationsResponseReceivedHandler;
+typedef std::function<void(const EMRClient*, const Model::ListSessionsRequest&, const Model::ListSessionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSessionsResponseReceivedHandler;
 typedef std::function<void(const EMRClient*, const Model::ListStepsRequest&, const Model::ListStepsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListStepsResponseReceivedHandler;
@@ -469,12 +498,18 @@ typedef std::function<void(const EMRClient*, const Model::SetVisibleToAllUsersRe
 typedef std::function<void(const EMRClient*, const Model::StartNotebookExecutionRequest&, const Model::StartNotebookExecutionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartNotebookExecutionResponseReceivedHandler;
+typedef std::function<void(const EMRClient*, const Model::StartSessionRequest&, const Model::StartSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartSessionResponseReceivedHandler;
 typedef std::function<void(const EMRClient*, const Model::StopNotebookExecutionRequest&, const Model::StopNotebookExecutionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopNotebookExecutionResponseReceivedHandler;
 typedef std::function<void(const EMRClient*, const Model::TerminateJobFlowsRequest&, const Model::TerminateJobFlowsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TerminateJobFlowsResponseReceivedHandler;
+typedef std::function<void(const EMRClient*, const Model::TerminateSessionRequest&, const Model::TerminateSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    TerminateSessionResponseReceivedHandler;
 typedef std::function<void(const EMRClient*, const Model::UpdateStudioRequest&, const Model::UpdateStudioOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateStudioResponseReceivedHandler;

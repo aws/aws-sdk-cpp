@@ -136,8 +136,8 @@ class CreateFilterRequest : public GuardDutyRequest {
    * following fields are available for filtering:</p> <ul> <li> <p>accountId</p>
    * </li> <li> <p>arn</p> </li> <li> <p>associatedAttackSequenceArn</p> </li> <li>
    * <p>confidence</p> </li> <li> <p>createdAt</p> <p>Type: Timestamp in Unix Epoch
-   * millisecond format. Ex: 1486685375000</p> </li> <li> <p>description</p> </li>
-   * <li> <p>id</p> </li> <li> <p>partition</p> </li> <li> <p>region</p> </li> <li>
+   * millisecond format. Ex: 1486685375000</p> </li> <li> <p>id</p> </li> <li>
+   * <p>partition</p> </li> <li> <p>region</p> </li> <li>
    * <p>resource.accessKeyDetails.accessKeyId</p> </li> <li>
    * <p>resource.accessKeyDetails.principalId</p> </li> <li>
    * <p>resource.accessKeyDetails.userIdentity.accessKeyId</p> </li> <li>
@@ -328,8 +328,6 @@ class CreateFilterRequest : public GuardDutyRequest {
    * <p>resource.rdsDbInstanceDetails.engineVersion</p> </li> <li>
    * <p>resource.rdsDbInstanceDetails.iamDatabaseAuthenticationEnabled</p> </li> <li>
    * <p>resource.rdsDbInstanceDetails.publiclyAccessible</p> </li> <li>
-   * <p>resource.rdsDbInstanceDetails.tags.key</p> </li> <li>
-   * <p>resource.rdsDbInstanceDetails.tags.value</p> </li> <li>
    * <p>resource.rdsDbInstanceDetails.vpcId</p> </li> <li>
    * <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.status</p> </li> <li>
    * <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.vpcSecurityGroupId</p> </li>
@@ -388,7 +386,6 @@ class CreateFilterRequest : public GuardDutyRequest {
    * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
    * <p>resource.s3BucketDetails.type</p> </li> <li> <p>schemaVersion</p> </li> <li>
    * <p>service.action.actionType</p> </li> <li>
-   * <p>service.action.awsApiCallAction.affectedResources</p> </li> <li>
    * <p>service.action.awsApiCallAction.api</p> </li> <li>
    * <p>service.action.awsApiCallAction.callerType</p> </li> <li>
    * <p>service.action.awsApiCallAction.domainDetails.domain</p> </li> <li>
@@ -583,8 +580,6 @@ class CreateFilterRequest : public GuardDutyRequest {
    * <p>service.additionalInfo.value</p> </li> <li>
    * <p>service.additionalInfo.vpcOwnerAccountId</p> </li> <li>
    * <p>service.archived</p> </li> <li> <p>service.count</p> </li> <li>
-   * <p>service.detection.anomaly.profiles</p> </li> <li>
-   * <p>service.detection.anomaly.unusual.behavior</p> </li> <li>
    * <p>service.detection.sequence.actors.id</p> </li> <li>
    * <p>service.detection.sequence.actors.process.name</p> </li> <li>
    * <p>service.detection.sequence.actors.process.path</p> </li> <li>
@@ -929,8 +924,8 @@ class CreateFilterRequest : public GuardDutyRequest {
    * <code>["9", "10"]</code> </p> </li> </ul> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings
    * severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p> </li> <li>
-   * <p>title</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p> <p>Type:
-   * Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p> </li> </ul>
+   * <p>type</p> </li> <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch
+   * millisecond format. Ex: 1486685375000</p> </li> </ul>
    */
   inline const FindingCriteria& GetFindingCriteria() const { return m_findingCriteria; }
   inline bool FindingCriteriaHasBeenSet() const { return m_findingCriteriaHasBeenSet; }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/cleanroomsml/model/MLInputChannelStatus.h>
+#include <aws/cleanroomsml/model/PayerConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -221,6 +222,24 @@ class MLInputChannelSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The payer configuration for the ML input channel.</p>
+   */
+  inline const PayerConfiguration& GetPayerConfiguration() const { return m_payerConfiguration; }
+  inline bool PayerConfigurationHasBeenSet() const { return m_payerConfigurationHasBeenSet; }
+  template <typename PayerConfigurationT = PayerConfiguration>
+  void SetPayerConfiguration(PayerConfigurationT&& value) {
+    m_payerConfigurationHasBeenSet = true;
+    m_payerConfiguration = std::forward<PayerConfigurationT>(value);
+  }
+  template <typename PayerConfigurationT = PayerConfiguration>
+  MLInputChannelSummary& WithPayerConfiguration(PayerConfigurationT&& value) {
+    SetPayerConfiguration(std::forward<PayerConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
 
@@ -241,6 +260,8 @@ class MLInputChannelSummary {
   MLInputChannelStatus m_status{MLInputChannelStatus::NOT_SET};
 
   Aws::String m_description;
+
+  PayerConfiguration m_payerConfiguration;
   bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
   bool m_membershipIdentifierHasBeenSet = false;
@@ -251,6 +272,7 @@ class MLInputChannelSummary {
   bool m_mlInputChannelArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_payerConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

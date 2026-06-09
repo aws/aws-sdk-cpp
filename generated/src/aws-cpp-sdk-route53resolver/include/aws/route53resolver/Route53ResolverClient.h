@@ -242,6 +242,90 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Creates multiple DNS Firewall rules in the specified rule
+   * group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/BatchCreateFirewallRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchCreateFirewallRuleOutcome BatchCreateFirewallRule(const Model::BatchCreateFirewallRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchCreateFirewallRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchCreateFirewallRuleRequestT = Model::BatchCreateFirewallRuleRequest>
+  Model::BatchCreateFirewallRuleOutcomeCallable BatchCreateFirewallRuleCallable(const BatchCreateFirewallRuleRequestT& request) const {
+    return SubmitCallable(&Route53ResolverClient::BatchCreateFirewallRule, request);
+  }
+
+  /**
+   * An Async wrapper for BatchCreateFirewallRule that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchCreateFirewallRuleRequestT = Model::BatchCreateFirewallRuleRequest>
+  void BatchCreateFirewallRuleAsync(const BatchCreateFirewallRuleRequestT& request,
+                                    const BatchCreateFirewallRuleResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53ResolverClient::BatchCreateFirewallRule, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes multiple DNS Firewall rules from the specified rule
+   * group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/BatchDeleteFirewallRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchDeleteFirewallRuleOutcome BatchDeleteFirewallRule(const Model::BatchDeleteFirewallRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchDeleteFirewallRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchDeleteFirewallRuleRequestT = Model::BatchDeleteFirewallRuleRequest>
+  Model::BatchDeleteFirewallRuleOutcomeCallable BatchDeleteFirewallRuleCallable(const BatchDeleteFirewallRuleRequestT& request) const {
+    return SubmitCallable(&Route53ResolverClient::BatchDeleteFirewallRule, request);
+  }
+
+  /**
+   * An Async wrapper for BatchDeleteFirewallRule that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchDeleteFirewallRuleRequestT = Model::BatchDeleteFirewallRuleRequest>
+  void BatchDeleteFirewallRuleAsync(const BatchDeleteFirewallRuleRequestT& request,
+                                    const BatchDeleteFirewallRuleResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53ResolverClient::BatchDeleteFirewallRule, request, handler, context);
+  }
+
+  /**
+   * <p>Updates multiple DNS Firewall rules in the specified rule
+   * group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/BatchUpdateFirewallRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchUpdateFirewallRuleOutcome BatchUpdateFirewallRule(const Model::BatchUpdateFirewallRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchUpdateFirewallRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchUpdateFirewallRuleRequestT = Model::BatchUpdateFirewallRuleRequest>
+  Model::BatchUpdateFirewallRuleOutcomeCallable BatchUpdateFirewallRuleCallable(const BatchUpdateFirewallRuleRequestT& request) const {
+    return SubmitCallable(&Route53ResolverClient::BatchUpdateFirewallRule, request);
+  }
+
+  /**
+   * An Async wrapper for BatchUpdateFirewallRule that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchUpdateFirewallRuleRequestT = Model::BatchUpdateFirewallRuleRequest>
+  void BatchUpdateFirewallRuleAsync(const BatchUpdateFirewallRuleRequestT& request,
+                                    const BatchUpdateFirewallRuleResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53ResolverClient::BatchUpdateFirewallRule, request, handler, context);
+  }
+
+  /**
    * <p>Creates an empty firewall domain list for use in DNS Firewall rules. You can
    * populate the domains for the new list with a file, using
    * <a>ImportFirewallDomains</a>, or with domain strings, using
@@ -1413,6 +1497,34 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                    const ListFirewallRuleGroupsRequestT& request = {}) const {
     return SubmitAsync(&Route53ResolverClient::ListFirewallRuleGroups, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the available rule types that can be used in DNS Firewall
+   * rules.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleTypes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListFirewallRuleTypesOutcome ListFirewallRuleTypes(const Model::ListFirewallRuleTypesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListFirewallRuleTypes that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListFirewallRuleTypesRequestT = Model::ListFirewallRuleTypesRequest>
+  Model::ListFirewallRuleTypesOutcomeCallable ListFirewallRuleTypesCallable(const ListFirewallRuleTypesRequestT& request = {}) const {
+    return SubmitCallable(&Route53ResolverClient::ListFirewallRuleTypes, request);
+  }
+
+  /**
+   * An Async wrapper for ListFirewallRuleTypes that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListFirewallRuleTypesRequestT = Model::ListFirewallRuleTypesRequest>
+  void ListFirewallRuleTypesAsync(const ListFirewallRuleTypesResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                  const ListFirewallRuleTypesRequestT& request = {}) const {
+    return SubmitAsync(&Route53ResolverClient::ListFirewallRuleTypes, request, handler, context);
   }
 
   /**

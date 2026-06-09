@@ -8,6 +8,7 @@
 #include <aws/config/model/ConfigRuleState.h>
 #include <aws/config/model/EvaluationModeConfiguration.h>
 #include <aws/config/model/MaximumExecutionFrequency.h>
+#include <aws/config/model/RuleEvaluationVisibility.h>
 #include <aws/config/model/Scope.h>
 #include <aws/config/model/Source.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -291,6 +292,25 @@ class ConfigRule {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether you can get <a>Evaluation</a>s for the Config rule. You can
+   * get <a>Evaluation</a>s for the Amazon Web Services Config rule if this value is
+   * <code>EXTERNAL</code>. You cannot get <a>Evaluation</a>s for the Amazon Web
+   * Services Config rule if this value is <code>INTERNAL</code>.</p>
+   */
+  inline RuleEvaluationVisibility GetRuleEvaluationVisibility() const { return m_ruleEvaluationVisibility; }
+  inline bool RuleEvaluationVisibilityHasBeenSet() const { return m_ruleEvaluationVisibilityHasBeenSet; }
+  inline void SetRuleEvaluationVisibility(RuleEvaluationVisibility value) {
+    m_ruleEvaluationVisibilityHasBeenSet = true;
+    m_ruleEvaluationVisibility = value;
+  }
+  inline ConfigRule& WithRuleEvaluationVisibility(RuleEvaluationVisibility value) {
+    SetRuleEvaluationVisibility(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_configRuleName;
 
@@ -313,6 +333,8 @@ class ConfigRule {
   Aws::String m_createdBy;
 
   Aws::Vector<EvaluationModeConfiguration> m_evaluationModes;
+
+  RuleEvaluationVisibility m_ruleEvaluationVisibility{RuleEvaluationVisibility::NOT_SET};
   bool m_configRuleNameHasBeenSet = false;
   bool m_configRuleArnHasBeenSet = false;
   bool m_configRuleIdHasBeenSet = false;
@@ -324,6 +346,7 @@ class ConfigRule {
   bool m_configRuleStateHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_evaluationModesHasBeenSet = false;
+  bool m_ruleEvaluationVisibilityHasBeenSet = false;
 };
 
 }  // namespace Model

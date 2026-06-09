@@ -30,7 +30,13 @@ enum class ResourceType {
   AuroraDbClusterStorage,
   DynamoDbReservedCapacity,
   MemoryDbReservedInstances,
-  NatGateway
+  NatGateway,
+  DynamoDBTable,
+  ElastiCacheCluster,
+  MemoryDBCluster,
+  DocumentDBCluster,
+  WorkSpaces,
+  SageMakerEndpoint
 };
 
 namespace ResourceTypeMapper {

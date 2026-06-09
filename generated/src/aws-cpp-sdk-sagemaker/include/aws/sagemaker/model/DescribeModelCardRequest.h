@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/IncludedData.h>
 
 #include <utility>
 
@@ -64,12 +65,42 @@ class DescribeModelCardRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the level of model card data to include in the response. Use this
+   * parameter to call <code>DescribeModelCard</code> without requiring
+   * <code>kms:Decrypt</code> permission on the customer-managed Amazon Web Services
+   * KMS key.</p> <ul> <li> <p> <code>AllData</code>: Returns the full model card
+   * <code>Content</code>. This option requires <code>kms:Decrypt</code> permission
+   * on the customer-managed key, if one is associated with the model card. This is
+   * the default.</p> </li> <li> <p> <code>MetadataOnly</code>: Returns the model
+   * card with sanitized <code>Content</code> that includes only a small set of
+   * unencrypted metadata fields. This option does not require
+   * <code>kms:Decrypt</code> permission. For the list of fields preserved in the
+   * response, see <code>Content</code>.</p> </li> </ul> <p>If you don't specify a
+   * value, SageMaker returns <code>AllData</code>.</p>
+   */
+  inline IncludedData GetIncludedData() const { return m_includedData; }
+  inline bool IncludedDataHasBeenSet() const { return m_includedDataHasBeenSet; }
+  inline void SetIncludedData(IncludedData value) {
+    m_includedDataHasBeenSet = true;
+    m_includedData = value;
+  }
+  inline DescribeModelCardRequest& WithIncludedData(IncludedData value) {
+    SetIncludedData(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_modelCardName;
 
   int m_modelCardVersion{0};
+
+  IncludedData m_includedData{IncludedData::NOT_SET};
   bool m_modelCardNameHasBeenSet = false;
   bool m_modelCardVersionHasBeenSet = false;
+  bool m_includedDataHasBeenSet = false;
 };
 
 }  // namespace Model

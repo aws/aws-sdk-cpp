@@ -23,7 +23,7 @@ namespace AppIntegrationsService {
  * AppIntegrations data types</a> </p> </li> </ul> <p>The Amazon AppIntegrations
  * service enables you to configure and reuse connections to external
  * applications.</p> <p>For information about how you can use external applications
- * with Amazon Connect, see the following topics in the <i>Amazon Connect
+ * with Connect Customer, see the following topics in the <i>Connect Customer
  * Administrator Guide</i>:</p> <ul> <li> <p> <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/3p-apps.html">Third-party
  * applications (3p apps) in the agent workspace</a> </p> </li> <li> <p> <a

@@ -46,6 +46,10 @@ ProtectedQuerySummary& ProtectedQuerySummary::operator=(JsonView jsonValue) {
     }
     m_receiverConfigurationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("queryComputePayerAccountId")) {
+    m_queryComputePayerAccountId = jsonValue.GetString("queryComputePayerAccountId");
+    m_queryComputePayerAccountIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -79,6 +83,10 @@ JsonValue ProtectedQuerySummary::Jsonize() const {
       receiverConfigurationsJsonList[receiverConfigurationsIndex].AsObject(m_receiverConfigurations[receiverConfigurationsIndex].Jsonize());
     }
     payload.WithArray("receiverConfigurations", std::move(receiverConfigurationsJsonList));
+  }
+
+  if (m_queryComputePayerAccountIdHasBeenSet) {
+    payload.WithString("queryComputePayerAccountId", m_queryComputePayerAccountId);
   }
 
   return payload;

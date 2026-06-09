@@ -16,11 +16,14 @@ namespace Model {
 namespace PlatformDeviceTypeMapper {
 
 static const int GPU_HASH = HashingUtils::HashString("GPU");
+static const int NEURON_DEVICE_HASH = HashingUtils::HashString("NEURON_DEVICE");
 
 PlatformDeviceType GetPlatformDeviceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == GPU_HASH) {
     return PlatformDeviceType::GPU;
+  } else if (hashCode == NEURON_DEVICE_HASH) {
+    return PlatformDeviceType::NEURON_DEVICE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForPlatformDeviceType(PlatformDeviceType enumValue) {
       return {};
     case PlatformDeviceType::GPU:
       return "GPU";
+    case PlatformDeviceType::NEURON_DEVICE:
+      return "NEURON_DEVICE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

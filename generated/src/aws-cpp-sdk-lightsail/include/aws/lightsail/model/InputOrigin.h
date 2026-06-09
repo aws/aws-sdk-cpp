@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
+#include <aws/lightsail/model/OriginIpAddressTypeEnum.h>
 #include <aws/lightsail/model/OriginProtocolPolicyEnum.h>
 #include <aws/lightsail/model/RegionName.h>
 
@@ -106,6 +107,25 @@ class InputOrigin {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IP address type that the distribution uses when connecting to the
+   * origin.</p> <p>The possible values are <code>ipv4</code> for IPv4 only,
+   * <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and
+   * IPv6.</p>
+   */
+  inline OriginIpAddressTypeEnum GetIpAddressType() const { return m_ipAddressType; }
+  inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+  inline void SetIpAddressType(OriginIpAddressTypeEnum value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline InputOrigin& WithIpAddressType(OriginIpAddressTypeEnum value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -114,10 +134,13 @@ class InputOrigin {
   OriginProtocolPolicyEnum m_protocolPolicy{OriginProtocolPolicyEnum::NOT_SET};
 
   int m_responseTimeout{0};
+
+  OriginIpAddressTypeEnum m_ipAddressType{OriginIpAddressTypeEnum::NOT_SET};
   bool m_nameHasBeenSet = false;
   bool m_regionNameHasBeenSet = false;
   bool m_protocolPolicyHasBeenSet = false;
   bool m_responseTimeoutHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
 };
 
 }  // namespace Model

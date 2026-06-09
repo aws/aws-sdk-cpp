@@ -22,6 +22,10 @@ ControlParameter& ControlParameter::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Requirement")) {
+    m_requirement = ControlParameterRequirementMapper::GetControlParameterRequirementForName(jsonValue.GetString("Requirement"));
+    m_requirementHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ControlParameter::Jsonize() const {
 
   if (m_nameHasBeenSet) {
     payload.WithString("Name", m_name);
+  }
+
+  if (m_requirementHasBeenSet) {
+    payload.WithString("Requirement", ControlParameterRequirementMapper::GetNameForControlParameterRequirement(m_requirement));
   }
 
   return payload;

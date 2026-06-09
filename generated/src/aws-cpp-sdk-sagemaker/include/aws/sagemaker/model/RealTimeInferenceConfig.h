@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
-#include <aws/sagemaker/model/InstanceType.h>
+#include <aws/sagemaker/model/ProductionVariantInstanceType.h>
 
 #include <utility>
 
@@ -36,13 +36,13 @@ class RealTimeInferenceConfig {
   /**
    * <p>The instance type the model is deployed to.</p>
    */
-  inline InstanceType GetInstanceType() const { return m_instanceType; }
+  inline ProductionVariantInstanceType GetInstanceType() const { return m_instanceType; }
   inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-  inline void SetInstanceType(InstanceType value) {
+  inline void SetInstanceType(ProductionVariantInstanceType value) {
     m_instanceTypeHasBeenSet = true;
     m_instanceType = value;
   }
-  inline RealTimeInferenceConfig& WithInstanceType(InstanceType value) {
+  inline RealTimeInferenceConfig& WithInstanceType(ProductionVariantInstanceType value) {
     SetInstanceType(value);
     return *this;
   }
@@ -65,7 +65,7 @@ class RealTimeInferenceConfig {
   }
   ///@}
  private:
-  InstanceType m_instanceType{InstanceType::NOT_SET};
+  ProductionVariantInstanceType m_instanceType{ProductionVariantInstanceType::NOT_SET};
 
   int m_instanceCount{0};
   bool m_instanceTypeHasBeenSet = false;

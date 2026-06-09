@@ -133,6 +133,17 @@ JobRun& JobRun::operator=(JsonView jsonValue) {
     m_queuedDurationMilliseconds = jsonValue.GetInt64("queuedDurationMilliseconds");
     m_queuedDurationMillisecondsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("imageConfiguration")) {
+    m_imageConfiguration = jsonValue.GetObject("imageConfiguration");
+    m_imageConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("workerTypeSpecifications")) {
+    Aws::Map<Aws::String, JsonView> workerTypeSpecificationsJsonMap = jsonValue.GetObject("workerTypeSpecifications").GetAllObjects();
+    for (auto& workerTypeSpecificationsItem : workerTypeSpecificationsJsonMap) {
+      m_workerTypeSpecifications[workerTypeSpecificationsItem.first] = workerTypeSpecificationsItem.second.AsObject();
+    }
+    m_workerTypeSpecificationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -253,6 +264,18 @@ JsonValue JobRun::Jsonize() const {
 
   if (m_queuedDurationMillisecondsHasBeenSet) {
     payload.WithInt64("queuedDurationMilliseconds", m_queuedDurationMilliseconds);
+  }
+
+  if (m_imageConfigurationHasBeenSet) {
+    payload.WithObject("imageConfiguration", m_imageConfiguration.Jsonize());
+  }
+
+  if (m_workerTypeSpecificationsHasBeenSet) {
+    JsonValue workerTypeSpecificationsJsonMap;
+    for (auto& workerTypeSpecificationsItem : m_workerTypeSpecifications) {
+      workerTypeSpecificationsJsonMap.WithObject(workerTypeSpecificationsItem.first, workerTypeSpecificationsItem.second.Jsonize());
+    }
+    payload.WithObject("workerTypeSpecifications", std::move(workerTypeSpecificationsJsonMap));
   }
 
   return payload;

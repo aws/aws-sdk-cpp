@@ -18,6 +18,13 @@ namespace Model {
 TaxExemptionDetails::TaxExemptionDetails(JsonView jsonValue) { *this = jsonValue; }
 
 TaxExemptionDetails& TaxExemptionDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("taxExemptions")) {
+    Aws::Utils::Array<JsonView> taxExemptionsJsonList = jsonValue.GetArray("taxExemptions");
+    for (unsigned taxExemptionsIndex = 0; taxExemptionsIndex < taxExemptionsJsonList.GetLength(); ++taxExemptionsIndex) {
+      m_taxExemptions.push_back(taxExemptionsJsonList[taxExemptionsIndex].AsObject());
+    }
+    m_taxExemptionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("heritageObtainedDetails")) {
     m_heritageObtainedDetails = jsonValue.GetBool("heritageObtainedDetails");
     m_heritageObtainedDetailsHasBeenSet = true;
@@ -30,18 +37,19 @@ TaxExemptionDetails& TaxExemptionDetails::operator=(JsonView jsonValue) {
     m_heritageObtainedReason = jsonValue.GetString("heritageObtainedReason");
     m_heritageObtainedReasonHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("taxExemptions")) {
-    Aws::Utils::Array<JsonView> taxExemptionsJsonList = jsonValue.GetArray("taxExemptions");
-    for (unsigned taxExemptionsIndex = 0; taxExemptionsIndex < taxExemptionsJsonList.GetLength(); ++taxExemptionsIndex) {
-      m_taxExemptions.push_back(taxExemptionsJsonList[taxExemptionsIndex].AsObject());
-    }
-    m_taxExemptionsHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue TaxExemptionDetails::Jsonize() const {
   JsonValue payload;
+
+  if (m_taxExemptionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> taxExemptionsJsonList(m_taxExemptions.size());
+    for (unsigned taxExemptionsIndex = 0; taxExemptionsIndex < taxExemptionsJsonList.GetLength(); ++taxExemptionsIndex) {
+      taxExemptionsJsonList[taxExemptionsIndex].AsObject(m_taxExemptions[taxExemptionsIndex].Jsonize());
+    }
+    payload.WithArray("taxExemptions", std::move(taxExemptionsJsonList));
+  }
 
   if (m_heritageObtainedDetailsHasBeenSet) {
     payload.WithBool("heritageObtainedDetails", m_heritageObtainedDetails);
@@ -53,14 +61,6 @@ JsonValue TaxExemptionDetails::Jsonize() const {
 
   if (m_heritageObtainedReasonHasBeenSet) {
     payload.WithString("heritageObtainedReason", m_heritageObtainedReason);
-  }
-
-  if (m_taxExemptionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> taxExemptionsJsonList(m_taxExemptions.size());
-    for (unsigned taxExemptionsIndex = 0; taxExemptionsIndex < taxExemptionsJsonList.GetLength(); ++taxExemptionsIndex) {
-      taxExemptionsJsonList[taxExemptionsIndex].AsObject(m_taxExemptions[taxExemptionsIndex].Jsonize());
-    }
-    payload.WithArray("taxExemptions", std::move(taxExemptionsJsonList));
   }
 
   return payload;

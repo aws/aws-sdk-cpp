@@ -21,8 +21,8 @@ namespace DataZone {
 namespace Model {
 
 /**
- * <p>The environment configuration for a notebook run in Amazon
- * DataZone.</p><p><h3>See Also:</h3>   <a
+ * <p>The environment configuration for a notebook run in Amazon SageMaker Unified
+ * Studio.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/EnvironmentConfig">AWS
  * API Reference</a></p>
  */

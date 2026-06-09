@@ -23,7 +23,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Payment manager session</p><p><h3>See Also:</h3>   <a
+ * <p>A payment session for managing payment transactions.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/PaymentSession">AWS
  * API Reference</a></p>
  */
@@ -36,7 +37,7 @@ class PaymentSession {
 
   ///@{
   /**
-   * <p>The unique identifier for this payment session.</p>
+   * <p>The unique identifier of the payment session.</p>
    */
   inline const Aws::String& GetPaymentSessionId() const { return m_paymentSessionId; }
   inline bool PaymentSessionIdHasBeenSet() const { return m_paymentSessionIdHasBeenSet; }
@@ -72,7 +73,7 @@ class PaymentSession {
 
   ///@{
   /**
-   * <p>The spending limits for this session.</p>
+   * <p>The spending limits for the payment session.</p>
    */
   inline const SessionLimits& GetLimits() const { return m_limits; }
   inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
@@ -90,7 +91,7 @@ class PaymentSession {
 
   ///@{
   /**
-   * <p>The user ID associated with this payment session.</p>
+   * <p>The user ID associated with this session.</p>
    */
   inline const Aws::String& GetUserId() const { return m_userId; }
   inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
@@ -124,7 +125,7 @@ class PaymentSession {
 
   ///@{
   /**
-   * <p>The timestamp when this payment session was created.</p>
+   * <p>The timestamp when the session was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
   inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
@@ -142,8 +143,7 @@ class PaymentSession {
 
   ///@{
   /**
-   * <p>The available limits for this session after accounting for processed
-   * payments.</p>
+   * <p>The current available spending limits.</p>
    */
   inline const AvailableLimits& GetAvailableLimits() const { return m_availableLimits; }
   inline bool AvailableLimitsHasBeenSet() const { return m_availableLimitsHasBeenSet; }
@@ -161,7 +161,7 @@ class PaymentSession {
 
   ///@{
   /**
-   * <p>The timestamp when this payment session was last updated.</p>
+   * <p>The timestamp when the session was last updated.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
   inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }

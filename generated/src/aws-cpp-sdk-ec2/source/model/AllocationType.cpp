@@ -17,6 +17,7 @@ namespace AllocationTypeMapper {
 
 static const int used_HASH = HashingUtils::HashString("used");
 static const int future_HASH = HashingUtils::HashString("future");
+static const int cancelling_HASH = HashingUtils::HashString("cancelling");
 
 AllocationType GetAllocationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ AllocationType GetAllocationTypeForName(const Aws::String& name) {
     return AllocationType::used;
   } else if (hashCode == future_HASH) {
     return AllocationType::future;
+  } else if (hashCode == cancelling_HASH) {
+    return AllocationType::cancelling;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForAllocationType(AllocationType enumValue) {
       return "used";
     case AllocationType::future:
       return "future";
+    case AllocationType::cancelling:
+      return "cancelling";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

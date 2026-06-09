@@ -18,6 +18,10 @@ namespace Model {
 DeploymentLifecycleHook::DeploymentLifecycleHook(JsonView jsonValue) { *this = jsonValue; }
 
 DeploymentLifecycleHook& DeploymentLifecycleHook::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("targetType")) {
+    m_targetType = DeploymentLifecycleHookTargetTypeMapper::GetDeploymentLifecycleHookTargetTypeForName(jsonValue.GetString("targetType"));
+    m_targetTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("hookTargetArn")) {
     m_hookTargetArn = jsonValue.GetString("hookTargetArn");
     m_hookTargetArnHasBeenSet = true;
@@ -38,11 +42,19 @@ DeploymentLifecycleHook& DeploymentLifecycleHook::operator=(JsonView jsonValue) 
     m_hookDetails = jsonValue.GetObject("hookDetails");
     m_hookDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("timeoutConfiguration")) {
+    m_timeoutConfiguration = jsonValue.GetObject("timeoutConfiguration");
+    m_timeoutConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue DeploymentLifecycleHook::Jsonize() const {
   JsonValue payload;
+
+  if (m_targetTypeHasBeenSet) {
+    payload.WithString("targetType", DeploymentLifecycleHookTargetTypeMapper::GetNameForDeploymentLifecycleHookTargetType(m_targetType));
+  }
 
   if (m_hookTargetArnHasBeenSet) {
     payload.WithString("hookTargetArn", m_hookTargetArn);
@@ -65,6 +77,10 @@ JsonValue DeploymentLifecycleHook::Jsonize() const {
     if (!m_hookDetails.View().IsNull()) {
       payload.WithObject("hookDetails", JsonValue(m_hookDetails.View()));
     }
+  }
+
+  if (m_timeoutConfigurationHasBeenSet) {
+    payload.WithObject("timeoutConfiguration", m_timeoutConfiguration.Jsonize());
   }
 
   return payload;

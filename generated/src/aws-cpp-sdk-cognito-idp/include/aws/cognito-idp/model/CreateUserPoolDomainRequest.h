@@ -7,6 +7,7 @@
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/CustomDomainConfigType.h>
+#include <aws/cognito-idp/model/RoutingType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -121,6 +122,26 @@ class CreateUserPoolDomainRequest : public CognitoIdentityProviderRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration of routing for requests to the domain for replicas of a
+   * replicated user pool. The routing configuration is currently only supported for
+   * custom domains.</p>
+   */
+  inline const RoutingType& GetRouting() const { return m_routing; }
+  inline bool RoutingHasBeenSet() const { return m_routingHasBeenSet; }
+  template <typename RoutingT = RoutingType>
+  void SetRouting(RoutingT&& value) {
+    m_routingHasBeenSet = true;
+    m_routing = std::forward<RoutingT>(value);
+  }
+  template <typename RoutingT = RoutingType>
+  CreateUserPoolDomainRequest& WithRouting(RoutingT&& value) {
+    SetRouting(std::forward<RoutingT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domain;
 
@@ -129,10 +150,13 @@ class CreateUserPoolDomainRequest : public CognitoIdentityProviderRequest {
   int m_managedLoginVersion{0};
 
   CustomDomainConfigType m_customDomainConfig;
+
+  RoutingType m_routing;
   bool m_domainHasBeenSet = false;
   bool m_userPoolIdHasBeenSet = false;
   bool m_managedLoginVersionHasBeenSet = false;
   bool m_customDomainConfigHasBeenSet = false;
+  bool m_routingHasBeenSet = false;
 };
 
 }  // namespace Model

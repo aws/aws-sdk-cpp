@@ -86,6 +86,7 @@
 #include <aws/ec2/model/CopyVolumesResponse.h>
 #include <aws/ec2/model/CreateCapacityManagerDataExportResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationBySplittingResponse.h>
+#include <aws/ec2/model/CreateCapacityReservationCancellationQuoteResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationFleetResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationResponse.h>
 #include <aws/ec2/model/CreateCarrierGatewayResponse.h>
@@ -318,6 +319,8 @@
 #include <aws/ec2/model/DescribeCapacityManagerDataExportsRequest.h>
 #include <aws/ec2/model/DescribeCapacityManagerDataExportsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsResponse.h>
+#include <aws/ec2/model/DescribeCapacityReservationCancellationQuotesRequest.h>
+#include <aws/ec2/model/DescribeCapacityReservationCancellationQuotesResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationTopologyRequest.h>
@@ -421,6 +424,8 @@
 #include <aws/ec2/model/DescribeIpamExternalResourceVerificationTokensResponse.h>
 #include <aws/ec2/model/DescribeIpamPoliciesRequest.h>
 #include <aws/ec2/model/DescribeIpamPoliciesResponse.h>
+#include <aws/ec2/model/DescribeIpamPoolAllocationsRequest.h>
+#include <aws/ec2/model/DescribeIpamPoolAllocationsResponse.h>
 #include <aws/ec2/model/DescribeIpamPoolsRequest.h>
 #include <aws/ec2/model/DescribeIpamPoolsResponse.h>
 #include <aws/ec2/model/DescribeIpamPrefixListResolverTargetsRequest.h>
@@ -836,6 +841,7 @@
 #include <aws/ec2/model/ModifyInstanceNetworkPerformanceOptionsResponse.h>
 #include <aws/ec2/model/ModifyInstancePlacementResponse.h>
 #include <aws/ec2/model/ModifyIpamPolicyAllocationRulesResponse.h>
+#include <aws/ec2/model/ModifyIpamPoolAllocationResponse.h>
 #include <aws/ec2/model/ModifyIpamPoolResponse.h>
 #include <aws/ec2/model/ModifyIpamPrefixListResolverResponse.h>
 #include <aws/ec2/model/ModifyIpamPrefixListResolverTargetResponse.h>
@@ -1060,6 +1066,7 @@ class CopyVolumesRequest;
 class CreateCapacityManagerDataExportRequest;
 class CreateCapacityReservationRequest;
 class CreateCapacityReservationBySplittingRequest;
+class CreateCapacityReservationCancellationQuoteRequest;
 class CreateCapacityReservationFleetRequest;
 class CreateCarrierGatewayRequest;
 class CreateClientVpnEndpointRequest;
@@ -1278,6 +1285,7 @@ class DescribeCapacityBlockStatusRequest;
 class DescribeCapacityBlocksRequest;
 class DescribeCapacityManagerDataExportsRequest;
 class DescribeCapacityReservationBillingRequestsRequest;
+class DescribeCapacityReservationCancellationQuotesRequest;
 class DescribeCapacityReservationFleetsRequest;
 class DescribeCapacityReservationTopologyRequest;
 class DescribeCapacityReservationsRequest;
@@ -1335,6 +1343,7 @@ class DescribeInternetGatewaysRequest;
 class DescribeIpamByoasnRequest;
 class DescribeIpamExternalResourceVerificationTokensRequest;
 class DescribeIpamPoliciesRequest;
+class DescribeIpamPoolAllocationsRequest;
 class DescribeIpamPoolsRequest;
 class DescribeIpamPrefixListResolverTargetsRequest;
 class DescribeIpamPrefixListResolversRequest;
@@ -1628,6 +1637,7 @@ class ModifyInstancePlacementRequest;
 class ModifyIpamRequest;
 class ModifyIpamPolicyAllocationRulesRequest;
 class ModifyIpamPoolRequest;
+class ModifyIpamPoolAllocationRequest;
 class ModifyIpamPrefixListResolverRequest;
 class ModifyIpamPrefixListResolverTargetRequest;
 class ModifyIpamResourceCidrRequest;
@@ -1828,6 +1838,7 @@ typedef Aws::Utils::Outcome<CopyVolumesResponse, EC2Error> CopyVolumesOutcome;
 typedef Aws::Utils::Outcome<CreateCapacityManagerDataExportResponse, EC2Error> CreateCapacityManagerDataExportOutcome;
 typedef Aws::Utils::Outcome<CreateCapacityReservationResponse, EC2Error> CreateCapacityReservationOutcome;
 typedef Aws::Utils::Outcome<CreateCapacityReservationBySplittingResponse, EC2Error> CreateCapacityReservationBySplittingOutcome;
+typedef Aws::Utils::Outcome<CreateCapacityReservationCancellationQuoteResponse, EC2Error> CreateCapacityReservationCancellationQuoteOutcome;
 typedef Aws::Utils::Outcome<CreateCapacityReservationFleetResponse, EC2Error> CreateCapacityReservationFleetOutcome;
 typedef Aws::Utils::Outcome<CreateCarrierGatewayResponse, EC2Error> CreateCarrierGatewayOutcome;
 typedef Aws::Utils::Outcome<CreateClientVpnEndpointResponse, EC2Error> CreateClientVpnEndpointOutcome;
@@ -2056,6 +2067,8 @@ typedef Aws::Utils::Outcome<DescribeCapacityBlockStatusResponse, EC2Error> Descr
 typedef Aws::Utils::Outcome<DescribeCapacityBlocksResponse, EC2Error> DescribeCapacityBlocksOutcome;
 typedef Aws::Utils::Outcome<DescribeCapacityManagerDataExportsResponse, EC2Error> DescribeCapacityManagerDataExportsOutcome;
 typedef Aws::Utils::Outcome<DescribeCapacityReservationBillingRequestsResponse, EC2Error> DescribeCapacityReservationBillingRequestsOutcome;
+typedef Aws::Utils::Outcome<DescribeCapacityReservationCancellationQuotesResponse, EC2Error>
+    DescribeCapacityReservationCancellationQuotesOutcome;
 typedef Aws::Utils::Outcome<DescribeCapacityReservationFleetsResponse, EC2Error> DescribeCapacityReservationFleetsOutcome;
 typedef Aws::Utils::Outcome<DescribeCapacityReservationTopologyResponse, EC2Error> DescribeCapacityReservationTopologyOutcome;
 typedef Aws::Utils::Outcome<DescribeCapacityReservationsResponse, EC2Error> DescribeCapacityReservationsOutcome;
@@ -2115,6 +2128,7 @@ typedef Aws::Utils::Outcome<DescribeIpamByoasnResponse, EC2Error> DescribeIpamBy
 typedef Aws::Utils::Outcome<DescribeIpamExternalResourceVerificationTokensResponse, EC2Error>
     DescribeIpamExternalResourceVerificationTokensOutcome;
 typedef Aws::Utils::Outcome<DescribeIpamPoliciesResponse, EC2Error> DescribeIpamPoliciesOutcome;
+typedef Aws::Utils::Outcome<DescribeIpamPoolAllocationsResponse, EC2Error> DescribeIpamPoolAllocationsOutcome;
 typedef Aws::Utils::Outcome<DescribeIpamPoolsResponse, EC2Error> DescribeIpamPoolsOutcome;
 typedef Aws::Utils::Outcome<DescribeIpamPrefixListResolverTargetsResponse, EC2Error> DescribeIpamPrefixListResolverTargetsOutcome;
 typedef Aws::Utils::Outcome<DescribeIpamPrefixListResolversResponse, EC2Error> DescribeIpamPrefixListResolversOutcome;
@@ -2423,6 +2437,7 @@ typedef Aws::Utils::Outcome<ModifyInstancePlacementResponse, EC2Error> ModifyIns
 typedef Aws::Utils::Outcome<ModifyIpamResponse, EC2Error> ModifyIpamOutcome;
 typedef Aws::Utils::Outcome<ModifyIpamPolicyAllocationRulesResponse, EC2Error> ModifyIpamPolicyAllocationRulesOutcome;
 typedef Aws::Utils::Outcome<ModifyIpamPoolResponse, EC2Error> ModifyIpamPoolOutcome;
+typedef Aws::Utils::Outcome<ModifyIpamPoolAllocationResponse, EC2Error> ModifyIpamPoolAllocationOutcome;
 typedef Aws::Utils::Outcome<ModifyIpamPrefixListResolverResponse, EC2Error> ModifyIpamPrefixListResolverOutcome;
 typedef Aws::Utils::Outcome<ModifyIpamPrefixListResolverTargetResponse, EC2Error> ModifyIpamPrefixListResolverTargetOutcome;
 typedef Aws::Utils::Outcome<ModifyIpamResourceCidrResponse, EC2Error> ModifyIpamResourceCidrOutcome;
@@ -2630,6 +2645,7 @@ typedef std::future<CopyVolumesOutcome> CopyVolumesOutcomeCallable;
 typedef std::future<CreateCapacityManagerDataExportOutcome> CreateCapacityManagerDataExportOutcomeCallable;
 typedef std::future<CreateCapacityReservationOutcome> CreateCapacityReservationOutcomeCallable;
 typedef std::future<CreateCapacityReservationBySplittingOutcome> CreateCapacityReservationBySplittingOutcomeCallable;
+typedef std::future<CreateCapacityReservationCancellationQuoteOutcome> CreateCapacityReservationCancellationQuoteOutcomeCallable;
 typedef std::future<CreateCapacityReservationFleetOutcome> CreateCapacityReservationFleetOutcomeCallable;
 typedef std::future<CreateCarrierGatewayOutcome> CreateCarrierGatewayOutcomeCallable;
 typedef std::future<CreateClientVpnEndpointOutcome> CreateClientVpnEndpointOutcomeCallable;
@@ -2853,6 +2869,7 @@ typedef std::future<DescribeCapacityBlockStatusOutcome> DescribeCapacityBlockSta
 typedef std::future<DescribeCapacityBlocksOutcome> DescribeCapacityBlocksOutcomeCallable;
 typedef std::future<DescribeCapacityManagerDataExportsOutcome> DescribeCapacityManagerDataExportsOutcomeCallable;
 typedef std::future<DescribeCapacityReservationBillingRequestsOutcome> DescribeCapacityReservationBillingRequestsOutcomeCallable;
+typedef std::future<DescribeCapacityReservationCancellationQuotesOutcome> DescribeCapacityReservationCancellationQuotesOutcomeCallable;
 typedef std::future<DescribeCapacityReservationFleetsOutcome> DescribeCapacityReservationFleetsOutcomeCallable;
 typedef std::future<DescribeCapacityReservationTopologyOutcome> DescribeCapacityReservationTopologyOutcomeCallable;
 typedef std::future<DescribeCapacityReservationsOutcome> DescribeCapacityReservationsOutcomeCallable;
@@ -2910,6 +2927,7 @@ typedef std::future<DescribeInternetGatewaysOutcome> DescribeInternetGatewaysOut
 typedef std::future<DescribeIpamByoasnOutcome> DescribeIpamByoasnOutcomeCallable;
 typedef std::future<DescribeIpamExternalResourceVerificationTokensOutcome> DescribeIpamExternalResourceVerificationTokensOutcomeCallable;
 typedef std::future<DescribeIpamPoliciesOutcome> DescribeIpamPoliciesOutcomeCallable;
+typedef std::future<DescribeIpamPoolAllocationsOutcome> DescribeIpamPoolAllocationsOutcomeCallable;
 typedef std::future<DescribeIpamPoolsOutcome> DescribeIpamPoolsOutcomeCallable;
 typedef std::future<DescribeIpamPrefixListResolverTargetsOutcome> DescribeIpamPrefixListResolverTargetsOutcomeCallable;
 typedef std::future<DescribeIpamPrefixListResolversOutcome> DescribeIpamPrefixListResolversOutcomeCallable;
@@ -3205,6 +3223,7 @@ typedef std::future<ModifyInstancePlacementOutcome> ModifyInstancePlacementOutco
 typedef std::future<ModifyIpamOutcome> ModifyIpamOutcomeCallable;
 typedef std::future<ModifyIpamPolicyAllocationRulesOutcome> ModifyIpamPolicyAllocationRulesOutcomeCallable;
 typedef std::future<ModifyIpamPoolOutcome> ModifyIpamPoolOutcomeCallable;
+typedef std::future<ModifyIpamPoolAllocationOutcome> ModifyIpamPoolAllocationOutcomeCallable;
 typedef std::future<ModifyIpamPrefixListResolverOutcome> ModifyIpamPrefixListResolverOutcomeCallable;
 typedef std::future<ModifyIpamPrefixListResolverTargetOutcome> ModifyIpamPrefixListResolverTargetOutcomeCallable;
 typedef std::future<ModifyIpamResourceCidrOutcome> ModifyIpamResourceCidrOutcomeCallable;
@@ -3563,6 +3582,10 @@ typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservat
                            const Model::CreateCapacityReservationBySplittingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCapacityReservationBySplittingResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservationCancellationQuoteRequest&,
+                           const Model::CreateCapacityReservationCancellationQuoteOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateCapacityReservationCancellationQuoteResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservationFleetRequest&,
                            const Model::CreateCapacityReservationFleetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -4298,6 +4321,10 @@ typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReserv
                            const Model::DescribeCapacityReservationBillingRequestsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeCapacityReservationBillingRequestsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationCancellationQuotesRequest&,
+                           const Model::DescribeCapacityReservationCancellationQuotesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeCapacityReservationCancellationQuotesResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationFleetsRequest&,
                            const Model::DescribeCapacityReservationFleetsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -4490,6 +4517,9 @@ typedef std::function<void(const EC2Client*, const Model::DescribeIpamExternalRe
 typedef std::function<void(const EC2Client*, const Model::DescribeIpamPoliciesRequest&, const Model::DescribeIpamPoliciesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeIpamPoliciesResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeIpamPoolAllocationsRequest&,
+                           const Model::DescribeIpamPoolAllocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeIpamPoolAllocationsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeIpamPoolsRequest&, const Model::DescribeIpamPoolsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeIpamPoolsResponseReceivedHandler;
@@ -5520,6 +5550,9 @@ typedef std::function<void(const EC2Client*, const Model::ModifyIpamPolicyAlloca
 typedef std::function<void(const EC2Client*, const Model::ModifyIpamPoolRequest&, const Model::ModifyIpamPoolOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyIpamPoolResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyIpamPoolAllocationRequest&, const Model::ModifyIpamPoolAllocationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyIpamPoolAllocationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyIpamPrefixListResolverRequest&,
                            const Model::ModifyIpamPrefixListResolverOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

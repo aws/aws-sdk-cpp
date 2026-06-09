@@ -190,7 +190,7 @@ class DestinationConnectorProperties {
 
   ///@{
   /**
-   * <p> The properties required to query Amazon Connect Customer Profiles. </p>
+   * <p> The properties required to query Connect Customer Customer Profiles. </p>
    */
   inline const CustomerProfilesDestinationProperties& GetCustomerProfiles() const { return m_customerProfiles; }
   inline bool CustomerProfilesHasBeenSet() const { return m_customerProfilesHasBeenSet; }

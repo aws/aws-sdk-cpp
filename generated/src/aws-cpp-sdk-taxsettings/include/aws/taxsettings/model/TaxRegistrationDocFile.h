@@ -34,24 +34,6 @@ class TaxRegistrationDocFile {
 
   ///@{
   /**
-   * <p>The tax registration document content. </p>
-   */
-  inline const Aws::Utils::ByteBuffer& GetFileContent() const { return m_fileContent; }
-  inline bool FileContentHasBeenSet() const { return m_fileContentHasBeenSet; }
-  template <typename FileContentT = Aws::Utils::ByteBuffer>
-  void SetFileContent(FileContentT&& value) {
-    m_fileContentHasBeenSet = true;
-    m_fileContent = std::forward<FileContentT>(value);
-  }
-  template <typename FileContentT = Aws::Utils::ByteBuffer>
-  TaxRegistrationDocFile& WithFileContent(FileContentT&& value) {
-    SetFileContent(std::forward<FileContentT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The tax registration document name. </p>
    */
   inline const Aws::String& GetFileName() const { return m_fileName; }
@@ -67,12 +49,30 @@ class TaxRegistrationDocFile {
     return *this;
   }
   ///@}
- private:
-  Aws::Utils::ByteBuffer m_fileContent{};
 
+  ///@{
+  /**
+   * <p>The tax registration document content. </p>
+   */
+  inline const Aws::Utils::ByteBuffer& GetFileContent() const { return m_fileContent; }
+  inline bool FileContentHasBeenSet() const { return m_fileContentHasBeenSet; }
+  template <typename FileContentT = Aws::Utils::ByteBuffer>
+  void SetFileContent(FileContentT&& value) {
+    m_fileContentHasBeenSet = true;
+    m_fileContent = std::forward<FileContentT>(value);
+  }
+  template <typename FileContentT = Aws::Utils::ByteBuffer>
+  TaxRegistrationDocFile& WithFileContent(FileContentT&& value) {
+    SetFileContent(std::forward<FileContentT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_fileName;
-  bool m_fileContentHasBeenSet = false;
+
+  Aws::Utils::ByteBuffer m_fileContent{};
   bool m_fileNameHasBeenSet = false;
+  bool m_fileContentHasBeenSet = false;
 };
 
 }  // namespace Model

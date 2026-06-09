@@ -46,6 +46,7 @@
 #include <aws/observabilityadmin/model/DeleteTelemetryRuleForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/DeleteTelemetryRuleRequest.h>
 #include <aws/observabilityadmin/model/DestinationLogsConfiguration.h>
+#include <aws/observabilityadmin/model/DestinationMetricsConfiguration.h>
 #include <aws/observabilityadmin/model/DestinationType.h>
 #include <aws/observabilityadmin/model/ELBLoadBalancerLoggingParameters.h>
 #include <aws/observabilityadmin/model/EncryptedLogGroupStrategy.h>
@@ -98,6 +99,7 @@
 #include <aws/observabilityadmin/model/LoggingFilter.h>
 #include <aws/observabilityadmin/model/LogsBackupConfiguration.h>
 #include <aws/observabilityadmin/model/LogsEncryptionConfiguration.h>
+#include <aws/observabilityadmin/model/MetricsBackupConfiguration.h>
 #include <aws/observabilityadmin/model/MskEnhancedMonitoringLevel.h>
 #include <aws/observabilityadmin/model/MskMonitoringParameters.h>
 #include <aws/observabilityadmin/model/OutputFormat.h>
@@ -114,6 +116,7 @@
 #include <aws/observabilityadmin/model/SingleHeader.h>
 #include <aws/observabilityadmin/model/Source.h>
 #include <aws/observabilityadmin/model/SourceLogsConfiguration.h>
+#include <aws/observabilityadmin/model/SourceMetricsConfiguration.h>
 #include <aws/observabilityadmin/model/StartTelemetryEnrichmentRequest.h>
 #include <aws/observabilityadmin/model/StartTelemetryEnrichmentResult.h>
 #include <aws/observabilityadmin/model/StartTelemetryEvaluationForOrganizationRequest.h>

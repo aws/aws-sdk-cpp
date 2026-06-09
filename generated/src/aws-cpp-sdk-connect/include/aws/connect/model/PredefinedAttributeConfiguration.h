@@ -19,7 +19,7 @@ namespace Model {
 /**
  * <p>Custom metadata that is associated to predefined attributes to control
  * behavior in upstream services, such as controlling how a predefined attribute
- * should be displayed in the Amazon Connect admin website.</p><p><h3>See
+ * should be displayed in the Connect Customer admin website.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PredefinedAttributeConfiguration">AWS
  * API Reference</a></p>
@@ -33,10 +33,10 @@ class PredefinedAttributeConfiguration {
 
   ///@{
   /**
-   * <p>When this parameter is set to true, Amazon Connect enforces strict validation
-   * on the specific values, if the values are predefined in attributes. The contact
-   * will store only valid and predefined values for teh predefined attribute
-   * key.</p>
+   * <p>When this parameter is set to true, Connect Customer enforces strict
+   * validation on the specific values, if the values are predefined in attributes.
+   * The contact will store only valid and predefined values for teh predefined
+   * attribute key.</p>
    */
   inline bool GetEnableValueValidationOnAssociation() const { return m_enableValueValidationOnAssociation; }
   inline bool EnableValueValidationOnAssociationHasBeenSet() const { return m_enableValueValidationOnAssociationHasBeenSet; }
@@ -53,7 +53,7 @@ class PredefinedAttributeConfiguration {
   ///@{
   /**
    * <p>A boolean flag used to indicate whether a predefined attribute should be
-   * displayed in the Amazon Connect admin website.</p>
+   * displayed in the Connect Customer admin website.</p>
    */
   inline bool GetIsReadOnly() const { return m_isReadOnly; }
   inline bool IsReadOnlyHasBeenSet() const { return m_isReadOnlyHasBeenSet; }

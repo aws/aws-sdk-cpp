@@ -67,19 +67,19 @@ class MetricFilterV2 {
    * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>, and
    * <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-   * in the <i>Amazon Connect Administrator Guide</i>. </p> <p>For valid values of
+   * in the <i>Connect Customer Administrator Guide</i>. </p> <p>For valid values of
    * the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for
    * the <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#flows-outcome">Flow
-   * outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p> <p>For
-   * valid values of the metric-level filter
+   * outcome</a> metric in the <i>Connect Customer Administrator Guide</i>.</p>
+   * <p>For valid values of the metric-level filter
    * <code>BOT_CONVERSATION_OUTCOME_TYPE</code>, see the description for the <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-conversations-completed-metric">Bot
-   * conversations completed</a> in the <i>Amazon Connect Administrator
+   * conversations completed</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p> <p>For valid values of the metric-level filter
    * <code>BOT_INTENT_OUTCOME_TYPE</code>, see the description for the <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-intents-completed-metric">Bot
-   * intents completed</a> metric in the <i>Amazon Connect Administrator
+   * intents completed</a> metric in the <i>Connect Customer Administrator
    * Guide</i>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetMetricFilterValues() const { return m_metricFilterValues; }

@@ -10,6 +10,7 @@
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
 #include <aws/grafana/model/AccountAccessType.h>
 #include <aws/grafana/model/DataSourceType.h>
+#include <aws/grafana/model/IPAddressType.h>
 #include <aws/grafana/model/NetworkAccessConfiguration.h>
 #include <aws/grafana/model/NotificationDestinationType.h>
 #include <aws/grafana/model/PermissionType.h>
@@ -365,6 +366,26 @@ class UpdateWorkspaceRequest : public ManagedGrafanaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the workspace supports IPv4 only, or IPv4 and IPv6. Valid
+   * values are <code>IPv4</code> and <code>DualStack</code>. For more information
+   * about IP address types, see <a
+   * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-nac.html">Network
+   * access control</a>.</p>
+   */
+  inline IPAddressType GetIpAddressType() const { return m_ipAddressType; }
+  inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+  inline void SetIpAddressType(IPAddressType value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline UpdateWorkspaceRequest& WithIpAddressType(IPAddressType value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
  private:
   AccountAccessType m_accountAccessType{AccountAccessType::NOT_SET};
 
@@ -395,6 +416,8 @@ class UpdateWorkspaceRequest : public ManagedGrafanaRequest {
   NetworkAccessConfiguration m_networkAccessControl;
 
   bool m_removeNetworkAccessConfiguration{false};
+
+  IPAddressType m_ipAddressType{IPAddressType::NOT_SET};
   bool m_accountAccessTypeHasBeenSet = false;
   bool m_organizationRoleNameHasBeenSet = false;
   bool m_permissionTypeHasBeenSet = false;
@@ -410,6 +433,7 @@ class UpdateWorkspaceRequest : public ManagedGrafanaRequest {
   bool m_removeVpcConfigurationHasBeenSet = false;
   bool m_networkAccessControlHasBeenSet = false;
   bool m_removeNetworkAccessConfigurationHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
 };
 
 }  // namespace Model

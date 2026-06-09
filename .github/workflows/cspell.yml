@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
       with:
         path: aws-sdk-cpp
+        persist-credentials: false
     - name: Install Dependencies
       run: |
         sudo npm install -g cspell

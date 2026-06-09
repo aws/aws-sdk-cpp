@@ -22,11 +22,14 @@
 #include <aws/iot-data/IoTDataPlaneErrorMarshaller.h>
 #include <aws/iot-data/model/DeleteConnectionRequest.h>
 #include <aws/iot-data/model/DeleteThingShadowRequest.h>
+#include <aws/iot-data/model/GetConnectionRequest.h>
 #include <aws/iot-data/model/GetRetainedMessageRequest.h>
 #include <aws/iot-data/model/GetThingShadowRequest.h>
 #include <aws/iot-data/model/ListNamedShadowsForThingRequest.h>
 #include <aws/iot-data/model/ListRetainedMessagesRequest.h>
+#include <aws/iot-data/model/ListSubscriptionsRequest.h>
 #include <aws/iot-data/model/PublishRequest.h>
+#include <aws/iot-data/model/SendDirectMessageRequest.h>
 #include <aws/iot-data/model/UpdateThingShadowRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -51,12 +54,13 @@ const char* IoTDataPlaneClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
 IoTDataPlaneClient::IoTDataPlaneClient(const IoTDataPlane::IoTDataPlaneClientConfiguration& clientConfiguration,
                                        std::shared_ptr<IoTDataPlaneEndpointProviderBase> endpointProvider)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<IoTDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
+    : BASECLASS(
+          clientConfiguration,
+          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
+              ALLOCATION_TAG,
+              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+          Aws::MakeShared<IoTDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTDataPlaneEndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);
@@ -89,12 +93,13 @@ IoTDataPlaneClient::IoTDataPlaneClient(const std::shared_ptr<AWSCredentialsProvi
 
 /* Legacy constructors due deprecation */
 IoTDataPlaneClient::IoTDataPlaneClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<IoTDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
+    : BASECLASS(
+          clientConfiguration,
+          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
+              ALLOCATION_TAG,
+              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+          Aws::MakeShared<IoTDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<IoTDataPlaneEndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);
@@ -241,6 +246,23 @@ DeleteThingShadowOutcome IoTDataPlaneClient::DeleteThingShadow(const DeleteThing
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetConnectionOutcome IoTDataPlaneClient::GetConnection(const GetConnectionRequest& request) const {
+  if (!request.ClientIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetConnection", "Required field: ClientId, is not set");
+    return GetConnectionOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [ClientId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connections/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClientId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectionOutcome(result.GetResultWithOwnership()) : GetConnectionOutcome(std::move(result.GetError()));
+}
+
 GetRetainedMessageOutcome IoTDataPlaneClient::GetRetainedMessage(const GetRetainedMessageRequest& request) const {
   if (!request.TopicHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetRetainedMessage", "Required field: Topic, is not set");
@@ -326,6 +348,25 @@ ListRetainedMessagesOutcome IoTDataPlaneClient::ListRetainedMessages(const ListR
                             : ListRetainedMessagesOutcome(std::move(result.GetError()));
 }
 
+ListSubscriptionsOutcome IoTDataPlaneClient::ListSubscriptions(const ListSubscriptionsRequest& request) const {
+  if (!request.ClientIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListSubscriptions", "Required field: ClientId, is not set");
+    return ListSubscriptionsOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [ClientId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connections/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClientId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : ListSubscriptionsOutcome(std::move(result.GetError()));
+}
+
 PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const {
   if (!request.TopicHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("Publish", "Required field: Topic, is not set");
@@ -341,6 +382,30 @@ PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const 
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PublishOutcome(result.GetResultWithOwnership()) : PublishOutcome(std::move(result.GetError()));
+}
+
+SendDirectMessageOutcome IoTDataPlaneClient::SendDirectMessage(const SendDirectMessageRequest& request) const {
+  if (!request.ClientIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SendDirectMessage", "Required field: ClientId, is not set");
+    return SendDirectMessageOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [ClientId]", false));
+  }
+  if (!request.TopicHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SendDirectMessage", "Required field: Topic, is not set");
+    return SendDirectMessageOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [Topic]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connections/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClientId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/messages");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendDirectMessageOutcome(result.GetResultWithOwnership())
+                            : SendDirectMessageOutcome(std::move(result.GetError()));
 }
 
 UpdateThingShadowOutcome IoTDataPlaneClient::UpdateThingShadow(const UpdateThingShadowRequest& request) const {

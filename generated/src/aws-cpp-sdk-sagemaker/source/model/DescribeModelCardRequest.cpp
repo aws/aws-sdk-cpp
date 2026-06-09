@@ -23,6 +23,10 @@ Aws::String DescribeModelCardRequest::SerializePayload() const {
     payload.WithInteger("ModelCardVersion", m_modelCardVersion);
   }
 
+  if (m_includedDataHasBeenSet) {
+    payload.WithString("IncludedData", IncludedDataMapper::GetNameForIncludedData(m_includedData));
+  }
+
   return payload.View().WriteReadable();
 }
 

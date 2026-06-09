@@ -52,6 +52,7 @@
 #include <aws/medialive/model/AudioDescriptionAudioTypeControl.h>
 #include <aws/medialive/model/AudioDescriptionLanguageCodeControl.h>
 #include <aws/medialive/model/AudioDolbyEDecode.h>
+#include <aws/medialive/model/AudioFeedInput.h>
 #include <aws/medialive/model/AudioHlsRenditionSelection.h>
 #include <aws/medialive/model/AudioLanguageSelection.h>
 #include <aws/medialive/model/AudioLanguageSelectionPolicy.h>
@@ -122,6 +123,7 @@
 #include <aws/medialive/model/CaptionRectangle.h>
 #include <aws/medialive/model/CaptionSelector.h>
 #include <aws/medialive/model/CaptionSelectorSettings.h>
+#include <aws/medialive/model/CaptionSynchronizationMode.h>
 #include <aws/medialive/model/CdiInputResolution.h>
 #include <aws/medialive/model/CdiInputSpecification.h>
 #include <aws/medialive/model/Channel.h>
@@ -803,6 +805,7 @@
 #include <aws/medialive/model/SignalMapMonitorDeploymentStatus.h>
 #include <aws/medialive/model/SignalMapStatus.h>
 #include <aws/medialive/model/SignalMapSummary.h>
+#include <aws/medialive/model/SmartSubtitleSourceSettings.h>
 #include <aws/medialive/model/SmoothGroupAudioOnlyTimecodeControl.h>
 #include <aws/medialive/model/SmoothGroupCertificateMode.h>
 #include <aws/medialive/model/SmoothGroupEventIdMode.h>

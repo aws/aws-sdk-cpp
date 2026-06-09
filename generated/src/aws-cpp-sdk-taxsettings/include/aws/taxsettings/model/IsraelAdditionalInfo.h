@@ -35,24 +35,6 @@ class IsraelAdditionalInfo {
 
   ///@{
   /**
-   * <p> Customer type for your TRN in Israel. The value can be <code>Business</code>
-   * or <code>Individual</code>. Use <code>Business</code>for entities such as
-   * not-for-profit and financial institutions.</p>
-   */
-  inline IsraelCustomerType GetCustomerType() const { return m_customerType; }
-  inline bool CustomerTypeHasBeenSet() const { return m_customerTypeHasBeenSet; }
-  inline void SetCustomerType(IsraelCustomerType value) {
-    m_customerTypeHasBeenSet = true;
-    m_customerType = value;
-  }
-  inline IsraelAdditionalInfo& WithCustomerType(IsraelCustomerType value) {
-    SetCustomerType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> Dealer type for your TRN in Israel. If you're not a local authorized dealer
    * with an Israeli VAT ID, specify your tax identification number so that Amazon
    * Web Services can send you a compliant tax invoice.</p>
@@ -68,12 +50,30 @@ class IsraelAdditionalInfo {
     return *this;
   }
   ///@}
- private:
-  IsraelCustomerType m_customerType{IsraelCustomerType::NOT_SET};
 
+  ///@{
+  /**
+   * <p> Customer type for your TRN in Israel. The value can be <code>Business</code>
+   * or <code>Individual</code>. Use <code>Business</code>for entities such as
+   * not-for-profit and financial institutions.</p>
+   */
+  inline IsraelCustomerType GetCustomerType() const { return m_customerType; }
+  inline bool CustomerTypeHasBeenSet() const { return m_customerTypeHasBeenSet; }
+  inline void SetCustomerType(IsraelCustomerType value) {
+    m_customerTypeHasBeenSet = true;
+    m_customerType = value;
+  }
+  inline IsraelAdditionalInfo& WithCustomerType(IsraelCustomerType value) {
+    SetCustomerType(value);
+    return *this;
+  }
+  ///@}
+ private:
   IsraelDealerType m_dealerType{IsraelDealerType::NOT_SET};
-  bool m_customerTypeHasBeenSet = false;
+
+  IsraelCustomerType m_customerType{IsraelCustomerType::NOT_SET};
   bool m_dealerTypeHasBeenSet = false;
+  bool m_customerTypeHasBeenSet = false;
 };
 
 }  // namespace Model

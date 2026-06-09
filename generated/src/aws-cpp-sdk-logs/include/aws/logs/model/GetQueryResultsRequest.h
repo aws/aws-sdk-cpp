@@ -70,7 +70,8 @@ class GetQueryResultsRequest : public CloudWatchLogsRequest {
   ///@{
   /**
    * <p>The maximum number of log events to return in the response. The maximum is
-   * 10,000 log events.</p>
+   * 10,000 log events per request. You can retrieve up to 100,000 log event results
+   * from a query by paginating with the <code>nextToken</code>.</p>
    */
   inline int GetMaxItems() const { return m_maxItems; }
   inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }

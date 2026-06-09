@@ -19,6 +19,10 @@ Aws::String DeleteProcurementPortalPreferenceRequest::SerializePayload() const {
     payload.WithString("ProcurementPortalPreferenceArn", m_procurementPortalPreferenceArn);
   }
 
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
+  }
+
   return payload.View().WriteReadable();
 }
 

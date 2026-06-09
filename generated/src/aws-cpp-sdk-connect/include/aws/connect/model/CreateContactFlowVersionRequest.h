@@ -31,7 +31,7 @@ class CreateContactFlowVersionRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance.</p>
+   * <p>The identifier of the Connect Customer instance.</p>
    */
   inline const Aws::String& GetInstanceId() const { return m_instanceId; }
   inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }

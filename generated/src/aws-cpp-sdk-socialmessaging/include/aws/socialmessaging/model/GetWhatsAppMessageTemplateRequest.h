@@ -68,12 +68,58 @@ class GetWhatsAppMessageTemplateRequest : public SocialMessagingRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the message template. Use together with
+   * <code>templateLanguageCode</code> as an alternative to
+   * <code>metaTemplateId</code> to identify a template.</p>
+   */
+  inline const Aws::String& GetTemplateName() const { return m_templateName; }
+  inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+  template <typename TemplateNameT = Aws::String>
+  void SetTemplateName(TemplateNameT&& value) {
+    m_templateNameHasBeenSet = true;
+    m_templateName = std::forward<TemplateNameT>(value);
+  }
+  template <typename TemplateNameT = Aws::String>
+  GetWhatsAppMessageTemplateRequest& WithTemplateName(TemplateNameT&& value) {
+    SetTemplateName(std::forward<TemplateNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The language code of the message template (for example, <code>en</code> or
+   * <code>en_US</code>). Use together with <code>templateName</code> as an
+   * alternative to <code>metaTemplateId</code> to identify a template.</p>
+   */
+  inline const Aws::String& GetTemplateLanguageCode() const { return m_templateLanguageCode; }
+  inline bool TemplateLanguageCodeHasBeenSet() const { return m_templateLanguageCodeHasBeenSet; }
+  template <typename TemplateLanguageCodeT = Aws::String>
+  void SetTemplateLanguageCode(TemplateLanguageCodeT&& value) {
+    m_templateLanguageCodeHasBeenSet = true;
+    m_templateLanguageCode = std::forward<TemplateLanguageCodeT>(value);
+  }
+  template <typename TemplateLanguageCodeT = Aws::String>
+  GetWhatsAppMessageTemplateRequest& WithTemplateLanguageCode(TemplateLanguageCodeT&& value) {
+    SetTemplateLanguageCode(std::forward<TemplateLanguageCodeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_metaTemplateId;
 
   Aws::String m_id;
+
+  Aws::String m_templateName;
+
+  Aws::String m_templateLanguageCode;
   bool m_metaTemplateIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateLanguageCodeHasBeenSet = false;
 };
 
 }  // namespace Model

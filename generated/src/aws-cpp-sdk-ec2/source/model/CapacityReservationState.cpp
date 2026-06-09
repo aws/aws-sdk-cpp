@@ -26,6 +26,7 @@ static const int payment_failed_HASH = HashingUtils::HashString("payment-failed"
 static const int assessing_HASH = HashingUtils::HashString("assessing");
 static const int delayed_HASH = HashingUtils::HashString("delayed");
 static const int unsupported_HASH = HashingUtils::HashString("unsupported");
+static const int cancelling_HASH = HashingUtils::HashString("cancelling");
 static const int unavailable_HASH = HashingUtils::HashString("unavailable");
 
 CapacityReservationState GetCapacityReservationStateForName(const Aws::String& name) {
@@ -52,6 +53,8 @@ CapacityReservationState GetCapacityReservationStateForName(const Aws::String& n
     return CapacityReservationState::delayed;
   } else if (hashCode == unsupported_HASH) {
     return CapacityReservationState::unsupported;
+  } else if (hashCode == cancelling_HASH) {
+    return CapacityReservationState::cancelling;
   } else if (hashCode == unavailable_HASH) {
     return CapacityReservationState::unavailable;
   }
@@ -90,6 +93,8 @@ Aws::String GetNameForCapacityReservationState(CapacityReservationState enumValu
       return "delayed";
     case CapacityReservationState::unsupported:
       return "unsupported";
+    case CapacityReservationState::cancelling:
+      return "cancelling";
     case CapacityReservationState::unavailable:
       return "unavailable";
     default:

@@ -30,7 +30,7 @@ class StopContactMediaProcessingRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p> The identifier of the Amazon Connect instance. You can <a
+   * <p> The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. </p>
    */

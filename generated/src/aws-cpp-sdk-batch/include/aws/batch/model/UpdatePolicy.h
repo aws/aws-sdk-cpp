@@ -53,7 +53,12 @@ class UpdatePolicy {
   ///@{
   /**
    * <p>Specifies the job timeout (in minutes) when the compute environment
-   * infrastructure is updated. The default value is 30.</p>
+   * infrastructure is updated. The default value is 30. The maximum value is
+   * 7200.</p>  <p>Increasing <code>jobExecutionTimeoutMinutes</code> during
+   * infrastructure updates delays the replacement of instances with new instances
+   * that include updates such as security patches, but provides more time for jobs
+   * to execute. Consider the security implications of this tradeoff when setting
+   * timeout values.</p>
    */
   inline long long GetJobExecutionTimeoutMinutes() const { return m_jobExecutionTimeoutMinutes; }
   inline bool JobExecutionTimeoutMinutesHasBeenSet() const { return m_jobExecutionTimeoutMinutesHasBeenSet; }

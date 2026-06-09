@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/rtbfabric/RTBFabricClient.h>
+#include <aws/rtbfabric/model/ListCertificateAssociationsPaginationTraits.h>
+#include <aws/rtbfabric/model/ListLinkRoutingRulesPaginationTraits.h>
 #include <aws/rtbfabric/model/ListLinksPaginationTraits.h>
 #include <aws/rtbfabric/model/ListRequesterGatewaysPaginationTraits.h>
 #include <aws/rtbfabric/model/ListResponderGatewaysPaginationTraits.h>
@@ -13,6 +15,11 @@
 namespace Aws {
 namespace RTBFabric {
 
+using ListCertificateAssociationsPaginator =
+    Aws::Utils::Pagination::Paginator<RTBFabricClient, Model::ListCertificateAssociationsRequest,
+                                      Pagination::ListCertificateAssociationsPaginationTraits<RTBFabricClient>>;
+using ListLinkRoutingRulesPaginator = Aws::Utils::Pagination::Paginator<RTBFabricClient, Model::ListLinkRoutingRulesRequest,
+                                                                        Pagination::ListLinkRoutingRulesPaginationTraits<RTBFabricClient>>;
 using ListLinksPaginator =
     Aws::Utils::Pagination::Paginator<RTBFabricClient, Model::ListLinksRequest, Pagination::ListLinksPaginationTraits<RTBFabricClient>>;
 using ListRequesterGatewaysPaginator =

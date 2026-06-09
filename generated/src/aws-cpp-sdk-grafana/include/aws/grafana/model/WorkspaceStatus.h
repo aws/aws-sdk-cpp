@@ -24,7 +24,8 @@ enum class WorkspaceStatus {
   UPGRADE_FAILED,
   LICENSE_REMOVAL_FAILED,
   VERSION_UPDATING,
-  VERSION_UPDATE_FAILED
+  VERSION_UPDATE_FAILED,
+  DEGRADED
 };
 
 namespace WorkspaceStatusMapper {

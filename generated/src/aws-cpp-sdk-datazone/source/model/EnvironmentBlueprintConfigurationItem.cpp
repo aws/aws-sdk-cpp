@@ -57,6 +57,10 @@ EnvironmentBlueprintConfigurationItem& EnvironmentBlueprintConfigurationItem::op
     }
     m_regionalParametersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("allowUserProvidedConfigurations")) {
+    m_allowUserProvidedConfigurations = jsonValue.GetBool("allowUserProvidedConfigurations");
+    m_allowUserProvidedConfigurationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -64,6 +68,14 @@ EnvironmentBlueprintConfigurationItem& EnvironmentBlueprintConfigurationItem::op
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("resourceConfigurations")) {
+    Aws::Utils::Array<JsonView> resourceConfigurationsJsonList = jsonValue.GetArray("resourceConfigurations");
+    for (unsigned resourceConfigurationsIndex = 0; resourceConfigurationsIndex < resourceConfigurationsJsonList.GetLength();
+         ++resourceConfigurationsIndex) {
+      m_resourceConfigurations.push_back(resourceConfigurationsJsonList[resourceConfigurationsIndex].AsObject());
+    }
+    m_resourceConfigurationsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("provisioningConfigurations")) {
     Aws::Utils::Array<JsonView> provisioningConfigurationsJsonList = jsonValue.GetArray("provisioningConfigurations");
@@ -119,12 +131,25 @@ JsonValue EnvironmentBlueprintConfigurationItem::Jsonize() const {
     payload.WithObject("regionalParameters", std::move(regionalParametersJsonMap));
   }
 
+  if (m_allowUserProvidedConfigurationsHasBeenSet) {
+    payload.WithBool("allowUserProvidedConfigurations", m_allowUserProvidedConfigurations);
+  }
+
   if (m_createdAtHasBeenSet) {
     payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if (m_updatedAtHasBeenSet) {
     payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_resourceConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceConfigurationsJsonList(m_resourceConfigurations.size());
+    for (unsigned resourceConfigurationsIndex = 0; resourceConfigurationsIndex < resourceConfigurationsJsonList.GetLength();
+         ++resourceConfigurationsIndex) {
+      resourceConfigurationsJsonList[resourceConfigurationsIndex].AsObject(m_resourceConfigurations[resourceConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("resourceConfigurations", std::move(resourceConfigurationsJsonList));
   }
 
   if (m_provisioningConfigurationsHasBeenSet) {

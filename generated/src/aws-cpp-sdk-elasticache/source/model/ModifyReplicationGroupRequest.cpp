@@ -173,6 +173,10 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const {
     ss << "ClusterMode=" << StringUtils::URLEncode(ClusterModeMapper::GetNameForClusterMode(m_clusterMode)) << "&";
   }
 
+  if (m_durabilityHasBeenSet) {
+    ss << "Durability=" << StringUtils::URLEncode(DurabilityMapper::GetNameForDurability(m_durability)) << "&";
+  }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

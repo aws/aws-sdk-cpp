@@ -106,46 +106,6 @@ class Policy {
 
   ///@{
   /**
-   * <p>The Cedar policy statement that defines the access control rules. This
-   * contains the actual policy logic used for agent behavior control and access
-   * decisions.</p>
-   */
-  inline const PolicyDefinition& GetDefinition() const { return m_definition; }
-  inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-  template <typename DefinitionT = PolicyDefinition>
-  void SetDefinition(DefinitionT&& value) {
-    m_definitionHasBeenSet = true;
-    m_definition = std::forward<DefinitionT>(value);
-  }
-  template <typename DefinitionT = PolicyDefinition>
-  Policy& WithDefinition(DefinitionT&& value) {
-    SetDefinition(std::forward<DefinitionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A human-readable description of the policy's purpose and functionality.
-   * Limited to 4,096 characters, this helps administrators understand and manage the
-   * policy.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  Policy& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The timestamp when the policy was originally created. This is automatically
    * set by the service and used for auditing and lifecycle management.</p>
    */
@@ -219,6 +179,46 @@ class Policy {
 
   ///@{
   /**
+   * <p>The Cedar policy statement that defines the access control rules. This
+   * contains the actual policy logic used for agent behavior control and access
+   * decisions.</p>
+   */
+  inline const PolicyDefinition& GetDefinition() const { return m_definition; }
+  inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
+  template <typename DefinitionT = PolicyDefinition>
+  void SetDefinition(DefinitionT&& value) {
+    m_definitionHasBeenSet = true;
+    m_definition = std::forward<DefinitionT>(value);
+  }
+  template <typename DefinitionT = PolicyDefinition>
+  Policy& WithDefinition(DefinitionT&& value) {
+    SetDefinition(std::forward<DefinitionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A human-readable description of the policy's purpose and functionality.
+   * Limited to 4,096 characters, this helps administrators understand and manage the
+   * policy.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  Policy& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Additional information about the policy status. This provides details about
    * any failures or the current state of the policy lifecycle.</p>
    */
@@ -248,10 +248,6 @@ class Policy {
 
   Aws::String m_policyEngineId;
 
-  PolicyDefinition m_definition;
-
-  Aws::String m_description;
-
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -260,16 +256,20 @@ class Policy {
 
   PolicyStatus m_status{PolicyStatus::NOT_SET};
 
+  PolicyDefinition m_definition;
+
+  Aws::String m_description;
+
   Aws::Vector<Aws::String> m_statusReasons;
   bool m_policyIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_policyEngineIdHasBeenSet = false;
-  bool m_definitionHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_policyArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_statusReasonsHasBeenSet = false;
 };
 

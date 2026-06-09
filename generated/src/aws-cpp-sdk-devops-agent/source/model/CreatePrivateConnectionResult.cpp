@@ -54,6 +54,14 @@ CreatePrivateConnectionResult& CreatePrivateConnectionResult::operator=(const Aw
     m_certificateExpiryTime = jsonValue.GetString("certificateExpiryTime");
     m_certificateExpiryTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dnsResolution")) {
+    m_dnsResolution = ResourceConfigDnsResolutionMapper::GetResourceConfigDnsResolutionForName(jsonValue.GetString("dnsResolution"));
+    m_dnsResolutionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failureMessage")) {
+    m_failureMessage = jsonValue.GetString("failureMessage");
+    m_failureMessageHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {

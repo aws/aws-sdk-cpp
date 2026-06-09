@@ -2,15 +2,20 @@
 auto key_${recursionDepth} = decoder->PopNextTextVal();
 if (key_${recursionDepth}.has_value()) {
     Aws::String keyStr_${recursionDepth} = Aws::String(reinterpret_cast<const char*>(key_${recursionDepth}.value().ptr), key_${recursionDepth}.value().len);
+#if($mapKeyShape && $mapKeyShape.enum)
+#set($template.keyExpr = "${mapKeyShape.name}Mapper::Get${mapKeyShape.name}ForName(keyStr_${recursionDepth})")
+#else
+#set($template.keyExpr = "keyStr_${recursionDepth}")
+#end
 #if($member.shape.sparse)
     {
     auto nullPeek_${recursionDepth} = decoder->PeekType();
     if (nullPeek_${recursionDepth}.has_value() && nullPeek_${recursionDepth}.value() == Aws::Crt::Cbor::CborType::Null) {
         decoder->ConsumeNextSingleElement();
 #if($parentMapDepth == 0)
-        ${memberVarName}[keyStr_${recursionDepth}];
+        ${memberVarName}[${template.keyExpr}];
 #else
-        nestedMap_${parentMapDepth}[keyStr_${recursionDepth}];
+        nestedMap_${parentMapDepth}[${template.keyExpr}];
 #end
     } else {
 #end
@@ -18,9 +23,9 @@ if (key_${recursionDepth}.has_value()) {
     auto ${containerVar} = decoder->PopNextTextVal();
     if (${containerVar}.has_value()) {
 #if($parentMapDepth == 0)
-        ${memberVarName}[keyStr_${recursionDepth}] = ${shapeMember.name}Mapper::Get${shapeMember.name}ForName(Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len));
+        ${memberVarName}[${template.keyExpr}] = ${shapeMember.name}Mapper::Get${shapeMember.name}ForName(Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len));
 #else
-        nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = ${shapeMember.name}Mapper::Get${shapeMember.name}ForName(Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len));
+        nestedMap_${parentMapDepth}[${template.keyExpr}] = ${shapeMember.name}Mapper::Get${shapeMember.name}ForName(Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len));
 #end
     }
 #elseif($shapeMember.string)
@@ -30,9 +35,9 @@ if(peekType_${recursionDepth}){
         auto ${containerVar} = decoder->PopNextTextVal();
         if (${containerVar}.has_value()) {
 #if($parentMapDepth == 0)
-            ${memberVarName}[keyStr_${recursionDepth}] = Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
+            ${memberVarName}[${template.keyExpr}] = Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
 #else
-            nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
+            nestedMap_${parentMapDepth}[${template.keyExpr}] = Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
 #end
         }
     } else {
@@ -52,9 +57,9 @@ if(peekType_${recursionDepth}){
             }
         }
 #if($parentMapDepth == 0)
-            ${memberVarName}[keyStr_${recursionDepth}] = ss_${recursionDepth}.str();
+            ${memberVarName}[${template.keyExpr}] = ss_${recursionDepth}.str();
 #else
-            nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = ss_${recursionDepth}.str();
+            nestedMap_${parentMapDepth}[${template.keyExpr}] = ss_${recursionDepth}.str();
 #end
             ss_${recursionDepth}.clear();
     }
@@ -63,27 +68,27 @@ if(peekType_${recursionDepth}){
     auto ${containerVar} = decoder->PopNextBooleanVal();
     if (${containerVar}.has_value()) {
 #if($parentMapDepth == 0)
-        ${memberVarName}[keyStr_${recursionDepth}] = ${containerVar}.value();
+        ${memberVarName}[${template.keyExpr}] = ${containerVar}.value();
 #else
-        nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = ${containerVar}.value();
+        nestedMap_${parentMapDepth}[${template.keyExpr}] = ${containerVar}.value();
 #end
     }
 #elseif($shapeMember.double)
     auto ${containerVar} = decoder->PopNextFloatVal();
     if (${containerVar}.has_value()) {
 #if($parentMapDepth == 0)
-        ${memberVarName}[keyStr_${recursionDepth}] = ${containerVar}.value();
+        ${memberVarName}[${template.keyExpr}] = ${containerVar}.value();
 #else
-        nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = ${containerVar}.value();
+        nestedMap_${parentMapDepth}[${template.keyExpr}] = ${containerVar}.value();
 #end
     }
 #elseif($shapeMember.float)
     auto ${containerVar} = decoder->PopNextFloatVal();
     if (${containerVar}.has_value()) {
 #if($parentMapDepth == 0)
-        ${memberVarName}[keyStr_${recursionDepth}] = ${containerVar}.value();
+        ${memberVarName}[${template.keyExpr}] = ${containerVar}.value();
 #else
-        nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = ${containerVar}.value();
+        nestedMap_${parentMapDepth}[${template.keyExpr}] = ${containerVar}.value();
 #end
     }
 #elseif($shapeMember.blob)
@@ -93,9 +98,9 @@ if(peekType_${recursionDepth}){
             auto ${containerVar} = decoder->PopNextBytesVal();
             if (${containerVar}.has_value()) {
 #if($parentMapDepth == 0)
-                ${memberVarName}[keyStr_${recursionDepth}] = Aws::Utils::ByteBuffer(${containerVar}.value().ptr, ${containerVar}.value().len);
+                ${memberVarName}[${template.keyExpr}] = Aws::Utils::ByteBuffer(${containerVar}.value().ptr, ${containerVar}.value().len);
 #else
-                nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = Aws::Utils::ByteBuffer(${containerVar}.value().ptr, ${containerVar}.value().len);
+                nestedMap_${parentMapDepth}[${template.keyExpr}] = Aws::Utils::ByteBuffer(${containerVar}.value().ptr, ${containerVar}.value().len);
 #end
             }
         } else {
@@ -115,9 +120,9 @@ if(peekType_${recursionDepth}){
                 }
             }
 #if($parentMapDepth == 0)
-            ${memberVarName}[keyStr_${recursionDepth}] = Aws::Utils::ByteBuffer(ss_${recursionDepth}.str());
+            ${memberVarName}[${template.keyExpr}] = Aws::Utils::ByteBuffer(ss_${recursionDepth}.str());
 #else
-            nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = Aws::Utils::ByteBuffer(ss_${recursionDepth}.str());
+            nestedMap_${parentMapDepth}[${template.keyExpr}] = Aws::Utils::ByteBuffer(ss_${recursionDepth}.str());
 #end
             ss_${recursionDepth}.clear();
         }
@@ -134,9 +139,9 @@ if(peekType_${recursionDepth}){
                 auto ${containerVar} = decoder->PopNextFloatVal();
                 if (${containerVar}.has_value()) {
 #if($parentMapDepth == 0)
-                    ${memberVarName}[keyStr_${recursionDepth}] = Aws::Utils::DateTime(${containerVar}.value());
+                    ${memberVarName}[${template.keyExpr}] = Aws::Utils::DateTime(${containerVar}.value());
 #else
-                    nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = Aws::Utils::DateTime(${containerVar}.value());
+                    nestedMap_${parentMapDepth}[${template.keyExpr}] = Aws::Utils::DateTime(${containerVar}.value());
 #end
                 }
             }
@@ -145,9 +150,9 @@ if(peekType_${recursionDepth}){
                 auto ${containerVar} = decoder->PopNextUnsignedIntVal();
                 if (${containerVar}.has_value()) {
 #if($parentMapDepth == 0)
-                    ${memberVarName}[keyStr_${recursionDepth}] = Aws::Utils::DateTime(${containerVar}.value());
+                    ${memberVarName}[${template.keyExpr}] = Aws::Utils::DateTime(${containerVar}.value());
 #else
-                    nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = Aws::Utils::DateTime(${containerVar}.value());
+                    nestedMap_${parentMapDepth}[${template.keyExpr}] = Aws::Utils::DateTime(${containerVar}.value());
 #end
                 }
             }
@@ -156,15 +161,15 @@ if(peekType_${recursionDepth}){
 #elseif($shapeMember.structure)
     #if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
 #if($parentMapDepth == 0)
-        ${memberVarName}[keyStr_${recursionDepth}] = Aws::MakeShared<${shapeMember.name}>("${typeInfo.className}", ${shapeMember.name}(decoder));
+        ${memberVarName}[${template.keyExpr}] = Aws::MakeShared<${shapeMember.name}>("${typeInfo.className}", ${shapeMember.name}(decoder));
 #else
-        nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = Aws::MakeShared<${shapeMember.name}>("${typeInfo.className}", ${shapeMember.name}(decoder));
+        nestedMap_${parentMapDepth}[${template.keyExpr}] = Aws::MakeShared<${shapeMember.name}>("${typeInfo.className}", ${shapeMember.name}(decoder));
 #end
     #else
 #if($parentMapDepth == 0)
-        ${memberVarName}[keyStr_${recursionDepth}] = ${shapeMember.name}(decoder);
+        ${memberVarName}[${template.keyExpr}] = ${shapeMember.name}(decoder);
 #else
-        nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = ${shapeMember.name}(decoder);
+        nestedMap_${parentMapDepth}[${template.keyExpr}] = ${shapeMember.name}(decoder);
 #end
     #end
 #elseif($shapeMember.map)
@@ -183,6 +188,7 @@ if(peekType_${recursionDepth}){
         for (size_t j_${recursionDepth} = 0; j_${recursionDepth} < mapSize_${recursionDepth}.value(); j_${recursionDepth}++) {
         #set($value = "nestedMap_${recursionDepth}")
         #set($recursionDepth = $recursionDepth + 1)
+        #set($mapKeyShape = $shapeMember.mapKey.shape)
         #set($shapeMember = $template.nestedShapeMember)
         #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborDecodeMapValue.vm")
         #set($recursionDepth = $recursionDepth - 1)
@@ -204,6 +210,7 @@ if(peekType_${recursionDepth}){
           }
           #set($value = "nestedMap_${recursionDepth}")
           #set($recursionDepth = $recursionDepth + 1)
+          #set($mapKeyShape = $shapeMember.mapKey.shape)
           #set($shapeMember = $template.nestedShapeMember)
           #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborDecodeMapValue.vm")
           #set($recursionDepth = $recursionDepth - 1)
@@ -211,9 +218,9 @@ if(peekType_${recursionDepth}){
       }
       #if($recursionDepth > 1)
         #set($parentDepth = $recursionDepth - 1)
-        nestedMap_${parentDepth}[keyStr_${recursionDepth}] = nestedMap_${recursionDepth};
+        nestedMap_${parentDepth}[${template.keyExpr}] = nestedMap_${recursionDepth};
       #else
-      ${memberVarName}[keyStr_${recursionDepth}] = nestedMap_${recursionDepth};
+      ${memberVarName}[${template.keyExpr}] = nestedMap_${recursionDepth};
       #end
     }
 #elseif($shapeMember.list)
@@ -262,9 +269,9 @@ if(peekType_${recursionDepth}){
       }
       #if($recursionDepth > 1)
         #set($parentDepth = $recursionDepth - 1)
-        nestedMap_${parentDepth}[keyStr_${recursionDepth}] = nestedList_${recursionDepth};
+        nestedMap_${parentDepth}[${template.keyExpr}] = nestedList_${recursionDepth};
       #else
-      ${memberVarName}[keyStr_${recursionDepth}] = nestedList_${recursionDepth};
+      ${memberVarName}[${template.keyExpr}] = nestedList_${recursionDepth};
       #end
     }
 #else
@@ -274,18 +281,18 @@ if(peekType_${recursionDepth}){
         auto ${containerVar} = decoder->PopNextUnsignedIntVal();
         if (${containerVar}.has_value()) {
 #if($parentMapDepth == 0)
-            ${memberVarName}[keyStr_${recursionDepth}] = static_cast<int64_t>(${containerVar}.value());
+            ${memberVarName}[${template.keyExpr}] = static_cast<int64_t>(${containerVar}.value());
 #else
-            nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = static_cast<int64_t>(${containerVar}.value());
+            nestedMap_${parentMapDepth}[${template.keyExpr}] = static_cast<int64_t>(${containerVar}.value());
 #end
         }
     } else {
         auto ${containerVar} = decoder->PopNextNegativeIntVal();
         if (${containerVar}.has_value()) {
 #if($parentMapDepth == 0)
-            ${memberVarName}[keyStr_${recursionDepth}] = static_cast<int64_t>(1 - ${containerVar}.value());
+            ${memberVarName}[${template.keyExpr}] = static_cast<int64_t>(1 - ${containerVar}.value());
 #else
-            nestedMap_${parentMapDepth}[keyStr_${recursionDepth}] = static_cast<int64_t>(1 - ${containerVar}.value());
+            nestedMap_${parentMapDepth}[${template.keyExpr}] = static_cast<int64_t>(1 - ${containerVar}.value());
 #end
         }
     }

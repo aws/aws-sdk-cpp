@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CostExplorer {
 namespace Model {
-enum class AnalysisType { NOT_SET, MAX_SAVINGS, CUSTOM_COMMITMENT };
+enum class AnalysisType { NOT_SET, MAX_SAVINGS, CUSTOM_COMMITMENT, TARGET_AVERAGE_COVERAGE };
 
 namespace AnalysisTypeMapper {
 AWS_COSTEXPLORER_API AnalysisType GetAnalysisTypeForName(const Aws::String& name);

@@ -10,6 +10,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/ConnectionsList.h>
 #include <aws/glue/model/SessionCommand.h>
+#include <aws/glue/model/SessionType.h>
 #include <aws/glue/model/WorkerType.h>
 
 #include <utility>
@@ -342,6 +343,22 @@ class CreateSessionRequest : public GlueRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of session to create.</p>
+   */
+  inline SessionType GetSessionType() const { return m_sessionType; }
+  inline bool SessionTypeHasBeenSet() const { return m_sessionTypeHasBeenSet; }
+  inline void SetSessionType(SessionType value) {
+    m_sessionTypeHasBeenSet = true;
+    m_sessionType = value;
+  }
+  inline CreateSessionRequest& WithSessionType(SessionType value) {
+    SetSessionType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -372,6 +389,8 @@ class CreateSessionRequest : public GlueRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestOrigin;
+
+  SessionType m_sessionType{SessionType::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_roleHasBeenSet = false;
@@ -387,6 +406,7 @@ class CreateSessionRequest : public GlueRequest {
   bool m_glueVersionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_requestOriginHasBeenSet = false;
+  bool m_sessionTypeHasBeenSet = false;
 };
 
 }  // namespace Model

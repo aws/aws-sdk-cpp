@@ -24,6 +24,7 @@
 #include <aws/route53resolver/model/ListResolverConfigsPaginationTraits.h>
 #include <aws/route53resolver/model/ListFirewallConfigsPaginationTraits.h>
 #include <aws/route53resolver/model/ListResolverEndpointIpAddressesPaginationTraits.h>
+#include <aws/route53resolver/model/ListFirewallRuleTypesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

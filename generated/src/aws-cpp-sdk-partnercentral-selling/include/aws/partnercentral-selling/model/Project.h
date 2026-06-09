@@ -10,6 +10,7 @@
 #include <aws/partnercentral-selling/model/AwsPartition.h>
 #include <aws/partnercentral-selling/model/CompetitorName.h>
 #include <aws/partnercentral-selling/model/DeliveryModel.h>
+#include <aws/partnercentral-selling/model/ExpectedContractDuration.h>
 #include <aws/partnercentral-selling/model/ExpectedCustomerSpend.h>
 #include <aws/partnercentral-selling/model/SalesActivity.h>
 
@@ -97,6 +98,26 @@ class Project {
   Project& AddExpectedCustomerSpend(ExpectedCustomerSpendT&& value) {
     m_expectedCustomerSpendHasBeenSet = true;
     m_expectedCustomerSpend.emplace_back(std::forward<ExpectedCustomerSpendT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Optional. The expected duration of the contract associated with this
+   * opportunity. Partners use this value alongside expected customer spend to
+   * convert Total Contract Value (TCV) into Monthly Recurring Revenue (MRR).</p>
+   */
+  inline const ExpectedContractDuration& GetExpectedContractDuration() const { return m_expectedContractDuration; }
+  inline bool ExpectedContractDurationHasBeenSet() const { return m_expectedContractDurationHasBeenSet; }
+  template <typename ExpectedContractDurationT = ExpectedContractDuration>
+  void SetExpectedContractDuration(ExpectedContractDurationT&& value) {
+    m_expectedContractDurationHasBeenSet = true;
+    m_expectedContractDuration = std::forward<ExpectedContractDurationT>(value);
+  }
+  template <typename ExpectedContractDurationT = ExpectedContractDuration>
+  Project& WithExpectedContractDuration(ExpectedContractDurationT&& value) {
+    SetExpectedContractDuration(std::forward<ExpectedContractDurationT>(value));
     return *this;
   }
   ///@}
@@ -369,6 +390,8 @@ class Project {
 
   Aws::Vector<ExpectedCustomerSpend> m_expectedCustomerSpend;
 
+  ExpectedContractDuration m_expectedContractDuration;
+
   Aws::String m_title;
 
   Aws::Vector<Aws::String> m_apnPrograms;
@@ -392,6 +415,7 @@ class Project {
   AwsPartition m_awsPartition{AwsPartition::NOT_SET};
   bool m_deliveryModelsHasBeenSet = false;
   bool m_expectedCustomerSpendHasBeenSet = false;
+  bool m_expectedContractDurationHasBeenSet = false;
   bool m_titleHasBeenSet = false;
   bool m_apnProgramsHasBeenSet = false;
   bool m_customerBusinessProblemHasBeenSet = false;

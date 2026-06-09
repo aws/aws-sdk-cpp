@@ -14,6 +14,7 @@
 #include <aws/iotsitewise/model/GetAssetPropertyValueHistoryPaginationTraits.h>
 #include <aws/iotsitewise/model/GetInterpolatedAssetPropertyValuesPaginationTraits.h>
 #include <aws/iotsitewise/model/ListAccessPoliciesPaginationTraits.h>
+#include <aws/iotsitewise/model/ListActionsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListAssetModelCompositeModelsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListAssetModelPropertiesPaginationTraits.h>
 #include <aws/iotsitewise/model/ListAssetModelsPaginationTraits.h>
@@ -61,6 +62,8 @@ using GetInterpolatedAssetPropertyValuesPaginator =
                                       Pagination::GetInterpolatedAssetPropertyValuesPaginationTraits<IoTSiteWiseClient>>;
 using ListAccessPoliciesPaginator = Aws::Utils::Pagination::Paginator<IoTSiteWiseClient, Model::ListAccessPoliciesRequest,
                                                                       Pagination::ListAccessPoliciesPaginationTraits<IoTSiteWiseClient>>;
+using ListActionsPaginator = Aws::Utils::Pagination::Paginator<IoTSiteWiseClient, Model::ListActionsRequest,
+                                                               Pagination::ListActionsPaginationTraits<IoTSiteWiseClient>>;
 using ListAssetModelCompositeModelsPaginator =
     Aws::Utils::Pagination::Paginator<IoTSiteWiseClient, Model::ListAssetModelCompositeModelsRequest,
                                       Pagination::ListAssetModelCompositeModelsPaginationTraits<IoTSiteWiseClient>>;

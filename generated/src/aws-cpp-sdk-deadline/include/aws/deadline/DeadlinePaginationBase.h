@@ -35,6 +35,7 @@
 #include <aws/deadline/model/ListStorageProfilesForQueuePaginationTraits.h>
 #include <aws/deadline/model/ListStorageProfilesPaginationTraits.h>
 #include <aws/deadline/model/ListTasksPaginationTraits.h>
+#include <aws/deadline/model/ListVolumesPaginationTraits.h>
 #include <aws/deadline/model/ListWorkersPaginationTraits.h>
 
 #include <memory>
@@ -364,6 +365,17 @@ class DeadlinePaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTasksRequest, Pagination::ListTasksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListVolumes operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVolumesRequest, Pagination::ListVolumesPaginationTraits<DerivedClient>>
+  ListVolumesPaginator(const Model::ListVolumesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVolumesRequest,
+                                             Pagination::ListVolumesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                     request};
   }
 
   /**

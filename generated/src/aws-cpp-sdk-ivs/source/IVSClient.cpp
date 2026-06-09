@@ -58,6 +58,7 @@
 #include <aws/ivs/model/StopStreamRequest.h>
 #include <aws/ivs/model/TagResourceRequest.h>
 #include <aws/ivs/model/UntagResourceRequest.h>
+#include <aws/ivs/model/UpdateAdConfigurationRequest.h>
 #include <aws/ivs/model/UpdateChannelRequest.h>
 #include <aws/ivs/model/UpdatePlaybackRestrictionPolicyRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -83,10 +84,10 @@ const char* IVSClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
 IVSClient::IVSClient(const IVS::IVSClientConfiguration& clientConfiguration, std::shared_ptr<IVSEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<IVSErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IVSEndpointProvider>(ALLOCATION_TAG)) {
@@ -118,10 +119,10 @@ IVSClient::IVSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
 /* Legacy constructors due deprecation */
 IVSClient::IVSClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<IVSErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<IVSEndpointProvider>(ALLOCATION_TAG)) {
@@ -645,6 +646,17 @@ UntagResourceOutcome IVSClient::UntagResource(const UntagResourceRequest& reques
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateAdConfigurationOutcome IVSClient::UpdateAdConfiguration(const UpdateAdConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateAdConfiguration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAdConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateAdConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelOutcome IVSClient::UpdateChannel(const UpdateChannelRequest& request) const {

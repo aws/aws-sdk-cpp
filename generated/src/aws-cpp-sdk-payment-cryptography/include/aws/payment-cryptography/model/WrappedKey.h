@@ -114,7 +114,8 @@ class WrappedKey {
    * with the key to be checked and retaining the 3 highest order bytes of the
    * encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where
    * the input data is 16 bytes of zero and retaining the 3 highest order bytes of
-   * the encrypted result.</p>
+   * the encrypted result. For HMAC keys, the KCV is computed using the hash selected
+   * at key creation on a zero-length message, taking the leftmost 3 bytes.</p>
    */
   inline KeyCheckValueAlgorithm GetKeyCheckValueAlgorithm() const { return m_keyCheckValueAlgorithm; }
   inline bool KeyCheckValueAlgorithmHasBeenSet() const { return m_keyCheckValueAlgorithmHasBeenSet; }

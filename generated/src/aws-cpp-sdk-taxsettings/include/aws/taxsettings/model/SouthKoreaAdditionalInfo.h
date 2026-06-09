@@ -53,25 +53,6 @@ class SouthKoreaAdditionalInfo {
 
   ///@{
   /**
-   * <p>Item of business based on the most recently uploaded tax registration
-   * certificate.</p>
-   */
-  inline const Aws::String& GetItemOfBusiness() const { return m_itemOfBusiness; }
-  inline bool ItemOfBusinessHasBeenSet() const { return m_itemOfBusinessHasBeenSet; }
-  template <typename ItemOfBusinessT = Aws::String>
-  void SetItemOfBusiness(ItemOfBusinessT&& value) {
-    m_itemOfBusinessHasBeenSet = true;
-    m_itemOfBusiness = std::forward<ItemOfBusinessT>(value);
-  }
-  template <typename ItemOfBusinessT = Aws::String>
-  SouthKoreaAdditionalInfo& WithItemOfBusiness(ItemOfBusinessT&& value) {
-    SetItemOfBusiness(std::forward<ItemOfBusinessT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Line of business based on the most recently uploaded tax registration
    * certificate.</p>
    */
@@ -88,15 +69,34 @@ class SouthKoreaAdditionalInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Item of business based on the most recently uploaded tax registration
+   * certificate.</p>
+   */
+  inline const Aws::String& GetItemOfBusiness() const { return m_itemOfBusiness; }
+  inline bool ItemOfBusinessHasBeenSet() const { return m_itemOfBusinessHasBeenSet; }
+  template <typename ItemOfBusinessT = Aws::String>
+  void SetItemOfBusiness(ItemOfBusinessT&& value) {
+    m_itemOfBusinessHasBeenSet = true;
+    m_itemOfBusiness = std::forward<ItemOfBusinessT>(value);
+  }
+  template <typename ItemOfBusinessT = Aws::String>
+  SouthKoreaAdditionalInfo& WithItemOfBusiness(ItemOfBusinessT&& value) {
+    SetItemOfBusiness(std::forward<ItemOfBusinessT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_businessRepresentativeName;
 
-  Aws::String m_itemOfBusiness;
-
   Aws::String m_lineOfBusiness;
+
+  Aws::String m_itemOfBusiness;
   bool m_businessRepresentativeNameHasBeenSet = false;
-  bool m_itemOfBusinessHasBeenSet = false;
   bool m_lineOfBusinessHasBeenSet = false;
+  bool m_itemOfBusinessHasBeenSet = false;
 };
 
 }  // namespace Model

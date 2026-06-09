@@ -19,6 +19,10 @@ Aws::String DeleteInvoiceUnitRequest::SerializePayload() const {
     payload.WithString("InvoiceUnitArn", m_invoiceUnitArn);
   }
 
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
+  }
+
   return payload.View().WriteReadable();
 }
 

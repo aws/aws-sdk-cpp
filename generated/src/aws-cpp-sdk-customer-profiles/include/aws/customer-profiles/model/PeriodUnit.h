@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CustomerProfiles {
 namespace Model {
-enum class PeriodUnit { NOT_SET, HOURS, DAYS, WEEKS, MONTHS };
+enum class PeriodUnit { NOT_SET, MINUTES, HOURS, DAYS, WEEKS, MONTHS };
 
 namespace PeriodUnitMapper {
 AWS_CUSTOMERPROFILES_API PeriodUnit GetPeriodUnitForName(const Aws::String& name);

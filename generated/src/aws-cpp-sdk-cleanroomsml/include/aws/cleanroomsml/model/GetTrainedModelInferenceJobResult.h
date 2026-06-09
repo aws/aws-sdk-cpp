@@ -458,6 +458,24 @@ class GetTrainedModelInferenceJobResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The account ID of the member that is responsible for paying for model
+   * inference costs.</p>
+   */
+  inline const Aws::String& GetMlModelInferencePayerAccountId() const { return m_mlModelInferencePayerAccountId; }
+  template <typename MlModelInferencePayerAccountIdT = Aws::String>
+  void SetMlModelInferencePayerAccountId(MlModelInferencePayerAccountIdT&& value) {
+    m_mlModelInferencePayerAccountIdHasBeenSet = true;
+    m_mlModelInferencePayerAccountId = std::forward<MlModelInferencePayerAccountIdT>(value);
+  }
+  template <typename MlModelInferencePayerAccountIdT = Aws::String>
+  GetTrainedModelInferenceJobResult& WithMlModelInferencePayerAccountId(MlModelInferencePayerAccountIdT&& value) {
+    SetMlModelInferencePayerAccountId(std::forward<MlModelInferencePayerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -520,6 +538,8 @@ class GetTrainedModelInferenceJobResult {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
+  Aws::String m_mlModelInferencePayerAccountId;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createTimeHasBeenSet = false;
@@ -545,6 +565,7 @@ class GetTrainedModelInferenceJobResult {
   bool m_logsStatusHasBeenSet = false;
   bool m_logsStatusDetailsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_mlModelInferencePayerAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

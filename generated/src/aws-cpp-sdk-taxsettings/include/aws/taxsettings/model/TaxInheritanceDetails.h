@@ -34,24 +34,6 @@ class TaxInheritanceDetails {
 
   ///@{
   /**
-   * <p> Tax inheritance reason information associated with the account. </p>
-   */
-  inline const Aws::String& GetInheritanceObtainedReason() const { return m_inheritanceObtainedReason; }
-  inline bool InheritanceObtainedReasonHasBeenSet() const { return m_inheritanceObtainedReasonHasBeenSet; }
-  template <typename InheritanceObtainedReasonT = Aws::String>
-  void SetInheritanceObtainedReason(InheritanceObtainedReasonT&& value) {
-    m_inheritanceObtainedReasonHasBeenSet = true;
-    m_inheritanceObtainedReason = std::forward<InheritanceObtainedReasonT>(value);
-  }
-  template <typename InheritanceObtainedReasonT = Aws::String>
-  TaxInheritanceDetails& WithInheritanceObtainedReason(InheritanceObtainedReasonT&& value) {
-    SetInheritanceObtainedReason(std::forward<InheritanceObtainedReasonT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> Tax inheritance parent account information associated with the account. </p>
    */
   inline const Aws::String& GetParentEntityId() const { return m_parentEntityId; }
@@ -67,12 +49,30 @@ class TaxInheritanceDetails {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_inheritanceObtainedReason;
 
+  ///@{
+  /**
+   * <p> Tax inheritance reason information associated with the account. </p>
+   */
+  inline const Aws::String& GetInheritanceObtainedReason() const { return m_inheritanceObtainedReason; }
+  inline bool InheritanceObtainedReasonHasBeenSet() const { return m_inheritanceObtainedReasonHasBeenSet; }
+  template <typename InheritanceObtainedReasonT = Aws::String>
+  void SetInheritanceObtainedReason(InheritanceObtainedReasonT&& value) {
+    m_inheritanceObtainedReasonHasBeenSet = true;
+    m_inheritanceObtainedReason = std::forward<InheritanceObtainedReasonT>(value);
+  }
+  template <typename InheritanceObtainedReasonT = Aws::String>
+  TaxInheritanceDetails& WithInheritanceObtainedReason(InheritanceObtainedReasonT&& value) {
+    SetInheritanceObtainedReason(std::forward<InheritanceObtainedReasonT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_parentEntityId;
-  bool m_inheritanceObtainedReasonHasBeenSet = false;
+
+  Aws::String m_inheritanceObtainedReason;
   bool m_parentEntityIdHasBeenSet = false;
+  bool m_inheritanceObtainedReasonHasBeenSet = false;
 };
 
 }  // namespace Model

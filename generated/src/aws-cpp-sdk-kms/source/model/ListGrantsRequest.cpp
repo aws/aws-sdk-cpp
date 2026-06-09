@@ -35,6 +35,10 @@ Aws::String ListGrantsRequest::SerializePayload() const {
     payload.WithString("GranteePrincipal", m_granteePrincipal);
   }
 
+  if (m_granteeServicePrincipalHasBeenSet) {
+    payload.WithString("GranteeServicePrincipal", m_granteeServicePrincipal);
+  }
+
   return payload.View().WriteReadable();
 }
 

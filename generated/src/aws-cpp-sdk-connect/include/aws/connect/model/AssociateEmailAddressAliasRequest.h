@@ -50,7 +50,7 @@ class AssociateEmailAddressAliasRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -71,7 +71,7 @@ class AssociateEmailAddressAliasRequest : public ConnectRequest {
   ///@{
   /**
    * <p>Configuration object that specifies which email address will serve as the
-   * alias. The specified email address must already exist in the Amazon Connect
+   * alias. The specified email address must already exist in the Connect Customer
    * instance and cannot already be configured as an alias or have an alias of its
    * own.</p>
    */

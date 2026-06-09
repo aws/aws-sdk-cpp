@@ -22,7 +22,7 @@ namespace Model {
 
 /**
  * <p>A request to obtain a list of email destinations that are on the suppression
- * list for your account.</p><p><h3>See Also:</h3>   <a
+ * list for your account or for a specific tenant.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinationsRequest">AWS
  * API Reference</a></p>
  */
@@ -42,7 +42,28 @@ class ListSuppressedDestinationsRequest : public SESV2Request {
 
   ///@{
   /**
-   * <p>The factors that caused the email address to be added to .</p>
+   * <p>The name of the tenant whose suppression list you want to retrieve. If you
+   * omit this parameter, the operation targets the account-level suppression
+   * list.</p>
+   */
+  inline const Aws::String& GetTenantName() const { return m_tenantName; }
+  inline bool TenantNameHasBeenSet() const { return m_tenantNameHasBeenSet; }
+  template <typename TenantNameT = Aws::String>
+  void SetTenantName(TenantNameT&& value) {
+    m_tenantNameHasBeenSet = true;
+    m_tenantName = std::forward<TenantNameT>(value);
+  }
+  template <typename TenantNameT = Aws::String>
+  ListSuppressedDestinationsRequest& WithTenantName(TenantNameT&& value) {
+    SetTenantName(std::forward<TenantNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The factors that caused the email address to be added to the suppression list
+   * for your account or for a specific tenant.</p>
    */
   inline const Aws::Vector<SuppressionListReason>& GetReasons() const { return m_reasons; }
   inline bool ReasonsHasBeenSet() const { return m_reasonsHasBeenSet; }
@@ -141,6 +162,8 @@ class ListSuppressedDestinationsRequest : public SESV2Request {
   }
   ///@}
  private:
+  Aws::String m_tenantName;
+
   Aws::Vector<SuppressionListReason> m_reasons;
 
   Aws::Utils::DateTime m_startDate{};
@@ -150,6 +173,7 @@ class ListSuppressedDestinationsRequest : public SESV2Request {
   Aws::String m_nextToken;
 
   int m_pageSize{0};
+  bool m_tenantNameHasBeenSet = false;
   bool m_reasonsHasBeenSet = false;
   bool m_startDateHasBeenSet = false;
   bool m_endDateHasBeenSet = false;

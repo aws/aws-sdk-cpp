@@ -21,8 +21,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Summary of a payment session for list operations</p><p><h3>See Also:</h3>
- * <a
+ * <p>Summary information about a payment session.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/PaymentSessionSummary">AWS
  * API Reference</a></p>
  */
@@ -35,7 +34,7 @@ class PaymentSessionSummary {
 
   ///@{
   /**
-   * <p>The unique identifier for this payment session.</p>
+   * <p>The unique identifier of the payment session.</p>
    */
   inline const Aws::String& GetPaymentSessionId() const { return m_paymentSessionId; }
   inline bool PaymentSessionIdHasBeenSet() const { return m_paymentSessionIdHasBeenSet; }
@@ -71,7 +70,7 @@ class PaymentSessionSummary {
 
   ///@{
   /**
-   * <p>The user ID associated with this payment session.</p>
+   * <p>The user ID associated with this session.</p>
    */
   inline const Aws::String& GetUserId() const { return m_userId; }
   inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
@@ -105,7 +104,7 @@ class PaymentSessionSummary {
 
   ///@{
   /**
-   * <p>The timestamp when this payment session was created.</p>
+   * <p>The timestamp when the session was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
   inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
@@ -123,7 +122,7 @@ class PaymentSessionSummary {
 
   ///@{
   /**
-   * <p>The timestamp when this payment session was last updated.</p>
+   * <p>The timestamp when the session was last updated.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
   inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }

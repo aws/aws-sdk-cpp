@@ -32,6 +32,8 @@ static const int PROVIDER_PROMO_HASH = HashingUtils::HashString("PROVIDER_PROMO"
 static const int DISTRIBUTOR_PROMO_HASH = HashingUtils::HashString("DISTRIBUTOR_PROMO");
 static const int PROVIDER_AD_BLOCK_HASH = HashingUtils::HashString("PROVIDER_AD_BLOCK");
 static const int DISTRIBUTOR_AD_BLOCK_HASH = HashingUtils::HashString("DISTRIBUTOR_AD_BLOCK");
+static const int CONTENT_IDENTIFICATION_HASH = HashingUtils::HashString("CONTENT_IDENTIFICATION");
+static const int CALL_AD_SERVER_HASH = HashingUtils::HashString("CALL_AD_SERVER");
 
 ScteFilter GetScteFilterForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -69,6 +71,10 @@ ScteFilter GetScteFilterForName(const Aws::String& name) {
     return ScteFilter::PROVIDER_AD_BLOCK;
   } else if (hashCode == DISTRIBUTOR_AD_BLOCK_HASH) {
     return ScteFilter::DISTRIBUTOR_AD_BLOCK;
+  } else if (hashCode == CONTENT_IDENTIFICATION_HASH) {
+    return ScteFilter::CONTENT_IDENTIFICATION;
+  } else if (hashCode == CALL_AD_SERVER_HASH) {
+    return ScteFilter::CALL_AD_SERVER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -117,6 +123,10 @@ Aws::String GetNameForScteFilter(ScteFilter enumValue) {
       return "PROVIDER_AD_BLOCK";
     case ScteFilter::DISTRIBUTOR_AD_BLOCK:
       return "DISTRIBUTOR_AD_BLOCK";
+    case ScteFilter::CONTENT_IDENTIFICATION:
+      return "CONTENT_IDENTIFICATION";
+    case ScteFilter::CALL_AD_SERVER:
+      return "CALL_AD_SERVER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

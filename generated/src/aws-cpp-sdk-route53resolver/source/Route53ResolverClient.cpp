@@ -24,6 +24,9 @@
 #include <aws/route53resolver/model/AssociateResolverEndpointIpAddressRequest.h>
 #include <aws/route53resolver/model/AssociateResolverQueryLogConfigRequest.h>
 #include <aws/route53resolver/model/AssociateResolverRuleRequest.h>
+#include <aws/route53resolver/model/BatchCreateFirewallRuleRequest.h>
+#include <aws/route53resolver/model/BatchDeleteFirewallRuleRequest.h>
+#include <aws/route53resolver/model/BatchUpdateFirewallRuleRequest.h>
 #include <aws/route53resolver/model/CreateFirewallDomainListRequest.h>
 #include <aws/route53resolver/model/CreateFirewallRuleGroupRequest.h>
 #include <aws/route53resolver/model/CreateFirewallRuleRequest.h>
@@ -63,6 +66,7 @@
 #include <aws/route53resolver/model/ListFirewallDomainsRequest.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsRequest.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupsRequest.h>
+#include <aws/route53resolver/model/ListFirewallRuleTypesRequest.h>
 #include <aws/route53resolver/model/ListFirewallRulesRequest.h>
 #include <aws/route53resolver/model/ListOutpostResolversRequest.h>
 #include <aws/route53resolver/model/ListResolverConfigsRequest.h>
@@ -112,10 +116,10 @@ const char* Route53ResolverClient::GetAllocationTag() { return ALLOCATION_TAG; }
 Route53ResolverClient::Route53ResolverClient(const Route53Resolver::Route53ResolverClientConfiguration& clientConfiguration,
                                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<Route53ResolverErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider)
@@ -152,10 +156,10 @@ Route53ResolverClient::Route53ResolverClient(const std::shared_ptr<AWSCredential
 /* Legacy constructors due deprecation */
 Route53ResolverClient::Route53ResolverClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<Route53ResolverErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<Route53ResolverEndpointProvider>(ALLOCATION_TAG)) {
@@ -268,6 +272,24 @@ AssociateResolverRuleOutcome Route53ResolverClient::AssociateResolverRule(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AssociateResolverRuleOutcome(result.GetResultWithOwnership())
                             : AssociateResolverRuleOutcome(std::move(result.GetError()));
+}
+
+BatchCreateFirewallRuleOutcome Route53ResolverClient::BatchCreateFirewallRule(const BatchCreateFirewallRuleRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : BatchCreateFirewallRuleOutcome(std::move(result.GetError()));
+}
+
+BatchDeleteFirewallRuleOutcome Route53ResolverClient::BatchDeleteFirewallRule(const BatchDeleteFirewallRuleRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteFirewallRuleOutcome(std::move(result.GetError()));
+}
+
+BatchUpdateFirewallRuleOutcome Route53ResolverClient::BatchUpdateFirewallRule(const BatchUpdateFirewallRuleRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateFirewallRuleOutcome(std::move(result.GetError()));
 }
 
 CreateFirewallDomainListOutcome Route53ResolverClient::CreateFirewallDomainList(const CreateFirewallDomainListRequest& request) const {
@@ -513,6 +535,12 @@ ListFirewallRuleGroupsOutcome Route53ResolverClient::ListFirewallRuleGroups(cons
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListFirewallRuleGroupsOutcome(result.GetResultWithOwnership())
                             : ListFirewallRuleGroupsOutcome(std::move(result.GetError()));
+}
+
+ListFirewallRuleTypesOutcome Route53ResolverClient::ListFirewallRuleTypes(const ListFirewallRuleTypesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFirewallRuleTypesOutcome(result.GetResultWithOwnership())
+                            : ListFirewallRuleTypesOutcome(std::move(result.GetError()));
 }
 
 ListFirewallRulesOutcome Route53ResolverClient::ListFirewallRules(const ListFirewallRulesRequest& request) const {

@@ -1490,6 +1490,35 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns the malware scan results for a specified point in time within a
+   * continuous (point-in-time recovery) backup.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetPITRMalwareScanResults">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPITRMalwareScanResultsOutcome GetPITRMalwareScanResults(const Model::GetPITRMalwareScanResultsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPITRMalwareScanResults that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetPITRMalwareScanResultsRequestT = Model::GetPITRMalwareScanResultsRequest>
+  Model::GetPITRMalwareScanResultsOutcomeCallable GetPITRMalwareScanResultsCallable(
+      const GetPITRMalwareScanResultsRequestT& request) const {
+    return SubmitCallable(&BackupClient::GetPITRMalwareScanResults, request);
+  }
+
+  /**
+   * An Async wrapper for GetPITRMalwareScanResults that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetPITRMalwareScanResultsRequestT = Model::GetPITRMalwareScanResultsRequest>
+  void GetPITRMalwareScanResultsAsync(const GetPITRMalwareScanResultsRequestT& request,
+                                      const GetPITRMalwareScanResultsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::GetPITRMalwareScanResults, request, handler, context);
+  }
+
+  /**
    * <p>This operation returns the metadata and details specific to the backup index
    * associated with the specified recovery point.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointIndexDetails">AWS

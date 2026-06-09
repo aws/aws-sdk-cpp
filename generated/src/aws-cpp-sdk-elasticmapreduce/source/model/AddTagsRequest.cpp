@@ -27,6 +27,10 @@ Aws::String AddTagsRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_clusterIdHasBeenSet) {
+    payload.WithString("ClusterId", m_clusterId);
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -10,6 +10,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/AuthTokenUpdateStrategyType.h>
 #include <aws/elasticache/model/ClusterMode.h>
+#include <aws/elasticache/model/Durability.h>
 #include <aws/elasticache/model/IpDiscovery.h>
 #include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <aws/elasticache/model/TransitEncryptionMode.h>
@@ -659,6 +660,26 @@ class ModifyReplicationGroupRequest : public ElastiCacheRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the durability setting for the replication group. Use this
+   * parameter to change the durability mode of an existing replication group, for
+   * example from <code>sync</code> to <code>async</code> or vice versa. For more
+   * information, see <a
+   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+   */
+  inline Durability GetDurability() const { return m_durability; }
+  inline bool DurabilityHasBeenSet() const { return m_durabilityHasBeenSet; }
+  inline void SetDurability(Durability value) {
+    m_durabilityHasBeenSet = true;
+    m_durability = value;
+  }
+  inline ModifyReplicationGroupRequest& WithDurability(Durability value) {
+    SetDurability(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_replicationGroupId;
 
@@ -717,6 +738,8 @@ class ModifyReplicationGroupRequest : public ElastiCacheRequest {
   TransitEncryptionMode m_transitEncryptionMode{TransitEncryptionMode::NOT_SET};
 
   ClusterMode m_clusterMode{ClusterMode::NOT_SET};
+
+  Durability m_durability{Durability::NOT_SET};
   bool m_replicationGroupIdHasBeenSet = false;
   bool m_replicationGroupDescriptionHasBeenSet = false;
   bool m_primaryClusterIdHasBeenSet = false;
@@ -746,6 +769,7 @@ class ModifyReplicationGroupRequest : public ElastiCacheRequest {
   bool m_transitEncryptionEnabledHasBeenSet = false;
   bool m_transitEncryptionModeHasBeenSet = false;
   bool m_clusterModeHasBeenSet = false;
+  bool m_durabilityHasBeenSet = false;
 };
 
 }  // namespace Model

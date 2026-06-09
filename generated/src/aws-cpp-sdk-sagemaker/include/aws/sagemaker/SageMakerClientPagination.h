@@ -47,6 +47,8 @@
 #include <aws/sagemaker/model/ListInferenceExperimentsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsPaginationTraits.h>
+#include <aws/sagemaker/model/ListJobSchemaVersionsPaginationTraits.h>
+#include <aws/sagemaker/model/ListJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamPaginationTraits.h>
 #include <aws/sagemaker/model/ListLabelingJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListLineageGroupsPaginationTraits.h>
@@ -195,6 +197,11 @@ using ListInferenceRecommendationsJobsPaginator =
 using ListInferenceRecommendationsJobStepsPaginator =
     Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListInferenceRecommendationsJobStepsRequest,
                                       Pagination::ListInferenceRecommendationsJobStepsPaginationTraits<SageMakerClient>>;
+using ListJobsPaginator =
+    Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<SageMakerClient>>;
+using ListJobSchemaVersionsPaginator =
+    Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListJobSchemaVersionsRequest,
+                                      Pagination::ListJobSchemaVersionsPaginationTraits<SageMakerClient>>;
 using ListLabelingJobsPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListLabelingJobsRequest,
                                                                     Pagination::ListLabelingJobsPaginationTraits<SageMakerClient>>;
 using ListLabelingJobsForWorkteamPaginator =

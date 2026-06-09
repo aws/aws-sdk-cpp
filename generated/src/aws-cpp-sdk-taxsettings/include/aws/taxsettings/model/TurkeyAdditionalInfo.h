@@ -35,19 +35,21 @@ class TurkeyAdditionalInfo {
 
   ///@{
   /**
-   * <p>The industry information that tells the Tax Settings API if you're subject to
-   * additional withholding taxes. This information required for business-to-business
-   * (B2B) customers. This information is conditionally mandatory for B2B customers
-   * who are subject to KDV tax.</p>
+   * <p>The tax office where you're registered. You can enter this information as a
+   * string. The Tax Settings API will add this information to your invoice. This
+   * parameter is required for business-to-business (B2B) and business-to-government
+   * customers. It's not required for business-to-consumer (B2C) customers.</p>
    */
-  inline Industries GetIndustries() const { return m_industries; }
-  inline bool IndustriesHasBeenSet() const { return m_industriesHasBeenSet; }
-  inline void SetIndustries(Industries value) {
-    m_industriesHasBeenSet = true;
-    m_industries = value;
+  inline const Aws::String& GetTaxOffice() const { return m_taxOffice; }
+  inline bool TaxOfficeHasBeenSet() const { return m_taxOfficeHasBeenSet; }
+  template <typename TaxOfficeT = Aws::String>
+  void SetTaxOffice(TaxOfficeT&& value) {
+    m_taxOfficeHasBeenSet = true;
+    m_taxOffice = std::forward<TaxOfficeT>(value);
   }
-  inline TurkeyAdditionalInfo& WithIndustries(Industries value) {
-    SetIndustries(value);
+  template <typename TaxOfficeT = Aws::String>
+  TurkeyAdditionalInfo& WithTaxOffice(TaxOfficeT&& value) {
+    SetTaxOffice(std::forward<TaxOfficeT>(value));
     return *this;
   }
   ///@}
@@ -94,36 +96,34 @@ class TurkeyAdditionalInfo {
 
   ///@{
   /**
-   * <p>The tax office where you're registered. You can enter this information as a
-   * string. The Tax Settings API will add this information to your invoice. This
-   * parameter is required for business-to-business (B2B) and business-to-government
-   * customers. It's not required for business-to-consumer (B2C) customers.</p>
+   * <p>The industry information that tells the Tax Settings API if you're subject to
+   * additional withholding taxes. This information required for business-to-business
+   * (B2B) customers. This information is conditionally mandatory for B2B customers
+   * who are subject to KDV tax.</p>
    */
-  inline const Aws::String& GetTaxOffice() const { return m_taxOffice; }
-  inline bool TaxOfficeHasBeenSet() const { return m_taxOfficeHasBeenSet; }
-  template <typename TaxOfficeT = Aws::String>
-  void SetTaxOffice(TaxOfficeT&& value) {
-    m_taxOfficeHasBeenSet = true;
-    m_taxOffice = std::forward<TaxOfficeT>(value);
+  inline Industries GetIndustries() const { return m_industries; }
+  inline bool IndustriesHasBeenSet() const { return m_industriesHasBeenSet; }
+  inline void SetIndustries(Industries value) {
+    m_industriesHasBeenSet = true;
+    m_industries = value;
   }
-  template <typename TaxOfficeT = Aws::String>
-  TurkeyAdditionalInfo& WithTaxOffice(TaxOfficeT&& value) {
-    SetTaxOffice(std::forward<TaxOfficeT>(value));
+  inline TurkeyAdditionalInfo& WithIndustries(Industries value) {
+    SetIndustries(value);
     return *this;
   }
   ///@}
  private:
-  Industries m_industries{Industries::NOT_SET};
+  Aws::String m_taxOffice;
 
   Aws::String m_kepEmailId;
 
   Aws::String m_secondaryTaxId;
 
-  Aws::String m_taxOffice;
-  bool m_industriesHasBeenSet = false;
+  Industries m_industries{Industries::NOT_SET};
+  bool m_taxOfficeHasBeenSet = false;
   bool m_kepEmailIdHasBeenSet = false;
   bool m_secondaryTaxIdHasBeenSet = false;
-  bool m_taxOfficeHasBeenSet = false;
+  bool m_industriesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -38,6 +38,10 @@ ResourceSpec& ResourceSpec::operator=(JsonView jsonValue) {
     m_lifecycleConfigArn = jsonValue.GetString("LifecycleConfigArn");
     m_lifecycleConfigArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TrainingPlanArn")) {
+    m_trainingPlanArn = jsonValue.GetString("TrainingPlanArn");
+    m_trainingPlanArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue ResourceSpec::Jsonize() const {
 
   if (m_lifecycleConfigArnHasBeenSet) {
     payload.WithString("LifecycleConfigArn", m_lifecycleConfigArn);
+  }
+
+  if (m_trainingPlanArnHasBeenSet) {
+    payload.WithString("TrainingPlanArn", m_trainingPlanArn);
   }
 
   return payload;

@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/AudioFeedInput.h>
 
 #include <utility>
 
@@ -49,9 +51,37 @@ class DescribeInferenceSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * A list of audio feed inputs that map audio selectors in the channel to feed
+   * inputs on the associated Elemental Inference feed.
+   */
+  inline const Aws::Vector<AudioFeedInput>& GetAudioFeedInputs() const { return m_audioFeedInputs; }
+  inline bool AudioFeedInputsHasBeenSet() const { return m_audioFeedInputsHasBeenSet; }
+  template <typename AudioFeedInputsT = Aws::Vector<AudioFeedInput>>
+  void SetAudioFeedInputs(AudioFeedInputsT&& value) {
+    m_audioFeedInputsHasBeenSet = true;
+    m_audioFeedInputs = std::forward<AudioFeedInputsT>(value);
+  }
+  template <typename AudioFeedInputsT = Aws::Vector<AudioFeedInput>>
+  DescribeInferenceSettings& WithAudioFeedInputs(AudioFeedInputsT&& value) {
+    SetAudioFeedInputs(std::forward<AudioFeedInputsT>(value));
+    return *this;
+  }
+  template <typename AudioFeedInputsT = AudioFeedInput>
+  DescribeInferenceSettings& AddAudioFeedInputs(AudioFeedInputsT&& value) {
+    m_audioFeedInputsHasBeenSet = true;
+    m_audioFeedInputs.emplace_back(std::forward<AudioFeedInputsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_feedArn;
+
+  Aws::Vector<AudioFeedInput> m_audioFeedInputs;
   bool m_feedArnHasBeenSet = false;
+  bool m_audioFeedInputsHasBeenSet = false;
 };
 
 }  // namespace Model

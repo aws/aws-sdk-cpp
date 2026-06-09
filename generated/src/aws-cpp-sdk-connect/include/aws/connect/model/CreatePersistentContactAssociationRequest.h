@@ -31,7 +31,7 @@ class CreatePersistentContactAssociationRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -74,8 +74,8 @@ class CreatePersistentContactAssociationRequest : public ConnectRequest {
    * <li> <p> <code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most
    * recently terminated past chat contact of the specified past ended chat session.
    * To use this type, provide the <code>initialContactId</code> of the past ended
-   * chat session in the <code>sourceContactId</code> field. In this type, Amazon
-   * Connect determines what the most recent chat contact on the past ended chat
+   * chat session in the <code>sourceContactId</code> field. In this type, Connect
+   * Customer determines what the most recent chat contact on the past ended chat
    * session and uses it to start a persistent chat. </p> </li> <li> <p>
    * <code>FROM_SEGMENT</code>: Rehydrates a chat from the specified past chat
    * contact provided in the <code>sourceContactId</code> field. </p> </li> </ul>

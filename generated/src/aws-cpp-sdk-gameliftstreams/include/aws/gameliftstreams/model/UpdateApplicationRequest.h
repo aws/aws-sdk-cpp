@@ -74,10 +74,20 @@ class UpdateApplicationRequest : public GameLiftStreamsRequest {
   /**
    * <p>Locations of log files that your content generates during a stream session.
    * Enter path values that are relative to the <code>ApplicationSourceUri</code>
-   * location. You can specify up to 10 log paths. Amazon GameLift Streams uploads
-   * designated log files to the Amazon S3 bucket that you specify in
-   * <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve
-   * stored log files, call <a
+   * location, or relative to the user's home directory when using a supported path
+   * variable. You can specify up to 10 log paths. Each individual log file cannot
+   * exceed 50 MB in size.</p> <p>Each path can be a directory or an exact file path.
+   * When you specify a directory, Amazon GameLift Streams collects only files with
+   * the following extensions: <code>.txt</code>, <code>.log</code>, and
+   * <code>.utrace</code>. To collect files with other extensions, specify the exact
+   * file path. The copy operation is not performed recursively in subfolders.</p>
+   * <p>The following path variables are recognized when they appear as the first
+   * component of a path: <code>%USERPROFILE%</code> (Windows and Proton),
+   * <code>$HOME</code> or <code>~</code> (Linux). Use a path variable when your
+   * application writes logs outside of the application directory.</p> <p>Amazon
+   * GameLift Streams uploads designated log files to the Amazon S3 bucket that you
+   * specify in <code>ApplicationLogOutputUri</code> at the end of a stream session.
+   * To retrieve stored log files, call <a
    * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>
    * and get the <code>LogFileLocationUri</code>.</p>
    */

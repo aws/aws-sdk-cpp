@@ -24,6 +24,7 @@
 #include <aws/controlcatalog/model/ControlMapping.h>
 #include <aws/controlcatalog/model/ControlMappingFilter.h>
 #include <aws/controlcatalog/model/ControlParameter.h>
+#include <aws/controlcatalog/model/ControlParameterRequirement.h>
 #include <aws/controlcatalog/model/ControlRelationType.h>
 #include <aws/controlcatalog/model/ControlScope.h>
 #include <aws/controlcatalog/model/ControlSeverity.h>
@@ -51,6 +52,7 @@
 #include <aws/controlcatalog/model/ObjectiveFilter.h>
 #include <aws/controlcatalog/model/ObjectiveResourceFilter.h>
 #include <aws/controlcatalog/model/ObjectiveSummary.h>
+#include <aws/controlcatalog/model/ParameterRequirementSummary.h>
 #include <aws/controlcatalog/model/RegionConfiguration.h>
 #include <aws/controlcatalog/model/RelatedControlMappingDetails.h>
 

@@ -30,6 +30,10 @@ SemanticTable& SemanticTable::operator=(JsonView jsonValue) {
     m_rowLevelPermissionConfiguration = jsonValue.GetObject("RowLevelPermissionConfiguration");
     m_rowLevelPermissionConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SemanticMetadata")) {
+    m_semanticMetadata = jsonValue.GetObject("SemanticMetadata");
+    m_semanticMetadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue SemanticTable::Jsonize() const {
 
   if (m_rowLevelPermissionConfigurationHasBeenSet) {
     payload.WithObject("RowLevelPermissionConfiguration", m_rowLevelPermissionConfiguration.Jsonize());
+  }
+
+  if (m_semanticMetadataHasBeenSet) {
+    payload.WithObject("SemanticMetadata", m_semanticMetadata.Jsonize());
   }
 
   return payload;

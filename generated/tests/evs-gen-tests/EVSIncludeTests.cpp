@@ -49,6 +49,8 @@
 #include <aws/evs/model/EnvironmentState.h>
 #include <aws/evs/model/EnvironmentSummary.h>
 #include <aws/evs/model/ErrorDetail.h>
+#include <aws/evs/model/GetDepotUrlRequest.h>
+#include <aws/evs/model/GetDepotUrlResult.h>
 #include <aws/evs/model/GetEnvironmentRequest.h>
 #include <aws/evs/model/GetEnvironmentResult.h>
 #include <aws/evs/model/GetVersionsRequest.h>

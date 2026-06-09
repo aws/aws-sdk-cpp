@@ -82,6 +82,7 @@
 #include <aws/qconnect/model/ListMessageTemplateVersionsRequest.h>
 #include <aws/qconnect/model/ListMessageTemplatesRequest.h>
 #include <aws/qconnect/model/ListMessagesRequest.h>
+#include <aws/qconnect/model/ListModelsRequest.h>
 #include <aws/qconnect/model/ListQuickResponsesRequest.h>
 #include <aws/qconnect/model/ListSpansRequest.h>
 #include <aws/qconnect/model/ListTagsForResourceRequest.h>
@@ -135,10 +136,10 @@ const char* QConnectClient::GetAllocationTag() { return ALLOCATION_TAG; }
 QConnectClient::QConnectClient(const QConnect::QConnectClientConfiguration& clientConfiguration,
                                std::shared_ptr<QConnectEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<QConnectErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QConnectEndpointProvider>(ALLOCATION_TAG)) {
@@ -171,10 +172,10 @@ QConnectClient::QConnectClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 /* Legacy constructors due deprecation */
 QConnectClient::QConnectClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<QConnectErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<QConnectEndpointProvider>(ALLOCATION_TAG)) {
@@ -1683,6 +1684,24 @@ ListMessagesOutcome QConnectClient::ListMessages(const ListMessagesRequest& requ
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListMessagesOutcome(result.GetResultWithOwnership()) : ListMessagesOutcome(std::move(result.GetError()));
+}
+
+ListModelsOutcome QConnectClient::ListModels(const ListModelsRequest& request) const {
+  if (!request.AssistantIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListModels", "Required field: AssistantId, is not set");
+    return ListModelsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [AssistantId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assistants/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssistantId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/models");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListModelsOutcome(result.GetResultWithOwnership()) : ListModelsOutcome(std::move(result.GetError()));
 }
 
 ListQuickResponsesOutcome QConnectClient::ListQuickResponses(const ListQuickResponsesRequest& request) const {

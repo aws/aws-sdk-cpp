@@ -17,6 +17,7 @@ enum class Codec {
   AC3,
   EAC3,
   FLAC,
+  MP2,
   MP3,
   OPUS,
   PCM,

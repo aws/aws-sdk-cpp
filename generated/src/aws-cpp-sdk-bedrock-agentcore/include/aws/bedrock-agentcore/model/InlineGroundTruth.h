@@ -37,7 +37,7 @@ class InlineGroundTruth {
 
   ///@{
   /**
-   * <p>assertions for evaluation, reuses common model EvaluationContentList</p>
+   * <p>Assertions for evaluation, reuses common model EvaluationContentList.</p>
    */
   inline const Aws::Vector<EvaluationContent>& GetAssertions() const { return m_assertions; }
   inline bool AssertionsHasBeenSet() const { return m_assertionsHasBeenSet; }
@@ -61,8 +61,7 @@ class InlineGroundTruth {
 
   ///@{
   /**
-   * <p>expectedTrajectory for evaluation, reuses common model
-   * EvaluationExpectedTrajectory</p>
+   * <p>The expected tool call sequence for trajectory evaluation.</p>
    */
   inline const EvaluationExpectedTrajectory& GetExpectedTrajectory() const { return m_expectedTrajectory; }
   inline bool ExpectedTrajectoryHasBeenSet() const { return m_expectedTrajectoryHasBeenSet; }

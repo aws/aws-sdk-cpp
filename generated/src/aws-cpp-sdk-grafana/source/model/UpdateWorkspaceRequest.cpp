@@ -91,5 +91,9 @@ Aws::String UpdateWorkspaceRequest::SerializePayload() const {
     payload.WithBool("removeNetworkAccessConfiguration", m_removeNetworkAccessConfiguration);
   }
 
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("ipAddressType", IPAddressTypeMapper::GetNameForIPAddressType(m_ipAddressType));
+  }
+
   return payload.View().WriteReadable();
 }

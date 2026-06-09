@@ -100,14 +100,14 @@ class S3Storage {
    * <p>An Amazon S3 upload policy that gives Amazon EC2 permission to upload items
    * into Amazon S3 on your behalf.</p>
    */
-  inline const Aws::Utils::ByteBuffer& GetUploadPolicy() const { return m_uploadPolicy; }
+  inline const Aws::Utils::CryptoBuffer& GetUploadPolicy() const { return m_uploadPolicy; }
   inline bool UploadPolicyHasBeenSet() const { return m_uploadPolicyHasBeenSet; }
-  template <typename UploadPolicyT = Aws::Utils::ByteBuffer>
+  template <typename UploadPolicyT = Aws::Utils::CryptoBuffer>
   void SetUploadPolicy(UploadPolicyT&& value) {
     m_uploadPolicyHasBeenSet = true;
     m_uploadPolicy = std::forward<UploadPolicyT>(value);
   }
-  template <typename UploadPolicyT = Aws::Utils::ByteBuffer>
+  template <typename UploadPolicyT = Aws::Utils::CryptoBuffer>
   S3Storage& WithUploadPolicy(UploadPolicyT&& value) {
     SetUploadPolicy(std::forward<UploadPolicyT>(value));
     return *this;
@@ -138,7 +138,7 @@ class S3Storage {
 
   Aws::String m_prefix;
 
-  Aws::Utils::ByteBuffer m_uploadPolicy{};
+  Aws::Utils::CryptoBuffer m_uploadPolicy{};
 
   Aws::String m_uploadPolicySignature;
   bool m_aWSAccessKeyIdHasBeenSet = false;

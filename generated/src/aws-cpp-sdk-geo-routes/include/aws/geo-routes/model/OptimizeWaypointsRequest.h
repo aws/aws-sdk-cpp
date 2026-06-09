@@ -317,7 +317,12 @@ class OptimizeWaypointsRequest : public GeoRoutesRequest {
   ///@{
   /**
    * <p>List of waypoints between the <code>Origin</code> and
-   * <code>Destination</code>.</p>
+   * <code>Destination</code>, in World Geodetic System (WGS 84) format: [longitude,
+   * latitude].</p> <p>The maximum number of waypoints allowed per request:</p> <ul>
+   * <li> <p>Maximum 50 waypoints per request</p> </li> <li> <p>Maximum 20 waypoints
+   * when using constraints (<code>AccessHours</code>, <code>AppointmentTime</code>,
+   * <code>ServiceDuration</code>, <code>Heading</code>, <code>SideOfStreet</code>,
+   * <code>Before</code>)</p> </li> </ul>
    */
   inline const Aws::Vector<WaypointOptimizationWaypoint>& GetWaypoints() const { return m_waypoints; }
   inline bool WaypointsHasBeenSet() const { return m_waypointsHasBeenSet; }

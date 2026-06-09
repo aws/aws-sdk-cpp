@@ -34,7 +34,7 @@ class UserProficiency {
   ///@{
   /**
    * <p>The name of user's proficiency. You must use name of predefined attribute
-   * present in the Amazon Connect instance.</p>
+   * present in the Connect Customer instance.</p>
    */
   inline const Aws::String& GetAttributeName() const { return m_attributeName; }
   inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
@@ -53,7 +53,7 @@ class UserProficiency {
   ///@{
   /**
    * <p>The value of user's proficiency. You must use value of predefined attribute
-   * present in the Amazon Connect instance.</p>
+   * present in the Connect Customer instance.</p>
    */
   inline const Aws::String& GetAttributeValue() const { return m_attributeValue; }
   inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }

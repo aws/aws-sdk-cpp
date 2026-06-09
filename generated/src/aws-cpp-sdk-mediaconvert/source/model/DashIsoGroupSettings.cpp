@@ -72,6 +72,14 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator=(JsonView jsonValue) {
     m_imageBasedTrickPlaySettings = jsonValue.GetObject("imageBasedTrickPlaySettings");
     m_imageBasedTrickPlaySettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("imageBasedTrickPlayVariants")) {
+    Aws::Utils::Array<JsonView> imageBasedTrickPlayVariantsJsonList = jsonValue.GetArray("imageBasedTrickPlayVariants");
+    for (unsigned imageBasedTrickPlayVariantsIndex = 0; imageBasedTrickPlayVariantsIndex < imageBasedTrickPlayVariantsJsonList.GetLength();
+         ++imageBasedTrickPlayVariantsIndex) {
+      m_imageBasedTrickPlayVariants.push_back(imageBasedTrickPlayVariantsJsonList[imageBasedTrickPlayVariantsIndex].AsObject());
+    }
+    m_imageBasedTrickPlayVariantsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("minBufferTime")) {
     m_minBufferTime = jsonValue.GetInteger("minBufferTime");
     m_minBufferTimeHasBeenSet = true;
@@ -178,6 +186,16 @@ JsonValue DashIsoGroupSettings::Jsonize() const {
 
   if (m_imageBasedTrickPlaySettingsHasBeenSet) {
     payload.WithObject("imageBasedTrickPlaySettings", m_imageBasedTrickPlaySettings.Jsonize());
+  }
+
+  if (m_imageBasedTrickPlayVariantsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> imageBasedTrickPlayVariantsJsonList(m_imageBasedTrickPlayVariants.size());
+    for (unsigned imageBasedTrickPlayVariantsIndex = 0; imageBasedTrickPlayVariantsIndex < imageBasedTrickPlayVariantsJsonList.GetLength();
+         ++imageBasedTrickPlayVariantsIndex) {
+      imageBasedTrickPlayVariantsJsonList[imageBasedTrickPlayVariantsIndex].AsObject(
+          m_imageBasedTrickPlayVariants[imageBasedTrickPlayVariantsIndex].Jsonize());
+    }
+    payload.WithArray("imageBasedTrickPlayVariants", std::move(imageBasedTrickPlayVariantsJsonList));
   }
 
   if (m_minBufferTimeHasBeenSet) {

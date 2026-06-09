@@ -20,7 +20,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Details specific to the instrument type</p><p><h3>See Also:</h3>   <a
+ * <p>Details specific to the instrument type.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/PaymentInstrumentDetails">AWS
  * API Reference</a></p>
  */
@@ -33,7 +33,7 @@ class PaymentInstrumentDetails {
 
   ///@{
   /**
-   * <p>Embedded crypto wallet managed directly by end user</p>
+   * <p>Embedded crypto wallet managed directly by end user.</p>
    */
   inline const EmbeddedCryptoWallet& GetEmbeddedCryptoWallet() const { return m_embeddedCryptoWallet; }
   inline bool EmbeddedCryptoWalletHasBeenSet() const { return m_embeddedCryptoWalletHasBeenSet; }

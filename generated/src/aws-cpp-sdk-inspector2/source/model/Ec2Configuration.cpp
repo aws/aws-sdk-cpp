@@ -22,6 +22,10 @@ Ec2Configuration& Ec2Configuration::operator=(JsonView jsonValue) {
     m_scanMode = Ec2ScanModeMapper::GetEc2ScanModeForName(jsonValue.GetString("scanMode"));
     m_scanModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("activateVMScanner")) {
+    m_activateVMScanner = jsonValue.GetBool("activateVMScanner");
+    m_activateVMScannerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue Ec2Configuration::Jsonize() const {
 
   if (m_scanModeHasBeenSet) {
     payload.WithString("scanMode", Ec2ScanModeMapper::GetNameForEc2ScanMode(m_scanMode));
+  }
+
+  if (m_activateVMScannerHasBeenSet) {
+    payload.WithBool("activateVMScanner", m_activateVMScanner);
   }
 
   return payload;

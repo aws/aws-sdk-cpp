@@ -188,8 +188,8 @@ class RegisterContainerInstanceRequest : public ECSRequest {
 
   ///@{
   /**
-   * <p>The devices that are available on the container instance. The only supported
-   * device type is a GPU.</p>
+   * <p>The devices that are available on the container instance. The supported
+   * device types are GPUs and Neuron devices.</p>
    */
   inline const Aws::Vector<PlatformDevice>& GetPlatformDevices() const { return m_platformDevices; }
   inline bool PlatformDevicesHasBeenSet() const { return m_platformDevicesHasBeenSet; }

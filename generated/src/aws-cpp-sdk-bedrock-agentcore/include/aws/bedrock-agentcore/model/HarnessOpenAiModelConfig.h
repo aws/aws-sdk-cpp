@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/HarnessOpenAiApiFormat.h>
+#include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -116,6 +118,41 @@ class HarnessOpenAiModelConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The API format to use when calling the OpenAI provider.</p>
+   */
+  inline HarnessOpenAiApiFormat GetApiFormat() const { return m_apiFormat; }
+  inline bool ApiFormatHasBeenSet() const { return m_apiFormatHasBeenSet; }
+  inline void SetApiFormat(HarnessOpenAiApiFormat value) {
+    m_apiFormatHasBeenSet = true;
+    m_apiFormat = value;
+  }
+  inline HarnessOpenAiModelConfig& WithApiFormat(HarnessOpenAiApiFormat value) {
+    SetApiFormat(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Provider-specific parameters passed through to the model provider
+   * unchanged.</p>
+   */
+  inline Aws::Utils::DocumentView GetAdditionalParams() const { return m_additionalParams; }
+  inline bool AdditionalParamsHasBeenSet() const { return m_additionalParamsHasBeenSet; }
+  template <typename AdditionalParamsT = Aws::Utils::Document>
+  void SetAdditionalParams(AdditionalParamsT&& value) {
+    m_additionalParamsHasBeenSet = true;
+    m_additionalParams = std::forward<AdditionalParamsT>(value);
+  }
+  template <typename AdditionalParamsT = Aws::Utils::Document>
+  HarnessOpenAiModelConfig& WithAdditionalParams(AdditionalParamsT&& value) {
+    SetAdditionalParams(std::forward<AdditionalParamsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_modelId;
 
@@ -126,11 +163,17 @@ class HarnessOpenAiModelConfig {
   double m_temperature{0.0};
 
   double m_topP{0.0};
+
+  HarnessOpenAiApiFormat m_apiFormat{HarnessOpenAiApiFormat::NOT_SET};
+
+  Aws::Utils::Document m_additionalParams;
   bool m_modelIdHasBeenSet = false;
   bool m_apiKeyArnHasBeenSet = false;
   bool m_maxTokensHasBeenSet = false;
   bool m_temperatureHasBeenSet = false;
   bool m_topPHasBeenSet = false;
+  bool m_apiFormatHasBeenSet = false;
+  bool m_additionalParamsHasBeenSet = false;
 };
 
 }  // namespace Model

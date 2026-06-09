@@ -109,12 +109,13 @@ const char* BedrockAgentCoreClient::GetAllocationTag() { return ALLOCATION_TAG; 
 
 BedrockAgentCoreClient::BedrockAgentCoreClient(const BedrockAgentCore::BedrockAgentCoreClientConfiguration& clientConfiguration,
                                                std::shared_ptr<BedrockAgentCoreEndpointProviderBase> endpointProvider)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<BedrockAgentCoreErrorMarshaller>(ALLOCATION_TAG)),
+    : BASECLASS(
+          clientConfiguration,
+          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
+              ALLOCATION_TAG,
+              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+          Aws::MakeShared<BedrockAgentCoreErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider)
                                           : Aws::MakeShared<BedrockAgentCoreEndpointProvider>(ALLOCATION_TAG)) {
@@ -150,12 +151,13 @@ BedrockAgentCoreClient::BedrockAgentCoreClient(const std::shared_ptr<AWSCredenti
 
 /* Legacy constructors due deprecation */
 BedrockAgentCoreClient::BedrockAgentCoreClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<BedrockAgentCoreErrorMarshaller>(ALLOCATION_TAG)),
+    : BASECLASS(
+          clientConfiguration,
+          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
+              ALLOCATION_TAG,
+              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+          Aws::MakeShared<BedrockAgentCoreErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<BedrockAgentCoreEndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);

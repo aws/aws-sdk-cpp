@@ -19,6 +19,10 @@ Aws::String DeletePolicyStoreAliasRequest::SerializePayload() const {
     payload.WithString("aliasName", m_aliasName);
   }
 
+  if (m_deletionModeHasBeenSet) {
+    payload.WithString("deletionMode", DeletionModeMapper::GetNameForDeletionMode(m_deletionMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

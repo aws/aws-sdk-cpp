@@ -66,6 +66,7 @@
 #include <aws/sagemaker/model/CreateInferenceComponentRequest.h>
 #include <aws/sagemaker/model/CreateInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/CreateInferenceRecommendationsJobRequest.h>
+#include <aws/sagemaker/model/CreateJobRequest.h>
 #include <aws/sagemaker/model/CreateLabelingJobRequest.h>
 #include <aws/sagemaker/model/CreateMlflowAppRequest.h>
 #include <aws/sagemaker/model/CreateMlflowTrackingServerRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/sagemaker/model/DeleteDeviceFleetRequest.h>
 #include <aws/sagemaker/model/DeleteDomainRequest.h>
 #include <aws/sagemaker/model/DeleteEdgeDeploymentPlanRequest.h>
-#include <aws/sagemaker/model/DeleteEdgeDeploymentStageRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -144,10 +144,10 @@ const char* SageMakerClient::GetAllocationTag() { return ALLOCATION_TAG; }
 SageMakerClient::SageMakerClient(const SageMaker::SageMakerClientConfiguration& clientConfiguration,
                                  std::shared_ptr<SageMakerEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<SageMakerErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SageMakerEndpointProvider>(ALLOCATION_TAG)) {
@@ -180,10 +180,10 @@ SageMakerClient::SageMakerClient(const std::shared_ptr<AWSCredentialsProvider>& 
 /* Legacy constructors due deprecation */
 SageMakerClient::SageMakerClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<SageMakerErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<SageMakerEndpointProvider>(ALLOCATION_TAG)) {
@@ -541,6 +541,11 @@ CreateInferenceRecommendationsJobOutcome SageMakerClient::CreateInferenceRecomme
                             : CreateInferenceRecommendationsJobOutcome(std::move(result.GetError()));
 }
 
+CreateJobOutcome SageMakerClient::CreateJob(const CreateJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateJobOutcome(result.GetResultWithOwnership()) : CreateJobOutcome(std::move(result.GetError()));
+}
+
 CreateLabelingJobOutcome SageMakerClient::CreateLabelingJob(const CreateLabelingJobRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateLabelingJobOutcome(result.GetResultWithOwnership())
@@ -854,10 +859,4 @@ DeleteEdgeDeploymentPlanOutcome SageMakerClient::DeleteEdgeDeploymentPlan(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteEdgeDeploymentPlanOutcome(result.GetResultWithOwnership())
                             : DeleteEdgeDeploymentPlanOutcome(std::move(result.GetError()));
-}
-
-DeleteEdgeDeploymentStageOutcome SageMakerClient::DeleteEdgeDeploymentStage(const DeleteEdgeDeploymentStageRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteEdgeDeploymentStageOutcome(result.GetResultWithOwnership())
-                            : DeleteEdgeDeploymentStageOutcome(std::move(result.GetError()));
 }

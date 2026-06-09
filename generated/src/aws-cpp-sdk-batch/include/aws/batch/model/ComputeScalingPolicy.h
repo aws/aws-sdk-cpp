@@ -36,11 +36,12 @@ class ComputeScalingPolicy {
    * period begins when the last job finishes. If no new jobs are placed on the
    * instance during this delay, Batch terminates the instance once the delay
    * expires.</p> <p>Valid Range: Minimum value of 20. Maximum value of 10080. Use 0
-   * to unset and disable the scale down delay.</p>  <p>The scale down delay
-   * does not apply to:</p> <ul> <li> <p>Instances being replaced during
-   * infrastructure updates</p> </li> <li> <p>Newly launched instances that have not
-   * yet run any jobs</p> </li> <li> <p>Spot instances reclaimed due to
-   * interruption</p> </li> </ul>
+   * to unset and disable the scale down delay.</p>  <p>Idle instances retained
+   * during the scale-down delay period are billable at standard EC2 pricing.</p>
+   *   <p>The scale down delay does not apply to:</p> <ul> <li>
+   * <p>Instances being replaced during infrastructure updates</p> </li> <li>
+   * <p>Newly launched instances that have not yet run any jobs</p> </li> <li>
+   * <p>Spot instances reclaimed due to interruption</p> </li> </ul>
    */
   inline int GetMinScaleDownDelayMinutes() const { return m_minScaleDownDelayMinutes; }
   inline bool MinScaleDownDelayMinutesHasBeenSet() const { return m_minScaleDownDelayMinutesHasBeenSet; }

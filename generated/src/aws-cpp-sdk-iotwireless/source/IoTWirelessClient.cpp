@@ -150,12 +150,13 @@ const char* IoTWirelessClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
 IoTWirelessClient::IoTWirelessClient(const IoTWireless::IoTWirelessClientConfiguration& clientConfiguration,
                                      std::shared_ptr<IoTWirelessEndpointProviderBase> endpointProvider)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
+    : BASECLASS(
+          clientConfiguration,
+          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
+              ALLOCATION_TAG,
+              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+          Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);
@@ -187,12 +188,13 @@ IoTWirelessClient::IoTWirelessClient(const std::shared_ptr<AWSCredentialsProvide
 
 /* Legacy constructors due deprecation */
 IoTWirelessClient::IoTWirelessClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
+    : BASECLASS(
+          clientConfiguration,
+          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
+              ALLOCATION_TAG,
+              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+          Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);

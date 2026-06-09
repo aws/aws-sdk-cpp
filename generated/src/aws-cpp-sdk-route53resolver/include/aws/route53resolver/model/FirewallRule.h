@@ -12,6 +12,7 @@
 #include <aws/route53resolver/model/ConfidenceThreshold.h>
 #include <aws/route53resolver/model/DnsThreatProtection.h>
 #include <aws/route53resolver/model/FirewallDomainRedirectionAction.h>
+#include <aws/route53resolver/model/FirewallRuleType.h>
 
 #include <utility>
 
@@ -327,7 +328,7 @@ class FirewallRule {
    * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
    * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
    * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
-   * can be 1-65334, for example, TYPE28. For more information, see <a
+   * can be 1-65534, for example, TYPE28. For more information, see <a
    * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
    * types</a>.</p> </li> </ul>
    */
@@ -388,6 +389,25 @@ class FirewallRule {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The rule type configuration for the firewall rule. Exactly one member of this
+   * union should be set.</p>
+   */
+  inline const FirewallRuleType& GetFirewallRuleType() const { return m_firewallRuleType; }
+  inline bool FirewallRuleTypeHasBeenSet() const { return m_firewallRuleTypeHasBeenSet; }
+  template <typename FirewallRuleTypeT = FirewallRuleType>
+  void SetFirewallRuleType(FirewallRuleTypeT&& value) {
+    m_firewallRuleTypeHasBeenSet = true;
+    m_firewallRuleType = std::forward<FirewallRuleTypeT>(value);
+  }
+  template <typename FirewallRuleTypeT = FirewallRuleType>
+  FirewallRule& WithFirewallRuleType(FirewallRuleTypeT&& value) {
+    SetFirewallRuleType(std::forward<FirewallRuleTypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_firewallRuleGroupId;
 
@@ -422,6 +442,8 @@ class FirewallRule {
   DnsThreatProtection m_dnsThreatProtection{DnsThreatProtection::NOT_SET};
 
   ConfidenceThreshold m_confidenceThreshold{ConfidenceThreshold::NOT_SET};
+
+  FirewallRuleType m_firewallRuleType;
   bool m_firewallRuleGroupIdHasBeenSet = false;
   bool m_firewallDomainListIdHasBeenSet = false;
   bool m_firewallThreatProtectionIdHasBeenSet = false;
@@ -439,6 +461,7 @@ class FirewallRule {
   bool m_qtypeHasBeenSet = false;
   bool m_dnsThreatProtectionHasBeenSet = false;
   bool m_confidenceThresholdHasBeenSet = false;
+  bool m_firewallRuleTypeHasBeenSet = false;
 };
 
 }  // namespace Model

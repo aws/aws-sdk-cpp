@@ -34,6 +34,10 @@ InputOrigin& InputOrigin::operator=(JsonView jsonValue) {
     m_responseTimeout = jsonValue.GetInteger("responseTimeout");
     m_responseTimeoutHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ipAddressType")) {
+    m_ipAddressType = OriginIpAddressTypeEnumMapper::GetOriginIpAddressTypeEnumForName(jsonValue.GetString("ipAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue InputOrigin::Jsonize() const {
 
   if (m_responseTimeoutHasBeenSet) {
     payload.WithInteger("responseTimeout", m_responseTimeout);
+  }
+
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("ipAddressType", OriginIpAddressTypeEnumMapper::GetNameForOriginIpAddressTypeEnum(m_ipAddressType));
   }
 
   return payload;

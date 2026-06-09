@@ -38,7 +38,7 @@ class CreateContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -80,7 +80,7 @@ class CreateContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the contact in this instance of Amazon Connect. </p>
+   * <p>The identifier of the contact in this instance of Connect Customer. </p>
    */
   inline const Aws::String& GetRelatedContactId() const { return m_relatedContactId; }
   inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
@@ -99,7 +99,7 @@ class CreateContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>A custom key-value pair using an attribute map. The attributes are standard
-   * Amazon Connect attributes, and can be accessed in flows just like any other
+   * Connect Customer attributes, and can be accessed in flows just like any other
    * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
    * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
    * and underscore characters.</p>
@@ -283,8 +283,8 @@ class CreateContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>A set of system defined key-value pairs stored on individual contact segments
-   * (unique contact ID) using an attribute map. The attributes are standard Amazon
-   * Connect attributes. They can be accessed in flows.</p> <p>Attribute keys can
+   * (unique contact ID) using an attribute map. The attributes are standard Connect
+   * Customer attributes. They can be accessed in flows.</p> <p>Attribute keys can
    * include only alphanumeric, -, and _.</p> <p>This field can be used to set
    * Segment Contact Expiry as a duration in minutes.</p>  <p>To set contact
    * expiry, a ValueMap must be specified containing the integer number of minutes
@@ -317,8 +317,8 @@ class CreateContactRequest : public ConnectRequest {
    * <p>The ID of the previous contact when creating a transfer contact. This value
    * can be provided only for external audio contacts. For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate
-   * Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon
-   * Connect Administrator Guide</i>.</p>
+   * Connect Customer Contact Lens with external voice systems</a> in the <i>Connect
+   * Customer Administrator Guide</i>.</p>
    */
   inline const Aws::String& GetPreviousContactId() const { return m_previousContactId; }
   inline bool PreviousContactIdHasBeenSet() const { return m_previousContactIdHasBeenSet; }

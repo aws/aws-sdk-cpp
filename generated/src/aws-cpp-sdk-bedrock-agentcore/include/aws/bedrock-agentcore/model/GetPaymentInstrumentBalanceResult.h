@@ -23,7 +23,7 @@ class JsonValue;
 namespace BedrockAgentCore {
 namespace Model {
 /**
- * <p>Response structure for getting payment instrument balance</p><p><h3>See
+ * <p>Response structure for getting payment instrument balance.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentInstrumentBalanceResponse">AWS
  * API Reference</a></p>

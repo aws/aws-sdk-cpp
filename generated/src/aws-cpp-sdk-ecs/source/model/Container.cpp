@@ -98,6 +98,13 @@ Container& Container::operator=(JsonView jsonValue) {
     }
     m_gpuIdsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("neuronDeviceIds")) {
+    Aws::Utils::Array<JsonView> neuronDeviceIdsJsonList = jsonValue.GetArray("neuronDeviceIds");
+    for (unsigned neuronDeviceIdsIndex = 0; neuronDeviceIdsIndex < neuronDeviceIdsJsonList.GetLength(); ++neuronDeviceIdsIndex) {
+      m_neuronDeviceIds.push_back(neuronDeviceIdsJsonList[neuronDeviceIdsIndex].AsString());
+    }
+    m_neuronDeviceIdsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -186,6 +193,14 @@ JsonValue Container::Jsonize() const {
       gpuIdsJsonList[gpuIdsIndex].AsString(m_gpuIds[gpuIdsIndex]);
     }
     payload.WithArray("gpuIds", std::move(gpuIdsJsonList));
+  }
+
+  if (m_neuronDeviceIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> neuronDeviceIdsJsonList(m_neuronDeviceIds.size());
+    for (unsigned neuronDeviceIdsIndex = 0; neuronDeviceIdsIndex < neuronDeviceIdsJsonList.GetLength(); ++neuronDeviceIdsIndex) {
+      neuronDeviceIdsJsonList[neuronDeviceIdsIndex].AsString(m_neuronDeviceIds[neuronDeviceIdsIndex]);
+    }
+    payload.WithArray("neuronDeviceIds", std::move(neuronDeviceIdsJsonList));
   }
 
   return payload;

@@ -24,7 +24,11 @@ enum class EventSourceName {
   OnMetricDataUpdate,
   OnCaseCreate,
   OnCaseUpdate,
-  OnSlaBreach
+  OnSlaBreach,
+  OnAlertUpdate,
+  OnSchedulePublish,
+  OnScheduleUpdate,
+  OnScheduleTimeOffRequestActivity
 };
 
 namespace EventSourceNameMapper {

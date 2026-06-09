@@ -11,6 +11,7 @@
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
 #include <aws/devops-agent/model/PrivateConnectionStatus.h>
 #include <aws/devops-agent/model/PrivateConnectionType.h>
+#include <aws/devops-agent/model/ResourceConfigDnsResolution.h>
 
 #include <utility>
 
@@ -176,6 +177,39 @@ class DescribePrivateConnectionResult {
 
   ///@{
   /**
+   * <p>DNS resolution mode for the Private Connection's resource gateway.</p>
+   */
+  inline ResourceConfigDnsResolution GetDnsResolution() const { return m_dnsResolution; }
+  inline void SetDnsResolution(ResourceConfigDnsResolution value) {
+    m_dnsResolutionHasBeenSet = true;
+    m_dnsResolution = value;
+  }
+  inline DescribePrivateConnectionResult& WithDnsResolution(ResourceConfigDnsResolution value) {
+    SetDnsResolution(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Message describing the reason for a failed Private Connection, if
+   * applicable.</p>
+   */
+  inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
+  template <typename FailureMessageT = Aws::String>
+  void SetFailureMessage(FailureMessageT&& value) {
+    m_failureMessageHasBeenSet = true;
+    m_failureMessage = std::forward<FailureMessageT>(value);
+  }
+  template <typename FailureMessageT = Aws::String>
+  DescribePrivateConnectionResult& WithFailureMessage(FailureMessageT&& value) {
+    SetFailureMessage(std::forward<FailureMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Tags associated with the Private Connection.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -230,6 +264,10 @@ class DescribePrivateConnectionResult {
 
   Aws::Utils::DateTime m_certificateExpiryTime{};
 
+  ResourceConfigDnsResolution m_dnsResolution{ResourceConfigDnsResolution::NOT_SET};
+
+  Aws::String m_failureMessage;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
@@ -242,6 +280,8 @@ class DescribePrivateConnectionResult {
   bool m_resourceConfigurationIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_certificateExpiryTimeHasBeenSet = false;
+  bool m_dnsResolutionHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

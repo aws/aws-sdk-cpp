@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/taxsettings/TaxSettings_EXPORTS.h>
+#include <aws/taxsettings/model/PolandTaxRegistrationNumberType.h>
 
 #include <utility>
 
@@ -67,12 +68,33 @@ class PolandAdditionalInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tax registration number type. Valid values are
+   * <code>EUTaxRegistrationNumber</code>, <code>LocalTaxRegistrationNumber</code>,
+   * or <code>LocalRegistrationNumber</code>.</p>
+   */
+  inline PolandTaxRegistrationNumberType GetTaxRegistrationNumberType() const { return m_taxRegistrationNumberType; }
+  inline bool TaxRegistrationNumberTypeHasBeenSet() const { return m_taxRegistrationNumberTypeHasBeenSet; }
+  inline void SetTaxRegistrationNumberType(PolandTaxRegistrationNumberType value) {
+    m_taxRegistrationNumberTypeHasBeenSet = true;
+    m_taxRegistrationNumberType = value;
+  }
+  inline PolandAdditionalInfo& WithTaxRegistrationNumberType(PolandTaxRegistrationNumberType value) {
+    SetTaxRegistrationNumberType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_individualRegistrationNumber;
 
   bool m_isGroupVatEnabled{false};
+
+  PolandTaxRegistrationNumberType m_taxRegistrationNumberType{PolandTaxRegistrationNumberType::NOT_SET};
   bool m_individualRegistrationNumberHasBeenSet = false;
   bool m_isGroupVatEnabledHasBeenSet = false;
+  bool m_taxRegistrationNumberTypeHasBeenSet = false;
 };
 
 }  // namespace Model

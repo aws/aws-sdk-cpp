@@ -302,6 +302,25 @@ class StartTrainedModelInferenceJobRequest : public CleanRoomsMLRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The account ID of the member that is responsible for paying for model
+   * inference costs.</p>
+   */
+  inline const Aws::String& GetMlModelInferencePayerAccountId() const { return m_mlModelInferencePayerAccountId; }
+  inline bool MlModelInferencePayerAccountIdHasBeenSet() const { return m_mlModelInferencePayerAccountIdHasBeenSet; }
+  template <typename MlModelInferencePayerAccountIdT = Aws::String>
+  void SetMlModelInferencePayerAccountId(MlModelInferencePayerAccountIdT&& value) {
+    m_mlModelInferencePayerAccountIdHasBeenSet = true;
+    m_mlModelInferencePayerAccountId = std::forward<MlModelInferencePayerAccountIdT>(value);
+  }
+  template <typename MlModelInferencePayerAccountIdT = Aws::String>
+  StartTrainedModelInferenceJobRequest& WithMlModelInferencePayerAccountId(MlModelInferencePayerAccountIdT&& value) {
+    SetMlModelInferencePayerAccountId(std::forward<MlModelInferencePayerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_membershipIdentifier;
 
@@ -328,6 +347,8 @@ class StartTrainedModelInferenceJobRequest : public CleanRoomsMLRequest {
   Aws::String m_kmsKeyArn;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::String m_mlModelInferencePayerAccountId;
   bool m_membershipIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_trainedModelArnHasBeenSet = false;
@@ -341,6 +362,7 @@ class StartTrainedModelInferenceJobRequest : public CleanRoomsMLRequest {
   bool m_environmentHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_mlModelInferencePayerAccountIdHasBeenSet = false;
 };
 
 }  // namespace Model

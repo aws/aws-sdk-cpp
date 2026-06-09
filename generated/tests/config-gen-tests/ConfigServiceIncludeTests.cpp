@@ -311,6 +311,7 @@
 #include <aws/config/model/ResourceValue.h>
 #include <aws/config/model/ResourceValueType.h>
 #include <aws/config/model/RetentionConfiguration.h>
+#include <aws/config/model/RuleEvaluationVisibility.h>
 #include <aws/config/model/Scope.h>
 #include <aws/config/model/SelectAggregateResourceConfigRequest.h>
 #include <aws/config/model/SelectAggregateResourceConfigResult.h>

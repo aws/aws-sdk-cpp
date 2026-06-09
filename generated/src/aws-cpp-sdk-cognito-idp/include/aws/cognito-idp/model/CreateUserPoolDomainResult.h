@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
+#include <aws/cognito-idp/model/RoutingType.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -68,6 +69,23 @@ class CreateUserPoolDomainResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The routing configuration that was applied to the user pool domain.</p>
+   */
+  inline const RoutingType& GetRouting() const { return m_routing; }
+  template <typename RoutingT = RoutingType>
+  void SetRouting(RoutingT&& value) {
+    m_routingHasBeenSet = true;
+    m_routing = std::forward<RoutingT>(value);
+  }
+  template <typename RoutingT = RoutingType>
+  CreateUserPoolDomainResult& WithRouting(RoutingT&& value) {
+    SetRouting(std::forward<RoutingT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -88,10 +106,13 @@ class CreateUserPoolDomainResult {
 
   Aws::String m_cloudFrontDomain;
 
+  RoutingType m_routing;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_managedLoginVersionHasBeenSet = false;
   bool m_cloudFrontDomainHasBeenSet = false;
+  bool m_routingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

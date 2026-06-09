@@ -187,6 +187,30 @@ class NetworkMigrationCodeGenerationSegment {
 
   ///@{
   /**
+   * <p>A list of other segments that this segment depends on or references.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetReferencedSegments() const { return m_referencedSegments; }
+  inline bool ReferencedSegmentsHasBeenSet() const { return m_referencedSegmentsHasBeenSet; }
+  template <typename ReferencedSegmentsT = Aws::Vector<Aws::String>>
+  void SetReferencedSegments(ReferencedSegmentsT&& value) {
+    m_referencedSegmentsHasBeenSet = true;
+    m_referencedSegments = std::forward<ReferencedSegmentsT>(value);
+  }
+  template <typename ReferencedSegmentsT = Aws::Vector<Aws::String>>
+  NetworkMigrationCodeGenerationSegment& WithReferencedSegments(ReferencedSegmentsT&& value) {
+    SetReferencedSegments(std::forward<ReferencedSegmentsT>(value));
+    return *this;
+  }
+  template <typename ReferencedSegmentsT = Aws::String>
+  NetworkMigrationCodeGenerationSegment& AddReferencedSegments(ReferencedSegmentsT&& value) {
+    m_referencedSegmentsHasBeenSet = true;
+    m_referencedSegments.emplace_back(std::forward<ReferencedSegmentsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp when the segment was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -219,6 +243,8 @@ class NetworkMigrationCodeGenerationSegment {
 
   Aws::Vector<NetworkMigrationCodeGenerationArtifact> m_artifacts;
 
+  Aws::Vector<Aws::String> m_referencedSegments;
+
   Aws::Utils::DateTime m_createdAt{};
   bool m_jobIDHasBeenSet = false;
   bool m_networkMigrationExecutionIDHasBeenSet = false;
@@ -228,6 +254,7 @@ class NetworkMigrationCodeGenerationSegment {
   bool m_logicalIDHasBeenSet = false;
   bool m_mapperSegmentIDHasBeenSet = false;
   bool m_artifactsHasBeenSet = false;
+  bool m_referencedSegmentsHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

@@ -110,6 +110,10 @@ DomainConfig& DomainConfig::operator=(JsonView jsonValue) {
     m_deploymentStrategyOptions = jsonValue.GetObject("DeploymentStrategyOptions");
     m_deploymentStrategyOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AutomatedSnapshotPauseOptions")) {
+    m_automatedSnapshotPauseOptions = jsonValue.GetObject("AutomatedSnapshotPauseOptions");
+    m_automatedSnapshotPauseOptionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -207,6 +211,10 @@ JsonValue DomainConfig::Jsonize() const {
 
   if (m_deploymentStrategyOptionsHasBeenSet) {
     payload.WithObject("DeploymentStrategyOptions", m_deploymentStrategyOptions.Jsonize());
+  }
+
+  if (m_automatedSnapshotPauseOptionsHasBeenSet) {
+    payload.WithObject("AutomatedSnapshotPauseOptions", m_automatedSnapshotPauseOptions.Jsonize());
   }
 
   return payload;

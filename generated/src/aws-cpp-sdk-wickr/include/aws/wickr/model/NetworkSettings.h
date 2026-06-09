@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/wickr/Wickr_EXPORTS.h>
+#include <aws/wickr/model/ConsentPopupConfig.h>
 #include <aws/wickr/model/ReadReceiptConfig.h>
 
 #include <utility>
@@ -102,6 +103,24 @@ class NetworkSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Consent popup configuration for the network, displayed to users on login.</p>
+   */
+  inline const ConsentPopupConfig& GetConsentPopup() const { return m_consentPopup; }
+  inline bool ConsentPopupHasBeenSet() const { return m_consentPopupHasBeenSet; }
+  template <typename ConsentPopupT = ConsentPopupConfig>
+  void SetConsentPopup(ConsentPopupT&& value) {
+    m_consentPopupHasBeenSet = true;
+    m_consentPopup = std::forward<ConsentPopupT>(value);
+  }
+  template <typename ConsentPopupT = ConsentPopupConfig>
+  NetworkSettings& WithConsentPopup(ConsentPopupT&& value) {
+    SetConsentPopup(std::forward<ConsentPopupT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_enableClientMetrics{false};
 
@@ -110,10 +129,13 @@ class NetworkSettings {
   bool m_dataRetention{false};
 
   bool m_enableTrustedDataFormat{false};
+
+  ConsentPopupConfig m_consentPopup;
   bool m_enableClientMetricsHasBeenSet = false;
   bool m_readReceiptConfigHasBeenSet = false;
   bool m_dataRetentionHasBeenSet = false;
   bool m_enableTrustedDataFormatHasBeenSet = false;
+  bool m_consentPopupHasBeenSet = false;
 };
 
 }  // namespace Model

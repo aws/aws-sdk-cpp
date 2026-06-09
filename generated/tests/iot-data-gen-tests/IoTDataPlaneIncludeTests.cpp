@@ -17,6 +17,8 @@
 #include <aws/iot-data/model/DeleteConnectionRequest.h>
 #include <aws/iot-data/model/DeleteThingShadowRequest.h>
 #include <aws/iot-data/model/DeleteThingShadowResult.h>
+#include <aws/iot-data/model/GetConnectionRequest.h>
+#include <aws/iot-data/model/GetConnectionResult.h>
 #include <aws/iot-data/model/GetRetainedMessageRequest.h>
 #include <aws/iot-data/model/GetRetainedMessageResult.h>
 #include <aws/iot-data/model/GetThingShadowRequest.h>
@@ -25,9 +27,14 @@
 #include <aws/iot-data/model/ListNamedShadowsForThingResult.h>
 #include <aws/iot-data/model/ListRetainedMessagesRequest.h>
 #include <aws/iot-data/model/ListRetainedMessagesResult.h>
+#include <aws/iot-data/model/ListSubscriptionsRequest.h>
+#include <aws/iot-data/model/ListSubscriptionsResult.h>
 #include <aws/iot-data/model/PayloadFormatIndicator.h>
 #include <aws/iot-data/model/PublishRequest.h>
 #include <aws/iot-data/model/RetainedMessageSummary.h>
+#include <aws/iot-data/model/SendDirectMessageRequest.h>
+#include <aws/iot-data/model/SendDirectMessageResult.h>
+#include <aws/iot-data/model/SubscriptionSummary.h>
 #include <aws/iot-data/model/UpdateThingShadowRequest.h>
 #include <aws/iot-data/model/UpdateThingShadowResult.h>
 

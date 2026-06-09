@@ -22,17 +22,26 @@
 #include <aws/odb/OdbErrorMarshaller.h>
 #include <aws/odb/model/AcceptMarketplaceRegistrationRequest.h>
 #include <aws/odb/model/AssociateIamRoleToResourceRequest.h>
+#include <aws/odb/model/CreateAutonomousDatabaseBackupRequest.h>
+#include <aws/odb/model/CreateAutonomousDatabaseRequest.h>
+#include <aws/odb/model/CreateAutonomousDatabaseWalletRequest.h>
 #include <aws/odb/model/CreateCloudAutonomousVmClusterRequest.h>
 #include <aws/odb/model/CreateCloudExadataInfrastructureRequest.h>
 #include <aws/odb/model/CreateCloudVmClusterRequest.h>
 #include <aws/odb/model/CreateOdbNetworkRequest.h>
 #include <aws/odb/model/CreateOdbPeeringConnectionRequest.h>
+#include <aws/odb/model/DeleteAutonomousDatabaseBackupRequest.h>
+#include <aws/odb/model/DeleteAutonomousDatabaseRequest.h>
 #include <aws/odb/model/DeleteCloudAutonomousVmClusterRequest.h>
 #include <aws/odb/model/DeleteCloudExadataInfrastructureRequest.h>
 #include <aws/odb/model/DeleteCloudVmClusterRequest.h>
 #include <aws/odb/model/DeleteOdbNetworkRequest.h>
 #include <aws/odb/model/DeleteOdbPeeringConnectionRequest.h>
 #include <aws/odb/model/DisassociateIamRoleFromResourceRequest.h>
+#include <aws/odb/model/FailoverAutonomousDatabaseRequest.h>
+#include <aws/odb/model/GetAutonomousDatabaseBackupRequest.h>
+#include <aws/odb/model/GetAutonomousDatabaseRequest.h>
+#include <aws/odb/model/GetAutonomousDatabaseWalletDetailsRequest.h>
 #include <aws/odb/model/GetCloudAutonomousVmClusterRequest.h>
 #include <aws/odb/model/GetCloudExadataInfrastructureRequest.h>
 #include <aws/odb/model/GetCloudExadataInfrastructureUnallocatedResourcesRequest.h>
@@ -43,6 +52,12 @@
 #include <aws/odb/model/GetOdbNetworkRequest.h>
 #include <aws/odb/model/GetOdbPeeringConnectionRequest.h>
 #include <aws/odb/model/InitializeServiceRequest.h>
+#include <aws/odb/model/ListAutonomousDatabaseBackupsRequest.h>
+#include <aws/odb/model/ListAutonomousDatabaseCharacterSetsRequest.h>
+#include <aws/odb/model/ListAutonomousDatabaseClonesRequest.h>
+#include <aws/odb/model/ListAutonomousDatabasePeersRequest.h>
+#include <aws/odb/model/ListAutonomousDatabaseVersionsRequest.h>
+#include <aws/odb/model/ListAutonomousDatabasesRequest.h>
 #include <aws/odb/model/ListAutonomousVirtualMachinesRequest.h>
 #include <aws/odb/model/ListCloudAutonomousVmClustersRequest.h>
 #include <aws/odb/model/ListCloudExadataInfrastructuresRequest.h>
@@ -55,11 +70,19 @@
 #include <aws/odb/model/ListOdbPeeringConnectionsRequest.h>
 #include <aws/odb/model/ListSystemVersionsRequest.h>
 #include <aws/odb/model/ListTagsForResourceRequest.h>
+#include <aws/odb/model/RebootAutonomousDatabaseRequest.h>
 #include <aws/odb/model/RebootDbNodeRequest.h>
+#include <aws/odb/model/RestoreAutonomousDatabaseRequest.h>
+#include <aws/odb/model/ShrinkAutonomousDatabaseRequest.h>
+#include <aws/odb/model/StartAutonomousDatabaseRequest.h>
 #include <aws/odb/model/StartDbNodeRequest.h>
+#include <aws/odb/model/StopAutonomousDatabaseRequest.h>
 #include <aws/odb/model/StopDbNodeRequest.h>
+#include <aws/odb/model/SwitchoverAutonomousDatabaseRequest.h>
 #include <aws/odb/model/TagResourceRequest.h>
 #include <aws/odb/model/UntagResourceRequest.h>
+#include <aws/odb/model/UpdateAutonomousDatabaseBackupRequest.h>
+#include <aws/odb/model/UpdateAutonomousDatabaseRequest.h>
 #include <aws/odb/model/UpdateCloudExadataInfrastructureRequest.h>
 #include <aws/odb/model/UpdateOdbNetworkRequest.h>
 #include <aws/odb/model/UpdateOdbPeeringConnectionRequest.h>
@@ -86,10 +109,10 @@ const char* OdbClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
 OdbClient::OdbClient(const odb::OdbClientConfiguration& clientConfiguration, std::shared_ptr<OdbEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<OdbErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OdbEndpointProvider>(ALLOCATION_TAG)) {
@@ -121,10 +144,10 @@ OdbClient::OdbClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
 /* Legacy constructors due deprecation */
 OdbClient::OdbClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<OdbErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<OdbEndpointProvider>(ALLOCATION_TAG)) {
@@ -224,6 +247,26 @@ AssociateIamRoleToResourceOutcome OdbClient::AssociateIamRoleToResource(const As
                             : AssociateIamRoleToResourceOutcome(std::move(result.GetError()));
 }
 
+CreateAutonomousDatabaseOutcome OdbClient::CreateAutonomousDatabase(const CreateAutonomousDatabaseRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAutonomousDatabaseOutcome(result.GetResultWithOwnership())
+                            : CreateAutonomousDatabaseOutcome(std::move(result.GetError()));
+}
+
+CreateAutonomousDatabaseBackupOutcome OdbClient::CreateAutonomousDatabaseBackup(
+    const CreateAutonomousDatabaseBackupRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAutonomousDatabaseBackupOutcome(result.GetResultWithOwnership())
+                            : CreateAutonomousDatabaseBackupOutcome(std::move(result.GetError()));
+}
+
+CreateAutonomousDatabaseWalletOutcome OdbClient::CreateAutonomousDatabaseWallet(
+    const CreateAutonomousDatabaseWalletRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAutonomousDatabaseWalletOutcome(result.GetResultWithOwnership())
+                            : CreateAutonomousDatabaseWalletOutcome(std::move(result.GetError()));
+}
+
 CreateCloudAutonomousVmClusterOutcome OdbClient::CreateCloudAutonomousVmCluster(
     const CreateCloudAutonomousVmClusterRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -254,6 +297,19 @@ CreateOdbPeeringConnectionOutcome OdbClient::CreateOdbPeeringConnection(const Cr
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateOdbPeeringConnectionOutcome(result.GetResultWithOwnership())
                             : CreateOdbPeeringConnectionOutcome(std::move(result.GetError()));
+}
+
+DeleteAutonomousDatabaseOutcome OdbClient::DeleteAutonomousDatabase(const DeleteAutonomousDatabaseRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAutonomousDatabaseOutcome(result.GetResultWithOwnership())
+                            : DeleteAutonomousDatabaseOutcome(std::move(result.GetError()));
+}
+
+DeleteAutonomousDatabaseBackupOutcome OdbClient::DeleteAutonomousDatabaseBackup(
+    const DeleteAutonomousDatabaseBackupRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAutonomousDatabaseBackupOutcome(result.GetResultWithOwnership())
+                            : DeleteAutonomousDatabaseBackupOutcome(std::move(result.GetError()));
 }
 
 DeleteCloudAutonomousVmClusterOutcome OdbClient::DeleteCloudAutonomousVmCluster(
@@ -293,6 +349,31 @@ DisassociateIamRoleFromResourceOutcome OdbClient::DisassociateIamRoleFromResourc
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisassociateIamRoleFromResourceOutcome(result.GetResultWithOwnership())
                             : DisassociateIamRoleFromResourceOutcome(std::move(result.GetError()));
+}
+
+FailoverAutonomousDatabaseOutcome OdbClient::FailoverAutonomousDatabase(const FailoverAutonomousDatabaseRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? FailoverAutonomousDatabaseOutcome(result.GetResultWithOwnership())
+                            : FailoverAutonomousDatabaseOutcome(std::move(result.GetError()));
+}
+
+GetAutonomousDatabaseOutcome OdbClient::GetAutonomousDatabase(const GetAutonomousDatabaseRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAutonomousDatabaseOutcome(result.GetResultWithOwnership())
+                            : GetAutonomousDatabaseOutcome(std::move(result.GetError()));
+}
+
+GetAutonomousDatabaseBackupOutcome OdbClient::GetAutonomousDatabaseBackup(const GetAutonomousDatabaseBackupRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAutonomousDatabaseBackupOutcome(result.GetResultWithOwnership())
+                            : GetAutonomousDatabaseBackupOutcome(std::move(result.GetError()));
+}
+
+GetAutonomousDatabaseWalletDetailsOutcome OdbClient::GetAutonomousDatabaseWalletDetails(
+    const GetAutonomousDatabaseWalletDetailsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAutonomousDatabaseWalletDetailsOutcome(result.GetResultWithOwnership())
+                            : GetAutonomousDatabaseWalletDetailsOutcome(std::move(result.GetError()));
 }
 
 GetCloudAutonomousVmClusterOutcome OdbClient::GetCloudAutonomousVmCluster(const GetCloudAutonomousVmClusterRequest& request) const {
@@ -351,6 +432,44 @@ InitializeServiceOutcome OdbClient::InitializeService(const InitializeServiceReq
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? InitializeServiceOutcome(result.GetResultWithOwnership())
                             : InitializeServiceOutcome(std::move(result.GetError()));
+}
+
+ListAutonomousDatabaseBackupsOutcome OdbClient::ListAutonomousDatabaseBackups(const ListAutonomousDatabaseBackupsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutonomousDatabaseBackupsOutcome(result.GetResultWithOwnership())
+                            : ListAutonomousDatabaseBackupsOutcome(std::move(result.GetError()));
+}
+
+ListAutonomousDatabaseCharacterSetsOutcome OdbClient::ListAutonomousDatabaseCharacterSets(
+    const ListAutonomousDatabaseCharacterSetsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutonomousDatabaseCharacterSetsOutcome(result.GetResultWithOwnership())
+                            : ListAutonomousDatabaseCharacterSetsOutcome(std::move(result.GetError()));
+}
+
+ListAutonomousDatabaseClonesOutcome OdbClient::ListAutonomousDatabaseClones(const ListAutonomousDatabaseClonesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutonomousDatabaseClonesOutcome(result.GetResultWithOwnership())
+                            : ListAutonomousDatabaseClonesOutcome(std::move(result.GetError()));
+}
+
+ListAutonomousDatabasePeersOutcome OdbClient::ListAutonomousDatabasePeers(const ListAutonomousDatabasePeersRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutonomousDatabasePeersOutcome(result.GetResultWithOwnership())
+                            : ListAutonomousDatabasePeersOutcome(std::move(result.GetError()));
+}
+
+ListAutonomousDatabaseVersionsOutcome OdbClient::ListAutonomousDatabaseVersions(
+    const ListAutonomousDatabaseVersionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutonomousDatabaseVersionsOutcome(result.GetResultWithOwnership())
+                            : ListAutonomousDatabaseVersionsOutcome(std::move(result.GetError()));
+}
+
+ListAutonomousDatabasesOutcome OdbClient::ListAutonomousDatabases(const ListAutonomousDatabasesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutonomousDatabasesOutcome(result.GetResultWithOwnership())
+                            : ListAutonomousDatabasesOutcome(std::move(result.GetError()));
 }
 
 ListAutonomousVirtualMachinesOutcome OdbClient::ListAutonomousVirtualMachines(const ListAutonomousVirtualMachinesRequest& request) const {
@@ -423,9 +542,33 @@ ListTagsForResourceOutcome OdbClient::ListTagsForResource(const ListTagsForResou
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
+RebootAutonomousDatabaseOutcome OdbClient::RebootAutonomousDatabase(const RebootAutonomousDatabaseRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootAutonomousDatabaseOutcome(result.GetResultWithOwnership())
+                            : RebootAutonomousDatabaseOutcome(std::move(result.GetError()));
+}
+
 RebootDbNodeOutcome OdbClient::RebootDbNode(const RebootDbNodeRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RebootDbNodeOutcome(result.GetResultWithOwnership()) : RebootDbNodeOutcome(std::move(result.GetError()));
+}
+
+RestoreAutonomousDatabaseOutcome OdbClient::RestoreAutonomousDatabase(const RestoreAutonomousDatabaseRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreAutonomousDatabaseOutcome(result.GetResultWithOwnership())
+                            : RestoreAutonomousDatabaseOutcome(std::move(result.GetError()));
+}
+
+ShrinkAutonomousDatabaseOutcome OdbClient::ShrinkAutonomousDatabase(const ShrinkAutonomousDatabaseRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ShrinkAutonomousDatabaseOutcome(result.GetResultWithOwnership())
+                            : ShrinkAutonomousDatabaseOutcome(std::move(result.GetError()));
+}
+
+StartAutonomousDatabaseOutcome OdbClient::StartAutonomousDatabase(const StartAutonomousDatabaseRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAutonomousDatabaseOutcome(result.GetResultWithOwnership())
+                            : StartAutonomousDatabaseOutcome(std::move(result.GetError()));
 }
 
 StartDbNodeOutcome OdbClient::StartDbNode(const StartDbNodeRequest& request) const {
@@ -433,9 +576,21 @@ StartDbNodeOutcome OdbClient::StartDbNode(const StartDbNodeRequest& request) con
   return result.IsSuccess() ? StartDbNodeOutcome(result.GetResultWithOwnership()) : StartDbNodeOutcome(std::move(result.GetError()));
 }
 
+StopAutonomousDatabaseOutcome OdbClient::StopAutonomousDatabase(const StopAutonomousDatabaseRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopAutonomousDatabaseOutcome(result.GetResultWithOwnership())
+                            : StopAutonomousDatabaseOutcome(std::move(result.GetError()));
+}
+
 StopDbNodeOutcome OdbClient::StopDbNode(const StopDbNodeRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StopDbNodeOutcome(result.GetResultWithOwnership()) : StopDbNodeOutcome(std::move(result.GetError()));
+}
+
+SwitchoverAutonomousDatabaseOutcome OdbClient::SwitchoverAutonomousDatabase(const SwitchoverAutonomousDatabaseRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SwitchoverAutonomousDatabaseOutcome(result.GetResultWithOwnership())
+                            : SwitchoverAutonomousDatabaseOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome OdbClient::TagResource(const TagResourceRequest& request) const {
@@ -446,6 +601,19 @@ TagResourceOutcome OdbClient::TagResource(const TagResourceRequest& request) con
 UntagResourceOutcome OdbClient::UntagResource(const UntagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateAutonomousDatabaseOutcome OdbClient::UpdateAutonomousDatabase(const UpdateAutonomousDatabaseRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAutonomousDatabaseOutcome(result.GetResultWithOwnership())
+                            : UpdateAutonomousDatabaseOutcome(std::move(result.GetError()));
+}
+
+UpdateAutonomousDatabaseBackupOutcome OdbClient::UpdateAutonomousDatabaseBackup(
+    const UpdateAutonomousDatabaseBackupRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAutonomousDatabaseBackupOutcome(result.GetResultWithOwnership())
+                            : UpdateAutonomousDatabaseBackupOutcome(std::move(result.GetError()));
 }
 
 UpdateCloudExadataInfrastructureOutcome OdbClient::UpdateCloudExadataInfrastructure(

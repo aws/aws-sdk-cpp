@@ -33,7 +33,7 @@ class CreateFeedRequest : public ElementalInferenceRequest {
 
   ///@{
   /**
-   * <p>A name for this feed.</p>
+   * <p>A user-friendly name for this feed.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -52,8 +52,10 @@ class CreateFeedRequest : public ElementalInferenceRequest {
   ///@{
   /**
    * <p>An array of outputs for this feed. Each output represents a specific
-   * Elemental Inference feature. For example, an output might represent the crop
-   * feature. </p>
+   * Elemental Inference feature. For example, there is one output type for the smart
+   * crop feature. You must specify at least one output, but you can later add
+   * outputs using AssociateFeed, or add, modify, and delete outputs using
+   * UpdateFeed. </p>
    */
   inline const Aws::Vector<CreateOutput>& GetOutputs() const { return m_outputs; }
   inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
@@ -77,8 +79,7 @@ class CreateFeedRequest : public ElementalInferenceRequest {
 
   ///@{
   /**
-   * <p>If you want to include tags, add them now. You won't be able to add them
-   * later.</p>
+   * <p>Optional tags. You can also add tags later, using TagResource.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

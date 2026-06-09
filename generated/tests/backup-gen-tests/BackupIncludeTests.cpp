@@ -132,6 +132,8 @@
 #include <aws/backup/model/GetBackupVaultNotificationsResult.h>
 #include <aws/backup/model/GetLegalHoldRequest.h>
 #include <aws/backup/model/GetLegalHoldResult.h>
+#include <aws/backup/model/GetPITRMalwareScanResultsRequest.h>
+#include <aws/backup/model/GetPITRMalwareScanResultsResult.h>
 #include <aws/backup/model/GetRecoveryPointIndexDetailsRequest.h>
 #include <aws/backup/model/GetRecoveryPointIndexDetailsResult.h>
 #include <aws/backup/model/GetRecoveryPointRestoreMetadataRequest.h>

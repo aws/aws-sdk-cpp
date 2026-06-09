@@ -51,7 +51,8 @@ class RetrieveMemoryRecordsRequest : public BedrockAgentCoreRequest {
   ///@{
   /**
    * <p>The namespace prefix to filter memory records by. Searches for memory records
-   * in namespaces that start with the provided prefix.</p>
+   * in namespaces that start with the provided prefix. Either <code>namespace</code>
+   * or <code>namespacePath</code> is required.</p>
    */
   inline const Aws::String& GetNamespace() const { return m_namespace; }
   inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
@@ -70,7 +71,8 @@ class RetrieveMemoryRecordsRequest : public BedrockAgentCoreRequest {
   ///@{
   /**
    * <p>Use namespacePath for hierarchical retrievals. Return all memory records
-   * where namespace falls under the same parent hierarchy.</p>
+   * where namespace falls under the same parent hierarchy. Either
+   * <code>namespace</code> or <code>namespacePath</code> is required.</p>
    */
   inline const Aws::String& GetNamespacePath() const { return m_namespacePath; }
   inline bool NamespacePathHasBeenSet() const { return m_namespacePathHasBeenSet; }

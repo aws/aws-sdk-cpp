@@ -97,6 +97,11 @@ GetDashManifestConfiguration& GetDashManifestConfiguration::operator=(JsonView j
     m_compactness = DashCompactnessMapper::GetDashCompactnessForName(jsonValue.GetString("Compactness"));
     m_compactnessHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AudioTimelinePattern")) {
+    m_audioTimelinePattern =
+        DashAudioTimelinePatternMapper::GetDashAudioTimelinePatternForName(jsonValue.GetString("AudioTimelinePattern"));
+    m_audioTimelinePatternHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SubtitleConfiguration")) {
     m_subtitleConfiguration = jsonValue.GetObject("SubtitleConfiguration");
     m_subtitleConfigurationHasBeenSet = true;
@@ -104,6 +109,10 @@ GetDashManifestConfiguration& GetDashManifestConfiguration::operator=(JsonView j
   if (jsonValue.ValueExists("UriPathType")) {
     m_uriPathType = UriPathTypeMapper::GetUriPathTypeForName(jsonValue.GetString("UriPathType"));
     m_uriPathTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AvailabilityStartTimeConfiguration")) {
+    m_availabilityStartTimeConfiguration = jsonValue.GetObject("AvailabilityStartTimeConfiguration");
+    m_availabilityStartTimeConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -193,12 +202,20 @@ JsonValue GetDashManifestConfiguration::Jsonize() const {
     payload.WithString("Compactness", DashCompactnessMapper::GetNameForDashCompactness(m_compactness));
   }
 
+  if (m_audioTimelinePatternHasBeenSet) {
+    payload.WithString("AudioTimelinePattern", DashAudioTimelinePatternMapper::GetNameForDashAudioTimelinePattern(m_audioTimelinePattern));
+  }
+
   if (m_subtitleConfigurationHasBeenSet) {
     payload.WithObject("SubtitleConfiguration", m_subtitleConfiguration.Jsonize());
   }
 
   if (m_uriPathTypeHasBeenSet) {
     payload.WithString("UriPathType", UriPathTypeMapper::GetNameForUriPathType(m_uriPathType));
+  }
+
+  if (m_availabilityStartTimeConfigurationHasBeenSet) {
+    payload.WithObject("AvailabilityStartTimeConfiguration", m_availabilityStartTimeConfiguration.Jsonize());
   }
 
   return payload;

@@ -31,9 +31,9 @@ namespace Model {
  * <p>Event stream for chat message responses using the content block model. Events
  * follow a lifecycle: responseCreated -&gt; responseInProgress -&gt;
  * (contentBlockStart/contentBlockDelta/contentBlockStop events) -&gt;
- * responseCompleted|responseFailed</p> <p>SendMessage always uses content block
- * mode — legacy per-field events (outputTextDelta, functionCallArgumentsDelta,
- * etc.) are not emitted.</p><p><h3>See Also:</h3>   <a
+ * responseCompleted|responseFailed SendMessage always uses content block mode —
+ * legacy per-field events (outputTextDelta, functionCallArgumentsDelta, etc.) are
+ * not emitted.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/SendMessageEvents">AWS
  * API Reference</a></p>
  */

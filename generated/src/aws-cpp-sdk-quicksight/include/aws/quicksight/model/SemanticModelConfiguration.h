@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/DataSetSemanticMetadata.h>
 #include <aws/quicksight/model/SemanticTable.h>
 
 #include <utility>
@@ -57,9 +59,37 @@ class SemanticModelConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The dataset-level semantic metadata, including a description and custom
+   * instructions.</p>
+   */
+  inline const Aws::Vector<DataSetSemanticMetadata>& GetSemanticMetadata() const { return m_semanticMetadata; }
+  inline bool SemanticMetadataHasBeenSet() const { return m_semanticMetadataHasBeenSet; }
+  template <typename SemanticMetadataT = Aws::Vector<DataSetSemanticMetadata>>
+  void SetSemanticMetadata(SemanticMetadataT&& value) {
+    m_semanticMetadataHasBeenSet = true;
+    m_semanticMetadata = std::forward<SemanticMetadataT>(value);
+  }
+  template <typename SemanticMetadataT = Aws::Vector<DataSetSemanticMetadata>>
+  SemanticModelConfiguration& WithSemanticMetadata(SemanticMetadataT&& value) {
+    SetSemanticMetadata(std::forward<SemanticMetadataT>(value));
+    return *this;
+  }
+  template <typename SemanticMetadataT = DataSetSemanticMetadata>
+  SemanticModelConfiguration& AddSemanticMetadata(SemanticMetadataT&& value) {
+    m_semanticMetadataHasBeenSet = true;
+    m_semanticMetadata.emplace_back(std::forward<SemanticMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Map<Aws::String, SemanticTable> m_tableMap;
+
+  Aws::Vector<DataSetSemanticMetadata> m_semanticMetadata;
   bool m_tableMapHasBeenSet = false;
+  bool m_semanticMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

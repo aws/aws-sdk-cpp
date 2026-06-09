@@ -228,8 +228,8 @@ class DataSourceConfiguration {
 
   ///@{
   /**
-   * <p>Provides the configuration information to connect to Amazon WorkDocs as your
-   * data source.</p>
+   * <p>Provides the configuration information to connect to WorkDocs as your data
+   * source.</p>
    */
   inline const WorkDocsConfiguration& GetWorkDocsConfiguration() const { return m_workDocsConfiguration; }
   inline bool WorkDocsConfigurationHasBeenSet() const { return m_workDocsConfigurationHasBeenSet; }

@@ -46,6 +46,10 @@ ProtectedJobSummary& ProtectedJobSummary::operator=(JsonView jsonValue) {
     }
     m_receiverConfigurationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jobComputePayerAccountId")) {
+    m_jobComputePayerAccountId = jsonValue.GetString("jobComputePayerAccountId");
+    m_jobComputePayerAccountIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -79,6 +83,10 @@ JsonValue ProtectedJobSummary::Jsonize() const {
       receiverConfigurationsJsonList[receiverConfigurationsIndex].AsObject(m_receiverConfigurations[receiverConfigurationsIndex].Jsonize());
     }
     payload.WithArray("receiverConfigurations", std::move(receiverConfigurationsJsonList));
+  }
+
+  if (m_jobComputePayerAccountIdHasBeenSet) {
+    payload.WithString("jobComputePayerAccountId", m_jobComputePayerAccountId);
   }
 
   return payload;

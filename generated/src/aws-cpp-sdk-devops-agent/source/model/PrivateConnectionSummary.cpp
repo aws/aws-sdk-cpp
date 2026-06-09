@@ -50,6 +50,14 @@ PrivateConnectionSummary& PrivateConnectionSummary::operator=(JsonView jsonValue
     m_certificateExpiryTime = jsonValue.GetString("certificateExpiryTime");
     m_certificateExpiryTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dnsResolution")) {
+    m_dnsResolution = ResourceConfigDnsResolutionMapper::GetResourceConfigDnsResolutionForName(jsonValue.GetString("dnsResolution"));
+    m_dnsResolutionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failureMessage")) {
+    m_failureMessage = jsonValue.GetString("failureMessage");
+    m_failureMessageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +94,14 @@ JsonValue PrivateConnectionSummary::Jsonize() const {
 
   if (m_certificateExpiryTimeHasBeenSet) {
     payload.WithString("certificateExpiryTime", m_certificateExpiryTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_dnsResolutionHasBeenSet) {
+    payload.WithString("dnsResolution", ResourceConfigDnsResolutionMapper::GetNameForResourceConfigDnsResolution(m_dnsResolution));
+  }
+
+  if (m_failureMessageHasBeenSet) {
+    payload.WithString("failureMessage", m_failureMessage);
   }
 
   return payload;

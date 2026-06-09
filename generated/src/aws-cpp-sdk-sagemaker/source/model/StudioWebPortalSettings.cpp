@@ -51,6 +51,11 @@ StudioWebPortalSettings& StudioWebPortalSettings::operator=(JsonView jsonValue) 
     }
     m_hiddenSageMakerImageVersionAliasesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ExecutionRoleSessionNameMode")) {
+    m_executionRoleSessionNameMode =
+        ExecutionRoleSessionNameModeMapper::GetExecutionRoleSessionNameModeForName(jsonValue.GetString("ExecutionRoleSessionNameMode"));
+    m_executionRoleSessionNameModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -92,6 +97,11 @@ JsonValue StudioWebPortalSettings::Jsonize() const {
           m_hiddenSageMakerImageVersionAliases[hiddenSageMakerImageVersionAliasesIndex].Jsonize());
     }
     payload.WithArray("HiddenSageMakerImageVersionAliases", std::move(hiddenSageMakerImageVersionAliasesJsonList));
+  }
+
+  if (m_executionRoleSessionNameModeHasBeenSet) {
+    payload.WithString("ExecutionRoleSessionNameMode",
+                       ExecutionRoleSessionNameModeMapper::GetNameForExecutionRoleSessionNameMode(m_executionRoleSessionNameMode));
   }
 
   return payload;

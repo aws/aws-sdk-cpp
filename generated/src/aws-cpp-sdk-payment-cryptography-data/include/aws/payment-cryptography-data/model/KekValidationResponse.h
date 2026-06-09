@@ -34,7 +34,8 @@ class KekValidationResponse {
 
   ///@{
   /**
-   * <p>The random key for generating a KEK validation response.</p>
+   * <p>The random key send value received from the initiating node to generate a KEK
+   * validation response.</p>
    */
   inline const Aws::String& GetRandomKeySend() const { return m_randomKeySend; }
   inline bool RandomKeySendHasBeenSet() const { return m_randomKeySendHasBeenSet; }

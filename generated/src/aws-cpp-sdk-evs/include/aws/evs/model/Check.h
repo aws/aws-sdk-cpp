@@ -49,7 +49,7 @@ class Check {
    * <code>HOST_COUNT</code>: Checks that your environment has a minimum of 4
    * hosts.</p> <p>If this check fails, you will need to add hosts so that your
    * environment meets this minimum requirement. Amazon EVS only supports
-   * environments with 4-16 hosts.</p> </li> </ul>
+   * environments with 4-32 hosts.</p> </li> </ul>
    */
   inline CheckType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

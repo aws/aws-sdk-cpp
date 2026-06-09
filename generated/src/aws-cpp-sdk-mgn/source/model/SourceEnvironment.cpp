@@ -22,6 +22,7 @@ static const int PALO_ALTO_FIREWALL_HASH = HashingUtils::HashString("PALO_ALTO_F
 static const int CISCO_ACI_HASH = HashingUtils::HashString("CISCO_ACI");
 static const int LOGICAL_MODEL_HASH = HashingUtils::HashString("LOGICAL_MODEL");
 static const int MODELIZE_IT_HASH = HashingUtils::HashString("MODELIZE_IT");
+static const int AWS_DISCOVERY_COLLECTOR_HASH = HashingUtils::HashString("AWS_DISCOVERY_COLLECTOR");
 
 SourceEnvironment GetSourceEnvironmentForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ SourceEnvironment GetSourceEnvironmentForName(const Aws::String& name) {
     return SourceEnvironment::LOGICAL_MODEL;
   } else if (hashCode == MODELIZE_IT_HASH) {
     return SourceEnvironment::MODELIZE_IT;
+  } else if (hashCode == AWS_DISCOVERY_COLLECTOR_HASH) {
+    return SourceEnvironment::AWS_DISCOVERY_COLLECTOR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForSourceEnvironment(SourceEnvironment enumValue) {
       return "LOGICAL_MODEL";
     case SourceEnvironment::MODELIZE_IT:
       return "MODELIZE_IT";
+    case SourceEnvironment::AWS_DISCOVERY_COLLECTOR:
+      return "AWS_DISCOVERY_COLLECTOR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

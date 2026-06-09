@@ -17,7 +17,7 @@ namespace Model {
 
 /**
  * <p>A request to add an email destination to the suppression list for your
- * account.</p><p><h3>See Also:</h3>   <a
+ * account or for a specific tenant.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestinationRequest">AWS
  * API Reference</a></p>
  */
@@ -36,7 +36,7 @@ class PutSuppressedDestinationRequest : public SESV2Request {
   ///@{
   /**
    * <p>The email address that should be added to the suppression list for your
-   * account.</p>
+   * account or for the specified tenant.</p>
    */
   inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
   inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
@@ -55,7 +55,7 @@ class PutSuppressedDestinationRequest : public SESV2Request {
   ///@{
   /**
    * <p>The factors that should cause the email address to be added to the
-   * suppression list for your account.</p>
+   * suppression list for your account or for the specified tenant.</p>
    */
   inline SuppressionListReason GetReason() const { return m_reason; }
   inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
@@ -68,12 +68,35 @@ class PutSuppressedDestinationRequest : public SESV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the tenant whose suppression list you want to add the address to.
+   * If you omit this parameter, the address is added to the account-level
+   * suppression list.</p>
+   */
+  inline const Aws::String& GetTenantName() const { return m_tenantName; }
+  inline bool TenantNameHasBeenSet() const { return m_tenantNameHasBeenSet; }
+  template <typename TenantNameT = Aws::String>
+  void SetTenantName(TenantNameT&& value) {
+    m_tenantNameHasBeenSet = true;
+    m_tenantName = std::forward<TenantNameT>(value);
+  }
+  template <typename TenantNameT = Aws::String>
+  PutSuppressedDestinationRequest& WithTenantName(TenantNameT&& value) {
+    SetTenantName(std::forward<TenantNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_emailAddress;
 
   SuppressionListReason m_reason{SuppressionListReason::NOT_SET};
+
+  Aws::String m_tenantName;
   bool m_emailAddressHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
+  bool m_tenantNameHasBeenSet = false;
 };
 
 }  // namespace Model

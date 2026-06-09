@@ -18,9 +18,9 @@ namespace Model {
 TurkeyAdditionalInfo::TurkeyAdditionalInfo(JsonView jsonValue) { *this = jsonValue; }
 
 TurkeyAdditionalInfo& TurkeyAdditionalInfo::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("industries")) {
-    m_industries = IndustriesMapper::GetIndustriesForName(jsonValue.GetString("industries"));
-    m_industriesHasBeenSet = true;
+  if (jsonValue.ValueExists("taxOffice")) {
+    m_taxOffice = jsonValue.GetString("taxOffice");
+    m_taxOfficeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("kepEmailId")) {
     m_kepEmailId = jsonValue.GetString("kepEmailId");
@@ -30,9 +30,9 @@ TurkeyAdditionalInfo& TurkeyAdditionalInfo::operator=(JsonView jsonValue) {
     m_secondaryTaxId = jsonValue.GetString("secondaryTaxId");
     m_secondaryTaxIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("taxOffice")) {
-    m_taxOffice = jsonValue.GetString("taxOffice");
-    m_taxOfficeHasBeenSet = true;
+  if (jsonValue.ValueExists("industries")) {
+    m_industries = IndustriesMapper::GetIndustriesForName(jsonValue.GetString("industries"));
+    m_industriesHasBeenSet = true;
   }
   return *this;
 }
@@ -40,8 +40,8 @@ TurkeyAdditionalInfo& TurkeyAdditionalInfo::operator=(JsonView jsonValue) {
 JsonValue TurkeyAdditionalInfo::Jsonize() const {
   JsonValue payload;
 
-  if (m_industriesHasBeenSet) {
-    payload.WithString("industries", IndustriesMapper::GetNameForIndustries(m_industries));
+  if (m_taxOfficeHasBeenSet) {
+    payload.WithString("taxOffice", m_taxOffice);
   }
 
   if (m_kepEmailIdHasBeenSet) {
@@ -52,8 +52,8 @@ JsonValue TurkeyAdditionalInfo::Jsonize() const {
     payload.WithString("secondaryTaxId", m_secondaryTaxId);
   }
 
-  if (m_taxOfficeHasBeenSet) {
-    payload.WithString("taxOffice", m_taxOffice);
+  if (m_industriesHasBeenSet) {
+    payload.WithString("industries", IndustriesMapper::GetNameForIndustries(m_industries));
   }
 
   return payload;

@@ -8,6 +8,10 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/devops-agent/model/ListAgentSpacesPaginationTraits.h>
+#include <aws/devops-agent/model/ListAssetFilesPaginationTraits.h>
+#include <aws/devops-agent/model/ListAssetTypesPaginationTraits.h>
+#include <aws/devops-agent/model/ListAssetVersionsPaginationTraits.h>
+#include <aws/devops-agent/model/ListAssetsPaginationTraits.h>
 #include <aws/devops-agent/model/ListAssociationsPaginationTraits.h>
 #include <aws/devops-agent/model/ListBacklogTasksPaginationTraits.h>
 #include <aws/devops-agent/model/ListExecutionsPaginationTraits.h>
@@ -33,6 +37,51 @@ class DevOpsAgentPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentSpacesRequest,
                                              Pagination::ListAgentSpacesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
+  }
+
+  /**
+   * Create a paginator for ListAssetFiles operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetFilesRequest, Pagination::ListAssetFilesPaginationTraits<DerivedClient>>
+  ListAssetFilesPaginator(const Model::ListAssetFilesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetFilesRequest,
+                                             Pagination::ListAssetFilesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for ListAssets operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetsRequest, Pagination::ListAssetsPaginationTraits<DerivedClient>>
+  ListAssetsPaginator(const Model::ListAssetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetsRequest,
+                                             Pagination::ListAssetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                    request};
+  }
+
+  /**
+   * Create a paginator for ListAssetTypes operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetTypesRequest, Pagination::ListAssetTypesPaginationTraits<DerivedClient>>
+  ListAssetTypesPaginator(const Model::ListAssetTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetTypesRequest,
+                                             Pagination::ListAssetTypesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for ListAssetVersions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetVersionsRequest,
+                                    Pagination::ListAssetVersionsPaginationTraits<DerivedClient>>
+  ListAssetVersionsPaginator(const Model::ListAssetVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetVersionsRequest,
+                                             Pagination::ListAssetVersionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

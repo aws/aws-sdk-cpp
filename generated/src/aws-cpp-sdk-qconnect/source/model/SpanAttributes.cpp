@@ -172,6 +172,14 @@ SpanAttributes& SpanAttributes::operator=(JsonView jsonValue) {
     m_timeToFirstTokenMs = jsonValue.GetInteger("timeToFirstTokenMs");
     m_timeToFirstTokenMsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("guardrailAssessments")) {
+    Aws::Utils::Array<JsonView> guardrailAssessmentsJsonList = jsonValue.GetArray("guardrailAssessments");
+    for (unsigned guardrailAssessmentsIndex = 0; guardrailAssessmentsIndex < guardrailAssessmentsJsonList.GetLength();
+         ++guardrailAssessmentsIndex) {
+      m_guardrailAssessments.push_back(guardrailAssessmentsJsonList[guardrailAssessmentsIndex].AsObject());
+    }
+    m_guardrailAssessmentsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -334,6 +342,15 @@ JsonValue SpanAttributes::Jsonize() const {
 
   if (m_timeToFirstTokenMsHasBeenSet) {
     payload.WithInteger("timeToFirstTokenMs", m_timeToFirstTokenMs);
+  }
+
+  if (m_guardrailAssessmentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> guardrailAssessmentsJsonList(m_guardrailAssessments.size());
+    for (unsigned guardrailAssessmentsIndex = 0; guardrailAssessmentsIndex < guardrailAssessmentsJsonList.GetLength();
+         ++guardrailAssessmentsIndex) {
+      guardrailAssessmentsJsonList[guardrailAssessmentsIndex].AsObject(m_guardrailAssessments[guardrailAssessmentsIndex].Jsonize());
+    }
+    payload.WithArray("guardrailAssessments", std::move(guardrailAssessmentsJsonList));
   }
 
   return payload;

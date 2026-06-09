@@ -22,8 +22,8 @@ namespace Model {
 
 /**
  * <p>The type and amount of a resource to assign to a container. The supported
- * resource types are GPUs and Elastic Inference accelerators. For more
- * information, see <a
+ * resource types are GPUs, Neuron devices, and Elastic Inference accelerators. For
+ * more information, see <a
  * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working
  * with GPUs on Amazon ECS</a> or <a
  * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working
@@ -45,9 +45,14 @@ class ResourceRequirement {
    * <code>GPU</code>, the value is the number of physical <code>GPUs</code> the
    * Amazon ECS container agent reserves for the container. The number of GPUs that's
    * reserved for all containers in a task can't exceed the number of available GPUs
-   * on the container instance that the task is launched on.</p> <p>When the type is
-   * <code>InferenceAccelerator</code>, the <code>value</code> matches the
-   * <code>deviceName</code> for an <a
+   * on the container instance that the task is launched on. You can also specify
+   * <code>ALL</code> to allocate all available GPUs on the instance to the
+   * container.</p> <p>When the type is <code>NeuronDevice</code>, the value must be
+   * <code>ALL</code>. This allocates all available Neuron devices on the instance to
+   * the container. Only one container in a task can specify
+   * <code>NeuronDevice</code> resources. This resource type is only supported on
+   * Managed Instances.</p> <p>When the type is <code>InferenceAccelerator</code>,
+   * the <code>value</code> matches the <code>deviceName</code> for an <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
    * specified in a task definition.</p>
    */

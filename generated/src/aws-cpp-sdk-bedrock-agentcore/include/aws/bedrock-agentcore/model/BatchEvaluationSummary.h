@@ -25,7 +25,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Summary representation for list responses</p><p><h3>See Also:</h3>   <a
+ * <p>Summary representation for list responses.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchEvaluationSummary">AWS
  * API Reference</a></p>
  */

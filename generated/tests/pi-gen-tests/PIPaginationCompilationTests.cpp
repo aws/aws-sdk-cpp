@@ -9,6 +9,7 @@
 #include <aws/pi/PIClientPagination.h>
 #include <aws/pi/PIPaginationBase.h>
 #include <aws/pi/model/ListPerformanceAnalysisReportsPaginationTraits.h>
+#include <aws/pi/model/ListPerformanceAnalysisReportRecommendationsPaginationTraits.h>
 #include <aws/pi/model/DescribeDimensionKeysPaginationTraits.h>
 #include <aws/pi/model/ListAvailableResourceMetricsPaginationTraits.h>
 #include <aws/pi/model/GetResourceMetricsPaginationTraits.h>

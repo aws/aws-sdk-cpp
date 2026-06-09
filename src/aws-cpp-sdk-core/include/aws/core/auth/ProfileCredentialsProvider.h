@@ -1,6 +1,7 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
@@ -24,6 +25,12 @@ class AWS_CORE_API ProfileCredentialsProvider : public AWSCredentialsProvider {
    * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
    */
   ProfileCredentialsProvider(const char* profile, long refreshRateMs = REFRESH_THRESHOLD);
+
+  /**
+   * Initializes from a CredentialProviderConfiguration so settings such as allowSystemProxy can flow through.
+   */
+  ProfileCredentialsProvider(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config,
+                             long refreshRateMs = REFRESH_THRESHOLD);
 
   /**
    * Retrieves the credentials if found, otherwise returns empty credential set.

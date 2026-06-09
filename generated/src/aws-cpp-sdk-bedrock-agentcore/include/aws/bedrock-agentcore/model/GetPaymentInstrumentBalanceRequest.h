@@ -17,7 +17,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Request structure for getting payment instrument balance</p><p><h3>See
+ * <p>Request structure for getting payment instrument balance.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentInstrumentBalanceRequest">AWS
  * API Reference</a></p>
@@ -129,8 +129,7 @@ class GetPaymentInstrumentBalanceRequest : public BedrockAgentCoreRequest {
   ///@{
   /**
    * <p>The specific blockchain chain to query balance on. Required because balances
-   * are chain-specific — the same wallet address may hold different token balances
-   * on different chains.</p>
+   * are chain-specific.</p>
    */
   inline BlockchainChainId GetChain() const { return m_chain; }
   inline bool ChainHasBeenSet() const { return m_chainHasBeenSet; }
@@ -146,8 +145,8 @@ class GetPaymentInstrumentBalanceRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The token to query balance for. Required to specify which supported token's
-   * balance to return.</p>
+   * <p>The token to query balance for. Only tokens supported for X402 payments are
+   * returned.</p>
    */
   inline InstrumentBalanceToken GetToken() const { return m_token; }
   inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }

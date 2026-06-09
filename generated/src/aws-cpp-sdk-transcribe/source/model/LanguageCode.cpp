@@ -18,6 +18,8 @@ namespace LanguageCodeMapper {
 static const int af_ZA_HASH = HashingUtils::HashString("af-ZA");
 static const int ar_AE_HASH = HashingUtils::HashString("ar-AE");
 static const int ar_SA_HASH = HashingUtils::HashString("ar-SA");
+static const int am_ET_HASH = HashingUtils::HashString("am-ET");
+static const int cy_GB_HASH = HashingUtils::HashString("cy-GB");
 static const int da_DK_HASH = HashingUtils::HashString("da-DK");
 static const int de_CH_HASH = HashingUtils::HashString("de-CH");
 static const int de_DE_HASH = HashingUtils::HashString("de-DE");
@@ -29,16 +31,24 @@ static const int en_IN_HASH = HashingUtils::HashString("en-IN");
 static const int en_US_HASH = HashingUtils::HashString("en-US");
 static const int en_WL_HASH = HashingUtils::HashString("en-WL");
 static const int es_ES_HASH = HashingUtils::HashString("es-ES");
+static const int es_MX_HASH = HashingUtils::HashString("es-MX");
 static const int es_US_HASH = HashingUtils::HashString("es-US");
+static const int fa_AF_HASH = HashingUtils::HashString("fa-AF");
 static const int fa_IR_HASH = HashingUtils::HashString("fa-IR");
 static const int fr_CA_HASH = HashingUtils::HashString("fr-CA");
 static const int fr_FR_HASH = HashingUtils::HashString("fr-FR");
+static const int ga_IE_HASH = HashingUtils::HashString("ga-IE");
+static const int gd_GB_HASH = HashingUtils::HashString("gd-GB");
 static const int he_IL_HASH = HashingUtils::HashString("he-IL");
 static const int hi_IN_HASH = HashingUtils::HashString("hi-IN");
+static const int ht_HT_HASH = HashingUtils::HashString("ht-HT");
 static const int id_ID_HASH = HashingUtils::HashString("id-ID");
 static const int it_IT_HASH = HashingUtils::HashString("it-IT");
 static const int ja_JP_HASH = HashingUtils::HashString("ja-JP");
+static const int jv_ID_HASH = HashingUtils::HashString("jv-ID");
+static const int km_KH_HASH = HashingUtils::HashString("km-KH");
 static const int ko_KR_HASH = HashingUtils::HashString("ko-KR");
+static const int my_MM_HASH = HashingUtils::HashString("my-MM");
 static const int ms_MY_HASH = HashingUtils::HashString("ms-MY");
 static const int nl_NL_HASH = HashingUtils::HashString("nl-NL");
 static const int pt_BR_HASH = HashingUtils::HashString("pt-BR");
@@ -95,6 +105,7 @@ static const int mn_MN_HASH = HashingUtils::HashString("mn-MN");
 static const int mr_IN_HASH = HashingUtils::HashString("mr-IN");
 static const int mt_MT_HASH = HashingUtils::HashString("mt-MT");
 static const int no_NO_HASH = HashingUtils::HashString("no-NO");
+static const int ne_NP_HASH = HashingUtils::HashString("ne-NP");
 static const int or_IN_HASH = HashingUtils::HashString("or-IN");
 static const int pa_IN_HASH = HashingUtils::HashString("pa-IN");
 static const int pl_PL_HASH = HashingUtils::HashString("pl-PL");
@@ -105,6 +116,7 @@ static const int si_LK_HASH = HashingUtils::HashString("si-LK");
 static const int sk_SK_HASH = HashingUtils::HashString("sk-SK");
 static const int sl_SI_HASH = HashingUtils::HashString("sl-SI");
 static const int so_SO_HASH = HashingUtils::HashString("so-SO");
+static const int sq_AL_HASH = HashingUtils::HashString("sq-AL");
 static const int sr_RS_HASH = HashingUtils::HashString("sr-RS");
 static const int su_ID_HASH = HashingUtils::HashString("su-ID");
 static const int sw_BI_HASH = HashingUtils::HashString("sw-BI");
@@ -129,6 +141,10 @@ LanguageCode GetLanguageCodeForName(const Aws::String& name) {
     return LanguageCode::ar_AE;
   } else if (hashCode == ar_SA_HASH) {
     return LanguageCode::ar_SA;
+  } else if (hashCode == am_ET_HASH) {
+    return LanguageCode::am_ET;
+  } else if (hashCode == cy_GB_HASH) {
+    return LanguageCode::cy_GB;
   } else if (hashCode == da_DK_HASH) {
     return LanguageCode::da_DK;
   } else if (hashCode == de_CH_HASH) {
@@ -151,26 +167,42 @@ LanguageCode GetLanguageCodeForName(const Aws::String& name) {
     return LanguageCode::en_WL;
   } else if (hashCode == es_ES_HASH) {
     return LanguageCode::es_ES;
+  } else if (hashCode == es_MX_HASH) {
+    return LanguageCode::es_MX;
   } else if (hashCode == es_US_HASH) {
     return LanguageCode::es_US;
+  } else if (hashCode == fa_AF_HASH) {
+    return LanguageCode::fa_AF;
   } else if (hashCode == fa_IR_HASH) {
     return LanguageCode::fa_IR;
   } else if (hashCode == fr_CA_HASH) {
     return LanguageCode::fr_CA;
   } else if (hashCode == fr_FR_HASH) {
     return LanguageCode::fr_FR;
+  } else if (hashCode == ga_IE_HASH) {
+    return LanguageCode::ga_IE;
+  } else if (hashCode == gd_GB_HASH) {
+    return LanguageCode::gd_GB;
   } else if (hashCode == he_IL_HASH) {
     return LanguageCode::he_IL;
   } else if (hashCode == hi_IN_HASH) {
     return LanguageCode::hi_IN;
+  } else if (hashCode == ht_HT_HASH) {
+    return LanguageCode::ht_HT;
   } else if (hashCode == id_ID_HASH) {
     return LanguageCode::id_ID;
   } else if (hashCode == it_IT_HASH) {
     return LanguageCode::it_IT;
   } else if (hashCode == ja_JP_HASH) {
     return LanguageCode::ja_JP;
+  } else if (hashCode == jv_ID_HASH) {
+    return LanguageCode::jv_ID;
+  } else if (hashCode == km_KH_HASH) {
+    return LanguageCode::km_KH;
   } else if (hashCode == ko_KR_HASH) {
     return LanguageCode::ko_KR;
+  } else if (hashCode == my_MM_HASH) {
+    return LanguageCode::my_MM;
   } else if (hashCode == ms_MY_HASH) {
     return LanguageCode::ms_MY;
   } else if (hashCode == nl_NL_HASH) {
@@ -283,6 +315,8 @@ LanguageCode GetLanguageCodeForName(const Aws::String& name) {
     return LanguageCode::mt_MT;
   } else if (hashCode == no_NO_HASH) {
     return LanguageCode::no_NO;
+  } else if (hashCode == ne_NP_HASH) {
+    return LanguageCode::ne_NP;
   } else if (hashCode == or_IN_HASH) {
     return LanguageCode::or_IN;
   } else if (hashCode == pa_IN_HASH) {
@@ -303,6 +337,8 @@ LanguageCode GetLanguageCodeForName(const Aws::String& name) {
     return LanguageCode::sl_SI;
   } else if (hashCode == so_SO_HASH) {
     return LanguageCode::so_SO;
+  } else if (hashCode == sq_AL_HASH) {
+    return LanguageCode::sq_AL;
   } else if (hashCode == sr_RS_HASH) {
     return LanguageCode::sr_RS;
   } else if (hashCode == su_ID_HASH) {
@@ -353,6 +389,10 @@ Aws::String GetNameForLanguageCode(LanguageCode enumValue) {
       return "ar-AE";
     case LanguageCode::ar_SA:
       return "ar-SA";
+    case LanguageCode::am_ET:
+      return "am-ET";
+    case LanguageCode::cy_GB:
+      return "cy-GB";
     case LanguageCode::da_DK:
       return "da-DK";
     case LanguageCode::de_CH:
@@ -375,26 +415,42 @@ Aws::String GetNameForLanguageCode(LanguageCode enumValue) {
       return "en-WL";
     case LanguageCode::es_ES:
       return "es-ES";
+    case LanguageCode::es_MX:
+      return "es-MX";
     case LanguageCode::es_US:
       return "es-US";
+    case LanguageCode::fa_AF:
+      return "fa-AF";
     case LanguageCode::fa_IR:
       return "fa-IR";
     case LanguageCode::fr_CA:
       return "fr-CA";
     case LanguageCode::fr_FR:
       return "fr-FR";
+    case LanguageCode::ga_IE:
+      return "ga-IE";
+    case LanguageCode::gd_GB:
+      return "gd-GB";
     case LanguageCode::he_IL:
       return "he-IL";
     case LanguageCode::hi_IN:
       return "hi-IN";
+    case LanguageCode::ht_HT:
+      return "ht-HT";
     case LanguageCode::id_ID:
       return "id-ID";
     case LanguageCode::it_IT:
       return "it-IT";
     case LanguageCode::ja_JP:
       return "ja-JP";
+    case LanguageCode::jv_ID:
+      return "jv-ID";
+    case LanguageCode::km_KH:
+      return "km-KH";
     case LanguageCode::ko_KR:
       return "ko-KR";
+    case LanguageCode::my_MM:
+      return "my-MM";
     case LanguageCode::ms_MY:
       return "ms-MY";
     case LanguageCode::nl_NL:
@@ -507,6 +563,8 @@ Aws::String GetNameForLanguageCode(LanguageCode enumValue) {
       return "mt-MT";
     case LanguageCode::no_NO:
       return "no-NO";
+    case LanguageCode::ne_NP:
+      return "ne-NP";
     case LanguageCode::or_IN:
       return "or-IN";
     case LanguageCode::pa_IN:
@@ -527,6 +585,8 @@ Aws::String GetNameForLanguageCode(LanguageCode enumValue) {
       return "sl-SI";
     case LanguageCode::so_SO:
       return "so-SO";
+    case LanguageCode::sq_AL:
+      return "sq-AL";
     case LanguageCode::sr_RS:
       return "sr-RS";
     case LanguageCode::su_ID:

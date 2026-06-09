@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/SecretReference.h>
+#include <aws/bedrock-agentcore-control/model/SecretSourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -74,6 +76,45 @@ class IncludedOauth2ProviderConfigInput {
 
   ///@{
   /**
+   * <p>A reference to the AWS Secrets Manager secret that stores the client secret.
+   * This includes the secret ID and the JSON key used to extract the client secret
+   * value from the secret. Required when <code>clientSecretSource</code> is set to
+   * <code>EXTERNAL</code>.</p>
+   */
+  inline const SecretReference& GetClientSecretConfig() const { return m_clientSecretConfig; }
+  inline bool ClientSecretConfigHasBeenSet() const { return m_clientSecretConfigHasBeenSet; }
+  template <typename ClientSecretConfigT = SecretReference>
+  void SetClientSecretConfig(ClientSecretConfigT&& value) {
+    m_clientSecretConfigHasBeenSet = true;
+    m_clientSecretConfig = std::forward<ClientSecretConfigT>(value);
+  }
+  template <typename ClientSecretConfigT = SecretReference>
+  IncludedOauth2ProviderConfigInput& WithClientSecretConfig(ClientSecretConfigT&& value) {
+    SetClientSecretConfig(std::forward<ClientSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The source type of the client secret. Use <code>MANAGED</code> if the secret
+   * is managed by the service, or <code>EXTERNAL</code> if you manage the secret
+   * yourself in AWS Secrets Manager.</p>
+   */
+  inline SecretSourceType GetClientSecretSource() const { return m_clientSecretSource; }
+  inline bool ClientSecretSourceHasBeenSet() const { return m_clientSecretSourceHasBeenSet; }
+  inline void SetClientSecretSource(SecretSourceType value) {
+    m_clientSecretSourceHasBeenSet = true;
+    m_clientSecretSource = value;
+  }
+  inline IncludedOauth2ProviderConfigInput& WithClientSecretSource(SecretSourceType value) {
+    SetClientSecretSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Token issuer of your isolated OAuth2 application tenant. This URL identifies
    * the authorization server that issues tokens for this provider.</p>
    */
@@ -134,6 +175,10 @@ class IncludedOauth2ProviderConfigInput {
 
   Aws::String m_clientSecret;
 
+  SecretReference m_clientSecretConfig;
+
+  SecretSourceType m_clientSecretSource{SecretSourceType::NOT_SET};
+
   Aws::String m_issuer;
 
   Aws::String m_authorizationEndpoint;
@@ -141,6 +186,8 @@ class IncludedOauth2ProviderConfigInput {
   Aws::String m_tokenEndpoint;
   bool m_clientIdHasBeenSet = false;
   bool m_clientSecretHasBeenSet = false;
+  bool m_clientSecretConfigHasBeenSet = false;
+  bool m_clientSecretSourceHasBeenSet = false;
   bool m_issuerHasBeenSet = false;
   bool m_authorizationEndpointHasBeenSet = false;
   bool m_tokenEndpointHasBeenSet = false;

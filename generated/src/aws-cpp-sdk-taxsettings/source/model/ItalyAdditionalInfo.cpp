@@ -18,6 +18,10 @@ namespace Model {
 ItalyAdditionalInfo::ItalyAdditionalInfo(JsonView jsonValue) { *this = jsonValue; }
 
 ItalyAdditionalInfo& ItalyAdditionalInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sdiAccountId")) {
+    m_sdiAccountId = jsonValue.GetString("sdiAccountId");
+    m_sdiAccountIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("cigNumber")) {
     m_cigNumber = jsonValue.GetString("cigNumber");
     m_cigNumberHasBeenSet = true;
@@ -26,19 +30,23 @@ ItalyAdditionalInfo& ItalyAdditionalInfo::operator=(JsonView jsonValue) {
     m_cupNumber = jsonValue.GetString("cupNumber");
     m_cupNumberHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("sdiAccountId")) {
-    m_sdiAccountId = jsonValue.GetString("sdiAccountId");
-    m_sdiAccountIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("taxCode")) {
     m_taxCode = jsonValue.GetString("taxCode");
     m_taxCodeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("customerType")) {
+    m_customerType = CustomerTypeMapper::GetCustomerTypeForName(jsonValue.GetString("customerType"));
+    m_customerTypeHasBeenSet = true;
   }
   return *this;
 }
 
 JsonValue ItalyAdditionalInfo::Jsonize() const {
   JsonValue payload;
+
+  if (m_sdiAccountIdHasBeenSet) {
+    payload.WithString("sdiAccountId", m_sdiAccountId);
+  }
 
   if (m_cigNumberHasBeenSet) {
     payload.WithString("cigNumber", m_cigNumber);
@@ -48,12 +56,12 @@ JsonValue ItalyAdditionalInfo::Jsonize() const {
     payload.WithString("cupNumber", m_cupNumber);
   }
 
-  if (m_sdiAccountIdHasBeenSet) {
-    payload.WithString("sdiAccountId", m_sdiAccountId);
-  }
-
   if (m_taxCodeHasBeenSet) {
     payload.WithString("taxCode", m_taxCode);
+  }
+
+  if (m_customerTypeHasBeenSet) {
+    payload.WithString("customerType", CustomerTypeMapper::GetNameForCustomerType(m_customerType));
   }
 
   return payload;

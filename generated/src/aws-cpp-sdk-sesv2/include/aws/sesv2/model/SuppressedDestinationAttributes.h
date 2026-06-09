@@ -21,8 +21,8 @@ namespace Model {
 
 /**
  * <p>An object that contains additional attributes that are related an email
- * address that is on the suppression list for your account.</p><p><h3>See
- * Also:</h3>   <a
+ * address that is on the suppression list for your account or for a specific
+ * tenant.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SuppressedDestinationAttributes">AWS
  * API Reference</a></p>
  */
@@ -36,7 +36,7 @@ class SuppressedDestinationAttributes {
   ///@{
   /**
    * <p>The unique identifier of the email message that caused the email address to
-   * be added to the suppression list for your account.</p>
+   * be added to the suppression list for your account or for a specific tenant.</p>
    */
   inline const Aws::String& GetMessageId() const { return m_messageId; }
   inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
@@ -55,7 +55,7 @@ class SuppressedDestinationAttributes {
   ///@{
   /**
    * <p>A unique identifier that's generated when an email address is added to the
-   * suppression list for your account.</p>
+   * suppression list for your account or for a specific tenant.</p>
    */
   inline const Aws::String& GetFeedbackId() const { return m_feedbackId; }
   inline bool FeedbackIdHasBeenSet() const { return m_feedbackIdHasBeenSet; }

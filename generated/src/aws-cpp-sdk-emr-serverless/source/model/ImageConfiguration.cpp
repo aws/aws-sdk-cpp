@@ -26,6 +26,10 @@ ImageConfiguration& ImageConfiguration::operator=(JsonView jsonValue) {
     m_resolvedImageDigest = jsonValue.GetString("resolvedImageDigest");
     m_resolvedImageDigestHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("applicationLevelDigestResolution")) {
+    m_applicationLevelDigestResolution = jsonValue.GetBool("applicationLevelDigestResolution");
+    m_applicationLevelDigestResolutionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ImageConfiguration::Jsonize() const {
 
   if (m_resolvedImageDigestHasBeenSet) {
     payload.WithString("resolvedImageDigest", m_resolvedImageDigest);
+  }
+
+  if (m_applicationLevelDigestResolutionHasBeenSet) {
+    payload.WithBool("applicationLevelDigestResolution", m_applicationLevelDigestResolution);
   }
 
   return payload;

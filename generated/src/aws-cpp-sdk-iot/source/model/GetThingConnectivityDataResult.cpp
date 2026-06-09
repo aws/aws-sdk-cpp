@@ -38,6 +38,42 @@ GetThingConnectivityDataResult& GetThingConnectivityDataResult::operator=(const 
     m_disconnectReason = DisconnectReasonValueMapper::GetDisconnectReasonValueForName(jsonValue.GetString("disconnectReason"));
     m_disconnectReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sourceIp")) {
+    m_sourceIp = jsonValue.GetString("sourceIp");
+    m_sourceIpHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sourcePort")) {
+    m_sourcePort = jsonValue.GetInteger("sourcePort");
+    m_sourcePortHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("targetIp")) {
+    m_targetIp = jsonValue.GetString("targetIp");
+    m_targetIpHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("targetPort")) {
+    m_targetPort = jsonValue.GetInteger("targetPort");
+    m_targetPortHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("vpcEndpointId")) {
+    m_vpcEndpointId = jsonValue.GetString("vpcEndpointId");
+    m_vpcEndpointIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("keepAliveDuration")) {
+    m_keepAliveDuration = jsonValue.GetInteger("keepAliveDuration");
+    m_keepAliveDurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cleanSession")) {
+    m_cleanSession = jsonValue.GetBool("cleanSession");
+    m_cleanSessionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sessionExpiry")) {
+    m_sessionExpiry = jsonValue.GetInt64("sessionExpiry");
+    m_sessionExpiryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("clientId")) {
+    m_clientId = jsonValue.GetString("clientId");
+    m_clientIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

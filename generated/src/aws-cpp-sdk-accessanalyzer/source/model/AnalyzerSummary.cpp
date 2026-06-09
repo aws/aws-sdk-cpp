@@ -61,6 +61,10 @@ AnalyzerSummary& AnalyzerSummary::operator=(JsonView jsonValue) {
     m_configuration = jsonValue.GetObject("configuration");
     m_configurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("managedBy")) {
+    m_managedBy = jsonValue.GetString("managedBy");
+    m_managedByHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -109,6 +113,10 @@ JsonValue AnalyzerSummary::Jsonize() const {
 
   if (m_configurationHasBeenSet) {
     payload.WithObject("configuration", m_configuration.Jsonize());
+  }
+
+  if (m_managedByHasBeenSet) {
+    payload.WithString("managedBy", m_managedBy);
   }
 
   return payload;

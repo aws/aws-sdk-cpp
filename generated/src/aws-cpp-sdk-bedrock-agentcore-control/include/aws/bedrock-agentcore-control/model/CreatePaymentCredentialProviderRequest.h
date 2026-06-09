@@ -33,7 +33,7 @@ class CreatePaymentCredentialProviderRequest : public BedrockAgentCoreControlReq
 
   ///@{
   /**
-   * <p>Unique name for the payment credential provider</p>
+   * <p>Unique name for the payment credential provider.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -51,7 +51,8 @@ class CreatePaymentCredentialProviderRequest : public BedrockAgentCoreControlReq
 
   ///@{
   /**
-   * <p>The vendor type (e.g., CoinbaseCDP)</p>
+   * <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP,
+   * StripePrivy).</p>
    */
   inline PaymentCredentialProviderVendorType GetCredentialProviderVendor() const { return m_credentialProviderVendor; }
   inline bool CredentialProviderVendorHasBeenSet() const { return m_credentialProviderVendorHasBeenSet; }
@@ -67,7 +68,7 @@ class CreatePaymentCredentialProviderRequest : public BedrockAgentCoreControlReq
 
   ///@{
   /**
-   * <p>Configuration specific to the vendor, including API credentials</p>
+   * <p>Configuration specific to the vendor, including API credentials.</p>
    */
   inline const PaymentProviderConfigurationInput& GetProviderConfigurationInput() const { return m_providerConfigurationInput; }
   inline bool ProviderConfigurationInputHasBeenSet() const { return m_providerConfigurationInputHasBeenSet; }
@@ -85,7 +86,7 @@ class CreatePaymentCredentialProviderRequest : public BedrockAgentCoreControlReq
 
   ///@{
   /**
-   * <p>Optional tags for resource organization</p>
+   * <p>Optional tags for resource organization.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

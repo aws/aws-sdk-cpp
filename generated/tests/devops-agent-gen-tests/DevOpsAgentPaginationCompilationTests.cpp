@@ -8,11 +8,15 @@
 
 #include <aws/devops-agent/DevOpsAgentClientPagination.h>
 #include <aws/devops-agent/DevOpsAgentPaginationBase.h>
+#include <aws/devops-agent/model/ListAssetTypesPaginationTraits.h>
 #include <aws/devops-agent/model/ListJournalRecordsPaginationTraits.h>
 #include <aws/devops-agent/model/ListBacklogTasksPaginationTraits.h>
+#include <aws/devops-agent/model/ListAssetFilesPaginationTraits.h>
 #include <aws/devops-agent/model/ListAgentSpacesPaginationTraits.h>
+#include <aws/devops-agent/model/ListAssetVersionsPaginationTraits.h>
 #include <aws/devops-agent/model/ListExecutionsPaginationTraits.h>
 #include <aws/devops-agent/model/ListServicesPaginationTraits.h>
+#include <aws/devops-agent/model/ListAssetsPaginationTraits.h>
 #include <aws/devops-agent/model/ListGoalsPaginationTraits.h>
 #include <aws/devops-agent/model/ListAssociationsPaginationTraits.h>
 

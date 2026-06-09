@@ -22,6 +22,13 @@ DescribeInferenceSettings& DescribeInferenceSettings::operator=(JsonView jsonVal
     m_feedArn = jsonValue.GetString("feedArn");
     m_feedArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("audioFeedInputs")) {
+    Aws::Utils::Array<JsonView> audioFeedInputsJsonList = jsonValue.GetArray("audioFeedInputs");
+    for (unsigned audioFeedInputsIndex = 0; audioFeedInputsIndex < audioFeedInputsJsonList.GetLength(); ++audioFeedInputsIndex) {
+      m_audioFeedInputs.push_back(audioFeedInputsJsonList[audioFeedInputsIndex].AsObject());
+    }
+    m_audioFeedInputsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +37,14 @@ JsonValue DescribeInferenceSettings::Jsonize() const {
 
   if (m_feedArnHasBeenSet) {
     payload.WithString("feedArn", m_feedArn);
+  }
+
+  if (m_audioFeedInputsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> audioFeedInputsJsonList(m_audioFeedInputs.size());
+    for (unsigned audioFeedInputsIndex = 0; audioFeedInputsIndex < audioFeedInputsJsonList.GetLength(); ++audioFeedInputsIndex) {
+      audioFeedInputsJsonList[audioFeedInputsIndex].AsObject(m_audioFeedInputs[audioFeedInputsIndex].Jsonize());
+    }
+    payload.WithArray("audioFeedInputs", std::move(audioFeedInputsJsonList));
   }
 
   return payload;

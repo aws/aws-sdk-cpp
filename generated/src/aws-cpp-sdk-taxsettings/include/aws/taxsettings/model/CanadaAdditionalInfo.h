@@ -34,6 +34,30 @@ class CanadaAdditionalInfo {
 
   ///@{
   /**
+   * <p> The provincial sales tax ID for your TRN in Canada. This parameter can
+   * represent the following: </p> <ul> <li> <p>Provincial sales tax ID number for
+   * British Columbia and Saskatchewan provinces</p> </li> <li> <p>Manitoba retail
+   * sales tax ID number for Manitoba province</p> </li> <li> <p>Quebec sales tax ID
+   * number for Quebec province</p> </li> </ul> <p>The Tax Setting API only accepts
+   * this parameter if the TRN is specified for the previous provinces. For other
+   * provinces, the Tax Settings API doesn't accept this parameter. </p>
+   */
+  inline const Aws::String& GetProvincialSalesTaxId() const { return m_provincialSalesTaxId; }
+  inline bool ProvincialSalesTaxIdHasBeenSet() const { return m_provincialSalesTaxIdHasBeenSet; }
+  template <typename ProvincialSalesTaxIdT = Aws::String>
+  void SetProvincialSalesTaxId(ProvincialSalesTaxIdT&& value) {
+    m_provincialSalesTaxIdHasBeenSet = true;
+    m_provincialSalesTaxId = std::forward<ProvincialSalesTaxIdT>(value);
+  }
+  template <typename ProvincialSalesTaxIdT = Aws::String>
+  CanadaAdditionalInfo& WithProvincialSalesTaxId(ProvincialSalesTaxIdT&& value) {
+    SetProvincialSalesTaxId(std::forward<ProvincialSalesTaxIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The Quebec Sales Tax ID number. Leave blank if you do not have a Quebec
    * Sales Tax ID number. </p>
    */
@@ -94,42 +118,18 @@ class CanadaAdditionalInfo {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p> The provincial sales tax ID for your TRN in Canada. This parameter can
-   * represent the following: </p> <ul> <li> <p>Provincial sales tax ID number for
-   * British Columbia and Saskatchewan provinces</p> </li> <li> <p>Manitoba retail
-   * sales tax ID number for Manitoba province</p> </li> <li> <p>Quebec sales tax ID
-   * number for Quebec province</p> </li> </ul> <p>The Tax Setting API only accepts
-   * this parameter if the TRN is specified for the previous provinces. For other
-   * provinces, the Tax Settings API doesn't accept this parameter. </p>
-   */
-  inline const Aws::String& GetProvincialSalesTaxId() const { return m_provincialSalesTaxId; }
-  inline bool ProvincialSalesTaxIdHasBeenSet() const { return m_provincialSalesTaxIdHasBeenSet; }
-  template <typename ProvincialSalesTaxIdT = Aws::String>
-  void SetProvincialSalesTaxId(ProvincialSalesTaxIdT&& value) {
-    m_provincialSalesTaxIdHasBeenSet = true;
-    m_provincialSalesTaxId = std::forward<ProvincialSalesTaxIdT>(value);
-  }
-  template <typename ProvincialSalesTaxIdT = Aws::String>
-  CanadaAdditionalInfo& WithProvincialSalesTaxId(ProvincialSalesTaxIdT&& value) {
-    SetProvincialSalesTaxId(std::forward<ProvincialSalesTaxIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_provincialSalesTaxId;
+
   Aws::String m_canadaQuebecSalesTaxNumber;
 
   Aws::String m_canadaRetailSalesTaxNumber;
 
   bool m_isResellerAccount{false};
-
-  Aws::String m_provincialSalesTaxId;
+  bool m_provincialSalesTaxIdHasBeenSet = false;
   bool m_canadaQuebecSalesTaxNumberHasBeenSet = false;
   bool m_canadaRetailSalesTaxNumberHasBeenSet = false;
   bool m_isResellerAccountHasBeenSet = false;
-  bool m_provincialSalesTaxIdHasBeenSet = false;
 };
 
 }  // namespace Model

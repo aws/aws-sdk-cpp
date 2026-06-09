@@ -41,78 +41,6 @@ class TaxRegistrationWithJurisdiction {
 
   ///@{
   /**
-   * <p>Additional tax information associated with your TRN. </p>
-   */
-  inline const AdditionalInfoResponse& GetAdditionalTaxInformation() const { return m_additionalTaxInformation; }
-  inline bool AdditionalTaxInformationHasBeenSet() const { return m_additionalTaxInformationHasBeenSet; }
-  template <typename AdditionalTaxInformationT = AdditionalInfoResponse>
-  void SetAdditionalTaxInformation(AdditionalTaxInformationT&& value) {
-    m_additionalTaxInformationHasBeenSet = true;
-    m_additionalTaxInformation = std::forward<AdditionalTaxInformationT>(value);
-  }
-  template <typename AdditionalTaxInformationT = AdditionalInfoResponse>
-  TaxRegistrationWithJurisdiction& WithAdditionalTaxInformation(AdditionalTaxInformationT&& value) {
-    SetAdditionalTaxInformation(std::forward<AdditionalTaxInformationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The email address to receive VAT invoices.</p>
-   */
-  inline const Aws::String& GetCertifiedEmailId() const { return m_certifiedEmailId; }
-  inline bool CertifiedEmailIdHasBeenSet() const { return m_certifiedEmailIdHasBeenSet; }
-  template <typename CertifiedEmailIdT = Aws::String>
-  void SetCertifiedEmailId(CertifiedEmailIdT&& value) {
-    m_certifiedEmailIdHasBeenSet = true;
-    m_certifiedEmailId = std::forward<CertifiedEmailIdT>(value);
-  }
-  template <typename CertifiedEmailIdT = Aws::String>
-  TaxRegistrationWithJurisdiction& WithCertifiedEmailId(CertifiedEmailIdT&& value) {
-    SetCertifiedEmailId(std::forward<CertifiedEmailIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> The jurisdiction associated with your TRN information. </p>
-   */
-  inline const Jurisdiction& GetJurisdiction() const { return m_jurisdiction; }
-  inline bool JurisdictionHasBeenSet() const { return m_jurisdictionHasBeenSet; }
-  template <typename JurisdictionT = Jurisdiction>
-  void SetJurisdiction(JurisdictionT&& value) {
-    m_jurisdictionHasBeenSet = true;
-    m_jurisdiction = std::forward<JurisdictionT>(value);
-  }
-  template <typename JurisdictionT = Jurisdiction>
-  TaxRegistrationWithJurisdiction& WithJurisdiction(JurisdictionT&& value) {
-    SetJurisdiction(std::forward<JurisdictionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The legal name associated with your TRN information. </p>
-   */
-  inline const Aws::String& GetLegalName() const { return m_legalName; }
-  inline bool LegalNameHasBeenSet() const { return m_legalNameHasBeenSet; }
-  template <typename LegalNameT = Aws::String>
-  void SetLegalName(LegalNameT&& value) {
-    m_legalNameHasBeenSet = true;
-    m_legalName = std::forward<LegalNameT>(value);
-  }
-  template <typename LegalNameT = Aws::String>
-  TaxRegistrationWithJurisdiction& WithLegalName(LegalNameT&& value) {
-    SetLegalName(std::forward<LegalNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Your tax registration unique identifier. </p>
    */
   inline const Aws::String& GetRegistrationId() const { return m_registrationId; }
@@ -148,20 +76,18 @@ class TaxRegistrationWithJurisdiction {
 
   ///@{
   /**
-   * <p>The industry that describes your business. For business-to-business (B2B)
-   * customers, specify Business. For business-to-consumer (B2C) customers, specify
-   * Individual. For business-to-government (B2G), specify Government.Note that
-   * certain values may not applicable for the request country. Please refer to
-   * country specific information in API document. </p>
+   * <p>The legal name associated with your TRN information. </p>
    */
-  inline Sector GetSector() const { return m_sector; }
-  inline bool SectorHasBeenSet() const { return m_sectorHasBeenSet; }
-  inline void SetSector(Sector value) {
-    m_sectorHasBeenSet = true;
-    m_sector = value;
+  inline const Aws::String& GetLegalName() const { return m_legalName; }
+  inline bool LegalNameHasBeenSet() const { return m_legalNameHasBeenSet; }
+  template <typename LegalNameT = Aws::String>
+  void SetLegalName(LegalNameT&& value) {
+    m_legalNameHasBeenSet = true;
+    m_legalName = std::forward<LegalNameT>(value);
   }
-  inline TaxRegistrationWithJurisdiction& WithSector(Sector value) {
-    SetSector(value);
+  template <typename LegalNameT = Aws::String>
+  TaxRegistrationWithJurisdiction& WithLegalName(LegalNameT&& value) {
+    SetLegalName(std::forward<LegalNameT>(value));
     return *this;
   }
   ///@}
@@ -179,6 +105,26 @@ class TaxRegistrationWithJurisdiction {
   }
   inline TaxRegistrationWithJurisdiction& WithStatus(TaxRegistrationStatus value) {
     SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The industry that describes your business. For business-to-business (B2B)
+   * customers, specify Business. For business-to-consumer (B2C) customers, specify
+   * Individual. For business-to-government (B2G), specify Government.Note that
+   * certain values may not applicable for the request country. Please refer to
+   * country specific information in API document. </p>
+   */
+  inline Sector GetSector() const { return m_sector; }
+  inline bool SectorHasBeenSet() const { return m_sectorHasBeenSet; }
+  inline void SetSector(Sector value) {
+    m_sectorHasBeenSet = true;
+    m_sector = value;
+  }
+  inline TaxRegistrationWithJurisdiction& WithSector(Sector value) {
+    SetSector(value);
     return *this;
   }
   ///@}
@@ -206,33 +152,87 @@ class TaxRegistrationWithJurisdiction {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The email address to receive VAT invoices.</p>
+   */
+  inline const Aws::String& GetCertifiedEmailId() const { return m_certifiedEmailId; }
+  inline bool CertifiedEmailIdHasBeenSet() const { return m_certifiedEmailIdHasBeenSet; }
+  template <typename CertifiedEmailIdT = Aws::String>
+  void SetCertifiedEmailId(CertifiedEmailIdT&& value) {
+    m_certifiedEmailIdHasBeenSet = true;
+    m_certifiedEmailId = std::forward<CertifiedEmailIdT>(value);
+  }
+  template <typename CertifiedEmailIdT = Aws::String>
+  TaxRegistrationWithJurisdiction& WithCertifiedEmailId(CertifiedEmailIdT&& value) {
+    SetCertifiedEmailId(std::forward<CertifiedEmailIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Additional tax information associated with your TRN. </p>
+   */
+  inline const AdditionalInfoResponse& GetAdditionalTaxInformation() const { return m_additionalTaxInformation; }
+  inline bool AdditionalTaxInformationHasBeenSet() const { return m_additionalTaxInformationHasBeenSet; }
+  template <typename AdditionalTaxInformationT = AdditionalInfoResponse>
+  void SetAdditionalTaxInformation(AdditionalTaxInformationT&& value) {
+    m_additionalTaxInformationHasBeenSet = true;
+    m_additionalTaxInformation = std::forward<AdditionalTaxInformationT>(value);
+  }
+  template <typename AdditionalTaxInformationT = AdditionalInfoResponse>
+  TaxRegistrationWithJurisdiction& WithAdditionalTaxInformation(AdditionalTaxInformationT&& value) {
+    SetAdditionalTaxInformation(std::forward<AdditionalTaxInformationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The jurisdiction associated with your TRN information. </p>
+   */
+  inline const Jurisdiction& GetJurisdiction() const { return m_jurisdiction; }
+  inline bool JurisdictionHasBeenSet() const { return m_jurisdictionHasBeenSet; }
+  template <typename JurisdictionT = Jurisdiction>
+  void SetJurisdiction(JurisdictionT&& value) {
+    m_jurisdictionHasBeenSet = true;
+    m_jurisdiction = std::forward<JurisdictionT>(value);
+  }
+  template <typename JurisdictionT = Jurisdiction>
+  TaxRegistrationWithJurisdiction& WithJurisdiction(JurisdictionT&& value) {
+    SetJurisdiction(std::forward<JurisdictionT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  AdditionalInfoResponse m_additionalTaxInformation;
-
-  Aws::String m_certifiedEmailId;
-
-  Jurisdiction m_jurisdiction;
-
-  Aws::String m_legalName;
-
   Aws::String m_registrationId;
 
   TaxRegistrationType m_registrationType{TaxRegistrationType::NOT_SET};
 
-  Sector m_sector{Sector::NOT_SET};
+  Aws::String m_legalName;
 
   TaxRegistrationStatus m_status{TaxRegistrationStatus::NOT_SET};
 
+  Sector m_sector{Sector::NOT_SET};
+
   Aws::Vector<TaxDocumentMetadata> m_taxDocumentMetadatas;
-  bool m_additionalTaxInformationHasBeenSet = false;
-  bool m_certifiedEmailIdHasBeenSet = false;
-  bool m_jurisdictionHasBeenSet = false;
-  bool m_legalNameHasBeenSet = false;
+
+  Aws::String m_certifiedEmailId;
+
+  AdditionalInfoResponse m_additionalTaxInformation;
+
+  Jurisdiction m_jurisdiction;
   bool m_registrationIdHasBeenSet = false;
   bool m_registrationTypeHasBeenSet = false;
-  bool m_sectorHasBeenSet = false;
+  bool m_legalNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_sectorHasBeenSet = false;
   bool m_taxDocumentMetadatasHasBeenSet = false;
+  bool m_certifiedEmailIdHasBeenSet = false;
+  bool m_additionalTaxInformationHasBeenSet = false;
+  bool m_jurisdictionHasBeenSet = false;
 };
 
 }  // namespace Model

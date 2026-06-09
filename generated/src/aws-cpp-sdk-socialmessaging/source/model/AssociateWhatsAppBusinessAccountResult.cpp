@@ -33,6 +33,10 @@ AssociateWhatsAppBusinessAccountResult& AssociateWhatsAppBusinessAccountResult::
     m_statusCode = jsonValue.GetInteger("statusCode");
     m_statusCodeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("linkedWhatsAppBusinessAccountId")) {
+    m_linkedWhatsAppBusinessAccountId = jsonValue.GetString("linkedWhatsAppBusinessAccountId");
+    m_linkedWhatsAppBusinessAccountIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

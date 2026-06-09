@@ -54,6 +54,7 @@ static const int ml_p5_4xlarge_HASH = HashingUtils::HashString("ml.p5.4xlarge");
 static const int ml_p5_48xlarge_HASH = HashingUtils::HashString("ml.p5.48xlarge");
 static const int ml_p5e_48xlarge_HASH = HashingUtils::HashString("ml.p5e.48xlarge");
 static const int ml_p5en_48xlarge_HASH = HashingUtils::HashString("ml.p5en.48xlarge");
+static const int ml_p6_b200_48xlarge_HASH = HashingUtils::HashString("ml.p6-b200.48xlarge");
 
 AIRecommendationInstanceType GetAIRecommendationInstanceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -135,6 +136,8 @@ AIRecommendationInstanceType GetAIRecommendationInstanceTypeForName(const Aws::S
     return AIRecommendationInstanceType::ml_p5e_48xlarge;
   } else if (hashCode == ml_p5en_48xlarge_HASH) {
     return AIRecommendationInstanceType::ml_p5en_48xlarge;
+  } else if (hashCode == ml_p6_b200_48xlarge_HASH) {
+    return AIRecommendationInstanceType::ml_p6_b200_48xlarge;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -227,6 +230,8 @@ Aws::String GetNameForAIRecommendationInstanceType(AIRecommendationInstanceType 
       return "ml.p5e.48xlarge";
     case AIRecommendationInstanceType::ml_p5en_48xlarge:
       return "ml.p5en.48xlarge";
+    case AIRecommendationInstanceType::ml_p6_b200_48xlarge:
+      return "ml.p6-b200.48xlarge";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

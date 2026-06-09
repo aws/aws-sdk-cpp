@@ -40,6 +40,8 @@ class CompoundCondition {
   ///@{
   /**
    * <p>The list of conditions to combine using the logical operator.</p>
+   * <p>For API users: A case rule can have a maximum of 5 conditions, spread across
+   * a maximum of 2 levels of nesting.</p>
    */
   inline const Aws::Vector<BooleanCondition>& GetConditions() const { return m_conditions; }
   inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }

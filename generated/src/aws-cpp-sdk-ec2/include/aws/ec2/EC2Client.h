@@ -17,11 +17,33 @@
 namespace Aws {
 namespace EC2 {
 /**
- * <fullname>Amazon Elastic Compute Cloud</fullname> <p>You can access the features
- * of Amazon Elastic Compute Cloud (Amazon EC2) programmatically. For more
- * information, see the <a
- * href="https://docs.aws.amazon.com/ec2/latest/devguide">Amazon EC2 Developer
- * Guide</a>.</p>
+ * <fullname>Amazon Elastic Compute Cloud</fullname> <p>This is the <i>Amazon EC2
+ * API Reference</i>. It provides descriptions, API request parameters, and the XML
+ * response for each of the Amazon EC2 Query API actions. Note that the Amazon EC2
+ * API includes actions for Amazon EC2 plus additional services, such as Amazon EBS
+ * and Amazon VPC.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p>To
+ * learn about using the Query API, see <a
+ * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-low-level-api.html">Using
+ * the API for Amazon EC2</a>.</p> </li> <li> <p>To learn about the permissions
+ * required to call an Amazon EC2 API action, see <a
+ * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html">Actions,
+ * resources, and condition keys for Amazon EC2</a>.</p> </li> <li> <p>To get the
+ * list of API actions by service and resource, see <a
+ * href="https://docs.aws.amazon.com/ec2/latest/devguide/OperationList-query.html">Actions
+ * by service</a>.</p> </li> <li> <p>To get the alphabetical list of API actions,
+ * see .</p> </li> <li> <p>To get descriptions of the API error codes, see <a
+ * href="https://docs.aws.amazon.com/ec2/latest/devguide/errors-overview.html">Error
+ * codes for the Amazon EC2 API</a>.</p> </li> </ul> <p>Alternatively, use one of
+ * the following methods to access the Amazon EC2 API, instead of using the Query
+ * API directly:</p> <ul> <li> <p> <a
+ * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/">Amazon Web Services
+ * CLI Command Reference - ec2 commands</a> </p> </li> <li> <p> <a
+ * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/AWS_EC2.html">CloudFormation
+ * - Amazon EC2 resource type reference</a> </p> </li> <li> <p> <a
+ * href="https://docs.aws.amazon.com/powershell/v5/reference/items/EC2_cmdlets.html">Amazon
+ * Web Services Tools for PowerShell Cmdlet Reference - Amazon EC2 cmdlets</a> </p>
+ * </li> <li> <p> <a href="https://builder.aws.com/build/tools">Amazon Web Services
+ * SDKs</a> </p> </li> </ul>
  */
 class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<EC2Client>,
@@ -1718,10 +1740,14 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * <p>Cancels the specified Capacity Reservation, releases the reserved capacity,
    * and changes the Capacity Reservation's state to <code>cancelled</code>.</p>
    * <p>You can cancel a Capacity Reservation that is in the following states:</p>
-   * <ul> <li> <p> <code>assessing</code> </p> </li> <li> <p> <code>active</code> and
-   * there is no commitment duration or the commitment duration has elapsed. You
-   * can't cancel a future-dated Capacity Reservation during the commitment
-   * duration.</p> </li> </ul>  <p>You can't modify or cancel a Capacity Block.
+   * <ul> <li> <p> <code>assessing</code> </p> </li> <li> <p> <code>scheduled</code>
+   * </p> </li> <li> <p> <code>active</code> and there is no commitment duration or
+   * the commitment duration has elapsed.</p> </li> <li> <p> <code>active</code>
+   * during the commitment duration, if you provide a cancellation quote ID and
+   * accept the cancellation charges. Use
+   * <code>CreateCapacityReservationCancellationQuote</code> to generate a quote. The
+   * Capacity Reservation transitions to <code>cancelling</code> while charges are
+   * applied.</p> </li> </ul>  <p>You can't modify or cancel a Capacity Block.
    * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html">Capacity
    * Blocks for ML</a>.</p>  <p>If a future-dated Capacity Reservation enters
@@ -2361,6 +2387,40 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                                  const CreateCapacityReservationBySplittingResponseReceivedHandler& handler,
                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::CreateCapacityReservationBySplitting, request, handler, context);
+  }
+
+  /**
+   * <p>Generates a cancellation quote for a future-dated Capacity Reservation that
+   * is within its commitment duration. The quote includes the cancellation terms and
+   * a quote ID that you can pass to the <code>CancelCapacityReservation</code>
+   * action. Cancellation quotes are valid for 24 hours.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationCancellationQuote">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCapacityReservationCancellationQuoteOutcome CreateCapacityReservationCancellationQuote(
+      const Model::CreateCapacityReservationCancellationQuoteRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCapacityReservationCancellationQuote that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename CreateCapacityReservationCancellationQuoteRequestT = Model::CreateCapacityReservationCancellationQuoteRequest>
+  Model::CreateCapacityReservationCancellationQuoteOutcomeCallable CreateCapacityReservationCancellationQuoteCallable(
+      const CreateCapacityReservationCancellationQuoteRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateCapacityReservationCancellationQuote, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCapacityReservationCancellationQuote that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename CreateCapacityReservationCancellationQuoteRequestT = Model::CreateCapacityReservationCancellationQuoteRequest>
+  void CreateCapacityReservationCancellationQuoteAsync(
+      const CreateCapacityReservationCancellationQuoteRequestT& request,
+      const CreateCapacityReservationCancellationQuoteResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateCapacityReservationCancellationQuote, request, handler, context);
   }
 
   /**
@@ -9532,6 +9592,39 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Describes one or more Capacity Reservation cancellation quotes. The results
+   * describe only the quotes that you have previously generated by using the
+   * <code>CreateCapacityReservationCancellationQuote</code> action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationCancellationQuotes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeCapacityReservationCancellationQuotesOutcome DescribeCapacityReservationCancellationQuotes(
+      const Model::DescribeCapacityReservationCancellationQuotesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeCapacityReservationCancellationQuotes that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename DescribeCapacityReservationCancellationQuotesRequestT = Model::DescribeCapacityReservationCancellationQuotesRequest>
+  Model::DescribeCapacityReservationCancellationQuotesOutcomeCallable DescribeCapacityReservationCancellationQuotesCallable(
+      const DescribeCapacityReservationCancellationQuotesRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeCapacityReservationCancellationQuotes, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeCapacityReservationCancellationQuotes that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename DescribeCapacityReservationCancellationQuotesRequestT = Model::DescribeCapacityReservationCancellationQuotesRequest>
+  void DescribeCapacityReservationCancellationQuotesAsync(
+      const DescribeCapacityReservationCancellationQuotesResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+      const DescribeCapacityReservationCancellationQuotesRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeCapacityReservationCancellationQuotes, request, handler, context);
+  }
+
+  /**
    * <p>Describes one or more Capacity Reservation Fleets.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationFleets">AWS
@@ -11479,6 +11572,45 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                  const DescribeIpamPoliciesRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::DescribeIpamPolicies, request, handler, context);
+  }
+
+  /**
+   * <p>Describes IPAM pool allocations. You can describe all allocations owned by
+   * you across all pools, or you can describe specific allocations by ID.</p> <p>If
+   * you specify <code>IpamPoolAllocationIds</code>, the results include only the
+   * specified allocations. If you do not specify <code>IpamPoolAllocationIds</code>,
+   * the results include all allocations owned by you. You can use
+   * <code>Filters</code> to narrow the results.</p>  <p>This action returns
+   * only allocations directly owned by you. To view all allocations in a pool you
+   * own or that has been shared with you, including allocations owned by other
+   * accounts, use <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPoolAllocations.html">GetIpamPoolAllocations</a>.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPoolAllocations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeIpamPoolAllocationsOutcome DescribeIpamPoolAllocations(
+      const Model::DescribeIpamPoolAllocationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeIpamPoolAllocations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeIpamPoolAllocationsRequestT = Model::DescribeIpamPoolAllocationsRequest>
+  Model::DescribeIpamPoolAllocationsOutcomeCallable DescribeIpamPoolAllocationsCallable(
+      const DescribeIpamPoolAllocationsRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeIpamPoolAllocations, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeIpamPoolAllocations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeIpamPoolAllocationsRequestT = Model::DescribeIpamPoolAllocationsRequest>
+  void DescribeIpamPoolAllocationsAsync(const DescribeIpamPoolAllocationsResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const DescribeIpamPoolAllocationsRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeIpamPoolAllocations, request, handler, context);
   }
 
   /**
@@ -21197,6 +21329,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   void ModifyIpamPoolAsync(const ModifyIpamPoolRequestT& request, const ModifyIpamPoolResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::ModifyIpamPool, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies the description of an IPAM pool allocation. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/ipam/modify-alloc-ipam.html">Modify
+   * an IPAM pool allocation</a> in the <i>Amazon VPC IPAM User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPoolAllocation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyIpamPoolAllocationOutcome ModifyIpamPoolAllocation(const Model::ModifyIpamPoolAllocationRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyIpamPoolAllocation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ModifyIpamPoolAllocationRequestT = Model::ModifyIpamPoolAllocationRequest>
+  Model::ModifyIpamPoolAllocationOutcomeCallable ModifyIpamPoolAllocationCallable(const ModifyIpamPoolAllocationRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyIpamPoolAllocation, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyIpamPoolAllocation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ModifyIpamPoolAllocationRequestT = Model::ModifyIpamPoolAllocationRequest>
+  void ModifyIpamPoolAllocationAsync(const ModifyIpamPoolAllocationRequestT& request,
+                                     const ModifyIpamPoolAllocationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyIpamPoolAllocation, request, handler, context);
   }
 
   /**

@@ -27,12 +27,12 @@ Aws::String PutTaxExemptionRequest::SerializePayload() const {
     payload.WithObject("authority", m_authority.Jsonize());
   }
 
-  if (m_exemptionCertificateHasBeenSet) {
-    payload.WithObject("exemptionCertificate", m_exemptionCertificate.Jsonize());
-  }
-
   if (m_exemptionTypeHasBeenSet) {
     payload.WithString("exemptionType", m_exemptionType);
+  }
+
+  if (m_exemptionCertificateHasBeenSet) {
+    payload.WithObject("exemptionCertificate", m_exemptionCertificate.Jsonize());
   }
 
   return payload.View().WriteReadable();

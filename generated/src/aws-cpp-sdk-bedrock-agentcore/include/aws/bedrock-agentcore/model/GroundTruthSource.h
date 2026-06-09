@@ -20,7 +20,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Where to pull ground truth from</p><p><h3>See Also:</h3>   <a
+ * <p>Where to pull ground truth from.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GroundTruthSource">AWS
  * API Reference</a></p>
  */
@@ -33,7 +33,7 @@ class GroundTruthSource {
 
   ///@{
   /**
-   * <p>Provide ground truth inline</p>
+   * <p>Inline ground truth data provided directly in the request.</p>
    */
   inline const InlineGroundTruth& GetInline() const { return m_inline; }
   inline bool InlineHasBeenSet() const { return m_inlineHasBeenSet; }

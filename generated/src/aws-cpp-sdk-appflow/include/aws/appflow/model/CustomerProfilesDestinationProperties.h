@@ -20,7 +20,7 @@ namespace Appflow {
 namespace Model {
 
 /**
- * <p> The properties that are applied when Amazon Connect Customer Profiles is
+ * <p> The properties that are applied when Connect Customer Customer Profiles is
  * used as a destination. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CustomerProfilesDestinationProperties">AWS
  * API Reference</a></p>
@@ -34,7 +34,7 @@ class CustomerProfilesDestinationProperties {
 
   ///@{
   /**
-   * <p> The unique name of the Amazon Connect Customer Profiles domain. </p>
+   * <p> The unique name of the Connect Customer Customer Profiles domain. </p>
    */
   inline const Aws::String& GetDomainName() const { return m_domainName; }
   inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
@@ -52,7 +52,7 @@ class CustomerProfilesDestinationProperties {
 
   ///@{
   /**
-   * <p> The object specified in the Amazon Connect Customer Profiles flow
+   * <p> The object specified in the Connect Customer Customer Profiles flow
    * destination. </p>
    */
   inline const Aws::String& GetObjectTypeName() const { return m_objectTypeName; }

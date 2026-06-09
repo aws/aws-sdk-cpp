@@ -18,6 +18,10 @@ namespace Model {
 RoutePedestrianPlace::RoutePedestrianPlace(JsonView jsonValue) { *this = jsonValue; }
 
 RoutePedestrianPlace& RoutePedestrianPlace::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AccessPointDetails")) {
+    m_accessPointDetails = jsonValue.GetObject("AccessPointDetails");
+    m_accessPointDetailsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
@@ -40,6 +44,14 @@ RoutePedestrianPlace& RoutePedestrianPlace::operator=(JsonView jsonValue) {
     m_sideOfStreet = RouteSideOfStreetMapper::GetRouteSideOfStreetForName(jsonValue.GetString("SideOfStreet"));
     m_sideOfStreetHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StationDetails")) {
+    m_stationDetails = jsonValue.GetObject("StationDetails");
+    m_stationDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Type")) {
+    m_type = RoutePedestrianPlaceTypeMapper::GetRoutePedestrianPlaceTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("WaypointIndex")) {
     m_waypointIndex = jsonValue.GetInteger("WaypointIndex");
     m_waypointIndexHasBeenSet = true;
@@ -49,6 +61,10 @@ RoutePedestrianPlace& RoutePedestrianPlace::operator=(JsonView jsonValue) {
 
 JsonValue RoutePedestrianPlace::Jsonize() const {
   JsonValue payload;
+
+  if (m_accessPointDetailsHasBeenSet) {
+    payload.WithObject("AccessPointDetails", m_accessPointDetails.Jsonize());
+  }
 
   if (m_nameHasBeenSet) {
     payload.WithString("Name", m_name);
@@ -72,6 +88,14 @@ JsonValue RoutePedestrianPlace::Jsonize() const {
 
   if (m_sideOfStreetHasBeenSet) {
     payload.WithString("SideOfStreet", RouteSideOfStreetMapper::GetNameForRouteSideOfStreet(m_sideOfStreet));
+  }
+
+  if (m_stationDetailsHasBeenSet) {
+    payload.WithObject("StationDetails", m_stationDetails.Jsonize());
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", RoutePedestrianPlaceTypeMapper::GetNameForRoutePedestrianPlaceType(m_type));
   }
 
   if (m_waypointIndexHasBeenSet) {

@@ -37,7 +37,7 @@ class StartTaskContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -79,7 +79,7 @@ class StartTaskContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-   * in the Amazon Connect admin website, on the navigation menu go to
+   * in the Connect Customer admin website, on the navigation menu go to
    * <b>Routing</b>, <b>Flows</b>. Choose the flow. On the flow page, under the name
    * of the flow, choose <b>Show additional flow information</b>. The ContactFlowId
    * is the last part of the ARN, shown here in bold: </p>
@@ -103,7 +103,7 @@ class StartTaskContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>A custom key-value pair using an attribute map. The attributes are standard
-   * Amazon Connect attributes, and can be accessed in flows just like any other
+   * Connect Customer attributes, and can be accessed in flows just like any other
    * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
    * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
    * and underscore characters.</p>
@@ -241,7 +241,7 @@ class StartTaskContactRequest : public ConnectRequest {
    * <p>A unique identifier for the task template. For more information about task
    * templates, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create
-   * task templates</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+   * task templates</a> in the <i>Connect Customer Administrator Guide</i>. </p>
    */
   inline const Aws::String& GetTaskTemplateId() const { return m_taskTemplateId; }
   inline bool TaskTemplateIdHasBeenSet() const { return m_taskTemplateIdHasBeenSet; }
@@ -307,8 +307,8 @@ class StartTaskContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>A set of system defined key-value pairs stored on individual contact segments
-   * (unique contact ID) using an attribute map. The attributes are standard Amazon
-   * Connect attributes. They can be accessed in flows.</p> <p>Attribute keys can
+   * (unique contact ID) using an attribute map. The attributes are standard Connect
+   * Customer attributes. They can be accessed in flows.</p> <p>Attribute keys can
    * include only alphanumeric, -, and _.</p> <p>This field can be used to set
    * Contact Expiry as a duration in minutes and set a UserId for the User who
    * created a task.</p>  <p>To set contact expiry, a ValueMap must be

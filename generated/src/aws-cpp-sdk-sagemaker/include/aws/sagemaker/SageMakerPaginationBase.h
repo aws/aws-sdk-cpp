@@ -48,6 +48,8 @@
 #include <aws/sagemaker/model/ListInferenceExperimentsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsPaginationTraits.h>
+#include <aws/sagemaker/model/ListJobSchemaVersionsPaginationTraits.h>
+#include <aws/sagemaker/model/ListJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamPaginationTraits.h>
 #include <aws/sagemaker/model/ListLabelingJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListLineageGroupsPaginationTraits.h>
@@ -581,6 +583,28 @@ class SageMakerPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInferenceRecommendationsJobStepsRequest,
                                              Pagination::ListInferenceRecommendationsJobStepsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>
+  ListJobsPaginator(const Model::ListJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListJobSchemaVersions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobSchemaVersionsRequest,
+                                    Pagination::ListJobSchemaVersionsPaginationTraits<DerivedClient>>
+  ListJobSchemaVersionsPaginator(const Model::ListJobSchemaVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobSchemaVersionsRequest,
+                                             Pagination::ListJobSchemaVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

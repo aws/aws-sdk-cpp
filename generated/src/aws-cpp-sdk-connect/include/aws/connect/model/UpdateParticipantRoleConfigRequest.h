@@ -31,7 +31,7 @@ class UpdateParticipantRoleConfigRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -51,7 +51,7 @@ class UpdateParticipantRoleConfigRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the contact in this instance of Amazon Connect. </p>
+   * <p>The identifier of the contact in this instance of Connect Customer. </p>
    */
   inline const Aws::String& GetContactId() const { return m_contactId; }
   inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
@@ -69,7 +69,7 @@ class UpdateParticipantRoleConfigRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The Amazon Connect channel you want to configure.</p>
+   * <p>The Connect Customer channel you want to configure.</p>
    */
   inline const UpdateParticipantRoleConfigChannelInfo& GetChannelConfiguration() const { return m_channelConfiguration; }
   inline bool ChannelConfigurationHasBeenSet() const { return m_channelConfigurationHasBeenSet; }

@@ -23,6 +23,10 @@ Aws::String CreateCustomModelRequest::SerializePayload() const {
     payload.WithObject("modelSourceConfig", m_modelSourceConfig.Jsonize());
   }
 
+  if (m_customModelDataSourceHasBeenSet) {
+    payload.WithObject("customModelDataSource", m_customModelDataSource.Jsonize());
+  }
+
   if (m_modelKmsKeyArnHasBeenSet) {
     payload.WithString("modelKmsKeyArn", m_modelKmsKeyArn);
   }

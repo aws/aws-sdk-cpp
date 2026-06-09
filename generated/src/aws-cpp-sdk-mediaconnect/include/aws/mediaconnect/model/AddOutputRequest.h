@@ -11,6 +11,7 @@
 #include <aws/mediaconnect/model/Encryption.h>
 #include <aws/mediaconnect/model/FlowTransitEncryption.h>
 #include <aws/mediaconnect/model/MediaStreamOutputConfigurationRequest.h>
+#include <aws/mediaconnect/model/NdiOutputTimecodeSource.h>
 #include <aws/mediaconnect/model/OutputStatus.h>
 #include <aws/mediaconnect/model/Protocol.h>
 #include <aws/mediaconnect/model/State.h>
@@ -438,6 +439,29 @@ class AddOutputRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Controls how MediaConnect generates timecodes for NDI output frames. If you
+   * don't specify this field, MediaConnect uses <code>EMBEDDED_TIMECODE</code>.</p>
+   * <ul> <li> <p> <code>EMBEDDED_TIMECODE</code> (default) - Preserves timecodes
+   * from the input transport stream. The timecodes must be embedded in the video
+   * stream as SEI timing messages. If no embedded timecode is detected, MediaConnect
+   * uses the UTC system time instead.</p> </li> <li> <p>
+   * <code>UTC_SYSTEM_TIME</code> - Generates timecodes based on the system clock
+   * time when each frame is sent.</p> </li> </ul>
+   */
+  inline NdiOutputTimecodeSource GetNdiOutputTimecodeSource() const { return m_ndiOutputTimecodeSource; }
+  inline bool NdiOutputTimecodeSourceHasBeenSet() const { return m_ndiOutputTimecodeSourceHasBeenSet; }
+  inline void SetNdiOutputTimecodeSource(NdiOutputTimecodeSource value) {
+    m_ndiOutputTimecodeSourceHasBeenSet = true;
+    m_ndiOutputTimecodeSource = value;
+  }
+  inline AddOutputRequest& WithNdiOutputTimecodeSource(NdiOutputTimecodeSource value) {
+    SetNdiOutputTimecodeSource(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_cidrAllowList;
 
@@ -480,6 +504,8 @@ class AddOutputRequest {
   State m_routerIntegrationState{State::NOT_SET};
 
   FlowTransitEncryption m_routerIntegrationTransitEncryption;
+
+  NdiOutputTimecodeSource m_ndiOutputTimecodeSource{NdiOutputTimecodeSource::NOT_SET};
   bool m_cidrAllowListHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
@@ -501,6 +527,7 @@ class AddOutputRequest {
   bool m_outputTagsHasBeenSet = false;
   bool m_routerIntegrationStateHasBeenSet = false;
   bool m_routerIntegrationTransitEncryptionHasBeenSet = false;
+  bool m_ndiOutputTimecodeSourceHasBeenSet = false;
 };
 
 }  // namespace Model

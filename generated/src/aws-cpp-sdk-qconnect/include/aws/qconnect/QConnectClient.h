@@ -1834,6 +1834,33 @@ class AWS_QCONNECT_API QConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the models available to an Amazon Q in Connect assistant in the
+   * assistant's Amazon Web Services Region. The available models are determined by
+   * the region of the specified assistant.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListModels">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListModelsOutcome ListModels(const Model::ListModelsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListModels that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListModelsRequestT = Model::ListModelsRequest>
+  Model::ListModelsOutcomeCallable ListModelsCallable(const ListModelsRequestT& request) const {
+    return SubmitCallable(&QConnectClient::ListModels, request);
+  }
+
+  /**
+   * An Async wrapper for ListModels that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListModelsRequestT = Model::ListModelsRequest>
+  void ListModelsAsync(const ListModelsRequestT& request, const ListModelsResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QConnectClient::ListModels, request, handler, context);
+  }
+
+  /**
    * <p>Lists information about quick response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListQuickResponses">AWS
    * API Reference</a></p>

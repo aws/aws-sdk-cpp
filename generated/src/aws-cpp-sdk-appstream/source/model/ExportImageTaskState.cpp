@@ -18,6 +18,7 @@ namespace ExportImageTaskStateMapper {
 static const int EXPORTING_HASH = HashingUtils::HashString("EXPORTING");
 static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
 
 ExportImageTaskState GetExportImageTaskStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ExportImageTaskState GetExportImageTaskStateForName(const Aws::String& name) {
     return ExportImageTaskState::COMPLETED;
   } else if (hashCode == FAILED_HASH) {
     return ExportImageTaskState::FAILED;
+  } else if (hashCode == TIMED_OUT_HASH) {
+    return ExportImageTaskState::TIMED_OUT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForExportImageTaskState(ExportImageTaskState enumValue) {
       return "COMPLETED";
     case ExportImageTaskState::FAILED:
       return "FAILED";
+    case ExportImageTaskState::TIMED_OUT:
+      return "TIMED_OUT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

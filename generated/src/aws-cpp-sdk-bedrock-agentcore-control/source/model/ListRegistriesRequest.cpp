@@ -36,4 +36,10 @@ void ListRegistriesRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("status", ss.str());
     ss.str("");
   }
+
+  if (m_authorizerTypeHasBeenSet) {
+    ss << RegistryAuthorizerTypeMapper::GetNameForRegistryAuthorizerType(m_authorizerType);
+    uri.AddQueryStringParameter("authorizerType", ss.str());
+    ss.str("");
+  }
 }

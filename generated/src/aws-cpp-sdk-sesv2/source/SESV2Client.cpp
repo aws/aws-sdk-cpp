@@ -116,6 +116,7 @@
 #include <aws/sesv2/model/PutEmailIdentityFeedbackAttributesRequest.h>
 #include <aws/sesv2/model/PutEmailIdentityMailFromAttributesRequest.h>
 #include <aws/sesv2/model/PutSuppressedDestinationRequest.h>
+#include <aws/sesv2/model/PutTenantSuppressionAttributesRequest.h>
 #include <aws/sesv2/model/SendBulkEmailRequest.h>
 #include <aws/sesv2/model/SendCustomVerificationEmailRequest.h>
 #include <aws/sesv2/model/SendEmailRequest.h>
@@ -153,12 +154,13 @@ const char* SESV2Client::GetAllocationTag() { return ALLOCATION_TAG; }
 
 SESV2Client::SESV2Client(const SESV2::SESV2ClientConfiguration& clientConfiguration,
                          std::shared_ptr<SESV2EndpointProviderBase> endpointProvider)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),
+    : BASECLASS(
+          clientConfiguration,
+          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
+              ALLOCATION_TAG,
+              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+          Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);
@@ -190,12 +192,13 @@ SESV2Client::SESV2Client(const std::shared_ptr<AWSCredentialsProvider>& credenti
 
 /* Legacy constructors due deprecation */
 SESV2Client::SESV2Client(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),
+    : BASECLASS(
+          clientConfiguration,
+          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
+              ALLOCATION_TAG,
+              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+          Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);
@@ -1807,6 +1810,18 @@ PutSuppressedDestinationOutcome SESV2Client::PutSuppressedDestination(const PutS
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutSuppressedDestinationOutcome(result.GetResultWithOwnership())
                             : PutSuppressedDestinationOutcome(std::move(result.GetError()));
+}
+
+PutTenantSuppressionAttributesOutcome SESV2Client::PutTenantSuppressionAttributes(
+    const PutTenantSuppressionAttributesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/tenant/suppression");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutTenantSuppressionAttributesOutcome(result.GetResultWithOwnership())
+                            : PutTenantSuppressionAttributesOutcome(std::move(result.GetError()));
 }
 
 SendBulkEmailOutcome SESV2Client::SendBulkEmail(const SendBulkEmailRequest& request) const {

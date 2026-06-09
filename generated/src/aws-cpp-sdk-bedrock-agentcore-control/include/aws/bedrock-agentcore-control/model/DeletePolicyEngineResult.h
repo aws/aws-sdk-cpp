@@ -68,23 +68,6 @@ class DeletePolicyEngineResult {
 
   ///@{
   /**
-   * <p>The human-readable description of the deleted policy engine.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  DeletePolicyEngineResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The timestamp when the deleted policy engine was originally created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -156,6 +139,41 @@ class DeletePolicyEngineResult {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy
+   * engine data.</p>
+   */
+  inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
+  template <typename EncryptionKeyArnT = Aws::String>
+  void SetEncryptionKeyArn(EncryptionKeyArnT&& value) {
+    m_encryptionKeyArnHasBeenSet = true;
+    m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value);
+  }
+  template <typename EncryptionKeyArnT = Aws::String>
+  DeletePolicyEngineResult& WithEncryptionKeyArn(EncryptionKeyArnT&& value) {
+    SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The human-readable description of the deleted policy engine.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  DeletePolicyEngineResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Additional information about the deletion status. This provides details about
    * the deletion process or any issues that may have occurred.</p>
    */
@@ -174,24 +192,6 @@ class DeletePolicyEngineResult {
   DeletePolicyEngineResult& AddStatusReasons(StatusReasonsT&& value) {
     m_statusReasonsHasBeenSet = true;
     m_statusReasons.emplace_back(std::forward<StatusReasonsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy
-   * engine data.</p>
-   */
-  inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
-  template <typename EncryptionKeyArnT = Aws::String>
-  void SetEncryptionKeyArn(EncryptionKeyArnT&& value) {
-    m_encryptionKeyArnHasBeenSet = true;
-    m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value);
-  }
-  template <typename EncryptionKeyArnT = Aws::String>
-  DeletePolicyEngineResult& WithEncryptionKeyArn(EncryptionKeyArnT&& value) {
-    SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value));
     return *this;
   }
   ///@}
@@ -217,8 +217,6 @@ class DeletePolicyEngineResult {
 
   Aws::String m_name;
 
-  Aws::String m_description;
-
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -227,21 +225,23 @@ class DeletePolicyEngineResult {
 
   PolicyEngineStatus m_status{PolicyEngineStatus::NOT_SET};
 
-  Aws::Vector<Aws::String> m_statusReasons;
-
   Aws::String m_encryptionKeyArn;
+
+  Aws::String m_description;
+
+  Aws::Vector<Aws::String> m_statusReasons;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyEngineIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_policyEngineArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
-  bool m_statusReasonsHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusReasonsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

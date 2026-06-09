@@ -67,6 +67,8 @@ class CreateGrantRequest : public KMSRequest {
    * ARN syntax for a principal, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
    * ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+   * <p>You must specify either <code>GranteePrincipal</code> or
+   * <code>GranteeServicePrincipal</code>, but not both.</p>
    */
   inline const Aws::String& GetGranteePrincipal() const { return m_granteePrincipal; }
   inline bool GranteePrincipalHasBeenSet() const { return m_granteePrincipalHasBeenSet; }
@@ -97,7 +99,8 @@ class CreateGrantRequest : public KMSRequest {
    * <a>RevokeGrant</a> and <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-delete.html">Retiring
    * and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.
-   * </p>
+   * </p> <p>You can specify either <code>RetiringPrincipal</code> or
+   * <code>RetiringServicePrincipal</code>, but not both.</p>
    */
   inline const Aws::String& GetRetiringPrincipal() const { return m_retiringPrincipal; }
   inline bool RetiringPrincipalHasBeenSet() const { return m_retiringPrincipalHasBeenSet; }
@@ -148,30 +151,42 @@ class CreateGrantRequest : public KMSRequest {
    * <p>Specifies a grant constraint.</p>  <p>Do not include confidential
    * or sensitive information in this field. This field may be displayed in plaintext
    * in CloudTrail logs and other output.</p>  <p>KMS supports the
-   * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
-   * grant constraints, which allow the permissions in the grant only when the
-   * encryption context in the request matches (<code>EncryptionContextEquals</code>)
-   * or includes (<code>EncryptionContextSubset</code>) the encryption context
-   * specified in the constraint. </p> <p>The encryption context grant constraints
-   * are supported only on <a
+   * following grant constraints.</p> <ul> <li> <p>
+   * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code> —
+   * These encryption context grant constraints allow the permissions in the grant
+   * only when the encryption context in the request matches
+   * (<code>EncryptionContextEquals</code>) or includes
+   * (<code>EncryptionContextSubset</code>) the encryption context specified in the
+   * constraint.</p> <p>Encryption context grant constraints are supported only on <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">grant
    * operations</a> that include an <code>EncryptionContext</code> parameter, such as
-   * cryptographic operations on symmetric encryption KMS keys. Grants with grant
-   * constraints can include the <a>DescribeKey</a> and <a>RetireGrant</a>
-   * operations, but the constraint doesn't apply to these operations. If a grant
-   * with a grant constraint includes the <code>CreateGrant</code> operation, the
-   * constraint requires that any grants created with the <code>CreateGrant</code>
-   * permission have an equally strict or stricter encryption context constraint.</p>
-   * <p>You cannot use an encryption context grant constraint for cryptographic
-   * operations with asymmetric KMS keys or HMAC KMS keys. Operations with these keys
-   * don't support an encryption context.</p> <p>Each constraint value can include up
-   * to 8 encryption context pairs. The encryption context value in each constraint
-   * cannot exceed 384 characters. For information about grant constraints, see <a
-   * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
-   * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For
-   * more information about encryption context, see <a
+   * cryptographic operations on symmetric encryption KMS keys. You cannot use an
+   * encryption context grant constraint for cryptographic operations with asymmetric
+   * KMS keys or HMAC KMS keys. Operations with these keys don't support an
+   * encryption context. Grants with encryption context grant constraints can include
+   * the <a>DescribeKey</a> and <a>RetireGrant</a> operations, but the constraint
+   * doesn't apply to these operations. If a grant with an encryption context grant
+   * constraint includes the <code>CreateGrant</code> operation, the constraint
+   * requires that any grants created with the <code>CreateGrant</code> permission
+   * have an equally strict or stricter encryption context constraint. </p> <p>Each
+   * constraint value can include up to 8 encryption context pairs. The encryption
+   * context value in each constraint cannot exceed 384 characters. For more
+   * information about encryption context, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-   * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
+   * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+   * </li> <li> <p> <code>SourceArn</code> — This grant constraint allows the
+   * permissions in the grant only when the request is made on behalf of a specific
+   * Amazon Web Services resource, identified by its <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+   * Resource Name (ARN)</a>. This is effectively the same as having the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a>
+   * global condition key in the grant. The SourceArn constraint is supported on
+   * grants for all types of KMS keys and can also be applied to the
+   * <a>DescribeKey</a> operation when specified in the request. However, it does not
+   * apply to <a>RetireGrant</a> operation.</p> </li> </ul> <p>For information about
+   * grant constraints, see <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+   * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. </p>
    */
   inline const GrantConstraints& GetConstraints() const { return m_constraints; }
   inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
@@ -266,6 +281,53 @@ class CreateGrantRequest : public KMSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+   * principal</a> that gets the permissions specified in the grant. </p> <p>When you
+   * specify a <code>GranteeServicePrincipal</code>, you must also specify a
+   * <code>SourceArn</code> grant constraint. In addition, you must specify either a
+   * <code>RetiringPrincipal</code> or a <code>RetiringServicePrincipal</code>. </p>
+   * <p>You must specify either <code>GranteePrincipal</code> or
+   * <code>GranteeServicePrincipal</code>, but not both.</p>
+   */
+  inline const Aws::String& GetGranteeServicePrincipal() const { return m_granteeServicePrincipal; }
+  inline bool GranteeServicePrincipalHasBeenSet() const { return m_granteeServicePrincipalHasBeenSet; }
+  template <typename GranteeServicePrincipalT = Aws::String>
+  void SetGranteeServicePrincipal(GranteeServicePrincipalT&& value) {
+    m_granteeServicePrincipalHasBeenSet = true;
+    m_granteeServicePrincipal = std::forward<GranteeServicePrincipalT>(value);
+  }
+  template <typename GranteeServicePrincipalT = Aws::String>
+  CreateGrantRequest& WithGranteeServicePrincipal(GranteeServicePrincipalT&& value) {
+    SetGranteeServicePrincipal(std::forward<GranteeServicePrincipalT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+   * principal</a> that has permission to use the <a>RetireGrant</a> operation to
+   * retire the grant.</p> <p>You can specify either <code>RetiringPrincipal</code>
+   * or <code>RetiringServicePrincipal</code>, but not both.</p>
+   */
+  inline const Aws::String& GetRetiringServicePrincipal() const { return m_retiringServicePrincipal; }
+  inline bool RetiringServicePrincipalHasBeenSet() const { return m_retiringServicePrincipalHasBeenSet; }
+  template <typename RetiringServicePrincipalT = Aws::String>
+  void SetRetiringServicePrincipal(RetiringServicePrincipalT&& value) {
+    m_retiringServicePrincipalHasBeenSet = true;
+    m_retiringServicePrincipal = std::forward<RetiringServicePrincipalT>(value);
+  }
+  template <typename RetiringServicePrincipalT = Aws::String>
+  CreateGrantRequest& WithRetiringServicePrincipal(RetiringServicePrincipalT&& value) {
+    SetRetiringServicePrincipal(std::forward<RetiringServicePrincipalT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_keyId;
 
@@ -282,6 +344,10 @@ class CreateGrantRequest : public KMSRequest {
   Aws::String m_name;
 
   bool m_dryRun{false};
+
+  Aws::String m_granteeServicePrincipal;
+
+  Aws::String m_retiringServicePrincipal;
   bool m_keyIdHasBeenSet = false;
   bool m_granteePrincipalHasBeenSet = false;
   bool m_retiringPrincipalHasBeenSet = false;
@@ -290,6 +356,8 @@ class CreateGrantRequest : public KMSRequest {
   bool m_grantTokensHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
+  bool m_granteeServicePrincipalHasBeenSet = false;
+  bool m_retiringServicePrincipalHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/keyspacesstreams/KeyspacesStreams_EXPORTS.h>
+#include <aws/keyspacesstreams/model/IteratorDescription.h>
 #include <aws/keyspacesstreams/model/Record.h>
 
 #include <utility>
@@ -75,6 +76,24 @@ class GetRecordsResult {
   ///@}
 
   ///@{
+  /**
+   * <p> Provides information about the current iterator at the time GetRecords
+   * request was processed by Keyspaces. </p>
+   */
+  inline const IteratorDescription& GetIteratorDescription() const { return m_iteratorDescription; }
+  template <typename IteratorDescriptionT = IteratorDescription>
+  void SetIteratorDescription(IteratorDescriptionT&& value) {
+    m_iteratorDescriptionHasBeenSet = true;
+    m_iteratorDescription = std::forward<IteratorDescriptionT>(value);
+  }
+  template <typename IteratorDescriptionT = IteratorDescription>
+  GetRecordsResult& WithIteratorDescription(IteratorDescriptionT&& value) {
+    SetIteratorDescription(std::forward<IteratorDescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -95,10 +114,13 @@ class GetRecordsResult {
 
   Aws::String m_nextShardIterator;
 
+  IteratorDescription m_iteratorDescription;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_changeRecordsHasBeenSet = false;
   bool m_nextShardIteratorHasBeenSet = false;
+  bool m_iteratorDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

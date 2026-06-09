@@ -15,6 +15,7 @@
 #include <aws/elasticmapreduce/model/ListNotebookExecutionsPaginationTraits.h>
 #include <aws/elasticmapreduce/model/ListReleaseLabelsPaginationTraits.h>
 #include <aws/elasticmapreduce/model/ListSecurityConfigurationsPaginationTraits.h>
+#include <aws/elasticmapreduce/model/ListSessionsPaginationTraits.h>
 #include <aws/elasticmapreduce/model/ListStepsPaginationTraits.h>
 #include <aws/elasticmapreduce/model/ListStudioSessionMappingsPaginationTraits.h>
 #include <aws/elasticmapreduce/model/ListStudiosPaginationTraits.h>
@@ -120,6 +121,17 @@ class EMRPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityConfigurationsRequest,
                                              Pagination::ListSecurityConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListSessions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest, Pagination::ListSessionsPaginationTraits<DerivedClient>>
+  ListSessionsPaginator(const Model::ListSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest,
+                                             Pagination::ListSessionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                      request};
   }
 
   /**

@@ -191,11 +191,12 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * <p>For other <code>taxRegistrationNumberType</code> values,
    * <code>ppnExceptionDesignationCode</code> must be either <code>01</code>,
    * <code>07</code>, or <code>08</code>.</p> </li> <li> <p>If
-   * <code>ppnExceptionDesignationCode</code> is <code>07</code>, you must specify
-   * the <code>decisionNumber</code> in the <code>indonesiaAdditionalInfo</code>
-   * field of the <code>additionalTaxInformation</code> object.</p> </li> </ul> <p>
-   * <b>Kenya</b> </p> <ul> <li> <p>You must specify the <code>personType</code> in
-   * the <code>kenyaAdditionalInfo</code> field of the
+   * <code>ppnExceptionDesignationCode</code> is <code>07</code> or <code>08</code>,
+   * you must specify the <code>decisionNumber</code> in the
+   * <code>indonesiaAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Kenya</b>
+   * </p> <ul> <li> <p>You must specify the <code>personType</code> in the
+   * <code>kenyaAdditionalInfo</code> field of the
    * <code>additionalTaxInformation</code> object.</p> </li> <li> <p>If the
    * <code>personType</code> is <code>Physical Person</code>, you must specify the
    * tax registration certificate document in the
@@ -227,15 +228,18 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * yourself as an authorized registered business reseller.</p> <p>Taxable service
    * and service tax codes:</p> <p>Consultancy - 9907061674</p> <p>Training or
    * coaching service - 9907071685</p> <p>IT service - 9907101676</p> <p>Digital
-   * services and electronic medium - 9907121690</p> </li> </ul> <p> <b>Nepal</b>
-   * </p> <ul> <li> <p>The sector valid values are <code>Business</code> and
-   * <code>Individual</code>.</p> </li> </ul> <p> <b>Saudi Arabia</b> </p> <ul> <li>
-   * <p>For <code>address</code>, you must specify <code>addressLine3</code>.</p>
-   * </li> </ul> <p> <b>South Korea</b> </p> <ul> <li> <p>You must specify the
-   * <code>certifiedEmailId</code> and <code>legalName</code> in the
-   * <code>TaxRegistrationEntry</code> object. Use Korean characters for
-   * <code>legalName</code>.</p> </li> <li> <p>You must specify the
-   * <code>businessRepresentativeName</code>, <code>itemOfBusiness</code>, and
+   * services and electronic medium - 9907121690</p> </li> </ul> <p> <b>Mexico</b>
+   * </p> <ul> <li> <p>You must provide a Constancia de Situación fiscal (CSF)
+   * document in the <b>verificationDetails</b> field.</p> </li> <li> <p>You do not
+   * need to provide address and legal name. These will be populated based on your
+   * tax registration number.</p> </li> </ul> <p> <b>Nepal</b> </p> <ul> <li> <p>The
+   * sector valid values are <code>Business</code> and <code>Individual</code>.</p>
+   * </li> </ul> <p> <b>Saudi Arabia</b> </p> <ul> <li> <p>For <code>address</code>,
+   * you must specify <code>addressLine3</code>.</p> </li> </ul> <p> <b>South
+   * Korea</b> </p> <ul> <li> <p>You must specify the <code>certifiedEmailId</code>
+   * and <code>legalName</code> in the <code>TaxRegistrationEntry</code> object. Use
+   * Korean characters for <code>legalName</code>.</p> </li> <li> <p>You must specify
+   * the <code>businessRepresentativeName</code>, <code>itemOfBusiness</code>, and
    * <code>lineOfBusiness</code> in the <code>southKoreaAdditionalInfo</code> field
    * of the <code>additionalTaxInformation</code> object. Use Korean characters for
    * these fields.</p> </li> <li> <p>You must specify the tax registration
@@ -264,7 +268,26 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * <code>industries</code> field.</p> </li> <li> <p>For <code>address</code>, you
    * must specify <code>districtOrCounty</code>.</p> </li> </ul> <p> <b>Ukraine</b>
    * </p> <ul> <li> <p>The sector valid values are <code>Business</code> and
-   * <code>Individual</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <code>Individual</code>.</p> </li> </ul> <p> <b>Philippines</b> </p> <ul> <li>
+   * <p>You can optionally specify the <code>isVatRegistered</code> in the
+   * <code>philippinesAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object to indicate your VAT registration
+   * status with the Bureau of Internal Revenue (BIR).</p> </li> </ul> <p>
+   * <b>Belgium</b> </p> <ul> <li> <p>You can optionally specify the
+   * <code>peppolId</code> in the <code>belgiumAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Chile</b>
+   * </p> <ul> <li> <p>You can optionally specify the <code>documentType</code> and
+   * <code>businessActivity</code> in the <code>chileAdditionalInfo</code> field of
+   * the <code>additionalTaxInformation</code> object.</p> </li> </ul> <p>
+   * <b>France</b> </p> <ul> <li> <p>You must specify the <code>sirenNumber</code> in
+   * the <code>franceAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Poland</b>
+   * </p> <ul> <li> <p>You can optionally specify the
+   * <code>taxRegistrationNumberType</code> in the <code>polandAdditionalInfo</code>
+   * field of the <code>additionalTaxInformation</code> object. Valid values are
+   * <code>EUTaxRegistrationNumber</code>, <code>LocalTaxRegistrationNumber</code>,
+   * or <code>LocalRegistrationNumber</code>.</p> </li> </ul><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchPutTaxRegistration">AWS
    * API Reference</a></p>
    */
@@ -680,11 +703,12 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * <p>For other <code>taxRegistrationNumberType</code> values,
    * <code>ppnExceptionDesignationCode</code> must be either <code>01</code>,
    * <code>07</code>, or <code>08</code>.</p> </li> <li> <p>If
-   * <code>ppnExceptionDesignationCode</code> is <code>07</code>, you must specify
-   * the <code>decisionNumber</code> in the <code>indonesiaAdditionalInfo</code>
-   * field of the <code>additionalTaxInformation</code> object.</p> </li> </ul> <p>
-   * <b>Kenya</b> </p> <ul> <li> <p>You must specify the <code>personType</code> in
-   * the <code>kenyaAdditionalInfo</code> field of the
+   * <code>ppnExceptionDesignationCode</code> is <code>07</code> or <code>08</code>,
+   * you must specify the <code>decisionNumber</code> in the
+   * <code>indonesiaAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Kenya</b>
+   * </p> <ul> <li> <p>You must specify the <code>personType</code> in the
+   * <code>kenyaAdditionalInfo</code> field of the
    * <code>additionalTaxInformation</code> object.</p> </li> <li> <p>If the
    * <code>personType</code> is <code>Physical Person</code>, you must specify the
    * tax registration certificate document in the
@@ -716,15 +740,18 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * yourself as an authorized registered business reseller.</p> <p>Taxable service
    * and service tax codes:</p> <p>Consultancy - 9907061674</p> <p>Training or
    * coaching service - 9907071685</p> <p>IT service - 9907101676</p> <p>Digital
-   * services and electronic medium - 9907121690</p> </li> </ul> <p> <b>Nepal</b>
-   * </p> <ul> <li> <p>The sector valid values are <code>Business</code> and
-   * <code>Individual</code>.</p> </li> </ul> <p> <b>Saudi Arabia</b> </p> <ul> <li>
-   * <p>For <code>address</code>, you must specify <code>addressLine3</code>.</p>
-   * </li> </ul> <p> <b>South Korea</b> </p> <ul> <li> <p>You must specify the
-   * <code>certifiedEmailId</code> and <code>legalName</code> in the
-   * <code>TaxRegistrationEntry</code> object. Use Korean characters for
-   * <code>legalName</code>.</p> </li> <li> <p>You must specify the
-   * <code>businessRepresentativeName</code>, <code>itemOfBusiness</code>, and
+   * services and electronic medium - 9907121690</p> </li> </ul> <p> <b>Mexico</b>
+   * </p> <ul> <li> <p>You must provide a Constancia de Situación fiscal (CSF)
+   * document in the <b>verificationDetails</b> field.</p> </li> <li> <p>You do not
+   * need to provide address and legal name. These will be populated based on your
+   * tax registration number.</p> </li> </ul> <p> <b>Nepal</b> </p> <ul> <li> <p>The
+   * sector valid values are <code>Business</code> and <code>Individual</code>.</p>
+   * </li> </ul> <p> <b>Saudi Arabia</b> </p> <ul> <li> <p>For <code>address</code>,
+   * you must specify <code>addressLine3</code>.</p> </li> </ul> <p> <b>South
+   * Korea</b> </p> <ul> <li> <p>You must specify the <code>certifiedEmailId</code>
+   * and <code>legalName</code> in the <code>TaxRegistrationEntry</code> object. Use
+   * Korean characters for <code>legalName</code>.</p> </li> <li> <p>You must specify
+   * the <code>businessRepresentativeName</code>, <code>itemOfBusiness</code>, and
    * <code>lineOfBusiness</code> in the <code>southKoreaAdditionalInfo</code> field
    * of the <code>additionalTaxInformation</code> object. Use Korean characters for
    * these fields.</p> </li> <li> <p>You must specify the tax registration
@@ -753,7 +780,26 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * <code>industries</code> field.</p> </li> <li> <p>For <code>address</code>, you
    * must specify <code>districtOrCounty</code>.</p> </li> </ul> <p> <b>Ukraine</b>
    * </p> <ul> <li> <p>The sector valid values are <code>Business</code> and
-   * <code>Individual</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <code>Individual</code>.</p> </li> </ul> <p> <b>Philippines</b> </p> <ul> <li>
+   * <p>You can optionally specify the <code>isVatRegistered</code> in the
+   * <code>philippinesAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object to indicate your VAT registration
+   * status with the Bureau of Internal Revenue (BIR).</p> </li> </ul> <p>
+   * <b>Belgium</b> </p> <ul> <li> <p>You can optionally specify the
+   * <code>peppolId</code> in the <code>belgiumAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Chile</b>
+   * </p> <ul> <li> <p>You can optionally specify the <code>documentType</code> and
+   * <code>businessActivity</code> in the <code>chileAdditionalInfo</code> field of
+   * the <code>additionalTaxInformation</code> object.</p> </li> </ul> <p>
+   * <b>France</b> </p> <ul> <li> <p>You must specify the <code>sirenNumber</code> in
+   * the <code>franceAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Poland</b>
+   * </p> <ul> <li> <p>You can optionally specify the
+   * <code>taxRegistrationNumberType</code> in the <code>polandAdditionalInfo</code>
+   * field of the <code>additionalTaxInformation</code> object. Valid values are
+   * <code>EUTaxRegistrationNumber</code>, <code>LocalTaxRegistrationNumber</code>,
+   * or <code>LocalRegistrationNumber</code>.</p> </li> </ul><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxRegistration">AWS
    * API Reference</a></p>
    */

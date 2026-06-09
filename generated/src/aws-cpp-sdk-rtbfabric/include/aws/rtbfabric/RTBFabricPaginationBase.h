@@ -7,6 +7,8 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/rtbfabric/model/ListCertificateAssociationsPaginationTraits.h>
+#include <aws/rtbfabric/model/ListLinkRoutingRulesPaginationTraits.h>
 #include <aws/rtbfabric/model/ListLinksPaginationTraits.h>
 #include <aws/rtbfabric/model/ListRequesterGatewaysPaginationTraits.h>
 #include <aws/rtbfabric/model/ListResponderGatewaysPaginationTraits.h>
@@ -19,6 +21,30 @@ namespace RTBFabric {
 template <typename DerivedClient>
 class RTBFabricPaginationBase {
  public:
+  /**
+   * Create a paginator for ListCertificateAssociations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCertificateAssociationsRequest,
+                                    Pagination::ListCertificateAssociationsPaginationTraits<DerivedClient>>
+  ListCertificateAssociationsPaginator(const Model::ListCertificateAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCertificateAssociationsRequest,
+                                             Pagination::ListCertificateAssociationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListLinkRoutingRules operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLinkRoutingRulesRequest,
+                                    Pagination::ListLinkRoutingRulesPaginationTraits<DerivedClient>>
+  ListLinkRoutingRulesPaginator(const Model::ListLinkRoutingRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLinkRoutingRulesRequest,
+                                             Pagination::ListLinkRoutingRulesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListLinks operation
    */

@@ -40,6 +40,8 @@
 #include <aws/connect/model/AgentStatusType.h>
 #include <aws/connect/model/AgentsCriteria.h>
 #include <aws/connect/model/AiAgentInfo.h>
+#include <aws/connect/model/AiAgentSearchCriteria.h>
+#include <aws/connect/model/AiAgentsCriteria.h>
 #include <aws/connect/model/AiUseCase.h>
 #include <aws/connect/model/AliasConfiguration.h>
 #include <aws/connect/model/AllowedCapabilities.h>
@@ -194,6 +196,7 @@
 #include <aws/connect/model/ContactRecordingType.h>
 #include <aws/connect/model/ContactSearchSummary.h>
 #include <aws/connect/model/ContactSearchSummaryAgentInfo.h>
+#include <aws/connect/model/ContactSearchSummaryAiAgentInfo.h>
 #include <aws/connect/model/ContactSearchSummaryQueueInfo.h>
 #include <aws/connect/model/ContactSearchSummarySegmentAttributeValue.h>
 #include <aws/connect/model/ContactState.h>

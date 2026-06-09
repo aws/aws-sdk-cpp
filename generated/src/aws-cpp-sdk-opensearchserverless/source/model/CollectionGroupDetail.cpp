@@ -53,9 +53,17 @@ CollectionGroupDetail& CollectionGroupDetail::operator=(JsonView jsonValue) {
     m_capacityLimits = jsonValue.GetObject("capacityLimits");
     m_capacityLimitsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("currentCapacity")) {
+    m_currentCapacity = jsonValue.GetObject("currentCapacity");
+    m_currentCapacityHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("numberOfCollections")) {
     m_numberOfCollections = jsonValue.GetInteger("numberOfCollections");
     m_numberOfCollectionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("generation")) {
+    m_generation = ServerlessGenerationMapper::GetServerlessGenerationForName(jsonValue.GetString("generation"));
+    m_generationHasBeenSet = true;
   }
   return *this;
 }
@@ -99,8 +107,16 @@ JsonValue CollectionGroupDetail::Jsonize() const {
     payload.WithObject("capacityLimits", m_capacityLimits.Jsonize());
   }
 
+  if (m_currentCapacityHasBeenSet) {
+    payload.WithObject("currentCapacity", m_currentCapacity.Jsonize());
+  }
+
   if (m_numberOfCollectionsHasBeenSet) {
     payload.WithInteger("numberOfCollections", m_numberOfCollections);
+  }
+
+  if (m_generationHasBeenSet) {
+    payload.WithString("generation", ServerlessGenerationMapper::GetNameForServerlessGeneration(m_generation));
   }
 
   return payload;

@@ -33,8 +33,8 @@ class ResetConnectorMetadataCacheRequest : public AppflowRequest {
   /**
    * <p>The name of the connector profile that you want to reset cached metadata
    * for.</p> <p>You can omit this parameter if you're resetting the cache for any of
-   * the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for
-   * Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other
+   * the following connectors: Connect Customer, Amazon EventBridge, Amazon Lookout
+   * for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other
    * connector, you must include this parameter in your request.</p>
    */
   inline const Aws::String& GetConnectorProfileName() const { return m_connectorProfileName; }
@@ -55,7 +55,7 @@ class ResetConnectorMetadataCacheRequest : public AppflowRequest {
   /**
    * <p>The type of connector to reset cached metadata for.</p> <p>You must include
    * this parameter in your request if you're resetting the cache for any of the
-   * following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for
+   * following connectors: Connect Customer, Amazon EventBridge, Amazon Lookout for
    * Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other
    * connector, you can omit this parameter from your request. </p>
    */

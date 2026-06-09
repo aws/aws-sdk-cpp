@@ -55,6 +55,10 @@ Aws::String PutProcurementPortalPreferenceRequest::SerializePayload() const {
     payload.WithArray("Contacts", std::move(contactsJsonList));
   }
 
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
+  }
+
   return payload.View().WriteReadable();
 }
 

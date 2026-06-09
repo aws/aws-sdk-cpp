@@ -7,6 +7,8 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/socialmessaging/SocialMessagingClient.h>
 #include <aws/socialmessaging/model/ListLinkedWhatsAppBusinessAccountsPaginationTraits.h>
+#include <aws/socialmessaging/model/ListWhatsAppFlowAssetsPaginationTraits.h>
+#include <aws/socialmessaging/model/ListWhatsAppFlowsPaginationTraits.h>
 #include <aws/socialmessaging/model/ListWhatsAppMessageTemplatesPaginationTraits.h>
 #include <aws/socialmessaging/model/ListWhatsAppTemplateLibraryPaginationTraits.h>
 
@@ -16,6 +18,11 @@ namespace SocialMessaging {
 using ListLinkedWhatsAppBusinessAccountsPaginator =
     Aws::Utils::Pagination::Paginator<SocialMessagingClient, Model::ListLinkedWhatsAppBusinessAccountsRequest,
                                       Pagination::ListLinkedWhatsAppBusinessAccountsPaginationTraits<SocialMessagingClient>>;
+using ListWhatsAppFlowAssetsPaginator =
+    Aws::Utils::Pagination::Paginator<SocialMessagingClient, Model::ListWhatsAppFlowAssetsRequest,
+                                      Pagination::ListWhatsAppFlowAssetsPaginationTraits<SocialMessagingClient>>;
+using ListWhatsAppFlowsPaginator = Aws::Utils::Pagination::Paginator<SocialMessagingClient, Model::ListWhatsAppFlowsRequest,
+                                                                     Pagination::ListWhatsAppFlowsPaginationTraits<SocialMessagingClient>>;
 using ListWhatsAppMessageTemplatesPaginator =
     Aws::Utils::Pagination::Paginator<SocialMessagingClient, Model::ListWhatsAppMessageTemplatesRequest,
                                       Pagination::ListWhatsAppMessageTemplatesPaginationTraits<SocialMessagingClient>>;

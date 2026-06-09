@@ -10,6 +10,7 @@
 #include <aws/pi/model/GetResourceMetricsPaginationTraits.h>
 #include <aws/pi/model/ListAvailableResourceDimensionsPaginationTraits.h>
 #include <aws/pi/model/ListAvailableResourceMetricsPaginationTraits.h>
+#include <aws/pi/model/ListPerformanceAnalysisReportRecommendationsPaginationTraits.h>
 #include <aws/pi/model/ListPerformanceAnalysisReportsPaginationTraits.h>
 
 namespace Aws {
@@ -25,6 +26,9 @@ using ListAvailableResourceDimensionsPaginator =
 using ListAvailableResourceMetricsPaginator =
     Aws::Utils::Pagination::Paginator<PIClient, Model::ListAvailableResourceMetricsRequest,
                                       Pagination::ListAvailableResourceMetricsPaginationTraits<PIClient>>;
+using ListPerformanceAnalysisReportRecommendationsPaginator =
+    Aws::Utils::Pagination::Paginator<PIClient, Model::ListPerformanceAnalysisReportRecommendationsRequest,
+                                      Pagination::ListPerformanceAnalysisReportRecommendationsPaginationTraits<PIClient>>;
 using ListPerformanceAnalysisReportsPaginator =
     Aws::Utils::Pagination::Paginator<PIClient, Model::ListPerformanceAnalysisReportsRequest,
                                       Pagination::ListPerformanceAnalysisReportsPaginationTraits<PIClient>>;

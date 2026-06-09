@@ -27,5 +27,13 @@ Aws::String SendMessageRequest::SerializePayload() const {
     payload.WithObject("context", m_context.Jsonize());
   }
 
+  if (m_assetIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> assetIdsJsonList(m_assetIds.size());
+    for (unsigned assetIdsIndex = 0; assetIdsIndex < assetIdsJsonList.GetLength(); ++assetIdsIndex) {
+      assetIdsJsonList[assetIdsIndex].AsString(m_assetIds[assetIdsIndex]);
+    }
+    payload.WithArray("assetIds", std::move(assetIdsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

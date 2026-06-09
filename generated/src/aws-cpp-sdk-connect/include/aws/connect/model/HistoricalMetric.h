@@ -38,7 +38,7 @@ class HistoricalMetric {
   ///@{
   /**
    * <p>The name of the metric. Following is a list of each supported metric mapped
-   * to the UI name, linked to a detailed description in the <i>Amazon Connect
+   * to the UI name, linked to a detailed description in the <i>Connect Customer
    * Administrator Guide</i>. </p> <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit:
    * SECONDS</p> <p>Statistic: AVG</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average

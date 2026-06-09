@@ -11,6 +11,7 @@
 #include <aws/glue/model/ConnectionsList.h>
 #include <aws/glue/model/SessionCommand.h>
 #include <aws/glue/model/SessionStatus.h>
+#include <aws/glue/model/SessionType.h>
 #include <aws/glue/model/WorkerType.h>
 
 #include <utility>
@@ -396,6 +397,22 @@ class Session {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the session.</p>
+   */
+  inline SessionType GetSessionType() const { return m_sessionType; }
+  inline bool SessionTypeHasBeenSet() const { return m_sessionTypeHasBeenSet; }
+  inline void SetSessionType(SessionType value) {
+    m_sessionTypeHasBeenSet = true;
+    m_sessionType = value;
+  }
+  inline Session& WithSessionType(SessionType value) {
+    SetSessionType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -436,6 +453,8 @@ class Session {
   int m_idleTimeout{0};
 
   Aws::String m_profileName;
+
+  SessionType m_sessionType{SessionType::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_createdOnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -456,6 +475,7 @@ class Session {
   bool m_dPUSecondsHasBeenSet = false;
   bool m_idleTimeoutHasBeenSet = false;
   bool m_profileNameHasBeenSet = false;
+  bool m_sessionTypeHasBeenSet = false;
 };
 
 }  // namespace Model

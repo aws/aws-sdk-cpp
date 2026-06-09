@@ -23,6 +23,7 @@ enum class CapacityReservationState {
   assessing,
   delayed,
   unsupported,
+  cancelling,
   unavailable
 };
 

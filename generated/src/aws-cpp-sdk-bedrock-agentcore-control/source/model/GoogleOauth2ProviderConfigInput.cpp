@@ -26,6 +26,14 @@ GoogleOauth2ProviderConfigInput& GoogleOauth2ProviderConfigInput::operator=(Json
     m_clientSecret = jsonValue.GetString("clientSecret");
     m_clientSecretHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("clientSecretConfig")) {
+    m_clientSecretConfig = jsonValue.GetObject("clientSecretConfig");
+    m_clientSecretConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("clientSecretSource")) {
+    m_clientSecretSource = SecretSourceTypeMapper::GetSecretSourceTypeForName(jsonValue.GetString("clientSecretSource"));
+    m_clientSecretSourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue GoogleOauth2ProviderConfigInput::Jsonize() const {
 
   if (m_clientSecretHasBeenSet) {
     payload.WithString("clientSecret", m_clientSecret);
+  }
+
+  if (m_clientSecretConfigHasBeenSet) {
+    payload.WithObject("clientSecretConfig", m_clientSecretConfig.Jsonize());
+  }
+
+  if (m_clientSecretSourceHasBeenSet) {
+    payload.WithString("clientSecretSource", SecretSourceTypeMapper::GetNameForSecretSourceType(m_clientSecretSource));
   }
 
   return payload;

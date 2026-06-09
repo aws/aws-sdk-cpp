@@ -19,13 +19,13 @@ namespace Model {
 TaxRegistrationDocFile::TaxRegistrationDocFile(JsonView jsonValue) { *this = jsonValue; }
 
 TaxRegistrationDocFile& TaxRegistrationDocFile::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("fileContent")) {
-    m_fileContent = HashingUtils::Base64Decode(jsonValue.GetString("fileContent"));
-    m_fileContentHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("fileName")) {
     m_fileName = jsonValue.GetString("fileName");
     m_fileNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("fileContent")) {
+    m_fileContent = HashingUtils::Base64Decode(jsonValue.GetString("fileContent"));
+    m_fileContentHasBeenSet = true;
   }
   return *this;
 }
@@ -33,12 +33,12 @@ TaxRegistrationDocFile& TaxRegistrationDocFile::operator=(JsonView jsonValue) {
 JsonValue TaxRegistrationDocFile::Jsonize() const {
   JsonValue payload;
 
-  if (m_fileContentHasBeenSet) {
-    payload.WithString("fileContent", HashingUtils::Base64Encode(m_fileContent));
-  }
-
   if (m_fileNameHasBeenSet) {
     payload.WithString("fileName", m_fileName);
+  }
+
+  if (m_fileContentHasBeenSet) {
+    payload.WithString("fileContent", HashingUtils::Base64Encode(m_fileContent));
   }
 
   return payload;

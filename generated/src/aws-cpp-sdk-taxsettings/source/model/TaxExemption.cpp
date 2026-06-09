@@ -22,6 +22,10 @@ TaxExemption& TaxExemption::operator=(JsonView jsonValue) {
     m_authority = jsonValue.GetObject("authority");
     m_authorityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("taxExemptionType")) {
+    m_taxExemptionType = jsonValue.GetObject("taxExemptionType");
+    m_taxExemptionTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("effectiveDate")) {
     m_effectiveDate = jsonValue.GetDouble("effectiveDate");
     m_effectiveDateHasBeenSet = true;
@@ -30,17 +34,13 @@ TaxExemption& TaxExemption::operator=(JsonView jsonValue) {
     m_expirationDate = jsonValue.GetDouble("expirationDate");
     m_expirationDateHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("status")) {
-    m_status = EntityExemptionAccountStatusMapper::GetEntityExemptionAccountStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("systemEffectiveDate")) {
     m_systemEffectiveDate = jsonValue.GetDouble("systemEffectiveDate");
     m_systemEffectiveDateHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("taxExemptionType")) {
-    m_taxExemptionType = jsonValue.GetObject("taxExemptionType");
-    m_taxExemptionTypeHasBeenSet = true;
+  if (jsonValue.ValueExists("status")) {
+    m_status = EntityExemptionAccountStatusMapper::GetEntityExemptionAccountStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
   return *this;
 }
@@ -52,6 +52,10 @@ JsonValue TaxExemption::Jsonize() const {
     payload.WithObject("authority", m_authority.Jsonize());
   }
 
+  if (m_taxExemptionTypeHasBeenSet) {
+    payload.WithObject("taxExemptionType", m_taxExemptionType.Jsonize());
+  }
+
   if (m_effectiveDateHasBeenSet) {
     payload.WithDouble("effectiveDate", m_effectiveDate.SecondsWithMSPrecision());
   }
@@ -60,16 +64,12 @@ JsonValue TaxExemption::Jsonize() const {
     payload.WithDouble("expirationDate", m_expirationDate.SecondsWithMSPrecision());
   }
 
-  if (m_statusHasBeenSet) {
-    payload.WithString("status", EntityExemptionAccountStatusMapper::GetNameForEntityExemptionAccountStatus(m_status));
-  }
-
   if (m_systemEffectiveDateHasBeenSet) {
     payload.WithDouble("systemEffectiveDate", m_systemEffectiveDate.SecondsWithMSPrecision());
   }
 
-  if (m_taxExemptionTypeHasBeenSet) {
-    payload.WithObject("taxExemptionType", m_taxExemptionType.Jsonize());
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", EntityExemptionAccountStatusMapper::GetNameForEntityExemptionAccountStatus(m_status));
   }
 
   return payload;

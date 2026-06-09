@@ -20,8 +20,11 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Geometry defined as a circle. When request routing boundary was set as
- * <code>AutoCircle</code>, the response routing boundary will return
+ * <p>Geometry defined as a circle. The circle defines the routing boundary area.
+ * Any waypoints outside the circle will result in a route matrix entry error.</p>
+ * <p>You can specify a <code>Circle</code> directly in the request, or it will be
+ * auto-derived when <code>AutoCircle</code> is used. When <code>AutoCircle</code>
+ * is set in the request, the response routing boundary will return
  * <code>Circle</code> derived from the <code>AutoCircle</code>
  * settings.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/Circle">AWS
@@ -62,7 +65,8 @@ class Circle {
 
   ///@{
   /**
-   * <p>Radius of the Circle.</p> <p> <b>Unit</b>: <code>meters</code> </p>
+   * <p>Radius of the Circle.</p> <p> <b>Unit</b>: <code>meters</code> </p> <p>Valid
+   * Range: Minimum value of 0. Maximum value of 200000.</p>
    */
   inline double GetRadius() const { return m_radius; }
   inline bool RadiusHasBeenSet() const { return m_radiusHasBeenSet; }

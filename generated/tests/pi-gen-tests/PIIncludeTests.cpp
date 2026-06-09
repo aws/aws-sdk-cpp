@@ -49,6 +49,8 @@
 #include <aws/pi/model/ListAvailableResourceDimensionsResult.h>
 #include <aws/pi/model/ListAvailableResourceMetricsRequest.h>
 #include <aws/pi/model/ListAvailableResourceMetricsResult.h>
+#include <aws/pi/model/ListPerformanceAnalysisReportRecommendationsRequest.h>
+#include <aws/pi/model/ListPerformanceAnalysisReportRecommendationsResult.h>
 #include <aws/pi/model/ListPerformanceAnalysisReportsRequest.h>
 #include <aws/pi/model/ListPerformanceAnalysisReportsResult.h>
 #include <aws/pi/model/ListTagsForResourceRequest.h>

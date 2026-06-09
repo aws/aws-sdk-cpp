@@ -1,0 +1,73 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace GeoRoutes {
+namespace Model {
+
+/**
+ * <p>Summary including duration and distance for the entire leg.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteTaxiOverviewSummary">AWS
+ * API Reference</a></p>
+ */
+class RouteTaxiOverviewSummary {
+ public:
+  AWS_GEOROUTES_API RouteTaxiOverviewSummary() = default;
+  AWS_GEOROUTES_API RouteTaxiOverviewSummary(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GEOROUTES_API RouteTaxiOverviewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>Duration of the entire leg.</p> <p> <b>Unit</b>: <code>seconds</code> </p>
+   */
+  inline long long GetDuration() const { return m_duration; }
+  inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+  inline void SetDuration(long long value) {
+    m_durationHasBeenSet = true;
+    m_duration = value;
+  }
+  inline RouteTaxiOverviewSummary& WithDuration(long long value) {
+    SetDuration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Distance of the entire leg.</p> <p> <b>Unit</b>: <code>meters</code> </p>
+   */
+  inline long long GetDistance() const { return m_distance; }
+  inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
+  inline void SetDistance(long long value) {
+    m_distanceHasBeenSet = true;
+    m_distance = value;
+  }
+  inline RouteTaxiOverviewSummary& WithDistance(long long value) {
+    SetDistance(value);
+    return *this;
+  }
+  ///@}
+ private:
+  long long m_duration{0};
+
+  long long m_distance{0};
+  bool m_durationHasBeenSet = false;
+  bool m_distanceHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

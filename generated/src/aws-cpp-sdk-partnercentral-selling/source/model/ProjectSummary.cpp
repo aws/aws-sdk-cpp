@@ -33,6 +33,10 @@ ProjectSummary& ProjectSummary::operator=(JsonView jsonValue) {
     }
     m_expectedCustomerSpendHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ExpectedContractDuration")) {
+    m_expectedContractDuration = jsonValue.GetObject("ExpectedContractDuration");
+    m_expectedContractDurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -55,6 +59,10 @@ JsonValue ProjectSummary::Jsonize() const {
       expectedCustomerSpendJsonList[expectedCustomerSpendIndex].AsObject(m_expectedCustomerSpend[expectedCustomerSpendIndex].Jsonize());
     }
     payload.WithArray("ExpectedCustomerSpend", std::move(expectedCustomerSpendJsonList));
+  }
+
+  if (m_expectedContractDurationHasBeenSet) {
+    payload.WithObject("ExpectedContractDuration", m_expectedContractDuration.Jsonize());
   }
 
   return payload;

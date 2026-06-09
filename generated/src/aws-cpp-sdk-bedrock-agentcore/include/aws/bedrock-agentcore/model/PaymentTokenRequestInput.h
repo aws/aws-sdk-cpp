@@ -21,8 +21,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>VENDOR-SPECIFIC TOKEN REQUEST CONFIGURATION - Input</p><p><h3>See Also:</h3>
- * <a
+ * <p>Vendor-specific token request configuration.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/PaymentTokenRequestInput">AWS
  * API Reference</a></p>
  */
@@ -34,7 +33,9 @@ class PaymentTokenRequestInput {
   AWS_BEDROCKAGENTCORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The Coinbase CDP token request.</p>
+   */
   inline const CoinbaseCdpTokenRequestInput& GetCoinbaseCdpTokenRequest() const { return m_coinbaseCdpTokenRequest; }
   inline bool CoinbaseCdpTokenRequestHasBeenSet() const { return m_coinbaseCdpTokenRequestHasBeenSet; }
   template <typename CoinbaseCdpTokenRequestT = CoinbaseCdpTokenRequestInput>
@@ -50,7 +51,9 @@ class PaymentTokenRequestInput {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The Stripe Privy token request.</p>
+   */
   inline const StripePrivyTokenRequestInput& GetStripePrivyTokenRequest() const { return m_stripePrivyTokenRequest; }
   inline bool StripePrivyTokenRequestHasBeenSet() const { return m_stripePrivyTokenRequestHasBeenSet; }
   template <typename StripePrivyTokenRequestT = StripePrivyTokenRequestInput>

@@ -35,40 +35,6 @@ class SupplementalTaxRegistrationEntry {
   AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
-  inline const Address& GetAddress() const { return m_address; }
-  inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-  template <typename AddressT = Address>
-  void SetAddress(AddressT&& value) {
-    m_addressHasBeenSet = true;
-    m_address = std::forward<AddressT>(value);
-  }
-  template <typename AddressT = Address>
-  SupplementalTaxRegistrationEntry& WithAddress(AddressT&& value) {
-    SetAddress(std::forward<AddressT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> The legal name associated with your TRN registration. </p>
-   */
-  inline const Aws::String& GetLegalName() const { return m_legalName; }
-  inline bool LegalNameHasBeenSet() const { return m_legalNameHasBeenSet; }
-  template <typename LegalNameT = Aws::String>
-  void SetLegalName(LegalNameT&& value) {
-    m_legalNameHasBeenSet = true;
-    m_legalName = std::forward<LegalNameT>(value);
-  }
-  template <typename LegalNameT = Aws::String>
-  SupplementalTaxRegistrationEntry& WithLegalName(LegalNameT&& value) {
-    SetLegalName(std::forward<LegalNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
   /**
    * <p> The supplemental TRN unique identifier. </p>
    */
@@ -101,18 +67,52 @@ class SupplementalTaxRegistrationEntry {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The legal name associated with your TRN registration. </p>
+   */
+  inline const Aws::String& GetLegalName() const { return m_legalName; }
+  inline bool LegalNameHasBeenSet() const { return m_legalNameHasBeenSet; }
+  template <typename LegalNameT = Aws::String>
+  void SetLegalName(LegalNameT&& value) {
+    m_legalNameHasBeenSet = true;
+    m_legalName = std::forward<LegalNameT>(value);
+  }
+  template <typename LegalNameT = Aws::String>
+  SupplementalTaxRegistrationEntry& WithLegalName(LegalNameT&& value) {
+    SetLegalName(std::forward<LegalNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Address& GetAddress() const { return m_address; }
+  inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+  template <typename AddressT = Address>
+  void SetAddress(AddressT&& value) {
+    m_addressHasBeenSet = true;
+    m_address = std::forward<AddressT>(value);
+  }
+  template <typename AddressT = Address>
+  SupplementalTaxRegistrationEntry& WithAddress(AddressT&& value) {
+    SetAddress(std::forward<AddressT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Address m_address;
-
-  Aws::String m_legalName;
-
   Aws::String m_registrationId;
 
   SupplementalTaxRegistrationType m_registrationType{SupplementalTaxRegistrationType::NOT_SET};
-  bool m_addressHasBeenSet = false;
-  bool m_legalNameHasBeenSet = false;
+
+  Aws::String m_legalName;
+
+  Address m_address;
   bool m_registrationIdHasBeenSet = false;
   bool m_registrationTypeHasBeenSet = false;
+  bool m_legalNameHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
 };
 
 }  // namespace Model

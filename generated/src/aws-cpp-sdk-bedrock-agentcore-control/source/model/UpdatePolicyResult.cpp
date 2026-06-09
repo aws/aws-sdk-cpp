@@ -34,14 +34,6 @@ UpdatePolicyResult& UpdatePolicyResult::operator=(const Aws::AmazonWebServiceRes
     m_policyEngineId = jsonValue.GetString("policyEngineId");
     m_policyEngineIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("definition")) {
-    m_definition = jsonValue.GetObject("definition");
-    m_definitionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -57,6 +49,14 @@ UpdatePolicyResult& UpdatePolicyResult::operator=(const Aws::AmazonWebServiceRes
   if (jsonValue.ValueExists("status")) {
     m_status = PolicyStatusMapper::GetPolicyStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("definition")) {
+    m_definition = jsonValue.GetObject("definition");
+    m_definitionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("statusReasons")) {
     Aws::Utils::Array<JsonView> statusReasonsJsonList = jsonValue.GetArray("statusReasons");

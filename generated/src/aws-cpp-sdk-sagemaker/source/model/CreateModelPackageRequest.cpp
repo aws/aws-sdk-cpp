@@ -127,6 +127,10 @@ Aws::String CreateModelPackageRequest::SerializePayload() const {
     payload.WithObject("ModelLifeCycle", m_modelLifeCycle.Jsonize());
   }
 
+  if (m_managedStorageTypeHasBeenSet) {
+    payload.WithString("ManagedStorageType", ManagedStorageTypeMapper::GetNameForManagedStorageType(m_managedStorageType));
+  }
+
   return payload.View().WriteReadable();
 }
 

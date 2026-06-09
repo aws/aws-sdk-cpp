@@ -10,6 +10,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/AdvancedSecurityOptionsInput.h>
 #include <aws/es/model/AutoTuneOptions.h>
+#include <aws/es/model/AutomatedSnapshotPauseRequestOptions.h>
 #include <aws/es/model/CognitoOptions.h>
 #include <aws/es/model/DeploymentStrategyOptions.h>
 #include <aws/es/model/DomainEndpointOptions.h>
@@ -361,6 +362,28 @@ class UpdateElasticsearchDomainConfigRequest : public ElasticsearchServiceReques
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the automated snapshot pause options for the domain.</p>
+   *  <p>Suspending snapshots reduces data protection. You cannot restore
+   * your domain to points in time when snapshots are suspended. Use this feature
+   * only for short-term operational needs such as migrations or maintenance
+   * windows.</p>  <p>Maximum suspension duration: 3 days.</p>
+   */
+  inline const AutomatedSnapshotPauseRequestOptions& GetAutomatedSnapshotPauseOptions() const { return m_automatedSnapshotPauseOptions; }
+  inline bool AutomatedSnapshotPauseOptionsHasBeenSet() const { return m_automatedSnapshotPauseOptionsHasBeenSet; }
+  template <typename AutomatedSnapshotPauseOptionsT = AutomatedSnapshotPauseRequestOptions>
+  void SetAutomatedSnapshotPauseOptions(AutomatedSnapshotPauseOptionsT&& value) {
+    m_automatedSnapshotPauseOptionsHasBeenSet = true;
+    m_automatedSnapshotPauseOptions = std::forward<AutomatedSnapshotPauseOptionsT>(value);
+  }
+  template <typename AutomatedSnapshotPauseOptionsT = AutomatedSnapshotPauseRequestOptions>
+  UpdateElasticsearchDomainConfigRequest& WithAutomatedSnapshotPauseOptions(AutomatedSnapshotPauseOptionsT&& value) {
+    SetAutomatedSnapshotPauseOptions(std::forward<AutomatedSnapshotPauseOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
@@ -393,6 +416,8 @@ class UpdateElasticsearchDomainConfigRequest : public ElasticsearchServiceReques
   bool m_dryRun{false};
 
   DeploymentStrategyOptions m_deploymentStrategyOptions;
+
+  AutomatedSnapshotPauseRequestOptions m_automatedSnapshotPauseOptions;
   bool m_domainNameHasBeenSet = false;
   bool m_elasticsearchClusterConfigHasBeenSet = false;
   bool m_eBSOptionsHasBeenSet = false;
@@ -409,6 +434,7 @@ class UpdateElasticsearchDomainConfigRequest : public ElasticsearchServiceReques
   bool m_autoTuneOptionsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
   bool m_deploymentStrategyOptionsHasBeenSet = false;
+  bool m_automatedSnapshotPauseOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

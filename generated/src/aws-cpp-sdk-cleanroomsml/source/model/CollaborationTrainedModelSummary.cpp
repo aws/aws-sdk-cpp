@@ -71,6 +71,10 @@ CollaborationTrainedModelSummary& CollaborationTrainedModelSummary::operator=(Js
     m_creatorAccountId = jsonValue.GetString("creatorAccountId");
     m_creatorAccountIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mlModelTrainingPayerAccountId")) {
+    m_mlModelTrainingPayerAccountId = jsonValue.GetString("mlModelTrainingPayerAccountId");
+    m_mlModelTrainingPayerAccountIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -130,6 +134,10 @@ JsonValue CollaborationTrainedModelSummary::Jsonize() const {
 
   if (m_creatorAccountIdHasBeenSet) {
     payload.WithString("creatorAccountId", m_creatorAccountId);
+  }
+
+  if (m_mlModelTrainingPayerAccountIdHasBeenSet) {
+    payload.WithString("mlModelTrainingPayerAccountId", m_mlModelTrainingPayerAccountId);
   }
 
   return payload;

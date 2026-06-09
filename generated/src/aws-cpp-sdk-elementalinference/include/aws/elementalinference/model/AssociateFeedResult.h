@@ -29,7 +29,7 @@ class AssociateFeedResult {
 
   ///@{
   /**
-   * <p>The AWS ARN for this association.</p>
+   * <p>The ARN of the feed.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   template <typename ArnT = Aws::String>
@@ -46,8 +46,7 @@ class AssociateFeedResult {
 
   ///@{
   /**
-   * <p>An ID for this response. It is unique in Elemental Inference for this AWS
-   * account.</p>
+   * <p>The ID of the feed.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
   template <typename IdT = Aws::String>

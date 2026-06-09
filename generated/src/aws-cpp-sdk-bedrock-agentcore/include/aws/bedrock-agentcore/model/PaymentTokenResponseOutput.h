@@ -21,8 +21,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>VENDOR-SPECIFIC TOKEN RESPONSE CONFIGURATION - Output</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Vendor-specific token response configuration.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/PaymentTokenResponseOutput">AWS
  * API Reference</a></p>
  */
@@ -34,7 +33,9 @@ class PaymentTokenResponseOutput {
   AWS_BEDROCKAGENTCORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The Coinbase CDP token response.</p>
+   */
   inline const CoinbaseCdpTokenResponseOutput& GetCoinbaseCdpTokenResponse() const { return m_coinbaseCdpTokenResponse; }
   inline bool CoinbaseCdpTokenResponseHasBeenSet() const { return m_coinbaseCdpTokenResponseHasBeenSet; }
   template <typename CoinbaseCdpTokenResponseT = CoinbaseCdpTokenResponseOutput>
@@ -50,7 +51,9 @@ class PaymentTokenResponseOutput {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The Stripe Privy token response.</p>
+   */
   inline const StripePrivyTokenResponseOutput& GetStripePrivyTokenResponse() const { return m_stripePrivyTokenResponse; }
   inline bool StripePrivyTokenResponseHasBeenSet() const { return m_stripePrivyTokenResponseHasBeenSet; }
   template <typename StripePrivyTokenResponseT = StripePrivyTokenResponseOutput>

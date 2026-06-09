@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DeleteManagedPrefixListRequest.h>
 #include <aws/ec2/model/DeleteNatGatewayRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclEntryRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclRequest.h>
@@ -103,6 +104,7 @@
 #include <aws/ec2/model/DescribeCapacityBlocksRequest.h>
 #include <aws/ec2/model/DescribeCapacityManagerDataExportsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsRequest.h>
+#include <aws/ec2/model/DescribeCapacityReservationCancellationQuotesRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationTopologyRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationsRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/DescribeCustomerGatewaysRequest.h>
 #include <aws/ec2/model/DescribeDeclarativePoliciesReportsRequest.h>
 #include <aws/ec2/model/DescribeDhcpOptionsRequest.h>
-#include <aws/ec2/model/DescribeEgressOnlyInternetGatewaysRequest.h>
-#include <aws/ec2/model/DescribeElasticGpusRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteManagedPrefixListOutcome EC2Client::DeleteManagedPrefixList(const DeleteManagedPrefixListRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteManagedPrefixListOutcome(result.GetResultWithOwnership())
+                            : DeleteManagedPrefixListOutcome(std::move(result.GetError()));
+}
 
 DeleteNatGatewayOutcome EC2Client::DeleteNatGateway(const DeleteNatGatewayRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -652,6 +658,13 @@ DescribeCapacityReservationBillingRequestsOutcome EC2Client::DescribeCapacityRes
                             : DescribeCapacityReservationBillingRequestsOutcome(std::move(result.GetError()));
 }
 
+DescribeCapacityReservationCancellationQuotesOutcome EC2Client::DescribeCapacityReservationCancellationQuotes(
+    const DescribeCapacityReservationCancellationQuotesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityReservationCancellationQuotesOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityReservationCancellationQuotesOutcome(std::move(result.GetError()));
+}
+
 DescribeCapacityReservationFleetsOutcome EC2Client::DescribeCapacityReservationFleets(
     const DescribeCapacityReservationFleetsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -745,17 +758,4 @@ DescribeDhcpOptionsOutcome EC2Client::DescribeDhcpOptions(const DescribeDhcpOpti
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeDhcpOptionsOutcome(result.GetResultWithOwnership())
                             : DescribeDhcpOptionsOutcome(std::move(result.GetError()));
-}
-
-DescribeEgressOnlyInternetGatewaysOutcome EC2Client::DescribeEgressOnlyInternetGateways(
-    const DescribeEgressOnlyInternetGatewaysRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeEgressOnlyInternetGatewaysOutcome(result.GetResultWithOwnership())
-                            : DescribeEgressOnlyInternetGatewaysOutcome(std::move(result.GetError()));
-}
-
-DescribeElasticGpusOutcome EC2Client::DescribeElasticGpus(const DescribeElasticGpusRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeElasticGpusOutcome(result.GetResultWithOwnership())
-                            : DescribeElasticGpusOutcome(std::move(result.GetError()));
 }

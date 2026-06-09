@@ -72,16 +72,16 @@ const char* BedrockDataAutomationClient::GetAllocationTag() { return ALLOCATION_
 BedrockDataAutomationClient::BedrockDataAutomationClient(
     const BedrockDataAutomation::BedrockDataAutomationClientConfiguration& clientConfiguration,
     std::shared_ptr<BedrockDataAutomationEndpointProviderBase> endpointProvider)
-    : AwsSmithyClientT(
-          clientConfiguration, GetServiceName(), "Bedrock Data Automation", Aws::Http::CreateHttpClient(clientConfiguration),
-          Aws::MakeShared<BedrockDataAutomationErrorMarshaller>(ALLOCATION_TAG),
-          endpointProvider ? endpointProvider : Aws::MakeShared<BedrockDataAutomationEndpointProvider>(ALLOCATION_TAG),
-          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
-          }) {}
+    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "Bedrock Data Automation", Aws::Http::CreateHttpClient(clientConfiguration),
+                       Aws::MakeShared<BedrockDataAutomationErrorMarshaller>(ALLOCATION_TAG),
+                       endpointProvider ? endpointProvider : Aws::MakeShared<BedrockDataAutomationEndpointProvider>(ALLOCATION_TAG),
+                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+                       {
+                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+                            smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                                    clientConfiguration.ResolveCredentialProviderConfig()}},
+                       }) {}
 
 BedrockDataAutomationClient::BedrockDataAutomationClient(
     const AWSCredentials& credentials, std::shared_ptr<BedrockDataAutomationEndpointProviderBase> endpointProvider,
@@ -116,16 +116,16 @@ BedrockDataAutomationClient::BedrockDataAutomationClient(
 
 /* Legacy constructors due deprecation */
 BedrockDataAutomationClient::BedrockDataAutomationClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : AwsSmithyClientT(
-          clientConfiguration, GetServiceName(), "Bedrock Data Automation", Aws::Http::CreateHttpClient(clientConfiguration),
-          Aws::MakeShared<BedrockDataAutomationErrorMarshaller>(ALLOCATION_TAG),
-          Aws::MakeShared<BedrockDataAutomationEndpointProvider>(ALLOCATION_TAG),
-          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
-          }) {}
+    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "Bedrock Data Automation", Aws::Http::CreateHttpClient(clientConfiguration),
+                       Aws::MakeShared<BedrockDataAutomationErrorMarshaller>(ALLOCATION_TAG),
+                       Aws::MakeShared<BedrockDataAutomationEndpointProvider>(ALLOCATION_TAG),
+                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+                       {
+                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+                            smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                                    clientConfiguration.ResolveCredentialProviderConfig()}},
+                       }) {}
 
 BedrockDataAutomationClient::BedrockDataAutomationClient(const AWSCredentials& credentials,
                                                          const Aws::Client::ClientConfiguration& clientConfiguration)

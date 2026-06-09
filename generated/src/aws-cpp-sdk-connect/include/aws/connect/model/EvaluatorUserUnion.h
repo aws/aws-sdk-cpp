@@ -34,7 +34,7 @@ class EvaluatorUserUnion {
 
   ///@{
   /**
-   * <p>Represents the Amazon Connect ARN of the user.</p>
+   * <p>Represents the Connect Customer ARN of the user.</p>
    */
   inline const Aws::String& GetConnectUserArn() const { return m_connectUserArn; }
   inline bool ConnectUserArnHasBeenSet() const { return m_connectUserArnHasBeenSet; }

@@ -38,6 +38,14 @@ HarnessOpenAiModelConfig& HarnessOpenAiModelConfig::operator=(JsonView jsonValue
     m_topP = jsonValue.GetDouble("topP");
     m_topPHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("apiFormat")) {
+    m_apiFormat = HarnessOpenAiApiFormatMapper::GetHarnessOpenAiApiFormatForName(jsonValue.GetString("apiFormat"));
+    m_apiFormatHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("additionalParams")) {
+    m_additionalParams = jsonValue.GetObject("additionalParams");
+    m_additionalParamsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +70,16 @@ JsonValue HarnessOpenAiModelConfig::Jsonize() const {
 
   if (m_topPHasBeenSet) {
     payload.WithDouble("topP", m_topP);
+  }
+
+  if (m_apiFormatHasBeenSet) {
+    payload.WithString("apiFormat", HarnessOpenAiApiFormatMapper::GetNameForHarnessOpenAiApiFormat(m_apiFormat));
+  }
+
+  if (m_additionalParamsHasBeenSet) {
+    if (!m_additionalParams.View().IsNull()) {
+      payload.WithObject("additionalParams", JsonValue(m_additionalParams.View()));
+    }
   }
 
   return payload;

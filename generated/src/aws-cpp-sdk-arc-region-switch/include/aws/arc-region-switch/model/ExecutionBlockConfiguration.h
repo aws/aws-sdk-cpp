@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/arc-region-switch/model/ArcRoutingControlConfiguration.h>
+#include <aws/arc-region-switch/model/AuroraProvisionedScalingConfiguration.h>
+#include <aws/arc-region-switch/model/AuroraServerlessScalingConfiguration.h>
 #include <aws/arc-region-switch/model/CustomActionLambdaConfiguration.h>
 #include <aws/arc-region-switch/model/DocumentDbConfiguration.h>
 #include <aws/arc-region-switch/model/Ec2AsgCapacityIncreaseConfiguration.h>
@@ -13,6 +15,8 @@
 #include <aws/arc-region-switch/model/EksResourceScalingConfiguration.h>
 #include <aws/arc-region-switch/model/ExecutionApprovalConfiguration.h>
 #include <aws/arc-region-switch/model/GlobalAuroraConfiguration.h>
+#include <aws/arc-region-switch/model/LambdaEventSourceMappingConfiguration.h>
+#include <aws/arc-region-switch/model/NeptuneGlobalDatabaseConfiguration.h>
 #include <aws/arc-region-switch/model/RdsCreateCrossRegionReplicaConfiguration.h>
 #include <aws/arc-region-switch/model/RdsPromoteReadReplicaConfiguration.h>
 #include <aws/arc-region-switch/model/RegionSwitchPlanConfiguration.h>
@@ -280,6 +284,78 @@ class ExecutionBlockConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A Lambda event source mapping execution block.</p>
+   */
+  inline const LambdaEventSourceMappingConfiguration& GetLambdaEventSourceMappingConfig() const { return m_lambdaEventSourceMappingConfig; }
+  inline bool LambdaEventSourceMappingConfigHasBeenSet() const { return m_lambdaEventSourceMappingConfigHasBeenSet; }
+  template <typename LambdaEventSourceMappingConfigT = LambdaEventSourceMappingConfiguration>
+  void SetLambdaEventSourceMappingConfig(LambdaEventSourceMappingConfigT&& value) {
+    m_lambdaEventSourceMappingConfigHasBeenSet = true;
+    m_lambdaEventSourceMappingConfig = std::forward<LambdaEventSourceMappingConfigT>(value);
+  }
+  template <typename LambdaEventSourceMappingConfigT = LambdaEventSourceMappingConfiguration>
+  ExecutionBlockConfiguration& WithLambdaEventSourceMappingConfig(LambdaEventSourceMappingConfigT&& value) {
+    SetLambdaEventSourceMappingConfig(std::forward<LambdaEventSourceMappingConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An Aurora Serverless scaling execution block.</p>
+   */
+  inline const AuroraServerlessScalingConfiguration& GetAuroraServerlessScalingConfig() const { return m_auroraServerlessScalingConfig; }
+  inline bool AuroraServerlessScalingConfigHasBeenSet() const { return m_auroraServerlessScalingConfigHasBeenSet; }
+  template <typename AuroraServerlessScalingConfigT = AuroraServerlessScalingConfiguration>
+  void SetAuroraServerlessScalingConfig(AuroraServerlessScalingConfigT&& value) {
+    m_auroraServerlessScalingConfigHasBeenSet = true;
+    m_auroraServerlessScalingConfig = std::forward<AuroraServerlessScalingConfigT>(value);
+  }
+  template <typename AuroraServerlessScalingConfigT = AuroraServerlessScalingConfiguration>
+  ExecutionBlockConfiguration& WithAuroraServerlessScalingConfig(AuroraServerlessScalingConfigT&& value) {
+    SetAuroraServerlessScalingConfig(std::forward<AuroraServerlessScalingConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An Aurora provisioned cluster scaling execution block.</p>
+   */
+  inline const AuroraProvisionedScalingConfiguration& GetAuroraProvisionedScalingConfig() const { return m_auroraProvisionedScalingConfig; }
+  inline bool AuroraProvisionedScalingConfigHasBeenSet() const { return m_auroraProvisionedScalingConfigHasBeenSet; }
+  template <typename AuroraProvisionedScalingConfigT = AuroraProvisionedScalingConfiguration>
+  void SetAuroraProvisionedScalingConfig(AuroraProvisionedScalingConfigT&& value) {
+    m_auroraProvisionedScalingConfigHasBeenSet = true;
+    m_auroraProvisionedScalingConfig = std::forward<AuroraProvisionedScalingConfigT>(value);
+  }
+  template <typename AuroraProvisionedScalingConfigT = AuroraProvisionedScalingConfiguration>
+  ExecutionBlockConfiguration& WithAuroraProvisionedScalingConfig(AuroraProvisionedScalingConfigT&& value) {
+    SetAuroraProvisionedScalingConfig(std::forward<AuroraProvisionedScalingConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A Neptune global database execution block.</p>
+   */
+  inline const NeptuneGlobalDatabaseConfiguration& GetNeptuneGlobalDatabaseConfig() const { return m_neptuneGlobalDatabaseConfig; }
+  inline bool NeptuneGlobalDatabaseConfigHasBeenSet() const { return m_neptuneGlobalDatabaseConfigHasBeenSet; }
+  template <typename NeptuneGlobalDatabaseConfigT = NeptuneGlobalDatabaseConfiguration>
+  void SetNeptuneGlobalDatabaseConfig(NeptuneGlobalDatabaseConfigT&& value) {
+    m_neptuneGlobalDatabaseConfigHasBeenSet = true;
+    m_neptuneGlobalDatabaseConfig = std::forward<NeptuneGlobalDatabaseConfigT>(value);
+  }
+  template <typename NeptuneGlobalDatabaseConfigT = NeptuneGlobalDatabaseConfiguration>
+  ExecutionBlockConfiguration& WithNeptuneGlobalDatabaseConfig(NeptuneGlobalDatabaseConfigT&& value) {
+    SetNeptuneGlobalDatabaseConfig(std::forward<NeptuneGlobalDatabaseConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CustomActionLambdaConfiguration m_customActionLambdaConfig;
 
@@ -306,6 +382,14 @@ class ExecutionBlockConfiguration {
   RdsPromoteReadReplicaConfiguration m_rdsPromoteReadReplicaConfig;
 
   RdsCreateCrossRegionReplicaConfiguration m_rdsCreateCrossRegionReadReplicaConfig;
+
+  LambdaEventSourceMappingConfiguration m_lambdaEventSourceMappingConfig;
+
+  AuroraServerlessScalingConfiguration m_auroraServerlessScalingConfig;
+
+  AuroraProvisionedScalingConfiguration m_auroraProvisionedScalingConfig;
+
+  NeptuneGlobalDatabaseConfiguration m_neptuneGlobalDatabaseConfig;
   bool m_customActionLambdaConfigHasBeenSet = false;
   bool m_ec2AsgCapacityIncreaseConfigHasBeenSet = false;
   bool m_executionApprovalConfigHasBeenSet = false;
@@ -319,6 +403,10 @@ class ExecutionBlockConfiguration {
   bool m_documentDbConfigHasBeenSet = false;
   bool m_rdsPromoteReadReplicaConfigHasBeenSet = false;
   bool m_rdsCreateCrossRegionReadReplicaConfigHasBeenSet = false;
+  bool m_lambdaEventSourceMappingConfigHasBeenSet = false;
+  bool m_auroraServerlessScalingConfigHasBeenSet = false;
+  bool m_auroraProvisionedScalingConfigHasBeenSet = false;
+  bool m_neptuneGlobalDatabaseConfigHasBeenSet = false;
 };
 
 }  // namespace Model

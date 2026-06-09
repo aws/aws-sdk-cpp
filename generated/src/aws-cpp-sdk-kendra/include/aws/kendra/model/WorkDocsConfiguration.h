@@ -22,9 +22,9 @@ namespace kendra {
 namespace Model {
 
 /**
- * <p>Provides the configuration information to connect to Amazon WorkDocs as your
- * data source.</p> <p>Amazon WorkDocs connector is available in Oregon, North
- * Virginia, Sydney, Singapore and Ireland regions.</p><p><h3>See Also:</h3>   <a
+ * <p>Provides the configuration information to connect to WorkDocs as your data
+ * source.</p> <p>WorkDocs connector is available in Oregon, North Virginia,
+ * Sydney, Singapore and Ireland regions.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/WorkDocsConfiguration">AWS
  * API Reference</a></p>
  */
@@ -37,14 +37,13 @@ class WorkDocsConfiguration {
 
   ///@{
   /**
-   * <p>The identifier of the directory corresponding to your Amazon WorkDocs site
+   * <p>The identifier of the directory corresponding to your WorkDocs site
    * repository.</p> <p>You can find the organization ID in the <a
    * href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a>
-   * by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon
-   * WorkDocs site directory has an ID, which is the organization ID. You can also
-   * set up a new Amazon WorkDocs directory in the Directory Service console and
-   * enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
-   * console.</p>
+   * by going to <b>Active Directory</b>, then <b>Directories</b>. Your WorkDocs site
+   * directory has an ID, which is the organization ID. You can also set up a new
+   * WorkDocs directory in the Directory Service console and enable a WorkDocs site
+   * for the directory in the WorkDocs console.</p>
    */
   inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
   inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
@@ -80,10 +79,10 @@ class WorkDocsConfiguration {
 
   ///@{
   /**
-   * <p> <code>TRUE</code> to use the Amazon WorkDocs change log to determine which
+   * <p> <code>TRUE</code> to use the WorkDocs change log to determine which
    * documents require updating in the index. Depending on the change log's size, it
    * may take longer for Amazon Kendra to use the change log than to scan all of your
-   * documents in Amazon WorkDocs.</p>
+   * documents in WorkDocs.</p>
    */
   inline bool GetUseChangeLog() const { return m_useChangeLog; }
   inline bool UseChangeLogHasBeenSet() const { return m_useChangeLogHasBeenSet; }
@@ -99,7 +98,7 @@ class WorkDocsConfiguration {
 
   ///@{
   /**
-   * <p>A list of regular expression patterns to include certain files in your Amazon
+   * <p>A list of regular expression patterns to include certain files in your
    * WorkDocs site repository. Files that match the patterns are included in the
    * index. Files that don't match the patterns are excluded from the index. If a
    * file matches both an inclusion and exclusion pattern, the exclusion pattern
@@ -127,7 +126,7 @@ class WorkDocsConfiguration {
 
   ///@{
   /**
-   * <p>A list of regular expression patterns to exclude certain files in your Amazon
+   * <p>A list of regular expression patterns to exclude certain files in your
    * WorkDocs site repository. Files that match the patterns are excluded from the
    * index. Files that don’t match the patterns are included in the index. If a file
    * matches both an inclusion and exclusion pattern, the exclusion pattern takes
@@ -155,13 +154,13 @@ class WorkDocsConfiguration {
 
   ///@{
   /**
-   * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
+   * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
    * WorkDocs data source attributes or field names to Amazon Kendra index field
    * names. To create custom fields, use the <code>UpdateIndex</code> API before you
-   * map to Amazon WorkDocs fields. For more information, see <a
+   * map to WorkDocs fields. For more information, see <a
    * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-   * data source fields</a>. The Amazon WorkDocs data source field names must exist
-   * in your Amazon WorkDocs custom metadata.</p>
+   * data source fields</a>. The WorkDocs data source field names must exist in your
+   * WorkDocs custom metadata.</p>
    */
   inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const { return m_fieldMappings; }
   inline bool FieldMappingsHasBeenSet() const { return m_fieldMappingsHasBeenSet; }

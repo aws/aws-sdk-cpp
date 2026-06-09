@@ -22,6 +22,10 @@ AIBenchmarkOutputConfig& AIBenchmarkOutputConfig::operator=(JsonView jsonValue) 
     m_s3OutputLocation = jsonValue.GetString("S3OutputLocation");
     m_s3OutputLocationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MlflowConfig")) {
+    m_mlflowConfig = jsonValue.GetObject("MlflowConfig");
+    m_mlflowConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue AIBenchmarkOutputConfig::Jsonize() const {
 
   if (m_s3OutputLocationHasBeenSet) {
     payload.WithString("S3OutputLocation", m_s3OutputLocation);
+  }
+
+  if (m_mlflowConfigHasBeenSet) {
+    payload.WithObject("MlflowConfig", m_mlflowConfig.Jsonize());
   }
 
   return payload;

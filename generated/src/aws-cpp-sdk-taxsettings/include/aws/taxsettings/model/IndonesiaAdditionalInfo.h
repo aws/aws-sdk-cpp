@@ -35,20 +35,16 @@ class IndonesiaAdditionalInfo {
 
   ///@{
   /**
-   * <p>VAT-exempt customers have a Directorate General of Taxation (DGT) exemption
-   * letter or certificate (Surat Keterangan Bebas) decision number. Non-collected
-   * VAT have a DGT letter or certificate (Surat Keterangan Tidak Dipungut).</p>
+   * <p>The tax registration number type.</p>
    */
-  inline const Aws::String& GetDecisionNumber() const { return m_decisionNumber; }
-  inline bool DecisionNumberHasBeenSet() const { return m_decisionNumberHasBeenSet; }
-  template <typename DecisionNumberT = Aws::String>
-  void SetDecisionNumber(DecisionNumberT&& value) {
-    m_decisionNumberHasBeenSet = true;
-    m_decisionNumber = std::forward<DecisionNumberT>(value);
+  inline IndonesiaTaxRegistrationNumberType GetTaxRegistrationNumberType() const { return m_taxRegistrationNumberType; }
+  inline bool TaxRegistrationNumberTypeHasBeenSet() const { return m_taxRegistrationNumberTypeHasBeenSet; }
+  inline void SetTaxRegistrationNumberType(IndonesiaTaxRegistrationNumberType value) {
+    m_taxRegistrationNumberTypeHasBeenSet = true;
+    m_taxRegistrationNumberType = value;
   }
-  template <typename DecisionNumberT = Aws::String>
-  IndonesiaAdditionalInfo& WithDecisionNumber(DecisionNumberT&& value) {
-    SetDecisionNumber(std::forward<DecisionNumberT>(value));
+  inline IndonesiaAdditionalInfo& WithTaxRegistrationNumberType(IndonesiaTaxRegistrationNumberType value) {
+    SetTaxRegistrationNumberType(value);
     return *this;
   }
   ///@}
@@ -74,28 +70,32 @@ class IndonesiaAdditionalInfo {
 
   ///@{
   /**
-   * <p>The tax registration number type.</p>
+   * <p>VAT-exempt customers have a Directorate General of Taxation (DGT) exemption
+   * letter or certificate (Surat Keterangan Bebas) decision number. Non-collected
+   * VAT have a DGT letter or certificate (Surat Keterangan Tidak Dipungut).</p>
    */
-  inline IndonesiaTaxRegistrationNumberType GetTaxRegistrationNumberType() const { return m_taxRegistrationNumberType; }
-  inline bool TaxRegistrationNumberTypeHasBeenSet() const { return m_taxRegistrationNumberTypeHasBeenSet; }
-  inline void SetTaxRegistrationNumberType(IndonesiaTaxRegistrationNumberType value) {
-    m_taxRegistrationNumberTypeHasBeenSet = true;
-    m_taxRegistrationNumberType = value;
+  inline const Aws::String& GetDecisionNumber() const { return m_decisionNumber; }
+  inline bool DecisionNumberHasBeenSet() const { return m_decisionNumberHasBeenSet; }
+  template <typename DecisionNumberT = Aws::String>
+  void SetDecisionNumber(DecisionNumberT&& value) {
+    m_decisionNumberHasBeenSet = true;
+    m_decisionNumber = std::forward<DecisionNumberT>(value);
   }
-  inline IndonesiaAdditionalInfo& WithTaxRegistrationNumberType(IndonesiaTaxRegistrationNumberType value) {
-    SetTaxRegistrationNumberType(value);
+  template <typename DecisionNumberT = Aws::String>
+  IndonesiaAdditionalInfo& WithDecisionNumber(DecisionNumberT&& value) {
+    SetDecisionNumber(std::forward<DecisionNumberT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_decisionNumber;
+  IndonesiaTaxRegistrationNumberType m_taxRegistrationNumberType{IndonesiaTaxRegistrationNumberType::NOT_SET};
 
   Aws::String m_ppnExceptionDesignationCode;
 
-  IndonesiaTaxRegistrationNumberType m_taxRegistrationNumberType{IndonesiaTaxRegistrationNumberType::NOT_SET};
-  bool m_decisionNumberHasBeenSet = false;
-  bool m_ppnExceptionDesignationCodeHasBeenSet = false;
+  Aws::String m_decisionNumber;
   bool m_taxRegistrationNumberTypeHasBeenSet = false;
+  bool m_ppnExceptionDesignationCodeHasBeenSet = false;
+  bool m_decisionNumberHasBeenSet = false;
 };
 
 }  // namespace Model

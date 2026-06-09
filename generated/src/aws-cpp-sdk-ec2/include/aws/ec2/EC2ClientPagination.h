@@ -55,6 +55,7 @@
 #include <aws/ec2/model/DescribeInstanceTypesPaginationTraits.h>
 #include <aws/ec2/model/DescribeInstancesPaginationTraits.h>
 #include <aws/ec2/model/DescribeInternetGatewaysPaginationTraits.h>
+#include <aws/ec2/model/DescribeIpamPoolAllocationsPaginationTraits.h>
 #include <aws/ec2/model/DescribeIpamPoolsPaginationTraits.h>
 #include <aws/ec2/model/DescribeIpamPrefixListResolverTargetsPaginationTraits.h>
 #include <aws/ec2/model/DescribeIpamPrefixListResolversPaginationTraits.h>
@@ -310,6 +311,9 @@ using DescribeInstanceTypesPaginator = Aws::Utils::Pagination::Paginator<EC2Clie
 using DescribeInternetGatewaysPaginator =
     Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeInternetGatewaysRequest,
                                       Pagination::DescribeInternetGatewaysPaginationTraits<EC2Client>>;
+using DescribeIpamPoolAllocationsPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeIpamPoolAllocationsRequest,
+                                      Pagination::DescribeIpamPoolAllocationsPaginationTraits<EC2Client>>;
 using DescribeIpamPoolsPaginator =
     Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeIpamPoolsRequest, Pagination::DescribeIpamPoolsPaginationTraits<EC2Client>>;
 using DescribeIpamPrefixListResolversPaginator =

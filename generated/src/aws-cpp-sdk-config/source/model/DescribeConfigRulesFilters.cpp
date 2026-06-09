@@ -22,6 +22,11 @@ DescribeConfigRulesFilters& DescribeConfigRulesFilters::operator=(JsonView jsonV
     m_evaluationMode = EvaluationModeMapper::GetEvaluationModeForName(jsonValue.GetString("EvaluationMode"));
     m_evaluationModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RuleEvaluationVisibility")) {
+    m_ruleEvaluationVisibility =
+        RuleEvaluationVisibilityMapper::GetRuleEvaluationVisibilityForName(jsonValue.GetString("RuleEvaluationVisibility"));
+    m_ruleEvaluationVisibilityHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +35,11 @@ JsonValue DescribeConfigRulesFilters::Jsonize() const {
 
   if (m_evaluationModeHasBeenSet) {
     payload.WithString("EvaluationMode", EvaluationModeMapper::GetNameForEvaluationMode(m_evaluationMode));
+  }
+
+  if (m_ruleEvaluationVisibilityHasBeenSet) {
+    payload.WithString("RuleEvaluationVisibility",
+                       RuleEvaluationVisibilityMapper::GetNameForRuleEvaluationVisibility(m_ruleEvaluationVisibility));
   }
 
   return payload;

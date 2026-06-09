@@ -23,6 +23,7 @@
 #include <aws/customer-profiles/model/AddProfileKeyRequest.h>
 #include <aws/customer-profiles/model/BatchGetCalculatedAttributeForProfileRequest.h>
 #include <aws/customer-profiles/model/BatchGetProfileRequest.h>
+#include <aws/customer-profiles/model/BatchPutProfileObjectRequest.h>
 #include <aws/customer-profiles/model/CreateCalculatedAttributeDefinitionRequest.h>
 #include <aws/customer-profiles/model/CreateDomainLayoutRequest.h>
 #include <aws/customer-profiles/model/CreateDomainRequest.h>
@@ -150,10 +151,10 @@ const char* CustomerProfilesClient::GetAllocationTag() { return ALLOCATION_TAG; 
 CustomerProfilesClient::CustomerProfilesClient(const CustomerProfiles::CustomerProfilesClientConfiguration& clientConfiguration,
                                                std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<CustomerProfilesErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider)
@@ -190,10 +191,10 @@ CustomerProfilesClient::CustomerProfilesClient(const std::shared_ptr<AWSCredenti
 /* Legacy constructors due deprecation */
 CustomerProfilesClient::CustomerProfilesClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<CustomerProfilesErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<CustomerProfilesEndpointProvider>(ALLOCATION_TAG)) {
@@ -347,6 +348,25 @@ BatchGetProfileOutcome CustomerProfilesClient::BatchGetProfile(const BatchGetPro
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? BatchGetProfileOutcome(result.GetResultWithOwnership())
                             : BatchGetProfileOutcome(std::move(result.GetError()));
+}
+
+BatchPutProfileObjectOutcome CustomerProfilesClient::BatchPutProfileObject(const BatchPutProfileObjectRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchPutProfileObject", "Required field: DomainName, is not set");
+    return BatchPutProfileObjectOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/objects/batch-put-profile-object");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchPutProfileObjectOutcome(result.GetResultWithOwnership())
+                            : BatchPutProfileObjectOutcome(std::move(result.GetError()));
 }
 
 CreateCalculatedAttributeDefinitionOutcome CustomerProfilesClient::CreateCalculatedAttributeDefinition(

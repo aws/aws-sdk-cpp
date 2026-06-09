@@ -33,6 +33,22 @@ class ResourceNotFoundException {
   AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
+
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  ResourceNotFoundException& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>404</p>
    */
@@ -49,28 +65,12 @@ class ResourceNotFoundException {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetMessage() const { return m_message; }
-  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-  template <typename MessageT = Aws::String>
-  void SetMessage(MessageT&& value) {
-    m_messageHasBeenSet = true;
-    m_message = std::forward<MessageT>(value);
-  }
-  template <typename MessageT = Aws::String>
-  ResourceNotFoundException& WithMessage(MessageT&& value) {
-    SetMessage(std::forward<MessageT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_errorCode;
-
   Aws::String m_message;
-  bool m_errorCodeHasBeenSet = false;
+
+  Aws::String m_errorCode;
   bool m_messageHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
 };
 
 }  // namespace Model

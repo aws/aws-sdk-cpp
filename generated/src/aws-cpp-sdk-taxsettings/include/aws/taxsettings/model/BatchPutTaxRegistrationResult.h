@@ -32,6 +32,23 @@ class BatchPutTaxRegistrationResult {
 
   ///@{
   /**
+   * <p>The status of your TRN stored in the system after processing. Based on the
+   * validation occurring on the TRN, the status can be <code>Verified</code>,
+   * <code>Pending</code> or <code>Rejected</code>. </p>
+   */
+  inline TaxRegistrationStatus GetStatus() const { return m_status; }
+  inline void SetStatus(TaxRegistrationStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline BatchPutTaxRegistrationResult& WithStatus(TaxRegistrationStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>List of errors for the accounts the TRN information could not be added or
    * updated to. </p>
    */
@@ -55,23 +72,6 @@ class BatchPutTaxRegistrationResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The status of your TRN stored in the system after processing. Based on the
-   * validation occurring on the TRN, the status can be <code>Verified</code>,
-   * <code>Pending</code> or <code>Rejected</code>. </p>
-   */
-  inline TaxRegistrationStatus GetStatus() const { return m_status; }
-  inline void SetStatus(TaxRegistrationStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline BatchPutTaxRegistrationResult& WithStatus(TaxRegistrationStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -88,14 +88,14 @@ class BatchPutTaxRegistrationResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::Vector<BatchPutTaxRegistrationError> m_errors;
-
   TaxRegistrationStatus m_status{TaxRegistrationStatus::NOT_SET};
+
+  Aws::Vector<BatchPutTaxRegistrationError> m_errors;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_errorsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

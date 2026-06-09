@@ -143,8 +143,10 @@
 #include <aws/elasticache/model/DestinationType.h>
 #include <aws/elasticache/model/DisassociateGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/DisassociateGlobalReplicationGroupResult.h>
+#include <aws/elasticache/model/Durability.h>
 #include <aws/elasticache/model/EC2SecurityGroup.h>
 #include <aws/elasticache/model/ECPUPerSecond.h>
+#include <aws/elasticache/model/EffectiveDurability.h>
 #include <aws/elasticache/model/Endpoint.h>
 #include <aws/elasticache/model/EngineDefaults.h>
 #include <aws/elasticache/model/Event.h>
@@ -245,6 +247,7 @@
 #include <aws/elasticache/model/SourceType.h>
 #include <aws/elasticache/model/StartMigrationRequest.h>
 #include <aws/elasticache/model/StartMigrationResult.h>
+#include <aws/elasticache/model/StorageEncryptionType.h>
 #include <aws/elasticache/model/Subnet.h>
 #include <aws/elasticache/model/SubnetOutpost.h>
 #include <aws/elasticache/model/Tag.h>

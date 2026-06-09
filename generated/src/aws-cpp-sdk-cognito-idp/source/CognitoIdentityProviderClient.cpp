@@ -48,6 +48,7 @@
 #include <aws/cognito-idp/model/CreateUserImportJobRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolClientRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolDomainRequest.h>
+#include <aws/cognito-idp/model/CreateUserPoolReplicaRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolRequest.h>
 #include <aws/cognito-idp/model/DeleteGroupRequest.h>
 #include <aws/cognito-idp/model/DeleteIdentityProviderRequest.h>
@@ -58,6 +59,7 @@
 #include <aws/cognito-idp/model/DeleteUserPoolClientRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolClientSecretRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolDomainRequest.h>
+#include <aws/cognito-idp/model/DeleteUserPoolReplicaRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolRequest.h>
 #include <aws/cognito-idp/model/DeleteUserRequest.h>
 #include <aws/cognito-idp/model/DeleteWebAuthnCredentialRequest.h>
@@ -96,6 +98,7 @@
 #include <aws/cognito-idp/model/ListUserImportJobsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolClientSecretsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsRequest.h>
+#include <aws/cognito-idp/model/ListUserPoolReplicasRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolsRequest.h>
 #include <aws/cognito-idp/model/ListUsersInGroupRequest.h>
 #include <aws/cognito-idp/model/ListUsersRequest.h>
@@ -125,6 +128,7 @@
 #include <aws/cognito-idp/model/UpdateUserAttributesRequest.h>
 #include <aws/cognito-idp/model/UpdateUserPoolClientRequest.h>
 #include <aws/cognito-idp/model/UpdateUserPoolDomainRequest.h>
+#include <aws/cognito-idp/model/UpdateUserPoolReplicaRequest.h>
 #include <aws/cognito-idp/model/UpdateUserPoolRequest.h>
 #include <aws/cognito-idp/model/VerifySoftwareTokenRequest.h>
 #include <aws/cognito-idp/model/VerifyUserAttributeRequest.h>
@@ -167,10 +171,10 @@ CognitoIdentityProviderClient::CognitoIdentityProviderClient(
     const CognitoIdentityProvider::CognitoIdentityProviderClientConfiguration& clientConfiguration,
     std::shared_ptr<CognitoIdentityProviderEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<CognitoIdentityProviderErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider)
@@ -208,10 +212,10 @@ CognitoIdentityProviderClient::CognitoIdentityProviderClient(
 /* Legacy constructors due deprecation */
 CognitoIdentityProviderClient::CognitoIdentityProviderClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<CognitoIdentityProviderErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<CognitoIdentityProviderEndpointProvider>(ALLOCATION_TAG)) {
@@ -562,6 +566,12 @@ CreateUserPoolDomainOutcome CognitoIdentityProviderClient::CreateUserPoolDomain(
                             : CreateUserPoolDomainOutcome(std::move(result.GetError()));
 }
 
+CreateUserPoolReplicaOutcome CognitoIdentityProviderClient::CreateUserPoolReplica(const CreateUserPoolReplicaRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserPoolReplicaOutcome(result.GetResultWithOwnership())
+                            : CreateUserPoolReplicaOutcome(std::move(result.GetError()));
+}
+
 DeleteGroupOutcome CognitoIdentityProviderClient::DeleteGroup(const DeleteGroupRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteGroupOutcome(result.GetResultWithOwnership()) : DeleteGroupOutcome(std::move(result.GetError()));
@@ -624,6 +634,12 @@ DeleteUserPoolDomainOutcome CognitoIdentityProviderClient::DeleteUserPoolDomain(
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteUserPoolDomainOutcome(result.GetResultWithOwnership())
                             : DeleteUserPoolDomainOutcome(std::move(result.GetError()));
+}
+
+DeleteUserPoolReplicaOutcome CognitoIdentityProviderClient::DeleteUserPoolReplica(const DeleteUserPoolReplicaRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUserPoolReplicaOutcome(result.GetResultWithOwnership())
+                            : DeleteUserPoolReplicaOutcome(std::move(result.GetError()));
 }
 
 DeleteWebAuthnCredentialOutcome CognitoIdentityProviderClient::DeleteWebAuthnCredential(
@@ -840,6 +856,12 @@ ListUserPoolClientsOutcome CognitoIdentityProviderClient::ListUserPoolClients(co
                             : ListUserPoolClientsOutcome(std::move(result.GetError()));
 }
 
+ListUserPoolReplicasOutcome CognitoIdentityProviderClient::ListUserPoolReplicas(const ListUserPoolReplicasRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUserPoolReplicasOutcome(result.GetResultWithOwnership())
+                            : ListUserPoolReplicasOutcome(std::move(result.GetError()));
+}
+
 ListUserPoolsOutcome CognitoIdentityProviderClient::ListUserPools(const ListUserPoolsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListUserPoolsOutcome(result.GetResultWithOwnership()) : ListUserPoolsOutcome(std::move(result.GetError()));
@@ -1012,6 +1034,12 @@ UpdateUserPoolDomainOutcome CognitoIdentityProviderClient::UpdateUserPoolDomain(
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateUserPoolDomainOutcome(result.GetResultWithOwnership())
                             : UpdateUserPoolDomainOutcome(std::move(result.GetError()));
+}
+
+UpdateUserPoolReplicaOutcome CognitoIdentityProviderClient::UpdateUserPoolReplica(const UpdateUserPoolReplicaRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserPoolReplicaOutcome(result.GetResultWithOwnership())
+                            : UpdateUserPoolReplicaOutcome(std::move(result.GetError()));
 }
 
 VerifySoftwareTokenOutcome CognitoIdentityProviderClient::VerifySoftwareToken(const VerifySoftwareTokenRequest& request) const {

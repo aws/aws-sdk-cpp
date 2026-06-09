@@ -50,6 +50,7 @@
 #include <aws/datazone/model/CreateGlossaryTermResult.h>
 #include <aws/datazone/model/CreateGroupProfileResult.h>
 #include <aws/datazone/model/CreateListingChangeSetResult.h>
+#include <aws/datazone/model/CreateNotebookResult.h>
 #include <aws/datazone/model/CreateProjectMembershipResult.h>
 #include <aws/datazone/model/CreateProjectProfileResult.h>
 #include <aws/datazone/model/CreateProjectResult.h>
@@ -72,6 +73,7 @@
 #include <aws/datazone/model/DeleteGlossaryResult.h>
 #include <aws/datazone/model/DeleteGlossaryTermResult.h>
 #include <aws/datazone/model/DeleteListingResult.h>
+#include <aws/datazone/model/DeleteNotebookResult.h>
 #include <aws/datazone/model/DeleteProjectMembershipResult.h>
 #include <aws/datazone/model/DeleteProjectProfileResult.h>
 #include <aws/datazone/model/DeleteProjectResult.h>
@@ -107,6 +109,8 @@
 #include <aws/datazone/model/GetLineageNodeResult.h>
 #include <aws/datazone/model/GetListingResult.h>
 #include <aws/datazone/model/GetMetadataGenerationRunResult.h>
+#include <aws/datazone/model/GetNotebookExportResult.h>
+#include <aws/datazone/model/GetNotebookResult.h>
 #include <aws/datazone/model/GetNotebookRunResult.h>
 #include <aws/datazone/model/GetProjectProfileResult.h>
 #include <aws/datazone/model/GetProjectResult.h>
@@ -140,6 +144,7 @@
 #include <aws/datazone/model/ListLineageNodeHistoryResult.h>
 #include <aws/datazone/model/ListMetadataGenerationRunsResult.h>
 #include <aws/datazone/model/ListNotebookRunsResult.h>
+#include <aws/datazone/model/ListNotebooksResult.h>
 #include <aws/datazone/model/ListNotificationsResult.h>
 #include <aws/datazone/model/ListPolicyGrantsResult.h>
 #include <aws/datazone/model/ListProjectMembershipsResult.h>
@@ -169,6 +174,8 @@
 #include <aws/datazone/model/SearchUserProfilesResult.h>
 #include <aws/datazone/model/StartDataSourceRunResult.h>
 #include <aws/datazone/model/StartMetadataGenerationRunResult.h>
+#include <aws/datazone/model/StartNotebookExportResult.h>
+#include <aws/datazone/model/StartNotebookImportResult.h>
 #include <aws/datazone/model/StartNotebookRunResult.h>
 #include <aws/datazone/model/StopNotebookRunResult.h>
 #include <aws/datazone/model/TagResourceResult.h>
@@ -186,6 +193,7 @@
 #include <aws/datazone/model/UpdateGlossaryResult.h>
 #include <aws/datazone/model/UpdateGlossaryTermResult.h>
 #include <aws/datazone/model/UpdateGroupProfileResult.h>
+#include <aws/datazone/model/UpdateNotebookResult.h>
 #include <aws/datazone/model/UpdateProjectProfileResult.h>
 #include <aws/datazone/model/UpdateProjectResult.h>
 #include <aws/datazone/model/UpdateRootDomainUnitOwnerResult.h>
@@ -257,6 +265,7 @@ class CreateGlossaryRequest;
 class CreateGlossaryTermRequest;
 class CreateGroupProfileRequest;
 class CreateListingChangeSetRequest;
+class CreateNotebookRequest;
 class CreateProjectRequest;
 class CreateProjectMembershipRequest;
 class CreateProjectProfileRequest;
@@ -284,6 +293,7 @@ class DeleteFormTypeRequest;
 class DeleteGlossaryRequest;
 class DeleteGlossaryTermRequest;
 class DeleteListingRequest;
+class DeleteNotebookRequest;
 class DeleteProjectRequest;
 class DeleteProjectMembershipRequest;
 class DeleteProjectProfileRequest;
@@ -321,6 +331,8 @@ class GetLineageEventRequest;
 class GetLineageNodeRequest;
 class GetListingRequest;
 class GetMetadataGenerationRunRequest;
+class GetNotebookRequest;
+class GetNotebookExportRequest;
 class GetNotebookRunRequest;
 class GetProjectRequest;
 class GetProjectProfileRequest;
@@ -353,6 +365,7 @@ class ListLineageEventsRequest;
 class ListLineageNodeHistoryRequest;
 class ListMetadataGenerationRunsRequest;
 class ListNotebookRunsRequest;
+class ListNotebooksRequest;
 class ListNotificationsRequest;
 class ListPolicyGrantsRequest;
 class ListProjectMembershipsRequest;
@@ -382,6 +395,8 @@ class SearchTypesRequest;
 class SearchUserProfilesRequest;
 class StartDataSourceRunRequest;
 class StartMetadataGenerationRunRequest;
+class StartNotebookExportRequest;
+class StartNotebookImportRequest;
 class StartNotebookRunRequest;
 class StopNotebookRunRequest;
 class TagResourceRequest;
@@ -399,6 +414,7 @@ class UpdateEnvironmentProfileRequest;
 class UpdateGlossaryRequest;
 class UpdateGlossaryTermRequest;
 class UpdateGroupProfileRequest;
+class UpdateNotebookRequest;
 class UpdateProjectRequest;
 class UpdateProjectProfileRequest;
 class UpdateRootDomainUnitOwnerRequest;
@@ -440,6 +456,7 @@ typedef Aws::Utils::Outcome<CreateGlossaryResult, DataZoneError> CreateGlossaryO
 typedef Aws::Utils::Outcome<CreateGlossaryTermResult, DataZoneError> CreateGlossaryTermOutcome;
 typedef Aws::Utils::Outcome<CreateGroupProfileResult, DataZoneError> CreateGroupProfileOutcome;
 typedef Aws::Utils::Outcome<CreateListingChangeSetResult, DataZoneError> CreateListingChangeSetOutcome;
+typedef Aws::Utils::Outcome<CreateNotebookResult, DataZoneError> CreateNotebookOutcome;
 typedef Aws::Utils::Outcome<CreateProjectResult, DataZoneError> CreateProjectOutcome;
 typedef Aws::Utils::Outcome<CreateProjectMembershipResult, DataZoneError> CreateProjectMembershipOutcome;
 typedef Aws::Utils::Outcome<CreateProjectProfileResult, DataZoneError> CreateProjectProfileOutcome;
@@ -467,6 +484,7 @@ typedef Aws::Utils::Outcome<DeleteFormTypeResult, DataZoneError> DeleteFormTypeO
 typedef Aws::Utils::Outcome<DeleteGlossaryResult, DataZoneError> DeleteGlossaryOutcome;
 typedef Aws::Utils::Outcome<DeleteGlossaryTermResult, DataZoneError> DeleteGlossaryTermOutcome;
 typedef Aws::Utils::Outcome<DeleteListingResult, DataZoneError> DeleteListingOutcome;
+typedef Aws::Utils::Outcome<DeleteNotebookResult, DataZoneError> DeleteNotebookOutcome;
 typedef Aws::Utils::Outcome<DeleteProjectResult, DataZoneError> DeleteProjectOutcome;
 typedef Aws::Utils::Outcome<DeleteProjectMembershipResult, DataZoneError> DeleteProjectMembershipOutcome;
 typedef Aws::Utils::Outcome<DeleteProjectProfileResult, DataZoneError> DeleteProjectProfileOutcome;
@@ -504,6 +522,8 @@ typedef Aws::Utils::Outcome<GetLineageEventResult, DataZoneError> GetLineageEven
 typedef Aws::Utils::Outcome<GetLineageNodeResult, DataZoneError> GetLineageNodeOutcome;
 typedef Aws::Utils::Outcome<GetListingResult, DataZoneError> GetListingOutcome;
 typedef Aws::Utils::Outcome<GetMetadataGenerationRunResult, DataZoneError> GetMetadataGenerationRunOutcome;
+typedef Aws::Utils::Outcome<GetNotebookResult, DataZoneError> GetNotebookOutcome;
+typedef Aws::Utils::Outcome<GetNotebookExportResult, DataZoneError> GetNotebookExportOutcome;
 typedef Aws::Utils::Outcome<GetNotebookRunResult, DataZoneError> GetNotebookRunOutcome;
 typedef Aws::Utils::Outcome<GetProjectResult, DataZoneError> GetProjectOutcome;
 typedef Aws::Utils::Outcome<GetProjectProfileResult, DataZoneError> GetProjectProfileOutcome;
@@ -536,6 +556,7 @@ typedef Aws::Utils::Outcome<ListLineageEventsResult, DataZoneError> ListLineageE
 typedef Aws::Utils::Outcome<ListLineageNodeHistoryResult, DataZoneError> ListLineageNodeHistoryOutcome;
 typedef Aws::Utils::Outcome<ListMetadataGenerationRunsResult, DataZoneError> ListMetadataGenerationRunsOutcome;
 typedef Aws::Utils::Outcome<ListNotebookRunsResult, DataZoneError> ListNotebookRunsOutcome;
+typedef Aws::Utils::Outcome<ListNotebooksResult, DataZoneError> ListNotebooksOutcome;
 typedef Aws::Utils::Outcome<ListNotificationsResult, DataZoneError> ListNotificationsOutcome;
 typedef Aws::Utils::Outcome<ListPolicyGrantsResult, DataZoneError> ListPolicyGrantsOutcome;
 typedef Aws::Utils::Outcome<ListProjectMembershipsResult, DataZoneError> ListProjectMembershipsOutcome;
@@ -565,6 +586,8 @@ typedef Aws::Utils::Outcome<SearchTypesResult, DataZoneError> SearchTypesOutcome
 typedef Aws::Utils::Outcome<SearchUserProfilesResult, DataZoneError> SearchUserProfilesOutcome;
 typedef Aws::Utils::Outcome<StartDataSourceRunResult, DataZoneError> StartDataSourceRunOutcome;
 typedef Aws::Utils::Outcome<StartMetadataGenerationRunResult, DataZoneError> StartMetadataGenerationRunOutcome;
+typedef Aws::Utils::Outcome<StartNotebookExportResult, DataZoneError> StartNotebookExportOutcome;
+typedef Aws::Utils::Outcome<StartNotebookImportResult, DataZoneError> StartNotebookImportOutcome;
 typedef Aws::Utils::Outcome<StartNotebookRunResult, DataZoneError> StartNotebookRunOutcome;
 typedef Aws::Utils::Outcome<StopNotebookRunResult, DataZoneError> StopNotebookRunOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, DataZoneError> TagResourceOutcome;
@@ -582,6 +605,7 @@ typedef Aws::Utils::Outcome<UpdateEnvironmentProfileResult, DataZoneError> Updat
 typedef Aws::Utils::Outcome<UpdateGlossaryResult, DataZoneError> UpdateGlossaryOutcome;
 typedef Aws::Utils::Outcome<UpdateGlossaryTermResult, DataZoneError> UpdateGlossaryTermOutcome;
 typedef Aws::Utils::Outcome<UpdateGroupProfileResult, DataZoneError> UpdateGroupProfileOutcome;
+typedef Aws::Utils::Outcome<UpdateNotebookResult, DataZoneError> UpdateNotebookOutcome;
 typedef Aws::Utils::Outcome<UpdateProjectResult, DataZoneError> UpdateProjectOutcome;
 typedef Aws::Utils::Outcome<UpdateProjectProfileResult, DataZoneError> UpdateProjectProfileOutcome;
 typedef Aws::Utils::Outcome<UpdateRootDomainUnitOwnerResult, DataZoneError> UpdateRootDomainUnitOwnerOutcome;
@@ -623,6 +647,7 @@ typedef std::future<CreateGlossaryOutcome> CreateGlossaryOutcomeCallable;
 typedef std::future<CreateGlossaryTermOutcome> CreateGlossaryTermOutcomeCallable;
 typedef std::future<CreateGroupProfileOutcome> CreateGroupProfileOutcomeCallable;
 typedef std::future<CreateListingChangeSetOutcome> CreateListingChangeSetOutcomeCallable;
+typedef std::future<CreateNotebookOutcome> CreateNotebookOutcomeCallable;
 typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
 typedef std::future<CreateProjectMembershipOutcome> CreateProjectMembershipOutcomeCallable;
 typedef std::future<CreateProjectProfileOutcome> CreateProjectProfileOutcomeCallable;
@@ -650,6 +675,7 @@ typedef std::future<DeleteFormTypeOutcome> DeleteFormTypeOutcomeCallable;
 typedef std::future<DeleteGlossaryOutcome> DeleteGlossaryOutcomeCallable;
 typedef std::future<DeleteGlossaryTermOutcome> DeleteGlossaryTermOutcomeCallable;
 typedef std::future<DeleteListingOutcome> DeleteListingOutcomeCallable;
+typedef std::future<DeleteNotebookOutcome> DeleteNotebookOutcomeCallable;
 typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
 typedef std::future<DeleteProjectMembershipOutcome> DeleteProjectMembershipOutcomeCallable;
 typedef std::future<DeleteProjectProfileOutcome> DeleteProjectProfileOutcomeCallable;
@@ -687,6 +713,8 @@ typedef std::future<GetLineageEventOutcome> GetLineageEventOutcomeCallable;
 typedef std::future<GetLineageNodeOutcome> GetLineageNodeOutcomeCallable;
 typedef std::future<GetListingOutcome> GetListingOutcomeCallable;
 typedef std::future<GetMetadataGenerationRunOutcome> GetMetadataGenerationRunOutcomeCallable;
+typedef std::future<GetNotebookOutcome> GetNotebookOutcomeCallable;
+typedef std::future<GetNotebookExportOutcome> GetNotebookExportOutcomeCallable;
 typedef std::future<GetNotebookRunOutcome> GetNotebookRunOutcomeCallable;
 typedef std::future<GetProjectOutcome> GetProjectOutcomeCallable;
 typedef std::future<GetProjectProfileOutcome> GetProjectProfileOutcomeCallable;
@@ -719,6 +747,7 @@ typedef std::future<ListLineageEventsOutcome> ListLineageEventsOutcomeCallable;
 typedef std::future<ListLineageNodeHistoryOutcome> ListLineageNodeHistoryOutcomeCallable;
 typedef std::future<ListMetadataGenerationRunsOutcome> ListMetadataGenerationRunsOutcomeCallable;
 typedef std::future<ListNotebookRunsOutcome> ListNotebookRunsOutcomeCallable;
+typedef std::future<ListNotebooksOutcome> ListNotebooksOutcomeCallable;
 typedef std::future<ListNotificationsOutcome> ListNotificationsOutcomeCallable;
 typedef std::future<ListPolicyGrantsOutcome> ListPolicyGrantsOutcomeCallable;
 typedef std::future<ListProjectMembershipsOutcome> ListProjectMembershipsOutcomeCallable;
@@ -748,6 +777,8 @@ typedef std::future<SearchTypesOutcome> SearchTypesOutcomeCallable;
 typedef std::future<SearchUserProfilesOutcome> SearchUserProfilesOutcomeCallable;
 typedef std::future<StartDataSourceRunOutcome> StartDataSourceRunOutcomeCallable;
 typedef std::future<StartMetadataGenerationRunOutcome> StartMetadataGenerationRunOutcomeCallable;
+typedef std::future<StartNotebookExportOutcome> StartNotebookExportOutcomeCallable;
+typedef std::future<StartNotebookImportOutcome> StartNotebookImportOutcomeCallable;
 typedef std::future<StartNotebookRunOutcome> StartNotebookRunOutcomeCallable;
 typedef std::future<StopNotebookRunOutcome> StopNotebookRunOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -765,6 +796,7 @@ typedef std::future<UpdateEnvironmentProfileOutcome> UpdateEnvironmentProfileOut
 typedef std::future<UpdateGlossaryOutcome> UpdateGlossaryOutcomeCallable;
 typedef std::future<UpdateGlossaryTermOutcome> UpdateGlossaryTermOutcomeCallable;
 typedef std::future<UpdateGroupProfileOutcome> UpdateGroupProfileOutcomeCallable;
+typedef std::future<UpdateNotebookOutcome> UpdateNotebookOutcomeCallable;
 typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
 typedef std::future<UpdateProjectProfileOutcome> UpdateProjectProfileOutcomeCallable;
 typedef std::future<UpdateRootDomainUnitOwnerOutcome> UpdateRootDomainUnitOwnerOutcomeCallable;
@@ -869,6 +901,9 @@ typedef std::function<void(const DataZoneClient*, const Model::CreateGroupProfil
 typedef std::function<void(const DataZoneClient*, const Model::CreateListingChangeSetRequest&, const Model::CreateListingChangeSetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateListingChangeSetResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::CreateNotebookRequest&, const Model::CreateNotebookOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateNotebookResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateProjectResponseReceivedHandler;
@@ -952,6 +987,9 @@ typedef std::function<void(const DataZoneClient*, const Model::DeleteGlossaryTer
 typedef std::function<void(const DataZoneClient*, const Model::DeleteListingRequest&, const Model::DeleteListingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteListingResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::DeleteNotebookRequest&, const Model::DeleteNotebookOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteNotebookResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteProjectResponseReceivedHandler;
@@ -1064,6 +1102,12 @@ typedef std::function<void(const DataZoneClient*, const Model::GetListingRequest
 typedef std::function<void(const DataZoneClient*, const Model::GetMetadataGenerationRunRequest&,
                            const Model::GetMetadataGenerationRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMetadataGenerationRunResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::GetNotebookRequest&, const Model::GetNotebookOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetNotebookResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::GetNotebookExportRequest&, const Model::GetNotebookExportOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetNotebookExportResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::GetNotebookRunRequest&, const Model::GetNotebookRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetNotebookRunResponseReceivedHandler;
@@ -1162,6 +1206,9 @@ typedef std::function<void(const DataZoneClient*, const Model::ListMetadataGener
 typedef std::function<void(const DataZoneClient*, const Model::ListNotebookRunsRequest&, const Model::ListNotebookRunsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListNotebookRunsResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::ListNotebooksRequest&, const Model::ListNotebooksOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNotebooksResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::ListNotificationsRequest&, const Model::ListNotificationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListNotificationsResponseReceivedHandler;
@@ -1250,6 +1297,12 @@ typedef std::function<void(const DataZoneClient*, const Model::StartDataSourceRu
 typedef std::function<void(const DataZoneClient*, const Model::StartMetadataGenerationRunRequest&,
                            const Model::StartMetadataGenerationRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartMetadataGenerationRunResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::StartNotebookExportRequest&, const Model::StartNotebookExportOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartNotebookExportResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::StartNotebookImportRequest&, const Model::StartNotebookImportOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartNotebookImportResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::StartNotebookRunRequest&, const Model::StartNotebookRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartNotebookRunResponseReceivedHandler;
@@ -1301,6 +1354,9 @@ typedef std::function<void(const DataZoneClient*, const Model::UpdateGlossaryTer
 typedef std::function<void(const DataZoneClient*, const Model::UpdateGroupProfileRequest&, const Model::UpdateGroupProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateGroupProfileResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::UpdateNotebookRequest&, const Model::UpdateNotebookOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateNotebookResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateProjectResponseReceivedHandler;

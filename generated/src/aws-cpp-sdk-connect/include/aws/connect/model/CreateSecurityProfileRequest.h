@@ -98,7 +98,7 @@ class CreateSecurityProfileRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can <a
+   * <p>The identifier of the Connect Customer instance. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
@@ -144,7 +144,7 @@ class CreateSecurityProfileRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The list of tags that a security profile uses to restrict access to resources
-   * in Amazon Connect.</p>
+   * in Connect Customer.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetAllowedAccessControlTags() const { return m_allowedAccessControlTags; }
   inline bool AllowedAccessControlTagsHasBeenSet() const { return m_allowedAccessControlTagsHasBeenSet; }
@@ -170,10 +170,10 @@ class CreateSecurityProfileRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The list of resources that a security profile applies tag restrictions to in
-   * Amazon Connect. For a list of Amazon Connect resources that you can tag, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Add
-   * tags to resources in Amazon Connect</a> in the <i>Amazon Connect Administrator
-   * Guide</i>. </p>
+   * Connect Customer. For a list of Connect Customer resources that you can tag, see
+   * <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Add
+   * tags to resources in Connect Customer</a> in the <i>Connect Customer
+   * Administrator Guide</i>. </p>
    */
   inline const Aws::Vector<Aws::String>& GetTagRestrictedResources() const { return m_tagRestrictedResources; }
   inline bool TagRestrictedResourcesHasBeenSet() const { return m_tagRestrictedResourcesHasBeenSet; }
@@ -223,7 +223,7 @@ class CreateSecurityProfileRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The list of resources that a security profile applies hierarchy restrictions
-   * to in Amazon Connect. Following are acceptable ResourceNames:
+   * to in Connect Customer. Following are acceptable ResourceNames:
    * <code>User</code>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetHierarchyRestrictedResources() const { return m_hierarchyRestrictedResources; }
@@ -249,7 +249,7 @@ class CreateSecurityProfileRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The identifier of the hierarchy group that a security profile uses to
-   * restrict access to resources in Amazon Connect.</p>
+   * restrict access to resources in Connect Customer.</p>
    */
   inline const Aws::String& GetAllowedAccessControlHierarchyGroupId() const { return m_allowedAccessControlHierarchyGroupId; }
   inline bool AllowedAccessControlHierarchyGroupIdHasBeenSet() const { return m_allowedAccessControlHierarchyGroupIdHasBeenSet; }

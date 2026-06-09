@@ -33,11 +33,11 @@ class ListPhoneNumbersV2Request : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+   * <p>The Amazon Resource Name (ARN) for Connect Customer instances or traffic
    * distribution groups that phone number inbound traffic is routed through. If both
    * <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this
-   * API lists numbers claimed to all the Amazon Connect instances belonging to your
-   * account in the same Amazon Web Services Region as the request.</p>
+   * API lists numbers claimed to all the Connect Customer instances belonging to
+   * your account in the same Amazon Web Services Region as the request.</p>
    */
   inline const Aws::String& GetTargetArn() const { return m_targetArn; }
   inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
@@ -55,12 +55,12 @@ class ListPhoneNumbersV2Request : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
-   * to. You can <a
+   * <p>The identifier of the Connect Customer instance that phone numbers are
+   * claimed to. You can <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both
    * <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API
-   * lists numbers claimed to all the Amazon Connect instances belonging to your
+   * lists numbers claimed to all the Connect Customer instances belonging to your
    * account in the same Amazon Web Services Region as the request.</p>
    */
   inline const Aws::String& GetInstanceId() const { return m_instanceId; }

@@ -31,6 +31,11 @@ LocalTimeZoneConfig& LocalTimeZoneConfig::operator=(JsonView jsonValue) {
     }
     m_localTimeZoneDetectionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("localTimeZoneDetectionScope")) {
+    m_localTimeZoneDetectionScope =
+        LocalTimeZoneDetectionScopeMapper::GetLocalTimeZoneDetectionScopeForName(jsonValue.GetString("localTimeZoneDetectionScope"));
+    m_localTimeZoneDetectionScopeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -49,6 +54,11 @@ JsonValue LocalTimeZoneConfig::Jsonize() const {
           LocalTimeZoneDetectionTypeMapper::GetNameForLocalTimeZoneDetectionType(m_localTimeZoneDetection[localTimeZoneDetectionIndex]));
     }
     payload.WithArray("localTimeZoneDetection", std::move(localTimeZoneDetectionJsonList));
+  }
+
+  if (m_localTimeZoneDetectionScopeHasBeenSet) {
+    payload.WithString("localTimeZoneDetectionScope",
+                       LocalTimeZoneDetectionScopeMapper::GetNameForLocalTimeZoneDetectionScope(m_localTimeZoneDetectionScope));
   }
 
   return payload;

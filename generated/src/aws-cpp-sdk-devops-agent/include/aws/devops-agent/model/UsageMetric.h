@@ -31,7 +31,8 @@ class UsageMetric {
 
   ///@{
   /**
-   * <p>Configured limit for this metric.</p>
+   * <p>Configured limit for this metric. A value of -1 indicates no limit is
+   * enforced.</p>
    */
   inline int GetLimit() const { return m_limit; }
   inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }

@@ -593,6 +593,11 @@ int S3CrtClient::S3CrtRequestGetBodyCallback(struct aws_s3_meta_request* meta_re
   if (userData->request->IsEventStreamRequest()) {
     bodyStream.flush();
   }
+  if (bodyStream.fail()) {
+    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Failed to write download data");
+    aws_raise_error(AWS_ERROR_FILE_WRITE_FAILURE);
+    return AWS_OP_ERR;
+  }
 
   // Replenish flow-control window (no-op if enable_read_backpressure is not set):
   aws_s3_meta_request_increment_read_window(meta_request, body->len);

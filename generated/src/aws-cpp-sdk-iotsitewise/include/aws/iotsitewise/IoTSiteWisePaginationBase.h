@@ -15,6 +15,7 @@
 #include <aws/iotsitewise/model/GetAssetPropertyValueHistoryPaginationTraits.h>
 #include <aws/iotsitewise/model/GetInterpolatedAssetPropertyValuesPaginationTraits.h>
 #include <aws/iotsitewise/model/ListAccessPoliciesPaginationTraits.h>
+#include <aws/iotsitewise/model/ListActionsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListAssetModelCompositeModelsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListAssetModelPropertiesPaginationTraits.h>
 #include <aws/iotsitewise/model/ListAssetModelsPaginationTraits.h>
@@ -138,6 +139,17 @@ class IoTSiteWisePaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessPoliciesRequest,
                                              Pagination::ListAccessPoliciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListActions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActionsRequest, Pagination::ListActionsPaginationTraits<DerivedClient>>
+  ListActionsPaginator(const Model::ListActionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActionsRequest,
+                                             Pagination::ListActionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                     request};
   }
 
   /**

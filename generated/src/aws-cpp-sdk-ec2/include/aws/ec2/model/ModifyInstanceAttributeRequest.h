@@ -10,9 +10,10 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
 #include <aws/ec2/model/AttributeValue.h>
-#include <aws/ec2/model/BlobAttributeValue.h>
+#include <aws/ec2/model/EnclaveOptionsRequest.h>
 #include <aws/ec2/model/InstanceAttributeName.h>
 #include <aws/ec2/model/InstanceBlockDeviceMappingSpecification.h>
+#include <aws/ec2/model/SecureBlobAttributeValue.h>
 
 #include <utility>
 
@@ -57,6 +58,27 @@ class ModifyInstanceAttributeRequest : public EC2Request {
   template <typename SourceDestCheckT = AttributeBooleanValue>
   ModifyInstanceAttributeRequest& WithSourceDestCheck(SourceDestCheckT&& value) {
     SetSourceDestCheck(std::forward<SourceDestCheckT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Enables or disables the instance for Amazon Web Services Nitro Enclaves. For
+   * more information, see the <a
+   * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">Amazon
+   * Web Services Nitro Enclaves User Guide</a>.</p>
+   */
+  inline const EnclaveOptionsRequest& GetEnclaveOptions() const { return m_enclaveOptions; }
+  inline bool EnclaveOptionsHasBeenSet() const { return m_enclaveOptionsHasBeenSet; }
+  template <typename EnclaveOptionsT = EnclaveOptionsRequest>
+  void SetEnclaveOptions(EnclaveOptionsT&& value) {
+    m_enclaveOptionsHasBeenSet = true;
+    m_enclaveOptions = std::forward<EnclaveOptionsT>(value);
+  }
+  template <typename EnclaveOptionsT = EnclaveOptionsRequest>
+  ModifyInstanceAttributeRequest& WithEnclaveOptions(EnclaveOptionsT&& value) {
+    SetEnclaveOptions(std::forward<EnclaveOptionsT>(value));
     return *this;
   }
   ///@}
@@ -292,14 +314,14 @@ class ModifyInstanceAttributeRequest : public EC2Request {
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work
    * with instance user data</a>.</p>
    */
-  inline const BlobAttributeValue& GetUserData() const { return m_userData; }
+  inline const SecureBlobAttributeValue& GetUserData() const { return m_userData; }
   inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
-  template <typename UserDataT = BlobAttributeValue>
+  template <typename UserDataT = SecureBlobAttributeValue>
   void SetUserData(UserDataT&& value) {
     m_userDataHasBeenSet = true;
     m_userData = std::forward<UserDataT>(value);
   }
-  template <typename UserDataT = BlobAttributeValue>
+  template <typename UserDataT = SecureBlobAttributeValue>
   ModifyInstanceAttributeRequest& WithUserData(UserDataT&& value) {
     SetUserData(std::forward<UserDataT>(value));
     return *this;
@@ -417,6 +439,8 @@ class ModifyInstanceAttributeRequest : public EC2Request {
  private:
   AttributeBooleanValue m_sourceDestCheck;
 
+  EnclaveOptionsRequest m_enclaveOptions;
+
   AttributeBooleanValue m_disableApiStop;
 
   bool m_dryRun{false};
@@ -437,7 +461,7 @@ class ModifyInstanceAttributeRequest : public EC2Request {
 
   AttributeValue m_ramdisk;
 
-  BlobAttributeValue m_userData;
+  SecureBlobAttributeValue m_userData;
 
   AttributeValue m_instanceInitiatedShutdownBehavior;
 
@@ -449,6 +473,7 @@ class ModifyInstanceAttributeRequest : public EC2Request {
 
   AttributeBooleanValue m_enaSupport;
   bool m_sourceDestCheckHasBeenSet = false;
+  bool m_enclaveOptionsHasBeenSet = false;
   bool m_disableApiStopHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;

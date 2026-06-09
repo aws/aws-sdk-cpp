@@ -20,8 +20,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>OAuth2 authentication information for third-party providers. Supports Google,
- * Apple, X, Telegram, and GitHub providers.</p><p><h3>See Also:</h3>   <a
+ * <p>OAuth2 authentication information for third-party providers.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/OAuth2Authentication">AWS
  * API Reference</a></p>
  */
@@ -53,7 +53,7 @@ class OAuth2Authentication {
 
   ///@{
   /**
-   * <p>The email address from the OAuth2 provider (optional).</p>
+   * <p>The email address from the OAuth2 provider.</p>
    */
   inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
   inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
@@ -71,7 +71,7 @@ class OAuth2Authentication {
 
   ///@{
   /**
-   * <p>The user's name from the OAuth2 provider (optional).</p>
+   * <p>The user's name from the OAuth2 provider.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -89,7 +89,7 @@ class OAuth2Authentication {
 
   ///@{
   /**
-   * <p>The username from the OAuth2 provider (optional).</p>
+   * <p>The username from the OAuth2 provider.</p>
    */
   inline const Aws::String& GetUsername() const { return m_username; }
   inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }

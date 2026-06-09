@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/AgentHierarchyGroups.h>
+#include <aws/connect/model/AiAgentsCriteria.h>
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/ContactAnalysis.h>
 #include <aws/connect/model/ContactInitiationMethod.h>
@@ -129,7 +130,7 @@ class SearchCriteria {
 
   ///@{
   /**
-   * <p>Search criteria based on analysis outputs from Amazon Connect Contact
+   * <p>Search criteria based on analysis outputs from Connect Customer Contact
    * Lens.</p>
    */
   inline const ContactAnalysis& GetContactAnalysis() const { return m_contactAnalysis; }
@@ -234,12 +235,12 @@ class SearchCriteria {
    * <p>The search criteria based on user-defined contact attributes that have been
    * configured for contact search. For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search
-   * by custom contact attributes</a> in the <i>Amazon Connect Administrator
+   * by custom contact attributes</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p>  <p>To use <code>SearchableContactAttributes</code> in
    * a search request, the <code>GetContactAttributes</code> action is required to
    * perform an API request. For more information, see <a
    * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions
-   * defined by Amazon Connect.</p>
+   * defined by Connect Customer.</p>
    */
   inline const SearchableContactAttributes& GetSearchableContactAttributes() const { return m_searchableContactAttributes; }
   inline bool SearchableContactAttributesHasBeenSet() const { return m_searchableContactAttributesHasBeenSet; }
@@ -312,6 +313,24 @@ class SearchCriteria {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>AI Agent search criteria definitions.</p>
+   */
+  inline const AiAgentsCriteria& GetAiAgents() const { return m_aiAgents; }
+  inline bool AiAgentsHasBeenSet() const { return m_aiAgentsHasBeenSet; }
+  template <typename AiAgentsT = AiAgentsCriteria>
+  void SetAiAgents(AiAgentsT&& value) {
+    m_aiAgentsHasBeenSet = true;
+    m_aiAgents = std::forward<AiAgentsT>(value);
+  }
+  template <typename AiAgentsT = AiAgentsCriteria>
+  SearchCriteria& WithAiAgents(AiAgentsT&& value) {
+    SetAiAgents(std::forward<AiAgentsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   NameCriteria m_name;
 
@@ -338,6 +357,8 @@ class SearchCriteria {
   Aws::Vector<Aws::String> m_activeRegions;
 
   ControlPlaneTagFilter m_contactTags;
+
+  AiAgentsCriteria m_aiAgents;
   bool m_nameHasBeenSet = false;
   bool m_agentIdsHasBeenSet = false;
   bool m_agentHierarchyGroupsHasBeenSet = false;
@@ -351,6 +372,7 @@ class SearchCriteria {
   bool m_searchableSegmentAttributesHasBeenSet = false;
   bool m_activeRegionsHasBeenSet = false;
   bool m_contactTagsHasBeenSet = false;
+  bool m_aiAgentsHasBeenSet = false;
 };
 
 }  // namespace Model

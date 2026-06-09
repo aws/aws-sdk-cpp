@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/AdditionalInferenceSpecificationDefinition.h>
 #include <aws/sagemaker/model/DriftCheckBaselines.h>
 #include <aws/sagemaker/model/InferenceSpecification.h>
+#include <aws/sagemaker/model/ManagedStorageType.h>
 #include <aws/sagemaker/model/MetadataProperties.h>
 #include <aws/sagemaker/model/ModelApprovalStatus.h>
 #include <aws/sagemaker/model/ModelLifeCycle.h>
@@ -569,7 +570,22 @@ class DescribeModelPackageResult {
    * package model card schema</a>. For more information about the model card
    * associated with the model package, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
-   * the Details of a Model Version</a>.</p>
+   * the Details of a Model Version</a>.</p> <p>When you set
+   * <code>IncludedData</code> to <code>MetadataOnly</code> in the request,
+   * <code>ModelCardStatus</code> is preserved and <code>ModelCardContent</code> is
+   * sanitized to include only the following JSON paths, when present in the model
+   * card:</p> <ul> <li> <p> <code>model_overview.model_id</code> </p> </li> <li> <p>
+   * <code>model_overview.model_name</code> </p> </li> <li> <p>
+   * <code>intended_uses.risk_rating</code> </p> </li> <li> <p>
+   * <code>model_package_details.model_package_group_name</code> </p> </li> <li> <p>
+   * <code>model_package_details.model_package_arn</code> </p> </li> </ul> <p>Because
+   * the <code>ModelPackageModelCard</code> schema does not include
+   * <code>model_package_details</code> and limits <code>model_overview</code> to
+   * <code>model_creator</code> and <code>model_artifact</code>, the sanitized
+   * <code>ModelCardContent</code> for a model package typically contains only
+   * <code>intended_uses.risk_rating</code> if it was provided when the model card
+   * was created. To retrieve the complete <code>ModelCardContent</code>, set
+   * <code>IncludedData</code> to <code>AllData</code> or omit the parameter.</p>
    */
   inline const ModelPackageModelCard& GetModelCard() const { return m_modelCard; }
   template <typename ModelCardT = ModelPackageModelCard>
@@ -598,6 +614,21 @@ class DescribeModelPackageResult {
   template <typename ModelLifeCycleT = ModelLifeCycle>
   DescribeModelPackageResult& WithModelLifeCycle(ModelLifeCycleT&& value) {
     SetModelLifeCycle(std::forward<ModelLifeCycleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The storage type of the model package.</p>
+   */
+  inline ManagedStorageType GetManagedStorageType() const { return m_managedStorageType; }
+  inline void SetManagedStorageType(ManagedStorageType value) {
+    m_managedStorageTypeHasBeenSet = true;
+    m_managedStorageType = value;
+  }
+  inline DescribeModelPackageResult& WithManagedStorageType(ManagedStorageType value) {
+    SetManagedStorageType(value);
     return *this;
   }
   ///@}
@@ -681,6 +712,8 @@ class DescribeModelPackageResult {
 
   ModelLifeCycle m_modelLifeCycle;
 
+  ManagedStorageType m_managedStorageType{ManagedStorageType::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelPackageNameHasBeenSet = false;
@@ -714,6 +747,7 @@ class DescribeModelPackageResult {
   bool m_securityConfigHasBeenSet = false;
   bool m_modelCardHasBeenSet = false;
   bool m_modelLifeCycleHasBeenSet = false;
+  bool m_managedStorageTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

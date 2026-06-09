@@ -342,10 +342,9 @@ class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient : public Aws::Client
 
   /**
    * <p>Creates a policy store. A policy store is a container for policy
-   * resources.</p>  <p>Although <a
-   * href="https://docs.cedarpolicy.com/schema/schema.html#namespace">Cedar supports
-   * multiple namespaces</a>, Verified Permissions currently supports only one
-   * namespace per policy store.</p>   <p>Verified Permissions is <i> <a
+   * resources.</p>  <p>As of May 2026, Verified Permissions has aligned with
+   * Cedar and now supports multiple namespaces.</p>   <p>Verified
+   * Permissions is <i> <a
    * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
    * </i>. It can take a few seconds for a new or changed element to propagate
    * through the service and be visible in the results of other Verified Permissions
@@ -539,13 +538,20 @@ class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient : public Aws::Client
   /**
    * <p>Deletes the specified policy store alias.</p> <p>This operation is
    * idempotent. If you specify a policy store alias that does not exist, the request
-   * response will still return a successful HTTP 200 status code.</p> <p>When a
-   * policy store alias is deleted, it enters the <code>PendingDeletion</code> state.
-   * When a policy store alias is in the <code>PendingDeletion</code> state, new
-   * policy store aliases cannot be created with the same name. If the policy store
-   * alias is used in an API that has a <code>policyStoreId</code> field, the
-   * operation will fail with a <code>ResourceNotFound</code>
-   * exception.</p><p><h3>See Also:</h3>   <a
+   * response will still return a successful HTTP 200 status code.</p> <p>By default,
+   * when a policy store alias is deleted, it enters the <code>PendingDeletion</code>
+   * state. When a policy store alias is in the <code>PendingDeletion</code> state,
+   * new policy store aliases cannot be created with the same name. If the policy
+   * store alias is used in an API that has a <code>policyStoreId</code> field, the
+   * operation will fail with a <code>ResourceNotFound</code> exception.</p> <p>To
+   * immediately delete a policy store alias and bypass the
+   * <code>PendingDeletion</code> state, set the <code>deletionMode</code> parameter
+   * to <code>HardDelete</code>.</p>  <p>Verified Permissions is
+   * eventually consistent. If you hard delete a policy store alias and then
+   * immediately recreate it to be associated with a different policy store, requests
+   * that reference this alias may continue to be evaluated against the previously
+   * associated policy store for a short period of time.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/DeletePolicyStoreAlias">AWS
    * API Reference</a></p>
    */

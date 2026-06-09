@@ -101,6 +101,10 @@ GetCollaborationTrainedModelResult& GetCollaborationTrainedModelResult::operator
     m_trainingContainerImageDigest = jsonValue.GetString("trainingContainerImageDigest");
     m_trainingContainerImageDigestHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mlModelTrainingPayerAccountId")) {
+    m_mlModelTrainingPayerAccountId = jsonValue.GetString("mlModelTrainingPayerAccountId");
+    m_mlModelTrainingPayerAccountIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetString("createTime");
     m_createTimeHasBeenSet = true;

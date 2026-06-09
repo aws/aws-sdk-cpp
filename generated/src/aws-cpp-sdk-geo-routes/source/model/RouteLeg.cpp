@@ -46,6 +46,18 @@ RouteLeg& RouteLeg::operator=(JsonView jsonValue) {
     m_vehicleLegDetails = jsonValue.GetObject("VehicleLegDetails");
     m_vehicleLegDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RentalLegDetails")) {
+    m_rentalLegDetails = jsonValue.GetObject("RentalLegDetails");
+    m_rentalLegDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TaxiLegDetails")) {
+    m_taxiLegDetails = jsonValue.GetObject("TaxiLegDetails");
+    m_taxiLegDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TransitLegDetails")) {
+    m_transitLegDetails = jsonValue.GetObject("TransitLegDetails");
+    m_transitLegDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +90,18 @@ JsonValue RouteLeg::Jsonize() const {
 
   if (m_vehicleLegDetailsHasBeenSet) {
     payload.WithObject("VehicleLegDetails", m_vehicleLegDetails.Jsonize());
+  }
+
+  if (m_rentalLegDetailsHasBeenSet) {
+    payload.WithObject("RentalLegDetails", m_rentalLegDetails.Jsonize());
+  }
+
+  if (m_taxiLegDetailsHasBeenSet) {
+    payload.WithObject("TaxiLegDetails", m_taxiLegDetails.Jsonize());
+  }
+
+  if (m_transitLegDetailsHasBeenSet) {
+    payload.WithObject("TransitLegDetails", m_transitLegDetails.Jsonize());
   }
 
   return payload;

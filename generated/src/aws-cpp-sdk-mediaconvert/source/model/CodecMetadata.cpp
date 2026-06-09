@@ -34,6 +34,10 @@ CodecMetadata& CodecMetadata::operator=(JsonView jsonValue) {
     m_colorPrimaries = ColorPrimariesMapper::GetColorPrimariesForName(jsonValue.GetString("colorPrimaries"));
     m_colorPrimariesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("contentLightLevel")) {
+    m_contentLightLevel = jsonValue.GetObject("contentLightLevel");
+    m_contentLightLevelHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("height")) {
     m_height = jsonValue.GetInteger("height");
     m_heightHasBeenSet = true;
@@ -49,6 +53,10 @@ CodecMetadata& CodecMetadata::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("profile")) {
     m_profile = jsonValue.GetString("profile");
     m_profileHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("rotation")) {
+    m_rotation = jsonValue.GetInteger("rotation");
+    m_rotationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("scanType")) {
     m_scanType = jsonValue.GetString("scanType");
@@ -85,6 +93,10 @@ JsonValue CodecMetadata::Jsonize() const {
     payload.WithString("colorPrimaries", ColorPrimariesMapper::GetNameForColorPrimaries(m_colorPrimaries));
   }
 
+  if (m_contentLightLevelHasBeenSet) {
+    payload.WithObject("contentLightLevel", m_contentLightLevel.Jsonize());
+  }
+
   if (m_heightHasBeenSet) {
     payload.WithInteger("height", m_height);
   }
@@ -99,6 +111,10 @@ JsonValue CodecMetadata::Jsonize() const {
 
   if (m_profileHasBeenSet) {
     payload.WithString("profile", m_profile);
+  }
+
+  if (m_rotationHasBeenSet) {
+    payload.WithInteger("rotation", m_rotation);
   }
 
   if (m_scanTypeHasBeenSet) {

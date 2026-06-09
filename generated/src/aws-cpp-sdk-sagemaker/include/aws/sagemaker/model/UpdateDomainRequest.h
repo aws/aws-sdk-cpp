@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/AppSecurityGroupManagement.h>
 #include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <aws/sagemaker/model/DomainSettingsForUpdate.h>
+#include <aws/sagemaker/model/HomeEfsFileSystemCreation.h>
 #include <aws/sagemaker/model/TagPropagation.h>
 #include <aws/sagemaker/model/UserSettings.h>
 
@@ -202,6 +203,25 @@ class UpdateDomainRequest : public SageMakerRequest {
 
   ///@{
   /**
+   * <p>Indicates whether to create a home EFS file system for the domain. You can
+   * change from <code>Disabled</code> to <code>Enabled</code> to provision EFS on
+   * demand, but you cannot change from <code>Enabled</code> to
+   * <code>Disabled</code>.</p>
+   */
+  inline HomeEfsFileSystemCreation GetHomeEfsFileSystemCreation() const { return m_homeEfsFileSystemCreation; }
+  inline bool HomeEfsFileSystemCreationHasBeenSet() const { return m_homeEfsFileSystemCreationHasBeenSet; }
+  inline void SetHomeEfsFileSystemCreation(HomeEfsFileSystemCreation value) {
+    m_homeEfsFileSystemCreationHasBeenSet = true;
+    m_homeEfsFileSystemCreation = value;
+  }
+  inline UpdateDomainRequest& WithHomeEfsFileSystemCreation(HomeEfsFileSystemCreation value) {
+    SetHomeEfsFileSystemCreation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier for the VPC used by the domain for network communication. Use
    * this field only when adding VPC configuration to a SageMaker AI domain used in
    * Amazon SageMaker Unified Studio that was created without VPC settings. SageMaker
@@ -238,6 +258,8 @@ class UpdateDomainRequest : public SageMakerRequest {
 
   TagPropagation m_tagPropagation{TagPropagation::NOT_SET};
 
+  HomeEfsFileSystemCreation m_homeEfsFileSystemCreation{HomeEfsFileSystemCreation::NOT_SET};
+
   Aws::String m_vpcId;
   bool m_domainIdHasBeenSet = false;
   bool m_defaultUserSettingsHasBeenSet = false;
@@ -247,6 +269,7 @@ class UpdateDomainRequest : public SageMakerRequest {
   bool m_subnetIdsHasBeenSet = false;
   bool m_appNetworkAccessTypeHasBeenSet = false;
   bool m_tagPropagationHasBeenSet = false;
+  bool m_homeEfsFileSystemCreationHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

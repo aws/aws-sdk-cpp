@@ -5,9 +5,11 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AdditionalEnis.h>
 #include <aws/sagemaker/model/CapacityReservation.h>
+#include <aws/sagemaker/model/InstanceRequirementsEniConfiguration.h>
 
 #include <utility>
 
@@ -68,6 +70,34 @@ class InstanceMetadata {
   template <typename AdditionalEnisT = AdditionalEnis>
   InstanceMetadata& WithAdditionalEnis(AdditionalEnisT&& value) {
     SetAdditionalEnis(std::forward<AdditionalEnisT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ENI configurations for the instance types in the instance requirements,
+   * grouped by network interface category (for example, ENI-only or EFA with ENIs).
+   * At most one configuration per category.</p>
+   */
+  inline const Aws::Vector<InstanceRequirementsEniConfiguration>& GetInstanceRequirementsEniConfigurations() const {
+    return m_instanceRequirementsEniConfigurations;
+  }
+  inline bool InstanceRequirementsEniConfigurationsHasBeenSet() const { return m_instanceRequirementsEniConfigurationsHasBeenSet; }
+  template <typename InstanceRequirementsEniConfigurationsT = Aws::Vector<InstanceRequirementsEniConfiguration>>
+  void SetInstanceRequirementsEniConfigurations(InstanceRequirementsEniConfigurationsT&& value) {
+    m_instanceRequirementsEniConfigurationsHasBeenSet = true;
+    m_instanceRequirementsEniConfigurations = std::forward<InstanceRequirementsEniConfigurationsT>(value);
+  }
+  template <typename InstanceRequirementsEniConfigurationsT = Aws::Vector<InstanceRequirementsEniConfiguration>>
+  InstanceMetadata& WithInstanceRequirementsEniConfigurations(InstanceRequirementsEniConfigurationsT&& value) {
+    SetInstanceRequirementsEniConfigurations(std::forward<InstanceRequirementsEniConfigurationsT>(value));
+    return *this;
+  }
+  template <typename InstanceRequirementsEniConfigurationsT = InstanceRequirementsEniConfiguration>
+  InstanceMetadata& AddInstanceRequirementsEniConfigurations(InstanceRequirementsEniConfigurationsT&& value) {
+    m_instanceRequirementsEniConfigurationsHasBeenSet = true;
+    m_instanceRequirementsEniConfigurations.emplace_back(std::forward<InstanceRequirementsEniConfigurationsT>(value));
     return *this;
   }
   ///@}
@@ -150,6 +180,8 @@ class InstanceMetadata {
 
   AdditionalEnis m_additionalEnis;
 
+  Aws::Vector<InstanceRequirementsEniConfiguration> m_instanceRequirementsEniConfigurations;
+
   CapacityReservation m_capacityReservation;
 
   Aws::String m_failureMessage;
@@ -159,6 +191,7 @@ class InstanceMetadata {
   Aws::String m_nodeLogicalId;
   bool m_customerEniHasBeenSet = false;
   bool m_additionalEnisHasBeenSet = false;
+  bool m_instanceRequirementsEniConfigurationsHasBeenSet = false;
   bool m_capacityReservationHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
   bool m_lcsExecutionStateHasBeenSet = false;

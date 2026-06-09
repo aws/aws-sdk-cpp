@@ -13,6 +13,7 @@
 #include <aws/datazone/model/ListEntityOwnersPaginationTraits.h>
 #include <aws/datazone/model/SearchUserProfilesPaginationTraits.h>
 #include <aws/datazone/model/ListDataSourceRunsPaginationTraits.h>
+#include <aws/datazone/model/ListNotebooksPaginationTraits.h>
 #include <aws/datazone/model/ListTimeSeriesDataPointsPaginationTraits.h>
 #include <aws/datazone/model/ListDomainUnitsForParentPaginationTraits.h>
 #include <aws/datazone/model/ListRulesPaginationTraits.h>

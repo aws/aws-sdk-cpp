@@ -1040,6 +1040,12 @@
                         "smithy.api#documentation": "<p>The layout of the DASH manifest that MediaPackage produces. <code>STANDARD</code> indicates a default manifest, which is compacted. <code>NONE</code> indicates a full manifest.</p> <p>For information about compactness, see <a href=\"https://docs.aws.amazon.com/mediapackage/latest/userguide/compacted.html\">DASH manifest compactness</a> in the <i>Elemental MediaPackage v2 User Guide</i>.</p>"
                     }
                 },
+                "AudioTimelinePattern": {
+                    "target": "com.amazonaws.mediapackagev2#DashAudioTimelinePattern",
+                    "traits": {
+                        "smithy.api#documentation": "<p>How MediaPackage represents the audio timeline in the DASH manifest. This setting applies DASH Segment Duration Patternization, as defined in the MPEG-DASH specification, to audio adaptation sets. When set to <code>PATTERNED</code>, MediaPackage uses a pattern-based segment template for audio, which reduces manifest size by expressing repeating segment durations as a pattern instead of listing each segment individually. When set to <code>NONE</code>, the manifest contains an explicit timeline that lists each audio segment.</p> <p>Valid values: <code>NONE</code> | <code>PATTERNED</code> </p> <p>For information about audio timeline patterns, see <a href=\"https://docs.aws.amazon.com/mediapackage/latest/userguide/dash-audio-timeline-pattern.html\">DASH audio timeline pattern</a> in the <i>Elemental MediaPackage v2 User Guide</i>.</p>"
+                    }
+                },
                 "SubtitleConfiguration": {
                     "target": "com.amazonaws.mediapackagev2#DashSubtitleConfiguration",
                     "traits": {
@@ -1050,6 +1056,12 @@
                     "target": "com.amazonaws.mediapackagev2#UriPathType",
                     "traits": {
                         "smithy.api#documentation": "<p>The type of path to use in manifest URIs. <code>LEAF</code> uses leaf-relative paths (for example, <code>index_1.mpd</code>). <code>ROOT</code> uses root-relative paths that include the full path from root (for example, <code>/out/v1/channel-group/channel/endpoint/index_1.mpd</code>). If you don't specify a value, the default is <code>LEAF</code>.</p>"
+                    }
+                },
+                "AvailabilityStartTimeConfiguration": {
+                    "target": "com.amazonaws.mediapackagev2#DashAvailabilityStartTimeConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for the DASH <code>availabilityStartTime</code> attribute of the Media Presentation Description (MPD). If you don't specify a value, MediaPackage uses the default availability start time of <code>2024-01-01T00:00:00Z</code>.</p>"
                     }
                 }
             },
@@ -1991,7 +2003,10 @@
                                             }
                                         ]
                                     },
-                                    "Compactness": "STANDARD"
+                                    "Compactness": "STANDARD",
+                                    "AvailabilityStartTimeConfiguration": {
+                                        "FixedAvailabilityStartTime": "2026-04-17T23:00:00.00Z"
+                                    }
                                 }
                             ],
                             "Tags": {
@@ -2205,7 +2220,10 @@
                                         ]
                                     },
                                     "Compactness": "STANDARD",
-                                    "UriPathType": "LEAF"
+                                    "UriPathType": "LEAF",
+                                    "AvailabilityStartTimeConfiguration": {
+                                        "FixedAvailabilityStartTime": "2026-04-17T23:00:00.00Z"
+                                    }
                                 }
                             ],
                             "ETag": "GlfT+dwAyGIR4wuy8nKWl1RDPwSrjQej9qUutLZxoxk=",
@@ -2615,6 +2633,38 @@
                     "min": 0,
                     "max": 25
                 }
+            }
+        },
+        "com.amazonaws.mediapackagev2#DashAudioTimelinePattern": {
+            "type": "enum",
+            "members": {
+                "NONE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "NONE"
+                    }
+                },
+                "PATTERNED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "PATTERNED"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.mediapackagev2#DashAvailabilityStartTimeConfiguration": {
+            "type": "union",
+            "members": {
+                "FixedAvailabilityStartTime": {
+                    "target": "smithy.api#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The fixed availability start time for the DASH manifest, in ISO 8601 date-time format. The value must have hourly granularity, meaning that the minutes, seconds, and fractional seconds must be zero. The value must be on or after <code>2024-01-01T00:00:00Z</code> and must be at least 14 days before the current time.</p>",
+                        "smithy.api#timestampFormat": "date-time"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The configuration for the DASH <code>availabilityStartTime</code> attribute of the Media Presentation Description (MPD). Use this configuration to set a custom availability start time for your DASH manifest.</p>"
             }
         },
         "com.amazonaws.mediapackagev2#DashBaseUrl": {
@@ -4234,6 +4284,12 @@
                         "smithy.api#documentation": "<p>The layout of the DASH manifest that MediaPackage produces. <code>STANDARD</code> indicates a default manifest, which is compacted. <code>NONE</code> indicates a full manifest.</p>"
                     }
                 },
+                "AudioTimelinePattern": {
+                    "target": "com.amazonaws.mediapackagev2#DashAudioTimelinePattern",
+                    "traits": {
+                        "smithy.api#documentation": "<p>How MediaPackage represents the audio timeline in the DASH manifest, using DASH Segment Duration Patternization for audio adaptation sets. <code>PATTERNED</code> indicates that MediaPackage uses a pattern-based segment template for audio, reducing manifest size. <code>NONE</code> indicates that the manifest contains an explicit timeline for each audio segment.</p>"
+                    }
+                },
                 "SubtitleConfiguration": {
                     "target": "com.amazonaws.mediapackagev2#DashSubtitleConfiguration",
                     "traits": {
@@ -4244,6 +4300,12 @@
                     "target": "com.amazonaws.mediapackagev2#UriPathType",
                     "traits": {
                         "smithy.api#documentation": "<p>The type of path used in manifest URIs. <code>LEAF</code> indicates leaf-relative paths. <code>ROOT</code> indicates root-relative paths that include the full path from root.</p>"
+                    }
+                },
+                "AvailabilityStartTimeConfiguration": {
+                    "target": "com.amazonaws.mediapackagev2#DashAvailabilityStartTimeConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for the DASH <code>availabilityStartTime</code> attribute of the Media Presentation Description (MPD).</p>"
                     }
                 }
             },
@@ -7750,6 +7812,18 @@
                     "traits": {
                         "smithy.api#enumValue": "DISTRIBUTOR_AD_BLOCK"
                     }
+                },
+                "CONTENT_IDENTIFICATION": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CONTENT_IDENTIFICATION"
+                    }
+                },
+                "CALL_AD_SERVER": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CALL_AD_SERVER"
+                    }
                 }
             }
         },
@@ -9862,6 +9936,194 @@
                 },
                 "smithy.api#documentation": "<note> <p>This guide is intended for creating AWS Elemental MediaPackage resources in MediaPackage Version 2 (v2) starting from May 2023. To get started with MediaPackage v2, create your MediaPackage resources. There isn't an automated process to migrate your resources from MediaPackage v1 to MediaPackage v2. </p> <p>The names of the entities that you use to access this API, like URLs and ARNs, all have the versioning information added, like \"v2\", to distinguish from the prior version. If you used MediaPackage prior to this release, you can't use the MediaPackage v2 CLI or the MediaPackage v2 API to access any MediaPackage v1 resources.</p> <p>If you created resources in MediaPackage v1, use video on demand (VOD) workflows, and aren't looking to migrate to MediaPackage v2 yet, see the <a href=\"https://docs.aws.amazon.com/mediapackage/latest/apireference/what-is.html\">MediaPackage v1 Live API Reference</a>.</p> </note> <p>This is the AWS Elemental MediaPackage v2 Live REST API Reference. It describes all the MediaPackage API operations for live content in detail, and provides sample requests, responses, and errors for the supported web services protocols.</p> <p>We assume that you have the IAM permissions that you need to use MediaPackage via the REST API. We also assume that you are familiar with the features and operations of MediaPackage, as described in the AWS Elemental MediaPackage User Guide.</p>",
                 "smithy.api#title": "AWS Elemental MediaPackage v2",
+                "smithy.rules#endpointBdd": {
+                    "version": "1.1",
+                    "parameters": {
+                        "Region": {
+                            "builtIn": "AWS::Region",
+                            "required": false,
+                            "documentation": "The AWS region used to dispatch the request.",
+                            "type": "string"
+                        },
+                        "UseDualStack": {
+                            "builtIn": "AWS::UseDualStack",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.",
+                            "type": "boolean"
+                        },
+                        "UseFIPS": {
+                            "builtIn": "AWS::UseFIPS",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.",
+                            "type": "boolean"
+                        },
+                        "Endpoint": {
+                            "builtIn": "SDK::Endpoint",
+                            "required": false,
+                            "documentation": "Override the endpoint used to send this request",
+                            "type": "string"
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Endpoint"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "aws.partition",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ],
+                            "assign": "PartitionResult"
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseFIPS"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseDualStack"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsDualStack"
+                                    ]
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsFIPS"
+                                    ]
+                                },
+                                true
+                            ]
+                        }
+                    ],
+                    "results": [
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": {
+                                    "ref": "Endpoint"
+                                },
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://mediapackagev2-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://mediapackagev2-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS is enabled but this partition does not support FIPS",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://mediapackagev2.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "DualStack is enabled but this partition does not support DualStack",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://mediapackagev2.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Missing Region",
+                            "type": "error"
+                        }
+                    ],
+                    "root": 2,
+                    "nodeCount": 13,
+                    "nodes": "/////wAAAAH/////AAAAAAAAAAwAAAADAAAAAQAAAAQF9eELAAAAAgAAAAUF9eELAAAAAwAAAAgAAAAGAAAABAAAAAcF9eEKAAAABQX14QgF9eEJAAAABAAAAAoAAAAJAAAABgX14QYF9eEHAAAABQAAAAsF9eEFAAAABgX14QQF9eEFAAAAAwX14QEAAAANAAAABAX14QIF9eED"
+                },
                 "smithy.rules#endpointRuleSet": {
                     "version": "1.0",
                     "parameters": {

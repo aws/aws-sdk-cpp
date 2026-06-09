@@ -36,7 +36,7 @@ class GetMetricDataV2Request : public ConnectRequest {
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the resource. This includes the
-   * <code>instanceId</code> an Amazon Connect instance.</p>
+   * <code>instanceId</code> an Connect Customer instance.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -103,9 +103,9 @@ class GetMetricDataV2Request : public ConnectRequest {
    * | <code>THIRTY_MIN</code> | <code>HOUR</code> | <code>DAY</code> |
    * <code>WEEK</code> | <code>TOTAL</code>. </p> <p>For example, if
    * <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>,
-   * <code>StartTime</code> and <code>EndTime</code> differs by 1 day, then Amazon
-   * Connect returns 48 results in the response. Each result is aggregated by the
-   * THIRTY_MIN period. By default Amazon Connect aggregates results based on the
+   * <code>StartTime</code> and <code>EndTime</code> differs by 1 day, then Connect
+   * Customer returns 48 results in the response. Each result is aggregated by the
+   * THIRTY_MIN period. By default Connect Customer aggregates results based on the
    * <code>TOTAL</code> interval period. </p> <p>The following list describes
    * restrictions on <code>StartTime</code> and <code>EndTime</code> based on which
    * <code>IntervalPeriod</code> is requested. </p> <ul> <li> <p>
@@ -144,7 +144,12 @@ class GetMetricDataV2Request : public ConnectRequest {
    * criteria. By narrowing the dataset before aggregation, filters ensure that only
    * relevant records are included in the computation.</p> <p> <b>Filter keys</b>
    * </p> <p>The following are valid filter keys for a <code>GetMetricDataV2</code>
-   * request:</p> <p> <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> |
+   * request:</p> <p> <code>AGENT</code> | <code>AI_AGENT</code> |
+   * <code>AI_AGENT_ID</code> | <code>AI_AGENT_NAME</code> |
+   * <code>AI_AGENT_TYPE</code> | <code>AI_PROMPT</code> | <code>AI_PROMPT_ID</code>
+   * | <code>AI_PROMPT_NAME</code> | <code>AI_PROMPT_TYPE</code> |
+   * <code>AI_TOOL_ID</code> | <code>AI_TOOL_NAME</code> | <code>AI_TOOL_TYPE</code>
+   * | <code>AI_USE_CASE</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> |
    * <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
    * <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
    * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
@@ -166,15 +171,16 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <code>FLOWS_RESOURCE_ID</code> | <code>FORM_VERSION</code> |
    * <code>INITIATING_FLOW</code> | <code>INITIATION_METHOD</code> |
    * <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> |
-   * <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> |
-   * <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> |
-   * <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> |
-   * <code>ROUTING_STEP_EXPRESSION</code> | <code>TEST_CASE</code> |
+   * <code>INVOKING_RESOURCE_TYPE</code> | <code>KNOWLEDGE_BASE_NAME</code> |
+   * <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> |
+   * <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> |
+   * <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> |
+   * <code>SESSION_ID</code> | <code>TEST_CASE</code> |
    * <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> |
    * <code>TEST_CASE_EXECUTION_RESULT</code> | <code>TEST_CASE_EXECUTION_STATE</code>
-   * </p>  <p>The following filter keys correspond to Amazon Connect resources
-   * and are used for authorizing requests. A <code>GetMetricDataV2</code> request
-   * requires at least one of these filters:</p> <p> <code>QUEUE</code>,
+   * </p>  <p>The following filter keys correspond to Connect Customer
+   * resources and are used for authorizing requests. A <code>GetMetricDataV2</code>
+   * request requires at least one of these filters:</p> <p> <code>QUEUE</code>,
    * <code>ROUTING_PROFILE</code>, <code>AGENT</code>,
    * <code>AGENT_HIERARCHY_LEVEL_ONE</code>, <code>AGENT_HIERARCHY_LEVEL_TWO</code>,
    * <code>AGENT_HIERARCHY_LEVEL_THREE</code>,
@@ -211,7 +217,7 @@ class GetMetricDataV2Request : public ConnectRequest {
    * ARNs are valid filter values for the <code>CAMPAIGN</code> filter key.</p> </li>
    * <li> <p>To filter by phone number, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create
-   * a historical metrics report</a> in the <i>Amazon Connect Administrator
+   * a historical metrics report</a> in the <i>Connect Customer Administrator
    * Guide</i>.</p> </li> </ul>
    */
   inline const Aws::Vector<FilterV2>& GetFilters() const { return m_filters; }
@@ -241,8 +247,14 @@ class GetMetricDataV2Request : public ConnectRequest {
    * values that are returned apply to the metrics for each queue. They are not
    * aggregated for all queues.</p> <p>If no grouping is specified, a summary of all
    * metrics is returned.</p> <p>Valid grouping keys: <code>AGENT</code> |
-   * <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code>
-   * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
+   * <code>AI_AGENT</code> | <code>AI_AGENT_ID</code> | <code>AI_AGENT_NAME</code> |
+   * <code>AI_AGENT_NAME_VERSION</code> | <code>AI_AGENT_TYPE</code> |
+   * <code>AI_PROMPT</code> | <code>AI_PROMPT_ID</code> | <code>AI_PROMPT_NAME</code>
+   * | <code>AI_PROMPT_NAME_VERSION</code> | <code>AI_PROMPT_TYPE</code> |
+   * <code>AI_TOOL_ID</code> | <code>AI_TOOL_NAME</code> | <code>AI_TOOL_TYPE</code>
+   * | <code>AI_USE_CASE</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> |
+   * <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
+   * <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
    * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
    * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> |
    * <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ID</code> |
@@ -261,17 +273,20 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <code>FLOWS_OUTCOME_TYPE</code> | <code>FORM_VERSION</code> |
    * <code>INITIATION_METHOD</code> |
    * <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> |
-   * <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> |
+   * <code>INVOKING_RESOURCE_TYPE</code> | <code>KNOWLEDGE_ARTICLE_NAME</code> |
+   * <code>KNOWLEDGE_BASE_NAME</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> |
    * <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> |
    * <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> |
-   * <code>ROUTING_STEP_EXPRESSION</code> | <code>TEST_CASE</code> |
-   * <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> |
-   * <code>TEST_CASE_INVOCATION_METHOD</code> </p> <p>API, SCHEDULE, and EVENT are
-   * the only valid filterValues for TEST_CASE_INVOCATION_METHOD.</p>
-   * <p>OBSERVE_EVENT, SEND_INSTRUCTION, ASSERT_DATA, and OVERRIDE_SYSTEM_BEHAVIOR
-   * are the only valid filterValues for TEST_CASE_EXECUTION_FAILURE_REASON</p>
-   * <p>Type: Array of strings</p> <p>Array Members: Maximum number of 4 items</p>
-   * <p>Required: No</p>
+   * <code>ROUTING_STEP_EXPRESSION</code> | <code>SESSION_ID</code> |
+   * <code>TEST_CASE</code> | <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> |
+   * <code>TEST_CASE_INVOCATION_METHOD</code> </p>  <p>
+   * <code>AI_AGENT_NAME_VERSION</code>, <code>AI_PROMPT_NAME_VERSION</code>, and
+   * <code>KNOWLEDGE_ARTICLE_NAME</code> are valid groupings but not valid
+   * filters.</p>  <p>API, SCHEDULE, and EVENT are the only valid filterValues
+   * for TEST_CASE_INVOCATION_METHOD.</p> <p>OBSERVE_EVENT, SEND_INSTRUCTION,
+   * ASSERT_DATA, and OVERRIDE_SYSTEM_BEHAVIOR are the only valid filterValues for
+   * TEST_CASE_EXECUTION_FAILURE_REASON</p> <p>Type: Array of strings</p> <p>Array
+   * Members: Maximum number of 4 items</p> <p>Required: No</p>
    */
   inline const Aws::Vector<Aws::String>& GetGroupings() const { return m_groupings; }
   inline bool GroupingsHasBeenSet() const { return m_groupingsHasBeenSet; }
@@ -299,7 +314,7 @@ class GetMetricDataV2Request : public ConnectRequest {
    * for each metric. The following historical metrics are available. For a
    * description of each metric, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-   * definition</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+   * definition</a> in the <i>Connect Customer Administrator Guide</i>.</p>
    * <p>MetricId should be used to reference custom metrics or out of the box metrics
    * as Arn. If using MetricId, the limit is 20 MetricId per request.</p>
    * <dl> <dt>ABANDONMENT_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid groupings and
@@ -459,8 +474,9 @@ class GetMetricDataV2Request : public ConnectRequest {
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-greeting-time">Average
    * agent greeting time</a> </p> </dd> <dt>AVG_HANDLE_TIME</dt> <dd> <p>Unit:
    * Seconds</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
-   * Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype,
-   * RoutingStepExpression</p> <p>UI name: <a
+   * Agent, Agent Hierarchy, AI Use Case, Feature,
+   * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> <p>UI name:
+   * <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-handle-time">Average
    * handle time</a> </p>  <p>Feature is a valid filter but not a valid
    * grouping.</p>  </dd> <dt>ACTIVE_AI_AGENTS</dt> <dd> <p>Unit: Count</p>
@@ -468,14 +484,14 @@ class GetMetricDataV2Request : public ConnectRequest {
    * Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#active-ai-agents">Active
    * AI Agents</a> </p> </dd> <dt>AI_HANDOFF_RATE</dt> <dd> <p>Unit: Percent</p>
-   * <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-   * <p>UI name: <a
+   * <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Type, AI
+   * Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoff-rate">AI
    * Handoff Rate</a> </p> </dd> <dt>AI_HANDOFFS</dt> <dd> <p>Unit: Count</p>
-   * <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-   * <p>UI name: <a
+   * <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Type, AI
+   * Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoffs">AI
-   * Handoffs</a> </p> </dd> <dt>AI_AGENT_INVOCATION_SUCCESS</dt> <dd> <p>Unit:
+   * Handoff Count</a> </p> </dd> <dt>AI_AGENT_INVOCATION_SUCCESS</dt> <dd> <p>Unit:
    * Count</p> <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
    * Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI
    * name: <a
@@ -492,14 +508,28 @@ class GetMetricDataV2Request : public ConnectRequest {
    * filters: AI Agent, AI Agent Name, AI Agent Type, AI Agent Name Version, AI Use
    * Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocations">AI
-   * Agent Invocations</a> </p>  <p>AI Agent Name Version is not a valid filter
-   * but a valid grouping.</p>  </dd> <dt>AI_RESPONSE_COMPLETION_RATE</dt>
-   * <dd> <p>Unit: Percent</p> <p>Valid groupings and filters: AI Use Case, Channel,
-   * Queue, Routing Profile</p> <p>UI name: <a
+   * Agent Invocation Count</a> </p>  <p>AI Agent Name Version is not a valid
+   * filter but a valid grouping.</p>  </dd>
+   * <dt>AI_AGENT_RESPONSE_HELPFUL</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+   * and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI
+   * Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-response-helpful">AI
+   * Agent Response Helpful</a> </p>  <p>AI Agent Name Version is not a valid
+   * filter but a valid grouping.</p>  </dd>
+   * <dt>AI_AGENT_RESPONSE_NOT_HELPFUL</dt> <dd> <p>Unit: Count</p> <p>Valid
+   * groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name
+   * Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI
+   * name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-response-not-helpful">AI
+   * Agent Response Not Helpful</a> </p>  <p>AI Agent Name Version is not a
+   * valid filter but a valid grouping.</p>  </dd>
+   * <dt>AI_RESPONSE_COMPLETION_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid
+   * groupings and filters: AI Agent ID, AI Agent Name, AI Agent Type, AI Use Case,
+   * Channel, Queue, Routing Profile</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-response-completion-rate">AI
    * Response Completion Rate</a> </p> </dd> <dt>AI_INVOLVED_CONTACTS</dt> <dd>
-   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Use Case, Channel, Queue,
-   * Routing Profile</p> <p>UI name: <a
+   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent ID, AI Agent Name,
+   * AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-involved-contacts">AI
    * Involved Contacts</a> </p> </dd> <dt>AI_PROMPT_INVOCATION_SUCCESS</dt> <dd>
    * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent Name, AI
@@ -550,7 +580,8 @@ class GetMetricDataV2Request : public ConnectRequest {
    * AI Agent Conversation Turns</a> </p>  <p>AI Agent Name Version is not a
    * valid filter but a valid grouping.</p>  </dd>
    * <dt>AVG_AI_CONVERSATION_TURNS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-   * and filters: AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
+   * and filters: AI Agent ID, AI Agent Name, AI Agent Type, AI Use Case, Channel,
+   * Queue, Routing Profile</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-conversation-turns">Average
    * AI Conversation Turns</a> </p> </dd> <dt>AVG_AI_PROMPT_INVOCATION_LATENCY</dt>
    * <dd> <p>Unit: Milliseconds</p> <p>Valid groupings and filters: AI Agent, AI
@@ -567,29 +598,64 @@ class GetMetricDataV2Request : public ConnectRequest {
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-tool-invocation-latency">Average
    * AI Tool Invocation Latency</a> </p>  <p>AI Agent Name Version is not a
    * valid filter but a valid grouping.</p>  </dd>
-   * <dt>KNOWLEDGE_CONTENT_REFERENCES</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-   * and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use Case, Channel,
-   * Knowledge Base Name, Queue, Routing Profile</p> <p>UI name: <a
+   * <dt>AI_TOOL_PARAMETER_ACCURACY</dt> <dd> <p>Unit: Double</p> <p>Valid groupings
+   * and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI
+   * Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue,
+   * Routing Profile</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-parameter-accuracy">AI
+   * Tool Parameter Accuracy</a> </p>  <p>AI Agent Name Version is not a valid
+   * filter but a valid grouping.</p>  </dd>
+   * <dt>AI_TOOL_SELECTION_ACCURACY</dt> <dd> <p>Unit: Double</p> <p>Valid groupings
+   * and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI
+   * Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue,
+   * Routing Profile</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-selection-accuracy">AI
+   * Tool Selection Accuracy</a> </p>  <p>AI Agent Name Version is not a valid
+   * filter but a valid grouping.</p>  </dd>
+   * <dt>AI_TOOL_UTILIZATION_ACCURACY</dt> <dd> <p>Unit: Double</p> <p>Valid
+   * groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name
+   * Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case,
+   * Channel, Queue, Routing Profile, Session ID</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-utilization-accuracy">AI
+   * Tool Utilization Accuracy</a> </p>  <p>AI Agent Name Version is not a
+   * valid filter but a valid grouping.</p>  </dd> <dt>COMPLETENESS_SCORE</dt>
+   * <dd> <p>Unit: Double</p> <p>Valid groupings and filters: AI Agent ID, AI Agent
+   * Name, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session
+   * ID</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#completeness-score">Completeness
+   * Score</a> </p> </dd> <dt>FAITHFULNESS_SCORE</dt> <dd> <p>Unit: Double</p>
+   * <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Type, AI
+   * Use Case, Channel, Queue, Routing Profile, Session ID</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#faithfulness-score">Faithfulness
+   * Score</a> </p> </dd> <dt>GOAL_SUCCESS_RATE</dt> <dd> <p>Unit: Double</p>
+   * <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Type, AI
+   * Use Case, Channel, Queue, Routing Profile, Session ID</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#goal-success-rate">Goal
+   * Success Rate</a> </p> </dd> <dt>KNOWLEDGE_CONTENT_REFERENCES</dt> <dd> <p>Unit:
+   * Count</p> <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent
+   * Type, AI Use Case, Channel, Knowledge Base Name, Queue, Routing Profile</p>
+   * <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#knowledge-content-references">Knowledge
    * Content References</a> </p> </dd> <dt>PROACTIVE_INTENT_ENGAGEMENT_RATE</dt> <dd>
-   * <p>Unit: Percent</p> <p>Valid groupings and filters: AI Use Case, Channel,
-   * Queue, Routing Profile</p> <p>UI name: <a
+   * <p>Unit: Percent</p> <p>Valid groupings and filters: AI Agent ID, AI Agent Name,
+   * AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engagement-rate">Proactive
    * Intent Engagement Rate</a> </p> </dd> <dt>PROACTIVE_INTENT_RESPONSE_RATE</dt>
-   * <dd> <p>Unit: Percent</p> <p>Valid groupings and filters: AI Use Case, Channel,
-   * Queue, Routing Profile </p> <p>UI name: <a
+   * <dd> <p>Unit: Percent</p> <p>Valid groupings and filters: AI Agent ID, AI Agent
+   * Name, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI
+   * name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-response-rate">Proactive
    * Intent Response Rate</a> </p> </dd> <dt>PROACTIVE_INTENTS_ANSWERED</dt> <dd>
-   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Use Case, Channel, Queue,
-   * Routing Profile</p> <p>UI name: <a
+   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent ID, AI Agent Name,
+   * AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-answered">Proactive
    * Intents Answered</a> </p> </dd> <dt>PROACTIVE_INTENTS_DETECTED</dt> <dd>
-   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Use Case, Channel, Queue,
-   * Routing Profile</p> <p>UI name: <a
+   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent ID, AI Agent Name,
+   * AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-detected">Proactive
    * Intents Detected</a> </p> </dd> <dt>PROACTIVE_INTENTS_ENGAGED</dt> <dd> <p>Unit:
-   * Count</p> <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing
-   * Profile</p> <p>UI name: <a
+   * Count</p> <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent
+   * Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engaged">Proactive
    * Intents Engaged</a> </p> </dd> <dt>AVG_HOLD_TIME</dt> <dd> <p>Unit: Seconds</p>
    * <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent

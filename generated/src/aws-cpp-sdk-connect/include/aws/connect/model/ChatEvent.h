@@ -57,12 +57,12 @@ class ChatEvent {
    * <code>MESSAGE</code> or <code>EVENT</code>. </p> <ul> <li> <p>For allowed
    * message content types, see the <code>ContentType</code> parameter in the <a
    * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a>
-   * topic in the <i>Amazon Connect Participant Service API Reference</i>.</p> </li>
-   * <li> <p>For allowed event content types, see the <code>ContentType</code>
+   * topic in the <i>Connect Customer Participant Service API Reference</i>.</p>
+   * </li> <li> <p>For allowed event content types, see the <code>ContentType</code>
    * parameter in the <a
    * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a>
-   * topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
-   * </ul>
+   * topic in the <i>Connect Customer Participant Service API Reference</i>. </p>
+   * </li> </ul>
    */
   inline const Aws::String& GetContentType() const { return m_contentType; }
   inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
@@ -85,12 +85,12 @@ class ChatEvent {
    * <code>Type</code> is <code>EVENT</code>.</p> <ul> <li> <p>For allowed message
    * content, see the <code>Content</code> parameter in the <a
    * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a>
-   * topic in the <i>Amazon Connect Participant Service API Reference</i>.</p> </li>
-   * <li> <p>For allowed event content, see the <code>Content</code> parameter in the
-   * <a
+   * topic in the <i>Connect Customer Participant Service API Reference</i>.</p>
+   * </li> <li> <p>For allowed event content, see the <code>Content</code> parameter
+   * in the <a
    * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a>
-   * topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
-   * </ul>
+   * topic in the <i>Connect Customer Participant Service API Reference</i>. </p>
+   * </li> </ul>
    */
   inline const Aws::String& GetContent() const { return m_content; }
   inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }

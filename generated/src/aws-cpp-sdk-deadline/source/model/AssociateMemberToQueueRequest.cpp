@@ -27,5 +27,9 @@ Aws::String AssociateMemberToQueueRequest::SerializePayload() const {
     payload.WithString("membershipLevel", MembershipLevelMapper::GetNameForMembershipLevel(m_membershipLevel));
   }
 
+  if (m_identityCenterRegionHasBeenSet) {
+    payload.WithString("identityCenterRegion", m_identityCenterRegion);
+  }
+
   return payload.View().WriteReadable();
 }

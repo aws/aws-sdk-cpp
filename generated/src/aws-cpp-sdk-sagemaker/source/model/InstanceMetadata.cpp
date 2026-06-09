@@ -26,6 +26,16 @@ InstanceMetadata& InstanceMetadata::operator=(JsonView jsonValue) {
     m_additionalEnis = jsonValue.GetObject("AdditionalEnis");
     m_additionalEnisHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("InstanceRequirementsEniConfigurations")) {
+    Aws::Utils::Array<JsonView> instanceRequirementsEniConfigurationsJsonList = jsonValue.GetArray("InstanceRequirementsEniConfigurations");
+    for (unsigned instanceRequirementsEniConfigurationsIndex = 0;
+         instanceRequirementsEniConfigurationsIndex < instanceRequirementsEniConfigurationsJsonList.GetLength();
+         ++instanceRequirementsEniConfigurationsIndex) {
+      m_instanceRequirementsEniConfigurations.push_back(
+          instanceRequirementsEniConfigurationsJsonList[instanceRequirementsEniConfigurationsIndex].AsObject());
+    }
+    m_instanceRequirementsEniConfigurationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CapacityReservation")) {
     m_capacityReservation = jsonValue.GetObject("CapacityReservation");
     m_capacityReservationHasBeenSet = true;
@@ -54,6 +64,17 @@ JsonValue InstanceMetadata::Jsonize() const {
 
   if (m_additionalEnisHasBeenSet) {
     payload.WithObject("AdditionalEnis", m_additionalEnis.Jsonize());
+  }
+
+  if (m_instanceRequirementsEniConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> instanceRequirementsEniConfigurationsJsonList(m_instanceRequirementsEniConfigurations.size());
+    for (unsigned instanceRequirementsEniConfigurationsIndex = 0;
+         instanceRequirementsEniConfigurationsIndex < instanceRequirementsEniConfigurationsJsonList.GetLength();
+         ++instanceRequirementsEniConfigurationsIndex) {
+      instanceRequirementsEniConfigurationsJsonList[instanceRequirementsEniConfigurationsIndex].AsObject(
+          m_instanceRequirementsEniConfigurations[instanceRequirementsEniConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("InstanceRequirementsEniConfigurations", std::move(instanceRequirementsEniConfigurationsJsonList));
   }
 
   if (m_capacityReservationHasBeenSet) {

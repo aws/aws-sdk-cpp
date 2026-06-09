@@ -14,6 +14,7 @@
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupSpecification.h>
+#include <aws/sagemaker/model/ClusterRestrictedInstanceGroupsConfig.h>
 #include <aws/sagemaker/model/ClusterTieredStorageConfig.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <aws/sagemaker/model/VpcConfig.h>
@@ -105,6 +106,25 @@ class CreateClusterRequest : public SageMakerRequest {
   CreateClusterRequest& AddRestrictedInstanceGroups(RestrictedInstanceGroupsT&& value) {
     m_restrictedInstanceGroupsHasBeenSet = true;
     m_restrictedInstanceGroups.emplace_back(std::forward<RestrictedInstanceGroupsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for the restricted instance groups (RIG) in the SageMaker
+   * HyperPod cluster.</p>
+   */
+  inline const ClusterRestrictedInstanceGroupsConfig& GetRestrictedInstanceGroupsConfig() const { return m_restrictedInstanceGroupsConfig; }
+  inline bool RestrictedInstanceGroupsConfigHasBeenSet() const { return m_restrictedInstanceGroupsConfigHasBeenSet; }
+  template <typename RestrictedInstanceGroupsConfigT = ClusterRestrictedInstanceGroupsConfig>
+  void SetRestrictedInstanceGroupsConfig(RestrictedInstanceGroupsConfigT&& value) {
+    m_restrictedInstanceGroupsConfigHasBeenSet = true;
+    m_restrictedInstanceGroupsConfig = std::forward<RestrictedInstanceGroupsConfigT>(value);
+  }
+  template <typename RestrictedInstanceGroupsConfigT = ClusterRestrictedInstanceGroupsConfig>
+  CreateClusterRequest& WithRestrictedInstanceGroupsConfig(RestrictedInstanceGroupsConfigT&& value) {
+    SetRestrictedInstanceGroupsConfig(std::forward<RestrictedInstanceGroupsConfigT>(value));
     return *this;
   }
   ///@}
@@ -313,6 +333,8 @@ class CreateClusterRequest : public SageMakerRequest {
 
   Aws::Vector<ClusterRestrictedInstanceGroupSpecification> m_restrictedInstanceGroups;
 
+  ClusterRestrictedInstanceGroupsConfig m_restrictedInstanceGroupsConfig;
+
   VpcConfig m_vpcConfig;
 
   Aws::Vector<Tag> m_tags;
@@ -331,6 +353,7 @@ class CreateClusterRequest : public SageMakerRequest {
   bool m_clusterNameHasBeenSet = false;
   bool m_instanceGroupsHasBeenSet = false;
   bool m_restrictedInstanceGroupsHasBeenSet = false;
+  bool m_restrictedInstanceGroupsConfigHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_orchestratorHasBeenSet = false;

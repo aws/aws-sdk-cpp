@@ -18,13 +18,13 @@ namespace Model {
 ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue) { *this = jsonValue; }
 
 ResourceNotFoundException& ResourceNotFoundException::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("errorCode")) {
-    m_errorCode = jsonValue.GetString("errorCode");
-    m_errorCodeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("errorCode")) {
+    m_errorCode = jsonValue.GetString("errorCode");
+    m_errorCodeHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ ResourceNotFoundException& ResourceNotFoundException::operator=(JsonView jsonVal
 JsonValue ResourceNotFoundException::Jsonize() const {
   JsonValue payload;
 
-  if (m_errorCodeHasBeenSet) {
-    payload.WithString("errorCode", m_errorCode);
-  }
-
   if (m_messageHasBeenSet) {
     payload.WithString("message", m_message);
+  }
+
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("errorCode", m_errorCode);
   }
 
   return payload;

@@ -235,6 +235,24 @@ class ProtectedJob {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The account ID of the member that pays for the job compute costs.</p>
+   */
+  inline const Aws::String& GetJobComputePayerAccountId() const { return m_jobComputePayerAccountId; }
+  inline bool JobComputePayerAccountIdHasBeenSet() const { return m_jobComputePayerAccountIdHasBeenSet; }
+  template <typename JobComputePayerAccountIdT = Aws::String>
+  void SetJobComputePayerAccountId(JobComputePayerAccountIdT&& value) {
+    m_jobComputePayerAccountIdHasBeenSet = true;
+    m_jobComputePayerAccountId = std::forward<JobComputePayerAccountIdT>(value);
+  }
+  template <typename JobComputePayerAccountIdT = Aws::String>
+  ProtectedJob& WithJobComputePayerAccountId(JobComputePayerAccountIdT&& value) {
+    SetJobComputePayerAccountId(std::forward<JobComputePayerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -257,6 +275,8 @@ class ProtectedJob {
   ProtectedJobError m_error;
 
   ProtectedJobComputeConfiguration m_computeConfiguration;
+
+  Aws::String m_jobComputePayerAccountId;
   bool m_idHasBeenSet = false;
   bool m_membershipIdHasBeenSet = false;
   bool m_membershipArnHasBeenSet = false;
@@ -268,6 +288,7 @@ class ProtectedJob {
   bool m_resultHasBeenSet = false;
   bool m_errorHasBeenSet = false;
   bool m_computeConfigurationHasBeenSet = false;
+  bool m_jobComputePayerAccountIdHasBeenSet = false;
 };
 
 }  // namespace Model

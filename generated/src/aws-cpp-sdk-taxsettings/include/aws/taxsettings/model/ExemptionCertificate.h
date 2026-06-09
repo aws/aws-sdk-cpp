@@ -34,24 +34,6 @@ class ExemptionCertificate {
 
   ///@{
   /**
-   * <p>The exemption certificate file content. </p>
-   */
-  inline const Aws::Utils::ByteBuffer& GetDocumentFile() const { return m_documentFile; }
-  inline bool DocumentFileHasBeenSet() const { return m_documentFileHasBeenSet; }
-  template <typename DocumentFileT = Aws::Utils::ByteBuffer>
-  void SetDocumentFile(DocumentFileT&& value) {
-    m_documentFileHasBeenSet = true;
-    m_documentFile = std::forward<DocumentFileT>(value);
-  }
-  template <typename DocumentFileT = Aws::Utils::ByteBuffer>
-  ExemptionCertificate& WithDocumentFile(DocumentFileT&& value) {
-    SetDocumentFile(std::forward<DocumentFileT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The exemption certificate file name. </p>
    */
   inline const Aws::String& GetDocumentName() const { return m_documentName; }
@@ -67,12 +49,30 @@ class ExemptionCertificate {
     return *this;
   }
   ///@}
- private:
-  Aws::Utils::ByteBuffer m_documentFile{};
 
+  ///@{
+  /**
+   * <p>The exemption certificate file content. </p>
+   */
+  inline const Aws::Utils::ByteBuffer& GetDocumentFile() const { return m_documentFile; }
+  inline bool DocumentFileHasBeenSet() const { return m_documentFileHasBeenSet; }
+  template <typename DocumentFileT = Aws::Utils::ByteBuffer>
+  void SetDocumentFile(DocumentFileT&& value) {
+    m_documentFileHasBeenSet = true;
+    m_documentFile = std::forward<DocumentFileT>(value);
+  }
+  template <typename DocumentFileT = Aws::Utils::ByteBuffer>
+  ExemptionCertificate& WithDocumentFile(DocumentFileT&& value) {
+    SetDocumentFile(std::forward<DocumentFileT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_documentName;
-  bool m_documentFileHasBeenSet = false;
+
+  Aws::Utils::ByteBuffer m_documentFile{};
   bool m_documentNameHasBeenSet = false;
+  bool m_documentFileHasBeenSet = false;
 };
 
 }  // namespace Model

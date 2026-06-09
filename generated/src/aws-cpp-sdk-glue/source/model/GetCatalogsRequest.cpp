@@ -35,6 +35,10 @@ Aws::String GetCatalogsRequest::SerializePayload() const {
     payload.WithBool("IncludeRoot", m_includeRoot);
   }
 
+  if (m_hasDatabasesHasBeenSet) {
+    payload.WithBool("HasDatabases", m_hasDatabases);
+  }
+
   return payload.View().WriteReadable();
 }
 

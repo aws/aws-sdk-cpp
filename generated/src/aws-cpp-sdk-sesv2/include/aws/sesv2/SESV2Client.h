@@ -565,8 +565,11 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
    * related SES resources together. Each tenant can have its own set of resources
    * like email identities, configuration sets, and templates, along with reputation
    * metrics and sending status. This helps isolate and manage email sending for
-   * different customers or business units within your Amazon SES API v2
-   * account.</p><p><h3>See Also:</h3>   <a
+   * different customers or business units within your Amazon SES API v2 account.</p>
+   * <p>You can optionally specify <code>SuppressionAttributes</code> to configure
+   * tenant-level suppression at creation time. When tenant-level suppression is
+   * enabled, Amazon SES maintains a separate suppression list for the tenant instead
+   * of using the account-level suppression list.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateTenant">AWS
    * API Reference</a></p>
    */
@@ -923,8 +926,11 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Removes an email address from the suppression list for your
-   * account.</p><p><h3>See Also:</h3>   <a
+   * <p>Removes an email address from the suppression list for your account or for a
+   * specific tenant. To target a tenant's suppression list, specify the
+   * <code>TenantName</code> parameter. If you omit <code>TenantName</code>, the
+   * address is removed from the account-level suppression list.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination">AWS
    * API Reference</a></p>
    */
@@ -1524,7 +1530,7 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
   /**
    * <p>Displays the template object (which includes the subject line, HTML part and
    * text part) for the template you specify.</p> <p>You can execute this operation
-   * no more than once per second.</p><p><h3>See Also:</h3>   <a
+   * no more than 50 times per second.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetEmailTemplate">AWS
    * API Reference</a></p>
    */
@@ -1693,7 +1699,10 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Retrieves information about a specific email address that's on the
-   * suppression list for your account.</p><p><h3>See Also:</h3>   <a
+   * suppression list for your account or for a specific tenant. To target a tenant's
+   * suppression list, specify the <code>TenantName</code> parameter. If you omit
+   * <code>TenantName</code>, the operation targets the account-level suppression
+   * list.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">AWS
    * API Reference</a></p>
    */
@@ -1721,7 +1730,8 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Get information about a specific tenant, including the tenant's name, ID,
-   * ARN, creation timestamp, tags, and sending status.</p><p><h3>See Also:</h3>   <a
+   * ARN, creation timestamp, tags, sending status, and suppression
+   * attributes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetTenant">AWS API
    * Reference</a></p>
    */
@@ -2195,7 +2205,10 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Retrieves a list of email addresses that are on the suppression list for your
-   * account.</p><p><h3>See Also:</h3>   <a
+   * account or for a specific tenant. To target a tenant's suppression list, specify
+   * the <code>TenantName</code> parameter. If you omit <code>TenantName</code>, the
+   * operation targets the account-level suppression list.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">AWS
    * API Reference</a></p>
    */
@@ -2582,8 +2595,10 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Specify the account suppression list preferences for a configuration
-   * set.</p><p><h3>See Also:</h3>   <a
+   * <p>Specify the suppression list preferences for a configuration set. You can
+   * also use this operation to specify a <code>SuppressionScope</code> to override
+   * the suppression scope of the tenant or account for emails sent using this
+   * configuration set.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions">AWS
    * API Reference</a></p>
    */
@@ -2967,8 +2982,11 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Adds an email address to the suppression list for your account.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Adds an email address to the suppression list for your account or for a
+   * specific tenant. To target a tenant's suppression list, specify the
+   * <code>TenantName</code> parameter. If you omit <code>TenantName</code>, the
+   * address is added to the account-level suppression list.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination">AWS
    * API Reference</a></p>
    */
@@ -2992,6 +3010,40 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
                                      const PutSuppressedDestinationResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SESV2Client::PutSuppressedDestination, request, handler, context);
+  }
+
+  /**
+   * <p>Configure the suppression list preferences for a tenant. Use this operation
+   * to enable or disable tenant-level suppression, or to change the suppressed
+   * reasons for a tenant.</p> <p>When you set the suppression scope to
+   * <code>TENANT</code>, Amazon SES maintains a separate suppression list for the
+   * tenant. When you set the scope to <code>ACCOUNT</code>, the tenant uses the
+   * account-level suppression list.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutTenantSuppressionAttributes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutTenantSuppressionAttributesOutcome PutTenantSuppressionAttributes(
+      const Model::PutTenantSuppressionAttributesRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutTenantSuppressionAttributes that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutTenantSuppressionAttributesRequestT = Model::PutTenantSuppressionAttributesRequest>
+  Model::PutTenantSuppressionAttributesOutcomeCallable PutTenantSuppressionAttributesCallable(
+      const PutTenantSuppressionAttributesRequestT& request) const {
+    return SubmitCallable(&SESV2Client::PutTenantSuppressionAttributes, request);
+  }
+
+  /**
+   * An Async wrapper for PutTenantSuppressionAttributes that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename PutTenantSuppressionAttributesRequestT = Model::PutTenantSuppressionAttributesRequest>
+  void PutTenantSuppressionAttributesAsync(const PutTenantSuppressionAttributesRequestT& request,
+                                           const PutTenantSuppressionAttributesResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SESV2Client::PutTenantSuppressionAttributes, request, handler, context);
   }
 
   /**

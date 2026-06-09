@@ -77,6 +77,7 @@ static const int USERNAME_EXISTS_HASH = HashingUtils::HashString("UsernameExists
 static const int USER_IMPORT_IN_PROGRESS_HASH = HashingUtils::HashString("UserImportInProgressException");
 static const int USER_POOL_TAGGING_HASH = HashingUtils::HashString("UserPoolTaggingException");
 static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
+static const int OPERATION_NOT_ENABLED_HASH = HashingUtils::HashString("OperationNotEnabledException");
 static const int WEB_AUTHN_RELYING_PARTY_MISMATCH_HASH = HashingUtils::HashString("WebAuthnRelyingPartyMismatchException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
@@ -219,6 +220,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::USER_POOL_TAGGING), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == NOT_AUTHORIZED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::NOT_AUTHORIZED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == OPERATION_NOT_ENABLED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::OPERATION_NOT_ENABLED),
+                                RetryableType::NOT_RETRYABLE);
   } else if (hashCode == WEB_AUTHN_RELYING_PARTY_MISMATCH_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::WEB_AUTHN_RELYING_PARTY_MISMATCH),
                                 RetryableType::NOT_RETRYABLE);

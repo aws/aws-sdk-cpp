@@ -30,6 +30,7 @@
 #include <aws/sagemaker/model/TensorBoardOutputConfig.h>
 #include <aws/sagemaker/model/TrainingJobStatus.h>
 #include <aws/sagemaker/model/VpcConfig.h>
+#include <aws/sagemaker/model/WarmPoolStatus.h>
 
 #include <utility>
 
@@ -370,6 +371,24 @@ class TrainingJob {
   template <typename ResourceConfigT = ResourceConfig>
   TrainingJob& WithResourceConfig(ResourceConfigT&& value) {
     SetResourceConfig(std::forward<ResourceConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the warm pool associated with the training job.</p>
+   */
+  inline const WarmPoolStatus& GetWarmPoolStatus() const { return m_warmPoolStatus; }
+  inline bool WarmPoolStatusHasBeenSet() const { return m_warmPoolStatusHasBeenSet; }
+  template <typename WarmPoolStatusT = WarmPoolStatus>
+  void SetWarmPoolStatus(WarmPoolStatusT&& value) {
+    m_warmPoolStatusHasBeenSet = true;
+    m_warmPoolStatus = std::forward<WarmPoolStatusT>(value);
+  }
+  template <typename WarmPoolStatusT = WarmPoolStatus>
+  TrainingJob& WithWarmPoolStatus(WarmPoolStatusT&& value) {
+    SetWarmPoolStatus(std::forward<WarmPoolStatusT>(value));
     return *this;
   }
   ///@}
@@ -908,6 +927,8 @@ class TrainingJob {
 
   ResourceConfig m_resourceConfig;
 
+  WarmPoolStatus m_warmPoolStatus;
+
   VpcConfig m_vpcConfig;
 
   StoppingCondition m_stoppingCondition;
@@ -972,6 +993,7 @@ class TrainingJob {
   bool m_inputDataConfigHasBeenSet = false;
   bool m_outputDataConfigHasBeenSet = false;
   bool m_resourceConfigHasBeenSet = false;
+  bool m_warmPoolStatusHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
   bool m_stoppingConditionHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

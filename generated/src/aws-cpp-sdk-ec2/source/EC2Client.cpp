@@ -84,6 +84,7 @@
 #include <aws/ec2/model/CopyVolumesRequest.h>
 #include <aws/ec2/model/CreateCapacityManagerDataExportRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationBySplittingRequest.h>
+#include <aws/ec2/model/CreateCapacityReservationCancellationQuoteRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationFleetRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationRequest.h>
 #include <aws/ec2/model/CreateCarrierGatewayRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/CreateLaunchTemplateRequest.h>
 #include <aws/ec2/model/CreateLaunchTemplateVersionRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteRequest.h>
-#include <aws/ec2/model/CreateLocalGatewayRouteTableRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -143,10 +143,10 @@ const char* EC2Client::GetAllocationTag() { return ALLOCATION_TAG; }
 
 EC2Client::EC2Client(const EC2::EC2ClientConfiguration& clientConfiguration, std::shared_ptr<EC2EndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<EC2ErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EC2EndpointProvider>(ALLOCATION_TAG)) {
@@ -178,10 +178,10 @@ EC2Client::EC2Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
 /* Legacy constructors due deprecation */
 EC2Client::EC2Client(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<EC2ErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<EC2EndpointProvider>(ALLOCATION_TAG)) {
@@ -688,6 +688,13 @@ CreateCapacityReservationBySplittingOutcome EC2Client::CreateCapacityReservation
                             : CreateCapacityReservationBySplittingOutcome(std::move(result.GetError()));
 }
 
+CreateCapacityReservationCancellationQuoteOutcome EC2Client::CreateCapacityReservationCancellationQuote(
+    const CreateCapacityReservationCancellationQuoteRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCapacityReservationCancellationQuoteOutcome(result.GetResultWithOwnership())
+                            : CreateCapacityReservationCancellationQuoteOutcome(std::move(result.GetError()));
+}
+
 CreateCapacityReservationFleetOutcome EC2Client::CreateCapacityReservationFleet(
     const CreateCapacityReservationFleetRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -888,10 +895,4 @@ CreateLocalGatewayRouteOutcome EC2Client::CreateLocalGatewayRoute(const CreateLo
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateLocalGatewayRouteOutcome(result.GetResultWithOwnership())
                             : CreateLocalGatewayRouteOutcome(std::move(result.GetError()));
-}
-
-CreateLocalGatewayRouteTableOutcome EC2Client::CreateLocalGatewayRouteTable(const CreateLocalGatewayRouteTableRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateLocalGatewayRouteTableOutcome(result.GetResultWithOwnership())
-                            : CreateLocalGatewayRouteTableOutcome(std::move(result.GetError()));
 }

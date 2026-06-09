@@ -87,10 +87,18 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
 
   /**
    * <p>Associates a resource with the feed. The resource provides the input that
-   * Elemental Inference needs needs in order to perform an Elemental Inference
-   * feature, such as cropping video. You always provide the resource by associating
-   * it with a feed. You can associate only one resource with each
-   * feed.</p><p><h3>See Also:</h3>   <a
+   * Elemental Inference needs in order to perform an Elemental Inference feature,
+   * such as cropping video. You always provide the resource by associating it with a
+   * feed. You can associate only one resource with each feed. With an association, a
+   * specific source media is claiming ownership of the feed. </p> <p>AssociateFeed
+   * is a PATCH operation, which means that you can include only parameters that you
+   * want to change. Parameters that you don't include will not be affected by the
+   * operation. </p> <p>Specifically:</p> <ul> <li> <p>You can add more outputs to
+   * the existing outputs. New outputs will be appended.</p> </li> <li> <p>You can't
+   * modify an existing output (for example to change its name). Instead, use
+   * UpdateFeed. </p> </li> <li> <p>You can't delete an existing output. Instead, use
+   * UpdateFeed.</p> </li> </ul> <p>Also note that you can't change the feed name
+   * with AssociateFeed. Instead, use UpdateFeed. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/AssociateFeed">AWS
    * API Reference</a></p>
    */
@@ -115,10 +123,43 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   }
 
   /**
-   * <p>Creates a feed. The feed is the target for live streams being sent by the
-   * calling application. An example of a calling application is AWS Elemental
-   * MediaLive. After you create the feed, you can associate a resource with the
-   * feed.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a custom dictionary for improving transcription accuracy. A
+   * dictionary contains custom words and phrases that the ASR engine might not
+   * recognize, such as brand names, technical terms, or proper nouns. You can
+   * reference a dictionary when configuring a smart subtitles output. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateDictionary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDictionaryOutcome CreateDictionary(const Model::CreateDictionaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDictionary that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateDictionaryRequestT = Model::CreateDictionaryRequest>
+  Model::CreateDictionaryOutcomeCallable CreateDictionaryCallable(const CreateDictionaryRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::CreateDictionary, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDictionary that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateDictionaryRequestT = Model::CreateDictionaryRequest>
+  void CreateDictionaryAsync(const CreateDictionaryRequestT& request, const CreateDictionaryResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::CreateDictionary, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a feed. The feed is the target for the live media stream that is
+   * being sent by the calling application. An example of a calling application is
+   * AWS Elemental MediaLive. </p> <p>The key contents of the feed is an array of
+   * outputs. Each output represents an Elemental Inference feature. After you create
+   * the feed, you must associate a resource with the feed. At that point, you will
+   * have a useable feed: resource - feed - output or outputs. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateFeed">AWS
    * API Reference</a></p>
    */
@@ -143,8 +184,39 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   }
 
   /**
-   * <p>Deletes the specified feed. The feed can be deleted at any
-   * time.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes the specified dictionary. You cannot delete a dictionary that is
+   * referenced by a feed. You must first remove the dictionary reference from the
+   * feed's subtitling configuration. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteDictionary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDictionaryOutcome DeleteDictionary(const Model::DeleteDictionaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDictionary that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteDictionaryRequestT = Model::DeleteDictionaryRequest>
+  Model::DeleteDictionaryOutcomeCallable DeleteDictionaryCallable(const DeleteDictionaryRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::DeleteDictionary, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDictionary that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteDictionaryRequestT = Model::DeleteDictionaryRequest>
+  void DeleteDictionaryAsync(const DeleteDictionaryRequestT& request, const DeleteDictionaryResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::DeleteDictionary, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified feed. You can delete the feed at any time. Elemental
+   * Inference doesn't block you from deleting a feed when the calling application is
+   * calling PutMedia or GetMetadata on that feed, although both these calls will
+   * start to fail. For more information about managing inactive feeds, see the
+   * Elemental Inference User Guide. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteFeed">AWS
    * API Reference</a></p>
    */
@@ -169,9 +241,8 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   }
 
   /**
-   * <p>Releases the resource (for example, an MediaLive channel) that is associated
-   * with this feed. The outputs in the feed become disabled.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Releases the resource (the source media) that is associated with this feed.
+   * The outputs in the feed become DISABLED. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DisassociateFeed">AWS
    * API Reference</a></p>
    */
@@ -197,6 +268,60 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   }
 
   /**
+   * <p>Exports the entries from the specified dictionary.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ExportDictionaryEntries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ExportDictionaryEntriesOutcome ExportDictionaryEntries(const Model::ExportDictionaryEntriesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ExportDictionaryEntries that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ExportDictionaryEntriesRequestT = Model::ExportDictionaryEntriesRequest>
+  Model::ExportDictionaryEntriesOutcomeCallable ExportDictionaryEntriesCallable(const ExportDictionaryEntriesRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::ExportDictionaryEntries, request);
+  }
+
+  /**
+   * An Async wrapper for ExportDictionaryEntries that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ExportDictionaryEntriesRequestT = Model::ExportDictionaryEntriesRequest>
+  void ExportDictionaryEntriesAsync(const ExportDictionaryEntriesRequestT& request,
+                                    const ExportDictionaryEntriesResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::ExportDictionaryEntries, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about the specified dictionary.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetDictionary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDictionaryOutcome GetDictionary(const Model::GetDictionaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDictionary that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetDictionaryRequestT = Model::GetDictionaryRequest>
+  Model::GetDictionaryOutcomeCallable GetDictionaryCallable(const GetDictionaryRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::GetDictionary, request);
+  }
+
+  /**
+   * An Async wrapper for GetDictionary that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetDictionaryRequestT = Model::GetDictionaryRequest>
+  void GetDictionaryAsync(const GetDictionaryRequestT& request, const GetDictionaryResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::GetDictionary, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves information about the specified feed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetFeed">AWS
    * API Reference</a></p>
@@ -219,6 +344,33 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   void GetFeedAsync(const GetFeedRequestT& request, const GetFeedResponseReceivedHandler& handler,
                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ElementalInferenceClient::GetFeed, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the dictionaries in your account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListDictionaries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDictionariesOutcome ListDictionaries(const Model::ListDictionariesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListDictionaries that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDictionariesRequestT = Model::ListDictionariesRequest>
+  Model::ListDictionariesOutcomeCallable ListDictionariesCallable(const ListDictionariesRequestT& request = {}) const {
+    return SubmitCallable(&ElementalInferenceClient::ListDictionaries, request);
+  }
+
+  /**
+   * An Async wrapper for ListDictionaries that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListDictionariesRequestT = Model::ListDictionariesRequest>
+  void ListDictionariesAsync(const ListDictionariesResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                             const ListDictionariesRequestT& request = {}) const {
+    return SubmitAsync(&ElementalInferenceClient::ListDictionaries, request, handler, context);
   }
 
   /**
@@ -279,7 +431,7 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
    * <p>Associates the specified tags to the resource identified by the specified
    * resourceArn in the current region. If existing tags on a resource are not
    * specified in the request parameters, they are not changed. When a resource is
-   * deleted, the tags associated with that resource are also deleted.</p><p><h3>See
+   * deleted, the tags associated with that resource are also deleted. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/TagResource">AWS
    * API Reference</a></p>
@@ -331,7 +483,39 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   }
 
   /**
-   * <p>Updates the name and/or outputs in a feed. </p><p><h3>See Also:</h3>   <a
+   * <p>Updates the specified dictionary.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/UpdateDictionary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDictionaryOutcome UpdateDictionary(const Model::UpdateDictionaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDictionary that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateDictionaryRequestT = Model::UpdateDictionaryRequest>
+  Model::UpdateDictionaryOutcomeCallable UpdateDictionaryCallable(const UpdateDictionaryRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::UpdateDictionary, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDictionary that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateDictionaryRequestT = Model::UpdateDictionaryRequest>
+  void UpdateDictionaryAsync(const UpdateDictionaryRequestT& request, const UpdateDictionaryResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::UpdateDictionary, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the name and/or outputs in a feed. </p> <p>UpdateFeed is a PUT
+   * operation, which means that the payload that you specify completely overwrites
+   * the existing payload. </p> <p>This means that if you want to touch the array of
+   * outputs, you must pass in the full new list. So you must omit outputs you want
+   * to delete, and include outputs you want to add or modify. </p> <p>If you want to
+   * patch the array of outputs to make selective additions, use AssociateFeed.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/UpdateFeed">AWS
    * API Reference</a></p>
    */

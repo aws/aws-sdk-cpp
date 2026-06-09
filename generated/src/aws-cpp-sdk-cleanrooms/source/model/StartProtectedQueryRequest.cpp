@@ -31,5 +31,9 @@ Aws::String StartProtectedQueryRequest::SerializePayload() const {
     payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
   }
 
+  if (m_queryComputePayerAccountIdHasBeenSet) {
+    payload.WithString("queryComputePayerAccountId", m_queryComputePayerAccountId);
+  }
+
   return payload.View().WriteReadable();
 }

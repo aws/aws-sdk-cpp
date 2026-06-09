@@ -44,7 +44,11 @@ class CreateServiceResult {
    * uses the <code>CODE_DEPLOY</code> deployment controller, the
    * <code>deploymentController</code>, <code>taskSets</code> and
    * <code>deployments</code> parameters will be returned, however the
-   * <code>deployments</code> parameter will be an empty list.</p>
+   * <code>deployments</code> parameter will be an empty list.</p> <p>The response
+   * includes a <code>lifecycleHookDetails</code> field, which is an empty array when
+   * the service is created or updated. The values are populated when a lifecycle
+   * hook executes and are available as part of the service deployment details (<a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>).</p>
    */
   inline const Service& GetService() const { return m_service; }
   template <typename ServiceT = Service>

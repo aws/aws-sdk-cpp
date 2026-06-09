@@ -505,6 +505,70 @@ class RuntimeContext {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Represents the type of file operation that triggered the finding, such as
+   * Write, Delete, Rename, Link, or Symlink.</p>
+   */
+  inline const Aws::String& GetFileOperation() const { return m_fileOperation; }
+  inline bool FileOperationHasBeenSet() const { return m_fileOperationHasBeenSet; }
+  template <typename FileOperationT = Aws::String>
+  void SetFileOperation(FileOperationT&& value) {
+    m_fileOperationHasBeenSet = true;
+    m_fileOperation = std::forward<FileOperationT>(value);
+  }
+  template <typename FileOperationT = Aws::String>
+  RuntimeContext& WithFileOperation(FileOperationT&& value) {
+    SetFileOperation(std::forward<FileOperationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The path of the sensitive file that was modified. Modification includes
+   * write, delete, rename, link, or symlink operations. This field is indexed for
+   * filtering.</p>
+   */
+  inline const Aws::String& GetFilePath() const { return m_filePath; }
+  inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
+  template <typename FilePathT = Aws::String>
+  void SetFilePath(FilePathT&& value) {
+    m_filePathHasBeenSet = true;
+    m_filePath = std::forward<FilePathT>(value);
+  }
+  template <typename FilePathT = Aws::String>
+  RuntimeContext& WithFilePath(FilePathT&& value) {
+    SetFilePath(std::forward<FilePathT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>All file paths modified by the same process that triggered the finding, up to
+   * a maximum of 25 paths.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetRelatedFilePaths() const { return m_relatedFilePaths; }
+  inline bool RelatedFilePathsHasBeenSet() const { return m_relatedFilePathsHasBeenSet; }
+  template <typename RelatedFilePathsT = Aws::Vector<Aws::String>>
+  void SetRelatedFilePaths(RelatedFilePathsT&& value) {
+    m_relatedFilePathsHasBeenSet = true;
+    m_relatedFilePaths = std::forward<RelatedFilePathsT>(value);
+  }
+  template <typename RelatedFilePathsT = Aws::Vector<Aws::String>>
+  RuntimeContext& WithRelatedFilePaths(RelatedFilePathsT&& value) {
+    SetRelatedFilePaths(std::forward<RelatedFilePathsT>(value));
+    return *this;
+  }
+  template <typename RelatedFilePathsT = Aws::String>
+  RuntimeContext& AddRelatedFilePaths(RelatedFilePathsT&& value) {
+    m_relatedFilePathsHasBeenSet = true;
+    m_relatedFilePaths.emplace_back(std::forward<RelatedFilePathsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ProcessDetails m_modifyingProcess;
 
@@ -555,6 +619,12 @@ class RuntimeContext {
   Aws::String m_commandLineExample;
 
   Aws::String m_threatFilePath;
+
+  Aws::String m_fileOperation;
+
+  Aws::String m_filePath;
+
+  Aws::Vector<Aws::String> m_relatedFilePaths;
   bool m_modifyingProcessHasBeenSet = false;
   bool m_modifiedAtHasBeenSet = false;
   bool m_scriptPathHasBeenSet = false;
@@ -580,6 +650,9 @@ class RuntimeContext {
   bool m_serviceNameHasBeenSet = false;
   bool m_commandLineExampleHasBeenSet = false;
   bool m_threatFilePathHasBeenSet = false;
+  bool m_fileOperationHasBeenSet = false;
+  bool m_filePathHasBeenSet = false;
+  bool m_relatedFilePathsHasBeenSet = false;
 };
 
 }  // namespace Model

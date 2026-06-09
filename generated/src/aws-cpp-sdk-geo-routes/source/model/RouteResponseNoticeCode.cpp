@@ -18,6 +18,9 @@ namespace RouteResponseNoticeCodeMapper {
 static const int MainLanguageNotFound_HASH = HashingUtils::HashString("MainLanguageNotFound");
 static const int Other_HASH = HashingUtils::HashString("Other");
 static const int TravelTimeExceedsDriverWorkHours_HASH = HashingUtils::HashString("TravelTimeExceedsDriverWorkHours");
+static const int TransitDataUnavailable_HASH = HashingUtils::HashString("TransitDataUnavailable");
+static const int TransitRouteUnavailable_HASH = HashingUtils::HashString("TransitRouteUnavailable");
+static const int NoTransitStationsFound_HASH = HashingUtils::HashString("NoTransitStationsFound");
 
 RouteResponseNoticeCode GetRouteResponseNoticeCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +30,12 @@ RouteResponseNoticeCode GetRouteResponseNoticeCodeForName(const Aws::String& nam
     return RouteResponseNoticeCode::Other;
   } else if (hashCode == TravelTimeExceedsDriverWorkHours_HASH) {
     return RouteResponseNoticeCode::TravelTimeExceedsDriverWorkHours;
+  } else if (hashCode == TransitDataUnavailable_HASH) {
+    return RouteResponseNoticeCode::TransitDataUnavailable;
+  } else if (hashCode == TransitRouteUnavailable_HASH) {
+    return RouteResponseNoticeCode::TransitRouteUnavailable;
+  } else if (hashCode == NoTransitStationsFound_HASH) {
+    return RouteResponseNoticeCode::NoTransitStationsFound;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +56,12 @@ Aws::String GetNameForRouteResponseNoticeCode(RouteResponseNoticeCode enumValue)
       return "Other";
     case RouteResponseNoticeCode::TravelTimeExceedsDriverWorkHours:
       return "TravelTimeExceedsDriverWorkHours";
+    case RouteResponseNoticeCode::TransitDataUnavailable:
+      return "TransitDataUnavailable";
+    case RouteResponseNoticeCode::TransitRouteUnavailable:
+      return "TransitRouteUnavailable";
+    case RouteResponseNoticeCode::NoTransitStationsFound:
+      return "NoTransitStationsFound";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

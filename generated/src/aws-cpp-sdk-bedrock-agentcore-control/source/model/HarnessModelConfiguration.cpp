@@ -30,6 +30,10 @@ HarnessModelConfiguration& HarnessModelConfiguration::operator=(JsonView jsonVal
     m_geminiModelConfig = jsonValue.GetObject("geminiModelConfig");
     m_geminiModelConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("liteLlmModelConfig")) {
+    m_liteLlmModelConfig = jsonValue.GetObject("liteLlmModelConfig");
+    m_liteLlmModelConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue HarnessModelConfiguration::Jsonize() const {
 
   if (m_geminiModelConfigHasBeenSet) {
     payload.WithObject("geminiModelConfig", m_geminiModelConfig.Jsonize());
+  }
+
+  if (m_liteLlmModelConfigHasBeenSet) {
+    payload.WithObject("liteLlmModelConfig", m_liteLlmModelConfig.Jsonize());
   }
 
   return payload;

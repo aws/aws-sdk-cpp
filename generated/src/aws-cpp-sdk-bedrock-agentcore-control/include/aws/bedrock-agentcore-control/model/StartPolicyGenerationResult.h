@@ -170,6 +170,23 @@ class StartPolicyGenerationResult {
 
   ///@{
   /**
+   * <p>Initial findings from the policy generation process.</p>
+   */
+  inline const Aws::String& GetFindings() const { return m_findings; }
+  template <typename FindingsT = Aws::String>
+  void SetFindings(FindingsT&& value) {
+    m_findingsHasBeenSet = true;
+    m_findings = std::forward<FindingsT>(value);
+  }
+  template <typename FindingsT = Aws::String>
+  StartPolicyGenerationResult& WithFindings(FindingsT&& value) {
+    SetFindings(std::forward<FindingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Additional information about the generation status.</p>
    */
   inline const Aws::Vector<Aws::String>& GetStatusReasons() const { return m_statusReasons; }
@@ -187,23 +204,6 @@ class StartPolicyGenerationResult {
   StartPolicyGenerationResult& AddStatusReasons(StatusReasonsT&& value) {
     m_statusReasonsHasBeenSet = true;
     m_statusReasons.emplace_back(std::forward<StatusReasonsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Initial findings from the policy generation process.</p>
-   */
-  inline const Aws::String& GetFindings() const { return m_findings; }
-  template <typename FindingsT = Aws::String>
-  void SetFindings(FindingsT&& value) {
-    m_findingsHasBeenSet = true;
-    m_findings = std::forward<FindingsT>(value);
-  }
-  template <typename FindingsT = Aws::String>
-  StartPolicyGenerationResult& WithFindings(FindingsT&& value) {
-    SetFindings(std::forward<FindingsT>(value));
     return *this;
   }
   ///@}
@@ -241,9 +241,9 @@ class StartPolicyGenerationResult {
 
   PolicyGenerationStatus m_status{PolicyGenerationStatus::NOT_SET};
 
-  Aws::Vector<Aws::String> m_statusReasons;
-
   Aws::String m_findings;
+
+  Aws::Vector<Aws::String> m_statusReasons;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
@@ -255,8 +255,8 @@ class StartPolicyGenerationResult {
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
-  bool m_statusReasonsHasBeenSet = false;
   bool m_findingsHasBeenSet = false;
+  bool m_statusReasonsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

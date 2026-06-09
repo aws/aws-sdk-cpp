@@ -17,6 +17,7 @@ namespace ScanResultStatusMapper {
 
 static const int NO_THREATS_FOUND_HASH = HashingUtils::HashString("NO_THREATS_FOUND");
 static const int THREATS_FOUND_HASH = HashingUtils::HashString("THREATS_FOUND");
+static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
 
 ScanResultStatus GetScanResultStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ScanResultStatus GetScanResultStatusForName(const Aws::String& name) {
     return ScanResultStatus::NO_THREATS_FOUND;
   } else if (hashCode == THREATS_FOUND_HASH) {
     return ScanResultStatus::THREATS_FOUND;
+  } else if (hashCode == UNKNOWN_HASH) {
+    return ScanResultStatus::UNKNOWN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForScanResultStatus(ScanResultStatus enumValue) {
       return "NO_THREATS_FOUND";
     case ScanResultStatus::THREATS_FOUND:
       return "THREATS_FOUND";
+    case ScanResultStatus::UNKNOWN:
+      return "UNKNOWN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

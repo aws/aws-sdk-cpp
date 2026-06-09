@@ -62,6 +62,12 @@ TrustStore& TrustStore::operator=(const XmlNode& xmlNode) {
       m_reason = Aws::Utils::Xml::DecodeEscapedXmlText(reasonNode.GetText());
       m_reasonHasBeenSet = true;
     }
+    XmlNode useClientCertificateOCSPEndpointNode = resultNode.FirstChild("UseClientCertificateOCSPEndpoint");
+    if (!useClientCertificateOCSPEndpointNode.IsNull()) {
+      m_useClientCertificateOCSPEndpoint = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(useClientCertificateOCSPEndpointNode.GetText()).c_str()).c_str());
+      m_useClientCertificateOCSPEndpointHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -104,6 +110,13 @@ void TrustStore::AddToNode(XmlNode& parentNode) const {
   if (m_reasonHasBeenSet) {
     XmlNode reasonNode = parentNode.CreateChildElement("Reason");
     reasonNode.SetText(m_reason);
+  }
+
+  if (m_useClientCertificateOCSPEndpointHasBeenSet) {
+    XmlNode useClientCertificateOCSPEndpointNode = parentNode.CreateChildElement("UseClientCertificateOCSPEndpoint");
+    ss << std::boolalpha << m_useClientCertificateOCSPEndpoint;
+    useClientCertificateOCSPEndpointNode.SetText(ss.str());
+    ss.str("");
   }
 }
 

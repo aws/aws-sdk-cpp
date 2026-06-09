@@ -14,6 +14,7 @@
 #include <aws/route53resolver/model/ConfidenceThreshold.h>
 #include <aws/route53resolver/model/DnsThreatProtection.h>
 #include <aws/route53resolver/model/FirewallDomainRedirectionAction.h>
+#include <aws/route53resolver/model/FirewallRuleType.h>
 
 #include <utility>
 
@@ -281,7 +282,7 @@ class CreateFirewallRuleRequest : public Route53ResolverRequest {
    * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
    * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
    * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
-   * can be 1-65334, for example, TYPE28. For more information, see <a
+   * can be 1-65534, for example, TYPE28. For more information, see <a
    * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
    * types</a>.</p> </li> </ul>
    */
@@ -336,6 +337,26 @@ class CreateFirewallRuleRequest : public Route53ResolverRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The rule type configuration for the firewall rule. This setting is mutually
+   * exclusive with the top-level <code>FirewallDomainListId</code> and
+   * <code>DnsThreatProtection</code> fields.</p>
+   */
+  inline const FirewallRuleType& GetFirewallRuleType() const { return m_firewallRuleType; }
+  inline bool FirewallRuleTypeHasBeenSet() const { return m_firewallRuleTypeHasBeenSet; }
+  template <typename FirewallRuleTypeT = FirewallRuleType>
+  void SetFirewallRuleType(FirewallRuleTypeT&& value) {
+    m_firewallRuleTypeHasBeenSet = true;
+    m_firewallRuleType = std::forward<FirewallRuleTypeT>(value);
+  }
+  template <typename FirewallRuleTypeT = FirewallRuleType>
+  CreateFirewallRuleRequest& WithFirewallRuleType(FirewallRuleTypeT&& value) {
+    SetFirewallRuleType(std::forward<FirewallRuleTypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
 
@@ -364,6 +385,8 @@ class CreateFirewallRuleRequest : public Route53ResolverRequest {
   DnsThreatProtection m_dnsThreatProtection{DnsThreatProtection::NOT_SET};
 
   ConfidenceThreshold m_confidenceThreshold{ConfidenceThreshold::NOT_SET};
+
+  FirewallRuleType m_firewallRuleType;
   bool m_creatorRequestIdHasBeenSet = true;
   bool m_firewallRuleGroupIdHasBeenSet = false;
   bool m_firewallDomainListIdHasBeenSet = false;
@@ -378,6 +401,7 @@ class CreateFirewallRuleRequest : public Route53ResolverRequest {
   bool m_qtypeHasBeenSet = false;
   bool m_dnsThreatProtectionHasBeenSet = false;
   bool m_confidenceThresholdHasBeenSet = false;
+  bool m_firewallRuleTypeHasBeenSet = false;
 };
 
 }  // namespace Model

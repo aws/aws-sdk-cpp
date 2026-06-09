@@ -53,7 +53,9 @@ class PaymentCredentialProviderItem {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The vendor type for the payment credential provider.</p>
+   */
   inline PaymentCredentialProviderVendorType GetCredentialProviderVendor() const { return m_credentialProviderVendor; }
   inline bool CredentialProviderVendorHasBeenSet() const { return m_credentialProviderVendorHasBeenSet; }
   inline void SetCredentialProviderVendor(PaymentCredentialProviderVendorType value) {

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/CollectionGroupCapacityLimits.h>
+#include <aws/opensearchserverless/model/ServerlessGeneration.h>
 #include <aws/opensearchserverless/model/StandbyReplicas.h>
 #include <aws/opensearchserverless/model/Tag.h>
 
@@ -181,6 +182,22 @@ class CreateCollectionGroupDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The generation of Amazon OpenSearch Serverless for the collection group.</p>
+   */
+  inline ServerlessGeneration GetGeneration() const { return m_generation; }
+  inline bool GenerationHasBeenSet() const { return m_generationHasBeenSet; }
+  inline void SetGeneration(ServerlessGeneration value) {
+    m_generationHasBeenSet = true;
+    m_generation = value;
+  }
+  inline CreateCollectionGroupDetail& WithGeneration(ServerlessGeneration value) {
+    SetGeneration(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -197,6 +214,8 @@ class CreateCollectionGroupDetail {
   long long m_createdDate{0};
 
   CollectionGroupCapacityLimits m_capacityLimits;
+
+  ServerlessGeneration m_generation{ServerlessGeneration::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -205,6 +224,7 @@ class CreateCollectionGroupDetail {
   bool m_tagsHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_capacityLimitsHasBeenSet = false;
+  bool m_generationHasBeenSet = false;
 };
 
 }  // namespace Model

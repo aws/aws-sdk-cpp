@@ -37,8 +37,8 @@ class ListNotebookRunsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon DataZone domain in which to list notebook
-   * runs.</p>
+   * <p>The identifier of the Amazon SageMaker Unified Studio domain in which to list
+   * notebook runs.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
   inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }

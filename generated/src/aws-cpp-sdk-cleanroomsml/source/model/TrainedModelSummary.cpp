@@ -67,6 +67,10 @@ TrainedModelSummary& TrainedModelSummary::operator=(JsonView jsonValue) {
     m_configuredModelAlgorithmAssociationArn = jsonValue.GetString("configuredModelAlgorithmAssociationArn");
     m_configuredModelAlgorithmAssociationArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mlModelTrainingPayerAccountId")) {
+    m_mlModelTrainingPayerAccountId = jsonValue.GetString("mlModelTrainingPayerAccountId");
+    m_mlModelTrainingPayerAccountIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -122,6 +126,10 @@ JsonValue TrainedModelSummary::Jsonize() const {
 
   if (m_configuredModelAlgorithmAssociationArnHasBeenSet) {
     payload.WithString("configuredModelAlgorithmAssociationArn", m_configuredModelAlgorithmAssociationArn);
+  }
+
+  if (m_mlModelTrainingPayerAccountIdHasBeenSet) {
+    payload.WithString("mlModelTrainingPayerAccountId", m_mlModelTrainingPayerAccountId);
   }
 
   return payload;

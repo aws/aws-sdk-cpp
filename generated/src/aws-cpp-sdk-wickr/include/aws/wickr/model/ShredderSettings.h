@@ -17,9 +17,13 @@ namespace Wickr {
 namespace Model {
 
 /**
- * <p>Configuration for the message shredder feature, which securely deletes
- * messages and files from devices to prevent data recovery.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Configuration for the Wickr shredder feature, which writes random data over
+ * free memory and disk space on client devices. You can configure your Wickr
+ * shredder intensity using the parameters below. </p>  <p>Secure Shredder
+ * will not write over files that are permanently stored on the device or saved
+ * outside of the Wickr client. Wickr Network Administrators are able to disable
+ * file downloads within Security Group Settings.</p> <p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/wickr-2024-02-01/ShredderSettings">AWS
  * API Reference</a></p>
  */
@@ -49,8 +53,9 @@ class ShredderSettings {
 
   ///@{
   /**
-   * <p>Prevents Wickr data from being recovered by overwriting deleted Wickr data.
-   * Valid Values: Must be one of [0, 20, 60, 100]</p>
+   * <p>Controls the rate (MB/minute) at which the shredder function runs on clients.
+   * Valid Values: Must be one of [0, 20, 60, 100].</p>  <p>A higher intensity
+   * setting could lead to higher battery usage on mobile devices.</p>
    */
   inline int GetIntensity() const { return m_intensity; }
   inline bool IntensityHasBeenSet() const { return m_intensityHasBeenSet; }

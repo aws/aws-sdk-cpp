@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class DashIsoImageBasedTrickPlay { NOT_SET, NONE, THUMBNAIL, THUMBNAIL_AND_FULLFRAME, ADVANCED };
+enum class DashIsoImageBasedTrickPlay { NOT_SET, NONE, THUMBNAIL, THUMBNAIL_AND_FULLFRAME, ADVANCED, VARIANTS };
 
 namespace DashIsoImageBasedTrickPlayMapper {
 AWS_MEDIACONVERT_API DashIsoImageBasedTrickPlay GetDashIsoImageBasedTrickPlayForName(const Aws::String& name);

@@ -42,6 +42,10 @@ CollectionGroupSummary& CollectionGroupSummary::operator=(JsonView jsonValue) {
     m_capacityLimits = jsonValue.GetObject("capacityLimits");
     m_capacityLimitsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("generation")) {
+    m_generation = ServerlessGenerationMapper::GetServerlessGenerationForName(jsonValue.GetString("generation"));
+    m_generationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue CollectionGroupSummary::Jsonize() const {
 
   if (m_capacityLimitsHasBeenSet) {
     payload.WithObject("capacityLimits", m_capacityLimits.Jsonize());
+  }
+
+  if (m_generationHasBeenSet) {
+    payload.WithString("generation", ServerlessGenerationMapper::GetNameForServerlessGeneration(m_generation));
   }
 
   return payload;

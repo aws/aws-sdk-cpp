@@ -144,6 +144,10 @@ SecurityGroupSettings& SecurityGroupSettings::operator=(JsonView jsonValue) {
     m_ssoMaxIdleMinutes = jsonValue.GetInteger("ssoMaxIdleMinutes");
     m_ssoMaxIdleMinutesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("maxNonSsoSessionMinutes")) {
+    m_maxNonSsoSessionMinutes = jsonValue.GetInteger("maxNonSsoSessionMinutes");
+    m_maxNonSsoSessionMinutesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("federationMode")) {
     m_federationMode = jsonValue.GetInteger("federationMode");
     m_federationModeHasBeenSet = true;
@@ -309,6 +313,10 @@ JsonValue SecurityGroupSettings::Jsonize() const {
 
   if (m_ssoMaxIdleMinutesHasBeenSet) {
     payload.WithInteger("ssoMaxIdleMinutes", m_ssoMaxIdleMinutes);
+  }
+
+  if (m_maxNonSsoSessionMinutesHasBeenSet) {
+    payload.WithInteger("maxNonSsoSessionMinutes", m_maxNonSsoSessionMinutes);
   }
 
   if (m_federationModeHasBeenSet) {

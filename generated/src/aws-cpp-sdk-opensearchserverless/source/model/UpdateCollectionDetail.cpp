@@ -54,6 +54,10 @@ UpdateCollectionDetail& UpdateCollectionDetail::operator=(JsonView jsonValue) {
     m_lastModifiedDate = jsonValue.GetInt64("lastModifiedDate");
     m_lastModifiedDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("deletionProtection")) {
+    m_deletionProtection = DeletionProtectionMapper::GetDeletionProtectionForName(jsonValue.GetString("deletionProtection"));
+    m_deletionProtectionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue UpdateCollectionDetail::Jsonize() const {
 
   if (m_lastModifiedDateHasBeenSet) {
     payload.WithInt64("lastModifiedDate", m_lastModifiedDate);
+  }
+
+  if (m_deletionProtectionHasBeenSet) {
+    payload.WithString("deletionProtection", DeletionProtectionMapper::GetNameForDeletionProtection(m_deletionProtection));
   }
 
   return payload;

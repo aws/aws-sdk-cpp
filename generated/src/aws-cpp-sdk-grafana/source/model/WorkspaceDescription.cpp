@@ -133,9 +133,17 @@ WorkspaceDescription& WorkspaceDescription::operator=(JsonView jsonValue) {
     m_grafanaToken = jsonValue.GetString("grafanaToken");
     m_grafanaTokenHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ipAddressType")) {
+    m_ipAddressType = IPAddressTypeMapper::GetIPAddressTypeForName(jsonValue.GetString("ipAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("degradedWorkspaceReason")) {
+    m_degradedWorkspaceReason = jsonValue.GetString("degradedWorkspaceReason");
+    m_degradedWorkspaceReasonHasBeenSet = true;
   }
   return *this;
 }
@@ -263,8 +271,16 @@ JsonValue WorkspaceDescription::Jsonize() const {
     payload.WithString("grafanaToken", m_grafanaToken);
   }
 
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("ipAddressType", IPAddressTypeMapper::GetNameForIPAddressType(m_ipAddressType));
+  }
+
   if (m_kmsKeyIdHasBeenSet) {
     payload.WithString("kmsKeyId", m_kmsKeyId);
+  }
+
+  if (m_degradedWorkspaceReasonHasBeenSet) {
+    payload.WithString("degradedWorkspaceReason", m_degradedWorkspaceReason);
   }
 
   return payload;

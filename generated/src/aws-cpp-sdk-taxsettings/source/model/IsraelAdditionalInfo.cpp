@@ -18,13 +18,13 @@ namespace Model {
 IsraelAdditionalInfo::IsraelAdditionalInfo(JsonView jsonValue) { *this = jsonValue; }
 
 IsraelAdditionalInfo& IsraelAdditionalInfo::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("customerType")) {
-    m_customerType = IsraelCustomerTypeMapper::GetIsraelCustomerTypeForName(jsonValue.GetString("customerType"));
-    m_customerTypeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("dealerType")) {
     m_dealerType = IsraelDealerTypeMapper::GetIsraelDealerTypeForName(jsonValue.GetString("dealerType"));
     m_dealerTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("customerType")) {
+    m_customerType = IsraelCustomerTypeMapper::GetIsraelCustomerTypeForName(jsonValue.GetString("customerType"));
+    m_customerTypeHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ IsraelAdditionalInfo& IsraelAdditionalInfo::operator=(JsonView jsonValue) {
 JsonValue IsraelAdditionalInfo::Jsonize() const {
   JsonValue payload;
 
-  if (m_customerTypeHasBeenSet) {
-    payload.WithString("customerType", IsraelCustomerTypeMapper::GetNameForIsraelCustomerType(m_customerType));
-  }
-
   if (m_dealerTypeHasBeenSet) {
     payload.WithString("dealerType", IsraelDealerTypeMapper::GetNameForIsraelDealerType(m_dealerType));
+  }
+
+  if (m_customerTypeHasBeenSet) {
+    payload.WithString("customerType", IsraelCustomerTypeMapper::GetNameForIsraelCustomerType(m_customerType));
   }
 
   return payload;

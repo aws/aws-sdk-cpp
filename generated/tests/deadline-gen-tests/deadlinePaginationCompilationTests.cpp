@@ -37,6 +37,7 @@
 #include <aws/deadline/model/ListBudgetsPaginationTraits.h>
 #include <aws/deadline/model/ListStepConsumersPaginationTraits.h>
 #include <aws/deadline/model/ListLicenseEndpointsPaginationTraits.h>
+#include <aws/deadline/model/ListVolumesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

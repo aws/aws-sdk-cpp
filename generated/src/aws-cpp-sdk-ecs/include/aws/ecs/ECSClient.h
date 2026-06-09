@@ -90,6 +90,42 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
   virtual ~ECSClient();
 
   /**
+   * <p>Continues or rolls back an Amazon ECS service deployment that is paused at a
+   * lifecycle hook.</p> <p>When a service deployment reaches a lifecycle stage that
+   * has a <code>PAUSE</code> hook configured, the deployment pauses and waits for an
+   * explicit action. Use this API to either continue the deployment to the next
+   * stage or roll back to the previous service revision.</p> <p>To find the
+   * <code>hookId</code> of the paused hook, call <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>
+   * and inspect the <code>lifecycleHookDetails</code> field.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContinueServiceDeployment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ContinueServiceDeploymentOutcome ContinueServiceDeployment(const Model::ContinueServiceDeploymentRequest& request) const;
+
+  /**
+   * A Callable wrapper for ContinueServiceDeployment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ContinueServiceDeploymentRequestT = Model::ContinueServiceDeploymentRequest>
+  Model::ContinueServiceDeploymentOutcomeCallable ContinueServiceDeploymentCallable(
+      const ContinueServiceDeploymentRequestT& request) const {
+    return SubmitCallable(&ECSClient::ContinueServiceDeployment, request);
+  }
+
+  /**
+   * An Async wrapper for ContinueServiceDeployment that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ContinueServiceDeploymentRequestT = Model::ContinueServiceDeploymentRequest>
+  void ContinueServiceDeploymentAsync(const ContinueServiceDeploymentRequestT& request,
+                                      const ContinueServiceDeploymentResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::ContinueServiceDeployment, request, handler, context);
+  }
+
+  /**
    * <p>Creates a capacity provider. Capacity providers are associated with a cluster
    * and are used in capacity provider strategies to facilitate cluster auto scaling.
    * You can create capacity providers for Amazon ECS Managed Instances and EC2

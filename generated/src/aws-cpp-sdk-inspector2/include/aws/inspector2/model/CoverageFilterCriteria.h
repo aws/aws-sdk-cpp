@@ -364,7 +364,8 @@ class CoverageFilterCriteria {
   ///@{
   /**
    * <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid
-   * values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_AGENTLESS</code>.</p>
+   * values are <code>EC2_SSM_AGENT_BASED</code>, <code>EC2_AGENTLESS</code>, and
+   * <code>EC2_INSPECTOR_AGENT_BASED</code>.</p>
    */
   inline const Aws::Vector<CoverageStringFilter>& GetScanMode() const { return m_scanMode; }
   inline bool ScanModeHasBeenSet() const { return m_scanModeHasBeenSet; }

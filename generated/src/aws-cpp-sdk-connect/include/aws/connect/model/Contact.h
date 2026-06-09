@@ -445,7 +445,7 @@ class Contact {
 
   ///@{
   /**
-   * <p>Information about Amazon Connect Wisdom.</p>
+   * <p>Information about Connect Customer Wisdom.</p>
    */
   inline const WisdomInfo& GetWisdomInfo() const { return m_wisdomInfo; }
   inline bool WisdomInfoHasBeenSet() const { return m_wisdomInfoHasBeenSet; }
@@ -466,7 +466,7 @@ class Contact {
    * <p>The customer's identification number. For example, the
    * <code>CustomerId</code> may be a customer number from your CRM. You can create a
    * Lambda function to pull the unique customer ID of the caller from your CRM
-   * system. If you enable Amazon Connect Voice ID capability, this attribute is
+   * system. If you enable Connect Customer Voice ID capability, this attribute is
    * populated with the <code>CustomerSpeakerId</code> of the caller.</p>
    */
   inline const Aws::String& GetCustomerId() const { return m_customerId; }
@@ -588,7 +588,7 @@ class Contact {
 
   ///@{
   /**
-   * <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+   * <p>The timestamp when customer endpoint connected to Connect Customer.</p>
    */
   inline const Aws::Utils::DateTime& GetConnectedToSystemTimestamp() const { return m_connectedToSystemTimestamp; }
   inline bool ConnectedToSystemTimestampHasBeenSet() const { return m_connectedToSystemTimestampHasBeenSet; }
@@ -660,8 +660,8 @@ class Contact {
   /**
    * <p>Indicates how an <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound
-   * campaign</a> call is actually disposed if the contact is connected to Amazon
-   * Connect.</p>
+   * campaign</a> call is actually disposed if the contact is connected to Connect
+   * Customer.</p>
    */
   inline AnsweringMachineDetectionStatus GetAnsweringMachineDetectionStatus() const { return m_answeringMachineDetectionStatus; }
   inline bool AnsweringMachineDetectionStatusHasBeenSet() const { return m_answeringMachineDetectionStatusHasBeenSet; }
@@ -769,7 +769,7 @@ class Contact {
   ///@{
   /**
    * <p>A set of system defined key-value pairs stored on individual contact segments
-   * using an attribute map. The attributes are standard Amazon Connect attributes
+   * using an attribute map. The attributes are standard Connect Customer attributes
    * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
    * and _ characters. This field can be used to show channel subtype. For example,
    * <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
@@ -823,7 +823,7 @@ class Contact {
    * <p>The disconnect reason for the contact. For a list and description of all the
    * possible disconnect reasons by channel, see DisconnectReason under <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-   * in the <i>Amazon Connect Administrator Guide</i>. </p>
+   * in the <i>Connect Customer Administrator Guide</i>. </p>
    */
   inline const Aws::String& GetDisconnectReason() const { return m_disconnectReason; }
   inline bool DisconnectReasonHasBeenSet() const { return m_disconnectReasonHasBeenSet; }

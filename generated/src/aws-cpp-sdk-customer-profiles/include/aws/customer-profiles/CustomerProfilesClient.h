@@ -16,19 +16,19 @@
 namespace Aws {
 namespace CustomerProfiles {
 /**
- * <fullname>Amazon Connect Customer Profiles</fullname> <ul> <li> <p> <a
+ * <fullname>Connect Customer Customer Profiles</fullname> <ul> <li> <p> <a
  * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Customer_Profiles.html">Customer
  * Profiles actions</a> </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Customer_Profiles.html">Customer
- * Profiles data types</a> </p> </li> </ul> <p>Amazon Connect Customer Profiles is
- * a unified customer profile for your contact center that has pre-built connectors
- * powered by AppFlow that make it easy to combine customer information from third
- * party applications, such as Salesforce (CRM), ServiceNow (ITSM), and your
- * enterprise resource planning (ERP), with contact history from your Amazon
- * Connect contact center. </p> <p>For more information about the Amazon Connect
+ * Profiles data types</a> </p> </li> </ul> <p>Connect Customer Customer Profiles
+ * is a unified customer profile for your contact center that has pre-built
+ * connectors powered by AppFlow that make it easy to combine customer information
+ * from third party applications, such as Salesforce (CRM), ServiceNow (ITSM), and
+ * your enterprise resource planning (ERP), with contact history from your Connect
+ * Customer contact center. </p> <p>For more information about the Connect Customer
  * Customer Profiles feature, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html">Use
- * Customer Profiles</a> in the <i>Amazon Connect Administrator's Guide</i>. </p>
+ * Customer Profiles</a> in the <i>Connect Customer Administrator's Guide</i>. </p>
  */
 class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<CustomerProfilesClient>,
@@ -175,6 +175,41 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Adds multiple profile objects to a domain of a given ObjectType in a single
+   * API call.</p> <p>When adding a specific profile object, like a Contact Record,
+   * an inferred profile can get created if it is not mapped to an existing profile.
+   * The resulting profile will only have a phone number populated in the standard
+   * ProfileObject. Any additional Contact Records with the same phone number will be
+   * mapped to the same inferred profile.</p> <p>When a ProfileObject is created and
+   * if a ProfileObjectType already exists for the ProfileObject, it will provide
+   * data to a standard profile depending on the ProfileObjectType definition.</p>
+   * <p>BatchPutProfileObject needs an ObjectType, which can be created using
+   * PutProfileObjectType.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchPutProfileObject">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchPutProfileObjectOutcome BatchPutProfileObject(const Model::BatchPutProfileObjectRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchPutProfileObject that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchPutProfileObjectRequestT = Model::BatchPutProfileObjectRequest>
+  Model::BatchPutProfileObjectOutcomeCallable BatchPutProfileObjectCallable(const BatchPutProfileObjectRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::BatchPutProfileObject, request);
+  }
+
+  /**
+   * An Async wrapper for BatchPutProfileObject that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchPutProfileObjectRequestT = Model::BatchPutProfileObjectRequest>
+  void BatchPutProfileObjectAsync(const BatchPutProfileObjectRequestT& request, const BatchPutProfileObjectResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::BatchPutProfileObject, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new calculated attribute definition. After creation, new object
    * data ingested into Customer Profiles will be included in the calculated
    * attribute, which can be retrieved for a profile using the <a
@@ -214,8 +249,8 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
    * <p>Creates a domain, which is a container for all customer data, such as
    * customer profile attributes, object types, profile keys, and encryption keys.
    * You can create multiple domains, and each domain can have multiple third-party
-   * integrations.</p> <p>Each Amazon Connect instance can be associated with only
-   * one domain. Multiple Amazon Connect instances can be associated with one
+   * integrations.</p> <p>Each Connect Customer instance can be associated with only
+   * one domain. Multiple Connect Customer instances can be associated with one
    * domain.</p> <p>Use this API or <a
    * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
    * to enable <a
@@ -284,7 +319,7 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
 
   /**
    * <p>Creates an event stream, which is a subscription to real-time events, such as
-   * when profiles are created and updated through Amazon Connect Customer
+   * when profiles are created and updated through Connect Customer Customer
    * Profiles.</p> <p>Each event stream can be associated with only one Kinesis Data
    * Stream destination in the same region and Amazon Web Services account as the
    * customer profiles domain</p><p><h3>See Also:</h3>   <a

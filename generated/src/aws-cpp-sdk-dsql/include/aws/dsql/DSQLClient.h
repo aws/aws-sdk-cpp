@@ -135,6 +135,42 @@ class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a new change data capture (CDC) stream for a cluster. The stream
+   * captures database changes and delivers them to the specified target
+   * destination.</p> <p> <b>Required permissions</b> </p> <dl>
+   * <dt>dsql:CreateStream</dt> <dd> <p>Permission to create a new stream.</p>
+   * <p>Resources: <code>arn:aws:dsql:region:account-id:cluster/cluster-id</code>
+   * </p> </dd> <dt>iam:PassRole</dt> <dd> <p>Permission to pass the IAM role
+   * specified in the target definition to the service.</p> <p>Resources: ARN of the
+   * IAM role specified in <code>targetDefinition.kinesis.roleArn</code> </p> </dd>
+   * <dt>kms:Decrypt</dt> <dd> <p>Required when the cluster uses a customer managed
+   * KMS key (CMK). Permission to decrypt data using the cluster's CMK.</p>
+   * <p>Resources: ARN of the KMS key used by the cluster</p> </dd> </dl><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateStream">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateStreamOutcome CreateStream(const Model::CreateStreamRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateStream that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateStreamRequestT = Model::CreateStreamRequest>
+  Model::CreateStreamOutcomeCallable CreateStreamCallable(const CreateStreamRequestT& request) const {
+    return SubmitCallable(&DSQLClient::CreateStream, request);
+  }
+
+  /**
+   * An Async wrapper for CreateStream that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateStreamRequestT = Model::CreateStreamRequest>
+  void CreateStreamAsync(const CreateStreamRequestT& request, const CreateStreamResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DSQLClient::CreateStream, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a cluster in Amazon Aurora DSQL.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteCluster">AWS
    * API Reference</a></p>
@@ -185,6 +221,31 @@ class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient,
   void DeleteClusterPolicyAsync(const DeleteClusterPolicyRequestT& request, const DeleteClusterPolicyResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DSQLClient::DeleteClusterPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a stream from a cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteStream">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteStreamOutcome DeleteStream(const Model::DeleteStreamRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteStream that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteStreamRequestT = Model::DeleteStreamRequest>
+  Model::DeleteStreamOutcomeCallable DeleteStreamCallable(const DeleteStreamRequestT& request) const {
+    return SubmitCallable(&DSQLClient::DeleteStream, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteStream that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteStreamRequestT = Model::DeleteStreamRequest>
+  void DeleteStreamAsync(const DeleteStreamRequestT& request, const DeleteStreamResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DSQLClient::DeleteStream, request, handler, context);
   }
 
   /**
@@ -241,6 +302,31 @@ class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves information about a stream.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetStream">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::GetStreamOutcome GetStream(const Model::GetStreamRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetStream that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetStreamRequestT = Model::GetStreamRequest>
+  Model::GetStreamOutcomeCallable GetStreamCallable(const GetStreamRequestT& request) const {
+    return SubmitCallable(&DSQLClient::GetStream, request);
+  }
+
+  /**
+   * An Async wrapper for GetStream that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetStreamRequestT = Model::GetStreamRequest>
+  void GetStreamAsync(const GetStreamRequestT& request, const GetStreamResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DSQLClient::GetStream, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the VPC endpoint service name.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetVpcEndpointServiceName">AWS
    * API Reference</a></p>
@@ -292,6 +378,32 @@ class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                          const ListClustersRequestT& request = {}) const {
     return SubmitAsync(&DSQLClient::ListClusters, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a list of streams for a cluster.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/ListStreams">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListStreams that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListStreamsRequestT = Model::ListStreamsRequest>
+  Model::ListStreamsOutcomeCallable ListStreamsCallable(const ListStreamsRequestT& request) const {
+    return SubmitCallable(&DSQLClient::ListStreams, request);
+  }
+
+  /**
+   * An Async wrapper for ListStreams that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListStreamsRequestT = Model::ListStreamsRequest>
+  void ListStreamsAsync(const ListStreamsRequestT& request, const ListStreamsResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DSQLClient::ListStreams, request, handler, context);
   }
 
   /**

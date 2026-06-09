@@ -38,6 +38,7 @@
 #include <aws/wickr/model/BlockedGuestUser.h>
 #include <aws/wickr/model/Bot.h>
 #include <aws/wickr/model/CallingSettings.h>
+#include <aws/wickr/model/ConsentPopupConfig.h>
 #include <aws/wickr/model/CreateBotRequest.h>
 #include <aws/wickr/model/CreateBotResult.h>
 #include <aws/wickr/model/CreateDataRetentionBotChallengeRequest.h>

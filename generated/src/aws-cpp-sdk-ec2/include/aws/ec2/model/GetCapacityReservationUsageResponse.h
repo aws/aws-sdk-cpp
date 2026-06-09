@@ -148,7 +148,11 @@ class GetCapacityReservationUsageResponse {
    * <code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon
    * EC2 can't support the future-dated Capacity Reservation request due to capacity
    * constraints. You can view unsupported requests for 30 days. The Capacity
-   * Reservation will not be delivered.</p> </li> </ul>
+   * Reservation will not be delivered.</p> </li> <li> <p> <code>cancelling</code> -
+   * (<i>Future-dated Capacity Reservations</i>) The Capacity Reservation is being
+   * cancelled. Capacity has been released but charges continue for the commitment
+   * wind-down period. The reservation transitions to <code>cancelled</code> when the
+   * wind-down completes.</p> </li> </ul>
    */
   inline CapacityReservationState GetState() const { return m_state; }
   inline void SetState(CapacityReservationState value) {

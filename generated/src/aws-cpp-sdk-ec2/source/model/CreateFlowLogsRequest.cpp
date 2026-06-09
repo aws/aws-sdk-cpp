@@ -78,6 +78,14 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const {
     m_destinationOptions.OutputToStream(ss, "DestinationOptions");
   }
 
+  if (m_tagFieldSpecificationsHasBeenSet) {
+    unsigned tagFieldSpecificationsCount = 1;
+    for (auto& item : m_tagFieldSpecifications) {
+      item.OutputToStream(ss, "TagFieldSpecification.", tagFieldSpecificationsCount, "");
+      tagFieldSpecificationsCount++;
+    }
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

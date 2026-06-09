@@ -60,7 +60,14 @@ class ExecuteStatementRequest : public RDSDataServiceRequest {
    * database user name and password for the credentials in the secret.</p> <p>For
    * information about creating the secret, see <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
-   * a database secret</a>.</p>
+   * a database secret</a>.</p>  <p>When you use the CLI on Linux to reference
+   * a secret created in the RDS console, the ARN might include special characters
+   * like <code>rds!cluster</code>. If you enclose the ARN in double quotes, the
+   * <code>!</code> character might trigger a shell expansion error, such as
+   * <code>-bash: !cluster: event not found</code>. To avoid this, escape the
+   * exclamation mark (\!) in the ARN or enclose the entire ARN in single quotes (')
+   * instead of double quotes.</p> <p>Alternatively, disable shell history expansion
+   * by running <code>set +H</code> before you execute the command.</p>
    */
   inline const Aws::String& GetSecretArn() const { return m_secretArn; }
   inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }

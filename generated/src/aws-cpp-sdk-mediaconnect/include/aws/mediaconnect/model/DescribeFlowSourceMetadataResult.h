@@ -75,7 +75,7 @@ class DescribeFlowSourceMetadataResult {
 
   ///@{
   /**
-   * <p> The timestamp of the most recent change in metadata for this flow���s
+   * <p> The timestamp of the most recent change in metadata for this flow’s
    * source.</p>
    */
   inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }

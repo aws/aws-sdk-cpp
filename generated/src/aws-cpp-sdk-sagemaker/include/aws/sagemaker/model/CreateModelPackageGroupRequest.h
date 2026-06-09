@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ManagedConfiguration.h>
 #include <aws/sagemaker/model/Tag.h>
 
 #include <utility>
@@ -95,15 +96,36 @@ class CreateModelPackageGroupRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The managed configuration of the model package group.</p>
+   */
+  inline const ManagedConfiguration& GetManagedConfiguration() const { return m_managedConfiguration; }
+  inline bool ManagedConfigurationHasBeenSet() const { return m_managedConfigurationHasBeenSet; }
+  template <typename ManagedConfigurationT = ManagedConfiguration>
+  void SetManagedConfiguration(ManagedConfigurationT&& value) {
+    m_managedConfigurationHasBeenSet = true;
+    m_managedConfiguration = std::forward<ManagedConfigurationT>(value);
+  }
+  template <typename ManagedConfigurationT = ManagedConfiguration>
+  CreateModelPackageGroupRequest& WithManagedConfiguration(ManagedConfigurationT&& value) {
+    SetManagedConfiguration(std::forward<ManagedConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_modelPackageGroupName;
 
   Aws::String m_modelPackageGroupDescription;
 
   Aws::Vector<Tag> m_tags;
+
+  ManagedConfiguration m_managedConfiguration;
   bool m_modelPackageGroupNameHasBeenSet = false;
   bool m_modelPackageGroupDescriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_managedConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

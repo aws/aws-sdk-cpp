@@ -113,6 +113,17 @@ FlowLog& FlowLog::operator=(const XmlNode& xmlNode) {
       m_destinationOptions = destinationOptionsNode;
       m_destinationOptionsHasBeenSet = true;
     }
+    XmlNode tagFieldSpecificationsNode = resultNode.FirstChild("tagFieldSpecificationSet");
+    if (!tagFieldSpecificationsNode.IsNull()) {
+      XmlNode tagFieldSpecificationsMember = tagFieldSpecificationsNode.FirstChild("item");
+      m_tagFieldSpecificationsHasBeenSet = !tagFieldSpecificationsMember.IsNull();
+      while (!tagFieldSpecificationsMember.IsNull()) {
+        m_tagFieldSpecifications.push_back(tagFieldSpecificationsMember);
+        tagFieldSpecificationsMember = tagFieldSpecificationsMember.NextNode("item");
+      }
+
+      m_tagFieldSpecificationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -195,6 +206,15 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location, unsign
     destinationOptionsLocationAndMemberSs << location << index << locationValue << ".DestinationOptions";
     m_destinationOptions.OutputToStream(oStream, destinationOptionsLocationAndMemberSs.str().c_str());
   }
+
+  if (m_tagFieldSpecificationsHasBeenSet) {
+    unsigned tagFieldSpecificationsIdx = 1;
+    for (auto& item : m_tagFieldSpecifications) {
+      Aws::StringStream tagFieldSpecificationsSs;
+      tagFieldSpecificationsSs << location << index << locationValue << ".TagFieldSpecificationSet." << tagFieldSpecificationsIdx++;
+      item.OutputToStream(oStream, tagFieldSpecificationsSs.str().c_str());
+    }
+  }
 }
 
 void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -254,6 +274,14 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const 
     Aws::String destinationOptionsLocationAndMember(location);
     destinationOptionsLocationAndMember += ".DestinationOptions";
     m_destinationOptions.OutputToStream(oStream, destinationOptionsLocationAndMember.c_str());
+  }
+  if (m_tagFieldSpecificationsHasBeenSet) {
+    unsigned tagFieldSpecificationsIdx = 1;
+    for (auto& item : m_tagFieldSpecifications) {
+      Aws::StringStream tagFieldSpecificationsSs;
+      tagFieldSpecificationsSs << location << ".TagFieldSpecificationSet." << tagFieldSpecificationsIdx++;
+      item.OutputToStream(oStream, tagFieldSpecificationsSs.str().c_str());
+    }
   }
 }
 

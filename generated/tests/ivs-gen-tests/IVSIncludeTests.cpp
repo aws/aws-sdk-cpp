@@ -139,6 +139,8 @@
 #include <aws/ivs/model/TranscodePreset.h>
 #include <aws/ivs/model/UntagResourceRequest.h>
 #include <aws/ivs/model/UntagResourceResult.h>
+#include <aws/ivs/model/UpdateAdConfigurationRequest.h>
+#include <aws/ivs/model/UpdateAdConfigurationResult.h>
 #include <aws/ivs/model/UpdateChannelRequest.h>
 #include <aws/ivs/model/UpdateChannelResult.h>
 #include <aws/ivs/model/UpdatePlaybackRestrictionPolicyRequest.h>

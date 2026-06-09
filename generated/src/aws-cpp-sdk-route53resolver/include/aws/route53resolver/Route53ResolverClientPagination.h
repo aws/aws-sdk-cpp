@@ -11,6 +11,7 @@
 #include <aws/route53resolver/model/ListFirewallDomainsPaginationTraits.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsPaginationTraits.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupsPaginationTraits.h>
+#include <aws/route53resolver/model/ListFirewallRuleTypesPaginationTraits.h>
 #include <aws/route53resolver/model/ListFirewallRulesPaginationTraits.h>
 #include <aws/route53resolver/model/ListOutpostResolversPaginationTraits.h>
 #include <aws/route53resolver/model/ListResolverConfigsPaginationTraits.h>
@@ -43,6 +44,9 @@ using ListFirewallRuleGroupsPaginator =
                                       Pagination::ListFirewallRuleGroupsPaginationTraits<Route53ResolverClient>>;
 using ListFirewallRulesPaginator = Aws::Utils::Pagination::Paginator<Route53ResolverClient, Model::ListFirewallRulesRequest,
                                                                      Pagination::ListFirewallRulesPaginationTraits<Route53ResolverClient>>;
+using ListFirewallRuleTypesPaginator =
+    Aws::Utils::Pagination::Paginator<Route53ResolverClient, Model::ListFirewallRuleTypesRequest,
+                                      Pagination::ListFirewallRuleTypesPaginationTraits<Route53ResolverClient>>;
 using ListOutpostResolversPaginator =
     Aws::Utils::Pagination::Paginator<Route53ResolverClient, Model::ListOutpostResolversRequest,
                                       Pagination::ListOutpostResolversPaginationTraits<Route53ResolverClient>>;

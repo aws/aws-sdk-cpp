@@ -18,6 +18,10 @@ namespace Model {
 ValidationException::ValidationException(JsonView jsonValue) { *this = jsonValue; }
 
 ValidationException& ValidationException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
+    m_message = jsonValue.GetString("message");
+    m_messageHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("errorCode")) {
     m_errorCode = ValidationExceptionErrorCodeMapper::GetValidationExceptionErrorCodeForName(jsonValue.GetString("errorCode"));
     m_errorCodeHasBeenSet = true;
@@ -29,15 +33,15 @@ ValidationException& ValidationException::operator=(JsonView jsonValue) {
     }
     m_fieldListHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("message")) {
-    m_message = jsonValue.GetString("message");
-    m_messageHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ValidationException::Jsonize() const {
   JsonValue payload;
+
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
+  }
 
   if (m_errorCodeHasBeenSet) {
     payload.WithString("errorCode", ValidationExceptionErrorCodeMapper::GetNameForValidationExceptionErrorCode(m_errorCode));
@@ -49,10 +53,6 @@ JsonValue ValidationException::Jsonize() const {
       fieldListJsonList[fieldListIndex].AsObject(m_fieldList[fieldListIndex].Jsonize());
     }
     payload.WithArray("fieldList", std::move(fieldListJsonList));
-  }
-
-  if (m_messageHasBeenSet) {
-    payload.WithString("message", m_message);
   }
 
   return payload;

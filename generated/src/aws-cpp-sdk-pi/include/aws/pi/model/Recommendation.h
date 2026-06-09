@@ -68,12 +68,34 @@ class Recommendation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Detailed information about the recommendation, including steps to resolve the
+   * performance issue.</p>
+   */
+  inline const Aws::String& GetRecommendationDetails() const { return m_recommendationDetails; }
+  inline bool RecommendationDetailsHasBeenSet() const { return m_recommendationDetailsHasBeenSet; }
+  template <typename RecommendationDetailsT = Aws::String>
+  void SetRecommendationDetails(RecommendationDetailsT&& value) {
+    m_recommendationDetailsHasBeenSet = true;
+    m_recommendationDetails = std::forward<RecommendationDetailsT>(value);
+  }
+  template <typename RecommendationDetailsT = Aws::String>
+  Recommendation& WithRecommendationDetails(RecommendationDetailsT&& value) {
+    SetRecommendationDetails(std::forward<RecommendationDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_recommendationId;
 
   Aws::String m_recommendationDescription;
+
+  Aws::String m_recommendationDetails;
   bool m_recommendationIdHasBeenSet = false;
   bool m_recommendationDescriptionHasBeenSet = false;
+  bool m_recommendationDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

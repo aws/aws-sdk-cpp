@@ -30,7 +30,7 @@ class ListTagsForResourceRequest : public ElementalInferenceRequest {
 
   ///@{
   /**
-   * <p>The ARN of the resource whose tags you want to query. </p>
+   * <p>The ARN of the resource whose tags you want to query.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

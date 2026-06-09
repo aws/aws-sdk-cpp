@@ -23,9 +23,9 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Represents different linkedAccounts that can be linked to an embedded wallet.
- * This union supports multiple linkedAccount approaches: email, SMS, JWT, and
- * OAuth2.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents different linked accounts that can be linked to an embedded
+ * wallet. Supports email, SMS, JWT, and OAuth2 approaches.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/LinkedAccount">AWS
  * API Reference</a></p>
  */
@@ -38,7 +38,7 @@ class LinkedAccount {
 
   ///@{
   /**
-   * <p>Email-based linkedAccount</p>
+   * <p>Email-based linked account.</p>
    */
   inline const LinkedAccountEmail& GetEmail() const { return m_email; }
   inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
@@ -56,7 +56,7 @@ class LinkedAccount {
 
   ///@{
   /**
-   * <p>SMS-based linkedAccount using phone number</p>
+   * <p>SMS-based linked account using phone number.</p>
    */
   inline const LinkedAccountSms& GetSms() const { return m_sms; }
   inline bool SmsHasBeenSet() const { return m_smsHasBeenSet; }
@@ -74,7 +74,7 @@ class LinkedAccount {
 
   ///@{
   /**
-   * <p>Developer JWT linkedAccount with key ID and subject</p>
+   * <p>Developer JWT linked account with key ID and subject.</p>
    */
   inline const LinkedAccountDeveloperJwt& GetDeveloperJwt() const { return m_developerJwt; }
   inline bool DeveloperJwtHasBeenSet() const { return m_developerJwtHasBeenSet; }
@@ -92,7 +92,7 @@ class LinkedAccount {
 
   ///@{
   /**
-   * <p>OAuth2 provider linkedAccount (Google, Apple, X, Telegram, GitHub)</p>
+   * <p>OAuth2 provider linked account (Google, Apple, X, Telegram, GitHub).</p>
    */
   inline const LinkedAccountOAuth2& GetOAuth2() const { return m_oAuth2; }
   inline bool OAuth2HasBeenSet() const { return m_oAuth2HasBeenSet; }

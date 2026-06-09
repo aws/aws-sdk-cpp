@@ -67,6 +67,23 @@ class CreateTrustStore2020_05_31Request : public CloudFrontRequest {
   ///@}
 
   ///@{
+  /**
+   * <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint
+   * to check certificate revocation status.</p>
+   */
+  inline bool GetUseClientCertificateOCSPEndpoint() const { return m_useClientCertificateOCSPEndpoint; }
+  inline bool UseClientCertificateOCSPEndpointHasBeenSet() const { return m_useClientCertificateOCSPEndpointHasBeenSet; }
+  inline void SetUseClientCertificateOCSPEndpoint(bool value) {
+    m_useClientCertificateOCSPEndpointHasBeenSet = true;
+    m_useClientCertificateOCSPEndpoint = value;
+  }
+  inline CreateTrustStore2020_05_31Request& WithUseClientCertificateOCSPEndpoint(bool value) {
+    SetUseClientCertificateOCSPEndpoint(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Tags& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -86,9 +103,12 @@ class CreateTrustStore2020_05_31Request : public CloudFrontRequest {
 
   CaCertificatesBundleSource m_caCertificatesBundleSource;
 
+  bool m_useClientCertificateOCSPEndpoint{false};
+
   Tags m_tags;
   bool m_nameHasBeenSet = false;
   bool m_caCertificatesBundleSourceHasBeenSet = false;
+  bool m_useClientCertificateOCSPEndpointHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -1323,6 +1323,31 @@ class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes a persistent volume.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteVolume">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteVolumeOutcome DeleteVolume(const Model::DeleteVolumeRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteVolume that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteVolumeRequestT = Model::DeleteVolumeRequest>
+  Model::DeleteVolumeOutcomeCallable DeleteVolumeCallable(const DeleteVolumeRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::DeleteVolume, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteVolume that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteVolumeRequestT = Model::DeleteVolumeRequest>
+  void DeleteVolumeAsync(const DeleteVolumeRequestT& request, const DeleteVolumeResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::DeleteVolume, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a worker.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteWorker">AWS
    * API Reference</a></p>
@@ -1957,6 +1982,31 @@ class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
   void GetTaskAsync(const GetTaskRequestT& request, const GetTaskResponseReceivedHandler& handler,
                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DeadlineClient::GetTask, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a persistent volume.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetVolume">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetVolumeOutcome GetVolume(const Model::GetVolumeRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetVolume that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetVolumeRequestT = Model::GetVolumeRequest>
+  Model::GetVolumeOutcomeCallable GetVolumeCallable(const GetVolumeRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::GetVolume, request);
+  }
+
+  /**
+   * An Async wrapper for GetVolume that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetVolumeRequestT = Model::GetVolumeRequest>
+  void GetVolumeAsync(const GetVolumeRequestT& request, const GetVolumeResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::GetVolume, request, handler, context);
   }
 
   /**
@@ -2718,6 +2768,31 @@ class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
   void ListTasksAsync(const ListTasksRequestT& request, const ListTasksResponseReceivedHandler& handler,
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DeadlineClient::ListTasks, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the persistent volumes in a fleet.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListVolumes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListVolumesOutcome ListVolumes(const Model::ListVolumesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListVolumes that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListVolumesRequestT = Model::ListVolumesRequest>
+  Model::ListVolumesOutcomeCallable ListVolumesCallable(const ListVolumesRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::ListVolumes, request);
+  }
+
+  /**
+   * An Async wrapper for ListVolumes that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListVolumesRequestT = Model::ListVolumesRequest>
+  void ListVolumesAsync(const ListVolumesRequestT& request, const ListVolumesResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::ListVolumes, request, handler, context);
   }
 
   /**

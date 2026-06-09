@@ -64,6 +64,10 @@ MLInputChannelSummary& MLInputChannelSummary::operator=(JsonView jsonValue) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("payerConfiguration")) {
+    m_payerConfiguration = jsonValue.GetObject("payerConfiguration");
+    m_payerConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -115,6 +119,10 @@ JsonValue MLInputChannelSummary::Jsonize() const {
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
+  }
+
+  if (m_payerConfigurationHasBeenSet) {
+    payload.WithObject("payerConfiguration", m_payerConfiguration.Jsonize());
   }
 
   return payload;

@@ -190,7 +190,7 @@ class InstanceSummary {
 
   ///@{
   /**
-   * <p>This URL allows contact center users to access the Amazon Connect admin
+   * <p>This URL allows contact center users to access the Connect Customer admin
    * website.</p>
    */
   inline const Aws::String& GetInstanceAccessUrl() const { return m_instanceAccessUrl; }

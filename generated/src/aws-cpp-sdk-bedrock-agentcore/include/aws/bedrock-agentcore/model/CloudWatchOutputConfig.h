@@ -20,7 +20,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>CloudWatch Logs destination for batch evaluation results</p><p><h3>See
+ * <p>CloudWatch Logs destination for batch evaluation results.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CloudWatchOutputConfig">AWS
  * API Reference</a></p>

@@ -51,7 +51,7 @@ class CreateInstanceRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The type of identity management for your Amazon Connect users.</p>
+   * <p>The type of identity management for your Connect Customer users.</p>
    */
   inline DirectoryType GetIdentityManagementType() const { return m_identityManagementType; }
   inline bool IdentityManagementTypeHasBeenSet() const { return m_identityManagementTypeHasBeenSet; }

@@ -15,6 +15,7 @@
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupDetails.h>
+#include <aws/sagemaker/model/ClusterRestrictedInstanceGroupsConfigOutput.h>
 #include <aws/sagemaker/model/ClusterStatus.h>
 #include <aws/sagemaker/model/ClusterTieredStorageConfig.h>
 #include <aws/sagemaker/model/VpcConfig.h>
@@ -171,6 +172,26 @@ class DescribeClusterResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The configuration for the restricted instance groups (RIG) in the SageMaker
+   * HyperPod cluster.</p>
+   */
+  inline const ClusterRestrictedInstanceGroupsConfigOutput& GetRestrictedInstanceGroupsConfig() const {
+    return m_restrictedInstanceGroupsConfig;
+  }
+  template <typename RestrictedInstanceGroupsConfigT = ClusterRestrictedInstanceGroupsConfigOutput>
+  void SetRestrictedInstanceGroupsConfig(RestrictedInstanceGroupsConfigT&& value) {
+    m_restrictedInstanceGroupsConfigHasBeenSet = true;
+    m_restrictedInstanceGroupsConfig = std::forward<RestrictedInstanceGroupsConfigT>(value);
+  }
+  template <typename RestrictedInstanceGroupsConfigT = ClusterRestrictedInstanceGroupsConfigOutput>
+  DescribeClusterResult& WithRestrictedInstanceGroupsConfig(RestrictedInstanceGroupsConfigT&& value) {
+    SetRestrictedInstanceGroupsConfig(std::forward<RestrictedInstanceGroupsConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
   template <typename VpcConfigT = VpcConfig>
@@ -317,6 +338,8 @@ class DescribeClusterResult {
 
   Aws::Vector<ClusterRestrictedInstanceGroupDetails> m_restrictedInstanceGroups;
 
+  ClusterRestrictedInstanceGroupsConfigOutput m_restrictedInstanceGroupsConfig;
+
   VpcConfig m_vpcConfig;
 
   ClusterOrchestrator m_orchestrator;
@@ -340,6 +363,7 @@ class DescribeClusterResult {
   bool m_failureMessageHasBeenSet = false;
   bool m_instanceGroupsHasBeenSet = false;
   bool m_restrictedInstanceGroupsHasBeenSet = false;
+  bool m_restrictedInstanceGroupsConfigHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
   bool m_orchestratorHasBeenSet = false;
   bool m_tieredStorageConfigHasBeenSet = false;

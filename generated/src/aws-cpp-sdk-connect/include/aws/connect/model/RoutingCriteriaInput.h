@@ -34,10 +34,11 @@ class RoutingCriteriaInput {
 
   ///@{
   /**
-   * <p>When Amazon Connect does not find an available agent meeting the requirements
-   * in a step for a given step duration, the routing criteria will move on to the
-   * next step sequentially until a join is completed with an agent. When all steps
-   * are exhausted, the contact will be offered to any agent in the queue.</p>
+   * <p>When Connect Customer does not find an available agent meeting the
+   * requirements in a step for a given step duration, the routing criteria will move
+   * on to the next step sequentially until a join is completed with an agent. When
+   * all steps are exhausted, the contact will be offered to any agent in the
+   * queue.</p>
    */
   inline const Aws::Vector<RoutingCriteriaInputStep>& GetSteps() const { return m_steps; }
   inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }

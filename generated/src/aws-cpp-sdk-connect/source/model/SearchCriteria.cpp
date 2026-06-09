@@ -86,6 +86,10 @@ SearchCriteria& SearchCriteria::operator=(JsonView jsonValue) {
     m_contactTags = jsonValue.GetObject("ContactTags");
     m_contactTagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AiAgents")) {
+    m_aiAgents = jsonValue.GetObject("AiAgents");
+    m_aiAgentsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -163,6 +167,10 @@ JsonValue SearchCriteria::Jsonize() const {
 
   if (m_contactTagsHasBeenSet) {
     payload.WithObject("ContactTags", m_contactTags.Jsonize());
+  }
+
+  if (m_aiAgentsHasBeenSet) {
+    payload.WithObject("AiAgents", m_aiAgents.Jsonize());
   }
 
   return payload;

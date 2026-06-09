@@ -23,6 +23,14 @@ Aws::String CreateApiKeyCredentialProviderRequest::SerializePayload() const {
     payload.WithString("apiKey", m_apiKey);
   }
 
+  if (m_apiKeySecretConfigHasBeenSet) {
+    payload.WithObject("apiKeySecretConfig", m_apiKeySecretConfig.Jsonize());
+  }
+
+  if (m_apiKeySecretSourceHasBeenSet) {
+    payload.WithString("apiKeySecretSource", SecretSourceTypeMapper::GetNameForSecretSourceType(m_apiKeySecretSource));
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

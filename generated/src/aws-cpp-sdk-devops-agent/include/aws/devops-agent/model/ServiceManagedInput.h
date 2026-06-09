@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
 #include <aws/devops-agent/model/IpAddressType.h>
+#include <aws/devops-agent/model/ResourceConfigDnsResolution.h>
 
 #include <utility>
 
@@ -193,6 +194,23 @@ class ServiceManagedInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>DNS resolution mode for the resource gateway. Defaults to PUBLIC when not
+   * set.</p>
+   */
+  inline ResourceConfigDnsResolution GetDnsResolution() const { return m_dnsResolution; }
+  inline bool DnsResolutionHasBeenSet() const { return m_dnsResolutionHasBeenSet; }
+  inline void SetDnsResolution(ResourceConfigDnsResolution value) {
+    m_dnsResolutionHasBeenSet = true;
+    m_dnsResolution = value;
+  }
+  inline ServiceManagedInput& WithDnsResolution(ResourceConfigDnsResolution value) {
+    SetDnsResolution(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_hostAddress;
 
@@ -209,6 +227,8 @@ class ServiceManagedInput {
   Aws::Vector<Aws::String> m_portRanges;
 
   Aws::String m_certificate;
+
+  ResourceConfigDnsResolution m_dnsResolution{ResourceConfigDnsResolution::NOT_SET};
   bool m_hostAddressHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
@@ -217,6 +237,7 @@ class ServiceManagedInput {
   bool m_ipv4AddressesPerEniHasBeenSet = false;
   bool m_portRangesHasBeenSet = false;
   bool m_certificateHasBeenSet = false;
+  bool m_dnsResolutionHasBeenSet = false;
 };
 
 }  // namespace Model

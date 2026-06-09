@@ -214,6 +214,24 @@ class InvokeModelWithResponseStreamRequest : public StreamingBedrockRuntimeReque
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Key-value pairs that you can use to filter invocation logs.</p>
+   */
+  inline const Aws::String& GetRequestMetadata() const { return m_requestMetadata; }
+  inline bool RequestMetadataHasBeenSet() const { return m_requestMetadataHasBeenSet; }
+  template <typename RequestMetadataT = Aws::String>
+  void SetRequestMetadata(RequestMetadataT&& value) {
+    m_requestMetadataHasBeenSet = true;
+    m_requestMetadata = std::forward<RequestMetadataT>(value);
+  }
+  template <typename RequestMetadataT = Aws::String>
+  InvokeModelWithResponseStreamRequest& WithRequestMetadata(RequestMetadataT&& value) {
+    SetRequestMetadata(std::forward<RequestMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accept;
 
@@ -228,6 +246,8 @@ class InvokeModelWithResponseStreamRequest : public StreamingBedrockRuntimeReque
   PerformanceConfigLatency m_performanceConfigLatency{PerformanceConfigLatency::NOT_SET};
 
   ServiceTierType m_serviceTier{ServiceTierType::NOT_SET};
+
+  Aws::String m_requestMetadata;
   InvokeModelWithResponseStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
@@ -238,6 +258,7 @@ class InvokeModelWithResponseStreamRequest : public StreamingBedrockRuntimeReque
   bool m_guardrailVersionHasBeenSet = false;
   bool m_performanceConfigLatencyHasBeenSet = false;
   bool m_serviceTierHasBeenSet = false;
+  bool m_requestMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -37,8 +37,8 @@ class EmailAddressConfig {
   ///@{
   /**
    * <p>The identifier of the email address that should be associated with the queue.
-   * This email address must already exist in the Amazon Connect instance and will be
-   * used to route incoming email contacts to the specified queue.</p>
+   * This email address must already exist in the Connect Customer instance and will
+   * be used to route incoming email contacts to the specified queue.</p>
    */
   inline const Aws::String& GetEmailAddressId() const { return m_emailAddressId; }
   inline bool EmailAddressIdHasBeenSet() const { return m_emailAddressIdHasBeenSet; }

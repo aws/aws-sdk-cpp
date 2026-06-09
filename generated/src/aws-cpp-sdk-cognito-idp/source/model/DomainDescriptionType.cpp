@@ -54,6 +54,10 @@ DomainDescriptionType& DomainDescriptionType::operator=(JsonView jsonValue) {
     m_managedLoginVersion = jsonValue.GetInteger("ManagedLoginVersion");
     m_managedLoginVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Routing")) {
+    m_routing = jsonValue.GetObject("Routing");
+    m_routingHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue DomainDescriptionType::Jsonize() const {
 
   if (m_managedLoginVersionHasBeenSet) {
     payload.WithInteger("ManagedLoginVersion", m_managedLoginVersion);
+  }
+
+  if (m_routingHasBeenSet) {
+    payload.WithObject("Routing", m_routing.Jsonize());
   }
 
   return payload;

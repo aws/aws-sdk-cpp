@@ -51,10 +51,11 @@ class AssociateFeedRequest : public ElementalInferenceRequest {
 
   ///@{
   /**
-   * <p>An identifier for the resource. If the resource is from an AWS service, this
-   * identifier must be the full ARN of that resource. Otherwise, the identifier is a
-   * name that you assign and that is appropriate for the application that owns the
-   * resource. This name must not resemble an ARN.</p>
+   * <p>An identifier for the resource. This name must not resemble an ARN.</p>
+   * <p>The resource is the source media that the feed will process. The name you
+   * assign should help you to later identify the source media that belongs to the
+   * feed. In this way, you will know which source media to push to the feed (using
+   * PutMedia). </p>
    */
   inline const Aws::String& GetAssociatedResourceName() const { return m_associatedResourceName; }
   inline bool AssociatedResourceNameHasBeenSet() const { return m_associatedResourceNameHasBeenSet; }
@@ -72,8 +73,9 @@ class AssociateFeedRequest : public ElementalInferenceRequest {
 
   ///@{
   /**
-   * <p>The outputs to add to this feed. You must specify at least one output. You
-   * can later use the UpdateFeed action to change the list of outputs.</p>
+   * <p>An array of one or more outputs that you want to add to this feed now, to
+   * supplement any outputs that you specified when you created or updated the feed.
+   * </p>
    */
   inline const Aws::Vector<CreateOutput>& GetOutputs() const { return m_outputs; }
   inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
@@ -98,6 +100,11 @@ class AssociateFeedRequest : public ElementalInferenceRequest {
   ///@{
   /**
    * <p>Set to true if you want to do a dry run of the associate action.</p>
+   * <p>Elemental Inference will validate that the real request would succeed without
+   * actually making any changes. A dry run catches errors such as missing IAM
+   * permissions, quota limits exceeded, conflicting outputs, and so on. If the dry
+   * run fails, the action returns a 4xx error code. After you've fixed the errors,
+   * resubmit the request. </p>
    */
   inline bool GetDryRun() const { return m_dryRun; }
   inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }

@@ -144,6 +144,7 @@
 #include <aws/iot/model/ConfirmTopicRuleDestinationRequest.h>
 #include <aws/iot/model/ConfirmTopicRuleDestinationResult.h>
 #include <aws/iot/model/ConflictException.h>
+#include <aws/iot/model/ConnectivityFilter.h>
 #include <aws/iot/model/CreateAuditSuppressionRequest.h>
 #include <aws/iot/model/CreateAuditSuppressionResult.h>
 #include <aws/iot/model/CreateAuthorizerRequest.h>
@@ -387,6 +388,7 @@
 #include <aws/iot/model/FieldType.h>
 #include <aws/iot/model/FileLocation.h>
 #include <aws/iot/model/FirehoseAction.h>
+#include <aws/iot/model/FleetIndexingApi.h>
 #include <aws/iot/model/FleetMetricNameAndArn.h>
 #include <aws/iot/model/FleetMetricUnit.h>
 #include <aws/iot/model/GeoLocationTarget.h>

@@ -1002,6 +1002,35 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a <a
+   * href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook</a>
+   * in Amazon SageMaker Unified Studio. A notebook is a collaborative document
+   * within a project that contains code cells for interactive
+   * computing.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateNotebook">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateNotebookOutcome CreateNotebook(const Model::CreateNotebookRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateNotebook that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateNotebookRequestT = Model::CreateNotebookRequest>
+  Model::CreateNotebookOutcomeCallable CreateNotebookCallable(const CreateNotebookRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::CreateNotebook, request);
+  }
+
+  /**
+   * An Async wrapper for CreateNotebook that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateNotebookRequestT = Model::CreateNotebookRequest>
+  void CreateNotebookAsync(const CreateNotebookRequestT& request, const CreateNotebookResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::CreateNotebook, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Amazon DataZone project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateProject">AWS
    * API Reference</a></p>
@@ -1767,6 +1796,33 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   void DeleteListingAsync(const DeleteListingRequestT& request, const DeleteListingResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DataZoneClient::DeleteListing, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a <a
+   * href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook</a>
+   * in Amazon SageMaker Unified Studio.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteNotebook">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteNotebookOutcome DeleteNotebook(const Model::DeleteNotebookRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteNotebook that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteNotebookRequestT = Model::DeleteNotebookRequest>
+  Model::DeleteNotebookOutcomeCallable DeleteNotebookCallable(const DeleteNotebookRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::DeleteNotebook, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteNotebook that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteNotebookRequestT = Model::DeleteNotebookRequest>
+  void DeleteNotebookAsync(const DeleteNotebookRequestT& request, const DeleteNotebookResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::DeleteNotebook, request, handler, context);
   }
 
   /**
@@ -2816,8 +2872,63 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Gets the details of a notebook run in an Amazon DataZone
-   * domain.</p><p><h3>See Also:</h3>   <a
+   * <p>Gets the details of a <a
+   * href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook</a>
+   * in Amazon SageMaker Unified Studio.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetNotebook">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetNotebookOutcome GetNotebook(const Model::GetNotebookRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetNotebook that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetNotebookRequestT = Model::GetNotebookRequest>
+  Model::GetNotebookOutcomeCallable GetNotebookCallable(const GetNotebookRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::GetNotebook, request);
+  }
+
+  /**
+   * An Async wrapper for GetNotebook that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetNotebookRequestT = Model::GetNotebookRequest>
+  void GetNotebookAsync(const GetNotebookRequestT& request, const GetNotebookResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::GetNotebook, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the details of a notebook export in Amazon SageMaker Unified
+   * Studio.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetNotebookExport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetNotebookExportOutcome GetNotebookExport(const Model::GetNotebookExportRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetNotebookExport that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetNotebookExportRequestT = Model::GetNotebookExportRequest>
+  Model::GetNotebookExportOutcomeCallable GetNotebookExportCallable(const GetNotebookExportRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::GetNotebookExport, request);
+  }
+
+  /**
+   * An Async wrapper for GetNotebookExport that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetNotebookExportRequestT = Model::GetNotebookExportRequest>
+  void GetNotebookExportAsync(const GetNotebookExportRequestT& request, const GetNotebookExportResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::GetNotebookExport, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the details of a <a
+   * href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook
+   * run</a> in Amazon SageMaker Unified Studio.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetNotebookRun">AWS
    * API Reference</a></p>
    */
@@ -3671,8 +3782,9 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists notebook runs in an Amazon DataZone domain.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Lists <a
+   * href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook
+   * runs</a> in Amazon SageMaker Unified Studio.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListNotebookRuns">AWS
    * API Reference</a></p>
    */
@@ -3695,6 +3807,33 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   void ListNotebookRunsAsync(const ListNotebookRunsRequestT& request, const ListNotebookRunsResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DataZoneClient::ListNotebookRuns, request, handler, context);
+  }
+
+  /**
+   * <p>Lists <a
+   * href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebooks</a>
+   * in Amazon SageMaker Unified Studio.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListNotebooks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNotebooksOutcome ListNotebooks(const Model::ListNotebooksRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNotebooks that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListNotebooksRequestT = Model::ListNotebooksRequest>
+  Model::ListNotebooksOutcomeCallable ListNotebooksCallable(const ListNotebooksRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::ListNotebooks, request);
+  }
+
+  /**
+   * An Async wrapper for ListNotebooks that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListNotebooksRequestT = Model::ListNotebooksRequest>
+  void ListNotebooksAsync(const ListNotebooksRequestT& request, const ListNotebooksResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::ListNotebooks, request, handler, context);
   }
 
   /**
@@ -4582,10 +4721,67 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Starts a notebook run in an Amazon DataZone domain. A notebook run represents
-   * the execution of a Amazon DataZone notebook within a project. You can configure
-   * compute, network, timeout, and environment settings for the run.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Starts a notebook export in Amazon SageMaker Unified Studio. This operation
+   * exports a notebook to a specified file format and stores the output in Amazon
+   * Simple Storage Service.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartNotebookExport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartNotebookExportOutcome StartNotebookExport(const Model::StartNotebookExportRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartNotebookExport that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartNotebookExportRequestT = Model::StartNotebookExportRequest>
+  Model::StartNotebookExportOutcomeCallable StartNotebookExportCallable(const StartNotebookExportRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::StartNotebookExport, request);
+  }
+
+  /**
+   * An Async wrapper for StartNotebookExport that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartNotebookExportRequestT = Model::StartNotebookExportRequest>
+  void StartNotebookExportAsync(const StartNotebookExportRequestT& request, const StartNotebookExportResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::StartNotebookExport, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a notebook import in Amazon SageMaker Unified Studio. This operation
+   * imports a notebook from an Amazon Simple Storage Service location into a
+   * project.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartNotebookImport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartNotebookImportOutcome StartNotebookImport(const Model::StartNotebookImportRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartNotebookImport that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartNotebookImportRequestT = Model::StartNotebookImportRequest>
+  Model::StartNotebookImportOutcomeCallable StartNotebookImportCallable(const StartNotebookImportRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::StartNotebookImport, request);
+  }
+
+  /**
+   * An Async wrapper for StartNotebookImport that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartNotebookImportRequestT = Model::StartNotebookImportRequest>
+  void StartNotebookImportAsync(const StartNotebookImportRequestT& request, const StartNotebookImportResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::StartNotebookImport, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a notebook run in Amazon SageMaker Unified Studio. A notebook run
+   * represents the execution of an <a
+   * href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">Amazon
+   * SageMaker notebook</a> within a project. You can configure compute, network,
+   * timeout, and environment settings for the run.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartNotebookRun">AWS
    * API Reference</a></p>
    */
@@ -4611,8 +4807,9 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Stops a running notebook run in an Amazon DataZone domain.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Stops a running <a
+   * href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook
+   * run</a> in Amazon SageMaker Unified Studio.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StopNotebookRun">AWS
    * API Reference</a></p>
    */
@@ -5046,6 +5243,33 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   void UpdateGroupProfileAsync(const UpdateGroupProfileRequestT& request, const UpdateGroupProfileResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DataZoneClient::UpdateGroupProfile, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a <a
+   * href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook</a>
+   * in Amazon SageMaker Unified Studio.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateNotebook">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateNotebookOutcome UpdateNotebook(const Model::UpdateNotebookRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateNotebook that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateNotebookRequestT = Model::UpdateNotebookRequest>
+  Model::UpdateNotebookOutcomeCallable UpdateNotebookCallable(const UpdateNotebookRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::UpdateNotebook, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateNotebook that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateNotebookRequestT = Model::UpdateNotebookRequest>
+  void UpdateNotebookAsync(const UpdateNotebookRequestT& request, const UpdateNotebookResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::UpdateNotebook, request, handler, context);
   }
 
   /**

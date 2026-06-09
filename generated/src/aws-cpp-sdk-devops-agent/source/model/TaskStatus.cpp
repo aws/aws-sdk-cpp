@@ -24,6 +24,7 @@ static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
 static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
+static const int SKIPPED_HASH = HashingUtils::HashString("SKIPPED");
 
 TaskStatus GetTaskStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +46,8 @@ TaskStatus GetTaskStatusForName(const Aws::String& name) {
     return TaskStatus::TIMED_OUT;
   } else if (hashCode == CANCELED_HASH) {
     return TaskStatus::CANCELED;
+  } else if (hashCode == SKIPPED_HASH) {
+    return TaskStatus::SKIPPED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +80,8 @@ Aws::String GetNameForTaskStatus(TaskStatus enumValue) {
       return "TIMED_OUT";
     case TaskStatus::CANCELED:
       return "CANCELED";
+    case TaskStatus::SKIPPED:
+      return "SKIPPED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

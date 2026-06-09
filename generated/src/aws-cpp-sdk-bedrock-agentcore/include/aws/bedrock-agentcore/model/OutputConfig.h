@@ -20,7 +20,7 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Output destination configuration</p><p><h3>See Also:</h3>   <a
+ * <p>Output destination configuration.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/OutputConfig">AWS
  * API Reference</a></p>
  */

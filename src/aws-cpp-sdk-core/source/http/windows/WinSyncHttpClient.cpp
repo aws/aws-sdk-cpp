@@ -209,6 +209,12 @@ bool WinSyncHttpClient::BuildSuccessResponse(const std::shared_ptr<HttpRequest>&
         }
     }
 
+    auto& headersHandler = request->GetHeadersReceivedEventHandler();
+    if (headersHandler)
+    {
+        headersHandler(request.get(), response.get());
+    }
+
     if (request->GetMethod() != HttpMethod::HTTP_HEAD)
     {
         if(!ContinueRequest(*request) || !IsRequestProcessingEnabled())
@@ -250,12 +256,6 @@ bool WinSyncHttpClient::BuildSuccessResponse(const std::shared_ptr<HttpRequest>&
                                 hashIterator.second->Update(reinterpret_cast<unsigned char*>(dst), static_cast<size_t>(read));
                                 break;
                               }
-                            }
-
-                            auto& headersHandler = request->GetHeadersReceivedEventHandler();
-                            if (headersHandler)
-                            {
-                              headersHandler(request.get(), response.get());
                             }
 
                             if (readLimiter != nullptr)

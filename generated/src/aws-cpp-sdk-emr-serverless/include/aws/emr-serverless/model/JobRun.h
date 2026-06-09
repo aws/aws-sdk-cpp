@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 #include <aws/emr-serverless/model/ConfigurationOverrides.h>
+#include <aws/emr-serverless/model/ImageConfiguration.h>
 #include <aws/emr-serverless/model/JobDriver.h>
 #include <aws/emr-serverless/model/JobRunExecutionIamPolicy.h>
 #include <aws/emr-serverless/model/JobRunMode.h>
@@ -17,6 +18,7 @@
 #include <aws/emr-serverless/model/ResourceUtilization.h>
 #include <aws/emr-serverless/model/RetryPolicy.h>
 #include <aws/emr-serverless/model/TotalResourceUtilization.h>
+#include <aws/emr-serverless/model/WorkerTypeSpecification.h>
 
 #include <utility>
 
@@ -548,6 +550,49 @@ class JobRun {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const ImageConfiguration& GetImageConfiguration() const { return m_imageConfiguration; }
+  inline bool ImageConfigurationHasBeenSet() const { return m_imageConfigurationHasBeenSet; }
+  template <typename ImageConfigurationT = ImageConfiguration>
+  void SetImageConfiguration(ImageConfigurationT&& value) {
+    m_imageConfigurationHasBeenSet = true;
+    m_imageConfiguration = std::forward<ImageConfigurationT>(value);
+  }
+  template <typename ImageConfigurationT = ImageConfiguration>
+  JobRun& WithImageConfiguration(ImageConfigurationT&& value) {
+    SetImageConfiguration(std::forward<ImageConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The specification applied to each worker type. Includes the JobRun-level
+   * ImageConfiguration when the applicationLevelDigestResolution is false for the
+   * application.</p>
+   */
+  inline const Aws::Map<Aws::String, WorkerTypeSpecification>& GetWorkerTypeSpecifications() const { return m_workerTypeSpecifications; }
+  inline bool WorkerTypeSpecificationsHasBeenSet() const { return m_workerTypeSpecificationsHasBeenSet; }
+  template <typename WorkerTypeSpecificationsT = Aws::Map<Aws::String, WorkerTypeSpecification>>
+  void SetWorkerTypeSpecifications(WorkerTypeSpecificationsT&& value) {
+    m_workerTypeSpecificationsHasBeenSet = true;
+    m_workerTypeSpecifications = std::forward<WorkerTypeSpecificationsT>(value);
+  }
+  template <typename WorkerTypeSpecificationsT = Aws::Map<Aws::String, WorkerTypeSpecification>>
+  JobRun& WithWorkerTypeSpecifications(WorkerTypeSpecificationsT&& value) {
+    SetWorkerTypeSpecifications(std::forward<WorkerTypeSpecificationsT>(value));
+    return *this;
+  }
+  template <typename WorkerTypeSpecificationsKeyT = Aws::String, typename WorkerTypeSpecificationsValueT = WorkerTypeSpecification>
+  JobRun& AddWorkerTypeSpecifications(WorkerTypeSpecificationsKeyT&& key, WorkerTypeSpecificationsValueT&& value) {
+    m_workerTypeSpecificationsHasBeenSet = true;
+    m_workerTypeSpecifications.emplace(std::forward<WorkerTypeSpecificationsKeyT>(key),
+                                       std::forward<WorkerTypeSpecificationsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_applicationId;
 
@@ -604,6 +649,10 @@ class JobRun {
   Aws::Utils::DateTime m_endedAt{};
 
   long long m_queuedDurationMilliseconds{0};
+
+  ImageConfiguration m_imageConfiguration;
+
+  Aws::Map<Aws::String, WorkerTypeSpecification> m_workerTypeSpecifications;
   bool m_applicationIdHasBeenSet = false;
   bool m_jobRunIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -632,6 +681,8 @@ class JobRun {
   bool m_startedAtHasBeenSet = false;
   bool m_endedAtHasBeenSet = false;
   bool m_queuedDurationMillisecondsHasBeenSet = false;
+  bool m_imageConfigurationHasBeenSet = false;
+  bool m_workerTypeSpecificationsHasBeenSet = false;
 };
 
 }  // namespace Model

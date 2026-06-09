@@ -81,7 +81,9 @@ class GetSessionEndpointResult {
 
   ///@{
   /**
-   * <p>Authentication token for accessing the session endpoint.</p>
+   * <p>The authentication token for connecting to the session endpoint. Call
+   * <code>GetSessionEndpoint</code> again to obtain a new token before it
+   * expires.</p>
    */
   inline const Aws::String& GetAuthToken() const { return m_authToken; }
   template <typename AuthTokenT = Aws::String>

@@ -68,12 +68,34 @@ class ImageConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Boolean value indicating if the digest resolution is application level or
+   * workload level. If true, a custom image URI is resolved at application start
+   * time and all workloads submitted will use that image digest. If false, the
+   * custom image URI is resolved at the workload submission time.</p>
+   */
+  inline bool GetApplicationLevelDigestResolution() const { return m_applicationLevelDigestResolution; }
+  inline bool ApplicationLevelDigestResolutionHasBeenSet() const { return m_applicationLevelDigestResolutionHasBeenSet; }
+  inline void SetApplicationLevelDigestResolution(bool value) {
+    m_applicationLevelDigestResolutionHasBeenSet = true;
+    m_applicationLevelDigestResolution = value;
+  }
+  inline ImageConfiguration& WithApplicationLevelDigestResolution(bool value) {
+    SetApplicationLevelDigestResolution(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_imageUri;
 
   Aws::String m_resolvedImageDigest;
+
+  bool m_applicationLevelDigestResolution{false};
   bool m_imageUriHasBeenSet = false;
   bool m_resolvedImageDigestHasBeenSet = false;
+  bool m_applicationLevelDigestResolutionHasBeenSet = false;
 };
 
 }  // namespace Model

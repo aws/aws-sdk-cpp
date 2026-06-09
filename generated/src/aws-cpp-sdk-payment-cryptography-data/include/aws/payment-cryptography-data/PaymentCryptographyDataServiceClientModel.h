@@ -22,6 +22,7 @@
 #include <aws/payment-cryptography-data/model/DecryptDataResult.h>
 #include <aws/payment-cryptography-data/model/EncryptDataResult.h>
 #include <aws/payment-cryptography-data/model/GenerateAs2805KekValidationResult.h>
+#include <aws/payment-cryptography-data/model/GenerateAuthRequestCryptogramResult.h>
 #include <aws/payment-cryptography-data/model/GenerateCardValidationDataResult.h>
 #include <aws/payment-cryptography-data/model/GenerateMacEmvPinChangeResult.h>
 #include <aws/payment-cryptography-data/model/GenerateMacResult.h>
@@ -69,6 +70,7 @@ namespace Model {
 class DecryptDataRequest;
 class EncryptDataRequest;
 class GenerateAs2805KekValidationRequest;
+class GenerateAuthRequestCryptogramRequest;
 class GenerateCardValidationDataRequest;
 class GenerateMacRequest;
 class GenerateMacEmvPinChangeRequest;
@@ -86,6 +88,7 @@ class VerifyPinDataRequest;
 typedef Aws::Utils::Outcome<DecryptDataResult, PaymentCryptographyDataError> DecryptDataOutcome;
 typedef Aws::Utils::Outcome<EncryptDataResult, PaymentCryptographyDataError> EncryptDataOutcome;
 typedef Aws::Utils::Outcome<GenerateAs2805KekValidationResult, PaymentCryptographyDataError> GenerateAs2805KekValidationOutcome;
+typedef Aws::Utils::Outcome<GenerateAuthRequestCryptogramResult, PaymentCryptographyDataError> GenerateAuthRequestCryptogramOutcome;
 typedef Aws::Utils::Outcome<GenerateCardValidationDataResult, PaymentCryptographyDataError> GenerateCardValidationDataOutcome;
 typedef Aws::Utils::Outcome<GenerateMacResult, PaymentCryptographyDataError> GenerateMacOutcome;
 typedef Aws::Utils::Outcome<GenerateMacEmvPinChangeResult, PaymentCryptographyDataError> GenerateMacEmvPinChangeOutcome;
@@ -103,6 +106,7 @@ typedef Aws::Utils::Outcome<VerifyPinDataResult, PaymentCryptographyDataError> V
 typedef std::future<DecryptDataOutcome> DecryptDataOutcomeCallable;
 typedef std::future<EncryptDataOutcome> EncryptDataOutcomeCallable;
 typedef std::future<GenerateAs2805KekValidationOutcome> GenerateAs2805KekValidationOutcomeCallable;
+typedef std::future<GenerateAuthRequestCryptogramOutcome> GenerateAuthRequestCryptogramOutcomeCallable;
 typedef std::future<GenerateCardValidationDataOutcome> GenerateCardValidationDataOutcomeCallable;
 typedef std::future<GenerateMacOutcome> GenerateMacOutcomeCallable;
 typedef std::future<GenerateMacEmvPinChangeOutcome> GenerateMacEmvPinChangeOutcomeCallable;
@@ -129,6 +133,10 @@ typedef std::function<void(const PaymentCryptographyDataClient*, const Model::En
 typedef std::function<void(const PaymentCryptographyDataClient*, const Model::GenerateAs2805KekValidationRequest&,
                            const Model::GenerateAs2805KekValidationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GenerateAs2805KekValidationResponseReceivedHandler;
+typedef std::function<void(const PaymentCryptographyDataClient*, const Model::GenerateAuthRequestCryptogramRequest&,
+                           const Model::GenerateAuthRequestCryptogramOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GenerateAuthRequestCryptogramResponseReceivedHandler;
 typedef std::function<void(const PaymentCryptographyDataClient*, const Model::GenerateCardValidationDataRequest&,
                            const Model::GenerateCardValidationDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GenerateCardValidationDataResponseReceivedHandler;

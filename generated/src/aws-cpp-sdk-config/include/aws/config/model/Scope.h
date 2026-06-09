@@ -122,6 +122,32 @@ class Scope {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The service principals of the Amazon Web Services services for the rule.</p>
+   *  <p>The field is populated only if the service-linked rule is created by a
+   * service. The field is empty if you create your own rule.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetServicePrincipals() const { return m_servicePrincipals; }
+  inline bool ServicePrincipalsHasBeenSet() const { return m_servicePrincipalsHasBeenSet; }
+  template <typename ServicePrincipalsT = Aws::Vector<Aws::String>>
+  void SetServicePrincipals(ServicePrincipalsT&& value) {
+    m_servicePrincipalsHasBeenSet = true;
+    m_servicePrincipals = std::forward<ServicePrincipalsT>(value);
+  }
+  template <typename ServicePrincipalsT = Aws::Vector<Aws::String>>
+  Scope& WithServicePrincipals(ServicePrincipalsT&& value) {
+    SetServicePrincipals(std::forward<ServicePrincipalsT>(value));
+    return *this;
+  }
+  template <typename ServicePrincipalsT = Aws::String>
+  Scope& AddServicePrincipals(ServicePrincipalsT&& value) {
+    m_servicePrincipalsHasBeenSet = true;
+    m_servicePrincipals.emplace_back(std::forward<ServicePrincipalsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_complianceResourceTypes;
 
@@ -130,10 +156,13 @@ class Scope {
   Aws::String m_tagValue;
 
   Aws::String m_complianceResourceId;
+
+  Aws::Vector<Aws::String> m_servicePrincipals;
   bool m_complianceResourceTypesHasBeenSet = false;
   bool m_tagKeyHasBeenSet = false;
   bool m_tagValueHasBeenSet = false;
   bool m_complianceResourceIdHasBeenSet = false;
+  bool m_servicePrincipalsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -15,9 +15,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Request structure for deleting a payment instrument</p> <p>All fields are
- * required and must match the instrument owner's identifiers for authorization to
- * succeed.</p><p><h3>See Also:</h3>   <a
+ * <p>Request structure for deleting a payment instrument.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeletePaymentInstrumentRequest">AWS
  * API Reference</a></p>
  */

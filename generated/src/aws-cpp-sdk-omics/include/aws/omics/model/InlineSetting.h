@@ -169,6 +169,27 @@ class InlineSetting {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Per-run engine-specific settings. Use this field to specify configuration
+   * options that are specific to the workflow engine (for example, Nextflow
+   * profiles). Overrides <code>defaultRunSetting.engineSettings</code> for this
+   * run.</p>
+   */
+  inline Aws::Utils::DocumentView GetEngineSettings() const { return m_engineSettings; }
+  inline bool EngineSettingsHasBeenSet() const { return m_engineSettingsHasBeenSet; }
+  template <typename EngineSettingsT = Aws::Utils::Document>
+  void SetEngineSettings(EngineSettingsT&& value) {
+    m_engineSettingsHasBeenSet = true;
+    m_engineSettings = std::forward<EngineSettingsT>(value);
+  }
+  template <typename EngineSettingsT = Aws::Utils::Document>
+  InlineSetting& WithEngineSettings(EngineSettingsT&& value) {
+    SetEngineSettings(std::forward<EngineSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_runSettingId;
 
@@ -183,6 +204,8 @@ class InlineSetting {
   Aws::String m_outputBucketOwnerId;
 
   Aws::Map<Aws::String, Aws::String> m_runTags;
+
+  Aws::Utils::Document m_engineSettings;
   bool m_runSettingIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_outputUriHasBeenSet = false;
@@ -190,6 +213,7 @@ class InlineSetting {
   bool m_parametersHasBeenSet = false;
   bool m_outputBucketOwnerIdHasBeenSet = false;
   bool m_runTagsHasBeenSet = false;
+  bool m_engineSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

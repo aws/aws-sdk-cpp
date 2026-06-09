@@ -9,6 +9,7 @@
 #include <aws/sesv2/SESV2Request.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/Tag.h>
+#include <aws/sesv2/model/TenantSuppressionAttributes.h>
 
 #include <utility>
 
@@ -82,12 +83,35 @@ class CreateTenantRequest : public SESV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains information about the suppression list preferences
+   * for the tenant. Use this to configure tenant-level suppression at creation
+   * time.</p>
+   */
+  inline const TenantSuppressionAttributes& GetSuppressionAttributes() const { return m_suppressionAttributes; }
+  inline bool SuppressionAttributesHasBeenSet() const { return m_suppressionAttributesHasBeenSet; }
+  template <typename SuppressionAttributesT = TenantSuppressionAttributes>
+  void SetSuppressionAttributes(SuppressionAttributesT&& value) {
+    m_suppressionAttributesHasBeenSet = true;
+    m_suppressionAttributes = std::forward<SuppressionAttributesT>(value);
+  }
+  template <typename SuppressionAttributesT = TenantSuppressionAttributes>
+  CreateTenantRequest& WithSuppressionAttributes(SuppressionAttributesT&& value) {
+    SetSuppressionAttributes(std::forward<SuppressionAttributesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_tenantName;
 
   Aws::Vector<Tag> m_tags;
+
+  TenantSuppressionAttributes m_suppressionAttributes;
   bool m_tenantNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_suppressionAttributesHasBeenSet = false;
 };
 
 }  // namespace Model

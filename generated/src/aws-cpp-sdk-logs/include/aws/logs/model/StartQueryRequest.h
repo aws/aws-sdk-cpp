@@ -199,7 +199,7 @@ class StartQueryRequest : public CloudWatchLogsRequest {
   /**
    * <p>The maximum number of log events to return in the query. If the query string
    * uses the <code>fields</code> command, only the specified fields and their values
-   * are returned. The default is 10,000.</p>
+   * are returned. The default is 10,000.</p> <p>The maximum value is 100,000.</p>
    */
   inline int GetLimit() const { return m_limit; }
   inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }

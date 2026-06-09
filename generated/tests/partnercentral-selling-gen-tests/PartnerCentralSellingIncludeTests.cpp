@@ -81,6 +81,8 @@
 #include <aws/partnercentral-selling/model/EngagementSort.h>
 #include <aws/partnercentral-selling/model/EngagementSortName.h>
 #include <aws/partnercentral-selling/model/EngagementSummary.h>
+#include <aws/partnercentral-selling/model/ExpectedContractDuration.h>
+#include <aws/partnercentral-selling/model/ExpectedContractDurationTerm.h>
 #include <aws/partnercentral-selling/model/ExpectedCustomerSpend.h>
 #include <aws/partnercentral-selling/model/GetAwsOpportunitySummaryRequest.h>
 #include <aws/partnercentral-selling/model/GetAwsOpportunitySummaryResult.h>

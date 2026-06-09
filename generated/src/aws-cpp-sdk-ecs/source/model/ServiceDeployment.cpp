@@ -75,6 +75,14 @@ ServiceDeployment& ServiceDeployment::operator=(JsonView jsonValue) {
         ServiceDeploymentLifecycleStageMapper::GetServiceDeploymentLifecycleStageForName(jsonValue.GetString("lifecycleStage"));
     m_lifecycleStageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lifecycleHookDetails")) {
+    Aws::Utils::Array<JsonView> lifecycleHookDetailsJsonList = jsonValue.GetArray("lifecycleHookDetails");
+    for (unsigned lifecycleHookDetailsIndex = 0; lifecycleHookDetailsIndex < lifecycleHookDetailsJsonList.GetLength();
+         ++lifecycleHookDetailsIndex) {
+      m_lifecycleHookDetails.push_back(lifecycleHookDetailsJsonList[lifecycleHookDetailsIndex].AsObject());
+    }
+    m_lifecycleHookDetailsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("deploymentConfiguration")) {
     m_deploymentConfiguration = jsonValue.GetObject("deploymentConfiguration");
     m_deploymentConfigurationHasBeenSet = true;
@@ -153,6 +161,15 @@ JsonValue ServiceDeployment::Jsonize() const {
   if (m_lifecycleStageHasBeenSet) {
     payload.WithString("lifecycleStage",
                        ServiceDeploymentLifecycleStageMapper::GetNameForServiceDeploymentLifecycleStage(m_lifecycleStage));
+  }
+
+  if (m_lifecycleHookDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> lifecycleHookDetailsJsonList(m_lifecycleHookDetails.size());
+    for (unsigned lifecycleHookDetailsIndex = 0; lifecycleHookDetailsIndex < lifecycleHookDetailsJsonList.GetLength();
+         ++lifecycleHookDetailsIndex) {
+      lifecycleHookDetailsJsonList[lifecycleHookDetailsIndex].AsObject(m_lifecycleHookDetails[lifecycleHookDetailsIndex].Jsonize());
+    }
+    payload.WithArray("lifecycleHookDetails", std::move(lifecycleHookDetailsJsonList));
   }
 
   if (m_deploymentConfigurationHasBeenSet) {

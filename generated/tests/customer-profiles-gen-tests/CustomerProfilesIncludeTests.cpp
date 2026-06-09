@@ -39,6 +39,11 @@
 #include <aws/customer-profiles/model/BatchGetProfileError.h>
 #include <aws/customer-profiles/model/BatchGetProfileRequest.h>
 #include <aws/customer-profiles/model/BatchGetProfileResult.h>
+#include <aws/customer-profiles/model/BatchPutProfileObjectErrorItem.h>
+#include <aws/customer-profiles/model/BatchPutProfileObjectRequest.h>
+#include <aws/customer-profiles/model/BatchPutProfileObjectRequestItem.h>
+#include <aws/customer-profiles/model/BatchPutProfileObjectResponseItem.h>
+#include <aws/customer-profiles/model/BatchPutProfileObjectResult.h>
 #include <aws/customer-profiles/model/CalculatedAttributeDimension.h>
 #include <aws/customer-profiles/model/CalculatedAttributeValue.h>
 #include <aws/customer-profiles/model/CatalogItem.h>

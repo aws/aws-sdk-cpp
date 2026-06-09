@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/Secret.h>
+#include <aws/bedrock-agentcore-control/model/SecretSourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -21,7 +22,7 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>StripePrivy configuration output with secret ARNs</p><p><h3>See Also:</h3>
+ * <p>Stripe Privy configuration output with secret ARNs.</p><p><h3>See Also:</h3>
  * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/StripePrivyConfigurationOutput">AWS
  * API Reference</a></p>
@@ -68,6 +69,43 @@ class StripePrivyConfigurationOutput {
   ///@}
 
   ///@{
+  /**
+   * <p>The JSON key used to extract the app secret value from the AWS Secrets
+   * Manager secret.</p>
+   */
+  inline const Aws::String& GetAppSecretJsonKey() const { return m_appSecretJsonKey; }
+  inline bool AppSecretJsonKeyHasBeenSet() const { return m_appSecretJsonKeyHasBeenSet; }
+  template <typename AppSecretJsonKeyT = Aws::String>
+  void SetAppSecretJsonKey(AppSecretJsonKeyT&& value) {
+    m_appSecretJsonKeyHasBeenSet = true;
+    m_appSecretJsonKey = std::forward<AppSecretJsonKeyT>(value);
+  }
+  template <typename AppSecretJsonKeyT = Aws::String>
+  StripePrivyConfigurationOutput& WithAppSecretJsonKey(AppSecretJsonKeyT&& value) {
+    SetAppSecretJsonKey(std::forward<AppSecretJsonKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The source type of the app secret. Either <code>MANAGED</code> if the secret
+   * is managed by the service, or <code>EXTERNAL</code> if managed by the user in
+   * AWS Secrets Manager.</p>
+   */
+  inline SecretSourceType GetAppSecretSource() const { return m_appSecretSource; }
+  inline bool AppSecretSourceHasBeenSet() const { return m_appSecretSourceHasBeenSet; }
+  inline void SetAppSecretSource(SecretSourceType value) {
+    m_appSecretSourceHasBeenSet = true;
+    m_appSecretSource = value;
+  }
+  inline StripePrivyConfigurationOutput& WithAppSecretSource(SecretSourceType value) {
+    SetAppSecretSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Secret& GetAuthorizationPrivateKeyArn() const { return m_authorizationPrivateKeyArn; }
   inline bool AuthorizationPrivateKeyArnHasBeenSet() const { return m_authorizationPrivateKeyArnHasBeenSet; }
@@ -79,6 +117,43 @@ class StripePrivyConfigurationOutput {
   template <typename AuthorizationPrivateKeyArnT = Secret>
   StripePrivyConfigurationOutput& WithAuthorizationPrivateKeyArn(AuthorizationPrivateKeyArnT&& value) {
     SetAuthorizationPrivateKeyArn(std::forward<AuthorizationPrivateKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The JSON key used to extract the authorization private key value from the AWS
+   * Secrets Manager secret.</p>
+   */
+  inline const Aws::String& GetAuthorizationPrivateKeyJsonKey() const { return m_authorizationPrivateKeyJsonKey; }
+  inline bool AuthorizationPrivateKeyJsonKeyHasBeenSet() const { return m_authorizationPrivateKeyJsonKeyHasBeenSet; }
+  template <typename AuthorizationPrivateKeyJsonKeyT = Aws::String>
+  void SetAuthorizationPrivateKeyJsonKey(AuthorizationPrivateKeyJsonKeyT&& value) {
+    m_authorizationPrivateKeyJsonKeyHasBeenSet = true;
+    m_authorizationPrivateKeyJsonKey = std::forward<AuthorizationPrivateKeyJsonKeyT>(value);
+  }
+  template <typename AuthorizationPrivateKeyJsonKeyT = Aws::String>
+  StripePrivyConfigurationOutput& WithAuthorizationPrivateKeyJsonKey(AuthorizationPrivateKeyJsonKeyT&& value) {
+    SetAuthorizationPrivateKeyJsonKey(std::forward<AuthorizationPrivateKeyJsonKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The source type of the authorization private key. Either <code>MANAGED</code>
+   * if the secret is managed by the service, or <code>EXTERNAL</code> if managed by
+   * the user in AWS Secrets Manager.</p>
+   */
+  inline SecretSourceType GetAuthorizationPrivateKeySource() const { return m_authorizationPrivateKeySource; }
+  inline bool AuthorizationPrivateKeySourceHasBeenSet() const { return m_authorizationPrivateKeySourceHasBeenSet; }
+  inline void SetAuthorizationPrivateKeySource(SecretSourceType value) {
+    m_authorizationPrivateKeySourceHasBeenSet = true;
+    m_authorizationPrivateKeySource = value;
+  }
+  inline StripePrivyConfigurationOutput& WithAuthorizationPrivateKeySource(SecretSourceType value) {
+    SetAuthorizationPrivateKeySource(value);
     return *this;
   }
   ///@}
@@ -105,12 +180,24 @@ class StripePrivyConfigurationOutput {
 
   Secret m_appSecretArn;
 
+  Aws::String m_appSecretJsonKey;
+
+  SecretSourceType m_appSecretSource{SecretSourceType::NOT_SET};
+
   Secret m_authorizationPrivateKeyArn;
+
+  Aws::String m_authorizationPrivateKeyJsonKey;
+
+  SecretSourceType m_authorizationPrivateKeySource{SecretSourceType::NOT_SET};
 
   Aws::String m_authorizationId;
   bool m_appIdHasBeenSet = false;
   bool m_appSecretArnHasBeenSet = false;
+  bool m_appSecretJsonKeyHasBeenSet = false;
+  bool m_appSecretSourceHasBeenSet = false;
   bool m_authorizationPrivateKeyArnHasBeenSet = false;
+  bool m_authorizationPrivateKeyJsonKeyHasBeenSet = false;
+  bool m_authorizationPrivateKeySourceHasBeenSet = false;
   bool m_authorizationIdHasBeenSet = false;
 };
 

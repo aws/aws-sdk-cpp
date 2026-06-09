@@ -64,6 +64,11 @@ Aws::String CreateDomainRequest::SerializePayload() const {
                        AppSecurityGroupManagementMapper::GetNameForAppSecurityGroupManagement(m_appSecurityGroupManagement));
   }
 
+  if (m_homeEfsFileSystemCreationHasBeenSet) {
+    payload.WithString("HomeEfsFileSystemCreation",
+                       HomeEfsFileSystemCreationMapper::GetNameForHomeEfsFileSystemCreation(m_homeEfsFileSystemCreation));
+  }
+
   if (m_tagPropagationHasBeenSet) {
     payload.WithString("TagPropagation", TagPropagationMapper::GetNameForTagPropagation(m_tagPropagation));
   }

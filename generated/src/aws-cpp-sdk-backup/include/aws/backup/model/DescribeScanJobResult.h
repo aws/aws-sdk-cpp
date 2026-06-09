@@ -113,6 +113,40 @@ class DescribeScanJobResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The point in time the scan job scanned up to for a continuous backup.</p>
+   */
+  inline const Aws::Utils::DateTime& GetContinuousScanEndTime() const { return m_continuousScanEndTime; }
+  template <typename ContinuousScanEndTimeT = Aws::Utils::DateTime>
+  void SetContinuousScanEndTime(ContinuousScanEndTimeT&& value) {
+    m_continuousScanEndTimeHasBeenSet = true;
+    m_continuousScanEndTime = std::forward<ContinuousScanEndTimeT>(value);
+  }
+  template <typename ContinuousScanEndTimeT = Aws::Utils::DateTime>
+  DescribeScanJobResult& WithContinuousScanEndTime(ContinuousScanEndTimeT&& value) {
+    SetContinuousScanEndTime(std::forward<ContinuousScanEndTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The point in time the scan job started scan from for a continuous backup.</p>
+   */
+  inline const Aws::Utils::DateTime& GetContinuousScanStartTime() const { return m_continuousScanStartTime; }
+  template <typename ContinuousScanStartTimeT = Aws::Utils::DateTime>
+  void SetContinuousScanStartTime(ContinuousScanStartTimeT&& value) {
+    m_continuousScanStartTimeHasBeenSet = true;
+    m_continuousScanStartTime = std::forward<ContinuousScanStartTimeT>(value);
+  }
+  template <typename ContinuousScanStartTimeT = Aws::Utils::DateTime>
+  DescribeScanJobResult& WithContinuousScanStartTime(ContinuousScanStartTimeT&& value) {
+    SetContinuousScanStartTime(std::forward<ContinuousScanStartTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ScanJobCreator& GetCreatedBy() const { return m_createdBy; }
   template <typename CreatedByT = ScanJobCreator>
@@ -414,6 +448,10 @@ class DescribeScanJobResult {
 
   Aws::Utils::DateTime m_completionDate{};
 
+  Aws::Utils::DateTime m_continuousScanEndTime{};
+
+  Aws::Utils::DateTime m_continuousScanStartTime{};
+
   ScanJobCreator m_createdBy;
 
   Aws::Utils::DateTime m_creationDate{};
@@ -452,6 +490,8 @@ class DescribeScanJobResult {
   bool m_backupVaultArnHasBeenSet = false;
   bool m_backupVaultNameHasBeenSet = false;
   bool m_completionDateHasBeenSet = false;
+  bool m_continuousScanEndTimeHasBeenSet = false;
+  bool m_continuousScanStartTimeHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
   bool m_iamRoleArnHasBeenSet = false;

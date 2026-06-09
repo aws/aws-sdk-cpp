@@ -22,10 +22,14 @@
 #include <aws/core/NoResult.h>
 #include <aws/devops-agent/model/AssociateServiceResult.h>
 #include <aws/devops-agent/model/CreateAgentSpaceResult.h>
+#include <aws/devops-agent/model/CreateAssetFileResult.h>
+#include <aws/devops-agent/model/CreateAssetResult.h>
 #include <aws/devops-agent/model/CreateBacklogTaskResult.h>
 #include <aws/devops-agent/model/CreateChatResult.h>
 #include <aws/devops-agent/model/CreatePrivateConnectionResult.h>
 #include <aws/devops-agent/model/DeleteAgentSpaceResult.h>
+#include <aws/devops-agent/model/DeleteAssetFileResult.h>
+#include <aws/devops-agent/model/DeleteAssetResult.h>
 #include <aws/devops-agent/model/DeletePrivateConnectionResult.h>
 #include <aws/devops-agent/model/DeregisterServiceResult.h>
 #include <aws/devops-agent/model/DescribePrivateConnectionResult.h>
@@ -34,6 +38,9 @@
 #include <aws/devops-agent/model/GetAccountUsageRequest.h>
 #include <aws/devops-agent/model/GetAccountUsageResult.h>
 #include <aws/devops-agent/model/GetAgentSpaceResult.h>
+#include <aws/devops-agent/model/GetAssetContentResult.h>
+#include <aws/devops-agent/model/GetAssetFileResult.h>
+#include <aws/devops-agent/model/GetAssetResult.h>
 #include <aws/devops-agent/model/GetAssociationResult.h>
 #include <aws/devops-agent/model/GetBacklogTaskResult.h>
 #include <aws/devops-agent/model/GetOperatorAppResult.h>
@@ -41,6 +48,11 @@
 #include <aws/devops-agent/model/GetServiceResult.h>
 #include <aws/devops-agent/model/ListAgentSpacesRequest.h>
 #include <aws/devops-agent/model/ListAgentSpacesResult.h>
+#include <aws/devops-agent/model/ListAssetFilesResult.h>
+#include <aws/devops-agent/model/ListAssetTypesRequest.h>
+#include <aws/devops-agent/model/ListAssetTypesResult.h>
+#include <aws/devops-agent/model/ListAssetVersionsResult.h>
+#include <aws/devops-agent/model/ListAssetsResult.h>
 #include <aws/devops-agent/model/ListAssociationsResult.h>
 #include <aws/devops-agent/model/ListBacklogTasksResult.h>
 #include <aws/devops-agent/model/ListChatsResult.h>
@@ -59,6 +71,8 @@
 #include <aws/devops-agent/model/TagResourceResult.h>
 #include <aws/devops-agent/model/UntagResourceResult.h>
 #include <aws/devops-agent/model/UpdateAgentSpaceResult.h>
+#include <aws/devops-agent/model/UpdateAssetFileResult.h>
+#include <aws/devops-agent/model/UpdateAssetResult.h>
 #include <aws/devops-agent/model/UpdateAssociationResult.h>
 #include <aws/devops-agent/model/UpdateBacklogTaskResult.h>
 #include <aws/devops-agent/model/UpdateGoalResult.h>
@@ -101,10 +115,14 @@ namespace Model {
 /* Service model forward declarations required in DevOpsAgentClient header */
 class AssociateServiceRequest;
 class CreateAgentSpaceRequest;
+class CreateAssetRequest;
+class CreateAssetFileRequest;
 class CreateBacklogTaskRequest;
 class CreateChatRequest;
 class CreatePrivateConnectionRequest;
 class DeleteAgentSpaceRequest;
+class DeleteAssetRequest;
+class DeleteAssetFileRequest;
 class DeletePrivateConnectionRequest;
 class DeregisterServiceRequest;
 class DescribePrivateConnectionRequest;
@@ -113,12 +131,19 @@ class DisassociateServiceRequest;
 class EnableOperatorAppRequest;
 class GetAccountUsageRequest;
 class GetAgentSpaceRequest;
+class GetAssetRequest;
+class GetAssetContentRequest;
+class GetAssetFileRequest;
 class GetAssociationRequest;
 class GetBacklogTaskRequest;
 class GetOperatorAppRequest;
 class GetRecommendationRequest;
 class GetServiceRequest;
 class ListAgentSpacesRequest;
+class ListAssetFilesRequest;
+class ListAssetTypesRequest;
+class ListAssetVersionsRequest;
+class ListAssetsRequest;
 class ListAssociationsRequest;
 class ListBacklogTasksRequest;
 class ListChatsRequest;
@@ -136,6 +161,8 @@ class SendMessageRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAgentSpaceRequest;
+class UpdateAssetRequest;
+class UpdateAssetFileRequest;
 class UpdateAssociationRequest;
 class UpdateBacklogTaskRequest;
 class UpdateGoalRequest;
@@ -148,10 +175,14 @@ class ValidateAwsAssociationsRequest;
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<AssociateServiceResult, DevOpsAgentError> AssociateServiceOutcome;
 typedef Aws::Utils::Outcome<CreateAgentSpaceResult, DevOpsAgentError> CreateAgentSpaceOutcome;
+typedef Aws::Utils::Outcome<CreateAssetResult, DevOpsAgentError> CreateAssetOutcome;
+typedef Aws::Utils::Outcome<CreateAssetFileResult, DevOpsAgentError> CreateAssetFileOutcome;
 typedef Aws::Utils::Outcome<CreateBacklogTaskResult, DevOpsAgentError> CreateBacklogTaskOutcome;
 typedef Aws::Utils::Outcome<CreateChatResult, DevOpsAgentError> CreateChatOutcome;
 typedef Aws::Utils::Outcome<CreatePrivateConnectionResult, DevOpsAgentError> CreatePrivateConnectionOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentSpaceResult, DevOpsAgentError> DeleteAgentSpaceOutcome;
+typedef Aws::Utils::Outcome<DeleteAssetResult, DevOpsAgentError> DeleteAssetOutcome;
+typedef Aws::Utils::Outcome<DeleteAssetFileResult, DevOpsAgentError> DeleteAssetFileOutcome;
 typedef Aws::Utils::Outcome<DeletePrivateConnectionResult, DevOpsAgentError> DeletePrivateConnectionOutcome;
 typedef Aws::Utils::Outcome<DeregisterServiceResult, DevOpsAgentError> DeregisterServiceOutcome;
 typedef Aws::Utils::Outcome<DescribePrivateConnectionResult, DevOpsAgentError> DescribePrivateConnectionOutcome;
@@ -160,12 +191,19 @@ typedef Aws::Utils::Outcome<DisassociateServiceResult, DevOpsAgentError> Disasso
 typedef Aws::Utils::Outcome<EnableOperatorAppResult, DevOpsAgentError> EnableOperatorAppOutcome;
 typedef Aws::Utils::Outcome<GetAccountUsageResult, DevOpsAgentError> GetAccountUsageOutcome;
 typedef Aws::Utils::Outcome<GetAgentSpaceResult, DevOpsAgentError> GetAgentSpaceOutcome;
+typedef Aws::Utils::Outcome<GetAssetResult, DevOpsAgentError> GetAssetOutcome;
+typedef Aws::Utils::Outcome<GetAssetContentResult, DevOpsAgentError> GetAssetContentOutcome;
+typedef Aws::Utils::Outcome<GetAssetFileResult, DevOpsAgentError> GetAssetFileOutcome;
 typedef Aws::Utils::Outcome<GetAssociationResult, DevOpsAgentError> GetAssociationOutcome;
 typedef Aws::Utils::Outcome<GetBacklogTaskResult, DevOpsAgentError> GetBacklogTaskOutcome;
 typedef Aws::Utils::Outcome<GetOperatorAppResult, DevOpsAgentError> GetOperatorAppOutcome;
 typedef Aws::Utils::Outcome<GetRecommendationResult, DevOpsAgentError> GetRecommendationOutcome;
 typedef Aws::Utils::Outcome<GetServiceResult, DevOpsAgentError> GetServiceOutcome;
 typedef Aws::Utils::Outcome<ListAgentSpacesResult, DevOpsAgentError> ListAgentSpacesOutcome;
+typedef Aws::Utils::Outcome<ListAssetFilesResult, DevOpsAgentError> ListAssetFilesOutcome;
+typedef Aws::Utils::Outcome<ListAssetTypesResult, DevOpsAgentError> ListAssetTypesOutcome;
+typedef Aws::Utils::Outcome<ListAssetVersionsResult, DevOpsAgentError> ListAssetVersionsOutcome;
+typedef Aws::Utils::Outcome<ListAssetsResult, DevOpsAgentError> ListAssetsOutcome;
 typedef Aws::Utils::Outcome<ListAssociationsResult, DevOpsAgentError> ListAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListBacklogTasksResult, DevOpsAgentError> ListBacklogTasksOutcome;
 typedef Aws::Utils::Outcome<ListChatsResult, DevOpsAgentError> ListChatsOutcome;
@@ -183,6 +221,8 @@ typedef Aws::Utils::Outcome<Aws::NoResult, DevOpsAgentError> SendMessageOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, DevOpsAgentError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, DevOpsAgentError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAgentSpaceResult, DevOpsAgentError> UpdateAgentSpaceOutcome;
+typedef Aws::Utils::Outcome<UpdateAssetResult, DevOpsAgentError> UpdateAssetOutcome;
+typedef Aws::Utils::Outcome<UpdateAssetFileResult, DevOpsAgentError> UpdateAssetFileOutcome;
 typedef Aws::Utils::Outcome<UpdateAssociationResult, DevOpsAgentError> UpdateAssociationOutcome;
 typedef Aws::Utils::Outcome<UpdateBacklogTaskResult, DevOpsAgentError> UpdateBacklogTaskOutcome;
 typedef Aws::Utils::Outcome<UpdateGoalResult, DevOpsAgentError> UpdateGoalOutcome;
@@ -195,10 +235,14 @@ typedef Aws::Utils::Outcome<ValidateAwsAssociationsResult, DevOpsAgentError> Val
 /* Service model Outcome callable definitions */
 typedef std::future<AssociateServiceOutcome> AssociateServiceOutcomeCallable;
 typedef std::future<CreateAgentSpaceOutcome> CreateAgentSpaceOutcomeCallable;
+typedef std::future<CreateAssetOutcome> CreateAssetOutcomeCallable;
+typedef std::future<CreateAssetFileOutcome> CreateAssetFileOutcomeCallable;
 typedef std::future<CreateBacklogTaskOutcome> CreateBacklogTaskOutcomeCallable;
 typedef std::future<CreateChatOutcome> CreateChatOutcomeCallable;
 typedef std::future<CreatePrivateConnectionOutcome> CreatePrivateConnectionOutcomeCallable;
 typedef std::future<DeleteAgentSpaceOutcome> DeleteAgentSpaceOutcomeCallable;
+typedef std::future<DeleteAssetOutcome> DeleteAssetOutcomeCallable;
+typedef std::future<DeleteAssetFileOutcome> DeleteAssetFileOutcomeCallable;
 typedef std::future<DeletePrivateConnectionOutcome> DeletePrivateConnectionOutcomeCallable;
 typedef std::future<DeregisterServiceOutcome> DeregisterServiceOutcomeCallable;
 typedef std::future<DescribePrivateConnectionOutcome> DescribePrivateConnectionOutcomeCallable;
@@ -207,12 +251,19 @@ typedef std::future<DisassociateServiceOutcome> DisassociateServiceOutcomeCallab
 typedef std::future<EnableOperatorAppOutcome> EnableOperatorAppOutcomeCallable;
 typedef std::future<GetAccountUsageOutcome> GetAccountUsageOutcomeCallable;
 typedef std::future<GetAgentSpaceOutcome> GetAgentSpaceOutcomeCallable;
+typedef std::future<GetAssetOutcome> GetAssetOutcomeCallable;
+typedef std::future<GetAssetContentOutcome> GetAssetContentOutcomeCallable;
+typedef std::future<GetAssetFileOutcome> GetAssetFileOutcomeCallable;
 typedef std::future<GetAssociationOutcome> GetAssociationOutcomeCallable;
 typedef std::future<GetBacklogTaskOutcome> GetBacklogTaskOutcomeCallable;
 typedef std::future<GetOperatorAppOutcome> GetOperatorAppOutcomeCallable;
 typedef std::future<GetRecommendationOutcome> GetRecommendationOutcomeCallable;
 typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
 typedef std::future<ListAgentSpacesOutcome> ListAgentSpacesOutcomeCallable;
+typedef std::future<ListAssetFilesOutcome> ListAssetFilesOutcomeCallable;
+typedef std::future<ListAssetTypesOutcome> ListAssetTypesOutcomeCallable;
+typedef std::future<ListAssetVersionsOutcome> ListAssetVersionsOutcomeCallable;
+typedef std::future<ListAssetsOutcome> ListAssetsOutcomeCallable;
 typedef std::future<ListAssociationsOutcome> ListAssociationsOutcomeCallable;
 typedef std::future<ListBacklogTasksOutcome> ListBacklogTasksOutcomeCallable;
 typedef std::future<ListChatsOutcome> ListChatsOutcomeCallable;
@@ -230,6 +281,8 @@ typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAgentSpaceOutcome> UpdateAgentSpaceOutcomeCallable;
+typedef std::future<UpdateAssetOutcome> UpdateAssetOutcomeCallable;
+typedef std::future<UpdateAssetFileOutcome> UpdateAssetFileOutcomeCallable;
 typedef std::future<UpdateAssociationOutcome> UpdateAssociationOutcomeCallable;
 typedef std::future<UpdateBacklogTaskOutcome> UpdateBacklogTaskOutcomeCallable;
 typedef std::future<UpdateGoalOutcome> UpdateGoalOutcomeCallable;
@@ -249,6 +302,12 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::AssociateServi
 typedef std::function<void(const DevOpsAgentClient*, const Model::CreateAgentSpaceRequest&, const Model::CreateAgentSpaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAgentSpaceResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::CreateAssetRequest&, const Model::CreateAssetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateAssetResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::CreateAssetFileRequest&, const Model::CreateAssetFileOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateAssetFileResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::CreateBacklogTaskRequest&, const Model::CreateBacklogTaskOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateBacklogTaskResponseReceivedHandler;
@@ -261,6 +320,12 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::CreatePrivateC
 typedef std::function<void(const DevOpsAgentClient*, const Model::DeleteAgentSpaceRequest&, const Model::DeleteAgentSpaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAgentSpaceResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::DeleteAssetRequest&, const Model::DeleteAssetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteAssetResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::DeleteAssetFileRequest&, const Model::DeleteAssetFileOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteAssetFileResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::DeletePrivateConnectionRequest&,
                            const Model::DeletePrivateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePrivateConnectionResponseReceivedHandler;
@@ -285,6 +350,15 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::GetAccountUsag
 typedef std::function<void(const DevOpsAgentClient*, const Model::GetAgentSpaceRequest&, const Model::GetAgentSpaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAgentSpaceResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::GetAssetRequest&, const Model::GetAssetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAssetResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::GetAssetContentRequest&, const Model::GetAssetContentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAssetContentResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::GetAssetFileRequest&, const Model::GetAssetFileOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAssetFileResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::GetAssociationRequest&, const Model::GetAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAssociationResponseReceivedHandler;
@@ -303,6 +377,18 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::GetServiceRequ
 typedef std::function<void(const DevOpsAgentClient*, const Model::ListAgentSpacesRequest&, const Model::ListAgentSpacesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAgentSpacesResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::ListAssetFilesRequest&, const Model::ListAssetFilesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAssetFilesResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::ListAssetTypesRequest&, const Model::ListAssetTypesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAssetTypesResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::ListAssetVersionsRequest&, const Model::ListAssetVersionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAssetVersionsResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::ListAssetsRequest&, const Model::ListAssetsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAssetsResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::ListAssociationsRequest&, const Model::ListAssociationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAssociationsResponseReceivedHandler;
@@ -354,6 +440,12 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::UntagResourceR
 typedef std::function<void(const DevOpsAgentClient*, const Model::UpdateAgentSpaceRequest&, const Model::UpdateAgentSpaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAgentSpaceResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::UpdateAssetRequest&, const Model::UpdateAssetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateAssetResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::UpdateAssetFileRequest&, const Model::UpdateAssetFileOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateAssetFileResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::UpdateAssociationRequest&, const Model::UpdateAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAssociationResponseReceivedHandler;

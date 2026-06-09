@@ -55,7 +55,7 @@ class SendNotificationActionDefinition {
    * <p>The subject of the email if the delivery method is <code>EMAIL</code>.
    * Supports variable injection. For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath
-   * reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+   * reference</a> in the <i>Connect Customer Administrators Guide</i>.</p>
    */
   inline const Aws::String& GetSubject() const { return m_subject; }
   inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
@@ -76,7 +76,7 @@ class SendNotificationActionDefinition {
    * <p>Notification content. Supports variable injection. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath
-   * reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+   * reference</a> in the <i>Connect Customer Administrators Guide</i>.</p>
    */
   inline const Aws::String& GetContent() const { return m_content; }
   inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }

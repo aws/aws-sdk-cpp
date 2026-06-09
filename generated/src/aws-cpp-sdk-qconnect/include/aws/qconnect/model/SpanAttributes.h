@@ -9,6 +9,7 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/AIAgentType.h>
 #include <aws/qconnect/model/AIPromptType.h>
+#include <aws/qconnect/model/SpanGuardrailAssessment.h>
 #include <aws/qconnect/model/SpanMessage.h>
 #include <aws/qconnect/model/SpanMessageValue.h>
 
@@ -665,6 +666,31 @@ class SpanAttributes {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Guardrail assessments for the inference span. Absent on other span types and
+   * when no AI Guardrail is attached to the AI Agent.</p>
+   */
+  inline const Aws::Vector<SpanGuardrailAssessment>& GetGuardrailAssessments() const { return m_guardrailAssessments; }
+  inline bool GuardrailAssessmentsHasBeenSet() const { return m_guardrailAssessmentsHasBeenSet; }
+  template <typename GuardrailAssessmentsT = Aws::Vector<SpanGuardrailAssessment>>
+  void SetGuardrailAssessments(GuardrailAssessmentsT&& value) {
+    m_guardrailAssessmentsHasBeenSet = true;
+    m_guardrailAssessments = std::forward<GuardrailAssessmentsT>(value);
+  }
+  template <typename GuardrailAssessmentsT = Aws::Vector<SpanGuardrailAssessment>>
+  SpanAttributes& WithGuardrailAssessments(GuardrailAssessmentsT&& value) {
+    SetGuardrailAssessments(std::forward<GuardrailAssessmentsT>(value));
+    return *this;
+  }
+  template <typename GuardrailAssessmentsT = SpanGuardrailAssessment>
+  SpanAttributes& AddGuardrailAssessments(GuardrailAssessmentsT&& value) {
+    m_guardrailAssessmentsHasBeenSet = true;
+    m_guardrailAssessments.emplace_back(std::forward<GuardrailAssessmentsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_operationName;
 
@@ -735,6 +761,8 @@ class SpanAttributes {
   int m_promptVersion{0};
 
   int m_timeToFirstTokenMs{0};
+
+  Aws::Vector<SpanGuardrailAssessment> m_guardrailAssessments;
   bool m_operationNameHasBeenSet = false;
   bool m_providerNameHasBeenSet = false;
   bool m_errorTypeHasBeenSet = false;
@@ -770,6 +798,7 @@ class SpanAttributes {
   bool m_promptNameHasBeenSet = false;
   bool m_promptVersionHasBeenSet = false;
   bool m_timeToFirstTokenMsHasBeenSet = false;
+  bool m_guardrailAssessmentsHasBeenSet = false;
 };
 
 }  // namespace Model

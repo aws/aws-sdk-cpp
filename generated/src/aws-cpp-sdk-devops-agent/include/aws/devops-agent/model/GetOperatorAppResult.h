@@ -37,6 +37,23 @@ class GetOperatorAppResult {
   AWS_DEVOPSAGENT_API GetOperatorAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
+  /**
+   * <p>The URL for operators to access the Operator App</p>
+   */
+  inline const Aws::String& GetOperatorAppUrl() const { return m_operatorAppUrl; }
+  template <typename OperatorAppUrlT = Aws::String>
+  void SetOperatorAppUrl(OperatorAppUrlT&& value) {
+    m_operatorAppUrlHasBeenSet = true;
+    m_operatorAppUrl = std::forward<OperatorAppUrlT>(value);
+  }
+  template <typename OperatorAppUrlT = Aws::String>
+  GetOperatorAppResult& WithOperatorAppUrl(OperatorAppUrlT&& value) {
+    SetOperatorAppUrl(std::forward<OperatorAppUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const IamAuthConfiguration& GetIam() const { return m_iam; }
   template <typename IamT = IamAuthConfiguration>
@@ -98,6 +115,8 @@ class GetOperatorAppResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_operatorAppUrl;
+
   IamAuthConfiguration m_iam;
 
   IdcAuthConfiguration m_idc;
@@ -106,6 +125,7 @@ class GetOperatorAppResult {
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_operatorAppUrlHasBeenSet = false;
   bool m_iamHasBeenSet = false;
   bool m_idcHasBeenSet = false;
   bool m_idpHasBeenSet = false;

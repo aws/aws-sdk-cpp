@@ -33,6 +33,13 @@ ComplianceDetails& ComplianceDetails::operator=(JsonView jsonValue) {
     }
     m_keysWithNoncompliantValuesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MissingTagKeys")) {
+    Aws::Utils::Array<JsonView> missingTagKeysJsonList = jsonValue.GetArray("MissingTagKeys");
+    for (unsigned missingTagKeysIndex = 0; missingTagKeysIndex < missingTagKeysJsonList.GetLength(); ++missingTagKeysIndex) {
+      m_missingTagKeys.push_back(missingTagKeysJsonList[missingTagKeysIndex].AsString());
+    }
+    m_missingTagKeysHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ComplianceStatus")) {
     m_complianceStatus = jsonValue.GetBool("ComplianceStatus");
     m_complianceStatusHasBeenSet = true;
@@ -59,6 +66,14 @@ JsonValue ComplianceDetails::Jsonize() const {
           m_keysWithNoncompliantValues[keysWithNoncompliantValuesIndex]);
     }
     payload.WithArray("KeysWithNoncompliantValues", std::move(keysWithNoncompliantValuesJsonList));
+  }
+
+  if (m_missingTagKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> missingTagKeysJsonList(m_missingTagKeys.size());
+    for (unsigned missingTagKeysIndex = 0; missingTagKeysIndex < missingTagKeysJsonList.GetLength(); ++missingTagKeysIndex) {
+      missingTagKeysJsonList[missingTagKeysIndex].AsString(m_missingTagKeys[missingTagKeysIndex]);
+    }
+    payload.WithArray("MissingTagKeys", std::move(missingTagKeysJsonList));
   }
 
   if (m_complianceStatusHasBeenSet) {

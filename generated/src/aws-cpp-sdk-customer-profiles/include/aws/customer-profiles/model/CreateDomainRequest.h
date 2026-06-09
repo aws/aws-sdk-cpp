@@ -137,7 +137,7 @@ class CreateDomainRequest : public CustomerProfilesRequest {
   ///@{
   /**
    * <p>The process of matching duplicate profiles using the Rule-Based matching. If
-   * <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will
+   * <code>RuleBasedMatching</code> = true, Connect Customer Customer Profiles will
    * start to match and merge your profiles according to your configuration in the
    * <code>RuleBasedMatchingRequest</code>. You can use the
    * <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to

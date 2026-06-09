@@ -39,85 +39,6 @@ class TaxRegistrationEntry {
 
   ///@{
   /**
-   * <p> Additional tax information associated with your TRN. You only need to
-   * specify this parameter if Amazon Web Services collects any additional
-   * information for your country within <a>AdditionalInfoRequest</a>.</p>
-   */
-  inline const AdditionalInfoRequest& GetAdditionalTaxInformation() const { return m_additionalTaxInformation; }
-  inline bool AdditionalTaxInformationHasBeenSet() const { return m_additionalTaxInformationHasBeenSet; }
-  template <typename AdditionalTaxInformationT = AdditionalInfoRequest>
-  void SetAdditionalTaxInformation(AdditionalTaxInformationT&& value) {
-    m_additionalTaxInformationHasBeenSet = true;
-    m_additionalTaxInformation = std::forward<AdditionalTaxInformationT>(value);
-  }
-  template <typename AdditionalTaxInformationT = AdditionalInfoRequest>
-  TaxRegistrationEntry& WithAdditionalTaxInformation(AdditionalTaxInformationT&& value) {
-    SetAdditionalTaxInformation(std::forward<AdditionalTaxInformationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The email address to receive VAT invoices.</p>
-   */
-  inline const Aws::String& GetCertifiedEmailId() const { return m_certifiedEmailId; }
-  inline bool CertifiedEmailIdHasBeenSet() const { return m_certifiedEmailIdHasBeenSet; }
-  template <typename CertifiedEmailIdT = Aws::String>
-  void SetCertifiedEmailId(CertifiedEmailIdT&& value) {
-    m_certifiedEmailIdHasBeenSet = true;
-    m_certifiedEmailId = std::forward<CertifiedEmailIdT>(value);
-  }
-  template <typename CertifiedEmailIdT = Aws::String>
-  TaxRegistrationEntry& WithCertifiedEmailId(CertifiedEmailIdT&& value) {
-    SetCertifiedEmailId(std::forward<CertifiedEmailIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The legal address associated with your TRN.</p>  <p>If you're setting a
-   * TRN in Brazil for the CNPJ tax type, you don't need to specify the legal
-   * address. </p> <p>For TRNs in other countries and for CPF tax types Brazil, you
-   * must specify the legal address.</p>
-   */
-  inline const Address& GetLegalAddress() const { return m_legalAddress; }
-  inline bool LegalAddressHasBeenSet() const { return m_legalAddressHasBeenSet; }
-  template <typename LegalAddressT = Address>
-  void SetLegalAddress(LegalAddressT&& value) {
-    m_legalAddressHasBeenSet = true;
-    m_legalAddress = std::forward<LegalAddressT>(value);
-  }
-  template <typename LegalAddressT = Address>
-  TaxRegistrationEntry& WithLegalAddress(LegalAddressT&& value) {
-    SetLegalAddress(std::forward<LegalAddressT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The legal name associated with your TRN. </p>  <p>If you're setting a
-   * TRN in Brazil, you don't need to specify the legal name. For TRNs in other
-   * countries, you must specify the legal name.</p>
-   */
-  inline const Aws::String& GetLegalName() const { return m_legalName; }
-  inline bool LegalNameHasBeenSet() const { return m_legalNameHasBeenSet; }
-  template <typename LegalNameT = Aws::String>
-  void SetLegalName(LegalNameT&& value) {
-    m_legalNameHasBeenSet = true;
-    m_legalName = std::forward<LegalNameT>(value);
-  }
-  template <typename LegalNameT = Aws::String>
-  TaxRegistrationEntry& WithLegalName(LegalNameT&& value) {
-    SetLegalName(std::forward<LegalNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Your tax registration unique identifier. </p>
    */
   inline const Aws::String& GetRegistrationId() const { return m_registrationId; }
@@ -153,6 +74,47 @@ class TaxRegistrationEntry {
 
   ///@{
   /**
+   * <p>The legal name associated with your TRN. </p>  <p>If you're setting a
+   * TRN in Brazil, you don't need to specify the legal name. For TRNs in other
+   * countries, you must specify the legal name.</p>
+   */
+  inline const Aws::String& GetLegalName() const { return m_legalName; }
+  inline bool LegalNameHasBeenSet() const { return m_legalNameHasBeenSet; }
+  template <typename LegalNameT = Aws::String>
+  void SetLegalName(LegalNameT&& value) {
+    m_legalNameHasBeenSet = true;
+    m_legalName = std::forward<LegalNameT>(value);
+  }
+  template <typename LegalNameT = Aws::String>
+  TaxRegistrationEntry& WithLegalName(LegalNameT&& value) {
+    SetLegalName(std::forward<LegalNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The legal address associated with your TRN.</p>  <p>If you're setting a
+   * TRN in Brazil for the CNPJ tax type, you don't need to specify the legal
+   * address. </p> <p>For TRNs in other countries and for CPF tax types Brazil, you
+   * must specify the legal address.</p>
+   */
+  inline const Address& GetLegalAddress() const { return m_legalAddress; }
+  inline bool LegalAddressHasBeenSet() const { return m_legalAddressHasBeenSet; }
+  template <typename LegalAddressT = Address>
+  void SetLegalAddress(LegalAddressT&& value) {
+    m_legalAddressHasBeenSet = true;
+    m_legalAddress = std::forward<LegalAddressT>(value);
+  }
+  template <typename LegalAddressT = Address>
+  TaxRegistrationEntry& WithLegalAddress(LegalAddressT&& value) {
+    SetLegalAddress(std::forward<LegalAddressT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The industry that describes your business. For business-to-business (B2B)
    * customers, specify Business. For business-to-consumer (B2C) customers, specify
    * Individual. For business-to-government (B2G), specify Government.Note that
@@ -167,6 +129,26 @@ class TaxRegistrationEntry {
   }
   inline TaxRegistrationEntry& WithSector(Sector value) {
     SetSector(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Additional tax information associated with your TRN. You only need to
+   * specify this parameter if Amazon Web Services collects any additional
+   * information for your country within <a>AdditionalInfoRequest</a>.</p>
+   */
+  inline const AdditionalInfoRequest& GetAdditionalTaxInformation() const { return m_additionalTaxInformation; }
+  inline bool AdditionalTaxInformationHasBeenSet() const { return m_additionalTaxInformationHasBeenSet; }
+  template <typename AdditionalTaxInformationT = AdditionalInfoRequest>
+  void SetAdditionalTaxInformation(AdditionalTaxInformationT&& value) {
+    m_additionalTaxInformationHasBeenSet = true;
+    m_additionalTaxInformation = std::forward<AdditionalTaxInformationT>(value);
+  }
+  template <typename AdditionalTaxInformationT = AdditionalInfoRequest>
+  TaxRegistrationEntry& WithAdditionalTaxInformation(AdditionalTaxInformationT&& value) {
+    SetAdditionalTaxInformation(std::forward<AdditionalTaxInformationT>(value));
     return *this;
   }
   ///@}
@@ -191,30 +173,48 @@ class TaxRegistrationEntry {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The email address to receive VAT invoices.</p>
+   */
+  inline const Aws::String& GetCertifiedEmailId() const { return m_certifiedEmailId; }
+  inline bool CertifiedEmailIdHasBeenSet() const { return m_certifiedEmailIdHasBeenSet; }
+  template <typename CertifiedEmailIdT = Aws::String>
+  void SetCertifiedEmailId(CertifiedEmailIdT&& value) {
+    m_certifiedEmailIdHasBeenSet = true;
+    m_certifiedEmailId = std::forward<CertifiedEmailIdT>(value);
+  }
+  template <typename CertifiedEmailIdT = Aws::String>
+  TaxRegistrationEntry& WithCertifiedEmailId(CertifiedEmailIdT&& value) {
+    SetCertifiedEmailId(std::forward<CertifiedEmailIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  AdditionalInfoRequest m_additionalTaxInformation;
-
-  Aws::String m_certifiedEmailId;
-
-  Address m_legalAddress;
-
-  Aws::String m_legalName;
-
   Aws::String m_registrationId;
 
   TaxRegistrationType m_registrationType{TaxRegistrationType::NOT_SET};
 
+  Aws::String m_legalName;
+
+  Address m_legalAddress;
+
   Sector m_sector{Sector::NOT_SET};
 
+  AdditionalInfoRequest m_additionalTaxInformation;
+
   VerificationDetails m_verificationDetails;
-  bool m_additionalTaxInformationHasBeenSet = false;
-  bool m_certifiedEmailIdHasBeenSet = false;
-  bool m_legalAddressHasBeenSet = false;
-  bool m_legalNameHasBeenSet = false;
+
+  Aws::String m_certifiedEmailId;
   bool m_registrationIdHasBeenSet = false;
   bool m_registrationTypeHasBeenSet = false;
+  bool m_legalNameHasBeenSet = false;
+  bool m_legalAddressHasBeenSet = false;
   bool m_sectorHasBeenSet = false;
+  bool m_additionalTaxInformationHasBeenSet = false;
   bool m_verificationDetailsHasBeenSet = false;
+  bool m_certifiedEmailIdHasBeenSet = false;
 };
 
 }  // namespace Model

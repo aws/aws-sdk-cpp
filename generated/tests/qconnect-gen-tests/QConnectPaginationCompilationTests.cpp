@@ -15,6 +15,7 @@
 #include <aws/qconnect/model/SearchContentPaginationTraits.h>
 #include <aws/qconnect/model/ListAIPromptVersionsPaginationTraits.h>
 #include <aws/qconnect/model/ListMessageTemplatesPaginationTraits.h>
+#include <aws/qconnect/model/ListModelsPaginationTraits.h>
 #include <aws/qconnect/model/ListContentsPaginationTraits.h>
 #include <aws/qconnect/model/ListKnowledgeBasesPaginationTraits.h>
 #include <aws/qconnect/model/ListAssistantAssociationsPaginationTraits.h>

@@ -99,6 +99,7 @@
 #include <aws/connectcampaignsv2/model/ListTagsForResourceRequest.h>
 #include <aws/connectcampaignsv2/model/ListTagsForResourceResult.h>
 #include <aws/connectcampaignsv2/model/LocalTimeZoneConfig.h>
+#include <aws/connectcampaignsv2/model/LocalTimeZoneDetectionScope.h>
 #include <aws/connectcampaignsv2/model/LocalTimeZoneDetectionType.h>
 #include <aws/connectcampaignsv2/model/OpenHours.h>
 #include <aws/connectcampaignsv2/model/OutboundRequest.h>

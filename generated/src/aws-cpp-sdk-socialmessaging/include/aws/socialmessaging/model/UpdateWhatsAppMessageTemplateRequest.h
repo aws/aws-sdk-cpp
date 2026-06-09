@@ -67,6 +67,46 @@ class UpdateWhatsAppMessageTemplateRequest : public SocialMessagingRequest {
 
   ///@{
   /**
+   * <p>The name of the message template. Use together with
+   * <code>templateLanguageCode</code> as an alternative to
+   * <code>metaTemplateId</code> to identify a template.</p>
+   */
+  inline const Aws::String& GetTemplateName() const { return m_templateName; }
+  inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+  template <typename TemplateNameT = Aws::String>
+  void SetTemplateName(TemplateNameT&& value) {
+    m_templateNameHasBeenSet = true;
+    m_templateName = std::forward<TemplateNameT>(value);
+  }
+  template <typename TemplateNameT = Aws::String>
+  UpdateWhatsAppMessageTemplateRequest& WithTemplateName(TemplateNameT&& value) {
+    SetTemplateName(std::forward<TemplateNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The language code of the message template (for example, <code>en</code> or
+   * <code>en_US</code>). Use together with <code>templateName</code> as an
+   * alternative to <code>metaTemplateId</code> to identify a template.</p>
+   */
+  inline const Aws::String& GetTemplateLanguageCode() const { return m_templateLanguageCode; }
+  inline bool TemplateLanguageCodeHasBeenSet() const { return m_templateLanguageCodeHasBeenSet; }
+  template <typename TemplateLanguageCodeT = Aws::String>
+  void SetTemplateLanguageCode(TemplateLanguageCodeT&& value) {
+    m_templateLanguageCodeHasBeenSet = true;
+    m_templateLanguageCode = std::forward<TemplateLanguageCodeT>(value);
+  }
+  template <typename TemplateLanguageCodeT = Aws::String>
+  UpdateWhatsAppMessageTemplateRequest& WithTemplateLanguageCode(TemplateLanguageCodeT&& value) {
+    SetTemplateLanguageCode(std::forward<TemplateLanguageCodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The format specification for parameters in the template, this can be either
    * 'named' or 'positional'.</p>
    */
@@ -142,6 +182,10 @@ class UpdateWhatsAppMessageTemplateRequest : public SocialMessagingRequest {
 
   Aws::String m_metaTemplateId;
 
+  Aws::String m_templateName;
+
+  Aws::String m_templateLanguageCode;
+
   Aws::String m_parameterFormat;
 
   Aws::String m_templateCategory;
@@ -151,6 +195,8 @@ class UpdateWhatsAppMessageTemplateRequest : public SocialMessagingRequest {
   bool m_ctaUrlLinkTrackingOptedOut{false};
   bool m_idHasBeenSet = false;
   bool m_metaTemplateIdHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateLanguageCodeHasBeenSet = false;
   bool m_parameterFormatHasBeenSet = false;
   bool m_templateCategoryHasBeenSet = false;
   bool m_templateComponentsHasBeenSet = false;

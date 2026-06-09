@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeEgressOnlyInternetGatewaysRequest.h>
+#include <aws/ec2/model/DescribeElasticGpusRequest.h>
 #include <aws/ec2/model/DescribeExportImageTasksRequest.h>
 #include <aws/ec2/model/DescribeExportTasksRequest.h>
 #include <aws/ec2/model/DescribeFastLaunchImagesRequest.h>
@@ -60,6 +62,7 @@
 #include <aws/ec2/model/DescribeIpamByoasnRequest.h>
 #include <aws/ec2/model/DescribeIpamExternalResourceVerificationTokensRequest.h>
 #include <aws/ec2/model/DescribeIpamPoliciesRequest.h>
+#include <aws/ec2/model/DescribeIpamPoolAllocationsRequest.h>
 #include <aws/ec2/model/DescribeIpamPoolsRequest.h>
 #include <aws/ec2/model/DescribeIpamPrefixListResolverTargetsRequest.h>
 #include <aws/ec2/model/DescribeIpamPrefixListResolversRequest.h>
@@ -117,9 +120,6 @@
 #include <aws/ec2/model/DescribeSecurityGroupsRequest.h>
 #include <aws/ec2/model/DescribeServiceLinkVirtualInterfacesRequest.h>
 #include <aws/ec2/model/DescribeSnapshotAttributeRequest.h>
-#include <aws/ec2/model/DescribeSnapshotTierStatusRequest.h>
-#include <aws/ec2/model/DescribeSnapshotsRequest.h>
-#include <aws/ec2/model/DescribeSpotDatafeedSubscriptionRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,19 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeEgressOnlyInternetGatewaysOutcome EC2Client::DescribeEgressOnlyInternetGateways(
+    const DescribeEgressOnlyInternetGatewaysRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEgressOnlyInternetGatewaysOutcome(result.GetResultWithOwnership())
+                            : DescribeEgressOnlyInternetGatewaysOutcome(std::move(result.GetError()));
+}
+
+DescribeElasticGpusOutcome EC2Client::DescribeElasticGpus(const DescribeElasticGpusRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeElasticGpusOutcome(result.GetResultWithOwnership())
+                            : DescribeElasticGpusOutcome(std::move(result.GetError()));
+}
 
 DescribeExportImageTasksOutcome EC2Client::DescribeExportImageTasks(const DescribeExportImageTasksRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -375,6 +388,12 @@ DescribeIpamPoliciesOutcome EC2Client::DescribeIpamPolicies(const DescribeIpamPo
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeIpamPoliciesOutcome(result.GetResultWithOwnership())
                             : DescribeIpamPoliciesOutcome(std::move(result.GetError()));
+}
+
+DescribeIpamPoolAllocationsOutcome EC2Client::DescribeIpamPoolAllocations(const DescribeIpamPoolAllocationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeIpamPoolAllocationsOutcome(result.GetResultWithOwnership())
+                            : DescribeIpamPoolAllocationsOutcome(std::move(result.GetError()));
 }
 
 DescribeIpamPoolsOutcome EC2Client::DescribeIpamPools(const DescribeIpamPoolsRequest& request) const {
@@ -740,23 +759,4 @@ DescribeSnapshotAttributeOutcome EC2Client::DescribeSnapshotAttribute(const Desc
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeSnapshotAttributeOutcome(result.GetResultWithOwnership())
                             : DescribeSnapshotAttributeOutcome(std::move(result.GetError()));
-}
-
-DescribeSnapshotTierStatusOutcome EC2Client::DescribeSnapshotTierStatus(const DescribeSnapshotTierStatusRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSnapshotTierStatusOutcome(result.GetResultWithOwnership())
-                            : DescribeSnapshotTierStatusOutcome(std::move(result.GetError()));
-}
-
-DescribeSnapshotsOutcome EC2Client::DescribeSnapshots(const DescribeSnapshotsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSnapshotsOutcome(result.GetResultWithOwnership())
-                            : DescribeSnapshotsOutcome(std::move(result.GetError()));
-}
-
-DescribeSpotDatafeedSubscriptionOutcome EC2Client::DescribeSpotDatafeedSubscription(
-    const DescribeSpotDatafeedSubscriptionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSpotDatafeedSubscriptionOutcome(result.GetResultWithOwnership())
-                            : DescribeSpotDatafeedSubscriptionOutcome(std::move(result.GetError()));
 }

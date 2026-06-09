@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
+#include <aws/payment-cryptography-data/model/RandomKeyMaxLength.h>
 #include <aws/payment-cryptography-data/model/SymmetricKeyAlgorithm.h>
 
 #include <utility>
@@ -48,9 +49,29 @@ class KekValidationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum length of the random key to generate for a KEK validation
+   * request.</p>
+   */
+  inline RandomKeyMaxLength GetRandomKeyMaxLength() const { return m_randomKeyMaxLength; }
+  inline bool RandomKeyMaxLengthHasBeenSet() const { return m_randomKeyMaxLengthHasBeenSet; }
+  inline void SetRandomKeyMaxLength(RandomKeyMaxLength value) {
+    m_randomKeyMaxLengthHasBeenSet = true;
+    m_randomKeyMaxLength = value;
+  }
+  inline KekValidationRequest& WithRandomKeyMaxLength(RandomKeyMaxLength value) {
+    SetRandomKeyMaxLength(value);
+    return *this;
+  }
+  ///@}
  private:
   SymmetricKeyAlgorithm m_deriveKeyAlgorithm{SymmetricKeyAlgorithm::NOT_SET};
+
+  RandomKeyMaxLength m_randomKeyMaxLength{RandomKeyMaxLength::NOT_SET};
   bool m_deriveKeyAlgorithmHasBeenSet = false;
+  bool m_randomKeyMaxLengthHasBeenSet = false;
 };
 
 }  // namespace Model

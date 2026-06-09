@@ -8,6 +8,7 @@
 #include <aws/bedrock/model/AutomatedReasoningPolicyBuildWorkflowDocument.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyBuildWorkflowRepairContent.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyGenerateFidelityReportContent.h>
+#include <aws/bedrock/model/AutomatedReasoningPolicyIterativeRefinementContent.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -99,15 +100,40 @@ class AutomatedReasoningPolicyWorkflowTypeContent {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Content configuration to start an iterative policy refinement workflow that
+   * uses generative AI to automatically make changes to the policy based on test
+   * results and the optional feedback provided.</p>
+   */
+  inline const AutomatedReasoningPolicyIterativeRefinementContent& GetIterativeRefinementContent() const {
+    return m_iterativeRefinementContent;
+  }
+  inline bool IterativeRefinementContentHasBeenSet() const { return m_iterativeRefinementContentHasBeenSet; }
+  template <typename IterativeRefinementContentT = AutomatedReasoningPolicyIterativeRefinementContent>
+  void SetIterativeRefinementContent(IterativeRefinementContentT&& value) {
+    m_iterativeRefinementContentHasBeenSet = true;
+    m_iterativeRefinementContent = std::forward<IterativeRefinementContentT>(value);
+  }
+  template <typename IterativeRefinementContentT = AutomatedReasoningPolicyIterativeRefinementContent>
+  AutomatedReasoningPolicyWorkflowTypeContent& WithIterativeRefinementContent(IterativeRefinementContentT&& value) {
+    SetIterativeRefinementContent(std::forward<IterativeRefinementContentT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<AutomatedReasoningPolicyBuildWorkflowDocument> m_documents;
 
   AutomatedReasoningPolicyBuildWorkflowRepairContent m_policyRepairAssets;
 
   AutomatedReasoningPolicyGenerateFidelityReportContent m_generateFidelityReportContent;
+
+  AutomatedReasoningPolicyIterativeRefinementContent m_iterativeRefinementContent;
   bool m_documentsHasBeenSet = false;
   bool m_policyRepairAssetsHasBeenSet = false;
   bool m_generateFidelityReportContentHasBeenSet = false;
+  bool m_iterativeRefinementContentHasBeenSet = false;
 };
 
 }  // namespace Model

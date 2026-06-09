@@ -38,7 +38,7 @@ class ContactDataRequest {
 
   ///@{
   /**
-   * <p>Endpoint associated with the Amazon Connect instance from which outbound
+   * <p>Endpoint associated with the Connect Customer instance from which outbound
    * contact will be initiated for the campaign.</p>
    */
   inline const Endpoint& GetSystemEndpoint() const { return m_systemEndpoint; }
@@ -93,7 +93,7 @@ class ContactDataRequest {
 
   ///@{
   /**
-   * <p>The identifier of the queue associated with the Amazon Connect instance in
+   * <p>The identifier of the queue associated with the Connect Customer instance in
    * which contacts that are created will be queued.</p>
    */
   inline const Aws::String& GetQueueId() const { return m_queueId; }

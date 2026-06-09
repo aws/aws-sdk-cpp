@@ -33,7 +33,7 @@ class CreateContactFlowRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance.</p>
+   * <p>The identifier of the Connect Customer instance.</p>
    */
   inline const Aws::String& GetInstanceId() const { return m_instanceId; }
   inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -71,7 +71,7 @@ class CreateContactFlowRequest : public ConnectRequest {
   /**
    * <p>The type of the flow. For descriptions of the available types, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose
-   * a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+   * a flow type</a> in the <i>Connect Customer Administrator Guide</i>.</p>
    */
   inline ContactFlowType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -108,7 +108,7 @@ class CreateContactFlowRequest : public ConnectRequest {
    * <p>The JSON string that represents the content of the flow. For an example, see
    * <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-   * flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints: Minimum
+   * flow in Connect Customer Flow language</a>. </p> <p>Length Constraints: Minimum
    * length of 1. Maximum length of 256000.</p>
    */
   inline const Aws::String& GetContent() const { return m_content; }

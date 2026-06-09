@@ -34,6 +34,14 @@ ScanJob& ScanJob::operator=(JsonView jsonValue) {
     m_completionDate = jsonValue.GetDouble("CompletionDate");
     m_completionDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContinuousScanEndTime")) {
+    m_continuousScanEndTime = jsonValue.GetDouble("ContinuousScanEndTime");
+    m_continuousScanEndTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ContinuousScanStartTime")) {
+    m_continuousScanStartTime = jsonValue.GetDouble("ContinuousScanStartTime");
+    m_continuousScanStartTimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CreatedBy")) {
     m_createdBy = jsonValue.GetObject("CreatedBy");
     m_createdByHasBeenSet = true;
@@ -118,6 +126,14 @@ JsonValue ScanJob::Jsonize() const {
 
   if (m_completionDateHasBeenSet) {
     payload.WithDouble("CompletionDate", m_completionDate.SecondsWithMSPrecision());
+  }
+
+  if (m_continuousScanEndTimeHasBeenSet) {
+    payload.WithDouble("ContinuousScanEndTime", m_continuousScanEndTime.SecondsWithMSPrecision());
+  }
+
+  if (m_continuousScanStartTimeHasBeenSet) {
+    payload.WithDouble("ContinuousScanStartTime", m_continuousScanStartTime.SecondsWithMSPrecision());
   }
 
   if (m_createdByHasBeenSet) {

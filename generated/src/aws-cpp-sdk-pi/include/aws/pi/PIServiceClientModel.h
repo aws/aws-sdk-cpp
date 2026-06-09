@@ -28,6 +28,7 @@
 #include <aws/pi/model/GetResourceMetricsResult.h>
 #include <aws/pi/model/ListAvailableResourceDimensionsResult.h>
 #include <aws/pi/model/ListAvailableResourceMetricsResult.h>
+#include <aws/pi/model/ListPerformanceAnalysisReportRecommendationsResult.h>
 #include <aws/pi/model/ListPerformanceAnalysisReportsResult.h>
 #include <aws/pi/model/ListTagsForResourceResult.h>
 #include <aws/pi/model/TagResourceResult.h>
@@ -74,6 +75,7 @@ class GetResourceMetadataRequest;
 class GetResourceMetricsRequest;
 class ListAvailableResourceDimensionsRequest;
 class ListAvailableResourceMetricsRequest;
+class ListPerformanceAnalysisReportRecommendationsRequest;
 class ListPerformanceAnalysisReportsRequest;
 class ListTagsForResourceRequest;
 class TagResourceRequest;
@@ -90,6 +92,8 @@ typedef Aws::Utils::Outcome<GetResourceMetadataResult, PIError> GetResourceMetad
 typedef Aws::Utils::Outcome<GetResourceMetricsResult, PIError> GetResourceMetricsOutcome;
 typedef Aws::Utils::Outcome<ListAvailableResourceDimensionsResult, PIError> ListAvailableResourceDimensionsOutcome;
 typedef Aws::Utils::Outcome<ListAvailableResourceMetricsResult, PIError> ListAvailableResourceMetricsOutcome;
+typedef Aws::Utils::Outcome<ListPerformanceAnalysisReportRecommendationsResult, PIError>
+    ListPerformanceAnalysisReportRecommendationsOutcome;
 typedef Aws::Utils::Outcome<ListPerformanceAnalysisReportsResult, PIError> ListPerformanceAnalysisReportsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, PIError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, PIError> TagResourceOutcome;
@@ -106,6 +110,7 @@ typedef std::future<GetResourceMetadataOutcome> GetResourceMetadataOutcomeCallab
 typedef std::future<GetResourceMetricsOutcome> GetResourceMetricsOutcomeCallable;
 typedef std::future<ListAvailableResourceDimensionsOutcome> ListAvailableResourceDimensionsOutcomeCallable;
 typedef std::future<ListAvailableResourceMetricsOutcome> ListAvailableResourceMetricsOutcomeCallable;
+typedef std::future<ListPerformanceAnalysisReportRecommendationsOutcome> ListPerformanceAnalysisReportRecommendationsOutcomeCallable;
 typedef std::future<ListPerformanceAnalysisReportsOutcome> ListPerformanceAnalysisReportsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -148,6 +153,10 @@ typedef std::function<void(const PIClient*, const Model::ListAvailableResourceMe
                            const Model::ListAvailableResourceMetricsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAvailableResourceMetricsResponseReceivedHandler;
+typedef std::function<void(const PIClient*, const Model::ListPerformanceAnalysisReportRecommendationsRequest&,
+                           const Model::ListPerformanceAnalysisReportRecommendationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPerformanceAnalysisReportRecommendationsResponseReceivedHandler;
 typedef std::function<void(const PIClient*, const Model::ListPerformanceAnalysisReportsRequest&,
                            const Model::ListPerformanceAnalysisReportsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

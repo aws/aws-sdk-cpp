@@ -68,7 +68,7 @@ class CreateConnectClientAddInRequest : public WorkSpacesRequest {
 
   ///@{
   /**
-   * <p>The endpoint URL of the Amazon Connect client add-in.</p>
+   * <p>The endpoint URL of the Connect Customer client add-in.</p>
    */
   inline const Aws::String& GetURL() const { return m_uRL; }
   inline bool URLHasBeenSet() const { return m_uRLHasBeenSet; }

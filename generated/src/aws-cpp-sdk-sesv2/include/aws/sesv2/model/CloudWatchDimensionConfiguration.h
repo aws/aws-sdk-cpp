@@ -38,7 +38,7 @@ class CloudWatchDimensionConfiguration {
    * <p>The name of an Amazon CloudWatch dimension associated with an email sending
    * metric. The name has to meet the following criteria:</p> <ul> <li> <p>It can
    * only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes
-   * (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li>
+   * (-).</p> </li> <li> <p>It can contain no more than 255 characters.</p> </li>
    * </ul>
    */
   inline const Aws::String& GetDimensionName() const { return m_dimensionName; }
@@ -82,7 +82,7 @@ class CloudWatchDimensionConfiguration {
    * you don't provide the value of the dimension when you send an email. This value
    * has to meet the following criteria:</p> <ul> <li> <p>Can only contain ASCII
    * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@),
-   * and periods (.).</p> </li> <li> <p>It can contain no more than 256
+   * and periods (.).</p> </li> <li> <p>It can contain no more than 255
    * characters.</p> </li> </ul>
    */
   inline const Aws::String& GetDefaultDimensionValue() const { return m_defaultDimensionValue; }

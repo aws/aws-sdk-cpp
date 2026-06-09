@@ -8,6 +8,7 @@
 
 #include <aws/iot-data/IoTDataPlaneClientPagination.h>
 #include <aws/iot-data/IoTDataPlanePaginationBase.h>
+#include <aws/iot-data/model/ListSubscriptionsPaginationTraits.h>
 #include <aws/iot-data/model/ListRetainedMessagesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
