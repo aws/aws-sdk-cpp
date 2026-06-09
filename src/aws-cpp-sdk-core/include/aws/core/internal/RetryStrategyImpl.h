@@ -62,7 +62,11 @@ namespace Aws
                 ReleaseRetryQuota(capacityAmount);
             }
 
-            int GetRetryQuota() const override { return m_retryQuota; }
+            int GetRetryQuota() const override
+            {
+                Aws::Utils::Threading::ReaderLockGuard guard(m_retryQuotaLock);
+                return m_retryQuota;
+            }
 
         private:
             QuotaConfig m_config;
