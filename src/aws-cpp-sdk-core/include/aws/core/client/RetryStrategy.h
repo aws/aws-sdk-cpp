@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <memory>
 
@@ -123,6 +124,7 @@ namespace Aws
         public:
             StandardRetryStrategy(long maxAttempts = 3);
             StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts = 3);
+            virtual ~StandardRetryStrategy();
 
             virtual void RequestBookkeeping(const HttpResponseOutcome& httpResponseOutcome) override;
             virtual void RequestBookkeeping(const HttpResponseOutcome& httpResponseOutcome, const AWSError<CoreErrors>& lastError) override;
@@ -135,9 +137,14 @@ namespace Aws
 
             const char* GetStrategyName() const override { return "standard";}
 
+            class RetryImpl;
+
         protected:
             std::shared_ptr<RetryQuotaContainer> m_retryQuotaContainer;
             long m_maxAttempts;
+
+        private:
+            Aws::UniquePtr<RetryImpl> m_impl;
         };
     } // namespace Client
 } // namespace Aws
