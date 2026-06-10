@@ -12,7 +12,7 @@
   };
   UploadHandle::~UploadHandle() = default;
 
-  std::shared_future<UploadResponse> UploadHandle::CompletionFuture() const {
+  std::shared_future<UploadOutcome> UploadHandle::CompletionFuture() const {
     return {};
   }
   void UploadHandle::Cancel() {

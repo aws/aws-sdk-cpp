@@ -26,7 +26,7 @@ public:
   /**
    * Returns a future that resolves once the transfer finishes, succeeds, or fails.
    */
-  std::shared_future<UploadResponse> CompletionFuture() const;
+  std::shared_future<UploadOutcome> CompletionFuture() const;
 
   /**
    * Requests cancellation of the in-flight upload. Returns immediately; the future

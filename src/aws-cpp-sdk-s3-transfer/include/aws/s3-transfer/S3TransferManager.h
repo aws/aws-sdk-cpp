@@ -21,13 +21,9 @@ namespace Aws {
    * the configured threshold. Customers hold an instance via shared_ptr; the manager owns
    * the underlying CRT client and is not copyable or movable.
    */
-  class AWS_S3_TRANSFER_API S3TransferManager {
+  class AWS_S3_TRANSFER_API S3TransferManager: public std::enable_shared_from_this<S3TransferManager> {
   public:
-    /**
-     * Initialize the S3TransferManager with the given configuration. The configuration
-     * is used to construct the underlying CRT client and is not retained after construction.
-     */
-    explicit S3TransferManager(const S3TransferManagerConfiguration& config);
+    static std::shared_ptr<S3TransferManager> Create(const S3TransferManagerConfiguration& config);
 
     ~S3TransferManager();
 
@@ -49,6 +45,7 @@ namespace Aws {
     DownloadHandle Download(const DownloadRequest& request);
 
   private:
+    explicit S3TransferManager(const S3TransferManagerConfiguration& config);
     Aws::UniquePtr<S3TransferManagerImpl> m_impl;
   };
   }

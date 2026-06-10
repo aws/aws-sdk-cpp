@@ -4,6 +4,9 @@
  */
 #pragma once
 #include <aws/s3-transfer/S3Transfer_EXPORTS.h>
+#include <aws/core/client/AWSError.h>
+#include <aws/core/utils/Outcome.h>
+#include <aws/s3/S3Errors.h>
 #include <aws/s3/model/PutObjectResult.h>
 #include <utility>
 
@@ -35,6 +38,8 @@ class AWS_S3_TRANSFER_API UploadResponse {
   Aws::S3::Model::PutObjectResult m_s3Result;
   bool m_s3ResultHasBeenSet = false;
 };
+
+typedef Aws::Utils::Outcome<UploadResponse, Aws::Client::AWSError<Aws::S3::S3Errors>> UploadOutcome;
 
 }
 }

@@ -12,7 +12,7 @@
   };
   DownloadHandle::~DownloadHandle() = default;
 
-  std::shared_future<DownloadResponse> DownloadHandle::CompletionFuture() const {
+  std::shared_future<DownloadOutcome> DownloadHandle::CompletionFuture() const {
     return {};
   }
   void DownloadHandle::Cancel() {

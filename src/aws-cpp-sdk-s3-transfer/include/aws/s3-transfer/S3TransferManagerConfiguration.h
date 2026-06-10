@@ -10,7 +10,7 @@ namespace Aws {
   namespace S3 {
     namespace Transfer {
       class AWS_S3_TRANSFER_API S3TransferManagerConfiguration {
-        //need to fill in class defintion later
+        //need to fill in class definition later
       };
     }
   }
