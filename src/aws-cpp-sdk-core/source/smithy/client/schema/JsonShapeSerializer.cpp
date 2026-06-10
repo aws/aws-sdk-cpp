@@ -3,189 +3,158 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
 
 using namespace smithy::schema;
 using namespace Aws::Utils;
-using namespace Aws::Utils::Json;
+
+static const int MAX_DEPTH = 64;
 
 struct JsonShapeSerializer::Impl {
-  JsonValue m_root;
-
-  struct StackEntry {
-    JsonValue object;
-    const char* fieldName = nullptr;
-    bool isList = false;
-    bool isMap = false;
-    Aws::Vector<JsonValue> listItems;
-  };
-
-  Aws::Vector<StackEntry> m_stack;
+  Aws::String m_buf;
+  int m_depth = 0;
+  bool m_needsComma[MAX_DEPTH] = {};
+  bool m_isMap[MAX_DEPTH] = {};
+  bool m_isList[MAX_DEPTH] = {};
   Aws::String m_currentMapKey;
 
-  JsonValue& CurrentObject() {
-    if (m_stack.empty()) return m_root;
-    return m_stack.back().object;
+  void WriteCommaIfNeeded() {
+    if (m_needsComma[m_depth]) {
+      m_buf += ',';
+    } else {
+      m_needsComma[m_depth] = true;
+    }
   }
 
-  const char* CurrentKey(const Schema& schema) {
-    if (!m_stack.empty() && m_stack.back().isMap) return m_currentMapKey.c_str();
-    return schema.GetMemberName();
+  void WriteKey(const char* key) {
+    m_buf += '"';
+    m_buf += key;
+    m_buf += "\":";
   }
 
-  void BeginStructure(const Schema&) {}
-  void EndStructure() {}
+  void WriteFieldName(const Schema& schema) {
+    WriteCommaIfNeeded();
+    if (m_isList[m_depth]) {
+      return;
+    }
+    if (m_depth > 0 && m_isMap[m_depth]) {
+      WriteKey(m_currentMapKey.c_str());
+    } else {
+      WriteKey(schema.GetMemberName());
+    }
+  }
+
+  void BeginStructure(const Schema&) {
+    m_buf += '{';
+    m_depth++;
+    m_needsComma[m_depth] = false;
+    m_isMap[m_depth] = false;
+    m_isList[m_depth] = false;
+  }
+
+  void EndStructure() {
+    m_depth--;
+    m_buf += '}';
+  }
 
   void WriteBoolean(const Schema& schema, bool value) {
-    if (!m_stack.empty() && m_stack.back().isList) {
-      JsonValue v;
-      v.AsBool(value);
-      m_stack.back().listItems.push_back(std::move(v));
-    } else {
-      CurrentObject().WithBool(CurrentKey(schema), value);
-    }
+    WriteFieldName(schema);
+    m_buf += value ? "true" : "false";
   }
 
   void WriteInteger(const Schema& schema, int value) {
-    if (!m_stack.empty() && m_stack.back().isList) {
-      JsonValue v;
-      v.AsInteger(value);
-      m_stack.back().listItems.push_back(std::move(v));
-    } else {
-      CurrentObject().WithInteger(CurrentKey(schema), value);
-    }
+    WriteFieldName(schema);
+    m_buf += std::to_string(value);
   }
 
   void WriteLong(const Schema& schema, int64_t value) {
-    if (!m_stack.empty() && m_stack.back().isList) {
-      JsonValue v;
-      v.AsInt64(value);
-      m_stack.back().listItems.push_back(std::move(v));
-    } else {
-      CurrentObject().WithInt64(CurrentKey(schema), value);
-    }
+    WriteFieldName(schema);
+    m_buf += std::to_string(value);
   }
 
   void WriteDouble(const Schema& schema, double value) {
-    if (!m_stack.empty() && m_stack.back().isList) {
-      JsonValue v;
-      v.AsDouble(value);
-      m_stack.back().listItems.push_back(std::move(v));
-    } else {
-      CurrentObject().WithDouble(CurrentKey(schema), value);
-    }
+    WriteFieldName(schema);
+    char tmp[32];
+    snprintf(tmp, sizeof(tmp), "%g", value);
+    m_buf += tmp;
   }
 
   void WriteString(const Schema& schema, const Aws::String& value) {
-    if (!m_stack.empty() && m_stack.back().isList) {
-      JsonValue v;
-      v.AsString(value);
-      m_stack.back().listItems.push_back(std::move(v));
-    } else {
-      CurrentObject().WithString(CurrentKey(schema), value);
-    }
+    WriteFieldName(schema);
+    m_buf += '"';
+    m_buf += value;
+    m_buf += '"';
   }
 
   void WriteTimestamp(const Schema& schema, const DateTime& value) {
-    if (!m_stack.empty() && m_stack.back().isList) {
-      JsonValue v;
-      v.AsDouble(value.SecondsWithMSPrecision());
-      m_stack.back().listItems.push_back(std::move(v));
-    } else {
-      CurrentObject().WithDouble(CurrentKey(schema), value.SecondsWithMSPrecision());
-    }
+    WriteFieldName(schema);
+    char tmp[32];
+    snprintf(tmp, sizeof(tmp), "%g", value.SecondsWithMSPrecision());
+    m_buf += tmp;
   }
 
   void WriteBlob(const Schema& schema, const ByteBuffer& value) {
-    Aws::String encoded = HashingUtils::Base64Encode(value);
-    if (!m_stack.empty() && m_stack.back().isList) {
-      JsonValue v;
-      v.AsString(encoded);
-      m_stack.back().listItems.push_back(std::move(v));
-    } else {
-      CurrentObject().WithString(CurrentKey(schema), encoded);
-    }
+    WriteFieldName(schema);
+    m_buf += '"';
+    m_buf += HashingUtils::Base64Encode(value);
+    m_buf += '"';
   }
 
   void WriteEnum(const Schema& schema, int value) { WriteInteger(schema, value); }
 
   void WriteNull(const Schema& schema) {
-    if (!m_stack.empty() && m_stack.back().isList) {
-      JsonValue v;
-      v.AsNull();
-      m_stack.back().listItems.push_back(std::move(v));
-    } else {
-      CurrentObject().WithNull(CurrentKey(schema));
-    }
+    WriteFieldName(schema);
+    m_buf += "null";
   }
 
   void BeginList(const Schema& schema, size_t) {
-    StackEntry entry;
-    entry.fieldName = CurrentKey(schema);
-    entry.isList = true;
-    m_stack.push_back(std::move(entry));
+    WriteFieldName(schema);
+    m_buf += '[';
+    m_depth++;
+    m_needsComma[m_depth] = false;
+    m_isMap[m_depth] = false;
+    m_isList[m_depth] = true;
   }
 
   void EndList() {
-    auto entry = std::move(m_stack.back());
-    m_stack.pop_back();
-
-    Array<JsonValue> arr(entry.listItems.size());
-    for (size_t i = 0; i < entry.listItems.size(); ++i) {
-      arr[i] = std::move(entry.listItems[i]);
-    }
-
-    if (!m_stack.empty() && m_stack.back().isList) {
-      JsonValue listVal;
-      listVal.WithArray("", std::move(arr));
-      m_stack.back().listItems.push_back(std::move(listVal));
-    } else {
-      CurrentObject().WithArray(entry.fieldName, std::move(arr));
-    }
+    m_depth--;
+    m_buf += ']';
   }
 
   void BeginMap(const Schema& schema, size_t) {
-    StackEntry entry;
-    entry.fieldName = CurrentKey(schema);
-    entry.isMap = true;
-    m_stack.push_back(std::move(entry));
+    WriteFieldName(schema);
+    m_buf += '{';
+    m_depth++;
+    m_needsComma[m_depth] = false;
+    m_isMap[m_depth] = true;
+    m_isList[m_depth] = false;
   }
 
   void WriteMapKey(const Aws::String& key) { m_currentMapKey = key; }
 
   void EndMap() {
-    auto entry = std::move(m_stack.back());
-    m_stack.pop_back();
-
-    if (!m_stack.empty() && m_stack.back().isList) {
-      m_stack.back().listItems.push_back(std::move(entry.object));
-    } else {
-      CurrentObject().WithObject(entry.fieldName, std::move(entry.object));
-    }
+    m_depth--;
+    m_buf += '}';
   }
 
   void BeginNestedStructure(const Schema& schema) {
-    StackEntry entry;
-    entry.fieldName = CurrentKey(schema);
-    m_stack.push_back(std::move(entry));
+    WriteFieldName(schema);
+    m_buf += '{';
+    m_depth++;
+    m_needsComma[m_depth] = false;
+    m_isMap[m_depth] = false;
+    m_isList[m_depth] = false;
   }
 
   void EndNestedStructure() {
-    auto entry = std::move(m_stack.back());
-    m_stack.pop_back();
-
-    if (!m_stack.empty() && m_stack.back().isList) {
-      m_stack.back().listItems.push_back(std::move(entry.object));
-    } else {
-      CurrentObject().WithObject(entry.fieldName, std::move(entry.object));
-    }
+    m_depth--;
+    m_buf += '}';
   }
 
-  Aws::String GetPayload() const { return m_root.View().WriteCompact(); }
+  Aws::String GetPayload() const { return m_buf; }
 };
 
-JsonShapeSerializer::JsonShapeSerializer() : m_impl(new Impl) {}
+JsonShapeSerializer::JsonShapeSerializer() : m_impl(new Impl) { m_impl->m_buf.reserve(256); }
 JsonShapeSerializer::~JsonShapeSerializer() = default;
 
 void JsonShapeSerializer::BeginStructure(const Schema& schema) { m_impl->BeginStructure(schema); }
