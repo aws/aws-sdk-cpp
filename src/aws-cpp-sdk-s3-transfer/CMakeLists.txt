@@ -7,17 +7,24 @@ file( GLOB S3_TRANSFER_HEADERS "include/aws/s3-transfer/*.h" )
 
 file( GLOB S3_TRANSFER_SOURCE "source/s3-transfer/*.cpp" )
 
+file( GLOB S3_TRANSFER_INTERNAL_HEADERS "include/aws/s3-transfer/internal/*.h" )
+file( GLOB S3_TRANSFER_INTERNAL_SOURCE "source/s3-transfer/internal/*.cpp" )
+
 if(MSVC)
     source_group("Header Files\\aws\\s3-transfer" FILES ${S3_TRANSFER_HEADERS})
     source_group("Source Files\\s3-transfer" FILES ${S3_TRANSFER_SOURCE})
+    source_group("Header Files\\aws\\s3-transfer\\internal" FILES ${S3_TRANSFER_INTERNAL_HEADERS})
+    source_group("Source Files\\s3-transfer\\internal" FILES ${S3_TRANSFER_INTERNAL_SOURCE})
 endif()
 
 file(GLOB ALL_S3_TRANSFER_HEADERS
         ${S3_TRANSFER_HEADERS}
+        ${S3_TRANSFER_INTERNAL_HEADERS}
 )
 
 file(GLOB ALL_S3_TRANSFER_SOURCE
         ${S3_TRANSFER_SOURCE}
+        ${S3_TRANSFER_INTERNAL_SOURCE}
 )
 
 file(GLOB ALL_S3_TRANSFER
@@ -48,6 +55,7 @@ set_compiler_warnings(${PROJECT_NAME})
 
 setup_install()
 
-install (FILES ${ALL_S3_TRANSFER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/s3-transfer)
+install (FILES ${S3_TRANSFER_HEADERS}          DESTINATION ${INCLUDE_DIRECTORY}/aws/s3-transfer)
+install (FILES ${S3_TRANSFER_INTERNAL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/s3-transfer/internal)
 
 do_packaging()

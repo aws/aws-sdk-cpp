@@ -1,0 +1,44 @@
+/**
+* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+#pragma once
+#include <aws/s3-transfer/S3Transfer_EXPORTS.h>
+#include <future>
+#include <memory>
+#include <aws/s3-transfer/DownloadResponse.h>
+
+
+namespace Aws {
+namespace S3 {
+namespace Transfer {
+
+class DownloadHandleImpl;
+
+/**
+ * Returned from S3TransferManager::Download to represent a single in-flight download. The
+ * handle is freely copyable; all copies share the same underlying transfer state.
+ */
+class AWS_S3_TRANSFER_API DownloadHandle {
+public:
+  ~DownloadHandle();
+
+  /**
+   * Returns a future that resolves once the transfer finishes, succeeds, or fails.
+   */
+  std::shared_future<DownloadResponse> CompletionFuture() const;
+
+  /**
+   * Requests cancellation of the in-flight download. Returns immediately; the future
+   * returned by CompletionFuture will resolve with a failure once the cancel takes effect.
+   */
+  void Cancel();
+
+private:
+  std::shared_ptr<DownloadHandleImpl> m_impl;
+};
+
+
+}
+}
+}
