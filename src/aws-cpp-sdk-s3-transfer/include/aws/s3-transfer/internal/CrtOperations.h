@@ -23,7 +23,6 @@ namespace Internal {
  * Internal to the s3-transfer package; not part of the public API.
  */
 class CrtOperations {
-  // need to fill in proper definitions in future phase
  public:
   /**
    * Dispatch an upload as a CRT meta request. Returns a handle bound to the

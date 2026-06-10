@@ -9,7 +9,6 @@ namespace Aws {
 namespace S3 {
 namespace Transfer {
 namespace Internal {
-// need to fill in proper definitions in future phase
 
 UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl&, const UploadRequest&) {
   return UploadHandle();
