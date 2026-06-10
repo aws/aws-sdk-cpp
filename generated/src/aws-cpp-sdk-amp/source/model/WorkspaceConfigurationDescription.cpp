@@ -33,6 +33,14 @@ WorkspaceConfigurationDescription& WorkspaceConfigurationDescription::operator=(
     m_retentionPeriodInDays = jsonValue.GetInteger("retentionPeriodInDays");
     m_retentionPeriodInDaysHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("outOfOrderTimeWindowInSeconds")) {
+    m_outOfOrderTimeWindowInSeconds = jsonValue.GetInteger("outOfOrderTimeWindowInSeconds");
+    m_outOfOrderTimeWindowInSecondsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ruleQueryOffsetInSeconds")) {
+    m_ruleQueryOffsetInSeconds = jsonValue.GetInteger("ruleQueryOffsetInSeconds");
+    m_ruleQueryOffsetInSecondsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +61,14 @@ JsonValue WorkspaceConfigurationDescription::Jsonize() const {
 
   if (m_retentionPeriodInDaysHasBeenSet) {
     payload.WithInteger("retentionPeriodInDays", m_retentionPeriodInDays);
+  }
+
+  if (m_outOfOrderTimeWindowInSecondsHasBeenSet) {
+    payload.WithInteger("outOfOrderTimeWindowInSeconds", m_outOfOrderTimeWindowInSeconds);
+  }
+
+  if (m_ruleQueryOffsetInSecondsHasBeenSet) {
+    payload.WithInteger("ruleQueryOffsetInSeconds", m_ruleQueryOffsetInSeconds);
   }
 
   return payload;

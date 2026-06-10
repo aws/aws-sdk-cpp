@@ -60,6 +60,14 @@ Aws::String RegisterDaemonTaskDefinitionRequest::SerializePayload() const {
     payload.WithArray("tags", std::move(tagsJsonList));
   }
 
+  if (m_pidModeHasBeenSet) {
+    payload.WithString("pidMode", DaemonPidModeMapper::GetNameForDaemonPidMode(m_pidMode));
+  }
+
+  if (m_ipcModeHasBeenSet) {
+    payload.WithString("ipcMode", DaemonIpcModeMapper::GetNameForDaemonIpcMode(m_ipcMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

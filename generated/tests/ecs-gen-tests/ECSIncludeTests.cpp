@@ -100,7 +100,9 @@
 #include <aws/ecs/model/DaemonDeploymentStatus.h>
 #include <aws/ecs/model/DaemonDeploymentSummary.h>
 #include <aws/ecs/model/DaemonDetail.h>
+#include <aws/ecs/model/DaemonIpcMode.h>
 #include <aws/ecs/model/DaemonLinuxParameters.h>
+#include <aws/ecs/model/DaemonPidMode.h>
 #include <aws/ecs/model/DaemonPropagateTags.h>
 #include <aws/ecs/model/DaemonRevision.h>
 #include <aws/ecs/model/DaemonRevisionDetail.h>

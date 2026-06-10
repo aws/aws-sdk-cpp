@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DisassociateTrunkInterfaceRequest.h>
+#include <aws/ec2/model/DisassociateVpcCidrBlockRequest.h>
 #include <aws/ec2/model/EnableAddressTransferRequest.h>
 #include <aws/ec2/model/EnableAllowedImagesSettingsRequest.h>
 #include <aws/ec2/model/EnableAwsNetworkPerformanceMetricSubscriptionRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/GetVpnConnectionDeviceSampleConfigurationRequest.h>
 #include <aws/ec2/model/GetVpnConnectionDeviceTypesRequest.h>
 #include <aws/ec2/model/GetVpnTunnelReplacementStatusRequest.h>
-#include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListRequest.h>
-#include <aws/ec2/model/ImportImageRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,18 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DisassociateTrunkInterfaceOutcome EC2Client::DisassociateTrunkInterface(const DisassociateTrunkInterfaceRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateTrunkInterfaceOutcome(result.GetResultWithOwnership())
+                            : DisassociateTrunkInterfaceOutcome(std::move(result.GetError()));
+}
+
+DisassociateVpcCidrBlockOutcome EC2Client::DisassociateVpcCidrBlock(const DisassociateVpcCidrBlockRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateVpcCidrBlockOutcome(result.GetResultWithOwnership())
+                            : DisassociateVpcCidrBlockOutcome(std::move(result.GetError()));
+}
 
 EnableAddressTransferOutcome EC2Client::EnableAddressTransfer(const EnableAddressTransferRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -758,16 +770,4 @@ GetVpnTunnelReplacementStatusOutcome EC2Client::GetVpnTunnelReplacementStatus(co
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetVpnTunnelReplacementStatusOutcome(result.GetResultWithOwnership())
                             : GetVpnTunnelReplacementStatusOutcome(std::move(result.GetError()));
-}
-
-ImportClientVpnClientCertificateRevocationListOutcome EC2Client::ImportClientVpnClientCertificateRevocationList(
-    const ImportClientVpnClientCertificateRevocationListRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ImportClientVpnClientCertificateRevocationListOutcome(result.GetResultWithOwnership())
-                            : ImportClientVpnClientCertificateRevocationListOutcome(std::move(result.GetError()));
-}
-
-ImportImageOutcome EC2Client::ImportImage(const ImportImageRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ImportImageOutcome(result.GetResultWithOwnership()) : ImportImageOutcome(std::move(result.GetError()));
 }

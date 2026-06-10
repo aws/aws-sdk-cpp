@@ -15,6 +15,7 @@
 #include <aws/ec2/model/HypervisorType.h>
 #include <aws/ec2/model/ImageState.h>
 #include <aws/ec2/model/ImageTypeValues.h>
+#include <aws/ec2/model/ImageWatermark.h>
 #include <aws/ec2/model/ImdsSupportValues.h>
 #include <aws/ec2/model/PlatformValues.h>
 #include <aws/ec2/model/ProductCode.h>
@@ -546,6 +547,30 @@ class Image {
 
   ///@{
   /**
+   * <p>The watermarks attached to the AMI.</p>
+   */
+  inline const Aws::Vector<ImageWatermark>& GetImageWatermarks() const { return m_imageWatermarks; }
+  inline bool ImageWatermarksHasBeenSet() const { return m_imageWatermarksHasBeenSet; }
+  template <typename ImageWatermarksT = Aws::Vector<ImageWatermark>>
+  void SetImageWatermarks(ImageWatermarksT&& value) {
+    m_imageWatermarksHasBeenSet = true;
+    m_imageWatermarks = std::forward<ImageWatermarksT>(value);
+  }
+  template <typename ImageWatermarksT = Aws::Vector<ImageWatermark>>
+  Image& WithImageWatermarks(ImageWatermarksT&& value) {
+    SetImageWatermarks(std::forward<ImageWatermarksT>(value));
+    return *this;
+  }
+  template <typename ImageWatermarksT = ImageWatermark>
+  Image& AddImageWatermarks(ImageWatermarksT&& value) {
+    m_imageWatermarksHasBeenSet = true;
+    m_imageWatermarks.emplace_back(std::forward<ImageWatermarksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the AMI.</p>
    */
   inline const Aws::String& GetImageId() const { return m_imageId; }
@@ -812,6 +837,8 @@ class Image {
 
   bool m_freeTierEligible{false};
 
+  Aws::Vector<ImageWatermark> m_imageWatermarks;
+
   Aws::String m_imageId;
 
   Aws::String m_imageLocation;
@@ -860,6 +887,7 @@ class Image {
   bool m_sourceImageIdHasBeenSet = false;
   bool m_sourceImageRegionHasBeenSet = false;
   bool m_freeTierEligibleHasBeenSet = false;
+  bool m_imageWatermarksHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
   bool m_imageLocationHasBeenSet = false;
   bool m_stateHasBeenSet = false;

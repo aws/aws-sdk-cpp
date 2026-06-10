@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeDhcpOptionsRequest.h>
 #include <aws/ec2/model/DescribeEgressOnlyInternetGatewaysRequest.h>
 #include <aws/ec2/model/DescribeElasticGpusRequest.h>
 #include <aws/ec2/model/DescribeExportImageTasksRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/DescribeSecurityGroupVpcAssociationsRequest.h>
 #include <aws/ec2/model/DescribeSecurityGroupsRequest.h>
 #include <aws/ec2/model/DescribeServiceLinkVirtualInterfacesRequest.h>
-#include <aws/ec2/model/DescribeSnapshotAttributeRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeDhcpOptionsOutcome EC2Client::DescribeDhcpOptions(const DescribeDhcpOptionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDhcpOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeDhcpOptionsOutcome(std::move(result.GetError()));
+}
 
 DescribeEgressOnlyInternetGatewaysOutcome EC2Client::DescribeEgressOnlyInternetGateways(
     const DescribeEgressOnlyInternetGatewaysRequest& request) const {
@@ -753,10 +759,4 @@ DescribeServiceLinkVirtualInterfacesOutcome EC2Client::DescribeServiceLinkVirtua
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeServiceLinkVirtualInterfacesOutcome(result.GetResultWithOwnership())
                             : DescribeServiceLinkVirtualInterfacesOutcome(std::move(result.GetError()));
-}
-
-DescribeSnapshotAttributeOutcome EC2Client::DescribeSnapshotAttribute(const DescribeSnapshotAttributeRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSnapshotAttributeOutcome(result.GetResultWithOwnership())
-                            : DescribeSnapshotAttributeOutcome(std::move(result.GetError()));
 }

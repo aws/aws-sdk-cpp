@@ -60,6 +60,7 @@
 #include <aws/ec2/model/AssociateTrunkInterfaceResponse.h>
 #include <aws/ec2/model/AssociateVpcCidrBlockResponse.h>
 #include <aws/ec2/model/AttachClassicLinkVpcResponse.h>
+#include <aws/ec2/model/AttachImageWatermarkResponse.h>
 #include <aws/ec2/model/AttachNetworkInterfaceResponse.h>
 #include <aws/ec2/model/AttachVerifiedAccessTrustProviderResponse.h>
 #include <aws/ec2/model/AttachVolumeResponse.h>
@@ -641,6 +642,7 @@
 #include <aws/ec2/model/DescribeVpnGatewaysRequest.h>
 #include <aws/ec2/model/DescribeVpnGatewaysResponse.h>
 #include <aws/ec2/model/DetachClassicLinkVpcResponse.h>
+#include <aws/ec2/model/DetachImageWatermarkResponse.h>
 #include <aws/ec2/model/DetachVerifiedAccessTrustProviderResponse.h>
 #include <aws/ec2/model/DetachVolumeResponse.h>
 #include <aws/ec2/model/DisableAddressTransferResponse.h>
@@ -1038,6 +1040,7 @@ class AssociateTransitGatewayRouteTableRequest;
 class AssociateTrunkInterfaceRequest;
 class AssociateVpcCidrBlockRequest;
 class AttachClassicLinkVpcRequest;
+class AttachImageWatermarkRequest;
 class AttachInternetGatewayRequest;
 class AttachNetworkInterfaceRequest;
 class AttachVerifiedAccessTrustProviderRequest;
@@ -1457,6 +1460,7 @@ class DescribeVpnConcentratorsRequest;
 class DescribeVpnConnectionsRequest;
 class DescribeVpnGatewaysRequest;
 class DetachClassicLinkVpcRequest;
+class DetachImageWatermarkRequest;
 class DetachInternetGatewayRequest;
 class DetachNetworkInterfaceRequest;
 class DetachVerifiedAccessTrustProviderRequest;
@@ -1810,6 +1814,7 @@ typedef Aws::Utils::Outcome<AssociateTransitGatewayRouteTableResponse, EC2Error>
 typedef Aws::Utils::Outcome<AssociateTrunkInterfaceResponse, EC2Error> AssociateTrunkInterfaceOutcome;
 typedef Aws::Utils::Outcome<AssociateVpcCidrBlockResponse, EC2Error> AssociateVpcCidrBlockOutcome;
 typedef Aws::Utils::Outcome<AttachClassicLinkVpcResponse, EC2Error> AttachClassicLinkVpcOutcome;
+typedef Aws::Utils::Outcome<AttachImageWatermarkResponse, EC2Error> AttachImageWatermarkOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> AttachInternetGatewayOutcome;
 typedef Aws::Utils::Outcome<AttachNetworkInterfaceResponse, EC2Error> AttachNetworkInterfaceOutcome;
 typedef Aws::Utils::Outcome<AttachVerifiedAccessTrustProviderResponse, EC2Error> AttachVerifiedAccessTrustProviderOutcome;
@@ -2246,6 +2251,7 @@ typedef Aws::Utils::Outcome<DescribeVpnConcentratorsResponse, EC2Error> Describe
 typedef Aws::Utils::Outcome<DescribeVpnConnectionsResponse, EC2Error> DescribeVpnConnectionsOutcome;
 typedef Aws::Utils::Outcome<DescribeVpnGatewaysResponse, EC2Error> DescribeVpnGatewaysOutcome;
 typedef Aws::Utils::Outcome<DetachClassicLinkVpcResponse, EC2Error> DetachClassicLinkVpcOutcome;
+typedef Aws::Utils::Outcome<DetachImageWatermarkResponse, EC2Error> DetachImageWatermarkOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DetachInternetGatewayOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DetachNetworkInterfaceOutcome;
 typedef Aws::Utils::Outcome<DetachVerifiedAccessTrustProviderResponse, EC2Error> DetachVerifiedAccessTrustProviderOutcome;
@@ -2617,6 +2623,7 @@ typedef std::future<AssociateTransitGatewayRouteTableOutcome> AssociateTransitGa
 typedef std::future<AssociateTrunkInterfaceOutcome> AssociateTrunkInterfaceOutcomeCallable;
 typedef std::future<AssociateVpcCidrBlockOutcome> AssociateVpcCidrBlockOutcomeCallable;
 typedef std::future<AttachClassicLinkVpcOutcome> AttachClassicLinkVpcOutcomeCallable;
+typedef std::future<AttachImageWatermarkOutcome> AttachImageWatermarkOutcomeCallable;
 typedef std::future<AttachInternetGatewayOutcome> AttachInternetGatewayOutcomeCallable;
 typedef std::future<AttachNetworkInterfaceOutcome> AttachNetworkInterfaceOutcomeCallable;
 typedef std::future<AttachVerifiedAccessTrustProviderOutcome> AttachVerifiedAccessTrustProviderOutcomeCallable;
@@ -3043,6 +3050,7 @@ typedef std::future<DescribeVpnConcentratorsOutcome> DescribeVpnConcentratorsOut
 typedef std::future<DescribeVpnConnectionsOutcome> DescribeVpnConnectionsOutcomeCallable;
 typedef std::future<DescribeVpnGatewaysOutcome> DescribeVpnGatewaysOutcomeCallable;
 typedef std::future<DetachClassicLinkVpcOutcome> DetachClassicLinkVpcOutcomeCallable;
+typedef std::future<DetachImageWatermarkOutcome> DetachImageWatermarkOutcomeCallable;
 typedef std::future<DetachInternetGatewayOutcome> DetachInternetGatewayOutcomeCallable;
 typedef std::future<DetachNetworkInterfaceOutcome> DetachNetworkInterfaceOutcomeCallable;
 typedef std::future<DetachVerifiedAccessTrustProviderOutcome> DetachVerifiedAccessTrustProviderOutcomeCallable;
@@ -3490,6 +3498,9 @@ typedef std::function<void(const EC2Client*, const Model::AssociateVpcCidrBlockR
 typedef std::function<void(const EC2Client*, const Model::AttachClassicLinkVpcRequest&, const Model::AttachClassicLinkVpcOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AttachClassicLinkVpcResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::AttachImageWatermarkRequest&, const Model::AttachImageWatermarkOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AttachImageWatermarkResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::AttachInternetGatewayRequest&, const Model::AttachInternetGatewayOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AttachInternetGatewayResponseReceivedHandler;
@@ -4919,6 +4930,9 @@ typedef std::function<void(const EC2Client*, const Model::DescribeVpnGatewaysReq
 typedef std::function<void(const EC2Client*, const Model::DetachClassicLinkVpcRequest&, const Model::DetachClassicLinkVpcOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DetachClassicLinkVpcResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DetachImageWatermarkRequest&, const Model::DetachImageWatermarkOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DetachImageWatermarkResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DetachInternetGatewayRequest&, const Model::DetachInternetGatewayOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DetachInternetGatewayResponseReceivedHandler;

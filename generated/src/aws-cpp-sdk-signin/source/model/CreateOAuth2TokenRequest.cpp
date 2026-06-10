@@ -21,3 +21,10 @@ Aws::String CreateOAuth2TokenRequest::SerializePayload() const {
 
   return payload.View().WriteReadable();
 }
+
+CreateOAuth2TokenRequest::EndpointParameters CreateOAuth2TokenRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("IsControlPlane"), false, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

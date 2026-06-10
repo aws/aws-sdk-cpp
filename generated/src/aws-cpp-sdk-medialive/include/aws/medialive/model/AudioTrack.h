@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/AudioPreMixerSettings.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -17,7 +20,8 @@ namespace MediaLive {
 namespace Model {
 
 /**
- * Audio Track<p><h3>See Also:</h3>   <a
+ * Represents a single audio track for selection with optional pre-mixer
+ * settings<p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioTrack">AWS
  * API Reference</a></p>
  */
@@ -43,9 +47,34 @@ class AudioTrack {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Optional audio pre-mixer settings for this track.
+When specified, allows
+   * per-track audio processing including channel remixing,
+gain adjustment, and
+   * loudness normalization before interleaving.
+   */
+  inline const AudioPreMixerSettings& GetPremixSettings() const { return m_premixSettings; }
+  inline bool PremixSettingsHasBeenSet() const { return m_premixSettingsHasBeenSet; }
+  template <typename PremixSettingsT = AudioPreMixerSettings>
+  void SetPremixSettings(PremixSettingsT&& value) {
+    m_premixSettingsHasBeenSet = true;
+    m_premixSettings = std::forward<PremixSettingsT>(value);
+  }
+  template <typename PremixSettingsT = AudioPreMixerSettings>
+  AudioTrack& WithPremixSettings(PremixSettingsT&& value) {
+    SetPremixSettings(std::forward<PremixSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_track{0};
+
+  AudioPreMixerSettings m_premixSettings;
   bool m_trackHasBeenSet = false;
+  bool m_premixSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

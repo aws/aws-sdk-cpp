@@ -17,6 +17,8 @@ namespace AudioNormalizationAlgorithmMapper {
 
 static const int ITU_1770_1_HASH = HashingUtils::HashString("ITU_1770_1");
 static const int ITU_1770_2_HASH = HashingUtils::HashString("ITU_1770_2");
+static const int ITU_1770_3_HASH = HashingUtils::HashString("ITU_1770_3");
+static const int ITU_1770_4_HASH = HashingUtils::HashString("ITU_1770_4");
 
 AudioNormalizationAlgorithm GetAudioNormalizationAlgorithmForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ AudioNormalizationAlgorithm GetAudioNormalizationAlgorithmForName(const Aws::Str
     return AudioNormalizationAlgorithm::ITU_1770_1;
   } else if (hashCode == ITU_1770_2_HASH) {
     return AudioNormalizationAlgorithm::ITU_1770_2;
+  } else if (hashCode == ITU_1770_3_HASH) {
+    return AudioNormalizationAlgorithm::ITU_1770_3;
+  } else if (hashCode == ITU_1770_4_HASH) {
+    return AudioNormalizationAlgorithm::ITU_1770_4;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForAudioNormalizationAlgorithm(AudioNormalizationAlgorithm en
       return "ITU_1770_1";
     case AudioNormalizationAlgorithm::ITU_1770_2:
       return "ITU_1770_2";
+    case AudioNormalizationAlgorithm::ITU_1770_3:
+      return "ITU_1770_3";
+    case AudioNormalizationAlgorithm::ITU_1770_4:
+      return "ITU_1770_4";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

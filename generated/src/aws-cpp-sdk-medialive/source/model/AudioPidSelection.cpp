@@ -22,6 +22,13 @@ AudioPidSelection& AudioPidSelection::operator=(JsonView jsonValue) {
     m_pid = jsonValue.GetInteger("pid");
     m_pidHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("pids")) {
+    Aws::Utils::Array<JsonView> pidsJsonList = jsonValue.GetArray("pids");
+    for (unsigned pidsIndex = 0; pidsIndex < pidsJsonList.GetLength(); ++pidsIndex) {
+      m_pids.push_back(pidsJsonList[pidsIndex].AsObject());
+    }
+    m_pidsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +37,14 @@ JsonValue AudioPidSelection::Jsonize() const {
 
   if (m_pidHasBeenSet) {
     payload.WithInteger("pid", m_pid);
+  }
+
+  if (m_pidsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pidsJsonList(m_pids.size());
+    for (unsigned pidsIndex = 0; pidsIndex < pidsJsonList.GetLength(); ++pidsIndex) {
+      pidsJsonList[pidsIndex].AsObject(m_pids[pidsIndex].Jsonize());
+    }
+    payload.WithArray("pids", std::move(pidsJsonList));
   }
 
   return payload;

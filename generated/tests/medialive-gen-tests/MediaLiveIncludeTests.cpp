@@ -58,11 +58,14 @@
 #include <aws/medialive/model/AudioLanguageSelectionPolicy.h>
 #include <aws/medialive/model/AudioNormalizationAlgorithm.h>
 #include <aws/medialive/model/AudioNormalizationAlgorithmControl.h>
+#include <aws/medialive/model/AudioNormalizationPeakCalculation.h>
 #include <aws/medialive/model/AudioNormalizationSettings.h>
 #include <aws/medialive/model/AudioOnlyHlsSegmentType.h>
 #include <aws/medialive/model/AudioOnlyHlsSettings.h>
 #include <aws/medialive/model/AudioOnlyHlsTrackType.h>
+#include <aws/medialive/model/AudioPid.h>
 #include <aws/medialive/model/AudioPidSelection.h>
+#include <aws/medialive/model/AudioPreMixerSettings.h>
 #include <aws/medialive/model/AudioSelector.h>
 #include <aws/medialive/model/AudioSelectorSettings.h>
 #include <aws/medialive/model/AudioSilenceFailoverSettings.h>

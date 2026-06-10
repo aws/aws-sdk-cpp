@@ -22,6 +22,10 @@ AudioTrack& AudioTrack::operator=(JsonView jsonValue) {
     m_track = jsonValue.GetInteger("track");
     m_trackHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("premixSettings")) {
+    m_premixSettings = jsonValue.GetObject("premixSettings");
+    m_premixSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue AudioTrack::Jsonize() const {
 
   if (m_trackHasBeenSet) {
     payload.WithInteger("track", m_track);
+  }
+
+  if (m_premixSettingsHasBeenSet) {
+    payload.WithObject("premixSettings", m_premixSettings.Jsonize());
   }
 
   return payload;

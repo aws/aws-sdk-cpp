@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceGroupRequest.h>
 #include <aws/ec2/model/DeleteManagedPrefixListRequest.h>
 #include <aws/ec2/model/DeleteNatGatewayRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclEntryRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/DescribeConversionTasksRequest.h>
 #include <aws/ec2/model/DescribeCustomerGatewaysRequest.h>
 #include <aws/ec2/model/DescribeDeclarativePoliciesReportsRequest.h>
-#include <aws/ec2/model/DescribeDhcpOptionsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,13 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteLocalGatewayVirtualInterfaceGroupOutcome EC2Client::DeleteLocalGatewayVirtualInterfaceGroup(
+    const DeleteLocalGatewayVirtualInterfaceGroupRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLocalGatewayVirtualInterfaceGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteLocalGatewayVirtualInterfaceGroupOutcome(std::move(result.GetError()));
+}
 
 DeleteManagedPrefixListOutcome EC2Client::DeleteManagedPrefixList(const DeleteManagedPrefixListRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -752,10 +759,4 @@ DescribeDeclarativePoliciesReportsOutcome EC2Client::DescribeDeclarativePolicies
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeDeclarativePoliciesReportsOutcome(result.GetResultWithOwnership())
                             : DescribeDeclarativePoliciesReportsOutcome(std::move(result.GetError()));
-}
-
-DescribeDhcpOptionsOutcome EC2Client::DescribeDhcpOptions(const DescribeDhcpOptionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeDhcpOptionsOutcome(result.GetResultWithOwnership())
-                            : DescribeDhcpOptionsOutcome(std::move(result.GetError()));
 }

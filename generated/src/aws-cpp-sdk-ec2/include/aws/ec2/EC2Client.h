@@ -1388,6 +1388,41 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Attaches a watermark to a non-public AMI. The watermark is a structured
+   * identifier that automatically propagates to all derivative images created
+   * through <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRestoreImageTask.html">CreateRestoreImageTask</a>.</p>
+   * <p>Only the AMI owner can attach watermarks. Watermarks cannot be added to
+   * public AMIs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachImageWatermark">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AttachImageWatermarkOutcome AttachImageWatermark(const Model::AttachImageWatermarkRequest& request) const;
+
+  /**
+   * A Callable wrapper for AttachImageWatermark that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AttachImageWatermarkRequestT = Model::AttachImageWatermarkRequest>
+  Model::AttachImageWatermarkOutcomeCallable AttachImageWatermarkCallable(const AttachImageWatermarkRequestT& request) const {
+    return SubmitCallable(&EC2Client::AttachImageWatermark, request);
+  }
+
+  /**
+   * An Async wrapper for AttachImageWatermark that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AttachImageWatermarkRequestT = Model::AttachImageWatermarkRequest>
+  void AttachImageWatermarkAsync(const AttachImageWatermarkRequestT& request, const AttachImageWatermarkResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::AttachImageWatermark, request, handler, context);
+  }
+
+  /**
    * <p>Attaches an internet gateway or a virtual private gateway to a VPC, enabling
    * connectivity between the internet and the VPC. For more information, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet
@@ -5610,7 +5645,7 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   /**
    * <p>Create a VPC Block Public Access (BPA) exclusion. A VPC BPA exclusion is a
    * mode that can be applied to a single VPC or subnet that exempts it from the
-   * account’s BPA mode and will allow bidirectional or egress-only access. You can
+   * account���s BPA mode and will allow bidirectional or egress-only access. You can
    * create BPA exclusions for VPCs and subnets even when BPA is not enabled on the
    * account to ensure that there is no traffic disruption to the exclusions when VPC
    * BPA is turned on. To learn more about VPC BPA, see <a
@@ -15268,6 +15303,36 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   void DetachClassicLinkVpcAsync(const DetachClassicLinkVpcRequestT& request, const DetachClassicLinkVpcResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DetachClassicLinkVpc, request, handler, context);
+  }
+
+  /**
+   * <p>Removes a watermark from the specified AMI. This is an idempotent operation.
+   * It succeeds even if the watermark does not exist on the image.</p> <p>Removing a
+   * watermark from an image does not affect derivative images that already carry the
+   * watermark.</p> <p>Only the AMI owner can detach watermarks.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachImageWatermark">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DetachImageWatermarkOutcome DetachImageWatermark(const Model::DetachImageWatermarkRequest& request) const;
+
+  /**
+   * A Callable wrapper for DetachImageWatermark that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DetachImageWatermarkRequestT = Model::DetachImageWatermarkRequest>
+  Model::DetachImageWatermarkOutcomeCallable DetachImageWatermarkCallable(const DetachImageWatermarkRequestT& request) const {
+    return SubmitCallable(&EC2Client::DetachImageWatermark, request);
+  }
+
+  /**
+   * An Async wrapper for DetachImageWatermark that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DetachImageWatermarkRequestT = Model::DetachImageWatermarkRequest>
+  void DetachImageWatermarkAsync(const DetachImageWatermarkRequestT& request, const DetachImageWatermarkResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DetachImageWatermark, request, handler, context);
   }
 
   /**

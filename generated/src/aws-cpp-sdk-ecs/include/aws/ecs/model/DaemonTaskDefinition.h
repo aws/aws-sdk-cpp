@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/DaemonContainerDefinition.h>
+#include <aws/ecs/model/DaemonIpcMode.h>
+#include <aws/ecs/model/DaemonPidMode.h>
 #include <aws/ecs/model/DaemonTaskDefinitionStatus.h>
 #include <aws/ecs/model/DaemonVolume.h>
 
@@ -293,6 +295,45 @@ class DaemonTaskDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The process namespace mode for the daemon. A value of <code>shared</code>
+   * means the daemon shares the PID namespace with co-located tasks, giving it
+   * visibility into application processes. A value of <code>none</code> means the
+   * daemon has its own isolated PID namespace.</p>
+   */
+  inline DaemonPidMode GetPidMode() const { return m_pidMode; }
+  inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
+  inline void SetPidMode(DaemonPidMode value) {
+    m_pidModeHasBeenSet = true;
+    m_pidMode = value;
+  }
+  inline DaemonTaskDefinition& WithPidMode(DaemonPidMode value) {
+    SetPidMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The IPC namespace mode for the daemon. A value of <code>shared</code> means
+   * the daemon shares the IPC namespace with co-located tasks, allowing
+   * communication through POSIX shared memory, semaphores, and message queues. A
+   * value of <code>none</code> means the daemon has its own isolated IPC
+   * namespace.</p>
+   */
+  inline DaemonIpcMode GetIpcMode() const { return m_ipcMode; }
+  inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }
+  inline void SetIpcMode(DaemonIpcMode value) {
+    m_ipcModeHasBeenSet = true;
+    m_ipcMode = value;
+  }
+  inline DaemonTaskDefinition& WithIpcMode(DaemonIpcMode value) {
+    SetIpcMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_daemonTaskDefinitionArn;
 
@@ -319,6 +360,10 @@ class DaemonTaskDefinition {
   Aws::Utils::DateTime m_deleteRequestedAt{};
 
   Aws::String m_registeredBy;
+
+  DaemonPidMode m_pidMode{DaemonPidMode::NOT_SET};
+
+  DaemonIpcMode m_ipcMode{DaemonIpcMode::NOT_SET};
   bool m_daemonTaskDefinitionArnHasBeenSet = false;
   bool m_familyHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
@@ -332,6 +377,8 @@ class DaemonTaskDefinition {
   bool m_registeredAtHasBeenSet = false;
   bool m_deleteRequestedAtHasBeenSet = false;
   bool m_registeredByHasBeenSet = false;
+  bool m_pidModeHasBeenSet = false;
+  bool m_ipcModeHasBeenSet = false;
 };
 
 }  // namespace Model

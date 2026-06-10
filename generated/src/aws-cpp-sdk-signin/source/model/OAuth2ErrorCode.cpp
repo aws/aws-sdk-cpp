@@ -21,6 +21,9 @@ static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("INSUF
 static const int AUTHCODE_EXPIRED_HASH = HashingUtils::HashString("AUTHCODE_EXPIRED");
 static const int server_error_HASH = HashingUtils::HashString("server_error");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("INVALID_REQUEST");
+static const int RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND");
+static const int CONFLICT_HASH = HashingUtils::HashString("CONFLICT");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("SERVICE_QUOTA_EXCEEDED");
 
 OAuth2ErrorCode GetOAuth2ErrorCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +39,12 @@ OAuth2ErrorCode GetOAuth2ErrorCodeForName(const Aws::String& name) {
     return OAuth2ErrorCode::server_error;
   } else if (hashCode == INVALID_REQUEST_HASH) {
     return OAuth2ErrorCode::INVALID_REQUEST;
+  } else if (hashCode == RESOURCE_NOT_FOUND_HASH) {
+    return OAuth2ErrorCode::RESOURCE_NOT_FOUND;
+  } else if (hashCode == CONFLICT_HASH) {
+    return OAuth2ErrorCode::CONFLICT;
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
+    return OAuth2ErrorCode::SERVICE_QUOTA_EXCEEDED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +71,12 @@ Aws::String GetNameForOAuth2ErrorCode(OAuth2ErrorCode enumValue) {
       return "server_error";
     case OAuth2ErrorCode::INVALID_REQUEST:
       return "INVALID_REQUEST";
+    case OAuth2ErrorCode::RESOURCE_NOT_FOUND:
+      return "RESOURCE_NOT_FOUND";
+    case OAuth2ErrorCode::CONFLICT:
+      return "CONFLICT";
+    case OAuth2ErrorCode::SERVICE_QUOTA_EXCEEDED:
+      return "SERVICE_QUOTA_EXCEEDED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

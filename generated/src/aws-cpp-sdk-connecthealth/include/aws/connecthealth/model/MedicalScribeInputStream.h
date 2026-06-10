@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connecthealth/ConnectHealth_EXPORTS.h>
 #include <aws/connecthealth/model/MedicalScribeAudioEvent.h>
+#include <aws/connecthealth/model/MedicalScribeBinaryAudioEvent.h>
 #include <aws/connecthealth/model/MedicalScribeConfigurationEvent.h>
 #include <aws/connecthealth/model/MedicalScribeSessionControlEvent.h>
 #include <aws/core/utils/event/EventStream.h>
@@ -34,6 +35,17 @@ class AWS_CONNECTHEALTH_API MedicalScribeInputStream : public Aws::Utils::Event:
     msg.InsertEventHeader(":event-type", Aws::String("audioEvent"));
     msg.InsertEventHeader(":content-type", Aws::String("application/json"));
     msg.WriteEventPayload(value.Jsonize().View().WriteCompact());
+    WriteEvent(msg);
+    return *this;
+  }
+  MedicalScribeInputStream& WriteMedicalScribeBinaryAudioEvent(const MedicalScribeBinaryAudioEvent& value) {
+    Aws::Utils::Event::Message msg;
+    if (!value.GetAudioChunk().empty()) {
+      msg.InsertEventHeader(":message-type", Aws::String("event"));
+      msg.InsertEventHeader(":event-type", Aws::String("binaryAudioEvent"));
+      msg.InsertEventHeader(":content-type", Aws::String("application/octet-stream"));
+      msg.WriteEventPayload(value.GetAudioChunk());
+    }
     WriteEvent(msg);
     return *this;
   }

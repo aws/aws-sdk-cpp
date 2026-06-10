@@ -77,6 +77,14 @@ DaemonTaskDefinition& DaemonTaskDefinition::operator=(JsonView jsonValue) {
     m_registeredBy = jsonValue.GetString("registeredBy");
     m_registeredByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("pidMode")) {
+    m_pidMode = DaemonPidModeMapper::GetDaemonPidModeForName(jsonValue.GetString("pidMode"));
+    m_pidModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ipcMode")) {
+    m_ipcMode = DaemonIpcModeMapper::GetDaemonIpcModeForName(jsonValue.GetString("ipcMode"));
+    m_ipcModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -142,6 +150,14 @@ JsonValue DaemonTaskDefinition::Jsonize() const {
 
   if (m_registeredByHasBeenSet) {
     payload.WithString("registeredBy", m_registeredBy);
+  }
+
+  if (m_pidModeHasBeenSet) {
+    payload.WithString("pidMode", DaemonPidModeMapper::GetNameForDaemonPidMode(m_pidMode));
+  }
+
+  if (m_ipcModeHasBeenSet) {
+    payload.WithString("ipcMode", DaemonIpcModeMapper::GetNameForDaemonIpcMode(m_ipcMode));
   }
 
   return payload;

@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/PurchaseReservedInstancesOfferingRequest.h>
+#include <aws/ec2/model/PurchaseScheduledInstancesRequest.h>
 #include <aws/ec2/model/RebootInstancesRequest.h>
 #include <aws/ec2/model/RegisterImageRequest.h>
 #include <aws/ec2/model/RegisterInstanceEventNotificationAttributesRequest.h>
@@ -98,6 +100,19 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+PurchaseReservedInstancesOfferingOutcome EC2Client::PurchaseReservedInstancesOffering(
+    const PurchaseReservedInstancesOfferingRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PurchaseReservedInstancesOfferingOutcome(result.GetResultWithOwnership())
+                            : PurchaseReservedInstancesOfferingOutcome(std::move(result.GetError()));
+}
+
+PurchaseScheduledInstancesOutcome EC2Client::PurchaseScheduledInstances(const PurchaseScheduledInstancesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PurchaseScheduledInstancesOutcome(result.GetResultWithOwnership())
+                            : PurchaseScheduledInstancesOutcome(std::move(result.GetError()));
+}
 
 RebootInstancesOutcome EC2Client::RebootInstances(const RebootInstancesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

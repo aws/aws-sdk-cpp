@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeSnapshotAttributeRequest.h>
 #include <aws/ec2/model/DescribeSnapshotTierStatusRequest.h>
 #include <aws/ec2/model/DescribeSnapshotsRequest.h>
 #include <aws/ec2/model/DescribeSpotDatafeedSubscriptionRequest.h>
@@ -76,6 +77,7 @@
 #include <aws/ec2/model/DescribeVpnConnectionsRequest.h>
 #include <aws/ec2/model/DescribeVpnGatewaysRequest.h>
 #include <aws/ec2/model/DetachClassicLinkVpcRequest.h>
+#include <aws/ec2/model/DetachImageWatermarkRequest.h>
 #include <aws/ec2/model/DetachInternetGatewayRequest.h>
 #include <aws/ec2/model/DetachNetworkInterfaceRequest.h>
 #include <aws/ec2/model/DetachVerifiedAccessTrustProviderRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/DisassociateTransitGatewayMulticastDomainRequest.h>
 #include <aws/ec2/model/DisassociateTransitGatewayPolicyTableRequest.h>
 #include <aws/ec2/model/DisassociateTransitGatewayRouteTableRequest.h>
-#include <aws/ec2/model/DisassociateTrunkInterfaceRequest.h>
-#include <aws/ec2/model/DisassociateVpcCidrBlockRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeSnapshotAttributeOutcome EC2Client::DescribeSnapshotAttribute(const DescribeSnapshotAttributeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSnapshotAttributeOutcome(result.GetResultWithOwnership())
+                            : DescribeSnapshotAttributeOutcome(std::move(result.GetError()));
+}
 
 DescribeSnapshotTierStatusOutcome EC2Client::DescribeSnapshotTierStatus(const DescribeSnapshotTierStatusRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -492,6 +498,12 @@ DetachClassicLinkVpcOutcome EC2Client::DetachClassicLinkVpc(const DetachClassicL
                             : DetachClassicLinkVpcOutcome(std::move(result.GetError()));
 }
 
+DetachImageWatermarkOutcome EC2Client::DetachImageWatermark(const DetachImageWatermarkRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachImageWatermarkOutcome(result.GetResultWithOwnership())
+                            : DetachImageWatermarkOutcome(std::move(result.GetError()));
+}
+
 DetachInternetGatewayOutcome EC2Client::DetachInternetGateway(const DetachInternetGatewayRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DetachInternetGatewayOutcome(result.GetResultWithOwnership())
@@ -757,16 +769,4 @@ DisassociateTransitGatewayRouteTableOutcome EC2Client::DisassociateTransitGatewa
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisassociateTransitGatewayRouteTableOutcome(result.GetResultWithOwnership())
                             : DisassociateTransitGatewayRouteTableOutcome(std::move(result.GetError()));
-}
-
-DisassociateTrunkInterfaceOutcome EC2Client::DisassociateTrunkInterface(const DisassociateTrunkInterfaceRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisassociateTrunkInterfaceOutcome(result.GetResultWithOwnership())
-                            : DisassociateTrunkInterfaceOutcome(std::move(result.GetError()));
-}
-
-DisassociateVpcCidrBlockOutcome EC2Client::DisassociateVpcCidrBlock(const DisassociateVpcCidrBlockRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisassociateVpcCidrBlockOutcome(result.GetResultWithOwnership())
-                            : DisassociateVpcCidrBlockOutcome(std::move(result.GetError()));
 }

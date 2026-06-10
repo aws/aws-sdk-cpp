@@ -31,5 +31,13 @@ Aws::String UpdateWorkspaceConfigurationRequest::SerializePayload() const {
     payload.WithInteger("retentionPeriodInDays", m_retentionPeriodInDays);
   }
 
+  if (m_outOfOrderTimeWindowInSecondsHasBeenSet) {
+    payload.WithInteger("outOfOrderTimeWindowInSeconds", m_outOfOrderTimeWindowInSeconds);
+  }
+
+  if (m_ruleQueryOffsetInSecondsHasBeenSet) {
+    payload.WithInteger("ruleQueryOffsetInSeconds", m_ruleQueryOffsetInSeconds);
+  }
+
   return payload.View().WriteReadable();
 }

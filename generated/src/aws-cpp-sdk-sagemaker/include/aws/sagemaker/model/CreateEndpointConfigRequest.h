@@ -145,13 +145,10 @@ class CreateEndpointConfigRequest : public SageMakerRequest {
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
    * Using Key Policies in Amazon Web Services KMS </a> </p>  <p>Certain
    * Nitro-based instances include local storage, dependent on the instance type.
-   * Local storage volumes are encrypted using a hardware module on the instance. You
-   * can't request a <code>KmsKeyId</code> when using an instance type with local
-   * storage. If any of the models that you specify in the
-   * <code>ProductionVariants</code> parameter use nitro-based instances with local
-   * storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you
-   * specify a value for <code>KmsKeyId</code> when using any nitro-based instances
-   * with local storage, the call to <code>CreateEndpointConfig</code> fails.</p>
+   * Local storage volumes are encrypted using a hardware module on the instance. If
+   * any of the models that you specify in the <code>ProductionVariants</code>
+   * parameter use nitro-based instances with local storage, the
+   * <code>KmsKeyId</code> parameter does not encrypt instance local storage.</p>
    * <p>For a list of instance types that support local instance storage, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
    * Store Volumes</a>.</p> <p>For more information about local instance storage

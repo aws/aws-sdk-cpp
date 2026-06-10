@@ -94,15 +94,55 @@ class WorkspaceConfigurationDescription {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>This field displays the out of order time window in seconds for accepting out
+   * of order samples.</p>
+   */
+  inline int GetOutOfOrderTimeWindowInSeconds() const { return m_outOfOrderTimeWindowInSeconds; }
+  inline bool OutOfOrderTimeWindowInSecondsHasBeenSet() const { return m_outOfOrderTimeWindowInSecondsHasBeenSet; }
+  inline void SetOutOfOrderTimeWindowInSeconds(int value) {
+    m_outOfOrderTimeWindowInSecondsHasBeenSet = true;
+    m_outOfOrderTimeWindowInSeconds = value;
+  }
+  inline WorkspaceConfigurationDescription& WithOutOfOrderTimeWindowInSeconds(int value) {
+    SetOutOfOrderTimeWindowInSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This field displays the duration in seconds that rule evaluation queries are
+   * offset into the past.</p>
+   */
+  inline int GetRuleQueryOffsetInSeconds() const { return m_ruleQueryOffsetInSeconds; }
+  inline bool RuleQueryOffsetInSecondsHasBeenSet() const { return m_ruleQueryOffsetInSecondsHasBeenSet; }
+  inline void SetRuleQueryOffsetInSeconds(int value) {
+    m_ruleQueryOffsetInSecondsHasBeenSet = true;
+    m_ruleQueryOffsetInSeconds = value;
+  }
+  inline WorkspaceConfigurationDescription& WithRuleQueryOffsetInSeconds(int value) {
+    SetRuleQueryOffsetInSeconds(value);
+    return *this;
+  }
+  ///@}
  private:
   WorkspaceConfigurationStatus m_status;
 
   Aws::Vector<LimitsPerLabelSet> m_limitsPerLabelSet;
 
   int m_retentionPeriodInDays{0};
+
+  int m_outOfOrderTimeWindowInSeconds{0};
+
+  int m_ruleQueryOffsetInSeconds{0};
   bool m_statusHasBeenSet = false;
   bool m_limitsPerLabelSetHasBeenSet = false;
   bool m_retentionPeriodInDaysHasBeenSet = false;
+  bool m_outOfOrderTimeWindowInSecondsHasBeenSet = false;
+  bool m_ruleQueryOffsetInSecondsHasBeenSet = false;
 };
 
 }  // namespace Model

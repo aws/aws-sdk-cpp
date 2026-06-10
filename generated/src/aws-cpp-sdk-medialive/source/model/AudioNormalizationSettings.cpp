@@ -31,6 +31,15 @@ AudioNormalizationSettings& AudioNormalizationSettings::operator=(JsonView jsonV
     m_targetLkfs = jsonValue.GetDouble("targetLkfs");
     m_targetLkfsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("peakCalculation")) {
+    m_peakCalculation =
+        AudioNormalizationPeakCalculationMapper::GetAudioNormalizationPeakCalculationForName(jsonValue.GetString("peakCalculation"));
+    m_peakCalculationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("peakLimiterThreshold")) {
+    m_peakLimiterThreshold = jsonValue.GetDouble("peakLimiterThreshold");
+    m_peakLimiterThresholdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -48,6 +57,15 @@ JsonValue AudioNormalizationSettings::Jsonize() const {
 
   if (m_targetLkfsHasBeenSet) {
     payload.WithDouble("targetLkfs", m_targetLkfs);
+  }
+
+  if (m_peakCalculationHasBeenSet) {
+    payload.WithString("peakCalculation",
+                       AudioNormalizationPeakCalculationMapper::GetNameForAudioNormalizationPeakCalculation(m_peakCalculation));
+  }
+
+  if (m_peakLimiterThresholdHasBeenSet) {
+    payload.WithDouble("peakLimiterThreshold", m_peakLimiterThreshold);
   }
 
   return payload;

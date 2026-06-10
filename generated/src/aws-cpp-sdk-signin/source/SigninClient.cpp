@@ -21,6 +21,13 @@
 #include <aws/signin/SigninEndpointProvider.h>
 #include <aws/signin/SigninErrorMarshaller.h>
 #include <aws/signin/model/CreateOAuth2TokenRequest.h>
+#include <aws/signin/model/DeleteConsoleAuthorizationConfigurationRequest.h>
+#include <aws/signin/model/DeleteResourcePermissionStatementRequest.h>
+#include <aws/signin/model/GetConsoleAuthorizationConfigurationRequest.h>
+#include <aws/signin/model/GetResourcePolicyRequest.h>
+#include <aws/signin/model/ListResourcePermissionStatementsRequest.h>
+#include <aws/signin/model/PutConsoleAuthorizationConfigurationRequest.h>
+#include <aws/signin/model/PutResourcePermissionStatementRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -184,4 +191,87 @@ CreateOAuth2TokenOutcome SigninClient::CreateOAuth2Token(const CreateOAuth2Token
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateOAuth2TokenOutcome(result.GetResultWithOwnership())
                             : CreateOAuth2TokenOutcome(std::move(result.GetError()));
+}
+
+DeleteConsoleAuthorizationConfigurationOutcome SigninClient::DeleteConsoleAuthorizationConfiguration(
+    const DeleteConsoleAuthorizationConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/delete-console-authorization-configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConsoleAuthorizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteConsoleAuthorizationConfigurationOutcome(std::move(result.GetError()));
+}
+
+DeleteResourcePermissionStatementOutcome SigninClient::DeleteResourcePermissionStatement(
+    const DeleteResourcePermissionStatementRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/delete-resource-permission-statement");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePermissionStatementOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePermissionStatementOutcome(std::move(result.GetError()));
+}
+
+GetConsoleAuthorizationConfigurationOutcome SigninClient::GetConsoleAuthorizationConfiguration(
+    const GetConsoleAuthorizationConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/get-console-authorization-configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConsoleAuthorizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetConsoleAuthorizationConfigurationOutcome(std::move(result.GetError()));
+}
+
+GetResourcePolicyOutcome SigninClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/get-resource-policy");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
+}
+
+ListResourcePermissionStatementsOutcome SigninClient::ListResourcePermissionStatements(
+    const ListResourcePermissionStatementsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/list-resource-permission-statements");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourcePermissionStatementsOutcome(result.GetResultWithOwnership())
+                            : ListResourcePermissionStatementsOutcome(std::move(result.GetError()));
+}
+
+PutConsoleAuthorizationConfigurationOutcome SigninClient::PutConsoleAuthorizationConfiguration(
+    const PutConsoleAuthorizationConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/put-console-authorization-configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutConsoleAuthorizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutConsoleAuthorizationConfigurationOutcome(std::move(result.GetError()));
+}
+
+PutResourcePermissionStatementOutcome SigninClient::PutResourcePermissionStatement(
+    const PutResourcePermissionStatementRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/put-resource-permission-statement");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePermissionStatementOutcome(result.GetResultWithOwnership())
+                            : PutResourcePermissionStatementOutcome(std::move(result.GetError()));
 }

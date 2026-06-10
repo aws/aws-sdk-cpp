@@ -61,6 +61,7 @@
 #include <aws/connecthealth/model/ManagedTemplate.h>
 #include <aws/connecthealth/model/ManagedTemplateResponse.h>
 #include <aws/connecthealth/model/MedicalScribeAudioEvent.h>
+#include <aws/connecthealth/model/MedicalScribeBinaryAudioEvent.h>
 #include <aws/connecthealth/model/MedicalScribeChannelDefinition.h>
 #include <aws/connecthealth/model/MedicalScribeConfigurationEvent.h>
 #include <aws/connecthealth/model/MedicalScribeInputStream.h>

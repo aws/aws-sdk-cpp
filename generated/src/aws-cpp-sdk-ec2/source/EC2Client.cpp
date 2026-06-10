@@ -57,6 +57,7 @@
 #include <aws/ec2/model/AssociateTrunkInterfaceRequest.h>
 #include <aws/ec2/model/AssociateVpcCidrBlockRequest.h>
 #include <aws/ec2/model/AttachClassicLinkVpcRequest.h>
+#include <aws/ec2/model/AttachImageWatermarkRequest.h>
 #include <aws/ec2/model/AttachInternetGatewayRequest.h>
 #include <aws/ec2/model/AttachNetworkInterfaceRequest.h>
 #include <aws/ec2/model/AttachVerifiedAccessTrustProviderRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/CreateKeyPairRequest.h>
 #include <aws/ec2/model/CreateLaunchTemplateRequest.h>
 #include <aws/ec2/model/CreateLaunchTemplateVersionRequest.h>
-#include <aws/ec2/model/CreateLocalGatewayRouteRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -503,6 +503,12 @@ AttachClassicLinkVpcOutcome EC2Client::AttachClassicLinkVpc(const AttachClassicL
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AttachClassicLinkVpcOutcome(result.GetResultWithOwnership())
                             : AttachClassicLinkVpcOutcome(std::move(result.GetError()));
+}
+
+AttachImageWatermarkOutcome EC2Client::AttachImageWatermark(const AttachImageWatermarkRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachImageWatermarkOutcome(result.GetResultWithOwnership())
+                            : AttachImageWatermarkOutcome(std::move(result.GetError()));
 }
 
 AttachInternetGatewayOutcome EC2Client::AttachInternetGateway(const AttachInternetGatewayRequest& request) const {
@@ -889,10 +895,4 @@ CreateLaunchTemplateVersionOutcome EC2Client::CreateLaunchTemplateVersion(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateLaunchTemplateVersionOutcome(result.GetResultWithOwnership())
                             : CreateLaunchTemplateVersionOutcome(std::move(result.GetError()));
-}
-
-CreateLocalGatewayRouteOutcome EC2Client::CreateLocalGatewayRoute(const CreateLocalGatewayRouteRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateLocalGatewayRouteOutcome(result.GetResultWithOwnership())
-                            : CreateLocalGatewayRouteOutcome(std::move(result.GetError()));
 }
