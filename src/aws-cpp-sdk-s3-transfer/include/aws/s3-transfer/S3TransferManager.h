@@ -16,21 +16,17 @@ namespace Aws {
   class S3TransferManagerImpl;
 
   /**
-   * High-level S3 transfer client backed by the AWS Common Runtime. Performs single-file
-   * uploads and downloads, automatically using multipart transfers for objects larger than
-   * the configured threshold. Customers hold an instance via shared_ptr; the manager owns
-   * the underlying CRT client and is not copyable or movable.
+   * Customers construct an instance directly. The manager owns the underlying CRT
+   * client; it is movable but not copyable.
    */
-  class AWS_S3_TRANSFER_API S3TransferManager: public std::enable_shared_from_this<S3TransferManager> {
+  class AWS_S3_TRANSFER_API S3TransferManager final {
   public:
-    static std::shared_ptr<S3TransferManager> Create(const S3TransferManagerConfiguration& config);
-
+    explicit S3TransferManager(const S3TransferManagerConfiguration& config);
     ~S3TransferManager();
 
     S3TransferManager(const S3TransferManager&) = delete;
     S3TransferManager& operator=(const S3TransferManager&) = delete;
-    S3TransferManager(S3TransferManager&&) = delete;
-    S3TransferManager& operator=(S3TransferManager&&) = delete;
+
 
     /**
      * Begin uploading the object described by request. Returns immediately with a handle
@@ -45,7 +41,6 @@ namespace Aws {
     DownloadHandle Download(const DownloadRequest& request);
 
   private:
-    explicit S3TransferManager(const S3TransferManagerConfiguration& config);
     Aws::UniquePtr<S3TransferManagerImpl> m_impl;
   };
   }

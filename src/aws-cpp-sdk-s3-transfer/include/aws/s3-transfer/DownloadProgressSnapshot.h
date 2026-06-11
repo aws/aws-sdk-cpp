@@ -18,7 +18,8 @@ namespace Transfer {
  * Captures bytes transferred, total bytes (known after the GetObject response is received),
  * and the response once available.
  */
-class AWS_S3_TRANSFER_API DownloadProgressSnapshot {
+
+class AWS_S3_TRANSFER_API DownloadProgressSnapshot final {
  public:
   DownloadProgressSnapshot(uint64_t transferredBytes,
                            uint64_t totalBytes,

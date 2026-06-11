@@ -24,23 +24,23 @@ class AWS_S3_TRANSFER_API UploadProgressListener {
   /**
    * Invoked exactly once when the upload begins, before any bytes have been transferred.
    */
-  virtual void OnTransferInitiated(const UploadRequest&, const UploadProgressSnapshot&) {}
+  virtual void OnTransferInitiated(const UploadRequest& /*request*/, const UploadProgressSnapshot& /*snapshot*/) {}
 
   /**
    * Invoked as bytes are submitted to S3. Called at least once for a successful transfer
    * and may be called many times depending on object size and I/O buffer sizes.
    */
-  virtual void OnBytesTransferred(const UploadRequest&, const UploadProgressSnapshot&) {}
+  virtual void OnBytesTransferred(const UploadRequest& /*request*/, const UploadProgressSnapshot& /*snapshot*/) {}
 
   /**
    * Invoked exactly once when the upload completes successfully.
    */
-  virtual void OnTransferComplete(const UploadRequest&, const UploadProgressSnapshot&) {}
+  virtual void OnTransferComplete(const UploadRequest& /*request*/, const UploadProgressSnapshot& /*snapshot*/) {}
 
   /**
    * Invoked exactly once when the upload fails or is cancelled.
    */
-  virtual void OnTransferFailed(const UploadRequest&, const UploadProgressSnapshot&) {}
+  virtual void OnTransferFailed(const UploadRequest& /*request*/, const UploadProgressSnapshot& /*snapshot*/) {}
 };
 
 }

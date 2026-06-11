@@ -11,8 +11,10 @@
 
   };
   UploadHandle::~UploadHandle() = default;
+  UploadHandle::UploadHandle(UploadHandle&&) noexcept = default;
+  UploadHandle& UploadHandle::operator=(UploadHandle&&) noexcept = default;
 
-  std::shared_future<UploadOutcome> UploadHandle::CompletionFuture() const {
+  std::future<UploadOutcome> UploadHandle::CompletionFuture() {
     return {};
   }
   void UploadHandle::Cancel() {

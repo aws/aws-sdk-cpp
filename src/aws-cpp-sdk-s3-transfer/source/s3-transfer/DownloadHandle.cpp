@@ -11,8 +11,10 @@
 
   };
   DownloadHandle::~DownloadHandle() = default;
+  DownloadHandle::DownloadHandle(DownloadHandle&&) noexcept = default;
+  DownloadHandle& DownloadHandle::operator=(DownloadHandle&&) noexcept = default;
 
-  std::shared_future<DownloadOutcome> DownloadHandle::CompletionFuture() const {
+  std::future<DownloadOutcome> DownloadHandle::CompletionFuture() {
     return {};
   }
   void DownloadHandle::Cancel() {

@@ -19,14 +19,16 @@ class DownloadHandleImpl;
  * Returned from S3TransferManager::Download to represent a single in-flight download. The
  * handle is freely copyable; all copies share the same underlying transfer state.
  */
-class AWS_S3_TRANSFER_API DownloadHandle {
+class AWS_S3_TRANSFER_API DownloadHandle final {
 public:
   ~DownloadHandle();
+  DownloadHandle(DownloadHandle&&) noexcept;
+  DownloadHandle& operator=(DownloadHandle&&) noexcept;
 
   /**
    * Returns a future that resolves once the transfer finishes, succeeds, or fails.
    */
-  std::shared_future<DownloadOutcome> CompletionFuture() const;
+  std::future<DownloadOutcome> CompletionFuture();
 
   /**
    * Requests cancellation of the in-flight download. Returns immediately; the future
@@ -35,7 +37,7 @@ public:
   void Cancel();
 
 private:
-  std::shared_ptr<DownloadHandleImpl> m_impl;
+  std::unique_ptr<DownloadHandleImpl> m_impl;
 };
 
 

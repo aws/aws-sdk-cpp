@@ -19,14 +19,16 @@ class UploadHandleImpl;
  * Returned from S3TransferManager::Upload to represent a single in-flight upload. The
  * handle is freely copyable; all copies share the same underlying transfer state.
  */
-class AWS_S3_TRANSFER_API UploadHandle {
+class AWS_S3_TRANSFER_API UploadHandle final {
 public:
   ~UploadHandle();
+  UploadHandle(UploadHandle&&) noexcept;
+  UploadHandle& operator=(UploadHandle&&) noexcept;
 
   /**
    * Returns a future that resolves once the transfer finishes, succeeds, or fails.
    */
-  std::shared_future<UploadOutcome> CompletionFuture() const;
+  std::future<UploadOutcome> CompletionFuture();
 
   /**
    * Requests cancellation of the in-flight upload. Returns immediately; the future
@@ -35,7 +37,7 @@ public:
   void Cancel();
 
 private:
-  std::shared_ptr<UploadHandleImpl> m_impl;
+  std::unique_ptr<UploadHandleImpl> m_impl;
 };
 
 

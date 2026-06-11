@@ -18,13 +18,6 @@ m_impl(Aws::MakeUnique<S3TransferManagerImpl>("S3TransferManager")) {
 
 }
 
-std::shared_ptr<S3TransferManager> S3TransferManager::Create(const S3TransferManagerConfiguration& config) {
-  struct MakeSharedEnabler : public S3TransferManager {
-    MakeSharedEnabler(const S3TransferManagerConfiguration& config) : S3TransferManager(config) {}
-  };
-  return Aws::MakeShared<MakeSharedEnabler>("S3TransferManager", config);
-}
-
 UploadHandle S3TransferManager::Upload(const UploadRequest&) {
   return UploadHandle();
 }

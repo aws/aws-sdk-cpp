@@ -18,11 +18,11 @@ class S3TransferManagerImpl;
 namespace Internal {
 
 /**
- * Translates TM 2.0 request types into aws-c-s3 meta request options, dispatches
- * the meta request, and routes CRT callbacks back into TM 2.0 listener events.
- * Internal to the s3-transfer package; not part of the public API.
- */
-class CrtOperations {
+   * Bridges TM 2.0 to the aws-crt-cpp S3 wrapper. Stays in C++; does not call
+   * aws-c-s3 directly. Internal; not part of the public API.
+  */
+class CrtOperations final {
+
  public:
   /**
    * Dispatch an upload as a CRT meta request. Returns a handle bound to the

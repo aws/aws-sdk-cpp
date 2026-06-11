@@ -24,23 +24,23 @@ class AWS_S3_TRANSFER_API DownloadProgressListener {
   /**
    * Invoked exactly once when the download begins, before any bytes have been transferred.
    */
-  virtual void OnTransferInitiated(const DownloadRequest&, const DownloadProgressSnapshot&) {}
+  virtual void OnTransferInitiated(const DownloadRequest& /*request*/, const DownloadProgressSnapshot& /*snapshot*/) {}
 
   /**
    * Invoked as bytes are received from S3. Called at least once for a successful transfer
    * and may be called many times depending on object size and I/O buffer sizes.
    */
-  virtual void OnBytesTransferred(const DownloadRequest&, const DownloadProgressSnapshot&) {}
+  virtual void OnBytesTransferred(const DownloadRequest& /*request*/, const DownloadProgressSnapshot& /*snapshot*/) {}
 
   /**
    * Invoked exactly once when the download completes successfully.
    */
-  virtual void OnTransferComplete(const DownloadRequest&, const DownloadProgressSnapshot&) {}
+  virtual void OnTransferComplete(const DownloadRequest& /*request*/, const DownloadProgressSnapshot& /*snapshot*/) {}
 
   /**
    * Invoked exactly once when the download fails or is cancelled.
    */
-  virtual void OnTransferFailed(const DownloadRequest&, const DownloadProgressSnapshot&) {}
+  virtual void OnTransferFailed(const DownloadRequest& /*request*/, const DownloadProgressSnapshot& /*snapshot*/) {}
 };
 
 }

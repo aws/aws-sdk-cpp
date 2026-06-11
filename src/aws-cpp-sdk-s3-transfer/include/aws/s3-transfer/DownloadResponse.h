@@ -19,7 +19,7 @@ namespace Transfer {
  * the underlying S3 GetObjectResult with whole-object content length and range, regardless
  * of how many ranged GETs were issued internally.
  */
-class AWS_S3_TRANSFER_API DownloadResponse {
+class AWS_S3_TRANSFER_API DownloadResponse final {
  public:
   inline const Aws::S3::Model::GetObjectResult& GetS3Result() const { return m_s3Result; }
   inline bool S3ResultHasBeenSet() const { return m_s3ResultHasBeenSet; }
