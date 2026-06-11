@@ -457,6 +457,28 @@ class ModifyDBClusterRequest : public NeptuneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
+   * <b> <code>IPV4</code> </b>   –   The DB cluster uses only IPv4 addresses for
+   * communication.</p> </li> <li> <p> <b> <code>DUAL</code> </b>   –   The DB
+   * cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group
+   * associated with the cluster must support IPv6.</p> </li> </ul>
+   */
+  inline const Aws::String& GetNetworkType() const { return m_networkType; }
+  inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+  template <typename NetworkTypeT = Aws::String>
+  void SetNetworkType(NetworkTypeT&& value) {
+    m_networkTypeHasBeenSet = true;
+    m_networkType = std::forward<NetworkTypeT>(value);
+  }
+  template <typename NetworkTypeT = Aws::String>
+  ModifyDBClusterRequest& WithNetworkType(NetworkTypeT&& value) {
+    SetNetworkType(std::forward<NetworkTypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBClusterIdentifier;
 
@@ -497,6 +519,8 @@ class ModifyDBClusterRequest : public NeptuneRequest {
   ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
 
   Aws::String m_storageType;
+
+  Aws::String m_networkType;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_newDBClusterIdentifierHasBeenSet = false;
   bool m_applyImmediatelyHasBeenSet = false;
@@ -517,6 +541,7 @@ class ModifyDBClusterRequest : public NeptuneRequest {
   bool m_copyTagsToSnapshotHasBeenSet = false;
   bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
 };
 
 }  // namespace Model

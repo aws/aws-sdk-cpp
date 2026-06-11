@@ -21,7 +21,7 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>Source of examples to add to the dataset.</p><p><h3>See Also:</h3>   <a
+ * <p> Source of examples to add to the dataset. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DataSourceType">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,7 @@ class DataSourceType {
 
   ///@{
   /**
-   * <p>Inline examples provided directly in the request body.</p>
+   * <p> Inline examples provided directly in the request body. </p>
    */
   inline const InlineExamplesSource& GetInlineExamples() const { return m_inlineExamples; }
   inline bool InlineExamplesHasBeenSet() const { return m_inlineExamplesHasBeenSet; }
@@ -52,8 +52,7 @@ class DataSourceType {
 
   ///@{
   /**
-   * <p>S3 URI pointing to a JSONL file in the customer's bucket. The service reads
-   * this file using the caller's FAS credentials.</p>
+   * <p> Amazon S3 URI pointing to a JSONL file in the customer's bucket. </p>
    */
   inline const S3Source& GetS3Source() const { return m_s3Source; }
   inline bool S3SourceHasBeenSet() const { return m_s3SourceHasBeenSet; }

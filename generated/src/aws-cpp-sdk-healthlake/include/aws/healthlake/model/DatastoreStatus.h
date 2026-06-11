@@ -10,7 +10,7 @@
 namespace Aws {
 namespace HealthLake {
 namespace Model {
-enum class DatastoreStatus { NOT_SET, CREATING, ACTIVE, DELETING, DELETED, CREATE_FAILED };
+enum class DatastoreStatus { NOT_SET, CREATING, ACTIVE, DELETING, DELETED, CREATE_FAILED, UPDATING, UPDATE_FAILED };
 
 namespace DatastoreStatusMapper {
 AWS_HEALTHLAKE_API DatastoreStatus GetDatastoreStatusForName(const Aws::String& name);

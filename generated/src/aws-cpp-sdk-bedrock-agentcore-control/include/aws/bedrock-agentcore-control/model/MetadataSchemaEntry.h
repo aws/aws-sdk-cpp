@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/ExtractionConfig.h>
+#include <aws/bedrock-agentcore-control/model/ExtractionType.h>
 #include <aws/bedrock-agentcore-control/model/MetadataValueType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -71,8 +72,25 @@ class MetadataSchemaEntry {
 
   ///@{
   /**
-   * <p>Configuration for extracting this metadata value from conversational
-   * content.</p>
+   * <p>Specifies whether the metadata value is extracted by the LLM or passed
+   * through deterministically from the event.</p>
+   */
+  inline ExtractionType GetExtractionType() const { return m_extractionType; }
+  inline bool ExtractionTypeHasBeenSet() const { return m_extractionTypeHasBeenSet; }
+  inline void SetExtractionType(ExtractionType value) {
+    m_extractionTypeHasBeenSet = true;
+    m_extractionType = value;
+  }
+  inline MetadataSchemaEntry& WithExtractionType(ExtractionType value) {
+    SetExtractionType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for extracting this metadata value from conversational content.
+   * Applicable only if extractionType is LLM inferred.</p>
    */
   inline const ExtractionConfig& GetExtractionConfig() const { return m_extractionConfig; }
   inline bool ExtractionConfigHasBeenSet() const { return m_extractionConfigHasBeenSet; }
@@ -92,9 +110,12 @@ class MetadataSchemaEntry {
 
   MetadataValueType m_type{MetadataValueType::NOT_SET};
 
+  ExtractionType m_extractionType{ExtractionType::NOT_SET};
+
   ExtractionConfig m_extractionConfig;
   bool m_keyHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_extractionTypeHasBeenSet = false;
   bool m_extractionConfigHasBeenSet = false;
 };
 

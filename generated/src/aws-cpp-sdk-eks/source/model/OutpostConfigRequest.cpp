@@ -33,6 +33,14 @@ OutpostConfigRequest& OutpostConfigRequest::operator=(JsonView jsonValue) {
     m_controlPlanePlacement = jsonValue.GetObject("controlPlanePlacement");
     m_controlPlanePlacementHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("etcdInstanceType")) {
+    m_etcdInstanceType = jsonValue.GetString("etcdInstanceType");
+    m_etcdInstanceTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("etcdPlacement")) {
+    m_etcdPlacement = jsonValue.GetObject("etcdPlacement");
+    m_etcdPlacementHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +61,14 @@ JsonValue OutpostConfigRequest::Jsonize() const {
 
   if (m_controlPlanePlacementHasBeenSet) {
     payload.WithObject("controlPlanePlacement", m_controlPlanePlacement.Jsonize());
+  }
+
+  if (m_etcdInstanceTypeHasBeenSet) {
+    payload.WithString("etcdInstanceType", m_etcdInstanceType);
+  }
+
+  if (m_etcdPlacementHasBeenSet) {
+    payload.WithObject("etcdPlacement", m_etcdPlacement.Jsonize());
   }
 
   return payload;

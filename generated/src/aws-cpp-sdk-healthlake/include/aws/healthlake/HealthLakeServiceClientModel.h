@@ -33,6 +33,7 @@
 #include <aws/healthlake/model/StartFHIRImportJobResult.h>
 #include <aws/healthlake/model/TagResourceResult.h>
 #include <aws/healthlake/model/UntagResourceResult.h>
+#include <aws/healthlake/model/UpdateFHIRDatastoreResult.h>
 /* End of service model headers required in HealthLakeClient header */
 
 namespace Aws {
@@ -79,6 +80,7 @@ class StartFHIRExportJobRequest;
 class StartFHIRImportJobRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateFHIRDatastoreRequest;
 /* End of service model forward declarations required in HealthLakeClient header */
 
 /* Service model Outcome class definitions */
@@ -95,6 +97,7 @@ typedef Aws::Utils::Outcome<StartFHIRExportJobResult, HealthLakeError> StartFHIR
 typedef Aws::Utils::Outcome<StartFHIRImportJobResult, HealthLakeError> StartFHIRImportJobOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, HealthLakeError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, HealthLakeError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateFHIRDatastoreResult, HealthLakeError> UpdateFHIRDatastoreOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -111,6 +114,7 @@ typedef std::future<StartFHIRExportJobOutcome> StartFHIRExportJobOutcomeCallable
 typedef std::future<StartFHIRImportJobOutcome> StartFHIRImportJobOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateFHIRDatastoreOutcome> UpdateFHIRDatastoreOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -156,6 +160,9 @@ typedef std::function<void(const HealthLakeClient*, const Model::TagResourceRequ
 typedef std::function<void(const HealthLakeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const HealthLakeClient*, const Model::UpdateFHIRDatastoreRequest&, const Model::UpdateFHIRDatastoreOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateFHIRDatastoreResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace HealthLake
 }  // namespace Aws

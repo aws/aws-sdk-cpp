@@ -65,8 +65,8 @@ class CreateDatasetResult {
 
   ///@{
   /**
-   * <p>Always CREATING immediately after this call. Poll GetDataset until status ==
-   * ACTIVE (draftStatus=MODIFIED) or CREATE_FAILED.</p>
+   * <p> Always CREATING immediately after this call. Poll <code>GetDataset</code>
+   * until status transitions to ACTIVE or CREATE_FAILED. </p>
    */
   inline DatasetStatus GetStatus() const { return m_status; }
   inline void SetStatus(DatasetStatus value) {

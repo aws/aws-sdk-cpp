@@ -66,8 +66,8 @@ class CreateDatasetVersionResult {
 
   ///@{
   /**
-   * <p>Always UPDATING immediately after this call. Poll GetDataset until status ==
-   * ACTIVE (draftStatus=UNMODIFIED) or UPDATE_FAILED.</p>
+   * <p> Always UPDATING immediately after this call. Poll <code>GetDataset</code>
+   * until status transitions to ACTIVE or UPDATE_FAILED. </p>
    */
   inline DatasetStatus GetStatus() const { return m_status; }
   inline void SetStatus(DatasetStatus value) {
@@ -82,7 +82,7 @@ class CreateDatasetVersionResult {
 
   ///@{
   /**
-   * <p>The version being created.</p>
+   * <p> The version number being created. </p>
    */
   inline const Aws::String& GetDatasetVersion() const { return m_datasetVersion; }
   template <typename DatasetVersionT = Aws::String>

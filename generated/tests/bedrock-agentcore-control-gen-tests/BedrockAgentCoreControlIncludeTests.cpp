@@ -236,6 +236,7 @@
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
 #include <aws/bedrock-agentcore-control/model/ExtractionConfig.h>
 #include <aws/bedrock-agentcore-control/model/ExtractionConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ExtractionType.h>
 #include <aws/bedrock-agentcore-control/model/FilesystemConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Filter.h>
 #include <aws/bedrock-agentcore-control/model/FilterOperator.h>

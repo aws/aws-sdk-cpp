@@ -19,6 +19,7 @@ static const int CREATING_HASH = HashingUtils::HashString("CREATING");
 static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 
 MemoryStatus GetMemoryStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ MemoryStatus GetMemoryStatusForName(const Aws::String& name) {
     return MemoryStatus::FAILED;
   } else if (hashCode == DELETING_HASH) {
     return MemoryStatus::DELETING;
+  } else if (hashCode == UPDATING_HASH) {
+    return MemoryStatus::UPDATING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForMemoryStatus(MemoryStatus enumValue) {
       return "FAILED";
     case MemoryStatus::DELETING:
       return "DELETING";
+    case MemoryStatus::UPDATING:
+      return "UPDATING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

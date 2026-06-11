@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/model/ControlPlanePlacementRequest.h>
+#include <aws/eks/model/EtcdPlacementRequest.h>
 
 #include <utility>
 
@@ -65,14 +66,12 @@ class OutpostConfigRequest {
 
   ///@{
   /**
-   * <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS
-   * cluster on Outposts. Choose an instance type based on the number of nodes that
-   * your cluster will have. For more information, see <a
+   * <p>The Amazon EC2 instance type for the Kubernetes control plane instances of
+   * your local Amazon EKS cluster on Amazon Web Services Outposts. This instance
+   * type applies to all control plane instances and cannot be changed after cluster
+   * creation.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
-   * considerations</a> in the <i>Amazon EKS User Guide</i>.</p> <p>The instance type
-   * that you specify is used for all Kubernetes control plane instances. The
-   * instance type can't be changed after cluster creation. The control plane is not
-   * automatically scaled by Amazon EKS.</p> <p> </p>
+   * considerations</a> in the <i>Amazon EKS User Guide</i>.</p> <p> </p>
    */
   inline const Aws::String& GetControlPlaneInstanceType() const { return m_controlPlaneInstanceType; }
   inline bool ControlPlaneInstanceTypeHasBeenSet() const { return m_controlPlaneInstanceTypeHasBeenSet; }
@@ -109,15 +108,63 @@ class OutpostConfigRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon EC2 instance type for etcd instances of your local Amazon EKS
+   * cluster on Amazon Web Services Outposts. This instance type applies to all etcd
+   * instances and cannot be changed after cluster creation.</p>
+   */
+  inline const Aws::String& GetEtcdInstanceType() const { return m_etcdInstanceType; }
+  inline bool EtcdInstanceTypeHasBeenSet() const { return m_etcdInstanceTypeHasBeenSet; }
+  template <typename EtcdInstanceTypeT = Aws::String>
+  void SetEtcdInstanceType(EtcdInstanceTypeT&& value) {
+    m_etcdInstanceTypeHasBeenSet = true;
+    m_etcdInstanceType = std::forward<EtcdInstanceTypeT>(value);
+  }
+  template <typename EtcdInstanceTypeT = Aws::String>
+  OutpostConfigRequest& WithEtcdInstanceType(EtcdInstanceTypeT&& value) {
+    SetEtcdInstanceType(std::forward<EtcdInstanceTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An object representing the placement configuration for the etcd instances of
+   * your local Amazon EKS cluster on an Amazon Web Services Outpost. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+   * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+   */
+  inline const EtcdPlacementRequest& GetEtcdPlacement() const { return m_etcdPlacement; }
+  inline bool EtcdPlacementHasBeenSet() const { return m_etcdPlacementHasBeenSet; }
+  template <typename EtcdPlacementT = EtcdPlacementRequest>
+  void SetEtcdPlacement(EtcdPlacementT&& value) {
+    m_etcdPlacementHasBeenSet = true;
+    m_etcdPlacement = std::forward<EtcdPlacementT>(value);
+  }
+  template <typename EtcdPlacementT = EtcdPlacementRequest>
+  OutpostConfigRequest& WithEtcdPlacement(EtcdPlacementT&& value) {
+    SetEtcdPlacement(std::forward<EtcdPlacementT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_outpostArns;
 
   Aws::String m_controlPlaneInstanceType;
 
   ControlPlanePlacementRequest m_controlPlanePlacement;
+
+  Aws::String m_etcdInstanceType;
+
+  EtcdPlacementRequest m_etcdPlacement;
   bool m_outpostArnsHasBeenSet = false;
   bool m_controlPlaneInstanceTypeHasBeenSet = false;
   bool m_controlPlanePlacementHasBeenSet = false;
+  bool m_etcdInstanceTypeHasBeenSet = false;
+  bool m_etcdPlacementHasBeenSet = false;
 };
 
 }  // namespace Model

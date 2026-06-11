@@ -73,8 +73,8 @@ class AddDatasetExamplesRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Source of examples to add. Provide either inline examples or an S3 URI
-   * pointing to a JSONL file.</p>
+   * <p> Source of examples to add. Provide either inline examples or an S3 URI
+   * pointing to a JSONL file. </p>
    */
   inline const DataSourceType& GetSource() const { return m_source; }
   inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }

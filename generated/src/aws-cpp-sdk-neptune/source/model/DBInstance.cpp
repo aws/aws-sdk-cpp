@@ -359,6 +359,11 @@ DBInstance& DBInstance::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionProtectionNode.GetText()).c_str()).c_str());
       m_deletionProtectionHasBeenSet = true;
     }
+    XmlNode networkTypeNode = resultNode.FirstChild("NetworkType");
+    if (!networkTypeNode.IsNull()) {
+      m_networkType = Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText());
+      m_networkTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -640,6 +645,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   if (m_deletionProtectionHasBeenSet) {
     oStream << location << index << locationValue << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
+
+  if (m_networkTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -853,6 +862,9 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if (m_deletionProtectionHasBeenSet) {
     oStream << location << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+  if (m_networkTypeHasBeenSet) {
+    oStream << location << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 }
 

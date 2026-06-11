@@ -26,6 +26,10 @@ MetadataSchemaEntry& MetadataSchemaEntry::operator=(JsonView jsonValue) {
     m_type = MetadataValueTypeMapper::GetMetadataValueTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("extractionType")) {
+    m_extractionType = ExtractionTypeMapper::GetExtractionTypeForName(jsonValue.GetString("extractionType"));
+    m_extractionTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("extractionConfig")) {
     m_extractionConfig = jsonValue.GetObject("extractionConfig");
     m_extractionConfigHasBeenSet = true;
@@ -42,6 +46,10 @@ JsonValue MetadataSchemaEntry::Jsonize() const {
 
   if (m_typeHasBeenSet) {
     payload.WithString("type", MetadataValueTypeMapper::GetNameForMetadataValueType(m_type));
+  }
+
+  if (m_extractionTypeHasBeenSet) {
+    payload.WithString("extractionType", ExtractionTypeMapper::GetNameForExtractionType(m_extractionType));
   }
 
   if (m_extractionConfigHasBeenSet) {

@@ -34,7 +34,9 @@ class DatasetVersionSummary {
   AWS_BEDROCKAGENTCORECONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p> The version number of this published snapshot. </p>
+   */
   inline const Aws::String& GetDatasetVersion() const { return m_datasetVersion; }
   inline bool DatasetVersionHasBeenSet() const { return m_datasetVersionHasBeenSet; }
   template <typename DatasetVersionT = Aws::String>

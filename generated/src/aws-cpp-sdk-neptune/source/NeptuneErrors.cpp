@@ -32,6 +32,7 @@ static const int D_B_CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils
 static const int DOMAIN_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DomainNotFoundFault");
 static const int D_B_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBParameterGroupQuotaExceeded");
 static const int INVALID_EVENT_SUBSCRIPTION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidEventSubscriptionState");
+static const int NETWORK_TYPE_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("NetworkTypeNotSupported");
 static const int D_B_CLUSTER_ROLE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterRoleAlreadyExists");
 static const int INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientStorageClusterCapacity");
 static const int D_B_SUBNET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupNotFoundFault");
@@ -127,6 +128,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == INVALID_EVENT_SUBSCRIPTION_STATE_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_EVENT_SUBSCRIPTION_STATE_FAULT),
                                 RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == NETWORK_TYPE_NOT_SUPPORTED_FAULT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::NETWORK_TYPE_NOT_SUPPORTED_FAULT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == D_B_CLUSTER_ROLE_ALREADY_EXISTS_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ROLE_ALREADY_EXISTS_FAULT),
                                 RetryableType::NOT_RETRYABLE);

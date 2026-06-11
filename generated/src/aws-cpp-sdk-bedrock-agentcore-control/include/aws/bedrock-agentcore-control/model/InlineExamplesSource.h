@@ -21,7 +21,7 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>Inline examples provided directly in the request body.</p><p><h3>See
+ * <p> Inline examples provided directly in the request body. </p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/InlineExamplesSource">AWS
  * API Reference</a></p>
@@ -35,7 +35,7 @@ class InlineExamplesSource {
 
   ///@{
   /**
-   * <p>Examples to add. Each example is assigned an auto-generated UUID.</p>
+   * <p> Examples to add. Each example is assigned an auto-generated UUID. </p>
    */
   inline const Aws::Vector<Aws::Utils::Document>& GetExamples() const { return m_examples; }
   inline bool ExamplesHasBeenSet() const { return m_examplesHasBeenSet; }

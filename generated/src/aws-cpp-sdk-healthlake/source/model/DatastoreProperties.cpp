@@ -62,6 +62,18 @@ DatastoreProperties& DatastoreProperties::operator=(JsonView jsonValue) {
     m_errorCause = jsonValue.GetObject("ErrorCause");
     m_errorCauseHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("NlpConfiguration")) {
+    m_nlpConfiguration = jsonValue.GetObject("NlpConfiguration");
+    m_nlpConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AnalyticsConfiguration")) {
+    m_analyticsConfiguration = jsonValue.GetObject("AnalyticsConfiguration");
+    m_analyticsConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ProfileConfiguration")) {
+    m_profileConfiguration = jsonValue.GetObject("ProfileConfiguration");
+    m_profileConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +122,18 @@ JsonValue DatastoreProperties::Jsonize() const {
 
   if (m_errorCauseHasBeenSet) {
     payload.WithObject("ErrorCause", m_errorCause.Jsonize());
+  }
+
+  if (m_nlpConfigurationHasBeenSet) {
+    payload.WithObject("NlpConfiguration", m_nlpConfiguration.Jsonize());
+  }
+
+  if (m_analyticsConfigurationHasBeenSet) {
+    payload.WithObject("AnalyticsConfiguration", m_analyticsConfiguration.Jsonize());
+  }
+
+  if (m_profileConfigurationHasBeenSet) {
+    payload.WithObject("ProfileConfiguration", m_profileConfiguration.Jsonize());
   }
 
   return payload;

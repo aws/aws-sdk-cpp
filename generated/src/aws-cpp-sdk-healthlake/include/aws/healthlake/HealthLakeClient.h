@@ -428,6 +428,33 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&HealthLakeClient::UntagResource, request, handler, context);
   }
 
+  /**
+   * <para>Update the properties of a FHIR-enabled data store.</para><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UpdateFHIRDatastore">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateFHIRDatastoreOutcome UpdateFHIRDatastore(const Model::UpdateFHIRDatastoreRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateFHIRDatastore that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateFHIRDatastoreRequestT = Model::UpdateFHIRDatastoreRequest>
+  Model::UpdateFHIRDatastoreOutcomeCallable UpdateFHIRDatastoreCallable(const UpdateFHIRDatastoreRequestT& request) const {
+    return SubmitCallable(&HealthLakeClient::UpdateFHIRDatastore, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateFHIRDatastore that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateFHIRDatastoreRequestT = Model::UpdateFHIRDatastoreRequest>
+  void UpdateFHIRDatastoreAsync(const UpdateFHIRDatastoreRequestT& request, const UpdateFHIRDatastoreResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthLakeClient::UpdateFHIRDatastore, request, handler, context);
+  }
+
   virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<HealthLakeEndpointProviderBase>& accessEndpointProvider();
 

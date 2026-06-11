@@ -150,6 +150,33 @@ class DBSubnetGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The network types supported by the DB subnet group.</p> <p>Valid network
+   * types include <code>IPV4</code> and <code>DUAL</code>. A DB subnet group
+   * supports <code>DUAL</code> if all subnets in the group have both IPv4 and IPv6
+   * CIDRs.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSupportedNetworkTypes() const { return m_supportedNetworkTypes; }
+  inline bool SupportedNetworkTypesHasBeenSet() const { return m_supportedNetworkTypesHasBeenSet; }
+  template <typename SupportedNetworkTypesT = Aws::Vector<Aws::String>>
+  void SetSupportedNetworkTypes(SupportedNetworkTypesT&& value) {
+    m_supportedNetworkTypesHasBeenSet = true;
+    m_supportedNetworkTypes = std::forward<SupportedNetworkTypesT>(value);
+  }
+  template <typename SupportedNetworkTypesT = Aws::Vector<Aws::String>>
+  DBSubnetGroup& WithSupportedNetworkTypes(SupportedNetworkTypesT&& value) {
+    SetSupportedNetworkTypes(std::forward<SupportedNetworkTypesT>(value));
+    return *this;
+  }
+  template <typename SupportedNetworkTypesT = Aws::String>
+  DBSubnetGroup& AddSupportedNetworkTypes(SupportedNetworkTypesT&& value) {
+    m_supportedNetworkTypesHasBeenSet = true;
+    m_supportedNetworkTypes.emplace_back(std::forward<SupportedNetworkTypesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBSubnetGroupName;
 
@@ -162,12 +189,15 @@ class DBSubnetGroup {
   Aws::Vector<Subnet> m_subnets;
 
   Aws::String m_dBSubnetGroupArn;
+
+  Aws::Vector<Aws::String> m_supportedNetworkTypes;
   bool m_dBSubnetGroupNameHasBeenSet = false;
   bool m_dBSubnetGroupDescriptionHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
   bool m_subnetGroupStatusHasBeenSet = false;
   bool m_subnetsHasBeenSet = false;
   bool m_dBSubnetGroupArnHasBeenSet = false;
+  bool m_supportedNetworkTypesHasBeenSet = false;
 };
 
 }  // namespace Model

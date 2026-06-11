@@ -22,6 +22,10 @@ ControlPlanePlacementRequest& ControlPlanePlacementRequest::operator=(JsonView j
     m_groupName = jsonValue.GetString("groupName");
     m_groupNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("spreadLevel")) {
+    m_spreadLevel = SpreadLevelMapper::GetSpreadLevelForName(jsonValue.GetString("spreadLevel"));
+    m_spreadLevelHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ControlPlanePlacementRequest::Jsonize() const {
 
   if (m_groupNameHasBeenSet) {
     payload.WithString("groupName", m_groupName);
+  }
+
+  if (m_spreadLevelHasBeenSet) {
+    payload.WithString("spreadLevel", SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel));
   }
 
   return payload;

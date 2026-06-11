@@ -20,8 +20,8 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>S3 location of a JSONL file containing dataset examples.</p><p><h3>See
- * Also:</h3>   <a
+ * <p> Amazon S3 location of a JSONL file containing dataset examples.
+ * </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/S3Source">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,8 @@ class S3Source {
 
   ///@{
   /**
-   * <p>S3 URI of the JSONL file (e.g. s3://my-bucket/path/to/examples.jsonl).</p>
+   * <p> Amazon S3 URI of the JSONL file (for example,
+   * <code>s3://my-bucket/path/to/examples.jsonl</code>). </p>
    */
   inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
   inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }

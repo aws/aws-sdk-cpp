@@ -308,6 +308,11 @@ DBCluster& DBCluster::operator=(const XmlNode& xmlNode) {
       m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
       m_storageTypeHasBeenSet = true;
     }
+    XmlNode networkTypeNode = resultNode.FirstChild("NetworkType");
+    if (!networkTypeNode.IsNull()) {
+      m_networkType = Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText());
+      m_networkTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -546,6 +551,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   if (m_storageTypeHasBeenSet) {
     oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
+
+  if (m_networkTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -727,6 +736,9 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if (m_storageTypeHasBeenSet) {
     oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if (m_networkTypeHasBeenSet) {
+    oStream << location << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 }
 

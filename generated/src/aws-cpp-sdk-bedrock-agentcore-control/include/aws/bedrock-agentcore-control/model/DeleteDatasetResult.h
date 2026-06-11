@@ -80,7 +80,7 @@ class DeleteDatasetResult {
 
   ///@{
   /**
-   * <p>The version deleted.</p>
+   * <p> The version that was deleted. </p>
    */
   inline const Aws::String& GetDatasetVersion() const { return m_datasetVersion; }
   template <typename DatasetVersionT = Aws::String>

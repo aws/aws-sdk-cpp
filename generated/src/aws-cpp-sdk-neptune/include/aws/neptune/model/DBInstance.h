@@ -1069,6 +1069,25 @@ class DBInstance {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The network type of the DB instance. Inherited from the DB cluster.</p>
+   * <p>Valid Values: <code>IPV4</code>, <code>DUAL</code> </p>
+   */
+  inline const Aws::String& GetNetworkType() const { return m_networkType; }
+  inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+  template <typename NetworkTypeT = Aws::String>
+  void SetNetworkType(NetworkTypeT&& value) {
+    m_networkTypeHasBeenSet = true;
+    m_networkType = std::forward<NetworkTypeT>(value);
+  }
+  template <typename NetworkTypeT = Aws::String>
+  DBInstance& WithNetworkType(NetworkTypeT&& value) {
+    SetNetworkType(std::forward<NetworkTypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
 
@@ -1175,6 +1194,8 @@ class DBInstance {
   Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
 
   bool m_deletionProtection{false};
+
+  Aws::String m_networkType;
   bool m_dBInstanceIdentifierHasBeenSet = false;
   bool m_dBInstanceClassHasBeenSet = false;
   bool m_engineHasBeenSet = false;
@@ -1228,6 +1249,7 @@ class DBInstance {
   bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
   bool m_enabledCloudwatchLogsExportsHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
 };
 
 }  // namespace Model

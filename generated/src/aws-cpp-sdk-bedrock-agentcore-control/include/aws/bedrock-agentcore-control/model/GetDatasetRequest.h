@@ -53,8 +53,8 @@ class GetDatasetRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Version to retrieve: &quot;DRAFT&quot; or a version number. Defaults to DRAFT
-   * if absent.</p>
+   * <p> Version to retrieve: "DRAFT" or a version number. Defaults to DRAFT if
+   * absent. </p>
    */
   inline const Aws::String& GetDatasetVersion() const { return m_datasetVersion; }
   inline bool DatasetVersionHasBeenSet() const { return m_datasetVersionHasBeenSet; }

@@ -185,6 +185,25 @@ class ClusterPendingModifiedValues {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The pending change in network type for the DB cluster.</p> <p>Valid Values:
+   * <code>IPV4</code>, <code>DUAL</code> </p>
+   */
+  inline const Aws::String& GetNetworkType() const { return m_networkType; }
+  inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+  template <typename NetworkTypeT = Aws::String>
+  void SetNetworkType(NetworkTypeT&& value) {
+    m_networkTypeHasBeenSet = true;
+    m_networkType = std::forward<NetworkTypeT>(value);
+  }
+  template <typename NetworkTypeT = Aws::String>
+  ClusterPendingModifiedValues& WithNetworkType(NetworkTypeT&& value) {
+    SetNetworkType(std::forward<NetworkTypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   PendingCloudwatchLogsExports m_pendingCloudwatchLogsExports;
 
@@ -201,6 +220,8 @@ class ClusterPendingModifiedValues {
   int m_allocatedStorage{0};
 
   int m_iops{0};
+
+  Aws::String m_networkType;
   bool m_pendingCloudwatchLogsExportsHasBeenSet = false;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
@@ -209,6 +230,7 @@ class ClusterPendingModifiedValues {
   bool m_storageTypeHasBeenSet = false;
   bool m_allocatedStorageHasBeenSet = false;
   bool m_iopsHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
 };
 
 }  // namespace Model

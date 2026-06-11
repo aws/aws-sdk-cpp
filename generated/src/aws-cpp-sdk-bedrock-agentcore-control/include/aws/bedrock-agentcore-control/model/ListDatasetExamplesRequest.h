@@ -53,10 +53,9 @@ class ListDatasetExamplesRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Version to paginate: &quot;DRAFT&quot; or a version number. Defaults to DRAFT
-   * if absent. Only used on the first request (when nextToken is absent). For
-   * subsequent pages, the version is extracted from the nextToken and this parameter
-   * is ignored.</p>
+   * <p> Version to paginate: "DRAFT" or a version number. Defaults to DRAFT if
+   * absent. Only used on the first request; for subsequent pages, the version is
+   * extracted from the pagination token. </p>
    */
   inline const Aws::String& GetDatasetVersion() const { return m_datasetVersion; }
   inline bool DatasetVersionHasBeenSet() const { return m_datasetVersionHasBeenSet; }
@@ -74,10 +73,7 @@ class ListDatasetExamplesRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Maximum number of examples to return per page. Default: 1000. Min: 1, max:
-   * 1000. Response size is validated against 5 MB limit after reading. For bulk
-   * access to all examples, use the <code>downloadUrl</code> field from
-   * GetDataset.</p>
+   * <p> Maximum number of examples to return per page. </p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

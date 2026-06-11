@@ -68,8 +68,8 @@ class GetDatasetResult {
 
   ///@{
   /**
-   * <p>The resolved version: &quot;DRAFT&quot; (default) or the requested version
-   * number.</p>
+   * <p> The resolved version: "DRAFT" (default) or the requested version number.
+   * </p>
    */
   inline const Aws::String& GetDatasetVersion() const { return m_datasetVersion; }
   template <typename DatasetVersionT = Aws::String>
@@ -135,9 +135,9 @@ class GetDatasetResult {
 
   ///@{
   /**
-   * <p>Publish synchronization state. Only authoritative when status == ACTIVE.
-   * MODIFIED — DRAFT has unpublished changes (or no published versions yet).
-   * UNMODIFIED — DRAFT matches the latest published version exactly.</p>
+   * <p> Publish synchronization state. Only authoritative when status is ACTIVE.
+   * MODIFIED indicates DRAFT has unpublished changes. UNMODIFIED indicates DRAFT
+   * matches the latest published version. </p>
    */
   inline DraftStatus GetDraftStatus() const { return m_draftStatus; }
   inline void SetDraftStatus(DraftStatus value) {
@@ -152,7 +152,8 @@ class GetDatasetResult {
 
   ///@{
   /**
-   * <p>Populated when status is CREATE_FAILED, UPDATE_FAILED, or DELETE_FAILED.</p>
+   * <p> Populated when status is CREATE_FAILED, UPDATE_FAILED, or DELETE_FAILED.
+   * Describes the reason for the failure. </p>
    */
   inline const Aws::String& GetFailureReason() const { return m_failureReason; }
   template <typename FailureReasonT = Aws::String>
@@ -169,7 +170,7 @@ class GetDatasetResult {
 
   ///@{
   /**
-   * <p>The schema type declared at create time. Immutable after creation.</p>
+   * <p> The schema type declared at create time. Immutable after creation. </p>
    */
   inline DatasetSchemaType GetSchemaType() const { return m_schemaType; }
   inline void SetSchemaType(DatasetSchemaType value) {
@@ -184,7 +185,8 @@ class GetDatasetResult {
 
   ///@{
   /**
-   * <p>AWS KMS key ARN used for SSE-KMS on service S3 writes, if configured.</p>
+   * <p> KMS key ARN used for server-side encryption on service Amazon S3 writes, if
+   * configured. </p>
    */
   inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
   template <typename KmsKeyArnT = Aws::String>
@@ -201,7 +203,7 @@ class GetDatasetResult {
 
   ///@{
   /**
-   * <p>Example count for DRAFT.</p>
+   * <p> The number of examples in the DRAFT. </p>
    */
   inline long long GetExampleCount() const { return m_exampleCount; }
   inline void SetExampleCount(long long value) {
@@ -216,9 +218,9 @@ class GetDatasetResult {
 
   ///@{
   /**
-   * <p>Presigned S3 URL to download the consolidated dataset.jsonl file for the
-   * resolved version (DRAFT or published). TTL: 5 minutes. Omitted if the file does
-   * not yet exist (e.g. during CREATING) or on presign failure.</p>
+   * <p> Presigned Amazon S3 URL to download the consolidated dataset file for the
+   * resolved version. Expires after 5 minutes. Omitted if the file does not yet
+   * exist. </p>
    */
   inline const Aws::String& GetDownloadUrl() const { return m_downloadUrl; }
   template <typename DownloadUrlT = Aws::String>
@@ -235,7 +237,7 @@ class GetDatasetResult {
 
   ///@{
   /**
-   * <p>Expiry timestamp for downloadUrl.</p>
+   * <p> Expiry timestamp for the download URL. </p>
    */
   inline const Aws::Utils::DateTime& GetDownloadUrlExpiresAt() const { return m_downloadUrlExpiresAt; }
   template <typename DownloadUrlExpiresAtT = Aws::Utils::DateTime>

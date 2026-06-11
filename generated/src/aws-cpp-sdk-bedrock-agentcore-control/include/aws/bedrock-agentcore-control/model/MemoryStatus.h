@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class MemoryStatus { NOT_SET, CREATING, ACTIVE, FAILED, DELETING };
+enum class MemoryStatus { NOT_SET, CREATING, ACTIVE, FAILED, DELETING, UPDATING };
 
 namespace MemoryStatusMapper {
 AWS_BEDROCKAGENTCORECONTROL_API MemoryStatus GetMemoryStatusForName(const Aws::String& name);

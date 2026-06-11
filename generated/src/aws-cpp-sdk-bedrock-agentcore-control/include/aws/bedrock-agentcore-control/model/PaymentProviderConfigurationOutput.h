@@ -21,7 +21,7 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>Provider configuration output �� no raw secrets, only ARNs. Varies by vendor
+ * <p>Provider configuration output — no raw secrets, only ARNs. Varies by vendor
  * type.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/PaymentProviderConfigurationOutput">AWS
  * API Reference</a></p>
