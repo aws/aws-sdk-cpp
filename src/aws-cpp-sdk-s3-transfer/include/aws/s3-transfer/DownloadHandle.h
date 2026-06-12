@@ -38,7 +38,7 @@ public:
   void Cancel();
 
 private:
-  std::unique_ptr<DownloadHandleImpl> m_impl;
+  Aws::UniquePtr<DownloadHandleImpl> m_impl;
 };
 
 

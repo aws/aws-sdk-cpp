@@ -39,7 +39,7 @@ public:
   void Cancel();
 
 private:
-  std::unique_ptr<UploadHandleImpl> m_impl;
+  Aws::UniquePtr<UploadHandleImpl> m_impl;
 };
 
 
