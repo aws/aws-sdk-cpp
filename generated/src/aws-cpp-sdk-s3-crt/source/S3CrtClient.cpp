@@ -819,6 +819,126 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData* userDat
   options->finish_callback = S3CrtRequestFinishCallback;
 }
 
+Model::CopyObjectOutcome S3CrtClient::PopulateCopyObjectProperties(const Model::CopyObjectRequest& request,
+                                                                   const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest) const {
+  const bool copyMetadata = request.MetadataDirectiveHasBeenSet() && request.GetMetadataDirective() == Model::MetadataDirective::COPY;
+  const bool copyTags = request.TaggingDirectiveHasBeenSet() && request.GetTaggingDirective() == Model::TaggingDirective::COPY;
+
+  if (!copyMetadata && !copyTags) {
+    return Model::CopyObjectOutcome(Model::CopyObjectResult());
+  }
+
+  // Parse "[/]bucket/key[?versionId=...]" from x-amz-copy-source. rfind: keys may contain '?'.
+  Aws::String copySource = request.GetCopySource();
+  Aws::String sourceVersionId;
+  const auto queryPos = copySource.rfind('?');
+  if (queryPos != Aws::String::npos) {
+    const Aws::String query = copySource.substr(queryPos + 1);
+    copySource = copySource.substr(0, queryPos);
+    const auto versionPos = query.find("versionId=");
+    if (versionPos != Aws::String::npos) {
+      sourceVersionId = query.substr(versionPos + Aws::String("versionId=").size());
+      const auto ampPos = sourceVersionId.find('&');
+      if (ampPos != Aws::String::npos) {
+        sourceVersionId = sourceVersionId.substr(0, ampPos);
+      }
+    }
+  }
+  if (!copySource.empty() && copySource.front() == '/') {
+    copySource = copySource.substr(1);
+  }
+  const auto slashPos = copySource.find('/');
+  if (slashPos == Aws::String::npos) {
+    return Model::CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE",
+                                                                       "Could not parse bucket and key from CopySource for property copy",
+                                                                       false));
+  }
+  const Aws::String sourceBucket = copySource.substr(0, slashPos);
+  const Aws::String sourceKey = copySource.substr(slashPos + 1);
+
+  Model::HeadObjectRequest headRequest;
+  headRequest.SetBucket(sourceBucket);
+  headRequest.SetKey(sourceKey);
+  if (!sourceVersionId.empty()) {
+    headRequest.SetVersionId(sourceVersionId);
+  }
+  auto headOutcome = HeadObject(headRequest);
+  if (!headOutcome.IsSuccess()) {
+    return Model::CopyObjectOutcome(headOutcome.GetError());
+  }
+  const auto& head = headOutcome.GetResult();
+  const Aws::String sourceETag = head.GetETag();
+
+  // Pin the source version so UploadPartCopy reads a stable object.
+  if (sourceVersionId.empty() && !head.GetVersionId().empty()) {
+    sourceVersionId = head.GetVersionId();
+    httpRequest->SetHeaderValue("x-amz-copy-source", Aws::Http::URI::URLEncodePath(copySource) + "?versionId=" + sourceVersionId);
+  }
+  if (!httpRequest->HasHeader("x-amz-copy-source-if-match") && !sourceETag.empty()) {
+    httpRequest->SetHeaderValue("x-amz-copy-source-if-match", sourceETag);
+  }
+
+  // small objects are single-part copies where S3 honors the directives natively, skip injection
+  if (head.GetContentLength() < (1LL * 1024 * 1024 * 1024)) {
+    return Model::CopyObjectOutcome(Model::CopyObjectResult());
+  }
+
+  if (copyMetadata) {
+    if (!head.GetContentType().empty()) {
+      httpRequest->SetHeaderValue("content-type", head.GetContentType());
+    }
+    if (!head.GetContentEncoding().empty()) {
+      httpRequest->SetHeaderValue("content-encoding", head.GetContentEncoding());
+    }
+    if (!head.GetContentDisposition().empty()) {
+      httpRequest->SetHeaderValue("content-disposition", head.GetContentDisposition());
+    }
+    if (!head.GetContentLanguage().empty()) {
+      httpRequest->SetHeaderValue("content-language", head.GetContentLanguage());
+    }
+    if (!head.GetCacheControl().empty()) {
+      httpRequest->SetHeaderValue("cache-control", head.GetCacheControl());
+    }
+    if (!head.GetExpiresString().empty()) {
+      httpRequest->SetHeaderValue("expires", head.GetExpires().ToGmtString(Aws::Utils::DateFormat::RFC822));
+    }
+    for (const auto& item : head.GetMetadata()) {
+      httpRequest->SetHeaderValue("x-amz-meta-" + item.first, item.second);
+    }
+    // REPLACE so CreateMultipartUpload emits these headers.
+    httpRequest->SetHeaderValue("x-amz-metadata-directive", "REPLACE");
+  }
+
+  if (copyTags) {
+    Model::GetObjectTaggingRequest taggingRequest;
+    taggingRequest.SetBucket(sourceBucket);
+    taggingRequest.SetKey(sourceKey);
+    if (!sourceVersionId.empty()) {
+      taggingRequest.SetVersionId(sourceVersionId);
+    }
+    auto taggingOutcome = GetObjectTagging(taggingRequest);
+    if (!taggingOutcome.IsSuccess()) {
+      return Model::CopyObjectOutcome(taggingOutcome.GetError());
+    }
+    Aws::StringStream tagStream;
+    bool firstTag = true;
+    for (const auto& tag : taggingOutcome.GetResult().GetTagSet()) {
+      if (!firstTag) {
+        tagStream << "&";
+      }
+      tagStream << Aws::Utils::StringUtils::URLEncode(tag.GetKey().c_str()) << "="
+                << Aws::Utils::StringUtils::URLEncode(tag.GetValue().c_str());
+      firstTag = false;
+    }
+    if (!firstTag) {
+      httpRequest->SetHeaderValue("x-amz-tagging", tagStream.str());
+      httpRequest->SetHeaderValue("x-amz-tagging-directive", "REPLACE");
+    }
+  }
+
+  return Model::CopyObjectOutcome(Model::CopyObjectResult());
+}
+
 static void CopyObjectRequestShutdownCallback(void* user_data) {
   if (!user_data) {
     AWS_LOGSTREAM_ERROR("CopyObject", "user data passed is NULL ");
@@ -914,6 +1034,13 @@ void S3CrtClient::CopyObjectAsync(const CopyObjectRequest& request, const CopyOb
                    CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE",
                                                                         "Unable to create s3 meta request", false)),
                    handlerContext);
+  }
+  {
+    auto copyPropertiesOutcome = PopulateCopyObjectProperties(request, userData->request);
+    if (!copyPropertiesOutcome.IsSuccess()) {
+      Aws::Delete(userData);
+      return handler(this, request, copyPropertiesOutcome, handlerContext);
+    }
   }
   if (handlerContext) {
     handlerContext->GetMonitorContext().StartMonitorContext(Aws::String{"S3CrtClient"}, request.GetServiceRequestName(), userData->request);

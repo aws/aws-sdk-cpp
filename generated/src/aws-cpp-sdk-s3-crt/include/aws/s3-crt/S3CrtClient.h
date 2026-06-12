@@ -8533,6 +8533,9 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient,
                                   const Aws::AmazonWebServiceRequest* request, const Aws::Http::URI& uri,
                                   Aws::Http::HttpMethod method) const;
 
+  Model::CopyObjectOutcome PopulateCopyObjectProperties(const Model::CopyObjectRequest& request,
+                                                        const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest) const;
+
   typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, S3CrtError> InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
