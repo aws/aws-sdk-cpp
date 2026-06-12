@@ -39,7 +39,7 @@ class AWS_S3_TRANSFER_API UploadResponse final {
   bool m_s3ResultHasBeenSet = false;
 };
 
-typedef Aws::Utils::Outcome<UploadResponse, Aws::Client::AWSError<Aws::S3::S3Errors>> UploadOutcome;
+using UploadOutcome = Aws::Utils::Outcome<UploadResponse, Aws::Client::AWSError<Aws::S3::S3Errors>>;
 
 }
 }

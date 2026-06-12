@@ -11,6 +11,7 @@
 
   };
   DownloadHandle::~DownloadHandle() = default;
+  DownloadHandle::DownloadHandle() = default;
   DownloadHandle::DownloadHandle(DownloadHandle&&) noexcept = default;
   DownloadHandle& DownloadHandle::operator=(DownloadHandle&&) noexcept = default;
 

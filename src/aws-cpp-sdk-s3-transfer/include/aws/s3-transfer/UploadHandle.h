@@ -21,9 +21,11 @@ class UploadHandleImpl;
  */
 class AWS_S3_TRANSFER_API UploadHandle final {
 public:
+  UploadHandle();
   ~UploadHandle();
   UploadHandle(UploadHandle&&) noexcept;
   UploadHandle& operator=(UploadHandle&&) noexcept;
+
 
   /**
    * Returns a future that resolves once the transfer finishes, succeeds, or fails.

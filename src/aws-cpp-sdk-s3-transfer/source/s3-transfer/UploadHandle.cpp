@@ -11,6 +11,8 @@
 
   };
   UploadHandle::~UploadHandle() = default;
+  UploadHandle::UploadHandle() = default;
+
   UploadHandle::UploadHandle(UploadHandle&&) noexcept = default;
   UploadHandle& UploadHandle::operator=(UploadHandle&&) noexcept = default;
 

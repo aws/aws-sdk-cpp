@@ -21,6 +21,7 @@ class DownloadHandleImpl;
  */
 class AWS_S3_TRANSFER_API DownloadHandle final {
 public:
+  DownloadHandle();
   ~DownloadHandle();
   DownloadHandle(DownloadHandle&&) noexcept;
   DownloadHandle& operator=(DownloadHandle&&) noexcept;
