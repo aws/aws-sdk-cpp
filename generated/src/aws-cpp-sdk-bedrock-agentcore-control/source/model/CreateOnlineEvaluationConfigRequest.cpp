@@ -43,6 +43,18 @@ Aws::String CreateOnlineEvaluationConfigRequest::SerializePayload() const {
     payload.WithArray("evaluators", std::move(evaluatorsJsonList));
   }
 
+  if (m_insightsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> insightsJsonList(m_insights.size());
+    for (unsigned insightsIndex = 0; insightsIndex < insightsJsonList.GetLength(); ++insightsIndex) {
+      insightsJsonList[insightsIndex].AsObject(m_insights[insightsIndex].Jsonize());
+    }
+    payload.WithArray("insights", std::move(insightsJsonList));
+  }
+
+  if (m_clusteringConfigHasBeenSet) {
+    payload.WithObject("clusteringConfig", m_clusteringConfig.Jsonize());
+  }
+
   if (m_evaluationExecutionRoleArnHasBeenSet) {
     payload.WithString("evaluationExecutionRoleArn", m_evaluationExecutionRoleArn);
   }

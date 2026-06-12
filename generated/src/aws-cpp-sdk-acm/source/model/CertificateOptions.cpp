@@ -18,12 +18,6 @@ namespace Model {
 CertificateOptions::CertificateOptions(JsonView jsonValue) { *this = jsonValue; }
 
 CertificateOptions& CertificateOptions::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("CertificateTransparencyLoggingPreference")) {
-    m_certificateTransparencyLoggingPreference =
-        CertificateTransparencyLoggingPreferenceMapper::GetCertificateTransparencyLoggingPreferenceForName(
-            jsonValue.GetString("CertificateTransparencyLoggingPreference"));
-    m_certificateTransparencyLoggingPreferenceHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Export")) {
     m_export = CertificateExportMapper::GetCertificateExportForName(jsonValue.GetString("Export"));
     m_exportHasBeenSet = true;
@@ -33,12 +27,6 @@ CertificateOptions& CertificateOptions::operator=(JsonView jsonValue) {
 
 JsonValue CertificateOptions::Jsonize() const {
   JsonValue payload;
-
-  if (m_certificateTransparencyLoggingPreferenceHasBeenSet) {
-    payload.WithString("CertificateTransparencyLoggingPreference",
-                       CertificateTransparencyLoggingPreferenceMapper::GetNameForCertificateTransparencyLoggingPreference(
-                           m_certificateTransparencyLoggingPreference));
-  }
 
   if (m_exportHasBeenSet) {
     payload.WithString("Export", CertificateExportMapper::GetNameForCertificateExport(m_export));

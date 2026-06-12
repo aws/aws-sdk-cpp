@@ -27,6 +27,7 @@ enum class UpdateType {
   AutoModeUpdate,
   RemoteNetworkConfigUpdate,
   DeletionProtectionUpdate,
+  CapabilityUpdate,
   ControlPlaneScalingConfigUpdate,
   VendedLogsUpdate
 };

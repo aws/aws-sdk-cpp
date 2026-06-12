@@ -21,6 +21,7 @@
 #include <aws/bedrock-agentcore/model/ABTestStatus.h>
 #include <aws/bedrock-agentcore/model/ABTestSummary.h>
 #include <aws/bedrock-agentcore/model/ActorSummary.h>
+#include <aws/bedrock-agentcore/model/AffectedSession.h>
 #include <aws/bedrock-agentcore/model/AgentCardDefinition.h>
 #include <aws/bedrock-agentcore/model/AgentSkillsDescriptor.h>
 #include <aws/bedrock-agentcore/model/AgentTracesConfig.h>
@@ -36,6 +37,7 @@
 #include <aws/bedrock-agentcore/model/BatchDeleteMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/BatchEvaluationStatus.h>
 #include <aws/bedrock-agentcore/model/BatchEvaluationSummary.h>
+#include <aws/bedrock-agentcore/model/BatchEvaluationTraceConfig.h>
 #include <aws/bedrock-agentcore/model/BatchUpdateMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/BatchUpdateMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/BlockchainChainId.h>
@@ -129,12 +131,19 @@
 #include <aws/bedrock-agentcore/model/Event.h>
 #include <aws/bedrock-agentcore/model/EventFilterCondition.h>
 #include <aws/bedrock-agentcore/model/EventMetadataFilterExpression.h>
+#include <aws/bedrock-agentcore/model/ExecutionSummaryAffectedSession.h>
+#include <aws/bedrock-agentcore/model/ExecutionSummaryCluster.h>
+#include <aws/bedrock-agentcore/model/ExecutionSummaryClusteringResultContent.h>
 #include <aws/bedrock-agentcore/model/ExternalProxy.h>
 #include <aws/bedrock-agentcore/model/ExtractionJob.h>
 #include <aws/bedrock-agentcore/model/ExtractionJobFilterInput.h>
 #include <aws/bedrock-agentcore/model/ExtractionJobMessages.h>
 #include <aws/bedrock-agentcore/model/ExtractionJobMetadata.h>
 #include <aws/bedrock-agentcore/model/ExtractionJobStatus.h>
+#include <aws/bedrock-agentcore/model/FailureAnalysisResultContent.h>
+#include <aws/bedrock-agentcore/model/FailureCategoryCluster.h>
+#include <aws/bedrock-agentcore/model/FailureSpanDetail.h>
+#include <aws/bedrock-agentcore/model/FailureSubCategoryCluster.h>
 #include <aws/bedrock-agentcore/model/FilterInput.h>
 #include <aws/bedrock-agentcore/model/FilterValue.h>
 #include <aws/bedrock-agentcore/model/GatewayFilter.h>
@@ -224,6 +233,9 @@
 #include <aws/bedrock-agentcore/model/HarnessToolUseType.h>
 #include <aws/bedrock-agentcore/model/InlineGroundTruth.h>
 #include <aws/bedrock-agentcore/model/InputContentBlock.h>
+#include <aws/bedrock-agentcore/model/Insight.h>
+#include <aws/bedrock-agentcore/model/InsightsFailureCategory.h>
+#include <aws/bedrock-agentcore/model/InsightsFailureSignal.h>
 #include <aws/bedrock-agentcore/model/InstrumentBalanceToken.h>
 #include <aws/bedrock-agentcore/model/InvokeAgentRuntimeCommandHandler.h>
 #include <aws/bedrock-agentcore/model/InvokeAgentRuntimeCommandInitialResponse.h>
@@ -308,6 +320,7 @@
 #include <aws/bedrock-agentcore/model/OAuthCredentialProvider.h>
 #include <aws/bedrock-agentcore/model/OAuthGrantType.h>
 #include <aws/bedrock-agentcore/model/Oauth2FlowType.h>
+#include <aws/bedrock-agentcore/model/OnlineEvaluationConfigSource.h>
 #include <aws/bedrock-agentcore/model/OperatorType.h>
 #include <aws/bedrock-agentcore/model/OutputConfig.h>
 #include <aws/bedrock-agentcore/model/PayloadType.h>
@@ -352,6 +365,7 @@
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/RightExpression.h>
 #include <aws/bedrock-agentcore/model/Role.h>
+#include <aws/bedrock-agentcore/model/RootCauseCluster.h>
 #include <aws/bedrock-agentcore/model/S3Location.h>
 #include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileRequest.h>
 #include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileResult.h>
@@ -419,6 +433,9 @@
 #include <aws/bedrock-agentcore/model/UpdateBrowserStreamRequest.h>
 #include <aws/bedrock-agentcore/model/UpdateBrowserStreamResult.h>
 #include <aws/bedrock-agentcore/model/UserIdentifier.h>
+#include <aws/bedrock-agentcore/model/UserIntentAffectedSession.h>
+#include <aws/bedrock-agentcore/model/UserIntentCluster.h>
+#include <aws/bedrock-agentcore/model/UserIntentClusteringResultContent.h>
 #include <aws/bedrock-agentcore/model/ValidationException.h>
 #include <aws/bedrock-agentcore/model/ValidationExceptionField.h>
 #include <aws/bedrock-agentcore/model/ValidationExceptionReason.h>

@@ -49,6 +49,13 @@ GetBatchEvaluationResult& GetBatchEvaluationResult::operator=(const Aws::AmazonW
     }
     m_evaluatorsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("insights")) {
+    Aws::Utils::Array<JsonView> insightsJsonList = jsonValue.GetArray("insights");
+    for (unsigned insightsIndex = 0; insightsIndex < insightsJsonList.GetLength(); ++insightsIndex) {
+      m_insights.push_back(insightsJsonList[insightsIndex].AsObject());
+    }
+    m_insightsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("dataSourceConfig")) {
     m_dataSourceConfig = jsonValue.GetObject("dataSourceConfig");
     m_dataSourceConfigHasBeenSet = true;
@@ -60,6 +67,18 @@ GetBatchEvaluationResult& GetBatchEvaluationResult::operator=(const Aws::AmazonW
   if (jsonValue.ValueExists("evaluationResults")) {
     m_evaluationResults = jsonValue.GetObject("evaluationResults");
     m_evaluationResultsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failureAnalysisResult")) {
+    m_failureAnalysisResult = jsonValue.GetObject("failureAnalysisResult");
+    m_failureAnalysisResultHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("userIntentResult")) {
+    m_userIntentResult = jsonValue.GetObject("userIntentResult");
+    m_userIntentResultHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("executionSummaryResult")) {
+    m_executionSummaryResult = jsonValue.GetObject("executionSummaryResult");
+    m_executionSummaryResultHasBeenSet = true;
   }
   if (jsonValue.ValueExists("errorDetails")) {
     Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("errorDetails");
@@ -75,6 +94,10 @@ GetBatchEvaluationResult& GetBatchEvaluationResult::operator=(const Aws::AmazonW
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("kmsKeyArn")) {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

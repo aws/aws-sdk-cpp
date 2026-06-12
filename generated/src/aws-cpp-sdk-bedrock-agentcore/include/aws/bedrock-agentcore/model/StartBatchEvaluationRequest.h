@@ -9,7 +9,9 @@
 #include <aws/bedrock-agentcore/model/DataSourceConfig.h>
 #include <aws/bedrock-agentcore/model/EvaluationMetadata.h>
 #include <aws/bedrock-agentcore/model/Evaluator.h>
+#include <aws/bedrock-agentcore/model/Insight.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -78,6 +80,31 @@ class StartBatchEvaluationRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
+   * <p>The list of insight analyses to run against sessions during the batch
+   * evaluation. Maximum of 10 insights.</p>
+   */
+  inline const Aws::Vector<Insight>& GetInsights() const { return m_insights; }
+  inline bool InsightsHasBeenSet() const { return m_insightsHasBeenSet; }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  void SetInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights = std::forward<InsightsT>(value);
+  }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  StartBatchEvaluationRequest& WithInsights(InsightsT&& value) {
+    SetInsights(std::forward<InsightsT>(value));
+    return *this;
+  }
+  template <typename InsightsT = Insight>
+  StartBatchEvaluationRequest& AddInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights.emplace_back(std::forward<InsightsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The data source configuration that specifies where to pull agent session
    * traces from for evaluation.</p>
    */
@@ -136,6 +163,49 @@ class StartBatchEvaluationRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
+   * <p>A map of tag keys and values to associate with the batch evaluation.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  StartBatchEvaluationRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  StartBatchEvaluationRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the KMS key used to encrypt evaluation data. If provided, customer
+   * data is encrypted at rest with the specified key.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  StartBatchEvaluationRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The description of the batch evaluation.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -156,18 +226,27 @@ class StartBatchEvaluationRequest : public BedrockAgentCoreRequest {
 
   Aws::Vector<Evaluator> m_evaluators;
 
+  Aws::Vector<Insight> m_insights;
+
   DataSourceConfig m_dataSourceConfig;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   EvaluationMetadata m_evaluationMetadata;
 
+  Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::String m_kmsKeyArn;
+
   Aws::String m_description;
   bool m_batchEvaluationNameHasBeenSet = false;
   bool m_evaluatorsHasBeenSet = false;
+  bool m_insightsHasBeenSet = false;
   bool m_dataSourceConfigHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_evaluationMetadataHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

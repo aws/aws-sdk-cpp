@@ -17,6 +17,8 @@ namespace TableAttributesMapper {
 
 static const int NAME_HASH = HashingUtils::HashString("NAME");
 static const int TABLE_TYPE_HASH = HashingUtils::HashString("TABLE_TYPE");
+static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
+static const int LATEST_ICEBERG_METADATA_HASH = HashingUtils::HashString("LATEST_ICEBERG_METADATA");
 
 TableAttributes GetTableAttributesForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ TableAttributes GetTableAttributesForName(const Aws::String& name) {
     return TableAttributes::NAME;
   } else if (hashCode == TABLE_TYPE_HASH) {
     return TableAttributes::TABLE_TYPE;
+  } else if (hashCode == DEFAULT_HASH) {
+    return TableAttributes::DEFAULT;
+  } else if (hashCode == LATEST_ICEBERG_METADATA_HASH) {
+    return TableAttributes::LATEST_ICEBERG_METADATA;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForTableAttributes(TableAttributes enumValue) {
       return "NAME";
     case TableAttributes::TABLE_TYPE:
       return "TABLE_TYPE";
+    case TableAttributes::DEFAULT:
+      return "DEFAULT";
+    case TableAttributes::LATEST_ICEBERG_METADATA:
+      return "LATEST_ICEBERG_METADATA";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

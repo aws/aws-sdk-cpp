@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/AuditContext.h>
+#include <aws/glue/model/TableAttributes.h>
 
 #include <utility>
 
@@ -163,6 +165,36 @@ class GetTableRequest : public GlueRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the table fields returned by the <code>GetTable</code> call. This
+   * parameter doesn't accept an empty list.</p> <p>The following are the valid
+   * combinations of values:</p> <ul> <li> <p> <code>DEFAULT</code> - Returns the
+   * Hive-style table definition only.</p> </li> <li> <p>
+   * <code>LATEST_ICEBERG_METADATA</code> - Returns only the latest Apache Iceberg
+   * table metadata.</p> </li> <li> <p> <code>DEFAULT</code>,
+   * <code>LATEST_ICEBERG_METADATA</code> - Returns both the Hive-style table
+   * definition and the latest Apache Iceberg table metadata.</p> </li> </ul>
+   */
+  inline const Aws::Vector<TableAttributes>& GetAttributesToGet() const { return m_attributesToGet; }
+  inline bool AttributesToGetHasBeenSet() const { return m_attributesToGetHasBeenSet; }
+  template <typename AttributesToGetT = Aws::Vector<TableAttributes>>
+  void SetAttributesToGet(AttributesToGetT&& value) {
+    m_attributesToGetHasBeenSet = true;
+    m_attributesToGet = std::forward<AttributesToGetT>(value);
+  }
+  template <typename AttributesToGetT = Aws::Vector<TableAttributes>>
+  GetTableRequest& WithAttributesToGet(AttributesToGetT&& value) {
+    SetAttributesToGet(std::forward<AttributesToGetT>(value));
+    return *this;
+  }
+  inline GetTableRequest& AddAttributesToGet(TableAttributes value) {
+    m_attributesToGetHasBeenSet = true;
+    m_attributesToGet.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalogId;
 
@@ -177,6 +209,8 @@ class GetTableRequest : public GlueRequest {
   AuditContext m_auditContext;
 
   bool m_includeStatusDetails{false};
+
+  Aws::Vector<TableAttributes> m_attributesToGet;
   bool m_catalogIdHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -184,6 +218,7 @@ class GetTableRequest : public GlueRequest {
   bool m_queryAsOfTimeHasBeenSet = false;
   bool m_auditContextHasBeenSet = false;
   bool m_includeStatusDetailsHasBeenSet = false;
+  bool m_attributesToGetHasBeenSet = false;
 };
 
 }  // namespace Model

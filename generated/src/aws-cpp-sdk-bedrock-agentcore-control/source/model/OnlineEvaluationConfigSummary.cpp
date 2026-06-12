@@ -55,6 +55,17 @@ OnlineEvaluationConfigSummary& OnlineEvaluationConfigSummary::operator=(JsonView
     m_failureReason = jsonValue.GetString("failureReason");
     m_failureReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("insights")) {
+    Aws::Utils::Array<JsonView> insightsJsonList = jsonValue.GetArray("insights");
+    for (unsigned insightsIndex = 0; insightsIndex < insightsJsonList.GetLength(); ++insightsIndex) {
+      m_insights.push_back(insightsJsonList[insightsIndex].AsObject());
+    }
+    m_insightsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("clusteringConfig")) {
+    m_clusteringConfig = jsonValue.GetObject("clusteringConfig");
+    m_clusteringConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -96,6 +107,18 @@ JsonValue OnlineEvaluationConfigSummary::Jsonize() const {
 
   if (m_failureReasonHasBeenSet) {
     payload.WithString("failureReason", m_failureReason);
+  }
+
+  if (m_insightsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> insightsJsonList(m_insights.size());
+    for (unsigned insightsIndex = 0; insightsIndex < insightsJsonList.GetLength(); ++insightsIndex) {
+      insightsJsonList[insightsIndex].AsObject(m_insights[insightsIndex].Jsonize());
+    }
+    payload.WithArray("insights", std::move(insightsJsonList));
+  }
+
+  if (m_clusteringConfigHasBeenSet) {
+    payload.WithObject("clusteringConfig", m_clusteringConfig.Jsonize());
   }
 
   return payload;

@@ -29,6 +29,10 @@ AgentTracesConfig& AgentTracesConfig::operator=(JsonView jsonValue) {
     m_cloudwatchLogs = jsonValue.GetObject("cloudwatchLogs");
     m_cloudwatchLogsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("batchEvaluation")) {
+    m_batchEvaluation = jsonValue.GetObject("batchEvaluation");
+    m_batchEvaluationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +49,10 @@ JsonValue AgentTracesConfig::Jsonize() const {
 
   if (m_cloudwatchLogsHasBeenSet) {
     payload.WithObject("cloudwatchLogs", m_cloudwatchLogs.Jsonize());
+  }
+
+  if (m_batchEvaluationHasBeenSet) {
+    payload.WithObject("batchEvaluation", m_batchEvaluation.Jsonize());
   }
 
   return payload;

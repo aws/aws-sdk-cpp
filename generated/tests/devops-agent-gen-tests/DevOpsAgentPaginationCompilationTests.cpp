@@ -18,6 +18,7 @@
 #include <aws/devops-agent/model/ListServicesPaginationTraits.h>
 #include <aws/devops-agent/model/ListAssetsPaginationTraits.h>
 #include <aws/devops-agent/model/ListGoalsPaginationTraits.h>
+#include <aws/devops-agent/model/ListTriggersPaginationTraits.h>
 #include <aws/devops-agent/model/ListAssociationsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

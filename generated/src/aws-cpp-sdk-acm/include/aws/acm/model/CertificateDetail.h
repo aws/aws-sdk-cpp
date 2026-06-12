@@ -588,11 +588,9 @@ class CertificateDetail {
 
   ///@{
   /**
-   * <p>Value that specifies whether to add the certificate to a transparency log.
-   * Certificate transparency makes it possible to detect SSL certificates that have
-   * been mistakenly or maliciously issued. A browser might respond to certificate
-   * that has not been logged by showing an error message. The logs are
-   * cryptographically secure. </p>
+   * <p>Contains the certificate options. Certificate transparency logging opt-out is
+   * no longer available. All public certificates are recorded in a certificate
+   * transparency log.</p>
    */
   inline const CertificateOptions& GetOptions() const { return m_options; }
   inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }

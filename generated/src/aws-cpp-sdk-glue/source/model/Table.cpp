@@ -121,6 +121,10 @@ Table& Table::operator=(JsonView jsonValue) {
     m_isMaterializedView = jsonValue.GetBool("IsMaterializedView");
     m_isMaterializedViewHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IcebergTableMetadata")) {
+    m_icebergTableMetadata = jsonValue.GetObject("IcebergTableMetadata");
+    m_icebergTableMetadataHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Status")) {
     m_status = Aws::MakeShared<TableStatus>("Table", jsonValue.GetObject("Status"));
     m_statusHasBeenSet = true;
@@ -233,6 +237,10 @@ JsonValue Table::Jsonize() const {
 
   if (m_isMaterializedViewHasBeenSet) {
     payload.WithBool("IsMaterializedView", m_isMaterializedView);
+  }
+
+  if (m_icebergTableMetadataHasBeenSet) {
+    payload.WithObject("IcebergTableMetadata", m_icebergTableMetadata.Jsonize());
   }
 
   if (m_statusHasBeenSet) {

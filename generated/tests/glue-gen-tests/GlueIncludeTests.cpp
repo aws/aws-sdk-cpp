@@ -625,6 +625,7 @@
 #include <aws/glue/model/IcebergSortOrder.h>
 #include <aws/glue/model/IcebergStructField.h>
 #include <aws/glue/model/IcebergStructTypeEnum.h>
+#include <aws/glue/model/IcebergTableMetadata.h>
 #include <aws/glue/model/IcebergTableUpdate.h>
 #include <aws/glue/model/IcebergTarget.h>
 #include <aws/glue/model/IcebergTargetCompressionType.h>

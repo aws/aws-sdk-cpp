@@ -53,6 +53,17 @@ GetOnlineEvaluationConfigResult& GetOnlineEvaluationConfigResult::operator=(cons
     }
     m_evaluatorsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("insights")) {
+    Aws::Utils::Array<JsonView> insightsJsonList = jsonValue.GetArray("insights");
+    for (unsigned insightsIndex = 0; insightsIndex < insightsJsonList.GetLength(); ++insightsIndex) {
+      m_insights.push_back(insightsJsonList[insightsIndex].AsObject());
+    }
+    m_insightsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("clusteringConfig")) {
+    m_clusteringConfig = jsonValue.GetObject("clusteringConfig");
+    m_clusteringConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("outputConfig")) {
     m_outputConfig = jsonValue.GetObject("outputConfig");
     m_outputConfigHasBeenSet = true;

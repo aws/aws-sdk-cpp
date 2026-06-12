@@ -30,6 +30,7 @@ static const int ZonalShiftConfigUpdate_HASH = HashingUtils::HashString("ZonalSh
 static const int AutoModeUpdate_HASH = HashingUtils::HashString("AutoModeUpdate");
 static const int RemoteNetworkConfigUpdate_HASH = HashingUtils::HashString("RemoteNetworkConfigUpdate");
 static const int DeletionProtectionUpdate_HASH = HashingUtils::HashString("DeletionProtectionUpdate");
+static const int CapabilityUpdate_HASH = HashingUtils::HashString("CapabilityUpdate");
 static const int ControlPlaneScalingConfigUpdate_HASH = HashingUtils::HashString("ControlPlaneScalingConfigUpdate");
 static const int VendedLogsUpdate_HASH = HashingUtils::HashString("VendedLogsUpdate");
 
@@ -65,6 +66,8 @@ UpdateType GetUpdateTypeForName(const Aws::String& name) {
     return UpdateType::RemoteNetworkConfigUpdate;
   } else if (hashCode == DeletionProtectionUpdate_HASH) {
     return UpdateType::DeletionProtectionUpdate;
+  } else if (hashCode == CapabilityUpdate_HASH) {
+    return UpdateType::CapabilityUpdate;
   } else if (hashCode == ControlPlaneScalingConfigUpdate_HASH) {
     return UpdateType::ControlPlaneScalingConfigUpdate;
   } else if (hashCode == VendedLogsUpdate_HASH) {
@@ -113,6 +116,8 @@ Aws::String GetNameForUpdateType(UpdateType enumValue) {
       return "RemoteNetworkConfigUpdate";
     case UpdateType::DeletionProtectionUpdate:
       return "DeletionProtectionUpdate";
+    case UpdateType::CapabilityUpdate:
+      return "CapabilityUpdate";
     case UpdateType::ControlPlaneScalingConfigUpdate:
       return "ControlPlaneScalingConfigUpdate";
     case UpdateType::VendedLogsUpdate:

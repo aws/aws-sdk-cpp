@@ -231,11 +231,6 @@ InvokeEndpointAsyncOutcome SageMakerRuntimeClient::InvokeEndpointAsync(const Inv
     return InvokeEndpointAsyncOutcome(Aws::Client::AWSError<SageMakerRuntimeErrors>(
         SageMakerRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointName]", false));
   }
-  if (!request.InputLocationHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("InvokeEndpointAsync", "Required field: InputLocation, is not set");
-    return InvokeEndpointAsyncOutcome(Aws::Client::AWSError<SageMakerRuntimeErrors>(
-        SageMakerRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InputLocation]", false));
-  }
 
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;

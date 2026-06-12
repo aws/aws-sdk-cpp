@@ -67,12 +67,34 @@ class ToolDescriptionOutput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An explanation of why the recommendation was generated for this tool and what
+   * patterns were identified in the agent traces.</p>
+   */
+  inline const Aws::String& GetExplanation() const { return m_explanation; }
+  inline bool ExplanationHasBeenSet() const { return m_explanationHasBeenSet; }
+  template <typename ExplanationT = Aws::String>
+  void SetExplanation(ExplanationT&& value) {
+    m_explanationHasBeenSet = true;
+    m_explanation = std::forward<ExplanationT>(value);
+  }
+  template <typename ExplanationT = Aws::String>
+  ToolDescriptionOutput& WithExplanation(ExplanationT&& value) {
+    SetExplanation(std::forward<ExplanationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_toolName;
 
   Aws::String m_recommendedToolDescription;
+
+  Aws::String m_explanation;
   bool m_toolNameHasBeenSet = false;
   bool m_recommendedToolDescriptionHasBeenSet = false;
+  bool m_explanationHasBeenSet = false;
 };
 
 }  // namespace Model

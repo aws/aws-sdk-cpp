@@ -90,7 +90,7 @@ class S3CatalogSource {
   ///@{
   /**
    * <p>Partitions satisfying this predicate are deleted. Files within the retention
-   * period in these partitions are not deleted. Set to <code>""</code> �� empty by
+   * period in these partitions are not deleted. Set to <code>""</code> – empty by
    * default.</p>
    */
   inline const Aws::String& GetPartitionPredicate() const { return m_partitionPredicate; }

@@ -18,6 +18,7 @@
 #include <aws/devops-agent/model/ListGoalsPaginationTraits.h>
 #include <aws/devops-agent/model/ListJournalRecordsPaginationTraits.h>
 #include <aws/devops-agent/model/ListServicesPaginationTraits.h>
+#include <aws/devops-agent/model/ListTriggersPaginationTraits.h>
 
 #include <memory>
 
@@ -149,6 +150,17 @@ class DevOpsAgentPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServicesRequest,
                                              Pagination::ListServicesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                      request};
+  }
+
+  /**
+   * Create a paginator for ListTriggers operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTriggersRequest, Pagination::ListTriggersPaginationTraits<DerivedClient>>
+  ListTriggersPaginator(const Model::ListTriggersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTriggersRequest,
+                                             Pagination::ListTriggersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
   }
 };

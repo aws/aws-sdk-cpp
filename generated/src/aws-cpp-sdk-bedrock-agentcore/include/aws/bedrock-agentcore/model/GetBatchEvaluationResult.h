@@ -9,7 +9,11 @@
 #include <aws/bedrock-agentcore/model/DataSourceConfig.h>
 #include <aws/bedrock-agentcore/model/EvaluationJobResults.h>
 #include <aws/bedrock-agentcore/model/Evaluator.h>
+#include <aws/bedrock-agentcore/model/ExecutionSummaryClusteringResultContent.h>
+#include <aws/bedrock-agentcore/model/FailureAnalysisResultContent.h>
+#include <aws/bedrock-agentcore/model/Insight.h>
 #include <aws/bedrock-agentcore/model/OutputConfig.h>
+#include <aws/bedrock-agentcore/model/UserIntentClusteringResultContent.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -142,6 +146,29 @@ class GetBatchEvaluationResult {
 
   ///@{
   /**
+   * <p>The list of insight analyses applied during the batch evaluation.</p>
+   */
+  inline const Aws::Vector<Insight>& GetInsights() const { return m_insights; }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  void SetInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights = std::forward<InsightsT>(value);
+  }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  GetBatchEvaluationResult& WithInsights(InsightsT&& value) {
+    SetInsights(std::forward<InsightsT>(value));
+    return *this;
+  }
+  template <typename InsightsT = Insight>
+  GetBatchEvaluationResult& AddInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights.emplace_back(std::forward<InsightsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The data source configuration specifying where agent traces are pulled
    * from.</p>
    */
@@ -189,6 +216,51 @@ class GetBatchEvaluationResult {
   template <typename EvaluationResultsT = EvaluationJobResults>
   GetBatchEvaluationResult& WithEvaluationResults(EvaluationResultsT&& value) {
     SetEvaluationResults(std::forward<EvaluationResultsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const FailureAnalysisResultContent& GetFailureAnalysisResult() const { return m_failureAnalysisResult; }
+  template <typename FailureAnalysisResultT = FailureAnalysisResultContent>
+  void SetFailureAnalysisResult(FailureAnalysisResultT&& value) {
+    m_failureAnalysisResultHasBeenSet = true;
+    m_failureAnalysisResult = std::forward<FailureAnalysisResultT>(value);
+  }
+  template <typename FailureAnalysisResultT = FailureAnalysisResultContent>
+  GetBatchEvaluationResult& WithFailureAnalysisResult(FailureAnalysisResultT&& value) {
+    SetFailureAnalysisResult(std::forward<FailureAnalysisResultT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const UserIntentClusteringResultContent& GetUserIntentResult() const { return m_userIntentResult; }
+  template <typename UserIntentResultT = UserIntentClusteringResultContent>
+  void SetUserIntentResult(UserIntentResultT&& value) {
+    m_userIntentResultHasBeenSet = true;
+    m_userIntentResult = std::forward<UserIntentResultT>(value);
+  }
+  template <typename UserIntentResultT = UserIntentClusteringResultContent>
+  GetBatchEvaluationResult& WithUserIntentResult(UserIntentResultT&& value) {
+    SetUserIntentResult(std::forward<UserIntentResultT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ExecutionSummaryClusteringResultContent& GetExecutionSummaryResult() const { return m_executionSummaryResult; }
+  template <typename ExecutionSummaryResultT = ExecutionSummaryClusteringResultContent>
+  void SetExecutionSummaryResult(ExecutionSummaryResultT&& value) {
+    m_executionSummaryResultHasBeenSet = true;
+    m_executionSummaryResult = std::forward<ExecutionSummaryResultT>(value);
+  }
+  template <typename ExecutionSummaryResultT = ExecutionSummaryClusteringResultContent>
+  GetBatchEvaluationResult& WithExecutionSummaryResult(ExecutionSummaryResultT&& value) {
+    SetExecutionSummaryResult(std::forward<ExecutionSummaryResultT>(value));
     return *this;
   }
   ///@}
@@ -251,6 +323,23 @@ class GetBatchEvaluationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The ARN of the KMS key used to encrypt evaluation data.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  GetBatchEvaluationResult& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -279,17 +368,27 @@ class GetBatchEvaluationResult {
 
   Aws::Vector<Evaluator> m_evaluators;
 
+  Aws::Vector<Insight> m_insights;
+
   DataSourceConfig m_dataSourceConfig;
 
   OutputConfig m_outputConfig;
 
   EvaluationJobResults m_evaluationResults;
 
+  FailureAnalysisResultContent m_failureAnalysisResult;
+
+  UserIntentClusteringResultContent m_userIntentResult;
+
+  ExecutionSummaryClusteringResultContent m_executionSummaryResult;
+
   Aws::Vector<Aws::String> m_errorDetails;
 
   Aws::String m_description;
 
   Aws::Utils::DateTime m_updatedAt{};
+
+  Aws::String m_kmsKeyArn;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
@@ -299,12 +398,17 @@ class GetBatchEvaluationResult {
   bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_evaluatorsHasBeenSet = false;
+  bool m_insightsHasBeenSet = false;
   bool m_dataSourceConfigHasBeenSet = false;
   bool m_outputConfigHasBeenSet = false;
   bool m_evaluationResultsHasBeenSet = false;
+  bool m_failureAnalysisResultHasBeenSet = false;
+  bool m_userIntentResultHasBeenSet = false;
+  bool m_executionSummaryResultHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

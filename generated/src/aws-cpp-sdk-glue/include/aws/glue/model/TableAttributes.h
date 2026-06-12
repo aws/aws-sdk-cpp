@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Glue {
 namespace Model {
-enum class TableAttributes { NOT_SET, NAME, TABLE_TYPE };
+enum class TableAttributes { NOT_SET, NAME, TABLE_TYPE, DEFAULT, LATEST_ICEBERG_METADATA };
 
 namespace TableAttributesMapper {
 AWS_GLUE_API TableAttributes GetTableAttributesForName(const Aws::String& name);

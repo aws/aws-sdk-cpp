@@ -62,6 +62,8 @@
 #include <aws/bedrock-agentcore-control/model/ClientAuthenticationMethodType.h>
 #include <aws/bedrock-agentcore-control/model/CloudWatchLogsInputConfig.h>
 #include <aws/bedrock-agentcore-control/model/CloudWatchOutputConfig.h>
+#include <aws/bedrock-agentcore-control/model/ClusteringConfig.h>
+#include <aws/bedrock-agentcore-control/model/ClusteringFrequency.h>
 #include <aws/bedrock-agentcore-control/model/Code.h>
 #include <aws/bedrock-agentcore-control/model/CodeBasedEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/CodeConfiguration.h>
@@ -368,6 +370,7 @@
 #include <aws/bedrock-agentcore-control/model/IndexedKey.h>
 #include <aws/bedrock-agentcore-control/model/InferenceConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InlineExamplesSource.h>
+#include <aws/bedrock-agentcore-control/model/Insight.h>
 #include <aws/bedrock-agentcore-control/model/InterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InterceptorInputConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InvocationConfiguration.h>

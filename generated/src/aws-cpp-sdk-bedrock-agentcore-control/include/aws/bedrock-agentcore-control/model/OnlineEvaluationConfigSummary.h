@@ -5,10 +5,13 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/ClusteringConfig.h>
+#include <aws/bedrock-agentcore-control/model/Insight.h>
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationConfigStatus.h>
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationExecutionStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -195,6 +198,48 @@ class OnlineEvaluationConfigSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The list of insight types configured for this evaluation.</p>
+   */
+  inline const Aws::Vector<Insight>& GetInsights() const { return m_insights; }
+  inline bool InsightsHasBeenSet() const { return m_insightsHasBeenSet; }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  void SetInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights = std::forward<InsightsT>(value);
+  }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  OnlineEvaluationConfigSummary& WithInsights(InsightsT&& value) {
+    SetInsights(std::forward<InsightsT>(value));
+    return *this;
+  }
+  template <typename InsightsT = Insight>
+  OnlineEvaluationConfigSummary& AddInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights.emplace_back(std::forward<InsightsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The clustering configuration for periodic batch evaluation.</p>
+   */
+  inline const ClusteringConfig& GetClusteringConfig() const { return m_clusteringConfig; }
+  inline bool ClusteringConfigHasBeenSet() const { return m_clusteringConfigHasBeenSet; }
+  template <typename ClusteringConfigT = ClusteringConfig>
+  void SetClusteringConfig(ClusteringConfigT&& value) {
+    m_clusteringConfigHasBeenSet = true;
+    m_clusteringConfig = std::forward<ClusteringConfigT>(value);
+  }
+  template <typename ClusteringConfigT = ClusteringConfig>
+  OnlineEvaluationConfigSummary& WithClusteringConfig(ClusteringConfigT&& value) {
+    SetClusteringConfig(std::forward<ClusteringConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_onlineEvaluationConfigArn;
 
@@ -213,6 +258,10 @@ class OnlineEvaluationConfigSummary {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_failureReason;
+
+  Aws::Vector<Insight> m_insights;
+
+  ClusteringConfig m_clusteringConfig;
   bool m_onlineEvaluationConfigArnHasBeenSet = false;
   bool m_onlineEvaluationConfigIdHasBeenSet = false;
   bool m_onlineEvaluationConfigNameHasBeenSet = false;
@@ -222,6 +271,8 @@ class OnlineEvaluationConfigSummary {
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
+  bool m_insightsHasBeenSet = false;
+  bool m_clusteringConfigHasBeenSet = false;
 };
 
 }  // namespace Model

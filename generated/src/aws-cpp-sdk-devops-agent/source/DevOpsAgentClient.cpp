@@ -28,10 +28,12 @@
 #include <aws/devops-agent/model/CreateBacklogTaskRequest.h>
 #include <aws/devops-agent/model/CreateChatRequest.h>
 #include <aws/devops-agent/model/CreatePrivateConnectionRequest.h>
+#include <aws/devops-agent/model/CreateTriggerRequest.h>
 #include <aws/devops-agent/model/DeleteAgentSpaceRequest.h>
 #include <aws/devops-agent/model/DeleteAssetFileRequest.h>
 #include <aws/devops-agent/model/DeleteAssetRequest.h>
 #include <aws/devops-agent/model/DeletePrivateConnectionRequest.h>
+#include <aws/devops-agent/model/DeleteTriggerRequest.h>
 #include <aws/devops-agent/model/DeregisterServiceRequest.h>
 #include <aws/devops-agent/model/DescribePrivateConnectionRequest.h>
 #include <aws/devops-agent/model/DisableOperatorAppRequest.h>
@@ -47,6 +49,7 @@
 #include <aws/devops-agent/model/GetOperatorAppRequest.h>
 #include <aws/devops-agent/model/GetRecommendationRequest.h>
 #include <aws/devops-agent/model/GetServiceRequest.h>
+#include <aws/devops-agent/model/GetTriggerRequest.h>
 #include <aws/devops-agent/model/ListAgentSpacesRequest.h>
 #include <aws/devops-agent/model/ListAssetFilesRequest.h>
 #include <aws/devops-agent/model/ListAssetTypesRequest.h>
@@ -63,6 +66,7 @@
 #include <aws/devops-agent/model/ListRecommendationsRequest.h>
 #include <aws/devops-agent/model/ListServicesRequest.h>
 #include <aws/devops-agent/model/ListTagsForResourceRequest.h>
+#include <aws/devops-agent/model/ListTriggersRequest.h>
 #include <aws/devops-agent/model/ListWebhooksRequest.h>
 #include <aws/devops-agent/model/RegisterServiceRequest.h>
 #include <aws/devops-agent/model/SendMessageRequest.h>
@@ -77,6 +81,7 @@
 #include <aws/devops-agent/model/UpdateOperatorAppIdpConfigRequest.h>
 #include <aws/devops-agent/model/UpdatePrivateConnectionCertificateRequest.h>
 #include <aws/devops-agent/model/UpdateRecommendationRequest.h>
+#include <aws/devops-agent/model/UpdateTriggerRequest.h>
 #include <aws/devops-agent/model/ValidateAwsAssociationsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -360,6 +365,24 @@ CreatePrivateConnectionOutcome DevOpsAgentClient::CreatePrivateConnection(const 
                             : CreatePrivateConnectionOutcome(std::move(result.GetError()));
 }
 
+CreateTriggerOutcome DevOpsAgentClient::CreateTrigger(const CreateTriggerRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateTrigger", "Required field: AgentSpaceId, is not set");
+    return CreateTriggerOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [AgentSpaceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/trigger/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/triggers");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTriggerOutcome(result.GetResultWithOwnership()) : CreateTriggerOutcome(std::move(result.GetError()));
+}
+
 DeleteAgentSpaceOutcome DevOpsAgentClient::DeleteAgentSpace(const DeleteAgentSpaceRequest& request) const {
   if (!request.AgentSpaceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteAgentSpace", "Required field: AgentSpaceId, is not set");
@@ -450,6 +473,30 @@ DeletePrivateConnectionOutcome DevOpsAgentClient::DeletePrivateConnection(const 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeletePrivateConnectionOutcome(result.GetResultWithOwnership())
                             : DeletePrivateConnectionOutcome(std::move(result.GetError()));
+}
+
+DeleteTriggerOutcome DevOpsAgentClient::DeleteTrigger(const DeleteTriggerRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteTrigger", "Required field: AgentSpaceId, is not set");
+    return DeleteTriggerOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.TriggerIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteTrigger", "Required field: TriggerId, is not set");
+    return DeleteTriggerOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [TriggerId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/trigger/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/triggers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTriggerId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTriggerOutcome(result.GetResultWithOwnership()) : DeleteTriggerOutcome(std::move(result.GetError()));
 }
 
 DeregisterServiceOutcome DevOpsAgentClient::DeregisterService(const DeregisterServiceRequest& request) const {
@@ -768,6 +815,30 @@ GetServiceOutcome DevOpsAgentClient::GetService(const GetServiceRequest& request
   return result.IsSuccess() ? GetServiceOutcome(result.GetResultWithOwnership()) : GetServiceOutcome(std::move(result.GetError()));
 }
 
+GetTriggerOutcome DevOpsAgentClient::GetTrigger(const GetTriggerRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetTrigger", "Required field: AgentSpaceId, is not set");
+    return GetTriggerOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.TriggerIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetTrigger", "Required field: TriggerId, is not set");
+    return GetTriggerOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [TriggerId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/trigger/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/triggers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTriggerId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTriggerOutcome(result.GetResultWithOwnership()) : GetTriggerOutcome(std::move(result.GetError()));
+}
+
 ListAgentSpacesOutcome DevOpsAgentClient::ListAgentSpaces(const ListAgentSpacesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1044,6 +1115,24 @@ ListTagsForResourceOutcome DevOpsAgentClient::ListTagsForResource(const ListTags
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
+}
+
+ListTriggersOutcome DevOpsAgentClient::ListTriggers(const ListTriggersRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListTriggers", "Required field: AgentSpaceId, is not set");
+    return ListTriggersOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [AgentSpaceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/trigger/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/triggers");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTriggersOutcome(result.GetResultWithOwnership()) : ListTriggersOutcome(std::move(result.GetError()));
 }
 
 ListWebhooksOutcome DevOpsAgentClient::ListWebhooks(const ListWebhooksRequest& request) const {
@@ -1390,6 +1479,30 @@ UpdateRecommendationOutcome DevOpsAgentClient::UpdateRecommendation(const Update
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateRecommendationOutcome(result.GetResultWithOwnership())
                             : UpdateRecommendationOutcome(std::move(result.GetError()));
+}
+
+UpdateTriggerOutcome DevOpsAgentClient::UpdateTrigger(const UpdateTriggerRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateTrigger", "Required field: AgentSpaceId, is not set");
+    return UpdateTriggerOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.TriggerIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateTrigger", "Required field: TriggerId, is not set");
+    return UpdateTriggerOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [TriggerId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/trigger/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/triggers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTriggerId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateTriggerOutcome(result.GetResultWithOwnership()) : UpdateTriggerOutcome(std::move(result.GetError()));
 }
 
 ValidateAwsAssociationsOutcome DevOpsAgentClient::ValidateAwsAssociations(const ValidateAwsAssociationsRequest& request) const {

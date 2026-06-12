@@ -663,11 +663,11 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates a certificate. You can use this function to specify whether to opt in
-   * to or out of recording your certificate in a certificate transparency log and
-   * exporting. For more information, see <a
-   * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
-   * Opting Out of Certificate Transparency Logging</a> and <a
+   * <p>Updates a certificate. You can use this function to specify whether to export
+   * your certificate. Certificate transparency logging opt-out is no longer
+   * available. For more information, see <a
+   * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
+   * Transparency Logging</a> and <a
    * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate
    * Manager Exportable Managed Certificates</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions">AWS

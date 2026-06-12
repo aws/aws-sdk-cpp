@@ -47,6 +47,8 @@
 #include <aws/devops-agent/model/CreateChatResult.h>
 #include <aws/devops-agent/model/CreatePrivateConnectionRequest.h>
 #include <aws/devops-agent/model/CreatePrivateConnectionResult.h>
+#include <aws/devops-agent/model/CreateTriggerRequest.h>
+#include <aws/devops-agent/model/CreateTriggerResult.h>
 #include <aws/devops-agent/model/DatadogAuthorizationConfig.h>
 #include <aws/devops-agent/model/DatadogServiceDetails.h>
 #include <aws/devops-agent/model/DeleteAgentSpaceRequest.h>
@@ -57,6 +59,8 @@
 #include <aws/devops-agent/model/DeleteAssetResult.h>
 #include <aws/devops-agent/model/DeletePrivateConnectionRequest.h>
 #include <aws/devops-agent/model/DeletePrivateConnectionResult.h>
+#include <aws/devops-agent/model/DeleteTriggerRequest.h>
+#include <aws/devops-agent/model/DeleteTriggerResult.h>
 #include <aws/devops-agent/model/DeregisterServiceRequest.h>
 #include <aws/devops-agent/model/DeregisterServiceResult.h>
 #include <aws/devops-agent/model/DescribePrivateConnectionRequest.h>
@@ -96,6 +100,8 @@
 #include <aws/devops-agent/model/GetRecommendationResult.h>
 #include <aws/devops-agent/model/GetServiceRequest.h>
 #include <aws/devops-agent/model/GetServiceResult.h>
+#include <aws/devops-agent/model/GetTriggerRequest.h>
+#include <aws/devops-agent/model/GetTriggerResult.h>
 #include <aws/devops-agent/model/GitHubConfiguration.h>
 #include <aws/devops-agent/model/GitLabConfiguration.h>
 #include <aws/devops-agent/model/GitLabDetails.h>
@@ -146,6 +152,8 @@
 #include <aws/devops-agent/model/ListServicesResult.h>
 #include <aws/devops-agent/model/ListTagsForResourceRequest.h>
 #include <aws/devops-agent/model/ListTagsForResourceResult.h>
+#include <aws/devops-agent/model/ListTriggersRequest.h>
+#include <aws/devops-agent/model/ListTriggersResult.h>
 #include <aws/devops-agent/model/ListWebhooksRequest.h>
 #include <aws/devops-agent/model/ListWebhooksResult.h>
 #include <aws/devops-agent/model/MCPServerAPIKeyConfig.h>
@@ -204,6 +212,7 @@
 #include <aws/devops-agent/model/RegisteredServiceNowDetails.h>
 #include <aws/devops-agent/model/RegisteredSlackServiceDetails.h>
 #include <aws/devops-agent/model/ResourceConfigDnsResolution.h>
+#include <aws/devops-agent/model/ScheduleCondition.h>
 #include <aws/devops-agent/model/SchedulerState.h>
 #include <aws/devops-agent/model/SelfManagedInput.h>
 #include <aws/devops-agent/model/SendMessageContentBlockDelta.h>
@@ -245,6 +254,8 @@
 #include <aws/devops-agent/model/TaskSortOrder.h>
 #include <aws/devops-agent/model/TaskStatus.h>
 #include <aws/devops-agent/model/TaskType.h>
+#include <aws/devops-agent/model/Trigger.h>
+#include <aws/devops-agent/model/TriggerCondition.h>
 #include <aws/devops-agent/model/UntagResourceRequest.h>
 #include <aws/devops-agent/model/UntagResourceResult.h>
 #include <aws/devops-agent/model/UpdateAgentSpaceRequest.h>
@@ -265,6 +276,8 @@
 #include <aws/devops-agent/model/UpdatePrivateConnectionCertificateResult.h>
 #include <aws/devops-agent/model/UpdateRecommendationRequest.h>
 #include <aws/devops-agent/model/UpdateRecommendationResult.h>
+#include <aws/devops-agent/model/UpdateTriggerRequest.h>
+#include <aws/devops-agent/model/UpdateTriggerResult.h>
 #include <aws/devops-agent/model/UsageMetric.h>
 #include <aws/devops-agent/model/UserMessageBlock.h>
 #include <aws/devops-agent/model/UserReference.h>

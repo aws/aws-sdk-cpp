@@ -17,6 +17,7 @@
 #include <aws/devops-agent/model/ListGoalsPaginationTraits.h>
 #include <aws/devops-agent/model/ListJournalRecordsPaginationTraits.h>
 #include <aws/devops-agent/model/ListServicesPaginationTraits.h>
+#include <aws/devops-agent/model/ListTriggersPaginationTraits.h>
 
 namespace Aws {
 namespace DevOpsAgent {
@@ -43,6 +44,8 @@ using ListJournalRecordsPaginator = Aws::Utils::Pagination::Paginator<DevOpsAgen
                                                                       Pagination::ListJournalRecordsPaginationTraits<DevOpsAgentClient>>;
 using ListServicesPaginator = Aws::Utils::Pagination::Paginator<DevOpsAgentClient, Model::ListServicesRequest,
                                                                 Pagination::ListServicesPaginationTraits<DevOpsAgentClient>>;
+using ListTriggersPaginator = Aws::Utils::Pagination::Paginator<DevOpsAgentClient, Model::ListTriggersRequest,
+                                                                Pagination::ListTriggersPaginationTraits<DevOpsAgentClient>>;
 
 }  // namespace DevOpsAgent
 }  // namespace Aws

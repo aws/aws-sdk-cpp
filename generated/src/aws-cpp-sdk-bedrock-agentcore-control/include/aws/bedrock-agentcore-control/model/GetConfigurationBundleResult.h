@@ -193,6 +193,24 @@ class GetConfigurationBundleResult {
   ///@}
 
   ///@{
+  /**
+   * <p>KMS key ARN used to encrypt component configurations, if CMK was
+   * provided.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  GetConfigurationBundleResult& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -227,6 +245,8 @@ class GetConfigurationBundleResult {
 
   Aws::Utils::DateTime m_updatedAt{};
 
+  Aws::String m_kmsKeyArn;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bundleArnHasBeenSet = false;
@@ -238,6 +258,7 @@ class GetConfigurationBundleResult {
   bool m_lineageMetadataHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

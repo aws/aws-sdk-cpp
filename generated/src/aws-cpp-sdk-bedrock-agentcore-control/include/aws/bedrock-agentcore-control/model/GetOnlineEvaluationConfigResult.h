@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/ClusteringConfig.h>
 #include <aws/bedrock-agentcore-control/model/DataSourceConfig.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorReference.h>
+#include <aws/bedrock-agentcore-control/model/Insight.h>
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationConfigStatus.h>
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationExecutionStatus.h>
 #include <aws/bedrock-agentcore-control/model/OutputConfig.h>
@@ -165,6 +167,46 @@ class GetOnlineEvaluationConfigResult {
 
   ///@{
   /**
+   * <p>The list of insight types configured for this evaluation.</p>
+   */
+  inline const Aws::Vector<Insight>& GetInsights() const { return m_insights; }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  void SetInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights = std::forward<InsightsT>(value);
+  }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  GetOnlineEvaluationConfigResult& WithInsights(InsightsT&& value) {
+    SetInsights(std::forward<InsightsT>(value));
+    return *this;
+  }
+  template <typename InsightsT = Insight>
+  GetOnlineEvaluationConfigResult& AddInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights.emplace_back(std::forward<InsightsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The clustering configuration for periodic batch evaluation.</p>
+   */
+  inline const ClusteringConfig& GetClusteringConfig() const { return m_clusteringConfig; }
+  template <typename ClusteringConfigT = ClusteringConfig>
+  void SetClusteringConfig(ClusteringConfigT&& value) {
+    m_clusteringConfigHasBeenSet = true;
+    m_clusteringConfig = std::forward<ClusteringConfigT>(value);
+  }
+  template <typename ClusteringConfigT = ClusteringConfig>
+  GetOnlineEvaluationConfigResult& WithClusteringConfig(ClusteringConfigT&& value) {
+    SetClusteringConfig(std::forward<ClusteringConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The output configuration specifying where evaluation results are written.
    * </p>
    */
@@ -314,6 +356,10 @@ class GetOnlineEvaluationConfigResult {
 
   Aws::Vector<EvaluatorReference> m_evaluators;
 
+  Aws::Vector<Insight> m_insights;
+
+  ClusteringConfig m_clusteringConfig;
+
   OutputConfig m_outputConfig;
 
   Aws::String m_evaluationExecutionRoleArn;
@@ -337,6 +383,8 @@ class GetOnlineEvaluationConfigResult {
   bool m_ruleHasBeenSet = false;
   bool m_dataSourceConfigHasBeenSet = false;
   bool m_evaluatorsHasBeenSet = false;
+  bool m_insightsHasBeenSet = false;
+  bool m_clusteringConfigHasBeenSet = false;
   bool m_outputConfigHasBeenSet = false;
   bool m_evaluationExecutionRoleArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;

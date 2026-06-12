@@ -138,7 +138,7 @@ class ModifyIntegrationResult {
 
   ///@{
   /**
-   * <p>An optional set of non-secret key–value pairs that contains additional
+   * <p>An optional set of non-secret key���value pairs that contains additional
    * contextual information for encryption.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalEncryptionContext() const { return m_additionalEncryptionContext; }

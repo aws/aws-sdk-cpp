@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeRequest.h>
 #include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
@@ -16,7 +17,7 @@ namespace Model {
 
 /**
  */
-class InvokeEndpointAsyncRequest : public SageMakerRuntimeRequest {
+class InvokeEndpointAsyncRequest : public StreamingSageMakerRuntimeRequest {
  public:
   AWS_SAGEMAKERRUNTIME_API InvokeEndpointAsyncRequest() = default;
 
@@ -25,8 +26,6 @@ class InvokeEndpointAsyncRequest : public SageMakerRuntimeRequest {
   // Note: this is not true for response, multiple operations may have the same response name,
   // so we can not get operation's name from response.
   inline virtual const char* GetServiceRequestName() const override { return "InvokeEndpointAsync"; }
-
-  AWS_SAGEMAKERRUNTIME_API Aws::String SerializePayload() const override;
 
   AWS_SAGEMAKERRUNTIME_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
@@ -47,24 +46,6 @@ class InvokeEndpointAsyncRequest : public SageMakerRuntimeRequest {
   template <typename EndpointNameT = Aws::String>
   InvokeEndpointAsyncRequest& WithEndpointName(EndpointNameT&& value) {
     SetEndpointName(std::forward<EndpointNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The MIME type of the input data in the request body.</p>
-   */
-  inline const Aws::String& GetContentType() const { return m_contentType; }
-  inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-  template <typename ContentTypeT = Aws::String>
-  void SetContentType(ContentTypeT&& value) {
-    m_contentTypeHasBeenSet = true;
-    m_contentType = std::forward<ContentTypeT>(value);
-  }
-  template <typename ContentTypeT = Aws::String>
-  InvokeEndpointAsyncRequest& WithContentType(ContentTypeT&& value) {
-    SetContentType(std::forward<ContentTypeT>(value));
     return *this;
   }
   ///@}
@@ -231,8 +212,6 @@ class InvokeEndpointAsyncRequest : public SageMakerRuntimeRequest {
  private:
   Aws::String m_endpointName;
 
-  Aws::String m_contentType;
-
   Aws::String m_accept;
 
   Aws::String m_customAttributes;
@@ -248,8 +227,8 @@ class InvokeEndpointAsyncRequest : public SageMakerRuntimeRequest {
   int m_requestTTLSeconds{0};
 
   int m_invocationTimeoutSeconds{0};
+
   bool m_endpointNameHasBeenSet = false;
-  bool m_contentTypeHasBeenSet = false;
   bool m_acceptHasBeenSet = false;
   bool m_customAttributesHasBeenSet = false;
   bool m_inferenceIdHasBeenSet = false;
