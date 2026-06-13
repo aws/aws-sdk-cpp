@@ -35,6 +35,8 @@ enum class ShapeType : uint8_t {
 class Schema {
  public:
   Schema() = default;
+  Schema(const char* memberName, ShapeType type)
+      : m_type(type), m_memberName(memberName) {}
 
   ShapeType GetType() const { return m_type; }
   const char* GetId() const { return m_id; }
