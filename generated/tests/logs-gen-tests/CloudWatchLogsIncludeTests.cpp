@@ -317,6 +317,7 @@
 #include <aws/logs/model/S3TableIntegrationSource.h>
 #include <aws/logs/model/S3TableIntegrationSourceStatus.h>
 #include <aws/logs/model/S3TablesIntegration.h>
+#include <aws/logs/model/ScheduleType.h>
 #include <aws/logs/model/ScheduledQueryDestination.h>
 #include <aws/logs/model/ScheduledQueryDestinationType.h>
 #include <aws/logs/model/ScheduledQueryState.h>

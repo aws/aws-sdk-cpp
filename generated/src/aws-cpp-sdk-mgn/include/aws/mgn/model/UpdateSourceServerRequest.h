@@ -82,15 +82,78 @@ class UpdateSourceServerRequest : public MgnRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Update Source Server request user provided ID.</p>
+   */
+  inline const Aws::String& GetUserProvidedID() const { return m_userProvidedID; }
+  inline bool UserProvidedIDHasBeenSet() const { return m_userProvidedIDHasBeenSet; }
+  template <typename UserProvidedIDT = Aws::String>
+  void SetUserProvidedID(UserProvidedIDT&& value) {
+    m_userProvidedIDHasBeenSet = true;
+    m_userProvidedID = std::forward<UserProvidedIDT>(value);
+  }
+  template <typename UserProvidedIDT = Aws::String>
+  UpdateSourceServerRequest& WithUserProvidedID(UserProvidedIDT&& value) {
+    SetUserProvidedID(std::forward<UserProvidedIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Update Source Server request FQDN for action framework.</p>
+   */
+  inline const Aws::String& GetFqdnForActionFramework() const { return m_fqdnForActionFramework; }
+  inline bool FqdnForActionFrameworkHasBeenSet() const { return m_fqdnForActionFrameworkHasBeenSet; }
+  template <typename FqdnForActionFrameworkT = Aws::String>
+  void SetFqdnForActionFramework(FqdnForActionFrameworkT&& value) {
+    m_fqdnForActionFrameworkHasBeenSet = true;
+    m_fqdnForActionFramework = std::forward<FqdnForActionFrameworkT>(value);
+  }
+  template <typename FqdnForActionFrameworkT = Aws::String>
+  UpdateSourceServerRequest& WithFqdnForActionFramework(FqdnForActionFrameworkT&& value) {
+    SetFqdnForActionFramework(std::forward<FqdnForActionFrameworkT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Update Source Server request platform operating system.</p>
+   */
+  inline const Aws::String& GetPlatform() const { return m_platform; }
+  inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+  template <typename PlatformT = Aws::String>
+  void SetPlatform(PlatformT&& value) {
+    m_platformHasBeenSet = true;
+    m_platform = std::forward<PlatformT>(value);
+  }
+  template <typename PlatformT = Aws::String>
+  UpdateSourceServerRequest& WithPlatform(PlatformT&& value) {
+    SetPlatform(std::forward<PlatformT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accountID;
 
   Aws::String m_sourceServerID;
 
   SourceServerConnectorAction m_connectorAction;
+
+  Aws::String m_userProvidedID;
+
+  Aws::String m_fqdnForActionFramework;
+
+  Aws::String m_platform;
   bool m_accountIDHasBeenSet = false;
   bool m_sourceServerIDHasBeenSet = false;
   bool m_connectorActionHasBeenSet = false;
+  bool m_userProvidedIDHasBeenSet = false;
+  bool m_fqdnForActionFrameworkHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
 };
 
 }  // namespace Model

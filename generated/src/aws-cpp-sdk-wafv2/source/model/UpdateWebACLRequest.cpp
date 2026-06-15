@@ -91,6 +91,10 @@ Aws::String UpdateWebACLRequest::SerializePayload() const {
     payload.WithObject("ApplicationConfig", m_applicationConfig.Jsonize());
   }
 
+  if (m_monetizationConfigHasBeenSet) {
+    payload.WithObject("MonetizationConfig", m_monetizationConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

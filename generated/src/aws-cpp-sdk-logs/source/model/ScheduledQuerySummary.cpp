@@ -30,6 +30,10 @@ ScheduledQuerySummary& ScheduledQuerySummary::operator=(JsonView jsonValue) {
     m_state = ScheduledQueryStateMapper::GetScheduledQueryStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("scheduleType")) {
+    m_scheduleType = ScheduleTypeMapper::GetScheduleTypeForName(jsonValue.GetString("scheduleType"));
+    m_scheduleTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("lastTriggeredTime")) {
     m_lastTriggeredTime = jsonValue.GetInt64("lastTriggeredTime");
     m_lastTriggeredTimeHasBeenSet = true;
@@ -74,6 +78,10 @@ JsonValue ScheduledQuerySummary::Jsonize() const {
 
   if (m_stateHasBeenSet) {
     payload.WithString("state", ScheduledQueryStateMapper::GetNameForScheduledQueryState(m_state));
+  }
+
+  if (m_scheduleTypeHasBeenSet) {
+    payload.WithString("scheduleType", ScheduleTypeMapper::GetNameForScheduleType(m_scheduleType));
   }
 
   if (m_lastTriggeredTimeHasBeenSet) {

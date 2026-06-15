@@ -10,6 +10,7 @@
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/CustomResponseBody.h>
 #include <aws/wafv2/model/LabelSummary.h>
+#include <aws/wafv2/model/MonetizationConfig.h>
 #include <aws/wafv2/model/Rule.h>
 #include <aws/wafv2/model/VisibilityConfig.h>
 
@@ -300,6 +301,28 @@ class RuleGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The monetization configuration for the rule group. Required when any rule in
+   * the rule group uses the <code>Monetize</code> action. When a rule group with a
+   * <code>MonetizationConfig</code> is used in a web ACL, the rule group's
+   * configuration applies to rules within that group unless overridden at the web
+   * ACL level.</p>
+   */
+  inline const MonetizationConfig& GetMonetizationConfig() const { return m_monetizationConfig; }
+  inline bool MonetizationConfigHasBeenSet() const { return m_monetizationConfigHasBeenSet; }
+  template <typename MonetizationConfigT = MonetizationConfig>
+  void SetMonetizationConfig(MonetizationConfigT&& value) {
+    m_monetizationConfigHasBeenSet = true;
+    m_monetizationConfig = std::forward<MonetizationConfigT>(value);
+  }
+  template <typename MonetizationConfigT = MonetizationConfig>
+  RuleGroup& WithMonetizationConfig(MonetizationConfigT&& value) {
+    SetMonetizationConfig(std::forward<MonetizationConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -322,6 +345,8 @@ class RuleGroup {
   Aws::Vector<LabelSummary> m_availableLabels;
 
   Aws::Vector<LabelSummary> m_consumedLabels;
+
+  MonetizationConfig m_monetizationConfig;
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_capacityHasBeenSet = false;
@@ -333,6 +358,7 @@ class RuleGroup {
   bool m_customResponseBodiesHasBeenSet = false;
   bool m_availableLabelsHasBeenSet = false;
   bool m_consumedLabelsHasBeenSet = false;
+  bool m_monetizationConfigHasBeenSet = false;
 };
 
 }  // namespace Model

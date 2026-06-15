@@ -52,6 +52,10 @@ Aws::String UpdateScheduledQueryRequest::SerializePayload() const {
     payload.WithInt64("startTimeOffset", m_startTimeOffset);
   }
 
+  if (m_endTimeOffsetHasBeenSet) {
+    payload.WithInt64("endTimeOffset", m_endTimeOffset);
+  }
+
   if (m_destinationConfigurationHasBeenSet) {
     payload.WithObject("destinationConfiguration", m_destinationConfiguration.Jsonize());
   }

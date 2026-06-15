@@ -47,6 +47,9 @@
 #include <aws/wafv2/model/GetPermissionPolicyResult.h>
 #include <aws/wafv2/model/GetRateBasedStatementManagedKeysResult.h>
 #include <aws/wafv2/model/GetRegexPatternSetResult.h>
+#include <aws/wafv2/model/GetRevenueStatisticsResult.h>
+#include <aws/wafv2/model/GetRevenueStatisticsSummaryResult.h>
+#include <aws/wafv2/model/GetRevenueStatisticsTimeSeriesResult.h>
 #include <aws/wafv2/model/GetRuleGroupRequest.h>
 #include <aws/wafv2/model/GetRuleGroupResult.h>
 #include <aws/wafv2/model/GetSampledRequestsResult.h>
@@ -64,6 +67,7 @@
 #include <aws/wafv2/model/ListRegexPatternSetsResult.h>
 #include <aws/wafv2/model/ListResourcesForWebACLResult.h>
 #include <aws/wafv2/model/ListRuleGroupsResult.h>
+#include <aws/wafv2/model/ListSettlementRecordsResult.h>
 #include <aws/wafv2/model/ListTagsForResourceResult.h>
 #include <aws/wafv2/model/ListWebACLsResult.h>
 #include <aws/wafv2/model/PutLoggingConfigurationResult.h>
@@ -137,6 +141,9 @@ class GetMobileSdkReleaseRequest;
 class GetPermissionPolicyRequest;
 class GetRateBasedStatementManagedKeysRequest;
 class GetRegexPatternSetRequest;
+class GetRevenueStatisticsRequest;
+class GetRevenueStatisticsSummaryRequest;
+class GetRevenueStatisticsTimeSeriesRequest;
 class GetRuleGroupRequest;
 class GetSampledRequestsRequest;
 class GetTopPathStatisticsByTrafficRequest;
@@ -152,6 +159,7 @@ class ListMobileSdkReleasesRequest;
 class ListRegexPatternSetsRequest;
 class ListResourcesForWebACLRequest;
 class ListRuleGroupsRequest;
+class ListSettlementRecordsRequest;
 class ListTagsForResourceRequest;
 class ListWebACLsRequest;
 class PutLoggingConfigurationRequest;
@@ -195,6 +203,9 @@ typedef Aws::Utils::Outcome<GetMobileSdkReleaseResult, WAFV2Error> GetMobileSdkR
 typedef Aws::Utils::Outcome<GetPermissionPolicyResult, WAFV2Error> GetPermissionPolicyOutcome;
 typedef Aws::Utils::Outcome<GetRateBasedStatementManagedKeysResult, WAFV2Error> GetRateBasedStatementManagedKeysOutcome;
 typedef Aws::Utils::Outcome<GetRegexPatternSetResult, WAFV2Error> GetRegexPatternSetOutcome;
+typedef Aws::Utils::Outcome<GetRevenueStatisticsResult, WAFV2Error> GetRevenueStatisticsOutcome;
+typedef Aws::Utils::Outcome<GetRevenueStatisticsSummaryResult, WAFV2Error> GetRevenueStatisticsSummaryOutcome;
+typedef Aws::Utils::Outcome<GetRevenueStatisticsTimeSeriesResult, WAFV2Error> GetRevenueStatisticsTimeSeriesOutcome;
 typedef Aws::Utils::Outcome<GetRuleGroupResult, WAFV2Error> GetRuleGroupOutcome;
 typedef Aws::Utils::Outcome<GetSampledRequestsResult, WAFV2Error> GetSampledRequestsOutcome;
 typedef Aws::Utils::Outcome<GetTopPathStatisticsByTrafficResult, WAFV2Error> GetTopPathStatisticsByTrafficOutcome;
@@ -210,6 +221,7 @@ typedef Aws::Utils::Outcome<ListMobileSdkReleasesResult, WAFV2Error> ListMobileS
 typedef Aws::Utils::Outcome<ListRegexPatternSetsResult, WAFV2Error> ListRegexPatternSetsOutcome;
 typedef Aws::Utils::Outcome<ListResourcesForWebACLResult, WAFV2Error> ListResourcesForWebACLOutcome;
 typedef Aws::Utils::Outcome<ListRuleGroupsResult, WAFV2Error> ListRuleGroupsOutcome;
+typedef Aws::Utils::Outcome<ListSettlementRecordsResult, WAFV2Error> ListSettlementRecordsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, WAFV2Error> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListWebACLsResult, WAFV2Error> ListWebACLsOutcome;
 typedef Aws::Utils::Outcome<PutLoggingConfigurationResult, WAFV2Error> PutLoggingConfigurationOutcome;
@@ -253,6 +265,9 @@ typedef std::future<GetMobileSdkReleaseOutcome> GetMobileSdkReleaseOutcomeCallab
 typedef std::future<GetPermissionPolicyOutcome> GetPermissionPolicyOutcomeCallable;
 typedef std::future<GetRateBasedStatementManagedKeysOutcome> GetRateBasedStatementManagedKeysOutcomeCallable;
 typedef std::future<GetRegexPatternSetOutcome> GetRegexPatternSetOutcomeCallable;
+typedef std::future<GetRevenueStatisticsOutcome> GetRevenueStatisticsOutcomeCallable;
+typedef std::future<GetRevenueStatisticsSummaryOutcome> GetRevenueStatisticsSummaryOutcomeCallable;
+typedef std::future<GetRevenueStatisticsTimeSeriesOutcome> GetRevenueStatisticsTimeSeriesOutcomeCallable;
 typedef std::future<GetRuleGroupOutcome> GetRuleGroupOutcomeCallable;
 typedef std::future<GetSampledRequestsOutcome> GetSampledRequestsOutcomeCallable;
 typedef std::future<GetTopPathStatisticsByTrafficOutcome> GetTopPathStatisticsByTrafficOutcomeCallable;
@@ -268,6 +283,7 @@ typedef std::future<ListMobileSdkReleasesOutcome> ListMobileSdkReleasesOutcomeCa
 typedef std::future<ListRegexPatternSetsOutcome> ListRegexPatternSetsOutcomeCallable;
 typedef std::future<ListResourcesForWebACLOutcome> ListResourcesForWebACLOutcomeCallable;
 typedef std::future<ListRuleGroupsOutcome> ListRuleGroupsOutcomeCallable;
+typedef std::future<ListSettlementRecordsOutcome> ListSettlementRecordsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListWebACLsOutcome> ListWebACLsOutcomeCallable;
 typedef std::future<PutLoggingConfigurationOutcome> PutLoggingConfigurationOutcomeCallable;
@@ -373,6 +389,16 @@ typedef std::function<void(const WAFV2Client*, const Model::GetRateBasedStatemen
 typedef std::function<void(const WAFV2Client*, const Model::GetRegexPatternSetRequest&, const Model::GetRegexPatternSetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRegexPatternSetResponseReceivedHandler;
+typedef std::function<void(const WAFV2Client*, const Model::GetRevenueStatisticsRequest&, const Model::GetRevenueStatisticsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRevenueStatisticsResponseReceivedHandler;
+typedef std::function<void(const WAFV2Client*, const Model::GetRevenueStatisticsSummaryRequest&,
+                           const Model::GetRevenueStatisticsSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRevenueStatisticsSummaryResponseReceivedHandler;
+typedef std::function<void(const WAFV2Client*, const Model::GetRevenueStatisticsTimeSeriesRequest&,
+                           const Model::GetRevenueStatisticsTimeSeriesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRevenueStatisticsTimeSeriesResponseReceivedHandler;
 typedef std::function<void(const WAFV2Client*, const Model::GetRuleGroupRequest&, const Model::GetRuleGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRuleGroupResponseReceivedHandler;
@@ -421,6 +447,9 @@ typedef std::function<void(const WAFV2Client*, const Model::ListResourcesForWebA
 typedef std::function<void(const WAFV2Client*, const Model::ListRuleGroupsRequest&, const Model::ListRuleGroupsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRuleGroupsResponseReceivedHandler;
+typedef std::function<void(const WAFV2Client*, const Model::ListSettlementRecordsRequest&, const Model::ListSettlementRecordsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSettlementRecordsResponseReceivedHandler;
 typedef std::function<void(const WAFV2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;

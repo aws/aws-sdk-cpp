@@ -27,6 +27,10 @@ Aws::String ListScheduledQueriesRequest::SerializePayload() const {
     payload.WithString("state", ScheduledQueryStateMapper::GetNameForScheduledQueryState(m_state));
   }
 
+  if (m_scheduleTypeHasBeenSet) {
+    payload.WithString("scheduleType", ScheduleTypeMapper::GetNameForScheduleType(m_scheduleType));
+  }
+
   return payload.View().WriteReadable();
 }
 

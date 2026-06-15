@@ -286,11 +286,11 @@ class RestoreDBInstanceToPointInTimeRequest : public RDSRequest {
    * instances.</p> <p>Valid Values:</p> <ul> <li> <p>RDS for Db2 -
    * <code>bring-your-own-license | marketplace-license</code> </p> </li> <li> <p>RDS
    * for MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS for
-   * Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS for
-   * MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for Oracle -
-   * <code>bring-your-own-license | license-included</code> </p> </li> <li> <p>RDS
-   * for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul> <p>Default:
-   * Same as the source.</p>
+   * Microsoft SQL Server - <code>license-included | bring-your-own-media</code> </p>
+   * </li> <li> <p>RDS for MySQL - <code>general-public-license</code> </p> </li>
+   * <li> <p>RDS for Oracle - <code>bring-your-own-license | license-included</code>
+   * </p> </li> <li> <p>RDS for PostgreSQL - <code>postgresql-license</code> </p>
+   * </li> </ul> <p>Default: Same as the source.</p>
    */
   inline const Aws::String& GetLicenseModel() const { return m_licenseModel; }
   inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
@@ -331,16 +331,16 @@ class RestoreDBInstanceToPointInTimeRequest : public RDSRequest {
   /**
    * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
    * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code>
-   * </p> </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code>
-   * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-   * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-   * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
-   * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-   * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-   * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-   * <code>sqlserver-web</code> </p> </li> </ul> <p>Default: The same as source</p>
-   * <p>Constraints:</p> <ul> <li> <p>Must be compatible with the engine of the
-   * source.</p> </li> </ul>
+   * </p> </li> <li> <p> <code>db2-ce</code> </p> </li> <li> <p> <code>db2-se</code>
+   * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+   * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+   * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+   * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+   * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+   * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+   * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul> <p>Default: The
+   * same as source</p> <p>Constraints:</p> <ul> <li> <p>Must be compatible with the
+   * engine of the source.</p> </li> </ul>
    */
   inline const Aws::String& GetEngine() const { return m_engine; }
   inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

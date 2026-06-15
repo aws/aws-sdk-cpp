@@ -100,5 +100,9 @@ Aws::String CreateReplicationConfigurationTemplateRequest::SerializePayload() co
     payload.WithBool("storeSnapshotOnLocalZone", m_storeSnapshotOnLocalZone);
   }
 
+  if (m_storageConfigurationHasBeenSet) {
+    payload.WithObject("storageConfiguration", m_storageConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

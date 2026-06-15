@@ -142,7 +142,8 @@ class GetQueryResultsResult {
    * a <code>nextToken</code>. You can use this token in a subsequent
    * <code>GetQueryResults</code> request to get the next set of results. You can
    * retrieve up to 100,000 log event results from a query by paginating with this
-   * token.</p>
+   * token. This is only supported for Logs Insights QL and is currently not
+   * supported for PPL and SQL query languages.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

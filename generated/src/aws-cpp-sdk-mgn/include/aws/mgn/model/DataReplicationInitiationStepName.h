@@ -22,7 +22,8 @@ enum class DataReplicationInitiationStepName {
   ATTACH_STAGING_DISKS,
   PAIR_REPLICATION_SERVER_WITH_AGENT,
   CONNECT_AGENT_TO_REPLICATION_SERVER,
-  START_DATA_TRANSFER
+  START_DATA_TRANSFER,
+  SETUP_FSX_PROXY
 };
 
 namespace DataReplicationInitiationStepNameMapper {

@@ -116,6 +116,7 @@
 #include <aws/mgn/model/FinalizeCutoverRequest.h>
 #include <aws/mgn/model/FinalizeCutoverResult.h>
 #include <aws/mgn/model/FirstBoot.h>
+#include <aws/mgn/model/FsxOntapConfiguration.h>
 #include <aws/mgn/model/GetLaunchConfigurationRequest.h>
 #include <aws/mgn/model/GetLaunchConfigurationResult.h>
 #include <aws/mgn/model/GetNetworkMigrationDefinitionRequest.h>
@@ -149,6 +150,9 @@
 #include <aws/mgn/model/JobPostLaunchActionsLaunchStatus.h>
 #include <aws/mgn/model/JobStatus.h>
 #include <aws/mgn/model/JobType.h>
+#include <aws/mgn/model/LastKnownCheck.h>
+#include <aws/mgn/model/LastKnownCheckStatus.h>
+#include <aws/mgn/model/LastKnownCheckType.h>
 #include <aws/mgn/model/LaunchConfigurationTemplate.h>
 #include <aws/mgn/model/LaunchDisposition.h>
 #include <aws/mgn/model/LaunchStatus.h>
@@ -334,6 +338,8 @@
 #include <aws/mgn/model/StartTestResult.h>
 #include <aws/mgn/model/StopReplicationRequest.h>
 #include <aws/mgn/model/StopReplicationResult.h>
+#include <aws/mgn/model/StorageConfiguration.h>
+#include <aws/mgn/model/StorageType.h>
 #include <aws/mgn/model/TagResourceRequest.h>
 #include <aws/mgn/model/TargetDeployment.h>
 #include <aws/mgn/model/TargetInstanceTypeRightSizingMethod.h>

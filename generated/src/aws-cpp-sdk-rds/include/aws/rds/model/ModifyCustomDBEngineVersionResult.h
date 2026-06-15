@@ -131,9 +131,11 @@ class ModifyCustomDBEngineVersionResult {
 
   ///@{
   /**
-   * <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your
-   * database engine version to import to Amazon RDS. Required for
-   * <code>sqlserver-dev-ee</code>.</p>
+   * <p>The database installation files (ISO and EXE) that were uploaded to Amazon S3
+   * and used to import the database engine version to Amazon RDS. Returned for RDS
+   * for SQL Server engine versions (<code>sqlserver-ee</code>,
+   * <code>sqlserver-se</code>, and <code>sqlserver-dev-ee</code>) created from
+   * customer-supplied installation media.</p>
    */
   inline const Aws::Vector<Aws::String>& GetDatabaseInstallationFiles() const { return m_databaseInstallationFiles; }
   template <typename DatabaseInstallationFilesT = Aws::Vector<Aws::String>>
@@ -266,9 +268,10 @@ class ModifyCustomDBEngineVersionResult {
 
   ///@{
   /**
-   * <p>The reason that the custom engine version creation for
-   * <code>sqlserver-dev-ee</code> failed with an
-   * <code>incompatible-installation-media</code> status.</p>
+   * <p>The reason that the custom engine version creation failed with an
+   * <code>incompatible-installation-media</code> status. Applicable to RDS for SQL
+   * Server engine versions (<code>sqlserver-ee</code>, <code>sqlserver-se</code>,
+   * and <code>sqlserver-dev-ee</code>).</p>
    */
   inline const Aws::String& GetFailureReason() const { return m_failureReason; }
   template <typename FailureReasonT = Aws::String>
@@ -302,8 +305,13 @@ class ModifyCustomDBEngineVersionResult {
 
   ///@{
   /**
-   * <p>A value that indicates the source media provider of the AMI based on the
-   * usage operation. Applicable for RDS Custom for SQL Server.</p>
+   * <p>The source of the installation media for this engine version. A value of
+   * <code>Customer Provided</code> indicates that the engine version was created
+   * from customer-supplied installation media using
+   * <code>CreateCustomDBEngineVersion</code>. Applicable to RDS Custom for SQL
+   * Server and to RDS for SQL Server engine versions (<code>sqlserver-ee</code> and
+   * <code>sqlserver-se</code> with the <code>bring-your-own-media</code> license
+   * model, and <code>sqlserver-dev-ee</code>).</p>
    */
   inline const Aws::String& GetDBEngineMediaType() const { return m_dBEngineMediaType; }
   template <typename DBEngineMediaTypeT = Aws::String>

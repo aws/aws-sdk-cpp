@@ -10,6 +10,7 @@
 #include <aws/wafv2/model/CaptchaAction.h>
 #include <aws/wafv2/model/ChallengeAction.h>
 #include <aws/wafv2/model/CountAction.h>
+#include <aws/wafv2/model/MonetizeAction.h>
 
 #include <utility>
 
@@ -129,6 +130,29 @@ class RuleAction {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Instructs WAF to return an HTTP 402 Payment Required response with a price
+   * manifest. The requesting client can complete payment and resubmit the request to
+   * gain access. This is a terminating action-requests that do not complete payment
+   * are blocked. This action is available only for web ACLs associated with Amazon
+   * CloudFront distributions and requires a <code>MonetizationConfig</code> on the
+   * web ACL.</p>
+   */
+  inline const MonetizeAction& GetMonetize() const { return m_monetize; }
+  inline bool MonetizeHasBeenSet() const { return m_monetizeHasBeenSet; }
+  template <typename MonetizeT = MonetizeAction>
+  void SetMonetize(MonetizeT&& value) {
+    m_monetizeHasBeenSet = true;
+    m_monetize = std::forward<MonetizeT>(value);
+  }
+  template <typename MonetizeT = MonetizeAction>
+  RuleAction& WithMonetize(MonetizeT&& value) {
+    SetMonetize(std::forward<MonetizeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   BlockAction m_block;
 
@@ -139,11 +163,14 @@ class RuleAction {
   CaptchaAction m_captcha;
 
   ChallengeAction m_challenge;
+
+  MonetizeAction m_monetize;
   bool m_blockHasBeenSet = false;
   bool m_allowHasBeenSet = false;
   bool m_countHasBeenSet = false;
   bool m_captchaHasBeenSet = false;
   bool m_challengeHasBeenSet = false;
+  bool m_monetizeHasBeenSet = false;
 };
 
 }  // namespace Model

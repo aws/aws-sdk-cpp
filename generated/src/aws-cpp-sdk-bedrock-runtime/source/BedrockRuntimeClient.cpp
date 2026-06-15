@@ -12,6 +12,7 @@
 #include <aws/bedrock-runtime/model/ConverseStreamRequest.h>
 #include <aws/bedrock-runtime/model/CountTokensRequest.h>
 #include <aws/bedrock-runtime/model/GetAsyncInvokeRequest.h>
+#include <aws/bedrock-runtime/model/InvokeGuardrailChecksRequest.h>
 #include <aws/bedrock-runtime/model/InvokeModelRequest.h>
 #include <aws/bedrock-runtime/model/InvokeModelWithBidirectionalStreamRequest.h>
 #include <aws/bedrock-runtime/model/InvokeModelWithResponseStreamRequest.h>
@@ -331,6 +332,13 @@ GetAsyncInvokeOutcome BedrockRuntimeClient::GetAsyncInvoke(const GetAsyncInvokeR
       },
       Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetAsyncInvokeOutcome(result.GetResultWithOwnership()) : GetAsyncInvokeOutcome(std::move(result.GetError()));
+}
+InvokeGuardrailChecksOutcome BedrockRuntimeClient::InvokeGuardrailChecks(const InvokeGuardrailChecksRequest& request) const {
+  auto result = InvokeServiceOperation(
+      request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/guardrail-checks/invoke"); },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InvokeGuardrailChecksOutcome(result.GetResultWithOwnership())
+                            : InvokeGuardrailChecksOutcome(std::move(result.GetError()));
 }
 InvokeModelOutcome BedrockRuntimeClient::InvokeModel(const InvokeModelRequest& request) const {
   AWS_OPERATION_GUARD(InvokeModel);

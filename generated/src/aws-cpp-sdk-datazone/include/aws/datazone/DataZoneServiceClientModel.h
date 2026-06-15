@@ -72,6 +72,7 @@
 #include <aws/datazone/model/DeleteFormTypeResult.h>
 #include <aws/datazone/model/DeleteGlossaryResult.h>
 #include <aws/datazone/model/DeleteGlossaryTermResult.h>
+#include <aws/datazone/model/DeleteLineageEventResult.h>
 #include <aws/datazone/model/DeleteListingResult.h>
 #include <aws/datazone/model/DeleteNotebookResult.h>
 #include <aws/datazone/model/DeleteProjectMembershipResult.h>
@@ -292,6 +293,7 @@ class DeleteEnvironmentProfileRequest;
 class DeleteFormTypeRequest;
 class DeleteGlossaryRequest;
 class DeleteGlossaryTermRequest;
+class DeleteLineageEventRequest;
 class DeleteListingRequest;
 class DeleteNotebookRequest;
 class DeleteProjectRequest;
@@ -483,6 +485,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteEnvironmentProfi
 typedef Aws::Utils::Outcome<DeleteFormTypeResult, DataZoneError> DeleteFormTypeOutcome;
 typedef Aws::Utils::Outcome<DeleteGlossaryResult, DataZoneError> DeleteGlossaryOutcome;
 typedef Aws::Utils::Outcome<DeleteGlossaryTermResult, DataZoneError> DeleteGlossaryTermOutcome;
+typedef Aws::Utils::Outcome<DeleteLineageEventResult, DataZoneError> DeleteLineageEventOutcome;
 typedef Aws::Utils::Outcome<DeleteListingResult, DataZoneError> DeleteListingOutcome;
 typedef Aws::Utils::Outcome<DeleteNotebookResult, DataZoneError> DeleteNotebookOutcome;
 typedef Aws::Utils::Outcome<DeleteProjectResult, DataZoneError> DeleteProjectOutcome;
@@ -674,6 +677,7 @@ typedef std::future<DeleteEnvironmentProfileOutcome> DeleteEnvironmentProfileOut
 typedef std::future<DeleteFormTypeOutcome> DeleteFormTypeOutcomeCallable;
 typedef std::future<DeleteGlossaryOutcome> DeleteGlossaryOutcomeCallable;
 typedef std::future<DeleteGlossaryTermOutcome> DeleteGlossaryTermOutcomeCallable;
+typedef std::future<DeleteLineageEventOutcome> DeleteLineageEventOutcomeCallable;
 typedef std::future<DeleteListingOutcome> DeleteListingOutcomeCallable;
 typedef std::future<DeleteNotebookOutcome> DeleteNotebookOutcomeCallable;
 typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
@@ -984,6 +988,9 @@ typedef std::function<void(const DataZoneClient*, const Model::DeleteGlossaryReq
 typedef std::function<void(const DataZoneClient*, const Model::DeleteGlossaryTermRequest&, const Model::DeleteGlossaryTermOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteGlossaryTermResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::DeleteLineageEventRequest&, const Model::DeleteLineageEventOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteLineageEventResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::DeleteListingRequest&, const Model::DeleteListingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteListingResponseReceivedHandler;

@@ -26,6 +26,7 @@ static const int ATTACH_STAGING_DISKS_HASH = HashingUtils::HashString("ATTACH_ST
 static const int PAIR_REPLICATION_SERVER_WITH_AGENT_HASH = HashingUtils::HashString("PAIR_REPLICATION_SERVER_WITH_AGENT");
 static const int CONNECT_AGENT_TO_REPLICATION_SERVER_HASH = HashingUtils::HashString("CONNECT_AGENT_TO_REPLICATION_SERVER");
 static const int START_DATA_TRANSFER_HASH = HashingUtils::HashString("START_DATA_TRANSFER");
+static const int SETUP_FSX_PROXY_HASH = HashingUtils::HashString("SETUP_FSX_PROXY");
 
 DataReplicationInitiationStepName GetDataReplicationInitiationStepNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -51,6 +52,8 @@ DataReplicationInitiationStepName GetDataReplicationInitiationStepNameForName(co
     return DataReplicationInitiationStepName::CONNECT_AGENT_TO_REPLICATION_SERVER;
   } else if (hashCode == START_DATA_TRANSFER_HASH) {
     return DataReplicationInitiationStepName::START_DATA_TRANSFER;
+  } else if (hashCode == SETUP_FSX_PROXY_HASH) {
+    return DataReplicationInitiationStepName::SETUP_FSX_PROXY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -87,6 +90,8 @@ Aws::String GetNameForDataReplicationInitiationStepName(DataReplicationInitiatio
       return "CONNECT_AGENT_TO_REPLICATION_SERVER";
     case DataReplicationInitiationStepName::START_DATA_TRANSFER:
       return "START_DATA_TRANSFER";
+    case DataReplicationInitiationStepName::SETUP_FSX_PROXY:
+      return "SETUP_FSX_PROXY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

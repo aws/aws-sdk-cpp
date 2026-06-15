@@ -114,6 +114,10 @@ CreateReplicationConfigurationTemplateResult& CreateReplicationConfigurationTemp
     m_storeSnapshotOnLocalZone = jsonValue.GetBool("storeSnapshotOnLocalZone");
     m_storeSnapshotOnLocalZoneHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("storageConfiguration")) {
+    m_storageConfiguration = jsonValue.GetObject("storageConfiguration");
+    m_storageConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -42,9 +42,11 @@ class DeleteCustomDBEngineVersionRequest : public RDSRequest {
    * supports the following values:</p> <ul> <li> <p>
    * <code>custom-sqlserver-ee</code> </p> </li> <li> <p>
    * <code>custom-sqlserver-se</code> </p> </li> <li> <p>
-   * <code>ccustom-sqlserver-web</code> </p> </li> <li> <p>
+   * <code>custom-sqlserver-web</code> </p> </li> <li> <p>
    * <code>custom-sqlserver-dev</code> </p> </li> </ul> <p>RDS for SQL Server
-   * supports only <code>sqlserver-dev-ee</code>.</p>
+   * supports the following values:</p> <ul> <li> <p> <code>sqlserver-ee</code>
+   * (Bring Your Own Media)</p> </li> <li> <p> <code>sqlserver-se</code> (Bring Your
+   * Own Media)</p> </li> <li> <p> <code>sqlserver-dev-ee</code> </p> </li> </ul>
    */
   inline const Aws::String& GetEngine() const { return m_engine; }
   inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

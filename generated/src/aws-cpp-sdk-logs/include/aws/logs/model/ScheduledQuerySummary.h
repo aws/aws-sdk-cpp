@@ -8,6 +8,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/model/DestinationConfiguration.h>
 #include <aws/logs/model/ExecutionStatus.h>
+#include <aws/logs/model/ScheduleType.h>
 #include <aws/logs/model/ScheduledQueryState.h>
 
 #include <utility>
@@ -83,6 +84,23 @@ class ScheduledQuerySummary {
   }
   inline ScheduledQuerySummary& WithState(ScheduledQueryState value) {
     SetState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The schedule type of the scheduled query. Valid values are
+   * <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>.</p>
+   */
+  inline ScheduleType GetScheduleType() const { return m_scheduleType; }
+  inline bool ScheduleTypeHasBeenSet() const { return m_scheduleTypeHasBeenSet; }
+  inline void SetScheduleType(ScheduleType value) {
+    m_scheduleTypeHasBeenSet = true;
+    m_scheduleType = value;
+  }
+  inline ScheduledQuerySummary& WithScheduleType(ScheduleType value) {
+    SetScheduleType(value);
     return *this;
   }
   ///@}
@@ -211,6 +229,8 @@ class ScheduledQuerySummary {
 
   ScheduledQueryState m_state{ScheduledQueryState::NOT_SET};
 
+  ScheduleType m_scheduleType{ScheduleType::NOT_SET};
+
   long long m_lastTriggeredTime{0};
 
   ExecutionStatus m_lastExecutionStatus{ExecutionStatus::NOT_SET};
@@ -227,6 +247,7 @@ class ScheduledQuerySummary {
   bool m_scheduledQueryArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
+  bool m_scheduleTypeHasBeenSet = false;
   bool m_lastTriggeredTimeHasBeenSet = false;
   bool m_lastExecutionStatusHasBeenSet = false;
   bool m_scheduleExpressionHasBeenSet = false;

@@ -13,6 +13,7 @@
 #include <aws/mgn/model/ReplicationConfigurationDataPlaneRouting.h>
 #include <aws/mgn/model/ReplicationConfigurationDefaultLargeStagingDiskType.h>
 #include <aws/mgn/model/ReplicationConfigurationEbsEncryption.h>
+#include <aws/mgn/model/StorageConfiguration.h>
 
 #include <utility>
 
@@ -343,6 +344,23 @@ class UpdateReplicationConfigurationTemplateResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Replication Configuration template storage configuration.</p>
+   */
+  inline const StorageConfiguration& GetStorageConfiguration() const { return m_storageConfiguration; }
+  template <typename StorageConfigurationT = StorageConfiguration>
+  void SetStorageConfiguration(StorageConfigurationT&& value) {
+    m_storageConfigurationHasBeenSet = true;
+    m_storageConfiguration = std::forward<StorageConfigurationT>(value);
+  }
+  template <typename StorageConfigurationT = StorageConfiguration>
+  UpdateReplicationConfigurationTemplateResult& WithStorageConfiguration(StorageConfigurationT&& value) {
+    SetStorageConfiguration(std::forward<StorageConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -396,6 +414,8 @@ class UpdateReplicationConfigurationTemplateResult {
 
   bool m_storeSnapshotOnLocalZone{false};
 
+  StorageConfiguration m_storageConfiguration;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_replicationConfigurationTemplateIDHasBeenSet = false;
@@ -416,6 +436,7 @@ class UpdateReplicationConfigurationTemplateResult {
   bool m_tagsHasBeenSet = false;
   bool m_internetProtocolHasBeenSet = false;
   bool m_storeSnapshotOnLocalZoneHasBeenSet = false;
+  bool m_storageConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

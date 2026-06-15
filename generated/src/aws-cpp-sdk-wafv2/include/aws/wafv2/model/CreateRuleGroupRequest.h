@@ -10,6 +10,7 @@
 #include <aws/wafv2/WAFV2Request.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/CustomResponseBody.h>
+#include <aws/wafv2/model/MonetizationConfig.h>
 #include <aws/wafv2/model/Rule.h>
 #include <aws/wafv2/model/Scope.h>
 #include <aws/wafv2/model/Tag.h>
@@ -226,6 +227,25 @@ class CreateRuleGroupRequest : public WAFV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The monetization configuration for the rule group. Provide this when any rule
+   * in the rule group uses the <code>Monetize</code> action.</p>
+   */
+  inline const MonetizationConfig& GetMonetizationConfig() const { return m_monetizationConfig; }
+  inline bool MonetizationConfigHasBeenSet() const { return m_monetizationConfigHasBeenSet; }
+  template <typename MonetizationConfigT = MonetizationConfig>
+  void SetMonetizationConfig(MonetizationConfigT&& value) {
+    m_monetizationConfigHasBeenSet = true;
+    m_monetizationConfig = std::forward<MonetizationConfigT>(value);
+  }
+  template <typename MonetizationConfigT = MonetizationConfig>
+  CreateRuleGroupRequest& WithMonetizationConfig(MonetizationConfigT&& value) {
+    SetMonetizationConfig(std::forward<MonetizationConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -242,6 +262,8 @@ class CreateRuleGroupRequest : public WAFV2Request {
   Aws::Vector<Tag> m_tags;
 
   Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
+
+  MonetizationConfig m_monetizationConfig;
   bool m_nameHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
   bool m_capacityHasBeenSet = false;
@@ -250,6 +272,7 @@ class CreateRuleGroupRequest : public WAFV2Request {
   bool m_visibilityConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_customResponseBodiesHasBeenSet = false;
+  bool m_monetizationConfigHasBeenSet = false;
 };
 
 }  // namespace Model

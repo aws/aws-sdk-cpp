@@ -336,6 +336,34 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient
   }
 
   /**
+   * <p>Evaluates messages against inline guardrail checks. You specify the check
+   * configurations directly in the request, and Amazon Bedrock returns per-check
+   * results with severity or confidence scores.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeGuardrailChecks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::InvokeGuardrailChecksOutcome InvokeGuardrailChecks(const Model::InvokeGuardrailChecksRequest& request) const;
+
+  /**
+   * A Callable wrapper for InvokeGuardrailChecks that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename InvokeGuardrailChecksRequestT = Model::InvokeGuardrailChecksRequest>
+  Model::InvokeGuardrailChecksOutcomeCallable InvokeGuardrailChecksCallable(const InvokeGuardrailChecksRequestT& request) const {
+    return SubmitCallable(&BedrockRuntimeClient::InvokeGuardrailChecks, request);
+  }
+
+  /**
+   * An Async wrapper for InvokeGuardrailChecks that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename InvokeGuardrailChecksRequestT = Model::InvokeGuardrailChecksRequest>
+  void InvokeGuardrailChecksAsync(const InvokeGuardrailChecksRequestT& request, const InvokeGuardrailChecksResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockRuntimeClient::InvokeGuardrailChecks, request, handler, context);
+  }
+
+  /**
    * <p>Invokes the specified Amazon Bedrock model to run inference using the prompt
    * and inference parameters provided in the request body. You use model inference
    * to generate text, images, and embeddings.</p> <p>For example code, see <i>Invoke

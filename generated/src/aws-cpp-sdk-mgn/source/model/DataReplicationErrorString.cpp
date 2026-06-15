@@ -33,6 +33,8 @@ static const int FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER_HASH =
 static const int FAILED_TO_START_DATA_TRANSFER_HASH = HashingUtils::HashString("FAILED_TO_START_DATA_TRANSFER");
 static const int UNSUPPORTED_VM_CONFIGURATION_HASH = HashingUtils::HashString("UNSUPPORTED_VM_CONFIGURATION");
 static const int LAST_SNAPSHOT_JOB_FAILED_HASH = HashingUtils::HashString("LAST_SNAPSHOT_JOB_FAILED");
+static const int FAILED_TO_SETUP_FSX_PROXY_HASH = HashingUtils::HashString("FAILED_TO_SETUP_FSX_PROXY");
+static const int FAILED_TO_CREATE_FSX_SNAPSHOT_HASH = HashingUtils::HashString("FAILED_TO_CREATE_FSX_SNAPSHOT");
 
 DataReplicationErrorString GetDataReplicationErrorStringForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -68,6 +70,10 @@ DataReplicationErrorString GetDataReplicationErrorStringForName(const Aws::Strin
     return DataReplicationErrorString::UNSUPPORTED_VM_CONFIGURATION;
   } else if (hashCode == LAST_SNAPSHOT_JOB_FAILED_HASH) {
     return DataReplicationErrorString::LAST_SNAPSHOT_JOB_FAILED;
+  } else if (hashCode == FAILED_TO_SETUP_FSX_PROXY_HASH) {
+    return DataReplicationErrorString::FAILED_TO_SETUP_FSX_PROXY;
+  } else if (hashCode == FAILED_TO_CREATE_FSX_SNAPSHOT_HASH) {
+    return DataReplicationErrorString::FAILED_TO_CREATE_FSX_SNAPSHOT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -114,6 +120,10 @@ Aws::String GetNameForDataReplicationErrorString(DataReplicationErrorString enum
       return "UNSUPPORTED_VM_CONFIGURATION";
     case DataReplicationErrorString::LAST_SNAPSHOT_JOB_FAILED:
       return "LAST_SNAPSHOT_JOB_FAILED";
+    case DataReplicationErrorString::FAILED_TO_SETUP_FSX_PROXY:
+      return "FAILED_TO_SETUP_FSX_PROXY";
+    case DataReplicationErrorString::FAILED_TO_CREATE_FSX_SNAPSHOT:
+      return "FAILED_TO_CREATE_FSX_SNAPSHOT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

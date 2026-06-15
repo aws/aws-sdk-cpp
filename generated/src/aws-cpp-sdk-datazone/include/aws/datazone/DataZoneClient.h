@@ -1773,6 +1773,32 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes the specified lineage event.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteLineageEvent">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteLineageEventOutcome DeleteLineageEvent(const Model::DeleteLineageEventRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteLineageEvent that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteLineageEventRequestT = Model::DeleteLineageEventRequest>
+  Model::DeleteLineageEventOutcomeCallable DeleteLineageEventCallable(const DeleteLineageEventRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::DeleteLineageEvent, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteLineageEvent that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteLineageEventRequestT = Model::DeleteLineageEventRequest>
+  void DeleteLineageEventAsync(const DeleteLineageEventRequestT& request, const DeleteLineageEventResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::DeleteLineageEvent, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a listing (a record of an asset at a given time).</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteListing">AWS
