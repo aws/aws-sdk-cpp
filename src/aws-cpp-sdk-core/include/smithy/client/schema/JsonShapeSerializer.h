@@ -35,7 +35,7 @@ class JsonShapeSerializer final : public ShapeSerializer {
   void BeginNestedStructure(const Schema& schema) override;
   void EndNestedStructure() override;
 
-  Aws::String GetPayload() const;
+  const Aws::String& GetPayload() const;
 
  private:
   struct Impl;

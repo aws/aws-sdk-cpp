@@ -16,7 +16,7 @@ struct JsonShapeSerializer::Impl {
   bool m_needsComma[MAX_DEPTH] = {};
   bool m_isMap[MAX_DEPTH] = {};
   bool m_isList[MAX_DEPTH] = {};
-  Aws::String m_currentMapKey;
+  const char* m_currentMapKey = nullptr;
 
   void WriteCommaIfNeeded() {
     if (m_needsComma[m_depth]) {
@@ -38,7 +38,7 @@ struct JsonShapeSerializer::Impl {
       return;
     }
     if (m_depth > 0 && m_isMap[m_depth]) {
-      WriteKey(m_currentMapKey.c_str());
+      WriteKey(m_currentMapKey);
     } else {
       WriteKey(schema.GetMemberName());
     }
@@ -64,12 +64,16 @@ struct JsonShapeSerializer::Impl {
 
   void WriteInteger(const Schema& schema, int value) {
     WriteFieldName(schema);
-    m_buf += std::to_string(value);
+    char tmp[16];
+    snprintf(tmp, sizeof(tmp), "%d", value);
+    m_buf += tmp;
   }
 
   void WriteLong(const Schema& schema, int64_t value) {
     WriteFieldName(schema);
-    m_buf += std::to_string(value);
+    char tmp[24];
+    snprintf(tmp, sizeof(tmp), "%lld", static_cast<long long>(value));
+    m_buf += tmp;
   }
 
   void WriteDouble(const Schema& schema, double value) {
@@ -130,7 +134,7 @@ struct JsonShapeSerializer::Impl {
     m_isList[m_depth] = false;
   }
 
-  void WriteMapKey(const Aws::String& key) { m_currentMapKey = key; }
+  void WriteMapKey(const Aws::String& key) { m_currentMapKey = key.c_str(); }
 
   void EndMap() {
     m_depth--;
@@ -151,7 +155,7 @@ struct JsonShapeSerializer::Impl {
     m_buf += '}';
   }
 
-  Aws::String GetPayload() const { return m_buf; }
+  const Aws::String& GetPayload() const { return m_buf; }
 };
 
 JsonShapeSerializer::JsonShapeSerializer() : m_impl(new Impl) { m_impl->m_buf.reserve(256); }
@@ -175,4 +179,4 @@ void JsonShapeSerializer::WriteMapKey(const Aws::String& key) { m_impl->WriteMap
 void JsonShapeSerializer::EndMap() { m_impl->EndMap(); }
 void JsonShapeSerializer::BeginNestedStructure(const Schema& schema) { m_impl->BeginNestedStructure(schema); }
 void JsonShapeSerializer::EndNestedStructure() { m_impl->EndNestedStructure(); }
-Aws::String JsonShapeSerializer::GetPayload() const { return m_impl->GetPayload(); }
+const Aws::String& JsonShapeSerializer::GetPayload() const { return m_impl->GetPayload(); }
