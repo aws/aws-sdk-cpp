@@ -16,6 +16,7 @@
 #include <aws/partnercentral-selling/model/ListEngagementFromOpportunityTasksPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListEngagementResourceAssociationsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListProspectingFromEngagementTasksPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListOpportunitiesPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsPaginationTraits.h>

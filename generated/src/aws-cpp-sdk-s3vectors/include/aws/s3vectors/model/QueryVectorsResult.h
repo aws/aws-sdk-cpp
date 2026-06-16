@@ -71,6 +71,24 @@ class QueryVectorsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Pagination token to be used in the subsequent page request. The field is
+   * empty if no further pagination is required.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  QueryVectorsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -91,10 +109,13 @@ class QueryVectorsResult {
 
   DistanceMetric m_distanceMetric{DistanceMetric::NOT_SET};
 
+  Aws::String m_nextToken;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vectorsHasBeenSet = false;
   bool m_distanceMetricHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

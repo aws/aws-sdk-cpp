@@ -66,6 +66,10 @@ AwsOpportunitySummaryFullView& AwsOpportunitySummaryFullView::operator=(JsonView
     m_project = jsonValue.GetObject("Project");
     m_projectHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CosellMotion")) {
+    m_cosellMotion = jsonValue.GetString("CosellMotion");
+    m_cosellMotionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -119,6 +123,10 @@ JsonValue AwsOpportunitySummaryFullView::Jsonize() const {
 
   if (m_projectHasBeenSet) {
     payload.WithObject("Project", m_project.Jsonize());
+  }
+
+  if (m_cosellMotionHasBeenSet) {
+    payload.WithString("CosellMotion", m_cosellMotion);
   }
 
   return payload;

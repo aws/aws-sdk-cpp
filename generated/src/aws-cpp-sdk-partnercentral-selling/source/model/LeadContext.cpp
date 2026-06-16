@@ -18,6 +18,10 @@ namespace Model {
 LeadContext::LeadContext(JsonView jsonValue) { *this = jsonValue; }
 
 LeadContext& LeadContext::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Insights")) {
+    m_insights = jsonValue.GetObject("Insights");
+    m_insightsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("QualificationStatus")) {
     m_qualificationStatus = jsonValue.GetString("QualificationStatus");
     m_qualificationStatusHasBeenSet = true;
@@ -38,6 +42,10 @@ LeadContext& LeadContext::operator=(JsonView jsonValue) {
 
 JsonValue LeadContext::Jsonize() const {
   JsonValue payload;
+
+  if (m_insightsHasBeenSet) {
+    payload.WithObject("Insights", m_insights.Jsonize());
+  }
 
   if (m_qualificationStatusHasBeenSet) {
     payload.WithString("QualificationStatus", m_qualificationStatus);

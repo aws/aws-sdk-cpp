@@ -98,6 +98,25 @@ class UpdateVirtualInterfaceAttributesRequest : public DirectConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The rate limit (bandwidth allocation) to apply to the virtual interface. Use
+   * this to update the bandwidth allocation on an existing virtual interface.</p>
+   */
+  inline const Aws::String& GetRateLimit() const { return m_rateLimit; }
+  inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
+  template <typename RateLimitT = Aws::String>
+  void SetRateLimit(RateLimitT&& value) {
+    m_rateLimitHasBeenSet = true;
+    m_rateLimit = std::forward<RateLimitT>(value);
+  }
+  template <typename RateLimitT = Aws::String>
+  UpdateVirtualInterfaceAttributesRequest& WithRateLimit(RateLimitT&& value) {
+    SetRateLimit(std::forward<RateLimitT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_virtualInterfaceId;
 
@@ -106,10 +125,13 @@ class UpdateVirtualInterfaceAttributesRequest : public DirectConnectRequest {
   bool m_enableSiteLink{false};
 
   Aws::String m_virtualInterfaceName;
+
+  Aws::String m_rateLimit;
   bool m_virtualInterfaceIdHasBeenSet = false;
   bool m_mtuHasBeenSet = false;
   bool m_enableSiteLinkHasBeenSet = false;
   bool m_virtualInterfaceNameHasBeenSet = false;
+  bool m_rateLimitHasBeenSet = false;
 };
 
 }  // namespace Model

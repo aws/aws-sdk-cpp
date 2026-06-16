@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/model/LeadCustomer.h>
+#include <aws/partnercentral-selling/model/LeadInsights.h>
 #include <aws/partnercentral-selling/model/LeadInteraction.h>
 
 #include <utility>
@@ -87,15 +88,38 @@ class UpdateLeadContext {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Insights that AI generates and associates with the lead. These insights
+   * provide automated analysis to help partners assess the lead quality and
+   * readiness.</p>
+   */
+  inline const LeadInsights& GetInsights() const { return m_insights; }
+  inline bool InsightsHasBeenSet() const { return m_insightsHasBeenSet; }
+  template <typename InsightsT = LeadInsights>
+  void SetInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights = std::forward<InsightsT>(value);
+  }
+  template <typename InsightsT = LeadInsights>
+  UpdateLeadContext& WithInsights(InsightsT&& value) {
+    SetInsights(std::forward<InsightsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_qualificationStatus;
 
   LeadCustomer m_customer;
 
   LeadInteraction m_interaction;
+
+  LeadInsights m_insights;
   bool m_qualificationStatusHasBeenSet = false;
   bool m_customerHasBeenSet = false;
   bool m_interactionHasBeenSet = false;
+  bool m_insightsHasBeenSet = false;
 };
 
 }  // namespace Model

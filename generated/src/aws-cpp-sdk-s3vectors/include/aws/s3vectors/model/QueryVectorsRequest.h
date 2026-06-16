@@ -175,6 +175,25 @@ class QueryVectorsRequest : public S3VectorsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Pagination token from a previous request. The value of this field is empty
+   * for an initial request.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  QueryVectorsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_vectorBucketName;
 
@@ -191,6 +210,8 @@ class QueryVectorsRequest : public S3VectorsRequest {
   bool m_returnMetadata{false};
 
   bool m_returnDistance{false};
+
+  Aws::String m_nextToken;
   bool m_vectorBucketNameHasBeenSet = false;
   bool m_indexNameHasBeenSet = false;
   bool m_indexArnHasBeenSet = false;
@@ -199,6 +220,7 @@ class QueryVectorsRequest : public S3VectorsRequest {
   bool m_filterHasBeenSet = false;
   bool m_returnMetadataHasBeenSet = false;
   bool m_returnDistanceHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -724,10 +724,11 @@ class CopyObjectRequest : public S3Request {
    * <code>EXCLUDE</code> to copy objects to directory buckets without errors. If you
    * specify <code>COPY</code> for a directory bucket, the request returns HTTP 501
    * (Not Implemented).</p>   <p>When you copy objects using multipart
-   * upload (for example, when the AWS CLI or AWS SDKs use Transfer Manager for
-   * objects larger than approximately 8 MB), annotations are not copied by default.
-   * To include annotations, specify <code>--copy-props default</code> in the AWS CLI
-   * or the equivalent SDK configuration. With this opt-in, the SDK reads source
+   * upload (for example, when the Amazon Web Services CLI or Amazon Web Services
+   * SDKs use Transfer Manager for objects larger than approximately 8 MB),
+   * annotations are not copied by default. To include annotations, specify
+   * <code>--copy-props default</code> in the Amazon Web Services CLI or the
+   * equivalent SDK configuration. With this opt-in, the SDK reads source
    * annotations, completes the multipart upload, and then writes each annotation to
    * the destination. Between the upload completion and the last annotation write,
    * the destination object exists without all its annotations.</p>

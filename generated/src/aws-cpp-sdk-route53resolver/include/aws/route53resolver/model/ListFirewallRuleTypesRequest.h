@@ -32,8 +32,12 @@ class ListFirewallRuleTypesRequest : public Route53ResolverRequest {
 
   ///@{
   /**
-   * <p>The rule type to filter by. If specified, only rule types matching this value
-   * are returned.</p>
+   * <p>An optional filter that restricts the response to a single
+   * <a>FirewallRuleType</a> variant. Supported values:
+   * <code>FirewallAdvancedContentCategory</code>,
+   * <code>FirewallAdvancedThreatCategory</code>, <code>DnsThreatProtection</code>,
+   * and <code>PartnerThreatProtection</code>. If omitted, definitions across all
+   * variants are returned.</p>
    */
   inline const Aws::String& GetRuleType() const { return m_ruleType; }
   inline bool RuleTypeHasBeenSet() const { return m_ruleTypeHasBeenSet; }

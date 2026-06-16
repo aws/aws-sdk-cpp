@@ -112,6 +112,10 @@ Lag& Lag::operator=(JsonView jsonValue) {
     }
     m_macSecKeysHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rateLimiterStatus")) {
+    m_rateLimiterStatus = jsonValue.GetObject("rateLimiterStatus");
+    m_rateLimiterStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -212,6 +216,10 @@ JsonValue Lag::Jsonize() const {
       macSecKeysJsonList[macSecKeysIndex].AsObject(m_macSecKeys[macSecKeysIndex].Jsonize());
     }
     payload.WithArray("macSecKeys", std::move(macSecKeysJsonList));
+  }
+
+  if (m_rateLimiterStatusHasBeenSet) {
+    payload.WithObject("rateLimiterStatus", m_rateLimiterStatus.Jsonize());
   }
 
   return payload;

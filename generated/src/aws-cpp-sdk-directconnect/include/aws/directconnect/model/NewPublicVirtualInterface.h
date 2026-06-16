@@ -76,12 +76,14 @@ class NewPublicVirtualInterface {
    * <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646
    * for Border Gateway Protocol (BGP) configuration. If you provide a number greater
    * than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
-   *  <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We
-   * recommend using <code>asnLong</code> as it supports a greater pool of numbers.
-   * </p> <ul> <li> <p>The <code>asnLong</code> attribute accepts both ASN and long
-   * ASN ranges.</p> </li> <li> <p>If you provide a value in the same API call for
-   * both <code>asn</code> and <code>asnLong</code>, the API will only accept the
-   * value for <code>asnLong</code>.</p> </li> </ul>
+   * <ul> <li> <p>You can use <code>asnLong</code> or <code>asn</code>, but not both.
+   * We recommend using <code>asnLong</code> as it supports a greater pool of
+   * numbers. </p> </li> <li> <p>If you provide a value in the same API call for both
+   * <code>asn</code> and <code>asnLong</code>, the API will only accept the value
+   * for <code>asnLong</code>. </p> </li> <li> <p>If you enter a 4-byte ASN for the
+   * <code>asn</code> parameter, the API returns an error. </p> </li> <li> <p>If you
+   * are using a 2-byte ASN, the API response will include the 2-byte value for both
+   * the <code>asn</code> and <code>asnLong</code> fields.</p> </li> </ul>
    */
   inline int GetAsn() const { return m_asn; }
   inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
@@ -98,13 +100,19 @@ class NewPublicVirtualInterface {
   ///@{
   /**
    * <p>The long ASN for a new public virtual interface. The valid range is from 1 to
-   * 4294967294 for BGP configuration.</p>  <p>You can use <code>asnLong</code>
-   * or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it
-   * supports a greater pool of numbers. </p> <ul> <li> <p>The <code>asnLong</code>
-   * attribute accepts both ASN and long ASN ranges.</p> </li> <li> <p>If you provide
-   * a value in the same API call for both <code>asn</code> and <code>asnLong</code>,
-   * the API will only accept the value for <code>asnLong</code>.</p> </li> </ul>
-   *
+   * 4294967294 for BGP configuration.</p> <p>Note the following limitations when
+   * using <code>asnLong</code>:</p> <ul> <li> <p>You can use <code>asnLong</code> or
+   * <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it
+   * supports a greater pool of numbers. </p> </li> <li> <p> <code>asnLong</code>
+   * accepts any valid ASN value, regardless if it's 2-byte or 4-byte. </p> </li>
+   * <li> <p>When using a 4-byte <code>asnLong</code>, the API response returns
+   * <code>0</code> for the legacy <code>asn</code> attribute since 4-byte ASN values
+   * exceed the maximum supported value of 2,147,483,647.</p> </li> <li> <p>If you
+   * are using a 2-byte ASN, the API response will include the 2-byte value for both
+   * the <code>asn</code> and <code>asnLong</code> fields.</p> </li> <li> <p>If you
+   * provide a value in the same API call for both <code>asn</code> and
+   * <code>asnLong</code>, the API will only accept the value for
+   * <code>asnLong</code>.</p> </li> </ul>
    */
   inline long long GetAsnLong() const { return m_asnLong; }
   inline bool AsnLongHasBeenSet() const { return m_asnLongHasBeenSet; }
@@ -237,6 +245,26 @@ class NewPublicVirtualInterface {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The rate limit (bandwidth allocation) to apply to the virtual interface. The
+   * rate limit restricts the maximum bandwidth that the virtual interface can use on
+   * the parent connection.</p>
+   */
+  inline const Aws::String& GetRateLimit() const { return m_rateLimit; }
+  inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
+  template <typename RateLimitT = Aws::String>
+  void SetRateLimit(RateLimitT&& value) {
+    m_rateLimitHasBeenSet = true;
+    m_rateLimit = std::forward<RateLimitT>(value);
+  }
+  template <typename RateLimitT = Aws::String>
+  NewPublicVirtualInterface& WithRateLimit(RateLimitT&& value) {
+    SetRateLimit(std::forward<RateLimitT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_virtualInterfaceName;
 
@@ -257,6 +285,8 @@ class NewPublicVirtualInterface {
   Aws::Vector<RouteFilterPrefix> m_routeFilterPrefixes;
 
   Aws::Vector<Tag> m_tags;
+
+  Aws::String m_rateLimit;
   bool m_virtualInterfaceNameHasBeenSet = false;
   bool m_vlanHasBeenSet = false;
   bool m_asnHasBeenSet = false;
@@ -267,6 +297,7 @@ class NewPublicVirtualInterface {
   bool m_addressFamilyHasBeenSet = false;
   bool m_routeFilterPrefixesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_rateLimitHasBeenSet = false;
 };
 
 }  // namespace Model

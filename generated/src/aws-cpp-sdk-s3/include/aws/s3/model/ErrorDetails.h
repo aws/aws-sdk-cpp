@@ -19,8 +19,15 @@ namespace S3 {
 namespace Model {
 
 /**
- * <p>If S3 Metadata was unable to create the table, this structure contains the
- * error code and error message.</p><p><h3>See Also:</h3>   <a
+ * <p> If an S3 Metadata V1 <code>CreateBucketMetadataTableConfiguration</code> or
+ * V2 <code>CreateBucketMetadataConfiguration</code> request succeeds, but S3
+ * Metadata was unable to create the table, this structure contains the error code
+ * and error message. </p>  <p>If you created your S3 Metadata configuration
+ * before July 15, 2025, we recommend that you delete and re-create your
+ * configuration by using <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+ * so that you can expire journal table records and create a live inventory
+ * table.</p> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ErrorDetails">AWS API
  * Reference</a></p>
  */

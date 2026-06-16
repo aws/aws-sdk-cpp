@@ -15,6 +15,7 @@
 #include <aws/partnercentral-selling/model/ListEngagementsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListOpportunitiesPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListProspectingFromEngagementTasksPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListSolutionsPaginationTraits.h>
@@ -120,6 +121,18 @@ class PartnerCentralSellingPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOpportunityFromEngagementTasksRequest,
                                              Pagination::ListOpportunityFromEngagementTasksPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListProspectingFromEngagementTasks operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProspectingFromEngagementTasksRequest,
+                                    Pagination::ListProspectingFromEngagementTasksPaginationTraits<DerivedClient>>
+  ListProspectingFromEngagementTasksPaginator(const Model::ListProspectingFromEngagementTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProspectingFromEngagementTasksRequest,
+                                             Pagination::ListProspectingFromEngagementTasksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

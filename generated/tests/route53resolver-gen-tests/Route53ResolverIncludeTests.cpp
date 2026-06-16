@@ -171,6 +171,7 @@
 #include <aws/route53resolver/model/MutationProtectionStatus.h>
 #include <aws/route53resolver/model/OutpostResolver.h>
 #include <aws/route53resolver/model/OutpostResolverStatus.h>
+#include <aws/route53resolver/model/PartnerThreatProtectionConfig.h>
 #include <aws/route53resolver/model/Protocol.h>
 #include <aws/route53resolver/model/PutFirewallRuleGroupPolicyRequest.h>
 #include <aws/route53resolver/model/PutFirewallRuleGroupPolicyResult.h>
@@ -203,6 +204,7 @@
 #include <aws/route53resolver/model/RuleTypeOption.h>
 #include <aws/route53resolver/model/ShareStatus.h>
 #include <aws/route53resolver/model/SortOrder.h>
+#include <aws/route53resolver/model/SubscriptionInfo.h>
 #include <aws/route53resolver/model/Tag.h>
 #include <aws/route53resolver/model/TagResourceRequest.h>
 #include <aws/route53resolver/model/TagResourceResult.h>

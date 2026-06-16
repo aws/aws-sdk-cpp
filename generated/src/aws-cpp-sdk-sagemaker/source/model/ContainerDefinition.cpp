@@ -69,6 +69,10 @@ ContainerDefinition& ContainerDefinition::operator=(JsonView jsonValue) {
     m_multiModelConfig = jsonValue.GetObject("MultiModelConfig");
     m_multiModelConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContainerMetricsConfig")) {
+    m_containerMetricsConfig = jsonValue.GetObject("ContainerMetricsConfig");
+    m_containerMetricsConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -127,6 +131,10 @@ JsonValue ContainerDefinition::Jsonize() const {
 
   if (m_multiModelConfigHasBeenSet) {
     payload.WithObject("MultiModelConfig", m_multiModelConfig.Jsonize());
+  }
+
+  if (m_containerMetricsConfigHasBeenSet) {
+    payload.WithObject("ContainerMetricsConfig", m_containerMetricsConfig.Jsonize());
   }
 
   return payload;

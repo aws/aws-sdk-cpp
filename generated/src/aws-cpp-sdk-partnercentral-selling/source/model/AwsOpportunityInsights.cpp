@@ -30,6 +30,17 @@ AwsOpportunityInsights& AwsOpportunityInsights::operator=(JsonView jsonValue) {
     m_awsProductsSpendInsightsBySource = jsonValue.GetObject("AwsProductsSpendInsightsBySource");
     m_awsProductsSpendInsightsBySourceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OpportunityQuality")) {
+    m_opportunityQuality = jsonValue.GetObject("OpportunityQuality");
+    m_opportunityQualityHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Recommendations")) {
+    Aws::Utils::Array<JsonView> recommendationsJsonList = jsonValue.GetArray("Recommendations");
+    for (unsigned recommendationsIndex = 0; recommendationsIndex < recommendationsJsonList.GetLength(); ++recommendationsIndex) {
+      m_recommendations.push_back(recommendationsJsonList[recommendationsIndex].AsObject());
+    }
+    m_recommendationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +57,18 @@ JsonValue AwsOpportunityInsights::Jsonize() const {
 
   if (m_awsProductsSpendInsightsBySourceHasBeenSet) {
     payload.WithObject("AwsProductsSpendInsightsBySource", m_awsProductsSpendInsightsBySource.Jsonize());
+  }
+
+  if (m_opportunityQualityHasBeenSet) {
+    payload.WithObject("OpportunityQuality", m_opportunityQuality.Jsonize());
+  }
+
+  if (m_recommendationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> recommendationsJsonList(m_recommendations.size());
+    for (unsigned recommendationsIndex = 0; recommendationsIndex < recommendationsJsonList.GetLength(); ++recommendationsIndex) {
+      recommendationsJsonList[recommendationsIndex].AsObject(m_recommendations[recommendationsIndex].Jsonize());
+    }
+    payload.WithArray("Recommendations", std::move(recommendationsJsonList));
   }
 
   return payload;

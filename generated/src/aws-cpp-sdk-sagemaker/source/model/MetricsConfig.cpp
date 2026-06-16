@@ -22,6 +22,10 @@ MetricsConfig& MetricsConfig::operator=(JsonView jsonValue) {
     m_enableEnhancedMetrics = jsonValue.GetBool("EnableEnhancedMetrics");
     m_enableEnhancedMetricsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EnableDetailedObservability")) {
+    m_enableDetailedObservability = jsonValue.GetBool("EnableDetailedObservability");
+    m_enableDetailedObservabilityHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("MetricPublishFrequencyInSeconds")) {
     m_metricPublishFrequencyInSeconds = jsonValue.GetInteger("MetricPublishFrequencyInSeconds");
     m_metricPublishFrequencyInSecondsHasBeenSet = true;
@@ -34,6 +38,10 @@ JsonValue MetricsConfig::Jsonize() const {
 
   if (m_enableEnhancedMetricsHasBeenSet) {
     payload.WithBool("EnableEnhancedMetrics", m_enableEnhancedMetrics);
+  }
+
+  if (m_enableDetailedObservabilityHasBeenSet) {
+    payload.WithBool("EnableDetailedObservability", m_enableDetailedObservability);
   }
 
   if (m_metricPublishFrequencyInSecondsHasBeenSet) {

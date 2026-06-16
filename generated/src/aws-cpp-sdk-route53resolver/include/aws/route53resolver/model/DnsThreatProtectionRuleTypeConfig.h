@@ -41,9 +41,9 @@ class DnsThreatProtectionRuleTypeConfig {
    * </li> <li> <p> <code>DNS_TUNNELING</code>: DNS tunneling detection. DNS
    * tunneling is used by attackers to exfiltrate data from the client by using the
    * DNS tunnel without making a network connection to the client.</p> </li> <li> <p>
-   * <code>DICT_DGA</code>: Dictionary-based domain generation algorithms detection.
-   * Dictionary DGAs use wordlists to generate domains that appear more legitimate,
-   * making them harder to detect than traditional DGAs.</p> </li> </ul>
+   * <code>DICTIONARY_DGA</code>: Dictionary-based domain generation algorithms
+   * detection. Dictionary DGAs use wordlists to generate domains that appear more
+   * legitimate, making them harder to detect than traditional DGAs.</p> </li> </ul>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

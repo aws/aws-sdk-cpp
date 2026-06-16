@@ -18,6 +18,10 @@ namespace Model {
 FirewallRuleType::FirewallRuleType(JsonView jsonValue) { *this = jsonValue; }
 
 FirewallRuleType& FirewallRuleType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PartnerThreatProtection")) {
+    m_partnerThreatProtection = jsonValue.GetObject("PartnerThreatProtection");
+    m_partnerThreatProtectionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("FirewallAdvancedContentCategory")) {
     m_firewallAdvancedContentCategory = jsonValue.GetObject("FirewallAdvancedContentCategory");
     m_firewallAdvancedContentCategoryHasBeenSet = true;
@@ -35,6 +39,10 @@ FirewallRuleType& FirewallRuleType::operator=(JsonView jsonValue) {
 
 JsonValue FirewallRuleType::Jsonize() const {
   JsonValue payload;
+
+  if (m_partnerThreatProtectionHasBeenSet) {
+    payload.WithObject("PartnerThreatProtection", m_partnerThreatProtection.Jsonize());
+  }
 
   if (m_firewallAdvancedContentCategoryHasBeenSet) {
     payload.WithObject("FirewallAdvancedContentCategory", m_firewallAdvancedContentCategory.Jsonize());

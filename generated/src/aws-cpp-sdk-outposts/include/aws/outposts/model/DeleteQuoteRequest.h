@@ -30,7 +30,7 @@ class DeleteQuoteRequest : public OutpostsRequest {
 
   ///@{
   /**
-   * <p>The ID or ARN of the quote.</p>
+   * <p>The ID of the quote.</p>
    */
   inline const Aws::String& GetQuoteIdentifier() const { return m_quoteIdentifier; }
   inline bool QuoteIdentifierHasBeenSet() const { return m_quoteIdentifierHasBeenSet; }

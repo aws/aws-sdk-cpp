@@ -325,7 +325,9 @@ class SearchRecord {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The properties of a job.</p>
+   */
   inline const Job& GetJob() const { return m_job; }
   inline bool JobHasBeenSet() const { return m_jobHasBeenSet; }
   template <typename JobT = Job>

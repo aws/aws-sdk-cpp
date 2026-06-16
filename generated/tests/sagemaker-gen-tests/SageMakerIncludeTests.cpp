@@ -321,6 +321,7 @@
 #include <aws/sagemaker/model/ConditionStepMetadata.h>
 #include <aws/sagemaker/model/ContainerConfig.h>
 #include <aws/sagemaker/model/ContainerDefinition.h>
+#include <aws/sagemaker/model/ContainerMetricsConfig.h>
 #include <aws/sagemaker/model/ContainerMode.h>
 #include <aws/sagemaker/model/ContentClassifier.h>
 #include <aws/sagemaker/model/ContextSource.h>
@@ -1239,6 +1240,7 @@
 #include <aws/sagemaker/model/MetricSetSource.h>
 #include <aws/sagemaker/model/MetricSpecification.h>
 #include <aws/sagemaker/model/MetricsConfig.h>
+#include <aws/sagemaker/model/MetricsEndpoint.h>
 #include <aws/sagemaker/model/MetricsSource.h>
 #include <aws/sagemaker/model/MlTools.h>
 #include <aws/sagemaker/model/MlflowAppStatus.h>

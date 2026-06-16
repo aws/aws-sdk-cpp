@@ -69,6 +69,10 @@ NewTransitVirtualInterface& NewTransitVirtualInterface::operator=(JsonView jsonV
     m_enableSiteLink = jsonValue.GetBool("enableSiteLink");
     m_enableSiteLinkHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rateLimit")) {
+    m_rateLimit = jsonValue.GetString("rateLimit");
+    m_rateLimitHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -125,6 +129,10 @@ JsonValue NewTransitVirtualInterface::Jsonize() const {
 
   if (m_enableSiteLinkHasBeenSet) {
     payload.WithBool("enableSiteLink", m_enableSiteLink);
+  }
+
+  if (m_rateLimitHasBeenSet) {
+    payload.WithString("rateLimit", m_rateLimit);
   }
 
   return payload;

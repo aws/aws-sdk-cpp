@@ -109,7 +109,10 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
 
   /**
    * <p>Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering
-   * for the VPC. </p><p><h3>See Also:</h3>   <a
+   * for the VPC.</p> <p>If the rule group contains any rule configured with the
+   * <code>PartnerThreatProtection</code> rule type, the calling account must hold an
+   * active AWS Marketplace subscription to the named partner. If the subscription is
+   * missing, the association request is rejected.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateFirewallRuleGroup">AWS
    * API Reference</a></p>
    */
@@ -356,8 +359,27 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Creates a single DNS Firewall rule in the specified rule group, using the
-   * specified domain list.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a single DNS Firewall rule in the specified rule group. The rule can
+   * use any one of the following match sources, and the chosen source must be
+   * supplied through the matching request field — they are mutually exclusive:</p>
+   * <ul> <li> <p> <code>FirewallDomainListId</code> — match a customer-managed or
+   * AWS-managed domain list.</p> </li> <li> <p> <code>DnsThreatProtection</code> —
+   * match a built-in DNS Firewall Advanced threat detector (<code>DGA</code>,
+   * <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p> </li> <li> <p>
+   * <code>FirewallRuleType</code> — match one of the rule-type variants returned by
+   * <a>ListFirewallRuleTypes</a>: <code>FirewallAdvancedContentCategory</code>,
+   * <code>FirewallAdvancedThreatCategory</code>, <code>DnsThreatProtection</code>,
+   * or <code>PartnerThreatProtection</code>. The
+   * <code>PartnerThreatProtection</code> variant requires an active AWS Marketplace
+   * subscription to the named partner product.</p> </li> </ul> <p>For rules that
+   * require asynchronous provisioning (today, the
+   * <code>PartnerThreatProtection</code> rule type), the rule's <code>Status</code>
+   * begins at <code>CREATING</code> and transitions to <code>COMPLETE</code> once
+   * the rule is provisioned and the marketplace entitlement is verified. If
+   * provisioning fails, <code>Status</code> becomes <code>CREATION_FAILED</code> and
+   * <code>StatusMessage</code> contains a human-readable reason; the rule is then
+   * immutable and must be removed with <a>DeleteFirewallRule</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRule">AWS
    * API Reference</a></p>
    */
@@ -565,7 +587,13 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Deletes the specified firewall rule.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes the specified firewall rule. Identify the rule using either
+   * <code>FirewallDomainListId</code> (for domain-list and DNS Firewall Advanced
+   * rules) or <code>FirewallThreatProtectionId</code> (for partner-managed and DNS
+   * Firewall Advanced rules) — together with <code>FirewallRuleGroupId</code>.</p>
+   * <p> <code>DeleteFirewallRule</code> is the only operation that succeeds against
+   * a rule whose <code>Status</code> is <code>CREATION_FAILED</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRule">AWS
    * API Reference</a></p>
    */
@@ -1500,8 +1528,21 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Retrieves the available rule types that can be used in DNS Firewall
-   * rules.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves the rule-type variants that can be used in the
+   * <code>FirewallRuleType</code> field of <a>CreateFirewallRule</a> and
+   * <a>UpdateFirewallRule</a>. Each returned <a>FirewallRuleTypeDefinition</a>
+   * identifies one variant + value combination — for example,
+   * <code>FirewallAdvancedContentCategory</code> +
+   * <code>VIOLENCE_AND_HATE_SPEECH</code>, or <code>PartnerThreatProtection</code> +
+   * a partner-managed feed.</p> <p>The supported <code>RuleType</code> filter values
+   * are <code>FirewallAdvancedContentCategory</code>,
+   * <code>FirewallAdvancedThreatCategory</code>, <code>DnsThreatProtection</code>,
+   * and <code>PartnerThreatProtection</code>. When a returned definition's variant
+   * requires an external subscription (currently only
+   * <code>PartnerThreatProtection</code>), the response also includes a
+   * <a>SubscriptionInfo</a> identifying the AWS Marketplace product that backs it;
+   * absence of <code>SubscriptionInfo</code> means the variant is fully managed by
+   * AWS and requires no separate subscription.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleTypes">AWS
    * API Reference</a></p>
    */
@@ -1530,9 +1571,11 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
   /**
    * <p>Retrieves the firewall rules that you have defined for the specified firewall
    * rule group. DNS Firewall uses the rules in a rule group to filter DNS network
-   * traffic for a VPC. </p> <p>A single call might return only a partial list of the
-   * rules. For information, see <code>MaxResults</code>. </p><p><h3>See Also:</h3>
-   * <a
+   * traffic for a VPC.</p> <p>A single call might return only a partial list of the
+   * rules. For information, see <code>MaxResults</code>.</p> <p>For rules that
+   * require asynchronous provisioning, the response includes <code>Status</code>
+   * (see <a>FirewallRuleStatus</a>) and, on failure, <code>StatusMessage</code> with
+   * the reason.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRules">AWS
    * API Reference</a></p>
    */
@@ -2048,7 +2091,12 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Updates the specified firewall rule. </p><p><h3>See Also:</h3>   <a
+   * <p>Updates the specified firewall rule. The rule's
+   * <code>FirewallRuleType</code>, <code>FirewallDomainListId</code>, and top-level
+   * <code>DnsThreatProtection</code> match source cannot be changed after creation.
+   * Rules whose <code>Status</code> is <code>CREATING</code> or
+   * <code>CREATION_FAILED</code> cannot be updated; remove a failed rule with
+   * <a>DeleteFirewallRule</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRule">AWS
    * API Reference</a></p>
    */

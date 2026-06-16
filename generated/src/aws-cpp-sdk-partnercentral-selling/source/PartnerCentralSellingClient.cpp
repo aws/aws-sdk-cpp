@@ -35,6 +35,7 @@
 #include <aws/partnercentral-selling/model/GetEngagementInvitationRequest.h>
 #include <aws/partnercentral-selling/model/GetEngagementRequest.h>
 #include <aws/partnercentral-selling/model/GetOpportunityRequest.h>
+#include <aws/partnercentral-selling/model/GetProspectingFromEngagementTaskRequest.h>
 #include <aws/partnercentral-selling/model/GetResourceSnapshotJobRequest.h>
 #include <aws/partnercentral-selling/model/GetResourceSnapshotRequest.h>
 #include <aws/partnercentral-selling/model/GetSellingSystemSettingsRequest.h>
@@ -46,6 +47,7 @@
 #include <aws/partnercentral-selling/model/ListEngagementsRequest.h>
 #include <aws/partnercentral-selling/model/ListOpportunitiesRequest.h>
 #include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksRequest.h>
+#include <aws/partnercentral-selling/model/ListProspectingFromEngagementTasksRequest.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsRequest.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotsRequest.h>
 #include <aws/partnercentral-selling/model/ListSolutionsRequest.h>
@@ -55,6 +57,7 @@
 #include <aws/partnercentral-selling/model/StartEngagementByAcceptingInvitationTaskRequest.h>
 #include <aws/partnercentral-selling/model/StartEngagementFromOpportunityTaskRequest.h>
 #include <aws/partnercentral-selling/model/StartOpportunityFromEngagementTaskRequest.h>
+#include <aws/partnercentral-selling/model/StartProspectingFromEngagementTaskRequest.h>
 #include <aws/partnercentral-selling/model/StartResourceSnapshotJobRequest.h>
 #include <aws/partnercentral-selling/model/StopResourceSnapshotJobRequest.h>
 #include <aws/partnercentral-selling/model/SubmitOpportunityRequest.h>
@@ -315,6 +318,13 @@ GetOpportunityOutcome PartnerCentralSellingClient::GetOpportunity(const GetOppor
   return result.IsSuccess() ? GetOpportunityOutcome(result.GetResultWithOwnership()) : GetOpportunityOutcome(std::move(result.GetError()));
 }
 
+GetProspectingFromEngagementTaskOutcome PartnerCentralSellingClient::GetProspectingFromEngagementTask(
+    const GetProspectingFromEngagementTaskRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetProspectingFromEngagementTaskOutcome(result.GetResultWithOwnership())
+                            : GetProspectingFromEngagementTaskOutcome(std::move(result.GetError()));
+}
+
 GetResourceSnapshotOutcome PartnerCentralSellingClient::GetResourceSnapshot(const GetResourceSnapshotRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetResourceSnapshotOutcome(result.GetResultWithOwnership())
@@ -387,6 +397,13 @@ ListOpportunityFromEngagementTasksOutcome PartnerCentralSellingClient::ListOppor
                             : ListOpportunityFromEngagementTasksOutcome(std::move(result.GetError()));
 }
 
+ListProspectingFromEngagementTasksOutcome PartnerCentralSellingClient::ListProspectingFromEngagementTasks(
+    const ListProspectingFromEngagementTasksRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProspectingFromEngagementTasksOutcome(result.GetResultWithOwnership())
+                            : ListProspectingFromEngagementTasksOutcome(std::move(result.GetError()));
+}
+
 ListResourceSnapshotJobsOutcome PartnerCentralSellingClient::ListResourceSnapshotJobs(
     const ListResourceSnapshotJobsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -444,6 +461,13 @@ StartOpportunityFromEngagementTaskOutcome PartnerCentralSellingClient::StartOppo
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartOpportunityFromEngagementTaskOutcome(result.GetResultWithOwnership())
                             : StartOpportunityFromEngagementTaskOutcome(std::move(result.GetError()));
+}
+
+StartProspectingFromEngagementTaskOutcome PartnerCentralSellingClient::StartProspectingFromEngagementTask(
+    const StartProspectingFromEngagementTaskRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartProspectingFromEngagementTaskOutcome(result.GetResultWithOwnership())
+                            : StartProspectingFromEngagementTaskOutcome(std::move(result.GetError()));
 }
 
 StartResourceSnapshotJobOutcome PartnerCentralSellingClient::StartResourceSnapshotJob(

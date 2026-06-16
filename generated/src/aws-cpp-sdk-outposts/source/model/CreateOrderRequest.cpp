@@ -19,6 +19,14 @@ Aws::String CreateOrderRequest::SerializePayload() const {
     payload.WithString("OutpostIdentifier", m_outpostIdentifier);
   }
 
+  if (m_quoteIdentifierHasBeenSet) {
+    payload.WithString("QuoteIdentifier", m_quoteIdentifier);
+  }
+
+  if (m_quoteOptionIdentifierHasBeenSet) {
+    payload.WithString("QuoteOptionIdentifier", m_quoteOptionIdentifier);
+  }
+
   if (m_lineItemsHasBeenSet) {
     Aws::Utils::Array<JsonValue> lineItemsJsonList(m_lineItems.size());
     for (unsigned lineItemsIndex = 0; lineItemsIndex < lineItemsJsonList.GetLength(); ++lineItemsIndex) {
