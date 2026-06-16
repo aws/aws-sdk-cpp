@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
+#include <aws/s3/model/AnnotationTableConfigurationResult.h>
 #include <aws/s3/model/DestinationResult.h>
 #include <aws/s3/model/InventoryTableConfigurationResult.h>
 #include <aws/s3/model/JournalTableConfigurationResult.h>
@@ -89,15 +90,39 @@ class MetadataConfigurationResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The annotation table configuration result, if an annotation table is
+   * configured.</p>
+   */
+  inline const AnnotationTableConfigurationResult& GetAnnotationTableConfigurationResult() const {
+    return m_annotationTableConfigurationResult;
+  }
+  inline bool AnnotationTableConfigurationResultHasBeenSet() const { return m_annotationTableConfigurationResultHasBeenSet; }
+  template <typename AnnotationTableConfigurationResultT = AnnotationTableConfigurationResult>
+  void SetAnnotationTableConfigurationResult(AnnotationTableConfigurationResultT&& value) {
+    m_annotationTableConfigurationResultHasBeenSet = true;
+    m_annotationTableConfigurationResult = std::forward<AnnotationTableConfigurationResultT>(value);
+  }
+  template <typename AnnotationTableConfigurationResultT = AnnotationTableConfigurationResult>
+  MetadataConfigurationResult& WithAnnotationTableConfigurationResult(AnnotationTableConfigurationResultT&& value) {
+    SetAnnotationTableConfigurationResult(std::forward<AnnotationTableConfigurationResultT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DestinationResult m_destinationResult;
 
   JournalTableConfigurationResult m_journalTableConfigurationResult;
 
   InventoryTableConfigurationResult m_inventoryTableConfigurationResult;
+
+  AnnotationTableConfigurationResult m_annotationTableConfigurationResult;
   bool m_destinationResultHasBeenSet = false;
   bool m_journalTableConfigurationResultHasBeenSet = false;
   bool m_inventoryTableConfigurationResultHasBeenSet = false;
+  bool m_annotationTableConfigurationResultHasBeenSet = false;
 };
 
 }  // namespace Model

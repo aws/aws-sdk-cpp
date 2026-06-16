@@ -32,6 +32,12 @@
 #include <aws/s3/model/AnalyticsFilter.h>
 #include <aws/s3/model/AnalyticsS3BucketDestination.h>
 #include <aws/s3/model/AnalyticsS3ExportFileFormat.h>
+#include <aws/s3/model/AnnotationConfigurationState.h>
+#include <aws/s3/model/AnnotationDirective.h>
+#include <aws/s3/model/AnnotationEntry.h>
+#include <aws/s3/model/AnnotationTableConfiguration.h>
+#include <aws/s3/model/AnnotationTableConfigurationResult.h>
+#include <aws/s3/model/AnnotationTableConfigurationUpdates.h>
 #include <aws/s3/model/ArchiveStatus.h>
 #include <aws/s3/model/BlockedEncryptionTypes.h>
 #include <aws/s3/model/Bucket.h>
@@ -96,6 +102,8 @@
 #include <aws/s3/model/DeleteMarkerEntry.h>
 #include <aws/s3/model/DeleteMarkerReplication.h>
 #include <aws/s3/model/DeleteMarkerReplicationStatus.h>
+#include <aws/s3/model/DeleteObjectAnnotationRequest.h>
+#include <aws/s3/model/DeleteObjectAnnotationResult.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
 #include <aws/s3/model/DeleteObjectResult.h>
 #include <aws/s3/model/DeleteObjectTaggingRequest.h>
@@ -173,6 +181,8 @@
 #include <aws/s3/model/GetBucketWebsiteResult.h>
 #include <aws/s3/model/GetObjectAclRequest.h>
 #include <aws/s3/model/GetObjectAclResult.h>
+#include <aws/s3/model/GetObjectAnnotationRequest.h>
+#include <aws/s3/model/GetObjectAnnotationResult.h>
 #include <aws/s3/model/GetObjectAttributesParts.h>
 #include <aws/s3/model/GetObjectAttributesRequest.h>
 #include <aws/s3/model/GetObjectAttributesResult.h>
@@ -246,6 +256,8 @@
 #include <aws/s3/model/ListDirectoryBucketsResult.h>
 #include <aws/s3/model/ListMultipartUploadsRequest.h>
 #include <aws/s3/model/ListMultipartUploadsResult.h>
+#include <aws/s3/model/ListObjectAnnotationsRequest.h>
+#include <aws/s3/model/ListObjectAnnotationsResult.h>
 #include <aws/s3/model/ListObjectVersionsRequest.h>
 #include <aws/s3/model/ListObjectVersionsResult.h>
 #include <aws/s3/model/ListObjectsRequest.h>
@@ -335,6 +347,8 @@
 #include <aws/s3/model/PutBucketWebsiteRequest.h>
 #include <aws/s3/model/PutObjectAclRequest.h>
 #include <aws/s3/model/PutObjectAclResult.h>
+#include <aws/s3/model/PutObjectAnnotationRequest.h>
+#include <aws/s3/model/PutObjectAnnotationResult.h>
 #include <aws/s3/model/PutObjectLegalHoldRequest.h>
 #include <aws/s3/model/PutObjectLegalHoldResult.h>
 #include <aws/s3/model/PutObjectLockConfigurationRequest.h>
@@ -420,6 +434,7 @@
 #include <aws/s3/model/TransitionDefaultMinimumObjectSize.h>
 #include <aws/s3/model/TransitionStorageClass.h>
 #include <aws/s3/model/Type.h>
+#include <aws/s3/model/UpdateBucketMetadataAnnotationTableConfigurationRequest.h>
 #include <aws/s3/model/UpdateBucketMetadataInventoryTableConfigurationRequest.h>
 #include <aws/s3/model/UpdateBucketMetadataJournalTableConfigurationRequest.h>
 #include <aws/s3/model/UpdateObjectEncryptionRequest.h>

@@ -706,10 +706,12 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
    * <code>s3tables:GetTable</code> </p> </li> <li> <p>
    * <code>s3tables:CreateTable</code> </p> </li> <li> <p>
    * <code>s3tables:PutTablePolicy</code> </p> </li> <li> <p>
+   * <code>s3tables:PutTableBucketPolicy</code> </p> </li> <li> <p>
    * <code>s3tables:PutTableEncryption</code> </p> </li> <li> <p>
-   * <code>kms:DescribeKey</code> </p> </li> </ul> </dd> </dl> <p>The following
-   * operations are related to <code>CreateBucketMetadataConfiguration</code>:</p>
-   * <ul> <li> <p> <a
+   * <code>kms:DescribeKey</code> </p> </li> <li> <p> <code>iam:PassRole</code> -
+   * required if you include an <code>AnnotationTableConfiguration</code> with an IAM
+   * role.</p> </li> </ul> </dd> </dl> <p>The following operations are related to
+   * <code>CreateBucketMetadataConfiguration</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html">DeleteBucketMetadataConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
@@ -717,11 +719,17 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
-   * </p> </li> </ul>  <p>You must URL encode any signed header values
-   * that contain spaces. For example, if your header value is <code>my
-   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
-   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
-   * Also:</h3>   <a
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataAnnotationTableConfiguration.html">UpdateBucketMetadataAnnotationTableConfiguration</a>
+   * </p> </li> </ul> <p>If you include an <code>AnnotationTableConfiguration</code>
+   * with an IAM role, the role must have a trust policy that allows the Amazon S3
+   * metadata service to assume it, and a permissions policy that grants the actions
+   * needed to read annotations from your bucket. The following examples show a trust
+   * policy and a permissions policy that you can adapt for your bucket and
+   * account.</p>  <p>You must URL encode any signed header values that
+   * contain spaces. For example, if your header value is <code>my file.txt</code>,
+   * containing two spaces after <code>my</code>, you must URL encode this value to
+   * <code>my%20%20file.txt</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2256,6 +2264,51 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   void DeleteObjectAsync(const DeleteObjectRequestT& request, const DeleteObjectResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3Client::DeleteObject, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a specific annotation from an Amazon S3 object. Use the
+   * <code>x-amz-object-if-match</code> header to perform a conditional delete that
+   * only succeeds if the object's ETag matches the provided value, preventing race
+   * conditions during concurrent updates.</p> <p>Deleting an annotation is
+   * permanent. Annotations are not independently versioned, so there is no delete
+   * marker or way to recover a deleted annotation.</p> <p>To use this operation, you
+   * must have the <code>s3:DeleteObjectAnnotation</code> permission. If the object
+   * is protected by Object Lock in governance mode, you must also include the
+   * <code>x-amz-bypass-governance-retention</code> header.</p>  <p>Annotations
+   * are not supported by the following features: S3 Inventory Reports, API Gateway,
+   * S3 Storage Lens, Amazon S3 File Gateway, Amazon FSx, S3 on Outposts, and S3
+   * Express One Zone (directory buckets).</p>  <p>The following operations
+   * are related to <code>DeleteObjectAnnotation</code>:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAnnotation.html">PutObjectAnnotation</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAnnotation.html">GetObjectAnnotation</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectAnnotations.html">ListObjectAnnotations</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectAnnotation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteObjectAnnotationOutcome DeleteObjectAnnotation(const Model::DeleteObjectAnnotationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteObjectAnnotation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteObjectAnnotationRequestT = Model::DeleteObjectAnnotationRequest>
+  Model::DeleteObjectAnnotationOutcomeCallable DeleteObjectAnnotationCallable(const DeleteObjectAnnotationRequestT& request) const {
+    return SubmitCallable(&S3Client::DeleteObjectAnnotation, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteObjectAnnotation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteObjectAnnotationRequestT = Model::DeleteObjectAnnotationRequest>
+  void DeleteObjectAnnotationAsync(const DeleteObjectAnnotationRequestT& request,
+                                   const DeleteObjectAnnotationResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3Client::DeleteObjectAnnotation, request, handler, context);
   }
 
   /**
@@ -3970,6 +4023,46 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Retrieves an annotation from an Amazon S3 object. To use this operation, you
+   * must have the <code>s3:GetObjectAnnotation</code> permission.</p> <p>If checksum
+   * mode is enabled via the <code>x-amz-checksum-mode</code> header, Amazon S3
+   * returns the stored checksum in the response headers for client-side
+   * validation.</p>  <p>Annotations are not supported by the following
+   * features: S3 Inventory Reports, API Gateway, S3 Storage Lens, Amazon S3 File
+   * Gateway, Amazon FSx, S3 on Outposts, and S3 Express One Zone (directory
+   * buckets).</p>  <p>The following operations are related to
+   * <code>GetObjectAnnotation</code>:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAnnotation.html">PutObjectAnnotation</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectAnnotations.html">ListObjectAnnotations</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectAnnotation.html">DeleteObjectAnnotation</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAnnotation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetObjectAnnotationOutcome GetObjectAnnotation(const Model::GetObjectAnnotationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetObjectAnnotation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetObjectAnnotationRequestT = Model::GetObjectAnnotationRequest>
+  Model::GetObjectAnnotationOutcomeCallable GetObjectAnnotationCallable(const GetObjectAnnotationRequestT& request) const {
+    return SubmitCallable(&S3Client::GetObjectAnnotation, request);
+  }
+
+  /**
+   * An Async wrapper for GetObjectAnnotation that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetObjectAnnotationRequestT = Model::GetObjectAnnotationRequest>
+  void GetObjectAnnotationAsync(const GetObjectAnnotationRequestT& request, const GetObjectAnnotationResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3Client::GetObjectAnnotation, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves all of the metadata from an object without returning the object
    * itself. This operation is useful if you're interested only in an object's
    * metadata. </p> <p> <code>GetObjectAttributes</code> combines the functionality
@@ -5125,6 +5218,46 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   void ListMultipartUploadsAsync(const ListMultipartUploadsRequestT& request, const ListMultipartUploadsResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3Client::ListMultipartUploads, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the annotations attached to an Amazon S3 object. Results are paginated,
+   * with a maximum of 1,000 annotations per object. Use the
+   * <code>AnnotationPrefix</code> parameter to filter the results by name
+   * prefix.</p> <p>To use this operation, you must have the
+   * <code>s3:ListObjectAnnotations</code> permission.</p>  <p>Annotations are
+   * not supported by the following features: S3 Inventory Reports, API Gateway, S3
+   * Storage Lens, Amazon S3 File Gateway, Amazon FSx, S3 on Outposts, and S3 Express
+   * One Zone (directory buckets).</p>  <p>The following operations are
+   * related to <code>ListObjectAnnotations</code>:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAnnotation.html">PutObjectAnnotation</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAnnotation.html">GetObjectAnnotation</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectAnnotation.html">DeleteObjectAnnotation</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectAnnotations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListObjectAnnotationsOutcome ListObjectAnnotations(const Model::ListObjectAnnotationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListObjectAnnotations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListObjectAnnotationsRequestT = Model::ListObjectAnnotationsRequest>
+  Model::ListObjectAnnotationsOutcomeCallable ListObjectAnnotationsCallable(const ListObjectAnnotationsRequestT& request) const {
+    return SubmitCallable(&S3Client::ListObjectAnnotations, request);
+  }
+
+  /**
+   * An Async wrapper for ListObjectAnnotations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListObjectAnnotationsRequestT = Model::ListObjectAnnotationsRequest>
+  void ListObjectAnnotationsAsync(const ListObjectAnnotationsRequestT& request, const ListObjectAnnotationsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3Client::ListObjectAnnotations, request, handler, context);
   }
 
   /**
@@ -7230,6 +7363,53 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Attaches an annotation to an Amazon S3 object. An annotation is a named
+   * payload of 1 byte to 1 MiB that you can associate with a specific object or
+   * object version. Each object can have up to 1,000 annotations.</p> <p>For
+   * annotation naming rules and restrictions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/annotations-overview.html">Annotation
+   * naming guidelines</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Annotations
+   * inherit the encryption of their parent object. For objects without server-side
+   * encryption, annotations are encrypted with SSE-S3 (the default for new objects).
+   * Objects encrypted with SSE-C cannot have annotations.</p> <p>To use this
+   * operation, you must have the <code>s3:PutObjectAnnotation</code> permission. If
+   * the bucket has Requester Pays enabled, you must include the
+   * <code>x-amz-request-payer</code> header.</p>  <p>Annotations are not
+   * supported by the following features: S3 Inventory Reports, API Gateway, S3
+   * Storage Lens, Amazon S3 File Gateway, Amazon FSx, S3 on Outposts, and S3 Express
+   * One Zone (directory buckets).</p>  <p>The following operations are
+   * related to <code>PutObjectAnnotation</code>:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAnnotation.html">GetObjectAnnotation</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectAnnotations.html">ListObjectAnnotations</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectAnnotation.html">DeleteObjectAnnotation</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectAnnotation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutObjectAnnotationOutcome PutObjectAnnotation(const Model::PutObjectAnnotationRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutObjectAnnotation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutObjectAnnotationRequestT = Model::PutObjectAnnotationRequest>
+  Model::PutObjectAnnotationOutcomeCallable PutObjectAnnotationCallable(const PutObjectAnnotationRequestT& request) const {
+    return SubmitCallable(&S3Client::PutObjectAnnotation, request);
+  }
+
+  /**
+   * An Async wrapper for PutObjectAnnotation that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PutObjectAnnotationRequestT = Model::PutObjectAnnotationRequest>
+  void PutObjectAnnotationAsync(const PutObjectAnnotationRequestT& request, const PutObjectAnnotationResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3Client::PutObjectAnnotation, request, handler, context);
+  }
+
+  /**
    *  <p>This operation is not supported for directory buckets.</p>
    * <p>Applies a legal hold configuration to the specified object. For more
    * information, see <a
@@ -7777,6 +7957,56 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   void SelectObjectContentAsync(SelectObjectContentRequestT& request, const SelectObjectContentResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3Client::SelectObjectContent, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the annotation table configuration for an Amazon S3 bucket's metadata
+   * configuration. Use this operation to enable or disable the annotation table, or
+   * to update its associated IAM role.</p> <p>An annotation table is a queryable
+   * Iceberg table that contains records of all annotations attached to objects in
+   * the bucket. To use this operation, the bucket must have an existing Amazon S3
+   * Metadata configuration.</p> <p>To use this operation, you must have the
+   * <code>s3:UpdateBucketMetadataAnnotationTableConfiguration</code> permission. If
+   * you are specifying or changing the IAM role, you must also have
+   * <code>iam:PassRole</code> permission for the role.</p> <p>The IAM role must have
+   * a trust policy that allows the Amazon S3 metadata service to assume it, and a
+   * permissions policy that grants the actions needed to read annotations from your
+   * bucket. The following examples show a trust policy and a permissions policy that
+   * you can adapt for your bucket and account.</p> <p>The following operations are
+   * related to <code>UpdateBucketMetadataAnnotationTableConfiguration</code>:</p>
+   * <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataAnnotationTableConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateBucketMetadataAnnotationTableConfigurationOutcome UpdateBucketMetadataAnnotationTableConfiguration(
+      const Model::UpdateBucketMetadataAnnotationTableConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateBucketMetadataAnnotationTableConfiguration that returns a future to the operation so that it can be
+   * executed in parallel to other requests.
+   */
+  template <
+      typename UpdateBucketMetadataAnnotationTableConfigurationRequestT = Model::UpdateBucketMetadataAnnotationTableConfigurationRequest>
+  Model::UpdateBucketMetadataAnnotationTableConfigurationOutcomeCallable UpdateBucketMetadataAnnotationTableConfigurationCallable(
+      const UpdateBucketMetadataAnnotationTableConfigurationRequestT& request) const {
+    return SubmitCallable(&S3Client::UpdateBucketMetadataAnnotationTableConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateBucketMetadataAnnotationTableConfiguration that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <
+      typename UpdateBucketMetadataAnnotationTableConfigurationRequestT = Model::UpdateBucketMetadataAnnotationTableConfigurationRequest>
+  void UpdateBucketMetadataAnnotationTableConfigurationAsync(
+      const UpdateBucketMetadataAnnotationTableConfigurationRequestT& request,
+      const UpdateBucketMetadataAnnotationTableConfigurationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3Client::UpdateBucketMetadataAnnotationTableConfiguration, request, handler, context);
   }
 
   /**

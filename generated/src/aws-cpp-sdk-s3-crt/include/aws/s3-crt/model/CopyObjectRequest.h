@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3-crt/S3CrtRequest.h>
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
+#include <aws/s3-crt/model/AnnotationDirective.h>
 #include <aws/s3-crt/model/ChecksumAlgorithm.h>
 #include <aws/s3-crt/model/MetadataDirective.h>
 #include <aws/s3-crt/model/ObjectCannedACL.h>
@@ -708,6 +709,43 @@ class CopyObjectRequest : public S3CrtRequest {
 
   ///@{
   /**
+   * <p>Specifies whether you want to copy annotations from the source object or
+   * exclude them. If this header isn't specified, <code>COPY</code> is the default
+   * behavior.</p> <p>Valid Values: <code>COPY | EXCLUDE</code> </p> <p>You can
+   * specify this directive as either an HTTP header
+   * (<code>x-amz-object-annotation-directive</code>) or as a query string parameter.
+   * Use the query string form when generating presigned URLs that need to control
+   * annotation copy behavior.</p> <p>When set to <code>COPY</code>, you must have
+   * <code>s3:GetObjectAnnotation</code> permission on the source object and
+   * <code>s3:PutObjectAnnotation</code> permission on the destination. Each
+   * annotation copied is billed as a separate PUT request. If annotations on the
+   * source are modified during the copy, Amazon S3 returns a retryable error.</p>
+   *  <p>For directory buckets, annotations are not supported. Use
+   * <code>EXCLUDE</code> to copy objects to directory buckets without errors. If you
+   * specify <code>COPY</code> for a directory bucket, the request returns HTTP 501
+   * (Not Implemented).</p>   <p>When you copy objects using multipart
+   * upload (for example, when the AWS CLI or AWS SDKs use Transfer Manager for
+   * objects larger than approximately 8 MB), annotations are not copied by default.
+   * To include annotations, specify <code>--copy-props default</code> in the AWS CLI
+   * or the equivalent SDK configuration. With this opt-in, the SDK reads source
+   * annotations, completes the multipart upload, and then writes each annotation to
+   * the destination. Between the upload completion and the last annotation write,
+   * the destination object exists without all its annotations.</p>
+   */
+  inline AnnotationDirective GetAnnotationDirective() const { return m_annotationDirective; }
+  inline bool AnnotationDirectiveHasBeenSet() const { return m_annotationDirectiveHasBeenSet; }
+  inline void SetAnnotationDirective(AnnotationDirective value) {
+    m_annotationDirectiveHasBeenSet = true;
+    m_annotationDirective = value;
+  }
+  inline CopyObjectRequest& WithAnnotationDirective(AnnotationDirective value) {
+    SetAnnotationDirective(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The server-side encryption algorithm used when storing this object in Amazon
    * S3. Unrecognized or unsupported values won’t write a destination object and will
    * receive a <code>400 Bad Request</code> response. </p> <p>Amazon S3 automatically
@@ -1325,6 +1363,8 @@ class CopyObjectRequest : public S3CrtRequest {
 
   TaggingDirective m_taggingDirective{TaggingDirective::NOT_SET};
 
+  AnnotationDirective m_annotationDirective{AnnotationDirective::NOT_SET};
+
   ServerSideEncryption m_serverSideEncryption{ServerSideEncryption::NOT_SET};
 
   StorageClass m_storageClass{StorageClass::NOT_SET};
@@ -1388,6 +1428,7 @@ class CopyObjectRequest : public S3CrtRequest {
   bool m_metadataHasBeenSet = false;
   bool m_metadataDirectiveHasBeenSet = false;
   bool m_taggingDirectiveHasBeenSet = false;
+  bool m_annotationDirectiveHasBeenSet = false;
   bool m_serverSideEncryptionHasBeenSet = false;
   bool m_storageClassHasBeenSet = false;
   bool m_websiteRedirectLocationHasBeenSet = false;

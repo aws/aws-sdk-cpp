@@ -306,17 +306,20 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
   options->finish_callback = S3CrtRequestFinishCallback;
 }
 
-Model::CopyObjectOutcome S3CrtClient::PopulateCopyObjectProperties(const Model::CopyObjectRequest &request,
-                                                                   const std::shared_ptr<Aws::Http::HttpRequest> &httpRequest) const
+S3CrtClient::CopyObjectPropertiesOutcome S3CrtClient::PopulateCopyObjectProperties(const Model::CopyObjectRequest &request,
+                                                                                   const std::shared_ptr<Aws::Http::HttpRequest> &httpRequest) const
 {
   const bool copyMetadata = request.MetadataDirectiveHasBeenSet() &&
       request.GetMetadataDirective() == Model::MetadataDirective::COPY;
   const bool copyTags = request.TaggingDirectiveHasBeenSet() &&
       request.GetTaggingDirective() == Model::TaggingDirective::COPY;
+  const bool copyAnnotations = request.AnnotationDirectiveHasBeenSet() &&
+      request.GetAnnotationDirective() == Model::AnnotationDirective::COPY;
 
-  if (!copyMetadata && !copyTags)
+  Aws::Map<Aws::String, Aws::String> annotations;
+  if (!copyMetadata && !copyTags && !copyAnnotations)
   {
-    return Model::CopyObjectOutcome(Model::CopyObjectResult());
+    return annotations;
   }
 
   // Parse "[/]bucket/key[?versionId=...]" from x-amz-copy-source. rfind: keys may contain '?'.
@@ -345,8 +348,8 @@ Model::CopyObjectOutcome S3CrtClient::PopulateCopyObjectProperties(const Model::
   const auto slashPos = copySource.find('/');
   if (slashPos == Aws::String::npos)
   {
-    return Model::CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE,
-        "INVALID_PARAMETER_VALUE", "Could not parse bucket and key from CopySource for property copy", false));
+    return Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE,
+        "INVALID_PARAMETER_VALUE", "Could not parse bucket and key from CopySource for property copy", false);
   }
   const Aws::String sourceBucket = copySource.substr(0, slashPos);
   const Aws::String sourceKey = copySource.substr(slashPos + 1);
@@ -361,7 +364,7 @@ Model::CopyObjectOutcome S3CrtClient::PopulateCopyObjectProperties(const Model::
   auto headOutcome = HeadObject(headRequest);
   if (!headOutcome.IsSuccess())
   {
-    return Model::CopyObjectOutcome(headOutcome.GetError());
+    return headOutcome.GetError();
   }
   const auto& head = headOutcome.GetResult();
   const Aws::String sourceETag = head.GetETag();
@@ -377,10 +380,61 @@ Model::CopyObjectOutcome S3CrtClient::PopulateCopyObjectProperties(const Model::
     httpRequest->SetHeaderValue("x-amz-copy-source-if-match", sourceETag);
   }
 
-  // small objects are single-part copies where S3 honors the directives natively, skip injection
+  if (copyAnnotations)
+  {
+    // Neither the multipart copy nor S3's single-part CopyObject carries annotations, so always
+    // read them from the source here (regardless of size) and return them to be written to the
+    // destination after the copy completes (see the wrapped completion handler).
+    Aws::String continuationToken;
+    do
+    {
+      Model::ListObjectAnnotationsRequest listRequest;
+      listRequest.SetBucket(sourceBucket);
+      listRequest.SetKey(sourceKey);
+      if (!sourceVersionId.empty())
+      {
+        listRequest.SetVersionId(sourceVersionId);
+      }
+      if (!continuationToken.empty())
+      {
+        listRequest.SetContinuationToken(continuationToken);
+      }
+      auto listOutcome = ListObjectAnnotations(listRequest);
+      if (!listOutcome.IsSuccess())
+      {
+        return listOutcome.GetError();
+      }
+      for (const auto& entry : listOutcome.GetResult().GetAnnotations())
+      {
+        Model::GetObjectAnnotationRequest getRequest;
+        getRequest.SetBucket(sourceBucket);
+        getRequest.SetKey(sourceKey);
+        getRequest.SetAnnotationName(entry.GetAnnotationName());
+        if (!sourceVersionId.empty())
+        {
+          getRequest.SetVersionId(sourceVersionId);
+        }
+        auto getOutcome = GetObjectAnnotation(getRequest);
+        if (!getOutcome.IsSuccess())
+        {
+          return getOutcome.GetError();
+        }
+        auto& sourcePayload = getOutcome.GetResult().GetAnnotationPayload();
+        sourcePayload.clear();
+        sourcePayload.seekg(0);
+        Aws::StringStream payloadStream;
+        payloadStream << sourcePayload.rdbuf();
+        annotations.emplace(entry.GetAnnotationName(), payloadStream.str());
+      }
+      continuationToken = listOutcome.GetResult().GetNextContinuationToken();
+    } while (!continuationToken.empty());
+  }
+
+  // Below the multipart threshold S3's single-part CopyObject honors the metadata/tagging directives
+  // natively, so skip header injection (annotations are handled above regardless of size).
   if (head.GetContentLength() < (1LL * 1024 * 1024 * 1024))
   {
-    return Model::CopyObjectOutcome(Model::CopyObjectResult());
+    return annotations;
   }
 
   if (copyMetadata)
@@ -411,7 +465,7 @@ Model::CopyObjectOutcome S3CrtClient::PopulateCopyObjectProperties(const Model::
     auto taggingOutcome = GetObjectTagging(taggingRequest);
     if (!taggingOutcome.IsSuccess())
     {
-      return Model::CopyObjectOutcome(taggingOutcome.GetError());
+      return taggingOutcome.GetError();
     }
     Aws::StringStream tagStream;
     bool firstTag = true;
@@ -429,7 +483,7 @@ Model::CopyObjectOutcome S3CrtClient::PopulateCopyObjectProperties(const Model::
     }
   }
 
-  return Model::CopyObjectOutcome(Model::CopyObjectResult());
+  return annotations;
 }
 #end
 
@@ -569,7 +623,51 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
     if (!copyPropertiesOutcome.IsSuccess())
     {
       Aws::Delete(userData);
-      return handler(this, request, copyPropertiesOutcome, handlerContext);
+      return handler(this, request, CopyObjectOutcome(copyPropertiesOutcome.GetError()), handlerContext);
+    }
+    auto copiedAnnotations = copyPropertiesOutcome.GetResultWithOwnership();
+    if (!copiedAnnotations.empty())
+    {
+      // Annotations cannot ride along on the multipart copy, so write each one to the destination
+      // after the copy completes. Any PutObjectAnnotation failure fails the overall CopyObject.
+      const CopyObjectResponseReceivedHandler originalHandler = userData->copyResponseHandler;
+      const S3CrtClient* client = this;
+      userData->copyResponseHandler =
+          [client, originalHandler, copiedAnnotations](const S3CrtClient*, const CopyObjectRequest& copyRequest,
+                                                       const CopyObjectOutcome& outcome,
+                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
+      {
+        if (!outcome.IsSuccess())
+        {
+          originalHandler(client, copyRequest, outcome, context);
+          return;
+        }
+        const Aws::String destVersionId = outcome.GetResult().GetVersionId();
+        const Aws::String destETag = outcome.GetResult().GetCopyObjectResultDetails().GetETag();
+        for (const auto& annotation : copiedAnnotations)
+        {
+          Model::PutObjectAnnotationRequest putRequest;
+          putRequest.SetBucket(copyRequest.GetBucket());
+          putRequest.SetKey(copyRequest.GetKey());
+          putRequest.SetAnnotationName(annotation.first);
+          putRequest.SetBody(Aws::MakeShared<Aws::StringStream>("S3CrtCopyAnnotation", annotation.second));
+          if (!destVersionId.empty())
+          {
+            putRequest.SetVersionId(destVersionId);
+          }
+          if (!destETag.empty())
+          {
+            putRequest.SetObjectIfMatch(destETag);
+          }
+          auto putOutcome = client->PutObjectAnnotation(putRequest);
+          if (!putOutcome.IsSuccess())
+          {
+            originalHandler(client, copyRequest, CopyObjectOutcome(putOutcome.GetError()), context);
+            return;
+          }
+        }
+        originalHandler(client, copyRequest, outcome, context);
+      };
     }
   }
 #end
