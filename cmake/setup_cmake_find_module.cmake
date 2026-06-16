@@ -47,19 +47,30 @@ if (NOT SIMPLE_INSTALL)
         "set(AWSSDK_PLATFORM_PREFIX ${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER})\n")
 endif()
 
-# copy version file to destination
+# These files are consumer-facing CMake config for find_package(AWSSDK).
+# They belong with the core devel package; without an explicit COMPONENT they
+# would land in CPack's "Unspecified" bucket and produce a stray rpm/deb.
 install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake"
-    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
+    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}"
+    COMPONENT core-devel)
 
 # platform external dependencies
 install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/platformDeps.cmake"
-    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}/")
+    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}/"
+    COMPONENT core-devel)
 
-# copy all cmake files to destination, these files include useful macros, functions and variables for users.
-# useful macros and variables will be included in this cmake file for user to use
-install(DIRECTORY "${AWS_NATIVE_SDK_ROOT}/cmake/" DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
+# copy cmake files to destination -- these are consumer-facing macros, functions
+# and variables. Exclude build-only scaffolding (CPack glue, packaging scripts)
+# that has no value at consume time and would otherwise be shipped.
+install(DIRECTORY "${AWS_NATIVE_SDK_ROOT}/cmake/" DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}"
+    COMPONENT core-devel
+    PATTERN "CPackConfig.cmake"          EXCLUDE
+    PATTERN "CPackComponents.cmake"      EXCLUDE
+    PATTERN "ServiceGroupMapping.cmake"  EXCLUDE
+    PATTERN "rpm-scripts"                EXCLUDE
+    PATTERN "deb-scripts"                EXCLUDE)
 
 # following two files are vital for cmake to find correct package, but since we copied all files from above
 # we left the code here to give you bettern understanding

@@ -69,8 +69,11 @@ endif()
 # Support both RPM and DEB generators
 set(CPACK_GENERATOR "RPM;DEB")
 
-# Component-based packaging (creates separate packages for each component)
-set(CPACK_COMPONENTS_GROUPING ONE_PER_GROUP)
+# One rpm/deb per component. ONE_PER_GROUP would collapse {group}-runtime and
+# {group}-devel into a single package and bypass our per-component name and
+# Requires settings, since CPack would look up the group-level CPACK_RPM_<GROUP>_*
+# variables instead of the per-component CPACK_RPM_<GROUP>-RUNTIME_* / -DEVEL_*.
+set(CPACK_COMPONENTS_GROUPING IGNORE)
 set(CPACK_COMPONENT_INCLUDE_TOPLEVEL_DIRECTORY OFF)
 
 # Architecture detection
