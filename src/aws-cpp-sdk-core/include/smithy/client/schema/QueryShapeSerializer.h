@@ -2,7 +2,7 @@
 
 #include <smithy/client/schema/ShapeSerializer.h>
 
-#include <memory>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 namespace smithy {
 namespace schema {
@@ -39,7 +39,7 @@ class QueryShapeSerializer final : public ShapeSerializer {
 
  private:
   struct Impl;
-  std::unique_ptr<Impl> m_impl;
+  Aws::UniquePtr<Impl> m_impl;
 };
 
 }  // namespace schema

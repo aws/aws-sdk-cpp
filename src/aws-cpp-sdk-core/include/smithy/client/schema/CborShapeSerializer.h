@@ -2,8 +2,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <smithy/client/schema/ShapeSerializer.h>
-
-#include <memory>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 namespace smithy {
 namespace schema {
@@ -40,7 +39,7 @@ class AWS_CORE_API CborShapeSerialize final : public ShapeSerializer {
 
  private:
   struct Impl;
-  std::unique_ptr<Impl> m_impl;
+  Aws::UniquePtr<Impl> m_impl;
 };
 
 }  // namespace schema

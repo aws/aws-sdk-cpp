@@ -2,7 +2,7 @@
 
 #include <smithy/client/schema/ShapeSerializer.h>
 
-#include <memory>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 namespace smithy {
 namespace schema {
@@ -35,11 +35,11 @@ class JsonShapeSerializer final : public ShapeSerializer {
   void BeginNestedStructure(const Schema& schema) override;
   void EndNestedStructure() override;
 
-  const Aws::String& GetPayload() const;
+  Aws::String GetPayload();
 
  private:
   struct Impl;
-  std::unique_ptr<Impl> m_impl;
+  Aws::UniquePtr<Impl> m_impl;
 };
 
 }  // namespace schema

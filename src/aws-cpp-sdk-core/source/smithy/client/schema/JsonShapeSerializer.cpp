@@ -5,6 +5,8 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
 
+#include <cassert>
+
 using namespace smithy::schema;
 using namespace Aws::Utils;
 
@@ -17,6 +19,7 @@ struct JsonShapeSerializer::Impl {
   bool m_isMap[MAX_DEPTH] = {};
   bool m_isList[MAX_DEPTH] = {};
   const char* m_currentMapKey = nullptr;
+  bool m_finalized = false;
 
   void WriteCommaIfNeeded() {
     if (m_needsComma[m_depth]) {
@@ -64,23 +67,26 @@ struct JsonShapeSerializer::Impl {
 
   void WriteInteger(const Schema& schema, int value) {
     WriteFieldName(schema);
-    char tmp[16];
-    snprintf(tmp, sizeof(tmp), "%d", value);
-    m_buf += tmp;
+    auto start = m_buf.size();
+    m_buf.resize(start + 11);
+    int written = snprintf(&m_buf[start],12,"%d", value);
+    m_buf.resize(start + written);
   }
 
   void WriteLong(const Schema& schema, int64_t value) {
     WriteFieldName(schema);
-    char tmp[24];
-    snprintf(tmp, sizeof(tmp), "%lld", static_cast<long long>(value));
-    m_buf += tmp;
+    auto start = m_buf.size();
+    m_buf.resize(start+20);
+    int writter = snprintf(&m_buf[start],21,"%lld", static_cast<long long>(value));
+    m_buf.resize(start + writter);
   }
 
   void WriteDouble(const Schema& schema, double value) {
     WriteFieldName(schema);
-    char tmp[32];
-    snprintf(tmp, sizeof(tmp), "%g", value);
-    m_buf += tmp;
+    auto start = m_buf.size();
+    m_buf.resize(start+32);
+    int writter = snprintf(&m_buf[start],32,"%f", value);
+    m_buf.resize(start + writter);
   }
 
   void WriteString(const Schema& schema, const Aws::String& value) {
@@ -92,9 +98,10 @@ struct JsonShapeSerializer::Impl {
 
   void WriteTimestamp(const Schema& schema, const DateTime& value) {
     WriteFieldName(schema);
-    char tmp[32];
-    snprintf(tmp, sizeof(tmp), "%g", value.SecondsWithMSPrecision());
-    m_buf += tmp;
+    auto start = m_buf.size();
+    m_buf.resize(start+32);
+    int written = snprintf(&m_buf[start], 32, "%g", value.SecondsWithMSPrecision());
+    m_buf.resize(start + written);
   }
 
   void WriteBlob(const Schema& schema, const ByteBuffer& value) {
@@ -155,10 +162,14 @@ struct JsonShapeSerializer::Impl {
     m_buf += '}';
   }
 
-  const Aws::String& GetPayload() const { return m_buf; }
+  Aws::String GetPayload() {
+    assert(!m_finalized);
+    m_finalized = true;
+    return std::move(m_buf);
+  }
 };
 
-JsonShapeSerializer::JsonShapeSerializer() : m_impl(new Impl) { m_impl->m_buf.reserve(256); }
+JsonShapeSerializer::JsonShapeSerializer() : m_impl(Aws::MakeUnique<Impl>("JsonShapeSerializer")) { m_impl->m_buf.reserve(8192); }
 JsonShapeSerializer::~JsonShapeSerializer() = default;
 
 void JsonShapeSerializer::BeginStructure(const Schema& schema) { m_impl->BeginStructure(schema); }
@@ -179,4 +190,4 @@ void JsonShapeSerializer::WriteMapKey(const Aws::String& key) { m_impl->WriteMap
 void JsonShapeSerializer::EndMap() { m_impl->EndMap(); }
 void JsonShapeSerializer::BeginNestedStructure(const Schema& schema) { m_impl->BeginNestedStructure(schema); }
 void JsonShapeSerializer::EndNestedStructure() { m_impl->EndNestedStructure(); }
-const Aws::String& JsonShapeSerializer::GetPayload() const { return m_impl->GetPayload(); }
+Aws::String JsonShapeSerializer::GetPayload() { return m_impl->GetPayload(); }
