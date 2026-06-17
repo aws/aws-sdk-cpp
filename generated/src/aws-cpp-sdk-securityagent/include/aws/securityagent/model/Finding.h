@@ -13,6 +13,7 @@
 #include <aws/securityagent/model/ConfidenceLevel.h>
 #include <aws/securityagent/model/FindingStatus.h>
 #include <aws/securityagent/model/RiskLevel.h>
+#include <aws/securityagent/model/ValidationStatus.h>
 #include <aws/securityagent/model/VerificationScript.h>
 
 #include <utility>
@@ -311,6 +312,23 @@ class Finding {
 
   ///@{
   /**
+   * <p>The simulated validation status of the finding. Valid values are
+   * NOT_VALIDATED, VALIDATING, CONFIRMED, NOT_REPRODUCED, and VALIDATION_FAILED.</p>
+   */
+  inline ValidationStatus GetValidationStatus() const { return m_validationStatus; }
+  inline bool ValidationStatusHasBeenSet() const { return m_validationStatusHasBeenSet; }
+  inline void SetValidationStatus(ValidationStatus value) {
+    m_validationStatusHasBeenSet = true;
+    m_validationStatus = value;
+  }
+  inline Finding& WithValidationStatus(ValidationStatus value) {
+    SetValidationStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The attack script used to reproduce the finding.</p>
    */
   inline const Aws::String& GetAttackScript() const { return m_attackScript; }
@@ -366,6 +384,24 @@ class Finding {
 
   ///@{
   /**
+   * <p>A customer-provided note on the finding.</p>
+   */
+  inline const Aws::String& GetCustomerNote() const { return m_customerNote; }
+  inline bool CustomerNoteHasBeenSet() const { return m_customerNoteHasBeenSet; }
+  template <typename CustomerNoteT = Aws::String>
+  void SetCustomerNote(CustomerNoteT&& value) {
+    m_customerNoteHasBeenSet = true;
+    m_customerNote = std::forward<CustomerNoteT>(value);
+  }
+  template <typename CustomerNoteT = Aws::String>
+  Finding& WithCustomerNote(CustomerNoteT&& value) {
+    SetCustomerNote(std::forward<CustomerNoteT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The file locations involved in the vulnerability, as reported by the code
    * scanner.</p>
    */
@@ -404,6 +440,25 @@ class Finding {
   template <typename VerificationScriptT = VerificationScript>
   Finding& WithVerificationScript(VerificationScriptT&& value) {
     SetVerificationScript(std::forward<VerificationScriptT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The rationale provided by the alignment agent explaining how the finding was
+   * adjusted based on customer preferences.</p>
+   */
+  inline const Aws::String& GetAlignmentRationale() const { return m_alignmentRationale; }
+  inline bool AlignmentRationaleHasBeenSet() const { return m_alignmentRationaleHasBeenSet; }
+  template <typename AlignmentRationaleT = Aws::String>
+  void SetAlignmentRationale(AlignmentRationaleT&& value) {
+    m_alignmentRationaleHasBeenSet = true;
+    m_alignmentRationale = std::forward<AlignmentRationaleT>(value);
+  }
+  template <typename AlignmentRationaleT = Aws::String>
+  Finding& WithAlignmentRationale(AlignmentRationaleT&& value) {
+    SetAlignmentRationale(std::forward<AlignmentRationaleT>(value));
     return *this;
   }
   ///@}
@@ -474,15 +529,21 @@ class Finding {
 
   ConfidenceLevel m_confidence{ConfidenceLevel::NOT_SET};
 
+  ValidationStatus m_validationStatus{ValidationStatus::NOT_SET};
+
   Aws::String m_attackScript;
 
   CodeRemediationTask m_codeRemediationTask;
 
   Aws::String m_lastUpdatedBy;
 
+  Aws::String m_customerNote;
+
   Aws::Vector<CodeLocation> m_codeLocations;
 
   VerificationScript m_verificationScript;
+
+  Aws::String m_alignmentRationale;
 
   Aws::Utils::DateTime m_createdAt{};
 
@@ -502,11 +563,14 @@ class Finding {
   bool m_riskScoreHasBeenSet = false;
   bool m_reasoningHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
+  bool m_validationStatusHasBeenSet = false;
   bool m_attackScriptHasBeenSet = false;
   bool m_codeRemediationTaskHasBeenSet = false;
   bool m_lastUpdatedByHasBeenSet = false;
+  bool m_customerNoteHasBeenSet = false;
   bool m_codeLocationsHasBeenSet = false;
   bool m_verificationScriptHasBeenSet = false;
+  bool m_alignmentRationaleHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

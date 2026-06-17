@@ -18,6 +18,10 @@ namespace DevOpsAgent {
 namespace Model {
 
 /**
+ * <p>Request structure for listing Triggers in an agent space</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListTriggersRequest">AWS
+ * API Reference</a></p>
  */
 class ListTriggersRequest : public DevOpsAgentRequest {
  public:
@@ -34,7 +38,9 @@ class ListTriggersRequest : public DevOpsAgentRequest {
   AWS_DEVOPSAGENT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
-
+  /**
+   * <p>The unique identifier for the agent space whose Triggers should be listed</p>
+   */
   inline const Aws::String& GetAgentSpaceId() const { return m_agentSpaceId; }
   inline bool AgentSpaceIdHasBeenSet() const { return m_agentSpaceIdHasBeenSet; }
   template <typename AgentSpaceIdT = Aws::String>

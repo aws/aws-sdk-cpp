@@ -97,8 +97,11 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
    * stage or roll back to the previous service revision.</p> <p>To find the
    * <code>hookId</code> of the paused hook, call <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>
-   * and inspect the <code>lifecycleHookDetails</code> field.</p><p><h3>See
-   * Also:</h3>   <a
+   * and inspect the <code>lifecycleHookDetails</code> field.</p> <p>For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/continue-service-deployment.html">Continuing
+   * Amazon ECS service deployments</a> in the <i>Amazon Elastic Container Service
+   * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContinueServiceDeployment">AWS
    * API Reference</a></p>
    */

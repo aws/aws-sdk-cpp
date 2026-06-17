@@ -97,12 +97,9 @@ class DeploymentLifecycleHookDetail {
 
   ///@{
   /**
-   * <p>The status of the lifecycle hook. Valid values depend on the hook type:</p>
-   * <ul> <li> <p>For <code>AWS_LAMBDA</code> hooks: <code>IN_PROGRESS</code>,
-   * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>TIMED_OUT</code>.</p>
-   * </li> <li> <p>For <code>PAUSE</code> hooks: <code>AWAITING_ACTION</code>,
-   * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>TIMED_OUT</code>.</p>
-   * </li> </ul>
+   * <p>The status of the lifecycle hook. Valid values include
+   * <code>AWAITING_ACTION</code>, <code>IN_PROGRESS</code>, <code>SUCCEEDED</code>,
+   * <code>FAILED</code>, and <code>TIMED_OUT</code>.</p>
    */
   inline DeploymentLifecycleHookStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

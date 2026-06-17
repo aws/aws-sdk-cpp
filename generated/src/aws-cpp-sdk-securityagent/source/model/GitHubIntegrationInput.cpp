@@ -30,6 +30,14 @@ GitHubIntegrationInput& GitHubIntegrationInput::operator=(JsonView jsonValue) {
     m_organizationName = jsonValue.GetString("organizationName");
     m_organizationNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("targetUrl")) {
+    m_targetUrl = jsonValue.GetString("targetUrl");
+    m_targetUrlHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("installationId")) {
+    m_installationId = jsonValue.GetString("installationId");
+    m_installationIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +54,14 @@ JsonValue GitHubIntegrationInput::Jsonize() const {
 
   if (m_organizationNameHasBeenSet) {
     payload.WithString("organizationName", m_organizationName);
+  }
+
+  if (m_targetUrlHasBeenSet) {
+    payload.WithString("targetUrl", m_targetUrl);
+  }
+
+  if (m_installationIdHasBeenSet) {
+    payload.WithString("installationId", m_installationId);
   }
 
   return payload;

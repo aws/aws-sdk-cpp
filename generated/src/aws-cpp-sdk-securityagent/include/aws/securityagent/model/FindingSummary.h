@@ -10,6 +10,7 @@
 #include <aws/securityagent/model/ConfidenceLevel.h>
 #include <aws/securityagent/model/FindingStatus.h>
 #include <aws/securityagent/model/RiskLevel.h>
+#include <aws/securityagent/model/ValidationStatus.h>
 
 #include <utility>
 
@@ -230,6 +231,22 @@ class FindingSummary {
 
   ///@{
   /**
+   * <p>The simulated validation status of the finding.</p>
+   */
+  inline ValidationStatus GetValidationStatus() const { return m_validationStatus; }
+  inline bool ValidationStatusHasBeenSet() const { return m_validationStatusHasBeenSet; }
+  inline void SetValidationStatus(ValidationStatus value) {
+    m_validationStatusHasBeenSet = true;
+    m_validationStatus = value;
+  }
+  inline FindingSummary& WithValidationStatus(ValidationStatus value) {
+    SetValidationStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the finding was created, in UTC format.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -286,6 +303,8 @@ class FindingSummary {
 
   ConfidenceLevel m_confidence{ConfidenceLevel::NOT_SET};
 
+  ValidationStatus m_validationStatus{ValidationStatus::NOT_SET};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -300,6 +319,7 @@ class FindingSummary {
   bool m_riskTypeHasBeenSet = false;
   bool m_riskLevelHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
+  bool m_validationStatusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

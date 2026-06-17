@@ -51,6 +51,10 @@ Aws::String UpdateExpressGatewayServiceRequest::SerializePayload() const {
     payload.WithObject("scalingTarget", m_scalingTarget.Jsonize());
   }
 
+  if (m_taskDefinitionArnHasBeenSet) {
+    payload.WithString("taskDefinitionArn", m_taskDefinitionArn);
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityAgent {
 namespace Model {
-enum class ResourceType { NOT_SET, CODE_REPOSITORY };
+enum class ResourceType { NOT_SET, CODE_REPOSITORY, DOCUMENT };
 
 namespace ResourceTypeMapper {
 AWS_SECURITYAGENT_API ResourceType GetResourceTypeForName(const Aws::String& name);

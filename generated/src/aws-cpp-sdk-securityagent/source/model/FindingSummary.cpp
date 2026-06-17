@@ -62,6 +62,10 @@ FindingSummary& FindingSummary::operator=(JsonView jsonValue) {
     m_confidence = ConfidenceLevelMapper::GetConfidenceLevelForName(jsonValue.GetString("confidence"));
     m_confidenceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("validationStatus")) {
+    m_validationStatus = ValidationStatusMapper::GetValidationStatusForName(jsonValue.GetString("validationStatus"));
+    m_validationStatusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -118,6 +122,10 @@ JsonValue FindingSummary::Jsonize() const {
 
   if (m_confidenceHasBeenSet) {
     payload.WithString("confidence", ConfidenceLevelMapper::GetNameForConfidenceLevel(m_confidence));
+  }
+
+  if (m_validationStatusHasBeenSet) {
+    payload.WithString("validationStatus", ValidationStatusMapper::GetNameForValidationStatus(m_validationStatus));
   }
 
   if (m_createdAtHasBeenSet) {

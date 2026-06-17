@@ -21,6 +21,7 @@ static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int DELETE_UNSUCCESSFUL_HASH = HashingUtils::HashString("DELETE_UNSUCCESSFUL");
+static const int UPDATE_UNSUCCESSFUL_HASH = HashingUtils::HashString("UPDATE_UNSUCCESSFUL");
 
 KnowledgeBaseStatus GetKnowledgeBaseStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ KnowledgeBaseStatus GetKnowledgeBaseStatusForName(const Aws::String& name) {
     return KnowledgeBaseStatus::FAILED;
   } else if (hashCode == DELETE_UNSUCCESSFUL_HASH) {
     return KnowledgeBaseStatus::DELETE_UNSUCCESSFUL;
+  } else if (hashCode == UPDATE_UNSUCCESSFUL_HASH) {
+    return KnowledgeBaseStatus::UPDATE_UNSUCCESSFUL;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForKnowledgeBaseStatus(KnowledgeBaseStatus enumValue) {
       return "FAILED";
     case KnowledgeBaseStatus::DELETE_UNSUCCESSFUL:
       return "DELETE_UNSUCCESSFUL";
+    case KnowledgeBaseStatus::UPDATE_UNSUCCESSFUL:
+      return "UPDATE_UNSUCCESSFUL";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

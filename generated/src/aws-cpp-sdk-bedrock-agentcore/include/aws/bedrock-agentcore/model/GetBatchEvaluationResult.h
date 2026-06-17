@@ -221,7 +221,10 @@ class GetBatchEvaluationResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The failure analysis results from insights, containing categorized failure
+   * clusters with root causes and recommendations.</p>
+   */
   inline const FailureAnalysisResultContent& GetFailureAnalysisResult() const { return m_failureAnalysisResult; }
   template <typename FailureAnalysisResultT = FailureAnalysisResultContent>
   void SetFailureAnalysisResult(FailureAnalysisResultT&& value) {
@@ -236,7 +239,10 @@ class GetBatchEvaluationResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The user intent clustering results from insights, containing grouped user
+   * intents across evaluated sessions.</p>
+   */
   inline const UserIntentClusteringResultContent& GetUserIntentResult() const { return m_userIntentResult; }
   template <typename UserIntentResultT = UserIntentClusteringResultContent>
   void SetUserIntentResult(UserIntentResultT&& value) {
@@ -251,7 +257,10 @@ class GetBatchEvaluationResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The execution summary clustering results from insights, containing grouped
+   * execution patterns across evaluated sessions.</p>
+   */
   inline const ExecutionSummaryClusteringResultContent& GetExecutionSummaryResult() const { return m_executionSummaryResult; }
   template <typename ExecutionSummaryResultT = ExecutionSummaryClusteringResultContent>
   void SetExecutionSummaryResult(ExecutionSummaryResultT&& value) {

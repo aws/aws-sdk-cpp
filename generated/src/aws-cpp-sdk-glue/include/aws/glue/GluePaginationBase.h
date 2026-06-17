@@ -30,6 +30,7 @@
 #include <aws/glue/model/GetUnfilteredPartitionsMetadataPaginationTraits.h>
 #include <aws/glue/model/GetUserDefinedFunctionsPaginationTraits.h>
 #include <aws/glue/model/GetWorkflowRunsPaginationTraits.h>
+#include <aws/glue/model/ListAssetTypesPaginationTraits.h>
 #include <aws/glue/model/ListBlueprintsPaginationTraits.h>
 #include <aws/glue/model/ListColumnStatisticsTaskRunsPaginationTraits.h>
 #include <aws/glue/model/ListConnectionTypesPaginationTraits.h>
@@ -41,6 +42,10 @@
 #include <aws/glue/model/ListDataQualityRulesetsPaginationTraits.h>
 #include <aws/glue/model/ListDevEndpointsPaginationTraits.h>
 #include <aws/glue/model/ListEntitiesPaginationTraits.h>
+#include <aws/glue/model/ListFormTypesPaginationTraits.h>
+#include <aws/glue/model/ListGlossariesPaginationTraits.h>
+#include <aws/glue/model/ListGlossaryTermsPaginationTraits.h>
+#include <aws/glue/model/ListIterableFormsPaginationTraits.h>
 #include <aws/glue/model/ListJobsPaginationTraits.h>
 #include <aws/glue/model/ListMLTransformsPaginationTraits.h>
 #include <aws/glue/model/ListMaterializedViewRefreshTaskRunsPaginationTraits.h>
@@ -52,6 +57,7 @@
 #include <aws/glue/model/ListTriggersPaginationTraits.h>
 #include <aws/glue/model/ListUsageProfilesPaginationTraits.h>
 #include <aws/glue/model/ListWorkflowsPaginationTraits.h>
+#include <aws/glue/model/SearchPaginationTraits.h>
 #include <aws/glue/model/SearchTablesPaginationTraits.h>
 
 #include <memory>
@@ -326,6 +332,17 @@ class GluePaginationBase {
   }
 
   /**
+   * Create a paginator for ListAssetTypes operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetTypesRequest, Pagination::ListAssetTypesPaginationTraits<DerivedClient>>
+  ListAssetTypesPaginator(const Model::ListAssetTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetTypesRequest,
+                                             Pagination::ListAssetTypesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
+  }
+
+  /**
    * Create a paginator for ListBlueprints operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBlueprintsRequest, Pagination::ListBlueprintsPaginationTraits<DerivedClient>>
@@ -455,6 +472,52 @@ class GluePaginationBase {
   }
 
   /**
+   * Create a paginator for ListFormTypes operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFormTypesRequest, Pagination::ListFormTypesPaginationTraits<DerivedClient>>
+  ListFormTypesPaginator(const Model::ListFormTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFormTypesRequest,
+                                             Pagination::ListFormTypesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                       request};
+  }
+
+  /**
+   * Create a paginator for ListGlossaries operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGlossariesRequest, Pagination::ListGlossariesPaginationTraits<DerivedClient>>
+  ListGlossariesPaginator(const Model::ListGlossariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGlossariesRequest,
+                                             Pagination::ListGlossariesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for ListGlossaryTerms operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGlossaryTermsRequest,
+                                    Pagination::ListGlossaryTermsPaginationTraits<DerivedClient>>
+  ListGlossaryTermsPaginator(const Model::ListGlossaryTermsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGlossaryTermsRequest,
+                                             Pagination::ListGlossaryTermsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListIterableForms operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIterableFormsRequest,
+                                    Pagination::ListIterableFormsPaginationTraits<DerivedClient>>
+  ListIterableFormsPaginator(const Model::ListIterableFormsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIterableFormsRequest,
+                                             Pagination::ListIterableFormsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListJobs operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>
@@ -577,6 +640,16 @@ class GluePaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowsRequest,
                                              Pagination::ListWorkflowsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for Search operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchRequest, Pagination::SearchPaginationTraits<DerivedClient>> SearchPaginator(
+      const Model::SearchRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchRequest, Pagination::SearchPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

@@ -34,6 +34,10 @@ Harness& Harness::operator=(JsonView jsonValue) {
     m_status = HarnessStatusMapper::GetHarnessStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("harnessVersion")) {
+    m_harnessVersion = jsonValue.GetString("harnessVersion");
+    m_harnessVersionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("executionRoleArn")) {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
     m_executionRoleArnHasBeenSet = true;
@@ -141,6 +145,10 @@ JsonValue Harness::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", HarnessStatusMapper::GetNameForHarnessStatus(m_status));
+  }
+
+  if (m_harnessVersionHasBeenSet) {
+    payload.WithString("harnessVersion", m_harnessVersion);
   }
 
   if (m_executionRoleArnHasBeenSet) {

@@ -21,7 +21,14 @@
 #include <aws/securityagent/model/ListPentestJobTasksPaginationTraits.h>
 #include <aws/securityagent/model/ListPentestJobsForPentestPaginationTraits.h>
 #include <aws/securityagent/model/ListPentestsPaginationTraits.h>
+#include <aws/securityagent/model/ListPrivateConnectionsPaginationTraits.h>
+#include <aws/securityagent/model/ListSecurityRequirementPacksPaginationTraits.h>
+#include <aws/securityagent/model/ListSecurityRequirementsPaginationTraits.h>
 #include <aws/securityagent/model/ListTargetDomainsPaginationTraits.h>
+#include <aws/securityagent/model/ListThreatModelJobTasksPaginationTraits.h>
+#include <aws/securityagent/model/ListThreatModelJobsPaginationTraits.h>
+#include <aws/securityagent/model/ListThreatModelsPaginationTraits.h>
+#include <aws/securityagent/model/ListThreatsPaginationTraits.h>
 
 #include <memory>
 
@@ -197,6 +204,42 @@ class SecurityAgentPaginationBase {
   }
 
   /**
+   * Create a paginator for ListPrivateConnections operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrivateConnectionsRequest,
+                                    Pagination::ListPrivateConnectionsPaginationTraits<DerivedClient>>
+  ListPrivateConnectionsPaginator(const Model::ListPrivateConnectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrivateConnectionsRequest,
+                                             Pagination::ListPrivateConnectionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListSecurityRequirementPacks operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityRequirementPacksRequest,
+                                    Pagination::ListSecurityRequirementPacksPaginationTraits<DerivedClient>>
+  ListSecurityRequirementPacksPaginator(const Model::ListSecurityRequirementPacksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityRequirementPacksRequest,
+                                             Pagination::ListSecurityRequirementPacksPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListSecurityRequirements operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityRequirementsRequest,
+                                    Pagination::ListSecurityRequirementsPaginationTraits<DerivedClient>>
+  ListSecurityRequirementsPaginator(const Model::ListSecurityRequirementsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityRequirementsRequest,
+                                             Pagination::ListSecurityRequirementsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListTargetDomains operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTargetDomainsRequest,
@@ -206,6 +249,53 @@ class SecurityAgentPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTargetDomainsRequest,
                                              Pagination::ListTargetDomainsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListThreatModelJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThreatModelJobsRequest,
+                                    Pagination::ListThreatModelJobsPaginationTraits<DerivedClient>>
+  ListThreatModelJobsPaginator(const Model::ListThreatModelJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThreatModelJobsRequest,
+                                             Pagination::ListThreatModelJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListThreatModelJobTasks operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThreatModelJobTasksRequest,
+                                    Pagination::ListThreatModelJobTasksPaginationTraits<DerivedClient>>
+  ListThreatModelJobTasksPaginator(const Model::ListThreatModelJobTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThreatModelJobTasksRequest,
+                                             Pagination::ListThreatModelJobTasksPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListThreatModels operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThreatModelsRequest,
+                                    Pagination::ListThreatModelsPaginationTraits<DerivedClient>>
+  ListThreatModelsPaginator(const Model::ListThreatModelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThreatModelsRequest,
+                                             Pagination::ListThreatModelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                          request};
+  }
+
+  /**
+   * Create a paginator for ListThreats operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThreatsRequest, Pagination::ListThreatsPaginationTraits<DerivedClient>>
+  ListThreatsPaginator(const Model::ListThreatsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThreatsRequest,
+                                             Pagination::ListThreatsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                     request};
   }
 };
 }  // namespace SecurityAgent

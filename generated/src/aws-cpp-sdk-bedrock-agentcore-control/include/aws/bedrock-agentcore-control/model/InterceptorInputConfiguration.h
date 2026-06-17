@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/InterceptorPayloadFilter.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -44,9 +47,31 @@ class InterceptorInputConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The filter that determines which parts of the request or response payload are
+   * passed as input to the interceptor.</p>
+   */
+  inline const InterceptorPayloadFilter& GetPayloadFilter() const { return m_payloadFilter; }
+  inline bool PayloadFilterHasBeenSet() const { return m_payloadFilterHasBeenSet; }
+  template <typename PayloadFilterT = InterceptorPayloadFilter>
+  void SetPayloadFilter(PayloadFilterT&& value) {
+    m_payloadFilterHasBeenSet = true;
+    m_payloadFilter = std::forward<PayloadFilterT>(value);
+  }
+  template <typename PayloadFilterT = InterceptorPayloadFilter>
+  InterceptorInputConfiguration& WithPayloadFilter(PayloadFilterT&& value) {
+    SetPayloadFilter(std::forward<PayloadFilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_passRequestHeaders{false};
+
+  InterceptorPayloadFilter m_payloadFilter;
   bool m_passRequestHeadersHasBeenSet = false;
+  bool m_payloadFilterHasBeenSet = false;
 };
 
 }  // namespace Model

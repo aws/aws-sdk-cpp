@@ -42,6 +42,10 @@ HarnessSummary& HarnessSummary::operator=(JsonView jsonValue) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("harnessVersion")) {
+    m_harnessVersion = jsonValue.GetString("harnessVersion");
+    m_harnessVersionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue HarnessSummary::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_harnessVersionHasBeenSet) {
+    payload.WithString("harnessVersion", m_harnessVersion);
   }
 
   return payload;

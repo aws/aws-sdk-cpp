@@ -78,6 +78,10 @@ Finding& Finding::operator=(JsonView jsonValue) {
     m_confidence = ConfidenceLevelMapper::GetConfidenceLevelForName(jsonValue.GetString("confidence"));
     m_confidenceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("validationStatus")) {
+    m_validationStatus = ValidationStatusMapper::GetValidationStatusForName(jsonValue.GetString("validationStatus"));
+    m_validationStatusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("attackScript")) {
     m_attackScript = jsonValue.GetString("attackScript");
     m_attackScriptHasBeenSet = true;
@@ -90,6 +94,10 @@ Finding& Finding::operator=(JsonView jsonValue) {
     m_lastUpdatedBy = jsonValue.GetString("lastUpdatedBy");
     m_lastUpdatedByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("customerNote")) {
+    m_customerNote = jsonValue.GetString("customerNote");
+    m_customerNoteHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("codeLocations")) {
     Aws::Utils::Array<JsonView> codeLocationsJsonList = jsonValue.GetArray("codeLocations");
     for (unsigned codeLocationsIndex = 0; codeLocationsIndex < codeLocationsJsonList.GetLength(); ++codeLocationsIndex) {
@@ -100,6 +108,10 @@ Finding& Finding::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("verificationScript")) {
     m_verificationScript = jsonValue.GetObject("verificationScript");
     m_verificationScriptHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("alignmentRationale")) {
+    m_alignmentRationale = jsonValue.GetString("alignmentRationale");
+    m_alignmentRationaleHasBeenSet = true;
   }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
@@ -175,6 +187,10 @@ JsonValue Finding::Jsonize() const {
     payload.WithString("confidence", ConfidenceLevelMapper::GetNameForConfidenceLevel(m_confidence));
   }
 
+  if (m_validationStatusHasBeenSet) {
+    payload.WithString("validationStatus", ValidationStatusMapper::GetNameForValidationStatus(m_validationStatus));
+  }
+
   if (m_attackScriptHasBeenSet) {
     payload.WithString("attackScript", m_attackScript);
   }
@@ -187,6 +203,10 @@ JsonValue Finding::Jsonize() const {
     payload.WithString("lastUpdatedBy", m_lastUpdatedBy);
   }
 
+  if (m_customerNoteHasBeenSet) {
+    payload.WithString("customerNote", m_customerNote);
+  }
+
   if (m_codeLocationsHasBeenSet) {
     Aws::Utils::Array<JsonValue> codeLocationsJsonList(m_codeLocations.size());
     for (unsigned codeLocationsIndex = 0; codeLocationsIndex < codeLocationsJsonList.GetLength(); ++codeLocationsIndex) {
@@ -197,6 +217,10 @@ JsonValue Finding::Jsonize() const {
 
   if (m_verificationScriptHasBeenSet) {
     payload.WithObject("verificationScript", m_verificationScript.Jsonize());
+  }
+
+  if (m_alignmentRationaleHasBeenSet) {
+    payload.WithString("alignmentRationale", m_alignmentRationale);
   }
 
   if (m_createdAtHasBeenSet) {

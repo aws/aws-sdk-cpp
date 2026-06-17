@@ -298,10 +298,13 @@ class DaemonTaskDefinition {
 
   ///@{
   /**
-   * <p>The process namespace mode for the daemon. A value of <code>shared</code>
-   * means the daemon shares the PID namespace with co-located tasks, giving it
-   * visibility into application processes. A value of <code>none</code> means the
-   * daemon has its own isolated PID namespace.</p>
+   * <p>The PID namespace mode for the daemon. The valid values are <code>none</code>
+   * and <code>shared</code>. The default is <code>none</code>.</p> <p>If
+   * <code>none</code> is specified or no value is provided, the daemon runs with its
+   * own PID namespace, isolated from other tasks. If <code>shared</code> is
+   * specified, the daemon joins the host PID namespace, making it accessible to
+   * non-daemon tasks that use <code>pidMode: "host"</code> or other daemons that use
+   * <code>pidMode: "shared"</code>.</p>
    */
   inline DaemonPidMode GetPidMode() const { return m_pidMode; }
   inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
@@ -317,11 +320,13 @@ class DaemonTaskDefinition {
 
   ///@{
   /**
-   * <p>The IPC namespace mode for the daemon. A value of <code>shared</code> means
-   * the daemon shares the IPC namespace with co-located tasks, allowing
-   * communication through POSIX shared memory, semaphores, and message queues. A
-   * value of <code>none</code> means the daemon has its own isolated IPC
-   * namespace.</p>
+   * <p>The IPC namespace mode for the daemon. The valid values are <code>none</code>
+   * and <code>shared</code>. The default is <code>none</code>.</p> <p>If
+   * <code>none</code> is specified or no value is provided, the daemon runs with its
+   * own IPC namespace, isolated from other tasks. If <code>shared</code> is
+   * specified, the daemon joins the host IPC namespace, making it accessible to
+   * non-daemon tasks that use <code>ipcMode: "host"</code> or other daemons that use
+   * <code>ipcMode: "shared"</code>.</p>
    */
   inline DaemonIpcMode GetIpcMode() const { return m_ipcMode; }
   inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }

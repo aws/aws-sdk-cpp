@@ -21,7 +21,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Unified customer-facing clustering result written to S3.</p><p><h3>See
+ * <p>The failure analysis clustering result containing categorized failure
+ * clusters with root causes and remediation recommendations.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/FailureAnalysisResultContent">AWS
  * API Reference</a></p>

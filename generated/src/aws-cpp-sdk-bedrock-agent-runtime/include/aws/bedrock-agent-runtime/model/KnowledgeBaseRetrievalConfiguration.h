@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseVectorSearchConfiguration.h>
+#include <aws/bedrock-agent-runtime/model/ManagedSearchConfiguration.h>
 
 #include <utility>
 
@@ -43,6 +44,26 @@ class KnowledgeBaseRetrievalConfiguration {
 
   ///@{
   /**
+   * <p>Contains configurations for managed search. For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+   * configurations</a>.</p>
+   */
+  inline const ManagedSearchConfiguration& GetManagedSearchConfiguration() const { return m_managedSearchConfiguration; }
+  inline bool ManagedSearchConfigurationHasBeenSet() const { return m_managedSearchConfigurationHasBeenSet; }
+  template <typename ManagedSearchConfigurationT = ManagedSearchConfiguration>
+  void SetManagedSearchConfiguration(ManagedSearchConfigurationT&& value) {
+    m_managedSearchConfigurationHasBeenSet = true;
+    m_managedSearchConfiguration = std::forward<ManagedSearchConfigurationT>(value);
+  }
+  template <typename ManagedSearchConfigurationT = ManagedSearchConfiguration>
+  KnowledgeBaseRetrievalConfiguration& WithManagedSearchConfiguration(ManagedSearchConfigurationT&& value) {
+    SetManagedSearchConfiguration(std::forward<ManagedSearchConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains details about how the results from the vector search should be
    * returned. For more information, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
@@ -62,7 +83,10 @@ class KnowledgeBaseRetrievalConfiguration {
   }
   ///@}
  private:
+  ManagedSearchConfiguration m_managedSearchConfiguration;
+
   KnowledgeBaseVectorSearchConfiguration m_vectorSearchConfiguration;
+  bool m_managedSearchConfigurationHasBeenSet = false;
   bool m_vectorSearchConfigurationHasBeenSet = false;
 };
 

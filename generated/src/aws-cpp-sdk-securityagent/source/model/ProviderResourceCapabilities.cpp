@@ -22,6 +22,18 @@ ProviderResourceCapabilities& ProviderResourceCapabilities::operator=(JsonView j
     m_github = jsonValue.GetObject("github");
     m_githubHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("gitlab")) {
+    m_gitlab = jsonValue.GetObject("gitlab");
+    m_gitlabHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("bitbucket")) {
+    m_bitbucket = jsonValue.GetObject("bitbucket");
+    m_bitbucketHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("confluence")) {
+    m_confluence = jsonValue.GetObject("confluence");
+    m_confluenceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +42,18 @@ JsonValue ProviderResourceCapabilities::Jsonize() const {
 
   if (m_githubHasBeenSet) {
     payload.WithObject("github", m_github.Jsonize());
+  }
+
+  if (m_gitlabHasBeenSet) {
+    payload.WithObject("gitlab", m_gitlab.Jsonize());
+  }
+
+  if (m_bitbucketHasBeenSet) {
+    payload.WithObject("bitbucket", m_bitbucket.Jsonize());
+  }
+
+  if (m_confluenceHasBeenSet) {
+    payload.WithObject("confluence", m_confluence.Jsonize());
   }
 
   return payload;

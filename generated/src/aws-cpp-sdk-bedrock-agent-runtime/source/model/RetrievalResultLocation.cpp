@@ -26,9 +26,17 @@ RetrievalResultLocation& RetrievalResultLocation::operator=(JsonView jsonValue) 
     m_customDocumentLocation = jsonValue.GetObject("customDocumentLocation");
     m_customDocumentLocationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("googleDriveLocation")) {
+    m_googleDriveLocation = jsonValue.GetObject("googleDriveLocation");
+    m_googleDriveLocationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("kendraDocumentLocation")) {
     m_kendraDocumentLocation = jsonValue.GetObject("kendraDocumentLocation");
     m_kendraDocumentLocationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("oneDriveLocation")) {
+    m_oneDriveLocation = jsonValue.GetObject("oneDriveLocation");
+    m_oneDriveLocationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("s3Location")) {
     m_s3Location = jsonValue.GetObject("s3Location");
@@ -68,8 +76,16 @@ JsonValue RetrievalResultLocation::Jsonize() const {
     payload.WithObject("customDocumentLocation", m_customDocumentLocation.Jsonize());
   }
 
+  if (m_googleDriveLocationHasBeenSet) {
+    payload.WithObject("googleDriveLocation", m_googleDriveLocation.Jsonize());
+  }
+
   if (m_kendraDocumentLocationHasBeenSet) {
     payload.WithObject("kendraDocumentLocation", m_kendraDocumentLocation.Jsonize());
+  }
+
+  if (m_oneDriveLocationHasBeenSet) {
+    payload.WithObject("oneDriveLocation", m_oneDriveLocation.Jsonize());
   }
 
   if (m_s3LocationHasBeenSet) {

@@ -10,6 +10,7 @@
 #include <aws/securityagent/model/Assets.h>
 #include <aws/securityagent/model/CloudWatchLog.h>
 #include <aws/securityagent/model/CodeRemediationStrategy.h>
+#include <aws/securityagent/model/ValidationMode.h>
 
 #include <utility>
 
@@ -163,6 +164,23 @@ class CodeReview {
 
   ///@{
   /**
+   * <p>The validation mode for the code review. Valid values are SIMULATED and
+   * DISABLED.</p>
+   */
+  inline ValidationMode GetValidationMode() const { return m_validationMode; }
+  inline bool ValidationModeHasBeenSet() const { return m_validationModeHasBeenSet; }
+  inline void SetValidationMode(ValidationMode value) {
+    m_validationModeHasBeenSet = true;
+    m_validationMode = value;
+  }
+  inline CodeReview& WithValidationMode(ValidationMode value) {
+    SetValidationMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the code review was created, in UTC format.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -211,6 +229,8 @@ class CodeReview {
 
   CodeRemediationStrategy m_codeRemediationStrategy{CodeRemediationStrategy::NOT_SET};
 
+  ValidationMode m_validationMode{ValidationMode::NOT_SET};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -221,6 +241,7 @@ class CodeReview {
   bool m_serviceRoleHasBeenSet = false;
   bool m_logConfigHasBeenSet = false;
   bool m_codeRemediationStrategyHasBeenSet = false;
+  bool m_validationModeHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

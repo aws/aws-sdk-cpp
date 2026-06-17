@@ -26,6 +26,10 @@ RuntimeTargetConfiguration& RuntimeTargetConfiguration::operator=(JsonView jsonV
     m_qualifier = jsonValue.GetString("qualifier");
     m_qualifierHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("schema")) {
+    m_schema = jsonValue.GetObject("schema");
+    m_schemaHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue RuntimeTargetConfiguration::Jsonize() const {
 
   if (m_qualifierHasBeenSet) {
     payload.WithString("qualifier", m_qualifier);
+  }
+
+  if (m_schemaHasBeenSet) {
+    payload.WithObject("schema", m_schema.Jsonize());
   }
 
   return payload;

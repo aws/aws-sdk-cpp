@@ -90,7 +90,8 @@ class CreateAssetRequest : public DevOpsAgentRequest {
 
   ///@{
   /**
-   * <p>The content for the asset. Provide a single file or a zip bundle.</p>
+   * <p>The content for the asset. Provide a single file, a zip bundle, or a
+   * sourceUrl to import from an external source.</p>
    */
   inline const AssetContent& GetContent() const { return m_content; }
   inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }

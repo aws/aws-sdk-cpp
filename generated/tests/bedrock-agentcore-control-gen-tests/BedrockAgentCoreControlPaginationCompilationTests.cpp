@@ -37,9 +37,11 @@
 #include <aws/bedrock-agentcore-control/model/ListGatewayRulesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetVersionsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowserProfilesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListRegistriesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessEndpointsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

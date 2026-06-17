@@ -22,9 +22,9 @@ OnlineEvaluationConfigSource& OnlineEvaluationConfigSource::operator=(JsonView j
     m_onlineEvaluationConfigArn = jsonValue.GetString("onlineEvaluationConfigArn");
     m_onlineEvaluationConfigArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("sessionFilterConfig")) {
-    m_sessionFilterConfig = jsonValue.GetObject("sessionFilterConfig");
-    m_sessionFilterConfigHasBeenSet = true;
+  if (jsonValue.ValueExists("timeRange")) {
+    m_timeRange = jsonValue.GetObject("timeRange");
+    m_timeRangeHasBeenSet = true;
   }
   return *this;
 }
@@ -36,8 +36,8 @@ JsonValue OnlineEvaluationConfigSource::Jsonize() const {
     payload.WithString("onlineEvaluationConfigArn", m_onlineEvaluationConfigArn);
   }
 
-  if (m_sessionFilterConfigHasBeenSet) {
-    payload.WithObject("sessionFilterConfig", m_sessionFilterConfig.Jsonize());
+  if (m_timeRangeHasBeenSet) {
+    payload.WithObject("timeRange", m_timeRange.Jsonize());
   }
 
   return payload;

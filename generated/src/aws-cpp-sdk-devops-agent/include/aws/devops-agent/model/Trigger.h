@@ -36,7 +36,9 @@ class Trigger {
   AWS_DEVOPSAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The unique identifier for this Trigger</p>
+   */
   inline const Aws::String& GetTriggerId() const { return m_triggerId; }
   inline bool TriggerIdHasBeenSet() const { return m_triggerIdHasBeenSet; }
   template <typename TriggerIdT = Aws::String>
@@ -52,7 +54,9 @@ class Trigger {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The agent space this Trigger belongs to</p>
+   */
   inline const Aws::String& GetAgentSpaceId() const { return m_agentSpaceId; }
   inline bool AgentSpaceIdHasBeenSet() const { return m_agentSpaceIdHasBeenSet; }
   template <typename AgentSpaceIdT = Aws::String>

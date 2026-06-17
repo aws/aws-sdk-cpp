@@ -85,6 +85,10 @@ UpdateGatewayResult& UpdateGatewayResult::operator=(const Aws::AmazonWebServiceR
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("customTransformConfiguration")) {
+    m_customTransformConfiguration = jsonValue.GetObject("customTransformConfiguration");
+    m_customTransformConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("interceptorConfigurations")) {
     Aws::Utils::Array<JsonView> interceptorConfigurationsJsonList = jsonValue.GetArray("interceptorConfigurations");
     for (unsigned interceptorConfigurationsIndex = 0; interceptorConfigurationsIndex < interceptorConfigurationsJsonList.GetLength();
@@ -104,6 +108,14 @@ UpdateGatewayResult& UpdateGatewayResult::operator=(const Aws::AmazonWebServiceR
   if (jsonValue.ValueExists("exceptionLevel")) {
     m_exceptionLevel = ExceptionLevelMapper::GetExceptionLevelForName(jsonValue.GetString("exceptionLevel"));
     m_exceptionLevelHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("webAclArn")) {
+    m_webAclArn = jsonValue.GetString("webAclArn");
+    m_webAclArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("wafConfiguration")) {
+    m_wafConfiguration = jsonValue.GetObject("wafConfiguration");
+    m_wafConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

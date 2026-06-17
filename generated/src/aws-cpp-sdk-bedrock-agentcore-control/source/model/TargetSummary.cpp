@@ -46,6 +46,22 @@ TargetSummary& TargetSummary::operator=(JsonView jsonValue) {
     m_resourcePriority = jsonValue.GetInteger("resourcePriority");
     m_resourcePriorityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lastSynchronizedAt")) {
+    m_lastSynchronizedAt = jsonValue.GetString("lastSynchronizedAt");
+    m_lastSynchronizedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("authorizationData")) {
+    m_authorizationData = jsonValue.GetObject("authorizationData");
+    m_authorizationDataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("targetType")) {
+    m_targetType = TargetTypeMapper::GetTargetTypeForName(jsonValue.GetString("targetType"));
+    m_targetTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("listingMode")) {
+    m_listingMode = ListingModeMapper::GetListingModeForName(jsonValue.GetString("listingMode"));
+    m_listingModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +94,22 @@ JsonValue TargetSummary::Jsonize() const {
 
   if (m_resourcePriorityHasBeenSet) {
     payload.WithInteger("resourcePriority", m_resourcePriority);
+  }
+
+  if (m_lastSynchronizedAtHasBeenSet) {
+    payload.WithString("lastSynchronizedAt", m_lastSynchronizedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_authorizationDataHasBeenSet) {
+    payload.WithObject("authorizationData", m_authorizationData.Jsonize());
+  }
+
+  if (m_targetTypeHasBeenSet) {
+    payload.WithString("targetType", TargetTypeMapper::GetNameForTargetType(m_targetType));
+  }
+
+  if (m_listingModeHasBeenSet) {
+    payload.WithString("listingMode", ListingModeMapper::GetNameForListingMode(m_listingMode));
   }
 
   return payload;

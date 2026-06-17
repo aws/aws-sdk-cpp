@@ -27,6 +27,8 @@ static const int mcpserver_HASH = HashingUtils::HashString("mcpserver");
 static const int mcpserversplunk_HASH = HashingUtils::HashString("mcpserversplunk");
 static const int azureidentity_HASH = HashingUtils::HashString("azureidentity");
 static const int mcpserversigv4_HASH = HashingUtils::HashString("mcpserversigv4");
+static const int remoteagent_HASH = HashingUtils::HashString("remoteagent");
+static const int remoteagentsigv4_HASH = HashingUtils::HashString("remoteagentsigv4");
 
 PostRegisterServiceSupportedService GetPostRegisterServiceSupportedServiceForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -54,6 +56,10 @@ PostRegisterServiceSupportedService GetPostRegisterServiceSupportedServiceForNam
     return PostRegisterServiceSupportedService::azureidentity;
   } else if (hashCode == mcpserversigv4_HASH) {
     return PostRegisterServiceSupportedService::mcpserversigv4;
+  } else if (hashCode == remoteagent_HASH) {
+    return PostRegisterServiceSupportedService::remoteagent;
+  } else if (hashCode == remoteagentsigv4_HASH) {
+    return PostRegisterServiceSupportedService::remoteagentsigv4;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -92,6 +98,10 @@ Aws::String GetNameForPostRegisterServiceSupportedService(PostRegisterServiceSup
       return "azureidentity";
     case PostRegisterServiceSupportedService::mcpserversigv4:
       return "mcpserversigv4";
+    case PostRegisterServiceSupportedService::remoteagent:
+      return "remoteagent";
+    case PostRegisterServiceSupportedService::remoteagentsigv4:
+      return "remoteagentsigv4";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

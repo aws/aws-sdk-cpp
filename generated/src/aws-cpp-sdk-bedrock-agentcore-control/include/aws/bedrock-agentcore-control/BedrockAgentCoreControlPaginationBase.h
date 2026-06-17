@@ -21,6 +21,8 @@
 #include <aws/bedrock-agentcore-control/model/ListGatewayRulesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessEndpointsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListHarnessesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListMemoriesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersPaginationTraits.h>
@@ -238,6 +240,18 @@ class BedrockAgentCoreControlPaginationBase {
   }
 
   /**
+   * Create a paginator for ListHarnessEndpoints operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHarnessEndpointsRequest,
+                                    Pagination::ListHarnessEndpointsPaginationTraits<DerivedClient>>
+  ListHarnessEndpointsPaginator(const Model::ListHarnessEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHarnessEndpointsRequest,
+                                             Pagination::ListHarnessEndpointsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListHarnesses operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHarnessesRequest, Pagination::ListHarnessesPaginationTraits<DerivedClient>>
@@ -246,6 +260,18 @@ class BedrockAgentCoreControlPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHarnessesRequest,
                                              Pagination::ListHarnessesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for ListHarnessVersions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHarnessVersionsRequest,
+                                    Pagination::ListHarnessVersionsPaginationTraits<DerivedClient>>
+  ListHarnessVersionsPaginator(const Model::ListHarnessVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHarnessVersionsRequest,
+                                             Pagination::ListHarnessVersionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

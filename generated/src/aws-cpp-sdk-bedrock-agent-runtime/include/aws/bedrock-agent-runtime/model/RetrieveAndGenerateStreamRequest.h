@@ -10,6 +10,7 @@
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateInput.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateSessionConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateStreamHandler.h>
+#include <aws/bedrock-agent-runtime/model/UserContext.h>
 #include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -139,6 +140,22 @@ class RetrieveAndGenerateStreamRequest : public BedrockAgentRuntimeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const UserContext& GetUserContext() const { return m_userContext; }
+  inline bool UserContextHasBeenSet() const { return m_userContextHasBeenSet; }
+  template <typename UserContextT = UserContext>
+  void SetUserContext(UserContextT&& value) {
+    m_userContextHasBeenSet = true;
+    m_userContext = std::forward<UserContextT>(value);
+  }
+  template <typename UserContextT = UserContext>
+  RetrieveAndGenerateStreamRequest& WithUserContext(UserContextT&& value) {
+    SetUserContext(std::forward<UserContextT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RetrieveAndGenerateInput m_input;
 
@@ -147,6 +164,8 @@ class RetrieveAndGenerateStreamRequest : public BedrockAgentRuntimeRequest {
   RetrieveAndGenerateSessionConfiguration m_sessionConfiguration;
 
   Aws::String m_sessionId;
+
+  UserContext m_userContext;
   RetrieveAndGenerateStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
@@ -154,6 +173,7 @@ class RetrieveAndGenerateStreamRequest : public BedrockAgentRuntimeRequest {
   bool m_retrieveAndGenerateConfigurationHasBeenSet = false;
   bool m_sessionConfigurationHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
+  bool m_userContextHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -16,11 +16,20 @@ namespace Model {
 namespace ProviderMapper {
 
 static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
+static const int GITLAB_HASH = HashingUtils::HashString("GITLAB");
+static const int BITBUCKET_HASH = HashingUtils::HashString("BITBUCKET");
+static const int CONFLUENCE_HASH = HashingUtils::HashString("CONFLUENCE");
 
 Provider GetProviderForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == GITHUB_HASH) {
     return Provider::GITHUB;
+  } else if (hashCode == GITLAB_HASH) {
+    return Provider::GITLAB;
+  } else if (hashCode == BITBUCKET_HASH) {
+    return Provider::BITBUCKET;
+  } else if (hashCode == CONFLUENCE_HASH) {
+    return Provider::CONFLUENCE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +46,12 @@ Aws::String GetNameForProvider(Provider enumValue) {
       return {};
     case Provider::GITHUB:
       return "GITHUB";
+    case Provider::GITLAB:
+      return "GITLAB";
+    case Provider::BITBUCKET:
+      return "BITBUCKET";
+    case Provider::CONFLUENCE:
+      return "CONFLUENCE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

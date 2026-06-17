@@ -260,8 +260,8 @@ class DeploymentConfiguration {
 
   ///@{
   /**
-   * <p>An array of deployment lifecycle hook objects to run custom logic at specific
-   * stages of the deployment lifecycle.</p>
+   * <p>An array of deployment lifecycle hook objects to run custom logic or pause
+   * the deployment at specific stages of the deployment lifecycle.</p>
    */
   inline const Aws::Vector<DeploymentLifecycleHook>& GetLifecycleHooks() const { return m_lifecycleHooks; }
   inline bool LifecycleHooksHasBeenSet() const { return m_lifecycleHooksHasBeenSet; }

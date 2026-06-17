@@ -17,6 +17,7 @@ namespace ParsingStrategyMapper {
 
 static const int BEDROCK_FOUNDATION_MODEL_HASH = HashingUtils::HashString("BEDROCK_FOUNDATION_MODEL");
 static const int BEDROCK_DATA_AUTOMATION_HASH = HashingUtils::HashString("BEDROCK_DATA_AUTOMATION");
+static const int SMART_PARSING_HASH = HashingUtils::HashString("SMART_PARSING");
 
 ParsingStrategy GetParsingStrategyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ParsingStrategy GetParsingStrategyForName(const Aws::String& name) {
     return ParsingStrategy::BEDROCK_FOUNDATION_MODEL;
   } else if (hashCode == BEDROCK_DATA_AUTOMATION_HASH) {
     return ParsingStrategy::BEDROCK_DATA_AUTOMATION;
+  } else if (hashCode == SMART_PARSING_HASH) {
+    return ParsingStrategy::SMART_PARSING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForParsingStrategy(ParsingStrategy enumValue) {
       return "BEDROCK_FOUNDATION_MODEL";
     case ParsingStrategy::BEDROCK_DATA_AUTOMATION:
       return "BEDROCK_DATA_AUTOMATION";
+    case ParsingStrategy::SMART_PARSING:
+      return "SMART_PARSING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

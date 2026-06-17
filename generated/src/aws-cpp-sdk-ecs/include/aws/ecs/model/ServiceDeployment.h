@@ -293,15 +293,19 @@ class ServiceDeployment {
    * traffic. The green service revision is migrating from 0% to 100% of test
    * traffic.</p> </li> <li> <p>POST_TEST_TRAFFIC_SHIFT</p> <p>The test traffic shift
    * is complete. The green service revision handles 100% of the test traffic.</p>
-   * </li> <li> <p>PRODUCTION_TRAFFIC_SHIFT</p> <p>Production traffic is shifting to
-   * the green service revision. The green service revision is migrating from 0% to
-   * 100% of production traffic.</p> </li> <li> <p>POST_PRODUCTION_TRAFFIC_SHIFT</p>
-   * <p>The production traffic shift is complete.</p> </li> <li> <p>BAKE_TIME</p>
-   * <p>The stage when both blue and green service revisions are running
-   * simultaneously after the production traffic has shifted.</p> </li> <li>
-   * <p>CLEAN_UP</p> <p>The stage when the blue service revision has completely
-   * scaled down to 0 running tasks. The green service revision is now the production
-   * service revision after this stage.</p> </li> </ul>
+   * </li> <li> <p>PRE_PRODUCTION_TRAFFIC_SHIFT</p> <p>Occurs before production
+   * traffic shift. For linear and canary deployments, this stage is invoked before
+   * every traffic shift step.</p> </li> <li> <p>PRODUCTION_TRAFFIC_SHIFT</p>
+   * <p>Production traffic is shifting to the green service revision. The green
+   * service revision is migrating from 0% to 100% of production traffic. For linear
+   * and canary deployments, this stage is invoked at every traffic shift step.</p>
+   * </li> <li> <p>POST_PRODUCTION_TRAFFIC_SHIFT</p> <p>The production traffic shift
+   * is complete.</p> </li> <li> <p>BAKE_TIME</p> <p>The stage when both blue and
+   * green service revisions are running simultaneously after the production traffic
+   * has shifted.</p> </li> <li> <p>CLEAN_UP</p> <p>The stage when the blue service
+   * revision has completely scaled down to 0 running tasks. The green service
+   * revision is now the production service revision after this stage.</p> </li>
+   * </ul>
    */
   inline ServiceDeploymentLifecycleStage GetLifecycleStage() const { return m_lifecycleStage; }
   inline bool LifecycleStageHasBeenSet() const { return m_lifecycleStageHasBeenSet; }

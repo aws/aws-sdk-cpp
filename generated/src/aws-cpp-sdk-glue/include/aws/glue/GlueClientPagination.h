@@ -29,6 +29,7 @@
 #include <aws/glue/model/GetUnfilteredPartitionsMetadataPaginationTraits.h>
 #include <aws/glue/model/GetUserDefinedFunctionsPaginationTraits.h>
 #include <aws/glue/model/GetWorkflowRunsPaginationTraits.h>
+#include <aws/glue/model/ListAssetTypesPaginationTraits.h>
 #include <aws/glue/model/ListBlueprintsPaginationTraits.h>
 #include <aws/glue/model/ListColumnStatisticsTaskRunsPaginationTraits.h>
 #include <aws/glue/model/ListConnectionTypesPaginationTraits.h>
@@ -40,6 +41,10 @@
 #include <aws/glue/model/ListDataQualityRulesetsPaginationTraits.h>
 #include <aws/glue/model/ListDevEndpointsPaginationTraits.h>
 #include <aws/glue/model/ListEntitiesPaginationTraits.h>
+#include <aws/glue/model/ListFormTypesPaginationTraits.h>
+#include <aws/glue/model/ListGlossariesPaginationTraits.h>
+#include <aws/glue/model/ListGlossaryTermsPaginationTraits.h>
+#include <aws/glue/model/ListIterableFormsPaginationTraits.h>
 #include <aws/glue/model/ListJobsPaginationTraits.h>
 #include <aws/glue/model/ListMLTransformsPaginationTraits.h>
 #include <aws/glue/model/ListMaterializedViewRefreshTaskRunsPaginationTraits.h>
@@ -51,6 +56,7 @@
 #include <aws/glue/model/ListTriggersPaginationTraits.h>
 #include <aws/glue/model/ListUsageProfilesPaginationTraits.h>
 #include <aws/glue/model/ListWorkflowsPaginationTraits.h>
+#include <aws/glue/model/SearchPaginationTraits.h>
 #include <aws/glue/model/SearchTablesPaginationTraits.h>
 
 namespace Aws {
@@ -105,6 +111,8 @@ using GetUserDefinedFunctionsPaginator = Aws::Utils::Pagination::Paginator<GlueC
                                                                            Pagination::GetUserDefinedFunctionsPaginationTraits<GlueClient>>;
 using GetWorkflowRunsPaginator =
     Aws::Utils::Pagination::Paginator<GlueClient, Model::GetWorkflowRunsRequest, Pagination::GetWorkflowRunsPaginationTraits<GlueClient>>;
+using ListAssetTypesPaginator =
+    Aws::Utils::Pagination::Paginator<GlueClient, Model::ListAssetTypesRequest, Pagination::ListAssetTypesPaginationTraits<GlueClient>>;
 using ListBlueprintsPaginator =
     Aws::Utils::Pagination::Paginator<GlueClient, Model::ListBlueprintsRequest, Pagination::ListBlueprintsPaginationTraits<GlueClient>>;
 using ListColumnStatisticsTaskRunsPaginator =
@@ -130,6 +138,14 @@ using ListDevEndpointsPaginator =
     Aws::Utils::Pagination::Paginator<GlueClient, Model::ListDevEndpointsRequest, Pagination::ListDevEndpointsPaginationTraits<GlueClient>>;
 using ListEntitiesPaginator =
     Aws::Utils::Pagination::Paginator<GlueClient, Model::ListEntitiesRequest, Pagination::ListEntitiesPaginationTraits<GlueClient>>;
+using ListFormTypesPaginator =
+    Aws::Utils::Pagination::Paginator<GlueClient, Model::ListFormTypesRequest, Pagination::ListFormTypesPaginationTraits<GlueClient>>;
+using ListGlossariesPaginator =
+    Aws::Utils::Pagination::Paginator<GlueClient, Model::ListGlossariesRequest, Pagination::ListGlossariesPaginationTraits<GlueClient>>;
+using ListGlossaryTermsPaginator = Aws::Utils::Pagination::Paginator<GlueClient, Model::ListGlossaryTermsRequest,
+                                                                     Pagination::ListGlossaryTermsPaginationTraits<GlueClient>>;
+using ListIterableFormsPaginator = Aws::Utils::Pagination::Paginator<GlueClient, Model::ListIterableFormsRequest,
+                                                                     Pagination::ListIterableFormsPaginationTraits<GlueClient>>;
 using ListJobsPaginator =
     Aws::Utils::Pagination::Paginator<GlueClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<GlueClient>>;
 using ListMaterializedViewRefreshTaskRunsPaginator =
@@ -153,6 +169,7 @@ using ListUsageProfilesPaginator = Aws::Utils::Pagination::Paginator<GlueClient,
                                                                      Pagination::ListUsageProfilesPaginationTraits<GlueClient>>;
 using ListWorkflowsPaginator =
     Aws::Utils::Pagination::Paginator<GlueClient, Model::ListWorkflowsRequest, Pagination::ListWorkflowsPaginationTraits<GlueClient>>;
+using SearchPaginator = Aws::Utils::Pagination::Paginator<GlueClient, Model::SearchRequest, Pagination::SearchPaginationTraits<GlueClient>>;
 using SearchTablesPaginator =
     Aws::Utils::Pagination::Paginator<GlueClient, Model::SearchTablesRequest, Pagination::SearchTablesPaginationTraits<GlueClient>>;
 

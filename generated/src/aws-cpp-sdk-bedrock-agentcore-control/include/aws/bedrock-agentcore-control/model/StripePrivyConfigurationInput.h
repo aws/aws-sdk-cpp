@@ -74,7 +74,7 @@ class StripePrivyConfigurationInput {
   /**
    * <p>The source type of the app secret. Use <code>MANAGED</code> if the secret is
    * managed by the service, or <code>EXTERNAL</code> if you manage the secret
-   * yourself in AWS Secrets Manager.</p>
+   * yourself in Amazon Web Services Secrets Manager.</p>
    */
   inline SecretSourceType GetAppSecretSource() const { return m_appSecretSource; }
   inline bool AppSecretSourceHasBeenSet() const { return m_appSecretSourceHasBeenSet; }
@@ -90,10 +90,10 @@ class StripePrivyConfigurationInput {
 
   ///@{
   /**
-   * <p>A reference to the AWS Secrets Manager secret that stores the app secret.
-   * This includes the secret ID and the JSON key used to extract the app secret
-   * value from the secret. Required when <code>appSecretSource</code> is set to
-   * <code>EXTERNAL</code>.</p>
+   * <p>A reference to the Amazon Web Services Secrets Manager secret that stores the
+   * app secret. This includes the secret ID and the JSON key used to extract the app
+   * secret value from the secret. Required when <code>appSecretSource</code> is set
+   * to <code>EXTERNAL</code>.</p>
    */
   inline const SecretReference& GetAppSecretConfig() const { return m_appSecretConfig; }
   inline bool AppSecretConfigHasBeenSet() const { return m_appSecretConfigHasBeenSet; }
@@ -131,7 +131,7 @@ class StripePrivyConfigurationInput {
   /**
    * <p>The source type of the authorization private key. Use <code>MANAGED</code> if
    * the secret is managed by the service, or <code>EXTERNAL</code> if you manage the
-   * secret yourself in AWS Secrets Manager.</p>
+   * secret yourself in Amazon Web Services Secrets Manager.</p>
    */
   inline SecretSourceType GetAuthorizationPrivateKeySource() const { return m_authorizationPrivateKeySource; }
   inline bool AuthorizationPrivateKeySourceHasBeenSet() const { return m_authorizationPrivateKeySourceHasBeenSet; }
@@ -147,9 +147,9 @@ class StripePrivyConfigurationInput {
 
   ///@{
   /**
-   * <p>A reference to the AWS Secrets Manager secret that stores the authorization
-   * private key. This includes the secret ID and the JSON key used to extract the
-   * authorization private key value from the secret. Required when
+   * <p>A reference to the Amazon Web Services Secrets Manager secret that stores the
+   * authorization private key. This includes the secret ID and the JSON key used to
+   * extract the authorization private key value from the secret. Required when
    * <code>authorizationPrivateKeySource</code> is set to <code>EXTERNAL</code>.</p>
    */
   inline const SecretReference& GetAuthorizationPrivateKeyConfig() const { return m_authorizationPrivateKeyConfig; }

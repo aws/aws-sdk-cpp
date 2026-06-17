@@ -44,7 +44,10 @@ class ParsingConfiguration {
 
   ///@{
   /**
-   * <p>The parsing strategy for the data source.</p>
+   * <p>The parsing strategy for the data source. Only <code>SMART_PARSING</code> can
+   * be selected for managed knowledge bases. For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-customize-ingestion.html">Customize
+   * ingestion for managed knowledge bases</a>.</p>
    */
   inline ParsingStrategy GetParsingStrategy() const { return m_parsingStrategy; }
   inline bool ParsingStrategyHasBeenSet() const { return m_parsingStrategyHasBeenSet; }

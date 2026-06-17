@@ -46,6 +46,13 @@ Association& Association::operator=(JsonView jsonValue) {
     m_configuration = jsonValue.GetObject("configuration");
     m_configurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("capabilities")) {
+    Aws::Map<Aws::String, JsonView> capabilitiesJsonMap = jsonValue.GetObject("capabilities").GetAllObjects();
+    for (auto& capabilitiesItem : capabilitiesJsonMap) {
+      m_capabilities[CapabilityTypeMapper::GetCapabilityTypeForName(capabilitiesItem.first)] = capabilitiesItem.second.AsObject();
+    }
+    m_capabilitiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +85,15 @@ JsonValue Association::Jsonize() const {
 
   if (m_configurationHasBeenSet) {
     payload.WithObject("configuration", m_configuration.Jsonize());
+  }
+
+  if (m_capabilitiesHasBeenSet) {
+    JsonValue capabilitiesJsonMap;
+    for (auto& capabilitiesItem : m_capabilities) {
+      capabilitiesJsonMap.WithObject(CapabilityTypeMapper::GetNameForCapabilityType(capabilitiesItem.first),
+                                     capabilitiesItem.second.Jsonize());
+    }
+    payload.WithObject("capabilities", std::move(capabilitiesJsonMap));
   }
 
   return payload;

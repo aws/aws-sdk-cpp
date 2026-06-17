@@ -26,6 +26,10 @@ KnowledgeBaseConfiguration& KnowledgeBaseConfiguration::operator=(JsonView jsonV
     m_vectorKnowledgeBaseConfiguration = jsonValue.GetObject("vectorKnowledgeBaseConfiguration");
     m_vectorKnowledgeBaseConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("managedKnowledgeBaseConfiguration")) {
+    m_managedKnowledgeBaseConfiguration = jsonValue.GetObject("managedKnowledgeBaseConfiguration");
+    m_managedKnowledgeBaseConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("kendraKnowledgeBaseConfiguration")) {
     m_kendraKnowledgeBaseConfiguration = jsonValue.GetObject("kendraKnowledgeBaseConfiguration");
     m_kendraKnowledgeBaseConfigurationHasBeenSet = true;
@@ -46,6 +50,10 @@ JsonValue KnowledgeBaseConfiguration::Jsonize() const {
 
   if (m_vectorKnowledgeBaseConfigurationHasBeenSet) {
     payload.WithObject("vectorKnowledgeBaseConfiguration", m_vectorKnowledgeBaseConfiguration.Jsonize());
+  }
+
+  if (m_managedKnowledgeBaseConfigurationHasBeenSet) {
+    payload.WithObject("managedKnowledgeBaseConfiguration", m_managedKnowledgeBaseConfiguration.Jsonize());
   }
 
   if (m_kendraKnowledgeBaseConfigurationHasBeenSet) {

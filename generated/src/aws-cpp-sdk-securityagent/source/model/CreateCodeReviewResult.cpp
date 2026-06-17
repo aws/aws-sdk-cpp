@@ -59,6 +59,10 @@ CreateCodeReviewResult& CreateCodeReviewResult::operator=(const Aws::AmazonWebSe
         CodeRemediationStrategyMapper::GetCodeRemediationStrategyForName(jsonValue.GetString("codeRemediationStrategy"));
     m_codeRemediationStrategyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("validationMode")) {
+    m_validationMode = ValidationModeMapper::GetValidationModeForName(jsonValue.GetString("validationMode"));
+    m_validationModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgent {
 namespace Model {
-enum class KnowledgeBaseStatus { NOT_SET, CREATING, ACTIVE, DELETING, UPDATING, FAILED, DELETE_UNSUCCESSFUL };
+enum class KnowledgeBaseStatus { NOT_SET, CREATING, ACTIVE, DELETING, UPDATING, FAILED, DELETE_UNSUCCESSFUL, UPDATE_UNSUCCESSFUL };
 
 namespace KnowledgeBaseStatusMapper {
 AWS_BEDROCKAGENT_API KnowledgeBaseStatus GetKnowledgeBaseStatusForName(const Aws::String& name);

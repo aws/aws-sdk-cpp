@@ -9,6 +9,7 @@
 #include <aws/mq/MQClientPagination.h>
 #include <aws/mq/MQPaginationBase.h>
 #include <aws/mq/model/ListBrokersPaginationTraits.h>
+#include <aws/mq/model/DescribeSharedResourcesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

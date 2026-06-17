@@ -18,6 +18,9 @@ namespace DataSourceStatusMapper {
 static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 static const int DELETE_UNSUCCESSFUL_HASH = HashingUtils::HashString("DELETE_UNSUCCESSFUL");
+static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 DataSourceStatus GetDataSourceStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +30,12 @@ DataSourceStatus GetDataSourceStatusForName(const Aws::String& name) {
     return DataSourceStatus::DELETING;
   } else if (hashCode == DELETE_UNSUCCESSFUL_HASH) {
     return DataSourceStatus::DELETE_UNSUCCESSFUL;
+  } else if (hashCode == CREATING_HASH) {
+    return DataSourceStatus::CREATING;
+  } else if (hashCode == UPDATING_HASH) {
+    return DataSourceStatus::UPDATING;
+  } else if (hashCode == FAILED_HASH) {
+    return DataSourceStatus::FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +56,12 @@ Aws::String GetNameForDataSourceStatus(DataSourceStatus enumValue) {
       return "DELETING";
     case DataSourceStatus::DELETE_UNSUCCESSFUL:
       return "DELETE_UNSUCCESSFUL";
+    case DataSourceStatus::CREATING:
+      return "CREATING";
+    case DataSourceStatus::UPDATING:
+      return "UPDATING";
+    case DataSourceStatus::FAILED:
+      return "FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -11,6 +11,9 @@
 #include <utility>
 
 namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
 namespace BedrockAgentCoreControl {
 namespace Model {
 
@@ -27,6 +30,8 @@ class GetHarnessRequest : public BedrockAgentCoreControlRequest {
   inline virtual const char* GetServiceRequestName() const override { return "GetHarness"; }
 
   AWS_BEDROCKAGENTCORECONTROL_API Aws::String SerializePayload() const override;
+
+  AWS_BEDROCKAGENTCORECONTROL_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
   /**
@@ -45,9 +50,31 @@ class GetHarnessRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specific version of the harness to retrieve. If omitted, returns the current
+   * Harness configuration, including its status.</p>
+   */
+  inline const Aws::String& GetHarnessVersion() const { return m_harnessVersion; }
+  inline bool HarnessVersionHasBeenSet() const { return m_harnessVersionHasBeenSet; }
+  template <typename HarnessVersionT = Aws::String>
+  void SetHarnessVersion(HarnessVersionT&& value) {
+    m_harnessVersionHasBeenSet = true;
+    m_harnessVersion = std::forward<HarnessVersionT>(value);
+  }
+  template <typename HarnessVersionT = Aws::String>
+  GetHarnessRequest& WithHarnessVersion(HarnessVersionT&& value) {
+    SetHarnessVersion(std::forward<HarnessVersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_harnessId;
+
+  Aws::String m_harnessVersion;
   bool m_harnessIdHasBeenSet = false;
+  bool m_harnessVersionHasBeenSet = false;
 };
 
 }  // namespace Model

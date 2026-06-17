@@ -85,15 +85,37 @@ class GitLabConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional role ARN that AIDevOps assumes at runtime for automatic verification
+   * testing and VPC connectivity on this association.</p>
+   */
+  inline const Aws::String& GetRuntimeRoleArn() const { return m_runtimeRoleArn; }
+  inline bool RuntimeRoleArnHasBeenSet() const { return m_runtimeRoleArnHasBeenSet; }
+  template <typename RuntimeRoleArnT = Aws::String>
+  void SetRuntimeRoleArn(RuntimeRoleArnT&& value) {
+    m_runtimeRoleArnHasBeenSet = true;
+    m_runtimeRoleArn = std::forward<RuntimeRoleArnT>(value);
+  }
+  template <typename RuntimeRoleArnT = Aws::String>
+  GitLabConfiguration& WithRuntimeRoleArn(RuntimeRoleArnT&& value) {
+    SetRuntimeRoleArn(std::forward<RuntimeRoleArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_projectId;
 
   Aws::String m_projectPath;
 
   Aws::String m_instanceIdentifier;
+
+  Aws::String m_runtimeRoleArn;
   bool m_projectIdHasBeenSet = false;
   bool m_projectPathHasBeenSet = false;
   bool m_instanceIdentifierHasBeenSet = false;
+  bool m_runtimeRoleArnHasBeenSet = false;
 };
 
 }  // namespace Model

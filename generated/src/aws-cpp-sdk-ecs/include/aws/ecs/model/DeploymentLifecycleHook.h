@@ -25,9 +25,9 @@ namespace ECS {
 namespace Model {
 
 /**
- * <p>A deployment lifecycle hook runs custom logic at specific stages of the
- * deployment process. Currently, you can use Lambda functions as hook targets.</p>
- * <p>For more information, see <a
+ * <p>A deployment lifecycle hook runs custom logic or pauses the deployment at
+ * specific stages of the deployment process. You can use Lambda functions or pause
+ * hooks as hook targets.</p> <p>For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-lifecycle-hooks.html">Lifecycle
  * hooks for Amazon ECS service deployments</a> in the <i> Amazon Elastic Container
  * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -65,9 +65,10 @@ class DeploymentLifecycleHook {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the hook target. Currently, only Lambda
-   * function ARNs are supported.</p> <p>You must provide this parameter when
-   * configuring a deployment lifecycle hook.</p>
+   * <p>The Amazon Resource Name (ARN) of the hook target. For
+   * <code>AWS_LAMBDA</code> hooks, this is the Lambda function ARN. This field is
+   * not applicable for <code>PAUSE</code> hooks.</p> <p>You must provide this
+   * parameter when configuring an <code>AWS_LAMBDA</code> lifecycle hook.</p>
    */
   inline const Aws::String& GetHookTargetArn() const { return m_hookTargetArn; }
   inline bool HookTargetArnHasBeenSet() const { return m_hookTargetArnHasBeenSet; }
@@ -124,14 +125,21 @@ class DeploymentLifecycleHook {
    * traffic.</p> <p>You can use a lifecycle hook for this stage.</p> </li> <li>
    * <p>POST_TEST_TRAFFIC_SHIFT</p> <p>The test traffic shift is complete. The green
    * service revision handles 100% of the test traffic.</p> <p>You can use a
-   * lifecycle hook for this stage.</p> </li> <li> <p>PRODUCTION_TRAFFIC_SHIFT</p>
-   * <p>Production traffic is shifting to the green service revision. The green
-   * service revision is migrating from 0% to 100% of production traffic.</p> <p>You
-   * can use a lifecycle hook for this stage.</p> </li> <li>
-   * <p>POST_PRODUCTION_TRAFFIC_SHIFT</p> <p>The production traffic shift is
-   * complete.</p> <p>You can use a lifecycle hook for this stage.</p> </li> </ul>
-   * <p>You must provide this parameter when configuring a deployment lifecycle
-   * hook.</p>
+   * lifecycle hook for this stage.</p> </li> <li>
+   * <p>PRE_PRODUCTION_TRAFFIC_SHIFT</p> <p>Occurs before production traffic shift.
+   * For linear and canary deployments, this stage is invoked before every traffic
+   * shift step.</p> <p>You can use a lifecycle hook for this stage.</p> </li> <li>
+   * <p>PRODUCTION_TRAFFIC_SHIFT</p> <p>Production traffic is shifting to the green
+   * service revision. The green service revision is migrating from 0% to 100% of
+   * production traffic. For linear and canary deployments, this stage is invoked at
+   * every traffic shift step.</p> <p>You can use a lifecycle hook for this
+   * stage.</p> </li> <li> <p>POST_PRODUCTION_TRAFFIC_SHIFT</p> <p>The production
+   * traffic shift is complete.</p> <p>You can use a lifecycle hook for this
+   * stage.</p> </li> </ul>  <p> <code>PAUSE</code> hooks cannot be configured
+   * at <code>TEST_TRAFFIC_SHIFT</code> or <code>PRODUCTION_TRAFFIC_SHIFT</code>
+   * stages. These stages are only valid for <code>AWS_LAMBDA</code> hooks.</p>
+   *  <p>You must provide this parameter when configuring a deployment
+   * lifecycle hook.</p>
    */
   inline const Aws::Vector<DeploymentLifecycleHookStage>& GetLifecycleStages() const { return m_lifecycleStages; }
   inline bool LifecycleStagesHasBeenSet() const { return m_lifecycleStagesHasBeenSet; }
@@ -154,8 +162,9 @@ class DeploymentLifecycleHook {
 
   ///@{
   /**
-   * <p>Use this field to specify custom parameters that Amazon ECS will pass to your
-   * hook target invocations (such as a Lambda function).</p>
+   * <p>Use this field to specify custom parameters that Amazon ECS passes to your
+   * Lambda function on each invocation. This field is not used for
+   * <code>PAUSE</code> hooks.</p>
    */
   inline Aws::Utils::DocumentView GetHookDetails() const { return m_hookDetails; }
   inline bool HookDetailsHasBeenSet() const { return m_hookDetailsHasBeenSet; }

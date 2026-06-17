@@ -26,6 +26,10 @@ AssetContent& AssetContent::operator=(JsonView jsonValue) {
     m_zip = jsonValue.GetObject("zip");
     m_zipHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sourceUrl")) {
+    m_sourceUrl = jsonValue.GetObject("sourceUrl");
+    m_sourceUrlHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue AssetContent::Jsonize() const {
 
   if (m_zipHasBeenSet) {
     payload.WithObject("zip", m_zip.Jsonize());
+  }
+
+  if (m_sourceUrlHasBeenSet) {
+    payload.WithObject("sourceUrl", m_sourceUrl.Jsonize());
   }
 
   return payload;

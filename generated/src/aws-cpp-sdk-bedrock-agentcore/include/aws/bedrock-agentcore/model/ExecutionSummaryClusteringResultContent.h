@@ -21,8 +21,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Customer-facing execution summary clustering result written to
- * S3.</p><p><h3>See Also:</h3>   <a
+ * <p>The execution summary clustering result containing grouped execution patterns
+ * identified across evaluated sessions.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ExecutionSummaryClusteringResultContent">AWS
  * API Reference</a></p>
  */

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/EnforcementMode.h>
 #include <aws/bedrock-agentcore-control/model/PolicyStatus.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
@@ -147,6 +148,21 @@ class GetPolicySummaryResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The current enforcement mode of the policy.</p>
+   */
+  inline EnforcementMode GetEnforcementMode() const { return m_enforcementMode; }
+  inline void SetEnforcementMode(EnforcementMode value) {
+    m_enforcementModeHasBeenSet = true;
+    m_enforcementMode = value;
+  }
+  inline GetPolicySummaryResult& WithEnforcementMode(EnforcementMode value) {
+    SetEnforcementMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -177,6 +193,8 @@ class GetPolicySummaryResult {
 
   PolicyStatus m_status{PolicyStatus::NOT_SET};
 
+  EnforcementMode m_enforcementMode{EnforcementMode::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyIdHasBeenSet = false;
@@ -186,6 +204,7 @@ class GetPolicySummaryResult {
   bool m_updatedAtHasBeenSet = false;
   bool m_policyArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_enforcementModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

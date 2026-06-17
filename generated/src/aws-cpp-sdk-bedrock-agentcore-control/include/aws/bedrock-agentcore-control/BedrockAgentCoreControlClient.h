@@ -475,7 +475,7 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Operation to create a Harness.</p><p><h3>See Also:</h3>   <a
+   * <p>Operation to create a harness.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateHarness">AWS
    * API Reference</a></p>
    */
@@ -497,6 +497,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void CreateHarnessAsync(const CreateHarnessRequestT& request, const CreateHarnessResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::CreateHarness, request, handler, context);
+  }
+
+  /**
+   * <p>Operation to create a harness endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateHarnessEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateHarnessEndpointOutcome CreateHarnessEndpoint(const Model::CreateHarnessEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateHarnessEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateHarnessEndpointRequestT = Model::CreateHarnessEndpointRequest>
+  Model::CreateHarnessEndpointOutcomeCallable CreateHarnessEndpointCallable(const CreateHarnessEndpointRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreateHarnessEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for CreateHarnessEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateHarnessEndpointRequestT = Model::CreateHarnessEndpointRequest>
+  void CreateHarnessEndpointAsync(const CreateHarnessEndpointRequestT& request, const CreateHarnessEndpointResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreateHarnessEndpoint, request, handler, context);
   }
 
   /**
@@ -1214,6 +1240,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Operation to delete a harness endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteHarnessEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteHarnessEndpointOutcome DeleteHarnessEndpoint(const Model::DeleteHarnessEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteHarnessEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteHarnessEndpointRequestT = Model::DeleteHarnessEndpointRequest>
+  Model::DeleteHarnessEndpointOutcomeCallable DeleteHarnessEndpointCallable(const DeleteHarnessEndpointRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeleteHarnessEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteHarnessEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteHarnessEndpointRequestT = Model::DeleteHarnessEndpointRequest>
+  void DeleteHarnessEndpointAsync(const DeleteHarnessEndpointRequestT& request, const DeleteHarnessEndpointResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeleteHarnessEndpoint, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an Amazon Bedrock AgentCore Memory resource.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteMemory">AWS
@@ -1909,7 +1961,7 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Operation to get a single Harness.</p><p><h3>See Also:</h3>   <a
+   * <p>Operation to get a single harness.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetHarness">AWS
    * API Reference</a></p>
    */
@@ -1931,6 +1983,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void GetHarnessAsync(const GetHarnessRequestT& request, const GetHarnessResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::GetHarness, request, handler, context);
+  }
+
+  /**
+   * <p>Operation to get a single harness endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetHarnessEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetHarnessEndpointOutcome GetHarnessEndpoint(const Model::GetHarnessEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetHarnessEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetHarnessEndpointRequestT = Model::GetHarnessEndpointRequest>
+  Model::GetHarnessEndpointOutcomeCallable GetHarnessEndpointCallable(const GetHarnessEndpointRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetHarnessEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for GetHarnessEndpoint that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetHarnessEndpointRequestT = Model::GetHarnessEndpointRequest>
+  void GetHarnessEndpointAsync(const GetHarnessEndpointRequestT& request, const GetHarnessEndpointResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetHarnessEndpoint, request, handler, context);
   }
 
   /**
@@ -2865,7 +2943,59 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Operation to list Harnesses.</p><p><h3>See Also:</h3>   <a
+   * <p>Operation to list the endpoints of a harness.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnessEndpoints">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListHarnessEndpointsOutcome ListHarnessEndpoints(const Model::ListHarnessEndpointsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListHarnessEndpoints that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListHarnessEndpointsRequestT = Model::ListHarnessEndpointsRequest>
+  Model::ListHarnessEndpointsOutcomeCallable ListHarnessEndpointsCallable(const ListHarnessEndpointsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListHarnessEndpoints, request);
+  }
+
+  /**
+   * An Async wrapper for ListHarnessEndpoints that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListHarnessEndpointsRequestT = Model::ListHarnessEndpointsRequest>
+  void ListHarnessEndpointsAsync(const ListHarnessEndpointsRequestT& request, const ListHarnessEndpointsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListHarnessEndpoints, request, handler, context);
+  }
+
+  /**
+   * <p>Operation to list the versions of a Harness.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnessVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListHarnessVersionsOutcome ListHarnessVersions(const Model::ListHarnessVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListHarnessVersions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListHarnessVersionsRequestT = Model::ListHarnessVersionsRequest>
+  Model::ListHarnessVersionsOutcomeCallable ListHarnessVersionsCallable(const ListHarnessVersionsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListHarnessVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListHarnessVersions that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListHarnessVersionsRequestT = Model::ListHarnessVersionsRequest>
+  void ListHarnessVersionsAsync(const ListHarnessVersionsRequestT& request, const ListHarnessVersionsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListHarnessVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Operation to list harnesses.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnesses">AWS
    * API Reference</a></p>
    */
@@ -3898,7 +4028,7 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Operation to update a Harness.</p><p><h3>See Also:</h3>   <a
+   * <p>Operation to update a harness.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateHarness">AWS
    * API Reference</a></p>
    */
@@ -3920,6 +4050,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void UpdateHarnessAsync(const UpdateHarnessRequestT& request, const UpdateHarnessResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::UpdateHarness, request, handler, context);
+  }
+
+  /**
+   * <p>Operation to update a harness endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateHarnessEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateHarnessEndpointOutcome UpdateHarnessEndpoint(const Model::UpdateHarnessEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateHarnessEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateHarnessEndpointRequestT = Model::UpdateHarnessEndpointRequest>
+  Model::UpdateHarnessEndpointOutcomeCallable UpdateHarnessEndpointCallable(const UpdateHarnessEndpointRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdateHarnessEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateHarnessEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateHarnessEndpointRequestT = Model::UpdateHarnessEndpointRequest>
+  void UpdateHarnessEndpointAsync(const UpdateHarnessEndpointRequestT& request, const UpdateHarnessEndpointResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdateHarnessEndpoint, request, handler, context);
   }
 
   /**

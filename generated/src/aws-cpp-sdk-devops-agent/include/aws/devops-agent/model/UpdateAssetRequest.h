@@ -91,8 +91,8 @@ class UpdateAssetRequest : public DevOpsAgentRequest {
 
   ///@{
   /**
-   * <p>Optional content to set or replace. A single file adds or replaces one file;
-   * a zip replaces all files.</p>
+   * <p>Optional content update. A single file adds or replaces one file; a zip
+   * replaces all files; a sourceUrl re-syncs from the original source.</p>
    */
   inline const AssetContent& GetContent() const { return m_content; }
   inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }

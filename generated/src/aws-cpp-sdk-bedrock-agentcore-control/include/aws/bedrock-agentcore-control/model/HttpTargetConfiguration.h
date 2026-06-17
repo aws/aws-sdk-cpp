@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/PassthroughTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RuntimeTargetConfiguration.h>
 
 #include <utility>
@@ -50,9 +51,31 @@ class HttpTargetConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The passthrough configuration for the HTTP target. A passthrough target
+   * forwards requests directly to an external HTTP endpoint.</p>
+   */
+  inline const PassthroughTargetConfiguration& GetPassthrough() const { return m_passthrough; }
+  inline bool PassthroughHasBeenSet() const { return m_passthroughHasBeenSet; }
+  template <typename PassthroughT = PassthroughTargetConfiguration>
+  void SetPassthrough(PassthroughT&& value) {
+    m_passthroughHasBeenSet = true;
+    m_passthrough = std::forward<PassthroughT>(value);
+  }
+  template <typename PassthroughT = PassthroughTargetConfiguration>
+  HttpTargetConfiguration& WithPassthrough(PassthroughT&& value) {
+    SetPassthrough(std::forward<PassthroughT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RuntimeTargetConfiguration m_agentcoreRuntime;
+
+  PassthroughTargetConfiguration m_passthrough;
   bool m_agentcoreRuntimeHasBeenSet = false;
+  bool m_passthroughHasBeenSet = false;
 };
 
 }  // namespace Model

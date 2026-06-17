@@ -30,6 +30,7 @@
 #include <aws/bedrock-agent/model/DeleteKnowledgeBaseDocumentsRequest.h>
 #include <aws/bedrock-agent/model/DeleteKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/DeletePromptRequest.h>
+#include <aws/bedrock-agent/model/DeleteResourcePolicyRequest.h>
 #include <aws/bedrock-agent/model/DisassociateAgentCollaboratorRequest.h>
 #include <aws/bedrock-agent/model/DisassociateAgentKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/GetAgentActionGroupRequest.h>
@@ -46,6 +47,7 @@
 #include <aws/bedrock-agent/model/GetKnowledgeBaseDocumentsRequest.h>
 #include <aws/bedrock-agent/model/GetKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/GetPromptRequest.h>
+#include <aws/bedrock-agent/model/GetResourcePolicyRequest.h>
 #include <aws/bedrock-agent/model/IngestKnowledgeBaseDocumentsRequest.h>
 #include <aws/bedrock-agent/model/ListAgentActionGroupsRequest.h>
 #include <aws/bedrock-agent/model/ListAgentAliasesRequest.h>
@@ -64,6 +66,7 @@
 #include <aws/bedrock-agent/model/ListTagsForResourceRequest.h>
 #include <aws/bedrock-agent/model/PrepareAgentRequest.h>
 #include <aws/bedrock-agent/model/PrepareFlowRequest.h>
+#include <aws/bedrock-agent/model/PutResourcePolicyRequest.h>
 #include <aws/bedrock-agent/model/StartIngestionJobRequest.h>
 #include <aws/bedrock-agent/model/StopIngestionJobRequest.h>
 #include <aws/bedrock-agent/model/TagResourceRequest.h>
@@ -668,6 +671,23 @@ DeletePromptOutcome BedrockAgentClient::DeletePrompt(const DeletePromptRequest& 
       Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeletePromptOutcome(result.GetResultWithOwnership()) : DeletePromptOutcome(std::move(result.GetError()));
 }
+DeleteResourcePolicyOutcome BedrockAgentClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteResourcePolicy", "Required field: ResourceArn, is not set");
+    return DeleteResourcePolicyOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [ResourceArn]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/resourcepolicy/");
+        resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+      },
+      Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
+}
 DisassociateAgentCollaboratorOutcome BedrockAgentClient::DisassociateAgentCollaborator(
     const DisassociateAgentCollaboratorRequest& request) const {
   if (!request.AgentIdHasBeenSet()) {
@@ -1062,6 +1082,23 @@ GetPromptOutcome BedrockAgentClient::GetPrompt(const GetPromptRequest& request) 
       Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetPromptOutcome(result.GetResultWithOwnership()) : GetPromptOutcome(std::move(result.GetError()));
 }
+GetResourcePolicyOutcome BedrockAgentClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetResourcePolicy", "Required field: ResourceArn, is not set");
+    return GetResourcePolicyOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [ResourceArn]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/resourcepolicy/");
+        resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
+}
 IngestKnowledgeBaseDocumentsOutcome BedrockAgentClient::IngestKnowledgeBaseDocuments(
     const IngestKnowledgeBaseDocumentsRequest& request) const {
   if (!request.KnowledgeBaseIdHasBeenSet()) {
@@ -1376,6 +1413,23 @@ PrepareFlowOutcome BedrockAgentClient::PrepareFlow(const PrepareFlowRequest& req
       },
       Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PrepareFlowOutcome(result.GetResultWithOwnership()) : PrepareFlowOutcome(std::move(result.GetError()));
+}
+PutResourcePolicyOutcome BedrockAgentClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutResourcePolicy", "Required field: ResourceArn, is not set");
+    return PutResourcePolicyOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [ResourceArn]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/resourcepolicy/");
+        resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 StartIngestionJobOutcome BedrockAgentClient::StartIngestionJob(const StartIngestionJobRequest& request) const {
   if (!request.KnowledgeBaseIdHasBeenSet()) {

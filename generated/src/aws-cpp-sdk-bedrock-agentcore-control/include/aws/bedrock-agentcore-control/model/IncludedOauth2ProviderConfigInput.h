@@ -76,10 +76,10 @@ class IncludedOauth2ProviderConfigInput {
 
   ///@{
   /**
-   * <p>A reference to the AWS Secrets Manager secret that stores the client secret.
-   * This includes the secret ID and the JSON key used to extract the client secret
-   * value from the secret. Required when <code>clientSecretSource</code> is set to
-   * <code>EXTERNAL</code>.</p>
+   * <p>A reference to the Amazon Web Services Secrets Manager secret that stores the
+   * client secret. This includes the secret ID and the JSON key used to extract the
+   * client secret value from the secret. Required when
+   * <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
    */
   inline const SecretReference& GetClientSecretConfig() const { return m_clientSecretConfig; }
   inline bool ClientSecretConfigHasBeenSet() const { return m_clientSecretConfigHasBeenSet; }
@@ -99,7 +99,7 @@ class IncludedOauth2ProviderConfigInput {
   /**
    * <p>The source type of the client secret. Use <code>MANAGED</code> if the secret
    * is managed by the service, or <code>EXTERNAL</code> if you manage the secret
-   * yourself in AWS Secrets Manager.</p>
+   * yourself in Amazon Web Services Secrets Manager.</p>
    */
   inline SecretSourceType GetClientSecretSource() const { return m_clientSecretSource; }
   inline bool ClientSecretSourceHasBeenSet() const { return m_clientSecretSourceHasBeenSet; }

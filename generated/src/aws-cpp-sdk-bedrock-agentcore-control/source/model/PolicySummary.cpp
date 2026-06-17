@@ -46,6 +46,10 @@ PolicySummary& PolicySummary::operator=(JsonView jsonValue) {
     m_status = PolicyStatusMapper::GetPolicyStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("enforcementMode")) {
+    m_enforcementMode = EnforcementModeMapper::GetEnforcementModeForName(jsonValue.GetString("enforcementMode"));
+    m_enforcementModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue PolicySummary::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", PolicyStatusMapper::GetNameForPolicyStatus(m_status));
+  }
+
+  if (m_enforcementModeHasBeenSet) {
+    payload.WithString("enforcementMode", EnforcementModeMapper::GetNameForEnforcementMode(m_enforcementMode));
   }
 
   return payload;

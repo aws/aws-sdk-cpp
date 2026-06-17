@@ -138,6 +138,24 @@ class HarnessSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The latest version of the harness.</p>
+   */
+  inline const Aws::String& GetHarnessVersion() const { return m_harnessVersion; }
+  inline bool HarnessVersionHasBeenSet() const { return m_harnessVersionHasBeenSet; }
+  template <typename HarnessVersionT = Aws::String>
+  void SetHarnessVersion(HarnessVersionT&& value) {
+    m_harnessVersionHasBeenSet = true;
+    m_harnessVersion = std::forward<HarnessVersionT>(value);
+  }
+  template <typename HarnessVersionT = Aws::String>
+  HarnessSummary& WithHarnessVersion(HarnessVersionT&& value) {
+    SetHarnessVersion(std::forward<HarnessVersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_harnessId;
 
@@ -150,12 +168,15 @@ class HarnessSummary {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
+
+  Aws::String m_harnessVersion;
   bool m_harnessIdHasBeenSet = false;
   bool m_harnessNameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_harnessVersionHasBeenSet = false;
 };
 
 }  // namespace Model

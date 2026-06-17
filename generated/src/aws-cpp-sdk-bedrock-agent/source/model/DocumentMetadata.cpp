@@ -33,6 +33,13 @@ DocumentMetadata& DocumentMetadata::operator=(JsonView jsonValue) {
     m_s3Location = jsonValue.GetObject("s3Location");
     m_s3LocationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("accessControlList")) {
+    Aws::Utils::Array<JsonView> accessControlListJsonList = jsonValue.GetArray("accessControlList");
+    for (unsigned accessControlListIndex = 0; accessControlListIndex < accessControlListJsonList.GetLength(); ++accessControlListIndex) {
+      m_accessControlList.push_back(accessControlListJsonList[accessControlListIndex].AsObject());
+    }
+    m_accessControlListHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +60,14 @@ JsonValue DocumentMetadata::Jsonize() const {
 
   if (m_s3LocationHasBeenSet) {
     payload.WithObject("s3Location", m_s3Location.Jsonize());
+  }
+
+  if (m_accessControlListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> accessControlListJsonList(m_accessControlList.size());
+    for (unsigned accessControlListIndex = 0; accessControlListIndex < accessControlListJsonList.GetLength(); ++accessControlListIndex) {
+      accessControlListJsonList[accessControlListIndex].AsObject(m_accessControlList[accessControlListIndex].Jsonize());
+    }
+    payload.WithArray("accessControlList", std::move(accessControlListJsonList));
   }
 
   return payload;

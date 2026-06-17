@@ -46,6 +46,14 @@ GetIntegrationResult& GetIntegrationResult::operator=(const Aws::AmazonWebServic
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("targetUrl")) {
+    m_targetUrl = jsonValue.GetString("targetUrl");
+    m_targetUrlHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("privateConnectionName")) {
+    m_privateConnectionName = jsonValue.GetString("privateConnectionName");
+    m_privateConnectionNameHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

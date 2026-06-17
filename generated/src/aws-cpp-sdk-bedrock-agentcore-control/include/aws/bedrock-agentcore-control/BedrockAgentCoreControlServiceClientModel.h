@@ -33,6 +33,7 @@
 #include <aws/bedrock-agentcore-control/model/CreateGatewayResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayRuleResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayTargetResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateHarnessEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateHarnessResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateMemoryResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateOauth2CredentialProviderResult.h>
@@ -58,6 +59,7 @@
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayRuleResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayTargetResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteHarnessEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteHarnessResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteMemoryResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteOauth2CredentialProviderResult.h>
@@ -84,6 +86,7 @@
 #include <aws/bedrock-agentcore-control/model/GetGatewayResult.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayRuleResult.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayTargetResult.h>
+#include <aws/bedrock-agentcore-control/model/GetHarnessEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/GetHarnessResult.h>
 #include <aws/bedrock-agentcore-control/model/GetMemoryResult.h>
 #include <aws/bedrock-agentcore-control/model/GetOauth2CredentialProviderResult.h>
@@ -128,6 +131,8 @@
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysResult.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessEndpointsResult.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessVersionsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListHarnessesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListHarnessesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListMemoriesRequest.h>
@@ -173,6 +178,7 @@
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayRuleResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayTargetResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateHarnessEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateHarnessResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateMemoryResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateOauth2CredentialProviderResult.h>
@@ -234,6 +240,7 @@ class CreateGatewayRequest;
 class CreateGatewayRuleRequest;
 class CreateGatewayTargetRequest;
 class CreateHarnessRequest;
+class CreateHarnessEndpointRequest;
 class CreateMemoryRequest;
 class CreateOauth2CredentialProviderRequest;
 class CreateOnlineEvaluationConfigRequest;
@@ -259,6 +266,7 @@ class DeleteGatewayRequest;
 class DeleteGatewayRuleRequest;
 class DeleteGatewayTargetRequest;
 class DeleteHarnessRequest;
+class DeleteHarnessEndpointRequest;
 class DeleteMemoryRequest;
 class DeleteOauth2CredentialProviderRequest;
 class DeleteOnlineEvaluationConfigRequest;
@@ -285,6 +293,7 @@ class GetGatewayRequest;
 class GetGatewayRuleRequest;
 class GetGatewayTargetRequest;
 class GetHarnessRequest;
+class GetHarnessEndpointRequest;
 class GetMemoryRequest;
 class GetOauth2CredentialProviderRequest;
 class GetOnlineEvaluationConfigRequest;
@@ -318,6 +327,8 @@ class ListEvaluatorsRequest;
 class ListGatewayRulesRequest;
 class ListGatewayTargetsRequest;
 class ListGatewaysRequest;
+class ListHarnessEndpointsRequest;
+class ListHarnessVersionsRequest;
 class ListHarnessesRequest;
 class ListMemoriesRequest;
 class ListOauth2CredentialProvidersRequest;
@@ -354,6 +365,7 @@ class UpdateGatewayRequest;
 class UpdateGatewayRuleRequest;
 class UpdateGatewayTargetRequest;
 class UpdateHarnessRequest;
+class UpdateHarnessEndpointRequest;
 class UpdateMemoryRequest;
 class UpdateOauth2CredentialProviderRequest;
 class UpdateOnlineEvaluationConfigRequest;
@@ -384,6 +396,7 @@ typedef Aws::Utils::Outcome<CreateGatewayResult, BedrockAgentCoreControlError> C
 typedef Aws::Utils::Outcome<CreateGatewayRuleResult, BedrockAgentCoreControlError> CreateGatewayRuleOutcome;
 typedef Aws::Utils::Outcome<CreateGatewayTargetResult, BedrockAgentCoreControlError> CreateGatewayTargetOutcome;
 typedef Aws::Utils::Outcome<CreateHarnessResult, BedrockAgentCoreControlError> CreateHarnessOutcome;
+typedef Aws::Utils::Outcome<CreateHarnessEndpointResult, BedrockAgentCoreControlError> CreateHarnessEndpointOutcome;
 typedef Aws::Utils::Outcome<CreateMemoryResult, BedrockAgentCoreControlError> CreateMemoryOutcome;
 typedef Aws::Utils::Outcome<CreateOauth2CredentialProviderResult, BedrockAgentCoreControlError> CreateOauth2CredentialProviderOutcome;
 typedef Aws::Utils::Outcome<CreateOnlineEvaluationConfigResult, BedrockAgentCoreControlError> CreateOnlineEvaluationConfigOutcome;
@@ -409,6 +422,7 @@ typedef Aws::Utils::Outcome<DeleteGatewayResult, BedrockAgentCoreControlError> D
 typedef Aws::Utils::Outcome<DeleteGatewayRuleResult, BedrockAgentCoreControlError> DeleteGatewayRuleOutcome;
 typedef Aws::Utils::Outcome<DeleteGatewayTargetResult, BedrockAgentCoreControlError> DeleteGatewayTargetOutcome;
 typedef Aws::Utils::Outcome<DeleteHarnessResult, BedrockAgentCoreControlError> DeleteHarnessOutcome;
+typedef Aws::Utils::Outcome<DeleteHarnessEndpointResult, BedrockAgentCoreControlError> DeleteHarnessEndpointOutcome;
 typedef Aws::Utils::Outcome<DeleteMemoryResult, BedrockAgentCoreControlError> DeleteMemoryOutcome;
 typedef Aws::Utils::Outcome<DeleteOauth2CredentialProviderResult, BedrockAgentCoreControlError> DeleteOauth2CredentialProviderOutcome;
 typedef Aws::Utils::Outcome<DeleteOnlineEvaluationConfigResult, BedrockAgentCoreControlError> DeleteOnlineEvaluationConfigOutcome;
@@ -435,6 +449,7 @@ typedef Aws::Utils::Outcome<GetGatewayResult, BedrockAgentCoreControlError> GetG
 typedef Aws::Utils::Outcome<GetGatewayRuleResult, BedrockAgentCoreControlError> GetGatewayRuleOutcome;
 typedef Aws::Utils::Outcome<GetGatewayTargetResult, BedrockAgentCoreControlError> GetGatewayTargetOutcome;
 typedef Aws::Utils::Outcome<GetHarnessResult, BedrockAgentCoreControlError> GetHarnessOutcome;
+typedef Aws::Utils::Outcome<GetHarnessEndpointResult, BedrockAgentCoreControlError> GetHarnessEndpointOutcome;
 typedef Aws::Utils::Outcome<GetMemoryResult, BedrockAgentCoreControlError> GetMemoryOutcome;
 typedef Aws::Utils::Outcome<GetOauth2CredentialProviderResult, BedrockAgentCoreControlError> GetOauth2CredentialProviderOutcome;
 typedef Aws::Utils::Outcome<GetOnlineEvaluationConfigResult, BedrockAgentCoreControlError> GetOnlineEvaluationConfigOutcome;
@@ -468,6 +483,8 @@ typedef Aws::Utils::Outcome<ListEvaluatorsResult, BedrockAgentCoreControlError> 
 typedef Aws::Utils::Outcome<ListGatewayRulesResult, BedrockAgentCoreControlError> ListGatewayRulesOutcome;
 typedef Aws::Utils::Outcome<ListGatewayTargetsResult, BedrockAgentCoreControlError> ListGatewayTargetsOutcome;
 typedef Aws::Utils::Outcome<ListGatewaysResult, BedrockAgentCoreControlError> ListGatewaysOutcome;
+typedef Aws::Utils::Outcome<ListHarnessEndpointsResult, BedrockAgentCoreControlError> ListHarnessEndpointsOutcome;
+typedef Aws::Utils::Outcome<ListHarnessVersionsResult, BedrockAgentCoreControlError> ListHarnessVersionsOutcome;
 typedef Aws::Utils::Outcome<ListHarnessesResult, BedrockAgentCoreControlError> ListHarnessesOutcome;
 typedef Aws::Utils::Outcome<ListMemoriesResult, BedrockAgentCoreControlError> ListMemoriesOutcome;
 typedef Aws::Utils::Outcome<ListOauth2CredentialProvidersResult, BedrockAgentCoreControlError> ListOauth2CredentialProvidersOutcome;
@@ -504,6 +521,7 @@ typedef Aws::Utils::Outcome<UpdateGatewayResult, BedrockAgentCoreControlError> U
 typedef Aws::Utils::Outcome<UpdateGatewayRuleResult, BedrockAgentCoreControlError> UpdateGatewayRuleOutcome;
 typedef Aws::Utils::Outcome<UpdateGatewayTargetResult, BedrockAgentCoreControlError> UpdateGatewayTargetOutcome;
 typedef Aws::Utils::Outcome<UpdateHarnessResult, BedrockAgentCoreControlError> UpdateHarnessOutcome;
+typedef Aws::Utils::Outcome<UpdateHarnessEndpointResult, BedrockAgentCoreControlError> UpdateHarnessEndpointOutcome;
 typedef Aws::Utils::Outcome<UpdateMemoryResult, BedrockAgentCoreControlError> UpdateMemoryOutcome;
 typedef Aws::Utils::Outcome<UpdateOauth2CredentialProviderResult, BedrockAgentCoreControlError> UpdateOauth2CredentialProviderOutcome;
 typedef Aws::Utils::Outcome<UpdateOnlineEvaluationConfigResult, BedrockAgentCoreControlError> UpdateOnlineEvaluationConfigOutcome;
@@ -534,6 +552,7 @@ typedef std::future<CreateGatewayOutcome> CreateGatewayOutcomeCallable;
 typedef std::future<CreateGatewayRuleOutcome> CreateGatewayRuleOutcomeCallable;
 typedef std::future<CreateGatewayTargetOutcome> CreateGatewayTargetOutcomeCallable;
 typedef std::future<CreateHarnessOutcome> CreateHarnessOutcomeCallable;
+typedef std::future<CreateHarnessEndpointOutcome> CreateHarnessEndpointOutcomeCallable;
 typedef std::future<CreateMemoryOutcome> CreateMemoryOutcomeCallable;
 typedef std::future<CreateOauth2CredentialProviderOutcome> CreateOauth2CredentialProviderOutcomeCallable;
 typedef std::future<CreateOnlineEvaluationConfigOutcome> CreateOnlineEvaluationConfigOutcomeCallable;
@@ -559,6 +578,7 @@ typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
 typedef std::future<DeleteGatewayRuleOutcome> DeleteGatewayRuleOutcomeCallable;
 typedef std::future<DeleteGatewayTargetOutcome> DeleteGatewayTargetOutcomeCallable;
 typedef std::future<DeleteHarnessOutcome> DeleteHarnessOutcomeCallable;
+typedef std::future<DeleteHarnessEndpointOutcome> DeleteHarnessEndpointOutcomeCallable;
 typedef std::future<DeleteMemoryOutcome> DeleteMemoryOutcomeCallable;
 typedef std::future<DeleteOauth2CredentialProviderOutcome> DeleteOauth2CredentialProviderOutcomeCallable;
 typedef std::future<DeleteOnlineEvaluationConfigOutcome> DeleteOnlineEvaluationConfigOutcomeCallable;
@@ -585,6 +605,7 @@ typedef std::future<GetGatewayOutcome> GetGatewayOutcomeCallable;
 typedef std::future<GetGatewayRuleOutcome> GetGatewayRuleOutcomeCallable;
 typedef std::future<GetGatewayTargetOutcome> GetGatewayTargetOutcomeCallable;
 typedef std::future<GetHarnessOutcome> GetHarnessOutcomeCallable;
+typedef std::future<GetHarnessEndpointOutcome> GetHarnessEndpointOutcomeCallable;
 typedef std::future<GetMemoryOutcome> GetMemoryOutcomeCallable;
 typedef std::future<GetOauth2CredentialProviderOutcome> GetOauth2CredentialProviderOutcomeCallable;
 typedef std::future<GetOnlineEvaluationConfigOutcome> GetOnlineEvaluationConfigOutcomeCallable;
@@ -618,6 +639,8 @@ typedef std::future<ListEvaluatorsOutcome> ListEvaluatorsOutcomeCallable;
 typedef std::future<ListGatewayRulesOutcome> ListGatewayRulesOutcomeCallable;
 typedef std::future<ListGatewayTargetsOutcome> ListGatewayTargetsOutcomeCallable;
 typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
+typedef std::future<ListHarnessEndpointsOutcome> ListHarnessEndpointsOutcomeCallable;
+typedef std::future<ListHarnessVersionsOutcome> ListHarnessVersionsOutcomeCallable;
 typedef std::future<ListHarnessesOutcome> ListHarnessesOutcomeCallable;
 typedef std::future<ListMemoriesOutcome> ListMemoriesOutcomeCallable;
 typedef std::future<ListOauth2CredentialProvidersOutcome> ListOauth2CredentialProvidersOutcomeCallable;
@@ -654,6 +677,7 @@ typedef std::future<UpdateGatewayOutcome> UpdateGatewayOutcomeCallable;
 typedef std::future<UpdateGatewayRuleOutcome> UpdateGatewayRuleOutcomeCallable;
 typedef std::future<UpdateGatewayTargetOutcome> UpdateGatewayTargetOutcomeCallable;
 typedef std::future<UpdateHarnessOutcome> UpdateHarnessOutcomeCallable;
+typedef std::future<UpdateHarnessEndpointOutcome> UpdateHarnessEndpointOutcomeCallable;
 typedef std::future<UpdateMemoryOutcome> UpdateMemoryOutcomeCallable;
 typedef std::future<UpdateOauth2CredentialProviderOutcome> UpdateOauth2CredentialProviderOutcomeCallable;
 typedef std::future<UpdateOnlineEvaluationConfigOutcome> UpdateOnlineEvaluationConfigOutcomeCallable;
@@ -718,6 +742,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Cr
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateHarnessRequest&, const Model::CreateHarnessOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateHarnessResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateHarnessEndpointRequest&,
+                           const Model::CreateHarnessEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateHarnessEndpointResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateMemoryRequest&, const Model::CreateMemoryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateMemoryResponseReceivedHandler;
@@ -797,6 +824,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::De
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteHarnessRequest&, const Model::DeleteHarnessOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteHarnessResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteHarnessEndpointRequest&,
+                           const Model::DeleteHarnessEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteHarnessEndpointResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteMemoryRequest&, const Model::DeleteMemoryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteMemoryResponseReceivedHandler;
@@ -879,6 +909,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Ge
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetHarnessRequest&, const Model::GetHarnessOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetHarnessResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetHarnessEndpointRequest&,
+                           const Model::GetHarnessEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetHarnessEndpointResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetMemoryRequest&, const Model::GetMemoryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMemoryResponseReceivedHandler;
@@ -981,6 +1014,12 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Li
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListGatewaysRequest&, const Model::ListGatewaysOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListGatewaysResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListHarnessEndpointsRequest&,
+                           const Model::ListHarnessEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListHarnessEndpointsResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListHarnessVersionsRequest&,
+                           const Model::ListHarnessVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListHarnessVersionsResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListHarnessesRequest&, const Model::ListHarnessesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListHarnessesResponseReceivedHandler;
@@ -1094,6 +1133,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Up
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateHarnessRequest&, const Model::UpdateHarnessOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateHarnessResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateHarnessEndpointRequest&,
+                           const Model::UpdateHarnessEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateHarnessEndpointResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateMemoryRequest&, const Model::UpdateMemoryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateMemoryResponseReceivedHandler;

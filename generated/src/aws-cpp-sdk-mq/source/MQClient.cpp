@@ -33,6 +33,7 @@
 #include <aws/mq/model/DescribeBrokerRequest.h>
 #include <aws/mq/model/DescribeConfigurationRequest.h>
 #include <aws/mq/model/DescribeConfigurationRevisionRequest.h>
+#include <aws/mq/model/DescribeSharedResourcesRequest.h>
 #include <aws/mq/model/DescribeUserRequest.h>
 #include <aws/mq/model/ListBrokersRequest.h>
 #include <aws/mq/model/ListConfigurationRevisionsRequest.h>
@@ -419,6 +420,25 @@ DescribeConfigurationRevisionOutcome MQClient::DescribeConfigurationRevision(con
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? DescribeConfigurationRevisionOutcome(result.GetResultWithOwnership())
                             : DescribeConfigurationRevisionOutcome(std::move(result.GetError()));
+}
+
+DescribeSharedResourcesOutcome MQClient::DescribeSharedResources(const DescribeSharedResourcesRequest& request) const {
+  if (!request.BrokerIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeSharedResources", "Required field: BrokerId, is not set");
+    return DescribeSharedResourcesOutcome(
+        Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrokerId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/brokers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrokerId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/shared-resources");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeSharedResourcesOutcome(result.GetResultWithOwnership())
+                            : DescribeSharedResourcesOutcome(std::move(result.GetError()));
 }
 
 DescribeUserOutcome MQClient::DescribeUser(const DescribeUserRequest& request) const {

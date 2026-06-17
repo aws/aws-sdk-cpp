@@ -27,7 +27,9 @@ enum class Service {
   mcpserver,
   mcpserversplunk,
   azureidentity,
-  mcpserversigv4
+  mcpserversigv4,
+  remoteagent,
+  remoteagentsigv4
 };
 
 namespace ServiceMapper {

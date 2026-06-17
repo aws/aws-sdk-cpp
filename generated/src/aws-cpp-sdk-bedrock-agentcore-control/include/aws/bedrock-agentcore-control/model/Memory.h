@@ -297,6 +297,25 @@ class Memory {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>ARN of the resource managing this memory (e.g. a harness). When set, strategy
+   * modifications and deletion are only allowed through the managing resource.</p>
+   */
+  inline const Aws::String& GetManagedByResourceArn() const { return m_managedByResourceArn; }
+  inline bool ManagedByResourceArnHasBeenSet() const { return m_managedByResourceArnHasBeenSet; }
+  template <typename ManagedByResourceArnT = Aws::String>
+  void SetManagedByResourceArn(ManagedByResourceArnT&& value) {
+    m_managedByResourceArnHasBeenSet = true;
+    m_managedByResourceArn = std::forward<ManagedByResourceArnT>(value);
+  }
+  template <typename ManagedByResourceArnT = Aws::String>
+  Memory& WithManagedByResourceArn(ManagedByResourceArnT&& value) {
+    SetManagedByResourceArn(std::forward<ManagedByResourceArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -325,6 +344,8 @@ class Memory {
   Aws::Vector<IndexedKey> m_indexedKeys;
 
   StreamDeliveryResources m_streamDeliveryResources;
+
+  Aws::String m_managedByResourceArn;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -339,6 +360,7 @@ class Memory {
   bool m_strategiesHasBeenSet = false;
   bool m_indexedKeysHasBeenSet = false;
   bool m_streamDeliveryResourcesHasBeenSet = false;
+  bool m_managedByResourceArnHasBeenSet = false;
 };
 
 }  // namespace Model

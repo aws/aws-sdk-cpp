@@ -26,6 +26,10 @@ DocumentInfo& DocumentInfo::operator=(JsonView jsonValue) {
     m_artifactId = jsonValue.GetString("artifactId");
     m_artifactIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("integratedDocument")) {
+    m_integratedDocument = jsonValue.GetObject("integratedDocument");
+    m_integratedDocumentHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue DocumentInfo::Jsonize() const {
 
   if (m_artifactIdHasBeenSet) {
     payload.WithString("artifactId", m_artifactId);
+  }
+
+  if (m_integratedDocumentHasBeenSet) {
+    payload.WithObject("integratedDocument", m_integratedDocument.Jsonize());
   }
 
   return payload;

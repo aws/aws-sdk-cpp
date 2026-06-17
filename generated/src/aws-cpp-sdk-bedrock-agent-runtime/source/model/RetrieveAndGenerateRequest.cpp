@@ -31,5 +31,9 @@ Aws::String RetrieveAndGenerateRequest::SerializePayload() const {
     payload.WithString("sessionId", m_sessionId);
   }
 
+  if (m_userContextHasBeenSet) {
+    payload.WithObject("userContext", m_userContext.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

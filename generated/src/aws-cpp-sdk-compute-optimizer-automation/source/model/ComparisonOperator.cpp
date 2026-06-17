@@ -27,6 +27,18 @@ static const int NumericLessThan_HASH = HashingUtils::HashString("NumericLessTha
 static const int NumericLessThanEquals_HASH = HashingUtils::HashString("NumericLessThanEquals");
 static const int NumericGreaterThan_HASH = HashingUtils::HashString("NumericGreaterThan");
 static const int NumericGreaterThanEquals_HASH = HashingUtils::HashString("NumericGreaterThanEquals");
+static const int StringEqualsIfExists_HASH = HashingUtils::HashString("StringEqualsIfExists");
+static const int StringNotEqualsIfExists_HASH = HashingUtils::HashString("StringNotEqualsIfExists");
+static const int StringEqualsIgnoreCaseIfExists_HASH = HashingUtils::HashString("StringEqualsIgnoreCaseIfExists");
+static const int StringNotEqualsIgnoreCaseIfExists_HASH = HashingUtils::HashString("StringNotEqualsIgnoreCaseIfExists");
+static const int StringLikeIfExists_HASH = HashingUtils::HashString("StringLikeIfExists");
+static const int StringNotLikeIfExists_HASH = HashingUtils::HashString("StringNotLikeIfExists");
+static const int NumericEqualsIfExists_HASH = HashingUtils::HashString("NumericEqualsIfExists");
+static const int NumericNotEqualsIfExists_HASH = HashingUtils::HashString("NumericNotEqualsIfExists");
+static const int NumericLessThanIfExists_HASH = HashingUtils::HashString("NumericLessThanIfExists");
+static const int NumericLessThanEqualsIfExists_HASH = HashingUtils::HashString("NumericLessThanEqualsIfExists");
+static const int NumericGreaterThanIfExists_HASH = HashingUtils::HashString("NumericGreaterThanIfExists");
+static const int NumericGreaterThanEqualsIfExists_HASH = HashingUtils::HashString("NumericGreaterThanEqualsIfExists");
 
 ComparisonOperator GetComparisonOperatorForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -54,6 +66,30 @@ ComparisonOperator GetComparisonOperatorForName(const Aws::String& name) {
     return ComparisonOperator::NumericGreaterThan;
   } else if (hashCode == NumericGreaterThanEquals_HASH) {
     return ComparisonOperator::NumericGreaterThanEquals;
+  } else if (hashCode == StringEqualsIfExists_HASH) {
+    return ComparisonOperator::StringEqualsIfExists;
+  } else if (hashCode == StringNotEqualsIfExists_HASH) {
+    return ComparisonOperator::StringNotEqualsIfExists;
+  } else if (hashCode == StringEqualsIgnoreCaseIfExists_HASH) {
+    return ComparisonOperator::StringEqualsIgnoreCaseIfExists;
+  } else if (hashCode == StringNotEqualsIgnoreCaseIfExists_HASH) {
+    return ComparisonOperator::StringNotEqualsIgnoreCaseIfExists;
+  } else if (hashCode == StringLikeIfExists_HASH) {
+    return ComparisonOperator::StringLikeIfExists;
+  } else if (hashCode == StringNotLikeIfExists_HASH) {
+    return ComparisonOperator::StringNotLikeIfExists;
+  } else if (hashCode == NumericEqualsIfExists_HASH) {
+    return ComparisonOperator::NumericEqualsIfExists;
+  } else if (hashCode == NumericNotEqualsIfExists_HASH) {
+    return ComparisonOperator::NumericNotEqualsIfExists;
+  } else if (hashCode == NumericLessThanIfExists_HASH) {
+    return ComparisonOperator::NumericLessThanIfExists;
+  } else if (hashCode == NumericLessThanEqualsIfExists_HASH) {
+    return ComparisonOperator::NumericLessThanEqualsIfExists;
+  } else if (hashCode == NumericGreaterThanIfExists_HASH) {
+    return ComparisonOperator::NumericGreaterThanIfExists;
+  } else if (hashCode == NumericGreaterThanEqualsIfExists_HASH) {
+    return ComparisonOperator::NumericGreaterThanEqualsIfExists;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -92,6 +128,30 @@ Aws::String GetNameForComparisonOperator(ComparisonOperator enumValue) {
       return "NumericGreaterThan";
     case ComparisonOperator::NumericGreaterThanEquals:
       return "NumericGreaterThanEquals";
+    case ComparisonOperator::StringEqualsIfExists:
+      return "StringEqualsIfExists";
+    case ComparisonOperator::StringNotEqualsIfExists:
+      return "StringNotEqualsIfExists";
+    case ComparisonOperator::StringEqualsIgnoreCaseIfExists:
+      return "StringEqualsIgnoreCaseIfExists";
+    case ComparisonOperator::StringNotEqualsIgnoreCaseIfExists:
+      return "StringNotEqualsIgnoreCaseIfExists";
+    case ComparisonOperator::StringLikeIfExists:
+      return "StringLikeIfExists";
+    case ComparisonOperator::StringNotLikeIfExists:
+      return "StringNotLikeIfExists";
+    case ComparisonOperator::NumericEqualsIfExists:
+      return "NumericEqualsIfExists";
+    case ComparisonOperator::NumericNotEqualsIfExists:
+      return "NumericNotEqualsIfExists";
+    case ComparisonOperator::NumericLessThanIfExists:
+      return "NumericLessThanIfExists";
+    case ComparisonOperator::NumericLessThanEqualsIfExists:
+      return "NumericLessThanEqualsIfExists";
+    case ComparisonOperator::NumericGreaterThanIfExists:
+      return "NumericGreaterThanIfExists";
+    case ComparisonOperator::NumericGreaterThanEqualsIfExists:
+      return "NumericGreaterThanEqualsIfExists";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
