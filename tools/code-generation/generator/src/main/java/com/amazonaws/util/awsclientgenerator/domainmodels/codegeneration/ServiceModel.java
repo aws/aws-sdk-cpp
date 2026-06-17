@@ -91,6 +91,7 @@ public class ServiceModel {
         return metadata.getServiceId().equalsIgnoreCase("S3") ||
                 metadata.getServiceId().equalsIgnoreCase("S3-CRT") ||
                 metadata.getServiceId().equalsIgnoreCase("S3 Control") ||
+                metadata.getServiceId().equalsIgnoreCase("DynamoDB Streams") ||
                 metadata.getSigningName().equalsIgnoreCase("bedrock") ||
                 metadata.isHasEndpointDiscoveryTrait() ||
                 endpointRuleSetModel.getParameters().containsKey("AccountId") || endpointRuleSetModel.getParameters().containsKey("AccountIdEndpointMode");

@@ -5,6 +5,7 @@
 
 #include <smithy/client/AwsSmithyClientBase.h>
 #include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
+#include <aws/core/internal/LongPollingRetryHelper.h>
 #include <smithy/client/features/RecursionDetection.h>
 #include <smithy/client/features/RequestPayloadCompression.h>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
@@ -613,6 +614,19 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
 
         if (!retryWithCorrectRegion && !m_clientConfig->retryStrategy->ShouldRetry(outcome.GetError(), static_cast<long>(pRequestCtx->m_retryCount)))
         {
+            bool isLongPoll = pRequestCtx->m_pRequest && pRequestCtx->m_pRequest->IsLongPollingOperation();
+            static const bool newRetriesEnabled = Aws::Utils::StringUtils::ToLower(
+                Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true";
+            long lpSleepMs = 0;
+            if (newRetriesEnabled)
+            {
+                lpSleepMs = Aws::Client::Internal::ComputeLongPollingSleepMs(
+                    outcome.GetError(), static_cast<long>(pRequestCtx->m_retryCount), m_clientConfig->retryStrategy, isLongPoll);
+            }
+            if (lpSleepMs > 0)
+            {
+                m_httpClient->RetryRequestSleep(std::chrono::milliseconds(lpSleepMs));
+            }
             break;
         }
 

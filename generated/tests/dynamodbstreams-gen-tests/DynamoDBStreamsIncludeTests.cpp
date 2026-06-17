@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/dynamodbstreams/DynamoDBStreamsClient.h>
+#include <aws/dynamodbstreams/DynamoDBStreamsClientConfiguration.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsEndpointProvider.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsEndpointRules.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsErrorMarshaller.h>

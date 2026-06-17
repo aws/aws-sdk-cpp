@@ -421,6 +421,92 @@ TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
     ASSERT_EQ(3, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 }
 
+static AmazonWebServiceRequestMock MakeLongPollingRequest()
+{
+    AmazonWebServiceRequestMock request;
+    auto params = Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG);
+    params->parameterMap.emplace("isLongPollingOperation", "true");
+    request.SetServiceSpecificParameters(params);
+    return request;
+}
+
+// SEP Test Case 12: long-polling, retryable error, retry quota exhausted - stops without a normal retry.
+TEST_F(AWSClientTestSuite, LongPollingQuotaExhausted)
+{
+    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
+    ClientConfiguration config;
+    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
+    config.retryStrategy = Aws::MakeShared<CountedStandardRetryStrategy>(ALLOCATION_TAG, quota);
+    MockAWSClientWithStandardRetryStrategy lpClient(config);
+    ASSERT_TRUE(lpClient.GetRetryQuotaContainer()->AcquireRetryQuota(498));
+
+    HeaderValueCollection responseHeaders;
+    QueueMockResponse(AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, true), responseHeaders);
+
+    auto request = MakeLongPollingRequest();
+    auto outcome = lpClient.MakeRequest(request);
+    ASSERT_FALSE(outcome.IsSuccess());
+    ASSERT_EQ(0, lpClient.GetRequestAttemptedRetries());
+}
+
+// SEP Test Case 14: long-polling, retryable error, stops at max attempts.
+TEST_F(AWSClientTestSuite, LongPollingMaxAttemptsExceeded)
+{
+    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
+    ClientConfiguration config;
+    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
+    config.retryStrategy = Aws::MakeShared<CountedStandardRetryStrategy>(ALLOCATION_TAG, quota);
+    MockAWSClientWithStandardRetryStrategy lpClient(config);
+
+    HeaderValueCollection responseHeaders;
+    AWSError<CoreErrors> transientError(CoreErrors::NETWORK_CONNECTION, true);
+    QueueMockResponse(transientError, responseHeaders);
+    QueueMockResponse(transientError, responseHeaders);
+    QueueMockResponse(transientError, responseHeaders);
+
+    auto request = MakeLongPollingRequest();
+    auto outcome = lpClient.MakeRequest(request);
+    ASSERT_FALSE(outcome.IsSuccess());
+    ASSERT_EQ(2, lpClient.GetRequestAttemptedRetries());
+}
+
+// SEP Test Case 15: long-polling, retryable error then success.
+TEST_F(AWSClientTestSuite, LongPollingRetriesThenSucceeds)
+{
+    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
+    ClientConfiguration config;
+    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
+    config.retryStrategy = Aws::MakeShared<CountedStandardRetryStrategy>(ALLOCATION_TAG, quota);
+    MockAWSClientWithStandardRetryStrategy lpClient(config);
+
+    HeaderValueCollection responseHeaders;
+    QueueMockResponse(AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, true), responseHeaders);
+    QueueMockResponse(HttpResponseCode::OK, responseHeaders);
+
+    auto request = MakeLongPollingRequest();
+    auto outcome = lpClient.MakeRequest(request);
+    AWS_ASSERT_SUCCESS(outcome);
+    ASSERT_EQ(1, lpClient.GetRequestAttemptedRetries());
+}
+
+// SEP Test Case 16: long-polling, non-retryable error, fails without retrying.
+TEST_F(AWSClientTestSuite, LongPollingNonRetryableError)
+{
+    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
+    ClientConfiguration config;
+    auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
+    config.retryStrategy = Aws::MakeShared<CountedStandardRetryStrategy>(ALLOCATION_TAG, quota);
+    MockAWSClientWithStandardRetryStrategy lpClient(config);
+
+    HeaderValueCollection responseHeaders;
+    QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
+
+    auto request = MakeLongPollingRequest();
+    auto outcome = lpClient.MakeRequest(request);
+    ASSERT_FALSE(outcome.IsSuccess());
+    ASSERT_EQ(0, lpClient.GetRequestAttemptedRetries());
+}
+
 TEST_F(AWSClientTestSuite, TestRecursionDetection)
 {
     struct AWSClientTestSuite_TestRecursionDetection_TestCase

@@ -5,6 +5,7 @@
 
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/AmazonWebServiceRequest.h>
+#include <aws/core/internal/LongPollingRetryHelper.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSAuthSignerProvider.h>
 #include <aws/core/client/AWSUrlPresigner.h>
@@ -362,6 +363,18 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 
         if (!retryWithCorrectRegion && !m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
         {
+            static const bool newRetriesEnabled = Aws::Utils::StringUtils::ToLower(
+                Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true";
+            long lpSleepMs = 0;
+            if (newRetriesEnabled)
+            {
+                lpSleepMs = Internal::ComputeLongPollingSleepMs(
+                    outcome.GetError(), retries, m_retryStrategy, request.IsLongPollingOperation());
+            }
+            if (lpSleepMs > 0)
+            {
+                m_httpClient->RetryRequestSleep(std::chrono::milliseconds(lpSleepMs));
+            }
             break;
         }
         if (request.IsEventStreamRequest() &&

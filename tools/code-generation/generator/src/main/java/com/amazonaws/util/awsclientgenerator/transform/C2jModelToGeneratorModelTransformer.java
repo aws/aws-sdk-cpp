@@ -170,6 +170,7 @@ public class C2jModelToGeneratorModelTransformer {
 
         convertShapes();
         convertOperations();
+        applyLongPollingTrait();
         removeIgnoredOperations();
         removeUnreferencedShapes();
         postProcessShapes();
@@ -587,6 +588,24 @@ public class C2jModelToGeneratorModelTransformer {
                 operations.put(entry.getKey(), convertOperation(entry.getValue()));
             }
         }
+    }
+
+    private static final Map<String, Set<String>> LONG_POLLING_OPERATIONS = Map.of(
+        "SQS", Set.of("ReceiveMessage"),
+        "SFN", Set.of("GetActivityTask"),
+        "SWF", Set.of("PollForActivityTask", "PollForDecisionTask")
+    );
+
+    void applyLongPollingTrait() {
+        Optional.ofNullable(c2jServiceModel.getMetadata().getServiceId())
+            .map(LONG_POLLING_OPERATIONS::get)
+            .ifPresent(longPollOps -> {
+                for (Map.Entry<String, Operation> entry : operations.entrySet()) {
+                    if (longPollOps.contains(entry.getKey())) {
+                        entry.getValue().setLongPolling(true);
+                    }
+                }
+            });
     }
 
     Operation convertOperation(C2jOperation c2jOperation) {

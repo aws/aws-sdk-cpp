@@ -32,6 +32,8 @@ namespace Aws
 namespace {
     const char RETRY_STRATEGY_TAG[] = "StandardRetryStrategy";
 
+    const double DEFAULT_TRANSIENT_BACKOFF_BASE_SEC = 0.05;
+
     bool IsNewRetriesEnabled()
     {
         return Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true";
@@ -51,9 +53,11 @@ namespace {
     class NewRetriesImpl : public StandardRetryStrategy::RetryImpl
     {
     public:
+        explicit NewRetriesImpl(double transientBackoffBaseSec) : m_transientBackoffBaseSec(transientBackoffBaseSec) {}
+
         long CalculateDelay(const AWSError<CoreErrors>& error, long attemptedRetries) const override
         {
-            double x = error.ShouldThrottle() ? 1.0 : 0.05;
+            double x = error.ShouldThrottle() ? 1.0 : m_transientBackoffBaseSec;
             double exponentialPart = x * static_cast<double>(1L << (std::min)(attemptedRetries, 30L));
             double cappedPart = (std::min)(exponentialPart, 20.0);
 
@@ -76,13 +80,16 @@ namespace {
 
             return static_cast<long>(t_i * 1000.0);
         }
+
+    private:
+        double m_transientBackoffBaseSec;
     };
 
-    Aws::UniquePtr<StandardRetryStrategy::RetryImpl> CreateRetryImpl()
+    Aws::UniquePtr<StandardRetryStrategy::RetryImpl> CreateRetryImpl(double transientBackoffBaseSec)
     {
         if (IsNewRetriesEnabled())
         {
-            return Aws::MakeUnique<NewRetriesImpl>("StandardRetryStrategy");
+            return Aws::MakeUnique<NewRetriesImpl>("StandardRetryStrategy", transientBackoffBaseSec);
         }
         return Aws::MakeUnique<LegacyRetryImpl>("StandardRetryStrategy");
     }
@@ -107,11 +114,15 @@ namespace Aws
 
         StandardRetryStrategy::StandardRetryStrategy(long maxAttempts)
             : m_retryQuotaContainer(CreateQuotaContainer()), m_maxAttempts(maxAttempts),
-              m_impl(CreateRetryImpl()) {}
+              m_impl(CreateRetryImpl(DEFAULT_TRANSIENT_BACKOFF_BASE_SEC)) {}
 
         StandardRetryStrategy::StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts)
             : m_retryQuotaContainer(retryQuotaContainer), m_maxAttempts(maxAttempts),
-              m_impl(CreateRetryImpl()) {}
+              m_impl(CreateRetryImpl(DEFAULT_TRANSIENT_BACKOFF_BASE_SEC)) {}
+
+        StandardRetryStrategy::StandardRetryStrategy(long maxAttempts, double transientBackoffBaseSec)
+            : m_retryQuotaContainer(CreateQuotaContainer()), m_maxAttempts(maxAttempts),
+              m_impl(CreateRetryImpl(transientBackoffBaseSec)) {}
 
         StandardRetryStrategy::~StandardRetryStrategy() = default;
 

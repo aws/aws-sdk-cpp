@@ -57,6 +57,9 @@ namespace Model
 #if($shape.hasEventStreamMembers())
     inline virtual bool IsEventStreamRequest() const override { return true; }
 #end
+#if($operation.longPolling)
+    inline virtual bool IsLongPollingOperation() const override { return true; }
+#end
 #if($hasEventStreamResponse)
     inline virtual bool HasEventStreamResponse() const override { return true; }
 #end
