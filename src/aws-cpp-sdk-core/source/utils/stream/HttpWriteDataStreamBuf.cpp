@@ -5,6 +5,7 @@
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/utils/stream/HttpWriteDataStreamBuf.h>
 
+#include <chrono>
 #include <utility>
 
 namespace {
@@ -12,8 +13,13 @@ const char* WRITE_DATA_BUF_LOG_NAME = "HttpWriteDataStreamBuf";
 }
 
 Aws::Utils::Stream::HttpWriteDataStreamBuf::HttpWriteDataStreamBuf(const std::shared_ptr<Aws::Http::HttpClient>& client,
-                                                                   size_t bufferLength)
+                                                                   size_t bufferLength,
+                                                                   size_t requestTimeoutMs)
     : m_client{client}, m_buffer{bufferLength} {
+  if (requestTimeoutMs > 0) {
+    m_hasDeadline = true;
+    m_deadline = std::chrono::steady_clock::now() + std::chrono::milliseconds(requestTimeoutMs);
+  }
   ResetPutArea();
 }
 
@@ -163,7 +169,18 @@ bool Aws::Utils::Stream::HttpWriteDataStreamBuf::SendBuffer(bool endStream) {
       endStream);
 
   std::unique_lock<std::mutex> lock{m_writeMutex};
-  m_writeComplete.wait(lock, [this]() -> bool { return !m_writeInProgress; });
+  if (m_hasDeadline) {
+    bool completed = m_writeComplete.wait_until(lock, m_deadline,
+        [this]() -> bool { return !m_writeInProgress; });
+    if (!completed) {
+      m_writeError = true;
+      m_writeInProgress = false;
+      ResetPutArea();
+      return false;
+    }
+  } else {
+    m_writeComplete.wait(lock, [this]() -> bool { return !m_writeInProgress; });
+  }
 
   ResetPutArea();
 
