@@ -10,7 +10,15 @@
 namespace Aws {
 namespace ComputeOptimizer {
 namespace Model {
-enum class EBSMetricName { NOT_SET, VolumeReadOpsPerSecond, VolumeWriteOpsPerSecond, VolumeReadBytesPerSecond, VolumeWriteBytesPerSecond };
+enum class EBSMetricName {
+  NOT_SET,
+  VolumeReadOpsPerSecond,
+  VolumeWriteOpsPerSecond,
+  VolumeReadBytesPerSecond,
+  VolumeWriteBytesPerSecond,
+  VolumeIOPSExceeded,
+  VolumeThroughputExceeded
+};
 
 namespace EBSMetricNameMapper {
 AWS_COMPUTEOPTIMIZER_API EBSMetricName GetEBSMetricNameForName(const Aws::String& name);

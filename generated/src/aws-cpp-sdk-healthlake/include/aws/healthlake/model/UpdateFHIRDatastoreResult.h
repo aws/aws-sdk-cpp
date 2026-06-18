@@ -30,7 +30,7 @@ class UpdateFHIRDatastoreResult {
 
   ///@{
   /**
-   * <para>The data store properties.</para>
+   * <p>The data store properties.</p>
    */
   inline const DatastoreProperties& GetDatastoreProperties() const { return m_datastoreProperties; }
   template <typename DatastorePropertiesT = DatastoreProperties>

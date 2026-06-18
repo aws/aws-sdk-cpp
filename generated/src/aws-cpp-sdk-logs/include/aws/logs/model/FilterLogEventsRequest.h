@@ -214,6 +214,33 @@ class FilterLogEventsRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
+   * <p>If the value is true, the earliest log events are returned first. If the
+   * value is false, the latest log events are returned first. The default value is
+   * true.</p> <p>The <code>startFromHead</code> parameter sets the sort direction on
+   * the first request. On subsequent requests, the <code>nextToken</code> determines
+   * the sort direction. To continue paginating in the same direction, provide the
+   * returned <code>nextToken</code>. If you provide both <code>nextToken</code> and
+   * <code>startFromHead</code>, the direction of the <code>nextToken</code> is
+   * used.</p>  <p>Setting <code>startFromHead</code> to <code>false</code> is
+   * supported only when <code>startTime</code> is on or after <code>Jan 1, 2024
+   * 00:00:00 UTC</code>. A request with <code>startFromHead</code> set to
+   * <code>false</code> and a <code>startTime</code> before this date returns an
+   * <code>InvalidParameterException</code>.</p>
+   */
+  inline bool GetStartFromHead() const { return m_startFromHead; }
+  inline bool StartFromHeadHasBeenSet() const { return m_startFromHeadHasBeenSet; }
+  inline void SetStartFromHead(bool value) {
+    m_startFromHeadHasBeenSet = true;
+    m_startFromHead = value;
+  }
+  inline FilterLogEventsRequest& WithStartFromHead(bool value) {
+    SetStartFromHead(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specify <code>true</code> to display the log event fields with all sensitive
    * data unmasked and visible. The default is <code>false</code>.</p> <p>To use this
    * operation with this parameter, you must be signed into an account with the
@@ -249,6 +276,8 @@ class FilterLogEventsRequest : public CloudWatchLogsRequest {
 
   int m_limit{0};
 
+  bool m_startFromHead{false};
+
   bool m_unmask{false};
   bool m_logGroupNameHasBeenSet = false;
   bool m_logGroupIdentifierHasBeenSet = false;
@@ -259,6 +288,7 @@ class FilterLogEventsRequest : public CloudWatchLogsRequest {
   bool m_filterPatternHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
+  bool m_startFromHeadHasBeenSet = false;
   bool m_unmaskHasBeenSet = false;
 };
 

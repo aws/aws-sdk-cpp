@@ -34,6 +34,15 @@ LayerVersionsListItem& LayerVersionsListItem::operator=(JsonView jsonValue) {
     m_createdDate = jsonValue.GetString("CreatedDate");
     m_createdDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CompatibleArchitectures")) {
+    Aws::Utils::Array<JsonView> compatibleArchitecturesJsonList = jsonValue.GetArray("CompatibleArchitectures");
+    for (unsigned compatibleArchitecturesIndex = 0; compatibleArchitecturesIndex < compatibleArchitecturesJsonList.GetLength();
+         ++compatibleArchitecturesIndex) {
+      m_compatibleArchitectures.push_back(
+          ArchitectureMapper::GetArchitectureForName(compatibleArchitecturesJsonList[compatibleArchitecturesIndex].AsString()));
+    }
+    m_compatibleArchitecturesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CompatibleRuntimes")) {
     Aws::Utils::Array<JsonView> compatibleRuntimesJsonList = jsonValue.GetArray("CompatibleRuntimes");
     for (unsigned compatibleRuntimesIndex = 0; compatibleRuntimesIndex < compatibleRuntimesJsonList.GetLength();
@@ -45,15 +54,6 @@ LayerVersionsListItem& LayerVersionsListItem::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("LicenseInfo")) {
     m_licenseInfo = jsonValue.GetString("LicenseInfo");
     m_licenseInfoHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CompatibleArchitectures")) {
-    Aws::Utils::Array<JsonView> compatibleArchitecturesJsonList = jsonValue.GetArray("CompatibleArchitectures");
-    for (unsigned compatibleArchitecturesIndex = 0; compatibleArchitecturesIndex < compatibleArchitecturesJsonList.GetLength();
-         ++compatibleArchitecturesIndex) {
-      m_compatibleArchitectures.push_back(
-          ArchitectureMapper::GetArchitectureForName(compatibleArchitecturesJsonList[compatibleArchitecturesIndex].AsString()));
-    }
-    m_compatibleArchitecturesHasBeenSet = true;
   }
   return *this;
 }
@@ -77,6 +77,16 @@ JsonValue LayerVersionsListItem::Jsonize() const {
     payload.WithString("CreatedDate", m_createdDate);
   }
 
+  if (m_compatibleArchitecturesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> compatibleArchitecturesJsonList(m_compatibleArchitectures.size());
+    for (unsigned compatibleArchitecturesIndex = 0; compatibleArchitecturesIndex < compatibleArchitecturesJsonList.GetLength();
+         ++compatibleArchitecturesIndex) {
+      compatibleArchitecturesJsonList[compatibleArchitecturesIndex].AsString(
+          ArchitectureMapper::GetNameForArchitecture(m_compatibleArchitectures[compatibleArchitecturesIndex]));
+    }
+    payload.WithArray("CompatibleArchitectures", std::move(compatibleArchitecturesJsonList));
+  }
+
   if (m_compatibleRuntimesHasBeenSet) {
     Aws::Utils::Array<JsonValue> compatibleRuntimesJsonList(m_compatibleRuntimes.size());
     for (unsigned compatibleRuntimesIndex = 0; compatibleRuntimesIndex < compatibleRuntimesJsonList.GetLength();
@@ -89,16 +99,6 @@ JsonValue LayerVersionsListItem::Jsonize() const {
 
   if (m_licenseInfoHasBeenSet) {
     payload.WithString("LicenseInfo", m_licenseInfo);
-  }
-
-  if (m_compatibleArchitecturesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> compatibleArchitecturesJsonList(m_compatibleArchitectures.size());
-    for (unsigned compatibleArchitecturesIndex = 0; compatibleArchitecturesIndex < compatibleArchitecturesJsonList.GetLength();
-         ++compatibleArchitecturesIndex) {
-      compatibleArchitecturesJsonList[compatibleArchitecturesIndex].AsString(
-          ArchitectureMapper::GetNameForArchitecture(m_compatibleArchitectures[compatibleArchitecturesIndex]));
-    }
-    payload.WithArray("CompatibleArchitectures", std::move(compatibleArchitecturesJsonList));
   }
 
   return payload;

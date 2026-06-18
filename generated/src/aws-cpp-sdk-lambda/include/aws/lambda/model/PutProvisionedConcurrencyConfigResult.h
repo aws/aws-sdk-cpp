@@ -45,21 +45,6 @@ class PutProvisionedConcurrencyConfigResult {
 
   ///@{
   /**
-   * <p>The amount of provisioned concurrency available.</p>
-   */
-  inline int GetAvailableProvisionedConcurrentExecutions() const { return m_availableProvisionedConcurrentExecutions; }
-  inline void SetAvailableProvisionedConcurrentExecutions(int value) {
-    m_availableProvisionedConcurrentExecutionsHasBeenSet = true;
-    m_availableProvisionedConcurrentExecutions = value;
-  }
-  inline PutProvisionedConcurrencyConfigResult& WithAvailableProvisionedConcurrentExecutions(int value) {
-    SetAvailableProvisionedConcurrentExecutions(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The amount of provisioned concurrency allocated. When a weighted alias is
    * used during linear and canary deployments, this value fluctuates depending on
    * the amount of concurrency that is provisioned for the function versions.</p>
@@ -71,6 +56,21 @@ class PutProvisionedConcurrencyConfigResult {
   }
   inline PutProvisionedConcurrencyConfigResult& WithAllocatedProvisionedConcurrentExecutions(int value) {
     SetAllocatedProvisionedConcurrentExecutions(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The amount of provisioned concurrency available.</p>
+   */
+  inline int GetAvailableProvisionedConcurrentExecutions() const { return m_availableProvisionedConcurrentExecutions; }
+  inline void SetAvailableProvisionedConcurrentExecutions(int value) {
+    m_availableProvisionedConcurrentExecutionsHasBeenSet = true;
+    m_availableProvisionedConcurrentExecutions = value;
+  }
+  inline PutProvisionedConcurrencyConfigResult& WithAvailableProvisionedConcurrentExecutions(int value) {
+    SetAvailableProvisionedConcurrentExecutions(value);
     return *this;
   }
   ///@}
@@ -146,9 +146,9 @@ class PutProvisionedConcurrencyConfigResult {
  private:
   int m_requestedProvisionedConcurrentExecutions{0};
 
-  int m_availableProvisionedConcurrentExecutions{0};
-
   int m_allocatedProvisionedConcurrentExecutions{0};
+
+  int m_availableProvisionedConcurrentExecutions{0};
 
   ProvisionedConcurrencyStatusEnum m_status{ProvisionedConcurrencyStatusEnum::NOT_SET};
 
@@ -159,8 +159,8 @@ class PutProvisionedConcurrencyConfigResult {
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_requestedProvisionedConcurrentExecutionsHasBeenSet = false;
-  bool m_availableProvisionedConcurrentExecutionsHasBeenSet = false;
   bool m_allocatedProvisionedConcurrentExecutionsHasBeenSet = false;
+  bool m_availableProvisionedConcurrentExecutionsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;

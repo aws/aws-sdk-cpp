@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/synthetics/SyntheticsRequest.h>
 #include <aws/synthetics/Synthetics_EXPORTS.h>
+#include <aws/synthetics/model/AddReplicaLocationInput.h>
 #include <aws/synthetics/model/ArtifactConfigInput.h>
 #include <aws/synthetics/model/BrowserConfig.h>
 #include <aws/synthetics/model/CanaryCodeInput.h>
@@ -336,6 +337,32 @@ class CreateCanaryRequest : public SyntheticsRequest {
 
   ///@{
   /**
+   * <p>A list of locations (Amazon Web Services Regions) to add as replicas for the
+   * canary. Each location specifies a Region and optional VPC configuration for the
+   * replica. You can add up to 50 replica locations.</p>
+   */
+  inline const Aws::Vector<AddReplicaLocationInput>& GetAddReplicaLocations() const { return m_addReplicaLocations; }
+  inline bool AddReplicaLocationsHasBeenSet() const { return m_addReplicaLocationsHasBeenSet; }
+  template <typename AddReplicaLocationsT = Aws::Vector<AddReplicaLocationInput>>
+  void SetAddReplicaLocations(AddReplicaLocationsT&& value) {
+    m_addReplicaLocationsHasBeenSet = true;
+    m_addReplicaLocations = std::forward<AddReplicaLocationsT>(value);
+  }
+  template <typename AddReplicaLocationsT = Aws::Vector<AddReplicaLocationInput>>
+  CreateCanaryRequest& WithAddReplicaLocations(AddReplicaLocationsT&& value) {
+    SetAddReplicaLocations(std::forward<AddReplicaLocationsT>(value));
+    return *this;
+  }
+  template <typename AddReplicaLocationsT = AddReplicaLocationInput>
+  CreateCanaryRequest& AddAddReplicaLocations(AddReplicaLocationsT&& value) {
+    m_addReplicaLocationsHasBeenSet = true;
+    m_addReplicaLocations.emplace_back(std::forward<AddReplicaLocationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of key-value pairs to associate with the canary. You can associate as
    * many as 50 tags with a canary.</p> <p>Tags can help you organize and categorize
    * your resources. You can also use them to scope user permissions, by granting a
@@ -410,6 +437,8 @@ class CreateCanaryRequest : public SyntheticsRequest {
 
   Aws::Vector<BrowserConfig> m_browserConfigs;
 
+  Aws::Vector<AddReplicaLocationInput> m_addReplicaLocations;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   ArtifactConfigInput m_artifactConfig;
@@ -426,6 +455,7 @@ class CreateCanaryRequest : public SyntheticsRequest {
   bool m_resourcesToReplicateTagsHasBeenSet = false;
   bool m_provisionedResourceCleanupHasBeenSet = false;
   bool m_browserConfigsHasBeenSet = false;
+  bool m_addReplicaLocationsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_artifactConfigHasBeenSet = false;
 };

@@ -61,7 +61,8 @@ enum class UpdateParamType {
   WarmPoolMaxGroupPreparedCapacity,
   WarmPoolMinSize,
   WarmPoolState,
-  WarmPoolReuseOnScaleIn
+  WarmPoolReuseOnScaleIn,
+  ControlPlaneEgressMode
 };
 
 namespace UpdateParamTypeMapper {

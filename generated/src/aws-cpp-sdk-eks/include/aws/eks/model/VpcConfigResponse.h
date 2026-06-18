@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eks/EKS_EXPORTS.h>
+#include <aws/eks/model/ControlPlaneEgressModeType.h>
 
 #include <utility>
 
@@ -196,6 +197,28 @@ class VpcConfigResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The current control plane egress routing mode for the cluster. If the cluster
+   * is set to <code>AWS_MANAGED</code>, Amazon EKS manages the egress path from the
+   * control plane. If the cluster is set to <code>CUSTOMER_ROUTED</code>, you manage
+   * the egress path from the control plane in your VPC subnets.</p> <p> <a
+   * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-egress.html">Learn
+   * more about control plane egress routing in the <i>Amazon EKS User Guide</i>.</a>
+   * </p>
+   */
+  inline ControlPlaneEgressModeType GetControlPlaneEgressMode() const { return m_controlPlaneEgressMode; }
+  inline bool ControlPlaneEgressModeHasBeenSet() const { return m_controlPlaneEgressModeHasBeenSet; }
+  inline void SetControlPlaneEgressMode(ControlPlaneEgressModeType value) {
+    m_controlPlaneEgressModeHasBeenSet = true;
+    m_controlPlaneEgressMode = value;
+  }
+  inline VpcConfigResponse& WithControlPlaneEgressMode(ControlPlaneEgressModeType value) {
+    SetControlPlaneEgressMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_subnetIds;
 
@@ -210,6 +233,8 @@ class VpcConfigResponse {
   bool m_endpointPrivateAccess{false};
 
   Aws::Vector<Aws::String> m_publicAccessCidrs;
+
+  ControlPlaneEgressModeType m_controlPlaneEgressMode{ControlPlaneEgressModeType::NOT_SET};
   bool m_subnetIdsHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
   bool m_clusterSecurityGroupIdHasBeenSet = false;
@@ -217,6 +242,7 @@ class VpcConfigResponse {
   bool m_endpointPublicAccessHasBeenSet = false;
   bool m_endpointPrivateAccessHasBeenSet = false;
   bool m_publicAccessCidrsHasBeenSet = false;
+  bool m_controlPlaneEgressModeHasBeenSet = false;
 };
 
 }  // namespace Model

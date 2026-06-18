@@ -36,8 +36,20 @@ Aws::String UpdateFunctionCodeRequest::SerializePayload() const {
     payload.WithString("ImageUri", m_imageUri);
   }
 
+  if (m_architecturesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> architecturesJsonList(m_architectures.size());
+    for (unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex) {
+      architecturesJsonList[architecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_architectures[architecturesIndex]));
+    }
+    payload.WithArray("Architectures", std::move(architecturesJsonList));
+  }
+
   if (m_publishHasBeenSet) {
     payload.WithBool("Publish", m_publish);
+  }
+
+  if (m_publishToHasBeenSet) {
+    payload.WithString("PublishTo", FunctionVersionLatestPublishedMapper::GetNameForFunctionVersionLatestPublished(m_publishTo));
   }
 
   if (m_dryRunHasBeenSet) {
@@ -48,20 +60,8 @@ Aws::String UpdateFunctionCodeRequest::SerializePayload() const {
     payload.WithString("RevisionId", m_revisionId);
   }
 
-  if (m_architecturesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> architecturesJsonList(m_architectures.size());
-    for (unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex) {
-      architecturesJsonList[architecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_architectures[architecturesIndex]));
-    }
-    payload.WithArray("Architectures", std::move(architecturesJsonList));
-  }
-
   if (m_sourceKMSKeyArnHasBeenSet) {
     payload.WithString("SourceKMSKeyArn", m_sourceKMSKeyArn);
-  }
-
-  if (m_publishToHasBeenSet) {
-    payload.WithString("PublishTo", FunctionVersionLatestPublishedMapper::GetNameForFunctionVersionLatestPublished(m_publishTo));
   }
 
   return payload.View().WriteReadable();

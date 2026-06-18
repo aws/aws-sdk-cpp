@@ -138,6 +138,10 @@ Aws::String UpdateServiceRequest::SerializePayload() const {
     payload.WithArray("vpcLatticeConfigurations", std::move(vpcLatticeConfigurationsJsonList));
   }
 
+  if (m_monitoringHasBeenSet) {
+    payload.WithObject("monitoring", m_monitoring.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

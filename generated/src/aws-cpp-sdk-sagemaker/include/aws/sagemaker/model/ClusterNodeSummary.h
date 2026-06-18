@@ -204,6 +204,24 @@ class ClusterNodeSummary {
 
   ///@{
   /**
+   * <p>The version of the HyperPod-managed AMI currently running on the node.</p>
+   */
+  inline const Aws::String& GetCurrentImageReleaseVersion() const { return m_currentImageReleaseVersion; }
+  inline bool CurrentImageReleaseVersionHasBeenSet() const { return m_currentImageReleaseVersionHasBeenSet; }
+  template <typename CurrentImageReleaseVersionT = Aws::String>
+  void SetCurrentImageReleaseVersion(CurrentImageReleaseVersionT&& value) {
+    m_currentImageReleaseVersionHasBeenSet = true;
+    m_currentImageReleaseVersion = std::forward<CurrentImageReleaseVersionT>(value);
+  }
+  template <typename CurrentImageReleaseVersionT = Aws::String>
+  ClusterNodeSummary& WithCurrentImageReleaseVersion(CurrentImageReleaseVersionT&& value) {
+    SetCurrentImageReleaseVersion(std::forward<CurrentImageReleaseVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the image version for the cluster node.</p>
    */
   inline ClusterImageVersionStatus GetImageVersionStatus() const { return m_imageVersionStatus; }
@@ -236,6 +254,8 @@ class ClusterNodeSummary {
 
   Aws::String m_privateDnsHostname;
 
+  Aws::String m_currentImageReleaseVersion;
+
   ClusterImageVersionStatus m_imageVersionStatus{ClusterImageVersionStatus::NOT_SET};
   bool m_instanceGroupNameHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
@@ -246,6 +266,7 @@ class ClusterNodeSummary {
   bool m_instanceStatusHasBeenSet = false;
   bool m_ultraServerInfoHasBeenSet = false;
   bool m_privateDnsHostnameHasBeenSet = false;
+  bool m_currentImageReleaseVersionHasBeenSet = false;
   bool m_imageVersionStatusHasBeenSet = false;
 };
 

@@ -99,6 +99,10 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator=(JsonView jso
     m_scheduledUpdateConfig = jsonValue.GetObject("ScheduledUpdateConfig");
     m_scheduledUpdateConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AutoPatchConfig")) {
+    m_autoPatchConfig = jsonValue.GetObject("AutoPatchConfig");
+    m_autoPatchConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CurrentImageId")) {
     m_currentImageId = jsonValue.GetString("CurrentImageId");
     m_currentImageIdHasBeenSet = true;
@@ -106,6 +110,14 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator=(JsonView jso
   if (jsonValue.ValueExists("DesiredImageId")) {
     m_desiredImageId = jsonValue.GetString("DesiredImageId");
     m_desiredImageIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CurrentImageReleaseVersion")) {
+    m_currentImageReleaseVersion = jsonValue.GetString("CurrentImageReleaseVersion");
+    m_currentImageReleaseVersionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DesiredImageReleaseVersion")) {
+    m_desiredImageReleaseVersion = jsonValue.GetString("DesiredImageReleaseVersion");
+    m_desiredImageReleaseVersionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ImageVersionStatus")) {
     m_imageVersionStatus = ClusterImageVersionStatusMapper::GetClusterImageVersionStatusForName(jsonValue.GetString("ImageVersionStatus"));
@@ -237,12 +249,24 @@ JsonValue ClusterInstanceGroupDetails::Jsonize() const {
     payload.WithObject("ScheduledUpdateConfig", m_scheduledUpdateConfig.Jsonize());
   }
 
+  if (m_autoPatchConfigHasBeenSet) {
+    payload.WithObject("AutoPatchConfig", m_autoPatchConfig.Jsonize());
+  }
+
   if (m_currentImageIdHasBeenSet) {
     payload.WithString("CurrentImageId", m_currentImageId);
   }
 
   if (m_desiredImageIdHasBeenSet) {
     payload.WithString("DesiredImageId", m_desiredImageId);
+  }
+
+  if (m_currentImageReleaseVersionHasBeenSet) {
+    payload.WithString("CurrentImageReleaseVersion", m_currentImageReleaseVersion);
+  }
+
+  if (m_desiredImageReleaseVersionHasBeenSet) {
+    payload.WithString("DesiredImageReleaseVersion", m_desiredImageReleaseVersion);
   }
 
   if (m_imageVersionStatusHasBeenSet) {

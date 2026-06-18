@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ActiveClusterOperationName.h>
+#include <aws/sagemaker/model/ClusterAutoPatchConfigDetails.h>
 #include <aws/sagemaker/model/ClusterCapacityRequirements.h>
 #include <aws/sagemaker/model/ClusterImageVersionStatus.h>
 #include <aws/sagemaker/model/ClusterInstanceRequirementDetails.h>
@@ -398,6 +399,25 @@ class ClusterInstanceGroupDetails {
 
   ///@{
   /**
+   * <p>The auto-patching configuration for the instance group, including the current
+   * patching strategy and next scheduled patch date.</p>
+   */
+  inline const ClusterAutoPatchConfigDetails& GetAutoPatchConfig() const { return m_autoPatchConfig; }
+  inline bool AutoPatchConfigHasBeenSet() const { return m_autoPatchConfigHasBeenSet; }
+  template <typename AutoPatchConfigT = ClusterAutoPatchConfigDetails>
+  void SetAutoPatchConfig(AutoPatchConfigT&& value) {
+    m_autoPatchConfigHasBeenSet = true;
+    m_autoPatchConfig = std::forward<AutoPatchConfigT>(value);
+  }
+  template <typename AutoPatchConfigT = ClusterAutoPatchConfigDetails>
+  ClusterInstanceGroupDetails& WithAutoPatchConfig(AutoPatchConfigT&& value) {
+    SetAutoPatchConfig(std::forward<AutoPatchConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the Amazon Machine Image (AMI) currently in use by the instance
    * group.</p>
    */
@@ -429,6 +449,44 @@ class ClusterInstanceGroupDetails {
   template <typename DesiredImageIdT = Aws::String>
   ClusterInstanceGroupDetails& WithDesiredImageId(DesiredImageIdT&& value) {
     SetDesiredImageId(std::forward<DesiredImageIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version of the HyperPod-managed AMI currently running on the instance
+   * group.</p>
+   */
+  inline const Aws::String& GetCurrentImageReleaseVersion() const { return m_currentImageReleaseVersion; }
+  inline bool CurrentImageReleaseVersionHasBeenSet() const { return m_currentImageReleaseVersionHasBeenSet; }
+  template <typename CurrentImageReleaseVersionT = Aws::String>
+  void SetCurrentImageReleaseVersion(CurrentImageReleaseVersionT&& value) {
+    m_currentImageReleaseVersionHasBeenSet = true;
+    m_currentImageReleaseVersion = std::forward<CurrentImageReleaseVersionT>(value);
+  }
+  template <typename CurrentImageReleaseVersionT = Aws::String>
+  ClusterInstanceGroupDetails& WithCurrentImageReleaseVersion(CurrentImageReleaseVersionT&& value) {
+    SetCurrentImageReleaseVersion(std::forward<CurrentImageReleaseVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The desired version of the HyperPod-managed AMI for the instance group. This
+   * may differ from the current version when an update is pending.</p>
+   */
+  inline const Aws::String& GetDesiredImageReleaseVersion() const { return m_desiredImageReleaseVersion; }
+  inline bool DesiredImageReleaseVersionHasBeenSet() const { return m_desiredImageReleaseVersionHasBeenSet; }
+  template <typename DesiredImageReleaseVersionT = Aws::String>
+  void SetDesiredImageReleaseVersion(DesiredImageReleaseVersionT&& value) {
+    m_desiredImageReleaseVersionHasBeenSet = true;
+    m_desiredImageReleaseVersion = std::forward<DesiredImageReleaseVersionT>(value);
+  }
+  template <typename DesiredImageReleaseVersionT = Aws::String>
+  ClusterInstanceGroupDetails& WithDesiredImageReleaseVersion(DesiredImageReleaseVersionT&& value) {
+    SetDesiredImageReleaseVersion(std::forward<DesiredImageReleaseVersionT>(value));
     return *this;
   }
   ///@}
@@ -646,9 +704,15 @@ class ClusterInstanceGroupDetails {
 
   ScheduledUpdateConfig m_scheduledUpdateConfig;
 
+  ClusterAutoPatchConfigDetails m_autoPatchConfig;
+
   Aws::String m_currentImageId;
 
   Aws::String m_desiredImageId;
+
+  Aws::String m_currentImageReleaseVersion;
+
+  Aws::String m_desiredImageReleaseVersion;
 
   ClusterImageVersionStatus m_imageVersionStatus{ClusterImageVersionStatus::NOT_SET};
 
@@ -684,8 +748,11 @@ class ClusterInstanceGroupDetails {
   bool m_trainingPlanStatusHasBeenSet = false;
   bool m_overrideVpcConfigHasBeenSet = false;
   bool m_scheduledUpdateConfigHasBeenSet = false;
+  bool m_autoPatchConfigHasBeenSet = false;
   bool m_currentImageIdHasBeenSet = false;
   bool m_desiredImageIdHasBeenSet = false;
+  bool m_currentImageReleaseVersionHasBeenSet = false;
+  bool m_desiredImageReleaseVersionHasBeenSet = false;
   bool m_imageVersionStatusHasBeenSet = false;
   bool m_activeOperationsHasBeenSet = false;
   bool m_kubernetesConfigHasBeenSet = false;

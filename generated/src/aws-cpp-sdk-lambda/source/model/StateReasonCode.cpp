@@ -39,7 +39,7 @@ static const int EFSMountTimeout_HASH = HashingUtils::HashString("EFSMountTimeou
 static const int InvalidRuntime_HASH = HashingUtils::HashString("InvalidRuntime");
 static const int InvalidZipFileException_HASH = HashingUtils::HashString("InvalidZipFileException");
 static const int FunctionError_HASH = HashingUtils::HashString("FunctionError");
-static const int DrainingDurableExecutions_HASH = HashingUtils::HashString("DrainingDurableExecutions");
+static const int ServiceQuotaExceededException_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int VcpuLimitExceeded_HASH = HashingUtils::HashString("VcpuLimitExceeded");
 static const int CapacityProviderScalingLimitExceeded_HASH = HashingUtils::HashString("CapacityProviderScalingLimitExceeded");
 static const int InsufficientCapacity_HASH = HashingUtils::HashString("InsufficientCapacity");
@@ -53,6 +53,7 @@ static const int FunctionError_PermissionDenied_HASH = HashingUtils::HashString(
 static const int FunctionError_TooManyExtensions_HASH = HashingUtils::HashString("FunctionError.TooManyExtensions");
 static const int FunctionError_InitResourceExhausted_HASH = HashingUtils::HashString("FunctionError.InitResourceExhausted");
 static const int DisallowedByVpcEncryptionControl_HASH = HashingUtils::HashString("DisallowedByVpcEncryptionControl");
+static const int DrainingDurableExecutions_HASH = HashingUtils::HashString("DrainingDurableExecutions");
 
 StateReasonCode GetStateReasonCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -104,8 +105,8 @@ StateReasonCode GetStateReasonCodeForName(const Aws::String& name) {
     return StateReasonCode::InvalidZipFileException;
   } else if (hashCode == FunctionError_HASH) {
     return StateReasonCode::FunctionError;
-  } else if (hashCode == DrainingDurableExecutions_HASH) {
-    return StateReasonCode::DrainingDurableExecutions;
+  } else if (hashCode == ServiceQuotaExceededException_HASH) {
+    return StateReasonCode::ServiceQuotaExceededException;
   } else if (hashCode == VcpuLimitExceeded_HASH) {
     return StateReasonCode::VcpuLimitExceeded;
   } else if (hashCode == CapacityProviderScalingLimitExceeded_HASH) {
@@ -132,6 +133,8 @@ StateReasonCode GetStateReasonCodeForName(const Aws::String& name) {
     return StateReasonCode::FunctionError_InitResourceExhausted;
   } else if (hashCode == DisallowedByVpcEncryptionControl_HASH) {
     return StateReasonCode::DisallowedByVpcEncryptionControl;
+  } else if (hashCode == DrainingDurableExecutions_HASH) {
+    return StateReasonCode::DrainingDurableExecutions;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -194,8 +197,8 @@ Aws::String GetNameForStateReasonCode(StateReasonCode enumValue) {
       return "InvalidZipFileException";
     case StateReasonCode::FunctionError:
       return "FunctionError";
-    case StateReasonCode::DrainingDurableExecutions:
-      return "DrainingDurableExecutions";
+    case StateReasonCode::ServiceQuotaExceededException:
+      return "ServiceQuotaExceededException";
     case StateReasonCode::VcpuLimitExceeded:
       return "VcpuLimitExceeded";
     case StateReasonCode::CapacityProviderScalingLimitExceeded:
@@ -222,6 +225,8 @@ Aws::String GetNameForStateReasonCode(StateReasonCode enumValue) {
       return "FunctionError.InitResourceExhausted";
     case StateReasonCode::DisallowedByVpcEncryptionControl:
       return "DisallowedByVpcEncryptionControl";
+    case StateReasonCode::DrainingDurableExecutions:
+      return "DrainingDurableExecutions";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

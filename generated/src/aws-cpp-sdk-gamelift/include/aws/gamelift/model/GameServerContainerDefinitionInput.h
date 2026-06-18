@@ -12,6 +12,7 @@
 #include <aws/gamelift/model/ContainerEnvironment.h>
 #include <aws/gamelift/model/ContainerMountPoint.h>
 #include <aws/gamelift/model/ContainerPortConfiguration.h>
+#include <aws/gamelift/model/LinuxCapabilities.h>
 
 #include <utility>
 
@@ -226,6 +227,26 @@ class GameServerContainerDefinitionInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Linux-specific modifications that are applied to the default Docker container
+   * configuration, such as Linux capabilities. For more information see <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+   */
+  inline const LinuxCapabilities& GetLinuxCapabilities() const { return m_linuxCapabilities; }
+  inline bool LinuxCapabilitiesHasBeenSet() const { return m_linuxCapabilitiesHasBeenSet; }
+  template <typename LinuxCapabilitiesT = LinuxCapabilities>
+  void SetLinuxCapabilities(LinuxCapabilitiesT&& value) {
+    m_linuxCapabilitiesHasBeenSet = true;
+    m_linuxCapabilities = std::forward<LinuxCapabilitiesT>(value);
+  }
+  template <typename LinuxCapabilitiesT = LinuxCapabilities>
+  GameServerContainerDefinitionInput& WithLinuxCapabilities(LinuxCapabilitiesT&& value) {
+    SetLinuxCapabilities(std::forward<LinuxCapabilitiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_containerName;
 
@@ -240,6 +261,8 @@ class GameServerContainerDefinitionInput {
   ContainerPortConfiguration m_portConfiguration;
 
   Aws::String m_serverSdkVersion;
+
+  LinuxCapabilities m_linuxCapabilities;
   bool m_containerNameHasBeenSet = false;
   bool m_dependsOnHasBeenSet = false;
   bool m_mountPointsHasBeenSet = false;
@@ -247,6 +270,7 @@ class GameServerContainerDefinitionInput {
   bool m_imageUriHasBeenSet = false;
   bool m_portConfigurationHasBeenSet = false;
   bool m_serverSdkVersionHasBeenSet = false;
+  bool m_linuxCapabilitiesHasBeenSet = false;
 };
 
 }  // namespace Model

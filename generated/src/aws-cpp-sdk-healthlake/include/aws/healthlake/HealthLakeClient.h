@@ -429,8 +429,8 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <para>Update the properties of a FHIR-enabled data store.</para><p><h3>See
-   * Also:</h3>   <a
+   * <p>Update the properties of a FHIR-enabled data store.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UpdateFHIRDatastore">AWS
    * API Reference</a></p>
    */

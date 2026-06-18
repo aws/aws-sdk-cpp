@@ -12,6 +12,7 @@
 #include <aws/gamelift/model/ContainerEnvironment.h>
 #include <aws/gamelift/model/ContainerMountPoint.h>
 #include <aws/gamelift/model/ContainerPortConfiguration.h>
+#include <aws/gamelift/model/LinuxCapabilities.h>
 
 #include <utility>
 
@@ -36,9 +37,13 @@ namespace Model {
  * </p> <p> <b>Part of:</b> <a
  * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
  * </p> <p> <b>Returned by:</b> <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>,
+ * <a
  * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerGroupDefinition.html">DescribeContainerGroupDefinition</a>,
  * <a
  * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitions.html">ListContainerGroupDefinitions</a>,
+ * <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitionVersions.html">ListContainerGroupDefinitionVersions</a>,
  * <a
  * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>
  * </p><p><h3>See Also:</h3>   <a
@@ -230,6 +235,26 @@ class GameServerContainerDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Linux-specific modifications that are applied to the default Docker container
+   * configuration, such as Linux capabilities. For more information see <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+   */
+  inline const LinuxCapabilities& GetLinuxCapabilities() const { return m_linuxCapabilities; }
+  inline bool LinuxCapabilitiesHasBeenSet() const { return m_linuxCapabilitiesHasBeenSet; }
+  template <typename LinuxCapabilitiesT = LinuxCapabilities>
+  void SetLinuxCapabilities(LinuxCapabilitiesT&& value) {
+    m_linuxCapabilitiesHasBeenSet = true;
+    m_linuxCapabilities = std::forward<LinuxCapabilitiesT>(value);
+  }
+  template <typename LinuxCapabilitiesT = LinuxCapabilities>
+  GameServerContainerDefinition& WithLinuxCapabilities(LinuxCapabilitiesT&& value) {
+    SetLinuxCapabilities(std::forward<LinuxCapabilitiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_containerName;
 
@@ -246,6 +271,8 @@ class GameServerContainerDefinition {
   Aws::String m_resolvedImageDigest;
 
   Aws::String m_serverSdkVersion;
+
+  LinuxCapabilities m_linuxCapabilities;
   bool m_containerNameHasBeenSet = false;
   bool m_dependsOnHasBeenSet = false;
   bool m_mountPointsHasBeenSet = false;
@@ -254,6 +281,7 @@ class GameServerContainerDefinition {
   bool m_portConfigurationHasBeenSet = false;
   bool m_resolvedImageDigestHasBeenSet = false;
   bool m_serverSdkVersionHasBeenSet = false;
+  bool m_linuxCapabilitiesHasBeenSet = false;
 };
 
 }  // namespace Model

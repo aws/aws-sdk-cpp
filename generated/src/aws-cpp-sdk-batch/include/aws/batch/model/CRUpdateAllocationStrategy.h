@@ -10,7 +10,14 @@
 namespace Aws {
 namespace Batch {
 namespace Model {
-enum class CRUpdateAllocationStrategy { NOT_SET, BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED, SPOT_PRICE_CAPACITY_OPTIMIZED };
+enum class CRUpdateAllocationStrategy {
+  NOT_SET,
+  BEST_FIT_PROGRESSIVE,
+  BEST_FIT_PROGRESSIVE_ORDERED,
+  SPOT_CAPACITY_OPTIMIZED,
+  SPOT_PRICE_CAPACITY_OPTIMIZED,
+  SPOT_CAPACITY_OPTIMIZED_PRIORITIZED
+};
 
 namespace CRUpdateAllocationStrategyMapper {
 AWS_BATCH_API CRUpdateAllocationStrategy GetCRUpdateAllocationStrategyForName(const Aws::String& name);

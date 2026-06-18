@@ -34,6 +34,14 @@ Aws::String AddPermissionRequest::SerializePayload() const {
     payload.WithString("SourceArn", m_sourceArn);
   }
 
+  if (m_functionUrlAuthTypeHasBeenSet) {
+    payload.WithString("FunctionUrlAuthType", FunctionUrlAuthTypeMapper::GetNameForFunctionUrlAuthType(m_functionUrlAuthType));
+  }
+
+  if (m_invokedViaFunctionUrlHasBeenSet) {
+    payload.WithBool("InvokedViaFunctionUrl", m_invokedViaFunctionUrl);
+  }
+
   if (m_sourceAccountHasBeenSet) {
     payload.WithString("SourceAccount", m_sourceAccount);
   }
@@ -48,14 +56,6 @@ Aws::String AddPermissionRequest::SerializePayload() const {
 
   if (m_principalOrgIDHasBeenSet) {
     payload.WithString("PrincipalOrgID", m_principalOrgID);
-  }
-
-  if (m_functionUrlAuthTypeHasBeenSet) {
-    payload.WithString("FunctionUrlAuthType", FunctionUrlAuthTypeMapper::GetNameForFunctionUrlAuthType(m_functionUrlAuthType));
-  }
-
-  if (m_invokedViaFunctionUrlHasBeenSet) {
-    payload.WithBool("InvokedViaFunctionUrl", m_invokedViaFunctionUrl);
   }
 
   return payload.View().WriteReadable();

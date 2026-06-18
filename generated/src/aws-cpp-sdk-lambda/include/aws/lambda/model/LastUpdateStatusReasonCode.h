@@ -33,6 +33,7 @@ enum class LastUpdateStatusReasonCode {
   InvalidRuntime,
   InvalidZipFileException,
   FunctionError,
+  ServiceQuotaExceededException,
   VcpuLimitExceeded,
   CapacityProviderScalingLimitExceeded,
   InsufficientCapacity,

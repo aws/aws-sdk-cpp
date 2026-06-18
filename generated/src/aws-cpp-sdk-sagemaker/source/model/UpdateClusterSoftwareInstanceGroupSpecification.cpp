@@ -22,6 +22,10 @@ UpdateClusterSoftwareInstanceGroupSpecification& UpdateClusterSoftwareInstanceGr
     m_instanceGroupName = jsonValue.GetString("InstanceGroupName");
     m_instanceGroupNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ImageReleaseVersion")) {
+    m_imageReleaseVersion = jsonValue.GetString("ImageReleaseVersion");
+    m_imageReleaseVersionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue UpdateClusterSoftwareInstanceGroupSpecification::Jsonize() const {
 
   if (m_instanceGroupNameHasBeenSet) {
     payload.WithString("InstanceGroupName", m_instanceGroupName);
+  }
+
+  if (m_imageReleaseVersionHasBeenSet) {
+    payload.WithString("ImageReleaseVersion", m_imageReleaseVersion);
   }
 
   return payload;

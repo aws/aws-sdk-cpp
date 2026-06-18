@@ -237,6 +237,8 @@
 #include <aws/sagemaker/model/ClarifyTextConfig.h>
 #include <aws/sagemaker/model/ClarifyTextGranularity.h>
 #include <aws/sagemaker/model/ClarifyTextLanguage.h>
+#include <aws/sagemaker/model/ClusterAutoPatchConfig.h>
+#include <aws/sagemaker/model/ClusterAutoPatchConfigDetails.h>
 #include <aws/sagemaker/model/ClusterAutoScalerType.h>
 #include <aws/sagemaker/model/ClusterAutoScalingConfig.h>
 #include <aws/sagemaker/model/ClusterAutoScalingConfigOutput.h>
@@ -282,6 +284,9 @@
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterOrchestratorEksConfig.h>
 #include <aws/sagemaker/model/ClusterOrchestratorSlurmConfig.h>
+#include <aws/sagemaker/model/ClusterPatchSchedule.h>
+#include <aws/sagemaker/model/ClusterPatchScheduleDetails.h>
+#include <aws/sagemaker/model/ClusterPatchingStrategy.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupDetails.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupsConfig.h>

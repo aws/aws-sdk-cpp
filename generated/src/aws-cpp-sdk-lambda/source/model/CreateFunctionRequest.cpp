@@ -51,6 +51,10 @@ Aws::String CreateFunctionRequest::SerializePayload() const {
     payload.WithBool("Publish", m_publish);
   }
 
+  if (m_publishToHasBeenSet) {
+    payload.WithString("PublishTo", FunctionVersionLatestPublishedMapper::GetNameForFunctionVersionLatestPublished(m_publishTo));
+  }
+
   if (m_vpcConfigHasBeenSet) {
     payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
   }
@@ -99,12 +103,12 @@ Aws::String CreateFunctionRequest::SerializePayload() const {
     payload.WithArray("FileSystemConfigs", std::move(fileSystemConfigsJsonList));
   }
 
-  if (m_imageConfigHasBeenSet) {
-    payload.WithObject("ImageConfig", m_imageConfig.Jsonize());
-  }
-
   if (m_codeSigningConfigArnHasBeenSet) {
     payload.WithString("CodeSigningConfigArn", m_codeSigningConfigArn);
+  }
+
+  if (m_imageConfigHasBeenSet) {
+    payload.WithObject("ImageConfig", m_imageConfig.Jsonize());
   }
 
   if (m_architecturesHasBeenSet) {
@@ -127,20 +131,16 @@ Aws::String CreateFunctionRequest::SerializePayload() const {
     payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
   }
 
+  if (m_tenancyConfigHasBeenSet) {
+    payload.WithObject("TenancyConfig", m_tenancyConfig.Jsonize());
+  }
+
   if (m_capacityProviderConfigHasBeenSet) {
     payload.WithObject("CapacityProviderConfig", m_capacityProviderConfig.Jsonize());
   }
 
-  if (m_publishToHasBeenSet) {
-    payload.WithString("PublishTo", FunctionVersionLatestPublishedMapper::GetNameForFunctionVersionLatestPublished(m_publishTo));
-  }
-
   if (m_durableConfigHasBeenSet) {
     payload.WithObject("DurableConfig", m_durableConfig.Jsonize());
-  }
-
-  if (m_tenancyConfigHasBeenSet) {
-    payload.WithObject("TenancyConfig", m_tenancyConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();

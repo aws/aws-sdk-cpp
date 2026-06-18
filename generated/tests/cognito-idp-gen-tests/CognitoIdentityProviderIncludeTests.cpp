@@ -309,6 +309,7 @@
 #include <aws/cognito-idp/model/S3ConfigurationType.h>
 #include <aws/cognito-idp/model/SMSMfaSettingsType.h>
 #include <aws/cognito-idp/model/SchemaAttributeType.h>
+#include <aws/cognito-idp/model/SecurityPolicyType.h>
 #include <aws/cognito-idp/model/SetLogDeliveryConfigurationRequest.h>
 #include <aws/cognito-idp/model/SetLogDeliveryConfigurationResult.h>
 #include <aws/cognito-idp/model/SetRiskConfigurationRequest.h>

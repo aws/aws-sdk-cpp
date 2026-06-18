@@ -156,6 +156,31 @@ class UpdateFunctionCodeRequest : public LambdaRequest {
 
   ///@{
   /**
+   * <p>The instruction set architecture that the function supports. Enter a string
+   * array with one of the valid values (arm64 or x86_64). The default value is
+   * <code>x86_64</code>.</p>
+   */
+  inline const Aws::Vector<Architecture>& GetArchitectures() const { return m_architectures; }
+  inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
+  template <typename ArchitecturesT = Aws::Vector<Architecture>>
+  void SetArchitectures(ArchitecturesT&& value) {
+    m_architecturesHasBeenSet = true;
+    m_architectures = std::forward<ArchitecturesT>(value);
+  }
+  template <typename ArchitecturesT = Aws::Vector<Architecture>>
+  UpdateFunctionCodeRequest& WithArchitectures(ArchitecturesT&& value) {
+    SetArchitectures(std::forward<ArchitecturesT>(value));
+    return *this;
+  }
+  inline UpdateFunctionCodeRequest& AddArchitectures(Architecture value) {
+    m_architecturesHasBeenSet = true;
+    m_architectures.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Set to true to publish a new version of the function after updating the code.
    * This has the same effect as calling <a>PublishVersion</a> separately.</p>
    */
@@ -167,6 +192,22 @@ class UpdateFunctionCodeRequest : public LambdaRequest {
   }
   inline UpdateFunctionCodeRequest& WithPublish(bool value) {
     SetPublish(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies where to publish the function version or configuration.</p>
+   */
+  inline FunctionVersionLatestPublished GetPublishTo() const { return m_publishTo; }
+  inline bool PublishToHasBeenSet() const { return m_publishToHasBeenSet; }
+  inline void SetPublishTo(FunctionVersionLatestPublished value) {
+    m_publishToHasBeenSet = true;
+    m_publishTo = value;
+  }
+  inline UpdateFunctionCodeRequest& WithPublishTo(FunctionVersionLatestPublished value) {
+    SetPublishTo(value);
     return *this;
   }
   ///@}
@@ -210,31 +251,6 @@ class UpdateFunctionCodeRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>The instruction set architecture that the function supports. Enter a string
-   * array with one of the valid values (arm64 or x86_64). The default value is
-   * <code>x86_64</code>.</p>
-   */
-  inline const Aws::Vector<Architecture>& GetArchitectures() const { return m_architectures; }
-  inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
-  template <typename ArchitecturesT = Aws::Vector<Architecture>>
-  void SetArchitectures(ArchitecturesT&& value) {
-    m_architecturesHasBeenSet = true;
-    m_architectures = std::forward<ArchitecturesT>(value);
-  }
-  template <typename ArchitecturesT = Aws::Vector<Architecture>>
-  UpdateFunctionCodeRequest& WithArchitectures(ArchitecturesT&& value) {
-    SetArchitectures(std::forward<ArchitecturesT>(value));
-    return *this;
-  }
-  inline UpdateFunctionCodeRequest& AddArchitectures(Architecture value) {
-    m_architecturesHasBeenSet = true;
-    m_architectures.push_back(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ARN of the Key Management Service (KMS) customer managed key that's used
    * to encrypt your function's .zip deployment package. If you don't provide a
    * customer managed key, Lambda uses an Amazon Web Services managed key.</p>
@@ -252,22 +268,6 @@ class UpdateFunctionCodeRequest : public LambdaRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Specifies where to publish the function version or configuration.</p>
-   */
-  inline FunctionVersionLatestPublished GetPublishTo() const { return m_publishTo; }
-  inline bool PublishToHasBeenSet() const { return m_publishToHasBeenSet; }
-  inline void SetPublishTo(FunctionVersionLatestPublished value) {
-    m_publishToHasBeenSet = true;
-    m_publishTo = value;
-  }
-  inline UpdateFunctionCodeRequest& WithPublishTo(FunctionVersionLatestPublished value) {
-    SetPublishTo(value);
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_functionName;
 
@@ -281,29 +281,29 @@ class UpdateFunctionCodeRequest : public LambdaRequest {
 
   Aws::String m_imageUri;
 
+  Aws::Vector<Architecture> m_architectures;
+
   bool m_publish{false};
+
+  FunctionVersionLatestPublished m_publishTo{FunctionVersionLatestPublished::NOT_SET};
 
   bool m_dryRun{false};
 
   Aws::String m_revisionId;
 
-  Aws::Vector<Architecture> m_architectures;
-
   Aws::String m_sourceKMSKeyArn;
-
-  FunctionVersionLatestPublished m_publishTo{FunctionVersionLatestPublished::NOT_SET};
   bool m_functionNameHasBeenSet = false;
   bool m_zipFileHasBeenSet = false;
   bool m_s3BucketHasBeenSet = false;
   bool m_s3KeyHasBeenSet = false;
   bool m_s3ObjectVersionHasBeenSet = false;
   bool m_imageUriHasBeenSet = false;
+  bool m_architecturesHasBeenSet = false;
   bool m_publishHasBeenSet = false;
+  bool m_publishToHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
-  bool m_architecturesHasBeenSet = false;
   bool m_sourceKMSKeyArnHasBeenSet = false;
-  bool m_publishToHasBeenSet = false;
 };
 
 }  // namespace Model

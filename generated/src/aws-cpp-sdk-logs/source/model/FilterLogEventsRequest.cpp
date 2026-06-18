@@ -55,6 +55,10 @@ Aws::String FilterLogEventsRequest::SerializePayload() const {
     payload.WithInteger("limit", m_limit);
   }
 
+  if (m_startFromHeadHasBeenSet) {
+    payload.WithBool("startFromHead", m_startFromHead);
+  }
+
   if (m_unmaskHasBeenSet) {
     payload.WithBool("unmask", m_unmask);
   }

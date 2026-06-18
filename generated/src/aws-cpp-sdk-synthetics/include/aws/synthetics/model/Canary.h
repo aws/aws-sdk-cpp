@@ -17,6 +17,7 @@
 #include <aws/synthetics/model/CanaryTimeline.h>
 #include <aws/synthetics/model/DryRunConfigOutput.h>
 #include <aws/synthetics/model/EngineConfig.h>
+#include <aws/synthetics/model/MultiLocationConfig.h>
 #include <aws/synthetics/model/ProvisionedResourceCleanupSetting.h>
 #include <aws/synthetics/model/VisualReferenceOutput.h>
 #include <aws/synthetics/model/VpcConfigOutput.h>
@@ -441,6 +442,26 @@ class Canary {
 
   ///@{
   /**
+   * <p>If this canary is part of a multi-location configuration, this structure
+   * contains information about the canary's location type, primary location, and
+   * replicas.</p>
+   */
+  inline const MultiLocationConfig& GetMultiLocationConfig() const { return m_multiLocationConfig; }
+  inline bool MultiLocationConfigHasBeenSet() const { return m_multiLocationConfigHasBeenSet; }
+  template <typename MultiLocationConfigT = MultiLocationConfig>
+  void SetMultiLocationConfig(MultiLocationConfigT&& value) {
+    m_multiLocationConfigHasBeenSet = true;
+    m_multiLocationConfig = std::forward<MultiLocationConfigT>(value);
+  }
+  template <typename MultiLocationConfigT = MultiLocationConfig>
+  Canary& WithMultiLocationConfig(MultiLocationConfigT&& value) {
+    SetMultiLocationConfig(std::forward<MultiLocationConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of key-value pairs that are associated with the canary.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -539,6 +560,8 @@ class Canary {
 
   Aws::Vector<VisualReferenceOutput> m_visualReferences;
 
+  MultiLocationConfig m_multiLocationConfig;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   ArtifactConfigOutput m_artifactConfig;
@@ -563,6 +586,7 @@ class Canary {
   bool m_browserConfigsHasBeenSet = false;
   bool m_engineConfigsHasBeenSet = false;
   bool m_visualReferencesHasBeenSet = false;
+  bool m_multiLocationConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_artifactConfigHasBeenSet = false;
   bool m_dryRunConfigHasBeenSet = false;

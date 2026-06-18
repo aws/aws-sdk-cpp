@@ -555,39 +555,6 @@ class GetFunctionConfigurationResult {
 
   ///@{
   /**
-   * <p>The type of deployment package. Set to <code>Image</code> for container image
-   * and set <code>Zip</code> for .zip file archive.</p>
-   */
-  inline PackageType GetPackageType() const { return m_packageType; }
-  inline void SetPackageType(PackageType value) {
-    m_packageTypeHasBeenSet = true;
-    m_packageType = value;
-  }
-  inline GetFunctionConfigurationResult& WithPackageType(PackageType value) {
-    SetPackageType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The function's image configuration values.</p>
-   */
-  inline const ImageConfigResponse& GetImageConfigResponse() const { return m_imageConfigResponse; }
-  template <typename ImageConfigResponseT = ImageConfigResponse>
-  void SetImageConfigResponse(ImageConfigResponseT&& value) {
-    m_imageConfigResponseHasBeenSet = true;
-    m_imageConfigResponse = std::forward<ImageConfigResponseT>(value);
-  }
-  template <typename ImageConfigResponseT = ImageConfigResponse>
-  GetFunctionConfigurationResult& WithImageConfigResponse(ImageConfigResponseT&& value) {
-    SetImageConfigResponse(std::forward<ImageConfigResponseT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ARN of the signing profile version.</p>
    */
   inline const Aws::String& GetSigningProfileVersionArn() const { return m_signingProfileVersionArn; }
@@ -616,6 +583,39 @@ class GetFunctionConfigurationResult {
   template <typename SigningJobArnT = Aws::String>
   GetFunctionConfigurationResult& WithSigningJobArn(SigningJobArnT&& value) {
     SetSigningJobArn(std::forward<SigningJobArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of deployment package. Set to <code>Image</code> for container image
+   * and set <code>Zip</code> for .zip file archive.</p>
+   */
+  inline PackageType GetPackageType() const { return m_packageType; }
+  inline void SetPackageType(PackageType value) {
+    m_packageTypeHasBeenSet = true;
+    m_packageType = value;
+  }
+  inline GetFunctionConfigurationResult& WithPackageType(PackageType value) {
+    SetPackageType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The function's image configuration values.</p>
+   */
+  inline const ImageConfigResponse& GetImageConfigResponse() const { return m_imageConfigResponse; }
+  template <typename ImageConfigResponseT = ImageConfigResponse>
+  void SetImageConfigResponse(ImageConfigResponseT&& value) {
+    m_imageConfigResponseHasBeenSet = true;
+    m_imageConfigResponse = std::forward<ImageConfigResponseT>(value);
+  }
+  template <typename ImageConfigResponseT = ImageConfigResponse>
+  GetFunctionConfigurationResult& WithImageConfigResponse(ImageConfigResponseT&& value) {
+    SetImageConfigResponse(std::forward<ImageConfigResponseT>(value));
     return *this;
   }
   ///@}
@@ -722,6 +722,25 @@ class GetFunctionConfigurationResult {
 
   ///@{
   /**
+   * <p>The function's tenant isolation configuration settings. Determines whether
+   * the Lambda function runs on a shared or dedicated infrastructure per unique
+   * tenant.</p>
+   */
+  inline const TenancyConfig& GetTenancyConfig() const { return m_tenancyConfig; }
+  template <typename TenancyConfigT = TenancyConfig>
+  void SetTenancyConfig(TenancyConfigT&& value) {
+    m_tenancyConfigHasBeenSet = true;
+    m_tenancyConfig = std::forward<TenancyConfigT>(value);
+  }
+  template <typename TenancyConfigT = TenancyConfig>
+  GetFunctionConfigurationResult& WithTenancyConfig(TenancyConfigT&& value) {
+    SetTenancyConfig(std::forward<TenancyConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration for the capacity provider that manages compute resources for
    * Lambda functions.</p>
    */
@@ -769,25 +788,6 @@ class GetFunctionConfigurationResult {
   template <typename DurableConfigT = DurableConfig>
   GetFunctionConfigurationResult& WithDurableConfig(DurableConfigT&& value) {
     SetDurableConfig(std::forward<DurableConfigT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The function's tenant isolation configuration settings. Determines whether
-   * the Lambda function runs on a shared or dedicated infrastructure per unique
-   * tenant.</p>
-   */
-  inline const TenancyConfig& GetTenancyConfig() const { return m_tenancyConfig; }
-  template <typename TenancyConfigT = TenancyConfig>
-  void SetTenancyConfig(TenancyConfigT&& value) {
-    m_tenancyConfigHasBeenSet = true;
-    m_tenancyConfig = std::forward<TenancyConfigT>(value);
-  }
-  template <typename TenancyConfigT = TenancyConfig>
-  GetFunctionConfigurationResult& WithTenancyConfig(TenancyConfigT&& value) {
-    SetTenancyConfig(std::forward<TenancyConfigT>(value));
     return *this;
   }
   ///@}
@@ -863,13 +863,13 @@ class GetFunctionConfigurationResult {
 
   Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
 
-  PackageType m_packageType{PackageType::NOT_SET};
-
-  ImageConfigResponse m_imageConfigResponse;
-
   Aws::String m_signingProfileVersionArn;
 
   Aws::String m_signingJobArn;
+
+  PackageType m_packageType{PackageType::NOT_SET};
+
+  ImageConfigResponse m_imageConfigResponse;
 
   Aws::Vector<Architecture> m_architectures;
 
@@ -881,13 +881,13 @@ class GetFunctionConfigurationResult {
 
   LoggingConfig m_loggingConfig;
 
+  TenancyConfig m_tenancyConfig;
+
   CapacityProviderConfig m_capacityProviderConfig;
 
   Aws::String m_configSha256;
 
   DurableConfig m_durableConfig;
-
-  TenancyConfig m_tenancyConfig;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
@@ -918,19 +918,19 @@ class GetFunctionConfigurationResult {
   bool m_lastUpdateStatusReasonHasBeenSet = false;
   bool m_lastUpdateStatusReasonCodeHasBeenSet = false;
   bool m_fileSystemConfigsHasBeenSet = false;
-  bool m_packageTypeHasBeenSet = false;
-  bool m_imageConfigResponseHasBeenSet = false;
   bool m_signingProfileVersionArnHasBeenSet = false;
   bool m_signingJobArnHasBeenSet = false;
+  bool m_packageTypeHasBeenSet = false;
+  bool m_imageConfigResponseHasBeenSet = false;
   bool m_architecturesHasBeenSet = false;
   bool m_ephemeralStorageHasBeenSet = false;
   bool m_snapStartHasBeenSet = false;
   bool m_runtimeVersionConfigHasBeenSet = false;
   bool m_loggingConfigHasBeenSet = false;
+  bool m_tenancyConfigHasBeenSet = false;
   bool m_capacityProviderConfigHasBeenSet = false;
   bool m_configSha256HasBeenSet = false;
   bool m_durableConfigHasBeenSet = false;
-  bool m_tenancyConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

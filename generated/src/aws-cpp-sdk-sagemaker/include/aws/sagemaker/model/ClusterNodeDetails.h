@@ -364,6 +364,43 @@ class ClusterNodeDetails {
 
   ///@{
   /**
+   * <p>The version of the HyperPod-managed AMI currently running on the node.</p>
+   */
+  inline const Aws::String& GetCurrentImageReleaseVersion() const { return m_currentImageReleaseVersion; }
+  inline bool CurrentImageReleaseVersionHasBeenSet() const { return m_currentImageReleaseVersionHasBeenSet; }
+  template <typename CurrentImageReleaseVersionT = Aws::String>
+  void SetCurrentImageReleaseVersion(CurrentImageReleaseVersionT&& value) {
+    m_currentImageReleaseVersionHasBeenSet = true;
+    m_currentImageReleaseVersion = std::forward<CurrentImageReleaseVersionT>(value);
+  }
+  template <typename CurrentImageReleaseVersionT = Aws::String>
+  ClusterNodeDetails& WithCurrentImageReleaseVersion(CurrentImageReleaseVersionT&& value) {
+    SetCurrentImageReleaseVersion(std::forward<CurrentImageReleaseVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The desired version of the HyperPod-managed AMI for the node. This may differ
+   * from the current version when an update is pending.</p>
+   */
+  inline const Aws::String& GetDesiredImageReleaseVersion() const { return m_desiredImageReleaseVersion; }
+  inline bool DesiredImageReleaseVersionHasBeenSet() const { return m_desiredImageReleaseVersionHasBeenSet; }
+  template <typename DesiredImageReleaseVersionT = Aws::String>
+  void SetDesiredImageReleaseVersion(DesiredImageReleaseVersionT&& value) {
+    m_desiredImageReleaseVersionHasBeenSet = true;
+    m_desiredImageReleaseVersion = std::forward<DesiredImageReleaseVersionT>(value);
+  }
+  template <typename DesiredImageReleaseVersionT = Aws::String>
+  ClusterNodeDetails& WithDesiredImageReleaseVersion(DesiredImageReleaseVersionT&& value) {
+    SetDesiredImageReleaseVersion(std::forward<DesiredImageReleaseVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the image version for the cluster node.</p>
    */
   inline ClusterImageVersionStatus GetImageVersionStatus() const { return m_imageVersionStatus; }
@@ -487,6 +524,10 @@ class ClusterNodeDetails {
 
   Aws::String m_desiredImageId;
 
+  Aws::String m_currentImageReleaseVersion;
+
+  Aws::String m_desiredImageReleaseVersion;
+
   ClusterImageVersionStatus m_imageVersionStatus{ClusterImageVersionStatus::NOT_SET};
 
   UltraServerInfo m_ultraServerInfo;
@@ -513,6 +554,8 @@ class ClusterNodeDetails {
   bool m_placementHasBeenSet = false;
   bool m_currentImageIdHasBeenSet = false;
   bool m_desiredImageIdHasBeenSet = false;
+  bool m_currentImageReleaseVersionHasBeenSet = false;
+  bool m_desiredImageReleaseVersionHasBeenSet = false;
   bool m_imageVersionStatusHasBeenSet = false;
   bool m_ultraServerInfoHasBeenSet = false;
   bool m_kubernetesConfigHasBeenSet = false;

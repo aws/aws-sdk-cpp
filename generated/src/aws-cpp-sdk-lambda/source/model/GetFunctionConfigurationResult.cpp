@@ -137,14 +137,6 @@ GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator=(const 
     }
     m_fileSystemConfigsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("PackageType")) {
-    m_packageType = PackageTypeMapper::GetPackageTypeForName(jsonValue.GetString("PackageType"));
-    m_packageTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ImageConfigResponse")) {
-    m_imageConfigResponse = jsonValue.GetObject("ImageConfigResponse");
-    m_imageConfigResponseHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("SigningProfileVersionArn")) {
     m_signingProfileVersionArn = jsonValue.GetString("SigningProfileVersionArn");
     m_signingProfileVersionArnHasBeenSet = true;
@@ -152,6 +144,14 @@ GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator=(const 
   if (jsonValue.ValueExists("SigningJobArn")) {
     m_signingJobArn = jsonValue.GetString("SigningJobArn");
     m_signingJobArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PackageType")) {
+    m_packageType = PackageTypeMapper::GetPackageTypeForName(jsonValue.GetString("PackageType"));
+    m_packageTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ImageConfigResponse")) {
+    m_imageConfigResponse = jsonValue.GetObject("ImageConfigResponse");
+    m_imageConfigResponseHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Architectures")) {
     Aws::Utils::Array<JsonView> architecturesJsonList = jsonValue.GetArray("Architectures");
@@ -176,6 +176,10 @@ GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator=(const 
     m_loggingConfig = jsonValue.GetObject("LoggingConfig");
     m_loggingConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TenancyConfig")) {
+    m_tenancyConfig = jsonValue.GetObject("TenancyConfig");
+    m_tenancyConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CapacityProviderConfig")) {
     m_capacityProviderConfig = jsonValue.GetObject("CapacityProviderConfig");
     m_capacityProviderConfigHasBeenSet = true;
@@ -187,10 +191,6 @@ GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator=(const 
   if (jsonValue.ValueExists("DurableConfig")) {
     m_durableConfig = jsonValue.GetObject("DurableConfig");
     m_durableConfigHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("TenancyConfig")) {
-    m_tenancyConfig = jsonValue.GetObject("TenancyConfig");
-    m_tenancyConfigHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

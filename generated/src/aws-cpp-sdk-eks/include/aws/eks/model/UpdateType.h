@@ -29,7 +29,8 @@ enum class UpdateType {
   DeletionProtectionUpdate,
   CapabilityUpdate,
   ControlPlaneScalingConfigUpdate,
-  VendedLogsUpdate
+  VendedLogsUpdate,
+  ControlPlaneEgressUpdate
 };
 
 namespace UpdateTypeMapper {

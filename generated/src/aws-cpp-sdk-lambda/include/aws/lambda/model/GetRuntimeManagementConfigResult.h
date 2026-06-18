@@ -45,6 +45,23 @@ class GetRuntimeManagementConfigResult {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of your function.</p>
+   */
+  inline const Aws::String& GetFunctionArn() const { return m_functionArn; }
+  template <typename FunctionArnT = Aws::String>
+  void SetFunctionArn(FunctionArnT&& value) {
+    m_functionArnHasBeenSet = true;
+    m_functionArn = std::forward<FunctionArnT>(value);
+  }
+  template <typename FunctionArnT = Aws::String>
+  GetRuntimeManagementConfigResult& WithFunctionArn(FunctionArnT&& value) {
+    SetFunctionArn(std::forward<FunctionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ARN of the runtime the function is configured to use. If the runtime
    * update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code>
    * is returned.</p>
@@ -58,23 +75,6 @@ class GetRuntimeManagementConfigResult {
   template <typename RuntimeVersionArnT = Aws::String>
   GetRuntimeManagementConfigResult& WithRuntimeVersionArn(RuntimeVersionArnT&& value) {
     SetRuntimeVersionArn(std::forward<RuntimeVersionArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) of your function.</p>
-   */
-  inline const Aws::String& GetFunctionArn() const { return m_functionArn; }
-  template <typename FunctionArnT = Aws::String>
-  void SetFunctionArn(FunctionArnT&& value) {
-    m_functionArnHasBeenSet = true;
-    m_functionArn = std::forward<FunctionArnT>(value);
-  }
-  template <typename FunctionArnT = Aws::String>
-  GetRuntimeManagementConfigResult& WithFunctionArn(FunctionArnT&& value) {
-    SetFunctionArn(std::forward<FunctionArnT>(value));
     return *this;
   }
   ///@}
@@ -98,15 +98,15 @@ class GetRuntimeManagementConfigResult {
  private:
   UpdateRuntimeOn m_updateRuntimeOn{UpdateRuntimeOn::NOT_SET};
 
-  Aws::String m_runtimeVersionArn;
-
   Aws::String m_functionArn;
+
+  Aws::String m_runtimeVersionArn;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_updateRuntimeOnHasBeenSet = false;
-  bool m_runtimeVersionArnHasBeenSet = false;
   bool m_functionArnHasBeenSet = false;
+  bool m_runtimeVersionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -103,12 +103,13 @@ class Player {
   ///@{
   /**
    * <p>A set of values, expressed in milliseconds, that indicates the amount of
-   * latency that a player experiences when connected to Amazon Web Services Regions.
-   * If this property is present, FlexMatch considers placing the match only in
-   * Regions for which latency is reported. </p> <p>If a matchmaker has a rule that
-   * evaluates player latency, players must report latency in order to be matched. If
-   * no latency is reported in this scenario, FlexMatch assumes that no Regions are
-   * available to the player and the ticket is not matchable. </p>
+   * latency that a player experiences when connected to a fleet location (Amazon Web
+   * Services Regions or custom locations for Amazon GameLift Servers Anywhere
+   * fleets). If this property is present, FlexMatch considers placing the match only
+   * in Regions for which latency is reported. </p> <p>If a matchmaker has a rule
+   * that evaluates player latency, players must report latency in order to be
+   * matched. If no latency is reported in this scenario, FlexMatch assumes that no
+   * Regions are available to the player and the ticket is not matchable. </p>
    */
   inline const Aws::Map<Aws::String, int64_t>& GetLatencyInMs() const { return m_latencyInMs; }
   inline bool LatencyInMsHasBeenSet() const { return m_latencyInMsHasBeenSet; }
