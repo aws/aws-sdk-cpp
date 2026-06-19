@@ -38,6 +38,10 @@ EvaluationFormSingleSelectQuestionOption& EvaluationFormSingleSelectQuestionOpti
     m_automaticFailConfiguration = jsonValue.GetObject("AutomaticFailConfiguration");
     m_automaticFailConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PointsConfiguration")) {
+    m_pointsConfiguration = jsonValue.GetObject("PointsConfiguration");
+    m_pointsConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue EvaluationFormSingleSelectQuestionOption::Jsonize() const {
 
   if (m_automaticFailConfigurationHasBeenSet) {
     payload.WithObject("AutomaticFailConfiguration", m_automaticFailConfiguration.Jsonize());
+  }
+
+  if (m_pointsConfigurationHasBeenSet) {
+    payload.WithObject("PointsConfiguration", m_pointsConfiguration.Jsonize());
   }
 
   return payload;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/AutomaticFailConfiguration.h>
+#include <aws/connect/model/QuestionOptionPointsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -120,6 +121,24 @@ class EvaluationFormSingleSelectQuestionOption {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The points configuration for point-based scoring.</p>
+   */
+  inline const QuestionOptionPointsConfiguration& GetPointsConfiguration() const { return m_pointsConfiguration; }
+  inline bool PointsConfigurationHasBeenSet() const { return m_pointsConfigurationHasBeenSet; }
+  template <typename PointsConfigurationT = QuestionOptionPointsConfiguration>
+  void SetPointsConfiguration(PointsConfigurationT&& value) {
+    m_pointsConfigurationHasBeenSet = true;
+    m_pointsConfiguration = std::forward<PointsConfigurationT>(value);
+  }
+  template <typename PointsConfigurationT = QuestionOptionPointsConfiguration>
+  EvaluationFormSingleSelectQuestionOption& WithPointsConfiguration(PointsConfigurationT&& value) {
+    SetPointsConfiguration(std::forward<PointsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_refId;
 
@@ -130,11 +149,14 @@ class EvaluationFormSingleSelectQuestionOption {
   bool m_automaticFail{false};
 
   AutomaticFailConfiguration m_automaticFailConfiguration;
+
+  QuestionOptionPointsConfiguration m_pointsConfiguration;
   bool m_refIdHasBeenSet = false;
   bool m_textHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
   bool m_automaticFailHasBeenSet = false;
   bool m_automaticFailConfigurationHasBeenSet = false;
+  bool m_pointsConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

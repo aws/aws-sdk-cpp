@@ -952,14 +952,14 @@
 #include <aws/glue/model/SchemaVersionListItem.h>
 #include <aws/glue/model/SchemaVersionNumber.h>
 #include <aws/glue/model/SchemaVersionStatus.h>
+#include <aws/glue/model/SearchAssetsRequest.h>
+#include <aws/glue/model/SearchAssetsResult.h>
 #include <aws/glue/model/SearchAttributeFilter.h>
 #include <aws/glue/model/SearchFilterClause.h>
 #include <aws/glue/model/SearchFilterOperator.h>
 #include <aws/glue/model/SearchFilterValue.h>
 #include <aws/glue/model/SearchMapFilter.h>
 #include <aws/glue/model/SearchMapFilterValue.h>
-#include <aws/glue/model/SearchRequest.h>
-#include <aws/glue/model/SearchResult.h>
 #include <aws/glue/model/SearchResultItem.h>
 #include <aws/glue/model/SearchSort.h>
 #include <aws/glue/model/SearchSortOrder.h>

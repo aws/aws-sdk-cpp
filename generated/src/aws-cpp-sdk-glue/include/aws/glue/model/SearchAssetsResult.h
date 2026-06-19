@@ -23,11 +23,11 @@ class JsonValue;
 }  // namespace Utils
 namespace Glue {
 namespace Model {
-class SearchResult {
+class SearchAssetsResult {
  public:
-  AWS_GLUE_API SearchResult() = default;
-  AWS_GLUE_API SearchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_GLUE_API SearchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_GLUE_API SearchAssetsResult() = default;
+  AWS_GLUE_API SearchAssetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_GLUE_API SearchAssetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
   /**
@@ -40,12 +40,12 @@ class SearchResult {
     m_items = std::forward<ItemsT>(value);
   }
   template <typename ItemsT = Aws::Vector<SearchResultItem>>
-  SearchResult& WithItems(ItemsT&& value) {
+  SearchAssetsResult& WithItems(ItemsT&& value) {
     SetItems(std::forward<ItemsT>(value));
     return *this;
   }
   template <typename ItemsT = SearchResultItem>
-  SearchResult& AddItems(ItemsT&& value) {
+  SearchAssetsResult& AddItems(ItemsT&& value) {
     m_itemsHasBeenSet = true;
     m_items.emplace_back(std::forward<ItemsT>(value));
     return *this;
@@ -63,7 +63,7 @@ class SearchResult {
     m_nextToken = std::forward<NextTokenT>(value);
   }
   template <typename NextTokenT = Aws::String>
-  SearchResult& WithNextToken(NextTokenT&& value) {
+  SearchAssetsResult& WithNextToken(NextTokenT&& value) {
     SetNextToken(std::forward<NextTokenT>(value));
     return *this;
   }
@@ -78,7 +78,7 @@ class SearchResult {
     m_requestId = std::forward<RequestIdT>(value);
   }
   template <typename RequestIdT = Aws::String>
-  SearchResult& WithRequestId(RequestIdT&& value) {
+  SearchAssetsResult& WithRequestId(RequestIdT&& value) {
     SetRequestId(std::forward<RequestIdT>(value));
     return *this;
   }

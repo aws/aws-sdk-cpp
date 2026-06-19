@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/EvaluationFormScoreThreshold.h>
 #include <aws/connect/model/EvaluationFormScoringMode.h>
 #include <aws/connect/model/EvaluationFormScoringStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -64,12 +66,39 @@ class EvaluationFormScoringStrategy {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The score thresholds for performance categories.</p>
+   */
+  inline const Aws::Vector<EvaluationFormScoreThreshold>& GetScoreThresholds() const { return m_scoreThresholds; }
+  inline bool ScoreThresholdsHasBeenSet() const { return m_scoreThresholdsHasBeenSet; }
+  template <typename ScoreThresholdsT = Aws::Vector<EvaluationFormScoreThreshold>>
+  void SetScoreThresholds(ScoreThresholdsT&& value) {
+    m_scoreThresholdsHasBeenSet = true;
+    m_scoreThresholds = std::forward<ScoreThresholdsT>(value);
+  }
+  template <typename ScoreThresholdsT = Aws::Vector<EvaluationFormScoreThreshold>>
+  EvaluationFormScoringStrategy& WithScoreThresholds(ScoreThresholdsT&& value) {
+    SetScoreThresholds(std::forward<ScoreThresholdsT>(value));
+    return *this;
+  }
+  template <typename ScoreThresholdsT = EvaluationFormScoreThreshold>
+  EvaluationFormScoringStrategy& AddScoreThresholds(ScoreThresholdsT&& value) {
+    m_scoreThresholdsHasBeenSet = true;
+    m_scoreThresholds.emplace_back(std::forward<ScoreThresholdsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EvaluationFormScoringMode m_mode{EvaluationFormScoringMode::NOT_SET};
 
   EvaluationFormScoringStatus m_status{EvaluationFormScoringStatus::NOT_SET};
+
+  Aws::Vector<EvaluationFormScoreThreshold> m_scoreThresholds;
   bool m_modeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_scoreThresholdsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -72,6 +72,7 @@
 #include <aws/connect/model/GetCurrentMetricDataRequest.h>
 #include <aws/connect/model/GetCurrentUserDataRequest.h>
 #include <aws/connect/model/GetEffectiveHoursOfOperationsRequest.h>
+#include <aws/connect/model/GetEvaluationFormValidationRequest.h>
 #include <aws/connect/model/GetFederationTokenRequest.h>
 #include <aws/connect/model/GetFlowAssociationRequest.h>
 #include <aws/connect/model/GetMetricDataRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/ListDefaultVocabulariesRequest.h>
 #include <aws/connect/model/ListEntitySecurityProfilesRequest.h>
 #include <aws/connect/model/ListEvaluationFormVersionsRequest.h>
-#include <aws/connect/model/ListEvaluationFormsRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -1759,6 +1759,31 @@ GetEffectiveHoursOfOperationsOutcome ConnectClient::GetEffectiveHoursOfOperation
                             : GetEffectiveHoursOfOperationsOutcome(std::move(result.GetError()));
 }
 
+GetEvaluationFormValidationOutcome ConnectClient::GetEvaluationFormValidation(const GetEvaluationFormValidationRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetEvaluationFormValidation", "Required field: InstanceId, is not set");
+    return GetEvaluationFormValidationOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [InstanceId]", false));
+  }
+  if (!request.EvaluationFormIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetEvaluationFormValidation", "Required field: EvaluationFormId, is not set");
+    return GetEvaluationFormValidationOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [EvaluationFormId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/evaluation-forms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvaluationFormId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/validation-results");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEvaluationFormValidationOutcome(result.GetResultWithOwnership())
+                            : GetEvaluationFormValidationOutcome(std::move(result.GetError()));
+}
+
 GetFederationTokenOutcome ConnectClient::GetFederationToken(const GetFederationTokenRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetFederationToken", "Required field: InstanceId, is not set");
@@ -2470,22 +2495,4 @@ ListEvaluationFormVersionsOutcome ConnectClient::ListEvaluationFormVersions(cons
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListEvaluationFormVersionsOutcome(result.GetResultWithOwnership())
                             : ListEvaluationFormVersionsOutcome(std::move(result.GetError()));
-}
-
-ListEvaluationFormsOutcome ConnectClient::ListEvaluationForms(const ListEvaluationFormsRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListEvaluationForms", "Required field: InstanceId, is not set");
-    return ListEvaluationFormsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                           "Missing required field [InstanceId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/evaluation-forms/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ListEvaluationFormsOutcome(result.GetResultWithOwnership())
-                            : ListEvaluationFormsOutcome(std::move(result.GetError()));
 }

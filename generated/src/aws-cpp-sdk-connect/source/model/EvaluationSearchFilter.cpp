@@ -22,6 +22,10 @@ EvaluationSearchFilter& EvaluationSearchFilter::operator=(JsonView jsonValue) {
     m_attributeFilter = jsonValue.GetObject("AttributeFilter");
     m_attributeFilterHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContactEvaluationAttributeFilter")) {
+    m_contactEvaluationAttributeFilter = jsonValue.GetObject("ContactEvaluationAttributeFilter");
+    m_contactEvaluationAttributeFilterHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue EvaluationSearchFilter::Jsonize() const {
 
   if (m_attributeFilterHasBeenSet) {
     payload.WithObject("AttributeFilter", m_attributeFilter.Jsonize());
+  }
+
+  if (m_contactEvaluationAttributeFilterHasBeenSet) {
+    payload.WithObject("ContactEvaluationAttributeFilter", m_contactEvaluationAttributeFilter.Jsonize());
   }
 
   return payload;

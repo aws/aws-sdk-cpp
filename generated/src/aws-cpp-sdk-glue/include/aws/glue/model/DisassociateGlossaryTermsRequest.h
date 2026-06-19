@@ -36,16 +36,16 @@ class DisassociateGlossaryTermsRequest : public GlueRequest {
   /**
    * <p>The unique identifier of the asset to disassociate glossary terms from.</p>
    */
-  inline const Aws::String& GetIdentifier() const { return m_identifier; }
-  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-  template <typename IdentifierT = Aws::String>
-  void SetIdentifier(IdentifierT&& value) {
-    m_identifierHasBeenSet = true;
-    m_identifier = std::forward<IdentifierT>(value);
+  inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
+  inline bool AssetIdentifierHasBeenSet() const { return m_assetIdentifierHasBeenSet; }
+  template <typename AssetIdentifierT = Aws::String>
+  void SetAssetIdentifier(AssetIdentifierT&& value) {
+    m_assetIdentifierHasBeenSet = true;
+    m_assetIdentifier = std::forward<AssetIdentifierT>(value);
   }
-  template <typename IdentifierT = Aws::String>
-  DisassociateGlossaryTermsRequest& WithIdentifier(IdentifierT&& value) {
-    SetIdentifier(std::forward<IdentifierT>(value));
+  template <typename AssetIdentifierT = Aws::String>
+  DisassociateGlossaryTermsRequest& WithAssetIdentifier(AssetIdentifierT&& value) {
+    SetAssetIdentifier(std::forward<AssetIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -93,12 +93,12 @@ class DisassociateGlossaryTermsRequest : public GlueRequest {
   }
   ///@}
  private:
-  Aws::String m_identifier;
+  Aws::String m_assetIdentifier;
 
   Aws::Vector<Aws::String> m_glossaryTermIdentifiers;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_identifierHasBeenSet = false;
+  bool m_assetIdentifierHasBeenSet = false;
   bool m_glossaryTermIdentifiersHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };

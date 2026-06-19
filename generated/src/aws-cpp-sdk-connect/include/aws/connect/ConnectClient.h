@@ -5283,6 +5283,42 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the status and results of a validation process started by <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartEvaluationFormValidation.html">StartEvaluationFormValidation</a>.
+   * Returns the current execution status (<code>IN_PROGRESS</code>,
+   * <code>COMPLETED</code>, or <code>FAILED</code>), the validated form version, and
+   * when completed, a list of findings that identify structural issues and quality
+   * improvements for the evaluation form, and may include suggested fixes. If the
+   * validation failed, a reason is provided indicating the cause of the
+   * failure.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetEvaluationFormValidation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetEvaluationFormValidationOutcome GetEvaluationFormValidation(
+      const Model::GetEvaluationFormValidationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetEvaluationFormValidation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetEvaluationFormValidationRequestT = Model::GetEvaluationFormValidationRequest>
+  Model::GetEvaluationFormValidationOutcomeCallable GetEvaluationFormValidationCallable(
+      const GetEvaluationFormValidationRequestT& request) const {
+    return SubmitCallable(&ConnectClient::GetEvaluationFormValidation, request);
+  }
+
+  /**
+   * An Async wrapper for GetEvaluationFormValidation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetEvaluationFormValidationRequestT = Model::GetEvaluationFormValidationRequest>
+  void GetEvaluationFormValidationAsync(const GetEvaluationFormValidationRequestT& request,
+                                        const GetEvaluationFormValidationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::GetEvaluationFormValidation, request, handler, context);
+  }
+
+  /**
    * <p>Supports SAML sign-in for Connect Customer. Retrieves a token for federation.
    * The token is for the Connect Customer user which corresponds to the IAM
    * credentials that were used to invoke this action. </p> <p>For more information
@@ -8983,6 +9019,43 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   void StartEmailContactAsync(const StartEmailContactRequestT& request, const StartEmailContactResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::StartEmailContact, request, handler, context);
+  }
+
+  /**
+   * <p>Starts an asynchronous validation process for an evaluation form version in
+   * the specified Connect Customer instance. The validation first performs
+   * structural checks on the form content (such as verifying required fields, valid
+   * scoring configuration, and correct conditional logic), then asynchronously
+   * analyzes questions configured for generative AI evaluation against a set of best
+   * practices. Use <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetEvaluationFormValidation.html">GetEvaluationFormValidation</a>
+   * to retrieve the status and results once the validation completes.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartEvaluationFormValidation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartEvaluationFormValidationOutcome StartEvaluationFormValidation(
+      const Model::StartEvaluationFormValidationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartEvaluationFormValidation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartEvaluationFormValidationRequestT = Model::StartEvaluationFormValidationRequest>
+  Model::StartEvaluationFormValidationOutcomeCallable StartEvaluationFormValidationCallable(
+      const StartEvaluationFormValidationRequestT& request) const {
+    return SubmitCallable(&ConnectClient::StartEvaluationFormValidation, request);
+  }
+
+  /**
+   * An Async wrapper for StartEvaluationFormValidation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartEvaluationFormValidationRequestT = Model::StartEvaluationFormValidationRequest>
+  void StartEvaluationFormValidationAsync(const StartEvaluationFormValidationRequestT& request,
+                                          const StartEvaluationFormValidationResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::StartEvaluationFormValidation, request, handler, context);
   }
 
   /**

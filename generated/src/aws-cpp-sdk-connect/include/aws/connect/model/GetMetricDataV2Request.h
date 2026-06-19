@@ -201,8 +201,8 @@ class GetMetricDataV2Request : public ConnectRequest {
    * value examples (not exhaustive) for the
    * <code>contact/segmentAttributes/connect:Subtype</code> filter key.</p> </li>
    * <li> <p> <code>ROUTING_STEP_EXPRESSION</code> accepts a filter value up to 3,000
-   * characters in length. This filter is case-sensitive and order-sensitive. JSON
-   * string fields must be sorted in ascending order, and JSON array order must be
+   * characters in length. Filter values are case-sensitive. JSON object key order
+   * and whitespace may be arbitrary; array order and tree structure must be
    * preserved.</p> </li> <li> <p>TRUE and FALSE are the only valid filter values for
    * the <code>Q_CONNECT_ENABLED</code> filter key.</p> <ul> <li> <p>TRUE includes
    * all contacts that had Connect AI Agents enabled as part of the flow.</p> </li>

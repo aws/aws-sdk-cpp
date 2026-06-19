@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/IncludedData.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -69,12 +70,33 @@ class GetPromptRequest : public BedrockAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to
+   * return only resource metadata. Set to <code>ALL_DATA</code> or omit this field
+   * to return the full response.</p>
+   */
+  inline IncludedData GetIncludedData() const { return m_includedData; }
+  inline bool IncludedDataHasBeenSet() const { return m_includedDataHasBeenSet; }
+  inline void SetIncludedData(IncludedData value) {
+    m_includedDataHasBeenSet = true;
+    m_includedData = value;
+  }
+  inline GetPromptRequest& WithIncludedData(IncludedData value) {
+    SetIncludedData(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_promptIdentifier;
 
   Aws::String m_promptVersion;
+
+  IncludedData m_includedData{IncludedData::NOT_SET};
   bool m_promptIdentifierHasBeenSet = false;
   bool m_promptVersionHasBeenSet = false;
+  bool m_includedDataHasBeenSet = false;
 };
 
 }  // namespace Model

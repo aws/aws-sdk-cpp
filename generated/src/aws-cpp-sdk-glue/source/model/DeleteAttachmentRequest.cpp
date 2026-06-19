@@ -15,8 +15,16 @@ using namespace Aws::Utils;
 Aws::String DeleteAttachmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_identifierHasBeenSet) {
-    payload.WithString("Identifier", m_identifier);
+  if (m_assetIdentifierHasBeenSet) {
+    payload.WithString("AssetIdentifier", m_assetIdentifier);
+  }
+
+  if (m_iterableFormNameHasBeenSet) {
+    payload.WithString("IterableFormName", m_iterableFormName);
+  }
+
+  if (m_itemIdentifierHasBeenSet) {
+    payload.WithString("ItemIdentifier", m_itemIdentifier);
   }
 
   if (m_attachmentNameHasBeenSet) {

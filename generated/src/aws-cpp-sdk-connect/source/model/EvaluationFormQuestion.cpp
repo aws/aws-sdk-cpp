@@ -50,6 +50,10 @@ EvaluationFormQuestion& EvaluationFormQuestion::operator=(JsonView jsonValue) {
     m_weight = jsonValue.GetDouble("Weight");
     m_weightHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ScoringConfiguration")) {
+    m_scoringConfiguration = jsonValue.GetObject("ScoringConfiguration");
+    m_scoringConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue EvaluationFormQuestion::Jsonize() const {
 
   if (m_weightHasBeenSet) {
     payload.WithDouble("Weight", m_weight);
+  }
+
+  if (m_scoringConfigurationHasBeenSet) {
+    payload.WithObject("ScoringConfiguration", m_scoringConfiguration.Jsonize());
   }
 
   return payload;

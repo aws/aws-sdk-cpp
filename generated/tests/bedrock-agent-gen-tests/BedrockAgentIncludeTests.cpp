@@ -217,6 +217,7 @@
 #include <aws/bedrock-agent/model/HierarchicalChunkingLevelConfiguration.h>
 #include <aws/bedrock-agent/model/ImageExtractionConfiguration.h>
 #include <aws/bedrock-agent/model/IncludeExclude.h>
+#include <aws/bedrock-agent/model/IncludedData.h>
 #include <aws/bedrock-agent/model/IncompatibleConnectionDataTypeFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/IncompatibleLoopNodeType.h>
 #include <aws/bedrock-agent/model/InferenceConfiguration.h>

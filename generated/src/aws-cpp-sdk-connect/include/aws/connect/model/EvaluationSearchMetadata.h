@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/AutoEvaluationStatus.h>
 #include <aws/connect/model/ContactParticipantRole.h>
+#include <aws/connect/model/PerformanceCategoryName.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -311,6 +312,54 @@ class EvaluationSearchMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The points earned for the evaluation.</p>
+   */
+  inline int GetEarnedPoints() const { return m_earnedPoints; }
+  inline bool EarnedPointsHasBeenSet() const { return m_earnedPointsHasBeenSet; }
+  inline void SetEarnedPoints(int value) {
+    m_earnedPointsHasBeenSet = true;
+    m_earnedPoints = value;
+  }
+  inline EvaluationSearchMetadata& WithEarnedPoints(int value) {
+    SetEarnedPoints(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum base points possible for the evaluation.</p>
+   */
+  inline int GetMaxBasePoint() const { return m_maxBasePoint; }
+  inline bool MaxBasePointHasBeenSet() const { return m_maxBasePointHasBeenSet; }
+  inline void SetMaxBasePoint(int value) {
+    m_maxBasePointHasBeenSet = true;
+    m_maxBasePoint = value;
+  }
+  inline EvaluationSearchMetadata& WithMaxBasePoint(int value) {
+    SetMaxBasePoint(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The performance category for the evaluation score.</p>
+   */
+  inline PerformanceCategoryName GetPerformanceCategory() const { return m_performanceCategory; }
+  inline bool PerformanceCategoryHasBeenSet() const { return m_performanceCategoryHasBeenSet; }
+  inline void SetPerformanceCategory(PerformanceCategoryName value) {
+    m_performanceCategoryHasBeenSet = true;
+    m_performanceCategory = value;
+  }
+  inline EvaluationSearchMetadata& WithPerformanceCategory(PerformanceCategoryName value) {
+    SetPerformanceCategory(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_contactId;
 
@@ -343,6 +392,12 @@ class EvaluationSearchMetadata {
   ContactParticipantRole m_contactParticipantRole{ContactParticipantRole::NOT_SET};
 
   Aws::String m_contactParticipantId;
+
+  int m_earnedPoints{0};
+
+  int m_maxBasePoint{0};
+
+  PerformanceCategoryName m_performanceCategory{PerformanceCategoryName::NOT_SET};
   bool m_contactIdHasBeenSet = false;
   bool m_evaluatorArnHasBeenSet = false;
   bool m_contactAgentIdHasBeenSet = false;
@@ -359,6 +414,9 @@ class EvaluationSearchMetadata {
   bool m_reviewIdHasBeenSet = false;
   bool m_contactParticipantRoleHasBeenSet = false;
   bool m_contactParticipantIdHasBeenSet = false;
+  bool m_earnedPointsHasBeenSet = false;
+  bool m_maxBasePointHasBeenSet = false;
+  bool m_performanceCategoryHasBeenSet = false;
 };
 
 }  // namespace Model

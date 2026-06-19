@@ -22,9 +22,9 @@ DisassociateGlossaryTermsResult::DisassociateGlossaryTermsResult(const Aws::Amaz
 DisassociateGlossaryTermsResult& DisassociateGlossaryTermsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("Identifier")) {
-    m_identifier = jsonValue.GetString("Identifier");
-    m_identifierHasBeenSet = true;
+  if (jsonValue.ValueExists("AssetIdentifier")) {
+    m_assetIdentifier = jsonValue.GetString("AssetIdentifier");
+    m_assetIdentifierHasBeenSet = true;
   }
   if (jsonValue.ValueExists("GlossaryTerms")) {
     Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("GlossaryTerms");

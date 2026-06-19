@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/glue/model/SearchRequest.h>
+#include <aws/glue/model/SearchAssetsRequest.h>
 
 #include <utility>
 
@@ -12,7 +12,7 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SearchRequest::SerializePayload() const {
+Aws::String SearchAssetsRequest::SerializePayload() const {
   JsonValue payload;
 
   if (m_searchTextHasBeenSet) {
@@ -38,8 +38,8 @@ Aws::String SearchRequest::SerializePayload() const {
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection SearchRequest::GetRequestSpecificHeaders() const {
+Aws::Http::HeaderValueCollection SearchAssetsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSGlue.Search"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSGlue.SearchAssets"));
   return headers;
 }

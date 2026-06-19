@@ -164,6 +164,12 @@
 #include <aws/connect/model/ContactDataRequest.h>
 #include <aws/connect/model/ContactDetails.h>
 #include <aws/connect/model/ContactEvaluation.h>
+#include <aws/connect/model/ContactEvaluationAttributeAndCondition.h>
+#include <aws/connect/model/ContactEvaluationAttributeComparisonType.h>
+#include <aws/connect/model/ContactEvaluationAttributeCondition.h>
+#include <aws/connect/model/ContactEvaluationAttributeFilter.h>
+#include <aws/connect/model/ContactEvaluationAttributeKey.h>
+#include <aws/connect/model/ContactEvaluationAttributeValue.h>
 #include <aws/connect/model/ContactFilter.h>
 #include <aws/connect/model/ContactFlow.h>
 #include <aws/connect/model/ContactFlowAttributeAndCondition.h>
@@ -532,8 +538,10 @@
 #include <aws/connect/model/EvaluationFormQuestion.h>
 #include <aws/connect/model/EvaluationFormQuestionAutomationAnswerSource.h>
 #include <aws/connect/model/EvaluationFormQuestionAutomationAnswerSourceType.h>
+#include <aws/connect/model/EvaluationFormQuestionScoringConfiguration.h>
 #include <aws/connect/model/EvaluationFormQuestionType.h>
 #include <aws/connect/model/EvaluationFormQuestionTypeProperties.h>
+#include <aws/connect/model/EvaluationFormScoreThreshold.h>
 #include <aws/connect/model/EvaluationFormScoringMode.h>
 #include <aws/connect/model/EvaluationFormScoringStatus.h>
 #include <aws/connect/model/EvaluationFormScoringStrategy.h>
@@ -550,6 +558,10 @@
 #include <aws/connect/model/EvaluationFormTargetConfiguration.h>
 #include <aws/connect/model/EvaluationFormTextQuestionAutomation.h>
 #include <aws/connect/model/EvaluationFormTextQuestionProperties.h>
+#include <aws/connect/model/EvaluationFormValidationFinding.h>
+#include <aws/connect/model/EvaluationFormValidationFindingItem.h>
+#include <aws/connect/model/EvaluationFormValidationFindingSeverity.h>
+#include <aws/connect/model/EvaluationFormValidationStatus.h>
 #include <aws/connect/model/EvaluationFormVersionStatus.h>
 #include <aws/connect/model/EvaluationFormVersionSummary.h>
 #include <aws/connect/model/EvaluationGenAIAnswerAnalysisDetails.h>
@@ -615,6 +627,8 @@
 #include <aws/connect/model/GetCurrentUserDataResult.h>
 #include <aws/connect/model/GetEffectiveHoursOfOperationsRequest.h>
 #include <aws/connect/model/GetEffectiveHoursOfOperationsResult.h>
+#include <aws/connect/model/GetEvaluationFormValidationRequest.h>
+#include <aws/connect/model/GetEvaluationFormValidationResult.h>
 #include <aws/connect/model/GetFederationTokenRequest.h>
 #include <aws/connect/model/GetFederationTokenResult.h>
 #include <aws/connect/model/GetFlowAssociationRequest.h>
@@ -915,6 +929,7 @@
 #include <aws/connect/model/ParticipantType.h>
 #include <aws/connect/model/PauseContactRequest.h>
 #include <aws/connect/model/PauseContactResult.h>
+#include <aws/connect/model/PerformanceCategoryName.h>
 #include <aws/connect/model/PersistentChat.h>
 #include <aws/connect/model/PersistentConnectionConfig.h>
 #include <aws/connect/model/PhoneNumberConfig.h>
@@ -948,6 +963,8 @@
 #include <aws/connect/model/PutUserStatusRequest.h>
 #include <aws/connect/model/PutUserStatusResult.h>
 #include <aws/connect/model/QualityMetrics.h>
+#include <aws/connect/model/QuestionOptionPointsConfiguration.h>
+#include <aws/connect/model/QuestionPointsConfiguration.h>
 #include <aws/connect/model/QuestionRuleCategoryAutomationCondition.h>
 #include <aws/connect/model/Queue.h>
 #include <aws/connect/model/QueueInfo.h>
@@ -1146,6 +1163,8 @@
 #include <aws/connect/model/StartContactStreamingResult.h>
 #include <aws/connect/model/StartEmailContactRequest.h>
 #include <aws/connect/model/StartEmailContactResult.h>
+#include <aws/connect/model/StartEvaluationFormValidationRequest.h>
+#include <aws/connect/model/StartEvaluationFormValidationResult.h>
 #include <aws/connect/model/StartOutboundChatContactRequest.h>
 #include <aws/connect/model/StartOutboundChatContactResult.h>
 #include <aws/connect/model/StartOutboundEmailContactRequest.h>

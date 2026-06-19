@@ -41,6 +41,10 @@ AgentAccessConfig& AgentAccessConfig::operator=(JsonView jsonValue) {
     m_screenImageFormat = ScreenImageFormatMapper::GetScreenImageFormatForName(jsonValue.GetString("ScreenImageFormat"));
     m_screenImageFormatHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UserControlMode")) {
+    m_userControlMode = UserControlModeMapper::GetUserControlModeForName(jsonValue.GetString("UserControlMode"));
+    m_userControlModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,6 +73,10 @@ JsonValue AgentAccessConfig::Jsonize() const {
 
   if (m_screenImageFormatHasBeenSet) {
     payload.WithString("ScreenImageFormat", ScreenImageFormatMapper::GetNameForScreenImageFormat(m_screenImageFormat));
+  }
+
+  if (m_userControlModeHasBeenSet) {
+    payload.WithString("UserControlMode", UserControlModeMapper::GetNameForUserControlMode(m_userControlMode));
   }
 
   return payload;

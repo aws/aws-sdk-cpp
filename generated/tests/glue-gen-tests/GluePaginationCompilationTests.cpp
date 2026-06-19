@@ -28,6 +28,7 @@
 #include <aws/glue/model/ListFormTypesPaginationTraits.h>
 #include <aws/glue/model/ListColumnStatisticsTaskRunsPaginationTraits.h>
 #include <aws/glue/model/ListSchemasPaginationTraits.h>
+#include <aws/glue/model/SearchAssetsPaginationTraits.h>
 #include <aws/glue/model/ListGlossaryTermsPaginationTraits.h>
 #include <aws/glue/model/GetDatabasesPaginationTraits.h>
 #include <aws/glue/model/ListBlueprintsPaginationTraits.h>
@@ -52,7 +53,6 @@
 #include <aws/glue/model/SearchTablesPaginationTraits.h>
 #include <aws/glue/model/GetTriggersPaginationTraits.h>
 #include <aws/glue/model/GetMLTaskRunsPaginationTraits.h>
-#include <aws/glue/model/SearchPaginationTraits.h>
 #include <aws/glue/model/GetConnectionsPaginationTraits.h>
 #include <aws/glue/model/ListCustomEntityTypesPaginationTraits.h>
 #include <aws/glue/model/ListSchemaVersionsPaginationTraits.h>

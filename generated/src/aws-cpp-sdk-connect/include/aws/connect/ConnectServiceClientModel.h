@@ -143,6 +143,7 @@
 #include <aws/connect/model/GetCurrentMetricDataResult.h>
 #include <aws/connect/model/GetCurrentUserDataResult.h>
 #include <aws/connect/model/GetEffectiveHoursOfOperationsResult.h>
+#include <aws/connect/model/GetEvaluationFormValidationResult.h>
 #include <aws/connect/model/GetFederationTokenResult.h>
 #include <aws/connect/model/GetFlowAssociationResult.h>
 #include <aws/connect/model/GetMetricDataResult.h>
@@ -267,6 +268,7 @@
 #include <aws/connect/model/StartContactRecordingResult.h>
 #include <aws/connect/model/StartContactStreamingResult.h>
 #include <aws/connect/model/StartEmailContactResult.h>
+#include <aws/connect/model/StartEvaluationFormValidationResult.h>
 #include <aws/connect/model/StartOutboundChatContactResult.h>
 #include <aws/connect/model/StartOutboundEmailContactResult.h>
 #include <aws/connect/model/StartOutboundVoiceContactResult.h>
@@ -517,6 +519,7 @@ class GetContactMetricsRequest;
 class GetCurrentMetricDataRequest;
 class GetCurrentUserDataRequest;
 class GetEffectiveHoursOfOperationsRequest;
+class GetEvaluationFormValidationRequest;
 class GetFederationTokenRequest;
 class GetFlowAssociationRequest;
 class GetMetricDataRequest;
@@ -638,6 +641,7 @@ class StartContactMediaProcessingRequest;
 class StartContactRecordingRequest;
 class StartContactStreamingRequest;
 class StartEmailContactRequest;
+class StartEvaluationFormValidationRequest;
 class StartOutboundChatContactRequest;
 class StartOutboundEmailContactRequest;
 class StartOutboundVoiceContactRequest;
@@ -890,6 +894,7 @@ typedef Aws::Utils::Outcome<GetContactMetricsResult, ConnectError> GetContactMet
 typedef Aws::Utils::Outcome<GetCurrentMetricDataResult, ConnectError> GetCurrentMetricDataOutcome;
 typedef Aws::Utils::Outcome<GetCurrentUserDataResult, ConnectError> GetCurrentUserDataOutcome;
 typedef Aws::Utils::Outcome<GetEffectiveHoursOfOperationsResult, ConnectError> GetEffectiveHoursOfOperationsOutcome;
+typedef Aws::Utils::Outcome<GetEvaluationFormValidationResult, ConnectError> GetEvaluationFormValidationOutcome;
 typedef Aws::Utils::Outcome<GetFederationTokenResult, ConnectError> GetFederationTokenOutcome;
 typedef Aws::Utils::Outcome<GetFlowAssociationResult, ConnectError> GetFlowAssociationOutcome;
 typedef Aws::Utils::Outcome<GetMetricDataResult, ConnectError> GetMetricDataOutcome;
@@ -1011,6 +1016,7 @@ typedef Aws::Utils::Outcome<StartContactMediaProcessingResult, ConnectError> Sta
 typedef Aws::Utils::Outcome<StartContactRecordingResult, ConnectError> StartContactRecordingOutcome;
 typedef Aws::Utils::Outcome<StartContactStreamingResult, ConnectError> StartContactStreamingOutcome;
 typedef Aws::Utils::Outcome<StartEmailContactResult, ConnectError> StartEmailContactOutcome;
+typedef Aws::Utils::Outcome<StartEvaluationFormValidationResult, ConnectError> StartEvaluationFormValidationOutcome;
 typedef Aws::Utils::Outcome<StartOutboundChatContactResult, ConnectError> StartOutboundChatContactOutcome;
 typedef Aws::Utils::Outcome<StartOutboundEmailContactResult, ConnectError> StartOutboundEmailContactOutcome;
 typedef Aws::Utils::Outcome<StartOutboundVoiceContactResult, ConnectError> StartOutboundVoiceContactOutcome;
@@ -1263,6 +1269,7 @@ typedef std::future<GetContactMetricsOutcome> GetContactMetricsOutcomeCallable;
 typedef std::future<GetCurrentMetricDataOutcome> GetCurrentMetricDataOutcomeCallable;
 typedef std::future<GetCurrentUserDataOutcome> GetCurrentUserDataOutcomeCallable;
 typedef std::future<GetEffectiveHoursOfOperationsOutcome> GetEffectiveHoursOfOperationsOutcomeCallable;
+typedef std::future<GetEvaluationFormValidationOutcome> GetEvaluationFormValidationOutcomeCallable;
 typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
 typedef std::future<GetFlowAssociationOutcome> GetFlowAssociationOutcomeCallable;
 typedef std::future<GetMetricDataOutcome> GetMetricDataOutcomeCallable;
@@ -1384,6 +1391,7 @@ typedef std::future<StartContactMediaProcessingOutcome> StartContactMediaProcess
 typedef std::future<StartContactRecordingOutcome> StartContactRecordingOutcomeCallable;
 typedef std::future<StartContactStreamingOutcome> StartContactStreamingOutcomeCallable;
 typedef std::future<StartEmailContactOutcome> StartEmailContactOutcomeCallable;
+typedef std::future<StartEvaluationFormValidationOutcome> StartEvaluationFormValidationOutcomeCallable;
 typedef std::future<StartOutboundChatContactOutcome> StartOutboundChatContactOutcomeCallable;
 typedef std::future<StartOutboundEmailContactOutcome> StartOutboundEmailContactOutcomeCallable;
 typedef std::future<StartOutboundVoiceContactOutcome> StartOutboundVoiceContactOutcomeCallable;
@@ -2011,6 +2019,9 @@ typedef std::function<void(const ConnectClient*, const Model::GetEffectiveHoursO
                            const Model::GetEffectiveHoursOfOperationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetEffectiveHoursOfOperationsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::GetEvaluationFormValidationRequest&,
+                           const Model::GetEvaluationFormValidationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetEvaluationFormValidationResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::GetFederationTokenRequest&, const Model::GetFederationTokenOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetFederationTokenResponseReceivedHandler;
@@ -2389,6 +2400,10 @@ typedef std::function<void(const ConnectClient*, const Model::StartContactStream
 typedef std::function<void(const ConnectClient*, const Model::StartEmailContactRequest&, const Model::StartEmailContactOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartEmailContactResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::StartEvaluationFormValidationRequest&,
+                           const Model::StartEvaluationFormValidationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartEvaluationFormValidationResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::StartOutboundChatContactRequest&,
                            const Model::StartOutboundChatContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartOutboundChatContactResponseReceivedHandler;

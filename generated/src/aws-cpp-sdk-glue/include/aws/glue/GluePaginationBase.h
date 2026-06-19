@@ -57,7 +57,7 @@
 #include <aws/glue/model/ListTriggersPaginationTraits.h>
 #include <aws/glue/model/ListUsageProfilesPaginationTraits.h>
 #include <aws/glue/model/ListWorkflowsPaginationTraits.h>
-#include <aws/glue/model/SearchPaginationTraits.h>
+#include <aws/glue/model/SearchAssetsPaginationTraits.h>
 #include <aws/glue/model/SearchTablesPaginationTraits.h>
 
 #include <memory>
@@ -643,13 +643,14 @@ class GluePaginationBase {
   }
 
   /**
-   * Create a paginator for Search operation
+   * Create a paginator for SearchAssets operation
    */
-  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchRequest, Pagination::SearchPaginationTraits<DerivedClient>> SearchPaginator(
-      const Model::SearchRequest& request) {
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchAssetsRequest, Pagination::SearchAssetsPaginationTraits<DerivedClient>>
+  SearchAssetsPaginator(const Model::SearchAssetsRequest& request) {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
-    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchRequest, Pagination::SearchPaginationTraits<DerivedClient>>{
-        static_cast<DerivedClient*>(this), request};
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchAssetsRequest,
+                                             Pagination::SearchAssetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                      request};
   }
 
   /**
