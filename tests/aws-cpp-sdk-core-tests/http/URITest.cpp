@@ -415,3 +415,32 @@ TEST_F(URITest, TestHostParsesCorrectly) {
     uri = "https://127.0.0.1:9000";
     EXPECT_STREQ("127.0.0.1", uri.GetHost().c_str());
 }
+
+TEST_F(URITest, TestCanonicalizeValuelessQueryParameters)
+{
+    // S3 Annotations case: ?annotation + annotationName=classification
+    URI annotationUri("https://bucket.s3.us-east-2.amazonaws.com/key");
+    annotationUri.SetQueryString("?annotation");
+    annotationUri.AddQueryStringParameter("annotationName", "classification");
+    annotationUri.CanonicalizeQueryString();
+    EXPECT_EQ("?annotation=&annotationName=classification", annotationUri.GetQueryString());
+
+    // S3 Analytics case: ?analytics + id=my-config
+    URI analyticsUri("https://bucket.s3.us-east-1.amazonaws.com");
+    analyticsUri.SetQueryString("?analytics");
+    analyticsUri.AddQueryStringParameter("id", "my-config");
+    analyticsUri.CanonicalizeQueryString();
+    EXPECT_EQ("?analytics=&id=my-config", analyticsUri.GetQueryString());
+
+    // Value-less marker alone (no extra params) should remain unchanged
+    URI markerOnlyUri("https://bucket.s3.us-east-1.amazonaws.com?tagging");
+    markerOnlyUri.CanonicalizeQueryString();
+    EXPECT_EQ("?tagging", markerOnlyUri.GetQueryString());
+
+    // Value-less marker with explicit empty value should preserve =
+    URI emptyValueUri("https://bucket.s3.us-east-1.amazonaws.com");
+    emptyValueUri.SetQueryString("?annotation=");
+    emptyValueUri.AddQueryStringParameter("annotationName", "classification");
+    emptyValueUri.CanonicalizeQueryString();
+    EXPECT_EQ("?annotation=&annotationName=classification", emptyValueUri.GetQueryString());
+}
