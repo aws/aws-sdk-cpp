@@ -18,6 +18,7 @@ namespace KnowledgeBaseTypeMapper {
 static const int VECTOR_HASH = HashingUtils::HashString("VECTOR");
 static const int KENDRA_HASH = HashingUtils::HashString("KENDRA");
 static const int SQL_HASH = HashingUtils::HashString("SQL");
+static const int MANAGED_HASH = HashingUtils::HashString("MANAGED");
 
 KnowledgeBaseType GetKnowledgeBaseTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ KnowledgeBaseType GetKnowledgeBaseTypeForName(const Aws::String& name) {
     return KnowledgeBaseType::KENDRA;
   } else if (hashCode == SQL_HASH) {
     return KnowledgeBaseType::SQL;
+  } else if (hashCode == MANAGED_HASH) {
+    return KnowledgeBaseType::MANAGED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForKnowledgeBaseType(KnowledgeBaseType enumValue) {
       return "KENDRA";
     case KnowledgeBaseType::SQL:
       return "SQL";
+    case KnowledgeBaseType::MANAGED:
+      return "MANAGED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

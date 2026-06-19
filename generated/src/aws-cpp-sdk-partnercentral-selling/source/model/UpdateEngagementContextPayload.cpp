@@ -26,6 +26,10 @@ UpdateEngagementContextPayload& UpdateEngagementContextPayload::operator=(JsonVi
     m_customerProject = jsonValue.GetObject("CustomerProject");
     m_customerProjectHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ProspectingResult")) {
+    m_prospectingResult = jsonValue.GetObject("ProspectingResult");
+    m_prospectingResultHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue UpdateEngagementContextPayload::Jsonize() const {
 
   if (m_customerProjectHasBeenSet) {
     payload.WithObject("CustomerProject", m_customerProject.Jsonize());
+  }
+
+  if (m_prospectingResultHasBeenSet) {
+    payload.WithObject("ProspectingResult", m_prospectingResult.Jsonize());
   }
 
   return payload;

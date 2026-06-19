@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/CustomS3Location.h>
+#include <aws/bedrock-agent/model/DocumentAccessControlEntry.h>
 #include <aws/bedrock-agent/model/MetadataAttribute.h>
 #include <aws/bedrock-agent/model/MetadataSourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -95,15 +96,43 @@ class DocumentMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Access control list for the document. Used when metadata type is
+   * IN_LINE_ATTRIBUTE.</p>
+   */
+  inline const Aws::Vector<DocumentAccessControlEntry>& GetAccessControlList() const { return m_accessControlList; }
+  inline bool AccessControlListHasBeenSet() const { return m_accessControlListHasBeenSet; }
+  template <typename AccessControlListT = Aws::Vector<DocumentAccessControlEntry>>
+  void SetAccessControlList(AccessControlListT&& value) {
+    m_accessControlListHasBeenSet = true;
+    m_accessControlList = std::forward<AccessControlListT>(value);
+  }
+  template <typename AccessControlListT = Aws::Vector<DocumentAccessControlEntry>>
+  DocumentMetadata& WithAccessControlList(AccessControlListT&& value) {
+    SetAccessControlList(std::forward<AccessControlListT>(value));
+    return *this;
+  }
+  template <typename AccessControlListT = DocumentAccessControlEntry>
+  DocumentMetadata& AddAccessControlList(AccessControlListT&& value) {
+    m_accessControlListHasBeenSet = true;
+    m_accessControlList.emplace_back(std::forward<AccessControlListT>(value));
+    return *this;
+  }
+  ///@}
  private:
   MetadataSourceType m_type{MetadataSourceType::NOT_SET};
 
   Aws::Vector<MetadataAttribute> m_inlineAttributes;
 
   CustomS3Location m_s3Location;
+
+  Aws::Vector<DocumentAccessControlEntry> m_accessControlList;
   bool m_typeHasBeenSet = false;
   bool m_inlineAttributesHasBeenSet = false;
   bool m_s3LocationHasBeenSet = false;
+  bool m_accessControlListHasBeenSet = false;
 };
 
 }  // namespace Model

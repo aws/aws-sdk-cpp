@@ -59,6 +59,8 @@
 #include <aws/mq/model/DescribeConfigurationResult.h>
 #include <aws/mq/model/DescribeConfigurationRevisionRequest.h>
 #include <aws/mq/model/DescribeConfigurationRevisionResult.h>
+#include <aws/mq/model/DescribeSharedResourcesRequest.h>
+#include <aws/mq/model/DescribeSharedResourcesResult.h>
 #include <aws/mq/model/DescribeUserRequest.h>
 #include <aws/mq/model/DescribeUserResult.h>
 #include <aws/mq/model/EncryptionOptions.h>
@@ -87,8 +89,14 @@
 #include <aws/mq/model/PromoteResult.h>
 #include <aws/mq/model/RebootBrokerRequest.h>
 #include <aws/mq/model/RebootBrokerResult.h>
+#include <aws/mq/model/ResourceShareError.h>
 #include <aws/mq/model/SanitizationWarning.h>
 #include <aws/mq/model/SanitizationWarningReason.h>
+#include <aws/mq/model/SharedResource.h>
+#include <aws/mq/model/SharedResourceError.h>
+#include <aws/mq/model/SharedResourceErrorCode.h>
+#include <aws/mq/model/SharedResourceStatus.h>
+#include <aws/mq/model/SharedResourceType.h>
 #include <aws/mq/model/UnauthorizedException.h>
 #include <aws/mq/model/UpdateBrokerRequest.h>
 #include <aws/mq/model/UpdateBrokerResult.h>

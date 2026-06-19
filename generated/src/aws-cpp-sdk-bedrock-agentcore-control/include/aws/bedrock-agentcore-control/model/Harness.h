@@ -33,7 +33,7 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>Representation of a Harness.</p><p><h3>See Also:</h3>   <a
+ * <p>Representation of a harness.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/Harness">AWS
  * API Reference</a></p>
  */
@@ -46,7 +46,7 @@ class Harness {
 
   ///@{
   /**
-   * <p>The ID of the Harness.</p>
+   * <p>The ID of the harness.</p>
    */
   inline const Aws::String& GetHarnessId() const { return m_harnessId; }
   inline bool HarnessIdHasBeenSet() const { return m_harnessIdHasBeenSet; }
@@ -64,7 +64,7 @@ class Harness {
 
   ///@{
   /**
-   * <p>The name of the Harness.</p>
+   * <p>The name of the harness.</p>
    */
   inline const Aws::String& GetHarnessName() const { return m_harnessName; }
   inline bool HarnessNameHasBeenSet() const { return m_harnessNameHasBeenSet; }
@@ -82,7 +82,7 @@ class Harness {
 
   ///@{
   /**
-   * <p>The ARN of the Harness.</p>
+   * <p>The ARN of the harness.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
@@ -100,7 +100,7 @@ class Harness {
 
   ///@{
   /**
-   * <p>The status of the Harness.</p>
+   * <p>The status of the harness.</p>
    */
   inline HarnessStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -116,7 +116,26 @@ class Harness {
 
   ///@{
   /**
-   * <p>IAM role the Harness assumes when running.</p>
+   * <p>The version of the harness. Incremented on every successful
+   * UpdateHarness.</p>
+   */
+  inline const Aws::String& GetHarnessVersion() const { return m_harnessVersion; }
+  inline bool HarnessVersionHasBeenSet() const { return m_harnessVersionHasBeenSet; }
+  template <typename HarnessVersionT = Aws::String>
+  void SetHarnessVersion(HarnessVersionT&& value) {
+    m_harnessVersionHasBeenSet = true;
+    m_harnessVersion = std::forward<HarnessVersionT>(value);
+  }
+  template <typename HarnessVersionT = Aws::String>
+  Harness& WithHarnessVersion(HarnessVersionT&& value) {
+    SetHarnessVersion(std::forward<HarnessVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>IAM role the harness assumes when running.</p>
    */
   inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
   inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
@@ -134,7 +153,7 @@ class Harness {
 
   ///@{
   /**
-   * <p>The createdAt time of the Harness.</p>
+   * <p>The createdAt time of the harness.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
   inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
@@ -152,7 +171,7 @@ class Harness {
 
   ///@{
   /**
-   * <p>The updatedAt time of the Harness.</p>
+   * <p>The updatedAt time of the harness.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
   inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
@@ -188,7 +207,7 @@ class Harness {
 
   ///@{
   /**
-   * <p>The system prompt of the Harness.</p>
+   * <p>The system prompt of the harness.</p>
    */
   inline const Aws::Vector<HarnessSystemContentBlock>& GetSystemPrompt() const { return m_systemPrompt; }
   inline bool SystemPromptHasBeenSet() const { return m_systemPromptHasBeenSet; }
@@ -212,7 +231,7 @@ class Harness {
 
   ///@{
   /**
-   * <p>The tools of the Harness.</p>
+   * <p>The tools of the harness.</p>
    */
   inline const Aws::Vector<HarnessTool>& GetTools() const { return m_tools; }
   inline bool ToolsHasBeenSet() const { return m_toolsHasBeenSet; }
@@ -236,7 +255,7 @@ class Harness {
 
   ///@{
   /**
-   * <p>The skills of the Harness.</p>
+   * <p>The skills of the harness.</p>
    */
   inline const Aws::Vector<HarnessSkill>& GetSkills() const { return m_skills; }
   inline bool SkillsHasBeenSet() const { return m_skillsHasBeenSet; }
@@ -260,7 +279,7 @@ class Harness {
 
   ///@{
   /**
-   * <p>The allowed tools of the Harness. All tools are allowed by default.</p>
+   * <p>The allowed tools of the harness. All tools are allowed by default.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAllowedTools() const { return m_allowedTools; }
   inline bool AllowedToolsHasBeenSet() const { return m_allowedToolsHasBeenSet; }
@@ -338,7 +357,7 @@ class Harness {
 
   ///@{
   /**
-   * <p>Environment variables exposed in the environment in which the Harness
+   * <p>Environment variables exposed in the environment in which the harness
    * operates.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const { return m_environmentVariables; }
@@ -471,6 +490,8 @@ class Harness {
 
   HarnessStatus m_status{HarnessStatus::NOT_SET};
 
+  Aws::String m_harnessVersion;
+
   Aws::String m_executionRoleArn;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -510,6 +531,7 @@ class Harness {
   bool m_harnessNameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_harnessVersionHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;

@@ -34,7 +34,9 @@ class InsightsFailureSignal {
   AWS_BEDROCKAGENTCORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The failure category classification for this signal.</p>
+   */
   inline InsightsFailureCategory GetCategory() const { return m_category; }
   inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
   inline void SetCategory(InsightsFailureCategory value) {

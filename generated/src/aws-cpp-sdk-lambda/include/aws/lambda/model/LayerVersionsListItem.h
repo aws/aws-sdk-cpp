@@ -109,6 +109,31 @@ class LayerVersionsListItem {
 
   ///@{
   /**
+   * <p>A list of compatible <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+   * set architectures</a>.</p>
+   */
+  inline const Aws::Vector<Architecture>& GetCompatibleArchitectures() const { return m_compatibleArchitectures; }
+  inline bool CompatibleArchitecturesHasBeenSet() const { return m_compatibleArchitecturesHasBeenSet; }
+  template <typename CompatibleArchitecturesT = Aws::Vector<Architecture>>
+  void SetCompatibleArchitectures(CompatibleArchitecturesT&& value) {
+    m_compatibleArchitecturesHasBeenSet = true;
+    m_compatibleArchitectures = std::forward<CompatibleArchitecturesT>(value);
+  }
+  template <typename CompatibleArchitecturesT = Aws::Vector<Architecture>>
+  LayerVersionsListItem& WithCompatibleArchitectures(CompatibleArchitecturesT&& value) {
+    SetCompatibleArchitectures(std::forward<CompatibleArchitecturesT>(value));
+    return *this;
+  }
+  inline LayerVersionsListItem& AddCompatibleArchitectures(Architecture value) {
+    m_compatibleArchitecturesHasBeenSet = true;
+    m_compatibleArchitectures.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The layer's compatible runtimes.</p> <p>The following list includes
    * deprecated runtimes. For more information, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-deprecation-levels">Runtime
@@ -153,31 +178,6 @@ class LayerVersionsListItem {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>A list of compatible <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
-   * set architectures</a>.</p>
-   */
-  inline const Aws::Vector<Architecture>& GetCompatibleArchitectures() const { return m_compatibleArchitectures; }
-  inline bool CompatibleArchitecturesHasBeenSet() const { return m_compatibleArchitecturesHasBeenSet; }
-  template <typename CompatibleArchitecturesT = Aws::Vector<Architecture>>
-  void SetCompatibleArchitectures(CompatibleArchitecturesT&& value) {
-    m_compatibleArchitecturesHasBeenSet = true;
-    m_compatibleArchitectures = std::forward<CompatibleArchitecturesT>(value);
-  }
-  template <typename CompatibleArchitecturesT = Aws::Vector<Architecture>>
-  LayerVersionsListItem& WithCompatibleArchitectures(CompatibleArchitecturesT&& value) {
-    SetCompatibleArchitectures(std::forward<CompatibleArchitecturesT>(value));
-    return *this;
-  }
-  inline LayerVersionsListItem& AddCompatibleArchitectures(Architecture value) {
-    m_compatibleArchitecturesHasBeenSet = true;
-    m_compatibleArchitectures.push_back(value);
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_layerVersionArn;
 
@@ -187,18 +187,18 @@ class LayerVersionsListItem {
 
   Aws::String m_createdDate;
 
+  Aws::Vector<Architecture> m_compatibleArchitectures;
+
   Aws::Vector<Runtime> m_compatibleRuntimes;
 
   Aws::String m_licenseInfo;
-
-  Aws::Vector<Architecture> m_compatibleArchitectures;
   bool m_layerVersionArnHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
+  bool m_compatibleArchitecturesHasBeenSet = false;
   bool m_compatibleRuntimesHasBeenSet = false;
   bool m_licenseInfoHasBeenSet = false;
-  bool m_compatibleArchitecturesHasBeenSet = false;
 };
 
 }  // namespace Model

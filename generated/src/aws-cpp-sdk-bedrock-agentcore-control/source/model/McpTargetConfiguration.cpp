@@ -38,6 +38,10 @@ McpTargetConfiguration& McpTargetConfiguration::operator=(JsonView jsonValue) {
     m_apiGateway = jsonValue.GetObject("apiGateway");
     m_apiGatewayHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("connector")) {
+    m_connector = jsonValue.GetObject("connector");
+    m_connectorHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue McpTargetConfiguration::Jsonize() const {
 
   if (m_apiGatewayHasBeenSet) {
     payload.WithObject("apiGateway", m_apiGateway.Jsonize());
+  }
+
+  if (m_connectorHasBeenSet) {
+    payload.WithObject("connector", m_connector.Jsonize());
   }
 
   return payload;

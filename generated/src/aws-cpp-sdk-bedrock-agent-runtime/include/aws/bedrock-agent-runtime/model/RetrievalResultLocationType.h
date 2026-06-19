@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentRuntime {
 namespace Model {
-enum class RetrievalResultLocationType { NOT_SET, S3, WEB, CONFLUENCE, SALESFORCE, SHAREPOINT, CUSTOM, KENDRA, SQL };
+enum class RetrievalResultLocationType { NOT_SET, S3, WEB, CONFLUENCE, SALESFORCE, SHAREPOINT, CUSTOM, KENDRA, SQL, ONEDRIVE, GOOGLEDRIVE };
 
 namespace RetrievalResultLocationTypeMapper {
 AWS_BEDROCKAGENTRUNTIME_API RetrievalResultLocationType GetRetrievalResultLocationTypeForName(const Aws::String& name);

@@ -104,6 +104,10 @@ Canary& Canary::operator=(JsonView jsonValue) {
     }
     m_visualReferencesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MultiLocationConfig")) {
+    m_multiLocationConfig = jsonValue.GetObject("MultiLocationConfig");
+    m_multiLocationConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -212,6 +216,10 @@ JsonValue Canary::Jsonize() const {
       visualReferencesJsonList[visualReferencesIndex].AsObject(m_visualReferences[visualReferencesIndex].Jsonize());
     }
     payload.WithArray("VisualReferences", std::move(visualReferencesJsonList));
+  }
+
+  if (m_multiLocationConfigHasBeenSet) {
+    payload.WithObject("MultiLocationConfig", m_multiLocationConfig.Jsonize());
   }
 
   if (m_tagsHasBeenSet) {

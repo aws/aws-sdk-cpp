@@ -50,6 +50,10 @@ CreatePolicyResult& CreatePolicyResult::operator=(const Aws::AmazonWebServiceRes
     m_status = PolicyStatusMapper::GetPolicyStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("enforcementMode")) {
+    m_enforcementMode = EnforcementModeMapper::GetEnforcementModeForName(jsonValue.GetString("enforcementMode"));
+    m_enforcementModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("definition")) {
     m_definition = jsonValue.GetObject("definition");
     m_definitionHasBeenSet = true;

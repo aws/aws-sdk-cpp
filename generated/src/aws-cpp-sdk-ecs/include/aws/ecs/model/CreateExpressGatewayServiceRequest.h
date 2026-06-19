@@ -313,6 +313,32 @@ class CreateExpressGatewayServiceRequest : public ECSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of a task definition to use to create the
+   * Express Gateway service. This allows you to manage your own task definition,
+   * giving you more control over the service configuration such as adding sidecar
+   * containers.</p> <p>The task definition must have a container named
+   * <code>Main</code> with a single TCP port mapping that includes a container port
+   * and port name. The task definition must also have <code>FARGATE</code>
+   * compatibility.</p> <p>If you provide a task definition ARN, you cannot also
+   * specify <code>primaryContainer</code>, <code>executionRoleArn</code>,
+   * <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+   */
+  inline const Aws::String& GetTaskDefinitionArn() const { return m_taskDefinitionArn; }
+  inline bool TaskDefinitionArnHasBeenSet() const { return m_taskDefinitionArnHasBeenSet; }
+  template <typename TaskDefinitionArnT = Aws::String>
+  void SetTaskDefinitionArn(TaskDefinitionArnT&& value) {
+    m_taskDefinitionArnHasBeenSet = true;
+    m_taskDefinitionArn = std::forward<TaskDefinitionArnT>(value);
+  }
+  template <typename TaskDefinitionArnT = Aws::String>
+  CreateExpressGatewayServiceRequest& WithTaskDefinitionArn(TaskDefinitionArnT&& value) {
+    SetTaskDefinitionArn(std::forward<TaskDefinitionArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_executionRoleArn;
 
@@ -337,6 +363,8 @@ class CreateExpressGatewayServiceRequest : public ECSRequest {
   ExpressGatewayScalingTarget m_scalingTarget;
 
   Aws::Vector<Tag> m_tags;
+
+  Aws::String m_taskDefinitionArn;
   bool m_executionRoleArnHasBeenSet = false;
   bool m_infrastructureRoleArnHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
@@ -349,6 +377,7 @@ class CreateExpressGatewayServiceRequest : public ECSRequest {
   bool m_memoryHasBeenSet = false;
   bool m_scalingTargetHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_taskDefinitionArnHasBeenSet = false;
 };
 
 }  // namespace Model

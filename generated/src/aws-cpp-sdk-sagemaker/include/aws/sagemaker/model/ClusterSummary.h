@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ClusterImageVersionStatus.h>
 #include <aws/sagemaker/model/ClusterStatus.h>
 
 #include <utility>
@@ -133,6 +134,23 @@ class ClusterSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The aggregate status of the image version across the cluster's instance
+   * groups.</p>
+   */
+  inline ClusterImageVersionStatus GetImageVersionStatus() const { return m_imageVersionStatus; }
+  inline bool ImageVersionStatusHasBeenSet() const { return m_imageVersionStatusHasBeenSet; }
+  inline void SetImageVersionStatus(ClusterImageVersionStatus value) {
+    m_imageVersionStatusHasBeenSet = true;
+    m_imageVersionStatus = value;
+  }
+  inline ClusterSummary& WithImageVersionStatus(ClusterImageVersionStatus value) {
+    SetImageVersionStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterArn;
 
@@ -143,11 +161,14 @@ class ClusterSummary {
   ClusterStatus m_clusterStatus{ClusterStatus::NOT_SET};
 
   Aws::Vector<Aws::String> m_trainingPlanArns;
+
+  ClusterImageVersionStatus m_imageVersionStatus{ClusterImageVersionStatus::NOT_SET};
   bool m_clusterArnHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_clusterStatusHasBeenSet = false;
   bool m_trainingPlanArnsHasBeenSet = false;
+  bool m_imageVersionStatusHasBeenSet = false;
 };
 
 }  // namespace Model

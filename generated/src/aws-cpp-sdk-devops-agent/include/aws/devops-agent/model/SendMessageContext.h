@@ -69,7 +69,14 @@ class SendMessageContext {
 
   ///@{
   /**
-   * <p>Response to a UI prompt (not a text conversation message)</p>
+   * <p>Response to a UI prompt (not a text conversation message). Operator App SDK
+   * clients set this to the control-string sentinel `"APPROVAL_ACTION"` when the
+   * request is resuming a paused tool call after an operator approval decision; in
+   * that case the structured decision context lives on the sibling `approvalAction`
+   * member and the chat agent reads from there. Preserved as a String for
+   * back-compat: pre-typed-approval clients still encode arbitrary UI-prompt
+   * responses as JSON in this field, and the chat agent parses them out during the
+   * transition.</p>
    */
   inline const Aws::String& GetUserActionResponse() const { return m_userActionResponse; }
   inline bool UserActionResponseHasBeenSet() const { return m_userActionResponseHasBeenSet; }

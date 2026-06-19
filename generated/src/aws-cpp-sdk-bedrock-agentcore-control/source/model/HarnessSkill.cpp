@@ -30,6 +30,10 @@ HarnessSkill& HarnessSkill::operator=(JsonView jsonValue) {
     m_git = jsonValue.GetObject("git");
     m_gitHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("awsSkills")) {
+    m_awsSkills = jsonValue.GetObject("awsSkills");
+    m_awsSkillsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue HarnessSkill::Jsonize() const {
 
   if (m_gitHasBeenSet) {
     payload.WithObject("git", m_git.Jsonize());
+  }
+
+  if (m_awsSkillsHasBeenSet) {
+    payload.WithObject("awsSkills", m_awsSkills.Jsonize());
   }
 
   return payload;

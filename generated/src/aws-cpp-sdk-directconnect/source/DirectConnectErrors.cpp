@@ -17,6 +17,7 @@ namespace DirectConnectErrorMapper {
 
 static const int DUPLICATE_TAG_KEYS_HASH = HashingUtils::HashString("DuplicateTagKeysException");
 static const int DIRECT_CONNECT_CLIENT_HASH = HashingUtils::HashString("DirectConnectClientException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int DIRECT_CONNECT_SERVER_HASH = HashingUtils::HashString("DirectConnectServerException");
 
@@ -27,6 +28,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectConnectErrors::DUPLICATE_TAG_KEYS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == DIRECT_CONNECT_CLIENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectConnectErrors::DIRECT_CONNECT_CLIENT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectConnectErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectConnectErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == DIRECT_CONNECT_SERVER_HASH) {

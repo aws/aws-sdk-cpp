@@ -134,14 +134,6 @@ FunctionConfiguration& FunctionConfiguration::operator=(JsonView jsonValue) {
     }
     m_fileSystemConfigsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("PackageType")) {
-    m_packageType = PackageTypeMapper::GetPackageTypeForName(jsonValue.GetString("PackageType"));
-    m_packageTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ImageConfigResponse")) {
-    m_imageConfigResponse = jsonValue.GetObject("ImageConfigResponse");
-    m_imageConfigResponseHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("SigningProfileVersionArn")) {
     m_signingProfileVersionArn = jsonValue.GetString("SigningProfileVersionArn");
     m_signingProfileVersionArnHasBeenSet = true;
@@ -149,6 +141,14 @@ FunctionConfiguration& FunctionConfiguration::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("SigningJobArn")) {
     m_signingJobArn = jsonValue.GetString("SigningJobArn");
     m_signingJobArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PackageType")) {
+    m_packageType = PackageTypeMapper::GetPackageTypeForName(jsonValue.GetString("PackageType"));
+    m_packageTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ImageConfigResponse")) {
+    m_imageConfigResponse = jsonValue.GetObject("ImageConfigResponse");
+    m_imageConfigResponseHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Architectures")) {
     Aws::Utils::Array<JsonView> architecturesJsonList = jsonValue.GetArray("Architectures");
@@ -173,6 +173,10 @@ FunctionConfiguration& FunctionConfiguration::operator=(JsonView jsonValue) {
     m_loggingConfig = jsonValue.GetObject("LoggingConfig");
     m_loggingConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TenancyConfig")) {
+    m_tenancyConfig = jsonValue.GetObject("TenancyConfig");
+    m_tenancyConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CapacityProviderConfig")) {
     m_capacityProviderConfig = jsonValue.GetObject("CapacityProviderConfig");
     m_capacityProviderConfigHasBeenSet = true;
@@ -184,10 +188,6 @@ FunctionConfiguration& FunctionConfiguration::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("DurableConfig")) {
     m_durableConfig = jsonValue.GetObject("DurableConfig");
     m_durableConfigHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("TenancyConfig")) {
-    m_tenancyConfig = jsonValue.GetObject("TenancyConfig");
-    m_tenancyConfigHasBeenSet = true;
   }
   return *this;
 }
@@ -312,20 +312,20 @@ JsonValue FunctionConfiguration::Jsonize() const {
     payload.WithArray("FileSystemConfigs", std::move(fileSystemConfigsJsonList));
   }
 
-  if (m_packageTypeHasBeenSet) {
-    payload.WithString("PackageType", PackageTypeMapper::GetNameForPackageType(m_packageType));
-  }
-
-  if (m_imageConfigResponseHasBeenSet) {
-    payload.WithObject("ImageConfigResponse", m_imageConfigResponse.Jsonize());
-  }
-
   if (m_signingProfileVersionArnHasBeenSet) {
     payload.WithString("SigningProfileVersionArn", m_signingProfileVersionArn);
   }
 
   if (m_signingJobArnHasBeenSet) {
     payload.WithString("SigningJobArn", m_signingJobArn);
+  }
+
+  if (m_packageTypeHasBeenSet) {
+    payload.WithString("PackageType", PackageTypeMapper::GetNameForPackageType(m_packageType));
+  }
+
+  if (m_imageConfigResponseHasBeenSet) {
+    payload.WithObject("ImageConfigResponse", m_imageConfigResponse.Jsonize());
   }
 
   if (m_architecturesHasBeenSet) {
@@ -352,6 +352,10 @@ JsonValue FunctionConfiguration::Jsonize() const {
     payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
   }
 
+  if (m_tenancyConfigHasBeenSet) {
+    payload.WithObject("TenancyConfig", m_tenancyConfig.Jsonize());
+  }
+
   if (m_capacityProviderConfigHasBeenSet) {
     payload.WithObject("CapacityProviderConfig", m_capacityProviderConfig.Jsonize());
   }
@@ -362,10 +366,6 @@ JsonValue FunctionConfiguration::Jsonize() const {
 
   if (m_durableConfigHasBeenSet) {
     payload.WithObject("DurableConfig", m_durableConfig.Jsonize());
-  }
-
-  if (m_tenancyConfigHasBeenSet) {
-    payload.WithObject("TenancyConfig", m_tenancyConfig.Jsonize());
   }
 
   return payload;

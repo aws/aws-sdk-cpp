@@ -37,6 +37,24 @@ class ListLayerVersionsRequest : public LambdaRequest {
 
   ///@{
   /**
+   * <p>The compatible <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+   * set architecture</a>.</p>
+   */
+  inline Architecture GetCompatibleArchitecture() const { return m_compatibleArchitecture; }
+  inline bool CompatibleArchitectureHasBeenSet() const { return m_compatibleArchitectureHasBeenSet; }
+  inline void SetCompatibleArchitecture(Architecture value) {
+    m_compatibleArchitectureHasBeenSet = true;
+    m_compatibleArchitecture = value;
+  }
+  inline ListLayerVersionsRequest& WithCompatibleArchitecture(Architecture value) {
+    SetCompatibleArchitecture(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A runtime identifier.</p> <p>The following list includes deprecated runtimes.
    * For more information, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-deprecation-levels">Runtime
@@ -108,25 +126,9 @@ class ListLayerVersionsRequest : public LambdaRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The compatible <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
-   * set architecture</a>.</p>
-   */
-  inline Architecture GetCompatibleArchitecture() const { return m_compatibleArchitecture; }
-  inline bool CompatibleArchitectureHasBeenSet() const { return m_compatibleArchitectureHasBeenSet; }
-  inline void SetCompatibleArchitecture(Architecture value) {
-    m_compatibleArchitectureHasBeenSet = true;
-    m_compatibleArchitecture = value;
-  }
-  inline ListLayerVersionsRequest& WithCompatibleArchitecture(Architecture value) {
-    SetCompatibleArchitecture(value);
-    return *this;
-  }
-  ///@}
  private:
+  Architecture m_compatibleArchitecture{Architecture::NOT_SET};
+
   Runtime m_compatibleRuntime{Runtime::NOT_SET};
 
   Aws::String m_layerName;
@@ -134,13 +136,11 @@ class ListLayerVersionsRequest : public LambdaRequest {
   Aws::String m_marker;
 
   int m_maxItems{0};
-
-  Architecture m_compatibleArchitecture{Architecture::NOT_SET};
+  bool m_compatibleArchitectureHasBeenSet = false;
   bool m_compatibleRuntimeHasBeenSet = false;
   bool m_layerNameHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
-  bool m_compatibleArchitectureHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -150,6 +150,7 @@
 #include <aws/directconnect/model/NewTransitVirtualInterface.h>
 #include <aws/directconnect/model/NewTransitVirtualInterfaceAllocation.h>
 #include <aws/directconnect/model/NniPartnerType.h>
+#include <aws/directconnect/model/RateLimiterStatus.h>
 #include <aws/directconnect/model/ResourceTag.h>
 #include <aws/directconnect/model/RouteFilterPrefix.h>
 #include <aws/directconnect/model/RouterType.h>

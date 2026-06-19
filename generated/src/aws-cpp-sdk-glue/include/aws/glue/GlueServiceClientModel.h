@@ -19,6 +19,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in GlueClient header */
+#include <aws/glue/model/AssociateGlossaryTermsResult.h>
 #include <aws/glue/model/BatchCreatePartitionResult.h>
 #include <aws/glue/model/BatchDeleteConnectionResult.h>
 #include <aws/glue/model/BatchDeletePartitionResult.h>
@@ -29,6 +30,7 @@
 #include <aws/glue/model/BatchGetCustomEntityTypesResult.h>
 #include <aws/glue/model/BatchGetDataQualityResultResult.h>
 #include <aws/glue/model/BatchGetDevEndpointsResult.h>
+#include <aws/glue/model/BatchGetIterableFormsResult.h>
 #include <aws/glue/model/BatchGetJobsResult.h>
 #include <aws/glue/model/BatchGetPartitionResult.h>
 #include <aws/glue/model/BatchGetTableOptimizerResult.h>
@@ -53,6 +55,8 @@
 #include <aws/glue/model/CreateDataQualityRulesetResult.h>
 #include <aws/glue/model/CreateDatabaseResult.h>
 #include <aws/glue/model/CreateDevEndpointResult.h>
+#include <aws/glue/model/CreateGlossaryResult.h>
+#include <aws/glue/model/CreateGlossaryTermResult.h>
 #include <aws/glue/model/CreateGlueIdentityCenterConfigurationResult.h>
 #include <aws/glue/model/CreateIntegrationResourcePropertyResult.h>
 #include <aws/glue/model/CreateIntegrationResult.h>
@@ -73,6 +77,9 @@
 #include <aws/glue/model/CreateUsageProfileResult.h>
 #include <aws/glue/model/CreateUserDefinedFunctionResult.h>
 #include <aws/glue/model/CreateWorkflowResult.h>
+#include <aws/glue/model/DeleteAssetResult.h>
+#include <aws/glue/model/DeleteAssetTypeResult.h>
+#include <aws/glue/model/DeleteAttachmentResult.h>
 #include <aws/glue/model/DeleteBlueprintResult.h>
 #include <aws/glue/model/DeleteCatalogResult.h>
 #include <aws/glue/model/DeleteClassifierResult.h>
@@ -86,6 +93,9 @@
 #include <aws/glue/model/DeleteDataQualityRulesetResult.h>
 #include <aws/glue/model/DeleteDatabaseResult.h>
 #include <aws/glue/model/DeleteDevEndpointResult.h>
+#include <aws/glue/model/DeleteFormTypeResult.h>
+#include <aws/glue/model/DeleteGlossaryResult.h>
+#include <aws/glue/model/DeleteGlossaryTermResult.h>
 #include <aws/glue/model/DeleteGlueIdentityCenterConfigurationRequest.h>
 #include <aws/glue/model/DeleteGlueIdentityCenterConfigurationResult.h>
 #include <aws/glue/model/DeleteIntegrationResourcePropertyResult.h>
@@ -115,6 +125,9 @@
 #include <aws/glue/model/DescribeInboundIntegrationsResult.h>
 #include <aws/glue/model/DescribeIntegrationsRequest.h>
 #include <aws/glue/model/DescribeIntegrationsResult.h>
+#include <aws/glue/model/DisassociateGlossaryTermsResult.h>
+#include <aws/glue/model/GetAssetResult.h>
+#include <aws/glue/model/GetAssetTypeResult.h>
 #include <aws/glue/model/GetBlueprintResult.h>
 #include <aws/glue/model/GetBlueprintRunResult.h>
 #include <aws/glue/model/GetBlueprintRunsResult.h>
@@ -158,6 +171,9 @@
 #include <aws/glue/model/GetDevEndpointsRequest.h>
 #include <aws/glue/model/GetDevEndpointsResult.h>
 #include <aws/glue/model/GetEntityRecordsResult.h>
+#include <aws/glue/model/GetFormTypeResult.h>
+#include <aws/glue/model/GetGlossaryResult.h>
+#include <aws/glue/model/GetGlossaryTermResult.h>
 #include <aws/glue/model/GetGlueIdentityCenterConfigurationRequest.h>
 #include <aws/glue/model/GetGlueIdentityCenterConfigurationResult.h>
 #include <aws/glue/model/GetIntegrationResourcePropertyResult.h>
@@ -216,6 +232,8 @@
 #include <aws/glue/model/GetWorkflowRunsResult.h>
 #include <aws/glue/model/ImportCatalogToGlueRequest.h>
 #include <aws/glue/model/ImportCatalogToGlueResult.h>
+#include <aws/glue/model/ListAssetTypesRequest.h>
+#include <aws/glue/model/ListAssetTypesResult.h>
 #include <aws/glue/model/ListBlueprintsRequest.h>
 #include <aws/glue/model/ListBlueprintsResult.h>
 #include <aws/glue/model/ListColumnStatisticsTaskRunsRequest.h>
@@ -243,8 +261,14 @@
 #include <aws/glue/model/ListDevEndpointsResult.h>
 #include <aws/glue/model/ListEntitiesRequest.h>
 #include <aws/glue/model/ListEntitiesResult.h>
+#include <aws/glue/model/ListFormTypesRequest.h>
+#include <aws/glue/model/ListFormTypesResult.h>
+#include <aws/glue/model/ListGlossariesRequest.h>
+#include <aws/glue/model/ListGlossariesResult.h>
+#include <aws/glue/model/ListGlossaryTermsResult.h>
 #include <aws/glue/model/ListIntegrationResourcePropertiesRequest.h>
 #include <aws/glue/model/ListIntegrationResourcePropertiesResult.h>
+#include <aws/glue/model/ListIterableFormsResult.h>
 #include <aws/glue/model/ListJobsRequest.h>
 #include <aws/glue/model/ListJobsResult.h>
 #include <aws/glue/model/ListMLTransformsRequest.h>
@@ -266,8 +290,12 @@
 #include <aws/glue/model/ListWorkflowsRequest.h>
 #include <aws/glue/model/ListWorkflowsResult.h>
 #include <aws/glue/model/ModifyIntegrationResult.h>
+#include <aws/glue/model/PutAssetResult.h>
+#include <aws/glue/model/PutAssetTypeResult.h>
+#include <aws/glue/model/PutAttachmentResult.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsResult.h>
 #include <aws/glue/model/PutDataQualityProfileAnnotationResult.h>
+#include <aws/glue/model/PutFormTypeResult.h>
 #include <aws/glue/model/PutResourcePolicyResult.h>
 #include <aws/glue/model/PutSchemaVersionMetadataResult.h>
 #include <aws/glue/model/PutWorkflowRunPropertiesResult.h>
@@ -279,6 +307,8 @@
 #include <aws/glue/model/ResetJobBookmarkResult.h>
 #include <aws/glue/model/ResumeWorkflowRunResult.h>
 #include <aws/glue/model/RunStatementResult.h>
+#include <aws/glue/model/SearchRequest.h>
+#include <aws/glue/model/SearchResult.h>
 #include <aws/glue/model/SearchTablesRequest.h>
 #include <aws/glue/model/SearchTablesResult.h>
 #include <aws/glue/model/StartBlueprintRunResult.h>
@@ -321,6 +351,8 @@
 #include <aws/glue/model/UpdateDataQualityRulesetResult.h>
 #include <aws/glue/model/UpdateDatabaseResult.h>
 #include <aws/glue/model/UpdateDevEndpointResult.h>
+#include <aws/glue/model/UpdateGlossaryResult.h>
+#include <aws/glue/model/UpdateGlossaryTermResult.h>
 #include <aws/glue/model/UpdateGlueIdentityCenterConfigurationRequest.h>
 #include <aws/glue/model/UpdateGlueIdentityCenterConfigurationResult.h>
 #include <aws/glue/model/UpdateIntegrationResourcePropertyResult.h>
@@ -373,6 +405,7 @@ using GlueEndpointProvider = Aws::Glue::Endpoint::GlueEndpointProvider;
 
 namespace Model {
 /* Service model forward declarations required in GlueClient header */
+class AssociateGlossaryTermsRequest;
 class BatchCreatePartitionRequest;
 class BatchDeleteConnectionRequest;
 class BatchDeletePartitionRequest;
@@ -383,6 +416,7 @@ class BatchGetCrawlersRequest;
 class BatchGetCustomEntityTypesRequest;
 class BatchGetDataQualityResultRequest;
 class BatchGetDevEndpointsRequest;
+class BatchGetIterableFormsRequest;
 class BatchGetJobsRequest;
 class BatchGetPartitionRequest;
 class BatchGetTableOptimizerRequest;
@@ -406,6 +440,8 @@ class CreateCustomEntityTypeRequest;
 class CreateDataQualityRulesetRequest;
 class CreateDatabaseRequest;
 class CreateDevEndpointRequest;
+class CreateGlossaryRequest;
+class CreateGlossaryTermRequest;
 class CreateGlueIdentityCenterConfigurationRequest;
 class CreateIntegrationRequest;
 class CreateIntegrationResourcePropertyRequest;
@@ -425,6 +461,9 @@ class CreateTriggerRequest;
 class CreateUsageProfileRequest;
 class CreateUserDefinedFunctionRequest;
 class CreateWorkflowRequest;
+class DeleteAssetRequest;
+class DeleteAssetTypeRequest;
+class DeleteAttachmentRequest;
 class DeleteBlueprintRequest;
 class DeleteCatalogRequest;
 class DeleteClassifierRequest;
@@ -438,6 +477,9 @@ class DeleteCustomEntityTypeRequest;
 class DeleteDataQualityRulesetRequest;
 class DeleteDatabaseRequest;
 class DeleteDevEndpointRequest;
+class DeleteFormTypeRequest;
+class DeleteGlossaryRequest;
+class DeleteGlossaryTermRequest;
 class DeleteGlueIdentityCenterConfigurationRequest;
 class DeleteIntegrationRequest;
 class DeleteIntegrationResourcePropertyRequest;
@@ -463,6 +505,9 @@ class DescribeConnectionTypeRequest;
 class DescribeEntityRequest;
 class DescribeInboundIntegrationsRequest;
 class DescribeIntegrationsRequest;
+class DisassociateGlossaryTermsRequest;
+class GetAssetRequest;
+class GetAssetTypeRequest;
 class GetBlueprintRequest;
 class GetBlueprintRunRequest;
 class GetBlueprintRunsRequest;
@@ -496,6 +541,9 @@ class GetDataflowGraphRequest;
 class GetDevEndpointRequest;
 class GetDevEndpointsRequest;
 class GetEntityRecordsRequest;
+class GetFormTypeRequest;
+class GetGlossaryRequest;
+class GetGlossaryTermRequest;
 class GetGlueIdentityCenterConfigurationRequest;
 class GetIntegrationResourcePropertyRequest;
 class GetIntegrationTablePropertiesRequest;
@@ -545,6 +593,7 @@ class GetWorkflowRunRequest;
 class GetWorkflowRunPropertiesRequest;
 class GetWorkflowRunsRequest;
 class ImportCatalogToGlueRequest;
+class ListAssetTypesRequest;
 class ListBlueprintsRequest;
 class ListColumnStatisticsTaskRunsRequest;
 class ListConnectionTypesRequest;
@@ -559,7 +608,11 @@ class ListDataQualityStatisticAnnotationsRequest;
 class ListDataQualityStatisticsRequest;
 class ListDevEndpointsRequest;
 class ListEntitiesRequest;
+class ListFormTypesRequest;
+class ListGlossariesRequest;
+class ListGlossaryTermsRequest;
 class ListIntegrationResourcePropertiesRequest;
+class ListIterableFormsRequest;
 class ListJobsRequest;
 class ListMLTransformsRequest;
 class ListMaterializedViewRefreshTaskRunsRequest;
@@ -573,8 +626,12 @@ class ListTriggersRequest;
 class ListUsageProfilesRequest;
 class ListWorkflowsRequest;
 class ModifyIntegrationRequest;
+class PutAssetRequest;
+class PutAssetTypeRequest;
+class PutAttachmentRequest;
 class PutDataCatalogEncryptionSettingsRequest;
 class PutDataQualityProfileAnnotationRequest;
+class PutFormTypeRequest;
 class PutResourcePolicyRequest;
 class PutSchemaVersionMetadataRequest;
 class PutWorkflowRunPropertiesRequest;
@@ -585,6 +642,7 @@ class RemoveSchemaVersionMetadataRequest;
 class ResetJobBookmarkRequest;
 class ResumeWorkflowRunRequest;
 class RunStatementRequest;
+class SearchRequest;
 class SearchTablesRequest;
 class StartBlueprintRunRequest;
 class StartColumnStatisticsTaskRunRequest;
@@ -624,6 +682,8 @@ class UpdateCrawlerScheduleRequest;
 class UpdateDataQualityRulesetRequest;
 class UpdateDatabaseRequest;
 class UpdateDevEndpointRequest;
+class UpdateGlossaryRequest;
+class UpdateGlossaryTermRequest;
 class UpdateGlueIdentityCenterConfigurationRequest;
 class UpdateIntegrationResourcePropertyRequest;
 class UpdateIntegrationTablePropertiesRequest;
@@ -643,6 +703,7 @@ class UpdateWorkflowRequest;
 /* End of service model forward declarations required in GlueClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<AssociateGlossaryTermsResult, GlueError> AssociateGlossaryTermsOutcome;
 typedef Aws::Utils::Outcome<BatchCreatePartitionResult, GlueError> BatchCreatePartitionOutcome;
 typedef Aws::Utils::Outcome<BatchDeleteConnectionResult, GlueError> BatchDeleteConnectionOutcome;
 typedef Aws::Utils::Outcome<BatchDeletePartitionResult, GlueError> BatchDeletePartitionOutcome;
@@ -653,6 +714,7 @@ typedef Aws::Utils::Outcome<BatchGetCrawlersResult, GlueError> BatchGetCrawlersO
 typedef Aws::Utils::Outcome<BatchGetCustomEntityTypesResult, GlueError> BatchGetCustomEntityTypesOutcome;
 typedef Aws::Utils::Outcome<BatchGetDataQualityResultResult, GlueError> BatchGetDataQualityResultOutcome;
 typedef Aws::Utils::Outcome<BatchGetDevEndpointsResult, GlueError> BatchGetDevEndpointsOutcome;
+typedef Aws::Utils::Outcome<BatchGetIterableFormsResult, GlueError> BatchGetIterableFormsOutcome;
 typedef Aws::Utils::Outcome<BatchGetJobsResult, GlueError> BatchGetJobsOutcome;
 typedef Aws::Utils::Outcome<BatchGetPartitionResult, GlueError> BatchGetPartitionOutcome;
 typedef Aws::Utils::Outcome<BatchGetTableOptimizerResult, GlueError> BatchGetTableOptimizerOutcome;
@@ -676,6 +738,8 @@ typedef Aws::Utils::Outcome<CreateCustomEntityTypeResult, GlueError> CreateCusto
 typedef Aws::Utils::Outcome<CreateDataQualityRulesetResult, GlueError> CreateDataQualityRulesetOutcome;
 typedef Aws::Utils::Outcome<CreateDatabaseResult, GlueError> CreateDatabaseOutcome;
 typedef Aws::Utils::Outcome<CreateDevEndpointResult, GlueError> CreateDevEndpointOutcome;
+typedef Aws::Utils::Outcome<CreateGlossaryResult, GlueError> CreateGlossaryOutcome;
+typedef Aws::Utils::Outcome<CreateGlossaryTermResult, GlueError> CreateGlossaryTermOutcome;
 typedef Aws::Utils::Outcome<CreateGlueIdentityCenterConfigurationResult, GlueError> CreateGlueIdentityCenterConfigurationOutcome;
 typedef Aws::Utils::Outcome<CreateIntegrationResult, GlueError> CreateIntegrationOutcome;
 typedef Aws::Utils::Outcome<CreateIntegrationResourcePropertyResult, GlueError> CreateIntegrationResourcePropertyOutcome;
@@ -695,6 +759,9 @@ typedef Aws::Utils::Outcome<CreateTriggerResult, GlueError> CreateTriggerOutcome
 typedef Aws::Utils::Outcome<CreateUsageProfileResult, GlueError> CreateUsageProfileOutcome;
 typedef Aws::Utils::Outcome<CreateUserDefinedFunctionResult, GlueError> CreateUserDefinedFunctionOutcome;
 typedef Aws::Utils::Outcome<CreateWorkflowResult, GlueError> CreateWorkflowOutcome;
+typedef Aws::Utils::Outcome<DeleteAssetResult, GlueError> DeleteAssetOutcome;
+typedef Aws::Utils::Outcome<DeleteAssetTypeResult, GlueError> DeleteAssetTypeOutcome;
+typedef Aws::Utils::Outcome<DeleteAttachmentResult, GlueError> DeleteAttachmentOutcome;
 typedef Aws::Utils::Outcome<DeleteBlueprintResult, GlueError> DeleteBlueprintOutcome;
 typedef Aws::Utils::Outcome<DeleteCatalogResult, GlueError> DeleteCatalogOutcome;
 typedef Aws::Utils::Outcome<DeleteClassifierResult, GlueError> DeleteClassifierOutcome;
@@ -708,6 +775,9 @@ typedef Aws::Utils::Outcome<DeleteCustomEntityTypeResult, GlueError> DeleteCusto
 typedef Aws::Utils::Outcome<DeleteDataQualityRulesetResult, GlueError> DeleteDataQualityRulesetOutcome;
 typedef Aws::Utils::Outcome<DeleteDatabaseResult, GlueError> DeleteDatabaseOutcome;
 typedef Aws::Utils::Outcome<DeleteDevEndpointResult, GlueError> DeleteDevEndpointOutcome;
+typedef Aws::Utils::Outcome<DeleteFormTypeResult, GlueError> DeleteFormTypeOutcome;
+typedef Aws::Utils::Outcome<DeleteGlossaryResult, GlueError> DeleteGlossaryOutcome;
+typedef Aws::Utils::Outcome<DeleteGlossaryTermResult, GlueError> DeleteGlossaryTermOutcome;
 typedef Aws::Utils::Outcome<DeleteGlueIdentityCenterConfigurationResult, GlueError> DeleteGlueIdentityCenterConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeleteIntegrationResult, GlueError> DeleteIntegrationOutcome;
 typedef Aws::Utils::Outcome<DeleteIntegrationResourcePropertyResult, GlueError> DeleteIntegrationResourcePropertyOutcome;
@@ -733,6 +803,9 @@ typedef Aws::Utils::Outcome<DescribeConnectionTypeResult, GlueError> DescribeCon
 typedef Aws::Utils::Outcome<DescribeEntityResult, GlueError> DescribeEntityOutcome;
 typedef Aws::Utils::Outcome<DescribeInboundIntegrationsResult, GlueError> DescribeInboundIntegrationsOutcome;
 typedef Aws::Utils::Outcome<DescribeIntegrationsResult, GlueError> DescribeIntegrationsOutcome;
+typedef Aws::Utils::Outcome<DisassociateGlossaryTermsResult, GlueError> DisassociateGlossaryTermsOutcome;
+typedef Aws::Utils::Outcome<GetAssetResult, GlueError> GetAssetOutcome;
+typedef Aws::Utils::Outcome<GetAssetTypeResult, GlueError> GetAssetTypeOutcome;
 typedef Aws::Utils::Outcome<GetBlueprintResult, GlueError> GetBlueprintOutcome;
 typedef Aws::Utils::Outcome<GetBlueprintRunResult, GlueError> GetBlueprintRunOutcome;
 typedef Aws::Utils::Outcome<GetBlueprintRunsResult, GlueError> GetBlueprintRunsOutcome;
@@ -766,6 +839,9 @@ typedef Aws::Utils::Outcome<GetDataflowGraphResult, GlueError> GetDataflowGraphO
 typedef Aws::Utils::Outcome<GetDevEndpointResult, GlueError> GetDevEndpointOutcome;
 typedef Aws::Utils::Outcome<GetDevEndpointsResult, GlueError> GetDevEndpointsOutcome;
 typedef Aws::Utils::Outcome<GetEntityRecordsResult, GlueError> GetEntityRecordsOutcome;
+typedef Aws::Utils::Outcome<GetFormTypeResult, GlueError> GetFormTypeOutcome;
+typedef Aws::Utils::Outcome<GetGlossaryResult, GlueError> GetGlossaryOutcome;
+typedef Aws::Utils::Outcome<GetGlossaryTermResult, GlueError> GetGlossaryTermOutcome;
 typedef Aws::Utils::Outcome<GetGlueIdentityCenterConfigurationResult, GlueError> GetGlueIdentityCenterConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetIntegrationResourcePropertyResult, GlueError> GetIntegrationResourcePropertyOutcome;
 typedef Aws::Utils::Outcome<GetIntegrationTablePropertiesResult, GlueError> GetIntegrationTablePropertiesOutcome;
@@ -815,6 +891,7 @@ typedef Aws::Utils::Outcome<GetWorkflowRunResult, GlueError> GetWorkflowRunOutco
 typedef Aws::Utils::Outcome<GetWorkflowRunPropertiesResult, GlueError> GetWorkflowRunPropertiesOutcome;
 typedef Aws::Utils::Outcome<GetWorkflowRunsResult, GlueError> GetWorkflowRunsOutcome;
 typedef Aws::Utils::Outcome<ImportCatalogToGlueResult, GlueError> ImportCatalogToGlueOutcome;
+typedef Aws::Utils::Outcome<ListAssetTypesResult, GlueError> ListAssetTypesOutcome;
 typedef Aws::Utils::Outcome<ListBlueprintsResult, GlueError> ListBlueprintsOutcome;
 typedef Aws::Utils::Outcome<ListColumnStatisticsTaskRunsResult, GlueError> ListColumnStatisticsTaskRunsOutcome;
 typedef Aws::Utils::Outcome<ListConnectionTypesResult, GlueError> ListConnectionTypesOutcome;
@@ -829,7 +906,11 @@ typedef Aws::Utils::Outcome<ListDataQualityStatisticAnnotationsResult, GlueError
 typedef Aws::Utils::Outcome<ListDataQualityStatisticsResult, GlueError> ListDataQualityStatisticsOutcome;
 typedef Aws::Utils::Outcome<ListDevEndpointsResult, GlueError> ListDevEndpointsOutcome;
 typedef Aws::Utils::Outcome<ListEntitiesResult, GlueError> ListEntitiesOutcome;
+typedef Aws::Utils::Outcome<ListFormTypesResult, GlueError> ListFormTypesOutcome;
+typedef Aws::Utils::Outcome<ListGlossariesResult, GlueError> ListGlossariesOutcome;
+typedef Aws::Utils::Outcome<ListGlossaryTermsResult, GlueError> ListGlossaryTermsOutcome;
 typedef Aws::Utils::Outcome<ListIntegrationResourcePropertiesResult, GlueError> ListIntegrationResourcePropertiesOutcome;
+typedef Aws::Utils::Outcome<ListIterableFormsResult, GlueError> ListIterableFormsOutcome;
 typedef Aws::Utils::Outcome<ListJobsResult, GlueError> ListJobsOutcome;
 typedef Aws::Utils::Outcome<ListMLTransformsResult, GlueError> ListMLTransformsOutcome;
 typedef Aws::Utils::Outcome<ListMaterializedViewRefreshTaskRunsResult, GlueError> ListMaterializedViewRefreshTaskRunsOutcome;
@@ -843,8 +924,12 @@ typedef Aws::Utils::Outcome<ListTriggersResult, GlueError> ListTriggersOutcome;
 typedef Aws::Utils::Outcome<ListUsageProfilesResult, GlueError> ListUsageProfilesOutcome;
 typedef Aws::Utils::Outcome<ListWorkflowsResult, GlueError> ListWorkflowsOutcome;
 typedef Aws::Utils::Outcome<ModifyIntegrationResult, GlueError> ModifyIntegrationOutcome;
+typedef Aws::Utils::Outcome<PutAssetResult, GlueError> PutAssetOutcome;
+typedef Aws::Utils::Outcome<PutAssetTypeResult, GlueError> PutAssetTypeOutcome;
+typedef Aws::Utils::Outcome<PutAttachmentResult, GlueError> PutAttachmentOutcome;
 typedef Aws::Utils::Outcome<PutDataCatalogEncryptionSettingsResult, GlueError> PutDataCatalogEncryptionSettingsOutcome;
 typedef Aws::Utils::Outcome<PutDataQualityProfileAnnotationResult, GlueError> PutDataQualityProfileAnnotationOutcome;
+typedef Aws::Utils::Outcome<PutFormTypeResult, GlueError> PutFormTypeOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, GlueError> PutResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<PutSchemaVersionMetadataResult, GlueError> PutSchemaVersionMetadataOutcome;
 typedef Aws::Utils::Outcome<PutWorkflowRunPropertiesResult, GlueError> PutWorkflowRunPropertiesOutcome;
@@ -855,6 +940,7 @@ typedef Aws::Utils::Outcome<RemoveSchemaVersionMetadataResult, GlueError> Remove
 typedef Aws::Utils::Outcome<ResetJobBookmarkResult, GlueError> ResetJobBookmarkOutcome;
 typedef Aws::Utils::Outcome<ResumeWorkflowRunResult, GlueError> ResumeWorkflowRunOutcome;
 typedef Aws::Utils::Outcome<RunStatementResult, GlueError> RunStatementOutcome;
+typedef Aws::Utils::Outcome<SearchResult, GlueError> SearchOutcome;
 typedef Aws::Utils::Outcome<SearchTablesResult, GlueError> SearchTablesOutcome;
 typedef Aws::Utils::Outcome<StartBlueprintRunResult, GlueError> StartBlueprintRunOutcome;
 typedef Aws::Utils::Outcome<StartColumnStatisticsTaskRunResult, GlueError> StartColumnStatisticsTaskRunOutcome;
@@ -894,6 +980,8 @@ typedef Aws::Utils::Outcome<UpdateCrawlerScheduleResult, GlueError> UpdateCrawle
 typedef Aws::Utils::Outcome<UpdateDataQualityRulesetResult, GlueError> UpdateDataQualityRulesetOutcome;
 typedef Aws::Utils::Outcome<UpdateDatabaseResult, GlueError> UpdateDatabaseOutcome;
 typedef Aws::Utils::Outcome<UpdateDevEndpointResult, GlueError> UpdateDevEndpointOutcome;
+typedef Aws::Utils::Outcome<UpdateGlossaryResult, GlueError> UpdateGlossaryOutcome;
+typedef Aws::Utils::Outcome<UpdateGlossaryTermResult, GlueError> UpdateGlossaryTermOutcome;
 typedef Aws::Utils::Outcome<UpdateGlueIdentityCenterConfigurationResult, GlueError> UpdateGlueIdentityCenterConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateIntegrationResourcePropertyResult, GlueError> UpdateIntegrationResourcePropertyOutcome;
 typedef Aws::Utils::Outcome<UpdateIntegrationTablePropertiesResult, GlueError> UpdateIntegrationTablePropertiesOutcome;
@@ -913,6 +1001,7 @@ typedef Aws::Utils::Outcome<UpdateWorkflowResult, GlueError> UpdateWorkflowOutco
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<AssociateGlossaryTermsOutcome> AssociateGlossaryTermsOutcomeCallable;
 typedef std::future<BatchCreatePartitionOutcome> BatchCreatePartitionOutcomeCallable;
 typedef std::future<BatchDeleteConnectionOutcome> BatchDeleteConnectionOutcomeCallable;
 typedef std::future<BatchDeletePartitionOutcome> BatchDeletePartitionOutcomeCallable;
@@ -923,6 +1012,7 @@ typedef std::future<BatchGetCrawlersOutcome> BatchGetCrawlersOutcomeCallable;
 typedef std::future<BatchGetCustomEntityTypesOutcome> BatchGetCustomEntityTypesOutcomeCallable;
 typedef std::future<BatchGetDataQualityResultOutcome> BatchGetDataQualityResultOutcomeCallable;
 typedef std::future<BatchGetDevEndpointsOutcome> BatchGetDevEndpointsOutcomeCallable;
+typedef std::future<BatchGetIterableFormsOutcome> BatchGetIterableFormsOutcomeCallable;
 typedef std::future<BatchGetJobsOutcome> BatchGetJobsOutcomeCallable;
 typedef std::future<BatchGetPartitionOutcome> BatchGetPartitionOutcomeCallable;
 typedef std::future<BatchGetTableOptimizerOutcome> BatchGetTableOptimizerOutcomeCallable;
@@ -946,6 +1036,8 @@ typedef std::future<CreateCustomEntityTypeOutcome> CreateCustomEntityTypeOutcome
 typedef std::future<CreateDataQualityRulesetOutcome> CreateDataQualityRulesetOutcomeCallable;
 typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
 typedef std::future<CreateDevEndpointOutcome> CreateDevEndpointOutcomeCallable;
+typedef std::future<CreateGlossaryOutcome> CreateGlossaryOutcomeCallable;
+typedef std::future<CreateGlossaryTermOutcome> CreateGlossaryTermOutcomeCallable;
 typedef std::future<CreateGlueIdentityCenterConfigurationOutcome> CreateGlueIdentityCenterConfigurationOutcomeCallable;
 typedef std::future<CreateIntegrationOutcome> CreateIntegrationOutcomeCallable;
 typedef std::future<CreateIntegrationResourcePropertyOutcome> CreateIntegrationResourcePropertyOutcomeCallable;
@@ -965,6 +1057,9 @@ typedef std::future<CreateTriggerOutcome> CreateTriggerOutcomeCallable;
 typedef std::future<CreateUsageProfileOutcome> CreateUsageProfileOutcomeCallable;
 typedef std::future<CreateUserDefinedFunctionOutcome> CreateUserDefinedFunctionOutcomeCallable;
 typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
+typedef std::future<DeleteAssetOutcome> DeleteAssetOutcomeCallable;
+typedef std::future<DeleteAssetTypeOutcome> DeleteAssetTypeOutcomeCallable;
+typedef std::future<DeleteAttachmentOutcome> DeleteAttachmentOutcomeCallable;
 typedef std::future<DeleteBlueprintOutcome> DeleteBlueprintOutcomeCallable;
 typedef std::future<DeleteCatalogOutcome> DeleteCatalogOutcomeCallable;
 typedef std::future<DeleteClassifierOutcome> DeleteClassifierOutcomeCallable;
@@ -978,6 +1073,9 @@ typedef std::future<DeleteCustomEntityTypeOutcome> DeleteCustomEntityTypeOutcome
 typedef std::future<DeleteDataQualityRulesetOutcome> DeleteDataQualityRulesetOutcomeCallable;
 typedef std::future<DeleteDatabaseOutcome> DeleteDatabaseOutcomeCallable;
 typedef std::future<DeleteDevEndpointOutcome> DeleteDevEndpointOutcomeCallable;
+typedef std::future<DeleteFormTypeOutcome> DeleteFormTypeOutcomeCallable;
+typedef std::future<DeleteGlossaryOutcome> DeleteGlossaryOutcomeCallable;
+typedef std::future<DeleteGlossaryTermOutcome> DeleteGlossaryTermOutcomeCallable;
 typedef std::future<DeleteGlueIdentityCenterConfigurationOutcome> DeleteGlueIdentityCenterConfigurationOutcomeCallable;
 typedef std::future<DeleteIntegrationOutcome> DeleteIntegrationOutcomeCallable;
 typedef std::future<DeleteIntegrationResourcePropertyOutcome> DeleteIntegrationResourcePropertyOutcomeCallable;
@@ -1003,6 +1101,9 @@ typedef std::future<DescribeConnectionTypeOutcome> DescribeConnectionTypeOutcome
 typedef std::future<DescribeEntityOutcome> DescribeEntityOutcomeCallable;
 typedef std::future<DescribeInboundIntegrationsOutcome> DescribeInboundIntegrationsOutcomeCallable;
 typedef std::future<DescribeIntegrationsOutcome> DescribeIntegrationsOutcomeCallable;
+typedef std::future<DisassociateGlossaryTermsOutcome> DisassociateGlossaryTermsOutcomeCallable;
+typedef std::future<GetAssetOutcome> GetAssetOutcomeCallable;
+typedef std::future<GetAssetTypeOutcome> GetAssetTypeOutcomeCallable;
 typedef std::future<GetBlueprintOutcome> GetBlueprintOutcomeCallable;
 typedef std::future<GetBlueprintRunOutcome> GetBlueprintRunOutcomeCallable;
 typedef std::future<GetBlueprintRunsOutcome> GetBlueprintRunsOutcomeCallable;
@@ -1036,6 +1137,9 @@ typedef std::future<GetDataflowGraphOutcome> GetDataflowGraphOutcomeCallable;
 typedef std::future<GetDevEndpointOutcome> GetDevEndpointOutcomeCallable;
 typedef std::future<GetDevEndpointsOutcome> GetDevEndpointsOutcomeCallable;
 typedef std::future<GetEntityRecordsOutcome> GetEntityRecordsOutcomeCallable;
+typedef std::future<GetFormTypeOutcome> GetFormTypeOutcomeCallable;
+typedef std::future<GetGlossaryOutcome> GetGlossaryOutcomeCallable;
+typedef std::future<GetGlossaryTermOutcome> GetGlossaryTermOutcomeCallable;
 typedef std::future<GetGlueIdentityCenterConfigurationOutcome> GetGlueIdentityCenterConfigurationOutcomeCallable;
 typedef std::future<GetIntegrationResourcePropertyOutcome> GetIntegrationResourcePropertyOutcomeCallable;
 typedef std::future<GetIntegrationTablePropertiesOutcome> GetIntegrationTablePropertiesOutcomeCallable;
@@ -1085,6 +1189,7 @@ typedef std::future<GetWorkflowRunOutcome> GetWorkflowRunOutcomeCallable;
 typedef std::future<GetWorkflowRunPropertiesOutcome> GetWorkflowRunPropertiesOutcomeCallable;
 typedef std::future<GetWorkflowRunsOutcome> GetWorkflowRunsOutcomeCallable;
 typedef std::future<ImportCatalogToGlueOutcome> ImportCatalogToGlueOutcomeCallable;
+typedef std::future<ListAssetTypesOutcome> ListAssetTypesOutcomeCallable;
 typedef std::future<ListBlueprintsOutcome> ListBlueprintsOutcomeCallable;
 typedef std::future<ListColumnStatisticsTaskRunsOutcome> ListColumnStatisticsTaskRunsOutcomeCallable;
 typedef std::future<ListConnectionTypesOutcome> ListConnectionTypesOutcomeCallable;
@@ -1099,7 +1204,11 @@ typedef std::future<ListDataQualityStatisticAnnotationsOutcome> ListDataQualityS
 typedef std::future<ListDataQualityStatisticsOutcome> ListDataQualityStatisticsOutcomeCallable;
 typedef std::future<ListDevEndpointsOutcome> ListDevEndpointsOutcomeCallable;
 typedef std::future<ListEntitiesOutcome> ListEntitiesOutcomeCallable;
+typedef std::future<ListFormTypesOutcome> ListFormTypesOutcomeCallable;
+typedef std::future<ListGlossariesOutcome> ListGlossariesOutcomeCallable;
+typedef std::future<ListGlossaryTermsOutcome> ListGlossaryTermsOutcomeCallable;
 typedef std::future<ListIntegrationResourcePropertiesOutcome> ListIntegrationResourcePropertiesOutcomeCallable;
+typedef std::future<ListIterableFormsOutcome> ListIterableFormsOutcomeCallable;
 typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
 typedef std::future<ListMLTransformsOutcome> ListMLTransformsOutcomeCallable;
 typedef std::future<ListMaterializedViewRefreshTaskRunsOutcome> ListMaterializedViewRefreshTaskRunsOutcomeCallable;
@@ -1113,8 +1222,12 @@ typedef std::future<ListTriggersOutcome> ListTriggersOutcomeCallable;
 typedef std::future<ListUsageProfilesOutcome> ListUsageProfilesOutcomeCallable;
 typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
 typedef std::future<ModifyIntegrationOutcome> ModifyIntegrationOutcomeCallable;
+typedef std::future<PutAssetOutcome> PutAssetOutcomeCallable;
+typedef std::future<PutAssetTypeOutcome> PutAssetTypeOutcomeCallable;
+typedef std::future<PutAttachmentOutcome> PutAttachmentOutcomeCallable;
 typedef std::future<PutDataCatalogEncryptionSettingsOutcome> PutDataCatalogEncryptionSettingsOutcomeCallable;
 typedef std::future<PutDataQualityProfileAnnotationOutcome> PutDataQualityProfileAnnotationOutcomeCallable;
+typedef std::future<PutFormTypeOutcome> PutFormTypeOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
 typedef std::future<PutSchemaVersionMetadataOutcome> PutSchemaVersionMetadataOutcomeCallable;
 typedef std::future<PutWorkflowRunPropertiesOutcome> PutWorkflowRunPropertiesOutcomeCallable;
@@ -1125,6 +1238,7 @@ typedef std::future<RemoveSchemaVersionMetadataOutcome> RemoveSchemaVersionMetad
 typedef std::future<ResetJobBookmarkOutcome> ResetJobBookmarkOutcomeCallable;
 typedef std::future<ResumeWorkflowRunOutcome> ResumeWorkflowRunOutcomeCallable;
 typedef std::future<RunStatementOutcome> RunStatementOutcomeCallable;
+typedef std::future<SearchOutcome> SearchOutcomeCallable;
 typedef std::future<SearchTablesOutcome> SearchTablesOutcomeCallable;
 typedef std::future<StartBlueprintRunOutcome> StartBlueprintRunOutcomeCallable;
 typedef std::future<StartColumnStatisticsTaskRunOutcome> StartColumnStatisticsTaskRunOutcomeCallable;
@@ -1164,6 +1278,8 @@ typedef std::future<UpdateCrawlerScheduleOutcome> UpdateCrawlerScheduleOutcomeCa
 typedef std::future<UpdateDataQualityRulesetOutcome> UpdateDataQualityRulesetOutcomeCallable;
 typedef std::future<UpdateDatabaseOutcome> UpdateDatabaseOutcomeCallable;
 typedef std::future<UpdateDevEndpointOutcome> UpdateDevEndpointOutcomeCallable;
+typedef std::future<UpdateGlossaryOutcome> UpdateGlossaryOutcomeCallable;
+typedef std::future<UpdateGlossaryTermOutcome> UpdateGlossaryTermOutcomeCallable;
 typedef std::future<UpdateGlueIdentityCenterConfigurationOutcome> UpdateGlueIdentityCenterConfigurationOutcomeCallable;
 typedef std::future<UpdateIntegrationResourcePropertyOutcome> UpdateIntegrationResourcePropertyOutcomeCallable;
 typedef std::future<UpdateIntegrationTablePropertiesOutcome> UpdateIntegrationTablePropertiesOutcomeCallable;
@@ -1186,6 +1302,9 @@ typedef std::future<UpdateWorkflowOutcome> UpdateWorkflowOutcomeCallable;
 class GlueClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const GlueClient*, const Model::AssociateGlossaryTermsRequest&, const Model::AssociateGlossaryTermsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateGlossaryTermsResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::BatchCreatePartitionRequest&, const Model::BatchCreatePartitionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchCreatePartitionResponseReceivedHandler;
@@ -1216,6 +1335,9 @@ typedef std::function<void(const GlueClient*, const Model::BatchGetDataQualityRe
 typedef std::function<void(const GlueClient*, const Model::BatchGetDevEndpointsRequest&, const Model::BatchGetDevEndpointsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchGetDevEndpointsResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::BatchGetIterableFormsRequest&, const Model::BatchGetIterableFormsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetIterableFormsResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::BatchGetJobsRequest&, const Model::BatchGetJobsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchGetJobsResponseReceivedHandler;
@@ -1289,6 +1411,12 @@ typedef std::function<void(const GlueClient*, const Model::CreateDatabaseRequest
 typedef std::function<void(const GlueClient*, const Model::CreateDevEndpointRequest&, const Model::CreateDevEndpointOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateDevEndpointResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::CreateGlossaryRequest&, const Model::CreateGlossaryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateGlossaryResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::CreateGlossaryTermRequest&, const Model::CreateGlossaryTermOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateGlossaryTermResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::CreateGlueIdentityCenterConfigurationRequest&,
                            const Model::CreateGlueIdentityCenterConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1349,6 +1477,15 @@ typedef std::function<void(const GlueClient*, const Model::CreateUserDefinedFunc
 typedef std::function<void(const GlueClient*, const Model::CreateWorkflowRequest&, const Model::CreateWorkflowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateWorkflowResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::DeleteAssetRequest&, const Model::DeleteAssetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteAssetResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::DeleteAssetTypeRequest&, const Model::DeleteAssetTypeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteAssetTypeResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::DeleteAttachmentRequest&, const Model::DeleteAttachmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteAttachmentResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::DeleteBlueprintRequest&, const Model::DeleteBlueprintOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteBlueprintResponseReceivedHandler;
@@ -1391,6 +1528,15 @@ typedef std::function<void(const GlueClient*, const Model::DeleteDatabaseRequest
 typedef std::function<void(const GlueClient*, const Model::DeleteDevEndpointRequest&, const Model::DeleteDevEndpointOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteDevEndpointResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::DeleteFormTypeRequest&, const Model::DeleteFormTypeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteFormTypeResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::DeleteGlossaryRequest&, const Model::DeleteGlossaryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteGlossaryResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::DeleteGlossaryTermRequest&, const Model::DeleteGlossaryTermOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteGlossaryTermResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::DeleteGlueIdentityCenterConfigurationRequest&,
                            const Model::DeleteGlueIdentityCenterConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1469,6 +1615,15 @@ typedef std::function<void(const GlueClient*, const Model::DescribeInboundIntegr
 typedef std::function<void(const GlueClient*, const Model::DescribeIntegrationsRequest&, const Model::DescribeIntegrationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeIntegrationsResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::DisassociateGlossaryTermsRequest&,
+                           const Model::DisassociateGlossaryTermsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateGlossaryTermsResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::GetAssetRequest&, const Model::GetAssetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAssetResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::GetAssetTypeRequest&, const Model::GetAssetTypeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAssetTypeResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::GetBlueprintRequest&, const Model::GetBlueprintOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetBlueprintResponseReceivedHandler;
@@ -1573,6 +1728,15 @@ typedef std::function<void(const GlueClient*, const Model::GetDevEndpointsReques
 typedef std::function<void(const GlueClient*, const Model::GetEntityRecordsRequest&, const Model::GetEntityRecordsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetEntityRecordsResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::GetFormTypeRequest&, const Model::GetFormTypeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetFormTypeResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::GetGlossaryRequest&, const Model::GetGlossaryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetGlossaryResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::GetGlossaryTermRequest&, const Model::GetGlossaryTermOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetGlossaryTermResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::GetGlueIdentityCenterConfigurationRequest&,
                            const Model::GetGlueIdentityCenterConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1726,6 +1890,9 @@ typedef std::function<void(const GlueClient*, const Model::GetWorkflowRunsReques
 typedef std::function<void(const GlueClient*, const Model::ImportCatalogToGlueRequest&, const Model::ImportCatalogToGlueOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ImportCatalogToGlueResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::ListAssetTypesRequest&, const Model::ListAssetTypesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAssetTypesResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::ListBlueprintsRequest&, const Model::ListBlueprintsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListBlueprintsResponseReceivedHandler;
@@ -1772,10 +1939,22 @@ typedef std::function<void(const GlueClient*, const Model::ListDevEndpointsReque
 typedef std::function<void(const GlueClient*, const Model::ListEntitiesRequest&, const Model::ListEntitiesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEntitiesResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::ListFormTypesRequest&, const Model::ListFormTypesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListFormTypesResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::ListGlossariesRequest&, const Model::ListGlossariesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListGlossariesResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::ListGlossaryTermsRequest&, const Model::ListGlossaryTermsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListGlossaryTermsResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::ListIntegrationResourcePropertiesRequest&,
                            const Model::ListIntegrationResourcePropertiesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListIntegrationResourcePropertiesResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::ListIterableFormsRequest&, const Model::ListIterableFormsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListIterableFormsResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListJobsResponseReceivedHandler;
@@ -1816,6 +1995,15 @@ typedef std::function<void(const GlueClient*, const Model::ListWorkflowsRequest&
 typedef std::function<void(const GlueClient*, const Model::ModifyIntegrationRequest&, const Model::ModifyIntegrationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyIntegrationResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::PutAssetRequest&, const Model::PutAssetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutAssetResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::PutAssetTypeRequest&, const Model::PutAssetTypeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutAssetTypeResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::PutAttachmentRequest&, const Model::PutAttachmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutAttachmentResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::PutDataCatalogEncryptionSettingsRequest&,
                            const Model::PutDataCatalogEncryptionSettingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1824,6 +2012,9 @@ typedef std::function<void(const GlueClient*, const Model::PutDataQualityProfile
                            const Model::PutDataQualityProfileAnnotationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutDataQualityProfileAnnotationResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::PutFormTypeRequest&, const Model::PutFormTypeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutFormTypeResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutResourcePolicyResponseReceivedHandler;
@@ -1854,6 +2045,9 @@ typedef std::function<void(const GlueClient*, const Model::ResumeWorkflowRunRequ
 typedef std::function<void(const GlueClient*, const Model::RunStatementRequest&, const Model::RunStatementOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RunStatementResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::SearchRequest&, const Model::SearchOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::SearchTablesRequest&, const Model::SearchTablesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchTablesResponseReceivedHandler;
@@ -1982,6 +2176,12 @@ typedef std::function<void(const GlueClient*, const Model::UpdateDatabaseRequest
 typedef std::function<void(const GlueClient*, const Model::UpdateDevEndpointRequest&, const Model::UpdateDevEndpointOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateDevEndpointResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::UpdateGlossaryRequest&, const Model::UpdateGlossaryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateGlossaryResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::UpdateGlossaryTermRequest&, const Model::UpdateGlossaryTermOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateGlossaryTermResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::UpdateGlueIdentityCenterConfigurationRequest&,
                            const Model::UpdateGlueIdentityCenterConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

@@ -46,6 +46,10 @@ IngestionJobStatistics& IngestionJobStatistics::operator=(JsonView jsonValue) {
     m_numberOfDocumentsFailed = jsonValue.GetInt64("numberOfDocumentsFailed");
     m_numberOfDocumentsFailedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("numberOfDocumentsSkipped")) {
+    m_numberOfDocumentsSkipped = jsonValue.GetInt64("numberOfDocumentsSkipped");
+    m_numberOfDocumentsSkippedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue IngestionJobStatistics::Jsonize() const {
 
   if (m_numberOfDocumentsFailedHasBeenSet) {
     payload.WithInt64("numberOfDocumentsFailed", m_numberOfDocumentsFailed);
+  }
+
+  if (m_numberOfDocumentsSkippedHasBeenSet) {
+    payload.WithInt64("numberOfDocumentsSkipped", m_numberOfDocumentsSkipped);
   }
 
   return payload;

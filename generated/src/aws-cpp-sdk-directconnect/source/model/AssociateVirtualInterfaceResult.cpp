@@ -140,6 +140,10 @@ AssociateVirtualInterfaceResult& AssociateVirtualInterfaceResult::operator=(cons
     m_siteLinkEnabled = jsonValue.GetBool("siteLinkEnabled");
     m_siteLinkEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rateLimit")) {
+    m_rateLimit = jsonValue.GetString("rateLimit");
+    m_rateLimitHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

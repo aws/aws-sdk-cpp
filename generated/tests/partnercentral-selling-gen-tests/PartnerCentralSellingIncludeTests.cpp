@@ -76,6 +76,7 @@
 #include <aws/partnercentral-selling/model/EngagementInvitationSummary.h>
 #include <aws/partnercentral-selling/model/EngagementMember.h>
 #include <aws/partnercentral-selling/model/EngagementMemberSummary.h>
+#include <aws/partnercentral-selling/model/EngagementProspectingResult.h>
 #include <aws/partnercentral-selling/model/EngagementResourceAssociationSummary.h>
 #include <aws/partnercentral-selling/model/EngagementScore.h>
 #include <aws/partnercentral-selling/model/EngagementSort.h>
@@ -92,6 +93,8 @@
 #include <aws/partnercentral-selling/model/GetEngagementResult.h>
 #include <aws/partnercentral-selling/model/GetOpportunityRequest.h>
 #include <aws/partnercentral-selling/model/GetOpportunityResult.h>
+#include <aws/partnercentral-selling/model/GetProspectingFromEngagementTaskRequest.h>
+#include <aws/partnercentral-selling/model/GetProspectingFromEngagementTaskResult.h>
 #include <aws/partnercentral-selling/model/GetResourceSnapshotJobRequest.h>
 #include <aws/partnercentral-selling/model/GetResourceSnapshotJobResult.h>
 #include <aws/partnercentral-selling/model/GetResourceSnapshotRequest.h>
@@ -106,6 +109,7 @@
 #include <aws/partnercentral-selling/model/LeadContact.h>
 #include <aws/partnercentral-selling/model/LeadContext.h>
 #include <aws/partnercentral-selling/model/LeadCustomer.h>
+#include <aws/partnercentral-selling/model/LeadInsights.h>
 #include <aws/partnercentral-selling/model/LeadInteraction.h>
 #include <aws/partnercentral-selling/model/LeadInvitationCustomer.h>
 #include <aws/partnercentral-selling/model/LeadInvitationInteraction.h>
@@ -132,6 +136,8 @@
 #include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTaskSummary.h>
 #include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksRequest.h>
 #include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksResult.h>
+#include <aws/partnercentral-selling/model/ListProspectingFromEngagementTasksRequest.h>
+#include <aws/partnercentral-selling/model/ListProspectingFromEngagementTasksResult.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsRequest.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsResult.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotsRequest.h>
@@ -152,6 +158,7 @@
 #include <aws/partnercentral-selling/model/OpportunityEngagementInvitationSortName.h>
 #include <aws/partnercentral-selling/model/OpportunityInvitationPayload.h>
 #include <aws/partnercentral-selling/model/OpportunityOrigin.h>
+#include <aws/partnercentral-selling/model/OpportunityQuality.h>
 #include <aws/partnercentral-selling/model/OpportunitySort.h>
 #include <aws/partnercentral-selling/model/OpportunitySortName.h>
 #include <aws/partnercentral-selling/model/OpportunitySummary.h>
@@ -166,11 +173,20 @@
 #include <aws/partnercentral-selling/model/ProjectDetails.h>
 #include <aws/partnercentral-selling/model/ProjectSummary.h>
 #include <aws/partnercentral-selling/model/ProjectView.h>
+#include <aws/partnercentral-selling/model/ProspectingFromEngagementTaskSort.h>
+#include <aws/partnercentral-selling/model/ProspectingFromEngagementTaskSortName.h>
+#include <aws/partnercentral-selling/model/ProspectingInsights.h>
+#include <aws/partnercentral-selling/model/ProspectingResult.h>
+#include <aws/partnercentral-selling/model/ProspectingResultAws.h>
+#include <aws/partnercentral-selling/model/ProspectingResultCustomer.h>
+#include <aws/partnercentral-selling/model/ProspectingTaskStatus.h>
+#include <aws/partnercentral-selling/model/ProspectingTaskSummary.h>
 #include <aws/partnercentral-selling/model/PutSellingSystemSettingsRequest.h>
 #include <aws/partnercentral-selling/model/PutSellingSystemSettingsResult.h>
 #include <aws/partnercentral-selling/model/ReasonCode.h>
 #include <aws/partnercentral-selling/model/Receiver.h>
 #include <aws/partnercentral-selling/model/ReceiverResponsibility.h>
+#include <aws/partnercentral-selling/model/Recommendation.h>
 #include <aws/partnercentral-selling/model/RejectEngagementInvitationRequest.h>
 #include <aws/partnercentral-selling/model/RelatedEntityIdentifiers.h>
 #include <aws/partnercentral-selling/model/RelatedEntityType.h>
@@ -199,6 +215,8 @@
 #include <aws/partnercentral-selling/model/StartEngagementFromOpportunityTaskResult.h>
 #include <aws/partnercentral-selling/model/StartOpportunityFromEngagementTaskRequest.h>
 #include <aws/partnercentral-selling/model/StartOpportunityFromEngagementTaskResult.h>
+#include <aws/partnercentral-selling/model/StartProspectingFromEngagementTaskRequest.h>
+#include <aws/partnercentral-selling/model/StartProspectingFromEngagementTaskResult.h>
 #include <aws/partnercentral-selling/model/StartResourceSnapshotJobRequest.h>
 #include <aws/partnercentral-selling/model/StopResourceSnapshotJobRequest.h>
 #include <aws/partnercentral-selling/model/SubmitOpportunityRequest.h>

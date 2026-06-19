@@ -21,8 +21,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Customer-facing user intent clustering result written to S3.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>The user intent clustering result containing grouped user intents identified
+ * across evaluated sessions.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/UserIntentClusteringResultContent">AWS
  * API Reference</a></p>
  */

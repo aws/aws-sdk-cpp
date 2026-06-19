@@ -44,7 +44,8 @@ enum class InsightsFailureCategory {
   llm_output_category_nonsensical,
   configuration_mismatch_category_tool_definition,
   coding_use_case_specific_failure_types_category_edge_case_oversights,
-  coding_use_case_specific_failure_types_category_dependency_issues
+  coding_use_case_specific_failure_types_category_dependency_issues,
+  other
 };
 
 namespace InsightsFailureCategoryMapper {

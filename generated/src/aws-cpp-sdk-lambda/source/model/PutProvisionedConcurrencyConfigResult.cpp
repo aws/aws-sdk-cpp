@@ -29,13 +29,13 @@ PutProvisionedConcurrencyConfigResult& PutProvisionedConcurrencyConfigResult::op
     m_requestedProvisionedConcurrentExecutions = jsonValue.GetInteger("RequestedProvisionedConcurrentExecutions");
     m_requestedProvisionedConcurrentExecutionsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("AvailableProvisionedConcurrentExecutions")) {
-    m_availableProvisionedConcurrentExecutions = jsonValue.GetInteger("AvailableProvisionedConcurrentExecutions");
-    m_availableProvisionedConcurrentExecutionsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("AllocatedProvisionedConcurrentExecutions")) {
     m_allocatedProvisionedConcurrentExecutions = jsonValue.GetInteger("AllocatedProvisionedConcurrentExecutions");
     m_allocatedProvisionedConcurrentExecutionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AvailableProvisionedConcurrentExecutions")) {
+    m_availableProvisionedConcurrentExecutions = jsonValue.GetInteger("AvailableProvisionedConcurrentExecutions");
+    m_availableProvisionedConcurrentExecutionsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Status")) {
     m_status = ProvisionedConcurrencyStatusEnumMapper::GetProvisionedConcurrencyStatusEnumForName(jsonValue.GetString("Status"));

@@ -8,6 +8,7 @@
 #include <aws/route53resolver/model/DnsThreatProtectionRuleTypeConfig.h>
 #include <aws/route53resolver/model/FirewallAdvancedContentCategoryConfig.h>
 #include <aws/route53resolver/model/FirewallAdvancedThreatCategoryConfig.h>
+#include <aws/route53resolver/model/PartnerThreatProtectionConfig.h>
 
 #include <utility>
 
@@ -22,8 +23,14 @@ namespace Route53Resolver {
 namespace Model {
 
 /**
- * <p>The configuration for a rule type in a DNS Firewall rule. This is a union
- * type — exactly one member should be set.</p><p><h3>See Also:</h3>   <a
+ * <p>The rule-type configuration for a DNS Firewall rule.
+ * <code>FirewallRuleType</code> is a tagged union — exactly one member must be set
+ * per rule, and the member determines what the rule matches against. This shape is
+ * mutually exclusive with the top-level <code>FirewallDomainListId</code> and
+ * <code>DnsThreatProtection</code> fields on <a>CreateFirewallRule</a> and
+ * <a>UpdateFirewallRule</a>.</p> <p>Call <a>ListFirewallRuleTypes</a> to discover
+ * which rule-type variants and which values within each variant are available in
+ * your account and Region.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/FirewallRuleType">AWS
  * API Reference</a></p>
  */
@@ -36,7 +43,32 @@ class FirewallRuleType {
 
   ///@{
   /**
-   * <p>The configuration for a content category-based filtering rule.</p>
+   * <p>Configures the rule to match a third-party threat feed delivered through AWS
+   * Marketplace. The calling account must hold an active subscription to the partner
+   * product named in <code>Partner</code>; if the subscription is missing or
+   * revoked, the rule is created with <code>Status</code>
+   * <code>CREATION_FAILED</code> and cannot be modified — only deleted. See
+   * <a>PartnerThreatProtectionConfig</a>.</p>
+   */
+  inline const PartnerThreatProtectionConfig& GetPartnerThreatProtection() const { return m_partnerThreatProtection; }
+  inline bool PartnerThreatProtectionHasBeenSet() const { return m_partnerThreatProtectionHasBeenSet; }
+  template <typename PartnerThreatProtectionT = PartnerThreatProtectionConfig>
+  void SetPartnerThreatProtection(PartnerThreatProtectionT&& value) {
+    m_partnerThreatProtectionHasBeenSet = true;
+    m_partnerThreatProtection = std::forward<PartnerThreatProtectionT>(value);
+  }
+  template <typename PartnerThreatProtectionT = PartnerThreatProtectionConfig>
+  FirewallRuleType& WithPartnerThreatProtection(PartnerThreatProtectionT&& value) {
+    SetPartnerThreatProtection(std::forward<PartnerThreatProtectionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configures the rule to match an AWS-managed content category (for example,
+   * <code>VIOLENCE_AND_HATE_SPEECH</code>). See
+   * <a>FirewallAdvancedContentCategoryConfig</a>.</p>
    */
   inline const FirewallAdvancedContentCategoryConfig& GetFirewallAdvancedContentCategory() const {
     return m_firewallAdvancedContentCategory;
@@ -56,7 +88,9 @@ class FirewallRuleType {
 
   ///@{
   /**
-   * <p>The configuration for a threat category-based filtering rule.</p>
+   * <p>Configures the rule to match an AWS-managed advanced threat category (for
+   * example, <code>PHISHING</code>). See
+   * <a>FirewallAdvancedThreatCategoryConfig</a>.</p>
    */
   inline const FirewallAdvancedThreatCategoryConfig& GetFirewallAdvancedThreatCategory() const { return m_firewallAdvancedThreatCategory; }
   inline bool FirewallAdvancedThreatCategoryHasBeenSet() const { return m_firewallAdvancedThreatCategoryHasBeenSet; }
@@ -74,8 +108,9 @@ class FirewallRuleType {
 
   ///@{
   /**
-   * <p>The configuration for a DNS threat protection rule type, such as DGA or DNS
-   * tunneling detection.</p>
+   * <p>Configures the rule to match a built-in DNS Firewall Advanced threat detector
+   * — <code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>.
+   * See <a>DnsThreatProtectionRuleTypeConfig</a>.</p>
    */
   inline const DnsThreatProtectionRuleTypeConfig& GetDnsThreatProtection() const { return m_dnsThreatProtection; }
   inline bool DnsThreatProtectionHasBeenSet() const { return m_dnsThreatProtectionHasBeenSet; }
@@ -91,11 +126,14 @@ class FirewallRuleType {
   }
   ///@}
  private:
+  PartnerThreatProtectionConfig m_partnerThreatProtection;
+
   FirewallAdvancedContentCategoryConfig m_firewallAdvancedContentCategory;
 
   FirewallAdvancedThreatCategoryConfig m_firewallAdvancedThreatCategory;
 
   DnsThreatProtectionRuleTypeConfig m_dnsThreatProtection;
+  bool m_partnerThreatProtectionHasBeenSet = false;
   bool m_firewallAdvancedContentCategoryHasBeenSet = false;
   bool m_firewallAdvancedThreatCategoryHasBeenSet = false;
   bool m_dnsThreatProtectionHasBeenSet = false;

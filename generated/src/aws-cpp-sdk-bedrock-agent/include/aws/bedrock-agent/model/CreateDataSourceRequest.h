@@ -139,6 +139,8 @@ class CreateDataSourceRequest : public BedrockAgentRequest {
    * source that’s converted into vector embeddings upon deletion of a knowledge base
    * or data source resource. Note that the <b>vector store itself is not deleted</b>
    * if you delete a knowledge base or data source resource.</p> </li> </ul>
+   * <p>For managed knowledge bases, the only supported option is
+   * <code>DELETE</code>, which is also the default.</p>
    */
   inline DataDeletionPolicy GetDataDeletionPolicy() const { return m_dataDeletionPolicy; }
   inline bool DataDeletionPolicyHasBeenSet() const { return m_dataDeletionPolicyHasBeenSet; }

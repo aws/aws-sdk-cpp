@@ -393,18 +393,25 @@ class AWS_BEDROCKAGENT_API BedrockAgentClient
    * must first set up your data sources and configure a supported vector store. For
    * more information, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowlege-base-prereq.html">Set
-   * up a knowledge base</a>.</p>  <p>If you prefer to let Amazon Bedrock
-   * create and manage a vector store for you in Amazon OpenSearch Service, use the
-   * console. For more information, see <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create">Create
-   * a knowledge base</a>.</p>  <ul> <li> <p>Provide the <code>name</code> and
-   * an optional <code>description</code>.</p> </li> <li> <p>Provide the Amazon
-   * Resource Name (ARN) with permissions to create a knowledge base in the
-   * <code>roleArn</code> field.</p> </li> <li> <p>Provide the embedding model to use
-   * in the <code>embeddingModelArn</code> field in the
-   * <code>knowledgeBaseConfiguration</code> object.</p> </li> <li> <p>Provide the
-   * configuration for your vector store in the <code>storageConfiguration</code>
-   * object.</p> <ul> <li> <p>For an Amazon OpenSearch Service database, use the
+   * up a knowledge base</a>.</p>  <p>To create a managed knowledge base,
+   * provide a <code>managedKnowledgeBaseConfiguration</code> during creation. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-build-managed.html">Build
+   * a managed knowledge base</a>.</p>  <ul> <li> <p>Provide the
+   * <code>name</code> and an optional <code>description</code>.</p> </li> <li>
+   * <p>Provide the Amazon Resource Name (ARN) with permissions to create a knowledge
+   * base in the <code>roleArn</code> field.</p> </li> <li> <p>For managed knowledge
+   * bases, set <code>embeddingModelType</code> to <code>MANAGED</code> to use the
+   * service-managed embedding model, or <code>CUSTOM</code> with an
+   * <code>embeddingModelArn</code> to use your own. To use your own KMS key for
+   * encryption, provide the ARN in <code>serverSideEncryptionConfiguration</code>.
+   * No vector store configuration is required for managed knowledge bases.</p> </li>
+   * <li> <p>For self-managed knowledge bases, provide the embedding model to use in
+   * the <code>embeddingModelArn</code> field in the
+   * <code>knowledgeBaseConfiguration</code> object.</p> </li> <li> <p>For
+   * self-managed knowledge bases, provide the configuration for your vector store in
+   * the <code>storageConfiguration</code> object.</p> <ul> <li> <p>For an Amazon
+   * OpenSearch Service database, use the
    * <code>opensearchServerlessConfiguration</code> object. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-oss.html">Create
@@ -806,6 +813,34 @@ class AWS_BEDROCKAGENT_API BedrockAgentClient
   void DeletePromptAsync(const DeletePromptRequestT& request, const DeletePromptResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentClient::DeletePrompt, request, handler, context);
+  }
+
+  /**
+   * <p>Removes the resource policy associated with a knowledge base. After deletion,
+   * other AWS accounts can no longer access the knowledge base using cross-account
+   * permissions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteResourcePolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+  Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const {
+    return SubmitCallable(&BedrockAgentClient::DeleteResourcePolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+  void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentClient::DeleteResourcePolicy, request, handler, context);
   }
 
   /**
@@ -1246,6 +1281,33 @@ class AWS_BEDROCKAGENT_API BedrockAgentClient
   void GetPromptAsync(const GetPromptRequestT& request, const GetPromptResponseReceivedHandler& handler,
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentClient::GetPrompt, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the resource policy associated with a knowledge base.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetResourcePolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+  Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const {
+    return SubmitCallable(&BedrockAgentClient::GetResourcePolicy, request);
+  }
+
+  /**
+   * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+  void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentClient::GetResourcePolicy, request, handler, context);
   }
 
   /**
@@ -1755,6 +1817,35 @@ class AWS_BEDROCKAGENT_API BedrockAgentClient
   void PrepareFlowAsync(const PrepareFlowRequestT& request, const PrepareFlowResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentClient::PrepareFlow, request, handler, context);
+  }
+
+  /**
+   * <p>Associates a resource policy with a knowledge base. A resource policy allows
+   * other AWS accounts to access the knowledge base. For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-cross-account.html">Cross-account
+   * access for knowledge bases</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/PutResourcePolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+  Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const {
+    return SubmitCallable(&BedrockAgentClient::PutResourcePolicy, request);
+  }
+
+  /**
+   * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+  void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentClient::PutResourcePolicy, request, handler, context);
   }
 
   /**

@@ -49,9 +49,31 @@ class UpdateClusterSoftwareInstanceGroupSpecification {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The version of the HyperPod-managed AMI to update to for the instance group.
+   * Uses semantic versioning in the format <code>MAJOR.MINOR.PATCH</code>.</p>
+   */
+  inline const Aws::String& GetImageReleaseVersion() const { return m_imageReleaseVersion; }
+  inline bool ImageReleaseVersionHasBeenSet() const { return m_imageReleaseVersionHasBeenSet; }
+  template <typename ImageReleaseVersionT = Aws::String>
+  void SetImageReleaseVersion(ImageReleaseVersionT&& value) {
+    m_imageReleaseVersionHasBeenSet = true;
+    m_imageReleaseVersion = std::forward<ImageReleaseVersionT>(value);
+  }
+  template <typename ImageReleaseVersionT = Aws::String>
+  UpdateClusterSoftwareInstanceGroupSpecification& WithImageReleaseVersion(ImageReleaseVersionT&& value) {
+    SetImageReleaseVersion(std::forward<ImageReleaseVersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceGroupName;
+
+  Aws::String m_imageReleaseVersion;
   bool m_instanceGroupNameHasBeenSet = false;
+  bool m_imageReleaseVersionHasBeenSet = false;
 };
 
 }  // namespace Model

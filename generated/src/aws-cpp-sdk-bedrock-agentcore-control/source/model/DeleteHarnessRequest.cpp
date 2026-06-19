@@ -24,4 +24,10 @@ void DeleteHarnessRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("clientToken", ss.str());
     ss.str("");
   }
+
+  if (m_deleteManagedMemoryHasBeenSet) {
+    ss << m_deleteManagedMemory;
+    uri.AddQueryStringParameter("deleteManagedMemory", ss.str());
+    ss.str("");
+  }
 }

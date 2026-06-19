@@ -228,6 +228,26 @@ class AwsOpportunitySummaryFullView {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Engagement classification for this opportunity. Read-only. Null before
+   * scoring. Known values: <code>AWS Field-engaged</code>,
+   * <code>Agent-engaged</code>, <code>Partner-led</code>.</p>
+   */
+  inline const Aws::String& GetCosellMotion() const { return m_cosellMotion; }
+  inline bool CosellMotionHasBeenSet() const { return m_cosellMotionHasBeenSet; }
+  template <typename CosellMotionT = Aws::String>
+  void SetCosellMotion(CosellMotionT&& value) {
+    m_cosellMotionHasBeenSet = true;
+    m_cosellMotion = std::forward<CosellMotionT>(value);
+  }
+  template <typename CosellMotionT = Aws::String>
+  AwsOpportunitySummaryFullView& WithCosellMotion(CosellMotionT&& value) {
+    SetCosellMotion(std::forward<CosellMotionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_relatedOpportunityId;
 
@@ -250,6 +270,8 @@ class AwsOpportunitySummaryFullView {
   AwsOpportunityCustomer m_customer;
 
   AwsOpportunityProject m_project;
+
+  Aws::String m_cosellMotion;
   bool m_relatedOpportunityIdHasBeenSet = false;
   bool m_originHasBeenSet = false;
   bool m_involvementTypeHasBeenSet = false;
@@ -261,6 +283,7 @@ class AwsOpportunitySummaryFullView {
   bool m_relatedEntityIdsHasBeenSet = false;
   bool m_customerHasBeenSet = false;
   bool m_projectHasBeenSet = false;
+  bool m_cosellMotionHasBeenSet = false;
 };
 
 }  // namespace Model

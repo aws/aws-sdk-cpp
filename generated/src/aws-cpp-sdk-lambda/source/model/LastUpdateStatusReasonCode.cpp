@@ -36,6 +36,7 @@ static const int EFSMountTimeout_HASH = HashingUtils::HashString("EFSMountTimeou
 static const int InvalidRuntime_HASH = HashingUtils::HashString("InvalidRuntime");
 static const int InvalidZipFileException_HASH = HashingUtils::HashString("InvalidZipFileException");
 static const int FunctionError_HASH = HashingUtils::HashString("FunctionError");
+static const int ServiceQuotaExceededException_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int VcpuLimitExceeded_HASH = HashingUtils::HashString("VcpuLimitExceeded");
 static const int CapacityProviderScalingLimitExceeded_HASH = HashingUtils::HashString("CapacityProviderScalingLimitExceeded");
 static const int InsufficientCapacity_HASH = HashingUtils::HashString("InsufficientCapacity");
@@ -94,6 +95,8 @@ LastUpdateStatusReasonCode GetLastUpdateStatusReasonCodeForName(const Aws::Strin
     return LastUpdateStatusReasonCode::InvalidZipFileException;
   } else if (hashCode == FunctionError_HASH) {
     return LastUpdateStatusReasonCode::FunctionError;
+  } else if (hashCode == ServiceQuotaExceededException_HASH) {
+    return LastUpdateStatusReasonCode::ServiceQuotaExceededException;
   } else if (hashCode == VcpuLimitExceeded_HASH) {
     return LastUpdateStatusReasonCode::VcpuLimitExceeded;
   } else if (hashCode == CapacityProviderScalingLimitExceeded_HASH) {
@@ -176,6 +179,8 @@ Aws::String GetNameForLastUpdateStatusReasonCode(LastUpdateStatusReasonCode enum
       return "InvalidZipFileException";
     case LastUpdateStatusReasonCode::FunctionError:
       return "FunctionError";
+    case LastUpdateStatusReasonCode::ServiceQuotaExceededException:
+      return "ServiceQuotaExceededException";
     case LastUpdateStatusReasonCode::VcpuLimitExceeded:
       return "VcpuLimitExceeded";
     case LastUpdateStatusReasonCode::CapacityProviderScalingLimitExceeded:

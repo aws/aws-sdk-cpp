@@ -31,8 +31,28 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const {
     payload.WithObject("FilterCriteria", m_filterCriteria.Jsonize());
   }
 
+  if (m_kMSKeyArnHasBeenSet) {
+    payload.WithString("KMSKeyArn", m_kMSKeyArn);
+  }
+
+  if (m_metricsConfigHasBeenSet) {
+    payload.WithObject("MetricsConfig", m_metricsConfig.Jsonize());
+  }
+
+  if (m_loggingConfigHasBeenSet) {
+    payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
+  }
+
+  if (m_scalingConfigHasBeenSet) {
+    payload.WithObject("ScalingConfig", m_scalingConfig.Jsonize());
+  }
+
   if (m_maximumBatchingWindowInSecondsHasBeenSet) {
     payload.WithInteger("MaximumBatchingWindowInSeconds", m_maximumBatchingWindowInSeconds);
+  }
+
+  if (m_parallelizationFactorHasBeenSet) {
+    payload.WithInteger("ParallelizationFactor", m_parallelizationFactor);
   }
 
   if (m_destinationConfigHasBeenSet) {
@@ -51,8 +71,8 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const {
     payload.WithInteger("MaximumRetryAttempts", m_maximumRetryAttempts);
   }
 
-  if (m_parallelizationFactorHasBeenSet) {
-    payload.WithInteger("ParallelizationFactor", m_parallelizationFactor);
+  if (m_tumblingWindowInSecondsHasBeenSet) {
+    payload.WithInteger("TumblingWindowInSeconds", m_tumblingWindowInSeconds);
   }
 
   if (m_sourceAccessConfigurationsHasBeenSet) {
@@ -65,10 +85,6 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const {
     payload.WithArray("SourceAccessConfigurations", std::move(sourceAccessConfigurationsJsonList));
   }
 
-  if (m_tumblingWindowInSecondsHasBeenSet) {
-    payload.WithInteger("TumblingWindowInSeconds", m_tumblingWindowInSeconds);
-  }
-
   if (m_functionResponseTypesHasBeenSet) {
     Aws::Utils::Array<JsonValue> functionResponseTypesJsonList(m_functionResponseTypes.size());
     for (unsigned functionResponseTypesIndex = 0; functionResponseTypesIndex < functionResponseTypesJsonList.GetLength();
@@ -77,10 +93,6 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const {
           FunctionResponseTypeMapper::GetNameForFunctionResponseType(m_functionResponseTypes[functionResponseTypesIndex]));
     }
     payload.WithArray("FunctionResponseTypes", std::move(functionResponseTypesJsonList));
-  }
-
-  if (m_scalingConfigHasBeenSet) {
-    payload.WithObject("ScalingConfig", m_scalingConfig.Jsonize());
   }
 
   if (m_amazonManagedKafkaEventSourceConfigHasBeenSet) {
@@ -93,18 +105,6 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const {
 
   if (m_documentDBEventSourceConfigHasBeenSet) {
     payload.WithObject("DocumentDBEventSourceConfig", m_documentDBEventSourceConfig.Jsonize());
-  }
-
-  if (m_kMSKeyArnHasBeenSet) {
-    payload.WithString("KMSKeyArn", m_kMSKeyArn);
-  }
-
-  if (m_metricsConfigHasBeenSet) {
-    payload.WithObject("MetricsConfig", m_metricsConfig.Jsonize());
-  }
-
-  if (m_loggingConfigHasBeenSet) {
-    payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
   }
 
   if (m_provisionedPollerConfigHasBeenSet) {

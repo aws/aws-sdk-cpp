@@ -36,7 +36,7 @@ class UpdateFHIRDatastoreRequest : public HealthLakeRequest {
 
   ///@{
   /**
-   * <para>The data store identifier.</para>
+   * <p>The data store identifier.</p>
    */
   inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
   inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
@@ -54,7 +54,7 @@ class UpdateFHIRDatastoreRequest : public HealthLakeRequest {
 
   ///@{
   /**
-   * <para>The data store name.</para>
+   * <p>The data store name.</p>
    */
   inline const Aws::String& GetDatastoreName() const { return m_datastoreName; }
   inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
@@ -72,25 +72,7 @@ class UpdateFHIRDatastoreRequest : public HealthLakeRequest {
 
   ///@{
   /**
-   * <para>The analytics configuration for the data store.</para>
-   */
-  inline const AnalyticsConfiguration& GetAnalyticsConfiguration() const { return m_analyticsConfiguration; }
-  inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }
-  template <typename AnalyticsConfigurationT = AnalyticsConfiguration>
-  void SetAnalyticsConfiguration(AnalyticsConfigurationT&& value) {
-    m_analyticsConfigurationHasBeenSet = true;
-    m_analyticsConfiguration = std::forward<AnalyticsConfigurationT>(value);
-  }
-  template <typename AnalyticsConfigurationT = AnalyticsConfiguration>
-  UpdateFHIRDatastoreRequest& WithAnalyticsConfiguration(AnalyticsConfigurationT&& value) {
-    SetAnalyticsConfiguration(std::forward<AnalyticsConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <para>The NLP configuration for the data store.</para>
+   * <p>The natural language processing (NLP) configuration for the data store.</p>
    */
   inline const NlpConfiguration& GetNlpConfiguration() const { return m_nlpConfiguration; }
   inline bool NlpConfigurationHasBeenSet() const { return m_nlpConfigurationHasBeenSet; }
@@ -108,7 +90,25 @@ class UpdateFHIRDatastoreRequest : public HealthLakeRequest {
 
   ///@{
   /**
-   * <para>The profile configuration for the data store.</para>
+   * <p>The analytics configuration for the data store.</p>
+   */
+  inline const AnalyticsConfiguration& GetAnalyticsConfiguration() const { return m_analyticsConfiguration; }
+  inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }
+  template <typename AnalyticsConfigurationT = AnalyticsConfiguration>
+  void SetAnalyticsConfiguration(AnalyticsConfigurationT&& value) {
+    m_analyticsConfigurationHasBeenSet = true;
+    m_analyticsConfiguration = std::forward<AnalyticsConfigurationT>(value);
+  }
+  template <typename AnalyticsConfigurationT = AnalyticsConfiguration>
+  UpdateFHIRDatastoreRequest& WithAnalyticsConfiguration(AnalyticsConfigurationT&& value) {
+    SetAnalyticsConfiguration(std::forward<AnalyticsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The profile configuration for the data store.</p>
    */
   inline const ProfileConfiguration& GetProfileConfiguration() const { return m_profileConfiguration; }
   inline bool ProfileConfigurationHasBeenSet() const { return m_profileConfigurationHasBeenSet; }
@@ -126,7 +126,7 @@ class UpdateFHIRDatastoreRequest : public HealthLakeRequest {
 
   ///@{
   /**
-   * <para>The identity provider configuration for the data store.</para>
+   * <p>The identity provider configuration for the data store.</p>
    */
   inline const IdentityProviderConfiguration& GetIdentityProviderConfiguration() const { return m_identityProviderConfiguration; }
   inline bool IdentityProviderConfigurationHasBeenSet() const { return m_identityProviderConfigurationHasBeenSet; }
@@ -146,17 +146,17 @@ class UpdateFHIRDatastoreRequest : public HealthLakeRequest {
 
   Aws::String m_datastoreName;
 
-  AnalyticsConfiguration m_analyticsConfiguration;
-
   NlpConfiguration m_nlpConfiguration;
+
+  AnalyticsConfiguration m_analyticsConfiguration;
 
   ProfileConfiguration m_profileConfiguration;
 
   IdentityProviderConfiguration m_identityProviderConfiguration;
   bool m_datastoreIdHasBeenSet = false;
   bool m_datastoreNameHasBeenSet = false;
-  bool m_analyticsConfigurationHasBeenSet = false;
   bool m_nlpConfigurationHasBeenSet = false;
+  bool m_analyticsConfigurationHasBeenSet = false;
   bool m_profileConfigurationHasBeenSet = false;
   bool m_identityProviderConfigurationHasBeenSet = false;
 };

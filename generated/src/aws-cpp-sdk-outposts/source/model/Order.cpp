@@ -22,6 +22,14 @@ Order& Order::operator=(JsonView jsonValue) {
     m_outpostId = jsonValue.GetString("OutpostId");
     m_outpostIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("QuoteIdentifier")) {
+    m_quoteIdentifier = jsonValue.GetString("QuoteIdentifier");
+    m_quoteIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("QuoteOptionIdentifier")) {
+    m_quoteOptionIdentifier = jsonValue.GetString("QuoteOptionIdentifier");
+    m_quoteOptionIdentifierHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("OrderId")) {
     m_orderId = jsonValue.GetString("OrderId");
     m_orderIdHasBeenSet = true;
@@ -65,6 +73,14 @@ JsonValue Order::Jsonize() const {
 
   if (m_outpostIdHasBeenSet) {
     payload.WithString("OutpostId", m_outpostId);
+  }
+
+  if (m_quoteIdentifierHasBeenSet) {
+    payload.WithString("QuoteIdentifier", m_quoteIdentifier);
+  }
+
+  if (m_quoteOptionIdentifierHasBeenSet) {
+    payload.WithString("QuoteOptionIdentifier", m_quoteOptionIdentifier);
   }
 
   if (m_orderIdHasBeenSet) {

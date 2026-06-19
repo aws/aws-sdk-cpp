@@ -33,6 +33,7 @@
 #include <aws/mq/model/DescribeBrokerResult.h>
 #include <aws/mq/model/DescribeConfigurationResult.h>
 #include <aws/mq/model/DescribeConfigurationRevisionResult.h>
+#include <aws/mq/model/DescribeSharedResourcesResult.h>
 #include <aws/mq/model/DescribeUserResult.h>
 #include <aws/mq/model/ListBrokersRequest.h>
 #include <aws/mq/model/ListBrokersResult.h>
@@ -92,6 +93,7 @@ class DescribeBrokerEngineTypesRequest;
 class DescribeBrokerInstanceOptionsRequest;
 class DescribeConfigurationRequest;
 class DescribeConfigurationRevisionRequest;
+class DescribeSharedResourcesRequest;
 class DescribeUserRequest;
 class ListBrokersRequest;
 class ListConfigurationRevisionsRequest;
@@ -119,6 +121,7 @@ typedef Aws::Utils::Outcome<DescribeBrokerEngineTypesResult, MQError> DescribeBr
 typedef Aws::Utils::Outcome<DescribeBrokerInstanceOptionsResult, MQError> DescribeBrokerInstanceOptionsOutcome;
 typedef Aws::Utils::Outcome<DescribeConfigurationResult, MQError> DescribeConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeConfigurationRevisionResult, MQError> DescribeConfigurationRevisionOutcome;
+typedef Aws::Utils::Outcome<DescribeSharedResourcesResult, MQError> DescribeSharedResourcesOutcome;
 typedef Aws::Utils::Outcome<DescribeUserResult, MQError> DescribeUserOutcome;
 typedef Aws::Utils::Outcome<ListBrokersResult, MQError> ListBrokersOutcome;
 typedef Aws::Utils::Outcome<ListConfigurationRevisionsResult, MQError> ListConfigurationRevisionsOutcome;
@@ -146,6 +149,7 @@ typedef std::future<DescribeBrokerEngineTypesOutcome> DescribeBrokerEngineTypesO
 typedef std::future<DescribeBrokerInstanceOptionsOutcome> DescribeBrokerInstanceOptionsOutcomeCallable;
 typedef std::future<DescribeConfigurationOutcome> DescribeConfigurationOutcomeCallable;
 typedef std::future<DescribeConfigurationRevisionOutcome> DescribeConfigurationRevisionOutcomeCallable;
+typedef std::future<DescribeSharedResourcesOutcome> DescribeSharedResourcesOutcomeCallable;
 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
 typedef std::future<ListBrokersOutcome> ListBrokersOutcomeCallable;
 typedef std::future<ListConfigurationRevisionsOutcome> ListConfigurationRevisionsOutcomeCallable;
@@ -204,6 +208,9 @@ typedef std::function<void(const MQClient*, const Model::DescribeConfigurationRe
                            const Model::DescribeConfigurationRevisionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeConfigurationRevisionResponseReceivedHandler;
+typedef std::function<void(const MQClient*, const Model::DescribeSharedResourcesRequest&, const Model::DescribeSharedResourcesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeSharedResourcesResponseReceivedHandler;
 typedef std::function<void(const MQClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeUserResponseReceivedHandler;

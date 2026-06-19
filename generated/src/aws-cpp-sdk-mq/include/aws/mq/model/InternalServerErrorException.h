@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mq/MQ_EXPORTS.h>
+#include <aws/mq/model/ResourceShareError.h>
 
 #include <utility>
 
@@ -66,12 +68,39 @@ class InternalServerErrorException {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The list of resource share errors.</p>
+   */
+  inline const Aws::Vector<ResourceShareError>& GetResourceShareErrors() const { return m_resourceShareErrors; }
+  inline bool ResourceShareErrorsHasBeenSet() const { return m_resourceShareErrorsHasBeenSet; }
+  template <typename ResourceShareErrorsT = Aws::Vector<ResourceShareError>>
+  void SetResourceShareErrors(ResourceShareErrorsT&& value) {
+    m_resourceShareErrorsHasBeenSet = true;
+    m_resourceShareErrors = std::forward<ResourceShareErrorsT>(value);
+  }
+  template <typename ResourceShareErrorsT = Aws::Vector<ResourceShareError>>
+  InternalServerErrorException& WithResourceShareErrors(ResourceShareErrorsT&& value) {
+    SetResourceShareErrors(std::forward<ResourceShareErrorsT>(value));
+    return *this;
+  }
+  template <typename ResourceShareErrorsT = ResourceShareError>
+  InternalServerErrorException& AddResourceShareErrors(ResourceShareErrorsT&& value) {
+    m_resourceShareErrorsHasBeenSet = true;
+    m_resourceShareErrors.emplace_back(std::forward<ResourceShareErrorsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_errorAttribute;
 
   Aws::String m_message;
+
+  Aws::Vector<ResourceShareError> m_resourceShareErrors;
   bool m_errorAttributeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
+  bool m_resourceShareErrorsHasBeenSet = false;
 };
 
 }  // namespace Model

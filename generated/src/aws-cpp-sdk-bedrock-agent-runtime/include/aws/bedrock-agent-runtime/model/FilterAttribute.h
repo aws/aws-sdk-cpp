@@ -59,7 +59,7 @@ class FilterAttribute {
 
   ///@{
   /**
-   * <p>The value to whcih to compare the value of the metadata attribute.</p>
+   * <p>The value to which to compare the value of the metadata attribute.</p>
    */
   inline Aws::Utils::DocumentView GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

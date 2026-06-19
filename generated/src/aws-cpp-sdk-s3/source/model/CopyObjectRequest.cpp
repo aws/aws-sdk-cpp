@@ -175,6 +175,10 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
     headers.emplace("x-amz-tagging-directive", TaggingDirectiveMapper::GetNameForTaggingDirective(m_taggingDirective));
   }
 
+  if (m_annotationDirectiveHasBeenSet && m_annotationDirective != AnnotationDirective::NOT_SET) {
+    headers.emplace("x-amz-object-annotation-directive", AnnotationDirectiveMapper::GetNameForAnnotationDirective(m_annotationDirective));
+  }
+
   if (m_serverSideEncryptionHasBeenSet && m_serverSideEncryption != ServerSideEncryption::NOT_SET) {
     headers.emplace("x-amz-server-side-encryption", ServerSideEncryptionMapper::GetNameForServerSideEncryption(m_serverSideEncryption));
   }

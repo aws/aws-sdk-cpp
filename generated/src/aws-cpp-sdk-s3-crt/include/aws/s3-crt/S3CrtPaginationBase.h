@@ -9,6 +9,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/s3-crt/model/ListBucketsPaginationTraits.h>
 #include <aws/s3-crt/model/ListDirectoryBucketsPaginationTraits.h>
+#include <aws/s3-crt/model/ListObjectAnnotationsPaginationTraits.h>
 #include <aws/s3-crt/model/ListObjectsV2PaginationTraits.h>
 #include <aws/s3-crt/model/ListPartsPaginationTraits.h>
 
@@ -40,6 +41,18 @@ class S3CrtPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDirectoryBucketsRequest,
                                              Pagination::ListDirectoryBucketsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListObjectAnnotations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectAnnotationsRequest,
+                                    Pagination::ListObjectAnnotationsPaginationTraits<DerivedClient>>
+  ListObjectAnnotationsPaginator(const Model::ListObjectAnnotationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectAnnotationsRequest,
+                                             Pagination::ListObjectAnnotationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

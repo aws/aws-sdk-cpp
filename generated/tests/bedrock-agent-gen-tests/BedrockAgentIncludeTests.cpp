@@ -17,6 +17,8 @@
 #include <aws/bedrock-agent/BedrockAgentServiceClientModel.h>
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/APISchema.h>
+#include <aws/bedrock-agent/model/AccessControlAccess.h>
+#include <aws/bedrock-agent/model/AccessControlPrincipalType.h>
 #include <aws/bedrock-agent/model/ActionGroupExecutor.h>
 #include <aws/bedrock-agent/model/ActionGroupSignature.h>
 #include <aws/bedrock-agent/model/ActionGroupState.h>
@@ -46,6 +48,7 @@
 #include <aws/bedrock-agent/model/AssociateAgentKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/AssociateAgentKnowledgeBaseResult.h>
 #include <aws/bedrock-agent/model/AudioConfiguration.h>
+#include <aws/bedrock-agent/model/AudioExtractionConfiguration.h>
 #include <aws/bedrock-agent/model/AudioSegmentationConfiguration.h>
 #include <aws/bedrock-agent/model/AutoToolChoice.h>
 #include <aws/bedrock-agent/model/BedrockDataAutomationConfiguration.h>
@@ -131,10 +134,14 @@
 #include <aws/bedrock-agent/model/DeleteKnowledgeBaseResult.h>
 #include <aws/bedrock-agent/model/DeletePromptRequest.h>
 #include <aws/bedrock-agent/model/DeletePromptResult.h>
+#include <aws/bedrock-agent/model/DeleteResourcePolicyRequest.h>
+#include <aws/bedrock-agent/model/DeleteResourcePolicyResult.h>
+#include <aws/bedrock-agent/model/DeletionProtectionConfiguration.h>
 #include <aws/bedrock-agent/model/DisassociateAgentCollaboratorRequest.h>
 #include <aws/bedrock-agent/model/DisassociateAgentCollaboratorResult.h>
 #include <aws/bedrock-agent/model/DisassociateAgentKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/DisassociateAgentKnowledgeBaseResult.h>
+#include <aws/bedrock-agent/model/DocumentAccessControlEntry.h>
 #include <aws/bedrock-agent/model/DocumentContent.h>
 #include <aws/bedrock-agent/model/DocumentIdentifier.h>
 #include <aws/bedrock-agent/model/DocumentMetadata.h>
@@ -143,6 +150,8 @@
 #include <aws/bedrock-agent/model/DuplicateConnectionsFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/EmbeddingDataType.h>
 #include <aws/bedrock-agent/model/EmbeddingModelConfiguration.h>
+#include <aws/bedrock-agent/model/EmbeddingModelType.h>
+#include <aws/bedrock-agent/model/EnabledOrDisabledState.h>
 #include <aws/bedrock-agent/model/EnrichmentStrategyConfiguration.h>
 #include <aws/bedrock-agent/model/EnrichmentStrategyMethod.h>
 #include <aws/bedrock-agent/model/FieldForReranking.h>
@@ -201,9 +210,12 @@
 #include <aws/bedrock-agent/model/GetKnowledgeBaseResult.h>
 #include <aws/bedrock-agent/model/GetPromptRequest.h>
 #include <aws/bedrock-agent/model/GetPromptResult.h>
+#include <aws/bedrock-agent/model/GetResourcePolicyRequest.h>
+#include <aws/bedrock-agent/model/GetResourcePolicyResult.h>
 #include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <aws/bedrock-agent/model/HierarchicalChunkingConfiguration.h>
 #include <aws/bedrock-agent/model/HierarchicalChunkingLevelConfiguration.h>
+#include <aws/bedrock-agent/model/ImageExtractionConfiguration.h>
 #include <aws/bedrock-agent/model/IncludeExclude.h>
 #include <aws/bedrock-agent/model/IncompatibleConnectionDataTypeFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/IncompatibleLoopNodeType.h>
@@ -277,6 +289,9 @@
 #include <aws/bedrock-agent/model/LoopInputFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/MalformedConditionExpressionFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MalformedNodeInputExpressionFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/ManagedKnowledgeBaseConfiguration.h>
+#include <aws/bedrock-agent/model/ManagedKnowledgeBaseConnectorConfiguration.h>
+#include <aws/bedrock-agent/model/MediaExtractionConfiguration.h>
 #include <aws/bedrock-agent/model/MemoryConfiguration.h>
 #include <aws/bedrock-agent/model/MemoryType.h>
 #include <aws/bedrock-agent/model/Message.h>
@@ -343,6 +358,8 @@
 #include <aws/bedrock-agent/model/PromptTemplateType.h>
 #include <aws/bedrock-agent/model/PromptType.h>
 #include <aws/bedrock-agent/model/PromptVariant.h>
+#include <aws/bedrock-agent/model/PutResourcePolicyRequest.h>
+#include <aws/bedrock-agent/model/PutResourcePolicyResult.h>
 #include <aws/bedrock-agent/model/QueryEngineType.h>
 #include <aws/bedrock-agent/model/QueryGenerationColumn.h>
 #include <aws/bedrock-agent/model/QueryGenerationConfiguration.h>
@@ -465,6 +482,7 @@
 #include <aws/bedrock-agent/model/VectorSearchRerankingConfiguration.h>
 #include <aws/bedrock-agent/model/VectorSearchRerankingConfigurationType.h>
 #include <aws/bedrock-agent/model/VideoConfiguration.h>
+#include <aws/bedrock-agent/model/VideoExtractionConfiguration.h>
 #include <aws/bedrock-agent/model/VideoSegmentationConfiguration.h>
 #include <aws/bedrock-agent/model/WebCrawlerConfiguration.h>
 #include <aws/bedrock-agent/model/WebCrawlerLimits.h>

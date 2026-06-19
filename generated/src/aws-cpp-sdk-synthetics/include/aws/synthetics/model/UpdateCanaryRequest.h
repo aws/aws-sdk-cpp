@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/synthetics/SyntheticsRequest.h>
 #include <aws/synthetics/Synthetics_EXPORTS.h>
+#include <aws/synthetics/model/AddReplicaLocationInput.h>
 #include <aws/synthetics/model/ArtifactConfigInput.h>
 #include <aws/synthetics/model/BrowserConfig.h>
 #include <aws/synthetics/model/CanaryCodeInput.h>
@@ -404,6 +405,58 @@ class UpdateCanaryRequest : public SyntheticsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of locations (Amazon Web Services Regions) to add as replicas for the
+   * canary. Each location specifies a Region and optional VPC configuration for the
+   * replica. You can add up to 50 replica locations.</p>
+   */
+  inline const Aws::Vector<AddReplicaLocationInput>& GetAddReplicaLocations() const { return m_addReplicaLocations; }
+  inline bool AddReplicaLocationsHasBeenSet() const { return m_addReplicaLocationsHasBeenSet; }
+  template <typename AddReplicaLocationsT = Aws::Vector<AddReplicaLocationInput>>
+  void SetAddReplicaLocations(AddReplicaLocationsT&& value) {
+    m_addReplicaLocationsHasBeenSet = true;
+    m_addReplicaLocations = std::forward<AddReplicaLocationsT>(value);
+  }
+  template <typename AddReplicaLocationsT = Aws::Vector<AddReplicaLocationInput>>
+  UpdateCanaryRequest& WithAddReplicaLocations(AddReplicaLocationsT&& value) {
+    SetAddReplicaLocations(std::forward<AddReplicaLocationsT>(value));
+    return *this;
+  }
+  template <typename AddReplicaLocationsT = AddReplicaLocationInput>
+  UpdateCanaryRequest& AddAddReplicaLocations(AddReplicaLocationsT&& value) {
+    m_addReplicaLocationsHasBeenSet = true;
+    m_addReplicaLocations.emplace_back(std::forward<AddReplicaLocationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of locations (Amazon Web Services Regions) to remove as replicas for
+   * the canary. You must specify at least one location to remove. All replicas can
+   * be removed in a single API call and you cannot remove the primary location.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetRemoveReplicaLocations() const { return m_removeReplicaLocations; }
+  inline bool RemoveReplicaLocationsHasBeenSet() const { return m_removeReplicaLocationsHasBeenSet; }
+  template <typename RemoveReplicaLocationsT = Aws::Vector<Aws::String>>
+  void SetRemoveReplicaLocations(RemoveReplicaLocationsT&& value) {
+    m_removeReplicaLocationsHasBeenSet = true;
+    m_removeReplicaLocations = std::forward<RemoveReplicaLocationsT>(value);
+  }
+  template <typename RemoveReplicaLocationsT = Aws::Vector<Aws::String>>
+  UpdateCanaryRequest& WithRemoveReplicaLocations(RemoveReplicaLocationsT&& value) {
+    SetRemoveReplicaLocations(std::forward<RemoveReplicaLocationsT>(value));
+    return *this;
+  }
+  template <typename RemoveReplicaLocationsT = Aws::String>
+  UpdateCanaryRequest& AddRemoveReplicaLocations(RemoveReplicaLocationsT&& value) {
+    m_removeReplicaLocationsHasBeenSet = true;
+    m_removeReplicaLocations.emplace_back(std::forward<RemoveReplicaLocationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -436,6 +489,10 @@ class UpdateCanaryRequest : public SyntheticsRequest {
   Aws::Vector<VisualReferenceInput> m_visualReferences;
 
   Aws::Vector<BrowserConfig> m_browserConfigs;
+
+  Aws::Vector<AddReplicaLocationInput> m_addReplicaLocations;
+
+  Aws::Vector<Aws::String> m_removeReplicaLocations;
   bool m_nameHasBeenSet = false;
   bool m_codeHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
@@ -452,6 +509,8 @@ class UpdateCanaryRequest : public SyntheticsRequest {
   bool m_dryRunIdHasBeenSet = false;
   bool m_visualReferencesHasBeenSet = false;
   bool m_browserConfigsHasBeenSet = false;
+  bool m_addReplicaLocationsHasBeenSet = false;
+  bool m_removeReplicaLocationsHasBeenSet = false;
 };
 
 }  // namespace Model

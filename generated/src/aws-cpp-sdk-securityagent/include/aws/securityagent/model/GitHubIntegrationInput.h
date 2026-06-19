@@ -85,15 +85,60 @@ class GitHubIntegrationInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The HTTPS URL of a self-hosted GitHub Enterprise Server instance. Omit this
+   * value for GitHub.com.</p>
+   */
+  inline const Aws::String& GetTargetUrl() const { return m_targetUrl; }
+  inline bool TargetUrlHasBeenSet() const { return m_targetUrlHasBeenSet; }
+  template <typename TargetUrlT = Aws::String>
+  void SetTargetUrl(TargetUrlT&& value) {
+    m_targetUrlHasBeenSet = true;
+    m_targetUrl = std::forward<TargetUrlT>(value);
+  }
+  template <typename TargetUrlT = Aws::String>
+  GitHubIntegrationInput& WithTargetUrl(TargetUrlT&& value) {
+    SetTargetUrl(std::forward<TargetUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The installation identifier provided by GitHub Enterprise Server on the
+   * install callback. Required for GitHub Enterprise Server integrations and ignored
+   * for GitHub.com.</p>
+   */
+  inline const Aws::String& GetInstallationId() const { return m_installationId; }
+  inline bool InstallationIdHasBeenSet() const { return m_installationIdHasBeenSet; }
+  template <typename InstallationIdT = Aws::String>
+  void SetInstallationId(InstallationIdT&& value) {
+    m_installationIdHasBeenSet = true;
+    m_installationId = std::forward<InstallationIdT>(value);
+  }
+  template <typename InstallationIdT = Aws::String>
+  GitHubIntegrationInput& WithInstallationId(InstallationIdT&& value) {
+    SetInstallationId(std::forward<InstallationIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_code;
 
   Aws::String m_state;
 
   Aws::String m_organizationName;
+
+  Aws::String m_targetUrl;
+
+  Aws::String m_installationId;
   bool m_codeHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_organizationNameHasBeenSet = false;
+  bool m_targetUrlHasBeenSet = false;
+  bool m_installationIdHasBeenSet = false;
 };
 
 }  // namespace Model

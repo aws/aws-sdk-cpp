@@ -20,8 +20,7 @@ namespace HealthLake {
 namespace Model {
 
 /**
- * <para>The analytics configuration for a data store.</para><p><h3>See Also:</h3>
- * <a
+ * <p>The analytics configuration for a data store.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/AnalyticsConfiguration">AWS
  * API Reference</a></p>
  */
@@ -34,7 +33,7 @@ class AnalyticsConfiguration {
 
   ///@{
   /**
-   * <para>The status of the analytics configuration.</para>
+   * <p>The status of the analytics configuration.</p>
    */
   inline AnalyticsStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

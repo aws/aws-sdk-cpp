@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/HttpTargetConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/InferenceTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/McpTargetConfiguration.h>
 
 #include <utility>
@@ -72,12 +73,34 @@ class TargetConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The inference configuration for the target. This configuration routes
+   * requests to a large language model (LLM) provider.</p>
+   */
+  inline const InferenceTargetConfiguration& GetInference() const { return m_inference; }
+  inline bool InferenceHasBeenSet() const { return m_inferenceHasBeenSet; }
+  template <typename InferenceT = InferenceTargetConfiguration>
+  void SetInference(InferenceT&& value) {
+    m_inferenceHasBeenSet = true;
+    m_inference = std::forward<InferenceT>(value);
+  }
+  template <typename InferenceT = InferenceTargetConfiguration>
+  TargetConfiguration& WithInference(InferenceT&& value) {
+    SetInference(std::forward<InferenceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   McpTargetConfiguration m_mcp;
 
   HttpTargetConfiguration m_http;
+
+  InferenceTargetConfiguration m_inference;
   bool m_mcpHasBeenSet = false;
   bool m_httpHasBeenSet = false;
+  bool m_inferenceHasBeenSet = false;
 };
 
 }  // namespace Model

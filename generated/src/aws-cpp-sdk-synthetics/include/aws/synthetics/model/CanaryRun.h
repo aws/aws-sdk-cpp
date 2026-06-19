@@ -194,6 +194,24 @@ class CanaryRun {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Region where this canary run was executed.</p>
+   */
+  inline const Aws::String& GetLocation() const { return m_location; }
+  inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+  template <typename LocationT = Aws::String>
+  void SetLocation(LocationT&& value) {
+    m_locationHasBeenSet = true;
+    m_location = std::forward<LocationT>(value);
+  }
+  template <typename LocationT = Aws::String>
+  CanaryRun& WithLocation(LocationT&& value) {
+    SetLocation(std::forward<LocationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -212,6 +230,8 @@ class CanaryRun {
   CanaryDryRunConfigOutput m_dryRunConfig;
 
   BrowserType m_browserType{BrowserType::NOT_SET};
+
+  Aws::String m_location;
   bool m_idHasBeenSet = false;
   bool m_scheduledRunIdHasBeenSet = false;
   bool m_retryAttemptHasBeenSet = false;
@@ -221,6 +241,7 @@ class CanaryRun {
   bool m_artifactS3LocationHasBeenSet = false;
   bool m_dryRunConfigHasBeenSet = false;
   bool m_browserTypeHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
 };
 
 }  // namespace Model

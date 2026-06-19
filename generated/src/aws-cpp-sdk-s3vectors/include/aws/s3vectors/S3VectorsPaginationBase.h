@@ -10,6 +10,7 @@
 #include <aws/s3vectors/model/ListIndexesPaginationTraits.h>
 #include <aws/s3vectors/model/ListVectorBucketsPaginationTraits.h>
 #include <aws/s3vectors/model/ListVectorsPaginationTraits.h>
+#include <aws/s3vectors/model/QueryVectorsPaginationTraits.h>
 
 #include <memory>
 
@@ -51,6 +52,17 @@ class S3VectorsPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVectorsRequest,
                                              Pagination::ListVectorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
+  }
+
+  /**
+   * Create a paginator for QueryVectors operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::QueryVectorsRequest, Pagination::QueryVectorsPaginationTraits<DerivedClient>>
+  QueryVectorsPaginator(const Model::QueryVectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::QueryVectorsRequest,
+                                             Pagination::QueryVectorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                      request};
   }
 };
 }  // namespace S3Vectors

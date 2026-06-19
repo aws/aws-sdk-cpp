@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
+#include <aws/route53resolver/model/SubscriptionInfo.h>
 
 #include <utility>
 
@@ -107,6 +108,27 @@ class FirewallRuleTypeDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>For rule types that require an external subscription (today, only the
+   * <code>PartnerThreatProtection</code> variant), describes the AWS Marketplace
+   * product that backs the rule type. Absent for rule types that are managed by AWS
+   * and do not require a separate subscription. See <a>SubscriptionInfo</a>.</p>
+   */
+  inline const SubscriptionInfo& GetSubscriptionInfo() const { return m_subscriptionInfo; }
+  inline bool SubscriptionInfoHasBeenSet() const { return m_subscriptionInfoHasBeenSet; }
+  template <typename SubscriptionInfoT = SubscriptionInfo>
+  void SetSubscriptionInfo(SubscriptionInfoT&& value) {
+    m_subscriptionInfoHasBeenSet = true;
+    m_subscriptionInfo = std::forward<SubscriptionInfoT>(value);
+  }
+  template <typename SubscriptionInfoT = SubscriptionInfo>
+  FirewallRuleTypeDefinition& WithSubscriptionInfo(SubscriptionInfoT&& value) {
+    SetSubscriptionInfo(std::forward<SubscriptionInfoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ruleType;
 
@@ -115,10 +137,13 @@ class FirewallRuleTypeDefinition {
   Aws::String m_displayName;
 
   Aws::String m_description;
+
+  SubscriptionInfo m_subscriptionInfo;
   bool m_ruleTypeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_subscriptionInfoHasBeenSet = false;
 };
 
 }  // namespace Model

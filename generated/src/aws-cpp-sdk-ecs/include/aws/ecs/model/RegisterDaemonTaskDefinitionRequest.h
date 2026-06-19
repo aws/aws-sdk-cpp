@@ -227,11 +227,13 @@ class RegisterDaemonTaskDefinitionRequest : public ECSRequest {
 
   ///@{
   /**
-   * <p>The process namespace mode for the daemon. When set to <code>shared</code>,
-   * the daemon shares the PID namespace with co-located tasks on the same container
-   * instance, giving the daemon visibility into application processes. When set to
-   * <code>none</code>, the daemon gets its own isolated PID namespace. The default
-   * is <code>none</code>.</p>
+   * <p>The PID namespace mode for the daemon. The valid values are <code>none</code>
+   * and <code>shared</code>. The default is <code>none</code>.</p> <p>If
+   * <code>none</code> is specified or no value is provided, the daemon runs with its
+   * own PID namespace, isolated from other tasks. If <code>shared</code> is
+   * specified, the daemon joins the host PID namespace, making it accessible to
+   * non-daemon tasks that use <code>pidMode: "host"</code> or other daemons that use
+   * <code>pidMode: "shared"</code>.</p>
    */
   inline DaemonPidMode GetPidMode() const { return m_pidMode; }
   inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
@@ -247,11 +249,13 @@ class RegisterDaemonTaskDefinitionRequest : public ECSRequest {
 
   ///@{
   /**
-   * <p>The IPC namespace mode for the daemon. When set to <code>shared</code>, the
-   * daemon shares the IPC namespace with co-located tasks on the same container
-   * instance, allowing communication through POSIX shared memory, semaphores, and
-   * message queues. When set to <code>none</code>, the daemon gets its own isolated
-   * IPC namespace. The default is <code>none</code>.</p>
+   * <p>The IPC namespace mode for the daemon. The valid values are <code>none</code>
+   * and <code>shared</code>. The default is <code>none</code>.</p> <p>If
+   * <code>none</code> is specified or no value is provided, the daemon runs with its
+   * own IPC namespace, isolated from other tasks. If <code>shared</code> is
+   * specified, the daemon joins the host IPC namespace, making it accessible to
+   * non-daemon tasks that use <code>ipcMode: "host"</code> or other daemons that use
+   * <code>ipcMode: "shared"</code>.</p>
    */
   inline DaemonIpcMode GetIpcMode() const { return m_ipcMode; }
   inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }

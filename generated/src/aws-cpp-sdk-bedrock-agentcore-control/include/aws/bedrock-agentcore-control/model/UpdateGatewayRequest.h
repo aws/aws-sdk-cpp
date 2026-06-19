@@ -8,11 +8,13 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
+#include <aws/bedrock-agentcore-control/model/CustomTransformConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
 #include <aws/bedrock-agentcore-control/model/GatewayInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayPolicyEngineConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolType.h>
+#include <aws/bedrock-agentcore-control/model/WafConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -195,6 +197,25 @@ class UpdateGatewayRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The updated custom transformation configuration for the gateway. This
+   * configuration defines how the gateway transforms requests and responses.</p>
+   */
+  inline const CustomTransformConfiguration& GetCustomTransformConfiguration() const { return m_customTransformConfiguration; }
+  inline bool CustomTransformConfigurationHasBeenSet() const { return m_customTransformConfigurationHasBeenSet; }
+  template <typename CustomTransformConfigurationT = CustomTransformConfiguration>
+  void SetCustomTransformConfiguration(CustomTransformConfigurationT&& value) {
+    m_customTransformConfigurationHasBeenSet = true;
+    m_customTransformConfiguration = std::forward<CustomTransformConfigurationT>(value);
+  }
+  template <typename CustomTransformConfigurationT = CustomTransformConfiguration>
+  UpdateGatewayRequest& WithCustomTransformConfiguration(CustomTransformConfigurationT&& value) {
+    SetCustomTransformConfiguration(std::forward<CustomTransformConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The updated interceptor configurations for the gateway.</p>
    */
   inline const Aws::Vector<GatewayInterceptorConfiguration>& GetInterceptorConfigurations() const { return m_interceptorConfigurations; }
@@ -257,6 +278,24 @@ class UpdateGatewayRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated Amazon Web Services WAF configuration for the gateway.</p>
+   */
+  inline const WafConfiguration& GetWafConfiguration() const { return m_wafConfiguration; }
+  inline bool WafConfigurationHasBeenSet() const { return m_wafConfigurationHasBeenSet; }
+  template <typename WafConfigurationT = WafConfiguration>
+  void SetWafConfiguration(WafConfigurationT&& value) {
+    m_wafConfigurationHasBeenSet = true;
+    m_wafConfiguration = std::forward<WafConfigurationT>(value);
+  }
+  template <typename WafConfigurationT = WafConfiguration>
+  UpdateGatewayRequest& WithWafConfiguration(WafConfigurationT&& value) {
+    SetWafConfiguration(std::forward<WafConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayIdentifier;
 
@@ -276,11 +315,15 @@ class UpdateGatewayRequest : public BedrockAgentCoreControlRequest {
 
   Aws::String m_kmsKeyArn;
 
+  CustomTransformConfiguration m_customTransformConfiguration;
+
   Aws::Vector<GatewayInterceptorConfiguration> m_interceptorConfigurations;
 
   GatewayPolicyEngineConfiguration m_policyEngineConfiguration;
 
   ExceptionLevel m_exceptionLevel{ExceptionLevel::NOT_SET};
+
+  WafConfiguration m_wafConfiguration;
   bool m_gatewayIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -290,9 +333,11 @@ class UpdateGatewayRequest : public BedrockAgentCoreControlRequest {
   bool m_authorizerTypeHasBeenSet = false;
   bool m_authorizerConfigurationHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
+  bool m_customTransformConfigurationHasBeenSet = false;
   bool m_interceptorConfigurationsHasBeenSet = false;
   bool m_policyEngineConfigurationHasBeenSet = false;
   bool m_exceptionLevelHasBeenSet = false;
+  bool m_wafConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

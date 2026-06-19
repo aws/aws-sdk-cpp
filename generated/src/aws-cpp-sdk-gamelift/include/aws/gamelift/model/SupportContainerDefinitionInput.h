@@ -13,6 +13,7 @@
 #include <aws/gamelift/model/ContainerHealthCheck.h>
 #include <aws/gamelift/model/ContainerMountPoint.h>
 #include <aws/gamelift/model/ContainerPortConfiguration.h>
+#include <aws/gamelift/model/LinuxCapabilities.h>
 
 #include <utility>
 
@@ -289,6 +290,26 @@ class SupportContainerDefinitionInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Linux-specific modifications that are applied to the default Docker container
+   * configuration, such as Linux capabilities. For more information see <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+   */
+  inline const LinuxCapabilities& GetLinuxCapabilities() const { return m_linuxCapabilities; }
+  inline bool LinuxCapabilitiesHasBeenSet() const { return m_linuxCapabilitiesHasBeenSet; }
+  template <typename LinuxCapabilitiesT = LinuxCapabilities>
+  void SetLinuxCapabilities(LinuxCapabilitiesT&& value) {
+    m_linuxCapabilitiesHasBeenSet = true;
+    m_linuxCapabilities = std::forward<LinuxCapabilitiesT>(value);
+  }
+  template <typename LinuxCapabilitiesT = LinuxCapabilities>
+  SupportContainerDefinitionInput& WithLinuxCapabilities(LinuxCapabilitiesT&& value) {
+    SetLinuxCapabilities(std::forward<LinuxCapabilitiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_containerName;
 
@@ -309,6 +330,8 @@ class SupportContainerDefinitionInput {
   ContainerPortConfiguration m_portConfiguration;
 
   double m_vcpu{0.0};
+
+  LinuxCapabilities m_linuxCapabilities;
   bool m_containerNameHasBeenSet = false;
   bool m_dependsOnHasBeenSet = false;
   bool m_mountPointsHasBeenSet = false;
@@ -319,6 +342,7 @@ class SupportContainerDefinitionInput {
   bool m_memoryHardLimitMebibytesHasBeenSet = false;
   bool m_portConfigurationHasBeenSet = false;
   bool m_vcpuHasBeenSet = false;
+  bool m_linuxCapabilitiesHasBeenSet = false;
 };
 
 }  // namespace Model

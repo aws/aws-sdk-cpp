@@ -29,7 +29,11 @@ ${indent}  endpointResolutionOutcome.GetResult().SetRfc3986Encoded(true);
 #end
 ${indent}  endpointResolutionOutcome.GetResult().AddPathSegments("${pathAndQuery.get(0)}");
 #end
+#if($operation.emitEmptyValueQueryMarker)
+${indent}  ss.str("${pathAndQuery.get(1)}=");
+#else
 ${indent}  ss.str("${pathAndQuery.get(1)}");
+#end
 #elseif(!$uriPartString.equals("/"))
 #if($uriPartString.get(0).toLowerCase().contains("resourcearn"))
 ${indent}  endpointResolutionOutcome.GetResult().SetRfc3986Encoded(true);
@@ -76,7 +80,11 @@ ${indent}  endpointResolutionOutcome.GetResult().SetRfc3986Encoded(true);
 #end
 ${indent}  endpointResolutionOutcome.GetResult().AddPathSegments("${pathAndQuery.get(0)}");
 #end
+#if($operation.emitEmptyValueQueryMarker)
+${indent}  ss.str("${pathAndQuery.get(1)}=");
+#else
 ${indent}  ss.str("${pathAndQuery.get(1)}");
+#end
 #elseif(!$uriPartString.equals("/"))
 #if($uriPartString.toLowerCase().contains("resourcearn"))
 ${indent}  endpointResolutionOutcome.GetResult().SetRfc3986Encoded(true);

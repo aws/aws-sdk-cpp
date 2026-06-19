@@ -35,6 +35,22 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const {
     payload.WithObject("FilterCriteria", m_filterCriteria.Jsonize());
   }
 
+  if (m_kMSKeyArnHasBeenSet) {
+    payload.WithString("KMSKeyArn", m_kMSKeyArn);
+  }
+
+  if (m_metricsConfigHasBeenSet) {
+    payload.WithObject("MetricsConfig", m_metricsConfig.Jsonize());
+  }
+
+  if (m_loggingConfigHasBeenSet) {
+    payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
+  }
+
+  if (m_scalingConfigHasBeenSet) {
+    payload.WithObject("ScalingConfig", m_scalingConfig.Jsonize());
+  }
+
   if (m_maximumBatchingWindowInSecondsHasBeenSet) {
     payload.WithInteger("MaximumBatchingWindowInSeconds", m_maximumBatchingWindowInSeconds);
   }
@@ -127,24 +143,8 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const {
     payload.WithObject("SelfManagedKafkaEventSourceConfig", m_selfManagedKafkaEventSourceConfig.Jsonize());
   }
 
-  if (m_scalingConfigHasBeenSet) {
-    payload.WithObject("ScalingConfig", m_scalingConfig.Jsonize());
-  }
-
   if (m_documentDBEventSourceConfigHasBeenSet) {
     payload.WithObject("DocumentDBEventSourceConfig", m_documentDBEventSourceConfig.Jsonize());
-  }
-
-  if (m_kMSKeyArnHasBeenSet) {
-    payload.WithString("KMSKeyArn", m_kMSKeyArn);
-  }
-
-  if (m_metricsConfigHasBeenSet) {
-    payload.WithObject("MetricsConfig", m_metricsConfig.Jsonize());
-  }
-
-  if (m_loggingConfigHasBeenSet) {
-    payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
   }
 
   if (m_provisionedPollerConfigHasBeenSet) {

@@ -9,9 +9,12 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/healthlake/HealthLakeRequest.h>
 #include <aws/healthlake/HealthLake_EXPORTS.h>
+#include <aws/healthlake/model/AnalyticsConfiguration.h>
 #include <aws/healthlake/model/FHIRVersion.h>
 #include <aws/healthlake/model/IdentityProviderConfiguration.h>
+#include <aws/healthlake/model/NlpConfiguration.h>
 #include <aws/healthlake/model/PreloadDataConfig.h>
+#include <aws/healthlake/model/ProfileConfiguration.h>
 #include <aws/healthlake/model/SseConfiguration.h>
 #include <aws/healthlake/model/Tag.h>
 
@@ -169,6 +172,60 @@ class CreateFHIRDatastoreRequest : public HealthLakeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The analytics configuration for the data store.</p>
+   */
+  inline const AnalyticsConfiguration& GetAnalyticsConfiguration() const { return m_analyticsConfiguration; }
+  inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }
+  template <typename AnalyticsConfigurationT = AnalyticsConfiguration>
+  void SetAnalyticsConfiguration(AnalyticsConfigurationT&& value) {
+    m_analyticsConfigurationHasBeenSet = true;
+    m_analyticsConfiguration = std::forward<AnalyticsConfigurationT>(value);
+  }
+  template <typename AnalyticsConfigurationT = AnalyticsConfiguration>
+  CreateFHIRDatastoreRequest& WithAnalyticsConfiguration(AnalyticsConfigurationT&& value) {
+    SetAnalyticsConfiguration(std::forward<AnalyticsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The natural language processing (NLP) configuration for the data store.</p>
+   */
+  inline const NlpConfiguration& GetNlpConfiguration() const { return m_nlpConfiguration; }
+  inline bool NlpConfigurationHasBeenSet() const { return m_nlpConfigurationHasBeenSet; }
+  template <typename NlpConfigurationT = NlpConfiguration>
+  void SetNlpConfiguration(NlpConfigurationT&& value) {
+    m_nlpConfigurationHasBeenSet = true;
+    m_nlpConfiguration = std::forward<NlpConfigurationT>(value);
+  }
+  template <typename NlpConfigurationT = NlpConfiguration>
+  CreateFHIRDatastoreRequest& WithNlpConfiguration(NlpConfigurationT&& value) {
+    SetNlpConfiguration(std::forward<NlpConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The profile configuration for the data store.</p>
+   */
+  inline const ProfileConfiguration& GetProfileConfiguration() const { return m_profileConfiguration; }
+  inline bool ProfileConfigurationHasBeenSet() const { return m_profileConfigurationHasBeenSet; }
+  template <typename ProfileConfigurationT = ProfileConfiguration>
+  void SetProfileConfiguration(ProfileConfigurationT&& value) {
+    m_profileConfigurationHasBeenSet = true;
+    m_profileConfiguration = std::forward<ProfileConfigurationT>(value);
+  }
+  template <typename ProfileConfigurationT = ProfileConfiguration>
+  CreateFHIRDatastoreRequest& WithProfileConfiguration(ProfileConfigurationT&& value) {
+    SetProfileConfiguration(std::forward<ProfileConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_datastoreName;
 
@@ -183,6 +240,12 @@ class CreateFHIRDatastoreRequest : public HealthLakeRequest {
   Aws::Vector<Tag> m_tags;
 
   IdentityProviderConfiguration m_identityProviderConfiguration;
+
+  AnalyticsConfiguration m_analyticsConfiguration;
+
+  NlpConfiguration m_nlpConfiguration;
+
+  ProfileConfiguration m_profileConfiguration;
   bool m_datastoreNameHasBeenSet = false;
   bool m_datastoreTypeVersionHasBeenSet = false;
   bool m_sseConfigurationHasBeenSet = false;
@@ -190,6 +253,9 @@ class CreateFHIRDatastoreRequest : public HealthLakeRequest {
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
   bool m_identityProviderConfigurationHasBeenSet = false;
+  bool m_analyticsConfigurationHasBeenSet = false;
+  bool m_nlpConfigurationHasBeenSet = false;
+  bool m_profileConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgent {
 namespace Model {
-enum class DataSourceStatus { NOT_SET, AVAILABLE, DELETING, DELETE_UNSUCCESSFUL };
+enum class DataSourceStatus { NOT_SET, AVAILABLE, DELETING, DELETE_UNSUCCESSFUL, CREATING, UPDATING, FAILED };
 
 namespace DataSourceStatusMapper {
 AWS_BEDROCKAGENT_API DataSourceStatus GetDataSourceStatusForName(const Aws::String& name);

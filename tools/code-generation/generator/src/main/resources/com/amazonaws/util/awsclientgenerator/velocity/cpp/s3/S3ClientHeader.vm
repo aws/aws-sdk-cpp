@@ -255,8 +255,10 @@ namespace ${rootNamespace}
                                         const Aws::AmazonWebServiceRequest *request,
                                         const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const;
 
-        Model::CopyObjectOutcome PopulateCopyObjectProperties(const Model::CopyObjectRequest &request,
-                                                              const std::shared_ptr<Aws::Http::HttpRequest> &httpRequest) const;
+        using CopyObjectPropertiesOutcome = Aws::Utils::Outcome<Aws::Map<Aws::String, Aws::String>, S3CrtError>;
+
+        CopyObjectPropertiesOutcome PopulateCopyObjectProperties(const Model::CopyObjectRequest &request,
+                                                                 const std::shared_ptr<Aws::Http::HttpRequest> &httpRequest) const;
 #else
 #if(!$serviceModel.endpointRules)
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

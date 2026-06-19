@@ -31,5 +31,9 @@ Aws::String UpdateApplicationRequest::SerializePayload() const {
     payload.WithArray("appConfigs", std::move(appConfigsJsonList));
   }
 
+  if (m_iamIdentityCenterOptionsHasBeenSet) {
+    payload.WithObject("iamIdentityCenterOptions", m_iamIdentityCenterOptions.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

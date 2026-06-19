@@ -14,6 +14,8 @@
 #include <aws/devops-agent/model/RegisteredMCPServerSigV4Details.h>
 #include <aws/devops-agent/model/RegisteredNewRelicDetails.h>
 #include <aws/devops-agent/model/RegisteredPagerDutyDetails.h>
+#include <aws/devops-agent/model/RegisteredRemoteAgentDetails.h>
+#include <aws/devops-agent/model/RegisteredRemoteAgentSigV4Details.h>
 #include <aws/devops-agent/model/RegisteredServiceNowDetails.h>
 #include <aws/devops-agent/model/RegisteredSlackServiceDetails.h>
 
@@ -275,6 +277,42 @@ class AdditionalServiceDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Remote A2A agent-specific service details (token-based auth).</p>
+   */
+  inline const RegisteredRemoteAgentDetails& GetRemoteagent() const { return m_remoteagent; }
+  inline bool RemoteagentHasBeenSet() const { return m_remoteagentHasBeenSet; }
+  template <typename RemoteagentT = RegisteredRemoteAgentDetails>
+  void SetRemoteagent(RemoteagentT&& value) {
+    m_remoteagentHasBeenSet = true;
+    m_remoteagent = std::forward<RemoteagentT>(value);
+  }
+  template <typename RemoteagentT = RegisteredRemoteAgentDetails>
+  AdditionalServiceDetails& WithRemoteagent(RemoteagentT&& value) {
+    SetRemoteagent(std::forward<RemoteagentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Remote A2A agent-specific service details (SigV4 auth).</p>
+   */
+  inline const RegisteredRemoteAgentSigV4Details& GetRemoteagentsigv4() const { return m_remoteagentsigv4; }
+  inline bool Remoteagentsigv4HasBeenSet() const { return m_remoteagentsigv4HasBeenSet; }
+  template <typename Remoteagentsigv4T = RegisteredRemoteAgentSigV4Details>
+  void SetRemoteagentsigv4(Remoteagentsigv4T&& value) {
+    m_remoteagentsigv4HasBeenSet = true;
+    m_remoteagentsigv4 = std::forward<Remoteagentsigv4T>(value);
+  }
+  template <typename Remoteagentsigv4T = RegisteredRemoteAgentSigV4Details>
+  AdditionalServiceDetails& WithRemoteagentsigv4(Remoteagentsigv4T&& value) {
+    SetRemoteagentsigv4(std::forward<Remoteagentsigv4T>(value));
+    return *this;
+  }
+  ///@}
  private:
   RegisteredGithubServiceDetails m_github;
 
@@ -301,6 +339,10 @@ class AdditionalServiceDetails {
   RegisteredPagerDutyDetails m_pagerduty;
 
   RegisteredMCPServerSigV4Details m_mcpserversigv4;
+
+  RegisteredRemoteAgentDetails m_remoteagent;
+
+  RegisteredRemoteAgentSigV4Details m_remoteagentsigv4;
   bool m_githubHasBeenSet = false;
   bool m_slackHasBeenSet = false;
   bool m_mcpserverdatadogHasBeenSet = false;
@@ -314,6 +356,8 @@ class AdditionalServiceDetails {
   bool m_mcpservergrafanaHasBeenSet = false;
   bool m_pagerdutyHasBeenSet = false;
   bool m_mcpserversigv4HasBeenSet = false;
+  bool m_remoteagentHasBeenSet = false;
+  bool m_remoteagentsigv4HasBeenSet = false;
 };
 
 }  // namespace Model

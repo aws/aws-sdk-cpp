@@ -51,6 +51,10 @@ static const int SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolut
     HashingUtils::HashString("SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution");
 static const int SageMakerVariantConcurrentRequestsPerModelHighResolution_HASH =
     HashingUtils::HashString("SageMakerVariantConcurrentRequestsPerModelHighResolution");
+static const int ECSServiceAverageCPUUtilizationHighResolution_HASH =
+    HashingUtils::HashString("ECSServiceAverageCPUUtilizationHighResolution");
+static const int ECSServiceAverageMemoryUtilizationHighResolution_HASH =
+    HashingUtils::HashString("ECSServiceAverageMemoryUtilizationHighResolution");
 
 MetricType GetMetricTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -112,6 +116,10 @@ MetricType GetMetricTypeForName(const Aws::String& name) {
     return MetricType::SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution;
   } else if (hashCode == SageMakerVariantConcurrentRequestsPerModelHighResolution_HASH) {
     return MetricType::SageMakerVariantConcurrentRequestsPerModelHighResolution;
+  } else if (hashCode == ECSServiceAverageCPUUtilizationHighResolution_HASH) {
+    return MetricType::ECSServiceAverageCPUUtilizationHighResolution;
+  } else if (hashCode == ECSServiceAverageMemoryUtilizationHighResolution_HASH) {
+    return MetricType::ECSServiceAverageMemoryUtilizationHighResolution;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -184,6 +192,10 @@ Aws::String GetNameForMetricType(MetricType enumValue) {
       return "SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution";
     case MetricType::SageMakerVariantConcurrentRequestsPerModelHighResolution:
       return "SageMakerVariantConcurrentRequestsPerModelHighResolution";
+    case MetricType::ECSServiceAverageCPUUtilizationHighResolution:
+      return "ECSServiceAverageCPUUtilizationHighResolution";
+    case MetricType::ECSServiceAverageMemoryUtilizationHighResolution:
+      return "ECSServiceAverageMemoryUtilizationHighResolution";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

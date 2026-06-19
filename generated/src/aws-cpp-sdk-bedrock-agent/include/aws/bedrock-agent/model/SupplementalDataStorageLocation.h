@@ -21,8 +21,9 @@ namespace BedrockAgent {
 namespace Model {
 
 /**
- * <p>Contains information about a storage location for images extracted from
- * multimodal documents in your data source.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains information about a storage location for multimedia content (images,
+ * audio, and video) extracted from multimodal documents in your data
+ * source.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/SupplementalDataStorageLocation">AWS
  * API Reference</a></p>
  */
@@ -52,7 +53,7 @@ class SupplementalDataStorageLocation {
   ///@{
   /**
    * <p>Contains information about the Amazon S3 location for the extracted
-   * images.</p>
+   * multimedia content.</p>
    */
   inline const S3Location& GetS3Location() const { return m_s3Location; }
   inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }

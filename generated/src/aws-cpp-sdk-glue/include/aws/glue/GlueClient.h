@@ -77,6 +77,34 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   virtual ~GlueClient();
 
   /**
+   * <p>Associates one or more glossary terms with an asset in Glue Data
+   * Catalog.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/AssociateGlossaryTerms">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateGlossaryTermsOutcome AssociateGlossaryTerms(const Model::AssociateGlossaryTermsRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateGlossaryTerms that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AssociateGlossaryTermsRequestT = Model::AssociateGlossaryTermsRequest>
+  Model::AssociateGlossaryTermsOutcomeCallable AssociateGlossaryTermsCallable(const AssociateGlossaryTermsRequestT& request) const {
+    return SubmitCallable(&GlueClient::AssociateGlossaryTerms, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateGlossaryTerms that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AssociateGlossaryTermsRequestT = Model::AssociateGlossaryTermsRequest>
+  void AssociateGlossaryTermsAsync(const AssociateGlossaryTermsRequestT& request,
+                                   const AssociateGlossaryTermsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::AssociateGlossaryTerms, request, handler, context);
+  }
+
+  /**
    * <p>Creates one or more partitions in a batch operation.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchCreatePartition">AWS
@@ -362,6 +390,33 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   void BatchGetDevEndpointsAsync(const BatchGetDevEndpointsRequestT& request, const BatchGetDevEndpointsResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GlueClient::BatchGetDevEndpoints, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves multiple items from an iterable form on an asset in Glue Data
+   * Catalog in a single request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetIterableForms">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetIterableFormsOutcome BatchGetIterableForms(const Model::BatchGetIterableFormsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetIterableForms that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchGetIterableFormsRequestT = Model::BatchGetIterableFormsRequest>
+  Model::BatchGetIterableFormsOutcomeCallable BatchGetIterableFormsCallable(const BatchGetIterableFormsRequestT& request) const {
+    return SubmitCallable(&GlueClient::BatchGetIterableForms, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetIterableForms that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchGetIterableFormsRequestT = Model::BatchGetIterableFormsRequest>
+  void BatchGetIterableFormsAsync(const BatchGetIterableFormsRequestT& request, const BatchGetIterableFormsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::BatchGetIterableForms, request, handler, context);
   }
 
   /**
@@ -1017,6 +1072,59 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a business glossary in Glue Data Catalog. A glossary is a container
+   * for glossary terms that define business concepts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateGlossary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateGlossaryOutcome CreateGlossary(const Model::CreateGlossaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateGlossary that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateGlossaryRequestT = Model::CreateGlossaryRequest>
+  Model::CreateGlossaryOutcomeCallable CreateGlossaryCallable(const CreateGlossaryRequestT& request) const {
+    return SubmitCallable(&GlueClient::CreateGlossary, request);
+  }
+
+  /**
+   * An Async wrapper for CreateGlossary that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateGlossaryRequestT = Model::CreateGlossaryRequest>
+  void CreateGlossaryAsync(const CreateGlossaryRequestT& request, const CreateGlossaryResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::CreateGlossary, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a glossary term within a business glossary in Glue Data
+   * Catalog.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateGlossaryTerm">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateGlossaryTermOutcome CreateGlossaryTerm(const Model::CreateGlossaryTermRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateGlossaryTerm that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateGlossaryTermRequestT = Model::CreateGlossaryTermRequest>
+  Model::CreateGlossaryTermOutcomeCallable CreateGlossaryTermCallable(const CreateGlossaryTermRequestT& request) const {
+    return SubmitCallable(&GlueClient::CreateGlossaryTerm, request);
+  }
+
+  /**
+   * An Async wrapper for CreateGlossaryTerm that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateGlossaryTermRequestT = Model::CreateGlossaryTermRequest>
+  void CreateGlossaryTermAsync(const CreateGlossaryTermRequestT& request, const CreateGlossaryTermResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::CreateGlossaryTerm, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new Glue Identity Center configuration to enable integration
    * between Glue and Amazon Web Services IAM Identity Center for authentication and
    * authorization.</p><p><h3>See Also:</h3>   <a
@@ -1569,6 +1677,83 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes an asset from Glue Data Catalog.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteAsset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAssetOutcome DeleteAsset(const Model::DeleteAssetRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAsset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteAssetRequestT = Model::DeleteAssetRequest>
+  Model::DeleteAssetOutcomeCallable DeleteAssetCallable(const DeleteAssetRequestT& request) const {
+    return SubmitCallable(&GlueClient::DeleteAsset, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAsset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteAssetRequestT = Model::DeleteAssetRequest>
+  void DeleteAssetAsync(const DeleteAssetRequestT& request, const DeleteAssetResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::DeleteAsset, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an asset type from Glue Data Catalog.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteAssetType">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAssetTypeOutcome DeleteAssetType(const Model::DeleteAssetTypeRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAssetType that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteAssetTypeRequestT = Model::DeleteAssetTypeRequest>
+  Model::DeleteAssetTypeOutcomeCallable DeleteAssetTypeCallable(const DeleteAssetTypeRequestT& request) const {
+    return SubmitCallable(&GlueClient::DeleteAssetType, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAssetType that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteAssetTypeRequestT = Model::DeleteAssetTypeRequest>
+  void DeleteAssetTypeAsync(const DeleteAssetTypeRequestT& request, const DeleteAssetTypeResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::DeleteAssetType, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a form attachment from an asset in Glue Data Catalog.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteAttachment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAttachmentOutcome DeleteAttachment(const Model::DeleteAttachmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAttachment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteAttachmentRequestT = Model::DeleteAttachmentRequest>
+  Model::DeleteAttachmentOutcomeCallable DeleteAttachmentCallable(const DeleteAttachmentRequestT& request) const {
+    return SubmitCallable(&GlueClient::DeleteAttachment, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAttachment that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteAttachmentRequestT = Model::DeleteAttachmentRequest>
+  void DeleteAttachmentAsync(const DeleteAttachmentRequestT& request, const DeleteAttachmentResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::DeleteAttachment, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an existing blueprint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteBlueprint">AWS
    * API Reference</a></p>
@@ -1941,6 +2126,84 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   void DeleteDevEndpointAsync(const DeleteDevEndpointRequestT& request, const DeleteDevEndpointResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GlueClient::DeleteDevEndpoint, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a form type from Glue Data Catalog. A form type cannot be deleted if
+   * it is still referenced by an asset type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteFormType">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteFormTypeOutcome DeleteFormType(const Model::DeleteFormTypeRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteFormType that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteFormTypeRequestT = Model::DeleteFormTypeRequest>
+  Model::DeleteFormTypeOutcomeCallable DeleteFormTypeCallable(const DeleteFormTypeRequestT& request) const {
+    return SubmitCallable(&GlueClient::DeleteFormType, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteFormType that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteFormTypeRequestT = Model::DeleteFormTypeRequest>
+  void DeleteFormTypeAsync(const DeleteFormTypeRequestT& request, const DeleteFormTypeResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::DeleteFormType, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a business glossary from Glue Data Catalog. A glossary cannot be
+   * deleted if it still contains glossary terms.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteGlossary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteGlossaryOutcome DeleteGlossary(const Model::DeleteGlossaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteGlossary that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteGlossaryRequestT = Model::DeleteGlossaryRequest>
+  Model::DeleteGlossaryOutcomeCallable DeleteGlossaryCallable(const DeleteGlossaryRequestT& request) const {
+    return SubmitCallable(&GlueClient::DeleteGlossary, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteGlossary that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteGlossaryRequestT = Model::DeleteGlossaryRequest>
+  void DeleteGlossaryAsync(const DeleteGlossaryRequestT& request, const DeleteGlossaryResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::DeleteGlossary, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a glossary term from Glue Data Catalog.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteGlossaryTerm">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteGlossaryTermOutcome DeleteGlossaryTerm(const Model::DeleteGlossaryTermRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteGlossaryTerm that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteGlossaryTermRequestT = Model::DeleteGlossaryTermRequest>
+  Model::DeleteGlossaryTermOutcomeCallable DeleteGlossaryTermCallable(const DeleteGlossaryTermRequestT& request) const {
+    return SubmitCallable(&GlueClient::DeleteGlossaryTerm, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteGlossaryTerm that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteGlossaryTermRequestT = Model::DeleteGlossaryTermRequest>
+  void DeleteGlossaryTermAsync(const DeleteGlossaryTermRequestT& request, const DeleteGlossaryTermResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::DeleteGlossaryTerm, request, handler, context);
   }
 
   /**
@@ -2662,6 +2925,88 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                  const DescribeIntegrationsRequestT& request = {}) const {
     return SubmitAsync(&GlueClient::DescribeIntegrations, request, handler, context);
+  }
+
+  /**
+   * <p>Removes the association of one or more glossary terms from an asset in Glue
+   * Data Catalog.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DisassociateGlossaryTerms">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateGlossaryTermsOutcome DisassociateGlossaryTerms(const Model::DisassociateGlossaryTermsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateGlossaryTerms that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DisassociateGlossaryTermsRequestT = Model::DisassociateGlossaryTermsRequest>
+  Model::DisassociateGlossaryTermsOutcomeCallable DisassociateGlossaryTermsCallable(
+      const DisassociateGlossaryTermsRequestT& request) const {
+    return SubmitCallable(&GlueClient::DisassociateGlossaryTerms, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateGlossaryTerms that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisassociateGlossaryTermsRequestT = Model::DisassociateGlossaryTermsRequest>
+  void DisassociateGlossaryTermsAsync(const DisassociateGlossaryTermsRequestT& request,
+                                      const DisassociateGlossaryTermsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::DisassociateGlossaryTerms, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the metadata for an asset in Glue Data Catalog, including its
+   * forms, additional attachments, and associated glossary terms.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetAsset">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::GetAssetOutcome GetAsset(const Model::GetAssetRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAsset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetAssetRequestT = Model::GetAssetRequest>
+  Model::GetAssetOutcomeCallable GetAssetCallable(const GetAssetRequestT& request) const {
+    return SubmitCallable(&GlueClient::GetAsset, request);
+  }
+
+  /**
+   * An Async wrapper for GetAsset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetAssetRequestT = Model::GetAssetRequest>
+  void GetAssetAsync(const GetAssetRequestT& request, const GetAssetResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::GetAsset, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves an asset type in Glue Data Catalog by its identifier.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetAssetType">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAssetTypeOutcome GetAssetType(const Model::GetAssetTypeRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAssetType that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetAssetTypeRequestT = Model::GetAssetTypeRequest>
+  Model::GetAssetTypeOutcomeCallable GetAssetTypeCallable(const GetAssetTypeRequestT& request) const {
+    return SubmitCallable(&GlueClient::GetAssetType, request);
+  }
+
+  /**
+   * An Async wrapper for GetAssetType that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetAssetTypeRequestT = Model::GetAssetTypeRequest>
+  void GetAssetTypeAsync(const GetAssetTypeRequestT& request, const GetAssetTypeResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::GetAssetType, request, handler, context);
   }
 
   /**
@@ -3581,6 +3926,84 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   void GetEntityRecordsAsync(const GetEntityRecordsRequestT& request, const GetEntityRecordsResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GlueClient::GetEntityRecords, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a form type in Glue Data Catalog by its identifier.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetFormType">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetFormTypeOutcome GetFormType(const Model::GetFormTypeRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetFormType that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetFormTypeRequestT = Model::GetFormTypeRequest>
+  Model::GetFormTypeOutcomeCallable GetFormTypeCallable(const GetFormTypeRequestT& request) const {
+    return SubmitCallable(&GlueClient::GetFormType, request);
+  }
+
+  /**
+   * An Async wrapper for GetFormType that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetFormTypeRequestT = Model::GetFormTypeRequest>
+  void GetFormTypeAsync(const GetFormTypeRequestT& request, const GetFormTypeResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::GetFormType, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a business glossary in Glue Data Catalog by its
+   * identifier.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetGlossary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetGlossaryOutcome GetGlossary(const Model::GetGlossaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetGlossary that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetGlossaryRequestT = Model::GetGlossaryRequest>
+  Model::GetGlossaryOutcomeCallable GetGlossaryCallable(const GetGlossaryRequestT& request) const {
+    return SubmitCallable(&GlueClient::GetGlossary, request);
+  }
+
+  /**
+   * An Async wrapper for GetGlossary that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetGlossaryRequestT = Model::GetGlossaryRequest>
+  void GetGlossaryAsync(const GetGlossaryRequestT& request, const GetGlossaryResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::GetGlossary, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a glossary term in Glue Data Catalog by its
+   * identifier.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetGlossaryTerm">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetGlossaryTermOutcome GetGlossaryTerm(const Model::GetGlossaryTermRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetGlossaryTerm that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetGlossaryTermRequestT = Model::GetGlossaryTermRequest>
+  Model::GetGlossaryTermOutcomeCallable GetGlossaryTermCallable(const GetGlossaryTermRequestT& request) const {
+    return SubmitCallable(&GlueClient::GetGlossaryTerm, request);
+  }
+
+  /**
+   * An Async wrapper for GetGlossaryTerm that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetGlossaryTermRequestT = Model::GetGlossaryTermRequest>
+  void GetGlossaryTermAsync(const GetGlossaryTermRequestT& request, const GetGlossaryTermResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::GetGlossaryTerm, request, handler, context);
   }
 
   /**
@@ -4942,6 +5365,33 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the asset types defined in Glue Data Catalog.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListAssetTypes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAssetTypesOutcome ListAssetTypes(const Model::ListAssetTypesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAssetTypes that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListAssetTypesRequestT = Model::ListAssetTypesRequest>
+  Model::ListAssetTypesOutcomeCallable ListAssetTypesCallable(const ListAssetTypesRequestT& request = {}) const {
+    return SubmitCallable(&GlueClient::ListAssetTypes, request);
+  }
+
+  /**
+   * An Async wrapper for ListAssetTypes that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListAssetTypesRequestT = Model::ListAssetTypesRequest>
+  void ListAssetTypesAsync(const ListAssetTypesResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const ListAssetTypesRequestT& request = {}) const {
+    return SubmitAsync(&GlueClient::ListAssetTypes, request, handler, context);
+  }
+
+  /**
    * <p>Lists all the blueprint names in an account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListBlueprints">AWS
    * API Reference</a></p>
@@ -5360,6 +5810,86 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the form types defined in Glue Data Catalog.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListFormTypes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListFormTypesOutcome ListFormTypes(const Model::ListFormTypesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListFormTypes that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListFormTypesRequestT = Model::ListFormTypesRequest>
+  Model::ListFormTypesOutcomeCallable ListFormTypesCallable(const ListFormTypesRequestT& request = {}) const {
+    return SubmitCallable(&GlueClient::ListFormTypes, request);
+  }
+
+  /**
+   * An Async wrapper for ListFormTypes that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListFormTypesRequestT = Model::ListFormTypesRequest>
+  void ListFormTypesAsync(const ListFormTypesResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                          const ListFormTypesRequestT& request = {}) const {
+    return SubmitAsync(&GlueClient::ListFormTypes, request, handler, context);
+  }
+
+  /**
+   * <p>Lists business glossaries in Glue Data Catalog.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListGlossaries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListGlossariesOutcome ListGlossaries(const Model::ListGlossariesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListGlossaries that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListGlossariesRequestT = Model::ListGlossariesRequest>
+  Model::ListGlossariesOutcomeCallable ListGlossariesCallable(const ListGlossariesRequestT& request = {}) const {
+    return SubmitCallable(&GlueClient::ListGlossaries, request);
+  }
+
+  /**
+   * An Async wrapper for ListGlossaries that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListGlossariesRequestT = Model::ListGlossariesRequest>
+  void ListGlossariesAsync(const ListGlossariesResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const ListGlossariesRequestT& request = {}) const {
+    return SubmitAsync(&GlueClient::ListGlossaries, request, handler, context);
+  }
+
+  /**
+   * <p>Lists glossary terms within a business glossary in Glue Data
+   * Catalog.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListGlossaryTerms">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListGlossaryTermsOutcome ListGlossaryTerms(const Model::ListGlossaryTermsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListGlossaryTerms that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListGlossaryTermsRequestT = Model::ListGlossaryTermsRequest>
+  Model::ListGlossaryTermsOutcomeCallable ListGlossaryTermsCallable(const ListGlossaryTermsRequestT& request) const {
+    return SubmitCallable(&GlueClient::ListGlossaryTerms, request);
+  }
+
+  /**
+   * An Async wrapper for ListGlossaryTerms that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListGlossaryTermsRequestT = Model::ListGlossaryTermsRequest>
+  void ListGlossaryTermsAsync(const ListGlossaryTermsRequestT& request, const ListGlossaryTermsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::ListGlossaryTerms, request, handler, context);
+  }
+
+  /**
    * <p>List integration resource properties for a single customer. It supports the
    * filters, maxRecords and markers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListIntegrationResourceProperties">AWS
@@ -5387,6 +5917,33 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                               const ListIntegrationResourcePropertiesRequestT& request = {}) const {
     return SubmitAsync(&GlueClient::ListIntegrationResourceProperties, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the items in an iterable form on an asset in Glue Data Catalog. For
+   * example, lists the columns of a table asset.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListIterableForms">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListIterableFormsOutcome ListIterableForms(const Model::ListIterableFormsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListIterableForms that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListIterableFormsRequestT = Model::ListIterableFormsRequest>
+  Model::ListIterableFormsOutcomeCallable ListIterableFormsCallable(const ListIterableFormsRequestT& request) const {
+    return SubmitCallable(&GlueClient::ListIterableForms, request);
+  }
+
+  /**
+   * An Async wrapper for ListIterableForms that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListIterableFormsRequestT = Model::ListIterableFormsRequest>
+  void ListIterableFormsAsync(const ListIterableFormsRequestT& request, const ListIterableFormsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::ListIterableForms, request, handler, context);
   }
 
   /**
@@ -5763,6 +6320,87 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates or updates an asset in Glue Data Catalog. If the asset already
+   * exists, this operation updates it; otherwise, a new asset is
+   * created.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutAsset">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::PutAssetOutcome PutAsset(const Model::PutAssetRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAsset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename PutAssetRequestT = Model::PutAssetRequest>
+  Model::PutAssetOutcomeCallable PutAssetCallable(const PutAssetRequestT& request) const {
+    return SubmitCallable(&GlueClient::PutAsset, request);
+  }
+
+  /**
+   * An Async wrapper for PutAsset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename PutAssetRequestT = Model::PutAssetRequest>
+  void PutAssetAsync(const PutAssetRequestT& request, const PutAssetResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::PutAsset, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates an asset type in Glue Data Catalog. An asset type defines
+   * the structure of assets by specifying which forms they include. If an asset type
+   * with the given name already exists, it is updated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutAssetType">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAssetTypeOutcome PutAssetType(const Model::PutAssetTypeRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAssetType that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename PutAssetTypeRequestT = Model::PutAssetTypeRequest>
+  Model::PutAssetTypeOutcomeCallable PutAssetTypeCallable(const PutAssetTypeRequestT& request) const {
+    return SubmitCallable(&GlueClient::PutAssetType, request);
+  }
+
+  /**
+   * An Async wrapper for PutAssetType that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename PutAssetTypeRequestT = Model::PutAssetTypeRequest>
+  void PutAssetTypeAsync(const PutAssetTypeRequestT& request, const PutAssetTypeResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::PutAssetType, request, handler, context);
+  }
+
+  /**
+   * <p>Attaches a form to an asset or an iterable form item in Glue Data Catalog. If
+   * an attachment with the same name already exists, it is
+   * overwritten.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutAttachment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAttachmentOutcome PutAttachment(const Model::PutAttachmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename PutAttachmentRequestT = Model::PutAttachmentRequest>
+  Model::PutAttachmentOutcomeCallable PutAttachmentCallable(const PutAttachmentRequestT& request) const {
+    return SubmitCallable(&GlueClient::PutAttachment, request);
+  }
+
+  /**
+   * An Async wrapper for PutAttachment that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename PutAttachmentRequestT = Model::PutAttachmentRequest>
+  void PutAttachmentAsync(const PutAttachmentRequestT& request, const PutAttachmentResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::PutAttachment, request, handler, context);
+  }
+
+  /**
    * <p>Sets the security configuration for a specified catalog. After the
    * configuration has been set, the specified encryption is applied to every catalog
    * write thereafter.</p><p><h3>See Also:</h3>   <a
@@ -5820,6 +6458,33 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
                                             const PutDataQualityProfileAnnotationResponseReceivedHandler& handler,
                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GlueClient::PutDataQualityProfileAnnotation, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates a form type in Glue Data Catalog. A form type defines the
+   * schema for structured metadata that can be attached to assets.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutFormType">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutFormTypeOutcome PutFormType(const Model::PutFormTypeRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutFormType that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename PutFormTypeRequestT = Model::PutFormTypeRequest>
+  Model::PutFormTypeOutcomeCallable PutFormTypeCallable(const PutFormTypeRequestT& request) const {
+    return SubmitCallable(&GlueClient::PutFormType, request);
+  }
+
+  /**
+   * An Async wrapper for PutFormType that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename PutFormTypeRequestT = Model::PutFormTypeRequest>
+  void PutFormTypeAsync(const PutFormTypeRequestT& request, const PutFormTypeResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::PutFormType, request, handler, context);
   }
 
   /**
@@ -6126,6 +6791,34 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   void RunStatementAsync(const RunStatementRequestT& request, const RunStatementResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GlueClient::RunStatement, request, handler, context);
+  }
+
+  /**
+   * <p>Searches for assets in Glue Data Catalog using full-text search, filters,
+   * sorting, and aggregations. Returns matching assets with relevance-ranked
+   * results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Search">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::SearchOutcome Search(const Model::SearchRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for Search that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SearchRequestT = Model::SearchRequest>
+  Model::SearchOutcomeCallable SearchCallable(const SearchRequestT& request = {}) const {
+    return SubmitCallable(&GlueClient::Search, request);
+  }
+
+  /**
+   * An Async wrapper for Search that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SearchRequestT = Model::SearchRequest>
+  void SearchAsync(const SearchResponseReceivedHandler& handler,
+                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                   const SearchRequestT& request = {}) const {
+    return SubmitAsync(&GlueClient::Search, request, handler, context);
   }
 
   /**
@@ -7271,6 +7964,58 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   void UpdateDevEndpointAsync(const UpdateDevEndpointRequestT& request, const UpdateDevEndpointResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GlueClient::UpdateDevEndpoint, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a business glossary in Glue Data Catalog.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateGlossary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateGlossaryOutcome UpdateGlossary(const Model::UpdateGlossaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateGlossary that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateGlossaryRequestT = Model::UpdateGlossaryRequest>
+  Model::UpdateGlossaryOutcomeCallable UpdateGlossaryCallable(const UpdateGlossaryRequestT& request) const {
+    return SubmitCallable(&GlueClient::UpdateGlossary, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateGlossary that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateGlossaryRequestT = Model::UpdateGlossaryRequest>
+  void UpdateGlossaryAsync(const UpdateGlossaryRequestT& request, const UpdateGlossaryResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::UpdateGlossary, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a glossary term in Glue Data Catalog.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateGlossaryTerm">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateGlossaryTermOutcome UpdateGlossaryTerm(const Model::UpdateGlossaryTermRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateGlossaryTerm that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateGlossaryTermRequestT = Model::UpdateGlossaryTermRequest>
+  Model::UpdateGlossaryTermOutcomeCallable UpdateGlossaryTermCallable(const UpdateGlossaryTermRequestT& request) const {
+    return SubmitCallable(&GlueClient::UpdateGlossaryTerm, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateGlossaryTerm that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateGlossaryTermRequestT = Model::UpdateGlossaryTermRequest>
+  void UpdateGlossaryTermAsync(const UpdateGlossaryTermRequestT& request, const UpdateGlossaryTermResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::UpdateGlossaryTerm, request, handler, context);
   }
 
   /**

@@ -21,8 +21,7 @@ namespace HealthLake {
 namespace Model {
 
 /**
- * <para>The profile configuration for a data store.</para><p><h3>See Also:</h3>
- * <a
+ * <p>The profile configuration for a data store.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ProfileConfiguration">AWS
  * API Reference</a></p>
  */
@@ -35,7 +34,7 @@ class ProfileConfiguration {
 
   ///@{
   /**
-   * <para>The list of default profiles for the data store.</para>
+   * <p>The list of default profiles for the data store.</p>
    */
   inline const Aws::Vector<Aws::String>& GetDefaultProfiles() const { return m_defaultProfiles; }
   inline bool DefaultProfilesHasBeenSet() const { return m_defaultProfilesHasBeenSet; }

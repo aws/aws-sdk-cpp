@@ -155,8 +155,8 @@ class ListDurableExecutionsByFunctionRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>Set to true to return results in reverse chronological order (newest first).
-   * Default is false.</p>
+   * <p>Set to true to return results in chronological order (oldest first). Default
+   * is false.</p>
    */
   inline bool GetReverseOrder() const { return m_reverseOrder; }
   inline bool ReverseOrderHasBeenSet() const { return m_reverseOrderHasBeenSet; }

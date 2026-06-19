@@ -69,12 +69,33 @@ class DeleteHarnessRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Whether to delete the managed memory on harness deletion. Default: true. If
+   * false, the memory is disassociated and becomes a regular customer-owned
+   * resource.</p>
+   */
+  inline bool GetDeleteManagedMemory() const { return m_deleteManagedMemory; }
+  inline bool DeleteManagedMemoryHasBeenSet() const { return m_deleteManagedMemoryHasBeenSet; }
+  inline void SetDeleteManagedMemory(bool value) {
+    m_deleteManagedMemoryHasBeenSet = true;
+    m_deleteManagedMemory = value;
+  }
+  inline DeleteHarnessRequest& WithDeleteManagedMemory(bool value) {
+    SetDeleteManagedMemory(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_harnessId;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  bool m_deleteManagedMemory{false};
   bool m_harnessIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_deleteManagedMemoryHasBeenSet = false;
 };
 
 }  // namespace Model

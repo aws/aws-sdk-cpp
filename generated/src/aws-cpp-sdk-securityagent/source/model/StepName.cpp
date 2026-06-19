@@ -19,6 +19,7 @@ static const int PREFLIGHT_HASH = HashingUtils::HashString("PREFLIGHT");
 static const int STATIC_ANALYSIS_HASH = HashingUtils::HashString("STATIC_ANALYSIS");
 static const int PENTEST_HASH = HashingUtils::HashString("PENTEST");
 static const int FINALIZING_HASH = HashingUtils::HashString("FINALIZING");
+static const int VALIDATION_HASH = HashingUtils::HashString("VALIDATION");
 
 StepName GetStepNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ StepName GetStepNameForName(const Aws::String& name) {
     return StepName::PENTEST;
   } else if (hashCode == FINALIZING_HASH) {
     return StepName::FINALIZING;
+  } else if (hashCode == VALIDATION_HASH) {
+    return StepName::VALIDATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForStepName(StepName enumValue) {
       return "PENTEST";
     case StepName::FINALIZING:
       return "FINALIZING";
+    case StepName::VALIDATION:
+      return "VALIDATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

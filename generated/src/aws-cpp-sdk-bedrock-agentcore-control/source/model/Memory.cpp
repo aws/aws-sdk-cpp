@@ -80,6 +80,10 @@ Memory& Memory::operator=(JsonView jsonValue) {
     m_streamDeliveryResources = jsonValue.GetObject("streamDeliveryResources");
     m_streamDeliveryResourcesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("managedByResourceArn")) {
+    m_managedByResourceArn = jsonValue.GetString("managedByResourceArn");
+    m_managedByResourceArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -148,6 +152,10 @@ JsonValue Memory::Jsonize() const {
 
   if (m_streamDeliveryResourcesHasBeenSet) {
     payload.WithObject("streamDeliveryResources", m_streamDeliveryResources.Jsonize());
+  }
+
+  if (m_managedByResourceArnHasBeenSet) {
+    payload.WithString("managedByResourceArn", m_managedByResourceArn);
   }
 
   return payload;

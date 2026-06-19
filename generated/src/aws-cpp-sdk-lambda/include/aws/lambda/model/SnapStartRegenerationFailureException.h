@@ -1,0 +1,85 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/Lambda_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Lambda {
+namespace Model {
+
+/**
+ * <p>Lambda couldn't regenerate the SnapStart snapshot for the function.
+ * SnapStart-enabled functions periodically regenerate snapshots when their
+ * underlying runtime or dependencies change; this regeneration failed. Wait for
+ * Lambda to retry, or update the function's configuration to trigger a new
+ * snapshot. For more information, see <a
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Lambda
+ * SnapStart</a>.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SnapStartRegenerationFailureException">AWS
+ * API Reference</a></p>
+ */
+class SnapStartRegenerationFailureException {
+ public:
+  AWS_LAMBDA_API SnapStartRegenerationFailureException() = default;
+  AWS_LAMBDA_API SnapStartRegenerationFailureException(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LAMBDA_API SnapStartRegenerationFailureException& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The exception type.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  SnapStartRegenerationFailureException& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The exception message.</p>
+   */
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  SnapStartRegenerationFailureException& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_type;
+
+  Aws::String m_message;
+  bool m_typeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

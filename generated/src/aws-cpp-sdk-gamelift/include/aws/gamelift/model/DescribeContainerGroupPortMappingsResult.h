@@ -50,6 +50,29 @@ class DescribeContainerGroupPortMappingsResult {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (<a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+   * that is assigned to a Amazon GameLift Servers fleet resource and uniquely
+   * identifies it. ARNs are unique across all Regions. Format is
+   * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+   * In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code>
+   * value.</p>
+   */
+  inline const Aws::String& GetFleetArn() const { return m_fleetArn; }
+  template <typename FleetArnT = Aws::String>
+  void SetFleetArn(FleetArnT&& value) {
+    m_fleetArnHasBeenSet = true;
+    m_fleetArn = std::forward<FleetArnT>(value);
+  }
+  template <typename FleetArnT = Aws::String>
+  DescribeContainerGroupPortMappingsResult& WithFleetArn(FleetArnT&& value) {
+    SetFleetArn(std::forward<FleetArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The location of the fleet instance, expressed as an Amazon Web Services
    * Region code, such as <code>us-west-2</code>.</p>
    */
@@ -184,6 +207,8 @@ class DescribeContainerGroupPortMappingsResult {
  private:
   Aws::String m_fleetId;
 
+  Aws::String m_fleetArn;
+
   Aws::String m_location;
 
   Aws::String m_containerGroupDefinitionArn;
@@ -199,6 +224,7 @@ class DescribeContainerGroupPortMappingsResult {
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_containerGroupDefinitionArnHasBeenSet = false;
   bool m_containerGroupTypeHasBeenSet = false;

@@ -26,13 +26,13 @@ GetRuntimeManagementConfigResult& GetRuntimeManagementConfigResult::operator=(co
     m_updateRuntimeOn = UpdateRuntimeOnMapper::GetUpdateRuntimeOnForName(jsonValue.GetString("UpdateRuntimeOn"));
     m_updateRuntimeOnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("RuntimeVersionArn")) {
-    m_runtimeVersionArn = jsonValue.GetString("RuntimeVersionArn");
-    m_runtimeVersionArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("FunctionArn")) {
     m_functionArn = jsonValue.GetString("FunctionArn");
     m_functionArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RuntimeVersionArn")) {
+    m_runtimeVersionArn = jsonValue.GetString("RuntimeVersionArn");
+    m_runtimeVersionArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

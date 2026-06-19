@@ -10,7 +10,17 @@
 namespace Aws {
 namespace BedrockAgent {
 namespace Model {
-enum class DataSourceType { NOT_SET, S3, WEB, CONFLUENCE, SALESFORCE, SHAREPOINT, CUSTOM, REDSHIFT_METADATA };
+enum class DataSourceType {
+  NOT_SET,
+  S3,
+  WEB,
+  CONFLUENCE,
+  SALESFORCE,
+  SHAREPOINT,
+  CUSTOM,
+  REDSHIFT_METADATA,
+  MANAGED_KNOWLEDGE_BASE_CONNECTOR
+};
 
 namespace DataSourceTypeMapper {
 AWS_BEDROCKAGENT_API DataSourceType GetDataSourceTypeForName(const Aws::String& name);

@@ -47,6 +47,7 @@ enum class DirectConnectErrors {
   DIRECT_CONNECT_CLIENT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DIRECT_CONNECT_SERVER,
   DUPLICATE_TAG_KEYS,
+  LIMIT_EXCEEDED,
   TOO_MANY_TAGS
 };
 

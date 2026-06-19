@@ -22,6 +22,14 @@ HarnessMemoryConfiguration& HarnessMemoryConfiguration::operator=(JsonView jsonV
     m_agentCoreMemoryConfiguration = jsonValue.GetObject("agentCoreMemoryConfiguration");
     m_agentCoreMemoryConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("managedMemoryConfiguration")) {
+    m_managedMemoryConfiguration = jsonValue.GetObject("managedMemoryConfiguration");
+    m_managedMemoryConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("disabled")) {
+    m_disabled = jsonValue.GetObject("disabled");
+    m_disabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +38,14 @@ JsonValue HarnessMemoryConfiguration::Jsonize() const {
 
   if (m_agentCoreMemoryConfigurationHasBeenSet) {
     payload.WithObject("agentCoreMemoryConfiguration", m_agentCoreMemoryConfiguration.Jsonize());
+  }
+
+  if (m_managedMemoryConfigurationHasBeenSet) {
+    payload.WithObject("managedMemoryConfiguration", m_managedMemoryConfiguration.Jsonize());
+  }
+
+  if (m_disabledHasBeenSet) {
+    payload.WithObject("disabled", m_disabled.Jsonize());
   }
 
   return payload;

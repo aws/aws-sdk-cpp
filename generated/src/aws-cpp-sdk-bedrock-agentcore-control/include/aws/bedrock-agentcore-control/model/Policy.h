@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/EnforcementMode.h>
 #include <aws/bedrock-agentcore-control/model/PolicyDefinition.h>
 #include <aws/bedrock-agentcore-control/model/PolicyStatus.h>
 #include <aws/core/utils/DateTime.h>
@@ -179,6 +180,22 @@ class Policy {
 
   ///@{
   /**
+   * <p>The current enforcement mode of the policy.</p>
+   */
+  inline EnforcementMode GetEnforcementMode() const { return m_enforcementMode; }
+  inline bool EnforcementModeHasBeenSet() const { return m_enforcementModeHasBeenSet; }
+  inline void SetEnforcementMode(EnforcementMode value) {
+    m_enforcementModeHasBeenSet = true;
+    m_enforcementMode = value;
+  }
+  inline Policy& WithEnforcementMode(EnforcementMode value) {
+    SetEnforcementMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Cedar policy statement that defines the access control rules. This
    * contains the actual policy logic used for agent behavior control and access
    * decisions.</p>
@@ -256,6 +273,8 @@ class Policy {
 
   PolicyStatus m_status{PolicyStatus::NOT_SET};
 
+  EnforcementMode m_enforcementMode{EnforcementMode::NOT_SET};
+
   PolicyDefinition m_definition;
 
   Aws::String m_description;
@@ -268,6 +287,7 @@ class Policy {
   bool m_updatedAtHasBeenSet = false;
   bool m_policyArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_enforcementModeHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_statusReasonsHasBeenSet = false;

@@ -5,9 +5,12 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/model/AwsProductsSpendInsightsBySource.h>
 #include <aws/partnercentral-selling/model/EngagementScore.h>
+#include <aws/partnercentral-selling/model/OpportunityQuality.h>
+#include <aws/partnercentral-selling/model/Recommendation.h>
 
 #include <utility>
 
@@ -90,15 +93,63 @@ class AwsOpportunityInsights {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Opportunity quality assessment. Null if not yet scored.</p>
+   */
+  inline const OpportunityQuality& GetOpportunityQuality() const { return m_opportunityQuality; }
+  inline bool OpportunityQualityHasBeenSet() const { return m_opportunityQualityHasBeenSet; }
+  template <typename OpportunityQualityT = OpportunityQuality>
+  void SetOpportunityQuality(OpportunityQualityT&& value) {
+    m_opportunityQualityHasBeenSet = true;
+    m_opportunityQuality = std::forward<OpportunityQualityT>(value);
+  }
+  template <typename OpportunityQualityT = OpportunityQuality>
+  AwsOpportunityInsights& WithOpportunityQuality(OpportunityQualityT&& value) {
+    SetOpportunityQuality(std::forward<OpportunityQualityT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>List of recommendations from various agent-driven sources.</p>
+   */
+  inline const Aws::Vector<Recommendation>& GetRecommendations() const { return m_recommendations; }
+  inline bool RecommendationsHasBeenSet() const { return m_recommendationsHasBeenSet; }
+  template <typename RecommendationsT = Aws::Vector<Recommendation>>
+  void SetRecommendations(RecommendationsT&& value) {
+    m_recommendationsHasBeenSet = true;
+    m_recommendations = std::forward<RecommendationsT>(value);
+  }
+  template <typename RecommendationsT = Aws::Vector<Recommendation>>
+  AwsOpportunityInsights& WithRecommendations(RecommendationsT&& value) {
+    SetRecommendations(std::forward<RecommendationsT>(value));
+    return *this;
+  }
+  template <typename RecommendationsT = Recommendation>
+  AwsOpportunityInsights& AddRecommendations(RecommendationsT&& value) {
+    m_recommendationsHasBeenSet = true;
+    m_recommendations.emplace_back(std::forward<RecommendationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nextBestActions;
 
   EngagementScore m_engagementScore{EngagementScore::NOT_SET};
 
   AwsProductsSpendInsightsBySource m_awsProductsSpendInsightsBySource;
+
+  OpportunityQuality m_opportunityQuality;
+
+  Aws::Vector<Recommendation> m_recommendations;
   bool m_nextBestActionsHasBeenSet = false;
   bool m_engagementScoreHasBeenSet = false;
   bool m_awsProductsSpendInsightsBySourceHasBeenSet = false;
+  bool m_opportunityQualityHasBeenSet = false;
+  bool m_recommendationsHasBeenSet = false;
 };
 
 }  // namespace Model

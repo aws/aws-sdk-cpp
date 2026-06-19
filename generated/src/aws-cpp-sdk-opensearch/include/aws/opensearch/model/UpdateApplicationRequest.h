@@ -10,6 +10,7 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/AppConfig.h>
 #include <aws/opensearch/model/DataSource.h>
+#include <aws/opensearch/model/IamIdentityCenterOptionsInput.h>
 
 #include <utility>
 
@@ -96,15 +97,37 @@ class UpdateApplicationRequest : public OpenSearchServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings for integrating IAM Identity Center with the
+   * OpenSearch application.</p>
+   */
+  inline const IamIdentityCenterOptionsInput& GetIamIdentityCenterOptions() const { return m_iamIdentityCenterOptions; }
+  inline bool IamIdentityCenterOptionsHasBeenSet() const { return m_iamIdentityCenterOptionsHasBeenSet; }
+  template <typename IamIdentityCenterOptionsT = IamIdentityCenterOptionsInput>
+  void SetIamIdentityCenterOptions(IamIdentityCenterOptionsT&& value) {
+    m_iamIdentityCenterOptionsHasBeenSet = true;
+    m_iamIdentityCenterOptions = std::forward<IamIdentityCenterOptionsT>(value);
+  }
+  template <typename IamIdentityCenterOptionsT = IamIdentityCenterOptionsInput>
+  UpdateApplicationRequest& WithIamIdentityCenterOptions(IamIdentityCenterOptionsT&& value) {
+    SetIamIdentityCenterOptions(std::forward<IamIdentityCenterOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
   Aws::Vector<DataSource> m_dataSources;
 
   Aws::Vector<AppConfig> m_appConfigs;
+
+  IamIdentityCenterOptionsInput m_iamIdentityCenterOptions;
   bool m_idHasBeenSet = false;
   bool m_dataSourcesHasBeenSet = false;
   bool m_appConfigsHasBeenSet = false;
+  bool m_iamIdentityCenterOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -44,5 +44,9 @@ Aws::String UpdateCodeReviewRequest::SerializePayload() const {
                        CodeRemediationStrategyMapper::GetNameForCodeRemediationStrategy(m_codeRemediationStrategy));
   }
 
+  if (m_validationModeHasBeenSet) {
+    payload.WithString("validationMode", ValidationModeMapper::GetNameForValidationMode(m_validationMode));
+  }
+
   return payload.View().WriteReadable();
 }

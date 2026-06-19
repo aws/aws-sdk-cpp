@@ -22,6 +22,10 @@ InterceptorInputConfiguration& InterceptorInputConfiguration::operator=(JsonView
     m_passRequestHeaders = jsonValue.GetBool("passRequestHeaders");
     m_passRequestHeadersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("payloadFilter")) {
+    m_payloadFilter = jsonValue.GetObject("payloadFilter");
+    m_payloadFilterHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue InterceptorInputConfiguration::Jsonize() const {
 
   if (m_passRequestHeadersHasBeenSet) {
     payload.WithBool("passRequestHeaders", m_passRequestHeaders);
+  }
+
+  if (m_payloadFilterHasBeenSet) {
+    payload.WithObject("payloadFilter", m_payloadFilter.Jsonize());
   }
 
   return payload;

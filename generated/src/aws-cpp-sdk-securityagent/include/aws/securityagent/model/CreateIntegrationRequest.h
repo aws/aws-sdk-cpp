@@ -125,6 +125,26 @@ class CreateIntegrationRequest : public SecurityAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of an active private connection used to reach a self-hosted provider
+   * instance over private networking. Specify this when the instance is not publicly
+   * reachable.</p>
+   */
+  inline const Aws::String& GetPrivateConnectionName() const { return m_privateConnectionName; }
+  inline bool PrivateConnectionNameHasBeenSet() const { return m_privateConnectionNameHasBeenSet; }
+  template <typename PrivateConnectionNameT = Aws::String>
+  void SetPrivateConnectionName(PrivateConnectionNameT&& value) {
+    m_privateConnectionNameHasBeenSet = true;
+    m_privateConnectionName = std::forward<PrivateConnectionNameT>(value);
+  }
+  template <typename PrivateConnectionNameT = Aws::String>
+  CreateIntegrationRequest& WithPrivateConnectionName(PrivateConnectionNameT&& value) {
+    SetPrivateConnectionName(std::forward<PrivateConnectionNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Provider m_provider{Provider::NOT_SET};
 
@@ -135,11 +155,14 @@ class CreateIntegrationRequest : public SecurityAgentRequest {
   Aws::String m_kmsKeyId;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::String m_privateConnectionName;
   bool m_providerHasBeenSet = false;
   bool m_inputHasBeenSet = false;
   bool m_integrationDisplayNameHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_privateConnectionNameHasBeenSet = false;
 };
 
 }  // namespace Model

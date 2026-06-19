@@ -21,6 +21,11 @@ class JsonValue;
 }  // namespace Utils
 namespace DevOpsAgent {
 namespace Model {
+/**
+ * <p>Response structure for deleting a Trigger</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeleteTriggerResponse">AWS
+ * API Reference</a></p>
+ */
 class DeleteTriggerResult {
  public:
   AWS_DEVOPSAGENT_API DeleteTriggerResult() = default;

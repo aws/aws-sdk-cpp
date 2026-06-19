@@ -5,8 +5,11 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/CapabilityConfiguration.h>
+#include <aws/devops-agent/model/CapabilityType.h>
 #include <aws/devops-agent/model/ServiceConfiguration.h>
 #include <aws/devops-agent/model/ValidationStatus.h>
 
@@ -159,6 +162,29 @@ class Association {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Enabled capabilities for this association.</p>
+   */
+  inline const Aws::Map<CapabilityType, CapabilityConfiguration>& GetCapabilities() const { return m_capabilities; }
+  inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
+  template <typename CapabilitiesT = Aws::Map<CapabilityType, CapabilityConfiguration>>
+  void SetCapabilities(CapabilitiesT&& value) {
+    m_capabilitiesHasBeenSet = true;
+    m_capabilities = std::forward<CapabilitiesT>(value);
+  }
+  template <typename CapabilitiesT = Aws::Map<CapabilityType, CapabilityConfiguration>>
+  Association& WithCapabilities(CapabilitiesT&& value) {
+    SetCapabilities(std::forward<CapabilitiesT>(value));
+    return *this;
+  }
+  inline Association& AddCapabilities(CapabilityType key, CapabilityConfiguration value) {
+    m_capabilitiesHasBeenSet = true;
+    m_capabilities.emplace(key, value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_agentSpaceId;
 
@@ -173,6 +199,8 @@ class Association {
   Aws::String m_serviceId;
 
   ServiceConfiguration m_configuration;
+
+  Aws::Map<CapabilityType, CapabilityConfiguration> m_capabilities;
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
@@ -180,6 +208,7 @@ class Association {
   bool m_associationIdHasBeenSet = false;
   bool m_serviceIdHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
 };
 
 }  // namespace Model

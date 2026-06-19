@@ -249,6 +249,25 @@ class GetAwsOpportunitySummaryResult {
 
   ///@{
   /**
+   * <p>Engagement classification for this opportunity. Read-only. Null before
+   * scoring. Known values: <code>AWS Field-engaged</code>,
+   * <code>Agent-engaged</code>, <code>Partner-led</code>.</p>
+   */
+  inline const Aws::String& GetCosellMotion() const { return m_cosellMotion; }
+  template <typename CosellMotionT = Aws::String>
+  void SetCosellMotion(CosellMotionT&& value) {
+    m_cosellMotionHasBeenSet = true;
+    m_cosellMotion = std::forward<CosellMotionT>(value);
+  }
+  template <typename CosellMotionT = Aws::String>
+  GetAwsOpportunitySummaryResult& WithCosellMotion(CosellMotionT&& value) {
+    SetCosellMotion(std::forward<CosellMotionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the catalog in which the AWS Opportunity exists. This is the
    * environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the
    * opportunity is being managed.</p>
@@ -305,6 +324,8 @@ class GetAwsOpportunitySummaryResult {
 
   AwsOpportunityProject m_project;
 
+  Aws::String m_cosellMotion;
+
   Aws::String m_catalog;
 
   Aws::String m_requestId;
@@ -320,6 +341,7 @@ class GetAwsOpportunitySummaryResult {
   bool m_relatedEntityIdsHasBeenSet = false;
   bool m_customerHasBeenSet = false;
   bool m_projectHasBeenSet = false;
+  bool m_cosellMotionHasBeenSet = false;
   bool m_catalogHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
 #include <aws/devops-agent/model/AssetFileContent.h>
+#include <aws/devops-agent/model/AssetSourceUrlContent.h>
 #include <aws/devops-agent/model/AssetZipContent.h>
 
 #include <utility>
@@ -21,8 +22,8 @@ namespace DevOpsAgent {
 namespace Model {
 
 /**
- * <p>Content for an asset, either a single file or a zip bundle</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Content for an asset: a single file, a zip bundle, or a source URL to import
+ * from</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/AssetContent">AWS
  * API Reference</a></p>
  */
@@ -68,12 +69,33 @@ class AssetContent {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A source URL to import asset content from</p>
+   */
+  inline const AssetSourceUrlContent& GetSourceUrl() const { return m_sourceUrl; }
+  inline bool SourceUrlHasBeenSet() const { return m_sourceUrlHasBeenSet; }
+  template <typename SourceUrlT = AssetSourceUrlContent>
+  void SetSourceUrl(SourceUrlT&& value) {
+    m_sourceUrlHasBeenSet = true;
+    m_sourceUrl = std::forward<SourceUrlT>(value);
+  }
+  template <typename SourceUrlT = AssetSourceUrlContent>
+  AssetContent& WithSourceUrl(SourceUrlT&& value) {
+    SetSourceUrl(std::forward<SourceUrlT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AssetFileContent m_file;
 
   AssetZipContent m_zip;
+
+  AssetSourceUrlContent m_sourceUrl;
   bool m_fileHasBeenSet = false;
   bool m_zipHasBeenSet = false;
+  bool m_sourceUrlHasBeenSet = false;
 };
 
 }  // namespace Model

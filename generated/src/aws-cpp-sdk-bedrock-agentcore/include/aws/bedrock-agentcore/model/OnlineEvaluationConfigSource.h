@@ -57,25 +57,25 @@ class OnlineEvaluationConfigSource {
    * <p>Optional session filter configuration to narrow down which sessions from the
    * online evaluation configuration to include.</p>
    */
-  inline const SessionFilterConfig& GetSessionFilterConfig() const { return m_sessionFilterConfig; }
-  inline bool SessionFilterConfigHasBeenSet() const { return m_sessionFilterConfigHasBeenSet; }
-  template <typename SessionFilterConfigT = SessionFilterConfig>
-  void SetSessionFilterConfig(SessionFilterConfigT&& value) {
-    m_sessionFilterConfigHasBeenSet = true;
-    m_sessionFilterConfig = std::forward<SessionFilterConfigT>(value);
+  inline const SessionFilterConfig& GetTimeRange() const { return m_timeRange; }
+  inline bool TimeRangeHasBeenSet() const { return m_timeRangeHasBeenSet; }
+  template <typename TimeRangeT = SessionFilterConfig>
+  void SetTimeRange(TimeRangeT&& value) {
+    m_timeRangeHasBeenSet = true;
+    m_timeRange = std::forward<TimeRangeT>(value);
   }
-  template <typename SessionFilterConfigT = SessionFilterConfig>
-  OnlineEvaluationConfigSource& WithSessionFilterConfig(SessionFilterConfigT&& value) {
-    SetSessionFilterConfig(std::forward<SessionFilterConfigT>(value));
+  template <typename TimeRangeT = SessionFilterConfig>
+  OnlineEvaluationConfigSource& WithTimeRange(TimeRangeT&& value) {
+    SetTimeRange(std::forward<TimeRangeT>(value));
     return *this;
   }
   ///@}
  private:
   Aws::String m_onlineEvaluationConfigArn;
 
-  SessionFilterConfig m_sessionFilterConfig;
+  SessionFilterConfig m_timeRange;
   bool m_onlineEvaluationConfigArnHasBeenSet = false;
-  bool m_sessionFilterConfigHasBeenSet = false;
+  bool m_timeRangeHasBeenSet = false;
 };
 
 }  // namespace Model

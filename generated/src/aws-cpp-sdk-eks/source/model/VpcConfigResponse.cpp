@@ -55,6 +55,11 @@ VpcConfigResponse& VpcConfigResponse::operator=(JsonView jsonValue) {
     }
     m_publicAccessCidrsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("controlPlaneEgressMode")) {
+    m_controlPlaneEgressMode =
+        ControlPlaneEgressModeTypeMapper::GetControlPlaneEgressModeTypeForName(jsonValue.GetString("controlPlaneEgressMode"));
+    m_controlPlaneEgressModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -99,6 +104,11 @@ JsonValue VpcConfigResponse::Jsonize() const {
       publicAccessCidrsJsonList[publicAccessCidrsIndex].AsString(m_publicAccessCidrs[publicAccessCidrsIndex]);
     }
     payload.WithArray("publicAccessCidrs", std::move(publicAccessCidrsJsonList));
+  }
+
+  if (m_controlPlaneEgressModeHasBeenSet) {
+    payload.WithString("controlPlaneEgressMode",
+                       ControlPlaneEgressModeTypeMapper::GetNameForControlPlaneEgressModeType(m_controlPlaneEgressMode));
   }
 
   return payload;

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class ClusterImageVersionStatus { NOT_SET, UpToDate, UpdateAvailable };
+enum class ClusterImageVersionStatus { NOT_SET, UpToDate, UpdateAvailable, SecurityUpdateRequired, EndOfLife };
 
 namespace ClusterImageVersionStatusMapper {
 AWS_SAGEMAKER_API ClusterImageVersionStatus GetClusterImageVersionStatusForName(const Aws::String& name);

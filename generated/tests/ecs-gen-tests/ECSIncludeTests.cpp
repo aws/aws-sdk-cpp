@@ -304,6 +304,8 @@
 #include <aws/ecs/model/ManagedTerminationProtection.h>
 #include <aws/ecs/model/MemoryGiBPerVCpuRequest.h>
 #include <aws/ecs/model/MemoryMiBRequest.h>
+#include <aws/ecs/model/MetricConfiguration.h>
+#include <aws/ecs/model/MonitoringConfiguration.h>
 #include <aws/ecs/model/MountPoint.h>
 #include <aws/ecs/model/NetworkBandwidthGbpsRequest.h>
 #include <aws/ecs/model/NetworkBinding.h>

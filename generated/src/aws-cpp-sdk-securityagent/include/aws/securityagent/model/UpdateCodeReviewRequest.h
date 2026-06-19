@@ -10,6 +10,7 @@
 #include <aws/securityagent/model/Assets.h>
 #include <aws/securityagent/model/CloudWatchLog.h>
 #include <aws/securityagent/model/CodeRemediationStrategy.h>
+#include <aws/securityagent/model/ValidationMode.h>
 
 #include <utility>
 
@@ -157,6 +158,23 @@ class UpdateCodeReviewRequest : public SecurityAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated validation mode for the code review. Valid values are SIMULATED
+   * and DISABLED.</p>
+   */
+  inline ValidationMode GetValidationMode() const { return m_validationMode; }
+  inline bool ValidationModeHasBeenSet() const { return m_validationModeHasBeenSet; }
+  inline void SetValidationMode(ValidationMode value) {
+    m_validationModeHasBeenSet = true;
+    m_validationMode = value;
+  }
+  inline UpdateCodeReviewRequest& WithValidationMode(ValidationMode value) {
+    SetValidationMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_codeReviewId;
 
@@ -171,6 +189,8 @@ class UpdateCodeReviewRequest : public SecurityAgentRequest {
   CloudWatchLog m_logConfig;
 
   CodeRemediationStrategy m_codeRemediationStrategy{CodeRemediationStrategy::NOT_SET};
+
+  ValidationMode m_validationMode{ValidationMode::NOT_SET};
   bool m_codeReviewIdHasBeenSet = false;
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
@@ -178,6 +198,7 @@ class UpdateCodeReviewRequest : public SecurityAgentRequest {
   bool m_serviceRoleHasBeenSet = false;
   bool m_logConfigHasBeenSet = false;
   bool m_codeRemediationStrategyHasBeenSet = false;
+  bool m_validationModeHasBeenSet = false;
 };
 
 }  // namespace Model

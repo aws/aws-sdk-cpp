@@ -7,8 +7,10 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultConfluenceLocation.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultCustomDocumentLocation.h>
+#include <aws/bedrock-agent-runtime/model/RetrievalResultGoogleDriveLocation.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultKendraDocumentLocation.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultLocationType.h>
+#include <aws/bedrock-agent-runtime/model/RetrievalResultOneDriveLocation.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultS3Location.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultSalesforceLocation.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultSharePointLocation.h>
@@ -85,6 +87,24 @@ class RetrievalResultLocation {
 
   ///@{
   /**
+   * <p>The Google Drive data source location.</p>
+   */
+  inline const RetrievalResultGoogleDriveLocation& GetGoogleDriveLocation() const { return m_googleDriveLocation; }
+  inline bool GoogleDriveLocationHasBeenSet() const { return m_googleDriveLocationHasBeenSet; }
+  template <typename GoogleDriveLocationT = RetrievalResultGoogleDriveLocation>
+  void SetGoogleDriveLocation(GoogleDriveLocationT&& value) {
+    m_googleDriveLocationHasBeenSet = true;
+    m_googleDriveLocation = std::forward<GoogleDriveLocationT>(value);
+  }
+  template <typename GoogleDriveLocationT = RetrievalResultGoogleDriveLocation>
+  RetrievalResultLocation& WithGoogleDriveLocation(GoogleDriveLocationT&& value) {
+    SetGoogleDriveLocation(std::forward<GoogleDriveLocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The location of a document in Amazon Kendra.</p>
    */
   inline const RetrievalResultKendraDocumentLocation& GetKendraDocumentLocation() const { return m_kendraDocumentLocation; }
@@ -97,6 +117,24 @@ class RetrievalResultLocation {
   template <typename KendraDocumentLocationT = RetrievalResultKendraDocumentLocation>
   RetrievalResultLocation& WithKendraDocumentLocation(KendraDocumentLocationT&& value) {
     SetKendraDocumentLocation(std::forward<KendraDocumentLocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Microsoft OneDrive data source location.</p>
+   */
+  inline const RetrievalResultOneDriveLocation& GetOneDriveLocation() const { return m_oneDriveLocation; }
+  inline bool OneDriveLocationHasBeenSet() const { return m_oneDriveLocationHasBeenSet; }
+  template <typename OneDriveLocationT = RetrievalResultOneDriveLocation>
+  void SetOneDriveLocation(OneDriveLocationT&& value) {
+    m_oneDriveLocationHasBeenSet = true;
+    m_oneDriveLocation = std::forward<OneDriveLocationT>(value);
+  }
+  template <typename OneDriveLocationT = RetrievalResultOneDriveLocation>
+  RetrievalResultLocation& WithOneDriveLocation(OneDriveLocationT&& value) {
+    SetOneDriveLocation(std::forward<OneDriveLocationT>(value));
     return *this;
   }
   ///@}
@@ -211,7 +249,11 @@ class RetrievalResultLocation {
 
   RetrievalResultCustomDocumentLocation m_customDocumentLocation;
 
+  RetrievalResultGoogleDriveLocation m_googleDriveLocation;
+
   RetrievalResultKendraDocumentLocation m_kendraDocumentLocation;
+
+  RetrievalResultOneDriveLocation m_oneDriveLocation;
 
   RetrievalResultS3Location m_s3Location;
 
@@ -226,7 +268,9 @@ class RetrievalResultLocation {
   RetrievalResultWebLocation m_webLocation;
   bool m_confluenceLocationHasBeenSet = false;
   bool m_customDocumentLocationHasBeenSet = false;
+  bool m_googleDriveLocationHasBeenSet = false;
   bool m_kendraDocumentLocationHasBeenSet = false;
+  bool m_oneDriveLocationHasBeenSet = false;
   bool m_s3LocationHasBeenSet = false;
   bool m_salesforceLocationHasBeenSet = false;
   bool m_sharePointLocationHasBeenSet = false;

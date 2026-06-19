@@ -47,6 +47,10 @@ Aws::String UpdateGatewayRequest::SerializePayload() const {
     payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
+  if (m_customTransformConfigurationHasBeenSet) {
+    payload.WithObject("customTransformConfiguration", m_customTransformConfiguration.Jsonize());
+  }
+
   if (m_interceptorConfigurationsHasBeenSet) {
     Aws::Utils::Array<JsonValue> interceptorConfigurationsJsonList(m_interceptorConfigurations.size());
     for (unsigned interceptorConfigurationsIndex = 0; interceptorConfigurationsIndex < interceptorConfigurationsJsonList.GetLength();
@@ -63,6 +67,10 @@ Aws::String UpdateGatewayRequest::SerializePayload() const {
 
   if (m_exceptionLevelHasBeenSet) {
     payload.WithString("exceptionLevel", ExceptionLevelMapper::GetNameForExceptionLevel(m_exceptionLevel));
+  }
+
+  if (m_wafConfigurationHasBeenSet) {
+    payload.WithObject("wafConfiguration", m_wafConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();

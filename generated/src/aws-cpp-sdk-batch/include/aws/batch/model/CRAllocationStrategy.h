@@ -10,7 +10,15 @@
 namespace Aws {
 namespace Batch {
 namespace Model {
-enum class CRAllocationStrategy { NOT_SET, BEST_FIT, BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED, SPOT_PRICE_CAPACITY_OPTIMIZED };
+enum class CRAllocationStrategy {
+  NOT_SET,
+  BEST_FIT,
+  BEST_FIT_PROGRESSIVE,
+  BEST_FIT_PROGRESSIVE_ORDERED,
+  SPOT_CAPACITY_OPTIMIZED,
+  SPOT_PRICE_CAPACITY_OPTIMIZED,
+  SPOT_CAPACITY_OPTIMIZED_PRIORITIZED
+};
 
 namespace CRAllocationStrategyMapper {
 AWS_BATCH_API CRAllocationStrategy GetCRAllocationStrategyForName(const Aws::String& name);

@@ -63,6 +63,7 @@ static const int coding_use_case_specific_failure_types_category_edge_case_overs
     HashingUtils::HashString("coding-use-case-specific-failure-types-category-edge-case-oversights");
 static const int coding_use_case_specific_failure_types_category_dependency_issues_HASH =
     HashingUtils::HashString("coding-use-case-specific-failure-types-category-dependency-issues");
+static const int other_HASH = HashingUtils::HashString("other");
 
 InsightsFailureCategory GetInsightsFailureCategoryForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -132,6 +133,8 @@ InsightsFailureCategory GetInsightsFailureCategoryForName(const Aws::String& nam
     return InsightsFailureCategory::coding_use_case_specific_failure_types_category_edge_case_oversights;
   } else if (hashCode == coding_use_case_specific_failure_types_category_dependency_issues_HASH) {
     return InsightsFailureCategory::coding_use_case_specific_failure_types_category_dependency_issues;
+  } else if (hashCode == other_HASH) {
+    return InsightsFailureCategory::other;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -212,6 +215,8 @@ Aws::String GetNameForInsightsFailureCategory(InsightsFailureCategory enumValue)
       return "coding-use-case-specific-failure-types-category-edge-case-oversights";
     case InsightsFailureCategory::coding_use_case_specific_failure_types_category_dependency_issues:
       return "coding-use-case-specific-failure-types-category-dependency-issues";
+    case InsightsFailureCategory::other:
+      return "other";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PartnerCentralSelling {
 namespace Model {
-enum class EngagementContextType { NOT_SET, CustomerProject, Lead };
+enum class EngagementContextType { NOT_SET, CustomerProject, Lead, ProspectingResult };
 
 namespace EngagementContextTypeMapper {
 AWS_PARTNERCENTRALSELLING_API EngagementContextType GetEngagementContextTypeForName(const Aws::String& name);

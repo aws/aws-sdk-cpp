@@ -14,6 +14,7 @@
 #include <aws/synthetics/SyntheticsRequest.h>
 #include <aws/synthetics/SyntheticsServiceClientModel.h>
 #include <aws/synthetics/Synthetics_EXPORTS.h>
+#include <aws/synthetics/model/AddReplicaLocationInput.h>
 #include <aws/synthetics/model/ArtifactConfigInput.h>
 #include <aws/synthetics/model/ArtifactConfigOutput.h>
 #include <aws/synthetics/model/AssociateResourceRequest.h>
@@ -77,7 +78,12 @@
 #include <aws/synthetics/model/ListGroupsResult.h>
 #include <aws/synthetics/model/ListTagsForResourceRequest.h>
 #include <aws/synthetics/model/ListTagsForResourceResult.h>
+#include <aws/synthetics/model/LocationType.h>
+#include <aws/synthetics/model/MultiLocationConfig.h>
 #include <aws/synthetics/model/ProvisionedResourceCleanupSetting.h>
+#include <aws/synthetics/model/Replica.h>
+#include <aws/synthetics/model/ReplicationState.h>
+#include <aws/synthetics/model/ReplicationStatus.h>
 #include <aws/synthetics/model/ResourceToTag.h>
 #include <aws/synthetics/model/RetryConfigInput.h>
 #include <aws/synthetics/model/RetryConfigOutput.h>

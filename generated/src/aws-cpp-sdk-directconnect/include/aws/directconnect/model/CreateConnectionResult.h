@@ -12,6 +12,7 @@
 #include <aws/directconnect/model/ConnectionState.h>
 #include <aws/directconnect/model/HasLogicalRedundancy.h>
 #include <aws/directconnect/model/MacSecKey.h>
+#include <aws/directconnect/model/RateLimiterStatus.h>
 #include <aws/directconnect/model/Tag.h>
 
 #include <utility>
@@ -440,6 +441,24 @@ class CreateConnectionResult {
 
   ///@{
   /**
+   * <p>The rate limiter status for the connection, including how many rate limiters
+   * are in use and the maximum allowed.</p>
+   */
+  inline const RateLimiterStatus& GetRateLimiterStatus() const { return m_rateLimiterStatus; }
+  template <typename RateLimiterStatusT = RateLimiterStatus>
+  void SetRateLimiterStatus(RateLimiterStatusT&& value) {
+    m_rateLimiterStatusHasBeenSet = true;
+    m_rateLimiterStatus = std::forward<RateLimiterStatusT>(value);
+  }
+  template <typename RateLimiterStatusT = RateLimiterStatus>
+  CreateConnectionResult& WithRateLimiterStatus(RateLimiterStatusT&& value) {
+    SetRateLimiterStatus(std::forward<RateLimiterStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether the interconnect hosting this connection supports MAC
    * Security (MACsec).</p>
    */
@@ -515,6 +534,8 @@ class CreateConnectionResult {
 
   Aws::Vector<MacSecKey> m_macSecKeys;
 
+  RateLimiterStatus m_rateLimiterStatus;
+
   bool m_partnerInterconnectMacSecCapable{false};
 
   Aws::String m_requestId;
@@ -541,6 +562,7 @@ class CreateConnectionResult {
   bool m_portEncryptionStatusHasBeenSet = false;
   bool m_encryptionModeHasBeenSet = false;
   bool m_macSecKeysHasBeenSet = false;
+  bool m_rateLimiterStatusHasBeenSet = false;
   bool m_partnerInterconnectMacSecCapableHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -58,7 +58,11 @@ class UpdateClusterConfigRequest : public EKSRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>An object representing the VPC configuration to use for the cluster update.
+   * You can use this parameter to update the control plane egress mode, the subnets
+   * used by the cluster, the security groups, and the endpoint access settings.</p>
+   */
   inline const VpcConfigRequest& GetResourcesVpcConfig() const { return m_resourcesVpcConfig; }
   inline bool ResourcesVpcConfigHasBeenSet() const { return m_resourcesVpcConfigHasBeenSet; }
   template <typename ResourcesVpcConfigT = VpcConfigRequest>

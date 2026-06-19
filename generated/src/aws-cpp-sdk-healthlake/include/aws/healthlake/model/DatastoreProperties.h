@@ -239,8 +239,7 @@ class DatastoreProperties {
 
   ///@{
   /**
-   * <para>The natural language processing (NLP) configuration for the data
-   * store.</para>
+   * <p>The natural language processing (NLP) configuration for the data store.</p>
    */
   inline const NlpConfiguration& GetNlpConfiguration() const { return m_nlpConfiguration; }
   inline bool NlpConfigurationHasBeenSet() const { return m_nlpConfigurationHasBeenSet; }
@@ -258,7 +257,7 @@ class DatastoreProperties {
 
   ///@{
   /**
-   * <para>The analytics configuration for the data store.</para>
+   * <p>The analytics configuration for the data store.</p>
    */
   inline const AnalyticsConfiguration& GetAnalyticsConfiguration() const { return m_analyticsConfiguration; }
   inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }
@@ -276,7 +275,7 @@ class DatastoreProperties {
 
   ///@{
   /**
-   * <para>The profile configuration for the data store.</para>
+   * <p>The profile configuration for the data store.</p>
    */
   inline const ProfileConfiguration& GetProfileConfiguration() const { return m_profileConfiguration; }
   inline bool ProfileConfigurationHasBeenSet() const { return m_profileConfigurationHasBeenSet; }

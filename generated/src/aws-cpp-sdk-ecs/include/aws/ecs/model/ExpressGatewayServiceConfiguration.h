@@ -95,6 +95,26 @@ class ExpressGatewayServiceConfiguration {
 
   ///@{
   /**
+   * <p>The ARN of the task definition used by this service revision. This is present
+   * for all Express services and reflects the task definition in use, whether
+   * managed by Amazon ECS or provided by the customer.</p>
+   */
+  inline const Aws::String& GetTaskDefinitionArn() const { return m_taskDefinitionArn; }
+  inline bool TaskDefinitionArnHasBeenSet() const { return m_taskDefinitionArnHasBeenSet; }
+  template <typename TaskDefinitionArnT = Aws::String>
+  void SetTaskDefinitionArn(TaskDefinitionArnT&& value) {
+    m_taskDefinitionArnHasBeenSet = true;
+    m_taskDefinitionArn = std::forward<TaskDefinitionArnT>(value);
+  }
+  template <typename TaskDefinitionArnT = Aws::String>
+  ExpressGatewayServiceConfiguration& WithTaskDefinitionArn(TaskDefinitionArnT&& value) {
+    SetTaskDefinitionArn(std::forward<TaskDefinitionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The CPU allocation for tasks in this service revision.</p>
    */
   inline const Aws::String& GetCpu() const { return m_cpu; }
@@ -249,6 +269,8 @@ class ExpressGatewayServiceConfiguration {
 
   Aws::String m_taskRoleArn;
 
+  Aws::String m_taskDefinitionArn;
+
   Aws::String m_cpu;
 
   Aws::String m_memory;
@@ -267,6 +289,7 @@ class ExpressGatewayServiceConfiguration {
   bool m_serviceRevisionArnHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
   bool m_taskRoleArnHasBeenSet = false;
+  bool m_taskDefinitionArnHasBeenSet = false;
   bool m_cpuHasBeenSet = false;
   bool m_memoryHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;

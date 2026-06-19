@@ -66,6 +66,14 @@ ServiceDetails& ServiceDetails::operator=(JsonView jsonValue) {
     m_mcpserversigv4 = jsonValue.GetObject("mcpserversigv4");
     m_mcpserversigv4HasBeenSet = true;
   }
+  if (jsonValue.ValueExists("remoteagent")) {
+    m_remoteagent = jsonValue.GetObject("remoteagent");
+    m_remoteagentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("remoteagentsigv4")) {
+    m_remoteagentsigv4 = jsonValue.GetObject("remoteagentsigv4");
+    m_remoteagentsigv4HasBeenSet = true;
+  }
   return *this;
 }
 
@@ -118,6 +126,14 @@ JsonValue ServiceDetails::Jsonize() const {
 
   if (m_mcpserversigv4HasBeenSet) {
     payload.WithObject("mcpserversigv4", m_mcpserversigv4.Jsonize());
+  }
+
+  if (m_remoteagentHasBeenSet) {
+    payload.WithObject("remoteagent", m_remoteagent.Jsonize());
+  }
+
+  if (m_remoteagentsigv4HasBeenSet) {
+    payload.WithObject("remoteagentsigv4", m_remoteagentsigv4.Jsonize());
   }
 
   return payload;

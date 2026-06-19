@@ -23,6 +23,11 @@ class JsonValue;
 }  // namespace Utils
 namespace DevOpsAgent {
 namespace Model {
+/**
+ * <p>Response structure for listing Triggers</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListTriggersResponse">AWS
+ * API Reference</a></p>
+ */
 class ListTriggersResult {
  public:
   AWS_DEVOPSAGENT_API ListTriggersResult() = default;
@@ -53,7 +58,9 @@ class ListTriggersResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Pagination token to retrieve the next page of results</p>
+   */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>
   void SetNextToken(NextTokenT&& value) {

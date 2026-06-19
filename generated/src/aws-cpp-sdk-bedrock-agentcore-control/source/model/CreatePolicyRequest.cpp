@@ -31,6 +31,10 @@ Aws::String CreatePolicyRequest::SerializePayload() const {
     payload.WithString("validationMode", PolicyValidationModeMapper::GetNameForPolicyValidationMode(m_validationMode));
   }
 
+  if (m_enforcementModeHasBeenSet) {
+    payload.WithString("enforcementMode", EnforcementModeMapper::GetNameForEnforcementMode(m_enforcementMode));
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

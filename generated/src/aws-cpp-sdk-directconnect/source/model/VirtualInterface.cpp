@@ -137,6 +137,10 @@ VirtualInterface& VirtualInterface::operator=(JsonView jsonValue) {
     m_siteLinkEnabled = jsonValue.GetBool("siteLinkEnabled");
     m_siteLinkEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rateLimit")) {
+    m_rateLimit = jsonValue.GetString("rateLimit");
+    m_rateLimitHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -262,6 +266,10 @@ JsonValue VirtualInterface::Jsonize() const {
 
   if (m_siteLinkEnabledHasBeenSet) {
     payload.WithBool("siteLinkEnabled", m_siteLinkEnabled);
+  }
+
+  if (m_rateLimitHasBeenSet) {
+    payload.WithString("rateLimit", m_rateLimit);
   }
 
   return payload;

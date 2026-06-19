@@ -13,6 +13,7 @@
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/ecs/model/DeploymentController.h>
 #include <aws/ecs/model/LoadBalancer.h>
+#include <aws/ecs/model/MonitoringConfiguration.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
@@ -616,6 +617,27 @@ class UpdateServiceRequest : public ECSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The optional monitoring configuration for the service, which defines the
+   * resolution for the service-level <code>CPUUtilization</code> and
+   * <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified,
+   * Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+   */
+  inline const MonitoringConfiguration& GetMonitoring() const { return m_monitoring; }
+  inline bool MonitoringHasBeenSet() const { return m_monitoringHasBeenSet; }
+  template <typename MonitoringT = MonitoringConfiguration>
+  void SetMonitoring(MonitoringT&& value) {
+    m_monitoringHasBeenSet = true;
+    m_monitoring = std::forward<MonitoringT>(value);
+  }
+  template <typename MonitoringT = MonitoringConfiguration>
+  UpdateServiceRequest& WithMonitoring(MonitoringT&& value) {
+    SetMonitoring(std::forward<MonitoringT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_cluster;
 
@@ -660,6 +682,8 @@ class UpdateServiceRequest : public ECSRequest {
   Aws::Vector<ServiceVolumeConfiguration> m_volumeConfigurations;
 
   Aws::Vector<VpcLatticeConfiguration> m_vpcLatticeConfigurations;
+
+  MonitoringConfiguration m_monitoring;
   bool m_clusterHasBeenSet = false;
   bool m_serviceHasBeenSet = false;
   bool m_desiredCountHasBeenSet = false;
@@ -682,6 +706,7 @@ class UpdateServiceRequest : public ECSRequest {
   bool m_serviceConnectConfigurationHasBeenSet = false;
   bool m_volumeConfigurationsHasBeenSet = false;
   bool m_vpcLatticeConfigurationsHasBeenSet = false;
+  bool m_monitoringHasBeenSet = false;
 };
 
 }  // namespace Model

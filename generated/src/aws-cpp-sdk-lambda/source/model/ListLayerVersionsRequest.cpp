@@ -19,6 +19,12 @@ Aws::String ListLayerVersionsRequest::SerializePayload() const { return {}; }
 
 void ListLayerVersionsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
+  if (m_compatibleArchitectureHasBeenSet) {
+    ss << ArchitectureMapper::GetNameForArchitecture(m_compatibleArchitecture);
+    uri.AddQueryStringParameter("CompatibleArchitecture", ss.str());
+    ss.str("");
+  }
+
   if (m_compatibleRuntimeHasBeenSet) {
     ss << RuntimeMapper::GetNameForRuntime(m_compatibleRuntime);
     uri.AddQueryStringParameter("CompatibleRuntime", ss.str());
@@ -34,12 +40,6 @@ void ListLayerVersionsRequest::AddQueryStringParameters(URI& uri) const {
   if (m_maxItemsHasBeenSet) {
     ss << m_maxItems;
     uri.AddQueryStringParameter("MaxItems", ss.str());
-    ss.str("");
-  }
-
-  if (m_compatibleArchitectureHasBeenSet) {
-    ss << ArchitectureMapper::GetNameForArchitecture(m_compatibleArchitecture);
-    uri.AddQueryStringParameter("CompatibleArchitecture", ss.str());
     ss.str("");
   }
 }

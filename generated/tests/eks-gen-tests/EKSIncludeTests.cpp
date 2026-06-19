@@ -79,6 +79,7 @@
 #include <aws/eks/model/ConnectorConfigProvider.h>
 #include <aws/eks/model/ConnectorConfigRequest.h>
 #include <aws/eks/model/ConnectorConfigResponse.h>
+#include <aws/eks/model/ControlPlaneEgressModeType.h>
 #include <aws/eks/model/ControlPlanePlacementRequest.h>
 #include <aws/eks/model/ControlPlanePlacementResponse.h>
 #include <aws/eks/model/ControlPlaneScalingConfig.h>

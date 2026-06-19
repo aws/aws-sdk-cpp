@@ -18,6 +18,10 @@ namespace Model {
 KnowledgeBaseRetrievalConfiguration::KnowledgeBaseRetrievalConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 KnowledgeBaseRetrievalConfiguration& KnowledgeBaseRetrievalConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("managedSearchConfiguration")) {
+    m_managedSearchConfiguration = jsonValue.GetObject("managedSearchConfiguration");
+    m_managedSearchConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("vectorSearchConfiguration")) {
     m_vectorSearchConfiguration = jsonValue.GetObject("vectorSearchConfiguration");
     m_vectorSearchConfigurationHasBeenSet = true;
@@ -27,6 +31,10 @@ KnowledgeBaseRetrievalConfiguration& KnowledgeBaseRetrievalConfiguration::operat
 
 JsonValue KnowledgeBaseRetrievalConfiguration::Jsonize() const {
   JsonValue payload;
+
+  if (m_managedSearchConfigurationHasBeenSet) {
+    payload.WithObject("managedSearchConfiguration", m_managedSearchConfiguration.Jsonize());
+  }
 
   if (m_vectorSearchConfigurationHasBeenSet) {
     payload.WithObject("vectorSearchConfiguration", m_vectorSearchConfiguration.Jsonize());

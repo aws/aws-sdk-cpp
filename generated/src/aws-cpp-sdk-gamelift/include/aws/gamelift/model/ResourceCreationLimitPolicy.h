@@ -23,7 +23,14 @@ namespace Model {
  * when a player tries to create a new game session. On receiving a
  * <code>CreateGameSession</code> request, Amazon GameLift Servers checks that the
  * player (identified by <code>CreatorId</code>) has created fewer than game
- * session limit in the specified time period.</p><p><h3>See Also:</h3>   <a
+ * session limit in the specified time period.</p> <p>The purpose of this policy is
+ * to prevent a single player from consuming a large share of available hosting
+ * resources. For example, setting <code>NewGameSessionsPerCreator</code> to
+ * <code>4</code> and <code>PolicyPeriodInMinutes</code> to <code>10</code> limits
+ * each player to creating 4 game sessions every 10 minutes. Setting these values
+ * too high (for example, 200 game sessions every 1000 minutes) still allows a
+ * single player to rapidly consume resources. We recommend keeping these values
+ * small.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResourceCreationLimitPolicy">AWS
  * API Reference</a></p>
  */

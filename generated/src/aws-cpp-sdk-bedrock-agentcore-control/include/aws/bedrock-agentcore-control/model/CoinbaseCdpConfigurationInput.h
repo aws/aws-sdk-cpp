@@ -74,8 +74,8 @@ class CoinbaseCdpConfigurationInput {
   /**
    * <p>The source type of the API key secret for the Coinbase Developer Platform.
    * Use <code>MANAGED</code> if the secret is managed by the service, or
-   * <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets
-   * Manager.</p>
+   * <code>EXTERNAL</code> if you manage the secret yourself in Amazon Web Services
+   * Secrets Manager.</p>
    */
   inline SecretSourceType GetApiKeySecretSource() const { return m_apiKeySecretSource; }
   inline bool ApiKeySecretSourceHasBeenSet() const { return m_apiKeySecretSourceHasBeenSet; }
@@ -91,10 +91,10 @@ class CoinbaseCdpConfigurationInput {
 
   ///@{
   /**
-   * <p>A reference to the AWS Secrets Manager secret that stores the API key secret.
-   * This includes the secret ID and the JSON key used to extract the API key secret
-   * value from the secret. Required when <code>apiKeySecretSource</code> is set to
-   * <code>EXTERNAL</code>.</p>
+   * <p>A reference to the Amazon Web Services Secrets Manager secret that stores the
+   * API key secret. This includes the secret ID and the JSON key used to extract the
+   * API key secret value from the secret. Required when
+   * <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
    */
   inline const SecretReference& GetApiKeySecretConfig() const { return m_apiKeySecretConfig; }
   inline bool ApiKeySecretConfigHasBeenSet() const { return m_apiKeySecretConfigHasBeenSet; }
@@ -132,8 +132,8 @@ class CoinbaseCdpConfigurationInput {
   /**
    * <p>The source type of the wallet secret for the Coinbase Developer Platform. Use
    * <code>MANAGED</code> if the secret is managed by the service, or
-   * <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets
-   * Manager.</p>
+   * <code>EXTERNAL</code> if you manage the secret yourself in Amazon Web Services
+   * Secrets Manager.</p>
    */
   inline SecretSourceType GetWalletSecretSource() const { return m_walletSecretSource; }
   inline bool WalletSecretSourceHasBeenSet() const { return m_walletSecretSourceHasBeenSet; }
@@ -149,10 +149,10 @@ class CoinbaseCdpConfigurationInput {
 
   ///@{
   /**
-   * <p>A reference to the AWS Secrets Manager secret that stores the wallet secret.
-   * This includes the secret ID and the JSON key used to extract the wallet secret
-   * value from the secret. Required when <code>walletSecretSource</code> is set to
-   * <code>EXTERNAL</code>.</p>
+   * <p>A reference to the Amazon Web Services Secrets Manager secret that stores the
+   * wallet secret. This includes the secret ID and the JSON key used to extract the
+   * wallet secret value from the secret. Required when
+   * <code>walletSecretSource</code> is set to <code>EXTERNAL</code>.</p>
    */
   inline const SecretReference& GetWalletSecretConfig() const { return m_walletSecretConfig; }
   inline bool WalletSecretConfigHasBeenSet() const { return m_walletSecretConfigHasBeenSet; }

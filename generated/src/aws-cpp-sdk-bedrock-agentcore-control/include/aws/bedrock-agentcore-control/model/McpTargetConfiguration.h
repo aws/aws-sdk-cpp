@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/ApiGatewayTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ApiSchemaConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ConnectorTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/McpLambdaTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/McpServerTargetConfiguration.h>
 
@@ -129,6 +130,26 @@ class McpTargetConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The connector integration configuration for the Model Context Protocol
+   * target. This configuration defines how the gateway uses a pre-built connector to
+   * communicate with the target.</p>
+   */
+  inline const ConnectorTargetConfiguration& GetConnector() const { return m_connector; }
+  inline bool ConnectorHasBeenSet() const { return m_connectorHasBeenSet; }
+  template <typename ConnectorT = ConnectorTargetConfiguration>
+  void SetConnector(ConnectorT&& value) {
+    m_connectorHasBeenSet = true;
+    m_connector = std::forward<ConnectorT>(value);
+  }
+  template <typename ConnectorT = ConnectorTargetConfiguration>
+  McpTargetConfiguration& WithConnector(ConnectorT&& value) {
+    SetConnector(std::forward<ConnectorT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ApiSchemaConfiguration m_openApiSchema;
 
@@ -139,11 +160,14 @@ class McpTargetConfiguration {
   McpServerTargetConfiguration m_mcpServer;
 
   ApiGatewayTargetConfiguration m_apiGateway;
+
+  ConnectorTargetConfiguration m_connector;
   bool m_openApiSchemaHasBeenSet = false;
   bool m_smithyModelHasBeenSet = false;
   bool m_lambdaHasBeenSet = false;
   bool m_mcpServerHasBeenSet = false;
   bool m_apiGatewayHasBeenSet = false;
+  bool m_connectorHasBeenSet = false;
 };
 
 }  // namespace Model

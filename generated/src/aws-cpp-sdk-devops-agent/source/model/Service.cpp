@@ -31,6 +31,8 @@ static const int mcpserver_HASH = HashingUtils::HashString("mcpserver");
 static const int mcpserversplunk_HASH = HashingUtils::HashString("mcpserversplunk");
 static const int azureidentity_HASH = HashingUtils::HashString("azureidentity");
 static const int mcpserversigv4_HASH = HashingUtils::HashString("mcpserversigv4");
+static const int remoteagent_HASH = HashingUtils::HashString("remoteagent");
+static const int remoteagentsigv4_HASH = HashingUtils::HashString("remoteagentsigv4");
 
 Service GetServiceForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -66,6 +68,10 @@ Service GetServiceForName(const Aws::String& name) {
     return Service::azureidentity;
   } else if (hashCode == mcpserversigv4_HASH) {
     return Service::mcpserversigv4;
+  } else if (hashCode == remoteagent_HASH) {
+    return Service::remoteagent;
+  } else if (hashCode == remoteagentsigv4_HASH) {
+    return Service::remoteagentsigv4;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -112,6 +118,10 @@ Aws::String GetNameForService(Service enumValue) {
       return "azureidentity";
     case Service::mcpserversigv4:
       return "mcpserversigv4";
+    case Service::remoteagent:
+      return "remoteagent";
+    case Service::remoteagentsigv4:
+      return "remoteagentsigv4";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

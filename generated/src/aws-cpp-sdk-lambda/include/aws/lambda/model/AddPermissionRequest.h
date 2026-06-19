@@ -143,6 +143,44 @@ class AddPermissionRequest : public LambdaRequest {
 
   ///@{
   /**
+   * <p>The type of authentication that your function URL uses. Set to
+   * <code>AWS_IAM</code> if you want to restrict access to authenticated users only.
+   * Set to <code>NONE</code> if you want to bypass IAM authentication to create a
+   * public endpoint. For more information, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control
+   * access to Lambda function URLs</a>.</p>
+   */
+  inline FunctionUrlAuthType GetFunctionUrlAuthType() const { return m_functionUrlAuthType; }
+  inline bool FunctionUrlAuthTypeHasBeenSet() const { return m_functionUrlAuthTypeHasBeenSet; }
+  inline void SetFunctionUrlAuthType(FunctionUrlAuthType value) {
+    m_functionUrlAuthTypeHasBeenSet = true;
+    m_functionUrlAuthType = value;
+  }
+  inline AddPermissionRequest& WithFunctionUrlAuthType(FunctionUrlAuthType value) {
+    SetFunctionUrlAuthType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the permission applies when the function is invoked through
+   * a function URL. </p>
+   */
+  inline bool GetInvokedViaFunctionUrl() const { return m_invokedViaFunctionUrl; }
+  inline bool InvokedViaFunctionUrlHasBeenSet() const { return m_invokedViaFunctionUrlHasBeenSet; }
+  inline void SetInvokedViaFunctionUrl(bool value) {
+    m_invokedViaFunctionUrlHasBeenSet = true;
+    m_invokedViaFunctionUrl = value;
+  }
+  inline AddPermissionRequest& WithInvokedViaFunctionUrl(bool value) {
+    SetInvokedViaFunctionUrl(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>For Amazon Web Services service, the ID of the Amazon Web Services account
    * that owns the resource. Use this together with <code>SourceArn</code> to ensure
    * that the specified account owns the resource. It is possible for an Amazon S3
@@ -237,44 +275,6 @@ class AddPermissionRequest : public LambdaRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The type of authentication that your function URL uses. Set to
-   * <code>AWS_IAM</code> if you want to restrict access to authenticated users only.
-   * Set to <code>NONE</code> if you want to bypass IAM authentication to create a
-   * public endpoint. For more information, see <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control
-   * access to Lambda function URLs</a>.</p>
-   */
-  inline FunctionUrlAuthType GetFunctionUrlAuthType() const { return m_functionUrlAuthType; }
-  inline bool FunctionUrlAuthTypeHasBeenSet() const { return m_functionUrlAuthTypeHasBeenSet; }
-  inline void SetFunctionUrlAuthType(FunctionUrlAuthType value) {
-    m_functionUrlAuthTypeHasBeenSet = true;
-    m_functionUrlAuthType = value;
-  }
-  inline AddPermissionRequest& WithFunctionUrlAuthType(FunctionUrlAuthType value) {
-    SetFunctionUrlAuthType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Indicates whether the permission applies when the function is invoked through
-   * a function URL. </p>
-   */
-  inline bool GetInvokedViaFunctionUrl() const { return m_invokedViaFunctionUrl; }
-  inline bool InvokedViaFunctionUrlHasBeenSet() const { return m_invokedViaFunctionUrlHasBeenSet; }
-  inline void SetInvokedViaFunctionUrl(bool value) {
-    m_invokedViaFunctionUrlHasBeenSet = true;
-    m_invokedViaFunctionUrl = value;
-  }
-  inline AddPermissionRequest& WithInvokedViaFunctionUrl(bool value) {
-    SetInvokedViaFunctionUrl(value);
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_functionName;
 
@@ -286,6 +286,10 @@ class AddPermissionRequest : public LambdaRequest {
 
   Aws::String m_sourceArn;
 
+  FunctionUrlAuthType m_functionUrlAuthType{FunctionUrlAuthType::NOT_SET};
+
+  bool m_invokedViaFunctionUrl{false};
+
   Aws::String m_sourceAccount;
 
   Aws::String m_eventSourceToken;
@@ -295,22 +299,18 @@ class AddPermissionRequest : public LambdaRequest {
   Aws::String m_revisionId;
 
   Aws::String m_principalOrgID;
-
-  FunctionUrlAuthType m_functionUrlAuthType{FunctionUrlAuthType::NOT_SET};
-
-  bool m_invokedViaFunctionUrl{false};
   bool m_functionNameHasBeenSet = false;
   bool m_statementIdHasBeenSet = false;
   bool m_actionHasBeenSet = false;
   bool m_principalHasBeenSet = false;
   bool m_sourceArnHasBeenSet = false;
+  bool m_functionUrlAuthTypeHasBeenSet = false;
+  bool m_invokedViaFunctionUrlHasBeenSet = false;
   bool m_sourceAccountHasBeenSet = false;
   bool m_eventSourceTokenHasBeenSet = false;
   bool m_qualifierHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
   bool m_principalOrgIDHasBeenSet = false;
-  bool m_functionUrlAuthTypeHasBeenSet = false;
-  bool m_invokedViaFunctionUrlHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -8,6 +8,7 @@
 
 #include <aws/s3-crt/S3CrtClientPagination.h>
 #include <aws/s3-crt/S3CrtPaginationBase.h>
+#include <aws/s3-crt/model/ListObjectAnnotationsPaginationTraits.h>
 #include <aws/s3-crt/model/ListBucketsPaginationTraits.h>
 #include <aws/s3-crt/model/ListDirectoryBucketsPaginationTraits.h>
 #include <aws/s3-crt/model/ListObjectsV2PaginationTraits.h>

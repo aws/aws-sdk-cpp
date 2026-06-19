@@ -600,22 +600,22 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
    * <p>Performs an approximate nearest neighbor search query in a vector index using
    * a query vector. By default, it returns the keys of approximate nearest
    * neighbors. You can optionally include the computed distance (between the query
-   * vector and each vector in the response), the vector data, and metadata of each
-   * vector in the response. </p> <p>To specify the vector index, you can either use
-   * both the vector bucket name and the vector index name, or use the vector index
-   * Amazon Resource Name (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You must have
-   * the <code>s3vectors:QueryVectors</code> permission to use this operation.
-   * Additional permissions are required based on the request parameters you
-   * specify:</p> <ul> <li> <p>With only <code>s3vectors:QueryVectors</code>
-   * permission, you can retrieve vector keys of approximate nearest neighbors and
-   * computed distances between these vectors. This permission is sufficient only
-   * when you don't set any metadata filters and don't request vector data or
-   * metadata (by keeping the <code>returnMetadata</code> parameter set to
-   * <code>false</code> or not specified).</p> </li> <li> <p>If you specify a
-   * metadata filter or set <code>returnMetadata</code> to true, you must have both
+   * vector and each vector in the response) and metadata of each vector in the
+   * response.</p> <p>To specify the vector index, you can either use both the vector
+   * bucket name and the vector index name, or use the vector index Amazon Resource
+   * Name (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3vectors:QueryVectors</code> permission to use this operation. Additional
+   * permissions are required based on the request parameters you specify:</p> <ul>
+   * <li> <p>With only <code>s3vectors:QueryVectors</code> permission, you can
+   * retrieve vector keys of approximate nearest neighbors and computed distances
+   * between these vectors. This permission is sufficient only when you don't set any
+   * metadata filters and don't request metadata (by keeping the
+   * <code>returnMetadata</code> parameter set to <code>false</code> or not
+   * specified).</p> </li> <li> <p>If you specify a metadata filter or set
+   * <code>returnMetadata</code> to true, you must have both
    * <code>s3vectors:QueryVectors</code> and <code>s3vectors:GetVectors</code>
    * permissions. The request fails with a <code>403 Forbidden error</code> if you
-   * request metadata filtering, vector data, or metadata without the
+   * request metadata filtering or metadata without the
    * <code>s3vectors:GetVectors</code> permission.</p> </li> </ul> </dd>
    * </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/QueryVectors">AWS

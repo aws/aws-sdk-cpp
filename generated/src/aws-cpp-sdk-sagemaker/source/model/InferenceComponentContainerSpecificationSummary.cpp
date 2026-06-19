@@ -33,6 +33,10 @@ InferenceComponentContainerSpecificationSummary& InferenceComponentContainerSpec
     }
     m_environmentHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContainerMetricsConfig")) {
+    m_containerMetricsConfig = jsonValue.GetObject("ContainerMetricsConfig");
+    m_containerMetricsConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +57,10 @@ JsonValue InferenceComponentContainerSpecificationSummary::Jsonize() const {
       environmentJsonMap.WithString(environmentItem.first, environmentItem.second);
     }
     payload.WithObject("Environment", std::move(environmentJsonMap));
+  }
+
+  if (m_containerMetricsConfigHasBeenSet) {
+    payload.WithObject("ContainerMetricsConfig", m_containerMetricsConfig.Jsonize());
   }
 
   return payload;

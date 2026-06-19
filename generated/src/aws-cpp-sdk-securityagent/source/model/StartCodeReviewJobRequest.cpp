@@ -23,5 +23,9 @@ Aws::String StartCodeReviewJobRequest::SerializePayload() const {
     payload.WithString("codeReviewId", m_codeReviewId);
   }
 
+  if (m_diffSourceHasBeenSet) {
+    payload.WithObject("diffSource", m_diffSource.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

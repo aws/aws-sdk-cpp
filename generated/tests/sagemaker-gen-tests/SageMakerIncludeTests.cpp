@@ -237,6 +237,8 @@
 #include <aws/sagemaker/model/ClarifyTextConfig.h>
 #include <aws/sagemaker/model/ClarifyTextGranularity.h>
 #include <aws/sagemaker/model/ClarifyTextLanguage.h>
+#include <aws/sagemaker/model/ClusterAutoPatchConfig.h>
+#include <aws/sagemaker/model/ClusterAutoPatchConfigDetails.h>
 #include <aws/sagemaker/model/ClusterAutoScalerType.h>
 #include <aws/sagemaker/model/ClusterAutoScalingConfig.h>
 #include <aws/sagemaker/model/ClusterAutoScalingConfigOutput.h>
@@ -282,6 +284,9 @@
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterOrchestratorEksConfig.h>
 #include <aws/sagemaker/model/ClusterOrchestratorSlurmConfig.h>
+#include <aws/sagemaker/model/ClusterPatchSchedule.h>
+#include <aws/sagemaker/model/ClusterPatchScheduleDetails.h>
+#include <aws/sagemaker/model/ClusterPatchingStrategy.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupDetails.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupsConfig.h>
@@ -321,6 +326,7 @@
 #include <aws/sagemaker/model/ConditionStepMetadata.h>
 #include <aws/sagemaker/model/ContainerConfig.h>
 #include <aws/sagemaker/model/ContainerDefinition.h>
+#include <aws/sagemaker/model/ContainerMetricsConfig.h>
 #include <aws/sagemaker/model/ContainerMode.h>
 #include <aws/sagemaker/model/ContentClassifier.h>
 #include <aws/sagemaker/model/ContextSource.h>
@@ -1239,6 +1245,7 @@
 #include <aws/sagemaker/model/MetricSetSource.h>
 #include <aws/sagemaker/model/MetricSpecification.h>
 #include <aws/sagemaker/model/MetricsConfig.h>
+#include <aws/sagemaker/model/MetricsEndpoint.h>
 #include <aws/sagemaker/model/MetricsSource.h>
 #include <aws/sagemaker/model/MlTools.h>
 #include <aws/sagemaker/model/MlflowAppStatus.h>

@@ -54,6 +54,10 @@ CanaryRun& CanaryRun::operator=(JsonView jsonValue) {
     m_browserType = BrowserTypeMapper::GetBrowserTypeForName(jsonValue.GetString("BrowserType"));
     m_browserTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Location")) {
+    m_location = jsonValue.GetString("Location");
+    m_locationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue CanaryRun::Jsonize() const {
 
   if (m_browserTypeHasBeenSet) {
     payload.WithString("BrowserType", BrowserTypeMapper::GetNameForBrowserType(m_browserType));
+  }
+
+  if (m_locationHasBeenSet) {
+    payload.WithString("Location", m_location);
   }
 
   return payload;

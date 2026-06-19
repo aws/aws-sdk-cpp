@@ -26,6 +26,10 @@ TargetConfiguration& TargetConfiguration::operator=(JsonView jsonValue) {
     m_http = jsonValue.GetObject("http");
     m_httpHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("inference")) {
+    m_inference = jsonValue.GetObject("inference");
+    m_inferenceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue TargetConfiguration::Jsonize() const {
 
   if (m_httpHasBeenSet) {
     payload.WithObject("http", m_http.Jsonize());
+  }
+
+  if (m_inferenceHasBeenSet) {
+    payload.WithObject("inference", m_inference.Jsonize());
   }
 
   return payload;

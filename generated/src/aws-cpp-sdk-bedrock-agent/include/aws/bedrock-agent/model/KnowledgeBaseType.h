@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgent {
 namespace Model {
-enum class KnowledgeBaseType { NOT_SET, VECTOR, KENDRA, SQL };
+enum class KnowledgeBaseType { NOT_SET, VECTOR, KENDRA, SQL, MANAGED };
 
 namespace KnowledgeBaseTypeMapper {
 AWS_BEDROCKAGENT_API KnowledgeBaseType GetKnowledgeBaseTypeForName(const Aws::String& name);

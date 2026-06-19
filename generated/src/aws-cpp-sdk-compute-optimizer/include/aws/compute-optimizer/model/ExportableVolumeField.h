@@ -19,6 +19,8 @@ enum class ExportableVolumeField {
   UtilizationMetricsVolumeWriteOpsPerSecondMaximum,
   UtilizationMetricsVolumeReadBytesPerSecondMaximum,
   UtilizationMetricsVolumeWriteBytesPerSecondMaximum,
+  UtilizationMetricsVolumeIOPSExceededMaximum,
+  UtilizationMetricsVolumeThroughputExceededMaximum,
   LookbackPeriodInDays,
   CurrentConfigurationVolumeType,
   CurrentConfigurationVolumeBaselineIOPS,

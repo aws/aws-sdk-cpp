@@ -20,8 +20,8 @@ namespace HealthLake {
 namespace Model {
 
 /**
- * <para>The natural language processing (NLP) configuration for a data
- * store.</para><p><h3>See Also:</h3>   <a
+ * <p>The natural language processing (NLP) configuration for a data
+ * store.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/NlpConfiguration">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,7 @@ class NlpConfiguration {
 
   ///@{
   /**
-   * <para>The status of the NLP configuration.</para>
+   * <p>The status of the NLP configuration.</p>
    */
   inline NlpStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

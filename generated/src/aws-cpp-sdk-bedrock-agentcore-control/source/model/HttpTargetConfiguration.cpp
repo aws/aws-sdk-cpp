@@ -22,6 +22,10 @@ HttpTargetConfiguration& HttpTargetConfiguration::operator=(JsonView jsonValue) 
     m_agentcoreRuntime = jsonValue.GetObject("agentcoreRuntime");
     m_agentcoreRuntimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("passthrough")) {
+    m_passthrough = jsonValue.GetObject("passthrough");
+    m_passthroughHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue HttpTargetConfiguration::Jsonize() const {
 
   if (m_agentcoreRuntimeHasBeenSet) {
     payload.WithObject("agentcoreRuntime", m_agentcoreRuntime.Jsonize());
+  }
+
+  if (m_passthroughHasBeenSet) {
+    payload.WithObject("passthrough", m_passthrough.Jsonize());
   }
 
   return payload;

@@ -242,6 +242,11 @@ GameServerContainerDefinition& GameServerContainerDefinition::operator=(const st
                   }
                 }
                 m_serverSdkVersionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LinuxCapabilities") {
+                m_linuxCapabilities = LinuxCapabilities(decoder);
+                m_linuxCapabilitiesHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -479,6 +484,11 @@ GameServerContainerDefinition& GameServerContainerDefinition::operator=(const st
                 }
               }
               m_serverSdkVersionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LinuxCapabilities") {
+              m_linuxCapabilities = LinuxCapabilities(decoder);
+              m_linuxCapabilitiesHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -517,6 +527,9 @@ void GameServerContainerDefinition::CborEncode(Aws::Crt::Cbor::CborEncoder& enco
     mapSize++;
   }
   if (m_serverSdkVersionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_linuxCapabilitiesHasBeenSet) {
     mapSize++;
   }
 
@@ -569,6 +582,11 @@ void GameServerContainerDefinition::CborEncode(Aws::Crt::Cbor::CborEncoder& enco
   if (m_serverSdkVersionHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("ServerSdkVersion"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_serverSdkVersion.c_str()));
+  }
+
+  if (m_linuxCapabilitiesHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LinuxCapabilities"));
+    m_linuxCapabilities.CborEncode(encoder);
   }
 }
 

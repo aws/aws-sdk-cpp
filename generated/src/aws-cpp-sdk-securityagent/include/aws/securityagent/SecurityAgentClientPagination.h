@@ -20,7 +20,14 @@
 #include <aws/securityagent/model/ListPentestJobTasksPaginationTraits.h>
 #include <aws/securityagent/model/ListPentestJobsForPentestPaginationTraits.h>
 #include <aws/securityagent/model/ListPentestsPaginationTraits.h>
+#include <aws/securityagent/model/ListPrivateConnectionsPaginationTraits.h>
+#include <aws/securityagent/model/ListSecurityRequirementPacksPaginationTraits.h>
+#include <aws/securityagent/model/ListSecurityRequirementsPaginationTraits.h>
 #include <aws/securityagent/model/ListTargetDomainsPaginationTraits.h>
+#include <aws/securityagent/model/ListThreatModelJobTasksPaginationTraits.h>
+#include <aws/securityagent/model/ListThreatModelJobsPaginationTraits.h>
+#include <aws/securityagent/model/ListThreatModelsPaginationTraits.h>
+#include <aws/securityagent/model/ListThreatsPaginationTraits.h>
 
 namespace Aws {
 namespace SecurityAgent {
@@ -59,8 +66,27 @@ using ListPentestJobTasksPaginator =
                                       Pagination::ListPentestJobTasksPaginationTraits<SecurityAgentClient>>;
 using ListPentestsPaginator = Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListPentestsRequest,
                                                                 Pagination::ListPentestsPaginationTraits<SecurityAgentClient>>;
+using ListPrivateConnectionsPaginator =
+    Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListPrivateConnectionsRequest,
+                                      Pagination::ListPrivateConnectionsPaginationTraits<SecurityAgentClient>>;
+using ListSecurityRequirementPacksPaginator =
+    Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListSecurityRequirementPacksRequest,
+                                      Pagination::ListSecurityRequirementPacksPaginationTraits<SecurityAgentClient>>;
+using ListSecurityRequirementsPaginator =
+    Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListSecurityRequirementsRequest,
+                                      Pagination::ListSecurityRequirementsPaginationTraits<SecurityAgentClient>>;
 using ListTargetDomainsPaginator = Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListTargetDomainsRequest,
                                                                      Pagination::ListTargetDomainsPaginationTraits<SecurityAgentClient>>;
+using ListThreatModelJobsPaginator =
+    Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListThreatModelJobsRequest,
+                                      Pagination::ListThreatModelJobsPaginationTraits<SecurityAgentClient>>;
+using ListThreatModelJobTasksPaginator =
+    Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListThreatModelJobTasksRequest,
+                                      Pagination::ListThreatModelJobTasksPaginationTraits<SecurityAgentClient>>;
+using ListThreatModelsPaginator = Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListThreatModelsRequest,
+                                                                    Pagination::ListThreatModelsPaginationTraits<SecurityAgentClient>>;
+using ListThreatsPaginator = Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListThreatsRequest,
+                                                               Pagination::ListThreatsPaginationTraits<SecurityAgentClient>>;
 
 }  // namespace SecurityAgent
 }  // namespace Aws

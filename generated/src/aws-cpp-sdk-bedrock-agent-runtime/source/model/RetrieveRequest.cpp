@@ -31,5 +31,9 @@ Aws::String RetrieveRequest::SerializePayload() const {
     payload.WithObject("retrievalQuery", m_retrievalQuery.Jsonize());
   }
 
+  if (m_userContextHasBeenSet) {
+    payload.WithObject("userContext", m_userContext.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -212,6 +212,7 @@
 #include <aws/bedrock-agentcore/model/HarnessReasoningTextBlock.h>
 #include <aws/bedrock-agentcore/model/HarnessRemoteMcpConfig.h>
 #include <aws/bedrock-agentcore/model/HarnessSkill.h>
+#include <aws/bedrock-agentcore/model/HarnessSkillAwsSkillsSource.h>
 #include <aws/bedrock-agentcore/model/HarnessSkillGitAuth.h>
 #include <aws/bedrock-agentcore/model/HarnessSkillGitSource.h>
 #include <aws/bedrock-agentcore/model/HarnessSkillS3Source.h>

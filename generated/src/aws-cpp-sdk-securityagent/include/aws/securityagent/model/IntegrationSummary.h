@@ -119,6 +119,45 @@ class IntegrationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The HTTPS URL of the customer self-hosted instance, such as a GitHub
+   * Enterprise Server or self-managed GitLab instance. This value is absent for SaaS
+   * integrations.</p>
+   */
+  inline const Aws::String& GetTargetUrl() const { return m_targetUrl; }
+  inline bool TargetUrlHasBeenSet() const { return m_targetUrlHasBeenSet; }
+  template <typename TargetUrlT = Aws::String>
+  void SetTargetUrl(TargetUrlT&& value) {
+    m_targetUrlHasBeenSet = true;
+    m_targetUrl = std::forward<TargetUrlT>(value);
+  }
+  template <typename TargetUrlT = Aws::String>
+  IntegrationSummary& WithTargetUrl(TargetUrlT&& value) {
+    SetTargetUrl(std::forward<TargetUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the private connection used to reach the integration's
+   * self-hosted instance over private networking, if one is configured.</p>
+   */
+  inline const Aws::String& GetPrivateConnectionName() const { return m_privateConnectionName; }
+  inline bool PrivateConnectionNameHasBeenSet() const { return m_privateConnectionNameHasBeenSet; }
+  template <typename PrivateConnectionNameT = Aws::String>
+  void SetPrivateConnectionName(PrivateConnectionNameT&& value) {
+    m_privateConnectionNameHasBeenSet = true;
+    m_privateConnectionName = std::forward<PrivateConnectionNameT>(value);
+  }
+  template <typename PrivateConnectionNameT = Aws::String>
+  IntegrationSummary& WithPrivateConnectionName(PrivateConnectionNameT&& value) {
+    SetPrivateConnectionName(std::forward<PrivateConnectionNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_integrationId;
 
@@ -129,11 +168,17 @@ class IntegrationSummary {
   ProviderType m_providerType{ProviderType::NOT_SET};
 
   Aws::String m_displayName;
+
+  Aws::String m_targetUrl;
+
+  Aws::String m_privateConnectionName;
   bool m_integrationIdHasBeenSet = false;
   bool m_installationIdHasBeenSet = false;
   bool m_providerHasBeenSet = false;
   bool m_providerTypeHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
+  bool m_targetUrlHasBeenSet = false;
+  bool m_privateConnectionNameHasBeenSet = false;
 };
 
 }  // namespace Model

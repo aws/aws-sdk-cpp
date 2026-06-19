@@ -301,6 +301,7 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $standaloneCredsCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
 #end
 ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
+${clsWSpace}  ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
 ${clsWSpace}  ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration#if($standaloneCredsCtor.isEmpty())) :#else,#end
 
 #foreach($ctorArgument in $specCredsCtor)
@@ -310,7 +311,8 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
   BASECLASS(clientConfiguration,
             signerProvider,
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-${virtualAddressingInit}
+  m_clientConfiguration(clientConfiguration),
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

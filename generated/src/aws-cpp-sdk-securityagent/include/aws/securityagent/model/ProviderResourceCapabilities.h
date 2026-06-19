@@ -5,7 +5,10 @@
 
 #pragma once
 #include <aws/securityagent/SecurityAgent_EXPORTS.h>
+#include <aws/securityagent/model/BitbucketResourceCapabilities.h>
+#include <aws/securityagent/model/ConfluenceResourceCapabilities.h>
 #include <aws/securityagent/model/GitHubResourceCapabilities.h>
+#include <aws/securityagent/model/GitLabResourceCapabilities.h>
 
 #include <utility>
 
@@ -50,9 +53,66 @@ class ProviderResourceCapabilities {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const GitLabResourceCapabilities& GetGitlab() const { return m_gitlab; }
+  inline bool GitlabHasBeenSet() const { return m_gitlabHasBeenSet; }
+  template <typename GitlabT = GitLabResourceCapabilities>
+  void SetGitlab(GitlabT&& value) {
+    m_gitlabHasBeenSet = true;
+    m_gitlab = std::forward<GitlabT>(value);
+  }
+  template <typename GitlabT = GitLabResourceCapabilities>
+  ProviderResourceCapabilities& WithGitlab(GitlabT&& value) {
+    SetGitlab(std::forward<GitlabT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const BitbucketResourceCapabilities& GetBitbucket() const { return m_bitbucket; }
+  inline bool BitbucketHasBeenSet() const { return m_bitbucketHasBeenSet; }
+  template <typename BitbucketT = BitbucketResourceCapabilities>
+  void SetBitbucket(BitbucketT&& value) {
+    m_bitbucketHasBeenSet = true;
+    m_bitbucket = std::forward<BitbucketT>(value);
+  }
+  template <typename BitbucketT = BitbucketResourceCapabilities>
+  ProviderResourceCapabilities& WithBitbucket(BitbucketT&& value) {
+    SetBitbucket(std::forward<BitbucketT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ConfluenceResourceCapabilities& GetConfluence() const { return m_confluence; }
+  inline bool ConfluenceHasBeenSet() const { return m_confluenceHasBeenSet; }
+  template <typename ConfluenceT = ConfluenceResourceCapabilities>
+  void SetConfluence(ConfluenceT&& value) {
+    m_confluenceHasBeenSet = true;
+    m_confluence = std::forward<ConfluenceT>(value);
+  }
+  template <typename ConfluenceT = ConfluenceResourceCapabilities>
+  ProviderResourceCapabilities& WithConfluence(ConfluenceT&& value) {
+    SetConfluence(std::forward<ConfluenceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   GitHubResourceCapabilities m_github;
+
+  GitLabResourceCapabilities m_gitlab;
+
+  BitbucketResourceCapabilities m_bitbucket;
+
+  ConfluenceResourceCapabilities m_confluence;
   bool m_githubHasBeenSet = false;
+  bool m_gitlabHasBeenSet = false;
+  bool m_bitbucketHasBeenSet = false;
+  bool m_confluenceHasBeenSet = false;
 };
 
 }  // namespace Model

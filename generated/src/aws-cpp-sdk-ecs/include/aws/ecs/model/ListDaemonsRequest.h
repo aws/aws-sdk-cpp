@@ -33,8 +33,8 @@ class ListDaemonsRequest : public ECSRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the cluster to filter daemons by. If not
-   * specified, daemons from all clusters are returned.</p>
+   * <p>The Amazon Resource Name (ARN) of the cluster to filter daemons by. If you do
+   * not specify a cluster, the default cluster is assumed.</p>
    */
   inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
   inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }

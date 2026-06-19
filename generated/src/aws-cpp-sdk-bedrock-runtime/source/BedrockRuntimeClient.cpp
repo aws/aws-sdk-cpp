@@ -400,7 +400,8 @@ void BedrockRuntimeClient::InvokeModelWithBidirectionalStreamAsync(
 
 #if AWS_SDK_USE_CRT_HTTP
   // Push-based WriteData path (CRT HTTP client only)
-  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, m_httpClient);
+  auto writeDataStreamBuf =
+      Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, m_httpClient, 8 * 1024, m_clientConfig->requestTimeoutMs);
   auto eventEncoderStream = Aws::MakeShared<Model::InvokeModelWithBidirectionalStreamInput>(ALLOCATION_TAG, writeDataStreamBuf);
   request.SetBody(eventEncoderStream);
 

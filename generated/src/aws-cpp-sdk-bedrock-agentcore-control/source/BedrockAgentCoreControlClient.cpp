@@ -20,6 +20,7 @@
 #include <aws/bedrock-agentcore-control/model/CreateGatewayRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayRuleRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayTargetRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateHarnessEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateHarnessRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateMemoryRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateOauth2CredentialProviderRequest.h>
@@ -45,6 +46,7 @@
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayRuleRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayTargetRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteHarnessEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteHarnessRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteMemoryRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteOauth2CredentialProviderRequest.h>
@@ -71,6 +73,7 @@
 #include <aws/bedrock-agentcore-control/model/GetGatewayRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayRuleRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayTargetRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetHarnessEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetHarnessRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetMemoryRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetOauth2CredentialProviderRequest.h>
@@ -105,6 +108,8 @@
 #include <aws/bedrock-agentcore-control/model/ListGatewayRulesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessEndpointsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessVersionsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListHarnessesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListMemoriesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersRequest.h>
@@ -140,6 +145,7 @@
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayRuleRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayTargetRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateHarnessEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateHarnessRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateMemoryRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateOauth2CredentialProviderRequest.h>
@@ -532,6 +538,25 @@ CreateHarnessOutcome BedrockAgentCoreControlClient::CreateHarness(const CreateHa
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateHarnessOutcome(result.GetResultWithOwnership()) : CreateHarnessOutcome(std::move(result.GetError()));
+}
+
+CreateHarnessEndpointOutcome BedrockAgentCoreControlClient::CreateHarnessEndpoint(const CreateHarnessEndpointRequest& request) const {
+  if (!request.HarnessIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateHarnessEndpoint", "Required field: HarnessId, is not set");
+    return CreateHarnessEndpointOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HarnessId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/harnesses/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHarnessId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHarnessEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateHarnessEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateMemoryOutcome BedrockAgentCoreControlClient::CreateMemory(const CreateMemoryRequest& request) const {
@@ -943,6 +968,31 @@ DeleteHarnessOutcome BedrockAgentCoreControlClient::DeleteHarness(const DeleteHa
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteHarnessOutcome(result.GetResultWithOwnership()) : DeleteHarnessOutcome(std::move(result.GetError()));
+}
+
+DeleteHarnessEndpointOutcome BedrockAgentCoreControlClient::DeleteHarnessEndpoint(const DeleteHarnessEndpointRequest& request) const {
+  if (!request.HarnessIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteHarnessEndpoint", "Required field: HarnessId, is not set");
+    return DeleteHarnessEndpointOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HarnessId]", false));
+  }
+  if (!request.EndpointNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteHarnessEndpoint", "Required field: EndpointName, is not set");
+    return DeleteHarnessEndpointOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/harnesses/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHarnessId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteHarnessEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteHarnessEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteMemoryOutcome BedrockAgentCoreControlClient::DeleteMemory(const DeleteMemoryRequest& request) const {
@@ -1429,6 +1479,31 @@ GetHarnessOutcome BedrockAgentCoreControlClient::GetHarness(const GetHarnessRequ
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetHarnessOutcome(result.GetResultWithOwnership()) : GetHarnessOutcome(std::move(result.GetError()));
+}
+
+GetHarnessEndpointOutcome BedrockAgentCoreControlClient::GetHarnessEndpoint(const GetHarnessEndpointRequest& request) const {
+  if (!request.HarnessIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetHarnessEndpoint", "Required field: HarnessId, is not set");
+    return GetHarnessEndpointOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HarnessId]", false));
+  }
+  if (!request.EndpointNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetHarnessEndpoint", "Required field: EndpointName, is not set");
+    return GetHarnessEndpointOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/harnesses/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHarnessId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHarnessEndpointOutcome(result.GetResultWithOwnership())
+                            : GetHarnessEndpointOutcome(std::move(result.GetError()));
 }
 
 GetMemoryOutcome BedrockAgentCoreControlClient::GetMemory(const GetMemoryRequest& request) const {
@@ -1983,6 +2058,44 @@ ListGatewaysOutcome BedrockAgentCoreControlClient::ListGateways(const ListGatewa
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListGatewaysOutcome(result.GetResultWithOwnership()) : ListGatewaysOutcome(std::move(result.GetError()));
+}
+
+ListHarnessEndpointsOutcome BedrockAgentCoreControlClient::ListHarnessEndpoints(const ListHarnessEndpointsRequest& request) const {
+  if (!request.HarnessIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListHarnessEndpoints", "Required field: HarnessId, is not set");
+    return ListHarnessEndpointsOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HarnessId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/harnesses/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHarnessId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHarnessEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListHarnessEndpointsOutcome(std::move(result.GetError()));
+}
+
+ListHarnessVersionsOutcome BedrockAgentCoreControlClient::ListHarnessVersions(const ListHarnessVersionsRequest& request) const {
+  if (!request.HarnessIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListHarnessVersions", "Required field: HarnessId, is not set");
+    return ListHarnessVersionsOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HarnessId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/harnesses/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHarnessId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHarnessVersionsOutcome(result.GetResultWithOwnership())
+                            : ListHarnessVersionsOutcome(std::move(result.GetError()));
 }
 
 ListHarnessesOutcome BedrockAgentCoreControlClient::ListHarnesses(const ListHarnessesRequest& request) const {
@@ -2600,6 +2713,31 @@ UpdateHarnessOutcome BedrockAgentCoreControlClient::UpdateHarness(const UpdateHa
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateHarnessOutcome(result.GetResultWithOwnership()) : UpdateHarnessOutcome(std::move(result.GetError()));
+}
+
+UpdateHarnessEndpointOutcome BedrockAgentCoreControlClient::UpdateHarnessEndpoint(const UpdateHarnessEndpointRequest& request) const {
+  if (!request.HarnessIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateHarnessEndpoint", "Required field: HarnessId, is not set");
+    return UpdateHarnessEndpointOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HarnessId]", false));
+  }
+  if (!request.EndpointNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateHarnessEndpoint", "Required field: EndpointName, is not set");
+    return UpdateHarnessEndpointOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/harnesses/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHarnessId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateHarnessEndpointOutcome(result.GetResultWithOwnership())
+                            : UpdateHarnessEndpointOutcome(std::move(result.GetError()));
 }
 
 UpdateMemoryOutcome BedrockAgentCoreControlClient::UpdateMemory(const UpdateMemoryRequest& request) const {

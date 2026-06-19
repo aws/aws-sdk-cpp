@@ -67,6 +67,10 @@ Aws::String CreateExpressGatewayServiceRequest::SerializePayload() const {
     payload.WithArray("tags", std::move(tagsJsonList));
   }
 
+  if (m_taskDefinitionArnHasBeenSet) {
+    payload.WithString("taskDefinitionArn", m_taskDefinitionArn);
+  }
+
   return payload.View().WriteReadable();
 }
 

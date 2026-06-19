@@ -36,8 +36,8 @@ class ResourceTagsCriteriaCondition {
 
   ///@{
   /**
-   * <p>The comparison operator used to evaluate the tag criteria, such as equals,
-   * not equals, or contains.</p>
+   * <p>The comparison operator used to evaluate the attribute against the specified
+   * values.</p>
    */
   inline ComparisonOperator GetComparison() const { return m_comparison; }
   inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/HarnessSkillAwsSkillsSource.h>
 #include <aws/bedrock-agentcore/model/HarnessSkillGitSource.h>
 #include <aws/bedrock-agentcore/model/HarnessSkillS3Source.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -86,15 +87,36 @@ class HarnessSkill {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>AWS Skills baked into the Harness's underlying Runtime.</p>
+   */
+  inline const HarnessSkillAwsSkillsSource& GetAwsSkills() const { return m_awsSkills; }
+  inline bool AwsSkillsHasBeenSet() const { return m_awsSkillsHasBeenSet; }
+  template <typename AwsSkillsT = HarnessSkillAwsSkillsSource>
+  void SetAwsSkills(AwsSkillsT&& value) {
+    m_awsSkillsHasBeenSet = true;
+    m_awsSkills = std::forward<AwsSkillsT>(value);
+  }
+  template <typename AwsSkillsT = HarnessSkillAwsSkillsSource>
+  HarnessSkill& WithAwsSkills(AwsSkillsT&& value) {
+    SetAwsSkills(std::forward<AwsSkillsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_path;
 
   HarnessSkillS3Source m_s3;
 
   HarnessSkillGitSource m_git;
+
+  HarnessSkillAwsSkillsSource m_awsSkills;
   bool m_pathHasBeenSet = false;
   bool m_s3HasBeenSet = false;
   bool m_gitHasBeenSet = false;
+  bool m_awsSkillsHasBeenSet = false;
 };
 
 }  // namespace Model

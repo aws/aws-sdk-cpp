@@ -23,5 +23,14 @@ Aws::String AssociateServiceRequest::SerializePayload() const {
     payload.WithObject("configuration", m_configuration.Jsonize());
   }
 
+  if (m_capabilitiesHasBeenSet) {
+    JsonValue capabilitiesJsonMap;
+    for (auto& capabilitiesItem : m_capabilities) {
+      capabilitiesJsonMap.WithObject(CapabilityTypeMapper::GetNameForCapabilityType(capabilitiesItem.first),
+                                     capabilitiesItem.second.Jsonize());
+    }
+    payload.WithObject("capabilities", std::move(capabilitiesJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }

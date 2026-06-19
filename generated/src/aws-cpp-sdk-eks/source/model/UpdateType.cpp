@@ -33,6 +33,7 @@ static const int DeletionProtectionUpdate_HASH = HashingUtils::HashString("Delet
 static const int CapabilityUpdate_HASH = HashingUtils::HashString("CapabilityUpdate");
 static const int ControlPlaneScalingConfigUpdate_HASH = HashingUtils::HashString("ControlPlaneScalingConfigUpdate");
 static const int VendedLogsUpdate_HASH = HashingUtils::HashString("VendedLogsUpdate");
+static const int ControlPlaneEgressUpdate_HASH = HashingUtils::HashString("ControlPlaneEgressUpdate");
 
 UpdateType GetUpdateTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -72,6 +73,8 @@ UpdateType GetUpdateTypeForName(const Aws::String& name) {
     return UpdateType::ControlPlaneScalingConfigUpdate;
   } else if (hashCode == VendedLogsUpdate_HASH) {
     return UpdateType::VendedLogsUpdate;
+  } else if (hashCode == ControlPlaneEgressUpdate_HASH) {
+    return UpdateType::ControlPlaneEgressUpdate;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -122,6 +125,8 @@ Aws::String GetNameForUpdateType(UpdateType enumValue) {
       return "ControlPlaneScalingConfigUpdate";
     case UpdateType::VendedLogsUpdate:
       return "VendedLogsUpdate";
+    case UpdateType::ControlPlaneEgressUpdate:
+      return "ControlPlaneEgressUpdate";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

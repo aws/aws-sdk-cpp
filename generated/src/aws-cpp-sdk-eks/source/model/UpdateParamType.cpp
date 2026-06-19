@@ -65,6 +65,7 @@ static const int WarmPoolMaxGroupPreparedCapacity_HASH = HashingUtils::HashStrin
 static const int WarmPoolMinSize_HASH = HashingUtils::HashString("WarmPoolMinSize");
 static const int WarmPoolState_HASH = HashingUtils::HashString("WarmPoolState");
 static const int WarmPoolReuseOnScaleIn_HASH = HashingUtils::HashString("WarmPoolReuseOnScaleIn");
+static const int ControlPlaneEgressMode_HASH = HashingUtils::HashString("ControlPlaneEgressMode");
 
 UpdateParamType GetUpdateParamTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -168,6 +169,8 @@ UpdateParamType GetUpdateParamTypeForName(const Aws::String& name) {
     return UpdateParamType::WarmPoolState;
   } else if (hashCode == WarmPoolReuseOnScaleIn_HASH) {
     return UpdateParamType::WarmPoolReuseOnScaleIn;
+  } else if (hashCode == ControlPlaneEgressMode_HASH) {
+    return UpdateParamType::ControlPlaneEgressMode;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -282,6 +285,8 @@ Aws::String GetNameForUpdateParamType(UpdateParamType enumValue) {
       return "WarmPoolState";
     case UpdateParamType::WarmPoolReuseOnScaleIn:
       return "WarmPoolReuseOnScaleIn";
+    case UpdateParamType::ControlPlaneEgressMode:
+      return "ControlPlaneEgressMode";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

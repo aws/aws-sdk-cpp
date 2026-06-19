@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityAgent {
 namespace Model {
-enum class Provider { NOT_SET, GITHUB };
+enum class Provider { NOT_SET, GITHUB, GITLAB, BITBUCKET, CONFLUENCE };
 
 namespace ProviderMapper {
 AWS_SECURITYAGENT_API Provider GetProviderForName(const Aws::String& name);

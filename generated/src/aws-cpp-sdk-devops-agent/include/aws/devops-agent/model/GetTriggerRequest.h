@@ -15,6 +15,9 @@ namespace DevOpsAgent {
 namespace Model {
 
 /**
+ * <p>Request structure for getting a Trigger</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetTriggerRequest">AWS
+ * API Reference</a></p>
  */
 class GetTriggerRequest : public DevOpsAgentRequest {
  public:
@@ -29,7 +32,9 @@ class GetTriggerRequest : public DevOpsAgentRequest {
   AWS_DEVOPSAGENT_API Aws::String SerializePayload() const override;
 
   ///@{
-
+  /**
+   * <p>The unique identifier for the agent space containing the Trigger</p>
+   */
   inline const Aws::String& GetAgentSpaceId() const { return m_agentSpaceId; }
   inline bool AgentSpaceIdHasBeenSet() const { return m_agentSpaceIdHasBeenSet; }
   template <typename AgentSpaceIdT = Aws::String>
@@ -45,7 +50,9 @@ class GetTriggerRequest : public DevOpsAgentRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The unique identifier of the Trigger to retrieve</p>
+   */
   inline const Aws::String& GetTriggerId() const { return m_triggerId; }
   inline bool TriggerIdHasBeenSet() const { return m_triggerIdHasBeenSet; }
   template <typename TriggerIdT = Aws::String>
