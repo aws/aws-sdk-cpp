@@ -5,7 +5,13 @@
 #set($serviceNamespace = $metadata.namespace)
 \#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
 \#include <aws/crt/cbor/Cbor.h>
-#if($shape.hasQueryStringMembers())
+#set($needsURIHeader = $shape.hasQueryStringMembers())
+#if(!$needsURIHeader)
+#foreach($member in $shape.members.entrySet())
+#if($member.value.requiresHeaderEncoding())#set($needsURIHeader = true)#end
+#end
+#end
+#if($needsURIHeader)
 \#include <aws/core/http/URI.h>
 #end
 #if($shape.supportsPresigning)
@@ -37,7 +43,7 @@
     using namespace ${rootNamespace}::${serviceNamespace}::Model;
     using namespace Aws::Crt::Cbor;
     using namespace Aws::Utils;
-    #if($shape.hasQueryStringMembers())
+    #if($needsURIHeader)
         using namespace Aws::Http;
     #end
 
