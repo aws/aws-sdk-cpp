@@ -1644,6 +1644,8 @@
 #include <aws/ec2/model/ImageUsageResourceTypeOptionRequest.h>
 #include <aws/ec2/model/ImageUsageResourceTypeRequest.h>
 #include <aws/ec2/model/ImageWatermark.h>
+#include <aws/ec2/model/ImageWatermarkFilterRequest.h>
+#include <aws/ec2/model/ImageWatermarkFilterResponse.h>
 #include <aws/ec2/model/ImdsSupportValues.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListRequest.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListResponse.h>

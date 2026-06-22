@@ -13,6 +13,8 @@
 #include <aws/mediaconnect/model/MaintenanceSchedule.h>
 #include <aws/mediaconnect/model/MaintenanceScheduleType.h>
 #include <aws/mediaconnect/model/MaintenanceType.h>
+#include <aws/mediaconnect/model/RouterContentQualityAnalysisConfiguration.h>
+#include <aws/mediaconnect/model/RouterContentQualityAnalysisType.h>
 #include <aws/mediaconnect/model/RouterInputConfiguration.h>
 #include <aws/mediaconnect/model/RouterInputMessage.h>
 #include <aws/mediaconnect/model/RouterInputState.h>
@@ -470,6 +472,42 @@ class RouterInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of content quality analysis applied to the router input.</p>
+   */
+  inline RouterContentQualityAnalysisType GetContentQualityAnalysisType() const { return m_contentQualityAnalysisType; }
+  inline bool ContentQualityAnalysisTypeHasBeenSet() const { return m_contentQualityAnalysisTypeHasBeenSet; }
+  inline void SetContentQualityAnalysisType(RouterContentQualityAnalysisType value) {
+    m_contentQualityAnalysisTypeHasBeenSet = true;
+    m_contentQualityAnalysisType = value;
+  }
+  inline RouterInput& WithContentQualityAnalysisType(RouterContentQualityAnalysisType value) {
+    SetContentQualityAnalysisType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The content quality analysis configuration for the router input.</p>
+   */
+  inline const RouterContentQualityAnalysisConfiguration& GetContentQualityAnalysisConfiguration() const {
+    return m_contentQualityAnalysisConfiguration;
+  }
+  inline bool ContentQualityAnalysisConfigurationHasBeenSet() const { return m_contentQualityAnalysisConfigurationHasBeenSet; }
+  template <typename ContentQualityAnalysisConfigurationT = RouterContentQualityAnalysisConfiguration>
+  void SetContentQualityAnalysisConfiguration(ContentQualityAnalysisConfigurationT&& value) {
+    m_contentQualityAnalysisConfigurationHasBeenSet = true;
+    m_contentQualityAnalysisConfiguration = std::forward<ContentQualityAnalysisConfigurationT>(value);
+  }
+  template <typename ContentQualityAnalysisConfigurationT = RouterContentQualityAnalysisConfiguration>
+  RouterInput& WithContentQualityAnalysisConfiguration(ContentQualityAnalysisConfigurationT&& value) {
+    SetContentQualityAnalysisConfiguration(std::forward<ContentQualityAnalysisConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -518,6 +556,10 @@ class RouterInput {
   MaintenanceScheduleType m_maintenanceScheduleType{MaintenanceScheduleType::NOT_SET};
 
   MaintenanceSchedule m_maintenanceSchedule;
+
+  RouterContentQualityAnalysisType m_contentQualityAnalysisType{RouterContentQualityAnalysisType::NOT_SET};
+
+  RouterContentQualityAnalysisConfiguration m_contentQualityAnalysisConfiguration;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
@@ -542,6 +584,8 @@ class RouterInput {
   bool m_maintenanceConfigurationHasBeenSet = false;
   bool m_maintenanceScheduleTypeHasBeenSet = false;
   bool m_maintenanceScheduleHasBeenSet = false;
+  bool m_contentQualityAnalysisTypeHasBeenSet = false;
+  bool m_contentQualityAnalysisConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

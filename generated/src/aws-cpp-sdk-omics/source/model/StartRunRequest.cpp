@@ -101,6 +101,10 @@ Aws::String StartRunRequest::SerializePayload() const {
     payload.WithString("networkingMode", NetworkingModeMapper::GetNameForNetworkingMode(m_networkingMode));
   }
 
+  if (m_scratchStorageModeHasBeenSet) {
+    payload.WithString("scratchStorageMode", ScratchStorageModeMapper::GetNameForScratchStorageMode(m_scratchStorageMode));
+  }
+
   if (m_configurationNameHasBeenSet) {
     payload.WithString("configurationName", m_configurationName);
   }

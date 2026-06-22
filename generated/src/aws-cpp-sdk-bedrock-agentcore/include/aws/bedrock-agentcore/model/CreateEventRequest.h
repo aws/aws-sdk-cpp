@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/Branch.h>
+#include <aws/bedrock-agentcore/model/ExtractionMode.h>
 #include <aws/bedrock-agentcore/model/MetadataValue.h>
 #include <aws/bedrock-agentcore/model/PayloadType.h>
 #include <aws/core/utils/DateTime.h>
@@ -198,6 +199,25 @@ class CreateEventRequest : public BedrockAgentCoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Controls long-term memory extraction for this event. When set to
+   * <code>SKIP</code>, the event is stored in short-term memory but is excluded from
+   * long-term memory extraction. If not specified, the event is processed for
+   * extraction as usual.</p>
+   */
+  inline ExtractionMode GetExtractionMode() const { return m_extractionMode; }
+  inline bool ExtractionModeHasBeenSet() const { return m_extractionModeHasBeenSet; }
+  inline void SetExtractionMode(ExtractionMode value) {
+    m_extractionModeHasBeenSet = true;
+    m_extractionMode = value;
+  }
+  inline CreateEventRequest& WithExtractionMode(ExtractionMode value) {
+    SetExtractionMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_memoryId;
 
@@ -214,6 +234,8 @@ class CreateEventRequest : public BedrockAgentCoreRequest {
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::Map<Aws::String, MetadataValue> m_metadata;
+
+  ExtractionMode m_extractionMode{ExtractionMode::NOT_SET};
   bool m_memoryIdHasBeenSet = false;
   bool m_actorIdHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
@@ -222,6 +244,7 @@ class CreateEventRequest : public BedrockAgentCoreRequest {
   bool m_branchHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_metadataHasBeenSet = false;
+  bool m_extractionModeHasBeenSet = false;
 };
 
 }  // namespace Model

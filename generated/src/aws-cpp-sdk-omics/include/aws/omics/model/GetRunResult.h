@@ -18,6 +18,7 @@
 #include <aws/omics/model/RunLogLocation.h>
 #include <aws/omics/model/RunRetentionMode.h>
 #include <aws/omics/model/RunStatus.h>
+#include <aws/omics/model/ScratchStorageMode.h>
 #include <aws/omics/model/StorageType.h>
 #include <aws/omics/model/VpcConfigResponse.h>
 #include <aws/omics/model/WorkflowType.h>
@@ -686,6 +687,23 @@ class GetRunResult {
 
   ///@{
   /**
+   * <p>Optional configuration for enabling scratch ephemeral storage mounted at
+   * /tmp. If absent, this will default to SHARED. This configuration is applicable
+   * only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+   */
+  inline ScratchStorageMode GetScratchStorageMode() const { return m_scratchStorageMode; }
+  inline void SetScratchStorageMode(ScratchStorageMode value) {
+    m_scratchStorageModeHasBeenSet = true;
+    m_scratchStorageMode = value;
+  }
+  inline GetRunResult& WithScratchStorageMode(ScratchStorageMode value) {
+    SetScratchStorageMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration details for the workflow run.</p>
    */
   inline const ConfigurationDetails& GetConfiguration() const { return m_configuration; }
@@ -828,6 +846,8 @@ class GetRunResult {
 
   NetworkingMode m_networkingMode{NetworkingMode::NOT_SET};
 
+  ScratchStorageMode m_scratchStorageMode{ScratchStorageMode::NOT_SET};
+
   ConfigurationDetails m_configuration;
 
   VpcConfigResponse m_vpcConfig;
@@ -874,6 +894,7 @@ class GetRunResult {
   bool m_workflowVersionNameHasBeenSet = false;
   bool m_workflowUuidHasBeenSet = false;
   bool m_networkingModeHasBeenSet = false;
+  bool m_scratchStorageModeHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
   bool m_engineSettingsHasBeenSet = false;

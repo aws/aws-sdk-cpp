@@ -180,6 +180,10 @@ GetRunResult& GetRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValu
     m_networkingMode = NetworkingModeMapper::GetNetworkingModeForName(jsonValue.GetString("networkingMode"));
     m_networkingModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("scratchStorageMode")) {
+    m_scratchStorageMode = ScratchStorageModeMapper::GetScratchStorageModeForName(jsonValue.GetString("scratchStorageMode"));
+    m_scratchStorageModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("configuration")) {
     m_configuration = jsonValue.GetObject("configuration");
     m_configurationHasBeenSet = true;

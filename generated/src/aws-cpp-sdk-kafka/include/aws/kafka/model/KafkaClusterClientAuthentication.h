@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/model/KafkaClusterMTLSAuthentication.h>
 #include <aws/kafka/model/KafkaClusterSaslScramAuthentication.h>
 
 #include <utility>
@@ -49,9 +50,30 @@ class KafkaClusterClientAuthentication {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Details for mTLS client authentication.</p>
+   */
+  inline const KafkaClusterMTLSAuthentication& GetMTLS() const { return m_mTLS; }
+  inline bool MTLSHasBeenSet() const { return m_mTLSHasBeenSet; }
+  template <typename MTLST = KafkaClusterMTLSAuthentication>
+  void SetMTLS(MTLST&& value) {
+    m_mTLSHasBeenSet = true;
+    m_mTLS = std::forward<MTLST>(value);
+  }
+  template <typename MTLST = KafkaClusterMTLSAuthentication>
+  KafkaClusterClientAuthentication& WithMTLS(MTLST&& value) {
+    SetMTLS(std::forward<MTLST>(value));
+    return *this;
+  }
+  ///@}
  private:
   KafkaClusterSaslScramAuthentication m_saslScram;
+
+  KafkaClusterMTLSAuthentication m_mTLS;
   bool m_saslScramHasBeenSet = false;
+  bool m_mTLSHasBeenSet = false;
 };
 
 }  // namespace Model

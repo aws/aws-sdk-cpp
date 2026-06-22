@@ -96,6 +96,40 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
   virtual ~ApplicationSignalsClient();
 
   /**
+   * <p>Deletes multiple instrumentation configurations in a single request. Supports
+   * two mutually exclusive selection methods:</p> <ul> <li>By scope: Delete all
+   * configurations matching a Service + Environment + InstrumentationType</li>
+   * <li>By ARN list: Delete specific configurations by providing a list of resource
+   * ARNs</li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/BatchDeleteInstrumentationConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchDeleteInstrumentationConfigurationsOutcome BatchDeleteInstrumentationConfigurations(
+      const Model::BatchDeleteInstrumentationConfigurationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchDeleteInstrumentationConfigurations that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename BatchDeleteInstrumentationConfigurationsRequestT = Model::BatchDeleteInstrumentationConfigurationsRequest>
+  Model::BatchDeleteInstrumentationConfigurationsOutcomeCallable BatchDeleteInstrumentationConfigurationsCallable(
+      const BatchDeleteInstrumentationConfigurationsRequestT& request) const {
+    return SubmitCallable(&ApplicationSignalsClient::BatchDeleteInstrumentationConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for BatchDeleteInstrumentationConfigurations that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename BatchDeleteInstrumentationConfigurationsRequestT = Model::BatchDeleteInstrumentationConfigurationsRequest>
+  void BatchDeleteInstrumentationConfigurationsAsync(
+      const BatchDeleteInstrumentationConfigurationsRequestT& request,
+      const BatchDeleteInstrumentationConfigurationsResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApplicationSignalsClient::BatchDeleteInstrumentationConfigurations, request, handler, context);
+  }
+
+  /**
    * <p>Use this operation to retrieve one or more <i>service level objective (SLO)
    * budget reports</i>.</p> <p>An <i>error budget</i> is the amount of time or
    * requests in an unhealthy state that your service can accumulate during an
@@ -163,6 +197,44 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
                                         const BatchUpdateExclusionWindowsResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ApplicationSignalsClient::BatchUpdateExclusionWindows, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a dynamic instrumentation configuration for a specific code or
+   * endpoint location within a service and environment. Configurations are immutable
+   * after creation.</p> <p>For <code>BREAKPOINT</code> type configurations, they
+   * expire after 24 hours unless a shorter expiration is provided. For
+   * <code>PROBE</code> type configurations, they persist until explicitly deleted;
+   * an expiration cannot be set for <code>PROBE</code> configurations.</p> <p>If a
+   * configuration already exists for the same service, environment, signal type, and
+   * location, this operation returns a conflict instead of overwriting it. Use
+   * attribute filters and capture settings to control where the instrumentation runs
+   * and which data is collected.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/CreateInstrumentationConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateInstrumentationConfigurationOutcome CreateInstrumentationConfiguration(
+      const Model::CreateInstrumentationConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateInstrumentationConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CreateInstrumentationConfigurationRequestT = Model::CreateInstrumentationConfigurationRequest>
+  Model::CreateInstrumentationConfigurationOutcomeCallable CreateInstrumentationConfigurationCallable(
+      const CreateInstrumentationConfigurationRequestT& request) const {
+    return SubmitCallable(&ApplicationSignalsClient::CreateInstrumentationConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateInstrumentationConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateInstrumentationConfigurationRequestT = Model::CreateInstrumentationConfigurationRequest>
+  void CreateInstrumentationConfigurationAsync(const CreateInstrumentationConfigurationRequestT& request,
+                                               const CreateInstrumentationConfigurationResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApplicationSignalsClient::CreateInstrumentationConfiguration, request, handler, context);
   }
 
   /**
@@ -280,6 +352,37 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
   }
 
   /**
+   * <p>Deletes the specified instrumentation configuration. SDKs remove the
+   * instrumentation during their next sync after the configuration is deleted or
+   * expires.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteInstrumentationConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteInstrumentationConfigurationOutcome DeleteInstrumentationConfiguration(
+      const Model::DeleteInstrumentationConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteInstrumentationConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteInstrumentationConfigurationRequestT = Model::DeleteInstrumentationConfigurationRequest>
+  Model::DeleteInstrumentationConfigurationOutcomeCallable DeleteInstrumentationConfigurationCallable(
+      const DeleteInstrumentationConfigurationRequestT& request) const {
+    return SubmitCallable(&ApplicationSignalsClient::DeleteInstrumentationConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteInstrumentationConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteInstrumentationConfigurationRequestT = Model::DeleteInstrumentationConfigurationRequest>
+  void DeleteInstrumentationConfigurationAsync(const DeleteInstrumentationConfigurationRequestT& request,
+                                               const DeleteInstrumentationConfigurationResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApplicationSignalsClient::DeleteInstrumentationConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the specified service level objective.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteServiceLevelObjective">AWS
    * API Reference</a></p>
@@ -306,6 +409,70 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
                                         const DeleteServiceLevelObjectiveResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ApplicationSignalsClient::DeleteServiceLevelObjective, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the details of a single instrumentation configuration identified by
+   * service, environment, signal type, and location. Use this to audit or display
+   * configuration details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/GetInstrumentationConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetInstrumentationConfigurationOutcome GetInstrumentationConfiguration(
+      const Model::GetInstrumentationConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetInstrumentationConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetInstrumentationConfigurationRequestT = Model::GetInstrumentationConfigurationRequest>
+  Model::GetInstrumentationConfigurationOutcomeCallable GetInstrumentationConfigurationCallable(
+      const GetInstrumentationConfigurationRequestT& request) const {
+    return SubmitCallable(&ApplicationSignalsClient::GetInstrumentationConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetInstrumentationConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetInstrumentationConfigurationRequestT = Model::GetInstrumentationConfigurationRequest>
+  void GetInstrumentationConfigurationAsync(const GetInstrumentationConfigurationRequestT& request,
+                                            const GetInstrumentationConfigurationResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApplicationSignalsClient::GetInstrumentationConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the status history for a single instrumentation configuration
+   * during a specified time range. The response lists when the configuration was
+   * ACTIVE, READY, ERROR, or DISABLED.</p> <p>If no status or time window is
+   * provided, the operation defaults to ACTIVE events from the last
+   * hour.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/GetInstrumentationConfigurationStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetInstrumentationConfigurationStatusOutcome GetInstrumentationConfigurationStatus(
+      const Model::GetInstrumentationConfigurationStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetInstrumentationConfigurationStatus that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetInstrumentationConfigurationStatusRequestT = Model::GetInstrumentationConfigurationStatusRequest>
+  Model::GetInstrumentationConfigurationStatusOutcomeCallable GetInstrumentationConfigurationStatusCallable(
+      const GetInstrumentationConfigurationStatusRequestT& request) const {
+    return SubmitCallable(&ApplicationSignalsClient::GetInstrumentationConfigurationStatus, request);
+  }
+
+  /**
+   * An Async wrapper for GetInstrumentationConfigurationStatus that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetInstrumentationConfigurationStatusRequestT = Model::GetInstrumentationConfigurationStatusRequest>
+  void GetInstrumentationConfigurationStatusAsync(const GetInstrumentationConfigurationStatusRequestT& request,
+                                                  const GetInstrumentationConfigurationStatusResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApplicationSignalsClient::GetInstrumentationConfigurationStatus, request, handler, context);
   }
 
   /**
@@ -453,6 +620,40 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                              const ListGroupingAttributeDefinitionsRequestT& request = {}) const {
     return SubmitAsync(&ApplicationSignalsClient::ListGroupingAttributeDefinitions, request, handler, context);
+  }
+
+  /**
+   * <p>Returns all active instrumentation configurations for a service and
+   * environment. SDKs use this operation to sync configurations and apply
+   * client-side filters locally.</p> <p>Include the previous <code>SyncedAt</code>
+   * value to perform incremental syncs. When no changes are detected, the response
+   * sets <code>Changed</code> to <code>false</code> and omits configuration
+   * details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListInstrumentationConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListInstrumentationConfigurationsOutcome ListInstrumentationConfigurations(
+      const Model::ListInstrumentationConfigurationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListInstrumentationConfigurations that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListInstrumentationConfigurationsRequestT = Model::ListInstrumentationConfigurationsRequest>
+  Model::ListInstrumentationConfigurationsOutcomeCallable ListInstrumentationConfigurationsCallable(
+      const ListInstrumentationConfigurationsRequestT& request) const {
+    return SubmitCallable(&ApplicationSignalsClient::ListInstrumentationConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for ListInstrumentationConfigurations that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListInstrumentationConfigurationsRequestT = Model::ListInstrumentationConfigurationsRequest>
+  void ListInstrumentationConfigurationsAsync(const ListInstrumentationConfigurationsRequestT& request,
+                                              const ListInstrumentationConfigurationsResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApplicationSignalsClient::ListInstrumentationConfigurations, request, handler, context);
   }
 
   /**
@@ -716,6 +917,41 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
                                      const PutGroupingConfigurationResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ApplicationSignalsClient::PutGroupingConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Reports the status of one or more instrumentation configurations from SDK
+   * instances. Use this to record when configurations become ready, hit errors,
+   * become active, or are disabled by limits.</p> <p>Report <code>READY</code>,
+   * <code>ERROR</code>, and <code>DISABLED</code> when the status changes. Report
+   * <code>ACTIVE</code> periodically (for example, every minute) while
+   * instrumentation is running.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ReportInstrumentationConfigurationStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ReportInstrumentationConfigurationStatusOutcome ReportInstrumentationConfigurationStatus(
+      const Model::ReportInstrumentationConfigurationStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for ReportInstrumentationConfigurationStatus that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ReportInstrumentationConfigurationStatusRequestT = Model::ReportInstrumentationConfigurationStatusRequest>
+  Model::ReportInstrumentationConfigurationStatusOutcomeCallable ReportInstrumentationConfigurationStatusCallable(
+      const ReportInstrumentationConfigurationStatusRequestT& request) const {
+    return SubmitCallable(&ApplicationSignalsClient::ReportInstrumentationConfigurationStatus, request);
+  }
+
+  /**
+   * An Async wrapper for ReportInstrumentationConfigurationStatus that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ReportInstrumentationConfigurationStatusRequestT = Model::ReportInstrumentationConfigurationStatusRequest>
+  void ReportInstrumentationConfigurationStatusAsync(
+      const ReportInstrumentationConfigurationStatusRequestT& request,
+      const ReportInstrumentationConfigurationStatusResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApplicationSignalsClient::ReportInstrumentationConfigurationStatus, request, handler, context);
   }
 
   /**

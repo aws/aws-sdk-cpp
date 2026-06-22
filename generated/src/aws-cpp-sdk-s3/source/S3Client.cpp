@@ -907,7 +907,7 @@ DeleteObjectAnnotationOutcome S3Client::DeleteObjectAnnotation(const DeleteObjec
     (void)endpointResolutionOutcome;
     Aws::StringStream ss;
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
-    ss.str("?annotation=");
+    ss.str("?annotation");
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
@@ -1585,7 +1585,7 @@ GetObjectAnnotationOutcome S3Client::GetObjectAnnotation(const GetObjectAnnotati
                                     endpointResolutionOutcome.GetError().GetMessage());
         Aws::StringStream ss;
         endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
-        ss.str("?annotation=");
+        ss.str("?annotation");
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         request.SetServiceSpecificParameters([&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
           Aws::Map<Aws::String, Aws::String> params;
@@ -1959,7 +1959,7 @@ ListObjectAnnotationsOutcome S3Client::ListObjectAnnotations(const ListObjectAnn
     (void)endpointResolutionOutcome;
     Aws::StringStream ss;
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
-    ss.str("?annotation=");
+    ss.str("?annotation");
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
@@ -2507,7 +2507,7 @@ PutObjectAnnotationOutcome S3Client::PutObjectAnnotation(const PutObjectAnnotati
     (void)endpointResolutionOutcome;
     Aws::StringStream ss;
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
-    ss.str("?annotation=");
+    ss.str("?annotation");
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 

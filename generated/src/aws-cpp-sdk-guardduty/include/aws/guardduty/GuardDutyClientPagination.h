@@ -14,6 +14,7 @@
 #include <aws/guardduty/model/ListFiltersPaginationTraits.h>
 #include <aws/guardduty/model/ListFindingsPaginationTraits.h>
 #include <aws/guardduty/model/ListIPSetsPaginationTraits.h>
+#include <aws/guardduty/model/ListInvestigationsPaginationTraits.h>
 #include <aws/guardduty/model/ListInvitationsPaginationTraits.h>
 #include <aws/guardduty/model/ListMalwareScansPaginationTraits.h>
 #include <aws/guardduty/model/ListMembersPaginationTraits.h>
@@ -41,6 +42,8 @@ using ListFiltersPaginator =
     Aws::Utils::Pagination::Paginator<GuardDutyClient, Model::ListFiltersRequest, Pagination::ListFiltersPaginationTraits<GuardDutyClient>>;
 using ListFindingsPaginator = Aws::Utils::Pagination::Paginator<GuardDutyClient, Model::ListFindingsRequest,
                                                                 Pagination::ListFindingsPaginationTraits<GuardDutyClient>>;
+using ListInvestigationsPaginator = Aws::Utils::Pagination::Paginator<GuardDutyClient, Model::ListInvestigationsRequest,
+                                                                      Pagination::ListInvestigationsPaginationTraits<GuardDutyClient>>;
 using ListInvitationsPaginator = Aws::Utils::Pagination::Paginator<GuardDutyClient, Model::ListInvitationsRequest,
                                                                    Pagination::ListInvitationsPaginationTraits<GuardDutyClient>>;
 using ListIPSetsPaginator =

@@ -140,6 +140,7 @@
 #include <aws/bedrock-agentcore/model/ExtractionJobMessages.h>
 #include <aws/bedrock-agentcore/model/ExtractionJobMetadata.h>
 #include <aws/bedrock-agentcore/model/ExtractionJobStatus.h>
+#include <aws/bedrock-agentcore/model/ExtractionMode.h>
 #include <aws/bedrock-agentcore/model/FailureAnalysisResultContent.h>
 #include <aws/bedrock-agentcore/model/FailureCategoryCluster.h>
 #include <aws/bedrock-agentcore/model/FailureSpanDetail.h>

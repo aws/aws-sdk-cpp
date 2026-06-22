@@ -5,7 +5,9 @@
 
 #pragma once
 
+#include <aws/application-signals/model/GetInstrumentationConfigurationStatusPaginationTraits.h>
 #include <aws/application-signals/model/ListEntityEventsPaginationTraits.h>
+#include <aws/application-signals/model/ListInstrumentationConfigurationsPaginationTraits.h>
 #include <aws/application-signals/model/ListServiceDependenciesPaginationTraits.h>
 #include <aws/application-signals/model/ListServiceDependentsPaginationTraits.h>
 #include <aws/application-signals/model/ListServiceLevelObjectiveExclusionWindowsPaginationTraits.h>
@@ -25,6 +27,18 @@ template <typename DerivedClient>
 class ApplicationSignalsPaginationBase {
  public:
   /**
+   * Create a paginator for GetInstrumentationConfigurationStatus operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetInstrumentationConfigurationStatusRequest,
+                                    Pagination::GetInstrumentationConfigurationStatusPaginationTraits<DerivedClient>>
+  GetInstrumentationConfigurationStatusPaginator(const Model::GetInstrumentationConfigurationStatusRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetInstrumentationConfigurationStatusRequest,
+                                             Pagination::GetInstrumentationConfigurationStatusPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListEntityEvents operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntityEventsRequest,
@@ -34,6 +48,18 @@ class ApplicationSignalsPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntityEventsRequest,
                                              Pagination::ListEntityEventsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
+  }
+
+  /**
+   * Create a paginator for ListInstrumentationConfigurations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInstrumentationConfigurationsRequest,
+                                    Pagination::ListInstrumentationConfigurationsPaginationTraits<DerivedClient>>
+  ListInstrumentationConfigurationsPaginator(const Model::ListInstrumentationConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInstrumentationConfigurationsRequest,
+                                             Pagination::ListInstrumentationConfigurationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

@@ -121,6 +121,15 @@ RouterInput& RouterInput::operator=(JsonView jsonValue) {
     m_maintenanceSchedule = jsonValue.GetObject("maintenanceSchedule");
     m_maintenanceScheduleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("contentQualityAnalysisType")) {
+    m_contentQualityAnalysisType = RouterContentQualityAnalysisTypeMapper::GetRouterContentQualityAnalysisTypeForName(
+        jsonValue.GetString("contentQualityAnalysisType"));
+    m_contentQualityAnalysisTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("contentQualityAnalysisConfiguration")) {
+    m_contentQualityAnalysisConfiguration = jsonValue.GetObject("contentQualityAnalysisConfiguration");
+    m_contentQualityAnalysisConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -230,6 +239,15 @@ JsonValue RouterInput::Jsonize() const {
 
   if (m_maintenanceScheduleHasBeenSet) {
     payload.WithObject("maintenanceSchedule", m_maintenanceSchedule.Jsonize());
+  }
+
+  if (m_contentQualityAnalysisTypeHasBeenSet) {
+    payload.WithString("contentQualityAnalysisType",
+                       RouterContentQualityAnalysisTypeMapper::GetNameForRouterContentQualityAnalysisType(m_contentQualityAnalysisType));
+  }
+
+  if (m_contentQualityAnalysisConfigurationHasBeenSet) {
+    payload.WithObject("contentQualityAnalysisConfiguration", m_contentQualityAnalysisConfiguration.Jsonize());
   }
 
   return payload;

@@ -12,6 +12,7 @@
 #include <aws/omics/model/NetworkingMode.h>
 #include <aws/omics/model/RunLogLevel.h>
 #include <aws/omics/model/RunRetentionMode.h>
+#include <aws/omics/model/ScratchStorageMode.h>
 #include <aws/omics/model/StorageType.h>
 #include <aws/omics/model/WorkflowType.h>
 
@@ -427,6 +428,25 @@ class DefaultRunSetting {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional configuration for enabling scratch ephemeral storage mounted at
+   * /tmp. If not specified, this will default to SHARED. This configuration is
+   * applicable only for CPU tasks. For tasks using GPUs, scratch storage is always
+   * LOCAL.</p>
+   */
+  inline ScratchStorageMode GetScratchStorageMode() const { return m_scratchStorageMode; }
+  inline bool ScratchStorageModeHasBeenSet() const { return m_scratchStorageModeHasBeenSet; }
+  inline void SetScratchStorageMode(ScratchStorageMode value) {
+    m_scratchStorageModeHasBeenSet = true;
+    m_scratchStorageMode = value;
+  }
+  inline DefaultRunSetting& WithScratchStorageMode(ScratchStorageMode value) {
+    SetScratchStorageMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_workflowId;
 
@@ -469,6 +489,8 @@ class DefaultRunSetting {
   Aws::String m_configurationName;
 
   Aws::Utils::Document m_engineSettings;
+
+  ScratchStorageMode m_scratchStorageMode{ScratchStorageMode::NOT_SET};
   bool m_workflowIdHasBeenSet = false;
   bool m_workflowTypeHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
@@ -490,6 +512,7 @@ class DefaultRunSetting {
   bool m_networkingModeHasBeenSet = false;
   bool m_configurationNameHasBeenSet = false;
   bool m_engineSettingsHasBeenSet = false;
+  bool m_scratchStorageModeHasBeenSet = false;
 };
 
 }  // namespace Model

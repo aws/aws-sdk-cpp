@@ -8,6 +8,7 @@
 #include <aws/mediaconnect/MediaConnectRequest.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/MaintenanceConfiguration.h>
+#include <aws/mediaconnect/model/RouterContentQualityAnalysisConfiguration.h>
 #include <aws/mediaconnect/model/RouterInputConfiguration.h>
 #include <aws/mediaconnect/model/RouterInputTier.h>
 #include <aws/mediaconnect/model/RouterInputTransitEncryption.h>
@@ -175,6 +176,26 @@ class UpdateRouterInputRequest : public MediaConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The content quality analysis configuration for the router input.</p>
+   */
+  inline const RouterContentQualityAnalysisConfiguration& GetContentQualityAnalysisConfiguration() const {
+    return m_contentQualityAnalysisConfiguration;
+  }
+  inline bool ContentQualityAnalysisConfigurationHasBeenSet() const { return m_contentQualityAnalysisConfigurationHasBeenSet; }
+  template <typename ContentQualityAnalysisConfigurationT = RouterContentQualityAnalysisConfiguration>
+  void SetContentQualityAnalysisConfiguration(ContentQualityAnalysisConfigurationT&& value) {
+    m_contentQualityAnalysisConfigurationHasBeenSet = true;
+    m_contentQualityAnalysisConfiguration = std::forward<ContentQualityAnalysisConfigurationT>(value);
+  }
+  template <typename ContentQualityAnalysisConfigurationT = RouterContentQualityAnalysisConfiguration>
+  UpdateRouterInputRequest& WithContentQualityAnalysisConfiguration(ContentQualityAnalysisConfigurationT&& value) {
+    SetContentQualityAnalysisConfiguration(std::forward<ContentQualityAnalysisConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -191,6 +212,8 @@ class UpdateRouterInputRequest : public MediaConnectRequest {
   RouterInputTransitEncryption m_transitEncryption;
 
   MaintenanceConfiguration m_maintenanceConfiguration;
+
+  RouterContentQualityAnalysisConfiguration m_contentQualityAnalysisConfiguration;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
@@ -199,6 +222,7 @@ class UpdateRouterInputRequest : public MediaConnectRequest {
   bool m_tierHasBeenSet = false;
   bool m_transitEncryptionHasBeenSet = false;
   bool m_maintenanceConfigurationHasBeenSet = false;
+  bool m_contentQualityAnalysisConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

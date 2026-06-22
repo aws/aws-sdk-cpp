@@ -10,7 +10,7 @@
 namespace Aws {
 namespace QuickSight {
 namespace Model {
-enum class SpaceQuickSightResourceType { NOT_SET, TOPIC, DASHBOARD, KNOWLEDGE_BASE, SPACE, ACTION_CONNECTOR, DATA_SET, ARTIFACT };
+enum class SpaceQuickSightResourceType { NOT_SET, TOPIC, DASHBOARD, KNOWLEDGE_BASE, ACTION_CONNECTOR, DATA_SET };
 
 namespace SpaceQuickSightResourceTypeMapper {
 AWS_QUICKSIGHT_API SpaceQuickSightResourceType GetSpaceQuickSightResourceTypeForName(const Aws::String& name);

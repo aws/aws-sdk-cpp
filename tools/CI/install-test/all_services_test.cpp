@@ -225,6 +225,8 @@
 #include <aws/kinesisvideo/KinesisVideoClient.h>
 #include <aws/kms/KMSClient.h>
 #include <aws/lakeformation/LakeFormationClient.h>
+#include <aws/lambda-core/LambdaCoreClient.h>
+#include <aws/lambda-microvms/LambdaMicrovmsClient.h>
 #include <aws/lambda/LambdaClient.h>
 #include <aws/launch-wizard/LaunchWizardClient.h>
 #include <aws/lex-models/LexModelBuildingServiceClient.h>

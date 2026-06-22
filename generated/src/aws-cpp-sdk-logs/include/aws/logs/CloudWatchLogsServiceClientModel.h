@@ -100,6 +100,8 @@
 #include <aws/logs/model/ListScheduledQueriesRequest.h>
 #include <aws/logs/model/ListScheduledQueriesResult.h>
 #include <aws/logs/model/ListSourcesForS3TableIntegrationResult.h>
+#include <aws/logs/model/ListSyslogConfigurationsRequest.h>
+#include <aws/logs/model/ListSyslogConfigurationsResult.h>
 #include <aws/logs/model/ListTagsForResourceResult.h>
 #include <aws/logs/model/PutAccountPolicyResult.h>
 #include <aws/logs/model/PutDataProtectionPolicyResult.h>
@@ -184,6 +186,7 @@ class DeleteResourcePolicyRequest;
 class DeleteRetentionPolicyRequest;
 class DeleteScheduledQueryRequest;
 class DeleteSubscriptionFilterRequest;
+class DeleteSyslogConfigurationRequest;
 class DeleteTransformerRequest;
 class DescribeAccountPoliciesRequest;
 class DescribeConfigurationTemplatesRequest;
@@ -232,6 +235,7 @@ class ListLogGroupsRequest;
 class ListLogGroupsForQueryRequest;
 class ListScheduledQueriesRequest;
 class ListSourcesForS3TableIntegrationRequest;
+class ListSyslogConfigurationsRequest;
 class ListTagsForResourceRequest;
 class PutAccountPolicyRequest;
 class PutBearerTokenAuthenticationRequest;
@@ -250,6 +254,7 @@ class PutQueryDefinitionRequest;
 class PutResourcePolicyRequest;
 class PutRetentionPolicyRequest;
 class PutSubscriptionFilterRequest;
+class PutSyslogConfigurationRequest;
 class PutTransformerRequest;
 class StartLiveTailRequest;
 class StartQueryRequest;
@@ -297,6 +302,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteResourcePo
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteRetentionPolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteScheduledQueryResult, CloudWatchLogsError> DeleteScheduledQueryOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteSubscriptionFilterOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteSyslogConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteTransformerOutcome;
 typedef Aws::Utils::Outcome<DescribeAccountPoliciesResult, CloudWatchLogsError> DescribeAccountPoliciesOutcome;
 typedef Aws::Utils::Outcome<DescribeConfigurationTemplatesResult, CloudWatchLogsError> DescribeConfigurationTemplatesOutcome;
@@ -346,6 +352,7 @@ typedef Aws::Utils::Outcome<ListLogGroupsResult, CloudWatchLogsError> ListLogGro
 typedef Aws::Utils::Outcome<ListLogGroupsForQueryResult, CloudWatchLogsError> ListLogGroupsForQueryOutcome;
 typedef Aws::Utils::Outcome<ListScheduledQueriesResult, CloudWatchLogsError> ListScheduledQueriesOutcome;
 typedef Aws::Utils::Outcome<ListSourcesForS3TableIntegrationResult, CloudWatchLogsError> ListSourcesForS3TableIntegrationOutcome;
+typedef Aws::Utils::Outcome<ListSyslogConfigurationsResult, CloudWatchLogsError> ListSyslogConfigurationsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchLogsError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutAccountPolicyResult, CloudWatchLogsError> PutAccountPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutBearerTokenAuthenticationOutcome;
@@ -364,6 +371,7 @@ typedef Aws::Utils::Outcome<PutQueryDefinitionResult, CloudWatchLogsError> PutQu
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, CloudWatchLogsError> PutResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutRetentionPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutSubscriptionFilterOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutSyslogConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutTransformerOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> StartLiveTailOutcome;
 typedef Aws::Utils::Outcome<StartQueryResult, CloudWatchLogsError> StartQueryOutcome;
@@ -411,6 +419,7 @@ typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCall
 typedef std::future<DeleteRetentionPolicyOutcome> DeleteRetentionPolicyOutcomeCallable;
 typedef std::future<DeleteScheduledQueryOutcome> DeleteScheduledQueryOutcomeCallable;
 typedef std::future<DeleteSubscriptionFilterOutcome> DeleteSubscriptionFilterOutcomeCallable;
+typedef std::future<DeleteSyslogConfigurationOutcome> DeleteSyslogConfigurationOutcomeCallable;
 typedef std::future<DeleteTransformerOutcome> DeleteTransformerOutcomeCallable;
 typedef std::future<DescribeAccountPoliciesOutcome> DescribeAccountPoliciesOutcomeCallable;
 typedef std::future<DescribeConfigurationTemplatesOutcome> DescribeConfigurationTemplatesOutcomeCallable;
@@ -459,6 +468,7 @@ typedef std::future<ListLogGroupsOutcome> ListLogGroupsOutcomeCallable;
 typedef std::future<ListLogGroupsForQueryOutcome> ListLogGroupsForQueryOutcomeCallable;
 typedef std::future<ListScheduledQueriesOutcome> ListScheduledQueriesOutcomeCallable;
 typedef std::future<ListSourcesForS3TableIntegrationOutcome> ListSourcesForS3TableIntegrationOutcomeCallable;
+typedef std::future<ListSyslogConfigurationsOutcome> ListSyslogConfigurationsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutAccountPolicyOutcome> PutAccountPolicyOutcomeCallable;
 typedef std::future<PutBearerTokenAuthenticationOutcome> PutBearerTokenAuthenticationOutcomeCallable;
@@ -477,6 +487,7 @@ typedef std::future<PutQueryDefinitionOutcome> PutQueryDefinitionOutcomeCallable
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
 typedef std::future<PutRetentionPolicyOutcome> PutRetentionPolicyOutcomeCallable;
 typedef std::future<PutSubscriptionFilterOutcome> PutSubscriptionFilterOutcomeCallable;
+typedef std::future<PutSyslogConfigurationOutcome> PutSyslogConfigurationOutcomeCallable;
 typedef std::future<PutTransformerOutcome> PutTransformerOutcomeCallable;
 typedef std::future<StartLiveTailOutcome> StartLiveTailOutcomeCallable;
 typedef std::future<StartQueryOutcome> StartQueryOutcomeCallable;
@@ -591,6 +602,9 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteSched
 typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteSubscriptionFilterRequest&,
                            const Model::DeleteSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteSubscriptionFilterResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteSyslogConfigurationRequest&,
+                           const Model::DeleteSyslogConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteSyslogConfigurationResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteTransformerRequest&, const Model::DeleteTransformerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTransformerResponseReceivedHandler;
@@ -741,6 +755,9 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::ListSources
                            const Model::ListSourcesForS3TableIntegrationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSourcesForS3TableIntegrationResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::ListSyslogConfigurationsRequest&,
+                           const Model::ListSyslogConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSyslogConfigurationsResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
@@ -798,6 +815,9 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::PutRetentio
 typedef std::function<void(const CloudWatchLogsClient*, const Model::PutSubscriptionFilterRequest&,
                            const Model::PutSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutSubscriptionFilterResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::PutSyslogConfigurationRequest&,
+                           const Model::PutSyslogConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutSyslogConfigurationResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::PutTransformerRequest&, const Model::PutTransformerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutTransformerResponseReceivedHandler;

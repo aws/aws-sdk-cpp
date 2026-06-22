@@ -52,6 +52,7 @@
 #include <aws/logs/model/DeleteRetentionPolicyRequest.h>
 #include <aws/logs/model/DeleteScheduledQueryRequest.h>
 #include <aws/logs/model/DeleteSubscriptionFilterRequest.h>
+#include <aws/logs/model/DeleteSyslogConfigurationRequest.h>
 #include <aws/logs/model/DeleteTransformerRequest.h>
 #include <aws/logs/model/DescribeAccountPoliciesRequest.h>
 #include <aws/logs/model/DescribeConfigurationTemplatesRequest.h>
@@ -100,6 +101,7 @@
 #include <aws/logs/model/ListLogGroupsRequest.h>
 #include <aws/logs/model/ListScheduledQueriesRequest.h>
 #include <aws/logs/model/ListSourcesForS3TableIntegrationRequest.h>
+#include <aws/logs/model/ListSyslogConfigurationsRequest.h>
 #include <aws/logs/model/ListTagsForResourceRequest.h>
 #include <aws/logs/model/PutAccountPolicyRequest.h>
 #include <aws/logs/model/PutBearerTokenAuthenticationRequest.h>
@@ -118,6 +120,7 @@
 #include <aws/logs/model/PutResourcePolicyRequest.h>
 #include <aws/logs/model/PutRetentionPolicyRequest.h>
 #include <aws/logs/model/PutSubscriptionFilterRequest.h>
+#include <aws/logs/model/PutSyslogConfigurationRequest.h>
 #include <aws/logs/model/PutTransformerRequest.h>
 #include <aws/logs/model/StartLiveTailRequest.h>
 #include <aws/logs/model/StartQueryRequest.h>
@@ -467,6 +470,12 @@ DeleteSubscriptionFilterOutcome CloudWatchLogsClient::DeleteSubscriptionFilter(c
                             : DeleteSubscriptionFilterOutcome(std::move(result.GetError()));
 }
 
+DeleteSyslogConfigurationOutcome CloudWatchLogsClient::DeleteSyslogConfiguration(const DeleteSyslogConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSyslogConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteSyslogConfigurationOutcome(std::move(result.GetError()));
+}
+
 DeleteTransformerOutcome CloudWatchLogsClient::DeleteTransformer(const DeleteTransformerRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteTransformerOutcome(result.GetResultWithOwnership())
@@ -791,6 +800,12 @@ ListSourcesForS3TableIntegrationOutcome CloudWatchLogsClient::ListSourcesForS3Ta
                             : ListSourcesForS3TableIntegrationOutcome(std::move(result.GetError()));
 }
 
+ListSyslogConfigurationsOutcome CloudWatchLogsClient::ListSyslogConfigurations(const ListSyslogConfigurationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSyslogConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListSyslogConfigurationsOutcome(std::move(result.GetError()));
+}
+
 ListTagsForResourceOutcome CloudWatchLogsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
@@ -896,6 +911,12 @@ PutSubscriptionFilterOutcome CloudWatchLogsClient::PutSubscriptionFilter(const P
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutSubscriptionFilterOutcome(result.GetResultWithOwnership())
                             : PutSubscriptionFilterOutcome(std::move(result.GetError()));
+}
+
+PutSyslogConfigurationOutcome CloudWatchLogsClient::PutSyslogConfiguration(const PutSyslogConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutSyslogConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutSyslogConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutTransformerOutcome CloudWatchLogsClient::PutTransformer(const PutTransformerRequest& request) const {

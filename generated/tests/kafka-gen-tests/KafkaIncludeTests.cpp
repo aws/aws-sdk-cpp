@@ -126,6 +126,7 @@
 #include <aws/kafka/model/KafkaClusterDescription.h>
 #include <aws/kafka/model/KafkaClusterEncryptionInTransit.h>
 #include <aws/kafka/model/KafkaClusterEncryptionInTransitType.h>
+#include <aws/kafka/model/KafkaClusterMTLSAuthentication.h>
 #include <aws/kafka/model/KafkaClusterSaslScramAuthentication.h>
 #include <aws/kafka/model/KafkaClusterSaslScramMechanism.h>
 #include <aws/kafka/model/KafkaClusterSummary.h>
