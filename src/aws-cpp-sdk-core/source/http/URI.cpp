@@ -306,8 +306,14 @@ QueryStringParameterCollection URI::GetQueryStringParameters(bool decode) const
 
             //split on =
             size_t locationOfEquals = keyValuePair.find('=');
-            Aws::String key = keyValuePair.substr(0, locationOfEquals);
-            Aws::String value = keyValuePair.substr(locationOfEquals + 1);
+            Aws::String key, value;
+            if (locationOfEquals != std::string::npos) {
+                key = keyValuePair.substr(0, locationOfEquals);
+                value = keyValuePair.substr(locationOfEquals + 1);
+            }
+            else {
+                key = keyValuePair;
+            }
 
             if(decode)
             {
