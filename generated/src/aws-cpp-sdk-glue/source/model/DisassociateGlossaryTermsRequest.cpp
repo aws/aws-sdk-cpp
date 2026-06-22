@@ -15,8 +15,8 @@ using namespace Aws::Utils;
 Aws::String DisassociateGlossaryTermsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_identifierHasBeenSet) {
-    payload.WithString("Identifier", m_identifier);
+  if (m_assetIdentifierHasBeenSet) {
+    payload.WithString("AssetIdentifier", m_assetIdentifier);
   }
 
   if (m_glossaryTermIdentifiersHasBeenSet) {

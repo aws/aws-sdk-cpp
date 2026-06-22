@@ -96,6 +96,15 @@ EvaluationForm& EvaluationForm::operator=(JsonView jsonValue) {
     m_languageConfiguration = jsonValue.GetObject("LanguageConfiguration");
     m_languageConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LatestValidationStatus")) {
+    m_latestValidationStatus =
+        EvaluationFormValidationStatusMapper::GetEvaluationFormValidationStatusForName(jsonValue.GetString("LatestValidationStatus"));
+    m_latestValidationStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LastValidationTime")) {
+    m_lastValidationTime = jsonValue.GetDouble("LastValidationTime");
+    m_lastValidationTimeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -180,6 +189,15 @@ JsonValue EvaluationForm::Jsonize() const {
 
   if (m_languageConfigurationHasBeenSet) {
     payload.WithObject("LanguageConfiguration", m_languageConfiguration.Jsonize());
+  }
+
+  if (m_latestValidationStatusHasBeenSet) {
+    payload.WithString("LatestValidationStatus",
+                       EvaluationFormValidationStatusMapper::GetNameForEvaluationFormValidationStatus(m_latestValidationStatus));
+  }
+
+  if (m_lastValidationTimeHasBeenSet) {
+    payload.WithDouble("LastValidationTime", m_lastValidationTime.SecondsWithMSPrecision());
   }
 
   return payload;

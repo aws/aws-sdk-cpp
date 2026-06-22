@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/ContactEvaluationAttributeFilter.h>
 #include <aws/connect/model/ControlPlaneAttributeFilter.h>
 
 #include <utility>
@@ -32,7 +33,9 @@ class EvaluationSearchFilter {
   AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>An object that can be used to specify tag conditions.</p>
+   */
   inline const ControlPlaneAttributeFilter& GetAttributeFilter() const { return m_attributeFilter; }
   inline bool AttributeFilterHasBeenSet() const { return m_attributeFilterHasBeenSet; }
   template <typename AttributeFilterT = ControlPlaneAttributeFilter>
@@ -46,9 +49,31 @@ class EvaluationSearchFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that can be used to specify tag conditions and attribute conditions
+   * for contact evaluations.</p>
+   */
+  inline const ContactEvaluationAttributeFilter& GetContactEvaluationAttributeFilter() const { return m_contactEvaluationAttributeFilter; }
+  inline bool ContactEvaluationAttributeFilterHasBeenSet() const { return m_contactEvaluationAttributeFilterHasBeenSet; }
+  template <typename ContactEvaluationAttributeFilterT = ContactEvaluationAttributeFilter>
+  void SetContactEvaluationAttributeFilter(ContactEvaluationAttributeFilterT&& value) {
+    m_contactEvaluationAttributeFilterHasBeenSet = true;
+    m_contactEvaluationAttributeFilter = std::forward<ContactEvaluationAttributeFilterT>(value);
+  }
+  template <typename ContactEvaluationAttributeFilterT = ContactEvaluationAttributeFilter>
+  EvaluationSearchFilter& WithContactEvaluationAttributeFilter(ContactEvaluationAttributeFilterT&& value) {
+    SetContactEvaluationAttributeFilter(std::forward<ContactEvaluationAttributeFilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ControlPlaneAttributeFilter m_attributeFilter;
+
+  ContactEvaluationAttributeFilter m_contactEvaluationAttributeFilter;
   bool m_attributeFilterHasBeenSet = false;
+  bool m_contactEvaluationAttributeFilterHasBeenSet = false;
 };
 
 }  // namespace Model

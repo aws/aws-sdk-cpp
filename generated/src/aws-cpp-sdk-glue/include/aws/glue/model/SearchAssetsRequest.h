@@ -18,15 +18,15 @@ namespace Model {
 
 /**
  */
-class SearchRequest : public GlueRequest {
+class SearchAssetsRequest : public GlueRequest {
  public:
-  AWS_GLUE_API SearchRequest() = default;
+  AWS_GLUE_API SearchAssetsRequest() = default;
 
   // Service request name is the Operation name which will send this request out,
   // each operation should has unique request name, so that we can get operation's name from this request.
   // Note: this is not true for response, multiple operations may have the same response name,
   // so we can not get operation's name from response.
-  inline virtual const char* GetServiceRequestName() const override { return "Search"; }
+  inline virtual const char* GetServiceRequestName() const override { return "SearchAssets"; }
 
   AWS_GLUE_API Aws::String SerializePayload() const override;
 
@@ -45,7 +45,7 @@ class SearchRequest : public GlueRequest {
     m_searchText = std::forward<SearchTextT>(value);
   }
   template <typename SearchTextT = Aws::String>
-  SearchRequest& WithSearchText(SearchTextT&& value) {
+  SearchAssetsRequest& WithSearchText(SearchTextT&& value) {
     SetSearchText(std::forward<SearchTextT>(value));
     return *this;
   }
@@ -61,7 +61,7 @@ class SearchRequest : public GlueRequest {
     m_maxResultsHasBeenSet = true;
     m_maxResults = value;
   }
-  inline SearchRequest& WithMaxResults(int value) {
+  inline SearchAssetsRequest& WithMaxResults(int value) {
     SetMaxResults(value);
     return *this;
   }
@@ -79,7 +79,7 @@ class SearchRequest : public GlueRequest {
     m_nextToken = std::forward<NextTokenT>(value);
   }
   template <typename NextTokenT = Aws::String>
-  SearchRequest& WithNextToken(NextTokenT&& value) {
+  SearchAssetsRequest& WithNextToken(NextTokenT&& value) {
     SetNextToken(std::forward<NextTokenT>(value));
     return *this;
   }
@@ -97,7 +97,7 @@ class SearchRequest : public GlueRequest {
     m_sort = std::forward<SortT>(value);
   }
   template <typename SortT = SearchSort>
-  SearchRequest& WithSort(SortT&& value) {
+  SearchAssetsRequest& WithSort(SortT&& value) {
     SetSort(std::forward<SortT>(value));
     return *this;
   }
@@ -116,7 +116,7 @@ class SearchRequest : public GlueRequest {
     m_filterClause = std::forward<FilterClauseT>(value);
   }
   template <typename FilterClauseT = SearchFilterClause>
-  SearchRequest& WithFilterClause(FilterClauseT&& value) {
+  SearchAssetsRequest& WithFilterClause(FilterClauseT&& value) {
     SetFilterClause(std::forward<FilterClauseT>(value));
     return *this;
   }

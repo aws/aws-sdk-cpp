@@ -22,9 +22,9 @@ PutAttachmentResult::PutAttachmentResult(const Aws::AmazonWebServiceResult<JsonV
 PutAttachmentResult& PutAttachmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("AssetId")) {
-    m_assetId = jsonValue.GetString("AssetId");
-    m_assetIdHasBeenSet = true;
+  if (jsonValue.ValueExists("AssetIdentifier")) {
+    m_assetIdentifier = jsonValue.GetString("AssetIdentifier");
+    m_assetIdentifierHasBeenSet = true;
   }
   if (jsonValue.ValueExists("IterableFormName")) {
     m_iterableFormName = jsonValue.GetString("IterableFormName");

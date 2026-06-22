@@ -290,6 +290,7 @@
 #include <aws/appstream/model/UsageReportSchedule.h>
 #include <aws/appstream/model/UsageReportSubscription.h>
 #include <aws/appstream/model/User.h>
+#include <aws/appstream/model/UserControlMode.h>
 #include <aws/appstream/model/UserSetting.h>
 #include <aws/appstream/model/UserStackAssociation.h>
 #include <aws/appstream/model/UserStackAssociationError.h>

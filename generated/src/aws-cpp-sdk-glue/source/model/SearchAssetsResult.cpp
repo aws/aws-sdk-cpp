@@ -8,7 +8,7 @@
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/glue/model/SearchResult.h>
+#include <aws/glue/model/SearchAssetsResult.h>
 
 #include <utility>
 
@@ -17,9 +17,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchResult::SearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+SearchAssetsResult::SearchAssetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-SearchResult& SearchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+SearchAssetsResult& SearchAssetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Items")) {

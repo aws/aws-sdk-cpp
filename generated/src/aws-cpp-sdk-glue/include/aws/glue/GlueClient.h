@@ -6797,28 +6797,28 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
    * <p>Searches for assets in Glue Data Catalog using full-text search, filters,
    * sorting, and aggregations. Returns matching assets with relevance-ranked
    * results.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Search">AWS API
-   * Reference</a></p>
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SearchAssets">AWS
+   * API Reference</a></p>
    */
-  virtual Model::SearchOutcome Search(const Model::SearchRequest& request = {}) const;
+  virtual Model::SearchAssetsOutcome SearchAssets(const Model::SearchAssetsRequest& request = {}) const;
 
   /**
-   * A Callable wrapper for Search that returns a future to the operation so that it can be executed in parallel to other requests.
+   * A Callable wrapper for SearchAssets that returns a future to the operation so that it can be executed in parallel to other requests.
    */
-  template <typename SearchRequestT = Model::SearchRequest>
-  Model::SearchOutcomeCallable SearchCallable(const SearchRequestT& request = {}) const {
-    return SubmitCallable(&GlueClient::Search, request);
+  template <typename SearchAssetsRequestT = Model::SearchAssetsRequest>
+  Model::SearchAssetsOutcomeCallable SearchAssetsCallable(const SearchAssetsRequestT& request = {}) const {
+    return SubmitCallable(&GlueClient::SearchAssets, request);
   }
 
   /**
-   * An Async wrapper for Search that queues the request into a thread executor and triggers associated callback when operation has
+   * An Async wrapper for SearchAssets that queues the request into a thread executor and triggers associated callback when operation has
    * finished.
    */
-  template <typename SearchRequestT = Model::SearchRequest>
-  void SearchAsync(const SearchResponseReceivedHandler& handler,
-                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
-                   const SearchRequestT& request = {}) const {
-    return SubmitAsync(&GlueClient::Search, request, handler, context);
+  template <typename SearchAssetsRequestT = Model::SearchAssetsRequest>
+  void SearchAssetsAsync(const SearchAssetsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                         const SearchAssetsRequestT& request = {}) const {
+    return SubmitAsync(&GlueClient::SearchAssets, request, handler, context);
   }
 
   /**

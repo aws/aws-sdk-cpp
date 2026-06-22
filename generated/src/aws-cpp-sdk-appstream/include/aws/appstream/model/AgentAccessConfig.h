@@ -8,6 +8,7 @@
 #include <aws/appstream/model/AgentAccessSetting.h>
 #include <aws/appstream/model/ScreenImageFormat.h>
 #include <aws/appstream/model/ScreenResolution.h>
+#include <aws/appstream/model/UserControlMode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -129,6 +130,23 @@ class AgentAccessConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The user control mode for agent sessions. This setting determines how users
+   * can interact with agent sessions.</p>
+   */
+  inline UserControlMode GetUserControlMode() const { return m_userControlMode; }
+  inline bool UserControlModeHasBeenSet() const { return m_userControlModeHasBeenSet; }
+  inline void SetUserControlMode(UserControlMode value) {
+    m_userControlModeHasBeenSet = true;
+    m_userControlMode = value;
+  }
+  inline AgentAccessConfig& WithUserControlMode(UserControlMode value) {
+    SetUserControlMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<AgentAccessSetting> m_settings;
 
@@ -139,11 +157,14 @@ class AgentAccessConfig {
   ScreenResolution m_screenResolution{ScreenResolution::NOT_SET};
 
   ScreenImageFormat m_screenImageFormat{ScreenImageFormat::NOT_SET};
+
+  UserControlMode m_userControlMode{UserControlMode::NOT_SET};
   bool m_settingsHasBeenSet = false;
   bool m_s3BucketArnHasBeenSet = false;
   bool m_screenshotsUploadEnabledHasBeenSet = false;
   bool m_screenResolutionHasBeenSet = false;
   bool m_screenImageFormatHasBeenSet = false;
+  bool m_userControlModeHasBeenSet = false;
 };
 
 }  // namespace Model

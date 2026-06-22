@@ -10,7 +10,7 @@
 namespace Aws {
 namespace AppStream {
 namespace Model {
-enum class AgentAction { NOT_SET, COMPUTER_VISION, COMPUTER_INPUT };
+enum class AgentAction { NOT_SET, COMPUTER_VISION, COMPUTER_INPUT, FORWARD_MCP_TOOLS };
 
 namespace AgentActionMapper {
 AWS_APPSTREAM_API AgentAction GetAgentActionForName(const Aws::String& name);

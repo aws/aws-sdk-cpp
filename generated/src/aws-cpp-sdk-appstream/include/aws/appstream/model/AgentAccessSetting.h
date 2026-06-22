@@ -35,9 +35,9 @@ class AgentAccessSetting {
 
   ///@{
   /**
-   * <p>The agent action to configure. Valid values are COMPUTER_VISION and
-   * COMPUTER_INPUT. If you enable COMPUTER_INPUT, you must also enable
-   * COMPUTER_VISION.</p>
+   * <p>The agent action to configure. Valid values are COMPUTER_VISION,
+   * COMPUTER_INPUT, and FORWARD_MCP_TOOLS. If you enable COMPUTER_INPUT, you must
+   * also enable COMPUTER_VISION.</p>
    */
   inline AgentAction GetAgentAction() const { return m_agentAction; }
   inline bool AgentActionHasBeenSet() const { return m_agentActionHasBeenSet; }

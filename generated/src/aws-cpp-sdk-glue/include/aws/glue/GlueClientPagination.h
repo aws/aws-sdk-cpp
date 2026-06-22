@@ -56,7 +56,7 @@
 #include <aws/glue/model/ListTriggersPaginationTraits.h>
 #include <aws/glue/model/ListUsageProfilesPaginationTraits.h>
 #include <aws/glue/model/ListWorkflowsPaginationTraits.h>
-#include <aws/glue/model/SearchPaginationTraits.h>
+#include <aws/glue/model/SearchAssetsPaginationTraits.h>
 #include <aws/glue/model/SearchTablesPaginationTraits.h>
 
 namespace Aws {
@@ -169,7 +169,8 @@ using ListUsageProfilesPaginator = Aws::Utils::Pagination::Paginator<GlueClient,
                                                                      Pagination::ListUsageProfilesPaginationTraits<GlueClient>>;
 using ListWorkflowsPaginator =
     Aws::Utils::Pagination::Paginator<GlueClient, Model::ListWorkflowsRequest, Pagination::ListWorkflowsPaginationTraits<GlueClient>>;
-using SearchPaginator = Aws::Utils::Pagination::Paginator<GlueClient, Model::SearchRequest, Pagination::SearchPaginationTraits<GlueClient>>;
+using SearchAssetsPaginator =
+    Aws::Utils::Pagination::Paginator<GlueClient, Model::SearchAssetsRequest, Pagination::SearchAssetsPaginationTraits<GlueClient>>;
 using SearchTablesPaginator =
     Aws::Utils::Pagination::Paginator<GlueClient, Model::SearchTablesRequest, Pagination::SearchTablesPaginationTraits<GlueClient>>;
 

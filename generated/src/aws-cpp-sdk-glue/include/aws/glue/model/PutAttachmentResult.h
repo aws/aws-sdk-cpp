@@ -31,15 +31,15 @@ class PutAttachmentResult {
   /**
    * <p>The unique identifier of the asset.</p>
    */
-  inline const Aws::String& GetAssetId() const { return m_assetId; }
-  template <typename AssetIdT = Aws::String>
-  void SetAssetId(AssetIdT&& value) {
-    m_assetIdHasBeenSet = true;
-    m_assetId = std::forward<AssetIdT>(value);
+  inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
+  template <typename AssetIdentifierT = Aws::String>
+  void SetAssetIdentifier(AssetIdentifierT&& value) {
+    m_assetIdentifierHasBeenSet = true;
+    m_assetIdentifier = std::forward<AssetIdentifierT>(value);
   }
-  template <typename AssetIdT = Aws::String>
-  PutAttachmentResult& WithAssetId(AssetIdT&& value) {
-    SetAssetId(std::forward<AssetIdT>(value));
+  template <typename AssetIdentifierT = Aws::String>
+  PutAttachmentResult& WithAssetIdentifier(AssetIdentifierT&& value) {
+    SetAssetIdentifier(std::forward<AssetIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -129,7 +129,7 @@ class PutAttachmentResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::String m_assetId;
+  Aws::String m_assetIdentifier;
 
   Aws::String m_iterableFormName;
 
@@ -141,7 +141,7 @@ class PutAttachmentResult {
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_assetIdHasBeenSet = false;
+  bool m_assetIdentifierHasBeenSet = false;
   bool m_iterableFormNameHasBeenSet = false;
   bool m_itemIdentifierHasBeenSet = false;
   bool m_attachmentNameHasBeenSet = false;

@@ -34,6 +34,18 @@ EvaluationScore& EvaluationScore::operator=(JsonView jsonValue) {
     m_appliedWeight = jsonValue.GetDouble("AppliedWeight");
     m_appliedWeightHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EarnedPoints")) {
+    m_earnedPoints = jsonValue.GetInteger("EarnedPoints");
+    m_earnedPointsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MaxBasePoint")) {
+    m_maxBasePoint = jsonValue.GetInteger("MaxBasePoint");
+    m_maxBasePointHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PerformanceCategory")) {
+    m_performanceCategory = PerformanceCategoryNameMapper::GetPerformanceCategoryNameForName(jsonValue.GetString("PerformanceCategory"));
+    m_performanceCategoryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +66,18 @@ JsonValue EvaluationScore::Jsonize() const {
 
   if (m_appliedWeightHasBeenSet) {
     payload.WithDouble("AppliedWeight", m_appliedWeight);
+  }
+
+  if (m_earnedPointsHasBeenSet) {
+    payload.WithInteger("EarnedPoints", m_earnedPoints);
+  }
+
+  if (m_maxBasePointHasBeenSet) {
+    payload.WithInteger("MaxBasePoint", m_maxBasePoint);
+  }
+
+  if (m_performanceCategoryHasBeenSet) {
+    payload.WithString("PerformanceCategory", PerformanceCategoryNameMapper::GetNameForPerformanceCategoryName(m_performanceCategory));
   }
 
   return payload;

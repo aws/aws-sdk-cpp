@@ -26,6 +26,22 @@ EvaluationFormMultiSelectQuestionOption& EvaluationFormMultiSelectQuestionOption
     m_text = jsonValue.GetString("Text");
     m_textHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Score")) {
+    m_score = jsonValue.GetInteger("Score");
+    m_scoreHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AutomaticFail")) {
+    m_automaticFail = jsonValue.GetBool("AutomaticFail");
+    m_automaticFailHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AutomaticFailConfiguration")) {
+    m_automaticFailConfiguration = jsonValue.GetObject("AutomaticFailConfiguration");
+    m_automaticFailConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PointsConfiguration")) {
+    m_pointsConfiguration = jsonValue.GetObject("PointsConfiguration");
+    m_pointsConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +54,22 @@ JsonValue EvaluationFormMultiSelectQuestionOption::Jsonize() const {
 
   if (m_textHasBeenSet) {
     payload.WithString("Text", m_text);
+  }
+
+  if (m_scoreHasBeenSet) {
+    payload.WithInteger("Score", m_score);
+  }
+
+  if (m_automaticFailHasBeenSet) {
+    payload.WithBool("AutomaticFail", m_automaticFail);
+  }
+
+  if (m_automaticFailConfigurationHasBeenSet) {
+    payload.WithObject("AutomaticFailConfiguration", m_automaticFailConfiguration.Jsonize());
+  }
+
+  if (m_pointsConfigurationHasBeenSet) {
+    payload.WithObject("PointsConfiguration", m_pointsConfiguration.Jsonize());
   }
 
   return payload;

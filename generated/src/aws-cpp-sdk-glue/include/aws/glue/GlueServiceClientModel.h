@@ -307,8 +307,8 @@
 #include <aws/glue/model/ResetJobBookmarkResult.h>
 #include <aws/glue/model/ResumeWorkflowRunResult.h>
 #include <aws/glue/model/RunStatementResult.h>
-#include <aws/glue/model/SearchRequest.h>
-#include <aws/glue/model/SearchResult.h>
+#include <aws/glue/model/SearchAssetsRequest.h>
+#include <aws/glue/model/SearchAssetsResult.h>
 #include <aws/glue/model/SearchTablesRequest.h>
 #include <aws/glue/model/SearchTablesResult.h>
 #include <aws/glue/model/StartBlueprintRunResult.h>
@@ -642,7 +642,7 @@ class RemoveSchemaVersionMetadataRequest;
 class ResetJobBookmarkRequest;
 class ResumeWorkflowRunRequest;
 class RunStatementRequest;
-class SearchRequest;
+class SearchAssetsRequest;
 class SearchTablesRequest;
 class StartBlueprintRunRequest;
 class StartColumnStatisticsTaskRunRequest;
@@ -940,7 +940,7 @@ typedef Aws::Utils::Outcome<RemoveSchemaVersionMetadataResult, GlueError> Remove
 typedef Aws::Utils::Outcome<ResetJobBookmarkResult, GlueError> ResetJobBookmarkOutcome;
 typedef Aws::Utils::Outcome<ResumeWorkflowRunResult, GlueError> ResumeWorkflowRunOutcome;
 typedef Aws::Utils::Outcome<RunStatementResult, GlueError> RunStatementOutcome;
-typedef Aws::Utils::Outcome<SearchResult, GlueError> SearchOutcome;
+typedef Aws::Utils::Outcome<SearchAssetsResult, GlueError> SearchAssetsOutcome;
 typedef Aws::Utils::Outcome<SearchTablesResult, GlueError> SearchTablesOutcome;
 typedef Aws::Utils::Outcome<StartBlueprintRunResult, GlueError> StartBlueprintRunOutcome;
 typedef Aws::Utils::Outcome<StartColumnStatisticsTaskRunResult, GlueError> StartColumnStatisticsTaskRunOutcome;
@@ -1238,7 +1238,7 @@ typedef std::future<RemoveSchemaVersionMetadataOutcome> RemoveSchemaVersionMetad
 typedef std::future<ResetJobBookmarkOutcome> ResetJobBookmarkOutcomeCallable;
 typedef std::future<ResumeWorkflowRunOutcome> ResumeWorkflowRunOutcomeCallable;
 typedef std::future<RunStatementOutcome> RunStatementOutcomeCallable;
-typedef std::future<SearchOutcome> SearchOutcomeCallable;
+typedef std::future<SearchAssetsOutcome> SearchAssetsOutcomeCallable;
 typedef std::future<SearchTablesOutcome> SearchTablesOutcomeCallable;
 typedef std::future<StartBlueprintRunOutcome> StartBlueprintRunOutcomeCallable;
 typedef std::future<StartColumnStatisticsTaskRunOutcome> StartColumnStatisticsTaskRunOutcomeCallable;
@@ -2045,9 +2045,9 @@ typedef std::function<void(const GlueClient*, const Model::ResumeWorkflowRunRequ
 typedef std::function<void(const GlueClient*, const Model::RunStatementRequest&, const Model::RunStatementOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RunStatementResponseReceivedHandler;
-typedef std::function<void(const GlueClient*, const Model::SearchRequest&, const Model::SearchOutcome&,
+typedef std::function<void(const GlueClient*, const Model::SearchAssetsRequest&, const Model::SearchAssetsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    SearchResponseReceivedHandler;
+    SearchAssetsResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::SearchTablesRequest&, const Model::SearchTablesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchTablesResponseReceivedHandler;

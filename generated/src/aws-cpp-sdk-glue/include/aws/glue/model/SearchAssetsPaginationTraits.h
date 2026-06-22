@@ -6,21 +6,21 @@
 #pragma once
 #include <aws/glue/GlueServiceClientModel.h>
 #include <aws/glue/Glue_EXPORTS.h>
-#include <aws/glue/model/SearchRequest.h>
-#include <aws/glue/model/SearchResult.h>
+#include <aws/glue/model/SearchAssetsRequest.h>
+#include <aws/glue/model/SearchAssetsResult.h>
 
 namespace Aws {
 namespace Glue {
 namespace Pagination {
 
 template <typename Client = GlueClient>
-struct SearchPaginationTraits {
-  using RequestType = Model::SearchRequest;
-  using ResultType = Model::SearchResult;
-  using OutcomeType = Model::SearchOutcome;
+struct SearchAssetsPaginationTraits {
+  using RequestType = Model::SearchAssetsRequest;
+  using ResultType = Model::SearchAssetsResult;
+  using OutcomeType = Model::SearchAssetsOutcome;
   using ClientType = Client;
 
-  static OutcomeType Invoke(Client* client, const RequestType& request) { return client->Search(request); }
+  static OutcomeType Invoke(Client* client, const RequestType& request) { return client->SearchAssets(request); }
 
   static bool HasMoreResults(const ResultType& result) { return !result.GetNextToken().empty(); }
 

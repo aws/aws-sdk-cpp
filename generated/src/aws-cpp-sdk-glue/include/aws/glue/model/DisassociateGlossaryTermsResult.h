@@ -32,15 +32,15 @@ class DisassociateGlossaryTermsResult {
   /**
    * <p>The unique identifier of the asset.</p>
    */
-  inline const Aws::String& GetIdentifier() const { return m_identifier; }
-  template <typename IdentifierT = Aws::String>
-  void SetIdentifier(IdentifierT&& value) {
-    m_identifierHasBeenSet = true;
-    m_identifier = std::forward<IdentifierT>(value);
+  inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
+  template <typename AssetIdentifierT = Aws::String>
+  void SetAssetIdentifier(AssetIdentifierT&& value) {
+    m_assetIdentifierHasBeenSet = true;
+    m_assetIdentifier = std::forward<AssetIdentifierT>(value);
   }
-  template <typename IdentifierT = Aws::String>
-  DisassociateGlossaryTermsResult& WithIdentifier(IdentifierT&& value) {
-    SetIdentifier(std::forward<IdentifierT>(value));
+  template <typename AssetIdentifierT = Aws::String>
+  DisassociateGlossaryTermsResult& WithAssetIdentifier(AssetIdentifierT&& value) {
+    SetAssetIdentifier(std::forward<AssetIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -85,13 +85,13 @@ class DisassociateGlossaryTermsResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::String m_identifier;
+  Aws::String m_assetIdentifier;
 
   Aws::Vector<Aws::String> m_glossaryTerms;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_identifierHasBeenSet = false;
+  bool m_assetIdentifierHasBeenSet = false;
   bool m_glossaryTermsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

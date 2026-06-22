@@ -57,7 +57,7 @@
 #include <aws/glue/model/ResetJobBookmarkRequest.h>
 #include <aws/glue/model/ResumeWorkflowRunRequest.h>
 #include <aws/glue/model/RunStatementRequest.h>
-#include <aws/glue/model/SearchRequest.h>
+#include <aws/glue/model/SearchAssetsRequest.h>
 #include <aws/glue/model/SearchTablesRequest.h>
 #include <aws/glue/model/StartBlueprintRunRequest.h>
 #include <aws/glue/model/StartColumnStatisticsTaskRunRequest.h>
@@ -338,9 +338,9 @@ RunStatementOutcome GlueClient::RunStatement(const RunStatementRequest& request)
   return result.IsSuccess() ? RunStatementOutcome(result.GetResultWithOwnership()) : RunStatementOutcome(std::move(result.GetError()));
 }
 
-SearchOutcome GlueClient::Search(const SearchRequest& request) const {
+SearchAssetsOutcome GlueClient::SearchAssets(const SearchAssetsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? SearchOutcome(result.GetResultWithOwnership()) : SearchOutcome(std::move(result.GetError()));
+  return result.IsSuccess() ? SearchAssetsOutcome(result.GetResultWithOwnership()) : SearchAssetsOutcome(std::move(result.GetError()));
 }
 
 SearchTablesOutcome GlueClient::SearchTables(const SearchTablesRequest& request) const {

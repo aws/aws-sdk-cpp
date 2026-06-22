@@ -26,6 +26,7 @@
 #include <aws/opensearch/model/AddTagsRequest.h>
 #include <aws/opensearch/model/AssociatePackageRequest.h>
 #include <aws/opensearch/model/AssociatePackagesRequest.h>
+#include <aws/opensearch/model/AttachDataSourceRequest.h>
 #include <aws/opensearch/model/AuthorizeVpcEndpointAccessRequest.h>
 #include <aws/opensearch/model/CancelDomainConfigChangeRequest.h>
 #include <aws/opensearch/model/CancelServiceSoftwareUpdateRequest.h>
@@ -45,6 +46,7 @@
 #include <aws/opensearch/model/DeletePackageRequest.h>
 #include <aws/opensearch/model/DeleteVpcEndpointRequest.h>
 #include <aws/opensearch/model/DeregisterCapabilityRequest.h>
+#include <aws/opensearch/model/DescribeDataSourceAttachmentRequest.h>
 #include <aws/opensearch/model/DescribeDomainAutoTunesRequest.h>
 #include <aws/opensearch/model/DescribeDomainChangeProgressRequest.h>
 #include <aws/opensearch/model/DescribeDomainConfigRequest.h>
@@ -61,6 +63,7 @@
 #include <aws/opensearch/model/DescribeReservedInstanceOfferingsRequest.h>
 #include <aws/opensearch/model/DescribeReservedInstancesRequest.h>
 #include <aws/opensearch/model/DescribeVpcEndpointsRequest.h>
+#include <aws/opensearch/model/DetachDataSourceRequest.h>
 #include <aws/opensearch/model/DissociatePackageRequest.h>
 #include <aws/opensearch/model/DissociatePackagesRequest.h>
 #include <aws/opensearch/model/GetApplicationRequest.h>
@@ -75,6 +78,7 @@
 #include <aws/opensearch/model/GetUpgradeHistoryRequest.h>
 #include <aws/opensearch/model/GetUpgradeStatusRequest.h>
 #include <aws/opensearch/model/ListApplicationsRequest.h>
+#include <aws/opensearch/model/ListDataSourceAttachmentsRequest.h>
 #include <aws/opensearch/model/ListDataSourcesRequest.h>
 #include <aws/opensearch/model/ListDirectQueryDataSourcesRequest.h>
 #include <aws/opensearch/model/ListDomainMaintenancesRequest.h>
@@ -358,6 +362,25 @@ AssociatePackagesOutcome OpenSearchServiceClient::AssociatePackages(const Associ
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AssociatePackagesOutcome(result.GetResultWithOwnership())
                             : AssociatePackagesOutcome(std::move(result.GetError()));
+}
+
+AttachDataSourceOutcome OpenSearchServiceClient::AttachDataSource(const AttachDataSourceRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("AttachDataSource", "Required field: Id, is not set");
+    return AttachDataSourceOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/application/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/attachDataSource");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachDataSourceOutcome(result.GetResultWithOwnership())
+                            : AttachDataSourceOutcome(std::move(result.GetError()));
 }
 
 AuthorizeVpcEndpointAccessOutcome OpenSearchServiceClient::AuthorizeVpcEndpointAccess(
@@ -681,6 +704,26 @@ DeregisterCapabilityOutcome OpenSearchServiceClient::DeregisterCapability(const 
                             : DeregisterCapabilityOutcome(std::move(result.GetError()));
 }
 
+DescribeDataSourceAttachmentOutcome OpenSearchServiceClient::DescribeDataSourceAttachment(
+    const DescribeDataSourceAttachmentRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeDataSourceAttachment", "Required field: Id, is not set");
+    return DescribeDataSourceAttachmentOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/application/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/describeDataSourceAttachment");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDataSourceAttachmentOutcome(result.GetResultWithOwnership())
+                            : DescribeDataSourceAttachmentOutcome(std::move(result.GetError()));
+}
+
 DescribeDomainOutcome OpenSearchServiceClient::DescribeDomain(const DescribeDomainRequest& request) const {
   if (!request.DomainNameHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DescribeDomain", "Required field: DomainName, is not set");
@@ -928,6 +971,25 @@ DescribeVpcEndpointsOutcome OpenSearchServiceClient::DescribeVpcEndpoints(const 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeVpcEndpointsOutcome(result.GetResultWithOwnership())
                             : DescribeVpcEndpointsOutcome(std::move(result.GetError()));
+}
+
+DetachDataSourceOutcome OpenSearchServiceClient::DetachDataSource(const DetachDataSourceRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DetachDataSource", "Required field: Id, is not set");
+    return DetachDataSourceOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/application/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/detachDataSource");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachDataSourceOutcome(result.GetResultWithOwnership())
+                            : DetachDataSourceOutcome(std::move(result.GetError()));
 }
 
 DissociatePackageOutcome OpenSearchServiceClient::DissociatePackage(const DissociatePackageRequest& request) const {
@@ -1186,6 +1248,25 @@ ListApplicationsOutcome OpenSearchServiceClient::ListApplications(const ListAppl
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
                             : ListApplicationsOutcome(std::move(result.GetError()));
+}
+
+ListDataSourceAttachmentsOutcome OpenSearchServiceClient::ListDataSourceAttachments(const ListDataSourceAttachmentsRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataSourceAttachments", "Required field: Id, is not set");
+    return ListDataSourceAttachmentsOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/application/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/listDataSourceAttachments");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataSourceAttachmentsOutcome(result.GetResultWithOwnership())
+                            : ListDataSourceAttachmentsOutcome(std::move(result.GetError()));
 }
 
 ListDataSourcesOutcome OpenSearchServiceClient::ListDataSources(const ListDataSourcesRequest& request) const {
