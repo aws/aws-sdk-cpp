@@ -377,8 +377,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
   m_s3CrtSigningConfig.flags.use_double_uri_encode = false;
   s3CrtConfig.signing_config = &m_s3CrtSigningConfig;
 
-  static const size_t DEFAULT_PART_SIZE = 8 * 1024 * 1024;  // 8MB
-  s3CrtConfig.part_size = config.partSize < DEFAULT_PART_SIZE ? DEFAULT_PART_SIZE : config.partSize;
+  s3CrtConfig.part_size = config.partSize;
   s3CrtConfig.multipart_upload_threshold = config.multipartUploadThreshold;
 
   Aws::Crt::Io::TlsConnectionOptions* rawPTlsConnectionOptions = nullptr;
