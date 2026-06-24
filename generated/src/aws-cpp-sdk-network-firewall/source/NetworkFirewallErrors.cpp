@@ -35,7 +35,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == RESOURCE_OWNER_CHECK_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::RESOURCE_OWNER_CHECK), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == UNSUPPORTED_OPERATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_RESOURCE_POLICY_HASH) {

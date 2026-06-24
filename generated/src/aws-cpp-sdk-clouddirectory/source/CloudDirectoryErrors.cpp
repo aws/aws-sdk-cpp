@@ -60,7 +60,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INVALID_ATTACHMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_ATTACHMENT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {

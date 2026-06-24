@@ -29,7 +29,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == INVALID_ENCODING_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendMedicalErrors::INVALID_ENCODING), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendMedicalErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendMedicalErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == TEXT_SIZE_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendMedicalErrors::TEXT_SIZE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_REQUEST_HASH) {

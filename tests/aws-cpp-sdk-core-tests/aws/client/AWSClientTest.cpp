@@ -424,9 +424,7 @@ TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
 static AmazonWebServiceRequestMock MakeLongPollingRequest()
 {
     AmazonWebServiceRequestMock request;
-    auto params = Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG);
-    params->parameterMap.emplace("isLongPollingOperation", "true");
-    request.SetServiceSpecificParameters(params);
+    request.SetLongPollingOperation(true);
     return request;
 }
 

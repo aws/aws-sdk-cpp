@@ -43,7 +43,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == GATEWAY_TIMEOUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyBackendErrors::GATEWAY_TIMEOUT), RetryableType::RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyBackendErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyBackendErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyBackendErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }

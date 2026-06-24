@@ -55,10 +55,14 @@ public:
         return bodyString.find("TestErrorInBodyOfResponse") != std::string::npos;
     }
 
+    bool IsLongPollingOperation() const override { return m_isLongPollingOperation; }
+    void SetLongPollingOperation(bool value) { m_isLongPollingOperation = value; }
+
 private:
     std::shared_ptr<Aws::IOStream> m_body;
     Aws::Http::HeaderValueCollection m_headers;
     bool m_shouldComputeMd5;
+    bool m_isLongPollingOperation{false};
 };
 
 class CountedRetryStrategy : public Aws::Client::DefaultRetryStrategy

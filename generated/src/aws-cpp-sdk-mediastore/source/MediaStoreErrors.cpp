@@ -29,7 +29,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == CORS_POLICY_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::CORS_POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == CONTAINER_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::CONTAINER_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == POLICY_NOT_FOUND_HASH) {

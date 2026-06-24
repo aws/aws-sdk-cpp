@@ -117,6 +117,36 @@ public class C2jModelToGeneratorModelTransformer {
     private static Set<Integer> RESPONSE_CODES_TO_RETRY = ImmutableSet.of(500, 502, 503, 504);
 
     /**
+     * Hard coded set of errors that are always throttle-able even if modeled
+     */
+    final private static Set<String> THROTTLE_ERRORS = ImmutableSet.of(
+            "Throttling",
+            "ThrottlingException",
+            "ThrottledException",
+            "RequestThrottledException",
+            "TooManyRequestsException",
+            "ProvisionedThroughputExceededException",
+            "TransactionInProgressException",
+            "RequestLimitExceeded",
+            "BandwidthLimitExceeded",
+            "LimitExceededException",
+            "RequestThrottled",
+            "SlowDown",
+            "PriorRequestNotComplete",
+            "EC2ThrottledException"
+    );
+
+    /**
+     * Hard coded set of errors that are always retryable even if modeled
+     */
+    final private static Set<String> RETRYABLE_ERRORS = ImmutableSet.of(
+            "RequestTimeout",
+            "InternalError",
+            "RequestTimeoutException",
+            "IDPCommunicationError"
+    );
+
+    /**
      * Type representing what a member should be remapped to and services that it
      * cannot be renamed to, to preserve backwards compat.
      */
@@ -211,6 +241,15 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.setEndpointRuleSetModel(c2jServiceModel.getEndpointRuleSetModel());
         serviceModel.setEndpointTests(c2jServiceModel.getEndpointTests());
         serviceModel.setClientContextParams(c2jServiceModel.getClientContextParams());
+
+        serviceModel.getServiceErrors()
+                .stream().filter(error -> THROTTLE_ERRORS.contains(error.getText()))
+                .forEach(error -> error.setThrottling(true));
+
+        serviceModel.getServiceErrors()
+                .stream().filter(error -> RETRYABLE_ERRORS.contains(error.getText()) &&
+                        !THROTTLE_ERRORS.contains(error.getText()))
+                .forEach(error -> error.setRetryable(true));
 
         return serviceModel;
     }
@@ -590,10 +629,10 @@ public class C2jModelToGeneratorModelTransformer {
         }
     }
 
-    private static final Map<String, Set<String>> LONG_POLLING_OPERATIONS = Map.of(
-        "SQS", Set.of("ReceiveMessage"),
-        "SFN", Set.of("GetActivityTask"),
-        "SWF", Set.of("PollForActivityTask", "PollForDecisionTask")
+    private static final Map<String, Set<String>> LONG_POLLING_OPERATIONS = ImmutableMap.of(
+        "SQS", ImmutableSet.of("ReceiveMessage"),
+        "SFN", ImmutableSet.of("GetActivityTask"),
+        "SWF", ImmutableSet.of("PollForActivityTask", "PollForDecisionTask")
     );
 
     void applyLongPollingTrait() {

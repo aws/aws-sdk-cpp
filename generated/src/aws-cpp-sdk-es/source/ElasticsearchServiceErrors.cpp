@@ -38,7 +38,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == BASE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::BASE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INVALID_TYPE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::INVALID_TYPE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_PAGINATION_TOKEN_HASH) {

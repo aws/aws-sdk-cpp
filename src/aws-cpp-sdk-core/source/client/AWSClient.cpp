@@ -5,7 +5,6 @@
 
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/AmazonWebServiceRequest.h>
-#include <aws/core/internal/LongPollingRetryHelper.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSAuthSignerProvider.h>
 #include <aws/core/client/AWSUrlPresigner.h>
@@ -141,10 +140,11 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_requestCompressionConfig(configuration.requestCompressionConfig),
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
-    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG, 
+    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG,
         m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : configuration.httpClientChunkedMode,
         configuration.awsChunkedBufferSize),
-    m_userAgentInterceptor}
+        m_userAgentInterceptor},
+    m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"}
 {
 }
 
@@ -173,7 +173,8 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG, configuration), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG, 
         m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : configuration.httpClientChunkedMode,
         configuration.awsChunkedBufferSize),
-    m_userAgentInterceptor}
+        m_userAgentInterceptor},
+    m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"}
 {
 }
 
@@ -282,7 +283,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     Aws::String invocationId = Aws::Utils::UUID::PseudoRandomUUID();
     RequestInfo requestInfo;
     requestInfo.attempt = 1;
-    requestInfo.maxAttempts = 0;
+    requestInfo.maxAttempts = m_enableNewRetries ? m_retryStrategy->GetMaxAttempts() : 0;
     httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
     httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
     AppendRecursionDetectionHeader(httpRequest);
@@ -363,17 +364,10 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 
         if (!retryWithCorrectRegion && !m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
         {
-            static const bool newRetriesEnabled = Aws::Utils::StringUtils::ToLower(
-                Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true";
-            long lpSleepMs = 0;
-            if (newRetriesEnabled)
-            {
-                lpSleepMs = Internal::ComputeLongPollingSleepMs(
-                    outcome.GetError(), retries, m_retryStrategy, request.IsLongPollingOperation());
-            }
-            if (lpSleepMs > 0)
-            {
-                m_httpClient->RetryRequestSleep(std::chrono::milliseconds(lpSleepMs));
+            const bool blockedByQuotaOnly = outcome.GetError().ShouldRetry() &&
+                retries + 1 < m_retryStrategy->GetMaxAttempts();
+            if (m_enableNewRetries && blockedByQuotaOnly && request.IsLongPollingOperation()) {
+                m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
             }
             break;
         }
@@ -463,7 +457,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     Aws::String invocationId = Aws::Utils::UUID::PseudoRandomUUID();
     RequestInfo requestInfo;
     requestInfo.attempt = 1;
-    requestInfo.maxAttempts = 0;
+    requestInfo.maxAttempts = m_enableNewRetries ? m_retryStrategy->GetMaxAttempts() : 0;
     httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
     httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
     AppendRecursionDetectionHeader(httpRequest);

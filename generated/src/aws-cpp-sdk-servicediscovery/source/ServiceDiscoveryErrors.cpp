@@ -84,7 +84,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == REQUEST_LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::REQUEST_LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::REQUEST_LIMIT_EXCEEDED),
+                                RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == SERVICE_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::SERVICE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH) {

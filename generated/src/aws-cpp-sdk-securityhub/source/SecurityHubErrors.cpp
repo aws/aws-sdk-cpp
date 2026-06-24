@@ -147,7 +147,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == ORGANIZATION_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::ORGANIZATION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_CONFLICT_HASH) {

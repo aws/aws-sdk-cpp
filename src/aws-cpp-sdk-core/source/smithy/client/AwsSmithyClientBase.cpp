@@ -5,7 +5,6 @@
 
 #include <smithy/client/AwsSmithyClientBase.h>
 #include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
-#include <aws/core/internal/LongPollingRetryHelper.h>
 #include <smithy/client/features/RecursionDetection.h>
 #include <smithy/client/features/RequestPayloadCompression.h>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
@@ -17,6 +16,7 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/monitoring/CoreMetrics.h>
 #include <aws/core/monitoring/MonitoringManager.h>
+#include <aws/core/platform/Environment.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
@@ -300,7 +300,10 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
         return;
     }
     pRequestCtx->m_requestInfo.attempt = 1;
-    pRequestCtx->m_requestInfo.maxAttempts = 0;
+    pRequestCtx->m_requestInfo.maxAttempts =
+        Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026") == "true"
+            ? m_clientConfig->retryStrategy->GetMaxAttempts()
+            : 0;
     pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
     pRequestCtx->m_responseHandler = std::move(responseHandler);
     pRequestCtx->m_authResolvedCallback = std::move(authCallback);
@@ -614,18 +617,10 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
 
         if (!retryWithCorrectRegion && !m_clientConfig->retryStrategy->ShouldRetry(outcome.GetError(), static_cast<long>(pRequestCtx->m_retryCount)))
         {
-            bool isLongPoll = pRequestCtx->m_pRequest && pRequestCtx->m_pRequest->IsLongPollingOperation();
-            static const bool newRetriesEnabled = Aws::Utils::StringUtils::ToLower(
-                Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true";
-            long lpSleepMs = 0;
-            if (newRetriesEnabled)
-            {
-                lpSleepMs = Aws::Client::Internal::ComputeLongPollingSleepMs(
-                    outcome.GetError(), static_cast<long>(pRequestCtx->m_retryCount), m_clientConfig->retryStrategy, isLongPoll);
-            }
-            if (lpSleepMs > 0)
-            {
-                m_httpClient->RetryRequestSleep(std::chrono::milliseconds(lpSleepMs));
+            const bool blockedByQuotaOnly = outcome.GetError().ShouldRetry() &&
+                static_cast<long>(pRequestCtx->m_retryCount) + 1 < m_clientConfig->retryStrategy->GetMaxAttempts();
+            if (m_enableNewRetries && blockedByQuotaOnly && pRequestCtx->m_pRequest && pRequestCtx->m_pRequest->IsLongPollingOperation()) {
+                m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
             }
             break;
         }

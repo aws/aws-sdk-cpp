@@ -589,7 +589,21 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String re
     }
     else
     {
-        retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(CLIENT_CONFIG_TAG);
+        if (Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) != "true")
+        {
+            if (maxAttempts < 0)
+            {
+                retryStrategy = Aws::MakeShared<StandardRetryStrategy>(CLIENT_CONFIG_TAG);
+            }
+            else
+            {
+                retryStrategy = Aws::MakeShared<StandardRetryStrategy>(CLIENT_CONFIG_TAG, maxAttempts);
+            }
+        }
+        else
+        {
+            retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(CLIENT_CONFIG_TAG);
+        }
     }
 
     return retryStrategy;

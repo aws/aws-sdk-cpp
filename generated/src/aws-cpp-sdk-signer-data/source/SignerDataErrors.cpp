@@ -51,7 +51,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SignerDataErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SignerDataErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INTERNAL_SERVICE_ERROR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SignerDataErrors::INTERNAL_SERVICE_ERROR), RetryableType::RETRYABLE);
   }
