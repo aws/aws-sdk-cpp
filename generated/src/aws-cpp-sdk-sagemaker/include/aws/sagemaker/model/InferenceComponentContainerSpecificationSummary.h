@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ContainerMetricsConfig.h>
 #include <aws/sagemaker/model/DeployedImage.h>
 
 #include <utility>
@@ -91,15 +92,37 @@ class InferenceComponentContainerSpecificationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The container metrics scraping configuration for this inference component,
+   * including the metrics endpoint path and publishing frequency.</p>
+   */
+  inline const ContainerMetricsConfig& GetContainerMetricsConfig() const { return m_containerMetricsConfig; }
+  inline bool ContainerMetricsConfigHasBeenSet() const { return m_containerMetricsConfigHasBeenSet; }
+  template <typename ContainerMetricsConfigT = ContainerMetricsConfig>
+  void SetContainerMetricsConfig(ContainerMetricsConfigT&& value) {
+    m_containerMetricsConfigHasBeenSet = true;
+    m_containerMetricsConfig = std::forward<ContainerMetricsConfigT>(value);
+  }
+  template <typename ContainerMetricsConfigT = ContainerMetricsConfig>
+  InferenceComponentContainerSpecificationSummary& WithContainerMetricsConfig(ContainerMetricsConfigT&& value) {
+    SetContainerMetricsConfig(std::forward<ContainerMetricsConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DeployedImage m_deployedImage;
 
   Aws::String m_artifactUrl;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
+
+  ContainerMetricsConfig m_containerMetricsConfig;
   bool m_deployedImageHasBeenSet = false;
   bool m_artifactUrlHasBeenSet = false;
   bool m_environmentHasBeenSet = false;
+  bool m_containerMetricsConfigHasBeenSet = false;
 };
 
 }  // namespace Model

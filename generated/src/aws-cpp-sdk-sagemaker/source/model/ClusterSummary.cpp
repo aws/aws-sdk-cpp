@@ -41,6 +41,10 @@ ClusterSummary& ClusterSummary::operator=(JsonView jsonValue) {
     }
     m_trainingPlanArnsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ImageVersionStatus")) {
+    m_imageVersionStatus = ClusterImageVersionStatusMapper::GetClusterImageVersionStatusForName(jsonValue.GetString("ImageVersionStatus"));
+    m_imageVersionStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,6 +73,10 @@ JsonValue ClusterSummary::Jsonize() const {
       trainingPlanArnsJsonList[trainingPlanArnsIndex].AsString(m_trainingPlanArns[trainingPlanArnsIndex]);
     }
     payload.WithArray("TrainingPlanArns", std::move(trainingPlanArnsJsonList));
+  }
+
+  if (m_imageVersionStatusHasBeenSet) {
+    payload.WithString("ImageVersionStatus", ClusterImageVersionStatusMapper::GetNameForClusterImageVersionStatus(m_imageVersionStatus));
   }
 
   return payload;

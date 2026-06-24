@@ -27,6 +27,14 @@ Aws::String StartBatchEvaluationRequest::SerializePayload() const {
     payload.WithArray("evaluators", std::move(evaluatorsJsonList));
   }
 
+  if (m_insightsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> insightsJsonList(m_insights.size());
+    for (unsigned insightsIndex = 0; insightsIndex < insightsJsonList.GetLength(); ++insightsIndex) {
+      insightsJsonList[insightsIndex].AsObject(m_insights[insightsIndex].Jsonize());
+    }
+    payload.WithArray("insights", std::move(insightsJsonList));
+  }
+
   if (m_dataSourceConfigHasBeenSet) {
     payload.WithObject("dataSourceConfig", m_dataSourceConfig.Jsonize());
   }
@@ -37,6 +45,18 @@ Aws::String StartBatchEvaluationRequest::SerializePayload() const {
 
   if (m_evaluationMetadataHasBeenSet) {
     payload.WithObject("evaluationMetadata", m_evaluationMetadata.Jsonize());
+  }
+
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
   if (m_descriptionHasBeenSet) {

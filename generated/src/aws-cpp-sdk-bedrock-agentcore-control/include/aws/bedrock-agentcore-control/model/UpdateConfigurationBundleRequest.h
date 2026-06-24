@@ -217,6 +217,26 @@ class UpdateConfigurationBundleRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional KMS key ARN for encrypting component configurations. If provided,
+   * components will be encrypted with this key. If the bundle already has a KMS key,
+   * this rotates to the new key.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  UpdateConfigurationBundleRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
@@ -235,6 +255,8 @@ class UpdateConfigurationBundleRequest : public BedrockAgentCoreControlRequest {
   Aws::String m_commitMessage;
 
   VersionCreatedBySource m_createdBy;
+
+  Aws::String m_kmsKeyArn;
   bool m_clientTokenHasBeenSet = true;
   bool m_bundleIdHasBeenSet = false;
   bool m_bundleNameHasBeenSet = false;
@@ -244,6 +266,7 @@ class UpdateConfigurationBundleRequest : public BedrockAgentCoreControlRequest {
   bool m_branchNameHasBeenSet = false;
   bool m_commitMessageHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

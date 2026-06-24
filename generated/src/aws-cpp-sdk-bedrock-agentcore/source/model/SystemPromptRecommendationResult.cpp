@@ -26,6 +26,10 @@ SystemPromptRecommendationResult& SystemPromptRecommendationResult::operator=(Js
     m_configurationBundle = jsonValue.GetObject("configurationBundle");
     m_configurationBundleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("explanation")) {
+    m_explanation = jsonValue.GetString("explanation");
+    m_explanationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("errorCode")) {
     m_errorCode = jsonValue.GetString("errorCode");
     m_errorCodeHasBeenSet = true;
@@ -46,6 +50,10 @@ JsonValue SystemPromptRecommendationResult::Jsonize() const {
 
   if (m_configurationBundleHasBeenSet) {
     payload.WithObject("configurationBundle", m_configurationBundle.Jsonize());
+  }
+
+  if (m_explanationHasBeenSet) {
+    payload.WithString("explanation", m_explanation);
   }
 
   if (m_errorCodeHasBeenSet) {

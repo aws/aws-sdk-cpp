@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AdditionalModelDataSource.h>
+#include <aws/sagemaker/model/ContainerMetricsConfig.h>
 #include <aws/sagemaker/model/ContainerMode.h>
 #include <aws/sagemaker/model/ImageConfig.h>
 #include <aws/sagemaker/model/ModelDataSource.h>
@@ -306,6 +307,29 @@ class ContainerDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for container metrics scraping. Specifies the metrics
+   * endpoint path and publishing frequency. If not specified when
+   * <code>EnableDetailedObservability</code> is <code>True</code>, the default path
+   * <code>/metrics</code> on port <code>8080</code> is used. For first-party and
+   * Deep Learning Containers (DLC), the endpoint path is determined automatically
+   * and this configuration is optional.</p>
+   */
+  inline const ContainerMetricsConfig& GetContainerMetricsConfig() const { return m_containerMetricsConfig; }
+  inline bool ContainerMetricsConfigHasBeenSet() const { return m_containerMetricsConfigHasBeenSet; }
+  template <typename ContainerMetricsConfigT = ContainerMetricsConfig>
+  void SetContainerMetricsConfig(ContainerMetricsConfigT&& value) {
+    m_containerMetricsConfigHasBeenSet = true;
+    m_containerMetricsConfig = std::forward<ContainerMetricsConfigT>(value);
+  }
+  template <typename ContainerMetricsConfigT = ContainerMetricsConfig>
+  ContainerDefinition& WithContainerMetricsConfig(ContainerMetricsConfigT&& value) {
+    SetContainerMetricsConfig(std::forward<ContainerMetricsConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_containerHostname;
 
@@ -328,6 +352,8 @@ class ContainerDefinition {
   Aws::String m_inferenceSpecificationName;
 
   MultiModelConfig m_multiModelConfig;
+
+  ContainerMetricsConfig m_containerMetricsConfig;
   bool m_containerHostnameHasBeenSet = false;
   bool m_imageHasBeenSet = false;
   bool m_imageConfigHasBeenSet = false;
@@ -339,6 +365,7 @@ class ContainerDefinition {
   bool m_modelPackageNameHasBeenSet = false;
   bool m_inferenceSpecificationNameHasBeenSet = false;
   bool m_multiModelConfigHasBeenSet = false;
+  bool m_containerMetricsConfigHasBeenSet = false;
 };
 
 }  // namespace Model

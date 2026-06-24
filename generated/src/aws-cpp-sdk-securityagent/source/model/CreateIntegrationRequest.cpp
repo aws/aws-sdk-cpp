@@ -39,5 +39,9 @@ Aws::String CreateIntegrationRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_privateConnectionNameHasBeenSet) {
+    payload.WithString("privateConnectionName", m_privateConnectionName);
+  }
+
   return payload.View().WriteReadable();
 }

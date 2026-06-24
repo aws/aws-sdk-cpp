@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
+#include <aws/logs/model/ScheduleType.h>
 #include <aws/logs/model/ScheduledQueryState.h>
 
 #include <utility>
@@ -80,15 +81,36 @@ class ListScheduledQueriesRequest : public CloudWatchLogsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filter scheduled queries by schedule type. Valid values are
+   * <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>. If not specified,
+   * scheduled queries of all schedule types are returned.</p>
+   */
+  inline ScheduleType GetScheduleType() const { return m_scheduleType; }
+  inline bool ScheduleTypeHasBeenSet() const { return m_scheduleTypeHasBeenSet; }
+  inline void SetScheduleType(ScheduleType value) {
+    m_scheduleTypeHasBeenSet = true;
+    m_scheduleType = value;
+  }
+  inline ListScheduledQueriesRequest& WithScheduleType(ScheduleType value) {
+    SetScheduleType(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_maxResults{0};
 
   Aws::String m_nextToken;
 
   ScheduledQueryState m_state{ScheduledQueryState::NOT_SET};
+
+  ScheduleType m_scheduleType{ScheduleType::NOT_SET};
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_stateHasBeenSet = false;
+  bool m_scheduleTypeHasBeenSet = false;
 };
 
 }  // namespace Model

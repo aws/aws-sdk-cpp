@@ -25,6 +25,7 @@
 #include <aws/guardduty/model/CreateDetectorRequest.h>
 #include <aws/guardduty/model/CreateFilterRequest.h>
 #include <aws/guardduty/model/CreateIPSetRequest.h>
+#include <aws/guardduty/model/CreateInvestigationRequest.h>
 #include <aws/guardduty/model/CreateMalwareProtectionPlanRequest.h>
 #include <aws/guardduty/model/CreateMembersRequest.h>
 #include <aws/guardduty/model/CreatePublishingDestinationRequest.h>
@@ -57,6 +58,7 @@
 #include <aws/guardduty/model/GetFindingsRequest.h>
 #include <aws/guardduty/model/GetFindingsStatisticsRequest.h>
 #include <aws/guardduty/model/GetIPSetRequest.h>
+#include <aws/guardduty/model/GetInvestigationRequest.h>
 #include <aws/guardduty/model/GetInvitationsCountRequest.h>
 #include <aws/guardduty/model/GetMalwareProtectionPlanRequest.h>
 #include <aws/guardduty/model/GetMalwareScanRequest.h>
@@ -75,6 +77,7 @@
 #include <aws/guardduty/model/ListFiltersRequest.h>
 #include <aws/guardduty/model/ListFindingsRequest.h>
 #include <aws/guardduty/model/ListIPSetsRequest.h>
+#include <aws/guardduty/model/ListInvestigationsRequest.h>
 #include <aws/guardduty/model/ListInvitationsRequest.h>
 #include <aws/guardduty/model/ListMalwareProtectionPlansRequest.h>
 #include <aws/guardduty/model/ListMalwareScansRequest.h>
@@ -341,6 +344,25 @@ CreateIPSetOutcome GuardDutyClient::CreateIPSet(const CreateIPSetRequest& reques
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateIPSetOutcome(result.GetResultWithOwnership()) : CreateIPSetOutcome(std::move(result.GetError()));
+}
+
+CreateInvestigationOutcome GuardDutyClient::CreateInvestigation(const CreateInvestigationRequest& request) const {
+  if (!request.DetectorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateInvestigation", "Required field: DetectorId, is not set");
+    return CreateInvestigationOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [DetectorId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/investigation");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInvestigationOutcome(result.GetResultWithOwnership())
+                            : CreateInvestigationOutcome(std::move(result.GetError()));
 }
 
 CreateMalwareProtectionPlanOutcome GuardDutyClient::CreateMalwareProtectionPlan(const CreateMalwareProtectionPlanRequest& request) const {
@@ -958,6 +980,31 @@ GetIPSetOutcome GuardDutyClient::GetIPSet(const GetIPSetRequest& request) const 
   return result.IsSuccess() ? GetIPSetOutcome(result.GetResultWithOwnership()) : GetIPSetOutcome(std::move(result.GetError()));
 }
 
+GetInvestigationOutcome GuardDutyClient::GetInvestigation(const GetInvestigationRequest& request) const {
+  if (!request.DetectorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetInvestigation", "Required field: DetectorId, is not set");
+    return GetInvestigationOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [DetectorId]", false));
+  }
+  if (!request.InvestigationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetInvestigation", "Required field: InvestigationId, is not set");
+    return GetInvestigationOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [InvestigationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/investigation/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInvestigationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInvestigationOutcome(result.GetResultWithOwnership())
+                            : GetInvestigationOutcome(std::move(result.GetError()));
+}
+
 GetInvitationsCountOutcome GuardDutyClient::GetInvitationsCount(const GetInvitationsCountRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1282,6 +1329,25 @@ ListIPSetsOutcome GuardDutyClient::ListIPSets(const ListIPSetsRequest& request) 
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListIPSetsOutcome(result.GetResultWithOwnership()) : ListIPSetsOutcome(std::move(result.GetError()));
+}
+
+ListInvestigationsOutcome GuardDutyClient::ListInvestigations(const ListInvestigationsRequest& request) const {
+  if (!request.DetectorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListInvestigations", "Required field: DetectorId, is not set");
+    return ListInvestigationsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [DetectorId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/investigation/list");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInvestigationsOutcome(result.GetResultWithOwnership())
+                            : ListInvestigationsOutcome(std::move(result.GetError()));
 }
 
 ListInvitationsOutcome GuardDutyClient::ListInvitations(const ListInvitationsRequest& request) const {

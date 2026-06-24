@@ -221,6 +221,11 @@ SupportContainerDefinitionInput& SupportContainerDefinitionInput::operator=(cons
                   m_vcpu = val.value();
                 }
                 m_vcpuHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LinuxCapabilities") {
+                m_linuxCapabilities = LinuxCapabilities(decoder);
+                m_linuxCapabilitiesHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -437,6 +442,11 @@ SupportContainerDefinitionInput& SupportContainerDefinitionInput::operator=(cons
                 m_vcpu = val.value();
               }
               m_vcpuHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LinuxCapabilities") {
+              m_linuxCapabilities = LinuxCapabilities(decoder);
+              m_linuxCapabilitiesHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -481,6 +491,9 @@ void SupportContainerDefinitionInput::CborEncode(Aws::Crt::Cbor::CborEncoder& en
     mapSize++;
   }
   if (m_vcpuHasBeenSet) {
+    mapSize++;
+  }
+  if (m_linuxCapabilitiesHasBeenSet) {
     mapSize++;
   }
 
@@ -543,6 +556,11 @@ void SupportContainerDefinitionInput::CborEncode(Aws::Crt::Cbor::CborEncoder& en
   if (m_vcpuHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("Vcpu"));
     encoder.WriteFloat(m_vcpu);
+  }
+
+  if (m_linuxCapabilitiesHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LinuxCapabilities"));
+    m_linuxCapabilities.CborEncode(encoder);
   }
 }
 

@@ -62,6 +62,10 @@ CustomJWTAuthorizerConfiguration& CustomJWTAuthorizerConfiguration::operator=(Js
     }
     m_privateEndpointOverridesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("allowedWorkloadConfiguration")) {
+    m_allowedWorkloadConfiguration = jsonValue.GetObject("allowedWorkloadConfiguration");
+    m_allowedWorkloadConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -116,6 +120,10 @@ JsonValue CustomJWTAuthorizerConfiguration::Jsonize() const {
           m_privateEndpointOverrides[privateEndpointOverridesIndex].Jsonize());
     }
     payload.WithArray("privateEndpointOverrides", std::move(privateEndpointOverridesJsonList));
+  }
+
+  if (m_allowedWorkloadConfigurationHasBeenSet) {
+    payload.WithObject("allowedWorkloadConfiguration", m_allowedWorkloadConfiguration.Jsonize());
   }
 
   return payload;

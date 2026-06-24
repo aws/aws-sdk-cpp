@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EvaluationFormItemEnablementConfiguration.h>
+#include <aws/connect/model/EvaluationFormQuestionScoringConfiguration.h>
 #include <aws/connect/model/EvaluationFormQuestionType.h>
 #include <aws/connect/model/EvaluationFormQuestionTypeProperties.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -174,6 +175,24 @@ class EvaluationFormQuestion {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The scoring configuration of the question.</p>
+   */
+  inline const EvaluationFormQuestionScoringConfiguration& GetScoringConfiguration() const { return m_scoringConfiguration; }
+  inline bool ScoringConfigurationHasBeenSet() const { return m_scoringConfigurationHasBeenSet; }
+  template <typename ScoringConfigurationT = EvaluationFormQuestionScoringConfiguration>
+  void SetScoringConfiguration(ScoringConfigurationT&& value) {
+    m_scoringConfigurationHasBeenSet = true;
+    m_scoringConfiguration = std::forward<ScoringConfigurationT>(value);
+  }
+  template <typename ScoringConfigurationT = EvaluationFormQuestionScoringConfiguration>
+  EvaluationFormQuestion& WithScoringConfiguration(ScoringConfigurationT&& value) {
+    SetScoringConfiguration(std::forward<ScoringConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_title;
 
@@ -190,6 +209,8 @@ class EvaluationFormQuestion {
   EvaluationFormItemEnablementConfiguration m_enablement;
 
   double m_weight{0.0};
+
+  EvaluationFormQuestionScoringConfiguration m_scoringConfiguration;
   bool m_titleHasBeenSet = false;
   bool m_instructionsHasBeenSet = false;
   bool m_refIdHasBeenSet = false;
@@ -198,6 +219,7 @@ class EvaluationFormQuestion {
   bool m_questionTypePropertiesHasBeenSet = false;
   bool m_enablementHasBeenSet = false;
   bool m_weightHasBeenSet = false;
+  bool m_scoringConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

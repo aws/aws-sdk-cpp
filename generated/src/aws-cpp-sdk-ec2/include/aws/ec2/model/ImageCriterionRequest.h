@@ -10,6 +10,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/CreationDateConditionRequest.h>
 #include <aws/ec2/model/DeprecationTimeConditionRequest.h>
+#include <aws/ec2/model/ImageWatermarkFilterRequest.h>
 
 #include <utility>
 
@@ -29,8 +30,8 @@ namespace Model {
  * <code>ImageCriterion</code> </p> </li> </ul> <p>Each <code>ImageCriterion</code>
  * can include up to:</p> <ul> <li> <p>200 values for <code>ImageProviders</code>
  * </p> </li> <li> <p>50 values for <code>ImageNames</code> </p> </li> <li> <p>50
- * values for <code>MarketplaceProductCodes</code> </p> </li> </ul> <p>For more
- * information, see <a
+ * values for <code>MarketplaceProductCodes</code> </p> </li> <li> <p>50 values for
+ * <code>ImageWatermarks</code> </p> </li> </ul> <p>For more information, see <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html#how-allowed-amis-works">How
  * Allowed AMIs works</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
  * Also:</h3>   <a
@@ -169,6 +170,34 @@ class ImageCriterionRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The watermark criteria that an AMI must match to be allowed. An AMI is
+   * allowed if it carries at least one watermark that satisfies an
+   * ImageWatermarkFilter. A watermark satisfies a filter when all specified fields
+   * in the ImageWatermarkFilter match the corresponding values on the watermark of
+   * the AMI.</p> <p>Maximum: 50 values</p>
+   */
+  inline const Aws::Vector<ImageWatermarkFilterRequest>& GetImageWatermarks() const { return m_imageWatermarks; }
+  inline bool ImageWatermarksHasBeenSet() const { return m_imageWatermarksHasBeenSet; }
+  template <typename ImageWatermarksT = Aws::Vector<ImageWatermarkFilterRequest>>
+  void SetImageWatermarks(ImageWatermarksT&& value) {
+    m_imageWatermarksHasBeenSet = true;
+    m_imageWatermarks = std::forward<ImageWatermarksT>(value);
+  }
+  template <typename ImageWatermarksT = Aws::Vector<ImageWatermarkFilterRequest>>
+  ImageCriterionRequest& WithImageWatermarks(ImageWatermarksT&& value) {
+    SetImageWatermarks(std::forward<ImageWatermarksT>(value));
+    return *this;
+  }
+  template <typename ImageWatermarksT = ImageWatermarkFilterRequest>
+  ImageCriterionRequest& AddImageWatermarks(ImageWatermarksT&& value) {
+    m_imageWatermarksHasBeenSet = true;
+    m_imageWatermarks.emplace_back(std::forward<ImageWatermarksT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_imageProviders;
 
@@ -179,11 +208,14 @@ class ImageCriterionRequest {
   DeprecationTimeConditionRequest m_deprecationTimeCondition;
 
   CreationDateConditionRequest m_creationDateCondition;
+
+  Aws::Vector<ImageWatermarkFilterRequest> m_imageWatermarks;
   bool m_imageProvidersHasBeenSet = false;
   bool m_marketplaceProductCodesHasBeenSet = false;
   bool m_imageNamesHasBeenSet = false;
   bool m_deprecationTimeConditionHasBeenSet = false;
   bool m_creationDateConditionHasBeenSet = false;
+  bool m_imageWatermarksHasBeenSet = false;
 };
 
 }  // namespace Model

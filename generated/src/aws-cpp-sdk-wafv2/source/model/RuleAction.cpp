@@ -38,6 +38,10 @@ RuleAction& RuleAction::operator=(JsonView jsonValue) {
     m_challenge = jsonValue.GetObject("Challenge");
     m_challengeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Monetize")) {
+    m_monetize = jsonValue.GetObject("Monetize");
+    m_monetizeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue RuleAction::Jsonize() const {
 
   if (m_challengeHasBeenSet) {
     payload.WithObject("Challenge", m_challenge.Jsonize());
+  }
+
+  if (m_monetizeHasBeenSet) {
+    payload.WithObject("Monetize", m_monetize.Jsonize());
   }
 
   return payload;

@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/CreateLocalGatewayRouteRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVpcAssociationRequest.h>
@@ -118,7 +119,6 @@
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationRequest.h>
-#include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceGroupRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+CreateLocalGatewayRouteOutcome EC2Client::CreateLocalGatewayRoute(const CreateLocalGatewayRouteRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocalGatewayRouteOutcome(result.GetResultWithOwnership())
+                            : CreateLocalGatewayRouteOutcome(std::move(result.GetError()));
+}
 
 CreateLocalGatewayRouteTableOutcome EC2Client::CreateLocalGatewayRouteTable(const CreateLocalGatewayRouteTableRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -741,11 +747,4 @@ DeleteLocalGatewayVirtualInterfaceOutcome EC2Client::DeleteLocalGatewayVirtualIn
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteLocalGatewayVirtualInterfaceOutcome(result.GetResultWithOwnership())
                             : DeleteLocalGatewayVirtualInterfaceOutcome(std::move(result.GetError()));
-}
-
-DeleteLocalGatewayVirtualInterfaceGroupOutcome EC2Client::DeleteLocalGatewayVirtualInterfaceGroup(
-    const DeleteLocalGatewayVirtualInterfaceGroupRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteLocalGatewayVirtualInterfaceGroupOutcome(result.GetResultWithOwnership())
-                            : DeleteLocalGatewayVirtualInterfaceGroupOutcome(std::move(result.GetError()));
 }

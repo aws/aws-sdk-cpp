@@ -10,7 +10,7 @@
 namespace Aws {
 namespace WAFV2 {
 namespace Model {
-enum class ActionValue { NOT_SET, ALLOW, BLOCK, COUNT, CAPTCHA, CHALLENGE, EXCLUDED_AS_COUNT };
+enum class ActionValue { NOT_SET, ALLOW, BLOCK, COUNT, CAPTCHA, CHALLENGE, MONETIZE, EXCLUDED_AS_COUNT };
 
 namespace ActionValueMapper {
 AWS_WAFV2_API ActionValue GetActionValueForName(const Aws::String& name);

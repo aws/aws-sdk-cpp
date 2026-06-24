@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/BatchEvaluationTraceConfig.h>
 #include <aws/bedrock-agentcore/model/CloudWatchLogsTraceConfig.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -75,12 +76,33 @@ class AgentTracesConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Use a completed batch evaluation as the source of agent traces.</p>
+   */
+  inline const BatchEvaluationTraceConfig& GetBatchEvaluation() const { return m_batchEvaluation; }
+  inline bool BatchEvaluationHasBeenSet() const { return m_batchEvaluationHasBeenSet; }
+  template <typename BatchEvaluationT = BatchEvaluationTraceConfig>
+  void SetBatchEvaluation(BatchEvaluationT&& value) {
+    m_batchEvaluationHasBeenSet = true;
+    m_batchEvaluation = std::forward<BatchEvaluationT>(value);
+  }
+  template <typename BatchEvaluationT = BatchEvaluationTraceConfig>
+  AgentTracesConfig& WithBatchEvaluation(BatchEvaluationT&& value) {
+    SetBatchEvaluation(std::forward<BatchEvaluationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::Utils::Document> m_sessionSpans;
 
   CloudWatchLogsTraceConfig m_cloudwatchLogs;
+
+  BatchEvaluationTraceConfig m_batchEvaluation;
   bool m_sessionSpansHasBeenSet = false;
   bool m_cloudwatchLogsHasBeenSet = false;
+  bool m_batchEvaluationHasBeenSet = false;
 };
 
 }  // namespace Model

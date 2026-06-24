@@ -26,6 +26,10 @@ ToolDescriptionOutput& ToolDescriptionOutput::operator=(JsonView jsonValue) {
     m_recommendedToolDescription = jsonValue.GetString("recommendedToolDescription");
     m_recommendedToolDescriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("explanation")) {
+    m_explanation = jsonValue.GetString("explanation");
+    m_explanationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ToolDescriptionOutput::Jsonize() const {
 
   if (m_recommendedToolDescriptionHasBeenSet) {
     payload.WithString("recommendedToolDescription", m_recommendedToolDescription);
+  }
+
+  if (m_explanationHasBeenSet) {
+    payload.WithString("explanation", m_explanation);
   }
 
   return payload;

@@ -43,6 +43,10 @@
 #include <aws/s3-crt/model/SelectObjectContentRequest.h>
 #include <aws/s3-crt/model/Tagging.h>
 #include <aws/s3-crt/model/PutBucketTaggingRequest.h>
+#include <aws/s3-crt/model/GetObjectTaggingRequest.h>
+#include <aws/s3-crt/model/PutObjectTaggingRequest.h>
+#include <aws/s3-crt/model/MetadataDirective.h>
+#include <aws/s3-crt/model/TaggingDirective.h>
 #include <aws/s3-crt/ClientConfiguration.h>
 #include <aws/testing/ProxyConfig.h>
 #include <aws/testing/platform/PlatformTesting.h>
@@ -986,6 +990,91 @@ namespace
 
         auto copyOutcome = Client->CopyObject(copyRequest);
         AWS_ASSERT_SUCCESS(copyOutcome);
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestCopyObjectCopiesMetadataAndTags)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_OBJECTS_BUCKET_NAME.c_str());
+        SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
+
+        const char* sourceKey = "copy-props-source";
+        const char* destKey = "copy-props-destination";
+
+        auto objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+        *objectStream << "high level copy metadata and tags test payload";
+        objectStream->flush();
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+        putObjectRequest.SetKey(sourceKey);
+        putObjectRequest.SetBody(objectStream);
+        putObjectRequest.SetContentLength(static_cast<long>(putObjectRequest.GetBody()->tellp()));
+        putObjectRequest.SetContentType("application/x-high-level-copy");
+        putObjectRequest.AddMetadata("project", "highlevelcopy");
+        putObjectRequest.AddMetadata("owner", "sdk-team");
+        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
+        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, sourceKey));
+
+        {
+            PutObjectTaggingRequest putTaggingRequest;
+            putTaggingRequest.SetBucket(fullBucketName);
+            putTaggingRequest.SetKey(sourceKey);
+            Tagging tagging;
+            Tag t1; t1.SetKey("env"); t1.SetValue("test");
+            Tag t2; t2.SetKey("team"); t2.SetValue("sdk");
+            tagging.AddTagSet(t1);
+            tagging.AddTagSet(t2);
+            putTaggingRequest.SetTagging(tagging);
+            auto putTaggingOutcome = Client->PutObjectTagging(putTaggingRequest);
+            AWS_ASSERT_SUCCESS(putTaggingOutcome);
+        }
+
+        CopyObjectRequest copyRequest;
+        copyRequest.WithBucket(fullBucketName)
+            .WithKey(destKey)
+            .WithCopySource(fullBucketName + "/" + sourceKey)
+            .WithMetadataDirective(MetadataDirective::COPY)
+            .WithTaggingDirective(TaggingDirective::COPY);
+        auto copyOutcome = Client->CopyObject(copyRequest);
+        AWS_ASSERT_SUCCESS(copyOutcome);
+        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, destKey));
+
+        {
+            HeadObjectRequest headRequest;
+            headRequest.SetBucket(fullBucketName);
+            headRequest.SetKey(destKey);
+            auto headOutcome = Client->HeadObject(headRequest);
+            AWS_ASSERT_SUCCESS(headOutcome);
+            const auto& metadata = headOutcome.GetResult().GetMetadata();
+            ASSERT_EQ(1u, metadata.count("project"));
+            ASSERT_STREQ("highlevelcopy", metadata.at("project").c_str());
+            ASSERT_EQ(1u, metadata.count("owner"));
+            ASSERT_STREQ("sdk-team", metadata.at("owner").c_str());
+            ASSERT_STREQ("application/x-high-level-copy", headOutcome.GetResult().GetContentType().c_str());
+        }
+
+        {
+            GetObjectTaggingRequest getTaggingRequest;
+            getTaggingRequest.SetBucket(fullBucketName);
+            getTaggingRequest.SetKey(destKey);
+            auto getTaggingOutcome = Client->GetObjectTagging(getTaggingRequest);
+            AWS_ASSERT_SUCCESS(getTaggingOutcome);
+            Aws::Map<Aws::String, Aws::String> tags;
+            for (const auto& tag : getTaggingOutcome.GetResult().GetTagSet())
+            {
+                tags[tag.GetKey()] = tag.GetValue();
+            }
+            ASSERT_EQ(2u, tags.size());
+            ASSERT_STREQ("test", tags["env"].c_str());
+            ASSERT_STREQ("sdk", tags["team"].c_str());
+        }
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationWithEventStream)

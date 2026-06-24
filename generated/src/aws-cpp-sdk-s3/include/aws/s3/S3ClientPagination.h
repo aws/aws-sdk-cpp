@@ -8,6 +8,7 @@
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/ListBucketsPaginationTraits.h>
 #include <aws/s3/model/ListDirectoryBucketsPaginationTraits.h>
+#include <aws/s3/model/ListObjectAnnotationsPaginationTraits.h>
 #include <aws/s3/model/ListObjectsV2PaginationTraits.h>
 #include <aws/s3/model/ListPartsPaginationTraits.h>
 
@@ -18,6 +19,8 @@ using ListBucketsPaginator =
     Aws::Utils::Pagination::Paginator<S3Client, Model::ListBucketsRequest, Pagination::ListBucketsPaginationTraits<S3Client>>;
 using ListDirectoryBucketsPaginator = Aws::Utils::Pagination::Paginator<S3Client, Model::ListDirectoryBucketsRequest,
                                                                         Pagination::ListDirectoryBucketsPaginationTraits<S3Client>>;
+using ListObjectAnnotationsPaginator = Aws::Utils::Pagination::Paginator<S3Client, Model::ListObjectAnnotationsRequest,
+                                                                         Pagination::ListObjectAnnotationsPaginationTraits<S3Client>>;
 using ListObjectsV2Paginator =
     Aws::Utils::Pagination::Paginator<S3Client, Model::ListObjectsV2Request, Pagination::ListObjectsV2PaginationTraits<S3Client>>;
 using ListPartsPaginator =

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ContainerMetricsConfig.h>
 
 #include <utility>
 
@@ -97,15 +98,42 @@ class InferenceComponentContainerSpecification {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for container metrics scraping. Specifies the metrics
+   * endpoint path and publishing frequency for the inference component's container.
+   * If not specified when <code>EnableDetailedObservability</code> is
+   * <code>True</code>, the default path <code>/metrics</code> on port
+   * <code>8080</code> is used. For first-party and Deep Learning Containers (DLC),
+   * the endpoint path is determined automatically and this configuration is
+   * optional.</p>
+   */
+  inline const ContainerMetricsConfig& GetContainerMetricsConfig() const { return m_containerMetricsConfig; }
+  inline bool ContainerMetricsConfigHasBeenSet() const { return m_containerMetricsConfigHasBeenSet; }
+  template <typename ContainerMetricsConfigT = ContainerMetricsConfig>
+  void SetContainerMetricsConfig(ContainerMetricsConfigT&& value) {
+    m_containerMetricsConfigHasBeenSet = true;
+    m_containerMetricsConfig = std::forward<ContainerMetricsConfigT>(value);
+  }
+  template <typename ContainerMetricsConfigT = ContainerMetricsConfig>
+  InferenceComponentContainerSpecification& WithContainerMetricsConfig(ContainerMetricsConfigT&& value) {
+    SetContainerMetricsConfig(std::forward<ContainerMetricsConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_image;
 
   Aws::String m_artifactUrl;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
+
+  ContainerMetricsConfig m_containerMetricsConfig;
   bool m_imageHasBeenSet = false;
   bool m_artifactUrlHasBeenSet = false;
   bool m_environmentHasBeenSet = false;
+  bool m_containerMetricsConfigHasBeenSet = false;
 };
 
 }  // namespace Model

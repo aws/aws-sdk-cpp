@@ -21,8 +21,8 @@ namespace BedrockAgent {
 namespace Model {
 
 /**
- * <p>The configuration information to connect to Confluence as your data
- * source.</p><p><h3>See Also:</h3>   <a
+ * <p>The configuration information to connect to Confluence as your data source
+ * for self-managed knowledge bases.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ConfluenceDataSourceConfiguration">AWS
  * API Reference</a></p>
  */

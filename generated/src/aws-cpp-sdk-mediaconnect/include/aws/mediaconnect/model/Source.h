@@ -195,8 +195,8 @@ class Source {
 
   ///@{
   /**
-   * <p> The IP address that the flow communicates with to initiate connection with
-   * the sender.</p>
+   * <p> The port that the flow uses to send outbound requests to initiate connection
+   * with the sender.</p>
    */
   inline int GetSenderControlPort() const { return m_senderControlPort; }
   inline bool SenderControlPortHasBeenSet() const { return m_senderControlPortHasBeenSet; }
@@ -212,8 +212,8 @@ class Source {
 
   ///@{
   /**
-   * <p> The port that the flow uses to send outbound requests to initiate connection
-   * with the sender.</p>
+   * <p> The IP address that the flow communicates with to initiate connection with
+   * the sender.</p>
    */
   inline const Aws::String& GetSenderIpAddress() const { return m_senderIpAddress; }
   inline bool SenderIpAddressHasBeenSet() const { return m_senderIpAddressHasBeenSet; }

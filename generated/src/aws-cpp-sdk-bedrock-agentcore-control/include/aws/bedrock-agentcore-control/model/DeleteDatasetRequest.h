@@ -53,9 +53,8 @@ class DeleteDatasetRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Optional version to delete. Use &quot;DRAFT&quot; or omit to delete the
-   * draft. Returns ResourceNotFoundException if the specified version does not
-   * exist.</p>
+   * <p> Optional version to delete. If absent, deletes the entire dataset. If
+   * provided, deletes only that specific version. </p>
    */
   inline const Aws::String& GetDatasetVersion() const { return m_datasetVersion; }
   inline bool DatasetVersionHasBeenSet() const { return m_datasetVersionHasBeenSet; }

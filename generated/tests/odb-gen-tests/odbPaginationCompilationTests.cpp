@@ -8,16 +8,22 @@
 
 #include <aws/odb/OdbClientPagination.h>
 #include <aws/odb/OdbPaginationBase.h>
+#include <aws/odb/model/ListAutonomousDatabasesPaginationTraits.h>
+#include <aws/odb/model/ListOdbPeeringConnectionsPaginationTraits.h>
+#include <aws/odb/model/ListDbSystemShapesPaginationTraits.h>
+#include <aws/odb/model/ListSystemVersionsPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabaseClonesPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousVirtualMachinesPaginationTraits.h>
 #include <aws/odb/model/ListGiVersionsPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabaseBackupsPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabaseVersionsPaginationTraits.h>
 #include <aws/odb/model/ListCloudVmClustersPaginationTraits.h>
-#include <aws/odb/model/ListOdbPeeringConnectionsPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabasePeersPaginationTraits.h>
 #include <aws/odb/model/ListCloudAutonomousVmClustersPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabaseCharacterSetsPaginationTraits.h>
 #include <aws/odb/model/ListDbNodesPaginationTraits.h>
 #include <aws/odb/model/ListDbServersPaginationTraits.h>
-#include <aws/odb/model/ListDbSystemShapesPaginationTraits.h>
 #include <aws/odb/model/ListOdbNetworksPaginationTraits.h>
-#include <aws/odb/model/ListSystemVersionsPaginationTraits.h>
 #include <aws/odb/model/ListCloudExadataInfrastructuresPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

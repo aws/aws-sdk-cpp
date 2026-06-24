@@ -22,6 +22,10 @@ KnowledgeBaseRetrievalResult& KnowledgeBaseRetrievalResult::operator=(JsonView j
     m_content = jsonValue.GetObject("content");
     m_contentHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("documentId")) {
+    m_documentId = jsonValue.GetString("documentId");
+    m_documentIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("location")) {
     m_location = jsonValue.GetObject("location");
     m_locationHasBeenSet = true;
@@ -45,6 +49,10 @@ JsonValue KnowledgeBaseRetrievalResult::Jsonize() const {
 
   if (m_contentHasBeenSet) {
     payload.WithObject("content", m_content.Jsonize());
+  }
+
+  if (m_documentIdHasBeenSet) {
+    payload.WithString("documentId", m_documentId);
   }
 
   if (m_locationHasBeenSet) {

@@ -33,6 +33,11 @@ MetadataConfiguration& MetadataConfiguration::operator=(const XmlNode& xmlNode) 
       m_inventoryTableConfiguration = inventoryTableConfigurationNode;
       m_inventoryTableConfigurationHasBeenSet = true;
     }
+    XmlNode annotationTableConfigurationNode = resultNode.FirstChild("AnnotationTableConfiguration");
+    if (!annotationTableConfigurationNode.IsNull()) {
+      m_annotationTableConfiguration = annotationTableConfigurationNode;
+      m_annotationTableConfigurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -48,6 +53,11 @@ void MetadataConfiguration::AddToNode(XmlNode& parentNode) const {
   if (m_inventoryTableConfigurationHasBeenSet) {
     XmlNode inventoryTableConfigurationNode = parentNode.CreateChildElement("InventoryTableConfiguration");
     m_inventoryTableConfiguration.AddToNode(inventoryTableConfigurationNode);
+  }
+
+  if (m_annotationTableConfigurationHasBeenSet) {
+    XmlNode annotationTableConfigurationNode = parentNode.CreateChildElement("AnnotationTableConfiguration");
+    m_annotationTableConfiguration.AddToNode(annotationTableConfigurationNode);
   }
 }
 

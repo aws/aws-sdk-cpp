@@ -71,10 +71,10 @@ class CreateApiKeyCredentialProviderRequest : public BedrockAgentCoreControlRequ
 
   ///@{
   /**
-   * <p>A reference to the AWS Secrets Manager secret that stores the API key. This
-   * includes the secret ID and the JSON key used to extract the API key value from
-   * the secret. Required when <code>apiKeySecretSource</code> is set to
-   * <code>EXTERNAL</code>.</p>
+   * <p>A reference to the Amazon Web Services Secrets Manager secret that stores the
+   * API key. This includes the secret ID and the JSON key used to extract the API
+   * key value from the secret. Required when <code>apiKeySecretSource</code> is set
+   * to <code>EXTERNAL</code>.</p>
    */
   inline const SecretReference& GetApiKeySecretConfig() const { return m_apiKeySecretConfig; }
   inline bool ApiKeySecretConfigHasBeenSet() const { return m_apiKeySecretConfigHasBeenSet; }
@@ -94,7 +94,7 @@ class CreateApiKeyCredentialProviderRequest : public BedrockAgentCoreControlRequ
   /**
    * <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret
    * is managed by the service, or <code>EXTERNAL</code> if you manage the secret
-   * yourself in AWS Secrets Manager.</p>
+   * yourself in Amazon Web Services Secrets Manager.</p>
    */
   inline SecretSourceType GetApiKeySecretSource() const { return m_apiKeySecretSource; }
   inline bool ApiKeySecretSourceHasBeenSet() const { return m_apiKeySecretSourceHasBeenSet; }

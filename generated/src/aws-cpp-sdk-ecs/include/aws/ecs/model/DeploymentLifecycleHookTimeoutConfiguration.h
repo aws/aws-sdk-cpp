@@ -36,7 +36,7 @@ class DeploymentLifecycleHookTimeoutConfiguration {
   ///@{
   /**
    * <p>The number of minutes Amazon ECS waits for the lifecycle hook to complete
-   * before taking the timeout action.</p>
+   * before taking the timeout action.</p> <p>Default: 1440 (24 hours)</p>
    */
   inline int GetTimeoutInMinutes() const { return m_timeoutInMinutes; }
   inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
@@ -55,7 +55,8 @@ class DeploymentLifecycleHookTimeoutConfiguration {
    * <p>The action Amazon ECS takes when the lifecycle hook times out. Valid values
    * are:</p> <ul> <li> <p> <code>CONTINUE</code> - Proceeds the deployment to the
    * next lifecycle stage.</p> </li> <li> <p> <code>ROLLBACK</code> - Rolls back the
-   * deployment to the previous service revision.</p> </li> </ul>
+   * deployment to the previous service revision.</p> </li> </ul> <p>Default:
+   * <code>ROLLBACK</code> </p>
    */
   inline DeploymentLifecycleHookAction GetAction() const { return m_action; }
   inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }

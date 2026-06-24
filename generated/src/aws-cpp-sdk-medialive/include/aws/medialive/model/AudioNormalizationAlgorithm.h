@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaLive {
 namespace Model {
-enum class AudioNormalizationAlgorithm { NOT_SET, ITU_1770_1, ITU_1770_2 };
+enum class AudioNormalizationAlgorithm { NOT_SET, ITU_1770_1, ITU_1770_2, ITU_1770_3, ITU_1770_4 };
 
 namespace AudioNormalizationAlgorithmMapper {
 AWS_MEDIALIVE_API AudioNormalizationAlgorithm GetAudioNormalizationAlgorithmForName(const Aws::String& name);

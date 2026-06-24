@@ -83,16 +83,10 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   virtual ~BedrockAgentCoreControlClient();
 
   /**
-   * <p>Adds examples to the dataset's DRAFT.</p> <p><strong>Validation:</strong> All
-   * examples are validated against the dataset's schemaType before any writes occur.
-   * If any example fails validation, the entire batch is rejected with
-   * ValidationException — no examples are written (all-or-nothing semantics).</p>
-   * <p><strong>Asynchronous:</strong> Operates in-place on DRAFT. No version bump
-   * occurs. Use CreateDatasetVersion to publish DRAFT as a new numbered version.</p>
-   * <p><strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY)
-   * if the dataset status is not in {DRAFT, ACTIVE}.</p> <p><strong>Request size
-   * limit:</strong> Max 5 MB total request body. Max 1000 examples per
-   * call.</p><p><h3>See Also:</h3>   <a
+   * <p> Adds examples to the dataset's DRAFT. All examples are validated against the
+   * dataset's schema type before any writes occur. If any example fails validation,
+   * the entire batch is rejected (all-or-nothing semantics). </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/AddDatasetExamples">AWS
    * API Reference</a></p>
    */
@@ -312,9 +306,9 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Creates a new Dataset resource asynchronously.</p> <p>Returns immediately
-   * with status CREATING. Poll GetDataset until status transitions to ACTIVE or
-   * CREATE_FAILED (with failureReason).</p><p><h3>See Also:</h3>   <a
+   * <p> Creates a new dataset resource asynchronously. Returns immediately with
+   * status CREATING. Poll <code>GetDataset</code> until status transitions to ACTIVE
+   * or CREATE_FAILED. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateDataset">AWS
    * API Reference</a></p>
    */
@@ -339,15 +333,10 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Publishes the current DRAFT as a new numbered version.</p> <p>Snapshots the
-   * DRAFT examples as the next version (1, 2, 3, ...). The DRAFT is preserved and
-   * remains editable after publishing. Returns immediately with status UPDATING.
-   * Poll GetDataset until status transitions to ACTIVE (draftStatus=UNMODIFIED) or
-   * UPDATE_FAILED.</p> <p><strong>State guard:</strong> Returns ConflictException
-   * (DATASET_NOT_READY) if status is in {CREATING, UPDATING, DELETING}, or
-   * DATASET_IN_FAILED_STATE if status is in {CREATE_FAILED, DELETE_FAILED}.</p>
-   * <p><strong>Quota:</strong> MAX_VERSIONS_PER_DATASET applies to published
-   * versions only (not DRAFT).</p><p><h3>See Also:</h3>   <a
+   * <p> Publishes the current DRAFT as a new numbered version. The DRAFT is
+   * preserved and remains editable after publishing. Returns immediately with status
+   * UPDATING. Poll <code>GetDataset</code> until status transitions to ACTIVE or
+   * UPDATE_FAILED. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateDatasetVersion">AWS
    * API Reference</a></p>
    */
@@ -486,7 +475,7 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Operation to create a Harness.</p><p><h3>See Also:</h3>   <a
+   * <p>Operation to create a harness.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateHarness">AWS
    * API Reference</a></p>
    */
@@ -508,6 +497,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void CreateHarnessAsync(const CreateHarnessRequestT& request, const CreateHarnessResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::CreateHarness, request, handler, context);
+  }
+
+  /**
+   * <p>Operation to create a harness endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateHarnessEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateHarnessEndpointOutcome CreateHarnessEndpoint(const Model::CreateHarnessEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateHarnessEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateHarnessEndpointRequestT = Model::CreateHarnessEndpointRequest>
+  Model::CreateHarnessEndpointOutcomeCallable CreateHarnessEndpointCallable(const CreateHarnessEndpointRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreateHarnessEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for CreateHarnessEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateHarnessEndpointRequestT = Model::CreateHarnessEndpointRequest>
+  void CreateHarnessEndpointAsync(const CreateHarnessEndpointRequestT& request, const CreateHarnessEndpointResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreateHarnessEndpoint, request, handler, context);
   }
 
   /**
@@ -1036,26 +1051,10 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Deletes a dataset version or an entire dataset (all versions + name claim).
-   * Asynchronous 202.</p> <p><strong>State transitions:</strong></p> <ul> <li>If
-   * <code>datasetVersion</code> is absent (full delete): status transitions to
-   * DELETING immediately.</li> <li>If <code>datasetVersion</code> is provided
-   * (version-specific delete): status transitions to UPDATING.</li> </ul>
-   * <p><strong>State guard (full delete):</strong> Returns ConflictException
-   * (DATASET_NOT_READY) if the dataset status is in {CREATING, UPDATING}. Deletion
-   * is allowed from ACTIVE, CREATE_FAILED, UPDATE_FAILED, and DELETE_FAILED
-   * states.</p> <p><strong>State guard (version-specific delete):</strong> Returns
-   * ConflictException (DATASET_NOT_READY) if the dataset status is not in {ACTIVE,
-   * CREATE_FAILED, UPDATE_FAILED}.</p> <p>Fails with ConflictException
-   * (REFERENCED_BY_EVAL_JOB) if referenced by an active evaluation job (full delete
-   * only).</p> <p>If the delete workflow fails after retries, status is set to
-   * DELETE_FAILED (full delete) or UPDATE_FAILED (version-specific delete). Calling
-   * DeleteDataset on a DELETE_FAILED dataset re-triggers the delete workflow
-   * (idempotent retry path).</p> <p><strong>Version parameter:</strong></p> <ul>
-   * <li>If <code>datasetVersion</code> is absent: deletes ALL versions and the
-   * Dataset record itself.</li> <li>If <code>datasetVersion</code> is provided:
-   * deletes only that specific DatasetVersion. Returns ResourceNotFoundException if
-   * the specified version does not exist.</li> </ul><p><h3>See Also:</h3>   <a
+   * <p> Deletes a dataset version or an entire dataset asynchronously. If
+   * <code>datasetVersion</code> is absent, deletes all versions and the dataset
+   * record itself. If provided, deletes only that specific version. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteDataset">AWS
    * API Reference</a></p>
    */
@@ -1080,15 +1079,9 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Deletes specific examples by ID from DRAFT.</p>
-   * <p><strong>Validation:</strong> All example IDs are validated before any deletes
-   * occur. If any ID does not exist in DRAFT, the entire batch is rejected with
-   * ResourceNotFoundException — no examples are deleted (all-or-nothing
-   * semantics).</p> <p><strong>Asynchronous:</strong> Operates in-place on DRAFT. No
-   * version bump occurs. Use CreateDatasetVersion to publish DRAFT as a new numbered
-   * version.</p> <p><strong>State guard:</strong> Returns ConflictException
-   * (DATASET_NOT_READY) if the dataset status is not in {DRAFT,
-   * ACTIVE}.</p><p><h3>See Also:</h3>   <a
+   * <p> Deletes specific examples by ID from DRAFT. All example IDs are validated
+   * before any deletes occur. If any ID does not exist in DRAFT, the entire batch is
+   * rejected (all-or-nothing semantics). </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteDatasetExamples">AWS
    * API Reference</a></p>
    */
@@ -1244,6 +1237,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void DeleteHarnessAsync(const DeleteHarnessRequestT& request, const DeleteHarnessResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::DeleteHarness, request, handler, context);
+  }
+
+  /**
+   * <p>Operation to delete a harness endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteHarnessEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteHarnessEndpointOutcome DeleteHarnessEndpoint(const Model::DeleteHarnessEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteHarnessEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteHarnessEndpointRequestT = Model::DeleteHarnessEndpointRequest>
+  Model::DeleteHarnessEndpointOutcomeCallable DeleteHarnessEndpointCallable(const DeleteHarnessEndpointRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeleteHarnessEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteHarnessEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteHarnessEndpointRequestT = Model::DeleteHarnessEndpointRequest>
+  void DeleteHarnessEndpointAsync(const DeleteHarnessEndpointRequestT& request, const DeleteHarnessEndpointResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeleteHarnessEndpoint, request, handler, context);
   }
 
   /**
@@ -1809,22 +1828,10 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Retrieves dataset metadata only.</p> <p>Use
-   * <code>?datasetVersion=DRAFT</code> or <code>?datasetVersion=N</code> to retrieve
-   * a specific version's metadata. If absent, defaults to DRAFT (the mutable working
-   * copy). Returns ResourceNotFoundException if the specified version is not
-   * found.</p> <p><strong>Initial state after CreateDataset:</strong> When
-   * CreateDataset completes successfully (status transitions to ACTIVE), only a
-   * DRAFT working copy exists. No published versions exist until
-   * CreateDatasetVersion is called. At this point draftStatus is MODIFIED because
-   * the DRAFT has content that has never been published.</p> <p><strong>Default
-   * version behavior:</strong> When <code>datasetVersion</code> is omitted, the
-   * operation returns the DRAFT working copy. To retrieve a specific published
-   * version, pass the version number as a string (e.g.
-   * <code>?datasetVersion=1</code>).</p> <p><strong>State guard:</strong> Allowed
-   * for all statuses including DELETING. Returns the dataset record with its current
-   * status so callers can observe the deletion in progress.</p> <p>For paginated
-   * example IDs use ListDatasetExamples.</p><p><h3>See Also:</h3>   <a
+   * <p> Retrieves dataset metadata. Use the <code>datasetVersion</code> query
+   * parameter to retrieve a specific version's metadata. If absent, defaults to
+   * DRAFT. For paginated example content, use <code>ListDatasetExamples</code>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetDataset">AWS
    * API Reference</a></p>
    */
@@ -1954,7 +1961,7 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Operation to get a single Harness.</p><p><h3>See Also:</h3>   <a
+   * <p>Operation to get a single harness.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetHarness">AWS
    * API Reference</a></p>
    */
@@ -1976,6 +1983,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void GetHarnessAsync(const GetHarnessRequestT& request, const GetHarnessResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::GetHarness, request, handler, context);
+  }
+
+  /**
+   * <p>Operation to get a single harness endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetHarnessEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetHarnessEndpointOutcome GetHarnessEndpoint(const Model::GetHarnessEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetHarnessEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetHarnessEndpointRequestT = Model::GetHarnessEndpointRequest>
+  Model::GetHarnessEndpointOutcomeCallable GetHarnessEndpointCallable(const GetHarnessEndpointRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetHarnessEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for GetHarnessEndpoint that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetHarnessEndpointRequestT = Model::GetHarnessEndpointRequest>
+  void GetHarnessEndpointAsync(const GetHarnessEndpointRequestT& request, const GetHarnessEndpointResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetHarnessEndpoint, request, handler, context);
   }
 
   /**
@@ -2720,15 +2753,10 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Returns paginated examples from the dataset.</p> <p><strong>Version-pinned
-   * pagination:</strong> The server embeds the resolved version in the
-   * <code>nextToken</code>. Once pagination begins, all subsequent pages are pinned
-   * to that version regardless of concurrent mutations or whether
-   * <code>datasetVersion</code> is passed on subsequent requests. The
-   * <code>datasetVersion</code> query parameter is only used for the first request
-   * (when <code>nextToken</code> is absent); if omitted, defaults to DRAFT.</p>
-   * <p><strong>State guard:</strong> Allowed for all statuses including
-   * DELETING.</p><p><h3>See Also:</h3>   <a
+   * <p> Returns paginated examples from the dataset. The server embeds the resolved
+   * version in the pagination token. Once pagination begins, all subsequent pages
+   * are pinned to that version regardless of concurrent mutations. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListDatasetExamples">AWS
    * API Reference</a></p>
    */
@@ -2754,10 +2782,9 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Lists all published versions of a dataset, sorted by version number
-   * descending (newest first). Does not include the DRAFT working copy.</p>
-   * <p><strong>State guard:</strong> Allowed for all statuses including
-   * DELETING.</p><p><h3>See Also:</h3>   <a
+   * <p> Lists all published versions of a dataset, sorted by version number
+   * descending (newest first). Does not include the DRAFT working copy.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListDatasetVersions">AWS
    * API Reference</a></p>
    */
@@ -2783,8 +2810,8 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Lists all datasets in the caller's account, paginated. No presigned URLs in
-   * list results.</p><p><h3>See Also:</h3>   <a
+   * <p> Lists all datasets in the caller's account, paginated. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListDatasets">AWS
    * API Reference</a></p>
    */
@@ -2916,7 +2943,59 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Operation to list Harnesses.</p><p><h3>See Also:</h3>   <a
+   * <p>Operation to list the endpoints of a harness.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnessEndpoints">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListHarnessEndpointsOutcome ListHarnessEndpoints(const Model::ListHarnessEndpointsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListHarnessEndpoints that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListHarnessEndpointsRequestT = Model::ListHarnessEndpointsRequest>
+  Model::ListHarnessEndpointsOutcomeCallable ListHarnessEndpointsCallable(const ListHarnessEndpointsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListHarnessEndpoints, request);
+  }
+
+  /**
+   * An Async wrapper for ListHarnessEndpoints that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListHarnessEndpointsRequestT = Model::ListHarnessEndpointsRequest>
+  void ListHarnessEndpointsAsync(const ListHarnessEndpointsRequestT& request, const ListHarnessEndpointsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListHarnessEndpoints, request, handler, context);
+  }
+
+  /**
+   * <p>Operation to list the versions of a Harness.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnessVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListHarnessVersionsOutcome ListHarnessVersions(const Model::ListHarnessVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListHarnessVersions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListHarnessVersionsRequestT = Model::ListHarnessVersionsRequest>
+  Model::ListHarnessVersionsOutcomeCallable ListHarnessVersionsCallable(const ListHarnessVersionsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListHarnessVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListHarnessVersions that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListHarnessVersionsRequestT = Model::ListHarnessVersionsRequest>
+  void ListHarnessVersionsAsync(const ListHarnessVersionsRequestT& request, const ListHarnessVersionsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListHarnessVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Operation to list harnesses.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnesses">AWS
    * API Reference</a></p>
    */
@@ -3783,11 +3862,10 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Updates a dataset's metadata. Synchronous operation. Only provided fields are
-   * updated; omitted fields remain unchanged.</p> <p>To modify dataset content, use
-   * AddDatasetExamples, UpdateDatasetExamples, or DeleteDatasetExamples.</p>
-   * <p>Cannot update: name, schemaType, kmsKeyArn (immutable after
-   * creation).</p><p><h3>See Also:</h3>   <a
+   * <p> Updates a dataset's metadata. Synchronous operation. Only provided fields
+   * are updated; omitted fields remain unchanged. To modify dataset content, use
+   * <code>AddDatasetExamples</code>, <code>UpdateDatasetExamples</code>, or
+   * <code>DeleteDatasetExamples</code>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateDataset">AWS
    * API Reference</a></p>
    */
@@ -3812,18 +3890,10 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Updates multiple existing examples in-place on DRAFT.</p>
-   * <p><strong>Validation:</strong> All examples are validated against the dataset's
-   * schemaType before any writes occur. If any example fails validation, the entire
-   * batch is rejected with ValidationException — no examples are updated
-   * (all-or-nothing semantics).</p> <p><strong>Asynchronous:</strong> Operates
-   * in-place on DRAFT. No version bump occurs. Use CreateDatasetVersion to publish
-   * DRAFT as a new numbered version.</p> <p>Fails with ResourceNotFoundException if
-   * any exampleId does not exist in DRAFT. To add new examples, use
-   * AddDatasetExamples instead.</p> <p><strong>State guard:</strong> Returns
-   * ConflictException (DATASET_NOT_READY) if the dataset status is not in {DRAFT,
-   * ACTIVE}.</p> <p><strong>Request size limit:</strong> Max 5 MB total request
-   * body. Max 1000 examples per call.</p><p><h3>See Also:</h3>   <a
+   * <p> Updates multiple existing examples in-place on DRAFT. All examples are
+   * validated against the dataset's schema type before any writes occur. If any
+   * example fails validation, the entire batch is rejected (all-or-nothing
+   * semantics). </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateDatasetExamples">AWS
    * API Reference</a></p>
    */
@@ -3958,7 +4028,7 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Operation to update a Harness.</p><p><h3>See Also:</h3>   <a
+   * <p>Operation to update a harness.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateHarness">AWS
    * API Reference</a></p>
    */
@@ -3980,6 +4050,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void UpdateHarnessAsync(const UpdateHarnessRequestT& request, const UpdateHarnessResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::UpdateHarness, request, handler, context);
+  }
+
+  /**
+   * <p>Operation to update a harness endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateHarnessEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateHarnessEndpointOutcome UpdateHarnessEndpoint(const Model::UpdateHarnessEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateHarnessEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateHarnessEndpointRequestT = Model::UpdateHarnessEndpointRequest>
+  Model::UpdateHarnessEndpointOutcomeCallable UpdateHarnessEndpointCallable(const UpdateHarnessEndpointRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdateHarnessEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateHarnessEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateHarnessEndpointRequestT = Model::UpdateHarnessEndpointRequest>
+  void UpdateHarnessEndpointAsync(const UpdateHarnessEndpointRequestT& request, const UpdateHarnessEndpointResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdateHarnessEndpoint, request, handler, context);
   }
 
   /**

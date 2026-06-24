@@ -47,6 +47,18 @@ Aws::String CreateFHIRDatastoreRequest::SerializePayload() const {
     payload.WithObject("IdentityProviderConfiguration", m_identityProviderConfiguration.Jsonize());
   }
 
+  if (m_analyticsConfigurationHasBeenSet) {
+    payload.WithObject("AnalyticsConfiguration", m_analyticsConfiguration.Jsonize());
+  }
+
+  if (m_nlpConfigurationHasBeenSet) {
+    payload.WithObject("NlpConfiguration", m_nlpConfiguration.Jsonize());
+  }
+
+  if (m_profileConfigurationHasBeenSet) {
+    payload.WithObject("ProfileConfiguration", m_profileConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

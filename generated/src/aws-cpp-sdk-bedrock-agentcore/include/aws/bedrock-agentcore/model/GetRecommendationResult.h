@@ -201,6 +201,23 @@ class GetRecommendationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The ARN of the KMS key used to encrypt recommendation data.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  GetRecommendationResult& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -237,6 +254,8 @@ class GetRecommendationResult {
 
   RecommendationResult m_recommendationResult;
 
+  Aws::String m_kmsKeyArn;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recommendationIdHasBeenSet = false;
@@ -249,6 +268,7 @@ class GetRecommendationResult {
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_recommendationResultHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

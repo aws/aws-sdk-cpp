@@ -113,6 +113,10 @@ Connection& Connection::operator=(JsonView jsonValue) {
     }
     m_macSecKeysHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rateLimiterStatus")) {
+    m_rateLimiterStatus = jsonValue.GetObject("rateLimiterStatus");
+    m_rateLimiterStatusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("partnerInterconnectMacSecCapable")) {
     m_partnerInterconnectMacSecCapable = jsonValue.GetBool("partnerInterconnectMacSecCapable");
     m_partnerInterconnectMacSecCapableHasBeenSet = true;
@@ -217,6 +221,10 @@ JsonValue Connection::Jsonize() const {
       macSecKeysJsonList[macSecKeysIndex].AsObject(m_macSecKeys[macSecKeysIndex].Jsonize());
     }
     payload.WithArray("macSecKeys", std::move(macSecKeysJsonList));
+  }
+
+  if (m_rateLimiterStatusHasBeenSet) {
+    payload.WithObject("rateLimiterStatus", m_rateLimiterStatus.Jsonize());
   }
 
   if (m_partnerInterconnectMacSecCapableHasBeenSet) {

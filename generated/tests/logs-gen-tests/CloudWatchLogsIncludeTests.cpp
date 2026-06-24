@@ -76,6 +76,7 @@
 #include <aws/logs/model/DeleteScheduledQueryRequest.h>
 #include <aws/logs/model/DeleteScheduledQueryResult.h>
 #include <aws/logs/model/DeleteSubscriptionFilterRequest.h>
+#include <aws/logs/model/DeleteSyslogConfigurationRequest.h>
 #include <aws/logs/model/DeleteTransformerRequest.h>
 #include <aws/logs/model/Delivery.h>
 #include <aws/logs/model/DeliveryDestination.h>
@@ -215,6 +216,8 @@
 #include <aws/logs/model/ListScheduledQueriesResult.h>
 #include <aws/logs/model/ListSourcesForS3TableIntegrationRequest.h>
 #include <aws/logs/model/ListSourcesForS3TableIntegrationResult.h>
+#include <aws/logs/model/ListSyslogConfigurationsRequest.h>
+#include <aws/logs/model/ListSyslogConfigurationsResult.h>
 #include <aws/logs/model/ListTagsForResourceRequest.h>
 #include <aws/logs/model/ListTagsForResourceResult.h>
 #include <aws/logs/model/ListToMap.h>
@@ -295,6 +298,7 @@
 #include <aws/logs/model/PutResourcePolicyResult.h>
 #include <aws/logs/model/PutRetentionPolicyRequest.h>
 #include <aws/logs/model/PutSubscriptionFilterRequest.h>
+#include <aws/logs/model/PutSyslogConfigurationRequest.h>
 #include <aws/logs/model/PutTransformerRequest.h>
 #include <aws/logs/model/QueryCompileError.h>
 #include <aws/logs/model/QueryCompileErrorLocation.h>
@@ -317,6 +321,7 @@
 #include <aws/logs/model/S3TableIntegrationSource.h>
 #include <aws/logs/model/S3TableIntegrationSourceStatus.h>
 #include <aws/logs/model/S3TablesIntegration.h>
+#include <aws/logs/model/ScheduleType.h>
 #include <aws/logs/model/ScheduledQueryDestination.h>
 #include <aws/logs/model/ScheduledQueryDestinationType.h>
 #include <aws/logs/model/ScheduledQueryState.h>
@@ -342,6 +347,8 @@
 #include <aws/logs/model/SuppressionState.h>
 #include <aws/logs/model/SuppressionType.h>
 #include <aws/logs/model/SuppressionUnit.h>
+#include <aws/logs/model/SyslogConfiguration.h>
+#include <aws/logs/model/SyslogSourceType.h>
 #include <aws/logs/model/TagFilter.h>
 #include <aws/logs/model/TagResourceRequest.h>
 #include <aws/logs/model/TestMetricFilterRequest.h>

@@ -116,6 +116,10 @@ AllocateHostedConnectionResult& AllocateHostedConnectionResult::operator=(const 
     }
     m_macSecKeysHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rateLimiterStatus")) {
+    m_rateLimiterStatus = jsonValue.GetObject("rateLimiterStatus");
+    m_rateLimiterStatusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("partnerInterconnectMacSecCapable")) {
     m_partnerInterconnectMacSecCapable = jsonValue.GetBool("partnerInterconnectMacSecCapable");
     m_partnerInterconnectMacSecCapableHasBeenSet = true;

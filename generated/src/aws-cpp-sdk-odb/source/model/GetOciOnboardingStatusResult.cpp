@@ -38,6 +38,33 @@ GetOciOnboardingStatusResult& GetOciOnboardingStatusResult::operator=(const Aws:
     m_ociIdentityDomain = jsonValue.GetObject("ociIdentityDomain");
     m_ociIdentityDomainHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("autonomousDatabaseOciIntegrationIamRoles")) {
+    Aws::Utils::Array<JsonView> autonomousDatabaseOciIntegrationIamRolesJsonList =
+        jsonValue.GetArray("autonomousDatabaseOciIntegrationIamRoles");
+    for (unsigned autonomousDatabaseOciIntegrationIamRolesIndex = 0;
+         autonomousDatabaseOciIntegrationIamRolesIndex < autonomousDatabaseOciIntegrationIamRolesJsonList.GetLength();
+         ++autonomousDatabaseOciIntegrationIamRolesIndex) {
+      m_autonomousDatabaseOciIntegrationIamRoles.push_back(
+          autonomousDatabaseOciIntegrationIamRolesJsonList[autonomousDatabaseOciIntegrationIamRolesIndex].AsObject());
+    }
+    m_autonomousDatabaseOciIntegrationIamRolesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("linkedOciTenancyId")) {
+    m_linkedOciTenancyId = jsonValue.GetString("linkedOciTenancyId");
+    m_linkedOciTenancyIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("linkedOciCompartmentId")) {
+    m_linkedOciCompartmentId = jsonValue.GetString("linkedOciCompartmentId");
+    m_linkedOciCompartmentIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("subscriptionErrors")) {
+    Aws::Utils::Array<JsonView> subscriptionErrorsJsonList = jsonValue.GetArray("subscriptionErrors");
+    for (unsigned subscriptionErrorsIndex = 0; subscriptionErrorsIndex < subscriptionErrorsJsonList.GetLength();
+         ++subscriptionErrorsIndex) {
+      m_subscriptionErrors.push_back(subscriptionErrorsJsonList[subscriptionErrorsIndex].AsObject());
+    }
+    m_subscriptionErrorsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

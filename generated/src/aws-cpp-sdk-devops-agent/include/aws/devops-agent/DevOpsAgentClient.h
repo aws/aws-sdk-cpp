@@ -273,6 +273,32 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a new Trigger in the specified agent space</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateTrigger">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateTriggerOutcome CreateTrigger(const Model::CreateTriggerRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateTrigger that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateTriggerRequestT = Model::CreateTriggerRequest>
+  Model::CreateTriggerOutcomeCallable CreateTriggerCallable(const CreateTriggerRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::CreateTrigger, request);
+  }
+
+  /**
+   * An Async wrapper for CreateTrigger that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateTriggerRequestT = Model::CreateTriggerRequest>
+  void CreateTriggerAsync(const CreateTriggerRequestT& request, const CreateTriggerResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::CreateTrigger, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an AgentSpace. This operation is idempotent and returns a 204 No
    * Content response on success.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeleteAgentSpace">AWS
@@ -376,6 +402,32 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
                                     const DeletePrivateConnectionResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DevOpsAgentClient::DeletePrivateConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a Trigger from the specified agent space</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeleteTrigger">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTriggerOutcome DeleteTrigger(const Model::DeleteTriggerRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTrigger that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteTriggerRequestT = Model::DeleteTriggerRequest>
+  Model::DeleteTriggerOutcomeCallable DeleteTriggerCallable(const DeleteTriggerRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::DeleteTrigger, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTrigger that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteTriggerRequestT = Model::DeleteTriggerRequest>
+  void DeleteTriggerAsync(const DeleteTriggerRequestT& request, const DeleteTriggerResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::DeleteTrigger, request, handler, context);
   }
 
   /**
@@ -771,6 +823,31 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   void GetServiceAsync(const GetServiceRequestT& request, const GetServiceResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DevOpsAgentClient::GetService, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a Trigger from the specified agent space</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetTrigger">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTriggerOutcome GetTrigger(const Model::GetTriggerRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTrigger that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetTriggerRequestT = Model::GetTriggerRequest>
+  Model::GetTriggerOutcomeCallable GetTriggerCallable(const GetTriggerRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::GetTrigger, request);
+  }
+
+  /**
+   * An Async wrapper for GetTrigger that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetTriggerRequestT = Model::GetTriggerRequest>
+  void GetTriggerAsync(const GetTriggerRequestT& request, const GetTriggerResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::GetTrigger, request, handler, context);
   }
 
   /**
@@ -1194,6 +1271,31 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists Triggers in the specified agent space</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListTriggers">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTriggersOutcome ListTriggers(const Model::ListTriggersRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTriggers that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListTriggersRequestT = Model::ListTriggersRequest>
+  Model::ListTriggersOutcomeCallable ListTriggersCallable(const ListTriggersRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::ListTriggers, request);
+  }
+
+  /**
+   * An Async wrapper for ListTriggers that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListTriggersRequestT = Model::ListTriggersRequest>
+  void ListTriggersAsync(const ListTriggersRequestT& request, const ListTriggersResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::ListTriggers, request, handler, context);
+  }
+
+  /**
    * <p>List all webhooks for given Association</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListWebhooks">AWS
    * API Reference</a></p>
@@ -1562,6 +1664,31 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   void UpdateRecommendationAsync(const UpdateRecommendationRequestT& request, const UpdateRecommendationResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DevOpsAgentClient::UpdateRecommendation, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the status of an existing Trigger</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateTrigger">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateTriggerOutcome UpdateTrigger(const Model::UpdateTriggerRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateTrigger that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateTriggerRequestT = Model::UpdateTriggerRequest>
+  Model::UpdateTriggerOutcomeCallable UpdateTriggerCallable(const UpdateTriggerRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::UpdateTrigger, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateTrigger that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateTriggerRequestT = Model::UpdateTriggerRequest>
+  void UpdateTriggerAsync(const UpdateTriggerRequestT& request, const UpdateTriggerResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::UpdateTrigger, request, handler, context);
   }
 
   /**

@@ -7,6 +7,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/AudioNormalizationAlgorithm.h>
 #include <aws/medialive/model/AudioNormalizationAlgorithmControl.h>
+#include <aws/medialive/model/AudioNormalizationPeakCalculation.h>
 
 #include <utility>
 
@@ -34,8 +35,28 @@ class AudioNormalizationSettings {
 
   ///@{
   /**
-   * Audio normalization algorithm to use. itu17701 conforms to the CALM Act
-   * specification, itu17702 conforms to the EBU R-128 specification.
+   * Choose one of the following audio normalization algorithms:
+
+ITU-R BS.1770-1:
+   * Ungated loudness. A measurement of ungated average loudness for an entire piece
+   * of content,
+suitable for measurement of short-form content under ATSC
+   * recommendation A/85. Supports up to 5.1 audio channels.
+
+ITU-R BS.1770-2: Gated
+   * loudness. A measurement of gated average loudness compliant with the
+   * requirements of
+EBU-R128. Supports up to 5.1 audio channels.
+
+ITU-R BS.1770-3:
+   * Modified peak. The same loudness measurement algorithm as 1770-2, with an
+   * updated true peak
+measurement.
+
+ITU-R BS.1770-4: Higher channel count. Allows
+   * for more audio channels than the other algorithms, including
+configurations such
+   * as 7.1.
    */
   inline AudioNormalizationAlgorithm GetAlgorithm() const { return m_algorithm; }
   inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
@@ -83,15 +104,61 @@ class AudioNormalizationSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * If set to TRUE_PEAK, calculate the TruePeak for each output's audio track
+   * loudness.
+   */
+  inline AudioNormalizationPeakCalculation GetPeakCalculation() const { return m_peakCalculation; }
+  inline bool PeakCalculationHasBeenSet() const { return m_peakCalculationHasBeenSet; }
+  inline void SetPeakCalculation(AudioNormalizationPeakCalculation value) {
+    m_peakCalculationHasBeenSet = true;
+    m_peakCalculation = value;
+  }
+  inline AudioNormalizationSettings& WithPeakCalculation(AudioNormalizationPeakCalculation value) {
+    SetPeakCalculation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Peak limiter threshold in decibels relative to true peak (dBTP) if TRUE_PEAK is
+   * enabled.
+If TRUE_PEAK is not enabled a full scale (dbFS) value is used.
+The peak
+   * inter-audio sample loudness in your output will be limited to the value that you
+   * specify,
+without affecting the overall target LKFS. Leave blank to use the
+   * default value 0.
+   */
+  inline double GetPeakLimiterThreshold() const { return m_peakLimiterThreshold; }
+  inline bool PeakLimiterThresholdHasBeenSet() const { return m_peakLimiterThresholdHasBeenSet; }
+  inline void SetPeakLimiterThreshold(double value) {
+    m_peakLimiterThresholdHasBeenSet = true;
+    m_peakLimiterThreshold = value;
+  }
+  inline AudioNormalizationSettings& WithPeakLimiterThreshold(double value) {
+    SetPeakLimiterThreshold(value);
+    return *this;
+  }
+  ///@}
  private:
   AudioNormalizationAlgorithm m_algorithm{AudioNormalizationAlgorithm::NOT_SET};
 
   AudioNormalizationAlgorithmControl m_algorithmControl{AudioNormalizationAlgorithmControl::NOT_SET};
 
   double m_targetLkfs{0.0};
+
+  AudioNormalizationPeakCalculation m_peakCalculation{AudioNormalizationPeakCalculation::NOT_SET};
+
+  double m_peakLimiterThreshold{0.0};
   bool m_algorithmHasBeenSet = false;
   bool m_algorithmControlHasBeenSet = false;
   bool m_targetLkfsHasBeenSet = false;
+  bool m_peakCalculationHasBeenSet = false;
+  bool m_peakLimiterThresholdHasBeenSet = false;
 };
 
 }  // namespace Model

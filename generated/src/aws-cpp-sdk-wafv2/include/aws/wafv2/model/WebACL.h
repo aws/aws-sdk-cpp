@@ -16,6 +16,7 @@
 #include <aws/wafv2/model/DataProtectionConfig.h>
 #include <aws/wafv2/model/DefaultAction.h>
 #include <aws/wafv2/model/FirewallManagerRuleGroup.h>
+#include <aws/wafv2/model/MonetizationConfig.h>
 #include <aws/wafv2/model/OnSourceDDoSProtectionConfig.h>
 #include <aws/wafv2/model/Rule.h>
 #include <aws/wafv2/model/VisibilityConfig.h>
@@ -545,6 +546,26 @@ class WebACL {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The monetization configuration for the web ACL. Required when any rule in the
+   * web ACL uses the <code>Monetize</code> action. Specifies the cryptocurrency
+   * payment networks and currency mode for AI bot monetization.</p>
+   */
+  inline const MonetizationConfig& GetMonetizationConfig() const { return m_monetizationConfig; }
+  inline bool MonetizationConfigHasBeenSet() const { return m_monetizationConfigHasBeenSet; }
+  template <typename MonetizationConfigT = MonetizationConfig>
+  void SetMonetizationConfig(MonetizationConfigT&& value) {
+    m_monetizationConfigHasBeenSet = true;
+    m_monetizationConfig = std::forward<MonetizationConfigT>(value);
+  }
+  template <typename MonetizationConfigT = MonetizationConfig>
+  WebACL& WithMonetizationConfig(MonetizationConfigT&& value) {
+    SetMonetizationConfig(std::forward<MonetizationConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -587,6 +608,8 @@ class WebACL {
   OnSourceDDoSProtectionConfig m_onSourceDDoSProtectionConfig;
 
   ApplicationConfig m_applicationConfig;
+
+  MonetizationConfig m_monetizationConfig;
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
@@ -608,6 +631,7 @@ class WebACL {
   bool m_retrofittedByFirewallManagerHasBeenSet = false;
   bool m_onSourceDDoSProtectionConfigHasBeenSet = false;
   bool m_applicationConfigHasBeenSet = false;
+  bool m_monetizationConfigHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/EKS_EXPORTS.h>
+#include <aws/eks/model/SpreadLevel.h>
 
 #include <utility>
 
@@ -54,9 +55,29 @@ class ControlPlanePlacementResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The spread level used with the placement group for control plane instances on
+   * your local Amazon EKS cluster on Amazon Web Services Outposts.</p>
+   */
+  inline SpreadLevel GetSpreadLevel() const { return m_spreadLevel; }
+  inline bool SpreadLevelHasBeenSet() const { return m_spreadLevelHasBeenSet; }
+  inline void SetSpreadLevel(SpreadLevel value) {
+    m_spreadLevelHasBeenSet = true;
+    m_spreadLevel = value;
+  }
+  inline ControlPlanePlacementResponse& WithSpreadLevel(SpreadLevel value) {
+    SetSpreadLevel(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_groupName;
+
+  SpreadLevel m_spreadLevel{SpreadLevel::NOT_SET};
   bool m_groupNameHasBeenSet = false;
+  bool m_spreadLevelHasBeenSet = false;
 };
 
 }  // namespace Model

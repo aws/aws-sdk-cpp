@@ -70,6 +70,10 @@ RunListItem& RunListItem::operator=(JsonView jsonValue) {
     m_workflowVersionName = jsonValue.GetString("workflowVersionName");
     m_workflowVersionNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("workflowName")) {
+    m_workflowName = jsonValue.GetString("workflowName");
+    m_workflowNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -126,6 +130,10 @@ JsonValue RunListItem::Jsonize() const {
 
   if (m_workflowVersionNameHasBeenSet) {
     payload.WithString("workflowVersionName", m_workflowVersionName);
+  }
+
+  if (m_workflowNameHasBeenSet) {
+    payload.WithString("workflowName", m_workflowName);
   }
 
   return payload;

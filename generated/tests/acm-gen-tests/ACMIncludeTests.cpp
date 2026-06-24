@@ -27,7 +27,6 @@
 #include <aws/acm/model/CertificateSearchResult.h>
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/CertificateSummary.h>
-#include <aws/acm/model/CertificateTransparencyLoggingPreference.h>
 #include <aws/acm/model/CertificateType.h>
 #include <aws/acm/model/CommonNameFilter.h>
 #include <aws/acm/model/ComparisonOperator.h>

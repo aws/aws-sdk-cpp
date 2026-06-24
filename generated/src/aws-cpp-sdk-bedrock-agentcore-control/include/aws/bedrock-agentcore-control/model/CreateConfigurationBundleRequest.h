@@ -176,6 +176,24 @@ class CreateConfigurationBundleRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>Optional KMS key ARN for encrypting component configurations.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  CreateConfigurationBundleRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A map of tag keys and values to assign to the configuration bundle. Tags
    * enable you to categorize your resources in different ways, for example, by
    * purpose, owner, or environment.</p>
@@ -214,6 +232,8 @@ class CreateConfigurationBundleRequest : public BedrockAgentCoreControlRequest {
 
   VersionCreatedBySource m_createdBy;
 
+  Aws::String m_kmsKeyArn;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_clientTokenHasBeenSet = true;
   bool m_bundleNameHasBeenSet = false;
@@ -222,6 +242,7 @@ class CreateConfigurationBundleRequest : public BedrockAgentCoreControlRequest {
   bool m_branchNameHasBeenSet = false;
   bool m_commitMessageHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -1003,6 +1003,109 @@ class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves ranked monetization statistics. Use the <code>StatisticType</code>
+   * parameter to specify the ranking: <code>TOP_SOURCES_BY_REVENUE</code> for top
+   * sources by revenue, or <code>TOP_PATHS_BY_REVENUE</code> for top content paths
+   * by revenue. This operation is only available for <code>CLOUDFRONT</code> scope.
+   * The maximum supported time window is 90 days. When no <code>CurrencyMode</code>
+   * filter is provided, results default to <code>REAL</code>. To retrieve test data,
+   * include a <code>CurrencyMode</code> filter with the value
+   * <code>TEST</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRevenueStatistics">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRevenueStatisticsOutcome GetRevenueStatistics(const Model::GetRevenueStatisticsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRevenueStatistics that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetRevenueStatisticsRequestT = Model::GetRevenueStatisticsRequest>
+  Model::GetRevenueStatisticsOutcomeCallable GetRevenueStatisticsCallable(const GetRevenueStatisticsRequestT& request) const {
+    return SubmitCallable(&WAFV2Client::GetRevenueStatistics, request);
+  }
+
+  /**
+   * An Async wrapper for GetRevenueStatistics that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetRevenueStatisticsRequestT = Model::GetRevenueStatisticsRequest>
+  void GetRevenueStatisticsAsync(const GetRevenueStatisticsRequestT& request, const GetRevenueStatisticsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WAFV2Client::GetRevenueStatistics, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a summary of monetization revenue for the specified time window.
+   * Returns total revenue, revenue by verification tier, total settlements, and
+   * total HTTP 402 responses served. This operation is only available for
+   * <code>CLOUDFRONT</code> scope. The maximum supported time window is 90 days.
+   * When no <code>CurrencyMode</code> filter is provided, results default to
+   * <code>REAL</code>. To retrieve test data, include a <code>CurrencyMode</code>
+   * filter with the value <code>TEST</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRevenueStatisticsSummary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRevenueStatisticsSummaryOutcome GetRevenueStatisticsSummary(
+      const Model::GetRevenueStatisticsSummaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRevenueStatisticsSummary that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetRevenueStatisticsSummaryRequestT = Model::GetRevenueStatisticsSummaryRequest>
+  Model::GetRevenueStatisticsSummaryOutcomeCallable GetRevenueStatisticsSummaryCallable(
+      const GetRevenueStatisticsSummaryRequestT& request) const {
+    return SubmitCallable(&WAFV2Client::GetRevenueStatisticsSummary, request);
+  }
+
+  /**
+   * An Async wrapper for GetRevenueStatisticsSummary that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetRevenueStatisticsSummaryRequestT = Model::GetRevenueStatisticsSummaryRequest>
+  void GetRevenueStatisticsSummaryAsync(const GetRevenueStatisticsSummaryRequestT& request,
+                                        const GetRevenueStatisticsSummaryResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WAFV2Client::GetRevenueStatisticsSummary, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves time series data for monetization revenue. Returns data points
+   * aggregated at the specified interval for the given time window. This operation
+   * is only available for <code>CLOUDFRONT</code> scope. The maximum supported time
+   * window is 90 days. When no <code>CurrencyMode</code> filter is provided, results
+   * default to <code>REAL</code>. To retrieve test data, include a
+   * <code>CurrencyMode</code> filter with the value <code>TEST</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRevenueStatisticsTimeSeries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRevenueStatisticsTimeSeriesOutcome GetRevenueStatisticsTimeSeries(
+      const Model::GetRevenueStatisticsTimeSeriesRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRevenueStatisticsTimeSeries that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetRevenueStatisticsTimeSeriesRequestT = Model::GetRevenueStatisticsTimeSeriesRequest>
+  Model::GetRevenueStatisticsTimeSeriesOutcomeCallable GetRevenueStatisticsTimeSeriesCallable(
+      const GetRevenueStatisticsTimeSeriesRequestT& request) const {
+    return SubmitCallable(&WAFV2Client::GetRevenueStatisticsTimeSeries, request);
+  }
+
+  /**
+   * An Async wrapper for GetRevenueStatisticsTimeSeries that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetRevenueStatisticsTimeSeriesRequestT = Model::GetRevenueStatisticsTimeSeriesRequest>
+  void GetRevenueStatisticsTimeSeriesAsync(const GetRevenueStatisticsTimeSeriesRequestT& request,
+                                           const GetRevenueStatisticsTimeSeriesResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WAFV2Client::GetRevenueStatisticsTimeSeries, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the specified <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRuleGroup">AWS
    * API Reference</a></p>
@@ -1468,6 +1571,38 @@ class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient,
   void ListRuleGroupsAsync(const ListRuleGroupsRequestT& request, const ListRuleGroupsResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&WAFV2Client::ListRuleGroups, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves individual settlement transaction records for monetization. Each
+   * record represents a single payment transaction between a client and your
+   * protected resource. This operation is only available for <code>CLOUDFRONT</code>
+   * scope. The maximum supported time window is 90 days. When no
+   * <code>CurrencyMode</code> filter is provided, results default to
+   * <code>REAL</code>. To retrieve test data, include a <code>CurrencyMode</code>
+   * filter with the value <code>TEST</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListSettlementRecords">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSettlementRecordsOutcome ListSettlementRecords(const Model::ListSettlementRecordsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListSettlementRecords that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListSettlementRecordsRequestT = Model::ListSettlementRecordsRequest>
+  Model::ListSettlementRecordsOutcomeCallable ListSettlementRecordsCallable(const ListSettlementRecordsRequestT& request) const {
+    return SubmitCallable(&WAFV2Client::ListSettlementRecords, request);
+  }
+
+  /**
+   * An Async wrapper for ListSettlementRecords that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListSettlementRecordsRequestT = Model::ListSettlementRecordsRequest>
+  void ListSettlementRecordsAsync(const ListSettlementRecordsRequestT& request, const ListSettlementRecordsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WAFV2Client::ListSettlementRecords, request, handler, context);
   }
 
   /**

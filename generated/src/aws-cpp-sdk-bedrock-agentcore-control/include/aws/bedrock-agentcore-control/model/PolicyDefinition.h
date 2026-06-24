@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CedarPolicy.h>
 #include <aws/bedrock-agentcore-control/model/PolicyGenerationDetails.h>
+#include <aws/bedrock-agentcore-control/model/PolicyStatement.h>
 
 #include <utility>
 
@@ -82,12 +83,34 @@ class PolicyDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An AgentCore policy statement that defines the access control rules. The
+   * statement can be a Cedar policy or a guardrails definition.</p>
+   */
+  inline const PolicyStatement& GetPolicy() const { return m_policy; }
+  inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
+  template <typename PolicyT = PolicyStatement>
+  void SetPolicy(PolicyT&& value) {
+    m_policyHasBeenSet = true;
+    m_policy = std::forward<PolicyT>(value);
+  }
+  template <typename PolicyT = PolicyStatement>
+  PolicyDefinition& WithPolicy(PolicyT&& value) {
+    SetPolicy(std::forward<PolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CedarPolicy m_cedar;
 
   PolicyGenerationDetails m_policyGeneration;
+
+  PolicyStatement m_policy;
   bool m_cedarHasBeenSet = false;
   bool m_policyGenerationHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -253,6 +253,8 @@
 #include <aws/gamelift/model/IpPermission.h>
 #include <aws/gamelift/model/IpProtocol.h>
 #include <aws/gamelift/model/LaunchTemplateSpecification.h>
+#include <aws/gamelift/model/LinuxCapabilities.h>
+#include <aws/gamelift/model/LinuxCapability.h>
 #include <aws/gamelift/model/ListAliasesRequest.h>
 #include <aws/gamelift/model/ListAliasesResult.h>
 #include <aws/gamelift/model/ListBuildsRequest.h>

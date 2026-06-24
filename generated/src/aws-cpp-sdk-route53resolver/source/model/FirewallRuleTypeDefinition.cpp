@@ -34,6 +34,10 @@ FirewallRuleTypeDefinition& FirewallRuleTypeDefinition::operator=(JsonView jsonV
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SubscriptionInfo")) {
+    m_subscriptionInfo = jsonValue.GetObject("SubscriptionInfo");
+    m_subscriptionInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue FirewallRuleTypeDefinition::Jsonize() const {
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("Description", m_description);
+  }
+
+  if (m_subscriptionInfoHasBeenSet) {
+    payload.WithObject("SubscriptionInfo", m_subscriptionInfo.Jsonize());
   }
 
   return payload;

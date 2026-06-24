@@ -107,6 +107,10 @@ ReplicationConfigurationTemplate& ReplicationConfigurationTemplate::operator=(Js
     m_storeSnapshotOnLocalZone = jsonValue.GetBool("storeSnapshotOnLocalZone");
     m_storeSnapshotOnLocalZoneHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("storageConfiguration")) {
+    m_storageConfiguration = jsonValue.GetObject("storageConfiguration");
+    m_storageConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -204,6 +208,10 @@ JsonValue ReplicationConfigurationTemplate::Jsonize() const {
 
   if (m_storeSnapshotOnLocalZoneHasBeenSet) {
     payload.WithBool("storeSnapshotOnLocalZone", m_storeSnapshotOnLocalZone);
+  }
+
+  if (m_storageConfigurationHasBeenSet) {
+    payload.WithObject("storageConfiguration", m_storageConfiguration.Jsonize());
   }
 
   return payload;

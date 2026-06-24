@@ -16,6 +16,7 @@
 #include <aws/wafv2/model/CustomResponseBody.h>
 #include <aws/wafv2/model/DataProtectionConfig.h>
 #include <aws/wafv2/model/DefaultAction.h>
+#include <aws/wafv2/model/MonetizationConfig.h>
 #include <aws/wafv2/model/OnSourceDDoSProtectionConfig.h>
 #include <aws/wafv2/model/Rule.h>
 #include <aws/wafv2/model/Scope.h>
@@ -415,6 +416,25 @@ class UpdateWebACLRequest : public WAFV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The monetization configuration for the web ACL. Provide this when any rule in
+   * the web ACL uses the <code>Monetize</code> action.</p>
+   */
+  inline const MonetizationConfig& GetMonetizationConfig() const { return m_monetizationConfig; }
+  inline bool MonetizationConfigHasBeenSet() const { return m_monetizationConfigHasBeenSet; }
+  template <typename MonetizationConfigT = MonetizationConfig>
+  void SetMonetizationConfig(MonetizationConfigT&& value) {
+    m_monetizationConfigHasBeenSet = true;
+    m_monetizationConfig = std::forward<MonetizationConfigT>(value);
+  }
+  template <typename MonetizationConfigT = MonetizationConfig>
+  UpdateWebACLRequest& WithMonetizationConfig(MonetizationConfigT&& value) {
+    SetMonetizationConfig(std::forward<MonetizationConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -447,6 +467,8 @@ class UpdateWebACLRequest : public WAFV2Request {
   OnSourceDDoSProtectionConfig m_onSourceDDoSProtectionConfig;
 
   ApplicationConfig m_applicationConfig;
+
+  MonetizationConfig m_monetizationConfig;
   bool m_nameHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
   bool m_idHasBeenSet = false;
@@ -463,6 +485,7 @@ class UpdateWebACLRequest : public WAFV2Request {
   bool m_associationConfigHasBeenSet = false;
   bool m_onSourceDDoSProtectionConfigHasBeenSet = false;
   bool m_applicationConfigHasBeenSet = false;
+  bool m_monetizationConfigHasBeenSet = false;
 };
 
 }  // namespace Model

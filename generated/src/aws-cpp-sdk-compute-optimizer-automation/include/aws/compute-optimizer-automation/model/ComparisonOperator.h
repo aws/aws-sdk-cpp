@@ -23,7 +23,19 @@ enum class ComparisonOperator {
   NumericLessThan,
   NumericLessThanEquals,
   NumericGreaterThan,
-  NumericGreaterThanEquals
+  NumericGreaterThanEquals,
+  StringEqualsIfExists,
+  StringNotEqualsIfExists,
+  StringEqualsIgnoreCaseIfExists,
+  StringNotEqualsIgnoreCaseIfExists,
+  StringLikeIfExists,
+  StringNotLikeIfExists,
+  NumericEqualsIfExists,
+  NumericNotEqualsIfExists,
+  NumericLessThanIfExists,
+  NumericLessThanEqualsIfExists,
+  NumericGreaterThanIfExists,
+  NumericGreaterThanEqualsIfExists
 };
 
 namespace ComparisonOperatorMapper {

@@ -49,6 +49,7 @@
 #include <aws/mediaconnect/model/BatchGetRouterOutputRequest.h>
 #include <aws/mediaconnect/model/BatchGetRouterOutputResult.h>
 #include <aws/mediaconnect/model/BlackFrames.h>
+#include <aws/mediaconnect/model/BlackFramesConfiguration.h>
 #include <aws/mediaconnect/model/Bridge.h>
 #include <aws/mediaconnect/model/BridgeFlowOutput.h>
 #include <aws/mediaconnect/model/BridgeFlowSource.h>
@@ -60,6 +61,7 @@
 #include <aws/mediaconnect/model/BridgeState.h>
 #include <aws/mediaconnect/model/Colorimetry.h>
 #include <aws/mediaconnect/model/ConnectionStatus.h>
+#include <aws/mediaconnect/model/ContentQualityAnalysisFeatureConfiguration.h>
 #include <aws/mediaconnect/model/ContentQualityAnalysisState.h>
 #include <aws/mediaconnect/model/CreateBridgeRequest.h>
 #include <aws/mediaconnect/model/CreateBridgeResult.h>
@@ -136,6 +138,7 @@
 #include <aws/mediaconnect/model/ForwardErrorCorrectionState.h>
 #include <aws/mediaconnect/model/FrameResolution.h>
 #include <aws/mediaconnect/model/FrozenFrames.h>
+#include <aws/mediaconnect/model/FrozenFramesConfiguration.h>
 #include <aws/mediaconnect/model/Gateway.h>
 #include <aws/mediaconnect/model/GatewayBridgeSource.h>
 #include <aws/mediaconnect/model/GatewayInstance.h>
@@ -273,6 +276,8 @@
 #include <aws/mediaconnect/model/RevokeFlowEntitlementResult.h>
 #include <aws/mediaconnect/model/RistRouterInputConfiguration.h>
 #include <aws/mediaconnect/model/RistRouterOutputConfiguration.h>
+#include <aws/mediaconnect/model/RouterContentQualityAnalysisConfiguration.h>
+#include <aws/mediaconnect/model/RouterContentQualityAnalysisType.h>
 #include <aws/mediaconnect/model/RouterInput.h>
 #include <aws/mediaconnect/model/RouterInputConfiguration.h>
 #include <aws/mediaconnect/model/RouterInputFilter.h>
@@ -313,6 +318,7 @@
 #include <aws/mediaconnect/model/SetGatewayBridgeSourceRequest.h>
 #include <aws/mediaconnect/model/SetSourceRequest.h>
 #include <aws/mediaconnect/model/SilentAudio.h>
+#include <aws/mediaconnect/model/SilentAudioConfiguration.h>
 #include <aws/mediaconnect/model/Source.h>
 #include <aws/mediaconnect/model/SourcePriority.h>
 #include <aws/mediaconnect/model/SourceType.h>

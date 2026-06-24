@@ -23,6 +23,8 @@ static const int SHAREPOINT_HASH = HashingUtils::HashString("SHAREPOINT");
 static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 static const int KENDRA_HASH = HashingUtils::HashString("KENDRA");
 static const int SQL_HASH = HashingUtils::HashString("SQL");
+static const int ONEDRIVE_HASH = HashingUtils::HashString("ONEDRIVE");
+static const int GOOGLEDRIVE_HASH = HashingUtils::HashString("GOOGLEDRIVE");
 
 RetrievalResultLocationType GetRetrievalResultLocationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +44,10 @@ RetrievalResultLocationType GetRetrievalResultLocationTypeForName(const Aws::Str
     return RetrievalResultLocationType::KENDRA;
   } else if (hashCode == SQL_HASH) {
     return RetrievalResultLocationType::SQL;
+  } else if (hashCode == ONEDRIVE_HASH) {
+    return RetrievalResultLocationType::ONEDRIVE;
+  } else if (hashCode == GOOGLEDRIVE_HASH) {
+    return RetrievalResultLocationType::GOOGLEDRIVE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +78,10 @@ Aws::String GetNameForRetrievalResultLocationType(RetrievalResultLocationType en
       return "KENDRA";
     case RetrievalResultLocationType::SQL:
       return "SQL";
+    case RetrievalResultLocationType::ONEDRIVE:
+      return "ONEDRIVE";
+    case RetrievalResultLocationType::GOOGLEDRIVE:
+      return "GOOGLEDRIVE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

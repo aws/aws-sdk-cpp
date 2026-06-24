@@ -14,6 +14,7 @@
 #include <aws/ecs/model/ECSManagedResources.h>
 #include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/LoadBalancer.h>
+#include <aws/ecs/model/MonitoringConfiguration.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/ResolvedConfiguration.h>
 #include <aws/ecs/model/ServiceConnectConfiguration.h>
@@ -443,6 +444,27 @@ class ServiceRevision {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The optional monitoring configuration for the service, which defines the
+   * resolution for the service-level <code>CPUUtilization</code> and
+   * <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified,
+   * Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+   */
+  inline const MonitoringConfiguration& GetMonitoring() const { return m_monitoring; }
+  inline bool MonitoringHasBeenSet() const { return m_monitoringHasBeenSet; }
+  template <typename MonitoringT = MonitoringConfiguration>
+  void SetMonitoring(MonitoringT&& value) {
+    m_monitoringHasBeenSet = true;
+    m_monitoring = std::forward<MonitoringT>(value);
+  }
+  template <typename MonitoringT = MonitoringConfiguration>
+  ServiceRevision& WithMonitoring(MonitoringT&& value) {
+    SetMonitoring(std::forward<MonitoringT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serviceRevisionArn;
 
@@ -483,6 +505,8 @@ class ServiceRevision {
   ResolvedConfiguration m_resolvedConfiguration;
 
   ECSManagedResources m_ecsManagedResources;
+
+  MonitoringConfiguration m_monitoring;
   bool m_serviceRevisionArnHasBeenSet = false;
   bool m_serviceArnHasBeenSet = false;
   bool m_clusterArnHasBeenSet = false;
@@ -503,6 +527,7 @@ class ServiceRevision {
   bool m_vpcLatticeConfigurationsHasBeenSet = false;
   bool m_resolvedConfigurationHasBeenSet = false;
   bool m_ecsManagedResourcesHasBeenSet = false;
+  bool m_monitoringHasBeenSet = false;
 };
 
 }  // namespace Model

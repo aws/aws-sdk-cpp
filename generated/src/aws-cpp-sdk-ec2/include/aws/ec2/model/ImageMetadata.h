@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ImageState.h>
+#include <aws/ec2/model/ImageWatermark.h>
 
 #include <utility>
 
@@ -200,6 +202,30 @@ class ImageMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The watermarks attached to the AMI.</p>
+   */
+  inline const Aws::Vector<ImageWatermark>& GetImageWatermarks() const { return m_imageWatermarks; }
+  inline bool ImageWatermarksHasBeenSet() const { return m_imageWatermarksHasBeenSet; }
+  template <typename ImageWatermarksT = Aws::Vector<ImageWatermark>>
+  void SetImageWatermarks(ImageWatermarksT&& value) {
+    m_imageWatermarksHasBeenSet = true;
+    m_imageWatermarks = std::forward<ImageWatermarksT>(value);
+  }
+  template <typename ImageWatermarksT = Aws::Vector<ImageWatermark>>
+  ImageMetadata& WithImageWatermarks(ImageWatermarksT&& value) {
+    SetImageWatermarks(std::forward<ImageWatermarksT>(value));
+    return *this;
+  }
+  template <typename ImageWatermarksT = ImageWatermark>
+  ImageMetadata& AddImageWatermarks(ImageWatermarksT&& value) {
+    m_imageWatermarksHasBeenSet = true;
+    m_imageWatermarks.emplace_back(std::forward<ImageWatermarksT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_imageId;
 
@@ -218,6 +244,8 @@ class ImageMetadata {
   bool m_imageAllowed{false};
 
   bool m_isPublic{false};
+
+  Aws::Vector<ImageWatermark> m_imageWatermarks;
   bool m_imageIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
@@ -227,6 +255,7 @@ class ImageMetadata {
   bool m_deprecationTimeHasBeenSet = false;
   bool m_imageAllowedHasBeenSet = false;
   bool m_isPublicHasBeenSet = false;
+  bool m_imageWatermarksHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -22,10 +22,11 @@ namespace Model {
 /**
  * <p>Regional latency information for a player, used when requesting a new game
  * session. This value indicates the amount of time lag that exists when the player
- * is connected to a fleet in the specified Region. The relative difference between
- * a player's latency values for multiple Regions are used to determine which
- * fleets are best suited to place a new game session for the player.
- * </p><p><h3>See Also:</h3>   <a
+ * is connected to a fleet in the specified location (an Amazon Web Services Region
+ * or a custom location for Amazon GameLift Servers Anywhere fleets). The relative
+ * difference between a player's latency values for multiple locations are used to
+ * determine which fleets are best suited to place a new game session for the
+ * player. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerLatency">AWS
  * API Reference</a></p>
  */
@@ -56,7 +57,9 @@ class PlayerLatency {
 
   ///@{
   /**
-   * <p>Name of the Region that is associated with the latency value.</p>
+   * <p>Name of the Region or custom location that is associated with the latency
+   * value. For Amazon GameLift Servers Anywhere fleets, use the custom location
+   * name.</p>
    */
   inline const Aws::String& GetRegionIdentifier() const { return m_regionIdentifier; }
   inline bool RegionIdentifierHasBeenSet() const { return m_regionIdentifierHasBeenSet; }

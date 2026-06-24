@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListRequest.h>
+#include <aws/ec2/model/ImportImageRequest.h>
 #include <aws/ec2/model/ImportInstanceRequest.h>
 #include <aws/ec2/model/ImportKeyPairRequest.h>
 #include <aws/ec2/model/ImportSnapshotRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/PurchaseCapacityBlockExtensionRequest.h>
 #include <aws/ec2/model/PurchaseCapacityBlockRequest.h>
 #include <aws/ec2/model/PurchaseHostReservationRequest.h>
-#include <aws/ec2/model/PurchaseReservedInstancesOfferingRequest.h>
-#include <aws/ec2/model/PurchaseScheduledInstancesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,18 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ImportClientVpnClientCertificateRevocationListOutcome EC2Client::ImportClientVpnClientCertificateRevocationList(
+    const ImportClientVpnClientCertificateRevocationListRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportClientVpnClientCertificateRevocationListOutcome(result.GetResultWithOwnership())
+                            : ImportClientVpnClientCertificateRevocationListOutcome(std::move(result.GetError()));
+}
+
+ImportImageOutcome EC2Client::ImportImage(const ImportImageRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportImageOutcome(result.GetResultWithOwnership()) : ImportImageOutcome(std::move(result.GetError()));
+}
 
 ImportInstanceOutcome EC2Client::ImportInstance(const ImportInstanceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -735,17 +747,4 @@ PurchaseHostReservationOutcome EC2Client::PurchaseHostReservation(const Purchase
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PurchaseHostReservationOutcome(result.GetResultWithOwnership())
                             : PurchaseHostReservationOutcome(std::move(result.GetError()));
-}
-
-PurchaseReservedInstancesOfferingOutcome EC2Client::PurchaseReservedInstancesOffering(
-    const PurchaseReservedInstancesOfferingRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? PurchaseReservedInstancesOfferingOutcome(result.GetResultWithOwnership())
-                            : PurchaseReservedInstancesOfferingOutcome(std::move(result.GetError()));
-}
-
-PurchaseScheduledInstancesOutcome EC2Client::PurchaseScheduledInstances(const PurchaseScheduledInstancesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? PurchaseScheduledInstancesOutcome(result.GetResultWithOwnership())
-                            : PurchaseScheduledInstancesOutcome(std::move(result.GetError()));
 }

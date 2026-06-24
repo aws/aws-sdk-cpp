@@ -21,6 +21,8 @@
 #include <aws/bedrock-agentcore-control/model/ListGatewayRulesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessEndpointsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListHarnessesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListMemoriesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersPaginationTraits.h>
@@ -88,8 +90,14 @@ using ListGatewaysPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCore
 using ListGatewayTargetsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListGatewayTargetsRequest,
                                       Pagination::ListGatewayTargetsPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListHarnessEndpointsPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListHarnessEndpointsRequest,
+                                      Pagination::ListHarnessEndpointsPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListHarnessesPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListHarnessesRequest,
                                                                  Pagination::ListHarnessesPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListHarnessVersionsPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListHarnessVersionsRequest,
+                                      Pagination::ListHarnessVersionsPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListMemoriesPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListMemoriesRequest,
                                                                 Pagination::ListMemoriesPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListOauth2CredentialProvidersPaginator =

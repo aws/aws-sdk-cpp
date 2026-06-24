@@ -23,6 +23,7 @@ static const int ST1_HASH = HashingUtils::HashString("ST1");
 static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
 static const int GP3_HASH = HashingUtils::HashString("GP3");
 static const int IO2_HASH = HashingUtils::HashString("IO2");
+static const int FSX_ONTAP_HASH = HashingUtils::HashString("FSX_ONTAP");
 
 ReplicationConfigurationReplicatedDiskStagingDiskType GetReplicationConfigurationReplicatedDiskStagingDiskTypeForName(
     const Aws::String& name) {
@@ -43,6 +44,8 @@ ReplicationConfigurationReplicatedDiskStagingDiskType GetReplicationConfiguratio
     return ReplicationConfigurationReplicatedDiskStagingDiskType::GP3;
   } else if (hashCode == IO2_HASH) {
     return ReplicationConfigurationReplicatedDiskStagingDiskType::IO2;
+  } else if (hashCode == FSX_ONTAP_HASH) {
+    return ReplicationConfigurationReplicatedDiskStagingDiskType::FSX_ONTAP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -74,6 +77,8 @@ Aws::String GetNameForReplicationConfigurationReplicatedDiskStagingDiskType(
       return "GP3";
     case ReplicationConfigurationReplicatedDiskStagingDiskType::IO2:
       return "IO2";
+    case ReplicationConfigurationReplicatedDiskStagingDiskType::FSX_ONTAP:
+      return "FSX_ONTAP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

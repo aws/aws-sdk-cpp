@@ -74,61 +74,40 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<SigninEndpointProviderEndpointTestCase>> SigninEndpointProviderTests::TEST_CASES;
-const size_t SigninEndpointProviderTests::TEST_CASES_SZ = 26;
+const size_t SigninEndpointProviderTests::TEST_CASES_SZ = 15;
 
 Aws::Vector<SigninEndpointProviderEndpointTestCase> SigninEndpointProviderTests::getTestCase() {
 
   Aws::Vector<SigninEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
-  {"For custom endpoint with region not set and fips disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 1*/
-  {"For custom endpoint with fips enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 2*/
-  {"For custom endpoint with fips disabled and dualstack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 3*/
-  {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin-fips.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 4*/
-  {"For region us-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin-fips.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 5*/
-  {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
+  {"Control Plane operation in us-east-1 (aws partition)", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("IsControlPlane", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://signin.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 6*/
-  {"For region us-east-1 with FIPS disabled and DualStack disabled", // documentation
+  /*TEST CASE 1*/
+  {"Control Plane operation in cn-north-1 (aws-cn partition)", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("IsControlPlane", true), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://signin.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 2*/
+  {"Data Plane operation in us-east-1", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("IsControlPlane", false), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://us-east-1.signin.aws.amazon.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 3*/
+  {"Data Plane operation in us-east-1 (IsControlPlane not set)", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://us-east-1.signin.aws.amazon.com",
@@ -136,152 +115,71 @@ Aws::Vector<SigninEndpointProviderEndpointTestCase> SigninEndpointProviderTests:
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 7*/
-  {"For region cn-northwest-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 4*/
+  {"Data Plane operation in cn-north-1", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("IsControlPlane", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://signin-fips.cn-northwest-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://cn-north-1.signin.amazonaws.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 5*/
+  {"Data Plane operation in us-gov-west-1", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("IsControlPlane", false), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://us-gov-west-1.signin.amazonaws-us-gov.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 6*/
+  {"FIPS endpoint in us-gov-west-1 (global endpoint)", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://signin-fips.amazonaws-us-gov.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 7*/
+  {"FIPS endpoint in us-gov-east-1 (regional endpoint)", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://us-gov-east-1.signin-fips.amazonaws-us-gov.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 8*/
-  {"For region cn-northwest-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
+  {"FIPS endpoint in us-east-1", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://signin-fips.cn-northwest-1.amazonaws.com.cn",
+    {{/*epUrl*/"https://signin-fips.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 9*/
-  {"For region cn-northwest-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", true)}, // params
+  {"DualStack falls through to default SDK endpoint in us-east-1 (aws partition)", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://signin.cn-northwest-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://signin.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 10*/
-  {"For region cn-northwest-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
+  {"DualStack falls through to default SDK endpoint in cn-north-1 (aws-cn partition)", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cn-northwest-1.signin.amazonaws.cn",
+    {{/*epUrl*/"https://signin.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 11*/
-  {"For region eusc-de-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eusc-de-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin-fips.eusc-de-east-1.amazonaws.eu",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 12*/
-  {"For region eusc-de-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eusc-de-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin.eusc-de-east-1.amazonaws.eu",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 13*/
-  {"For region us-iso-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin-fips.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 14*/
-  {"For region us-iso-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 15*/
-  {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin-fips.us-isob-east-1.sc2s.sgov.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 16*/
-  {"For region us-isob-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin.us-isob-east-1.sc2s.sgov.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 17*/
-  {"For region eu-isoe-west-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-isoe-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin-fips.eu-isoe-west-1.cloud.adc-e.uk",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 18*/
-  {"For region eu-isoe-west-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-isoe-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin.eu-isoe-west-1.cloud.adc-e.uk",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 19*/
-  {"For region us-isof-south-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isof-south-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin-fips.us-isof-south-1.csp.hci.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 20*/
-  {"For region us-isof-south-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isof-south-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin.us-isof-south-1.csp.hci.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 21*/
-  {"For region us-gov-west-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin-fips.us-gov-west-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 22*/
-  {"For region us-gov-west-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://signin-fips.us-gov-west-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 23*/
-  {"For region us-gov-west-1 with FIPS disabled and DualStack enabled", // documentation
+  {"DualStack falls through to default SDK endpoint in us-gov-west-1 (aws-us-gov partition)", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://signin.us-gov-west-1.api.aws",
@@ -289,20 +187,32 @@ Aws::Vector<SigninEndpointProviderEndpointTestCase> SigninEndpointProviderTests:
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 24*/
-  {"For region us-gov-west-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
+  /*TEST CASE 12*/
+  {"Custom SDK endpoint override", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://custom.signin.example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://us-gov-west-1.signin.amazonaws-us-gov.com",
+    {{/*epUrl*/"https://custom.signin.example.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 25*/
-  {"Missing region", // documentation
-    {}, // params
+  /*TEST CASE 13*/
+  {"ISO partition (us-iso-east-1)", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
+    {{/*epUrl*/"https://us-iso-east-1.signin.c2shome.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 14*/
+  {"ISO-B partition (us-isob-east-1)", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://us-isob-east-1.signin.sc2shome.sgov.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
   }
   };
   return test_cases;

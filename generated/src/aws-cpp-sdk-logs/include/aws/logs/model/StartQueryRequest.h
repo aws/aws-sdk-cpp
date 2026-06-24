@@ -197,9 +197,12 @@ class StartQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>The maximum number of log events to return in the query. If the query string
-   * uses the <code>fields</code> command, only the specified fields and their values
-   * are returned. The default is 10,000.</p> <p>The maximum value is 100,000.</p>
+   * <p>The maximum number of log events to return from the query. The maximum limit
+   * is 100,000. The maximum events returned in a single GetQueryResults API call is
+   * 10,000 log events per request. You can retrieve up to 100,000 log event results
+   * from a query by paginating with the <code>nextToken</code>. 100,000 limit is
+   * only supported for Logs Insights QL and is currently not supported for PPL and
+   * SQL query languages.</p>
    */
   inline int GetLimit() const { return m_limit; }
   inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }

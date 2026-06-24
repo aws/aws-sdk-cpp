@@ -45,6 +45,10 @@ Subscription& Subscription::operator=(JsonView jsonValue) {
     m_endDate = jsonValue.GetDouble("EndDate");
     m_endDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Currency")) {
+    m_currency = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("Currency"));
+    m_currencyHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("MonthlyRecurringPrice")) {
     m_monthlyRecurringPrice = jsonValue.GetDouble("MonthlyRecurringPrice");
     m_monthlyRecurringPriceHasBeenSet = true;
@@ -85,6 +89,10 @@ JsonValue Subscription::Jsonize() const {
 
   if (m_endDateHasBeenSet) {
     payload.WithDouble("EndDate", m_endDate.SecondsWithMSPrecision());
+  }
+
+  if (m_currencyHasBeenSet) {
+    payload.WithString("Currency", CurrencyCodeMapper::GetNameForCurrencyCode(m_currency));
   }
 
   if (m_monthlyRecurringPriceHasBeenSet) {

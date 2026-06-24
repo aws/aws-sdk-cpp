@@ -70,8 +70,8 @@ class StripePrivyConfigurationOutput {
 
   ///@{
   /**
-   * <p>The JSON key used to extract the app secret value from the AWS Secrets
-   * Manager secret.</p>
+   * <p>The JSON key used to extract the app secret value from the Amazon Web
+   * Services Secrets Manager secret.</p>
    */
   inline const Aws::String& GetAppSecretJsonKey() const { return m_appSecretJsonKey; }
   inline bool AppSecretJsonKeyHasBeenSet() const { return m_appSecretJsonKeyHasBeenSet; }
@@ -91,7 +91,7 @@ class StripePrivyConfigurationOutput {
   /**
    * <p>The source type of the app secret. Either <code>MANAGED</code> if the secret
    * is managed by the service, or <code>EXTERNAL</code> if managed by the user in
-   * AWS Secrets Manager.</p>
+   * Amazon Web Services Secrets Manager.</p>
    */
   inline SecretSourceType GetAppSecretSource() const { return m_appSecretSource; }
   inline bool AppSecretSourceHasBeenSet() const { return m_appSecretSourceHasBeenSet; }
@@ -123,8 +123,8 @@ class StripePrivyConfigurationOutput {
 
   ///@{
   /**
-   * <p>The JSON key used to extract the authorization private key value from the AWS
-   * Secrets Manager secret.</p>
+   * <p>The JSON key used to extract the authorization private key value from the
+   * Amazon Web Services Secrets Manager secret.</p>
    */
   inline const Aws::String& GetAuthorizationPrivateKeyJsonKey() const { return m_authorizationPrivateKeyJsonKey; }
   inline bool AuthorizationPrivateKeyJsonKeyHasBeenSet() const { return m_authorizationPrivateKeyJsonKeyHasBeenSet; }
@@ -144,7 +144,7 @@ class StripePrivyConfigurationOutput {
   /**
    * <p>The source type of the authorization private key. Either <code>MANAGED</code>
    * if the secret is managed by the service, or <code>EXTERNAL</code> if managed by
-   * the user in AWS Secrets Manager.</p>
+   * the user in Amazon Web Services Secrets Manager.</p>
    */
   inline SecretSourceType GetAuthorizationPrivateKeySource() const { return m_authorizationPrivateKeySource; }
   inline bool AuthorizationPrivateKeySourceHasBeenSet() const { return m_authorizationPrivateKeySourceHasBeenSet; }

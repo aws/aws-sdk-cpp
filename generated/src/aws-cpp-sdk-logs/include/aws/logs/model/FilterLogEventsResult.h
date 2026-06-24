@@ -80,7 +80,8 @@ class FilterLogEventsResult {
 
   ///@{
   /**
-   * <p>The token to use when requesting the next set of items. The token expires
+   * <p>The token for the next set of items in the sorting direction specified by the
+   * <code>startFromHead</code> parameter in the first request. The token expires
    * after 24 hours.</p> <p>If the results don't include a <code>nextToken</code>,
    * then pagination is finished. </p>
    */

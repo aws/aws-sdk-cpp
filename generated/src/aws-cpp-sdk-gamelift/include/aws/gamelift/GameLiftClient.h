@@ -437,21 +437,20 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSRpcV2CborClient,
    * a game server container group definition. Provide the following required
    * parameter values:</p> <ul> <li> <p> <code>Name</code> </p> </li> <li> <p>
    * <code>ContainerGroupType</code> (<code>GAME_SERVER</code>)</p> </li> <li> <p>
-   * <code>OperatingSystem</code> (omit to use default value)</p> </li> <li> <p>
-   * <code>TotalMemoryLimitMebibytes</code> (omit to use default value)</p> </li>
-   * <li> <p> <code>TotalVcpuLimit </code>(omit to use default value)</p> </li> <li>
-   * <p>At least one <code>GameServerContainerDefinition</code> </p> <ul> <li> <p>
+   * <code>OperatingSystem</code> </p> </li> <li> <p>
+   * <code>TotalMemoryLimitMebibytes</code> </p> </li> <li> <p>
+   * <code>TotalVcpuLimit</code> </p> </li> <li> <p>At least one
+   * <code>GameServerContainerDefinition</code> </p> <ul> <li> <p>
    * <code>ContainerName</code> </p> </li> <li> <p> <code>ImageUrl</code> </p> </li>
    * <li> <p> <code>PortConfiguration</code> </p> </li> <li> <p>
-   * <code>ServerSdkVersion</code> (omit to use default value)</p> </li> </ul> </li>
-   * </ul> </li> <li> <p>Create a per-instance container group definition. Provide
-   * the following required parameter values:</p> <ul> <li> <p> <code>Name</code>
-   * </p> </li> <li> <p> <code>ContainerGroupType</code>
-   * (<code>PER_INSTANCE</code>)</p> </li> <li> <p> <code>OperatingSystem</code>
-   * (omit to use default value)</p> </li> <li> <p>
-   * <code>TotalMemoryLimitMebibytes</code> (omit to use default value)</p> </li>
-   * <li> <p> <code>TotalVcpuLimit </code>(omit to use default value)</p> </li> <li>
-   * <p>At least one <code>SupportContainerDefinition</code> </p> <ul> <li> <p>
+   * <code>ServerSdkVersion</code> </p> </li> </ul> </li> </ul> </li> <li> <p>Create
+   * a per-instance container group definition. Provide the following required
+   * parameter values:</p> <ul> <li> <p> <code>Name</code> </p> </li> <li> <p>
+   * <code>ContainerGroupType</code> (<code>PER_INSTANCE</code>)</p> </li> <li> <p>
+   * <code>OperatingSystem</code> </p> </li> <li> <p>
+   * <code>TotalMemoryLimitMebibytes</code> </p> </li> <li> <p>
+   * <code>TotalVcpuLimit</code> </p> </li> <li> <p>At least one
+   * <code>SupportContainerDefinition</code> </p> <ul> <li> <p>
    * <code>ContainerName</code> </p> </li> <li> <p> <code>ImageUrl</code> </p> </li>
    * </ul> </li> </ul> </li> </ul> <p> <b>Results</b> </p> <p>If successful, this
    * request creates a <code>ContainerGroupDefinition</code> resource and assigns a
@@ -1091,8 +1090,17 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSRpcV2CborClient,
    * to delete the peering connection for, and (2) ID of the Amazon Web Services
    * account that you use to manage Amazon GameLift Servers. </p> <p>The
    * authorization remains valid for 24 hours unless it is canceled. You must create
-   * or delete the peering connection while the authorization is valid. </p> <p>
-   * <b>Related actions</b> </p> <p> <a
+   * or delete the peering connection while the authorization is valid. </p>
+   * <p>Amazon GameLift Servers uses the caller's credentials to update peer-VPC
+   * resources. The IAM user that calls this operation must have the following Amazon
+   * EC2 permissions enabled:</p> <ul> <li> <p>
+   * <code>ec2:AcceptVpcPeeringConnection</code> </p> </li> <li> <p>
+   * <code>ec2:AuthorizeSecurityGroupEgress</code> </p> </li> <li> <p>
+   * <code>ec2:AuthorizeSecurityGroupIngress</code> </p> </li> <li> <p>
+   * <code>ec2:CreateRoute</code> </p> </li> <li> <p>
+   * <code>ec2:DescribeRouteTables</code> </p> </li> <li> <p>
+   * <code>ec2:DescribeSecurityGroups</code> </p> </li> </ul>  <p> <b>Related
+   * actions</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">AWS
@@ -1149,7 +1157,16 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSRpcV2CborClient,
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeVpcPeeringConnections.html">DescribeVpcPeeringConnections</a>
    * , or by monitoring fleet events for success or failure using <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>
-   * . </p> <p> <b>Related actions</b> </p> <p> <a
+   * . </p>  <p>Amazon GameLift Servers uses the caller's credentials to update
+   * peer-VPC resources. The IAM user that calls this operation must have the
+   * following Amazon EC2 permissions enabled:</p> <ul> <li> <p>
+   * <code>ec2:AcceptVpcPeeringConnection</code> </p> </li> <li> <p>
+   * <code>ec2:AuthorizeSecurityGroupEgress</code> </p> </li> <li> <p>
+   * <code>ec2:AuthorizeSecurityGroupIngress</code> </p> </li> <li> <p>
+   * <code>ec2:CreateRoute</code> </p> </li> <li> <p>
+   * <code>ec2:DescribeRouteTables</code> </p> </li> <li> <p>
+   * <code>ec2:DescribeSecurityGroups</code> </p> </li> </ul>  <p> <b>Related
+   * actions</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">AWS
@@ -1983,12 +2000,12 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSRpcV2CborClient,
    * the <code>InstanceId</code> for the instance.</p> </li> <li> <p>Optionally
    * filter results to a single container by providing a
    * <code>ContainerName</code>.</p> </li> </ul> <p> <b>Results</b> </p> <p>This
-   * operation returns the fleet ID, location, container group definition ARN,
-   * container group type, compute name (for game server container groups), instance
-   * ID, and a list of <code>ContainerGroupPortMapping</code> objects. Each object
-   * contains the container name, runtime ID, and a list of port mappings that show
-   * how container ports map to connection ports on the instance.</p> <p> <b>Learn
-   * more</b> </p> <p> <a
+   * operation returns the fleet ID, fleet ARN, location, container group definition
+   * ARN, container group type, compute name (for game server container groups),
+   * instance ID, and a list of <code>ContainerGroupPortMapping</code> objects. Each
+   * object contains the container name, runtime ID, and a list of port mappings that
+   * show how container ports map to connection ports on the instance.</p> <p>
+   * <b>Learn more</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-remote-access.html">Connect
    * to containers</a> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Create
@@ -2264,9 +2281,8 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSRpcV2CborClient,
    * locations, use the pagination parameters to retrieve results as a set of
    * sequential pages. </p> <p>If successful, a <code>LocationAttributes</code>
    * object is returned for each requested location. If the fleet does not have a
-   * requested location, no information is returned. This operation does not return
-   * the home Region. To get information on a fleet's home Region, call
-   * <code>DescribeFleetAttributes</code>.</p> <p> <b>Learn more</b> </p> <p> <a
+   * requested location, no information is returned. </p> <p> <b>Learn more</b> </p>
+   * <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
    * up Amazon GameLift Servers fleets</a> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
@@ -4922,17 +4938,17 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSRpcV2CborClient,
    * definition name and a source version number, or use an ARN value with a version
    * number. Provide updated values for the properties that you want to change only.
    * All other values remain the same as the source version.</p> </li> <li> <p>Change
-   * a game server container definition. Provide the updated container
-   * definition.</p> </li> <li> <p>Add or change a support container definition.
-   * Provide a complete set of container definitions, including the updated
-   * definition.</p> </li> <li> <p>Remove a support container definition. Provide a
-   * complete set of container definitions, excluding the definition to remove. If
-   * the container group has only one support container definition, provide an empty
-   * set.</p> </li> </ul> <p> <b>Results:</b> </p> <p>If successful, this operation
-   * returns the complete properties of the new container group definition
-   * version.</p> <p>If the container group definition version is used in an active
-   * fleets, the update automatically initiates a new fleet deployment of the new
-   * version. You can track a fleet's deployments using <a
+   * a game server container definition. Provide a complete set of container
+   * definitions, including the updated definition.</p> </li> <li> <p>Add or change a
+   * support container definition. Provide a complete set of container definitions,
+   * including the updated definition.</p> </li> <li> <p>Remove a support container
+   * definition. Provide a complete set of container definitions, excluding the
+   * definition to remove. If the container group has only one support container
+   * definition, provide an empty set.</p> </li> </ul> <p> <b>Results:</b> </p> <p>If
+   * successful, this operation returns the complete properties of the new container
+   * group definition version.</p> <p>If the container group definition version is
+   * used in an active fleets, the update automatically initiates a new fleet
+   * deployment of the new version. You can track a fleet's deployments using <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html">ListFleetDeployments</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateContainerGroupDefinition">AWS
@@ -5082,10 +5098,10 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSRpcV2CborClient,
    * specify the changes to be made. List the permissions you want to add in
    * <code>InboundPermissionAuthorizations</code>, and permissions you want to remove
    * in <code>InboundPermissionRevocations</code>. Permissions to be removed must
-   * match existing fleet permissions. </p> <p>If successful, the fleet ID for the
-   * updated fleet is returned. For fleets with remote locations, port setting
-   * updates can take time to propagate across all locations. You can check the
-   * status of updates in each location by calling
+   * match existing fleet permissions. </p> <p>If successful, the fleet identifiers
+   * for the updated fleet are returned. For fleets with remote locations, port
+   * setting updates can take time to propagate across all locations. You can check
+   * the status of updates in each location by calling
    * <code>DescribeFleetPortSettings</code> with a location name.</p> <p> <b>Learn
    * more</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
@@ -5171,8 +5187,13 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSRpcV2CborClient,
    * specify the game server group ID and provide the updated values. Before applying
    * the updates, the new values are validated to ensure that Amazon GameLift Servers
    * FleetIQ can continue to perform instance balancing activity. If successful, a
-   * <code>GameServerGroup</code> object is returned.</p> <p> <b>Learn more</b> </p>
-   * <p> <a
+   * <code>GameServerGroup</code> object is returned.</p>  <p>Target tracking
+   * Auto Scaling policies on the Auto Scaling group cannot be updated through the
+   * Amazon Web Services Management Console. Instead, use the Amazon Elastic Compute
+   * Cloud Auto Scaling <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PutScalingPolicy.html">
+   * <code>PutScalingPolicy</code> </a> API action to update these policies.</p>
+   *  <p> <b>Learn more</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
    * GameLift Servers FleetIQ Guide</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameServerGroup">AWS

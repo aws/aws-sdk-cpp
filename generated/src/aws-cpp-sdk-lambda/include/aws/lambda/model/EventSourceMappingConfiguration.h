@@ -217,6 +217,108 @@ class EventSourceMappingConfiguration {
 
   ///@{
   /**
+   * <p>An object that contains details about an error related to filter criteria
+   * encryption.</p>
+   */
+  inline const FilterCriteriaError& GetFilterCriteriaError() const { return m_filterCriteriaError; }
+  inline bool FilterCriteriaErrorHasBeenSet() const { return m_filterCriteriaErrorHasBeenSet; }
+  template <typename FilterCriteriaErrorT = FilterCriteriaError>
+  void SetFilterCriteriaError(FilterCriteriaErrorT&& value) {
+    m_filterCriteriaErrorHasBeenSet = true;
+    m_filterCriteriaError = std::forward<FilterCriteriaErrorT>(value);
+  }
+  template <typename FilterCriteriaErrorT = FilterCriteriaError>
+  EventSourceMappingConfiguration& WithFilterCriteriaError(FilterCriteriaErrorT&& value) {
+    SetFilterCriteriaError(std::forward<FilterCriteriaErrorT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The ARN of the Key Management Service (KMS) customer managed key that Lambda
+   * uses to encrypt your function's <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter
+   * criteria</a>.</p>
+   */
+  inline const Aws::String& GetKMSKeyArn() const { return m_kMSKeyArn; }
+  inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
+  template <typename KMSKeyArnT = Aws::String>
+  void SetKMSKeyArn(KMSKeyArnT&& value) {
+    m_kMSKeyArnHasBeenSet = true;
+    m_kMSKeyArn = std::forward<KMSKeyArnT>(value);
+  }
+  template <typename KMSKeyArnT = Aws::String>
+  EventSourceMappingConfiguration& WithKMSKeyArn(KMSKeyArnT&& value) {
+    SetKMSKeyArn(std::forward<KMSKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The metrics configuration for your event source. For more information, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event
+   * source mapping metrics</a>.</p>
+   */
+  inline const EventSourceMappingMetricsConfig& GetMetricsConfig() const { return m_metricsConfig; }
+  inline bool MetricsConfigHasBeenSet() const { return m_metricsConfigHasBeenSet; }
+  template <typename MetricsConfigT = EventSourceMappingMetricsConfig>
+  void SetMetricsConfig(MetricsConfigT&& value) {
+    m_metricsConfigHasBeenSet = true;
+    m_metricsConfig = std::forward<MetricsConfigT>(value);
+  }
+  template <typename MetricsConfigT = EventSourceMappingMetricsConfig>
+  EventSourceMappingConfiguration& WithMetricsConfig(MetricsConfigT&& value) {
+    SetMetricsConfig(std::forward<MetricsConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration
+   * for your event source. For more information, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event
+   * source mapping logging</a>.</p>
+   */
+  inline const EventSourceMappingLoggingConfig& GetLoggingConfig() const { return m_loggingConfig; }
+  inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
+  template <typename LoggingConfigT = EventSourceMappingLoggingConfig>
+  void SetLoggingConfig(LoggingConfigT&& value) {
+    m_loggingConfigHasBeenSet = true;
+    m_loggingConfig = std::forward<LoggingConfigT>(value);
+  }
+  template <typename LoggingConfigT = EventSourceMappingLoggingConfig>
+  EventSourceMappingConfiguration& WithLoggingConfig(LoggingConfigT&& value) {
+    SetLoggingConfig(std::forward<LoggingConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+   * maximum concurrency for Amazon SQS event sources</a>.</p>
+   */
+  inline const ScalingConfig& GetScalingConfig() const { return m_scalingConfig; }
+  inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
+  template <typename ScalingConfigT = ScalingConfig>
+  void SetScalingConfig(ScalingConfigT&& value) {
+    m_scalingConfigHasBeenSet = true;
+    m_scalingConfig = std::forward<ScalingConfigT>(value);
+  }
+  template <typename ScalingConfigT = ScalingConfig>
+  EventSourceMappingConfiguration& WithScalingConfig(ScalingConfigT&& value) {
+    SetScalingConfig(std::forward<ScalingConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ARN of the Lambda function.</p>
    */
   inline const Aws::String& GetFunctionArn() const { return m_functionArn; }
@@ -568,27 +670,6 @@ class EventSourceMappingConfiguration {
 
   ///@{
   /**
-   * <p>(Amazon SQS only) The scaling configuration for the event source. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
-   * maximum concurrency for Amazon SQS event sources</a>.</p>
-   */
-  inline const ScalingConfig& GetScalingConfig() const { return m_scalingConfig; }
-  inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
-  template <typename ScalingConfigT = ScalingConfig>
-  void SetScalingConfig(ScalingConfigT&& value) {
-    m_scalingConfigHasBeenSet = true;
-    m_scalingConfig = std::forward<ScalingConfigT>(value);
-  }
-  template <typename ScalingConfigT = ScalingConfig>
-  EventSourceMappingConfiguration& WithScalingConfig(ScalingConfigT&& value) {
-    SetScalingConfig(std::forward<ScalingConfigT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Specific configuration settings for a DocumentDB event source.</p>
    */
   inline const DocumentDBEventSourceConfig& GetDocumentDBEventSourceConfig() const { return m_documentDBEventSourceConfig; }
@@ -607,46 +688,6 @@ class EventSourceMappingConfiguration {
 
   ///@{
   /**
-   * <p> The ARN of the Key Management Service (KMS) customer managed key that Lambda
-   * uses to encrypt your function's <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter
-   * criteria</a>.</p>
-   */
-  inline const Aws::String& GetKMSKeyArn() const { return m_kMSKeyArn; }
-  inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
-  template <typename KMSKeyArnT = Aws::String>
-  void SetKMSKeyArn(KMSKeyArnT&& value) {
-    m_kMSKeyArnHasBeenSet = true;
-    m_kMSKeyArn = std::forward<KMSKeyArnT>(value);
-  }
-  template <typename KMSKeyArnT = Aws::String>
-  EventSourceMappingConfiguration& WithKMSKeyArn(KMSKeyArnT&& value) {
-    SetKMSKeyArn(std::forward<KMSKeyArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>An object that contains details about an error related to filter criteria
-   * encryption.</p>
-   */
-  inline const FilterCriteriaError& GetFilterCriteriaError() const { return m_filterCriteriaError; }
-  inline bool FilterCriteriaErrorHasBeenSet() const { return m_filterCriteriaErrorHasBeenSet; }
-  template <typename FilterCriteriaErrorT = FilterCriteriaError>
-  void SetFilterCriteriaError(FilterCriteriaErrorT&& value) {
-    m_filterCriteriaErrorHasBeenSet = true;
-    m_filterCriteriaError = std::forward<FilterCriteriaErrorT>(value);
-  }
-  template <typename FilterCriteriaErrorT = FilterCriteriaError>
-  EventSourceMappingConfiguration& WithFilterCriteriaError(FilterCriteriaErrorT&& value) {
-    SetFilterCriteriaError(std::forward<FilterCriteriaErrorT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
    */
   inline const Aws::String& GetEventSourceMappingArn() const { return m_eventSourceMappingArn; }
@@ -659,47 +700,6 @@ class EventSourceMappingConfiguration {
   template <typename EventSourceMappingArnT = Aws::String>
   EventSourceMappingConfiguration& WithEventSourceMappingArn(EventSourceMappingArnT&& value) {
     SetEventSourceMappingArn(std::forward<EventSourceMappingArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The metrics configuration for your event source. For more information, see <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event
-   * source mapping metrics</a>.</p>
-   */
-  inline const EventSourceMappingMetricsConfig& GetMetricsConfig() const { return m_metricsConfig; }
-  inline bool MetricsConfigHasBeenSet() const { return m_metricsConfigHasBeenSet; }
-  template <typename MetricsConfigT = EventSourceMappingMetricsConfig>
-  void SetMetricsConfig(MetricsConfigT&& value) {
-    m_metricsConfigHasBeenSet = true;
-    m_metricsConfig = std::forward<MetricsConfigT>(value);
-  }
-  template <typename MetricsConfigT = EventSourceMappingMetricsConfig>
-  EventSourceMappingConfiguration& WithMetricsConfig(MetricsConfigT&& value) {
-    SetMetricsConfig(std::forward<MetricsConfigT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration
-   * for your event source. For more information, see <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event
-   * source mapping logging</a>.</p>
-   */
-  inline const EventSourceMappingLoggingConfig& GetLoggingConfig() const { return m_loggingConfig; }
-  inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
-  template <typename LoggingConfigT = EventSourceMappingLoggingConfig>
-  void SetLoggingConfig(LoggingConfigT&& value) {
-    m_loggingConfigHasBeenSet = true;
-    m_loggingConfig = std::forward<LoggingConfigT>(value);
-  }
-  template <typename LoggingConfigT = EventSourceMappingLoggingConfig>
-  EventSourceMappingConfiguration& WithLoggingConfig(LoggingConfigT&& value) {
-    SetLoggingConfig(std::forward<LoggingConfigT>(value));
     return *this;
   }
   ///@}
@@ -757,6 +757,16 @@ class EventSourceMappingConfiguration {
 
   FilterCriteria m_filterCriteria;
 
+  FilterCriteriaError m_filterCriteriaError;
+
+  Aws::String m_kMSKeyArn;
+
+  EventSourceMappingMetricsConfig m_metricsConfig;
+
+  EventSourceMappingLoggingConfig m_loggingConfig;
+
+  ScalingConfig m_scalingConfig;
+
   Aws::String m_functionArn;
 
   Aws::Utils::DateTime m_lastModified{};
@@ -791,19 +801,9 @@ class EventSourceMappingConfiguration {
 
   SelfManagedKafkaEventSourceConfig m_selfManagedKafkaEventSourceConfig;
 
-  ScalingConfig m_scalingConfig;
-
   DocumentDBEventSourceConfig m_documentDBEventSourceConfig;
 
-  Aws::String m_kMSKeyArn;
-
-  FilterCriteriaError m_filterCriteriaError;
-
   Aws::String m_eventSourceMappingArn;
-
-  EventSourceMappingMetricsConfig m_metricsConfig;
-
-  EventSourceMappingLoggingConfig m_loggingConfig;
 
   ProvisionedPollerConfig m_provisionedPollerConfig;
 
@@ -816,6 +816,11 @@ class EventSourceMappingConfiguration {
   bool m_parallelizationFactorHasBeenSet = false;
   bool m_eventSourceArnHasBeenSet = false;
   bool m_filterCriteriaHasBeenSet = false;
+  bool m_filterCriteriaErrorHasBeenSet = false;
+  bool m_kMSKeyArnHasBeenSet = false;
+  bool m_metricsConfigHasBeenSet = false;
+  bool m_loggingConfigHasBeenSet = false;
+  bool m_scalingConfigHasBeenSet = false;
   bool m_functionArnHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
   bool m_lastProcessingResultHasBeenSet = false;
@@ -833,13 +838,8 @@ class EventSourceMappingConfiguration {
   bool m_functionResponseTypesHasBeenSet = false;
   bool m_amazonManagedKafkaEventSourceConfigHasBeenSet = false;
   bool m_selfManagedKafkaEventSourceConfigHasBeenSet = false;
-  bool m_scalingConfigHasBeenSet = false;
   bool m_documentDBEventSourceConfigHasBeenSet = false;
-  bool m_kMSKeyArnHasBeenSet = false;
-  bool m_filterCriteriaErrorHasBeenSet = false;
   bool m_eventSourceMappingArnHasBeenSet = false;
-  bool m_metricsConfigHasBeenSet = false;
-  bool m_loggingConfigHasBeenSet = false;
   bool m_provisionedPollerConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

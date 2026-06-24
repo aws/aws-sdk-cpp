@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/EnforcementMode.h>
 #include <aws/bedrock-agentcore-control/model/PolicyDefinition.h>
 #include <aws/bedrock-agentcore-control/model/PolicyStatus.h>
 #include <aws/core/http/HttpResponse.h>
@@ -160,6 +161,21 @@ class CreatePolicyResult {
 
   ///@{
   /**
+   * <p>The enforcement mode of the created policy.</p>
+   */
+  inline EnforcementMode GetEnforcementMode() const { return m_enforcementMode; }
+  inline void SetEnforcementMode(EnforcementMode value) {
+    m_enforcementModeHasBeenSet = true;
+    m_enforcementMode = value;
+  }
+  inline CreatePolicyResult& WithEnforcementMode(EnforcementMode value) {
+    SetEnforcementMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Cedar policy statement that was created. This is the validated policy
    * definition that will be used for agent behavior control and access
    * decisions.</p>
@@ -250,6 +266,8 @@ class CreatePolicyResult {
 
   PolicyStatus m_status{PolicyStatus::NOT_SET};
 
+  EnforcementMode m_enforcementMode{EnforcementMode::NOT_SET};
+
   PolicyDefinition m_definition;
 
   Aws::String m_description;
@@ -265,6 +283,7 @@ class CreatePolicyResult {
   bool m_updatedAtHasBeenSet = false;
   bool m_policyArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_enforcementModeHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_statusReasonsHasBeenSet = false;

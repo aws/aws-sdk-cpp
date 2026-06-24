@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EvaluationFormItem.h>
+#include <aws/connect/model/EvaluationFormScoreThreshold.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -130,6 +131,46 @@ class EvaluationFormSection {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The flag to exclude the section from scoring.</p>
+   */
+  inline bool GetIsExcludedFromScoring() const { return m_isExcludedFromScoring; }
+  inline bool IsExcludedFromScoringHasBeenSet() const { return m_isExcludedFromScoringHasBeenSet; }
+  inline void SetIsExcludedFromScoring(bool value) {
+    m_isExcludedFromScoringHasBeenSet = true;
+    m_isExcludedFromScoring = value;
+  }
+  inline EvaluationFormSection& WithIsExcludedFromScoring(bool value) {
+    SetIsExcludedFromScoring(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The score thresholds for performance categories.</p>
+   */
+  inline const Aws::Vector<EvaluationFormScoreThreshold>& GetScoreThresholds() const { return m_scoreThresholds; }
+  inline bool ScoreThresholdsHasBeenSet() const { return m_scoreThresholdsHasBeenSet; }
+  template <typename ScoreThresholdsT = Aws::Vector<EvaluationFormScoreThreshold>>
+  void SetScoreThresholds(ScoreThresholdsT&& value) {
+    m_scoreThresholdsHasBeenSet = true;
+    m_scoreThresholds = std::forward<ScoreThresholdsT>(value);
+  }
+  template <typename ScoreThresholdsT = Aws::Vector<EvaluationFormScoreThreshold>>
+  EvaluationFormSection& WithScoreThresholds(ScoreThresholdsT&& value) {
+    SetScoreThresholds(std::forward<ScoreThresholdsT>(value));
+    return *this;
+  }
+  template <typename ScoreThresholdsT = EvaluationFormScoreThreshold>
+  EvaluationFormSection& AddScoreThresholds(ScoreThresholdsT&& value) {
+    m_scoreThresholdsHasBeenSet = true;
+    m_scoreThresholds.emplace_back(std::forward<ScoreThresholdsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_title;
 
@@ -140,11 +181,17 @@ class EvaluationFormSection {
   Aws::Vector<EvaluationFormItem> m_items;
 
   double m_weight{0.0};
+
+  bool m_isExcludedFromScoring{false};
+
+  Aws::Vector<EvaluationFormScoreThreshold> m_scoreThresholds;
   bool m_titleHasBeenSet = false;
   bool m_refIdHasBeenSet = false;
   bool m_instructionsHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
   bool m_weightHasBeenSet = false;
+  bool m_isExcludedFromScoringHasBeenSet = false;
+  bool m_scoreThresholdsHasBeenSet = false;
 };
 
 }  // namespace Model

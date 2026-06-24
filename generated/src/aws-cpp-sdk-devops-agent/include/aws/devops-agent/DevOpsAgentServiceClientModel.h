@@ -27,10 +27,12 @@
 #include <aws/devops-agent/model/CreateBacklogTaskResult.h>
 #include <aws/devops-agent/model/CreateChatResult.h>
 #include <aws/devops-agent/model/CreatePrivateConnectionResult.h>
+#include <aws/devops-agent/model/CreateTriggerResult.h>
 #include <aws/devops-agent/model/DeleteAgentSpaceResult.h>
 #include <aws/devops-agent/model/DeleteAssetFileResult.h>
 #include <aws/devops-agent/model/DeleteAssetResult.h>
 #include <aws/devops-agent/model/DeletePrivateConnectionResult.h>
+#include <aws/devops-agent/model/DeleteTriggerResult.h>
 #include <aws/devops-agent/model/DeregisterServiceResult.h>
 #include <aws/devops-agent/model/DescribePrivateConnectionResult.h>
 #include <aws/devops-agent/model/DisassociateServiceResult.h>
@@ -46,6 +48,7 @@
 #include <aws/devops-agent/model/GetOperatorAppResult.h>
 #include <aws/devops-agent/model/GetRecommendationResult.h>
 #include <aws/devops-agent/model/GetServiceResult.h>
+#include <aws/devops-agent/model/GetTriggerResult.h>
 #include <aws/devops-agent/model/ListAgentSpacesRequest.h>
 #include <aws/devops-agent/model/ListAgentSpacesResult.h>
 #include <aws/devops-agent/model/ListAssetFilesResult.h>
@@ -66,6 +69,7 @@
 #include <aws/devops-agent/model/ListServicesRequest.h>
 #include <aws/devops-agent/model/ListServicesResult.h>
 #include <aws/devops-agent/model/ListTagsForResourceResult.h>
+#include <aws/devops-agent/model/ListTriggersResult.h>
 #include <aws/devops-agent/model/ListWebhooksResult.h>
 #include <aws/devops-agent/model/RegisterServiceResult.h>
 #include <aws/devops-agent/model/TagResourceResult.h>
@@ -79,6 +83,7 @@
 #include <aws/devops-agent/model/UpdateOperatorAppIdpConfigResult.h>
 #include <aws/devops-agent/model/UpdatePrivateConnectionCertificateResult.h>
 #include <aws/devops-agent/model/UpdateRecommendationResult.h>
+#include <aws/devops-agent/model/UpdateTriggerResult.h>
 #include <aws/devops-agent/model/ValidateAwsAssociationsResult.h>
 /* End of service model headers required in DevOpsAgentClient header */
 
@@ -120,10 +125,12 @@ class CreateAssetFileRequest;
 class CreateBacklogTaskRequest;
 class CreateChatRequest;
 class CreatePrivateConnectionRequest;
+class CreateTriggerRequest;
 class DeleteAgentSpaceRequest;
 class DeleteAssetRequest;
 class DeleteAssetFileRequest;
 class DeletePrivateConnectionRequest;
+class DeleteTriggerRequest;
 class DeregisterServiceRequest;
 class DescribePrivateConnectionRequest;
 class DisableOperatorAppRequest;
@@ -139,6 +146,7 @@ class GetBacklogTaskRequest;
 class GetOperatorAppRequest;
 class GetRecommendationRequest;
 class GetServiceRequest;
+class GetTriggerRequest;
 class ListAgentSpacesRequest;
 class ListAssetFilesRequest;
 class ListAssetTypesRequest;
@@ -155,6 +163,7 @@ class ListPrivateConnectionsRequest;
 class ListRecommendationsRequest;
 class ListServicesRequest;
 class ListTagsForResourceRequest;
+class ListTriggersRequest;
 class ListWebhooksRequest;
 class RegisterServiceRequest;
 class SendMessageRequest;
@@ -169,6 +178,7 @@ class UpdateGoalRequest;
 class UpdateOperatorAppIdpConfigRequest;
 class UpdatePrivateConnectionCertificateRequest;
 class UpdateRecommendationRequest;
+class UpdateTriggerRequest;
 class ValidateAwsAssociationsRequest;
 /* End of service model forward declarations required in DevOpsAgentClient header */
 
@@ -180,10 +190,12 @@ typedef Aws::Utils::Outcome<CreateAssetFileResult, DevOpsAgentError> CreateAsset
 typedef Aws::Utils::Outcome<CreateBacklogTaskResult, DevOpsAgentError> CreateBacklogTaskOutcome;
 typedef Aws::Utils::Outcome<CreateChatResult, DevOpsAgentError> CreateChatOutcome;
 typedef Aws::Utils::Outcome<CreatePrivateConnectionResult, DevOpsAgentError> CreatePrivateConnectionOutcome;
+typedef Aws::Utils::Outcome<CreateTriggerResult, DevOpsAgentError> CreateTriggerOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentSpaceResult, DevOpsAgentError> DeleteAgentSpaceOutcome;
 typedef Aws::Utils::Outcome<DeleteAssetResult, DevOpsAgentError> DeleteAssetOutcome;
 typedef Aws::Utils::Outcome<DeleteAssetFileResult, DevOpsAgentError> DeleteAssetFileOutcome;
 typedef Aws::Utils::Outcome<DeletePrivateConnectionResult, DevOpsAgentError> DeletePrivateConnectionOutcome;
+typedef Aws::Utils::Outcome<DeleteTriggerResult, DevOpsAgentError> DeleteTriggerOutcome;
 typedef Aws::Utils::Outcome<DeregisterServiceResult, DevOpsAgentError> DeregisterServiceOutcome;
 typedef Aws::Utils::Outcome<DescribePrivateConnectionResult, DevOpsAgentError> DescribePrivateConnectionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, DevOpsAgentError> DisableOperatorAppOutcome;
@@ -199,6 +211,7 @@ typedef Aws::Utils::Outcome<GetBacklogTaskResult, DevOpsAgentError> GetBacklogTa
 typedef Aws::Utils::Outcome<GetOperatorAppResult, DevOpsAgentError> GetOperatorAppOutcome;
 typedef Aws::Utils::Outcome<GetRecommendationResult, DevOpsAgentError> GetRecommendationOutcome;
 typedef Aws::Utils::Outcome<GetServiceResult, DevOpsAgentError> GetServiceOutcome;
+typedef Aws::Utils::Outcome<GetTriggerResult, DevOpsAgentError> GetTriggerOutcome;
 typedef Aws::Utils::Outcome<ListAgentSpacesResult, DevOpsAgentError> ListAgentSpacesOutcome;
 typedef Aws::Utils::Outcome<ListAssetFilesResult, DevOpsAgentError> ListAssetFilesOutcome;
 typedef Aws::Utils::Outcome<ListAssetTypesResult, DevOpsAgentError> ListAssetTypesOutcome;
@@ -215,6 +228,7 @@ typedef Aws::Utils::Outcome<ListPrivateConnectionsResult, DevOpsAgentError> List
 typedef Aws::Utils::Outcome<ListRecommendationsResult, DevOpsAgentError> ListRecommendationsOutcome;
 typedef Aws::Utils::Outcome<ListServicesResult, DevOpsAgentError> ListServicesOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, DevOpsAgentError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<ListTriggersResult, DevOpsAgentError> ListTriggersOutcome;
 typedef Aws::Utils::Outcome<ListWebhooksResult, DevOpsAgentError> ListWebhooksOutcome;
 typedef Aws::Utils::Outcome<RegisterServiceResult, DevOpsAgentError> RegisterServiceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, DevOpsAgentError> SendMessageOutcome;
@@ -229,6 +243,7 @@ typedef Aws::Utils::Outcome<UpdateGoalResult, DevOpsAgentError> UpdateGoalOutcom
 typedef Aws::Utils::Outcome<UpdateOperatorAppIdpConfigResult, DevOpsAgentError> UpdateOperatorAppIdpConfigOutcome;
 typedef Aws::Utils::Outcome<UpdatePrivateConnectionCertificateResult, DevOpsAgentError> UpdatePrivateConnectionCertificateOutcome;
 typedef Aws::Utils::Outcome<UpdateRecommendationResult, DevOpsAgentError> UpdateRecommendationOutcome;
+typedef Aws::Utils::Outcome<UpdateTriggerResult, DevOpsAgentError> UpdateTriggerOutcome;
 typedef Aws::Utils::Outcome<ValidateAwsAssociationsResult, DevOpsAgentError> ValidateAwsAssociationsOutcome;
 /* End of service model Outcome class definitions */
 
@@ -240,10 +255,12 @@ typedef std::future<CreateAssetFileOutcome> CreateAssetFileOutcomeCallable;
 typedef std::future<CreateBacklogTaskOutcome> CreateBacklogTaskOutcomeCallable;
 typedef std::future<CreateChatOutcome> CreateChatOutcomeCallable;
 typedef std::future<CreatePrivateConnectionOutcome> CreatePrivateConnectionOutcomeCallable;
+typedef std::future<CreateTriggerOutcome> CreateTriggerOutcomeCallable;
 typedef std::future<DeleteAgentSpaceOutcome> DeleteAgentSpaceOutcomeCallable;
 typedef std::future<DeleteAssetOutcome> DeleteAssetOutcomeCallable;
 typedef std::future<DeleteAssetFileOutcome> DeleteAssetFileOutcomeCallable;
 typedef std::future<DeletePrivateConnectionOutcome> DeletePrivateConnectionOutcomeCallable;
+typedef std::future<DeleteTriggerOutcome> DeleteTriggerOutcomeCallable;
 typedef std::future<DeregisterServiceOutcome> DeregisterServiceOutcomeCallable;
 typedef std::future<DescribePrivateConnectionOutcome> DescribePrivateConnectionOutcomeCallable;
 typedef std::future<DisableOperatorAppOutcome> DisableOperatorAppOutcomeCallable;
@@ -259,6 +276,7 @@ typedef std::future<GetBacklogTaskOutcome> GetBacklogTaskOutcomeCallable;
 typedef std::future<GetOperatorAppOutcome> GetOperatorAppOutcomeCallable;
 typedef std::future<GetRecommendationOutcome> GetRecommendationOutcomeCallable;
 typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
+typedef std::future<GetTriggerOutcome> GetTriggerOutcomeCallable;
 typedef std::future<ListAgentSpacesOutcome> ListAgentSpacesOutcomeCallable;
 typedef std::future<ListAssetFilesOutcome> ListAssetFilesOutcomeCallable;
 typedef std::future<ListAssetTypesOutcome> ListAssetTypesOutcomeCallable;
@@ -275,6 +293,7 @@ typedef std::future<ListPrivateConnectionsOutcome> ListPrivateConnectionsOutcome
 typedef std::future<ListRecommendationsOutcome> ListRecommendationsOutcomeCallable;
 typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<ListTriggersOutcome> ListTriggersOutcomeCallable;
 typedef std::future<ListWebhooksOutcome> ListWebhooksOutcomeCallable;
 typedef std::future<RegisterServiceOutcome> RegisterServiceOutcomeCallable;
 typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
@@ -289,6 +308,7 @@ typedef std::future<UpdateGoalOutcome> UpdateGoalOutcomeCallable;
 typedef std::future<UpdateOperatorAppIdpConfigOutcome> UpdateOperatorAppIdpConfigOutcomeCallable;
 typedef std::future<UpdatePrivateConnectionCertificateOutcome> UpdatePrivateConnectionCertificateOutcomeCallable;
 typedef std::future<UpdateRecommendationOutcome> UpdateRecommendationOutcomeCallable;
+typedef std::future<UpdateTriggerOutcome> UpdateTriggerOutcomeCallable;
 typedef std::future<ValidateAwsAssociationsOutcome> ValidateAwsAssociationsOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -317,6 +337,9 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::CreateChatRequ
 typedef std::function<void(const DevOpsAgentClient*, const Model::CreatePrivateConnectionRequest&,
                            const Model::CreatePrivateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreatePrivateConnectionResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::CreateTriggerRequest&, const Model::CreateTriggerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateTriggerResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::DeleteAgentSpaceRequest&, const Model::DeleteAgentSpaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAgentSpaceResponseReceivedHandler;
@@ -329,6 +352,9 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::DeleteAssetFil
 typedef std::function<void(const DevOpsAgentClient*, const Model::DeletePrivateConnectionRequest&,
                            const Model::DeletePrivateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePrivateConnectionResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::DeleteTriggerRequest&, const Model::DeleteTriggerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteTriggerResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::DeregisterServiceRequest&, const Model::DeregisterServiceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeregisterServiceResponseReceivedHandler;
@@ -374,6 +400,9 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::GetRecommendat
 typedef std::function<void(const DevOpsAgentClient*, const Model::GetServiceRequest&, const Model::GetServiceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetServiceResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::GetTriggerRequest&, const Model::GetTriggerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTriggerResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::ListAgentSpacesRequest&, const Model::ListAgentSpacesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAgentSpacesResponseReceivedHandler;
@@ -422,6 +451,9 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::ListServicesRe
 typedef std::function<void(const DevOpsAgentClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::ListTriggersRequest&, const Model::ListTriggersOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTriggersResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::ListWebhooksRequest&, const Model::ListWebhooksOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListWebhooksResponseReceivedHandler;
@@ -465,6 +497,9 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::UpdatePrivateC
 typedef std::function<void(const DevOpsAgentClient*, const Model::UpdateRecommendationRequest&, const Model::UpdateRecommendationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateRecommendationResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::UpdateTriggerRequest&, const Model::UpdateTriggerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateTriggerResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::ValidateAwsAssociationsRequest&,
                            const Model::ValidateAwsAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ValidateAwsAssociationsResponseReceivedHandler;

@@ -52,6 +52,42 @@ class CreateOrderRequest : public OutpostsRequest {
 
   ///@{
   /**
+   * <p>The ID of the quote to use for the order.</p>
+   */
+  inline const Aws::String& GetQuoteIdentifier() const { return m_quoteIdentifier; }
+  inline bool QuoteIdentifierHasBeenSet() const { return m_quoteIdentifierHasBeenSet; }
+  template <typename QuoteIdentifierT = Aws::String>
+  void SetQuoteIdentifier(QuoteIdentifierT&& value) {
+    m_quoteIdentifierHasBeenSet = true;
+    m_quoteIdentifier = std::forward<QuoteIdentifierT>(value);
+  }
+  template <typename QuoteIdentifierT = Aws::String>
+  CreateOrderRequest& WithQuoteIdentifier(QuoteIdentifierT&& value) {
+    SetQuoteIdentifier(std::forward<QuoteIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the quote option to use for the order.</p>
+   */
+  inline const Aws::String& GetQuoteOptionIdentifier() const { return m_quoteOptionIdentifier; }
+  inline bool QuoteOptionIdentifierHasBeenSet() const { return m_quoteOptionIdentifierHasBeenSet; }
+  template <typename QuoteOptionIdentifierT = Aws::String>
+  void SetQuoteOptionIdentifier(QuoteOptionIdentifierT&& value) {
+    m_quoteOptionIdentifierHasBeenSet = true;
+    m_quoteOptionIdentifier = std::forward<QuoteOptionIdentifierT>(value);
+  }
+  template <typename QuoteOptionIdentifierT = Aws::String>
+  CreateOrderRequest& WithQuoteOptionIdentifier(QuoteOptionIdentifierT&& value) {
+    SetQuoteOptionIdentifier(std::forward<QuoteOptionIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The line items that make up the order.</p>
    */
   inline const Aws::Vector<LineItemRequest>& GetLineItems() const { return m_lineItems; }
@@ -108,12 +144,18 @@ class CreateOrderRequest : public OutpostsRequest {
  private:
   Aws::String m_outpostIdentifier;
 
+  Aws::String m_quoteIdentifier;
+
+  Aws::String m_quoteOptionIdentifier;
+
   Aws::Vector<LineItemRequest> m_lineItems;
 
   PaymentOption m_paymentOption{PaymentOption::NOT_SET};
 
   PaymentTerm m_paymentTerm{PaymentTerm::NOT_SET};
   bool m_outpostIdentifierHasBeenSet = false;
+  bool m_quoteIdentifierHasBeenSet = false;
+  bool m_quoteOptionIdentifierHasBeenSet = false;
   bool m_lineItemsHasBeenSet = false;
   bool m_paymentOptionHasBeenSet = false;
   bool m_paymentTermHasBeenSet = false;

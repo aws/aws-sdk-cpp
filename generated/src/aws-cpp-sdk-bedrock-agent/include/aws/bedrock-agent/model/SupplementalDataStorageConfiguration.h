@@ -21,9 +21,10 @@ namespace BedrockAgent {
 namespace Model {
 
 /**
- * <p>Specifies configurations for the storage location of the images extracted
- * from multimodal documents in your data source. These images can be retrieved and
- * returned to the end user.</p><p><h3>See Also:</h3>   <a
+ * <p>Specifies configurations for the storage location of multimedia content
+ * (images, audio, and video) extracted from multimodal documents in your data
+ * source. This content can be retrieved and returned to the end user with
+ * timestamp references for audio and video segments.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/SupplementalDataStorageConfiguration">AWS
  * API Reference</a></p>
  */
@@ -36,8 +37,9 @@ class SupplementalDataStorageConfiguration {
 
   ///@{
   /**
-   * <p>A list of objects specifying storage locations for images extracted from
-   * multimodal documents in your data source.</p>
+   * <p>A list of objects specifying storage locations for multimedia content
+   * (images, audio, and video) extracted from multimodal documents in your data
+   * source.</p>
    */
   inline const Aws::Vector<SupplementalDataStorageLocation>& GetStorageLocations() const { return m_storageLocations; }
   inline bool StorageLocationsHasBeenSet() const { return m_storageLocationsHasBeenSet; }

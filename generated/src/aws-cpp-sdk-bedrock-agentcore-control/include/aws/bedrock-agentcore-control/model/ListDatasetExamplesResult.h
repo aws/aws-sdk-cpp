@@ -66,7 +66,7 @@ class ListDatasetExamplesResult {
 
   ///@{
   /**
-   * <p>The version returned.</p>
+   * <p> The version returned. </p>
    */
   inline const Aws::String& GetDatasetVersion() const { return m_datasetVersion; }
   template <typename DatasetVersionT = Aws::String>
@@ -83,8 +83,8 @@ class ListDatasetExamplesResult {
 
   ///@{
   /**
-   * <p>Paginated example content. Each element is a JSON object containing at least
-   * an <code>exampleId</code> field plus the schema-specific content fields.</p>
+   * <p> Paginated example content. Each element is a JSON object containing at least
+   * an <code>exampleId</code> field plus the schema-specific content fields. </p>
    */
   inline const Aws::Vector<Aws::Utils::Document>& GetExamples() const { return m_examples; }
   template <typename ExamplesT = Aws::Vector<Aws::Utils::Document>>

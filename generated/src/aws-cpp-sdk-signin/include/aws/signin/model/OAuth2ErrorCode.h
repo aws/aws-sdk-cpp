@@ -17,7 +17,10 @@ enum class OAuth2ErrorCode {
   INSUFFICIENT_PERMISSIONS,
   AUTHCODE_EXPIRED,
   server_error,
-  INVALID_REQUEST
+  INVALID_REQUEST,
+  RESOURCE_NOT_FOUND,
+  CONFLICT,
+  SERVICE_QUOTA_EXCEEDED
 };
 
 namespace OAuth2ErrorCodeMapper {

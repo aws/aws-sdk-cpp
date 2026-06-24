@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityAgent {
 namespace Model {
-enum class StepName { NOT_SET, PREFLIGHT, STATIC_ANALYSIS, PENTEST, FINALIZING };
+enum class StepName { NOT_SET, PREFLIGHT, STATIC_ANALYSIS, PENTEST, FINALIZING, VALIDATION };
 
 namespace StepNameMapper {
 AWS_SECURITYAGENT_API StepName GetStepNameForName(const Aws::String& name);

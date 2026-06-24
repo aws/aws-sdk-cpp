@@ -17,6 +17,8 @@ namespace IpAddressStatusMapper {
 
 static const int CREATING_HASH = HashingUtils::HashString("CREATING");
 static const int FAILED_CREATION_HASH = HashingUtils::HashString("FAILED_CREATION");
+static const int FAILED_CREATION_INSUFFICIENT_EC2_CAPACITY_IN_OUTPOST_HASH =
+    HashingUtils::HashString("FAILED_CREATION_INSUFFICIENT_EC2_CAPACITY_IN_OUTPOST");
 static const int ATTACHING_HASH = HashingUtils::HashString("ATTACHING");
 static const int ATTACHED_HASH = HashingUtils::HashString("ATTACHED");
 static const int REMAP_DETACHING_HASH = HashingUtils::HashString("REMAP_DETACHING");
@@ -35,6 +37,8 @@ IpAddressStatus GetIpAddressStatusForName(const Aws::String& name) {
     return IpAddressStatus::CREATING;
   } else if (hashCode == FAILED_CREATION_HASH) {
     return IpAddressStatus::FAILED_CREATION;
+  } else if (hashCode == FAILED_CREATION_INSUFFICIENT_EC2_CAPACITY_IN_OUTPOST_HASH) {
+    return IpAddressStatus::FAILED_CREATION_INSUFFICIENT_EC2_CAPACITY_IN_OUTPOST;
   } else if (hashCode == ATTACHING_HASH) {
     return IpAddressStatus::ATTACHING;
   } else if (hashCode == ATTACHED_HASH) {
@@ -75,6 +79,8 @@ Aws::String GetNameForIpAddressStatus(IpAddressStatus enumValue) {
       return "CREATING";
     case IpAddressStatus::FAILED_CREATION:
       return "FAILED_CREATION";
+    case IpAddressStatus::FAILED_CREATION_INSUFFICIENT_EC2_CAPACITY_IN_OUTPOST:
+      return "FAILED_CREATION_INSUFFICIENT_EC2_CAPACITY_IN_OUTPOST";
     case IpAddressStatus::ATTACHING:
       return "ATTACHING";
     case IpAddressStatus::ATTACHED:

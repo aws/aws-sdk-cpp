@@ -12,6 +12,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/Column.h>
 #include <aws/glue/model/FederatedTable.h>
+#include <aws/glue/model/IcebergTableMetadata.h>
 #include <aws/glue/model/StorageDescriptor.h>
 #include <aws/glue/model/TableIdentifier.h>
 #include <aws/glue/model/ViewDefinition.h>
@@ -499,6 +500,27 @@ class Table {
 
   ///@{
   /**
+   * <p>The latest Apache Iceberg table metadata for the table, including format
+   * version, schemas, partition specifications, and sort orders. This field is
+   * populated for Iceberg tables and reflects the current state of the table's
+   * Iceberg metadata.</p>
+   */
+  inline const IcebergTableMetadata& GetIcebergTableMetadata() const { return m_icebergTableMetadata; }
+  inline bool IcebergTableMetadataHasBeenSet() const { return m_icebergTableMetadataHasBeenSet; }
+  template <typename IcebergTableMetadataT = IcebergTableMetadata>
+  void SetIcebergTableMetadata(IcebergTableMetadataT&& value) {
+    m_icebergTableMetadataHasBeenSet = true;
+    m_icebergTableMetadata = std::forward<IcebergTableMetadataT>(value);
+  }
+  template <typename IcebergTableMetadataT = IcebergTableMetadata>
+  Table& WithIcebergTableMetadata(IcebergTableMetadataT&& value) {
+    SetIcebergTableMetadata(std::forward<IcebergTableMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates the the state of an asynchronous change to a table.</p>
    */
   inline const TableStatus& GetStatus() const { return *m_status; }
@@ -563,6 +585,8 @@ class Table {
 
   bool m_isMaterializedView{false};
 
+  IcebergTableMetadata m_icebergTableMetadata;
+
   std::shared_ptr<TableStatus> m_status;
   bool m_nameHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
@@ -588,6 +612,7 @@ class Table {
   bool m_viewDefinitionHasBeenSet = false;
   bool m_isMultiDialectViewHasBeenSet = false;
   bool m_isMaterializedViewHasBeenSet = false;
+  bool m_icebergTableMetadataHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -11,6 +11,7 @@
 #include <aws/logs/model/DestinationConfiguration.h>
 #include <aws/logs/model/ExecutionStatus.h>
 #include <aws/logs/model/QueryLanguage.h>
+#include <aws/logs/model/ScheduleType.h>
 #include <aws/logs/model/ScheduledQueryState.h>
 
 #include <utility>
@@ -190,6 +191,22 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
+   * <p>The time offset in seconds that defines the end of the lookback period for
+   * the query.</p>
+   */
+  inline long long GetEndTimeOffset() const { return m_endTimeOffset; }
+  inline void SetEndTimeOffset(long long value) {
+    m_endTimeOffsetHasBeenSet = true;
+    m_endTimeOffset = value;
+  }
+  inline GetScheduledQueryResult& WithEndTimeOffset(long long value) {
+    SetEndTimeOffset(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration for where query results are delivered.</p>
    */
   inline const DestinationConfiguration& GetDestinationConfiguration() const { return m_destinationConfiguration; }
@@ -216,6 +233,22 @@ class GetScheduledQueryResult {
   }
   inline GetScheduledQueryResult& WithState(ScheduledQueryState value) {
     SetState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The schedule type of the scheduled query. Valid values are
+   * <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>.</p>
+   */
+  inline ScheduleType GetScheduleType() const { return m_scheduleType; }
+  inline void SetScheduleType(ScheduleType value) {
+    m_scheduleTypeHasBeenSet = true;
+    m_scheduleType = value;
+  }
+  inline GetScheduledQueryResult& WithScheduleType(ScheduleType value) {
+    SetScheduleType(value);
     return *this;
   }
   ///@}
@@ -362,9 +395,13 @@ class GetScheduledQueryResult {
 
   long long m_startTimeOffset{0};
 
+  long long m_endTimeOffset{0};
+
   DestinationConfiguration m_destinationConfiguration;
 
   ScheduledQueryState m_state{ScheduledQueryState::NOT_SET};
+
+  ScheduleType m_scheduleType{ScheduleType::NOT_SET};
 
   long long m_lastTriggeredTime{0};
 
@@ -391,8 +428,10 @@ class GetScheduledQueryResult {
   bool m_scheduleExpressionHasBeenSet = false;
   bool m_timezoneHasBeenSet = false;
   bool m_startTimeOffsetHasBeenSet = false;
+  bool m_endTimeOffsetHasBeenSet = false;
   bool m_destinationConfigurationHasBeenSet = false;
   bool m_stateHasBeenSet = false;
+  bool m_scheduleTypeHasBeenSet = false;
   bool m_lastTriggeredTimeHasBeenSet = false;
   bool m_lastExecutionStatusHasBeenSet = false;
   bool m_scheduleStartTimeHasBeenSet = false;

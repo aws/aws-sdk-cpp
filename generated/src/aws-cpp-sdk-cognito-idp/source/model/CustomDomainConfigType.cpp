@@ -22,6 +22,10 @@ CustomDomainConfigType& CustomDomainConfigType::operator=(JsonView jsonValue) {
     m_certificateArn = jsonValue.GetString("CertificateArn");
     m_certificateArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SecurityPolicy")) {
+    m_securityPolicy = SecurityPolicyTypeMapper::GetSecurityPolicyTypeForName(jsonValue.GetString("SecurityPolicy"));
+    m_securityPolicyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue CustomDomainConfigType::Jsonize() const {
 
   if (m_certificateArnHasBeenSet) {
     payload.WithString("CertificateArn", m_certificateArn);
+  }
+
+  if (m_securityPolicyHasBeenSet) {
+    payload.WithString("SecurityPolicy", SecurityPolicyTypeMapper::GetNameForSecurityPolicyType(m_securityPolicy));
   }
 
   return payload;

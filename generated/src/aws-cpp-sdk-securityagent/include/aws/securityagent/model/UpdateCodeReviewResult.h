@@ -11,6 +11,7 @@
 #include <aws/securityagent/model/Assets.h>
 #include <aws/securityagent/model/CloudWatchLog.h>
 #include <aws/securityagent/model/CodeRemediationStrategy.h>
+#include <aws/securityagent/model/ValidationMode.h>
 
 #include <utility>
 
@@ -188,6 +189,21 @@ class UpdateCodeReviewResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The validation mode for the code review.</p>
+   */
+  inline ValidationMode GetValidationMode() const { return m_validationMode; }
+  inline void SetValidationMode(ValidationMode value) {
+    m_validationModeHasBeenSet = true;
+    m_validationMode = value;
+  }
+  inline UpdateCodeReviewResult& WithValidationMode(ValidationMode value) {
+    SetValidationMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -222,6 +238,8 @@ class UpdateCodeReviewResult {
 
   CodeRemediationStrategy m_codeRemediationStrategy{CodeRemediationStrategy::NOT_SET};
 
+  ValidationMode m_validationMode{ValidationMode::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_codeReviewIdHasBeenSet = false;
@@ -233,6 +251,7 @@ class UpdateCodeReviewResult {
   bool m_logConfigHasBeenSet = false;
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_codeRemediationStrategyHasBeenSet = false;
+  bool m_validationModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

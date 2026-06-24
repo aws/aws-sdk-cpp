@@ -259,6 +259,54 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>This API is currently available as a preview. During the preview, you can
+   * initiate up to 10 investigations per account per day, with a total limit of 100
+   * investigations per account. This feature is available in the following Amazon
+   * Web Services Regions: US East (N. Virginia), US East (Ohio), US West (Oregon),
+   * Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe
+   * (Paris), Europe (Stockholm), and Asia Pacific (Tokyo).</p> <p>Initiates a
+   * GuardDuty investigation that automatically analyzes security findings,
+   * correlates related activity, performs account-level analysis, and produces a
+   * structured investigation summary with recommended next steps.</p> <p>Only the
+   * administrator account can create an investigation. Member accounts don't have
+   * permission to create investigations from their accounts.</p> <p>To use this
+   * operation, the <code>AI_ANALYST</code> feature must be enabled on your
+   * detector.</p> <p>This feature uses Amazon Bedrock models that leverage
+   * Cross-Region Inference (CRIS), which automatically selects the optimal Amazon
+   * Web Services Region within your geography to process the investigation analysis
+   * and generate the investigation report. This maximizes available compute
+   * resources, model availability, and delivers the best customer experience. Your
+   * data remains stored only in the Region where the investigation request
+   * originates, however, investigation data and summary results may be processed
+   * outside that Region. All data is transmitted encrypted across Amazon's secure
+   * network. For more information, see <a
+   * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-investigation.html">GuardDuty
+   * Investigation</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateInvestigation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateInvestigationOutcome CreateInvestigation(const Model::CreateInvestigationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateInvestigation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateInvestigationRequestT = Model::CreateInvestigationRequest>
+  Model::CreateInvestigationOutcomeCallable CreateInvestigationCallable(const CreateInvestigationRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::CreateInvestigation, request);
+  }
+
+  /**
+   * An Async wrapper for CreateInvestigation that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateInvestigationRequestT = Model::CreateInvestigationRequest>
+  void CreateInvestigationAsync(const CreateInvestigationRequestT& request, const CreateInvestigationResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::CreateInvestigation, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new Malware Protection plan for the protected resource.</p> <p>When
    * you create a Malware Protection plan, the Amazon Web Services service terms for
    * GuardDuty Malware Protection apply. For more information, see <a
@@ -1259,6 +1307,39 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>This API is currently available as a preview. This feature is available in
+   * the following Amazon Web Services Regions: US East (N. Virginia), US East
+   * (Ohio), US West (Oregon), Canada (Central), Europe (Frankfurt), Europe
+   * (Ireland), Europe (London), Europe (Paris), Europe (Stockholm), and Asia Pacific
+   * (Tokyo).</p> <p>Retrieves the results and status of a specific GuardDuty
+   * investigation.</p> <p>An administrator account can retrieve any investigation
+   * within the organization. Member accounts can only retrieve investigations that
+   * belong to them.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetInvestigation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetInvestigationOutcome GetInvestigation(const Model::GetInvestigationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetInvestigation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetInvestigationRequestT = Model::GetInvestigationRequest>
+  Model::GetInvestigationOutcomeCallable GetInvestigationCallable(const GetInvestigationRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::GetInvestigation, request);
+  }
+
+  /**
+   * An Async wrapper for GetInvestigation that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetInvestigationRequestT = Model::GetInvestigationRequest>
+  void GetInvestigationAsync(const GetInvestigationRequestT& request, const GetInvestigationResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::GetInvestigation, request, handler, context);
+  }
+
+  /**
    * <p>Returns the count of all GuardDuty membership invitations that were sent to
    * the current member account except the currently accepted
    * invitation.</p><p><h3>See Also:</h3>   <a
@@ -1808,6 +1889,39 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
   void ListIPSetsAsync(const ListIPSetsRequestT& request, const ListIPSetsResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GuardDutyClient::ListIPSets, request, handler, context);
+  }
+
+  /**
+   * <p>This API is currently available as a preview. This feature is available in
+   * the following Amazon Web Services Regions: US East (N. Virginia), US East
+   * (Ohio), US West (Oregon), Canada (Central), Europe (Frankfurt), Europe
+   * (Ireland), Europe (London), Europe (Paris), Europe (Stockholm), and Asia Pacific
+   * (Tokyo).</p> <p>Returns a list of investigations associated with the specified
+   * GuardDuty detector.</p> <p>An administrator account sees all investigations
+   * across the organization. Member accounts see only the investigations that belong
+   * to them.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvestigations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListInvestigationsOutcome ListInvestigations(const Model::ListInvestigationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListInvestigations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListInvestigationsRequestT = Model::ListInvestigationsRequest>
+  Model::ListInvestigationsOutcomeCallable ListInvestigationsCallable(const ListInvestigationsRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::ListInvestigations, request);
+  }
+
+  /**
+   * An Async wrapper for ListInvestigations that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListInvestigationsRequestT = Model::ListInvestigationsRequest>
+  void ListInvestigationsAsync(const ListInvestigationsRequestT& request, const ListInvestigationsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::ListInvestigations, request, handler, context);
   }
 
   /**

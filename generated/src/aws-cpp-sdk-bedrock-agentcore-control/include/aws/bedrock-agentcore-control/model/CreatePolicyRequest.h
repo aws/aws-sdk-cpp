@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/EnforcementMode.h>
 #include <aws/bedrock-agentcore-control/model/PolicyDefinition.h>
 #include <aws/bedrock-agentcore-control/model/PolicyValidationMode.h>
 #include <aws/core/utils/UUID.h>
@@ -121,6 +122,25 @@ class CreatePolicyRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code>
+   * mode to collect data on how it affects your application. Once you are satisfied
+   * with the data gathered, switch the policy to <code>ACTIVE</code>. Defaults to
+   * <code>ACTIVE</code>.</p>
+   */
+  inline EnforcementMode GetEnforcementMode() const { return m_enforcementMode; }
+  inline bool EnforcementModeHasBeenSet() const { return m_enforcementModeHasBeenSet; }
+  inline void SetEnforcementMode(EnforcementMode value) {
+    m_enforcementModeHasBeenSet = true;
+    m_enforcementMode = value;
+  }
+  inline CreatePolicyRequest& WithEnforcementMode(EnforcementMode value) {
+    SetEnforcementMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier of the policy engine which contains this policy. Policy
    * engines group related policies and provide the execution context for policy
    * evaluation.</p>
@@ -168,6 +188,8 @@ class CreatePolicyRequest : public BedrockAgentCoreControlRequest {
 
   PolicyValidationMode m_validationMode{PolicyValidationMode::NOT_SET};
 
+  EnforcementMode m_enforcementMode{EnforcementMode::NOT_SET};
+
   Aws::String m_policyEngineId;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -175,6 +197,7 @@ class CreatePolicyRequest : public BedrockAgentCoreControlRequest {
   bool m_definitionHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_validationModeHasBeenSet = false;
+  bool m_enforcementModeHasBeenSet = false;
   bool m_policyEngineIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };

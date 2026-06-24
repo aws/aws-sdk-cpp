@@ -72,6 +72,60 @@ class UpdateFindingRequest : public SecurityAgentRequest {
 
   ///@{
   /**
+   * <p>The updated name for the finding.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateFindingRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated description for the finding.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateFindingRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated risk type for the finding.</p>
+   */
+  inline const Aws::String& GetRiskType() const { return m_riskType; }
+  inline bool RiskTypeHasBeenSet() const { return m_riskTypeHasBeenSet; }
+  template <typename RiskTypeT = Aws::String>
+  void SetRiskType(RiskTypeT&& value) {
+    m_riskTypeHasBeenSet = true;
+    m_riskType = std::forward<RiskTypeT>(value);
+  }
+  template <typename RiskTypeT = Aws::String>
+  UpdateFindingRequest& WithRiskType(RiskTypeT&& value) {
+    SetRiskType(std::forward<RiskTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The updated risk level for the finding.</p>
    */
   inline RiskLevel GetRiskLevel() const { return m_riskLevel; }
@@ -82,6 +136,60 @@ class UpdateFindingRequest : public SecurityAgentRequest {
   }
   inline UpdateFindingRequest& WithRiskLevel(RiskLevel value) {
     SetRiskLevel(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated numerical risk score for the finding.</p>
+   */
+  inline const Aws::String& GetRiskScore() const { return m_riskScore; }
+  inline bool RiskScoreHasBeenSet() const { return m_riskScoreHasBeenSet; }
+  template <typename RiskScoreT = Aws::String>
+  void SetRiskScore(RiskScoreT&& value) {
+    m_riskScoreHasBeenSet = true;
+    m_riskScore = std::forward<RiskScoreT>(value);
+  }
+  template <typename RiskScoreT = Aws::String>
+  UpdateFindingRequest& WithRiskScore(RiskScoreT&& value) {
+    SetRiskScore(std::forward<RiskScoreT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated attack script for the finding.</p>
+   */
+  inline const Aws::String& GetAttackScript() const { return m_attackScript; }
+  inline bool AttackScriptHasBeenSet() const { return m_attackScriptHasBeenSet; }
+  template <typename AttackScriptT = Aws::String>
+  void SetAttackScript(AttackScriptT&& value) {
+    m_attackScriptHasBeenSet = true;
+    m_attackScript = std::forward<AttackScriptT>(value);
+  }
+  template <typename AttackScriptT = Aws::String>
+  UpdateFindingRequest& WithAttackScript(AttackScriptT&& value) {
+    SetAttackScript(std::forward<AttackScriptT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated reasoning for the finding.</p>
+   */
+  inline const Aws::String& GetReasoning() const { return m_reasoning; }
+  inline bool ReasoningHasBeenSet() const { return m_reasoningHasBeenSet; }
+  template <typename ReasoningT = Aws::String>
+  void SetReasoning(ReasoningT&& value) {
+    m_reasoningHasBeenSet = true;
+    m_reasoning = std::forward<ReasoningT>(value);
+  }
+  template <typename ReasoningT = Aws::String>
+  UpdateFindingRequest& WithReasoning(ReasoningT&& value) {
+    SetReasoning(std::forward<ReasoningT>(value));
     return *this;
   }
   ///@}
@@ -101,18 +209,57 @@ class UpdateFindingRequest : public SecurityAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A customer-provided note on the finding.</p>
+   */
+  inline const Aws::String& GetCustomerNote() const { return m_customerNote; }
+  inline bool CustomerNoteHasBeenSet() const { return m_customerNoteHasBeenSet; }
+  template <typename CustomerNoteT = Aws::String>
+  void SetCustomerNote(CustomerNoteT&& value) {
+    m_customerNoteHasBeenSet = true;
+    m_customerNote = std::forward<CustomerNoteT>(value);
+  }
+  template <typename CustomerNoteT = Aws::String>
+  UpdateFindingRequest& WithCustomerNote(CustomerNoteT&& value) {
+    SetCustomerNote(std::forward<CustomerNoteT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_findingId;
 
   Aws::String m_agentSpaceId;
 
+  Aws::String m_name;
+
+  Aws::String m_description;
+
+  Aws::String m_riskType;
+
   RiskLevel m_riskLevel{RiskLevel::NOT_SET};
 
+  Aws::String m_riskScore;
+
+  Aws::String m_attackScript;
+
+  Aws::String m_reasoning;
+
   FindingStatus m_status{FindingStatus::NOT_SET};
+
+  Aws::String m_customerNote;
   bool m_findingIdHasBeenSet = false;
   bool m_agentSpaceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_riskTypeHasBeenSet = false;
   bool m_riskLevelHasBeenSet = false;
+  bool m_riskScoreHasBeenSet = false;
+  bool m_attackScriptHasBeenSet = false;
+  bool m_reasoningHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_customerNoteHasBeenSet = false;
 };
 
 }  // namespace Model

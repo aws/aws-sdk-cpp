@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/model/CustomerProjectsContext.h>
+#include <aws/partnercentral-selling/model/ProspectingResult.h>
 #include <aws/partnercentral-selling/model/UpdateLeadContext.h>
 
 #include <utility>
@@ -69,12 +70,35 @@ class UpdateEngagementContextPayload {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains updated prospecting result data when the context type is
+   * "ProspectingResult". This field includes enriched data and insights that the
+   * system generates when a partner runs an autonomous prospecting job on leads.</p>
+   */
+  inline const ProspectingResult& GetProspectingResult() const { return m_prospectingResult; }
+  inline bool ProspectingResultHasBeenSet() const { return m_prospectingResultHasBeenSet; }
+  template <typename ProspectingResultT = ProspectingResult>
+  void SetProspectingResult(ProspectingResultT&& value) {
+    m_prospectingResultHasBeenSet = true;
+    m_prospectingResult = std::forward<ProspectingResultT>(value);
+  }
+  template <typename ProspectingResultT = ProspectingResult>
+  UpdateEngagementContextPayload& WithProspectingResult(ProspectingResultT&& value) {
+    SetProspectingResult(std::forward<ProspectingResultT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UpdateLeadContext m_lead;
 
   CustomerProjectsContext m_customerProject;
+
+  ProspectingResult m_prospectingResult;
   bool m_leadHasBeenSet = false;
   bool m_customerProjectHasBeenSet = false;
+  bool m_prospectingResultHasBeenSet = false;
 };
 
 }  // namespace Model

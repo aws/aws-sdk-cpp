@@ -50,6 +50,10 @@ GetPolicySummaryResult& GetPolicySummaryResult::operator=(const Aws::AmazonWebSe
     m_status = PolicyStatusMapper::GetPolicyStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("enforcementMode")) {
+    m_enforcementMode = EnforcementModeMapper::GetEnforcementModeForName(jsonValue.GetString("enforcementMode"));
+    m_enforcementModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

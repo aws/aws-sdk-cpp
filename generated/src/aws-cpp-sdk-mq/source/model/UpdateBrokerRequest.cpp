@@ -47,6 +47,14 @@ Aws::String UpdateBrokerRequest::SerializePayload() const {
     payload.WithObject("maintenanceWindowStartTime", m_maintenanceWindowStartTime.Jsonize());
   }
 
+  if (m_resourceShareArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceShareArnsJsonList(m_resourceShareArns.size());
+    for (unsigned resourceShareArnsIndex = 0; resourceShareArnsIndex < resourceShareArnsJsonList.GetLength(); ++resourceShareArnsIndex) {
+      resourceShareArnsJsonList[resourceShareArnsIndex].AsString(m_resourceShareArns[resourceShareArnsIndex]);
+    }
+    payload.WithArray("resourceShareArns", std::move(resourceShareArnsJsonList));
+  }
+
   if (m_securityGroupsHasBeenSet) {
     Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
     for (unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex) {

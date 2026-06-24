@@ -7,9 +7,11 @@
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/BatchEvaluationStatus.h>
 #include <aws/bedrock-agentcore/model/Evaluator.h>
+#include <aws/bedrock-agentcore/model/Insight.h>
 #include <aws/bedrock-agentcore/model/OutputConfig.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -108,6 +110,29 @@ class StartBatchEvaluationResult {
 
   ///@{
   /**
+   * <p>The list of insight analyses applied during the batch evaluation.</p>
+   */
+  inline const Aws::Vector<Insight>& GetInsights() const { return m_insights; }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  void SetInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights = std::forward<InsightsT>(value);
+  }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  StartBatchEvaluationResult& WithInsights(InsightsT&& value) {
+    SetInsights(std::forward<InsightsT>(value));
+    return *this;
+  }
+  template <typename InsightsT = Insight>
+  StartBatchEvaluationResult& AddInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights.emplace_back(std::forward<InsightsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the batch evaluation.</p>
    */
   inline BatchEvaluationStatus GetStatus() const { return m_status; }
@@ -157,6 +182,46 @@ class StartBatchEvaluationResult {
 
   ///@{
   /**
+   * <p>The tags associated with the batch evaluation.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  StartBatchEvaluationResult& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  StartBatchEvaluationResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the KMS key used to encrypt evaluation data.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  StartBatchEvaluationResult& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The description of the batch evaluation.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -197,11 +262,17 @@ class StartBatchEvaluationResult {
 
   Aws::Vector<Evaluator> m_evaluators;
 
+  Aws::Vector<Insight> m_insights;
+
   BatchEvaluationStatus m_status{BatchEvaluationStatus::NOT_SET};
 
   Aws::Utils::DateTime m_createdAt{};
 
   OutputConfig m_outputConfig;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::String m_kmsKeyArn;
 
   Aws::String m_description;
 
@@ -211,9 +282,12 @@ class StartBatchEvaluationResult {
   bool m_batchEvaluationArnHasBeenSet = false;
   bool m_batchEvaluationNameHasBeenSet = false;
   bool m_evaluatorsHasBeenSet = false;
+  bool m_insightsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_outputConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

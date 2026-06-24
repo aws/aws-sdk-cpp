@@ -38,7 +38,7 @@ class Step {
   ///@{
   /**
    * <p>The name of the step. Valid values include PREFLIGHT, STATIC_ANALYSIS,
-   * PENTEST, and FINALIZING.</p>
+   * PENTEST, VALIDATION, and FINALIZING.</p>
    */
   inline StepName GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

@@ -20,27 +20,32 @@ namespace CloudWatchLogs {
  * files from EC2 instances, CloudTrail, and other sources. You can then retrieve
  * the associated log data from CloudWatch Logs using the CloudWatch console.
  * Alternatively, you can use CloudWatch Logs commands in the Amazon Web Services
- * CLI, CloudWatch Logs API, or CloudWatch Logs SDK.</p> <p>You can use CloudWatch
- * Logs to:</p> <ul> <li> <p> <b>Monitor logs from EC2 instances in real time</b>:
- * You can use CloudWatch Logs to monitor applications and systems using log data.
- * For example, CloudWatch Logs can track the number of errors that occur in your
- * application logs. Then, it can send you a notification whenever the rate of
- * errors exceeds a threshold that you specify. CloudWatch Logs uses your log data
- * for monitoring so no code changes are required. For example, you can monitor
- * application logs for specific literal terms (such as "NullReferenceException").
- * You can also count the number of occurrences of a literal term at a particular
- * position in log data (such as "404" status codes in an Apache access log). When
- * the term you are searching for is found, CloudWatch Logs reports the data to a
- * CloudWatch metric that you specify.</p> </li> <li> <p> <b>Monitor CloudTrail
- * logged events</b>: You can create alarms in CloudWatch and receive notifications
- * of particular API activity as captured by CloudTrail. You can use the
- * notification to perform troubleshooting.</p> </li> <li> <p> <b>Archive log
- * data</b>: You can use CloudWatch Logs to store your log data in highly durable
- * storage. You can change the log retention setting so that any log events earlier
- * than this setting are automatically deleted. The CloudWatch Logs agent helps to
- * quickly send both rotated and non-rotated log data off of a host and into the
- * log service. You can then access the raw log data when you need it.</p> </li>
- * </ul>
+ * CLI, CloudWatch Logs API, or CloudWatch Logs SDK.</p> <p>For more information
+ * about CloudWatch Logs features, see the <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">Amazon
+ * CloudWatch Logs User Guide</a>.</p> <p>You can use CloudWatch Logs to:</p> <ul>
+ * <li> <p> <b>Monitor logs from EC2 instances in real time</b>: You can use
+ * CloudWatch Logs to monitor applications and systems using log data. For example,
+ * CloudWatch Logs can track the number of errors that occur in your application
+ * logs. Then, it can send you a notification whenever the rate of errors exceeds a
+ * threshold that you specify. CloudWatch Logs uses your log data for monitoring so
+ * no code changes are required. For example, you can monitor application logs for
+ * specific literal terms (such as "NullReferenceException"). You can also count
+ * the number of occurrences of a literal term at a particular position in log data
+ * (such as "404" status codes in an Apache access log). When the term you are
+ * searching for is found, CloudWatch Logs reports the data to a CloudWatch metric
+ * that you specify.</p> </li> <li> <p> <b>Monitor CloudTrail logged events</b>:
+ * You can create alarms in CloudWatch and receive notifications of particular API
+ * activity as captured by CloudTrail. You can use the notification to perform
+ * troubleshooting.</p> </li> <li> <p> <b>Archive log data</b>: You can use
+ * CloudWatch Logs to store your log data in highly durable storage. You can change
+ * the log retention setting so that any log events earlier than this setting are
+ * automatically deleted. The CloudWatch Logs agent helps to quickly send both
+ * rotated and non-rotated log data off of a host and into the log service. You can
+ * then access the raw log data when you need it.</p> </li> </ul>
+ * <p>CloudWatch Logs might log request contents for fields that aren't considered
+ * sensitive, such as API request parameters for CloudWatch Logs actions. This
+ * provides debugging information for failed API requests.</p>
  */
 class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>,
@@ -1198,6 +1203,36 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Deletes a syslog configuration for a log group. After deletion, syslog data
+   * is no longer ingested through the specified VPC endpoint.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSyslogConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSyslogConfigurationOutcome DeleteSyslogConfiguration(const Model::DeleteSyslogConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSyslogConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteSyslogConfigurationRequestT = Model::DeleteSyslogConfigurationRequest>
+  Model::DeleteSyslogConfigurationOutcomeCallable DeleteSyslogConfigurationCallable(
+      const DeleteSyslogConfigurationRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::DeleteSyslogConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSyslogConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteSyslogConfigurationRequestT = Model::DeleteSyslogConfigurationRequest>
+  void DeleteSyslogConfigurationAsync(const DeleteSyslogConfigurationRequestT& request,
+                                      const DeleteSyslogConfigurationResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::DeleteSyslogConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the log transformer for the specified log group. As soon as you do
    * this, the transformation of incoming log events according to that transformer
    * stops. If this account has an account-level transformer that applies to this log
@@ -1941,9 +1976,12 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * more log events than the specified limit, but it might return fewer events than
    * the limit. This is the expected API behavior.</p> <p>The returned log events are
    * sorted by event timestamp, the timestamp when the event was ingested by
-   * CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request.</p> <p>If
-   * you are using CloudWatch cross-account observability, you can use this operation
-   * in a monitoring account and view data from the linked source accounts. For more
+   * CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request. By
+   * default, the events are returned in ascending timestamp order (oldest first). To
+   * return events in descending timestamp order (newest first), set the
+   * <code>startFromHead</code> parameter to <code>false</code>.</p> <p>If you are
+   * using CloudWatch cross-account observability, you can use this operation in a
+   * monitoring account and view data from the linked source accounts. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
    * cross-account observability</a>.</p>  <p>If you are using <a
@@ -2436,10 +2474,11 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * and delivery to configured destinations.</p> <p>You can retrieve up to 100,000
    * log event results from a query, if available, by using pagination. Use the
    * <code>nextToken</code> returned in the response to request additional pages of
-   * results, with each page returning up to 10,000 log events.</p> <p>If you are
-   * using CloudWatch cross-account observability, you can use this operation in a
-   * monitoring account to start queries in linked source accounts. For more
-   * information, see <a
+   * results, with each page returning up to 10,000 log events. This is only
+   * supported for Logs Insights QL and is currently not supported for PPL and SQL
+   * query languages.</p> <p>If you are using CloudWatch cross-account observability,
+   * you can use this operation in a monitoring account to start queries in linked
+   * source accounts. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
    * cross-account observability</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">AWS
@@ -2808,6 +2847,35 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Returns a list of syslog configurations. You can optionally filter the
+   * results by log group or VPC endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListSyslogConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSyslogConfigurationsOutcome ListSyslogConfigurations(const Model::ListSyslogConfigurationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListSyslogConfigurations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListSyslogConfigurationsRequestT = Model::ListSyslogConfigurationsRequest>
+  Model::ListSyslogConfigurationsOutcomeCallable ListSyslogConfigurationsCallable(
+      const ListSyslogConfigurationsRequestT& request = {}) const {
+    return SubmitCallable(&CloudWatchLogsClient::ListSyslogConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for ListSyslogConfigurations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListSyslogConfigurationsRequestT = Model::ListSyslogConfigurationsRequest>
+  void ListSyslogConfigurationsAsync(const ListSyslogConfigurationsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const ListSyslogConfigurationsRequestT& request = {}) const {
+    return SubmitAsync(&CloudWatchLogsClient::ListSyslogConfigurations, request, handler, context);
+  }
+
+  /**
    * <p>Displays the tags associated with a CloudWatch Logs resource. Currently, log
    * groups and destinations support tagging.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsForResource">AWS
@@ -2838,11 +2906,35 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * <p>Creates an account-level data protection policy, subscription filter policy,
    * field index policy, transformer policy, or metric extraction policy that applies
    * to all log groups, a subset of log groups, or a data source name and type
-   * combination in the account.</p> <p>For field index policies, you can configure
-   * indexed fields as <i>facets</i> to enable interactive exploration of your logs.
-   * Facets provide value distributions and counts for indexed fields in the
-   * CloudWatch Logs Insights console without requiring query execution. For more
-   * information, see <a
+   * combination in the account.</p>  <p> <code>PutAccountPolicy</code> is
+   * an account-wide administrative operation intended for CloudWatch Logs
+   * administrators. Because it affects all log groups (or a broad subset) in the
+   * account, you should grant <code>logs:PutAccountPolicy</code> permissions only to
+   * administrators who manage logging configuration across the account, not to
+   * application teams or individual log group owners.</p>  <p>
+   * <b>Conflict resolution between account-level and log-group-level policies</b>
+   * </p> <p>When both an account-level policy and a log-group-level policy of the
+   * same type apply to a log group, the resolution depends on the policy type:</p>
+   * <ul> <li> <p> <i>Data protection</i> — The two policies are cumulative. Any
+   * sensitive term specified in either the account-level or the log-group-level
+   * policy is masked.</p> </li> <li> <p> <i>Subscription filters</i> — Account-level
+   * and log-group-level subscription filters are additive. A log group can have up
+   * to 1 account-level and up to 2 log-group-level subscription filters.</p> </li>
+   * <li> <p> <i>Transformers</i> — A log-group-level transformer overrides the
+   * account-level transformer. If a log group has its own transformer, it ignores
+   * the account-level transformer policy.</p> </li> <li> <p> <i>Field index
+   * policies</i> — If a log group has its own field index policy (created with
+   * <code>PutIndexPolicy</code>), any account-level policy that uses
+   * <code>LogGroupNamePrefix</code> selection criteria or has no selection criteria
+   * is ignored for that log group. However, account-level policies that use
+   * <code>DataSourceName</code> and <code>DataSourceType</code> selection criteria
+   * still apply alongside the log-group-level policy.</p> </li> <li> <p> <i>Metric
+   * extraction policies</i> — Metric extraction policies are account-level only and
+   * have no log-group-level equivalent, so no conflict resolution applies.</p> </li>
+   * </ul> <p>For field index policies, you can configure indexed fields as
+   * <i>facets</i> to enable interactive exploration of your logs. Facets provide
+   * value distributions and counts for indexed fields in the CloudWatch Logs
+   * Insights console without requiring query execution. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html">Use
    * facets to group and explore logs</a>.</p> <p>To use this operation, you must be
    * signed on with the correct permissions depending on the type of policy that you
@@ -3844,6 +3936,35 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   void PutSubscriptionFilterAsync(const PutSubscriptionFilterRequestT& request, const PutSubscriptionFilterResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchLogsClient::PutSubscriptionFilter, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates a syslog configuration for a log group. This enables
+   * ingestion of syslog data through the specified VPC endpoint into the log
+   * group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSyslogConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutSyslogConfigurationOutcome PutSyslogConfiguration(const Model::PutSyslogConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutSyslogConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutSyslogConfigurationRequestT = Model::PutSyslogConfigurationRequest>
+  Model::PutSyslogConfigurationOutcomeCallable PutSyslogConfigurationCallable(const PutSyslogConfigurationRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::PutSyslogConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for PutSyslogConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutSyslogConfigurationRequestT = Model::PutSyslogConfigurationRequest>
+  void PutSyslogConfigurationAsync(const PutSyslogConfigurationRequestT& request,
+                                   const PutSyslogConfigurationResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::PutSyslogConfiguration, request, handler, context);
   }
 
   /**

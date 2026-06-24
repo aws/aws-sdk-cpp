@@ -42,6 +42,7 @@
 #include <aws/bedrock-agent/model/DeleteKnowledgeBaseDocumentsResult.h>
 #include <aws/bedrock-agent/model/DeleteKnowledgeBaseResult.h>
 #include <aws/bedrock-agent/model/DeletePromptResult.h>
+#include <aws/bedrock-agent/model/DeleteResourcePolicyResult.h>
 #include <aws/bedrock-agent/model/DisassociateAgentCollaboratorResult.h>
 #include <aws/bedrock-agent/model/DisassociateAgentKnowledgeBaseResult.h>
 #include <aws/bedrock-agent/model/GetAgentActionGroupResult.h>
@@ -58,6 +59,7 @@
 #include <aws/bedrock-agent/model/GetKnowledgeBaseDocumentsResult.h>
 #include <aws/bedrock-agent/model/GetKnowledgeBaseResult.h>
 #include <aws/bedrock-agent/model/GetPromptResult.h>
+#include <aws/bedrock-agent/model/GetResourcePolicyResult.h>
 #include <aws/bedrock-agent/model/IngestKnowledgeBaseDocumentsResult.h>
 #include <aws/bedrock-agent/model/ListAgentActionGroupsResult.h>
 #include <aws/bedrock-agent/model/ListAgentAliasesResult.h>
@@ -80,6 +82,7 @@
 #include <aws/bedrock-agent/model/ListTagsForResourceResult.h>
 #include <aws/bedrock-agent/model/PrepareAgentResult.h>
 #include <aws/bedrock-agent/model/PrepareFlowResult.h>
+#include <aws/bedrock-agent/model/PutResourcePolicyResult.h>
 #include <aws/bedrock-agent/model/StartIngestionJobResult.h>
 #include <aws/bedrock-agent/model/StopIngestionJobResult.h>
 #include <aws/bedrock-agent/model/TagResourceResult.h>
@@ -150,6 +153,7 @@ class DeleteFlowVersionRequest;
 class DeleteKnowledgeBaseRequest;
 class DeleteKnowledgeBaseDocumentsRequest;
 class DeletePromptRequest;
+class DeleteResourcePolicyRequest;
 class DisassociateAgentCollaboratorRequest;
 class DisassociateAgentKnowledgeBaseRequest;
 class GetAgentRequest;
@@ -166,6 +170,7 @@ class GetIngestionJobRequest;
 class GetKnowledgeBaseRequest;
 class GetKnowledgeBaseDocumentsRequest;
 class GetPromptRequest;
+class GetResourcePolicyRequest;
 class IngestKnowledgeBaseDocumentsRequest;
 class ListAgentActionGroupsRequest;
 class ListAgentAliasesRequest;
@@ -184,6 +189,7 @@ class ListPromptsRequest;
 class ListTagsForResourceRequest;
 class PrepareAgentRequest;
 class PrepareFlowRequest;
+class PutResourcePolicyRequest;
 class StartIngestionJobRequest;
 class StopIngestionJobRequest;
 class TagResourceRequest;
@@ -225,6 +231,7 @@ typedef Aws::Utils::Outcome<DeleteFlowVersionResult, BedrockAgentError> DeleteFl
 typedef Aws::Utils::Outcome<DeleteKnowledgeBaseResult, BedrockAgentError> DeleteKnowledgeBaseOutcome;
 typedef Aws::Utils::Outcome<DeleteKnowledgeBaseDocumentsResult, BedrockAgentError> DeleteKnowledgeBaseDocumentsOutcome;
 typedef Aws::Utils::Outcome<DeletePromptResult, BedrockAgentError> DeletePromptOutcome;
+typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, BedrockAgentError> DeleteResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<DisassociateAgentCollaboratorResult, BedrockAgentError> DisassociateAgentCollaboratorOutcome;
 typedef Aws::Utils::Outcome<DisassociateAgentKnowledgeBaseResult, BedrockAgentError> DisassociateAgentKnowledgeBaseOutcome;
 typedef Aws::Utils::Outcome<GetAgentResult, BedrockAgentError> GetAgentOutcome;
@@ -241,6 +248,7 @@ typedef Aws::Utils::Outcome<GetIngestionJobResult, BedrockAgentError> GetIngesti
 typedef Aws::Utils::Outcome<GetKnowledgeBaseResult, BedrockAgentError> GetKnowledgeBaseOutcome;
 typedef Aws::Utils::Outcome<GetKnowledgeBaseDocumentsResult, BedrockAgentError> GetKnowledgeBaseDocumentsOutcome;
 typedef Aws::Utils::Outcome<GetPromptResult, BedrockAgentError> GetPromptOutcome;
+typedef Aws::Utils::Outcome<GetResourcePolicyResult, BedrockAgentError> GetResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<IngestKnowledgeBaseDocumentsResult, BedrockAgentError> IngestKnowledgeBaseDocumentsOutcome;
 typedef Aws::Utils::Outcome<ListAgentActionGroupsResult, BedrockAgentError> ListAgentActionGroupsOutcome;
 typedef Aws::Utils::Outcome<ListAgentAliasesResult, BedrockAgentError> ListAgentAliasesOutcome;
@@ -259,6 +267,7 @@ typedef Aws::Utils::Outcome<ListPromptsResult, BedrockAgentError> ListPromptsOut
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockAgentError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PrepareAgentResult, BedrockAgentError> PrepareAgentOutcome;
 typedef Aws::Utils::Outcome<PrepareFlowResult, BedrockAgentError> PrepareFlowOutcome;
+typedef Aws::Utils::Outcome<PutResourcePolicyResult, BedrockAgentError> PutResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<StartIngestionJobResult, BedrockAgentError> StartIngestionJobOutcome;
 typedef Aws::Utils::Outcome<StopIngestionJobResult, BedrockAgentError> StopIngestionJobOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, BedrockAgentError> TagResourceOutcome;
@@ -300,6 +309,7 @@ typedef std::future<DeleteFlowVersionOutcome> DeleteFlowVersionOutcomeCallable;
 typedef std::future<DeleteKnowledgeBaseOutcome> DeleteKnowledgeBaseOutcomeCallable;
 typedef std::future<DeleteKnowledgeBaseDocumentsOutcome> DeleteKnowledgeBaseDocumentsOutcomeCallable;
 typedef std::future<DeletePromptOutcome> DeletePromptOutcomeCallable;
+typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
 typedef std::future<DisassociateAgentCollaboratorOutcome> DisassociateAgentCollaboratorOutcomeCallable;
 typedef std::future<DisassociateAgentKnowledgeBaseOutcome> DisassociateAgentKnowledgeBaseOutcomeCallable;
 typedef std::future<GetAgentOutcome> GetAgentOutcomeCallable;
@@ -316,6 +326,7 @@ typedef std::future<GetIngestionJobOutcome> GetIngestionJobOutcomeCallable;
 typedef std::future<GetKnowledgeBaseOutcome> GetKnowledgeBaseOutcomeCallable;
 typedef std::future<GetKnowledgeBaseDocumentsOutcome> GetKnowledgeBaseDocumentsOutcomeCallable;
 typedef std::future<GetPromptOutcome> GetPromptOutcomeCallable;
+typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
 typedef std::future<IngestKnowledgeBaseDocumentsOutcome> IngestKnowledgeBaseDocumentsOutcomeCallable;
 typedef std::future<ListAgentActionGroupsOutcome> ListAgentActionGroupsOutcomeCallable;
 typedef std::future<ListAgentAliasesOutcome> ListAgentAliasesOutcomeCallable;
@@ -334,6 +345,7 @@ typedef std::future<ListPromptsOutcome> ListPromptsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PrepareAgentOutcome> PrepareAgentOutcomeCallable;
 typedef std::future<PrepareFlowOutcome> PrepareFlowOutcomeCallable;
+typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
 typedef std::future<StartIngestionJobOutcome> StartIngestionJobOutcomeCallable;
 typedef std::future<StopIngestionJobOutcome> StopIngestionJobOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -425,6 +437,9 @@ typedef std::function<void(const BedrockAgentClient*, const Model::DeleteKnowled
 typedef std::function<void(const BedrockAgentClient*, const Model::DeletePromptRequest&, const Model::DeletePromptOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePromptResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteResourcePolicyResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentClient*, const Model::DisassociateAgentCollaboratorRequest&,
                            const Model::DisassociateAgentCollaboratorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -475,6 +490,9 @@ typedef std::function<void(const BedrockAgentClient*, const Model::GetKnowledgeB
 typedef std::function<void(const BedrockAgentClient*, const Model::GetPromptRequest&, const Model::GetPromptOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPromptResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetResourcePolicyResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentClient*, const Model::IngestKnowledgeBaseDocumentsRequest&,
                            const Model::IngestKnowledgeBaseDocumentsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -530,6 +548,9 @@ typedef std::function<void(const BedrockAgentClient*, const Model::PrepareAgentR
 typedef std::function<void(const BedrockAgentClient*, const Model::PrepareFlowRequest&, const Model::PrepareFlowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PrepareFlowResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutResourcePolicyResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentClient*, const Model::StartIngestionJobRequest&, const Model::StartIngestionJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartIngestionJobResponseReceivedHandler;

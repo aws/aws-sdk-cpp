@@ -47,6 +47,10 @@ CodeReview& CodeReview::operator=(JsonView jsonValue) {
         CodeRemediationStrategyMapper::GetCodeRemediationStrategyForName(jsonValue.GetString("codeRemediationStrategy"));
     m_codeRemediationStrategyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("validationMode")) {
+    m_validationMode = ValidationModeMapper::GetValidationModeForName(jsonValue.GetString("validationMode"));
+    m_validationModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -88,6 +92,10 @@ JsonValue CodeReview::Jsonize() const {
   if (m_codeRemediationStrategyHasBeenSet) {
     payload.WithString("codeRemediationStrategy",
                        CodeRemediationStrategyMapper::GetNameForCodeRemediationStrategy(m_codeRemediationStrategy));
+  }
+
+  if (m_validationModeHasBeenSet) {
+    payload.WithString("validationMode", ValidationModeMapper::GetNameForValidationMode(m_validationMode));
   }
 
   if (m_createdAtHasBeenSet) {

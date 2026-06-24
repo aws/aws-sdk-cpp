@@ -20,6 +20,8 @@ static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
+static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 
 DatastoreStatus GetDatastoreStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +35,10 @@ DatastoreStatus GetDatastoreStatusForName(const Aws::String& name) {
     return DatastoreStatus::DELETED;
   } else if (hashCode == CREATE_FAILED_HASH) {
     return DatastoreStatus::CREATE_FAILED;
+  } else if (hashCode == UPDATING_HASH) {
+    return DatastoreStatus::UPDATING;
+  } else if (hashCode == UPDATE_FAILED_HASH) {
+    return DatastoreStatus::UPDATE_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +63,10 @@ Aws::String GetNameForDatastoreStatus(DatastoreStatus enumValue) {
       return "DELETED";
     case DatastoreStatus::CREATE_FAILED:
       return "CREATE_FAILED";
+    case DatastoreStatus::UPDATING:
+      return "UPDATING";
+    case DatastoreStatus::UPDATE_FAILED:
+      return "UPDATE_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

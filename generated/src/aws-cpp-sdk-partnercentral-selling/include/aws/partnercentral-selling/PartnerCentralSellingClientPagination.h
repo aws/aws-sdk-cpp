@@ -14,6 +14,7 @@
 #include <aws/partnercentral-selling/model/ListEngagementsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListOpportunitiesPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListProspectingFromEngagementTasksPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListSolutionsPaginationTraits.h>
@@ -45,6 +46,9 @@ using ListOpportunitiesPaginator =
 using ListOpportunityFromEngagementTasksPaginator =
     Aws::Utils::Pagination::Paginator<PartnerCentralSellingClient, Model::ListOpportunityFromEngagementTasksRequest,
                                       Pagination::ListOpportunityFromEngagementTasksPaginationTraits<PartnerCentralSellingClient>>;
+using ListProspectingFromEngagementTasksPaginator =
+    Aws::Utils::Pagination::Paginator<PartnerCentralSellingClient, Model::ListProspectingFromEngagementTasksRequest,
+                                      Pagination::ListProspectingFromEngagementTasksPaginationTraits<PartnerCentralSellingClient>>;
 using ListResourceSnapshotJobsPaginator =
     Aws::Utils::Pagination::Paginator<PartnerCentralSellingClient, Model::ListResourceSnapshotJobsRequest,
                                       Pagination::ListResourceSnapshotJobsPaginationTraits<PartnerCentralSellingClient>>;

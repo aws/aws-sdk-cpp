@@ -22,6 +22,10 @@ DataSourceConfig& DataSourceConfig::operator=(JsonView jsonValue) {
     m_cloudWatchLogs = jsonValue.GetObject("cloudWatchLogs");
     m_cloudWatchLogsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("onlineEvaluationConfigSource")) {
+    m_onlineEvaluationConfigSource = jsonValue.GetObject("onlineEvaluationConfigSource");
+    m_onlineEvaluationConfigSourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue DataSourceConfig::Jsonize() const {
 
   if (m_cloudWatchLogsHasBeenSet) {
     payload.WithObject("cloudWatchLogs", m_cloudWatchLogs.Jsonize());
+  }
+
+  if (m_onlineEvaluationConfigSourceHasBeenSet) {
+    payload.WithObject("onlineEvaluationConfigSource", m_onlineEvaluationConfigSource.Jsonize());
   }
 
   return payload;

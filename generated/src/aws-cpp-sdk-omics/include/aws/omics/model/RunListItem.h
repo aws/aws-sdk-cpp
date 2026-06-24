@@ -261,6 +261,24 @@ class RunListItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the workflow.</p>
+   */
+  inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
+  inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
+  template <typename WorkflowNameT = Aws::String>
+  void SetWorkflowName(WorkflowNameT&& value) {
+    m_workflowNameHasBeenSet = true;
+    m_workflowName = std::forward<WorkflowNameT>(value);
+  }
+  template <typename WorkflowNameT = Aws::String>
+  RunListItem& WithWorkflowName(WorkflowNameT&& value) {
+    SetWorkflowName(std::forward<WorkflowNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -287,6 +305,8 @@ class RunListItem {
   StorageType m_storageType{StorageType::NOT_SET};
 
   Aws::String m_workflowVersionName;
+
+  Aws::String m_workflowName;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -300,6 +320,7 @@ class RunListItem {
   bool m_stopTimeHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
   bool m_workflowVersionNameHasBeenSet = false;
+  bool m_workflowNameHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -66,6 +66,17 @@ ImageCriterionRequest& ImageCriterionRequest::operator=(const XmlNode& xmlNode) 
       m_creationDateCondition = creationDateConditionNode;
       m_creationDateConditionHasBeenSet = true;
     }
+    XmlNode imageWatermarksNode = resultNode.FirstChild("ImageWatermark");
+    if (!imageWatermarksNode.IsNull()) {
+      XmlNode imageWatermarksMember = imageWatermarksNode.FirstChild("item");
+      m_imageWatermarksHasBeenSet = !imageWatermarksMember.IsNull();
+      while (!imageWatermarksMember.IsNull()) {
+        m_imageWatermarks.push_back(imageWatermarksMember);
+        imageWatermarksMember = imageWatermarksMember.NextNode("item");
+      }
+
+      m_imageWatermarksHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -107,6 +118,15 @@ void ImageCriterionRequest::OutputToStream(Aws::OStream& oStream, const char* lo
     creationDateConditionLocationAndMemberSs << location << index << locationValue << ".CreationDateCondition";
     m_creationDateCondition.OutputToStream(oStream, creationDateConditionLocationAndMemberSs.str().c_str());
   }
+
+  if (m_imageWatermarksHasBeenSet) {
+    unsigned imageWatermarksIdx = 1;
+    for (auto& item : m_imageWatermarks) {
+      Aws::StringStream imageWatermarksSs;
+      imageWatermarksSs << location << index << locationValue << ".ImageWatermark." << imageWatermarksIdx++;
+      item.OutputToStream(oStream, imageWatermarksSs.str().c_str());
+    }
+  }
 }
 
 void ImageCriterionRequest::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -138,6 +158,14 @@ void ImageCriterionRequest::OutputToStream(Aws::OStream& oStream, const char* lo
     Aws::String creationDateConditionLocationAndMember(location);
     creationDateConditionLocationAndMember += ".CreationDateCondition";
     m_creationDateCondition.OutputToStream(oStream, creationDateConditionLocationAndMember.c_str());
+  }
+  if (m_imageWatermarksHasBeenSet) {
+    unsigned imageWatermarksIdx = 1;
+    for (auto& item : m_imageWatermarks) {
+      Aws::StringStream imageWatermarksSs;
+      imageWatermarksSs << location << ".ImageWatermark." << imageWatermarksIdx++;
+      item.OutputToStream(oStream, imageWatermarksSs.str().c_str());
+    }
   }
 }
 

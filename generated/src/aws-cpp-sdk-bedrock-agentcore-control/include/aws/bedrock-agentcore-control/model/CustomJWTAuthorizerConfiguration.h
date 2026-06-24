@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/AllowedWorkloadConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CustomClaimValidationType.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpointOverride.h>
@@ -194,6 +195,27 @@ class CustomJWTAuthorizerConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration that restricts which workloads in the request's identity
+   * chain are allowed to invoke the target, identified by their hosting environments
+   * and workload identities. At launch, this is supported only for AgentCore Runtime
+   * targets, and the allowed workloads are AgentCore Gateways.</p>
+   */
+  inline const AllowedWorkloadConfiguration& GetAllowedWorkloadConfiguration() const { return m_allowedWorkloadConfiguration; }
+  inline bool AllowedWorkloadConfigurationHasBeenSet() const { return m_allowedWorkloadConfigurationHasBeenSet; }
+  template <typename AllowedWorkloadConfigurationT = AllowedWorkloadConfiguration>
+  void SetAllowedWorkloadConfiguration(AllowedWorkloadConfigurationT&& value) {
+    m_allowedWorkloadConfigurationHasBeenSet = true;
+    m_allowedWorkloadConfiguration = std::forward<AllowedWorkloadConfigurationT>(value);
+  }
+  template <typename AllowedWorkloadConfigurationT = AllowedWorkloadConfiguration>
+  CustomJWTAuthorizerConfiguration& WithAllowedWorkloadConfiguration(AllowedWorkloadConfigurationT&& value) {
+    SetAllowedWorkloadConfiguration(std::forward<AllowedWorkloadConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_discoveryUrl;
 
@@ -208,6 +230,8 @@ class CustomJWTAuthorizerConfiguration {
   PrivateEndpoint m_privateEndpoint;
 
   Aws::Vector<PrivateEndpointOverride> m_privateEndpointOverrides;
+
+  AllowedWorkloadConfiguration m_allowedWorkloadConfiguration;
   bool m_discoveryUrlHasBeenSet = false;
   bool m_allowedAudienceHasBeenSet = false;
   bool m_allowedClientsHasBeenSet = false;
@@ -215,6 +239,7 @@ class CustomJWTAuthorizerConfiguration {
   bool m_customClaimsHasBeenSet = false;
   bool m_privateEndpointHasBeenSet = false;
   bool m_privateEndpointOverridesHasBeenSet = false;
+  bool m_allowedWorkloadConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

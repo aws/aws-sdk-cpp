@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/ClusteringConfig.h>
 #include <aws/bedrock-agentcore-control/model/DataSourceConfig.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorReference.h>
+#include <aws/bedrock-agentcore-control/model/Insight.h>
 #include <aws/bedrock-agentcore-control/model/Rule.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -161,6 +163,49 @@ class CreateOnlineEvaluationConfigRequest : public BedrockAgentCoreControlReques
 
   ///@{
   /**
+   * <p>The list of insight types to run against agent sessions.</p>
+   */
+  inline const Aws::Vector<Insight>& GetInsights() const { return m_insights; }
+  inline bool InsightsHasBeenSet() const { return m_insightsHasBeenSet; }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  void SetInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights = std::forward<InsightsT>(value);
+  }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  CreateOnlineEvaluationConfigRequest& WithInsights(InsightsT&& value) {
+    SetInsights(std::forward<InsightsT>(value));
+    return *this;
+  }
+  template <typename InsightsT = Insight>
+  CreateOnlineEvaluationConfigRequest& AddInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights.emplace_back(std::forward<InsightsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for periodic batch evaluation clustering of insight
+   * results.</p>
+   */
+  inline const ClusteringConfig& GetClusteringConfig() const { return m_clusteringConfig; }
+  inline bool ClusteringConfigHasBeenSet() const { return m_clusteringConfigHasBeenSet; }
+  template <typename ClusteringConfigT = ClusteringConfig>
+  void SetClusteringConfig(ClusteringConfigT&& value) {
+    m_clusteringConfigHasBeenSet = true;
+    m_clusteringConfig = std::forward<ClusteringConfigT>(value);
+  }
+  template <typename ClusteringConfigT = ClusteringConfig>
+  CreateOnlineEvaluationConfigRequest& WithClusteringConfig(ClusteringConfigT&& value) {
+    SetClusteringConfig(std::forward<ClusteringConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The Amazon Resource Name (ARN) of the IAM role that grants permissions to
    * read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock
    * models for evaluation. If the configuration references evaluators encrypted with
@@ -239,6 +284,10 @@ class CreateOnlineEvaluationConfigRequest : public BedrockAgentCoreControlReques
 
   Aws::Vector<EvaluatorReference> m_evaluators;
 
+  Aws::Vector<Insight> m_insights;
+
+  ClusteringConfig m_clusteringConfig;
+
   Aws::String m_evaluationExecutionRoleArn;
 
   bool m_enableOnCreate{false};
@@ -250,6 +299,8 @@ class CreateOnlineEvaluationConfigRequest : public BedrockAgentCoreControlReques
   bool m_ruleHasBeenSet = false;
   bool m_dataSourceConfigHasBeenSet = false;
   bool m_evaluatorsHasBeenSet = false;
+  bool m_insightsHasBeenSet = false;
+  bool m_clusteringConfigHasBeenSet = false;
   bool m_evaluationExecutionRoleArnHasBeenSet = false;
   bool m_enableOnCreateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

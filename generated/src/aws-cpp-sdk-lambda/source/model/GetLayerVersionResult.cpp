@@ -46,6 +46,15 @@ GetLayerVersionResult& GetLayerVersionResult::operator=(const Aws::AmazonWebServ
     m_version = jsonValue.GetInt64("Version");
     m_versionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CompatibleArchitectures")) {
+    Aws::Utils::Array<JsonView> compatibleArchitecturesJsonList = jsonValue.GetArray("CompatibleArchitectures");
+    for (unsigned compatibleArchitecturesIndex = 0; compatibleArchitecturesIndex < compatibleArchitecturesJsonList.GetLength();
+         ++compatibleArchitecturesIndex) {
+      m_compatibleArchitectures.push_back(
+          ArchitectureMapper::GetArchitectureForName(compatibleArchitecturesJsonList[compatibleArchitecturesIndex].AsString()));
+    }
+    m_compatibleArchitecturesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CompatibleRuntimes")) {
     Aws::Utils::Array<JsonView> compatibleRuntimesJsonList = jsonValue.GetArray("CompatibleRuntimes");
     for (unsigned compatibleRuntimesIndex = 0; compatibleRuntimesIndex < compatibleRuntimesJsonList.GetLength();
@@ -57,15 +66,6 @@ GetLayerVersionResult& GetLayerVersionResult::operator=(const Aws::AmazonWebServ
   if (jsonValue.ValueExists("LicenseInfo")) {
     m_licenseInfo = jsonValue.GetString("LicenseInfo");
     m_licenseInfoHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CompatibleArchitectures")) {
-    Aws::Utils::Array<JsonView> compatibleArchitecturesJsonList = jsonValue.GetArray("CompatibleArchitectures");
-    for (unsigned compatibleArchitecturesIndex = 0; compatibleArchitecturesIndex < compatibleArchitecturesJsonList.GetLength();
-         ++compatibleArchitecturesIndex) {
-      m_compatibleArchitectures.push_back(
-          ArchitectureMapper::GetArchitectureForName(compatibleArchitecturesJsonList[compatibleArchitecturesIndex].AsString()));
-    }
-    m_compatibleArchitecturesHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

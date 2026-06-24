@@ -147,6 +147,8 @@
 #include <aws/ec2/model/AthenaIntegration.h>
 #include <aws/ec2/model/AttachClassicLinkVpcRequest.h>
 #include <aws/ec2/model/AttachClassicLinkVpcResponse.h>
+#include <aws/ec2/model/AttachImageWatermarkRequest.h>
+#include <aws/ec2/model/AttachImageWatermarkResponse.h>
 #include <aws/ec2/model/AttachInternetGatewayRequest.h>
 #include <aws/ec2/model/AttachNetworkInterfaceRequest.h>
 #include <aws/ec2/model/AttachNetworkInterfaceResponse.h>
@@ -1170,6 +1172,8 @@
 #include <aws/ec2/model/DestinationOptionsResponse.h>
 #include <aws/ec2/model/DetachClassicLinkVpcRequest.h>
 #include <aws/ec2/model/DetachClassicLinkVpcResponse.h>
+#include <aws/ec2/model/DetachImageWatermarkRequest.h>
+#include <aws/ec2/model/DetachImageWatermarkResponse.h>
 #include <aws/ec2/model/DetachInternetGatewayRequest.h>
 #include <aws/ec2/model/DetachNetworkInterfaceRequest.h>
 #include <aws/ec2/model/DetachVerifiedAccessTrustProviderRequest.h>
@@ -1639,6 +1643,9 @@
 #include <aws/ec2/model/ImageUsageResourceTypeOption.h>
 #include <aws/ec2/model/ImageUsageResourceTypeOptionRequest.h>
 #include <aws/ec2/model/ImageUsageResourceTypeRequest.h>
+#include <aws/ec2/model/ImageWatermark.h>
+#include <aws/ec2/model/ImageWatermarkFilterRequest.h>
+#include <aws/ec2/model/ImageWatermarkFilterResponse.h>
 #include <aws/ec2/model/ImdsSupportValues.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListRequest.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListResponse.h>
@@ -2604,7 +2611,10 @@
 #include <aws/ec2/model/SupportedRegionDetail.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/TagDescription.h>
+#include <aws/ec2/model/TagFieldSpecificationRequest.h>
+#include <aws/ec2/model/TagFieldSpecificationResponse.h>
 #include <aws/ec2/model/TagSpecification.h>
+#include <aws/ec2/model/TaggableResourceType.h>
 #include <aws/ec2/model/TargetCapacitySpecification.h>
 #include <aws/ec2/model/TargetCapacitySpecificationRequest.h>
 #include <aws/ec2/model/TargetCapacityUnitType.h>

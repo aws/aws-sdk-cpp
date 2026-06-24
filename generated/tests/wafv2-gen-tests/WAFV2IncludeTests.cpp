@@ -34,6 +34,7 @@
 #include <aws/wafv2/model/AssociatedResourceType.h>
 #include <aws/wafv2/model/AssociationConfig.h>
 #include <aws/wafv2/model/BlockAction.h>
+#include <aws/wafv2/model/BlockchainChain.h>
 #include <aws/wafv2/model/Body.h>
 #include <aws/wafv2/model/BodyParsingFallbackBehavior.h>
 #include <aws/wafv2/model/BotStatistics.h>
@@ -64,10 +65,15 @@
 #include <aws/wafv2/model/CreateRuleGroupResult.h>
 #include <aws/wafv2/model/CreateWebACLRequest.h>
 #include <aws/wafv2/model/CreateWebACLResult.h>
+#include <aws/wafv2/model/CryptoConfig.h>
+#include <aws/wafv2/model/CryptoCurrency.h>
+#include <aws/wafv2/model/Currency.h>
+#include <aws/wafv2/model/CurrencyMode.h>
 #include <aws/wafv2/model/CustomHTTPHeader.h>
 #include <aws/wafv2/model/CustomRequestHandling.h>
 #include <aws/wafv2/model/CustomResponse.h>
 #include <aws/wafv2/model/CustomResponseBody.h>
+#include <aws/wafv2/model/DataPointEntry.h>
 #include <aws/wafv2/model/DataProtection.h>
 #include <aws/wafv2/model/DataProtectionAction.h>
 #include <aws/wafv2/model/DataProtectionConfig.h>
@@ -131,6 +137,12 @@
 #include <aws/wafv2/model/GetRateBasedStatementManagedKeysResult.h>
 #include <aws/wafv2/model/GetRegexPatternSetRequest.h>
 #include <aws/wafv2/model/GetRegexPatternSetResult.h>
+#include <aws/wafv2/model/GetRevenueStatisticsRequest.h>
+#include <aws/wafv2/model/GetRevenueStatisticsResult.h>
+#include <aws/wafv2/model/GetRevenueStatisticsSummaryRequest.h>
+#include <aws/wafv2/model/GetRevenueStatisticsSummaryResult.h>
+#include <aws/wafv2/model/GetRevenueStatisticsTimeSeriesRequest.h>
+#include <aws/wafv2/model/GetRevenueStatisticsTimeSeriesResult.h>
 #include <aws/wafv2/model/GetRuleGroupRequest.h>
 #include <aws/wafv2/model/GetRuleGroupResult.h>
 #include <aws/wafv2/model/GetSampledRequestsRequest.h>
@@ -141,6 +153,7 @@
 #include <aws/wafv2/model/GetWebACLForResourceResult.h>
 #include <aws/wafv2/model/GetWebACLRequest.h>
 #include <aws/wafv2/model/GetWebACLResult.h>
+#include <aws/wafv2/model/GroupByType.h>
 #include <aws/wafv2/model/HTTPHeader.h>
 #include <aws/wafv2/model/HTTPRequest.h>
 #include <aws/wafv2/model/HeaderMatchPattern.h>
@@ -153,6 +166,7 @@
 #include <aws/wafv2/model/IPSetSummary.h>
 #include <aws/wafv2/model/ImmunityTimeProperty.h>
 #include <aws/wafv2/model/InspectionLevel.h>
+#include <aws/wafv2/model/IntervalType.h>
 #include <aws/wafv2/model/JA3Fingerprint.h>
 #include <aws/wafv2/model/JA4Fingerprint.h>
 #include <aws/wafv2/model/JsonBody.h>
@@ -183,6 +197,8 @@
 #include <aws/wafv2/model/ListResourcesForWebACLResult.h>
 #include <aws/wafv2/model/ListRuleGroupsRequest.h>
 #include <aws/wafv2/model/ListRuleGroupsResult.h>
+#include <aws/wafv2/model/ListSettlementRecordsRequest.h>
+#include <aws/wafv2/model/ListSettlementRecordsResult.h>
 #include <aws/wafv2/model/ListTagsForResourceRequest.h>
 #include <aws/wafv2/model/ListTagsForResourceResult.h>
 #include <aws/wafv2/model/ListWebACLsRequest.h>
@@ -203,6 +219,9 @@
 #include <aws/wafv2/model/MapMatchScope.h>
 #include <aws/wafv2/model/Method.h>
 #include <aws/wafv2/model/MobileSdkRelease.h>
+#include <aws/wafv2/model/MonetizationConfig.h>
+#include <aws/wafv2/model/MonetizationFilter.h>
+#include <aws/wafv2/model/MonetizeAction.h>
 #include <aws/wafv2/model/NoneAction.h>
 #include <aws/wafv2/model/NotStatement.h>
 #include <aws/wafv2/model/OnSourceDDoSProtectionConfig.h>
@@ -213,9 +232,11 @@
 #include <aws/wafv2/model/PasswordField.h>
 #include <aws/wafv2/model/PathStatistics.h>
 #include <aws/wafv2/model/PayloadType.h>
+#include <aws/wafv2/model/PaymentNetwork.h>
 #include <aws/wafv2/model/PhoneNumberField.h>
 #include <aws/wafv2/model/Platform.h>
 #include <aws/wafv2/model/PositionalConstraint.h>
+#include <aws/wafv2/model/Price.h>
 #include <aws/wafv2/model/PutLoggingConfigurationRequest.h>
 #include <aws/wafv2/model/PutLoggingConfigurationResult.h>
 #include <aws/wafv2/model/PutManagedRuleSetVersionsRequest.h>
@@ -223,6 +244,8 @@
 #include <aws/wafv2/model/PutPermissionPolicyRequest.h>
 #include <aws/wafv2/model/PutPermissionPolicyResult.h>
 #include <aws/wafv2/model/QueryString.h>
+#include <aws/wafv2/model/RankingSortBy.h>
+#include <aws/wafv2/model/RankingStatisticType.h>
 #include <aws/wafv2/model/RateBasedStatement.h>
 #include <aws/wafv2/model/RateBasedStatementAggregateKeyType.h>
 #include <aws/wafv2/model/RateBasedStatementCustomKey.h>
@@ -255,6 +278,8 @@
 #include <aws/wafv2/model/ResponseInspectionHeader.h>
 #include <aws/wafv2/model/ResponseInspectionJson.h>
 #include <aws/wafv2/model/ResponseInspectionStatusCode.h>
+#include <aws/wafv2/model/RevenueBreakdown.h>
+#include <aws/wafv2/model/RevenuePathStatistics.h>
 #include <aws/wafv2/model/Rule.h>
 #include <aws/wafv2/model/RuleAction.h>
 #include <aws/wafv2/model/RuleActionOverride.h>
@@ -266,10 +291,15 @@
 #include <aws/wafv2/model/Scope.h>
 #include <aws/wafv2/model/SensitivityLevel.h>
 #include <aws/wafv2/model/SensitivityToAct.h>
+#include <aws/wafv2/model/SettlementRecord.h>
+#include <aws/wafv2/model/SettlementSortBy.h>
+#include <aws/wafv2/model/SettlementStatus.h>
 #include <aws/wafv2/model/SingleHeader.h>
 #include <aws/wafv2/model/SingleQueryArgument.h>
 #include <aws/wafv2/model/SizeConstraintStatement.h>
 #include <aws/wafv2/model/SizeInspectionLimit.h>
+#include <aws/wafv2/model/SortOrder.h>
+#include <aws/wafv2/model/SourceStatistics.h>
 #include <aws/wafv2/model/SqliMatchStatement.h>
 #include <aws/wafv2/model/Statement.h>
 #include <aws/wafv2/model/Tag.h>
@@ -278,6 +308,7 @@
 #include <aws/wafv2/model/TagResourceResult.h>
 #include <aws/wafv2/model/TextTransformation.h>
 #include <aws/wafv2/model/TextTransformationType.h>
+#include <aws/wafv2/model/TimeSeriesStatisticType.h>
 #include <aws/wafv2/model/TimeWindow.h>
 #include <aws/wafv2/model/UntagResourceRequest.h>
 #include <aws/wafv2/model/UntagResourceResult.h>

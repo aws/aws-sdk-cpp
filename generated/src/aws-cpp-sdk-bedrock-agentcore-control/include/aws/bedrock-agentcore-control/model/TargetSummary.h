@@ -5,7 +5,10 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/AuthorizationData.h>
+#include <aws/bedrock-agentcore-control/model/ListingMode.h>
 #include <aws/bedrock-agentcore-control/model/TargetStatus.h>
+#include <aws/bedrock-agentcore-control/model/TargetType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -156,6 +159,74 @@ class TargetSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when the target was last synchronized.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastSynchronizedAt() const { return m_lastSynchronizedAt; }
+  inline bool LastSynchronizedAtHasBeenSet() const { return m_lastSynchronizedAtHasBeenSet; }
+  template <typename LastSynchronizedAtT = Aws::Utils::DateTime>
+  void SetLastSynchronizedAt(LastSynchronizedAtT&& value) {
+    m_lastSynchronizedAtHasBeenSet = true;
+    m_lastSynchronizedAt = std::forward<LastSynchronizedAtT>(value);
+  }
+  template <typename LastSynchronizedAtT = Aws::Utils::DateTime>
+  TargetSummary& WithLastSynchronizedAt(LastSynchronizedAtT&& value) {
+    SetLastSynchronizedAt(std::forward<LastSynchronizedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const AuthorizationData& GetAuthorizationData() const { return m_authorizationData; }
+  inline bool AuthorizationDataHasBeenSet() const { return m_authorizationDataHasBeenSet; }
+  template <typename AuthorizationDataT = AuthorizationData>
+  void SetAuthorizationData(AuthorizationDataT&& value) {
+    m_authorizationDataHasBeenSet = true;
+    m_authorizationData = std::forward<AuthorizationDataT>(value);
+  }
+  template <typename AuthorizationDataT = AuthorizationData>
+  TargetSummary& WithAuthorizationData(AuthorizationDataT&& value) {
+    SetAuthorizationData(std::forward<AuthorizationDataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the target.</p>
+   */
+  inline TargetType GetTargetType() const { return m_targetType; }
+  inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
+  inline void SetTargetType(TargetType value) {
+    m_targetTypeHasBeenSet = true;
+    m_targetType = value;
+  }
+  inline TargetSummary& WithTargetType(TargetType value) {
+    SetTargetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The listing mode for the target. MCP resources for <code>DEFAULT</code>
+   * targets are cached at the control plane for faster access. MCP resources for
+   * <code>DYNAMIC</code> targets are retrieved dynamically when listing tools.</p>
+   */
+  inline ListingMode GetListingMode() const { return m_listingMode; }
+  inline bool ListingModeHasBeenSet() const { return m_listingModeHasBeenSet; }
+  inline void SetListingMode(ListingMode value) {
+    m_listingModeHasBeenSet = true;
+    m_listingMode = value;
+  }
+  inline TargetSummary& WithListingMode(ListingMode value) {
+    SetListingMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_targetId;
 
@@ -170,6 +241,14 @@ class TargetSummary {
   Aws::Utils::DateTime m_updatedAt{};
 
   int m_resourcePriority{0};
+
+  Aws::Utils::DateTime m_lastSynchronizedAt{};
+
+  AuthorizationData m_authorizationData;
+
+  TargetType m_targetType{TargetType::NOT_SET};
+
+  ListingMode m_listingMode{ListingMode::NOT_SET};
   bool m_targetIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -177,6 +256,10 @@ class TargetSummary {
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_resourcePriorityHasBeenSet = false;
+  bool m_lastSynchronizedAtHasBeenSet = false;
+  bool m_authorizationDataHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_listingModeHasBeenSet = false;
 };
 
 }  // namespace Model

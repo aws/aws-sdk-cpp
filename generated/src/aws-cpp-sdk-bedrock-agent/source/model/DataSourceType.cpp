@@ -22,6 +22,7 @@ static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
 static const int SHAREPOINT_HASH = HashingUtils::HashString("SHAREPOINT");
 static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 static const int REDSHIFT_METADATA_HASH = HashingUtils::HashString("REDSHIFT_METADATA");
+static const int MANAGED_KNOWLEDGE_BASE_CONNECTOR_HASH = HashingUtils::HashString("MANAGED_KNOWLEDGE_BASE_CONNECTOR");
 
 DataSourceType GetDataSourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ DataSourceType GetDataSourceTypeForName(const Aws::String& name) {
     return DataSourceType::CUSTOM;
   } else if (hashCode == REDSHIFT_METADATA_HASH) {
     return DataSourceType::REDSHIFT_METADATA;
+  } else if (hashCode == MANAGED_KNOWLEDGE_BASE_CONNECTOR_HASH) {
+    return DataSourceType::MANAGED_KNOWLEDGE_BASE_CONNECTOR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForDataSourceType(DataSourceType enumValue) {
       return "CUSTOM";
     case DataSourceType::REDSHIFT_METADATA:
       return "REDSHIFT_METADATA";
+    case DataSourceType::MANAGED_KNOWLEDGE_BASE_CONNECTOR:
+      return "MANAGED_KNOWLEDGE_BASE_CONNECTOR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

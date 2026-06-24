@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/PerformanceCategoryName.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -93,6 +96,54 @@ class EvaluationScore {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The points earned for the item.</p>
+   */
+  inline int GetEarnedPoints() const { return m_earnedPoints; }
+  inline bool EarnedPointsHasBeenSet() const { return m_earnedPointsHasBeenSet; }
+  inline void SetEarnedPoints(int value) {
+    m_earnedPointsHasBeenSet = true;
+    m_earnedPoints = value;
+  }
+  inline EvaluationScore& WithEarnedPoints(int value) {
+    SetEarnedPoints(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum base points possible for the item.</p>
+   */
+  inline int GetMaxBasePoint() const { return m_maxBasePoint; }
+  inline bool MaxBasePointHasBeenSet() const { return m_maxBasePointHasBeenSet; }
+  inline void SetMaxBasePoint(int value) {
+    m_maxBasePointHasBeenSet = true;
+    m_maxBasePoint = value;
+  }
+  inline EvaluationScore& WithMaxBasePoint(int value) {
+    SetMaxBasePoint(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The performance category for the score.</p>
+   */
+  inline PerformanceCategoryName GetPerformanceCategory() const { return m_performanceCategory; }
+  inline bool PerformanceCategoryHasBeenSet() const { return m_performanceCategoryHasBeenSet; }
+  inline void SetPerformanceCategory(PerformanceCategoryName value) {
+    m_performanceCategoryHasBeenSet = true;
+    m_performanceCategory = value;
+  }
+  inline EvaluationScore& WithPerformanceCategory(PerformanceCategoryName value) {
+    SetPerformanceCategory(value);
+    return *this;
+  }
+  ///@}
  private:
   double m_percentage{0.0};
 
@@ -101,10 +152,19 @@ class EvaluationScore {
   bool m_automaticFail{false};
 
   double m_appliedWeight{0.0};
+
+  int m_earnedPoints{0};
+
+  int m_maxBasePoint{0};
+
+  PerformanceCategoryName m_performanceCategory{PerformanceCategoryName::NOT_SET};
   bool m_percentageHasBeenSet = false;
   bool m_notApplicableHasBeenSet = false;
   bool m_automaticFailHasBeenSet = false;
   bool m_appliedWeightHasBeenSet = false;
+  bool m_earnedPointsHasBeenSet = false;
+  bool m_maxBasePointHasBeenSet = false;
+  bool m_performanceCategoryHasBeenSet = false;
 };
 
 }  // namespace Model

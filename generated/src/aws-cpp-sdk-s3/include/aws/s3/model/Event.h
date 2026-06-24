@@ -38,7 +38,10 @@ enum class Event {
   s3_LifecycleExpiration_DeleteMarkerCreated,
   s3_ObjectTagging,
   s3_ObjectTagging_Put,
-  s3_ObjectTagging_Delete
+  s3_ObjectTagging_Delete,
+  s3_ObjectAnnotation,
+  s3_ObjectAnnotation_Put,
+  s3_ObjectAnnotation_Delete
 };
 
 namespace EventMapper {

@@ -51,6 +51,26 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator=(Json
     m_filterCriteria = jsonValue.GetObject("FilterCriteria");
     m_filterCriteriaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FilterCriteriaError")) {
+    m_filterCriteriaError = jsonValue.GetObject("FilterCriteriaError");
+    m_filterCriteriaErrorHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("KMSKeyArn")) {
+    m_kMSKeyArn = jsonValue.GetString("KMSKeyArn");
+    m_kMSKeyArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MetricsConfig")) {
+    m_metricsConfig = jsonValue.GetObject("MetricsConfig");
+    m_metricsConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LoggingConfig")) {
+    m_loggingConfig = jsonValue.GetObject("LoggingConfig");
+    m_loggingConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ScalingConfig")) {
+    m_scalingConfig = jsonValue.GetObject("ScalingConfig");
+    m_scalingConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("FunctionArn")) {
     m_functionArn = jsonValue.GetString("FunctionArn");
     m_functionArnHasBeenSet = true;
@@ -134,33 +154,13 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator=(Json
     m_selfManagedKafkaEventSourceConfig = jsonValue.GetObject("SelfManagedKafkaEventSourceConfig");
     m_selfManagedKafkaEventSourceConfigHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ScalingConfig")) {
-    m_scalingConfig = jsonValue.GetObject("ScalingConfig");
-    m_scalingConfigHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("DocumentDBEventSourceConfig")) {
     m_documentDBEventSourceConfig = jsonValue.GetObject("DocumentDBEventSourceConfig");
     m_documentDBEventSourceConfigHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("KMSKeyArn")) {
-    m_kMSKeyArn = jsonValue.GetString("KMSKeyArn");
-    m_kMSKeyArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("FilterCriteriaError")) {
-    m_filterCriteriaError = jsonValue.GetObject("FilterCriteriaError");
-    m_filterCriteriaErrorHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("EventSourceMappingArn")) {
     m_eventSourceMappingArn = jsonValue.GetString("EventSourceMappingArn");
     m_eventSourceMappingArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("MetricsConfig")) {
-    m_metricsConfig = jsonValue.GetObject("MetricsConfig");
-    m_metricsConfigHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LoggingConfig")) {
-    m_loggingConfig = jsonValue.GetObject("LoggingConfig");
-    m_loggingConfigHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ProvisionedPollerConfig")) {
     m_provisionedPollerConfig = jsonValue.GetObject("ProvisionedPollerConfig");
@@ -202,6 +202,26 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const {
 
   if (m_filterCriteriaHasBeenSet) {
     payload.WithObject("FilterCriteria", m_filterCriteria.Jsonize());
+  }
+
+  if (m_filterCriteriaErrorHasBeenSet) {
+    payload.WithObject("FilterCriteriaError", m_filterCriteriaError.Jsonize());
+  }
+
+  if (m_kMSKeyArnHasBeenSet) {
+    payload.WithString("KMSKeyArn", m_kMSKeyArn);
+  }
+
+  if (m_metricsConfigHasBeenSet) {
+    payload.WithObject("MetricsConfig", m_metricsConfig.Jsonize());
+  }
+
+  if (m_loggingConfigHasBeenSet) {
+    payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
+  }
+
+  if (m_scalingConfigHasBeenSet) {
+    payload.WithObject("ScalingConfig", m_scalingConfig.Jsonize());
   }
 
   if (m_functionArnHasBeenSet) {
@@ -292,32 +312,12 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const {
     payload.WithObject("SelfManagedKafkaEventSourceConfig", m_selfManagedKafkaEventSourceConfig.Jsonize());
   }
 
-  if (m_scalingConfigHasBeenSet) {
-    payload.WithObject("ScalingConfig", m_scalingConfig.Jsonize());
-  }
-
   if (m_documentDBEventSourceConfigHasBeenSet) {
     payload.WithObject("DocumentDBEventSourceConfig", m_documentDBEventSourceConfig.Jsonize());
   }
 
-  if (m_kMSKeyArnHasBeenSet) {
-    payload.WithString("KMSKeyArn", m_kMSKeyArn);
-  }
-
-  if (m_filterCriteriaErrorHasBeenSet) {
-    payload.WithObject("FilterCriteriaError", m_filterCriteriaError.Jsonize());
-  }
-
   if (m_eventSourceMappingArnHasBeenSet) {
     payload.WithString("EventSourceMappingArn", m_eventSourceMappingArn);
-  }
-
-  if (m_metricsConfigHasBeenSet) {
-    payload.WithObject("MetricsConfig", m_metricsConfig.Jsonize());
-  }
-
-  if (m_loggingConfigHasBeenSet) {
-    payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
   }
 
   if (m_provisionedPollerConfigHasBeenSet) {

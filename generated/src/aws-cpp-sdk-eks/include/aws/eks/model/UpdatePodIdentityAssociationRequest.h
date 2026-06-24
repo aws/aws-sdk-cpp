@@ -140,7 +140,7 @@ class UpdatePodIdentityAssociationRequest : public EKSRequest {
    * Web Services resources from a different role that exists in the same or
    * different Amazon Web Services account. For example, your application running in
    * “Account A” might need to access resources, such as buckets in “Account B” or
-   * within ��Account A” itself. You can create a association to access Amazon Web
+   * within “Account A” itself. You can create a association to access Amazon Web
    * Services resources in “Account B” by creating two IAM roles: a role in “Account
    * A” and a role in “Account B” (which can be the same or different account), each
    * with the necessary trust and permission policies. After you provide these roles

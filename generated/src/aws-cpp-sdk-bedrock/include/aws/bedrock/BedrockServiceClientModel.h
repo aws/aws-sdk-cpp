@@ -58,6 +58,8 @@
 #include <aws/bedrock/model/DeleteResourcePolicyResult.h>
 #include <aws/bedrock/model/DeregisterMarketplaceModelEndpointResult.h>
 #include <aws/bedrock/model/ExportAutomatedReasoningPolicyVersionResult.h>
+#include <aws/bedrock/model/GetAccountDataRetentionRequest.h>
+#include <aws/bedrock/model/GetAccountDataRetentionResult.h>
 #include <aws/bedrock/model/GetAdvancedPromptOptimizationJobResult.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyAnnotationsResult.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyBuildWorkflowResult.h>
@@ -125,6 +127,7 @@
 #include <aws/bedrock/model/ListProvisionedModelThroughputsRequest.h>
 #include <aws/bedrock/model/ListProvisionedModelThroughputsResult.h>
 #include <aws/bedrock/model/ListTagsForResourceResult.h>
+#include <aws/bedrock/model/PutAccountDataRetentionResult.h>
 #include <aws/bedrock/model/PutEnforcedGuardrailConfigurationResult.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationResult.h>
 #include <aws/bedrock/model/PutResourcePolicyResult.h>
@@ -216,6 +219,7 @@ class DeleteProvisionedModelThroughputRequest;
 class DeleteResourcePolicyRequest;
 class DeregisterMarketplaceModelEndpointRequest;
 class ExportAutomatedReasoningPolicyVersionRequest;
+class GetAccountDataRetentionRequest;
 class GetAdvancedPromptOptimizationJobRequest;
 class GetAutomatedReasoningPolicyRequest;
 class GetAutomatedReasoningPolicyAnnotationsRequest;
@@ -264,6 +268,7 @@ class ListModelInvocationJobsRequest;
 class ListPromptRoutersRequest;
 class ListProvisionedModelThroughputsRequest;
 class ListTagsForResourceRequest;
+class PutAccountDataRetentionRequest;
 class PutEnforcedGuardrailConfigurationRequest;
 class PutModelInvocationLoggingConfigurationRequest;
 class PutResourcePolicyRequest;
@@ -327,6 +332,7 @@ typedef Aws::Utils::Outcome<DeleteProvisionedModelThroughputResult, BedrockError
 typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, BedrockError> DeleteResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<DeregisterMarketplaceModelEndpointResult, BedrockError> DeregisterMarketplaceModelEndpointOutcome;
 typedef Aws::Utils::Outcome<ExportAutomatedReasoningPolicyVersionResult, BedrockError> ExportAutomatedReasoningPolicyVersionOutcome;
+typedef Aws::Utils::Outcome<GetAccountDataRetentionResult, BedrockError> GetAccountDataRetentionOutcome;
 typedef Aws::Utils::Outcome<GetAdvancedPromptOptimizationJobResult, BedrockError> GetAdvancedPromptOptimizationJobOutcome;
 typedef Aws::Utils::Outcome<GetAutomatedReasoningPolicyResult, BedrockError> GetAutomatedReasoningPolicyOutcome;
 typedef Aws::Utils::Outcome<GetAutomatedReasoningPolicyAnnotationsResult, BedrockError> GetAutomatedReasoningPolicyAnnotationsOutcome;
@@ -377,6 +383,7 @@ typedef Aws::Utils::Outcome<ListModelInvocationJobsResult, BedrockError> ListMod
 typedef Aws::Utils::Outcome<ListPromptRoutersResult, BedrockError> ListPromptRoutersOutcome;
 typedef Aws::Utils::Outcome<ListProvisionedModelThroughputsResult, BedrockError> ListProvisionedModelThroughputsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<PutAccountDataRetentionResult, BedrockError> PutAccountDataRetentionOutcome;
 typedef Aws::Utils::Outcome<PutEnforcedGuardrailConfigurationResult, BedrockError> PutEnforcedGuardrailConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutModelInvocationLoggingConfigurationResult, BedrockError> PutModelInvocationLoggingConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, BedrockError> PutResourcePolicyOutcome;
@@ -439,6 +446,7 @@ typedef std::future<DeleteProvisionedModelThroughputOutcome> DeleteProvisionedMo
 typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
 typedef std::future<DeregisterMarketplaceModelEndpointOutcome> DeregisterMarketplaceModelEndpointOutcomeCallable;
 typedef std::future<ExportAutomatedReasoningPolicyVersionOutcome> ExportAutomatedReasoningPolicyVersionOutcomeCallable;
+typedef std::future<GetAccountDataRetentionOutcome> GetAccountDataRetentionOutcomeCallable;
 typedef std::future<GetAdvancedPromptOptimizationJobOutcome> GetAdvancedPromptOptimizationJobOutcomeCallable;
 typedef std::future<GetAutomatedReasoningPolicyOutcome> GetAutomatedReasoningPolicyOutcomeCallable;
 typedef std::future<GetAutomatedReasoningPolicyAnnotationsOutcome> GetAutomatedReasoningPolicyAnnotationsOutcomeCallable;
@@ -488,6 +496,7 @@ typedef std::future<ListModelInvocationJobsOutcome> ListModelInvocationJobsOutco
 typedef std::future<ListPromptRoutersOutcome> ListPromptRoutersOutcomeCallable;
 typedef std::future<ListProvisionedModelThroughputsOutcome> ListProvisionedModelThroughputsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<PutAccountDataRetentionOutcome> PutAccountDataRetentionOutcomeCallable;
 typedef std::future<PutEnforcedGuardrailConfigurationOutcome> PutEnforcedGuardrailConfigurationOutcomeCallable;
 typedef std::future<PutModelInvocationLoggingConfigurationOutcome> PutModelInvocationLoggingConfigurationOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
@@ -647,6 +656,9 @@ typedef std::function<void(const BedrockClient*, const Model::ExportAutomatedRea
                            const Model::ExportAutomatedReasoningPolicyVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ExportAutomatedReasoningPolicyVersionResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::GetAccountDataRetentionRequest&, const Model::GetAccountDataRetentionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAccountDataRetentionResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::GetAdvancedPromptOptimizationJobRequest&,
                            const Model::GetAdvancedPromptOptimizationJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -810,6 +822,9 @@ typedef std::function<void(const BedrockClient*, const Model::ListProvisionedMod
 typedef std::function<void(const BedrockClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::PutAccountDataRetentionRequest&, const Model::PutAccountDataRetentionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutAccountDataRetentionResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::PutEnforcedGuardrailConfigurationRequest&,
                            const Model::PutEnforcedGuardrailConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

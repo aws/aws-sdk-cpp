@@ -12,6 +12,7 @@
 #include <aws/ec2/model/DestinationOptionsResponse.h>
 #include <aws/ec2/model/LogDestinationType.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/TagFieldSpecificationResponse.h>
 #include <aws/ec2/model/TrafficType.h>
 
 #include <utility>
@@ -340,6 +341,31 @@ class FlowLog {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tag configuration associated with the Flow Logs Amazon EC2 Tags feature
+   * fields in your custom log format.</p>
+   */
+  inline const Aws::Vector<TagFieldSpecificationResponse>& GetTagFieldSpecifications() const { return m_tagFieldSpecifications; }
+  inline bool TagFieldSpecificationsHasBeenSet() const { return m_tagFieldSpecificationsHasBeenSet; }
+  template <typename TagFieldSpecificationsT = Aws::Vector<TagFieldSpecificationResponse>>
+  void SetTagFieldSpecifications(TagFieldSpecificationsT&& value) {
+    m_tagFieldSpecificationsHasBeenSet = true;
+    m_tagFieldSpecifications = std::forward<TagFieldSpecificationsT>(value);
+  }
+  template <typename TagFieldSpecificationsT = Aws::Vector<TagFieldSpecificationResponse>>
+  FlowLog& WithTagFieldSpecifications(TagFieldSpecificationsT&& value) {
+    SetTagFieldSpecifications(std::forward<TagFieldSpecificationsT>(value));
+    return *this;
+  }
+  template <typename TagFieldSpecificationsT = TagFieldSpecificationResponse>
+  FlowLog& AddTagFieldSpecifications(TagFieldSpecificationsT&& value) {
+    m_tagFieldSpecificationsHasBeenSet = true;
+    m_tagFieldSpecifications.emplace_back(std::forward<TagFieldSpecificationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
 
@@ -372,6 +398,8 @@ class FlowLog {
   int m_maxAggregationInterval{0};
 
   DestinationOptionsResponse m_destinationOptions;
+
+  Aws::Vector<TagFieldSpecificationResponse> m_tagFieldSpecifications;
   bool m_creationTimeHasBeenSet = false;
   bool m_deliverLogsErrorMessageHasBeenSet = false;
   bool m_deliverLogsPermissionArnHasBeenSet = false;
@@ -388,6 +416,7 @@ class FlowLog {
   bool m_tagsHasBeenSet = false;
   bool m_maxAggregationIntervalHasBeenSet = false;
   bool m_destinationOptionsHasBeenSet = false;
+  bool m_tagFieldSpecificationsHasBeenSet = false;
 };
 
 }  // namespace Model

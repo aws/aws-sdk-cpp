@@ -15,6 +15,8 @@
 #include <aws/devops-agent/model/NewRelicServiceDetails.h>
 #include <aws/devops-agent/model/PagerDutyDetails.h>
 #include <aws/devops-agent/model/RegisteredAzureIdentityDetails.h>
+#include <aws/devops-agent/model/RemoteAgentServiceDetails.h>
+#include <aws/devops-agent/model/RemoteAgentSigV4ServiceDetails.h>
 #include <aws/devops-agent/model/ServiceNowServiceDetails.h>
 
 #include <utility>
@@ -258,6 +260,42 @@ class ServiceDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Remote A2A agent service details (token-based auth).</p>
+   */
+  inline const RemoteAgentServiceDetails& GetRemoteagent() const { return m_remoteagent; }
+  inline bool RemoteagentHasBeenSet() const { return m_remoteagentHasBeenSet; }
+  template <typename RemoteagentT = RemoteAgentServiceDetails>
+  void SetRemoteagent(RemoteagentT&& value) {
+    m_remoteagentHasBeenSet = true;
+    m_remoteagent = std::forward<RemoteagentT>(value);
+  }
+  template <typename RemoteagentT = RemoteAgentServiceDetails>
+  ServiceDetails& WithRemoteagent(RemoteagentT&& value) {
+    SetRemoteagent(std::forward<RemoteagentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Remote A2A agent service details (SigV4 auth).</p>
+   */
+  inline const RemoteAgentSigV4ServiceDetails& GetRemoteagentsigv4() const { return m_remoteagentsigv4; }
+  inline bool Remoteagentsigv4HasBeenSet() const { return m_remoteagentsigv4HasBeenSet; }
+  template <typename Remoteagentsigv4T = RemoteAgentSigV4ServiceDetails>
+  void SetRemoteagentsigv4(Remoteagentsigv4T&& value) {
+    m_remoteagentsigv4HasBeenSet = true;
+    m_remoteagentsigv4 = std::forward<Remoteagentsigv4T>(value);
+  }
+  template <typename Remoteagentsigv4T = RemoteAgentSigV4ServiceDetails>
+  ServiceDetails& WithRemoteagentsigv4(Remoteagentsigv4T&& value) {
+    SetRemoteagentsigv4(std::forward<Remoteagentsigv4T>(value));
+    return *this;
+  }
+  ///@}
  private:
   DynatraceServiceDetails m_dynatrace;
 
@@ -282,6 +320,10 @@ class ServiceDetails {
   RegisteredAzureIdentityDetails m_azureidentity;
 
   MCPServerSigV4ServiceDetails m_mcpserversigv4;
+
+  RemoteAgentServiceDetails m_remoteagent;
+
+  RemoteAgentSigV4ServiceDetails m_remoteagentsigv4;
   bool m_dynatraceHasBeenSet = false;
   bool m_servicenowHasBeenSet = false;
   bool m_mcpserverdatadogHasBeenSet = false;
@@ -294,6 +336,8 @@ class ServiceDetails {
   bool m_pagerdutyHasBeenSet = false;
   bool m_azureidentityHasBeenSet = false;
   bool m_mcpserversigv4HasBeenSet = false;
+  bool m_remoteagentHasBeenSet = false;
+  bool m_remoteagentsigv4HasBeenSet = false;
 };
 
 }  // namespace Model

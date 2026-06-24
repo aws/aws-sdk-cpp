@@ -10,7 +10,7 @@
 namespace Aws {
 namespace mgn {
 namespace Model {
-enum class ReplicationConfigurationReplicatedDiskStagingDiskType { NOT_SET, AUTO, GP2, IO1, SC1, ST1, STANDARD, GP3, IO2 };
+enum class ReplicationConfigurationReplicatedDiskStagingDiskType { NOT_SET, AUTO, GP2, IO1, SC1, ST1, STANDARD, GP3, IO2, FSX_ONTAP };
 
 namespace ReplicationConfigurationReplicatedDiskStagingDiskTypeMapper {
 AWS_MGN_API ReplicationConfigurationReplicatedDiskStagingDiskType

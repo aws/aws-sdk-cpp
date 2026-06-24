@@ -36,7 +36,7 @@ enum class StateReasonCode {
   InvalidRuntime,
   InvalidZipFileException,
   FunctionError,
-  DrainingDurableExecutions,
+  ServiceQuotaExceededException,
   VcpuLimitExceeded,
   CapacityProviderScalingLimitExceeded,
   InsufficientCapacity,
@@ -49,7 +49,8 @@ enum class StateReasonCode {
   FunctionError_PermissionDenied,
   FunctionError_TooManyExtensions,
   FunctionError_InitResourceExhausted,
-  DisallowedByVpcEncryptionControl
+  DisallowedByVpcEncryptionControl,
+  DrainingDurableExecutions
 };
 
 namespace StateReasonCodeMapper {

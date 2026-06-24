@@ -79,6 +79,7 @@
 #include <aws/eks/model/ConnectorConfigProvider.h>
 #include <aws/eks/model/ConnectorConfigRequest.h>
 #include <aws/eks/model/ConnectorConfigResponse.h>
+#include <aws/eks/model/ControlPlaneEgressModeType.h>
 #include <aws/eks/model/ControlPlanePlacementRequest.h>
 #include <aws/eks/model/ControlPlanePlacementResponse.h>
 #include <aws/eks/model/ControlPlaneScalingConfig.h>
@@ -161,6 +162,8 @@
 #include <aws/eks/model/EncryptionConfig.h>
 #include <aws/eks/model/ErrorCode.h>
 #include <aws/eks/model/ErrorDetail.h>
+#include <aws/eks/model/EtcdPlacementRequest.h>
+#include <aws/eks/model/EtcdPlacementResponse.h>
 #include <aws/eks/model/FargateProfile.h>
 #include <aws/eks/model/FargateProfileHealth.h>
 #include <aws/eks/model/FargateProfileIssue.h>
@@ -251,6 +254,7 @@
 #include <aws/eks/model/ResourceLimitExceededException.h>
 #include <aws/eks/model/ResourceNotFoundException.h>
 #include <aws/eks/model/ServerException.h>
+#include <aws/eks/model/SpreadLevel.h>
 #include <aws/eks/model/SsoIdentity.h>
 #include <aws/eks/model/SsoIdentityType.h>
 #include <aws/eks/model/StartInsightsRefreshRequest.h>

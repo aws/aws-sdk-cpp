@@ -125,7 +125,8 @@ class DatasetSummary {
 
   ///@{
   /**
-   * <p>Publish synchronization state. Only authoritative when status == ACTIVE.</p>
+   * <p> Publish synchronization state. Only authoritative when status is ACTIVE.
+   * </p>
    */
   inline DraftStatus GetDraftStatus() const { return m_draftStatus; }
   inline bool DraftStatusHasBeenSet() const { return m_draftStatusHasBeenSet; }

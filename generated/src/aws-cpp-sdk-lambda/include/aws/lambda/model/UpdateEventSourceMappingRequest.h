@@ -152,6 +152,85 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
 
   ///@{
   /**
+   * <p> The ARN of the Key Management Service (KMS) customer managed key that Lambda
+   * uses to encrypt your function's <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter
+   * criteria</a>. By default, Lambda does not encrypt your filter criteria object.
+   * Specify this property to encrypt data using your own customer managed key. </p>
+   */
+  inline const Aws::String& GetKMSKeyArn() const { return m_kMSKeyArn; }
+  inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
+  template <typename KMSKeyArnT = Aws::String>
+  void SetKMSKeyArn(KMSKeyArnT&& value) {
+    m_kMSKeyArnHasBeenSet = true;
+    m_kMSKeyArn = std::forward<KMSKeyArnT>(value);
+  }
+  template <typename KMSKeyArnT = Aws::String>
+  UpdateEventSourceMappingRequest& WithKMSKeyArn(KMSKeyArnT&& value) {
+    SetKMSKeyArn(std::forward<KMSKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The metrics configuration for your event source. For more information, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event
+   * source mapping metrics</a>.</p>
+   */
+  inline const EventSourceMappingMetricsConfig& GetMetricsConfig() const { return m_metricsConfig; }
+  inline bool MetricsConfigHasBeenSet() const { return m_metricsConfigHasBeenSet; }
+  template <typename MetricsConfigT = EventSourceMappingMetricsConfig>
+  void SetMetricsConfig(MetricsConfigT&& value) {
+    m_metricsConfigHasBeenSet = true;
+    m_metricsConfig = std::forward<MetricsConfigT>(value);
+  }
+  template <typename MetricsConfigT = EventSourceMappingMetricsConfig>
+  UpdateEventSourceMappingRequest& WithMetricsConfig(MetricsConfigT&& value) {
+    SetMetricsConfig(std::forward<MetricsConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const EventSourceMappingLoggingConfig& GetLoggingConfig() const { return m_loggingConfig; }
+  inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
+  template <typename LoggingConfigT = EventSourceMappingLoggingConfig>
+  void SetLoggingConfig(LoggingConfigT&& value) {
+    m_loggingConfigHasBeenSet = true;
+    m_loggingConfig = std::forward<LoggingConfigT>(value);
+  }
+  template <typename LoggingConfigT = EventSourceMappingLoggingConfig>
+  UpdateEventSourceMappingRequest& WithLoggingConfig(LoggingConfigT&& value) {
+    SetLoggingConfig(std::forward<LoggingConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+   * maximum concurrency for Amazon SQS event sources</a>.</p>
+   */
+  inline const ScalingConfig& GetScalingConfig() const { return m_scalingConfig; }
+  inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
+  template <typename ScalingConfigT = ScalingConfig>
+  void SetScalingConfig(ScalingConfigT&& value) {
+    m_scalingConfigHasBeenSet = true;
+    m_scalingConfig = std::forward<ScalingConfigT>(value);
+  }
+  template <typename ScalingConfigT = ScalingConfig>
+  UpdateEventSourceMappingRequest& WithScalingConfig(ScalingConfigT&& value) {
+    SetScalingConfig(std::forward<ScalingConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum amount of time, in seconds, that Lambda spends gathering records
    * before invoking the function. You can configure
    * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
@@ -174,6 +253,23 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
   }
   inline UpdateEventSourceMappingRequest& WithMaximumBatchingWindowInSeconds(int value) {
     SetMaximumBatchingWindowInSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>(Kinesis and DynamoDB Streams only) The number of batches to process from
+   * each shard concurrently.</p>
+   */
+  inline int GetParallelizationFactor() const { return m_parallelizationFactor; }
+  inline bool ParallelizationFactorHasBeenSet() const { return m_parallelizationFactorHasBeenSet; }
+  inline void SetParallelizationFactor(int value) {
+    m_parallelizationFactorHasBeenSet = true;
+    m_parallelizationFactor = value;
+  }
+  inline UpdateEventSourceMappingRequest& WithParallelizationFactor(int value) {
+    SetParallelizationFactor(value);
     return *this;
   }
   ///@}
@@ -254,17 +350,18 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>(Kinesis and DynamoDB Streams only) The number of batches to process from
-   * each shard concurrently.</p>
+   * <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing
+   * window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds
+   * indicates no tumbling window.</p>
    */
-  inline int GetParallelizationFactor() const { return m_parallelizationFactor; }
-  inline bool ParallelizationFactorHasBeenSet() const { return m_parallelizationFactorHasBeenSet; }
-  inline void SetParallelizationFactor(int value) {
-    m_parallelizationFactorHasBeenSet = true;
-    m_parallelizationFactor = value;
+  inline int GetTumblingWindowInSeconds() const { return m_tumblingWindowInSeconds; }
+  inline bool TumblingWindowInSecondsHasBeenSet() const { return m_tumblingWindowInSecondsHasBeenSet; }
+  inline void SetTumblingWindowInSeconds(int value) {
+    m_tumblingWindowInSecondsHasBeenSet = true;
+    m_tumblingWindowInSeconds = value;
   }
-  inline UpdateEventSourceMappingRequest& WithParallelizationFactor(int value) {
-    SetParallelizationFactor(value);
+  inline UpdateEventSourceMappingRequest& WithTumblingWindowInSeconds(int value) {
+    SetTumblingWindowInSeconds(value);
     return *this;
   }
   ///@}
@@ -296,24 +393,6 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing
-   * window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds
-   * indicates no tumbling window.</p>
-   */
-  inline int GetTumblingWindowInSeconds() const { return m_tumblingWindowInSeconds; }
-  inline bool TumblingWindowInSecondsHasBeenSet() const { return m_tumblingWindowInSecondsHasBeenSet; }
-  inline void SetTumblingWindowInSeconds(int value) {
-    m_tumblingWindowInSecondsHasBeenSet = true;
-    m_tumblingWindowInSeconds = value;
-  }
-  inline UpdateEventSourceMappingRequest& WithTumblingWindowInSeconds(int value) {
-    SetTumblingWindowInSeconds(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>(Kinesis, DynamoDB Streams, Amazon MSK, self-managed Apache Kafka, and Amazon
    * SQS) A list of current response type enums applied to the event source
    * mapping.</p>
@@ -333,27 +412,6 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
   inline UpdateEventSourceMappingRequest& AddFunctionResponseTypes(FunctionResponseType value) {
     m_functionResponseTypesHasBeenSet = true;
     m_functionResponseTypes.push_back(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>(Amazon SQS only) The scaling configuration for the event source. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
-   * maximum concurrency for Amazon SQS event sources</a>.</p>
-   */
-  inline const ScalingConfig& GetScalingConfig() const { return m_scalingConfig; }
-  inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
-  template <typename ScalingConfigT = ScalingConfig>
-  void SetScalingConfig(ScalingConfigT&& value) {
-    m_scalingConfigHasBeenSet = true;
-    m_scalingConfig = std::forward<ScalingConfigT>(value);
-  }
-  template <typename ScalingConfigT = ScalingConfig>
-  UpdateEventSourceMappingRequest& WithScalingConfig(ScalingConfigT&& value) {
-    SetScalingConfig(std::forward<ScalingConfigT>(value));
     return *this;
   }
   ///@}
@@ -414,64 +472,6 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p> The ARN of the Key Management Service (KMS) customer managed key that Lambda
-   * uses to encrypt your function's <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter
-   * criteria</a>. By default, Lambda does not encrypt your filter criteria object.
-   * Specify this property to encrypt data using your own customer managed key. </p>
-   */
-  inline const Aws::String& GetKMSKeyArn() const { return m_kMSKeyArn; }
-  inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
-  template <typename KMSKeyArnT = Aws::String>
-  void SetKMSKeyArn(KMSKeyArnT&& value) {
-    m_kMSKeyArnHasBeenSet = true;
-    m_kMSKeyArn = std::forward<KMSKeyArnT>(value);
-  }
-  template <typename KMSKeyArnT = Aws::String>
-  UpdateEventSourceMappingRequest& WithKMSKeyArn(KMSKeyArnT&& value) {
-    SetKMSKeyArn(std::forward<KMSKeyArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The metrics configuration for your event source. For more information, see <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event
-   * source mapping metrics</a>.</p>
-   */
-  inline const EventSourceMappingMetricsConfig& GetMetricsConfig() const { return m_metricsConfig; }
-  inline bool MetricsConfigHasBeenSet() const { return m_metricsConfigHasBeenSet; }
-  template <typename MetricsConfigT = EventSourceMappingMetricsConfig>
-  void SetMetricsConfig(MetricsConfigT&& value) {
-    m_metricsConfigHasBeenSet = true;
-    m_metricsConfig = std::forward<MetricsConfigT>(value);
-  }
-  template <typename MetricsConfigT = EventSourceMappingMetricsConfig>
-  UpdateEventSourceMappingRequest& WithMetricsConfig(MetricsConfigT&& value) {
-    SetMetricsConfig(std::forward<MetricsConfigT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
-  inline const EventSourceMappingLoggingConfig& GetLoggingConfig() const { return m_loggingConfig; }
-  inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
-  template <typename LoggingConfigT = EventSourceMappingLoggingConfig>
-  void SetLoggingConfig(LoggingConfigT&& value) {
-    m_loggingConfigHasBeenSet = true;
-    m_loggingConfig = std::forward<LoggingConfigT>(value);
-  }
-  template <typename LoggingConfigT = EventSourceMappingLoggingConfig>
-  UpdateEventSourceMappingRequest& WithLoggingConfig(LoggingConfigT&& value) {
-    SetLoggingConfig(std::forward<LoggingConfigT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>(Amazon SQS, Amazon MSK, and self-managed Apache Kafka only) The provisioned
    * mode configuration for the event source. For more information, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned
@@ -501,7 +501,17 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
 
   FilterCriteria m_filterCriteria;
 
+  Aws::String m_kMSKeyArn;
+
+  EventSourceMappingMetricsConfig m_metricsConfig;
+
+  EventSourceMappingLoggingConfig m_loggingConfig;
+
+  ScalingConfig m_scalingConfig;
+
   int m_maximumBatchingWindowInSeconds{0};
+
+  int m_parallelizationFactor{0};
 
   DestinationConfig m_destinationConfig;
 
@@ -511,15 +521,11 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
 
   int m_maximumRetryAttempts{0};
 
-  int m_parallelizationFactor{0};
+  int m_tumblingWindowInSeconds{0};
 
   Aws::Vector<SourceAccessConfiguration> m_sourceAccessConfigurations;
 
-  int m_tumblingWindowInSeconds{0};
-
   Aws::Vector<FunctionResponseType> m_functionResponseTypes;
-
-  ScalingConfig m_scalingConfig;
 
   AmazonManagedKafkaEventSourceConfig m_amazonManagedKafkaEventSourceConfig;
 
@@ -527,34 +533,28 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
 
   DocumentDBEventSourceConfig m_documentDBEventSourceConfig;
 
-  Aws::String m_kMSKeyArn;
-
-  EventSourceMappingMetricsConfig m_metricsConfig;
-
-  EventSourceMappingLoggingConfig m_loggingConfig;
-
   ProvisionedPollerConfig m_provisionedPollerConfig;
   bool m_uUIDHasBeenSet = false;
   bool m_functionNameHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
   bool m_batchSizeHasBeenSet = false;
   bool m_filterCriteriaHasBeenSet = false;
+  bool m_kMSKeyArnHasBeenSet = false;
+  bool m_metricsConfigHasBeenSet = false;
+  bool m_loggingConfigHasBeenSet = false;
+  bool m_scalingConfigHasBeenSet = false;
   bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
+  bool m_parallelizationFactorHasBeenSet = false;
   bool m_destinationConfigHasBeenSet = false;
   bool m_maximumRecordAgeInSecondsHasBeenSet = false;
   bool m_bisectBatchOnFunctionErrorHasBeenSet = false;
   bool m_maximumRetryAttemptsHasBeenSet = false;
-  bool m_parallelizationFactorHasBeenSet = false;
-  bool m_sourceAccessConfigurationsHasBeenSet = false;
   bool m_tumblingWindowInSecondsHasBeenSet = false;
+  bool m_sourceAccessConfigurationsHasBeenSet = false;
   bool m_functionResponseTypesHasBeenSet = false;
-  bool m_scalingConfigHasBeenSet = false;
   bool m_amazonManagedKafkaEventSourceConfigHasBeenSet = false;
   bool m_selfManagedKafkaEventSourceConfigHasBeenSet = false;
   bool m_documentDBEventSourceConfigHasBeenSet = false;
-  bool m_kMSKeyArnHasBeenSet = false;
-  bool m_metricsConfigHasBeenSet = false;
-  bool m_loggingConfigHasBeenSet = false;
   bool m_provisionedPollerConfigHasBeenSet = false;
 };
 

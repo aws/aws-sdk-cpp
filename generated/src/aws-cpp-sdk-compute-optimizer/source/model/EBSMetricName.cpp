@@ -19,6 +19,8 @@ static const int VolumeReadOpsPerSecond_HASH = HashingUtils::HashString("VolumeR
 static const int VolumeWriteOpsPerSecond_HASH = HashingUtils::HashString("VolumeWriteOpsPerSecond");
 static const int VolumeReadBytesPerSecond_HASH = HashingUtils::HashString("VolumeReadBytesPerSecond");
 static const int VolumeWriteBytesPerSecond_HASH = HashingUtils::HashString("VolumeWriteBytesPerSecond");
+static const int VolumeIOPSExceeded_HASH = HashingUtils::HashString("VolumeIOPSExceeded");
+static const int VolumeThroughputExceeded_HASH = HashingUtils::HashString("VolumeThroughputExceeded");
 
 EBSMetricName GetEBSMetricNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +32,10 @@ EBSMetricName GetEBSMetricNameForName(const Aws::String& name) {
     return EBSMetricName::VolumeReadBytesPerSecond;
   } else if (hashCode == VolumeWriteBytesPerSecond_HASH) {
     return EBSMetricName::VolumeWriteBytesPerSecond;
+  } else if (hashCode == VolumeIOPSExceeded_HASH) {
+    return EBSMetricName::VolumeIOPSExceeded;
+  } else if (hashCode == VolumeThroughputExceeded_HASH) {
+    return EBSMetricName::VolumeThroughputExceeded;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +58,10 @@ Aws::String GetNameForEBSMetricName(EBSMetricName enumValue) {
       return "VolumeReadBytesPerSecond";
     case EBSMetricName::VolumeWriteBytesPerSecond:
       return "VolumeWriteBytesPerSecond";
+    case EBSMetricName::VolumeIOPSExceeded:
+      return "VolumeIOPSExceeded";
+    case EBSMetricName::VolumeThroughputExceeded:
+      return "VolumeThroughputExceeded";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

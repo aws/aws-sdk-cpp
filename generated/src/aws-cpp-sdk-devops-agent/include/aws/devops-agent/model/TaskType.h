@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DevOpsAgent {
 namespace Model {
-enum class TaskType { NOT_SET, INVESTIGATION, EVALUATION };
+enum class TaskType { NOT_SET, INVESTIGATION, EVALUATION, RELEASE_READINESS_REVIEW, RELEASE_TESTING };
 
 namespace TaskTypeMapper {
 AWS_DEVOPSAGENT_API TaskType GetTaskTypeForName(const Aws::String& name);

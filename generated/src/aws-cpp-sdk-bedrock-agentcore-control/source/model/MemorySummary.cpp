@@ -38,6 +38,10 @@ MemorySummary& MemorySummary::operator=(JsonView jsonValue) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("managedByResourceArn")) {
+    m_managedByResourceArn = jsonValue.GetString("managedByResourceArn");
+    m_managedByResourceArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue MemorySummary::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_managedByResourceArnHasBeenSet) {
+    payload.WithString("managedByResourceArn", m_managedByResourceArn);
   }
 
   return payload;

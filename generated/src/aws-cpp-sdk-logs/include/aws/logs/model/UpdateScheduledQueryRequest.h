@@ -183,6 +183,23 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
+   * <p>The updated time offset in seconds that defines the end of the lookback
+   * period for the query.</p>
+   */
+  inline long long GetEndTimeOffset() const { return m_endTimeOffset; }
+  inline bool EndTimeOffsetHasBeenSet() const { return m_endTimeOffsetHasBeenSet; }
+  inline void SetEndTimeOffset(long long value) {
+    m_endTimeOffsetHasBeenSet = true;
+    m_endTimeOffset = value;
+  }
+  inline UpdateScheduledQueryRequest& WithEndTimeOffset(long long value) {
+    SetEndTimeOffset(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The updated configuration for where to deliver query results.</p>
    */
   inline const DestinationConfiguration& GetDestinationConfiguration() const { return m_destinationConfiguration; }
@@ -282,6 +299,8 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   long long m_startTimeOffset{0};
 
+  long long m_endTimeOffset{0};
+
   DestinationConfiguration m_destinationConfiguration;
 
   long long m_scheduleStartTime{0};
@@ -299,6 +318,7 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
   bool m_scheduleExpressionHasBeenSet = false;
   bool m_timezoneHasBeenSet = false;
   bool m_startTimeOffsetHasBeenSet = false;
+  bool m_endTimeOffsetHasBeenSet = false;
   bool m_destinationConfigurationHasBeenSet = false;
   bool m_scheduleStartTimeHasBeenSet = false;
   bool m_scheduleEndTimeHasBeenSet = false;

@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/KendraKnowledgeBaseConfiguration.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseType.h>
+#include <aws/bedrock-agent/model/ManagedKnowledgeBaseConfiguration.h>
 #include <aws/bedrock-agent/model/SqlKnowledgeBaseConfiguration.h>
 #include <aws/bedrock-agent/model/VectorKnowledgeBaseConfiguration.h>
 
@@ -38,7 +39,7 @@ class KnowledgeBaseConfiguration {
   ///@{
   /**
    * <p>The type of data that the data source is converted into for the knowledge
-   * base.</p>
+   * base. Choose <code>MANAGED</code> to create a managed knowledge base.</p>
    */
   inline KnowledgeBaseType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -67,6 +68,24 @@ class KnowledgeBaseConfiguration {
   template <typename VectorKnowledgeBaseConfigurationT = VectorKnowledgeBaseConfiguration>
   KnowledgeBaseConfiguration& WithVectorKnowledgeBaseConfiguration(VectorKnowledgeBaseConfigurationT&& value) {
     SetVectorKnowledgeBaseConfiguration(std::forward<VectorKnowledgeBaseConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ManagedKnowledgeBaseConfiguration& GetManagedKnowledgeBaseConfiguration() const {
+    return m_managedKnowledgeBaseConfiguration;
+  }
+  inline bool ManagedKnowledgeBaseConfigurationHasBeenSet() const { return m_managedKnowledgeBaseConfigurationHasBeenSet; }
+  template <typename ManagedKnowledgeBaseConfigurationT = ManagedKnowledgeBaseConfiguration>
+  void SetManagedKnowledgeBaseConfiguration(ManagedKnowledgeBaseConfigurationT&& value) {
+    m_managedKnowledgeBaseConfigurationHasBeenSet = true;
+    m_managedKnowledgeBaseConfiguration = std::forward<ManagedKnowledgeBaseConfigurationT>(value);
+  }
+  template <typename ManagedKnowledgeBaseConfigurationT = ManagedKnowledgeBaseConfiguration>
+  KnowledgeBaseConfiguration& WithManagedKnowledgeBaseConfiguration(ManagedKnowledgeBaseConfigurationT&& value) {
+    SetManagedKnowledgeBaseConfiguration(std::forward<ManagedKnowledgeBaseConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -112,11 +131,14 @@ class KnowledgeBaseConfiguration {
 
   VectorKnowledgeBaseConfiguration m_vectorKnowledgeBaseConfiguration;
 
+  ManagedKnowledgeBaseConfiguration m_managedKnowledgeBaseConfiguration;
+
   KendraKnowledgeBaseConfiguration m_kendraKnowledgeBaseConfiguration;
 
   SqlKnowledgeBaseConfiguration m_sqlKnowledgeBaseConfiguration;
   bool m_typeHasBeenSet = false;
   bool m_vectorKnowledgeBaseConfigurationHasBeenSet = false;
+  bool m_managedKnowledgeBaseConfigurationHasBeenSet = false;
   bool m_kendraKnowledgeBaseConfigurationHasBeenSet = false;
   bool m_sqlKnowledgeBaseConfigurationHasBeenSet = false;
 };

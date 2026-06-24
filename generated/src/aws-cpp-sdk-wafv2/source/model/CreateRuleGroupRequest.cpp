@@ -59,6 +59,10 @@ Aws::String CreateRuleGroupRequest::SerializePayload() const {
     payload.WithObject("CustomResponseBodies", std::move(customResponseBodiesJsonMap));
   }
 
+  if (m_monetizationConfigHasBeenSet) {
+    payload.WithObject("MonetizationConfig", m_monetizationConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

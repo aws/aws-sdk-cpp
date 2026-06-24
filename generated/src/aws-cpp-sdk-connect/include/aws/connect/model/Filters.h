@@ -111,7 +111,9 @@ class Filters {
   ///@{
   /**
    * <p>A list of expressions as a filter, in which an expression is an object of a
-   * step in a routing criteria.</p>
+   * step in a routing criteria. Accepts filter values up to 3,000 characters in
+   * length. Filter values are case-sensitive. JSON object key order and whitespace
+   * may be arbitrary; array order and tree structure must be preserved.</p>
    */
   inline const Aws::Vector<Aws::String>& GetRoutingStepExpressions() const { return m_routingStepExpressions; }
   inline bool RoutingStepExpressionsHasBeenSet() const { return m_routingStepExpressionsHasBeenSet; }

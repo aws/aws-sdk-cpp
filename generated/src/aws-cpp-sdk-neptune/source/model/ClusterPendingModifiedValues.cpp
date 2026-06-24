@@ -66,6 +66,11 @@ ClusterPendingModifiedValues& ClusterPendingModifiedValues::operator=(const XmlN
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iopsNode.GetText()).c_str()).c_str());
       m_iopsHasBeenSet = true;
     }
+    XmlNode networkTypeNode = resultNode.FirstChild("NetworkType");
+    if (!networkTypeNode.IsNull()) {
+      m_networkType = Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText());
+      m_networkTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -108,6 +113,10 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
   if (m_iopsHasBeenSet) {
     oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
   }
+
+  if (m_networkTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
 }
 
 void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -136,6 +145,9 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
   }
   if (m_iopsHasBeenSet) {
     oStream << location << ".Iops=" << m_iops << "&";
+  }
+  if (m_networkTypeHasBeenSet) {
+    oStream << location << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 }
 

@@ -165,7 +165,7 @@ class PendingModifiedValues {
   /**
    * <p>The license model for the DB instance.</p> <p>Valid values:
    * <code>license-included</code> | <code>bring-your-own-license</code> |
-   * <code>general-public-license</code> </p>
+   * <code>general-public-license</code> | <code>bring-your-own-media</code> </p>
    */
   inline const Aws::String& GetLicenseModel() const { return m_licenseModel; }
   inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }

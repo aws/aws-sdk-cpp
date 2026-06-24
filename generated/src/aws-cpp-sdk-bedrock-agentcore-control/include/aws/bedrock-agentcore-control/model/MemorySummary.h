@@ -121,6 +121,25 @@ class MemorySummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>ARN of the resource managing this memory (e.g. a harness). Null if not
+   * managed.</p>
+   */
+  inline const Aws::String& GetManagedByResourceArn() const { return m_managedByResourceArn; }
+  inline bool ManagedByResourceArnHasBeenSet() const { return m_managedByResourceArnHasBeenSet; }
+  template <typename ManagedByResourceArnT = Aws::String>
+  void SetManagedByResourceArn(ManagedByResourceArnT&& value) {
+    m_managedByResourceArnHasBeenSet = true;
+    m_managedByResourceArn = std::forward<ManagedByResourceArnT>(value);
+  }
+  template <typename ManagedByResourceArnT = Aws::String>
+  MemorySummary& WithManagedByResourceArn(ManagedByResourceArnT&& value) {
+    SetManagedByResourceArn(std::forward<ManagedByResourceArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -131,11 +150,14 @@ class MemorySummary {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
+
+  Aws::String m_managedByResourceArn;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_managedByResourceArnHasBeenSet = false;
 };
 
 }  // namespace Model

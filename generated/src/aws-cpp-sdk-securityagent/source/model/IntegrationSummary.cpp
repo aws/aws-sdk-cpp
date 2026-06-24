@@ -38,6 +38,14 @@ IntegrationSummary& IntegrationSummary::operator=(JsonView jsonValue) {
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("targetUrl")) {
+    m_targetUrl = jsonValue.GetString("targetUrl");
+    m_targetUrlHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("privateConnectionName")) {
+    m_privateConnectionName = jsonValue.GetString("privateConnectionName");
+    m_privateConnectionNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +70,14 @@ JsonValue IntegrationSummary::Jsonize() const {
 
   if (m_displayNameHasBeenSet) {
     payload.WithString("displayName", m_displayName);
+  }
+
+  if (m_targetUrlHasBeenSet) {
+    payload.WithString("targetUrl", m_targetUrl);
+  }
+
+  if (m_privateConnectionNameHasBeenSet) {
+    payload.WithString("privateConnectionName", m_privateConnectionName);
   }
 
   return payload;

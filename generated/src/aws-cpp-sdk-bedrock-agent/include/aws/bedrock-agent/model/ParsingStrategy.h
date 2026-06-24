@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgent {
 namespace Model {
-enum class ParsingStrategy { NOT_SET, BEDROCK_FOUNDATION_MODEL, BEDROCK_DATA_AUTOMATION };
+enum class ParsingStrategy { NOT_SET, BEDROCK_FOUNDATION_MODEL, BEDROCK_DATA_AUTOMATION, SMART_PARSING };
 
 namespace ParsingStrategyMapper {
 AWS_BEDROCKAGENT_API ParsingStrategy GetParsingStrategyForName(const Aws::String& name);

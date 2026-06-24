@@ -115,9 +115,7 @@ class CreateDBClusterRequest : public NeptuneRequest {
 
   ///@{
   /**
-   * <p>The name for your database of up to 64 alpha-numeric characters. If you do
-   * not provide a name, Amazon Neptune will not create a database in the DB cluster
-   * you are creating.</p>
+   * <p>Not supported by Neptune.</p>
    */
   inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
   inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
@@ -626,6 +624,28 @@ class CreateDBClusterRequest : public NeptuneRequest {
 
   ///@{
   /**
+   * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
+   * <b> <code>IPV4</code> </b>   –   ( <i>the default</i> ) The DB cluster uses only
+   * IPv4 addresses for communication.</p> </li> <li> <p> <b> <code>DUAL</code> </b>
+   *   –   The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB
+   * subnet group associated with the cluster must support IPv6.</p> </li> </ul>
+   */
+  inline const Aws::String& GetNetworkType() const { return m_networkType; }
+  inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+  template <typename NetworkTypeT = Aws::String>
+  void SetNetworkType(NetworkTypeT&& value) {
+    m_networkTypeHasBeenSet = true;
+    m_networkType = std::forward<NetworkTypeT>(value);
+  }
+  template <typename NetworkTypeT = Aws::String>
+  CreateDBClusterRequest& WithNetworkType(NetworkTypeT&& value) {
+    SetNetworkType(std::forward<NetworkTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
    */
   inline const Aws::String& GetSourceRegion() const { return m_sourceRegion; }
@@ -698,6 +718,8 @@ class CreateDBClusterRequest : public NeptuneRequest {
 
   Aws::String m_storageType;
 
+  Aws::String m_networkType;
+
   Aws::String m_sourceRegion;
   bool m_availabilityZonesHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
@@ -727,6 +749,7 @@ class CreateDBClusterRequest : public NeptuneRequest {
   bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
   bool m_globalClusterIdentifierHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };
 

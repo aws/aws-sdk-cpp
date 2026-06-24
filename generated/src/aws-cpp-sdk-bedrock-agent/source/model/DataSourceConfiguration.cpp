@@ -22,6 +22,10 @@ DataSourceConfiguration& DataSourceConfiguration::operator=(JsonView jsonValue) 
     m_type = DataSourceTypeMapper::GetDataSourceTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("managedKnowledgeBaseConnectorConfiguration")) {
+    m_managedKnowledgeBaseConnectorConfiguration = jsonValue.GetObject("managedKnowledgeBaseConnectorConfiguration");
+    m_managedKnowledgeBaseConnectorConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("s3Configuration")) {
     m_s3Configuration = jsonValue.GetObject("s3Configuration");
     m_s3ConfigurationHasBeenSet = true;
@@ -50,6 +54,10 @@ JsonValue DataSourceConfiguration::Jsonize() const {
 
   if (m_typeHasBeenSet) {
     payload.WithString("type", DataSourceTypeMapper::GetNameForDataSourceType(m_type));
+  }
+
+  if (m_managedKnowledgeBaseConnectorConfigurationHasBeenSet) {
+    payload.WithObject("managedKnowledgeBaseConnectorConfiguration", m_managedKnowledgeBaseConnectorConfiguration.Jsonize());
   }
 
   if (m_s3ConfigurationHasBeenSet) {

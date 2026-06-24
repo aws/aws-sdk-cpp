@@ -49,5 +49,9 @@ Aws::String QueryVectorsRequest::SerializePayload() const {
     payload.WithBool("returnDistance", m_returnDistance);
   }
 
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
+  }
+
   return payload.View().WriteReadable();
 }

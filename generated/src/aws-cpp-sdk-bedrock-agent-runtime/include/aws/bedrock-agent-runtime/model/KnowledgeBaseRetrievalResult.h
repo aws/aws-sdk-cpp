@@ -59,6 +59,25 @@ class KnowledgeBaseRetrievalResult {
 
   ///@{
   /**
+   * <p>The unique identifier of the document. Use with
+   * <code>GetDocumentContent</code> to retrieve the full document.</p>
+   */
+  inline const Aws::String& GetDocumentId() const { return m_documentId; }
+  inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
+  template <typename DocumentIdT = Aws::String>
+  void SetDocumentId(DocumentIdT&& value) {
+    m_documentIdHasBeenSet = true;
+    m_documentId = std::forward<DocumentIdT>(value);
+  }
+  template <typename DocumentIdT = Aws::String>
+  KnowledgeBaseRetrievalResult& WithDocumentId(DocumentIdT&& value) {
+    SetDocumentId(std::forward<DocumentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains information about the location of the data source.</p>
    */
   inline const RetrievalResultLocation& GetLocation() const { return m_location; }
@@ -120,12 +139,15 @@ class KnowledgeBaseRetrievalResult {
  private:
   RetrievalResultContent m_content;
 
+  Aws::String m_documentId;
+
   RetrievalResultLocation m_location;
 
   Aws::Map<Aws::String, Aws::Utils::Document> m_metadata;
 
   double m_score{0.0};
   bool m_contentHasBeenSet = false;
+  bool m_documentIdHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
   bool m_scoreHasBeenSet = false;

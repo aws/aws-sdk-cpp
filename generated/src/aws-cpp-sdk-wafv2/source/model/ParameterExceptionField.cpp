@@ -87,6 +87,10 @@ static const int CUSTOM_KEYS_HASH = HashingUtils::HashString("CUSTOM_KEYS");
 static const int ACP_RULE_SET_RESPONSE_INSPECTION_HASH = HashingUtils::HashString("ACP_RULE_SET_RESPONSE_INSPECTION");
 static const int DATA_PROTECTION_CONFIG_HASH = HashingUtils::HashString("DATA_PROTECTION_CONFIG");
 static const int LOW_REPUTATION_MODE_HASH = HashingUtils::HashString("LOW_REPUTATION_MODE");
+static const int MONETIZATION_CONFIG_HASH = HashingUtils::HashString("MONETIZATION_CONFIG");
+static const int WALLET_ADDRESS_HASH = HashingUtils::HashString("WALLET_ADDRESS");
+static const int PRICE_AMOUNT_HASH = HashingUtils::HashString("PRICE_AMOUNT");
+static const int PAYMENT_NETWORK_HASH = HashingUtils::HashString("PAYMENT_NETWORK");
 
 ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -234,6 +238,14 @@ ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& nam
     return ParameterExceptionField::DATA_PROTECTION_CONFIG;
   } else if (hashCode == LOW_REPUTATION_MODE_HASH) {
     return ParameterExceptionField::LOW_REPUTATION_MODE;
+  } else if (hashCode == MONETIZATION_CONFIG_HASH) {
+    return ParameterExceptionField::MONETIZATION_CONFIG;
+  } else if (hashCode == WALLET_ADDRESS_HASH) {
+    return ParameterExceptionField::WALLET_ADDRESS;
+  } else if (hashCode == PRICE_AMOUNT_HASH) {
+    return ParameterExceptionField::PRICE_AMOUNT;
+  } else if (hashCode == PAYMENT_NETWORK_HASH) {
+    return ParameterExceptionField::PAYMENT_NETWORK;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -392,6 +404,14 @@ Aws::String GetNameForParameterExceptionField(ParameterExceptionField enumValue)
       return "DATA_PROTECTION_CONFIG";
     case ParameterExceptionField::LOW_REPUTATION_MODE:
       return "LOW_REPUTATION_MODE";
+    case ParameterExceptionField::MONETIZATION_CONFIG:
+      return "MONETIZATION_CONFIG";
+    case ParameterExceptionField::WALLET_ADDRESS:
+      return "WALLET_ADDRESS";
+    case ParameterExceptionField::PRICE_AMOUNT:
+      return "PRICE_AMOUNT";
+    case ParameterExceptionField::PAYMENT_NETWORK:
+      return "PAYMENT_NETWORK";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

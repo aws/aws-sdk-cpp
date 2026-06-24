@@ -53,6 +53,10 @@ static const int KubernetesNetworkConfig_HASH = HashingUtils::HashString("Kubern
 static const int RemoteNetworkConfig_HASH = HashingUtils::HashString("RemoteNetworkConfig");
 static const int DeletionProtection_HASH = HashingUtils::HashString("DeletionProtection");
 static const int NodeRepairConfig_HASH = HashingUtils::HashString("NodeRepairConfig");
+static const int RoleArn_HASH = HashingUtils::HashString("RoleArn");
+static const int RoleMappingsToAddOrUpdate_HASH = HashingUtils::HashString("RoleMappingsToAddOrUpdate");
+static const int RoleMappingsToRemove_HASH = HashingUtils::HashString("RoleMappingsToRemove");
+static const int NetworkAccess_HASH = HashingUtils::HashString("NetworkAccess");
 static const int VendedLogs_HASH = HashingUtils::HashString("VendedLogs");
 static const int UpdatedTier_HASH = HashingUtils::HashString("UpdatedTier");
 static const int PreviousTier_HASH = HashingUtils::HashString("PreviousTier");
@@ -61,6 +65,7 @@ static const int WarmPoolMaxGroupPreparedCapacity_HASH = HashingUtils::HashStrin
 static const int WarmPoolMinSize_HASH = HashingUtils::HashString("WarmPoolMinSize");
 static const int WarmPoolState_HASH = HashingUtils::HashString("WarmPoolState");
 static const int WarmPoolReuseOnScaleIn_HASH = HashingUtils::HashString("WarmPoolReuseOnScaleIn");
+static const int ControlPlaneEgressMode_HASH = HashingUtils::HashString("ControlPlaneEgressMode");
 
 UpdateParamType GetUpdateParamTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -140,6 +145,14 @@ UpdateParamType GetUpdateParamTypeForName(const Aws::String& name) {
     return UpdateParamType::DeletionProtection;
   } else if (hashCode == NodeRepairConfig_HASH) {
     return UpdateParamType::NodeRepairConfig;
+  } else if (hashCode == RoleArn_HASH) {
+    return UpdateParamType::RoleArn;
+  } else if (hashCode == RoleMappingsToAddOrUpdate_HASH) {
+    return UpdateParamType::RoleMappingsToAddOrUpdate;
+  } else if (hashCode == RoleMappingsToRemove_HASH) {
+    return UpdateParamType::RoleMappingsToRemove;
+  } else if (hashCode == NetworkAccess_HASH) {
+    return UpdateParamType::NetworkAccess;
   } else if (hashCode == VendedLogs_HASH) {
     return UpdateParamType::VendedLogs;
   } else if (hashCode == UpdatedTier_HASH) {
@@ -156,6 +169,8 @@ UpdateParamType GetUpdateParamTypeForName(const Aws::String& name) {
     return UpdateParamType::WarmPoolState;
   } else if (hashCode == WarmPoolReuseOnScaleIn_HASH) {
     return UpdateParamType::WarmPoolReuseOnScaleIn;
+  } else if (hashCode == ControlPlaneEgressMode_HASH) {
+    return UpdateParamType::ControlPlaneEgressMode;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -246,6 +261,14 @@ Aws::String GetNameForUpdateParamType(UpdateParamType enumValue) {
       return "DeletionProtection";
     case UpdateParamType::NodeRepairConfig:
       return "NodeRepairConfig";
+    case UpdateParamType::RoleArn:
+      return "RoleArn";
+    case UpdateParamType::RoleMappingsToAddOrUpdate:
+      return "RoleMappingsToAddOrUpdate";
+    case UpdateParamType::RoleMappingsToRemove:
+      return "RoleMappingsToRemove";
+    case UpdateParamType::NetworkAccess:
+      return "NetworkAccess";
     case UpdateParamType::VendedLogs:
       return "VendedLogs";
     case UpdateParamType::UpdatedTier:
@@ -262,6 +285,8 @@ Aws::String GetNameForUpdateParamType(UpdateParamType enumValue) {
       return "WarmPoolState";
     case UpdateParamType::WarmPoolReuseOnScaleIn:
       return "WarmPoolReuseOnScaleIn";
+    case UpdateParamType::ControlPlaneEgressMode:
+      return "ControlPlaneEgressMode";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ClusterAutoPatchConfig.h>
 #include <aws/sagemaker/model/ClusterCapacityRequirements.h>
 #include <aws/sagemaker/model/ClusterInstanceRequirements.h>
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
@@ -366,6 +367,45 @@ class ClusterInstanceGroupSpecification {
 
   ///@{
   /**
+   * <p>The configuration for automatic OS security patching. If present, the system
+   * automatically applies PATCH AMI updates to this instance group.</p>
+   */
+  inline const ClusterAutoPatchConfig& GetAutoPatchConfig() const { return m_autoPatchConfig; }
+  inline bool AutoPatchConfigHasBeenSet() const { return m_autoPatchConfigHasBeenSet; }
+  template <typename AutoPatchConfigT = ClusterAutoPatchConfig>
+  void SetAutoPatchConfig(AutoPatchConfigT&& value) {
+    m_autoPatchConfigHasBeenSet = true;
+    m_autoPatchConfig = std::forward<AutoPatchConfigT>(value);
+  }
+  template <typename AutoPatchConfigT = ClusterAutoPatchConfig>
+  ClusterInstanceGroupSpecification& WithAutoPatchConfig(AutoPatchConfigT&& value) {
+    SetAutoPatchConfig(std::forward<AutoPatchConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version of the HyperPod-managed AMI to use for the instance group. Uses
+   * semantic versioning in the format <code>MAJOR.MINOR.PATCH</code> (for example,
+   * <code>1.2.3</code>). If omitted, the latest available version is used.</p>
+   */
+  inline const Aws::String& GetImageReleaseVersion() const { return m_imageReleaseVersion; }
+  inline bool ImageReleaseVersionHasBeenSet() const { return m_imageReleaseVersionHasBeenSet; }
+  template <typename ImageReleaseVersionT = Aws::String>
+  void SetImageReleaseVersion(ImageReleaseVersionT&& value) {
+    m_imageReleaseVersionHasBeenSet = true;
+    m_imageReleaseVersion = std::forward<ImageReleaseVersionT>(value);
+  }
+  template <typename ImageReleaseVersionT = Aws::String>
+  ClusterInstanceGroupSpecification& WithImageReleaseVersion(ImageReleaseVersionT&& value) {
+    SetImageReleaseVersion(std::forward<ImageReleaseVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the Kubernetes configuration for the instance group. You describe
    * what you want the labels and taints to look like, and the cluster works to
    * reconcile the actual state with the declared state for nodes in this instance
@@ -467,6 +507,10 @@ class ClusterInstanceGroupSpecification {
 
   Aws::String m_imageId;
 
+  ClusterAutoPatchConfig m_autoPatchConfig;
+
+  Aws::String m_imageReleaseVersion;
+
   ClusterKubernetesConfig m_kubernetesConfig;
 
   ClusterSlurmConfig m_slurmConfig;
@@ -488,6 +532,8 @@ class ClusterInstanceGroupSpecification {
   bool m_overrideVpcConfigHasBeenSet = false;
   bool m_scheduledUpdateConfigHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
+  bool m_autoPatchConfigHasBeenSet = false;
+  bool m_imageReleaseVersionHasBeenSet = false;
   bool m_kubernetesConfigHasBeenSet = false;
   bool m_slurmConfigHasBeenSet = false;
   bool m_capacityRequirementsHasBeenSet = false;

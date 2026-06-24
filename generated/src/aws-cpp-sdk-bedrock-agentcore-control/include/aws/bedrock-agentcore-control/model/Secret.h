@@ -20,8 +20,8 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>Contains information about a secret in AWS Secrets Manager.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Contains information about a secret in Amazon Web Services Secrets
+ * Manager.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/Secret">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,8 @@ class Secret {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the secret in AWS Secrets Manager.</p>
+   * <p>The Amazon Resource Name (ARN) of the secret in Amazon Web Services Secrets
+   * Manager.</p>
    */
   inline const Aws::String& GetSecretArn() const { return m_secretArn; }
   inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }

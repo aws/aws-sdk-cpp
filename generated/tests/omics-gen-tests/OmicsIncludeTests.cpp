@@ -280,6 +280,7 @@
 #include <aws/omics/model/RunSummary.h>
 #include <aws/omics/model/S3AccessConfig.h>
 #include <aws/omics/model/SchemaValueType.h>
+#include <aws/omics/model/ScratchStorageMode.h>
 #include <aws/omics/model/SequenceInformation.h>
 #include <aws/omics/model/SequenceStoreDetail.h>
 #include <aws/omics/model/SequenceStoreFilter.h>

@@ -393,6 +393,30 @@ class OrderableDBInstanceOption {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The network types supported by the orderable DB instance option.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSupportedNetworkTypes() const { return m_supportedNetworkTypes; }
+  inline bool SupportedNetworkTypesHasBeenSet() const { return m_supportedNetworkTypesHasBeenSet; }
+  template <typename SupportedNetworkTypesT = Aws::Vector<Aws::String>>
+  void SetSupportedNetworkTypes(SupportedNetworkTypesT&& value) {
+    m_supportedNetworkTypesHasBeenSet = true;
+    m_supportedNetworkTypes = std::forward<SupportedNetworkTypesT>(value);
+  }
+  template <typename SupportedNetworkTypesT = Aws::Vector<Aws::String>>
+  OrderableDBInstanceOption& WithSupportedNetworkTypes(SupportedNetworkTypesT&& value) {
+    SetSupportedNetworkTypes(std::forward<SupportedNetworkTypesT>(value));
+    return *this;
+  }
+  template <typename SupportedNetworkTypesT = Aws::String>
+  OrderableDBInstanceOption& AddSupportedNetworkTypes(SupportedNetworkTypesT&& value) {
+    m_supportedNetworkTypesHasBeenSet = true;
+    m_supportedNetworkTypes.emplace_back(std::forward<SupportedNetworkTypesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_engine;
 
@@ -435,6 +459,8 @@ class OrderableDBInstanceOption {
   double m_maxIopsPerGib{0.0};
 
   bool m_supportsGlobalDatabases{false};
+
+  Aws::Vector<Aws::String> m_supportedNetworkTypes;
   bool m_engineHasBeenSet = false;
   bool m_engineVersionHasBeenSet = false;
   bool m_dBInstanceClassHasBeenSet = false;
@@ -456,6 +482,7 @@ class OrderableDBInstanceOption {
   bool m_minIopsPerGibHasBeenSet = false;
   bool m_maxIopsPerGibHasBeenSet = false;
   bool m_supportsGlobalDatabasesHasBeenSet = false;
+  bool m_supportedNetworkTypesHasBeenSet = false;
 };
 
 }  // namespace Model

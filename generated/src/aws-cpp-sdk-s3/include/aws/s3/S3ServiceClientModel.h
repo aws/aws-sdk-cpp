@@ -26,6 +26,7 @@
 #include <aws/s3/model/CreateBucketResult.h>
 #include <aws/s3/model/CreateMultipartUploadResult.h>
 #include <aws/s3/model/CreateSessionResult.h>
+#include <aws/s3/model/DeleteObjectAnnotationResult.h>
 #include <aws/s3/model/DeleteObjectResult.h>
 #include <aws/s3/model/DeleteObjectTaggingResult.h>
 #include <aws/s3/model/DeleteObjectsResult.h>
@@ -53,6 +54,7 @@
 #include <aws/s3/model/GetBucketVersioningResult.h>
 #include <aws/s3/model/GetBucketWebsiteResult.h>
 #include <aws/s3/model/GetObjectAclResult.h>
+#include <aws/s3/model/GetObjectAnnotationResult.h>
 #include <aws/s3/model/GetObjectAttributesResult.h>
 #include <aws/s3/model/GetObjectLegalHoldResult.h>
 #include <aws/s3/model/GetObjectLockConfigurationResult.h>
@@ -72,12 +74,14 @@
 #include <aws/s3/model/ListDirectoryBucketsRequest.h>
 #include <aws/s3/model/ListDirectoryBucketsResult.h>
 #include <aws/s3/model/ListMultipartUploadsResult.h>
+#include <aws/s3/model/ListObjectAnnotationsResult.h>
 #include <aws/s3/model/ListObjectVersionsResult.h>
 #include <aws/s3/model/ListObjectsResult.h>
 #include <aws/s3/model/ListObjectsV2Result.h>
 #include <aws/s3/model/ListPartsResult.h>
 #include <aws/s3/model/PutBucketLifecycleConfigurationResult.h>
 #include <aws/s3/model/PutObjectAclResult.h>
+#include <aws/s3/model/PutObjectAnnotationResult.h>
 #include <aws/s3/model/PutObjectLegalHoldResult.h>
 #include <aws/s3/model/PutObjectLockConfigurationResult.h>
 #include <aws/s3/model/PutObjectResult.h>
@@ -144,6 +148,7 @@ class DeleteBucketReplicationRequest;
 class DeleteBucketTaggingRequest;
 class DeleteBucketWebsiteRequest;
 class DeleteObjectRequest;
+class DeleteObjectAnnotationRequest;
 class DeleteObjectTaggingRequest;
 class DeleteObjectsRequest;
 class DeletePublicAccessBlockRequest;
@@ -172,6 +177,7 @@ class GetBucketVersioningRequest;
 class GetBucketWebsiteRequest;
 class GetObjectRequest;
 class GetObjectAclRequest;
+class GetObjectAnnotationRequest;
 class GetObjectAttributesRequest;
 class GetObjectLegalHoldRequest;
 class GetObjectLockConfigurationRequest;
@@ -188,6 +194,7 @@ class ListBucketMetricsConfigurationsRequest;
 class ListBucketsRequest;
 class ListDirectoryBucketsRequest;
 class ListMultipartUploadsRequest;
+class ListObjectAnnotationsRequest;
 class ListObjectVersionsRequest;
 class ListObjectsRequest;
 class ListObjectsV2Request;
@@ -213,6 +220,7 @@ class PutBucketVersioningRequest;
 class PutBucketWebsiteRequest;
 class PutObjectRequest;
 class PutObjectAclRequest;
+class PutObjectAnnotationRequest;
 class PutObjectLegalHoldRequest;
 class PutObjectLockConfigurationRequest;
 class PutObjectRetentionRequest;
@@ -221,6 +229,7 @@ class PutPublicAccessBlockRequest;
 class RenameObjectRequest;
 class RestoreObjectRequest;
 class SelectObjectContentRequest;
+class UpdateBucketMetadataAnnotationTableConfigurationRequest;
 class UpdateBucketMetadataInventoryTableConfigurationRequest;
 class UpdateBucketMetadataJournalTableConfigurationRequest;
 class UpdateObjectEncryptionRequest;
@@ -254,6 +263,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketReplicationOutco
 typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketTaggingOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketWebsiteOutcome;
 typedef Aws::Utils::Outcome<DeleteObjectResult, S3Error> DeleteObjectOutcome;
+typedef Aws::Utils::Outcome<DeleteObjectAnnotationResult, S3Error> DeleteObjectAnnotationOutcome;
 typedef Aws::Utils::Outcome<DeleteObjectTaggingResult, S3Error> DeleteObjectTaggingOutcome;
 typedef Aws::Utils::Outcome<DeleteObjectsResult, S3Error> DeleteObjectsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeletePublicAccessBlockOutcome;
@@ -282,6 +292,7 @@ typedef Aws::Utils::Outcome<GetBucketVersioningResult, S3Error> GetBucketVersion
 typedef Aws::Utils::Outcome<GetBucketWebsiteResult, S3Error> GetBucketWebsiteOutcome;
 typedef Aws::Utils::Outcome<GetObjectResult, S3Error> GetObjectOutcome;
 typedef Aws::Utils::Outcome<GetObjectAclResult, S3Error> GetObjectAclOutcome;
+typedef Aws::Utils::Outcome<GetObjectAnnotationResult, S3Error> GetObjectAnnotationOutcome;
 typedef Aws::Utils::Outcome<GetObjectAttributesResult, S3Error> GetObjectAttributesOutcome;
 typedef Aws::Utils::Outcome<GetObjectLegalHoldResult, S3Error> GetObjectLegalHoldOutcome;
 typedef Aws::Utils::Outcome<GetObjectLockConfigurationResult, S3Error> GetObjectLockConfigurationOutcome;
@@ -298,6 +309,7 @@ typedef Aws::Utils::Outcome<ListBucketMetricsConfigurationsResult, S3Error> List
 typedef Aws::Utils::Outcome<ListBucketsResult, S3Error> ListBucketsOutcome;
 typedef Aws::Utils::Outcome<ListDirectoryBucketsResult, S3Error> ListDirectoryBucketsOutcome;
 typedef Aws::Utils::Outcome<ListMultipartUploadsResult, S3Error> ListMultipartUploadsOutcome;
+typedef Aws::Utils::Outcome<ListObjectAnnotationsResult, S3Error> ListObjectAnnotationsOutcome;
 typedef Aws::Utils::Outcome<ListObjectVersionsResult, S3Error> ListObjectVersionsOutcome;
 typedef Aws::Utils::Outcome<ListObjectsResult, S3Error> ListObjectsOutcome;
 typedef Aws::Utils::Outcome<ListObjectsV2Result, S3Error> ListObjectsV2Outcome;
@@ -323,6 +335,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketVersioningOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketWebsiteOutcome;
 typedef Aws::Utils::Outcome<PutObjectResult, S3Error> PutObjectOutcome;
 typedef Aws::Utils::Outcome<PutObjectAclResult, S3Error> PutObjectAclOutcome;
+typedef Aws::Utils::Outcome<PutObjectAnnotationResult, S3Error> PutObjectAnnotationOutcome;
 typedef Aws::Utils::Outcome<PutObjectLegalHoldResult, S3Error> PutObjectLegalHoldOutcome;
 typedef Aws::Utils::Outcome<PutObjectLockConfigurationResult, S3Error> PutObjectLockConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutObjectRetentionResult, S3Error> PutObjectRetentionOutcome;
@@ -331,6 +344,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutPublicAccessBlockOutcome;
 typedef Aws::Utils::Outcome<RenameObjectResult, S3Error> RenameObjectOutcome;
 typedef Aws::Utils::Outcome<RestoreObjectResult, S3Error> RestoreObjectOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> SelectObjectContentOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> UpdateBucketMetadataAnnotationTableConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> UpdateBucketMetadataInventoryTableConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> UpdateBucketMetadataJournalTableConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateObjectEncryptionResult, S3Error> UpdateObjectEncryptionOutcome;
@@ -364,6 +378,7 @@ typedef std::future<DeleteBucketReplicationOutcome> DeleteBucketReplicationOutco
 typedef std::future<DeleteBucketTaggingOutcome> DeleteBucketTaggingOutcomeCallable;
 typedef std::future<DeleteBucketWebsiteOutcome> DeleteBucketWebsiteOutcomeCallable;
 typedef std::future<DeleteObjectOutcome> DeleteObjectOutcomeCallable;
+typedef std::future<DeleteObjectAnnotationOutcome> DeleteObjectAnnotationOutcomeCallable;
 typedef std::future<DeleteObjectTaggingOutcome> DeleteObjectTaggingOutcomeCallable;
 typedef std::future<DeleteObjectsOutcome> DeleteObjectsOutcomeCallable;
 typedef std::future<DeletePublicAccessBlockOutcome> DeletePublicAccessBlockOutcomeCallable;
@@ -392,6 +407,7 @@ typedef std::future<GetBucketVersioningOutcome> GetBucketVersioningOutcomeCallab
 typedef std::future<GetBucketWebsiteOutcome> GetBucketWebsiteOutcomeCallable;
 typedef std::future<GetObjectOutcome> GetObjectOutcomeCallable;
 typedef std::future<GetObjectAclOutcome> GetObjectAclOutcomeCallable;
+typedef std::future<GetObjectAnnotationOutcome> GetObjectAnnotationOutcomeCallable;
 typedef std::future<GetObjectAttributesOutcome> GetObjectAttributesOutcomeCallable;
 typedef std::future<GetObjectLegalHoldOutcome> GetObjectLegalHoldOutcomeCallable;
 typedef std::future<GetObjectLockConfigurationOutcome> GetObjectLockConfigurationOutcomeCallable;
@@ -408,6 +424,7 @@ typedef std::future<ListBucketMetricsConfigurationsOutcome> ListBucketMetricsCon
 typedef std::future<ListBucketsOutcome> ListBucketsOutcomeCallable;
 typedef std::future<ListDirectoryBucketsOutcome> ListDirectoryBucketsOutcomeCallable;
 typedef std::future<ListMultipartUploadsOutcome> ListMultipartUploadsOutcomeCallable;
+typedef std::future<ListObjectAnnotationsOutcome> ListObjectAnnotationsOutcomeCallable;
 typedef std::future<ListObjectVersionsOutcome> ListObjectVersionsOutcomeCallable;
 typedef std::future<ListObjectsOutcome> ListObjectsOutcomeCallable;
 typedef std::future<ListObjectsV2Outcome> ListObjectsV2OutcomeCallable;
@@ -433,6 +450,7 @@ typedef std::future<PutBucketVersioningOutcome> PutBucketVersioningOutcomeCallab
 typedef std::future<PutBucketWebsiteOutcome> PutBucketWebsiteOutcomeCallable;
 typedef std::future<PutObjectOutcome> PutObjectOutcomeCallable;
 typedef std::future<PutObjectAclOutcome> PutObjectAclOutcomeCallable;
+typedef std::future<PutObjectAnnotationOutcome> PutObjectAnnotationOutcomeCallable;
 typedef std::future<PutObjectLegalHoldOutcome> PutObjectLegalHoldOutcomeCallable;
 typedef std::future<PutObjectLockConfigurationOutcome> PutObjectLockConfigurationOutcomeCallable;
 typedef std::future<PutObjectRetentionOutcome> PutObjectRetentionOutcomeCallable;
@@ -441,6 +459,8 @@ typedef std::future<PutPublicAccessBlockOutcome> PutPublicAccessBlockOutcomeCall
 typedef std::future<RenameObjectOutcome> RenameObjectOutcomeCallable;
 typedef std::future<RestoreObjectOutcome> RestoreObjectOutcomeCallable;
 typedef std::future<SelectObjectContentOutcome> SelectObjectContentOutcomeCallable;
+typedef std::future<UpdateBucketMetadataAnnotationTableConfigurationOutcome>
+    UpdateBucketMetadataAnnotationTableConfigurationOutcomeCallable;
 typedef std::future<UpdateBucketMetadataInventoryTableConfigurationOutcome> UpdateBucketMetadataInventoryTableConfigurationOutcomeCallable;
 typedef std::future<UpdateBucketMetadataJournalTableConfigurationOutcome> UpdateBucketMetadataJournalTableConfigurationOutcomeCallable;
 typedef std::future<UpdateObjectEncryptionOutcome> UpdateObjectEncryptionOutcomeCallable;
@@ -534,6 +554,9 @@ typedef std::function<void(const S3Client*, const Model::DeleteBucketWebsiteRequ
 typedef std::function<void(const S3Client*, const Model::DeleteObjectRequest&, const Model::DeleteObjectOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteObjectResponseReceivedHandler;
+typedef std::function<void(const S3Client*, const Model::DeleteObjectAnnotationRequest&, const Model::DeleteObjectAnnotationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteObjectAnnotationResponseReceivedHandler;
 typedef std::function<void(const S3Client*, const Model::DeleteObjectTaggingRequest&, const Model::DeleteObjectTaggingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteObjectTaggingResponseReceivedHandler;
@@ -627,6 +650,9 @@ typedef std::function<void(const S3Client*, const Model::GetObjectRequest&, Mode
 typedef std::function<void(const S3Client*, const Model::GetObjectAclRequest&, const Model::GetObjectAclOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetObjectAclResponseReceivedHandler;
+typedef std::function<void(const S3Client*, const Model::GetObjectAnnotationRequest&, Model::GetObjectAnnotationOutcome,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetObjectAnnotationResponseReceivedHandler;
 typedef std::function<void(const S3Client*, const Model::GetObjectAttributesRequest&, const Model::GetObjectAttributesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetObjectAttributesResponseReceivedHandler;
@@ -679,6 +705,9 @@ typedef std::function<void(const S3Client*, const Model::ListDirectoryBucketsReq
 typedef std::function<void(const S3Client*, const Model::ListMultipartUploadsRequest&, const Model::ListMultipartUploadsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListMultipartUploadsResponseReceivedHandler;
+typedef std::function<void(const S3Client*, const Model::ListObjectAnnotationsRequest&, const Model::ListObjectAnnotationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListObjectAnnotationsResponseReceivedHandler;
 typedef std::function<void(const S3Client*, const Model::ListObjectVersionsRequest&, const Model::ListObjectVersionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListObjectVersionsResponseReceivedHandler;
@@ -761,6 +790,9 @@ typedef std::function<void(const S3Client*, const Model::PutObjectRequest&, cons
 typedef std::function<void(const S3Client*, const Model::PutObjectAclRequest&, const Model::PutObjectAclOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutObjectAclResponseReceivedHandler;
+typedef std::function<void(const S3Client*, const Model::PutObjectAnnotationRequest&, const Model::PutObjectAnnotationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutObjectAnnotationResponseReceivedHandler;
 typedef std::function<void(const S3Client*, const Model::PutObjectLegalHoldRequest&, const Model::PutObjectLegalHoldOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutObjectLegalHoldResponseReceivedHandler;
@@ -785,6 +817,10 @@ typedef std::function<void(const S3Client*, const Model::RestoreObjectRequest&, 
 typedef std::function<void(const S3Client*, const Model::SelectObjectContentRequest&, const Model::SelectObjectContentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SelectObjectContentResponseReceivedHandler;
+typedef std::function<void(const S3Client*, const Model::UpdateBucketMetadataAnnotationTableConfigurationRequest&,
+                           const Model::UpdateBucketMetadataAnnotationTableConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateBucketMetadataAnnotationTableConfigurationResponseReceivedHandler;
 typedef std::function<void(const S3Client*, const Model::UpdateBucketMetadataInventoryTableConfigurationRequest&,
                            const Model::UpdateBucketMetadataInventoryTableConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

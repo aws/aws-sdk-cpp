@@ -40,7 +40,9 @@ enum class MetricType {
   SageMakerInferenceComponentInvocationsPerCopy,
   WorkSpacesAverageUserSessionsCapacityUtilization,
   SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution,
-  SageMakerVariantConcurrentRequestsPerModelHighResolution
+  SageMakerVariantConcurrentRequestsPerModelHighResolution,
+  ECSServiceAverageCPUUtilizationHighResolution,
+  ECSServiceAverageMemoryUtilizationHighResolution
 };
 
 namespace MetricTypeMapper {

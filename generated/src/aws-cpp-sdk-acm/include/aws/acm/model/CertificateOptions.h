@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/acm/model/CertificateExport.h>
-#include <aws/acm/model/CertificateTransparencyLoggingPreference.h>
 
 #include <utility>
 
@@ -22,12 +21,9 @@ namespace Model {
 
 /**
  * <p>Structure that contains options for your certificate. You can use this
- * structure to specify whether to opt in to or out of certificate transparency
- * logging and export your certificate. </p> <p>Some browsers require that public
- * certificates issued for your domain be recorded in a log. Certificates that are
- * not logged typically generate a browser error. Transparency makes it possible
- * for you to detect SSL/TLS certificates that have been mistakenly or maliciously
- * issued for your domain. For general information, see <a
+ * structure to specify whether to export your certificate.</p> <p>Certificate
+ * transparency logging opt-out is no longer available. All public certificates are
+ * recorded in a certificate transparency log. For general information, see <a
  * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
  * Transparency Logging</a>.</p> <p>You can export public ACM certificates to use
  * with Amazon Web Services services as well as outside Amazon Web Services Cloud.
@@ -43,25 +39,6 @@ class CertificateOptions {
   AWS_ACM_API CertificateOptions(Aws::Utils::Json::JsonView jsonValue);
   AWS_ACM_API CertificateOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-  ///@{
-  /**
-   * <p>You can opt out of certificate transparency logging by specifying the
-   * <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
-   */
-  inline CertificateTransparencyLoggingPreference GetCertificateTransparencyLoggingPreference() const {
-    return m_certificateTransparencyLoggingPreference;
-  }
-  inline bool CertificateTransparencyLoggingPreferenceHasBeenSet() const { return m_certificateTransparencyLoggingPreferenceHasBeenSet; }
-  inline void SetCertificateTransparencyLoggingPreference(CertificateTransparencyLoggingPreference value) {
-    m_certificateTransparencyLoggingPreferenceHasBeenSet = true;
-    m_certificateTransparencyLoggingPreference = value;
-  }
-  inline CertificateOptions& WithCertificateTransparencyLoggingPreference(CertificateTransparencyLoggingPreference value) {
-    SetCertificateTransparencyLoggingPreference(value);
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -81,10 +58,7 @@ class CertificateOptions {
   }
   ///@}
  private:
-  CertificateTransparencyLoggingPreference m_certificateTransparencyLoggingPreference{CertificateTransparencyLoggingPreference::NOT_SET};
-
   CertificateExport m_export{CertificateExport::NOT_SET};
-  bool m_certificateTransparencyLoggingPreferenceHasBeenSet = false;
   bool m_exportHasBeenSet = false;
 };
 

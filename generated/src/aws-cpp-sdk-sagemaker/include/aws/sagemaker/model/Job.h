@@ -27,10 +27,11 @@ namespace SageMaker {
 namespace Model {
 
 /**
- * <p>Search shape for Job. Mirrors DescribeJobResponse fields. If you update
- * DescribeJobResponse, update this structure as well.</p><p><h3>See Also:</h3>
- * <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Job">AWS
- * API Reference</a></p>
+ * <p>The properties of a job returned by the <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+ * API.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Job">AWS API
+ * Reference</a></p>
  */
 class Job {
  public:

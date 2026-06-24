@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityagent/SecurityAgent_EXPORTS.h>
+#include <aws/securityagent/model/IntegratedDocument.h>
 
 #include <utility>
 
@@ -67,12 +68,33 @@ class DocumentInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A reference to a document in an integrated third-party provider.</p>
+   */
+  inline const IntegratedDocument& GetIntegratedDocument() const { return m_integratedDocument; }
+  inline bool IntegratedDocumentHasBeenSet() const { return m_integratedDocumentHasBeenSet; }
+  template <typename IntegratedDocumentT = IntegratedDocument>
+  void SetIntegratedDocument(IntegratedDocumentT&& value) {
+    m_integratedDocumentHasBeenSet = true;
+    m_integratedDocument = std::forward<IntegratedDocumentT>(value);
+  }
+  template <typename IntegratedDocumentT = IntegratedDocument>
+  DocumentInfo& WithIntegratedDocument(IntegratedDocumentT&& value) {
+    SetIntegratedDocument(std::forward<IntegratedDocumentT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_s3Location;
 
   Aws::String m_artifactId;
+
+  IntegratedDocument m_integratedDocument;
   bool m_s3LocationHasBeenSet = false;
   bool m_artifactIdHasBeenSet = false;
+  bool m_integratedDocumentHasBeenSet = false;
 };
 
 }  // namespace Model

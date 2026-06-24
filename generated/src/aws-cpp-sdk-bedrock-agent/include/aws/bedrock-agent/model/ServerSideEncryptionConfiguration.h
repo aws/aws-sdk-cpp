@@ -20,8 +20,8 @@ namespace BedrockAgent {
 namespace Model {
 
 /**
- * <p>Contains the configuration for server-side encryption.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Contains the configuration for server-side encryption for your managed
+ * knowledge base.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ServerSideEncryptionConfiguration">AWS
  * API Reference</a></p>
  */

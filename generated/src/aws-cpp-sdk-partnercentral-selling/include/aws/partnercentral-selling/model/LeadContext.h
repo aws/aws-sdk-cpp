@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/model/LeadCustomer.h>
+#include <aws/partnercentral-selling/model/LeadInsights.h>
 #include <aws/partnercentral-selling/model/LeadInteraction.h>
 
 #include <utility>
@@ -36,6 +37,26 @@ class LeadContext {
   AWS_PARTNERCENTRALSELLING_API LeadContext(Aws::Utils::Json::JsonView jsonValue);
   AWS_PARTNERCENTRALSELLING_API LeadContext& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>Insights that AI generates and associates with the lead. These insights
+   * provide automated analysis such as lead readiness scoring to help partners
+   * assess the lead quality.</p>
+   */
+  inline const LeadInsights& GetInsights() const { return m_insights; }
+  inline bool InsightsHasBeenSet() const { return m_insightsHasBeenSet; }
+  template <typename InsightsT = LeadInsights>
+  void SetInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights = std::forward<InsightsT>(value);
+  }
+  template <typename InsightsT = LeadInsights>
+  LeadContext& WithInsights(InsightsT&& value) {
+    SetInsights(std::forward<InsightsT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -103,11 +124,14 @@ class LeadContext {
   }
   ///@}
  private:
+  LeadInsights m_insights;
+
   Aws::String m_qualificationStatus;
 
   LeadCustomer m_customer;
 
   Aws::Vector<LeadInteraction> m_interactions;
+  bool m_insightsHasBeenSet = false;
   bool m_qualificationStatusHasBeenSet = false;
   bool m_customerHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;

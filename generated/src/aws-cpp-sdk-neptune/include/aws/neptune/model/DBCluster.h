@@ -934,6 +934,27 @@ class DBCluster {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
+   * <b> <code>IPV4</code> </b>   –   The DB cluster uses only IPv4 addresses for
+   * communication.</p> </li> <li> <p> <b> <code>DUAL</code> </b>   –   The DB
+   * cluster uses both IPv4 and IPv6 addresses for communication.</p> </li> </ul>
+   */
+  inline const Aws::String& GetNetworkType() const { return m_networkType; }
+  inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+  template <typename NetworkTypeT = Aws::String>
+  void SetNetworkType(NetworkTypeT&& value) {
+    m_networkTypeHasBeenSet = true;
+    m_networkType = std::forward<NetworkTypeT>(value);
+  }
+  template <typename NetworkTypeT = Aws::String>
+  DBCluster& WithNetworkType(NetworkTypeT&& value) {
+    SetNetworkType(std::forward<NetworkTypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_allocatedStorage{0};
 
@@ -1024,6 +1045,8 @@ class DBCluster {
   Aws::Utils::DateTime m_iOOptimizedNextAllowedModificationTime{};
 
   Aws::String m_storageType;
+
+  Aws::String m_networkType;
   bool m_allocatedStorageHasBeenSet = false;
   bool m_availabilityZonesHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
@@ -1069,6 +1092,7 @@ class DBCluster {
   bool m_globalClusterIdentifierHasBeenSet = false;
   bool m_iOOptimizedNextAllowedModificationTimeHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
 };
 
 }  // namespace Model

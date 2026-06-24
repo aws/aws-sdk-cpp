@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
+#include <aws/s3-crt/model/AnnotationTableConfiguration.h>
 #include <aws/s3-crt/model/InventoryTableConfiguration.h>
 #include <aws/s3-crt/model/JournalTableConfiguration.h>
 
@@ -68,12 +69,34 @@ class MetadataConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional annotation table configuration to include with the metadata
+   * configuration.</p>
+   */
+  inline const AnnotationTableConfiguration& GetAnnotationTableConfiguration() const { return m_annotationTableConfiguration; }
+  inline bool AnnotationTableConfigurationHasBeenSet() const { return m_annotationTableConfigurationHasBeenSet; }
+  template <typename AnnotationTableConfigurationT = AnnotationTableConfiguration>
+  void SetAnnotationTableConfiguration(AnnotationTableConfigurationT&& value) {
+    m_annotationTableConfigurationHasBeenSet = true;
+    m_annotationTableConfiguration = std::forward<AnnotationTableConfigurationT>(value);
+  }
+  template <typename AnnotationTableConfigurationT = AnnotationTableConfiguration>
+  MetadataConfiguration& WithAnnotationTableConfiguration(AnnotationTableConfigurationT&& value) {
+    SetAnnotationTableConfiguration(std::forward<AnnotationTableConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   JournalTableConfiguration m_journalTableConfiguration;
 
   InventoryTableConfiguration m_inventoryTableConfiguration;
+
+  AnnotationTableConfiguration m_annotationTableConfiguration;
   bool m_journalTableConfigurationHasBeenSet = false;
   bool m_inventoryTableConfigurationHasBeenSet = false;
+  bool m_annotationTableConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

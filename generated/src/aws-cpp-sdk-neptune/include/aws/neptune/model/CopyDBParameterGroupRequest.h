@@ -42,7 +42,9 @@ class CopyDBParameterGroupRequest : public NeptuneRequest {
    * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
    * <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must specify
    * a valid DB parameter group identifier, for example
-   * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
+   * <code>my-db-param-group</code>, or a valid ARN.</p> </li> <li> <p>The source DB
+   * parameter group must be in the same Amazon Region as the copy. Neptune does not
+   * support cross-Region copying of parameter groups.</p> </li> </ul>
    */
   inline const Aws::String& GetSourceDBParameterGroupIdentifier() const { return m_sourceDBParameterGroupIdentifier; }
   inline bool SourceDBParameterGroupIdentifierHasBeenSet() const { return m_sourceDBParameterGroupIdentifierHasBeenSet; }

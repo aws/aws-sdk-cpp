@@ -5,7 +5,13 @@
 #set($serviceNamespace = $metadata.namespace)
 \#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
 \#include <aws/core/AmazonWebServiceResult.h>
-#if($shape.hasQueryStringMembers())
+#set($needsURIHeader = $shape.hasQueryStringMembers())
+#if(!$needsURIHeader)
+#foreach($member in $shape.members.entrySet())
+#if($member.value.requiresHeaderEncoding())#set($needsURIHeader = true)#end
+#end
+#end
+#if($needsURIHeader)
 \#include <aws/core/http/URI.h>
 #end
 #foreach($header in $typeInfo.sourceIncludes)
@@ -20,7 +26,7 @@
 using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
-#if($shape.hasQueryStringMembers())
+#if($needsURIHeader)
 using namespace Aws::Http;
 #end
 using namespace Aws;

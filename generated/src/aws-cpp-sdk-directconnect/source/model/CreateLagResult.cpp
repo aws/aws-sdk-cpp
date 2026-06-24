@@ -115,6 +115,10 @@ CreateLagResult& CreateLagResult::operator=(const Aws::AmazonWebServiceResult<Js
     }
     m_macSecKeysHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rateLimiterStatus")) {
+    m_rateLimiterStatus = jsonValue.GetObject("rateLimiterStatus");
+    m_rateLimiterStatusHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

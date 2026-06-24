@@ -43,5 +43,9 @@ Aws::String UpdateRouterInputRequest::SerializePayload() const {
     payload.WithObject("maintenanceConfiguration", m_maintenanceConfiguration.Jsonize());
   }
 
+  if (m_contentQualityAnalysisConfigurationHasBeenSet) {
+    payload.WithObject("contentQualityAnalysisConfiguration", m_contentQualityAnalysisConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

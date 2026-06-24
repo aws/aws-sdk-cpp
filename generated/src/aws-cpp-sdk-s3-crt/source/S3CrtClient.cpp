@@ -59,6 +59,7 @@
 #include <aws/s3-crt/model/DeleteBucketRequest.h>
 #include <aws/s3-crt/model/DeleteBucketTaggingRequest.h>
 #include <aws/s3-crt/model/DeleteBucketWebsiteRequest.h>
+#include <aws/s3-crt/model/DeleteObjectAnnotationRequest.h>
 #include <aws/s3-crt/model/DeleteObjectRequest.h>
 #include <aws/s3-crt/model/DeleteObjectTaggingRequest.h>
 #include <aws/s3-crt/model/DeleteObjectsRequest.h>
@@ -87,6 +88,7 @@
 #include <aws/s3-crt/model/GetBucketVersioningRequest.h>
 #include <aws/s3-crt/model/GetBucketWebsiteRequest.h>
 #include <aws/s3-crt/model/GetObjectAclRequest.h>
+#include <aws/s3-crt/model/GetObjectAnnotationRequest.h>
 #include <aws/s3-crt/model/GetObjectAttributesRequest.h>
 #include <aws/s3-crt/model/GetObjectLegalHoldRequest.h>
 #include <aws/s3-crt/model/GetObjectLockConfigurationRequest.h>
@@ -104,6 +106,7 @@
 #include <aws/s3-crt/model/ListBucketsRequest.h>
 #include <aws/s3-crt/model/ListDirectoryBucketsRequest.h>
 #include <aws/s3-crt/model/ListMultipartUploadsRequest.h>
+#include <aws/s3-crt/model/ListObjectAnnotationsRequest.h>
 #include <aws/s3-crt/model/ListObjectVersionsRequest.h>
 #include <aws/s3-crt/model/ListObjectsRequest.h>
 #include <aws/s3-crt/model/ListObjectsV2Request.h>
@@ -128,6 +131,7 @@
 #include <aws/s3-crt/model/PutBucketVersioningRequest.h>
 #include <aws/s3-crt/model/PutBucketWebsiteRequest.h>
 #include <aws/s3-crt/model/PutObjectAclRequest.h>
+#include <aws/s3-crt/model/PutObjectAnnotationRequest.h>
 #include <aws/s3-crt/model/PutObjectLegalHoldRequest.h>
 #include <aws/s3-crt/model/PutObjectLockConfigurationRequest.h>
 #include <aws/s3-crt/model/PutObjectRequest.h>
@@ -137,6 +141,7 @@
 #include <aws/s3-crt/model/RenameObjectRequest.h>
 #include <aws/s3-crt/model/RestoreObjectRequest.h>
 #include <aws/s3-crt/model/SelectObjectContentRequest.h>
+#include <aws/s3-crt/model/UpdateBucketMetadataAnnotationTableConfigurationRequest.h>
 #include <aws/s3-crt/model/UpdateBucketMetadataInventoryTableConfigurationRequest.h>
 #include <aws/s3-crt/model/UpdateBucketMetadataJournalTableConfigurationRequest.h>
 #include <aws/s3-crt/model/UpdateObjectEncryptionRequest.h>
@@ -372,8 +377,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
   m_s3CrtSigningConfig.flags.use_double_uri_encode = false;
   s3CrtConfig.signing_config = &m_s3CrtSigningConfig;
 
-  static const size_t DEFAULT_PART_SIZE = 8 * 1024 * 1024;  // 8MB
-  s3CrtConfig.part_size = config.partSize < DEFAULT_PART_SIZE ? DEFAULT_PART_SIZE : config.partSize;
+  s3CrtConfig.part_size = config.partSize;
   s3CrtConfig.multipart_upload_threshold = config.multipartUploadThreshold;
 
   Aws::Crt::Io::TlsConnectionOptions* rawPTlsConnectionOptions = nullptr;
@@ -819,6 +823,171 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData* userDat
   options->finish_callback = S3CrtRequestFinishCallback;
 }
 
+S3CrtClient::CopyObjectPropertiesOutcome S3CrtClient::PopulateCopyObjectProperties(
+    const Model::CopyObjectRequest& request, const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest) const {
+  const bool copyMetadata = request.MetadataDirectiveHasBeenSet() && request.GetMetadataDirective() == Model::MetadataDirective::COPY;
+  const bool copyTags = request.TaggingDirectiveHasBeenSet() && request.GetTaggingDirective() == Model::TaggingDirective::COPY;
+  const bool copyAnnotations =
+      request.AnnotationDirectiveHasBeenSet() && request.GetAnnotationDirective() == Model::AnnotationDirective::COPY;
+
+  Aws::Map<Aws::String, Aws::String> annotations;
+  if (!copyMetadata && !copyTags && !copyAnnotations) {
+    return annotations;
+  }
+
+  // Parse "[/]bucket/key[?versionId=...]" from x-amz-copy-source. rfind: keys may contain '?'.
+  Aws::String copySource = request.GetCopySource();
+  Aws::String sourceVersionId;
+  const auto queryPos = copySource.rfind('?');
+  if (queryPos != Aws::String::npos) {
+    const Aws::String query = copySource.substr(queryPos + 1);
+    copySource = copySource.substr(0, queryPos);
+    const auto versionPos = query.find("versionId=");
+    if (versionPos != Aws::String::npos) {
+      sourceVersionId = query.substr(versionPos + Aws::String("versionId=").size());
+      const auto ampPos = sourceVersionId.find('&');
+      if (ampPos != Aws::String::npos) {
+        sourceVersionId = sourceVersionId.substr(0, ampPos);
+      }
+    }
+  }
+  if (!copySource.empty() && copySource.front() == '/') {
+    copySource = copySource.substr(1);
+  }
+  const auto slashPos = copySource.find('/');
+  if (slashPos == Aws::String::npos) {
+    return Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE",
+                                              "Could not parse bucket and key from CopySource for property copy", false);
+  }
+  const Aws::String sourceBucket = copySource.substr(0, slashPos);
+  const Aws::String sourceKey = copySource.substr(slashPos + 1);
+
+  Model::HeadObjectRequest headRequest;
+  headRequest.SetBucket(sourceBucket);
+  headRequest.SetKey(sourceKey);
+  if (!sourceVersionId.empty()) {
+    headRequest.SetVersionId(sourceVersionId);
+  }
+  auto headOutcome = HeadObject(headRequest);
+  if (!headOutcome.IsSuccess()) {
+    return headOutcome.GetError();
+  }
+  const auto& head = headOutcome.GetResult();
+  const Aws::String sourceETag = head.GetETag();
+
+  // Pin the source version so UploadPartCopy reads a stable object.
+  if (sourceVersionId.empty() && !head.GetVersionId().empty()) {
+    sourceVersionId = head.GetVersionId();
+    httpRequest->SetHeaderValue("x-amz-copy-source", Aws::Http::URI::URLEncodePath(copySource) + "?versionId=" + sourceVersionId);
+  }
+  if (!httpRequest->HasHeader("x-amz-copy-source-if-match") && !sourceETag.empty()) {
+    httpRequest->SetHeaderValue("x-amz-copy-source-if-match", sourceETag);
+  }
+
+  if (copyAnnotations) {
+    // Neither the multipart copy nor S3's single-part CopyObject carries annotations, so always
+    // read them from the source here (regardless of size) and return them to be written to the
+    // destination after the copy completes (see the wrapped completion handler).
+    Aws::String continuationToken;
+    do {
+      Model::ListObjectAnnotationsRequest listRequest;
+      listRequest.SetBucket(sourceBucket);
+      listRequest.SetKey(sourceKey);
+      if (!sourceVersionId.empty()) {
+        listRequest.SetVersionId(sourceVersionId);
+      }
+      if (!continuationToken.empty()) {
+        listRequest.SetContinuationToken(continuationToken);
+      }
+      auto listOutcome = ListObjectAnnotations(listRequest);
+      if (!listOutcome.IsSuccess()) {
+        return listOutcome.GetError();
+      }
+      for (const auto& entry : listOutcome.GetResult().GetAnnotations()) {
+        Model::GetObjectAnnotationRequest getRequest;
+        getRequest.SetBucket(sourceBucket);
+        getRequest.SetKey(sourceKey);
+        getRequest.SetAnnotationName(entry.GetAnnotationName());
+        if (!sourceVersionId.empty()) {
+          getRequest.SetVersionId(sourceVersionId);
+        }
+        auto getOutcome = GetObjectAnnotation(getRequest);
+        if (!getOutcome.IsSuccess()) {
+          return getOutcome.GetError();
+        }
+        auto& sourcePayload = getOutcome.GetResult().GetAnnotationPayload();
+        sourcePayload.clear();
+        sourcePayload.seekg(0);
+        Aws::StringStream payloadStream;
+        payloadStream << sourcePayload.rdbuf();
+        annotations.emplace(entry.GetAnnotationName(), payloadStream.str());
+      }
+      continuationToken = listOutcome.GetResult().GetNextContinuationToken();
+    } while (!continuationToken.empty());
+  }
+
+  // Below the multipart threshold S3's single-part CopyObject honors the metadata/tagging directives
+  // natively, so skip header injection (annotations are handled above regardless of size).
+  if (head.GetContentLength() < (1LL * 1024 * 1024 * 1024)) {
+    return annotations;
+  }
+
+  if (copyMetadata) {
+    if (!head.GetContentType().empty()) {
+      httpRequest->SetHeaderValue("content-type", head.GetContentType());
+    }
+    if (!head.GetContentEncoding().empty()) {
+      httpRequest->SetHeaderValue("content-encoding", head.GetContentEncoding());
+    }
+    if (!head.GetContentDisposition().empty()) {
+      httpRequest->SetHeaderValue("content-disposition", head.GetContentDisposition());
+    }
+    if (!head.GetContentLanguage().empty()) {
+      httpRequest->SetHeaderValue("content-language", head.GetContentLanguage());
+    }
+    if (!head.GetCacheControl().empty()) {
+      httpRequest->SetHeaderValue("cache-control", head.GetCacheControl());
+    }
+    if (!head.GetExpiresString().empty()) {
+      httpRequest->SetHeaderValue("expires", head.GetExpires().ToGmtString(Aws::Utils::DateFormat::RFC822));
+    }
+    for (const auto& item : head.GetMetadata()) {
+      httpRequest->SetHeaderValue("x-amz-meta-" + item.first, item.second);
+    }
+    // REPLACE so CreateMultipartUpload emits these headers.
+    httpRequest->SetHeaderValue("x-amz-metadata-directive", "REPLACE");
+  }
+
+  if (copyTags) {
+    Model::GetObjectTaggingRequest taggingRequest;
+    taggingRequest.SetBucket(sourceBucket);
+    taggingRequest.SetKey(sourceKey);
+    if (!sourceVersionId.empty()) {
+      taggingRequest.SetVersionId(sourceVersionId);
+    }
+    auto taggingOutcome = GetObjectTagging(taggingRequest);
+    if (!taggingOutcome.IsSuccess()) {
+      return taggingOutcome.GetError();
+    }
+    Aws::StringStream tagStream;
+    bool firstTag = true;
+    for (const auto& tag : taggingOutcome.GetResult().GetTagSet()) {
+      if (!firstTag) {
+        tagStream << "&";
+      }
+      tagStream << Aws::Utils::StringUtils::URLEncode(tag.GetKey().c_str()) << "="
+                << Aws::Utils::StringUtils::URLEncode(tag.GetValue().c_str());
+      firstTag = false;
+    }
+    if (!firstTag) {
+      httpRequest->SetHeaderValue("x-amz-tagging", tagStream.str());
+      httpRequest->SetHeaderValue("x-amz-tagging-directive", "REPLACE");
+    }
+  }
+
+  return annotations;
+}
+
 static void CopyObjectRequestShutdownCallback(void* user_data) {
   if (!user_data) {
     AWS_LOGSTREAM_ERROR("CopyObject", "user data passed is NULL ");
@@ -914,6 +1083,49 @@ void S3CrtClient::CopyObjectAsync(const CopyObjectRequest& request, const CopyOb
                    CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE",
                                                                         "Unable to create s3 meta request", false)),
                    handlerContext);
+  }
+  {
+    auto copyPropertiesOutcome = PopulateCopyObjectProperties(request, userData->request);
+    if (!copyPropertiesOutcome.IsSuccess()) {
+      Aws::Delete(userData);
+      return handler(this, request, CopyObjectOutcome(copyPropertiesOutcome.GetError()), handlerContext);
+    }
+    auto copiedAnnotations = copyPropertiesOutcome.GetResultWithOwnership();
+    if (!copiedAnnotations.empty()) {
+      // Annotations cannot ride along on the multipart copy, so write each one to the destination
+      // after the copy completes. Any PutObjectAnnotation failure fails the overall CopyObject.
+      const CopyObjectResponseReceivedHandler originalHandler = userData->copyResponseHandler;
+      const S3CrtClient* client = this;
+      userData->copyResponseHandler = [client, originalHandler, copiedAnnotations](
+                                          const S3CrtClient*, const CopyObjectRequest& copyRequest, const CopyObjectOutcome& outcome,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) {
+        if (!outcome.IsSuccess()) {
+          originalHandler(client, copyRequest, outcome, context);
+          return;
+        }
+        const Aws::String destVersionId = outcome.GetResult().GetVersionId();
+        const Aws::String destETag = outcome.GetResult().GetCopyObjectResultDetails().GetETag();
+        for (const auto& annotation : copiedAnnotations) {
+          Model::PutObjectAnnotationRequest putRequest;
+          putRequest.SetBucket(copyRequest.GetBucket());
+          putRequest.SetKey(copyRequest.GetKey());
+          putRequest.SetAnnotationName(annotation.first);
+          putRequest.SetBody(Aws::MakeShared<Aws::StringStream>("S3CrtCopyAnnotation", annotation.second));
+          if (!destVersionId.empty()) {
+            putRequest.SetVersionId(destVersionId);
+          }
+          if (!destETag.empty()) {
+            putRequest.SetObjectIfMatch(destETag);
+          }
+          auto putOutcome = client->PutObjectAnnotation(putRequest);
+          if (!putOutcome.IsSuccess()) {
+            originalHandler(client, copyRequest, CopyObjectOutcome(putOutcome.GetError()), context);
+            return;
+          }
+        }
+        originalHandler(client, copyRequest, outcome, context);
+      };
+    }
   }
   if (handlerContext) {
     handlerContext->GetMonitorContext().StartMonitorContext(Aws::String{"S3CrtClient"}, request.GetServiceRequestName(), userData->request);
@@ -1853,6 +2065,36 @@ DeleteObjectOutcome S3CrtClient::DeleteObject(const DeleteObjectRequest& request
   return result.IsSuccess() ? DeleteObjectOutcome(result.GetResultWithOwnership()) : DeleteObjectOutcome(std::move(result.GetError()));
 }
 
+DeleteObjectAnnotationOutcome S3CrtClient::DeleteObjectAnnotation(const DeleteObjectAnnotationRequest& request) const {
+  if (!request.BucketHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteObjectAnnotation", "Required field: Bucket, is not set");
+    return DeleteObjectAnnotationOutcome(
+        Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteObjectAnnotation", "Required field: Key, is not set");
+    return DeleteObjectAnnotationOutcome(
+        Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+  if (!request.AnnotationNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteObjectAnnotation", "Required field: AnnotationName, is not set");
+    return DeleteObjectAnnotationOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [AnnotationName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    Aws::StringStream ss;
+    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
+    ss.str("?annotation");
+    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteObjectAnnotationOutcome(result.GetResultWithOwnership())
+                            : DeleteObjectAnnotationOutcome(std::move(result.GetError()));
+}
+
 DeleteObjectTaggingOutcome S3CrtClient::DeleteObjectTagging(const DeleteObjectTaggingRequest& request) const {
   if (!request.BucketHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteObjectTagging", "Required field: Bucket, is not set");
@@ -2426,6 +2668,61 @@ GetObjectAclOutcome S3CrtClient::GetObjectAcl(const GetObjectAclRequest& request
   return result.IsSuccess() ? GetObjectAclOutcome(result.GetResultWithOwnership()) : GetObjectAclOutcome(std::move(result.GetError()));
 }
 
+GetObjectAnnotationOutcome S3CrtClient::GetObjectAnnotation(const GetObjectAnnotationRequest& request) const {
+  AWS_OPERATION_GUARD(GetObjectAnnotation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectAnnotation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BucketHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetObjectAnnotation", "Required field: Bucket, is not set");
+    return GetObjectAnnotationOutcome(
+        Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetObjectAnnotation", "Required field: Key, is not set");
+    return GetObjectAnnotationOutcome(
+        Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+  if (!request.AnnotationNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetObjectAnnotation", "Required field: AnnotationName, is not set");
+    return GetObjectAnnotationOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [AnnotationName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetObjectAnnotation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetObjectAnnotation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetObjectAnnotationOutcome>(
+      [&]() -> GetObjectAnnotationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetObjectAnnotation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        Aws::StringStream ss;
+        endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
+        ss.str("?annotation");
+        endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+        request.SetServiceSpecificParameters([&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+          Aws::Map<Aws::String, Aws::String> params;
+          params.emplace("bucketName", request.GetBucket());
+          ServiceSpecificParameters serviceSpecificParameters{params};
+          return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+        }());
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetObjectAnnotationOutcome(result.GetResultWithOwnership())
+                                  : GetObjectAnnotationOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetObjectAttributesOutcome S3CrtClient::GetObjectAttributes(const GetObjectAttributesRequest& request) const {
   if (!request.BucketHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetObjectAttributes", "Required field: Bucket, is not set");
@@ -2765,6 +3062,31 @@ ListMultipartUploadsOutcome S3CrtClient::ListMultipartUploads(const ListMultipar
   auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListMultipartUploadsOutcome(result.GetResultWithOwnership())
                             : ListMultipartUploadsOutcome(std::move(result.GetError()));
+}
+
+ListObjectAnnotationsOutcome S3CrtClient::ListObjectAnnotations(const ListObjectAnnotationsRequest& request) const {
+  if (!request.BucketHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListObjectAnnotations", "Required field: Bucket, is not set");
+    return ListObjectAnnotationsOutcome(
+        Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListObjectAnnotations", "Required field: Key, is not set");
+    return ListObjectAnnotationsOutcome(
+        Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    Aws::StringStream ss;
+    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
+    ss.str("?annotation");
+    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListObjectAnnotationsOutcome(result.GetResultWithOwnership())
+                            : ListObjectAnnotationsOutcome(std::move(result.GetError()));
 }
 
 ListObjectVersionsOutcome S3CrtClient::ListObjectVersions(const ListObjectVersionsRequest& request) const {
@@ -3251,6 +3573,36 @@ PutObjectAclOutcome S3CrtClient::PutObjectAcl(const PutObjectAclRequest& request
   return result.IsSuccess() ? PutObjectAclOutcome(result.GetResultWithOwnership()) : PutObjectAclOutcome(std::move(result.GetError()));
 }
 
+PutObjectAnnotationOutcome S3CrtClient::PutObjectAnnotation(const PutObjectAnnotationRequest& request) const {
+  if (!request.BucketHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutObjectAnnotation", "Required field: Bucket, is not set");
+    return PutObjectAnnotationOutcome(
+        Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutObjectAnnotation", "Required field: Key, is not set");
+    return PutObjectAnnotationOutcome(
+        Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+  if (!request.AnnotationNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutObjectAnnotation", "Required field: AnnotationName, is not set");
+    return PutObjectAnnotationOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [AnnotationName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    Aws::StringStream ss;
+    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
+    ss.str("?annotation");
+    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutObjectAnnotationOutcome(result.GetResultWithOwnership())
+                            : PutObjectAnnotationOutcome(std::move(result.GetError()));
+}
+
 PutObjectLegalHoldOutcome S3CrtClient::PutObjectLegalHold(const PutObjectLegalHoldRequest& request) const {
   if (!request.BucketHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("PutObjectLegalHold", "Required field: Bucket, is not set");
@@ -3469,6 +3821,26 @@ SelectObjectContentOutcome S3CrtClient::SelectObjectContent(SelectObjectContentR
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateBucketMetadataAnnotationTableConfigurationOutcome S3CrtClient::UpdateBucketMetadataAnnotationTableConfiguration(
+    const UpdateBucketMetadataAnnotationTableConfigurationRequest& request) const {
+  if (!request.BucketHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateBucketMetadataAnnotationTableConfiguration", "Required field: Bucket, is not set");
+    return UpdateBucketMetadataAnnotationTableConfigurationOutcome(
+        Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    Aws::StringStream ss;
+    ss.str("?metadataAnnotationTable");
+    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBucketMetadataAnnotationTableConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateBucketMetadataAnnotationTableConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateBucketMetadataInventoryTableConfigurationOutcome S3CrtClient::UpdateBucketMetadataInventoryTableConfiguration(

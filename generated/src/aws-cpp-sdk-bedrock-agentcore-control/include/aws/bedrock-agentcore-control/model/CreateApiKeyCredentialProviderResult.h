@@ -50,8 +50,8 @@ class CreateApiKeyCredentialProviderResult {
 
   ///@{
   /**
-   * <p>The JSON key used to extract the API key value from the AWS Secrets Manager
-   * secret.</p>
+   * <p>The JSON key used to extract the API key value from the Amazon Web Services
+   * Secrets Manager secret.</p>
    */
   inline const Aws::String& GetApiKeySecretJsonKey() const { return m_apiKeySecretJsonKey; }
   template <typename ApiKeySecretJsonKeyT = Aws::String>
@@ -70,7 +70,7 @@ class CreateApiKeyCredentialProviderResult {
   /**
    * <p>The source type of the API key secret. Either <code>MANAGED</code> if the
    * secret is managed by the service, or <code>EXTERNAL</code> if managed by the
-   * user in AWS Secrets Manager.</p>
+   * user in Amazon Web Services Secrets Manager.</p>
    */
   inline SecretSourceType GetApiKeySecretSource() const { return m_apiKeySecretSource; }
   inline void SetApiKeySecretSource(SecretSourceType value) {

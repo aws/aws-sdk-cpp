@@ -46,6 +46,7 @@
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/DeleteBucketTaggingRequest.h>
 #include <aws/s3/model/DeleteBucketWebsiteRequest.h>
+#include <aws/s3/model/DeleteObjectAnnotationRequest.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
 #include <aws/s3/model/DeleteObjectTaggingRequest.h>
 #include <aws/s3/model/DeleteObjectsRequest.h>
@@ -74,6 +75,7 @@
 #include <aws/s3/model/GetBucketVersioningRequest.h>
 #include <aws/s3/model/GetBucketWebsiteRequest.h>
 #include <aws/s3/model/GetObjectAclRequest.h>
+#include <aws/s3/model/GetObjectAnnotationRequest.h>
 #include <aws/s3/model/GetObjectAttributesRequest.h>
 #include <aws/s3/model/GetObjectLegalHoldRequest.h>
 #include <aws/s3/model/GetObjectLockConfigurationRequest.h>
@@ -91,6 +93,7 @@
 #include <aws/s3/model/ListBucketsRequest.h>
 #include <aws/s3/model/ListDirectoryBucketsRequest.h>
 #include <aws/s3/model/ListMultipartUploadsRequest.h>
+#include <aws/s3/model/ListObjectAnnotationsRequest.h>
 #include <aws/s3/model/ListObjectVersionsRequest.h>
 #include <aws/s3/model/ListObjectsRequest.h>
 #include <aws/s3/model/ListObjectsV2Request.h>
@@ -115,6 +118,7 @@
 #include <aws/s3/model/PutBucketVersioningRequest.h>
 #include <aws/s3/model/PutBucketWebsiteRequest.h>
 #include <aws/s3/model/PutObjectAclRequest.h>
+#include <aws/s3/model/PutObjectAnnotationRequest.h>
 #include <aws/s3/model/PutObjectLegalHoldRequest.h>
 #include <aws/s3/model/PutObjectLockConfigurationRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
@@ -124,6 +128,7 @@
 #include <aws/s3/model/RenameObjectRequest.h>
 #include <aws/s3/model/RestoreObjectRequest.h>
 #include <aws/s3/model/SelectObjectContentRequest.h>
+#include <aws/s3/model/UpdateBucketMetadataAnnotationTableConfigurationRequest.h>
 #include <aws/s3/model/UpdateBucketMetadataInventoryTableConfigurationRequest.h>
 #include <aws/s3/model/UpdateBucketMetadataJournalTableConfigurationRequest.h>
 #include <aws/s3/model/UpdateObjectEncryptionRequest.h>
@@ -881,6 +886,36 @@ DeleteObjectOutcome S3Client::DeleteObject(const DeleteObjectRequest& request) c
   return result.IsSuccess() ? DeleteObjectOutcome(result.GetResultWithOwnership()) : DeleteObjectOutcome(std::move(result.GetError()));
 }
 
+DeleteObjectAnnotationOutcome S3Client::DeleteObjectAnnotation(const DeleteObjectAnnotationRequest& request) const {
+  if (!request.BucketHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteObjectAnnotation", "Required field: Bucket, is not set");
+    return DeleteObjectAnnotationOutcome(
+        Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteObjectAnnotation", "Required field: Key, is not set");
+    return DeleteObjectAnnotationOutcome(
+        Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+  if (!request.AnnotationNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteObjectAnnotation", "Required field: AnnotationName, is not set");
+    return DeleteObjectAnnotationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [AnnotationName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    Aws::StringStream ss;
+    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
+    ss.str("?annotation");
+    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteObjectAnnotationOutcome(result.GetResultWithOwnership())
+                            : DeleteObjectAnnotationOutcome(std::move(result.GetError()));
+}
+
 DeleteObjectTaggingOutcome S3Client::DeleteObjectTagging(const DeleteObjectTaggingRequest& request) const {
   if (!request.BucketHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteObjectTagging", "Required field: Bucket, is not set");
@@ -1512,6 +1547,61 @@ GetObjectAclOutcome S3Client::GetObjectAcl(const GetObjectAclRequest& request) c
   return result.IsSuccess() ? GetObjectAclOutcome(result.GetResultWithOwnership()) : GetObjectAclOutcome(std::move(result.GetError()));
 }
 
+GetObjectAnnotationOutcome S3Client::GetObjectAnnotation(const GetObjectAnnotationRequest& request) const {
+  AWS_OPERATION_GUARD(GetObjectAnnotation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectAnnotation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BucketHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetObjectAnnotation", "Required field: Bucket, is not set");
+    return GetObjectAnnotationOutcome(
+        Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetObjectAnnotation", "Required field: Key, is not set");
+    return GetObjectAnnotationOutcome(
+        Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+  if (!request.AnnotationNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetObjectAnnotation", "Required field: AnnotationName, is not set");
+    return GetObjectAnnotationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [AnnotationName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetObjectAnnotation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetObjectAnnotation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetObjectAnnotationOutcome>(
+      [&]() -> GetObjectAnnotationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetObjectAnnotation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        Aws::StringStream ss;
+        endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
+        ss.str("?annotation");
+        endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+        request.SetServiceSpecificParameters([&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+          Aws::Map<Aws::String, Aws::String> params;
+          params.emplace("bucketName", request.GetBucket());
+          ServiceSpecificParameters serviceSpecificParameters{params};
+          return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+        }());
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetObjectAnnotationOutcome(result.GetResultWithOwnership())
+                                  : GetObjectAnnotationOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetObjectAttributesOutcome S3Client::GetObjectAttributes(const GetObjectAttributesRequest& request) const {
   if (!request.BucketHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetObjectAttributes", "Required field: Bucket, is not set");
@@ -1851,6 +1941,31 @@ ListMultipartUploadsOutcome S3Client::ListMultipartUploads(const ListMultipartUp
   auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListMultipartUploadsOutcome(result.GetResultWithOwnership())
                             : ListMultipartUploadsOutcome(std::move(result.GetError()));
+}
+
+ListObjectAnnotationsOutcome S3Client::ListObjectAnnotations(const ListObjectAnnotationsRequest& request) const {
+  if (!request.BucketHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListObjectAnnotations", "Required field: Bucket, is not set");
+    return ListObjectAnnotationsOutcome(
+        Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListObjectAnnotations", "Required field: Key, is not set");
+    return ListObjectAnnotationsOutcome(
+        Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    Aws::StringStream ss;
+    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
+    ss.str("?annotation");
+    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListObjectAnnotationsOutcome(result.GetResultWithOwnership())
+                            : ListObjectAnnotationsOutcome(std::move(result.GetError()));
 }
 
 ListObjectVersionsOutcome S3Client::ListObjectVersions(const ListObjectVersionsRequest& request) const {
@@ -2371,6 +2486,36 @@ PutObjectAclOutcome S3Client::PutObjectAcl(const PutObjectAclRequest& request) c
   return result.IsSuccess() ? PutObjectAclOutcome(result.GetResultWithOwnership()) : PutObjectAclOutcome(std::move(result.GetError()));
 }
 
+PutObjectAnnotationOutcome S3Client::PutObjectAnnotation(const PutObjectAnnotationRequest& request) const {
+  if (!request.BucketHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutObjectAnnotation", "Required field: Bucket, is not set");
+    return PutObjectAnnotationOutcome(
+        Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutObjectAnnotation", "Required field: Key, is not set");
+    return PutObjectAnnotationOutcome(
+        Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+  if (!request.AnnotationNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutObjectAnnotation", "Required field: AnnotationName, is not set");
+    return PutObjectAnnotationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [AnnotationName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    Aws::StringStream ss;
+    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
+    ss.str("?annotation");
+    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutObjectAnnotationOutcome(result.GetResultWithOwnership())
+                            : PutObjectAnnotationOutcome(std::move(result.GetError()));
+}
+
 PutObjectLegalHoldOutcome S3Client::PutObjectLegalHold(const PutObjectLegalHoldRequest& request) const {
   if (!request.BucketHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("PutObjectLegalHold", "Required field: Bucket, is not set");
@@ -2589,6 +2734,26 @@ SelectObjectContentOutcome S3Client::SelectObjectContent(SelectObjectContentRequ
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateBucketMetadataAnnotationTableConfigurationOutcome S3Client::UpdateBucketMetadataAnnotationTableConfiguration(
+    const UpdateBucketMetadataAnnotationTableConfigurationRequest& request) const {
+  if (!request.BucketHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateBucketMetadataAnnotationTableConfiguration", "Required field: Bucket, is not set");
+    return UpdateBucketMetadataAnnotationTableConfigurationOutcome(
+        Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    Aws::StringStream ss;
+    ss.str("?metadataAnnotationTable");
+    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBucketMetadataAnnotationTableConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateBucketMetadataAnnotationTableConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateBucketMetadataInventoryTableConfigurationOutcome S3Client::UpdateBucketMetadataInventoryTableConfiguration(

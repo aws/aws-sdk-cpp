@@ -7,6 +7,7 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/signin/model/ListResourcePermissionStatementsPaginationTraits.h>
 
 #include <memory>
 
@@ -16,7 +17,17 @@ namespace Signin {
 template <typename DerivedClient>
 class SigninPaginationBase {
  public:
-  virtual ~SigninPaginationBase() = default;
+  /**
+   * Create a paginator for ListResourcePermissionStatements operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcePermissionStatementsRequest,
+                                    Pagination::ListResourcePermissionStatementsPaginationTraits<DerivedClient>>
+  ListResourcePermissionStatementsPaginator(const Model::ListResourcePermissionStatementsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcePermissionStatementsRequest,
+                                             Pagination::ListResourcePermissionStatementsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
 };
 }  // namespace Signin
 }  // namespace Aws

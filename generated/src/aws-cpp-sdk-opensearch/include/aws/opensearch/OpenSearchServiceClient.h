@@ -259,6 +259,42 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Attaches a data source to an OpenSearch application. The data source can be
+   * an Amazon OpenSearch Service domain or an Amazon OpenSearch Serverless
+   * collection. If both the application and data source are in the
+   * <code>ACTIVE</code> state, the attachment completes immediately and returns a
+   * status of <code>ATTACHED</code>. If either resource is not yet active, the
+   * operation stores the request and returns a status of <code>PENDING</code>. A
+   * background process then completes the attachment when both resources become
+   * active. Pending attachments that are not completed within 24 hours are marked as
+   * <code>FAILED</code>. This operation is idempotent. If a data source is already
+   * attached or pending for the same application, the existing attachment is
+   * returned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AttachDataSource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AttachDataSourceOutcome AttachDataSource(const Model::AttachDataSourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for AttachDataSource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AttachDataSourceRequestT = Model::AttachDataSourceRequest>
+  Model::AttachDataSourceOutcomeCallable AttachDataSourceCallable(const AttachDataSourceRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::AttachDataSource, request);
+  }
+
+  /**
+   * An Async wrapper for AttachDataSource that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename AttachDataSourceRequestT = Model::AttachDataSourceRequest>
+  void AttachDataSourceAsync(const AttachDataSourceRequestT& request, const AttachDataSourceResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::AttachDataSource, request, handler, context);
+  }
+
+  /**
    * <p>Provides access to an Amazon OpenSearch Service domain through the use of an
    * interface VPC endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AuthorizeVpcEndpointAccess">AWS
@@ -805,6 +841,38 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Returns the current status and details of a specific data source attachment
+   * for an OpenSearch application. Throws a <code>ResourceNotFoundException</code>
+   * if no attachment record exists for the specified application and data source
+   * combination.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDataSourceAttachment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeDataSourceAttachmentOutcome DescribeDataSourceAttachment(
+      const Model::DescribeDataSourceAttachmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeDataSourceAttachment that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeDataSourceAttachmentRequestT = Model::DescribeDataSourceAttachmentRequest>
+  Model::DescribeDataSourceAttachmentOutcomeCallable DescribeDataSourceAttachmentCallable(
+      const DescribeDataSourceAttachmentRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::DescribeDataSourceAttachment, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeDataSourceAttachment that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeDataSourceAttachmentRequestT = Model::DescribeDataSourceAttachmentRequest>
+  void DescribeDataSourceAttachmentAsync(const DescribeDataSourceAttachmentRequestT& request,
+                                         const DescribeDataSourceAttachmentResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::DescribeDataSourceAttachment, request, handler, context);
+  }
+
+  /**
    * <p>Describes the domain configuration for the specified Amazon OpenSearch
    * Service domain, including the domain ID, domain service endpoint, and domain
    * ARN.</p><p><h3>See Also:</h3>   <a
@@ -1280,6 +1348,38 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Removes a data source from an OpenSearch application. The application must be
+   * in the <code>ACTIVE</code> state. This operation removes the data source saved
+   * object from the application and deletes the attachment record. Throws a
+   * <code>ConflictException</code> if the specified data source has a
+   * <code>PENDING</code> attachment, and a <code>ResourceNotFoundException</code> if
+   * the data source is not currently attached to the application.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DetachDataSource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DetachDataSourceOutcome DetachDataSource(const Model::DetachDataSourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for DetachDataSource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DetachDataSourceRequestT = Model::DetachDataSourceRequest>
+  Model::DetachDataSourceOutcomeCallable DetachDataSourceCallable(const DetachDataSourceRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::DetachDataSource, request);
+  }
+
+  /**
+   * An Async wrapper for DetachDataSource that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DetachDataSourceRequestT = Model::DetachDataSourceRequest>
+  void DetachDataSourceAsync(const DetachDataSourceRequestT& request, const DetachDataSourceResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::DetachDataSource, request, handler, context);
+  }
+
+  /**
    * <p>Removes a package from the specified Amazon OpenSearch Service domain. The
    * package can't be in use with any OpenSearch index for the dissociation to
    * succeed. The package is still available in OpenSearch Service for association
@@ -1671,6 +1771,36 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                              const ListApplicationsRequestT& request = {}) const {
     return SubmitAsync(&OpenSearchServiceClient::ListApplications, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a paginated list of all data source attachments for an OpenSearch
+   * application, including attachments in all states (<code>PENDING</code>,
+   * <code>ATTACHED</code>, and <code>FAILED</code>).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDataSourceAttachments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDataSourceAttachmentsOutcome ListDataSourceAttachments(const Model::ListDataSourceAttachmentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDataSourceAttachments that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDataSourceAttachmentsRequestT = Model::ListDataSourceAttachmentsRequest>
+  Model::ListDataSourceAttachmentsOutcomeCallable ListDataSourceAttachmentsCallable(
+      const ListDataSourceAttachmentsRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::ListDataSourceAttachments, request);
+  }
+
+  /**
+   * An Async wrapper for ListDataSourceAttachments that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDataSourceAttachmentsRequestT = Model::ListDataSourceAttachmentsRequest>
+  void ListDataSourceAttachmentsAsync(const ListDataSourceAttachmentsRequestT& request,
+                                      const ListDataSourceAttachmentsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::ListDataSourceAttachments, request, handler, context);
   }
 
   /**

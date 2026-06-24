@@ -54,6 +54,10 @@ ClusterNodeSummary& ClusterNodeSummary::operator=(JsonView jsonValue) {
     m_privateDnsHostname = jsonValue.GetString("PrivateDnsHostname");
     m_privateDnsHostnameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CurrentImageReleaseVersion")) {
+    m_currentImageReleaseVersion = jsonValue.GetString("CurrentImageReleaseVersion");
+    m_currentImageReleaseVersionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ImageVersionStatus")) {
     m_imageVersionStatus = ClusterImageVersionStatusMapper::GetClusterImageVersionStatusForName(jsonValue.GetString("ImageVersionStatus"));
     m_imageVersionStatusHasBeenSet = true;
@@ -98,6 +102,10 @@ JsonValue ClusterNodeSummary::Jsonize() const {
 
   if (m_privateDnsHostnameHasBeenSet) {
     payload.WithString("PrivateDnsHostname", m_privateDnsHostname);
+  }
+
+  if (m_currentImageReleaseVersionHasBeenSet) {
+    payload.WithString("CurrentImageReleaseVersion", m_currentImageReleaseVersion);
   }
 
   if (m_imageVersionStatusHasBeenSet) {

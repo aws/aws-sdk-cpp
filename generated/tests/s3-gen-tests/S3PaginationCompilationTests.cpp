@@ -12,6 +12,7 @@
 #include <aws/s3/model/ListDirectoryBucketsPaginationTraits.h>
 #include <aws/s3/model/ListPartsPaginationTraits.h>
 #include <aws/s3/model/ListBucketsPaginationTraits.h>
+#include <aws/s3/model/ListObjectAnnotationsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

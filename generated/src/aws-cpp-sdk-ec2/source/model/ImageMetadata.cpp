@@ -71,6 +71,17 @@ ImageMetadata& ImageMetadata::operator=(const XmlNode& xmlNode) {
           StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isPublicNode.GetText()).c_str()).c_str());
       m_isPublicHasBeenSet = true;
     }
+    XmlNode imageWatermarksNode = resultNode.FirstChild("imageWatermarkSet");
+    if (!imageWatermarksNode.IsNull()) {
+      XmlNode imageWatermarksMember = imageWatermarksNode.FirstChild("item");
+      m_imageWatermarksHasBeenSet = !imageWatermarksMember.IsNull();
+      while (!imageWatermarksMember.IsNull()) {
+        m_imageWatermarks.push_back(imageWatermarksMember);
+        imageWatermarksMember = imageWatermarksMember.NextNode("item");
+      }
+
+      m_imageWatermarksHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -113,6 +124,15 @@ void ImageMetadata::OutputToStream(Aws::OStream& oStream, const char* location, 
   if (m_isPublicHasBeenSet) {
     oStream << location << index << locationValue << ".IsPublic=" << std::boolalpha << m_isPublic << "&";
   }
+
+  if (m_imageWatermarksHasBeenSet) {
+    unsigned imageWatermarksIdx = 1;
+    for (auto& item : m_imageWatermarks) {
+      Aws::StringStream imageWatermarksSs;
+      imageWatermarksSs << location << index << locationValue << ".ImageWatermarkSet." << imageWatermarksIdx++;
+      item.OutputToStream(oStream, imageWatermarksSs.str().c_str());
+    }
+  }
 }
 
 void ImageMetadata::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -142,6 +162,14 @@ void ImageMetadata::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if (m_isPublicHasBeenSet) {
     oStream << location << ".IsPublic=" << std::boolalpha << m_isPublic << "&";
+  }
+  if (m_imageWatermarksHasBeenSet) {
+    unsigned imageWatermarksIdx = 1;
+    for (auto& item : m_imageWatermarks) {
+      Aws::StringStream imageWatermarksSs;
+      imageWatermarksSs << location << ".ImageWatermarkSet." << imageWatermarksIdx++;
+      item.OutputToStream(oStream, imageWatermarksSs.str().c_str());
+    }
   }
 }
 

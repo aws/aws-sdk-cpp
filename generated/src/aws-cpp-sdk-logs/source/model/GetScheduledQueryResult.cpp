@@ -62,6 +62,10 @@ GetScheduledQueryResult& GetScheduledQueryResult::operator=(const Aws::AmazonWeb
     m_startTimeOffset = jsonValue.GetInt64("startTimeOffset");
     m_startTimeOffsetHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("endTimeOffset")) {
+    m_endTimeOffset = jsonValue.GetInt64("endTimeOffset");
+    m_endTimeOffsetHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("destinationConfiguration")) {
     m_destinationConfiguration = jsonValue.GetObject("destinationConfiguration");
     m_destinationConfigurationHasBeenSet = true;
@@ -69,6 +73,10 @@ GetScheduledQueryResult& GetScheduledQueryResult::operator=(const Aws::AmazonWeb
   if (jsonValue.ValueExists("state")) {
     m_state = ScheduledQueryStateMapper::GetScheduledQueryStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("scheduleType")) {
+    m_scheduleType = ScheduleTypeMapper::GetScheduleTypeForName(jsonValue.GetString("scheduleType"));
+    m_scheduleTypeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("lastTriggeredTime")) {
     m_lastTriggeredTime = jsonValue.GetInt64("lastTriggeredTime");

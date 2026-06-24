@@ -17,6 +17,7 @@ namespace EvaluationFormScoringModeMapper {
 
 static const int QUESTION_ONLY_HASH = HashingUtils::HashString("QUESTION_ONLY");
 static const int SECTION_ONLY_HASH = HashingUtils::HashString("SECTION_ONLY");
+static const int POINTS_BASED_HASH = HashingUtils::HashString("POINTS_BASED");
 
 EvaluationFormScoringMode GetEvaluationFormScoringModeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ EvaluationFormScoringMode GetEvaluationFormScoringModeForName(const Aws::String&
     return EvaluationFormScoringMode::QUESTION_ONLY;
   } else if (hashCode == SECTION_ONLY_HASH) {
     return EvaluationFormScoringMode::SECTION_ONLY;
+  } else if (hashCode == POINTS_BASED_HASH) {
+    return EvaluationFormScoringMode::POINTS_BASED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForEvaluationFormScoringMode(EvaluationFormScoringMode enumVa
       return "QUESTION_ONLY";
     case EvaluationFormScoringMode::SECTION_ONLY:
       return "SECTION_ONLY";
+    case EvaluationFormScoringMode::POINTS_BASED:
+      return "POINTS_BASED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

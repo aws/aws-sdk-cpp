@@ -114,7 +114,7 @@ class AddDatasetExamplesResult {
 
   ///@{
   /**
-   * <p>IDs of all added examples (auto-generated UUIDs).</p>
+   * <p> IDs of all added examples (auto-generated UUIDs). </p>
    */
   inline const Aws::Vector<Aws::String>& GetExampleIds() const { return m_exampleIds; }
   template <typename ExampleIdsT = Aws::Vector<Aws::String>>

@@ -27,6 +27,7 @@
 #include <aws/bedrock-agent-runtime/model/EndSessionResult.h>
 #include <aws/bedrock-agent-runtime/model/GenerateQueryResult.h>
 #include <aws/bedrock-agent-runtime/model/GetAgentMemoryResult.h>
+#include <aws/bedrock-agent-runtime/model/GetDocumentContentResult.h>
 #include <aws/bedrock-agent-runtime/model/GetExecutionFlowSnapshotResult.h>
 #include <aws/bedrock-agent-runtime/model/GetFlowExecutionResult.h>
 #include <aws/bedrock-agent-runtime/model/GetInvocationStepResult.h>
@@ -80,6 +81,7 @@ using BedrockAgentRuntimeEndpointProvider = Aws::BedrockAgentRuntime::Endpoint::
 
 namespace Model {
 /* Service model forward declarations required in BedrockAgentRuntimeClient header */
+class AgenticRetrieveStreamRequest;
 class CreateInvocationRequest;
 class CreateSessionRequest;
 class DeleteAgentMemoryRequest;
@@ -87,6 +89,7 @@ class DeleteSessionRequest;
 class EndSessionRequest;
 class GenerateQueryRequest;
 class GetAgentMemoryRequest;
+class GetDocumentContentRequest;
 class GetExecutionFlowSnapshotRequest;
 class GetFlowExecutionRequest;
 class GetInvocationStepRequest;
@@ -114,6 +117,7 @@ class UpdateSessionRequest;
 /* End of service model forward declarations required in BedrockAgentRuntimeClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentRuntimeError> AgenticRetrieveStreamOutcome;
 typedef Aws::Utils::Outcome<CreateInvocationResult, BedrockAgentRuntimeError> CreateInvocationOutcome;
 typedef Aws::Utils::Outcome<CreateSessionResult, BedrockAgentRuntimeError> CreateSessionOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentMemoryResult, BedrockAgentRuntimeError> DeleteAgentMemoryOutcome;
@@ -121,6 +125,7 @@ typedef Aws::Utils::Outcome<DeleteSessionResult, BedrockAgentRuntimeError> Delet
 typedef Aws::Utils::Outcome<EndSessionResult, BedrockAgentRuntimeError> EndSessionOutcome;
 typedef Aws::Utils::Outcome<GenerateQueryResult, BedrockAgentRuntimeError> GenerateQueryOutcome;
 typedef Aws::Utils::Outcome<GetAgentMemoryResult, BedrockAgentRuntimeError> GetAgentMemoryOutcome;
+typedef Aws::Utils::Outcome<GetDocumentContentResult, BedrockAgentRuntimeError> GetDocumentContentOutcome;
 typedef Aws::Utils::Outcome<GetExecutionFlowSnapshotResult, BedrockAgentRuntimeError> GetExecutionFlowSnapshotOutcome;
 typedef Aws::Utils::Outcome<GetFlowExecutionResult, BedrockAgentRuntimeError> GetFlowExecutionOutcome;
 typedef Aws::Utils::Outcome<GetInvocationStepResult, BedrockAgentRuntimeError> GetInvocationStepOutcome;
@@ -148,6 +153,7 @@ typedef Aws::Utils::Outcome<UpdateSessionResult, BedrockAgentRuntimeError> Updat
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<AgenticRetrieveStreamOutcome> AgenticRetrieveStreamOutcomeCallable;
 typedef std::future<CreateInvocationOutcome> CreateInvocationOutcomeCallable;
 typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
 typedef std::future<DeleteAgentMemoryOutcome> DeleteAgentMemoryOutcomeCallable;
@@ -155,6 +161,7 @@ typedef std::future<DeleteSessionOutcome> DeleteSessionOutcomeCallable;
 typedef std::future<EndSessionOutcome> EndSessionOutcomeCallable;
 typedef std::future<GenerateQueryOutcome> GenerateQueryOutcomeCallable;
 typedef std::future<GetAgentMemoryOutcome> GetAgentMemoryOutcomeCallable;
+typedef std::future<GetDocumentContentOutcome> GetDocumentContentOutcomeCallable;
 typedef std::future<GetExecutionFlowSnapshotOutcome> GetExecutionFlowSnapshotOutcomeCallable;
 typedef std::future<GetFlowExecutionOutcome> GetFlowExecutionOutcomeCallable;
 typedef std::future<GetInvocationStepOutcome> GetInvocationStepOutcomeCallable;
@@ -185,6 +192,9 @@ typedef std::future<UpdateSessionOutcome> UpdateSessionOutcomeCallable;
 class BedrockAgentRuntimeClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::AgenticRetrieveStreamRequest&,
+                           const Model::AgenticRetrieveStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AgenticRetrieveStreamResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::CreateInvocationRequest&, const Model::CreateInvocationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateInvocationResponseReceivedHandler;
@@ -206,6 +216,9 @@ typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::Genera
 typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::GetAgentMemoryRequest&, const Model::GetAgentMemoryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAgentMemoryResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::GetDocumentContentRequest&,
+                           const Model::GetDocumentContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDocumentContentResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::GetExecutionFlowSnapshotRequest&,
                            const Model::GetExecutionFlowSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetExecutionFlowSnapshotResponseReceivedHandler;

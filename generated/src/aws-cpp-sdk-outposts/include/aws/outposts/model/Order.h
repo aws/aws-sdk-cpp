@@ -58,6 +58,42 @@ class Order {
 
   ///@{
   /**
+   * <p>The ID of the quote associated with the order.</p>
+   */
+  inline const Aws::String& GetQuoteIdentifier() const { return m_quoteIdentifier; }
+  inline bool QuoteIdentifierHasBeenSet() const { return m_quoteIdentifierHasBeenSet; }
+  template <typename QuoteIdentifierT = Aws::String>
+  void SetQuoteIdentifier(QuoteIdentifierT&& value) {
+    m_quoteIdentifierHasBeenSet = true;
+    m_quoteIdentifier = std::forward<QuoteIdentifierT>(value);
+  }
+  template <typename QuoteIdentifierT = Aws::String>
+  Order& WithQuoteIdentifier(QuoteIdentifierT&& value) {
+    SetQuoteIdentifier(std::forward<QuoteIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the quote option associated with the order.</p>
+   */
+  inline const Aws::String& GetQuoteOptionIdentifier() const { return m_quoteOptionIdentifier; }
+  inline bool QuoteOptionIdentifierHasBeenSet() const { return m_quoteOptionIdentifierHasBeenSet; }
+  template <typename QuoteOptionIdentifierT = Aws::String>
+  void SetQuoteOptionIdentifier(QuoteOptionIdentifierT&& value) {
+    m_quoteOptionIdentifierHasBeenSet = true;
+    m_quoteOptionIdentifier = std::forward<QuoteOptionIdentifierT>(value);
+  }
+  template <typename QuoteOptionIdentifierT = Aws::String>
+  Order& WithQuoteOptionIdentifier(QuoteOptionIdentifierT&& value) {
+    SetQuoteOptionIdentifier(std::forward<QuoteOptionIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the order.</p>
    */
   inline const Aws::String& GetOrderId() const { return m_orderId; }
@@ -209,6 +245,10 @@ class Order {
  private:
   Aws::String m_outpostId;
 
+  Aws::String m_quoteIdentifier;
+
+  Aws::String m_quoteOptionIdentifier;
+
   Aws::String m_orderId;
 
   OrderStatus m_status{OrderStatus::NOT_SET};
@@ -225,6 +265,8 @@ class Order {
 
   OrderType m_orderType{OrderType::NOT_SET};
   bool m_outpostIdHasBeenSet = false;
+  bool m_quoteIdentifierHasBeenSet = false;
+  bool m_quoteOptionIdentifierHasBeenSet = false;
   bool m_orderIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_lineItemsHasBeenSet = false;

@@ -106,4 +106,10 @@ void InvokeHarnessRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("harnessArn", ss.str());
     ss.str("");
   }
+
+  if (m_qualifierHasBeenSet) {
+    ss << m_qualifier;
+    uri.AddQueryStringParameter("qualifier", ss.str());
+    ss.str("");
+  }
 }

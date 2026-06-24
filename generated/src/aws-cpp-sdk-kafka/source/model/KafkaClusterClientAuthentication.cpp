@@ -22,6 +22,10 @@ KafkaClusterClientAuthentication& KafkaClusterClientAuthentication::operator=(Js
     m_saslScram = jsonValue.GetObject("saslScram");
     m_saslScramHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mTLS")) {
+    m_mTLS = jsonValue.GetObject("mTLS");
+    m_mTLSHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue KafkaClusterClientAuthentication::Jsonize() const {
 
   if (m_saslScramHasBeenSet) {
     payload.WithObject("saslScram", m_saslScram.Jsonize());
+  }
+
+  if (m_mTLSHasBeenSet) {
+    payload.WithObject("mTLS", m_mTLS.Jsonize());
   }
 
   return payload;

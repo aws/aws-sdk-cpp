@@ -31,6 +31,10 @@ Aws::String UpdateVirtualInterfaceAttributesRequest::SerializePayload() const {
     payload.WithString("virtualInterfaceName", m_virtualInterfaceName);
   }
 
+  if (m_rateLimitHasBeenSet) {
+    payload.WithString("rateLimit", m_rateLimit);
+  }
+
   return payload.View().WriteReadable();
 }
 

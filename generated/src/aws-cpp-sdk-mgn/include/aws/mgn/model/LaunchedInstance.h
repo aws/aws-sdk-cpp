@@ -5,8 +5,11 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/model/FirstBoot.h>
+#include <aws/mgn/model/LastKnownCheck.h>
+#include <aws/mgn/model/LastKnownCheckStatus.h>
 
 #include <utility>
 
@@ -83,15 +86,61 @@ class LaunchedInstance {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Launched instance last known checks.</p>
+   */
+  inline const Aws::Vector<LastKnownCheck>& GetLastKnownChecks() const { return m_lastKnownChecks; }
+  inline bool LastKnownChecksHasBeenSet() const { return m_lastKnownChecksHasBeenSet; }
+  template <typename LastKnownChecksT = Aws::Vector<LastKnownCheck>>
+  void SetLastKnownChecks(LastKnownChecksT&& value) {
+    m_lastKnownChecksHasBeenSet = true;
+    m_lastKnownChecks = std::forward<LastKnownChecksT>(value);
+  }
+  template <typename LastKnownChecksT = Aws::Vector<LastKnownCheck>>
+  LaunchedInstance& WithLastKnownChecks(LastKnownChecksT&& value) {
+    SetLastKnownChecks(std::forward<LastKnownChecksT>(value));
+    return *this;
+  }
+  template <typename LastKnownChecksT = LastKnownCheck>
+  LaunchedInstance& AddLastKnownChecks(LastKnownChecksT&& value) {
+    m_lastKnownChecksHasBeenSet = true;
+    m_lastKnownChecks.emplace_back(std::forward<LastKnownChecksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Launched instance last known FSx checks status.</p>
+   */
+  inline LastKnownCheckStatus GetLastKnownFsxChecksStatus() const { return m_lastKnownFsxChecksStatus; }
+  inline bool LastKnownFsxChecksStatusHasBeenSet() const { return m_lastKnownFsxChecksStatusHasBeenSet; }
+  inline void SetLastKnownFsxChecksStatus(LastKnownCheckStatus value) {
+    m_lastKnownFsxChecksStatusHasBeenSet = true;
+    m_lastKnownFsxChecksStatus = value;
+  }
+  inline LaunchedInstance& WithLastKnownFsxChecksStatus(LastKnownCheckStatus value) {
+    SetLastKnownFsxChecksStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ec2InstanceID;
 
   Aws::String m_jobID;
 
   FirstBoot m_firstBoot{FirstBoot::NOT_SET};
+
+  Aws::Vector<LastKnownCheck> m_lastKnownChecks;
+
+  LastKnownCheckStatus m_lastKnownFsxChecksStatus{LastKnownCheckStatus::NOT_SET};
   bool m_ec2InstanceIDHasBeenSet = false;
   bool m_jobIDHasBeenSet = false;
   bool m_firstBootHasBeenSet = false;
+  bool m_lastKnownChecksHasBeenSet = false;
+  bool m_lastKnownFsxChecksStatusHasBeenSet = false;
 };
 
 }  // namespace Model

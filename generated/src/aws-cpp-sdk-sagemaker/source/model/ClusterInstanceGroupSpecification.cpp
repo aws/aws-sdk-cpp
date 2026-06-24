@@ -83,6 +83,14 @@ ClusterInstanceGroupSpecification& ClusterInstanceGroupSpecification::operator=(
     m_imageId = jsonValue.GetString("ImageId");
     m_imageIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AutoPatchConfig")) {
+    m_autoPatchConfig = jsonValue.GetObject("AutoPatchConfig");
+    m_autoPatchConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ImageReleaseVersion")) {
+    m_imageReleaseVersion = jsonValue.GetString("ImageReleaseVersion");
+    m_imageReleaseVersionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("KubernetesConfig")) {
     m_kubernetesConfig = jsonValue.GetObject("KubernetesConfig");
     m_kubernetesConfigHasBeenSet = true;
@@ -170,6 +178,14 @@ JsonValue ClusterInstanceGroupSpecification::Jsonize() const {
 
   if (m_imageIdHasBeenSet) {
     payload.WithString("ImageId", m_imageId);
+  }
+
+  if (m_autoPatchConfigHasBeenSet) {
+    payload.WithObject("AutoPatchConfig", m_autoPatchConfig.Jsonize());
+  }
+
+  if (m_imageReleaseVersionHasBeenSet) {
+    payload.WithString("ImageReleaseVersion", m_imageReleaseVersion);
   }
 
   if (m_kubernetesConfigHasBeenSet) {

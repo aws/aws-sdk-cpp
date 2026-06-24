@@ -10,6 +10,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/CreationDateCondition.h>
 #include <aws/ec2/model/DeprecationTimeCondition.h>
+#include <aws/ec2/model/ImageWatermarkFilterResponse.h>
 
 #include <utility>
 
@@ -163,6 +164,34 @@ class ImageCriterion {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The watermark criteria that an AMI must match to be allowed. An AMI is
+   * allowed if it carries at least one watermark that satisfies an
+   * ImageWatermarkFilter. A watermark satisfies a filter when all specified fields
+   * in the ImageWatermarkFilter match the corresponding values on the watermark of
+   * the AMI.</p> <p>Maximum: 50 values</p>
+   */
+  inline const Aws::Vector<ImageWatermarkFilterResponse>& GetImageWatermarks() const { return m_imageWatermarks; }
+  inline bool ImageWatermarksHasBeenSet() const { return m_imageWatermarksHasBeenSet; }
+  template <typename ImageWatermarksT = Aws::Vector<ImageWatermarkFilterResponse>>
+  void SetImageWatermarks(ImageWatermarksT&& value) {
+    m_imageWatermarksHasBeenSet = true;
+    m_imageWatermarks = std::forward<ImageWatermarksT>(value);
+  }
+  template <typename ImageWatermarksT = Aws::Vector<ImageWatermarkFilterResponse>>
+  ImageCriterion& WithImageWatermarks(ImageWatermarksT&& value) {
+    SetImageWatermarks(std::forward<ImageWatermarksT>(value));
+    return *this;
+  }
+  template <typename ImageWatermarksT = ImageWatermarkFilterResponse>
+  ImageCriterion& AddImageWatermarks(ImageWatermarksT&& value) {
+    m_imageWatermarksHasBeenSet = true;
+    m_imageWatermarks.emplace_back(std::forward<ImageWatermarksT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_imageProviders;
 
@@ -173,11 +202,14 @@ class ImageCriterion {
   DeprecationTimeCondition m_deprecationTimeCondition;
 
   CreationDateCondition m_creationDateCondition;
+
+  Aws::Vector<ImageWatermarkFilterResponse> m_imageWatermarks;
   bool m_imageProvidersHasBeenSet = false;
   bool m_marketplaceProductCodesHasBeenSet = false;
   bool m_imageNamesHasBeenSet = false;
   bool m_deprecationTimeConditionHasBeenSet = false;
   bool m_creationDateConditionHasBeenSet = false;
+  bool m_imageWatermarksHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -169,6 +169,17 @@ Image& Image::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(freeTierEligibleNode.GetText()).c_str()).c_str());
       m_freeTierEligibleHasBeenSet = true;
     }
+    XmlNode imageWatermarksNode = resultNode.FirstChild("imageWatermarkSet");
+    if (!imageWatermarksNode.IsNull()) {
+      XmlNode imageWatermarksMember = imageWatermarksNode.FirstChild("item");
+      m_imageWatermarksHasBeenSet = !imageWatermarksMember.IsNull();
+      while (!imageWatermarksMember.IsNull()) {
+        m_imageWatermarks.push_back(imageWatermarksMember);
+        imageWatermarksMember = imageWatermarksMember.NextNode("item");
+      }
+
+      m_imageWatermarksHasBeenSet = true;
+    }
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if (!imageIdNode.IsNull()) {
       m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
@@ -364,6 +375,15 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
     oStream << location << index << locationValue << ".FreeTierEligible=" << std::boolalpha << m_freeTierEligible << "&";
   }
 
+  if (m_imageWatermarksHasBeenSet) {
+    unsigned imageWatermarksIdx = 1;
+    for (auto& item : m_imageWatermarks) {
+      Aws::StringStream imageWatermarksSs;
+      imageWatermarksSs << location << index << locationValue << ".ImageWatermarkSet." << imageWatermarksIdx++;
+      item.OutputToStream(oStream, imageWatermarksSs.str().c_str());
+    }
+  }
+
   if (m_imageIdHasBeenSet) {
     oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
@@ -512,6 +532,14 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const {
   }
   if (m_freeTierEligibleHasBeenSet) {
     oStream << location << ".FreeTierEligible=" << std::boolalpha << m_freeTierEligible << "&";
+  }
+  if (m_imageWatermarksHasBeenSet) {
+    unsigned imageWatermarksIdx = 1;
+    for (auto& item : m_imageWatermarks) {
+      Aws::StringStream imageWatermarksSs;
+      imageWatermarksSs << location << ".ImageWatermarkSet." << imageWatermarksIdx++;
+      item.OutputToStream(oStream, imageWatermarksSs.str().c_str());
+    }
   }
   if (m_imageIdHasBeenSet) {
     oStream << location << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";

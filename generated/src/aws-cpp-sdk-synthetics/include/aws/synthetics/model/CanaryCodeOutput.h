@@ -81,8 +81,8 @@ class CanaryCodeOutput {
    * only supported value is <code>multi-checks</code>.</p> <p>Multi-checks monitors
    * HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key,
    * OAuth, SigV4) and assertion capabilities. When you specify
-   * <code>BlueprintTypes</code>, the Handler field cannot be specified since the
-   * blueprint provides a pre-defined entry point.</p> <p>
+   * <code>BlueprintTypes</code>, the <code>Handler</code> field cannot be specified
+   * since the blueprint provides a pre-defined entry point.</p> <p>
    * <code>BlueprintTypes</code> is supported only on canaries for syn-nodejs-3.0
    * runtime or later.</p>
    */

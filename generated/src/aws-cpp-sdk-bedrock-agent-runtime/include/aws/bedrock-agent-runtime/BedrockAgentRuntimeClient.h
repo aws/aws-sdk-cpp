@@ -89,6 +89,40 @@ class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient
   virtual ~BedrockAgentRuntimeClient();
 
   /**
+   * <p>Retrieves information from one or more knowledge bases using an agentic
+   * approach. Agentic retrieval uses a foundation model to intelligently decompose
+   * complex queries into sub-queries and iteratively retrieve relevant information
+   * from your knowledge bases. This approach improves retrieval accuracy for
+   * complex, multi-step questions that a single retrieval pass might not fully
+   * address.</p> <p>The operation returns results through a stream that includes
+   * retrieval results, trace events for visibility into the process, and a generated
+   * response synthesized from the results by default, which can be turned
+   * off.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/AgenticRetrieveStream">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AgenticRetrieveStreamOutcome AgenticRetrieveStream(Model::AgenticRetrieveStreamRequest& request) const;
+
+  /**
+   * A Callable wrapper for AgenticRetrieveStream that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AgenticRetrieveStreamRequestT = Model::AgenticRetrieveStreamRequest>
+  Model::AgenticRetrieveStreamOutcomeCallable AgenticRetrieveStreamCallable(AgenticRetrieveStreamRequestT& request) const {
+    return SubmitCallable(&BedrockAgentRuntimeClient::AgenticRetrieveStream, request);
+  }
+
+  /**
+   * An Async wrapper for AgenticRetrieveStream that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AgenticRetrieveStreamRequestT = Model::AgenticRetrieveStreamRequest>
+  void AgenticRetrieveStreamAsync(AgenticRetrieveStreamRequestT& request, const AgenticRetrieveStreamResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentRuntimeClient::AgenticRetrieveStream, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new invocation within a session. An invocation groups the related
    * invocation steps that store the content from a conversation. For more
    * information about sessions, see <a
@@ -318,6 +352,33 @@ class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient
   void GetAgentMemoryAsync(const GetAgentMemoryRequestT& request, const GetAgentMemoryResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentRuntimeClient::GetAgentMemory, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the content of an ingested document from a knowledge base. Returns
+   * a pre-signed URL for secure document access.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetDocumentContent">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDocumentContentOutcome GetDocumentContent(const Model::GetDocumentContentRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDocumentContent that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetDocumentContentRequestT = Model::GetDocumentContentRequest>
+  Model::GetDocumentContentOutcomeCallable GetDocumentContentCallable(const GetDocumentContentRequestT& request) const {
+    return SubmitCallable(&BedrockAgentRuntimeClient::GetDocumentContent, request);
+  }
+
+  /**
+   * An Async wrapper for GetDocumentContent that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetDocumentContentRequestT = Model::GetDocumentContentRequest>
+  void GetDocumentContentAsync(const GetDocumentContentRequestT& request, const GetDocumentContentResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentRuntimeClient::GetDocumentContent, request, handler, context);
   }
 
   /**
@@ -865,8 +926,12 @@ class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient
    * <p>Queries a knowledge base and generates responses based on the retrieved
    * results and using the specified foundation model or <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
-   * profile</a>. The response only cites sources that are relevant to the
-   * query.</p><p><h3>See Also:</h3>   <a
+   * profile</a>. The response only cites sources that are relevant to the query.</p>
+   *  <p>This API cannot be used with managed knowledge bases. Use <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_AgenticRetrieveStream.html">AgenticRetrieveStream</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html">Retrieve</a>
+   * with managed knowledge bases.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrieveAndGenerate">AWS
    * API Reference</a></p>
    */
@@ -893,7 +958,12 @@ class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient
 
   /**
    * <p>Queries a knowledge base and generates responses based on the retrieved
-   * results, with output in streaming format.</p>  <p>The CLI doesn't support
+   * results, with output in streaming format.</p>  <p>This API cannot be used
+   * with managed knowledge bases. Use <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_AgenticRetrieveStream.html">AgenticRetrieveStream</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html">Retrieve</a>
+   * with managed knowledge bases.</p>   <p>The CLI doesn't support
    * streaming operations in Amazon Bedrock, including
    * <code>InvokeModelWithResponseStream</code>.</p>  <p>This operation
    * requires permission for the <code> bedrock:RetrieveAndGenerate</code>

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityagent/SecurityAgentRequest.h>
 #include <aws/securityagent/SecurityAgent_EXPORTS.h>
+#include <aws/securityagent/model/DiffSource.h>
 
 #include <utility>
 
@@ -67,12 +68,34 @@ class StartCodeReviewJobRequest : public SecurityAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Source of the diff for a differential scan. When present, the job analyzes
+   * only the changed lines instead of performing a full scan.</p>
+   */
+  inline const DiffSource& GetDiffSource() const { return m_diffSource; }
+  inline bool DiffSourceHasBeenSet() const { return m_diffSourceHasBeenSet; }
+  template <typename DiffSourceT = DiffSource>
+  void SetDiffSource(DiffSourceT&& value) {
+    m_diffSourceHasBeenSet = true;
+    m_diffSource = std::forward<DiffSourceT>(value);
+  }
+  template <typename DiffSourceT = DiffSource>
+  StartCodeReviewJobRequest& WithDiffSource(DiffSourceT&& value) {
+    SetDiffSource(std::forward<DiffSourceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_agentSpaceId;
 
   Aws::String m_codeReviewId;
+
+  DiffSource m_diffSource;
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_codeReviewIdHasBeenSet = false;
+  bool m_diffSourceHasBeenSet = false;
 };
 
 }  // namespace Model

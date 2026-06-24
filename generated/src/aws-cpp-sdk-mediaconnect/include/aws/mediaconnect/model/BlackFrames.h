@@ -35,7 +35,7 @@ class BlackFrames {
   ///@{
   /**
    * <p> Indicates whether the <code>BlackFrames</code> metric is enabled or
-   * disabled..</p>
+   * disabled.</p>
    */
   inline State GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }

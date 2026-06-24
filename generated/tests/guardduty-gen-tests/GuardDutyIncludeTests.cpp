@@ -48,10 +48,13 @@
 #include <aws/guardduty/model/BucketLevelPermissions.h>
 #include <aws/guardduty/model/BucketPolicy.h>
 #include <aws/guardduty/model/City.h>
+#include <aws/guardduty/model/CloudDetails.h>
+#include <aws/guardduty/model/CloudProvider.h>
 #include <aws/guardduty/model/CloudTrailConfigurationResult.h>
 #include <aws/guardduty/model/CloudformationStack.h>
 #include <aws/guardduty/model/ClusterStatus.h>
 #include <aws/guardduty/model/Condition.h>
+#include <aws/guardduty/model/Confidence.h>
 #include <aws/guardduty/model/ConflictException.h>
 #include <aws/guardduty/model/Container.h>
 #include <aws/guardduty/model/ContainerFindingResource.h>
@@ -78,6 +81,8 @@
 #include <aws/guardduty/model/CreateFilterResult.h>
 #include <aws/guardduty/model/CreateIPSetRequest.h>
 #include <aws/guardduty/model/CreateIPSetResult.h>
+#include <aws/guardduty/model/CreateInvestigationRequest.h>
+#include <aws/guardduty/model/CreateInvestigationResult.h>
 #include <aws/guardduty/model/CreateMalwareProtectionPlanRequest.h>
 #include <aws/guardduty/model/CreateMalwareProtectionPlanResult.h>
 #include <aws/guardduty/model/CreateMembersRequest.h>
@@ -204,6 +209,8 @@
 #include <aws/guardduty/model/GetFindingsStatisticsResult.h>
 #include <aws/guardduty/model/GetIPSetRequest.h>
 #include <aws/guardduty/model/GetIPSetResult.h>
+#include <aws/guardduty/model/GetInvestigationRequest.h>
+#include <aws/guardduty/model/GetInvestigationResult.h>
 #include <aws/guardduty/model/GetInvitationsCountRequest.h>
 #include <aws/guardduty/model/GetInvitationsCountResult.h>
 #include <aws/guardduty/model/GetMalwareProtectionPlanRequest.h>
@@ -240,6 +247,12 @@
 #include <aws/guardduty/model/IndicatorType.h>
 #include <aws/guardduty/model/InstanceDetails.h>
 #include <aws/guardduty/model/InternalServerErrorException.h>
+#include <aws/guardduty/model/Investigation.h>
+#include <aws/guardduty/model/InvestigationMetadata.h>
+#include <aws/guardduty/model/InvestigationSortCriteria.h>
+#include <aws/guardduty/model/InvestigationSortField.h>
+#include <aws/guardduty/model/InvestigationStatus.h>
+#include <aws/guardduty/model/InvestigationSummary.h>
 #include <aws/guardduty/model/Invitation.h>
 #include <aws/guardduty/model/InviteMembersRequest.h>
 #include <aws/guardduty/model/InviteMembersResult.h>
@@ -273,6 +286,8 @@
 #include <aws/guardduty/model/ListFindingsResult.h>
 #include <aws/guardduty/model/ListIPSetsRequest.h>
 #include <aws/guardduty/model/ListIPSetsResult.h>
+#include <aws/guardduty/model/ListInvestigationsRequest.h>
+#include <aws/guardduty/model/ListInvestigationsResult.h>
 #include <aws/guardduty/model/ListInvitationsRequest.h>
 #include <aws/guardduty/model/ListInvitationsResult.h>
 #include <aws/guardduty/model/ListMalwareProtectionPlansRequest.h>
@@ -361,6 +376,7 @@
 #include <aws/guardduty/model/PortProbeDetail.h>
 #include <aws/guardduty/model/PrivateIpAddressDetails.h>
 #include <aws/guardduty/model/ProcessDetails.h>
+#include <aws/guardduty/model/Product.h>
 #include <aws/guardduty/model/ProductCode.h>
 #include <aws/guardduty/model/ProfileSubtype.h>
 #include <aws/guardduty/model/ProfileType.h>
@@ -386,6 +402,7 @@
 #include <aws/guardduty/model/ResourceStatistics.h>
 #include <aws/guardduty/model/ResourceType.h>
 #include <aws/guardduty/model/ResourceV2.h>
+#include <aws/guardduty/model/RiskLevel.h>
 #include <aws/guardduty/model/RuntimeContext.h>
 #include <aws/guardduty/model/RuntimeDetails.h>
 #include <aws/guardduty/model/S3Bucket.h>

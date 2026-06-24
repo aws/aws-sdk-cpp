@@ -239,9 +239,9 @@ class ModifyTransitGatewayOptions {
    * 4294967294 for 32-bit ASNs.</p> <p>The modify ASN operation is not allowed on a
    * transit gateway if it has the following attachments:</p> <ul> <li> <p>Dynamic
    * VPN</p> </li> <li> <p>Static VPN</p> </li> <li> <p>Direct Connect Gateway</p>
-   * </li> <li> <p>Connect</p> </li> </ul> <p>You must first delete all transit
-   * gateway attachments configured prior to modifying the ASN on the transit
-   * gateway.</p>
+   * </li> <li> <p>Connect</p> </li> <li> <p>VPN Concentrator</p> </li> <li>
+   * <p>Client VPN</p> </li> </ul> <p>You must first delete all transit gateway
+   * attachments configured prior to modifying the ASN on the transit gateway.</p>
    */
   inline long long GetAmazonSideAsn() const { return m_amazonSideAsn; }
   inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }

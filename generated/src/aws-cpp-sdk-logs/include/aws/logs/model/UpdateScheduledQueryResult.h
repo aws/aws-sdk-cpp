@@ -11,6 +11,7 @@
 #include <aws/logs/model/DestinationConfiguration.h>
 #include <aws/logs/model/ExecutionStatus.h>
 #include <aws/logs/model/QueryLanguage.h>
+#include <aws/logs/model/ScheduleType.h>
 #include <aws/logs/model/ScheduledQueryState.h>
 
 #include <utility>
@@ -189,6 +190,21 @@ class UpdateScheduledQueryResult {
 
   ///@{
   /**
+   * <p>The end time offset in seconds of the updated scheduled query.</p>
+   */
+  inline long long GetEndTimeOffset() const { return m_endTimeOffset; }
+  inline void SetEndTimeOffset(long long value) {
+    m_endTimeOffsetHasBeenSet = true;
+    m_endTimeOffset = value;
+  }
+  inline UpdateScheduledQueryResult& WithEndTimeOffset(long long value) {
+    SetEndTimeOffset(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The destination configuration of the updated scheduled query.</p>
    */
   inline const DestinationConfiguration& GetDestinationConfiguration() const { return m_destinationConfiguration; }
@@ -215,6 +231,21 @@ class UpdateScheduledQueryResult {
   }
   inline UpdateScheduledQueryResult& WithState(ScheduledQueryState value) {
     SetState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The schedule type of the updated scheduled query.</p>
+   */
+  inline ScheduleType GetScheduleType() const { return m_scheduleType; }
+  inline void SetScheduleType(ScheduleType value) {
+    m_scheduleTypeHasBeenSet = true;
+    m_scheduleType = value;
+  }
+  inline UpdateScheduledQueryResult& WithScheduleType(ScheduleType value) {
+    SetScheduleType(value);
     return *this;
   }
   ///@}
@@ -361,9 +392,13 @@ class UpdateScheduledQueryResult {
 
   long long m_startTimeOffset{0};
 
+  long long m_endTimeOffset{0};
+
   DestinationConfiguration m_destinationConfiguration;
 
   ScheduledQueryState m_state{ScheduledQueryState::NOT_SET};
+
+  ScheduleType m_scheduleType{ScheduleType::NOT_SET};
 
   long long m_lastTriggeredTime{0};
 
@@ -390,8 +425,10 @@ class UpdateScheduledQueryResult {
   bool m_scheduleExpressionHasBeenSet = false;
   bool m_timezoneHasBeenSet = false;
   bool m_startTimeOffsetHasBeenSet = false;
+  bool m_endTimeOffsetHasBeenSet = false;
   bool m_destinationConfigurationHasBeenSet = false;
   bool m_stateHasBeenSet = false;
+  bool m_scheduleTypeHasBeenSet = false;
   bool m_lastTriggeredTimeHasBeenSet = false;
   bool m_lastExecutionStatusHasBeenSet = false;
   bool m_scheduleStartTimeHasBeenSet = false;

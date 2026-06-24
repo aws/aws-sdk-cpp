@@ -7,6 +7,7 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/mq/model/DescribeSharedResourcesPaginationTraits.h>
 #include <aws/mq/model/ListBrokersPaginationTraits.h>
 
 #include <memory>
@@ -17,6 +18,18 @@ namespace MQ {
 template <typename DerivedClient>
 class MQPaginationBase {
  public:
+  /**
+   * Create a paginator for DescribeSharedResources operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSharedResourcesRequest,
+                                    Pagination::DescribeSharedResourcesPaginationTraits<DerivedClient>>
+  DescribeSharedResourcesPaginator(const Model::DescribeSharedResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSharedResourcesRequest,
+                                             Pagination::DescribeSharedResourcesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListBrokers operation
    */

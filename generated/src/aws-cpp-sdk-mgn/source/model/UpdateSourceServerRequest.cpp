@@ -27,5 +27,17 @@ Aws::String UpdateSourceServerRequest::SerializePayload() const {
     payload.WithObject("connectorAction", m_connectorAction.Jsonize());
   }
 
+  if (m_userProvidedIDHasBeenSet) {
+    payload.WithString("userProvidedID", m_userProvidedID);
+  }
+
+  if (m_fqdnForActionFrameworkHasBeenSet) {
+    payload.WithString("fqdnForActionFramework", m_fqdnForActionFramework);
+  }
+
+  if (m_platformHasBeenSet) {
+    payload.WithString("platform", m_platform);
+  }
+
   return payload.View().WriteReadable();
 }

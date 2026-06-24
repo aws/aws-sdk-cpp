@@ -148,6 +148,17 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator=(const XmlNode& x
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
       m_supportsGlobalDatabasesHasBeenSet = true;
     }
+    XmlNode supportedNetworkTypesNode = resultNode.FirstChild("SupportedNetworkTypes");
+    if (!supportedNetworkTypesNode.IsNull()) {
+      XmlNode supportedNetworkTypesMember = supportedNetworkTypesNode.FirstChild("member");
+      m_supportedNetworkTypesHasBeenSet = !supportedNetworkTypesMember.IsNull();
+      while (!supportedNetworkTypesMember.IsNull()) {
+        m_supportedNetworkTypes.push_back(supportedNetworkTypesMember.GetText());
+        supportedNetworkTypesMember = supportedNetworkTypesMember.NextNode("member");
+      }
+
+      m_supportedNetworkTypesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -246,6 +257,14 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if (m_supportsGlobalDatabasesHasBeenSet) {
     oStream << location << index << locationValue << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
   }
+
+  if (m_supportedNetworkTypesHasBeenSet) {
+    unsigned supportedNetworkTypesIdx = 1;
+    for (auto& item : m_supportedNetworkTypes) {
+      oStream << location << index << locationValue << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -316,6 +335,13 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   }
   if (m_supportsGlobalDatabasesHasBeenSet) {
     oStream << location << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
+  }
+  if (m_supportedNetworkTypesHasBeenSet) {
+    unsigned supportedNetworkTypesIdx = 1;
+    for (auto& item : m_supportedNetworkTypes) {
+      oStream << location << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str())
+              << "&";
+    }
   }
 }
 

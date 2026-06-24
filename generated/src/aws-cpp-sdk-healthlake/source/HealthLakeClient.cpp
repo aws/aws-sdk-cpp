@@ -33,6 +33,7 @@
 #include <aws/healthlake/model/StartFHIRImportJobRequest.h>
 #include <aws/healthlake/model/TagResourceRequest.h>
 #include <aws/healthlake/model/UntagResourceRequest.h>
+#include <aws/healthlake/model/UpdateFHIRDatastoreRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -258,4 +259,10 @@ TagResourceOutcome HealthLakeClient::TagResource(const TagResourceRequest& reque
 UntagResourceOutcome HealthLakeClient::UntagResource(const UntagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateFHIRDatastoreOutcome HealthLakeClient::UpdateFHIRDatastore(const UpdateFHIRDatastoreRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFHIRDatastoreOutcome(result.GetResultWithOwnership())
+                            : UpdateFHIRDatastoreOutcome(std::move(result.GetError()));
 }

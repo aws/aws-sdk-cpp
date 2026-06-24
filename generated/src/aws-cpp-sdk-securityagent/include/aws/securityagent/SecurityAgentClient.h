@@ -118,6 +118,36 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Batch creates security requirements in a customer managed pack.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchCreateSecurityRequirements">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchCreateSecurityRequirementsOutcome BatchCreateSecurityRequirements(
+      const Model::BatchCreateSecurityRequirementsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchCreateSecurityRequirements that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename BatchCreateSecurityRequirementsRequestT = Model::BatchCreateSecurityRequirementsRequest>
+  Model::BatchCreateSecurityRequirementsOutcomeCallable BatchCreateSecurityRequirementsCallable(
+      const BatchCreateSecurityRequirementsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::BatchCreateSecurityRequirements, request);
+  }
+
+  /**
+   * An Async wrapper for BatchCreateSecurityRequirements that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename BatchCreateSecurityRequirementsRequestT = Model::BatchCreateSecurityRequirementsRequest>
+  void BatchCreateSecurityRequirementsAsync(const BatchCreateSecurityRequirementsRequestT& request,
+                                            const BatchCreateSecurityRequirementsResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::BatchCreateSecurityRequirements, request, handler, context);
+  }
+
+  /**
    * <p>Deletes one or more code reviews from an agent space.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDeleteCodeReviews">AWS
@@ -170,6 +200,64 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   void BatchDeletePentestsAsync(const BatchDeletePentestsRequestT& request, const BatchDeletePentestsResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityAgentClient::BatchDeletePentests, request, handler, context);
+  }
+
+  /**
+   * <p>Batch deletes security requirements from a customer managed
+   * pack.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDeleteSecurityRequirements">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchDeleteSecurityRequirementsOutcome BatchDeleteSecurityRequirements(
+      const Model::BatchDeleteSecurityRequirementsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchDeleteSecurityRequirements that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename BatchDeleteSecurityRequirementsRequestT = Model::BatchDeleteSecurityRequirementsRequest>
+  Model::BatchDeleteSecurityRequirementsOutcomeCallable BatchDeleteSecurityRequirementsCallable(
+      const BatchDeleteSecurityRequirementsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::BatchDeleteSecurityRequirements, request);
+  }
+
+  /**
+   * An Async wrapper for BatchDeleteSecurityRequirements that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename BatchDeleteSecurityRequirementsRequestT = Model::BatchDeleteSecurityRequirementsRequest>
+  void BatchDeleteSecurityRequirementsAsync(const BatchDeleteSecurityRequirementsRequestT& request,
+                                            const BatchDeleteSecurityRequirementsResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::BatchDeleteSecurityRequirements, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes one or more threat models from an agent space.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDeleteThreatModels">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchDeleteThreatModelsOutcome BatchDeleteThreatModels(const Model::BatchDeleteThreatModelsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchDeleteThreatModels that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchDeleteThreatModelsRequestT = Model::BatchDeleteThreatModelsRequest>
+  Model::BatchDeleteThreatModelsOutcomeCallable BatchDeleteThreatModelsCallable(const BatchDeleteThreatModelsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::BatchDeleteThreatModels, request);
+  }
+
+  /**
+   * An Async wrapper for BatchDeleteThreatModels that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchDeleteThreatModelsRequestT = Model::BatchDeleteThreatModelsRequest>
+  void BatchDeleteThreatModelsAsync(const BatchDeleteThreatModelsRequestT& request,
+                                    const BatchDeleteThreatModelsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::BatchDeleteThreatModels, request, handler, context);
   }
 
   /**
@@ -422,6 +510,36 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Batch retrieves security requirements from a pack.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetSecurityRequirements">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetSecurityRequirementsOutcome BatchGetSecurityRequirements(
+      const Model::BatchGetSecurityRequirementsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetSecurityRequirements that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename BatchGetSecurityRequirementsRequestT = Model::BatchGetSecurityRequirementsRequest>
+  Model::BatchGetSecurityRequirementsOutcomeCallable BatchGetSecurityRequirementsCallable(
+      const BatchGetSecurityRequirementsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::BatchGetSecurityRequirements, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetSecurityRequirements that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchGetSecurityRequirementsRequestT = Model::BatchGetSecurityRequirementsRequest>
+  void BatchGetSecurityRequirementsAsync(const BatchGetSecurityRequirementsRequestT& request,
+                                         const BatchGetSecurityRequirementsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::BatchGetSecurityRequirements, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves information about one or more target domains.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetTargetDomains">AWS
@@ -446,6 +564,147 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   void BatchGetTargetDomainsAsync(const BatchGetTargetDomainsRequestT& request, const BatchGetTargetDomainsResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityAgentClient::BatchGetTargetDomains, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about one or more tasks within a threat model
+   * job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetThreatModelJobTasks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetThreatModelJobTasksOutcome BatchGetThreatModelJobTasks(
+      const Model::BatchGetThreatModelJobTasksRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetThreatModelJobTasks that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename BatchGetThreatModelJobTasksRequestT = Model::BatchGetThreatModelJobTasksRequest>
+  Model::BatchGetThreatModelJobTasksOutcomeCallable BatchGetThreatModelJobTasksCallable(
+      const BatchGetThreatModelJobTasksRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::BatchGetThreatModelJobTasks, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetThreatModelJobTasks that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchGetThreatModelJobTasksRequestT = Model::BatchGetThreatModelJobTasksRequest>
+  void BatchGetThreatModelJobTasksAsync(const BatchGetThreatModelJobTasksRequestT& request,
+                                        const BatchGetThreatModelJobTasksResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::BatchGetThreatModelJobTasks, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about one or more threat model jobs in an agent
+   * space.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetThreatModelJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetThreatModelJobsOutcome BatchGetThreatModelJobs(const Model::BatchGetThreatModelJobsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetThreatModelJobs that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchGetThreatModelJobsRequestT = Model::BatchGetThreatModelJobsRequest>
+  Model::BatchGetThreatModelJobsOutcomeCallable BatchGetThreatModelJobsCallable(const BatchGetThreatModelJobsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::BatchGetThreatModelJobs, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetThreatModelJobs that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchGetThreatModelJobsRequestT = Model::BatchGetThreatModelJobsRequest>
+  void BatchGetThreatModelJobsAsync(const BatchGetThreatModelJobsRequestT& request,
+                                    const BatchGetThreatModelJobsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::BatchGetThreatModelJobs, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about one or more threat models in an agent
+   * space.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetThreatModels">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetThreatModelsOutcome BatchGetThreatModels(const Model::BatchGetThreatModelsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetThreatModels that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchGetThreatModelsRequestT = Model::BatchGetThreatModelsRequest>
+  Model::BatchGetThreatModelsOutcomeCallable BatchGetThreatModelsCallable(const BatchGetThreatModelsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::BatchGetThreatModels, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetThreatModels that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchGetThreatModelsRequestT = Model::BatchGetThreatModelsRequest>
+  void BatchGetThreatModelsAsync(const BatchGetThreatModelsRequestT& request, const BatchGetThreatModelsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::BatchGetThreatModels, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about one or more threats.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetThreats">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetThreatsOutcome BatchGetThreats(const Model::BatchGetThreatsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetThreats that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename BatchGetThreatsRequestT = Model::BatchGetThreatsRequest>
+  Model::BatchGetThreatsOutcomeCallable BatchGetThreatsCallable(const BatchGetThreatsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::BatchGetThreats, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetThreats that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename BatchGetThreatsRequestT = Model::BatchGetThreatsRequest>
+  void BatchGetThreatsAsync(const BatchGetThreatsRequestT& request, const BatchGetThreatsResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::BatchGetThreats, request, handler, context);
+  }
+
+  /**
+   * <p>Batch updates security requirements within a customer managed
+   * pack.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchUpdateSecurityRequirements">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchUpdateSecurityRequirementsOutcome BatchUpdateSecurityRequirements(
+      const Model::BatchUpdateSecurityRequirementsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchUpdateSecurityRequirements that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename BatchUpdateSecurityRequirementsRequestT = Model::BatchUpdateSecurityRequirementsRequest>
+  Model::BatchUpdateSecurityRequirementsOutcomeCallable BatchUpdateSecurityRequirementsCallable(
+      const BatchUpdateSecurityRequirementsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::BatchUpdateSecurityRequirements, request);
+  }
+
+  /**
+   * An Async wrapper for BatchUpdateSecurityRequirements that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename BatchUpdateSecurityRequirementsRequestT = Model::BatchUpdateSecurityRequirementsRequest>
+  void BatchUpdateSecurityRequirementsAsync(const BatchUpdateSecurityRequirementsRequestT& request,
+                                            const BatchUpdateSecurityRequirementsResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::BatchUpdateSecurityRequirements, request, handler, context);
   }
 
   /**
@@ -614,6 +873,64 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Creates a private connection for reaching a self-hosted provider instance
+   * over private networking using Amazon VPC Lattice.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreatePrivateConnection">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreatePrivateConnectionOutcome CreatePrivateConnection(const Model::CreatePrivateConnectionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreatePrivateConnection that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreatePrivateConnectionRequestT = Model::CreatePrivateConnectionRequest>
+  Model::CreatePrivateConnectionOutcomeCallable CreatePrivateConnectionCallable(const CreatePrivateConnectionRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::CreatePrivateConnection, request);
+  }
+
+  /**
+   * An Async wrapper for CreatePrivateConnection that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreatePrivateConnectionRequestT = Model::CreatePrivateConnectionRequest>
+  void CreatePrivateConnectionAsync(const CreatePrivateConnectionRequestT& request,
+                                    const CreatePrivateConnectionResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::CreatePrivateConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a customer managed security requirement pack.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateSecurityRequirementPack">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateSecurityRequirementPackOutcome CreateSecurityRequirementPack(
+      const Model::CreateSecurityRequirementPackRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateSecurityRequirementPack that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateSecurityRequirementPackRequestT = Model::CreateSecurityRequirementPackRequest>
+  Model::CreateSecurityRequirementPackOutcomeCallable CreateSecurityRequirementPackCallable(
+      const CreateSecurityRequirementPackRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::CreateSecurityRequirementPack, request);
+  }
+
+  /**
+   * An Async wrapper for CreateSecurityRequirementPack that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateSecurityRequirementPackRequestT = Model::CreateSecurityRequirementPackRequest>
+  void CreateSecurityRequirementPackAsync(const CreateSecurityRequirementPackRequestT& request,
+                                          const CreateSecurityRequirementPackResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::CreateSecurityRequirementPack, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new target domain for penetration testing. A target domain is a web
    * domain that must be registered and verified before it can be
    * tested.</p><p><h3>See Also:</h3>   <a
@@ -639,6 +956,59 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   void CreateTargetDomainAsync(const CreateTargetDomainRequestT& request, const CreateTargetDomainResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityAgentClient::CreateTargetDomain, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new threat under a threat model job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateThreat">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateThreatOutcome CreateThreat(const Model::CreateThreatRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateThreat that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateThreatRequestT = Model::CreateThreatRequest>
+  Model::CreateThreatOutcomeCallable CreateThreatCallable(const CreateThreatRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::CreateThreat, request);
+  }
+
+  /**
+   * An Async wrapper for CreateThreat that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateThreatRequestT = Model::CreateThreatRequest>
+  void CreateThreatAsync(const CreateThreatRequestT& request, const CreateThreatResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::CreateThreat, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new threat model configuration in an agent space. A threat model
+   * defines the parameters for automated threat analysis.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateThreatModel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateThreatModelOutcome CreateThreatModel(const Model::CreateThreatModelRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateThreatModel that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateThreatModelRequestT = Model::CreateThreatModelRequest>
+  Model::CreateThreatModelOutcomeCallable CreateThreatModelCallable(const CreateThreatModelRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::CreateThreatModel, request);
+  }
+
+  /**
+   * An Async wrapper for CreateThreatModel that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateThreatModelRequestT = Model::CreateThreatModelRequest>
+  void CreateThreatModelAsync(const CreateThreatModelRequestT& request, const CreateThreatModelResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::CreateThreatModel, request, handler, context);
   }
 
   /**
@@ -775,6 +1145,63 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Deletes a private connection.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/DeletePrivateConnection">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeletePrivateConnectionOutcome DeletePrivateConnection(const Model::DeletePrivateConnectionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeletePrivateConnection that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeletePrivateConnectionRequestT = Model::DeletePrivateConnectionRequest>
+  Model::DeletePrivateConnectionOutcomeCallable DeletePrivateConnectionCallable(const DeletePrivateConnectionRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::DeletePrivateConnection, request);
+  }
+
+  /**
+   * An Async wrapper for DeletePrivateConnection that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeletePrivateConnectionRequestT = Model::DeletePrivateConnectionRequest>
+  void DeletePrivateConnectionAsync(const DeletePrivateConnectionRequestT& request,
+                                    const DeletePrivateConnectionResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::DeletePrivateConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a customer managed security requirement pack and all its associated
+   * security requirements.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/DeleteSecurityRequirementPack">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSecurityRequirementPackOutcome DeleteSecurityRequirementPack(
+      const Model::DeleteSecurityRequirementPackRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSecurityRequirementPack that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteSecurityRequirementPackRequestT = Model::DeleteSecurityRequirementPackRequest>
+  Model::DeleteSecurityRequirementPackOutcomeCallable DeleteSecurityRequirementPackCallable(
+      const DeleteSecurityRequirementPackRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::DeleteSecurityRequirementPack, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSecurityRequirementPack that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteSecurityRequirementPackRequestT = Model::DeleteSecurityRequirementPackRequest>
+  void DeleteSecurityRequirementPackAsync(const DeleteSecurityRequirementPackRequestT& request,
+                                          const DeleteSecurityRequirementPackResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::DeleteSecurityRequirementPack, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a target domain registration. After deletion, the domain can no
    * longer be used for penetration testing.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/DeleteTargetDomain">AWS
@@ -799,6 +1226,34 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   void DeleteTargetDomainAsync(const DeleteTargetDomainRequestT& request, const DeleteTargetDomainResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityAgentClient::DeleteTargetDomain, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the details of a private connection.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/DescribePrivateConnection">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribePrivateConnectionOutcome DescribePrivateConnection(const Model::DescribePrivateConnectionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribePrivateConnection that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribePrivateConnectionRequestT = Model::DescribePrivateConnectionRequest>
+  Model::DescribePrivateConnectionOutcomeCallable DescribePrivateConnectionCallable(
+      const DescribePrivateConnectionRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::DescribePrivateConnection, request);
+  }
+
+  /**
+   * An Async wrapper for DescribePrivateConnection that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribePrivateConnectionRequestT = Model::DescribePrivateConnectionRequest>
+  void DescribePrivateConnectionAsync(const DescribePrivateConnectionRequestT& request,
+                                      const DescribePrivateConnectionResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::DescribePrivateConnection, request, handler, context);
   }
 
   /**
@@ -874,6 +1329,68 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   void GetIntegrationAsync(const GetIntegrationRequestT& request, const GetIntegrationResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityAgentClient::GetIntegration, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a security requirement pack.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/GetSecurityRequirementPack">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSecurityRequirementPackOutcome GetSecurityRequirementPack(
+      const Model::GetSecurityRequirementPackRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSecurityRequirementPack that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetSecurityRequirementPackRequestT = Model::GetSecurityRequirementPackRequest>
+  Model::GetSecurityRequirementPackOutcomeCallable GetSecurityRequirementPackCallable(
+      const GetSecurityRequirementPackRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::GetSecurityRequirementPack, request);
+  }
+
+  /**
+   * An Async wrapper for GetSecurityRequirementPack that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetSecurityRequirementPackRequestT = Model::GetSecurityRequirementPackRequest>
+  void GetSecurityRequirementPackAsync(const GetSecurityRequirementPackRequestT& request,
+                                       const GetSecurityRequirementPackResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::GetSecurityRequirementPack, request, handler, context);
+  }
+
+  /**
+   * <p>Imports security requirements from uploaded documents into a customer managed
+   * security requirement pack. The import process asynchronously extracts and
+   * generates structured security requirements from the provided source
+   * files.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ImportSecurityRequirements">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ImportSecurityRequirementsOutcome ImportSecurityRequirements(
+      const Model::ImportSecurityRequirementsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ImportSecurityRequirements that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ImportSecurityRequirementsRequestT = Model::ImportSecurityRequirementsRequest>
+  Model::ImportSecurityRequirementsOutcomeCallable ImportSecurityRequirementsCallable(
+      const ImportSecurityRequirementsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::ImportSecurityRequirements, request);
+  }
+
+  /**
+   * An Async wrapper for ImportSecurityRequirements that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ImportSecurityRequirementsRequestT = Model::ImportSecurityRequirementsRequest>
+  void ImportSecurityRequirementsAsync(const ImportSecurityRequirementsRequestT& request,
+                                       const ImportSecurityRequirementsResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::ImportSecurityRequirements, request, handler, context);
   }
 
   /**
@@ -1290,6 +1807,90 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Lists the private connections in your account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListPrivateConnections">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPrivateConnectionsOutcome ListPrivateConnections(const Model::ListPrivateConnectionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListPrivateConnections that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPrivateConnectionsRequestT = Model::ListPrivateConnectionsRequest>
+  Model::ListPrivateConnectionsOutcomeCallable ListPrivateConnectionsCallable(const ListPrivateConnectionsRequestT& request = {}) const {
+    return SubmitCallable(&SecurityAgentClient::ListPrivateConnections, request);
+  }
+
+  /**
+   * An Async wrapper for ListPrivateConnections that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListPrivateConnectionsRequestT = Model::ListPrivateConnectionsRequest>
+  void ListPrivateConnectionsAsync(const ListPrivateConnectionsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const ListPrivateConnectionsRequestT& request = {}) const {
+    return SubmitAsync(&SecurityAgentClient::ListPrivateConnections, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all security requirement packs in the caller's account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListSecurityRequirementPacks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSecurityRequirementPacksOutcome ListSecurityRequirementPacks(
+      const Model::ListSecurityRequirementPacksRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListSecurityRequirementPacks that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListSecurityRequirementPacksRequestT = Model::ListSecurityRequirementPacksRequest>
+  Model::ListSecurityRequirementPacksOutcomeCallable ListSecurityRequirementPacksCallable(
+      const ListSecurityRequirementPacksRequestT& request = {}) const {
+    return SubmitCallable(&SecurityAgentClient::ListSecurityRequirementPacks, request);
+  }
+
+  /**
+   * An Async wrapper for ListSecurityRequirementPacks that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListSecurityRequirementPacksRequestT = Model::ListSecurityRequirementPacksRequest>
+  void ListSecurityRequirementPacksAsync(const ListSecurityRequirementPacksResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                         const ListSecurityRequirementPacksRequestT& request = {}) const {
+    return SubmitAsync(&SecurityAgentClient::ListSecurityRequirementPacks, request, handler, context);
+  }
+
+  /**
+   * <p>Lists security requirements within a pack.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListSecurityRequirements">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSecurityRequirementsOutcome ListSecurityRequirements(const Model::ListSecurityRequirementsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListSecurityRequirements that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListSecurityRequirementsRequestT = Model::ListSecurityRequirementsRequest>
+  Model::ListSecurityRequirementsOutcomeCallable ListSecurityRequirementsCallable(const ListSecurityRequirementsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::ListSecurityRequirements, request);
+  }
+
+  /**
+   * An Async wrapper for ListSecurityRequirements that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListSecurityRequirementsRequestT = Model::ListSecurityRequirementsRequest>
+  void ListSecurityRequirementsAsync(const ListSecurityRequirementsRequestT& request,
+                                     const ListSecurityRequirementsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::ListSecurityRequirements, request, handler, context);
+  }
+
+  /**
    * <p>Returns the tags associated with the specified resource.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListTagsForResource">AWS
@@ -1342,6 +1943,114 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                               const ListTargetDomainsRequestT& request = {}) const {
     return SubmitAsync(&SecurityAgentClient::ListTargetDomains, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a paginated list of task summaries for the specified threat model
+   * job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListThreatModelJobTasks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListThreatModelJobTasksOutcome ListThreatModelJobTasks(const Model::ListThreatModelJobTasksRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListThreatModelJobTasks that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListThreatModelJobTasksRequestT = Model::ListThreatModelJobTasksRequest>
+  Model::ListThreatModelJobTasksOutcomeCallable ListThreatModelJobTasksCallable(const ListThreatModelJobTasksRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::ListThreatModelJobTasks, request);
+  }
+
+  /**
+   * An Async wrapper for ListThreatModelJobTasks that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListThreatModelJobTasksRequestT = Model::ListThreatModelJobTasksRequest>
+  void ListThreatModelJobTasksAsync(const ListThreatModelJobTasksRequestT& request,
+                                    const ListThreatModelJobTasksResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::ListThreatModelJobTasks, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a paginated list of threat model job summaries for the specified
+   * threat model.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListThreatModelJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListThreatModelJobsOutcome ListThreatModelJobs(const Model::ListThreatModelJobsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListThreatModelJobs that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListThreatModelJobsRequestT = Model::ListThreatModelJobsRequest>
+  Model::ListThreatModelJobsOutcomeCallable ListThreatModelJobsCallable(const ListThreatModelJobsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::ListThreatModelJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListThreatModelJobs that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListThreatModelJobsRequestT = Model::ListThreatModelJobsRequest>
+  void ListThreatModelJobsAsync(const ListThreatModelJobsRequestT& request, const ListThreatModelJobsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::ListThreatModelJobs, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a paginated list of threat model summaries for the specified agent
+   * space.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListThreatModels">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListThreatModelsOutcome ListThreatModels(const Model::ListThreatModelsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListThreatModels that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListThreatModelsRequestT = Model::ListThreatModelsRequest>
+  Model::ListThreatModelsOutcomeCallable ListThreatModelsCallable(const ListThreatModelsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::ListThreatModels, request);
+  }
+
+  /**
+   * An Async wrapper for ListThreatModels that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListThreatModelsRequestT = Model::ListThreatModelsRequest>
+  void ListThreatModelsAsync(const ListThreatModelsRequestT& request, const ListThreatModelsResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::ListThreatModels, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a paginated list of threats for a threat model job.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListThreats">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListThreatsOutcome ListThreats(const Model::ListThreatsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListThreats that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListThreatsRequestT = Model::ListThreatsRequest>
+  Model::ListThreatsOutcomeCallable ListThreatsCallable(const ListThreatsRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::ListThreats, request);
+  }
+
+  /**
+   * An Async wrapper for ListThreats that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListThreatsRequestT = Model::ListThreatsRequest>
+  void ListThreatsAsync(const ListThreatsRequestT& request, const ListThreatsResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::ListThreats, request, handler, context);
   }
 
   /**
@@ -1427,6 +2136,33 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Starts a new threat model job for a threat model configuration.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StartThreatModelJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartThreatModelJobOutcome StartThreatModelJob(const Model::StartThreatModelJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartThreatModelJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartThreatModelJobRequestT = Model::StartThreatModelJobRequest>
+  Model::StartThreatModelJobOutcomeCallable StartThreatModelJobCallable(const StartThreatModelJobRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::StartThreatModelJob, request);
+  }
+
+  /**
+   * An Async wrapper for StartThreatModelJob that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartThreatModelJobRequestT = Model::StartThreatModelJobRequest>
+  void StartThreatModelJobAsync(const StartThreatModelJobRequestT& request, const StartThreatModelJobResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::StartThreatModelJob, request, handler, context);
+  }
+
+  /**
    * <p>Stops a running code review job. The job transitions to a stopping state and
    * then to stopped after cleanup completes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StopCodeReviewJob">AWS
@@ -1477,6 +2213,32 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   void StopPentestJobAsync(const StopPentestJobRequestT& request, const StopPentestJobResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityAgentClient::StopPentestJob, request, handler, context);
+  }
+
+  /**
+   * <p>Stops a running threat model job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StopThreatModelJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopThreatModelJobOutcome StopThreatModelJob(const Model::StopThreatModelJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopThreatModelJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopThreatModelJobRequestT = Model::StopThreatModelJobRequest>
+  Model::StopThreatModelJobOutcomeCallable StopThreatModelJobCallable(const StopThreatModelJobRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::StopThreatModelJob, request);
+  }
+
+  /**
+   * An Async wrapper for StopThreatModelJob that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StopThreatModelJobRequestT = Model::StopThreatModelJobRequest>
+  void StopThreatModelJobAsync(const StopThreatModelJobRequestT& request, const StopThreatModelJobResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::StopThreatModelJob, request, handler, context);
   }
 
   /**
@@ -1691,6 +2453,67 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Updates the certificate associated with a private connection. Certificates
+   * can be added or replaced but not removed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdatePrivateConnectionCertificate">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdatePrivateConnectionCertificateOutcome UpdatePrivateConnectionCertificate(
+      const Model::UpdatePrivateConnectionCertificateRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdatePrivateConnectionCertificate that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdatePrivateConnectionCertificateRequestT = Model::UpdatePrivateConnectionCertificateRequest>
+  Model::UpdatePrivateConnectionCertificateOutcomeCallable UpdatePrivateConnectionCertificateCallable(
+      const UpdatePrivateConnectionCertificateRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::UpdatePrivateConnectionCertificate, request);
+  }
+
+  /**
+   * An Async wrapper for UpdatePrivateConnectionCertificate that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdatePrivateConnectionCertificateRequestT = Model::UpdatePrivateConnectionCertificateRequest>
+  void UpdatePrivateConnectionCertificateAsync(const UpdatePrivateConnectionCertificateRequestT& request,
+                                               const UpdatePrivateConnectionCertificateResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::UpdatePrivateConnectionCertificate, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a security requirement pack. For customer managed packs, both
+   * metadata and status can be updated. For AWS managed packs, only status can be
+   * updated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateSecurityRequirementPack">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateSecurityRequirementPackOutcome UpdateSecurityRequirementPack(
+      const Model::UpdateSecurityRequirementPackRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateSecurityRequirementPack that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateSecurityRequirementPackRequestT = Model::UpdateSecurityRequirementPackRequest>
+  Model::UpdateSecurityRequirementPackOutcomeCallable UpdateSecurityRequirementPackCallable(
+      const UpdateSecurityRequirementPackRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::UpdateSecurityRequirementPack, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateSecurityRequirementPack that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateSecurityRequirementPackRequestT = Model::UpdateSecurityRequirementPackRequest>
+  void UpdateSecurityRequirementPackAsync(const UpdateSecurityRequirementPackRequestT& request,
+                                          const UpdateSecurityRequirementPackResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::UpdateSecurityRequirementPack, request, handler, context);
+  }
+
+  /**
    * <p>Updates the verification method for a target domain.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateTargetDomain">AWS
@@ -1715,6 +2538,57 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   void UpdateTargetDomainAsync(const UpdateTargetDomainRequestT& request, const UpdateTargetDomainResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityAgentClient::UpdateTargetDomain, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a threat.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateThreat">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateThreatOutcome UpdateThreat(const Model::UpdateThreatRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateThreat that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateThreatRequestT = Model::UpdateThreatRequest>
+  Model::UpdateThreatOutcomeCallable UpdateThreatCallable(const UpdateThreatRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::UpdateThreat, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateThreat that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateThreatRequestT = Model::UpdateThreatRequest>
+  void UpdateThreatAsync(const UpdateThreatRequestT& request, const UpdateThreatResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::UpdateThreat, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing threat model configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateThreatModel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateThreatModelOutcome UpdateThreatModel(const Model::UpdateThreatModelRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateThreatModel that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateThreatModelRequestT = Model::UpdateThreatModelRequest>
+  Model::UpdateThreatModelOutcomeCallable UpdateThreatModelCallable(const UpdateThreatModelRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::UpdateThreatModel, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateThreatModel that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateThreatModelRequestT = Model::UpdateThreatModelRequest>
+  void UpdateThreatModelAsync(const UpdateThreatModelRequestT& request, const UpdateThreatModelResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::UpdateThreatModel, request, handler, context);
   }
 
   /**

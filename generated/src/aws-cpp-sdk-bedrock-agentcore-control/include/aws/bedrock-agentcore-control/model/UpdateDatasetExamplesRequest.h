@@ -74,12 +74,9 @@ class UpdateDatasetExamplesRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Examples to update. Each element is a JSON object containing a required
-   * <code>exampleId</code> string field identifying the existing example, plus the
-   * replacement fields. The <code>exampleId</code> is extracted and removed before
-   * persistence; the remaining document is validated against the dataset's
-   * schemaType. Max 1000 examples per call. Total request body must not exceed 5
-   * MB.</p>
+   * <p> Examples to update. Each element is a JSON object containing a required
+   * <code>exampleId</code> field identifying the existing example, plus the
+   * replacement fields. Maximum 1000 examples per call. </p>
    */
   inline const Aws::Vector<Aws::Utils::Document>& GetExamples() const { return m_examples; }
   inline bool ExamplesHasBeenSet() const { return m_examplesHasBeenSet; }

@@ -49,6 +49,13 @@ BatchEvaluationSummary& BatchEvaluationSummary::operator=(JsonView jsonValue) {
     }
     m_evaluatorsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("insights")) {
+    Aws::Utils::Array<JsonView> insightsJsonList = jsonValue.GetArray("insights");
+    for (unsigned insightsIndex = 0; insightsIndex < insightsJsonList.GetLength(); ++insightsIndex) {
+      m_insights.push_back(insightsJsonList[insightsIndex].AsObject());
+    }
+    m_insightsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("evaluationResults")) {
     m_evaluationResults = jsonValue.GetObject("evaluationResults");
     m_evaluationResultsHasBeenSet = true;
@@ -59,6 +66,10 @@ BatchEvaluationSummary& BatchEvaluationSummary::operator=(JsonView jsonValue) {
       m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsString());
     }
     m_errorDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("kmsKeyArn")) {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
@@ -102,6 +113,14 @@ JsonValue BatchEvaluationSummary::Jsonize() const {
     payload.WithArray("evaluators", std::move(evaluatorsJsonList));
   }
 
+  if (m_insightsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> insightsJsonList(m_insights.size());
+    for (unsigned insightsIndex = 0; insightsIndex < insightsJsonList.GetLength(); ++insightsIndex) {
+      insightsJsonList[insightsIndex].AsObject(m_insights[insightsIndex].Jsonize());
+    }
+    payload.WithArray("insights", std::move(insightsJsonList));
+  }
+
   if (m_evaluationResultsHasBeenSet) {
     payload.WithObject("evaluationResults", m_evaluationResults.Jsonize());
   }
@@ -112,6 +131,10 @@ JsonValue BatchEvaluationSummary::Jsonize() const {
       errorDetailsJsonList[errorDetailsIndex].AsString(m_errorDetails[errorDetailsIndex]);
     }
     payload.WithArray("errorDetails", std::move(errorDetailsJsonList));
+  }
+
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
   if (m_updatedAtHasBeenSet) {

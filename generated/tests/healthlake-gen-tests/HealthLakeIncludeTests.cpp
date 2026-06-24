@@ -14,6 +14,8 @@
 #include <aws/healthlake/HealthLakeRequest.h>
 #include <aws/healthlake/HealthLakeServiceClientModel.h>
 #include <aws/healthlake/HealthLake_EXPORTS.h>
+#include <aws/healthlake/model/AnalyticsConfiguration.h>
+#include <aws/healthlake/model/AnalyticsStatus.h>
 #include <aws/healthlake/model/AuthorizationStrategy.h>
 #include <aws/healthlake/model/CmkType.h>
 #include <aws/healthlake/model/CreateFHIRDatastoreRequest.h>
@@ -47,9 +49,12 @@
 #include <aws/healthlake/model/ListFHIRImportJobsResult.h>
 #include <aws/healthlake/model/ListTagsForResourceRequest.h>
 #include <aws/healthlake/model/ListTagsForResourceResult.h>
+#include <aws/healthlake/model/NlpConfiguration.h>
+#include <aws/healthlake/model/NlpStatus.h>
 #include <aws/healthlake/model/OutputDataConfig.h>
 #include <aws/healthlake/model/PreloadDataConfig.h>
 #include <aws/healthlake/model/PreloadDataType.h>
+#include <aws/healthlake/model/ProfileConfiguration.h>
 #include <aws/healthlake/model/S3Configuration.h>
 #include <aws/healthlake/model/SseConfiguration.h>
 #include <aws/healthlake/model/StartFHIRExportJobRequest.h>
@@ -61,6 +66,8 @@
 #include <aws/healthlake/model/TagResourceResult.h>
 #include <aws/healthlake/model/UntagResourceRequest.h>
 #include <aws/healthlake/model/UntagResourceResult.h>
+#include <aws/healthlake/model/UpdateFHIRDatastoreRequest.h>
+#include <aws/healthlake/model/UpdateFHIRDatastoreResult.h>
 #include <aws/healthlake/model/ValidationLevel.h>
 
 using HealthLakeIncludeTest = ::testing::Test;

@@ -65,6 +65,10 @@ NewPublicVirtualInterface& NewPublicVirtualInterface::operator=(JsonView jsonVal
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rateLimit")) {
+    m_rateLimit = jsonValue.GetString("rateLimit");
+    m_rateLimitHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -118,6 +122,10 @@ JsonValue NewPublicVirtualInterface::Jsonize() const {
       tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
     }
     payload.WithArray("tags", std::move(tagsJsonList));
+  }
+
+  if (m_rateLimitHasBeenSet) {
+    payload.WithString("rateLimit", m_rateLimit);
   }
 
   return payload;

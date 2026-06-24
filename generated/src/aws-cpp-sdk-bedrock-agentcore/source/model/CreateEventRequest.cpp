@@ -51,5 +51,9 @@ Aws::String CreateEventRequest::SerializePayload() const {
     payload.WithObject("metadata", std::move(metadataJsonMap));
   }
 
+  if (m_extractionModeHasBeenSet) {
+    payload.WithString("extractionMode", ExtractionModeMapper::GetNameForExtractionMode(m_extractionMode));
+  }
+
   return payload.View().WriteReadable();
 }

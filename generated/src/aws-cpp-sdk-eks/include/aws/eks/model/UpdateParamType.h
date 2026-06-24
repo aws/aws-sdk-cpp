@@ -50,6 +50,10 @@ enum class UpdateParamType {
   RemoteNetworkConfig,
   DeletionProtection,
   NodeRepairConfig,
+  RoleArn,
+  RoleMappingsToAddOrUpdate,
+  RoleMappingsToRemove,
+  NetworkAccess,
   VendedLogs,
   UpdatedTier,
   PreviousTier,
@@ -57,7 +61,8 @@ enum class UpdateParamType {
   WarmPoolMaxGroupPreparedCapacity,
   WarmPoolMinSize,
   WarmPoolState,
-  WarmPoolReuseOnScaleIn
+  WarmPoolReuseOnScaleIn,
+  ControlPlaneEgressMode
 };
 
 namespace UpdateParamTypeMapper {

@@ -100,7 +100,9 @@
 #include <aws/ecs/model/DaemonDeploymentStatus.h>
 #include <aws/ecs/model/DaemonDeploymentSummary.h>
 #include <aws/ecs/model/DaemonDetail.h>
+#include <aws/ecs/model/DaemonIpcMode.h>
 #include <aws/ecs/model/DaemonLinuxParameters.h>
+#include <aws/ecs/model/DaemonPidMode.h>
 #include <aws/ecs/model/DaemonPropagateTags.h>
 #include <aws/ecs/model/DaemonRevision.h>
 #include <aws/ecs/model/DaemonRevisionDetail.h>
@@ -302,6 +304,8 @@
 #include <aws/ecs/model/ManagedTerminationProtection.h>
 #include <aws/ecs/model/MemoryGiBPerVCpuRequest.h>
 #include <aws/ecs/model/MemoryMiBRequest.h>
+#include <aws/ecs/model/MetricConfiguration.h>
+#include <aws/ecs/model/MonitoringConfiguration.h>
 #include <aws/ecs/model/MountPoint.h>
 #include <aws/ecs/model/NetworkBandwidthGbpsRequest.h>
 #include <aws/ecs/model/NetworkBinding.h>

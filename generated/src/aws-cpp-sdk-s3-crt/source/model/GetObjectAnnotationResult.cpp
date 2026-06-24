@@ -1,0 +1,146 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/s3-crt/model/GetObjectAnnotationResult.h>
+
+#include <utility>
+
+using namespace Aws::S3Crt::Model;
+using namespace Aws::Utils::Stream;
+using namespace Aws::Utils;
+using namespace Aws;
+
+GetObjectAnnotationResult::GetObjectAnnotationResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
+
+GetObjectAnnotationResult& GetObjectAnnotationResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  m_annotationPayload = result.TakeOwnershipOfPayload();
+  m_annotationPayloadHasBeenSet = true;
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& objectVersionIdIter = headers.find("x-amz-object-version-id");
+  if (objectVersionIdIter != headers.end()) {
+    m_objectVersionId = objectVersionIdIter->second;
+    m_objectVersionIdHasBeenSet = true;
+  }
+
+  const auto& lastModifiedIter = headers.find("last-modified");
+  if (lastModifiedIter != headers.end()) {
+    m_lastModified = DateTime(lastModifiedIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
+    if (!m_lastModified.WasParseSuccessful()) {
+      AWS_LOGSTREAM_WARN("S3Crt::GetObjectAnnotationResult",
+                         "Failed to parse lastModified header as an RFC822 timestamp: " << lastModifiedIter->second.c_str());
+    }
+    m_lastModifiedHasBeenSet = true;
+  }
+
+  const auto& contentLengthIter = headers.find("content-length");
+  if (contentLengthIter != headers.end()) {
+    m_contentLength = StringUtils::ConvertToInt64(contentLengthIter->second.c_str());
+    m_contentLengthHasBeenSet = true;
+  }
+
+  const auto& eTagIter = headers.find("etag");
+  if (eTagIter != headers.end()) {
+    m_eTag = eTagIter->second;
+    m_eTagHasBeenSet = true;
+  }
+
+  const auto& checksumCRC32Iter = headers.find("x-amz-checksum-crc32");
+  if (checksumCRC32Iter != headers.end()) {
+    m_checksumCRC32 = checksumCRC32Iter->second;
+    m_checksumCRC32HasBeenSet = true;
+  }
+
+  const auto& checksumCRC32CIter = headers.find("x-amz-checksum-crc32c");
+  if (checksumCRC32CIter != headers.end()) {
+    m_checksumCRC32C = checksumCRC32CIter->second;
+    m_checksumCRC32CHasBeenSet = true;
+  }
+
+  const auto& checksumCRC64NVMEIter = headers.find("x-amz-checksum-crc64nvme");
+  if (checksumCRC64NVMEIter != headers.end()) {
+    m_checksumCRC64NVME = checksumCRC64NVMEIter->second;
+    m_checksumCRC64NVMEHasBeenSet = true;
+  }
+
+  const auto& checksumSHA1Iter = headers.find("x-amz-checksum-sha1");
+  if (checksumSHA1Iter != headers.end()) {
+    m_checksumSHA1 = checksumSHA1Iter->second;
+    m_checksumSHA1HasBeenSet = true;
+  }
+
+  const auto& checksumSHA256Iter = headers.find("x-amz-checksum-sha256");
+  if (checksumSHA256Iter != headers.end()) {
+    m_checksumSHA256 = checksumSHA256Iter->second;
+    m_checksumSHA256HasBeenSet = true;
+  }
+
+  const auto& checksumSHA512Iter = headers.find("x-amz-checksum-sha512");
+  if (checksumSHA512Iter != headers.end()) {
+    m_checksumSHA512 = checksumSHA512Iter->second;
+    m_checksumSHA512HasBeenSet = true;
+  }
+
+  const auto& checksumMD5Iter = headers.find("x-amz-checksum-md5");
+  if (checksumMD5Iter != headers.end()) {
+    m_checksumMD5 = checksumMD5Iter->second;
+    m_checksumMD5HasBeenSet = true;
+  }
+
+  const auto& checksumXXHASH64Iter = headers.find("x-amz-checksum-xxhash64");
+  if (checksumXXHASH64Iter != headers.end()) {
+    m_checksumXXHASH64 = checksumXXHASH64Iter->second;
+    m_checksumXXHASH64HasBeenSet = true;
+  }
+
+  const auto& checksumXXHASH3Iter = headers.find("x-amz-checksum-xxhash3");
+  if (checksumXXHASH3Iter != headers.end()) {
+    m_checksumXXHASH3 = checksumXXHASH3Iter->second;
+    m_checksumXXHASH3HasBeenSet = true;
+  }
+
+  const auto& checksumXXHASH128Iter = headers.find("x-amz-checksum-xxhash128");
+  if (checksumXXHASH128Iter != headers.end()) {
+    m_checksumXXHASH128 = checksumXXHASH128Iter->second;
+    m_checksumXXHASH128HasBeenSet = true;
+  }
+
+  const auto& checksumTypeIter = headers.find("x-amz-checksum-type");
+  if (checksumTypeIter != headers.end()) {
+    m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(checksumTypeIter->second);
+    m_checksumTypeHasBeenSet = true;
+  }
+
+  const auto& serverSideEncryptionIter = headers.find("x-amz-server-side-encryption");
+  if (serverSideEncryptionIter != headers.end()) {
+    m_serverSideEncryption = ServerSideEncryptionMapper::GetServerSideEncryptionForName(serverSideEncryptionIter->second);
+    m_serverSideEncryptionHasBeenSet = true;
+  }
+
+  const auto& requestChargedIter = headers.find("x-amz-request-charged");
+  if (requestChargedIter != headers.end()) {
+    m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
+    m_requestChargedHasBeenSet = true;
+  }
+
+  const auto& replicationStatusIter = headers.find("x-amz-replication-status");
+  if (replicationStatusIter != headers.end()) {
+    m_replicationStatus = ReplicationStatusMapper::GetReplicationStatusForName(replicationStatusIter->second);
+    m_replicationStatusHasBeenSet = true;
+  }
+
+  const auto& requestIdIter = headers.find("x-amz-request-id");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

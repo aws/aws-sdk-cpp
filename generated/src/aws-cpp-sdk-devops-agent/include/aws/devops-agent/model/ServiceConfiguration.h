@@ -19,6 +19,8 @@
 #include <aws/devops-agent/model/MCPServerSigV4Configuration.h>
 #include <aws/devops-agent/model/MCPServerSplunkConfiguration.h>
 #include <aws/devops-agent/model/PagerDutyConfiguration.h>
+#include <aws/devops-agent/model/RemoteAgentConfiguration.h>
+#include <aws/devops-agent/model/RemoteAgentSigV4Configuration.h>
 #include <aws/devops-agent/model/ServiceNowConfiguration.h>
 #include <aws/devops-agent/model/SlackConfiguration.h>
 #include <aws/devops-agent/model/SourceAwsConfiguration.h>
@@ -353,6 +355,42 @@ class ServiceConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Remote A2A agent integration configuration (token-based auth).</p>
+   */
+  inline const RemoteAgentConfiguration& GetRemoteagent() const { return m_remoteagent; }
+  inline bool RemoteagentHasBeenSet() const { return m_remoteagentHasBeenSet; }
+  template <typename RemoteagentT = RemoteAgentConfiguration>
+  void SetRemoteagent(RemoteagentT&& value) {
+    m_remoteagentHasBeenSet = true;
+    m_remoteagent = std::forward<RemoteagentT>(value);
+  }
+  template <typename RemoteagentT = RemoteAgentConfiguration>
+  ServiceConfiguration& WithRemoteagent(RemoteagentT&& value) {
+    SetRemoteagent(std::forward<RemoteagentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Remote A2A agent integration configuration (SigV4 auth).</p>
+   */
+  inline const RemoteAgentSigV4Configuration& GetRemoteagentsigv4() const { return m_remoteagentsigv4; }
+  inline bool Remoteagentsigv4HasBeenSet() const { return m_remoteagentsigv4HasBeenSet; }
+  template <typename Remoteagentsigv4T = RemoteAgentSigV4Configuration>
+  void SetRemoteagentsigv4(Remoteagentsigv4T&& value) {
+    m_remoteagentsigv4HasBeenSet = true;
+    m_remoteagentsigv4 = std::forward<Remoteagentsigv4T>(value);
+  }
+  template <typename Remoteagentsigv4T = RemoteAgentSigV4Configuration>
+  ServiceConfiguration& WithRemoteagentsigv4(Remoteagentsigv4T&& value) {
+    SetRemoteagentsigv4(std::forward<Remoteagentsigv4T>(value));
+    return *this;
+  }
+  ///@}
  private:
   SourceAwsConfiguration m_sourceAws;
 
@@ -387,6 +425,10 @@ class ServiceConfiguration {
   PagerDutyConfiguration m_pagerduty;
 
   MCPServerSigV4Configuration m_mcpserversigv4;
+
+  RemoteAgentConfiguration m_remoteagent;
+
+  RemoteAgentSigV4Configuration m_remoteagentsigv4;
   bool m_sourceAwsHasBeenSet = false;
   bool m_awsHasBeenSet = false;
   bool m_githubHasBeenSet = false;
@@ -404,6 +446,8 @@ class ServiceConfiguration {
   bool m_mcpservergrafanaHasBeenSet = false;
   bool m_pagerdutyHasBeenSet = false;
   bool m_mcpserversigv4HasBeenSet = false;
+  bool m_remoteagentHasBeenSet = false;
+  bool m_remoteagentsigv4HasBeenSet = false;
 };
 
 }  // namespace Model

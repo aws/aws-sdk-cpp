@@ -21,6 +21,7 @@
 #include <aws/lambda/model/AddPermissionRequest.h>
 #include <aws/lambda/model/AddPermissionResult.h>
 #include <aws/lambda/model/AliasConfiguration.h>
+#include <aws/lambda/model/AliasLimitExceededException.h>
 #include <aws/lambda/model/AliasRoutingConfiguration.h>
 #include <aws/lambda/model/AllowedPublishers.h>
 #include <aws/lambda/model/AmazonManagedKafkaEventSourceConfig.h>
@@ -52,6 +53,9 @@
 #include <aws/lambda/model/CheckpointDurableExecutionRequest.h>
 #include <aws/lambda/model/CheckpointDurableExecutionResult.h>
 #include <aws/lambda/model/CheckpointUpdatedExecutionState.h>
+#include <aws/lambda/model/CodeArtifactUserDeletedException.h>
+#include <aws/lambda/model/CodeArtifactUserFailedException.h>
+#include <aws/lambda/model/CodeArtifactUserPendingException.h>
 #include <aws/lambda/model/CodeSigningConfig.h>
 #include <aws/lambda/model/CodeSigningConfigNotFoundException.h>
 #include <aws/lambda/model/CodeSigningPolicies.h>
@@ -105,6 +109,7 @@
 #include <aws/lambda/model/EFSMountFailureException.h>
 #include <aws/lambda/model/EFSMountTimeoutException.h>
 #include <aws/lambda/model/ENILimitReachedException.h>
+#include <aws/lambda/model/ENINotReadyException.h>
 #include <aws/lambda/model/EndPointType.h>
 #include <aws/lambda/model/Environment.h>
 #include <aws/lambda/model/EnvironmentError.h>
@@ -263,6 +268,7 @@
 #include <aws/lambda/model/LogFormat.h>
 #include <aws/lambda/model/LogType.h>
 #include <aws/lambda/model/LoggingConfig.h>
+#include <aws/lambda/model/ModeNotSupportedException.h>
 #include <aws/lambda/model/NoPublishedVersionException.h>
 #include <aws/lambda/model/OnFailure.h>
 #include <aws/lambda/model/OnSuccess.h>
@@ -280,6 +286,7 @@
 #include <aws/lambda/model/ProvisionedConcurrencyConfigNotFoundException.h>
 #include <aws/lambda/model/ProvisionedConcurrencyStatusEnum.h>
 #include <aws/lambda/model/ProvisionedPollerConfig.h>
+#include <aws/lambda/model/PublicPolicyException.h>
 #include <aws/lambda/model/PublishLayerVersionRequest.h>
 #include <aws/lambda/model/PublishLayerVersionResult.h>
 #include <aws/lambda/model/PublishVersionRequest.h>
@@ -327,11 +334,13 @@
 #include <aws/lambda/model/SendDurableExecutionCallbackSuccessResult.h>
 #include <aws/lambda/model/SerializedRequestEntityTooLargeException.h>
 #include <aws/lambda/model/ServiceException.h>
+#include <aws/lambda/model/ServiceQuotaExceededException.h>
 #include <aws/lambda/model/SnapStart.h>
 #include <aws/lambda/model/SnapStartApplyOn.h>
 #include <aws/lambda/model/SnapStartException.h>
 #include <aws/lambda/model/SnapStartNotReadyException.h>
 #include <aws/lambda/model/SnapStartOptimizationStatus.h>
+#include <aws/lambda/model/SnapStartRegenerationFailureException.h>
 #include <aws/lambda/model/SnapStartResponse.h>
 #include <aws/lambda/model/SnapStartTimeoutException.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>

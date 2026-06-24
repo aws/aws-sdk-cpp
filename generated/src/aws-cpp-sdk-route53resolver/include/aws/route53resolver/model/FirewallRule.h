@@ -350,11 +350,13 @@ class FirewallRule {
   /**
    * <p> The type of the DNS Firewall Advanced rule. Valid values are: </p> <ul> <li>
    * <p> <code>DGA</code>: Domain generation algorithms detection. DGAs are used by
-   * attackers to generate a large number of domains to to launch malware
-   * attacks.</p> </li> <li> <p> <code>DNS_TUNNELING</code>: DNS tunneling detection.
-   * DNS tunneling is used by attackers to exfiltrate data from the client by using
-   * the DNS tunnel without making a network connection to the client.</p> </li>
-   * </ul>
+   * attackers to generate a large number of domains to launch malware attacks.</p>
+   * </li> <li> <p> <code>DNS_TUNNELING</code>: DNS tunneling detection. DNS
+   * tunneling is used by attackers to exfiltrate data from the client by using the
+   * DNS tunnel without making a network connection to the client.</p> </li> <li> <p>
+   * <code>DICTIONARY_DGA</code>: Dictionary-based domain generation algorithms
+   * detection. Dictionary DGAs use wordlists to generate domains that appear more
+   * legitimate, making them harder to detect than traditional DGAs.</p> </li> </ul>
    */
   inline DnsThreatProtection GetDnsThreatProtection() const { return m_dnsThreatProtection; }
   inline bool DnsThreatProtectionHasBeenSet() const { return m_dnsThreatProtectionHasBeenSet; }
@@ -392,8 +394,18 @@ class FirewallRule {
 
   ///@{
   /**
-   * <p>The rule type configuration for the firewall rule. Exactly one member of this
-   * union should be set.</p>
+   * <p>The rule type configuration for the firewall rule. This is a tagged union —
+   * exactly one of its members will be populated. Possible members are:</p> <ul>
+   * <li> <p> <code>FirewallAdvancedContentCategory</code> — an AWS-managed content
+   * category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>).</p> </li> <li>
+   * <p> <code>FirewallAdvancedThreatCategory</code> — an AWS-managed advanced threat
+   * category (for example, <code>PHISHING</code>).</p> </li> <li> <p>
+   * <code>DnsThreatProtection</code> — a built-in DNS Firewall Advanced threat
+   * detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or
+   * <code>DICTIONARY_DGA</code>).</p> </li> <li> <p>
+   * <code>PartnerThreatProtection</code> — a third-party threat feed delivered
+   * through AWS Marketplace.</p> </li> </ul> <p>To enumerate the values supported in
+   * your account, call <a>ListFirewallRuleTypes</a>.</p>
    */
   inline const FirewallRuleType& GetFirewallRuleType() const { return m_firewallRuleType; }
   inline bool FirewallRuleTypeHasBeenSet() const { return m_firewallRuleTypeHasBeenSet; }
@@ -405,6 +417,54 @@ class FirewallRule {
   template <typename FirewallRuleTypeT = FirewallRuleType>
   FirewallRule& WithFirewallRuleType(FirewallRuleTypeT&& value) {
     SetFirewallRuleType(std::forward<FirewallRuleTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The lifecycle state of the firewall rule. Possible values:</p> <ul> <li> <p>
+   * <code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created
+   * with the <code>PartnerThreatProtection</code> rule type begin in this state
+   * while DNS Firewall verifies the calling account's AWS Marketplace
+   * entitlement.</p> </li> <li> <p> <code>COMPLETE</code> — The rule is provisioned
+   * and enforcing matches.</p> </li> <li> <p> <code>CREATION_FAILED</code> —
+   * Provisioning failed. <code>StatusMessage</code> contains a human-readable
+   * reason. A rule in this state is immutable: <a>UpdateFirewallRule</a> rejects the
+   * request, and the rule must be removed with <a>DeleteFirewallRule</a>.</p> </li>
+   * </ul> <p>For rules that do not require asynchronous provisioning, this field may
+   * be absent.</p>
+   */
+  inline const Aws::String& GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  template <typename StatusT = Aws::String>
+  void SetStatus(StatusT&& value) {
+    m_statusHasBeenSet = true;
+    m_status = std::forward<StatusT>(value);
+  }
+  template <typename StatusT = Aws::String>
+  FirewallRule& WithStatus(StatusT&& value) {
+    SetStatus(std::forward<StatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An additional message about the rule's lifecycle state. Populated when
+   * <code>Status</code> is <code>CREATION_FAILED</code> to describe why provisioning
+   * failed.</p>
+   */
+  inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+  inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+  template <typename StatusMessageT = Aws::String>
+  void SetStatusMessage(StatusMessageT&& value) {
+    m_statusMessageHasBeenSet = true;
+    m_statusMessage = std::forward<StatusMessageT>(value);
+  }
+  template <typename StatusMessageT = Aws::String>
+  FirewallRule& WithStatusMessage(StatusMessageT&& value) {
+    SetStatusMessage(std::forward<StatusMessageT>(value));
     return *this;
   }
   ///@}
@@ -444,6 +504,10 @@ class FirewallRule {
   ConfidenceThreshold m_confidenceThreshold{ConfidenceThreshold::NOT_SET};
 
   FirewallRuleType m_firewallRuleType;
+
+  Aws::String m_status;
+
+  Aws::String m_statusMessage;
   bool m_firewallRuleGroupIdHasBeenSet = false;
   bool m_firewallDomainListIdHasBeenSet = false;
   bool m_firewallThreatProtectionIdHasBeenSet = false;
@@ -462,6 +526,8 @@ class FirewallRule {
   bool m_dnsThreatProtectionHasBeenSet = false;
   bool m_confidenceThresholdHasBeenSet = false;
   bool m_firewallRuleTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
 };
 
 }  // namespace Model

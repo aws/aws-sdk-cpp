@@ -6,8 +6,12 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/lambda/LambdaErrors.h>
+#include <aws/lambda/model/AliasLimitExceededException.h>
 #include <aws/lambda/model/CallbackTimeoutException.h>
 #include <aws/lambda/model/CapacityProviderLimitExceededException.h>
+#include <aws/lambda/model/CodeArtifactUserDeletedException.h>
+#include <aws/lambda/model/CodeArtifactUserFailedException.h>
+#include <aws/lambda/model/CodeArtifactUserPendingException.h>
 #include <aws/lambda/model/CodeSigningConfigNotFoundException.h>
 #include <aws/lambda/model/CodeStorageExceededException.h>
 #include <aws/lambda/model/CodeVerificationFailedException.h>
@@ -20,6 +24,7 @@
 #include <aws/lambda/model/EFSMountFailureException.h>
 #include <aws/lambda/model/EFSMountTimeoutException.h>
 #include <aws/lambda/model/ENILimitReachedException.h>
+#include <aws/lambda/model/ENINotReadyException.h>
 #include <aws/lambda/model/FunctionVersionsPerCapacityProviderLimitExceededException.h>
 #include <aws/lambda/model/InvalidCodeSignatureException.h>
 #include <aws/lambda/model/InvalidParameterValueException.h>
@@ -32,10 +37,12 @@
 #include <aws/lambda/model/KMSDisabledException.h>
 #include <aws/lambda/model/KMSInvalidStateException.h>
 #include <aws/lambda/model/KMSNotFoundException.h>
+#include <aws/lambda/model/ModeNotSupportedException.h>
 #include <aws/lambda/model/NoPublishedVersionException.h>
 #include <aws/lambda/model/PolicyLengthExceededException.h>
 #include <aws/lambda/model/PreconditionFailedException.h>
 #include <aws/lambda/model/ProvisionedConcurrencyConfigNotFoundException.h>
+#include <aws/lambda/model/PublicPolicyException.h>
 #include <aws/lambda/model/RecursiveInvocationException.h>
 #include <aws/lambda/model/RequestTooLargeException.h>
 #include <aws/lambda/model/ResourceConflictException.h>
@@ -47,8 +54,10 @@
 #include <aws/lambda/model/S3FilesMountTimeoutException.h>
 #include <aws/lambda/model/SerializedRequestEntityTooLargeException.h>
 #include <aws/lambda/model/ServiceException.h>
+#include <aws/lambda/model/ServiceQuotaExceededException.h>
 #include <aws/lambda/model/SnapStartException.h>
 #include <aws/lambda/model/SnapStartNotReadyException.h>
+#include <aws/lambda/model/SnapStartRegenerationFailureException.h>
 #include <aws/lambda/model/SnapStartTimeoutException.h>
 #include <aws/lambda/model/SubnetIPAddressLimitReachedException.h>
 #include <aws/lambda/model/TooManyRequestsException.h>
@@ -62,51 +71,9 @@ using namespace Aws::Lambda::Model;
 namespace Aws {
 namespace Lambda {
 template <>
-AWS_LAMBDA_API ResourceNotReadyException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::RESOURCE_NOT_READY);
-  return ResourceNotReadyException(this->GetJsonPayload().View());
-}
-
-template <>
-AWS_LAMBDA_API EFSMountConnectivityException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::E_F_S_MOUNT_CONNECTIVITY);
-  return EFSMountConnectivityException(this->GetJsonPayload().View());
-}
-
-template <>
-AWS_LAMBDA_API ResourceNotFoundException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::RESOURCE_NOT_FOUND);
-  return ResourceNotFoundException(this->GetJsonPayload().View());
-}
-
-template <>
 AWS_LAMBDA_API NoPublishedVersionException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::NO_PUBLISHED_VERSION);
   return NoPublishedVersionException(this->GetJsonPayload().View());
-}
-
-template <>
-AWS_LAMBDA_API ProvisionedConcurrencyConfigNotFoundException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND);
-  return ProvisionedConcurrencyConfigNotFoundException(this->GetJsonPayload().View());
-}
-
-template <>
-AWS_LAMBDA_API KMSInvalidStateException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::K_M_S_INVALID_STATE);
-  return KMSInvalidStateException(this->GetJsonPayload().View());
-}
-
-template <>
-AWS_LAMBDA_API CapacityProviderLimitExceededException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::CAPACITY_PROVIDER_LIMIT_EXCEEDED);
-  return CapacityProviderLimitExceededException(this->GetJsonPayload().View());
-}
-
-template <>
-AWS_LAMBDA_API DurableExecutionAlreadyStartedException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::DURABLE_EXECUTION_ALREADY_STARTED);
-  return DurableExecutionAlreadyStartedException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -116,21 +83,21 @@ AWS_LAMBDA_API CallbackTimeoutException LambdaError::GetModeledError() {
 }
 
 template <>
-AWS_LAMBDA_API SerializedRequestEntityTooLargeException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::SERIALIZED_REQUEST_ENTITY_TOO_LARGE);
-  return SerializedRequestEntityTooLargeException(this->GetJsonPayload().View());
+AWS_LAMBDA_API ServiceQuotaExceededException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
 template <>
-AWS_LAMBDA_API RecursiveInvocationException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::RECURSIVE_INVOCATION);
-  return RecursiveInvocationException(this->GetJsonPayload().View());
+AWS_LAMBDA_API ModeNotSupportedException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::MODE_NOT_SUPPORTED);
+  return ModeNotSupportedException(this->GetJsonPayload().View());
 }
 
 template <>
-AWS_LAMBDA_API InvalidParameterValueException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::INVALID_PARAMETER_VALUE);
-  return InvalidParameterValueException(this->GetJsonPayload().View());
+AWS_LAMBDA_API ENINotReadyException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::E_N_I_NOT_READY);
+  return ENINotReadyException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -158,27 +125,9 @@ AWS_LAMBDA_API CodeVerificationFailedException LambdaError::GetModeledError() {
 }
 
 template <>
-AWS_LAMBDA_API SnapStartException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::SNAP_START);
-  return SnapStartException(this->GetJsonPayload().View());
-}
-
-template <>
-AWS_LAMBDA_API ResourceInUseException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::RESOURCE_IN_USE);
-  return ResourceInUseException(this->GetJsonPayload().View());
-}
-
-template <>
 AWS_LAMBDA_API SubnetIPAddressLimitReachedException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::SUBNET_I_P_ADDRESS_LIMIT_REACHED);
   return SubnetIPAddressLimitReachedException(this->GetJsonPayload().View());
-}
-
-template <>
-AWS_LAMBDA_API FunctionVersionsPerCapacityProviderLimitExceededException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::FUNCTION_VERSIONS_PER_CAPACITY_PROVIDER_LIMIT_EXCEEDED);
-  return FunctionVersionsPerCapacityProviderLimitExceededException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -191,12 +140,6 @@ template <>
 AWS_LAMBDA_API InvalidRequestContentException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::INVALID_REQUEST_CONTENT);
   return InvalidRequestContentException(this->GetJsonPayload().View());
-}
-
-template <>
-AWS_LAMBDA_API EC2AccessDeniedException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::E_C2_ACCESS_DENIED);
-  return EC2AccessDeniedException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -224,12 +167,6 @@ AWS_LAMBDA_API EFSIOException LambdaError::GetModeledError() {
 }
 
 template <>
-AWS_LAMBDA_API InvalidSecurityGroupIDException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::INVALID_SECURITY_GROUP_I_D);
-  return InvalidSecurityGroupIDException(this->GetJsonPayload().View());
-}
-
-template <>
 AWS_LAMBDA_API InvalidSubnetIDException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::INVALID_SUBNET_I_D);
   return InvalidSubnetIDException(this->GetJsonPayload().View());
@@ -254,12 +191,6 @@ AWS_LAMBDA_API InvalidRuntimeException LambdaError::GetModeledError() {
 }
 
 template <>
-AWS_LAMBDA_API EC2UnexpectedException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::E_C2_UNEXPECTED);
-  return EC2UnexpectedException(this->GetJsonPayload().View());
-}
-
-template <>
 AWS_LAMBDA_API S3FilesMountTimeoutException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::S3_FILES_MOUNT_TIMEOUT);
   return S3FilesMountTimeoutException(this->GetJsonPayload().View());
@@ -272,15 +203,159 @@ AWS_LAMBDA_API S3FilesMountFailureException LambdaError::GetModeledError() {
 }
 
 template <>
-AWS_LAMBDA_API InvalidZipFileException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::INVALID_ZIP_FILE);
-  return InvalidZipFileException(this->GetJsonPayload().View());
-}
-
-template <>
 AWS_LAMBDA_API UnsupportedMediaTypeException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::UNSUPPORTED_MEDIA_TYPE);
   return UnsupportedMediaTypeException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API EFSMountFailureException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::E_F_S_MOUNT_FAILURE);
+  return EFSMountFailureException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API TooManyRequestsException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::TOO_MANY_REQUESTS);
+  return TooManyRequestsException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API CodeArtifactUserFailedException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::CODE_ARTIFACT_USER_FAILED);
+  return CodeArtifactUserFailedException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API ResourceNotReadyException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::RESOURCE_NOT_READY);
+  return ResourceNotReadyException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API EFSMountConnectivityException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::E_F_S_MOUNT_CONNECTIVITY);
+  return EFSMountConnectivityException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API AliasLimitExceededException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::ALIAS_LIMIT_EXCEEDED);
+  return AliasLimitExceededException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API ResourceNotFoundException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API ProvisionedConcurrencyConfigNotFoundException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND);
+  return ProvisionedConcurrencyConfigNotFoundException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API KMSInvalidStateException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::K_M_S_INVALID_STATE);
+  return KMSInvalidStateException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API CodeArtifactUserPendingException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::CODE_ARTIFACT_USER_PENDING);
+  return CodeArtifactUserPendingException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API CapacityProviderLimitExceededException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::CAPACITY_PROVIDER_LIMIT_EXCEEDED);
+  return CapacityProviderLimitExceededException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API DurableExecutionAlreadyStartedException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::DURABLE_EXECUTION_ALREADY_STARTED);
+  return DurableExecutionAlreadyStartedException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API PublicPolicyException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::PUBLIC_POLICY);
+  return PublicPolicyException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API SerializedRequestEntityTooLargeException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::SERIALIZED_REQUEST_ENTITY_TOO_LARGE);
+  return SerializedRequestEntityTooLargeException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API RecursiveInvocationException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::RECURSIVE_INVOCATION);
+  return RecursiveInvocationException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API InvalidParameterValueException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::INVALID_PARAMETER_VALUE);
+  return InvalidParameterValueException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API SnapStartException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::SNAP_START);
+  return SnapStartException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API ResourceInUseException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::RESOURCE_IN_USE);
+  return ResourceInUseException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API FunctionVersionsPerCapacityProviderLimitExceededException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::FUNCTION_VERSIONS_PER_CAPACITY_PROVIDER_LIMIT_EXCEEDED);
+  return FunctionVersionsPerCapacityProviderLimitExceededException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API CodeArtifactUserDeletedException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::CODE_ARTIFACT_USER_DELETED);
+  return CodeArtifactUserDeletedException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API EC2AccessDeniedException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::E_C2_ACCESS_DENIED);
+  return EC2AccessDeniedException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API SnapStartRegenerationFailureException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::SNAP_START_REGENERATION_FAILURE);
+  return SnapStartRegenerationFailureException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API InvalidSecurityGroupIDException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::INVALID_SECURITY_GROUP_I_D);
+  return InvalidSecurityGroupIDException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API EC2UnexpectedException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::E_C2_UNEXPECTED);
+  return EC2UnexpectedException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API InvalidZipFileException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::INVALID_ZIP_FILE);
+  return InvalidZipFileException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -293,12 +368,6 @@ template <>
 AWS_LAMBDA_API KMSDisabledException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::K_M_S_DISABLED);
   return KMSDisabledException(this->GetJsonPayload().View());
-}
-
-template <>
-AWS_LAMBDA_API EFSMountFailureException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::E_F_S_MOUNT_FAILURE);
-  return EFSMountFailureException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -317,12 +386,6 @@ template <>
 AWS_LAMBDA_API ENILimitReachedException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::E_N_I_LIMIT_REACHED);
   return ENILimitReachedException(this->GetJsonPayload().View());
-}
-
-template <>
-AWS_LAMBDA_API TooManyRequestsException LambdaError::GetModeledError() {
-  assert(this->GetErrorType() == LambdaErrors::TOO_MANY_REQUESTS);
-  return TooManyRequestsException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -345,49 +408,58 @@ AWS_LAMBDA_API CodeStorageExceededException LambdaError::GetModeledError() {
 
 namespace LambdaErrorMapper {
 
-static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
-static const int E_F_S_MOUNT_CONNECTIVITY_HASH = HashingUtils::HashString("EFSMountConnectivityException");
 static const int NO_PUBLISHED_VERSION_HASH = HashingUtils::HashString("NoPublishedVersionException");
-static const int PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("ProvisionedConcurrencyConfigNotFoundException");
-static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
-static const int CAPACITY_PROVIDER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CapacityProviderLimitExceededException");
-static const int DURABLE_EXECUTION_ALREADY_STARTED_HASH = HashingUtils::HashString("DurableExecutionAlreadyStartedException");
 static const int CALLBACK_TIMEOUT_HASH = HashingUtils::HashString("CallbackTimeoutException");
-static const int SERIALIZED_REQUEST_ENTITY_TOO_LARGE_HASH = HashingUtils::HashString("SerializedRequestEntityTooLargeException");
-static const int RECURSIVE_INVOCATION_HASH = HashingUtils::HashString("RecursiveInvocationException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
+static const int MODE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ModeNotSupportedException");
+static const int E_N_I_NOT_READY_HASH = HashingUtils::HashString("ENINotReadyException");
 static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFoundException");
 static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailedException");
 static const int CODE_VERIFICATION_FAILED_HASH = HashingUtils::HashString("CodeVerificationFailedException");
-static const int SNAP_START_HASH = HashingUtils::HashString("SnapStartException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH = HashingUtils::HashString("SubnetIPAddressLimitReachedException");
-static const int FUNCTION_VERSIONS_PER_CAPACITY_PROVIDER_LIMIT_EXCEEDED_HASH =
-    HashingUtils::HashString("FunctionVersionsPerCapacityProviderLimitExceededException");
 static const int SNAP_START_NOT_READY_HASH = HashingUtils::HashString("SnapStartNotReadyException");
 static const int INVALID_REQUEST_CONTENT_HASH = HashingUtils::HashString("InvalidRequestContentException");
-static const int E_C2_ACCESS_DENIED_HASH = HashingUtils::HashString("EC2AccessDeniedException");
 static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("RequestTooLargeException");
 static const int S3_FILES_MOUNT_CONNECTIVITY_HASH = HashingUtils::HashString("S3FilesMountConnectivityException");
 static const int INVALID_CODE_SIGNATURE_HASH = HashingUtils::HashString("InvalidCodeSignatureException");
 static const int E_F_S_I_O_HASH = HashingUtils::HashString("EFSIOException");
-static const int INVALID_SECURITY_GROUP_I_D_HASH = HashingUtils::HashString("InvalidSecurityGroupIDException");
 static const int INVALID_SUBNET_I_D_HASH = HashingUtils::HashString("InvalidSubnetIDException");
 static const int CODE_SIGNING_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("CodeSigningConfigNotFoundException");
 static const int E_F_S_MOUNT_TIMEOUT_HASH = HashingUtils::HashString("EFSMountTimeoutException");
 static const int INVALID_RUNTIME_HASH = HashingUtils::HashString("InvalidRuntimeException");
-static const int E_C2_UNEXPECTED_HASH = HashingUtils::HashString("EC2UnexpectedException");
 static const int S3_FILES_MOUNT_TIMEOUT_HASH = HashingUtils::HashString("S3FilesMountTimeoutException");
 static const int S3_FILES_MOUNT_FAILURE_HASH = HashingUtils::HashString("S3FilesMountFailureException");
-static const int INVALID_ZIP_FILE_HASH = HashingUtils::HashString("InvalidZipFileException");
 static const int UNSUPPORTED_MEDIA_TYPE_HASH = HashingUtils::HashString("UnsupportedMediaTypeException");
+static const int E_F_S_MOUNT_FAILURE_HASH = HashingUtils::HashString("EFSMountFailureException");
+static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int CODE_ARTIFACT_USER_FAILED_HASH = HashingUtils::HashString("CodeArtifactUserFailedException");
+static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
+static const int E_F_S_MOUNT_CONNECTIVITY_HASH = HashingUtils::HashString("EFSMountConnectivityException");
+static const int ALIAS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AliasLimitExceededException");
+static const int PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("ProvisionedConcurrencyConfigNotFoundException");
+static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
+static const int CODE_ARTIFACT_USER_PENDING_HASH = HashingUtils::HashString("CodeArtifactUserPendingException");
+static const int CAPACITY_PROVIDER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CapacityProviderLimitExceededException");
+static const int DURABLE_EXECUTION_ALREADY_STARTED_HASH = HashingUtils::HashString("DurableExecutionAlreadyStartedException");
+static const int PUBLIC_POLICY_HASH = HashingUtils::HashString("PublicPolicyException");
+static const int SERIALIZED_REQUEST_ENTITY_TOO_LARGE_HASH = HashingUtils::HashString("SerializedRequestEntityTooLargeException");
+static const int RECURSIVE_INVOCATION_HASH = HashingUtils::HashString("RecursiveInvocationException");
+static const int SNAP_START_HASH = HashingUtils::HashString("SnapStartException");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int FUNCTION_VERSIONS_PER_CAPACITY_PROVIDER_LIMIT_EXCEEDED_HASH =
+    HashingUtils::HashString("FunctionVersionsPerCapacityProviderLimitExceededException");
+static const int CODE_ARTIFACT_USER_DELETED_HASH = HashingUtils::HashString("CodeArtifactUserDeletedException");
+static const int E_C2_ACCESS_DENIED_HASH = HashingUtils::HashString("EC2AccessDeniedException");
+static const int SNAP_START_REGENERATION_FAILURE_HASH = HashingUtils::HashString("SnapStartRegenerationFailureException");
+static const int INVALID_SECURITY_GROUP_I_D_HASH = HashingUtils::HashString("InvalidSecurityGroupIDException");
+static const int E_C2_UNEXPECTED_HASH = HashingUtils::HashString("EC2UnexpectedException");
+static const int INVALID_ZIP_FILE_HASH = HashingUtils::HashString("InvalidZipFileException");
 static const int K_M_S_ACCESS_DENIED_HASH = HashingUtils::HashString("KMSAccessDeniedException");
 static const int K_M_S_DISABLED_HASH = HashingUtils::HashString("KMSDisabledException");
-static const int E_F_S_MOUNT_FAILURE_HASH = HashingUtils::HashString("EFSMountFailureException");
 static const int E_C2_THROTTLED_HASH = HashingUtils::HashString("EC2ThrottledException");
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
 static const int E_N_I_LIMIT_REACHED_HASH = HashingUtils::HashString("ENILimitReachedException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
 static const int SNAP_START_TIMEOUT_HASH = HashingUtils::HashString("SnapStartTimeoutException");
 static const int CODE_STORAGE_EXCEEDED_HASH = HashingUtils::HashString("CodeStorageExceededException");
@@ -395,27 +467,16 @@ static const int CODE_STORAGE_EXCEEDED_HASH = HashingUtils::HashString("CodeStor
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_NOT_READY_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_NOT_READY), RetryableType::RETRYABLE);
-  } else if (hashCode == E_F_S_MOUNT_CONNECTIVITY_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_CONNECTIVITY), RetryableType::NOT_RETRYABLE);
-  } else if (hashCode == NO_PUBLISHED_VERSION_HASH) {
+  if (hashCode == NO_PUBLISHED_VERSION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::NO_PUBLISHED_VERSION), RetryableType::NOT_RETRYABLE);
-  } else if (hashCode == PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND),
-                                RetryableType::NOT_RETRYABLE);
-  } else if (hashCode == K_M_S_INVALID_STATE_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_INVALID_STATE), RetryableType::RETRYABLE);
-  } else if (hashCode == CAPACITY_PROVIDER_LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CAPACITY_PROVIDER_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  } else if (hashCode == DURABLE_EXECUTION_ALREADY_STARTED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::DURABLE_EXECUTION_ALREADY_STARTED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CALLBACK_TIMEOUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CALLBACK_TIMEOUT), RetryableType::NOT_RETRYABLE);
-  } else if (hashCode == SERIALIZED_REQUEST_ENTITY_TOO_LARGE_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SERIALIZED_REQUEST_ENTITY_TOO_LARGE), RetryableType::NOT_RETRYABLE);
-  } else if (hashCode == RECURSIVE_INVOCATION_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RECURSIVE_INVOCATION), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == MODE_NOT_SUPPORTED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::MODE_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == E_N_I_NOT_READY_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_N_I_NOT_READY), RetryableType::RETRYABLE);
   } else if (hashCode == POLICY_LENGTH_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::POLICY_LENGTH_EXCEEDED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == K_M_S_NOT_FOUND_HASH) {
@@ -424,21 +485,12 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PRECONDITION_FAILED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CODE_VERIFICATION_FAILED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_VERIFICATION_FAILED), RetryableType::NOT_RETRYABLE);
-  } else if (hashCode == SNAP_START_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START), RetryableType::NOT_RETRYABLE);
-  } else if (hashCode == RESOURCE_IN_USE_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SUBNET_I_P_ADDRESS_LIMIT_REACHED), RetryableType::RETRYABLE);
-  } else if (hashCode == FUNCTION_VERSIONS_PER_CAPACITY_PROVIDER_LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::FUNCTION_VERSIONS_PER_CAPACITY_PROVIDER_LIMIT_EXCEEDED),
-                                RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SNAP_START_NOT_READY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START_NOT_READY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_REQUEST_CONTENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_REQUEST_CONTENT), RetryableType::NOT_RETRYABLE);
-  } else if (hashCode == E_C2_ACCESS_DENIED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_ACCESS_DENIED), RetryableType::RETRYABLE);
   } else if (hashCode == REQUEST_TOO_LARGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::REQUEST_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == S3_FILES_MOUNT_CONNECTIVITY_HASH) {
@@ -447,8 +499,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_CODE_SIGNATURE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == E_F_S_I_O_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_I_O), RetryableType::NOT_RETRYABLE);
-  } else if (hashCode == INVALID_SECURITY_GROUP_I_D_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SECURITY_GROUP_I_D), RetryableType::RETRYABLE);
   } else if (hashCode == INVALID_SUBNET_I_D_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SUBNET_I_D), RetryableType::RETRYABLE);
   } else if (hashCode == CODE_SIGNING_CONFIG_NOT_FOUND_HASH) {
@@ -457,30 +507,70 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_TIMEOUT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_RUNTIME_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_RUNTIME), RetryableType::RETRYABLE);
-  } else if (hashCode == E_C2_UNEXPECTED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_UNEXPECTED), RetryableType::RETRYABLE);
   } else if (hashCode == S3_FILES_MOUNT_TIMEOUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::S3_FILES_MOUNT_TIMEOUT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == S3_FILES_MOUNT_FAILURE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::S3_FILES_MOUNT_FAILURE), RetryableType::NOT_RETRYABLE);
-  } else if (hashCode == INVALID_ZIP_FILE_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_ZIP_FILE), RetryableType::RETRYABLE);
   } else if (hashCode == UNSUPPORTED_MEDIA_TYPE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::UNSUPPORTED_MEDIA_TYPE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == E_F_S_MOUNT_FAILURE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_FAILURE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+  } else if (hashCode == CODE_ARTIFACT_USER_FAILED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_ARTIFACT_USER_FAILED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RESOURCE_NOT_READY_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_NOT_READY), RetryableType::RETRYABLE);
+  } else if (hashCode == E_F_S_MOUNT_CONNECTIVITY_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_CONNECTIVITY), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ALIAS_LIMIT_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::ALIAS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == K_M_S_INVALID_STATE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_INVALID_STATE), RetryableType::RETRYABLE);
+  } else if (hashCode == CODE_ARTIFACT_USER_PENDING_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_ARTIFACT_USER_PENDING), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CAPACITY_PROVIDER_LIMIT_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CAPACITY_PROVIDER_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DURABLE_EXECUTION_ALREADY_STARTED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::DURABLE_EXECUTION_ALREADY_STARTED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == PUBLIC_POLICY_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PUBLIC_POLICY), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SERIALIZED_REQUEST_ENTITY_TOO_LARGE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SERIALIZED_REQUEST_ENTITY_TOO_LARGE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RECURSIVE_INVOCATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RECURSIVE_INVOCATION), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SNAP_START_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RESOURCE_IN_USE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == FUNCTION_VERSIONS_PER_CAPACITY_PROVIDER_LIMIT_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::FUNCTION_VERSIONS_PER_CAPACITY_PROVIDER_LIMIT_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CODE_ARTIFACT_USER_DELETED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_ARTIFACT_USER_DELETED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == E_C2_ACCESS_DENIED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_ACCESS_DENIED), RetryableType::RETRYABLE);
+  } else if (hashCode == SNAP_START_REGENERATION_FAILURE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START_REGENERATION_FAILURE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_SECURITY_GROUP_I_D_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SECURITY_GROUP_I_D), RetryableType::RETRYABLE);
+  } else if (hashCode == E_C2_UNEXPECTED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_UNEXPECTED), RetryableType::RETRYABLE);
+  } else if (hashCode == INVALID_ZIP_FILE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_ZIP_FILE), RetryableType::RETRYABLE);
   } else if (hashCode == K_M_S_ACCESS_DENIED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_ACCESS_DENIED), RetryableType::RETRYABLE);
   } else if (hashCode == K_M_S_DISABLED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_DISABLED), RetryableType::RETRYABLE);
-  } else if (hashCode == E_F_S_MOUNT_FAILURE_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_FAILURE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == E_C2_THROTTLED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_THROTTLED), RetryableType::RETRYABLE);
   } else if (hashCode == RESOURCE_CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == E_N_I_LIMIT_REACHED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_N_I_LIMIT_REACHED), RetryableType::RETRYABLE);
-  } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   } else if (hashCode == SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SERVICE), RetryableType::RETRYABLE);
   } else if (hashCode == SNAP_START_TIMEOUT_HASH) {

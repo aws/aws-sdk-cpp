@@ -78,6 +78,15 @@ Aws::String CreateCanaryRequest::SerializePayload() const {
     payload.WithArray("BrowserConfigs", std::move(browserConfigsJsonList));
   }
 
+  if (m_addReplicaLocationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> addReplicaLocationsJsonList(m_addReplicaLocations.size());
+    for (unsigned addReplicaLocationsIndex = 0; addReplicaLocationsIndex < addReplicaLocationsJsonList.GetLength();
+         ++addReplicaLocationsIndex) {
+      addReplicaLocationsJsonList[addReplicaLocationsIndex].AsObject(m_addReplicaLocations[addReplicaLocationsIndex].Jsonize());
+    }
+    payload.WithArray("AddReplicaLocations", std::move(addReplicaLocationsJsonList));
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

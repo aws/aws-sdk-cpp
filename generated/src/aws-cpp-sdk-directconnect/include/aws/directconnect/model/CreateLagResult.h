@@ -12,6 +12,7 @@
 #include <aws/directconnect/model/HasLogicalRedundancy.h>
 #include <aws/directconnect/model/LagState.h>
 #include <aws/directconnect/model/MacSecKey.h>
+#include <aws/directconnect/model/RateLimiterStatus.h>
 #include <aws/directconnect/model/Tag.h>
 
 #include <utility>
@@ -420,6 +421,24 @@ class CreateLagResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The rate limiter status for the LAG, including how many rate limiters are in
+   * use and the maximum allowed.</p>
+   */
+  inline const RateLimiterStatus& GetRateLimiterStatus() const { return m_rateLimiterStatus; }
+  template <typename RateLimiterStatusT = RateLimiterStatus>
+  void SetRateLimiterStatus(RateLimiterStatusT&& value) {
+    m_rateLimiterStatusHasBeenSet = true;
+    m_rateLimiterStatus = std::forward<RateLimiterStatusT>(value);
+  }
+  template <typename RateLimiterStatusT = RateLimiterStatus>
+  CreateLagResult& WithRateLimiterStatus(RateLimiterStatusT&& value) {
+    SetRateLimiterStatus(std::forward<RateLimiterStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -478,6 +497,8 @@ class CreateLagResult {
 
   Aws::Vector<MacSecKey> m_macSecKeys;
 
+  RateLimiterStatus m_rateLimiterStatus;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectionsBandwidthHasBeenSet = false;
@@ -501,6 +522,7 @@ class CreateLagResult {
   bool m_macSecCapableHasBeenSet = false;
   bool m_encryptionModeHasBeenSet = false;
   bool m_macSecKeysHasBeenSet = false;
+  bool m_rateLimiterStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -162,6 +162,94 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a new Autonomous Database.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateAutonomousDatabase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAutonomousDatabaseOutcome CreateAutonomousDatabase(const Model::CreateAutonomousDatabaseRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for CreateAutonomousDatabase that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateAutonomousDatabaseRequestT = Model::CreateAutonomousDatabaseRequest>
+  Model::CreateAutonomousDatabaseOutcomeCallable CreateAutonomousDatabaseCallable(
+      const CreateAutonomousDatabaseRequestT& request = {}) const {
+    return SubmitCallable(&OdbClient::CreateAutonomousDatabase, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAutonomousDatabase that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateAutonomousDatabaseRequestT = Model::CreateAutonomousDatabaseRequest>
+  void CreateAutonomousDatabaseAsync(const CreateAutonomousDatabaseResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const CreateAutonomousDatabaseRequestT& request = {}) const {
+    return SubmitAsync(&OdbClient::CreateAutonomousDatabase, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new backup of the specified Autonomous Database.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateAutonomousDatabaseBackup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAutonomousDatabaseBackupOutcome CreateAutonomousDatabaseBackup(
+      const Model::CreateAutonomousDatabaseBackupRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAutonomousDatabaseBackup that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateAutonomousDatabaseBackupRequestT = Model::CreateAutonomousDatabaseBackupRequest>
+  Model::CreateAutonomousDatabaseBackupOutcomeCallable CreateAutonomousDatabaseBackupCallable(
+      const CreateAutonomousDatabaseBackupRequestT& request) const {
+    return SubmitCallable(&OdbClient::CreateAutonomousDatabaseBackup, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAutonomousDatabaseBackup that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateAutonomousDatabaseBackupRequestT = Model::CreateAutonomousDatabaseBackupRequest>
+  void CreateAutonomousDatabaseBackupAsync(const CreateAutonomousDatabaseBackupRequestT& request,
+                                           const CreateAutonomousDatabaseBackupResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::CreateAutonomousDatabaseBackup, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new wallet for the specified Autonomous Database.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateAutonomousDatabaseWallet">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAutonomousDatabaseWalletOutcome CreateAutonomousDatabaseWallet(
+      const Model::CreateAutonomousDatabaseWalletRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAutonomousDatabaseWallet that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateAutonomousDatabaseWalletRequestT = Model::CreateAutonomousDatabaseWalletRequest>
+  Model::CreateAutonomousDatabaseWalletOutcomeCallable CreateAutonomousDatabaseWalletCallable(
+      const CreateAutonomousDatabaseWalletRequestT& request) const {
+    return SubmitCallable(&OdbClient::CreateAutonomousDatabaseWallet, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAutonomousDatabaseWallet that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateAutonomousDatabaseWalletRequestT = Model::CreateAutonomousDatabaseWalletRequest>
+  void CreateAutonomousDatabaseWalletAsync(const CreateAutonomousDatabaseWalletRequestT& request,
+                                           const CreateAutonomousDatabaseWalletResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::CreateAutonomousDatabaseWallet, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new Autonomous VM cluster in the specified Exadata
    * infrastructure.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateCloudAutonomousVmCluster">AWS
@@ -302,6 +390,63 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
                                        const CreateOdbPeeringConnectionResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OdbClient::CreateOdbPeeringConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified Autonomous Database.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteAutonomousDatabase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAutonomousDatabaseOutcome DeleteAutonomousDatabase(const Model::DeleteAutonomousDatabaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAutonomousDatabase that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteAutonomousDatabaseRequestT = Model::DeleteAutonomousDatabaseRequest>
+  Model::DeleteAutonomousDatabaseOutcomeCallable DeleteAutonomousDatabaseCallable(const DeleteAutonomousDatabaseRequestT& request) const {
+    return SubmitCallable(&OdbClient::DeleteAutonomousDatabase, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAutonomousDatabase that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteAutonomousDatabaseRequestT = Model::DeleteAutonomousDatabaseRequest>
+  void DeleteAutonomousDatabaseAsync(const DeleteAutonomousDatabaseRequestT& request,
+                                     const DeleteAutonomousDatabaseResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::DeleteAutonomousDatabase, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified Autonomous Database backup.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteAutonomousDatabaseBackup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAutonomousDatabaseBackupOutcome DeleteAutonomousDatabaseBackup(
+      const Model::DeleteAutonomousDatabaseBackupRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAutonomousDatabaseBackup that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteAutonomousDatabaseBackupRequestT = Model::DeleteAutonomousDatabaseBackupRequest>
+  Model::DeleteAutonomousDatabaseBackupOutcomeCallable DeleteAutonomousDatabaseBackupCallable(
+      const DeleteAutonomousDatabaseBackupRequestT& request) const {
+    return SubmitCallable(&OdbClient::DeleteAutonomousDatabaseBackup, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAutonomousDatabaseBackup that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteAutonomousDatabaseBackupRequestT = Model::DeleteAutonomousDatabaseBackupRequest>
+  void DeleteAutonomousDatabaseBackupAsync(const DeleteAutonomousDatabaseBackupRequestT& request,
+                                           const DeleteAutonomousDatabaseBackupResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::DeleteAutonomousDatabaseBackup, request, handler, context);
   }
 
   /**
@@ -476,6 +621,123 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
                                             const DisassociateIamRoleFromResourceResponseReceivedHandler& handler,
                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OdbClient::DisassociateIamRoleFromResource, request, handler, context);
+  }
+
+  /**
+   * <p>Initiates a failover of the specified Autonomous Database to a standby peer
+   * database.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/FailoverAutonomousDatabase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::FailoverAutonomousDatabaseOutcome FailoverAutonomousDatabase(
+      const Model::FailoverAutonomousDatabaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for FailoverAutonomousDatabase that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename FailoverAutonomousDatabaseRequestT = Model::FailoverAutonomousDatabaseRequest>
+  Model::FailoverAutonomousDatabaseOutcomeCallable FailoverAutonomousDatabaseCallable(
+      const FailoverAutonomousDatabaseRequestT& request) const {
+    return SubmitCallable(&OdbClient::FailoverAutonomousDatabase, request);
+  }
+
+  /**
+   * An Async wrapper for FailoverAutonomousDatabase that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename FailoverAutonomousDatabaseRequestT = Model::FailoverAutonomousDatabaseRequest>
+  void FailoverAutonomousDatabaseAsync(const FailoverAutonomousDatabaseRequestT& request,
+                                       const FailoverAutonomousDatabaseResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::FailoverAutonomousDatabase, request, handler, context);
+  }
+
+  /**
+   * <p>Gets information about a specific Autonomous Database.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetAutonomousDatabase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAutonomousDatabaseOutcome GetAutonomousDatabase(const Model::GetAutonomousDatabaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAutonomousDatabase that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAutonomousDatabaseRequestT = Model::GetAutonomousDatabaseRequest>
+  Model::GetAutonomousDatabaseOutcomeCallable GetAutonomousDatabaseCallable(const GetAutonomousDatabaseRequestT& request) const {
+    return SubmitCallable(&OdbClient::GetAutonomousDatabase, request);
+  }
+
+  /**
+   * An Async wrapper for GetAutonomousDatabase that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAutonomousDatabaseRequestT = Model::GetAutonomousDatabaseRequest>
+  void GetAutonomousDatabaseAsync(const GetAutonomousDatabaseRequestT& request, const GetAutonomousDatabaseResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::GetAutonomousDatabase, request, handler, context);
+  }
+
+  /**
+   * <p>Gets information about a specific Autonomous Database backup.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetAutonomousDatabaseBackup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAutonomousDatabaseBackupOutcome GetAutonomousDatabaseBackup(
+      const Model::GetAutonomousDatabaseBackupRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAutonomousDatabaseBackup that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetAutonomousDatabaseBackupRequestT = Model::GetAutonomousDatabaseBackupRequest>
+  Model::GetAutonomousDatabaseBackupOutcomeCallable GetAutonomousDatabaseBackupCallable(
+      const GetAutonomousDatabaseBackupRequestT& request) const {
+    return SubmitCallable(&OdbClient::GetAutonomousDatabaseBackup, request);
+  }
+
+  /**
+   * An Async wrapper for GetAutonomousDatabaseBackup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAutonomousDatabaseBackupRequestT = Model::GetAutonomousDatabaseBackupRequest>
+  void GetAutonomousDatabaseBackupAsync(const GetAutonomousDatabaseBackupRequestT& request,
+                                        const GetAutonomousDatabaseBackupResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::GetAutonomousDatabaseBackup, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the wallet details for the specified Autonomous Database.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetAutonomousDatabaseWalletDetails">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAutonomousDatabaseWalletDetailsOutcome GetAutonomousDatabaseWalletDetails(
+      const Model::GetAutonomousDatabaseWalletDetailsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAutonomousDatabaseWalletDetails that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetAutonomousDatabaseWalletDetailsRequestT = Model::GetAutonomousDatabaseWalletDetailsRequest>
+  Model::GetAutonomousDatabaseWalletDetailsOutcomeCallable GetAutonomousDatabaseWalletDetailsCallable(
+      const GetAutonomousDatabaseWalletDetailsRequestT& request) const {
+    return SubmitCallable(&OdbClient::GetAutonomousDatabaseWalletDetails, request);
+  }
+
+  /**
+   * An Async wrapper for GetAutonomousDatabaseWalletDetails that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetAutonomousDatabaseWalletDetailsRequestT = Model::GetAutonomousDatabaseWalletDetailsRequest>
+  void GetAutonomousDatabaseWalletDetailsAsync(const GetAutonomousDatabaseWalletDetailsRequestT& request,
+                                               const GetAutonomousDatabaseWalletDetailsResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::GetAutonomousDatabaseWalletDetails, request, handler, context);
   }
 
   /**
@@ -757,6 +1019,185 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                               const InitializeServiceRequestT& request = {}) const {
     return SubmitAsync(&OdbClient::InitializeService, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the backups of the specified Autonomous Database.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseBackups">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAutonomousDatabaseBackupsOutcome ListAutonomousDatabaseBackups(
+      const Model::ListAutonomousDatabaseBackupsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAutonomousDatabaseBackups that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAutonomousDatabaseBackupsRequestT = Model::ListAutonomousDatabaseBackupsRequest>
+  Model::ListAutonomousDatabaseBackupsOutcomeCallable ListAutonomousDatabaseBackupsCallable(
+      const ListAutonomousDatabaseBackupsRequestT& request) const {
+    return SubmitCallable(&OdbClient::ListAutonomousDatabaseBackups, request);
+  }
+
+  /**
+   * An Async wrapper for ListAutonomousDatabaseBackups that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAutonomousDatabaseBackupsRequestT = Model::ListAutonomousDatabaseBackupsRequest>
+  void ListAutonomousDatabaseBackupsAsync(const ListAutonomousDatabaseBackupsRequestT& request,
+                                          const ListAutonomousDatabaseBackupsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::ListAutonomousDatabaseBackups, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the available character sets for Autonomous Databases.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseCharacterSets">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAutonomousDatabaseCharacterSetsOutcome ListAutonomousDatabaseCharacterSets(
+      const Model::ListAutonomousDatabaseCharacterSetsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAutonomousDatabaseCharacterSets that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListAutonomousDatabaseCharacterSetsRequestT = Model::ListAutonomousDatabaseCharacterSetsRequest>
+  Model::ListAutonomousDatabaseCharacterSetsOutcomeCallable ListAutonomousDatabaseCharacterSetsCallable(
+      const ListAutonomousDatabaseCharacterSetsRequestT& request = {}) const {
+    return SubmitCallable(&OdbClient::ListAutonomousDatabaseCharacterSets, request);
+  }
+
+  /**
+   * An Async wrapper for ListAutonomousDatabaseCharacterSets that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListAutonomousDatabaseCharacterSetsRequestT = Model::ListAutonomousDatabaseCharacterSetsRequest>
+  void ListAutonomousDatabaseCharacterSetsAsync(const ListAutonomousDatabaseCharacterSetsResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                const ListAutonomousDatabaseCharacterSetsRequestT& request = {}) const {
+    return SubmitAsync(&OdbClient::ListAutonomousDatabaseCharacterSets, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the clones of the specified Autonomous Database.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseClones">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAutonomousDatabaseClonesOutcome ListAutonomousDatabaseClones(
+      const Model::ListAutonomousDatabaseClonesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAutonomousDatabaseClones that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAutonomousDatabaseClonesRequestT = Model::ListAutonomousDatabaseClonesRequest>
+  Model::ListAutonomousDatabaseClonesOutcomeCallable ListAutonomousDatabaseClonesCallable(
+      const ListAutonomousDatabaseClonesRequestT& request) const {
+    return SubmitCallable(&OdbClient::ListAutonomousDatabaseClones, request);
+  }
+
+  /**
+   * An Async wrapper for ListAutonomousDatabaseClones that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAutonomousDatabaseClonesRequestT = Model::ListAutonomousDatabaseClonesRequest>
+  void ListAutonomousDatabaseClonesAsync(const ListAutonomousDatabaseClonesRequestT& request,
+                                         const ListAutonomousDatabaseClonesResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::ListAutonomousDatabaseClones, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the peer databases of the specified Autonomous Database.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabasePeers">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAutonomousDatabasePeersOutcome ListAutonomousDatabasePeers(
+      const Model::ListAutonomousDatabasePeersRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAutonomousDatabasePeers that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAutonomousDatabasePeersRequestT = Model::ListAutonomousDatabasePeersRequest>
+  Model::ListAutonomousDatabasePeersOutcomeCallable ListAutonomousDatabasePeersCallable(
+      const ListAutonomousDatabasePeersRequestT& request) const {
+    return SubmitCallable(&OdbClient::ListAutonomousDatabasePeers, request);
+  }
+
+  /**
+   * An Async wrapper for ListAutonomousDatabasePeers that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAutonomousDatabasePeersRequestT = Model::ListAutonomousDatabasePeersRequest>
+  void ListAutonomousDatabasePeersAsync(const ListAutonomousDatabasePeersRequestT& request,
+                                        const ListAutonomousDatabasePeersResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::ListAutonomousDatabasePeers, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the available Oracle Database software versions for Autonomous
+   * Databases.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAutonomousDatabaseVersionsOutcome ListAutonomousDatabaseVersions(
+      const Model::ListAutonomousDatabaseVersionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAutonomousDatabaseVersions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAutonomousDatabaseVersionsRequestT = Model::ListAutonomousDatabaseVersionsRequest>
+  Model::ListAutonomousDatabaseVersionsOutcomeCallable ListAutonomousDatabaseVersionsCallable(
+      const ListAutonomousDatabaseVersionsRequestT& request = {}) const {
+    return SubmitCallable(&OdbClient::ListAutonomousDatabaseVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListAutonomousDatabaseVersions that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListAutonomousDatabaseVersionsRequestT = Model::ListAutonomousDatabaseVersionsRequest>
+  void ListAutonomousDatabaseVersionsAsync(const ListAutonomousDatabaseVersionsResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                           const ListAutonomousDatabaseVersionsRequestT& request = {}) const {
+    return SubmitAsync(&OdbClient::ListAutonomousDatabaseVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Returns information about the Autonomous Databases owned by your Amazon Web
+   * Services account in the current Amazon Web Services Region.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabases">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAutonomousDatabasesOutcome ListAutonomousDatabases(const Model::ListAutonomousDatabasesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAutonomousDatabases that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAutonomousDatabasesRequestT = Model::ListAutonomousDatabasesRequest>
+  Model::ListAutonomousDatabasesOutcomeCallable ListAutonomousDatabasesCallable(const ListAutonomousDatabasesRequestT& request = {}) const {
+    return SubmitCallable(&OdbClient::ListAutonomousDatabases, request);
+  }
+
+  /**
+   * An Async wrapper for ListAutonomousDatabases that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAutonomousDatabasesRequestT = Model::ListAutonomousDatabasesRequest>
+  void ListAutonomousDatabasesAsync(const ListAutonomousDatabasesResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const ListAutonomousDatabasesRequestT& request = {}) const {
+    return SubmitAsync(&OdbClient::ListAutonomousDatabases, request, handler, context);
   }
 
   /**
@@ -1099,6 +1540,33 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Reboots the specified Autonomous Database.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/RebootAutonomousDatabase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RebootAutonomousDatabaseOutcome RebootAutonomousDatabase(const Model::RebootAutonomousDatabaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for RebootAutonomousDatabase that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RebootAutonomousDatabaseRequestT = Model::RebootAutonomousDatabaseRequest>
+  Model::RebootAutonomousDatabaseOutcomeCallable RebootAutonomousDatabaseCallable(const RebootAutonomousDatabaseRequestT& request) const {
+    return SubmitCallable(&OdbClient::RebootAutonomousDatabase, request);
+  }
+
+  /**
+   * An Async wrapper for RebootAutonomousDatabase that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RebootAutonomousDatabaseRequestT = Model::RebootAutonomousDatabaseRequest>
+  void RebootAutonomousDatabaseAsync(const RebootAutonomousDatabaseRequestT& request,
+                                     const RebootAutonomousDatabaseResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::RebootAutonomousDatabase, request, handler, context);
+  }
+
+  /**
    * <p>Reboots the specified DB node in a VM cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/RebootDbNode">AWS
    * API Reference</a></p>
@@ -1121,6 +1589,90 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
   void RebootDbNodeAsync(const RebootDbNodeRequestT& request, const RebootDbNodeResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OdbClient::RebootDbNode, request, handler, context);
+  }
+
+  /**
+   * <p>Restores the specified Autonomous Database to a point in time.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/RestoreAutonomousDatabase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RestoreAutonomousDatabaseOutcome RestoreAutonomousDatabase(const Model::RestoreAutonomousDatabaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for RestoreAutonomousDatabase that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RestoreAutonomousDatabaseRequestT = Model::RestoreAutonomousDatabaseRequest>
+  Model::RestoreAutonomousDatabaseOutcomeCallable RestoreAutonomousDatabaseCallable(
+      const RestoreAutonomousDatabaseRequestT& request) const {
+    return SubmitCallable(&OdbClient::RestoreAutonomousDatabase, request);
+  }
+
+  /**
+   * An Async wrapper for RestoreAutonomousDatabase that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RestoreAutonomousDatabaseRequestT = Model::RestoreAutonomousDatabaseRequest>
+  void RestoreAutonomousDatabaseAsync(const RestoreAutonomousDatabaseRequestT& request,
+                                      const RestoreAutonomousDatabaseResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::RestoreAutonomousDatabase, request, handler, context);
+  }
+
+  /**
+   * <p>Shrinks the storage of the specified Autonomous Database to reclaim unused
+   * space.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ShrinkAutonomousDatabase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ShrinkAutonomousDatabaseOutcome ShrinkAutonomousDatabase(const Model::ShrinkAutonomousDatabaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for ShrinkAutonomousDatabase that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ShrinkAutonomousDatabaseRequestT = Model::ShrinkAutonomousDatabaseRequest>
+  Model::ShrinkAutonomousDatabaseOutcomeCallable ShrinkAutonomousDatabaseCallable(const ShrinkAutonomousDatabaseRequestT& request) const {
+    return SubmitCallable(&OdbClient::ShrinkAutonomousDatabase, request);
+  }
+
+  /**
+   * An Async wrapper for ShrinkAutonomousDatabase that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ShrinkAutonomousDatabaseRequestT = Model::ShrinkAutonomousDatabaseRequest>
+  void ShrinkAutonomousDatabaseAsync(const ShrinkAutonomousDatabaseRequestT& request,
+                                     const ShrinkAutonomousDatabaseResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::ShrinkAutonomousDatabase, request, handler, context);
+  }
+
+  /**
+   * <p>Starts the specified Autonomous Database.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/StartAutonomousDatabase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartAutonomousDatabaseOutcome StartAutonomousDatabase(const Model::StartAutonomousDatabaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartAutonomousDatabase that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartAutonomousDatabaseRequestT = Model::StartAutonomousDatabaseRequest>
+  Model::StartAutonomousDatabaseOutcomeCallable StartAutonomousDatabaseCallable(const StartAutonomousDatabaseRequestT& request) const {
+    return SubmitCallable(&OdbClient::StartAutonomousDatabase, request);
+  }
+
+  /**
+   * An Async wrapper for StartAutonomousDatabase that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartAutonomousDatabaseRequestT = Model::StartAutonomousDatabaseRequest>
+  void StartAutonomousDatabaseAsync(const StartAutonomousDatabaseRequestT& request,
+                                    const StartAutonomousDatabaseResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::StartAutonomousDatabase, request, handler, context);
   }
 
   /**
@@ -1149,6 +1701,33 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Stops the specified Autonomous Database.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/StopAutonomousDatabase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopAutonomousDatabaseOutcome StopAutonomousDatabase(const Model::StopAutonomousDatabaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopAutonomousDatabase that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopAutonomousDatabaseRequestT = Model::StopAutonomousDatabaseRequest>
+  Model::StopAutonomousDatabaseOutcomeCallable StopAutonomousDatabaseCallable(const StopAutonomousDatabaseRequestT& request) const {
+    return SubmitCallable(&OdbClient::StopAutonomousDatabase, request);
+  }
+
+  /**
+   * An Async wrapper for StopAutonomousDatabase that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StopAutonomousDatabaseRequestT = Model::StopAutonomousDatabaseRequest>
+  void StopAutonomousDatabaseAsync(const StopAutonomousDatabaseRequestT& request,
+                                   const StopAutonomousDatabaseResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::StopAutonomousDatabase, request, handler, context);
+  }
+
+  /**
    * <p>Stops the specified DB node in a VM cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/StopDbNode">AWS API
    * Reference</a></p>
@@ -1171,6 +1750,36 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
   void StopDbNodeAsync(const StopDbNodeRequestT& request, const StopDbNodeResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OdbClient::StopDbNode, request, handler, context);
+  }
+
+  /**
+   * <p>Performs a switchover of the specified Autonomous Database to a standby peer
+   * database.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/SwitchoverAutonomousDatabase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SwitchoverAutonomousDatabaseOutcome SwitchoverAutonomousDatabase(
+      const Model::SwitchoverAutonomousDatabaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for SwitchoverAutonomousDatabase that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename SwitchoverAutonomousDatabaseRequestT = Model::SwitchoverAutonomousDatabaseRequest>
+  Model::SwitchoverAutonomousDatabaseOutcomeCallable SwitchoverAutonomousDatabaseCallable(
+      const SwitchoverAutonomousDatabaseRequestT& request) const {
+    return SubmitCallable(&OdbClient::SwitchoverAutonomousDatabase, request);
+  }
+
+  /**
+   * An Async wrapper for SwitchoverAutonomousDatabase that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SwitchoverAutonomousDatabaseRequestT = Model::SwitchoverAutonomousDatabaseRequest>
+  void SwitchoverAutonomousDatabaseAsync(const SwitchoverAutonomousDatabaseRequestT& request,
+                                         const SwitchoverAutonomousDatabaseResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::SwitchoverAutonomousDatabase, request, handler, context);
   }
 
   /**
@@ -1221,6 +1830,64 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OdbClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the properties of an Autonomous Database.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateAutonomousDatabase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAutonomousDatabaseOutcome UpdateAutonomousDatabase(const Model::UpdateAutonomousDatabaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAutonomousDatabase that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateAutonomousDatabaseRequestT = Model::UpdateAutonomousDatabaseRequest>
+  Model::UpdateAutonomousDatabaseOutcomeCallable UpdateAutonomousDatabaseCallable(const UpdateAutonomousDatabaseRequestT& request) const {
+    return SubmitCallable(&OdbClient::UpdateAutonomousDatabase, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAutonomousDatabase that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateAutonomousDatabaseRequestT = Model::UpdateAutonomousDatabaseRequest>
+  void UpdateAutonomousDatabaseAsync(const UpdateAutonomousDatabaseRequestT& request,
+                                     const UpdateAutonomousDatabaseResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::UpdateAutonomousDatabase, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the properties of an Autonomous Database backup.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateAutonomousDatabaseBackup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAutonomousDatabaseBackupOutcome UpdateAutonomousDatabaseBackup(
+      const Model::UpdateAutonomousDatabaseBackupRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAutonomousDatabaseBackup that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateAutonomousDatabaseBackupRequestT = Model::UpdateAutonomousDatabaseBackupRequest>
+  Model::UpdateAutonomousDatabaseBackupOutcomeCallable UpdateAutonomousDatabaseBackupCallable(
+      const UpdateAutonomousDatabaseBackupRequestT& request) const {
+    return SubmitCallable(&OdbClient::UpdateAutonomousDatabaseBackup, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAutonomousDatabaseBackup that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateAutonomousDatabaseBackupRequestT = Model::UpdateAutonomousDatabaseBackupRequest>
+  void UpdateAutonomousDatabaseBackupAsync(const UpdateAutonomousDatabaseBackupRequestT& request,
+                                           const UpdateAutonomousDatabaseBackupResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::UpdateAutonomousDatabaseBackup, request, handler, context);
   }
 
   /**

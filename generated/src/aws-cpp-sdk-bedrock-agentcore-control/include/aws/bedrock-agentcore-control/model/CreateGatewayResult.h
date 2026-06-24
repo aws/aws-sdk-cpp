@@ -7,12 +7,14 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
+#include <aws/bedrock-agentcore-control/model/CustomTransformConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
 #include <aws/bedrock-agentcore-control/model/GatewayInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayPolicyEngineConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolType.h>
 #include <aws/bedrock-agentcore-control/model/GatewayStatus.h>
+#include <aws/bedrock-agentcore-control/model/WafConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/WorkloadIdentityDetails.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
@@ -297,6 +299,24 @@ class CreateGatewayResult {
 
   ///@{
   /**
+   * <p>The custom transformation configuration for the gateway. This configuration
+   * defines how the gateway transforms requests and responses.</p>
+   */
+  inline const CustomTransformConfiguration& GetCustomTransformConfiguration() const { return m_customTransformConfiguration; }
+  template <typename CustomTransformConfigurationT = CustomTransformConfiguration>
+  void SetCustomTransformConfiguration(CustomTransformConfigurationT&& value) {
+    m_customTransformConfigurationHasBeenSet = true;
+    m_customTransformConfiguration = std::forward<CustomTransformConfigurationT>(value);
+  }
+  template <typename CustomTransformConfigurationT = CustomTransformConfiguration>
+  CreateGatewayResult& WithCustomTransformConfiguration(CustomTransformConfigurationT&& value) {
+    SetCustomTransformConfiguration(std::forward<CustomTransformConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of interceptor configurations for the created gateway.</p>
    */
   inline const Aws::Vector<GatewayInterceptorConfiguration>& GetInterceptorConfigurations() const { return m_interceptorConfigurations; }
@@ -371,6 +391,41 @@ class CreateGatewayResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services WAF web ACL
+   * associated with the gateway.</p>
+   */
+  inline const Aws::String& GetWebAclArn() const { return m_webAclArn; }
+  template <typename WebAclArnT = Aws::String>
+  void SetWebAclArn(WebAclArnT&& value) {
+    m_webAclArnHasBeenSet = true;
+    m_webAclArn = std::forward<WebAclArnT>(value);
+  }
+  template <typename WebAclArnT = Aws::String>
+  CreateGatewayResult& WithWebAclArn(WebAclArnT&& value) {
+    SetWebAclArn(std::forward<WebAclArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services WAF configuration for the gateway.</p>
+   */
+  inline const WafConfiguration& GetWafConfiguration() const { return m_wafConfiguration; }
+  template <typename WafConfigurationT = WafConfiguration>
+  void SetWafConfiguration(WafConfigurationT&& value) {
+    m_wafConfigurationHasBeenSet = true;
+    m_wafConfiguration = std::forward<WafConfigurationT>(value);
+  }
+  template <typename WafConfigurationT = WafConfiguration>
+  CreateGatewayResult& WithWafConfiguration(WafConfigurationT&& value) {
+    SetWafConfiguration(std::forward<WafConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -417,6 +472,8 @@ class CreateGatewayResult {
 
   Aws::String m_kmsKeyArn;
 
+  CustomTransformConfiguration m_customTransformConfiguration;
+
   Aws::Vector<GatewayInterceptorConfiguration> m_interceptorConfigurations;
 
   GatewayPolicyEngineConfiguration m_policyEngineConfiguration;
@@ -424,6 +481,10 @@ class CreateGatewayResult {
   WorkloadIdentityDetails m_workloadIdentityDetails;
 
   ExceptionLevel m_exceptionLevel{ExceptionLevel::NOT_SET};
+
+  Aws::String m_webAclArn;
+
+  WafConfiguration m_wafConfiguration;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
@@ -442,10 +503,13 @@ class CreateGatewayResult {
   bool m_authorizerTypeHasBeenSet = false;
   bool m_authorizerConfigurationHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
+  bool m_customTransformConfigurationHasBeenSet = false;
   bool m_interceptorConfigurationsHasBeenSet = false;
   bool m_policyEngineConfigurationHasBeenSet = false;
   bool m_workloadIdentityDetailsHasBeenSet = false;
   bool m_exceptionLevelHasBeenSet = false;
+  bool m_webAclArnHasBeenSet = false;
+  bool m_wafConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

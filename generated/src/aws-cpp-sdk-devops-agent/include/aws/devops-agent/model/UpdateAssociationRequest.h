@@ -4,9 +4,12 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-agent/DevOpsAgentRequest.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/CapabilityConfiguration.h>
+#include <aws/devops-agent/model/CapabilityType.h>
 #include <aws/devops-agent/model/ServiceConfiguration.h>
 
 #include <utility>
@@ -87,15 +90,41 @@ class UpdateAssociationRequest : public DevOpsAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Enabled capabilities for this association.</p>
+   */
+  inline const Aws::Map<CapabilityType, CapabilityConfiguration>& GetCapabilities() const { return m_capabilities; }
+  inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
+  template <typename CapabilitiesT = Aws::Map<CapabilityType, CapabilityConfiguration>>
+  void SetCapabilities(CapabilitiesT&& value) {
+    m_capabilitiesHasBeenSet = true;
+    m_capabilities = std::forward<CapabilitiesT>(value);
+  }
+  template <typename CapabilitiesT = Aws::Map<CapabilityType, CapabilityConfiguration>>
+  UpdateAssociationRequest& WithCapabilities(CapabilitiesT&& value) {
+    SetCapabilities(std::forward<CapabilitiesT>(value));
+    return *this;
+  }
+  inline UpdateAssociationRequest& AddCapabilities(CapabilityType key, CapabilityConfiguration value) {
+    m_capabilitiesHasBeenSet = true;
+    m_capabilities.emplace(key, value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_agentSpaceId;
 
   Aws::String m_associationId;
 
   ServiceConfiguration m_configuration;
+
+  Aws::Map<CapabilityType, CapabilityConfiguration> m_capabilities;
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_associationIdHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
 };
 
 }  // namespace Model

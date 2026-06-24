@@ -26,6 +26,13 @@ EvaluationFormScoringStrategy& EvaluationFormScoringStrategy::operator=(JsonView
     m_status = EvaluationFormScoringStatusMapper::GetEvaluationFormScoringStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ScoreThresholds")) {
+    Aws::Utils::Array<JsonView> scoreThresholdsJsonList = jsonValue.GetArray("ScoreThresholds");
+    for (unsigned scoreThresholdsIndex = 0; scoreThresholdsIndex < scoreThresholdsJsonList.GetLength(); ++scoreThresholdsIndex) {
+      m_scoreThresholds.push_back(scoreThresholdsJsonList[scoreThresholdsIndex].AsObject());
+    }
+    m_scoreThresholdsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +45,14 @@ JsonValue EvaluationFormScoringStrategy::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("Status", EvaluationFormScoringStatusMapper::GetNameForEvaluationFormScoringStatus(m_status));
+  }
+
+  if (m_scoreThresholdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> scoreThresholdsJsonList(m_scoreThresholds.size());
+    for (unsigned scoreThresholdsIndex = 0; scoreThresholdsIndex < scoreThresholdsJsonList.GetLength(); ++scoreThresholdsIndex) {
+      scoreThresholdsJsonList[scoreThresholdsIndex].AsObject(m_scoreThresholds[scoreThresholdsIndex].Jsonize());
+    }
+    payload.WithArray("ScoreThresholds", std::move(scoreThresholdsJsonList));
   }
 
   return payload;

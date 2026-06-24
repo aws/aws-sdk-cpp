@@ -59,6 +59,13 @@ UpdateBrokerResult& UpdateBrokerResult::operator=(const Aws::AmazonWebServiceRes
     m_maintenanceWindowStartTime = jsonValue.GetObject("maintenanceWindowStartTime");
     m_maintenanceWindowStartTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("resourceShareArns")) {
+    Aws::Utils::Array<JsonView> resourceShareArnsJsonList = jsonValue.GetArray("resourceShareArns");
+    for (unsigned resourceShareArnsIndex = 0; resourceShareArnsIndex < resourceShareArnsJsonList.GetLength(); ++resourceShareArnsIndex) {
+      m_resourceShareArns.push_back(resourceShareArnsJsonList[resourceShareArnsIndex].AsString());
+    }
+    m_resourceShareArnsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("securityGroups")) {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
     for (unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex) {

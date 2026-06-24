@@ -14,8 +14,10 @@
 #include <aws/outposts/model/ListBlockingInstancesForCapacityTaskPaginationTraits.h>
 #include <aws/outposts/model/ListCapacityTasksPaginationTraits.h>
 #include <aws/outposts/model/ListCatalogItemsPaginationTraits.h>
+#include <aws/outposts/model/ListOrderableInstanceTypesPaginationTraits.h>
 #include <aws/outposts/model/ListOrdersPaginationTraits.h>
 #include <aws/outposts/model/ListOutpostsPaginationTraits.h>
+#include <aws/outposts/model/ListQuotesPaginationTraits.h>
 #include <aws/outposts/model/ListSitesPaginationTraits.h>
 
 namespace Aws {
@@ -41,10 +43,15 @@ using ListCapacityTasksPaginator = Aws::Utils::Pagination::Paginator<OutpostsCli
                                                                      Pagination::ListCapacityTasksPaginationTraits<OutpostsClient>>;
 using ListCatalogItemsPaginator = Aws::Utils::Pagination::Paginator<OutpostsClient, Model::ListCatalogItemsRequest,
                                                                     Pagination::ListCatalogItemsPaginationTraits<OutpostsClient>>;
+using ListOrderableInstanceTypesPaginator =
+    Aws::Utils::Pagination::Paginator<OutpostsClient, Model::ListOrderableInstanceTypesRequest,
+                                      Pagination::ListOrderableInstanceTypesPaginationTraits<OutpostsClient>>;
 using ListOrdersPaginator =
     Aws::Utils::Pagination::Paginator<OutpostsClient, Model::ListOrdersRequest, Pagination::ListOrdersPaginationTraits<OutpostsClient>>;
 using ListOutpostsPaginator =
     Aws::Utils::Pagination::Paginator<OutpostsClient, Model::ListOutpostsRequest, Pagination::ListOutpostsPaginationTraits<OutpostsClient>>;
+using ListQuotesPaginator =
+    Aws::Utils::Pagination::Paginator<OutpostsClient, Model::ListQuotesRequest, Pagination::ListQuotesPaginationTraits<OutpostsClient>>;
 using ListSitesPaginator =
     Aws::Utils::Pagination::Paginator<OutpostsClient, Model::ListSitesRequest, Pagination::ListSitesPaginationTraits<OutpostsClient>>;
 

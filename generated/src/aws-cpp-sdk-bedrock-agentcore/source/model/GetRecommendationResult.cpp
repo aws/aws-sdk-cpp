@@ -62,6 +62,10 @@ GetRecommendationResult& GetRecommendationResult::operator=(const Aws::AmazonWeb
     m_recommendationResult = jsonValue.GetObject("recommendationResult");
     m_recommendationResultHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("kmsKeyArn")) {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

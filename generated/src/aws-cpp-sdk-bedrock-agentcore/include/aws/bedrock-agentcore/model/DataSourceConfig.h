@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/CloudWatchLogsSource.h>
+#include <aws/bedrock-agentcore/model/OnlineEvaluationConfigSource.h>
 
 #include <utility>
 
@@ -49,9 +50,30 @@ class DataSourceConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Reference an existing OnlineEvaluationConfig as session source</p>
+   */
+  inline const OnlineEvaluationConfigSource& GetOnlineEvaluationConfigSource() const { return m_onlineEvaluationConfigSource; }
+  inline bool OnlineEvaluationConfigSourceHasBeenSet() const { return m_onlineEvaluationConfigSourceHasBeenSet; }
+  template <typename OnlineEvaluationConfigSourceT = OnlineEvaluationConfigSource>
+  void SetOnlineEvaluationConfigSource(OnlineEvaluationConfigSourceT&& value) {
+    m_onlineEvaluationConfigSourceHasBeenSet = true;
+    m_onlineEvaluationConfigSource = std::forward<OnlineEvaluationConfigSourceT>(value);
+  }
+  template <typename OnlineEvaluationConfigSourceT = OnlineEvaluationConfigSource>
+  DataSourceConfig& WithOnlineEvaluationConfigSource(OnlineEvaluationConfigSourceT&& value) {
+    SetOnlineEvaluationConfigSource(std::forward<OnlineEvaluationConfigSourceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CloudWatchLogsSource m_cloudWatchLogs;
+
+  OnlineEvaluationConfigSource m_onlineEvaluationConfigSource;
   bool m_cloudWatchLogsHasBeenSet = false;
+  bool m_onlineEvaluationConfigSourceHasBeenSet = false;
 };
 
 }  // namespace Model

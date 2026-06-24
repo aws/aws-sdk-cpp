@@ -91,6 +91,14 @@ FirewallRule& FirewallRule::operator=(JsonView jsonValue) {
     m_firewallRuleType = jsonValue.GetObject("FirewallRuleType");
     m_firewallRuleTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Status")) {
+    m_status = jsonValue.GetString("Status");
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StatusMessage")) {
+    m_statusMessage = jsonValue.GetString("StatusMessage");
+    m_statusMessageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -168,6 +176,14 @@ JsonValue FirewallRule::Jsonize() const {
 
   if (m_firewallRuleTypeHasBeenSet) {
     payload.WithObject("FirewallRuleType", m_firewallRuleType.Jsonize());
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
+  }
+
+  if (m_statusMessageHasBeenSet) {
+    payload.WithString("StatusMessage", m_statusMessage);
   }
 
   return payload;

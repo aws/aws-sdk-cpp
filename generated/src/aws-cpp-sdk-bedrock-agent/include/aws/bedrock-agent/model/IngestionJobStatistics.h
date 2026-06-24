@@ -144,6 +144,22 @@ class IngestionJobStatistics {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of source documents that were skipped during ingestion.</p>
+   */
+  inline long long GetNumberOfDocumentsSkipped() const { return m_numberOfDocumentsSkipped; }
+  inline bool NumberOfDocumentsSkippedHasBeenSet() const { return m_numberOfDocumentsSkippedHasBeenSet; }
+  inline void SetNumberOfDocumentsSkipped(long long value) {
+    m_numberOfDocumentsSkippedHasBeenSet = true;
+    m_numberOfDocumentsSkipped = value;
+  }
+  inline IngestionJobStatistics& WithNumberOfDocumentsSkipped(long long value) {
+    SetNumberOfDocumentsSkipped(value);
+    return *this;
+  }
+  ///@}
  private:
   long long m_numberOfDocumentsScanned{0};
 
@@ -158,6 +174,8 @@ class IngestionJobStatistics {
   long long m_numberOfDocumentsDeleted{0};
 
   long long m_numberOfDocumentsFailed{0};
+
+  long long m_numberOfDocumentsSkipped{0};
   bool m_numberOfDocumentsScannedHasBeenSet = false;
   bool m_numberOfMetadataDocumentsScannedHasBeenSet = false;
   bool m_numberOfNewDocumentsIndexedHasBeenSet = false;
@@ -165,6 +183,7 @@ class IngestionJobStatistics {
   bool m_numberOfMetadataDocumentsModifiedHasBeenSet = false;
   bool m_numberOfDocumentsDeletedHasBeenSet = false;
   bool m_numberOfDocumentsFailedHasBeenSet = false;
+  bool m_numberOfDocumentsSkippedHasBeenSet = false;
 };
 
 }  // namespace Model

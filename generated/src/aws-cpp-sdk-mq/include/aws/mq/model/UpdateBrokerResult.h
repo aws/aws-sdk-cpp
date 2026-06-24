@@ -198,6 +198,29 @@ class UpdateBrokerResult {
 
   ///@{
   /**
+   * <p>The pending broker's target list of resource shares</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetResourceShareArns() const { return m_resourceShareArns; }
+  template <typename ResourceShareArnsT = Aws::Vector<Aws::String>>
+  void SetResourceShareArns(ResourceShareArnsT&& value) {
+    m_resourceShareArnsHasBeenSet = true;
+    m_resourceShareArns = std::forward<ResourceShareArnsT>(value);
+  }
+  template <typename ResourceShareArnsT = Aws::Vector<Aws::String>>
+  UpdateBrokerResult& WithResourceShareArns(ResourceShareArnsT&& value) {
+    SetResourceShareArns(std::forward<ResourceShareArnsT>(value));
+    return *this;
+  }
+  template <typename ResourceShareArnsT = Aws::String>
+  UpdateBrokerResult& AddResourceShareArns(ResourceShareArnsT&& value) {
+    m_resourceShareArnsHasBeenSet = true;
+    m_resourceShareArns.emplace_back(std::forward<ResourceShareArnsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of security groups (1 minimum, 5 maximum) that authorizes
    * connections to brokers.</p>
    */
@@ -322,6 +345,8 @@ class UpdateBrokerResult {
 
   WeeklyStartTime m_maintenanceWindowStartTime;
 
+  Aws::Vector<Aws::String> m_resourceShareArns;
+
   Aws::Vector<Aws::String> m_securityGroups;
 
   DataReplicationMetadataOutput m_dataReplicationMetadata;
@@ -343,6 +368,7 @@ class UpdateBrokerResult {
   bool m_ldapServerMetadataHasBeenSet = false;
   bool m_logsHasBeenSet = false;
   bool m_maintenanceWindowStartTimeHasBeenSet = false;
+  bool m_resourceShareArnsHasBeenSet = false;
   bool m_securityGroupsHasBeenSet = false;
   bool m_dataReplicationMetadataHasBeenSet = false;
   bool m_dataReplicationModeHasBeenSet = false;

@@ -8,10 +8,12 @@
 
 #include <aws/application-signals/ApplicationSignalsClientPagination.h>
 #include <aws/application-signals/ApplicationSignalsPaginationBase.h>
+#include <aws/application-signals/model/ListInstrumentationConfigurationsPaginationTraits.h>
 #include <aws/application-signals/model/ListServiceOperationsPaginationTraits.h>
 #include <aws/application-signals/model/ListServiceLevelObjectivesPaginationTraits.h>
 #include <aws/application-signals/model/ListServiceDependenciesPaginationTraits.h>
 #include <aws/application-signals/model/ListEntityEventsPaginationTraits.h>
+#include <aws/application-signals/model/GetInstrumentationConfigurationStatusPaginationTraits.h>
 #include <aws/application-signals/model/ListServiceLevelObjectiveExclusionWindowsPaginationTraits.h>
 #include <aws/application-signals/model/ListServicesPaginationTraits.h>
 #include <aws/application-signals/model/ListServiceStatesPaginationTraits.h>

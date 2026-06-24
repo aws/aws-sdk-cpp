@@ -48,6 +48,9 @@
 #include <aws/wafv2/model/GetPermissionPolicyRequest.h>
 #include <aws/wafv2/model/GetRateBasedStatementManagedKeysRequest.h>
 #include <aws/wafv2/model/GetRegexPatternSetRequest.h>
+#include <aws/wafv2/model/GetRevenueStatisticsRequest.h>
+#include <aws/wafv2/model/GetRevenueStatisticsSummaryRequest.h>
+#include <aws/wafv2/model/GetRevenueStatisticsTimeSeriesRequest.h>
 #include <aws/wafv2/model/GetRuleGroupRequest.h>
 #include <aws/wafv2/model/GetSampledRequestsRequest.h>
 #include <aws/wafv2/model/GetTopPathStatisticsByTrafficRequest.h>
@@ -63,6 +66,7 @@
 #include <aws/wafv2/model/ListRegexPatternSetsRequest.h>
 #include <aws/wafv2/model/ListResourcesForWebACLRequest.h>
 #include <aws/wafv2/model/ListRuleGroupsRequest.h>
+#include <aws/wafv2/model/ListSettlementRecordsRequest.h>
 #include <aws/wafv2/model/ListTagsForResourceRequest.h>
 #include <aws/wafv2/model/ListWebACLsRequest.h>
 #include <aws/wafv2/model/PutLoggingConfigurationRequest.h>
@@ -389,6 +393,25 @@ GetRegexPatternSetOutcome WAFV2Client::GetRegexPatternSet(const GetRegexPatternS
                             : GetRegexPatternSetOutcome(std::move(result.GetError()));
 }
 
+GetRevenueStatisticsOutcome WAFV2Client::GetRevenueStatistics(const GetRevenueStatisticsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRevenueStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetRevenueStatisticsOutcome(std::move(result.GetError()));
+}
+
+GetRevenueStatisticsSummaryOutcome WAFV2Client::GetRevenueStatisticsSummary(const GetRevenueStatisticsSummaryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRevenueStatisticsSummaryOutcome(result.GetResultWithOwnership())
+                            : GetRevenueStatisticsSummaryOutcome(std::move(result.GetError()));
+}
+
+GetRevenueStatisticsTimeSeriesOutcome WAFV2Client::GetRevenueStatisticsTimeSeries(
+    const GetRevenueStatisticsTimeSeriesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRevenueStatisticsTimeSeriesOutcome(result.GetResultWithOwnership())
+                            : GetRevenueStatisticsTimeSeriesOutcome(std::move(result.GetError()));
+}
+
 GetRuleGroupOutcome WAFV2Client::GetRuleGroup(const GetRuleGroupRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetRuleGroupOutcome(result.GetResultWithOwnership()) : GetRuleGroupOutcome(std::move(result.GetError()));
@@ -474,6 +497,12 @@ ListResourcesForWebACLOutcome WAFV2Client::ListResourcesForWebACL(const ListReso
 ListRuleGroupsOutcome WAFV2Client::ListRuleGroups(const ListRuleGroupsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListRuleGroupsOutcome(result.GetResultWithOwnership()) : ListRuleGroupsOutcome(std::move(result.GetError()));
+}
+
+ListSettlementRecordsOutcome WAFV2Client::ListSettlementRecords(const ListSettlementRecordsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSettlementRecordsOutcome(result.GetResultWithOwnership())
+                            : ListSettlementRecordsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome WAFV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const {

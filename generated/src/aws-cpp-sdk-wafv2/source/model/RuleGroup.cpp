@@ -74,6 +74,10 @@ RuleGroup& RuleGroup::operator=(JsonView jsonValue) {
     }
     m_consumedLabelsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MonetizationConfig")) {
+    m_monetizationConfig = jsonValue.GetObject("MonetizationConfig");
+    m_monetizationConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -138,6 +142,10 @@ JsonValue RuleGroup::Jsonize() const {
       consumedLabelsJsonList[consumedLabelsIndex].AsObject(m_consumedLabels[consumedLabelsIndex].Jsonize());
     }
     payload.WithArray("ConsumedLabels", std::move(consumedLabelsJsonList));
+  }
+
+  if (m_monetizationConfigHasBeenSet) {
+    payload.WithObject("MonetizationConfig", m_monetizationConfig.Jsonize());
   }
 
   return payload;

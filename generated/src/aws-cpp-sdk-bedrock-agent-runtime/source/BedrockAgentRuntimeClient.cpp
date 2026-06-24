@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeClient.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeEndpointProvider.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeErrorMarshaller.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveStreamRequest.h>
 #include <aws/bedrock-agent-runtime/model/CreateInvocationRequest.h>
 #include <aws/bedrock-agent-runtime/model/CreateSessionRequest.h>
 #include <aws/bedrock-agent-runtime/model/DeleteAgentMemoryRequest.h>
@@ -14,6 +15,7 @@
 #include <aws/bedrock-agent-runtime/model/EndSessionRequest.h>
 #include <aws/bedrock-agent-runtime/model/GenerateQueryRequest.h>
 #include <aws/bedrock-agent-runtime/model/GetAgentMemoryRequest.h>
+#include <aws/bedrock-agent-runtime/model/GetDocumentContentRequest.h>
 #include <aws/bedrock-agent-runtime/model/GetExecutionFlowSnapshotRequest.h>
 #include <aws/bedrock-agent-runtime/model/GetFlowExecutionRequest.h>
 #include <aws/bedrock-agent-runtime/model/GetInvocationStepRequest.h>
@@ -198,6 +200,42 @@ BedrockAgentRuntimeClient::InvokeOperationOutcome BedrockAgentRuntimeClient::Inv
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
+AgenticRetrieveStreamOutcome BedrockAgentRuntimeClient::AgenticRetrieveStream(AgenticRetrieveStreamRequest& request) const {
+  AWS_OPERATION_GUARD(AgenticRetrieveStream);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AgenticRetrieveStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, AgenticRetrieveStream, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AgenticRetrieveStream, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AgenticRetrieveStream",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AgenticRetrieveStreamOutcome>(
+      [&]() -> AgenticRetrieveStreamOutcome {
+        request.SetResponseStreamFactory([&] {
+          request.GetEventStreamDecoder().Reset();
+          return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder());
+        });
+        if (!request.GetHeadersReceivedEventHandler()) {
+          request.SetHeadersReceivedEventHandler([&request](const Http::HttpRequest*, Http::HttpResponse* response) {
+            AWS_CHECK_PTR("AgenticRetrieveStream", response);
+            if (const auto initialResponseHandler = request.GetEventStreamHandler().GetInitialResponseCallbackEx()) {
+              initialResponseHandler({response->GetHeaders()}, Utils::Event::InitialResponseType::ON_RESPONSE);
+            }
+          });
+        }
+        auto result = MakeRequestDeserialize(
+            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/agenticRetrieveStream"); });
+        return result.IsSuccess() ? AgenticRetrieveStreamOutcome(result.GetResultWithOwnership())
+                                  : AgenticRetrieveStreamOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
 CreateInvocationOutcome BedrockAgentRuntimeClient::CreateInvocation(const CreateInvocationRequest& request) const {
   if (!request.SessionIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateInvocation", "Required field: SessionIdentifier, is not set");
@@ -318,6 +356,38 @@ GetAgentMemoryOutcome BedrockAgentRuntimeClient::GetAgentMemory(const GetAgentMe
       },
       Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetAgentMemoryOutcome(result.GetResultWithOwnership()) : GetAgentMemoryOutcome(std::move(result.GetError()));
+}
+GetDocumentContentOutcome BedrockAgentRuntimeClient::GetDocumentContent(const GetDocumentContentRequest& request) const {
+  if (!request.DataSourceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDocumentContent", "Required field: DataSourceId, is not set");
+    return GetDocumentContentOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(
+        BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
+  }
+  if (!request.DocumentIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDocumentContent", "Required field: DocumentId, is not set");
+    return GetDocumentContentOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(
+        BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
+  if (!request.KnowledgeBaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDocumentContent", "Required field: KnowledgeBaseId, is not set");
+    return GetDocumentContentOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(
+        BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/knowledgebases/");
+        resolvedEndpoint.AddPathSegment(request.GetKnowledgeBaseId());
+        resolvedEndpoint.AddPathSegments("/datasources/");
+        resolvedEndpoint.AddPathSegment(request.GetDataSourceId());
+        resolvedEndpoint.AddPathSegments("/documents/");
+        resolvedEndpoint.AddPathSegment(request.GetDocumentId());
+        resolvedEndpoint.AddPathSegments("/content");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDocumentContentOutcome(result.GetResultWithOwnership())
+                            : GetDocumentContentOutcome(std::move(result.GetError()));
 }
 GetExecutionFlowSnapshotOutcome BedrockAgentRuntimeClient::GetExecutionFlowSnapshot(const GetExecutionFlowSnapshotRequest& request) const {
   if (!request.ExecutionIdentifierHasBeenSet()) {

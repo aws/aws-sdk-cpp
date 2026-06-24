@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/HttpApiSchemaConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -69,12 +70,34 @@ class RuntimeTargetConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The API schema configuration that defines the structure of the runtime
+   * target's API.</p>
+   */
+  inline const HttpApiSchemaConfiguration& GetSchema() const { return m_schema; }
+  inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
+  template <typename SchemaT = HttpApiSchemaConfiguration>
+  void SetSchema(SchemaT&& value) {
+    m_schemaHasBeenSet = true;
+    m_schema = std::forward<SchemaT>(value);
+  }
+  template <typename SchemaT = HttpApiSchemaConfiguration>
+  RuntimeTargetConfiguration& WithSchema(SchemaT&& value) {
+    SetSchema(std::forward<SchemaT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
   Aws::String m_qualifier;
+
+  HttpApiSchemaConfiguration m_schema;
   bool m_arnHasBeenSet = false;
   bool m_qualifierHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/connect/model/EvaluationFormLanguageConfiguration.h>
 #include <aws/connect/model/EvaluationFormScoringStrategy.h>
 #include <aws/connect/model/EvaluationFormTargetConfiguration.h>
+#include <aws/connect/model/EvaluationFormValidationStatus.h>
 #include <aws/connect/model/EvaluationFormVersionStatus.h>
 #include <aws/connect/model/EvaluationReviewConfiguration.h>
 #include <aws/core/utils/DateTime.h>
@@ -375,6 +376,43 @@ class EvaluationForm {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The status of the most recent validation run for this evaluation form. Valid
+   * values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
+   * <code>FAILED</code>.</p>
+   */
+  inline EvaluationFormValidationStatus GetLatestValidationStatus() const { return m_latestValidationStatus; }
+  inline bool LatestValidationStatusHasBeenSet() const { return m_latestValidationStatusHasBeenSet; }
+  inline void SetLatestValidationStatus(EvaluationFormValidationStatus value) {
+    m_latestValidationStatusHasBeenSet = true;
+    m_latestValidationStatus = value;
+  }
+  inline EvaluationForm& WithLatestValidationStatus(EvaluationFormValidationStatus value) {
+    SetLatestValidationStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when the most recent validation was started for this evaluation
+   * form.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastValidationTime() const { return m_lastValidationTime; }
+  inline bool LastValidationTimeHasBeenSet() const { return m_lastValidationTimeHasBeenSet; }
+  template <typename LastValidationTimeT = Aws::Utils::DateTime>
+  void SetLastValidationTime(LastValidationTimeT&& value) {
+    m_lastValidationTimeHasBeenSet = true;
+    m_lastValidationTime = std::forward<LastValidationTimeT>(value);
+  }
+  template <typename LastValidationTimeT = Aws::Utils::DateTime>
+  EvaluationForm& WithLastValidationTime(LastValidationTimeT&& value) {
+    SetLastValidationTime(std::forward<LastValidationTimeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_evaluationFormId;
 
@@ -411,6 +449,10 @@ class EvaluationForm {
   EvaluationFormTargetConfiguration m_targetConfiguration;
 
   EvaluationFormLanguageConfiguration m_languageConfiguration;
+
+  EvaluationFormValidationStatus m_latestValidationStatus{EvaluationFormValidationStatus::NOT_SET};
+
+  Aws::Utils::DateTime m_lastValidationTime{};
   bool m_evaluationFormIdHasBeenSet = false;
   bool m_evaluationFormVersionHasBeenSet = false;
   bool m_lockedHasBeenSet = false;
@@ -429,6 +471,8 @@ class EvaluationForm {
   bool m_tagsHasBeenSet = false;
   bool m_targetConfigurationHasBeenSet = false;
   bool m_languageConfigurationHasBeenSet = false;
+  bool m_latestValidationStatusHasBeenSet = false;
+  bool m_lastValidationTimeHasBeenSet = false;
 };
 
 }  // namespace Model

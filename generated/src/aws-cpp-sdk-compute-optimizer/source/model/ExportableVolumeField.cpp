@@ -26,6 +26,9 @@ static const int UtilizationMetricsVolumeReadBytesPerSecondMaximum_HASH =
     HashingUtils::HashString("UtilizationMetricsVolumeReadBytesPerSecondMaximum");
 static const int UtilizationMetricsVolumeWriteBytesPerSecondMaximum_HASH =
     HashingUtils::HashString("UtilizationMetricsVolumeWriteBytesPerSecondMaximum");
+static const int UtilizationMetricsVolumeIOPSExceededMaximum_HASH = HashingUtils::HashString("UtilizationMetricsVolumeIOPSExceededMaximum");
+static const int UtilizationMetricsVolumeThroughputExceededMaximum_HASH =
+    HashingUtils::HashString("UtilizationMetricsVolumeThroughputExceededMaximum");
 static const int LookbackPeriodInDays_HASH = HashingUtils::HashString("LookbackPeriodInDays");
 static const int CurrentConfigurationVolumeType_HASH = HashingUtils::HashString("CurrentConfigurationVolumeType");
 static const int CurrentConfigurationVolumeBaselineIOPS_HASH = HashingUtils::HashString("CurrentConfigurationVolumeBaselineIOPS");
@@ -87,6 +90,10 @@ ExportableVolumeField GetExportableVolumeFieldForName(const Aws::String& name) {
     return ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum;
   } else if (hashCode == UtilizationMetricsVolumeWriteBytesPerSecondMaximum_HASH) {
     return ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum;
+  } else if (hashCode == UtilizationMetricsVolumeIOPSExceededMaximum_HASH) {
+    return ExportableVolumeField::UtilizationMetricsVolumeIOPSExceededMaximum;
+  } else if (hashCode == UtilizationMetricsVolumeThroughputExceededMaximum_HASH) {
+    return ExportableVolumeField::UtilizationMetricsVolumeThroughputExceededMaximum;
   } else if (hashCode == LookbackPeriodInDays_HASH) {
     return ExportableVolumeField::LookbackPeriodInDays;
   } else if (hashCode == CurrentConfigurationVolumeType_HASH) {
@@ -173,6 +180,10 @@ Aws::String GetNameForExportableVolumeField(ExportableVolumeField enumValue) {
       return "UtilizationMetricsVolumeReadBytesPerSecondMaximum";
     case ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum:
       return "UtilizationMetricsVolumeWriteBytesPerSecondMaximum";
+    case ExportableVolumeField::UtilizationMetricsVolumeIOPSExceededMaximum:
+      return "UtilizationMetricsVolumeIOPSExceededMaximum";
+    case ExportableVolumeField::UtilizationMetricsVolumeThroughputExceededMaximum:
+      return "UtilizationMetricsVolumeThroughputExceededMaximum";
     case ExportableVolumeField::LookbackPeriodInDays:
       return "LookbackPeriodInDays";
     case ExportableVolumeField::CurrentConfigurationVolumeType:

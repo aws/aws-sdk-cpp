@@ -90,6 +90,14 @@ ClusterNodeDetails& ClusterNodeDetails::operator=(JsonView jsonValue) {
     m_desiredImageId = jsonValue.GetString("DesiredImageId");
     m_desiredImageIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CurrentImageReleaseVersion")) {
+    m_currentImageReleaseVersion = jsonValue.GetString("CurrentImageReleaseVersion");
+    m_currentImageReleaseVersionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DesiredImageReleaseVersion")) {
+    m_desiredImageReleaseVersion = jsonValue.GetString("DesiredImageReleaseVersion");
+    m_desiredImageReleaseVersionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ImageVersionStatus")) {
     m_imageVersionStatus = ClusterImageVersionStatusMapper::GetClusterImageVersionStatusForName(jsonValue.GetString("ImageVersionStatus"));
     m_imageVersionStatusHasBeenSet = true;
@@ -187,6 +195,14 @@ JsonValue ClusterNodeDetails::Jsonize() const {
 
   if (m_desiredImageIdHasBeenSet) {
     payload.WithString("DesiredImageId", m_desiredImageId);
+  }
+
+  if (m_currentImageReleaseVersionHasBeenSet) {
+    payload.WithString("CurrentImageReleaseVersion", m_currentImageReleaseVersion);
+  }
+
+  if (m_desiredImageReleaseVersionHasBeenSet) {
+    payload.WithString("DesiredImageReleaseVersion", m_desiredImageReleaseVersion);
   }
 
   if (m_imageVersionStatusHasBeenSet) {

@@ -30,6 +30,10 @@ UpdateLeadContext& UpdateLeadContext::operator=(JsonView jsonValue) {
     m_interaction = jsonValue.GetObject("Interaction");
     m_interactionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Insights")) {
+    m_insights = jsonValue.GetObject("Insights");
+    m_insightsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue UpdateLeadContext::Jsonize() const {
 
   if (m_interactionHasBeenSet) {
     payload.WithObject("Interaction", m_interaction.Jsonize());
+  }
+
+  if (m_insightsHasBeenSet) {
+    payload.WithObject("Insights", m_insights.Jsonize());
   }
 
   return payload;

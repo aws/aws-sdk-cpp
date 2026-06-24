@@ -9,6 +9,7 @@
 #include <aws/bedrock-agent-runtime/model/GuardrailConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseQuery.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseRetrievalConfiguration.h>
+#include <aws/bedrock-agent-runtime/model/UserContext.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -125,6 +126,22 @@ class RetrieveRequest : public BedrockAgentRuntimeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const UserContext& GetUserContext() const { return m_userContext; }
+  inline bool UserContextHasBeenSet() const { return m_userContextHasBeenSet; }
+  template <typename UserContextT = UserContext>
+  void SetUserContext(UserContextT&& value) {
+    m_userContextHasBeenSet = true;
+    m_userContext = std::forward<UserContextT>(value);
+  }
+  template <typename UserContextT = UserContext>
+  RetrieveRequest& WithUserContext(UserContextT&& value) {
+    SetUserContext(std::forward<UserContextT>(value));
+    return *this;
+  }
+  ///@}
  private:
   GuardrailConfiguration m_guardrailConfiguration;
 
@@ -135,11 +152,14 @@ class RetrieveRequest : public BedrockAgentRuntimeRequest {
   KnowledgeBaseRetrievalConfiguration m_retrievalConfiguration;
 
   KnowledgeBaseQuery m_retrievalQuery;
+
+  UserContext m_userContext;
   bool m_guardrailConfigurationHasBeenSet = false;
   bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_retrievalConfigurationHasBeenSet = false;
   bool m_retrievalQueryHasBeenSet = false;
+  bool m_userContextHasBeenSet = false;
 };
 
 }  // namespace Model

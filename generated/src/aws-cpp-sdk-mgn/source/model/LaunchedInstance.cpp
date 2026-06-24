@@ -30,6 +30,18 @@ LaunchedInstance& LaunchedInstance::operator=(JsonView jsonValue) {
     m_firstBoot = FirstBootMapper::GetFirstBootForName(jsonValue.GetString("firstBoot"));
     m_firstBootHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lastKnownChecks")) {
+    Aws::Utils::Array<JsonView> lastKnownChecksJsonList = jsonValue.GetArray("lastKnownChecks");
+    for (unsigned lastKnownChecksIndex = 0; lastKnownChecksIndex < lastKnownChecksJsonList.GetLength(); ++lastKnownChecksIndex) {
+      m_lastKnownChecks.push_back(lastKnownChecksJsonList[lastKnownChecksIndex].AsObject());
+    }
+    m_lastKnownChecksHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastKnownFsxChecksStatus")) {
+    m_lastKnownFsxChecksStatus =
+        LastKnownCheckStatusMapper::GetLastKnownCheckStatusForName(jsonValue.GetString("lastKnownFsxChecksStatus"));
+    m_lastKnownFsxChecksStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +58,18 @@ JsonValue LaunchedInstance::Jsonize() const {
 
   if (m_firstBootHasBeenSet) {
     payload.WithString("firstBoot", FirstBootMapper::GetNameForFirstBoot(m_firstBoot));
+  }
+
+  if (m_lastKnownChecksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> lastKnownChecksJsonList(m_lastKnownChecks.size());
+    for (unsigned lastKnownChecksIndex = 0; lastKnownChecksIndex < lastKnownChecksJsonList.GetLength(); ++lastKnownChecksIndex) {
+      lastKnownChecksJsonList[lastKnownChecksIndex].AsObject(m_lastKnownChecks[lastKnownChecksIndex].Jsonize());
+    }
+    payload.WithArray("lastKnownChecks", std::move(lastKnownChecksJsonList));
+  }
+
+  if (m_lastKnownFsxChecksStatusHasBeenSet) {
+    payload.WithString("lastKnownFsxChecksStatus", LastKnownCheckStatusMapper::GetNameForLastKnownCheckStatus(m_lastKnownFsxChecksStatus));
   }
 
   return payload;

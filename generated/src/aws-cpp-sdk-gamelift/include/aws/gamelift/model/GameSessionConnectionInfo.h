@@ -41,9 +41,11 @@ class GameSessionConnectionInfo {
   ///@{
   /**
    * <p>An identifier for the game session that is unique across all regions. The
-   * value is always a full ARN in the following format:
-   * <code>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID
-   * string&gt;</code>.</p>
+   * value is always a full ARN in the following format: For Home Region game session
+   * - <code>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet
+   * ID&gt;/&lt;ID string&gt;</code>. For Remote Location game session -
+   * <code>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet
+   * ID&gt;/&lt;location&gt;/&lt;ID string&gt;</code>.</p>
    */
   inline const Aws::String& GetGameSessionArn() const { return m_gameSessionArn; }
   inline bool GameSessionArnHasBeenSet() const { return m_gameSessionArnHasBeenSet; }

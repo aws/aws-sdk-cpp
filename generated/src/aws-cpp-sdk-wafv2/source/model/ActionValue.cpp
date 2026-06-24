@@ -20,6 +20,7 @@ static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
 static const int COUNT_HASH = HashingUtils::HashString("COUNT");
 static const int CAPTCHA_HASH = HashingUtils::HashString("CAPTCHA");
 static const int CHALLENGE_HASH = HashingUtils::HashString("CHALLENGE");
+static const int MONETIZE_HASH = HashingUtils::HashString("MONETIZE");
 static const int EXCLUDED_AS_COUNT_HASH = HashingUtils::HashString("EXCLUDED_AS_COUNT");
 
 ActionValue GetActionValueForName(const Aws::String& name) {
@@ -34,6 +35,8 @@ ActionValue GetActionValueForName(const Aws::String& name) {
     return ActionValue::CAPTCHA;
   } else if (hashCode == CHALLENGE_HASH) {
     return ActionValue::CHALLENGE;
+  } else if (hashCode == MONETIZE_HASH) {
+    return ActionValue::MONETIZE;
   } else if (hashCode == EXCLUDED_AS_COUNT_HASH) {
     return ActionValue::EXCLUDED_AS_COUNT;
   }
@@ -60,6 +63,8 @@ Aws::String GetNameForActionValue(ActionValue enumValue) {
       return "CAPTCHA";
     case ActionValue::CHALLENGE:
       return "CHALLENGE";
+    case ActionValue::MONETIZE:
+      return "MONETIZE";
     case ActionValue::EXCLUDED_AS_COUNT:
       return "EXCLUDED_AS_COUNT";
     default:

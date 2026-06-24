@@ -84,5 +84,23 @@ Aws::String UpdateCanaryRequest::SerializePayload() const {
     payload.WithArray("BrowserConfigs", std::move(browserConfigsJsonList));
   }
 
+  if (m_addReplicaLocationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> addReplicaLocationsJsonList(m_addReplicaLocations.size());
+    for (unsigned addReplicaLocationsIndex = 0; addReplicaLocationsIndex < addReplicaLocationsJsonList.GetLength();
+         ++addReplicaLocationsIndex) {
+      addReplicaLocationsJsonList[addReplicaLocationsIndex].AsObject(m_addReplicaLocations[addReplicaLocationsIndex].Jsonize());
+    }
+    payload.WithArray("AddReplicaLocations", std::move(addReplicaLocationsJsonList));
+  }
+
+  if (m_removeReplicaLocationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> removeReplicaLocationsJsonList(m_removeReplicaLocations.size());
+    for (unsigned removeReplicaLocationsIndex = 0; removeReplicaLocationsIndex < removeReplicaLocationsJsonList.GetLength();
+         ++removeReplicaLocationsIndex) {
+      removeReplicaLocationsJsonList[removeReplicaLocationsIndex].AsString(m_removeReplicaLocations[removeReplicaLocationsIndex]);
+    }
+    payload.WithArray("RemoveReplicaLocations", std::move(removeReplicaLocationsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

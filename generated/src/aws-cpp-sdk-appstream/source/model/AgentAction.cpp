@@ -17,6 +17,7 @@ namespace AgentActionMapper {
 
 static const int COMPUTER_VISION_HASH = HashingUtils::HashString("COMPUTER_VISION");
 static const int COMPUTER_INPUT_HASH = HashingUtils::HashString("COMPUTER_INPUT");
+static const int FORWARD_MCP_TOOLS_HASH = HashingUtils::HashString("FORWARD_MCP_TOOLS");
 
 AgentAction GetAgentActionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ AgentAction GetAgentActionForName(const Aws::String& name) {
     return AgentAction::COMPUTER_VISION;
   } else if (hashCode == COMPUTER_INPUT_HASH) {
     return AgentAction::COMPUTER_INPUT;
+  } else if (hashCode == FORWARD_MCP_TOOLS_HASH) {
+    return AgentAction::FORWARD_MCP_TOOLS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForAgentAction(AgentAction enumValue) {
       return "COMPUTER_VISION";
     case AgentAction::COMPUTER_INPUT:
       return "COMPUTER_INPUT";
+    case AgentAction::FORWARD_MCP_TOOLS:
+      return "FORWARD_MCP_TOOLS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

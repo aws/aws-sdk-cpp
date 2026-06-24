@@ -9,6 +9,7 @@
 #include <aws/s3vectors/model/ListIndexesPaginationTraits.h>
 #include <aws/s3vectors/model/ListVectorBucketsPaginationTraits.h>
 #include <aws/s3vectors/model/ListVectorsPaginationTraits.h>
+#include <aws/s3vectors/model/QueryVectorsPaginationTraits.h>
 
 namespace Aws {
 namespace S3Vectors {
@@ -19,6 +20,8 @@ using ListVectorBucketsPaginator = Aws::Utils::Pagination::Paginator<S3VectorsCl
                                                                      Pagination::ListVectorBucketsPaginationTraits<S3VectorsClient>>;
 using ListVectorsPaginator =
     Aws::Utils::Pagination::Paginator<S3VectorsClient, Model::ListVectorsRequest, Pagination::ListVectorsPaginationTraits<S3VectorsClient>>;
+using QueryVectorsPaginator = Aws::Utils::Pagination::Paginator<S3VectorsClient, Model::QueryVectorsRequest,
+                                                                Pagination::QueryVectorsPaginationTraits<S3VectorsClient>>;
 
 }  // namespace S3Vectors
 }  // namespace Aws

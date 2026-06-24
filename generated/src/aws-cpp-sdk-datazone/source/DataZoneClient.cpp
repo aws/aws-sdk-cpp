@@ -77,6 +77,7 @@
 #include <aws/datazone/model/DeleteFormTypeRequest.h>
 #include <aws/datazone/model/DeleteGlossaryRequest.h>
 #include <aws/datazone/model/DeleteGlossaryTermRequest.h>
+#include <aws/datazone/model/DeleteLineageEventRequest.h>
 #include <aws/datazone/model/DeleteListingRequest.h>
 #include <aws/datazone/model/DeleteNotebookRequest.h>
 #include <aws/datazone/model/DeleteProjectMembershipRequest.h>
@@ -1690,6 +1691,31 @@ DeleteGlossaryTermOutcome DataZoneClient::DeleteGlossaryTerm(const DeleteGlossar
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteGlossaryTermOutcome(result.GetResultWithOwnership())
                             : DeleteGlossaryTermOutcome(std::move(result.GetError()));
+}
+
+DeleteLineageEventOutcome DataZoneClient::DeleteLineageEvent(const DeleteLineageEventRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteLineageEvent", "Required field: DomainIdentifier, is not set");
+    return DeleteLineageEventOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteLineageEvent", "Required field: Identifier, is not set");
+    return DeleteLineageEventOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [Identifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/lineage/events/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLineageEventOutcome(result.GetResultWithOwnership())
+                            : DeleteLineageEventOutcome(std::move(result.GetError()));
 }
 
 DeleteListingOutcome DataZoneClient::DeleteListing(const DeleteListingRequest& request) const {

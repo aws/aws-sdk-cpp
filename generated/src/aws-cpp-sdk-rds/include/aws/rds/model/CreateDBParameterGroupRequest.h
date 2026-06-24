@@ -74,13 +74,14 @@ class CreateDBParameterGroupRequest : public RDSRequest {
    * <p>The output contains duplicates.</p>  <p>The following are the valid DB
    * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
    * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
-   * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mysql</code> </p>
-   * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-   * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-   * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-   * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-   * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-   * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+   * </li> <li> <p> <code>db2-ce</code> </p> </li> <li> <p> <code>db2-se</code> </p>
+   * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+   * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+   * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+   * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+   * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+   * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+   * <code>sqlserver-web</code> </p> </li> </ul>
    */
   inline const Aws::String& GetDBParameterGroupFamily() const { return m_dBParameterGroupFamily; }
   inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }

@@ -14,6 +14,7 @@
 #include <aws/guardduty/model/ListOrganizationAdminAccountsPaginationTraits.h>
 #include <aws/guardduty/model/ListFiltersPaginationTraits.h>
 #include <aws/guardduty/model/ListInvitationsPaginationTraits.h>
+#include <aws/guardduty/model/ListInvestigationsPaginationTraits.h>
 #include <aws/guardduty/model/ListPublishingDestinationsPaginationTraits.h>
 #include <aws/guardduty/model/ListMembersPaginationTraits.h>
 #include <aws/guardduty/model/ListTrustedEntitySetsPaginationTraits.h>

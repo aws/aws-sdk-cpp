@@ -12,6 +12,7 @@
 #include <aws/bedrock-runtime/model/ConverseStreamRequest.h>
 #include <aws/bedrock-runtime/model/CountTokensRequest.h>
 #include <aws/bedrock-runtime/model/GetAsyncInvokeRequest.h>
+#include <aws/bedrock-runtime/model/InvokeGuardrailChecksRequest.h>
 #include <aws/bedrock-runtime/model/InvokeModelRequest.h>
 #include <aws/bedrock-runtime/model/InvokeModelWithBidirectionalStreamRequest.h>
 #include <aws/bedrock-runtime/model/InvokeModelWithResponseStreamRequest.h>
@@ -332,6 +333,13 @@ GetAsyncInvokeOutcome BedrockRuntimeClient::GetAsyncInvoke(const GetAsyncInvokeR
       Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetAsyncInvokeOutcome(result.GetResultWithOwnership()) : GetAsyncInvokeOutcome(std::move(result.GetError()));
 }
+InvokeGuardrailChecksOutcome BedrockRuntimeClient::InvokeGuardrailChecks(const InvokeGuardrailChecksRequest& request) const {
+  auto result = InvokeServiceOperation(
+      request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/guardrail-checks/invoke"); },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InvokeGuardrailChecksOutcome(result.GetResultWithOwnership())
+                            : InvokeGuardrailChecksOutcome(std::move(result.GetError()));
+}
 InvokeModelOutcome BedrockRuntimeClient::InvokeModel(const InvokeModelRequest& request) const {
   AWS_OPERATION_GUARD(InvokeModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -392,7 +400,8 @@ void BedrockRuntimeClient::InvokeModelWithBidirectionalStreamAsync(
 
 #if AWS_SDK_USE_CRT_HTTP
   // Push-based WriteData path (CRT HTTP client only)
-  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, m_httpClient);
+  auto writeDataStreamBuf =
+      Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, m_httpClient, 8 * 1024, m_clientConfig->requestTimeoutMs);
   auto eventEncoderStream = Aws::MakeShared<Model::InvokeModelWithBidirectionalStreamInput>(ALLOCATION_TAG, writeDataStreamBuf);
   request.SetBody(eventEncoderStream);
 

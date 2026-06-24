@@ -5,7 +5,10 @@
 
 #pragma once
 #include <aws/securityagent/SecurityAgent_EXPORTS.h>
+#include <aws/securityagent/model/BitbucketRepositoryResource.h>
+#include <aws/securityagent/model/ConfluenceDocumentResource.h>
 #include <aws/securityagent/model/GitHubRepositoryResource.h>
+#include <aws/securityagent/model/GitLabRepositoryResource.h>
 
 #include <utility>
 
@@ -50,9 +53,66 @@ class IntegratedResource {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const GitLabRepositoryResource& GetGitlabRepository() const { return m_gitlabRepository; }
+  inline bool GitlabRepositoryHasBeenSet() const { return m_gitlabRepositoryHasBeenSet; }
+  template <typename GitlabRepositoryT = GitLabRepositoryResource>
+  void SetGitlabRepository(GitlabRepositoryT&& value) {
+    m_gitlabRepositoryHasBeenSet = true;
+    m_gitlabRepository = std::forward<GitlabRepositoryT>(value);
+  }
+  template <typename GitlabRepositoryT = GitLabRepositoryResource>
+  IntegratedResource& WithGitlabRepository(GitlabRepositoryT&& value) {
+    SetGitlabRepository(std::forward<GitlabRepositoryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const BitbucketRepositoryResource& GetBitbucketRepository() const { return m_bitbucketRepository; }
+  inline bool BitbucketRepositoryHasBeenSet() const { return m_bitbucketRepositoryHasBeenSet; }
+  template <typename BitbucketRepositoryT = BitbucketRepositoryResource>
+  void SetBitbucketRepository(BitbucketRepositoryT&& value) {
+    m_bitbucketRepositoryHasBeenSet = true;
+    m_bitbucketRepository = std::forward<BitbucketRepositoryT>(value);
+  }
+  template <typename BitbucketRepositoryT = BitbucketRepositoryResource>
+  IntegratedResource& WithBitbucketRepository(BitbucketRepositoryT&& value) {
+    SetBitbucketRepository(std::forward<BitbucketRepositoryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ConfluenceDocumentResource& GetConfluenceDocument() const { return m_confluenceDocument; }
+  inline bool ConfluenceDocumentHasBeenSet() const { return m_confluenceDocumentHasBeenSet; }
+  template <typename ConfluenceDocumentT = ConfluenceDocumentResource>
+  void SetConfluenceDocument(ConfluenceDocumentT&& value) {
+    m_confluenceDocumentHasBeenSet = true;
+    m_confluenceDocument = std::forward<ConfluenceDocumentT>(value);
+  }
+  template <typename ConfluenceDocumentT = ConfluenceDocumentResource>
+  IntegratedResource& WithConfluenceDocument(ConfluenceDocumentT&& value) {
+    SetConfluenceDocument(std::forward<ConfluenceDocumentT>(value));
+    return *this;
+  }
+  ///@}
  private:
   GitHubRepositoryResource m_githubRepository;
+
+  GitLabRepositoryResource m_gitlabRepository;
+
+  BitbucketRepositoryResource m_bitbucketRepository;
+
+  ConfluenceDocumentResource m_confluenceDocument;
   bool m_githubRepositoryHasBeenSet = false;
+  bool m_gitlabRepositoryHasBeenSet = false;
+  bool m_bitbucketRepositoryHasBeenSet = false;
+  bool m_confluenceDocumentHasBeenSet = false;
 };
 
 }  // namespace Model

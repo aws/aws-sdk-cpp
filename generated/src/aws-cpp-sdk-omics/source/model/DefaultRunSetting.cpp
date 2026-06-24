@@ -105,6 +105,10 @@ DefaultRunSetting& DefaultRunSetting::operator=(JsonView jsonValue) {
     m_engineSettings = jsonValue.GetObject("engineSettings");
     m_engineSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("scratchStorageMode")) {
+    m_scratchStorageMode = ScratchStorageModeMapper::GetScratchStorageModeForName(jsonValue.GetString("scratchStorageMode"));
+    m_scratchStorageModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -201,6 +205,10 @@ JsonValue DefaultRunSetting::Jsonize() const {
     if (!m_engineSettings.View().IsNull()) {
       payload.WithObject("engineSettings", JsonValue(m_engineSettings.View()));
     }
+  }
+
+  if (m_scratchStorageModeHasBeenSet) {
+    payload.WithString("scratchStorageMode", ScratchStorageModeMapper::GetNameForScratchStorageMode(m_scratchStorageMode));
   }
 
   return payload;

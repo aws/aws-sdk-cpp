@@ -36,8 +36,8 @@ class GetOauth2CredentialProviderResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the client secret in AWS Secrets
-   * Manager.</p>
+   * <p>The Amazon Resource Name (ARN) of the client secret in Amazon Web Services
+   * Secrets Manager.</p>
    */
   inline const Secret& GetClientSecretArn() const { return m_clientSecretArn; }
   template <typename ClientSecretArnT = Secret>
@@ -54,8 +54,8 @@ class GetOauth2CredentialProviderResult {
 
   ///@{
   /**
-   * <p>The JSON key used to extract the client secret value from the AWS Secrets
-   * Manager secret.</p>
+   * <p>The JSON key used to extract the client secret value from the Amazon Web
+   * Services Secrets Manager secret.</p>
    */
   inline const Aws::String& GetClientSecretJsonKey() const { return m_clientSecretJsonKey; }
   template <typename ClientSecretJsonKeyT = Aws::String>
@@ -74,7 +74,7 @@ class GetOauth2CredentialProviderResult {
   /**
    * <p>The source type of the client secret. Either <code>MANAGED</code> if the
    * secret is managed by the service, or <code>EXTERNAL</code> if managed by the
-   * user in AWS Secrets Manager.</p>
+   * user in Amazon Web Services Secrets Manager.</p>
    */
   inline SecretSourceType GetClientSecretSource() const { return m_clientSecretSource; }
   inline void SetClientSecretSource(SecretSourceType value) {

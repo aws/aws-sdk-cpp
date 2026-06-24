@@ -70,6 +70,10 @@ GetAwsOpportunitySummaryResult& GetAwsOpportunitySummaryResult::operator=(const 
     m_project = jsonValue.GetObject("Project");
     m_projectHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CosellMotion")) {
+    m_cosellMotion = jsonValue.GetString("CosellMotion");
+    m_cosellMotionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Catalog")) {
     m_catalog = jsonValue.GetString("Catalog");
     m_catalogHasBeenSet = true;

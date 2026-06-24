@@ -612,6 +612,38 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
+   * <p>Retrieves the details and current status of a prospecting task previously
+   * started with <code>StartProspectingFromEngagementTask</code> to enable polling
+   * for completion and access to per-engagement processing results.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetProspectingFromEngagementTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetProspectingFromEngagementTaskOutcome GetProspectingFromEngagementTask(
+      const Model::GetProspectingFromEngagementTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetProspectingFromEngagementTask that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetProspectingFromEngagementTaskRequestT = Model::GetProspectingFromEngagementTaskRequest>
+  Model::GetProspectingFromEngagementTaskOutcomeCallable GetProspectingFromEngagementTaskCallable(
+      const GetProspectingFromEngagementTaskRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::GetProspectingFromEngagementTask, request);
+  }
+
+  /**
+   * An Async wrapper for GetProspectingFromEngagementTask that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetProspectingFromEngagementTaskRequestT = Model::GetProspectingFromEngagementTaskRequest>
+  void GetProspectingFromEngagementTaskAsync(const GetProspectingFromEngagementTaskRequestT& request,
+                                             const GetProspectingFromEngagementTaskResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::GetProspectingFromEngagementTask, request, handler, context);
+  }
+
+  /**
    * <p>Use this action to retrieve a specific snapshot record.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetResourceSnapshot">AWS
@@ -949,6 +981,39 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
+   * <p>Lists all prospecting tasks initiated by the caller's account. Supports
+   * optional filters by task identifier, task name, or start time range. Results can
+   * be sorted using configurable options. The response is paginated. Use the
+   * <code>NextToken</code> value from each response to retrieve subsequent
+   * pages.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListProspectingFromEngagementTasks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListProspectingFromEngagementTasksOutcome ListProspectingFromEngagementTasks(
+      const Model::ListProspectingFromEngagementTasksRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListProspectingFromEngagementTasks that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListProspectingFromEngagementTasksRequestT = Model::ListProspectingFromEngagementTasksRequest>
+  Model::ListProspectingFromEngagementTasksOutcomeCallable ListProspectingFromEngagementTasksCallable(
+      const ListProspectingFromEngagementTasksRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::ListProspectingFromEngagementTasks, request);
+  }
+
+  /**
+   * An Async wrapper for ListProspectingFromEngagementTasks that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListProspectingFromEngagementTasksRequestT = Model::ListProspectingFromEngagementTasksRequest>
+  void ListProspectingFromEngagementTasksAsync(const ListProspectingFromEngagementTasksRequestT& request,
+                                               const ListProspectingFromEngagementTasksResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::ListProspectingFromEngagementTasks, request, handler, context);
+  }
+
+  /**
    * <p> Lists resource snapshot jobs owned by the customer. This operation supports
    * various filtering scenarios, including listing all jobs owned by the caller,
    * jobs for a specific engagement, jobs with a specific status, or any combination
@@ -1228,6 +1293,39 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
                                                const StartOpportunityFromEngagementTaskResponseReceivedHandler& handler,
                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PartnerCentralSellingClient::StartOpportunityFromEngagementTask, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a task to convert one or more engagement contexts into new prospecting
+   * leads. The task runs asynchronously. To poll for status, use
+   * <code>GetProspectingFromEngagementTask</code>, or use
+   * <code>ListProspectingFromEngagementTasks</code> to monitor multiple
+   * tasks.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartProspectingFromEngagementTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartProspectingFromEngagementTaskOutcome StartProspectingFromEngagementTask(
+      const Model::StartProspectingFromEngagementTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartProspectingFromEngagementTask that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename StartProspectingFromEngagementTaskRequestT = Model::StartProspectingFromEngagementTaskRequest>
+  Model::StartProspectingFromEngagementTaskOutcomeCallable StartProspectingFromEngagementTaskCallable(
+      const StartProspectingFromEngagementTaskRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::StartProspectingFromEngagementTask, request);
+  }
+
+  /**
+   * An Async wrapper for StartProspectingFromEngagementTask that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename StartProspectingFromEngagementTaskRequestT = Model::StartProspectingFromEngagementTaskRequest>
+  void StartProspectingFromEngagementTaskAsync(const StartProspectingFromEngagementTaskRequestT& request,
+                                               const StartProspectingFromEngagementTaskResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::StartProspectingFromEngagementTask, request, handler, context);
   }
 
   /**

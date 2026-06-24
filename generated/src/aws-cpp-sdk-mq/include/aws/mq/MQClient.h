@@ -448,6 +448,33 @@ class AWS_MQ_API MQClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns the resources shared to a broker.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeSharedResources">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeSharedResourcesOutcome DescribeSharedResources(const Model::DescribeSharedResourcesRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeSharedResources that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeSharedResourcesRequestT = Model::DescribeSharedResourcesRequest>
+  Model::DescribeSharedResourcesOutcomeCallable DescribeSharedResourcesCallable(const DescribeSharedResourcesRequestT& request) const {
+    return SubmitCallable(&MQClient::DescribeSharedResources, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeSharedResources that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeSharedResourcesRequestT = Model::DescribeSharedResourcesRequest>
+  void DescribeSharedResourcesAsync(const DescribeSharedResourcesRequestT& request,
+                                    const DescribeSharedResourcesResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MQClient::DescribeSharedResources, request, handler, context);
+  }
+
+  /**
    * <p>Returns information about an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeUser">AWS API
    * Reference</a></p>

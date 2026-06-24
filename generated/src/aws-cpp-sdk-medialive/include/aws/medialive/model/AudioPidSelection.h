@@ -4,7 +4,11 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/AudioPid.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -43,9 +47,38 @@ class AudioPidSelection {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Selects one or more unique PIDs from within a source.
+When using 'pids', you can
+   * specify per-PID audio pre-mixer settings.
+   */
+  inline const Aws::Vector<AudioPid>& GetPids() const { return m_pids; }
+  inline bool PidsHasBeenSet() const { return m_pidsHasBeenSet; }
+  template <typename PidsT = Aws::Vector<AudioPid>>
+  void SetPids(PidsT&& value) {
+    m_pidsHasBeenSet = true;
+    m_pids = std::forward<PidsT>(value);
+  }
+  template <typename PidsT = Aws::Vector<AudioPid>>
+  AudioPidSelection& WithPids(PidsT&& value) {
+    SetPids(std::forward<PidsT>(value));
+    return *this;
+  }
+  template <typename PidsT = AudioPid>
+  AudioPidSelection& AddPids(PidsT&& value) {
+    m_pidsHasBeenSet = true;
+    m_pids.emplace_back(std::forward<PidsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_pid{0};
+
+  Aws::Vector<AudioPid> m_pids;
   bool m_pidHasBeenSet = false;
+  bool m_pidsHasBeenSet = false;
 };
 
 }  // namespace Model

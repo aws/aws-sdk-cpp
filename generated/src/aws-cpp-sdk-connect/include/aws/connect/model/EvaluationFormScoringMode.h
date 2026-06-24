@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class EvaluationFormScoringMode { NOT_SET, QUESTION_ONLY, SECTION_ONLY };
+enum class EvaluationFormScoringMode { NOT_SET, QUESTION_ONLY, SECTION_ONLY, POINTS_BASED };
 
 namespace EvaluationFormScoringModeMapper {
 AWS_CONNECT_API EvaluationFormScoringMode GetEvaluationFormScoringModeForName(const Aws::String& name);

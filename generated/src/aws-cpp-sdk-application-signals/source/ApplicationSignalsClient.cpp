@@ -6,16 +6,22 @@
 #include <aws/application-signals/ApplicationSignalsClient.h>
 #include <aws/application-signals/ApplicationSignalsEndpointProvider.h>
 #include <aws/application-signals/ApplicationSignalsErrorMarshaller.h>
+#include <aws/application-signals/model/BatchDeleteInstrumentationConfigurationsRequest.h>
 #include <aws/application-signals/model/BatchGetServiceLevelObjectiveBudgetReportRequest.h>
 #include <aws/application-signals/model/BatchUpdateExclusionWindowsRequest.h>
+#include <aws/application-signals/model/CreateInstrumentationConfigurationRequest.h>
 #include <aws/application-signals/model/CreateServiceLevelObjectiveRequest.h>
 #include <aws/application-signals/model/DeleteGroupingConfigurationRequest.h>
+#include <aws/application-signals/model/DeleteInstrumentationConfigurationRequest.h>
 #include <aws/application-signals/model/DeleteServiceLevelObjectiveRequest.h>
+#include <aws/application-signals/model/GetInstrumentationConfigurationRequest.h>
+#include <aws/application-signals/model/GetInstrumentationConfigurationStatusRequest.h>
 #include <aws/application-signals/model/GetServiceLevelObjectiveRequest.h>
 #include <aws/application-signals/model/GetServiceRequest.h>
 #include <aws/application-signals/model/ListAuditFindingsRequest.h>
 #include <aws/application-signals/model/ListEntityEventsRequest.h>
 #include <aws/application-signals/model/ListGroupingAttributeDefinitionsRequest.h>
+#include <aws/application-signals/model/ListInstrumentationConfigurationsRequest.h>
 #include <aws/application-signals/model/ListServiceDependenciesRequest.h>
 #include <aws/application-signals/model/ListServiceDependentsRequest.h>
 #include <aws/application-signals/model/ListServiceLevelObjectiveExclusionWindowsRequest.h>
@@ -25,6 +31,7 @@
 #include <aws/application-signals/model/ListServicesRequest.h>
 #include <aws/application-signals/model/ListTagsForResourceRequest.h>
 #include <aws/application-signals/model/PutGroupingConfigurationRequest.h>
+#include <aws/application-signals/model/ReportInstrumentationConfigurationStatusRequest.h>
 #include <aws/application-signals/model/StartDiscoveryRequest.h>
 #include <aws/application-signals/model/TagResourceRequest.h>
 #include <aws/application-signals/model/UntagResourceRequest.h>
@@ -202,6 +209,18 @@ ApplicationSignalsClient::InvokeOperationOutcome ApplicationSignalsClient::Invok
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+BatchDeleteInstrumentationConfigurationsOutcome ApplicationSignalsClient::BatchDeleteInstrumentationConfigurations(
+    const BatchDeleteInstrumentationConfigurationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/batch-delete-instrumentation-configurations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteInstrumentationConfigurationsOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteInstrumentationConfigurationsOutcome(std::move(result.GetError()));
+}
+
 BatchGetServiceLevelObjectiveBudgetReportOutcome ApplicationSignalsClient::BatchGetServiceLevelObjectiveBudgetReport(
     const BatchGetServiceLevelObjectiveBudgetReportRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -224,6 +243,18 @@ BatchUpdateExclusionWindowsOutcome ApplicationSignalsClient::BatchUpdateExclusio
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? BatchUpdateExclusionWindowsOutcome(result.GetResultWithOwnership())
                             : BatchUpdateExclusionWindowsOutcome(std::move(result.GetError()));
+}
+
+CreateInstrumentationConfigurationOutcome ApplicationSignalsClient::CreateInstrumentationConfiguration(
+    const CreateInstrumentationConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/create-instrumentation-configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInstrumentationConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateInstrumentationConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateServiceLevelObjectiveOutcome ApplicationSignalsClient::CreateServiceLevelObjective(
@@ -250,6 +281,18 @@ DeleteGroupingConfigurationOutcome ApplicationSignalsClient::DeleteGroupingConfi
                             : DeleteGroupingConfigurationOutcome(std::move(result.GetError()));
 }
 
+DeleteInstrumentationConfigurationOutcome ApplicationSignalsClient::DeleteInstrumentationConfiguration(
+    const DeleteInstrumentationConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/delete-instrumentation-configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInstrumentationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteInstrumentationConfigurationOutcome(std::move(result.GetError()));
+}
+
 DeleteServiceLevelObjectiveOutcome ApplicationSignalsClient::DeleteServiceLevelObjective(
     const DeleteServiceLevelObjectiveRequest& request) const {
   if (!request.IdHasBeenSet()) {
@@ -267,6 +310,30 @@ DeleteServiceLevelObjectiveOutcome ApplicationSignalsClient::DeleteServiceLevelO
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteServiceLevelObjectiveOutcome(result.GetResultWithOwnership())
                             : DeleteServiceLevelObjectiveOutcome(std::move(result.GetError()));
+}
+
+GetInstrumentationConfigurationOutcome ApplicationSignalsClient::GetInstrumentationConfiguration(
+    const GetInstrumentationConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/get-instrumentation-configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInstrumentationConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetInstrumentationConfigurationOutcome(std::move(result.GetError()));
+}
+
+GetInstrumentationConfigurationStatusOutcome ApplicationSignalsClient::GetInstrumentationConfigurationStatus(
+    const GetInstrumentationConfigurationStatusRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/get-instrumentation-configuration-status");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInstrumentationConfigurationStatusOutcome(result.GetResultWithOwnership())
+                            : GetInstrumentationConfigurationStatusOutcome(std::move(result.GetError()));
 }
 
 GetServiceOutcome ApplicationSignalsClient::GetService(const GetServiceRequest& request) const {
@@ -351,6 +418,18 @@ ListGroupingAttributeDefinitionsOutcome ApplicationSignalsClient::ListGroupingAt
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListGroupingAttributeDefinitionsOutcome(result.GetResultWithOwnership())
                             : ListGroupingAttributeDefinitionsOutcome(std::move(result.GetError()));
+}
+
+ListInstrumentationConfigurationsOutcome ApplicationSignalsClient::ListInstrumentationConfigurations(
+    const ListInstrumentationConfigurationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/list-instrumentation-configurations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInstrumentationConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListInstrumentationConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListServiceDependenciesOutcome ApplicationSignalsClient::ListServiceDependencies(const ListServiceDependenciesRequest& request) const {
@@ -509,6 +588,18 @@ PutGroupingConfigurationOutcome ApplicationSignalsClient::PutGroupingConfigurati
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutGroupingConfigurationOutcome(result.GetResultWithOwnership())
                             : PutGroupingConfigurationOutcome(std::move(result.GetError()));
+}
+
+ReportInstrumentationConfigurationStatusOutcome ApplicationSignalsClient::ReportInstrumentationConfigurationStatus(
+    const ReportInstrumentationConfigurationStatusRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/report-instrumentation-configuration-status");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReportInstrumentationConfigurationStatusOutcome(result.GetResultWithOwnership())
+                            : ReportInstrumentationConfigurationStatusOutcome(std::move(result.GetError()));
 }
 
 StartDiscoveryOutcome ApplicationSignalsClient::StartDiscovery(const StartDiscoveryRequest& request) const {

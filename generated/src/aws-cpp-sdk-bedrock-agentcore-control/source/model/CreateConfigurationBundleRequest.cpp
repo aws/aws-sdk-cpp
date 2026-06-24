@@ -47,6 +47,10 @@ Aws::String CreateConfigurationBundleRequest::SerializePayload() const {
     payload.WithObject("createdBy", m_createdBy.Jsonize());
   }
 
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

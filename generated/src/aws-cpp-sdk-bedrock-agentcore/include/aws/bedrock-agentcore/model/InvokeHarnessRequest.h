@@ -90,6 +90,24 @@ class InvokeHarnessRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
+   * <p>The endpoint name to invoke. If omitted, the DEFAULT endpoint is used.</p>
+   */
+  inline const Aws::String& GetQualifier() const { return m_qualifier; }
+  inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
+  template <typename QualifierT = Aws::String>
+  void SetQualifier(QualifierT&& value) {
+    m_qualifierHasBeenSet = true;
+    m_qualifier = std::forward<QualifierT>(value);
+  }
+  template <typename QualifierT = Aws::String>
+  InvokeHarnessRequest& WithQualifier(QualifierT&& value) {
+    SetQualifier(std::forward<QualifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The session ID for the invocation. Use the same session ID across requests to
    * continue a conversation.</p>
    */
@@ -341,6 +359,8 @@ class InvokeHarnessRequest : public BedrockAgentCoreRequest {
  private:
   Aws::String m_harnessArn;
 
+  Aws::String m_qualifier;
+
   Aws::String m_runtimeSessionId;
 
   Aws::String m_runtimeUserId;
@@ -368,6 +388,7 @@ class InvokeHarnessRequest : public BedrockAgentCoreRequest {
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   bool m_harnessArnHasBeenSet = false;
+  bool m_qualifierHasBeenSet = false;
   bool m_runtimeSessionIdHasBeenSet = false;
   bool m_runtimeUserIdHasBeenSet = false;
   bool m_messagesHasBeenSet = false;

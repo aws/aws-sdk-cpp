@@ -34,6 +34,12 @@
 #include <aws/s3-crt/model/AnalyticsFilter.h>
 #include <aws/s3-crt/model/AnalyticsS3BucketDestination.h>
 #include <aws/s3-crt/model/AnalyticsS3ExportFileFormat.h>
+#include <aws/s3-crt/model/AnnotationConfigurationState.h>
+#include <aws/s3-crt/model/AnnotationDirective.h>
+#include <aws/s3-crt/model/AnnotationEntry.h>
+#include <aws/s3-crt/model/AnnotationTableConfiguration.h>
+#include <aws/s3-crt/model/AnnotationTableConfigurationResult.h>
+#include <aws/s3-crt/model/AnnotationTableConfigurationUpdates.h>
 #include <aws/s3-crt/model/ArchiveStatus.h>
 #include <aws/s3-crt/model/BlockedEncryptionTypes.h>
 #include <aws/s3-crt/model/Bucket.h>
@@ -98,6 +104,8 @@
 #include <aws/s3-crt/model/DeleteMarkerEntry.h>
 #include <aws/s3-crt/model/DeleteMarkerReplication.h>
 #include <aws/s3-crt/model/DeleteMarkerReplicationStatus.h>
+#include <aws/s3-crt/model/DeleteObjectAnnotationRequest.h>
+#include <aws/s3-crt/model/DeleteObjectAnnotationResult.h>
 #include <aws/s3-crt/model/DeleteObjectRequest.h>
 #include <aws/s3-crt/model/DeleteObjectResult.h>
 #include <aws/s3-crt/model/DeleteObjectTaggingRequest.h>
@@ -175,6 +183,8 @@
 #include <aws/s3-crt/model/GetBucketWebsiteResult.h>
 #include <aws/s3-crt/model/GetObjectAclRequest.h>
 #include <aws/s3-crt/model/GetObjectAclResult.h>
+#include <aws/s3-crt/model/GetObjectAnnotationRequest.h>
+#include <aws/s3-crt/model/GetObjectAnnotationResult.h>
 #include <aws/s3-crt/model/GetObjectAttributesParts.h>
 #include <aws/s3-crt/model/GetObjectAttributesRequest.h>
 #include <aws/s3-crt/model/GetObjectAttributesResult.h>
@@ -248,6 +258,8 @@
 #include <aws/s3-crt/model/ListDirectoryBucketsResult.h>
 #include <aws/s3-crt/model/ListMultipartUploadsRequest.h>
 #include <aws/s3-crt/model/ListMultipartUploadsResult.h>
+#include <aws/s3-crt/model/ListObjectAnnotationsRequest.h>
+#include <aws/s3-crt/model/ListObjectAnnotationsResult.h>
 #include <aws/s3-crt/model/ListObjectVersionsRequest.h>
 #include <aws/s3-crt/model/ListObjectVersionsResult.h>
 #include <aws/s3-crt/model/ListObjectsRequest.h>
@@ -337,6 +349,8 @@
 #include <aws/s3-crt/model/PutBucketWebsiteRequest.h>
 #include <aws/s3-crt/model/PutObjectAclRequest.h>
 #include <aws/s3-crt/model/PutObjectAclResult.h>
+#include <aws/s3-crt/model/PutObjectAnnotationRequest.h>
+#include <aws/s3-crt/model/PutObjectAnnotationResult.h>
 #include <aws/s3-crt/model/PutObjectLegalHoldRequest.h>
 #include <aws/s3-crt/model/PutObjectLegalHoldResult.h>
 #include <aws/s3-crt/model/PutObjectLockConfigurationRequest.h>
@@ -422,6 +436,7 @@
 #include <aws/s3-crt/model/TransitionDefaultMinimumObjectSize.h>
 #include <aws/s3-crt/model/TransitionStorageClass.h>
 #include <aws/s3-crt/model/Type.h>
+#include <aws/s3-crt/model/UpdateBucketMetadataAnnotationTableConfigurationRequest.h>
 #include <aws/s3-crt/model/UpdateBucketMetadataInventoryTableConfigurationRequest.h>
 #include <aws/s3-crt/model/UpdateBucketMetadataJournalTableConfigurationRequest.h>
 #include <aws/s3-crt/model/UpdateObjectEncryptionRequest.h>

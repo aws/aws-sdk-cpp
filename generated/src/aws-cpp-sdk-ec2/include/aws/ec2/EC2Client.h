@@ -1388,6 +1388,39 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Attaches a watermark to a non-public AMI. The watermark is a structured
+   * identifier that automatically propagates to all derivative images created
+   * through <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>.</p>
+   * <p>Only the AMI owner can attach watermarks. Watermarks cannot be added to
+   * public AMIs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachImageWatermark">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AttachImageWatermarkOutcome AttachImageWatermark(const Model::AttachImageWatermarkRequest& request) const;
+
+  /**
+   * A Callable wrapper for AttachImageWatermark that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AttachImageWatermarkRequestT = Model::AttachImageWatermarkRequest>
+  Model::AttachImageWatermarkOutcomeCallable AttachImageWatermarkCallable(const AttachImageWatermarkRequestT& request) const {
+    return SubmitCallable(&EC2Client::AttachImageWatermark, request);
+  }
+
+  /**
+   * An Async wrapper for AttachImageWatermark that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AttachImageWatermarkRequestT = Model::AttachImageWatermarkRequest>
+  void AttachImageWatermarkAsync(const AttachImageWatermarkRequestT& request, const AttachImageWatermarkResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::AttachImageWatermark, request, handler, context);
+  }
+
+  /**
    * <p>Attaches an internet gateway or a virtual private gateway to a VPC, enabling
    * connectivity between the internet and the VPC. For more information, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet
@@ -15271,6 +15304,36 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Removes a watermark from the specified AMI. This is an idempotent operation.
+   * It succeeds even if the watermark does not exist on the image.</p> <p>Removing a
+   * watermark from an image does not affect derivative images that already carry the
+   * watermark.</p> <p>Only the AMI owner can detach watermarks.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachImageWatermark">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DetachImageWatermarkOutcome DetachImageWatermark(const Model::DetachImageWatermarkRequest& request) const;
+
+  /**
+   * A Callable wrapper for DetachImageWatermark that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DetachImageWatermarkRequestT = Model::DetachImageWatermarkRequest>
+  Model::DetachImageWatermarkOutcomeCallable DetachImageWatermarkCallable(const DetachImageWatermarkRequestT& request) const {
+    return SubmitCallable(&EC2Client::DetachImageWatermark, request);
+  }
+
+  /**
+   * An Async wrapper for DetachImageWatermark that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DetachImageWatermarkRequestT = Model::DetachImageWatermarkRequest>
+  void DetachImageWatermarkAsync(const DetachImageWatermarkRequestT& request, const DetachImageWatermarkResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DetachImageWatermark, request, handler, context);
+  }
+
+  /**
    * <p>Detaches an internet gateway from a VPC, disabling connectivity between the
    * internet and the VPC. The VPC must not contain any running instances with
    * Elastic IP addresses or public IPv4 addresses.</p><p><h3>See Also:</h3>   <a
@@ -24029,10 +24092,12 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   * <p>Sets or replaces the criteria for Allowed AMIs.</p>  <p>The Allowed
-   * AMIs feature does not restrict the AMIs owned by your account. Regardless of the
-   * criteria you set, the AMIs created by your account will always be discoverable
-   * and usable by users in your account.</p>  <p>For more information, see <a
+   * <p>Sets or replaces the criteria for Allowed AMIs.</p> <p>The
+   * <code>ImageCriteria</code> can include up to:</p> <ul> <li> <p>10
+   * <code>ImageCriterion</code> </p> </li> </ul>  <p>The Allowed AMIs feature
+   * does not restrict the AMIs owned by your account. Regardless of the criteria you
+   * set, the AMIs created by your account will always be discoverable and usable by
+   * users in your account.</p>  <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control
    * the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon
    * EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a

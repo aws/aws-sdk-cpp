@@ -20,6 +20,7 @@
 #include <aws/glue/GlueClient.h>
 #include <aws/glue/GlueEndpointProvider.h>
 #include <aws/glue/GlueErrorMarshaller.h>
+#include <aws/glue/model/AssociateGlossaryTermsRequest.h>
 #include <aws/glue/model/BatchCreatePartitionRequest.h>
 #include <aws/glue/model/BatchDeleteConnectionRequest.h>
 #include <aws/glue/model/BatchDeletePartitionRequest.h>
@@ -30,6 +31,7 @@
 #include <aws/glue/model/BatchGetCustomEntityTypesRequest.h>
 #include <aws/glue/model/BatchGetDataQualityResultRequest.h>
 #include <aws/glue/model/BatchGetDevEndpointsRequest.h>
+#include <aws/glue/model/BatchGetIterableFormsRequest.h>
 #include <aws/glue/model/BatchGetJobsRequest.h>
 #include <aws/glue/model/BatchGetPartitionRequest.h>
 #include <aws/glue/model/BatchGetTableOptimizerRequest.h>
@@ -53,6 +55,8 @@
 #include <aws/glue/model/CreateDataQualityRulesetRequest.h>
 #include <aws/glue/model/CreateDatabaseRequest.h>
 #include <aws/glue/model/CreateDevEndpointRequest.h>
+#include <aws/glue/model/CreateGlossaryRequest.h>
+#include <aws/glue/model/CreateGlossaryTermRequest.h>
 #include <aws/glue/model/CreateGlueIdentityCenterConfigurationRequest.h>
 #include <aws/glue/model/CreateIntegrationRequest.h>
 #include <aws/glue/model/CreateIntegrationResourcePropertyRequest.h>
@@ -72,6 +76,9 @@
 #include <aws/glue/model/CreateUsageProfileRequest.h>
 #include <aws/glue/model/CreateUserDefinedFunctionRequest.h>
 #include <aws/glue/model/CreateWorkflowRequest.h>
+#include <aws/glue/model/DeleteAssetRequest.h>
+#include <aws/glue/model/DeleteAssetTypeRequest.h>
+#include <aws/glue/model/DeleteAttachmentRequest.h>
 #include <aws/glue/model/DeleteBlueprintRequest.h>
 #include <aws/glue/model/DeleteCatalogRequest.h>
 #include <aws/glue/model/DeleteClassifierRequest.h>
@@ -85,6 +92,9 @@
 #include <aws/glue/model/DeleteDataQualityRulesetRequest.h>
 #include <aws/glue/model/DeleteDatabaseRequest.h>
 #include <aws/glue/model/DeleteDevEndpointRequest.h>
+#include <aws/glue/model/DeleteFormTypeRequest.h>
+#include <aws/glue/model/DeleteGlossaryRequest.h>
+#include <aws/glue/model/DeleteGlossaryTermRequest.h>
 #include <aws/glue/model/DeleteGlueIdentityCenterConfigurationRequest.h>
 #include <aws/glue/model/DeleteIntegrationRequest.h>
 #include <aws/glue/model/DeleteIntegrationResourcePropertyRequest.h>
@@ -110,16 +120,6 @@
 #include <aws/glue/model/DescribeEntityRequest.h>
 #include <aws/glue/model/DescribeInboundIntegrationsRequest.h>
 #include <aws/glue/model/DescribeIntegrationsRequest.h>
-#include <aws/glue/model/GetBlueprintRequest.h>
-#include <aws/glue/model/GetBlueprintRunRequest.h>
-#include <aws/glue/model/GetBlueprintRunsRequest.h>
-#include <aws/glue/model/GetCatalogImportStatusRequest.h>
-#include <aws/glue/model/GetCatalogRequest.h>
-#include <aws/glue/model/GetCatalogsRequest.h>
-#include <aws/glue/model/GetClassifierRequest.h>
-#include <aws/glue/model/GetClassifiersRequest.h>
-#include <aws/glue/model/GetColumnStatisticsForPartitionRequest.h>
-#include <aws/glue/model/GetColumnStatisticsForTableRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -269,6 +269,12 @@ GlueClient::InvokeOperationOutcome GlueClient::InvokeServiceOperation(const Amaz
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+AssociateGlossaryTermsOutcome GlueClient::AssociateGlossaryTerms(const AssociateGlossaryTermsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateGlossaryTermsOutcome(result.GetResultWithOwnership())
+                            : AssociateGlossaryTermsOutcome(std::move(result.GetError()));
+}
+
 BatchCreatePartitionOutcome GlueClient::BatchCreatePartition(const BatchCreatePartitionRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? BatchCreatePartitionOutcome(result.GetResultWithOwnership())
@@ -327,6 +333,12 @@ BatchGetDevEndpointsOutcome GlueClient::BatchGetDevEndpoints(const BatchGetDevEn
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? BatchGetDevEndpointsOutcome(result.GetResultWithOwnership())
                             : BatchGetDevEndpointsOutcome(std::move(result.GetError()));
+}
+
+BatchGetIterableFormsOutcome GlueClient::BatchGetIterableForms(const BatchGetIterableFormsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetIterableFormsOutcome(result.GetResultWithOwnership())
+                            : BatchGetIterableFormsOutcome(std::move(result.GetError()));
 }
 
 BatchGetJobsOutcome GlueClient::BatchGetJobs(const BatchGetJobsRequest& request) const {
@@ -467,6 +479,17 @@ CreateDevEndpointOutcome GlueClient::CreateDevEndpoint(const CreateDevEndpointRe
                             : CreateDevEndpointOutcome(std::move(result.GetError()));
 }
 
+CreateGlossaryOutcome GlueClient::CreateGlossary(const CreateGlossaryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGlossaryOutcome(result.GetResultWithOwnership()) : CreateGlossaryOutcome(std::move(result.GetError()));
+}
+
+CreateGlossaryTermOutcome GlueClient::CreateGlossaryTerm(const CreateGlossaryTermRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGlossaryTermOutcome(result.GetResultWithOwnership())
+                            : CreateGlossaryTermOutcome(std::move(result.GetError()));
+}
+
 CreateGlueIdentityCenterConfigurationOutcome GlueClient::CreateGlueIdentityCenterConfiguration(
     const CreateGlueIdentityCenterConfigurationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -576,6 +599,23 @@ CreateWorkflowOutcome GlueClient::CreateWorkflow(const CreateWorkflowRequest& re
   return result.IsSuccess() ? CreateWorkflowOutcome(result.GetResultWithOwnership()) : CreateWorkflowOutcome(std::move(result.GetError()));
 }
 
+DeleteAssetOutcome GlueClient::DeleteAsset(const DeleteAssetRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAssetOutcome(result.GetResultWithOwnership()) : DeleteAssetOutcome(std::move(result.GetError()));
+}
+
+DeleteAssetTypeOutcome GlueClient::DeleteAssetType(const DeleteAssetTypeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAssetTypeOutcome(result.GetResultWithOwnership())
+                            : DeleteAssetTypeOutcome(std::move(result.GetError()));
+}
+
+DeleteAttachmentOutcome GlueClient::DeleteAttachment(const DeleteAttachmentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAttachmentOutcome(result.GetResultWithOwnership())
+                            : DeleteAttachmentOutcome(std::move(result.GetError()));
+}
+
 DeleteBlueprintOutcome GlueClient::DeleteBlueprint(const DeleteBlueprintRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteBlueprintOutcome(result.GetResultWithOwnership())
@@ -652,6 +692,22 @@ DeleteDevEndpointOutcome GlueClient::DeleteDevEndpoint(const DeleteDevEndpointRe
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteDevEndpointOutcome(result.GetResultWithOwnership())
                             : DeleteDevEndpointOutcome(std::move(result.GetError()));
+}
+
+DeleteFormTypeOutcome GlueClient::DeleteFormType(const DeleteFormTypeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFormTypeOutcome(result.GetResultWithOwnership()) : DeleteFormTypeOutcome(std::move(result.GetError()));
+}
+
+DeleteGlossaryOutcome GlueClient::DeleteGlossary(const DeleteGlossaryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGlossaryOutcome(result.GetResultWithOwnership()) : DeleteGlossaryOutcome(std::move(result.GetError()));
+}
+
+DeleteGlossaryTermOutcome GlueClient::DeleteGlossaryTerm(const DeleteGlossaryTermRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGlossaryTermOutcome(result.GetResultWithOwnership())
+                            : DeleteGlossaryTermOutcome(std::move(result.GetError()));
 }
 
 DeleteGlueIdentityCenterConfigurationOutcome GlueClient::DeleteGlueIdentityCenterConfiguration(
@@ -797,60 +853,4 @@ DescribeIntegrationsOutcome GlueClient::DescribeIntegrations(const DescribeInteg
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeIntegrationsOutcome(result.GetResultWithOwnership())
                             : DescribeIntegrationsOutcome(std::move(result.GetError()));
-}
-
-GetBlueprintOutcome GlueClient::GetBlueprint(const GetBlueprintRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetBlueprintOutcome(result.GetResultWithOwnership()) : GetBlueprintOutcome(std::move(result.GetError()));
-}
-
-GetBlueprintRunOutcome GlueClient::GetBlueprintRun(const GetBlueprintRunRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetBlueprintRunOutcome(result.GetResultWithOwnership())
-                            : GetBlueprintRunOutcome(std::move(result.GetError()));
-}
-
-GetBlueprintRunsOutcome GlueClient::GetBlueprintRuns(const GetBlueprintRunsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetBlueprintRunsOutcome(result.GetResultWithOwnership())
-                            : GetBlueprintRunsOutcome(std::move(result.GetError()));
-}
-
-GetCatalogOutcome GlueClient::GetCatalog(const GetCatalogRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetCatalogOutcome(result.GetResultWithOwnership()) : GetCatalogOutcome(std::move(result.GetError()));
-}
-
-GetCatalogImportStatusOutcome GlueClient::GetCatalogImportStatus(const GetCatalogImportStatusRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetCatalogImportStatusOutcome(result.GetResultWithOwnership())
-                            : GetCatalogImportStatusOutcome(std::move(result.GetError()));
-}
-
-GetCatalogsOutcome GlueClient::GetCatalogs(const GetCatalogsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetCatalogsOutcome(result.GetResultWithOwnership()) : GetCatalogsOutcome(std::move(result.GetError()));
-}
-
-GetClassifierOutcome GlueClient::GetClassifier(const GetClassifierRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetClassifierOutcome(result.GetResultWithOwnership()) : GetClassifierOutcome(std::move(result.GetError()));
-}
-
-GetClassifiersOutcome GlueClient::GetClassifiers(const GetClassifiersRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetClassifiersOutcome(result.GetResultWithOwnership()) : GetClassifiersOutcome(std::move(result.GetError()));
-}
-
-GetColumnStatisticsForPartitionOutcome GlueClient::GetColumnStatisticsForPartition(
-    const GetColumnStatisticsForPartitionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetColumnStatisticsForPartitionOutcome(result.GetResultWithOwnership())
-                            : GetColumnStatisticsForPartitionOutcome(std::move(result.GetError()));
-}
-
-GetColumnStatisticsForTableOutcome GlueClient::GetColumnStatisticsForTable(const GetColumnStatisticsForTableRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetColumnStatisticsForTableOutcome(result.GetResultWithOwnership())
-                            : GetColumnStatisticsForTableOutcome(std::move(result.GetError()));
 }

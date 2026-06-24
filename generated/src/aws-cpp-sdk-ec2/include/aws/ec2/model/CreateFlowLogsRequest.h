@@ -11,6 +11,7 @@
 #include <aws/ec2/model/DestinationOptionsRequest.h>
 #include <aws/ec2/model/FlowLogsResourceType.h>
 #include <aws/ec2/model/LogDestinationType.h>
+#include <aws/ec2/model/TagFieldSpecificationRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <aws/ec2/model/TrafficType.h>
 
@@ -338,6 +339,31 @@ class CreateFlowLogsRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tag configuration associated with the Flow Logs Amazon EC2 Tags feature
+   * fields in your custom log format.</p>
+   */
+  inline const Aws::Vector<TagFieldSpecificationRequest>& GetTagFieldSpecifications() const { return m_tagFieldSpecifications; }
+  inline bool TagFieldSpecificationsHasBeenSet() const { return m_tagFieldSpecificationsHasBeenSet; }
+  template <typename TagFieldSpecificationsT = Aws::Vector<TagFieldSpecificationRequest>>
+  void SetTagFieldSpecifications(TagFieldSpecificationsT&& value) {
+    m_tagFieldSpecificationsHasBeenSet = true;
+    m_tagFieldSpecifications = std::forward<TagFieldSpecificationsT>(value);
+  }
+  template <typename TagFieldSpecificationsT = Aws::Vector<TagFieldSpecificationRequest>>
+  CreateFlowLogsRequest& WithTagFieldSpecifications(TagFieldSpecificationsT&& value) {
+    SetTagFieldSpecifications(std::forward<TagFieldSpecificationsT>(value));
+    return *this;
+  }
+  template <typename TagFieldSpecificationsT = TagFieldSpecificationRequest>
+  CreateFlowLogsRequest& AddTagFieldSpecifications(TagFieldSpecificationsT&& value) {
+    m_tagFieldSpecificationsHasBeenSet = true;
+    m_tagFieldSpecifications.emplace_back(std::forward<TagFieldSpecificationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
 
@@ -366,6 +392,8 @@ class CreateFlowLogsRequest : public EC2Request {
   int m_maxAggregationInterval{0};
 
   DestinationOptionsRequest m_destinationOptions;
+
+  Aws::Vector<TagFieldSpecificationRequest> m_tagFieldSpecifications;
   bool m_dryRunHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_deliverLogsPermissionArnHasBeenSet = false;
@@ -380,6 +408,7 @@ class CreateFlowLogsRequest : public EC2Request {
   bool m_tagSpecificationsHasBeenSet = false;
   bool m_maxAggregationIntervalHasBeenSet = false;
   bool m_destinationOptionsHasBeenSet = false;
+  bool m_tagFieldSpecificationsHasBeenSet = false;
 };
 
 }  // namespace Model

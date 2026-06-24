@@ -225,6 +225,8 @@
 #include <aws/datazone/model/DeleteGlossaryResult.h>
 #include <aws/datazone/model/DeleteGlossaryTermRequest.h>
 #include <aws/datazone/model/DeleteGlossaryTermResult.h>
+#include <aws/datazone/model/DeleteLineageEventRequest.h>
+#include <aws/datazone/model/DeleteLineageEventResult.h>
 #include <aws/datazone/model/DeleteListingRequest.h>
 #include <aws/datazone/model/DeleteListingResult.h>
 #include <aws/datazone/model/DeleteNotebookRequest.h>

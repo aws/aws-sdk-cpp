@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore/model/BatchEvaluationStatus.h>
 #include <aws/bedrock-agentcore/model/EvaluationJobResults.h>
 #include <aws/bedrock-agentcore/model/Evaluator.h>
+#include <aws/bedrock-agentcore/model/Insight.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -168,6 +169,30 @@ class BatchEvaluationSummary {
 
   ///@{
   /**
+   * <p>The list of insight analyses applied during the batch evaluation.</p>
+   */
+  inline const Aws::Vector<Insight>& GetInsights() const { return m_insights; }
+  inline bool InsightsHasBeenSet() const { return m_insightsHasBeenSet; }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  void SetInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights = std::forward<InsightsT>(value);
+  }
+  template <typename InsightsT = Aws::Vector<Insight>>
+  BatchEvaluationSummary& WithInsights(InsightsT&& value) {
+    SetInsights(std::forward<InsightsT>(value));
+    return *this;
+  }
+  template <typename InsightsT = Insight>
+  BatchEvaluationSummary& AddInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights.emplace_back(std::forward<InsightsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The aggregated evaluation results.</p>
    */
   inline const EvaluationJobResults& GetEvaluationResults() const { return m_evaluationResults; }
@@ -210,6 +235,24 @@ class BatchEvaluationSummary {
 
   ///@{
   /**
+   * <p>The ARN of the KMS key used to encrypt evaluation data.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  BatchEvaluationSummary& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp when the batch evaluation was last updated.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
@@ -240,9 +283,13 @@ class BatchEvaluationSummary {
 
   Aws::Vector<Evaluator> m_evaluators;
 
+  Aws::Vector<Insight> m_insights;
+
   EvaluationJobResults m_evaluationResults;
 
   Aws::Vector<Aws::String> m_errorDetails;
+
+  Aws::String m_kmsKeyArn;
 
   Aws::Utils::DateTime m_updatedAt{};
   bool m_batchEvaluationIdHasBeenSet = false;
@@ -252,8 +299,10 @@ class BatchEvaluationSummary {
   bool m_createdAtHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_evaluatorsHasBeenSet = false;
+  bool m_insightsHasBeenSet = false;
   bool m_evaluationResultsHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

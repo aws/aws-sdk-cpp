@@ -63,5 +63,9 @@ Aws::String CreateRouterInputRequest::SerializePayload() const {
     payload.WithString("clientToken", m_clientToken);
   }
 
+  if (m_contentQualityAnalysisConfigurationHasBeenSet) {
+    payload.WithObject("contentQualityAnalysisConfiguration", m_contentQualityAnalysisConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

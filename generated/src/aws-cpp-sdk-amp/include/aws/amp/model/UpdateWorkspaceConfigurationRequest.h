@@ -112,6 +112,40 @@ class UpdateWorkspaceConfigurationRequest : public PrometheusServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the time window in seconds for accepting out of order samples. Out
+   * of order samples older than this window are rejected.</p>
+   */
+  inline int GetOutOfOrderTimeWindowInSeconds() const { return m_outOfOrderTimeWindowInSeconds; }
+  inline bool OutOfOrderTimeWindowInSecondsHasBeenSet() const { return m_outOfOrderTimeWindowInSecondsHasBeenSet; }
+  inline void SetOutOfOrderTimeWindowInSeconds(int value) {
+    m_outOfOrderTimeWindowInSecondsHasBeenSet = true;
+    m_outOfOrderTimeWindowInSeconds = value;
+  }
+  inline UpdateWorkspaceConfigurationRequest& WithOutOfOrderTimeWindowInSeconds(int value) {
+    SetOutOfOrderTimeWindowInSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the duration in seconds to offset rule evaluation queries into the
+   * past. This allows ingested samples to be available before rule evaluation.</p>
+   */
+  inline int GetRuleQueryOffsetInSeconds() const { return m_ruleQueryOffsetInSeconds; }
+  inline bool RuleQueryOffsetInSecondsHasBeenSet() const { return m_ruleQueryOffsetInSecondsHasBeenSet; }
+  inline void SetRuleQueryOffsetInSeconds(int value) {
+    m_ruleQueryOffsetInSecondsHasBeenSet = true;
+    m_ruleQueryOffsetInSeconds = value;
+  }
+  inline UpdateWorkspaceConfigurationRequest& WithRuleQueryOffsetInSeconds(int value) {
+    SetRuleQueryOffsetInSeconds(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_workspaceId;
 
@@ -120,10 +154,16 @@ class UpdateWorkspaceConfigurationRequest : public PrometheusServiceRequest {
   Aws::Vector<LimitsPerLabelSet> m_limitsPerLabelSet;
 
   int m_retentionPeriodInDays{0};
+
+  int m_outOfOrderTimeWindowInSeconds{0};
+
+  int m_ruleQueryOffsetInSeconds{0};
   bool m_workspaceIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_limitsPerLabelSetHasBeenSet = false;
   bool m_retentionPeriodInDaysHasBeenSet = false;
+  bool m_outOfOrderTimeWindowInSecondsHasBeenSet = false;
+  bool m_ruleQueryOffsetInSecondsHasBeenSet = false;
 };
 
 }  // namespace Model

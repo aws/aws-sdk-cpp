@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/outposts/Outposts_EXPORTS.h>
+#include <aws/outposts/model/CurrencyCode.h>
 #include <aws/outposts/model/PaymentOption.h>
 #include <aws/outposts/model/PaymentTerm.h>
 
@@ -95,6 +96,22 @@ class SubscriptionPricingDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The currency of the price. Currently only <code>USD</code> is supported.</p>
+   */
+  inline CurrencyCode GetCurrency() const { return m_currency; }
+  inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }
+  inline void SetCurrency(CurrencyCode value) {
+    m_currencyHasBeenSet = true;
+    m_currency = value;
+  }
+  inline SubscriptionPricingDetails& WithCurrency(CurrencyCode value) {
+    SetCurrency(value);
+    return *this;
+  }
+  ///@}
  private:
   PaymentOption m_paymentOption{PaymentOption::NOT_SET};
 
@@ -103,10 +120,13 @@ class SubscriptionPricingDetails {
   double m_upfrontPrice{0.0};
 
   double m_monthlyRecurringPrice{0.0};
+
+  CurrencyCode m_currency{CurrencyCode::NOT_SET};
   bool m_paymentOptionHasBeenSet = false;
   bool m_paymentTermHasBeenSet = false;
   bool m_upfrontPriceHasBeenSet = false;
   bool m_monthlyRecurringPriceHasBeenSet = false;
+  bool m_currencyHasBeenSet = false;
 };
 
 }  // namespace Model

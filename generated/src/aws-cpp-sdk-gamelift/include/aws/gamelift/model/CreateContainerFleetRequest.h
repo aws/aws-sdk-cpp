@@ -148,7 +148,7 @@ class CreateContainerFleetRequest : public GameLiftRequest {
    * number calculated based on your fleet configuration. Amazon GameLift Servers
    * uses the following formula: <code>4192 + [# of game server container groups per
    * fleet instance] * [# of container ports in the game server container group
-   * definition] + [# of container ports in the game server container group
+   * definition] + [# of container ports in the per instance container group
    * definition]</code> </p> </li> </ul> <p>You can also choose to manually set this
    * parameter. When manually setting this parameter, you must use port numbers that
    * match the fleet's inbound permissions port range.</p>  <p>If you set
@@ -184,7 +184,7 @@ class CreateContainerFleetRequest : public GameLiftRequest {
    * number calculated based on your fleet configuration. Amazon GameLift Servers
    * uses the following formula: <code>4192 + [# of game server container groups per
    * fleet instance] * [# of container ports in the game server container group
-   * definition] + [# of container ports in the game server container group
+   * definition] + [# of container ports in the per instance container group
    * definition]</code> </p> </li> </ul> <p>You can also choose to manually set this
    * parameter. When manually setting this parameter, you must use port numbers that
    * match the fleet's connection port range.</p>  <p>If you set values
@@ -243,9 +243,9 @@ class CreateContainerFleetRequest : public GameLiftRequest {
    * and all remote locations. Instance type determines the computing resources and
    * processing power that's available to host your game servers. This includes
    * including CPU, memory, storage, and networking capacity. </p> <p>By default,
-   * Amazon GameLift Servers selects an instance type that fits the needs of your
-   * container groups and is available in all selected fleet locations. You can also
-   * choose to manually set this parameter. See <a
+   * Amazon GameLift Servers uses the <code>c5.large</code> instance type. If this
+   * instance type does not have sufficient resources for your container groups, you
+   * can choose a different instance type that better fits your needs. See <a
    * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
    * Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
    * <p>You can't update this fleet property later.</p>

@@ -27,6 +27,7 @@
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeEndpointStatus.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
 #include <aws/bedrock-agentcore-control/model/AgentSkillsDescriptor.h>
+#include <aws/bedrock-agentcore-control/model/AllowedWorkloadConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ApiGatewayTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ApiGatewayToolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ApiGatewayToolFilter.h>
@@ -62,6 +63,8 @@
 #include <aws/bedrock-agentcore-control/model/ClientAuthenticationMethodType.h>
 #include <aws/bedrock-agentcore-control/model/CloudWatchLogsInputConfig.h>
 #include <aws/bedrock-agentcore-control/model/CloudWatchOutputConfig.h>
+#include <aws/bedrock-agentcore-control/model/ClusteringConfig.h>
+#include <aws/bedrock-agentcore-control/model/ClusteringFrequency.h>
 #include <aws/bedrock-agentcore-control/model/Code.h>
 #include <aws/bedrock-agentcore-control/model/CodeBasedEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/CodeConfiguration.h>
@@ -78,6 +81,10 @@
 #include <aws/bedrock-agentcore-control/model/ConfigurationBundleStatus.h>
 #include <aws/bedrock-agentcore-control/model/ConfigurationBundleSummary.h>
 #include <aws/bedrock-agentcore-control/model/ConfigurationBundleVersionSummary.h>
+#include <aws/bedrock-agentcore-control/model/ConnectorConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ConnectorParameterOverride.h>
+#include <aws/bedrock-agentcore-control/model/ConnectorSource.h>
+#include <aws/bedrock-agentcore-control/model/ConnectorTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ConsolidationConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ContainerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Content.h>
@@ -110,6 +117,8 @@
 #include <aws/bedrock-agentcore-control/model/CreateGatewayRuleResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayTargetRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayTargetResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateHarnessEndpointRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateHarnessEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateHarnessRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateHarnessResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateMemoryRequest.h>
@@ -152,6 +161,7 @@
 #include <aws/bedrock-agentcore-control/model/CustomOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/CustomReflectionConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CustomReflectionConfigurationInput.h>
+#include <aws/bedrock-agentcore-control/model/CustomTransformConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/DataSourceConfig.h>
 #include <aws/bedrock-agentcore-control/model/DataSourceType.h>
 #include <aws/bedrock-agentcore-control/model/DatasetSchemaType.h>
@@ -184,6 +194,8 @@
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayRuleResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayTargetRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayTargetResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteHarnessEndpointRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteHarnessEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteHarnessRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteHarnessResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteMemoryRequest.h>
@@ -216,6 +228,7 @@
 #include <aws/bedrock-agentcore-control/model/DraftStatus.h>
 #include <aws/bedrock-agentcore-control/model/EfsAccessPointConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/EndpointIpAddressType.h>
+#include <aws/bedrock-agentcore-control/model/EnforcementMode.h>
 #include <aws/bedrock-agentcore-control/model/EpisodicConsolidationOverride.h>
 #include <aws/bedrock-agentcore-control/model/EpisodicExtractionOverride.h>
 #include <aws/bedrock-agentcore-control/model/EpisodicMemoryStrategyInput.h>
@@ -236,6 +249,7 @@
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
 #include <aws/bedrock-agentcore-control/model/ExtractionConfig.h>
 #include <aws/bedrock-agentcore-control/model/ExtractionConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ExtractionType.h>
 #include <aws/bedrock-agentcore-control/model/FilesystemConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Filter.h>
 #include <aws/bedrock-agentcore-control/model/FilterOperator.h>
@@ -280,6 +294,8 @@
 #include <aws/bedrock-agentcore-control/model/GetGatewayRuleResult.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayTargetRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayTargetResult.h>
+#include <aws/bedrock-agentcore-control/model/GetHarnessEndpointRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetHarnessEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/GetHarnessRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetHarnessResult.h>
 #include <aws/bedrock-agentcore-control/model/GetMemoryRequest.h>
@@ -330,6 +346,9 @@
 #include <aws/bedrock-agentcore-control/model/HarnessAgentCoreRuntimeEnvironmentRequest.h>
 #include <aws/bedrock-agentcore-control/model/HarnessBedrockApiFormat.h>
 #include <aws/bedrock-agentcore-control/model/HarnessBedrockModelConfig.h>
+#include <aws/bedrock-agentcore-control/model/HarnessDisabledMemoryConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/HarnessEndpoint.h>
+#include <aws/bedrock-agentcore-control/model/HarnessEndpointStatus.h>
 #include <aws/bedrock-agentcore-control/model/HarnessEnvironmentArtifact.h>
 #include <aws/bedrock-agentcore-control/model/HarnessEnvironmentProvider.h>
 #include <aws/bedrock-agentcore-control/model/HarnessEnvironmentProviderRequest.h>
@@ -337,12 +356,15 @@
 #include <aws/bedrock-agentcore-control/model/HarnessGeminiModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessInlineFunctionConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessLiteLlmModelConfig.h>
+#include <aws/bedrock-agentcore-control/model/HarnessManagedMemoryConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/HarnessManagedMemoryStrategyType.h>
 #include <aws/bedrock-agentcore-control/model/HarnessMemoryConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/HarnessModelConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/HarnessOpenAiApiFormat.h>
 #include <aws/bedrock-agentcore-control/model/HarnessOpenAiModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessRemoteMcpConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessSkill.h>
+#include <aws/bedrock-agentcore-control/model/HarnessSkillAwsSkillsSource.h>
 #include <aws/bedrock-agentcore-control/model/HarnessSkillGitAuth.h>
 #include <aws/bedrock-agentcore-control/model/HarnessSkillGitSource.h>
 #include <aws/bedrock-agentcore-control/model/HarnessSkillS3Source.h>
@@ -357,6 +379,9 @@
 #include <aws/bedrock-agentcore-control/model/HarnessTruncationConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/HarnessTruncationStrategy.h>
 #include <aws/bedrock-agentcore-control/model/HarnessTruncationStrategyConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/HarnessVersionSummary.h>
+#include <aws/bedrock-agentcore-control/model/HostingEnvironment.h>
+#include <aws/bedrock-agentcore-control/model/HttpApiSchemaConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/HttpTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/IamCredentialProvider.h>
 #include <aws/bedrock-agentcore-control/model/IamPrincipal.h>
@@ -366,9 +391,18 @@
 #include <aws/bedrock-agentcore-control/model/IncludedOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/IndexedKey.h>
 #include <aws/bedrock-agentcore-control/model/InferenceConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/InferenceConnectorSource.h>
+#include <aws/bedrock-agentcore-control/model/InferenceConnectorTargetConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/InferenceOperationConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/InferenceProviderTargetConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/InferenceTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InlineExamplesSource.h>
+#include <aws/bedrock-agentcore-control/model/Insight.h>
 #include <aws/bedrock-agentcore-control/model/InterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InterceptorInputConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/InterceptorPayloadExclusion.h>
+#include <aws/bedrock-agentcore-control/model/InterceptorPayloadExclusionSelector.h>
+#include <aws/bedrock-agentcore-control/model/InterceptorPayloadFilter.h>
 #include <aws/bedrock-agentcore-control/model/InvocationConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InvocationConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/KeyType.h>
@@ -376,6 +410,7 @@
 #include <aws/bedrock-agentcore-control/model/KmsConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LambdaEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/LambdaInterceptorConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/LambdaTransformConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigOutput.h>
@@ -411,6 +446,10 @@
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysResult.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessEndpointsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessEndpointsResult.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessVersionsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessVersionsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListHarnessesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListHarnessesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListMemoriesRequest.h>
@@ -477,6 +516,8 @@
 #include <aws/bedrock-agentcore-control/model/MetadataValueType.h>
 #include <aws/bedrock-agentcore-control/model/MicrosoftOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/MicrosoftOauth2ProviderConfigOutput.h>
+#include <aws/bedrock-agentcore-control/model/ModelEntry.h>
+#include <aws/bedrock-agentcore-control/model/ModelMapping.h>
 #include <aws/bedrock-agentcore-control/model/ModifyConsolidationConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ModifyExtractionConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ModifyInvocationConfigurationInput.h>
@@ -504,6 +545,8 @@
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationExecutionStatus.h>
 #include <aws/bedrock-agentcore-control/model/OutputConfig.h>
 #include <aws/bedrock-agentcore-control/model/OverrideType.h>
+#include <aws/bedrock-agentcore-control/model/PassthroughProtocolType.h>
+#include <aws/bedrock-agentcore-control/model/PassthroughTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorStatus.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorSummary.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorType.h>
@@ -525,6 +568,7 @@
 #include <aws/bedrock-agentcore-control/model/PolicyGenerationDetails.h>
 #include <aws/bedrock-agentcore-control/model/PolicyGenerationStatus.h>
 #include <aws/bedrock-agentcore-control/model/PolicyGenerationSummary.h>
+#include <aws/bedrock-agentcore-control/model/PolicyStatement.h>
 #include <aws/bedrock-agentcore-control/model/PolicyStatus.h>
 #include <aws/bedrock-agentcore-control/model/PolicySummary.h>
 #include <aws/bedrock-agentcore-control/model/PolicyValidationMode.h>
@@ -532,6 +576,7 @@
 #include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpointOverride.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ProviderPrefix.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyResult.h>
 #include <aws/bedrock-agentcore-control/model/RatingScale.h>
@@ -596,6 +641,7 @@
 #include <aws/bedrock-agentcore-control/model/StaticOverride.h>
 #include <aws/bedrock-agentcore-control/model/StaticRoute.h>
 #include <aws/bedrock-agentcore-control/model/Status.h>
+#include <aws/bedrock-agentcore-control/model/StickinessConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/StrategyConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/StreamDeliveryResource.h>
 #include <aws/bedrock-agentcore-control/model/StreamDeliveryResources.h>
@@ -622,6 +668,7 @@
 #include <aws/bedrock-agentcore-control/model/TargetStatus.h>
 #include <aws/bedrock-agentcore-control/model/TargetSummary.h>
 #include <aws/bedrock-agentcore-control/model/TargetTrafficSplitEntry.h>
+#include <aws/bedrock-agentcore-control/model/TargetType.h>
 #include <aws/bedrock-agentcore-control/model/TimeBasedTrigger.h>
 #include <aws/bedrock-agentcore-control/model/TimeBasedTriggerInput.h>
 #include <aws/bedrock-agentcore-control/model/TokenBasedTrigger.h>
@@ -656,6 +703,8 @@
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayRuleResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayTargetRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayTargetResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateHarnessEndpointRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateHarnessEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateHarnessRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateHarnessResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateMemoryRequest.h>
@@ -715,6 +764,8 @@
 #include <aws/bedrock-agentcore-control/model/VersionFilter.h>
 #include <aws/bedrock-agentcore-control/model/VersionLineageMetadata.h>
 #include <aws/bedrock-agentcore-control/model/VpcConfig.h>
+#include <aws/bedrock-agentcore-control/model/WafConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/WafFailureMode.h>
 #include <aws/bedrock-agentcore-control/model/WeightedOverride.h>
 #include <aws/bedrock-agentcore-control/model/WeightedRoute.h>
 #include <aws/bedrock-agentcore-control/model/WorkloadIdentityDetails.h>

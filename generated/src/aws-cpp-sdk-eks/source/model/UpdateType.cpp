@@ -30,8 +30,10 @@ static const int ZonalShiftConfigUpdate_HASH = HashingUtils::HashString("ZonalSh
 static const int AutoModeUpdate_HASH = HashingUtils::HashString("AutoModeUpdate");
 static const int RemoteNetworkConfigUpdate_HASH = HashingUtils::HashString("RemoteNetworkConfigUpdate");
 static const int DeletionProtectionUpdate_HASH = HashingUtils::HashString("DeletionProtectionUpdate");
+static const int CapabilityUpdate_HASH = HashingUtils::HashString("CapabilityUpdate");
 static const int ControlPlaneScalingConfigUpdate_HASH = HashingUtils::HashString("ControlPlaneScalingConfigUpdate");
 static const int VendedLogsUpdate_HASH = HashingUtils::HashString("VendedLogsUpdate");
+static const int ControlPlaneEgressUpdate_HASH = HashingUtils::HashString("ControlPlaneEgressUpdate");
 
 UpdateType GetUpdateTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -65,10 +67,14 @@ UpdateType GetUpdateTypeForName(const Aws::String& name) {
     return UpdateType::RemoteNetworkConfigUpdate;
   } else if (hashCode == DeletionProtectionUpdate_HASH) {
     return UpdateType::DeletionProtectionUpdate;
+  } else if (hashCode == CapabilityUpdate_HASH) {
+    return UpdateType::CapabilityUpdate;
   } else if (hashCode == ControlPlaneScalingConfigUpdate_HASH) {
     return UpdateType::ControlPlaneScalingConfigUpdate;
   } else if (hashCode == VendedLogsUpdate_HASH) {
     return UpdateType::VendedLogsUpdate;
+  } else if (hashCode == ControlPlaneEgressUpdate_HASH) {
+    return UpdateType::ControlPlaneEgressUpdate;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -113,10 +119,14 @@ Aws::String GetNameForUpdateType(UpdateType enumValue) {
       return "RemoteNetworkConfigUpdate";
     case UpdateType::DeletionProtectionUpdate:
       return "DeletionProtectionUpdate";
+    case UpdateType::CapabilityUpdate:
+      return "CapabilityUpdate";
     case UpdateType::ControlPlaneScalingConfigUpdate:
       return "ControlPlaneScalingConfigUpdate";
     case UpdateType::VendedLogsUpdate:
       return "VendedLogsUpdate";
+    case UpdateType::ControlPlaneEgressUpdate:
+      return "ControlPlaneEgressUpdate";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

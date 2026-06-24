@@ -34,7 +34,12 @@ class CreateDatasetRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Optional idempotency token.</p>
+   * <p>A unique, case-sensitive identifier to ensure that the API request completes
+   * no more than one time. If you don't specify this field, a value is randomly
+   * generated for you. If this token matches a previous request, the service ignores
+   * the request, but doesn't return an error. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+   * idempotency</a>.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -52,8 +57,8 @@ class CreateDatasetRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Human-readable name for the dataset. Unique within the account
-   * (case-insensitive). Immutable after creation.</p>
+   * <p> Human-readable name for the dataset. Must be unique within the account.
+   * Immutable after creation. </p>
    */
   inline const Aws::String& GetDatasetName() const { return m_datasetName; }
   inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
@@ -89,8 +94,8 @@ class CreateDatasetRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Source of initial examples. Provide either inline examples or an S3 URI
-   * pointing to a JSONL file.</p>
+   * <p> Source of initial examples. Provide either inline examples or an S3 URI
+   * pointing to a JSONL file. </p>
    */
   inline const DataSourceType& GetSource() const { return m_source; }
   inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
@@ -108,8 +113,8 @@ class CreateDatasetRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Versioned schema type governing the structure of examples. Immutable after
-   * creation.</p>
+   * <p> Versioned schema type governing the structure of examples. Immutable after
+   * creation. </p>
    */
   inline DatasetSchemaType GetSchemaType() const { return m_schemaType; }
   inline bool SchemaTypeHasBeenSet() const { return m_schemaTypeHasBeenSet; }
@@ -125,7 +130,8 @@ class CreateDatasetRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Optional AWS KMS key ARN for SSE-KMS on service S3 writes.</p>
+   * <p> Optional KMS key ARN for server-side encryption on service Amazon S3 writes.
+   * </p>
    */
   inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
   inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }

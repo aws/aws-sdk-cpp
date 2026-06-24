@@ -76,6 +76,11 @@ public class Operation {
     // For S3 CRT
     private boolean s3CrtEnabled;
 
+    // For S3 bare query-marker subresources that also carry query params (e.g. object annotations).
+    // Emits "?marker=" instead of "?marker" so URI query canonicalization does not mangle the
+    // valueless key (a bare "?annotation" alongside annotationName= becomes "annotation=annotation").
+    private boolean emitEmptyValueQueryMarker;
+
     // For flexible checksums
     private boolean requestChecksumRequired;
     private String requestAlgorithmMember;

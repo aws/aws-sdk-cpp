@@ -10,6 +10,7 @@
 #include <aws/s3vectors/S3VectorsPaginationBase.h>
 #include <aws/s3vectors/model/ListVectorBucketsPaginationTraits.h>
 #include <aws/s3vectors/model/ListVectorsPaginationTraits.h>
+#include <aws/s3vectors/model/QueryVectorsPaginationTraits.h>
 #include <aws/s3vectors/model/ListIndexesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

@@ -44,6 +44,8 @@
 #include <aws/opensearch/model/AssociatePackageResult.h>
 #include <aws/opensearch/model/AssociatePackagesRequest.h>
 #include <aws/opensearch/model/AssociatePackagesResult.h>
+#include <aws/opensearch/model/AttachDataSourceRequest.h>
+#include <aws/opensearch/model/AttachDataSourceResult.h>
 #include <aws/opensearch/model/AuthorizeVpcEndpointAccessRequest.h>
 #include <aws/opensearch/model/AuthorizeVpcEndpointAccessResult.h>
 #include <aws/opensearch/model/AuthorizedPrincipal.h>
@@ -100,6 +102,8 @@
 #include <aws/opensearch/model/CreateVpcEndpointResult.h>
 #include <aws/opensearch/model/CrossClusterSearchConnectionProperties.h>
 #include <aws/opensearch/model/DataSource.h>
+#include <aws/opensearch/model/DataSourceAttachmentStatus.h>
+#include <aws/opensearch/model/DataSourceAttachmentSummary.h>
 #include <aws/opensearch/model/DataSourceDetails.h>
 #include <aws/opensearch/model/DataSourceStatus.h>
 #include <aws/opensearch/model/DataSourceType.h>
@@ -126,6 +130,8 @@
 #include <aws/opensearch/model/DeploymentStrategyOptionsStatus.h>
 #include <aws/opensearch/model/DeregisterCapabilityRequest.h>
 #include <aws/opensearch/model/DeregisterCapabilityResult.h>
+#include <aws/opensearch/model/DescribeDataSourceAttachmentRequest.h>
+#include <aws/opensearch/model/DescribeDataSourceAttachmentResult.h>
 #include <aws/opensearch/model/DescribeDomainAutoTunesRequest.h>
 #include <aws/opensearch/model/DescribeDomainAutoTunesResult.h>
 #include <aws/opensearch/model/DescribeDomainChangeProgressRequest.h>
@@ -160,6 +166,8 @@
 #include <aws/opensearch/model/DescribeReservedInstancesResult.h>
 #include <aws/opensearch/model/DescribeVpcEndpointsRequest.h>
 #include <aws/opensearch/model/DescribeVpcEndpointsResult.h>
+#include <aws/opensearch/model/DetachDataSourceRequest.h>
+#include <aws/opensearch/model/DetachDataSourceResult.h>
 #include <aws/opensearch/model/DirectQueryDataSource.h>
 #include <aws/opensearch/model/DirectQueryDataSourceType.h>
 #include <aws/opensearch/model/DissociatePackageRequest.h>
@@ -246,6 +254,8 @@
 #include <aws/opensearch/model/Limits.h>
 #include <aws/opensearch/model/ListApplicationsRequest.h>
 #include <aws/opensearch/model/ListApplicationsResult.h>
+#include <aws/opensearch/model/ListDataSourceAttachmentsRequest.h>
+#include <aws/opensearch/model/ListDataSourceAttachmentsResult.h>
 #include <aws/opensearch/model/ListDataSourcesRequest.h>
 #include <aws/opensearch/model/ListDataSourcesResult.h>
 #include <aws/opensearch/model/ListDirectQueryDataSourcesRequest.h>
@@ -408,6 +418,7 @@
 #include <aws/opensearch/model/VpcEndpointStatus.h>
 #include <aws/opensearch/model/VpcEndpointSummary.h>
 #include <aws/opensearch/model/WindowStartTime.h>
+#include <aws/opensearch/model/WorkspaceConfigurationInput.h>
 #include <aws/opensearch/model/ZoneAwarenessConfig.h>
 #include <aws/opensearch/model/ZoneStatus.h>
 

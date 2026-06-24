@@ -41,6 +41,13 @@ StartBatchEvaluationResult& StartBatchEvaluationResult::operator=(const Aws::Ama
     }
     m_evaluatorsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("insights")) {
+    Aws::Utils::Array<JsonView> insightsJsonList = jsonValue.GetArray("insights");
+    for (unsigned insightsIndex = 0; insightsIndex < insightsJsonList.GetLength(); ++insightsIndex) {
+      m_insights.push_back(insightsJsonList[insightsIndex].AsObject());
+    }
+    m_insightsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = BatchEvaluationStatusMapper::GetBatchEvaluationStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
@@ -52,6 +59,17 @@ StartBatchEvaluationResult& StartBatchEvaluationResult::operator=(const Aws::Ama
   if (jsonValue.ValueExists("outputConfig")) {
     m_outputConfig = jsonValue.GetObject("outputConfig");
     m_outputConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("tags")) {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for (auto& tagsItem : tagsJsonMap) {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("kmsKeyArn")) {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");

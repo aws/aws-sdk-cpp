@@ -234,6 +234,22 @@ class CreateFunctionRequest : public LambdaRequest {
 
   ///@{
   /**
+   * <p>Specifies where to publish the function version or configuration.</p>
+   */
+  inline FunctionVersionLatestPublished GetPublishTo() const { return m_publishTo; }
+  inline bool PublishToHasBeenSet() const { return m_publishToHasBeenSet; }
+  inline void SetPublishTo(FunctionVersionLatestPublished value) {
+    m_publishToHasBeenSet = true;
+    m_publishTo = value;
+  }
+  inline CreateFunctionRequest& WithPublishTo(FunctionVersionLatestPublished value) {
+    SetPublishTo(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>For network connectivity to Amazon Web Services resources in a VPC, specify a
    * list of security groups and subnets in the VPC. When you connect a function to a
    * VPC, it can access resources and the internet only through that VPC. For more
@@ -451,26 +467,6 @@ class CreateFunctionRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>Container image <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration
-   * values</a> that override the values in the container image Dockerfile.</p>
-   */
-  inline const ImageConfig& GetImageConfig() const { return m_imageConfig; }
-  inline bool ImageConfigHasBeenSet() const { return m_imageConfigHasBeenSet; }
-  template <typename ImageConfigT = ImageConfig>
-  void SetImageConfig(ImageConfigT&& value) {
-    m_imageConfigHasBeenSet = true;
-    m_imageConfig = std::forward<ImageConfigT>(value);
-  }
-  template <typename ImageConfigT = ImageConfig>
-  CreateFunctionRequest& WithImageConfig(ImageConfigT&& value) {
-    SetImageConfig(std::forward<ImageConfigT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>To enable code signing for this function, specify the ARN of a code-signing
    * configuration. A code-signing configuration includes a set of signing profiles,
    * which define the trusted publishers for this function.</p>
@@ -485,6 +481,26 @@ class CreateFunctionRequest : public LambdaRequest {
   template <typename CodeSigningConfigArnT = Aws::String>
   CreateFunctionRequest& WithCodeSigningConfigArn(CodeSigningConfigArnT&& value) {
     SetCodeSigningConfigArn(std::forward<CodeSigningConfigArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Container image <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration
+   * values</a> that override the values in the container image Dockerfile.</p>
+   */
+  inline const ImageConfig& GetImageConfig() const { return m_imageConfig; }
+  inline bool ImageConfigHasBeenSet() const { return m_imageConfigHasBeenSet; }
+  template <typename ImageConfigT = ImageConfig>
+  void SetImageConfig(ImageConfigT&& value) {
+    m_imageConfigHasBeenSet = true;
+    m_imageConfig = std::forward<ImageConfigT>(value);
+  }
+  template <typename ImageConfigT = ImageConfig>
+  CreateFunctionRequest& WithImageConfig(ImageConfigT&& value) {
+    SetImageConfig(std::forward<ImageConfigT>(value));
     return *this;
   }
   ///@}
@@ -576,6 +592,26 @@ class CreateFunctionRequest : public LambdaRequest {
 
   ///@{
   /**
+   * <p>Configuration for multi-tenant applications that use Lambda functions.
+   * Defines tenant isolation settings and resource allocations. Required for
+   * functions supporting multiple tenants.</p>
+   */
+  inline const TenancyConfig& GetTenancyConfig() const { return m_tenancyConfig; }
+  inline bool TenancyConfigHasBeenSet() const { return m_tenancyConfigHasBeenSet; }
+  template <typename TenancyConfigT = TenancyConfig>
+  void SetTenancyConfig(TenancyConfigT&& value) {
+    m_tenancyConfigHasBeenSet = true;
+    m_tenancyConfig = std::forward<TenancyConfigT>(value);
+  }
+  template <typename TenancyConfigT = TenancyConfig>
+  CreateFunctionRequest& WithTenancyConfig(TenancyConfigT&& value) {
+    SetTenancyConfig(std::forward<TenancyConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration for the capacity provider that manages compute resources for
    * Lambda functions.</p>
    */
@@ -589,22 +625,6 @@ class CreateFunctionRequest : public LambdaRequest {
   template <typename CapacityProviderConfigT = CapacityProviderConfig>
   CreateFunctionRequest& WithCapacityProviderConfig(CapacityProviderConfigT&& value) {
     SetCapacityProviderConfig(std::forward<CapacityProviderConfigT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies where to publish the function version or configuration.</p>
-   */
-  inline FunctionVersionLatestPublished GetPublishTo() const { return m_publishTo; }
-  inline bool PublishToHasBeenSet() const { return m_publishToHasBeenSet; }
-  inline void SetPublishTo(FunctionVersionLatestPublished value) {
-    m_publishToHasBeenSet = true;
-    m_publishTo = value;
-  }
-  inline CreateFunctionRequest& WithPublishTo(FunctionVersionLatestPublished value) {
-    SetPublishTo(value);
     return *this;
   }
   ///@}
@@ -628,26 +648,6 @@ class CreateFunctionRequest : public LambdaRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Configuration for multi-tenant applications that use Lambda functions.
-   * Defines tenant isolation settings and resource allocations. Required for
-   * functions supporting multiple tenants.</p>
-   */
-  inline const TenancyConfig& GetTenancyConfig() const { return m_tenancyConfig; }
-  inline bool TenancyConfigHasBeenSet() const { return m_tenancyConfigHasBeenSet; }
-  template <typename TenancyConfigT = TenancyConfig>
-  void SetTenancyConfig(TenancyConfigT&& value) {
-    m_tenancyConfigHasBeenSet = true;
-    m_tenancyConfig = std::forward<TenancyConfigT>(value);
-  }
-  template <typename TenancyConfigT = TenancyConfig>
-  CreateFunctionRequest& WithTenancyConfig(TenancyConfigT&& value) {
-    SetTenancyConfig(std::forward<TenancyConfigT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_functionName;
 
@@ -667,6 +667,8 @@ class CreateFunctionRequest : public LambdaRequest {
 
   bool m_publish{false};
 
+  FunctionVersionLatestPublished m_publishTo{FunctionVersionLatestPublished::NOT_SET};
+
   VpcConfig m_vpcConfig;
 
   PackageType m_packageType{PackageType::NOT_SET};
@@ -685,9 +687,9 @@ class CreateFunctionRequest : public LambdaRequest {
 
   Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
 
-  ImageConfig m_imageConfig;
-
   Aws::String m_codeSigningConfigArn;
+
+  ImageConfig m_imageConfig;
 
   Aws::Vector<Architecture> m_architectures;
 
@@ -697,13 +699,11 @@ class CreateFunctionRequest : public LambdaRequest {
 
   LoggingConfig m_loggingConfig;
 
+  TenancyConfig m_tenancyConfig;
+
   CapacityProviderConfig m_capacityProviderConfig;
 
-  FunctionVersionLatestPublished m_publishTo{FunctionVersionLatestPublished::NOT_SET};
-
   DurableConfig m_durableConfig;
-
-  TenancyConfig m_tenancyConfig;
   bool m_functionNameHasBeenSet = false;
   bool m_runtimeHasBeenSet = false;
   bool m_roleHasBeenSet = false;
@@ -713,6 +713,7 @@ class CreateFunctionRequest : public LambdaRequest {
   bool m_timeoutHasBeenSet = false;
   bool m_memorySizeHasBeenSet = false;
   bool m_publishHasBeenSet = false;
+  bool m_publishToHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
   bool m_packageTypeHasBeenSet = false;
   bool m_deadLetterConfigHasBeenSet = false;
@@ -722,16 +723,15 @@ class CreateFunctionRequest : public LambdaRequest {
   bool m_tagsHasBeenSet = false;
   bool m_layersHasBeenSet = false;
   bool m_fileSystemConfigsHasBeenSet = false;
-  bool m_imageConfigHasBeenSet = false;
   bool m_codeSigningConfigArnHasBeenSet = false;
+  bool m_imageConfigHasBeenSet = false;
   bool m_architecturesHasBeenSet = false;
   bool m_ephemeralStorageHasBeenSet = false;
   bool m_snapStartHasBeenSet = false;
   bool m_loggingConfigHasBeenSet = false;
-  bool m_capacityProviderConfigHasBeenSet = false;
-  bool m_publishToHasBeenSet = false;
-  bool m_durableConfigHasBeenSet = false;
   bool m_tenancyConfigHasBeenSet = false;
+  bool m_capacityProviderConfigHasBeenSet = false;
+  bool m_durableConfigHasBeenSet = false;
 };
 
 }  // namespace Model

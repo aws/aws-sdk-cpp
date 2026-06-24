@@ -72,6 +72,25 @@ class SystemPromptRecommendationResult {
 
   ///@{
   /**
+   * <p>An explanation of why the recommendation was generated and what patterns were
+   * identified in the agent traces.</p>
+   */
+  inline const Aws::String& GetExplanation() const { return m_explanation; }
+  inline bool ExplanationHasBeenSet() const { return m_explanationHasBeenSet; }
+  template <typename ExplanationT = Aws::String>
+  void SetExplanation(ExplanationT&& value) {
+    m_explanationHasBeenSet = true;
+    m_explanation = std::forward<ExplanationT>(value);
+  }
+  template <typename ExplanationT = Aws::String>
+  SystemPromptRecommendationResult& WithExplanation(ExplanationT&& value) {
+    SetExplanation(std::forward<ExplanationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The error code if the recommendation failed.</p>
    */
   inline const Aws::String& GetErrorCode() const { return m_errorCode; }
@@ -110,11 +129,14 @@ class SystemPromptRecommendationResult {
 
   RecommendationResultConfigurationBundle m_configurationBundle;
 
+  Aws::String m_explanation;
+
   Aws::String m_errorCode;
 
   Aws::String m_errorMessage;
   bool m_recommendedSystemPromptHasBeenSet = false;
   bool m_configurationBundleHasBeenSet = false;
+  bool m_explanationHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };

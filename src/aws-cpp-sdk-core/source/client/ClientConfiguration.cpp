@@ -552,6 +552,10 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String re
     {
         retryMode = Aws::Config::GetCachedConfigValue("retry_mode");
     }
+    if (Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true" && retryMode.empty())
+    {
+        retryMode = "standard";
+    }
 
     std::shared_ptr<RetryStrategy> retryStrategy;
     if (retryMode == "standard")

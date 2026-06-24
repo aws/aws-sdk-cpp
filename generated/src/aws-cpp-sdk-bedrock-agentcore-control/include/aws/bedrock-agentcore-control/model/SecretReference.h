@@ -20,8 +20,8 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>Contains a reference to a secret stored in AWS Secrets Manager.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Contains a reference to a secret stored in Amazon Web Services Secrets
+ * Manager.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/SecretReference">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,8 @@ class SecretReference {
 
   ///@{
   /**
-   * <p>The ID of the AWS Secrets Manager secret that stores the secret value.</p>
+   * <p>The ID of the Amazon Web Services Secrets Manager secret that stores the
+   * secret value.</p>
    */
   inline const Aws::String& GetSecretId() const { return m_secretId; }
   inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
@@ -52,8 +53,8 @@ class SecretReference {
 
   ///@{
   /**
-   * <p>The JSON key used to extract the secret value from the AWS Secrets Manager
-   * secret.</p>
+   * <p>The JSON key used to extract the secret value from the Amazon Web Services
+   * Secrets Manager secret.</p>
    */
   inline const Aws::String& GetJsonKey() const { return m_jsonKey; }
   inline bool JsonKeyHasBeenSet() const { return m_jsonKeyHasBeenSet; }

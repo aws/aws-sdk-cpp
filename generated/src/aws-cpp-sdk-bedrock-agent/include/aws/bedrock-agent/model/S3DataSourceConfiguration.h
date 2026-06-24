@@ -21,8 +21,11 @@ namespace BedrockAgent {
 namespace Model {
 
 /**
- * <p>The configuration information to connect to Amazon S3 as your data
- * source.</p><p><h3>See Also:</h3>   <a
+ * <p>The configuration information to connect to Amazon S3 as your data source for
+ * self-managed knowledge bases. To configure this data source for managed
+ * knowledge bases, use <a
+ * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/S3DataSourceConfiguration">AWS
  * API Reference</a></p>
  */

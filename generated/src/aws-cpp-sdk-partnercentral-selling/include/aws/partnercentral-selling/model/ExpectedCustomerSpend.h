@@ -77,8 +77,10 @@ class ExpectedCustomerSpend {
   ///@{
   /**
    * <p>Indicates how frequently the customer is expected to spend the projected
-   * amount. Only the value <code>Monthly</code> is allowed for the
-   * <code>Frequency</code> field, representing recurring monthly spend.</p>
+   * amount. Use <code>Monthly</code> for recurring monthly spend (required for
+   * <code>TargetCompany: "AWS"</code> entries). Use <code>None</code> for one-time
+   * deal value entries (required for <code>TargetCompany: "Self"</code> entries when
+   * providing Total Contract Value).</p>
    */
   inline PaymentFrequency GetFrequency() const { return m_frequency; }
   inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
@@ -94,11 +96,14 @@ class ExpectedCustomerSpend {
 
   ///@{
   /**
-   * <p>Specifies the name of the partner company that is expected to generate
-   * revenue from the opportunity. This field helps track the partner’s involvement
-   * in the opportunity. This field only accepts the value <code>AWS</code>. If any
-   * other value is provided, the system will automatically set it to
-   * <code>AWS</code>.</p>
+   * <p>Specifies the entity associated with this spend entry. Use <code>AWS</code>
+   * for the system’s AWS Monthly Recurring Revenue (MRR) estimate. Use
+   * <code>Self</code> for the partner’s own deal value entry when providing Total
+   * Contract Value (TCV) for automatic MRR conversion. When
+   * <code>ExpectedContractDuration</code> is present on the Project, only
+   * <code>AWS</code> and <code>Self</code> are accepted. When
+   * <code>ExpectedContractDuration</code> is not present, only <code>AWS</code> is
+   * accepted and any other value will be automatically set to <code>AWS</code>.</p>
    */
   inline const Aws::String& GetTargetCompany() const { return m_targetCompany; }
   inline bool TargetCompanyHasBeenSet() const { return m_targetCompanyHasBeenSet; }

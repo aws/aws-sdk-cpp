@@ -30,6 +30,10 @@ ExpressGatewayServiceConfiguration& ExpressGatewayServiceConfiguration::operator
     m_taskRoleArn = jsonValue.GetString("taskRoleArn");
     m_taskRoleArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("taskDefinitionArn")) {
+    m_taskDefinitionArn = jsonValue.GetString("taskDefinitionArn");
+    m_taskDefinitionArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("cpu")) {
     m_cpu = jsonValue.GetString("cpu");
     m_cpuHasBeenSet = true;
@@ -81,6 +85,10 @@ JsonValue ExpressGatewayServiceConfiguration::Jsonize() const {
 
   if (m_taskRoleArnHasBeenSet) {
     payload.WithString("taskRoleArn", m_taskRoleArn);
+  }
+
+  if (m_taskDefinitionArnHasBeenSet) {
+    payload.WithString("taskDefinitionArn", m_taskDefinitionArn);
   }
 
   if (m_cpuHasBeenSet) {

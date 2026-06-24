@@ -190,6 +190,7 @@
 #include <aws/bedrock/model/CustomizationConfig.h>
 #include <aws/bedrock/model/CustomizationType.h>
 #include <aws/bedrock/model/DataProcessingDetails.h>
+#include <aws/bedrock/model/DataRetentionMode.h>
 #include <aws/bedrock/model/DeleteAutomatedReasoningPolicyBuildWorkflowRequest.h>
 #include <aws/bedrock/model/DeleteAutomatedReasoningPolicyBuildWorkflowResult.h>
 #include <aws/bedrock/model/DeleteAutomatedReasoningPolicyRequest.h>
@@ -260,6 +261,8 @@
 #include <aws/bedrock/model/FoundationModelLifecycleStatus.h>
 #include <aws/bedrock/model/FoundationModelSummary.h>
 #include <aws/bedrock/model/GenerationConfiguration.h>
+#include <aws/bedrock/model/GetAccountDataRetentionRequest.h>
+#include <aws/bedrock/model/GetAccountDataRetentionResult.h>
 #include <aws/bedrock/model/GetAdvancedPromptOptimizationJobRequest.h>
 #include <aws/bedrock/model/GetAdvancedPromptOptimizationJobResult.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyAnnotationsRequest.h>
@@ -467,6 +470,8 @@
 #include <aws/bedrock/model/PromptTemplate.h>
 #include <aws/bedrock/model/ProvisionedModelStatus.h>
 #include <aws/bedrock/model/ProvisionedModelSummary.h>
+#include <aws/bedrock/model/PutAccountDataRetentionRequest.h>
+#include <aws/bedrock/model/PutAccountDataRetentionResult.h>
 #include <aws/bedrock/model/PutEnforcedGuardrailConfigurationRequest.h>
 #include <aws/bedrock/model/PutEnforcedGuardrailConfigurationResult.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationRequest.h>

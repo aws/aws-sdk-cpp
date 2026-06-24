@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/application-signals/ApplicationSignalsClient.h>
+#include <aws/application-signals/model/GetInstrumentationConfigurationStatusPaginationTraits.h>
 #include <aws/application-signals/model/ListEntityEventsPaginationTraits.h>
+#include <aws/application-signals/model/ListInstrumentationConfigurationsPaginationTraits.h>
 #include <aws/application-signals/model/ListServiceDependenciesPaginationTraits.h>
 #include <aws/application-signals/model/ListServiceDependentsPaginationTraits.h>
 #include <aws/application-signals/model/ListServiceLevelObjectiveExclusionWindowsPaginationTraits.h>
@@ -18,8 +20,14 @@
 namespace Aws {
 namespace ApplicationSignals {
 
+using GetInstrumentationConfigurationStatusPaginator =
+    Aws::Utils::Pagination::Paginator<ApplicationSignalsClient, Model::GetInstrumentationConfigurationStatusRequest,
+                                      Pagination::GetInstrumentationConfigurationStatusPaginationTraits<ApplicationSignalsClient>>;
 using ListEntityEventsPaginator = Aws::Utils::Pagination::Paginator<ApplicationSignalsClient, Model::ListEntityEventsRequest,
                                                                     Pagination::ListEntityEventsPaginationTraits<ApplicationSignalsClient>>;
+using ListInstrumentationConfigurationsPaginator =
+    Aws::Utils::Pagination::Paginator<ApplicationSignalsClient, Model::ListInstrumentationConfigurationsRequest,
+                                      Pagination::ListInstrumentationConfigurationsPaginationTraits<ApplicationSignalsClient>>;
 using ListServiceDependenciesPaginator =
     Aws::Utils::Pagination::Paginator<ApplicationSignalsClient, Model::ListServiceDependenciesRequest,
                                       Pagination::ListServiceDependenciesPaginationTraits<ApplicationSignalsClient>>;

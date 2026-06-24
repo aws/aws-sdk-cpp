@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/DaemonContainerDefinition.h>
+#include <aws/ecs/model/DaemonIpcMode.h>
+#include <aws/ecs/model/DaemonPidMode.h>
 #include <aws/ecs/model/DaemonTaskDefinitionStatus.h>
 #include <aws/ecs/model/DaemonVolume.h>
 
@@ -293,6 +295,50 @@ class DaemonTaskDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The PID namespace mode for the daemon. The valid values are <code>none</code>
+   * and <code>shared</code>. The default is <code>none</code>.</p> <p>If
+   * <code>none</code> is specified or no value is provided, the daemon runs with its
+   * own PID namespace, isolated from other tasks. If <code>shared</code> is
+   * specified, the daemon joins the host PID namespace, making it accessible to
+   * non-daemon tasks that use <code>pidMode: "host"</code> or other daemons that use
+   * <code>pidMode: "shared"</code>.</p>
+   */
+  inline DaemonPidMode GetPidMode() const { return m_pidMode; }
+  inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
+  inline void SetPidMode(DaemonPidMode value) {
+    m_pidModeHasBeenSet = true;
+    m_pidMode = value;
+  }
+  inline DaemonTaskDefinition& WithPidMode(DaemonPidMode value) {
+    SetPidMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The IPC namespace mode for the daemon. The valid values are <code>none</code>
+   * and <code>shared</code>. The default is <code>none</code>.</p> <p>If
+   * <code>none</code> is specified or no value is provided, the daemon runs with its
+   * own IPC namespace, isolated from other tasks. If <code>shared</code> is
+   * specified, the daemon joins the host IPC namespace, making it accessible to
+   * non-daemon tasks that use <code>ipcMode: "host"</code> or other daemons that use
+   * <code>ipcMode: "shared"</code>.</p>
+   */
+  inline DaemonIpcMode GetIpcMode() const { return m_ipcMode; }
+  inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }
+  inline void SetIpcMode(DaemonIpcMode value) {
+    m_ipcModeHasBeenSet = true;
+    m_ipcMode = value;
+  }
+  inline DaemonTaskDefinition& WithIpcMode(DaemonIpcMode value) {
+    SetIpcMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_daemonTaskDefinitionArn;
 
@@ -319,6 +365,10 @@ class DaemonTaskDefinition {
   Aws::Utils::DateTime m_deleteRequestedAt{};
 
   Aws::String m_registeredBy;
+
+  DaemonPidMode m_pidMode{DaemonPidMode::NOT_SET};
+
+  DaemonIpcMode m_ipcMode{DaemonIpcMode::NOT_SET};
   bool m_daemonTaskDefinitionArnHasBeenSet = false;
   bool m_familyHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
@@ -332,6 +382,8 @@ class DaemonTaskDefinition {
   bool m_registeredAtHasBeenSet = false;
   bool m_deleteRequestedAtHasBeenSet = false;
   bool m_registeredByHasBeenSet = false;
+  bool m_pidModeHasBeenSet = false;
+  bool m_ipcModeHasBeenSet = false;
 };
 
 }  // namespace Model
