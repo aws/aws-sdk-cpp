@@ -3,56 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
+#include <smithy/client/schema/JsonWriteUtils.h>
 
-#include <cassert>
+#include <array>
+
+#include "aws/core/client/AWSClient.h"
+#include "aws/core/utils/Outcome.h"
+#include "aws/core/utils/memory/stl/AWSArray.h"
 
 using namespace smithy::schema;
 using namespace Aws::Utils;
+using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
 
-static const int MAX_DEPTH = 64;
+static constexpr int MAX_DEPTH = 1000;
 
-struct JsonShapeSerializer::Impl {
-  Aws::String m_buf;
-  int m_depth = 0;
-  bool m_needsComma[MAX_DEPTH] = {};
-  bool m_isMap[MAX_DEPTH] = {};
-  bool m_isList[MAX_DEPTH] = {};
-  const char* m_currentMapKey = nullptr;
-  bool m_finalized = false;
+class JsonShapeSerializer::Impl {
 
-  void WriteCommaIfNeeded() {
-    if (m_needsComma[m_depth]) {
-      m_buf += ',';
-    } else {
-      m_needsComma[m_depth] = true;
+public:
+  Impl() {m_buf.reserve(8192);}
+
+  bool BeginStructure(const Schema&) {
+    if (m_depth + 1 >= MAX_DEPTH) {
+      m_errorMessage = "Maximum nesting depth exceeded";
+      return false;
     }
-  }
 
-  void WriteKey(const char* key) {
-    m_buf += '"';
-    m_buf += key;
-    m_buf += "\":";
-  }
-
-  void WriteFieldName(const Schema& schema) {
-    WriteCommaIfNeeded();
-    if (m_isList[m_depth]) {
-      return;
-    }
-    if (m_depth > 0 && m_isMap[m_depth]) {
-      WriteKey(m_currentMapKey);
-    } else {
-      WriteKey(schema.GetMemberName());
-    }
-  }
-
-  void BeginStructure(const Schema&) {
     m_buf += '{';
     m_depth++;
     m_needsComma[m_depth] = false;
     m_isMap[m_depth] = false;
     m_isList[m_depth] = false;
+
+    return true;
   }
 
   void EndStructure() {
@@ -67,41 +51,27 @@ struct JsonShapeSerializer::Impl {
 
   void WriteInteger(const Schema& schema, int value) {
     WriteFieldName(schema);
-    auto start = m_buf.size();
-    m_buf.resize(start + 11);
-    int written = snprintf(&m_buf[start],12,"%d", value);
-    m_buf.resize(start + written);
+    m_buf += StringUtils::to_string(value);
   }
 
   void WriteLong(const Schema& schema, int64_t value) {
     WriteFieldName(schema);
-    auto start = m_buf.size();
-    m_buf.resize(start+20);
-    int writter = snprintf(&m_buf[start],21,"%lld", static_cast<long long>(value));
-    m_buf.resize(start + writter);
+    m_buf += StringUtils::to_string(value);
   }
 
   void WriteDouble(const Schema& schema, double value) {
     WriteFieldName(schema);
-    auto start = m_buf.size();
-    m_buf.resize(start+32);
-    int writter = snprintf(&m_buf[start],32,"%f", value);
-    m_buf.resize(start + writter);
+    m_buf += StringUtils::to_string(value);
   }
 
   void WriteString(const Schema& schema, const Aws::String& value) {
     WriteFieldName(schema);
-    m_buf += '"';
-    m_buf += value;
-    m_buf += '"';
+    JsonWriteUtils::WriteQuotedString(m_buf, value);
   }
 
   void WriteTimestamp(const Schema& schema, const DateTime& value) {
     WriteFieldName(schema);
-    auto start = m_buf.size();
-    m_buf.resize(start+32);
-    int written = snprintf(&m_buf[start], 32, "%g", value.SecondsWithMSPrecision());
-    m_buf.resize(start + written);
+    m_buf += StringUtils::to_string(value.SecondsWithMSPrecision());
   }
 
   void WriteBlob(const Schema& schema, const ByteBuffer& value) {
@@ -118,13 +88,20 @@ struct JsonShapeSerializer::Impl {
     m_buf += "null";
   }
 
-  void BeginList(const Schema& schema, size_t) {
+  bool BeginList(const Schema& schema, size_t) {
+    if (m_depth + 1 >= MAX_DEPTH) {
+      m_errorMessage = "Maximum nesting depth exceeded";
+      return false;
+    }
+
     WriteFieldName(schema);
     m_buf += '[';
     m_depth++;
     m_needsComma[m_depth] = false;
     m_isMap[m_depth] = false;
     m_isList[m_depth] = true;
+
+    return true;
   }
 
   void EndList() {
@@ -132,29 +109,43 @@ struct JsonShapeSerializer::Impl {
     m_buf += ']';
   }
 
-  void BeginMap(const Schema& schema, size_t) {
+  bool BeginMap(const Schema& schema, size_t) {
+    if (m_depth + 1 >= MAX_DEPTH) {
+      m_errorMessage = "Maximum nesting depth exceeded";
+      return false;
+    }
+
     WriteFieldName(schema);
     m_buf += '{';
     m_depth++;
     m_needsComma[m_depth] = false;
     m_isMap[m_depth] = true;
     m_isList[m_depth] = false;
+
+    return true;
   }
 
-  void WriteMapKey(const Aws::String& key) { m_currentMapKey = key.c_str(); }
+  void WriteMapKey(const Aws::String& key) { m_currentMapKey = key; }
 
   void EndMap() {
     m_depth--;
     m_buf += '}';
   }
 
-  void BeginNestedStructure(const Schema& schema) {
+  bool BeginNestedStructure(const Schema& schema) {
+    if (m_depth + 1 >= MAX_DEPTH) {
+      m_errorMessage = "Maximum nesting depth exceeded";
+      return false;
+    }
+
     WriteFieldName(schema);
     m_buf += '{';
     m_depth++;
     m_needsComma[m_depth] = false;
     m_isMap[m_depth] = false;
     m_isList[m_depth] = false;
+
+    return true;
   }
 
   void EndNestedStructure() {
@@ -162,17 +153,59 @@ struct JsonShapeSerializer::Impl {
     m_buf += '}';
   }
 
-  Aws::String GetPayload() {
-    assert(!m_finalized);
+  SerializerOutcome GetPayload() {
+    if(m_finalized || !m_errorMessage.empty()) {
+      return Aws::Client::AWSError<Aws::Client::CoreErrors>(
+        Aws::Client::CoreErrors::INTERNAL_FAILURE,
+        "SerializationException",
+        !m_errorMessage.empty()?m_errorMessage:"Serializer has already been finalized",
+        false);
+    }
     m_finalized = true;
     return std::move(m_buf);
   }
+
+private:
+  Aws::String m_buf;
+  int m_depth = 0;
+ Aws::Array<bool, MAX_DEPTH> m_needsComma{};
+ Aws::Array<bool, MAX_DEPTH> m_isMap{};
+ Aws::Array<bool, MAX_DEPTH> m_isList{};
+  Aws::String m_currentMapKey;
+  bool m_finalized = false;
+  Aws::String m_errorMessage;
+
+  void WriteCommaIfNeeded() {
+    if (m_needsComma[m_depth]) {
+      m_buf += ',';
+    } else {
+      m_needsComma[m_depth] = true;
+    }
+  }
+
+  void WriteKey(const Aws::String& key) {
+    JsonWriteUtils::WriteQuotedString(m_buf, key);
+    m_buf += ':';
+  }
+
+  void WriteFieldName(const Schema& schema) {
+    WriteCommaIfNeeded();
+    if (m_isList[m_depth]) {
+      return;
+    }
+    if (m_depth > 0 && m_isMap[m_depth]) {
+      WriteKey(m_currentMapKey);
+    } else {
+      WriteKey(schema.GetMemberName());
+    }
+  }
+
 };
 
-JsonShapeSerializer::JsonShapeSerializer() : m_impl(Aws::MakeUnique<Impl>("JsonShapeSerializer")) { m_impl->m_buf.reserve(8192); }
+JsonShapeSerializer::JsonShapeSerializer() : m_impl(Aws::MakeUnique<Impl>("JsonShapeSerializer")) {}
 JsonShapeSerializer::~JsonShapeSerializer() = default;
 
-void JsonShapeSerializer::BeginStructure(const Schema& schema) { m_impl->BeginStructure(schema); }
+bool JsonShapeSerializer::BeginStructure(const Schema& schema) { return m_impl->BeginStructure(schema); }
 void JsonShapeSerializer::EndStructure() { m_impl->EndStructure(); }
 void JsonShapeSerializer::WriteBoolean(const Schema& schema, bool value) { m_impl->WriteBoolean(schema, value); }
 void JsonShapeSerializer::WriteInteger(const Schema& schema, int value) { m_impl->WriteInteger(schema, value); }
@@ -183,11 +216,11 @@ void JsonShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& v
 void JsonShapeSerializer::WriteBlob(const Schema& schema, const ByteBuffer& value) { m_impl->WriteBlob(schema, value); }
 void JsonShapeSerializer::WriteEnum(const Schema& schema, int value) { m_impl->WriteEnum(schema, value); }
 void JsonShapeSerializer::WriteNull(const Schema& schema) { m_impl->WriteNull(schema); }
-void JsonShapeSerializer::BeginList(const Schema& schema, size_t count) { m_impl->BeginList(schema, count); }
+bool JsonShapeSerializer::BeginList(const Schema& schema, size_t count) { return m_impl->BeginList(schema, count); }
 void JsonShapeSerializer::EndList() { m_impl->EndList(); }
-void JsonShapeSerializer::BeginMap(const Schema& schema, size_t count) { m_impl->BeginMap(schema, count); }
+bool JsonShapeSerializer::BeginMap(const Schema& schema, size_t count) { return m_impl->BeginMap(schema, count); }
 void JsonShapeSerializer::WriteMapKey(const Aws::String& key) { m_impl->WriteMapKey(key); }
 void JsonShapeSerializer::EndMap() { m_impl->EndMap(); }
-void JsonShapeSerializer::BeginNestedStructure(const Schema& schema) { m_impl->BeginNestedStructure(schema); }
+bool JsonShapeSerializer::BeginNestedStructure(const Schema& schema) { return m_impl->BeginNestedStructure(schema); }
 void JsonShapeSerializer::EndNestedStructure() { m_impl->EndNestedStructure(); }
-Aws::String JsonShapeSerializer::GetPayload() { return m_impl->GetPayload(); }
+JsonShapeSerializer::SerializerOutcome JsonShapeSerializer::GetPayload() { return m_impl->GetPayload(); }

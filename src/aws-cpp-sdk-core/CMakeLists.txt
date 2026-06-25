@@ -551,6 +551,8 @@ add_library(${PROJECT_NAME} ${AWS_NATIVE_SDK_SRC}
         include/smithy/client/schema/QueryShapeSerializer.h
         include/smithy/client/schema/XmlShapeSerializer.h
         source/smithy/client/schema/JsonShapeSerializer.cpp
+        include/smithy/client/schema/JsonWriteUtils.h
+        source/smithy/client/schema/JsonWriteUtils.cpp
 )
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 

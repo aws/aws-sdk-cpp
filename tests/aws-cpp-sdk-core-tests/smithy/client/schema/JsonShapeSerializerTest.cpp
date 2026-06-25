@@ -17,7 +17,9 @@ TEST_F(JsonShapeSerializerTest, EmptyStructure) {
   Schema root;
   s.BeginStructure(root);
   s.EndStructure();
-  EXPECT_EQ(s.GetPayload(), "{}");
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "{}");
 }
 
 TEST_F(JsonShapeSerializerTest, BooleanTrue) {
@@ -27,7 +29,7 @@ TEST_F(JsonShapeSerializerTest, BooleanTrue) {
   s.BeginStructure(root);
   s.WriteBoolean(member, true);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"enabled\":true"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"enabled\":true"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, BooleanFalse) {
@@ -37,7 +39,7 @@ TEST_F(JsonShapeSerializerTest, BooleanFalse) {
   s.BeginStructure(root);
   s.WriteBoolean(member, false);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"enabled\":false"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"enabled\":false"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, Integer) {
@@ -47,7 +49,7 @@ TEST_F(JsonShapeSerializerTest, Integer) {
   s.BeginStructure(root);
   s.WriteInteger(member, 42);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"count\":42"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"count\":42"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, Long) {
@@ -57,7 +59,7 @@ TEST_F(JsonShapeSerializerTest, Long) {
   s.BeginStructure(root);
   s.WriteLong(member, 9876543210LL);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"bigNum\":9876543210"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"bigNum\":9876543210"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, Double) {
@@ -67,7 +69,7 @@ TEST_F(JsonShapeSerializerTest, Double) {
   s.BeginStructure(root);
   s.WriteDouble(member, 3.14);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"ratio\":3.14"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"ratio\":3.14"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, String) {
@@ -77,7 +79,7 @@ TEST_F(JsonShapeSerializerTest, String) {
   s.BeginStructure(root);
   s.WriteString(member, "hello");
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"name\":\"hello\""), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"name\":\"hello\""), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, EmptyString) {
@@ -87,7 +89,7 @@ TEST_F(JsonShapeSerializerTest, EmptyString) {
   s.BeginStructure(root);
   s.WriteString(member, "");
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"name\":\"\""), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"name\":\"\""), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, Timestamp) {
@@ -98,7 +100,7 @@ TEST_F(JsonShapeSerializerTest, Timestamp) {
   Aws::Utils::DateTime dt(1234567890.0);
   s.WriteTimestamp(member, dt);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"created\":"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"created\":"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, Blob) {
@@ -110,7 +112,7 @@ TEST_F(JsonShapeSerializerTest, Blob) {
   Aws::Utils::ByteBuffer buf(raw, 3);
   s.WriteBlob(member, buf);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"data\":\"Zm9v\""), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"data\":\"Zm9v\""), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, NullValue) {
@@ -120,7 +122,7 @@ TEST_F(JsonShapeSerializerTest, NullValue) {
   s.BeginStructure(root);
   s.WriteNull(member);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"item\":null"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"item\":null"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, MultipleScalars) {
@@ -134,7 +136,7 @@ TEST_F(JsonShapeSerializerTest, MultipleScalars) {
   s.WriteInteger(m2, 7);
   s.WriteString(m3, "x");
   s.EndStructure();
-  auto payload = s.GetPayload();
+  auto payload = s.GetPayload().GetResult();
   EXPECT_NE(payload.find("\"a\":true"), Aws::String::npos);
   EXPECT_NE(payload.find("\"b\":7"), Aws::String::npos);
   EXPECT_NE(payload.find("\"c\":\"x\""), Aws::String::npos);
@@ -152,7 +154,7 @@ TEST_F(JsonShapeSerializerTest, NestedStructure) {
   s.WriteString(inner, "val");
   s.EndNestedStructure();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"metadata\":{\"key\":\"val\"}"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"metadata\":{\"key\":\"val\"}"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, DeeplyNestedStructure) {
@@ -168,7 +170,7 @@ TEST_F(JsonShapeSerializerTest, DeeplyNestedStructure) {
   s.EndNestedStructure();
   s.EndNestedStructure();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"l1\":{\"l2\":{\"val\":99}}"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"l1\":{\"l2\":{\"val\":99}}"), Aws::String::npos);
 }
 
 // --- Lists ---
@@ -185,7 +187,7 @@ TEST_F(JsonShapeSerializerTest, ListOfStrings) {
   s.WriteString(elem, "c");
   s.EndList();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"tags\":[\"a\",\"b\",\"c\"]"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"tags\":[\"a\",\"b\",\"c\"]"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, ListOfIntegers) {
@@ -200,7 +202,7 @@ TEST_F(JsonShapeSerializerTest, ListOfIntegers) {
   s.WriteInteger(elem, 3);
   s.EndList();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"nums\":[1,2,3]"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"nums\":[1,2,3]"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, EmptyList) {
@@ -211,7 +213,7 @@ TEST_F(JsonShapeSerializerTest, EmptyList) {
   s.BeginList(listMember, 0);
   s.EndList();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"items\":[]"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"items\":[]"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, ListOfStructures) {
@@ -230,7 +232,7 @@ TEST_F(JsonShapeSerializerTest, ListOfStructures) {
   s.EndNestedStructure();
   s.EndList();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"items\":[{\"id\":1},{\"id\":2}]"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"items\":[{\"id\":1},{\"id\":2}]"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, SparseList) {
@@ -245,7 +247,7 @@ TEST_F(JsonShapeSerializerTest, SparseList) {
   s.WriteString(elem, "b");
   s.EndList();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"items\":[\"a\",null,\"b\"]"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"items\":[\"a\",null,\"b\"]"), Aws::String::npos);
 }
 
 // --- Maps ---
@@ -263,7 +265,7 @@ TEST_F(JsonShapeSerializerTest, MapOfStrings) {
   s.WriteString(valSchema, "qux");
   s.EndMap();
   s.EndStructure();
-  auto payload = s.GetPayload();
+  auto payload = s.GetPayload().GetResult();
   EXPECT_NE(payload.find("\"x-foo\":\"bar\""), Aws::String::npos);
   EXPECT_NE(payload.find("\"x-baz\":\"qux\""), Aws::String::npos);
 }
@@ -276,7 +278,7 @@ TEST_F(JsonShapeSerializerTest, EmptyMap) {
   s.BeginMap(mapMember, 0);
   s.EndMap();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"tags\":{}"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"tags\":{}"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, MapOfStructures) {
@@ -293,7 +295,7 @@ TEST_F(JsonShapeSerializerTest, MapOfStructures) {
   s.EndNestedStructure();
   s.EndMap();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("\"nodes\":{\"a\":{\"val\":1}}"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"nodes\":{\"a\":{\"val\":1}}"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeSerializerTest, SparseMap) {
@@ -309,7 +311,7 @@ TEST_F(JsonShapeSerializerTest, SparseMap) {
   s.WriteNull(valSchema);
   s.EndMap();
   s.EndStructure();
-  auto payload = s.GetPayload();
+  auto payload = s.GetPayload().GetResult();
   EXPECT_NE(payload.find("\"present\":\"yes\""), Aws::String::npos);
   EXPECT_NE(payload.find("\"absent\":null"), Aws::String::npos);
 }
@@ -337,7 +339,7 @@ TEST_F(JsonShapeSerializerTest, StructureWithListAndMap) {
   s.EndMap();
   s.EndStructure();
 
-  auto payload = s.GetPayload();
+  auto payload = s.GetPayload().GetResult();
   EXPECT_NE(payload.find("\"name\":\"test\""), Aws::String::npos);
   EXPECT_NE(payload.find("\"tags\":[\"t1\",\"t2\"]"), Aws::String::npos);
   EXPECT_NE(payload.find("\"meta\":{\"k\":\"v\"}"), Aws::String::npos);
@@ -360,5 +362,80 @@ TEST_F(JsonShapeSerializerTest, MapContainingList) {
   s.EndMap();
   s.EndStructure();
 
-  EXPECT_NE(s.GetPayload().find("\"data\":{\"nums\":[1,2]}"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("\"data\":{\"nums\":[1,2]}"), Aws::String::npos);
+}
+
+// --- JSON Escaping ---
+
+TEST_F(JsonShapeSerializerTest, EscapesQuotesInString) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("msg", ShapeType::String);
+  s.BeginStructure(root);
+  s.WriteString(member, "say \"hello\"");
+  s.EndStructure();
+  EXPECT_NE(s.GetPayload().GetResult().find("\"msg\":\"say \\\"hello\\\"\""), Aws::String::npos);
+}
+
+TEST_F(JsonShapeSerializerTest, EscapesBackslash) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("path", ShapeType::String);
+  s.BeginStructure(root);
+  s.WriteString(member, "C:\\Users\\test");
+  s.EndStructure();
+  EXPECT_NE(s.GetPayload().GetResult().find("\"path\":\"C:\\\\Users\\\\test\""), Aws::String::npos);
+}
+
+TEST_F(JsonShapeSerializerTest, EscapesControlCharacters) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("text", ShapeType::String);
+  s.BeginStructure(root);
+  s.WriteString(member, "line1\nline2\ttab");
+  s.EndStructure();
+  EXPECT_NE(s.GetPayload().GetResult().find("\"text\":\"line1\\nline2\\ttab\""), Aws::String::npos);
+}
+
+TEST_F(JsonShapeSerializerTest, EscapesNullByte) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("data", ShapeType::String);
+  s.BeginStructure(root);
+  Aws::String val("ab");
+  val += '\0';
+  val += "cd";
+  s.WriteString(member, val);
+  s.EndStructure();
+  EXPECT_NE(s.GetPayload().GetResult().find("\"data\":\"ab\\u0000cd\""), Aws::String::npos);
+}
+
+TEST_F(JsonShapeSerializerTest, EscapesInMapKey) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema mapMember("m", ShapeType::Map);
+  Schema valSchema("value", ShapeType::String);
+  s.BeginStructure(root);
+  s.BeginMap(mapMember, 1);
+  s.WriteMapKey("key\"with\"quotes");
+  s.WriteString(valSchema, "v");
+  s.EndMap();
+  s.EndStructure();
+  EXPECT_NE(s.GetPayload().GetResult().find("\"key\\\"with\\\"quotes\":\"v\""), Aws::String::npos);
+}
+
+// --- Depth limit ---
+
+TEST_F(JsonShapeSerializerTest, MaxDepthEnforcement) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema nested("n", ShapeType::Structure);
+  s.BeginStructure(root);
+  // Nest 1000+ times to exceed MAX_DEPTH
+  for (int i = 0; i < 1000; i++) {
+    s.BeginNestedStructure(nested);
+  }
+  auto outcome = s.GetPayload();
+  ASSERT_FALSE(outcome.IsSuccess());
+  EXPECT_NE(outcome.GetError().GetMessage().find("depth"), Aws::String::npos);
 }
