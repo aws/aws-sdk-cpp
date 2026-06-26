@@ -1,8 +1,8 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
-#include <smithy/client/schema/ShapeSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <smithy/client/schema/ShapeSerializer.h>
 
 namespace smithy {
 namespace schema {

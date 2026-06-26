@@ -20,9 +20,8 @@ using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError
 static constexpr int MAX_DEPTH = 1000;
 
 class JsonShapeSerializer::Impl {
-
-public:
-  Impl() {m_buf.reserve(8192);}
+ public:
+  Impl() { m_buf.reserve(8192); }
 
   bool BeginStructure(const Schema&) {
     if (m_depth + 1 >= MAX_DEPTH) {
@@ -66,7 +65,7 @@ public:
 
   void WriteString(const Schema& schema, const Aws::String& value) {
     WriteFieldName(schema);
-    JsonWriteUtils::WriteQuotedString(m_buf, value);
+    Aws::Schema::WriteQuotedJsonString(m_buf, value);
   }
 
   void WriteTimestamp(const Schema& schema, const DateTime& value) {
@@ -154,23 +153,21 @@ public:
   }
 
   SerializerOutcome GetPayload() {
-    if(m_finalized || !m_errorMessage.empty()) {
+    if (m_finalized || !m_errorMessage.empty()) {
       return Aws::Client::AWSError<Aws::Client::CoreErrors>(
-        Aws::Client::CoreErrors::INTERNAL_FAILURE,
-        "SerializationException",
-        !m_errorMessage.empty()?m_errorMessage:"Serializer has already been finalized",
-        false);
+          Aws::Client::CoreErrors::INTERNAL_FAILURE, "SerializationException",
+          !m_errorMessage.empty() ? m_errorMessage : "Serializer has already been finalized", false);
     }
     m_finalized = true;
     return std::move(m_buf);
   }
 
-private:
+ private:
   Aws::String m_buf;
   int m_depth = 0;
- Aws::Array<bool, MAX_DEPTH> m_needsComma{};
- Aws::Array<bool, MAX_DEPTH> m_isMap{};
- Aws::Array<bool, MAX_DEPTH> m_isList{};
+  Aws::Array<bool, MAX_DEPTH> m_needsComma{};
+  Aws::Array<bool, MAX_DEPTH> m_isMap{};
+  Aws::Array<bool, MAX_DEPTH> m_isList{};
   Aws::String m_currentMapKey;
   bool m_finalized = false;
   Aws::String m_errorMessage;
@@ -184,7 +181,7 @@ private:
   }
 
   void WriteKey(const Aws::String& key) {
-    JsonWriteUtils::WriteQuotedString(m_buf, key);
+    Aws::Schema::WriteQuotedJsonString(m_buf, key);
     m_buf += ':';
   }
 
@@ -199,7 +196,6 @@ private:
       WriteKey(schema.GetMemberName());
     }
   }
-
 };
 
 JsonShapeSerializer::JsonShapeSerializer() : m_impl(Aws::MakeUnique<Impl>("JsonShapeSerializer")) {}

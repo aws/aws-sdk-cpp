@@ -35,12 +35,11 @@ enum class ShapeType : uint8_t {
 class Schema {
  public:
   Schema() = default;
-  Schema(const Aws::String& memberName, ShapeType type)
-      : m_type(type), m_memberName(memberName) {}
+  Schema(const Aws::String& memberName, ShapeType type) : m_type(type), m_memberName(memberName) {}
 
   ShapeType GetType() const { return m_type; }
   const char* GetId() const { return m_id; }
-  const Aws::String& GetMemberName() const { return m_memberName; }
+  Aws::String GetMemberName() const { return m_memberName; }
   int GetMemberIndex() const { return m_memberIndex; }
   bool IsMember() const { return !m_memberName.empty(); }
 
