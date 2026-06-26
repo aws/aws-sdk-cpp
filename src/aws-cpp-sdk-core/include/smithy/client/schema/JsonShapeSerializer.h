@@ -2,12 +2,13 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
 namespace smithy {
 namespace schema {
 
-class JsonShapeSerializer final : public ShapeSerializer {
+class SMITHY_API JsonShapeSerializer final : public ShapeSerializer {
  public:
   using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
   JsonShapeSerializer();

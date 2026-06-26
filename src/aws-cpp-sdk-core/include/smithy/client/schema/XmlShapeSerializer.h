@@ -1,12 +1,13 @@
 #pragma once
 
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
 namespace smithy {
 namespace schema {
 
-class XmlShapeSerializer final : public ShapeSerializer {
+class SMITHY_API XmlShapeSerializer final : public ShapeSerializer {
  public:
   XmlShapeSerializer();
   ~XmlShapeSerializer();

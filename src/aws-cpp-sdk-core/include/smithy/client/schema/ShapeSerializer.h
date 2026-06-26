@@ -3,6 +3,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/Schema.h>
 
 #include <cstdint>
@@ -10,7 +11,7 @@
 namespace smithy {
 namespace schema {
 
-class ShapeSerializer {
+class SMITHY_API ShapeSerializer {
  public:
   virtual ~ShapeSerializer() = default;
 

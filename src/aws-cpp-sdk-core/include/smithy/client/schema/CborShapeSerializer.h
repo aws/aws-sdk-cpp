@@ -1,13 +1,13 @@
 #pragma once
 
-#include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
 namespace smithy {
 namespace schema {
 
-class AWS_CORE_API CborShapeSerialize final : public ShapeSerializer {
+class SMITHY_API CborShapeSerialize final : public ShapeSerializer {
  public:
   CborShapeSerializer();
   ~CborShapeSerializer();
