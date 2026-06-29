@@ -25,7 +25,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   if (hashCode == UNAUTHORIZED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }

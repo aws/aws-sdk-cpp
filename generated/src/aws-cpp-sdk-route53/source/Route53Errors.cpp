@@ -195,7 +195,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == NO_SUCH_CIDR_LOCATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::NO_SUCH_CIDR_LOCATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == PRIOR_REQUEST_NOT_COMPLETE_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::PRIOR_REQUEST_NOT_COMPLETE), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::PRIOR_REQUEST_NOT_COMPLETE), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == TOO_MANY_V_P_C_ASSOCIATION_AUTHORIZATIONS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::TOO_MANY_V_P_C_ASSOCIATION_AUTHORIZATIONS),
                                 RetryableType::NOT_RETRYABLE);

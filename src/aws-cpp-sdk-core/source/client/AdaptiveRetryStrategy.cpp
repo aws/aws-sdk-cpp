@@ -47,7 +47,7 @@ namespace Aws
 
         bool RetryTokenBucket::Acquire(size_t amount, bool fastFail)
         {
-            std::lock_guard<std::recursive_mutex> locker(m_mutex);
+            std::unique_lock<std::mutex> locker(m_mutex);
             if (!m_enabled)
             {
                 return true;
@@ -57,12 +57,11 @@ namespace Aws
             if (notEnough && fastFail) {
                 return false;
             }
-            // If all the tokens couldn't be acquired immediately, wait enough
-            // time to fill the remainder.
-            if (notEnough) {
-                std::chrono::duration<double> waitTime((amount - m_currentCapacity) / m_fillRate);
-                std::this_thread::sleep_for(waitTime);
-                Refill();
+            while (amount > m_currentCapacity)
+            {
+                std::chrono::duration<double> const waitTime((amount - m_currentCapacity) / m_fillRate);
+                m_capacityCV.wait_for(locker, std::chrono::duration_cast<std::chrono::nanoseconds>(waitTime));
+                Refill(Aws::Utils::DateTime::Now());
             }
             m_currentCapacity -= amount;
             return true;
@@ -70,8 +69,6 @@ namespace Aws
 
         void RetryTokenBucket::Refill(const Aws::Utils::DateTime& now)
         {
-            std::lock_guard<std::recursive_mutex> locker(m_mutex);
-
             if (0 == m_lastTimestamp.Millis()) {
                 m_lastTimestamp = now;
                 return;
@@ -84,18 +81,15 @@ namespace Aws
 
         void RetryTokenBucket::UpdateRate(double newRps, const Aws::Utils::DateTime& now)
         {
-            std::lock_guard<std::recursive_mutex> locker(m_mutex);
-
             Refill(now);
             m_fillRate = (std::max)(newRps, MIN_FILL_RATE);
             m_maxCapacity = (std::max)(newRps, MIN_CAPACITY);
             m_currentCapacity = (std::min)(m_currentCapacity, m_maxCapacity);
+            m_capacityCV.notify_all();
         }
 
         void RetryTokenBucket::UpdateMeasuredRate(const Aws::Utils::DateTime& now)
         {
-            std::lock_guard<std::recursive_mutex> locker(m_mutex);
-
             double t = now.Millis() / 1000.0;
             double timeBucket = floor(t * 2.0) / 2.0;
             m_requestCount += 1;
@@ -109,7 +103,7 @@ namespace Aws
 
         void RetryTokenBucket::UpdateClientSendingRate(bool isThrottlingResponse, const Aws::Utils::DateTime& now)
         {
-            std::lock_guard<std::recursive_mutex> locker(m_mutex);
+            std::lock_guard<std::mutex> locker(m_mutex);
 
             UpdateMeasuredRate(now);
 
@@ -138,7 +132,6 @@ namespace Aws
 
         void RetryTokenBucket::Enable()
         {
-            std::lock_guard<std::recursive_mutex> locker(m_mutex);
             m_enabled = true;
         }
 

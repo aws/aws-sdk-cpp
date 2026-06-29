@@ -44,7 +44,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == REQUEST_IN_PROGRESS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::REQUEST_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == REQUEST_FAILED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::REQUEST_FAILED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {

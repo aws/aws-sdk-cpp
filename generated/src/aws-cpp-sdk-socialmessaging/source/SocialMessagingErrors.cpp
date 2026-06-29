@@ -26,7 +26,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SocialMessagingErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SocialMessagingErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == DEPENDENCY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SocialMessagingErrors::DEPENDENCY), RetryableType::RETRYABLE);
   } else if (hashCode == ACCESS_DENIED_BY_META_HASH) {

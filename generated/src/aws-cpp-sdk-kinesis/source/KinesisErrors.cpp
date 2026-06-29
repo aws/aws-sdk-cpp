@@ -44,13 +44,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == EXPIRED_ITERATOR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisErrors::EXPIRED_ITERATOR), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == K_M_S_THROTTLING_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisErrors::K_M_S_THROTTLING), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == PROVISIONED_THROUGHPUT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisErrors::PROVISIONED_THROUGHPUT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisErrors::PROVISIONED_THROUGHPUT_EXCEEDED),
+                                RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INVALID_ARGUMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisErrors::INVALID_ARGUMENT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == EXPIRED_NEXT_TOKEN_HASH) {

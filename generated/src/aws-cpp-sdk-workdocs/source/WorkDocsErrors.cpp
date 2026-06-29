@@ -66,7 +66,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == CUSTOM_METADATA_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkDocsErrors::CUSTOM_METADATA_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkDocsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkDocsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == PROHIBITED_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkDocsErrors::PROHIBITED_STATE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == DOCUMENT_LOCKED_FOR_COMMENTS_HASH) {

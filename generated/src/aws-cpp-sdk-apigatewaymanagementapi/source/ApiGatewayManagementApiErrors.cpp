@@ -30,7 +30,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == PAYLOAD_TOO_LARGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ApiGatewayManagementApiErrors::PAYLOAD_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApiGatewayManagementApiErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApiGatewayManagementApiErrors::LIMIT_EXCEEDED),
+                                RetryableType::RETRYABLE_THROTTLING);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -111,7 +111,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == NO_SUCH_ENTITY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::NO_SUCH_ENTITY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == ASSESSMENT_RUN_IN_PROGRESS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::ASSESSMENT_RUN_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_INPUT_HASH) {

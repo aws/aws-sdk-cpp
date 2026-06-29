@@ -25,7 +25,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingPlansErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingPlansErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == CONCURRENT_UPDATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingPlansErrors::CONCURRENT_UPDATE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVICE_HASH) {

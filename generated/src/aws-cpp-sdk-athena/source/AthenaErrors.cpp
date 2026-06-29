@@ -51,7 +51,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == METADATA_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::METADATA), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == SESSION_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::SESSION_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_REQUEST_HASH) {

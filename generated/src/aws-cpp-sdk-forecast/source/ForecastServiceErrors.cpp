@@ -27,7 +27,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   if (hashCode == RESOURCE_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ForecastServiceErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ForecastServiceErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ForecastServiceErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INVALID_INPUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ForecastServiceErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_IN_USE_HASH) {

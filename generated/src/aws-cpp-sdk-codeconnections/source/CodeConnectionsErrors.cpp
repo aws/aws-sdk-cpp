@@ -45,7 +45,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == CONDITIONAL_CHECK_FAILED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeConnectionsErrors::CONDITIONAL_CHECK_FAILED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeConnectionsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeConnectionsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == UNSUPPORTED_PROVIDER_TYPE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeConnectionsErrors::UNSUPPORTED_PROVIDER_TYPE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {

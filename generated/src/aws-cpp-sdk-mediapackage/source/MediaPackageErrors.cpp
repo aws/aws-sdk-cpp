@@ -29,7 +29,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == FORBIDDEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaPackageErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaPackageErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaPackageErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == UNPROCESSABLE_ENTITY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaPackageErrors::UNPROCESSABLE_ENTITY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_ERROR_HASH) {

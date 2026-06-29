@@ -98,7 +98,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == RESOURCE_CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaMicrovmsErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaMicrovmsErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaMicrovmsErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaMicrovmsErrors::SERVICE), RetryableType::RETRYABLE);
   }

@@ -29,7 +29,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   if (hashCode == RESOURCE_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PersonalizeErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PersonalizeErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PersonalizeErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PersonalizeErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_TAG_KEYS_HASH) {

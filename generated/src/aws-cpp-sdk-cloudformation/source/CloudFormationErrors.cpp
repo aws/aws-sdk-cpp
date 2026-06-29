@@ -55,7 +55,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == C_F_N_REGISTRY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::C_F_N_REGISTRY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == HOOK_RESULT_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::HOOK_RESULT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == OPERATION_NOT_FOUND_HASH) {

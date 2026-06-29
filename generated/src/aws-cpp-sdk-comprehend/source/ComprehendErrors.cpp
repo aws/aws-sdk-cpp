@@ -61,7 +61,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == TOO_MANY_TAG_KEYS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::TOO_MANY_TAG_KEYS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INVALID_FILTER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::INVALID_FILTER), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_IN_USE_HASH) {

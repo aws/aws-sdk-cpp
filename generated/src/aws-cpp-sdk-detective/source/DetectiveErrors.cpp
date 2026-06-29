@@ -52,7 +52,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DetectiveErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DetectiveErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DetectiveErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -37,7 +37,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == PACKED_POLICY_TOO_LARGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::PACKED_POLICY_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == I_D_P_COMMUNICATION_ERROR_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::I_D_P_COMMUNICATION_ERROR), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::I_D_P_COMMUNICATION_ERROR), RetryableType::RETRYABLE);
   } else if (hashCode == I_D_P_REJECTED_CLAIM_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::I_D_P_REJECTED_CLAIM), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SESSION_DURATION_ESCALATION_HASH) {

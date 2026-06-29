@@ -5,6 +5,7 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
+#include <aws/core/platform/Environment.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/HashingUtils.h>
 
@@ -32,6 +33,10 @@ void CoreErrorsMapper::InitCoreErrorsMapper()
       return;
     }
     s_CoreErrorsMapper = Aws::New<ErrorsMapperContainer>("InitCoreErrorsMapper");
+
+    const bool newRetriesEnabled = Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true";
+    const RetryableType throttleType =
+        newRetriesEnabled ? RetryableType::RETRYABLE_THROTTLING : RetryableType::RETRYABLE;
 
     s_CoreErrorsMapper->emplace("IncompleteSignature", AWSError<CoreErrors>(CoreErrors::INCOMPLETE_SIGNATURE, false));
     s_CoreErrorsMapper->emplace("IncompleteSignatureException", AWSError<CoreErrors>(CoreErrors::INCOMPLETE_SIGNATURE, false));
@@ -65,11 +70,11 @@ void CoreErrorsMapper::InitCoreErrorsMapper()
     s_CoreErrorsMapper->emplace("ServiceUnavailableException", AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, true));
     s_CoreErrorsMapper->emplace("ServiceUnavailableError", AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, true));
     s_CoreErrorsMapper->emplace("ServiceUnavailable", AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, true));
-    s_CoreErrorsMapper->emplace("RequestThrottledException", AWSError<CoreErrors>(CoreErrors::THROTTLING, true));
-    s_CoreErrorsMapper->emplace("RequestThrottled", AWSError<CoreErrors>(CoreErrors::THROTTLING, true));
-    s_CoreErrorsMapper->emplace("ThrottlingException", AWSError<CoreErrors>(CoreErrors::THROTTLING, true));
-    s_CoreErrorsMapper->emplace("ThrottledException", AWSError<CoreErrors>(CoreErrors::THROTTLING, true));
-    s_CoreErrorsMapper->emplace("Throttling", AWSError<CoreErrors>(CoreErrors::THROTTLING, true));
+    s_CoreErrorsMapper->emplace("RequestThrottledException", AWSError<CoreErrors>(CoreErrors::THROTTLING, throttleType));
+    s_CoreErrorsMapper->emplace("RequestThrottled", AWSError<CoreErrors>(CoreErrors::THROTTLING, throttleType));
+    s_CoreErrorsMapper->emplace("ThrottlingException", AWSError<CoreErrors>(CoreErrors::THROTTLING, throttleType));
+    s_CoreErrorsMapper->emplace("ThrottledException", AWSError<CoreErrors>(CoreErrors::THROTTLING, throttleType));
+    s_CoreErrorsMapper->emplace("Throttling", AWSError<CoreErrors>(CoreErrors::THROTTLING, throttleType));
     s_CoreErrorsMapper->emplace("ValidationErrorException", AWSError<CoreErrors>(CoreErrors::VALIDATION, false));
     s_CoreErrorsMapper->emplace("ValidationException", AWSError<CoreErrors>(CoreErrors::VALIDATION, false));
     s_CoreErrorsMapper->emplace("ValidationError", AWSError<CoreErrors>(CoreErrors::VALIDATION, false));
@@ -79,8 +84,8 @@ void CoreErrorsMapper::InitCoreErrorsMapper()
     s_CoreErrorsMapper->emplace("ResourceNotFound", AWSError<CoreErrors>(CoreErrors::RESOURCE_NOT_FOUND, false));
     s_CoreErrorsMapper->emplace("UnrecognizedClientException", AWSError<CoreErrors>(CoreErrors::UNRECOGNIZED_CLIENT, false));
     s_CoreErrorsMapper->emplace("UnrecognizedClient", AWSError<CoreErrors>(CoreErrors::UNRECOGNIZED_CLIENT, false));
-    s_CoreErrorsMapper->emplace("SlowDownException", AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, true));
-    s_CoreErrorsMapper->emplace("SlowDown", AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, true));
+    s_CoreErrorsMapper->emplace("SlowDownException", AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, throttleType));
+    s_CoreErrorsMapper->emplace("SlowDown", AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, throttleType));
     s_CoreErrorsMapper->emplace("SignatureDoesNotMatchException", AWSError<CoreErrors>(CoreErrors::SIGNATURE_DOES_NOT_MATCH, false));
     s_CoreErrorsMapper->emplace("SignatureDoesNotMatch", AWSError<CoreErrors>(CoreErrors::SIGNATURE_DOES_NOT_MATCH, false));
     s_CoreErrorsMapper->emplace("InvalidAccessKeyIdException", AWSError<CoreErrors>(CoreErrors::INVALID_ACCESS_KEY_ID, false));
@@ -89,6 +94,17 @@ void CoreErrorsMapper::InitCoreErrorsMapper()
     s_CoreErrorsMapper->emplace("RequestTimeTooSkewed", AWSError<CoreErrors>(CoreErrors::REQUEST_TIME_TOO_SKEWED, true));
     s_CoreErrorsMapper->emplace("RequestTimeoutException", AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, true));
     s_CoreErrorsMapper->emplace("RequestTimeout", AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, true));
+    if (newRetriesEnabled) {
+        s_CoreErrorsMapper->emplace("TooManyRequestsException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+        s_CoreErrorsMapper->emplace("ProvisionedThroughputExceededException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+        s_CoreErrorsMapper->emplace("TransactionInProgressException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+        s_CoreErrorsMapper->emplace("RequestLimitExceeded", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+        s_CoreErrorsMapper->emplace("BandwidthLimitExceeded", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+        s_CoreErrorsMapper->emplace("LimitExceededException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+        s_CoreErrorsMapper->emplace("PriorRequestNotComplete", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+        s_CoreErrorsMapper->emplace("EC2ThrottledException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+        s_CoreErrorsMapper->emplace("IDPCommunicationError", AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, true));
+    }
 }
 
 void CoreErrorsMapper::CleanupCoreErrorsMapper()

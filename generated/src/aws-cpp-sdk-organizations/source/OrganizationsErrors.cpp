@@ -142,7 +142,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == ACCESS_DENIED_FOR_DEPENDENCY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCESS_DENIED_FOR_DEPENDENCY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == POLICY_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_IN_USE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CONFLICT_HASH) {

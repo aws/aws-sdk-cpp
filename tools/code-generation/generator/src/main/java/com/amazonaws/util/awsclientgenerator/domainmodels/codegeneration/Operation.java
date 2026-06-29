@@ -94,6 +94,9 @@ public class Operation {
     // For Requestless Defaults
     private boolean requestlessDefault = false;
 
+    // Long-polling operations that must back off even when retry quota is exhausted
+    private boolean longPolling = false;
+
     public boolean hasRequest() {
         return this.request != null && !this.phonyRequest;
     }

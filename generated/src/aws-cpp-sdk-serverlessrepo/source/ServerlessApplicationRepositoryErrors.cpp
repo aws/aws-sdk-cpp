@@ -76,7 +76,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServerlessApplicationRepositoryErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServerlessApplicationRepositoryErrors::TOO_MANY_REQUESTS),
-                                RetryableType::RETRYABLE);
+                                RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServerlessApplicationRepositoryErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_ERROR_HASH) {

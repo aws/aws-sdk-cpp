@@ -74,7 +74,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ObservabilityAdminErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ObservabilityAdminErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ObservabilityAdminErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INVALID_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ObservabilityAdminErrors::INVALID_STATE), RetryableType::NOT_RETRYABLE);
   }

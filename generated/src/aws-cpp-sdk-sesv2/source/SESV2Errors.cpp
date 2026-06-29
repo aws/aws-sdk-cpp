@@ -37,7 +37,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == SENDING_PAUSED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::SENDING_PAUSED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {
@@ -51,7 +51,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::MAIL_FROM_DOMAIN_NOT_VERIFIED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVICE_ERROR_HASH) {

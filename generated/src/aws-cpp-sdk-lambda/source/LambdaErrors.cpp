@@ -516,7 +516,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == E_F_S_MOUNT_FAILURE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_FAILURE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == CODE_ARTIFACT_USER_FAILED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_ARTIFACT_USER_FAILED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_NOT_READY_HASH) {
@@ -566,7 +566,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == K_M_S_DISABLED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_DISABLED), RetryableType::RETRYABLE);
   } else if (hashCode == E_C2_THROTTLED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_THROTTLED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_THROTTLED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == RESOURCE_CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == E_N_I_LIMIT_REACHED_HASH) {

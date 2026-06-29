@@ -363,6 +363,7 @@ namespace Aws
             Aws::Client::RequestCompressionConfig m_requestCompressionConfig;
             std::shared_ptr<smithy::client::UserAgentInterceptor> m_userAgentInterceptor;
             Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors;
+            bool m_enableNewRetries;
         };
 
         AWS_CORE_API Aws::String GetAuthorizationHeader(const Aws::Http::HttpRequest& httpRequest);
