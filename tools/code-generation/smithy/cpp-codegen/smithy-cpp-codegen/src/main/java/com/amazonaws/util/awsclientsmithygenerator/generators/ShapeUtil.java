@@ -65,15 +65,67 @@ public class ShapeUtil {
     );
     
     /**
+     * Hardcoded shape rename collision resolutions from C2J.
+     * These shapes had name collisions with operation result wrappers in C2J
+     * and were given specific alternative names.
+     * Map: service-name -> Map of original-shape-name -> resolved-name
+     */
+    private static final Map<String, Map<String, String>> HARDCODED_COLLISION_RESOLUTIONS = Map.of(
+        "s3", Map.of("CopyObjectResult", "CopyObjectResultDetails"),
+        "medialive", Map.of("BatchUpdateScheduleResult", ""),  // removed from model
+        "accessanalyzer", Map.of("GeneratedPolicyResult", "GeneratedPolicyResults"),
+        "cloudsearchdomain", Map.of("SearchResult", "SearchResultDetails")
+    );
+
+    /**
+     * S3 shapes that exist in C2J but not in Smithy.
+     * These must be synthetically injected into the model before generation.
+     */
+    public static final Map<String, Set<String>> C2J_ONLY_SHAPES = Map.of(
+        "s3", Set.of(
+            "CopyObjectResultDetails", "SelectObjectContentEventStreamUnmarshallerError",
+            "CloudFunctionConfiguration", "QueueConfigurationDeprecated",
+            "TopicConfigurationDeprecated", "NotificationConfigurationDeprecated",
+            "RequestPaymentConfiguration", "PutObjectLockConfigurationRequestAlias",
+            "GetObjectLockConfigurationResultAlias", "ObjectLockConfigurationAlias",
+            "ObjectLockRuleAlias", "DefaultRetentionAlias", "ObjectLockRetentionAlias"
+        )
+    );
+
+    /**
+     * Returns the hardcoded collision resolution for a shape, or null if none.
+     */
+    public static String getHardcodedResolution(String smithyServiceName, String shapeName) {
+        Map<String, String> serviceResolutions = HARDCODED_COLLISION_RESOLUTIONS.get(smithyServiceName);
+        if (serviceResolutions == null) return null;
+        return serviceResolutions.getOrDefault(shapeName, null);
+    }
+
+    /**
+     * Returns the C++ class name for a shape, applying numeric prefix rules.
+     * Shapes starting with a digit get "The" prepended (C2J behavior).
+     */
+    public static String getShapeCppName(String shapeName, String smithyServiceName) {
+        // Check hardcoded resolutions first
+        String resolved = getHardcodedResolution(smithyServiceName, shapeName);
+        if (resolved != null) return resolved;
+        // Numeric prefix: shapes starting with a digit get "The" prepended
+        if (!shapeName.isEmpty() && Character.isDigit(shapeName.charAt(0))) {
+            return "The" + shapeName;
+        }
+        return shapeName;
+    }
+
+    /**
      * C2J/Smithy model mismatches: tokens that are integers in C2J but strings in Smithy.
-     * 
+     *
      * Background:
      * Some services have tokens that were modeled as integers in C2J but changed to
      * strings in Smithy models. The C2J-generated code uses int types, so traits must
      * use `!= 0` checks instead of `.empty()` checks.
-     * 
+     *
      * Map format: service-name -> Map of operation-name -> token-name
-     * 
+     *
      * Example:
      * S3's ListParts operation has NextPartNumberMarker as integer in C2J but string in Smithy.
      */

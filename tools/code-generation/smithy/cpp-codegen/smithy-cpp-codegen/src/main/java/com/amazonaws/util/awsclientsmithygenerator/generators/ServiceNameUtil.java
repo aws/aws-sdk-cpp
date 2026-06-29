@@ -155,6 +155,23 @@ public final class ServiceNameUtil {
         return serviceMap != null ? serviceMap.getOrDefault(sdkId, sdkId) : sdkId;
     }
 
+    /**
+     * Returns the export macro for a service (e.g., "AWS_KINESIS_API").
+     * Follows C2J convention: AWS_{UPPERCASED_SERVICE_NAME}_API
+     */
+    public static String getExportMacro(ServiceShape service, Map<String, String> serviceMap) {
+        String serviceName = getServiceName(service);
+        return "AWS_" + serviceName.toUpperCase() + "_API";
+    }
+
+    /**
+     * Returns the project name for file path construction (e.g., "kinesis", "s3-crt").
+     * This is the lowercase hyphenated name used in: include/aws/{projectName}/model/
+     */
+    public static String getProjectName(ServiceShape service, Map<String, String> serviceMap) {
+        return getSmithyServiceName(service, serviceMap);
+    }
+
     public static boolean isS3CrtProjection(ServiceShape service) {
         String serviceId = service.getTrait(ServiceTrait.class)
             .map(ServiceTrait::getSdkId)
