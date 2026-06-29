@@ -47,7 +47,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == GATEWAY_TIMEOUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::GATEWAY_TIMEOUT), RetryableType::RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == UNPROCESSABLE_ENTITY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::UNPROCESSABLE_ENTITY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == BAD_REQUEST_HASH) {

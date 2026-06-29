@@ -24,7 +24,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComputeOptimizerErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComputeOptimizerErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComputeOptimizerErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

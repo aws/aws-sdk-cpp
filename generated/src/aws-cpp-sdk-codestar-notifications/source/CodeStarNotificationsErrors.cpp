@@ -28,7 +28,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::RESOURCE_ALREADY_EXISTS),
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::CONFIGURATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {

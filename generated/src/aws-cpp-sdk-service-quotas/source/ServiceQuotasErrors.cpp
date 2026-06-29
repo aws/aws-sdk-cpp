@@ -64,7 +64,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERVICE_HASH) {

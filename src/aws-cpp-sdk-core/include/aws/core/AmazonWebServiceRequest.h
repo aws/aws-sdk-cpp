@@ -115,6 +115,12 @@ namespace Aws
         virtual bool IsChunked() const { return false; }
 
         /**
+         * Whether this operation is a long-polling operation (e.g. SQS ReceiveMessage).
+         * Long-polling operations apply a backoff delay before returning when retry quota is exhausted.
+         */
+        virtual bool IsLongPollingOperation() const { return false; }
+
+        /**
          * Register closure for request signed event.
          */
         inline virtual void SetRequestSignedHandler(const RequestSignedHandler& handler) { m_onRequestSigned = handler; }

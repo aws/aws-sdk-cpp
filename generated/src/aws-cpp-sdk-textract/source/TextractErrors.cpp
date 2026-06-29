@@ -49,7 +49,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::IDEMPOTENT_PARAMETER_MISMATCH), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INVALID_JOB_ID_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::INVALID_JOB_ID), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_K_M_S_KEY_HASH) {
@@ -61,7 +61,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == DOCUMENT_TOO_LARGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::DOCUMENT_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == PROVISIONED_THROUGHPUT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::PROVISIONED_THROUGHPUT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::PROVISIONED_THROUGHPUT_EXCEEDED),
+                                RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INVALID_S3_OBJECT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::INVALID_S3_OBJECT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == HUMAN_LOOP_QUOTA_EXCEEDED_HASH) {

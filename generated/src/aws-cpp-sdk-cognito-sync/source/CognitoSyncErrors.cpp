@@ -46,13 +46,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == NOT_AUTHORIZED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::NOT_AUTHORIZED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == RESOURCE_CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == LAMBDA_THROTTLED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::LAMBDA_THROTTLED), RetryableType::NOT_RETRYABLE);
   }

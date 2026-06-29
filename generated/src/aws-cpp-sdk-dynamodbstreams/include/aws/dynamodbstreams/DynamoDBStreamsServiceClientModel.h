@@ -51,7 +51,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DynamoDBStreams {
-using DynamoDBStreamsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DynamoDBStreamsEndpointProviderBase = Aws::DynamoDBStreams::Endpoint::DynamoDBStreamsEndpointProviderBase;
 using DynamoDBStreamsEndpointProvider = Aws::DynamoDBStreams::Endpoint::DynamoDBStreamsEndpointProvider;
 

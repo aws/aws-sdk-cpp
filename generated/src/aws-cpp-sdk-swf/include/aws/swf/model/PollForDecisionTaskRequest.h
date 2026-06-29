@@ -27,6 +27,7 @@ class PollForDecisionTaskRequest : public SWFRequest {
   // so we can not get operation's name from response.
   inline virtual const char* GetServiceRequestName() const override { return "PollForDecisionTask"; }
 
+  inline virtual bool IsLongPollingOperation() const override { return true; }
   AWS_SWF_API Aws::String SerializePayload() const override;
 
   AWS_SWF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;

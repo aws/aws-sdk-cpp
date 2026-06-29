@@ -62,7 +62,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == NO_UPDATE_AVAILABLE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::NO_UPDATE_AVAILABLE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == UPDATE_IN_PROGRESS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::UPDATE_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_PARAMETER_HASH) {

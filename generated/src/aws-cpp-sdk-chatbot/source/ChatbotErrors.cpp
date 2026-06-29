@@ -60,7 +60,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == CREATE_CHIME_WEBHOOK_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::CREATE_CHIME_WEBHOOK_CONFIGURATION), RetryableType::RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == CREATE_SLACK_CHANNEL_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::CREATE_SLACK_CHANNEL_CONFIGURATION), RetryableType::RETRYABLE);
   } else if (hashCode == UPDATE_ACCOUNT_PREFERENCES_HASH) {

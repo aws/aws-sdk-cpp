@@ -43,7 +43,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == ACCELERATOR_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::ACCELERATOR_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == ATTACHMENT_NOT_FOUND_HASH) {
@@ -53,7 +53,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TRANSACTION_IN_PROGRESS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::TRANSACTION_IN_PROGRESS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::TRANSACTION_IN_PROGRESS),
+                                RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == BYOIP_CIDR_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::BYOIP_CIDR_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LISTENER_NOT_FOUND_HASH) {

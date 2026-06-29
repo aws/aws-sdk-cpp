@@ -25,6 +25,10 @@ static const char ALLOCATION_TAG[] = "RetryStrategyTest";
 class MockStandardRetryStrategy : public Aws::Client::StandardRetryStrategy
 {
 public:
+    MockStandardRetryStrategy() = default;
+    explicit MockStandardRetryStrategy(double transientBackoffBaseSec)
+        : StandardRetryStrategy(3, transientBackoffBaseSec) {}
+
     const std::shared_ptr<Aws::Client::RetryQuotaContainer>& GetRetryQuotaContainer() const
     {
        return m_retryQuotaContainer;
@@ -290,4 +294,26 @@ TEST_F(NewRetriesStrategyTest, InvalidRetryAfterFallsBack)
     long delay = retryStrategy.CalculateDelayBeforeNextRetry(error, 0);
     ASSERT_GE(delay, 0);
     ASSERT_LE(delay, 50);
+}
+
+// SEP Test Case 11 - DynamoDB tuning: 25ms non-throttling backoff base
+TEST_F(NewRetriesStrategyTest, DynamoDBBackoffBase)
+{
+    MockStandardRetryStrategy retryStrategy(0.025);
+    AWSError<CoreErrors> transientError(CoreErrors::NETWORK_CONNECTION, true);
+
+    // Backoff with 25ms base: [0, 25ms] at i=0, [0, 50ms] at i=1, etc.
+    for (int i = 0; i < 4; ++i)
+    {
+        long delay = retryStrategy.CalculateDelayBeforeNextRetry(transientError, i);
+        long maxDelay = static_cast<long>(0.025 * (1L << i) * 1000.0);
+        ASSERT_GE(delay, 0) << "Retry " << i;
+        ASSERT_LE(delay, maxDelay) << "Retry " << i;
+    }
+
+    // Throttling base is unchanged at 1s regardless of the transient base.
+    AWSError<CoreErrors> throttlingError(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING);
+    long delay = retryStrategy.CalculateDelayBeforeNextRetry(throttlingError, 0);
+    ASSERT_GE(delay, 0);
+    ASSERT_LE(delay, 1000);
 }

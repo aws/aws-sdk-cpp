@@ -71,7 +71,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == NOT_CONFIGURED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::NOT_CONFIGURED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == MALFORMED_POLICY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::MALFORMED_POLICY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_AGGREGATION_HASH) {

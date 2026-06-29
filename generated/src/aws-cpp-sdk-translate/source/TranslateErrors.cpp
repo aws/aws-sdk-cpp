@@ -69,7 +69,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == DETECTED_LANGUAGE_LOW_CONFIDENCE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::DETECTED_LANGUAGE_LOW_CONFIDENCE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == UNSUPPORTED_DISPLAY_LANGUAGE_CODE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::UNSUPPORTED_DISPLAY_LANGUAGE_CODE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_TAGS_HASH) {
@@ -77,7 +77,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INVALID_FILTER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::INVALID_FILTER), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TEXT_SIZE_LIMIT_EXCEEDED_HASH) {

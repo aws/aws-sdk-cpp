@@ -39,7 +39,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == INVALID_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == DECRYPTION_FAILURE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::DECRYPTION_FAILURE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == PUBLIC_POLICY_HASH) {

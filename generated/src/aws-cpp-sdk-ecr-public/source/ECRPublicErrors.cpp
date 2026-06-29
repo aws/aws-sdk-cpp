@@ -66,7 +66,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == LAYERS_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRPublicErrors::LAYERS_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRPublicErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRPublicErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRPublicErrors::SERVER), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == REPOSITORY_POLICY_NOT_FOUND_HASH) {

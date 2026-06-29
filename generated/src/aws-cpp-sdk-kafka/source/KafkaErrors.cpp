@@ -178,7 +178,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == TOPIC_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::TOPIC_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_ERROR_HASH) {

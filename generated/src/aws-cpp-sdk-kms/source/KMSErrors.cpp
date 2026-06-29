@@ -88,7 +88,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == INVALID_KEY_USAGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_KEY_USAGE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INCORRECT_KEY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INCORRECT_KEY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CUSTOM_KEY_STORE_NOT_FOUND_HASH) {

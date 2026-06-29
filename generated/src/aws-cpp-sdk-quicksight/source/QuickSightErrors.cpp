@@ -201,7 +201,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == INVALID_DATA_SET_PARAMETER_VALUE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::INVALID_DATA_SET_PARAMETER_VALUE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == QUICK_SIGHT_USER_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::QUICK_SIGHT_USER_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == IDENTITY_TYPE_NOT_SUPPORTED_HASH) {

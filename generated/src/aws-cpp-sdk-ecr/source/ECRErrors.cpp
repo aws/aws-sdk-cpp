@@ -87,7 +87,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == IMAGE_TAG_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_TAG_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == SECRET_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::SECRET_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LAYER_INACCESSIBLE_HASH) {

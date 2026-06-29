@@ -26,6 +26,7 @@ class GetActivityTaskRequest : public SFNRequest {
   // so we can not get operation's name from response.
   inline virtual const char* GetServiceRequestName() const override { return "GetActivityTask"; }
 
+  inline virtual bool IsLongPollingOperation() const override { return true; }
   AWS_SFN_API Aws::String SerializePayload() const override;
 
   AWS_SFN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;

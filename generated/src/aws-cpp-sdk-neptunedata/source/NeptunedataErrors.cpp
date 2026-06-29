@@ -337,7 +337,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == MEMORY_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::MEMORY_LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == M_L_RESOURCE_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::M_L_RESOURCE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == BAD_REQUEST_HASH) {

@@ -27,7 +27,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == EXPIRED_ITERATOR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBStreamsErrors::EXPIRED_ITERATOR), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBStreamsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBStreamsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

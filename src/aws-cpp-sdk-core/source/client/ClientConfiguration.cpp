@@ -543,7 +543,7 @@ ClientConfiguration::ClientConfiguration(bool /*useSmartDefaults*/, const char* 
     Aws::Config::Defaults::SetSmartDefaultsConfigurationParameters(*this, defaultMode, hasEc2MetadataRegion, ec2MetadataRegion);
 }
 
-std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String retryMode) {
+static Aws::String ResolveRetryMode(Aws::String retryMode) {
     if (retryMode.empty())
     {
         retryMode = Aws::Environment::GetEnv("AWS_RETRY_MODE");
@@ -556,6 +556,11 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String re
     {
         retryMode = "standard";
     }
+    return retryMode;
+}
+
+std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String retryMode) {
+    retryMode = ResolveRetryMode(retryMode);
 
     std::shared_ptr<RetryStrategy> retryStrategy;
     if (retryMode == "standard")
@@ -584,10 +589,42 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String re
     }
     else
     {
-        retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(CLIENT_CONFIG_TAG);
+        if (Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) != "true")
+        {
+            if (maxAttempts < 0)
+            {
+                retryStrategy = Aws::MakeShared<StandardRetryStrategy>(CLIENT_CONFIG_TAG);
+            }
+            else
+            {
+                retryStrategy = Aws::MakeShared<StandardRetryStrategy>(CLIENT_CONFIG_TAG, maxAttempts);
+            }
+        }
+        else
+        {
+            retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(CLIENT_CONFIG_TAG);
+        }
     }
 
     return retryStrategy;
+}
+
+std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String retryMode, double transientBackoffBaseSec) {
+    if (Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) != "true")
+    {
+        // Gate is off: ignore service-specific tuning, use default behavior
+        return InitRetryStrategy(retryMode);
+    }
+
+    // Only standard mode honors a service-specific backoff base; other modes are unaffected,
+    // so they go through the default-base path.
+    if (ResolveRetryMode(retryMode) != "standard")
+    {
+        return InitRetryStrategy(maxAttempts, retryMode);
+    }
+
+    long attempts = static_cast<long>(maxAttempts);
+    return Aws::MakeShared<StandardRetryStrategy>(CLIENT_CONFIG_TAG, attempts, transientBackoffBaseSec);
 }
 
 std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode)

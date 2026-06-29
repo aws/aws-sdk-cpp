@@ -19,6 +19,7 @@
 #include <aws/core/utils/FutureOutcome.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/platform/Environment.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpClient.h>
@@ -109,7 +110,8 @@ namespace client
               Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", 
                   m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : m_clientConfig->httpClientChunkedMode,
                   m_clientConfig->awsChunkedBufferSize)
-          })
+          }),
+          m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"}
         {
             
             baseInit();
@@ -247,7 +249,7 @@ namespace client
             ResponseHandlerFunc&& responseHandler,
             EndpointUpdateCallback&& endpointCallback
         ) const;
-
+        bool m_enableNewRetries;
     };
 } // namespace client
 } // namespace smithy

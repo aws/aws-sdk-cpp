@@ -73,7 +73,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == INVALID_BLOCKER_DECLARATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_BLOCKER_DECLARATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INVALID_ACTION_DECLARATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_ACTION_DECLARATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == REQUEST_FAILED_HASH) {

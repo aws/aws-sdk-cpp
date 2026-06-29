@@ -653,6 +653,7 @@ namespace Aws
          */
         AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode = "");
         AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxRetries, Aws::String retryMode = "");
+        AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxRetries, Aws::String retryMode, double transientBackoffBaseSec);
 
         /**
          * A helper function to compute a user agent

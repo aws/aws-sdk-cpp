@@ -54,7 +54,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DLMErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DLMErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DLMErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DLMErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }

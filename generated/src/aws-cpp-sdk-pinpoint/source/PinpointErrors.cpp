@@ -93,7 +93,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == PAYLOAD_TOO_LARGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointErrors::PAYLOAD_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_ERROR_HASH) {

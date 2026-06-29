@@ -52,7 +52,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == DIRECTORY_UNAVAILABLE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::DIRECTORY_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == MAIL_DOMAIN_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::MAIL_DOMAIN_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_CUSTOM_SES_CONFIGURATION_HASH) {

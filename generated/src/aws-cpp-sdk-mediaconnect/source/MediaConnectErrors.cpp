@@ -51,7 +51,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::ROUTER_OUTPUT_SERVICE_QUOTA_EXCEEDED),
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == ROUTER_INPUT_SERVICE_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::ROUTER_INPUT_SERVICE_QUOTA_EXCEEDED),
                                 RetryableType::NOT_RETRYABLE);

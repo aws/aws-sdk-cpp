@@ -45,7 +45,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationAutoScalingErrors::FAILED_RESOURCE_ACCESS),
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationAutoScalingErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationAutoScalingErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == CONCURRENT_UPDATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationAutoScalingErrors::CONCURRENT_UPDATE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_TAGS_HASH) {
