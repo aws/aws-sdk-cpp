@@ -1,18 +1,20 @@
 #pragma once
 
+#include <aws/core/client/AWSError.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/ShapeSerializer.h>
-
-#include <memory>
 
 namespace smithy {
 namespace schema {
 
-class JsonShapeSerializer final : public ShapeSerializer {
+class SMITHY_API JsonShapeSerializer final : public ShapeSerializer {
  public:
+  using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
   JsonShapeSerializer();
   ~JsonShapeSerializer();
 
-  void BeginStructure(const Schema& schema) override;
+  bool BeginStructure(const Schema& schema) override;
   void EndStructure() override;
 
   void WriteBoolean(const Schema& schema, bool value) override;
@@ -25,21 +27,21 @@ class JsonShapeSerializer final : public ShapeSerializer {
   void WriteEnum(const Schema& schema, int value) override;
   void WriteNull(const Schema& schema) override;
 
-  void BeginList(const Schema& schema, size_t count) override;
+  bool BeginList(const Schema& schema, size_t count) override;
   void EndList() override;
 
-  void BeginMap(const Schema& schema, size_t count) override;
+  bool BeginMap(const Schema& schema, size_t count) override;
   void WriteMapKey(const Aws::String& key) override;
   void EndMap() override;
 
-  void BeginNestedStructure(const Schema& schema) override;
+  bool BeginNestedStructure(const Schema& schema) override;
   void EndNestedStructure() override;
 
-  Aws::String GetPayload() const;
+  SerializerOutcome GetPayload();
 
  private:
-  struct Impl;
-  std::unique_ptr<Impl> m_impl;
+  class Impl;
+  Aws::UniquePtr<Impl> m_impl;
 };
 
 }  // namespace schema

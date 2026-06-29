@@ -1,19 +1,18 @@
 #pragma once
 
-#include <aws/core/Core_EXPORTS.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/ShapeSerializer.h>
-
-#include <memory>
 
 namespace smithy {
 namespace schema {
 
-class AWS_CORE_API CborShapeSerialize final : public ShapeSerializer {
+class SMITHY_API CborShapeSerialize final : public ShapeSerializer {
  public:
   CborShapeSerializer();
   ~CborShapeSerializer();
 
-  void BeginStructure(const Schema& schema) override;
+  bool BeginStructure(const Schema& schema) override;
   void EndStructure() override;
 
   void WriteBoolean(const Schema& schema, bool value) override;
@@ -26,21 +25,21 @@ class AWS_CORE_API CborShapeSerialize final : public ShapeSerializer {
   void WriteEnum(const Schema& schema, int value) override;
   void WriteNull(const Schema& schema) override;
 
-  void BeginList(const Schema& schema, size_t count) override;
+  bool BeginList(const Schema& schema, size_t count) override;
   void EndList() override;
 
-  void BeginMap(const Schema& schema, size_t count) override;
+  bool BeginMap(const Schema& schema, size_t count) override;
   void WriteMapKey(const Aws::String& key) override;
   void EndMap() override;
 
-  void BeginNestedStructure(const Schema& schema) override;
+  bool BeginNestedStructure(const Schema& schema) override;
   void EndNestedStructure() override;
 
   Aws::String GetPayload() const;
 
  private:
-  struct Impl;
-  std::unique_ptr<Impl> m_impl;
+  class Impl;
+  Aws::UniquePtr<Impl> m_impl;
 };
 
 }  // namespace schema

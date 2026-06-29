@@ -97,6 +97,7 @@ file(GLOB SMITHY_IDENTITY_SIGNER_HEADERS "include/smithy/identity/signer/*.h")
 file(GLOB SMITHY_IDENTITY_SIGNER_BUILTIN_HEADERS "include/smithy/identity/signer/built-in/*.h")
 file(GLOB SMITHY_INTERCEPTOR_HEADERS "include/smithy/interceptor/*.h")
 file(GLOB SMITHY_INTERCEPTOR_IMPL_HEADERS "include/smithy/interceptor/impl/*.h")
+file(GLOB SMITHY_CLIENT_SCHEMA_HEADERS "include/smithy/client/schema/*.h")
 
 file(GLOB AWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp")
 file(GLOB AWS_TINYXML2_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/tinyxml2/*.cpp")
@@ -136,6 +137,7 @@ file(GLOB SMITHY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/*.cpp")
 file(GLOB SMITHY_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/client/*.cpp")
 file(GLOB SMITHY_IDENTITY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/identity/*.cpp")
 file(GLOB SMITHY_TRACING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/tracing/*.cpp")
+file(GLOB SMITHY_CLIENT_SCHEMA_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/client/schema/*.cpp")
 
 include(CheckCSourceCompiles)
 include(CheckCXXSourceCompiles)
@@ -316,6 +318,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${OPTEL_HEADERS}
   ${SMITHY_INTERCEPTOR_HEADERS}
   ${SMITHY_INTERCEPTOR_IMPL_HEADERS}
+  ${SMITHY_CLIENT_SCHEMA_HEADERS}
 )
 
 # misc platform-specific, not related to features (encryption/http clients)
@@ -378,6 +381,7 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${UTILS_CHECKSUM_SOURCE}
     ${UTILS_CRYPTO_SOURCE}
     ${OPTEL_SOURCE}
+    ${SMITHY_CLIENT_SCHEMA_SOURCE}
 )
 
 file(GLOB AWS_NATIVE_SDK_UNITY_SRC
@@ -462,6 +466,7 @@ if(MSVC)
     source_group("Header Files\\smithy\\identity\\signer\\built-in" FILES ${SMITHY_IDENTITY_SIGNER_BUILTIN_HEADERS})
     source_group("Header Files\\smithy\\interceptor" FILES ${SMITHY_INTERCEPTOR_HEADERS})
     source_group("Header Files\\smithy\\interceptor" FILES ${SMITHY_INTERCEPTOR_IMPL_HEADERS})
+    source_group("Header Files\\smithy\\client\\schema" FILES ${SMITHY_CLIENT_SCHEMA_HEADERS})
 
     # http client conditional headers
     if(ENABLE_CURL_CLIENT)
