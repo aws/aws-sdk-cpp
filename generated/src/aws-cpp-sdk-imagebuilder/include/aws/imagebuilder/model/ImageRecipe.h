@@ -340,6 +340,32 @@ class ImageRecipe {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The AMI watermark names attached to the output AMI from this recipe. AMI
+   * watermarks are lineage markers that automatically propagate to derivative AMIs
+   * when the source AMI is copied or distributed.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAmiWatermarks() const { return m_amiWatermarks; }
+  inline bool AmiWatermarksHasBeenSet() const { return m_amiWatermarksHasBeenSet; }
+  template <typename AmiWatermarksT = Aws::Vector<Aws::String>>
+  void SetAmiWatermarks(AmiWatermarksT&& value) {
+    m_amiWatermarksHasBeenSet = true;
+    m_amiWatermarks = std::forward<AmiWatermarksT>(value);
+  }
+  template <typename AmiWatermarksT = Aws::Vector<Aws::String>>
+  ImageRecipe& WithAmiWatermarks(AmiWatermarksT&& value) {
+    SetAmiWatermarks(std::forward<AmiWatermarksT>(value));
+    return *this;
+  }
+  template <typename AmiWatermarksT = Aws::String>
+  ImageRecipe& AddAmiWatermarks(AmiWatermarksT&& value) {
+    m_amiWatermarksHasBeenSet = true;
+    m_amiWatermarks.emplace_back(std::forward<AmiWatermarksT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -370,6 +396,8 @@ class ImageRecipe {
   AdditionalInstanceConfiguration m_additionalInstanceConfiguration;
 
   Aws::Map<Aws::String, Aws::String> m_amiTags;
+
+  Aws::Vector<Aws::String> m_amiWatermarks;
   bool m_arnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -385,6 +413,7 @@ class ImageRecipe {
   bool m_workingDirectoryHasBeenSet = false;
   bool m_additionalInstanceConfigurationHasBeenSet = false;
   bool m_amiTagsHasBeenSet = false;
+  bool m_amiWatermarksHasBeenSet = false;
 };
 
 }  // namespace Model

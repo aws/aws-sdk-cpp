@@ -67,6 +67,8 @@ class AssociateWebACLRequest : public WAFV2Request {
    * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i>
    * </code> </p> </li> <li> <p>For an Amplify application:
    * <code>arn:<i>partition</i>:amplify:<i>region</i>:<i>account-id</i>:apps/<i>app-id</i>
+   * </code> </p> </li> <li> <p>For an Amazon Bedrock AgentCore Gateway:
+   * <code>arn:<i>partition</i>:bedrock-agentcore:<i>region</i>:<i>account-id</i>:gateway/<i>gateway-id</i>
    * </code> </p> </li> </ul>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }

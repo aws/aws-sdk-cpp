@@ -140,7 +140,8 @@ class GetResourceGatewayResult {
 
   ///@{
   /**
-   * <p>Indicates whether the resource gateway is managed by an AWS service.</p>
+   * <p>Indicates whether the resource gateway is managed by an Amazon Web Services
+   * service.</p>
    */
   inline bool GetServiceManaged() const { return m_serviceManaged; }
   inline void SetServiceManaged(bool value) {
@@ -155,7 +156,7 @@ class GetResourceGatewayResult {
 
   ///@{
   /**
-   * <p>The AWS service that manages the resource gateway.</p>
+   * <p>The Amazon Web Services service that manages the resource gateway.</p>
    */
   inline const Aws::String& GetManagedBy() const { return m_managedBy; }
   template <typename ManagedByT = Aws::String>

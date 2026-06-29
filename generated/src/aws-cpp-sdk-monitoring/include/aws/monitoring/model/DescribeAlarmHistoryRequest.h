@@ -75,8 +75,8 @@ class DescribeAlarmHistoryRequest : public CloudWatchRequest {
   ///@{
   /**
    * <p>Use this parameter to specify whether you want the operation to return metric
-   * alarms or composite alarms. If you omit this parameter, only metric alarms are
-   * returned.</p>
+   * alarms, composite alarms, or log alarms. If you omit this parameter, only metric
+   * alarms are returned.</p>
    */
   inline const Aws::Vector<AlarmType>& GetAlarmTypes() const { return m_alarmTypes; }
   inline bool AlarmTypesHasBeenSet() const { return m_alarmTypesHasBeenSet; }

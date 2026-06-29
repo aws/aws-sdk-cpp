@@ -52,7 +52,10 @@ class Scheduler {
   ///@{
   /**
    * <p>The version of the specified scheduling software that PCS uses to manage
-   * cluster scaling and job scheduling. For more information, see <a
+   * cluster scaling and job scheduling. You can upgrade this version using the
+   * <code>UpdateCluster</code> API action. For more information, see <a
+   * href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading
+   * the Slurm version on a cluster</a> and <a
    * href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions.html">Slurm
    * versions in PCS</a> in the <i>PCS User Guide</i>.</p> <p>Valid Values:
    * <code>23.11 | 24.05 | 24.11 | 25.05 | 25.11</code> </p>

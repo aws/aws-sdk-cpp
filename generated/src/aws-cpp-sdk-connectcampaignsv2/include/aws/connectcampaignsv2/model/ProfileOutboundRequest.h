@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
+#include <aws/connectcampaignsv2/model/EventTriggerContext.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -79,15 +80,34 @@ class ProfileOutboundRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const EventTriggerContext& GetEventTriggerContext() const { return m_eventTriggerContext; }
+  inline bool EventTriggerContextHasBeenSet() const { return m_eventTriggerContextHasBeenSet; }
+  template <typename EventTriggerContextT = EventTriggerContext>
+  void SetEventTriggerContext(EventTriggerContextT&& value) {
+    m_eventTriggerContextHasBeenSet = true;
+    m_eventTriggerContext = std::forward<EventTriggerContextT>(value);
+  }
+  template <typename EventTriggerContextT = EventTriggerContext>
+  ProfileOutboundRequest& WithEventTriggerContext(EventTriggerContextT&& value) {
+    SetEventTriggerContext(std::forward<EventTriggerContextT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken;
 
   Aws::String m_profileId;
 
   Aws::Utils::DateTime m_expirationTime{};
+
+  EventTriggerContext m_eventTriggerContext;
   bool m_clientTokenHasBeenSet = false;
   bool m_profileIdHasBeenSet = false;
   bool m_expirationTimeHasBeenSet = false;
+  bool m_eventTriggerContextHasBeenSet = false;
 };
 
 }  // namespace Model

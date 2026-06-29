@@ -218,6 +218,24 @@ class PlacementGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the parent placement group.</p>
+   */
+  inline const Aws::String& GetParentGroupId() const { return m_parentGroupId; }
+  inline bool ParentGroupIdHasBeenSet() const { return m_parentGroupIdHasBeenSet; }
+  template <typename ParentGroupIdT = Aws::String>
+  void SetParentGroupId(ParentGroupIdT&& value) {
+    m_parentGroupIdHasBeenSet = true;
+    m_parentGroupId = std::forward<ParentGroupIdT>(value);
+  }
+  template <typename ParentGroupIdT = Aws::String>
+  PlacementGroup& WithParentGroupId(ParentGroupIdT&& value) {
+    SetParentGroupId(std::forward<ParentGroupIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_groupName;
 
@@ -238,6 +256,8 @@ class PlacementGroup {
   Aws::String m_linkedGroupId;
 
   OperatorResponse m_operator;
+
+  Aws::String m_parentGroupId;
   bool m_groupNameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_strategyHasBeenSet = false;
@@ -248,6 +268,7 @@ class PlacementGroup {
   bool m_spreadLevelHasBeenSet = false;
   bool m_linkedGroupIdHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
+  bool m_parentGroupIdHasBeenSet = false;
 };
 
 }  // namespace Model

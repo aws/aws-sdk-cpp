@@ -207,8 +207,8 @@ class UpdateExpressGatewayServiceRequest : public ECSRequest {
    * <code>Main</code> with a single TCP port mapping that includes a container port
    * and port name. The task definition must also have <code>FARGATE</code>
    * compatibility.</p> <p>If you provide a task definition ARN, you cannot also
-   * specify <code>primaryContainer</code>, <code>taskRoleArn</code>,
-   * <code>cpu</code>, or <code>memory</code>.</p>
+   * specify <code>primaryContainer</code>, <code>executionRoleArn</code>,
+   * <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
    */
   inline const Aws::String& GetTaskDefinitionArn() const { return m_taskDefinitionArn; }
   inline bool TaskDefinitionArnHasBeenSet() const { return m_taskDefinitionArnHasBeenSet; }

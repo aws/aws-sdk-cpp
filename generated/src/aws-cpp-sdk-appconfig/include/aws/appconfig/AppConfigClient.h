@@ -16,98 +16,76 @@
 namespace Aws {
 namespace AppConfig {
 /**
- * <p>AppConfig feature flags and dynamic configurations help software builders
- * quickly and securely adjust application behavior in production environments
- * without full code deployments. AppConfig speeds up software release frequency,
- * improves application resiliency, and helps you address emergent issues more
- * quickly. With feature flags, you can gradually release new capabilities to users
- * and measure the impact of those changes before fully deploying the new
- * capabilities to all users. With operational flags and dynamic configurations,
- * you can update block lists, allow lists, throttling limits, logging verbosity,
- * and perform other operational tuning to quickly respond to issues in production
- * environments.</p>  <p>AppConfig is a tool in Amazon Web Services Systems
- * Manager.</p>  <p>Despite the fact that application configuration content
- * can vary greatly from application to application, AppConfig supports the
- * following use cases, which cover a broad spectrum of customer needs:</p> <ul>
- * <li> <p> <b>Feature flags and toggles</b> - Safely release new capabilities to
- * your customers in a controlled environment. Instantly roll back changes if you
- * experience a problem.</p> </li> <li> <p> <b>Application tuning</b> - Carefully
- * introduce application changes while testing the impact of those changes with
- * users in production environments.</p> </li> <li> <p> <b>Allow list or block
- * list</b> - Control access to premium features or instantly block specific users
- * without deploying new code. </p> </li> <li> <p> <b>Centralized configuration
- * storage</b> - Keep your configuration data organized and consistent across all
- * of your workloads. You can use AppConfig to deploy configuration data stored in
- * the AppConfig hosted configuration store, Secrets Manager, Systems Manager,
- * Parameter Store, or Amazon S3.</p> </li> </ul> <p> <b>How AppConfig works</b>
- * </p> <p>This section provides a high-level description of how AppConfig works
- * and how you get started.</p> <dl> <dt>1. Identify configuration values in code
- * you want to manage in the cloud</dt> <dd> <p>Before you start creating AppConfig
- * artifacts, we recommend you identify configuration data in your code that you
- * want to dynamically manage using AppConfig. Good examples include feature flags
- * or toggles, allow and block lists, logging verbosity, service limits, and
- * throttling rules, to name a few.</p> <p>If your configuration data already
- * exists in the cloud, you can take advantage of AppConfig validation, deployment,
- * and extension features to further streamline configuration data management.</p>
- * </dd> <dt>2. Create an application namespace</dt> <dd> <p>To create a namespace,
- * you create an AppConfig artifact called an application. An application is simply
- * an organizational construct like a folder.</p> </dd> <dt>3. Create
- * environments</dt> <dd> <p>For each AppConfig application, you define one or more
- * environments. An environment is a logical grouping of targets, such as
- * applications in a <code>Beta</code> or <code>Production</code> environment,
- * Lambda functions, or containers. You can also define environments for
- * application subcomponents, such as the <code>Web</code>, <code>Mobile</code>,
- * and <code>Back-end</code>.</p> <p>You can configure Amazon CloudWatch alarms for
- * each environment. The system monitors alarms during a configuration deployment.
- * If an alarm is triggered, the system rolls back the configuration.</p> </dd>
- * <dt>4. Create a configuration profile</dt> <dd> <p>A configuration profile
- * includes, among other things, a URI that enables AppConfig to locate your
- * configuration data in its stored location and a profile type. AppConfig supports
- * two configuration profile types: feature flags and freeform configurations.
- * Feature flag configuration profiles store their data in the AppConfig hosted
- * configuration store and the URI is simply <code>hosted</code>. For freeform
- * configuration profiles, you can store your data in the AppConfig hosted
- * configuration store or any Amazon Web Services service that integrates with
- * AppConfig, as described in <a
- * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-free-form-configurations-creating.html">Creating
- * a free form configuration profile</a> in the the <i>AppConfig User
- * Guide</i>.</p> <p>A configuration profile can also include optional validators
- * to ensure your configuration data is syntactically and semantically correct.
- * AppConfig performs a check using the validators when you start a deployment. If
- * any errors are detected, the deployment rolls back to the previous configuration
- * data.</p> </dd> <dt>5. Deploy configuration data</dt> <dd> <p>When you create a
- * new deployment, you specify the following:</p> <ul> <li> <p>An application
- * ID</p> </li> <li> <p>A configuration profile ID</p> </li> <li> <p>A
- * configuration version</p> </li> <li> <p>An environment ID where you want to
- * deploy the configuration data</p> </li> <li> <p>A deployment strategy ID that
- * defines how fast you want the changes to take effect</p> </li> </ul> <p>When you
- * call the <a
- * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StartDeployment.html">StartDeployment</a>
- * API action, AppConfig performs the following tasks:</p> <ol> <li> <p>Retrieves
- * the configuration data from the underlying data store by using the location URI
- * in the configuration profile.</p> </li> <li> <p>Verifies the configuration data
- * is syntactically and semantically correct by using the validators you specified
- * when you created your configuration profile.</p> </li> <li> <p>Caches a copy of
- * the data so it is ready to be retrieved by your application. This cached copy is
- * called the <i>deployed data</i>.</p> </li> </ol> </dd> <dt>6. Retrieve the
- * configuration</dt> <dd> <p>You can configure AppConfig Agent as a local host and
- * have the agent poll AppConfig for configuration updates. The agent calls the <a
+ * <p>AppConfig helps you safely change application behavior in production without
+ * redeploying code. Using feature flags and dynamic free-form configurations, you
+ * can control how your application runs in real time. This approach reduces risk,
+ * accelerates releases, and enables faster responses to issues. You can gradually
+ * roll out new features to specific users, monitor their impact, and expand
+ * availability with confidence. You can also update block lists, allow lists,
+ * throttling limits, and logging levels instantly, allowing you to mitigate issues
+ * and fine-tune performance without a deployment.</p> <p>AppConfig supports a
+ * broad spectrum of use cases:</p> <ul> <li> <p> <b>Feature flags and toggles</b>
+ * – Gradually release new capabilities to targeted users, monitor impact, and
+ * instantly roll back changes if issues occur.</p> </li> <li> <p> <b>Application
+ * tuning</b> – Introduce changes safely in production, measure their effects, and
+ * refine behavior without redeploying code.</p> </li> <li> <p> <b>Allow list or
+ * block list</b> – Control access to features or restrict specific users in real
+ * time, without modifying application code. </p> </li> <li> <p> <b>Centralized
+ * configuration storage</b> – Manage configuration data consistently across
+ * workloads. AppConfig can deploy configuration from the AppConfig hosted
+ * configuration store, Secrets Manager, Systems Manager, Systems Manager Parameter
+ * Store, or Amazon S3.</p> </li> </ul> <p> <b>How AppConfig works</b> </p> <p>This
+ * section provides a high-level description of how AppConfig works and how you get
+ * started.</p> <dl> <dt>1. Identify configuration data to manage in AppConfig</dt>
+ * <dd> <p>Before creating a configuration profile, identify the configuration data
+ * in your code that you want to manage dynamically using AppConfig. Common
+ * examples include feature flags, allow and block lists, logging levels, service
+ * limits, and throttling rules. These values tend to change frequently and can
+ * cause issues if misconfigured.</p> <p>If your configuration data already exists
+ * in cloud services such as Systems Manager Parameter Store or Amazon S3, you can
+ * use AppConfig to validate, deploy, and manage that data more effectively.</p>
+ * </dd> <dt>2. Create a configuration profile in AppConfig</dt> <dd> <p>A
+ * configuration profile defines how AppConfig locates and manages your
+ * configuration data. It includes a URI that points to the data source and a
+ * profile type.</p> <p>AppConfig supports two profile types</p> <ul> <li> <p>
+ * <b>Feature flags</b> – Enable controlled feature releases, gradual rollouts, and
+ * testing in production.</p> </li> <li> <p> <b>Free-form configurations</b> –
+ * Store and retrieve configuration data from external sources and update it
+ * without redeploying code.</p> </li> </ul> <p>Both profile types help decouple
+ * configuration from code, support continuous delivery, and reduce deployment
+ * risk.</p> <p>You can also add optional validators to ensure that configuration
+ * data is syntactically and semantically correct. During deployment, AppConfig
+ * evaluates these validators and automatically rolls back changes if validation
+ * fails.</p> <p>Each configuration profile is associated with an application,
+ * which acts as a logical container for your configuration resources. For more
+ * information about creating a configuration profile, see <a
+ * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-profile.html">Creating
+ * a configuration profile in AppConfig</a> in the the <i>AppConfig User
+ * Guide</i>.</p> </dd> <dt>3. Deploy configuration data</dt> <dd> <p>When you
+ * start a deployment, AppConfig:</p> <ol> <li> <p>Retrieves configuration data
+ * from the source defined in the configuration profile</p> </li> <li> <p>Validates
+ * the data using the configured validators</p> </li> <li> <p>Delivers the
+ * validated configuration to AppConfig Agent</p> </li> </ol> <p>The delivered
+ * configuration becomes the deployed version used by your application. For more
+ * information about deploying a configuration, see <a
+ * href="http://docs.aws.amazon.com/appconfig/latest/userguide/deploying-feature-flags.html">Deploying
+ * feature flags and configuration data in AppConfig</a>.</p> </dd> <dt>4. Retrieve
+ * configuration data</dt> <dd> <p>Your application retrieves configuration data by
+ * calling a local endpoint exposed by AppConfig Agent, which caches the deployed
+ * configuration. Retrieving data is a metered event. AppConfig Agent supports a
+ * variety of use cases, as described in <a
+ * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-agent-how-to-use.html">How
+ * to use AppConfig Agent to retrieve configuration data</a>.</p> <p>If the agent
+ * is not suitable for your use case, your application can retrieve configuration
+ * data directly from AppConfig by calling the <a
  * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html">StartConfigurationSession</a>
  * and <a
  * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
- * API actions and caches your configuration data locally. To retrieve the data,
- * your application makes an HTTP call to the localhost server. AppConfig Agent
- * supports several use cases, as described in <a
- * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-simplified-methods.html">Simplified
- * retrieval methods</a> in the the <i>AppConfig User Guide</i>.</p> <p>If
- * AppConfig Agent isn't supported for your use case, you can configure your
- * application to poll AppConfig for configuration updates by directly calling the
+ * API actions. </p> <p>For more information about retrieving a configuration, see
  * <a
- * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html">StartConfigurationSession</a>
- * and <a
- * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
- * API actions. </p> </dd> </dl> <p>This reference is intended to be used with the
- * <a
+ * href="http://docs.aws.amazon.com/appconfig/latest/userguide/retrieving-feature-flags.html">Retrieving
+ * feature flags and configuration data in AppConfig</a>.</p> </dd> </dl> <p>This
+ * reference is intended to be used with the <a
  * href="http://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">AppConfig
  * User Guide</a>.</p>
  */
@@ -311,6 +289,38 @@ class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates an experiment definition in AppConfig. An experiment definition
+   * describes the purpose, scope, and operational configuration of an experiment,
+   * including the target audience, feature flag, and treatment
+   * configurations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExperimentDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateExperimentDefinitionOutcome CreateExperimentDefinition(
+      const Model::CreateExperimentDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateExperimentDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateExperimentDefinitionRequestT = Model::CreateExperimentDefinitionRequest>
+  Model::CreateExperimentDefinitionOutcomeCallable CreateExperimentDefinitionCallable(
+      const CreateExperimentDefinitionRequestT& request) const {
+    return SubmitCallable(&AppConfigClient::CreateExperimentDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for CreateExperimentDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateExperimentDefinitionRequestT = Model::CreateExperimentDefinitionRequest>
+  void CreateExperimentDefinitionAsync(const CreateExperimentDefinitionRequestT& request,
+                                       const CreateExperimentDefinitionResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AppConfigClient::CreateExperimentDefinition, request, handler, context);
+  }
+
+  /**
    * <p>Creates an AppConfig extension. An extension augments your ability to inject
    * logic or behavior at different points during the AppConfig workflow of creating
    * or deploying a configuration.</p> <p>You can create your own extensions or use
@@ -395,7 +405,7 @@ class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient,
    * <p>Creates a new configuration in the AppConfig hosted configuration store. If
    * you're creating a feature flag, we recommend you familiarize yourself with the
    * JSON schema for feature flag data. For more information, see <a
-   * href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile-feature-flags.html#appconfig-type-reference-feature-flags">Type
+   * href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-type-reference-feature-flags.html">Type
    * reference for AWS.AppConfig.FeatureFlags</a> in the <i>AppConfig User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">AWS
@@ -537,6 +547,37 @@ class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient,
   void DeleteEnvironmentAsync(const DeleteEnvironmentRequestT& request, const DeleteEnvironmentResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AppConfigClient::DeleteEnvironment, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an experiment definition. You can archive the definition to hide it
+   * from the active list while preserving it for future reference, or permanently
+   * delete it along with all associated run history.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExperimentDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteExperimentDefinitionOutcome DeleteExperimentDefinition(
+      const Model::DeleteExperimentDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteExperimentDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteExperimentDefinitionRequestT = Model::DeleteExperimentDefinitionRequest>
+  Model::DeleteExperimentDefinitionOutcomeCallable DeleteExperimentDefinitionCallable(
+      const DeleteExperimentDefinitionRequestT& request) const {
+    return SubmitCallable(&AppConfigClient::DeleteExperimentDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteExperimentDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteExperimentDefinitionRequestT = Model::DeleteExperimentDefinitionRequest>
+  void DeleteExperimentDefinitionAsync(const DeleteExperimentDefinitionRequestT& request,
+                                       const DeleteExperimentDefinitionResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AppConfigClient::DeleteExperimentDefinition, request, handler, context);
   }
 
   /**
@@ -795,6 +836,61 @@ class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves information about an experiment definition.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExperimentDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetExperimentDefinitionOutcome GetExperimentDefinition(const Model::GetExperimentDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetExperimentDefinition that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetExperimentDefinitionRequestT = Model::GetExperimentDefinitionRequest>
+  Model::GetExperimentDefinitionOutcomeCallable GetExperimentDefinitionCallable(const GetExperimentDefinitionRequestT& request) const {
+    return SubmitCallable(&AppConfigClient::GetExperimentDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for GetExperimentDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetExperimentDefinitionRequestT = Model::GetExperimentDefinitionRequest>
+  void GetExperimentDefinitionAsync(const GetExperimentDefinitionRequestT& request,
+                                    const GetExperimentDefinitionResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AppConfigClient::GetExperimentDefinition, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about an experiment run, including its status, start
+   * time, and exposure settings.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExperimentRun">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetExperimentRunOutcome GetExperimentRun(const Model::GetExperimentRunRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetExperimentRun that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetExperimentRunRequestT = Model::GetExperimentRunRequest>
+  Model::GetExperimentRunOutcomeCallable GetExperimentRunCallable(const GetExperimentRunRequestT& request) const {
+    return SubmitCallable(&AppConfigClient::GetExperimentRun, request);
+  }
+
+  /**
+   * An Async wrapper for GetExperimentRun that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetExperimentRunRequestT = Model::GetExperimentRunRequest>
+  void GetExperimentRunAsync(const GetExperimentRunRequestT& request, const GetExperimentRunResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AppConfigClient::GetExperimentRun, request, handler, context);
+  }
+
+  /**
    * <p>Returns information about an AppConfig extension.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtension">AWS
@@ -1018,6 +1114,93 @@ class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the experiment definitions for an account. You can filter results by
+   * application, configuration profile, environment, or status.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExperimentDefinitions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListExperimentDefinitionsOutcome ListExperimentDefinitions(
+      const Model::ListExperimentDefinitionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListExperimentDefinitions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListExperimentDefinitionsRequestT = Model::ListExperimentDefinitionsRequest>
+  Model::ListExperimentDefinitionsOutcomeCallable ListExperimentDefinitionsCallable(
+      const ListExperimentDefinitionsRequestT& request = {}) const {
+    return SubmitCallable(&AppConfigClient::ListExperimentDefinitions, request);
+  }
+
+  /**
+   * An Async wrapper for ListExperimentDefinitions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListExperimentDefinitionsRequestT = Model::ListExperimentDefinitionsRequest>
+  void ListExperimentDefinitionsAsync(const ListExperimentDefinitionsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                      const ListExperimentDefinitionsRequestT& request = {}) const {
+    return SubmitAsync(&AppConfigClient::ListExperimentDefinitions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the events for a specified experiment run. Events provide a timeline of
+   * actions and state changes that occurred during the run.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExperimentRunEvents">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListExperimentRunEventsOutcome ListExperimentRunEvents(const Model::ListExperimentRunEventsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListExperimentRunEvents that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListExperimentRunEventsRequestT = Model::ListExperimentRunEventsRequest>
+  Model::ListExperimentRunEventsOutcomeCallable ListExperimentRunEventsCallable(const ListExperimentRunEventsRequestT& request) const {
+    return SubmitCallable(&AppConfigClient::ListExperimentRunEvents, request);
+  }
+
+  /**
+   * An Async wrapper for ListExperimentRunEvents that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListExperimentRunEventsRequestT = Model::ListExperimentRunEventsRequest>
+  void ListExperimentRunEventsAsync(const ListExperimentRunEventsRequestT& request,
+                                    const ListExperimentRunEventsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AppConfigClient::ListExperimentRunEvents, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the experiment runs for a specified experiment definition. You can
+   * filter by status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExperimentRuns">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListExperimentRunsOutcome ListExperimentRuns(const Model::ListExperimentRunsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListExperimentRuns that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListExperimentRunsRequestT = Model::ListExperimentRunsRequest>
+  Model::ListExperimentRunsOutcomeCallable ListExperimentRunsCallable(const ListExperimentRunsRequestT& request) const {
+    return SubmitCallable(&AppConfigClient::ListExperimentRuns, request);
+  }
+
+  /**
+   * An Async wrapper for ListExperimentRuns that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListExperimentRunsRequestT = Model::ListExperimentRunsRequest>
+  void ListExperimentRunsAsync(const ListExperimentRunsRequestT& request, const ListExperimentRunsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AppConfigClient::ListExperimentRuns, request, handler, context);
+  }
+
+  /**
    * <p>Lists all AppConfig extension associations in the account. For more
    * information about extensions and associations, see <a
    * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
@@ -1136,7 +1319,15 @@ class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Starts a deployment.</p><p><h3>See Also:</h3>   <a
+   * <p>Starts a deployment.</p>  <p>AppConfig Agent supports deploying feature
+   * flag or free-form configuration data to specific segments or individual users
+   * during a gradual rollout. Entity-based gradual deployments ensure that once a
+   * user or segment receives a configuration version, they continue to receive that
+   * same version throughout the deployment period, regardless of which compute
+   * resource serves their requests. For more information, see <a
+   * href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-agent-how-to-use.html#appconfig-entity-based-gradual-deployments">Using
+   * AppConfig Agent for user-based or entity-based gradual deployments</a> </p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StartDeployment">AWS
    * API Reference</a></p>
    */
@@ -1158,6 +1349,35 @@ class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient,
   void StartDeploymentAsync(const StartDeploymentRequestT& request, const StartDeploymentResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AppConfigClient::StartDeployment, request, handler, context);
+  }
+
+  /**
+   * <p>Starts an experiment run for the specified experiment definition. An
+   * experiment run delivers treatments to the target audience and collects metrics.
+   * You can start multiple experiment runs from the same experiment
+   * definition.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StartExperimentRun">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartExperimentRunOutcome StartExperimentRun(const Model::StartExperimentRunRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartExperimentRun that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartExperimentRunRequestT = Model::StartExperimentRunRequest>
+  Model::StartExperimentRunOutcomeCallable StartExperimentRunCallable(const StartExperimentRunRequestT& request) const {
+    return SubmitCallable(&AppConfigClient::StartExperimentRun, request);
+  }
+
+  /**
+   * An Async wrapper for StartExperimentRun that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartExperimentRunRequestT = Model::StartExperimentRunRequest>
+  void StartExperimentRunAsync(const StartExperimentRunRequestT& request, const StartExperimentRunResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AppConfigClient::StartExperimentRun, request, handler, context);
   }
 
   /**
@@ -1188,6 +1408,34 @@ class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient,
   void StopDeploymentAsync(const StopDeploymentRequestT& request, const StopDeploymentResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AppConfigClient::StopDeployment, request, handler, context);
+  }
+
+  /**
+   * <p>Stops a running experiment. Stopping an experiment run ends audience exposure
+   * and returns users to the currently deployed feature flag
+   * configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StopExperimentRun">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopExperimentRunOutcome StopExperimentRun(const Model::StopExperimentRunRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopExperimentRun that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopExperimentRunRequestT = Model::StopExperimentRunRequest>
+  Model::StopExperimentRunOutcomeCallable StopExperimentRunCallable(const StopExperimentRunRequestT& request) const {
+    return SubmitCallable(&AppConfigClient::StopExperimentRun, request);
+  }
+
+  /**
+   * An Async wrapper for StopExperimentRun that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StopExperimentRunRequestT = Model::StopExperimentRunRequest>
+  void StopExperimentRunAsync(const StopExperimentRunRequestT& request, const StopExperimentRunResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AppConfigClient::StopExperimentRun, request, handler, context);
   }
 
   /**
@@ -1378,6 +1626,66 @@ class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient,
   void UpdateEnvironmentAsync(const UpdateEnvironmentRequestT& request, const UpdateEnvironmentResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AppConfigClient::UpdateEnvironment, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an experiment definition. You can update treatments, the control,
+   * audience rules, and other properties. You cannot update an experiment definition
+   * while an experiment run is active.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExperimentDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateExperimentDefinitionOutcome UpdateExperimentDefinition(
+      const Model::UpdateExperimentDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateExperimentDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateExperimentDefinitionRequestT = Model::UpdateExperimentDefinitionRequest>
+  Model::UpdateExperimentDefinitionOutcomeCallable UpdateExperimentDefinitionCallable(
+      const UpdateExperimentDefinitionRequestT& request) const {
+    return SubmitCallable(&AppConfigClient::UpdateExperimentDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateExperimentDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateExperimentDefinitionRequestT = Model::UpdateExperimentDefinitionRequest>
+  void UpdateExperimentDefinitionAsync(const UpdateExperimentDefinitionRequestT& request,
+                                       const UpdateExperimentDefinitionResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AppConfigClient::UpdateExperimentDefinition, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a running experiment. Use this operation to increase audience
+   * exposure, modify treatment assignment overrides, or update the description of an
+   * active experiment run. Audience exposure can only be increased, not
+   * decreased.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExperimentRun">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateExperimentRunOutcome UpdateExperimentRun(const Model::UpdateExperimentRunRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateExperimentRun that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateExperimentRunRequestT = Model::UpdateExperimentRunRequest>
+  Model::UpdateExperimentRunOutcomeCallable UpdateExperimentRunCallable(const UpdateExperimentRunRequestT& request) const {
+    return SubmitCallable(&AppConfigClient::UpdateExperimentRun, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateExperimentRun that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateExperimentRunRequestT = Model::UpdateExperimentRunRequest>
+  void UpdateExperimentRunAsync(const UpdateExperimentRunRequestT& request, const UpdateExperimentRunResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AppConfigClient::UpdateExperimentRun, request, handler, context);
   }
 
   /**

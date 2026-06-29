@@ -23,6 +23,7 @@
 #include <aws/connectcampaignsv2/model/CampaignFilters.h>
 #include <aws/connectcampaignsv2/model/CampaignState.h>
 #include <aws/connectcampaignsv2/model/CampaignSummary.h>
+#include <aws/connectcampaignsv2/model/ChannelContext.h>
 #include <aws/connectcampaignsv2/model/ChannelSubtype.h>
 #include <aws/connectcampaignsv2/model/ChannelSubtypeConfig.h>
 #include <aws/connectcampaignsv2/model/ChannelSubtypeParameters.h>
@@ -58,6 +59,7 @@
 #include <aws/connectcampaignsv2/model/EncryptionType.h>
 #include <aws/connectcampaignsv2/model/EntryLimitsConfig.h>
 #include <aws/connectcampaignsv2/model/EventTrigger.h>
+#include <aws/connectcampaignsv2/model/EventTriggerContext.h>
 #include <aws/connectcampaignsv2/model/EventType.h>
 #include <aws/connectcampaignsv2/model/ExternalCampaignType.h>
 #include <aws/connectcampaignsv2/model/FailedCampaignStateResponse.h>
@@ -155,6 +157,7 @@
 #include <aws/connectcampaignsv2/model/UpdateCampaignScheduleRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignSourceRequest.h>
 #include <aws/connectcampaignsv2/model/ValidationException.h>
+#include <aws/connectcampaignsv2/model/WebNotificationContext.h>
 #include <aws/connectcampaignsv2/model/WhatsAppChannelSubtypeConfig.h>
 #include <aws/connectcampaignsv2/model/WhatsAppChannelSubtypeParameters.h>
 #include <aws/connectcampaignsv2/model/WhatsAppOutboundConfig.h>

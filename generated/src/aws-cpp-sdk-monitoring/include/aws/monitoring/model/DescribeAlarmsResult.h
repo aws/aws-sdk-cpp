@@ -10,6 +10,7 @@
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/CompositeAlarm.h>
+#include <aws/monitoring/model/LogAlarm.h>
 #include <aws/monitoring/model/MetricAlarm.h>
 #include <aws/monitoring/model/ResponseMetadata.h>
 
@@ -79,6 +80,29 @@ class DescribeAlarmsResult {
 
   ///@{
   /**
+   * <p>The information about any log alarms returned by the operation.</p>
+   */
+  inline const Aws::Vector<LogAlarm>& GetLogAlarms() const { return m_logAlarms; }
+  template <typename LogAlarmsT = Aws::Vector<LogAlarm>>
+  void SetLogAlarms(LogAlarmsT&& value) {
+    m_logAlarmsHasBeenSet = true;
+    m_logAlarms = std::forward<LogAlarmsT>(value);
+  }
+  template <typename LogAlarmsT = Aws::Vector<LogAlarm>>
+  DescribeAlarmsResult& WithLogAlarms(LogAlarmsT&& value) {
+    SetLogAlarms(std::forward<LogAlarmsT>(value));
+    return *this;
+  }
+  template <typename LogAlarmsT = LogAlarm>
+  DescribeAlarmsResult& AddLogAlarms(LogAlarmsT&& value) {
+    m_logAlarmsHasBeenSet = true;
+    m_logAlarms.emplace_back(std::forward<LogAlarmsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The token that marks the start of the next batch of returned results.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
@@ -130,6 +154,8 @@ class DescribeAlarmsResult {
 
   Aws::Vector<MetricAlarm> m_metricAlarms;
 
+  Aws::Vector<LogAlarm> m_logAlarms;
+
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
@@ -138,6 +164,7 @@ class DescribeAlarmsResult {
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_compositeAlarmsHasBeenSet = false;
   bool m_metricAlarmsHasBeenSet = false;
+  bool m_logAlarmsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

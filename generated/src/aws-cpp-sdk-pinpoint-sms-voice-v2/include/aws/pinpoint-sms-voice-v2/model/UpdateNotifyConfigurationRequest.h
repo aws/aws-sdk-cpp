@@ -54,8 +54,10 @@ class UpdateNotifyConfigurationRequest : public PinpointSMSVoiceV2Request {
 
   ///@{
   /**
-   * <p>The template ID to set as the default, or the special value
-   * UNSET_DEFAULT_TEMPLATE to clear the current default template.</p>
+   * <p>The default template identifier to associate with the notify configuration.
+   * If specified, this template is used when sending messages without an explicit
+   * template identifier. Pass the special value <code>UNSET_DEFAULT_TEMPLATE</code>
+   * to clear the current default template from the notify configuration.</p>
    */
   inline const Aws::String& GetDefaultTemplateId() const { return m_defaultTemplateId; }
   inline bool DefaultTemplateIdHasBeenSet() const { return m_defaultTemplateIdHasBeenSet; }
@@ -73,8 +75,10 @@ class UpdateNotifyConfigurationRequest : public PinpointSMSVoiceV2Request {
 
   ///@{
   /**
-   * <p>The pool ID or ARN to associate, or the special value
-   * UNSET_DEFAULT_POOL_FOR_NOTIFY to clear the current default pool.</p>
+   * <p>The pool identifier or Amazon Resource Name (ARN) to associate with the
+   * notify configuration. Pass the special value
+   * <code>UNSET_DEFAULT_POOL_FOR_NOTIFY</code> to clear the current default pool
+   * from the notify configuration.</p>
    */
   inline const Aws::String& GetPoolId() const { return m_poolId; }
   inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }

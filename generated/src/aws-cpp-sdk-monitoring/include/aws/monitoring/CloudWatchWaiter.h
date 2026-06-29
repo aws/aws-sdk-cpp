@@ -54,6 +54,23 @@ class CloudWatchWaiter {
     return waiter.Wait(request);
   }
 
+  Aws::Utils::WaiterOutcome<Model::DescribeAlarmsOutcome> WaitUntilLogAlarmExists(const Model::DescribeAlarmsRequest& request) {
+    using OutcomeT = Model::DescribeAlarmsOutcome;
+    using RequestT = Model::DescribeAlarmsRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LogAlarmExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
+        [](const Model::DescribeAlarmsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return (result.GetLogAlarms().size() > 0) == expected.get<bool>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeAlarms(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilLogAlarmExists");
+    return waiter.Wait(request);
+  }
+
   Aws::Utils::WaiterOutcome<Model::GetAlarmMuteRuleOutcome> WaitUntilAlarmMuteRuleExists(const Model::GetAlarmMuteRuleRequest& request) {
     using OutcomeT = Model::GetAlarmMuteRuleOutcome;
     using RequestT = Model::GetAlarmMuteRuleRequest;

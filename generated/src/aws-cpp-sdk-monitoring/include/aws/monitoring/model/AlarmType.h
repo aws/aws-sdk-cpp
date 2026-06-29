@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CloudWatch {
 namespace Model {
-enum class AlarmType { NOT_SET, CompositeAlarm, MetricAlarm };
+enum class AlarmType { NOT_SET, CompositeAlarm, MetricAlarm, LogAlarm };
 
 namespace AlarmTypeMapper {
 AWS_CLOUDWATCH_API AlarmType GetAlarmTypeForName(const Aws::String& name);

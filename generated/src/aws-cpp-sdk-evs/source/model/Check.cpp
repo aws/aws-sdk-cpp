@@ -22,6 +22,10 @@ Check& Check::operator=(JsonView jsonValue) {
     m_type = CheckTypeMapper::GetCheckTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("result")) {
     m_result = CheckResultMapper::GetCheckResultForName(jsonValue.GetString("result"));
     m_resultHasBeenSet = true;
@@ -38,6 +42,10 @@ JsonValue Check::Jsonize() const {
 
   if (m_typeHasBeenSet) {
     payload.WithString("type", CheckTypeMapper::GetNameForCheckType(m_type));
+  }
+
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
   if (m_resultHasBeenSet) {

@@ -50,6 +50,10 @@ CreateServiceResult& CreateServiceResult::operator=(const Aws::AmazonWebServiceR
     m_authType = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("authType"));
     m_authTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("idleTimeoutSeconds")) {
+    m_idleTimeoutSeconds = jsonValue.GetInteger("idleTimeoutSeconds");
+    m_idleTimeoutSecondsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("dnsEntry")) {
     m_dnsEntry = jsonValue.GetObject("dnsEntry");
     m_dnsEntryHasBeenSet = true;

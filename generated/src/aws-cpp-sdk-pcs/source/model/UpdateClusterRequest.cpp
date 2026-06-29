@@ -27,6 +27,10 @@ Aws::String UpdateClusterRequest::SerializePayload() const {
     payload.WithObject("slurmConfiguration", m_slurmConfiguration.Jsonize());
   }
 
+  if (m_schedulerHasBeenSet) {
+    payload.WithObject("scheduler", m_scheduler.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

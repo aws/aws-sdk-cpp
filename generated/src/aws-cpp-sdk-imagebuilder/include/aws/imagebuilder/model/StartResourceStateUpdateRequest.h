@@ -35,8 +35,11 @@ class StartResourceStateUpdateRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the Image Builder resource that is updated.
-   * The state update might also impact associated resources.</p>
+   * <p>The Amazon Resource Name (ARN) of the image build version to update. The
+   * image must be in one of these terminal states: <code>AVAILABLE</code>,
+   * <code>DEPRECATED</code>, <code>DISABLED</code>, <code>FAILED</code>, or
+   * <code>CANCELLED</code>. Images with <code>FAILED</code> or
+   * <code>CANCELLED</code> status can transition only to <code>DELETED</code>.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -54,7 +57,10 @@ class StartResourceStateUpdateRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Indicates the lifecycle action to take for this request.</p>
+   * <p>Specifies the lifecycle action to take for this request. For AMI-based
+   * images, valid values are <code>AVAILABLE</code>, <code>DEPRECATED</code>,
+   * <code>DISABLED</code>, and <code>DELETED</code>. For container-based images,
+   * only <code>DELETED</code> is supported.</p>
    */
   inline const ResourceState& GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
@@ -91,7 +97,14 @@ class StartResourceStateUpdateRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>A list of image resources to update state for.</p>
+   * <p>Specifies which image resources to include in the state update. When
+   * specified, the lifecycle action applies to underlying resources. These resources
+   * include AMIs, snapshots, and containers in addition to the Image Builder image
+   * resource. Requires <code>executionRole</code> to also be specified. To delete an
+   * image and its underlying resources, you must specify
+   * <code>includeResources</code>. To delete only the Image Builder image record
+   * without affecting underlying resources, use the <code>DeleteImage</code> API
+   * instead.</p>
    */
   inline const ResourceStateUpdateIncludeResources& GetIncludeResources() const { return m_includeResources; }
   inline bool IncludeResourcesHasBeenSet() const { return m_includeResourcesHasBeenSet; }
@@ -128,8 +141,9 @@ class StartResourceStateUpdateRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The timestamp that indicates when resources are updated by a lifecycle
-   * action.</p>
+   * <p>Specifies the timestamp when the state transition takes effect. Use this
+   * parameter only when the target status is <code>DEPRECATED</code>. The value must
+   * be a future time.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdateAt() const { return m_updateAt; }
   inline bool UpdateAtHasBeenSet() const { return m_updateAtHasBeenSet; }

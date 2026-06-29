@@ -50,7 +50,7 @@ class GetDashboardResult {
    * <p>The detailed information about the dashboard, including what widgets are
    * included and their location on the dashboard. For more information about the
    * <code>DashboardBody</code> syntax, see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Dashboard-Body-Structure.html">Dashboard
    * Body Structure and Syntax</a>. </p>
    */
   inline const Aws::String& GetDashboardBody() const { return m_dashboardBody; }

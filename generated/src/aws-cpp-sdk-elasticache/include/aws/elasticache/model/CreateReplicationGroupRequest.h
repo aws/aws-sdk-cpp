@@ -1002,7 +1002,7 @@ class CreateReplicationGroupRequest : public ElastiCacheRequest {
    * the engine version, cluster mode, and other parameters. The resolved setting is
    * reflected in the <code>EffectiveDurability</code> property of the replication
    * group. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+   * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
    */
   inline Durability GetDurability() const { return m_durability; }
   inline bool DurabilityHasBeenSet() const { return m_durabilityHasBeenSet; }

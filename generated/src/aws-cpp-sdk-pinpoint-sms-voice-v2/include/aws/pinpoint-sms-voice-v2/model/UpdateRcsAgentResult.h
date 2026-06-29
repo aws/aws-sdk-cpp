@@ -7,6 +7,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/pinpoint-sms-voice-v2/model/RcsAgentStatus.h>
 
@@ -198,6 +199,81 @@ class UpdateRcsAgentResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The name of the S3 bucket where inbound RCS media files are stored.</p>
+   */
+  inline const Aws::String& GetTwoWayMediaS3BucketName() const { return m_twoWayMediaS3BucketName; }
+  template <typename TwoWayMediaS3BucketNameT = Aws::String>
+  void SetTwoWayMediaS3BucketName(TwoWayMediaS3BucketNameT&& value) {
+    m_twoWayMediaS3BucketNameHasBeenSet = true;
+    m_twoWayMediaS3BucketName = std::forward<TwoWayMediaS3BucketNameT>(value);
+  }
+  template <typename TwoWayMediaS3BucketNameT = Aws::String>
+  UpdateRcsAgentResult& WithTwoWayMediaS3BucketName(TwoWayMediaS3BucketNameT&& value) {
+    SetTwoWayMediaS3BucketName(std::forward<TwoWayMediaS3BucketNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The key prefix used for inbound RCS media objects in the S3 bucket.</p>
+   */
+  inline const Aws::String& GetTwoWayMediaS3KeyPrefix() const { return m_twoWayMediaS3KeyPrefix; }
+  template <typename TwoWayMediaS3KeyPrefixT = Aws::String>
+  void SetTwoWayMediaS3KeyPrefix(TwoWayMediaS3KeyPrefixT&& value) {
+    m_twoWayMediaS3KeyPrefixHasBeenSet = true;
+    m_twoWayMediaS3KeyPrefix = std::forward<TwoWayMediaS3KeyPrefixT>(value);
+  }
+  template <typename TwoWayMediaS3KeyPrefixT = Aws::String>
+  UpdateRcsAgentResult& WithTwoWayMediaS3KeyPrefix(TwoWayMediaS3KeyPrefixT&& value) {
+    SetTwoWayMediaS3KeyPrefix(std::forward<TwoWayMediaS3KeyPrefixT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the IAM role used to write inbound RCS media files to the S3
+   * bucket.</p>
+   */
+  inline const Aws::String& GetTwoWayMediaS3Role() const { return m_twoWayMediaS3Role; }
+  template <typename TwoWayMediaS3RoleT = Aws::String>
+  void SetTwoWayMediaS3Role(TwoWayMediaS3RoleT&& value) {
+    m_twoWayMediaS3RoleHasBeenSet = true;
+    m_twoWayMediaS3Role = std::forward<TwoWayMediaS3RoleT>(value);
+  }
+  template <typename TwoWayMediaS3RoleT = Aws::String>
+  UpdateRcsAgentResult& WithTwoWayMediaS3Role(TwoWayMediaS3RoleT&& value) {
+    SetTwoWayMediaS3Role(std::forward<TwoWayMediaS3RoleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of RCS event types enabled for two-way messaging on the agent.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetTwoWayRcsEventsEnabled() const { return m_twoWayRcsEventsEnabled; }
+  template <typename TwoWayRcsEventsEnabledT = Aws::Vector<Aws::String>>
+  void SetTwoWayRcsEventsEnabled(TwoWayRcsEventsEnabledT&& value) {
+    m_twoWayRcsEventsEnabledHasBeenSet = true;
+    m_twoWayRcsEventsEnabled = std::forward<TwoWayRcsEventsEnabledT>(value);
+  }
+  template <typename TwoWayRcsEventsEnabledT = Aws::Vector<Aws::String>>
+  UpdateRcsAgentResult& WithTwoWayRcsEventsEnabled(TwoWayRcsEventsEnabledT&& value) {
+    SetTwoWayRcsEventsEnabled(std::forward<TwoWayRcsEventsEnabledT>(value));
+    return *this;
+  }
+  template <typename TwoWayRcsEventsEnabledT = Aws::String>
+  UpdateRcsAgentResult& AddTwoWayRcsEventsEnabled(TwoWayRcsEventsEnabledT&& value) {
+    m_twoWayRcsEventsEnabledHasBeenSet = true;
+    m_twoWayRcsEventsEnabled.emplace_back(std::forward<TwoWayRcsEventsEnabledT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -234,6 +310,14 @@ class UpdateRcsAgentResult {
 
   bool m_twoWayEnabled{false};
 
+  Aws::String m_twoWayMediaS3BucketName;
+
+  Aws::String m_twoWayMediaS3KeyPrefix;
+
+  Aws::String m_twoWayMediaS3Role;
+
+  Aws::Vector<Aws::String> m_twoWayRcsEventsEnabled;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_rcsAgentArnHasBeenSet = false;
@@ -246,6 +330,10 @@ class UpdateRcsAgentResult {
   bool m_twoWayChannelArnHasBeenSet = false;
   bool m_twoWayChannelRoleHasBeenSet = false;
   bool m_twoWayEnabledHasBeenSet = false;
+  bool m_twoWayMediaS3BucketNameHasBeenSet = false;
+  bool m_twoWayMediaS3KeyPrefixHasBeenSet = false;
+  bool m_twoWayMediaS3RoleHasBeenSet = false;
+  bool m_twoWayRcsEventsEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

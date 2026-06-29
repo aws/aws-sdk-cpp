@@ -38,6 +38,10 @@ LayerVersionContentOutput& LayerVersionContentOutput::operator=(JsonView jsonVal
     m_signingJobArn = jsonValue.GetString("SigningJobArn");
     m_signingJobArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ResolvedS3Object")) {
+    m_resolvedS3Object = jsonValue.GetObject("ResolvedS3Object");
+    m_resolvedS3ObjectHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue LayerVersionContentOutput::Jsonize() const {
 
   if (m_signingJobArnHasBeenSet) {
     payload.WithString("SigningJobArn", m_signingJobArn);
+  }
+
+  if (m_resolvedS3ObjectHasBeenSet) {
+    payload.WithObject("ResolvedS3Object", m_resolvedS3Object.Jsonize());
   }
 
   return payload;

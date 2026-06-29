@@ -80,13 +80,16 @@ class DescribeAlarmsRequest : public CloudWatchRequest {
   ///@{
   /**
    * <p>Use this parameter to specify whether you want the operation to return metric
-   * alarms or composite alarms. If you omit this parameter, only metric alarms are
-   * returned, even if composite alarms exist in the account.</p> <p>For example, if
-   * you omit this parameter or specify <code>MetricAlarms</code>, the operation
-   * returns only a list of metric alarms. It does not return any composite alarms,
-   * even if composite alarms exist in the account.</p> <p>If you specify
-   * <code>CompositeAlarms</code>, the operation returns only a list of composite
-   * alarms, and does not return any metric alarms.</p>
+   * alarms, composite alarms, or log alarms. If you omit this parameter, only metric
+   * alarms are returned, even if composite alarms or log alarms exist in the
+   * account.</p> <p>For example, if you omit this parameter or specify
+   * <code>MetricAlarms</code>, the operation returns only a list of metric alarms.
+   * It does not return any composite alarms or log alarms, even if they exist in the
+   * account.</p> <p>If you specify <code>CompositeAlarms</code>, the operation
+   * returns only a list of composite alarms, and does not return any metric alarms
+   * or log alarms.</p> <p>If you specify <code>LogAlarms</code>, the operation
+   * returns only a list of log alarms, and does not return any metric alarms or
+   * composite alarms.</p>
    */
   inline const Aws::Vector<AlarmType>& GetAlarmTypes() const { return m_alarmTypes; }
   inline bool AlarmTypesHasBeenSet() const { return m_alarmTypesHasBeenSet; }

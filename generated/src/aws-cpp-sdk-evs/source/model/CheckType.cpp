@@ -22,6 +22,12 @@ static const int HOST_COUNT_HASH = HashingUtils::HashString("HOST_COUNT");
 static const int VCENTER_REACHABILITY_HASH = HashingUtils::HashString("VCENTER_REACHABILITY");
 static const int VCENTER_VM_SYNC_HASH = HashingUtils::HashString("VCENTER_VM_SYNC");
 static const int VCENTER_VM_EVENT_HASH = HashingUtils::HashString("VCENTER_VM_EVENT");
+static const int OPERATIONS_MANAGER_REACHABILITY_HASH = HashingUtils::HashString("OPERATIONS_MANAGER_REACHABILITY");
+static const int SDDC_MANAGER_REACHABILITY_HASH = HashingUtils::HashString("SDDC_MANAGER_REACHABILITY");
+static const int SDDC_MANAGER_HOST_COUNT_HASH = HashingUtils::HashString("SDDC_MANAGER_HOST_COUNT");
+static const int SDDC_MANAGER_KEY_COVERAGE_HASH = HashingUtils::HashString("SDDC_MANAGER_KEY_COVERAGE");
+static const int SDDC_MANAGER_KEY_REUSE_HASH = HashingUtils::HashString("SDDC_MANAGER_KEY_REUSE");
+static const int CONNECTOR_HEALTH_HASH = HashingUtils::HashString("CONNECTOR_HEALTH");
 
 CheckType GetCheckTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +45,18 @@ CheckType GetCheckTypeForName(const Aws::String& name) {
     return CheckType::VCENTER_VM_SYNC;
   } else if (hashCode == VCENTER_VM_EVENT_HASH) {
     return CheckType::VCENTER_VM_EVENT;
+  } else if (hashCode == OPERATIONS_MANAGER_REACHABILITY_HASH) {
+    return CheckType::OPERATIONS_MANAGER_REACHABILITY;
+  } else if (hashCode == SDDC_MANAGER_REACHABILITY_HASH) {
+    return CheckType::SDDC_MANAGER_REACHABILITY;
+  } else if (hashCode == SDDC_MANAGER_HOST_COUNT_HASH) {
+    return CheckType::SDDC_MANAGER_HOST_COUNT;
+  } else if (hashCode == SDDC_MANAGER_KEY_COVERAGE_HASH) {
+    return CheckType::SDDC_MANAGER_KEY_COVERAGE;
+  } else if (hashCode == SDDC_MANAGER_KEY_REUSE_HASH) {
+    return CheckType::SDDC_MANAGER_KEY_REUSE;
+  } else if (hashCode == CONNECTOR_HEALTH_HASH) {
+    return CheckType::CONNECTOR_HEALTH;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +85,18 @@ Aws::String GetNameForCheckType(CheckType enumValue) {
       return "VCENTER_VM_SYNC";
     case CheckType::VCENTER_VM_EVENT:
       return "VCENTER_VM_EVENT";
+    case CheckType::OPERATIONS_MANAGER_REACHABILITY:
+      return "OPERATIONS_MANAGER_REACHABILITY";
+    case CheckType::SDDC_MANAGER_REACHABILITY:
+      return "SDDC_MANAGER_REACHABILITY";
+    case CheckType::SDDC_MANAGER_HOST_COUNT:
+      return "SDDC_MANAGER_HOST_COUNT";
+    case CheckType::SDDC_MANAGER_KEY_COVERAGE:
+      return "SDDC_MANAGER_KEY_COVERAGE";
+    case CheckType::SDDC_MANAGER_KEY_REUSE:
+      return "SDDC_MANAGER_KEY_REUSE";
+    case CheckType::CONNECTOR_HEALTH:
+      return "CONNECTOR_HEALTH";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

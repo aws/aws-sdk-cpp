@@ -19,6 +19,7 @@ static const int TEXT_MESSAGE_MONTHLY_SPEND_LIMIT_HASH = HashingUtils::HashStrin
 static const int VOICE_MESSAGE_MONTHLY_SPEND_LIMIT_HASH = HashingUtils::HashString("VOICE_MESSAGE_MONTHLY_SPEND_LIMIT");
 static const int MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT_HASH = HashingUtils::HashString("MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT");
 static const int NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT_HASH = HashingUtils::HashString("NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT");
+static const int RCS_MESSAGE_MONTHLY_SPEND_LIMIT_HASH = HashingUtils::HashString("RCS_MESSAGE_MONTHLY_SPEND_LIMIT");
 
 SpendLimitName GetSpendLimitNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ SpendLimitName GetSpendLimitNameForName(const Aws::String& name) {
     return SpendLimitName::MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT;
   } else if (hashCode == NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT_HASH) {
     return SpendLimitName::NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT;
+  } else if (hashCode == RCS_MESSAGE_MONTHLY_SPEND_LIMIT_HASH) {
+    return SpendLimitName::RCS_MESSAGE_MONTHLY_SPEND_LIMIT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForSpendLimitName(SpendLimitName enumValue) {
       return "MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT";
     case SpendLimitName::NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT:
       return "NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT";
+    case SpendLimitName::RCS_MESSAGE_MONTHLY_SPEND_LIMIT:
+      return "RCS_MESSAGE_MONTHLY_SPEND_LIMIT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

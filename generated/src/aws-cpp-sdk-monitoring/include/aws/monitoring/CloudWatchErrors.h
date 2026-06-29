@@ -56,7 +56,8 @@ enum class CloudWatchErrors {
   KMS_KEY_NOT_FOUND,
   LIMIT_EXCEEDED,
   LIMIT_EXCEEDED_FAULT,
-  MISSING_REQUIRED_PARAMETER
+  MISSING_REQUIRED_PARAMETER,
+  RESOURCE_CONFLICT
 };
 
 class AWS_CLOUDWATCH_API CloudWatchError : public Aws::Client::AWSError<CloudWatchErrors> {

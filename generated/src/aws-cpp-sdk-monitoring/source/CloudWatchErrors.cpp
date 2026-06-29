@@ -24,6 +24,7 @@ static const int DASHBOARD_INVALID_INPUT_HASH = HashingUtils::HashString("Invali
 static const int INTERNAL_SERVICE_FAULT_HASH = HashingUtils::HashString("InternalServiceError");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
+static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflict");
 static const int DASHBOARD_NOT_FOUND_HASH = HashingUtils::HashString("ResourceNotFound");
 static const int INVALID_FORMAT_FAULT_HASH = HashingUtils::HashString("InvalidFormat");
 static const int KMS_KEY_DISABLED_HASH = HashingUtils::HashString("KmsKeyDisabledException");
@@ -51,6 +52,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RESOURCE_CONFLICT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == DASHBOARD_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::DASHBOARD_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_FORMAT_FAULT_HASH) {

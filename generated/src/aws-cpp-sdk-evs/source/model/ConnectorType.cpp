@@ -15,11 +15,17 @@ namespace EVS {
 namespace Model {
 namespace ConnectorTypeMapper {
 
+static const int OPERATIONS_MANAGER_HASH = HashingUtils::HashString("OPERATIONS_MANAGER");
+static const int SDDC_MANAGER_HASH = HashingUtils::HashString("SDDC_MANAGER");
 static const int VCENTER_HASH = HashingUtils::HashString("VCENTER");
 
 ConnectorType GetConnectorTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == VCENTER_HASH) {
+  if (hashCode == OPERATIONS_MANAGER_HASH) {
+    return ConnectorType::OPERATIONS_MANAGER;
+  } else if (hashCode == SDDC_MANAGER_HASH) {
+    return ConnectorType::SDDC_MANAGER;
+  } else if (hashCode == VCENTER_HASH) {
     return ConnectorType::VCENTER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
@@ -35,6 +41,10 @@ Aws::String GetNameForConnectorType(ConnectorType enumValue) {
   switch (enumValue) {
     case ConnectorType::NOT_SET:
       return {};
+    case ConnectorType::OPERATIONS_MANAGER:
+      return "OPERATIONS_MANAGER";
+    case ConnectorType::SDDC_MANAGER:
+      return "SDDC_MANAGER";
     case ConnectorType::VCENTER:
       return "VCENTER";
     default:

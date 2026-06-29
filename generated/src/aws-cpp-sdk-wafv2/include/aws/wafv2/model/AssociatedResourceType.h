@@ -10,7 +10,15 @@
 namespace Aws {
 namespace WAFV2 {
 namespace Model {
-enum class AssociatedResourceType { NOT_SET, CLOUDFRONT, API_GATEWAY, COGNITO_USER_POOL, APP_RUNNER_SERVICE, VERIFIED_ACCESS_INSTANCE };
+enum class AssociatedResourceType {
+  NOT_SET,
+  CLOUDFRONT,
+  API_GATEWAY,
+  COGNITO_USER_POOL,
+  APP_RUNNER_SERVICE,
+  VERIFIED_ACCESS_INSTANCE,
+  AGENTCORE_GATEWAY
+};
 
 namespace AssociatedResourceTypeMapper {
 AWS_WAFV2_API AssociatedResourceType GetAssociatedResourceTypeForName(const Aws::String& name);

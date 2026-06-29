@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
+#include <aws/lambda/model/FunctionCodeLocationError.h>
+#include <aws/lambda/model/ResolvedS3Object.h>
 
 #include <utility>
 
@@ -105,6 +107,24 @@ class FunctionCodeLocation {
 
   ///@{
   /**
+   * <p>The resolved Amazon S3 object that contains the deployment package.</p>
+   */
+  inline const ResolvedS3Object& GetResolvedS3Object() const { return m_resolvedS3Object; }
+  inline bool ResolvedS3ObjectHasBeenSet() const { return m_resolvedS3ObjectHasBeenSet; }
+  template <typename ResolvedS3ObjectT = ResolvedS3Object>
+  void SetResolvedS3Object(ResolvedS3ObjectT&& value) {
+    m_resolvedS3ObjectHasBeenSet = true;
+    m_resolvedS3Object = std::forward<ResolvedS3ObjectT>(value);
+  }
+  template <typename ResolvedS3ObjectT = ResolvedS3Object>
+  FunctionCodeLocation& WithResolvedS3Object(ResolvedS3ObjectT&& value) {
+    SetResolvedS3Object(std::forward<ResolvedS3ObjectT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ARN of the Key Management Service (KMS) customer managed key that's used
    * to encrypt your function's .zip deployment package. If you don't provide a
    * customer managed key, Lambda uses an <a
@@ -124,6 +144,25 @@ class FunctionCodeLocation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains details about an error related to function deployment
+   * package retrieval.</p>
+   */
+  inline const FunctionCodeLocationError& GetError() const { return m_error; }
+  inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+  template <typename ErrorT = FunctionCodeLocationError>
+  void SetError(ErrorT&& value) {
+    m_errorHasBeenSet = true;
+    m_error = std::forward<ErrorT>(value);
+  }
+  template <typename ErrorT = FunctionCodeLocationError>
+  FunctionCodeLocation& WithError(ErrorT&& value) {
+    SetError(std::forward<ErrorT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_repositoryType;
 
@@ -133,12 +172,18 @@ class FunctionCodeLocation {
 
   Aws::String m_resolvedImageUri;
 
+  ResolvedS3Object m_resolvedS3Object;
+
   Aws::String m_sourceKMSKeyArn;
+
+  FunctionCodeLocationError m_error;
   bool m_repositoryTypeHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_imageUriHasBeenSet = false;
   bool m_resolvedImageUriHasBeenSet = false;
+  bool m_resolvedS3ObjectHasBeenSet = false;
   bool m_sourceKMSKeyArnHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
 };
 
 }  // namespace Model

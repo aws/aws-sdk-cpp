@@ -34,9 +34,17 @@ FunctionCodeLocation& FunctionCodeLocation::operator=(JsonView jsonValue) {
     m_resolvedImageUri = jsonValue.GetString("ResolvedImageUri");
     m_resolvedImageUriHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ResolvedS3Object")) {
+    m_resolvedS3Object = jsonValue.GetObject("ResolvedS3Object");
+    m_resolvedS3ObjectHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SourceKMSKeyArn")) {
     m_sourceKMSKeyArn = jsonValue.GetString("SourceKMSKeyArn");
     m_sourceKMSKeyArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Error")) {
+    m_error = jsonValue.GetObject("Error");
+    m_errorHasBeenSet = true;
   }
   return *this;
 }
@@ -60,8 +68,16 @@ JsonValue FunctionCodeLocation::Jsonize() const {
     payload.WithString("ResolvedImageUri", m_resolvedImageUri);
   }
 
+  if (m_resolvedS3ObjectHasBeenSet) {
+    payload.WithObject("ResolvedS3Object", m_resolvedS3Object.Jsonize());
+  }
+
   if (m_sourceKMSKeyArnHasBeenSet) {
     payload.WithString("SourceKMSKeyArn", m_sourceKMSKeyArn);
+  }
+
+  if (m_errorHasBeenSet) {
+    payload.WithObject("Error", m_error.Jsonize());
   }
 
   return payload;

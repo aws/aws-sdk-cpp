@@ -710,7 +710,7 @@ class ReplicationGroup {
   ///@{
   /**
    * <p>The durability setting of the replication group. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+   * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
    */
   inline Durability GetDurability() const { return m_durability; }
   inline bool DurabilityHasBeenSet() const { return m_durabilityHasBeenSet; }
@@ -730,7 +730,7 @@ class ReplicationGroup {
    * <code>Durability</code> is set to <code>default</code>, the service resolves the
    * actual durability based on the engine version, cluster mode, and other
    * parameters. This field reflects the resolved value. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ConfiguringDurability.html">Configuring
+   * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.Configuring.html">Configuring
    * Durability</a>.</p>
    */
   inline EffectiveDurability GetEffectiveDurability() const { return m_effectiveDurability; }

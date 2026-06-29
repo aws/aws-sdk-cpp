@@ -35,6 +35,10 @@ FunctionCode& FunctionCode::operator=(JsonView jsonValue) {
     m_s3ObjectVersion = jsonValue.GetString("S3ObjectVersion");
     m_s3ObjectVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("S3ObjectStorageMode")) {
+    m_s3ObjectStorageMode = S3ObjectStorageModeMapper::GetS3ObjectStorageModeForName(jsonValue.GetString("S3ObjectStorageMode"));
+    m_s3ObjectStorageModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ImageUri")) {
     m_imageUri = jsonValue.GetString("ImageUri");
     m_imageUriHasBeenSet = true;
@@ -63,6 +67,10 @@ JsonValue FunctionCode::Jsonize() const {
 
   if (m_s3ObjectVersionHasBeenSet) {
     payload.WithString("S3ObjectVersion", m_s3ObjectVersion);
+  }
+
+  if (m_s3ObjectStorageModeHasBeenSet) {
+    payload.WithString("S3ObjectStorageMode", S3ObjectStorageModeMapper::GetNameForS3ObjectStorageMode(m_s3ObjectStorageMode));
   }
 
   if (m_imageUriHasBeenSet) {

@@ -10,6 +10,9 @@
 #include <aws/appconfig/model/ListDeploymentStrategiesPaginationTraits.h>
 #include <aws/appconfig/model/ListDeploymentsPaginationTraits.h>
 #include <aws/appconfig/model/ListEnvironmentsPaginationTraits.h>
+#include <aws/appconfig/model/ListExperimentDefinitionsPaginationTraits.h>
+#include <aws/appconfig/model/ListExperimentRunEventsPaginationTraits.h>
+#include <aws/appconfig/model/ListExperimentRunsPaginationTraits.h>
 #include <aws/appconfig/model/ListExtensionAssociationsPaginationTraits.h>
 #include <aws/appconfig/model/ListExtensionsPaginationTraits.h>
 #include <aws/appconfig/model/ListHostedConfigurationVersionsPaginationTraits.h>
@@ -82,6 +85,42 @@ class AppConfigPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentsRequest,
                                              Pagination::ListEnvironmentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
+  }
+
+  /**
+   * Create a paginator for ListExperimentDefinitions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExperimentDefinitionsRequest,
+                                    Pagination::ListExperimentDefinitionsPaginationTraits<DerivedClient>>
+  ListExperimentDefinitionsPaginator(const Model::ListExperimentDefinitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExperimentDefinitionsRequest,
+                                             Pagination::ListExperimentDefinitionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListExperimentRunEvents operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExperimentRunEventsRequest,
+                                    Pagination::ListExperimentRunEventsPaginationTraits<DerivedClient>>
+  ListExperimentRunEventsPaginator(const Model::ListExperimentRunEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExperimentRunEventsRequest,
+                                             Pagination::ListExperimentRunEventsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListExperimentRuns operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExperimentRunsRequest,
+                                    Pagination::ListExperimentRunsPaginationTraits<DerivedClient>>
+  ListExperimentRunsPaginator(const Model::ListExperimentRunsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExperimentRunsRequest,
+                                             Pagination::ListExperimentRunsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

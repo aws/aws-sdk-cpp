@@ -62,6 +62,10 @@ GetServiceResult& GetServiceResult::operator=(const Aws::AmazonWebServiceResult<
     m_authType = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("authType"));
     m_authTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("idleTimeoutSeconds")) {
+    m_idleTimeoutSeconds = jsonValue.GetInteger("idleTimeoutSeconds");
+    m_idleTimeoutSecondsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("failureCode")) {
     m_failureCode = jsonValue.GetString("failureCode");
     m_failureCodeHasBeenSet = true;

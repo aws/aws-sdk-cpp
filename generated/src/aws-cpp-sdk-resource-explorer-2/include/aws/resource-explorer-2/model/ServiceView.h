@@ -9,6 +9,7 @@
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 #include <aws/resource-explorer-2/model/IncludedProperty.h>
 #include <aws/resource-explorer-2/model/SearchFilter.h>
+#include <aws/resource-explorer-2/model/ServiceLinkedRecorderInfo.h>
 
 #include <utility>
 
@@ -149,6 +150,27 @@ class ServiceView {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about the service-linked recorder associated with this service
+   * view. When a service view is paired with a service-linked recorder, Resource
+   * Explorer uses the recorder's resource type list to filter search results and
+   * streaming data.</p>
+   */
+  inline const ServiceLinkedRecorderInfo& GetServiceLinkedRecorder() const { return m_serviceLinkedRecorder; }
+  inline bool ServiceLinkedRecorderHasBeenSet() const { return m_serviceLinkedRecorderHasBeenSet; }
+  template <typename ServiceLinkedRecorderT = ServiceLinkedRecorderInfo>
+  void SetServiceLinkedRecorder(ServiceLinkedRecorderT&& value) {
+    m_serviceLinkedRecorderHasBeenSet = true;
+    m_serviceLinkedRecorder = std::forward<ServiceLinkedRecorderT>(value);
+  }
+  template <typename ServiceLinkedRecorderT = ServiceLinkedRecorderInfo>
+  ServiceView& WithServiceLinkedRecorder(ServiceLinkedRecorderT&& value) {
+    SetServiceLinkedRecorder(std::forward<ServiceLinkedRecorderT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serviceViewArn;
 
@@ -161,12 +183,15 @@ class ServiceView {
   Aws::String m_streamingAccessForService;
 
   Aws::String m_scopeType;
+
+  ServiceLinkedRecorderInfo m_serviceLinkedRecorder;
   bool m_serviceViewArnHasBeenSet = false;
   bool m_serviceViewNameHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
   bool m_includedPropertiesHasBeenSet = false;
   bool m_streamingAccessForServiceHasBeenSet = false;
   bool m_scopeTypeHasBeenSet = false;
+  bool m_serviceLinkedRecorderHasBeenSet = false;
 };
 
 }  // namespace Model

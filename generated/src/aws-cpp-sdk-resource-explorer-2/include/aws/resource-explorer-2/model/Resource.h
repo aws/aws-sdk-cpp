@@ -133,6 +133,25 @@ class Resource {
 
   ///@{
   /**
+   * <p>The CloudFormation resource type identifier for the resource, such as
+   * <code>AWS::EC2::Instance</code> or <code>AWS::S3::Bucket</code>.</p>
+   */
+  inline const Aws::String& GetCfnResourceType() const { return m_cfnResourceType; }
+  inline bool CfnResourceTypeHasBeenSet() const { return m_cfnResourceTypeHasBeenSet; }
+  template <typename CfnResourceTypeT = Aws::String>
+  void SetCfnResourceType(CfnResourceTypeT&& value) {
+    m_cfnResourceTypeHasBeenSet = true;
+    m_cfnResourceType = std::forward<CfnResourceTypeT>(value);
+  }
+  template <typename CfnResourceTypeT = Aws::String>
+  Resource& WithCfnResourceType(CfnResourceTypeT&& value) {
+    SetCfnResourceType(std::forward<CfnResourceTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time that Resource Explorer last queried this resource and
    * updated the index with the latest information about the resource.</p>
    */
@@ -186,6 +205,8 @@ class Resource {
 
   Aws::String m_service;
 
+  Aws::String m_cfnResourceType;
+
   Aws::Utils::DateTime m_lastReportedAt{};
 
   Aws::Vector<ResourceProperty> m_properties;
@@ -194,6 +215,7 @@ class Resource {
   bool m_regionHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
   bool m_serviceHasBeenSet = false;
+  bool m_cfnResourceTypeHasBeenSet = false;
   bool m_lastReportedAtHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };

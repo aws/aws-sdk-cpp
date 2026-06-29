@@ -23,5 +23,9 @@ Aws::String UpdateServiceRequest::SerializePayload() const {
     payload.WithString("authType", AuthTypeMapper::GetNameForAuthType(m_authType));
   }
 
+  if (m_idleTimeoutSecondsHasBeenSet) {
+    payload.WithInteger("idleTimeoutSeconds", m_idleTimeoutSeconds);
+  }
+
   return payload.View().WriteReadable();
 }

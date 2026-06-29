@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2Request.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
@@ -156,6 +157,94 @@ class UpdateRcsAgentRequest : public PinpointSMSVoiceV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the S3 bucket where inbound RCS media files are stored. Two-way
+   * messaging must be enabled on the agent. To remove the media configuration, pass
+   * the sentinel value <code>UNSET_RCS_MEDIA_CONFIGURATION</code> for both this
+   * field and TwoWayMediaS3Role.</p>
+   */
+  inline const Aws::String& GetTwoWayMediaS3BucketName() const { return m_twoWayMediaS3BucketName; }
+  inline bool TwoWayMediaS3BucketNameHasBeenSet() const { return m_twoWayMediaS3BucketNameHasBeenSet; }
+  template <typename TwoWayMediaS3BucketNameT = Aws::String>
+  void SetTwoWayMediaS3BucketName(TwoWayMediaS3BucketNameT&& value) {
+    m_twoWayMediaS3BucketNameHasBeenSet = true;
+    m_twoWayMediaS3BucketName = std::forward<TwoWayMediaS3BucketNameT>(value);
+  }
+  template <typename TwoWayMediaS3BucketNameT = Aws::String>
+  UpdateRcsAgentRequest& WithTwoWayMediaS3BucketName(TwoWayMediaS3BucketNameT&& value) {
+    SetTwoWayMediaS3BucketName(std::forward<TwoWayMediaS3BucketNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The key prefix used for inbound RCS media objects in the S3 bucket.</p>
+   */
+  inline const Aws::String& GetTwoWayMediaS3KeyPrefix() const { return m_twoWayMediaS3KeyPrefix; }
+  inline bool TwoWayMediaS3KeyPrefixHasBeenSet() const { return m_twoWayMediaS3KeyPrefixHasBeenSet; }
+  template <typename TwoWayMediaS3KeyPrefixT = Aws::String>
+  void SetTwoWayMediaS3KeyPrefix(TwoWayMediaS3KeyPrefixT&& value) {
+    m_twoWayMediaS3KeyPrefixHasBeenSet = true;
+    m_twoWayMediaS3KeyPrefix = std::forward<TwoWayMediaS3KeyPrefixT>(value);
+  }
+  template <typename TwoWayMediaS3KeyPrefixT = Aws::String>
+  UpdateRcsAgentRequest& WithTwoWayMediaS3KeyPrefix(TwoWayMediaS3KeyPrefixT&& value) {
+    SetTwoWayMediaS3KeyPrefix(std::forward<TwoWayMediaS3KeyPrefixT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the IAM role used to write inbound RCS media files to the S3
+   * bucket. The role must have <code>s3:PutObject</code> permission on the bucket
+   * and a trust policy allowing <code>sms-voice.amazonaws.com</code> to assume it.
+   * To remove the media configuration, pass the sentinel value
+   * <code>UNSET_RCS_MEDIA_CONFIGURATION</code> for both this field and
+   * TwoWayMediaS3BucketName.</p>
+   */
+  inline const Aws::String& GetTwoWayMediaS3Role() const { return m_twoWayMediaS3Role; }
+  inline bool TwoWayMediaS3RoleHasBeenSet() const { return m_twoWayMediaS3RoleHasBeenSet; }
+  template <typename TwoWayMediaS3RoleT = Aws::String>
+  void SetTwoWayMediaS3Role(TwoWayMediaS3RoleT&& value) {
+    m_twoWayMediaS3RoleHasBeenSet = true;
+    m_twoWayMediaS3Role = std::forward<TwoWayMediaS3RoleT>(value);
+  }
+  template <typename TwoWayMediaS3RoleT = Aws::String>
+  UpdateRcsAgentRequest& WithTwoWayMediaS3Role(TwoWayMediaS3RoleT&& value) {
+    SetTwoWayMediaS3Role(std::forward<TwoWayMediaS3RoleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of RCS event types to enable for two-way messaging. Pass an empty
+   * list to disable all event types. The special value <code>ALL</code> enables all
+   * current and future event types and must be the sole element if used.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetTwoWayRcsEventsEnabled() const { return m_twoWayRcsEventsEnabled; }
+  inline bool TwoWayRcsEventsEnabledHasBeenSet() const { return m_twoWayRcsEventsEnabledHasBeenSet; }
+  template <typename TwoWayRcsEventsEnabledT = Aws::Vector<Aws::String>>
+  void SetTwoWayRcsEventsEnabled(TwoWayRcsEventsEnabledT&& value) {
+    m_twoWayRcsEventsEnabledHasBeenSet = true;
+    m_twoWayRcsEventsEnabled = std::forward<TwoWayRcsEventsEnabledT>(value);
+  }
+  template <typename TwoWayRcsEventsEnabledT = Aws::Vector<Aws::String>>
+  UpdateRcsAgentRequest& WithTwoWayRcsEventsEnabled(TwoWayRcsEventsEnabledT&& value) {
+    SetTwoWayRcsEventsEnabled(std::forward<TwoWayRcsEventsEnabledT>(value));
+    return *this;
+  }
+  template <typename TwoWayRcsEventsEnabledT = Aws::String>
+  UpdateRcsAgentRequest& AddTwoWayRcsEventsEnabled(TwoWayRcsEventsEnabledT&& value) {
+    m_twoWayRcsEventsEnabledHasBeenSet = true;
+    m_twoWayRcsEventsEnabled.emplace_back(std::forward<TwoWayRcsEventsEnabledT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_rcsAgentId;
 
@@ -170,6 +259,14 @@ class UpdateRcsAgentRequest : public PinpointSMSVoiceV2Request {
   Aws::String m_twoWayChannelRole;
 
   bool m_twoWayEnabled{false};
+
+  Aws::String m_twoWayMediaS3BucketName;
+
+  Aws::String m_twoWayMediaS3KeyPrefix;
+
+  Aws::String m_twoWayMediaS3Role;
+
+  Aws::Vector<Aws::String> m_twoWayRcsEventsEnabled;
   bool m_rcsAgentIdHasBeenSet = false;
   bool m_deletionProtectionEnabledHasBeenSet = false;
   bool m_optOutListNameHasBeenSet = false;
@@ -177,6 +274,10 @@ class UpdateRcsAgentRequest : public PinpointSMSVoiceV2Request {
   bool m_twoWayChannelArnHasBeenSet = false;
   bool m_twoWayChannelRoleHasBeenSet = false;
   bool m_twoWayEnabledHasBeenSet = false;
+  bool m_twoWayMediaS3BucketNameHasBeenSet = false;
+  bool m_twoWayMediaS3KeyPrefixHasBeenSet = false;
+  bool m_twoWayMediaS3RoleHasBeenSet = false;
+  bool m_twoWayRcsEventsEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
+#include <aws/lambda/model/ResolvedS3Object.h>
 
 #include <utility>
 
@@ -120,6 +121,22 @@ class LayerVersionContentOutput {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const ResolvedS3Object& GetResolvedS3Object() const { return m_resolvedS3Object; }
+  inline bool ResolvedS3ObjectHasBeenSet() const { return m_resolvedS3ObjectHasBeenSet; }
+  template <typename ResolvedS3ObjectT = ResolvedS3Object>
+  void SetResolvedS3Object(ResolvedS3ObjectT&& value) {
+    m_resolvedS3ObjectHasBeenSet = true;
+    m_resolvedS3Object = std::forward<ResolvedS3ObjectT>(value);
+  }
+  template <typename ResolvedS3ObjectT = ResolvedS3Object>
+  LayerVersionContentOutput& WithResolvedS3Object(ResolvedS3ObjectT&& value) {
+    SetResolvedS3Object(std::forward<ResolvedS3ObjectT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_location;
 
@@ -130,11 +147,14 @@ class LayerVersionContentOutput {
   Aws::String m_signingProfileVersionArn;
 
   Aws::String m_signingJobArn;
+
+  ResolvedS3Object m_resolvedS3Object;
   bool m_locationHasBeenSet = false;
   bool m_codeSha256HasBeenSet = false;
   bool m_codeSizeHasBeenSet = false;
   bool m_signingProfileVersionArnHasBeenSet = false;
   bool m_signingJobArnHasBeenSet = false;
+  bool m_resolvedS3ObjectHasBeenSet = false;
 };
 
 }  // namespace Model

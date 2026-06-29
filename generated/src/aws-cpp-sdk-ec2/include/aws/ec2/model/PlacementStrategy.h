@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class PlacementStrategy { NOT_SET, cluster, spread, partition };
+enum class PlacementStrategy { NOT_SET, cluster, spread, partition, precision_time };
 
 namespace PlacementStrategyMapper {
 AWS_EC2_API PlacementStrategy GetPlacementStrategyForName(const Aws::String& name);

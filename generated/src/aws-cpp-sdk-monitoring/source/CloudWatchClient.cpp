@@ -58,6 +58,7 @@
 #include <aws/monitoring/model/PutCompositeAlarmRequest.h>
 #include <aws/monitoring/model/PutDashboardRequest.h>
 #include <aws/monitoring/model/PutInsightRuleRequest.h>
+#include <aws/monitoring/model/PutLogAlarmRequest.h>
 #include <aws/monitoring/model/PutManagedInsightRulesRequest.h>
 #include <aws/monitoring/model/PutMetricAlarmRequest.h>
 #include <aws/monitoring/model/PutMetricDataRequest.h>
@@ -440,6 +441,11 @@ PutDashboardOutcome CloudWatchClient::PutDashboard(const PutDashboardRequest& re
 PutInsightRuleOutcome CloudWatchClient::PutInsightRule(const PutInsightRuleRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutInsightRuleOutcome(result.GetResultWithOwnership()) : PutInsightRuleOutcome(std::move(result.GetError()));
+}
+
+PutLogAlarmOutcome CloudWatchClient::PutLogAlarm(const PutLogAlarmRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutLogAlarmOutcome(result.GetResultWithOwnership()) : PutLogAlarmOutcome(std::move(result.GetError()));
 }
 
 PutManagedInsightRulesOutcome CloudWatchClient::PutManagedInsightRules(const PutManagedInsightRulesRequest& request) const {

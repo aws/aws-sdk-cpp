@@ -37,6 +37,10 @@ Aws::String CreatePlacementGroupRequest::SerializePayload() const {
     m_operator.OutputToStream(ss, "Operator");
   }
 
+  if (m_parentGroupIdHasBeenSet) {
+    ss << "ParentGroupId=" << StringUtils::URLEncode(m_parentGroupId.c_str()) << "&";
+  }
+
   if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }

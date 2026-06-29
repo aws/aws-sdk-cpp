@@ -24,7 +24,9 @@ namespace Model {
  * SDDC Manager, and Cloud Builder. Each hostname must be unique, and resolve to a
  * domain name that you've registered in your DNS service of choice. Hostnames
  * cannot be changed.</p> <p>VMware VCF requires the deployment of two NSX Edge
- * nodes, and three NSX Manager virtual machines.</p><p><h3>See Also:</h3>   <a
+ * nodes, and three NSX Manager virtual machines.</p>  <p>Not supported when
+ * <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>.</p> <p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/VcfHostnames">AWS
  * API Reference</a></p>
  */
@@ -55,7 +57,7 @@ class VcfHostnames {
 
   ///@{
   /**
-   * <p>The VMware NSX hostname.</p>
+   * <p>The VMware NSX Virtual IP (VIP) hostname.</p>
    */
   inline const Aws::String& GetNsx() const { return m_nsx; }
   inline bool NsxHasBeenSet() const { return m_nsxHasBeenSet; }

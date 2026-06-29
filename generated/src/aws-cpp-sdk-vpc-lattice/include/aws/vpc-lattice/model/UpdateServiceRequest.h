@@ -83,15 +83,38 @@ class UpdateServiceRequest : public VPCLatticeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The amount of time, in seconds, that a connection can remain idle (no data
+   * sent) before VPC Lattice closes it. The valid range is 60 to 600 seconds. If you
+   * don't specify a value, the default is 60 seconds. This setting does not change
+   * the maximum connection duration of 10 minutes; connections are still closed when
+   * they reach that limit.</p>
+   */
+  inline int GetIdleTimeoutSeconds() const { return m_idleTimeoutSeconds; }
+  inline bool IdleTimeoutSecondsHasBeenSet() const { return m_idleTimeoutSecondsHasBeenSet; }
+  inline void SetIdleTimeoutSeconds(int value) {
+    m_idleTimeoutSecondsHasBeenSet = true;
+    m_idleTimeoutSeconds = value;
+  }
+  inline UpdateServiceRequest& WithIdleTimeoutSeconds(int value) {
+    SetIdleTimeoutSeconds(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serviceIdentifier;
 
   Aws::String m_certificateArn;
 
   AuthType m_authType{AuthType::NOT_SET};
+
+  int m_idleTimeoutSeconds{0};
   bool m_serviceIdentifierHasBeenSet = false;
   bool m_certificateArnHasBeenSet = false;
   bool m_authTypeHasBeenSet = false;
+  bool m_idleTimeoutSecondsHasBeenSet = false;
 };
 
 }  // namespace Model

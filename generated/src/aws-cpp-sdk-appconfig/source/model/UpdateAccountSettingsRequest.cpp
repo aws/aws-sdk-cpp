@@ -19,5 +19,9 @@ Aws::String UpdateAccountSettingsRequest::SerializePayload() const {
     payload.WithObject("DeletionProtection", m_deletionProtection.Jsonize());
   }
 
+  if (m_vendedMetricsHasBeenSet) {
+    payload.WithObject("VendedMetrics", m_vendedMetrics.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

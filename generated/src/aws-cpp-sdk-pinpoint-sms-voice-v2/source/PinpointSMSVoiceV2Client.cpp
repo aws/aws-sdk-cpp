@@ -50,6 +50,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/DeleteProtectConfigurationRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteProtectConfigurationRuleSetNumberOverrideRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteRcsAgentRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DeleteRcsMessageSpendLimitOverrideRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteRegistrationAttachmentRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteRegistrationFieldValueRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteRegistrationRequest.h>
@@ -104,6 +105,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/SendMediaMessageRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SendNotifyTextMessageRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SendNotifyVoiceMessageRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/SendRcsMessageRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SendTextMessageRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SendVoiceMessageRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetAccountDefaultProtectConfigurationRequest.h>
@@ -112,6 +114,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/SetDefaultSenderIdRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetMediaMessageSpendLimitOverrideRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetNotifyMessageSpendLimitOverrideRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/SetRcsMessageSpendLimitOverrideRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetTextMessageSpendLimitOverrideRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetVoiceMessageSpendLimitOverrideRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SubmitRegistrationVersionRequest.h>
@@ -470,6 +473,13 @@ DeleteRcsAgentOutcome PinpointSMSVoiceV2Client::DeleteRcsAgent(const DeleteRcsAg
   return result.IsSuccess() ? DeleteRcsAgentOutcome(result.GetResultWithOwnership()) : DeleteRcsAgentOutcome(std::move(result.GetError()));
 }
 
+DeleteRcsMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::DeleteRcsMessageSpendLimitOverride(
+    const DeleteRcsMessageSpendLimitOverrideRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRcsMessageSpendLimitOverrideOutcome(result.GetResultWithOwnership())
+                            : DeleteRcsMessageSpendLimitOverrideOutcome(std::move(result.GetError()));
+}
+
 DeleteRegistrationOutcome PinpointSMSVoiceV2Client::DeleteRegistration(const DeleteRegistrationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteRegistrationOutcome(result.GetResultWithOwnership())
@@ -819,6 +829,11 @@ SendNotifyVoiceMessageOutcome PinpointSMSVoiceV2Client::SendNotifyVoiceMessage(c
                             : SendNotifyVoiceMessageOutcome(std::move(result.GetError()));
 }
 
+SendRcsMessageOutcome PinpointSMSVoiceV2Client::SendRcsMessage(const SendRcsMessageRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendRcsMessageOutcome(result.GetResultWithOwnership()) : SendRcsMessageOutcome(std::move(result.GetError()));
+}
+
 SendTextMessageOutcome PinpointSMSVoiceV2Client::SendTextMessage(const SendTextMessageRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SendTextMessageOutcome(result.GetResultWithOwnership())
@@ -869,6 +884,13 @@ SetNotifyMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::SetNotifyMes
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SetNotifyMessageSpendLimitOverrideOutcome(result.GetResultWithOwnership())
                             : SetNotifyMessageSpendLimitOverrideOutcome(std::move(result.GetError()));
+}
+
+SetRcsMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::SetRcsMessageSpendLimitOverride(
+    const SetRcsMessageSpendLimitOverrideRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetRcsMessageSpendLimitOverrideOutcome(result.GetResultWithOwnership())
+                            : SetRcsMessageSpendLimitOverrideOutcome(std::move(result.GetError()));
 }
 
 SetTextMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::SetTextMessageSpendLimitOverride(

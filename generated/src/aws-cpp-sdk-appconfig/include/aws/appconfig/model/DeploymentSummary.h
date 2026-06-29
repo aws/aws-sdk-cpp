@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appconfig/AppConfig_EXPORTS.h>
 #include <aws/appconfig/model/DeploymentState.h>
+#include <aws/appconfig/model/DeploymentType.h>
 #include <aws/appconfig/model/GrowthType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -46,6 +47,24 @@ class DeploymentSummary {
   }
   inline DeploymentSummary& WithDeploymentNumber(int value) {
     SetDeploymentNumber(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the configuration profile that was deployed.</p>
+   */
+  inline const Aws::String& GetConfigurationProfileId() const { return m_configurationProfileId; }
+  inline bool ConfigurationProfileIdHasBeenSet() const { return m_configurationProfileIdHasBeenSet; }
+  template <typename ConfigurationProfileIdT = Aws::String>
+  void SetConfigurationProfileId(ConfigurationProfileIdT&& value) {
+    m_configurationProfileIdHasBeenSet = true;
+    m_configurationProfileId = std::forward<ConfigurationProfileIdT>(value);
+  }
+  template <typename ConfigurationProfileIdT = Aws::String>
+  DeploymentSummary& WithConfigurationProfileId(ConfigurationProfileIdT&& value) {
+    SetConfigurationProfileId(std::forward<ConfigurationProfileIdT>(value));
     return *this;
   }
   ///@}
@@ -237,8 +256,26 @@ class DeploymentSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of deployment.</p>
+   */
+  inline DeploymentType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(DeploymentType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline DeploymentSummary& WithType(DeploymentType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_deploymentNumber{0};
+
+  Aws::String m_configurationProfileId;
 
   Aws::String m_configurationName;
 
@@ -261,7 +298,10 @@ class DeploymentSummary {
   Aws::Utils::DateTime m_completedAt{};
 
   Aws::String m_versionLabel;
+
+  DeploymentType m_type{DeploymentType::NOT_SET};
   bool m_deploymentNumberHasBeenSet = false;
+  bool m_configurationProfileIdHasBeenSet = false;
   bool m_configurationNameHasBeenSet = false;
   bool m_configurationVersionHasBeenSet = false;
   bool m_deploymentDurationInMinutesHasBeenSet = false;
@@ -273,6 +313,7 @@ class DeploymentSummary {
   bool m_startedAtHasBeenSet = false;
   bool m_completedAtHasBeenSet = false;
   bool m_versionLabelHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

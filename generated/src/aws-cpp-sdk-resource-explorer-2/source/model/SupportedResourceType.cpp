@@ -26,6 +26,13 @@ SupportedResourceType& SupportedResourceType::operator=(JsonView jsonValue) {
     m_resourceType = jsonValue.GetString("ResourceType");
     m_resourceTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CFNResourceTypes")) {
+    Aws::Utils::Array<JsonView> cFNResourceTypesJsonList = jsonValue.GetArray("CFNResourceTypes");
+    for (unsigned cFNResourceTypesIndex = 0; cFNResourceTypesIndex < cFNResourceTypesJsonList.GetLength(); ++cFNResourceTypesIndex) {
+      m_cFNResourceTypes.push_back(cFNResourceTypesJsonList[cFNResourceTypesIndex].AsString());
+    }
+    m_cFNResourceTypesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +45,14 @@ JsonValue SupportedResourceType::Jsonize() const {
 
   if (m_resourceTypeHasBeenSet) {
     payload.WithString("ResourceType", m_resourceType);
+  }
+
+  if (m_cFNResourceTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cFNResourceTypesJsonList(m_cFNResourceTypes.size());
+    for (unsigned cFNResourceTypesIndex = 0; cFNResourceTypesIndex < cFNResourceTypesJsonList.GetLength(); ++cFNResourceTypesIndex) {
+      cFNResourceTypesJsonList[cFNResourceTypesIndex].AsString(m_cFNResourceTypes[cFNResourceTypesIndex]);
+    }
+    payload.WithArray("CFNResourceTypes", std::move(cFNResourceTypesJsonList));
   }
 
   return payload;

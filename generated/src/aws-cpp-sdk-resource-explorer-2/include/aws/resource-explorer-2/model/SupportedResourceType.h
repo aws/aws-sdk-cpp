@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 
 #include <utility>
@@ -69,12 +70,40 @@ class SupportedResourceType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The CloudFormation resource type identifiers for this resource type, such as
+   * <code>AWS::EC2::Instance</code>.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetCFNResourceTypes() const { return m_cFNResourceTypes; }
+  inline bool CFNResourceTypesHasBeenSet() const { return m_cFNResourceTypesHasBeenSet; }
+  template <typename CFNResourceTypesT = Aws::Vector<Aws::String>>
+  void SetCFNResourceTypes(CFNResourceTypesT&& value) {
+    m_cFNResourceTypesHasBeenSet = true;
+    m_cFNResourceTypes = std::forward<CFNResourceTypesT>(value);
+  }
+  template <typename CFNResourceTypesT = Aws::Vector<Aws::String>>
+  SupportedResourceType& WithCFNResourceTypes(CFNResourceTypesT&& value) {
+    SetCFNResourceTypes(std::forward<CFNResourceTypesT>(value));
+    return *this;
+  }
+  template <typename CFNResourceTypesT = Aws::String>
+  SupportedResourceType& AddCFNResourceTypes(CFNResourceTypesT&& value) {
+    m_cFNResourceTypesHasBeenSet = true;
+    m_cFNResourceTypes.emplace_back(std::forward<CFNResourceTypesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_service;
 
   Aws::String m_resourceType;
+
+  Aws::Vector<Aws::String> m_cFNResourceTypes;
   bool m_serviceHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
+  bool m_cFNResourceTypesHasBeenSet = false;
 };
 
 }  // namespace Model

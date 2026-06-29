@@ -55,6 +55,14 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const {
     payload.WithBool("termsAccepted", m_termsAccepted);
   }
 
+  if (m_initialVlansHasBeenSet) {
+    payload.WithObject("initialVlans", m_initialVlans.Jsonize());
+  }
+
+  if (m_connectivityInfoHasBeenSet) {
+    payload.WithObject("connectivityInfo", m_connectivityInfo.Jsonize());
+  }
+
   if (m_licenseInfoHasBeenSet) {
     Aws::Utils::Array<JsonValue> licenseInfoJsonList(m_licenseInfo.size());
     for (unsigned licenseInfoIndex = 0; licenseInfoIndex < licenseInfoJsonList.GetLength(); ++licenseInfoIndex) {
@@ -63,20 +71,12 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const {
     payload.WithArray("licenseInfo", std::move(licenseInfoJsonList));
   }
 
-  if (m_initialVlansHasBeenSet) {
-    payload.WithObject("initialVlans", m_initialVlans.Jsonize());
-  }
-
   if (m_hostsHasBeenSet) {
     Aws::Utils::Array<JsonValue> hostsJsonList(m_hosts.size());
     for (unsigned hostsIndex = 0; hostsIndex < hostsJsonList.GetLength(); ++hostsIndex) {
       hostsJsonList[hostsIndex].AsObject(m_hosts[hostsIndex].Jsonize());
     }
     payload.WithArray("hosts", std::move(hostsJsonList));
-  }
-
-  if (m_connectivityInfoHasBeenSet) {
-    payload.WithObject("connectivityInfo", m_connectivityInfo.Jsonize());
   }
 
   if (m_vcfHostnamesHasBeenSet) {

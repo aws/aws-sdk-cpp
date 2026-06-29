@@ -7,6 +7,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/pinpoint-sms-voice-v2/model/RcsAgentStatus.h>
 
@@ -199,6 +200,30 @@ class DeleteRcsAgentResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The list of RCS event types that were enabled for two-way messaging on the
+   * deleted agent.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetTwoWayRcsEventsEnabled() const { return m_twoWayRcsEventsEnabled; }
+  template <typename TwoWayRcsEventsEnabledT = Aws::Vector<Aws::String>>
+  void SetTwoWayRcsEventsEnabled(TwoWayRcsEventsEnabledT&& value) {
+    m_twoWayRcsEventsEnabledHasBeenSet = true;
+    m_twoWayRcsEventsEnabled = std::forward<TwoWayRcsEventsEnabledT>(value);
+  }
+  template <typename TwoWayRcsEventsEnabledT = Aws::Vector<Aws::String>>
+  DeleteRcsAgentResult& WithTwoWayRcsEventsEnabled(TwoWayRcsEventsEnabledT&& value) {
+    SetTwoWayRcsEventsEnabled(std::forward<TwoWayRcsEventsEnabledT>(value));
+    return *this;
+  }
+  template <typename TwoWayRcsEventsEnabledT = Aws::String>
+  DeleteRcsAgentResult& AddTwoWayRcsEventsEnabled(TwoWayRcsEventsEnabledT&& value) {
+    m_twoWayRcsEventsEnabledHasBeenSet = true;
+    m_twoWayRcsEventsEnabled.emplace_back(std::forward<TwoWayRcsEventsEnabledT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -235,6 +260,8 @@ class DeleteRcsAgentResult {
 
   bool m_twoWayEnabled{false};
 
+  Aws::Vector<Aws::String> m_twoWayRcsEventsEnabled;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_rcsAgentArnHasBeenSet = false;
@@ -247,6 +274,7 @@ class DeleteRcsAgentResult {
   bool m_twoWayChannelArnHasBeenSet = false;
   bool m_twoWayChannelRoleHasBeenSet = false;
   bool m_twoWayEnabledHasBeenSet = false;
+  bool m_twoWayRcsEventsEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -123,6 +123,38 @@ class AWS_SAGEMAKERFEATURESTORERUNTIME_API SageMakerFeatureStoreRuntimeClient
   }
 
   /**
+   * <p>Writes a batch of <code>Records</code> to one or more
+   * <code>FeatureGroup</code>s. Use this API for bulk ingestion of records into the
+   * <code>OnlineStore</code> and <code>OfflineStore</code>.</p> <p>You can set the
+   * ingested records to expire at a given time to live (TTL) duration after the
+   * record's event time by specifying the <code>TtlDuration</code> parameter. A
+   * request level <code>TtlDuration</code> applies to all entries that do not
+   * specify their own <code>TtlDuration</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchWriteRecord">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchWriteRecordOutcome BatchWriteRecord(const Model::BatchWriteRecordRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchWriteRecord that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchWriteRecordRequestT = Model::BatchWriteRecordRequest>
+  Model::BatchWriteRecordOutcomeCallable BatchWriteRecordCallable(const BatchWriteRecordRequestT& request) const {
+    return SubmitCallable(&SageMakerFeatureStoreRuntimeClient::BatchWriteRecord, request);
+  }
+
+  /**
+   * An Async wrapper for BatchWriteRecord that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename BatchWriteRecordRequestT = Model::BatchWriteRecordRequest>
+  void BatchWriteRecordAsync(const BatchWriteRecordRequestT& request, const BatchWriteRecordResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerFeatureStoreRuntimeClient::BatchWriteRecord, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a <code>Record</code> from a <code>FeatureGroup</code> in the
    * <code>OnlineStore</code>. Feature Store supports both <code>SoftDelete</code>
    * and <code>HardDelete</code>. For <code>SoftDelete</code> (default), feature
@@ -150,7 +182,7 @@ class AWS_SAGEMAKERFEATURESTORERUNTIME_API SageMakerFeatureStoreRuntimeClient
    * all history of a record from the <code>OfflineStore</code> using Amazon Athena
    * or Apache Spark. For information on how to hard delete a record from the
    * <code>OfflineStore</code> with the Iceberg table format enabled, see <a
-   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-delete-records-offline-store.html#feature-store-delete-records-offline-store">Delete
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-delete-records.html#feature-store-delete-records-offline-store">Delete
    * records from the offline store</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/DeleteRecord">AWS
    * API Reference</a></p>
@@ -201,6 +233,34 @@ class AWS_SAGEMAKERFEATURESTORERUNTIME_API SageMakerFeatureStoreRuntimeClient
   void GetRecordAsync(const GetRecordRequestT& request, const GetRecordResponseReceivedHandler& handler,
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerFeatureStoreRuntimeClient::GetRecord, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the <code>RecordIdentifier</code> values of all records stored in a
+   * <code>FeatureGroup</code>'s <code>OnlineStore</code>. This enables you to
+   * discover which records exist without retrieving the full record
+   * data.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/ListRecords">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRecordsOutcome ListRecords(const Model::ListRecordsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRecords that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListRecordsRequestT = Model::ListRecordsRequest>
+  Model::ListRecordsOutcomeCallable ListRecordsCallable(const ListRecordsRequestT& request) const {
+    return SubmitCallable(&SageMakerFeatureStoreRuntimeClient::ListRecords, request);
+  }
+
+  /**
+   * An Async wrapper for ListRecords that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListRecordsRequestT = Model::ListRecordsRequest>
+  void ListRecordsAsync(const ListRecordsRequestT& request, const ListRecordsResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerFeatureStoreRuntimeClient::ListRecords, request, handler, context);
   }
 
   /**

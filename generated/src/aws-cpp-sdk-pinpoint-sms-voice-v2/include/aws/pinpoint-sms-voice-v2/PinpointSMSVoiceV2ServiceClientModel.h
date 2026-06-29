@@ -55,6 +55,8 @@
 #include <aws/pinpoint-sms-voice-v2/model/DeleteProtectConfigurationResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteProtectConfigurationRuleSetNumberOverrideResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteRcsAgentResult.h>
+#include <aws/pinpoint-sms-voice-v2/model/DeleteRcsMessageSpendLimitOverrideRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DeleteRcsMessageSpendLimitOverrideResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteRegistrationAttachmentResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteRegistrationFieldValueResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteRegistrationResult.h>
@@ -128,6 +130,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/SendMediaMessageResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/SendNotifyTextMessageResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/SendNotifyVoiceMessageResult.h>
+#include <aws/pinpoint-sms-voice-v2/model/SendRcsMessageResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/SendTextMessageResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/SendVoiceMessageResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetAccountDefaultProtectConfigurationResult.h>
@@ -136,6 +139,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/SetDefaultSenderIdResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetMediaMessageSpendLimitOverrideResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetNotifyMessageSpendLimitOverrideResult.h>
+#include <aws/pinpoint-sms-voice-v2/model/SetRcsMessageSpendLimitOverrideResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetTextMessageSpendLimitOverrideResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetVoiceMessageSpendLimitOverrideResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/SubmitRegistrationVersionResult.h>
@@ -213,6 +217,7 @@ class DeletePoolRequest;
 class DeleteProtectConfigurationRequest;
 class DeleteProtectConfigurationRuleSetNumberOverrideRequest;
 class DeleteRcsAgentRequest;
+class DeleteRcsMessageSpendLimitOverrideRequest;
 class DeleteRegistrationRequest;
 class DeleteRegistrationAttachmentRequest;
 class DeleteRegistrationFieldValueRequest;
@@ -267,6 +272,7 @@ class SendDestinationNumberVerificationCodeRequest;
 class SendMediaMessageRequest;
 class SendNotifyTextMessageRequest;
 class SendNotifyVoiceMessageRequest;
+class SendRcsMessageRequest;
 class SendTextMessageRequest;
 class SendVoiceMessageRequest;
 class SetAccountDefaultProtectConfigurationRequest;
@@ -275,6 +281,7 @@ class SetDefaultMessageTypeRequest;
 class SetDefaultSenderIdRequest;
 class SetMediaMessageSpendLimitOverrideRequest;
 class SetNotifyMessageSpendLimitOverrideRequest;
+class SetRcsMessageSpendLimitOverrideRequest;
 class SetTextMessageSpendLimitOverrideRequest;
 class SetVoiceMessageSpendLimitOverrideRequest;
 class SubmitRegistrationVersionRequest;
@@ -326,6 +333,7 @@ typedef Aws::Utils::Outcome<DeleteProtectConfigurationResult, PinpointSMSVoiceV2
 typedef Aws::Utils::Outcome<DeleteProtectConfigurationRuleSetNumberOverrideResult, PinpointSMSVoiceV2Error>
     DeleteProtectConfigurationRuleSetNumberOverrideOutcome;
 typedef Aws::Utils::Outcome<DeleteRcsAgentResult, PinpointSMSVoiceV2Error> DeleteRcsAgentOutcome;
+typedef Aws::Utils::Outcome<DeleteRcsMessageSpendLimitOverrideResult, PinpointSMSVoiceV2Error> DeleteRcsMessageSpendLimitOverrideOutcome;
 typedef Aws::Utils::Outcome<DeleteRegistrationResult, PinpointSMSVoiceV2Error> DeleteRegistrationOutcome;
 typedef Aws::Utils::Outcome<DeleteRegistrationAttachmentResult, PinpointSMSVoiceV2Error> DeleteRegistrationAttachmentOutcome;
 typedef Aws::Utils::Outcome<DeleteRegistrationFieldValueResult, PinpointSMSVoiceV2Error> DeleteRegistrationFieldValueOutcome;
@@ -387,6 +395,7 @@ typedef Aws::Utils::Outcome<SendDestinationNumberVerificationCodeResult, Pinpoin
 typedef Aws::Utils::Outcome<SendMediaMessageResult, PinpointSMSVoiceV2Error> SendMediaMessageOutcome;
 typedef Aws::Utils::Outcome<SendNotifyTextMessageResult, PinpointSMSVoiceV2Error> SendNotifyTextMessageOutcome;
 typedef Aws::Utils::Outcome<SendNotifyVoiceMessageResult, PinpointSMSVoiceV2Error> SendNotifyVoiceMessageOutcome;
+typedef Aws::Utils::Outcome<SendRcsMessageResult, PinpointSMSVoiceV2Error> SendRcsMessageOutcome;
 typedef Aws::Utils::Outcome<SendTextMessageResult, PinpointSMSVoiceV2Error> SendTextMessageOutcome;
 typedef Aws::Utils::Outcome<SendVoiceMessageResult, PinpointSMSVoiceV2Error> SendVoiceMessageOutcome;
 typedef Aws::Utils::Outcome<SetAccountDefaultProtectConfigurationResult, PinpointSMSVoiceV2Error>
@@ -396,6 +405,7 @@ typedef Aws::Utils::Outcome<SetDefaultMessageTypeResult, PinpointSMSVoiceV2Error
 typedef Aws::Utils::Outcome<SetDefaultSenderIdResult, PinpointSMSVoiceV2Error> SetDefaultSenderIdOutcome;
 typedef Aws::Utils::Outcome<SetMediaMessageSpendLimitOverrideResult, PinpointSMSVoiceV2Error> SetMediaMessageSpendLimitOverrideOutcome;
 typedef Aws::Utils::Outcome<SetNotifyMessageSpendLimitOverrideResult, PinpointSMSVoiceV2Error> SetNotifyMessageSpendLimitOverrideOutcome;
+typedef Aws::Utils::Outcome<SetRcsMessageSpendLimitOverrideResult, PinpointSMSVoiceV2Error> SetRcsMessageSpendLimitOverrideOutcome;
 typedef Aws::Utils::Outcome<SetTextMessageSpendLimitOverrideResult, PinpointSMSVoiceV2Error> SetTextMessageSpendLimitOverrideOutcome;
 typedef Aws::Utils::Outcome<SetVoiceMessageSpendLimitOverrideResult, PinpointSMSVoiceV2Error> SetVoiceMessageSpendLimitOverrideOutcome;
 typedef Aws::Utils::Outcome<SubmitRegistrationVersionResult, PinpointSMSVoiceV2Error> SubmitRegistrationVersionOutcome;
@@ -444,6 +454,7 @@ typedef std::future<DeletePoolOutcome> DeletePoolOutcomeCallable;
 typedef std::future<DeleteProtectConfigurationOutcome> DeleteProtectConfigurationOutcomeCallable;
 typedef std::future<DeleteProtectConfigurationRuleSetNumberOverrideOutcome> DeleteProtectConfigurationRuleSetNumberOverrideOutcomeCallable;
 typedef std::future<DeleteRcsAgentOutcome> DeleteRcsAgentOutcomeCallable;
+typedef std::future<DeleteRcsMessageSpendLimitOverrideOutcome> DeleteRcsMessageSpendLimitOverrideOutcomeCallable;
 typedef std::future<DeleteRegistrationOutcome> DeleteRegistrationOutcomeCallable;
 typedef std::future<DeleteRegistrationAttachmentOutcome> DeleteRegistrationAttachmentOutcomeCallable;
 typedef std::future<DeleteRegistrationFieldValueOutcome> DeleteRegistrationFieldValueOutcomeCallable;
@@ -498,6 +509,7 @@ typedef std::future<SendDestinationNumberVerificationCodeOutcome> SendDestinatio
 typedef std::future<SendMediaMessageOutcome> SendMediaMessageOutcomeCallable;
 typedef std::future<SendNotifyTextMessageOutcome> SendNotifyTextMessageOutcomeCallable;
 typedef std::future<SendNotifyVoiceMessageOutcome> SendNotifyVoiceMessageOutcomeCallable;
+typedef std::future<SendRcsMessageOutcome> SendRcsMessageOutcomeCallable;
 typedef std::future<SendTextMessageOutcome> SendTextMessageOutcomeCallable;
 typedef std::future<SendVoiceMessageOutcome> SendVoiceMessageOutcomeCallable;
 typedef std::future<SetAccountDefaultProtectConfigurationOutcome> SetAccountDefaultProtectConfigurationOutcomeCallable;
@@ -506,6 +518,7 @@ typedef std::future<SetDefaultMessageTypeOutcome> SetDefaultMessageTypeOutcomeCa
 typedef std::future<SetDefaultSenderIdOutcome> SetDefaultSenderIdOutcomeCallable;
 typedef std::future<SetMediaMessageSpendLimitOverrideOutcome> SetMediaMessageSpendLimitOverrideOutcomeCallable;
 typedef std::future<SetNotifyMessageSpendLimitOverrideOutcome> SetNotifyMessageSpendLimitOverrideOutcomeCallable;
+typedef std::future<SetRcsMessageSpendLimitOverrideOutcome> SetRcsMessageSpendLimitOverrideOutcomeCallable;
 typedef std::future<SetTextMessageSpendLimitOverrideOutcome> SetTextMessageSpendLimitOverrideOutcomeCallable;
 typedef std::future<SetVoiceMessageSpendLimitOverrideOutcome> SetVoiceMessageSpendLimitOverrideOutcomeCallable;
 typedef std::future<SubmitRegistrationVersionOutcome> SubmitRegistrationVersionOutcomeCallable;
@@ -625,6 +638,10 @@ typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::DeleteP
 typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::DeleteRcsAgentRequest&, const Model::DeleteRcsAgentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRcsAgentResponseReceivedHandler;
+typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::DeleteRcsMessageSpendLimitOverrideRequest&,
+                           const Model::DeleteRcsMessageSpendLimitOverrideOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteRcsMessageSpendLimitOverrideResponseReceivedHandler;
 typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::DeleteRegistrationRequest&,
                            const Model::DeleteRegistrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRegistrationResponseReceivedHandler;
@@ -810,6 +827,9 @@ typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::SendNot
 typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::SendNotifyVoiceMessageRequest&,
                            const Model::SendNotifyVoiceMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SendNotifyVoiceMessageResponseReceivedHandler;
+typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::SendRcsMessageRequest&, const Model::SendRcsMessageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SendRcsMessageResponseReceivedHandler;
 typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::SendTextMessageRequest&, const Model::SendTextMessageOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SendTextMessageResponseReceivedHandler;
@@ -838,6 +858,10 @@ typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::SetNoti
                            const Model::SetNotifyMessageSpendLimitOverrideOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SetNotifyMessageSpendLimitOverrideResponseReceivedHandler;
+typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::SetRcsMessageSpendLimitOverrideRequest&,
+                           const Model::SetRcsMessageSpendLimitOverrideOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SetRcsMessageSpendLimitOverrideResponseReceivedHandler;
 typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::SetTextMessageSpendLimitOverrideRequest&,
                            const Model::SetTextMessageSpendLimitOverrideOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

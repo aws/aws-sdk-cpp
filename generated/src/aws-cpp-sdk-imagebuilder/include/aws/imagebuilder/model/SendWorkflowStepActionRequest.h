@@ -50,8 +50,10 @@ class SendWorkflowStepActionRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the image build version to send action
-   * for.</p>
+   * <p>The Amazon Resource Name (ARN) of the image build version associated with the
+   * workflow step execution. This value must match the image that owns the waiting
+   * step. If the ARN does not correspond to the image running the workflow, then the
+   * request fails with a validation error.</p>
    */
   inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
   inline bool ImageBuildVersionArnHasBeenSet() const { return m_imageBuildVersionArnHasBeenSet; }
@@ -69,9 +71,9 @@ class SendWorkflowStepActionRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The action for the image creation process to take while a workflow
-   * <code>WaitForAction</code> step waits for an asynchronous action to
-   * complete.</p>
+   * <p>The action to perform on the paused workflow step. The workflow step must be
+   * in a waiting state to accept an action. The request fails if the step has
+   * already timed out or been actioned.</p>
    */
   inline WorkflowStepActionType GetAction() const { return m_action; }
   inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
@@ -87,7 +89,9 @@ class SendWorkflowStepActionRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The reason why this action is sent.</p>
+   * <p>The reason for the action. This value is stored with the step execution
+   * record and is accessible in subsequent workflow steps via step output
+   * references.</p>
    */
   inline const Aws::String& GetReason() const { return m_reason; }
   inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }

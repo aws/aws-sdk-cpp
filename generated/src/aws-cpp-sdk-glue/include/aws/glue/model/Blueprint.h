@@ -167,7 +167,7 @@ class Blueprint {
   /**
    * <p>The status of the blueprint registration.</p> <ul> <li> <p>Creating — The
    * blueprint registration is in progress.</p> </li> <li> <p>Active — The blueprint
-   * has been successfully registered.</p> </li> <li> <p>Updating �� An update to the
+   * has been successfully registered.</p> </li> <li> <p>Updating — An update to the
    * blueprint registration is in progress.</p> </li> <li> <p>Failed — The blueprint
    * registration failed.</p> </li> </ul>
    */

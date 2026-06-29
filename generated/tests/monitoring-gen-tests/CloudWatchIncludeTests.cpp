@@ -105,6 +105,7 @@
 #include <aws/monitoring/model/ListMetricsResult.h>
 #include <aws/monitoring/model/ListTagsForResourceRequest.h>
 #include <aws/monitoring/model/ListTagsForResourceResult.h>
+#include <aws/monitoring/model/LogAlarm.h>
 #include <aws/monitoring/model/ManagedRule.h>
 #include <aws/monitoring/model/ManagedRuleDescription.h>
 #include <aws/monitoring/model/ManagedRuleState.h>
@@ -133,6 +134,7 @@
 #include <aws/monitoring/model/PutDashboardResult.h>
 #include <aws/monitoring/model/PutInsightRuleRequest.h>
 #include <aws/monitoring/model/PutInsightRuleResult.h>
+#include <aws/monitoring/model/PutLogAlarmRequest.h>
 #include <aws/monitoring/model/PutManagedInsightRulesRequest.h>
 #include <aws/monitoring/model/PutManagedInsightRulesResult.h>
 #include <aws/monitoring/model/PutMetricAlarmRequest.h>
@@ -146,6 +148,8 @@
 #include <aws/monitoring/model/Rule.h>
 #include <aws/monitoring/model/ScanBy.h>
 #include <aws/monitoring/model/Schedule.h>
+#include <aws/monitoring/model/ScheduleConfiguration.h>
+#include <aws/monitoring/model/ScheduledQueryConfiguration.h>
 #include <aws/monitoring/model/SetAlarmStateRequest.h>
 #include <aws/monitoring/model/SingleMetricAnomalyDetector.h>
 #include <aws/monitoring/model/StandardUnit.h>

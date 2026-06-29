@@ -639,8 +639,9 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>DistributeImage distributes existing AMIs to additional regions and accounts
-   * without rebuilding the image.</p><p><h3>See Also:</h3>   <a
+   * <p>Distributes an existing AMI to target Regions and accounts without running
+   * the full image build process. This operation only runs the distribution phase on
+   * an image that has already been built.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DistributeImage">AWS
    * API Reference</a></p>
    */

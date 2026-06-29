@@ -58,7 +58,7 @@ class PutDashboardRequest : public CloudWatchRequest {
    * <p>The detailed information about the dashboard in JSON format, including the
    * widgets to include and their location on the dashboard. This parameter is
    * required.</p> <p>For more information about the syntax, see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Dashboard-Body-Structure.html">Dashboard
    * Body Structure and Syntax</a>.</p>
    */
   inline const Aws::String& GetDashboardBody() const { return m_dashboardBody; }

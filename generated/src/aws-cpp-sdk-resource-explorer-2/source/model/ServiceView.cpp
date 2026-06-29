@@ -46,6 +46,10 @@ ServiceView& ServiceView::operator=(JsonView jsonValue) {
     m_scopeType = jsonValue.GetString("ScopeType");
     m_scopeTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ServiceLinkedRecorder")) {
+    m_serviceLinkedRecorder = jsonValue.GetObject("ServiceLinkedRecorder");
+    m_serviceLinkedRecorderHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -79,6 +83,10 @@ JsonValue ServiceView::Jsonize() const {
 
   if (m_scopeTypeHasBeenSet) {
     payload.WithString("ScopeType", m_scopeType);
+  }
+
+  if (m_serviceLinkedRecorderHasBeenSet) {
+    payload.WithObject("ServiceLinkedRecorder", m_serviceLinkedRecorder.Jsonize());
   }
 
   return payload;

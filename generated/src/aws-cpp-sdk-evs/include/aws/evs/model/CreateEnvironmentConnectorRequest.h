@@ -74,7 +74,13 @@ class CreateEnvironmentConnectorRequest : public EVSRequest {
 
   ///@{
   /**
-   * <p>The type of connector to create.</p>
+   * <p>The type of connector to create.</p> <ul> <li> <p>
+   * <code>OPERATIONS_MANAGER</code>: Connector to an Operations Manager appliance.
+   * Required for VCF 9x environments.</p> </li> <li> <p> <code>SDDC_MANAGER</code>:
+   * Connector to an SDDC Manager appliance. Required for VCF 5.x environments.</p>
+   * </li> <li> <p> <code>VCENTER</code>: Connector to a vCenter Server appliance.
+   * Required for features that depend on vCenter, such as Windows Server
+   * license-included.</p> </li> </ul>
    */
   inline ConnectorType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -110,9 +116,12 @@ class CreateEnvironmentConnectorRequest : public EVSRequest {
   ///@{
   /**
    * <p>The ARN or name of the Amazon Web Services Secrets Manager secret that stores
-   * the credentials for the VCF appliance.</p>  <p>Do not use credentials
-   * with Administrator privileges. We recommend using a service account with the
-   * minimum required permissions.</p>
+   * the credentials for the VCF appliance. <code>SDDC_MANAGER</code> requires an
+   * <code>apiKey</code> field; <code>OPERATIONS_MANAGER</code> and
+   * <code>VCENTER</code> require <code>username</code> and <code>password</code>
+   * fields.</p>  <p>Do not use credentials with Administrator privileges.
+   * We recommend using a service account with read-only permissions.</p>
+   *
    */
   inline const Aws::String& GetSecretIdentifier() const { return m_secretIdentifier; }
   inline bool SecretIdentifierHasBeenSet() const { return m_secretIdentifierHasBeenSet; }

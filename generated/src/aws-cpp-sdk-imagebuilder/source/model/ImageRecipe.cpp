@@ -91,6 +91,13 @@ ImageRecipe& ImageRecipe::operator=(JsonView jsonValue) {
     }
     m_amiTagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("amiWatermarks")) {
+    Aws::Utils::Array<JsonView> amiWatermarksJsonList = jsonValue.GetArray("amiWatermarks");
+    for (unsigned amiWatermarksIndex = 0; amiWatermarksIndex < amiWatermarksJsonList.GetLength(); ++amiWatermarksIndex) {
+      m_amiWatermarks.push_back(amiWatermarksJsonList[amiWatermarksIndex].AsString());
+    }
+    m_amiWatermarksHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -172,6 +179,14 @@ JsonValue ImageRecipe::Jsonize() const {
       amiTagsJsonMap.WithString(amiTagsItem.first, amiTagsItem.second);
     }
     payload.WithObject("amiTags", std::move(amiTagsJsonMap));
+  }
+
+  if (m_amiWatermarksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> amiWatermarksJsonList(m_amiWatermarks.size());
+    for (unsigned amiWatermarksIndex = 0; amiWatermarksIndex < amiWatermarksJsonList.GetLength(); ++amiWatermarksIndex) {
+      amiWatermarksJsonList[amiWatermarksIndex].AsString(m_amiWatermarks[amiWatermarksIndex]);
+    }
+    payload.WithArray("amiWatermarks", std::move(amiWatermarksJsonList));
   }
 
   return payload;

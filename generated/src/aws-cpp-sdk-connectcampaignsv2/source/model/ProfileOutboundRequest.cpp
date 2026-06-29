@@ -30,6 +30,10 @@ ProfileOutboundRequest& ProfileOutboundRequest::operator=(JsonView jsonValue) {
     m_expirationTime = jsonValue.GetString("expirationTime");
     m_expirationTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("eventTriggerContext")) {
+    m_eventTriggerContext = jsonValue.GetObject("eventTriggerContext");
+    m_eventTriggerContextHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue ProfileOutboundRequest::Jsonize() const {
 
   if (m_expirationTimeHasBeenSet) {
     payload.WithString("expirationTime", m_expirationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_eventTriggerContextHasBeenSet) {
+    payload.WithObject("eventTriggerContext", m_eventTriggerContext.Jsonize());
   }
 
   return payload;

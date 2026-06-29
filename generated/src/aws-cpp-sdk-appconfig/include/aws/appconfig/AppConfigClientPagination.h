@@ -10,6 +10,9 @@
 #include <aws/appconfig/model/ListDeploymentStrategiesPaginationTraits.h>
 #include <aws/appconfig/model/ListDeploymentsPaginationTraits.h>
 #include <aws/appconfig/model/ListEnvironmentsPaginationTraits.h>
+#include <aws/appconfig/model/ListExperimentDefinitionsPaginationTraits.h>
+#include <aws/appconfig/model/ListExperimentRunEventsPaginationTraits.h>
+#include <aws/appconfig/model/ListExperimentRunsPaginationTraits.h>
 #include <aws/appconfig/model/ListExtensionAssociationsPaginationTraits.h>
 #include <aws/appconfig/model/ListExtensionsPaginationTraits.h>
 #include <aws/appconfig/model/ListHostedConfigurationVersionsPaginationTraits.h>
@@ -30,6 +33,14 @@ using ListDeploymentStrategiesPaginator =
                                       Pagination::ListDeploymentStrategiesPaginationTraits<AppConfigClient>>;
 using ListEnvironmentsPaginator = Aws::Utils::Pagination::Paginator<AppConfigClient, Model::ListEnvironmentsRequest,
                                                                     Pagination::ListEnvironmentsPaginationTraits<AppConfigClient>>;
+using ListExperimentDefinitionsPaginator =
+    Aws::Utils::Pagination::Paginator<AppConfigClient, Model::ListExperimentDefinitionsRequest,
+                                      Pagination::ListExperimentDefinitionsPaginationTraits<AppConfigClient>>;
+using ListExperimentRunEventsPaginator =
+    Aws::Utils::Pagination::Paginator<AppConfigClient, Model::ListExperimentRunEventsRequest,
+                                      Pagination::ListExperimentRunEventsPaginationTraits<AppConfigClient>>;
+using ListExperimentRunsPaginator = Aws::Utils::Pagination::Paginator<AppConfigClient, Model::ListExperimentRunsRequest,
+                                                                      Pagination::ListExperimentRunsPaginationTraits<AppConfigClient>>;
 using ListExtensionAssociationsPaginator =
     Aws::Utils::Pagination::Paginator<AppConfigClient, Model::ListExtensionAssociationsRequest,
                                       Pagination::ListExtensionAssociationsPaginationTraits<AppConfigClient>>;

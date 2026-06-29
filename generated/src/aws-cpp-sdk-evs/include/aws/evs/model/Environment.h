@@ -311,8 +311,7 @@ class Environment {
 
   ///@{
   /**
-   * <p>A check on the environment to identify instance health and VMware VCF
-   * licensing issues.</p>
+   * <p>A check on the environment to identify connector health.</p>
    */
   inline const Aws::Vector<Check>& GetChecks() const { return m_checks; }
   inline bool ChecksHasBeenSet() const { return m_checksHasBeenSet; }
