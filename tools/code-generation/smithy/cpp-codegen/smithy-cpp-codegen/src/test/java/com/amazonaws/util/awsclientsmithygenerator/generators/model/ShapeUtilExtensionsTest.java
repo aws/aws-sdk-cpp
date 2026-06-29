@@ -34,6 +34,12 @@ class ShapeUtilExtensionsTest {
     }
 
     @Test
+    void hardcodedCollisionResolution_medialiveBatchUpdateScheduleResult_emptyString() {
+        assertEquals("",
+            ShapeUtil.getHardcodedResolution("medialive", "BatchUpdateScheduleResult"));
+    }
+
+    @Test
     void shapeCppName_numericPrefix() {
         assertEquals("The1stShape", ShapeUtil.getShapeCppName("1stShape", "someservice"));
     }
@@ -41,5 +47,17 @@ class ShapeUtilExtensionsTest {
     @Test
     void shapeCppName_normalName_unchanged() {
         assertEquals("MyShape", ShapeUtil.getShapeCppName("MyShape", "someservice"));
+    }
+
+    @Test
+    void shapeCppName_medialiveBatchUpdateScheduleResult_removedShape_returnsEmpty() {
+        assertEquals("",
+            ShapeUtil.getShapeCppName("BatchUpdateScheduleResult", "medialive"));
+    }
+
+    @Test
+    void shapeCppName_withHardcodedResolution_s3CopyObjectResult() {
+        assertEquals("CopyObjectResultDetails",
+            ShapeUtil.getShapeCppName("CopyObjectResult", "s3"));
     }
 }

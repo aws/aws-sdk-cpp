@@ -104,11 +104,14 @@ public class ShapeUtil {
     /**
      * Returns the C++ class name for a shape, applying numeric prefix rules.
      * Shapes starting with a digit get "The" prepended (C2J behavior).
+     * Empty strings returned from hardcoded resolutions indicate shapes that are removed from the model.
      */
     public static String getShapeCppName(String shapeName, String smithyServiceName) {
         // Check hardcoded resolutions first
         String resolved = getHardcodedResolution(smithyServiceName, shapeName);
-        if (resolved != null) return resolved;
+        if (resolved != null && !resolved.isEmpty()) return resolved;
+        // If resolved is an empty string, it indicates the shape is removed from the model
+        if (resolved != null && resolved.isEmpty()) return "";
         // Numeric prefix: shapes starting with a digit get "The" prepended
         if (!shapeName.isEmpty() && Character.isDigit(shapeName.charAt(0))) {
             return "The" + shapeName;
