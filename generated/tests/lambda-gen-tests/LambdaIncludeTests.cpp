@@ -142,6 +142,7 @@
 #include <aws/lambda/model/FullDocument.h>
 #include <aws/lambda/model/FunctionCode.h>
 #include <aws/lambda/model/FunctionCodeLocation.h>
+#include <aws/lambda/model/FunctionCodeLocationError.h>
 #include <aws/lambda/model/FunctionConfiguration.h>
 #include <aws/lambda/model/FunctionEventInvokeConfig.h>
 #include <aws/lambda/model/FunctionResponseType.h>
@@ -310,6 +311,7 @@
 #include <aws/lambda/model/RemoveLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/RemovePermissionRequest.h>
 #include <aws/lambda/model/RequestTooLargeException.h>
+#include <aws/lambda/model/ResolvedS3Object.h>
 #include <aws/lambda/model/ResourceConflictException.h>
 #include <aws/lambda/model/ResourceInUseException.h>
 #include <aws/lambda/model/ResourceNotFoundException.h>
@@ -322,6 +324,7 @@
 #include <aws/lambda/model/S3FilesMountConnectivityException.h>
 #include <aws/lambda/model/S3FilesMountFailureException.h>
 #include <aws/lambda/model/S3FilesMountTimeoutException.h>
+#include <aws/lambda/model/S3ObjectStorageMode.h>
 #include <aws/lambda/model/ScalingConfig.h>
 #include <aws/lambda/model/SchemaRegistryEventRecordFormat.h>
 #include <aws/lambda/model/SelfManagedEventSource.h>

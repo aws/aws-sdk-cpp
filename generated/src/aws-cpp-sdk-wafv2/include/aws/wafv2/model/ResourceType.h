@@ -18,7 +18,8 @@ enum class ResourceType {
   COGNITO_USER_POOL,
   APP_RUNNER_SERVICE,
   VERIFIED_ACCESS_INSTANCE,
-  AMPLIFY
+  AMPLIFY,
+  AGENTCORE_GATEWAY
 };
 
 namespace ResourceTypeMapper {

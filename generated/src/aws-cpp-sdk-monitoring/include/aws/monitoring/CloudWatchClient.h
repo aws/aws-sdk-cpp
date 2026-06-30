@@ -16,19 +16,35 @@
 namespace Aws {
 namespace CloudWatch {
 /**
- * <p>Amazon CloudWatch monitors your Amazon Web Services (Amazon Web Services)
- * resources and the applications you run on Amazon Web Services in real time. You
- * can use CloudWatch to collect and track metrics, which are the variables you
- * want to measure for your resources and applications.</p> <p>CloudWatch alarms
- * send notifications or automatically change the resources you are monitoring
- * based on rules that you define. For example, you can monitor the CPU usage and
- * disk reads and writes of your Amazon EC2 instances. Then, use this data to
- * determine whether you should launch additional instances to handle increased
- * load. You can also use this data to stop under-used instances to save money.</p>
- * <p>In addition to monitoring the built-in metrics that come with Amazon Web
- * Services, you can monitor your own custom metrics. With CloudWatch, you gain
- * system-wide visibility into resource utilization, application performance, and
- * operational health.</p>
+ * <p>Amazon CloudWatch enables you to publish, monitor, and manage various
+ * metrics, as well as configure alarm actions based on data from metrics. This
+ * guide provides detailed information about CloudWatch actions, data types,
+ * parameters, and errors. For more information about CloudWatch features, see <a
+ * href="https://aws.amazon.com/cloudwatch">Amazon CloudWatch</a> and the <i>Amazon
+ * CloudWatch User Guide</i>.</p> <p>For information about the metrics that other
+ * Amazon Web Services products send to CloudWatch, see the <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon
+ * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
+ * Guide</i>.</p> <p>Use the following links to get started using the CloudWatch
+ * Query API:</p> <p>: An alphabetical list of all CloudWatch actions.</p> <p>: An
+ * alphabetical list of all CloudWatch data types.</p> <p> <a>CommonParameters</a>:
+ * Parameters that all Query actions can use.</p> <p> <a>CommonErrors</a>: Client
+ * and server errors that all actions can return.</p> <p> <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Regions
+ * and Endpoints</a>: Supported regions and endpoints for all Amazon Web Services
+ * products.</p> <p>Alternatively, you can use one of the <a
+ * href="https://aws.amazon.com/tools/#sdk">Amazon Web Services SDKs</a> to access
+ * CloudWatch using an API tailored to your programming language or platform.</p>
+ * <p>Developers in the Amazon Web Services developer community also provide their
+ * own libraries, which you can find at the following Amazon Web Services developer
+ * centers:</p> <p> <a href="http://aws.amazon.com/java/">Java Developer Center</a>
+ * </p> <p> <a href="http://aws.amazon.com/javascript/">JavaScript Developer
+ * Center</a> </p> <p> <a href="http://aws.amazon.com/mobile/">Amazon Web Services
+ * Mobile Services</a> </p> <p> <a href="http://aws.amazon.com/php/">PHP Developer
+ * Center</a> </p> <p> <a href="http://aws.amazon.com/python/">Python Developer
+ * Center</a> </p> <p> <a href="http://aws.amazon.com/ruby/">Ruby Developer
+ * Center</a> </p> <p> <a href="http://aws.amazon.com/net/">Windows and .NET
+ * Developer Center</a> </p>
  */
 class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient>,
@@ -197,10 +213,11 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
    * <p>Deletes the specified alarms. You can delete up to 100 alarms in one
    * operation. However, this total can include no more than one composite alarm. For
    * example, you could delete 99 metric alarms and one composite alarms with one
-   * operation, but you can't delete two composite alarms with one operation.</p> <p>
-   * If you specify any incorrect alarm names, the alarms you specify with correct
-   * names are still deleted. Other syntax errors might result in no alarms being
-   * deleted. To confirm that alarms were deleted successfully, you can use the <a
+   * operation, but you can't delete two composite alarms with one operation. Log
+   * alarms cannot be batch deleted.</p> <p> If you specify any incorrect alarm
+   * names, the alarms you specify with correct names are still deleted. Other syntax
+   * errors might result in no alarms being deleted. To confirm that alarms were
+   * deleted successfully, you can use the <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
    * operation after using <code>DeleteAlarms</code>.</p>  <p>It is possible to
    * create a loop or cycle of composite alarms, where composite alarm A depends on
@@ -1502,6 +1519,53 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   void PutInsightRuleAsync(const PutInsightRuleRequestT& request, const PutInsightRuleResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchClient::PutInsightRule, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates a log alarm. A log alarm evaluates the results of a
+   * CloudWatch Logs scheduled query against the configured threshold and comparison
+   * operator to determine its state.</p> <p>When you create a log alarm, the
+   * operation creates a service-managed CloudWatch Logs scheduled query that runs
+   * the query string you provide on the schedule you configure. Each scheduled query
+   * execution returns one or more aggregated values determined by the
+   * <code>AggregationExpression</code>, and each aggregated value is compared
+   * against the alarm <code>Threshold</code> to determine the alarm state. The alarm
+   * uses M-out-of-N evaluation: if <code>QueryResultsToAlarm</code> out of the most
+   * recent <code>QueryResultsToEvaluate</code> query results breach the threshold,
+   * the alarm transitions to <code>ALARM</code>.</p> <p>Log alarms support the alarm
+   * states (<code>OK</code>, <code>ALARM</code>, <code>INSUFFICIENT_DATA</code>).
+   * Configure transition actions using <code>OKActions</code>,
+   * <code>AlarmActions</code>, and <code>InsufficientDataActions</code>.</p> <p>If
+   * you call this operation with the name of an existing log alarm, the operation
+   * replaces the previous configuration of that alarm.</p> <p> <b>Permissions</b>
+   * </p> <p>To create or update a log alarm, you must have the
+   * <code>cloudwatch:PutLogAlarm</code> permission. The IAM role specified in
+   * <code>ScheduledQueryRoleARN</code> must grant the CloudWatch Alarms service
+   * permission to execute scheduled queries on the specified log groups. If you set
+   * <code>ActionLogLineCount</code>, the role specified in
+   * <code>ActionLogLineRoleArn</code> must grant permission to retrieve log events
+   * for inclusion in alarm notifications.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutLogAlarm">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutLogAlarmOutcome PutLogAlarm(const Model::PutLogAlarmRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutLogAlarm that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename PutLogAlarmRequestT = Model::PutLogAlarmRequest>
+  Model::PutLogAlarmOutcomeCallable PutLogAlarmCallable(const PutLogAlarmRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::PutLogAlarm, request);
+  }
+
+  /**
+   * An Async wrapper for PutLogAlarm that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename PutLogAlarmRequestT = Model::PutLogAlarmRequest>
+  void PutLogAlarmAsync(const PutLogAlarmRequestT& request, const PutLogAlarmResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::PutLogAlarm, request, handler, context);
   }
 
   /**

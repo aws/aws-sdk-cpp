@@ -134,6 +134,25 @@ class CreatePlacementGroupRequest : public EC2Request {
 
   ///@{
   /**
+   * <p>The ID of a parent placement group. Valid only when <b>Strategy</b> is set to
+   * <code>cluster</code>.</p>
+   */
+  inline const Aws::String& GetParentGroupId() const { return m_parentGroupId; }
+  inline bool ParentGroupIdHasBeenSet() const { return m_parentGroupIdHasBeenSet; }
+  template <typename ParentGroupIdT = Aws::String>
+  void SetParentGroupId(ParentGroupIdT&& value) {
+    m_parentGroupIdHasBeenSet = true;
+    m_parentGroupId = std::forward<ParentGroupIdT>(value);
+  }
+  template <typename ParentGroupIdT = Aws::String>
+  CreatePlacementGroupRequest& WithParentGroupId(ParentGroupIdT&& value) {
+    SetParentGroupId(std::forward<ParentGroupIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Checks whether you have the required permissions for the operation, without
    * actually making the request, and provides an error response. If you have the
    * required permissions, the error response is <code>DryRunOperation</code>.
@@ -196,6 +215,8 @@ class CreatePlacementGroupRequest : public EC2Request {
 
   OperatorRequest m_operator;
 
+  Aws::String m_parentGroupId;
+
   bool m_dryRun{false};
 
   Aws::String m_groupName;
@@ -206,6 +227,7 @@ class CreatePlacementGroupRequest : public EC2Request {
   bool m_spreadLevelHasBeenSet = false;
   bool m_linkedGroupIdHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
+  bool m_parentGroupIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
   bool m_strategyHasBeenSet = false;

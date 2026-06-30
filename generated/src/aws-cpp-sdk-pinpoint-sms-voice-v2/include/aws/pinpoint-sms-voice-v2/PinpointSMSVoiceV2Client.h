@@ -1058,6 +1058,38 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
   }
 
   /**
+   * <p>Deletes an account-level monthly spending limit override for sending RCS
+   * messages. Deleting a spend limit override sets the <code>EnforcedLimit</code> to
+   * equal the <code>MaxLimit</code>, which is set by Amazon Web
+   * Services.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRcsMessageSpendLimitOverride">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRcsMessageSpendLimitOverrideOutcome DeleteRcsMessageSpendLimitOverride(
+      const Model::DeleteRcsMessageSpendLimitOverrideRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DeleteRcsMessageSpendLimitOverride that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteRcsMessageSpendLimitOverrideRequestT = Model::DeleteRcsMessageSpendLimitOverrideRequest>
+  Model::DeleteRcsMessageSpendLimitOverrideOutcomeCallable DeleteRcsMessageSpendLimitOverrideCallable(
+      const DeleteRcsMessageSpendLimitOverrideRequestT& request = {}) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteRcsMessageSpendLimitOverride, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRcsMessageSpendLimitOverride that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteRcsMessageSpendLimitOverrideRequestT = Model::DeleteRcsMessageSpendLimitOverrideRequest>
+  void DeleteRcsMessageSpendLimitOverrideAsync(const DeleteRcsMessageSpendLimitOverrideResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                               const DeleteRcsMessageSpendLimitOverrideRequestT& request = {}) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteRcsMessageSpendLimitOverride, request, handler, context);
+  }
+
+  /**
    * <p>Permanently delete an existing registration from your account.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistration">AWS
@@ -2720,6 +2752,33 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
   }
 
   /**
+   * <p>Creates a new RCS message and sends it to a recipient's phone number. RCS
+   * messages support rich content including text, files, rich cards, and carousels
+   * with interactive suggested actions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendRcsMessage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendRcsMessageOutcome SendRcsMessage(const Model::SendRcsMessageRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendRcsMessage that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SendRcsMessageRequestT = Model::SendRcsMessageRequest>
+  Model::SendRcsMessageOutcomeCallable SendRcsMessageCallable(const SendRcsMessageRequestT& request) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::SendRcsMessage, request);
+  }
+
+  /**
+   * An Async wrapper for SendRcsMessage that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SendRcsMessageRequestT = Model::SendRcsMessageRequest>
+  void SendRcsMessageAsync(const SendRcsMessageRequestT& request, const SendRcsMessageResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::SendRcsMessage, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new text message and sends it to a recipient's phone number.
    * SendTextMessage only sends an SMS message to one recipient each time it is
    * invoked.</p> <p>SMS throughput limits are measured in Message Parts per Second
@@ -2966,6 +3025,38 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
                                                const SetNotifyMessageSpendLimitOverrideResponseReceivedHandler& handler,
                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PinpointSMSVoiceV2Client::SetNotifyMessageSpendLimitOverride, request, handler, context);
+  }
+
+  /**
+   * <p>Sets an account level monthly spend limit override for sending RCS messages.
+   * The requested spend limit must be less than or equal to the
+   * <code>MaxLimit</code>, which is set by Amazon Web Services.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetRcsMessageSpendLimitOverride">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SetRcsMessageSpendLimitOverrideOutcome SetRcsMessageSpendLimitOverride(
+      const Model::SetRcsMessageSpendLimitOverrideRequest& request) const;
+
+  /**
+   * A Callable wrapper for SetRcsMessageSpendLimitOverride that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename SetRcsMessageSpendLimitOverrideRequestT = Model::SetRcsMessageSpendLimitOverrideRequest>
+  Model::SetRcsMessageSpendLimitOverrideOutcomeCallable SetRcsMessageSpendLimitOverrideCallable(
+      const SetRcsMessageSpendLimitOverrideRequestT& request) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::SetRcsMessageSpendLimitOverride, request);
+  }
+
+  /**
+   * An Async wrapper for SetRcsMessageSpendLimitOverride that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename SetRcsMessageSpendLimitOverrideRequestT = Model::SetRcsMessageSpendLimitOverrideRequest>
+  void SetRcsMessageSpendLimitOverrideAsync(const SetRcsMessageSpendLimitOverrideRequestT& request,
+                                            const SetRcsMessageSpendLimitOverrideResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::SetRcsMessageSpendLimitOverride, request, handler, context);
   }
 
   /**

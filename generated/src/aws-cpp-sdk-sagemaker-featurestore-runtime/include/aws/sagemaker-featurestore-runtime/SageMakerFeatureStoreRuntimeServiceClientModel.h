@@ -21,7 +21,9 @@
 /* Service model headers required in SageMakerFeatureStoreRuntimeClient header */
 #include <aws/core/NoResult.h>
 #include <aws/sagemaker-featurestore-runtime/model/BatchGetRecordResult.h>
+#include <aws/sagemaker-featurestore-runtime/model/BatchWriteRecordResult.h>
 #include <aws/sagemaker-featurestore-runtime/model/GetRecordResult.h>
+#include <aws/sagemaker-featurestore-runtime/model/ListRecordsResult.h>
 /* End of service model headers required in SageMakerFeatureStoreRuntimeClient header */
 
 namespace Aws {
@@ -58,22 +60,28 @@ using SageMakerFeatureStoreRuntimeEndpointProvider =
 namespace Model {
 /* Service model forward declarations required in SageMakerFeatureStoreRuntimeClient header */
 class BatchGetRecordRequest;
+class BatchWriteRecordRequest;
 class DeleteRecordRequest;
 class GetRecordRequest;
+class ListRecordsRequest;
 class PutRecordRequest;
 /* End of service model forward declarations required in SageMakerFeatureStoreRuntimeClient header */
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<BatchGetRecordResult, SageMakerFeatureStoreRuntimeError> BatchGetRecordOutcome;
+typedef Aws::Utils::Outcome<BatchWriteRecordResult, SageMakerFeatureStoreRuntimeError> BatchWriteRecordOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerFeatureStoreRuntimeError> DeleteRecordOutcome;
 typedef Aws::Utils::Outcome<GetRecordResult, SageMakerFeatureStoreRuntimeError> GetRecordOutcome;
+typedef Aws::Utils::Outcome<ListRecordsResult, SageMakerFeatureStoreRuntimeError> ListRecordsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerFeatureStoreRuntimeError> PutRecordOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
 typedef std::future<BatchGetRecordOutcome> BatchGetRecordOutcomeCallable;
+typedef std::future<BatchWriteRecordOutcome> BatchWriteRecordOutcomeCallable;
 typedef std::future<DeleteRecordOutcome> DeleteRecordOutcomeCallable;
 typedef std::future<GetRecordOutcome> GetRecordOutcomeCallable;
+typedef std::future<ListRecordsOutcome> ListRecordsOutcomeCallable;
 typedef std::future<PutRecordOutcome> PutRecordOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -84,12 +92,18 @@ class SageMakerFeatureStoreRuntimeClient;
 typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::BatchGetRecordRequest&,
                            const Model::BatchGetRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchGetRecordResponseReceivedHandler;
+typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::BatchWriteRecordRequest&,
+                           const Model::BatchWriteRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchWriteRecordResponseReceivedHandler;
 typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::DeleteRecordRequest&, const Model::DeleteRecordOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRecordResponseReceivedHandler;
 typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::GetRecordRequest&, const Model::GetRecordOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRecordResponseReceivedHandler;
+typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::ListRecordsRequest&, const Model::ListRecordsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRecordsResponseReceivedHandler;
 typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::PutRecordRequest&, const Model::PutRecordOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutRecordResponseReceivedHandler;

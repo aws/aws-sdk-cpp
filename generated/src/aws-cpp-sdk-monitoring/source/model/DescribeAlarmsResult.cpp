@@ -96,6 +96,35 @@ DescribeAlarmsResult& DescribeAlarmsResult::operator=(const Aws::AmazonWebServic
                 m_metricAlarmsHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "LogAlarms") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_logAlarms.push_back(LogAlarm(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_logAlarms.push_back(LogAlarm(decoder));
+                    }
+                  }
+                }
+                m_logAlarmsHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "NextToken") {
                 auto peekType = decoder->PeekType();
                 if (peekType.has_value()) {
@@ -209,6 +238,35 @@ DescribeAlarmsResult& DescribeAlarmsResult::operator=(const Aws::AmazonWebServic
                 }
               }
               m_metricAlarmsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LogAlarms") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_logAlarms.push_back(LogAlarm(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_logAlarms.push_back(LogAlarm(decoder));
+                  }
+                }
+              }
+              m_logAlarmsHasBeenSet = true;
             }
 
             else if (initialKeyStr == "NextToken") {

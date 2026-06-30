@@ -72,6 +72,14 @@ Aws::String CreateImageRecipeRequest::SerializePayload() const {
     payload.WithObject("amiTags", std::move(amiTagsJsonMap));
   }
 
+  if (m_amiWatermarksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> amiWatermarksJsonList(m_amiWatermarks.size());
+    for (unsigned amiWatermarksIndex = 0; amiWatermarksIndex < amiWatermarksJsonList.GetLength(); ++amiWatermarksIndex) {
+      amiWatermarksJsonList[amiWatermarksIndex].AsString(m_amiWatermarks[amiWatermarksIndex]);
+    }
+    payload.WithArray("amiWatermarks", std::move(amiWatermarksJsonList));
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

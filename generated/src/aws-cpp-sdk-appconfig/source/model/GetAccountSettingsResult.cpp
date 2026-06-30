@@ -26,6 +26,10 @@ GetAccountSettingsResult& GetAccountSettingsResult::operator=(const Aws::AmazonW
     m_deletionProtection = jsonValue.GetObject("DeletionProtection");
     m_deletionProtectionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VendedMetrics")) {
+    m_vendedMetrics = jsonValue.GetObject("VendedMetrics");
+    m_vendedMetricsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -129,6 +129,22 @@ class UpdateServiceResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The amount of time, in seconds, that a connection can remain idle before VPC
+   * Lattice closes it.</p>
+   */
+  inline int GetIdleTimeoutSeconds() const { return m_idleTimeoutSeconds; }
+  inline void SetIdleTimeoutSeconds(int value) {
+    m_idleTimeoutSecondsHasBeenSet = true;
+    m_idleTimeoutSeconds = value;
+  }
+  inline UpdateServiceResult& WithIdleTimeoutSeconds(int value) {
+    SetIdleTimeoutSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -157,6 +173,8 @@ class UpdateServiceResult {
 
   AuthType m_authType{AuthType::NOT_SET};
 
+  int m_idleTimeoutSeconds{0};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
@@ -165,6 +183,7 @@ class UpdateServiceResult {
   bool m_customDomainNameHasBeenSet = false;
   bool m_certificateArnHasBeenSet = false;
   bool m_authTypeHasBeenSet = false;
+  bool m_idleTimeoutSecondsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

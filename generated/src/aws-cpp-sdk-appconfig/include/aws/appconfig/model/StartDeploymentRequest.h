@@ -209,6 +209,24 @@ class StartDeploymentRequest : public AppConfigRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of the latest deployment. Use this value to ensure that the
+   * deployment starts from the expected state and to prevent conflicting
+   * updates.</p>
+   */
+  inline int GetLatestDeploymentNumber() const { return m_latestDeploymentNumber; }
+  inline bool LatestDeploymentNumberHasBeenSet() const { return m_latestDeploymentNumberHasBeenSet; }
+  inline void SetLatestDeploymentNumber(int value) {
+    m_latestDeploymentNumberHasBeenSet = true;
+    m_latestDeploymentNumber = value;
+  }
+  inline StartDeploymentRequest& WithLatestDeploymentNumber(int value) {
+    SetLatestDeploymentNumber(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_applicationId;
 
@@ -227,6 +245,8 @@ class StartDeploymentRequest : public AppConfigRequest {
   Aws::String m_kmsKeyIdentifier;
 
   Aws::Map<Aws::String, Aws::String> m_dynamicExtensionParameters;
+
+  int m_latestDeploymentNumber{0};
   bool m_applicationIdHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;
   bool m_deploymentStrategyIdHasBeenSet = false;
@@ -236,6 +256,7 @@ class StartDeploymentRequest : public AppConfigRequest {
   bool m_tagsHasBeenSet = false;
   bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_dynamicExtensionParametersHasBeenSet = false;
+  bool m_latestDeploymentNumberHasBeenSet = false;
 };
 
 }  // namespace Model

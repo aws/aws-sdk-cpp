@@ -7,6 +7,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
+#include <aws/lambda/model/S3ObjectStorageMode.h>
 
 #include <utility>
 
@@ -111,6 +112,25 @@ class FunctionCode {
 
   ///@{
   /**
+   * <p>Specifies how the deployment package is stored. Use <code>COPY</code>
+   * (default) to upload a copy of your deployment package to Lambda. Use
+   * <code>REFERENCE</code> to have Lambda reference the deployment package from the
+   * specified Amazon S3 bucket.</p>
+   */
+  inline S3ObjectStorageMode GetS3ObjectStorageMode() const { return m_s3ObjectStorageMode; }
+  inline bool S3ObjectStorageModeHasBeenSet() const { return m_s3ObjectStorageModeHasBeenSet; }
+  inline void SetS3ObjectStorageMode(S3ObjectStorageMode value) {
+    m_s3ObjectStorageModeHasBeenSet = true;
+    m_s3ObjectStorageMode = value;
+  }
+  inline FunctionCode& WithS3ObjectStorageMode(S3ObjectStorageMode value) {
+    SetS3ObjectStorageMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>URI of a <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
    * image</a> in the Amazon ECR registry.</p>
@@ -159,6 +179,8 @@ class FunctionCode {
 
   Aws::String m_s3ObjectVersion;
 
+  S3ObjectStorageMode m_s3ObjectStorageMode{S3ObjectStorageMode::NOT_SET};
+
   Aws::String m_imageUri;
 
   Aws::String m_sourceKMSKeyArn;
@@ -166,6 +188,7 @@ class FunctionCode {
   bool m_s3BucketHasBeenSet = false;
   bool m_s3KeyHasBeenSet = false;
   bool m_s3ObjectVersionHasBeenSet = false;
+  bool m_s3ObjectStorageModeHasBeenSet = false;
   bool m_imageUriHasBeenSet = false;
   bool m_sourceKMSKeyArnHasBeenSet = false;
 };

@@ -18,6 +18,7 @@ namespace PlacementStrategyMapper {
 static const int cluster_HASH = HashingUtils::HashString("cluster");
 static const int spread_HASH = HashingUtils::HashString("spread");
 static const int partition_HASH = HashingUtils::HashString("partition");
+static const int precision_time_HASH = HashingUtils::HashString("precision-time");
 
 PlacementStrategy GetPlacementStrategyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ PlacementStrategy GetPlacementStrategyForName(const Aws::String& name) {
     return PlacementStrategy::spread;
   } else if (hashCode == partition_HASH) {
     return PlacementStrategy::partition;
+  } else if (hashCode == precision_time_HASH) {
+    return PlacementStrategy::precision_time;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForPlacementStrategy(PlacementStrategy enumValue) {
       return "spread";
     case PlacementStrategy::partition:
       return "partition";
+    case PlacementStrategy::precision_time:
+      return "precision-time";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

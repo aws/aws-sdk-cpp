@@ -198,8 +198,6 @@
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsClient.h>
 #include <aws/iot/IoTClient.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorClient.h>
-#include <aws/iotevents-data/IoTEventsDataClient.h>
-#include <aws/iotevents/IoTEventsClient.h>
 #include <aws/iotfleetwise/IoTFleetWiseClient.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingClient.h>
 #include <aws/iotsitewise/IoTSiteWiseClient.h>
@@ -296,7 +294,6 @@
 #include <aws/organizations/OrganizationsClient.h>
 #include <aws/osis/OSISClient.h>
 #include <aws/outposts/OutpostsClient.h>
-#include <aws/panorama/PanoramaClient.h>
 #include <aws/partnercentral-account/PartnerCentralAccountClient.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsClient.h>
 #include <aws/partnercentral-channel/PartnerCentralChannelClient.h>
@@ -382,7 +379,6 @@
 #include <aws/signer/SignerClient.h>
 #include <aws/signin/SigninClient.h>
 #include <aws/simpledbv2/SimpleDBv2Client.h>
-#include <aws/simspaceweaver/SimSpaceWeaverClient.h>
 #include <aws/sms-voice/PinpointSMSVoiceClient.h>
 #include <aws/snow-device-management/SnowDeviceManagementClient.h>
 #include <aws/snowball/SnowballClient.h>

@@ -427,6 +427,8 @@
 #include <aws/ecs/model/TaskSetField.h>
 #include <aws/ecs/model/TaskStopCode.h>
 #include <aws/ecs/model/TaskVolumeConfiguration.h>
+#include <aws/ecs/model/ThresholdConfiguration.h>
+#include <aws/ecs/model/ThresholdType.h>
 #include <aws/ecs/model/TimeoutConfiguration.h>
 #include <aws/ecs/model/Tmpfs.h>
 #include <aws/ecs/model/TotalLocalStorageGBRequest.h>

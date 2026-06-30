@@ -26,6 +26,14 @@ DeploymentCircuitBreaker& DeploymentCircuitBreaker::operator=(JsonView jsonValue
     m_rollback = jsonValue.GetBool("rollback");
     m_rollbackHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("resetOnHealthyTask")) {
+    m_resetOnHealthyTask = jsonValue.GetBool("resetOnHealthyTask");
+    m_resetOnHealthyTaskHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("thresholdConfiguration")) {
+    m_thresholdConfiguration = jsonValue.GetObject("thresholdConfiguration");
+    m_thresholdConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue DeploymentCircuitBreaker::Jsonize() const {
 
   if (m_rollbackHasBeenSet) {
     payload.WithBool("rollback", m_rollback);
+  }
+
+  if (m_resetOnHealthyTaskHasBeenSet) {
+    payload.WithBool("resetOnHealthyTask", m_resetOnHealthyTask);
+  }
+
+  if (m_thresholdConfigurationHasBeenSet) {
+    payload.WithObject("thresholdConfiguration", m_thresholdConfiguration.Jsonize());
   }
 
   return payload;

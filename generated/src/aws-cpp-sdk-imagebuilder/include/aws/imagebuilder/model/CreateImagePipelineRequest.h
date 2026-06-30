@@ -352,7 +352,12 @@ class CreateImagePipelineRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Define logging configuration for the image build process.</p>
+   * <p>Specifies the logging configuration for the image pipeline. Use this to
+   * define custom CloudWatch Logs log groups for your pipeline execution logs and
+   * image build logs. The service manages log groups with names starting with
+   * <code>/aws/imagebuilder/</code> using the service-linked role. For custom log
+   * group names outside of this prefix, you must also provide an
+   * <code>executionRole</code>.</p>
    */
   inline const PipelineLoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
   inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EVS {
 namespace Model {
-enum class ConnectorType { NOT_SET, VCENTER };
+enum class ConnectorType { NOT_SET, OPERATIONS_MANAGER, SDDC_MANAGER, VCENTER };
 
 namespace ConnectorTypeMapper {
 AWS_EVS_API ConnectorType GetConnectorTypeForName(const Aws::String& name);

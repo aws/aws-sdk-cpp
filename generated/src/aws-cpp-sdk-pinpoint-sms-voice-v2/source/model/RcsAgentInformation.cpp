@@ -62,6 +62,26 @@ RcsAgentInformation& RcsAgentInformation::operator=(JsonView jsonValue) {
     m_poolId = jsonValue.GetString("PoolId");
     m_poolIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TwoWayMediaS3BucketName")) {
+    m_twoWayMediaS3BucketName = jsonValue.GetString("TwoWayMediaS3BucketName");
+    m_twoWayMediaS3BucketNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TwoWayMediaS3KeyPrefix")) {
+    m_twoWayMediaS3KeyPrefix = jsonValue.GetString("TwoWayMediaS3KeyPrefix");
+    m_twoWayMediaS3KeyPrefixHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TwoWayMediaS3Role")) {
+    m_twoWayMediaS3Role = jsonValue.GetString("TwoWayMediaS3Role");
+    m_twoWayMediaS3RoleHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TwoWayRcsEventsEnabled")) {
+    Aws::Utils::Array<JsonView> twoWayRcsEventsEnabledJsonList = jsonValue.GetArray("TwoWayRcsEventsEnabled");
+    for (unsigned twoWayRcsEventsEnabledIndex = 0; twoWayRcsEventsEnabledIndex < twoWayRcsEventsEnabledJsonList.GetLength();
+         ++twoWayRcsEventsEnabledIndex) {
+      m_twoWayRcsEventsEnabled.push_back(twoWayRcsEventsEnabledJsonList[twoWayRcsEventsEnabledIndex].AsString());
+    }
+    m_twoWayRcsEventsEnabledHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("TestingAgent")) {
     m_testingAgent = jsonValue.GetObject("TestingAgent");
     m_testingAgentHasBeenSet = true;
@@ -114,6 +134,27 @@ JsonValue RcsAgentInformation::Jsonize() const {
 
   if (m_poolIdHasBeenSet) {
     payload.WithString("PoolId", m_poolId);
+  }
+
+  if (m_twoWayMediaS3BucketNameHasBeenSet) {
+    payload.WithString("TwoWayMediaS3BucketName", m_twoWayMediaS3BucketName);
+  }
+
+  if (m_twoWayMediaS3KeyPrefixHasBeenSet) {
+    payload.WithString("TwoWayMediaS3KeyPrefix", m_twoWayMediaS3KeyPrefix);
+  }
+
+  if (m_twoWayMediaS3RoleHasBeenSet) {
+    payload.WithString("TwoWayMediaS3Role", m_twoWayMediaS3Role);
+  }
+
+  if (m_twoWayRcsEventsEnabledHasBeenSet) {
+    Aws::Utils::Array<JsonValue> twoWayRcsEventsEnabledJsonList(m_twoWayRcsEventsEnabled.size());
+    for (unsigned twoWayRcsEventsEnabledIndex = 0; twoWayRcsEventsEnabledIndex < twoWayRcsEventsEnabledJsonList.GetLength();
+         ++twoWayRcsEventsEnabledIndex) {
+      twoWayRcsEventsEnabledJsonList[twoWayRcsEventsEnabledIndex].AsString(m_twoWayRcsEventsEnabled[twoWayRcsEventsEnabledIndex]);
+    }
+    payload.WithArray("TwoWayRcsEventsEnabled", std::move(twoWayRcsEventsEnabledJsonList));
   }
 
   if (m_testingAgentHasBeenSet) {

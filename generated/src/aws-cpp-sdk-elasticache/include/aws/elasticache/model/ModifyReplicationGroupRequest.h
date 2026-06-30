@@ -667,7 +667,7 @@ class ModifyReplicationGroupRequest : public ElastiCacheRequest {
    * parameter to change the durability mode of an existing replication group, for
    * example from <code>sync</code> to <code>async</code> or vice versa. For more
    * information, see <a
-   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+   * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
    */
   inline Durability GetDurability() const { return m_durability; }
   inline bool DurabilityHasBeenSet() const { return m_durabilityHasBeenSet; }

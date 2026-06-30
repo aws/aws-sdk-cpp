@@ -17,6 +17,7 @@ namespace VcfVersionMapper {
 
 static const int VCF_5_2_1_HASH = HashingUtils::HashString("VCF-5.2.1");
 static const int VCF_5_2_2_HASH = HashingUtils::HashString("VCF-5.2.2");
+static const int SELF_DEPLOYED_HASH = HashingUtils::HashString("SELF_DEPLOYED");
 
 VcfVersion GetVcfVersionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ VcfVersion GetVcfVersionForName(const Aws::String& name) {
     return VcfVersion::VCF_5_2_1;
   } else if (hashCode == VCF_5_2_2_HASH) {
     return VcfVersion::VCF_5_2_2;
+  } else if (hashCode == SELF_DEPLOYED_HASH) {
+    return VcfVersion::SELF_DEPLOYED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForVcfVersion(VcfVersion enumValue) {
       return "VCF-5.2.1";
     case VcfVersion::VCF_5_2_2:
       return "VCF-5.2.2";
+    case VcfVersion::SELF_DEPLOYED:
+      return "SELF_DEPLOYED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

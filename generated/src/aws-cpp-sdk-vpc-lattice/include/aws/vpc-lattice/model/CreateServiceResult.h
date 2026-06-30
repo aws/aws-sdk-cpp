@@ -148,6 +148,22 @@ class CreateServiceResult {
 
   ///@{
   /**
+   * <p>The amount of time, in seconds, that a connection can remain idle before VPC
+   * Lattice closes it.</p>
+   */
+  inline int GetIdleTimeoutSeconds() const { return m_idleTimeoutSeconds; }
+  inline void SetIdleTimeoutSeconds(int value) {
+    m_idleTimeoutSecondsHasBeenSet = true;
+    m_idleTimeoutSeconds = value;
+  }
+  inline CreateServiceResult& WithIdleTimeoutSeconds(int value) {
+    SetIdleTimeoutSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The public DNS name of the service.</p>
    */
   inline const DnsEntry& GetDnsEntry() const { return m_dnsEntry; }
@@ -194,6 +210,8 @@ class CreateServiceResult {
 
   AuthType m_authType{AuthType::NOT_SET};
 
+  int m_idleTimeoutSeconds{0};
+
   DnsEntry m_dnsEntry;
 
   Aws::String m_requestId;
@@ -205,6 +223,7 @@ class CreateServiceResult {
   bool m_certificateArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_authTypeHasBeenSet = false;
+  bool m_idleTimeoutSecondsHasBeenSet = false;
   bool m_dnsEntryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

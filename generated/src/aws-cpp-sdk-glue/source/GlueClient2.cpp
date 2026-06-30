@@ -85,6 +85,7 @@
 #include <aws/glue/model/TagResourceRequest.h>
 #include <aws/glue/model/TestConnectionRequest.h>
 #include <aws/glue/model/UntagResourceRequest.h>
+#include <aws/glue/model/UpdateAssetRequest.h>
 #include <aws/glue/model/UpdateBlueprintRequest.h>
 #include <aws/glue/model/UpdateCatalogRequest.h>
 #include <aws/glue/model/UpdateClassifierRequest.h>
@@ -500,6 +501,11 @@ TestConnectionOutcome GlueClient::TestConnection(const TestConnectionRequest& re
 UntagResourceOutcome GlueClient::UntagResource(const UntagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateAssetOutcome GlueClient::UpdateAsset(const UpdateAssetRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAssetOutcome(result.GetResultWithOwnership()) : UpdateAssetOutcome(std::move(result.GetError()));
 }
 
 UpdateBlueprintOutcome GlueClient::UpdateBlueprint(const UpdateBlueprintRequest& request) const {

@@ -79,6 +79,7 @@
 #include <aws/resource-explorer-2/model/MemberIndex.h>
 #include <aws/resource-explorer-2/model/OperationStatus.h>
 #include <aws/resource-explorer-2/model/OrgConfiguration.h>
+#include <aws/resource-explorer-2/model/RecorderType.h>
 #include <aws/resource-explorer-2/model/RegionStatus.h>
 #include <aws/resource-explorer-2/model/Resource.h>
 #include <aws/resource-explorer-2/model/ResourceCount.h>
@@ -86,6 +87,7 @@
 #include <aws/resource-explorer-2/model/SearchFilter.h>
 #include <aws/resource-explorer-2/model/SearchRequest.h>
 #include <aws/resource-explorer-2/model/SearchResult.h>
+#include <aws/resource-explorer-2/model/ServiceLinkedRecorderInfo.h>
 #include <aws/resource-explorer-2/model/ServiceQuotaExceededException.h>
 #include <aws/resource-explorer-2/model/ServiceView.h>
 #include <aws/resource-explorer-2/model/StreamingAccessDetails.h>

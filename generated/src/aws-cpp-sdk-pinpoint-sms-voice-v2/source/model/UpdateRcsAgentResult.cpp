@@ -62,6 +62,26 @@ UpdateRcsAgentResult& UpdateRcsAgentResult::operator=(const Aws::AmazonWebServic
     m_twoWayEnabled = jsonValue.GetBool("TwoWayEnabled");
     m_twoWayEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TwoWayMediaS3BucketName")) {
+    m_twoWayMediaS3BucketName = jsonValue.GetString("TwoWayMediaS3BucketName");
+    m_twoWayMediaS3BucketNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TwoWayMediaS3KeyPrefix")) {
+    m_twoWayMediaS3KeyPrefix = jsonValue.GetString("TwoWayMediaS3KeyPrefix");
+    m_twoWayMediaS3KeyPrefixHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TwoWayMediaS3Role")) {
+    m_twoWayMediaS3Role = jsonValue.GetString("TwoWayMediaS3Role");
+    m_twoWayMediaS3RoleHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TwoWayRcsEventsEnabled")) {
+    Aws::Utils::Array<JsonView> twoWayRcsEventsEnabledJsonList = jsonValue.GetArray("TwoWayRcsEventsEnabled");
+    for (unsigned twoWayRcsEventsEnabledIndex = 0; twoWayRcsEventsEnabledIndex < twoWayRcsEventsEnabledJsonList.GetLength();
+         ++twoWayRcsEventsEnabledIndex) {
+      m_twoWayRcsEventsEnabled.push_back(twoWayRcsEventsEnabledJsonList[twoWayRcsEventsEnabledIndex].AsString());
+    }
+    m_twoWayRcsEventsEnabledHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -158,7 +158,14 @@ class SourceStatistics {
 
   ///@{
   /**
-   * <p>Whether the AI bot's identity was verified.</p>
+   * <p>Indicates whether the AI bot's identity was verified — for example, through a
+   * cryptographically signed request (Web Bot Auth) or another published
+   * verification method. This value is meaningful only when GroupBy is NAME, where
+   * each result represents a single, identifiable bot. For all other GroupBy values
+   * (CATEGORY, INTENT, ORGANIZATION, or WEBACL), a result aggregates multiple bots
+   * that may have different verification states, so Verified is always returned as
+   * false and should be ignored. Type and required-ness are unchanged (Boolean,
+   * optional).</p>
    */
   inline bool GetVerified() const { return m_verified; }
   inline bool VerifiedHasBeenSet() const { return m_verifiedHasBeenSet; }

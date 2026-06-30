@@ -23,6 +23,7 @@
 #include <aws/appconfig/model/CreateConfigurationProfileResult.h>
 #include <aws/appconfig/model/CreateDeploymentStrategyResult.h>
 #include <aws/appconfig/model/CreateEnvironmentResult.h>
+#include <aws/appconfig/model/CreateExperimentDefinitionResult.h>
 #include <aws/appconfig/model/CreateExtensionAssociationResult.h>
 #include <aws/appconfig/model/CreateExtensionResult.h>
 #include <aws/appconfig/model/CreateHostedConfigurationVersionResult.h>
@@ -33,6 +34,8 @@
 #include <aws/appconfig/model/GetDeploymentResult.h>
 #include <aws/appconfig/model/GetDeploymentStrategyResult.h>
 #include <aws/appconfig/model/GetEnvironmentResult.h>
+#include <aws/appconfig/model/GetExperimentDefinitionResult.h>
+#include <aws/appconfig/model/GetExperimentRunResult.h>
 #include <aws/appconfig/model/GetExtensionAssociationResult.h>
 #include <aws/appconfig/model/GetExtensionResult.h>
 #include <aws/appconfig/model/GetHostedConfigurationVersionResult.h>
@@ -43,6 +46,10 @@
 #include <aws/appconfig/model/ListDeploymentStrategiesResult.h>
 #include <aws/appconfig/model/ListDeploymentsResult.h>
 #include <aws/appconfig/model/ListEnvironmentsResult.h>
+#include <aws/appconfig/model/ListExperimentDefinitionsRequest.h>
+#include <aws/appconfig/model/ListExperimentDefinitionsResult.h>
+#include <aws/appconfig/model/ListExperimentRunEventsResult.h>
+#include <aws/appconfig/model/ListExperimentRunsResult.h>
 #include <aws/appconfig/model/ListExtensionAssociationsRequest.h>
 #include <aws/appconfig/model/ListExtensionAssociationsResult.h>
 #include <aws/appconfig/model/ListExtensionsRequest.h>
@@ -50,13 +57,17 @@
 #include <aws/appconfig/model/ListHostedConfigurationVersionsResult.h>
 #include <aws/appconfig/model/ListTagsForResourceResult.h>
 #include <aws/appconfig/model/StartDeploymentResult.h>
+#include <aws/appconfig/model/StartExperimentRunResult.h>
 #include <aws/appconfig/model/StopDeploymentResult.h>
+#include <aws/appconfig/model/StopExperimentRunResult.h>
 #include <aws/appconfig/model/UpdateAccountSettingsRequest.h>
 #include <aws/appconfig/model/UpdateAccountSettingsResult.h>
 #include <aws/appconfig/model/UpdateApplicationResult.h>
 #include <aws/appconfig/model/UpdateConfigurationProfileResult.h>
 #include <aws/appconfig/model/UpdateDeploymentStrategyResult.h>
 #include <aws/appconfig/model/UpdateEnvironmentResult.h>
+#include <aws/appconfig/model/UpdateExperimentDefinitionResult.h>
+#include <aws/appconfig/model/UpdateExperimentRunResult.h>
 #include <aws/appconfig/model/UpdateExtensionAssociationResult.h>
 #include <aws/appconfig/model/UpdateExtensionResult.h>
 #include <aws/core/NoResult.h>
@@ -97,6 +108,7 @@ class CreateApplicationRequest;
 class CreateConfigurationProfileRequest;
 class CreateDeploymentStrategyRequest;
 class CreateEnvironmentRequest;
+class CreateExperimentDefinitionRequest;
 class CreateExtensionRequest;
 class CreateExtensionAssociationRequest;
 class CreateHostedConfigurationVersionRequest;
@@ -104,6 +116,7 @@ class DeleteApplicationRequest;
 class DeleteConfigurationProfileRequest;
 class DeleteDeploymentStrategyRequest;
 class DeleteEnvironmentRequest;
+class DeleteExperimentDefinitionRequest;
 class DeleteExtensionRequest;
 class DeleteExtensionAssociationRequest;
 class DeleteHostedConfigurationVersionRequest;
@@ -113,6 +126,8 @@ class GetConfigurationProfileRequest;
 class GetDeploymentRequest;
 class GetDeploymentStrategyRequest;
 class GetEnvironmentRequest;
+class GetExperimentDefinitionRequest;
+class GetExperimentRunRequest;
 class GetExtensionRequest;
 class GetExtensionAssociationRequest;
 class GetHostedConfigurationVersionRequest;
@@ -121,12 +136,17 @@ class ListConfigurationProfilesRequest;
 class ListDeploymentStrategiesRequest;
 class ListDeploymentsRequest;
 class ListEnvironmentsRequest;
+class ListExperimentDefinitionsRequest;
+class ListExperimentRunEventsRequest;
+class ListExperimentRunsRequest;
 class ListExtensionAssociationsRequest;
 class ListExtensionsRequest;
 class ListHostedConfigurationVersionsRequest;
 class ListTagsForResourceRequest;
 class StartDeploymentRequest;
+class StartExperimentRunRequest;
 class StopDeploymentRequest;
+class StopExperimentRunRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAccountSettingsRequest;
@@ -134,6 +154,8 @@ class UpdateApplicationRequest;
 class UpdateConfigurationProfileRequest;
 class UpdateDeploymentStrategyRequest;
 class UpdateEnvironmentRequest;
+class UpdateExperimentDefinitionRequest;
+class UpdateExperimentRunRequest;
 class UpdateExtensionRequest;
 class UpdateExtensionAssociationRequest;
 class ValidateConfigurationRequest;
@@ -144,6 +166,7 @@ typedef Aws::Utils::Outcome<CreateApplicationResult, AppConfigError> CreateAppli
 typedef Aws::Utils::Outcome<CreateConfigurationProfileResult, AppConfigError> CreateConfigurationProfileOutcome;
 typedef Aws::Utils::Outcome<CreateDeploymentStrategyResult, AppConfigError> CreateDeploymentStrategyOutcome;
 typedef Aws::Utils::Outcome<CreateEnvironmentResult, AppConfigError> CreateEnvironmentOutcome;
+typedef Aws::Utils::Outcome<CreateExperimentDefinitionResult, AppConfigError> CreateExperimentDefinitionOutcome;
 typedef Aws::Utils::Outcome<CreateExtensionResult, AppConfigError> CreateExtensionOutcome;
 typedef Aws::Utils::Outcome<CreateExtensionAssociationResult, AppConfigError> CreateExtensionAssociationOutcome;
 typedef Aws::Utils::Outcome<CreateHostedConfigurationVersionResult, AppConfigError> CreateHostedConfigurationVersionOutcome;
@@ -151,6 +174,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteApplicationOutc
 typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteConfigurationProfileOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteDeploymentStrategyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteEnvironmentOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteExperimentDefinitionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteExtensionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteExtensionAssociationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteHostedConfigurationVersionOutcome;
@@ -160,6 +184,8 @@ typedef Aws::Utils::Outcome<GetConfigurationProfileResult, AppConfigError> GetCo
 typedef Aws::Utils::Outcome<GetDeploymentResult, AppConfigError> GetDeploymentOutcome;
 typedef Aws::Utils::Outcome<GetDeploymentStrategyResult, AppConfigError> GetDeploymentStrategyOutcome;
 typedef Aws::Utils::Outcome<GetEnvironmentResult, AppConfigError> GetEnvironmentOutcome;
+typedef Aws::Utils::Outcome<GetExperimentDefinitionResult, AppConfigError> GetExperimentDefinitionOutcome;
+typedef Aws::Utils::Outcome<GetExperimentRunResult, AppConfigError> GetExperimentRunOutcome;
 typedef Aws::Utils::Outcome<GetExtensionResult, AppConfigError> GetExtensionOutcome;
 typedef Aws::Utils::Outcome<GetExtensionAssociationResult, AppConfigError> GetExtensionAssociationOutcome;
 typedef Aws::Utils::Outcome<GetHostedConfigurationVersionResult, AppConfigError> GetHostedConfigurationVersionOutcome;
@@ -168,12 +194,17 @@ typedef Aws::Utils::Outcome<ListConfigurationProfilesResult, AppConfigError> Lis
 typedef Aws::Utils::Outcome<ListDeploymentStrategiesResult, AppConfigError> ListDeploymentStrategiesOutcome;
 typedef Aws::Utils::Outcome<ListDeploymentsResult, AppConfigError> ListDeploymentsOutcome;
 typedef Aws::Utils::Outcome<ListEnvironmentsResult, AppConfigError> ListEnvironmentsOutcome;
+typedef Aws::Utils::Outcome<ListExperimentDefinitionsResult, AppConfigError> ListExperimentDefinitionsOutcome;
+typedef Aws::Utils::Outcome<ListExperimentRunEventsResult, AppConfigError> ListExperimentRunEventsOutcome;
+typedef Aws::Utils::Outcome<ListExperimentRunsResult, AppConfigError> ListExperimentRunsOutcome;
 typedef Aws::Utils::Outcome<ListExtensionAssociationsResult, AppConfigError> ListExtensionAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListExtensionsResult, AppConfigError> ListExtensionsOutcome;
 typedef Aws::Utils::Outcome<ListHostedConfigurationVersionsResult, AppConfigError> ListHostedConfigurationVersionsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppConfigError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<StartDeploymentResult, AppConfigError> StartDeploymentOutcome;
+typedef Aws::Utils::Outcome<StartExperimentRunResult, AppConfigError> StartExperimentRunOutcome;
 typedef Aws::Utils::Outcome<StopDeploymentResult, AppConfigError> StopDeploymentOutcome;
+typedef Aws::Utils::Outcome<StopExperimentRunResult, AppConfigError> StopExperimentRunOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAccountSettingsResult, AppConfigError> UpdateAccountSettingsOutcome;
@@ -181,6 +212,8 @@ typedef Aws::Utils::Outcome<UpdateApplicationResult, AppConfigError> UpdateAppli
 typedef Aws::Utils::Outcome<UpdateConfigurationProfileResult, AppConfigError> UpdateConfigurationProfileOutcome;
 typedef Aws::Utils::Outcome<UpdateDeploymentStrategyResult, AppConfigError> UpdateDeploymentStrategyOutcome;
 typedef Aws::Utils::Outcome<UpdateEnvironmentResult, AppConfigError> UpdateEnvironmentOutcome;
+typedef Aws::Utils::Outcome<UpdateExperimentDefinitionResult, AppConfigError> UpdateExperimentDefinitionOutcome;
+typedef Aws::Utils::Outcome<UpdateExperimentRunResult, AppConfigError> UpdateExperimentRunOutcome;
 typedef Aws::Utils::Outcome<UpdateExtensionResult, AppConfigError> UpdateExtensionOutcome;
 typedef Aws::Utils::Outcome<UpdateExtensionAssociationResult, AppConfigError> UpdateExtensionAssociationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> ValidateConfigurationOutcome;
@@ -191,6 +224,7 @@ typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
 typedef std::future<CreateConfigurationProfileOutcome> CreateConfigurationProfileOutcomeCallable;
 typedef std::future<CreateDeploymentStrategyOutcome> CreateDeploymentStrategyOutcomeCallable;
 typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
+typedef std::future<CreateExperimentDefinitionOutcome> CreateExperimentDefinitionOutcomeCallable;
 typedef std::future<CreateExtensionOutcome> CreateExtensionOutcomeCallable;
 typedef std::future<CreateExtensionAssociationOutcome> CreateExtensionAssociationOutcomeCallable;
 typedef std::future<CreateHostedConfigurationVersionOutcome> CreateHostedConfigurationVersionOutcomeCallable;
@@ -198,6 +232,7 @@ typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
 typedef std::future<DeleteConfigurationProfileOutcome> DeleteConfigurationProfileOutcomeCallable;
 typedef std::future<DeleteDeploymentStrategyOutcome> DeleteDeploymentStrategyOutcomeCallable;
 typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
+typedef std::future<DeleteExperimentDefinitionOutcome> DeleteExperimentDefinitionOutcomeCallable;
 typedef std::future<DeleteExtensionOutcome> DeleteExtensionOutcomeCallable;
 typedef std::future<DeleteExtensionAssociationOutcome> DeleteExtensionAssociationOutcomeCallable;
 typedef std::future<DeleteHostedConfigurationVersionOutcome> DeleteHostedConfigurationVersionOutcomeCallable;
@@ -207,6 +242,8 @@ typedef std::future<GetConfigurationProfileOutcome> GetConfigurationProfileOutco
 typedef std::future<GetDeploymentOutcome> GetDeploymentOutcomeCallable;
 typedef std::future<GetDeploymentStrategyOutcome> GetDeploymentStrategyOutcomeCallable;
 typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
+typedef std::future<GetExperimentDefinitionOutcome> GetExperimentDefinitionOutcomeCallable;
+typedef std::future<GetExperimentRunOutcome> GetExperimentRunOutcomeCallable;
 typedef std::future<GetExtensionOutcome> GetExtensionOutcomeCallable;
 typedef std::future<GetExtensionAssociationOutcome> GetExtensionAssociationOutcomeCallable;
 typedef std::future<GetHostedConfigurationVersionOutcome> GetHostedConfigurationVersionOutcomeCallable;
@@ -215,12 +252,17 @@ typedef std::future<ListConfigurationProfilesOutcome> ListConfigurationProfilesO
 typedef std::future<ListDeploymentStrategiesOutcome> ListDeploymentStrategiesOutcomeCallable;
 typedef std::future<ListDeploymentsOutcome> ListDeploymentsOutcomeCallable;
 typedef std::future<ListEnvironmentsOutcome> ListEnvironmentsOutcomeCallable;
+typedef std::future<ListExperimentDefinitionsOutcome> ListExperimentDefinitionsOutcomeCallable;
+typedef std::future<ListExperimentRunEventsOutcome> ListExperimentRunEventsOutcomeCallable;
+typedef std::future<ListExperimentRunsOutcome> ListExperimentRunsOutcomeCallable;
 typedef std::future<ListExtensionAssociationsOutcome> ListExtensionAssociationsOutcomeCallable;
 typedef std::future<ListExtensionsOutcome> ListExtensionsOutcomeCallable;
 typedef std::future<ListHostedConfigurationVersionsOutcome> ListHostedConfigurationVersionsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<StartDeploymentOutcome> StartDeploymentOutcomeCallable;
+typedef std::future<StartExperimentRunOutcome> StartExperimentRunOutcomeCallable;
 typedef std::future<StopDeploymentOutcome> StopDeploymentOutcomeCallable;
+typedef std::future<StopExperimentRunOutcome> StopExperimentRunOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAccountSettingsOutcome> UpdateAccountSettingsOutcomeCallable;
@@ -228,6 +270,8 @@ typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
 typedef std::future<UpdateConfigurationProfileOutcome> UpdateConfigurationProfileOutcomeCallable;
 typedef std::future<UpdateDeploymentStrategyOutcome> UpdateDeploymentStrategyOutcomeCallable;
 typedef std::future<UpdateEnvironmentOutcome> UpdateEnvironmentOutcomeCallable;
+typedef std::future<UpdateExperimentDefinitionOutcome> UpdateExperimentDefinitionOutcomeCallable;
+typedef std::future<UpdateExperimentRunOutcome> UpdateExperimentRunOutcomeCallable;
 typedef std::future<UpdateExtensionOutcome> UpdateExtensionOutcomeCallable;
 typedef std::future<UpdateExtensionAssociationOutcome> UpdateExtensionAssociationOutcomeCallable;
 typedef std::future<ValidateConfigurationOutcome> ValidateConfigurationOutcomeCallable;
@@ -249,6 +293,9 @@ typedef std::function<void(const AppConfigClient*, const Model::CreateDeployment
 typedef std::function<void(const AppConfigClient*, const Model::CreateEnvironmentRequest&, const Model::CreateEnvironmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateEnvironmentResponseReceivedHandler;
+typedef std::function<void(const AppConfigClient*, const Model::CreateExperimentDefinitionRequest&,
+                           const Model::CreateExperimentDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateExperimentDefinitionResponseReceivedHandler;
 typedef std::function<void(const AppConfigClient*, const Model::CreateExtensionRequest&, const Model::CreateExtensionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateExtensionResponseReceivedHandler;
@@ -270,6 +317,9 @@ typedef std::function<void(const AppConfigClient*, const Model::DeleteDeployment
 typedef std::function<void(const AppConfigClient*, const Model::DeleteEnvironmentRequest&, const Model::DeleteEnvironmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteEnvironmentResponseReceivedHandler;
+typedef std::function<void(const AppConfigClient*, const Model::DeleteExperimentDefinitionRequest&,
+                           const Model::DeleteExperimentDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteExperimentDefinitionResponseReceivedHandler;
 typedef std::function<void(const AppConfigClient*, const Model::DeleteExtensionRequest&, const Model::DeleteExtensionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteExtensionResponseReceivedHandler;
@@ -298,6 +348,12 @@ typedef std::function<void(const AppConfigClient*, const Model::GetDeploymentStr
 typedef std::function<void(const AppConfigClient*, const Model::GetEnvironmentRequest&, const Model::GetEnvironmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetEnvironmentResponseReceivedHandler;
+typedef std::function<void(const AppConfigClient*, const Model::GetExperimentDefinitionRequest&,
+                           const Model::GetExperimentDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetExperimentDefinitionResponseReceivedHandler;
+typedef std::function<void(const AppConfigClient*, const Model::GetExperimentRunRequest&, const Model::GetExperimentRunOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetExperimentRunResponseReceivedHandler;
 typedef std::function<void(const AppConfigClient*, const Model::GetExtensionRequest&, const Model::GetExtensionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetExtensionResponseReceivedHandler;
@@ -322,6 +378,15 @@ typedef std::function<void(const AppConfigClient*, const Model::ListDeploymentsR
 typedef std::function<void(const AppConfigClient*, const Model::ListEnvironmentsRequest&, const Model::ListEnvironmentsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEnvironmentsResponseReceivedHandler;
+typedef std::function<void(const AppConfigClient*, const Model::ListExperimentDefinitionsRequest&,
+                           const Model::ListExperimentDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListExperimentDefinitionsResponseReceivedHandler;
+typedef std::function<void(const AppConfigClient*, const Model::ListExperimentRunEventsRequest&,
+                           const Model::ListExperimentRunEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListExperimentRunEventsResponseReceivedHandler;
+typedef std::function<void(const AppConfigClient*, const Model::ListExperimentRunsRequest&, const Model::ListExperimentRunsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListExperimentRunsResponseReceivedHandler;
 typedef std::function<void(const AppConfigClient*, const Model::ListExtensionAssociationsRequest&,
                            const Model::ListExtensionAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListExtensionAssociationsResponseReceivedHandler;
@@ -338,9 +403,15 @@ typedef std::function<void(const AppConfigClient*, const Model::ListTagsForResou
 typedef std::function<void(const AppConfigClient*, const Model::StartDeploymentRequest&, const Model::StartDeploymentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartDeploymentResponseReceivedHandler;
+typedef std::function<void(const AppConfigClient*, const Model::StartExperimentRunRequest&, const Model::StartExperimentRunOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartExperimentRunResponseReceivedHandler;
 typedef std::function<void(const AppConfigClient*, const Model::StopDeploymentRequest&, const Model::StopDeploymentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopDeploymentResponseReceivedHandler;
+typedef std::function<void(const AppConfigClient*, const Model::StopExperimentRunRequest&, const Model::StopExperimentRunOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopExperimentRunResponseReceivedHandler;
 typedef std::function<void(const AppConfigClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;
@@ -362,6 +433,12 @@ typedef std::function<void(const AppConfigClient*, const Model::UpdateDeployment
 typedef std::function<void(const AppConfigClient*, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateEnvironmentResponseReceivedHandler;
+typedef std::function<void(const AppConfigClient*, const Model::UpdateExperimentDefinitionRequest&,
+                           const Model::UpdateExperimentDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateExperimentDefinitionResponseReceivedHandler;
+typedef std::function<void(const AppConfigClient*, const Model::UpdateExperimentRunRequest&, const Model::UpdateExperimentRunOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateExperimentRunResponseReceivedHandler;
 typedef std::function<void(const AppConfigClient*, const Model::UpdateExtensionRequest&, const Model::UpdateExtensionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateExtensionResponseReceivedHandler;

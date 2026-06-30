@@ -338,6 +338,7 @@
 #include <aws/glue/model/TestConnectionRequest.h>
 #include <aws/glue/model/TestConnectionResult.h>
 #include <aws/glue/model/UntagResourceResult.h>
+#include <aws/glue/model/UpdateAssetResult.h>
 #include <aws/glue/model/UpdateBlueprintResult.h>
 #include <aws/glue/model/UpdateCatalogResult.h>
 #include <aws/glue/model/UpdateClassifierRequest.h>
@@ -670,6 +671,7 @@ class StopWorkflowRunRequest;
 class TagResourceRequest;
 class TestConnectionRequest;
 class UntagResourceRequest;
+class UpdateAssetRequest;
 class UpdateBlueprintRequest;
 class UpdateCatalogRequest;
 class UpdateClassifierRequest;
@@ -968,6 +970,7 @@ typedef Aws::Utils::Outcome<StopWorkflowRunResult, GlueError> StopWorkflowRunOut
 typedef Aws::Utils::Outcome<TagResourceResult, GlueError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<TestConnectionResult, GlueError> TestConnectionOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, GlueError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateAssetResult, GlueError> UpdateAssetOutcome;
 typedef Aws::Utils::Outcome<UpdateBlueprintResult, GlueError> UpdateBlueprintOutcome;
 typedef Aws::Utils::Outcome<UpdateCatalogResult, GlueError> UpdateCatalogOutcome;
 typedef Aws::Utils::Outcome<UpdateClassifierResult, GlueError> UpdateClassifierOutcome;
@@ -1266,6 +1269,7 @@ typedef std::future<StopWorkflowRunOutcome> StopWorkflowRunOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<TestConnectionOutcome> TestConnectionOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateAssetOutcome> UpdateAssetOutcomeCallable;
 typedef std::future<UpdateBlueprintOutcome> UpdateBlueprintOutcomeCallable;
 typedef std::future<UpdateCatalogOutcome> UpdateCatalogOutcomeCallable;
 typedef std::future<UpdateClassifierOutcome> UpdateClassifierOutcomeCallable;
@@ -2137,6 +2141,9 @@ typedef std::function<void(const GlueClient*, const Model::TestConnectionRequest
 typedef std::function<void(const GlueClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::UpdateAssetRequest&, const Model::UpdateAssetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateAssetResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::UpdateBlueprintRequest&, const Model::UpdateBlueprintOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateBlueprintResponseReceivedHandler;

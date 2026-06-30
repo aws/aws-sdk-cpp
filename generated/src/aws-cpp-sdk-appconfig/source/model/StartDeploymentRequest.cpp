@@ -51,5 +51,9 @@ Aws::String StartDeploymentRequest::SerializePayload() const {
     payload.WithObject("DynamicExtensionParameters", std::move(dynamicExtensionParametersJsonMap));
   }
 
+  if (m_latestDeploymentNumberHasBeenSet) {
+    payload.WithInteger("LatestDeploymentNumber", m_latestDeploymentNumber);
+  }
+
   return payload.View().WriteReadable();
 }

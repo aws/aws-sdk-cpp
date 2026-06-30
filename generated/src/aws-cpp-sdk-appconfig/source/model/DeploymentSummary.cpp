@@ -22,6 +22,10 @@ DeploymentSummary& DeploymentSummary::operator=(JsonView jsonValue) {
     m_deploymentNumber = jsonValue.GetInteger("DeploymentNumber");
     m_deploymentNumberHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ConfigurationProfileId")) {
+    m_configurationProfileId = jsonValue.GetString("ConfigurationProfileId");
+    m_configurationProfileIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ConfigurationName")) {
     m_configurationName = jsonValue.GetString("ConfigurationName");
     m_configurationNameHasBeenSet = true;
@@ -66,6 +70,10 @@ DeploymentSummary& DeploymentSummary::operator=(JsonView jsonValue) {
     m_versionLabel = jsonValue.GetString("VersionLabel");
     m_versionLabelHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Type")) {
+    m_type = DeploymentTypeMapper::GetDeploymentTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -74,6 +82,10 @@ JsonValue DeploymentSummary::Jsonize() const {
 
   if (m_deploymentNumberHasBeenSet) {
     payload.WithInteger("DeploymentNumber", m_deploymentNumber);
+  }
+
+  if (m_configurationProfileIdHasBeenSet) {
+    payload.WithString("ConfigurationProfileId", m_configurationProfileId);
   }
 
   if (m_configurationNameHasBeenSet) {
@@ -118,6 +130,10 @@ JsonValue DeploymentSummary::Jsonize() const {
 
   if (m_versionLabelHasBeenSet) {
     payload.WithString("VersionLabel", m_versionLabel);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", DeploymentTypeMapper::GetNameForDeploymentType(m_type));
   }
 
   return payload;

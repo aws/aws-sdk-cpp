@@ -105,6 +105,7 @@
 #include <aws/pcs/model/UpdateQueueRequest.h>
 #include <aws/pcs/model/UpdateQueueResult.h>
 #include <aws/pcs/model/UpdateQueueSlurmConfigurationRequest.h>
+#include <aws/pcs/model/UpdateSchedulerRequest.h>
 #include <aws/pcs/model/UpdateSlurmRestRequest.h>
 #include <aws/pcs/model/ValidationException.h>
 #include <aws/pcs/model/ValidationExceptionField.h>

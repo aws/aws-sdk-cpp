@@ -19,6 +19,7 @@
 #include <aws/appconfig/model/ActionPoint.h>
 #include <aws/appconfig/model/Application.h>
 #include <aws/appconfig/model/AppliedExtension.h>
+#include <aws/appconfig/model/AttributeValue.h>
 #include <aws/appconfig/model/BadRequestDetails.h>
 #include <aws/appconfig/model/BadRequestException.h>
 #include <aws/appconfig/model/BadRequestReason.h>
@@ -32,6 +33,8 @@
 #include <aws/appconfig/model/CreateDeploymentStrategyResult.h>
 #include <aws/appconfig/model/CreateEnvironmentRequest.h>
 #include <aws/appconfig/model/CreateEnvironmentResult.h>
+#include <aws/appconfig/model/CreateExperimentDefinitionRequest.h>
+#include <aws/appconfig/model/CreateExperimentDefinitionResult.h>
 #include <aws/appconfig/model/CreateExtensionAssociationRequest.h>
 #include <aws/appconfig/model/CreateExtensionAssociationResult.h>
 #include <aws/appconfig/model/CreateExtensionRequest.h>
@@ -42,20 +45,33 @@
 #include <aws/appconfig/model/DeleteConfigurationProfileRequest.h>
 #include <aws/appconfig/model/DeleteDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/DeleteEnvironmentRequest.h>
+#include <aws/appconfig/model/DeleteExperimentDefinitionRequest.h>
 #include <aws/appconfig/model/DeleteExtensionAssociationRequest.h>
 #include <aws/appconfig/model/DeleteExtensionRequest.h>
 #include <aws/appconfig/model/DeleteHostedConfigurationVersionRequest.h>
+#include <aws/appconfig/model/DeleteType.h>
 #include <aws/appconfig/model/DeletionProtectionCheck.h>
 #include <aws/appconfig/model/DeletionProtectionSettings.h>
 #include <aws/appconfig/model/DeploymentEvent.h>
 #include <aws/appconfig/model/DeploymentEventType.h>
+#include <aws/appconfig/model/DeploymentParameters.h>
 #include <aws/appconfig/model/DeploymentState.h>
 #include <aws/appconfig/model/DeploymentStrategy.h>
 #include <aws/appconfig/model/DeploymentSummary.h>
+#include <aws/appconfig/model/DeploymentType.h>
 #include <aws/appconfig/model/Environment.h>
 #include <aws/appconfig/model/EnvironmentState.h>
+#include <aws/appconfig/model/ExperimentDefinitionSnapshot.h>
+#include <aws/appconfig/model/ExperimentDefinitionStatus.h>
+#include <aws/appconfig/model/ExperimentDefinitionSummary.h>
+#include <aws/appconfig/model/ExperimentRunEvent.h>
+#include <aws/appconfig/model/ExperimentRunEventType.h>
+#include <aws/appconfig/model/ExperimentRunResult.h>
+#include <aws/appconfig/model/ExperimentRunStatus.h>
+#include <aws/appconfig/model/ExperimentRunSummary.h>
 #include <aws/appconfig/model/ExtensionAssociationSummary.h>
 #include <aws/appconfig/model/ExtensionSummary.h>
+#include <aws/appconfig/model/FlagValue.h>
 #include <aws/appconfig/model/GetAccountSettingsRequest.h>
 #include <aws/appconfig/model/GetAccountSettingsResult.h>
 #include <aws/appconfig/model/GetApplicationRequest.h>
@@ -68,6 +84,10 @@
 #include <aws/appconfig/model/GetDeploymentStrategyResult.h>
 #include <aws/appconfig/model/GetEnvironmentRequest.h>
 #include <aws/appconfig/model/GetEnvironmentResult.h>
+#include <aws/appconfig/model/GetExperimentDefinitionRequest.h>
+#include <aws/appconfig/model/GetExperimentDefinitionResult.h>
+#include <aws/appconfig/model/GetExperimentRunRequest.h>
+#include <aws/appconfig/model/GetExperimentRunResult.h>
 #include <aws/appconfig/model/GetExtensionAssociationRequest.h>
 #include <aws/appconfig/model/GetExtensionAssociationResult.h>
 #include <aws/appconfig/model/GetExtensionRequest.h>
@@ -87,6 +107,12 @@
 #include <aws/appconfig/model/ListDeploymentsResult.h>
 #include <aws/appconfig/model/ListEnvironmentsRequest.h>
 #include <aws/appconfig/model/ListEnvironmentsResult.h>
+#include <aws/appconfig/model/ListExperimentDefinitionsRequest.h>
+#include <aws/appconfig/model/ListExperimentDefinitionsResult.h>
+#include <aws/appconfig/model/ListExperimentRunEventsRequest.h>
+#include <aws/appconfig/model/ListExperimentRunEventsResult.h>
+#include <aws/appconfig/model/ListExperimentRunsRequest.h>
+#include <aws/appconfig/model/ListExperimentRunsResult.h>
 #include <aws/appconfig/model/ListExtensionAssociationsRequest.h>
 #include <aws/appconfig/model/ListExtensionAssociationsResult.h>
 #include <aws/appconfig/model/ListExtensionsRequest.h>
@@ -102,9 +128,16 @@
 #include <aws/appconfig/model/ResourceNotFoundException.h>
 #include <aws/appconfig/model/StartDeploymentRequest.h>
 #include <aws/appconfig/model/StartDeploymentResult.h>
+#include <aws/appconfig/model/StartExperimentRunRequest.h>
+#include <aws/appconfig/model/StartExperimentRunResult.h>
 #include <aws/appconfig/model/StopDeploymentRequest.h>
 #include <aws/appconfig/model/StopDeploymentResult.h>
+#include <aws/appconfig/model/StopExperimentRunRequest.h>
+#include <aws/appconfig/model/StopExperimentRunResult.h>
 #include <aws/appconfig/model/TagResourceRequest.h>
+#include <aws/appconfig/model/Treatment.h>
+#include <aws/appconfig/model/TreatmentInput.h>
+#include <aws/appconfig/model/TreatmentOverrides.h>
 #include <aws/appconfig/model/TriggeredBy.h>
 #include <aws/appconfig/model/UntagResourceRequest.h>
 #include <aws/appconfig/model/UpdateAccountSettingsRequest.h>
@@ -117,6 +150,10 @@
 #include <aws/appconfig/model/UpdateDeploymentStrategyResult.h>
 #include <aws/appconfig/model/UpdateEnvironmentRequest.h>
 #include <aws/appconfig/model/UpdateEnvironmentResult.h>
+#include <aws/appconfig/model/UpdateExperimentDefinitionRequest.h>
+#include <aws/appconfig/model/UpdateExperimentDefinitionResult.h>
+#include <aws/appconfig/model/UpdateExperimentRunRequest.h>
+#include <aws/appconfig/model/UpdateExperimentRunResult.h>
 #include <aws/appconfig/model/UpdateExtensionAssociationRequest.h>
 #include <aws/appconfig/model/UpdateExtensionAssociationResult.h>
 #include <aws/appconfig/model/UpdateExtensionRequest.h>
@@ -124,6 +161,7 @@
 #include <aws/appconfig/model/ValidateConfigurationRequest.h>
 #include <aws/appconfig/model/Validator.h>
 #include <aws/appconfig/model/ValidatorType.h>
+#include <aws/appconfig/model/VendedMetricsSettings.h>
 
 using AppConfigIncludeTest = ::testing::Test;
 

@@ -33,7 +33,10 @@ class DistributeImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The source image Amazon Resource Name (ARN) to distribute.</p>
+   * <p>The source image to distribute. Specify an AMI identifier, SSM parameter
+   * path, or Image Builder image Amazon Resource Name (ARN). When you specify an
+   * Image Builder image Amazon Resource Name (ARN), the image must be in the
+   * <code>AVAILABLE</code> state.</p>
    */
   inline const Aws::String& GetSourceImage() const { return m_sourceImage; }
   inline bool SourceImageHasBeenSet() const { return m_sourceImageHasBeenSet; }
@@ -51,7 +54,9 @@ class DistributeImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the distribution configuration to use.</p>
+   * <p>The Amazon Resource Name (ARN) of the distribution configuration. The
+   * configuration defines target Regions, accounts, and AMI settings. The
+   * distribution configuration must be in the same Region as this operation.</p>
    */
   inline const Aws::String& GetDistributionConfigurationArn() const { return m_distributionConfigurationArn; }
   inline bool DistributionConfigurationArnHasBeenSet() const { return m_distributionConfigurationArnHasBeenSet; }
@@ -69,7 +74,8 @@ class DistributeImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The IAM role to use for the distribution.</p>
+   * <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder
+   * assumes to distribute the image.</p>
    */
   inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
   inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }

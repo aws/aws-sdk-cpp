@@ -7,6 +7,7 @@
 #include <aws/appconfig/AppConfigRequest.h>
 #include <aws/appconfig/AppConfig_EXPORTS.h>
 #include <aws/appconfig/model/DeletionProtectionSettings.h>
+#include <aws/appconfig/model/VendedMetricsSettings.h>
 
 #include <utility>
 
@@ -51,9 +52,30 @@ class UpdateAccountSettingsRequest : public AppConfigRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for vended metrics in the account.</p>
+   */
+  inline const VendedMetricsSettings& GetVendedMetrics() const { return m_vendedMetrics; }
+  inline bool VendedMetricsHasBeenSet() const { return m_vendedMetricsHasBeenSet; }
+  template <typename VendedMetricsT = VendedMetricsSettings>
+  void SetVendedMetrics(VendedMetricsT&& value) {
+    m_vendedMetricsHasBeenSet = true;
+    m_vendedMetrics = std::forward<VendedMetricsT>(value);
+  }
+  template <typename VendedMetricsT = VendedMetricsSettings>
+  UpdateAccountSettingsRequest& WithVendedMetrics(VendedMetricsT&& value) {
+    SetVendedMetrics(std::forward<VendedMetricsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DeletionProtectionSettings m_deletionProtection;
+
+  VendedMetricsSettings m_vendedMetrics;
   bool m_deletionProtectionHasBeenSet = false;
+  bool m_vendedMetricsHasBeenSet = false;
 };
 
 }  // namespace Model

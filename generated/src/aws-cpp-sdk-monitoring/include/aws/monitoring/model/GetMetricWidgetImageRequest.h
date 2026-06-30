@@ -37,7 +37,7 @@ class GetMetricWidgetImageRequest : public CloudWatchRequest {
    * axis limits, and so on. You can include only one <code>MetricWidget</code>
    * parameter in each <code>GetMetricWidgetImage</code> call.</p> <p>For more
    * information about the syntax of <code>MetricWidget</code> see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage:
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage:
    * Metric Widget Structure and Syntax</a>.</p> <p>If any metric on the graph could
    * not load all the requested data points, an orange triangle with an exclamation
    * point appears next to the graph legend.</p>

@@ -8,13 +8,16 @@
 
 #include <aws/appconfig/AppConfigClientPagination.h>
 #include <aws/appconfig/AppConfigPaginationBase.h>
+#include <aws/appconfig/model/ListExperimentDefinitionsPaginationTraits.h>
 #include <aws/appconfig/model/ListApplicationsPaginationTraits.h>
 #include <aws/appconfig/model/ListEnvironmentsPaginationTraits.h>
+#include <aws/appconfig/model/ListExperimentRunEventsPaginationTraits.h>
 #include <aws/appconfig/model/ListExtensionAssociationsPaginationTraits.h>
 #include <aws/appconfig/model/ListHostedConfigurationVersionsPaginationTraits.h>
 #include <aws/appconfig/model/ListConfigurationProfilesPaginationTraits.h>
 #include <aws/appconfig/model/ListDeploymentStrategiesPaginationTraits.h>
 #include <aws/appconfig/model/ListDeploymentsPaginationTraits.h>
+#include <aws/appconfig/model/ListExperimentRunsPaginationTraits.h>
 #include <aws/appconfig/model/ListExtensionsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

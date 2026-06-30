@@ -34,8 +34,11 @@ class PipelineLoggingConfiguration {
 
   ///@{
   /**
-   * <p>The log group name that Image Builder uses for image creation. If not
-   * specified, the log group name defaults to
+   * <p>Specifies the CloudWatch Logs log group name for image build logs. The log
+   * group name can contain alphanumeric characters, hyphens, underscores, forward
+   * slashes, and periods, up to 512 characters. Log group names not starting with
+   * <code>/aws/imagebuilder/</code> require an <code>executionRole</code> with
+   * CloudWatch Logs write permissions. If not specified, defaults to
    * <code>/aws/imagebuilder/image-name</code>.</p>
    */
   inline const Aws::String& GetImageLogGroupName() const { return m_imageLogGroupName; }
@@ -54,8 +57,11 @@ class PipelineLoggingConfiguration {
 
   ///@{
   /**
-   * <p>The log group name that Image Builder uses for the log output during creation
-   * of a new pipeline. If not specified, the pipeline log group name defaults to
+   * <p>Specifies the CloudWatch Logs log group name for pipeline execution logs. The
+   * log group name can contain alphanumeric characters, hyphens, underscores,
+   * forward slashes, and periods, up to 512 characters. Log group names not starting
+   * with <code>/aws/imagebuilder/</code> require an <code>executionRole</code> with
+   * CloudWatch Logs write permissions. If not specified, defaults to
    * <code>/aws/imagebuilder/pipeline/pipeline-name</code>.</p>
    */
   inline const Aws::String& GetPipelineLogGroupName() const { return m_pipelineLogGroupName; }

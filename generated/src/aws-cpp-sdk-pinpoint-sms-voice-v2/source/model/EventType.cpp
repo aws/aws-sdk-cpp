@@ -58,6 +58,15 @@ static const int MEDIA_TTL_EXPIRED_HASH = HashingUtils::HashString("MEDIA_TTL_EX
 static const int MEDIA_FILE_INACCESSIBLE_HASH = HashingUtils::HashString("MEDIA_FILE_INACCESSIBLE");
 static const int MEDIA_FILE_TYPE_UNSUPPORTED_HASH = HashingUtils::HashString("MEDIA_FILE_TYPE_UNSUPPORTED");
 static const int MEDIA_FILE_SIZE_EXCEEDED_HASH = HashingUtils::HashString("MEDIA_FILE_SIZE_EXCEEDED");
+static const int RCS_ALL_HASH = HashingUtils::HashString("RCS_ALL");
+static const int RCS_QUEUED_HASH = HashingUtils::HashString("RCS_QUEUED");
+static const int RCS_SENT_HASH = HashingUtils::HashString("RCS_SENT");
+static const int RCS_DELIVERED_HASH = HashingUtils::HashString("RCS_DELIVERED");
+static const int RCS_READ_HASH = HashingUtils::HashString("RCS_READ");
+static const int RCS_FAILED_HASH = HashingUtils::HashString("RCS_FAILED");
+static const int RCS_TTL_EXPIRED_HASH = HashingUtils::HashString("RCS_TTL_EXPIRED");
+static const int RCS_PROTECT_BLOCKED_HASH = HashingUtils::HashString("RCS_PROTECT_BLOCKED");
+static const int RCS_FALLEN_BACK_TO_SMS_HASH = HashingUtils::HashString("RCS_FALLEN_BACK_TO_SMS");
 
 EventType GetEventTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -147,6 +156,24 @@ EventType GetEventTypeForName(const Aws::String& name) {
     return EventType::MEDIA_FILE_TYPE_UNSUPPORTED;
   } else if (hashCode == MEDIA_FILE_SIZE_EXCEEDED_HASH) {
     return EventType::MEDIA_FILE_SIZE_EXCEEDED;
+  } else if (hashCode == RCS_ALL_HASH) {
+    return EventType::RCS_ALL;
+  } else if (hashCode == RCS_QUEUED_HASH) {
+    return EventType::RCS_QUEUED;
+  } else if (hashCode == RCS_SENT_HASH) {
+    return EventType::RCS_SENT;
+  } else if (hashCode == RCS_DELIVERED_HASH) {
+    return EventType::RCS_DELIVERED;
+  } else if (hashCode == RCS_READ_HASH) {
+    return EventType::RCS_READ;
+  } else if (hashCode == RCS_FAILED_HASH) {
+    return EventType::RCS_FAILED;
+  } else if (hashCode == RCS_TTL_EXPIRED_HASH) {
+    return EventType::RCS_TTL_EXPIRED;
+  } else if (hashCode == RCS_PROTECT_BLOCKED_HASH) {
+    return EventType::RCS_PROTECT_BLOCKED;
+  } else if (hashCode == RCS_FALLEN_BACK_TO_SMS_HASH) {
+    return EventType::RCS_FALLEN_BACK_TO_SMS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -247,6 +274,24 @@ Aws::String GetNameForEventType(EventType enumValue) {
       return "MEDIA_FILE_TYPE_UNSUPPORTED";
     case EventType::MEDIA_FILE_SIZE_EXCEEDED:
       return "MEDIA_FILE_SIZE_EXCEEDED";
+    case EventType::RCS_ALL:
+      return "RCS_ALL";
+    case EventType::RCS_QUEUED:
+      return "RCS_QUEUED";
+    case EventType::RCS_SENT:
+      return "RCS_SENT";
+    case EventType::RCS_DELIVERED:
+      return "RCS_DELIVERED";
+    case EventType::RCS_READ:
+      return "RCS_READ";
+    case EventType::RCS_FAILED:
+      return "RCS_FAILED";
+    case EventType::RCS_TTL_EXPIRED:
+      return "RCS_TTL_EXPIRED";
+    case EventType::RCS_PROTECT_BLOCKED:
+      return "RCS_PROTECT_BLOCKED";
+    case EventType::RCS_FALLEN_BACK_TO_SMS:
+      return "RCS_FALLEN_BACK_TO_SMS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

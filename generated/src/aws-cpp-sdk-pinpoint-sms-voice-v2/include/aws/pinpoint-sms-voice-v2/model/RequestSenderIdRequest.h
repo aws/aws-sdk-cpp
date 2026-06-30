@@ -36,7 +36,10 @@ class RequestSenderIdRequest : public PinpointSMSVoiceV2Request {
 
   ///@{
   /**
-   * <p>The sender ID string to request.</p>
+   * <p>The sender ID string to request. The sender ID can be 1-11 alphanumeric
+   * characters including letters (A-Z, a-z), numbers (0-9), or hyphens (-). The
+   * sender ID must contain at least one letter and cannot start or end with a
+   * hyphen.</p>
    */
   inline const Aws::String& GetSenderId() const { return m_senderId; }
   inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }

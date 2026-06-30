@@ -20,6 +20,7 @@ static const int Campaign_SMS_HASH = HashingUtils::HashString("Campaign-SMS");
 static const int Campaign_Telephony_HASH = HashingUtils::HashString("Campaign-Telephony");
 static const int Campaign_Orchestration_HASH = HashingUtils::HashString("Campaign-Orchestration");
 static const int Campaign_WhatsApp_HASH = HashingUtils::HashString("Campaign-WhatsApp");
+static const int Campaign_WebNotification_HASH = HashingUtils::HashString("Campaign-WebNotification");
 
 EventType GetEventTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ EventType GetEventTypeForName(const Aws::String& name) {
     return EventType::Campaign_Orchestration;
   } else if (hashCode == Campaign_WhatsApp_HASH) {
     return EventType::Campaign_WhatsApp;
+  } else if (hashCode == Campaign_WebNotification_HASH) {
+    return EventType::Campaign_WebNotification;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForEventType(EventType enumValue) {
       return "Campaign-Orchestration";
     case EventType::Campaign_WhatsApp:
       return "Campaign-WhatsApp";
+    case EventType::Campaign_WebNotification:
+      return "Campaign-WebNotification";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

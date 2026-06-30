@@ -551,9 +551,12 @@ class AWS_PCS_API PCSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates a cluster configuration. You can modify Slurm scheduler settings,
-   * accounting configuration, and security groups for an existing cluster. </p>
-   *  <p>You can only update clusters that are in <code>ACTIVE</code>,
+   * <p>Updates a cluster configuration. You can upgrade the Slurm version, modify
+   * scheduler settings, and update accounting configuration for an existing cluster.
+   * For more information about upgrading the Slurm version, see <a
+   * href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading
+   * the Slurm version on a cluster</a> in the <i>PCS User Guide</i>. </p>
+   * <p>You can only update clusters that are in <code>ACTIVE</code>,
    * <code>UPDATE_FAILED</code>, or <code>SUSPENDED</code> state. All associated
    * resources (queues and compute node groups) must be in <code>ACTIVE</code> state
    * before you can update the cluster.</p> <p><h3>See Also:</h3>   <a

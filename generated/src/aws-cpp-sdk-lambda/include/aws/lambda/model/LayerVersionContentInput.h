@@ -7,6 +7,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
+#include <aws/lambda/model/S3ObjectStorageMode.h>
 
 #include <utility>
 
@@ -90,6 +91,20 @@ class LayerVersionContentInput {
   ///@}
 
   ///@{
+
+  inline S3ObjectStorageMode GetS3ObjectStorageMode() const { return m_s3ObjectStorageMode; }
+  inline bool S3ObjectStorageModeHasBeenSet() const { return m_s3ObjectStorageModeHasBeenSet; }
+  inline void SetS3ObjectStorageMode(S3ObjectStorageMode value) {
+    m_s3ObjectStorageModeHasBeenSet = true;
+    m_s3ObjectStorageMode = value;
+  }
+  inline LayerVersionContentInput& WithS3ObjectStorageMode(S3ObjectStorageMode value) {
+    SetS3ObjectStorageMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and
    * Amazon Web Services CLI clients handle the encoding for you.</p>
@@ -114,10 +129,13 @@ class LayerVersionContentInput {
 
   Aws::String m_s3ObjectVersion;
 
+  S3ObjectStorageMode m_s3ObjectStorageMode{S3ObjectStorageMode::NOT_SET};
+
   Aws::Utils::CryptoBuffer m_zipFile{};
   bool m_s3BucketHasBeenSet = false;
   bool m_s3KeyHasBeenSet = false;
   bool m_s3ObjectVersionHasBeenSet = false;
+  bool m_s3ObjectStorageModeHasBeenSet = false;
   bool m_zipFileHasBeenSet = false;
 };
 

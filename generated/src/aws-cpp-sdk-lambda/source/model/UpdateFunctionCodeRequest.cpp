@@ -32,6 +32,10 @@ Aws::String UpdateFunctionCodeRequest::SerializePayload() const {
     payload.WithString("S3ObjectVersion", m_s3ObjectVersion);
   }
 
+  if (m_s3ObjectStorageModeHasBeenSet) {
+    payload.WithString("S3ObjectStorageMode", S3ObjectStorageModeMapper::GetNameForS3ObjectStorageMode(m_s3ObjectStorageMode));
+  }
+
   if (m_imageUriHasBeenSet) {
     payload.WithString("ImageUri", m_imageUri);
   }

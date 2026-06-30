@@ -11,6 +11,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/Architecture.h>
 #include <aws/lambda/model/FunctionVersionLatestPublished.h>
+#include <aws/lambda/model/S3ObjectStorageMode.h>
 
 #include <utility>
 
@@ -131,6 +132,25 @@ class UpdateFunctionCodeRequest : public LambdaRequest {
   template <typename S3ObjectVersionT = Aws::String>
   UpdateFunctionCodeRequest& WithS3ObjectVersion(S3ObjectVersionT&& value) {
     SetS3ObjectVersion(std::forward<S3ObjectVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies how the deployment package is stored. Use <code>COPY</code>
+   * (default) to upload a copy of your deployment package to Lambda. Use
+   * <code>REFERENCE</code> to have Lambda reference the deployment package from the
+   * specified Amazon S3 bucket.</p>
+   */
+  inline S3ObjectStorageMode GetS3ObjectStorageMode() const { return m_s3ObjectStorageMode; }
+  inline bool S3ObjectStorageModeHasBeenSet() const { return m_s3ObjectStorageModeHasBeenSet; }
+  inline void SetS3ObjectStorageMode(S3ObjectStorageMode value) {
+    m_s3ObjectStorageModeHasBeenSet = true;
+    m_s3ObjectStorageMode = value;
+  }
+  inline UpdateFunctionCodeRequest& WithS3ObjectStorageMode(S3ObjectStorageMode value) {
+    SetS3ObjectStorageMode(value);
     return *this;
   }
   ///@}
@@ -279,6 +299,8 @@ class UpdateFunctionCodeRequest : public LambdaRequest {
 
   Aws::String m_s3ObjectVersion;
 
+  S3ObjectStorageMode m_s3ObjectStorageMode{S3ObjectStorageMode::NOT_SET};
+
   Aws::String m_imageUri;
 
   Aws::Vector<Architecture> m_architectures;
@@ -297,6 +319,7 @@ class UpdateFunctionCodeRequest : public LambdaRequest {
   bool m_s3BucketHasBeenSet = false;
   bool m_s3KeyHasBeenSet = false;
   bool m_s3ObjectVersionHasBeenSet = false;
+  bool m_s3ObjectStorageModeHasBeenSet = false;
   bool m_imageUriHasBeenSet = false;
   bool m_architecturesHasBeenSet = false;
   bool m_publishHasBeenSet = false;

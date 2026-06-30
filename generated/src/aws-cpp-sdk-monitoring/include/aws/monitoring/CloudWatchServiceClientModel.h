@@ -144,6 +144,7 @@ class PutAnomalyDetectorRequest;
 class PutCompositeAlarmRequest;
 class PutDashboardRequest;
 class PutInsightRuleRequest;
+class PutLogAlarmRequest;
 class PutManagedInsightRulesRequest;
 class PutMetricAlarmRequest;
 class PutMetricDataRequest;
@@ -196,6 +197,7 @@ typedef Aws::Utils::Outcome<PutAnomalyDetectorResult, CloudWatchError> PutAnomal
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutCompositeAlarmOutcome;
 typedef Aws::Utils::Outcome<PutDashboardResult, CloudWatchError> PutDashboardOutcome;
 typedef Aws::Utils::Outcome<PutInsightRuleResult, CloudWatchError> PutInsightRuleOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutLogAlarmOutcome;
 typedef Aws::Utils::Outcome<PutManagedInsightRulesResult, CloudWatchError> PutManagedInsightRulesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutMetricAlarmOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutMetricDataOutcome;
@@ -248,6 +250,7 @@ typedef std::future<PutAnomalyDetectorOutcome> PutAnomalyDetectorOutcomeCallable
 typedef std::future<PutCompositeAlarmOutcome> PutCompositeAlarmOutcomeCallable;
 typedef std::future<PutDashboardOutcome> PutDashboardOutcomeCallable;
 typedef std::future<PutInsightRuleOutcome> PutInsightRuleOutcomeCallable;
+typedef std::future<PutLogAlarmOutcome> PutLogAlarmOutcomeCallable;
 typedef std::future<PutManagedInsightRulesOutcome> PutManagedInsightRulesOutcomeCallable;
 typedef std::future<PutMetricAlarmOutcome> PutMetricAlarmOutcomeCallable;
 typedef std::future<PutMetricDataOutcome> PutMetricDataOutcomeCallable;
@@ -379,6 +382,9 @@ typedef std::function<void(const CloudWatchClient*, const Model::PutDashboardReq
 typedef std::function<void(const CloudWatchClient*, const Model::PutInsightRuleRequest&, const Model::PutInsightRuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutInsightRuleResponseReceivedHandler;
+typedef std::function<void(const CloudWatchClient*, const Model::PutLogAlarmRequest&, const Model::PutLogAlarmOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutLogAlarmResponseReceivedHandler;
 typedef std::function<void(const CloudWatchClient*, const Model::PutManagedInsightRulesRequest&,
                            const Model::PutManagedInsightRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutManagedInsightRulesResponseReceivedHandler;

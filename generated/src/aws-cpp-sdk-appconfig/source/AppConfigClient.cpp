@@ -10,6 +10,7 @@
 #include <aws/appconfig/model/CreateConfigurationProfileRequest.h>
 #include <aws/appconfig/model/CreateDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/CreateEnvironmentRequest.h>
+#include <aws/appconfig/model/CreateExperimentDefinitionRequest.h>
 #include <aws/appconfig/model/CreateExtensionAssociationRequest.h>
 #include <aws/appconfig/model/CreateExtensionRequest.h>
 #include <aws/appconfig/model/CreateHostedConfigurationVersionRequest.h>
@@ -17,6 +18,7 @@
 #include <aws/appconfig/model/DeleteConfigurationProfileRequest.h>
 #include <aws/appconfig/model/DeleteDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/DeleteEnvironmentRequest.h>
+#include <aws/appconfig/model/DeleteExperimentDefinitionRequest.h>
 #include <aws/appconfig/model/DeleteExtensionAssociationRequest.h>
 #include <aws/appconfig/model/DeleteExtensionRequest.h>
 #include <aws/appconfig/model/DeleteHostedConfigurationVersionRequest.h>
@@ -26,6 +28,8 @@
 #include <aws/appconfig/model/GetDeploymentRequest.h>
 #include <aws/appconfig/model/GetDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/GetEnvironmentRequest.h>
+#include <aws/appconfig/model/GetExperimentDefinitionRequest.h>
+#include <aws/appconfig/model/GetExperimentRunRequest.h>
 #include <aws/appconfig/model/GetExtensionAssociationRequest.h>
 #include <aws/appconfig/model/GetExtensionRequest.h>
 #include <aws/appconfig/model/GetHostedConfigurationVersionRequest.h>
@@ -34,12 +38,17 @@
 #include <aws/appconfig/model/ListDeploymentStrategiesRequest.h>
 #include <aws/appconfig/model/ListDeploymentsRequest.h>
 #include <aws/appconfig/model/ListEnvironmentsRequest.h>
+#include <aws/appconfig/model/ListExperimentDefinitionsRequest.h>
+#include <aws/appconfig/model/ListExperimentRunEventsRequest.h>
+#include <aws/appconfig/model/ListExperimentRunsRequest.h>
 #include <aws/appconfig/model/ListExtensionAssociationsRequest.h>
 #include <aws/appconfig/model/ListExtensionsRequest.h>
 #include <aws/appconfig/model/ListHostedConfigurationVersionsRequest.h>
 #include <aws/appconfig/model/ListTagsForResourceRequest.h>
 #include <aws/appconfig/model/StartDeploymentRequest.h>
+#include <aws/appconfig/model/StartExperimentRunRequest.h>
 #include <aws/appconfig/model/StopDeploymentRequest.h>
+#include <aws/appconfig/model/StopExperimentRunRequest.h>
 #include <aws/appconfig/model/TagResourceRequest.h>
 #include <aws/appconfig/model/UntagResourceRequest.h>
 #include <aws/appconfig/model/UpdateAccountSettingsRequest.h>
@@ -47,6 +56,8 @@
 #include <aws/appconfig/model/UpdateConfigurationProfileRequest.h>
 #include <aws/appconfig/model/UpdateDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/UpdateEnvironmentRequest.h>
+#include <aws/appconfig/model/UpdateExperimentDefinitionRequest.h>
+#include <aws/appconfig/model/UpdateExperimentRunRequest.h>
 #include <aws/appconfig/model/UpdateExtensionAssociationRequest.h>
 #include <aws/appconfig/model/UpdateExtensionRequest.h>
 #include <aws/appconfig/model/ValidateConfigurationRequest.h>
@@ -282,6 +293,25 @@ CreateEnvironmentOutcome AppConfigClient::CreateEnvironment(const CreateEnvironm
                             : CreateEnvironmentOutcome(std::move(result.GetError()));
 }
 
+CreateExperimentDefinitionOutcome AppConfigClient::CreateExperimentDefinition(const CreateExperimentDefinitionRequest& request) const {
+  if (!request.ApplicationIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateExperimentDefinition", "Required field: ApplicationIdentifier, is not set");
+    return CreateExperimentDefinitionOutcome(Aws::Client::AWSError<AppConfigErrors>(
+        AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentdefinitions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExperimentDefinitionOutcome(result.GetResultWithOwnership())
+                            : CreateExperimentDefinitionOutcome(std::move(result.GetError()));
+}
+
 CreateExtensionOutcome AppConfigClient::CreateExtension(const CreateExtensionRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -434,6 +464,31 @@ DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironm
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteEnvironmentOutcome(result.GetResultWithOwnership())
                             : DeleteEnvironmentOutcome(std::move(result.GetError()));
+}
+
+DeleteExperimentDefinitionOutcome AppConfigClient::DeleteExperimentDefinition(const DeleteExperimentDefinitionRequest& request) const {
+  if (!request.ApplicationIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteExperimentDefinition", "Required field: ApplicationIdentifier, is not set");
+    return DeleteExperimentDefinitionOutcome(Aws::Client::AWSError<AppConfigErrors>(
+        AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationIdentifier]", false));
+  }
+  if (!request.ExperimentDefinitionIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteExperimentDefinition", "Required field: ExperimentDefinitionIdentifier, is not set");
+    return DeleteExperimentDefinitionOutcome(Aws::Client::AWSError<AppConfigErrors>(
+        AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExperimentDefinitionIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentdefinitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperimentDefinitionIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteExperimentDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteExperimentDefinitionOutcome(std::move(result.GetError()));
 }
 
 DeleteExtensionOutcome AppConfigClient::DeleteExtension(const DeleteExtensionRequest& request) const {
@@ -631,6 +686,63 @@ GetEnvironmentOutcome AppConfigClient::GetEnvironment(const GetEnvironmentReques
   return result.IsSuccess() ? GetEnvironmentOutcome(result.GetResultWithOwnership()) : GetEnvironmentOutcome(std::move(result.GetError()));
 }
 
+GetExperimentDefinitionOutcome AppConfigClient::GetExperimentDefinition(const GetExperimentDefinitionRequest& request) const {
+  if (!request.ApplicationIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetExperimentDefinition", "Required field: ApplicationIdentifier, is not set");
+    return GetExperimentDefinitionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [ApplicationIdentifier]", false));
+  }
+  if (!request.ExperimentDefinitionIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetExperimentDefinition", "Required field: ExperimentDefinitionIdentifier, is not set");
+    return GetExperimentDefinitionOutcome(Aws::Client::AWSError<AppConfigErrors>(
+        AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExperimentDefinitionIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentdefinitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperimentDefinitionIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetExperimentDefinitionOutcome(result.GetResultWithOwnership())
+                            : GetExperimentDefinitionOutcome(std::move(result.GetError()));
+}
+
+GetExperimentRunOutcome AppConfigClient::GetExperimentRun(const GetExperimentRunRequest& request) const {
+  if (!request.ApplicationIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetExperimentRun", "Required field: ApplicationIdentifier, is not set");
+    return GetExperimentRunOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [ApplicationIdentifier]", false));
+  }
+  if (!request.ExperimentDefinitionIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetExperimentRun", "Required field: ExperimentDefinitionIdentifier, is not set");
+    return GetExperimentRunOutcome(Aws::Client::AWSError<AppConfigErrors>(
+        AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExperimentDefinitionIdentifier]", false));
+  }
+  if (!request.RunHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetExperimentRun", "Required field: Run, is not set");
+    return GetExperimentRunOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [Run]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentdefinitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperimentDefinitionIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentruns/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRun());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetExperimentRunOutcome(result.GetResultWithOwnership())
+                            : GetExperimentRunOutcome(std::move(result.GetError()));
+}
+
 GetExtensionOutcome AppConfigClient::GetExtension(const GetExtensionRequest& request) const {
   if (!request.ExtensionIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetExtension", "Required field: ExtensionIdentifier, is not set");
@@ -804,6 +916,76 @@ ListEnvironmentsOutcome AppConfigClient::ListEnvironments(const ListEnvironments
                             : ListEnvironmentsOutcome(std::move(result.GetError()));
 }
 
+ListExperimentDefinitionsOutcome AppConfigClient::ListExperimentDefinitions(const ListExperimentDefinitionsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentdefinitions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListExperimentDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListExperimentDefinitionsOutcome(std::move(result.GetError()));
+}
+
+ListExperimentRunEventsOutcome AppConfigClient::ListExperimentRunEvents(const ListExperimentRunEventsRequest& request) const {
+  if (!request.ApplicationIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListExperimentRunEvents", "Required field: ApplicationIdentifier, is not set");
+    return ListExperimentRunEventsOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [ApplicationIdentifier]", false));
+  }
+  if (!request.ExperimentDefinitionIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListExperimentRunEvents", "Required field: ExperimentDefinitionIdentifier, is not set");
+    return ListExperimentRunEventsOutcome(Aws::Client::AWSError<AppConfigErrors>(
+        AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExperimentDefinitionIdentifier]", false));
+  }
+  if (!request.RunHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListExperimentRunEvents", "Required field: Run, is not set");
+    return ListExperimentRunEventsOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [Run]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentdefinitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperimentDefinitionIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentruns/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRun());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/events");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListExperimentRunEventsOutcome(result.GetResultWithOwnership())
+                            : ListExperimentRunEventsOutcome(std::move(result.GetError()));
+}
+
+ListExperimentRunsOutcome AppConfigClient::ListExperimentRuns(const ListExperimentRunsRequest& request) const {
+  if (!request.ApplicationIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListExperimentRuns", "Required field: ApplicationIdentifier, is not set");
+    return ListExperimentRunsOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [ApplicationIdentifier]", false));
+  }
+  if (!request.ExperimentDefinitionIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListExperimentRuns", "Required field: ExperimentDefinitionIdentifier, is not set");
+    return ListExperimentRunsOutcome(Aws::Client::AWSError<AppConfigErrors>(
+        AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExperimentDefinitionIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentdefinitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperimentDefinitionIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentruns");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListExperimentRunsOutcome(result.GetResultWithOwnership())
+                            : ListExperimentRunsOutcome(std::move(result.GetError()));
+}
+
 ListExtensionAssociationsOutcome AppConfigClient::ListExtensionAssociations(const ListExtensionAssociationsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -896,6 +1078,32 @@ StartDeploymentOutcome AppConfigClient::StartDeployment(const StartDeploymentReq
                             : StartDeploymentOutcome(std::move(result.GetError()));
 }
 
+StartExperimentRunOutcome AppConfigClient::StartExperimentRun(const StartExperimentRunRequest& request) const {
+  if (!request.ApplicationIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartExperimentRun", "Required field: ApplicationIdentifier, is not set");
+    return StartExperimentRunOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [ApplicationIdentifier]", false));
+  }
+  if (!request.ExperimentDefinitionIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartExperimentRun", "Required field: ExperimentDefinitionIdentifier, is not set");
+    return StartExperimentRunOutcome(Aws::Client::AWSError<AppConfigErrors>(
+        AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExperimentDefinitionIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentdefinitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperimentDefinitionIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentruns");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartExperimentRunOutcome(result.GetResultWithOwnership())
+                            : StartExperimentRunOutcome(std::move(result.GetError()));
+}
+
 StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentRequest& request) const {
   if (!request.ApplicationIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("StopDeployment", "Required field: ApplicationId, is not set");
@@ -925,6 +1133,39 @@ StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentReques
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? StopDeploymentOutcome(result.GetResultWithOwnership()) : StopDeploymentOutcome(std::move(result.GetError()));
+}
+
+StopExperimentRunOutcome AppConfigClient::StopExperimentRun(const StopExperimentRunRequest& request) const {
+  if (!request.ApplicationIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopExperimentRun", "Required field: ApplicationIdentifier, is not set");
+    return StopExperimentRunOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [ApplicationIdentifier]", false));
+  }
+  if (!request.ExperimentDefinitionIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopExperimentRun", "Required field: ExperimentDefinitionIdentifier, is not set");
+    return StopExperimentRunOutcome(Aws::Client::AWSError<AppConfigErrors>(
+        AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExperimentDefinitionIdentifier]", false));
+  }
+  if (!request.RunHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopExperimentRun", "Required field: Run, is not set");
+    return StopExperimentRunOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [Run]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentdefinitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperimentDefinitionIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentruns/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRun());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? StopExperimentRunOutcome(result.GetResultWithOwnership())
+                            : StopExperimentRunOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& request) const {
@@ -1061,6 +1302,64 @@ UpdateEnvironmentOutcome AppConfigClient::UpdateEnvironment(const UpdateEnvironm
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateEnvironmentOutcome(result.GetResultWithOwnership())
                             : UpdateEnvironmentOutcome(std::move(result.GetError()));
+}
+
+UpdateExperimentDefinitionOutcome AppConfigClient::UpdateExperimentDefinition(const UpdateExperimentDefinitionRequest& request) const {
+  if (!request.ApplicationIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateExperimentDefinition", "Required field: ApplicationIdentifier, is not set");
+    return UpdateExperimentDefinitionOutcome(Aws::Client::AWSError<AppConfigErrors>(
+        AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationIdentifier]", false));
+  }
+  if (!request.ExperimentDefinitionIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateExperimentDefinition", "Required field: ExperimentDefinitionIdentifier, is not set");
+    return UpdateExperimentDefinitionOutcome(Aws::Client::AWSError<AppConfigErrors>(
+        AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExperimentDefinitionIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentdefinitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperimentDefinitionIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateExperimentDefinitionOutcome(result.GetResultWithOwnership())
+                            : UpdateExperimentDefinitionOutcome(std::move(result.GetError()));
+}
+
+UpdateExperimentRunOutcome AppConfigClient::UpdateExperimentRun(const UpdateExperimentRunRequest& request) const {
+  if (!request.ApplicationIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateExperimentRun", "Required field: ApplicationIdentifier, is not set");
+    return UpdateExperimentRunOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [ApplicationIdentifier]", false));
+  }
+  if (!request.ExperimentDefinitionIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateExperimentRun", "Required field: ExperimentDefinitionIdentifier, is not set");
+    return UpdateExperimentRunOutcome(Aws::Client::AWSError<AppConfigErrors>(
+        AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExperimentDefinitionIdentifier]", false));
+  }
+  if (!request.RunHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateExperimentRun", "Required field: Run, is not set");
+    return UpdateExperimentRunOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [Run]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentdefinitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperimentDefinitionIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/experimentruns/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRun());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/update");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateExperimentRunOutcome(result.GetResultWithOwnership())
+                            : UpdateExperimentRunOutcome(std::move(result.GetError()));
 }
 
 UpdateExtensionOutcome AppConfigClient::UpdateExtension(const UpdateExtensionRequest& request) const {

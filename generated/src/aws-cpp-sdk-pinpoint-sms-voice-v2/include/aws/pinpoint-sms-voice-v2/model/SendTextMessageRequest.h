@@ -54,9 +54,10 @@ class SendTextMessageRequest : public PinpointSMSVoiceV2Request {
   ///@{
   /**
    * <p>The origination identity of the message. This can be either the PhoneNumber,
-   * PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
-   *  <p>If you are using a shared End User Messaging SMS resource then
-   * you must use the full Amazon Resource Name(ARN).</p>
+   * PhoneNumberId, PhoneNumberArn, RcsAgentId, RcsAgentArn, SenderId, SenderIdArn,
+   * PoolId, or PoolArn.</p>  <p>If you are using a shared End User
+   * Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
+   *
    */
   inline const Aws::String& GetOriginationIdentity() const { return m_originationIdentity; }
   inline bool OriginationIdentityHasBeenSet() const { return m_originationIdentityHasBeenSet; }

@@ -9,6 +9,7 @@
 #include <aws/pcs/PCSRequest.h>
 #include <aws/pcs/PCS_EXPORTS.h>
 #include <aws/pcs/model/UpdateClusterSlurmConfigurationRequest.h>
+#include <aws/pcs/model/UpdateSchedulerRequest.h>
 
 #include <utility>
 
@@ -91,15 +92,39 @@ class UpdateClusterRequest : public PCSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The scheduler configuration to update for the cluster. Use this to upgrade
+   * the Slurm version. For more information, see <a
+   * href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading
+   * the Slurm version on a cluster</a> in the <i>PCS User Guide</i>.</p>
+   */
+  inline const UpdateSchedulerRequest& GetScheduler() const { return m_scheduler; }
+  inline bool SchedulerHasBeenSet() const { return m_schedulerHasBeenSet; }
+  template <typename SchedulerT = UpdateSchedulerRequest>
+  void SetScheduler(SchedulerT&& value) {
+    m_schedulerHasBeenSet = true;
+    m_scheduler = std::forward<SchedulerT>(value);
+  }
+  template <typename SchedulerT = UpdateSchedulerRequest>
+  UpdateClusterRequest& WithScheduler(SchedulerT&& value) {
+    SetScheduler(std::forward<SchedulerT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterIdentifier;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   UpdateClusterSlurmConfigurationRequest m_slurmConfiguration;
+
+  UpdateSchedulerRequest m_scheduler;
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_slurmConfigurationHasBeenSet = false;
+  bool m_schedulerHasBeenSet = false;
 };
 
 }  // namespace Model

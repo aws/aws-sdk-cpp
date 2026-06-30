@@ -258,6 +258,34 @@ class CreateImageRecipeRequest : public ImagebuilderRequest {
 
   ///@{
   /**
+   * <p>The AMI watermark names to attach to the output AMI from this recipe. AMI
+   * watermarks are lineage markers. They automatically propagate to derivative AMIs
+   * when the source AMI is copied or distributed across Regions or accounts.</p>
+   *  <p>AMI watermarks are supported only for image recipes. AMIs with
+   * watermarks cannot be made public.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAmiWatermarks() const { return m_amiWatermarks; }
+  inline bool AmiWatermarksHasBeenSet() const { return m_amiWatermarksHasBeenSet; }
+  template <typename AmiWatermarksT = Aws::Vector<Aws::String>>
+  void SetAmiWatermarks(AmiWatermarksT&& value) {
+    m_amiWatermarksHasBeenSet = true;
+    m_amiWatermarks = std::forward<AmiWatermarksT>(value);
+  }
+  template <typename AmiWatermarksT = Aws::Vector<Aws::String>>
+  CreateImageRecipeRequest& WithAmiWatermarks(AmiWatermarksT&& value) {
+    SetAmiWatermarks(std::forward<AmiWatermarksT>(value));
+    return *this;
+  }
+  template <typename AmiWatermarksT = Aws::String>
+  CreateImageRecipeRequest& AddAmiWatermarks(AmiWatermarksT&& value) {
+    m_amiWatermarksHasBeenSet = true;
+    m_amiWatermarks.emplace_back(std::forward<AmiWatermarksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
    * request. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
@@ -297,6 +325,8 @@ class CreateImageRecipeRequest : public ImagebuilderRequest {
 
   Aws::Map<Aws::String, Aws::String> m_amiTags;
 
+  Aws::Vector<Aws::String> m_amiWatermarks;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -308,6 +338,7 @@ class CreateImageRecipeRequest : public ImagebuilderRequest {
   bool m_workingDirectoryHasBeenSet = false;
   bool m_additionalInstanceConfigurationHasBeenSet = false;
   bool m_amiTagsHasBeenSet = false;
+  bool m_amiWatermarksHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

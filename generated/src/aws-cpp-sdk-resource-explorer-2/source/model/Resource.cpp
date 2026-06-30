@@ -38,6 +38,10 @@ Resource& Resource::operator=(JsonView jsonValue) {
     m_service = jsonValue.GetString("Service");
     m_serviceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CfnResourceType")) {
+    m_cfnResourceType = jsonValue.GetString("CfnResourceType");
+    m_cfnResourceTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("LastReportedAt")) {
     m_lastReportedAt = jsonValue.GetString("LastReportedAt");
     m_lastReportedAtHasBeenSet = true;
@@ -73,6 +77,10 @@ JsonValue Resource::Jsonize() const {
 
   if (m_serviceHasBeenSet) {
     payload.WithString("Service", m_service);
+  }
+
+  if (m_cfnResourceTypeHasBeenSet) {
+    payload.WithString("CfnResourceType", m_cfnResourceType);
   }
 
   if (m_lastReportedAtHasBeenSet) {

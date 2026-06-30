@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appconfig/AppConfig_EXPORTS.h>
 #include <aws/appconfig/model/DeletionProtectionSettings.h>
+#include <aws/appconfig/model/VendedMetricsSettings.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -52,6 +53,23 @@ class GetAccountSettingsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Configuration for vended metrics in the account.</p>
+   */
+  inline const VendedMetricsSettings& GetVendedMetrics() const { return m_vendedMetrics; }
+  template <typename VendedMetricsT = VendedMetricsSettings>
+  void SetVendedMetrics(VendedMetricsT&& value) {
+    m_vendedMetricsHasBeenSet = true;
+    m_vendedMetrics = std::forward<VendedMetricsT>(value);
+  }
+  template <typename VendedMetricsT = VendedMetricsSettings>
+  GetAccountSettingsResult& WithVendedMetrics(VendedMetricsT&& value) {
+    SetVendedMetrics(std::forward<VendedMetricsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -70,9 +88,12 @@ class GetAccountSettingsResult {
  private:
   DeletionProtectionSettings m_deletionProtection;
 
+  VendedMetricsSettings m_vendedMetrics;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deletionProtectionHasBeenSet = false;
+  bool m_vendedMetricsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

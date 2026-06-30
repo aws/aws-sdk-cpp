@@ -27,8 +27,9 @@ namespace Model {
 
 /**
  * <p>An object that represents a connector for an Amazon EVS environment. A
- * connector establishes a vCenter connection using the credentials stored in
- * Amazon Web Services Secrets Manager.</p><p><h3>See Also:</h3>   <a
+ * connector establishes a connection to the given appliance type using the
+ * credentials stored in Amazon Web Services Secrets Manager.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/Connector">AWS API
  * Reference</a></p>
  */

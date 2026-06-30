@@ -24,6 +24,7 @@ static const int KEYWORDS_PER_PHONE_NUMBER_HASH = HashingUtils::HashString("KEYW
 static const int KEYWORDS_PER_POOL_HASH = HashingUtils::HashString("KEYWORDS_PER_POOL");
 static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA");
 static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY");
+static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_RCS_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_RCS");
 static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT");
 static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE");
 static const int NOTIFY_CONFIGURATIONS_PER_ACCOUNT_HASH = HashingUtils::HashString("NOTIFY_CONFIGURATIONS_PER_ACCOUNT");
@@ -63,6 +64,8 @@ ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForNam
     return ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA;
   } else if (hashCode == MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY_HASH) {
     return ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY;
+  } else if (hashCode == MONTHLY_SPEND_LIMIT_REACHED_FOR_RCS_HASH) {
+    return ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_RCS;
   } else if (hashCode == MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT_HASH) {
     return ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT;
   } else if (hashCode == MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE_HASH) {
@@ -131,6 +134,8 @@ Aws::String GetNameForServiceQuotaExceededExceptionReason(ServiceQuotaExceededEx
       return "MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA";
     case ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY:
       return "MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY";
+    case ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_RCS:
+      return "MONTHLY_SPEND_LIMIT_REACHED_FOR_RCS";
     case ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT:
       return "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT";
     case ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE:

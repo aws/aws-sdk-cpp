@@ -67,7 +67,8 @@ class CreateHostedConfigurationVersionRequest : public StreamingAppConfigRequest
 
   ///@{
   /**
-   * <p>A description of the configuration.</p>
+   * <p>A description of the configuration.</p>  <p>Due to HTTP limitations,
+   * this field only supports ASCII characters.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }

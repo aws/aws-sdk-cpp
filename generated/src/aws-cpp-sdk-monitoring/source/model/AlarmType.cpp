@@ -17,6 +17,7 @@ namespace AlarmTypeMapper {
 
 static const int CompositeAlarm_HASH = HashingUtils::HashString("CompositeAlarm");
 static const int MetricAlarm_HASH = HashingUtils::HashString("MetricAlarm");
+static const int LogAlarm_HASH = HashingUtils::HashString("LogAlarm");
 
 AlarmType GetAlarmTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ AlarmType GetAlarmTypeForName(const Aws::String& name) {
     return AlarmType::CompositeAlarm;
   } else if (hashCode == MetricAlarm_HASH) {
     return AlarmType::MetricAlarm;
+  } else if (hashCode == LogAlarm_HASH) {
+    return AlarmType::LogAlarm;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForAlarmType(AlarmType enumValue) {
       return "CompositeAlarm";
     case AlarmType::MetricAlarm:
       return "MetricAlarm";
+    case AlarmType::LogAlarm:
+      return "LogAlarm";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

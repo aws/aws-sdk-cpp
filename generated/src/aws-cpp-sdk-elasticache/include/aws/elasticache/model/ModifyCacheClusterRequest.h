@@ -368,7 +368,12 @@ class ModifyCacheClusterRequest : public ElastiCacheRequest {
    * the next maintenance reboot, or the next failure reboot, whichever occurs
    * first.</p>  <p>If you perform a <code>ModifyCacheCluster</code>
    * before a pending modification is applied, the pending modification is replaced
-   * by the newer modification.</p>  <p>Valid values: <code>true</code> |
+   * by the newer modification. However, a pending node-count increase on Memcached
+   * clusters cannot be superseded by a request to add fewer nodes. To change a
+   * pending node addition, first cancel it by setting <code>NumCacheNodes</code>
+   * equal to the current number of nodes in the cluster, then submit the new
+   * request. See the <code>NumCacheNodes</code> parameter for details on node
+   * scaling behavior.</p>  <p>Valid values: <code>true</code> |
    * <code>false</code> </p> <p>Default: <code>false</code> </p>
    */
   inline bool GetApplyImmediately() const { return m_applyImmediately; }

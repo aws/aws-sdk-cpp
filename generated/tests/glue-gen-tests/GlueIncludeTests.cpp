@@ -1109,6 +1109,8 @@
 #include <aws/glue/model/UnnestSpec.h>
 #include <aws/glue/model/UntagResourceRequest.h>
 #include <aws/glue/model/UntagResourceResult.h>
+#include <aws/glue/model/UpdateAssetRequest.h>
+#include <aws/glue/model/UpdateAssetResult.h>
 #include <aws/glue/model/UpdateBehavior.h>
 #include <aws/glue/model/UpdateBlueprintRequest.h>
 #include <aws/glue/model/UpdateBlueprintResult.h>

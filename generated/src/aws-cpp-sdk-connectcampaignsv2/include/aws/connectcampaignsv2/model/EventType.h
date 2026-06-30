@@ -10,7 +10,15 @@
 namespace Aws {
 namespace ConnectCampaignsV2 {
 namespace Model {
-enum class EventType { NOT_SET, Campaign_Email, Campaign_SMS, Campaign_Telephony, Campaign_Orchestration, Campaign_WhatsApp };
+enum class EventType {
+  NOT_SET,
+  Campaign_Email,
+  Campaign_SMS,
+  Campaign_Telephony,
+  Campaign_Orchestration,
+  Campaign_WhatsApp,
+  Campaign_WebNotification
+};
 
 namespace EventTypeMapper {
 AWS_CONNECTCAMPAIGNSV2_API EventType GetEventTypeForName(const Aws::String& name);
