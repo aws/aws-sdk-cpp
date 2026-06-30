@@ -18,6 +18,8 @@
 #include <aws/cleanrooms/model/ListConfiguredTablesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListIdMappingTablesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListIdNamespaceAssociationsPaginationTraits.h>
+#include <aws/cleanrooms/model/ListIntermediateTableVersionsPaginationTraits.h>
+#include <aws/cleanrooms/model/ListIntermediateTablesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListMembersPaginationTraits.h>
 #include <aws/cleanrooms/model/ListMembershipsPaginationTraits.h>
 #include <aws/cleanrooms/model/ListPrivacyBudgetTemplatesPaginationTraits.h>
@@ -191,6 +193,30 @@ class CleanRoomsPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdNamespaceAssociationsRequest,
                                              Pagination::ListIdNamespaceAssociationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListIntermediateTables operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIntermediateTablesRequest,
+                                    Pagination::ListIntermediateTablesPaginationTraits<DerivedClient>>
+  ListIntermediateTablesPaginator(const Model::ListIntermediateTablesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIntermediateTablesRequest,
+                                             Pagination::ListIntermediateTablesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListIntermediateTableVersions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIntermediateTableVersionsRequest,
+                                    Pagination::ListIntermediateTableVersionsPaginationTraits<DerivedClient>>
+  ListIntermediateTableVersionsPaginator(const Model::ListIntermediateTableVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIntermediateTableVersionsRequest,
+                                             Pagination::ListIntermediateTableVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

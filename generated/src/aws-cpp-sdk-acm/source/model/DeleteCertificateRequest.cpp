@@ -27,3 +27,10 @@ Aws::Http::HeaderValueCollection DeleteCertificateRequest::GetRequestSpecificHea
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CertificateManager.DeleteCertificate"));
   return headers;
 }
+
+DeleteCertificateRequest::EndpointParameters DeleteCertificateRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("ServiceType"), "ACM", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

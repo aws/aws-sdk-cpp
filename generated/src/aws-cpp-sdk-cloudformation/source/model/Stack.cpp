@@ -94,6 +94,11 @@ Stack& Stack::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disableRollbackNode.GetText()).c_str()).c_str());
       m_disableRollbackHasBeenSet = true;
     }
+    XmlNode deploymentConfigNode = resultNode.FirstChild("DeploymentConfig");
+    if (!deploymentConfigNode.IsNull()) {
+      m_deploymentConfig = deploymentConfigNode;
+      m_deploymentConfigHasBeenSet = true;
+    }
     XmlNode notificationARNsNode = resultNode.FirstChild("NotificationARNs");
     if (!notificationARNsNode.IsNull()) {
       XmlNode notificationARNsMember = notificationARNsNode.FirstChild("member");
@@ -265,6 +270,12 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
     oStream << location << index << locationValue << ".DisableRollback=" << std::boolalpha << m_disableRollback << "&";
   }
 
+  if (m_deploymentConfigHasBeenSet) {
+    Aws::StringStream deploymentConfigLocationAndMemberSs;
+    deploymentConfigLocationAndMemberSs << location << index << locationValue << ".DeploymentConfig";
+    m_deploymentConfig.OutputToStream(oStream, deploymentConfigLocationAndMemberSs.str().c_str());
+  }
+
   if (m_notificationARNsHasBeenSet) {
     unsigned notificationARNsIdx = 1;
     for (auto& item : m_notificationARNs) {
@@ -397,6 +408,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const {
   }
   if (m_disableRollbackHasBeenSet) {
     oStream << location << ".DisableRollback=" << std::boolalpha << m_disableRollback << "&";
+  }
+  if (m_deploymentConfigHasBeenSet) {
+    Aws::String deploymentConfigLocationAndMember(location);
+    deploymentConfigLocationAndMember += ".DeploymentConfig";
+    m_deploymentConfig.OutputToStream(oStream, deploymentConfigLocationAndMember.c_str());
   }
   if (m_notificationARNsHasBeenSet) {
     unsigned notificationARNsIdx = 1;

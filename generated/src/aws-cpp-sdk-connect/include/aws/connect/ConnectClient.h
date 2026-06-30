@@ -1194,6 +1194,42 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates an attached file for a completed voice contact by copying a recording
+   * from a source S3 URI into Connect Customer managed storage. Use this API to
+   * attach voice recordings to contacts for downstream processing such as
+   * conversational analytics.</p>  <p>The
+   * <code>AssociatedResourceArn</code> must be the ARN of a completed voice contact,
+   * <code>FileUseCaseType</code> must be set to <code>VOICE_RECORDING</code>, and
+   * <code>FileSourceUri</code> must be a valid S3 URI.</p>
+   * <p>For example, you can call <code>CreateContact</code>, then
+   * <code>CreateAttachedFile</code>, then
+   * <code>StartContactConversationalAnalyticsJob</code> to create a contact, attach
+   * a recording, and run post-call analytics.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateAttachedFile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAttachedFileOutcome CreateAttachedFile(const Model::CreateAttachedFileRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAttachedFile that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateAttachedFileRequestT = Model::CreateAttachedFileRequest>
+  Model::CreateAttachedFileOutcomeCallable CreateAttachedFileCallable(const CreateAttachedFileRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateAttachedFile, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAttachedFile that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateAttachedFileRequestT = Model::CreateAttachedFileRequest>
+  void CreateAttachedFileAsync(const CreateAttachedFileRequestT& request, const CreateAttachedFileResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateAttachedFile, request, handler, context);
+  }
+
+  /**
    *  <p>Only the VOICE, EMAIL, and TASK channels are supported. </p> <ul>
    * <li> <p>For VOICE: The supported initiation method is <code>TRANSFER</code>. The
    * contacts created with this initiation method have a subtype
@@ -8851,6 +8887,45 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   void StartChatContactAsync(const StartChatContactRequestT& request, const StartChatContactResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::StartChatContact, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a Contact Lens post-call analytics job for the specified contact. This
+   * API runs Conversational Analytics post-contact analysis on a voice recording
+   * that is already attached to the contact, generating transcription, sentiment
+   * analysis, redaction, and summarization results based on the provided
+   * configuration.</p>  <p>A voice recording must already be attached to
+   * the contact before calling this API. Use <code>CreateAttachedFile</code> to
+   * attach a recording from an S3 source URI.</p>   <p>For
+   * example, you can call <code>CreateContact</code>, then
+   * <code>CreateAttachedFile</code>, then
+   * <code>StartContactConversationalAnalyticsJob</code> to create a contact, attach
+   * a recording, and run post-call analytics.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactConversationalAnalyticsJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartContactConversationalAnalyticsJobOutcome StartContactConversationalAnalyticsJob(
+      const Model::StartContactConversationalAnalyticsJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartContactConversationalAnalyticsJob that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename StartContactConversationalAnalyticsJobRequestT = Model::StartContactConversationalAnalyticsJobRequest>
+  Model::StartContactConversationalAnalyticsJobOutcomeCallable StartContactConversationalAnalyticsJobCallable(
+      const StartContactConversationalAnalyticsJobRequestT& request) const {
+    return SubmitCallable(&ConnectClient::StartContactConversationalAnalyticsJob, request);
+  }
+
+  /**
+   * An Async wrapper for StartContactConversationalAnalyticsJob that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename StartContactConversationalAnalyticsJobRequestT = Model::StartContactConversationalAnalyticsJobRequest>
+  void StartContactConversationalAnalyticsJobAsync(const StartContactConversationalAnalyticsJobRequestT& request,
+                                                   const StartContactConversationalAnalyticsJobResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::StartContactConversationalAnalyticsJob, request, handler, context);
   }
 
   /**

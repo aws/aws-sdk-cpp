@@ -46,6 +46,10 @@ SolutionBase& SolutionBase::operator=(JsonView jsonValue) {
     m_createdDate = jsonValue.GetString("CreatedDate");
     m_createdDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AwsMarketplaceSolutionArn")) {
+    m_awsMarketplaceSolutionArn = jsonValue.GetString("AwsMarketplaceSolutionArn");
+    m_awsMarketplaceSolutionArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue SolutionBase::Jsonize() const {
 
   if (m_createdDateHasBeenSet) {
     payload.WithString("CreatedDate", m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_awsMarketplaceSolutionArnHasBeenSet) {
+    payload.WithString("AwsMarketplaceSolutionArn", m_awsMarketplaceSolutionArn);
   }
 
   return payload;

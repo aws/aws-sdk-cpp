@@ -400,6 +400,7 @@
 #include <aws/supplychain/SupplyChainClient.h>
 #include <aws/support-app/SupportAppClient.h>
 #include <aws/support/SupportClient.h>
+#include <aws/supportauthz/SupportAuthZClient.h>
 #include <aws/sustainability/SustainabilityClient.h>
 #include <aws/swf/SWFClient.h>
 #include <aws/synthetics/SyntheticsClient.h>

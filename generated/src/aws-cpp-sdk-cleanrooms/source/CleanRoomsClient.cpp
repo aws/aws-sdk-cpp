@@ -19,6 +19,8 @@
 #include <aws/cleanrooms/model/CreateConfiguredTableRequest.h>
 #include <aws/cleanrooms/model/CreateIdMappingTableRequest.h>
 #include <aws/cleanrooms/model/CreateIdNamespaceAssociationRequest.h>
+#include <aws/cleanrooms/model/CreateIntermediateTableAnalysisRuleRequest.h>
+#include <aws/cleanrooms/model/CreateIntermediateTableRequest.h>
 #include <aws/cleanrooms/model/CreateMembershipRequest.h>
 #include <aws/cleanrooms/model/CreatePrivacyBudgetTemplateRequest.h>
 #include <aws/cleanrooms/model/DeleteAnalysisTemplateRequest.h>
@@ -30,9 +32,12 @@
 #include <aws/cleanrooms/model/DeleteConfiguredTableRequest.h>
 #include <aws/cleanrooms/model/DeleteIdMappingTableRequest.h>
 #include <aws/cleanrooms/model/DeleteIdNamespaceAssociationRequest.h>
+#include <aws/cleanrooms/model/DeleteIntermediateTableAnalysisRuleRequest.h>
+#include <aws/cleanrooms/model/DeleteIntermediateTableRequest.h>
 #include <aws/cleanrooms/model/DeleteMemberRequest.h>
 #include <aws/cleanrooms/model/DeleteMembershipRequest.h>
 #include <aws/cleanrooms/model/DeletePrivacyBudgetTemplateRequest.h>
+#include <aws/cleanrooms/model/DisallowIntermediateTableRequest.h>
 #include <aws/cleanrooms/model/GetAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/GetCollaborationAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/GetCollaborationChangeRequestRequest.h>
@@ -47,6 +52,8 @@
 #include <aws/cleanrooms/model/GetConfiguredTableRequest.h>
 #include <aws/cleanrooms/model/GetIdMappingTableRequest.h>
 #include <aws/cleanrooms/model/GetIdNamespaceAssociationRequest.h>
+#include <aws/cleanrooms/model/GetIntermediateTableAnalysisRuleRequest.h>
+#include <aws/cleanrooms/model/GetIntermediateTableRequest.h>
 #include <aws/cleanrooms/model/GetMembershipRequest.h>
 #include <aws/cleanrooms/model/GetPrivacyBudgetTemplateRequest.h>
 #include <aws/cleanrooms/model/GetProtectedJobRequest.h>
@@ -66,6 +73,8 @@
 #include <aws/cleanrooms/model/ListConfiguredTablesRequest.h>
 #include <aws/cleanrooms/model/ListIdMappingTablesRequest.h>
 #include <aws/cleanrooms/model/ListIdNamespaceAssociationsRequest.h>
+#include <aws/cleanrooms/model/ListIntermediateTableVersionsRequest.h>
+#include <aws/cleanrooms/model/ListIntermediateTablesRequest.h>
 #include <aws/cleanrooms/model/ListMembersRequest.h>
 #include <aws/cleanrooms/model/ListMembershipsRequest.h>
 #include <aws/cleanrooms/model/ListPrivacyBudgetTemplatesRequest.h>
@@ -75,6 +84,7 @@
 #include <aws/cleanrooms/model/ListSchemasRequest.h>
 #include <aws/cleanrooms/model/ListTagsForResourceRequest.h>
 #include <aws/cleanrooms/model/PopulateIdMappingTableRequest.h>
+#include <aws/cleanrooms/model/PopulateIntermediateTableRequest.h>
 #include <aws/cleanrooms/model/PreviewPrivacyImpactRequest.h>
 #include <aws/cleanrooms/model/StartProtectedJobRequest.h>
 #include <aws/cleanrooms/model/StartProtectedQueryRequest.h>
@@ -90,6 +100,8 @@
 #include <aws/cleanrooms/model/UpdateConfiguredTableRequest.h>
 #include <aws/cleanrooms/model/UpdateIdMappingTableRequest.h>
 #include <aws/cleanrooms/model/UpdateIdNamespaceAssociationRequest.h>
+#include <aws/cleanrooms/model/UpdateIntermediateTableAnalysisRuleRequest.h>
+#include <aws/cleanrooms/model/UpdateIntermediateTableRequest.h>
 #include <aws/cleanrooms/model/UpdateMembershipRequest.h>
 #include <aws/cleanrooms/model/UpdatePrivacyBudgetTemplateRequest.h>
 #include <aws/cleanrooms/model/UpdateProtectedJobRequest.h>
@@ -506,6 +518,52 @@ CreateIdNamespaceAssociationOutcome CleanRoomsClient::CreateIdNamespaceAssociati
                             : CreateIdNamespaceAssociationOutcome(std::move(result.GetError()));
 }
 
+CreateIntermediateTableOutcome CleanRoomsClient::CreateIntermediateTable(const CreateIntermediateTableRequest& request) const {
+  if (!request.MembershipIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateIntermediateTable", "Required field: MembershipIdentifier, is not set");
+    return CreateIntermediateTableOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [MembershipIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/intermediateTables");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIntermediateTableOutcome(result.GetResultWithOwnership())
+                            : CreateIntermediateTableOutcome(std::move(result.GetError()));
+}
+
+CreateIntermediateTableAnalysisRuleOutcome CleanRoomsClient::CreateIntermediateTableAnalysisRule(
+    const CreateIntermediateTableAnalysisRuleRequest& request) const {
+  if (!request.MembershipIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateIntermediateTableAnalysisRule", "Required field: MembershipIdentifier, is not set");
+    return CreateIntermediateTableAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.IntermediateTableIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateIntermediateTableAnalysisRule", "Required field: IntermediateTableIdentifier, is not set");
+    return CreateIntermediateTableAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntermediateTableIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/intermediateTables/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntermediateTableIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/analysisRule");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIntermediateTableAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : CreateIntermediateTableAnalysisRuleOutcome(std::move(result.GetError()));
+}
+
 CreateMembershipOutcome CleanRoomsClient::CreateMembership(const CreateMembershipRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -764,6 +822,65 @@ DeleteIdNamespaceAssociationOutcome CleanRoomsClient::DeleteIdNamespaceAssociati
                             : DeleteIdNamespaceAssociationOutcome(std::move(result.GetError()));
 }
 
+DeleteIntermediateTableOutcome CleanRoomsClient::DeleteIntermediateTable(const DeleteIntermediateTableRequest& request) const {
+  if (!request.MembershipIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteIntermediateTable", "Required field: MembershipIdentifier, is not set");
+    return DeleteIntermediateTableOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.IntermediateTableIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteIntermediateTable", "Required field: IntermediateTableIdentifier, is not set");
+    return DeleteIntermediateTableOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntermediateTableIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/intermediateTables/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntermediateTableIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIntermediateTableOutcome(result.GetResultWithOwnership())
+                            : DeleteIntermediateTableOutcome(std::move(result.GetError()));
+}
+
+DeleteIntermediateTableAnalysisRuleOutcome CleanRoomsClient::DeleteIntermediateTableAnalysisRule(
+    const DeleteIntermediateTableAnalysisRuleRequest& request) const {
+  if (!request.MembershipIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteIntermediateTableAnalysisRule", "Required field: MembershipIdentifier, is not set");
+    return DeleteIntermediateTableAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.IntermediateTableIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteIntermediateTableAnalysisRule", "Required field: IntermediateTableIdentifier, is not set");
+    return DeleteIntermediateTableAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntermediateTableIdentifier]", false));
+  }
+  if (!request.AnalysisRuleTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteIntermediateTableAnalysisRule", "Required field: AnalysisRuleType, is not set");
+    return DeleteIntermediateTableAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisRuleType]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/intermediateTables/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntermediateTableIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/analysisRule/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(
+        IntermediateTableAnalysisRuleTypeMapper::GetNameForIntermediateTableAnalysisRuleType(request.GetAnalysisRuleType()));
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIntermediateTableAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteIntermediateTableAnalysisRuleOutcome(std::move(result.GetError()));
+}
+
 DeleteMemberOutcome CleanRoomsClient::DeleteMember(const DeleteMemberRequest& request) const {
   if (!request.CollaborationIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteMember", "Required field: CollaborationIdentifier, is not set");
@@ -829,6 +946,25 @@ DeletePrivacyBudgetTemplateOutcome CleanRoomsClient::DeletePrivacyBudgetTemplate
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeletePrivacyBudgetTemplateOutcome(result.GetResultWithOwnership())
                             : DeletePrivacyBudgetTemplateOutcome(std::move(result.GetError()));
+}
+
+DisallowIntermediateTableOutcome CleanRoomsClient::DisallowIntermediateTable(const DisallowIntermediateTableRequest& request) const {
+  if (!request.MembershipIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DisallowIntermediateTable", "Required field: MembershipIdentifier, is not set");
+    return DisallowIntermediateTableOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/disallowIntermediateTable");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisallowIntermediateTableOutcome(result.GetResultWithOwnership())
+                            : DisallowIntermediateTableOutcome(std::move(result.GetError()));
 }
 
 GetAnalysisTemplateOutcome CleanRoomsClient::GetAnalysisTemplate(const GetAnalysisTemplateRequest& request) const {
@@ -1188,6 +1324,65 @@ GetIdNamespaceAssociationOutcome CleanRoomsClient::GetIdNamespaceAssociation(con
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetIdNamespaceAssociationOutcome(result.GetResultWithOwnership())
                             : GetIdNamespaceAssociationOutcome(std::move(result.GetError()));
+}
+
+GetIntermediateTableOutcome CleanRoomsClient::GetIntermediateTable(const GetIntermediateTableRequest& request) const {
+  if (!request.IntermediateTableIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetIntermediateTable", "Required field: IntermediateTableIdentifier, is not set");
+    return GetIntermediateTableOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntermediateTableIdentifier]", false));
+  }
+  if (!request.MembershipIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetIntermediateTable", "Required field: MembershipIdentifier, is not set");
+    return GetIntermediateTableOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [MembershipIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/intermediateTables/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntermediateTableIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIntermediateTableOutcome(result.GetResultWithOwnership())
+                            : GetIntermediateTableOutcome(std::move(result.GetError()));
+}
+
+GetIntermediateTableAnalysisRuleOutcome CleanRoomsClient::GetIntermediateTableAnalysisRule(
+    const GetIntermediateTableAnalysisRuleRequest& request) const {
+  if (!request.MembershipIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetIntermediateTableAnalysisRule", "Required field: MembershipIdentifier, is not set");
+    return GetIntermediateTableAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.IntermediateTableIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetIntermediateTableAnalysisRule", "Required field: IntermediateTableIdentifier, is not set");
+    return GetIntermediateTableAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntermediateTableIdentifier]", false));
+  }
+  if (!request.AnalysisRuleTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetIntermediateTableAnalysisRule", "Required field: AnalysisRuleType, is not set");
+    return GetIntermediateTableAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisRuleType]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/intermediateTables/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntermediateTableIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/analysisRule/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(
+        IntermediateTableAnalysisRuleTypeMapper::GetNameForIntermediateTableAnalysisRuleType(request.GetAnalysisRuleType()));
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIntermediateTableAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : GetIntermediateTableAnalysisRuleOutcome(std::move(result.GetError()));
 }
 
 GetMembershipOutcome CleanRoomsClient::GetMembership(const GetMembershipRequest& request) const {
@@ -1582,6 +1777,52 @@ ListIdNamespaceAssociationsOutcome CleanRoomsClient::ListIdNamespaceAssociations
                             : ListIdNamespaceAssociationsOutcome(std::move(result.GetError()));
 }
 
+ListIntermediateTableVersionsOutcome CleanRoomsClient::ListIntermediateTableVersions(
+    const ListIntermediateTableVersionsRequest& request) const {
+  if (!request.MembershipIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListIntermediateTableVersions", "Required field: MembershipIdentifier, is not set");
+    return ListIntermediateTableVersionsOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.IntermediateTableIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListIntermediateTableVersions", "Required field: IntermediateTableIdentifier, is not set");
+    return ListIntermediateTableVersionsOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntermediateTableIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/intermediateTables/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntermediateTableIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIntermediateTableVersionsOutcome(result.GetResultWithOwnership())
+                            : ListIntermediateTableVersionsOutcome(std::move(result.GetError()));
+}
+
+ListIntermediateTablesOutcome CleanRoomsClient::ListIntermediateTables(const ListIntermediateTablesRequest& request) const {
+  if (!request.MembershipIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListIntermediateTables", "Required field: MembershipIdentifier, is not set");
+    return ListIntermediateTablesOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [MembershipIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/intermediateTables");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIntermediateTablesOutcome(result.GetResultWithOwnership())
+                            : ListIntermediateTablesOutcome(std::move(result.GetError()));
+}
+
 ListMembersOutcome CleanRoomsClient::ListMembers(const ListMembersRequest& request) const {
   if (!request.CollaborationIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListMembers", "Required field: CollaborationIdentifier, is not set");
@@ -1752,6 +1993,32 @@ PopulateIdMappingTableOutcome CleanRoomsClient::PopulateIdMappingTable(const Pop
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PopulateIdMappingTableOutcome(result.GetResultWithOwnership())
                             : PopulateIdMappingTableOutcome(std::move(result.GetError()));
+}
+
+PopulateIntermediateTableOutcome CleanRoomsClient::PopulateIntermediateTable(const PopulateIntermediateTableRequest& request) const {
+  if (!request.IntermediateTableIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PopulateIntermediateTable", "Required field: IntermediateTableIdentifier, is not set");
+    return PopulateIntermediateTableOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntermediateTableIdentifier]", false));
+  }
+  if (!request.MembershipIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PopulateIntermediateTable", "Required field: MembershipIdentifier, is not set");
+    return PopulateIntermediateTableOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/intermediateTables/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntermediateTableIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/populate");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PopulateIntermediateTableOutcome(result.GetResultWithOwnership())
+                            : PopulateIntermediateTableOutcome(std::move(result.GetError()));
 }
 
 PreviewPrivacyImpactOutcome CleanRoomsClient::PreviewPrivacyImpact(const PreviewPrivacyImpactRequest& request) const {
@@ -2102,6 +2369,65 @@ UpdateIdNamespaceAssociationOutcome CleanRoomsClient::UpdateIdNamespaceAssociati
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateIdNamespaceAssociationOutcome(result.GetResultWithOwnership())
                             : UpdateIdNamespaceAssociationOutcome(std::move(result.GetError()));
+}
+
+UpdateIntermediateTableOutcome CleanRoomsClient::UpdateIntermediateTable(const UpdateIntermediateTableRequest& request) const {
+  if (!request.IntermediateTableIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateIntermediateTable", "Required field: IntermediateTableIdentifier, is not set");
+    return UpdateIntermediateTableOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntermediateTableIdentifier]", false));
+  }
+  if (!request.MembershipIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateIntermediateTable", "Required field: MembershipIdentifier, is not set");
+    return UpdateIntermediateTableOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [MembershipIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/intermediateTables/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntermediateTableIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateIntermediateTableOutcome(result.GetResultWithOwnership())
+                            : UpdateIntermediateTableOutcome(std::move(result.GetError()));
+}
+
+UpdateIntermediateTableAnalysisRuleOutcome CleanRoomsClient::UpdateIntermediateTableAnalysisRule(
+    const UpdateIntermediateTableAnalysisRuleRequest& request) const {
+  if (!request.MembershipIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateIntermediateTableAnalysisRule", "Required field: MembershipIdentifier, is not set");
+    return UpdateIntermediateTableAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.IntermediateTableIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateIntermediateTableAnalysisRule", "Required field: IntermediateTableIdentifier, is not set");
+    return UpdateIntermediateTableAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntermediateTableIdentifier]", false));
+  }
+  if (!request.AnalysisRuleTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateIntermediateTableAnalysisRule", "Required field: AnalysisRuleType, is not set");
+    return UpdateIntermediateTableAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisRuleType]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/intermediateTables/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntermediateTableIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/analysisRule/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(
+        IntermediateTableAnalysisRuleTypeMapper::GetNameForIntermediateTableAnalysisRuleType(request.GetAnalysisRuleType()));
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateIntermediateTableAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateIntermediateTableAnalysisRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateMembershipOutcome CleanRoomsClient::UpdateMembership(const UpdateMembershipRequest& request) const {

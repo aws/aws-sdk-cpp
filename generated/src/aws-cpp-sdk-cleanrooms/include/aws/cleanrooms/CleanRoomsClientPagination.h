@@ -18,6 +18,8 @@
 #include <aws/cleanrooms/model/ListConfiguredTablesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListIdMappingTablesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListIdNamespaceAssociationsPaginationTraits.h>
+#include <aws/cleanrooms/model/ListIntermediateTableVersionsPaginationTraits.h>
+#include <aws/cleanrooms/model/ListIntermediateTablesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListMembersPaginationTraits.h>
 #include <aws/cleanrooms/model/ListMembershipsPaginationTraits.h>
 #include <aws/cleanrooms/model/ListPrivacyBudgetTemplatesPaginationTraits.h>
@@ -66,6 +68,12 @@ using ListIdMappingTablesPaginator = Aws::Utils::Pagination::Paginator<CleanRoom
 using ListIdNamespaceAssociationsPaginator =
     Aws::Utils::Pagination::Paginator<CleanRoomsClient, Model::ListIdNamespaceAssociationsRequest,
                                       Pagination::ListIdNamespaceAssociationsPaginationTraits<CleanRoomsClient>>;
+using ListIntermediateTablesPaginator =
+    Aws::Utils::Pagination::Paginator<CleanRoomsClient, Model::ListIntermediateTablesRequest,
+                                      Pagination::ListIntermediateTablesPaginationTraits<CleanRoomsClient>>;
+using ListIntermediateTableVersionsPaginator =
+    Aws::Utils::Pagination::Paginator<CleanRoomsClient, Model::ListIntermediateTableVersionsRequest,
+                                      Pagination::ListIntermediateTableVersionsPaginationTraits<CleanRoomsClient>>;
 using ListMembersPaginator = Aws::Utils::Pagination::Paginator<CleanRoomsClient, Model::ListMembersRequest,
                                                                Pagination::ListMembersPaginationTraits<CleanRoomsClient>>;
 using ListMembershipsPaginator = Aws::Utils::Pagination::Paginator<CleanRoomsClient, Model::ListMembershipsRequest,

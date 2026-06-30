@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/IntermediateTableOutputConfiguration.h>
 #include <aws/cleanrooms/model/ProtectedQueryDistributeOutputConfiguration.h>
 #include <aws/cleanrooms/model/ProtectedQueryMemberOutputConfiguration.h>
 #include <aws/cleanrooms/model/ProtectedQueryS3OutputConfiguration.h>
@@ -90,15 +91,37 @@ class ProtectedQueryOutputConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The intermediate table output configuration, present when the protected query
+   * was triggered by a populate operation.</p>
+   */
+  inline const IntermediateTableOutputConfiguration& GetIntermediateTable() const { return m_intermediateTable; }
+  inline bool IntermediateTableHasBeenSet() const { return m_intermediateTableHasBeenSet; }
+  template <typename IntermediateTableT = IntermediateTableOutputConfiguration>
+  void SetIntermediateTable(IntermediateTableT&& value) {
+    m_intermediateTableHasBeenSet = true;
+    m_intermediateTable = std::forward<IntermediateTableT>(value);
+  }
+  template <typename IntermediateTableT = IntermediateTableOutputConfiguration>
+  ProtectedQueryOutputConfiguration& WithIntermediateTable(IntermediateTableT&& value) {
+    SetIntermediateTable(std::forward<IntermediateTableT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ProtectedQueryS3OutputConfiguration m_s3;
 
   ProtectedQueryMemberOutputConfiguration m_member;
 
   ProtectedQueryDistributeOutputConfiguration m_distribute;
+
+  IntermediateTableOutputConfiguration m_intermediateTable;
   bool m_s3HasBeenSet = false;
   bool m_memberHasBeenSet = false;
   bool m_distributeHasBeenSet = false;
+  bool m_intermediateTableHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -41,6 +41,10 @@ Aws::String DeleteStackRequest::SerializePayload() const {
     ss << "DeletionMode=" << StringUtils::URLEncode(DeletionModeMapper::GetNameForDeletionMode(m_deletionMode)) << "&";
   }
 
+  if (m_deploymentConfigHasBeenSet) {
+    m_deploymentConfig.OutputToStream(ss, "DeploymentConfig");
+  }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

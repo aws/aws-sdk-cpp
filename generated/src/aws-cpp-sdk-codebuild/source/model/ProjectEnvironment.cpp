@@ -67,6 +67,10 @@ ProjectEnvironment& ProjectEnvironment::operator=(JsonView jsonValue) {
     m_dockerServer = jsonValue.GetObject("dockerServer");
     m_dockerServerHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("hostKernel")) {
+    m_hostKernel = HostKernelMapper::GetHostKernelForName(jsonValue.GetString("hostKernel"));
+    m_hostKernelHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -121,6 +125,10 @@ JsonValue ProjectEnvironment::Jsonize() const {
 
   if (m_dockerServerHasBeenSet) {
     payload.WithObject("dockerServer", m_dockerServer.Jsonize());
+  }
+
+  if (m_hostKernelHasBeenSet) {
+    payload.WithString("hostKernel", HostKernelMapper::GetNameForHostKernel(m_hostKernel));
   }
 
   return payload;

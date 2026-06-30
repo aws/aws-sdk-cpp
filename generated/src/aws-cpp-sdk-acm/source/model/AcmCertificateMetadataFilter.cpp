@@ -50,6 +50,19 @@ AcmCertificateMetadataFilter& AcmCertificateMetadataFilter::operator=(JsonView j
     m_validationMethod = ValidationMethodMapper::GetValidationMethodForName(jsonValue.GetString("ValidationMethod"));
     m_validationMethodHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CertificateKeyPairOrigin")) {
+    m_certificateKeyPairOrigin =
+        CertificateKeyPairOriginMapper::GetCertificateKeyPairOriginForName(jsonValue.GetString("CertificateKeyPairOrigin"));
+    m_certificateKeyPairOriginHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AcmeEndpointArn")) {
+    m_acmeEndpointArn = jsonValue.GetString("AcmeEndpointArn");
+    m_acmeEndpointArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AcmeAccountId")) {
+    m_acmeAccountId = jsonValue.GetString("AcmeAccountId");
+    m_acmeAccountIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +99,19 @@ JsonValue AcmCertificateMetadataFilter::Jsonize() const {
 
   if (m_validationMethodHasBeenSet) {
     payload.WithString("ValidationMethod", ValidationMethodMapper::GetNameForValidationMethod(m_validationMethod));
+  }
+
+  if (m_certificateKeyPairOriginHasBeenSet) {
+    payload.WithString("CertificateKeyPairOrigin",
+                       CertificateKeyPairOriginMapper::GetNameForCertificateKeyPairOrigin(m_certificateKeyPairOrigin));
+  }
+
+  if (m_acmeEndpointArnHasBeenSet) {
+    payload.WithString("AcmeEndpointArn", m_acmeEndpointArn);
+  }
+
+  if (m_acmeAccountIdHasBeenSet) {
+    payload.WithString("AcmeAccountId", m_acmeAccountId);
   }
 
   return payload;

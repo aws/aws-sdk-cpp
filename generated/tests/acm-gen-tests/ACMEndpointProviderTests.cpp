@@ -74,14 +74,14 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<ACMEndpointProviderEndpointTestCase>> ACMEndpointProviderTests::TEST_CASES;
-const size_t ACMEndpointProviderTests::TEST_CASES_SZ = 48;
+const size_t ACMEndpointProviderTests::TEST_CASES_SZ = 47;
 
 Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTestCase() {
 
   Aws::Vector<ACMEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
   {"For region af-south-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.af-south-1.amazonaws.com",
        {/*authScheme*/}, 
@@ -90,7 +90,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 1*/
   {"For region ap-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.ap-east-1.amazonaws.com",
        {/*authScheme*/}, 
@@ -99,7 +99,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 2*/
   {"For region ap-northeast-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.ap-northeast-1.amazonaws.com",
        {/*authScheme*/}, 
@@ -108,7 +108,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 3*/
   {"For region ap-northeast-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.ap-northeast-2.amazonaws.com",
        {/*authScheme*/}, 
@@ -117,7 +117,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 4*/
   {"For region ap-northeast-3 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-3"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "ap-northeast-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.ap-northeast-3.amazonaws.com",
        {/*authScheme*/}, 
@@ -126,7 +126,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 5*/
   {"For region ap-south-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.ap-south-1.amazonaws.com",
        {/*authScheme*/}, 
@@ -135,7 +135,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 6*/
   {"For region ap-southeast-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.ap-southeast-1.amazonaws.com",
        {/*authScheme*/}, 
@@ -144,7 +144,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 7*/
   {"For region ap-southeast-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.ap-southeast-2.amazonaws.com",
        {/*authScheme*/}, 
@@ -153,7 +153,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 8*/
   {"For region ap-southeast-3 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-3"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "ap-southeast-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.ap-southeast-3.amazonaws.com",
        {/*authScheme*/}, 
@@ -162,7 +162,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 9*/
   {"For region ca-central-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.ca-central-1.amazonaws.com",
        {/*authScheme*/}, 
@@ -170,152 +170,152 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 10*/
-  {"For region ca-central-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://acm-fips.ca-central-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 11*/
   {"For region eu-central-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.eu-central-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 12*/
+  /*TEST CASE 11*/
   {"For region eu-north-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.eu-north-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 13*/
+  /*TEST CASE 12*/
   {"For region eu-south-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-south-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "eu-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.eu-south-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 14*/
+  /*TEST CASE 13*/
   {"For region eu-west-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.eu-west-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 15*/
+  /*TEST CASE 14*/
   {"For region eu-west-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.eu-west-2.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 16*/
+  /*TEST CASE 15*/
   {"For region eu-west-3 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.eu-west-3.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 17*/
+  /*TEST CASE 16*/
   {"For region me-south-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "me-south-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "me-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.me-south-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 18*/
+  /*TEST CASE 17*/
   {"For region sa-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.sa-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 19*/
+  /*TEST CASE 18*/
   {"For region us-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 20*/
-  {"For region us-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://acm-fips.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 21*/
+  /*TEST CASE 19*/
   {"For region us-east-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.us-east-2.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 22*/
-  {"For region us-east-2 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://acm-fips.us-east-2.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 23*/
+  /*TEST CASE 20*/
   {"For region us-west-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.us-west-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 24*/
-  {"For region us-west-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://acm-fips.us-west-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 25*/
+  /*TEST CASE 21*/
   {"For region us-west-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.us-west-2.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
+  /*TEST CASE 22*/
+  {"For region ca-central-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("ServiceType", "ACM"), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://acm-fips.ca-central-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 23*/
+  {"For region us-east-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("ServiceType", "ACM"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://acm-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 24*/
+  {"For region us-east-2 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("ServiceType", "ACM"), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://acm-fips.us-east-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 25*/
+  {"For region us-west-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("ServiceType", "ACM"), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://acm-fips.us-west-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
   /*TEST CASE 26*/
   {"For region us-west-2 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("ServiceType", "ACM"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm-fips.us-west-2.amazonaws.com",
        {/*authScheme*/}, 
@@ -324,7 +324,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 27*/
   {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", true), EpParam("ServiceType", "ACM"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm-fips.us-east-1.api.aws",
        {/*authScheme*/}, 
@@ -333,7 +333,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 28*/
   {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.us-east-1.api.aws",
        {/*authScheme*/}, 
@@ -342,7 +342,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 29*/
   {"For region cn-north-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.cn-north-1.amazonaws.com.cn",
        {/*authScheme*/}, 
@@ -351,7 +351,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 30*/
   {"For region cn-northwest-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.cn-northwest-1.amazonaws.com.cn",
        {/*authScheme*/}, 
@@ -360,7 +360,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 31*/
   {"For region cn-north-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", true), EpParam("ServiceType", "ACM"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm-fips.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
@@ -369,7 +369,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 32*/
   {"For region cn-north-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("ServiceType", "ACM"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm-fips.cn-north-1.amazonaws.com.cn",
        {/*authScheme*/}, 
@@ -378,7 +378,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 33*/
   {"For region cn-north-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
@@ -387,7 +387,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 34*/
   {"For region us-gov-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
@@ -396,7 +396,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 35*/
   {"For region us-gov-west-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.us-gov-west-1.amazonaws.com",
        {/*authScheme*/}, 
@@ -405,7 +405,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 36*/
   {"For region us-gov-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", true), EpParam("ServiceType", "ACM"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm-fips.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
@@ -414,7 +414,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 37*/
   {"For region us-gov-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("ServiceType", "ACM"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
@@ -423,7 +423,7 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
   },
   /*TEST CASE 38*/
   {"For region us-gov-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://acm.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
@@ -431,76 +431,67 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 39*/
-  {"For region us-iso-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
+  {"For custom endpoint with region set and fips disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("ServiceType", "ACM"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://acm-fips.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://example.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 40*/
-  {"For region us-iso-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
+  {"For custom endpoint with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("ServiceType", "ACM"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://acm.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://example.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 41*/
-  {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
+  {"For custom endpoint with FIPS disabled and dualstack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("ServiceType", "ACM"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://acm-fips.us-isob-east-1.sc2s.sgov.gov",
+    {{/*epUrl*/"https://example.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 42*/
-  {"For region us-isob-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
+  {"ACM-ACME standard endpoint for us-east-1", // documentation
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM-ACME"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://acm.us-isob-east-1.sc2s.sgov.gov",
+    {{/*epUrl*/"https://acm-acme.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 43*/
-  {"For custom endpoint with region set and fips disabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+  {"ACM-ACME FIPS returns error", // documentation
+    {EpParam("UseFIPS", true), EpParam("ServiceType", "ACM-ACME"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"FIPS endpoints are not available for ACME operations"} // expect
   },
   /*TEST CASE 44*/
-  {"For custom endpoint with region not set and fips disabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseDualStack", false)}, // params
+  {"ACM-ACME custom endpoint", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://custom.example.com"), EpParam("ServiceType", "ACM-ACME"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
+    {{/*epUrl*/"https://custom.example.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 45*/
-  {"For custom endpoint with fips enabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+  {"ACM-ACME in us-gov-west-1 returns partition error", // documentation
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM-ACME"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+    {{/*No endpoint expected*/}, /*error*/"ACME operations are only available in commercial AWS partitions"} // expect
   },
   /*TEST CASE 46*/
-  {"For custom endpoint with fips disabled and dualstack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
+  {"ACM-ACME in cn-north-1 returns partition error", // documentation
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM-ACME"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 47*/
-  {"Missing region", // documentation
-    {}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
+    {{/*No endpoint expected*/}, /*error*/"ACME operations are only available in commercial AWS partitions"} // expect
   }
   };
   return test_cases;

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EKS {
 namespace Model {
-enum class Category { NOT_SET, UPGRADE_READINESS, MISCONFIGURATION };
+enum class Category { NOT_SET, UPGRADE_READINESS, MISCONFIGURATION, ROLLBACK_READINESS };
 
 namespace CategoryMapper {
 AWS_EKS_API Category GetCategoryForName(const Aws::String& name);

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/EKSRequest.h>
 #include <aws/eks/EKS_EXPORTS.h>
+#include <aws/eks/model/RollbackConfig.h>
 
 #include <utility>
 
@@ -86,8 +87,8 @@ class UpdateClusterVersionRequest : public EKSRequest {
 
   ///@{
   /**
-   * <p>Set this value to <code>true</code> to override upgrade-blocking readiness
-   * checks when updating a cluster.</p>
+   * <p>Set this value to <code>true</code> to override upgrade-blocking or
+   * rollback-blocking readiness checks when updating a cluster.</p>
    */
   inline bool GetForce() const { return m_force; }
   inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
@@ -100,6 +101,24 @@ class UpdateClusterVersionRequest : public EKSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The rollback configuration for the cluster version rollback.</p>
+   */
+  inline const RollbackConfig& GetRollbackConfig() const { return m_rollbackConfig; }
+  inline bool RollbackConfigHasBeenSet() const { return m_rollbackConfigHasBeenSet; }
+  template <typename RollbackConfigT = RollbackConfig>
+  void SetRollbackConfig(RollbackConfigT&& value) {
+    m_rollbackConfigHasBeenSet = true;
+    m_rollbackConfig = std::forward<RollbackConfigT>(value);
+  }
+  template <typename RollbackConfigT = RollbackConfig>
+  UpdateClusterVersionRequest& WithRollbackConfig(RollbackConfigT&& value) {
+    SetRollbackConfig(std::forward<RollbackConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -108,10 +127,13 @@ class UpdateClusterVersionRequest : public EKSRequest {
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   bool m_force{false};
+
+  RollbackConfig m_rollbackConfig;
   bool m_nameHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
   bool m_forceHasBeenSet = false;
+  bool m_rollbackConfigHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -34,13 +34,10 @@ class ModelTrainingPaymentConfig {
    * <p>Indicates whether the collaboration creator has configured the collaboration
    * member to pay for model training costs (<code>TRUE</code>) or has not configured
    * the collaboration member to pay for model training costs
-   * (<code>FALSE</code>).</p> <p>Exactly one member can be configured to pay for
-   * model training costs. An error is returned if the collaboration creator sets a
-   * <code>TRUE</code> value for more than one member in the collaboration. </p>
-   * <p>If the collaboration creator hasn't specified anyone as the member paying for
-   * model training costs, then the member who can query is the default payer. An
-   * error is returned if the collaboration creator sets a <code>FALSE</code> value
-   * for the member who can query.</p>
+   * (<code>FALSE</code>).</p> <p>One or more members can be configured as payer
+   * candidates for model training costs.</p> <p>If the collaboration creator hasn't
+   * specified anyone as the member paying for model training costs, then the member
+   * who can query is the default payer.</p>
    */
   inline bool GetIsResponsible() const { return m_isResponsible; }
   inline bool IsResponsibleHasBeenSet() const { return m_isResponsibleHasBeenSet; }

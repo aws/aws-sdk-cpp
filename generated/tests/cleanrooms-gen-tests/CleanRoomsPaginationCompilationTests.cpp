@@ -21,7 +21,9 @@
 #include <aws/cleanrooms/model/ListIdMappingTablesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListCollaborationConfiguredAudienceModelAssociationsPaginationTraits.h>
 #include <aws/cleanrooms/model/ListProtectedQueriesPaginationTraits.h>
+#include <aws/cleanrooms/model/ListIntermediateTablesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListSchemasPaginationTraits.h>
+#include <aws/cleanrooms/model/ListIntermediateTableVersionsPaginationTraits.h>
 #include <aws/cleanrooms/model/ListAnalysisTemplatesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListCollaborationPrivacyBudgetTemplatesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListIdNamespaceAssociationsPaginationTraits.h>

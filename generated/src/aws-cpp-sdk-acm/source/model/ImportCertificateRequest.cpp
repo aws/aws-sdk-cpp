@@ -48,3 +48,10 @@ Aws::Http::HeaderValueCollection ImportCertificateRequest::GetRequestSpecificHea
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CertificateManager.ImportCertificate"));
   return headers;
 }
+
+ImportCertificateRequest::EndpointParameters ImportCertificateRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("ServiceType"), "ACM", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

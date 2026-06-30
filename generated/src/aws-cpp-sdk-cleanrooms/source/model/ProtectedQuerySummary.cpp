@@ -50,6 +50,10 @@ ProtectedQuerySummary& ProtectedQuerySummary::operator=(JsonView jsonValue) {
     m_queryComputePayerAccountId = jsonValue.GetString("queryComputePayerAccountId");
     m_queryComputePayerAccountIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("intermediateTableConfiguration")) {
+    m_intermediateTableConfiguration = jsonValue.GetObject("intermediateTableConfiguration");
+    m_intermediateTableConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -87,6 +91,10 @@ JsonValue ProtectedQuerySummary::Jsonize() const {
 
   if (m_queryComputePayerAccountIdHasBeenSet) {
     payload.WithString("queryComputePayerAccountId", m_queryComputePayerAccountId);
+  }
+
+  if (m_intermediateTableConfigurationHasBeenSet) {
+    payload.WithObject("intermediateTableConfiguration", m_intermediateTableConfiguration.Jsonize());
   }
 
   return payload;

@@ -6,11 +6,13 @@
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/acm/model/CertificateExport.h>
+#include <aws/acm/model/CertificateKeyPairOrigin.h>
 #include <aws/acm/model/CertificateManagedBy.h>
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/CertificateType.h>
 #include <aws/acm/model/RenewalStatus.h>
 #include <aws/acm/model/ValidationMethod.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
 
@@ -163,6 +165,58 @@ class AcmCertificateMetadataFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filter by certificate key pair origin.</p>
+   */
+  inline CertificateKeyPairOrigin GetCertificateKeyPairOrigin() const { return m_certificateKeyPairOrigin; }
+  inline bool CertificateKeyPairOriginHasBeenSet() const { return m_certificateKeyPairOriginHasBeenSet; }
+  inline void SetCertificateKeyPairOrigin(CertificateKeyPairOrigin value) {
+    m_certificateKeyPairOriginHasBeenSet = true;
+    m_certificateKeyPairOrigin = value;
+  }
+  inline AcmCertificateMetadataFilter& WithCertificateKeyPairOrigin(CertificateKeyPairOrigin value) {
+    SetCertificateKeyPairOrigin(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter by ACME endpoint ARN.</p>
+   */
+  inline const Aws::String& GetAcmeEndpointArn() const { return m_acmeEndpointArn; }
+  inline bool AcmeEndpointArnHasBeenSet() const { return m_acmeEndpointArnHasBeenSet; }
+  template <typename AcmeEndpointArnT = Aws::String>
+  void SetAcmeEndpointArn(AcmeEndpointArnT&& value) {
+    m_acmeEndpointArnHasBeenSet = true;
+    m_acmeEndpointArn = std::forward<AcmeEndpointArnT>(value);
+  }
+  template <typename AcmeEndpointArnT = Aws::String>
+  AcmCertificateMetadataFilter& WithAcmeEndpointArn(AcmeEndpointArnT&& value) {
+    SetAcmeEndpointArn(std::forward<AcmeEndpointArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter by ACME account identifier.</p>
+   */
+  inline const Aws::String& GetAcmeAccountId() const { return m_acmeAccountId; }
+  inline bool AcmeAccountIdHasBeenSet() const { return m_acmeAccountIdHasBeenSet; }
+  template <typename AcmeAccountIdT = Aws::String>
+  void SetAcmeAccountId(AcmeAccountIdT&& value) {
+    m_acmeAccountIdHasBeenSet = true;
+    m_acmeAccountId = std::forward<AcmeAccountIdT>(value);
+  }
+  template <typename AcmeAccountIdT = Aws::String>
+  AcmCertificateMetadataFilter& WithAcmeAccountId(AcmeAccountIdT&& value) {
+    SetAcmeAccountId(std::forward<AcmeAccountIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CertificateStatus m_status{CertificateStatus::NOT_SET};
 
@@ -179,6 +233,12 @@ class AcmCertificateMetadataFilter {
   CertificateManagedBy m_managedBy{CertificateManagedBy::NOT_SET};
 
   ValidationMethod m_validationMethod{ValidationMethod::NOT_SET};
+
+  CertificateKeyPairOrigin m_certificateKeyPairOrigin{CertificateKeyPairOrigin::NOT_SET};
+
+  Aws::String m_acmeEndpointArn;
+
+  Aws::String m_acmeAccountId;
   bool m_statusHasBeenSet = false;
   bool m_renewalStatusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
@@ -187,6 +247,9 @@ class AcmCertificateMetadataFilter {
   bool m_exportOptionHasBeenSet = false;
   bool m_managedByHasBeenSet = false;
   bool m_validationMethodHasBeenSet = false;
+  bool m_certificateKeyPairOriginHasBeenSet = false;
+  bool m_acmeEndpointArnHasBeenSet = false;
+  bool m_acmeAccountIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/ChangeSetType.h>
+#include <aws/cloudformation/model/DeploymentConfig.h>
 #include <aws/cloudformation/model/DeploymentMode.h>
 #include <aws/cloudformation/model/OnStackFailure.h>
 #include <aws/cloudformation/model/Parameter.h>
@@ -583,6 +584,42 @@ class CreateChangeSetRequest : public CloudFormationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The deployment configuration for this stack operation, including the
+   * deployment mode.</p>
+   */
+  inline const DeploymentConfig& GetDeploymentConfig() const { return m_deploymentConfig; }
+  inline bool DeploymentConfigHasBeenSet() const { return m_deploymentConfigHasBeenSet; }
+  template <typename DeploymentConfigT = DeploymentConfig>
+  void SetDeploymentConfig(DeploymentConfigT&& value) {
+    m_deploymentConfigHasBeenSet = true;
+    m_deploymentConfig = std::forward<DeploymentConfigT>(value);
+  }
+  template <typename DeploymentConfigT = DeploymentConfig>
+  CreateChangeSetRequest& WithDeploymentConfig(DeploymentConfigT&& value) {
+    SetDeploymentConfig(std::forward<DeploymentConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Set to <code>true</code> to disable pre-deployment validations in changeset
+   * or stack operations. </p> <p> Default: <code>false</code> </p>
+   */
+  inline bool GetDisableValidation() const { return m_disableValidation; }
+  inline bool DisableValidationHasBeenSet() const { return m_disableValidationHasBeenSet; }
+  inline void SetDisableValidation(bool value) {
+    m_disableValidationHasBeenSet = true;
+    m_disableValidation = value;
+  }
+  inline CreateChangeSetRequest& WithDisableValidation(bool value) {
+    SetDisableValidation(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_stackName;
 
@@ -623,6 +660,10 @@ class CreateChangeSetRequest : public CloudFormationRequest {
   bool m_importExistingResources{false};
 
   DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
+
+  DeploymentConfig m_deploymentConfig;
+
+  bool m_disableValidation{false};
   bool m_stackNameHasBeenSet = false;
   bool m_templateBodyHasBeenSet = false;
   bool m_templateURLHasBeenSet = false;
@@ -643,6 +684,8 @@ class CreateChangeSetRequest : public CloudFormationRequest {
   bool m_onStackFailureHasBeenSet = false;
   bool m_importExistingResourcesHasBeenSet = false;
   bool m_deploymentModeHasBeenSet = false;
+  bool m_deploymentConfigHasBeenSet = false;
+  bool m_disableValidationHasBeenSet = false;
 };
 
 }  // namespace Model

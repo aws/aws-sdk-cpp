@@ -173,6 +173,10 @@ Aws::String StartBuildRequest::SerializePayload() const {
     payload.WithInteger("autoRetryLimitOverride", m_autoRetryLimitOverride);
   }
 
+  if (m_hostKernelOverrideHasBeenSet) {
+    payload.WithString("hostKernelOverride", HostKernelMapper::GetNameForHostKernel(m_hostKernelOverride));
+  }
+
   return payload.View().WriteReadable();
 }
 

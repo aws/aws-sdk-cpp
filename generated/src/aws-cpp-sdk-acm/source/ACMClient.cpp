@@ -7,21 +7,43 @@
 #include <aws/acm/ACMEndpointProvider.h>
 #include <aws/acm/ACMErrorMarshaller.h>
 #include <aws/acm/model/AddTagsToCertificateRequest.h>
+#include <aws/acm/model/CreateAcmeDomainValidationRequest.h>
+#include <aws/acm/model/CreateAcmeEndpointRequest.h>
+#include <aws/acm/model/CreateAcmeExternalAccountBindingRequest.h>
+#include <aws/acm/model/DeleteAcmeDomainValidationRequest.h>
+#include <aws/acm/model/DeleteAcmeEndpointRequest.h>
+#include <aws/acm/model/DeleteAcmeExternalAccountBindingRequest.h>
 #include <aws/acm/model/DeleteCertificateRequest.h>
+#include <aws/acm/model/DescribeAcmeAccountRequest.h>
+#include <aws/acm/model/DescribeAcmeDomainValidationRequest.h>
+#include <aws/acm/model/DescribeAcmeEndpointRequest.h>
+#include <aws/acm/model/DescribeAcmeExternalAccountBindingRequest.h>
 #include <aws/acm/model/DescribeCertificateRequest.h>
 #include <aws/acm/model/ExportCertificateRequest.h>
 #include <aws/acm/model/GetAccountConfigurationRequest.h>
+#include <aws/acm/model/GetAcmeExternalAccountBindingCredentialsRequest.h>
 #include <aws/acm/model/GetCertificateRequest.h>
 #include <aws/acm/model/ImportCertificateRequest.h>
+#include <aws/acm/model/ListAcmeAccountsRequest.h>
+#include <aws/acm/model/ListAcmeDomainValidationsRequest.h>
+#include <aws/acm/model/ListAcmeEndpointsRequest.h>
+#include <aws/acm/model/ListAcmeExternalAccountBindingsRequest.h>
 #include <aws/acm/model/ListCertificatesRequest.h>
 #include <aws/acm/model/ListTagsForCertificateRequest.h>
+#include <aws/acm/model/ListTagsForResourceRequest.h>
 #include <aws/acm/model/PutAccountConfigurationRequest.h>
 #include <aws/acm/model/RemoveTagsFromCertificateRequest.h>
 #include <aws/acm/model/RenewCertificateRequest.h>
 #include <aws/acm/model/RequestCertificateRequest.h>
 #include <aws/acm/model/ResendValidationEmailRequest.h>
+#include <aws/acm/model/RevokeAcmeAccountRequest.h>
+#include <aws/acm/model/RevokeAcmeExternalAccountBindingRequest.h>
 #include <aws/acm/model/RevokeCertificateRequest.h>
 #include <aws/acm/model/SearchCertificatesRequest.h>
+#include <aws/acm/model/TagResourceRequest.h>
+#include <aws/acm/model/UntagResourceRequest.h>
+#include <aws/acm/model/UpdateAcmeDomainValidationRequest.h>
+#include <aws/acm/model/UpdateAcmeEndpointRequest.h>
 #include <aws/acm/model/UpdateCertificateOptionsRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -192,10 +214,73 @@ AddTagsToCertificateOutcome ACMClient::AddTagsToCertificate(const AddTagsToCerti
                             : AddTagsToCertificateOutcome(std::move(result.GetError()));
 }
 
+CreateAcmeDomainValidationOutcome ACMClient::CreateAcmeDomainValidation(const CreateAcmeDomainValidationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAcmeDomainValidationOutcome(result.GetResultWithOwnership())
+                            : CreateAcmeDomainValidationOutcome(std::move(result.GetError()));
+}
+
+CreateAcmeEndpointOutcome ACMClient::CreateAcmeEndpoint(const CreateAcmeEndpointRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAcmeEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateAcmeEndpointOutcome(std::move(result.GetError()));
+}
+
+CreateAcmeExternalAccountBindingOutcome ACMClient::CreateAcmeExternalAccountBinding(
+    const CreateAcmeExternalAccountBindingRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAcmeExternalAccountBindingOutcome(result.GetResultWithOwnership())
+                            : CreateAcmeExternalAccountBindingOutcome(std::move(result.GetError()));
+}
+
+DeleteAcmeDomainValidationOutcome ACMClient::DeleteAcmeDomainValidation(const DeleteAcmeDomainValidationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAcmeDomainValidationOutcome(result.GetResultWithOwnership())
+                            : DeleteAcmeDomainValidationOutcome(std::move(result.GetError()));
+}
+
+DeleteAcmeEndpointOutcome ACMClient::DeleteAcmeEndpoint(const DeleteAcmeEndpointRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAcmeEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteAcmeEndpointOutcome(std::move(result.GetError()));
+}
+
+DeleteAcmeExternalAccountBindingOutcome ACMClient::DeleteAcmeExternalAccountBinding(
+    const DeleteAcmeExternalAccountBindingRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAcmeExternalAccountBindingOutcome(result.GetResultWithOwnership())
+                            : DeleteAcmeExternalAccountBindingOutcome(std::move(result.GetError()));
+}
+
 DeleteCertificateOutcome ACMClient::DeleteCertificate(const DeleteCertificateRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteCertificateOutcome(result.GetResultWithOwnership())
                             : DeleteCertificateOutcome(std::move(result.GetError()));
+}
+
+DescribeAcmeAccountOutcome ACMClient::DescribeAcmeAccount(const DescribeAcmeAccountRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAcmeAccountOutcome(result.GetResultWithOwnership())
+                            : DescribeAcmeAccountOutcome(std::move(result.GetError()));
+}
+
+DescribeAcmeDomainValidationOutcome ACMClient::DescribeAcmeDomainValidation(const DescribeAcmeDomainValidationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAcmeDomainValidationOutcome(result.GetResultWithOwnership())
+                            : DescribeAcmeDomainValidationOutcome(std::move(result.GetError()));
+}
+
+DescribeAcmeEndpointOutcome ACMClient::DescribeAcmeEndpoint(const DescribeAcmeEndpointRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAcmeEndpointOutcome(result.GetResultWithOwnership())
+                            : DescribeAcmeEndpointOutcome(std::move(result.GetError()));
+}
+
+DescribeAcmeExternalAccountBindingOutcome ACMClient::DescribeAcmeExternalAccountBinding(
+    const DescribeAcmeExternalAccountBindingRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAcmeExternalAccountBindingOutcome(result.GetResultWithOwnership())
+                            : DescribeAcmeExternalAccountBindingOutcome(std::move(result.GetError()));
 }
 
 DescribeCertificateOutcome ACMClient::DescribeCertificate(const DescribeCertificateRequest& request) const {
@@ -216,6 +301,13 @@ GetAccountConfigurationOutcome ACMClient::GetAccountConfiguration(const GetAccou
                             : GetAccountConfigurationOutcome(std::move(result.GetError()));
 }
 
+GetAcmeExternalAccountBindingCredentialsOutcome ACMClient::GetAcmeExternalAccountBindingCredentials(
+    const GetAcmeExternalAccountBindingCredentialsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAcmeExternalAccountBindingCredentialsOutcome(result.GetResultWithOwnership())
+                            : GetAcmeExternalAccountBindingCredentialsOutcome(std::move(result.GetError()));
+}
+
 GetCertificateOutcome ACMClient::GetCertificate(const GetCertificateRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetCertificateOutcome(result.GetResultWithOwnership()) : GetCertificateOutcome(std::move(result.GetError()));
@@ -225,6 +317,31 @@ ImportCertificateOutcome ACMClient::ImportCertificate(const ImportCertificateReq
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ImportCertificateOutcome(result.GetResultWithOwnership())
                             : ImportCertificateOutcome(std::move(result.GetError()));
+}
+
+ListAcmeAccountsOutcome ACMClient::ListAcmeAccounts(const ListAcmeAccountsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAcmeAccountsOutcome(result.GetResultWithOwnership())
+                            : ListAcmeAccountsOutcome(std::move(result.GetError()));
+}
+
+ListAcmeDomainValidationsOutcome ACMClient::ListAcmeDomainValidations(const ListAcmeDomainValidationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAcmeDomainValidationsOutcome(result.GetResultWithOwnership())
+                            : ListAcmeDomainValidationsOutcome(std::move(result.GetError()));
+}
+
+ListAcmeEndpointsOutcome ACMClient::ListAcmeEndpoints(const ListAcmeEndpointsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAcmeEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListAcmeEndpointsOutcome(std::move(result.GetError()));
+}
+
+ListAcmeExternalAccountBindingsOutcome ACMClient::ListAcmeExternalAccountBindings(
+    const ListAcmeExternalAccountBindingsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAcmeExternalAccountBindingsOutcome(result.GetResultWithOwnership())
+                            : ListAcmeExternalAccountBindingsOutcome(std::move(result.GetError()));
 }
 
 ListCertificatesOutcome ACMClient::ListCertificates(const ListCertificatesRequest& request) const {
@@ -237,6 +354,12 @@ ListTagsForCertificateOutcome ACMClient::ListTagsForCertificate(const ListTagsFo
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListTagsForCertificateOutcome(result.GetResultWithOwnership())
                             : ListTagsForCertificateOutcome(std::move(result.GetError()));
+}
+
+ListTagsForResourceOutcome ACMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutAccountConfigurationOutcome ACMClient::PutAccountConfiguration(const PutAccountConfigurationRequest& request) const {
@@ -269,6 +392,19 @@ ResendValidationEmailOutcome ACMClient::ResendValidationEmail(const ResendValida
                             : ResendValidationEmailOutcome(std::move(result.GetError()));
 }
 
+RevokeAcmeAccountOutcome ACMClient::RevokeAcmeAccount(const RevokeAcmeAccountRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeAcmeAccountOutcome(result.GetResultWithOwnership())
+                            : RevokeAcmeAccountOutcome(std::move(result.GetError()));
+}
+
+RevokeAcmeExternalAccountBindingOutcome ACMClient::RevokeAcmeExternalAccountBinding(
+    const RevokeAcmeExternalAccountBindingRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeAcmeExternalAccountBindingOutcome(result.GetResultWithOwnership())
+                            : RevokeAcmeExternalAccountBindingOutcome(std::move(result.GetError()));
+}
+
 RevokeCertificateOutcome ACMClient::RevokeCertificate(const RevokeCertificateRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RevokeCertificateOutcome(result.GetResultWithOwnership())
@@ -279,6 +415,28 @@ SearchCertificatesOutcome ACMClient::SearchCertificates(const SearchCertificates
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SearchCertificatesOutcome(result.GetResultWithOwnership())
                             : SearchCertificatesOutcome(std::move(result.GetError()));
+}
+
+TagResourceOutcome ACMClient::TagResource(const TagResourceRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
+}
+
+UntagResourceOutcome ACMClient::UntagResource(const UntagResourceRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateAcmeDomainValidationOutcome ACMClient::UpdateAcmeDomainValidation(const UpdateAcmeDomainValidationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAcmeDomainValidationOutcome(result.GetResultWithOwnership())
+                            : UpdateAcmeDomainValidationOutcome(std::move(result.GetError()));
+}
+
+UpdateAcmeEndpointOutcome ACMClient::UpdateAcmeEndpoint(const UpdateAcmeEndpointRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAcmeEndpointOutcome(result.GetResultWithOwnership())
+                            : UpdateAcmeEndpointOutcome(std::move(result.GetError()));
 }
 
 UpdateCertificateOptionsOutcome ACMClient::UpdateCertificateOptions(const UpdateCertificateOptionsRequest& request) const {

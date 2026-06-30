@@ -311,6 +311,42 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Creates a container association for Network Firewall. A container association
+   * links container clusters (ECS or EKS) to Network Firewall, enabling dynamic IP
+   * resolution for firewall rules based on container attributes.</p> <p>To manage a
+   * container association's tags, use the standard Amazon Web Services resource
+   * tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and
+   * <a>UntagResource</a>.</p> <p>To retrieve information about container
+   * associations, use <a>ListContainerAssociations</a> and
+   * <a>DescribeContainerAssociation</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateContainerAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateContainerAssociationOutcome CreateContainerAssociation(
+      const Model::CreateContainerAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateContainerAssociation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateContainerAssociationRequestT = Model::CreateContainerAssociationRequest>
+  Model::CreateContainerAssociationOutcomeCallable CreateContainerAssociationCallable(
+      const CreateContainerAssociationRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::CreateContainerAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for CreateContainerAssociation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateContainerAssociationRequestT = Model::CreateContainerAssociationRequest>
+  void CreateContainerAssociationAsync(const CreateContainerAssociationRequestT& request,
+                                       const CreateContainerAssociationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::CreateContainerAssociation, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Network Firewall <a>Firewall</a> and accompanying
    * <a>FirewallStatus</a> for a VPC. </p> <p>The firewall defines the configuration
    * settings for an Network Firewall firewall. The settings that you can define at
@@ -615,6 +651,38 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
                                          const CreateVpcEndpointAssociationResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFirewallClient::CreateVpcEndpointAssociation, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified container association. When you delete a container
+   * association, Network Firewall stops monitoring the associated container clusters
+   * and removes the resolved IP addresses from firewall rules.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteContainerAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteContainerAssociationOutcome DeleteContainerAssociation(
+      const Model::DeleteContainerAssociationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DeleteContainerAssociation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteContainerAssociationRequestT = Model::DeleteContainerAssociationRequest>
+  Model::DeleteContainerAssociationOutcomeCallable DeleteContainerAssociationCallable(
+      const DeleteContainerAssociationRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::DeleteContainerAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteContainerAssociation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteContainerAssociationRequestT = Model::DeleteContainerAssociationRequest>
+  void DeleteContainerAssociationAsync(const DeleteContainerAssociationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                       const DeleteContainerAssociationRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::DeleteContainerAssociation, request, handler, context);
   }
 
   /**
@@ -942,6 +1010,36 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
                                          const DeleteVpcEndpointAssociationResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFirewallClient::DeleteVpcEndpointAssociation, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the properties of a container association.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeContainerAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeContainerAssociationOutcome DescribeContainerAssociation(
+      const Model::DescribeContainerAssociationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeContainerAssociation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeContainerAssociationRequestT = Model::DescribeContainerAssociationRequest>
+  Model::DescribeContainerAssociationOutcomeCallable DescribeContainerAssociationCallable(
+      const DescribeContainerAssociationRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::DescribeContainerAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeContainerAssociation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeContainerAssociationRequestT = Model::DescribeContainerAssociationRequest>
+  void DescribeContainerAssociationAsync(const DescribeContainerAssociationResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                         const DescribeContainerAssociationRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::DescribeContainerAssociation, request, handler, context);
   }
 
   /**
@@ -1534,6 +1632,36 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                 const ListAnalysisReportsRequestT& request = {}) const {
     return SubmitAsync(&NetworkFirewallClient::ListAnalysisReports, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the metadata for the container associations that you have defined.
+   * You can optionally page through results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListContainerAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListContainerAssociationsOutcome ListContainerAssociations(
+      const Model::ListContainerAssociationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListContainerAssociations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListContainerAssociationsRequestT = Model::ListContainerAssociationsRequest>
+  Model::ListContainerAssociationsOutcomeCallable ListContainerAssociationsCallable(
+      const ListContainerAssociationsRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::ListContainerAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for ListContainerAssociations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListContainerAssociationsRequestT = Model::ListContainerAssociationsRequest>
+  void ListContainerAssociationsAsync(const ListContainerAssociationsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                      const ListContainerAssociationsRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::ListContainerAssociations, request, handler, context);
   }
 
   /**
@@ -2152,6 +2280,37 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
                                                    const UpdateAvailabilityZoneChangeProtectionResponseReceivedHandler& handler,
                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFirewallClient::UpdateAvailabilityZoneChangeProtection, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the properties of an existing container association. Use this to
+   * modify the container monitoring configurations or description.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateContainerAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateContainerAssociationOutcome UpdateContainerAssociation(
+      const Model::UpdateContainerAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateContainerAssociation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateContainerAssociationRequestT = Model::UpdateContainerAssociationRequest>
+  Model::UpdateContainerAssociationOutcomeCallable UpdateContainerAssociationCallable(
+      const UpdateContainerAssociationRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::UpdateContainerAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateContainerAssociation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateContainerAssociationRequestT = Model::UpdateContainerAssociationRequest>
+  void UpdateContainerAssociationAsync(const UpdateContainerAssociationRequestT& request,
+                                       const UpdateContainerAssociationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::UpdateContainerAssociation, request, handler, context);
   }
 
   /**

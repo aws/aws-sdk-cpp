@@ -145,6 +145,55 @@ class AnalysisRuleCustom {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The list of Amazon Web Services account IDs that are allowed to receive
+   * results from queries run on the configured table.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAllowedResultReceivers() const { return m_allowedResultReceivers; }
+  inline bool AllowedResultReceiversHasBeenSet() const { return m_allowedResultReceiversHasBeenSet; }
+  template <typename AllowedResultReceiversT = Aws::Vector<Aws::String>>
+  void SetAllowedResultReceivers(AllowedResultReceiversT&& value) {
+    m_allowedResultReceiversHasBeenSet = true;
+    m_allowedResultReceivers = std::forward<AllowedResultReceiversT>(value);
+  }
+  template <typename AllowedResultReceiversT = Aws::Vector<Aws::String>>
+  AnalysisRuleCustom& WithAllowedResultReceivers(AllowedResultReceiversT&& value) {
+    SetAllowedResultReceivers(std::forward<AllowedResultReceiversT>(value));
+    return *this;
+  }
+  template <typename AllowedResultReceiversT = Aws::String>
+  AnalysisRuleCustom& AddAllowedResultReceivers(AllowedResultReceiversT&& value) {
+    m_allowedResultReceiversHasBeenSet = true;
+    m_allowedResultReceivers.emplace_back(std::forward<AllowedResultReceiversT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of allowed additional analyses for the custom analysis rule.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAllowedAdditionalAnalyses() const { return m_allowedAdditionalAnalyses; }
+  inline bool AllowedAdditionalAnalysesHasBeenSet() const { return m_allowedAdditionalAnalysesHasBeenSet; }
+  template <typename AllowedAdditionalAnalysesT = Aws::Vector<Aws::String>>
+  void SetAllowedAdditionalAnalyses(AllowedAdditionalAnalysesT&& value) {
+    m_allowedAdditionalAnalysesHasBeenSet = true;
+    m_allowedAdditionalAnalyses = std::forward<AllowedAdditionalAnalysesT>(value);
+  }
+  template <typename AllowedAdditionalAnalysesT = Aws::Vector<Aws::String>>
+  AnalysisRuleCustom& WithAllowedAdditionalAnalyses(AllowedAdditionalAnalysesT&& value) {
+    SetAllowedAdditionalAnalyses(std::forward<AllowedAdditionalAnalysesT>(value));
+    return *this;
+  }
+  template <typename AllowedAdditionalAnalysesT = Aws::String>
+  AnalysisRuleCustom& AddAllowedAdditionalAnalyses(AllowedAdditionalAnalysesT&& value) {
+    m_allowedAdditionalAnalysesHasBeenSet = true;
+    m_allowedAdditionalAnalyses.emplace_back(std::forward<AllowedAdditionalAnalysesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_allowedAnalyses;
 
@@ -155,11 +204,17 @@ class AnalysisRuleCustom {
   Aws::Vector<Aws::String> m_disallowedOutputColumns;
 
   DifferentialPrivacyConfiguration m_differentialPrivacy;
+
+  Aws::Vector<Aws::String> m_allowedResultReceivers;
+
+  Aws::Vector<Aws::String> m_allowedAdditionalAnalyses;
   bool m_allowedAnalysesHasBeenSet = false;
   bool m_allowedAnalysisProvidersHasBeenSet = false;
   bool m_additionalAnalysesHasBeenSet = false;
   bool m_disallowedOutputColumnsHasBeenSet = false;
   bool m_differentialPrivacyHasBeenSet = false;
+  bool m_allowedResultReceiversHasBeenSet = false;
+  bool m_allowedAdditionalAnalysesHasBeenSet = false;
 };
 
 }  // namespace Model

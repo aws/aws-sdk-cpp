@@ -5,10 +5,12 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/ChildResource.h>
 #include <aws/cleanrooms/model/IdMappingTableInputReferenceConfig.h>
 #include <aws/cleanrooms/model/IdMappingTableInputReferenceProperties.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -272,6 +274,30 @@ class IdMappingTable {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The child resources that depend on this ID mapping table.</p>
+   */
+  inline const Aws::Vector<ChildResource>& GetChildResources() const { return m_childResources; }
+  inline bool ChildResourcesHasBeenSet() const { return m_childResourcesHasBeenSet; }
+  template <typename ChildResourcesT = Aws::Vector<ChildResource>>
+  void SetChildResources(ChildResourcesT&& value) {
+    m_childResourcesHasBeenSet = true;
+    m_childResources = std::forward<ChildResourcesT>(value);
+  }
+  template <typename ChildResourcesT = Aws::Vector<ChildResource>>
+  IdMappingTable& WithChildResources(ChildResourcesT&& value) {
+    SetChildResources(std::forward<ChildResourcesT>(value));
+    return *this;
+  }
+  template <typename ChildResourcesT = ChildResource>
+  IdMappingTable& AddChildResources(ChildResourcesT&& value) {
+    m_childResourcesHasBeenSet = true;
+    m_childResources.emplace_back(std::forward<ChildResourcesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -298,6 +324,8 @@ class IdMappingTable {
   IdMappingTableInputReferenceProperties m_inputReferenceProperties;
 
   Aws::String m_kmsKeyArn;
+
+  Aws::Vector<ChildResource> m_childResources;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_inputReferenceConfigHasBeenSet = false;
@@ -311,6 +339,7 @@ class IdMappingTable {
   bool m_updateTimeHasBeenSet = false;
   bool m_inputReferencePropertiesHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
+  bool m_childResourcesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -70,6 +70,13 @@ ConfiguredTableAssociation& ConfiguredTableAssociation::operator=(JsonView jsonV
     m_updateTime = jsonValue.GetDouble("updateTime");
     m_updateTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("childResources")) {
+    Aws::Utils::Array<JsonView> childResourcesJsonList = jsonValue.GetArray("childResources");
+    for (unsigned childResourcesIndex = 0; childResourcesIndex < childResourcesJsonList.GetLength(); ++childResourcesIndex) {
+      m_childResources.push_back(childResourcesJsonList[childResourcesIndex].AsObject());
+    }
+    m_childResourcesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -128,6 +135,14 @@ JsonValue ConfiguredTableAssociation::Jsonize() const {
 
   if (m_updateTimeHasBeenSet) {
     payload.WithDouble("updateTime", m_updateTime.SecondsWithMSPrecision());
+  }
+
+  if (m_childResourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> childResourcesJsonList(m_childResources.size());
+    for (unsigned childResourcesIndex = 0; childResourcesIndex < childResourcesJsonList.GetLength(); ++childResourcesIndex) {
+      childResourcesJsonList[childResourcesIndex].AsObject(m_childResources[childResourcesIndex].Jsonize());
+    }
+    payload.WithArray("childResources", std::move(childResourcesJsonList));
   }
 
   return payload;

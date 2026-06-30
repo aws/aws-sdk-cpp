@@ -13,6 +13,7 @@
 #include <aws/datazone/model/MlflowPropertiesPatch.h>
 #include <aws/datazone/model/RedshiftPropertiesPatch.h>
 #include <aws/datazone/model/S3PropertiesPatch.h>
+#include <aws/datazone/model/SnowflakePropertiesPatch.h>
 #include <aws/datazone/model/SparkEmrPropertiesPatch.h>
 #include <aws/datazone/model/VpcPropertiesPatch.h>
 
@@ -150,6 +151,24 @@ class ConnectionPropertiesPatch {
 
   ///@{
   /**
+   * <p>The Snowflake-specific connection properties to update.</p>
+   */
+  inline const SnowflakePropertiesPatch& GetSnowflakeProperties() const { return m_snowflakeProperties; }
+  inline bool SnowflakePropertiesHasBeenSet() const { return m_snowflakePropertiesHasBeenSet; }
+  template <typename SnowflakePropertiesT = SnowflakePropertiesPatch>
+  void SetSnowflakeProperties(SnowflakePropertiesT&& value) {
+    m_snowflakePropertiesHasBeenSet = true;
+    m_snowflakeProperties = std::forward<SnowflakePropertiesT>(value);
+  }
+  template <typename SnowflakePropertiesT = SnowflakePropertiesPatch>
+  ConnectionPropertiesPatch& WithSnowflakeProperties(SnowflakePropertiesT&& value) {
+    SetSnowflakeProperties(std::forward<SnowflakePropertiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Q properties of the connection.</p>
    */
   inline const AmazonQPropertiesPatch& GetAmazonQProperties() const { return m_amazonQProperties; }
@@ -232,6 +251,8 @@ class ConnectionPropertiesPatch {
 
   S3PropertiesPatch m_s3Properties;
 
+  SnowflakePropertiesPatch m_snowflakeProperties;
+
   AmazonQPropertiesPatch m_amazonQProperties;
 
   MlflowPropertiesPatch m_mlflowProperties;
@@ -245,6 +266,7 @@ class ConnectionPropertiesPatch {
   bool m_redshiftPropertiesHasBeenSet = false;
   bool m_sparkEmrPropertiesHasBeenSet = false;
   bool m_s3PropertiesHasBeenSet = false;
+  bool m_snowflakePropertiesHasBeenSet = false;
   bool m_amazonQPropertiesHasBeenSet = false;
   bool m_mlflowPropertiesHasBeenSet = false;
   bool m_lakehousePropertiesHasBeenSet = false;

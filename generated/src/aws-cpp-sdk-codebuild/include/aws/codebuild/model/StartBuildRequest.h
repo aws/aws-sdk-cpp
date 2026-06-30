@@ -11,6 +11,7 @@
 #include <aws/codebuild/model/EnvironmentType.h>
 #include <aws/codebuild/model/EnvironmentVariable.h>
 #include <aws/codebuild/model/GitSubmodulesConfig.h>
+#include <aws/codebuild/model/HostKernel.h>
 #include <aws/codebuild/model/ImagePullCredentialsType.h>
 #include <aws/codebuild/model/LogsConfig.h>
 #include <aws/codebuild/model/ProjectArtifacts.h>
@@ -737,6 +738,23 @@ class StartBuildRequest : public CodeBuildRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The host operating system kernel for this build that overrides the one
+   * specified in the build project.</p>
+   */
+  inline HostKernel GetHostKernelOverride() const { return m_hostKernelOverride; }
+  inline bool HostKernelOverrideHasBeenSet() const { return m_hostKernelOverrideHasBeenSet; }
+  inline void SetHostKernelOverride(HostKernel value) {
+    m_hostKernelOverrideHasBeenSet = true;
+    m_hostKernelOverride = value;
+  }
+  inline StartBuildRequest& WithHostKernelOverride(HostKernel value) {
+    SetHostKernelOverride(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_projectName;
 
@@ -803,6 +821,8 @@ class StartBuildRequest : public CodeBuildRequest {
   ProjectFleet m_fleetOverride;
 
   int m_autoRetryLimitOverride{0};
+
+  HostKernel m_hostKernelOverride{HostKernel::NOT_SET};
   bool m_projectNameHasBeenSet = false;
   bool m_secondarySourcesOverrideHasBeenSet = false;
   bool m_secondarySourcesVersionOverrideHasBeenSet = false;
@@ -836,6 +856,7 @@ class StartBuildRequest : public CodeBuildRequest {
   bool m_debugSessionEnabledHasBeenSet = false;
   bool m_fleetOverrideHasBeenSet = false;
   bool m_autoRetryLimitOverrideHasBeenSet = false;
+  bool m_hostKernelOverrideHasBeenSet = false;
 };
 
 }  // namespace Model

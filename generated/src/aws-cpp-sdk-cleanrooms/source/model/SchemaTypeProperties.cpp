@@ -22,6 +22,14 @@ SchemaTypeProperties& SchemaTypeProperties::operator=(JsonView jsonValue) {
     m_idMappingTable = jsonValue.GetObject("idMappingTable");
     m_idMappingTableHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("intermediateTable")) {
+    m_intermediateTable = jsonValue.GetObject("intermediateTable");
+    m_intermediateTableHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("configuredTableAssociation")) {
+    m_configuredTableAssociation = jsonValue.GetObject("configuredTableAssociation");
+    m_configuredTableAssociationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +38,14 @@ JsonValue SchemaTypeProperties::Jsonize() const {
 
   if (m_idMappingTableHasBeenSet) {
     payload.WithObject("idMappingTable", m_idMappingTable.Jsonize());
+  }
+
+  if (m_intermediateTableHasBeenSet) {
+    payload.WithObject("intermediateTable", m_intermediateTable.Jsonize());
+  }
+
+  if (m_configuredTableAssociationHasBeenSet) {
+    payload.WithObject("configuredTableAssociation", m_configuredTableAssociation.Jsonize());
   }
 
   return payload;

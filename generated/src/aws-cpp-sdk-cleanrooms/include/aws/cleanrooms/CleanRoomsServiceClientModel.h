@@ -32,6 +32,8 @@
 #include <aws/cleanrooms/model/CreateConfiguredTableResult.h>
 #include <aws/cleanrooms/model/CreateIdMappingTableResult.h>
 #include <aws/cleanrooms/model/CreateIdNamespaceAssociationResult.h>
+#include <aws/cleanrooms/model/CreateIntermediateTableAnalysisRuleResult.h>
+#include <aws/cleanrooms/model/CreateIntermediateTableResult.h>
 #include <aws/cleanrooms/model/CreateMembershipResult.h>
 #include <aws/cleanrooms/model/CreatePrivacyBudgetTemplateResult.h>
 #include <aws/cleanrooms/model/DeleteAnalysisTemplateResult.h>
@@ -43,9 +45,12 @@
 #include <aws/cleanrooms/model/DeleteConfiguredTableResult.h>
 #include <aws/cleanrooms/model/DeleteIdMappingTableResult.h>
 #include <aws/cleanrooms/model/DeleteIdNamespaceAssociationResult.h>
+#include <aws/cleanrooms/model/DeleteIntermediateTableAnalysisRuleResult.h>
+#include <aws/cleanrooms/model/DeleteIntermediateTableResult.h>
 #include <aws/cleanrooms/model/DeleteMemberResult.h>
 #include <aws/cleanrooms/model/DeleteMembershipResult.h>
 #include <aws/cleanrooms/model/DeletePrivacyBudgetTemplateResult.h>
+#include <aws/cleanrooms/model/DisallowIntermediateTableResult.h>
 #include <aws/cleanrooms/model/GetAnalysisTemplateResult.h>
 #include <aws/cleanrooms/model/GetCollaborationAnalysisTemplateResult.h>
 #include <aws/cleanrooms/model/GetCollaborationChangeRequestResult.h>
@@ -60,6 +65,8 @@
 #include <aws/cleanrooms/model/GetConfiguredTableResult.h>
 #include <aws/cleanrooms/model/GetIdMappingTableResult.h>
 #include <aws/cleanrooms/model/GetIdNamespaceAssociationResult.h>
+#include <aws/cleanrooms/model/GetIntermediateTableAnalysisRuleResult.h>
+#include <aws/cleanrooms/model/GetIntermediateTableResult.h>
 #include <aws/cleanrooms/model/GetMembershipResult.h>
 #include <aws/cleanrooms/model/GetPrivacyBudgetTemplateResult.h>
 #include <aws/cleanrooms/model/GetProtectedJobResult.h>
@@ -81,6 +88,8 @@
 #include <aws/cleanrooms/model/ListConfiguredTablesResult.h>
 #include <aws/cleanrooms/model/ListIdMappingTablesResult.h>
 #include <aws/cleanrooms/model/ListIdNamespaceAssociationsResult.h>
+#include <aws/cleanrooms/model/ListIntermediateTableVersionsResult.h>
+#include <aws/cleanrooms/model/ListIntermediateTablesResult.h>
 #include <aws/cleanrooms/model/ListMembersResult.h>
 #include <aws/cleanrooms/model/ListMembershipsRequest.h>
 #include <aws/cleanrooms/model/ListMembershipsResult.h>
@@ -91,6 +100,7 @@
 #include <aws/cleanrooms/model/ListSchemasResult.h>
 #include <aws/cleanrooms/model/ListTagsForResourceResult.h>
 #include <aws/cleanrooms/model/PopulateIdMappingTableResult.h>
+#include <aws/cleanrooms/model/PopulateIntermediateTableResult.h>
 #include <aws/cleanrooms/model/PreviewPrivacyImpactResult.h>
 #include <aws/cleanrooms/model/StartProtectedJobResult.h>
 #include <aws/cleanrooms/model/StartProtectedQueryResult.h>
@@ -106,6 +116,8 @@
 #include <aws/cleanrooms/model/UpdateConfiguredTableResult.h>
 #include <aws/cleanrooms/model/UpdateIdMappingTableResult.h>
 #include <aws/cleanrooms/model/UpdateIdNamespaceAssociationResult.h>
+#include <aws/cleanrooms/model/UpdateIntermediateTableAnalysisRuleResult.h>
+#include <aws/cleanrooms/model/UpdateIntermediateTableResult.h>
 #include <aws/cleanrooms/model/UpdateMembershipResult.h>
 #include <aws/cleanrooms/model/UpdatePrivacyBudgetTemplateResult.h>
 #include <aws/cleanrooms/model/UpdateProtectedJobResult.h>
@@ -156,6 +168,8 @@ class CreateConfiguredTableAssociationRequest;
 class CreateConfiguredTableAssociationAnalysisRuleRequest;
 class CreateIdMappingTableRequest;
 class CreateIdNamespaceAssociationRequest;
+class CreateIntermediateTableRequest;
+class CreateIntermediateTableAnalysisRuleRequest;
 class CreateMembershipRequest;
 class CreatePrivacyBudgetTemplateRequest;
 class DeleteAnalysisTemplateRequest;
@@ -167,9 +181,12 @@ class DeleteConfiguredTableAssociationRequest;
 class DeleteConfiguredTableAssociationAnalysisRuleRequest;
 class DeleteIdMappingTableRequest;
 class DeleteIdNamespaceAssociationRequest;
+class DeleteIntermediateTableRequest;
+class DeleteIntermediateTableAnalysisRuleRequest;
 class DeleteMemberRequest;
 class DeleteMembershipRequest;
 class DeletePrivacyBudgetTemplateRequest;
+class DisallowIntermediateTableRequest;
 class GetAnalysisTemplateRequest;
 class GetCollaborationRequest;
 class GetCollaborationAnalysisTemplateRequest;
@@ -184,6 +201,8 @@ class GetConfiguredTableAssociationRequest;
 class GetConfiguredTableAssociationAnalysisRuleRequest;
 class GetIdMappingTableRequest;
 class GetIdNamespaceAssociationRequest;
+class GetIntermediateTableRequest;
+class GetIntermediateTableAnalysisRuleRequest;
 class GetMembershipRequest;
 class GetPrivacyBudgetTemplateRequest;
 class GetProtectedJobRequest;
@@ -203,6 +222,8 @@ class ListConfiguredTableAssociationsRequest;
 class ListConfiguredTablesRequest;
 class ListIdMappingTablesRequest;
 class ListIdNamespaceAssociationsRequest;
+class ListIntermediateTableVersionsRequest;
+class ListIntermediateTablesRequest;
 class ListMembersRequest;
 class ListMembershipsRequest;
 class ListPrivacyBudgetTemplatesRequest;
@@ -212,6 +233,7 @@ class ListProtectedQueriesRequest;
 class ListSchemasRequest;
 class ListTagsForResourceRequest;
 class PopulateIdMappingTableRequest;
+class PopulateIntermediateTableRequest;
 class PreviewPrivacyImpactRequest;
 class StartProtectedJobRequest;
 class StartProtectedQueryRequest;
@@ -227,6 +249,8 @@ class UpdateConfiguredTableAssociationRequest;
 class UpdateConfiguredTableAssociationAnalysisRuleRequest;
 class UpdateIdMappingTableRequest;
 class UpdateIdNamespaceAssociationRequest;
+class UpdateIntermediateTableRequest;
+class UpdateIntermediateTableAnalysisRuleRequest;
 class UpdateMembershipRequest;
 class UpdatePrivacyBudgetTemplateRequest;
 class UpdateProtectedJobRequest;
@@ -249,6 +273,8 @@ typedef Aws::Utils::Outcome<CreateConfiguredTableAssociationAnalysisRuleResult, 
     CreateConfiguredTableAssociationAnalysisRuleOutcome;
 typedef Aws::Utils::Outcome<CreateIdMappingTableResult, CleanRoomsError> CreateIdMappingTableOutcome;
 typedef Aws::Utils::Outcome<CreateIdNamespaceAssociationResult, CleanRoomsError> CreateIdNamespaceAssociationOutcome;
+typedef Aws::Utils::Outcome<CreateIntermediateTableResult, CleanRoomsError> CreateIntermediateTableOutcome;
+typedef Aws::Utils::Outcome<CreateIntermediateTableAnalysisRuleResult, CleanRoomsError> CreateIntermediateTableAnalysisRuleOutcome;
 typedef Aws::Utils::Outcome<CreateMembershipResult, CleanRoomsError> CreateMembershipOutcome;
 typedef Aws::Utils::Outcome<CreatePrivacyBudgetTemplateResult, CleanRoomsError> CreatePrivacyBudgetTemplateOutcome;
 typedef Aws::Utils::Outcome<DeleteAnalysisTemplateResult, CleanRoomsError> DeleteAnalysisTemplateOutcome;
@@ -262,9 +288,12 @@ typedef Aws::Utils::Outcome<DeleteConfiguredTableAssociationAnalysisRuleResult, 
     DeleteConfiguredTableAssociationAnalysisRuleOutcome;
 typedef Aws::Utils::Outcome<DeleteIdMappingTableResult, CleanRoomsError> DeleteIdMappingTableOutcome;
 typedef Aws::Utils::Outcome<DeleteIdNamespaceAssociationResult, CleanRoomsError> DeleteIdNamespaceAssociationOutcome;
+typedef Aws::Utils::Outcome<DeleteIntermediateTableResult, CleanRoomsError> DeleteIntermediateTableOutcome;
+typedef Aws::Utils::Outcome<DeleteIntermediateTableAnalysisRuleResult, CleanRoomsError> DeleteIntermediateTableAnalysisRuleOutcome;
 typedef Aws::Utils::Outcome<DeleteMemberResult, CleanRoomsError> DeleteMemberOutcome;
 typedef Aws::Utils::Outcome<DeleteMembershipResult, CleanRoomsError> DeleteMembershipOutcome;
 typedef Aws::Utils::Outcome<DeletePrivacyBudgetTemplateResult, CleanRoomsError> DeletePrivacyBudgetTemplateOutcome;
+typedef Aws::Utils::Outcome<DisallowIntermediateTableResult, CleanRoomsError> DisallowIntermediateTableOutcome;
 typedef Aws::Utils::Outcome<GetAnalysisTemplateResult, CleanRoomsError> GetAnalysisTemplateOutcome;
 typedef Aws::Utils::Outcome<GetCollaborationResult, CleanRoomsError> GetCollaborationOutcome;
 typedef Aws::Utils::Outcome<GetCollaborationAnalysisTemplateResult, CleanRoomsError> GetCollaborationAnalysisTemplateOutcome;
@@ -281,6 +310,8 @@ typedef Aws::Utils::Outcome<GetConfiguredTableAssociationAnalysisRuleResult, Cle
     GetConfiguredTableAssociationAnalysisRuleOutcome;
 typedef Aws::Utils::Outcome<GetIdMappingTableResult, CleanRoomsError> GetIdMappingTableOutcome;
 typedef Aws::Utils::Outcome<GetIdNamespaceAssociationResult, CleanRoomsError> GetIdNamespaceAssociationOutcome;
+typedef Aws::Utils::Outcome<GetIntermediateTableResult, CleanRoomsError> GetIntermediateTableOutcome;
+typedef Aws::Utils::Outcome<GetIntermediateTableAnalysisRuleResult, CleanRoomsError> GetIntermediateTableAnalysisRuleOutcome;
 typedef Aws::Utils::Outcome<GetMembershipResult, CleanRoomsError> GetMembershipOutcome;
 typedef Aws::Utils::Outcome<GetPrivacyBudgetTemplateResult, CleanRoomsError> GetPrivacyBudgetTemplateOutcome;
 typedef Aws::Utils::Outcome<GetProtectedJobResult, CleanRoomsError> GetProtectedJobOutcome;
@@ -302,6 +333,8 @@ typedef Aws::Utils::Outcome<ListConfiguredTableAssociationsResult, CleanRoomsErr
 typedef Aws::Utils::Outcome<ListConfiguredTablesResult, CleanRoomsError> ListConfiguredTablesOutcome;
 typedef Aws::Utils::Outcome<ListIdMappingTablesResult, CleanRoomsError> ListIdMappingTablesOutcome;
 typedef Aws::Utils::Outcome<ListIdNamespaceAssociationsResult, CleanRoomsError> ListIdNamespaceAssociationsOutcome;
+typedef Aws::Utils::Outcome<ListIntermediateTableVersionsResult, CleanRoomsError> ListIntermediateTableVersionsOutcome;
+typedef Aws::Utils::Outcome<ListIntermediateTablesResult, CleanRoomsError> ListIntermediateTablesOutcome;
 typedef Aws::Utils::Outcome<ListMembersResult, CleanRoomsError> ListMembersOutcome;
 typedef Aws::Utils::Outcome<ListMembershipsResult, CleanRoomsError> ListMembershipsOutcome;
 typedef Aws::Utils::Outcome<ListPrivacyBudgetTemplatesResult, CleanRoomsError> ListPrivacyBudgetTemplatesOutcome;
@@ -311,6 +344,7 @@ typedef Aws::Utils::Outcome<ListProtectedQueriesResult, CleanRoomsError> ListPro
 typedef Aws::Utils::Outcome<ListSchemasResult, CleanRoomsError> ListSchemasOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, CleanRoomsError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PopulateIdMappingTableResult, CleanRoomsError> PopulateIdMappingTableOutcome;
+typedef Aws::Utils::Outcome<PopulateIntermediateTableResult, CleanRoomsError> PopulateIntermediateTableOutcome;
 typedef Aws::Utils::Outcome<PreviewPrivacyImpactResult, CleanRoomsError> PreviewPrivacyImpactOutcome;
 typedef Aws::Utils::Outcome<StartProtectedJobResult, CleanRoomsError> StartProtectedJobOutcome;
 typedef Aws::Utils::Outcome<StartProtectedQueryResult, CleanRoomsError> StartProtectedQueryOutcome;
@@ -328,6 +362,8 @@ typedef Aws::Utils::Outcome<UpdateConfiguredTableAssociationAnalysisRuleResult, 
     UpdateConfiguredTableAssociationAnalysisRuleOutcome;
 typedef Aws::Utils::Outcome<UpdateIdMappingTableResult, CleanRoomsError> UpdateIdMappingTableOutcome;
 typedef Aws::Utils::Outcome<UpdateIdNamespaceAssociationResult, CleanRoomsError> UpdateIdNamespaceAssociationOutcome;
+typedef Aws::Utils::Outcome<UpdateIntermediateTableResult, CleanRoomsError> UpdateIntermediateTableOutcome;
+typedef Aws::Utils::Outcome<UpdateIntermediateTableAnalysisRuleResult, CleanRoomsError> UpdateIntermediateTableAnalysisRuleOutcome;
 typedef Aws::Utils::Outcome<UpdateMembershipResult, CleanRoomsError> UpdateMembershipOutcome;
 typedef Aws::Utils::Outcome<UpdatePrivacyBudgetTemplateResult, CleanRoomsError> UpdatePrivacyBudgetTemplateOutcome;
 typedef Aws::Utils::Outcome<UpdateProtectedJobResult, CleanRoomsError> UpdateProtectedJobOutcome;
@@ -348,6 +384,8 @@ typedef std::future<CreateConfiguredTableAssociationOutcome> CreateConfiguredTab
 typedef std::future<CreateConfiguredTableAssociationAnalysisRuleOutcome> CreateConfiguredTableAssociationAnalysisRuleOutcomeCallable;
 typedef std::future<CreateIdMappingTableOutcome> CreateIdMappingTableOutcomeCallable;
 typedef std::future<CreateIdNamespaceAssociationOutcome> CreateIdNamespaceAssociationOutcomeCallable;
+typedef std::future<CreateIntermediateTableOutcome> CreateIntermediateTableOutcomeCallable;
+typedef std::future<CreateIntermediateTableAnalysisRuleOutcome> CreateIntermediateTableAnalysisRuleOutcomeCallable;
 typedef std::future<CreateMembershipOutcome> CreateMembershipOutcomeCallable;
 typedef std::future<CreatePrivacyBudgetTemplateOutcome> CreatePrivacyBudgetTemplateOutcomeCallable;
 typedef std::future<DeleteAnalysisTemplateOutcome> DeleteAnalysisTemplateOutcomeCallable;
@@ -359,9 +397,12 @@ typedef std::future<DeleteConfiguredTableAssociationOutcome> DeleteConfiguredTab
 typedef std::future<DeleteConfiguredTableAssociationAnalysisRuleOutcome> DeleteConfiguredTableAssociationAnalysisRuleOutcomeCallable;
 typedef std::future<DeleteIdMappingTableOutcome> DeleteIdMappingTableOutcomeCallable;
 typedef std::future<DeleteIdNamespaceAssociationOutcome> DeleteIdNamespaceAssociationOutcomeCallable;
+typedef std::future<DeleteIntermediateTableOutcome> DeleteIntermediateTableOutcomeCallable;
+typedef std::future<DeleteIntermediateTableAnalysisRuleOutcome> DeleteIntermediateTableAnalysisRuleOutcomeCallable;
 typedef std::future<DeleteMemberOutcome> DeleteMemberOutcomeCallable;
 typedef std::future<DeleteMembershipOutcome> DeleteMembershipOutcomeCallable;
 typedef std::future<DeletePrivacyBudgetTemplateOutcome> DeletePrivacyBudgetTemplateOutcomeCallable;
+typedef std::future<DisallowIntermediateTableOutcome> DisallowIntermediateTableOutcomeCallable;
 typedef std::future<GetAnalysisTemplateOutcome> GetAnalysisTemplateOutcomeCallable;
 typedef std::future<GetCollaborationOutcome> GetCollaborationOutcomeCallable;
 typedef std::future<GetCollaborationAnalysisTemplateOutcome> GetCollaborationAnalysisTemplateOutcomeCallable;
@@ -377,6 +418,8 @@ typedef std::future<GetConfiguredTableAssociationOutcome> GetConfiguredTableAsso
 typedef std::future<GetConfiguredTableAssociationAnalysisRuleOutcome> GetConfiguredTableAssociationAnalysisRuleOutcomeCallable;
 typedef std::future<GetIdMappingTableOutcome> GetIdMappingTableOutcomeCallable;
 typedef std::future<GetIdNamespaceAssociationOutcome> GetIdNamespaceAssociationOutcomeCallable;
+typedef std::future<GetIntermediateTableOutcome> GetIntermediateTableOutcomeCallable;
+typedef std::future<GetIntermediateTableAnalysisRuleOutcome> GetIntermediateTableAnalysisRuleOutcomeCallable;
 typedef std::future<GetMembershipOutcome> GetMembershipOutcomeCallable;
 typedef std::future<GetPrivacyBudgetTemplateOutcome> GetPrivacyBudgetTemplateOutcomeCallable;
 typedef std::future<GetProtectedJobOutcome> GetProtectedJobOutcomeCallable;
@@ -397,6 +440,8 @@ typedef std::future<ListConfiguredTableAssociationsOutcome> ListConfiguredTableA
 typedef std::future<ListConfiguredTablesOutcome> ListConfiguredTablesOutcomeCallable;
 typedef std::future<ListIdMappingTablesOutcome> ListIdMappingTablesOutcomeCallable;
 typedef std::future<ListIdNamespaceAssociationsOutcome> ListIdNamespaceAssociationsOutcomeCallable;
+typedef std::future<ListIntermediateTableVersionsOutcome> ListIntermediateTableVersionsOutcomeCallable;
+typedef std::future<ListIntermediateTablesOutcome> ListIntermediateTablesOutcomeCallable;
 typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
 typedef std::future<ListMembershipsOutcome> ListMembershipsOutcomeCallable;
 typedef std::future<ListPrivacyBudgetTemplatesOutcome> ListPrivacyBudgetTemplatesOutcomeCallable;
@@ -406,6 +451,7 @@ typedef std::future<ListProtectedQueriesOutcome> ListProtectedQueriesOutcomeCall
 typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PopulateIdMappingTableOutcome> PopulateIdMappingTableOutcomeCallable;
+typedef std::future<PopulateIntermediateTableOutcome> PopulateIntermediateTableOutcomeCallable;
 typedef std::future<PreviewPrivacyImpactOutcome> PreviewPrivacyImpactOutcomeCallable;
 typedef std::future<StartProtectedJobOutcome> StartProtectedJobOutcomeCallable;
 typedef std::future<StartProtectedQueryOutcome> StartProtectedQueryOutcomeCallable;
@@ -421,6 +467,8 @@ typedef std::future<UpdateConfiguredTableAssociationOutcome> UpdateConfiguredTab
 typedef std::future<UpdateConfiguredTableAssociationAnalysisRuleOutcome> UpdateConfiguredTableAssociationAnalysisRuleOutcomeCallable;
 typedef std::future<UpdateIdMappingTableOutcome> UpdateIdMappingTableOutcomeCallable;
 typedef std::future<UpdateIdNamespaceAssociationOutcome> UpdateIdNamespaceAssociationOutcomeCallable;
+typedef std::future<UpdateIntermediateTableOutcome> UpdateIntermediateTableOutcomeCallable;
+typedef std::future<UpdateIntermediateTableAnalysisRuleOutcome> UpdateIntermediateTableAnalysisRuleOutcomeCallable;
 typedef std::future<UpdateMembershipOutcome> UpdateMembershipOutcomeCallable;
 typedef std::future<UpdatePrivacyBudgetTemplateOutcome> UpdatePrivacyBudgetTemplateOutcomeCallable;
 typedef std::future<UpdateProtectedJobOutcome> UpdateProtectedJobOutcomeCallable;
@@ -477,6 +525,13 @@ typedef std::function<void(const CleanRoomsClient*, const Model::CreateIdNamespa
                            const Model::CreateIdNamespaceAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateIdNamespaceAssociationResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::CreateIntermediateTableRequest&,
+                           const Model::CreateIntermediateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateIntermediateTableResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::CreateIntermediateTableAnalysisRuleRequest&,
+                           const Model::CreateIntermediateTableAnalysisRuleOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateIntermediateTableAnalysisRuleResponseReceivedHandler;
 typedef std::function<void(const CleanRoomsClient*, const Model::CreateMembershipRequest&, const Model::CreateMembershipOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateMembershipResponseReceivedHandler;
@@ -515,6 +570,13 @@ typedef std::function<void(const CleanRoomsClient*, const Model::DeleteIdNamespa
                            const Model::DeleteIdNamespaceAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteIdNamespaceAssociationResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::DeleteIntermediateTableRequest&,
+                           const Model::DeleteIntermediateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteIntermediateTableResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::DeleteIntermediateTableAnalysisRuleRequest&,
+                           const Model::DeleteIntermediateTableAnalysisRuleOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteIntermediateTableAnalysisRuleResponseReceivedHandler;
 typedef std::function<void(const CleanRoomsClient*, const Model::DeleteMemberRequest&, const Model::DeleteMemberOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteMemberResponseReceivedHandler;
@@ -524,6 +586,9 @@ typedef std::function<void(const CleanRoomsClient*, const Model::DeleteMembershi
 typedef std::function<void(const CleanRoomsClient*, const Model::DeletePrivacyBudgetTemplateRequest&,
                            const Model::DeletePrivacyBudgetTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePrivacyBudgetTemplateResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::DisallowIntermediateTableRequest&,
+                           const Model::DisallowIntermediateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisallowIntermediateTableResponseReceivedHandler;
 typedef std::function<void(const CleanRoomsClient*, const Model::GetAnalysisTemplateRequest&, const Model::GetAnalysisTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAnalysisTemplateResponseReceivedHandler;
@@ -575,6 +640,13 @@ typedef std::function<void(const CleanRoomsClient*, const Model::GetIdMappingTab
 typedef std::function<void(const CleanRoomsClient*, const Model::GetIdNamespaceAssociationRequest&,
                            const Model::GetIdNamespaceAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetIdNamespaceAssociationResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::GetIntermediateTableRequest&, const Model::GetIntermediateTableOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIntermediateTableResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::GetIntermediateTableAnalysisRuleRequest&,
+                           const Model::GetIntermediateTableAnalysisRuleOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIntermediateTableAnalysisRuleResponseReceivedHandler;
 typedef std::function<void(const CleanRoomsClient*, const Model::GetMembershipRequest&, const Model::GetMembershipOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMembershipResponseReceivedHandler;
@@ -640,6 +712,13 @@ typedef std::function<void(const CleanRoomsClient*, const Model::ListIdMappingTa
 typedef std::function<void(const CleanRoomsClient*, const Model::ListIdNamespaceAssociationsRequest&,
                            const Model::ListIdNamespaceAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListIdNamespaceAssociationsResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::ListIntermediateTableVersionsRequest&,
+                           const Model::ListIntermediateTableVersionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListIntermediateTableVersionsResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::ListIntermediateTablesRequest&,
+                           const Model::ListIntermediateTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListIntermediateTablesResponseReceivedHandler;
 typedef std::function<void(const CleanRoomsClient*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListMembersResponseReceivedHandler;
@@ -667,6 +746,9 @@ typedef std::function<void(const CleanRoomsClient*, const Model::ListTagsForReso
 typedef std::function<void(const CleanRoomsClient*, const Model::PopulateIdMappingTableRequest&,
                            const Model::PopulateIdMappingTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PopulateIdMappingTableResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::PopulateIntermediateTableRequest&,
+                           const Model::PopulateIntermediateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PopulateIntermediateTableResponseReceivedHandler;
 typedef std::function<void(const CleanRoomsClient*, const Model::PreviewPrivacyImpactRequest&, const Model::PreviewPrivacyImpactOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PreviewPrivacyImpactResponseReceivedHandler;
@@ -718,6 +800,13 @@ typedef std::function<void(const CleanRoomsClient*, const Model::UpdateIdNamespa
                            const Model::UpdateIdNamespaceAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateIdNamespaceAssociationResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::UpdateIntermediateTableRequest&,
+                           const Model::UpdateIntermediateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateIntermediateTableResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::UpdateIntermediateTableAnalysisRuleRequest&,
+                           const Model::UpdateIntermediateTableAnalysisRuleOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateIntermediateTableAnalysisRuleResponseReceivedHandler;
 typedef std::function<void(const CleanRoomsClient*, const Model::UpdateMembershipRequest&, const Model::UpdateMembershipOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateMembershipResponseReceivedHandler;

@@ -126,6 +126,14 @@ Aws::String UpdateStackRequest::SerializePayload() const {
     ss << "RetainExceptOnCreate=" << std::boolalpha << m_retainExceptOnCreate << "&";
   }
 
+  if (m_deploymentConfigHasBeenSet) {
+    m_deploymentConfig.OutputToStream(ss, "DeploymentConfig");
+  }
+
+  if (m_disableValidationHasBeenSet) {
+    ss << "DisableValidation=" << std::boolalpha << m_disableValidation << "&";
+  }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

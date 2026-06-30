@@ -34,6 +34,7 @@ static const int AWS_CloudFront_Distribution_HASH = HashingUtils::HashString("AW
 static const int AWS_SecurityHub_HubV2_HASH = HashingUtils::HashString("AWS::SecurityHub::HubV2");
 static const int AWS_CloudWatch_OTelEnrichment_HASH = HashingUtils::HashString("AWS::CloudWatch::OTelEnrichment");
 static const int AWS_MSK_Cluster_HASH = HashingUtils::HashString("AWS::MSK::Cluster");
+static const int AWS_S3_Bucket_HASH = HashingUtils::HashString("AWS::S3::Bucket");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -75,6 +76,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::AWS_CloudWatch_OTelEnrichment;
   } else if (hashCode == AWS_MSK_Cluster_HASH) {
     return ResourceType::AWS_MSK_Cluster;
+  } else if (hashCode == AWS_S3_Bucket_HASH) {
+    return ResourceType::AWS_S3_Bucket;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -127,6 +130,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "AWS::CloudWatch::OTelEnrichment";
     case ResourceType::AWS_MSK_Cluster:
       return "AWS::MSK::Cluster";
+    case ResourceType::AWS_S3_Bucket:
+      return "AWS::S3::Bucket";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

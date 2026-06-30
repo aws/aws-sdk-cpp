@@ -113,6 +113,7 @@
 #include <aws/observabilityadmin/model/RuleHealth.h>
 #include <aws/observabilityadmin/model/SSEAlgorithm.h>
 #include <aws/observabilityadmin/model/ServiceQuotaExceededException.h>
+#include <aws/observabilityadmin/model/SignalType.h>
 #include <aws/observabilityadmin/model/SingleHeader.h>
 #include <aws/observabilityadmin/model/Source.h>
 #include <aws/observabilityadmin/model/SourceLogsConfiguration.h>

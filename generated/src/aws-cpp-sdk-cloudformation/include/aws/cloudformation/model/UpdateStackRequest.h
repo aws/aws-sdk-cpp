@@ -7,6 +7,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/model/Capability.h>
+#include <aws/cloudformation/model/DeploymentConfig.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/RollbackConfiguration.h>
 #include <aws/cloudformation/model/Tag.h>
@@ -534,6 +535,42 @@ class UpdateStackRequest : public CloudFormationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The deployment configuration for this stack operation, including the
+   * deployment mode.</p>
+   */
+  inline const DeploymentConfig& GetDeploymentConfig() const { return m_deploymentConfig; }
+  inline bool DeploymentConfigHasBeenSet() const { return m_deploymentConfigHasBeenSet; }
+  template <typename DeploymentConfigT = DeploymentConfig>
+  void SetDeploymentConfig(DeploymentConfigT&& value) {
+    m_deploymentConfigHasBeenSet = true;
+    m_deploymentConfig = std::forward<DeploymentConfigT>(value);
+  }
+  template <typename DeploymentConfigT = DeploymentConfig>
+  UpdateStackRequest& WithDeploymentConfig(DeploymentConfigT&& value) {
+    SetDeploymentConfig(std::forward<DeploymentConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Set to <code>true</code> to disable pre-deployment validations in changeset
+   * or stack operations. </p> <p> Default: <code>false</code> </p>
+   */
+  inline bool GetDisableValidation() const { return m_disableValidation; }
+  inline bool DisableValidationHasBeenSet() const { return m_disableValidationHasBeenSet; }
+  inline void SetDisableValidation(bool value) {
+    m_disableValidationHasBeenSet = true;
+    m_disableValidation = value;
+  }
+  inline UpdateStackRequest& WithDisableValidation(bool value) {
+    SetDisableValidation(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_stackName;
 
@@ -570,6 +607,10 @@ class UpdateStackRequest : public CloudFormationRequest {
   Aws::String m_clientRequestToken;
 
   bool m_retainExceptOnCreate{false};
+
+  DeploymentConfig m_deploymentConfig;
+
+  bool m_disableValidation{false};
   bool m_stackNameHasBeenSet = false;
   bool m_templateBodyHasBeenSet = false;
   bool m_templateURLHasBeenSet = false;
@@ -588,6 +629,8 @@ class UpdateStackRequest : public CloudFormationRequest {
   bool m_disableRollbackHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;
   bool m_retainExceptOnCreateHasBeenSet = false;
+  bool m_deploymentConfigHasBeenSet = false;
+  bool m_disableValidationHasBeenSet = false;
 };
 
 }  // namespace Model

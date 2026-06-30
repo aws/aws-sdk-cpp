@@ -8,6 +8,7 @@
 #include <aws/observabilityadmin/ObservabilityAdminRequest.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/observabilityadmin/model/Record.h>
+#include <aws/observabilityadmin/model/SignalType.h>
 #include <aws/observabilityadmin/model/TelemetryPipelineConfiguration.h>
 
 #include <utility>
@@ -72,12 +73,32 @@ class TestTelemetryPipelineRequest : public ObservabilityAdminRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of telemetry signal to test. If not specified, defaults to log
+   * processing.</p>
+   */
+  inline SignalType GetSignalType() const { return m_signalType; }
+  inline bool SignalTypeHasBeenSet() const { return m_signalTypeHasBeenSet; }
+  inline void SetSignalType(SignalType value) {
+    m_signalTypeHasBeenSet = true;
+    m_signalType = value;
+  }
+  inline TestTelemetryPipelineRequest& WithSignalType(SignalType value) {
+    SetSignalType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Record> m_records;
 
   TelemetryPipelineConfiguration m_configuration;
+
+  SignalType m_signalType{SignalType::NOT_SET};
   bool m_recordsHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
+  bool m_signalTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -210,6 +210,8 @@ class CreateEnvironmentRequest : public DataZoneRequest {
   ///@{
   /**
    * <p>The ID of the blueprint with which the environment is being created.</p>
+   *  <p>This parameter is only valid for V1 domains. If provided for a V2
+   * domain, the service returns a ValidationException.</p>
    */
   inline const Aws::String& GetEnvironmentBlueprintIdentifier() const { return m_environmentBlueprintIdentifier; }
   inline bool EnvironmentBlueprintIdentifierHasBeenSet() const { return m_environmentBlueprintIdentifierHasBeenSet; }

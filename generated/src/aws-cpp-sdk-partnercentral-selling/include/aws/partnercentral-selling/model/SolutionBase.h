@@ -170,6 +170,25 @@ class SolutionBase {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the AWS Marketplace solution associated
+   * with this partner solution.</p>
+   */
+  inline const Aws::String& GetAwsMarketplaceSolutionArn() const { return m_awsMarketplaceSolutionArn; }
+  inline bool AwsMarketplaceSolutionArnHasBeenSet() const { return m_awsMarketplaceSolutionArnHasBeenSet; }
+  template <typename AwsMarketplaceSolutionArnT = Aws::String>
+  void SetAwsMarketplaceSolutionArn(AwsMarketplaceSolutionArnT&& value) {
+    m_awsMarketplaceSolutionArnHasBeenSet = true;
+    m_awsMarketplaceSolutionArn = std::forward<AwsMarketplaceSolutionArnT>(value);
+  }
+  template <typename AwsMarketplaceSolutionArnT = Aws::String>
+  SolutionBase& WithAwsMarketplaceSolutionArn(AwsMarketplaceSolutionArnT&& value) {
+    SetAwsMarketplaceSolutionArn(std::forward<AwsMarketplaceSolutionArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalog;
 
@@ -184,6 +203,8 @@ class SolutionBase {
   Aws::String m_category;
 
   Aws::Utils::DateTime m_createdDate{};
+
+  Aws::String m_awsMarketplaceSolutionArn;
   bool m_catalogHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -191,6 +212,7 @@ class SolutionBase {
   bool m_statusHasBeenSet = false;
   bool m_categoryHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
+  bool m_awsMarketplaceSolutionArnHasBeenSet = false;
 };
 
 }  // namespace Model

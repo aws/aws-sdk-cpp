@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/model/InstanceStatus.h>
+#include <aws/sso-admin/model/RegionMetadata.h>
 
 #include <utility>
 
@@ -167,6 +169,50 @@ class InstanceMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The primary Region where the IAM Identity Center instance was originally
+   * enabled. The primary Region cannot be removed.</p>
+   */
+  inline const Aws::String& GetPrimaryRegion() const { return m_primaryRegion; }
+  inline bool PrimaryRegionHasBeenSet() const { return m_primaryRegionHasBeenSet; }
+  template <typename PrimaryRegionT = Aws::String>
+  void SetPrimaryRegion(PrimaryRegionT&& value) {
+    m_primaryRegionHasBeenSet = true;
+    m_primaryRegion = std::forward<PrimaryRegionT>(value);
+  }
+  template <typename PrimaryRegionT = Aws::String>
+  InstanceMetadata& WithPrimaryRegion(PrimaryRegionT&& value) {
+    SetPrimaryRegion(std::forward<PrimaryRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of Regions enabled in the IAM Identity Center instance, including
+   * Regions with ACTIVE, ADDING, or REMOVING status.</p>
+   */
+  inline const Aws::Vector<RegionMetadata>& GetRegions() const { return m_regions; }
+  inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
+  template <typename RegionsT = Aws::Vector<RegionMetadata>>
+  void SetRegions(RegionsT&& value) {
+    m_regionsHasBeenSet = true;
+    m_regions = std::forward<RegionsT>(value);
+  }
+  template <typename RegionsT = Aws::Vector<RegionMetadata>>
+  InstanceMetadata& WithRegions(RegionsT&& value) {
+    SetRegions(std::forward<RegionsT>(value));
+    return *this;
+  }
+  template <typename RegionsT = RegionMetadata>
+  InstanceMetadata& AddRegions(RegionsT&& value) {
+    m_regionsHasBeenSet = true;
+    m_regions.emplace_back(std::forward<RegionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceArn;
 
@@ -181,6 +227,10 @@ class InstanceMetadata {
   InstanceStatus m_status{InstanceStatus::NOT_SET};
 
   Aws::String m_statusReason;
+
+  Aws::String m_primaryRegion;
+
+  Aws::Vector<RegionMetadata> m_regions;
   bool m_instanceArnHasBeenSet = false;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_ownerAccountIdHasBeenSet = false;
@@ -188,6 +238,8 @@ class InstanceMetadata {
   bool m_createdDateHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
+  bool m_primaryRegionHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
 };
 
 }  // namespace Model

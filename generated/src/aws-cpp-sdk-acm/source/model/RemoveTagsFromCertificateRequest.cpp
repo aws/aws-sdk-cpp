@@ -35,3 +35,10 @@ Aws::Http::HeaderValueCollection RemoveTagsFromCertificateRequest::GetRequestSpe
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CertificateManager.RemoveTagsFromCertificate"));
   return headers;
 }
+
+RemoveTagsFromCertificateRequest::EndpointParameters RemoveTagsFromCertificateRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("ServiceType"), "ACM", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

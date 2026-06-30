@@ -17,6 +17,7 @@ namespace CapacityDistributionStrategyMapper {
 
 static const int balanced_only_HASH = HashingUtils::HashString("balanced-only");
 static const int balanced_best_effort_HASH = HashingUtils::HashString("balanced-best-effort");
+static const int reservations_then_balanced_HASH = HashingUtils::HashString("reservations-then-balanced");
 
 CapacityDistributionStrategy GetCapacityDistributionStrategyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ CapacityDistributionStrategy GetCapacityDistributionStrategyForName(const Aws::S
     return CapacityDistributionStrategy::balanced_only;
   } else if (hashCode == balanced_best_effort_HASH) {
     return CapacityDistributionStrategy::balanced_best_effort;
+  } else if (hashCode == reservations_then_balanced_HASH) {
+    return CapacityDistributionStrategy::reservations_then_balanced;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForCapacityDistributionStrategy(CapacityDistributionStrategy 
       return "balanced-only";
     case CapacityDistributionStrategy::balanced_best_effort:
       return "balanced-best-effort";
+    case CapacityDistributionStrategy::reservations_then_balanced:
+      return "reservations-then-balanced";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

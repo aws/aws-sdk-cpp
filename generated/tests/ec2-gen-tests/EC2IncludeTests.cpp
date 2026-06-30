@@ -2120,6 +2120,8 @@
 #include <aws/ec2/model/ModifyVpcEncryptionControlResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointConnectionNotificationRequest.h>
 #include <aws/ec2/model/ModifyVpcEndpointConnectionNotificationResponse.h>
+#include <aws/ec2/model/ModifyVpcEndpointPayerResponsibilityRequest.h>
+#include <aws/ec2/model/ModifyVpcEndpointPayerResponsibilityResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointRequest.h>
 #include <aws/ec2/model/ModifyVpcEndpointResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointServiceConfigurationRequest.h>
@@ -2219,6 +2221,9 @@
 #include <aws/ec2/model/PathStatement.h>
 #include <aws/ec2/model/PathStatementRequest.h>
 #include <aws/ec2/model/PayerResponsibility.h>
+#include <aws/ec2/model/PayerResponsibilityEntry.h>
+#include <aws/ec2/model/PayerResponsibilityScope.h>
+#include <aws/ec2/model/PayerResponsibilityType.h>
 #include <aws/ec2/model/PaymentOption.h>
 #include <aws/ec2/model/PciId.h>
 #include <aws/ec2/model/PeeringAttachmentStatus.h>

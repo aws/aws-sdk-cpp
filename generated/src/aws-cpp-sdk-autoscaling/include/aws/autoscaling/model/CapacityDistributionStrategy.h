@@ -10,7 +10,7 @@
 namespace Aws {
 namespace AutoScaling {
 namespace Model {
-enum class CapacityDistributionStrategy { NOT_SET, balanced_only, balanced_best_effort };
+enum class CapacityDistributionStrategy { NOT_SET, balanced_only, balanced_best_effort, reservations_then_balanced };
 
 namespace CapacityDistributionStrategyMapper {
 AWS_AUTOSCALING_API CapacityDistributionStrategy GetCapacityDistributionStrategyForName(const Aws::String& name);

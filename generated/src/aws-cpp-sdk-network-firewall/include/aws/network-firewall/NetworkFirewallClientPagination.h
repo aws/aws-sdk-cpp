@@ -8,6 +8,7 @@
 #include <aws/network-firewall/NetworkFirewallClient.h>
 #include <aws/network-firewall/model/GetAnalysisReportResultsPaginationTraits.h>
 #include <aws/network-firewall/model/ListAnalysisReportsPaginationTraits.h>
+#include <aws/network-firewall/model/ListContainerAssociationsPaginationTraits.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesPaginationTraits.h>
 #include <aws/network-firewall/model/ListFirewallsPaginationTraits.h>
 #include <aws/network-firewall/model/ListFlowOperationResultsPaginationTraits.h>
@@ -29,6 +30,9 @@ using GetAnalysisReportResultsPaginator =
 using ListAnalysisReportsPaginator =
     Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListAnalysisReportsRequest,
                                       Pagination::ListAnalysisReportsPaginationTraits<NetworkFirewallClient>>;
+using ListContainerAssociationsPaginator =
+    Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListContainerAssociationsRequest,
+                                      Pagination::ListContainerAssociationsPaginationTraits<NetworkFirewallClient>>;
 using ListFirewallPoliciesPaginator =
     Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListFirewallPoliciesRequest,
                                       Pagination::ListFirewallPoliciesPaginationTraits<NetworkFirewallClient>>;

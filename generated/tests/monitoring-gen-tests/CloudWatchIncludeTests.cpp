@@ -69,6 +69,7 @@
 #include <aws/monitoring/model/EntityMetricData.h>
 #include <aws/monitoring/model/EvaluationCriteria.h>
 #include <aws/monitoring/model/EvaluationState.h>
+#include <aws/monitoring/model/EvaluationWindow.h>
 #include <aws/monitoring/model/GetAlarmMuteRuleRequest.h>
 #include <aws/monitoring/model/GetAlarmMuteRuleResult.h>
 #include <aws/monitoring/model/GetDashboardRequest.h>
@@ -152,6 +153,7 @@
 #include <aws/monitoring/model/ScheduledQueryConfiguration.h>
 #include <aws/monitoring/model/SetAlarmStateRequest.h>
 #include <aws/monitoring/model/SingleMetricAnomalyDetector.h>
+#include <aws/monitoring/model/SlidingWindow.h>
 #include <aws/monitoring/model/StandardUnit.h>
 #include <aws/monitoring/model/StartMetricStreamsRequest.h>
 #include <aws/monitoring/model/StartMetricStreamsResult.h>
@@ -170,6 +172,7 @@
 #include <aws/monitoring/model/TagResourceResult.h>
 #include <aws/monitoring/model/UntagResourceRequest.h>
 #include <aws/monitoring/model/UntagResourceResult.h>
+#include <aws/monitoring/model/WallClockWindow.h>
 
 using CloudWatchIncludeTest = ::testing::Test;
 

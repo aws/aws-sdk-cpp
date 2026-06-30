@@ -8,6 +8,7 @@
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Change.h>
 #include <aws/cloudformation/model/ChangeSetStatus.h>
+#include <aws/cloudformation/model/DeploymentConfig.h>
 #include <aws/cloudformation/model/DeploymentMode.h>
 #include <aws/cloudformation/model/ExecutionStatus.h>
 #include <aws/cloudformation/model/OnStackFailure.h>
@@ -500,6 +501,23 @@ class DescribeChangeSetResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The deployment configuration specified when the change set was created.</p>
+   */
+  inline const DeploymentConfig& GetDeploymentConfig() const { return m_deploymentConfig; }
+  template <typename DeploymentConfigT = DeploymentConfig>
+  void SetDeploymentConfig(DeploymentConfigT&& value) {
+    m_deploymentConfigHasBeenSet = true;
+    m_deploymentConfig = std::forward<DeploymentConfigT>(value);
+  }
+  template <typename DeploymentConfigT = DeploymentConfig>
+  DescribeChangeSetResult& WithDeploymentConfig(DeploymentConfigT&& value) {
+    SetDeploymentConfig(std::forward<DeploymentConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
@@ -562,6 +580,8 @@ class DescribeChangeSetResult {
 
   DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
 
+  DeploymentConfig m_deploymentConfig;
+
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_changeSetNameHasBeenSet = false;
@@ -587,6 +607,7 @@ class DescribeChangeSetResult {
   bool m_onStackFailureHasBeenSet = false;
   bool m_importExistingResourcesHasBeenSet = false;
   bool m_deploymentModeHasBeenSet = false;
+  bool m_deploymentConfigHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

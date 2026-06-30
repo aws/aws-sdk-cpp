@@ -21,6 +21,7 @@ static const int EMAIL_MESSAGE_PLAIN_TEXT_HASH = HashingUtils::HashString("EMAIL
 static const int EMAIL_MESSAGE_REDACTED_HASH = HashingUtils::HashString("EMAIL_MESSAGE_REDACTED");
 static const int EMAIL_MESSAGE_PLAIN_TEXT_REDACTED_HASH = HashingUtils::HashString("EMAIL_MESSAGE_PLAIN_TEXT_REDACTED");
 static const int ATTACHMENT_HASH = HashingUtils::HashString("ATTACHMENT");
+static const int VOICE_RECORDING_HASH = HashingUtils::HashString("VOICE_RECORDING");
 
 FileUseCaseType GetFileUseCaseTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ FileUseCaseType GetFileUseCaseTypeForName(const Aws::String& name) {
     return FileUseCaseType::EMAIL_MESSAGE_PLAIN_TEXT_REDACTED;
   } else if (hashCode == ATTACHMENT_HASH) {
     return FileUseCaseType::ATTACHMENT;
+  } else if (hashCode == VOICE_RECORDING_HASH) {
+    return FileUseCaseType::VOICE_RECORDING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForFileUseCaseType(FileUseCaseType enumValue) {
       return "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED";
     case FileUseCaseType::ATTACHMENT:
       return "ATTACHMENT";
+    case FileUseCaseType::VOICE_RECORDING:
+      return "VOICE_RECORDING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

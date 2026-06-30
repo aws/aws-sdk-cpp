@@ -6,6 +6,8 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/StopContactRecordingRequest.h>
+#include <aws/connect/model/StopContactStreamingRequest.h>
 #include <aws/connect/model/StopTestCaseExecutionRequest.h>
 #include <aws/connect/model/SubmitContactEvaluationRequest.h>
 #include <aws/connect/model/SuspendContactRecordingRequest.h>
@@ -103,6 +105,28 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+StopContactRecordingOutcome ConnectClient::StopContactRecording(const StopContactRecordingRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/stop-recording");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopContactRecordingOutcome(result.GetResultWithOwnership())
+                            : StopContactRecordingOutcome(std::move(result.GetError()));
+}
+
+StopContactStreamingOutcome ConnectClient::StopContactStreaming(const StopContactStreamingRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/stop-streaming");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopContactStreamingOutcome(result.GetResultWithOwnership())
+                            : StopContactStreamingOutcome(std::move(result.GetError()));
+}
 
 StopTestCaseExecutionOutcome ConnectClient::StopTestCaseExecution(const StopTestCaseExecutionRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {

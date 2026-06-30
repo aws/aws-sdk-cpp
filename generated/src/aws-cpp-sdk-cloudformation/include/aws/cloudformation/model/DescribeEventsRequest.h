@@ -35,7 +35,9 @@ class DescribeEventsRequest : public CloudFormationRequest {
  public:
   ///@{
   /**
-   * <p>The name or unique stack ID for which you want to retrieve events.</p>
+   * <p>The name or unique stack ID for which you want to retrieve events. If you
+   * specified the name of a change set, specify the stack name or ID (ARN) of the
+   * change set you want to describe.</p>
    */
   inline const Aws::String& GetStackName() const { return m_stackName; }
   inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }

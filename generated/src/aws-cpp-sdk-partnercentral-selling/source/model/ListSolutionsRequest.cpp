@@ -55,6 +55,16 @@ Aws::String ListSolutionsRequest::SerializePayload() const {
     payload.WithArray("Category", std::move(categoryJsonList));
   }
 
+  if (m_awsMarketplaceSolutionArnHasBeenSet) {
+    Aws::Utils::Array<JsonValue> awsMarketplaceSolutionArnJsonList(m_awsMarketplaceSolutionArn.size());
+    for (unsigned awsMarketplaceSolutionArnIndex = 0; awsMarketplaceSolutionArnIndex < awsMarketplaceSolutionArnJsonList.GetLength();
+         ++awsMarketplaceSolutionArnIndex) {
+      awsMarketplaceSolutionArnJsonList[awsMarketplaceSolutionArnIndex].AsString(
+          m_awsMarketplaceSolutionArn[awsMarketplaceSolutionArnIndex]);
+    }
+    payload.WithArray("AwsMarketplaceSolutionArn", std::move(awsMarketplaceSolutionArnJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

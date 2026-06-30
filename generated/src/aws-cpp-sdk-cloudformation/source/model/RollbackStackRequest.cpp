@@ -29,6 +29,10 @@ Aws::String RollbackStackRequest::SerializePayload() const {
     ss << "RetainExceptOnCreate=" << std::boolalpha << m_retainExceptOnCreate << "&";
   }
 
+  if (m_deploymentConfigHasBeenSet) {
+    m_deploymentConfig.OutputToStream(ss, "DeploymentConfig");
+  }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

@@ -27,5 +27,9 @@ Aws::String UpdateClusterVersionRequest::SerializePayload() const {
     payload.WithBool("force", m_force);
   }
 
+  if (m_rollbackConfigHasBeenSet) {
+    payload.WithObject("rollbackConfig", m_rollbackConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

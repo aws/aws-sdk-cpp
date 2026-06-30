@@ -19,7 +19,16 @@ using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::DefaultEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
-using ACMClientContextParameters = Aws::Endpoint::ClientContextParameters;
+class AWS_ACM_API ACMClientContextParameters : public Aws::Endpoint::ClientContextParameters {
+ public:
+  virtual ~ACMClientContextParameters() {};
+
+  /**
+   * The service type: ACM or ACM-ACME. Injected via @staticContextParams.
+   */
+  void SetServiceType(Aws::String value);
+  const ClientContextParameters::EndpointParameter& GetServiceType() const;
+};
 
 using ACMClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ACMBuiltInParameters = Aws::Endpoint::BuiltInParameters;
@@ -33,6 +42,22 @@ using ACMEndpointProviderBase = EndpointProviderBase<ACMClientConfiguration, ACM
 
 using ACMDefaultEpProviderBase = DefaultEndpointProvider<ACMClientConfiguration, ACMBuiltInParameters, ACMClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace ACM
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_ACM_EXTERN template class AWS_ACM_API Aws::Endpoint::EndpointProviderBase<
+    ACM::Endpoint::ACMClientConfiguration, ACM::Endpoint::ACMBuiltInParameters, ACM::Endpoint::ACMClientContextParameters>;
+
+AWS_ACM_EXTERN template class AWS_ACM_API Aws::Endpoint::DefaultEndpointProvider<
+    ACM::Endpoint::ACMClientConfiguration, ACM::Endpoint::ACMBuiltInParameters, ACM::Endpoint::ACMClientContextParameters>;
+}  // namespace Endpoint
+
+namespace ACM {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

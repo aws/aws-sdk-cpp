@@ -25,6 +25,16 @@ Aws::String ListCertificatesRequest::SerializePayload() const {
     payload.WithArray("CertificateStatuses", std::move(certificateStatusesJsonList));
   }
 
+  if (m_certificateKeyPairOriginsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> certificateKeyPairOriginsJsonList(m_certificateKeyPairOrigins.size());
+    for (unsigned certificateKeyPairOriginsIndex = 0; certificateKeyPairOriginsIndex < certificateKeyPairOriginsJsonList.GetLength();
+         ++certificateKeyPairOriginsIndex) {
+      certificateKeyPairOriginsJsonList[certificateKeyPairOriginsIndex].AsString(
+          CertificateKeyPairOriginMapper::GetNameForCertificateKeyPairOrigin(m_certificateKeyPairOrigins[certificateKeyPairOriginsIndex]));
+    }
+    payload.WithArray("CertificateKeyPairOrigins", std::move(certificateKeyPairOriginsJsonList));
+  }
+
   if (m_includesHasBeenSet) {
     payload.WithObject("Includes", m_includes.Jsonize());
   }
@@ -52,4 +62,11 @@ Aws::Http::HeaderValueCollection ListCertificatesRequest::GetRequestSpecificHead
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CertificateManager.ListCertificates"));
   return headers;
+}
+
+ListCertificatesRequest::EndpointParameters ListCertificatesRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("ServiceType"), "ACM", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
 }

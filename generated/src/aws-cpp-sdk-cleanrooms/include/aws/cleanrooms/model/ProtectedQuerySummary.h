@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/IntermediateTableOutputConfiguration.h>
 #include <aws/cleanrooms/model/ProtectedQueryStatus.h>
 #include <aws/cleanrooms/model/ReceiverConfiguration.h>
 #include <aws/core/utils/DateTime.h>
@@ -165,6 +166,25 @@ class ProtectedQuerySummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The intermediate table configuration, present when the protected query was
+   * triggered by a populate operation.</p>
+   */
+  inline const IntermediateTableOutputConfiguration& GetIntermediateTableConfiguration() const { return m_intermediateTableConfiguration; }
+  inline bool IntermediateTableConfigurationHasBeenSet() const { return m_intermediateTableConfigurationHasBeenSet; }
+  template <typename IntermediateTableConfigurationT = IntermediateTableOutputConfiguration>
+  void SetIntermediateTableConfiguration(IntermediateTableConfigurationT&& value) {
+    m_intermediateTableConfigurationHasBeenSet = true;
+    m_intermediateTableConfiguration = std::forward<IntermediateTableConfigurationT>(value);
+  }
+  template <typename IntermediateTableConfigurationT = IntermediateTableOutputConfiguration>
+  ProtectedQuerySummary& WithIntermediateTableConfiguration(IntermediateTableConfigurationT&& value) {
+    SetIntermediateTableConfiguration(std::forward<IntermediateTableConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -179,6 +199,8 @@ class ProtectedQuerySummary {
   Aws::Vector<ReceiverConfiguration> m_receiverConfigurations;
 
   Aws::String m_queryComputePayerAccountId;
+
+  IntermediateTableOutputConfiguration m_intermediateTableConfiguration;
   bool m_idHasBeenSet = false;
   bool m_membershipIdHasBeenSet = false;
   bool m_membershipArnHasBeenSet = false;
@@ -186,6 +208,7 @@ class ProtectedQuerySummary {
   bool m_statusHasBeenSet = false;
   bool m_receiverConfigurationsHasBeenSet = false;
   bool m_queryComputePayerAccountIdHasBeenSet = false;
+  bool m_intermediateTableConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

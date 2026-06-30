@@ -48,6 +48,10 @@ Update& Update::operator=(JsonView jsonValue) {
     }
     m_errorsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("cancellation")) {
+    m_cancellation = jsonValue.GetObject("cancellation");
+    m_cancellationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -84,6 +88,10 @@ JsonValue Update::Jsonize() const {
       errorsJsonList[errorsIndex].AsObject(m_errors[errorsIndex].Jsonize());
     }
     payload.WithArray("errors", std::move(errorsJsonList));
+  }
+
+  if (m_cancellationHasBeenSet) {
+    payload.WithObject("cancellation", m_cancellation.Jsonize());
   }
 
   return payload;

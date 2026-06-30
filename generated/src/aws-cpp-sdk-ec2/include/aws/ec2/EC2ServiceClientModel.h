@@ -882,6 +882,7 @@
 #include <aws/ec2/model/ModifyVpcBlockPublicAccessOptionsResponse.h>
 #include <aws/ec2/model/ModifyVpcEncryptionControlResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointConnectionNotificationResponse.h>
+#include <aws/ec2/model/ModifyVpcEndpointPayerResponsibilityResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointServiceConfigurationResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointServicePayerResponsibilityResponse.h>
@@ -1683,6 +1684,7 @@ class ModifyVpcBlockPublicAccessOptionsRequest;
 class ModifyVpcEncryptionControlRequest;
 class ModifyVpcEndpointRequest;
 class ModifyVpcEndpointConnectionNotificationRequest;
+class ModifyVpcEndpointPayerResponsibilityRequest;
 class ModifyVpcEndpointServiceConfigurationRequest;
 class ModifyVpcEndpointServicePayerResponsibilityRequest;
 class ModifyVpcEndpointServicePermissionsRequest;
@@ -2486,6 +2488,7 @@ typedef Aws::Utils::Outcome<ModifyVpcBlockPublicAccessOptionsResponse, EC2Error>
 typedef Aws::Utils::Outcome<ModifyVpcEncryptionControlResponse, EC2Error> ModifyVpcEncryptionControlOutcome;
 typedef Aws::Utils::Outcome<ModifyVpcEndpointResponse, EC2Error> ModifyVpcEndpointOutcome;
 typedef Aws::Utils::Outcome<ModifyVpcEndpointConnectionNotificationResponse, EC2Error> ModifyVpcEndpointConnectionNotificationOutcome;
+typedef Aws::Utils::Outcome<ModifyVpcEndpointPayerResponsibilityResponse, EC2Error> ModifyVpcEndpointPayerResponsibilityOutcome;
 typedef Aws::Utils::Outcome<ModifyVpcEndpointServiceConfigurationResponse, EC2Error> ModifyVpcEndpointServiceConfigurationOutcome;
 typedef Aws::Utils::Outcome<ModifyVpcEndpointServicePayerResponsibilityResponse, EC2Error>
     ModifyVpcEndpointServicePayerResponsibilityOutcome;
@@ -3274,6 +3277,7 @@ typedef std::future<ModifyVpcBlockPublicAccessOptionsOutcome> ModifyVpcBlockPubl
 typedef std::future<ModifyVpcEncryptionControlOutcome> ModifyVpcEncryptionControlOutcomeCallable;
 typedef std::future<ModifyVpcEndpointOutcome> ModifyVpcEndpointOutcomeCallable;
 typedef std::future<ModifyVpcEndpointConnectionNotificationOutcome> ModifyVpcEndpointConnectionNotificationOutcomeCallable;
+typedef std::future<ModifyVpcEndpointPayerResponsibilityOutcome> ModifyVpcEndpointPayerResponsibilityOutcomeCallable;
 typedef std::future<ModifyVpcEndpointServiceConfigurationOutcome> ModifyVpcEndpointServiceConfigurationOutcomeCallable;
 typedef std::future<ModifyVpcEndpointServicePayerResponsibilityOutcome> ModifyVpcEndpointServicePayerResponsibilityOutcomeCallable;
 typedef std::future<ModifyVpcEndpointServicePermissionsOutcome> ModifyVpcEndpointServicePermissionsOutcomeCallable;
@@ -5709,6 +5713,10 @@ typedef std::function<void(const EC2Client*, const Model::ModifyVpcEndpointConne
                            const Model::ModifyVpcEndpointConnectionNotificationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyVpcEndpointConnectionNotificationResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyVpcEndpointPayerResponsibilityRequest&,
+                           const Model::ModifyVpcEndpointPayerResponsibilityOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyVpcEndpointPayerResponsibilityResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyVpcEndpointServiceConfigurationRequest&,
                            const Model::ModifyVpcEndpointServiceConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
