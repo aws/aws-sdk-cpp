@@ -10,7 +10,9 @@ public class CppWriter extends SymbolWriter<CppWriter, CppImportContainer> {
     
     public CppWriter() {
         super(new CppImportContainer());
-        
+        setIndentText("  ");
+        trimTrailingSpaces();
+
         // Add custom formatter for symbols
         putFormatter('T', (arg, indent) -> {
             if (!(arg instanceof software.amazon.smithy.codegen.core.Symbol symbol)) {

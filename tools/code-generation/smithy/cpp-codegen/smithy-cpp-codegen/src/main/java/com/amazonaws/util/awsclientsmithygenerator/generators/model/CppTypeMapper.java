@@ -36,6 +36,10 @@ public final class CppTypeMapper {
      * @return the C++ type name (e.g., {@code "Aws::String"}, {@code "Aws::Vector<int>"})
      */
     public static String getCppType(Shape shape, Model model) {
+        // Check enum BEFORE string — EnumShape extends StringShape in Smithy
+        if (shape.isEnumShape()) {
+            return shape.getId().getName();
+        }
         if (shape.isStringShape()) {
             return "Aws::String";
         }
@@ -58,9 +62,6 @@ public final class CppTypeMapper {
             return "Aws::Utils::DateTime";
         }
         if (shape.isStructureShape() || shape.isUnionShape()) {
-            return shape.getId().getName();
-        }
-        if (shape.isEnumShape()) {
             return shape.getId().getName();
         }
         if (shape.isListShape()) {
@@ -89,6 +90,9 @@ public final class CppTypeMapper {
      * @return the initializer string (e.g., {@code "0"}, {@code "false"}) or null
      */
     public static String getDefaultValue(Shape shape) {
+        if (shape.isEnumShape()) {
+            return shape.getId().getName() + "::NOT_SET";
+        }
         if (shape.isIntegerShape() || shape.isLongShape()) {
             return "0";
         }
@@ -97,6 +101,9 @@ public final class CppTypeMapper {
         }
         if (shape.isDoubleShape() || shape.isFloatShape()) {
             return "0.0";
+        }
+        if (shape.isTimestampShape() || shape.isBlobShape()) {
+            return "";  // produces Type m_field{};  (value-initialization)
         }
         return null;
     }
@@ -128,6 +135,10 @@ public final class CppTypeMapper {
      * @return the include path string (e.g., {@code "<aws/core/utils/memory/stl/AWSString.h>"}) or null
      */
     public static String getIncludeForMemberType(Shape shape, Model model, String projectName) {
+        // Check enum BEFORE string — EnumShape extends StringShape in Smithy
+        if (shape.isEnumShape()) {
+            return "<aws/" + projectName + "/model/" + shape.getId().getName() + ".h>";
+        }
         if (shape.isStringShape()) {
             return "<aws/core/utils/memory/stl/AWSString.h>";
         }
@@ -144,9 +155,6 @@ public final class CppTypeMapper {
             return "<aws/core/utils/memory/stl/AWSMap.h>";
         }
         if (shape.isStructureShape() || shape.isUnionShape()) {
-            return "<aws/" + projectName + "/model/" + shape.getId().getName() + ".h>";
-        }
-        if (shape.isEnumShape()) {
             return "<aws/" + projectName + "/model/" + shape.getId().getName() + ".h>";
         }
         if (shape.isDocumentShape()) {

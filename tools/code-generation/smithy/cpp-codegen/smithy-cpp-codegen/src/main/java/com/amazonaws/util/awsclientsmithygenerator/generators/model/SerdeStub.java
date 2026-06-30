@@ -33,21 +33,21 @@ public final class SerdeStub {
     public static void renderHeaderDeclarations(CppWriter writer, Protocol protocol,
                                                 String exportMacro, String className) {
         if (protocol.isJsonLike()) {
-            writer.write("  $L $L() = default;", exportMacro, className);
-            writer.write("  $L $L(Aws::Utils::Json::JsonView jsonValue);", exportMacro, className);
-            writer.write("  $L $L& operator=(Aws::Utils::Json::JsonView jsonValue);", exportMacro, className);
-            writer.write("  $L Aws::Utils::Json::JsonValue Jsonize() const;", exportMacro);
+            writer.write("$L $L() = default;", exportMacro, className);
+            writer.write("$L $L(Aws::Utils::Json::JsonView jsonValue);", exportMacro, className);
+            writer.write("$L $L& operator=(Aws::Utils::Json::JsonView jsonValue);", exportMacro, className);
+            writer.write("$L Aws::Utils::Json::JsonValue Jsonize() const;", exportMacro);
         } else if (protocol == Protocol.REST_XML) {
-            writer.write("  $L $L() = default;", exportMacro, className);
-            writer.write("  $L $L(const Aws::Utils::Xml::XmlNode& xmlNode);", exportMacro, className);
-            writer.write("  $L $L& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);", exportMacro, className);
-            writer.write("  $L void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;", exportMacro);
+            writer.write("$L $L() = default;", exportMacro, className);
+            writer.write("$L $L(const Aws::Utils::Xml::XmlNode& xmlNode);", exportMacro, className);
+            writer.write("$L $L& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);", exportMacro, className);
+            writer.write("$L void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;", exportMacro);
         } else if (protocol == Protocol.QUERY_XML || protocol == Protocol.EC2) {
-            writer.write("  $L $L() = default;", exportMacro, className);
-            writer.write("  $L $L(const Aws::Utils::Xml::XmlNode& xmlNode);", exportMacro, className);
-            writer.write("  $L $L& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);", exportMacro, className);
-            writer.write("  $L void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;", exportMacro);
-            writer.write("  $L void OutputToStream(Aws::OStream& ostream, const char* location) const;", exportMacro);
+            writer.write("$L $L() = default;", exportMacro, className);
+            writer.write("$L $L(const Aws::Utils::Xml::XmlNode& xmlNode);", exportMacro, className);
+            writer.write("$L $L& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);", exportMacro, className);
+            writer.write("$L void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;", exportMacro);
+            writer.write("$L void OutputToStream(Aws::OStream& ostream, const char* location) const;", exportMacro);
         }
     }
 

@@ -68,9 +68,13 @@ tasks.register("generate-smithy-build") {
                     .withMember("smithy-cpp-codegen-waiters", Node.objectNodeBuilder()
                         .withMember("c2jMap", Node.from(c2jMapStr))
                         .withMember("namespaceMappings", Node.from(namespaceMappings))
+                        .build())
+                    .withMember("smithy-cpp-codegen-models", Node.objectNodeBuilder()
+                        .withMember("c2jMap", Node.from(c2jMapStr))
+                        .withMember("namespaceMappings", Node.from(namespaceMappings))
                         .build()))
                 .build()
-            
+
             projectionsBuilder.withMember("$sdkId.${service.version.lowercase()}", projectionContents)
         }
         
@@ -85,6 +89,10 @@ tasks.register("generate-smithy-build") {
                             .withMember("namespaceMappings", Node.from(namespaceMappings))
                             .build())
                     .withMember("smithy-cpp-codegen-waiters", Node.objectNodeBuilder()
+                        .withMember("c2jMap", Node.from(c2jMapStr))
+                        .withMember("namespaceMappings", Node.from(namespaceMappings))
+                        .build())
+                    .withMember("smithy-cpp-codegen-models", Node.objectNodeBuilder()
                         .withMember("c2jMap", Node.from(c2jMapStr))
                         .withMember("namespaceMappings", Node.from(namespaceMappings))
                         .build()))
@@ -104,6 +112,10 @@ tasks.register("generate-smithy-build") {
                             .withMember("namespaceMappings", Node.from(namespaceMappings))
                             .build())
                         .withMember("smithy-cpp-codegen-waiters", Node.objectNodeBuilder()
+                            .withMember("c2jMap", Node.from(c2jMapStr))
+                            .withMember("namespaceMappings", Node.from(namespaceMappings))
+                            .build())
+                        .withMember("smithy-cpp-codegen-models", Node.objectNodeBuilder()
                             .withMember("c2jMap", Node.from(c2jMapStr))
                             .withMember("namespaceMappings", Node.from(namespaceMappings))
                             .build()))

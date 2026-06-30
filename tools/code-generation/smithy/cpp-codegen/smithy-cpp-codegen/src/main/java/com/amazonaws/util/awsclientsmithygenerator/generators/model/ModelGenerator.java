@@ -13,6 +13,7 @@ import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
+import software.amazon.smithy.model.traits.DocumentationTrait;
 
 import java.util.List;
 import java.util.Set;
@@ -59,22 +60,46 @@ public class ModelGenerator {
         // Generate sub-object headers + sources
         for (Shape shape : classified.subObjects()) {
             if (shape.isStructureShape()) {
-                generateStructureHeader(shape.asStructureShape().get());
-                generateStructureSource(shape.asStructureShape().get());
+                generateStructureHeader(shape.asStructureShape().get(), null);
+                generateStructureSource(shape.asStructureShape().get(), null);
             }
         }
 
-        // Generate request headers + sources
+        // Generate request headers + sources (Input -> Request)
         for (StructureShape request : classified.requests()) {
-            generateStructureHeader(request);
-            generateStructureSource(request);
+            String cppName = mapRequestName(request.getId().getName());
+            generateStructureHeader(request, cppName);
+            generateStructureSource(request, cppName);
         }
 
-        // Generate result headers + sources
+        // Generate result headers + sources (Output -> Result)
         for (StructureShape result : classified.results()) {
-            generateStructureHeader(result);
-            generateStructureSource(result);
+            String cppName = mapResultName(result.getId().getName());
+            generateStructureHeader(result, cppName);
+            generateStructureSource(result, cppName);
         }
+    }
+
+    /**
+     * Maps a Smithy input shape name to the C++ Request class name.
+     * e.g., "AddTagsToStreamInput" -> "AddTagsToStreamRequest"
+     */
+    private String mapRequestName(String smithyName) {
+        if (smithyName.endsWith("Input")) {
+            return smithyName.substring(0, smithyName.length() - "Input".length()) + "Request";
+        }
+        return smithyName;
+    }
+
+    /**
+     * Maps a Smithy output shape name to the C++ Result class name.
+     * e.g., "DescribeLimitsOutput" -> "DescribeLimitsResult"
+     */
+    private String mapResultName(String smithyName) {
+        if (smithyName.endsWith("Output")) {
+            return smithyName.substring(0, smithyName.length() - "Output".length()) + "Result";
+        }
+        return smithyName;
     }
 
     private void generateEnumHeader(Shape enumShape) {
@@ -89,8 +114,8 @@ public class ModelGenerator {
             EnumRenderer.renderSource(writer, enumShape, namespace, exportMacro, smithyServiceName));
     }
 
-    private void generateStructureHeader(StructureShape shape) {
-        String className = shape.getId().getName();
+    private void generateStructureHeader(StructureShape shape, String classNameOverride) {
+        String className = classNameOverride != null ? classNameOverride : shape.getId().getName();
         String fileName = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
             // Copyright + pragma
@@ -103,22 +128,35 @@ public class ModelGenerator {
 
             // Includes
             renderIncludes(writer, shape);
+
+            // Include <utility> unless ALL members are primitives (matches C2J behavior)
+            boolean allPrimitive = shape.getAllMembers().values().stream()
+                .map(m -> model.expectShape(m.getTarget()))
+                .allMatch(ModelGenerator::isPrimitive);
+            if (!allPrimitive) {
+                writer.write("");
+                writer.write("#include <utility>");
+            }
             writer.write("");
-            writer.write("#include <utility>");
-            writer.write("");
+
+            // Open namespace Aws (contains both forward decls and service namespace)
+            writer.write("namespace Aws {");
 
             // Forward declarations for serde types
             renderForwardDeclarations(writer);
 
-            // Namespace open
-            writer.write("namespace Aws {");
+            // Service namespace (still inside namespace Aws)
             writer.write("namespace $L {", namespace);
             writer.write("namespace Model {");
             writer.write("");
 
+            // Class-level documentation comment
+            renderClassDocComment(writer, shape);
+
             // Class declaration
             writer.write("class $L {", className);
             writer.write(" public:");
+            writer.indent();
 
             // Serde declarations
             SerdeStub.renderHeaderDeclarations(writer, protocol, exportMacro, className);
@@ -127,9 +165,12 @@ public class ModelGenerator {
             // Member accessors
             MemberRenderer.renderPublicSection(writer, shape, model, exportMacro, className);
 
+            writer.dedent();
             // Private section
             writer.write(" private:");
+            writer.indent();
             MemberRenderer.renderPrivateSection(writer, shape, model);
+            writer.dedent();
             writer.write("};");
             writer.write("");
 
@@ -140,8 +181,8 @@ public class ModelGenerator {
         });
     }
 
-    private void generateStructureSource(StructureShape shape) {
-        String className = shape.getId().getName();
+    private void generateStructureSource(StructureShape shape, String classNameOverride) {
+        String className = classNameOverride != null ? classNameOverride : shape.getId().getName();
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("/**");
@@ -204,7 +245,6 @@ public class ModelGenerator {
 
     private void renderForwardDeclarations(CppWriter writer) {
         if (protocol.isJsonLike()) {
-            writer.write("namespace Aws {");
             writer.write("namespace Utils {");
             writer.write("namespace Json {");
             writer.write("class JsonValue;");
@@ -212,12 +252,39 @@ public class ModelGenerator {
             writer.write("}  // namespace Json");
             writer.write("}  // namespace Utils");
         } else {
-            writer.write("namespace Aws {");
             writer.write("namespace Utils {");
             writer.write("namespace Xml {");
             writer.write("class XmlNode;");
             writer.write("}  // namespace Xml");
             writer.write("}  // namespace Utils");
         }
+    }
+
+    private static boolean isPrimitive(Shape shape) {
+        return shape.isIntegerShape() || shape.isLongShape()
+            || shape.isBooleanShape() || shape.isDoubleShape()
+            || shape.isFloatShape();
+    }
+
+    private static boolean isPrimitiveOrEnum(Shape shape) {
+        return isPrimitive(shape) || shape.isEnumShape();
+    }
+
+    private void renderClassDocComment(CppWriter writer, StructureShape shape) {
+        shape.getTrait(DocumentationTrait.class).ifPresent(doc -> {
+            String docText = doc.getValue();
+            // Add "See Also" link consistent with C2J output
+            String version = service.getVersion();
+            String seeAlso = String.format(
+                "<p><h3>See Also:</h3>   <a\n" +
+                "href=\"http://docs.aws.amazon.com/goto/WebAPI/%s-%s/%s\">AWS\n" +
+                "API Reference</a></p>",
+                smithyServiceName, version, shape.getId().getName());
+            writer.write("/**");
+            for (String line : (docText + seeAlso).split("\n")) {
+                writer.write(" $L", "* " + line);
+            }
+            writer.write(" */");
+        });
     }
 }

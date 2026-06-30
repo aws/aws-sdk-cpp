@@ -28,7 +28,9 @@ public class CppWriterDelegator {
             try {
                 Path outputPath = fileManifest.getBaseDir().resolve(filename);
                 java.nio.file.Files.createDirectories(outputPath.getParent());
-                java.nio.file.Files.writeString(outputPath, writer.toString());
+                // Add UTF-8 BOM to match C2J-generated file format
+                String content = "﻿" + writer.toString();
+                java.nio.file.Files.writeString(outputPath, content);
             } catch (Exception e) {
                 throw new RuntimeException("Failed to write file: " + filename, e);
             }

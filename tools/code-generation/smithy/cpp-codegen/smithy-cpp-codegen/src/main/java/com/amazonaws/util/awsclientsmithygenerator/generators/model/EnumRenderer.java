@@ -58,8 +58,23 @@ public final class EnumRenderer {
         writer.write("namespace Model {");
 
         // Enum class declaration
-        String valuesStr = String.join(", ", values);
-        writer.write("enum class $1L { NOT_SET, $2L };", enumName, valuesStr);
+        // Use single-line format if it fits within ~140 chars, multi-line otherwise
+        String singleLine = "enum class " + enumName + " { NOT_SET, " +
+            String.join(", ", values) + " };";
+        if (singleLine.length() <= 140) {
+            writer.write("$L", singleLine);
+        } else {
+            writer.write("enum class $L {", enumName);
+            writer.write("  NOT_SET,");
+            for (int i = 0; i < values.size(); i++) {
+                if (i < values.size() - 1) {
+                    writer.write("  $L,", values.get(i));
+                } else {
+                    writer.write("  $L", values.get(i));
+                }
+            }
+            writer.write("};");
+        }
         writer.write("");
 
         // Mapper namespace
@@ -157,15 +172,19 @@ public final class EnumRenderer {
     }
 
     /**
-     * Returns the ordered list of sanitized C++ enum value names for the given shape.
+     * Returns the ordered list of sanitized C++ enum constant names for the given shape.
+     *
+     * <p>Uses the enum wire values (enumValue trait) sanitized for C++ identifiers.
+     * This matches the C2J convention where PascalCase enum values become C++ enum constants.
      *
      * @param enumShape the enum shape (EnumShape or StringShape with @enum trait)
-     * @return ordered list of sanitized enum member names (e.g., "ACTIVE", "IN_PROGRESS")
+     * @return ordered list of sanitized enum constant names (e.g., "IncomingBytes", "ALL")
      */
     public static List<String> getEnumValues(Shape enumShape) {
         if (enumShape.isEnumShape()) {
-            return enumShape.asEnumShape().get().getEnumValues().entrySet().stream()
-                .map(e -> sanitizeEnumValue(e.getKey()))
+            // Use wire values (from enumValue trait) as C++ enum constant names
+            return enumShape.asEnumShape().get().getEnumValues().values().stream()
+                .map(EnumRenderer::sanitizeEnumValue)
                 .collect(Collectors.toList());
         }
         // Legacy @enum trait on StringShape

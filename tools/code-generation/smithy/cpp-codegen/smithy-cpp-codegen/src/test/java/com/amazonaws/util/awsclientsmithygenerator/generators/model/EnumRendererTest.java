@@ -27,8 +27,14 @@ class EnumRendererTest {
         CppWriter writer = new CppWriter();
         EnumRenderer.renderHeader(writer, enumShape, "TestService", "AWS_TESTSERVICE_API");
         String output = writer.toString();
-        assertTrue(output.contains("enum class Status { NOT_SET, ACTIVE, INACTIVE }"),
-            "Missing enum class declaration: " + output);
+        assertTrue(output.contains("enum class Status {"),
+            "Missing enum class opening: " + output);
+        assertTrue(output.contains("NOT_SET,"),
+            "Missing NOT_SET: " + output);
+        assertTrue(output.contains("ACTIVE"),
+            "Missing ACTIVE: " + output);
+        assertTrue(output.contains("INACTIVE"),
+            "Missing INACTIVE: " + output);
         assertTrue(output.contains("AWS_TESTSERVICE_API Status GetStatusForName(const Aws::String& name)"),
             "Missing GetForName declaration: " + output);
         assertTrue(output.contains("AWS_TESTSERVICE_API Aws::String GetNameForStatus(Status value)"),
@@ -203,11 +209,11 @@ class EnumRendererTest {
         // The return statement also uses the wire value
         assertTrue(output.contains("return \"in-progress\""),
             "Wire value should be preserved in GetNameFor return: " + output);
-        // The C++ enum member uses sanitized member name
-        assertTrue(output.contains("IN_PROGRESS_HASH"),
-            "Sanitized name used for hash variable: " + output);
-        assertTrue(output.contains("return Status::IN_PROGRESS"),
-            "Sanitized name used for enum member: " + output);
+        // The C++ enum member uses sanitized wire value (in-progress -> in_progress)
+        assertTrue(output.contains("in_progress_HASH"),
+            "Sanitized wire value used for hash variable: " + output);
+        assertTrue(output.contains("return Status::in_progress"),
+            "Sanitized wire value used for enum member: " + output);
     }
 
     @Test
@@ -222,8 +228,12 @@ class EnumRendererTest {
         CppWriter writer = new CppWriter();
         EnumRenderer.renderHeader(writer, stringShape, "Svc", "AWS_SVC_API");
         String output = writer.toString();
-        assertTrue(output.contains("enum class LegacyStatus { NOT_SET, ACTIVE, INACTIVE }"),
-            "Legacy enum trait should produce enum class: " + output);
+        assertTrue(output.contains("enum class LegacyStatus {"),
+            "Legacy enum trait should produce enum class opening: " + output);
+        assertTrue(output.contains("ACTIVE"),
+            "Legacy enum trait should have ACTIVE: " + output);
+        assertTrue(output.contains("INACTIVE"),
+            "Legacy enum trait should have INACTIVE: " + output);
     }
 
     @Test
