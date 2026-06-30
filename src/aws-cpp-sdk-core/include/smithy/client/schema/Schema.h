@@ -48,6 +48,22 @@ class Schema {
 
   uint16_t GetMemberCount() const { return m_memberCount; }
 
+  // XML trait accessors
+  Aws::String GetXmlName() const { return m_xmlName.empty() ? m_memberName : m_xmlName; }
+  bool IsFlattened() const { return m_flattened; }
+  Aws::String GetListItemName() const { return m_listItemName.empty() ? "member" : m_listItemName; }
+  Aws::String GetMapEntryName() const { return m_mapEntryName.empty() ? "entry" : m_mapEntryName; }
+  Aws::String GetMapKeyName() const { return m_mapKeyName.empty() ? "key" : m_mapKeyName; }
+  Aws::String GetMapValueName() const { return m_mapValueName.empty() ? "value" : m_mapValueName; }
+
+  // Builder-style setters for XML traits (used by codegen)
+  Schema& WithXmlName(const Aws::String& xmlName) { m_xmlName = xmlName; return *this; }
+  Schema& WithFlattened(bool flattened) { m_flattened = flattened; return *this; }
+  Schema& WithListItemName(const Aws::String& name) { m_listItemName = name; return *this; }
+  Schema& WithMapEntryName(const Aws::String& name) { m_mapEntryName = name; return *this; }
+  Schema& WithMapKeyName(const Aws::String& name) { m_mapKeyName = name; return *this; }
+  Schema& WithMapValueName(const Aws::String& name) { m_mapValueName = name; return *this; }
+
  private:
   const char* m_id = nullptr;
   ShapeType m_type = ShapeType::Structure;
@@ -55,6 +71,14 @@ class Schema {
   int m_memberIndex = 0;
   const Schema* m_members = nullptr;
   uint16_t m_memberCount = 0;
+
+  // XML traits
+  Aws::String m_xmlName;
+  bool m_flattened = false;
+  Aws::String m_listItemName;
+  Aws::String m_mapEntryName;
+  Aws::String m_mapKeyName;
+  Aws::String m_mapValueName;
 };
 
 }  // namespace schema
