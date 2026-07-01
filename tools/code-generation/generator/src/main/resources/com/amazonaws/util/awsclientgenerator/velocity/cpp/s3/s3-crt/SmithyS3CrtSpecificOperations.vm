@@ -523,6 +523,8 @@ static void ${operation.name}RequestShutdownCallback(void *user_data)
   userData->getResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.request.shape.name}*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 #elseif($operation.name == "CopyObject")
   userData->copyResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.request.shape.name}*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
+#elseif($operation.name == "HeadObject")
+  userData->headObjectResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.request.shape.name}*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 #end
 #else
   (*handler)(userData->s3CrtClient, outcome, userData->userCallbackContext);
@@ -612,6 +614,8 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
   userData->getResponseHandler = handler;
 #elseif($operation.name == "CopyObject")
   userData->copyResponseHandler = handler;
+#elseif($operation.name == "HeadObject")
+  userData->headObjectResponseHandler = handler;
 #end
   if(handlerContext)
   {
@@ -702,6 +706,7 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
   options.type = AWS_S3_META_REQUEST_TYPE_COPY_OBJECT;
 #else
   options.type = AWS_S3_META_REQUEST_TYPE_DEFAULT;
+  options.operation_name = Aws::Crt::ByteCursorFromCString("${operation.name}");
 #end
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
 #if($serviceModel.endpointRules)
@@ -845,6 +850,7 @@ void ${className}::${operation.name}Async(${constText}${operation.name}ResponseR
   options.type = AWS_S3_META_REQUEST_TYPE_COPY_OBJECT;
 #else
   options.type = AWS_S3_META_REQUEST_TYPE_DEFAULT;
+  options.operation_name = Aws::Crt::ByteCursorFromCString("${operation.name}");
 #end
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
   signing_config_override.region = Aws::Crt::ByteCursorFromCString(computeEndpointOutcome.GetResult().signerRegion.c_str());

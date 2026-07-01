@@ -229,6 +229,7 @@ namespace ${rootNamespace}
           GetObjectResponseReceivedHandler getResponseHandler;
           PutObjectResponseReceivedHandler putResponseHandler;
           CopyObjectResponseReceivedHandler copyResponseHandler;
+          HeadObjectResponseReceivedHandler headObjectResponseHandler;
           std::shared_ptr<const Aws::Client::AsyncCallerContext> asyncCallerContext;
           const Aws::AmazonWebServiceRequest *originalRequest;
           std::shared_ptr<Aws::Http::HttpRequest> request;
