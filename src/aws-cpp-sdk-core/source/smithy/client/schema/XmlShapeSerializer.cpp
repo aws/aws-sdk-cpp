@@ -49,6 +49,53 @@ void WriteXmlEscaped(Aws::String& buf, const Aws::String& value) {
   }
 }
 
+// Get the effective XML element name for a schema.
+// If XmlTraits is present and has an xmlName, use it; otherwise fall back to memberName.
+Aws::String GetXmlName(const Schema& schema) {
+  const auto* traits = schema.GetXmlTraits();
+  if (traits && !traits->xmlName.empty()) {
+    return traits->xmlName;
+  }
+  return schema.GetMemberName();
+}
+
+bool IsFlattened(const Schema& schema) {
+  const auto* traits = schema.GetXmlTraits();
+  return traits && traits->flattened;
+}
+
+Aws::String GetListItemName(const Schema& schema) {
+  const auto* traits = schema.GetXmlTraits();
+  if (traits && !traits->listItemName.empty()) {
+    return traits->listItemName;
+  }
+  return "member";
+}
+
+Aws::String GetMapEntryName(const Schema& schema) {
+  const auto* traits = schema.GetXmlTraits();
+  if (traits && !traits->mapEntryName.empty()) {
+    return traits->mapEntryName;
+  }
+  return "entry";
+}
+
+Aws::String GetMapKeyName(const Schema& schema) {
+  const auto* traits = schema.GetXmlTraits();
+  if (traits && !traits->mapKeyName.empty()) {
+    return traits->mapKeyName;
+  }
+  return "key";
+}
+
+Aws::String GetMapValueName(const Schema& schema) {
+  const auto* traits = schema.GetXmlTraits();
+  if (traits && !traits->mapValueName.empty()) {
+    return traits->mapValueName;
+  }
+  return "value";
+}
+
 }  // anonymous namespace
 
 class XmlShapeSerializer::Impl {
@@ -56,10 +103,28 @@ class XmlShapeSerializer::Impl {
   Impl() { m_buf.reserve(8192); }
 
   bool BeginStructure(const Schema& schema) {
-    if (m_depth + 1 >= MAX_DEPTH) return false;
-    const auto name = schema.GetXmlName();
+    if (m_depth + 1 >= MAX_DEPTH) {
+      m_errorMessage = "Maximum serialization depth exceeded";
+      return false;
+    }
+    FlushOpenTag();
+    const auto name = GetXmlName(schema);
     if (!name.empty()) {
-      OpenTag(name);
+      m_buf += '<';
+      m_buf += name;
+      const auto* traits = schema.GetXmlTraits();
+      if (traits && !traits->namespaceUri.empty()) {
+        if (traits->namespacePrefix.empty()) {
+          m_buf += " xmlns=\"";
+        } else {
+          m_buf += " xmlns:";
+          m_buf += traits->namespacePrefix;
+          m_buf += "=\"";
+        }
+        m_buf += traits->namespaceUri;
+        m_buf += '"';
+      }
+      m_hasOpenTag = true;
     }
     m_depth++;
     m_tagStack[m_depth] = name;
@@ -67,6 +132,7 @@ class XmlShapeSerializer::Impl {
   }
 
   void EndStructure() {
+    FlushOpenTag();
     const auto& name = m_tagStack[m_depth];
     m_depth--;
     if (!name.empty()) {
@@ -74,21 +140,31 @@ class XmlShapeSerializer::Impl {
     }
   }
 
-  void WriteBoolean(const Schema& schema, bool value) { WrapValue(schema.GetXmlName(), value ? "true" : "false"); }
-
-  void WriteInteger(const Schema& schema, int value) { WrapValue(schema.GetXmlName(), StringUtils::to_string(value)); }
-
-  void WriteLong(const Schema& schema, int64_t value) { WrapValue(schema.GetXmlName(), StringUtils::to_string(value)); }
-
-  void WriteDouble(const Schema& schema, double value) { WrapValue(schema.GetXmlName(), StringUtils::to_string(value)); }
-
-  void WriteString(const Schema& schema, const Aws::String& value) { WrapEscapedValue(schema.GetXmlName(), value); }
-
-  void WriteTimestamp(const Schema& schema, const DateTime& value) {
-    WrapValue(schema.GetXmlName(), value.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  void WriteAttribute(const Schema& schema, const Aws::String& value) {
+    if (!m_hasOpenTag) return;
+    const auto name = GetXmlName(schema);
+    m_buf += ' ';
+    m_buf += name;
+    m_buf += "=\"";
+    WriteXmlEscaped(m_buf, value);
+    m_buf += '"';
   }
 
-  void WriteBlob(const Schema& schema, const ByteBuffer& value) { WrapValue(schema.GetXmlName(), HashingUtils::Base64Encode(value)); }
+  void WriteBoolean(const Schema& schema, bool value) { WrapValue(GetXmlName(schema), value ? "true" : "false"); }
+
+  void WriteInteger(const Schema& schema, int value) { WrapValue(GetXmlName(schema), StringUtils::to_string(value)); }
+
+  void WriteLong(const Schema& schema, int64_t value) { WrapValue(GetXmlName(schema), StringUtils::to_string(value)); }
+
+  void WriteDouble(const Schema& schema, double value) { WrapValue(GetXmlName(schema), StringUtils::to_string(value)); }
+
+  void WriteString(const Schema& schema, const Aws::String& value) { WrapEscapedValue(GetXmlName(schema), value); }
+
+  void WriteTimestamp(const Schema& schema, const DateTime& value) {
+    WrapValue(GetXmlName(schema), value.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  void WriteBlob(const Schema& schema, const ByteBuffer& value) { WrapValue(GetXmlName(schema), HashingUtils::Base64Encode(value)); }
 
   void WriteEnum(const Schema& schema, int value) { WriteInteger(schema, value); }
 
@@ -97,9 +173,13 @@ class XmlShapeSerializer::Impl {
   }
 
   bool BeginList(const Schema& schema, size_t) {
-    if (m_depth + 1 >= MAX_DEPTH) return false;
-    const auto name = schema.GetXmlName();
-    if (schema.IsFlattened()) {
+    if (m_depth + 1 >= MAX_DEPTH) {
+      m_errorMessage = "Maximum serialization depth exceeded";
+      return false;
+    }
+    FlushOpenTag();
+    const auto name = GetXmlName(schema);
+    if (IsFlattened(schema)) {
       // Flattened: no wrapper element, items repeat with the list's xmlName
       m_depth++;
       m_tagStack[m_depth] = name;
@@ -114,7 +194,7 @@ class XmlShapeSerializer::Impl {
       }
       m_depth++;
       m_tagStack[m_depth] = name;
-      m_listItemName[m_depth] = schema.GetListItemName();
+      m_listItemName[m_depth] = GetListItemName(schema);
       m_isList[m_depth] = true;
       m_isFlattened[m_depth] = false;
       m_isMap[m_depth] = false;
@@ -133,25 +213,29 @@ class XmlShapeSerializer::Impl {
   }
 
   bool BeginMap(const Schema& schema, size_t) {
-    if (m_depth + 1 >= MAX_DEPTH) return false;
-    const auto name = schema.GetXmlName();
-    if (!schema.IsFlattened() && !name.empty()) {
+    if (m_depth + 1 >= MAX_DEPTH) {
+      m_errorMessage = "Maximum serialization depth exceeded";
+      return false;
+    }
+    FlushOpenTag();
+    const auto name = GetXmlName(schema);
+    bool flattened = IsFlattened(schema);
+    if (!flattened && !name.empty()) {
       OpenTag(name);
     }
     m_depth++;
     m_tagStack[m_depth] = name;
     m_isMap[m_depth] = true;
     m_isList[m_depth] = false;
-    m_isFlattened[m_depth] = schema.IsFlattened();
+    m_isFlattened[m_depth] = flattened;
     m_mapInEntry[m_depth] = false;
-    m_mapEntryName[m_depth] = schema.IsFlattened() ? name : schema.GetMapEntryName();
-    m_mapKeyName[m_depth] = schema.GetMapKeyName();
-    m_mapValueName[m_depth] = schema.GetMapValueName();
+    m_mapEntryName[m_depth] = flattened ? name : GetMapEntryName(schema);
+    m_mapKeyName[m_depth] = GetMapKeyName(schema);
+    m_mapValueName[m_depth] = GetMapValueName(schema);
     return true;
   }
 
   void WriteMapKey(const Aws::String& key) {
-    // Write <entry><key>k</key> (with configurable element names)
     OpenTag(m_mapEntryName[m_depth]);
     OpenTag(m_mapKeyName[m_depth]);
     WriteXmlEscaped(m_buf, key);
@@ -170,9 +254,13 @@ class XmlShapeSerializer::Impl {
   }
 
   bool BeginNestedStructure(const Schema& schema) {
-    if (m_depth + 1 >= MAX_DEPTH) return false;
+    if (m_depth + 1 >= MAX_DEPTH) {
+      m_errorMessage = "Maximum serialization depth exceeded";
+      return false;
+    }
+    FlushOpenTag();
     if (m_depth > 0 && m_isMap[m_depth] && m_mapInEntry[m_depth]) {
-      // Inside a map entry: open <value> as the struct wrapper (no extra tag)
+      // Inside a map entry: open <value> as the struct wrapper
       OpenTag(m_mapValueName[m_depth]);
       m_mapInEntry[m_depth] = false;
       m_depth++;
@@ -204,17 +292,29 @@ class XmlShapeSerializer::Impl {
       CloseTag(name);
     }
     if (closeMapEntry) {
-      // Close </value></entry> using the parent map's configurable names
       CloseTag(m_mapValueName[m_depth]);
       CloseTag(m_mapEntryName[m_depth]);
     }
   }
 
-  Aws::String GetPayload() const { return m_buf; }
+  using SerializerOutcome = XmlShapeSerializer::SerializerOutcome;
+
+  SerializerOutcome GetPayload() {
+    if (m_finalized || !m_errorMessage.empty()) {
+      return Aws::Client::AWSError<Aws::Client::CoreErrors>(
+          Aws::Client::CoreErrors::INTERNAL_FAILURE, "SerializationException",
+          !m_errorMessage.empty() ? m_errorMessage : "Serializer has already been finalized", false);
+    }
+    m_finalized = true;
+    return std::move(m_buf);
+  }
 
  private:
   Aws::String m_buf;
   int m_depth = 0;
+  bool m_finalized = false;
+  bool m_hasOpenTag = false;
+  Aws::String m_errorMessage;
   Aws::Array<Aws::String, MAX_DEPTH> m_tagStack{};
   Aws::Array<Aws::String, MAX_DEPTH> m_listItemName{};
   Aws::Array<bool, MAX_DEPTH> m_isList{};
@@ -226,7 +326,15 @@ class XmlShapeSerializer::Impl {
   Aws::Array<Aws::String, MAX_DEPTH> m_mapKeyName{};
   Aws::Array<Aws::String, MAX_DEPTH> m_mapValueName{};
 
+  void FlushOpenTag() {
+    if (m_hasOpenTag) {
+      m_buf += '>';
+      m_hasOpenTag = false;
+    }
+  }
+
   void OpenTag(const Aws::String& name) {
+    FlushOpenTag();
     m_buf += '<';
     m_buf += name;
     m_buf += '>';
@@ -240,7 +348,6 @@ class XmlShapeSerializer::Impl {
 
   void WrapValue(const Aws::String& tag, const Aws::String& value) {
     if (m_depth > 0 && m_isMap[m_depth] && m_mapInEntry[m_depth]) {
-      // Inside a map entry: wrap value in <value>...</value></entry>
       OpenTag(m_mapValueName[m_depth]);
       m_buf += value;
       CloseTag(m_mapValueName[m_depth]);
@@ -281,7 +388,7 @@ class XmlShapeSerializer::Impl {
     if (m_depth > 0 && m_isList[m_depth]) {
       return m_listItemName[m_depth];
     }
-    return schema.GetXmlName();
+    return GetXmlName(schema);
   }
 };
 
@@ -306,4 +413,5 @@ void XmlShapeSerializer::WriteMapKey(const Aws::String& key) { m_impl->WriteMapK
 void XmlShapeSerializer::EndMap() { m_impl->EndMap(); }
 bool XmlShapeSerializer::BeginNestedStructure(const Schema& schema) { return m_impl->BeginNestedStructure(schema); }
 void XmlShapeSerializer::EndNestedStructure() { m_impl->EndNestedStructure(); }
-Aws::String XmlShapeSerializer::GetPayload() const { return m_impl->GetPayload(); }
+XmlShapeSerializer::SerializerOutcome XmlShapeSerializer::GetPayload() { return m_impl->GetPayload(); }
+void XmlShapeSerializer::WriteAttribute(const Schema& schema, const Aws::String& value) { m_impl->WriteAttribute(schema, value); }

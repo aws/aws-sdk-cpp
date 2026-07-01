@@ -1,5 +1,6 @@
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/ShapeSerializer.h>
@@ -9,6 +10,7 @@ namespace schema {
 
 class SMITHY_API XmlShapeSerializer final : public ShapeSerializer {
  public:
+  using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
   XmlShapeSerializer();
   ~XmlShapeSerializer();
 
@@ -25,6 +27,8 @@ class SMITHY_API XmlShapeSerializer final : public ShapeSerializer {
   void WriteEnum(const Schema& schema, int value) override;
   void WriteNull(const Schema& schema) override;
 
+  void WriteAttribute(const Schema& schema, const Aws::String& value);
+
   bool BeginList(const Schema& schema, size_t count) override;
   void EndList() override;
 
@@ -35,7 +39,7 @@ class SMITHY_API XmlShapeSerializer final : public ShapeSerializer {
   bool BeginNestedStructure(const Schema& schema) override;
   void EndNestedStructure() override;
 
-  Aws::String GetPayload() const;
+  SerializerOutcome GetPayload();
 
  private:
   class Impl;
