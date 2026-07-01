@@ -159,7 +159,7 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client
    * request is for only one product. If you want to meter usage for multiple
    * products, you must make multiple <code>BatchMeterUsage</code> calls.</p>
    * <p>Usage records should be submitted in quick succession following a recorded
-   * event. Usage records aren't accepted 6 hours or more after an event.</p> <p>
+   * event. Usage records aren't accepted 24 hours or more after an event.</p> <p>
    * <code>BatchMeterUsage</code> can process up to 25 <code>UsageRecords</code> at a
    * time, and each request must be less than 1 MB in size. Optionally, you can have
    * multiple usage allocations for usage data that's split into buckets according to

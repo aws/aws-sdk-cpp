@@ -8807,6 +8807,40 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Sends an outbound web notification to a customer's web browser for outbound
+   * campaigns. For more information about outbound campaigns, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html">Set
+   * up Connect Customer outbound campaigns</a>.</p>  <p>Only the Connect
+   * Customer outbound campaigns service principal is allowed to assume a role in
+   * your account and call this API.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendOutboundWebNotification">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendOutboundWebNotificationOutcome SendOutboundWebNotification(
+      const Model::SendOutboundWebNotificationRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendOutboundWebNotification that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename SendOutboundWebNotificationRequestT = Model::SendOutboundWebNotificationRequest>
+  Model::SendOutboundWebNotificationOutcomeCallable SendOutboundWebNotificationCallable(
+      const SendOutboundWebNotificationRequestT& request) const {
+    return SubmitCallable(&ConnectClient::SendOutboundWebNotification, request);
+  }
+
+  /**
+   * An Async wrapper for SendOutboundWebNotification that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SendOutboundWebNotificationRequestT = Model::SendOutboundWebNotificationRequest>
+  void SendOutboundWebNotificationAsync(const SendOutboundWebNotificationRequestT& request,
+                                        const SendOutboundWebNotificationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::SendOutboundWebNotification, request, handler, context);
+  }
+
+  /**
    * <p>Provides a pre-signed Amazon S3 URL in response for uploading your
    * content.</p>  <p>You may only use this API to upload attachments to
    * an <a

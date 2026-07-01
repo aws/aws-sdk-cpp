@@ -19,6 +19,7 @@
 #include <aws/opensearch/model/DomainEndpointOptionsStatus.h>
 #include <aws/opensearch/model/EBSOptionsStatus.h>
 #include <aws/opensearch/model/EncryptionAtRestOptionsStatus.h>
+#include <aws/opensearch/model/EngineModeStatus.h>
 #include <aws/opensearch/model/IPAddressTypeStatus.h>
 #include <aws/opensearch/model/IdentityCenterOptionsStatus.h>
 #include <aws/opensearch/model/LogPublishingOptionsStatus.h>
@@ -27,6 +28,7 @@
 #include <aws/opensearch/model/OffPeakWindowOptionsStatus.h>
 #include <aws/opensearch/model/SnapshotOptionsStatus.h>
 #include <aws/opensearch/model/SoftwareUpdateOptionsStatus.h>
+#include <aws/opensearch/model/UseCaseStatus.h>
 #include <aws/opensearch/model/VPCDerivedInfoStatus.h>
 #include <aws/opensearch/model/VersionStatus.h>
 
@@ -487,6 +489,42 @@ class DomainConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The use case configured for the domain.</p>
+   */
+  inline const UseCaseStatus& GetUseCase() const { return m_useCase; }
+  inline bool UseCaseHasBeenSet() const { return m_useCaseHasBeenSet; }
+  template <typename UseCaseT = UseCaseStatus>
+  void SetUseCase(UseCaseT&& value) {
+    m_useCaseHasBeenSet = true;
+    m_useCase = std::forward<UseCaseT>(value);
+  }
+  template <typename UseCaseT = UseCaseStatus>
+  DomainConfig& WithUseCase(UseCaseT&& value) {
+    SetUseCase(std::forward<UseCaseT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The engine mode configured for the domain.</p>
+   */
+  inline const EngineModeStatus& GetEngineMode() const { return m_engineMode; }
+  inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
+  template <typename EngineModeT = EngineModeStatus>
+  void SetEngineMode(EngineModeT&& value) {
+    m_engineModeHasBeenSet = true;
+    m_engineMode = std::forward<EngineModeT>(value);
+  }
+  template <typename EngineModeT = EngineModeStatus>
+  DomainConfig& WithEngineMode(EngineModeT&& value) {
+    SetEngineMode(std::forward<EngineModeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   VersionStatus m_engineVersion;
 
@@ -533,6 +571,10 @@ class DomainConfig {
   DeploymentStrategyOptionsStatus m_deploymentStrategyOptions;
 
   AutomatedSnapshotPauseOptionsStatus m_automatedSnapshotPauseOptions;
+
+  UseCaseStatus m_useCase;
+
+  EngineModeStatus m_engineMode;
   bool m_engineVersionHasBeenSet = false;
   bool m_clusterConfigHasBeenSet = false;
   bool m_eBSOptionsHasBeenSet = false;
@@ -556,6 +598,8 @@ class DomainConfig {
   bool m_aIMLOptionsHasBeenSet = false;
   bool m_deploymentStrategyOptionsHasBeenSet = false;
   bool m_automatedSnapshotPauseOptionsHasBeenSet = false;
+  bool m_useCaseHasBeenSet = false;
+  bool m_engineModeHasBeenSet = false;
 };
 
 }  // namespace Model

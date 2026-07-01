@@ -24,6 +24,7 @@
 #include <aws/gameliftstreams/model/AssociateApplicationsRequest.h>
 #include <aws/gameliftstreams/model/CreateApplicationRequest.h>
 #include <aws/gameliftstreams/model/CreateStreamGroupRequest.h>
+#include <aws/gameliftstreams/model/CreateStreamSessionAdminShellRequest.h>
 #include <aws/gameliftstreams/model/CreateStreamSessionConnectionRequest.h>
 #include <aws/gameliftstreams/model/DeleteApplicationRequest.h>
 #include <aws/gameliftstreams/model/DeleteStreamGroupRequest.h>
@@ -260,6 +261,33 @@ CreateStreamGroupOutcome GameLiftStreamsClient::CreateStreamGroup(const CreateSt
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateStreamGroupOutcome(result.GetResultWithOwnership())
                             : CreateStreamGroupOutcome(std::move(result.GetError()));
+}
+
+CreateStreamSessionAdminShellOutcome GameLiftStreamsClient::CreateStreamSessionAdminShell(
+    const CreateStreamSessionAdminShellRequest& request) const {
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateStreamSessionAdminShell", "Required field: Identifier, is not set");
+    return CreateStreamSessionAdminShellOutcome(Aws::Client::AWSError<GameLiftStreamsErrors>(
+        GameLiftStreamsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  if (!request.StreamSessionIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateStreamSessionAdminShell", "Required field: StreamSessionIdentifier, is not set");
+    return CreateStreamSessionAdminShellOutcome(Aws::Client::AWSError<GameLiftStreamsErrors>(
+        GameLiftStreamsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StreamSessionIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/streamgroups/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/streamsessions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStreamSessionIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/access");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStreamSessionAdminShellOutcome(result.GetResultWithOwnership())
+                            : CreateStreamSessionAdminShellOutcome(std::move(result.GetError()));
 }
 
 CreateStreamSessionConnectionOutcome GameLiftStreamsClient::CreateStreamSessionConnection(

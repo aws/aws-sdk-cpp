@@ -187,6 +187,7 @@
 #include <aws/opensearch/model/DomainProcessingStatusType.h>
 #include <aws/opensearch/model/DomainState.h>
 #include <aws/opensearch/model/DomainStatus.h>
+#include <aws/opensearch/model/DomainUseCase.h>
 #include <aws/opensearch/model/DryRunMode.h>
 #include <aws/opensearch/model/DryRunProgressStatus.h>
 #include <aws/opensearch/model/DryRunResults.h>
@@ -195,6 +196,8 @@
 #include <aws/opensearch/model/EBSOptionsStatus.h>
 #include <aws/opensearch/model/EncryptionAtRestOptions.h>
 #include <aws/opensearch/model/EncryptionAtRestOptionsStatus.h>
+#include <aws/opensearch/model/EngineMode.h>
+#include <aws/opensearch/model/EngineModeStatus.h>
 #include <aws/opensearch/model/EngineType.h>
 #include <aws/opensearch/model/EnvironmentInfo.h>
 #include <aws/opensearch/model/ErrorDetails.h>
@@ -238,9 +241,15 @@
 #include <aws/opensearch/model/Insight.h>
 #include <aws/opensearch/model/InsightEntity.h>
 #include <aws/opensearch/model/InsightEntityType.h>
+#include <aws/opensearch/model/InsightFeedbackEntity.h>
+#include <aws/opensearch/model/InsightFeedbackEntityType.h>
+#include <aws/opensearch/model/InsightFeedbackRequest.h>
+#include <aws/opensearch/model/InsightFeedbackResult.h>
+#include <aws/opensearch/model/InsightFeedbackThumbs.h>
 #include <aws/opensearch/model/InsightField.h>
 #include <aws/opensearch/model/InsightFieldType.h>
 #include <aws/opensearch/model/InsightPriorityLevel.h>
+#include <aws/opensearch/model/InsightResponseStatus.h>
 #include <aws/opensearch/model/InsightSortOrder.h>
 #include <aws/opensearch/model/InsightStatus.h>
 #include <aws/opensearch/model/InsightTimeRange.h>
@@ -406,6 +415,7 @@
 #include <aws/opensearch/model/UpgradeStatus.h>
 #include <aws/opensearch/model/UpgradeStep.h>
 #include <aws/opensearch/model/UpgradeStepItem.h>
+#include <aws/opensearch/model/UseCaseStatus.h>
 #include <aws/opensearch/model/VPCDerivedInfo.h>
 #include <aws/opensearch/model/VPCDerivedInfoStatus.h>
 #include <aws/opensearch/model/VPCOptions.h>

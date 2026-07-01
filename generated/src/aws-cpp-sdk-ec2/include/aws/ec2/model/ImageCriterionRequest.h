@@ -109,7 +109,7 @@ class ImageCriterionRequest {
   ///@{
   /**
    * <p>The names of allowed images. Names can include wildcards (<code>?</code> and
-   * <code>*</code>).</p> <p>Length: 1–128 characters. With <code>?</code>, the
+   * <code>*</code>).</p> <p>Length: 1��128 characters. With <code>?</code>, the
    * minimum is 3 characters.</p> <p>Valid characters:</p> <ul> <li> <p>Letters:
    * <code>A–Z, a–z</code> </p> </li> <li> <p>Numbers: <code>0–9</code> </p> </li>
    * <li> <p>Special characters: <code>( ) [ ] . / - ' @ _ * ?</code> </p> </li> <li>

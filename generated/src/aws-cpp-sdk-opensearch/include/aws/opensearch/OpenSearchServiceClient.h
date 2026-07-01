@@ -1746,6 +1746,33 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Submits feedback for an existing insight in an Amazon OpenSearch Service
+   * domain. Allows users to provide a thumbs up or thumbs down rating and optional
+   * text feedback for a specific insight.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/InsightFeedback">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::InsightFeedbackOutcome InsightFeedback(const Model::InsightFeedbackRequest& request) const;
+
+  /**
+   * A Callable wrapper for InsightFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename InsightFeedbackRequestT = Model::InsightFeedbackRequest>
+  Model::InsightFeedbackOutcomeCallable InsightFeedbackCallable(const InsightFeedbackRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::InsightFeedback, request);
+  }
+
+  /**
+   * An Async wrapper for InsightFeedback that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename InsightFeedbackRequestT = Model::InsightFeedbackRequest>
+  void InsightFeedbackAsync(const InsightFeedbackRequestT& request, const InsightFeedbackResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::InsightFeedback, request, handler, context);
+  }
+
+  /**
    * <p>Lists all OpenSearch applications under your account.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListApplications">AWS

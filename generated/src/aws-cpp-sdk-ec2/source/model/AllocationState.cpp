@@ -21,6 +21,7 @@ static const int permanent_failure_HASH = HashingUtils::HashString("permanent-fa
 static const int released_HASH = HashingUtils::HashString("released");
 static const int released_permanent_failure_HASH = HashingUtils::HashString("released-permanent-failure");
 static const int pending_HASH = HashingUtils::HashString("pending");
+static const int configuring_HASH = HashingUtils::HashString("configuring");
 
 AllocationState GetAllocationStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ AllocationState GetAllocationStateForName(const Aws::String& name) {
     return AllocationState::released_permanent_failure;
   } else if (hashCode == pending_HASH) {
     return AllocationState::pending;
+  } else if (hashCode == configuring_HASH) {
+    return AllocationState::configuring;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForAllocationState(AllocationState enumValue) {
       return "released-permanent-failure";
     case AllocationState::pending:
       return "pending";
+    case AllocationState::configuring:
+      return "configuring";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

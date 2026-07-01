@@ -77,6 +77,7 @@
 #include <aws/opensearch/model/GetPackageVersionHistoryRequest.h>
 #include <aws/opensearch/model/GetUpgradeHistoryRequest.h>
 #include <aws/opensearch/model/GetUpgradeStatusRequest.h>
+#include <aws/opensearch/model/InsightFeedbackRequest.h>
 #include <aws/opensearch/model/ListApplicationsRequest.h>
 #include <aws/opensearch/model/ListDataSourceAttachmentsRequest.h>
 #include <aws/opensearch/model/ListDataSourcesRequest.h>
@@ -1237,6 +1238,17 @@ GetUpgradeStatusOutcome OpenSearchServiceClient::GetUpgradeStatus(const GetUpgra
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetUpgradeStatusOutcome(result.GetResultWithOwnership())
                             : GetUpgradeStatusOutcome(std::move(result.GetError()));
+}
+
+InsightFeedbackOutcome OpenSearchServiceClient::InsightFeedback(const InsightFeedbackRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/insight-feedback");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InsightFeedbackOutcome(result.GetResultWithOwnership())
+                            : InsightFeedbackOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome OpenSearchServiceClient::ListApplications(const ListApplicationsRequest& request) const {

@@ -8,6 +8,7 @@
 #include <aws/mediaconvert/model/ColorCorrector.h>
 #include <aws/mediaconvert/model/Deinterlacer.h>
 #include <aws/mediaconvert/model/DolbyVision.h>
+#include <aws/mediaconvert/model/DurationControl.h>
 #include <aws/mediaconvert/model/Hdr10Plus.h>
 #include <aws/mediaconvert/model/ImageInserter.h>
 #include <aws/mediaconvert/model/NoiseReducer.h>
@@ -94,6 +95,27 @@ class VideoPreprocessor {
   template <typename DolbyVisionT = DolbyVision>
   VideoPreprocessor& WithDolbyVision(DolbyVisionT&& value) {
     SetDolbyVision(std::forward<DolbyVisionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Enable integer-second duration normalization. When enabled, the output duration
+   * is adjusted to land on an exact integer-second boundary. The adjustment method
+   * (trim, compress, or pad) is chosen automatically based on how far the input
+   * duration is from the nearest integer second.
+   */
+  inline const DurationControl& GetDurationControl() const { return m_durationControl; }
+  inline bool DurationControlHasBeenSet() const { return m_durationControlHasBeenSet; }
+  template <typename DurationControlT = DurationControl>
+  void SetDurationControl(DurationControlT&& value) {
+    m_durationControlHasBeenSet = true;
+    m_durationControl = std::forward<DurationControlT>(value);
+  }
+  template <typename DurationControlT = DurationControl>
+  VideoPreprocessor& WithDurationControl(DurationControlT&& value) {
+    SetDurationControl(std::forward<DurationControlT>(value));
     return *this;
   }
   ///@}
@@ -202,6 +224,8 @@ class VideoPreprocessor {
 
   DolbyVision m_dolbyVision;
 
+  DurationControl m_durationControl;
+
   Hdr10Plus m_hdr10Plus;
 
   ImageInserter m_imageInserter;
@@ -214,6 +238,7 @@ class VideoPreprocessor {
   bool m_colorCorrectorHasBeenSet = false;
   bool m_deinterlacerHasBeenSet = false;
   bool m_dolbyVisionHasBeenSet = false;
+  bool m_durationControlHasBeenSet = false;
   bool m_hdr10PlusHasBeenSet = false;
   bool m_imageInserterHasBeenSet = false;
   bool m_noiseReducerHasBeenSet = false;

@@ -209,6 +209,7 @@
 #include <aws/connect/model/ContactSearchSummaryQueueInfo.h>
 #include <aws/connect/model/ContactSearchSummarySegmentAttributeValue.h>
 #include <aws/connect/model/ContactState.h>
+#include <aws/connect/model/ContentAttributes.h>
 #include <aws/connect/model/ControlPlaneAttributeFilter.h>
 #include <aws/connect/model/ControlPlaneTagFilter.h>
 #include <aws/connect/model/ControlPlaneUserAttributeFilter.h>
@@ -895,6 +896,7 @@
 #include <aws/connect/model/NotificationSearchSummary.h>
 #include <aws/connect/model/NotificationSource.h>
 #include <aws/connect/model/NotificationStatus.h>
+#include <aws/connect/model/NotificationType.h>
 #include <aws/connect/model/NumberComparisonType.h>
 #include <aws/connect/model/NumberCondition.h>
 #include <aws/connect/model/NumberReference.h>
@@ -1016,6 +1018,7 @@
 #include <aws/connect/model/RealTimeContactAnalysisTranscriptItemWithCharacterOffsets.h>
 #include <aws/connect/model/RealTimeContactAnalysisTranscriptItemWithContent.h>
 #include <aws/connect/model/RealtimeContactAnalysisSegment.h>
+#include <aws/connect/model/RecommenderConfig.h>
 #include <aws/connect/model/RecordPrimaryValue.h>
 #include <aws/connect/model/RecordingInfo.h>
 #include <aws/connect/model/RecordingStatus.h>
@@ -1146,6 +1149,8 @@
 #include <aws/connect/model/SendNotificationActionDefinition.h>
 #include <aws/connect/model/SendOutboundEmailRequest.h>
 #include <aws/connect/model/SendOutboundEmailResult.h>
+#include <aws/connect/model/SendOutboundWebNotificationRequest.h>
+#include <aws/connect/model/SendOutboundWebNotificationResult.h>
 #include <aws/connect/model/SentimentConfiguration.h>
 #include <aws/connect/model/ServiceQuotaExceededException.h>
 #include <aws/connect/model/ServiceQuotaExceededExceptionReason.h>
@@ -1407,6 +1412,9 @@
 #include <aws/connect/model/VoiceEnhancementMode.h>
 #include <aws/connect/model/VoiceRecordingConfiguration.h>
 #include <aws/connect/model/VoiceRecordingTrack.h>
+#include <aws/connect/model/WebNotificationContent.h>
+#include <aws/connect/model/WebNotificationSource.h>
+#include <aws/connect/model/WidgetDestination.h>
 #include <aws/connect/model/WisdomInfo.h>
 #include <aws/connect/model/Workspace.h>
 #include <aws/connect/model/WorkspaceAssociationSearchCriteria.h>

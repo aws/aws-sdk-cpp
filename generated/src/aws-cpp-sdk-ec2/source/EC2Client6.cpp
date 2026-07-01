@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/GetVpnTunnelReplacementStatusRequest.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListRequest.h>
 #include <aws/ec2/model/ImportImageRequest.h>
 #include <aws/ec2/model/ImportInstanceRequest.h>
@@ -30,6 +31,7 @@
 #include <aws/ec2/model/ListSnapshotsInRecycleBinRequest.h>
 #include <aws/ec2/model/ListVolumesInRecycleBinRequest.h>
 #include <aws/ec2/model/LockSnapshotRequest.h>
+#include <aws/ec2/model/ModifyAccountVpcEncryptionControlRequest.h>
 #include <aws/ec2/model/ModifyAddressAttributeRequest.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupRequest.h>
 #include <aws/ec2/model/ModifyCapacityReservationFleetRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/ProvisionIpamByoasnRequest.h>
 #include <aws/ec2/model/ProvisionIpamPoolCidrRequest.h>
 #include <aws/ec2/model/ProvisionPublicIpv4PoolCidrRequest.h>
-#include <aws/ec2/model/PurchaseCapacityBlockExtensionRequest.h>
-#include <aws/ec2/model/PurchaseCapacityBlockRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+GetVpnTunnelReplacementStatusOutcome EC2Client::GetVpnTunnelReplacementStatus(const GetVpnTunnelReplacementStatusRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVpnTunnelReplacementStatusOutcome(result.GetResultWithOwnership())
+                            : GetVpnTunnelReplacementStatusOutcome(std::move(result.GetError()));
+}
 
 ImportClientVpnClientCertificateRevocationListOutcome EC2Client::ImportClientVpnClientCertificateRevocationList(
     const ImportClientVpnClientCertificateRevocationListRequest& request) const {
@@ -185,6 +191,13 @@ ListVolumesInRecycleBinOutcome EC2Client::ListVolumesInRecycleBin(const ListVolu
 LockSnapshotOutcome EC2Client::LockSnapshot(const LockSnapshotRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? LockSnapshotOutcome(result.GetResultWithOwnership()) : LockSnapshotOutcome(std::move(result.GetError()));
+}
+
+ModifyAccountVpcEncryptionControlOutcome EC2Client::ModifyAccountVpcEncryptionControl(
+    const ModifyAccountVpcEncryptionControlRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyAccountVpcEncryptionControlOutcome(result.GetResultWithOwnership())
+                            : ModifyAccountVpcEncryptionControlOutcome(std::move(result.GetError()));
 }
 
 ModifyAddressAttributeOutcome EC2Client::ModifyAddressAttribute(const ModifyAddressAttributeRequest& request) const {
@@ -735,17 +748,4 @@ ProvisionPublicIpv4PoolCidrOutcome EC2Client::ProvisionPublicIpv4PoolCidr(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ProvisionPublicIpv4PoolCidrOutcome(result.GetResultWithOwnership())
                             : ProvisionPublicIpv4PoolCidrOutcome(std::move(result.GetError()));
-}
-
-PurchaseCapacityBlockOutcome EC2Client::PurchaseCapacityBlock(const PurchaseCapacityBlockRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? PurchaseCapacityBlockOutcome(result.GetResultWithOwnership())
-                            : PurchaseCapacityBlockOutcome(std::move(result.GetError()));
-}
-
-PurchaseCapacityBlockExtensionOutcome EC2Client::PurchaseCapacityBlockExtension(
-    const PurchaseCapacityBlockExtensionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? PurchaseCapacityBlockExtensionOutcome(result.GetResultWithOwnership())
-                            : PurchaseCapacityBlockExtensionOutcome(std::move(result.GetError()));
 }

@@ -6,6 +6,7 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/StopContactMediaProcessingRequest.h>
 #include <aws/connect/model/StopContactRecordingRequest.h>
 #include <aws/connect/model/StopContactStreamingRequest.h>
 #include <aws/connect/model/StopTestCaseExecutionRequest.h>
@@ -105,6 +106,17 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+StopContactMediaProcessingOutcome ConnectClient::StopContactMediaProcessing(const StopContactMediaProcessingRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/stop-contact-media-processing");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopContactMediaProcessingOutcome(result.GetResultWithOwnership())
+                            : StopContactMediaProcessingOutcome(std::move(result.GetError()));
+}
 
 StopContactRecordingOutcome ConnectClient::StopContactRecording(const StopContactRecordingRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {

@@ -82,6 +82,7 @@
 #include <aws/opensearch/model/GetPackageVersionHistoryResult.h>
 #include <aws/opensearch/model/GetUpgradeHistoryResult.h>
 #include <aws/opensearch/model/GetUpgradeStatusResult.h>
+#include <aws/opensearch/model/InsightFeedbackResult.h>
 #include <aws/opensearch/model/ListApplicationsRequest.h>
 #include <aws/opensearch/model/ListApplicationsResult.h>
 #include <aws/opensearch/model/ListDataSourceAttachmentsResult.h>
@@ -211,6 +212,7 @@ class GetIndexRequest;
 class GetPackageVersionHistoryRequest;
 class GetUpgradeHistoryRequest;
 class GetUpgradeStatusRequest;
+class InsightFeedbackRequest;
 class ListApplicationsRequest;
 class ListDataSourceAttachmentsRequest;
 class ListDataSourcesRequest;
@@ -306,6 +308,7 @@ typedef Aws::Utils::Outcome<GetIndexResult, OpenSearchServiceError> GetIndexOutc
 typedef Aws::Utils::Outcome<GetPackageVersionHistoryResult, OpenSearchServiceError> GetPackageVersionHistoryOutcome;
 typedef Aws::Utils::Outcome<GetUpgradeHistoryResult, OpenSearchServiceError> GetUpgradeHistoryOutcome;
 typedef Aws::Utils::Outcome<GetUpgradeStatusResult, OpenSearchServiceError> GetUpgradeStatusOutcome;
+typedef Aws::Utils::Outcome<InsightFeedbackResult, OpenSearchServiceError> InsightFeedbackOutcome;
 typedef Aws::Utils::Outcome<ListApplicationsResult, OpenSearchServiceError> ListApplicationsOutcome;
 typedef Aws::Utils::Outcome<ListDataSourceAttachmentsResult, OpenSearchServiceError> ListDataSourceAttachmentsOutcome;
 typedef Aws::Utils::Outcome<ListDataSourcesResult, OpenSearchServiceError> ListDataSourcesOutcome;
@@ -401,6 +404,7 @@ typedef std::future<GetIndexOutcome> GetIndexOutcomeCallable;
 typedef std::future<GetPackageVersionHistoryOutcome> GetPackageVersionHistoryOutcomeCallable;
 typedef std::future<GetUpgradeHistoryOutcome> GetUpgradeHistoryOutcomeCallable;
 typedef std::future<GetUpgradeStatusOutcome> GetUpgradeStatusOutcomeCallable;
+typedef std::future<InsightFeedbackOutcome> InsightFeedbackOutcomeCallable;
 typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
 typedef std::future<ListDataSourceAttachmentsOutcome> ListDataSourceAttachmentsOutcomeCallable;
 typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
@@ -617,6 +621,9 @@ typedef std::function<void(const OpenSearchServiceClient*, const Model::GetUpgra
 typedef std::function<void(const OpenSearchServiceClient*, const Model::GetUpgradeStatusRequest&, const Model::GetUpgradeStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetUpgradeStatusResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServiceClient*, const Model::InsightFeedbackRequest&, const Model::InsightFeedbackOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    InsightFeedbackResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServiceClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListApplicationsResponseReceivedHandler;

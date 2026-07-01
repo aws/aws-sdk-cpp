@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/OperatorResponse.h>
 #include <aws/ec2/model/VolumeModificationState.h>
 #include <aws/ec2/model/VolumeType.h>
 
@@ -300,6 +301,24 @@ class VolumeModification {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The service provider that manages the resource.</p>
+   */
+  inline const OperatorResponse& GetOperator() const { return m_operator; }
+  inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+  template <typename OperatorT = OperatorResponse>
+  void SetOperator(OperatorT&& value) {
+    m_operatorHasBeenSet = true;
+    m_operator = std::forward<OperatorT>(value);
+  }
+  template <typename OperatorT = OperatorResponse>
+  VolumeModification& WithOperator(OperatorT&& value) {
+    SetOperator(std::forward<OperatorT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_volumeId;
 
@@ -332,6 +351,8 @@ class VolumeModification {
   Aws::Utils::DateTime m_startTime{};
 
   Aws::Utils::DateTime m_endTime{};
+
+  OperatorResponse m_operator;
   bool m_volumeIdHasBeenSet = false;
   bool m_modificationStateHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
@@ -348,6 +369,7 @@ class VolumeModification {
   bool m_progressHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -294,6 +294,8 @@
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupSourcesResponse.h>
 #include <aws/ec2/model/DescribeAccountAttributesRequest.h>
 #include <aws/ec2/model/DescribeAccountAttributesResponse.h>
+#include <aws/ec2/model/DescribeAccountVpcEncryptionControlRequest.h>
+#include <aws/ec2/model/DescribeAccountVpcEncryptionControlResponse.h>
 #include <aws/ec2/model/DescribeAddressTransfersRequest.h>
 #include <aws/ec2/model/DescribeAddressTransfersResponse.h>
 #include <aws/ec2/model/DescribeAddressesAttributeRequest.h>
@@ -820,6 +822,8 @@
 #include <aws/ec2/model/ListVolumesInRecycleBinRequest.h>
 #include <aws/ec2/model/ListVolumesInRecycleBinResponse.h>
 #include <aws/ec2/model/LockSnapshotResponse.h>
+#include <aws/ec2/model/ModifyAccountVpcEncryptionControlRequest.h>
+#include <aws/ec2/model/ModifyAccountVpcEncryptionControlResponse.h>
 #include <aws/ec2/model/ModifyAddressAttributeResponse.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupResponse.h>
 #include <aws/ec2/model/ModifyCapacityReservationFleetResponse.h>
@@ -1274,6 +1278,7 @@ class DeregisterInstanceEventNotificationAttributesRequest;
 class DeregisterTransitGatewayMulticastGroupMembersRequest;
 class DeregisterTransitGatewayMulticastGroupSourcesRequest;
 class DescribeAccountAttributesRequest;
+class DescribeAccountVpcEncryptionControlRequest;
 class DescribeAddressTransfersRequest;
 class DescribeAddressesRequest;
 class DescribeAddressesAttributeRequest;
@@ -1614,6 +1619,7 @@ class ListImagesInRecycleBinRequest;
 class ListSnapshotsInRecycleBinRequest;
 class ListVolumesInRecycleBinRequest;
 class LockSnapshotRequest;
+class ModifyAccountVpcEncryptionControlRequest;
 class ModifyAddressAttributeRequest;
 class ModifyAvailabilityZoneGroupRequest;
 class ModifyCapacityReservationRequest;
@@ -2058,6 +2064,7 @@ typedef Aws::Utils::Outcome<DeregisterTransitGatewayMulticastGroupMembersRespons
 typedef Aws::Utils::Outcome<DeregisterTransitGatewayMulticastGroupSourcesResponse, EC2Error>
     DeregisterTransitGatewayMulticastGroupSourcesOutcome;
 typedef Aws::Utils::Outcome<DescribeAccountAttributesResponse, EC2Error> DescribeAccountAttributesOutcome;
+typedef Aws::Utils::Outcome<DescribeAccountVpcEncryptionControlResponse, EC2Error> DescribeAccountVpcEncryptionControlOutcome;
 typedef Aws::Utils::Outcome<DescribeAddressTransfersResponse, EC2Error> DescribeAddressTransfersOutcome;
 typedef Aws::Utils::Outcome<DescribeAddressesResponse, EC2Error> DescribeAddressesOutcome;
 typedef Aws::Utils::Outcome<DescribeAddressesAttributeResponse, EC2Error> DescribeAddressesAttributeOutcome;
@@ -2416,6 +2423,7 @@ typedef Aws::Utils::Outcome<ListImagesInRecycleBinResponse, EC2Error> ListImages
 typedef Aws::Utils::Outcome<ListSnapshotsInRecycleBinResponse, EC2Error> ListSnapshotsInRecycleBinOutcome;
 typedef Aws::Utils::Outcome<ListVolumesInRecycleBinResponse, EC2Error> ListVolumesInRecycleBinOutcome;
 typedef Aws::Utils::Outcome<LockSnapshotResponse, EC2Error> LockSnapshotOutcome;
+typedef Aws::Utils::Outcome<ModifyAccountVpcEncryptionControlResponse, EC2Error> ModifyAccountVpcEncryptionControlOutcome;
 typedef Aws::Utils::Outcome<ModifyAddressAttributeResponse, EC2Error> ModifyAddressAttributeOutcome;
 typedef Aws::Utils::Outcome<ModifyAvailabilityZoneGroupResponse, EC2Error> ModifyAvailabilityZoneGroupOutcome;
 typedef Aws::Utils::Outcome<ModifyCapacityReservationResponse, EC2Error> ModifyCapacityReservationOutcome;
@@ -2863,6 +2871,7 @@ typedef std::future<DeregisterInstanceEventNotificationAttributesOutcome> Deregi
 typedef std::future<DeregisterTransitGatewayMulticastGroupMembersOutcome> DeregisterTransitGatewayMulticastGroupMembersOutcomeCallable;
 typedef std::future<DeregisterTransitGatewayMulticastGroupSourcesOutcome> DeregisterTransitGatewayMulticastGroupSourcesOutcomeCallable;
 typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
+typedef std::future<DescribeAccountVpcEncryptionControlOutcome> DescribeAccountVpcEncryptionControlOutcomeCallable;
 typedef std::future<DescribeAddressTransfersOutcome> DescribeAddressTransfersOutcomeCallable;
 typedef std::future<DescribeAddressesOutcome> DescribeAddressesOutcomeCallable;
 typedef std::future<DescribeAddressesAttributeOutcome> DescribeAddressesAttributeOutcomeCallable;
@@ -3206,6 +3215,7 @@ typedef std::future<ListImagesInRecycleBinOutcome> ListImagesInRecycleBinOutcome
 typedef std::future<ListSnapshotsInRecycleBinOutcome> ListSnapshotsInRecycleBinOutcomeCallable;
 typedef std::future<ListVolumesInRecycleBinOutcome> ListVolumesInRecycleBinOutcomeCallable;
 typedef std::future<LockSnapshotOutcome> LockSnapshotOutcomeCallable;
+typedef std::future<ModifyAccountVpcEncryptionControlOutcome> ModifyAccountVpcEncryptionControlOutcomeCallable;
 typedef std::future<ModifyAddressAttributeOutcome> ModifyAddressAttributeOutcomeCallable;
 typedef std::future<ModifyAvailabilityZoneGroupOutcome> ModifyAvailabilityZoneGroupOutcomeCallable;
 typedef std::future<ModifyCapacityReservationOutcome> ModifyCapacityReservationOutcomeCallable;
@@ -4285,6 +4295,10 @@ typedef std::function<void(const EC2Client*, const Model::DeregisterTransitGatew
 typedef std::function<void(const EC2Client*, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeAccountAttributesResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeAccountVpcEncryptionControlRequest&,
+                           const Model::DescribeAccountVpcEncryptionControlOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeAccountVpcEncryptionControlResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeAddressTransfersRequest&, const Model::DescribeAddressTransfersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeAddressTransfersResponseReceivedHandler;
@@ -5473,6 +5487,10 @@ typedef std::function<void(const EC2Client*, const Model::ListVolumesInRecycleBi
 typedef std::function<void(const EC2Client*, const Model::LockSnapshotRequest&, const Model::LockSnapshotOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     LockSnapshotResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyAccountVpcEncryptionControlRequest&,
+                           const Model::ModifyAccountVpcEncryptionControlOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyAccountVpcEncryptionControlResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyAddressAttributeRequest&, const Model::ModifyAddressAttributeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyAddressAttributeResponseReceivedHandler;

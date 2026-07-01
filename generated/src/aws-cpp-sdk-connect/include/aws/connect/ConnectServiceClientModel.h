@@ -261,6 +261,7 @@
 #include <aws/connect/model/SearchWorkspacesResult.h>
 #include <aws/connect/model/SendChatIntegrationEventResult.h>
 #include <aws/connect/model/SendOutboundEmailResult.h>
+#include <aws/connect/model/SendOutboundWebNotificationResult.h>
 #include <aws/connect/model/StartAttachedFileUploadResult.h>
 #include <aws/connect/model/StartChatContactResult.h>
 #include <aws/connect/model/StartContactConversationalAnalyticsJobResult.h>
@@ -637,6 +638,7 @@ class SearchWorkspaceAssociationsRequest;
 class SearchWorkspacesRequest;
 class SendChatIntegrationEventRequest;
 class SendOutboundEmailRequest;
+class SendOutboundWebNotificationRequest;
 class StartAttachedFileUploadRequest;
 class StartChatContactRequest;
 class StartContactConversationalAnalyticsJobRequest;
@@ -1014,6 +1016,7 @@ typedef Aws::Utils::Outcome<SearchWorkspaceAssociationsResult, ConnectError> Sea
 typedef Aws::Utils::Outcome<SearchWorkspacesResult, ConnectError> SearchWorkspacesOutcome;
 typedef Aws::Utils::Outcome<SendChatIntegrationEventResult, ConnectError> SendChatIntegrationEventOutcome;
 typedef Aws::Utils::Outcome<SendOutboundEmailResult, ConnectError> SendOutboundEmailOutcome;
+typedef Aws::Utils::Outcome<SendOutboundWebNotificationResult, ConnectError> SendOutboundWebNotificationOutcome;
 typedef Aws::Utils::Outcome<StartAttachedFileUploadResult, ConnectError> StartAttachedFileUploadOutcome;
 typedef Aws::Utils::Outcome<StartChatContactResult, ConnectError> StartChatContactOutcome;
 typedef Aws::Utils::Outcome<StartContactConversationalAnalyticsJobResult, ConnectError> StartContactConversationalAnalyticsJobOutcome;
@@ -1391,6 +1394,7 @@ typedef std::future<SearchWorkspaceAssociationsOutcome> SearchWorkspaceAssociati
 typedef std::future<SearchWorkspacesOutcome> SearchWorkspacesOutcomeCallable;
 typedef std::future<SendChatIntegrationEventOutcome> SendChatIntegrationEventOutcomeCallable;
 typedef std::future<SendOutboundEmailOutcome> SendOutboundEmailOutcomeCallable;
+typedef std::future<SendOutboundWebNotificationOutcome> SendOutboundWebNotificationOutcomeCallable;
 typedef std::future<StartAttachedFileUploadOutcome> StartAttachedFileUploadOutcomeCallable;
 typedef std::future<StartChatContactOutcome> StartChatContactOutcomeCallable;
 typedef std::future<StartContactConversationalAnalyticsJobOutcome> StartContactConversationalAnalyticsJobOutcomeCallable;
@@ -2390,6 +2394,9 @@ typedef std::function<void(const ConnectClient*, const Model::SendChatIntegratio
 typedef std::function<void(const ConnectClient*, const Model::SendOutboundEmailRequest&, const Model::SendOutboundEmailOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SendOutboundEmailResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::SendOutboundWebNotificationRequest&,
+                           const Model::SendOutboundWebNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SendOutboundWebNotificationResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::StartAttachedFileUploadRequest&, const Model::StartAttachedFileUploadOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartAttachedFileUploadResponseReceivedHandler;
