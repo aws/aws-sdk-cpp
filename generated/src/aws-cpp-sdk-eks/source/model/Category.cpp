@@ -17,6 +17,7 @@ namespace CategoryMapper {
 
 static const int UPGRADE_READINESS_HASH = HashingUtils::HashString("UPGRADE_READINESS");
 static const int MISCONFIGURATION_HASH = HashingUtils::HashString("MISCONFIGURATION");
+static const int ROLLBACK_READINESS_HASH = HashingUtils::HashString("ROLLBACK_READINESS");
 
 Category GetCategoryForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ Category GetCategoryForName(const Aws::String& name) {
     return Category::UPGRADE_READINESS;
   } else if (hashCode == MISCONFIGURATION_HASH) {
     return Category::MISCONFIGURATION;
+  } else if (hashCode == ROLLBACK_READINESS_HASH) {
+    return Category::ROLLBACK_READINESS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForCategory(Category enumValue) {
       return "UPGRADE_READINESS";
     case Category::MISCONFIGURATION:
       return "MISCONFIGURATION";
+    case Category::ROLLBACK_READINESS:
+      return "ROLLBACK_READINESS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -99,6 +99,7 @@
 #include <aws/ec2/model/ModifyVpcBlockPublicAccessOptionsRequest.h>
 #include <aws/ec2/model/ModifyVpcEncryptionControlRequest.h>
 #include <aws/ec2/model/ModifyVpcEndpointConnectionNotificationRequest.h>
+#include <aws/ec2/model/ModifyVpcEndpointPayerResponsibilityRequest.h>
 #include <aws/ec2/model/ModifyVpcEndpointRequest.h>
 #include <aws/ec2/model/ModifyVpcEndpointServiceConfigurationRequest.h>
 #include <aws/ec2/model/ModifyVpcEndpointServicePayerResponsibilityRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/ProvisionPublicIpv4PoolCidrRequest.h>
 #include <aws/ec2/model/PurchaseCapacityBlockExtensionRequest.h>
 #include <aws/ec2/model/PurchaseCapacityBlockRequest.h>
-#include <aws/ec2/model/PurchaseHostReservationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -623,6 +623,13 @@ ModifyVpcEndpointConnectionNotificationOutcome EC2Client::ModifyVpcEndpointConne
                             : ModifyVpcEndpointConnectionNotificationOutcome(std::move(result.GetError()));
 }
 
+ModifyVpcEndpointPayerResponsibilityOutcome EC2Client::ModifyVpcEndpointPayerResponsibility(
+    const ModifyVpcEndpointPayerResponsibilityRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVpcEndpointPayerResponsibilityOutcome(result.GetResultWithOwnership())
+                            : ModifyVpcEndpointPayerResponsibilityOutcome(std::move(result.GetError()));
+}
+
 ModifyVpcEndpointServiceConfigurationOutcome EC2Client::ModifyVpcEndpointServiceConfiguration(
     const ModifyVpcEndpointServiceConfigurationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -741,10 +748,4 @@ PurchaseCapacityBlockExtensionOutcome EC2Client::PurchaseCapacityBlockExtension(
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PurchaseCapacityBlockExtensionOutcome(result.GetResultWithOwnership())
                             : PurchaseCapacityBlockExtensionOutcome(std::move(result.GetError()));
-}
-
-PurchaseHostReservationOutcome EC2Client::PurchaseHostReservation(const PurchaseHostReservationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? PurchaseHostReservationOutcome(result.GetResultWithOwnership())
-                            : PurchaseHostReservationOutcome(std::move(result.GetError()));
 }

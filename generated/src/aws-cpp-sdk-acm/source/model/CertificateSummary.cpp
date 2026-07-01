@@ -110,6 +110,11 @@ CertificateSummary& CertificateSummary::operator=(JsonView jsonValue) {
     m_managedBy = CertificateManagedByMapper::GetCertificateManagedByForName(jsonValue.GetString("ManagedBy"));
     m_managedByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CertificateKeyPairOrigin")) {
+    m_certificateKeyPairOrigin =
+        CertificateKeyPairOriginMapper::GetCertificateKeyPairOriginForName(jsonValue.GetString("CertificateKeyPairOrigin"));
+    m_certificateKeyPairOriginHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -210,6 +215,11 @@ JsonValue CertificateSummary::Jsonize() const {
 
   if (m_managedByHasBeenSet) {
     payload.WithString("ManagedBy", CertificateManagedByMapper::GetNameForCertificateManagedBy(m_managedBy));
+  }
+
+  if (m_certificateKeyPairOriginHasBeenSet) {
+    payload.WithString("CertificateKeyPairOrigin",
+                       CertificateKeyPairOriginMapper::GetNameForCertificateKeyPairOrigin(m_certificateKeyPairOrigin));
   }
 
   return payload;

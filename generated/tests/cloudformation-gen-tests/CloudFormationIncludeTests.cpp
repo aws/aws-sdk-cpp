@@ -76,6 +76,8 @@
 #include <aws/cloudformation/model/DeleteStackSetRequest.h>
 #include <aws/cloudformation/model/DeleteStackSetResult.h>
 #include <aws/cloudformation/model/DeletionMode.h>
+#include <aws/cloudformation/model/DeploymentConfig.h>
+#include <aws/cloudformation/model/DeploymentConfigMode.h>
 #include <aws/cloudformation/model/DeploymentMode.h>
 #include <aws/cloudformation/model/DeploymentTargets.h>
 #include <aws/cloudformation/model/DeprecatedStatus.h>

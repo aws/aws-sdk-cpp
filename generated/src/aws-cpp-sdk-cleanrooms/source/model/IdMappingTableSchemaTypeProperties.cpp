@@ -26,6 +26,10 @@ IdMappingTableSchemaTypeProperties& IdMappingTableSchemaTypeProperties::operator
     }
     m_idMappingTableInputSourceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("idMappingTableId")) {
+    m_idMappingTableId = jsonValue.GetString("idMappingTableId");
+    m_idMappingTableIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +44,10 @@ JsonValue IdMappingTableSchemaTypeProperties::Jsonize() const {
           m_idMappingTableInputSource[idMappingTableInputSourceIndex].Jsonize());
     }
     payload.WithArray("idMappingTableInputSource", std::move(idMappingTableInputSourceJsonList));
+  }
+
+  if (m_idMappingTableIdHasBeenSet) {
+    payload.WithString("idMappingTableId", m_idMappingTableId);
   }
 
   return payload;

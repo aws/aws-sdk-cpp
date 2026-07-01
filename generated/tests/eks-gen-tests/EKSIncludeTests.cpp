@@ -50,6 +50,10 @@
 #include <aws/eks/model/AuthenticationMode.h>
 #include <aws/eks/model/AutoScalingGroup.h>
 #include <aws/eks/model/BlockStorage.h>
+#include <aws/eks/model/CancelUpdateRequest.h>
+#include <aws/eks/model/CancelUpdateResult.h>
+#include <aws/eks/model/Cancellation.h>
+#include <aws/eks/model/CancellationStatus.h>
 #include <aws/eks/model/Capability.h>
 #include <aws/eks/model/CapabilityConfigurationRequest.h>
 #include <aws/eks/model/CapabilityConfigurationResponse.h>
@@ -253,6 +257,7 @@
 #include <aws/eks/model/ResourceInUseException.h>
 #include <aws/eks/model/ResourceLimitExceededException.h>
 #include <aws/eks/model/ResourceNotFoundException.h>
+#include <aws/eks/model/RollbackConfig.h>
 #include <aws/eks/model/ServerException.h>
 #include <aws/eks/model/SpreadLevel.h>
 #include <aws/eks/model/SsoIdentity.h>

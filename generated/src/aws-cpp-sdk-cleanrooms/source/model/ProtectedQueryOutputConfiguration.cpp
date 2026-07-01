@@ -30,6 +30,10 @@ ProtectedQueryOutputConfiguration& ProtectedQueryOutputConfiguration::operator=(
     m_distribute = jsonValue.GetObject("distribute");
     m_distributeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("intermediateTable")) {
+    m_intermediateTable = jsonValue.GetObject("intermediateTable");
+    m_intermediateTableHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue ProtectedQueryOutputConfiguration::Jsonize() const {
 
   if (m_distributeHasBeenSet) {
     payload.WithObject("distribute", m_distribute.Jsonize());
+  }
+
+  if (m_intermediateTableHasBeenSet) {
+    payload.WithObject("intermediateTable", m_intermediateTable.Jsonize());
   }
 
   return payload;

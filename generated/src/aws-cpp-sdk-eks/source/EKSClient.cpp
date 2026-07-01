@@ -23,6 +23,7 @@
 #include <aws/eks/model/AssociateAccessPolicyRequest.h>
 #include <aws/eks/model/AssociateEncryptionConfigRequest.h>
 #include <aws/eks/model/AssociateIdentityProviderConfigRequest.h>
+#include <aws/eks/model/CancelUpdateRequest.h>
 #include <aws/eks/model/CreateAccessEntryRequest.h>
 #include <aws/eks/model/CreateAddonRequest.h>
 #include <aws/eks/model/CreateCapabilityRequest.h>
@@ -299,6 +300,31 @@ AssociateIdentityProviderConfigOutcome EKSClient::AssociateIdentityProviderConfi
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AssociateIdentityProviderConfigOutcome(result.GetResultWithOwnership())
                             : AssociateIdentityProviderConfigOutcome(std::move(result.GetError()));
+}
+
+CancelUpdateOutcome EKSClient::CancelUpdate(const CancelUpdateRequest& request) const {
+  if (!request.NameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CancelUpdate", "Required field: Name, is not set");
+    return CancelUpdateOutcome(
+        Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.UpdateIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CancelUpdate", "Required field: UpdateId, is not set");
+    return CancelUpdateOutcome(
+        Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UpdateId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/updates/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUpdateId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cancel-update");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelUpdateOutcome(result.GetResultWithOwnership()) : CancelUpdateOutcome(std::move(result.GetError()));
 }
 
 CreateAccessEntryOutcome EKSClient::CreateAccessEntry(const CreateAccessEntryRequest& request) const {

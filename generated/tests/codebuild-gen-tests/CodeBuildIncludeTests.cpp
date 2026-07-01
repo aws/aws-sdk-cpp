@@ -118,6 +118,7 @@
 #include <aws/codebuild/model/GetResourcePolicyRequest.h>
 #include <aws/codebuild/model/GetResourcePolicyResult.h>
 #include <aws/codebuild/model/GitSubmodulesConfig.h>
+#include <aws/codebuild/model/HostKernel.h>
 #include <aws/codebuild/model/ImagePullCredentialsType.h>
 #include <aws/codebuild/model/ImportSourceCredentialsRequest.h>
 #include <aws/codebuild/model/ImportSourceCredentialsResult.h>

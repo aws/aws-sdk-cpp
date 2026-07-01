@@ -11,6 +11,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/DnsEntry.h>
 #include <aws/ec2/model/IpAddressType.h>
+#include <aws/ec2/model/PayerResponsibilityEntry.h>
 #include <aws/ec2/model/State.h>
 #include <aws/ec2/model/Tag.h>
 
@@ -277,6 +278,30 @@ class VpcEndpointConnection {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The payer responsibility settings for the endpoint.</p>
+   */
+  inline const Aws::Vector<PayerResponsibilityEntry>& GetPayerResponsibilities() const { return m_payerResponsibilities; }
+  inline bool PayerResponsibilitiesHasBeenSet() const { return m_payerResponsibilitiesHasBeenSet; }
+  template <typename PayerResponsibilitiesT = Aws::Vector<PayerResponsibilityEntry>>
+  void SetPayerResponsibilities(PayerResponsibilitiesT&& value) {
+    m_payerResponsibilitiesHasBeenSet = true;
+    m_payerResponsibilities = std::forward<PayerResponsibilitiesT>(value);
+  }
+  template <typename PayerResponsibilitiesT = Aws::Vector<PayerResponsibilityEntry>>
+  VpcEndpointConnection& WithPayerResponsibilities(PayerResponsibilitiesT&& value) {
+    SetPayerResponsibilities(std::forward<PayerResponsibilitiesT>(value));
+    return *this;
+  }
+  template <typename PayerResponsibilitiesT = PayerResponsibilityEntry>
+  VpcEndpointConnection& AddPayerResponsibilities(PayerResponsibilitiesT&& value) {
+    m_payerResponsibilitiesHasBeenSet = true;
+    m_payerResponsibilities.emplace_back(std::forward<PayerResponsibilitiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serviceId;
 
@@ -301,6 +326,8 @@ class VpcEndpointConnection {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_vpcEndpointRegion;
+
+  Aws::Vector<PayerResponsibilityEntry> m_payerResponsibilities;
   bool m_serviceIdHasBeenSet = false;
   bool m_vpcEndpointIdHasBeenSet = false;
   bool m_vpcEndpointOwnerHasBeenSet = false;
@@ -313,6 +340,7 @@ class VpcEndpointConnection {
   bool m_vpcEndpointConnectionIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_vpcEndpointRegionHasBeenSet = false;
+  bool m_payerResponsibilitiesHasBeenSet = false;
 };
 
 }  // namespace Model

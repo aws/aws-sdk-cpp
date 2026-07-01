@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/ConfiguredTableAssociationSchemaTypeProperties.h>
 #include <aws/cleanrooms/model/IdMappingTableSchemaTypeProperties.h>
+#include <aws/cleanrooms/model/IntermediateTableSchemaTypeProperties.h>
 
 #include <utility>
 
@@ -48,9 +50,53 @@ class SchemaTypeProperties {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The schema type properties for an intermediate table.</p>
+   */
+  inline const IntermediateTableSchemaTypeProperties& GetIntermediateTable() const { return m_intermediateTable; }
+  inline bool IntermediateTableHasBeenSet() const { return m_intermediateTableHasBeenSet; }
+  template <typename IntermediateTableT = IntermediateTableSchemaTypeProperties>
+  void SetIntermediateTable(IntermediateTableT&& value) {
+    m_intermediateTableHasBeenSet = true;
+    m_intermediateTable = std::forward<IntermediateTableT>(value);
+  }
+  template <typename IntermediateTableT = IntermediateTableSchemaTypeProperties>
+  SchemaTypeProperties& WithIntermediateTable(IntermediateTableT&& value) {
+    SetIntermediateTable(std::forward<IntermediateTableT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The schema type properties for a configured table association.</p>
+   */
+  inline const ConfiguredTableAssociationSchemaTypeProperties& GetConfiguredTableAssociation() const {
+    return m_configuredTableAssociation;
+  }
+  inline bool ConfiguredTableAssociationHasBeenSet() const { return m_configuredTableAssociationHasBeenSet; }
+  template <typename ConfiguredTableAssociationT = ConfiguredTableAssociationSchemaTypeProperties>
+  void SetConfiguredTableAssociation(ConfiguredTableAssociationT&& value) {
+    m_configuredTableAssociationHasBeenSet = true;
+    m_configuredTableAssociation = std::forward<ConfiguredTableAssociationT>(value);
+  }
+  template <typename ConfiguredTableAssociationT = ConfiguredTableAssociationSchemaTypeProperties>
+  SchemaTypeProperties& WithConfiguredTableAssociation(ConfiguredTableAssociationT&& value) {
+    SetConfiguredTableAssociation(std::forward<ConfiguredTableAssociationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   IdMappingTableSchemaTypeProperties m_idMappingTable;
+
+  IntermediateTableSchemaTypeProperties m_intermediateTable;
+
+  ConfiguredTableAssociationSchemaTypeProperties m_configuredTableAssociation;
   bool m_idMappingTableHasBeenSet = false;
+  bool m_intermediateTableHasBeenSet = false;
+  bool m_configuredTableAssociationHasBeenSet = false;
 };
 
 }  // namespace Model

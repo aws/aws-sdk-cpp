@@ -27,5 +27,9 @@ Aws::String TestTelemetryPipelineRequest::SerializePayload() const {
     payload.WithObject("Configuration", m_configuration.Jsonize());
   }
 
+  if (m_signalTypeHasBeenSet) {
+    payload.WithString("SignalType", SignalTypeMapper::GetNameForSignalType(m_signalType));
+  }
+
   return payload.View().WriteReadable();
 }

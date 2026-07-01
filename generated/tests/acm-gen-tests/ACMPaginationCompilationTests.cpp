@@ -10,6 +10,10 @@
 #include <aws/acm/ACMPaginationBase.h>
 #include <aws/acm/model/ListCertificatesPaginationTraits.h>
 #include <aws/acm/model/SearchCertificatesPaginationTraits.h>
+#include <aws/acm/model/ListAcmeExternalAccountBindingsPaginationTraits.h>
+#include <aws/acm/model/ListAcmeEndpointsPaginationTraits.h>
+#include <aws/acm/model/ListAcmeDomainValidationsPaginationTraits.h>
+#include <aws/acm/model/ListAcmeAccountsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

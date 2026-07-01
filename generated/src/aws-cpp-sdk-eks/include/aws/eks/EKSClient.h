@@ -186,6 +186,37 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Cancels an in-progress update to an Amazon EKS cluster on a best-effort
+   * basis. Cancellation is only performed if the update can be cancelled. Currently,
+   * this is supported for <code>VersionRollback</code> update types on EKS Auto Mode
+   * clusters when nodes are rolling back.</p> <p>A successful cancellation stops the
+   * node rollback. After cancellation, nodes converge to the current cluster version
+   * honoring configured disruption controls. If the control plane rollback has
+   * already begun, the cancellation request fails.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CancelUpdate">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelUpdateOutcome CancelUpdate(const Model::CancelUpdateRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CancelUpdateRequestT = Model::CancelUpdateRequest>
+  Model::CancelUpdateOutcomeCallable CancelUpdateCallable(const CancelUpdateRequestT& request) const {
+    return SubmitCallable(&EKSClient::CancelUpdate, request);
+  }
+
+  /**
+   * An Async wrapper for CancelUpdate that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CancelUpdateRequestT = Model::CancelUpdateRequest>
+  void CancelUpdateAsync(const CancelUpdateRequestT& request, const CancelUpdateResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EKSClient::CancelUpdate, request, handler, context);
+  }
+
+  /**
    * <p>Creates an access entry.</p> <p>An access entry allows an IAM principal to
    * access your cluster. Access entries can replace the need to maintain entries in
    * the <code>aws-auth</code> <code>ConfigMap</code> for authentication. You have

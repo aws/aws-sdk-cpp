@@ -202,6 +202,17 @@ VpcEndpoint& VpcEndpoint::operator=(const XmlNode& xmlNode) {
       m_serviceRegion = Aws::Utils::Xml::DecodeEscapedXmlText(serviceRegionNode.GetText());
       m_serviceRegionHasBeenSet = true;
     }
+    XmlNode payerResponsibilitiesNode = resultNode.FirstChild("payerResponsibilitySet");
+    if (!payerResponsibilitiesNode.IsNull()) {
+      XmlNode payerResponsibilitiesMember = payerResponsibilitiesNode.FirstChild("item");
+      m_payerResponsibilitiesHasBeenSet = !payerResponsibilitiesMember.IsNull();
+      while (!payerResponsibilitiesMember.IsNull()) {
+        m_payerResponsibilities.push_back(payerResponsibilitiesMember);
+        payerResponsibilitiesMember = payerResponsibilitiesMember.NextNode("item");
+      }
+
+      m_payerResponsibilitiesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -353,6 +364,15 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
   if (m_serviceRegionHasBeenSet) {
     oStream << location << index << locationValue << ".ServiceRegion=" << StringUtils::URLEncode(m_serviceRegion.c_str()) << "&";
   }
+
+  if (m_payerResponsibilitiesHasBeenSet) {
+    unsigned payerResponsibilitiesIdx = 1;
+    for (auto& item : m_payerResponsibilities) {
+      Aws::StringStream payerResponsibilitiesSs;
+      payerResponsibilitiesSs << location << index << locationValue << ".PayerResponsibilitySet." << payerResponsibilitiesIdx++;
+      item.OutputToStream(oStream, payerResponsibilitiesSs.str().c_str());
+    }
+  }
 }
 
 void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -472,6 +492,14 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if (m_serviceRegionHasBeenSet) {
     oStream << location << ".ServiceRegion=" << StringUtils::URLEncode(m_serviceRegion.c_str()) << "&";
+  }
+  if (m_payerResponsibilitiesHasBeenSet) {
+    unsigned payerResponsibilitiesIdx = 1;
+    for (auto& item : m_payerResponsibilities) {
+      Aws::StringStream payerResponsibilitiesSs;
+      payerResponsibilitiesSs << location << ".PayerResponsibilitySet." << payerResponsibilitiesIdx++;
+      item.OutputToStream(oStream, payerResponsibilitiesSs.str().c_str());
+    }
   }
 }
 

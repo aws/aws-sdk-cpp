@@ -11,6 +11,7 @@
 #include <aws/monitoring/model/ComparisonOperator.h>
 #include <aws/monitoring/model/Dimension.h>
 #include <aws/monitoring/model/EvaluationCriteria.h>
+#include <aws/monitoring/model/EvaluationWindow.h>
 #include <aws/monitoring/model/MetricDataQuery.h>
 #include <aws/monitoring/model/StandardUnit.h>
 #include <aws/monitoring/model/Statistic.h>
@@ -677,6 +678,33 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
 
   ///@{
   /**
+   * <p>The evaluation window that the alarm uses to select the range of metric data
+   * that it evaluates. Specify either a sliding window or a wall clock window. If
+   * you omit this parameter, the alarm uses a sliding window.</p> <p>A sliding
+   * window advances each time the alarm is evaluated, forming a rolling time window.
+   * A wall clock window aligns the evaluated range to fixed clock boundaries, such
+   * as the top of the hour or the start of the day.</p> <p>You can use
+   * <code>EvaluationWindow</code> with any type of metric alarm except alarms that
+   * are based on a PromQL query.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-evaluation-window.html">Alarm
+   * evaluation windows</a> in the <i>CloudWatch User Guide</i>.</p>
+   */
+  inline const EvaluationWindow& GetEvaluationWindow() const { return m_evaluationWindow; }
+  inline bool EvaluationWindowHasBeenSet() const { return m_evaluationWindowHasBeenSet; }
+  template <typename EvaluationWindowT = EvaluationWindow>
+  void SetEvaluationWindow(EvaluationWindowT&& value) {
+    m_evaluationWindowHasBeenSet = true;
+    m_evaluationWindow = std::forward<EvaluationWindowT>(value);
+  }
+  template <typename EvaluationWindowT = EvaluationWindow>
+  PutMetricAlarmRequest& WithEvaluationWindow(EvaluationWindowT&& value) {
+    SetEvaluationWindow(std::forward<EvaluationWindowT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The evaluation criteria for the alarm. For each <code>PutMetricAlarm</code>
    * operation, you must specify either <code>MetricName</code>, a
    * <code>Metrics</code> array, or an <code>EvaluationCriteria</code>.</p> <p>If you
@@ -767,6 +795,8 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
 
   Aws::String m_thresholdMetricId;
 
+  EvaluationWindow m_evaluationWindow;
+
   EvaluationCriteria m_evaluationCriteria;
 
   int m_evaluationInterval{0};
@@ -792,6 +822,7 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
   bool m_metricsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_thresholdMetricIdHasBeenSet = false;
+  bool m_evaluationWindowHasBeenSet = false;
   bool m_evaluationCriteriaHasBeenSet = false;
   bool m_evaluationIntervalHasBeenSet = false;
 };

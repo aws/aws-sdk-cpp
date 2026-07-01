@@ -27,3 +27,10 @@ Aws::Http::HeaderValueCollection ListTagsForCertificateRequest::GetRequestSpecif
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CertificateManager.ListTagsForCertificate"));
   return headers;
 }
+
+ListTagsForCertificateRequest::EndpointParameters ListTagsForCertificateRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("ServiceType"), "ACM", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

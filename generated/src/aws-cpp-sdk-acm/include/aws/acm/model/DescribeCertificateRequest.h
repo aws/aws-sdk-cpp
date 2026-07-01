@@ -30,6 +30,11 @@ class DescribeCertificateRequest : public ACMRequest {
 
   AWS_ACM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  /**
+   * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+   */
+  AWS_ACM_API EndpointParameters GetEndpointContextParams() const override;
+
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the

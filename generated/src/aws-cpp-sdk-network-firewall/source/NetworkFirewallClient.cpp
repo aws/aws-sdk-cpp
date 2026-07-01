@@ -25,6 +25,7 @@
 #include <aws/network-firewall/model/AssociateFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/AssociateSubnetsRequest.h>
 #include <aws/network-firewall/model/AttachRuleGroupsToProxyConfigurationRequest.h>
+#include <aws/network-firewall/model/CreateContainerAssociationRequest.h>
 #include <aws/network-firewall/model/CreateFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/CreateFirewallRequest.h>
 #include <aws/network-firewall/model/CreateProxyConfigurationRequest.h>
@@ -34,6 +35,7 @@
 #include <aws/network-firewall/model/CreateRuleGroupRequest.h>
 #include <aws/network-firewall/model/CreateTLSInspectionConfigurationRequest.h>
 #include <aws/network-firewall/model/CreateVpcEndpointAssociationRequest.h>
+#include <aws/network-firewall/model/DeleteContainerAssociationRequest.h>
 #include <aws/network-firewall/model/DeleteFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/DeleteFirewallRequest.h>
 #include <aws/network-firewall/model/DeleteNetworkFirewallTransitGatewayAttachmentRequest.h>
@@ -45,6 +47,7 @@
 #include <aws/network-firewall/model/DeleteRuleGroupRequest.h>
 #include <aws/network-firewall/model/DeleteTLSInspectionConfigurationRequest.h>
 #include <aws/network-firewall/model/DeleteVpcEndpointAssociationRequest.h>
+#include <aws/network-firewall/model/DescribeContainerAssociationRequest.h>
 #include <aws/network-firewall/model/DescribeFirewallMetadataRequest.h>
 #include <aws/network-firewall/model/DescribeFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/DescribeFirewallRequest.h>
@@ -65,6 +68,7 @@
 #include <aws/network-firewall/model/DisassociateSubnetsRequest.h>
 #include <aws/network-firewall/model/GetAnalysisReportResultsRequest.h>
 #include <aws/network-firewall/model/ListAnalysisReportsRequest.h>
+#include <aws/network-firewall/model/ListContainerAssociationsRequest.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesRequest.h>
 #include <aws/network-firewall/model/ListFirewallsRequest.h>
 #include <aws/network-firewall/model/ListFlowOperationResultsRequest.h>
@@ -84,6 +88,7 @@
 #include <aws/network-firewall/model/TagResourceRequest.h>
 #include <aws/network-firewall/model/UntagResourceRequest.h>
 #include <aws/network-firewall/model/UpdateAvailabilityZoneChangeProtectionRequest.h>
+#include <aws/network-firewall/model/UpdateContainerAssociationRequest.h>
 #include <aws/network-firewall/model/UpdateFirewallAnalysisSettingsRequest.h>
 #include <aws/network-firewall/model/UpdateFirewallDeleteProtectionRequest.h>
 #include <aws/network-firewall/model/UpdateFirewallDescriptionRequest.h>
@@ -287,6 +292,13 @@ AttachRuleGroupsToProxyConfigurationOutcome NetworkFirewallClient::AttachRuleGro
                             : AttachRuleGroupsToProxyConfigurationOutcome(std::move(result.GetError()));
 }
 
+CreateContainerAssociationOutcome NetworkFirewallClient::CreateContainerAssociation(
+    const CreateContainerAssociationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateContainerAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateContainerAssociationOutcome(std::move(result.GetError()));
+}
+
 CreateFirewallOutcome NetworkFirewallClient::CreateFirewall(const CreateFirewallRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateFirewallOutcome(result.GetResultWithOwnership()) : CreateFirewallOutcome(std::move(result.GetError()));
@@ -339,6 +351,13 @@ CreateVpcEndpointAssociationOutcome NetworkFirewallClient::CreateVpcEndpointAsso
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateVpcEndpointAssociationOutcome(result.GetResultWithOwnership())
                             : CreateVpcEndpointAssociationOutcome(std::move(result.GetError()));
+}
+
+DeleteContainerAssociationOutcome NetworkFirewallClient::DeleteContainerAssociation(
+    const DeleteContainerAssociationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteContainerAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteContainerAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteFirewallOutcome NetworkFirewallClient::DeleteFirewall(const DeleteFirewallRequest& request) const {
@@ -406,6 +425,13 @@ DeleteVpcEndpointAssociationOutcome NetworkFirewallClient::DeleteVpcEndpointAsso
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteVpcEndpointAssociationOutcome(result.GetResultWithOwnership())
                             : DeleteVpcEndpointAssociationOutcome(std::move(result.GetError()));
+}
+
+DescribeContainerAssociationOutcome NetworkFirewallClient::DescribeContainerAssociation(
+    const DescribeContainerAssociationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeContainerAssociationOutcome(result.GetResultWithOwnership())
+                            : DescribeContainerAssociationOutcome(std::move(result.GetError()));
 }
 
 DescribeFirewallOutcome NetworkFirewallClient::DescribeFirewall(const DescribeFirewallRequest& request) const {
@@ -533,6 +559,12 @@ ListAnalysisReportsOutcome NetworkFirewallClient::ListAnalysisReports(const List
                             : ListAnalysisReportsOutcome(std::move(result.GetError()));
 }
 
+ListContainerAssociationsOutcome NetworkFirewallClient::ListContainerAssociations(const ListContainerAssociationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListContainerAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListContainerAssociationsOutcome(std::move(result.GetError()));
+}
+
 ListFirewallPoliciesOutcome NetworkFirewallClient::ListFirewallPolicies(const ListFirewallPoliciesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListFirewallPoliciesOutcome(result.GetResultWithOwnership())
@@ -643,6 +675,13 @@ UpdateAvailabilityZoneChangeProtectionOutcome NetworkFirewallClient::UpdateAvail
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateAvailabilityZoneChangeProtectionOutcome(result.GetResultWithOwnership())
                             : UpdateAvailabilityZoneChangeProtectionOutcome(std::move(result.GetError()));
+}
+
+UpdateContainerAssociationOutcome NetworkFirewallClient::UpdateContainerAssociation(
+    const UpdateContainerAssociationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContainerAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateContainerAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateFirewallAnalysisSettingsOutcome NetworkFirewallClient::UpdateFirewallAnalysisSettings(

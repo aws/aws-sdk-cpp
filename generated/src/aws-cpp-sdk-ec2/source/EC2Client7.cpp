@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/PurchaseHostReservationRequest.h>
 #include <aws/ec2/model/PurchaseReservedInstancesOfferingRequest.h>
 #include <aws/ec2/model/PurchaseScheduledInstancesRequest.h>
 #include <aws/ec2/model/RebootInstancesRequest.h>
@@ -100,6 +101,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+PurchaseHostReservationOutcome EC2Client::PurchaseHostReservation(const PurchaseHostReservationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PurchaseHostReservationOutcome(result.GetResultWithOwnership())
+                            : PurchaseHostReservationOutcome(std::move(result.GetError()));
+}
 
 PurchaseReservedInstancesOfferingOutcome EC2Client::PurchaseReservedInstancesOffering(
     const PurchaseReservedInstancesOfferingRequest& request) const {

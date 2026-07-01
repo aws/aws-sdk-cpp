@@ -13,6 +13,7 @@
 #include <aws/monitoring/model/Dimension.h>
 #include <aws/monitoring/model/EvaluationCriteria.h>
 #include <aws/monitoring/model/EvaluationState.h>
+#include <aws/monitoring/model/EvaluationWindow.h>
 #include <aws/monitoring/model/MetricDataQuery.h>
 #include <aws/monitoring/model/StandardUnit.h>
 #include <aws/monitoring/model/StateValue.h>
@@ -614,6 +615,28 @@ class MetricAlarm {
 
   ///@{
   /**
+   * <p>The evaluation window that the alarm uses to select the range of metric data
+   * that it evaluates. This is either a sliding window or a wall clock window. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-evaluation-window.html">Alarm
+   * evaluation windows</a> in the <i>CloudWatch User Guide</i>.</p>
+   */
+  inline const EvaluationWindow& GetEvaluationWindow() const { return m_evaluationWindow; }
+  inline bool EvaluationWindowHasBeenSet() const { return m_evaluationWindowHasBeenSet; }
+  template <typename EvaluationWindowT = EvaluationWindow>
+  void SetEvaluationWindow(EvaluationWindowT&& value) {
+    m_evaluationWindowHasBeenSet = true;
+    m_evaluationWindow = std::forward<EvaluationWindowT>(value);
+  }
+  template <typename EvaluationWindowT = EvaluationWindow>
+  MetricAlarm& WithEvaluationWindow(EvaluationWindowT&& value) {
+    SetEvaluationWindow(std::forward<EvaluationWindowT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The evaluation criteria for the alarm.</p>
    */
   inline const EvaluationCriteria& GetEvaluationCriteria() const { return m_evaluationCriteria; }
@@ -704,6 +727,8 @@ class MetricAlarm {
 
   Aws::Utils::DateTime m_stateTransitionedTimestamp{};
 
+  EvaluationWindow m_evaluationWindow;
+
   EvaluationCriteria m_evaluationCriteria;
 
   int64_t m_evaluationInterval{0};
@@ -736,6 +761,7 @@ class MetricAlarm {
   bool m_thresholdMetricIdHasBeenSet = false;
   bool m_evaluationStateHasBeenSet = false;
   bool m_stateTransitionedTimestampHasBeenSet = false;
+  bool m_evaluationWindowHasBeenSet = false;
   bool m_evaluationCriteriaHasBeenSet = false;
   bool m_evaluationIntervalHasBeenSet = false;
 };

@@ -463,6 +463,70 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates an intermediate table in a membership. An intermediate table stores a
+   * query definition that you can execute later using
+   * <code>PopulateIntermediateTable</code> to materialize cached results. The
+   * intermediate table is owned by the member with the CAN_QUERY ability. This
+   * operation does not execute the stored query.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIntermediateTable">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateIntermediateTableOutcome CreateIntermediateTable(const Model::CreateIntermediateTableRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateIntermediateTable that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateIntermediateTableRequestT = Model::CreateIntermediateTableRequest>
+  Model::CreateIntermediateTableOutcomeCallable CreateIntermediateTableCallable(const CreateIntermediateTableRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::CreateIntermediateTable, request);
+  }
+
+  /**
+   * An Async wrapper for CreateIntermediateTable that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateIntermediateTableRequestT = Model::CreateIntermediateTableRequest>
+  void CreateIntermediateTableAsync(const CreateIntermediateTableRequestT& request,
+                                    const CreateIntermediateTableResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::CreateIntermediateTable, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an analysis rule for an intermediate table. Only the CUSTOM analysis
+   * rule type is supported. The service automatically determines whether the rule is
+   * first-party or multi-party restricted based on the intermediate table's
+   * inherited constraints. Only the intermediate table owner can call this
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIntermediateTableAnalysisRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateIntermediateTableAnalysisRuleOutcome CreateIntermediateTableAnalysisRule(
+      const Model::CreateIntermediateTableAnalysisRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateIntermediateTableAnalysisRule that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename CreateIntermediateTableAnalysisRuleRequestT = Model::CreateIntermediateTableAnalysisRuleRequest>
+  Model::CreateIntermediateTableAnalysisRuleOutcomeCallable CreateIntermediateTableAnalysisRuleCallable(
+      const CreateIntermediateTableAnalysisRuleRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::CreateIntermediateTableAnalysisRule, request);
+  }
+
+  /**
+   * An Async wrapper for CreateIntermediateTableAnalysisRule that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename CreateIntermediateTableAnalysisRuleRequestT = Model::CreateIntermediateTableAnalysisRuleRequest>
+  void CreateIntermediateTableAnalysisRuleAsync(const CreateIntermediateTableAnalysisRuleRequestT& request,
+                                                const CreateIntermediateTableAnalysisRuleResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::CreateIntermediateTableAnalysisRule, request, handler, context);
+  }
+
+  /**
    * <p>Creates a membership for a specific collaboration identifier and joins the
    * collaboration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateMembership">AWS
@@ -777,6 +841,68 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes an intermediate table. When you delete the table, the service marks
+   * it as DELETED, removes its analysis rule and schema, and triggers storage
+   * cleanup. This operation is idempotent. Only the intermediate table owner can
+   * call this operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIntermediateTable">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteIntermediateTableOutcome DeleteIntermediateTable(const Model::DeleteIntermediateTableRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteIntermediateTable that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteIntermediateTableRequestT = Model::DeleteIntermediateTableRequest>
+  Model::DeleteIntermediateTableOutcomeCallable DeleteIntermediateTableCallable(const DeleteIntermediateTableRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::DeleteIntermediateTable, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteIntermediateTable that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteIntermediateTableRequestT = Model::DeleteIntermediateTableRequest>
+  void DeleteIntermediateTableAsync(const DeleteIntermediateTableRequestT& request,
+                                    const DeleteIntermediateTableResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::DeleteIntermediateTable, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an analysis rule from an intermediate table. After the analysis rule
+   * is deleted, the intermediate table becomes unqueryable until a new analysis rule
+   * is attached. Only the intermediate table owner can call this
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIntermediateTableAnalysisRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteIntermediateTableAnalysisRuleOutcome DeleteIntermediateTableAnalysisRule(
+      const Model::DeleteIntermediateTableAnalysisRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteIntermediateTableAnalysisRule that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteIntermediateTableAnalysisRuleRequestT = Model::DeleteIntermediateTableAnalysisRuleRequest>
+  Model::DeleteIntermediateTableAnalysisRuleOutcomeCallable DeleteIntermediateTableAnalysisRuleCallable(
+      const DeleteIntermediateTableAnalysisRuleRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::DeleteIntermediateTableAnalysisRule, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteIntermediateTableAnalysisRule that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteIntermediateTableAnalysisRuleRequestT = Model::DeleteIntermediateTableAnalysisRuleRequest>
+  void DeleteIntermediateTableAnalysisRuleAsync(const DeleteIntermediateTableAnalysisRuleRequestT& request,
+                                                const DeleteIntermediateTableAnalysisRuleResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::DeleteIntermediateTableAnalysisRule, request, handler, context);
+  }
+
+  /**
    * <p>Removes the specified member from a collaboration. The removed member is
    * placed in the Removed status and can't interact with the collaboration. The
    * removed member's data is inaccessible to active members of the
@@ -859,6 +985,37 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
                                         const DeletePrivacyBudgetTemplateResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CleanRoomsClient::DeletePrivacyBudgetTemplate, request, handler, context);
+  }
+
+  /**
+   * <p>Invalidates a specific intermediate table that references the caller's base
+   * table. The data provider (base table owner) calls this operation, not the
+   * intermediate table owner. By default, invalidation cascades to descendant
+   * intermediate tables.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DisallowIntermediateTable">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisallowIntermediateTableOutcome DisallowIntermediateTable(const Model::DisallowIntermediateTableRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisallowIntermediateTable that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DisallowIntermediateTableRequestT = Model::DisallowIntermediateTableRequest>
+  Model::DisallowIntermediateTableOutcomeCallable DisallowIntermediateTableCallable(
+      const DisallowIntermediateTableRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::DisallowIntermediateTable, request);
+  }
+
+  /**
+   * An Async wrapper for DisallowIntermediateTable that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisallowIntermediateTableRequestT = Model::DisallowIntermediateTableRequest>
+  void DisallowIntermediateTableAsync(const DisallowIntermediateTableRequestT& request,
+                                      const DisallowIntermediateTableResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::DisallowIntermediateTable, request, handler, context);
   }
 
   /**
@@ -1263,6 +1420,65 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
                                       const GetIdNamespaceAssociationResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CleanRoomsClient::GetIdNamespaceAssociation, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves an intermediate table. Returns the full details of the intermediate
+   * table, including schema, table dependencies, inherited constraints, child
+   * resources, and status. Only the intermediate table owner can call this
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIntermediateTable">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIntermediateTableOutcome GetIntermediateTable(const Model::GetIntermediateTableRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIntermediateTable that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetIntermediateTableRequestT = Model::GetIntermediateTableRequest>
+  Model::GetIntermediateTableOutcomeCallable GetIntermediateTableCallable(const GetIntermediateTableRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::GetIntermediateTable, request);
+  }
+
+  /**
+   * An Async wrapper for GetIntermediateTable that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetIntermediateTableRequestT = Model::GetIntermediateTableRequest>
+  void GetIntermediateTableAsync(const GetIntermediateTableRequestT& request, const GetIntermediateTableResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::GetIntermediateTable, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the analysis rule for an intermediate table.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIntermediateTableAnalysisRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIntermediateTableAnalysisRuleOutcome GetIntermediateTableAnalysisRule(
+      const Model::GetIntermediateTableAnalysisRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIntermediateTableAnalysisRule that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetIntermediateTableAnalysisRuleRequestT = Model::GetIntermediateTableAnalysisRuleRequest>
+  Model::GetIntermediateTableAnalysisRuleOutcomeCallable GetIntermediateTableAnalysisRuleCallable(
+      const GetIntermediateTableAnalysisRuleRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::GetIntermediateTableAnalysisRule, request);
+  }
+
+  /**
+   * An Async wrapper for GetIntermediateTableAnalysisRule that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetIntermediateTableAnalysisRuleRequestT = Model::GetIntermediateTableAnalysisRuleRequest>
+  void GetIntermediateTableAnalysisRuleAsync(const GetIntermediateTableAnalysisRuleRequestT& request,
+                                             const GetIntermediateTableAnalysisRuleResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::GetIntermediateTableAnalysisRule, request, handler, context);
   }
 
   /**
@@ -1804,6 +2020,67 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the version history of an intermediate table. Each call to
+   * <code>PopulateIntermediateTable</code> creates a new version. We recommend using
+   * pagination to ensure that the operation returns quickly and
+   * successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIntermediateTableVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListIntermediateTableVersionsOutcome ListIntermediateTableVersions(
+      const Model::ListIntermediateTableVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListIntermediateTableVersions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListIntermediateTableVersionsRequestT = Model::ListIntermediateTableVersionsRequest>
+  Model::ListIntermediateTableVersionsOutcomeCallable ListIntermediateTableVersionsCallable(
+      const ListIntermediateTableVersionsRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::ListIntermediateTableVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListIntermediateTableVersions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListIntermediateTableVersionsRequestT = Model::ListIntermediateTableVersionsRequest>
+  void ListIntermediateTableVersionsAsync(const ListIntermediateTableVersionsRequestT& request,
+                                          const ListIntermediateTableVersionsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::ListIntermediateTableVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists intermediate tables owned by the caller in a membership. We recommend
+   * using pagination to ensure that the operation returns quickly and
+   * successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIntermediateTables">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListIntermediateTablesOutcome ListIntermediateTables(const Model::ListIntermediateTablesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListIntermediateTables that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListIntermediateTablesRequestT = Model::ListIntermediateTablesRequest>
+  Model::ListIntermediateTablesOutcomeCallable ListIntermediateTablesCallable(const ListIntermediateTablesRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::ListIntermediateTables, request);
+  }
+
+  /**
+   * An Async wrapper for ListIntermediateTables that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListIntermediateTablesRequestT = Model::ListIntermediateTablesRequest>
+  void ListIntermediateTablesAsync(const ListIntermediateTablesRequestT& request,
+                                   const ListIntermediateTablesResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::ListIntermediateTables, request, handler, context);
+  }
+
+  /**
    * <p>Lists all members within a collaboration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListMembers">AWS
    * API Reference</a></p>
@@ -2045,6 +2322,38 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
                                    const PopulateIdMappingTableResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CleanRoomsClient::PopulateIdMappingTable, request, handler, context);
+  }
+
+  /**
+   * <p>Executes the stored query of an intermediate table to materialize data into
+   * managed storage. With this operation, you can perform initial population and
+   * subsequent refreshes. Each call creates a new version. The returned analysis ID
+   * can be tracked using <code>GetProtectedQuery</code>. Only the intermediate table
+   * owner can call this operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PopulateIntermediateTable">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PopulateIntermediateTableOutcome PopulateIntermediateTable(const Model::PopulateIntermediateTableRequest& request) const;
+
+  /**
+   * A Callable wrapper for PopulateIntermediateTable that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PopulateIntermediateTableRequestT = Model::PopulateIntermediateTableRequest>
+  Model::PopulateIntermediateTableOutcomeCallable PopulateIntermediateTableCallable(
+      const PopulateIntermediateTableRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::PopulateIntermediateTable, request);
+  }
+
+  /**
+   * An Async wrapper for PopulateIntermediateTable that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PopulateIntermediateTableRequestT = Model::PopulateIntermediateTableRequest>
+  void PopulateIntermediateTableAsync(const PopulateIntermediateTableRequestT& request,
+                                      const PopulateIntermediateTableResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::PopulateIntermediateTable, request, handler, context);
   }
 
   /**
@@ -2467,6 +2776,65 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
                                          const UpdateIdNamespaceAssociationResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CleanRoomsClient::UpdateIdNamespaceAssociation, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an intermediate table. You can update the description, KMS key ARN,
+   * and column types of existing columns. Only the intermediate table owner can call
+   * this operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIntermediateTable">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateIntermediateTableOutcome UpdateIntermediateTable(const Model::UpdateIntermediateTableRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateIntermediateTable that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateIntermediateTableRequestT = Model::UpdateIntermediateTableRequest>
+  Model::UpdateIntermediateTableOutcomeCallable UpdateIntermediateTableCallable(const UpdateIntermediateTableRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::UpdateIntermediateTable, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateIntermediateTable that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateIntermediateTableRequestT = Model::UpdateIntermediateTableRequest>
+  void UpdateIntermediateTableAsync(const UpdateIntermediateTableRequestT& request,
+                                    const UpdateIntermediateTableResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::UpdateIntermediateTable, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the analysis rule policy for an intermediate table. Only the
+   * intermediate table owner can call this operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIntermediateTableAnalysisRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateIntermediateTableAnalysisRuleOutcome UpdateIntermediateTableAnalysisRule(
+      const Model::UpdateIntermediateTableAnalysisRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateIntermediateTableAnalysisRule that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename UpdateIntermediateTableAnalysisRuleRequestT = Model::UpdateIntermediateTableAnalysisRuleRequest>
+  Model::UpdateIntermediateTableAnalysisRuleOutcomeCallable UpdateIntermediateTableAnalysisRuleCallable(
+      const UpdateIntermediateTableAnalysisRuleRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::UpdateIntermediateTableAnalysisRule, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateIntermediateTableAnalysisRule that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename UpdateIntermediateTableAnalysisRuleRequestT = Model::UpdateIntermediateTableAnalysisRuleRequest>
+  void UpdateIntermediateTableAnalysisRuleAsync(const UpdateIntermediateTableAnalysisRuleRequestT& request,
+                                                const UpdateIntermediateTableAnalysisRuleResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::UpdateIntermediateTableAnalysisRule, request, handler, context);
   }
 
   /**

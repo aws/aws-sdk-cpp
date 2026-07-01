@@ -847,6 +847,11 @@ MetricAlarm& MetricAlarm::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                 m_stateTransitionedTimestampHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "EvaluationWindow") {
+                m_evaluationWindow = EvaluationWindow(decoder);
+                m_evaluationWindowHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "EvaluationCriteria") {
                 m_evaluationCriteria = EvaluationCriteria(decoder);
                 m_evaluationCriteriaHasBeenSet = true;
@@ -1711,6 +1716,11 @@ MetricAlarm& MetricAlarm::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
               m_stateTransitionedTimestampHasBeenSet = true;
             }
 
+            else if (initialKeyStr == "EvaluationWindow") {
+              m_evaluationWindow = EvaluationWindow(decoder);
+              m_evaluationWindowHasBeenSet = true;
+            }
+
             else if (initialKeyStr == "EvaluationCriteria") {
               m_evaluationCriteria = EvaluationCriteria(decoder);
               m_evaluationCriteriaHasBeenSet = true;
@@ -1833,6 +1843,9 @@ void MetricAlarm::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     mapSize++;
   }
   if (m_stateTransitionedTimestampHasBeenSet) {
+    mapSize++;
+  }
+  if (m_evaluationWindowHasBeenSet) {
     mapSize++;
   }
   if (m_evaluationCriteriaHasBeenSet) {
@@ -2006,6 +2019,11 @@ void MetricAlarm::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("StateTransitionedTimestamp"));
     encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
     encoder.WriteUInt(m_stateTransitionedTimestamp.Seconds());
+  }
+
+  if (m_evaluationWindowHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EvaluationWindow"));
+    m_evaluationWindow.CborEncode(encoder);
   }
 
   if (m_evaluationCriteriaHasBeenSet) {

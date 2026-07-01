@@ -19,6 +19,8 @@ static const int Solutions_HASH = HashingUtils::HashString("Solutions");
 static const int AwsProducts_HASH = HashingUtils::HashString("AwsProducts");
 static const int AwsMarketplaceOffers_HASH = HashingUtils::HashString("AwsMarketplaceOffers");
 static const int AwsMarketplaceOfferSets_HASH = HashingUtils::HashString("AwsMarketplaceOfferSets");
+static const int AwsMarketplaceSolutions_HASH = HashingUtils::HashString("AwsMarketplaceSolutions");
+static const int AwsMarketplaceProducts_HASH = HashingUtils::HashString("AwsMarketplaceProducts");
 
 RelatedEntityType GetRelatedEntityTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +32,10 @@ RelatedEntityType GetRelatedEntityTypeForName(const Aws::String& name) {
     return RelatedEntityType::AwsMarketplaceOffers;
   } else if (hashCode == AwsMarketplaceOfferSets_HASH) {
     return RelatedEntityType::AwsMarketplaceOfferSets;
+  } else if (hashCode == AwsMarketplaceSolutions_HASH) {
+    return RelatedEntityType::AwsMarketplaceSolutions;
+  } else if (hashCode == AwsMarketplaceProducts_HASH) {
+    return RelatedEntityType::AwsMarketplaceProducts;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +58,10 @@ Aws::String GetNameForRelatedEntityType(RelatedEntityType enumValue) {
       return "AwsMarketplaceOffers";
     case RelatedEntityType::AwsMarketplaceOfferSets:
       return "AwsMarketplaceOfferSets";
+    case RelatedEntityType::AwsMarketplaceSolutions:
+      return "AwsMarketplaceSolutions";
+    case RelatedEntityType::AwsMarketplaceProducts:
+      return "AwsMarketplaceProducts";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -45,6 +45,7 @@ enum class ACMErrors {
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER,
   INVALID_ARGS,
   INVALID_ARN,
   INVALID_DOMAIN_VALIDATION_OPTIONS,
@@ -54,6 +55,7 @@ enum class ACMErrors {
   LIMIT_EXCEEDED,
   REQUEST_IN_PROGRESS,
   RESOURCE_IN_USE,
+  SERVICE_QUOTA_EXCEEDED,
   TAG_POLICY,
   TOO_MANY_TAGS
 };

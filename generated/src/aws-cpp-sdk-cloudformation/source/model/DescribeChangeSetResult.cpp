@@ -182,6 +182,11 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator=(const Aws::AmazonWeb
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deploymentModeNode.GetText()).c_str()));
       m_deploymentModeHasBeenSet = true;
     }
+    XmlNode deploymentConfigNode = resultNode.FirstChild("DeploymentConfig");
+    if (!deploymentConfigNode.IsNull()) {
+      m_deploymentConfig = deploymentConfigNode;
+      m_deploymentConfigHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

@@ -50,6 +50,10 @@ ConnectionPropertiesInput& ConnectionPropertiesInput::operator=(JsonView jsonVal
     m_s3Properties = jsonValue.GetObject("s3Properties");
     m_s3PropertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("snowflakeProperties")) {
+    m_snowflakeProperties = jsonValue.GetObject("snowflakeProperties");
+    m_snowflakePropertiesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("amazonQProperties")) {
     m_amazonQProperties = jsonValue.GetObject("amazonQProperties");
     m_amazonQPropertiesHasBeenSet = true;
@@ -110,6 +114,10 @@ JsonValue ConnectionPropertiesInput::Jsonize() const {
 
   if (m_s3PropertiesHasBeenSet) {
     payload.WithObject("s3Properties", m_s3Properties.Jsonize());
+  }
+
+  if (m_snowflakePropertiesHasBeenSet) {
+    payload.WithObject("snowflakeProperties", m_snowflakeProperties.Jsonize());
   }
 
   if (m_amazonQPropertiesHasBeenSet) {

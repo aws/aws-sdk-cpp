@@ -14,6 +14,7 @@
 #include <aws/datazone/model/MlflowPropertiesOutput.h>
 #include <aws/datazone/model/RedshiftPropertiesOutput.h>
 #include <aws/datazone/model/S3PropertiesOutput.h>
+#include <aws/datazone/model/SnowflakePropertiesOutput.h>
 #include <aws/datazone/model/SparkEmrPropertiesOutput.h>
 #include <aws/datazone/model/SparkGluePropertiesOutput.h>
 #include <aws/datazone/model/VpcPropertiesOutput.h>
@@ -190,6 +191,24 @@ class ConnectionPropertiesOutput {
 
   ///@{
   /**
+   * <p>The Snowflake-specific connection properties for an existing connection.</p>
+   */
+  inline const SnowflakePropertiesOutput& GetSnowflakeProperties() const { return m_snowflakeProperties; }
+  inline bool SnowflakePropertiesHasBeenSet() const { return m_snowflakePropertiesHasBeenSet; }
+  template <typename SnowflakePropertiesT = SnowflakePropertiesOutput>
+  void SetSnowflakeProperties(SnowflakePropertiesT&& value) {
+    m_snowflakePropertiesHasBeenSet = true;
+    m_snowflakeProperties = std::forward<SnowflakePropertiesT>(value);
+  }
+  template <typename SnowflakePropertiesT = SnowflakePropertiesOutput>
+  ConnectionPropertiesOutput& WithSnowflakeProperties(SnowflakePropertiesT&& value) {
+    SetSnowflakeProperties(std::forward<SnowflakePropertiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Q properties of the connection.</p>
    */
   inline const AmazonQPropertiesOutput& GetAmazonQProperties() const { return m_amazonQProperties; }
@@ -312,6 +331,8 @@ class ConnectionPropertiesOutput {
 
   S3PropertiesOutput m_s3Properties;
 
+  SnowflakePropertiesOutput m_snowflakeProperties;
+
   AmazonQPropertiesOutput m_amazonQProperties;
 
   MlflowPropertiesOutput m_mlflowProperties;
@@ -331,6 +352,7 @@ class ConnectionPropertiesOutput {
   bool m_sparkEmrPropertiesHasBeenSet = false;
   bool m_sparkGluePropertiesHasBeenSet = false;
   bool m_s3PropertiesHasBeenSet = false;
+  bool m_snowflakePropertiesHasBeenSet = false;
   bool m_amazonQPropertiesHasBeenSet = false;
   bool m_mlflowPropertiesHasBeenSet = false;
   bool m_workflowsMwaaPropertiesHasBeenSet = false;

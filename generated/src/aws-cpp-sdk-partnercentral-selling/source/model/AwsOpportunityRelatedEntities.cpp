@@ -32,6 +32,22 @@ AwsOpportunityRelatedEntities& AwsOpportunityRelatedEntities::operator=(JsonView
     }
     m_solutionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AwsMarketplaceSolutions")) {
+    Aws::Utils::Array<JsonView> awsMarketplaceSolutionsJsonList = jsonValue.GetArray("AwsMarketplaceSolutions");
+    for (unsigned awsMarketplaceSolutionsIndex = 0; awsMarketplaceSolutionsIndex < awsMarketplaceSolutionsJsonList.GetLength();
+         ++awsMarketplaceSolutionsIndex) {
+      m_awsMarketplaceSolutions.push_back(awsMarketplaceSolutionsJsonList[awsMarketplaceSolutionsIndex].AsString());
+    }
+    m_awsMarketplaceSolutionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AwsMarketplaceProducts")) {
+    Aws::Utils::Array<JsonView> awsMarketplaceProductsJsonList = jsonValue.GetArray("AwsMarketplaceProducts");
+    for (unsigned awsMarketplaceProductsIndex = 0; awsMarketplaceProductsIndex < awsMarketplaceProductsJsonList.GetLength();
+         ++awsMarketplaceProductsIndex) {
+      m_awsMarketplaceProducts.push_back(awsMarketplaceProductsJsonList[awsMarketplaceProductsIndex].AsString());
+    }
+    m_awsMarketplaceProductsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -52,6 +68,24 @@ JsonValue AwsOpportunityRelatedEntities::Jsonize() const {
       solutionsJsonList[solutionsIndex].AsString(m_solutions[solutionsIndex]);
     }
     payload.WithArray("Solutions", std::move(solutionsJsonList));
+  }
+
+  if (m_awsMarketplaceSolutionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> awsMarketplaceSolutionsJsonList(m_awsMarketplaceSolutions.size());
+    for (unsigned awsMarketplaceSolutionsIndex = 0; awsMarketplaceSolutionsIndex < awsMarketplaceSolutionsJsonList.GetLength();
+         ++awsMarketplaceSolutionsIndex) {
+      awsMarketplaceSolutionsJsonList[awsMarketplaceSolutionsIndex].AsString(m_awsMarketplaceSolutions[awsMarketplaceSolutionsIndex]);
+    }
+    payload.WithArray("AwsMarketplaceSolutions", std::move(awsMarketplaceSolutionsJsonList));
+  }
+
+  if (m_awsMarketplaceProductsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> awsMarketplaceProductsJsonList(m_awsMarketplaceProducts.size());
+    for (unsigned awsMarketplaceProductsIndex = 0; awsMarketplaceProductsIndex < awsMarketplaceProductsJsonList.GetLength();
+         ++awsMarketplaceProductsIndex) {
+      awsMarketplaceProductsJsonList[awsMarketplaceProductsIndex].AsString(m_awsMarketplaceProducts[awsMarketplaceProductsIndex]);
+    }
+    payload.WithArray("AwsMarketplaceProducts", std::move(awsMarketplaceProductsJsonList));
   }
 
   return payload;

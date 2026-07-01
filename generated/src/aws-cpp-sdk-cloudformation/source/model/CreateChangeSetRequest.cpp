@@ -142,6 +142,14 @@ Aws::String CreateChangeSetRequest::SerializePayload() const {
     ss << "DeploymentMode=" << StringUtils::URLEncode(DeploymentModeMapper::GetNameForDeploymentMode(m_deploymentMode)) << "&";
   }
 
+  if (m_deploymentConfigHasBeenSet) {
+    m_deploymentConfig.OutputToStream(ss, "DeploymentConfig");
+  }
+
+  if (m_disableValidationHasBeenSet) {
+    ss << "DisableValidation=" << std::boolalpha << m_disableValidation << "&";
+  }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

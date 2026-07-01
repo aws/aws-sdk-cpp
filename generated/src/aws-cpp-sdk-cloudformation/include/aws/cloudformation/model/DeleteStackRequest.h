@@ -7,6 +7,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/model/DeletionMode.h>
+#include <aws/cloudformation/model/DeploymentConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -159,6 +160,25 @@ class DeleteStackRequest : public CloudFormationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The deployment configuration for this stack operation, including the
+   * deployment mode.</p>
+   */
+  inline const DeploymentConfig& GetDeploymentConfig() const { return m_deploymentConfig; }
+  inline bool DeploymentConfigHasBeenSet() const { return m_deploymentConfigHasBeenSet; }
+  template <typename DeploymentConfigT = DeploymentConfig>
+  void SetDeploymentConfig(DeploymentConfigT&& value) {
+    m_deploymentConfigHasBeenSet = true;
+    m_deploymentConfig = std::forward<DeploymentConfigT>(value);
+  }
+  template <typename DeploymentConfigT = DeploymentConfig>
+  DeleteStackRequest& WithDeploymentConfig(DeploymentConfigT&& value) {
+    SetDeploymentConfig(std::forward<DeploymentConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_stackName;
 
@@ -169,11 +189,14 @@ class DeleteStackRequest : public CloudFormationRequest {
   Aws::String m_clientRequestToken;
 
   DeletionMode m_deletionMode{DeletionMode::NOT_SET};
+
+  DeploymentConfig m_deploymentConfig;
   bool m_stackNameHasBeenSet = false;
   bool m_retainResourcesHasBeenSet = false;
   bool m_roleARNHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;
   bool m_deletionModeHasBeenSet = false;
+  bool m_deploymentConfigHasBeenSet = false;
 };
 
 }  // namespace Model

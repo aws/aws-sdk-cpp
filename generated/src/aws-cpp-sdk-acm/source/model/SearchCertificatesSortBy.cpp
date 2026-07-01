@@ -33,6 +33,9 @@ static const int MANAGED_BY_HASH = HashingUtils::HashString("MANAGED_BY");
 static const int EXPORT_OPTION_HASH = HashingUtils::HashString("EXPORT_OPTION");
 static const int VALIDATION_METHOD_HASH = HashingUtils::HashString("VALIDATION_METHOD");
 static const int IMPORTED_AT_HASH = HashingUtils::HashString("IMPORTED_AT");
+static const int ACME_ENDPOINT_ARN_HASH = HashingUtils::HashString("ACME_ENDPOINT_ARN");
+static const int ACME_ACCOUNT_ID_HASH = HashingUtils::HashString("ACME_ACCOUNT_ID");
+static const int CERTIFICATE_KEY_PAIR_ORIGIN_HASH = HashingUtils::HashString("CERTIFICATE_KEY_PAIR_ORIGIN");
 
 SearchCertificatesSortBy GetSearchCertificatesSortByForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -72,6 +75,12 @@ SearchCertificatesSortBy GetSearchCertificatesSortByForName(const Aws::String& n
     return SearchCertificatesSortBy::VALIDATION_METHOD;
   } else if (hashCode == IMPORTED_AT_HASH) {
     return SearchCertificatesSortBy::IMPORTED_AT;
+  } else if (hashCode == ACME_ENDPOINT_ARN_HASH) {
+    return SearchCertificatesSortBy::ACME_ENDPOINT_ARN;
+  } else if (hashCode == ACME_ACCOUNT_ID_HASH) {
+    return SearchCertificatesSortBy::ACME_ACCOUNT_ID;
+  } else if (hashCode == CERTIFICATE_KEY_PAIR_ORIGIN_HASH) {
+    return SearchCertificatesSortBy::CERTIFICATE_KEY_PAIR_ORIGIN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -122,6 +131,12 @@ Aws::String GetNameForSearchCertificatesSortBy(SearchCertificatesSortBy enumValu
       return "VALIDATION_METHOD";
     case SearchCertificatesSortBy::IMPORTED_AT:
       return "IMPORTED_AT";
+    case SearchCertificatesSortBy::ACME_ENDPOINT_ARN:
+      return "ACME_ENDPOINT_ARN";
+    case SearchCertificatesSortBy::ACME_ACCOUNT_ID:
+      return "ACME_ACCOUNT_ID";
+    case SearchCertificatesSortBy::CERTIFICATE_KEY_PAIR_ORIGIN:
+      return "CERTIFICATE_KEY_PAIR_ORIGIN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

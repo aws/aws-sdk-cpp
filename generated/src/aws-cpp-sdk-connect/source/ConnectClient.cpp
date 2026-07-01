@@ -39,6 +39,7 @@
 #include <aws/connect/model/ClaimPhoneNumberRequest.h>
 #include <aws/connect/model/CompleteAttachedFileUploadRequest.h>
 #include <aws/connect/model/CreateAgentStatusRequest.h>
+#include <aws/connect/model/CreateAttachedFileRequest.h>
 #include <aws/connect/model/CreateContactFlowModuleAliasRequest.h>
 #include <aws/connect/model/CreateContactFlowModuleRequest.h>
 #include <aws/connect/model/CreateContactFlowModuleVersionRequest.h>
@@ -104,7 +105,6 @@
 #include <aws/connect/model/DeleteTestCaseRequest.h>
 #include <aws/connect/model/DeleteTrafficDistributionGroupRequest.h>
 #include <aws/connect/model/DeleteUseCaseRequest.h>
-#include <aws/connect/model/DeleteUserHierarchyGroupRequest.h>
 #include <aws/connect/model/DeleteUserRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -988,6 +988,30 @@ CreateAgentStatusOutcome ConnectClient::CreateAgentStatus(const CreateAgentStatu
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? CreateAgentStatusOutcome(result.GetResultWithOwnership())
                             : CreateAgentStatusOutcome(std::move(result.GetError()));
+}
+
+CreateAttachedFileOutcome ConnectClient::CreateAttachedFile(const CreateAttachedFileRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateAttachedFile", "Required field: InstanceId, is not set");
+    return CreateAttachedFileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [InstanceId]", false));
+  }
+  if (!request.AssociatedResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateAttachedFile", "Required field: AssociatedResourceArn, is not set");
+    return CreateAttachedFileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [AssociatedResourceArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/attached-files/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/files");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateAttachedFileOutcome(result.GetResultWithOwnership())
+                            : CreateAttachedFileOutcome(std::move(result.GetError()));
 }
 
 CreateContactOutcome ConnectClient::CreateContact(const CreateContactRequest& request) const {
@@ -2432,28 +2456,4 @@ DeleteUserOutcome ConnectClient::DeleteUser(const DeleteUserRequest& request) co
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
-}
-
-DeleteUserHierarchyGroupOutcome ConnectClient::DeleteUserHierarchyGroup(const DeleteUserHierarchyGroupRequest& request) const {
-  if (!request.HierarchyGroupIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteUserHierarchyGroup", "Required field: HierarchyGroupId, is not set");
-    return DeleteUserHierarchyGroupOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                "Missing required field [HierarchyGroupId]", false));
-  }
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteUserHierarchyGroup", "Required field: InstanceId, is not set");
-    return DeleteUserHierarchyGroupOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                "Missing required field [InstanceId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/user-hierarchy-groups/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHierarchyGroupId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
-  return result.IsSuccess() ? DeleteUserHierarchyGroupOutcome(result.GetResultWithOwnership())
-                            : DeleteUserHierarchyGroupOutcome(std::move(result.GetError()));
 }

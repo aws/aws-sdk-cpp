@@ -47,8 +47,10 @@
 #include <aws/connect/model/AllowedCapabilities.h>
 #include <aws/connect/model/AllowedExtension.h>
 #include <aws/connect/model/AllowedUserAction.h>
+#include <aws/connect/model/AnalyticsConfiguration.h>
 #include <aws/connect/model/AnalyticsDataAssociationResult.h>
 #include <aws/connect/model/AnalyticsDataSetsResult.h>
+#include <aws/connect/model/AnalyticsMode.h>
 #include <aws/connect/model/AnswerMachineDetectionConfig.h>
 #include <aws/connect/model/AnsweringMachineDetectionStatus.h>
 #include <aws/connect/model/Application.h>
@@ -134,6 +136,7 @@
 #include <aws/connect/model/BatchUpdateDataTableValueRequest.h>
 #include <aws/connect/model/BatchUpdateDataTableValueResult.h>
 #include <aws/connect/model/BatchUpdateDataTableValueSuccessResult.h>
+#include <aws/connect/model/Behavior.h>
 #include <aws/connect/model/BehaviorType.h>
 #include <aws/connect/model/BooleanComparisonType.h>
 #include <aws/connect/model/BooleanCondition.h>
@@ -211,6 +214,8 @@
 #include <aws/connect/model/ControlPlaneUserAttributeFilter.h>
 #include <aws/connect/model/CreateAgentStatusRequest.h>
 #include <aws/connect/model/CreateAgentStatusResult.h>
+#include <aws/connect/model/CreateAttachedFileRequest.h>
+#include <aws/connect/model/CreateAttachedFileResult.h>
 #include <aws/connect/model/CreateCaseActionDefinition.h>
 #include <aws/connect/model/CreateContactFlowModuleAliasRequest.h>
 #include <aws/connect/model/CreateContactFlowModuleAliasResult.h>
@@ -708,6 +713,7 @@
 #include <aws/connect/model/KinesisFirehoseConfig.h>
 #include <aws/connect/model/KinesisStreamConfig.h>
 #include <aws/connect/model/KinesisVideoStreamConfig.h>
+#include <aws/connect/model/LanguageConfiguration.h>
 #include <aws/connect/model/LexBot.h>
 #include <aws/connect/model/LexBotConfig.h>
 #include <aws/connect/model/LexV2Bot.h>
@@ -854,6 +860,7 @@
 #include <aws/connect/model/ListWorkspacesRequest.h>
 #include <aws/connect/model/ListWorkspacesResult.h>
 #include <aws/connect/model/LocaleCode.h>
+#include <aws/connect/model/MaskMode.h>
 #include <aws/connect/model/MatchCriteria.h>
 #include <aws/connect/model/MediaConcurrency.h>
 #include <aws/connect/model/MediaItem.h>
@@ -940,6 +947,7 @@
 #include <aws/connect/model/PhoneNumberType.h>
 #include <aws/connect/model/PhoneNumberWorkflowStatus.h>
 #include <aws/connect/model/PhoneType.h>
+#include <aws/connect/model/Policy.h>
 #include <aws/connect/model/PostAcceptTimeoutConfig.h>
 #include <aws/connect/model/PredefinedAttribute.h>
 #include <aws/connect/model/PredefinedAttributeConfiguration.h>
@@ -1014,6 +1022,7 @@
 #include <aws/connect/model/RecurrenceConfig.h>
 #include <aws/connect/model/RecurrenceFrequency.h>
 #include <aws/connect/model/RecurrencePattern.h>
+#include <aws/connect/model/RedactionConfiguration.h>
 #include <aws/connect/model/Reference.h>
 #include <aws/connect/model/ReferenceStatus.h>
 #include <aws/connect/model/ReferenceSummary.h>
@@ -1053,6 +1062,7 @@
 #include <aws/connect/model/RulePublishStatus.h>
 #include <aws/connect/model/RuleSummary.h>
 #include <aws/connect/model/RuleTriggerEventSource.h>
+#include <aws/connect/model/RulesConfiguration.h>
 #include <aws/connect/model/S3Config.h>
 #include <aws/connect/model/ScreenShareCapability.h>
 #include <aws/connect/model/SearchAgentStatusesRequest.h>
@@ -1136,6 +1146,7 @@
 #include <aws/connect/model/SendNotificationActionDefinition.h>
 #include <aws/connect/model/SendOutboundEmailRequest.h>
 #include <aws/connect/model/SendOutboundEmailResult.h>
+#include <aws/connect/model/SentimentConfiguration.h>
 #include <aws/connect/model/ServiceQuotaExceededException.h>
 #include <aws/connect/model/ServiceQuotaExceededExceptionReason.h>
 #include <aws/connect/model/SignInConfig.h>
@@ -1153,6 +1164,8 @@
 #include <aws/connect/model/StartAttachedFileUploadResult.h>
 #include <aws/connect/model/StartChatContactRequest.h>
 #include <aws/connect/model/StartChatContactResult.h>
+#include <aws/connect/model/StartContactConversationalAnalyticsJobRequest.h>
+#include <aws/connect/model/StartContactConversationalAnalyticsJobResult.h>
 #include <aws/connect/model/StartContactEvaluationRequest.h>
 #include <aws/connect/model/StartContactEvaluationResult.h>
 #include <aws/connect/model/StartContactMediaProcessingRequest.h>
@@ -1202,6 +1215,8 @@
 #include <aws/connect/model/SubmitContactEvaluationResult.h>
 #include <aws/connect/model/SuccessfulBatchAssociationSummary.h>
 #include <aws/connect/model/SuccessfulRequest.h>
+#include <aws/connect/model/SummaryConfiguration.h>
+#include <aws/connect/model/SummaryMode.h>
 #include <aws/connect/model/SuspendContactRecordingRequest.h>
 #include <aws/connect/model/SuspendContactRecordingResult.h>
 #include <aws/connect/model/TagCondition.h>

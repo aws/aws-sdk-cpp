@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eks/EKS_EXPORTS.h>
+#include <aws/eks/model/Cancellation.h>
 #include <aws/eks/model/ErrorDetail.h>
 #include <aws/eks/model/UpdateParam.h>
 #include <aws/eks/model/UpdateStatus.h>
@@ -152,6 +153,25 @@ class Update {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The latest cancellation information for the update. This field is present
+   * only if any cancellation is attempted for the update.</p>
+   */
+  inline const Cancellation& GetCancellation() const { return m_cancellation; }
+  inline bool CancellationHasBeenSet() const { return m_cancellationHasBeenSet; }
+  template <typename CancellationT = Cancellation>
+  void SetCancellation(CancellationT&& value) {
+    m_cancellationHasBeenSet = true;
+    m_cancellation = std::forward<CancellationT>(value);
+  }
+  template <typename CancellationT = Cancellation>
+  Update& WithCancellation(CancellationT&& value) {
+    SetCancellation(std::forward<CancellationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -164,12 +184,15 @@ class Update {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Vector<ErrorDetail> m_errors;
+
+  Cancellation m_cancellation;
   bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_paramsHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
+  bool m_cancellationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -6,6 +6,7 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/DeleteUserHierarchyGroupRequest.h>
 #include <aws/connect/model/DeleteViewRequest.h>
 #include <aws/connect/model/DeleteViewVersionRequest.h>
 #include <aws/connect/model/DeleteVocabularyRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/ListDataTablesRequest.h>
 #include <aws/connect/model/ListDefaultVocabulariesRequest.h>
 #include <aws/connect/model/ListEntitySecurityProfilesRequest.h>
-#include <aws/connect/model/ListEvaluationFormVersionsRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -131,6 +131,30 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteUserHierarchyGroupOutcome ConnectClient::DeleteUserHierarchyGroup(const DeleteUserHierarchyGroupRequest& request) const {
+  if (!request.HierarchyGroupIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteUserHierarchyGroup", "Required field: HierarchyGroupId, is not set");
+    return DeleteUserHierarchyGroupOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [HierarchyGroupId]", false));
+  }
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteUserHierarchyGroup", "Required field: InstanceId, is not set");
+    return DeleteUserHierarchyGroupOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [InstanceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/user-hierarchy-groups/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHierarchyGroupId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUserHierarchyGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteUserHierarchyGroupOutcome(std::move(result.GetError()));
+}
 
 DeleteViewOutcome ConnectClient::DeleteView(const DeleteViewRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
@@ -2470,29 +2494,4 @@ ListEntitySecurityProfilesOutcome ConnectClient::ListEntitySecurityProfiles(cons
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListEntitySecurityProfilesOutcome(result.GetResultWithOwnership())
                             : ListEntitySecurityProfilesOutcome(std::move(result.GetError()));
-}
-
-ListEvaluationFormVersionsOutcome ConnectClient::ListEvaluationFormVersions(const ListEvaluationFormVersionsRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListEvaluationFormVersions", "Required field: InstanceId, is not set");
-    return ListEvaluationFormVersionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                  "Missing required field [InstanceId]", false));
-  }
-  if (!request.EvaluationFormIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListEvaluationFormVersions", "Required field: EvaluationFormId, is not set");
-    return ListEvaluationFormVersionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                  "Missing required field [EvaluationFormId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/evaluation-forms/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvaluationFormId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ListEvaluationFormVersionsOutcome(result.GetResultWithOwnership())
-                            : ListEvaluationFormVersionsOutcome(std::move(result.GetError()));
 }

@@ -35,3 +35,10 @@ Aws::Http::HeaderValueCollection ResendValidationEmailRequest::GetRequestSpecifi
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CertificateManager.ResendValidationEmail"));
   return headers;
 }
+
+ResendValidationEmailRequest::EndpointParameters ResendValidationEmailRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("ServiceType"), "ACM", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

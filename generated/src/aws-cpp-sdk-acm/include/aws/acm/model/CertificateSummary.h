@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/acm/model/CertificateExport.h>
+#include <aws/acm/model/CertificateKeyPairOrigin.h>
 #include <aws/acm/model/CertificateManagedBy.h>
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/CertificateType.h>
@@ -293,8 +294,7 @@ class CertificateSummary {
 
   ///@{
   /**
-   * <p>Indicates whether the certificate has been exported. This value exists only
-   * when the certificate type is <code>PRIVATE</code>.</p>
+   * <p>Indicates whether the certificate has been exported.</p>
    */
   inline bool GetExported() const { return m_exported; }
   inline bool ExportedHasBeenSet() const { return m_exportedHasBeenSet; }
@@ -453,6 +453,22 @@ class CertificateSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The origin of the certificate's key pair.</p>
+   */
+  inline CertificateKeyPairOrigin GetCertificateKeyPairOrigin() const { return m_certificateKeyPairOrigin; }
+  inline bool CertificateKeyPairOriginHasBeenSet() const { return m_certificateKeyPairOriginHasBeenSet; }
+  inline void SetCertificateKeyPairOrigin(CertificateKeyPairOrigin value) {
+    m_certificateKeyPairOriginHasBeenSet = true;
+    m_certificateKeyPairOrigin = value;
+  }
+  inline CertificateSummary& WithCertificateKeyPairOrigin(CertificateKeyPairOrigin value) {
+    SetCertificateKeyPairOrigin(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_certificateArn;
 
@@ -493,6 +509,8 @@ class CertificateSummary {
   Aws::Utils::DateTime m_revokedAt{};
 
   CertificateManagedBy m_managedBy{CertificateManagedBy::NOT_SET};
+
+  CertificateKeyPairOrigin m_certificateKeyPairOrigin{CertificateKeyPairOrigin::NOT_SET};
   bool m_certificateArnHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
   bool m_subjectAlternativeNameSummariesHasBeenSet = false;
@@ -513,6 +531,7 @@ class CertificateSummary {
   bool m_importedAtHasBeenSet = false;
   bool m_revokedAtHasBeenSet = false;
   bool m_managedByHasBeenSet = false;
+  bool m_certificateKeyPairOriginHasBeenSet = false;
 };
 
 }  // namespace Model

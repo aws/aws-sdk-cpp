@@ -22,6 +22,7 @@
 #include <aws/eks/model/AssociateAccessPolicyResult.h>
 #include <aws/eks/model/AssociateEncryptionConfigResult.h>
 #include <aws/eks/model/AssociateIdentityProviderConfigResult.h>
+#include <aws/eks/model/CancelUpdateResult.h>
 #include <aws/eks/model/CreateAccessEntryResult.h>
 #include <aws/eks/model/CreateAddonResult.h>
 #include <aws/eks/model/CreateCapabilityResult.h>
@@ -124,6 +125,7 @@ namespace Model {
 class AssociateAccessPolicyRequest;
 class AssociateEncryptionConfigRequest;
 class AssociateIdentityProviderConfigRequest;
+class CancelUpdateRequest;
 class CreateAccessEntryRequest;
 class CreateAddonRequest;
 class CreateCapabilityRequest;
@@ -191,6 +193,7 @@ class UpdatePodIdentityAssociationRequest;
 typedef Aws::Utils::Outcome<AssociateAccessPolicyResult, EKSError> AssociateAccessPolicyOutcome;
 typedef Aws::Utils::Outcome<AssociateEncryptionConfigResult, EKSError> AssociateEncryptionConfigOutcome;
 typedef Aws::Utils::Outcome<AssociateIdentityProviderConfigResult, EKSError> AssociateIdentityProviderConfigOutcome;
+typedef Aws::Utils::Outcome<CancelUpdateResult, EKSError> CancelUpdateOutcome;
 typedef Aws::Utils::Outcome<CreateAccessEntryResult, EKSError> CreateAccessEntryOutcome;
 typedef Aws::Utils::Outcome<CreateAddonResult, EKSError> CreateAddonOutcome;
 typedef Aws::Utils::Outcome<CreateCapabilityResult, EKSError> CreateCapabilityOutcome;
@@ -258,6 +261,7 @@ typedef Aws::Utils::Outcome<UpdatePodIdentityAssociationResult, EKSError> Update
 typedef std::future<AssociateAccessPolicyOutcome> AssociateAccessPolicyOutcomeCallable;
 typedef std::future<AssociateEncryptionConfigOutcome> AssociateEncryptionConfigOutcomeCallable;
 typedef std::future<AssociateIdentityProviderConfigOutcome> AssociateIdentityProviderConfigOutcomeCallable;
+typedef std::future<CancelUpdateOutcome> CancelUpdateOutcomeCallable;
 typedef std::future<CreateAccessEntryOutcome> CreateAccessEntryOutcomeCallable;
 typedef std::future<CreateAddonOutcome> CreateAddonOutcomeCallable;
 typedef std::future<CreateCapabilityOutcome> CreateCapabilityOutcomeCallable;
@@ -335,6 +339,9 @@ typedef std::function<void(const EKSClient*, const Model::AssociateIdentityProvi
                            const Model::AssociateIdentityProviderConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateIdentityProviderConfigResponseReceivedHandler;
+typedef std::function<void(const EKSClient*, const Model::CancelUpdateRequest&, const Model::CancelUpdateOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CancelUpdateResponseReceivedHandler;
 typedef std::function<void(const EKSClient*, const Model::CreateAccessEntryRequest&, const Model::CreateAccessEntryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAccessEntryResponseReceivedHandler;

@@ -33,6 +33,11 @@ class SearchCertificatesRequest : public ACMRequest {
 
   AWS_ACM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  /**
+   * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+   */
+  AWS_ACM_API EndpointParameters GetEndpointContextParams() const override;
+
   ///@{
   /**
    * <p>A filter statement that defines the search criteria. You can combine multiple

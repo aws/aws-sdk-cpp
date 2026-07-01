@@ -7,6 +7,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/DeletionMode.h>
+#include <aws/cloudformation/model/DeploymentConfig.h>
 #include <aws/cloudformation/model/DetailedStatus.h>
 #include <aws/cloudformation/model/OperationEntry.h>
 #include <aws/cloudformation/model/Output.h>
@@ -263,6 +264,25 @@ class Stack {
   }
   inline Stack& WithDisableRollback(bool value) {
     SetDisableRollback(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The deployment configuration for the stack, including the deployment mode
+   * used for stack operations.</p>
+   */
+  inline const DeploymentConfig& GetDeploymentConfig() const { return m_deploymentConfig; }
+  inline bool DeploymentConfigHasBeenSet() const { return m_deploymentConfigHasBeenSet; }
+  template <typename DeploymentConfigT = DeploymentConfig>
+  void SetDeploymentConfig(DeploymentConfigT&& value) {
+    m_deploymentConfigHasBeenSet = true;
+    m_deploymentConfig = std::forward<DeploymentConfigT>(value);
+  }
+  template <typename DeploymentConfigT = DeploymentConfig>
+  Stack& WithDeploymentConfig(DeploymentConfigT&& value) {
+    SetDeploymentConfig(std::forward<DeploymentConfigT>(value));
     return *this;
   }
   ///@}
@@ -598,6 +618,8 @@ class Stack {
 
   bool m_disableRollback{false};
 
+  DeploymentConfig m_deploymentConfig;
+
   Aws::Vector<Aws::String> m_notificationARNs;
 
   int m_timeoutInMinutes{0};
@@ -637,6 +659,7 @@ class Stack {
   bool m_stackStatusHasBeenSet = false;
   bool m_stackStatusReasonHasBeenSet = false;
   bool m_disableRollbackHasBeenSet = false;
+  bool m_deploymentConfigHasBeenSet = false;
   bool m_notificationARNsHasBeenSet = false;
   bool m_timeoutInMinutesHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;

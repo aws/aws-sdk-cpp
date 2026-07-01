@@ -38,6 +38,13 @@
 #include <aws/network-firewall/model/CapacityUsageSummary.h>
 #include <aws/network-firewall/model/CheckCertificateRevocationStatusActions.h>
 #include <aws/network-firewall/model/ConfigurationSyncState.h>
+#include <aws/network-firewall/model/ContainerAssociationStatus.h>
+#include <aws/network-firewall/model/ContainerAssociationSummary.h>
+#include <aws/network-firewall/model/ContainerAttribute.h>
+#include <aws/network-firewall/model/ContainerMonitoringConfiguration.h>
+#include <aws/network-firewall/model/ContainerMonitoringType.h>
+#include <aws/network-firewall/model/CreateContainerAssociationRequest.h>
+#include <aws/network-firewall/model/CreateContainerAssociationResult.h>
 #include <aws/network-firewall/model/CreateFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/CreateFirewallPolicyResult.h>
 #include <aws/network-firewall/model/CreateFirewallRequest.h>
@@ -59,6 +66,8 @@
 #include <aws/network-firewall/model/CreateVpcEndpointAssociationRequest.h>
 #include <aws/network-firewall/model/CreateVpcEndpointAssociationResult.h>
 #include <aws/network-firewall/model/CustomAction.h>
+#include <aws/network-firewall/model/DeleteContainerAssociationRequest.h>
+#include <aws/network-firewall/model/DeleteContainerAssociationResult.h>
 #include <aws/network-firewall/model/DeleteFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/DeleteFirewallPolicyResult.h>
 #include <aws/network-firewall/model/DeleteFirewallRequest.h>
@@ -81,6 +90,8 @@
 #include <aws/network-firewall/model/DeleteTLSInspectionConfigurationResult.h>
 #include <aws/network-firewall/model/DeleteVpcEndpointAssociationRequest.h>
 #include <aws/network-firewall/model/DeleteVpcEndpointAssociationResult.h>
+#include <aws/network-firewall/model/DescribeContainerAssociationRequest.h>
+#include <aws/network-firewall/model/DescribeContainerAssociationResult.h>
 #include <aws/network-firewall/model/DescribeFirewallMetadataRequest.h>
 #include <aws/network-firewall/model/DescribeFirewallMetadataResult.h>
 #include <aws/network-firewall/model/DescribeFirewallPolicyRequest.h>
@@ -148,6 +159,8 @@
 #include <aws/network-firewall/model/IdentifiedType.h>
 #include <aws/network-firewall/model/ListAnalysisReportsRequest.h>
 #include <aws/network-firewall/model/ListAnalysisReportsResult.h>
+#include <aws/network-firewall/model/ListContainerAssociationsRequest.h>
+#include <aws/network-firewall/model/ListContainerAssociationsResult.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesRequest.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesResult.h>
 #include <aws/network-firewall/model/ListFirewallsRequest.h>
@@ -272,6 +285,8 @@
 #include <aws/network-firewall/model/UntagResourceResult.h>
 #include <aws/network-firewall/model/UpdateAvailabilityZoneChangeProtectionRequest.h>
 #include <aws/network-firewall/model/UpdateAvailabilityZoneChangeProtectionResult.h>
+#include <aws/network-firewall/model/UpdateContainerAssociationRequest.h>
+#include <aws/network-firewall/model/UpdateContainerAssociationResult.h>
 #include <aws/network-firewall/model/UpdateFirewallAnalysisSettingsRequest.h>
 #include <aws/network-firewall/model/UpdateFirewallAnalysisSettingsResult.h>
 #include <aws/network-firewall/model/UpdateFirewallDeleteProtectionRequest.h>

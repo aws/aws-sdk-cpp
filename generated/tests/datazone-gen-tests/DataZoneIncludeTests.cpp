@@ -105,6 +105,8 @@
 #include <aws/datazone/model/ConnectionStatus.h>
 #include <aws/datazone/model/ConnectionSummary.h>
 #include <aws/datazone/model/ConnectionType.h>
+#include <aws/datazone/model/ConnectivityProperties.h>
+#include <aws/datazone/model/ConnectivityPropertiesPatch.h>
 #include <aws/datazone/model/CreateAccountPoolRequest.h>
 #include <aws/datazone/model/CreateAccountPoolResult.h>
 #include <aws/datazone/model/CreateAssetFilterRequest.h>
@@ -419,6 +421,7 @@
 #include <aws/datazone/model/IamPropertiesOutput.h>
 #include <aws/datazone/model/IamPropertiesPatch.h>
 #include <aws/datazone/model/IamUserProfileDetails.h>
+#include <aws/datazone/model/IdentityMapping.h>
 #include <aws/datazone/model/Import.h>
 #include <aws/datazone/model/InExpression.h>
 #include <aws/datazone/model/InventorySearchScope.h>
@@ -447,6 +450,8 @@
 #include <aws/datazone/model/LineageNodeTypeItem.h>
 #include <aws/datazone/model/LineageRunDetails.h>
 #include <aws/datazone/model/LineageSqlQueryRunDetails.h>
+#include <aws/datazone/model/LineageSyncInput.h>
+#include <aws/datazone/model/LineageSyncOutput.h>
 #include <aws/datazone/model/LineageSyncSchedule.h>
 #include <aws/datazone/model/ListAccountPoolsRequest.h>
 #include <aws/datazone/model/ListAccountPoolsResult.h>
@@ -691,6 +696,9 @@
 #include <aws/datazone/model/SelfGrantStatusDetail.h>
 #include <aws/datazone/model/SelfGrantStatusOutput.h>
 #include <aws/datazone/model/SingleSignOn.h>
+#include <aws/datazone/model/SnowflakePropertiesInput.h>
+#include <aws/datazone/model/SnowflakePropertiesOutput.h>
+#include <aws/datazone/model/SnowflakePropertiesPatch.h>
 #include <aws/datazone/model/SortFieldAccountPool.h>
 #include <aws/datazone/model/SortFieldConnection.h>
 #include <aws/datazone/model/SortFieldProject.h>

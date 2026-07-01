@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/acm/ACMRequest.h>
 #include <aws/acm/ACM_EXPORTS.h>
+#include <aws/acm/model/CertificateKeyPairOrigin.h>
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/Filters.h>
 #include <aws/acm/model/SortBy.h>
@@ -35,6 +36,11 @@ class ListCertificatesRequest : public ACMRequest {
 
   AWS_ACM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  /**
+   * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+   */
+  AWS_ACM_API EndpointParameters GetEndpointContextParams() const override;
+
   ///@{
   /**
    * <p>Filter the certificate list by status value.</p>
@@ -54,6 +60,32 @@ class ListCertificatesRequest : public ACMRequest {
   inline ListCertificatesRequest& AddCertificateStatuses(CertificateStatus value) {
     m_certificateStatusesHasBeenSet = true;
     m_certificateStatuses.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter the certificate list by certificate key pair origin. Specify one or
+   * more <code>CertificateKeyPairOrigin</code> values. Default filtering returns
+   * only certificates with key pair origin of <code>AWS_MANAGED</code> and
+   * <code>CUSTOMER_PROVIDED</code>.</p>
+   */
+  inline const Aws::Vector<CertificateKeyPairOrigin>& GetCertificateKeyPairOrigins() const { return m_certificateKeyPairOrigins; }
+  inline bool CertificateKeyPairOriginsHasBeenSet() const { return m_certificateKeyPairOriginsHasBeenSet; }
+  template <typename CertificateKeyPairOriginsT = Aws::Vector<CertificateKeyPairOrigin>>
+  void SetCertificateKeyPairOrigins(CertificateKeyPairOriginsT&& value) {
+    m_certificateKeyPairOriginsHasBeenSet = true;
+    m_certificateKeyPairOrigins = std::forward<CertificateKeyPairOriginsT>(value);
+  }
+  template <typename CertificateKeyPairOriginsT = Aws::Vector<CertificateKeyPairOrigin>>
+  ListCertificatesRequest& WithCertificateKeyPairOrigins(CertificateKeyPairOriginsT&& value) {
+    SetCertificateKeyPairOrigins(std::forward<CertificateKeyPairOriginsT>(value));
+    return *this;
+  }
+  inline ListCertificatesRequest& AddCertificateKeyPairOrigins(CertificateKeyPairOrigin value) {
+    m_certificateKeyPairOriginsHasBeenSet = true;
+    m_certificateKeyPairOrigins.push_back(value);
     return *this;
   }
   ///@}
@@ -153,6 +185,8 @@ class ListCertificatesRequest : public ACMRequest {
  private:
   Aws::Vector<CertificateStatus> m_certificateStatuses;
 
+  Aws::Vector<CertificateKeyPairOrigin> m_certificateKeyPairOrigins;
+
   Filters m_includes;
 
   Aws::String m_nextToken;
@@ -163,6 +197,7 @@ class ListCertificatesRequest : public ACMRequest {
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
   bool m_certificateStatusesHasBeenSet = false;
+  bool m_certificateKeyPairOriginsHasBeenSet = false;
   bool m_includesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;

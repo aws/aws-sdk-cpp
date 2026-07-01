@@ -101,8 +101,7 @@ class DeploymentCircuitBreaker {
   ///@{
   /**
    * <p>The threshold configuration that controls when the deployment circuit breaker
-   * triggers. For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ThresholdConfiguration.html">ThresholdConfiguration</a>.</p>
+   * triggers.</p>
    */
   inline const ThresholdConfiguration& GetThresholdConfiguration() const { return m_thresholdConfiguration; }
   inline bool ThresholdConfigurationHasBeenSet() const { return m_thresholdConfigurationHasBeenSet; }

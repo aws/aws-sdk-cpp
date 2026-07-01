@@ -33,6 +33,11 @@ class ImportCertificateRequest : public ACMRequest {
 
   AWS_ACM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  /**
+   * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+   */
+  AWS_ACM_API EndpointParameters GetEndpointContextParams() const override;
+
   ///@{
   /**
    * <p>The <a

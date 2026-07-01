@@ -189,6 +189,31 @@ class ListSolutionsRequest : public PartnerCentralSellingRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filters results by AWS Marketplace solution ARN. You can provide up to 10
+   * ARNs.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAwsMarketplaceSolutionArn() const { return m_awsMarketplaceSolutionArn; }
+  inline bool AwsMarketplaceSolutionArnHasBeenSet() const { return m_awsMarketplaceSolutionArnHasBeenSet; }
+  template <typename AwsMarketplaceSolutionArnT = Aws::Vector<Aws::String>>
+  void SetAwsMarketplaceSolutionArn(AwsMarketplaceSolutionArnT&& value) {
+    m_awsMarketplaceSolutionArnHasBeenSet = true;
+    m_awsMarketplaceSolutionArn = std::forward<AwsMarketplaceSolutionArnT>(value);
+  }
+  template <typename AwsMarketplaceSolutionArnT = Aws::Vector<Aws::String>>
+  ListSolutionsRequest& WithAwsMarketplaceSolutionArn(AwsMarketplaceSolutionArnT&& value) {
+    SetAwsMarketplaceSolutionArn(std::forward<AwsMarketplaceSolutionArnT>(value));
+    return *this;
+  }
+  template <typename AwsMarketplaceSolutionArnT = Aws::String>
+  ListSolutionsRequest& AddAwsMarketplaceSolutionArn(AwsMarketplaceSolutionArnT&& value) {
+    m_awsMarketplaceSolutionArnHasBeenSet = true;
+    m_awsMarketplaceSolutionArn.emplace_back(std::forward<AwsMarketplaceSolutionArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalog;
 
@@ -203,6 +228,8 @@ class ListSolutionsRequest : public PartnerCentralSellingRequest {
   Aws::Vector<Aws::String> m_identifier;
 
   Aws::Vector<Aws::String> m_category;
+
+  Aws::Vector<Aws::String> m_awsMarketplaceSolutionArn;
   bool m_catalogHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
@@ -210,6 +237,7 @@ class ListSolutionsRequest : public PartnerCentralSellingRequest {
   bool m_statusHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_categoryHasBeenSet = false;
+  bool m_awsMarketplaceSolutionArnHasBeenSet = false;
 };
 
 }  // namespace Model

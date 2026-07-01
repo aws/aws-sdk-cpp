@@ -6,6 +6,7 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/ListEvaluationFormVersionsRequest.h>
 #include <aws/connect/model/ListEvaluationFormsRequest.h>
 #include <aws/connect/model/ListFlowAssociationsRequest.h>
 #include <aws/connect/model/ListHoursOfOperationOverridesRequest.h>
@@ -89,6 +90,7 @@
 #include <aws/connect/model/SendOutboundEmailRequest.h>
 #include <aws/connect/model/StartAttachedFileUploadRequest.h>
 #include <aws/connect/model/StartChatContactRequest.h>
+#include <aws/connect/model/StartContactConversationalAnalyticsJobRequest.h>
 #include <aws/connect/model/StartContactEvaluationRequest.h>
 #include <aws/connect/model/StartContactMediaProcessingRequest.h>
 #include <aws/connect/model/StartContactRecordingRequest.h>
@@ -103,9 +105,7 @@
 #include <aws/connect/model/StartTestCaseExecutionRequest.h>
 #include <aws/connect/model/StartWebRTCContactRequest.h>
 #include <aws/connect/model/StopContactMediaProcessingRequest.h>
-#include <aws/connect/model/StopContactRecordingRequest.h>
 #include <aws/connect/model/StopContactRequest.h>
-#include <aws/connect/model/StopContactStreamingRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -131,6 +131,31 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ListEvaluationFormVersionsOutcome ConnectClient::ListEvaluationFormVersions(const ListEvaluationFormVersionsRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListEvaluationFormVersions", "Required field: InstanceId, is not set");
+    return ListEvaluationFormVersionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [InstanceId]", false));
+  }
+  if (!request.EvaluationFormIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListEvaluationFormVersions", "Required field: EvaluationFormId, is not set");
+    return ListEvaluationFormVersionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [EvaluationFormId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/evaluation-forms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvaluationFormId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEvaluationFormVersionsOutcome(result.GetResultWithOwnership())
+                            : ListEvaluationFormVersionsOutcome(std::move(result.GetError()));
+}
 
 ListEvaluationFormsOutcome ConnectClient::ListEvaluationForms(const ListEvaluationFormsRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
@@ -1520,6 +1545,31 @@ StartChatContactOutcome ConnectClient::StartChatContact(const StartChatContactRe
                             : StartChatContactOutcome(std::move(result.GetError()));
 }
 
+StartContactConversationalAnalyticsJobOutcome ConnectClient::StartContactConversationalAnalyticsJob(
+    const StartContactConversationalAnalyticsJobRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartContactConversationalAnalyticsJob", "Required field: InstanceId, is not set");
+    return StartContactConversationalAnalyticsJobOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartContactConversationalAnalyticsJob", "Required field: ContactId, is not set");
+    return StartContactConversationalAnalyticsJobOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/start-conversational-analytics-job/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartContactConversationalAnalyticsJobOutcome(result.GetResultWithOwnership())
+                            : StartContactConversationalAnalyticsJobOutcome(std::move(result.GetError()));
+}
+
 StartContactEvaluationOutcome ConnectClient::StartContactEvaluation(const StartContactEvaluationRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("StartContactEvaluation", "Required field: InstanceId, is not set");
@@ -1718,26 +1768,4 @@ StopContactMediaProcessingOutcome ConnectClient::StopContactMediaProcessing(cons
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StopContactMediaProcessingOutcome(result.GetResultWithOwnership())
                             : StopContactMediaProcessingOutcome(std::move(result.GetError()));
-}
-
-StopContactRecordingOutcome ConnectClient::StopContactRecording(const StopContactRecordingRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/stop-recording");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? StopContactRecordingOutcome(result.GetResultWithOwnership())
-                            : StopContactRecordingOutcome(std::move(result.GetError()));
-}
-
-StopContactStreamingOutcome ConnectClient::StopContactStreaming(const StopContactStreamingRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/stop-streaming");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? StopContactStreamingOutcome(result.GetResultWithOwnership())
-                            : StopContactStreamingOutcome(std::move(result.GetError()));
 }

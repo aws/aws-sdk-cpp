@@ -84,14 +84,16 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
    * to identify and organize your Amazon Web Services resources. Each tag consists
    * of a <code>key</code> and an optional <code>value</code>. You specify the
    * certificate on input by its Amazon Resource Name (ARN). You specify the tag by
-   * using a key-value pair. </p> <p>You can apply a tag to just one certificate if
-   * you want to identify a specific characteristic of that certificate, or you can
-   * apply the same tag to multiple certificates if you want to filter for a common
-   * relationship among those certificates. Similarly, you can apply the same tag to
-   * multiple resources if you want to specify a relationship among those resources.
-   * For example, you can add the same tag to an ACM certificate and an Elastic Load
-   * Balancing load balancer to indicate that they are both used by the same website.
-   * For more information, see <a
+   * using a key-value pair. </p>  <p>This action applies only to the
+   * <code>certificate</code> resource type. For all other ACM resource types, use
+   * <a>TagResource</a> instead.</p>  <p>You can apply a tag to just one
+   * certificate if you want to identify a specific characteristic of that
+   * certificate, or you can apply the same tag to multiple certificates if you want
+   * to filter for a common relationship among those certificates. Similarly, you can
+   * apply the same tag to multiple resources if you want to specify a relationship
+   * among those resources. For example, you can add the same tag to an ACM
+   * certificate and an Elastic Load Balancing load balancer to indicate that they
+   * are both used by the same website. For more information, see <a
    * href="https://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM
    * certificates</a>. </p> <p>To remove one or more tags, use the
    * <a>RemoveTagsFromCertificate</a> action. To view all of the tags that have been
@@ -122,6 +124,188 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a domain validation for an ACME endpoint. Domain validations
+   * authorize the endpoint to issue certificates for specified domain names. You
+   * configure prevalidation to prove domain ownership.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CreateAcmeDomainValidation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAcmeDomainValidationOutcome CreateAcmeDomainValidation(
+      const Model::CreateAcmeDomainValidationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAcmeDomainValidation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateAcmeDomainValidationRequestT = Model::CreateAcmeDomainValidationRequest>
+  Model::CreateAcmeDomainValidationOutcomeCallable CreateAcmeDomainValidationCallable(
+      const CreateAcmeDomainValidationRequestT& request) const {
+    return SubmitCallable(&ACMClient::CreateAcmeDomainValidation, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAcmeDomainValidation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateAcmeDomainValidationRequestT = Model::CreateAcmeDomainValidationRequest>
+  void CreateAcmeDomainValidationAsync(const CreateAcmeDomainValidationRequestT& request,
+                                       const CreateAcmeDomainValidationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::CreateAcmeDomainValidation, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an ACME endpoint, which is a managed ACME server with a unique
+   * endpoint URL. After creation, ACME clients can use the endpoint URL to automate
+   * certificate issuance using the ACME protocol.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CreateAcmeEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAcmeEndpointOutcome CreateAcmeEndpoint(const Model::CreateAcmeEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAcmeEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateAcmeEndpointRequestT = Model::CreateAcmeEndpointRequest>
+  Model::CreateAcmeEndpointOutcomeCallable CreateAcmeEndpointCallable(const CreateAcmeEndpointRequestT& request) const {
+    return SubmitCallable(&ACMClient::CreateAcmeEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAcmeEndpoint that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateAcmeEndpointRequestT = Model::CreateAcmeEndpointRequest>
+  void CreateAcmeEndpointAsync(const CreateAcmeEndpointRequestT& request, const CreateAcmeEndpointResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::CreateAcmeEndpoint, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an external account binding (EAB) for an ACME endpoint. An EAB
+   * provides credentials that authorize an ACME client to register an account with
+   * the endpoint. Each EAB is associated with an IAM role that controls what
+   * certificate operations the ACME client can perform.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CreateAcmeExternalAccountBinding">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAcmeExternalAccountBindingOutcome CreateAcmeExternalAccountBinding(
+      const Model::CreateAcmeExternalAccountBindingRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAcmeExternalAccountBinding that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CreateAcmeExternalAccountBindingRequestT = Model::CreateAcmeExternalAccountBindingRequest>
+  Model::CreateAcmeExternalAccountBindingOutcomeCallable CreateAcmeExternalAccountBindingCallable(
+      const CreateAcmeExternalAccountBindingRequestT& request) const {
+    return SubmitCallable(&ACMClient::CreateAcmeExternalAccountBinding, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAcmeExternalAccountBinding that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateAcmeExternalAccountBindingRequestT = Model::CreateAcmeExternalAccountBindingRequest>
+  void CreateAcmeExternalAccountBindingAsync(const CreateAcmeExternalAccountBindingRequestT& request,
+                                             const CreateAcmeExternalAccountBindingResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::CreateAcmeExternalAccountBinding, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a domain validation. After deletion, the ACME endpoint can no longer
+   * issue certificates for the associated domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteAcmeDomainValidation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAcmeDomainValidationOutcome DeleteAcmeDomainValidation(
+      const Model::DeleteAcmeDomainValidationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAcmeDomainValidation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteAcmeDomainValidationRequestT = Model::DeleteAcmeDomainValidationRequest>
+  Model::DeleteAcmeDomainValidationOutcomeCallable DeleteAcmeDomainValidationCallable(
+      const DeleteAcmeDomainValidationRequestT& request) const {
+    return SubmitCallable(&ACMClient::DeleteAcmeDomainValidation, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAcmeDomainValidation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteAcmeDomainValidationRequestT = Model::DeleteAcmeDomainValidationRequest>
+  void DeleteAcmeDomainValidationAsync(const DeleteAcmeDomainValidationRequestT& request,
+                                       const DeleteAcmeDomainValidationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::DeleteAcmeDomainValidation, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an ACME endpoint. After deletion, the endpoint URL is no longer
+   * accessible and ACME clients cannot issue certificates through it. Any existing
+   * external account bindings and domain validations associated with the endpoint
+   * are also deleted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteAcmeEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAcmeEndpointOutcome DeleteAcmeEndpoint(const Model::DeleteAcmeEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAcmeEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteAcmeEndpointRequestT = Model::DeleteAcmeEndpointRequest>
+  Model::DeleteAcmeEndpointOutcomeCallable DeleteAcmeEndpointCallable(const DeleteAcmeEndpointRequestT& request) const {
+    return SubmitCallable(&ACMClient::DeleteAcmeEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAcmeEndpoint that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteAcmeEndpointRequestT = Model::DeleteAcmeEndpointRequest>
+  void DeleteAcmeEndpointAsync(const DeleteAcmeEndpointRequestT& request, const DeleteAcmeEndpointResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::DeleteAcmeEndpoint, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an external account binding. Previously fetched credentials for this
+   * binding will no longer be usable for account registration. A deleted binding
+   * cannot be recovered.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteAcmeExternalAccountBinding">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAcmeExternalAccountBindingOutcome DeleteAcmeExternalAccountBinding(
+      const Model::DeleteAcmeExternalAccountBindingRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAcmeExternalAccountBinding that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteAcmeExternalAccountBindingRequestT = Model::DeleteAcmeExternalAccountBindingRequest>
+  Model::DeleteAcmeExternalAccountBindingOutcomeCallable DeleteAcmeExternalAccountBindingCallable(
+      const DeleteAcmeExternalAccountBindingRequestT& request) const {
+    return SubmitCallable(&ACMClient::DeleteAcmeExternalAccountBinding, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAcmeExternalAccountBinding that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteAcmeExternalAccountBindingRequestT = Model::DeleteAcmeExternalAccountBindingRequest>
+  void DeleteAcmeExternalAccountBindingAsync(const DeleteAcmeExternalAccountBindingRequestT& request,
+                                             const DeleteAcmeExternalAccountBindingResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::DeleteAcmeExternalAccountBinding, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a certificate and its associated private key. If this action
    * succeeds, the certificate is not available for use by Amazon Web Services
    * services integrated with ACM. Deleting a certificate is eventually consistent.
@@ -136,9 +320,12 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
    * it is deleted. For more information, see <a
    * href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">
    * Deleting Your Private CA</a> in the <i>Private Certificate Authority User
-   * Guide</i>.</p>  <p>Deleting a certificate issued by a private certificate
-   * authority (CA) has no effect on the CA. You will continue to be charged for the
-   * CA until it is deleted. For more information, see <a
+   * Guide</i>.</p> <p>You cannot delete a certificate with a
+   * <code>CertificateKeyPairOrigin</code> of <code>ACME</code>. ACM automatically
+   * deletes these certificates 1 year after they expire.</p>  <p>Deleting a
+   * certificate issued by a private certificate authority (CA) has no effect on the
+   * CA. You will continue to be charged for the CA until it is deleted. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">Deleting
    * your private CA</a> in the <i>Amazon Web Services Private Certificate Authority
    * User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -164,6 +351,124 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
   void DeleteCertificateAsync(const DeleteCertificateRequestT& request, const DeleteCertificateResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ACMClient::DeleteCertificate, request, handler, context);
+  }
+
+  /**
+   * <p>Returns detailed metadata about the specified ACME account, including its
+   * status, public key thumbprint, and associated external account
+   * binding.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeAcmeAccount">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAcmeAccountOutcome DescribeAcmeAccount(const Model::DescribeAcmeAccountRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeAcmeAccount that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeAcmeAccountRequestT = Model::DescribeAcmeAccountRequest>
+  Model::DescribeAcmeAccountOutcomeCallable DescribeAcmeAccountCallable(const DescribeAcmeAccountRequestT& request) const {
+    return SubmitCallable(&ACMClient::DescribeAcmeAccount, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAcmeAccount that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeAcmeAccountRequestT = Model::DescribeAcmeAccountRequest>
+  void DescribeAcmeAccountAsync(const DescribeAcmeAccountRequestT& request, const DescribeAcmeAccountResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::DescribeAcmeAccount, request, handler, context);
+  }
+
+  /**
+   * <p>Returns detailed metadata about the specified domain validation, including
+   * its status, domain scope, and DNS resource records required for
+   * validation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeAcmeDomainValidation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAcmeDomainValidationOutcome DescribeAcmeDomainValidation(
+      const Model::DescribeAcmeDomainValidationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeAcmeDomainValidation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeAcmeDomainValidationRequestT = Model::DescribeAcmeDomainValidationRequest>
+  Model::DescribeAcmeDomainValidationOutcomeCallable DescribeAcmeDomainValidationCallable(
+      const DescribeAcmeDomainValidationRequestT& request) const {
+    return SubmitCallable(&ACMClient::DescribeAcmeDomainValidation, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAcmeDomainValidation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeAcmeDomainValidationRequestT = Model::DescribeAcmeDomainValidationRequest>
+  void DescribeAcmeDomainValidationAsync(const DescribeAcmeDomainValidationRequestT& request,
+                                         const DescribeAcmeDomainValidationResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::DescribeAcmeDomainValidation, request, handler, context);
+  }
+
+  /**
+   * <p>Returns detailed metadata about the specified ACME endpoint, including its
+   * status, URL, authorization behavior, and certificate authority
+   * configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeAcmeEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAcmeEndpointOutcome DescribeAcmeEndpoint(const Model::DescribeAcmeEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeAcmeEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeAcmeEndpointRequestT = Model::DescribeAcmeEndpointRequest>
+  Model::DescribeAcmeEndpointOutcomeCallable DescribeAcmeEndpointCallable(const DescribeAcmeEndpointRequestT& request) const {
+    return SubmitCallable(&ACMClient::DescribeAcmeEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAcmeEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeAcmeEndpointRequestT = Model::DescribeAcmeEndpointRequest>
+  void DescribeAcmeEndpointAsync(const DescribeAcmeEndpointRequestT& request, const DescribeAcmeEndpointResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::DescribeAcmeEndpoint, request, handler, context);
+  }
+
+  /**
+   * <p>Returns detailed metadata about the specified external account binding,
+   * including the associated IAM role, expiration time, and usage
+   * history.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeAcmeExternalAccountBinding">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAcmeExternalAccountBindingOutcome DescribeAcmeExternalAccountBinding(
+      const Model::DescribeAcmeExternalAccountBindingRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeAcmeExternalAccountBinding that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DescribeAcmeExternalAccountBindingRequestT = Model::DescribeAcmeExternalAccountBindingRequest>
+  Model::DescribeAcmeExternalAccountBindingOutcomeCallable DescribeAcmeExternalAccountBindingCallable(
+      const DescribeAcmeExternalAccountBindingRequestT& request) const {
+    return SubmitCallable(&ACMClient::DescribeAcmeExternalAccountBinding, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAcmeExternalAccountBinding that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeAcmeExternalAccountBindingRequestT = Model::DescribeAcmeExternalAccountBindingRequest>
+  void DescribeAcmeExternalAccountBindingAsync(const DescribeAcmeExternalAccountBindingRequestT& request,
+                                               const DescribeAcmeExternalAccountBindingResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::DescribeAcmeExternalAccountBinding, request, handler, context);
   }
 
   /**
@@ -258,6 +563,38 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                     const GetAccountConfigurationRequestT& request = {}) const {
     return SubmitAsync(&ACMClient::GetAccountConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the key ID and MAC key credentials for an external account binding.
+   * These credentials are used by ACME clients during account registration to bind
+   * to the endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAcmeExternalAccountBindingCredentials">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAcmeExternalAccountBindingCredentialsOutcome GetAcmeExternalAccountBindingCredentials(
+      const Model::GetAcmeExternalAccountBindingCredentialsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAcmeExternalAccountBindingCredentials that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetAcmeExternalAccountBindingCredentialsRequestT = Model::GetAcmeExternalAccountBindingCredentialsRequest>
+  Model::GetAcmeExternalAccountBindingCredentialsOutcomeCallable GetAcmeExternalAccountBindingCredentialsCallable(
+      const GetAcmeExternalAccountBindingCredentialsRequestT& request) const {
+    return SubmitCallable(&ACMClient::GetAcmeExternalAccountBindingCredentials, request);
+  }
+
+  /**
+   * An Async wrapper for GetAcmeExternalAccountBindingCredentials that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetAcmeExternalAccountBindingCredentialsRequestT = Model::GetAcmeExternalAccountBindingCredentialsRequest>
+  void GetAcmeExternalAccountBindingCredentialsAsync(
+      const GetAcmeExternalAccountBindingCredentialsRequestT& request,
+      const GetAcmeExternalAccountBindingCredentialsResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::GetAcmeExternalAccountBindingCredentials, request, handler, context);
   }
 
   /**
@@ -360,11 +697,131 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves a list of ACME accounts registered with the specified ACME
+   * endpoint. ACME accounts are created when clients use external account binding
+   * credentials to register.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListAcmeAccounts">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAcmeAccountsOutcome ListAcmeAccounts(const Model::ListAcmeAccountsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAcmeAccounts that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAcmeAccountsRequestT = Model::ListAcmeAccountsRequest>
+  Model::ListAcmeAccountsOutcomeCallable ListAcmeAccountsCallable(const ListAcmeAccountsRequestT& request) const {
+    return SubmitCallable(&ACMClient::ListAcmeAccounts, request);
+  }
+
+  /**
+   * An Async wrapper for ListAcmeAccounts that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListAcmeAccountsRequestT = Model::ListAcmeAccountsRequest>
+  void ListAcmeAccountsAsync(const ListAcmeAccountsRequestT& request, const ListAcmeAccountsResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::ListAcmeAccounts, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a list of domain validations for the specified ACME
+   * endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListAcmeDomainValidations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAcmeDomainValidationsOutcome ListAcmeDomainValidations(const Model::ListAcmeDomainValidationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAcmeDomainValidations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAcmeDomainValidationsRequestT = Model::ListAcmeDomainValidationsRequest>
+  Model::ListAcmeDomainValidationsOutcomeCallable ListAcmeDomainValidationsCallable(
+      const ListAcmeDomainValidationsRequestT& request) const {
+    return SubmitCallable(&ACMClient::ListAcmeDomainValidations, request);
+  }
+
+  /**
+   * An Async wrapper for ListAcmeDomainValidations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAcmeDomainValidationsRequestT = Model::ListAcmeDomainValidationsRequest>
+  void ListAcmeDomainValidationsAsync(const ListAcmeDomainValidationsRequestT& request,
+                                      const ListAcmeDomainValidationsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::ListAcmeDomainValidations, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a list of ACME endpoints in your account. Use this operation to
+   * view all configured ACME endpoints and their current status.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListAcmeEndpoints">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAcmeEndpointsOutcome ListAcmeEndpoints(const Model::ListAcmeEndpointsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAcmeEndpoints that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAcmeEndpointsRequestT = Model::ListAcmeEndpointsRequest>
+  Model::ListAcmeEndpointsOutcomeCallable ListAcmeEndpointsCallable(const ListAcmeEndpointsRequestT& request = {}) const {
+    return SubmitCallable(&ACMClient::ListAcmeEndpoints, request);
+  }
+
+  /**
+   * An Async wrapper for ListAcmeEndpoints that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListAcmeEndpointsRequestT = Model::ListAcmeEndpointsRequest>
+  void ListAcmeEndpointsAsync(const ListAcmeEndpointsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const ListAcmeEndpointsRequestT& request = {}) const {
+    return SubmitAsync(&ACMClient::ListAcmeEndpoints, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a list of external account bindings for the specified ACME
+   * endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListAcmeExternalAccountBindings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAcmeExternalAccountBindingsOutcome ListAcmeExternalAccountBindings(
+      const Model::ListAcmeExternalAccountBindingsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAcmeExternalAccountBindings that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAcmeExternalAccountBindingsRequestT = Model::ListAcmeExternalAccountBindingsRequest>
+  Model::ListAcmeExternalAccountBindingsOutcomeCallable ListAcmeExternalAccountBindingsCallable(
+      const ListAcmeExternalAccountBindingsRequestT& request) const {
+    return SubmitCallable(&ACMClient::ListAcmeExternalAccountBindings, request);
+  }
+
+  /**
+   * An Async wrapper for ListAcmeExternalAccountBindings that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListAcmeExternalAccountBindingsRequestT = Model::ListAcmeExternalAccountBindingsRequest>
+  void ListAcmeExternalAccountBindingsAsync(const ListAcmeExternalAccountBindingsRequestT& request,
+                                            const ListAcmeExternalAccountBindingsResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::ListAcmeExternalAccountBindings, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves a list of certificate ARNs and domain names. You can request that
    * only certificates that match a specific status be listed. You can also filter by
    * specific attributes of the certificate. Default filtering returns only
    * <code>RSA_2048</code> certificates. For more information, see
-   * <a>Filters</a>.</p><p><h3>See Also:</h3>   <a
+   * <a>Filters</a>.</p>  <p>By default, this action does not return
+   * certificates with a <code>CertificateKeyPairOrigin</code> of <code>ACME</code>.
+   * To include ACME certificates, specify <code>ACME</code> in the
+   * <code>CertificateKeyPairOrigins</code> filter.</p> <p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">AWS
    * API Reference</a></p>
    */
@@ -394,8 +851,10 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
    * <p>Lists the tags that have been applied to the ACM certificate. Use the
    * certificate's Amazon Resource Name (ARN) to specify the certificate. To add a
    * tag to an ACM certificate, use the <a>AddTagsToCertificate</a> action. To delete
-   * a tag, use the <a>RemoveTagsFromCertificate</a> action. </p><p><h3>See
-   * Also:</h3>   <a
+   * a tag, use the <a>RemoveTagsFromCertificate</a> action. </p>  <p>This
+   * action applies only to the <code>certificate</code> resource type. For all other
+   * ACM resource types, use <a>ListTagsForResource</a> instead.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">AWS
    * API Reference</a></p>
    */
@@ -419,6 +878,37 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
                                    const ListTagsForCertificateResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ACMClient::ListTagsForCertificate, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the tags associated with an ACM resource.</p>  <p>Use this action
+   * for all ACM resource types except the <code>certificate</code> resource type.
+   * For certificate resources, use <a>ListTagsForCertificate</a> instead.</p>
+   *  <p>To add one or more tags, use the <a>TagResource</a> action. To remove
+   * one or more tags, use the <a>UntagResource</a> action.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+  Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const {
+    return SubmitCallable(&ACMClient::ListTagsForResource, request);
+  }
+
+  /**
+   * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+  void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::ListTagsForResource, request, handler, context);
   }
 
   /**
@@ -458,7 +948,9 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
    * key-value pair. If you do not specify the value portion of the tag when calling
    * this function, the tag will be removed regardless of value. If you specify a
    * value, the tag is removed only if it is associated with the specified value.
-   * </p> <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a>
+   * </p>  <p>This action applies only to the <code>certificate</code> resource
+   * type. For all other ACM resource types, use <a>UntagResource</a> instead.</p>
+   *  <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a>
    * action. To view all of the tags that have been applied to a specific ACM
    * certificate, use the <a>ListTagsForCertificate</a> action. </p><p><h3>See
    * Also:</h3>   <a
@@ -603,6 +1095,65 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Revokes an ACME account, preventing it from requesting or revoking
+   * certificates. This operation is irreversible.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RevokeAcmeAccount">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RevokeAcmeAccountOutcome RevokeAcmeAccount(const Model::RevokeAcmeAccountRequest& request) const;
+
+  /**
+   * A Callable wrapper for RevokeAcmeAccount that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RevokeAcmeAccountRequestT = Model::RevokeAcmeAccountRequest>
+  Model::RevokeAcmeAccountOutcomeCallable RevokeAcmeAccountCallable(const RevokeAcmeAccountRequestT& request) const {
+    return SubmitCallable(&ACMClient::RevokeAcmeAccount, request);
+  }
+
+  /**
+   * An Async wrapper for RevokeAcmeAccount that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename RevokeAcmeAccountRequestT = Model::RevokeAcmeAccountRequest>
+  void RevokeAcmeAccountAsync(const RevokeAcmeAccountRequestT& request, const RevokeAcmeAccountResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::RevokeAcmeAccount, request, handler, context);
+  }
+
+  /**
+   * <p>Revokes an external account binding, preventing new ACME accounts from being
+   * registered using this binding. Existing ACME accounts that were previously
+   * registered using the binding are not affected and must be revoked
+   * separately.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RevokeAcmeExternalAccountBinding">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RevokeAcmeExternalAccountBindingOutcome RevokeAcmeExternalAccountBinding(
+      const Model::RevokeAcmeExternalAccountBindingRequest& request) const;
+
+  /**
+   * A Callable wrapper for RevokeAcmeExternalAccountBinding that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename RevokeAcmeExternalAccountBindingRequestT = Model::RevokeAcmeExternalAccountBindingRequest>
+  Model::RevokeAcmeExternalAccountBindingOutcomeCallable RevokeAcmeExternalAccountBindingCallable(
+      const RevokeAcmeExternalAccountBindingRequestT& request) const {
+    return SubmitCallable(&ACMClient::RevokeAcmeExternalAccountBinding, request);
+  }
+
+  /**
+   * An Async wrapper for RevokeAcmeExternalAccountBinding that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename RevokeAcmeExternalAccountBindingRequestT = Model::RevokeAcmeExternalAccountBindingRequest>
+  void RevokeAcmeExternalAccountBindingAsync(const RevokeAcmeExternalAccountBindingRequestT& request,
+                                             const RevokeAcmeExternalAccountBindingResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::RevokeAcmeExternalAccountBinding, request, handler, context);
+  }
+
+  /**
    * <p>Revokes a public ACM certificate. You can only revoke certificates that have
    * been previously exported.</p>  <p>Once a certificate is revoked, you
    * cannot reuse the certificate. Revoking a certificate is permanent.</p>
@@ -660,6 +1211,126 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                const SearchCertificatesRequestT& request = {}) const {
     return SubmitAsync(&ACMClient::SearchCertificates, request, handler, context);
+  }
+
+  /**
+   * <p>Adds one or more tags to an ACM resource. Tags are labels that you can use to
+   * identify and organize your Amazon Web Services resources. Each tag consists of a
+   * <code>key</code> and an optional <code>value</code>.</p>  <p>Use this
+   * action for all ACM resource types except the <code>certificate</code> resource
+   * type. For certificate resources, use <a>AddTagsToCertificate</a> instead.</p>
+   *  <p>To remove one or more tags, use the <a>UntagResource</a> action. To
+   * view all of the tags that have been applied to a resource, use the
+   * <a>ListTagsForResource</a> action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/TagResource">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename TagResourceRequestT = Model::TagResourceRequest>
+  Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const {
+    return SubmitCallable(&ACMClient::TagResource, request);
+  }
+
+  /**
+   * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename TagResourceRequestT = Model::TagResourceRequest>
+  void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::TagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Removes one or more tags from an ACM resource.</p>  <p>Use this action
+   * for all ACM resource types except the <code>certificate</code> resource type.
+   * For certificate resources, use <a>RemoveTagsFromCertificate</a> instead.</p>
+   *  <p>To add one or more tags, use the <a>TagResource</a> action. To view
+   * all of the tags that have been applied to a resource, use the
+   * <a>ListTagsForResource</a> action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UntagResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UntagResourceRequestT = Model::UntagResourceRequest>
+  Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const {
+    return SubmitCallable(&ACMClient::UntagResource, request);
+  }
+
+  /**
+   * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UntagResourceRequestT = Model::UntagResourceRequest>
+  void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the prevalidation configuration of an existing domain
+   * validation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateAcmeDomainValidation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAcmeDomainValidationOutcome UpdateAcmeDomainValidation(
+      const Model::UpdateAcmeDomainValidationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAcmeDomainValidation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateAcmeDomainValidationRequestT = Model::UpdateAcmeDomainValidationRequest>
+  Model::UpdateAcmeDomainValidationOutcomeCallable UpdateAcmeDomainValidationCallable(
+      const UpdateAcmeDomainValidationRequestT& request) const {
+    return SubmitCallable(&ACMClient::UpdateAcmeDomainValidation, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAcmeDomainValidation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateAcmeDomainValidationRequestT = Model::UpdateAcmeDomainValidationRequest>
+  void UpdateAcmeDomainValidationAsync(const UpdateAcmeDomainValidationRequestT& request,
+                                       const UpdateAcmeDomainValidationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::UpdateAcmeDomainValidation, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of an existing ACME endpoint. You can change the
+   * authorization behavior, contact requirement, or certificate authority
+   * settings.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateAcmeEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAcmeEndpointOutcome UpdateAcmeEndpoint(const Model::UpdateAcmeEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAcmeEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateAcmeEndpointRequestT = Model::UpdateAcmeEndpointRequest>
+  Model::UpdateAcmeEndpointOutcomeCallable UpdateAcmeEndpointCallable(const UpdateAcmeEndpointRequestT& request) const {
+    return SubmitCallable(&ACMClient::UpdateAcmeEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAcmeEndpoint that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateAcmeEndpointRequestT = Model::UpdateAcmeEndpointRequest>
+  void UpdateAcmeEndpointAsync(const UpdateAcmeEndpointRequestT& request, const UpdateAcmeEndpointResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::UpdateAcmeEndpoint, request, handler, context);
   }
 
   /**

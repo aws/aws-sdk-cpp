@@ -22755,6 +22755,36 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Modifies the billing account for VPC endpoint usage/charges.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointPayerResponsibility">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyVpcEndpointPayerResponsibilityOutcome ModifyVpcEndpointPayerResponsibility(
+      const Model::ModifyVpcEndpointPayerResponsibilityRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyVpcEndpointPayerResponsibility that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ModifyVpcEndpointPayerResponsibilityRequestT = Model::ModifyVpcEndpointPayerResponsibilityRequest>
+  Model::ModifyVpcEndpointPayerResponsibilityOutcomeCallable ModifyVpcEndpointPayerResponsibilityCallable(
+      const ModifyVpcEndpointPayerResponsibilityRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyVpcEndpointPayerResponsibility, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyVpcEndpointPayerResponsibility that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ModifyVpcEndpointPayerResponsibilityRequestT = Model::ModifyVpcEndpointPayerResponsibilityRequest>
+  void ModifyVpcEndpointPayerResponsibilityAsync(const ModifyVpcEndpointPayerResponsibilityRequestT& request,
+                                                 const ModifyVpcEndpointPayerResponsibilityResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyVpcEndpointPayerResponsibility, request, handler, context);
+  }
+
+  /**
    * <p>Modifies the attributes of the specified VPC endpoint service
    * configuration.</p> <p>If you set or modify the private DNS name, you must prove
    * that you own the private DNS domain name.</p><p><h3>See Also:</h3>   <a

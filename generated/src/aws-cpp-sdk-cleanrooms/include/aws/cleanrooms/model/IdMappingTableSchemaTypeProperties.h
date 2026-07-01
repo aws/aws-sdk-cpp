@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/IdMappingTableInputSource.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -57,9 +58,30 @@ class IdMappingTableSchemaTypeProperties {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the ID mapping table.</p>
+   */
+  inline const Aws::String& GetIdMappingTableId() const { return m_idMappingTableId; }
+  inline bool IdMappingTableIdHasBeenSet() const { return m_idMappingTableIdHasBeenSet; }
+  template <typename IdMappingTableIdT = Aws::String>
+  void SetIdMappingTableId(IdMappingTableIdT&& value) {
+    m_idMappingTableIdHasBeenSet = true;
+    m_idMappingTableId = std::forward<IdMappingTableIdT>(value);
+  }
+  template <typename IdMappingTableIdT = Aws::String>
+  IdMappingTableSchemaTypeProperties& WithIdMappingTableId(IdMappingTableIdT&& value) {
+    SetIdMappingTableId(std::forward<IdMappingTableIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<IdMappingTableInputSource> m_idMappingTableInputSource;
+
+  Aws::String m_idMappingTableId;
   bool m_idMappingTableInputSourceHasBeenSet = false;
+  bool m_idMappingTableIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -41,6 +41,7 @@
 #include <aws/connect/model/ClaimPhoneNumberResult.h>
 #include <aws/connect/model/CompleteAttachedFileUploadResult.h>
 #include <aws/connect/model/CreateAgentStatusResult.h>
+#include <aws/connect/model/CreateAttachedFileResult.h>
 #include <aws/connect/model/CreateContactFlowModuleAliasResult.h>
 #include <aws/connect/model/CreateContactFlowModuleResult.h>
 #include <aws/connect/model/CreateContactFlowModuleVersionResult.h>
@@ -262,6 +263,7 @@
 #include <aws/connect/model/SendOutboundEmailResult.h>
 #include <aws/connect/model/StartAttachedFileUploadResult.h>
 #include <aws/connect/model/StartChatContactResult.h>
+#include <aws/connect/model/StartContactConversationalAnalyticsJobResult.h>
 #include <aws/connect/model/StartContactEvaluationResult.h>
 #include <aws/connect/model/StartContactMediaProcessingRequest.h>
 #include <aws/connect/model/StartContactMediaProcessingResult.h>
@@ -386,6 +388,7 @@ class BatchUpdateDataTableValueRequest;
 class ClaimPhoneNumberRequest;
 class CompleteAttachedFileUploadRequest;
 class CreateAgentStatusRequest;
+class CreateAttachedFileRequest;
 class CreateContactRequest;
 class CreateContactFlowRequest;
 class CreateContactFlowModuleRequest;
@@ -636,6 +639,7 @@ class SendChatIntegrationEventRequest;
 class SendOutboundEmailRequest;
 class StartAttachedFileUploadRequest;
 class StartChatContactRequest;
+class StartContactConversationalAnalyticsJobRequest;
 class StartContactEvaluationRequest;
 class StartContactMediaProcessingRequest;
 class StartContactRecordingRequest;
@@ -761,6 +765,7 @@ typedef Aws::Utils::Outcome<BatchUpdateDataTableValueResult, ConnectError> Batch
 typedef Aws::Utils::Outcome<ClaimPhoneNumberResult, ConnectError> ClaimPhoneNumberOutcome;
 typedef Aws::Utils::Outcome<CompleteAttachedFileUploadResult, ConnectError> CompleteAttachedFileUploadOutcome;
 typedef Aws::Utils::Outcome<CreateAgentStatusResult, ConnectError> CreateAgentStatusOutcome;
+typedef Aws::Utils::Outcome<CreateAttachedFileResult, ConnectError> CreateAttachedFileOutcome;
 typedef Aws::Utils::Outcome<CreateContactResult, ConnectError> CreateContactOutcome;
 typedef Aws::Utils::Outcome<CreateContactFlowResult, ConnectError> CreateContactFlowOutcome;
 typedef Aws::Utils::Outcome<CreateContactFlowModuleResult, ConnectError> CreateContactFlowModuleOutcome;
@@ -1011,6 +1016,7 @@ typedef Aws::Utils::Outcome<SendChatIntegrationEventResult, ConnectError> SendCh
 typedef Aws::Utils::Outcome<SendOutboundEmailResult, ConnectError> SendOutboundEmailOutcome;
 typedef Aws::Utils::Outcome<StartAttachedFileUploadResult, ConnectError> StartAttachedFileUploadOutcome;
 typedef Aws::Utils::Outcome<StartChatContactResult, ConnectError> StartChatContactOutcome;
+typedef Aws::Utils::Outcome<StartContactConversationalAnalyticsJobResult, ConnectError> StartContactConversationalAnalyticsJobOutcome;
 typedef Aws::Utils::Outcome<StartContactEvaluationResult, ConnectError> StartContactEvaluationOutcome;
 typedef Aws::Utils::Outcome<StartContactMediaProcessingResult, ConnectError> StartContactMediaProcessingOutcome;
 typedef Aws::Utils::Outcome<StartContactRecordingResult, ConnectError> StartContactRecordingOutcome;
@@ -1136,6 +1142,7 @@ typedef std::future<BatchUpdateDataTableValueOutcome> BatchUpdateDataTableValueO
 typedef std::future<ClaimPhoneNumberOutcome> ClaimPhoneNumberOutcomeCallable;
 typedef std::future<CompleteAttachedFileUploadOutcome> CompleteAttachedFileUploadOutcomeCallable;
 typedef std::future<CreateAgentStatusOutcome> CreateAgentStatusOutcomeCallable;
+typedef std::future<CreateAttachedFileOutcome> CreateAttachedFileOutcomeCallable;
 typedef std::future<CreateContactOutcome> CreateContactOutcomeCallable;
 typedef std::future<CreateContactFlowOutcome> CreateContactFlowOutcomeCallable;
 typedef std::future<CreateContactFlowModuleOutcome> CreateContactFlowModuleOutcomeCallable;
@@ -1386,6 +1393,7 @@ typedef std::future<SendChatIntegrationEventOutcome> SendChatIntegrationEventOut
 typedef std::future<SendOutboundEmailOutcome> SendOutboundEmailOutcomeCallable;
 typedef std::future<StartAttachedFileUploadOutcome> StartAttachedFileUploadOutcomeCallable;
 typedef std::future<StartChatContactOutcome> StartChatContactOutcomeCallable;
+typedef std::future<StartContactConversationalAnalyticsJobOutcome> StartContactConversationalAnalyticsJobOutcomeCallable;
 typedef std::future<StartContactEvaluationOutcome> StartContactEvaluationOutcomeCallable;
 typedef std::future<StartContactMediaProcessingOutcome> StartContactMediaProcessingOutcomeCallable;
 typedef std::future<StartContactRecordingOutcome> StartContactRecordingOutcomeCallable;
@@ -1588,6 +1596,9 @@ typedef std::function<void(const ConnectClient*, const Model::CompleteAttachedFi
 typedef std::function<void(const ConnectClient*, const Model::CreateAgentStatusRequest&, const Model::CreateAgentStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAgentStatusResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::CreateAttachedFileRequest&, const Model::CreateAttachedFileOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateAttachedFileResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::CreateContactRequest&, const Model::CreateContactOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateContactResponseReceivedHandler;
@@ -2385,6 +2396,10 @@ typedef std::function<void(const ConnectClient*, const Model::StartAttachedFileU
 typedef std::function<void(const ConnectClient*, const Model::StartChatContactRequest&, const Model::StartChatContactOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartChatContactResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::StartContactConversationalAnalyticsJobRequest&,
+                           const Model::StartContactConversationalAnalyticsJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartContactConversationalAnalyticsJobResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::StartContactEvaluationRequest&, const Model::StartContactEvaluationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartContactEvaluationResponseReceivedHandler;

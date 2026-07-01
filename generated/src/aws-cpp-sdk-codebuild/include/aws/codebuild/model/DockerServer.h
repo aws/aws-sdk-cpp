@@ -86,7 +86,9 @@ class DockerServer {
 
   ///@{
   /**
-   * <p>A DockerServerStatus object to use for this docker server.</p>
+   * <p>A DockerServerStatus object to use for this docker server.</p>  <p>Note
+   * that <code>status</code> is only an output and cannot be passed in as an
+   * input.</p>
    */
   inline const DockerServerStatus& GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

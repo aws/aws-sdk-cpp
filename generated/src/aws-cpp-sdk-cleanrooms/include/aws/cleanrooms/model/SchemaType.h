@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CleanRooms {
 namespace Model {
-enum class SchemaType { NOT_SET, TABLE, ID_MAPPING_TABLE };
+enum class SchemaType { NOT_SET, TABLE, ID_MAPPING_TABLE, INTERMEDIATE_TABLE };
 
 namespace SchemaTypeMapper {
 AWS_CLEANROOMS_API SchemaType GetSchemaTypeForName(const Aws::String& name);

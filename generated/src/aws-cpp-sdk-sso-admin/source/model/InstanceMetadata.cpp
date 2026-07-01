@@ -46,6 +46,17 @@ InstanceMetadata& InstanceMetadata::operator=(JsonView jsonValue) {
     m_statusReason = jsonValue.GetString("StatusReason");
     m_statusReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PrimaryRegion")) {
+    m_primaryRegion = jsonValue.GetString("PrimaryRegion");
+    m_primaryRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Regions")) {
+    Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");
+    for (unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex) {
+      m_regions.push_back(regionsJsonList[regionsIndex].AsObject());
+    }
+    m_regionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +89,18 @@ JsonValue InstanceMetadata::Jsonize() const {
 
   if (m_statusReasonHasBeenSet) {
     payload.WithString("StatusReason", m_statusReason);
+  }
+
+  if (m_primaryRegionHasBeenSet) {
+    payload.WithString("PrimaryRegion", m_primaryRegion);
+  }
+
+  if (m_regionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> regionsJsonList(m_regions.size());
+    for (unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex) {
+      regionsJsonList[regionsIndex].AsObject(m_regions[regionsIndex].Jsonize());
+    }
+    payload.WithArray("Regions", std::move(regionsJsonList));
   }
 
   return payload;

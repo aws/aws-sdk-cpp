@@ -10,6 +10,7 @@
 #include <aws/codebuild/model/DockerServer.h>
 #include <aws/codebuild/model/EnvironmentType.h>
 #include <aws/codebuild/model/EnvironmentVariable.h>
+#include <aws/codebuild/model/HostKernel.h>
 #include <aws/codebuild/model/ImagePullCredentialsType.h>
 #include <aws/codebuild/model/ProjectFleet.h>
 #include <aws/codebuild/model/RegistryCredential.h>
@@ -324,6 +325,31 @@ class ProjectEnvironment {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The host operating system kernel used for on-demand builds in the build
+   * project. The host kernel does not affect the build environment operating system,
+   * which is determined by the image you specify. Valid values are:</p> <ul> <li>
+   * <p> <code>LINUX_KERNEL_4</code>: Runs on an Amazon Linux 2 host (kernel
+   * 4.x).</p> </li> <li> <p> <code>LINUX_KERNEL_6</code>: Runs on an Amazon Linux
+   * 2023 host (kernel 6.x).</p> </li> <li> <p> <code>LINUX_KERNEL_LATEST</code>:
+   * Runs on the latest supported host kernel.</p> </li> </ul> <p>This setting
+   * applies to the <code>LINUX_CONTAINER</code>, <code>ARM_CONTAINER</code>,
+   * <code>LINUX_EC2</code>, and <code>ARM_EC2</code> environment types. It is not
+   * applicable to Windows, Lambda, or Mac environment types.</p>
+   */
+  inline HostKernel GetHostKernel() const { return m_hostKernel; }
+  inline bool HostKernelHasBeenSet() const { return m_hostKernelHasBeenSet; }
+  inline void SetHostKernel(HostKernel value) {
+    m_hostKernelHasBeenSet = true;
+    m_hostKernel = value;
+  }
+  inline ProjectEnvironment& WithHostKernel(HostKernel value) {
+    SetHostKernel(value);
+    return *this;
+  }
+  ///@}
  private:
   EnvironmentType m_type{EnvironmentType::NOT_SET};
 
@@ -346,6 +372,8 @@ class ProjectEnvironment {
   ImagePullCredentialsType m_imagePullCredentialsType{ImagePullCredentialsType::NOT_SET};
 
   DockerServer m_dockerServer;
+
+  HostKernel m_hostKernel{HostKernel::NOT_SET};
   bool m_typeHasBeenSet = false;
   bool m_imageHasBeenSet = false;
   bool m_computeTypeHasBeenSet = false;
@@ -357,6 +385,7 @@ class ProjectEnvironment {
   bool m_registryCredentialHasBeenSet = false;
   bool m_imagePullCredentialsTypeHasBeenSet = false;
   bool m_dockerServerHasBeenSet = false;
+  bool m_hostKernelHasBeenSet = false;
 };
 
 }  // namespace Model

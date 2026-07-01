@@ -30,6 +30,11 @@ class RenewCertificateRequest : public ACMRequest {
 
   AWS_ACM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  /**
+   * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+   */
+  AWS_ACM_API EndpointParameters GetEndpointContextParams() const override;
+
   ///@{
   /**
    * <p>String that contains the ARN of the ACM certificate to be renewed. This must
