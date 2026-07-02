@@ -2032,6 +2032,33 @@ namespace
         listObjectsOutcome = globalClient->ListObjects(listObjectsRequest);
         AWS_ASSERT_SUCCESS(listObjectsOutcome);
 
+        // Cross-region PutObject (streaming request with Expect: 100-continue).
+        // Verifies that 301 redirect + Expect interaction works correctly.
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+        putObjectRequest.SetKey("cross-region-test-key");
+        auto body = Aws::MakeShared<StringStream>(ALLOCATION_TAG, "cross-region body");
+        putObjectRequest.SetBody(body);
+        PutObjectOutcome putObjectOutcome = globalClient->PutObject(putObjectRequest);
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
+
+        // Verify the object was written correctly.
+        GetObjectRequest getObjectRequest;
+        getObjectRequest.SetBucket(fullBucketName);
+        getObjectRequest.SetKey("cross-region-test-key");
+        GetObjectOutcome getObjectOutcome = globalClient->GetObject(getObjectRequest);
+        AWS_ASSERT_SUCCESS(getObjectOutcome);
+        Aws::StringStream getObjectBody;
+        getObjectBody << getObjectOutcome.GetResult().GetBody().rdbuf();
+        EXPECT_EQ("cross-region body", getObjectBody.str());
+
+        // Clean up the object before deleting the bucket.
+        DeleteObjectRequest deleteObjectRequest;
+        deleteObjectRequest.SetBucket(fullBucketName);
+        deleteObjectRequest.SetKey("cross-region-test-key");
+        DeleteObjectOutcome deleteObjectOutcome = globalClient->DeleteObject(deleteObjectRequest);
+        AWS_ASSERT_SUCCESS(deleteObjectOutcome);
+
         DeleteBucketRequest deleteBucketRequest;
         deleteBucketRequest.SetBucket(fullBucketName);
         DeleteBucketOutcome deleteBucketOutcome = globalClient->DeleteBucket(deleteBucketRequest);
