@@ -610,7 +610,6 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_proxyKeyPasswd(clientConfig.proxySSLKeyPassword),
     m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_revokeBestEffort(clientConfig.curlOptions.revokeBestEffort), m_caPath(clientConfig.caPath),
     m_caFile(clientConfig.caFile), m_proxyCaPath(clientConfig.proxyCaPath), m_proxyCaFile(clientConfig.proxyCaFile),
-    m_disableExpectHeader(clientConfig.disableExpectHeader),
     m_enableHttpClientTrace(clientConfig.enableHttpClientTrace || FORCE_ENABLE_CURL_LOGGING),
     m_perfMode(clientConfig.httpLibPerfMode),
     m_telemetryProvider(clientConfig.telemetryProvider)
@@ -685,8 +684,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         headers = curl_slist_append(headers, "content-type:");
     }
 
-    // Discard Expect header so as to avoid using multiple payloads to send a http request (header + body)
-    if (m_disableExpectHeader)
+    if (!request->HasHeader(Http::EXPECT_HEADER))
     {
         headers = curl_slist_append(headers, "Expect:");
     }

@@ -17,6 +17,7 @@
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <aws/dynamodb/DynamoDBClientConfiguration.h>
+#include <aws/dynamodb/model/PutItemRequest.h>
 #include <aws/dynamodb/DynamoDBEndpointProvider.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/MemoryTesting.h>
@@ -807,4 +808,28 @@ TEST_F(DynamoDBUnitTest, ShouldWorkWhenAccountIDPresentAndRequired)
   EXPECT_TRUE(std::find(features.begin(), features.end(), "R") != features.end());
   // Identity resolved a accountId
   EXPECT_TRUE(std::find(features.begin(), features.end(), "T") != features.end());
+}
+
+TEST_F(DynamoDBUnitTest, PutItemDoesNotSendExpect100ContinueHeader) {
+  using namespace Aws::DynamoDB::Model;
+
+  auto putItemRequest = PutItemRequest();
+  putItemRequest.SetTableName("TestTable");
+  AttributeValue hashKey;
+  hashKey.SetS("testKey");
+  putItemRequest.AddItem("id", hashKey);
+
+  auto mockStream = Aws::MakeShared<StandardHttpRequest>(LOG_TAG, "mockuri", HttpMethod::HTTP_GET);
+  mockStream->SetResponseStreamFactory([]() -> IOStream* {
+    return Aws::New<StringStream>(LOG_TAG, "{}", std::ios_base::in | std::ios_base::binary);
+  });
+  auto successResponse = Aws::MakeShared<StandardHttpResponse>(LOG_TAG, mockStream);
+  successResponse->SetResponseCode(HttpResponseCode::OK);
+  mock_http_client_->AddResponseToReturn(successResponse);
+
+  const auto putItemOutcome = client_->PutItem(putItemRequest);
+  EXPECT_TRUE(putItemOutcome.IsSuccess());
+
+  const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
+  EXPECT_FALSE(requestSeen.HasHeader("expect"));
 }
