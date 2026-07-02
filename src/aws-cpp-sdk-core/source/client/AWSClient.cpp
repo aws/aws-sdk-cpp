@@ -144,7 +144,8 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
         m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : configuration.httpClientChunkedMode,
         configuration.awsChunkedBufferSize),
         m_userAgentInterceptor},
-    m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"}
+    m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"},
+    m_disableExpectHeader(configuration.disableExpectHeader)
 {
 }
 
@@ -170,11 +171,12 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_requestCompressionConfig(configuration.requestCompressionConfig),
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
-    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG, configuration), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG, 
+    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG, configuration), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG,
         m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : configuration.httpClientChunkedMode,
         configuration.awsChunkedBufferSize),
         m_userAgentInterceptor},
-    m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"}
+    m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"},
+    m_disableExpectHeader(configuration.disableExpectHeader)
 {
 }
 
@@ -951,6 +953,11 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
     if (httpRequest->HasHeader(Aws::Http::SMITHY_PROTOCOL_HEADER))
     {
         request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PROTOCOL_RPC_V2_CBOR);
+    }
+
+    if (request.IsStreaming() && !m_disableExpectHeader)
+    {
+        httpRequest->SetHeaderValue(Aws::Http::EXPECT_HEADER, Aws::Http::EXPECT_100_CONTINUE_VALUE);
     }
 
     // Pass along handlers for processing data sent/received in bytes
