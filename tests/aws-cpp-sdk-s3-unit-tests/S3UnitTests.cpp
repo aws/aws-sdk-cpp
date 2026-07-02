@@ -12,6 +12,7 @@
 #include <aws/s3/model/HeadBucketRequest.h>
 #include <aws/s3/model/ListObjectsV2Request.h>
 #include <aws/s3/model/PutObjectRequest.h>
+#include <aws/s3/model/UploadPartRequest.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/MemoryTesting.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
@@ -725,4 +726,132 @@ TEST_F(S3UnitTest, TestGetObjectTimeoutShouldReturnTimeoutError) {
   const auto& error = response.GetError();
   EXPECT_EQ(error.GetResponseCode(), HttpResponseCode::NETWORK_CONNECT_TIMEOUT);
   EXPECT_TRUE(error.ShouldRetry());
+}
+
+TEST_F(S3UnitTest, PutObjectSendsExpect100ContinueHeader) {
+  auto putObjectRequest = PutObjectRequest()
+      .WithBucket("test-bucket")
+      .WithKey("test-key");
+
+  std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG,
+    "test body content",
+    std::ios_base::in | std::ios_base::binary);
+  putObjectRequest.SetBody(body);
+
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
+  mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+    return Aws::New<StringStream>(ALLOCATION_TAG, "response", std::ios_base::in | std::ios_base::binary);
+  });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::OK);
+  _mockHttpClient->AddResponseToReturn(mockResponse);
+
+  const auto response = _s3Client->PutObject(putObjectRequest);
+  AWS_EXPECT_SUCCESS(response);
+
+  const auto seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_TRUE(seenRequest.HasHeader("expect"));
+  EXPECT_EQ("100-continue", seenRequest.GetHeaderValue("expect"));
+}
+
+TEST_F(S3UnitTest, UploadPartSendsExpect100ContinueHeader) {
+  auto uploadPartRequest = UploadPartRequest()
+      .WithBucket("test-bucket")
+      .WithKey("test-key")
+      .WithUploadId("test-upload-id")
+      .WithPartNumber(1);
+
+  std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG,
+    "test body content",
+    std::ios_base::in | std::ios_base::binary);
+  uploadPartRequest.SetBody(body);
+
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
+  mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+    return Aws::New<StringStream>(ALLOCATION_TAG, "response", std::ios_base::in | std::ios_base::binary);
+  });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::OK);
+  _mockHttpClient->AddResponseToReturn(mockResponse);
+
+  const auto response = _s3Client->UploadPart(uploadPartRequest);
+  AWS_EXPECT_SUCCESS(response);
+
+  const auto seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_TRUE(seenRequest.HasHeader("expect"));
+  EXPECT_EQ("100-continue", seenRequest.GetHeaderValue("expect"));
+}
+
+TEST_F(S3UnitTest, GetObjectDoesNotSendExpect100ContinueHeader) {
+  auto getObjectRequest = GetObjectRequest()
+      .WithBucket("test-bucket")
+      .WithKey("test-key");
+
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
+  mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+    return Aws::New<StringStream>(ALLOCATION_TAG, "response body", std::ios_base::in | std::ios_base::binary);
+  });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::OK);
+  _mockHttpClient->AddResponseToReturn(mockResponse);
+
+  const auto response = _s3Client->GetObject(getObjectRequest);
+  AWS_EXPECT_SUCCESS(response);
+
+  const auto seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_FALSE(seenRequest.HasHeader("expect"));
+}
+
+TEST_F(S3UnitTest, ListObjectsV2DoesNotSendExpect100ContinueHeader) {
+  auto listRequest = ListObjectsV2Request()
+      .WithBucket("test-bucket");
+
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
+  mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+    return Aws::New<StringStream>(ALLOCATION_TAG,
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?><ListBucketResult xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Name>test-bucket</Name><IsTruncated>false</IsTruncated></ListBucketResult>",
+      std::ios_base::in | std::ios_base::binary);
+  });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::OK);
+  _mockHttpClient->AddResponseToReturn(mockResponse);
+
+  const auto response = _s3Client->ListObjectsV2(listRequest);
+  AWS_EXPECT_SUCCESS(response);
+
+  const auto seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_FALSE(seenRequest.HasHeader("expect"));
+}
+
+TEST_F(S3UnitTest, PutObjectWithDisableExpectHeaderDoesNotSendExpect) {
+  AWSCredentials credentials{"mock", "credentials"};
+  const auto epProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG);
+  S3ClientConfiguration s3Config;
+  s3Config.region = "us-east-1";
+  s3Config.retryStrategy = Aws::MakeShared<NoRetry>(ALLOCATION_TAG);
+  s3Config.disableExpectHeader = true;
+  auto client = Aws::MakeShared<S3TestClient>(ALLOCATION_TAG, credentials, epProvider, s3Config);
+
+  auto putObjectRequest = PutObjectRequest()
+      .WithBucket("test-bucket")
+      .WithKey("test-key");
+
+  std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG,
+    "test body content",
+    std::ios_base::in | std::ios_base::binary);
+  putObjectRequest.SetBody(body);
+
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
+  mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+    return Aws::New<StringStream>(ALLOCATION_TAG, "response", std::ios_base::in | std::ios_base::binary);
+  });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::OK);
+  _mockHttpClient->AddResponseToReturn(mockResponse);
+
+  const auto response = client->PutObject(putObjectRequest);
+  AWS_EXPECT_SUCCESS(response);
+
+  const auto seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_FALSE(seenRequest.HasHeader("expect"));
 }

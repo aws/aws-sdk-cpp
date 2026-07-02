@@ -70,7 +70,6 @@ private:
     Aws::String m_caFile;
     Aws::String m_proxyCaPath;
     Aws::String m_proxyCaFile;
-    bool m_disableExpectHeader = false;
     bool m_allowRedirects = false;
     bool m_enableHttpClientTrace = false;
     Aws::Http::TransferLibPerformanceMode m_perfMode = TransferLibPerformanceMode::LOW_LATENCY;
