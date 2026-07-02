@@ -3126,6 +3126,42 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Returns the current provisioned limit for a specific API category.</p>
+   * <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in
+   * requests for this API operation. For this operation, you must use IAM
+   * credentials to authorize requests, and you must grant yourself the corresponding
+   * IAM permission in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetProvisionedLimit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetProvisionedLimitOutcome GetProvisionedLimit(const Model::GetProvisionedLimitRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetProvisionedLimit that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetProvisionedLimitRequestT = Model::GetProvisionedLimitRequest>
+  Model::GetProvisionedLimitOutcomeCallable GetProvisionedLimitCallable(const GetProvisionedLimitRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::GetProvisionedLimit, request);
+  }
+
+  /**
+   * An Async wrapper for GetProvisionedLimit that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetProvisionedLimitRequestT = Model::GetProvisionedLimitRequest>
+  void GetProvisionedLimitAsync(const GetProvisionedLimitRequestT& request, const GetProvisionedLimitResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::GetProvisionedLimit, request, handler, context);
+  }
+
+  /**
    * <p>Given a user pool ID, returns the signing certificate for SAML 2.0
    * federation.</p> <p>Issued certificates are valid for 10 years from the date of
    * issue. Amazon Cognito issues and assigns a new signing certificate annually.
@@ -4836,6 +4872,47 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                        const UpdateManagedLoginBrandingRequestT& request = {}) const {
     return SubmitAsync(&CognitoIdentityProviderClient::UpdateManagedLoginBranding, request, handler, context);
+  }
+
+  /**
+   * <p>Sets the provisioned limit for a specific API category. The value must be
+   * between the default limit and your account-level maximum limit in Service
+   * Quotas.</p> <p>Managed login user pools don't support adjustments to the
+   * <code>UserAuthentication</code> or <code>UserFederation</code> categories. To
+   * increase these limits, submit a Service Quotas increase request.</p>
+   * <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in
+   * requests for this API operation. For this operation, you must use IAM
+   * credentials to authorize requests, and you must grant yourself the corresponding
+   * IAM permission in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateProvisionedLimit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProvisionedLimitOutcome UpdateProvisionedLimit(const Model::UpdateProvisionedLimitRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateProvisionedLimit that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateProvisionedLimitRequestT = Model::UpdateProvisionedLimitRequest>
+  Model::UpdateProvisionedLimitOutcomeCallable UpdateProvisionedLimitCallable(const UpdateProvisionedLimitRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::UpdateProvisionedLimit, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProvisionedLimit that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateProvisionedLimitRequestT = Model::UpdateProvisionedLimitRequest>
+  void UpdateProvisionedLimitAsync(const UpdateProvisionedLimitRequestT& request,
+                                   const UpdateProvisionedLimitResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::UpdateProvisionedLimit, request, handler, context);
   }
 
   /**

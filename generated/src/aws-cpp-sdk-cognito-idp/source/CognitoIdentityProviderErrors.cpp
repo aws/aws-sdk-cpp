@@ -30,6 +30,7 @@ static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededEx
 static const int FEATURE_UNAVAILABLE_IN_TIER_HASH = HashingUtils::HashString("FeatureUnavailableInTierException");
 static const int TERMS_EXISTS_HASH = HashingUtils::HashString("TermsExistsException");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int USER_NOT_CONFIRMED_HASH = HashingUtils::HashString("UserNotConfirmedException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int INVALID_SMS_ROLE_ACCESS_POLICY_HASH = HashingUtils::HashString("InvalidSmsRoleAccessPolicyException");
@@ -101,6 +102,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::TERMS_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_ERROR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::INTERNAL_ERROR), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::SERVICE_QUOTA_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
   } else if (hashCode == USER_NOT_CONFIRMED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::USER_NOT_CONFIRMED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == UNAUTHORIZED_HASH) {

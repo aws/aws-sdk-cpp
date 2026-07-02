@@ -213,6 +213,8 @@
 #include <aws/cognito-idp/model/GetIdentityProviderByIdentifierResult.h>
 #include <aws/cognito-idp/model/GetLogDeliveryConfigurationRequest.h>
 #include <aws/cognito-idp/model/GetLogDeliveryConfigurationResult.h>
+#include <aws/cognito-idp/model/GetProvisionedLimitRequest.h>
+#include <aws/cognito-idp/model/GetProvisionedLimitResult.h>
 #include <aws/cognito-idp/model/GetSigningCertificateRequest.h>
 #include <aws/cognito-idp/model/GetSigningCertificateResult.h>
 #include <aws/cognito-idp/model/GetTokensFromRefreshTokenRequest.h>
@@ -242,6 +244,9 @@
 #include <aws/cognito-idp/model/IssuerType.h>
 #include <aws/cognito-idp/model/KeyConfigurationType.h>
 #include <aws/cognito-idp/model/LambdaConfigType.h>
+#include <aws/cognito-idp/model/LimitClass.h>
+#include <aws/cognito-idp/model/LimitDefinitionType.h>
+#include <aws/cognito-idp/model/LimitType.h>
 #include <aws/cognito-idp/model/ListDevicesRequest.h>
 #include <aws/cognito-idp/model/ListDevicesResult.h>
 #include <aws/cognito-idp/model/ListGroupsRequest.h>
@@ -357,6 +362,8 @@
 #include <aws/cognito-idp/model/UpdateIdentityProviderResult.h>
 #include <aws/cognito-idp/model/UpdateManagedLoginBrandingRequest.h>
 #include <aws/cognito-idp/model/UpdateManagedLoginBrandingResult.h>
+#include <aws/cognito-idp/model/UpdateProvisionedLimitRequest.h>
+#include <aws/cognito-idp/model/UpdateProvisionedLimitResult.h>
 #include <aws/cognito-idp/model/UpdateReplicaStatusType.h>
 #include <aws/cognito-idp/model/UpdateResourceServerRequest.h>
 #include <aws/cognito-idp/model/UpdateResourceServerResult.h>

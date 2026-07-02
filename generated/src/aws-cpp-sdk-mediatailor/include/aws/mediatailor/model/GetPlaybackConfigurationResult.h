@@ -311,8 +311,8 @@ class GetPlaybackConfigurationResult {
 
   ///@{
   /**
-   * <p>The URL that the player accesses to get a manifest from AWS Elemental
-   * MediaTailor. This session will use server-side reporting.</p>
+   * <p>The URL that your player accesses to get a manifest from AWS Elemental
+   * MediaTailor. The session uses server-side reporting.</p>
    */
   inline const Aws::String& GetPlaybackEndpointPrefix() const { return m_playbackEndpointPrefix; }
   template <typename PlaybackEndpointPrefixT = Aws::String>
@@ -329,7 +329,26 @@ class GetPlaybackConfigurationResult {
 
   ///@{
   /**
-   * <p>The URL that the player uses to initialize a session that uses client-side
+   * <p>The dual-stack (IPv4 and IPv6) URL that your player accesses to get a
+   * manifest from AWS Elemental MediaTailor. The session uses server-side
+   * reporting.</p>
+   */
+  inline const Aws::String& GetDualStackPlaybackEndpointPrefix() const { return m_dualStackPlaybackEndpointPrefix; }
+  template <typename DualStackPlaybackEndpointPrefixT = Aws::String>
+  void SetDualStackPlaybackEndpointPrefix(DualStackPlaybackEndpointPrefixT&& value) {
+    m_dualStackPlaybackEndpointPrefixHasBeenSet = true;
+    m_dualStackPlaybackEndpointPrefix = std::forward<DualStackPlaybackEndpointPrefixT>(value);
+  }
+  template <typename DualStackPlaybackEndpointPrefixT = Aws::String>
+  GetPlaybackConfigurationResult& WithDualStackPlaybackEndpointPrefix(DualStackPlaybackEndpointPrefixT&& value) {
+    SetDualStackPlaybackEndpointPrefix(std::forward<DualStackPlaybackEndpointPrefixT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The URL that your player uses to initialize a session that uses client-side
    * reporting.</p>
    */
   inline const Aws::String& GetSessionInitializationEndpointPrefix() const { return m_sessionInitializationEndpointPrefix; }
@@ -341,6 +360,26 @@ class GetPlaybackConfigurationResult {
   template <typename SessionInitializationEndpointPrefixT = Aws::String>
   GetPlaybackConfigurationResult& WithSessionInitializationEndpointPrefix(SessionInitializationEndpointPrefixT&& value) {
     SetSessionInitializationEndpointPrefix(std::forward<SessionInitializationEndpointPrefixT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The dual-stack (IPv4 and IPv6) URL that your player uses to initialize a
+   * session that uses client-side reporting.</p>
+   */
+  inline const Aws::String& GetDualStackSessionInitializationEndpointPrefix() const {
+    return m_dualStackSessionInitializationEndpointPrefix;
+  }
+  template <typename DualStackSessionInitializationEndpointPrefixT = Aws::String>
+  void SetDualStackSessionInitializationEndpointPrefix(DualStackSessionInitializationEndpointPrefixT&& value) {
+    m_dualStackSessionInitializationEndpointPrefixHasBeenSet = true;
+    m_dualStackSessionInitializationEndpointPrefix = std::forward<DualStackSessionInitializationEndpointPrefixT>(value);
+  }
+  template <typename DualStackSessionInitializationEndpointPrefixT = Aws::String>
+  GetPlaybackConfigurationResult& WithDualStackSessionInitializationEndpointPrefix(DualStackSessionInitializationEndpointPrefixT&& value) {
+    SetDualStackSessionInitializationEndpointPrefix(std::forward<DualStackSessionInitializationEndpointPrefixT>(value));
     return *this;
   }
   ///@}
@@ -544,7 +583,11 @@ class GetPlaybackConfigurationResult {
 
   Aws::String m_playbackEndpointPrefix;
 
+  Aws::String m_dualStackPlaybackEndpointPrefix;
+
   Aws::String m_sessionInitializationEndpointPrefix;
+
+  Aws::String m_dualStackSessionInitializationEndpointPrefix;
 
   Aws::String m_slateAdUrl;
 
@@ -577,7 +620,9 @@ class GetPlaybackConfigurationResult {
   bool m_personalizationThresholdSecondsHasBeenSet = false;
   bool m_playbackConfigurationArnHasBeenSet = false;
   bool m_playbackEndpointPrefixHasBeenSet = false;
+  bool m_dualStackPlaybackEndpointPrefixHasBeenSet = false;
   bool m_sessionInitializationEndpointPrefixHasBeenSet = false;
+  bool m_dualStackSessionInitializationEndpointPrefixHasBeenSet = false;
   bool m_slateAdUrlHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_transcodeProfileNameHasBeenSet = false;

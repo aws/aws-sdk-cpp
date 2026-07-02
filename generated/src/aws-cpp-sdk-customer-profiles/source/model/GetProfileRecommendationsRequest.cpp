@@ -62,5 +62,9 @@ Aws::String GetProfileRecommendationsRequest::SerializePayload() const {
     payload.WithObject("MetadataConfig", m_metadataConfig.Jsonize());
   }
 
+  if (m_diversityConfigHasBeenSet) {
+    payload.WithObject("DiversityConfig", m_diversityConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -51,7 +51,8 @@ class Address {
 
   ///@{
   /**
-   * <p>The phone number of the contact.</p>
+   * <p>The phone number of the contact, including the country code (for example,
+   * <code>+12065550100</code>).</p>
    */
   inline const Aws::String& GetContactPhoneNumber() const { return m_contactPhoneNumber; }
   inline bool ContactPhoneNumberHasBeenSet() const { return m_contactPhoneNumberHasBeenSet; }

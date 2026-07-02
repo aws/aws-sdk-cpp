@@ -208,6 +208,24 @@ class GetRecommenderResult {
 
   ///@{
   /**
+   * <p>The name of the recommender version currently serving recommendations.
+   * Omitted when no active recommender version is set.</p>
+   */
+  inline const Aws::String& GetActiveRecommenderVersionName() const { return m_activeRecommenderVersionName; }
+  template <typename ActiveRecommenderVersionNameT = Aws::String>
+  void SetActiveRecommenderVersionName(ActiveRecommenderVersionNameT&& value) {
+    m_activeRecommenderVersionNameHasBeenSet = true;
+    m_activeRecommenderVersionName = std::forward<ActiveRecommenderVersionNameT>(value);
+  }
+  template <typename ActiveRecommenderVersionNameT = Aws::String>
+  GetRecommenderResult& WithActiveRecommenderVersionName(ActiveRecommenderVersionNameT&& value) {
+    SetActiveRecommenderVersionName(std::forward<ActiveRecommenderVersionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A set of metrics that provide information about the recommender's training
    * performance and accuracy.</p>
    */
@@ -290,6 +308,8 @@ class GetRecommenderResult {
 
   RecommenderUpdate m_latestRecommenderUpdate;
 
+  Aws::String m_activeRecommenderVersionName;
+
   Aws::Vector<TrainingMetrics> m_trainingMetrics;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -306,6 +326,7 @@ class GetRecommenderResult {
   bool m_createdAtHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
   bool m_latestRecommenderUpdateHasBeenSet = false;
+  bool m_activeRecommenderVersionNameHasBeenSet = false;
   bool m_trainingMetricsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

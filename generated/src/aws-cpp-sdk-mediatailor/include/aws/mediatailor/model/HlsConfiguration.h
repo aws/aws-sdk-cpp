@@ -33,8 +33,8 @@ class HlsConfiguration {
 
   ///@{
   /**
-   * <p>The URL that is used to initiate a playback session for devices that support
-   * Apple HLS. The session uses server-side reporting.</p>
+   * <p>The URL that MediaTailor generates to initiate a playback session for devices
+   * that support Apple HLS. The session uses server-side reporting.</p>
    */
   inline const Aws::String& GetManifestEndpointPrefix() const { return m_manifestEndpointPrefix; }
   inline bool ManifestEndpointPrefixHasBeenSet() const { return m_manifestEndpointPrefixHasBeenSet; }
@@ -49,9 +49,32 @@ class HlsConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The dual-stack (IPv4 and IPv6) URL that MediaTailor generates to initiate a
+   * playback session for devices that support Apple HLS. The session uses
+   * server-side reporting.</p>
+   */
+  inline const Aws::String& GetDualStackManifestEndpointPrefix() const { return m_dualStackManifestEndpointPrefix; }
+  inline bool DualStackManifestEndpointPrefixHasBeenSet() const { return m_dualStackManifestEndpointPrefixHasBeenSet; }
+  template <typename DualStackManifestEndpointPrefixT = Aws::String>
+  void SetDualStackManifestEndpointPrefix(DualStackManifestEndpointPrefixT&& value) {
+    m_dualStackManifestEndpointPrefixHasBeenSet = true;
+    m_dualStackManifestEndpointPrefix = std::forward<DualStackManifestEndpointPrefixT>(value);
+  }
+  template <typename DualStackManifestEndpointPrefixT = Aws::String>
+  HlsConfiguration& WithDualStackManifestEndpointPrefix(DualStackManifestEndpointPrefixT&& value) {
+    SetDualStackManifestEndpointPrefix(std::forward<DualStackManifestEndpointPrefixT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_manifestEndpointPrefix;
+
+  Aws::String m_dualStackManifestEndpointPrefix;
   bool m_manifestEndpointPrefixHasBeenSet = false;
+  bool m_dualStackManifestEndpointPrefixHasBeenSet = false;
 };
 
 }  // namespace Model

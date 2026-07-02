@@ -62,6 +62,10 @@ GetRecommenderResult& GetRecommenderResult::operator=(const Aws::AmazonWebServic
     m_latestRecommenderUpdate = jsonValue.GetObject("LatestRecommenderUpdate");
     m_latestRecommenderUpdateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ActiveRecommenderVersionName")) {
+    m_activeRecommenderVersionName = jsonValue.GetString("ActiveRecommenderVersionName");
+    m_activeRecommenderVersionNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("TrainingMetrics")) {
     Aws::Utils::Array<JsonView> trainingMetricsJsonList = jsonValue.GetArray("TrainingMetrics");
     for (unsigned trainingMetricsIndex = 0; trainingMetricsIndex < trainingMetricsJsonList.GetLength(); ++trainingMetricsIndex) {

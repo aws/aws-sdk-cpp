@@ -101,6 +101,25 @@ class UpdateRecommenderRequest : public CustomerProfilesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of a specific recommender version to activate as part of this update
+   * (for example, to roll back to a previously trained version).</p>
+   */
+  inline const Aws::String& GetRecommenderVersionName() const { return m_recommenderVersionName; }
+  inline bool RecommenderVersionNameHasBeenSet() const { return m_recommenderVersionNameHasBeenSet; }
+  template <typename RecommenderVersionNameT = Aws::String>
+  void SetRecommenderVersionName(RecommenderVersionNameT&& value) {
+    m_recommenderVersionNameHasBeenSet = true;
+    m_recommenderVersionName = std::forward<RecommenderVersionNameT>(value);
+  }
+  template <typename RecommenderVersionNameT = Aws::String>
+  UpdateRecommenderRequest& WithRecommenderVersionName(RecommenderVersionNameT&& value) {
+    SetRecommenderVersionName(std::forward<RecommenderVersionNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
@@ -109,10 +128,13 @@ class UpdateRecommenderRequest : public CustomerProfilesRequest {
   Aws::String m_description;
 
   RecommenderConfig m_recommenderConfig;
+
+  Aws::String m_recommenderVersionName;
   bool m_domainNameHasBeenSet = false;
   bool m_recommenderNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_recommenderConfigHasBeenSet = false;
+  bool m_recommenderVersionNameHasBeenSet = false;
 };
 
 }  // namespace Model

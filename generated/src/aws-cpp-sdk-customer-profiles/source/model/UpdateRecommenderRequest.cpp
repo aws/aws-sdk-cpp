@@ -23,5 +23,9 @@ Aws::String UpdateRecommenderRequest::SerializePayload() const {
     payload.WithObject("RecommenderConfig", m_recommenderConfig.Jsonize());
   }
 
+  if (m_recommenderVersionNameHasBeenSet) {
+    payload.WithString("RecommenderVersionName", m_recommenderVersionName);
+  }
+
   return payload.View().WriteReadable();
 }

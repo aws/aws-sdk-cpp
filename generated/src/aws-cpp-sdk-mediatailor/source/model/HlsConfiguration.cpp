@@ -22,6 +22,10 @@ HlsConfiguration& HlsConfiguration::operator=(JsonView jsonValue) {
     m_manifestEndpointPrefix = jsonValue.GetString("ManifestEndpointPrefix");
     m_manifestEndpointPrefixHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DualStackManifestEndpointPrefix")) {
+    m_dualStackManifestEndpointPrefix = jsonValue.GetString("DualStackManifestEndpointPrefix");
+    m_dualStackManifestEndpointPrefixHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue HlsConfiguration::Jsonize() const {
 
   if (m_manifestEndpointPrefixHasBeenSet) {
     payload.WithString("ManifestEndpointPrefix", m_manifestEndpointPrefix);
+  }
+
+  if (m_dualStackManifestEndpointPrefixHasBeenSet) {
+    payload.WithString("DualStackManifestEndpointPrefix", m_dualStackManifestEndpointPrefix);
   }
 
   return payload;

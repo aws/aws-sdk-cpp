@@ -34,6 +34,10 @@ ResponseOutputItem& ResponseOutputItem::operator=(JsonView jsonValue) {
     m_playbackUrl = jsonValue.GetString("PlaybackUrl");
     m_playbackUrlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DualStackPlaybackUrl")) {
+    m_dualStackPlaybackUrl = jsonValue.GetString("DualStackPlaybackUrl");
+    m_dualStackPlaybackUrlHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SourceGroup")) {
     m_sourceGroup = jsonValue.GetString("SourceGroup");
     m_sourceGroupHasBeenSet = true;
@@ -58,6 +62,10 @@ JsonValue ResponseOutputItem::Jsonize() const {
 
   if (m_playbackUrlHasBeenSet) {
     payload.WithString("PlaybackUrl", m_playbackUrl);
+  }
+
+  if (m_dualStackPlaybackUrlHasBeenSet) {
+    payload.WithString("DualStackPlaybackUrl", m_dualStackPlaybackUrl);
   }
 
   if (m_sourceGroupHasBeenSet) {

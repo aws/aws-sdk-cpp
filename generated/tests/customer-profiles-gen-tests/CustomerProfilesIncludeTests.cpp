@@ -128,6 +128,9 @@
 #include <aws/customer-profiles/model/DetectProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/DetectedProfileObjectType.h>
 #include <aws/customer-profiles/model/Dimension.h>
+#include <aws/customer-profiles/model/DiversityCapType.h>
+#include <aws/customer-profiles/model/DiversityColumn.h>
+#include <aws/customer-profiles/model/DiversityConfig.h>
 #include <aws/customer-profiles/model/DomainObjectTypeField.h>
 #include <aws/customer-profiles/model/DomainObjectTypesListItem.h>
 #include <aws/customer-profiles/model/DomainStats.h>
@@ -335,6 +338,7 @@
 #include <aws/customer-profiles/model/Readiness.h>
 #include <aws/customer-profiles/model/ReadinessStatus.h>
 #include <aws/customer-profiles/model/Recommendation.h>
+#include <aws/customer-profiles/model/RecommendationDiversityConfig.h>
 #include <aws/customer-profiles/model/RecommenderConfig.h>
 #include <aws/customer-profiles/model/RecommenderFilter.h>
 #include <aws/customer-profiles/model/RecommenderFilterStatus.h>
