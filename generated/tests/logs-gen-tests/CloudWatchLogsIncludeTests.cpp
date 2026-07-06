@@ -180,6 +180,8 @@
 #include <aws/logs/model/GetScheduledQueryHistoryResult.h>
 #include <aws/logs/model/GetScheduledQueryRequest.h>
 #include <aws/logs/model/GetScheduledQueryResult.h>
+#include <aws/logs/model/GetStorageTierPolicyRequest.h>
+#include <aws/logs/model/GetStorageTierPolicyResult.h>
 #include <aws/logs/model/GetTransformerRequest.h>
 #include <aws/logs/model/GetTransformerResult.h>
 #include <aws/logs/model/Grok.h>
@@ -297,6 +299,8 @@
 #include <aws/logs/model/PutResourcePolicyRequest.h>
 #include <aws/logs/model/PutResourcePolicyResult.h>
 #include <aws/logs/model/PutRetentionPolicyRequest.h>
+#include <aws/logs/model/PutStorageTierPolicyRequest.h>
+#include <aws/logs/model/PutStorageTierPolicyResult.h>
 #include <aws/logs/model/PutSubscriptionFilterRequest.h>
 #include <aws/logs/model/PutSyslogConfigurationRequest.h>
 #include <aws/logs/model/PutTransformerRequest.h>
@@ -340,6 +344,7 @@
 #include <aws/logs/model/State.h>
 #include <aws/logs/model/StopQueryRequest.h>
 #include <aws/logs/model/StopQueryResult.h>
+#include <aws/logs/model/StorageTier.h>
 #include <aws/logs/model/SubscriptionFilter.h>
 #include <aws/logs/model/SubstituteString.h>
 #include <aws/logs/model/SubstituteStringEntry.h>

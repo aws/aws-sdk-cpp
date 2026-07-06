@@ -3,68 +3,308 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/model/InvokeLambdaAction.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace MailManager {
 namespace Model {
 
-InvokeLambdaAction::InvokeLambdaAction(JsonView jsonValue) { *this = jsonValue; }
+InvokeLambdaAction::InvokeLambdaAction(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-InvokeLambdaAction& InvokeLambdaAction::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ActionFailurePolicy")) {
-    m_actionFailurePolicy = ActionFailurePolicyMapper::GetActionFailurePolicyForName(jsonValue.GetString("ActionFailurePolicy"));
-    m_actionFailurePolicyHasBeenSet = true;
+InvokeLambdaAction& InvokeLambdaAction::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "ActionFailurePolicy") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_actionFailurePolicy = ActionFailurePolicyMapper::GetActionFailurePolicyForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_actionFailurePolicyHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "FunctionArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_functionArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_functionArn = ss.str();
+                  }
+                }
+                m_functionArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "InvocationType") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_invocationType = LambdaInvocationTypeMapper::GetLambdaInvocationTypeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_invocationTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "RoleArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_roleArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_roleArn = ss.str();
+                  }
+                }
+                m_roleArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "RetryTimeMinutes") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_retryTimeMinutes = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_retryTimeMinutes = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_retryTimeMinutesHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("InvokeLambdaAction", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "ActionFailurePolicy") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_actionFailurePolicy = ActionFailurePolicyMapper::GetActionFailurePolicyForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_actionFailurePolicyHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "FunctionArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_functionArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_functionArn = ss.str();
+                }
+              }
+              m_functionArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "InvocationType") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_invocationType = LambdaInvocationTypeMapper::GetLambdaInvocationTypeForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_invocationTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "RoleArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_roleArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_roleArn = ss.str();
+                }
+              }
+              m_roleArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "RetryTimeMinutes") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_retryTimeMinutes = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_retryTimeMinutes = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_retryTimeMinutesHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("FunctionArn")) {
-    m_functionArn = jsonValue.GetString("FunctionArn");
-    m_functionArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("InvocationType")) {
-    m_invocationType = LambdaInvocationTypeMapper::GetLambdaInvocationTypeForName(jsonValue.GetString("InvocationType"));
-    m_invocationTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RoleArn")) {
-    m_roleArn = jsonValue.GetString("RoleArn");
-    m_roleArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RetryTimeMinutes")) {
-    m_retryTimeMinutes = jsonValue.GetInteger("RetryTimeMinutes");
-    m_retryTimeMinutesHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue InvokeLambdaAction::Jsonize() const {
-  JsonValue payload;
+void InvokeLambdaAction::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_actionFailurePolicyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_functionArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_invocationTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_roleArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_retryTimeMinutesHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_actionFailurePolicyHasBeenSet) {
-    payload.WithString("ActionFailurePolicy", ActionFailurePolicyMapper::GetNameForActionFailurePolicy(m_actionFailurePolicy));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ActionFailurePolicy"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(ActionFailurePolicyMapper::GetNameForActionFailurePolicy(m_actionFailurePolicy).c_str()));
   }
 
   if (m_functionArnHasBeenSet) {
-    payload.WithString("FunctionArn", m_functionArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FunctionArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_functionArn.c_str()));
   }
 
   if (m_invocationTypeHasBeenSet) {
-    payload.WithString("InvocationType", LambdaInvocationTypeMapper::GetNameForLambdaInvocationType(m_invocationType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InvocationType"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(LambdaInvocationTypeMapper::GetNameForLambdaInvocationType(m_invocationType).c_str()));
   }
 
   if (m_roleArnHasBeenSet) {
-    payload.WithString("RoleArn", m_roleArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RoleArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_roleArn.c_str()));
   }
 
   if (m_retryTimeMinutesHasBeenSet) {
-    payload.WithInteger("RetryTimeMinutes", m_retryTimeMinutes);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RetryTimeMinutes"));
+    (m_retryTimeMinutes >= 0) ? encoder.WriteUInt(m_retryTimeMinutes) : encoder.WriteNegInt(m_retryTimeMinutes);
   }
-
-  return payload;
 }
 
 }  // namespace Model

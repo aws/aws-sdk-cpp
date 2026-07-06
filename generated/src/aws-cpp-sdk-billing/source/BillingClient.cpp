@@ -10,13 +10,18 @@
 #include <aws/billing/model/CreateBillingViewRequest.h>
 #include <aws/billing/model/DeleteBillingViewRequest.h>
 #include <aws/billing/model/DisassociateSourceViewsRequest.h>
+#include <aws/billing/model/GetBillingPreferencesRequest.h>
 #include <aws/billing/model/GetBillingViewRequest.h>
+#include <aws/billing/model/GetCreditAllocationHistoryRequest.h>
+#include <aws/billing/model/GetCreditsRequest.h>
 #include <aws/billing/model/GetResourcePolicyRequest.h>
 #include <aws/billing/model/ListBillingViewsRequest.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewRequest.h>
 #include <aws/billing/model/ListTagsForResourceRequest.h>
+#include <aws/billing/model/RedeemCreditsRequest.h>
 #include <aws/billing/model/TagResourceRequest.h>
 #include <aws/billing/model/UntagResourceRequest.h>
+#include <aws/billing/model/UpdateBillingPreferencesRequest.h>
 #include <aws/billing/model/UpdateBillingViewRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -207,9 +212,26 @@ DisassociateSourceViewsOutcome BillingClient::DisassociateSourceViews(const Disa
                             : DisassociateSourceViewsOutcome(std::move(result.GetError()));
 }
 
+GetBillingPreferencesOutcome BillingClient::GetBillingPreferences(const GetBillingPreferencesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBillingPreferencesOutcome(result.GetResultWithOwnership())
+                            : GetBillingPreferencesOutcome(std::move(result.GetError()));
+}
+
 GetBillingViewOutcome BillingClient::GetBillingView(const GetBillingViewRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetBillingViewOutcome(result.GetResultWithOwnership()) : GetBillingViewOutcome(std::move(result.GetError()));
+}
+
+GetCreditAllocationHistoryOutcome BillingClient::GetCreditAllocationHistory(const GetCreditAllocationHistoryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCreditAllocationHistoryOutcome(result.GetResultWithOwnership())
+                            : GetCreditAllocationHistoryOutcome(std::move(result.GetError()));
+}
+
+GetCreditsOutcome BillingClient::GetCredits(const GetCreditsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCreditsOutcome(result.GetResultWithOwnership()) : GetCreditsOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome BillingClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
@@ -237,6 +259,11 @@ ListTagsForResourceOutcome BillingClient::ListTagsForResource(const ListTagsForR
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
+RedeemCreditsOutcome BillingClient::RedeemCredits(const RedeemCreditsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RedeemCreditsOutcome(result.GetResultWithOwnership()) : RedeemCreditsOutcome(std::move(result.GetError()));
+}
+
 TagResourceOutcome BillingClient::TagResource(const TagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
@@ -245,6 +272,12 @@ TagResourceOutcome BillingClient::TagResource(const TagResourceRequest& request)
 UntagResourceOutcome BillingClient::UntagResource(const UntagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateBillingPreferencesOutcome BillingClient::UpdateBillingPreferences(const UpdateBillingPreferencesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBillingPreferencesOutcome(result.GetResultWithOwnership())
+                            : UpdateBillingPreferencesOutcome(std::move(result.GetError()));
 }
 
 UpdateBillingViewOutcome BillingClient::UpdateBillingView(const UpdateBillingViewRequest& request) const {

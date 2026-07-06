@@ -3,36 +3,100 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/model/IngressIpv6ToEvaluate.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace MailManager {
 namespace Model {
 
-IngressIpv6ToEvaluate::IngressIpv6ToEvaluate(JsonView jsonValue) { *this = jsonValue; }
+IngressIpv6ToEvaluate::IngressIpv6ToEvaluate(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-IngressIpv6ToEvaluate& IngressIpv6ToEvaluate::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Attribute")) {
-    m_attribute = IngressIpv6AttributeMapper::GetIngressIpv6AttributeForName(jsonValue.GetString("Attribute"));
-    m_attributeHasBeenSet = true;
+IngressIpv6ToEvaluate& IngressIpv6ToEvaluate::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "Attribute") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_attribute = IngressIpv6AttributeMapper::GetIngressIpv6AttributeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_attributeHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("IngressIpv6ToEvaluate", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Attribute") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_attribute = IngressIpv6AttributeMapper::GetIngressIpv6AttributeForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_attributeHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
+
   return *this;
 }
 
-JsonValue IngressIpv6ToEvaluate::Jsonize() const {
-  JsonValue payload;
-
+void IngressIpv6ToEvaluate::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_attributeHasBeenSet) {
-    payload.WithString("Attribute", IngressIpv6AttributeMapper::GetNameForIngressIpv6Attribute(m_attribute));
+    mapSize++;
   }
 
-  return payload;
+  encoder.WriteMapStart(mapSize);
+
+  if (m_attributeHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Attribute"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(IngressIpv6AttributeMapper::GetNameForIngressIpv6Attribute(m_attribute).c_str()));
+  }
 }
 
 }  // namespace Model
