@@ -393,8 +393,9 @@ TEST_F(XmlShapeSerializerTest, XmlNameOverridesMemberName) {
   s.BeginStructure(root);
   s.WriteString(member, "hello");
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<ExternalName>hello</ExternalName>"), Aws::String::npos);
-  EXPECT_EQ(s.GetPayload().find("<internalName>"), Aws::String::npos);
+  auto payload = s.GetPayload();
+  EXPECT_NE(payload.find("<ExternalName>hello</ExternalName>"), Aws::String::npos);
+  EXPECT_EQ(payload.find("<internalName>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, XmlNameOnStructure) {

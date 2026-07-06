@@ -6,11 +6,12 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 #include <smithy/client/schema/XmlShapeSerializer.h>
+#include <smithy/client/schema/XmlTraits.h>
 
 using namespace smithy::schema;
 using namespace Aws::Utils;
 
-static constexpr int MAX_DEPTH = 1000;
+static constexpr int MAX_DEPTH = 256;
 
 namespace {
 
@@ -49,8 +50,6 @@ void WriteXmlEscaped(Aws::String& buf, const Aws::String& value) {
   }
 }
 
-// Get the effective XML element name for a schema.
-// If XmlTraits is present and has an xmlName, use it; otherwise fall back to memberName.
 Aws::String GetXmlName(const Schema& schema) {
   const auto* traits = schema.GetXmlTraits();
   if (traits && !traits->xmlName.empty()) {

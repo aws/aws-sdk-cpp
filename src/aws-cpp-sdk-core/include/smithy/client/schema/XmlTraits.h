@@ -9,21 +9,16 @@
 namespace smithy {
 namespace schema {
 
-/**
- * XML-specific traits for a Schema member.
- * Instances should be declared as static const and referenced via pointer from Schema.
- * Zero cost for non-XML services (Schema just holds a null pointer).
- */
 struct XmlTraits {
-  Aws::String xmlName;          // @xmlName override (empty = use member name)
-  Aws::String listItemName;     // element name for list items (default: "member")
-  Aws::String mapEntryName;     // element name for map entries (default: "entry")
-  Aws::String mapKeyName;       // element name for map keys (default: "key")
-  Aws::String mapValueName;     // element name for map values (default: "value")
-  Aws::String namespaceUri;     // @xmlNamespace URI
-  Aws::String namespacePrefix;  // @xmlNamespace prefix (empty = default namespace)
-  bool flattened = false;       // @xmlFlattened
-  bool isAttribute = false;     // @xmlAttribute
+  Aws::String xmlName;
+  Aws::String listItemName;
+  Aws::String mapEntryName;
+  Aws::String mapKeyName;
+  Aws::String mapValueName;
+  Aws::String namespaceUri;
+  Aws::String namespacePrefix;
+  bool flattened = false;
+  bool isAttribute = false;
 };
 
 }  // namespace schema

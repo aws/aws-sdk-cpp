@@ -1,12 +1,13 @@
 #pragma once
 
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <smithy/client/schema/XmlTraits.h>
 
 #include <cstdint>
 
 namespace smithy {
 namespace schema {
+
+struct XmlTraits;
 
 enum class ShapeType : uint8_t {
   Boolean,
@@ -49,10 +50,8 @@ class Schema {
 
   uint16_t GetMemberCount() const { return m_memberCount; }
 
-  // XML traits accessor
   const XmlTraits* GetXmlTraits() const { return m_xmlTraits; }
 
-  // Builder-style setter for XML traits pointer (used by codegen)
   Schema& WithXmlTraits(const XmlTraits* traits) {
     m_xmlTraits = traits;
     return *this;
