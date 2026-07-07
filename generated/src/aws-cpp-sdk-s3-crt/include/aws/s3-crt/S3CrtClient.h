@@ -4676,22 +4676,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient,
   virtual Model::HeadObjectOutcome HeadObject(const Model::HeadObjectRequest& request) const;
 
   /**
-   * A Callable wrapper for HeadObject that returns a future to the operation so that it can be executed in parallel to other requests.
-   */
-  template <typename HeadObjectRequestT = Model::HeadObjectRequest>
-  Model::HeadObjectOutcomeCallable HeadObjectCallable(const HeadObjectRequestT& request) const {
-    return SubmitCallable(&S3CrtClient::HeadObject, request);
-  }
-
-  /**
    * An Async wrapper for HeadObject that queues the request into a thread executor and triggers associated callback when operation has
    * finished.
    */
-  template <typename HeadObjectRequestT = Model::HeadObjectRequest>
-  void HeadObjectAsync(const HeadObjectRequestT& request, const HeadObjectResponseReceivedHandler& handler,
-                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&S3CrtClient::HeadObject, request, handler, context);
-  }
+  virtual void HeadObjectAsync(const Model::HeadObjectRequest& request, const HeadObjectResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
   /**
    *  <p>This operation is not supported for directory buckets.</p>
@@ -8720,6 +8709,7 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient,
     GetObjectResponseReceivedHandler getResponseHandler;
     PutObjectResponseReceivedHandler putResponseHandler;
     CopyObjectResponseReceivedHandler copyResponseHandler;
+    HeadObjectResponseReceivedHandler headObjectResponseHandler;
     std::shared_ptr<const Aws::Client::AsyncCallerContext> asyncCallerContext;
     const Aws::AmazonWebServiceRequest* originalRequest;
     std::shared_ptr<Aws::Http::HttpRequest> request;

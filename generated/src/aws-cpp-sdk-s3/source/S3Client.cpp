@@ -1829,6 +1829,19 @@ HeadObjectOutcome S3Client::HeadObject(const HeadObjectRequest& request) const {
   return result.IsSuccess() ? HeadObjectOutcome(result.GetResultWithOwnership()) : HeadObjectOutcome(std::move(result.GetError()));
 }
 
+HeadObjectOutcomeCallable S3Client::HeadObjectCallable(const HeadObjectRequest& request) const {
+  auto task =
+      Aws::MakeShared<std::packaged_task<HeadObjectOutcome()> >(ALLOCATION_TAG, [this, request]() { return this->HeadObject(request); });
+  auto packagedFunction = [task]() { (*task)(); };
+  m_clientConfiguration.executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::HeadObjectAsync(const HeadObjectRequest& request, const HeadObjectResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const {
+  m_clientConfiguration.executor->Submit([this, request, handler, context]() { handler(this, request, HeadObject(request), context); });
+}
+
 ListBucketAnalyticsConfigurationsOutcome S3Client::ListBucketAnalyticsConfigurations(
     const ListBucketAnalyticsConfigurationsRequest& request) const {
   if (!request.BucketHasBeenSet()) {
