@@ -10,6 +10,7 @@
 #include <aws/billing/BillingPaginationBase.h>
 #include <aws/billing/model/ListBillingViewsPaginationTraits.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewPaginationTraits.h>
+#include <aws/billing/model/GetCreditAllocationHistoryPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

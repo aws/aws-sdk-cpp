@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/SearchState.h>
 
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MailManager {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class SearchStatus {
  public:
   AWS_MAILMANAGER_API SearchStatus() = default;
-  AWS_MAILMANAGER_API SearchStatus(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MAILMANAGER_API SearchStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MAILMANAGER_API SearchStatus(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MAILMANAGER_API SearchStatus& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MAILMANAGER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

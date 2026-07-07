@@ -201,6 +201,7 @@
 #include <aws/opensearch/model/EngineType.h>
 #include <aws/opensearch/model/EnvironmentInfo.h>
 #include <aws/opensearch/model/ErrorDetails.h>
+#include <aws/opensearch/model/ExportOptions.h>
 #include <aws/opensearch/model/Filter.h>
 #include <aws/opensearch/model/GetApplicationRequest.h>
 #include <aws/opensearch/model/GetApplicationResult.h>
@@ -218,6 +219,8 @@
 #include <aws/opensearch/model/GetDomainMaintenanceStatusResult.h>
 #include <aws/opensearch/model/GetIndexRequest.h>
 #include <aws/opensearch/model/GetIndexResult.h>
+#include <aws/opensearch/model/GetMigrationRequest.h>
+#include <aws/opensearch/model/GetMigrationResult.h>
 #include <aws/opensearch/model/GetPackageVersionHistoryRequest.h>
 #include <aws/opensearch/model/GetPackageVersionHistoryResult.h>
 #include <aws/opensearch/model/GetUpgradeHistoryRequest.h>
@@ -279,6 +282,8 @@
 #include <aws/opensearch/model/ListInsightsResult.h>
 #include <aws/opensearch/model/ListInstanceTypeDetailsRequest.h>
 #include <aws/opensearch/model/ListInstanceTypeDetailsResult.h>
+#include <aws/opensearch/model/ListMigrationsRequest.h>
+#include <aws/opensearch/model/ListMigrationsResult.h>
 #include <aws/opensearch/model/ListPackagesForDomainRequest.h>
 #include <aws/opensearch/model/ListPackagesForDomainResult.h>
 #include <aws/opensearch/model/ListScheduledActionsRequest.h>
@@ -300,6 +305,11 @@
 #include <aws/opensearch/model/MaintenanceType.h>
 #include <aws/opensearch/model/MasterNodeStatus.h>
 #include <aws/opensearch/model/MasterUserOptions.h>
+#include <aws/opensearch/model/MigrationError.h>
+#include <aws/opensearch/model/MigrationOptions.h>
+#include <aws/opensearch/model/MigrationSource.h>
+#include <aws/opensearch/model/MigrationSummary.h>
+#include <aws/opensearch/model/MigrationWorkspace.h>
 #include <aws/opensearch/model/ModifyingProperties.h>
 #include <aws/opensearch/model/NaturalLanguageQueryGenerationCurrentState.h>
 #include <aws/opensearch/model/NaturalLanguageQueryGenerationDesiredState.h>
@@ -365,6 +375,7 @@
 #include <aws/opensearch/model/SAMLIdp.h>
 #include <aws/opensearch/model/SAMLOptionsInput.h>
 #include <aws/opensearch/model/SAMLOptionsOutput.h>
+#include <aws/opensearch/model/SavedObjectIdentifier.h>
 #include <aws/opensearch/model/ScheduleAt.h>
 #include <aws/opensearch/model/ScheduledAction.h>
 #include <aws/opensearch/model/ScheduledAutoTuneActionType.h>
@@ -383,6 +394,8 @@
 #include <aws/opensearch/model/SoftwareUpdateOptionsStatus.h>
 #include <aws/opensearch/model/StartDomainMaintenanceRequest.h>
 #include <aws/opensearch/model/StartDomainMaintenanceResult.h>
+#include <aws/opensearch/model/StartMigrationRequest.h>
+#include <aws/opensearch/model/StartMigrationResult.h>
 #include <aws/opensearch/model/StartServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/StartServiceSoftwareUpdateResult.h>
 #include <aws/opensearch/model/StorageType.h>

@@ -8,28 +8,28 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/AcceptAction.h>
 #include <aws/mailmanager/model/PolicyStatement.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MailManager {
 namespace Model {
 class GetTrafficPolicyResult {
  public:
   AWS_MAILMANAGER_API GetTrafficPolicyResult() = default;
-  AWS_MAILMANAGER_API GetTrafficPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_MAILMANAGER_API GetTrafficPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MAILMANAGER_API GetTrafficPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_MAILMANAGER_API GetTrafficPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -110,12 +110,12 @@ class GetTrafficPolicyResult {
    * <p>The maximum message size in bytes of email which is allowed in by this
    * traffic policy—anything larger will be blocked.</p>
    */
-  inline int GetMaxMessageSizeBytes() const { return m_maxMessageSizeBytes; }
-  inline void SetMaxMessageSizeBytes(int value) {
+  inline int64_t GetMaxMessageSizeBytes() const { return m_maxMessageSizeBytes; }
+  inline void SetMaxMessageSizeBytes(int64_t value) {
     m_maxMessageSizeBytesHasBeenSet = true;
     m_maxMessageSizeBytes = value;
   }
-  inline GetTrafficPolicyResult& WithMaxMessageSizeBytes(int value) {
+  inline GetTrafficPolicyResult& WithMaxMessageSizeBytes(int64_t value) {
     SetMaxMessageSizeBytes(value);
     return *this;
   }
@@ -195,7 +195,7 @@ class GetTrafficPolicyResult {
 
   Aws::Vector<PolicyStatement> m_policyStatements;
 
-  int m_maxMessageSizeBytes{0};
+  int64_t m_maxMessageSizeBytes{0};
 
   AcceptAction m_defaultAction{AcceptAction::NOT_SET};
 

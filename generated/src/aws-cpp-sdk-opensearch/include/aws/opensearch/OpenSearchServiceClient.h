@@ -1660,6 +1660,33 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Retrieves the current status and progress of a migration job, including the
+   * number of exported and imported objects and error details if the migration
+   * failed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetMigration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetMigrationOutcome GetMigration(const Model::GetMigrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetMigration that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetMigrationRequestT = Model::GetMigrationRequest>
+  Model::GetMigrationOutcomeCallable GetMigrationCallable(const GetMigrationRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::GetMigration, request);
+  }
+
+  /**
+   * An Async wrapper for GetMigration that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetMigrationRequestT = Model::GetMigrationRequest>
+  void GetMigrationAsync(const GetMigrationRequestT& request, const GetMigrationResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::GetMigration, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of Amazon OpenSearch Service package versions, along with
    * their creation time, commit message, and plugin properties (if the package is a
    * zip plugin package). For more information, see <a
@@ -2025,6 +2052,33 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
                                     const ListInstanceTypeDetailsResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServiceClient::ListInstanceTypeDetails, request, handler, context);
+  }
+
+  /**
+   * <p>Lists migration jobs for an Amazon OpenSearch Service application. You can
+   * filter results by migration status. Use pagination to ensure that the operation
+   * returns quickly and successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListMigrations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListMigrationsOutcome ListMigrations(const Model::ListMigrationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListMigrations that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListMigrationsRequestT = Model::ListMigrationsRequest>
+  Model::ListMigrationsOutcomeCallable ListMigrationsCallable(const ListMigrationsRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::ListMigrations, request);
+  }
+
+  /**
+   * An Async wrapper for ListMigrations that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListMigrationsRequestT = Model::ListMigrationsRequest>
+  void ListMigrationsAsync(const ListMigrationsRequestT& request, const ListMigrationsResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::ListMigrations, request, handler, context);
   }
 
   /**
@@ -2465,6 +2519,36 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
                                    const StartDomainMaintenanceResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServiceClient::StartDomainMaintenance, request, handler, context);
+  }
+
+  /**
+   * <p>Initiates a migration job to migrate saved objects from a data source to an
+   * Amazon OpenSearch Service application workspace. Saved objects include
+   * dashboards, visualizations, index patterns, and searches. You can specify export
+   * filters to control the scope of the migration and a conflict resolution strategy
+   * for handling existing objects in the target workspace.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartMigration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartMigrationOutcome StartMigration(const Model::StartMigrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartMigration that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StartMigrationRequestT = Model::StartMigrationRequest>
+  Model::StartMigrationOutcomeCallable StartMigrationCallable(const StartMigrationRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::StartMigration, request);
+  }
+
+  /**
+   * An Async wrapper for StartMigration that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StartMigrationRequestT = Model::StartMigrationRequest>
+  void StartMigrationAsync(const StartMigrationRequestT& request, const StartMigrationResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::StartMigration, request, handler, context);
   }
 
   /**

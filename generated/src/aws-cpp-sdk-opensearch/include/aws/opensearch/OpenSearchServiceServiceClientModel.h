@@ -79,6 +79,7 @@
 #include <aws/opensearch/model/GetDirectQueryDataSourceResult.h>
 #include <aws/opensearch/model/GetDomainMaintenanceStatusResult.h>
 #include <aws/opensearch/model/GetIndexResult.h>
+#include <aws/opensearch/model/GetMigrationResult.h>
 #include <aws/opensearch/model/GetPackageVersionHistoryResult.h>
 #include <aws/opensearch/model/GetUpgradeHistoryResult.h>
 #include <aws/opensearch/model/GetUpgradeStatusResult.h>
@@ -95,6 +96,7 @@
 #include <aws/opensearch/model/ListDomainsForPackageResult.h>
 #include <aws/opensearch/model/ListInsightsResult.h>
 #include <aws/opensearch/model/ListInstanceTypeDetailsResult.h>
+#include <aws/opensearch/model/ListMigrationsResult.h>
 #include <aws/opensearch/model/ListPackagesForDomainResult.h>
 #include <aws/opensearch/model/ListScheduledActionsResult.h>
 #include <aws/opensearch/model/ListTagsResult.h>
@@ -111,6 +113,7 @@
 #include <aws/opensearch/model/RevokeVpcEndpointAccessResult.h>
 #include <aws/opensearch/model/RollbackServiceSoftwareUpdateResult.h>
 #include <aws/opensearch/model/StartDomainMaintenanceResult.h>
+#include <aws/opensearch/model/StartMigrationResult.h>
 #include <aws/opensearch/model/StartServiceSoftwareUpdateResult.h>
 #include <aws/opensearch/model/UpdateApplicationResult.h>
 #include <aws/opensearch/model/UpdateDataSourceResult.h>
@@ -209,6 +212,7 @@ class GetDefaultApplicationSettingRequest;
 class GetDirectQueryDataSourceRequest;
 class GetDomainMaintenanceStatusRequest;
 class GetIndexRequest;
+class GetMigrationRequest;
 class GetPackageVersionHistoryRequest;
 class GetUpgradeHistoryRequest;
 class GetUpgradeStatusRequest;
@@ -222,6 +226,7 @@ class ListDomainNamesRequest;
 class ListDomainsForPackageRequest;
 class ListInsightsRequest;
 class ListInstanceTypeDetailsRequest;
+class ListMigrationsRequest;
 class ListPackagesForDomainRequest;
 class ListScheduledActionsRequest;
 class ListTagsRequest;
@@ -237,6 +242,7 @@ class RemoveTagsRequest;
 class RevokeVpcEndpointAccessRequest;
 class RollbackServiceSoftwareUpdateRequest;
 class StartDomainMaintenanceRequest;
+class StartMigrationRequest;
 class StartServiceSoftwareUpdateRequest;
 class UpdateApplicationRequest;
 class UpdateDataSourceRequest;
@@ -305,6 +311,7 @@ typedef Aws::Utils::Outcome<GetDefaultApplicationSettingResult, OpenSearchServic
 typedef Aws::Utils::Outcome<GetDirectQueryDataSourceResult, OpenSearchServiceError> GetDirectQueryDataSourceOutcome;
 typedef Aws::Utils::Outcome<GetDomainMaintenanceStatusResult, OpenSearchServiceError> GetDomainMaintenanceStatusOutcome;
 typedef Aws::Utils::Outcome<GetIndexResult, OpenSearchServiceError> GetIndexOutcome;
+typedef Aws::Utils::Outcome<GetMigrationResult, OpenSearchServiceError> GetMigrationOutcome;
 typedef Aws::Utils::Outcome<GetPackageVersionHistoryResult, OpenSearchServiceError> GetPackageVersionHistoryOutcome;
 typedef Aws::Utils::Outcome<GetUpgradeHistoryResult, OpenSearchServiceError> GetUpgradeHistoryOutcome;
 typedef Aws::Utils::Outcome<GetUpgradeStatusResult, OpenSearchServiceError> GetUpgradeStatusOutcome;
@@ -318,6 +325,7 @@ typedef Aws::Utils::Outcome<ListDomainNamesResult, OpenSearchServiceError> ListD
 typedef Aws::Utils::Outcome<ListDomainsForPackageResult, OpenSearchServiceError> ListDomainsForPackageOutcome;
 typedef Aws::Utils::Outcome<ListInsightsResult, OpenSearchServiceError> ListInsightsOutcome;
 typedef Aws::Utils::Outcome<ListInstanceTypeDetailsResult, OpenSearchServiceError> ListInstanceTypeDetailsOutcome;
+typedef Aws::Utils::Outcome<ListMigrationsResult, OpenSearchServiceError> ListMigrationsOutcome;
 typedef Aws::Utils::Outcome<ListPackagesForDomainResult, OpenSearchServiceError> ListPackagesForDomainOutcome;
 typedef Aws::Utils::Outcome<ListScheduledActionsResult, OpenSearchServiceError> ListScheduledActionsOutcome;
 typedef Aws::Utils::Outcome<ListTagsResult, OpenSearchServiceError> ListTagsOutcome;
@@ -333,6 +341,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, OpenSearchServiceError> RemoveTagsOut
 typedef Aws::Utils::Outcome<RevokeVpcEndpointAccessResult, OpenSearchServiceError> RevokeVpcEndpointAccessOutcome;
 typedef Aws::Utils::Outcome<RollbackServiceSoftwareUpdateResult, OpenSearchServiceError> RollbackServiceSoftwareUpdateOutcome;
 typedef Aws::Utils::Outcome<StartDomainMaintenanceResult, OpenSearchServiceError> StartDomainMaintenanceOutcome;
+typedef Aws::Utils::Outcome<StartMigrationResult, OpenSearchServiceError> StartMigrationOutcome;
 typedef Aws::Utils::Outcome<StartServiceSoftwareUpdateResult, OpenSearchServiceError> StartServiceSoftwareUpdateOutcome;
 typedef Aws::Utils::Outcome<UpdateApplicationResult, OpenSearchServiceError> UpdateApplicationOutcome;
 typedef Aws::Utils::Outcome<UpdateDataSourceResult, OpenSearchServiceError> UpdateDataSourceOutcome;
@@ -401,6 +410,7 @@ typedef std::future<GetDefaultApplicationSettingOutcome> GetDefaultApplicationSe
 typedef std::future<GetDirectQueryDataSourceOutcome> GetDirectQueryDataSourceOutcomeCallable;
 typedef std::future<GetDomainMaintenanceStatusOutcome> GetDomainMaintenanceStatusOutcomeCallable;
 typedef std::future<GetIndexOutcome> GetIndexOutcomeCallable;
+typedef std::future<GetMigrationOutcome> GetMigrationOutcomeCallable;
 typedef std::future<GetPackageVersionHistoryOutcome> GetPackageVersionHistoryOutcomeCallable;
 typedef std::future<GetUpgradeHistoryOutcome> GetUpgradeHistoryOutcomeCallable;
 typedef std::future<GetUpgradeStatusOutcome> GetUpgradeStatusOutcomeCallable;
@@ -414,6 +424,7 @@ typedef std::future<ListDomainNamesOutcome> ListDomainNamesOutcomeCallable;
 typedef std::future<ListDomainsForPackageOutcome> ListDomainsForPackageOutcomeCallable;
 typedef std::future<ListInsightsOutcome> ListInsightsOutcomeCallable;
 typedef std::future<ListInstanceTypeDetailsOutcome> ListInstanceTypeDetailsOutcomeCallable;
+typedef std::future<ListMigrationsOutcome> ListMigrationsOutcomeCallable;
 typedef std::future<ListPackagesForDomainOutcome> ListPackagesForDomainOutcomeCallable;
 typedef std::future<ListScheduledActionsOutcome> ListScheduledActionsOutcomeCallable;
 typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
@@ -429,6 +440,7 @@ typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
 typedef std::future<RevokeVpcEndpointAccessOutcome> RevokeVpcEndpointAccessOutcomeCallable;
 typedef std::future<RollbackServiceSoftwareUpdateOutcome> RollbackServiceSoftwareUpdateOutcomeCallable;
 typedef std::future<StartDomainMaintenanceOutcome> StartDomainMaintenanceOutcomeCallable;
+typedef std::future<StartMigrationOutcome> StartMigrationOutcomeCallable;
 typedef std::future<StartServiceSoftwareUpdateOutcome> StartServiceSoftwareUpdateOutcomeCallable;
 typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
 typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
@@ -612,6 +624,9 @@ typedef std::function<void(const OpenSearchServiceClient*, const Model::GetDomai
 typedef std::function<void(const OpenSearchServiceClient*, const Model::GetIndexRequest&, const Model::GetIndexOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetIndexResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServiceClient*, const Model::GetMigrationRequest&, const Model::GetMigrationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetMigrationResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServiceClient*, const Model::GetPackageVersionHistoryRequest&,
                            const Model::GetPackageVersionHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPackageVersionHistoryResponseReceivedHandler;
@@ -651,6 +666,9 @@ typedef std::function<void(const OpenSearchServiceClient*, const Model::ListInsi
 typedef std::function<void(const OpenSearchServiceClient*, const Model::ListInstanceTypeDetailsRequest&,
                            const Model::ListInstanceTypeDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListInstanceTypeDetailsResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServiceClient*, const Model::ListMigrationsRequest&, const Model::ListMigrationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListMigrationsResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServiceClient*, const Model::ListPackagesForDomainRequest&,
                            const Model::ListPackagesForDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPackagesForDomainResponseReceivedHandler;
@@ -699,6 +717,9 @@ typedef std::function<void(const OpenSearchServiceClient*, const Model::Rollback
 typedef std::function<void(const OpenSearchServiceClient*, const Model::StartDomainMaintenanceRequest&,
                            const Model::StartDomainMaintenanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartDomainMaintenanceResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServiceClient*, const Model::StartMigrationRequest&, const Model::StartMigrationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartMigrationResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServiceClient*, const Model::StartServiceSoftwareUpdateRequest&,
                            const Model::StartServiceSoftwareUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartServiceSoftwareUpdateResponseReceivedHandler;
