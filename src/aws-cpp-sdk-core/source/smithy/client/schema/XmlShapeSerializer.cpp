@@ -11,91 +11,7 @@
 using namespace smithy::schema;
 using namespace Aws::Utils;
 
-static constexpr int MAX_DEPTH = 256;
-
-namespace {
-
-void WriteXmlEscaped(Aws::String& buf, const Aws::String& value) {
-  const char* data = value.data();
-  const size_t len = value.size();
-  size_t i = 0;
-  while (i < len) {
-    size_t start = i;
-    while (i < len && data[i] != '&' && data[i] != '<' && data[i] != '>' && data[i] != '"' && data[i] != '\'') {
-      i++;
-    }
-    if (i > start) {
-      buf.append(data + start, i - start);
-    }
-    if (i < len) {
-      switch (data[i]) {
-        case '&':
-          buf += "&amp;";
-          break;
-        case '<':
-          buf += "&lt;";
-          break;
-        case '>':
-          buf += "&gt;";
-          break;
-        case '"':
-          buf += "&quot;";
-          break;
-        case '\'':
-          buf += "&apos;";
-          break;
-      }
-      i++;
-    }
-  }
-}
-
-Aws::String GetXmlName(const Schema& schema) {
-  const auto* traits = schema.GetXmlTraits();
-  if (traits && !traits->xmlName.empty()) {
-    return traits->xmlName;
-  }
-  return schema.GetMemberName();
-}
-
-bool IsFlattened(const Schema& schema) {
-  const auto* traits = schema.GetXmlTraits();
-  return traits && traits->flattened;
-}
-
-Aws::String GetListItemName(const Schema& schema) {
-  const auto* traits = schema.GetXmlTraits();
-  if (traits && !traits->listItemName.empty()) {
-    return traits->listItemName;
-  }
-  return "member";
-}
-
-Aws::String GetMapEntryName(const Schema& schema) {
-  const auto* traits = schema.GetXmlTraits();
-  if (traits && !traits->mapEntryName.empty()) {
-    return traits->mapEntryName;
-  }
-  return "entry";
-}
-
-Aws::String GetMapKeyName(const Schema& schema) {
-  const auto* traits = schema.GetXmlTraits();
-  if (traits && !traits->mapKeyName.empty()) {
-    return traits->mapKeyName;
-  }
-  return "key";
-}
-
-Aws::String GetMapValueName(const Schema& schema) {
-  const auto* traits = schema.GetXmlTraits();
-  if (traits && !traits->mapValueName.empty()) {
-    return traits->mapValueName;
-  }
-  return "value";
-}
-
-}  // anonymous namespace
+static constexpr int MAX_DEPTH = 500;
 
 class XmlShapeSerializer::Impl {
  public:
@@ -111,16 +27,16 @@ class XmlShapeSerializer::Impl {
     if (!name.empty()) {
       m_buf += '<';
       m_buf += name;
-      const auto* traits = schema.GetXmlTraits();
-      if (traits && !traits->namespaceUri.empty()) {
-        if (traits->namespacePrefix.empty()) {
+      const auto* ns = schema.GetTrait(XmlNamespaceTrait::KEY());
+      if (ns && !ns->GetUri().empty()) {
+        if (ns->GetPrefix().empty()) {
           m_buf += " xmlns=\"";
         } else {
           m_buf += " xmlns:";
-          m_buf += traits->namespacePrefix;
+          m_buf += ns->GetPrefix();
           m_buf += "=\"";
         }
-        m_buf += traits->namespaceUri;
+        m_buf += ns->GetUri();
         m_buf += '"';
       }
       m_hasOpenTag = true;
@@ -388,6 +304,83 @@ class XmlShapeSerializer::Impl {
       return m_listItemName[m_depth];
     }
     return GetXmlName(schema);
+  }
+
+  static void WriteXmlEscaped(Aws::String& buf, const Aws::String& value) {
+    const char* data = value.data();
+    const size_t len = value.size();
+    size_t i = 0;
+    while (i < len) {
+      size_t start = i;
+      while (i < len && data[i] != '&' && data[i] != '<' && data[i] != '>' && data[i] != '"' && data[i] != '\'') {
+        i++;
+      }
+      if (i > start) {
+        buf.append(data + start, i - start);
+      }
+      if (i < len) {
+        switch (data[i]) {
+          case '&':
+            buf += "&amp;";
+            break;
+          case '<':
+            buf += "&lt;";
+            break;
+          case '>':
+            buf += "&gt;";
+            break;
+          case '"':
+            buf += "&quot;";
+            break;
+          case '\'':
+            buf += "&apos;";
+            break;
+        }
+        i++;
+      }
+    }
+  }
+
+  static Aws::String GetXmlName(const Schema& schema) {
+    const auto* trait = schema.GetTrait(XmlNameTrait::KEY());
+    if (trait) {
+      return trait->GetValue();
+    }
+    return schema.GetMemberName();
+  }
+
+  static bool IsFlattened(const Schema& schema) { return schema.HasTrait(XmlFlattenedTrait::KEY()); }
+
+  static Aws::String GetListItemName(const Schema& schema) {
+    const auto* trait = schema.GetTrait(XmlListItemNameTrait::KEY());
+    if (trait) {
+      return trait->GetValue();
+    }
+    return "member";
+  }
+
+  static Aws::String GetMapEntryName(const Schema& schema) {
+    const auto* trait = schema.GetTrait(XmlMapEntryNameTrait::KEY());
+    if (trait) {
+      return trait->GetValue();
+    }
+    return "entry";
+  }
+
+  static Aws::String GetMapKeyName(const Schema& schema) {
+    const auto* trait = schema.GetTrait(XmlMapKeyNameTrait::KEY());
+    if (trait) {
+      return trait->GetValue();
+    }
+    return "key";
+  }
+
+  static Aws::String GetMapValueName(const Schema& schema) {
+    const auto* trait = schema.GetTrait(XmlMapValueNameTrait::KEY());
+    if (trait) {
+      return trait->GetValue();
+    }
+    return "value";
   }
 };
 

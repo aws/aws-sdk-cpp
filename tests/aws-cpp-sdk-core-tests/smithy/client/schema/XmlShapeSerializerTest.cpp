@@ -5,6 +5,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <smithy/client/schema/XmlShapeSerializer.h>
+#include <smithy/client/schema/XmlTraits.h>
 
 using namespace smithy::schema;
 
@@ -17,7 +18,7 @@ TEST_F(XmlShapeSerializerTest, EmptyStructure) {
   Schema root("Root", ShapeType::Structure);
   s.BeginStructure(root);
   s.EndStructure();
-  EXPECT_EQ(s.GetPayload(), "<Root></Root>");
+  EXPECT_EQ(s.GetPayload().GetResult(), "<Root></Root>");
 }
 
 TEST_F(XmlShapeSerializerTest, BooleanTrue) {
@@ -27,7 +28,7 @@ TEST_F(XmlShapeSerializerTest, BooleanTrue) {
   s.BeginStructure(root);
   s.WriteBoolean(member, true);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<enabled>true</enabled>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<enabled>true</enabled>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, BooleanFalse) {
@@ -37,7 +38,7 @@ TEST_F(XmlShapeSerializerTest, BooleanFalse) {
   s.BeginStructure(root);
   s.WriteBoolean(member, false);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<enabled>false</enabled>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<enabled>false</enabled>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, Integer) {
@@ -47,7 +48,7 @@ TEST_F(XmlShapeSerializerTest, Integer) {
   s.BeginStructure(root);
   s.WriteInteger(member, 42);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<count>42</count>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<count>42</count>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, Long) {
@@ -57,7 +58,7 @@ TEST_F(XmlShapeSerializerTest, Long) {
   s.BeginStructure(root);
   s.WriteLong(member, 9876543210LL);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<bigNum>9876543210</bigNum>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<bigNum>9876543210</bigNum>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, Double) {
@@ -67,7 +68,7 @@ TEST_F(XmlShapeSerializerTest, Double) {
   s.BeginStructure(root);
   s.WriteDouble(member, 3.14);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<ratio>3.14</ratio>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<ratio>3.14</ratio>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, String) {
@@ -77,7 +78,7 @@ TEST_F(XmlShapeSerializerTest, String) {
   s.BeginStructure(root);
   s.WriteString(member, "hello");
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<name>hello</name>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<name>hello</name>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, EmptyString) {
@@ -87,7 +88,7 @@ TEST_F(XmlShapeSerializerTest, EmptyString) {
   s.BeginStructure(root);
   s.WriteString(member, "");
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<name></name>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<name></name>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, Timestamp) {
@@ -98,7 +99,7 @@ TEST_F(XmlShapeSerializerTest, Timestamp) {
   Aws::Utils::DateTime dt(1234567890.0);
   s.WriteTimestamp(member, dt);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<created>2009-02-13T23:31:30Z</created>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<created>2009-02-13T23:31:30Z</created>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, Blob) {
@@ -110,7 +111,7 @@ TEST_F(XmlShapeSerializerTest, Blob) {
   Aws::Utils::ByteBuffer buf(raw, 3);
   s.WriteBlob(member, buf);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<data>Zm9v</data>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<data>Zm9v</data>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, NullValueOmitted) {
@@ -121,7 +122,7 @@ TEST_F(XmlShapeSerializerTest, NullValueOmitted) {
   s.WriteNull(member);
   s.EndStructure();
   // Null values are omitted in XML
-  EXPECT_EQ(s.GetPayload(), "<Root></Root>");
+  EXPECT_EQ(s.GetPayload().GetResult(), "<Root></Root>");
 }
 
 TEST_F(XmlShapeSerializerTest, MultipleScalars) {
@@ -135,7 +136,7 @@ TEST_F(XmlShapeSerializerTest, MultipleScalars) {
   s.WriteInteger(m2, 7);
   s.WriteString(m3, "x");
   s.EndStructure();
-  auto payload = s.GetPayload();
+  auto payload = s.GetPayload().GetResult();
   EXPECT_NE(payload.find("<a>true</a>"), Aws::String::npos);
   EXPECT_NE(payload.find("<b>7</b>"), Aws::String::npos);
   EXPECT_NE(payload.find("<c>x</c>"), Aws::String::npos);
@@ -153,7 +154,7 @@ TEST_F(XmlShapeSerializerTest, NestedStructure) {
   s.WriteString(inner, "val");
   s.EndNestedStructure();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<metadata><key>val</key></metadata>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<metadata><key>val</key></metadata>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, DeeplyNestedStructure) {
@@ -169,7 +170,7 @@ TEST_F(XmlShapeSerializerTest, DeeplyNestedStructure) {
   s.EndNestedStructure();
   s.EndNestedStructure();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<l1><l2><val>99</val></l2></l1>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<l1><l2><val>99</val></l2></l1>"), Aws::String::npos);
 }
 
 // --- Lists ---
@@ -186,7 +187,7 @@ TEST_F(XmlShapeSerializerTest, ListOfStrings) {
   s.WriteString(elem, "c");
   s.EndList();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<tags><member>a</member><member>b</member><member>c</member></tags>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<tags><member>a</member><member>b</member><member>c</member></tags>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, ListOfIntegers) {
@@ -201,7 +202,7 @@ TEST_F(XmlShapeSerializerTest, ListOfIntegers) {
   s.WriteInteger(elem, 3);
   s.EndList();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<nums><member>1</member><member>2</member><member>3</member></nums>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<nums><member>1</member><member>2</member><member>3</member></nums>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, EmptyList) {
@@ -213,7 +214,7 @@ TEST_F(XmlShapeSerializerTest, EmptyList) {
   s.EndList();
   s.EndStructure();
   // Empty list still produces the wrapper element
-  EXPECT_NE(s.GetPayload().find("<items></items>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<items></items>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, ListOfStructures) {
@@ -232,7 +233,7 @@ TEST_F(XmlShapeSerializerTest, ListOfStructures) {
   s.EndNestedStructure();
   s.EndList();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<items><member><id>1</id></member><member><id>2</id></member></items>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<items><member><id>1</id></member><member><id>2</id></member></items>"), Aws::String::npos);
 }
 
 // --- Maps ---
@@ -250,7 +251,7 @@ TEST_F(XmlShapeSerializerTest, MapOfStrings) {
   s.WriteString(valSchema, "qux");
   s.EndMap();
   s.EndStructure();
-  auto payload = s.GetPayload();
+  auto payload = s.GetPayload().GetResult();
   EXPECT_NE(payload.find("<entry><key>foo</key><value>bar</value></entry>"), Aws::String::npos);
   EXPECT_NE(payload.find("<entry><key>baz</key><value>qux</value></entry>"), Aws::String::npos);
   EXPECT_NE(payload.find("<headers>"), Aws::String::npos);
@@ -265,7 +266,7 @@ TEST_F(XmlShapeSerializerTest, EmptyMap) {
   s.BeginMap(mapMember, 0);
   s.EndMap();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<tags></tags>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<tags></tags>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, MapOfStructures) {
@@ -282,7 +283,7 @@ TEST_F(XmlShapeSerializerTest, MapOfStructures) {
   s.EndNestedStructure();
   s.EndMap();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<nodes><entry><key>a</key><value><val>1</val></value></entry></nodes>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<nodes><entry><key>a</key><value><val>1</val></value></entry></nodes>"), Aws::String::npos);
 }
 
 // --- Combinations ---
@@ -308,7 +309,7 @@ TEST_F(XmlShapeSerializerTest, StructureWithListAndMap) {
   s.EndMap();
   s.EndStructure();
 
-  auto payload = s.GetPayload();
+  auto payload = s.GetPayload().GetResult();
   EXPECT_NE(payload.find("<name>test</name>"), Aws::String::npos);
   EXPECT_NE(payload.find("<tags><member>t1</member><member>t2</member></tags>"), Aws::String::npos);
   EXPECT_NE(payload.find("<meta><entry><key>k</key><value>v</value></entry></meta>"), Aws::String::npos);
@@ -323,7 +324,7 @@ TEST_F(XmlShapeSerializerTest, EscapesAmpersand) {
   s.BeginStructure(root);
   s.WriteString(member, "a&b");
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<msg>a&amp;b</msg>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<msg>a&amp;b</msg>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, EscapesLessThan) {
@@ -333,7 +334,7 @@ TEST_F(XmlShapeSerializerTest, EscapesLessThan) {
   s.BeginStructure(root);
   s.WriteString(member, "a<b");
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<msg>a&lt;b</msg>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<msg>a&lt;b</msg>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, EscapesGreaterThan) {
@@ -343,7 +344,7 @@ TEST_F(XmlShapeSerializerTest, EscapesGreaterThan) {
   s.BeginStructure(root);
   s.WriteString(member, "a>b");
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<msg>a&gt;b</msg>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<msg>a&gt;b</msg>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, EscapesQuotes) {
@@ -353,7 +354,7 @@ TEST_F(XmlShapeSerializerTest, EscapesQuotes) {
   s.BeginStructure(root);
   s.WriteString(member, "say \"hello\"");
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<msg>say &quot;hello&quot;</msg>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<msg>say &quot;hello&quot;</msg>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, EscapesMultipleSpecialChars) {
@@ -363,7 +364,7 @@ TEST_F(XmlShapeSerializerTest, EscapesMultipleSpecialChars) {
   s.BeginStructure(root);
   s.WriteString(member, "x < 5 & y > 3");
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<expr>x &lt; 5 &amp; y &gt; 3</expr>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<expr>x &lt; 5 &amp; y &gt; 3</expr>"), Aws::String::npos);
 }
 
 // --- Depth limit ---
@@ -389,11 +390,12 @@ TEST_F(XmlShapeSerializerTest, XmlNameOverridesMemberName) {
   XmlShapeSerializer s;
   Schema root("Root", ShapeType::Structure);
   Schema member("internalName", ShapeType::String);
-  member.WithXmlName("ExternalName");
+  static const XmlNameTrait s_extName("ExternalName");
+  member.SetTrait(XmlNameTrait::KEY(), &s_extName);
   s.BeginStructure(root);
   s.WriteString(member, "hello");
   s.EndStructure();
-  auto payload = s.GetPayload();
+  auto payload = s.GetPayload().GetResult();
   EXPECT_NE(payload.find("<ExternalName>hello</ExternalName>"), Aws::String::npos);
   EXPECT_EQ(payload.find("<internalName>"), Aws::String::npos);
 }
@@ -401,12 +403,13 @@ TEST_F(XmlShapeSerializerTest, XmlNameOverridesMemberName) {
 TEST_F(XmlShapeSerializerTest, XmlNameOnStructure) {
   XmlShapeSerializer s;
   Schema root("MyStruct", ShapeType::Structure);
-  root.WithXmlName("CustomRoot");
+  static const XmlNameTrait s_customRoot("CustomRoot");
+  root.SetTrait(XmlNameTrait::KEY(), &s_customRoot);
   Schema field("val", ShapeType::Integer);
   s.BeginStructure(root);
   s.WriteInteger(field, 42);
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<CustomRoot><val>42</val></CustomRoot>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<CustomRoot><val>42</val></CustomRoot>"), Aws::String::npos);
 }
 
 // --- Flattened lists ---
@@ -415,7 +418,8 @@ TEST_F(XmlShapeSerializerTest, FlattenedListOfStrings) {
   XmlShapeSerializer s;
   Schema root("Root", ShapeType::Structure);
   Schema listMember("item", ShapeType::List);
-  listMember.WithFlattened(true);
+  static const XmlFlattenedTrait s_flat1;
+  listMember.SetTrait(XmlFlattenedTrait::KEY(), &s_flat1);
   Schema elem("member", ShapeType::String);
   s.BeginStructure(root);
   s.BeginList(listMember, 3);
@@ -424,7 +428,7 @@ TEST_F(XmlShapeSerializerTest, FlattenedListOfStrings) {
   s.WriteString(elem, "c");
   s.EndList();
   s.EndStructure();
-  auto payload = s.GetPayload();
+  auto payload = s.GetPayload().GetResult();
   // Flattened: no wrapper, items repeat with list's xmlName
   EXPECT_NE(payload.find("<item>a</item><item>b</item><item>c</item>"), Aws::String::npos);
   // Should NOT have a wrapper element around the items
@@ -435,7 +439,10 @@ TEST_F(XmlShapeSerializerTest, FlattenedListWithXmlName) {
   XmlShapeSerializer s;
   Schema root("Root", ShapeType::Structure);
   Schema listMember("items", ShapeType::List);
-  listMember.WithFlattened(true).WithXmlName("Tag");
+  static const XmlFlattenedTrait s_flat2;
+  static const XmlNameTrait s_tag("Tag");
+  listMember.SetTrait(XmlFlattenedTrait::KEY(), &s_flat2);
+  listMember.SetTrait(XmlNameTrait::KEY(), &s_tag);
   Schema elem("member", ShapeType::String);
   s.BeginStructure(root);
   s.BeginList(listMember, 2);
@@ -443,7 +450,7 @@ TEST_F(XmlShapeSerializerTest, FlattenedListWithXmlName) {
   s.WriteString(elem, "y");
   s.EndList();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<Tag>x</Tag><Tag>y</Tag>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<Tag>x</Tag><Tag>y</Tag>"), Aws::String::npos);
 }
 
 // --- Custom list item name ---
@@ -452,7 +459,8 @@ TEST_F(XmlShapeSerializerTest, CustomListItemName) {
   XmlShapeSerializer s;
   Schema root("Root", ShapeType::Structure);
   Schema listMember("things", ShapeType::List);
-  listMember.WithListItemName("item");
+  static const XmlListItemNameTrait s_itemName("item");
+  listMember.SetTrait(XmlListItemNameTrait::KEY(), &s_itemName);
   Schema elem("member", ShapeType::String);
   s.BeginStructure(root);
   s.BeginList(listMember, 2);
@@ -460,7 +468,7 @@ TEST_F(XmlShapeSerializerTest, CustomListItemName) {
   s.WriteString(elem, "b");
   s.EndList();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<things><item>a</item><item>b</item></things>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<things><item>a</item><item>b</item></things>"), Aws::String::npos);
 }
 
 // --- Custom map entry/key/value names ---
@@ -469,7 +477,12 @@ TEST_F(XmlShapeSerializerTest, CustomMapNames) {
   XmlShapeSerializer s;
   Schema root("Root", ShapeType::Structure);
   Schema mapMember("tags", ShapeType::Map);
-  mapMember.WithMapEntryName("item").WithMapKeyName("tagKey").WithMapValueName("tagValue");
+  static const XmlMapEntryNameTrait s_entryName("item");
+  static const XmlMapKeyNameTrait s_keyName("tagKey");
+  static const XmlMapValueNameTrait s_valueName("tagValue");
+  mapMember.SetTrait(XmlMapEntryNameTrait::KEY(), &s_entryName);
+  mapMember.SetTrait(XmlMapKeyNameTrait::KEY(), &s_keyName);
+  mapMember.SetTrait(XmlMapValueNameTrait::KEY(), &s_valueName);
   Schema valSchema("value", ShapeType::String);
   s.BeginStructure(root);
   s.BeginMap(mapMember, 1);
@@ -477,14 +490,15 @@ TEST_F(XmlShapeSerializerTest, CustomMapNames) {
   s.WriteString(valSchema, "red");
   s.EndMap();
   s.EndStructure();
-  EXPECT_NE(s.GetPayload().find("<tags><item><tagKey>color</tagKey><tagValue>red</tagValue></item></tags>"), Aws::String::npos);
+  EXPECT_NE(s.GetPayload().GetResult().find("<tags><item><tagKey>color</tagKey><tagValue>red</tagValue></item></tags>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, FlattenedMap) {
   XmlShapeSerializer s;
   Schema root("Root", ShapeType::Structure);
   Schema mapMember("tag", ShapeType::Map);
-  mapMember.WithFlattened(true);
+  static const XmlFlattenedTrait s_flat3;
+  mapMember.SetTrait(XmlFlattenedTrait::KEY(), &s_flat3);
   Schema valSchema("value", ShapeType::String);
   s.BeginStructure(root);
   s.BeginMap(mapMember, 2);
@@ -494,7 +508,7 @@ TEST_F(XmlShapeSerializerTest, FlattenedMap) {
   s.WriteString(valSchema, "v2");
   s.EndMap();
   s.EndStructure();
-  auto payload = s.GetPayload();
+  auto payload = s.GetPayload().GetResult();
   // Flattened map: no wrapper, entry uses the map's xmlName
   EXPECT_NE(payload.find("<tag><key>k1</key><value>v1</value></tag>"), Aws::String::npos);
   EXPECT_NE(payload.find("<tag><key>k2</key><value>v2</value></tag>"), Aws::String::npos);

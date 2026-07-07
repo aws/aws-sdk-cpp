@@ -1,13 +1,12 @@
 #pragma once
 
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <smithy/client/schema/TraitMap.h>
 
 #include <cstdint>
 
 namespace smithy {
 namespace schema {
-
-struct XmlTraits;
 
 enum class ShapeType : uint8_t {
   Boolean,
@@ -50,10 +49,15 @@ class Schema {
 
   uint16_t GetMemberCount() const { return m_memberCount; }
 
-  const XmlTraits* GetXmlTraits() const { return m_xmlTraits; }
+  template <typename T>
+  const T* GetTrait(const TraitKey<T>& key) const {
+    return m_traits.Get(key);
+  }
 
-  Schema& WithXmlTraits(const XmlTraits* traits) {
-    m_xmlTraits = traits;
+  bool HasTrait(const TraitKeyBase& key) const { return m_traits.Has(key); }
+
+  Schema& SetTrait(const TraitKeyBase& key, const Trait* trait) {
+    m_traits.Set(key, trait);
     return *this;
   }
 
@@ -64,7 +68,7 @@ class Schema {
   int m_memberIndex = 0;
   const Schema* m_members = nullptr;
   uint16_t m_memberCount = 0;
-  const XmlTraits* m_xmlTraits = nullptr;
+  TraitMap m_traits;
 };
 
 }  // namespace schema
