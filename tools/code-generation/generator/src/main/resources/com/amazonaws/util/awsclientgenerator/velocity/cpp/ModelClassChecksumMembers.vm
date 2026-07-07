@@ -14,6 +14,11 @@ Aws::String ${typeInfo.className}::GetChecksumAlgorithmName() const
   }
 }
 
+bool ${typeInfo.className}::ChecksumAlgorithmIsSet() const
+{
+  return m_${lowerCaseVarName} != ${checksumAlgorithmMember.shape.name}::NOT_SET;
+}
+
 #end
 #if($operation.requestValidationModeMember)
 #set($requestValidationModeMember = $shape.members.get($operation.requestValidationModeMember))

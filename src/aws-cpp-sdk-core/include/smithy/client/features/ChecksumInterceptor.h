@@ -76,6 +76,7 @@ class ChecksumInterceptor : public smithy::interceptor::Interceptor {
     // Add RequestChecksum
     addChecksumConfigurationFeatures(request);
     if ((!request.GetChecksumAlgorithmName().empty() && m_requestChecksumCalculation == RequestChecksumCalculation::WHEN_SUPPORTED) ||
+        (request.ChecksumAlgorithmIsSet() && m_requestChecksumCalculation == RequestChecksumCalculation::WHEN_REQUIRED) ||
         request.RequestChecksumRequired()) {
       Aws::String checksumAlgorithmName = Aws::Utils::StringUtils::ToLower(request.GetChecksumAlgorithmName().c_str());
       // Check if user has provided the checksum algorithm

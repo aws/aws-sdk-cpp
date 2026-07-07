@@ -118,3 +118,5 @@ Aws::String PutObjectRetentionRequest::GetChecksumAlgorithmName() const {
     return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
   }
 }
+
+bool PutObjectRetentionRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }

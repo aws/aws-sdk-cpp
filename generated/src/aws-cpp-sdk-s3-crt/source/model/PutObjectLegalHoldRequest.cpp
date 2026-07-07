@@ -112,3 +112,5 @@ Aws::String PutObjectLegalHoldRequest::GetChecksumAlgorithmName() const {
     return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
   }
 }
+
+bool PutObjectLegalHoldRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }

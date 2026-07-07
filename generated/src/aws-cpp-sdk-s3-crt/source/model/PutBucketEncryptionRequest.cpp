@@ -105,3 +105,5 @@ Aws::String PutBucketEncryptionRequest::GetChecksumAlgorithmName() const {
     return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
   }
 }
+
+bool PutBucketEncryptionRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }
