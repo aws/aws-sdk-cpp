@@ -174,6 +174,11 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
             }
         }
 
+        if (pRequest->IsStreaming() && !m_clientConfig->disableExpectHeader)
+        {
+            httpRequest->SetHeaderValue(Aws::Http::EXPECT_HEADER, Aws::Http::EXPECT_100_CONTINUE_VALUE);
+        }
+
         // Pass along handlers for processing data sent/received in bytes
         httpRequest->SetHeadersReceivedEventHandler(pRequest->GetHeadersReceivedEventHandler());
         httpRequest->SetDataReceivedEventHandler(pRequest->GetDataReceivedEventHandler());

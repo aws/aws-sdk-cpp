@@ -63,6 +63,8 @@ namespace Aws
         extern AWS_CORE_API const char X_AMZN_TRACE_ID_HEADER[];
         extern AWS_CORE_API const char CHUNKED_VALUE[];
         extern AWS_CORE_API const char AWS_CHUNKED_VALUE[];
+        extern AWS_CORE_API const char EXPECT_HEADER[];
+        extern AWS_CORE_API const char EXPECT_100_CONTINUE_VALUE[];
         extern AWS_CORE_API const char X_AMZN_ERROR_TYPE[];
         extern AWS_CORE_API const char X_AMZN_QUERY_MODE[];
 
