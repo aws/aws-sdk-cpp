@@ -6,10 +6,15 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/CodeRepositoryMetadata.h>
+#include <aws/inspector2/model/ContainerImageMetadata.h>
+#include <aws/inspector2/model/ContainerRegistryMetadata.h>
+#include <aws/inspector2/model/ContainerRepositoryMetadata.h>
 #include <aws/inspector2/model/Ec2Metadata.h>
 #include <aws/inspector2/model/EcrContainerImageMetadata.h>
 #include <aws/inspector2/model/EcrRepositoryMetadata.h>
 #include <aws/inspector2/model/LambdaFunctionMetadata.h>
+#include <aws/inspector2/model/ServerlessFunctionMetadata.h>
+#include <aws/inspector2/model/VmInstanceMetadata.h>
 
 #include <utility>
 
@@ -128,6 +133,96 @@ class ResourceScanMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The VM instance metadata associated with a covered resource.</p>
+   */
+  inline const VmInstanceMetadata& GetVmInstance() const { return m_vmInstance; }
+  inline bool VmInstanceHasBeenSet() const { return m_vmInstanceHasBeenSet; }
+  template <typename VmInstanceT = VmInstanceMetadata>
+  void SetVmInstance(VmInstanceT&& value) {
+    m_vmInstanceHasBeenSet = true;
+    m_vmInstance = std::forward<VmInstanceT>(value);
+  }
+  template <typename VmInstanceT = VmInstanceMetadata>
+  ResourceScanMetadata& WithVmInstance(VmInstanceT&& value) {
+    SetVmInstance(std::forward<VmInstanceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The container image metadata associated with a covered resource.</p>
+   */
+  inline const ContainerImageMetadata& GetContainerImage() const { return m_containerImage; }
+  inline bool ContainerImageHasBeenSet() const { return m_containerImageHasBeenSet; }
+  template <typename ContainerImageT = ContainerImageMetadata>
+  void SetContainerImage(ContainerImageT&& value) {
+    m_containerImageHasBeenSet = true;
+    m_containerImage = std::forward<ContainerImageT>(value);
+  }
+  template <typename ContainerImageT = ContainerImageMetadata>
+  ResourceScanMetadata& WithContainerImage(ContainerImageT&& value) {
+    SetContainerImage(std::forward<ContainerImageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The container repository metadata associated with a covered resource.</p>
+   */
+  inline const ContainerRepositoryMetadata& GetContainerRepository() const { return m_containerRepository; }
+  inline bool ContainerRepositoryHasBeenSet() const { return m_containerRepositoryHasBeenSet; }
+  template <typename ContainerRepositoryT = ContainerRepositoryMetadata>
+  void SetContainerRepository(ContainerRepositoryT&& value) {
+    m_containerRepositoryHasBeenSet = true;
+    m_containerRepository = std::forward<ContainerRepositoryT>(value);
+  }
+  template <typename ContainerRepositoryT = ContainerRepositoryMetadata>
+  ResourceScanMetadata& WithContainerRepository(ContainerRepositoryT&& value) {
+    SetContainerRepository(std::forward<ContainerRepositoryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The container registry metadata associated with a covered resource.</p>
+   */
+  inline const ContainerRegistryMetadata& GetContainerRegistry() const { return m_containerRegistry; }
+  inline bool ContainerRegistryHasBeenSet() const { return m_containerRegistryHasBeenSet; }
+  template <typename ContainerRegistryT = ContainerRegistryMetadata>
+  void SetContainerRegistry(ContainerRegistryT&& value) {
+    m_containerRegistryHasBeenSet = true;
+    m_containerRegistry = std::forward<ContainerRegistryT>(value);
+  }
+  template <typename ContainerRegistryT = ContainerRegistryMetadata>
+  ResourceScanMetadata& WithContainerRegistry(ContainerRegistryT&& value) {
+    SetContainerRegistry(std::forward<ContainerRegistryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The serverless function metadata associated with a covered resource.</p>
+   */
+  inline const ServerlessFunctionMetadata& GetServerlessFunction() const { return m_serverlessFunction; }
+  inline bool ServerlessFunctionHasBeenSet() const { return m_serverlessFunctionHasBeenSet; }
+  template <typename ServerlessFunctionT = ServerlessFunctionMetadata>
+  void SetServerlessFunction(ServerlessFunctionT&& value) {
+    m_serverlessFunctionHasBeenSet = true;
+    m_serverlessFunction = std::forward<ServerlessFunctionT>(value);
+  }
+  template <typename ServerlessFunctionT = ServerlessFunctionMetadata>
+  ResourceScanMetadata& WithServerlessFunction(ServerlessFunctionT&& value) {
+    SetServerlessFunction(std::forward<ServerlessFunctionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EcrRepositoryMetadata m_ecrRepository;
 
@@ -138,11 +233,26 @@ class ResourceScanMetadata {
   LambdaFunctionMetadata m_lambdaFunction;
 
   CodeRepositoryMetadata m_codeRepository;
+
+  VmInstanceMetadata m_vmInstance;
+
+  ContainerImageMetadata m_containerImage;
+
+  ContainerRepositoryMetadata m_containerRepository;
+
+  ContainerRegistryMetadata m_containerRegistry;
+
+  ServerlessFunctionMetadata m_serverlessFunction;
   bool m_ecrRepositoryHasBeenSet = false;
   bool m_ecrImageHasBeenSet = false;
   bool m_ec2HasBeenSet = false;
   bool m_lambdaFunctionHasBeenSet = false;
   bool m_codeRepositoryHasBeenSet = false;
+  bool m_vmInstanceHasBeenSet = false;
+  bool m_containerImageHasBeenSet = false;
+  bool m_containerRepositoryHasBeenSet = false;
+  bool m_containerRegistryHasBeenSet = false;
+  bool m_serverlessFunctionHasBeenSet = false;
 };
 
 }  // namespace Model

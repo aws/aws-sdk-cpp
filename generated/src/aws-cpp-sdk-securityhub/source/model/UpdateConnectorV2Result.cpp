@@ -21,7 +21,15 @@ UpdateConnectorV2Result::UpdateConnectorV2Result(const Aws::AmazonWebServiceResu
 
 UpdateConnectorV2Result& UpdateConnectorV2Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("ConnectorStatus")) {
+    m_connectorStatus = ConnectorStatusMapper::GetConnectorStatusForName(jsonValue.GetString("ConnectorStatus"));
+    m_connectorStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EnablementStatus")) {
+    m_enablementStatus = EnablementStatusMapper::GetEnablementStatusForName(jsonValue.GetString("EnablementStatus"));
+    m_enablementStatusHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

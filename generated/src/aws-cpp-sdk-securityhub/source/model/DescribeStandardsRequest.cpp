@@ -30,4 +30,12 @@ void DescribeStandardsRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("MaxResults", ss.str());
     ss.str("");
   }
+
+  if (m_providersHasBeenSet) {
+    for (const auto& item : m_providers) {
+      ss << StandardsProviderMapper::GetNameForStandardsProvider(item);
+      uri.AddQueryStringParameter("Providers", ss.str());
+      ss.str("");
+    }
+  }
 }

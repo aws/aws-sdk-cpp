@@ -1230,6 +1230,34 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates an authorization code for the specified Connect Customer instance.
+   * The authorization code can be used to establish a session with scoped
+   * permissions defined by the specified scope parameters.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateAuthCode">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAuthCodeOutcome CreateAuthCode(const Model::CreateAuthCodeRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAuthCode that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateAuthCodeRequestT = Model::CreateAuthCodeRequest>
+  Model::CreateAuthCodeOutcomeCallable CreateAuthCodeCallable(const CreateAuthCodeRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateAuthCode, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAuthCode that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateAuthCodeRequestT = Model::CreateAuthCodeRequest>
+  void CreateAuthCodeAsync(const CreateAuthCodeRequestT& request, const CreateAuthCodeResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateAuthCode, request, handler, context);
+  }
+
+  /**
    *  <p>Only the VOICE, EMAIL, and TASK channels are supported. </p> <ul>
    * <li> <p>For VOICE: The supported initiation method is <code>TRANSFER</code>. The
    * contacts created with this initiation method have a subtype
@@ -3080,6 +3108,32 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   void DeleteSecurityProfileAsync(const DeleteSecurityProfileRequestT& request, const DeleteSecurityProfileResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::DeleteSecurityProfile, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a session for the specified Connect Customer instance.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSessionOutcome DeleteSession(const Model::DeleteSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSession that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteSessionRequestT = Model::DeleteSessionRequest>
+  Model::DeleteSessionOutcomeCallable DeleteSessionCallable(const DeleteSessionRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteSession, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSession that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteSessionRequestT = Model::DeleteSessionRequest>
+  void DeleteSessionAsync(const DeleteSessionRequestT& request, const DeleteSessionResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteSession, request, handler, context);
   }
 
   /**

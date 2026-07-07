@@ -102,6 +102,8 @@
 #include <aws/connect/model/AttributeCondition.h>
 #include <aws/connect/model/AudioFeatures.h>
 #include <aws/connect/model/AudioQualityMetricsInfo.h>
+#include <aws/connect/model/AuthCodeEntityType.h>
+#include <aws/connect/model/AuthScope.h>
 #include <aws/connect/model/AuthenticationProfile.h>
 #include <aws/connect/model/AuthenticationProfileSummary.h>
 #include <aws/connect/model/AutoAcceptConfig.h>
@@ -217,6 +219,8 @@
 #include <aws/connect/model/CreateAgentStatusResult.h>
 #include <aws/connect/model/CreateAttachedFileRequest.h>
 #include <aws/connect/model/CreateAttachedFileResult.h>
+#include <aws/connect/model/CreateAuthCodeRequest.h>
+#include <aws/connect/model/CreateAuthCodeResult.h>
 #include <aws/connect/model/CreateCaseActionDefinition.h>
 #include <aws/connect/model/CreateContactFlowModuleAliasRequest.h>
 #include <aws/connect/model/CreateContactFlowModuleAliasResult.h>
@@ -361,6 +365,8 @@
 #include <aws/connect/model/DeleteRoutingProfileRequest.h>
 #include <aws/connect/model/DeleteRuleRequest.h>
 #include <aws/connect/model/DeleteSecurityProfileRequest.h>
+#include <aws/connect/model/DeleteSessionRequest.h>
+#include <aws/connect/model/DeleteSessionResult.h>
 #include <aws/connect/model/DeleteTaskTemplateRequest.h>
 #include <aws/connect/model/DeleteTaskTemplateResult.h>
 #include <aws/connect/model/DeleteTestCaseRequest.h>

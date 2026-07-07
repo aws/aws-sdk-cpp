@@ -146,6 +146,26 @@ class Execution {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the Key Management Service (KMS) customer managed key that is used
+   * to encrypt your durable execution's payload data, including input, output, and
+   * error payloads.</p>
+   */
+  inline const Aws::String& GetKMSKeyArn() const { return m_kMSKeyArn; }
+  inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
+  template <typename KMSKeyArnT = Aws::String>
+  void SetKMSKeyArn(KMSKeyArnT&& value) {
+    m_kMSKeyArnHasBeenSet = true;
+    m_kMSKeyArn = std::forward<KMSKeyArnT>(value);
+  }
+  template <typename KMSKeyArnT = Aws::String>
+  Execution& WithKMSKeyArn(KMSKeyArnT&& value) {
+    SetKMSKeyArn(std::forward<KMSKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_durableExecutionArn;
 
@@ -158,12 +178,15 @@ class Execution {
   Aws::Utils::DateTime m_startTimestamp{};
 
   Aws::Utils::DateTime m_endTimestamp{};
+
+  Aws::String m_kMSKeyArn;
   bool m_durableExecutionArnHasBeenSet = false;
   bool m_durableExecutionNameHasBeenSet = false;
   bool m_functionArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_startTimestampHasBeenSet = false;
   bool m_endTimestampHasBeenSet = false;
+  bool m_kMSKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

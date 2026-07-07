@@ -297,6 +297,7 @@
 #include <aws/partnercentral-account/PartnerCentralAccountClient.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsClient.h>
 #include <aws/partnercentral-channel/PartnerCentralChannelClient.h>
+#include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementClient.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingClient.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataClient.h>
 #include <aws/payment-cryptography/PaymentCryptographyClient.h>

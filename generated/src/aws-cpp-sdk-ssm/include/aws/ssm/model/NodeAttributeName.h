@@ -10,7 +10,17 @@
 namespace Aws {
 namespace SSM {
 namespace Model {
-enum class NodeAttributeName { NOT_SET, AgentVersion, PlatformName, PlatformType, PlatformVersion, Region, ResourceType };
+enum class NodeAttributeName {
+  NOT_SET,
+  AgentVersion,
+  PlatformName,
+  PlatformType,
+  PlatformVersion,
+  Region,
+  ResourceType,
+  SourceType,
+  AvailabilityZone
+};
 
 namespace NodeAttributeNameMapper {
 AWS_SSM_API NodeAttributeName GetNodeAttributeNameForName(const Aws::String& name);

@@ -19,6 +19,7 @@
 #include <aws/config/model/DescribeConfigurationAggregatorSourcesStatusPaginationTraits.h>
 #include <aws/config/model/DescribeConfigurationAggregatorsPaginationTraits.h>
 #include <aws/config/model/DescribeComplianceByResourcePaginationTraits.h>
+#include <aws/config/model/ListConnectorsPaginationTraits.h>
 #include <aws/config/model/DescribeConformancePackCompliancePaginationTraits.h>
 #include <aws/config/model/GetOrganizationConfigRuleDetailedStatusPaginationTraits.h>
 #include <aws/config/model/ListResourceEvaluationsPaginationTraits.h>

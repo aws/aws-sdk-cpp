@@ -1044,6 +1044,82 @@ class AutomationRulesFindingFilters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider that the resource belongs to. Valid values are
+   * <code>AWS</code> and <code>Azure</code>.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetResourceProvider() const { return m_resourceProvider; }
+  inline bool ResourceProviderHasBeenSet() const { return m_resourceProviderHasBeenSet; }
+  template <typename ResourceProviderT = Aws::Vector<StringFilter>>
+  void SetResourceProvider(ResourceProviderT&& value) {
+    m_resourceProviderHasBeenSet = true;
+    m_resourceProvider = std::forward<ResourceProviderT>(value);
+  }
+  template <typename ResourceProviderT = Aws::Vector<StringFilter>>
+  AutomationRulesFindingFilters& WithResourceProvider(ResourceProviderT&& value) {
+    SetResourceProvider(std::forward<ResourceProviderT>(value));
+    return *this;
+  }
+  template <typename ResourceProviderT = StringFilter>
+  AutomationRulesFindingFilters& AddResourceProvider(ResourceProviderT&& value) {
+    m_resourceProviderHasBeenSet = true;
+    m_resourceProvider.emplace_back(std::forward<ResourceProviderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the account that owns the resource that the finding
+   * applies to, for example, Azure Subscription Id or Amazon Web Services Account
+   * Id</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetResourceOwnerAccountId() const { return m_resourceOwnerAccountId; }
+  inline bool ResourceOwnerAccountIdHasBeenSet() const { return m_resourceOwnerAccountIdHasBeenSet; }
+  template <typename ResourceOwnerAccountIdT = Aws::Vector<StringFilter>>
+  void SetResourceOwnerAccountId(ResourceOwnerAccountIdT&& value) {
+    m_resourceOwnerAccountIdHasBeenSet = true;
+    m_resourceOwnerAccountId = std::forward<ResourceOwnerAccountIdT>(value);
+  }
+  template <typename ResourceOwnerAccountIdT = Aws::Vector<StringFilter>>
+  AutomationRulesFindingFilters& WithResourceOwnerAccountId(ResourceOwnerAccountIdT&& value) {
+    SetResourceOwnerAccountId(std::forward<ResourceOwnerAccountIdT>(value));
+    return *this;
+  }
+  template <typename ResourceOwnerAccountIdT = StringFilter>
+  AutomationRulesFindingFilters& AddResourceOwnerAccountId(ResourceOwnerAccountIdT&& value) {
+    m_resourceOwnerAccountIdHasBeenSet = true;
+    m_resourceOwnerAccountId.emplace_back(std::forward<ResourceOwnerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the organization that owns the resource that the
+   * finding applies to, for example, Azure Tenant Id</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetResourceOwnerOrgId() const { return m_resourceOwnerOrgId; }
+  inline bool ResourceOwnerOrgIdHasBeenSet() const { return m_resourceOwnerOrgIdHasBeenSet; }
+  template <typename ResourceOwnerOrgIdT = Aws::Vector<StringFilter>>
+  void SetResourceOwnerOrgId(ResourceOwnerOrgIdT&& value) {
+    m_resourceOwnerOrgIdHasBeenSet = true;
+    m_resourceOwnerOrgId = std::forward<ResourceOwnerOrgIdT>(value);
+  }
+  template <typename ResourceOwnerOrgIdT = Aws::Vector<StringFilter>>
+  AutomationRulesFindingFilters& WithResourceOwnerOrgId(ResourceOwnerOrgIdT&& value) {
+    SetResourceOwnerOrgId(std::forward<ResourceOwnerOrgIdT>(value));
+    return *this;
+  }
+  template <typename ResourceOwnerOrgIdT = StringFilter>
+  AutomationRulesFindingFilters& AddResourceOwnerOrgId(ResourceOwnerOrgIdT&& value) {
+    m_resourceOwnerOrgIdHasBeenSet = true;
+    m_resourceOwnerOrgId.emplace_back(std::forward<ResourceOwnerOrgIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<StringFilter> m_productArn;
 
@@ -1120,6 +1196,12 @@ class AutomationRulesFindingFilters {
   Aws::Vector<StringFilter> m_resourceApplicationName;
 
   Aws::Vector<StringFilter> m_awsAccountName;
+
+  Aws::Vector<StringFilter> m_resourceProvider;
+
+  Aws::Vector<StringFilter> m_resourceOwnerAccountId;
+
+  Aws::Vector<StringFilter> m_resourceOwnerOrgId;
   bool m_productArnHasBeenSet = false;
   bool m_awsAccountIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
@@ -1158,6 +1240,9 @@ class AutomationRulesFindingFilters {
   bool m_resourceApplicationArnHasBeenSet = false;
   bool m_resourceApplicationNameHasBeenSet = false;
   bool m_awsAccountNameHasBeenSet = false;
+  bool m_resourceProviderHasBeenSet = false;
+  bool m_resourceOwnerAccountIdHasBeenSet = false;
+  bool m_resourceOwnerOrgIdHasBeenSet = false;
 };
 
 }  // namespace Model

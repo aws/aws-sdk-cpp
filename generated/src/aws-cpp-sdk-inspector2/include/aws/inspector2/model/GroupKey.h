@@ -10,7 +10,18 @@
 namespace Aws {
 namespace Inspector2 {
 namespace Model {
-enum class GroupKey { NOT_SET, SCAN_STATUS_CODE, SCAN_STATUS_REASON, ACCOUNT_ID, RESOURCE_TYPE, ECR_REPOSITORY_NAME };
+enum class GroupKey {
+  NOT_SET,
+  SCAN_STATUS_CODE,
+  SCAN_STATUS_REASON,
+  ACCOUNT_ID,
+  RESOURCE_TYPE,
+  ECR_REPOSITORY_NAME,
+  PROVIDER,
+  PROVIDER_ACCOUNT_ID,
+  PROVIDER_REGION,
+  PROVIDER_ORG_ID
+};
 
 namespace GroupKeyMapper {
 AWS_INSPECTOR2_API GroupKey GetGroupKeyForName(const Aws::String& name);

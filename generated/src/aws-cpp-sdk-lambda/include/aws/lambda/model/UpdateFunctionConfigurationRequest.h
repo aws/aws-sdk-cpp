@@ -488,8 +488,12 @@ class UpdateFunctionConfigurationRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>Configuration settings for durable functions. Allows updating execution
-   * timeout and retention period for functions with durability enabled.</p>
+   * <p>Configuration settings for <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+   * functions</a>, including execution timeout, retention period for execution
+   * history, and an optional ARN of the Key Management Service (KMS) customer
+   * managed key that is used to encrypt your durable execution's payload data,
+   * including input, output, and error payloads.</p>
    */
   inline const DurableConfig& GetDurableConfig() const { return m_durableConfig; }
   inline bool DurableConfigHasBeenSet() const { return m_durableConfigHasBeenSet; }

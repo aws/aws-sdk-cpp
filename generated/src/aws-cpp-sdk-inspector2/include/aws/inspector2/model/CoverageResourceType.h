@@ -16,7 +16,12 @@ enum class CoverageResourceType {
   AWS_ECR_CONTAINER_IMAGE,
   AWS_ECR_REPOSITORY,
   AWS_LAMBDA_FUNCTION,
-  CODE_REPOSITORY
+  CODE_REPOSITORY,
+  Microsoft_Compute_virtualMachines,
+  Microsoft_ContainerRegistry_registry_containerImage,
+  Microsoft_ContainerRegistry_registry_containerRepository,
+  Microsoft_Web_sites,
+  Microsoft_ContainerRegistry_registries
 };
 
 namespace CoverageResourceTypeMapper {

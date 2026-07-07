@@ -27,6 +27,7 @@
 #include <aws/ssm/model/CreateActivationRequest.h>
 #include <aws/ssm/model/CreateAssociationBatchRequest.h>
 #include <aws/ssm/model/CreateAssociationRequest.h>
+#include <aws/ssm/model/CreateCloudConnectorRequest.h>
 #include <aws/ssm/model/CreateDocumentRequest.h>
 #include <aws/ssm/model/CreateMaintenanceWindowRequest.h>
 #include <aws/ssm/model/CreateOpsItemRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/ssm/model/CreateResourceDataSyncRequest.h>
 #include <aws/ssm/model/DeleteActivationRequest.h>
 #include <aws/ssm/model/DeleteAssociationRequest.h>
+#include <aws/ssm/model/DeleteCloudConnectorRequest.h>
 #include <aws/ssm/model/DeleteDocumentRequest.h>
 #include <aws/ssm/model/DeleteInventoryRequest.h>
 #include <aws/ssm/model/DeleteMaintenanceWindowRequest.h>
@@ -86,6 +88,7 @@
 #include <aws/ssm/model/GetAccessTokenRequest.h>
 #include <aws/ssm/model/GetAutomationExecutionRequest.h>
 #include <aws/ssm/model/GetCalendarStateRequest.h>
+#include <aws/ssm/model/GetCloudConnectorRequest.h>
 #include <aws/ssm/model/GetCommandInvocationRequest.h>
 #include <aws/ssm/model/GetConnectionStatusRequest.h>
 #include <aws/ssm/model/GetDefaultPatchBaselineRequest.h>
@@ -113,6 +116,7 @@
 #include <aws/ssm/model/LabelParameterVersionRequest.h>
 #include <aws/ssm/model/ListAssociationVersionsRequest.h>
 #include <aws/ssm/model/ListAssociationsRequest.h>
+#include <aws/ssm/model/ListCloudConnectorsRequest.h>
 #include <aws/ssm/model/ListCommandInvocationsRequest.h>
 #include <aws/ssm/model/ListCommandsRequest.h>
 #include <aws/ssm/model/ListComplianceItemsRequest.h>
@@ -154,6 +158,7 @@
 #include <aws/ssm/model/UnlabelParameterVersionRequest.h>
 #include <aws/ssm/model/UpdateAssociationRequest.h>
 #include <aws/ssm/model/UpdateAssociationStatusRequest.h>
+#include <aws/ssm/model/UpdateCloudConnectorRequest.h>
 #include <aws/ssm/model/UpdateDocumentDefaultVersionRequest.h>
 #include <aws/ssm/model/UpdateDocumentMetadataRequest.h>
 #include <aws/ssm/model/UpdateDocumentRequest.h>
@@ -166,6 +171,7 @@
 #include <aws/ssm/model/UpdatePatchBaselineRequest.h>
 #include <aws/ssm/model/UpdateResourceDataSyncRequest.h>
 #include <aws/ssm/model/UpdateServiceSettingRequest.h>
+#include <aws/ssm/model/ValidateCloudConnectorRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -357,6 +363,12 @@ CreateAssociationBatchOutcome SSMClient::CreateAssociationBatch(const CreateAsso
                             : CreateAssociationBatchOutcome(std::move(result.GetError()));
 }
 
+CreateCloudConnectorOutcome SSMClient::CreateCloudConnector(const CreateCloudConnectorRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCloudConnectorOutcome(result.GetResultWithOwnership())
+                            : CreateCloudConnectorOutcome(std::move(result.GetError()));
+}
+
 CreateDocumentOutcome SSMClient::CreateDocument(const CreateDocumentRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateDocumentOutcome(result.GetResultWithOwnership()) : CreateDocumentOutcome(std::move(result.GetError()));
@@ -401,6 +413,12 @@ DeleteAssociationOutcome SSMClient::DeleteAssociation(const DeleteAssociationReq
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteAssociationOutcome(result.GetResultWithOwnership())
                             : DeleteAssociationOutcome(std::move(result.GetError()));
+}
+
+DeleteCloudConnectorOutcome SSMClient::DeleteCloudConnector(const DeleteCloudConnectorRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCloudConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteCloudConnectorOutcome(std::move(result.GetError()));
 }
 
 DeleteDocumentOutcome SSMClient::DeleteDocument(const DeleteDocumentRequest& request) const {
@@ -723,6 +741,12 @@ GetCalendarStateOutcome SSMClient::GetCalendarState(const GetCalendarStateReques
                             : GetCalendarStateOutcome(std::move(result.GetError()));
 }
 
+GetCloudConnectorOutcome SSMClient::GetCloudConnector(const GetCloudConnectorRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCloudConnectorOutcome(result.GetResultWithOwnership())
+                            : GetCloudConnectorOutcome(std::move(result.GetError()));
+}
+
 GetCommandInvocationOutcome SSMClient::GetCommandInvocation(const GetCommandInvocationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetCommandInvocationOutcome(result.GetResultWithOwnership())
@@ -879,6 +903,12 @@ ListAssociationsOutcome SSMClient::ListAssociations(const ListAssociationsReques
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListAssociationsOutcome(result.GetResultWithOwnership())
                             : ListAssociationsOutcome(std::move(result.GetError()));
+}
+
+ListCloudConnectorsOutcome SSMClient::ListCloudConnectors(const ListCloudConnectorsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCloudConnectorsOutcome(result.GetResultWithOwnership())
+                            : ListCloudConnectorsOutcome(std::move(result.GetError()));
 }
 
 ListCommandInvocationsOutcome SSMClient::ListCommandInvocations(const ListCommandInvocationsRequest& request) const {
@@ -1123,6 +1153,12 @@ UpdateAssociationStatusOutcome SSMClient::UpdateAssociationStatus(const UpdateAs
                             : UpdateAssociationStatusOutcome(std::move(result.GetError()));
 }
 
+UpdateCloudConnectorOutcome SSMClient::UpdateCloudConnector(const UpdateCloudConnectorRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCloudConnectorOutcome(result.GetResultWithOwnership())
+                            : UpdateCloudConnectorOutcome(std::move(result.GetError()));
+}
+
 UpdateDocumentOutcome SSMClient::UpdateDocument(const UpdateDocumentRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateDocumentOutcome(result.GetResultWithOwnership()) : UpdateDocumentOutcome(std::move(result.GetError()));
@@ -1191,4 +1227,10 @@ UpdateServiceSettingOutcome SSMClient::UpdateServiceSetting(const UpdateServiceS
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateServiceSettingOutcome(result.GetResultWithOwnership())
                             : UpdateServiceSettingOutcome(std::move(result.GetError()));
+}
+
+ValidateCloudConnectorOutcome SSMClient::ValidateCloudConnector(const ValidateCloudConnectorRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ValidateCloudConnectorOutcome(result.GetResultWithOwnership())
+                            : ValidateCloudConnectorOutcome(std::move(result.GetError()));
 }

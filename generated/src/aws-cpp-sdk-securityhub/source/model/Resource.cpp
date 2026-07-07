@@ -34,6 +34,14 @@ Resource& Resource::operator=(JsonView jsonValue) {
     m_region = jsonValue.GetString("Region");
     m_regionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Provider")) {
+    m_provider = CloudProviderNameMapper::GetCloudProviderNameForName(jsonValue.GetString("Provider"));
+    m_providerHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Owner")) {
+    m_owner = jsonValue.GetObject("Owner");
+    m_ownerHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ResourceRole")) {
     m_resourceRole = jsonValue.GetString("ResourceRole");
     m_resourceRoleHasBeenSet = true;
@@ -81,6 +89,14 @@ JsonValue Resource::Jsonize() const {
 
   if (m_regionHasBeenSet) {
     payload.WithString("Region", m_region);
+  }
+
+  if (m_providerHasBeenSet) {
+    payload.WithString("Provider", CloudProviderNameMapper::GetNameForCloudProviderName(m_provider));
+  }
+
+  if (m_ownerHasBeenSet) {
+    payload.WithObject("Owner", m_owner.Jsonize());
   }
 
   if (m_resourceRoleHasBeenSet) {

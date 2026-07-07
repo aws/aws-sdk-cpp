@@ -57,6 +57,7 @@
 #include <aws/route53globalresolver/model/ListGlobalResolversRequest.h>
 #include <aws/route53globalresolver/model/ListHostedZoneAssociationsRequest.h>
 #include <aws/route53globalresolver/model/ListManagedFirewallDomainListsRequest.h>
+#include <aws/route53globalresolver/model/ListSharedDNSViewsRequest.h>
 #include <aws/route53globalresolver/model/ListTagsForResourceRequest.h>
 #include <aws/route53globalresolver/model/TagResourceRequest.h>
 #include <aws/route53globalresolver/model/UntagResourceRequest.h>
@@ -808,17 +809,9 @@ ListGlobalResolversOutcome Route53GlobalResolverClient::ListGlobalResolvers(cons
 
 ListHostedZoneAssociationsOutcome Route53GlobalResolverClient::ListHostedZoneAssociations(
     const ListHostedZoneAssociationsRequest& request) const {
-  if (!request.ResourceArnHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListHostedZoneAssociations", "Required field: ResourceArn, is not set");
-    return ListHostedZoneAssociationsOutcome(Aws::Client::AWSError<Route53GlobalResolverErrors>(
-        Route53GlobalResolverErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
-  }
-
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/hosted-zone-associations/resource-arn/");
-    endpointResolutionOutcome.GetResult().SetRfc3986Encoded(true);
-    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetResourceArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/hosted-zone-associations");
   };
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
@@ -844,6 +837,17 @@ ListManagedFirewallDomainListsOutcome Route53GlobalResolverClient::ListManagedFi
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListManagedFirewallDomainListsOutcome(result.GetResultWithOwnership())
                             : ListManagedFirewallDomainListsOutcome(std::move(result.GetError()));
+}
+
+ListSharedDNSViewsOutcome Route53GlobalResolverClient::ListSharedDNSViews(const ListSharedDNSViewsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/shared-dns-views");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSharedDNSViewsOutcome(result.GetResultWithOwnership())
+                            : ListSharedDNSViewsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome Route53GlobalResolverClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {

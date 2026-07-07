@@ -62,25 +62,6 @@ class DescribeConfigRulesRequest : public ConfigServiceRequest {
 
   ///@{
   /**
-   * <p>The <code>nextToken</code> string returned on a previous page that you use to
-   * get the next page of results in a paginated response.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  DescribeConfigRulesRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Returns a list of Detective or Proactive Config rules. By default, this API
    * returns an unfiltered list. For more information on Detective or Proactive
    * Config rules, see <a
@@ -100,15 +81,34 @@ class DescribeConfigRulesRequest : public ConfigServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The <code>nextToken</code> string returned on a previous page that you use to
+   * get the next page of results in a paginated response.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeConfigRulesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_configRuleNames;
 
-  Aws::String m_nextToken;
-
   DescribeConfigRulesFilters m_filters;
+
+  Aws::String m_nextToken;
   bool m_configRuleNamesHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

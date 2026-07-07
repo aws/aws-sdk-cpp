@@ -132,8 +132,8 @@ static const int OPS_METADATA_INVALID_ARGUMENT_HASH = HashingUtils::HashString("
 static const int INVALID_TYPE_NAME_HASH = HashingUtils::HashString("InvalidTypeNameException");
 static const int UNSUPPORTED_INVENTORY_SCHEMA_VERSION_HASH = HashingUtils::HashString("UnsupportedInventorySchemaVersionException");
 static const int OPS_ITEM_CONFLICT_HASH = HashingUtils::HashString("OpsItemConflictException");
-static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationDoesNotExist");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
+static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationDoesNotExist");
 static const int ASSOCIATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationLimitExceeded");
 static const int INVALID_OPTION_HASH = HashingUtils::HashString("InvalidOptionException");
 static const int INVALID_INSTANCE_PROPERTY_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidInstancePropertyFilterValue");
@@ -153,6 +153,7 @@ static const int HIERARCHY_LEVEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString(
 static const int DOCUMENT_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentVersionLimitExceeded");
 static const int RESOURCE_DATA_SYNC_NOT_FOUND_HASH = HashingUtils::HashString("ResourceDataSyncNotFoundException");
 static const int INVALID_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidFilterValue");
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int OPS_ITEM_ALREADY_EXISTS_HASH = HashingUtils::HashString("OpsItemAlreadyExistsException");
 static const int MALFORMED_RESOURCE_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedResourcePolicyDocumentException");
 static const int INVALID_DELETE_INVENTORY_PARAMETERS_HASH = HashingUtils::HashString("InvalidDeleteInventoryParametersException");
@@ -297,11 +298,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error) {
   } else if (hashCode == OPS_ITEM_CONFLICT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_CONFLICT), RetryableType::NOT_RETRYABLE);
     return true;
-  } else if (hashCode == ASSOCIATION_DOES_NOT_EXIST_HASH) {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
-    return true;
   } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
+    return true;
+  } else if (hashCode == ASSOCIATION_DOES_NOT_EXIST_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   } else if (hashCode == ASSOCIATION_LIMIT_EXCEEDED_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
@@ -359,6 +360,9 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error) {
     return true;
   } else if (hashCode == INVALID_FILTER_VALUE_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_VALUE), RetryableType::NOT_RETRYABLE);
+    return true;
+  } else if (hashCode == CONFLICT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
     return true;
   } else if (hashCode == OPS_ITEM_ALREADY_EXISTS_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
@@ -630,15 +634,15 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error) {
   } else if (hashCode == INVALID_ACTIVATION_ID_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ACTIVATION_ID), RetryableType::NOT_RETRYABLE);
     return true;
-  } else if (hashCode == RESOURCE_DATA_SYNC_CONFLICT_HASH) {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_CONFLICT), RetryableType::NOT_RETRYABLE);
-    return true;
   }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error) {
-  if (hashCode == OPS_METADATA_KEY_LIMIT_EXCEEDED_HASH) {
+  if (hashCode == RESOURCE_DATA_SYNC_CONFLICT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_CONFLICT), RetryableType::NOT_RETRYABLE);
+    return true;
+  } else if (hashCode == OPS_METADATA_KEY_LIMIT_EXCEEDED_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_KEY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   } else if (hashCode == INVALID_FILTER_HASH) {

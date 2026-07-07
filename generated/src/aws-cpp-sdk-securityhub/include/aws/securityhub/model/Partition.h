@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityHub {
 namespace Model {
-enum class Partition { NOT_SET, aws, aws_cn, aws_us_gov };
+enum class Partition { NOT_SET, aws, aws_cn, aws_us_gov, aws_us_iso, aws_us_iso_b, AzureCloud };
 
 namespace PartitionMapper {
 AWS_SECURITYHUB_API Partition GetPartitionForName(const Aws::String& name);

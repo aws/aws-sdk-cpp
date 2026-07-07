@@ -169,6 +169,11 @@ Image& Image::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(freeTierEligibleNode.GetText()).c_str()).c_str());
       m_freeTierEligibleHasBeenSet = true;
     }
+    XmlNode publicSsmParameterNameNode = resultNode.FirstChild("publicSsmParameterName");
+    if (!publicSsmParameterNameNode.IsNull()) {
+      m_publicSsmParameterName = Aws::Utils::Xml::DecodeEscapedXmlText(publicSsmParameterNameNode.GetText());
+      m_publicSsmParameterNameHasBeenSet = true;
+    }
     XmlNode imageWatermarksNode = resultNode.FirstChild("imageWatermarkSet");
     if (!imageWatermarksNode.IsNull()) {
       XmlNode imageWatermarksMember = imageWatermarksNode.FirstChild("item");
@@ -375,6 +380,11 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
     oStream << location << index << locationValue << ".FreeTierEligible=" << std::boolalpha << m_freeTierEligible << "&";
   }
 
+  if (m_publicSsmParameterNameHasBeenSet) {
+    oStream << location << index << locationValue << ".PublicSsmParameterName=" << StringUtils::URLEncode(m_publicSsmParameterName.c_str())
+            << "&";
+  }
+
   if (m_imageWatermarksHasBeenSet) {
     unsigned imageWatermarksIdx = 1;
     for (auto& item : m_imageWatermarks) {
@@ -532,6 +542,9 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const {
   }
   if (m_freeTierEligibleHasBeenSet) {
     oStream << location << ".FreeTierEligible=" << std::boolalpha << m_freeTierEligible << "&";
+  }
+  if (m_publicSsmParameterNameHasBeenSet) {
+    oStream << location << ".PublicSsmParameterName=" << StringUtils::URLEncode(m_publicSsmParameterName.c_str()) << "&";
   }
   if (m_imageWatermarksHasBeenSet) {
     unsigned imageWatermarksIdx = 1;

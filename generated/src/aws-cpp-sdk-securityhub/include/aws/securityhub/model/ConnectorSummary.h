@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/EnablementStatus.h>
 #include <aws/securityhub/model/ProviderSummary.h>
 
 #include <utility>
@@ -142,6 +143,41 @@ class ConnectorSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The enablement status of the connector.</p>
+   */
+  inline EnablementStatus GetEnablementStatus() const { return m_enablementStatus; }
+  inline bool EnablementStatusHasBeenSet() const { return m_enablementStatusHasBeenSet; }
+  inline void SetEnablementStatus(EnablementStatus value) {
+    m_enablementStatusHasBeenSet = true;
+    m_enablementStatus = value;
+  }
+  inline ConnectorSummary& WithEnablementStatus(EnablementStatus value) {
+    SetEnablementStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The reason for the current enablement status. Provides additional context
+   * when the connector is in a failed state.</p>
+   */
+  inline const Aws::String& GetEnablementStatusReason() const { return m_enablementStatusReason; }
+  inline bool EnablementStatusReasonHasBeenSet() const { return m_enablementStatusReasonHasBeenSet; }
+  template <typename EnablementStatusReasonT = Aws::String>
+  void SetEnablementStatusReason(EnablementStatusReasonT&& value) {
+    m_enablementStatusReasonHasBeenSet = true;
+    m_enablementStatusReason = std::forward<EnablementStatusReasonT>(value);
+  }
+  template <typename EnablementStatusReasonT = Aws::String>
+  ConnectorSummary& WithEnablementStatusReason(EnablementStatusReasonT&& value) {
+    SetEnablementStatusReason(std::forward<EnablementStatusReasonT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_connectorArn;
 
@@ -154,12 +190,18 @@ class ConnectorSummary {
   ProviderSummary m_providerSummary;
 
   Aws::Utils::DateTime m_createdAt{};
+
+  EnablementStatus m_enablementStatus{EnablementStatus::NOT_SET};
+
+  Aws::String m_enablementStatusReason;
   bool m_connectorArnHasBeenSet = false;
   bool m_connectorIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_providerSummaryHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
+  bool m_enablementStatusHasBeenSet = false;
+  bool m_enablementStatusReasonHasBeenSet = false;
 };
 
 }  // namespace Model

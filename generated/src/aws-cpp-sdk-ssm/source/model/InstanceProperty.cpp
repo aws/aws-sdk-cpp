@@ -122,6 +122,14 @@ InstanceProperty& InstanceProperty::operator=(JsonView jsonValue) {
     m_sourceType = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("SourceType"));
     m_sourceTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SourceLocation")) {
+    m_sourceLocation = jsonValue.GetString("SourceLocation");
+    m_sourceLocationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AvailabilityZone")) {
+    m_availabilityZone = jsonValue.GetString("AvailabilityZone");
+    m_availabilityZoneHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -230,6 +238,14 @@ JsonValue InstanceProperty::Jsonize() const {
 
   if (m_sourceTypeHasBeenSet) {
     payload.WithString("SourceType", SourceTypeMapper::GetNameForSourceType(m_sourceType));
+  }
+
+  if (m_sourceLocationHasBeenSet) {
+    payload.WithString("SourceLocation", m_sourceLocation);
+  }
+
+  if (m_availabilityZoneHasBeenSet) {
+    payload.WithString("AvailabilityZone", m_availabilityZone);
   }
 
   return payload;

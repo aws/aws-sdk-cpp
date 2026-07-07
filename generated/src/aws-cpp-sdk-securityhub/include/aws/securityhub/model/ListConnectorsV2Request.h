@@ -9,6 +9,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/ConnectorProviderName.h>
 #include <aws/securityhub/model/ConnectorStatus.h>
+#include <aws/securityhub/model/EnablementStatus.h>
 
 #include <utility>
 
@@ -100,6 +101,22 @@ class ListConnectorsV2Request : public SecurityHubRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The enablement status to filter connectors by.</p>
+   */
+  inline EnablementStatus GetEnablementStatus() const { return m_enablementStatus; }
+  inline bool EnablementStatusHasBeenSet() const { return m_enablementStatusHasBeenSet; }
+  inline void SetEnablementStatus(EnablementStatus value) {
+    m_enablementStatusHasBeenSet = true;
+    m_enablementStatus = value;
+  }
+  inline ListConnectorsV2Request& WithEnablementStatus(EnablementStatus value) {
+    SetEnablementStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nextToken;
 
@@ -108,10 +125,13 @@ class ListConnectorsV2Request : public SecurityHubRequest {
   ConnectorProviderName m_providerName{ConnectorProviderName::NOT_SET};
 
   ConnectorStatus m_connectorStatus{ConnectorStatus::NOT_SET};
+
+  EnablementStatus m_enablementStatus{EnablementStatus::NOT_SET};
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_providerNameHasBeenSet = false;
   bool m_connectorStatusHasBeenSet = false;
+  bool m_enablementStatusHasBeenSet = false;
 };
 
 }  // namespace Model

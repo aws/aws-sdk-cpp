@@ -26,6 +26,10 @@ ProviderDetail& ProviderDetail::operator=(JsonView jsonValue) {
     m_serviceNow = jsonValue.GetObject("ServiceNow");
     m_serviceNowHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Azure")) {
+    m_azure = jsonValue.GetObject("Azure");
+    m_azureHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ProviderDetail::Jsonize() const {
 
   if (m_serviceNowHasBeenSet) {
     payload.WithObject("ServiceNow", m_serviceNow.Jsonize());
+  }
+
+  if (m_azureHasBeenSet) {
+    payload.WithObject("Azure", m_azure.Jsonize());
   }
 
   return payload;

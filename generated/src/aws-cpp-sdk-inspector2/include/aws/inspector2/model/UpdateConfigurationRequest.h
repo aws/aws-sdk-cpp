@@ -4,10 +4,12 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/Inspector2Request.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/Ec2Configuration.h>
 #include <aws/inspector2/model/EcrConfiguration.h>
+#include <aws/inspector2/model/UpdateConfigurationInheritance.h>
 
 #include <utility>
 
@@ -28,6 +30,28 @@ class UpdateConfigurationRequest : public Inspector2Request {
   inline virtual const char* GetServiceRequestName() const override { return "UpdateConfiguration"; }
 
   AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>The 12-digit Amazon Web Services account ID of the member account whose scan
+   * configuration you want to update. When specified, you must be the delegated
+   * administrator for this member account. If not specified, the operation updates
+   * your own configuration and propagates changes to any member accounts that have
+   * not been individually configured.</p>
+   */
+  inline const Aws::String& GetAccountId() const { return m_accountId; }
+  inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+  template <typename AccountIdT = Aws::String>
+  void SetAccountId(AccountIdT&& value) {
+    m_accountIdHasBeenSet = true;
+    m_accountId = std::forward<AccountIdT>(value);
+  }
+  template <typename AccountIdT = Aws::String>
+  UpdateConfigurationRequest& WithAccountId(AccountIdT&& value) {
+    SetAccountId(std::forward<AccountIdT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -66,12 +90,43 @@ class UpdateConfigurationRequest : public Inspector2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies which scan-type configurations to reset to the delegated
+   * administrator's inherited values for the targeted member account. Each member of
+   * this structure is independently optional. When specified,
+   * <code>ec2Configuration</code> and <code>ecrConfiguration</code> must be absent,
+   * and <code>accountId</code> must also be present. Only
+   * <code>INHERIT_FROM_ADMIN</code> is valid for each member. If not specified, the
+   * operation uses the <code>ec2Configuration</code> and
+   * <code>ecrConfiguration</code> parameters instead.</p>
+   */
+  inline const UpdateConfigurationInheritance& GetUpdateConfigurationInheritance() const { return m_updateConfigurationInheritance; }
+  inline bool UpdateConfigurationInheritanceHasBeenSet() const { return m_updateConfigurationInheritanceHasBeenSet; }
+  template <typename UpdateConfigurationInheritanceT = UpdateConfigurationInheritance>
+  void SetUpdateConfigurationInheritance(UpdateConfigurationInheritanceT&& value) {
+    m_updateConfigurationInheritanceHasBeenSet = true;
+    m_updateConfigurationInheritance = std::forward<UpdateConfigurationInheritanceT>(value);
+  }
+  template <typename UpdateConfigurationInheritanceT = UpdateConfigurationInheritance>
+  UpdateConfigurationRequest& WithUpdateConfigurationInheritance(UpdateConfigurationInheritanceT&& value) {
+    SetUpdateConfigurationInheritance(std::forward<UpdateConfigurationInheritanceT>(value));
+    return *this;
+  }
+  ///@}
  private:
+  Aws::String m_accountId;
+
   EcrConfiguration m_ecrConfiguration;
 
   Ec2Configuration m_ec2Configuration;
+
+  UpdateConfigurationInheritance m_updateConfigurationInheritance;
+  bool m_accountIdHasBeenSet = false;
   bool m_ecrConfigurationHasBeenSet = false;
   bool m_ec2ConfigurationHasBeenSet = false;
+  bool m_updateConfigurationInheritanceHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -23,12 +23,12 @@ Aws::String DescribeConfigRulesRequest::SerializePayload() const {
     payload.WithArray("ConfigRuleNames", std::move(configRuleNamesJsonList));
   }
 
-  if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
-  }
-
   if (m_filtersHasBeenSet) {
     payload.WithObject("Filters", m_filters.Jsonize());
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();

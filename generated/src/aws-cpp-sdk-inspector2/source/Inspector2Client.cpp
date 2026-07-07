@@ -34,12 +34,14 @@
 #include <aws/inspector2/model/CreateCisScanConfigurationRequest.h>
 #include <aws/inspector2/model/CreateCodeSecurityIntegrationRequest.h>
 #include <aws/inspector2/model/CreateCodeSecurityScanConfigurationRequest.h>
+#include <aws/inspector2/model/CreateConnectorRequest.h>
 #include <aws/inspector2/model/CreateFilterRequest.h>
 #include <aws/inspector2/model/CreateFindingsReportRequest.h>
 #include <aws/inspector2/model/CreateSbomExportRequest.h>
 #include <aws/inspector2/model/DeleteCisScanConfigurationRequest.h>
 #include <aws/inspector2/model/DeleteCodeSecurityIntegrationRequest.h>
 #include <aws/inspector2/model/DeleteCodeSecurityScanConfigurationRequest.h>
+#include <aws/inspector2/model/DeleteConnectorRequest.h>
 #include <aws/inspector2/model/DeleteFilterRequest.h>
 #include <aws/inspector2/model/DescribeOrganizationConfigurationRequest.h>
 #include <aws/inspector2/model/DisableDelegatedAdminAccountRequest.h>
@@ -68,6 +70,8 @@
 #include <aws/inspector2/model/ListCodeSecurityIntegrationsRequest.h>
 #include <aws/inspector2/model/ListCodeSecurityScanConfigurationAssociationsRequest.h>
 #include <aws/inspector2/model/ListCodeSecurityScanConfigurationsRequest.h>
+#include <aws/inspector2/model/ListConnectorScanConfigurationsRequest.h>
+#include <aws/inspector2/model/ListConnectorsRequest.h>
 #include <aws/inspector2/model/ListCoverageRequest.h>
 #include <aws/inspector2/model/ListCoverageStatisticsRequest.h>
 #include <aws/inspector2/model/ListDelegatedAdminAccountsRequest.h>
@@ -90,6 +94,8 @@
 #include <aws/inspector2/model/UpdateCodeSecurityIntegrationRequest.h>
 #include <aws/inspector2/model/UpdateCodeSecurityScanConfigurationRequest.h>
 #include <aws/inspector2/model/UpdateConfigurationRequest.h>
+#include <aws/inspector2/model/UpdateConnectorRequest.h>
+#include <aws/inspector2/model/UpdateConnectorScanConfigurationRequest.h>
 #include <aws/inspector2/model/UpdateEc2DeepInspectionConfigurationRequest.h>
 #include <aws/inspector2/model/UpdateEncryptionKeyRequest.h>
 #include <aws/inspector2/model/UpdateFilterRequest.h>
@@ -409,6 +415,17 @@ CreateCodeSecurityScanConfigurationOutcome Inspector2Client::CreateCodeSecurityS
                             : CreateCodeSecurityScanConfigurationOutcome(std::move(result.GetError()));
 }
 
+CreateConnectorOutcome Inspector2Client::CreateConnector(const CreateConnectorRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connector/create");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectorOutcome(result.GetResultWithOwnership())
+                            : CreateConnectorOutcome(std::move(result.GetError()));
+}
+
 CreateFilterOutcome Inspector2Client::CreateFilter(const CreateFilterRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -474,6 +491,17 @@ DeleteCodeSecurityScanConfigurationOutcome Inspector2Client::DeleteCodeSecurityS
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteCodeSecurityScanConfigurationOutcome(result.GetResultWithOwnership())
                             : DeleteCodeSecurityScanConfigurationOutcome(std::move(result.GetError()));
+}
+
+DeleteConnectorOutcome Inspector2Client::DeleteConnector(const DeleteConnectorRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connector/delete");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectorOutcome(std::move(result.GetError()));
 }
 
 DeleteFilterOutcome Inspector2Client::DeleteFilter(const DeleteFilterRequest& request) const {
@@ -798,6 +826,28 @@ ListCodeSecurityScanConfigurationsOutcome Inspector2Client::ListCodeSecurityScan
                             : ListCodeSecurityScanConfigurationsOutcome(std::move(result.GetError()));
 }
 
+ListConnectorScanConfigurationsOutcome Inspector2Client::ListConnectorScanConfigurations(
+    const ListConnectorScanConfigurationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connectorscanconfigurations/list");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectorScanConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListConnectorScanConfigurationsOutcome(std::move(result.GetError()));
+}
+
+ListConnectorsOutcome Inspector2Client::ListConnectors(const ListConnectorsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connector/list");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectorsOutcome(result.GetResultWithOwnership()) : ListConnectorsOutcome(std::move(result.GetError()));
+}
+
 ListCoverageOutcome Inspector2Client::ListCoverage(const ListCoverageRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1059,6 +1109,29 @@ UpdateConfigurationOutcome Inspector2Client::UpdateConfiguration(const UpdateCon
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateConfigurationOutcome(result.GetResultWithOwnership())
                             : UpdateConfigurationOutcome(std::move(result.GetError()));
+}
+
+UpdateConnectorOutcome Inspector2Client::UpdateConnector(const UpdateConnectorRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connector/update");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectorOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectorOutcome(std::move(result.GetError()));
+}
+
+UpdateConnectorScanConfigurationOutcome Inspector2Client::UpdateConnectorScanConfiguration(
+    const UpdateConnectorScanConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connectorscanconfiguration/update");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectorScanConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectorScanConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateEc2DeepInspectionConfigurationOutcome Inspector2Client::UpdateEc2DeepInspectionConfiguration(

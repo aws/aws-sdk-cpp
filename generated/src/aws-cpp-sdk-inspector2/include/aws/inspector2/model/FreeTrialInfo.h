@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/inspector2/model/CloudProvider.h>
 #include <aws/inspector2/model/FreeTrialStatus.h>
 #include <aws/inspector2/model/FreeTrialType.h>
 
@@ -103,6 +104,22 @@ class FreeTrialInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider associated with the free trial information.</p>
+   */
+  inline CloudProvider GetCloudProvider() const { return m_cloudProvider; }
+  inline bool CloudProviderHasBeenSet() const { return m_cloudProviderHasBeenSet; }
+  inline void SetCloudProvider(CloudProvider value) {
+    m_cloudProviderHasBeenSet = true;
+    m_cloudProvider = value;
+  }
+  inline FreeTrialInfo& WithCloudProvider(CloudProvider value) {
+    SetCloudProvider(value);
+    return *this;
+  }
+  ///@}
  private:
   FreeTrialType m_type{FreeTrialType::NOT_SET};
 
@@ -111,10 +128,13 @@ class FreeTrialInfo {
   Aws::Utils::DateTime m_end{};
 
   FreeTrialStatus m_status{FreeTrialStatus::NOT_SET};
+
+  CloudProvider m_cloudProvider{CloudProvider::NOT_SET};
   bool m_typeHasBeenSet = false;
   bool m_startHasBeenSet = false;
   bool m_endHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_cloudProviderHasBeenSet = false;
 };
 
 }  // namespace Model

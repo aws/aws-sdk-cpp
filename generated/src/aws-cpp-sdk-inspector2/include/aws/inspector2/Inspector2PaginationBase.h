@@ -14,6 +14,8 @@
 #include <aws/inspector2/model/ListCisScanResultsAggregatedByChecksPaginationTraits.h>
 #include <aws/inspector2/model/ListCisScanResultsAggregatedByTargetResourcePaginationTraits.h>
 #include <aws/inspector2/model/ListCisScansPaginationTraits.h>
+#include <aws/inspector2/model/ListConnectorScanConfigurationsPaginationTraits.h>
+#include <aws/inspector2/model/ListConnectorsPaginationTraits.h>
 #include <aws/inspector2/model/ListCoveragePaginationTraits.h>
 #include <aws/inspector2/model/ListCoverageStatisticsPaginationTraits.h>
 #include <aws/inspector2/model/ListDelegatedAdminAccountsPaginationTraits.h>
@@ -113,6 +115,29 @@ class Inspector2PaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCisScansRequest,
                                              Pagination::ListCisScansPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
+  }
+
+  /**
+   * Create a paginator for ListConnectors operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorsRequest, Pagination::ListConnectorsPaginationTraits<DerivedClient>>
+  ListConnectorsPaginator(const Model::ListConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorsRequest,
+                                             Pagination::ListConnectorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for ListConnectorScanConfigurations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorScanConfigurationsRequest,
+                                    Pagination::ListConnectorScanConfigurationsPaginationTraits<DerivedClient>>
+  ListConnectorScanConfigurationsPaginator(const Model::ListConnectorScanConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorScanConfigurationsRequest,
+                                             Pagination::ListConnectorScanConfigurationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

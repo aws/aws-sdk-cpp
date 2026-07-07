@@ -40,6 +40,11 @@ static const int metadata_product_vendor_name_HASH = HashingUtils::HashString("m
 static const int remediation_desc_HASH = HashingUtils::HashString("remediation.desc");
 static const int remediation_references_HASH = HashingUtils::HashString("remediation.references");
 static const int resources_cloud_partition_HASH = HashingUtils::HashString("resources.cloud_partition");
+static const int resources_name_HASH = HashingUtils::HashString("resources.name");
+static const int resources_owner_account_uid_HASH = HashingUtils::HashString("resources.owner.account.uid");
+static const int resources_owner_org_uid_HASH = HashingUtils::HashString("resources.owner.org.uid");
+static const int resources_owner_account_name_HASH = HashingUtils::HashString("resources.owner.account.name");
+static const int resources_provider_HASH = HashingUtils::HashString("resources.provider");
 static const int resources_region_HASH = HashingUtils::HashString("resources.region");
 static const int resources_type_HASH = HashingUtils::HashString("resources.type");
 static const int resources_uid_HASH = HashingUtils::HashString("resources.uid");
@@ -142,6 +147,16 @@ OcsfStringField GetOcsfStringFieldForName(const Aws::String& name) {
     return OcsfStringField::remediation_references;
   } else if (hashCode == resources_cloud_partition_HASH) {
     return OcsfStringField::resources_cloud_partition;
+  } else if (hashCode == resources_name_HASH) {
+    return OcsfStringField::resources_name;
+  } else if (hashCode == resources_owner_account_uid_HASH) {
+    return OcsfStringField::resources_owner_account_uid;
+  } else if (hashCode == resources_owner_org_uid_HASH) {
+    return OcsfStringField::resources_owner_org_uid;
+  } else if (hashCode == resources_owner_account_name_HASH) {
+    return OcsfStringField::resources_owner_account_name;
+  } else if (hashCode == resources_provider_HASH) {
+    return OcsfStringField::resources_provider;
   } else if (hashCode == resources_region_HASH) {
     return OcsfStringField::resources_region;
   } else if (hashCode == resources_type_HASH) {
@@ -298,6 +313,16 @@ Aws::String GetNameForOcsfStringField(OcsfStringField enumValue) {
       return "remediation.references";
     case OcsfStringField::resources_cloud_partition:
       return "resources.cloud_partition";
+    case OcsfStringField::resources_name:
+      return "resources.name";
+    case OcsfStringField::resources_owner_account_uid:
+      return "resources.owner.account.uid";
+    case OcsfStringField::resources_owner_org_uid:
+      return "resources.owner.org.uid";
+    case OcsfStringField::resources_owner_account_name:
+      return "resources.owner.account.name";
+    case OcsfStringField::resources_provider:
+      return "resources.provider";
     case OcsfStringField::resources_region:
       return "resources.region";
     case OcsfStringField::resources_type:

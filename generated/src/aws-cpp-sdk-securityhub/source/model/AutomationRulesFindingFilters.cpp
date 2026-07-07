@@ -291,6 +291,29 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator=(JsonView
     }
     m_awsAccountNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ResourceProvider")) {
+    Aws::Utils::Array<JsonView> resourceProviderJsonList = jsonValue.GetArray("ResourceProvider");
+    for (unsigned resourceProviderIndex = 0; resourceProviderIndex < resourceProviderJsonList.GetLength(); ++resourceProviderIndex) {
+      m_resourceProvider.push_back(resourceProviderJsonList[resourceProviderIndex].AsObject());
+    }
+    m_resourceProviderHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ResourceOwnerAccountId")) {
+    Aws::Utils::Array<JsonView> resourceOwnerAccountIdJsonList = jsonValue.GetArray("ResourceOwnerAccountId");
+    for (unsigned resourceOwnerAccountIdIndex = 0; resourceOwnerAccountIdIndex < resourceOwnerAccountIdJsonList.GetLength();
+         ++resourceOwnerAccountIdIndex) {
+      m_resourceOwnerAccountId.push_back(resourceOwnerAccountIdJsonList[resourceOwnerAccountIdIndex].AsObject());
+    }
+    m_resourceOwnerAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ResourceOwnerOrgId")) {
+    Aws::Utils::Array<JsonView> resourceOwnerOrgIdJsonList = jsonValue.GetArray("ResourceOwnerOrgId");
+    for (unsigned resourceOwnerOrgIdIndex = 0; resourceOwnerOrgIdIndex < resourceOwnerOrgIdJsonList.GetLength();
+         ++resourceOwnerOrgIdIndex) {
+      m_resourceOwnerOrgId.push_back(resourceOwnerOrgIdJsonList[resourceOwnerOrgIdIndex].AsObject());
+    }
+    m_resourceOwnerOrgIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -610,6 +633,32 @@ JsonValue AutomationRulesFindingFilters::Jsonize() const {
       awsAccountNameJsonList[awsAccountNameIndex].AsObject(m_awsAccountName[awsAccountNameIndex].Jsonize());
     }
     payload.WithArray("AwsAccountName", std::move(awsAccountNameJsonList));
+  }
+
+  if (m_resourceProviderHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceProviderJsonList(m_resourceProvider.size());
+    for (unsigned resourceProviderIndex = 0; resourceProviderIndex < resourceProviderJsonList.GetLength(); ++resourceProviderIndex) {
+      resourceProviderJsonList[resourceProviderIndex].AsObject(m_resourceProvider[resourceProviderIndex].Jsonize());
+    }
+    payload.WithArray("ResourceProvider", std::move(resourceProviderJsonList));
+  }
+
+  if (m_resourceOwnerAccountIdHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceOwnerAccountIdJsonList(m_resourceOwnerAccountId.size());
+    for (unsigned resourceOwnerAccountIdIndex = 0; resourceOwnerAccountIdIndex < resourceOwnerAccountIdJsonList.GetLength();
+         ++resourceOwnerAccountIdIndex) {
+      resourceOwnerAccountIdJsonList[resourceOwnerAccountIdIndex].AsObject(m_resourceOwnerAccountId[resourceOwnerAccountIdIndex].Jsonize());
+    }
+    payload.WithArray("ResourceOwnerAccountId", std::move(resourceOwnerAccountIdJsonList));
+  }
+
+  if (m_resourceOwnerOrgIdHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceOwnerOrgIdJsonList(m_resourceOwnerOrgId.size());
+    for (unsigned resourceOwnerOrgIdIndex = 0; resourceOwnerOrgIdIndex < resourceOwnerOrgIdJsonList.GetLength();
+         ++resourceOwnerOrgIdIndex) {
+      resourceOwnerOrgIdJsonList[resourceOwnerOrgIdIndex].AsObject(m_resourceOwnerOrgId[resourceOwnerOrgIdIndex].Jsonize());
+    }
+    payload.WithArray("ResourceOwnerOrgId", std::move(resourceOwnerOrgIdJsonList));
   }
 
   return payload;

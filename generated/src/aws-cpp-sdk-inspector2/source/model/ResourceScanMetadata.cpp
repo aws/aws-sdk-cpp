@@ -38,6 +38,26 @@ ResourceScanMetadata& ResourceScanMetadata::operator=(JsonView jsonValue) {
     m_codeRepository = jsonValue.GetObject("codeRepository");
     m_codeRepositoryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vmInstance")) {
+    m_vmInstance = jsonValue.GetObject("vmInstance");
+    m_vmInstanceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("containerImage")) {
+    m_containerImage = jsonValue.GetObject("containerImage");
+    m_containerImageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("containerRepository")) {
+    m_containerRepository = jsonValue.GetObject("containerRepository");
+    m_containerRepositoryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("containerRegistry")) {
+    m_containerRegistry = jsonValue.GetObject("containerRegistry");
+    m_containerRegistryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("serverlessFunction")) {
+    m_serverlessFunction = jsonValue.GetObject("serverlessFunction");
+    m_serverlessFunctionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +82,26 @@ JsonValue ResourceScanMetadata::Jsonize() const {
 
   if (m_codeRepositoryHasBeenSet) {
     payload.WithObject("codeRepository", m_codeRepository.Jsonize());
+  }
+
+  if (m_vmInstanceHasBeenSet) {
+    payload.WithObject("vmInstance", m_vmInstance.Jsonize());
+  }
+
+  if (m_containerImageHasBeenSet) {
+    payload.WithObject("containerImage", m_containerImage.Jsonize());
+  }
+
+  if (m_containerRepositoryHasBeenSet) {
+    payload.WithObject("containerRepository", m_containerRepository.Jsonize());
+  }
+
+  if (m_containerRegistryHasBeenSet) {
+    payload.WithObject("containerRegistry", m_containerRegistry.Jsonize());
+  }
+
+  if (m_serverlessFunctionHasBeenSet) {
+    payload.WithObject("serverlessFunction", m_serverlessFunction.Jsonize());
   }
 
   return payload;

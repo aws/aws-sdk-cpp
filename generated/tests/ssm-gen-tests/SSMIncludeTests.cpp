@@ -56,12 +56,18 @@
 #include <aws/ssm/model/AutomationExecutionStatus.h>
 #include <aws/ssm/model/AutomationSubtype.h>
 #include <aws/ssm/model/AutomationType.h>
+#include <aws/ssm/model/AzureConfiguration.h>
+#include <aws/ssm/model/AzureSubscription.h>
 #include <aws/ssm/model/BaselineOverride.h>
 #include <aws/ssm/model/CalendarState.h>
 #include <aws/ssm/model/CancelCommandRequest.h>
 #include <aws/ssm/model/CancelCommandResult.h>
 #include <aws/ssm/model/CancelMaintenanceWindowExecutionRequest.h>
 #include <aws/ssm/model/CancelMaintenanceWindowExecutionResult.h>
+#include <aws/ssm/model/CloudConnectorConfiguration.h>
+#include <aws/ssm/model/CloudConnectorFilter.h>
+#include <aws/ssm/model/CloudConnectorFilterKey.h>
+#include <aws/ssm/model/CloudConnectorSummary.h>
 #include <aws/ssm/model/CloudWatchOutputConfig.h>
 #include <aws/ssm/model/Command.h>
 #include <aws/ssm/model/CommandFilter.h>
@@ -81,6 +87,7 @@
 #include <aws/ssm/model/ComplianceSummaryItem.h>
 #include <aws/ssm/model/ComplianceUploadType.h>
 #include <aws/ssm/model/CompliantSummary.h>
+#include <aws/ssm/model/ConfigurationTargets.h>
 #include <aws/ssm/model/ConnectionStatus.h>
 #include <aws/ssm/model/CreateActivationRequest.h>
 #include <aws/ssm/model/CreateActivationResult.h>
@@ -89,6 +96,8 @@
 #include <aws/ssm/model/CreateAssociationBatchResult.h>
 #include <aws/ssm/model/CreateAssociationRequest.h>
 #include <aws/ssm/model/CreateAssociationResult.h>
+#include <aws/ssm/model/CreateCloudConnectorRequest.h>
+#include <aws/ssm/model/CreateCloudConnectorResult.h>
 #include <aws/ssm/model/CreateDocumentRequest.h>
 #include <aws/ssm/model/CreateDocumentResult.h>
 #include <aws/ssm/model/CreateMaintenanceWindowRequest.h>
@@ -106,6 +115,8 @@
 #include <aws/ssm/model/DeleteActivationResult.h>
 #include <aws/ssm/model/DeleteAssociationRequest.h>
 #include <aws/ssm/model/DeleteAssociationResult.h>
+#include <aws/ssm/model/DeleteCloudConnectorRequest.h>
+#include <aws/ssm/model/DeleteCloudConnectorResult.h>
 #include <aws/ssm/model/DeleteDocumentRequest.h>
 #include <aws/ssm/model/DeleteDocumentResult.h>
 #include <aws/ssm/model/DeleteInventoryRequest.h>
@@ -241,6 +252,8 @@
 #include <aws/ssm/model/GetAutomationExecutionResult.h>
 #include <aws/ssm/model/GetCalendarStateRequest.h>
 #include <aws/ssm/model/GetCalendarStateResult.h>
+#include <aws/ssm/model/GetCloudConnectorRequest.h>
+#include <aws/ssm/model/GetCloudConnectorResult.h>
 #include <aws/ssm/model/GetCommandInvocationRequest.h>
 #include <aws/ssm/model/GetCommandInvocationResult.h>
 #include <aws/ssm/model/GetConnectionStatusRequest.h>
@@ -334,6 +347,8 @@
 #include <aws/ssm/model/ListAssociationVersionsResult.h>
 #include <aws/ssm/model/ListAssociationsRequest.h>
 #include <aws/ssm/model/ListAssociationsResult.h>
+#include <aws/ssm/model/ListCloudConnectorsRequest.h>
+#include <aws/ssm/model/ListCloudConnectorsResult.h>
 #include <aws/ssm/model/ListCommandInvocationsRequest.h>
 #include <aws/ssm/model/ListCommandInvocationsResult.h>
 #include <aws/ssm/model/ListCommandsRequest.h>
@@ -563,6 +578,8 @@
 #include <aws/ssm/model/UpdateAssociationResult.h>
 #include <aws/ssm/model/UpdateAssociationStatusRequest.h>
 #include <aws/ssm/model/UpdateAssociationStatusResult.h>
+#include <aws/ssm/model/UpdateCloudConnectorRequest.h>
+#include <aws/ssm/model/UpdateCloudConnectorResult.h>
 #include <aws/ssm/model/UpdateDocumentDefaultVersionRequest.h>
 #include <aws/ssm/model/UpdateDocumentDefaultVersionResult.h>
 #include <aws/ssm/model/UpdateDocumentMetadataRequest.h>
@@ -587,7 +604,14 @@
 #include <aws/ssm/model/UpdateResourceDataSyncResult.h>
 #include <aws/ssm/model/UpdateServiceSettingRequest.h>
 #include <aws/ssm/model/UpdateServiceSettingResult.h>
+#include <aws/ssm/model/ValidateCloudConnectorRequest.h>
+#include <aws/ssm/model/ValidateCloudConnectorResult.h>
 #include <aws/ssm/model/ValidationException.h>
+#include <aws/ssm/model/ValidationFinding.h>
+#include <aws/ssm/model/ValidationFindingCode.h>
+#include <aws/ssm/model/ValidationFindingScope.h>
+#include <aws/ssm/model/ValidationFindingScopeType.h>
+#include <aws/ssm/model/ValidationFindingType.h>
 
 using SSMIncludeTest = ::testing::Test;
 

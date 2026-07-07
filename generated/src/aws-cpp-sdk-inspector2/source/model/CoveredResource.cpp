@@ -50,6 +50,26 @@ CoveredResource& CoveredResource::operator=(JsonView jsonValue) {
     m_scanMode = ScanModeMapper::GetScanModeForName(jsonValue.GetString("scanMode"));
     m_scanModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("provider")) {
+    m_provider = ProviderMapper::GetProviderForName(jsonValue.GetString("provider"));
+    m_providerHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("providerAccountId")) {
+    m_providerAccountId = jsonValue.GetString("providerAccountId");
+    m_providerAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("providerOrgId")) {
+    m_providerOrgId = jsonValue.GetString("providerOrgId");
+    m_providerOrgIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("providerRegion")) {
+    m_providerRegion = jsonValue.GetString("providerRegion");
+    m_providerRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("providerPartition")) {
+    m_providerPartition = jsonValue.GetString("providerPartition");
+    m_providerPartitionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +106,26 @@ JsonValue CoveredResource::Jsonize() const {
 
   if (m_scanModeHasBeenSet) {
     payload.WithString("scanMode", ScanModeMapper::GetNameForScanMode(m_scanMode));
+  }
+
+  if (m_providerHasBeenSet) {
+    payload.WithString("provider", ProviderMapper::GetNameForProvider(m_provider));
+  }
+
+  if (m_providerAccountIdHasBeenSet) {
+    payload.WithString("providerAccountId", m_providerAccountId);
+  }
+
+  if (m_providerOrgIdHasBeenSet) {
+    payload.WithString("providerOrgId", m_providerOrgId);
+  }
+
+  if (m_providerRegionHasBeenSet) {
+    payload.WithString("providerRegion", m_providerRegion);
+  }
+
+  if (m_providerPartitionHasBeenSet) {
+    payload.WithString("providerPartition", m_providerPartition);
   }
 
   return payload;

@@ -33,5 +33,13 @@ Aws::String GetEnabledStandardsRequest::SerializePayload() const {
     payload.WithInteger("MaxResults", m_maxResults);
   }
 
+  if (m_providersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> providersJsonList(m_providers.size());
+    for (unsigned providersIndex = 0; providersIndex < providersJsonList.GetLength(); ++providersIndex) {
+      providersJsonList[providersIndex].AsString(StandardsProviderMapper::GetNameForStandardsProvider(m_providers[providersIndex]));
+    }
+    payload.WithArray("Providers", std::move(providersJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

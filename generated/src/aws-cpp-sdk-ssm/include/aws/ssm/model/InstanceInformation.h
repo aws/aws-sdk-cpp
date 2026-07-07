@@ -426,7 +426,9 @@ class InstanceInformation {
   ///@{
   /**
    * <p>The type of the source resource. For IoT Greengrass devices,
-   * <code>SourceType</code> is <code>AWS::IoT::Thing</code>. </p>
+   * <code>SourceType</code> is <code>AWS::IoT::Thing</code>. For Azure Virtual
+   * Machines, <code>SourceType</code> is
+   * <code>Microsoft.Compute/virtualMachines</code>.</p>
    */
   inline SourceType GetSourceType() const { return m_sourceType; }
   inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
@@ -436,6 +438,24 @@ class InstanceInformation {
   }
   inline InstanceInformation& WithSourceType(SourceType value) {
     SetSourceType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The location of the source resource in the third-party cloud environment.</p>
+   */
+  inline const Aws::String& GetSourceLocation() const { return m_sourceLocation; }
+  inline bool SourceLocationHasBeenSet() const { return m_sourceLocationHasBeenSet; }
+  template <typename SourceLocationT = Aws::String>
+  void SetSourceLocation(SourceLocationT&& value) {
+    m_sourceLocationHasBeenSet = true;
+    m_sourceLocation = std::forward<SourceLocationT>(value);
+  }
+  template <typename SourceLocationT = Aws::String>
+  InstanceInformation& WithSourceLocation(SourceLocationT&& value) {
+    SetSourceLocation(std::forward<SourceLocationT>(value));
     return *this;
   }
   ///@}
@@ -481,6 +501,8 @@ class InstanceInformation {
   Aws::String m_sourceId;
 
   SourceType m_sourceType{SourceType::NOT_SET};
+
+  Aws::String m_sourceLocation;
   bool m_instanceIdHasBeenSet = false;
   bool m_pingStatusHasBeenSet = false;
   bool m_lastPingDateTimeHasBeenSet = false;
@@ -502,6 +524,7 @@ class InstanceInformation {
   bool m_associationOverviewHasBeenSet = false;
   bool m_sourceIdHasBeenSet = false;
   bool m_sourceTypeHasBeenSet = false;
+  bool m_sourceLocationHasBeenSet = false;
 };
 
 }  // namespace Model

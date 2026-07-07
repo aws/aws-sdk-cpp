@@ -27,6 +27,9 @@ static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
 static const int AWS_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("AWS_LAMBDA_FUNCTION");
 static const int LAMBDA_LAYER_HASH = HashingUtils::HashString("LAMBDA_LAYER");
 static const int CODE_REPOSITORY_HASH = HashingUtils::HashString("CODE_REPOSITORY");
+static const int VM_INSTANCE_HASH = HashingUtils::HashString("VM_INSTANCE");
+static const int CONTAINER_IMAGE_HASH = HashingUtils::HashString("CONTAINER_IMAGE");
+static const int SERVERLESS_FUNCTION_HASH = HashingUtils::HashString("SERVERLESS_FUNCTION");
 
 AggregationType GetAggregationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -54,6 +57,12 @@ AggregationType GetAggregationTypeForName(const Aws::String& name) {
     return AggregationType::LAMBDA_LAYER;
   } else if (hashCode == CODE_REPOSITORY_HASH) {
     return AggregationType::CODE_REPOSITORY;
+  } else if (hashCode == VM_INSTANCE_HASH) {
+    return AggregationType::VM_INSTANCE;
+  } else if (hashCode == CONTAINER_IMAGE_HASH) {
+    return AggregationType::CONTAINER_IMAGE;
+  } else if (hashCode == SERVERLESS_FUNCTION_HASH) {
+    return AggregationType::SERVERLESS_FUNCTION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -92,6 +101,12 @@ Aws::String GetNameForAggregationType(AggregationType enumValue) {
       return "LAMBDA_LAYER";
     case AggregationType::CODE_REPOSITORY:
       return "CODE_REPOSITORY";
+    case AggregationType::VM_INSTANCE:
+      return "VM_INSTANCE";
+    case AggregationType::CONTAINER_IMAGE:
+      return "CONTAINER_IMAGE";
+    case AggregationType::SERVERLESS_FUNCTION:
+      return "SERVERLESS_FUNCTION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

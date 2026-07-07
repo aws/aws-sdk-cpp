@@ -30,9 +30,33 @@ ResourceResult& ResourceResult::operator=(JsonView jsonValue) {
     m_accountId = jsonValue.GetString("AccountId");
     m_accountIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AccountName")) {
+    m_accountName = jsonValue.GetString("AccountName");
+    m_accountNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Region")) {
     m_region = jsonValue.GetString("Region");
     m_regionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ResourceProvider")) {
+    m_resourceProvider = jsonValue.GetString("ResourceProvider");
+    m_resourceProviderHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ResourceOwnerAccountId")) {
+    m_resourceOwnerAccountId = jsonValue.GetString("ResourceOwnerAccountId");
+    m_resourceOwnerAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ResourceOwnerOrgId")) {
+    m_resourceOwnerOrgId = jsonValue.GetString("ResourceOwnerOrgId");
+    m_resourceOwnerOrgIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ResourceCloudPartition")) {
+    m_resourceCloudPartition = jsonValue.GetString("ResourceCloudPartition");
+    m_resourceCloudPartitionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ResourceRegion")) {
+    m_resourceRegion = jsonValue.GetString("ResourceRegion");
+    m_resourceRegionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ResourceCategory")) {
     m_resourceCategory = ResourceCategoryMapper::GetResourceCategoryForName(jsonValue.GetString("ResourceCategory"));
@@ -90,8 +114,32 @@ JsonValue ResourceResult::Jsonize() const {
     payload.WithString("AccountId", m_accountId);
   }
 
+  if (m_accountNameHasBeenSet) {
+    payload.WithString("AccountName", m_accountName);
+  }
+
   if (m_regionHasBeenSet) {
     payload.WithString("Region", m_region);
+  }
+
+  if (m_resourceProviderHasBeenSet) {
+    payload.WithString("ResourceProvider", m_resourceProvider);
+  }
+
+  if (m_resourceOwnerAccountIdHasBeenSet) {
+    payload.WithString("ResourceOwnerAccountId", m_resourceOwnerAccountId);
+  }
+
+  if (m_resourceOwnerOrgIdHasBeenSet) {
+    payload.WithString("ResourceOwnerOrgId", m_resourceOwnerOrgId);
+  }
+
+  if (m_resourceCloudPartitionHasBeenSet) {
+    payload.WithString("ResourceCloudPartition", m_resourceCloudPartition);
+  }
+
+  if (m_resourceRegionHasBeenSet) {
+    payload.WithString("ResourceRegion", m_resourceRegion);
   }
 
   if (m_resourceCategoryHasBeenSet) {

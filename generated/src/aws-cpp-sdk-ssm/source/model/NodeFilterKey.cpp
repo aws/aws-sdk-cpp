@@ -30,6 +30,11 @@ static const int OrganizationalUnitId_HASH = HashingUtils::HashString("Organizat
 static const int OrganizationalUnitPath_HASH = HashingUtils::HashString("OrganizationalUnitPath");
 static const int Region_HASH = HashingUtils::HashString("Region");
 static const int AccountId_HASH = HashingUtils::HashString("AccountId");
+static const int SourceType_HASH = HashingUtils::HashString("SourceType");
+static const int SourceId_HASH = HashingUtils::HashString("SourceId");
+static const int SourceLocation_HASH = HashingUtils::HashString("SourceLocation");
+static const int AvailabilityZone_HASH = HashingUtils::HashString("AvailabilityZone");
+static const int AvailabilityZoneId_HASH = HashingUtils::HashString("AvailabilityZoneId");
 
 NodeFilterKey GetNodeFilterKeyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -63,6 +68,16 @@ NodeFilterKey GetNodeFilterKeyForName(const Aws::String& name) {
     return NodeFilterKey::Region;
   } else if (hashCode == AccountId_HASH) {
     return NodeFilterKey::AccountId;
+  } else if (hashCode == SourceType_HASH) {
+    return NodeFilterKey::SourceType;
+  } else if (hashCode == SourceId_HASH) {
+    return NodeFilterKey::SourceId;
+  } else if (hashCode == SourceLocation_HASH) {
+    return NodeFilterKey::SourceLocation;
+  } else if (hashCode == AvailabilityZone_HASH) {
+    return NodeFilterKey::AvailabilityZone;
+  } else if (hashCode == AvailabilityZoneId_HASH) {
+    return NodeFilterKey::AvailabilityZoneId;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -107,6 +122,16 @@ Aws::String GetNameForNodeFilterKey(NodeFilterKey enumValue) {
       return "Region";
     case NodeFilterKey::AccountId:
       return "AccountId";
+    case NodeFilterKey::SourceType:
+      return "SourceType";
+    case NodeFilterKey::SourceId:
+      return "SourceId";
+    case NodeFilterKey::SourceLocation:
+      return "SourceLocation";
+    case NodeFilterKey::AvailabilityZone:
+      return "AvailabilityZone";
+    case NodeFilterKey::AvailabilityZoneId:
+      return "AvailabilityZoneId";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

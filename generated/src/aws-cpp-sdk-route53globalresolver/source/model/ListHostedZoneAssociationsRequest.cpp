@@ -30,4 +30,10 @@ void ListHostedZoneAssociationsRequest::AddQueryStringParameters(URI& uri) const
     uri.AddQueryStringParameter("next_token", ss.str());
     ss.str("");
   }
+
+  if (m_resourceArnHasBeenSet) {
+    ss << m_resourceArn;
+    uri.AddQueryStringParameter("resourceArn", ss.str());
+    ss.str("");
+  }
 }

@@ -166,7 +166,6 @@ class TargetLocation {
   /**
    * <p>Indicates whether to include child organizational units (OUs) that are
    * children of the targeted OUs. The default is <code>false</code>.</p>
-   * <p>This parameter is not supported by State Manager.</p>
    */
   inline bool GetIncludeChildOrganizationUnits() const { return m_includeChildOrganizationUnits; }
   inline bool IncludeChildOrganizationUnitsHasBeenSet() const { return m_includeChildOrganizationUnitsHasBeenSet; }

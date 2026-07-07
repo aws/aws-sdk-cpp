@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHubRequest.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/StandardsProvider.h>
 
 #include <utility>
 
@@ -70,12 +72,39 @@ class DescribeStandardsRequest : public SecurityHubRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of cloud providers to filter the standards by. For example, specify
+   * <code>Azure</code> to return only standards that evaluate Azure resources.</p>
+   */
+  inline const Aws::Vector<StandardsProvider>& GetProviders() const { return m_providers; }
+  inline bool ProvidersHasBeenSet() const { return m_providersHasBeenSet; }
+  template <typename ProvidersT = Aws::Vector<StandardsProvider>>
+  void SetProviders(ProvidersT&& value) {
+    m_providersHasBeenSet = true;
+    m_providers = std::forward<ProvidersT>(value);
+  }
+  template <typename ProvidersT = Aws::Vector<StandardsProvider>>
+  DescribeStandardsRequest& WithProviders(ProvidersT&& value) {
+    SetProviders(std::forward<ProvidersT>(value));
+    return *this;
+  }
+  inline DescribeStandardsRequest& AddProviders(StandardsProvider value) {
+    m_providersHasBeenSet = true;
+    m_providers.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nextToken;
 
   int m_maxResults{0};
+
+  Aws::Vector<StandardsProvider> m_providers;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
+  bool m_providersHasBeenSet = false;
 };
 
 }  // namespace Model

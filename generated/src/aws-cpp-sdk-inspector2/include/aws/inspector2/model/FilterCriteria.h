@@ -1170,6 +1170,462 @@ class FilterCriteria {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the cloud provider.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudProvider() const { return m_cloudProvider; }
+  inline bool CloudProviderHasBeenSet() const { return m_cloudProviderHasBeenSet; }
+  template <typename CloudProviderT = Aws::Vector<StringFilter>>
+  void SetCloudProvider(CloudProviderT&& value) {
+    m_cloudProviderHasBeenSet = true;
+    m_cloudProvider = std::forward<CloudProviderT>(value);
+  }
+  template <typename CloudProviderT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudProvider(CloudProviderT&& value) {
+    SetCloudProvider(std::forward<CloudProviderT>(value));
+    return *this;
+  }
+  template <typename CloudProviderT = StringFilter>
+  FilterCriteria& AddCloudProvider(CloudProviderT&& value) {
+    m_cloudProviderHasBeenSet = true;
+    m_cloudProvider.emplace_back(std::forward<CloudProviderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the cloud provider region.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudProviderRegion() const { return m_cloudProviderRegion; }
+  inline bool CloudProviderRegionHasBeenSet() const { return m_cloudProviderRegionHasBeenSet; }
+  template <typename CloudProviderRegionT = Aws::Vector<StringFilter>>
+  void SetCloudProviderRegion(CloudProviderRegionT&& value) {
+    m_cloudProviderRegionHasBeenSet = true;
+    m_cloudProviderRegion = std::forward<CloudProviderRegionT>(value);
+  }
+  template <typename CloudProviderRegionT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudProviderRegion(CloudProviderRegionT&& value) {
+    SetCloudProviderRegion(std::forward<CloudProviderRegionT>(value));
+    return *this;
+  }
+  template <typename CloudProviderRegionT = StringFilter>
+  FilterCriteria& AddCloudProviderRegion(CloudProviderRegionT&& value) {
+    m_cloudProviderRegionHasBeenSet = true;
+    m_cloudProviderRegion.emplace_back(std::forward<CloudProviderRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the cloud provider account ID.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudProviderAccountId() const { return m_cloudProviderAccountId; }
+  inline bool CloudProviderAccountIdHasBeenSet() const { return m_cloudProviderAccountIdHasBeenSet; }
+  template <typename CloudProviderAccountIdT = Aws::Vector<StringFilter>>
+  void SetCloudProviderAccountId(CloudProviderAccountIdT&& value) {
+    m_cloudProviderAccountIdHasBeenSet = true;
+    m_cloudProviderAccountId = std::forward<CloudProviderAccountIdT>(value);
+  }
+  template <typename CloudProviderAccountIdT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudProviderAccountId(CloudProviderAccountIdT&& value) {
+    SetCloudProviderAccountId(std::forward<CloudProviderAccountIdT>(value));
+    return *this;
+  }
+  template <typename CloudProviderAccountIdT = StringFilter>
+  FilterCriteria& AddCloudProviderAccountId(CloudProviderAccountIdT&& value) {
+    m_cloudProviderAccountIdHasBeenSet = true;
+    m_cloudProviderAccountId.emplace_back(std::forward<CloudProviderAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the cloud provider organization ID.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudProviderOrgId() const { return m_cloudProviderOrgId; }
+  inline bool CloudProviderOrgIdHasBeenSet() const { return m_cloudProviderOrgIdHasBeenSet; }
+  template <typename CloudProviderOrgIdT = Aws::Vector<StringFilter>>
+  void SetCloudProviderOrgId(CloudProviderOrgIdT&& value) {
+    m_cloudProviderOrgIdHasBeenSet = true;
+    m_cloudProviderOrgId = std::forward<CloudProviderOrgIdT>(value);
+  }
+  template <typename CloudProviderOrgIdT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudProviderOrgId(CloudProviderOrgIdT&& value) {
+    SetCloudProviderOrgId(std::forward<CloudProviderOrgIdT>(value));
+    return *this;
+  }
+  template <typename CloudProviderOrgIdT = StringFilter>
+  FilterCriteria& AddCloudProviderOrgId(CloudProviderOrgIdT&& value) {
+    m_cloudProviderOrgIdHasBeenSet = true;
+    m_cloudProviderOrgId.emplace_back(std::forward<CloudProviderOrgIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the image reference of a VM instance.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudVmImageReference() const { return m_cloudVmImageReference; }
+  inline bool CloudVmImageReferenceHasBeenSet() const { return m_cloudVmImageReferenceHasBeenSet; }
+  template <typename CloudVmImageReferenceT = Aws::Vector<StringFilter>>
+  void SetCloudVmImageReference(CloudVmImageReferenceT&& value) {
+    m_cloudVmImageReferenceHasBeenSet = true;
+    m_cloudVmImageReference = std::forward<CloudVmImageReferenceT>(value);
+  }
+  template <typename CloudVmImageReferenceT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudVmImageReference(CloudVmImageReferenceT&& value) {
+    SetCloudVmImageReference(std::forward<CloudVmImageReferenceT>(value));
+    return *this;
+  }
+  template <typename CloudVmImageReferenceT = StringFilter>
+  FilterCriteria& AddCloudVmImageReference(CloudVmImageReferenceT&& value) {
+    m_cloudVmImageReferenceHasBeenSet = true;
+    m_cloudVmImageReference.emplace_back(std::forward<CloudVmImageReferenceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the network ID of a VM instance.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudVmNetworkId() const { return m_cloudVmNetworkId; }
+  inline bool CloudVmNetworkIdHasBeenSet() const { return m_cloudVmNetworkIdHasBeenSet; }
+  template <typename CloudVmNetworkIdT = Aws::Vector<StringFilter>>
+  void SetCloudVmNetworkId(CloudVmNetworkIdT&& value) {
+    m_cloudVmNetworkIdHasBeenSet = true;
+    m_cloudVmNetworkId = std::forward<CloudVmNetworkIdT>(value);
+  }
+  template <typename CloudVmNetworkIdT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudVmNetworkId(CloudVmNetworkIdT&& value) {
+    SetCloudVmNetworkId(std::forward<CloudVmNetworkIdT>(value));
+    return *this;
+  }
+  template <typename CloudVmNetworkIdT = StringFilter>
+  FilterCriteria& AddCloudVmNetworkId(CloudVmNetworkIdT&& value) {
+    m_cloudVmNetworkIdHasBeenSet = true;
+    m_cloudVmNetworkId.emplace_back(std::forward<CloudVmNetworkIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the subnet IDs of a VM instance.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudVmSubnetIds() const { return m_cloudVmSubnetIds; }
+  inline bool CloudVmSubnetIdsHasBeenSet() const { return m_cloudVmSubnetIdsHasBeenSet; }
+  template <typename CloudVmSubnetIdsT = Aws::Vector<StringFilter>>
+  void SetCloudVmSubnetIds(CloudVmSubnetIdsT&& value) {
+    m_cloudVmSubnetIdsHasBeenSet = true;
+    m_cloudVmSubnetIds = std::forward<CloudVmSubnetIdsT>(value);
+  }
+  template <typename CloudVmSubnetIdsT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudVmSubnetIds(CloudVmSubnetIdsT&& value) {
+    SetCloudVmSubnetIds(std::forward<CloudVmSubnetIdsT>(value));
+    return *this;
+  }
+  template <typename CloudVmSubnetIdsT = StringFilter>
+  FilterCriteria& AddCloudVmSubnetIds(CloudVmSubnetIdsT&& value) {
+    m_cloudVmSubnetIdsHasBeenSet = true;
+    m_cloudVmSubnetIds.emplace_back(std::forward<CloudVmSubnetIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the repository name of a container image.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudImageRepositoryName() const { return m_cloudImageRepositoryName; }
+  inline bool CloudImageRepositoryNameHasBeenSet() const { return m_cloudImageRepositoryNameHasBeenSet; }
+  template <typename CloudImageRepositoryNameT = Aws::Vector<StringFilter>>
+  void SetCloudImageRepositoryName(CloudImageRepositoryNameT&& value) {
+    m_cloudImageRepositoryNameHasBeenSet = true;
+    m_cloudImageRepositoryName = std::forward<CloudImageRepositoryNameT>(value);
+  }
+  template <typename CloudImageRepositoryNameT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudImageRepositoryName(CloudImageRepositoryNameT&& value) {
+    SetCloudImageRepositoryName(std::forward<CloudImageRepositoryNameT>(value));
+    return *this;
+  }
+  template <typename CloudImageRepositoryNameT = StringFilter>
+  FilterCriteria& AddCloudImageRepositoryName(CloudImageRepositoryNameT&& value) {
+    m_cloudImageRepositoryNameHasBeenSet = true;
+    m_cloudImageRepositoryName.emplace_back(std::forward<CloudImageRepositoryNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the registry of a container image.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudImageRegistry() const { return m_cloudImageRegistry; }
+  inline bool CloudImageRegistryHasBeenSet() const { return m_cloudImageRegistryHasBeenSet; }
+  template <typename CloudImageRegistryT = Aws::Vector<StringFilter>>
+  void SetCloudImageRegistry(CloudImageRegistryT&& value) {
+    m_cloudImageRegistryHasBeenSet = true;
+    m_cloudImageRegistry = std::forward<CloudImageRegistryT>(value);
+  }
+  template <typename CloudImageRegistryT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudImageRegistry(CloudImageRegistryT&& value) {
+    SetCloudImageRegistry(std::forward<CloudImageRegistryT>(value));
+    return *this;
+  }
+  template <typename CloudImageRegistryT = StringFilter>
+  FilterCriteria& AddCloudImageRegistry(CloudImageRegistryT&& value) {
+    m_cloudImageRegistryHasBeenSet = true;
+    m_cloudImageRegistry.emplace_back(std::forward<CloudImageRegistryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the digest of a container image.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudImageDigest() const { return m_cloudImageDigest; }
+  inline bool CloudImageDigestHasBeenSet() const { return m_cloudImageDigestHasBeenSet; }
+  template <typename CloudImageDigestT = Aws::Vector<StringFilter>>
+  void SetCloudImageDigest(CloudImageDigestT&& value) {
+    m_cloudImageDigestHasBeenSet = true;
+    m_cloudImageDigest = std::forward<CloudImageDigestT>(value);
+  }
+  template <typename CloudImageDigestT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudImageDigest(CloudImageDigestT&& value) {
+    SetCloudImageDigest(std::forward<CloudImageDigestT>(value));
+    return *this;
+  }
+  template <typename CloudImageDigestT = StringFilter>
+  FilterCriteria& AddCloudImageDigest(CloudImageDigestT&& value) {
+    m_cloudImageDigestHasBeenSet = true;
+    m_cloudImageDigest.emplace_back(std::forward<CloudImageDigestT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the tags of a container image.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudImageTags() const { return m_cloudImageTags; }
+  inline bool CloudImageTagsHasBeenSet() const { return m_cloudImageTagsHasBeenSet; }
+  template <typename CloudImageTagsT = Aws::Vector<StringFilter>>
+  void SetCloudImageTags(CloudImageTagsT&& value) {
+    m_cloudImageTagsHasBeenSet = true;
+    m_cloudImageTags = std::forward<CloudImageTagsT>(value);
+  }
+  template <typename CloudImageTagsT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudImageTags(CloudImageTagsT&& value) {
+    SetCloudImageTags(std::forward<CloudImageTagsT>(value));
+    return *this;
+  }
+  template <typename CloudImageTagsT = StringFilter>
+  FilterCriteria& AddCloudImageTags(CloudImageTagsT&& value) {
+    m_cloudImageTagsHasBeenSet = true;
+    m_cloudImageTags.emplace_back(std::forward<CloudImageTagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for when a container image was pushed.</p>
+   */
+  inline const Aws::Vector<DateFilter>& GetCloudImagePushedAt() const { return m_cloudImagePushedAt; }
+  inline bool CloudImagePushedAtHasBeenSet() const { return m_cloudImagePushedAtHasBeenSet; }
+  template <typename CloudImagePushedAtT = Aws::Vector<DateFilter>>
+  void SetCloudImagePushedAt(CloudImagePushedAtT&& value) {
+    m_cloudImagePushedAtHasBeenSet = true;
+    m_cloudImagePushedAt = std::forward<CloudImagePushedAtT>(value);
+  }
+  template <typename CloudImagePushedAtT = Aws::Vector<DateFilter>>
+  FilterCriteria& WithCloudImagePushedAt(CloudImagePushedAtT&& value) {
+    SetCloudImagePushedAt(std::forward<CloudImagePushedAtT>(value));
+    return *this;
+  }
+  template <typename CloudImagePushedAtT = DateFilter>
+  FilterCriteria& AddCloudImagePushedAt(CloudImagePushedAtT&& value) {
+    m_cloudImagePushedAtHasBeenSet = true;
+    m_cloudImagePushedAt.emplace_back(std::forward<CloudImagePushedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the architecture of a container image.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudImageArchitecture() const { return m_cloudImageArchitecture; }
+  inline bool CloudImageArchitectureHasBeenSet() const { return m_cloudImageArchitectureHasBeenSet; }
+  template <typename CloudImageArchitectureT = Aws::Vector<StringFilter>>
+  void SetCloudImageArchitecture(CloudImageArchitectureT&& value) {
+    m_cloudImageArchitectureHasBeenSet = true;
+    m_cloudImageArchitecture = std::forward<CloudImageArchitectureT>(value);
+  }
+  template <typename CloudImageArchitectureT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudImageArchitecture(CloudImageArchitectureT&& value) {
+    SetCloudImageArchitecture(std::forward<CloudImageArchitectureT>(value));
+    return *this;
+  }
+  template <typename CloudImageArchitectureT = StringFilter>
+  FilterCriteria& AddCloudImageArchitecture(CloudImageArchitectureT&& value) {
+    m_cloudImageArchitectureHasBeenSet = true;
+    m_cloudImageArchitecture.emplace_back(std::forward<CloudImageArchitectureT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the last time a container image was in use.</p>
+   */
+  inline const Aws::Vector<DateFilter>& GetCloudImageLastInUseAt() const { return m_cloudImageLastInUseAt; }
+  inline bool CloudImageLastInUseAtHasBeenSet() const { return m_cloudImageLastInUseAtHasBeenSet; }
+  template <typename CloudImageLastInUseAtT = Aws::Vector<DateFilter>>
+  void SetCloudImageLastInUseAt(CloudImageLastInUseAtT&& value) {
+    m_cloudImageLastInUseAtHasBeenSet = true;
+    m_cloudImageLastInUseAt = std::forward<CloudImageLastInUseAtT>(value);
+  }
+  template <typename CloudImageLastInUseAtT = Aws::Vector<DateFilter>>
+  FilterCriteria& WithCloudImageLastInUseAt(CloudImageLastInUseAtT&& value) {
+    SetCloudImageLastInUseAt(std::forward<CloudImageLastInUseAtT>(value));
+    return *this;
+  }
+  template <typename CloudImageLastInUseAtT = DateFilter>
+  FilterCriteria& AddCloudImageLastInUseAt(CloudImageLastInUseAtT&& value) {
+    m_cloudImageLastInUseAtHasBeenSet = true;
+    m_cloudImageLastInUseAt.emplace_back(std::forward<CloudImageLastInUseAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the in-use count of a container image.</p>
+   */
+  inline const Aws::Vector<NumberFilter>& GetCloudImageInUseCount() const { return m_cloudImageInUseCount; }
+  inline bool CloudImageInUseCountHasBeenSet() const { return m_cloudImageInUseCountHasBeenSet; }
+  template <typename CloudImageInUseCountT = Aws::Vector<NumberFilter>>
+  void SetCloudImageInUseCount(CloudImageInUseCountT&& value) {
+    m_cloudImageInUseCountHasBeenSet = true;
+    m_cloudImageInUseCount = std::forward<CloudImageInUseCountT>(value);
+  }
+  template <typename CloudImageInUseCountT = Aws::Vector<NumberFilter>>
+  FilterCriteria& WithCloudImageInUseCount(CloudImageInUseCountT&& value) {
+    SetCloudImageInUseCount(std::forward<CloudImageInUseCountT>(value));
+    return *this;
+  }
+  template <typename CloudImageInUseCountT = NumberFilter>
+  FilterCriteria& AddCloudImageInUseCount(CloudImageInUseCountT&& value) {
+    m_cloudImageInUseCountHasBeenSet = true;
+    m_cloudImageInUseCount.emplace_back(std::forward<CloudImageInUseCountT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the name of a serverless function.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudServerlessFunctionName() const { return m_cloudServerlessFunctionName; }
+  inline bool CloudServerlessFunctionNameHasBeenSet() const { return m_cloudServerlessFunctionNameHasBeenSet; }
+  template <typename CloudServerlessFunctionNameT = Aws::Vector<StringFilter>>
+  void SetCloudServerlessFunctionName(CloudServerlessFunctionNameT&& value) {
+    m_cloudServerlessFunctionNameHasBeenSet = true;
+    m_cloudServerlessFunctionName = std::forward<CloudServerlessFunctionNameT>(value);
+  }
+  template <typename CloudServerlessFunctionNameT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudServerlessFunctionName(CloudServerlessFunctionNameT&& value) {
+    SetCloudServerlessFunctionName(std::forward<CloudServerlessFunctionNameT>(value));
+    return *this;
+  }
+  template <typename CloudServerlessFunctionNameT = StringFilter>
+  FilterCriteria& AddCloudServerlessFunctionName(CloudServerlessFunctionNameT&& value) {
+    m_cloudServerlessFunctionNameHasBeenSet = true;
+    m_cloudServerlessFunctionName.emplace_back(std::forward<CloudServerlessFunctionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the runtime of a serverless function.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudServerlessFunctionRuntime() const { return m_cloudServerlessFunctionRuntime; }
+  inline bool CloudServerlessFunctionRuntimeHasBeenSet() const { return m_cloudServerlessFunctionRuntimeHasBeenSet; }
+  template <typename CloudServerlessFunctionRuntimeT = Aws::Vector<StringFilter>>
+  void SetCloudServerlessFunctionRuntime(CloudServerlessFunctionRuntimeT&& value) {
+    m_cloudServerlessFunctionRuntimeHasBeenSet = true;
+    m_cloudServerlessFunctionRuntime = std::forward<CloudServerlessFunctionRuntimeT>(value);
+  }
+  template <typename CloudServerlessFunctionRuntimeT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudServerlessFunctionRuntime(CloudServerlessFunctionRuntimeT&& value) {
+    SetCloudServerlessFunctionRuntime(std::forward<CloudServerlessFunctionRuntimeT>(value));
+    return *this;
+  }
+  template <typename CloudServerlessFunctionRuntimeT = StringFilter>
+  FilterCriteria& AddCloudServerlessFunctionRuntime(CloudServerlessFunctionRuntimeT&& value) {
+    m_cloudServerlessFunctionRuntimeHasBeenSet = true;
+    m_cloudServerlessFunctionRuntime.emplace_back(std::forward<CloudServerlessFunctionRuntimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for when a serverless function was last modified.</p>
+   */
+  inline const Aws::Vector<DateFilter>& GetCloudServerlessFunctionLastModifiedAt() const { return m_cloudServerlessFunctionLastModifiedAt; }
+  inline bool CloudServerlessFunctionLastModifiedAtHasBeenSet() const { return m_cloudServerlessFunctionLastModifiedAtHasBeenSet; }
+  template <typename CloudServerlessFunctionLastModifiedAtT = Aws::Vector<DateFilter>>
+  void SetCloudServerlessFunctionLastModifiedAt(CloudServerlessFunctionLastModifiedAtT&& value) {
+    m_cloudServerlessFunctionLastModifiedAtHasBeenSet = true;
+    m_cloudServerlessFunctionLastModifiedAt = std::forward<CloudServerlessFunctionLastModifiedAtT>(value);
+  }
+  template <typename CloudServerlessFunctionLastModifiedAtT = Aws::Vector<DateFilter>>
+  FilterCriteria& WithCloudServerlessFunctionLastModifiedAt(CloudServerlessFunctionLastModifiedAtT&& value) {
+    SetCloudServerlessFunctionLastModifiedAt(std::forward<CloudServerlessFunctionLastModifiedAtT>(value));
+    return *this;
+  }
+  template <typename CloudServerlessFunctionLastModifiedAtT = DateFilter>
+  FilterCriteria& AddCloudServerlessFunctionLastModifiedAt(CloudServerlessFunctionLastModifiedAtT&& value) {
+    m_cloudServerlessFunctionLastModifiedAtHasBeenSet = true;
+    m_cloudServerlessFunctionLastModifiedAt.emplace_back(std::forward<CloudServerlessFunctionLastModifiedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria for the execution role of a serverless function.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetCloudServerlessFunctionExecutionRole() const { return m_cloudServerlessFunctionExecutionRole; }
+  inline bool CloudServerlessFunctionExecutionRoleHasBeenSet() const { return m_cloudServerlessFunctionExecutionRoleHasBeenSet; }
+  template <typename CloudServerlessFunctionExecutionRoleT = Aws::Vector<StringFilter>>
+  void SetCloudServerlessFunctionExecutionRole(CloudServerlessFunctionExecutionRoleT&& value) {
+    m_cloudServerlessFunctionExecutionRoleHasBeenSet = true;
+    m_cloudServerlessFunctionExecutionRole = std::forward<CloudServerlessFunctionExecutionRoleT>(value);
+  }
+  template <typename CloudServerlessFunctionExecutionRoleT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithCloudServerlessFunctionExecutionRole(CloudServerlessFunctionExecutionRoleT&& value) {
+    SetCloudServerlessFunctionExecutionRole(std::forward<CloudServerlessFunctionExecutionRoleT>(value));
+    return *this;
+  }
+  template <typename CloudServerlessFunctionExecutionRoleT = StringFilter>
+  FilterCriteria& AddCloudServerlessFunctionExecutionRole(CloudServerlessFunctionExecutionRoleT&& value) {
+    m_cloudServerlessFunctionExecutionRoleHasBeenSet = true;
+    m_cloudServerlessFunctionExecutionRole.emplace_back(std::forward<CloudServerlessFunctionExecutionRoleT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<StringFilter> m_findingArn;
 
@@ -1262,6 +1718,44 @@ class FilterCriteria {
   Aws::Vector<StringFilter> m_codeRepositoryProjectName;
 
   Aws::Vector<StringFilter> m_codeRepositoryProviderType;
+
+  Aws::Vector<StringFilter> m_cloudProvider;
+
+  Aws::Vector<StringFilter> m_cloudProviderRegion;
+
+  Aws::Vector<StringFilter> m_cloudProviderAccountId;
+
+  Aws::Vector<StringFilter> m_cloudProviderOrgId;
+
+  Aws::Vector<StringFilter> m_cloudVmImageReference;
+
+  Aws::Vector<StringFilter> m_cloudVmNetworkId;
+
+  Aws::Vector<StringFilter> m_cloudVmSubnetIds;
+
+  Aws::Vector<StringFilter> m_cloudImageRepositoryName;
+
+  Aws::Vector<StringFilter> m_cloudImageRegistry;
+
+  Aws::Vector<StringFilter> m_cloudImageDigest;
+
+  Aws::Vector<StringFilter> m_cloudImageTags;
+
+  Aws::Vector<DateFilter> m_cloudImagePushedAt;
+
+  Aws::Vector<StringFilter> m_cloudImageArchitecture;
+
+  Aws::Vector<DateFilter> m_cloudImageLastInUseAt;
+
+  Aws::Vector<NumberFilter> m_cloudImageInUseCount;
+
+  Aws::Vector<StringFilter> m_cloudServerlessFunctionName;
+
+  Aws::Vector<StringFilter> m_cloudServerlessFunctionRuntime;
+
+  Aws::Vector<DateFilter> m_cloudServerlessFunctionLastModifiedAt;
+
+  Aws::Vector<StringFilter> m_cloudServerlessFunctionExecutionRole;
   bool m_findingArnHasBeenSet = false;
   bool m_awsAccountIdHasBeenSet = false;
   bool m_findingTypeHasBeenSet = false;
@@ -1308,6 +1802,25 @@ class FilterCriteria {
   bool m_epssScoreHasBeenSet = false;
   bool m_codeRepositoryProjectNameHasBeenSet = false;
   bool m_codeRepositoryProviderTypeHasBeenSet = false;
+  bool m_cloudProviderHasBeenSet = false;
+  bool m_cloudProviderRegionHasBeenSet = false;
+  bool m_cloudProviderAccountIdHasBeenSet = false;
+  bool m_cloudProviderOrgIdHasBeenSet = false;
+  bool m_cloudVmImageReferenceHasBeenSet = false;
+  bool m_cloudVmNetworkIdHasBeenSet = false;
+  bool m_cloudVmSubnetIdsHasBeenSet = false;
+  bool m_cloudImageRepositoryNameHasBeenSet = false;
+  bool m_cloudImageRegistryHasBeenSet = false;
+  bool m_cloudImageDigestHasBeenSet = false;
+  bool m_cloudImageTagsHasBeenSet = false;
+  bool m_cloudImagePushedAtHasBeenSet = false;
+  bool m_cloudImageArchitectureHasBeenSet = false;
+  bool m_cloudImageLastInUseAtHasBeenSet = false;
+  bool m_cloudImageInUseCountHasBeenSet = false;
+  bool m_cloudServerlessFunctionNameHasBeenSet = false;
+  bool m_cloudServerlessFunctionRuntimeHasBeenSet = false;
+  bool m_cloudServerlessFunctionLastModifiedAtHasBeenSet = false;
+  bool m_cloudServerlessFunctionExecutionRoleHasBeenSet = false;
 };
 
 }  // namespace Model

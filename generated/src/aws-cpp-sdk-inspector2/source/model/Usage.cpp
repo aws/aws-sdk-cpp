@@ -34,6 +34,10 @@ Usage& Usage::operator=(JsonView jsonValue) {
     m_currency = CurrencyMapper::GetCurrencyForName(jsonValue.GetString("currency"));
     m_currencyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("cloudProvider")) {
+    m_cloudProvider = CloudProviderMapper::GetCloudProviderForName(jsonValue.GetString("cloudProvider"));
+    m_cloudProviderHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue Usage::Jsonize() const {
 
   if (m_currencyHasBeenSet) {
     payload.WithString("currency", CurrencyMapper::GetNameForCurrency(m_currency));
+  }
+
+  if (m_cloudProviderHasBeenSet) {
+    payload.WithString("cloudProvider", CloudProviderMapper::GetNameForCloudProvider(m_cloudProvider));
   }
 
   return payload;
