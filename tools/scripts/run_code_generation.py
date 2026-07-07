@@ -72,6 +72,16 @@ def parse_arguments() -> dict:
                         help="Run install test generation",
                         action="store_true")
 
+    parser.add_argument("--use-smithy-models",
+                        help="Use Smithy-generated model files instead of C2J for specified services. "
+                             "C2J skips model generation; Smithy codegen produces model files.",
+                        action="store_true")
+    parser.add_argument("--smithy-model-services",
+                        type=str,
+                        help="Comma-separated list of services to generate models from Smithy. "
+                             "Only effective with --use-smithy-models. "
+                             "Defaults to all services in --client_list if omitted.")
+
     args = vars(parser.parse_args())
     arg_map = {"debug": args.get("debug", False)}
 
@@ -131,6 +141,12 @@ def parse_arguments() -> dict:
     arg_map["generate_smoke_tests"] = args.get("generate_smoke_tests", None)
     arg_map["generate_protocol_tests"] = args.get("generate_protocol_tests", None)
     arg_map["generate_install_tests"] = args.get("generate_install_tests", None)
+    arg_map["use_smithy_models"] = args.get("use_smithy_models", False)
+    smithy_model_services_raw = args.get("smithy_model_services", None)
+    if smithy_model_services_raw:
+        arg_map["smithy_model_services"] = set(smithy_model_services_raw.replace(";", ",").split(","))
+    else:
+        arg_map["smithy_model_services"] = None
     if arg_map["debug"]:
         print("args=", arg_map)
     return arg_map
@@ -154,8 +170,21 @@ def main():
     if args["debug"]:
         print(f"Parallel executor thread count: {max_workers}")
 
+    # Determine which services use Smithy model generation
+    smithy_model_services = set()
+    if args.get("use_smithy_models"):
+        if args.get("smithy_model_services"):
+            smithy_model_services = args["smithy_model_services"]
+        elif args.get("client_list") and args["client_list"]:
+            smithy_model_services = set(args["client_list"])
+        else:
+            smithy_model_services = set(model_utils.models_to_generate.keys())
+        if args["debug"]:
+            print(f"Smithy model generation enabled for: {sorted(smithy_model_services)}")
+
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
-        c2j_gen = LegacyC2jCppGen(args, model_utils.models_to_generate)
+        c2j_gen = LegacyC2jCppGen(args, model_utils.models_to_generate,
+                                   skip_model_services=smithy_model_services)
         if c2j_gen.generate(executor, max_workers, args) != 0:
             print("ERROR: Failed to generate service client(s)!")
             return -1
@@ -174,7 +203,9 @@ def main():
     clients_to_build = model_utils.get_clients_to_build()
     
     if clients_to_build:
-        smithy_cpp_gen = SmithyCppGen(args["debug"])
+        smithy_cpp_gen = SmithyCppGen(args["debug"],
+                                      use_smithy_models=bool(smithy_model_services),
+                                      smithy_model_services=smithy_model_services)
         if smithy_cpp_gen.generate(clients_to_build) != 0:
             print("ERROR: Failed to generate Smithy code!")
             return -1
