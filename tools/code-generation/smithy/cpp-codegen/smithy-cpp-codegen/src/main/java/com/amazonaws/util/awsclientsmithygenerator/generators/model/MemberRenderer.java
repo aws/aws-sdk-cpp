@@ -85,29 +85,29 @@ public final class MemberRenderer {
 
             if (targetShape.isEnumShape() || isPrimitive(targetShape)) {
                 // Enum and primitive members use non-templated value setters
-                writer.write("inline void Set$L($L value) {", memberName, cppType);
-                writer.write("  $LHasBeenSet = true;", fieldName);
-                writer.write("  $L = value;", fieldName);
-                writer.write("}");
+                writer.openBlock("inline void Set$L($L value) {", "}", memberName, cppType, () -> {
+                    writer.write("$LHasBeenSet = true;", fieldName);
+                    writer.write("$L = value;", fieldName);
+                });
 
-                writer.write("inline $L& With$L($L value) {", className, memberName, cppType);
-                writer.write("  Set$L(value);", memberName);
-                writer.write("  return *this;");
-                writer.write("}");
+                writer.openBlock("inline $L& With$L($L value) {", "}", className, memberName, cppType, () -> {
+                    writer.write("Set$L(value);", memberName);
+                    writer.write("return *this;");
+                });
             } else {
                 // Templated Set
                 writer.write("template <typename $L = $L>", templateParam, cppType);
-                writer.write("void Set$L($L&& value) {", memberName, templateParam);
-                writer.write("  $LHasBeenSet = true;", fieldName);
-                writer.write("  $L = std::forward<$L>(value);", fieldName, templateParam);
-                writer.write("}");
+                writer.openBlock("void Set$L($L&& value) {", "}", memberName, templateParam, () -> {
+                    writer.write("$LHasBeenSet = true;", fieldName);
+                    writer.write("$L = std::forward<$L>(value);", fieldName, templateParam);
+                });
 
                 // Templated With (fluent)
                 writer.write("template <typename $L = $L>", templateParam, cppType);
-                writer.write("$L& With$L($L&& value) {", className, memberName, templateParam);
-                writer.write("  Set$L(std::forward<$L>(value));", memberName, templateParam);
-                writer.write("  return *this;");
-                writer.write("}");
+                writer.openBlock("$L& With$L($L&& value) {", "}", className, memberName, templateParam, () -> {
+                    writer.write("Set$L(std::forward<$L>(value));", memberName, templateParam);
+                    writer.write("return *this;");
+                });
 
                 // Add method for list types
                 if (targetShape.isListShape()) {
@@ -116,18 +116,18 @@ public final class MemberRenderer {
                     String elementType = CppTypeMapper.getCppType(elementShape, model);
                     if (elementShape.isEnumShape()) {
                         // Enum elements use non-templated value Add
-                        writer.write("inline $L& Add$L($L value) {", className, memberName, elementType);
-                        writer.write("  $LHasBeenSet = true;", fieldName);
-                        writer.write("  $L.push_back(value);", fieldName);
-                        writer.write("  return *this;");
-                        writer.write("}");
+                        writer.openBlock("inline $L& Add$L($L value) {", "}", className, memberName, elementType, () -> {
+                            writer.write("$LHasBeenSet = true;", fieldName);
+                            writer.write("$L.push_back(value);", fieldName);
+                            writer.write("return *this;");
+                        });
                     } else {
                         writer.write("template <typename $L = $L>", templateParam, elementType);
-                        writer.write("$L& Add$L($L&& value) {", className, memberName, templateParam);
-                        writer.write("  $LHasBeenSet = true;", fieldName);
-                        writer.write("  $L.emplace_back(std::forward<$L>(value));", fieldName, templateParam);
-                        writer.write("  return *this;");
-                        writer.write("}");
+                        writer.openBlock("$L& Add$L($L&& value) {", "}", className, memberName, templateParam, () -> {
+                            writer.write("$LHasBeenSet = true;", fieldName);
+                            writer.write("$L.emplace_back(std::forward<$L>(value));", fieldName, templateParam);
+                            writer.write("return *this;");
+                        });
                     }
                 }
             }

@@ -140,44 +140,42 @@ public class ModelGenerator {
             writer.write("");
 
             // Open namespace Aws (contains both forward decls and service namespace)
-            writer.write("namespace Aws {");
+            writer.writeNamespaceOpen("Aws");
 
             // Forward declarations for serde types
             renderForwardDeclarations(writer);
 
             // Service namespace (still inside namespace Aws)
-            writer.write("namespace $L {", namespace);
-            writer.write("namespace Model {");
+            writer.writeNamespaceOpen(namespace);
+            writer.writeNamespaceOpen("Model");
             writer.write("");
 
             // Class-level documentation comment
             renderClassDocComment(writer, shape);
 
             // Class declaration
-            writer.write("class $L {", className);
-            writer.write(" public:");
-            writer.indent();
+            writer.openBlock("class $L {", "};", className, () -> {
+                writer.write("public:");
 
-            // Serde declarations
-            SerdeStub.renderHeaderDeclarations(writer, protocol, exportMacro, className);
-            writer.write("");
+                // Serde declarations
+                SerdeStub.renderHeaderDeclarations(writer, protocol, exportMacro, className);
+                writer.write("");
 
-            // Member accessors
-            MemberRenderer.renderPublicSection(writer, shape, model, exportMacro, className);
+                // Member accessors
+                MemberRenderer.renderPublicSection(writer, shape, model, exportMacro, className);
 
-            writer.dedent();
-            // Private section
-            writer.write(" private:");
-            writer.indent();
-            MemberRenderer.renderPrivateSection(writer, shape, model);
-            writer.dedent();
-            writer.write("};");
+                // Private section
+                writer.dedent();
+                writer.write("private:");
+                writer.indent();
+                MemberRenderer.renderPrivateSection(writer, shape, model);
+            });
             writer.write("");
 
             // Namespace close
-            writer.write("}  // namespace Model");
-            writer.write("}  // namespace $L", namespace);
-            writer.write("}  // namespace Aws");
+            writer.writeNamespaceClose("Model");
+            writer.writeNamespaceClose(namespace);
+            writer.writeNamespaceClose("Aws");
         });
     }
 
@@ -213,9 +211,9 @@ public class ModelGenerator {
             writer.write("");
 
             // Namespace open
-            writer.write("namespace Aws {");
-            writer.write("namespace $L {", namespace);
-            writer.write("namespace Model {");
+            writer.writeNamespaceOpen("Aws");
+            writer.writeNamespaceOpen(namespace);
+            writer.writeNamespaceOpen("Model");
             writer.write("");
 
             // Serde implementation
@@ -224,9 +222,9 @@ public class ModelGenerator {
             writer.write("");
 
             // Namespace close
-            writer.write("}  // namespace Model");
-            writer.write("}  // namespace $L", namespace);
-            writer.write("}  // namespace Aws");
+            writer.writeNamespaceClose("Model");
+            writer.writeNamespaceClose(namespace);
+            writer.writeNamespaceClose("Aws");
         });
     }
 
@@ -245,18 +243,18 @@ public class ModelGenerator {
 
     private void renderForwardDeclarations(CppWriter writer) {
         if (protocol.isJsonLike()) {
-            writer.write("namespace Utils {");
-            writer.write("namespace Json {");
+            writer.writeNamespaceOpen("Utils");
+            writer.writeNamespaceOpen("Json");
             writer.write("class JsonValue;");
             writer.write("class JsonView;");
-            writer.write("}  // namespace Json");
-            writer.write("}  // namespace Utils");
+            writer.writeNamespaceClose("Json");
+            writer.writeNamespaceClose("Utils");
         } else {
-            writer.write("namespace Utils {");
-            writer.write("namespace Xml {");
+            writer.writeNamespaceOpen("Utils");
+            writer.writeNamespaceOpen("Xml");
             writer.write("class XmlNode;");
-            writer.write("}  // namespace Xml");
-            writer.write("}  // namespace Utils");
+            writer.writeNamespaceClose("Xml");
+            writer.writeNamespaceClose("Utils");
         }
     }
 
