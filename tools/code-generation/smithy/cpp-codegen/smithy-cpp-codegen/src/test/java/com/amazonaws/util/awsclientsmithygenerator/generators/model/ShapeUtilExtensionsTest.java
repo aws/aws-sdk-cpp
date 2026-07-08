@@ -34,9 +34,8 @@ class ShapeUtilExtensionsTest {
     }
 
     @Test
-    void hardcodedCollisionResolution_medialiveBatchUpdateScheduleResult_emptyString() {
-        assertEquals("",
-            ShapeUtil.getHardcodedResolution("medialive", "BatchUpdateScheduleResult"));
+    void hardcodedCollisionResolution_medialive_noEntry() {
+        assertNull(ShapeUtil.getHardcodedResolution("medialive", "BatchUpdateScheduleResult"));
     }
 
     @Test
@@ -50,8 +49,8 @@ class ShapeUtilExtensionsTest {
     }
 
     @Test
-    void shapeCppName_medialiveBatchUpdateScheduleResult_removedShape_returnsEmpty() {
-        assertEquals("",
+    void shapeCppName_medialive_noOverride_returnsUnchanged() {
+        assertEquals("BatchUpdateScheduleResult",
             ShapeUtil.getShapeCppName("BatchUpdateScheduleResult", "medialive"));
     }
 

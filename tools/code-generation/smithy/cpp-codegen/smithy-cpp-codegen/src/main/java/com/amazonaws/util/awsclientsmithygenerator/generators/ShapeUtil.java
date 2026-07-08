@@ -72,7 +72,6 @@ public class ShapeUtil {
      */
     private static final Map<String, Map<String, String>> HARDCODED_COLLISION_RESOLUTIONS = Map.of(
         "s3", Map.of("CopyObjectResult", "CopyObjectResultDetails"),
-        "medialive", Map.of("BatchUpdateScheduleResult", ""),  // removed from model
         "accessanalyzer", Map.of("GeneratedPolicyResult", "GeneratedPolicyResults"),
         "cloudsearchdomain", Map.of("SearchResult", "SearchResultDetails")
     );
@@ -102,17 +101,11 @@ public class ShapeUtil {
     }
 
     /**
-     * Returns the C++ class name for a shape, applying numeric prefix rules.
-     * Shapes starting with a digit get "The" prepended (C2J behavior).
-     * Empty strings returned from hardcoded resolutions indicate shapes that are removed from the model.
+     * Returns the C++ class name for a shape, applying collision renames and numeric prefix rules.
      */
     public static String getShapeCppName(String shapeName, String smithyServiceName) {
-        // Check hardcoded resolutions first
         String resolved = getHardcodedResolution(smithyServiceName, shapeName);
-        if (resolved != null && !resolved.isEmpty()) return resolved;
-        // If resolved is an empty string, it indicates the shape is removed from the model
-        if (resolved != null && resolved.isEmpty()) return "";
-        // Numeric prefix: shapes starting with a digit get "The" prepended
+        if (resolved != null) return resolved;
         if (!shapeName.isEmpty() && Character.isDigit(shapeName.charAt(0))) {
             return "The" + shapeName;
         }

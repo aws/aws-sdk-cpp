@@ -4,11 +4,8 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
-import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.aws.traits.ServiceTrait;
-import software.amazon.smithy.model.shapes.Shape;
-import software.amazon.smithy.model.transform.ModelTransformer;
 
 import java.util.Map;
 
@@ -166,14 +163,6 @@ public final class ServiceNameUtil {
     public static String getExportMacro(ServiceShape service, Map<String, String> serviceMap) {
         String serviceName = getServiceName(service);
         return "AWS_" + serviceName.toUpperCase() + "_API";
-    }
-
-    /**
-     * Returns the project name for file path construction (e.g., "kinesis", "s3-crt").
-     * This is the lowercase hyphenated name used in: include/aws/{projectName}/model/
-     */
-    public static String getProjectName(ServiceShape service, Map<String, String> serviceMap) {
-        return getSmithyServiceName(service, serviceMap);
     }
 
     public static boolean isS3CrtProjection(ServiceShape service) {
