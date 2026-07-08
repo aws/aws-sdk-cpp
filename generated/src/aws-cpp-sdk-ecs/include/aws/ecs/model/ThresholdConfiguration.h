@@ -38,11 +38,12 @@ class ThresholdConfiguration {
 
   ///@{
   /**
-   * <p>Determines how <code>value</code> is used to calculate the failure threshold.
-   * For the percentage types (<code>BOUNDED_PERCENT</code> and
-   * <code>UNBOUNDED_PERCENT</code>), <code>value</code> is multiplied by the latest
-   * service desired count; for <code>COUNT</code>, <code>value</code> is used
-   * directly. The default is <code>BOUNDED_PERCENT</code>.</p>
+   * <p>Determines how Amazon ECS uses <code>value</code> to calculate the failure
+   * threshold. For the percentage types (<code>BOUNDED_PERCENT</code> and
+   * <code>UNBOUNDED_PERCENT</code>), Amazon ECS multiplies <code>value</code> by the
+   * latest service desired count. For <code>COUNT</code>, Amazon ECS uses
+   * <code>value</code> directly as the threshold. The default is
+   * <code>BOUNDED_PERCENT</code>.</p>
    */
   inline ThresholdType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -58,11 +59,11 @@ class ThresholdConfiguration {
 
   ///@{
   /**
-   * <p>The integer used to calculate the failure threshold. When <code>type</code>
-   * is <code>COUNT</code>, this is the failure threshold itself. When
-   * <code>type</code> is a percentage type, this is the percentage that Amazon ECS
-   * multiplies by the latest service desired count to calculate the failure
-   * threshold.</p>
+   * <p>Specifies the integer that Amazon ECS uses to calculate the failure
+   * threshold. When <code>type</code> is <code>COUNT</code>, this value is the
+   * failure threshold itself. When <code>type</code> is a percentage type, Amazon
+   * ECS multiplies this value by the latest service desired count to produce the
+   * failure threshold. The default is <code>50</code>.</p>
    */
   inline int GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

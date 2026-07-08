@@ -50,6 +50,10 @@ AutocompleteResultItem& AutocompleteResultItem::operator=(JsonView jsonValue) {
     m_highlights = jsonValue.GetObject("Highlights");
     m_highlightsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EstimatedPointAddress")) {
+    m_estimatedPointAddress = jsonValue.GetBool("EstimatedPointAddress");
+    m_estimatedPointAddressHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue AutocompleteResultItem::Jsonize() const {
 
   if (m_highlightsHasBeenSet) {
     payload.WithObject("Highlights", m_highlights.Jsonize());
+  }
+
+  if (m_estimatedPointAddressHasBeenSet) {
+    payload.WithBool("EstimatedPointAddress", m_estimatedPointAddress);
   }
 
   return payload;

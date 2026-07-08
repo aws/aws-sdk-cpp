@@ -18,6 +18,7 @@
 #include <aws/geo-places/model/PostalCodeDetails.h>
 #include <aws/geo-places/model/RelatedPlace.h>
 #include <aws/geo-places/model/TimeZone.h>
+#include <aws/geo-places/model/TranslationDetails.h>
 
 #include <utility>
 
@@ -438,6 +439,42 @@ class GeocodeResultItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>All name translations and alternative names for the requested address fields
+   * in all available languages.</p>
+   */
+  inline const TranslationDetails& GetTranslations() const { return m_translations; }
+  inline bool TranslationsHasBeenSet() const { return m_translationsHasBeenSet; }
+  template <typename TranslationsT = TranslationDetails>
+  void SetTranslations(TranslationsT&& value) {
+    m_translationsHasBeenSet = true;
+    m_translations = std::forward<TranslationsT>(value);
+  }
+  template <typename TranslationsT = TranslationDetails>
+  GeocodeResultItem& WithTranslations(TranslationsT&& value) {
+    SetTranslations(std::forward<TranslationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>If <code>true</code>, indicates that the coordinates of the position and
+   * access points of the point address are estimated.</p>
+   */
+  inline bool GetEstimatedPointAddress() const { return m_estimatedPointAddress; }
+  inline bool EstimatedPointAddressHasBeenSet() const { return m_estimatedPointAddressHasBeenSet; }
+  inline void SetEstimatedPointAddress(bool value) {
+    m_estimatedPointAddressHasBeenSet = true;
+    m_estimatedPointAddress = value;
+  }
+  inline GeocodeResultItem& WithEstimatedPointAddress(bool value) {
+    SetEstimatedPointAddress(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_placeId;
 
@@ -476,6 +513,10 @@ class GeocodeResultItem {
   RelatedPlace m_mainAddress;
 
   Aws::Vector<RelatedPlace> m_secondaryAddresses;
+
+  TranslationDetails m_translations;
+
+  bool m_estimatedPointAddress{false};
   bool m_placeIdHasBeenSet = false;
   bool m_placeTypeHasBeenSet = false;
   bool m_titleHasBeenSet = false;
@@ -495,6 +536,8 @@ class GeocodeResultItem {
   bool m_intersectionsHasBeenSet = false;
   bool m_mainAddressHasBeenSet = false;
   bool m_secondaryAddressesHasBeenSet = false;
+  bool m_translationsHasBeenSet = false;
+  bool m_estimatedPointAddressHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -26,6 +26,14 @@ DependencyDiscoveryConfig& DependencyDiscoveryConfig::operator=(JsonView jsonVal
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("eligibleResourceCount")) {
+    m_eligibleResourceCount = jsonValue.GetInteger("eligibleResourceCount");
+    m_eligibleResourceCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("message")) {
+    m_message = jsonValue.GetString("message");
+    m_messageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue DependencyDiscoveryConfig::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_eligibleResourceCountHasBeenSet) {
+    payload.WithInteger("eligibleResourceCount", m_eligibleResourceCount);
+  }
+
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;

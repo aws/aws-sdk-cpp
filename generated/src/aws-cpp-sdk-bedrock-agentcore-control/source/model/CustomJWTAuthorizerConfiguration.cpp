@@ -43,6 +43,13 @@ CustomJWTAuthorizerConfiguration& CustomJWTAuthorizerConfiguration::operator=(Js
     }
     m_allowedScopesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("advertisedScopeMapping")) {
+    Aws::Map<Aws::String, JsonView> advertisedScopeMappingJsonMap = jsonValue.GetObject("advertisedScopeMapping").GetAllObjects();
+    for (auto& advertisedScopeMappingItem : advertisedScopeMappingJsonMap) {
+      m_advertisedScopeMapping[advertisedScopeMappingItem.first] = advertisedScopeMappingItem.second.AsString();
+    }
+    m_advertisedScopeMappingHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("customClaims")) {
     Aws::Utils::Array<JsonView> customClaimsJsonList = jsonValue.GetArray("customClaims");
     for (unsigned customClaimsIndex = 0; customClaimsIndex < customClaimsJsonList.GetLength(); ++customClaimsIndex) {
@@ -98,6 +105,14 @@ JsonValue CustomJWTAuthorizerConfiguration::Jsonize() const {
       allowedScopesJsonList[allowedScopesIndex].AsString(m_allowedScopes[allowedScopesIndex]);
     }
     payload.WithArray("allowedScopes", std::move(allowedScopesJsonList));
+  }
+
+  if (m_advertisedScopeMappingHasBeenSet) {
+    JsonValue advertisedScopeMappingJsonMap;
+    for (auto& advertisedScopeMappingItem : m_advertisedScopeMapping) {
+      advertisedScopeMappingJsonMap.WithString(advertisedScopeMappingItem.first, advertisedScopeMappingItem.second);
+    }
+    payload.WithObject("advertisedScopeMapping", std::move(advertisedScopeMappingJsonMap));
   }
 
   if (m_customClaimsHasBeenSet) {

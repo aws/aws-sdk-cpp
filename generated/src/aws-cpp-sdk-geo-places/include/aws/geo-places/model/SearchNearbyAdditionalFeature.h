@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GeoPlaces {
 namespace Model {
-enum class SearchNearbyAdditionalFeature { NOT_SET, TimeZone, Phonemes, Access, Contact };
+enum class SearchNearbyAdditionalFeature { NOT_SET, TimeZone, Phonemes, Access, Contact, CrossReferences };
 
 namespace SearchNearbyAdditionalFeatureMapper {
 AWS_GEOPLACES_API SearchNearbyAdditionalFeature GetSearchNearbyAdditionalFeatureForName(const Aws::String& name);

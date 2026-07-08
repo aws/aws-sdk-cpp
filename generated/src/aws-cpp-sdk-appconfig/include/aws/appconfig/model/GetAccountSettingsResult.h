@@ -54,7 +54,7 @@ class GetAccountSettingsResult {
 
   ///@{
   /**
-   * <p>Configuration for vended metrics in the account.</p>
+   * <p>The configuration for vended metrics in the account.</p>
    */
   inline const VendedMetricsSettings& GetVendedMetrics() const { return m_vendedMetrics; }
   template <typename VendedMetricsT = VendedMetricsSettings>

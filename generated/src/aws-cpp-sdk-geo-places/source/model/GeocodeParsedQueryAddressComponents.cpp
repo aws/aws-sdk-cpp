@@ -110,6 +110,13 @@ GeocodeParsedQueryAddressComponents& GeocodeParsedQueryAddressComponents::operat
     }
     m_secondaryAddressComponentsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OtherComponents")) {
+    Aws::Utils::Array<JsonView> otherComponentsJsonList = jsonValue.GetArray("OtherComponents");
+    for (unsigned otherComponentsIndex = 0; otherComponentsIndex < otherComponentsJsonList.GetLength(); ++otherComponentsIndex) {
+      m_otherComponents.push_back(otherComponentsJsonList[otherComponentsIndex].AsObject());
+    }
+    m_otherComponentsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -220,6 +227,14 @@ JsonValue GeocodeParsedQueryAddressComponents::Jsonize() const {
           m_secondaryAddressComponents[secondaryAddressComponentsIndex].Jsonize());
     }
     payload.WithArray("SecondaryAddressComponents", std::move(secondaryAddressComponentsJsonList));
+  }
+
+  if (m_otherComponentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> otherComponentsJsonList(m_otherComponents.size());
+    for (unsigned otherComponentsIndex = 0; otherComponentsIndex < otherComponentsJsonList.GetLength(); ++otherComponentsIndex) {
+      otherComponentsJsonList[otherComponentsIndex].AsObject(m_otherComponents[otherComponentsIndex].Jsonize());
+    }
+    payload.WithArray("OtherComponents", std::move(otherComponentsJsonList));
   }
 
   return payload;

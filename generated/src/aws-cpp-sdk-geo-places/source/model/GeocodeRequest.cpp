@@ -64,6 +64,24 @@ Aws::String GeocodeRequest::SerializePayload() const {
     payload.WithString("IntendedUse", GeocodeIntendedUseMapper::GetNameForGeocodeIntendedUse(m_intendedUse));
   }
 
+  if (m_postalCodeModeHasBeenSet) {
+    payload.WithString("PostalCodeMode", PostalCodeModeMapper::GetNameForPostalCodeMode(m_postalCodeMode));
+  }
+
+  if (m_addressTranslationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> addressTranslationsJsonList(m_addressTranslations.size());
+    for (unsigned addressTranslationsIndex = 0; addressTranslationsIndex < addressTranslationsJsonList.GetLength();
+         ++addressTranslationsIndex) {
+      addressTranslationsJsonList[addressTranslationsIndex].AsString(
+          AddressTranslationComponentMapper::GetNameForAddressTranslationComponent(m_addressTranslations[addressTranslationsIndex]));
+    }
+    payload.WithArray("AddressTranslations", std::move(addressTranslationsJsonList));
+  }
+
+  if (m_addressNamesModeHasBeenSet) {
+    payload.WithString("AddressNamesMode", GeocodeAddressNamesModeMapper::GetNameForGeocodeAddressNamesMode(m_addressNamesMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

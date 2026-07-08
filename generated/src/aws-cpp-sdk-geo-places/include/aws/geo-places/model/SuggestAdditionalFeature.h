@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GeoPlaces {
 namespace Model {
-enum class SuggestAdditionalFeature { NOT_SET, Core, TimeZone, Phonemes, Access };
+enum class SuggestAdditionalFeature { NOT_SET, Core, TimeZone, Phonemes, Access, CrossReferences };
 
 namespace SuggestAdditionalFeatureMapper {
 AWS_GEOPLACES_API SuggestAdditionalFeature GetSuggestAdditionalFeatureForName(const Aws::String& name);

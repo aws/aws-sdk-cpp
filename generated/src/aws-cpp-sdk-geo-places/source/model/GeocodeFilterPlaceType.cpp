@@ -21,6 +21,10 @@ static const int Intersection_HASH = HashingUtils::HashString("Intersection");
 static const int Street_HASH = HashingUtils::HashString("Street");
 static const int PointAddress_HASH = HashingUtils::HashString("PointAddress");
 static const int InterpolatedAddress_HASH = HashingUtils::HashString("InterpolatedAddress");
+static const int SecondaryAddress_HASH = HashingUtils::HashString("SecondaryAddress");
+static const int PointOfInterest_HASH = HashingUtils::HashString("PointOfInterest");
+static const int Country_HASH = HashingUtils::HashString("Country");
+static const int Region_HASH = HashingUtils::HashString("Region");
 
 GeocodeFilterPlaceType GetGeocodeFilterPlaceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +40,14 @@ GeocodeFilterPlaceType GetGeocodeFilterPlaceTypeForName(const Aws::String& name)
     return GeocodeFilterPlaceType::PointAddress;
   } else if (hashCode == InterpolatedAddress_HASH) {
     return GeocodeFilterPlaceType::InterpolatedAddress;
+  } else if (hashCode == SecondaryAddress_HASH) {
+    return GeocodeFilterPlaceType::SecondaryAddress;
+  } else if (hashCode == PointOfInterest_HASH) {
+    return GeocodeFilterPlaceType::PointOfInterest;
+  } else if (hashCode == Country_HASH) {
+    return GeocodeFilterPlaceType::Country;
+  } else if (hashCode == Region_HASH) {
+    return GeocodeFilterPlaceType::Region;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +74,14 @@ Aws::String GetNameForGeocodeFilterPlaceType(GeocodeFilterPlaceType enumValue) {
       return "PointAddress";
     case GeocodeFilterPlaceType::InterpolatedAddress:
       return "InterpolatedAddress";
+    case GeocodeFilterPlaceType::SecondaryAddress:
+      return "SecondaryAddress";
+    case GeocodeFilterPlaceType::PointOfInterest:
+      return "PointOfInterest";
+    case GeocodeFilterPlaceType::Country:
+      return "Country";
+    case GeocodeFilterPlaceType::Region:
+      return "Region";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

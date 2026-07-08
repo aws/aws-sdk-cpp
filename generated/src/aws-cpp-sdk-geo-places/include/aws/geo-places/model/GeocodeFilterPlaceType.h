@@ -10,7 +10,19 @@
 namespace Aws {
 namespace GeoPlaces {
 namespace Model {
-enum class GeocodeFilterPlaceType { NOT_SET, Locality, PostalCode, Intersection, Street, PointAddress, InterpolatedAddress };
+enum class GeocodeFilterPlaceType {
+  NOT_SET,
+  Locality,
+  PostalCode,
+  Intersection,
+  Street,
+  PointAddress,
+  InterpolatedAddress,
+  SecondaryAddress,
+  PointOfInterest,
+  Country,
+  Region
+};
 
 namespace GeocodeFilterPlaceTypeMapper {
 AWS_GEOPLACES_API GeocodeFilterPlaceType GetGeocodeFilterPlaceTypeForName(const Aws::String& name);

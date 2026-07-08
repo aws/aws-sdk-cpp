@@ -17,7 +17,8 @@ namespace AppConfig {
 namespace Model {
 
 /**
- * <p>Configuration settings for vended metrics.</p><p><h3>See Also:</h3>   <a
+ * <p>The configuration settings for vended metrics in your AppConfig
+ * account.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/VendedMetricsSettings">AWS
  * API Reference</a></p>
  */
@@ -30,7 +31,7 @@ class VendedMetricsSettings {
 
   ///@{
   /**
-   * <p>Whether vended metrics are enabled for the account.</p>
+   * <p>Specifies whether vended metrics are enabled for the account.</p>
    */
   inline bool GetEnabled() const { return m_enabled; }
   inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }

@@ -24,6 +24,7 @@
 #include <aws/resiliencehubv2/model/AssertionUpdatedMetadata.h>
 #include <aws/resiliencehubv2/model/AssessmentCost.h>
 #include <aws/resiliencehubv2/model/AssessmentErrorCode.h>
+#include <aws/resiliencehubv2/model/AssessmentSortField.h>
 #include <aws/resiliencehubv2/model/AssessmentStatus.h>
 #include <aws/resiliencehubv2/model/AssessmentStep.h>
 #include <aws/resiliencehubv2/model/AssessmentSummary.h>
@@ -191,6 +192,7 @@
 #include <aws/resiliencehubv2/model/ServiceTopologyEdgeSummary.h>
 #include <aws/resiliencehubv2/model/ServiceWorkflowUpdatedMetadata.h>
 #include <aws/resiliencehubv2/model/SloSource.h>
+#include <aws/resiliencehubv2/model/SortOrder.h>
 #include <aws/resiliencehubv2/model/StartFailureModeAssessmentRequest.h>
 #include <aws/resiliencehubv2/model/StartFailureModeAssessmentResult.h>
 #include <aws/resiliencehubv2/model/StringChange.h>
