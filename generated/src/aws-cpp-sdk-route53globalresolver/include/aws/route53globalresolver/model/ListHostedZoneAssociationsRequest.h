@@ -70,7 +70,9 @@ class ListHostedZoneAssociationsRequest : public Route53GlobalResolverRequest {
 
   ///@{
   /**
-   * <p>Amazon Resource Name (ARN) of the DNS view.</p>
+   * <p>The Amazon Resource Name (ARN) of the DNS view to list hosted zone
+   * associations for. This parameter is optional; if you omit it, all hosted zone
+   * associations in your Amazon Web Services account are returned.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

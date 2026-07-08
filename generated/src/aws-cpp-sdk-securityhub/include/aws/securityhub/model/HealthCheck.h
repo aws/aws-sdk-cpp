@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/ConnectorStatus.h>
+#include <aws/securityhub/model/HealthIssue.h>
 
 #include <utility>
 
@@ -86,15 +88,43 @@ class HealthCheck {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of health issues associated with the connector, including error codes
+   * and messages.</p>
+   */
+  inline const Aws::Vector<HealthIssue>& GetIssues() const { return m_issues; }
+  inline bool IssuesHasBeenSet() const { return m_issuesHasBeenSet; }
+  template <typename IssuesT = Aws::Vector<HealthIssue>>
+  void SetIssues(IssuesT&& value) {
+    m_issuesHasBeenSet = true;
+    m_issues = std::forward<IssuesT>(value);
+  }
+  template <typename IssuesT = Aws::Vector<HealthIssue>>
+  HealthCheck& WithIssues(IssuesT&& value) {
+    SetIssues(std::forward<IssuesT>(value));
+    return *this;
+  }
+  template <typename IssuesT = HealthIssue>
+  HealthCheck& AddIssues(IssuesT&& value) {
+    m_issuesHasBeenSet = true;
+    m_issues.emplace_back(std::forward<IssuesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ConnectorStatus m_connectorStatus{ConnectorStatus::NOT_SET};
 
   Aws::String m_message;
 
   Aws::Utils::DateTime m_lastCheckedAt{};
+
+  Aws::Vector<HealthIssue> m_issues;
   bool m_connectorStatusHasBeenSet = false;
   bool m_messageHasBeenSet = false;
   bool m_lastCheckedAtHasBeenSet = false;
+  bool m_issuesHasBeenSet = false;
 };
 
 }  // namespace Model

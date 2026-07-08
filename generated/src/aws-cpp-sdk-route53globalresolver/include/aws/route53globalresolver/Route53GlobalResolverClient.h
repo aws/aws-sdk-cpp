@@ -1214,18 +1214,20 @@ class AWS_ROUTE53GLOBALRESOLVER_API Route53GlobalResolverClient
   }
 
   /**
-   * <p>Lists all hosted zone associations for a Route 53 Global Resolver resource
-   * with pagination support.</p>  <p>Route 53 Global Resolver is a global
-   * service that supports resolvers in multiple Amazon Web Services Regions but you
-   * must specify the US East (Ohio) Region to create, update, or otherwise work with
-   * Route 53 Global Resolver resources. That is, for example, specify <code>--region
-   * us-east-2</code> on Amazon Web Services CLI commands.</p> <p><h3>See
-   * Also:</h3>   <a
+   * <p>Lists hosted zone associations with pagination support. Specify a DNS view
+   * through the <code>resourceArn</code> parameter to list the hosted zone
+   * associations for that DNS view, or omit it to list all hosted zone associations
+   * in your Amazon Web Services account.</p>  <p>Route 53 Global Resolver
+   * is a global service that supports resolvers in multiple Amazon Web Services
+   * Regions but you must specify the US East (Ohio) Region to create, update, or
+   * otherwise work with Route 53 Global Resolver resources. That is, for example,
+   * specify <code>--region us-east-2</code> on Amazon Web Services CLI commands.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListHostedZoneAssociations">AWS
    * API Reference</a></p>
    */
   virtual Model::ListHostedZoneAssociationsOutcome ListHostedZoneAssociations(
-      const Model::ListHostedZoneAssociationsRequest& request) const;
+      const Model::ListHostedZoneAssociationsRequest& request = {}) const;
 
   /**
    * A Callable wrapper for ListHostedZoneAssociations that returns a future to the operation so that it can be executed in parallel to
@@ -1233,7 +1235,7 @@ class AWS_ROUTE53GLOBALRESOLVER_API Route53GlobalResolverClient
    */
   template <typename ListHostedZoneAssociationsRequestT = Model::ListHostedZoneAssociationsRequest>
   Model::ListHostedZoneAssociationsOutcomeCallable ListHostedZoneAssociationsCallable(
-      const ListHostedZoneAssociationsRequestT& request) const {
+      const ListHostedZoneAssociationsRequestT& request = {}) const {
     return SubmitCallable(&Route53GlobalResolverClient::ListHostedZoneAssociations, request);
   }
 
@@ -1242,9 +1244,9 @@ class AWS_ROUTE53GLOBALRESOLVER_API Route53GlobalResolverClient
    * operation has finished.
    */
   template <typename ListHostedZoneAssociationsRequestT = Model::ListHostedZoneAssociationsRequest>
-  void ListHostedZoneAssociationsAsync(const ListHostedZoneAssociationsRequestT& request,
-                                       const ListHostedZoneAssociationsResponseReceivedHandler& handler,
-                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void ListHostedZoneAssociationsAsync(const ListHostedZoneAssociationsResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                       const ListHostedZoneAssociationsRequestT& request = {}) const {
     return SubmitAsync(&Route53GlobalResolverClient::ListHostedZoneAssociations, request, handler, context);
   }
 
@@ -1282,6 +1284,40 @@ class AWS_ROUTE53GLOBALRESOLVER_API Route53GlobalResolverClient
                                            const ListManagedFirewallDomainListsResponseReceivedHandler& handler,
                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&Route53GlobalResolverClient::ListManagedFirewallDomainLists, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the DNS views that have been shared with your Amazon Web Services
+   * account through Amazon Web Services Resource Access Manager (Amazon Web Services
+   * RAM), with pagination support.</p>  <p>Route 53 Global Resolver is a
+   * global service that supports resolvers in multiple Amazon Web Services Regions
+   * but you must specify the US East (Ohio) Region to create, update, or otherwise
+   * work with Route 53 Global Resolver resources. That is, for example, specify
+   * <code>--region us-east-2</code> on Amazon Web Services CLI commands.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListSharedDNSViews">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSharedDNSViewsOutcome ListSharedDNSViews(const Model::ListSharedDNSViewsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListSharedDNSViews that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListSharedDNSViewsRequestT = Model::ListSharedDNSViewsRequest>
+  Model::ListSharedDNSViewsOutcomeCallable ListSharedDNSViewsCallable(const ListSharedDNSViewsRequestT& request = {}) const {
+    return SubmitCallable(&Route53GlobalResolverClient::ListSharedDNSViews, request);
+  }
+
+  /**
+   * An Async wrapper for ListSharedDNSViews that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListSharedDNSViewsRequestT = Model::ListSharedDNSViewsRequest>
+  void ListSharedDNSViewsAsync(const ListSharedDNSViewsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                               const ListSharedDNSViewsRequestT& request = {}) const {
+    return SubmitAsync(&Route53GlobalResolverClient::ListSharedDNSViews, request, handler, context);
   }
 
   /**

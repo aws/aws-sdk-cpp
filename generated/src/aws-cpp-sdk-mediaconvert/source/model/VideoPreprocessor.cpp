@@ -30,6 +30,10 @@ VideoPreprocessor& VideoPreprocessor::operator=(JsonView jsonValue) {
     m_dolbyVision = jsonValue.GetObject("dolbyVision");
     m_dolbyVisionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("durationControl")) {
+    m_durationControl = jsonValue.GetObject("durationControl");
+    m_durationControlHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("hdr10Plus")) {
     m_hdr10Plus = jsonValue.GetObject("hdr10Plus");
     m_hdr10PlusHasBeenSet = true;
@@ -66,6 +70,10 @@ JsonValue VideoPreprocessor::Jsonize() const {
 
   if (m_dolbyVisionHasBeenSet) {
     payload.WithObject("dolbyVision", m_dolbyVision.Jsonize());
+  }
+
+  if (m_durationControlHasBeenSet) {
+    payload.WithObject("durationControl", m_durationControl.Jsonize());
   }
 
   if (m_hdr10PlusHasBeenSet) {

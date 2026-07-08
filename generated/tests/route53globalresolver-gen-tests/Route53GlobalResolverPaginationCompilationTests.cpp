@@ -10,6 +10,7 @@
 #include <aws/route53globalresolver/Route53GlobalResolverPaginationBase.h>
 #include <aws/route53globalresolver/model/ListGlobalResolversPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListFirewallDomainListsPaginationTraits.h>
+#include <aws/route53globalresolver/model/ListSharedDNSViewsPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListManagedFirewallDomainListsPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListAccessTokensPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListFirewallDomainsPaginationTraits.h>

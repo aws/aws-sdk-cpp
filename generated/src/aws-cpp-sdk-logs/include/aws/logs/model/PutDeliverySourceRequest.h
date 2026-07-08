@@ -80,15 +80,16 @@ class PutDeliverySourceRequest : public CloudWatchLogsRequest {
    * <p>Defines the type of log that the source is sending.</p> <ul> <li> <p>For
    * Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and
    * <code>EVENT_LOGS</code>.</p> </li> <li> <p>For Amazon Bedrock Knowledge Bases,
-   * the valid value is <code>APPLICATION_LOGS</code>.</p> </li> <li> <p>For Amazon
-   * Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>,
-   * <code>USAGE_LOGS</code> and <code>TRACES</code>.</p> </li> <li> <p>For Amazon
-   * Bedrock AgentCore Tools, the valid values are <code>APPLICATION_LOGS</code>,
-   * <code>USAGE_LOGS</code> and <code>TRACES</code>.</p> </li> <li> <p>For Amazon
-   * Bedrock AgentCore Identity, the valid values are <code>APPLICATION_LOGS</code>
-   * and <code>TRACES</code>.</p> </li> <li> <p>For Amazon Bedrock AgentCore Memory,
    * the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p>
-   * </li> <li> <p>For Amazon Bedrock AgentCore Gateway, the valid values are
+   * </li> <li> <p>For Amazon Bedrock AgentCore Runtime, the valid values are
+   * <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and
+   * <code>TRACES</code>.</p> </li> <li> <p>For Amazon Bedrock AgentCore Tools, the
+   * valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and
+   * <code>TRACES</code>.</p> </li> <li> <p>For Amazon Bedrock AgentCore Identity,
+   * the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p>
+   * </li> <li> <p>For Amazon Bedrock AgentCore Memory, the valid values are
+   * <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p> </li> <li> <p>For
+   * Amazon Bedrock AgentCore Gateway, the valid values are
    * <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p> </li> <li> <p>For
    * Amazon Bedrock AgentCore Payments, the valid values are
    * <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p> </li> <li> <p>For
@@ -122,9 +123,10 @@ class PutDeliverySourceRequest : public CloudWatchLogsRequest {
    * <code>INDEX_USAGE_LOGS</code>.</p> </li> <li> <p>For Amazon Web Services RTB
    * Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p> </li> <li> <p>For
    * Amazon Q, the valid values are <code>EVENT_LOGS</code> and
-   * <code>SYNC_JOB_LOGS</code>.</p> </li> <li> <p>For Amazon Web Services Security
-   * Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p> </li> <li>
-   * <p>For Amazon Web Services Security Hub, the valid value is
+   * <code>SYNC_JOB_LOGS</code>.</p> </li> <li> <p>For Amazon S3, the valid value is
+   * <code>S3_SERVER_ACCESS_LOGS</code>.</p> </li> <li> <p>For Amazon Web Services
+   * Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p>
+   * </li> <li> <p>For Amazon Web Services Security Hub, the valid value is
    * <code>SECURITY_FINDING_LOGS</code>.</p> </li> <li> <p>For Amazon SES mail
    * manager, the valid values are <code>APPLICATION_LOGS</code> and
    * <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p> </li> <li> <p>For Amazon WorkMail,

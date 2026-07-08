@@ -2561,6 +2561,34 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Returns the storage tier policy for your account.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetStorageTierPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetStorageTierPolicyOutcome GetStorageTierPolicy(const Model::GetStorageTierPolicyRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetStorageTierPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetStorageTierPolicyRequestT = Model::GetStorageTierPolicyRequest>
+  Model::GetStorageTierPolicyOutcomeCallable GetStorageTierPolicyCallable(const GetStorageTierPolicyRequestT& request = {}) const {
+    return SubmitCallable(&CloudWatchLogsClient::GetStorageTierPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for GetStorageTierPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetStorageTierPolicyRequestT = Model::GetStorageTierPolicyRequest>
+  void GetStorageTierPolicyAsync(const GetStorageTierPolicyResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const GetStorageTierPolicyRequestT& request = {}) const {
+    return SubmitAsync(&CloudWatchLogsClient::GetStorageTierPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Returns the information about the log transformer associated with this log
    * group.</p> <p>This operation returns data only for transformers created at the
    * log group level. To get information for an account-level transformer, use <a
@@ -3881,6 +3909,35 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   void PutRetentionPolicyAsync(const PutRetentionPolicyRequestT& request, const PutRetentionPolicyResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchLogsClient::PutRetentionPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Sets the storage tier policy for your account. When you set the storage tier
+   * to <code>INTELLIGENT_TIERING</code>, CloudWatch Logs automatically moves your
+   * log data between storage tiers based on access patterns to optimize
+   * costs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutStorageTierPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutStorageTierPolicyOutcome PutStorageTierPolicy(const Model::PutStorageTierPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutStorageTierPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutStorageTierPolicyRequestT = Model::PutStorageTierPolicyRequest>
+  Model::PutStorageTierPolicyOutcomeCallable PutStorageTierPolicyCallable(const PutStorageTierPolicyRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::PutStorageTierPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for PutStorageTierPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutStorageTierPolicyRequestT = Model::PutStorageTierPolicyRequest>
+  void PutStorageTierPolicyAsync(const PutStorageTierPolicyRequestT& request, const PutStorageTierPolicyResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::PutStorageTierPolicy, request, handler, context);
   }
 
   /**

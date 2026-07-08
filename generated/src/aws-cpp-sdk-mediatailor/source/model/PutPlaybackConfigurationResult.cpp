@@ -90,9 +90,17 @@ PutPlaybackConfigurationResult& PutPlaybackConfigurationResult::operator=(const 
     m_playbackEndpointPrefix = jsonValue.GetString("PlaybackEndpointPrefix");
     m_playbackEndpointPrefixHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DualStackPlaybackEndpointPrefix")) {
+    m_dualStackPlaybackEndpointPrefix = jsonValue.GetString("DualStackPlaybackEndpointPrefix");
+    m_dualStackPlaybackEndpointPrefixHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SessionInitializationEndpointPrefix")) {
     m_sessionInitializationEndpointPrefix = jsonValue.GetString("SessionInitializationEndpointPrefix");
     m_sessionInitializationEndpointPrefixHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DualStackSessionInitializationEndpointPrefix")) {
+    m_dualStackSessionInitializationEndpointPrefix = jsonValue.GetString("DualStackSessionInitializationEndpointPrefix");
+    m_dualStackSessionInitializationEndpointPrefixHasBeenSet = true;
   }
   if (jsonValue.ValueExists("SlateAdUrl")) {
     m_slateAdUrl = jsonValue.GetString("SlateAdUrl");

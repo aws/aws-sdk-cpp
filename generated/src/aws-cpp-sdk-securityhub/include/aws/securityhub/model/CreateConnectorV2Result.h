@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/ConnectorStatus.h>
+#include <aws/securityhub/model/EnablementStatus.h>
 
 #include <utility>
 
@@ -95,6 +96,21 @@ class CreateConnectorV2Result {
   ///@}
 
   ///@{
+  /**
+   * <p>The enablement status of the connector after creation.</p>
+   */
+  inline EnablementStatus GetEnablementStatus() const { return m_enablementStatus; }
+  inline void SetEnablementStatus(EnablementStatus value) {
+    m_enablementStatusHasBeenSet = true;
+    m_enablementStatus = value;
+  }
+  inline CreateConnectorV2Result& WithEnablementStatus(EnablementStatus value) {
+    SetEnablementStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -119,12 +135,15 @@ class CreateConnectorV2Result {
 
   ConnectorStatus m_connectorStatus{ConnectorStatus::NOT_SET};
 
+  EnablementStatus m_enablementStatus{EnablementStatus::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectorArnHasBeenSet = false;
   bool m_connectorIdHasBeenSet = false;
   bool m_authUrlHasBeenSet = false;
   bool m_connectorStatusHasBeenSet = false;
+  bool m_enablementStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

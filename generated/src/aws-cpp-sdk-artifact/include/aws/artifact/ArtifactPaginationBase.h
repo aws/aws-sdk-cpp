@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include <aws/artifact/model/ListComplianceInquiriesPaginationTraits.h>
+#include <aws/artifact/model/ListComplianceInquiryQueriesPaginationTraits.h>
 #include <aws/artifact/model/ListCustomerAgreementsPaginationTraits.h>
 #include <aws/artifact/model/ListReportVersionsPaginationTraits.h>
 #include <aws/artifact/model/ListReportsPaginationTraits.h>
@@ -19,6 +21,30 @@ namespace Artifact {
 template <typename DerivedClient>
 class ArtifactPaginationBase {
  public:
+  /**
+   * Create a paginator for ListComplianceInquiries operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComplianceInquiriesRequest,
+                                    Pagination::ListComplianceInquiriesPaginationTraits<DerivedClient>>
+  ListComplianceInquiriesPaginator(const Model::ListComplianceInquiriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComplianceInquiriesRequest,
+                                             Pagination::ListComplianceInquiriesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListComplianceInquiryQueries operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComplianceInquiryQueriesRequest,
+                                    Pagination::ListComplianceInquiryQueriesPaginationTraits<DerivedClient>>
+  ListComplianceInquiryQueriesPaginator(const Model::ListComplianceInquiryQueriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComplianceInquiryQueriesRequest,
+                                             Pagination::ListComplianceInquiryQueriesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListCustomerAgreements operation
    */

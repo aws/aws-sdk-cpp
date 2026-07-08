@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Inspector2 {
 namespace Model {
-enum class FreeTrialType { NOT_SET, EC2, ECR, LAMBDA, LAMBDA_CODE, CODE_REPOSITORY };
+enum class FreeTrialType { NOT_SET, EC2, ECR, LAMBDA, LAMBDA_CODE, CODE_REPOSITORY, VM, CONTAINER_IMAGE, SERVERLESS_FUNCTION };
 
 namespace FreeTrialTypeMapper {
 AWS_INSPECTOR2_API FreeTrialType GetFreeTrialTypeForName(const Aws::String& name);

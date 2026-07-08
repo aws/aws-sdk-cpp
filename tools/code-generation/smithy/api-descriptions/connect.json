@@ -1387,6 +1387,9 @@
                     "target": "com.amazonaws.connect#CreateAttachedFile"
                 },
                 {
+                    "target": "com.amazonaws.connect#CreateAuthCode"
+                },
+                {
                     "target": "com.amazonaws.connect#CreateContact"
                 },
                 {
@@ -1568,6 +1571,9 @@
                 },
                 {
                     "target": "com.amazonaws.connect#DeleteSecurityProfile"
+                },
+                {
+                    "target": "com.amazonaws.connect#DeleteSession"
                 },
                 {
                     "target": "com.amazonaws.connect#DeleteTaskTemplate"
@@ -2129,6 +2135,9 @@
                 },
                 {
                     "target": "com.amazonaws.connect#SendOutboundEmail"
+                },
+                {
+                    "target": "com.amazonaws.connect#SendOutboundWebNotification"
                 },
                 {
                     "target": "com.amazonaws.connect#StartAttachedFileUpload"
@@ -5887,6 +5896,59 @@
             "type": "float",
             "traits": {
                 "smithy.api#default": 0
+            }
+        },
+        "com.amazonaws.connect#AuthCode": {
+            "type": "string",
+            "traits": {
+                "smithy.api#sensitive": {}
+            }
+        },
+        "com.amazonaws.connect#AuthCodeEntityType": {
+            "type": "enum",
+            "members": {
+                "CUSTOMER_PROFILE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CUSTOMER_PROFILE"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The type of entity associated with an authorization code in Connect Customer.</p>"
+            }
+        },
+        "com.amazonaws.connect#AuthScope": {
+            "type": "structure",
+            "members": {
+                "SecurityProfileIds": {
+                    "target": "com.amazonaws.connect#SecurityProfileIds",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The list of security profile identifiers to scope the session to. Maximum of 10 security profiles.</p>"
+                    }
+                },
+                "EntityType": {
+                    "target": "com.amazonaws.connect#AuthCodeEntityType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The type of entity to scope the session to.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EntityId": {
+                    "target": "com.amazonaws.connect#EntityId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier of the entity to scope the session to.</p>"
+                    }
+                },
+                "DomainName": {
+                    "target": "com.amazonaws.connect#CustomerProfilesDomainName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the Customer Profiles domain to scope the session to.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains the scope configuration for an authorization code. Defines the permissions and access boundaries for\n   the session.</p>"
             }
         },
         "com.amazonaws.connect#AuthenticationError": {
@@ -10397,6 +10459,20 @@
                 }
             }
         },
+        "com.amazonaws.connect#ContentAttributes": {
+            "type": "structure",
+            "members": {
+                "RecommenderConfig": {
+                    "target": "com.amazonaws.connect#RecommenderConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Configuration for the recommender used to generate personalized recommendations for the notification\n   content.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Optional attributes used to populate the content of an outbound web notification, such as recommender\n   configuration for personalized content.</p>"
+            }
+        },
         "com.amazonaws.connect#ContentType": {
             "type": "string",
             "traits": {
@@ -10710,6 +10786,112 @@
             },
             "traits": {
                 "smithy.api#documentation": "Response from CreateAttachedFile API.",
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.connect#CreateAuthCode": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.connect#CreateAuthCodeRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.connect#CreateAuthCodeResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.connect#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.connect#InternalServiceException"
+                },
+                {
+                    "target": "com.amazonaws.connect#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.connect#InvalidRequestException"
+                },
+                {
+                    "target": "com.amazonaws.connect#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.connect#ThrottlingException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Creates an authorization code for the specified Connect Customer instance. The authorization code can be used\n   to establish a session with scoped permissions defined by the specified scope parameters.</p>",
+                "smithy.api#http": {
+                    "method": "POST",
+                    "uri": "/auth/code/{InstanceId}",
+                    "code": 200
+                }
+            }
+        },
+        "com.amazonaws.connect#CreateAuthCodeRequest": {
+            "type": "structure",
+            "members": {
+                "InstanceId": {
+                    "target": "com.amazonaws.connect#InstanceId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier of the Connect Customer instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
+                        "smithy.api#httpLabel": {},
+                        "smithy.api#required": {}
+                    }
+                },
+                "Scope": {
+                    "target": "com.amazonaws.connect#AuthScope",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The scope for the authorization code. Defines the permissions and access boundaries for the session.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "MaxSessionDurationMinutes": {
+                    "target": "com.amazonaws.connect#MaxSessionDurationMinutes",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The maximum duration of the session, in minutes. Minimum value of 1440 (24 hours). Maximum value of 43200 (30\n   days). If no value is provided, the session will expire after 400 days.</p>"
+                    }
+                },
+                "SessionInactivityDurationMinutes": {
+                    "target": "com.amazonaws.connect#SessionInactivityDurationMinutes",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The duration of inactivity, in minutes, after which the session expires. Minimum value of 1440 (24 hours).\n   Maximum value of 20160 (14 days).</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.connect#CreateAuthCodeResponse": {
+            "type": "structure",
+            "members": {
+                "AuthCode": {
+                    "target": "com.amazonaws.connect#AuthCode",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The authorization code to use for establishing a session.</p>"
+                    }
+                },
+                "SessionId": {
+                    "target": "com.amazonaws.connect#SessionId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier of the session created with the authorization code.</p>"
+                    }
+                },
+                "EntityType": {
+                    "target": "com.amazonaws.connect#AuthCodeEntityType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The type of entity associated with the authorization code.</p>"
+                    }
+                },
+                "EntityId": {
+                    "target": "com.amazonaws.connect#EntityId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier of the entity associated with the authorization code.</p>"
+                    }
+                }
+            },
+            "traits": {
                 "smithy.api#output": {}
             }
         },
@@ -15289,6 +15471,25 @@
         "com.amazonaws.connect#CustomerProfileAttributesSerialized": {
             "type": "string"
         },
+        "com.amazonaws.connect#CustomerProfileId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 32
+                }
+            }
+        },
+        "com.amazonaws.connect#CustomerProfilesDomainName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 64
+                },
+                "smithy.api#pattern": "^[a-zA-Z0-9_-]+$"
+            }
+        },
         "com.amazonaws.connect#CustomerQualityMetrics": {
             "type": "structure",
             "members": {
@@ -18035,6 +18236,74 @@
             },
             "traits": {
                 "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.connect#DeleteSession": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.connect#DeleteSessionRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.connect#DeleteSessionResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.connect#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.connect#InternalServiceException"
+                },
+                {
+                    "target": "com.amazonaws.connect#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.connect#InvalidRequestException"
+                },
+                {
+                    "target": "com.amazonaws.connect#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.connect#ThrottlingException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Deletes a session for the specified Connect Customer instance.</p>",
+                "smithy.api#http": {
+                    "method": "DELETE",
+                    "uri": "/auth/sessions/{InstanceId}/{SessionId}",
+                    "code": 200
+                }
+            }
+        },
+        "com.amazonaws.connect#DeleteSessionRequest": {
+            "type": "structure",
+            "members": {
+                "InstanceId": {
+                    "target": "com.amazonaws.connect#InstanceId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier of the Connect Customer instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
+                        "smithy.api#httpLabel": {},
+                        "smithy.api#required": {}
+                    }
+                },
+                "SessionId": {
+                    "target": "com.amazonaws.connect#SessionId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier of the session to delete.</p>",
+                        "smithy.api#httpLabel": {},
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.connect#DeleteSessionResponse": {
+            "type": "structure",
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.connect#DeleteTaskTemplate": {
@@ -23764,6 +24033,16 @@
                 }
             }
         },
+        "com.amazonaws.connect#EntityId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 256
+                },
+                "smithy.api#pattern": ".*"
+            }
+        },
         "com.amazonaws.connect#EntityType": {
             "type": "enum",
             "members": {
@@ -28970,6 +29249,9 @@
                     "target": "com.amazonaws.connect#ResourceNotFoundException"
                 },
                 {
+                    "target": "com.amazonaws.connect#ThrottlingException"
+                },
+                {
                     "target": "com.amazonaws.connect#UserNotFoundException"
                 }
             ],
@@ -29001,6 +29283,18 @@
         "com.amazonaws.connect#GetFederationTokenResponse": {
             "type": "structure",
             "members": {
+                "UserId": {
+                    "target": "com.amazonaws.connect#AgentResourceId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier for the user. This can be the ID or the ARN of the user.</p>"
+                    }
+                },
+                "UserArn": {
+                    "target": "com.amazonaws.connect#ARN",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the user.</p>"
+                    }
+                },
                 "Credentials": {
                     "target": "com.amazonaws.connect#Credentials",
                     "traits": {
@@ -29011,18 +29305,6 @@
                     "target": "com.amazonaws.connect#Url",
                     "traits": {
                         "smithy.api#documentation": "<p>The URL to sign into the user's instance. </p>"
-                    }
-                },
-                "UserArn": {
-                    "target": "com.amazonaws.connect#ARN",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the user.</p>"
-                    }
-                },
-                "UserId": {
-                    "target": "com.amazonaws.connect#AgentResourceId",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The identifier for the user. This can be the ID or the ARN of the user.</p>"
                     }
                 }
             },
@@ -39704,6 +39986,15 @@
                 }
             }
         },
+        "com.amazonaws.connect#MaxSessionDurationMinutes": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 1440,
+                    "max": 43200
+                }
+            }
+        },
         "com.amazonaws.connect#MaximumResultReturnedException": {
             "type": "structure",
             "members": {
@@ -40874,6 +41165,23 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>A list of notification summaries.</p>"
+            }
+        },
+        "com.amazonaws.connect#NotificationType": {
+            "type": "enum",
+            "members": {
+                "WIDGET_VIEW": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "WIDGET_VIEW"
+                    }
+                },
+                "WIDGET_ACTION": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "WIDGET_ACTION"
+                    }
+                }
             }
         },
         "com.amazonaws.connect#NullableBoolean": {
@@ -42313,6 +42621,15 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>The list of persistent connection configuration settings for each channel.</p>"
+            }
+        },
+        "com.amazonaws.connect#PersonalizeDomainName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 64
+                }
             }
         },
         "com.amazonaws.connect#PhoneNumber": {
@@ -46518,6 +46835,70 @@
                 "smithy.api#length": {
                     "min": 0,
                     "max": 200
+                }
+            }
+        },
+        "com.amazonaws.connect#RecommenderConfig": {
+            "type": "structure",
+            "members": {
+                "DomainName": {
+                    "target": "com.amazonaws.connect#PersonalizeDomainName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the Amazon Personalize domain that hosts the recommender.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "RecommenderName": {
+                    "target": "com.amazonaws.connect#RecommenderName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the recommender used to generate the recommendations.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Context": {
+                    "target": "com.amazonaws.connect#RecommenderContext",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A map of contextual key-value pairs supplied to the recommender to influence the recommendations\n   returned.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Configuration for the recommender used to generate personalized recommendations included in an outbound web\n   notification.</p>"
+            }
+        },
+        "com.amazonaws.connect#RecommenderContext": {
+            "type": "map",
+            "key": {
+                "target": "com.amazonaws.connect#RecommenderContextKey"
+            },
+            "value": {
+                "target": "com.amazonaws.connect#RecommenderContextValue"
+            }
+        },
+        "com.amazonaws.connect#RecommenderContextKey": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 64
+                }
+            }
+        },
+        "com.amazonaws.connect#RecommenderContextValue": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 255
+                }
+            }
+        },
+        "com.amazonaws.connect#RecommenderName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 64
                 }
             }
         },
@@ -52564,6 +52945,112 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.connect#SendOutboundWebNotification": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.connect#SendOutboundWebNotificationRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.connect#SendOutboundWebNotificationResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.connect#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.connect#InternalServiceException"
+                },
+                {
+                    "target": "com.amazonaws.connect#InvalidRequestException"
+                },
+                {
+                    "target": "com.amazonaws.connect#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.connect#ThrottlingException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Sends an outbound web notification to a customer's web browser for outbound campaigns. For more information\n   about outbound campaigns, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html\">Set up Connect Customer outbound\n    campaigns</a>.</p>\n         <note>\n            <p>Only the Connect Customer outbound campaigns service principal is allowed to assume a role in your account\n    and call this API.</p>\n         </note>",
+                "smithy.api#http": {
+                    "method": "POST",
+                    "uri": "/instance/{InstanceId}/outbound-web-notification",
+                    "code": 200
+                }
+            }
+        },
+        "com.amazonaws.connect#SendOutboundWebNotificationRequest": {
+            "type": "structure",
+            "members": {
+                "InstanceId": {
+                    "target": "com.amazonaws.connect#InstanceId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier of the Connect Customer instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
+                        "smithy.api#httpLabel": {},
+                        "smithy.api#required": {}
+                    }
+                },
+                "ClientToken": {
+                    "target": "com.amazonaws.connect#ClientToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the\n            request. If not provided, the Amazon Web Services\n            SDK populates this field. For more information about idempotency, see\n            <a href=\"https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/\">Making retries safe with idempotent APIs</a>.</p>",
+                        "smithy.api#idempotencyToken": {}
+                    }
+                },
+                "BrowserId": {
+                    "target": "com.amazonaws.connect#WebBrowserId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A unique identifier for the customer's web browser instance to which the notification is being sent.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "SessionId": {
+                    "target": "com.amazonaws.connect#WebSessionId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A unique identifier for the customer's web session to which the notification is being sent.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ExpiresAt": {
+                    "target": "com.amazonaws.connect#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The timestamp, in Unix epoch time format, at which the web notification expires. After this time, the\n   notification is no longer delivered to the customer's browser.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Source": {
+                    "target": "com.amazonaws.connect#WebNotificationSource",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The source of the web notification. A <code>SourceCampaign</code> object identifies the campaign and outbound\n   request that triggered this notification.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Destination": {
+                    "target": "com.amazonaws.connect#WidgetDestination",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The destination for the web notification, specifying the communication widget that delivers the notification\n   and the customer profile of the recipient.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Content": {
+                    "target": "com.amazonaws.connect#WebNotificationContent",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The content of the web notification, including the notification type, the view to render, and any optional\n   attributes used to populate it.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.connect#SendOutboundWebNotificationResponse": {
+            "type": "structure",
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.connect#SensitivePhoneNumber": {
             "type": "string",
             "traits": {
@@ -52614,6 +53101,25 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>The reason for the exception.</p>"
+            }
+        },
+        "com.amazonaws.connect#SessionId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 36
+                }
+            }
+        },
+        "com.amazonaws.connect#SessionInactivityDurationMinutes": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#default": 0,
+                "smithy.api#range": {
+                    "min": 0,
+                    "max": 20160
+                }
             }
         },
         "com.amazonaws.connect#SignInConfig": {
@@ -64437,6 +64943,15 @@
                 "target": "com.amazonaws.connect#ViewAction"
             }
         },
+        "com.amazonaws.connect#ViewArn": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 500
+                }
+            }
+        },
         "com.amazonaws.connect#ViewContent": {
             "type": "structure",
             "members": {
@@ -65320,6 +65835,66 @@
                 }
             }
         },
+        "com.amazonaws.connect#WebBrowserId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 36
+                }
+            }
+        },
+        "com.amazonaws.connect#WebNotificationContent": {
+            "type": "structure",
+            "members": {
+                "Type": {
+                    "target": "com.amazonaws.connect#NotificationType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The type of web notification to send.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ViewArn": {
+                    "target": "com.amazonaws.connect#ViewArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the view to render for the notification.</p>"
+                    }
+                },
+                "Attributes": {
+                    "target": "com.amazonaws.connect#ContentAttributes",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Optional attributes used to populate the notification content, such as recommender configuration for\n   personalized content.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The content of an outbound web notification, including the notification type, the view to render, and any\n   optional attributes used to populate the view.</p>"
+            }
+        },
+        "com.amazonaws.connect#WebNotificationSource": {
+            "type": "structure",
+            "members": {
+                "SourceCampaign": {
+                    "target": "com.amazonaws.connect#SourceCampaign",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about the campaign that triggered the web notification, including the campaign identifier and\n   outbound request identifier.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The source of an outbound web notification. Identifies the campaign and outbound request that triggered the\n   notification.</p>"
+            }
+        },
+        "com.amazonaws.connect#WebSessionId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 36
+                }
+            }
+        },
         "com.amazonaws.connect#WeekdayOccurrenceInteger": {
             "type": "integer",
             "traits": {
@@ -65338,6 +65913,37 @@
                 "smithy.api#length": {
                     "min": 0,
                     "max": 1
+                }
+            }
+        },
+        "com.amazonaws.connect#WidgetDestination": {
+            "type": "structure",
+            "members": {
+                "WidgetId": {
+                    "target": "com.amazonaws.connect#WidgetId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier of the communication widget that delivers the notification to the customer's browser.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ProfileId": {
+                    "target": "com.amazonaws.connect#CustomerProfileId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier of the customer profile associated with the browser session that should receive the\n   notification.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The destination for an outbound web notification, specifying the communication widget that delivers the\n   notification and the customer profile of the recipient.</p>"
+            }
+        },
+        "com.amazonaws.connect#WidgetId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 36
                 }
             }
         },

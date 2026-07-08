@@ -389,6 +389,31 @@ class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Deletes the specified connector.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteConnectorOutcome DeleteConnector(const Model::DeleteConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteConnectorRequestT = Model::DeleteConnectorRequest>
+  Model::DeleteConnectorOutcomeCallable DeleteConnectorCallable(const DeleteConnectorRequestT& request) const {
+    return SubmitCallable(&ConfigServiceClient::DeleteConnector, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteConnector that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteConnectorRequestT = Model::DeleteConnectorRequest>
+  void DeleteConnectorAsync(const DeleteConnectorRequestT& request, const DeleteConnectorResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConfigServiceClient::DeleteConnector, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the delivery channel.</p> <p>Before you can delete the delivery
    * channel, you must stop the customer managed configuration recorder. You can use
    * the <a>StopConfigurationRecorder</a> operation to stop the customer managed
@@ -714,7 +739,7 @@ class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonCli
    * API Reference</a></p>
    */
   virtual Model::DeleteServiceLinkedConfigurationRecorderOutcome DeleteServiceLinkedConfigurationRecorder(
-      const Model::DeleteServiceLinkedConfigurationRecorderRequest& request) const;
+      const Model::DeleteServiceLinkedConfigurationRecorderRequest& request = {}) const;
 
   /**
    * A Callable wrapper for DeleteServiceLinkedConfigurationRecorder that returns a future to the operation so that it can be executed in
@@ -722,7 +747,7 @@ class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonCli
    */
   template <typename DeleteServiceLinkedConfigurationRecorderRequestT = Model::DeleteServiceLinkedConfigurationRecorderRequest>
   Model::DeleteServiceLinkedConfigurationRecorderOutcomeCallable DeleteServiceLinkedConfigurationRecorderCallable(
-      const DeleteServiceLinkedConfigurationRecorderRequestT& request) const {
+      const DeleteServiceLinkedConfigurationRecorderRequestT& request = {}) const {
     return SubmitCallable(&ConfigServiceClient::DeleteServiceLinkedConfigurationRecorder, request);
   }
 
@@ -731,10 +756,9 @@ class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonCli
    * callback when operation has finished.
    */
   template <typename DeleteServiceLinkedConfigurationRecorderRequestT = Model::DeleteServiceLinkedConfigurationRecorderRequest>
-  void DeleteServiceLinkedConfigurationRecorderAsync(
-      const DeleteServiceLinkedConfigurationRecorderRequestT& request,
-      const DeleteServiceLinkedConfigurationRecorderResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void DeleteServiceLinkedConfigurationRecorderAsync(const DeleteServiceLinkedConfigurationRecorderResponseReceivedHandler& handler,
+                                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                     const DeleteServiceLinkedConfigurationRecorderRequestT& request = {}) const {
     return SubmitAsync(&ConfigServiceClient::DeleteServiceLinkedConfigurationRecorder, request, handler, context);
   }
 
@@ -2055,6 +2079,31 @@ class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Returns the details of the specified connector.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetConnectorOutcome GetConnector(const Model::GetConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetConnectorRequestT = Model::GetConnectorRequest>
+  Model::GetConnectorOutcomeCallable GetConnectorCallable(const GetConnectorRequestT& request) const {
+    return SubmitCallable(&ConfigServiceClient::GetConnector, request);
+  }
+
+  /**
+   * An Async wrapper for GetConnector that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetConnectorRequestT = Model::GetConnectorRequest>
+  void GetConnectorAsync(const GetConnectorRequestT& request, const GetConnectorResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConfigServiceClient::GetConnector, request, handler, context);
+  }
+
+  /**
    * <p>Returns the policy definition containing the logic for your Config Custom
    * Policy rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetCustomRulePolicy">AWS
@@ -2435,6 +2484,33 @@ class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonCli
                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                                 const ListConformancePackComplianceScoresRequestT& request = {}) const {
     return SubmitAsync(&ConfigServiceClient::ListConformancePackComplianceScores, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of connectors depending on the filters you
+   * specify.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConnectors">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListConnectorsRequestT = Model::ListConnectorsRequest>
+  Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const ListConnectorsRequestT& request = {}) const {
+    return SubmitCallable(&ConfigServiceClient::ListConnectors, request);
+  }
+
+  /**
+   * An Async wrapper for ListConnectors that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListConnectorsRequestT = Model::ListConnectorsRequest>
+  void ListConnectorsAsync(const ListConnectorsResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const ListConnectorsRequestT& request = {}) const {
+    return SubmitAsync(&ConfigServiceClient::ListConnectors, request, handler, context);
   }
 
   /**
@@ -2842,6 +2918,47 @@ class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonCli
   void PutConformancePackAsync(const PutConformancePackRequestT& request, const PutConformancePackResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConfigServiceClient::PutConformancePack, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a connector that specifies the connection between a third-party cloud
+   * service provider and Config.</p> <p>A connector is required to create a
+   * service-linked configuration recorder for a third-party cloud service provider
+   * using the <a
+   * href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>
+   * operation.</p> <p>This API creates a service-linked role
+   * <code>AWSServiceRoleForConfigThirdParty</code> in your account. The
+   * service-linked role is created only when the role does not exist in your
+   * account.</p>  <p> <b>Connectors cannot be updated</b> </p> <p>To update
+   * the connector configuration, you must delete all associated configuration
+   * recorders, delete the connector, and recreate it with the updated
+   * configuration.</p>   <p> <b>Tags are added at creation and cannot
+   * be updated with this operation</b> </p> <p>Use <a
+   * href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
+   * to update tags after creation.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutConnectorOutcome PutConnector(const Model::PutConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename PutConnectorRequestT = Model::PutConnectorRequest>
+  Model::PutConnectorOutcomeCallable PutConnectorCallable(const PutConnectorRequestT& request) const {
+    return SubmitCallable(&ConfigServiceClient::PutConnector, request);
+  }
+
+  /**
+   * An Async wrapper for PutConnector that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename PutConnectorRequestT = Model::PutConnectorRequest>
+  void PutConnectorAsync(const PutConnectorRequestT& request, const PutConnectorResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConfigServiceClient::PutConnector, request, handler, context);
   }
 
   /**
@@ -3345,6 +3462,54 @@ class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonCli
   void PutStoredQueryAsync(const PutStoredQueryRequestT& request, const PutStoredQueryResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConfigServiceClient::PutStoredQuery, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates a service-linked configuration recorder that is linked to
+   * a third-party cloud service provider based on the <code>ConnectorArn</code> you
+   * specify.</p> <p>The configuration recorder's <code>name</code>,
+   * <code>recordingGroup</code>, <code>recordingMode</code>, and
+   * <code>recordingScope</code> is set by the service that is linked to the
+   * configuration recorder.</p> <p>If a service-linked configuration recorder
+   * already exists for the specified service principal and connector, calling this
+   * operation again updates the <code>ScopeConfiguration</code>.</p>  <p>
+   * <b>This operation can only be called by the Amazon Web Services service linked
+   * to the configuration recorder</b> </p> <p>Customers cannot call this operation
+   * directly. Only the linked Amazon Web Services service can create or update the
+   * service-linked configuration recorder.</p>   <p> <b>Tags are added
+   * at creation and cannot be updated with this operation</b> </p> <p>Use <a
+   * href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
+   * to update tags after creation.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutThirdPartyServiceLinkedConfigurationRecorder">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutThirdPartyServiceLinkedConfigurationRecorderOutcome PutThirdPartyServiceLinkedConfigurationRecorder(
+      const Model::PutThirdPartyServiceLinkedConfigurationRecorderRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutThirdPartyServiceLinkedConfigurationRecorder that returns a future to the operation so that it can be
+   * executed in parallel to other requests.
+   */
+  template <
+      typename PutThirdPartyServiceLinkedConfigurationRecorderRequestT = Model::PutThirdPartyServiceLinkedConfigurationRecorderRequest>
+  Model::PutThirdPartyServiceLinkedConfigurationRecorderOutcomeCallable PutThirdPartyServiceLinkedConfigurationRecorderCallable(
+      const PutThirdPartyServiceLinkedConfigurationRecorderRequestT& request) const {
+    return SubmitCallable(&ConfigServiceClient::PutThirdPartyServiceLinkedConfigurationRecorder, request);
+  }
+
+  /**
+   * An Async wrapper for PutThirdPartyServiceLinkedConfigurationRecorder that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <
+      typename PutThirdPartyServiceLinkedConfigurationRecorderRequestT = Model::PutThirdPartyServiceLinkedConfigurationRecorderRequest>
+  void PutThirdPartyServiceLinkedConfigurationRecorderAsync(
+      const PutThirdPartyServiceLinkedConfigurationRecorderRequestT& request,
+      const PutThirdPartyServiceLinkedConfigurationRecorderResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConfigServiceClient::PutThirdPartyServiceLinkedConfigurationRecorder, request, handler, context);
   }
 
   /**

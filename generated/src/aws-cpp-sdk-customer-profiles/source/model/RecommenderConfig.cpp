@@ -56,6 +56,10 @@ RecommenderConfig& RecommenderConfig::operator=(JsonView jsonValue) {
     }
     m_excludedColumnsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DiversityConfig")) {
+    m_diversityConfig = jsonValue.GetObject("DiversityConfig");
+    m_diversityConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -96,6 +100,10 @@ JsonValue RecommenderConfig::Jsonize() const {
       excludedColumnsJsonMap.WithArray(excludedColumnsItem.first, std::move(columnNamesListJsonList));
     }
     payload.WithObject("ExcludedColumns", std::move(excludedColumnsJsonMap));
+  }
+
+  if (m_diversityConfigHasBeenSet) {
+    payload.WithObject("DiversityConfig", m_diversityConfig.Jsonize());
   }
 
   return payload;

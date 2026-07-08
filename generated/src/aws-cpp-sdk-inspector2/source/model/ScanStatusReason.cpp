@@ -53,6 +53,8 @@ static const int NO_SCAN_CONFIGURATION_ASSOCIATED_HASH = HashingUtils::HashStrin
 static const int SCAN_IN_PROGRESS_HASH = HashingUtils::HashString("SCAN_IN_PROGRESS");
 static const int IMAGE_ARCHIVED_HASH = HashingUtils::HashString("IMAGE_ARCHIVED");
 static const int UNSUPPORTED_CODE_ARTIFACTS_HASH = HashingUtils::HashString("UNSUPPORTED_CODE_ARTIFACTS");
+static const int RESOURCE_UNMANAGED_HASH = HashingUtils::HashString("RESOURCE_UNMANAGED");
+static const int RESOURCE_STOPPED_HASH = HashingUtils::HashString("RESOURCE_STOPPED");
 
 ScanStatusReason GetScanStatusReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -124,6 +126,10 @@ ScanStatusReason GetScanStatusReasonForName(const Aws::String& name) {
     return ScanStatusReason::IMAGE_ARCHIVED;
   } else if (hashCode == UNSUPPORTED_CODE_ARTIFACTS_HASH) {
     return ScanStatusReason::UNSUPPORTED_CODE_ARTIFACTS;
+  } else if (hashCode == RESOURCE_UNMANAGED_HASH) {
+    return ScanStatusReason::RESOURCE_UNMANAGED;
+  } else if (hashCode == RESOURCE_STOPPED_HASH) {
+    return ScanStatusReason::RESOURCE_STOPPED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -206,6 +212,10 @@ Aws::String GetNameForScanStatusReason(ScanStatusReason enumValue) {
       return "IMAGE_ARCHIVED";
     case ScanStatusReason::UNSUPPORTED_CODE_ARTIFACTS:
       return "UNSUPPORTED_CODE_ARTIFACTS";
+    case ScanStatusReason::RESOURCE_UNMANAGED:
+      return "RESOURCE_UNMANAGED";
+    case ScanStatusReason::RESOURCE_STOPPED:
+      return "RESOURCE_STOPPED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

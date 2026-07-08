@@ -39,6 +39,7 @@ class UpdateBucketMetadataInventoryTableConfigurationRequest : public S3Request 
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
   AWS_S3_API Aws::String GetChecksumAlgorithmName() const override;
+  AWS_S3_API bool ChecksumAlgorithmIsSet() const override;
   inline bool RequestChecksumRequired() const override { return true; };
 
   /**

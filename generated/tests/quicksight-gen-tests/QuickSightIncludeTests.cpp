@@ -790,6 +790,7 @@
 #include <aws/quicksight/model/FieldSortOptions.h>
 #include <aws/quicksight/model/FieldTooltipItem.h>
 #include <aws/quicksight/model/FileFormat.h>
+#include <aws/quicksight/model/FileSource.h>
 #include <aws/quicksight/model/FilledMapAggregatedFieldWells.h>
 #include <aws/quicksight/model/FilledMapConditionalFormatting.h>
 #include <aws/quicksight/model/FilledMapConditionalFormattingOption.h>

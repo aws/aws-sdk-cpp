@@ -20,6 +20,10 @@ static const int SCAN_STATUS_REASON_HASH = HashingUtils::HashString("SCAN_STATUS
 static const int ACCOUNT_ID_HASH = HashingUtils::HashString("ACCOUNT_ID");
 static const int RESOURCE_TYPE_HASH = HashingUtils::HashString("RESOURCE_TYPE");
 static const int ECR_REPOSITORY_NAME_HASH = HashingUtils::HashString("ECR_REPOSITORY_NAME");
+static const int PROVIDER_HASH = HashingUtils::HashString("PROVIDER");
+static const int PROVIDER_ACCOUNT_ID_HASH = HashingUtils::HashString("PROVIDER_ACCOUNT_ID");
+static const int PROVIDER_REGION_HASH = HashingUtils::HashString("PROVIDER_REGION");
+static const int PROVIDER_ORG_ID_HASH = HashingUtils::HashString("PROVIDER_ORG_ID");
 
 GroupKey GetGroupKeyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +37,14 @@ GroupKey GetGroupKeyForName(const Aws::String& name) {
     return GroupKey::RESOURCE_TYPE;
   } else if (hashCode == ECR_REPOSITORY_NAME_HASH) {
     return GroupKey::ECR_REPOSITORY_NAME;
+  } else if (hashCode == PROVIDER_HASH) {
+    return GroupKey::PROVIDER;
+  } else if (hashCode == PROVIDER_ACCOUNT_ID_HASH) {
+    return GroupKey::PROVIDER_ACCOUNT_ID;
+  } else if (hashCode == PROVIDER_REGION_HASH) {
+    return GroupKey::PROVIDER_REGION;
+  } else if (hashCode == PROVIDER_ORG_ID_HASH) {
+    return GroupKey::PROVIDER_ORG_ID;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +69,14 @@ Aws::String GetNameForGroupKey(GroupKey enumValue) {
       return "RESOURCE_TYPE";
     case GroupKey::ECR_REPOSITORY_NAME:
       return "ECR_REPOSITORY_NAME";
+    case GroupKey::PROVIDER:
+      return "PROVIDER";
+    case GroupKey::PROVIDER_ACCOUNT_ID:
+      return "PROVIDER_ACCOUNT_ID";
+    case GroupKey::PROVIDER_REGION:
+      return "PROVIDER_REGION";
+    case GroupKey::PROVIDER_ORG_ID:
+      return "PROVIDER_ORG_ID";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

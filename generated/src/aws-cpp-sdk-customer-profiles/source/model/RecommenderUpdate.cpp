@@ -38,6 +38,10 @@ RecommenderUpdate& RecommenderUpdate::operator=(JsonView jsonValue) {
     m_failureReason = jsonValue.GetString("FailureReason");
     m_failureReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RecommenderVersionName")) {
+    m_recommenderVersionName = jsonValue.GetString("RecommenderVersionName");
+    m_recommenderVersionNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue RecommenderUpdate::Jsonize() const {
 
   if (m_failureReasonHasBeenSet) {
     payload.WithString("FailureReason", m_failureReason);
+  }
+
+  if (m_recommenderVersionNameHasBeenSet) {
+    payload.WithString("RecommenderVersionName", m_recommenderVersionName);
   }
 
   return payload;

@@ -43,6 +43,7 @@ static const int INVALID_RECORDING_GROUP_HASH = HashingUtils::HashString("Invali
 static const int INVALID_S3_KEY_PREFIX_HASH = HashingUtils::HashString("InvalidS3KeyPrefixException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int INVALID_CONFIGURATION_RECORDER_NAME_HASH = HashingUtils::HashString("InvalidConfigurationRecorderNameException");
+static const int MAX_NUMBER_OF_CONNECTORS_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfConnectorsExceededException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NO_RUNNING_CONFIGURATION_RECORDER_HASH = HashingUtils::HashString("NoRunningConfigurationRecorderException");
 static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRoleException");
@@ -135,6 +136,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_CONFIGURATION_RECORDER_NAME_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::INVALID_CONFIGURATION_RECORDER_NAME),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == MAX_NUMBER_OF_CONNECTORS_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::MAX_NUMBER_OF_CONNECTORS_EXCEEDED),
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::CONFLICT), RetryableType::NOT_RETRYABLE);

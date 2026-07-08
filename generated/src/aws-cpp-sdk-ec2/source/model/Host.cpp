@@ -143,6 +143,11 @@ Host& Host::operator=(const XmlNode& xmlNode) {
       m_assetId = Aws::Utils::Xml::DecodeEscapedXmlText(assetIdNode.GetText());
       m_assetIdHasBeenSet = true;
     }
+    XmlNode cpuOptionsNode = resultNode.FirstChild("cpuOptions");
+    if (!cpuOptionsNode.IsNull()) {
+      m_cpuOptions = cpuOptionsNode;
+      m_cpuOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -252,6 +257,12 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
   if (m_assetIdHasBeenSet) {
     oStream << location << index << locationValue << ".AssetId=" << StringUtils::URLEncode(m_assetId.c_str()) << "&";
   }
+
+  if (m_cpuOptionsHasBeenSet) {
+    Aws::StringStream cpuOptionsLocationAndMemberSs;
+    cpuOptionsLocationAndMemberSs << location << index << locationValue << ".CpuOptions";
+    m_cpuOptions.OutputToStream(oStream, cpuOptionsLocationAndMemberSs.str().c_str());
+  }
 }
 
 void Host::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -335,6 +346,11 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const {
   }
   if (m_assetIdHasBeenSet) {
     oStream << location << ".AssetId=" << StringUtils::URLEncode(m_assetId.c_str()) << "&";
+  }
+  if (m_cpuOptionsHasBeenSet) {
+    Aws::String cpuOptionsLocationAndMember(location);
+    cpuOptionsLocationAndMember += ".CpuOptions";
+    m_cpuOptions.OutputToStream(oStream, cpuOptionsLocationAndMember.c_str());
   }
 }
 

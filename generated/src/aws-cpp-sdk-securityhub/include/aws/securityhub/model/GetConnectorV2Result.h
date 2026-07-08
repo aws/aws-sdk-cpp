@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/EnablementStatus.h>
 #include <aws/securityhub/model/HealthCheck.h>
 #include <aws/securityhub/model/ProviderDetail.h>
 
@@ -185,6 +186,39 @@ class GetConnectorV2Result {
   ///@}
 
   ///@{
+  /**
+   * <p>The enablement status of the connector.</p>
+   */
+  inline EnablementStatus GetEnablementStatus() const { return m_enablementStatus; }
+  inline void SetEnablementStatus(EnablementStatus value) {
+    m_enablementStatusHasBeenSet = true;
+    m_enablementStatus = value;
+  }
+  inline GetConnectorV2Result& WithEnablementStatus(EnablementStatus value) {
+    SetEnablementStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The reason for the current enablement status. Provides additional context
+   * when the connector is in a failed state.</p>
+   */
+  inline const Aws::String& GetEnablementStatusReason() const { return m_enablementStatusReason; }
+  template <typename EnablementStatusReasonT = Aws::String>
+  void SetEnablementStatusReason(EnablementStatusReasonT&& value) {
+    m_enablementStatusReasonHasBeenSet = true;
+    m_enablementStatusReason = std::forward<EnablementStatusReasonT>(value);
+  }
+  template <typename EnablementStatusReasonT = Aws::String>
+  GetConnectorV2Result& WithEnablementStatusReason(EnablementStatusReasonT&& value) {
+    SetEnablementStatusReason(std::forward<EnablementStatusReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -219,6 +253,10 @@ class GetConnectorV2Result {
 
   ProviderDetail m_providerDetail;
 
+  EnablementStatus m_enablementStatus{EnablementStatus::NOT_SET};
+
+  Aws::String m_enablementStatusReason;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectorArnHasBeenSet = false;
@@ -230,6 +268,8 @@ class GetConnectorV2Result {
   bool m_lastUpdatedAtHasBeenSet = false;
   bool m_healthHasBeenSet = false;
   bool m_providerDetailHasBeenSet = false;
+  bool m_enablementStatusHasBeenSet = false;
+  bool m_enablementStatusReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

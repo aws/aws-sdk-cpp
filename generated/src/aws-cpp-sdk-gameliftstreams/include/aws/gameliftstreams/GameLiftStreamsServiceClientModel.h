@@ -24,6 +24,7 @@
 #include <aws/gameliftstreams/model/AssociateApplicationsResult.h>
 #include <aws/gameliftstreams/model/CreateApplicationResult.h>
 #include <aws/gameliftstreams/model/CreateStreamGroupResult.h>
+#include <aws/gameliftstreams/model/CreateStreamSessionAdminShellResult.h>
 #include <aws/gameliftstreams/model/CreateStreamSessionConnectionResult.h>
 #include <aws/gameliftstreams/model/DisassociateApplicationsResult.h>
 #include <aws/gameliftstreams/model/ExportStreamSessionFilesResult.h>
@@ -80,6 +81,7 @@ class AddStreamGroupLocationsRequest;
 class AssociateApplicationsRequest;
 class CreateApplicationRequest;
 class CreateStreamGroupRequest;
+class CreateStreamSessionAdminShellRequest;
 class CreateStreamSessionConnectionRequest;
 class DeleteApplicationRequest;
 class DeleteStreamGroupRequest;
@@ -107,6 +109,7 @@ typedef Aws::Utils::Outcome<AddStreamGroupLocationsResult, GameLiftStreamsError>
 typedef Aws::Utils::Outcome<AssociateApplicationsResult, GameLiftStreamsError> AssociateApplicationsOutcome;
 typedef Aws::Utils::Outcome<CreateApplicationResult, GameLiftStreamsError> CreateApplicationOutcome;
 typedef Aws::Utils::Outcome<CreateStreamGroupResult, GameLiftStreamsError> CreateStreamGroupOutcome;
+typedef Aws::Utils::Outcome<CreateStreamSessionAdminShellResult, GameLiftStreamsError> CreateStreamSessionAdminShellOutcome;
 typedef Aws::Utils::Outcome<CreateStreamSessionConnectionResult, GameLiftStreamsError> CreateStreamSessionConnectionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftStreamsError> DeleteApplicationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftStreamsError> DeleteStreamGroupOutcome;
@@ -134,6 +137,7 @@ typedef std::future<AddStreamGroupLocationsOutcome> AddStreamGroupLocationsOutco
 typedef std::future<AssociateApplicationsOutcome> AssociateApplicationsOutcomeCallable;
 typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
 typedef std::future<CreateStreamGroupOutcome> CreateStreamGroupOutcomeCallable;
+typedef std::future<CreateStreamSessionAdminShellOutcome> CreateStreamSessionAdminShellOutcomeCallable;
 typedef std::future<CreateStreamSessionConnectionOutcome> CreateStreamSessionConnectionOutcomeCallable;
 typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
 typedef std::future<DeleteStreamGroupOutcome> DeleteStreamGroupOutcomeCallable;
@@ -172,6 +176,10 @@ typedef std::function<void(const GameLiftStreamsClient*, const Model::CreateAppl
 typedef std::function<void(const GameLiftStreamsClient*, const Model::CreateStreamGroupRequest&, const Model::CreateStreamGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateStreamGroupResponseReceivedHandler;
+typedef std::function<void(const GameLiftStreamsClient*, const Model::CreateStreamSessionAdminShellRequest&,
+                           const Model::CreateStreamSessionAdminShellOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateStreamSessionAdminShellResponseReceivedHandler;
 typedef std::function<void(const GameLiftStreamsClient*, const Model::CreateStreamSessionConnectionRequest&,
                            const Model::CreateStreamSessionConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

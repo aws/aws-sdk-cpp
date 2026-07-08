@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHubRequest.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/SecurityControlsProvider.h>
 
 #include <utility>
 
@@ -90,15 +92,43 @@ class ListSecurityControlDefinitionsRequest : public SecurityHubRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of cloud providers to filter the security control definitions by. For
+   * example, specify <code>Azure</code> to return only controls that evaluate Azure
+   * resources.</p>
+   */
+  inline const Aws::Vector<SecurityControlsProvider>& GetProviders() const { return m_providers; }
+  inline bool ProvidersHasBeenSet() const { return m_providersHasBeenSet; }
+  template <typename ProvidersT = Aws::Vector<SecurityControlsProvider>>
+  void SetProviders(ProvidersT&& value) {
+    m_providersHasBeenSet = true;
+    m_providers = std::forward<ProvidersT>(value);
+  }
+  template <typename ProvidersT = Aws::Vector<SecurityControlsProvider>>
+  ListSecurityControlDefinitionsRequest& WithProviders(ProvidersT&& value) {
+    SetProviders(std::forward<ProvidersT>(value));
+    return *this;
+  }
+  inline ListSecurityControlDefinitionsRequest& AddProviders(SecurityControlsProvider value) {
+    m_providersHasBeenSet = true;
+    m_providers.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_standardsArn;
 
   Aws::String m_nextToken;
 
   int m_maxResults{0};
+
+  Aws::Vector<SecurityControlsProvider> m_providers;
   bool m_standardsArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
+  bool m_providersHasBeenSet = false;
 };
 
 }  // namespace Model

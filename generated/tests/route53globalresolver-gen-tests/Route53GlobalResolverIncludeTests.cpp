@@ -119,12 +119,15 @@
 #include <aws/route53globalresolver/model/ListHostedZoneAssociationsResult.h>
 #include <aws/route53globalresolver/model/ListManagedFirewallDomainListsRequest.h>
 #include <aws/route53globalresolver/model/ListManagedFirewallDomainListsResult.h>
+#include <aws/route53globalresolver/model/ListSharedDNSViewsRequest.h>
+#include <aws/route53globalresolver/model/ListSharedDNSViewsResult.h>
 #include <aws/route53globalresolver/model/ListTagsForResourceRequest.h>
 #include <aws/route53globalresolver/model/ListTagsForResourceResult.h>
 #include <aws/route53globalresolver/model/ManagedFirewallDomainListsItem.h>
 #include <aws/route53globalresolver/model/ProfileResourceStatus.h>
 #include <aws/route53globalresolver/model/ResourceNotFoundException.h>
 #include <aws/route53globalresolver/model/ServiceQuotaExceededException.h>
+#include <aws/route53globalresolver/model/SharedDNSViewSummary.h>
 #include <aws/route53globalresolver/model/TagResourceRequest.h>
 #include <aws/route53globalresolver/model/TagResourceResult.h>
 #include <aws/route53globalresolver/model/ThrottlingException.h>

@@ -25,6 +25,8 @@
 #include <aws/gameliftstreams/model/CreateApplicationResult.h>
 #include <aws/gameliftstreams/model/CreateStreamGroupRequest.h>
 #include <aws/gameliftstreams/model/CreateStreamGroupResult.h>
+#include <aws/gameliftstreams/model/CreateStreamSessionAdminShellRequest.h>
+#include <aws/gameliftstreams/model/CreateStreamSessionAdminShellResult.h>
 #include <aws/gameliftstreams/model/CreateStreamSessionConnectionRequest.h>
 #include <aws/gameliftstreams/model/CreateStreamSessionConnectionResult.h>
 #include <aws/gameliftstreams/model/DefaultApplication.h>

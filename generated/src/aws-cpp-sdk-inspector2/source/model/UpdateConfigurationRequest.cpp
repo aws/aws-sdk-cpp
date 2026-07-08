@@ -15,12 +15,20 @@ using namespace Aws::Utils;
 Aws::String UpdateConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
+  }
+
   if (m_ecrConfigurationHasBeenSet) {
     payload.WithObject("ecrConfiguration", m_ecrConfiguration.Jsonize());
   }
 
   if (m_ec2ConfigurationHasBeenSet) {
     payload.WithObject("ec2Configuration", m_ec2Configuration.Jsonize());
+  }
+
+  if (m_updateConfigurationInheritanceHasBeenSet) {
+    payload.WithObject("updateConfigurationInheritance", m_updateConfigurationInheritance.Jsonize());
   }
 
   return payload.View().WriteReadable();

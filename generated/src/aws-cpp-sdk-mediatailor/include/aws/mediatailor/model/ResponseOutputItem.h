@@ -90,7 +90,7 @@ class ResponseOutputItem {
 
   ///@{
   /**
-   * <p>The URL used for playback by content players.</p>
+   * <p>The URL that your player uses for playback.</p>
    */
   inline const Aws::String& GetPlaybackUrl() const { return m_playbackUrl; }
   inline bool PlaybackUrlHasBeenSet() const { return m_playbackUrlHasBeenSet; }
@@ -102,6 +102,24 @@ class ResponseOutputItem {
   template <typename PlaybackUrlT = Aws::String>
   ResponseOutputItem& WithPlaybackUrl(PlaybackUrlT&& value) {
     SetPlaybackUrl(std::forward<PlaybackUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The dual-stack (IPv4 and IPv6) URL that your player uses for playback.</p>
+   */
+  inline const Aws::String& GetDualStackPlaybackUrl() const { return m_dualStackPlaybackUrl; }
+  inline bool DualStackPlaybackUrlHasBeenSet() const { return m_dualStackPlaybackUrlHasBeenSet; }
+  template <typename DualStackPlaybackUrlT = Aws::String>
+  void SetDualStackPlaybackUrl(DualStackPlaybackUrlT&& value) {
+    m_dualStackPlaybackUrlHasBeenSet = true;
+    m_dualStackPlaybackUrl = std::forward<DualStackPlaybackUrlT>(value);
+  }
+  template <typename DualStackPlaybackUrlT = Aws::String>
+  ResponseOutputItem& WithDualStackPlaybackUrl(DualStackPlaybackUrlT&& value) {
+    SetDualStackPlaybackUrl(std::forward<DualStackPlaybackUrlT>(value));
     return *this;
   }
   ///@}
@@ -133,11 +151,14 @@ class ResponseOutputItem {
 
   Aws::String m_playbackUrl;
 
+  Aws::String m_dualStackPlaybackUrl;
+
   Aws::String m_sourceGroup;
   bool m_dashPlaylistSettingsHasBeenSet = false;
   bool m_hlsPlaylistSettingsHasBeenSet = false;
   bool m_manifestNameHasBeenSet = false;
   bool m_playbackUrlHasBeenSet = false;
+  bool m_dualStackPlaybackUrlHasBeenSet = false;
   bool m_sourceGroupHasBeenSet = false;
 };
 

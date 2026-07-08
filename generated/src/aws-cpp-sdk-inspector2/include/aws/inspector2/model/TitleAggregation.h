@@ -103,6 +103,22 @@ class TitleAggregation {
 
   ///@{
   /**
+   * <p>The type of finding to aggregate on.</p>
+   */
+  inline AggregationFindingType GetFindingType() const { return m_findingType; }
+  inline bool FindingTypeHasBeenSet() const { return m_findingTypeHasBeenSet; }
+  inline void SetFindingType(AggregationFindingType value) {
+    m_findingTypeHasBeenSet = true;
+    m_findingType = value;
+  }
+  inline TitleAggregation& WithFindingType(AggregationFindingType value) {
+    SetFindingType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The order to sort results by.</p>
    */
   inline SortOrder GetSortOrder() const { return m_sortOrder; }
@@ -132,22 +148,6 @@ class TitleAggregation {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The type of finding to aggregate on.</p>
-   */
-  inline AggregationFindingType GetFindingType() const { return m_findingType; }
-  inline bool FindingTypeHasBeenSet() const { return m_findingTypeHasBeenSet; }
-  inline void SetFindingType(AggregationFindingType value) {
-    m_findingTypeHasBeenSet = true;
-    m_findingType = value;
-  }
-  inline TitleAggregation& WithFindingType(AggregationFindingType value) {
-    SetFindingType(value);
-    return *this;
-  }
-  ///@}
  private:
   Aws::Vector<StringFilter> m_titles;
 
@@ -155,17 +155,17 @@ class TitleAggregation {
 
   AggregationResourceType m_resourceType{AggregationResourceType::NOT_SET};
 
+  AggregationFindingType m_findingType{AggregationFindingType::NOT_SET};
+
   SortOrder m_sortOrder{SortOrder::NOT_SET};
 
   TitleSortBy m_sortBy{TitleSortBy::NOT_SET};
-
-  AggregationFindingType m_findingType{AggregationFindingType::NOT_SET};
   bool m_titlesHasBeenSet = false;
   bool m_vulnerabilityIdsHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
+  bool m_findingTypeHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
-  bool m_findingTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -66,6 +66,18 @@ AggregationResponse& AggregationResponse::operator=(JsonView jsonValue) {
     m_codeRepositoryAggregation = jsonValue.GetObject("codeRepositoryAggregation");
     m_codeRepositoryAggregationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vmInstanceAggregation")) {
+    m_vmInstanceAggregation = jsonValue.GetObject("vmInstanceAggregation");
+    m_vmInstanceAggregationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("containerImageAggregation")) {
+    m_containerImageAggregation = jsonValue.GetObject("containerImageAggregation");
+    m_containerImageAggregationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("serverlessFunctionAggregation")) {
+    m_serverlessFunctionAggregation = jsonValue.GetObject("serverlessFunctionAggregation");
+    m_serverlessFunctionAggregationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -118,6 +130,18 @@ JsonValue AggregationResponse::Jsonize() const {
 
   if (m_codeRepositoryAggregationHasBeenSet) {
     payload.WithObject("codeRepositoryAggregation", m_codeRepositoryAggregation.Jsonize());
+  }
+
+  if (m_vmInstanceAggregationHasBeenSet) {
+    payload.WithObject("vmInstanceAggregation", m_vmInstanceAggregation.Jsonize());
+  }
+
+  if (m_containerImageAggregationHasBeenSet) {
+    payload.WithObject("containerImageAggregation", m_containerImageAggregation.Jsonize());
+  }
+
+  if (m_serverlessFunctionAggregationHasBeenSet) {
+    payload.WithObject("serverlessFunctionAggregation", m_serverlessFunctionAggregation.Jsonize());
   }
 
   return payload;

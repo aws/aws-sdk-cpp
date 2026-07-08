@@ -9,6 +9,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/AutoPlacement.h>
+#include <aws/ec2/model/HostCpuOptionsRequest.h>
 #include <aws/ec2/model/HostMaintenance.h>
 #include <aws/ec2/model/HostRecovery.h>
 #include <aws/ec2/model/TagSpecification.h>
@@ -196,6 +197,24 @@ class AllocateHostsRequest : public EC2Request {
 
   ///@{
   /**
+   * <p>The CPU configuration options to apply to the Dedicated Host.</p>
+   */
+  inline const HostCpuOptionsRequest& GetCpuOptions() const { return m_cpuOptions; }
+  inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
+  template <typename CpuOptionsT = HostCpuOptionsRequest>
+  void SetCpuOptions(CpuOptionsT&& value) {
+    m_cpuOptionsHasBeenSet = true;
+    m_cpuOptions = std::forward<CpuOptionsT>(value);
+  }
+  template <typename CpuOptionsT = HostCpuOptionsRequest>
+  AllocateHostsRequest& WithCpuOptions(CpuOptionsT&& value) {
+    SetCpuOptions(std::forward<CpuOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether the host accepts any untargeted instance launches that
    * match its instance type configuration, or if it only accepts Host tenancy
    * instance launches that specify its unique host ID. For more information, see <a
@@ -312,6 +331,8 @@ class AllocateHostsRequest : public EC2Request {
 
   Aws::String m_availabilityZoneId;
 
+  HostCpuOptionsRequest m_cpuOptions;
+
   AutoPlacement m_autoPlacement{AutoPlacement::NOT_SET};
 
   Aws::String m_clientToken;
@@ -328,6 +349,7 @@ class AllocateHostsRequest : public EC2Request {
   bool m_hostMaintenanceHasBeenSet = false;
   bool m_assetIdsHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_cpuOptionsHasBeenSet = false;
   bool m_autoPlacementHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;

@@ -625,6 +625,24 @@
       ],
       "documentation":"<p>Creates an attached file for a completed voice contact by copying a recording from a source S3 URI into Connect Customer managed storage. Use this API to attach voice recordings to contacts for downstream processing such as conversational analytics.</p> <important> <p>The <code>AssociatedResourceArn</code> must be the ARN of a completed voice contact, <code>FileUseCaseType</code> must be set to <code>VOICE_RECORDING</code>, and <code>FileSourceUri</code> must be a valid S3 URI.</p> </important> <note> <p>For example, you can call <code>CreateContact</code>, then <code>CreateAttachedFile</code>, then <code>StartContactConversationalAnalyticsJob</code> to create a contact, attach a recording, and run post-call analytics.</p> </note>"
     },
+    "CreateAuthCode":{
+      "name":"CreateAuthCode",
+      "http":{
+        "method":"POST",
+        "requestUri":"/auth/code/{InstanceId}"
+      },
+      "input":{"shape":"CreateAuthCodeRequest"},
+      "output":{"shape":"CreateAuthCodeResponse"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"}
+      ],
+      "documentation":"<p>Creates an authorization code for the specified Connect Customer instance. The authorization code can be used to establish a session with scoped permissions defined by the specified scope parameters.</p>"
+    },
     "CreateContact":{
       "name":"CreateContact",
       "http":{
@@ -1755,6 +1773,24 @@
         {"shape":"ResourceInUseException"}
       ],
       "documentation":"<p>Deletes a security profile.</p>"
+    },
+    "DeleteSession":{
+      "name":"DeleteSession",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/auth/sessions/{InstanceId}/{SessionId}"
+      },
+      "input":{"shape":"DeleteSessionRequest"},
+      "output":{"shape":"DeleteSessionResponse"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"}
+      ],
+      "documentation":"<p>Deletes a session for the specified Connect Customer instance.</p>"
     },
     "DeleteTaskTemplate":{
       "name":"DeleteTaskTemplate",
@@ -3018,7 +3054,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"UserNotFoundException"},
         {"shape":"InternalServiceException"},
-        {"shape":"DuplicateResourceException"}
+        {"shape":"DuplicateResourceException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Supports SAML sign-in for Connect Customer. Retrieves a token for federation. The token is for the Connect Customer user which corresponds to the IAM credentials that were used to invoke this action. </p> <p>For more information about how SAML sign-in works in Connect Customer, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml.html \">Configure SAML with IAM for Connect Customer in the <i>Connect Customer Administrator Guide</i>.</a> </p> <note> <p>This API doesn't support root users. If you try to invoke GetFederationToken with root credentials, an error message similar to the following one appears: </p> <p> <code>Provided identity: Principal: .... User: .... cannot be used for federation with Connect Customer</code> </p> </note>"
     },
@@ -4973,6 +5010,23 @@
         {"shape":"IdempotencyException"}
       ],
       "documentation":"<p>Send outbound email for outbound campaigns. For more information about outbound campaigns, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html\">Set up Connect Customer outbound campaigns</a>.</p> <note> <p>Only the Connect Customer outbound campaigns service principal is allowed to assume a role in your account and call this API.</p> </note>"
+    },
+    "SendOutboundWebNotification":{
+      "name":"SendOutboundWebNotification",
+      "http":{
+        "method":"POST",
+        "requestUri":"/instance/{InstanceId}/outbound-web-notification"
+      },
+      "input":{"shape":"SendOutboundWebNotificationRequest"},
+      "output":{"shape":"SendOutboundWebNotificationResponse"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"}
+      ],
+      "documentation":"<p>Sends an outbound web notification to a customer's web browser for outbound campaigns. For more information about outbound campaigns, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html\">Set up Connect Customer outbound campaigns</a>.</p> <note> <p>Only the Connect Customer outbound campaigns service principal is allowed to assume a role in your account and call this API.</p> </note>"
     },
     "StartAttachedFileUpload":{
       "name":"StartAttachedFileUpload",
@@ -8498,6 +8552,38 @@
       "documentation":"<p>Contains information for score and potential quality issues for Audio</p>"
     },
     "AudioQualityScore":{"type":"float"},
+    "AuthCode":{
+      "type":"string",
+      "sensitive":true
+    },
+    "AuthCodeEntityType":{
+      "type":"string",
+      "documentation":"<p>The type of entity associated with an authorization code in Connect Customer.</p>",
+      "enum":["CUSTOMER_PROFILE"]
+    },
+    "AuthScope":{
+      "type":"structure",
+      "required":["EntityType"],
+      "members":{
+        "SecurityProfileIds":{
+          "shape":"SecurityProfileIds",
+          "documentation":"<p>The list of security profile identifiers to scope the session to. Maximum of 10 security profiles.</p>"
+        },
+        "EntityType":{
+          "shape":"AuthCodeEntityType",
+          "documentation":"<p>The type of entity to scope the session to.</p>"
+        },
+        "EntityId":{
+          "shape":"EntityId",
+          "documentation":"<p>The identifier of the entity to scope the session to.</p>"
+        },
+        "DomainName":{
+          "shape":"CustomerProfilesDomainName",
+          "documentation":"<p>The name of the Customer Profiles domain to scope the session to.</p>"
+        }
+      },
+      "documentation":"<p>Contains the scope configuration for an authorization code. Defines the permissions and access boundaries for the session.</p>"
+    },
     "AuthenticationError":{
       "type":"string",
       "max":2048,
@@ -11097,6 +11183,16 @@
       "max":1024,
       "min":1
     },
+    "ContentAttributes":{
+      "type":"structure",
+      "members":{
+        "RecommenderConfig":{
+          "shape":"RecommenderConfig",
+          "documentation":"<p>Configuration for the recommender used to generate personalized recommendations for the notification content.</p>"
+        }
+      },
+      "documentation":"<p>Optional attributes used to populate the content of an outbound web notification, such as recommender configuration for personalized content.</p>"
+    },
     "ContentType":{
       "type":"string",
       "max":255,
@@ -11263,6 +11359,56 @@
         }
       },
       "documentation":"Response from CreateAttachedFile API."
+    },
+    "CreateAuthCodeRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "Scope",
+        "SessionInactivityDurationMinutes"
+      ],
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceId",
+          "documentation":"<p>The identifier of the Connect Customer instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
+          "location":"uri",
+          "locationName":"InstanceId"
+        },
+        "Scope":{
+          "shape":"AuthScope",
+          "documentation":"<p>The scope for the authorization code. Defines the permissions and access boundaries for the session.</p>"
+        },
+        "MaxSessionDurationMinutes":{
+          "shape":"MaxSessionDurationMinutes",
+          "documentation":"<p>The maximum duration of the session, in minutes. Minimum value of 1440 (24 hours). Maximum value of 43200 (30 days). If no value is provided, the session will expire after 400 days.</p>",
+          "box":true
+        },
+        "SessionInactivityDurationMinutes":{
+          "shape":"SessionInactivityDurationMinutes",
+          "documentation":"<p>The duration of inactivity, in minutes, after which the session expires. Minimum value of 1440 (24 hours). Maximum value of 20160 (14 days).</p>"
+        }
+      }
+    },
+    "CreateAuthCodeResponse":{
+      "type":"structure",
+      "members":{
+        "AuthCode":{
+          "shape":"AuthCode",
+          "documentation":"<p>The authorization code to use for establishing a session.</p>"
+        },
+        "SessionId":{
+          "shape":"SessionId",
+          "documentation":"<p>The identifier of the session created with the authorization code.</p>"
+        },
+        "EntityType":{
+          "shape":"AuthCodeEntityType",
+          "documentation":"<p>The type of entity associated with the authorization code.</p>"
+        },
+        "EntityId":{
+          "shape":"EntityId",
+          "documentation":"<p>The identifier of the entity associated with the authorization code.</p>"
+        }
+      }
     },
     "CreateCaseActionDefinition":{
       "type":"structure",
@@ -13306,7 +13452,7 @@
           "documentation":"<p>An access token generated for a federated user to access Connect Customer.</p>"
         },
         "AccessTokenExpiration":{
-          "shape":"timestamp",
+          "shape":"Timestamp",
           "documentation":"<p>A token generated with an expiration time for the session a user is logged in to Connect Customer.</p>"
         },
         "RefreshToken":{
@@ -13314,7 +13460,7 @@
           "documentation":"<p>Renews a token generated for a user to access the Connect Customer instance.</p>"
         },
         "RefreshTokenExpiration":{
-          "shape":"timestamp",
+          "shape":"Timestamp",
           "documentation":"<p>Renews the expiration timer for a generated token.</p>"
         }
       },
@@ -13455,6 +13601,17 @@
       "sensitive":true
     },
     "CustomerProfileAttributesSerialized":{"type":"string"},
+    "CustomerProfileId":{
+      "type":"string",
+      "max":32,
+      "min":1
+    },
+    "CustomerProfilesDomainName":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9_-]+$"
+    },
     "CustomerQualityMetrics":{
       "type":"structure",
       "members":{
@@ -14767,6 +14924,31 @@
           "locationName":"SecurityProfileId"
         }
       }
+    },
+    "DeleteSessionRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "SessionId"
+      ],
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceId",
+          "documentation":"<p>The identifier of the Connect Customer instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
+          "location":"uri",
+          "locationName":"InstanceId"
+        },
+        "SessionId":{
+          "shape":"SessionId",
+          "documentation":"<p>The identifier of the session to delete.</p>",
+          "location":"uri",
+          "locationName":"SessionId"
+        }
+      }
+    },
+    "DeleteSessionResponse":{
+      "type":"structure",
+      "members":{}
     },
     "DeleteTaskTemplateRequest":{
       "type":"structure",
@@ -17318,6 +17500,12 @@
     "EntityArn":{
       "type":"string",
       "min":1
+    },
+    "EntityId":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":".*"
     },
     "EntityType":{
       "type":"string",
@@ -20398,6 +20586,14 @@
     "GetFederationTokenResponse":{
       "type":"structure",
       "members":{
+        "UserId":{
+          "shape":"AgentResourceId",
+          "documentation":"<p>The identifier for the user. This can be the ID or the ARN of the user.</p>"
+        },
+        "UserArn":{
+          "shape":"ARN",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user.</p>"
+        },
         "Credentials":{
           "shape":"Credentials",
           "documentation":"<p>The credentials to use for federation.</p>"
@@ -20405,14 +20601,6 @@
         "SignInUrl":{
           "shape":"Url",
           "documentation":"<p>The URL to sign into the user's instance. </p>"
-        },
-        "UserArn":{
-          "shape":"ARN",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the user.</p>"
-        },
-        "UserId":{
-          "shape":"AgentResourceId",
-          "documentation":"<p>The identifier for the user. This can be the ID or the ARN of the user.</p>"
         }
       }
     },
@@ -25622,6 +25810,12 @@
       "max":100,
       "min":1
     },
+    "MaxSessionDurationMinutes":{
+      "type":"integer",
+      "box":true,
+      "max":43200,
+      "min":1440
+    },
     "MaximumResultReturnedException":{
       "type":"structure",
       "members":{
@@ -26310,6 +26504,13 @@
       "type":"list",
       "member":{"shape":"Notification"},
       "documentation":"<p>A list of notification summaries.</p>"
+    },
+    "NotificationType":{
+      "type":"string",
+      "enum":[
+        "WIDGET_VIEW",
+        "WIDGET_ACTION"
+      ]
     },
     "NullableBoolean":{"type":"boolean"},
     "NullableDouble":{"type":"double"},
@@ -27095,6 +27296,11 @@
       "type":"list",
       "member":{"shape":"PersistentConnectionConfig"},
       "documentation":"<p>The list of persistent connection configuration settings for each channel.</p>"
+    },
+    "PersonalizeDomainName":{
+      "type":"string",
+      "max":64,
+      "min":1
     },
     "PhoneNumber":{
       "type":"string",
@@ -29000,6 +29206,48 @@
       "member":{"shape":"ARN"},
       "documentation":"<p>A list of recipient Amazon Resource Names (ARNs). Maximum of 200 recipients.</p>",
       "max":200
+    },
+    "RecommenderConfig":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "RecommenderName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"PersonalizeDomainName",
+          "documentation":"<p>The name of the Amazon Personalize domain that hosts the recommender.</p>"
+        },
+        "RecommenderName":{
+          "shape":"RecommenderName",
+          "documentation":"<p>The name of the recommender used to generate the recommendations.</p>"
+        },
+        "Context":{
+          "shape":"RecommenderContext",
+          "documentation":"<p>A map of contextual key-value pairs supplied to the recommender to influence the recommendations returned.</p>"
+        }
+      },
+      "documentation":"<p>Configuration for the recommender used to generate personalized recommendations included in an outbound web notification.</p>"
+    },
+    "RecommenderContext":{
+      "type":"map",
+      "key":{"shape":"RecommenderContextKey"},
+      "value":{"shape":"RecommenderContextValue"}
+    },
+    "RecommenderContextKey":{
+      "type":"string",
+      "max":64,
+      "min":1
+    },
+    "RecommenderContextValue":{
+      "type":"string",
+      "max":255,
+      "min":1
+    },
+    "RecommenderName":{
+      "type":"string",
+      "max":64,
+      "min":1
     },
     "RecordIds":{
       "type":"list",
@@ -32098,6 +32346,59 @@
       "type":"structure",
       "members":{}
     },
+    "SendOutboundWebNotificationRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "BrowserId",
+        "SessionId",
+        "ExpiresAt",
+        "Source",
+        "Destination",
+        "Content"
+      ],
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceId",
+          "documentation":"<p>The identifier of the Connect Customer instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
+          "location":"uri",
+          "locationName":"InstanceId"
+        },
+        "ClientToken":{
+          "shape":"ClientToken",
+          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href=\"https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/\">Making retries safe with idempotent APIs</a>.</p>",
+          "idempotencyToken":true
+        },
+        "BrowserId":{
+          "shape":"WebBrowserId",
+          "documentation":"<p>A unique identifier for the customer's web browser instance to which the notification is being sent.</p>"
+        },
+        "SessionId":{
+          "shape":"WebSessionId",
+          "documentation":"<p>A unique identifier for the customer's web session to which the notification is being sent.</p>"
+        },
+        "ExpiresAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The timestamp, in Unix epoch time format, at which the web notification expires. After this time, the notification is no longer delivered to the customer's browser.</p>"
+        },
+        "Source":{
+          "shape":"WebNotificationSource",
+          "documentation":"<p>The source of the web notification. A <code>SourceCampaign</code> object identifies the campaign and outbound request that triggered this notification.</p>"
+        },
+        "Destination":{
+          "shape":"WidgetDestination",
+          "documentation":"<p>The destination for the web notification, specifying the communication widget that delivers the notification and the customer profile of the recipient.</p>"
+        },
+        "Content":{
+          "shape":"WebNotificationContent",
+          "documentation":"<p>The content of the web notification, including the notification type, the view to render, and any optional attributes used to populate it.</p>"
+        }
+      }
+    },
+    "SendOutboundWebNotificationResponse":{
+      "type":"structure",
+      "members":{}
+    },
     "SensitivePhoneNumber":{
       "type":"string",
       "pattern":"\\+[1-9]\\d{1,14}$",
@@ -32134,6 +32435,15 @@
       },
       "documentation":"<p>The reason for the exception.</p>",
       "union":true
+    },
+    "SessionId":{
+      "type":"string",
+      "max":36
+    },
+    "SessionInactivityDurationMinutes":{
+      "type":"integer",
+      "max":20160,
+      "min":0
     },
     "SignInConfig":{
       "type":"structure",
@@ -37929,6 +38239,11 @@
       "type":"list",
       "member":{"shape":"ViewAction"}
     },
+    "ViewArn":{
+      "type":"string",
+      "max":500,
+      "min":1
+    },
     "ViewContent":{
       "type":"structure",
       "members":{
@@ -38379,6 +38694,46 @@
         "ALL"
       ]
     },
+    "WebBrowserId":{
+      "type":"string",
+      "max":36,
+      "min":1
+    },
+    "WebNotificationContent":{
+      "type":"structure",
+      "required":["Type"],
+      "members":{
+        "Type":{
+          "shape":"NotificationType",
+          "documentation":"<p>The type of web notification to send.</p>"
+        },
+        "ViewArn":{
+          "shape":"ViewArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the view to render for the notification.</p>"
+        },
+        "Attributes":{
+          "shape":"ContentAttributes",
+          "documentation":"<p>Optional attributes used to populate the notification content, such as recommender configuration for personalized content.</p>"
+        }
+      },
+      "documentation":"<p>The content of an outbound web notification, including the notification type, the view to render, and any optional attributes used to populate the view.</p>"
+    },
+    "WebNotificationSource":{
+      "type":"structure",
+      "required":["SourceCampaign"],
+      "members":{
+        "SourceCampaign":{
+          "shape":"SourceCampaign",
+          "documentation":"<p>Information about the campaign that triggered the web notification, including the campaign identifier and outbound request identifier.</p>"
+        }
+      },
+      "documentation":"<p>The source of an outbound web notification. Identifies the campaign and outbound request that triggered the notification.</p>"
+    },
+    "WebSessionId":{
+      "type":"string",
+      "max":36,
+      "min":1
+    },
     "WeekdayOccurrenceInteger":{
       "type":"integer",
       "box":true,
@@ -38390,6 +38745,29 @@
       "member":{"shape":"WeekdayOccurrenceInteger"},
       "max":1,
       "min":0
+    },
+    "WidgetDestination":{
+      "type":"structure",
+      "required":[
+        "WidgetId",
+        "ProfileId"
+      ],
+      "members":{
+        "WidgetId":{
+          "shape":"WidgetId",
+          "documentation":"<p>The identifier of the communication widget that delivers the notification to the customer's browser.</p>"
+        },
+        "ProfileId":{
+          "shape":"CustomerProfileId",
+          "documentation":"<p>The identifier of the customer profile associated with the browser session that should receive the notification.</p>"
+        }
+      },
+      "documentation":"<p>The destination for an outbound web notification, specifying the communication widget that delivers the notification and the customer profile of the recipient.</p>"
+    },
+    "WidgetId":{
+      "type":"string",
+      "max":36,
+      "min":1
     },
     "WisdomInfo":{
       "type":"structure",

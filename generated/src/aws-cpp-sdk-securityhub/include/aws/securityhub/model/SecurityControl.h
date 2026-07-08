@@ -9,6 +9,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/ControlStatus.h>
 #include <aws/securityhub/model/ParameterConfiguration.h>
+#include <aws/securityhub/model/SecurityControlsProvider.h>
 #include <aws/securityhub/model/SeverityRating.h>
 #include <aws/securityhub/model/UpdateStatus.h>
 
@@ -242,6 +243,23 @@ class SecurityControl {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider whose resources the security control evaluates. For
+   * example, <code>AWS</code> or <code>Azure</code>.</p>
+   */
+  inline SecurityControlsProvider GetProvider() const { return m_provider; }
+  inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
+  inline void SetProvider(SecurityControlsProvider value) {
+    m_providerHasBeenSet = true;
+    m_provider = value;
+  }
+  inline SecurityControl& WithProvider(SecurityControlsProvider value) {
+    SetProvider(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_securityControlId;
 
@@ -262,6 +280,8 @@ class SecurityControl {
   Aws::Map<Aws::String, ParameterConfiguration> m_parameters;
 
   Aws::String m_lastUpdateReason;
+
+  SecurityControlsProvider m_provider{SecurityControlsProvider::NOT_SET};
   bool m_securityControlIdHasBeenSet = false;
   bool m_securityControlArnHasBeenSet = false;
   bool m_titleHasBeenSet = false;
@@ -272,6 +292,7 @@ class SecurityControl {
   bool m_updateStatusHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
   bool m_lastUpdateReasonHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
 };
 
 }  // namespace Model

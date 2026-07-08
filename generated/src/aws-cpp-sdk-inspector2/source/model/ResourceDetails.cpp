@@ -34,6 +34,18 @@ ResourceDetails& ResourceDetails::operator=(JsonView jsonValue) {
     m_codeRepository = jsonValue.GetObject("codeRepository");
     m_codeRepositoryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vm")) {
+    m_vm = jsonValue.GetObject("vm");
+    m_vmHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("image")) {
+    m_image = jsonValue.GetObject("image");
+    m_imageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("serverlessFunction")) {
+    m_serverlessFunction = jsonValue.GetObject("serverlessFunction");
+    m_serverlessFunctionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +66,18 @@ JsonValue ResourceDetails::Jsonize() const {
 
   if (m_codeRepositoryHasBeenSet) {
     payload.WithObject("codeRepository", m_codeRepository.Jsonize());
+  }
+
+  if (m_vmHasBeenSet) {
+    payload.WithObject("vm", m_vm.Jsonize());
+  }
+
+  if (m_imageHasBeenSet) {
+    payload.WithObject("image", m_image.Jsonize());
+  }
+
+  if (m_serverlessFunctionHasBeenSet) {
+    payload.WithObject("serverlessFunction", m_serverlessFunction.Jsonize());
   }
 
   return payload;

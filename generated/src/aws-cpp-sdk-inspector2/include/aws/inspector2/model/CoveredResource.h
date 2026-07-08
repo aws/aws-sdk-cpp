@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/CoverageResourceType.h>
+#include <aws/inspector2/model/Provider.h>
 #include <aws/inspector2/model/ResourceScanMetadata.h>
 #include <aws/inspector2/model/ScanMode.h>
 #include <aws/inspector2/model/ScanStatus.h>
@@ -175,6 +176,94 @@ class CoveredResource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider of the covered resource.</p>
+   */
+  inline Provider GetProvider() const { return m_provider; }
+  inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
+  inline void SetProvider(Provider value) {
+    m_providerHasBeenSet = true;
+    m_provider = value;
+  }
+  inline CoveredResource& WithProvider(Provider value) {
+    SetProvider(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider account ID of the covered resource.</p>
+   */
+  inline const Aws::String& GetProviderAccountId() const { return m_providerAccountId; }
+  inline bool ProviderAccountIdHasBeenSet() const { return m_providerAccountIdHasBeenSet; }
+  template <typename ProviderAccountIdT = Aws::String>
+  void SetProviderAccountId(ProviderAccountIdT&& value) {
+    m_providerAccountIdHasBeenSet = true;
+    m_providerAccountId = std::forward<ProviderAccountIdT>(value);
+  }
+  template <typename ProviderAccountIdT = Aws::String>
+  CoveredResource& WithProviderAccountId(ProviderAccountIdT&& value) {
+    SetProviderAccountId(std::forward<ProviderAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider organization ID of the covered resource.</p>
+   */
+  inline const Aws::String& GetProviderOrgId() const { return m_providerOrgId; }
+  inline bool ProviderOrgIdHasBeenSet() const { return m_providerOrgIdHasBeenSet; }
+  template <typename ProviderOrgIdT = Aws::String>
+  void SetProviderOrgId(ProviderOrgIdT&& value) {
+    m_providerOrgIdHasBeenSet = true;
+    m_providerOrgId = std::forward<ProviderOrgIdT>(value);
+  }
+  template <typename ProviderOrgIdT = Aws::String>
+  CoveredResource& WithProviderOrgId(ProviderOrgIdT&& value) {
+    SetProviderOrgId(std::forward<ProviderOrgIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider region of the covered resource.</p>
+   */
+  inline const Aws::String& GetProviderRegion() const { return m_providerRegion; }
+  inline bool ProviderRegionHasBeenSet() const { return m_providerRegionHasBeenSet; }
+  template <typename ProviderRegionT = Aws::String>
+  void SetProviderRegion(ProviderRegionT&& value) {
+    m_providerRegionHasBeenSet = true;
+    m_providerRegion = std::forward<ProviderRegionT>(value);
+  }
+  template <typename ProviderRegionT = Aws::String>
+  CoveredResource& WithProviderRegion(ProviderRegionT&& value) {
+    SetProviderRegion(std::forward<ProviderRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider partition of the covered resource.</p>
+   */
+  inline const Aws::String& GetProviderPartition() const { return m_providerPartition; }
+  inline bool ProviderPartitionHasBeenSet() const { return m_providerPartitionHasBeenSet; }
+  template <typename ProviderPartitionT = Aws::String>
+  void SetProviderPartition(ProviderPartitionT&& value) {
+    m_providerPartitionHasBeenSet = true;
+    m_providerPartition = std::forward<ProviderPartitionT>(value);
+  }
+  template <typename ProviderPartitionT = Aws::String>
+  CoveredResource& WithProviderPartition(ProviderPartitionT&& value) {
+    SetProviderPartition(std::forward<ProviderPartitionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CoverageResourceType m_resourceType{CoverageResourceType::NOT_SET};
 
@@ -191,6 +280,16 @@ class CoveredResource {
   Aws::Utils::DateTime m_lastScannedAt{};
 
   ScanMode m_scanMode{ScanMode::NOT_SET};
+
+  Provider m_provider{Provider::NOT_SET};
+
+  Aws::String m_providerAccountId;
+
+  Aws::String m_providerOrgId;
+
+  Aws::String m_providerRegion;
+
+  Aws::String m_providerPartition;
   bool m_resourceTypeHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
@@ -199,6 +298,11 @@ class CoveredResource {
   bool m_resourceMetadataHasBeenSet = false;
   bool m_lastScannedAtHasBeenSet = false;
   bool m_scanModeHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_providerAccountIdHasBeenSet = false;
+  bool m_providerOrgIdHasBeenSet = false;
+  bool m_providerRegionHasBeenSet = false;
+  bool m_providerPartitionHasBeenSet = false;
 };
 
 }  // namespace Model

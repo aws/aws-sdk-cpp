@@ -491,7 +491,10 @@ class InstanceProperty {
 
   ///@{
   /**
-   * <p>The type of the source resource.</p>
+   * <p>The type of the source resource. Valid values:
+   * <code>AWS::EC2::Instance</code> | <code>AWS::SSM::ManagedInstance</code> |
+   * <code>AWS::IoT::Thing</code> |
+   * <code>Microsoft.Compute/virtualMachines</code>.</p>
    */
   inline SourceType GetSourceType() const { return m_sourceType; }
   inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
@@ -501,6 +504,42 @@ class InstanceProperty {
   }
   inline InstanceProperty& WithSourceType(SourceType value) {
     SetSourceType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The location of the source resource in the third-party cloud environment.</p>
+   */
+  inline const Aws::String& GetSourceLocation() const { return m_sourceLocation; }
+  inline bool SourceLocationHasBeenSet() const { return m_sourceLocationHasBeenSet; }
+  template <typename SourceLocationT = Aws::String>
+  void SetSourceLocation(SourceLocationT&& value) {
+    m_sourceLocationHasBeenSet = true;
+    m_sourceLocation = std::forward<SourceLocationT>(value);
+  }
+  template <typename SourceLocationT = Aws::String>
+  InstanceProperty& WithSourceLocation(SourceLocationT&& value) {
+    SetSourceLocation(std::forward<SourceLocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Availability Zone where the managed node is located.</p>
+   */
+  inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
+  inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+  template <typename AvailabilityZoneT = Aws::String>
+  void SetAvailabilityZone(AvailabilityZoneT&& value) {
+    m_availabilityZoneHasBeenSet = true;
+    m_availabilityZone = std::forward<AvailabilityZoneT>(value);
+  }
+  template <typename AvailabilityZoneT = Aws::String>
+  InstanceProperty& WithAvailabilityZone(AvailabilityZoneT&& value) {
+    SetAvailabilityZone(std::forward<AvailabilityZoneT>(value));
     return *this;
   }
   ///@}
@@ -556,6 +595,10 @@ class InstanceProperty {
   Aws::String m_sourceId;
 
   SourceType m_sourceType{SourceType::NOT_SET};
+
+  Aws::String m_sourceLocation;
+
+  Aws::String m_availabilityZone;
   bool m_nameHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
@@ -582,6 +625,8 @@ class InstanceProperty {
   bool m_associationOverviewHasBeenSet = false;
   bool m_sourceIdHasBeenSet = false;
   bool m_sourceTypeHasBeenSet = false;
+  bool m_sourceLocationHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
 };
 
 }  // namespace Model

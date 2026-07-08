@@ -167,11 +167,14 @@ class AWS_GAMELIFTSTREAMS_API GameLiftStreamsClient : public Aws::Client::AWSJso
    * the Amazon GameLift Streams Developer Guide. </p>  <p> Make sure that
    * your files in the Amazon S3 bucket are the correct version you want to use. If
    * you change the files at a later time, you will need to create a new Amazon
-   * GameLift Streams application. </p>  <p> If the request is
-   * successful, Amazon GameLift Streams begins to create an application and sets the
-   * status to <code>INITIALIZED</code>. When an application reaches
-   * <code>READY</code> status, you can use the application to set up stream groups
-   * and start streams. To track application status, call <a
+   * GameLift Streams application. </p>   <p> Creating an
+   * application is the only time Amazon GameLift Streams accesses your Amazon S3
+   * bucket. After the application reaches <code>READY</code> status, you can delete
+   * the original files from your Amazon S3 bucket without affecting the application.
+   * </p>  <p> If the request is successful, Amazon GameLift Streams begins to
+   * create an application and sets the status to <code>INITIALIZED</code>. When an
+   * application reaches <code>READY</code> status, you can use the application to
+   * set up stream groups and start streams. To track application status, call <a
    * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetApplication.html">GetApplication</a>.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateApplication">AWS
@@ -260,6 +263,51 @@ class AWS_GAMELIFTSTREAMS_API GameLiftStreamsClient : public Aws::Client::AWSJso
   void CreateStreamGroupAsync(const CreateStreamGroupRequestT& request, const CreateStreamGroupResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GameLiftStreamsClient::CreateStreamGroup, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an administrative terminal session with full access to the live
+   * runtime environment of the Amazon GameLift Streams stream session. Use the
+   * returned credentials (<code>SessionId</code>, <code>StreamUrl</code> and
+   * <code>TokenValue</code>) with the Amazon Web Services Systems Manager <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Session
+   * Manager plugin</a> for the CLI to access the terminal session.</p> <p>The stream
+   * session must be in one of the following statuses: <code>ACTIVE</code>,
+   * <code>CONNECTED</code>, <code>PENDING_CLIENT_RECONNECTION</code>, or
+   * <code>RECONNECTING</code>.</p> <p>The <code>StreamUrl</code> is valid for 60
+   * seconds. After it expires, call this operation again to get a new URL.</p>
+   *  <p>The returned credentials grant full access to the live runtime
+   * environment of the Amazon GameLift Streams stream session. The operator who
+   * connects to the terminal session has the same level of access that your Amazon
+   * GameLift Streams applications have, including potentially user input, screen
+   * images, and application data files. Grant permissions to call this operation
+   * only to trusted IAM identities that require live runtime environment access.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateStreamSessionAdminShell">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateStreamSessionAdminShellOutcome CreateStreamSessionAdminShell(
+      const Model::CreateStreamSessionAdminShellRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateStreamSessionAdminShell that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateStreamSessionAdminShellRequestT = Model::CreateStreamSessionAdminShellRequest>
+  Model::CreateStreamSessionAdminShellOutcomeCallable CreateStreamSessionAdminShellCallable(
+      const CreateStreamSessionAdminShellRequestT& request) const {
+    return SubmitCallable(&GameLiftStreamsClient::CreateStreamSessionAdminShell, request);
+  }
+
+  /**
+   * An Async wrapper for CreateStreamSessionAdminShell that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateStreamSessionAdminShellRequestT = Model::CreateStreamSessionAdminShellRequest>
+  void CreateStreamSessionAdminShellAsync(const CreateStreamSessionAdminShellRequestT& request,
+                                          const CreateStreamSessionAdminShellResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GameLiftStreamsClient::CreateStreamSessionAdminShell, request, handler, context);
   }
 
   /**

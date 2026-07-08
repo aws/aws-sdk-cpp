@@ -6,14 +6,22 @@
 #include <aws/artifact/ArtifactClient.h>
 #include <aws/artifact/ArtifactEndpointProvider.h>
 #include <aws/artifact/ArtifactErrorMarshaller.h>
+#include <aws/artifact/model/CreateComplianceInquiryRequest.h>
+#include <aws/artifact/model/ExportComplianceInquiryRequest.h>
 #include <aws/artifact/model/GetAccountSettingsRequest.h>
+#include <aws/artifact/model/GetComplianceInquiryMetadataRequest.h>
 #include <aws/artifact/model/GetReportMetadataRequest.h>
 #include <aws/artifact/model/GetReportRequest.h>
 #include <aws/artifact/model/GetTermForReportRequest.h>
+#include <aws/artifact/model/ListComplianceInquiriesRequest.h>
+#include <aws/artifact/model/ListComplianceInquiryQueriesRequest.h>
 #include <aws/artifact/model/ListCustomerAgreementsRequest.h>
 #include <aws/artifact/model/ListReportVersionsRequest.h>
 #include <aws/artifact/model/ListReportsRequest.h>
+#include <aws/artifact/model/ListTagsForResourceRequest.h>
 #include <aws/artifact/model/PutAccountSettingsRequest.h>
+#include <aws/artifact/model/TagResourceRequest.h>
+#include <aws/artifact/model/UntagResourceRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -182,6 +190,28 @@ ArtifactClient::InvokeOperationOutcome ArtifactClient::InvokeServiceOperation(
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+CreateComplianceInquiryOutcome ArtifactClient::CreateComplianceInquiry(const CreateComplianceInquiryRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/compliance-inquiry/create");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateComplianceInquiryOutcome(result.GetResultWithOwnership())
+                            : CreateComplianceInquiryOutcome(std::move(result.GetError()));
+}
+
+ExportComplianceInquiryOutcome ArtifactClient::ExportComplianceInquiry(const ExportComplianceInquiryRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/compliance-inquiry/export");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportComplianceInquiryOutcome(result.GetResultWithOwnership())
+                            : ExportComplianceInquiryOutcome(std::move(result.GetError()));
+}
+
 GetAccountSettingsOutcome ArtifactClient::GetAccountSettings(const GetAccountSettingsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -191,6 +221,23 @@ GetAccountSettingsOutcome ArtifactClient::GetAccountSettings(const GetAccountSet
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetAccountSettingsOutcome(result.GetResultWithOwnership())
                             : GetAccountSettingsOutcome(std::move(result.GetError()));
+}
+
+GetComplianceInquiryMetadataOutcome ArtifactClient::GetComplianceInquiryMetadata(const GetComplianceInquiryMetadataRequest& request) const {
+  if (!request.ComplianceInquiryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetComplianceInquiryMetadata", "Required field: ComplianceInquiryId, is not set");
+    return GetComplianceInquiryMetadataOutcome(Aws::Client::AWSError<ArtifactErrors>(
+        ArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ComplianceInquiryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/compliance-inquiry/getMetadata");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetComplianceInquiryMetadataOutcome(result.GetResultWithOwnership())
+                            : GetComplianceInquiryMetadataOutcome(std::move(result.GetError()));
 }
 
 GetReportOutcome ArtifactClient::GetReport(const GetReportRequest& request) const {
@@ -248,6 +295,34 @@ GetTermForReportOutcome ArtifactClient::GetTermForReport(const GetTermForReportR
                             : GetTermForReportOutcome(std::move(result.GetError()));
 }
 
+ListComplianceInquiriesOutcome ArtifactClient::ListComplianceInquiries(const ListComplianceInquiriesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/compliance-inquiry/list");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListComplianceInquiriesOutcome(result.GetResultWithOwnership())
+                            : ListComplianceInquiriesOutcome(std::move(result.GetError()));
+}
+
+ListComplianceInquiryQueriesOutcome ArtifactClient::ListComplianceInquiryQueries(const ListComplianceInquiryQueriesRequest& request) const {
+  if (!request.ComplianceInquiryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListComplianceInquiryQueries", "Required field: ComplianceInquiryId, is not set");
+    return ListComplianceInquiryQueriesOutcome(Aws::Client::AWSError<ArtifactErrors>(
+        ArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ComplianceInquiryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/compliance-inquiry/listQueries");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListComplianceInquiryQueriesOutcome(result.GetResultWithOwnership())
+                            : ListComplianceInquiryQueriesOutcome(std::move(result.GetError()));
+}
+
 ListCustomerAgreementsOutcome ArtifactClient::ListCustomerAgreements(const ListCustomerAgreementsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -286,6 +361,24 @@ ListReportsOutcome ArtifactClient::ListReports(const ListReportsRequest& request
   return result.IsSuccess() ? ListReportsOutcome(result.GetResultWithOwnership()) : ListReportsOutcome(std::move(result.GetError()));
 }
 
+ListTagsForResourceOutcome ArtifactClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<ArtifactErrors>(ArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [ResourceArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
+}
+
 PutAccountSettingsOutcome ArtifactClient::PutAccountSettings(const PutAccountSettingsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -295,4 +388,43 @@ PutAccountSettingsOutcome ArtifactClient::PutAccountSettings(const PutAccountSet
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutAccountSettingsOutcome(result.GetResultWithOwnership())
                             : PutAccountSettingsOutcome(std::move(result.GetError()));
+}
+
+TagResourceOutcome ArtifactClient::TagResource(const TagResourceRequest& request) const {
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<ArtifactErrors>(ArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                    "Missing required field [ResourceArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
+}
+
+UntagResourceOutcome ArtifactClient::UntagResource(const UntagResourceRequest& request) const {
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<ArtifactErrors>(ArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<ArtifactErrors>(ArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [TagKeys]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

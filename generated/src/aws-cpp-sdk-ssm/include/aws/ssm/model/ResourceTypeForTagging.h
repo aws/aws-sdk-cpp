@@ -20,7 +20,8 @@ enum class ResourceTypeForTagging {
   OpsItem,
   OpsMetadata,
   Automation,
-  Association
+  Association,
+  CloudConnector
 };
 
 namespace ResourceTypeForTaggingMapper {

@@ -187,6 +187,7 @@
 #include <aws/opensearch/model/DomainProcessingStatusType.h>
 #include <aws/opensearch/model/DomainState.h>
 #include <aws/opensearch/model/DomainStatus.h>
+#include <aws/opensearch/model/DomainUseCase.h>
 #include <aws/opensearch/model/DryRunMode.h>
 #include <aws/opensearch/model/DryRunProgressStatus.h>
 #include <aws/opensearch/model/DryRunResults.h>
@@ -195,9 +196,12 @@
 #include <aws/opensearch/model/EBSOptionsStatus.h>
 #include <aws/opensearch/model/EncryptionAtRestOptions.h>
 #include <aws/opensearch/model/EncryptionAtRestOptionsStatus.h>
+#include <aws/opensearch/model/EngineMode.h>
+#include <aws/opensearch/model/EngineModeStatus.h>
 #include <aws/opensearch/model/EngineType.h>
 #include <aws/opensearch/model/EnvironmentInfo.h>
 #include <aws/opensearch/model/ErrorDetails.h>
+#include <aws/opensearch/model/ExportOptions.h>
 #include <aws/opensearch/model/Filter.h>
 #include <aws/opensearch/model/GetApplicationRequest.h>
 #include <aws/opensearch/model/GetApplicationResult.h>
@@ -215,6 +219,8 @@
 #include <aws/opensearch/model/GetDomainMaintenanceStatusResult.h>
 #include <aws/opensearch/model/GetIndexRequest.h>
 #include <aws/opensearch/model/GetIndexResult.h>
+#include <aws/opensearch/model/GetMigrationRequest.h>
+#include <aws/opensearch/model/GetMigrationResult.h>
 #include <aws/opensearch/model/GetPackageVersionHistoryRequest.h>
 #include <aws/opensearch/model/GetPackageVersionHistoryResult.h>
 #include <aws/opensearch/model/GetUpgradeHistoryRequest.h>
@@ -238,9 +244,15 @@
 #include <aws/opensearch/model/Insight.h>
 #include <aws/opensearch/model/InsightEntity.h>
 #include <aws/opensearch/model/InsightEntityType.h>
+#include <aws/opensearch/model/InsightFeedbackEntity.h>
+#include <aws/opensearch/model/InsightFeedbackEntityType.h>
+#include <aws/opensearch/model/InsightFeedbackRequest.h>
+#include <aws/opensearch/model/InsightFeedbackResult.h>
+#include <aws/opensearch/model/InsightFeedbackThumbs.h>
 #include <aws/opensearch/model/InsightField.h>
 #include <aws/opensearch/model/InsightFieldType.h>
 #include <aws/opensearch/model/InsightPriorityLevel.h>
+#include <aws/opensearch/model/InsightResponseStatus.h>
 #include <aws/opensearch/model/InsightSortOrder.h>
 #include <aws/opensearch/model/InsightStatus.h>
 #include <aws/opensearch/model/InsightTimeRange.h>
@@ -270,6 +282,8 @@
 #include <aws/opensearch/model/ListInsightsResult.h>
 #include <aws/opensearch/model/ListInstanceTypeDetailsRequest.h>
 #include <aws/opensearch/model/ListInstanceTypeDetailsResult.h>
+#include <aws/opensearch/model/ListMigrationsRequest.h>
+#include <aws/opensearch/model/ListMigrationsResult.h>
 #include <aws/opensearch/model/ListPackagesForDomainRequest.h>
 #include <aws/opensearch/model/ListPackagesForDomainResult.h>
 #include <aws/opensearch/model/ListScheduledActionsRequest.h>
@@ -291,6 +305,11 @@
 #include <aws/opensearch/model/MaintenanceType.h>
 #include <aws/opensearch/model/MasterNodeStatus.h>
 #include <aws/opensearch/model/MasterUserOptions.h>
+#include <aws/opensearch/model/MigrationError.h>
+#include <aws/opensearch/model/MigrationOptions.h>
+#include <aws/opensearch/model/MigrationSource.h>
+#include <aws/opensearch/model/MigrationSummary.h>
+#include <aws/opensearch/model/MigrationWorkspace.h>
 #include <aws/opensearch/model/ModifyingProperties.h>
 #include <aws/opensearch/model/NaturalLanguageQueryGenerationCurrentState.h>
 #include <aws/opensearch/model/NaturalLanguageQueryGenerationDesiredState.h>
@@ -356,6 +375,7 @@
 #include <aws/opensearch/model/SAMLIdp.h>
 #include <aws/opensearch/model/SAMLOptionsInput.h>
 #include <aws/opensearch/model/SAMLOptionsOutput.h>
+#include <aws/opensearch/model/SavedObjectIdentifier.h>
 #include <aws/opensearch/model/ScheduleAt.h>
 #include <aws/opensearch/model/ScheduledAction.h>
 #include <aws/opensearch/model/ScheduledAutoTuneActionType.h>
@@ -374,6 +394,8 @@
 #include <aws/opensearch/model/SoftwareUpdateOptionsStatus.h>
 #include <aws/opensearch/model/StartDomainMaintenanceRequest.h>
 #include <aws/opensearch/model/StartDomainMaintenanceResult.h>
+#include <aws/opensearch/model/StartMigrationRequest.h>
+#include <aws/opensearch/model/StartMigrationResult.h>
 #include <aws/opensearch/model/StartServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/StartServiceSoftwareUpdateResult.h>
 #include <aws/opensearch/model/StorageType.h>
@@ -406,6 +428,7 @@
 #include <aws/opensearch/model/UpgradeStatus.h>
 #include <aws/opensearch/model/UpgradeStep.h>
 #include <aws/opensearch/model/UpgradeStepItem.h>
+#include <aws/opensearch/model/UseCaseStatus.h>
 #include <aws/opensearch/model/VPCDerivedInfo.h>
 #include <aws/opensearch/model/VPCDerivedInfoStatus.h>
 #include <aws/opensearch/model/VPCOptions.h>

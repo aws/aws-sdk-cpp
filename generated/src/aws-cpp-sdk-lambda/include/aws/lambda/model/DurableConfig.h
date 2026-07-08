@@ -4,7 +4,10 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -19,8 +22,10 @@ namespace Model {
 /**
  * <p>Configuration settings for <a
  * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
- * functions</a>, including execution timeout and retention period for execution
- * history.</p><p><h3>See Also:</h3>   <a
+ * functions</a>, including execution timeout, retention period for execution
+ * history, and an optional ARN of the Key Management Service (KMS) customer
+ * managed key that is used to encrypt your durable execution's payload data,
+ * including input, output, and error payloads.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DurableConfig">AWS
  * API Reference</a></p>
  */
@@ -30,6 +35,26 @@ class DurableConfig {
   AWS_LAMBDA_API DurableConfig(Aws::Utils::Json::JsonView jsonValue);
   AWS_LAMBDA_API DurableConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The ARN of the Key Management Service (KMS) customer managed key that is used
+   * to encrypt your durable execution's payload data, including input, output, and
+   * error payloads.</p>
+   */
+  inline const Aws::String& GetKMSKeyArn() const { return m_kMSKeyArn; }
+  inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
+  template <typename KMSKeyArnT = Aws::String>
+  void SetKMSKeyArn(KMSKeyArnT&& value) {
+    m_kMSKeyArnHasBeenSet = true;
+    m_kMSKeyArn = std::forward<KMSKeyArnT>(value);
+  }
+  template <typename KMSKeyArnT = Aws::String>
+  DurableConfig& WithKMSKeyArn(KMSKeyArnT&& value) {
+    SetKMSKeyArn(std::forward<KMSKeyArnT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -67,9 +92,12 @@ class DurableConfig {
   }
   ///@}
  private:
+  Aws::String m_kMSKeyArn;
+
   int m_retentionPeriodInDays{0};
 
   int m_executionTimeout{0};
+  bool m_kMSKeyArnHasBeenSet = false;
   bool m_retentionPeriodInDaysHasBeenSet = false;
   bool m_executionTimeoutHasBeenSet = false;
 };

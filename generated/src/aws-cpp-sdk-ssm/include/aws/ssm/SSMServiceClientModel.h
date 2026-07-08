@@ -26,6 +26,7 @@
 #include <aws/ssm/model/CreateActivationResult.h>
 #include <aws/ssm/model/CreateAssociationBatchResult.h>
 #include <aws/ssm/model/CreateAssociationResult.h>
+#include <aws/ssm/model/CreateCloudConnectorResult.h>
 #include <aws/ssm/model/CreateDocumentResult.h>
 #include <aws/ssm/model/CreateMaintenanceWindowResult.h>
 #include <aws/ssm/model/CreateOpsItemResult.h>
@@ -35,6 +36,7 @@
 #include <aws/ssm/model/DeleteActivationResult.h>
 #include <aws/ssm/model/DeleteAssociationRequest.h>
 #include <aws/ssm/model/DeleteAssociationResult.h>
+#include <aws/ssm/model/DeleteCloudConnectorResult.h>
 #include <aws/ssm/model/DeleteDocumentResult.h>
 #include <aws/ssm/model/DeleteInventoryResult.h>
 #include <aws/ssm/model/DeleteMaintenanceWindowResult.h>
@@ -99,6 +101,7 @@
 #include <aws/ssm/model/GetAccessTokenResult.h>
 #include <aws/ssm/model/GetAutomationExecutionResult.h>
 #include <aws/ssm/model/GetCalendarStateResult.h>
+#include <aws/ssm/model/GetCloudConnectorResult.h>
 #include <aws/ssm/model/GetCommandInvocationResult.h>
 #include <aws/ssm/model/GetConnectionStatusResult.h>
 #include <aws/ssm/model/GetDefaultPatchBaselineRequest.h>
@@ -131,6 +134,8 @@
 #include <aws/ssm/model/ListAssociationVersionsResult.h>
 #include <aws/ssm/model/ListAssociationsRequest.h>
 #include <aws/ssm/model/ListAssociationsResult.h>
+#include <aws/ssm/model/ListCloudConnectorsRequest.h>
+#include <aws/ssm/model/ListCloudConnectorsResult.h>
 #include <aws/ssm/model/ListCommandInvocationsRequest.h>
 #include <aws/ssm/model/ListCommandInvocationsResult.h>
 #include <aws/ssm/model/ListCommandsRequest.h>
@@ -183,6 +188,7 @@
 #include <aws/ssm/model/UnlabelParameterVersionResult.h>
 #include <aws/ssm/model/UpdateAssociationResult.h>
 #include <aws/ssm/model/UpdateAssociationStatusResult.h>
+#include <aws/ssm/model/UpdateCloudConnectorResult.h>
 #include <aws/ssm/model/UpdateDocumentDefaultVersionResult.h>
 #include <aws/ssm/model/UpdateDocumentMetadataResult.h>
 #include <aws/ssm/model/UpdateDocumentResult.h>
@@ -195,6 +201,7 @@
 #include <aws/ssm/model/UpdatePatchBaselineResult.h>
 #include <aws/ssm/model/UpdateResourceDataSyncResult.h>
 #include <aws/ssm/model/UpdateServiceSettingResult.h>
+#include <aws/ssm/model/ValidateCloudConnectorResult.h>
 /* End of service model headers required in SSMClient header */
 
 namespace Aws {
@@ -235,6 +242,7 @@ class CancelMaintenanceWindowExecutionRequest;
 class CreateActivationRequest;
 class CreateAssociationRequest;
 class CreateAssociationBatchRequest;
+class CreateCloudConnectorRequest;
 class CreateDocumentRequest;
 class CreateMaintenanceWindowRequest;
 class CreateOpsItemRequest;
@@ -243,6 +251,7 @@ class CreatePatchBaselineRequest;
 class CreateResourceDataSyncRequest;
 class DeleteActivationRequest;
 class DeleteAssociationRequest;
+class DeleteCloudConnectorRequest;
 class DeleteDocumentRequest;
 class DeleteInventoryRequest;
 class DeleteMaintenanceWindowRequest;
@@ -294,6 +303,7 @@ class DisassociateOpsItemRelatedItemRequest;
 class GetAccessTokenRequest;
 class GetAutomationExecutionRequest;
 class GetCalendarStateRequest;
+class GetCloudConnectorRequest;
 class GetCommandInvocationRequest;
 class GetConnectionStatusRequest;
 class GetDefaultPatchBaselineRequest;
@@ -321,6 +331,7 @@ class GetServiceSettingRequest;
 class LabelParameterVersionRequest;
 class ListAssociationVersionsRequest;
 class ListAssociationsRequest;
+class ListCloudConnectorsRequest;
 class ListCommandInvocationsRequest;
 class ListCommandsRequest;
 class ListComplianceItemsRequest;
@@ -362,6 +373,7 @@ class TerminateSessionRequest;
 class UnlabelParameterVersionRequest;
 class UpdateAssociationRequest;
 class UpdateAssociationStatusRequest;
+class UpdateCloudConnectorRequest;
 class UpdateDocumentRequest;
 class UpdateDocumentDefaultVersionRequest;
 class UpdateDocumentMetadataRequest;
@@ -374,6 +386,7 @@ class UpdateOpsMetadataRequest;
 class UpdatePatchBaselineRequest;
 class UpdateResourceDataSyncRequest;
 class UpdateServiceSettingRequest;
+class ValidateCloudConnectorRequest;
 /* End of service model forward declarations required in SSMClient header */
 
 /* Service model Outcome class definitions */
@@ -384,6 +397,7 @@ typedef Aws::Utils::Outcome<CancelMaintenanceWindowExecutionResult, SSMError> Ca
 typedef Aws::Utils::Outcome<CreateActivationResult, SSMError> CreateActivationOutcome;
 typedef Aws::Utils::Outcome<CreateAssociationResult, SSMError> CreateAssociationOutcome;
 typedef Aws::Utils::Outcome<CreateAssociationBatchResult, SSMError> CreateAssociationBatchOutcome;
+typedef Aws::Utils::Outcome<CreateCloudConnectorResult, SSMError> CreateCloudConnectorOutcome;
 typedef Aws::Utils::Outcome<CreateDocumentResult, SSMError> CreateDocumentOutcome;
 typedef Aws::Utils::Outcome<CreateMaintenanceWindowResult, SSMError> CreateMaintenanceWindowOutcome;
 typedef Aws::Utils::Outcome<CreateOpsItemResult, SSMError> CreateOpsItemOutcome;
@@ -392,6 +406,7 @@ typedef Aws::Utils::Outcome<CreatePatchBaselineResult, SSMError> CreatePatchBase
 typedef Aws::Utils::Outcome<CreateResourceDataSyncResult, SSMError> CreateResourceDataSyncOutcome;
 typedef Aws::Utils::Outcome<DeleteActivationResult, SSMError> DeleteActivationOutcome;
 typedef Aws::Utils::Outcome<DeleteAssociationResult, SSMError> DeleteAssociationOutcome;
+typedef Aws::Utils::Outcome<DeleteCloudConnectorResult, SSMError> DeleteCloudConnectorOutcome;
 typedef Aws::Utils::Outcome<DeleteDocumentResult, SSMError> DeleteDocumentOutcome;
 typedef Aws::Utils::Outcome<DeleteInventoryResult, SSMError> DeleteInventoryOutcome;
 typedef Aws::Utils::Outcome<DeleteMaintenanceWindowResult, SSMError> DeleteMaintenanceWindowOutcome;
@@ -444,6 +459,7 @@ typedef Aws::Utils::Outcome<DisassociateOpsItemRelatedItemResult, SSMError> Disa
 typedef Aws::Utils::Outcome<GetAccessTokenResult, SSMError> GetAccessTokenOutcome;
 typedef Aws::Utils::Outcome<GetAutomationExecutionResult, SSMError> GetAutomationExecutionOutcome;
 typedef Aws::Utils::Outcome<GetCalendarStateResult, SSMError> GetCalendarStateOutcome;
+typedef Aws::Utils::Outcome<GetCloudConnectorResult, SSMError> GetCloudConnectorOutcome;
 typedef Aws::Utils::Outcome<GetCommandInvocationResult, SSMError> GetCommandInvocationOutcome;
 typedef Aws::Utils::Outcome<GetConnectionStatusResult, SSMError> GetConnectionStatusOutcome;
 typedef Aws::Utils::Outcome<GetDefaultPatchBaselineResult, SSMError> GetDefaultPatchBaselineOutcome;
@@ -471,6 +487,7 @@ typedef Aws::Utils::Outcome<GetServiceSettingResult, SSMError> GetServiceSetting
 typedef Aws::Utils::Outcome<LabelParameterVersionResult, SSMError> LabelParameterVersionOutcome;
 typedef Aws::Utils::Outcome<ListAssociationVersionsResult, SSMError> ListAssociationVersionsOutcome;
 typedef Aws::Utils::Outcome<ListAssociationsResult, SSMError> ListAssociationsOutcome;
+typedef Aws::Utils::Outcome<ListCloudConnectorsResult, SSMError> ListCloudConnectorsOutcome;
 typedef Aws::Utils::Outcome<ListCommandInvocationsResult, SSMError> ListCommandInvocationsOutcome;
 typedef Aws::Utils::Outcome<ListCommandsResult, SSMError> ListCommandsOutcome;
 typedef Aws::Utils::Outcome<ListComplianceItemsResult, SSMError> ListComplianceItemsOutcome;
@@ -512,6 +529,7 @@ typedef Aws::Utils::Outcome<TerminateSessionResult, SSMError> TerminateSessionOu
 typedef Aws::Utils::Outcome<UnlabelParameterVersionResult, SSMError> UnlabelParameterVersionOutcome;
 typedef Aws::Utils::Outcome<UpdateAssociationResult, SSMError> UpdateAssociationOutcome;
 typedef Aws::Utils::Outcome<UpdateAssociationStatusResult, SSMError> UpdateAssociationStatusOutcome;
+typedef Aws::Utils::Outcome<UpdateCloudConnectorResult, SSMError> UpdateCloudConnectorOutcome;
 typedef Aws::Utils::Outcome<UpdateDocumentResult, SSMError> UpdateDocumentOutcome;
 typedef Aws::Utils::Outcome<UpdateDocumentDefaultVersionResult, SSMError> UpdateDocumentDefaultVersionOutcome;
 typedef Aws::Utils::Outcome<UpdateDocumentMetadataResult, SSMError> UpdateDocumentMetadataOutcome;
@@ -524,6 +542,7 @@ typedef Aws::Utils::Outcome<UpdateOpsMetadataResult, SSMError> UpdateOpsMetadata
 typedef Aws::Utils::Outcome<UpdatePatchBaselineResult, SSMError> UpdatePatchBaselineOutcome;
 typedef Aws::Utils::Outcome<UpdateResourceDataSyncResult, SSMError> UpdateResourceDataSyncOutcome;
 typedef Aws::Utils::Outcome<UpdateServiceSettingResult, SSMError> UpdateServiceSettingOutcome;
+typedef Aws::Utils::Outcome<ValidateCloudConnectorResult, SSMError> ValidateCloudConnectorOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -534,6 +553,7 @@ typedef std::future<CancelMaintenanceWindowExecutionOutcome> CancelMaintenanceWi
 typedef std::future<CreateActivationOutcome> CreateActivationOutcomeCallable;
 typedef std::future<CreateAssociationOutcome> CreateAssociationOutcomeCallable;
 typedef std::future<CreateAssociationBatchOutcome> CreateAssociationBatchOutcomeCallable;
+typedef std::future<CreateCloudConnectorOutcome> CreateCloudConnectorOutcomeCallable;
 typedef std::future<CreateDocumentOutcome> CreateDocumentOutcomeCallable;
 typedef std::future<CreateMaintenanceWindowOutcome> CreateMaintenanceWindowOutcomeCallable;
 typedef std::future<CreateOpsItemOutcome> CreateOpsItemOutcomeCallable;
@@ -542,6 +562,7 @@ typedef std::future<CreatePatchBaselineOutcome> CreatePatchBaselineOutcomeCallab
 typedef std::future<CreateResourceDataSyncOutcome> CreateResourceDataSyncOutcomeCallable;
 typedef std::future<DeleteActivationOutcome> DeleteActivationOutcomeCallable;
 typedef std::future<DeleteAssociationOutcome> DeleteAssociationOutcomeCallable;
+typedef std::future<DeleteCloudConnectorOutcome> DeleteCloudConnectorOutcomeCallable;
 typedef std::future<DeleteDocumentOutcome> DeleteDocumentOutcomeCallable;
 typedef std::future<DeleteInventoryOutcome> DeleteInventoryOutcomeCallable;
 typedef std::future<DeleteMaintenanceWindowOutcome> DeleteMaintenanceWindowOutcomeCallable;
@@ -594,6 +615,7 @@ typedef std::future<DisassociateOpsItemRelatedItemOutcome> DisassociateOpsItemRe
 typedef std::future<GetAccessTokenOutcome> GetAccessTokenOutcomeCallable;
 typedef std::future<GetAutomationExecutionOutcome> GetAutomationExecutionOutcomeCallable;
 typedef std::future<GetCalendarStateOutcome> GetCalendarStateOutcomeCallable;
+typedef std::future<GetCloudConnectorOutcome> GetCloudConnectorOutcomeCallable;
 typedef std::future<GetCommandInvocationOutcome> GetCommandInvocationOutcomeCallable;
 typedef std::future<GetConnectionStatusOutcome> GetConnectionStatusOutcomeCallable;
 typedef std::future<GetDefaultPatchBaselineOutcome> GetDefaultPatchBaselineOutcomeCallable;
@@ -621,6 +643,7 @@ typedef std::future<GetServiceSettingOutcome> GetServiceSettingOutcomeCallable;
 typedef std::future<LabelParameterVersionOutcome> LabelParameterVersionOutcomeCallable;
 typedef std::future<ListAssociationVersionsOutcome> ListAssociationVersionsOutcomeCallable;
 typedef std::future<ListAssociationsOutcome> ListAssociationsOutcomeCallable;
+typedef std::future<ListCloudConnectorsOutcome> ListCloudConnectorsOutcomeCallable;
 typedef std::future<ListCommandInvocationsOutcome> ListCommandInvocationsOutcomeCallable;
 typedef std::future<ListCommandsOutcome> ListCommandsOutcomeCallable;
 typedef std::future<ListComplianceItemsOutcome> ListComplianceItemsOutcomeCallable;
@@ -662,6 +685,7 @@ typedef std::future<TerminateSessionOutcome> TerminateSessionOutcomeCallable;
 typedef std::future<UnlabelParameterVersionOutcome> UnlabelParameterVersionOutcomeCallable;
 typedef std::future<UpdateAssociationOutcome> UpdateAssociationOutcomeCallable;
 typedef std::future<UpdateAssociationStatusOutcome> UpdateAssociationStatusOutcomeCallable;
+typedef std::future<UpdateCloudConnectorOutcome> UpdateCloudConnectorOutcomeCallable;
 typedef std::future<UpdateDocumentOutcome> UpdateDocumentOutcomeCallable;
 typedef std::future<UpdateDocumentDefaultVersionOutcome> UpdateDocumentDefaultVersionOutcomeCallable;
 typedef std::future<UpdateDocumentMetadataOutcome> UpdateDocumentMetadataOutcomeCallable;
@@ -674,6 +698,7 @@ typedef std::future<UpdateOpsMetadataOutcome> UpdateOpsMetadataOutcomeCallable;
 typedef std::future<UpdatePatchBaselineOutcome> UpdatePatchBaselineOutcomeCallable;
 typedef std::future<UpdateResourceDataSyncOutcome> UpdateResourceDataSyncOutcomeCallable;
 typedef std::future<UpdateServiceSettingOutcome> UpdateServiceSettingOutcomeCallable;
+typedef std::future<ValidateCloudConnectorOutcome> ValidateCloudConnectorOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -702,6 +727,9 @@ typedef std::function<void(const SSMClient*, const Model::CreateAssociationReque
 typedef std::function<void(const SSMClient*, const Model::CreateAssociationBatchRequest&, const Model::CreateAssociationBatchOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAssociationBatchResponseReceivedHandler;
+typedef std::function<void(const SSMClient*, const Model::CreateCloudConnectorRequest&, const Model::CreateCloudConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateCloudConnectorResponseReceivedHandler;
 typedef std::function<void(const SSMClient*, const Model::CreateDocumentRequest&, const Model::CreateDocumentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateDocumentResponseReceivedHandler;
@@ -726,6 +754,9 @@ typedef std::function<void(const SSMClient*, const Model::DeleteActivationReques
 typedef std::function<void(const SSMClient*, const Model::DeleteAssociationRequest&, const Model::DeleteAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAssociationResponseReceivedHandler;
+typedef std::function<void(const SSMClient*, const Model::DeleteCloudConnectorRequest&, const Model::DeleteCloudConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteCloudConnectorResponseReceivedHandler;
 typedef std::function<void(const SSMClient*, const Model::DeleteDocumentRequest&, const Model::DeleteDocumentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteDocumentResponseReceivedHandler;
@@ -898,6 +929,9 @@ typedef std::function<void(const SSMClient*, const Model::GetAutomationExecution
 typedef std::function<void(const SSMClient*, const Model::GetCalendarStateRequest&, const Model::GetCalendarStateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCalendarStateResponseReceivedHandler;
+typedef std::function<void(const SSMClient*, const Model::GetCloudConnectorRequest&, const Model::GetCloudConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetCloudConnectorResponseReceivedHandler;
 typedef std::function<void(const SSMClient*, const Model::GetCommandInvocationRequest&, const Model::GetCommandInvocationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCommandInvocationResponseReceivedHandler;
@@ -984,6 +1018,9 @@ typedef std::function<void(const SSMClient*, const Model::ListAssociationVersion
 typedef std::function<void(const SSMClient*, const Model::ListAssociationsRequest&, const Model::ListAssociationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAssociationsResponseReceivedHandler;
+typedef std::function<void(const SSMClient*, const Model::ListCloudConnectorsRequest&, const Model::ListCloudConnectorsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCloudConnectorsResponseReceivedHandler;
 typedef std::function<void(const SSMClient*, const Model::ListCommandInvocationsRequest&, const Model::ListCommandInvocationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCommandInvocationsResponseReceivedHandler;
@@ -1112,6 +1149,9 @@ typedef std::function<void(const SSMClient*, const Model::UpdateAssociationReque
 typedef std::function<void(const SSMClient*, const Model::UpdateAssociationStatusRequest&, const Model::UpdateAssociationStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAssociationStatusResponseReceivedHandler;
+typedef std::function<void(const SSMClient*, const Model::UpdateCloudConnectorRequest&, const Model::UpdateCloudConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateCloudConnectorResponseReceivedHandler;
 typedef std::function<void(const SSMClient*, const Model::UpdateDocumentRequest&, const Model::UpdateDocumentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateDocumentResponseReceivedHandler;
@@ -1150,6 +1190,9 @@ typedef std::function<void(const SSMClient*, const Model::UpdateResourceDataSync
 typedef std::function<void(const SSMClient*, const Model::UpdateServiceSettingRequest&, const Model::UpdateServiceSettingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateServiceSettingResponseReceivedHandler;
+typedef std::function<void(const SSMClient*, const Model::ValidateCloudConnectorRequest&, const Model::ValidateCloudConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ValidateCloudConnectorResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace SSM
 }  // namespace Aws

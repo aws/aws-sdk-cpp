@@ -8,6 +8,7 @@
 #include <aws/config/model/RecordingGroup.h>
 #include <aws/config/model/RecordingMode.h>
 #include <aws/config/model/RecordingScope.h>
+#include <aws/config/model/ScopeConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -229,6 +230,44 @@ class ConfigurationRecorder {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the connector that specifies the connection
+   * between a third-party cloud service provider and Config.</p>
+   */
+  inline const Aws::String& GetConnectorArn() const { return m_connectorArn; }
+  inline bool ConnectorArnHasBeenSet() const { return m_connectorArnHasBeenSet; }
+  template <typename ConnectorArnT = Aws::String>
+  void SetConnectorArn(ConnectorArnT&& value) {
+    m_connectorArnHasBeenSet = true;
+    m_connectorArn = std::forward<ConnectorArnT>(value);
+  }
+  template <typename ConnectorArnT = Aws::String>
+  ConfigurationRecorder& WithConnectorArn(ConnectorArnT&& value) {
+    SetConnectorArn(std::forward<ConnectorArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the scope of resources to record from the third-party cloud service
+   * provider connected through the connector.</p>
+   */
+  inline const ScopeConfiguration& GetScopeConfiguration() const { return m_scopeConfiguration; }
+  inline bool ScopeConfigurationHasBeenSet() const { return m_scopeConfigurationHasBeenSet; }
+  template <typename ScopeConfigurationT = ScopeConfiguration>
+  void SetScopeConfiguration(ScopeConfigurationT&& value) {
+    m_scopeConfigurationHasBeenSet = true;
+    m_scopeConfiguration = std::forward<ScopeConfigurationT>(value);
+  }
+  template <typename ScopeConfigurationT = ScopeConfiguration>
+  ConfigurationRecorder& WithScopeConfiguration(ScopeConfigurationT&& value) {
+    SetScopeConfiguration(std::forward<ScopeConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -243,6 +282,10 @@ class ConfigurationRecorder {
   RecordingScope m_recordingScope{RecordingScope::NOT_SET};
 
   Aws::String m_servicePrincipal;
+
+  Aws::String m_connectorArn;
+
+  ScopeConfiguration m_scopeConfiguration;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_roleARNHasBeenSet = false;
@@ -250,6 +293,8 @@ class ConfigurationRecorder {
   bool m_recordingModeHasBeenSet = false;
   bool m_recordingScopeHasBeenSet = false;
   bool m_servicePrincipalHasBeenSet = false;
+  bool m_connectorArnHasBeenSet = false;
+  bool m_scopeConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

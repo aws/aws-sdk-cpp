@@ -51,6 +51,11 @@ H264Settings& H264Settings::operator=(JsonView jsonValue) {
     m_entropyEncoding = H264EntropyEncodingMapper::GetH264EntropyEncodingForName(jsonValue.GetString("entropyEncoding"));
     m_entropyEncodingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("explicitWeightedPrediction")) {
+    m_explicitWeightedPrediction =
+        H264ExplicitWeightedPredictionMapper::GetH264ExplicitWeightedPredictionForName(jsonValue.GetString("explicitWeightedPrediction"));
+    m_explicitWeightedPredictionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("fieldEncoding")) {
     m_fieldEncoding = H264FieldEncodingMapper::GetH264FieldEncodingForName(jsonValue.GetString("fieldEncoding"));
     m_fieldEncodingHasBeenSet = true;
@@ -251,6 +256,11 @@ JsonValue H264Settings::Jsonize() const {
 
   if (m_entropyEncodingHasBeenSet) {
     payload.WithString("entropyEncoding", H264EntropyEncodingMapper::GetNameForH264EntropyEncoding(m_entropyEncoding));
+  }
+
+  if (m_explicitWeightedPredictionHasBeenSet) {
+    payload.WithString("explicitWeightedPrediction",
+                       H264ExplicitWeightedPredictionMapper::GetNameForH264ExplicitWeightedPrediction(m_explicitWeightedPrediction));
   }
 
   if (m_fieldEncodingHasBeenSet) {

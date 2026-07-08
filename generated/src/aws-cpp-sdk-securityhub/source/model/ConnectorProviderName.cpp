@@ -17,6 +17,7 @@ namespace ConnectorProviderNameMapper {
 
 static const int JIRA_CLOUD_HASH = HashingUtils::HashString("JIRA_CLOUD");
 static const int SERVICENOW_HASH = HashingUtils::HashString("SERVICENOW");
+static const int AZURE_HASH = HashingUtils::HashString("AZURE");
 
 ConnectorProviderName GetConnectorProviderNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ConnectorProviderName GetConnectorProviderNameForName(const Aws::String& name) {
     return ConnectorProviderName::JIRA_CLOUD;
   } else if (hashCode == SERVICENOW_HASH) {
     return ConnectorProviderName::SERVICENOW;
+  } else if (hashCode == AZURE_HASH) {
+    return ConnectorProviderName::AZURE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForConnectorProviderName(ConnectorProviderName enumValue) {
       return "JIRA_CLOUD";
     case ConnectorProviderName::SERVICENOW:
       return "SERVICENOW";
+    case ConnectorProviderName::AZURE:
+      return "AZURE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

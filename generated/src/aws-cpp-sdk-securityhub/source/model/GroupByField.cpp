@@ -28,6 +28,13 @@ static const int finding_info_types_HASH = HashingUtils::HashString("finding_inf
 static const int metadata_product_name_HASH = HashingUtils::HashString("metadata.product.name");
 static const int metadata_product_uid_HASH = HashingUtils::HashString("metadata.product.uid");
 static const int resources_type_HASH = HashingUtils::HashString("resources.type");
+static const int resources_cloud_partition_HASH = HashingUtils::HashString("resources.cloud_partition");
+static const int resources_name_HASH = HashingUtils::HashString("resources.name");
+static const int resources_owner_account_uid_HASH = HashingUtils::HashString("resources.owner.account.uid");
+static const int resources_owner_org_uid_HASH = HashingUtils::HashString("resources.owner.org.uid");
+static const int resources_owner_account_name_HASH = HashingUtils::HashString("resources.owner.account.name");
+static const int resources_provider_HASH = HashingUtils::HashString("resources.provider");
+static const int resources_region_HASH = HashingUtils::HashString("resources.region");
 static const int resources_uid_HASH = HashingUtils::HashString("resources.uid");
 static const int severity_HASH = HashingUtils::HashString("severity");
 static const int status_HASH = HashingUtils::HashString("status");
@@ -68,6 +75,20 @@ GroupByField GetGroupByFieldForName(const Aws::String& name) {
     return GroupByField::metadata_product_uid;
   } else if (hashCode == resources_type_HASH) {
     return GroupByField::resources_type;
+  } else if (hashCode == resources_cloud_partition_HASH) {
+    return GroupByField::resources_cloud_partition;
+  } else if (hashCode == resources_name_HASH) {
+    return GroupByField::resources_name;
+  } else if (hashCode == resources_owner_account_uid_HASH) {
+    return GroupByField::resources_owner_account_uid;
+  } else if (hashCode == resources_owner_org_uid_HASH) {
+    return GroupByField::resources_owner_org_uid;
+  } else if (hashCode == resources_owner_account_name_HASH) {
+    return GroupByField::resources_owner_account_name;
+  } else if (hashCode == resources_provider_HASH) {
+    return GroupByField::resources_provider;
+  } else if (hashCode == resources_region_HASH) {
+    return GroupByField::resources_region;
   } else if (hashCode == resources_uid_HASH) {
     return GroupByField::resources_uid;
   } else if (hashCode == severity_HASH) {
@@ -130,6 +151,20 @@ Aws::String GetNameForGroupByField(GroupByField enumValue) {
       return "metadata.product.uid";
     case GroupByField::resources_type:
       return "resources.type";
+    case GroupByField::resources_cloud_partition:
+      return "resources.cloud_partition";
+    case GroupByField::resources_name:
+      return "resources.name";
+    case GroupByField::resources_owner_account_uid:
+      return "resources.owner.account.uid";
+    case GroupByField::resources_owner_org_uid:
+      return "resources.owner.org.uid";
+    case GroupByField::resources_owner_account_name:
+      return "resources.owner.account.name";
+    case GroupByField::resources_provider:
+      return "resources.provider";
+    case GroupByField::resources_region:
+      return "resources.region";
     case GroupByField::resources_uid:
       return "resources.uid";
     case GroupByField::severity:

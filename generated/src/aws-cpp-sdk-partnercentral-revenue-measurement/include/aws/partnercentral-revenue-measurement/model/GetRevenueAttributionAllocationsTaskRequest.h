@@ -1,0 +1,77 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementRequest.h>
+#include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurement_EXPORTS.h>
+#include <aws/partnercentral-revenue-measurement/model/CatalogName.h>
+
+#include <utility>
+
+namespace Aws {
+namespace PartnerCentralRevenueMeasurement {
+namespace Model {
+
+/**
+ */
+class GetRevenueAttributionAllocationsTaskRequest : public PartnerCentralRevenueMeasurementRequest {
+ public:
+  AWS_PARTNERCENTRALREVENUEMEASUREMENT_API GetRevenueAttributionAllocationsTaskRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetRevenueAttributionAllocationsTask"; }
+
+  AWS_PARTNERCENTRALREVENUEMEASUREMENT_API Aws::String SerializePayload() const override;
+
+  AWS_PARTNERCENTRALREVENUEMEASUREMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The catalog that contains the resource.</p>
+   */
+  inline CatalogName GetCatalog() const { return m_catalog; }
+  inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
+  inline void SetCatalog(CatalogName value) {
+    m_catalogHasBeenSet = true;
+    m_catalog = value;
+  }
+  inline GetRevenueAttributionAllocationsTaskRequest& WithCatalog(CatalogName value) {
+    SetCatalog(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The revenue attribution identifier.</p>
+   */
+  inline const Aws::String& GetRevenueAttributionIdentifier() const { return m_revenueAttributionIdentifier; }
+  inline bool RevenueAttributionIdentifierHasBeenSet() const { return m_revenueAttributionIdentifierHasBeenSet; }
+  template <typename RevenueAttributionIdentifierT = Aws::String>
+  void SetRevenueAttributionIdentifier(RevenueAttributionIdentifierT&& value) {
+    m_revenueAttributionIdentifierHasBeenSet = true;
+    m_revenueAttributionIdentifier = std::forward<RevenueAttributionIdentifierT>(value);
+  }
+  template <typename RevenueAttributionIdentifierT = Aws::String>
+  GetRevenueAttributionAllocationsTaskRequest& WithRevenueAttributionIdentifier(RevenueAttributionIdentifierT&& value) {
+    SetRevenueAttributionIdentifier(std::forward<RevenueAttributionIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  CatalogName m_catalog{CatalogName::NOT_SET};
+
+  Aws::String m_revenueAttributionIdentifier;
+  bool m_catalogHasBeenSet = false;
+  bool m_revenueAttributionIdentifierHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace PartnerCentralRevenueMeasurement
+}  // namespace Aws

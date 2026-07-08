@@ -8,8 +8,10 @@
 
 #include <aws/artifact/ArtifactClientPagination.h>
 #include <aws/artifact/ArtifactPaginationBase.h>
+#include <aws/artifact/model/ListComplianceInquiriesPaginationTraits.h>
 #include <aws/artifact/model/ListReportsPaginationTraits.h>
 #include <aws/artifact/model/ListCustomerAgreementsPaginationTraits.h>
+#include <aws/artifact/model/ListComplianceInquiryQueriesPaginationTraits.h>
 #include <aws/artifact/model/ListReportVersionsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

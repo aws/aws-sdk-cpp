@@ -21,6 +21,8 @@ static const int PlatformType_HASH = HashingUtils::HashString("PlatformType");
 static const int PlatformVersion_HASH = HashingUtils::HashString("PlatformVersion");
 static const int Region_HASH = HashingUtils::HashString("Region");
 static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
+static const int SourceType_HASH = HashingUtils::HashString("SourceType");
+static const int AvailabilityZone_HASH = HashingUtils::HashString("AvailabilityZone");
 
 NodeAttributeName GetNodeAttributeNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +38,10 @@ NodeAttributeName GetNodeAttributeNameForName(const Aws::String& name) {
     return NodeAttributeName::Region;
   } else if (hashCode == ResourceType_HASH) {
     return NodeAttributeName::ResourceType;
+  } else if (hashCode == SourceType_HASH) {
+    return NodeAttributeName::SourceType;
+  } else if (hashCode == AvailabilityZone_HASH) {
+    return NodeAttributeName::AvailabilityZone;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +68,10 @@ Aws::String GetNameForNodeAttributeName(NodeAttributeName enumValue) {
       return "Region";
     case NodeAttributeName::ResourceType:
       return "ResourceType";
+    case NodeAttributeName::SourceType:
+      return "SourceType";
+    case NodeAttributeName::AvailabilityZone:
+      return "AvailabilityZone";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

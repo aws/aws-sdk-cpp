@@ -42,6 +42,7 @@
 #include <aws/connect/model/CompleteAttachedFileUploadResult.h>
 #include <aws/connect/model/CreateAgentStatusResult.h>
 #include <aws/connect/model/CreateAttachedFileResult.h>
+#include <aws/connect/model/CreateAuthCodeResult.h>
 #include <aws/connect/model/CreateContactFlowModuleAliasResult.h>
 #include <aws/connect/model/CreateContactFlowModuleResult.h>
 #include <aws/connect/model/CreateContactFlowModuleVersionResult.h>
@@ -89,6 +90,7 @@
 #include <aws/connect/model/DeleteEmailAddressResult.h>
 #include <aws/connect/model/DeleteNotificationResult.h>
 #include <aws/connect/model/DeletePushNotificationRegistrationResult.h>
+#include <aws/connect/model/DeleteSessionResult.h>
 #include <aws/connect/model/DeleteTaskTemplateResult.h>
 #include <aws/connect/model/DeleteTestCaseResult.h>
 #include <aws/connect/model/DeleteTrafficDistributionGroupResult.h>
@@ -261,6 +263,7 @@
 #include <aws/connect/model/SearchWorkspacesResult.h>
 #include <aws/connect/model/SendChatIntegrationEventResult.h>
 #include <aws/connect/model/SendOutboundEmailResult.h>
+#include <aws/connect/model/SendOutboundWebNotificationResult.h>
 #include <aws/connect/model/StartAttachedFileUploadResult.h>
 #include <aws/connect/model/StartChatContactResult.h>
 #include <aws/connect/model/StartContactConversationalAnalyticsJobResult.h>
@@ -389,6 +392,7 @@ class ClaimPhoneNumberRequest;
 class CompleteAttachedFileUploadRequest;
 class CreateAgentStatusRequest;
 class CreateAttachedFileRequest;
+class CreateAuthCodeRequest;
 class CreateContactRequest;
 class CreateContactFlowRequest;
 class CreateContactFlowModuleRequest;
@@ -450,6 +454,7 @@ class DeleteQuickConnectRequest;
 class DeleteRoutingProfileRequest;
 class DeleteRuleRequest;
 class DeleteSecurityProfileRequest;
+class DeleteSessionRequest;
 class DeleteTaskTemplateRequest;
 class DeleteTestCaseRequest;
 class DeleteTrafficDistributionGroupRequest;
@@ -637,6 +642,7 @@ class SearchWorkspaceAssociationsRequest;
 class SearchWorkspacesRequest;
 class SendChatIntegrationEventRequest;
 class SendOutboundEmailRequest;
+class SendOutboundWebNotificationRequest;
 class StartAttachedFileUploadRequest;
 class StartChatContactRequest;
 class StartContactConversationalAnalyticsJobRequest;
@@ -766,6 +772,7 @@ typedef Aws::Utils::Outcome<ClaimPhoneNumberResult, ConnectError> ClaimPhoneNumb
 typedef Aws::Utils::Outcome<CompleteAttachedFileUploadResult, ConnectError> CompleteAttachedFileUploadOutcome;
 typedef Aws::Utils::Outcome<CreateAgentStatusResult, ConnectError> CreateAgentStatusOutcome;
 typedef Aws::Utils::Outcome<CreateAttachedFileResult, ConnectError> CreateAttachedFileOutcome;
+typedef Aws::Utils::Outcome<CreateAuthCodeResult, ConnectError> CreateAuthCodeOutcome;
 typedef Aws::Utils::Outcome<CreateContactResult, ConnectError> CreateContactOutcome;
 typedef Aws::Utils::Outcome<CreateContactFlowResult, ConnectError> CreateContactFlowOutcome;
 typedef Aws::Utils::Outcome<CreateContactFlowModuleResult, ConnectError> CreateContactFlowModuleOutcome;
@@ -827,6 +834,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteQuickConnectOutco
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteRoutingProfileOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteRuleOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteSecurityProfileOutcome;
+typedef Aws::Utils::Outcome<DeleteSessionResult, ConnectError> DeleteSessionOutcome;
 typedef Aws::Utils::Outcome<DeleteTaskTemplateResult, ConnectError> DeleteTaskTemplateOutcome;
 typedef Aws::Utils::Outcome<DeleteTestCaseResult, ConnectError> DeleteTestCaseOutcome;
 typedef Aws::Utils::Outcome<DeleteTrafficDistributionGroupResult, ConnectError> DeleteTrafficDistributionGroupOutcome;
@@ -1014,6 +1022,7 @@ typedef Aws::Utils::Outcome<SearchWorkspaceAssociationsResult, ConnectError> Sea
 typedef Aws::Utils::Outcome<SearchWorkspacesResult, ConnectError> SearchWorkspacesOutcome;
 typedef Aws::Utils::Outcome<SendChatIntegrationEventResult, ConnectError> SendChatIntegrationEventOutcome;
 typedef Aws::Utils::Outcome<SendOutboundEmailResult, ConnectError> SendOutboundEmailOutcome;
+typedef Aws::Utils::Outcome<SendOutboundWebNotificationResult, ConnectError> SendOutboundWebNotificationOutcome;
 typedef Aws::Utils::Outcome<StartAttachedFileUploadResult, ConnectError> StartAttachedFileUploadOutcome;
 typedef Aws::Utils::Outcome<StartChatContactResult, ConnectError> StartChatContactOutcome;
 typedef Aws::Utils::Outcome<StartContactConversationalAnalyticsJobResult, ConnectError> StartContactConversationalAnalyticsJobOutcome;
@@ -1143,6 +1152,7 @@ typedef std::future<ClaimPhoneNumberOutcome> ClaimPhoneNumberOutcomeCallable;
 typedef std::future<CompleteAttachedFileUploadOutcome> CompleteAttachedFileUploadOutcomeCallable;
 typedef std::future<CreateAgentStatusOutcome> CreateAgentStatusOutcomeCallable;
 typedef std::future<CreateAttachedFileOutcome> CreateAttachedFileOutcomeCallable;
+typedef std::future<CreateAuthCodeOutcome> CreateAuthCodeOutcomeCallable;
 typedef std::future<CreateContactOutcome> CreateContactOutcomeCallable;
 typedef std::future<CreateContactFlowOutcome> CreateContactFlowOutcomeCallable;
 typedef std::future<CreateContactFlowModuleOutcome> CreateContactFlowModuleOutcomeCallable;
@@ -1204,6 +1214,7 @@ typedef std::future<DeleteQuickConnectOutcome> DeleteQuickConnectOutcomeCallable
 typedef std::future<DeleteRoutingProfileOutcome> DeleteRoutingProfileOutcomeCallable;
 typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
 typedef std::future<DeleteSecurityProfileOutcome> DeleteSecurityProfileOutcomeCallable;
+typedef std::future<DeleteSessionOutcome> DeleteSessionOutcomeCallable;
 typedef std::future<DeleteTaskTemplateOutcome> DeleteTaskTemplateOutcomeCallable;
 typedef std::future<DeleteTestCaseOutcome> DeleteTestCaseOutcomeCallable;
 typedef std::future<DeleteTrafficDistributionGroupOutcome> DeleteTrafficDistributionGroupOutcomeCallable;
@@ -1391,6 +1402,7 @@ typedef std::future<SearchWorkspaceAssociationsOutcome> SearchWorkspaceAssociati
 typedef std::future<SearchWorkspacesOutcome> SearchWorkspacesOutcomeCallable;
 typedef std::future<SendChatIntegrationEventOutcome> SendChatIntegrationEventOutcomeCallable;
 typedef std::future<SendOutboundEmailOutcome> SendOutboundEmailOutcomeCallable;
+typedef std::future<SendOutboundWebNotificationOutcome> SendOutboundWebNotificationOutcomeCallable;
 typedef std::future<StartAttachedFileUploadOutcome> StartAttachedFileUploadOutcomeCallable;
 typedef std::future<StartChatContactOutcome> StartChatContactOutcomeCallable;
 typedef std::future<StartContactConversationalAnalyticsJobOutcome> StartContactConversationalAnalyticsJobOutcomeCallable;
@@ -1599,6 +1611,9 @@ typedef std::function<void(const ConnectClient*, const Model::CreateAgentStatusR
 typedef std::function<void(const ConnectClient*, const Model::CreateAttachedFileRequest&, const Model::CreateAttachedFileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAttachedFileResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::CreateAuthCodeRequest&, const Model::CreateAuthCodeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateAuthCodeResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::CreateContactRequest&, const Model::CreateContactOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateContactResponseReceivedHandler;
@@ -1794,6 +1809,9 @@ typedef std::function<void(const ConnectClient*, const Model::DeleteRuleRequest&
 typedef std::function<void(const ConnectClient*, const Model::DeleteSecurityProfileRequest&, const Model::DeleteSecurityProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteSecurityProfileResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DeleteSessionRequest&, const Model::DeleteSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteSessionResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DeleteTaskTemplateRequest&, const Model::DeleteTaskTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTaskTemplateResponseReceivedHandler;
@@ -2390,6 +2408,9 @@ typedef std::function<void(const ConnectClient*, const Model::SendChatIntegratio
 typedef std::function<void(const ConnectClient*, const Model::SendOutboundEmailRequest&, const Model::SendOutboundEmailOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SendOutboundEmailResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::SendOutboundWebNotificationRequest&,
+                           const Model::SendOutboundWebNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SendOutboundWebNotificationResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::StartAttachedFileUploadRequest&, const Model::StartAttachedFileUploadOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartAttachedFileUploadResponseReceivedHandler;

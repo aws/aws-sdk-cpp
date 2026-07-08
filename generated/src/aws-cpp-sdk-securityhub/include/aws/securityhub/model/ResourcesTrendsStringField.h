@@ -10,7 +10,17 @@
 namespace Aws {
 namespace SecurityHub {
 namespace Model {
-enum class ResourcesTrendsStringField { NOT_SET, account_id, region, resource_type, resource_category };
+enum class ResourcesTrendsStringField {
+  NOT_SET,
+  account_id,
+  region,
+  resource_type,
+  resource_category,
+  resource_cloud_provider,
+  resource_region,
+  resource_owner_id,
+  resource_owner_organization_id
+};
 
 namespace ResourcesTrendsStringFieldMapper {
 AWS_SECURITYHUB_API ResourcesTrendsStringField GetResourcesTrendsStringFieldForName(const Aws::String& name);

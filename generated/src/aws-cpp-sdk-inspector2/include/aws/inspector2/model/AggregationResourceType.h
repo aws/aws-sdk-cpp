@@ -10,7 +10,16 @@
 namespace Aws {
 namespace Inspector2 {
 namespace Model {
-enum class AggregationResourceType { NOT_SET, AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE, AWS_LAMBDA_FUNCTION, CODE_REPOSITORY };
+enum class AggregationResourceType {
+  NOT_SET,
+  AWS_EC2_INSTANCE,
+  AWS_ECR_CONTAINER_IMAGE,
+  AWS_LAMBDA_FUNCTION,
+  CODE_REPOSITORY,
+  Microsoft_Compute_virtualMachines,
+  Microsoft_ContainerRegistry_registry_containerImage,
+  Microsoft_Web_sites
+};
 
 namespace AggregationResourceTypeMapper {
 AWS_INSPECTOR2_API AggregationResourceType GetAggregationResourceTypeForName(const Aws::String& name);

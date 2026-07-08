@@ -7,20 +7,20 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/ArchiveFilters.h>
 #include <aws/mailmanager/model/SearchStatus.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MailManager {
 namespace Model {
@@ -33,8 +33,8 @@ namespace Model {
 class GetArchiveSearchResult {
  public:
   AWS_MAILMANAGER_API GetArchiveSearchResult() = default;
-  AWS_MAILMANAGER_API GetArchiveSearchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_MAILMANAGER_API GetArchiveSearchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MAILMANAGER_API GetArchiveSearchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_MAILMANAGER_API GetArchiveSearchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -108,12 +108,12 @@ class GetArchiveSearchResult {
   /**
    * <p>The maximum number of search results to return.</p>
    */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline void SetMaxResults(int value) {
+  inline int64_t GetMaxResults() const { return m_maxResults; }
+  inline void SetMaxResults(int64_t value) {
     m_maxResultsHasBeenSet = true;
     m_maxResults = value;
   }
-  inline GetArchiveSearchResult& WithMaxResults(int value) {
+  inline GetArchiveSearchResult& WithMaxResults(int64_t value) {
     SetMaxResults(value);
     return *this;
   }
@@ -161,7 +161,7 @@ class GetArchiveSearchResult {
 
   Aws::Utils::DateTime m_toTimestamp{};
 
-  int m_maxResults{0};
+  int64_t m_maxResults{0};
 
   SearchStatus m_status;
 

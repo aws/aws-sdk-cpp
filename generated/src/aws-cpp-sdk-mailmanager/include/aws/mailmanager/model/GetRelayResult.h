@@ -7,27 +7,27 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/RelayAuthentication.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MailManager {
 namespace Model {
 class GetRelayResult {
  public:
   AWS_MAILMANAGER_API GetRelayResult() = default;
-  AWS_MAILMANAGER_API GetRelayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_MAILMANAGER_API GetRelayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MAILMANAGER_API GetRelayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_MAILMANAGER_API GetRelayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -101,12 +101,12 @@ class GetRelayResult {
   /**
    * <p>The destination relay server port.</p>
    */
-  inline int GetServerPort() const { return m_serverPort; }
-  inline void SetServerPort(int value) {
+  inline int64_t GetServerPort() const { return m_serverPort; }
+  inline void SetServerPort(int64_t value) {
     m_serverPortHasBeenSet = true;
     m_serverPort = value;
   }
-  inline GetRelayResult& WithServerPort(int value) {
+  inline GetRelayResult& WithServerPort(int64_t value) {
     SetServerPort(value);
     return *this;
   }
@@ -189,7 +189,7 @@ class GetRelayResult {
 
   Aws::String m_serverName;
 
-  int m_serverPort{0};
+  int64_t m_serverPort{0};
 
   RelayAuthentication m_authentication;
 

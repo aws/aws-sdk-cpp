@@ -40,7 +40,8 @@ class ListTagsForResourceRequest : public ConfigServiceRequest {
    * <code>OrganizationConformancePack</code> </p> </li> <li> <p>
    * <code>ConfigurationAggregator</code> </p> </li> <li> <p>
    * <code>AggregationAuthorization</code> </p> </li> <li> <p>
-   * <code>StoredQuery</code> </p> </li> </ul>
+   * <code>StoredQuery</code> </p> </li> <li> <p> <code>Connector</code> </p> </li>
+   * </ul>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

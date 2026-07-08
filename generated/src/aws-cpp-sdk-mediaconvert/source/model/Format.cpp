@@ -24,6 +24,7 @@ static const int wave_HASH = HashingUtils::HashString("wave");
 static const int avi_HASH = HashingUtils::HashString("avi");
 static const int mpegts_HASH = HashingUtils::HashString("mpegts");
 static const int mpegps_HASH = HashingUtils::HashString("mpegps");
+static const int mp3_HASH = HashingUtils::HashString("mp3");
 
 Format GetFormatForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +46,8 @@ Format GetFormatForName(const Aws::String& name) {
     return Format::mpegts;
   } else if (hashCode == mpegps_HASH) {
     return Format::mpegps;
+  } else if (hashCode == mp3_HASH) {
+    return Format::mp3;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +80,8 @@ Aws::String GetNameForFormat(Format enumValue) {
       return "mpegts";
     case Format::mpegps:
       return "mpegps";
+    case Format::mp3:
+      return "mp3";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

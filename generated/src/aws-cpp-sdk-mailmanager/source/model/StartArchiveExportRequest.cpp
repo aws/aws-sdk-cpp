@@ -3,51 +3,88 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/model/StartArchiveExportRequest.h>
 
 #include <utility>
 
 using namespace Aws::MailManager::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String StartArchiveExportRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_archiveIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_filtersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_fromTimestampHasBeenSet) {
+    mapSize++;
+  }
+  if (m_toTimestampHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maxResultsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_exportDestinationConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_includeMetadataHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_archiveIdHasBeenSet) {
-    payload.WithString("ArchiveId", m_archiveId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ArchiveId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_archiveId.c_str()));
   }
 
   if (m_filtersHasBeenSet) {
-    payload.WithObject("Filters", m_filters.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Filters"));
+    m_filters.CborEncode(encoder);
   }
 
   if (m_fromTimestampHasBeenSet) {
-    payload.WithDouble("FromTimestamp", m_fromTimestamp.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FromTimestamp"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_fromTimestamp.Seconds());
   }
 
   if (m_toTimestampHasBeenSet) {
-    payload.WithDouble("ToTimestamp", m_toTimestamp.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ToTimestamp"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_toTimestamp.Seconds());
   }
 
   if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("MaxResults", m_maxResults);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MaxResults"));
+    (m_maxResults >= 0) ? encoder.WriteUInt(m_maxResults) : encoder.WriteNegInt(m_maxResults);
   }
 
   if (m_exportDestinationConfigurationHasBeenSet) {
-    payload.WithObject("ExportDestinationConfiguration", m_exportDestinationConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ExportDestinationConfiguration"));
+    m_exportDestinationConfiguration.CborEncode(encoder);
   }
 
   if (m_includeMetadataHasBeenSet) {
-    payload.WithBool("IncludeMetadata", m_includeMetadata);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("IncludeMetadata"));
+    encoder.WriteBool(m_includeMetadata);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection StartArchiveExportRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MailManagerSvc.StartArchiveExport"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

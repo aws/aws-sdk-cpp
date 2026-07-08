@@ -17,6 +17,7 @@
 #include <aws/marketplace-catalog/model/ResaleAuthorizationProductNameFilter.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationResellerAccountIDFilter.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationResellerLegalNameFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationResellerRoleFilter.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationStatusFilter.h>
 
 #include <utility>
@@ -287,6 +288,25 @@ class ResaleAuthorizationFilters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Allows filtering on the <code>ResellerRole</code> of a
+   * ResaleAuthorization.</p>
+   */
+  inline const ResaleAuthorizationResellerRoleFilter& GetResellerRole() const { return m_resellerRole; }
+  inline bool ResellerRoleHasBeenSet() const { return m_resellerRoleHasBeenSet; }
+  template <typename ResellerRoleT = ResaleAuthorizationResellerRoleFilter>
+  void SetResellerRole(ResellerRoleT&& value) {
+    m_resellerRoleHasBeenSet = true;
+    m_resellerRole = std::forward<ResellerRoleT>(value);
+  }
+  template <typename ResellerRoleT = ResaleAuthorizationResellerRoleFilter>
+  ResaleAuthorizationFilters& WithResellerRole(ResellerRoleT&& value) {
+    SetResellerRole(std::forward<ResellerRoleT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ResaleAuthorizationEntityIdFilter m_entityId;
 
@@ -313,6 +333,8 @@ class ResaleAuthorizationFilters {
   ResaleAuthorizationOfferExtendedStatusFilter m_offerExtendedStatus;
 
   ResaleAuthorizationLastModifiedDateFilter m_lastModifiedDate;
+
+  ResaleAuthorizationResellerRoleFilter m_resellerRole;
   bool m_entityIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_productIdHasBeenSet = false;
@@ -326,6 +348,7 @@ class ResaleAuthorizationFilters {
   bool m_statusHasBeenSet = false;
   bool m_offerExtendedStatusHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
+  bool m_resellerRoleHasBeenSet = false;
 };
 
 }  // namespace Model

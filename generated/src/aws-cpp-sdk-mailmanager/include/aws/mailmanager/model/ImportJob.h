@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/ImportDataFormat.h>
 #include <aws/mailmanager/model/ImportJobStatus.h>
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MailManager {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class ImportJob {
  public:
   AWS_MAILMANAGER_API ImportJob() = default;
-  AWS_MAILMANAGER_API ImportJob(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MAILMANAGER_API ImportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MAILMANAGER_API ImportJob(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MAILMANAGER_API ImportJob& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MAILMANAGER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -109,13 +109,13 @@ class ImportJob {
    * <p>The number of addresses in the input that were successfully imported into the
    * address list.</p>
    */
-  inline int GetImportedItemsCount() const { return m_importedItemsCount; }
+  inline int64_t GetImportedItemsCount() const { return m_importedItemsCount; }
   inline bool ImportedItemsCountHasBeenSet() const { return m_importedItemsCountHasBeenSet; }
-  inline void SetImportedItemsCount(int value) {
+  inline void SetImportedItemsCount(int64_t value) {
     m_importedItemsCountHasBeenSet = true;
     m_importedItemsCount = value;
   }
-  inline ImportJob& WithImportedItemsCount(int value) {
+  inline ImportJob& WithImportedItemsCount(int64_t value) {
     SetImportedItemsCount(value);
     return *this;
   }
@@ -126,13 +126,13 @@ class ImportJob {
    * <p>The number of addresses in the input that failed to get imported into address
    * list.</p>
    */
-  inline int GetFailedItemsCount() const { return m_failedItemsCount; }
+  inline int64_t GetFailedItemsCount() const { return m_failedItemsCount; }
   inline bool FailedItemsCountHasBeenSet() const { return m_failedItemsCountHasBeenSet; }
-  inline void SetFailedItemsCount(int value) {
+  inline void SetFailedItemsCount(int64_t value) {
     m_failedItemsCountHasBeenSet = true;
     m_failedItemsCount = value;
   }
-  inline ImportJob& WithFailedItemsCount(int value) {
+  inline ImportJob& WithFailedItemsCount(int64_t value) {
     SetFailedItemsCount(value);
     return *this;
   }
@@ -254,9 +254,9 @@ class ImportJob {
 
   Aws::String m_preSignedUrl;
 
-  int m_importedItemsCount{0};
+  int64_t m_importedItemsCount{0};
 
-  int m_failedItemsCount{0};
+  int64_t m_failedItemsCount{0};
 
   ImportDataFormat m_importDataFormat;
 

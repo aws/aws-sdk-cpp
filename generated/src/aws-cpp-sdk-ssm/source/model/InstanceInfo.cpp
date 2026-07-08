@@ -42,6 +42,10 @@ InstanceInfo& InstanceInfo::operator=(JsonView jsonValue) {
     m_managedStatus = ManagedStatusMapper::GetManagedStatusForName(jsonValue.GetString("ManagedStatus"));
     m_managedStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Name")) {
+    m_name = jsonValue.GetString("Name");
+    m_nameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("PlatformType")) {
     m_platformType = PlatformTypeMapper::GetPlatformTypeForName(jsonValue.GetString("PlatformType"));
     m_platformTypeHasBeenSet = true;
@@ -57,6 +61,26 @@ InstanceInfo& InstanceInfo::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
     m_resourceTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SourceType")) {
+    m_sourceType = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("SourceType"));
+    m_sourceTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SourceId")) {
+    m_sourceId = jsonValue.GetString("SourceId");
+    m_sourceIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SourceLocation")) {
+    m_sourceLocation = jsonValue.GetString("SourceLocation");
+    m_sourceLocationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AvailabilityZone")) {
+    m_availabilityZone = jsonValue.GetString("AvailabilityZone");
+    m_availabilityZoneHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AvailabilityZoneId")) {
+    m_availabilityZoneId = jsonValue.GetString("AvailabilityZoneId");
+    m_availabilityZoneIdHasBeenSet = true;
   }
   return *this;
 }
@@ -88,6 +112,10 @@ JsonValue InstanceInfo::Jsonize() const {
     payload.WithString("ManagedStatus", ManagedStatusMapper::GetNameForManagedStatus(m_managedStatus));
   }
 
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
+  }
+
   if (m_platformTypeHasBeenSet) {
     payload.WithString("PlatformType", PlatformTypeMapper::GetNameForPlatformType(m_platformType));
   }
@@ -102,6 +130,26 @@ JsonValue InstanceInfo::Jsonize() const {
 
   if (m_resourceTypeHasBeenSet) {
     payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
+  if (m_sourceTypeHasBeenSet) {
+    payload.WithString("SourceType", SourceTypeMapper::GetNameForSourceType(m_sourceType));
+  }
+
+  if (m_sourceIdHasBeenSet) {
+    payload.WithString("SourceId", m_sourceId);
+  }
+
+  if (m_sourceLocationHasBeenSet) {
+    payload.WithString("SourceLocation", m_sourceLocation);
+  }
+
+  if (m_availabilityZoneHasBeenSet) {
+    payload.WithString("AvailabilityZone", m_availabilityZone);
+  }
+
+  if (m_availabilityZoneIdHasBeenSet) {
+    payload.WithString("AvailabilityZoneId", m_availabilityZoneId);
   }
 
   return payload;

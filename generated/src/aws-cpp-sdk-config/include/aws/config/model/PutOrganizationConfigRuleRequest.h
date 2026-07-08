@@ -9,6 +9,7 @@
 #include <aws/config/model/OrganizationCustomPolicyRuleMetadata.h>
 #include <aws/config/model/OrganizationCustomRuleMetadata.h>
 #include <aws/config/model/OrganizationManagedRuleMetadata.h>
+#include <aws/config/model/Tag.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -146,6 +147,31 @@ class PutOrganizationConfigRuleRequest : public ConfigServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tags for the organization Config rule. Each tag consists of a key and an
+   * optional value, both of which you define.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  PutOrganizationConfigRuleRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  PutOrganizationConfigRuleRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_organizationConfigRuleName;
 
@@ -156,11 +182,14 @@ class PutOrganizationConfigRuleRequest : public ConfigServiceRequest {
   Aws::Vector<Aws::String> m_excludedAccounts;
 
   OrganizationCustomPolicyRuleMetadata m_organizationCustomPolicyRuleMetadata;
+
+  Aws::Vector<Tag> m_tags;
   bool m_organizationConfigRuleNameHasBeenSet = false;
   bool m_organizationManagedRuleMetadataHasBeenSet = false;
   bool m_organizationCustomRuleMetadataHasBeenSet = false;
   bool m_excludedAccountsHasBeenSet = false;
   bool m_organizationCustomPolicyRuleMetadataHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -123,6 +123,25 @@ class RecommenderUpdate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the recommender version associated with this update
+   * operation.</p>
+   */
+  inline const Aws::String& GetRecommenderVersionName() const { return m_recommenderVersionName; }
+  inline bool RecommenderVersionNameHasBeenSet() const { return m_recommenderVersionNameHasBeenSet; }
+  template <typename RecommenderVersionNameT = Aws::String>
+  void SetRecommenderVersionName(RecommenderVersionNameT&& value) {
+    m_recommenderVersionNameHasBeenSet = true;
+    m_recommenderVersionName = std::forward<RecommenderVersionNameT>(value);
+  }
+  template <typename RecommenderVersionNameT = Aws::String>
+  RecommenderUpdate& WithRecommenderVersionName(RecommenderVersionNameT&& value) {
+    SetRecommenderVersionName(std::forward<RecommenderVersionNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RecommenderConfig m_recommenderConfig;
 
@@ -133,11 +152,14 @@ class RecommenderUpdate {
   Aws::Utils::DateTime m_lastUpdatedAt{};
 
   Aws::String m_failureReason;
+
+  Aws::String m_recommenderVersionName;
   bool m_recommenderConfigHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
+  bool m_recommenderVersionNameHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -77,6 +77,60 @@ class AWS_ARTIFACT_API ArtifactClient : public Aws::Client::AWSJsonClient,
   virtual ~ArtifactClient();
 
   /**
+   * <p>Create a new compliance inquiry.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/CreateComplianceInquiry">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateComplianceInquiryOutcome CreateComplianceInquiry(const Model::CreateComplianceInquiryRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateComplianceInquiry that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateComplianceInquiryRequestT = Model::CreateComplianceInquiryRequest>
+  Model::CreateComplianceInquiryOutcomeCallable CreateComplianceInquiryCallable(const CreateComplianceInquiryRequestT& request) const {
+    return SubmitCallable(&ArtifactClient::CreateComplianceInquiry, request);
+  }
+
+  /**
+   * An Async wrapper for CreateComplianceInquiry that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateComplianceInquiryRequestT = Model::CreateComplianceInquiryRequest>
+  void CreateComplianceInquiryAsync(const CreateComplianceInquiryRequestT& request,
+                                    const CreateComplianceInquiryResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ArtifactClient::CreateComplianceInquiry, request, handler, context);
+  }
+
+  /**
+   * <p>Export a compliance inquiry report.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ExportComplianceInquiry">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ExportComplianceInquiryOutcome ExportComplianceInquiry(const Model::ExportComplianceInquiryRequest& request) const;
+
+  /**
+   * A Callable wrapper for ExportComplianceInquiry that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ExportComplianceInquiryRequestT = Model::ExportComplianceInquiryRequest>
+  Model::ExportComplianceInquiryOutcomeCallable ExportComplianceInquiryCallable(const ExportComplianceInquiryRequestT& request) const {
+    return SubmitCallable(&ArtifactClient::ExportComplianceInquiry, request);
+  }
+
+  /**
+   * An Async wrapper for ExportComplianceInquiry that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ExportComplianceInquiryRequestT = Model::ExportComplianceInquiryRequest>
+  void ExportComplianceInquiryAsync(const ExportComplianceInquiryRequestT& request,
+                                    const ExportComplianceInquiryResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ArtifactClient::ExportComplianceInquiry, request, handler, context);
+  }
+
+  /**
    * <p>Get the account settings for Artifact.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/GetAccountSettings">AWS
    * API Reference</a></p>
@@ -101,6 +155,36 @@ class AWS_ARTIFACT_API ArtifactClient : public Aws::Client::AWSJsonClient,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                const GetAccountSettingsRequestT& request = {}) const {
     return SubmitAsync(&ArtifactClient::GetAccountSettings, request, handler, context);
+  }
+
+  /**
+   * <p>Get the metadata for a single compliance inquiry.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/GetComplianceInquiryMetadata">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetComplianceInquiryMetadataOutcome GetComplianceInquiryMetadata(
+      const Model::GetComplianceInquiryMetadataRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetComplianceInquiryMetadata that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetComplianceInquiryMetadataRequestT = Model::GetComplianceInquiryMetadataRequest>
+  Model::GetComplianceInquiryMetadataOutcomeCallable GetComplianceInquiryMetadataCallable(
+      const GetComplianceInquiryMetadataRequestT& request) const {
+    return SubmitCallable(&ArtifactClient::GetComplianceInquiryMetadata, request);
+  }
+
+  /**
+   * An Async wrapper for GetComplianceInquiryMetadata that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetComplianceInquiryMetadataRequestT = Model::GetComplianceInquiryMetadataRequest>
+  void GetComplianceInquiryMetadataAsync(const GetComplianceInquiryMetadataRequestT& request,
+                                         const GetComplianceInquiryMetadataResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ArtifactClient::GetComplianceInquiryMetadata, request, handler, context);
   }
 
   /**
@@ -179,6 +263,62 @@ class AWS_ARTIFACT_API ArtifactClient : public Aws::Client::AWSJsonClient,
   void GetTermForReportAsync(const GetTermForReportRequestT& request, const GetTermForReportResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ArtifactClient::GetTermForReport, request, handler, context);
+  }
+
+  /**
+   * <p>List available compliance inquiries.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListComplianceInquiries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListComplianceInquiriesOutcome ListComplianceInquiries(const Model::ListComplianceInquiriesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListComplianceInquiries that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListComplianceInquiriesRequestT = Model::ListComplianceInquiriesRequest>
+  Model::ListComplianceInquiriesOutcomeCallable ListComplianceInquiriesCallable(const ListComplianceInquiriesRequestT& request = {}) const {
+    return SubmitCallable(&ArtifactClient::ListComplianceInquiries, request);
+  }
+
+  /**
+   * An Async wrapper for ListComplianceInquiries that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListComplianceInquiriesRequestT = Model::ListComplianceInquiriesRequest>
+  void ListComplianceInquiriesAsync(const ListComplianceInquiriesResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const ListComplianceInquiriesRequestT& request = {}) const {
+    return SubmitAsync(&ArtifactClient::ListComplianceInquiries, request, handler, context);
+  }
+
+  /**
+   * <p>List queries within a compliance inquiry.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListComplianceInquiryQueries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListComplianceInquiryQueriesOutcome ListComplianceInquiryQueries(
+      const Model::ListComplianceInquiryQueriesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListComplianceInquiryQueries that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListComplianceInquiryQueriesRequestT = Model::ListComplianceInquiryQueriesRequest>
+  Model::ListComplianceInquiryQueriesOutcomeCallable ListComplianceInquiryQueriesCallable(
+      const ListComplianceInquiryQueriesRequestT& request) const {
+    return SubmitCallable(&ArtifactClient::ListComplianceInquiryQueries, request);
+  }
+
+  /**
+   * An Async wrapper for ListComplianceInquiryQueries that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListComplianceInquiryQueriesRequestT = Model::ListComplianceInquiryQueriesRequest>
+  void ListComplianceInquiryQueriesAsync(const ListComplianceInquiryQueriesRequestT& request,
+                                         const ListComplianceInquiryQueriesResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ArtifactClient::ListComplianceInquiryQueries, request, handler, context);
   }
 
   /**
@@ -263,6 +403,32 @@ class AWS_ARTIFACT_API ArtifactClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>List tags for a resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListTagsForResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+  Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const {
+    return SubmitCallable(&ArtifactClient::ListTagsForResource, request);
+  }
+
+  /**
+   * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+  void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ArtifactClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
    * <p>Put the account settings for Artifact.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/PutAccountSettings">AWS
    * API Reference</a></p>
@@ -287,6 +453,56 @@ class AWS_ARTIFACT_API ArtifactClient : public Aws::Client::AWSJsonClient,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                const PutAccountSettingsRequestT& request = {}) const {
     return SubmitAsync(&ArtifactClient::PutAccountSettings, request, handler, context);
+  }
+
+  /**
+   * <p>Add tags to a resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/TagResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename TagResourceRequestT = Model::TagResourceRequest>
+  Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const {
+    return SubmitCallable(&ArtifactClient::TagResource, request);
+  }
+
+  /**
+   * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename TagResourceRequestT = Model::TagResourceRequest>
+  void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ArtifactClient::TagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Remove tags from a resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/UntagResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UntagResourceRequestT = Model::UntagResourceRequest>
+  Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const {
+    return SubmitCallable(&ArtifactClient::UntagResource, request);
+  }
+
+  /**
+   * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UntagResourceRequestT = Model::UntagResourceRequest>
+  void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ArtifactClient::UntagResource, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

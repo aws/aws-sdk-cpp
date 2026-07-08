@@ -92,6 +92,7 @@
 #include <aws/logs/model/GetQueryResultsRequest.h>
 #include <aws/logs/model/GetScheduledQueryHistoryRequest.h>
 #include <aws/logs/model/GetScheduledQueryRequest.h>
+#include <aws/logs/model/GetStorageTierPolicyRequest.h>
 #include <aws/logs/model/GetTransformerRequest.h>
 #include <aws/logs/model/ListAggregateLogGroupSummariesRequest.h>
 #include <aws/logs/model/ListAnomaliesRequest.h>
@@ -119,6 +120,7 @@
 #include <aws/logs/model/PutQueryDefinitionRequest.h>
 #include <aws/logs/model/PutResourcePolicyRequest.h>
 #include <aws/logs/model/PutRetentionPolicyRequest.h>
+#include <aws/logs/model/PutStorageTierPolicyRequest.h>
 #include <aws/logs/model/PutSubscriptionFilterRequest.h>
 #include <aws/logs/model/PutSyslogConfigurationRequest.h>
 #include <aws/logs/model/PutTransformerRequest.h>
@@ -747,6 +749,12 @@ GetScheduledQueryHistoryOutcome CloudWatchLogsClient::GetScheduledQueryHistory(c
                             : GetScheduledQueryHistoryOutcome(std::move(result.GetError()));
 }
 
+GetStorageTierPolicyOutcome CloudWatchLogsClient::GetStorageTierPolicy(const GetStorageTierPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetStorageTierPolicyOutcome(result.GetResultWithOwnership())
+                            : GetStorageTierPolicyOutcome(std::move(result.GetError()));
+}
+
 GetTransformerOutcome CloudWatchLogsClient::GetTransformer(const GetTransformerRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetTransformerOutcome(result.GetResultWithOwnership()) : GetTransformerOutcome(std::move(result.GetError()));
@@ -905,6 +913,12 @@ PutRetentionPolicyOutcome CloudWatchLogsClient::PutRetentionPolicy(const PutRete
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutRetentionPolicyOutcome(result.GetResultWithOwnership())
                             : PutRetentionPolicyOutcome(std::move(result.GetError()));
+}
+
+PutStorageTierPolicyOutcome CloudWatchLogsClient::PutStorageTierPolicy(const PutStorageTierPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutStorageTierPolicyOutcome(result.GetResultWithOwnership())
+                            : PutStorageTierPolicyOutcome(std::move(result.GetError()));
 }
 
 PutSubscriptionFilterOutcome CloudWatchLogsClient::PutSubscriptionFilter(const PutSubscriptionFilterRequest& request) const {

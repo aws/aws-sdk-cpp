@@ -74,9 +74,11 @@
 #include <aws/opensearch/model/GetDirectQueryDataSourceRequest.h>
 #include <aws/opensearch/model/GetDomainMaintenanceStatusRequest.h>
 #include <aws/opensearch/model/GetIndexRequest.h>
+#include <aws/opensearch/model/GetMigrationRequest.h>
 #include <aws/opensearch/model/GetPackageVersionHistoryRequest.h>
 #include <aws/opensearch/model/GetUpgradeHistoryRequest.h>
 #include <aws/opensearch/model/GetUpgradeStatusRequest.h>
+#include <aws/opensearch/model/InsightFeedbackRequest.h>
 #include <aws/opensearch/model/ListApplicationsRequest.h>
 #include <aws/opensearch/model/ListDataSourceAttachmentsRequest.h>
 #include <aws/opensearch/model/ListDataSourcesRequest.h>
@@ -86,6 +88,7 @@
 #include <aws/opensearch/model/ListDomainsForPackageRequest.h>
 #include <aws/opensearch/model/ListInsightsRequest.h>
 #include <aws/opensearch/model/ListInstanceTypeDetailsRequest.h>
+#include <aws/opensearch/model/ListMigrationsRequest.h>
 #include <aws/opensearch/model/ListPackagesForDomainRequest.h>
 #include <aws/opensearch/model/ListScheduledActionsRequest.h>
 #include <aws/opensearch/model/ListTagsRequest.h>
@@ -101,6 +104,7 @@
 #include <aws/opensearch/model/RevokeVpcEndpointAccessRequest.h>
 #include <aws/opensearch/model/RollbackServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/StartDomainMaintenanceRequest.h>
+#include <aws/opensearch/model/StartMigrationRequest.h>
 #include <aws/opensearch/model/StartServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/UpdateApplicationRequest.h>
 #include <aws/opensearch/model/UpdateDataSourceRequest.h>
@@ -1182,6 +1186,23 @@ GetIndexOutcome OpenSearchServiceClient::GetIndex(const GetIndexRequest& request
   return result.IsSuccess() ? GetIndexOutcome(result.GetResultWithOwnership()) : GetIndexOutcome(std::move(result.GetError()));
 }
 
+GetMigrationOutcome OpenSearchServiceClient::GetMigration(const GetMigrationRequest& request) const {
+  if (!request.MigrationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetMigration", "Required field: MigrationId, is not set");
+    return GetMigrationOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MigrationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/app-migrations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMigrationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMigrationOutcome(result.GetResultWithOwnership()) : GetMigrationOutcome(std::move(result.GetError()));
+}
+
 GetPackageVersionHistoryOutcome OpenSearchServiceClient::GetPackageVersionHistory(const GetPackageVersionHistoryRequest& request) const {
   if (!request.PackageIDHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetPackageVersionHistory", "Required field: PackageID, is not set");
@@ -1237,6 +1258,17 @@ GetUpgradeStatusOutcome OpenSearchServiceClient::GetUpgradeStatus(const GetUpgra
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetUpgradeStatusOutcome(result.GetResultWithOwnership())
                             : GetUpgradeStatusOutcome(std::move(result.GetError()));
+}
+
+InsightFeedbackOutcome OpenSearchServiceClient::InsightFeedback(const InsightFeedbackRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/insight-feedback");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InsightFeedbackOutcome(result.GetResultWithOwnership())
+                            : InsightFeedbackOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome OpenSearchServiceClient::ListApplications(const ListApplicationsRequest& request) const {
@@ -1375,6 +1407,22 @@ ListInstanceTypeDetailsOutcome OpenSearchServiceClient::ListInstanceTypeDetails(
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListInstanceTypeDetailsOutcome(result.GetResultWithOwnership())
                             : ListInstanceTypeDetailsOutcome(std::move(result.GetError()));
+}
+
+ListMigrationsOutcome OpenSearchServiceClient::ListMigrations(const ListMigrationsRequest& request) const {
+  if (!request.ApplicationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListMigrations", "Required field: ApplicationId, is not set");
+    return ListMigrationsOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/app-migrations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMigrationsOutcome(result.GetResultWithOwnership()) : ListMigrationsOutcome(std::move(result.GetError()));
 }
 
 ListPackagesForDomainOutcome OpenSearchServiceClient::ListPackagesForDomain(const ListPackagesForDomainRequest& request) const {
@@ -1610,6 +1658,16 @@ StartDomainMaintenanceOutcome OpenSearchServiceClient::StartDomainMaintenance(co
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartDomainMaintenanceOutcome(result.GetResultWithOwnership())
                             : StartDomainMaintenanceOutcome(std::move(result.GetError()));
+}
+
+StartMigrationOutcome OpenSearchServiceClient::StartMigration(const StartMigrationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/app-migrations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMigrationOutcome(result.GetResultWithOwnership()) : StartMigrationOutcome(std::move(result.GetError()));
 }
 
 StartServiceSoftwareUpdateOutcome OpenSearchServiceClient::StartServiceSoftwareUpdate(

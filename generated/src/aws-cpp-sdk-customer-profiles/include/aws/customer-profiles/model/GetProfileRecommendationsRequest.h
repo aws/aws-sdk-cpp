@@ -10,6 +10,7 @@
 #include <aws/customer-profiles/CustomerProfilesRequest.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/customer-profiles/model/MetadataConfig.h>
+#include <aws/customer-profiles/model/RecommendationDiversityConfig.h>
 #include <aws/customer-profiles/model/RecommenderFilter.h>
 #include <aws/customer-profiles/model/RecommenderPromotionalFilter.h>
 
@@ -227,6 +228,26 @@ class GetProfileRecommendationsRequest : public CustomerProfilesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Runtime diversity configuration for this request. Enables diversity-aware
+   * recommendations and optionally supplies values for placeholder-based diversity
+   * caps configured on the recommender.</p>
+   */
+  inline const RecommendationDiversityConfig& GetDiversityConfig() const { return m_diversityConfig; }
+  inline bool DiversityConfigHasBeenSet() const { return m_diversityConfigHasBeenSet; }
+  template <typename DiversityConfigT = RecommendationDiversityConfig>
+  void SetDiversityConfig(DiversityConfigT&& value) {
+    m_diversityConfigHasBeenSet = true;
+    m_diversityConfig = std::forward<DiversityConfigT>(value);
+  }
+  template <typename DiversityConfigT = RecommendationDiversityConfig>
+  GetProfileRecommendationsRequest& WithDiversityConfig(DiversityConfigT&& value) {
+    SetDiversityConfig(std::forward<DiversityConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
@@ -245,6 +266,8 @@ class GetProfileRecommendationsRequest : public CustomerProfilesRequest {
   int m_maxResults{0};
 
   MetadataConfig m_metadataConfig;
+
+  RecommendationDiversityConfig m_diversityConfig;
   bool m_domainNameHasBeenSet = false;
   bool m_profileIdHasBeenSet = false;
   bool m_recommenderNameHasBeenSet = false;
@@ -254,6 +277,7 @@ class GetProfileRecommendationsRequest : public CustomerProfilesRequest {
   bool m_candidateIdsHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_metadataConfigHasBeenSet = false;
+  bool m_diversityConfigHasBeenSet = false;
 };
 
 }  // namespace Model

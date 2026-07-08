@@ -14,6 +14,7 @@
 #include <aws/config/model/DeleteConfigurationAggregatorRequest.h>
 #include <aws/config/model/DeleteConfigurationRecorderRequest.h>
 #include <aws/config/model/DeleteConformancePackRequest.h>
+#include <aws/config/model/DeleteConnectorRequest.h>
 #include <aws/config/model/DeleteDeliveryChannelRequest.h>
 #include <aws/config/model/DeleteEvaluationResultsRequest.h>
 #include <aws/config/model/DeleteOrganizationConfigRuleRequest.h>
@@ -63,6 +64,7 @@
 #include <aws/config/model/GetComplianceSummaryByResourceTypeRequest.h>
 #include <aws/config/model/GetConformancePackComplianceDetailsRequest.h>
 #include <aws/config/model/GetConformancePackComplianceSummaryRequest.h>
+#include <aws/config/model/GetConnectorRequest.h>
 #include <aws/config/model/GetCustomRulePolicyRequest.h>
 #include <aws/config/model/GetDiscoveredResourceCountsRequest.h>
 #include <aws/config/model/GetOrganizationConfigRuleDetailedStatusRequest.h>
@@ -74,6 +76,7 @@
 #include <aws/config/model/ListAggregateDiscoveredResourcesRequest.h>
 #include <aws/config/model/ListConfigurationRecordersRequest.h>
 #include <aws/config/model/ListConformancePackComplianceScoresRequest.h>
+#include <aws/config/model/ListConnectorsRequest.h>
 #include <aws/config/model/ListDiscoveredResourcesRequest.h>
 #include <aws/config/model/ListResourceEvaluationsRequest.h>
 #include <aws/config/model/ListStoredQueriesRequest.h>
@@ -83,6 +86,7 @@
 #include <aws/config/model/PutConfigurationAggregatorRequest.h>
 #include <aws/config/model/PutConfigurationRecorderRequest.h>
 #include <aws/config/model/PutConformancePackRequest.h>
+#include <aws/config/model/PutConnectorRequest.h>
 #include <aws/config/model/PutDeliveryChannelRequest.h>
 #include <aws/config/model/PutEvaluationsRequest.h>
 #include <aws/config/model/PutExternalEvaluationRequest.h>
@@ -94,6 +98,7 @@
 #include <aws/config/model/PutRetentionConfigurationRequest.h>
 #include <aws/config/model/PutServiceLinkedConfigurationRecorderRequest.h>
 #include <aws/config/model/PutStoredQueryRequest.h>
+#include <aws/config/model/PutThirdPartyServiceLinkedConfigurationRecorderRequest.h>
 #include <aws/config/model/SelectAggregateResourceConfigRequest.h>
 #include <aws/config/model/SelectResourceConfigRequest.h>
 #include <aws/config/model/StartConfigRulesEvaluationRequest.h>
@@ -319,6 +324,12 @@ DeleteConformancePackOutcome ConfigServiceClient::DeleteConformancePack(const De
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteConformancePackOutcome(result.GetResultWithOwnership())
                             : DeleteConformancePackOutcome(std::move(result.GetError()));
+}
+
+DeleteConnectorOutcome ConfigServiceClient::DeleteConnector(const DeleteConnectorRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectorOutcome(std::move(result.GetError()));
 }
 
 DeleteDeliveryChannelOutcome ConfigServiceClient::DeleteDeliveryChannel(const DeleteDeliveryChannelRequest& request) const {
@@ -654,6 +665,11 @@ GetConformancePackComplianceSummaryOutcome ConfigServiceClient::GetConformancePa
                             : GetConformancePackComplianceSummaryOutcome(std::move(result.GetError()));
 }
 
+GetConnectorOutcome ConfigServiceClient::GetConnector(const GetConnectorRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConnectorOutcome(result.GetResultWithOwnership()) : GetConnectorOutcome(std::move(result.GetError()));
+}
+
 GetCustomRulePolicyOutcome ConfigServiceClient::GetCustomRulePolicy(const GetCustomRulePolicyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetCustomRulePolicyOutcome(result.GetResultWithOwnership())
@@ -726,6 +742,11 @@ ListConformancePackComplianceScoresOutcome ConfigServiceClient::ListConformanceP
                             : ListConformancePackComplianceScoresOutcome(std::move(result.GetError()));
 }
 
+ListConnectorsOutcome ConfigServiceClient::ListConnectors(const ListConnectorsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectorsOutcome(result.GetResultWithOwnership()) : ListConnectorsOutcome(std::move(result.GetError()));
+}
+
 ListDiscoveredResourcesOutcome ConfigServiceClient::ListDiscoveredResources(const ListDiscoveredResourcesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListDiscoveredResourcesOutcome(result.GetResultWithOwnership())
@@ -778,6 +799,11 @@ PutConformancePackOutcome ConfigServiceClient::PutConformancePack(const PutConfo
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutConformancePackOutcome(result.GetResultWithOwnership())
                             : PutConformancePackOutcome(std::move(result.GetError()));
+}
+
+PutConnectorOutcome ConfigServiceClient::PutConnector(const PutConnectorRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutConnectorOutcome(result.GetResultWithOwnership()) : PutConnectorOutcome(std::move(result.GetError()));
 }
 
 PutDeliveryChannelOutcome ConfigServiceClient::PutDeliveryChannel(const PutDeliveryChannelRequest& request) const {
@@ -845,6 +871,13 @@ PutServiceLinkedConfigurationRecorderOutcome ConfigServiceClient::PutServiceLink
 PutStoredQueryOutcome ConfigServiceClient::PutStoredQuery(const PutStoredQueryRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutStoredQueryOutcome(result.GetResultWithOwnership()) : PutStoredQueryOutcome(std::move(result.GetError()));
+}
+
+PutThirdPartyServiceLinkedConfigurationRecorderOutcome ConfigServiceClient::PutThirdPartyServiceLinkedConfigurationRecorder(
+    const PutThirdPartyServiceLinkedConfigurationRecorderRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutThirdPartyServiceLinkedConfigurationRecorderOutcome(result.GetResultWithOwnership())
+                            : PutThirdPartyServiceLinkedConfigurationRecorderOutcome(std::move(result.GetError()));
 }
 
 SelectAggregateResourceConfigOutcome ConfigServiceClient::SelectAggregateResourceConfig(

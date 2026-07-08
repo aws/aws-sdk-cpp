@@ -22,6 +22,14 @@ GetFederationTokenResult::GetFederationTokenResult(const Aws::AmazonWebServiceRe
 GetFederationTokenResult& GetFederationTokenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("UserId")) {
+    m_userId = jsonValue.GetString("UserId");
+    m_userIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UserArn")) {
+    m_userArn = jsonValue.GetString("UserArn");
+    m_userArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Credentials")) {
     m_credentials = jsonValue.GetObject("Credentials");
     m_credentialsHasBeenSet = true;
@@ -29,14 +37,6 @@ GetFederationTokenResult& GetFederationTokenResult::operator=(const Aws::AmazonW
   if (jsonValue.ValueExists("SignInUrl")) {
     m_signInUrl = jsonValue.GetString("SignInUrl");
     m_signInUrlHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("UserArn")) {
-    m_userArn = jsonValue.GetString("UserArn");
-    m_userArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("UserId")) {
-    m_userId = jsonValue.GetString("UserId");
-    m_userIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

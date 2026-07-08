@@ -42,4 +42,10 @@ void ListConnectorsV2Request::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("ConnectorStatus", ss.str());
     ss.str("");
   }
+
+  if (m_enablementStatusHasBeenSet) {
+    ss << EnablementStatusMapper::GetNameForEnablementStatus(m_enablementStatus);
+    uri.AddQueryStringParameter("EnablementStatus", ss.str());
+    ss.str("");
+  }
 }

@@ -18,8 +18,10 @@
 #include <aws/opensearch/model/DeploymentStrategyOptions.h>
 #include <aws/opensearch/model/DomainEndpointOptions.h>
 #include <aws/opensearch/model/DomainProcessingStatusType.h>
+#include <aws/opensearch/model/DomainUseCase.h>
 #include <aws/opensearch/model/EBSOptions.h>
 #include <aws/opensearch/model/EncryptionAtRestOptions.h>
+#include <aws/opensearch/model/EngineMode.h>
 #include <aws/opensearch/model/IPAddressType.h>
 #include <aws/opensearch/model/IdentityCenterOptions.h>
 #include <aws/opensearch/model/LogPublishingOption.h>
@@ -743,6 +745,38 @@ class DomainStatus {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The primary use case for the domain.</p>
+   */
+  inline DomainUseCase GetUseCase() const { return m_useCase; }
+  inline bool UseCaseHasBeenSet() const { return m_useCaseHasBeenSet; }
+  inline void SetUseCase(DomainUseCase value) {
+    m_useCaseHasBeenSet = true;
+    m_useCase = value;
+  }
+  inline DomainStatus& WithUseCase(DomainUseCase value) {
+    SetUseCase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The engine mode for the domain.</p>
+   */
+  inline EngineMode GetEngineMode() const { return m_engineMode; }
+  inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
+  inline void SetEngineMode(EngineMode value) {
+    m_engineModeHasBeenSet = true;
+    m_engineMode = value;
+  }
+  inline DomainStatus& WithEngineMode(EngineMode value) {
+    SetEngineMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainId;
 
@@ -815,6 +849,10 @@ class DomainStatus {
   DeploymentStrategyOptions m_deploymentStrategyOptions;
 
   AutomatedSnapshotPauseOptions m_automatedSnapshotPauseOptions;
+
+  DomainUseCase m_useCase{DomainUseCase::NOT_SET};
+
+  EngineMode m_engineMode{EngineMode::NOT_SET};
   bool m_domainIdHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
@@ -851,6 +889,8 @@ class DomainStatus {
   bool m_aIMLOptionsHasBeenSet = false;
   bool m_deploymentStrategyOptionsHasBeenSet = false;
   bool m_automatedSnapshotPauseOptionsHasBeenSet = false;
+  bool m_useCaseHasBeenSet = false;
+  bool m_engineModeHasBeenSet = false;
 };
 
 }  // namespace Model

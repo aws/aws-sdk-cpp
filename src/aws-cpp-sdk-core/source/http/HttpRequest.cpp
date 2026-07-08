@@ -42,6 +42,8 @@ namespace Aws
         const char AWS_CHUNKED_VALUE[] = "aws-chunked";
         const char X_AMZN_TRACE_ID_HEADER[] = "X-Amzn-Trace-Id";
         const char ALLOCATION_TAG[] = "HttpRequestConversion";
+        const char EXPECT_HEADER[] = "expect";
+        const char EXPECT_100_CONTINUE_VALUE[] = "100-continue";
         const char X_AMZN_ERROR_TYPE[] = "x-amzn-errortype";
         const char X_AMZN_QUERY_MODE[] = "x-amzn-query-mode";
         std::shared_ptr<Aws::Crt::Http::HttpRequest> HttpRequest::ToCrtHttpRequest()

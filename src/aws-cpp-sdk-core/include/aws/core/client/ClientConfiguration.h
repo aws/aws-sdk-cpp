@@ -352,13 +352,16 @@ namespace Aws
             FollowRedirectsPolicy followRedirects;
 
             /**
-             * Only works for Curl http client.
-             * Curl will by default add "Expect: 100-Continue" header in a Http request so as to avoid sending http
-             * payload to wire if server respond error immediately after receiving the header.
-             * Set this option to true will tell Curl to send http request header and body together.
-             * This can save one round-trip time and especially useful when the payload is small and network latency is more important.
-             * But be careful when Http request has large payload such S3 PutObject. You don't want to spend long time sending a large payload just getting a error response for server.
-             * The default value will be false.
+             * When set to true, the SDK will NOT add "Expect: 100-Continue" header to any HTTP request,
+             * including streaming operations like S3 PutObject or UploadPart.
+             *
+             * By default (false), the SDK automatically adds "Expect: 100-Continue" only to streaming
+             * requests (operations with streaming input bodies). This allows the server to reject the
+             * request before the client sends a potentially large payload, saving bandwidth on failures.
+             * Non-streaming requests never receive the Expect header regardless of this setting.
+             *
+             * Set to true if you are going through a proxy or middleware that does not correctly
+             * handle the Expect: 100-Continue mechanism.
              */
             bool disableExpectHeader = false;
 

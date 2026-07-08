@@ -7,6 +7,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/EnablementStatus.h>
 
 #include <utility>
 
@@ -28,6 +29,21 @@ class DeleteConnectorV2Result {
   AWS_SECURITYHUB_API DeleteConnectorV2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
+  /**
+   * <p>The enablement status of the connector after deletion.</p>
+   */
+  inline EnablementStatus GetEnablementStatus() const { return m_enablementStatus; }
+  inline void SetEnablementStatus(EnablementStatus value) {
+    m_enablementStatusHasBeenSet = true;
+    m_enablementStatus = value;
+  }
+  inline DeleteConnectorV2Result& WithEnablementStatus(EnablementStatus value) {
+    SetEnablementStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -44,8 +60,11 @@ class DeleteConnectorV2Result {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  EnablementStatus m_enablementStatus{EnablementStatus::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_enablementStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

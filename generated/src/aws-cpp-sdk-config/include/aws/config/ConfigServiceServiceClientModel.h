@@ -25,6 +25,7 @@
 #include <aws/config/model/DeleteEvaluationResultsResult.h>
 #include <aws/config/model/DeleteRemediationConfigurationResult.h>
 #include <aws/config/model/DeleteRemediationExceptionsResult.h>
+#include <aws/config/model/DeleteServiceLinkedConfigurationRecorderRequest.h>
 #include <aws/config/model/DeleteServiceLinkedConfigurationRecorderResult.h>
 #include <aws/config/model/DeleteStoredQueryResult.h>
 #include <aws/config/model/DeliverConfigSnapshotResult.h>
@@ -86,6 +87,7 @@
 #include <aws/config/model/GetComplianceSummaryByResourceTypeResult.h>
 #include <aws/config/model/GetConformancePackComplianceDetailsResult.h>
 #include <aws/config/model/GetConformancePackComplianceSummaryResult.h>
+#include <aws/config/model/GetConnectorResult.h>
 #include <aws/config/model/GetCustomRulePolicyRequest.h>
 #include <aws/config/model/GetCustomRulePolicyResult.h>
 #include <aws/config/model/GetDiscoveredResourceCountsRequest.h>
@@ -101,6 +103,8 @@
 #include <aws/config/model/ListConfigurationRecordersResult.h>
 #include <aws/config/model/ListConformancePackComplianceScoresRequest.h>
 #include <aws/config/model/ListConformancePackComplianceScoresResult.h>
+#include <aws/config/model/ListConnectorsRequest.h>
+#include <aws/config/model/ListConnectorsResult.h>
 #include <aws/config/model/ListDiscoveredResourcesResult.h>
 #include <aws/config/model/ListResourceEvaluationsRequest.h>
 #include <aws/config/model/ListResourceEvaluationsResult.h>
@@ -110,6 +114,7 @@
 #include <aws/config/model/PutAggregationAuthorizationResult.h>
 #include <aws/config/model/PutConfigurationAggregatorResult.h>
 #include <aws/config/model/PutConformancePackResult.h>
+#include <aws/config/model/PutConnectorResult.h>
 #include <aws/config/model/PutEvaluationsResult.h>
 #include <aws/config/model/PutExternalEvaluationResult.h>
 #include <aws/config/model/PutOrganizationConfigRuleResult.h>
@@ -119,6 +124,7 @@
 #include <aws/config/model/PutRetentionConfigurationResult.h>
 #include <aws/config/model/PutServiceLinkedConfigurationRecorderResult.h>
 #include <aws/config/model/PutStoredQueryResult.h>
+#include <aws/config/model/PutThirdPartyServiceLinkedConfigurationRecorderResult.h>
 #include <aws/config/model/SelectAggregateResourceConfigResult.h>
 #include <aws/config/model/SelectResourceConfigResult.h>
 #include <aws/config/model/StartConfigRulesEvaluationRequest.h>
@@ -167,6 +173,7 @@ class DeleteConfigRuleRequest;
 class DeleteConfigurationAggregatorRequest;
 class DeleteConfigurationRecorderRequest;
 class DeleteConformancePackRequest;
+class DeleteConnectorRequest;
 class DeleteDeliveryChannelRequest;
 class DeleteEvaluationResultsRequest;
 class DeleteOrganizationConfigRuleRequest;
@@ -216,6 +223,7 @@ class GetComplianceSummaryByConfigRuleRequest;
 class GetComplianceSummaryByResourceTypeRequest;
 class GetConformancePackComplianceDetailsRequest;
 class GetConformancePackComplianceSummaryRequest;
+class GetConnectorRequest;
 class GetCustomRulePolicyRequest;
 class GetDiscoveredResourceCountsRequest;
 class GetOrganizationConfigRuleDetailedStatusRequest;
@@ -227,6 +235,7 @@ class GetStoredQueryRequest;
 class ListAggregateDiscoveredResourcesRequest;
 class ListConfigurationRecordersRequest;
 class ListConformancePackComplianceScoresRequest;
+class ListConnectorsRequest;
 class ListDiscoveredResourcesRequest;
 class ListResourceEvaluationsRequest;
 class ListStoredQueriesRequest;
@@ -236,6 +245,7 @@ class PutConfigRuleRequest;
 class PutConfigurationAggregatorRequest;
 class PutConfigurationRecorderRequest;
 class PutConformancePackRequest;
+class PutConnectorRequest;
 class PutDeliveryChannelRequest;
 class PutEvaluationsRequest;
 class PutExternalEvaluationRequest;
@@ -247,6 +257,7 @@ class PutResourceConfigRequest;
 class PutRetentionConfigurationRequest;
 class PutServiceLinkedConfigurationRecorderRequest;
 class PutStoredQueryRequest;
+class PutThirdPartyServiceLinkedConfigurationRecorderRequest;
 class SelectAggregateResourceConfigRequest;
 class SelectResourceConfigRequest;
 class StartConfigRulesEvaluationRequest;
@@ -267,6 +278,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteConfigRuleO
 typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteConfigurationAggregatorOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteConfigurationRecorderOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteConformancePackOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteConnectorOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteDeliveryChannelOutcome;
 typedef Aws::Utils::Outcome<DeleteEvaluationResultsResult, ConfigServiceError> DeleteEvaluationResultsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteOrganizationConfigRuleOutcome;
@@ -324,6 +336,7 @@ typedef Aws::Utils::Outcome<GetComplianceSummaryByConfigRuleResult, ConfigServic
 typedef Aws::Utils::Outcome<GetComplianceSummaryByResourceTypeResult, ConfigServiceError> GetComplianceSummaryByResourceTypeOutcome;
 typedef Aws::Utils::Outcome<GetConformancePackComplianceDetailsResult, ConfigServiceError> GetConformancePackComplianceDetailsOutcome;
 typedef Aws::Utils::Outcome<GetConformancePackComplianceSummaryResult, ConfigServiceError> GetConformancePackComplianceSummaryOutcome;
+typedef Aws::Utils::Outcome<GetConnectorResult, ConfigServiceError> GetConnectorOutcome;
 typedef Aws::Utils::Outcome<GetCustomRulePolicyResult, ConfigServiceError> GetCustomRulePolicyOutcome;
 typedef Aws::Utils::Outcome<GetDiscoveredResourceCountsResult, ConfigServiceError> GetDiscoveredResourceCountsOutcome;
 typedef Aws::Utils::Outcome<GetOrganizationConfigRuleDetailedStatusResult, ConfigServiceError>
@@ -337,6 +350,7 @@ typedef Aws::Utils::Outcome<GetStoredQueryResult, ConfigServiceError> GetStoredQ
 typedef Aws::Utils::Outcome<ListAggregateDiscoveredResourcesResult, ConfigServiceError> ListAggregateDiscoveredResourcesOutcome;
 typedef Aws::Utils::Outcome<ListConfigurationRecordersResult, ConfigServiceError> ListConfigurationRecordersOutcome;
 typedef Aws::Utils::Outcome<ListConformancePackComplianceScoresResult, ConfigServiceError> ListConformancePackComplianceScoresOutcome;
+typedef Aws::Utils::Outcome<ListConnectorsResult, ConfigServiceError> ListConnectorsOutcome;
 typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, ConfigServiceError> ListDiscoveredResourcesOutcome;
 typedef Aws::Utils::Outcome<ListResourceEvaluationsResult, ConfigServiceError> ListResourceEvaluationsOutcome;
 typedef Aws::Utils::Outcome<ListStoredQueriesResult, ConfigServiceError> ListStoredQueriesOutcome;
@@ -346,6 +360,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutConfigRuleOutc
 typedef Aws::Utils::Outcome<PutConfigurationAggregatorResult, ConfigServiceError> PutConfigurationAggregatorOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutConfigurationRecorderOutcome;
 typedef Aws::Utils::Outcome<PutConformancePackResult, ConfigServiceError> PutConformancePackOutcome;
+typedef Aws::Utils::Outcome<PutConnectorResult, ConfigServiceError> PutConnectorOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutDeliveryChannelOutcome;
 typedef Aws::Utils::Outcome<PutEvaluationsResult, ConfigServiceError> PutEvaluationsOutcome;
 typedef Aws::Utils::Outcome<PutExternalEvaluationResult, ConfigServiceError> PutExternalEvaluationOutcome;
@@ -357,6 +372,8 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutResourceConfig
 typedef Aws::Utils::Outcome<PutRetentionConfigurationResult, ConfigServiceError> PutRetentionConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutServiceLinkedConfigurationRecorderResult, ConfigServiceError> PutServiceLinkedConfigurationRecorderOutcome;
 typedef Aws::Utils::Outcome<PutStoredQueryResult, ConfigServiceError> PutStoredQueryOutcome;
+typedef Aws::Utils::Outcome<PutThirdPartyServiceLinkedConfigurationRecorderResult, ConfigServiceError>
+    PutThirdPartyServiceLinkedConfigurationRecorderOutcome;
 typedef Aws::Utils::Outcome<SelectAggregateResourceConfigResult, ConfigServiceError> SelectAggregateResourceConfigOutcome;
 typedef Aws::Utils::Outcome<SelectResourceConfigResult, ConfigServiceError> SelectResourceConfigOutcome;
 typedef Aws::Utils::Outcome<StartConfigRulesEvaluationResult, ConfigServiceError> StartConfigRulesEvaluationOutcome;
@@ -377,6 +394,7 @@ typedef std::future<DeleteConfigRuleOutcome> DeleteConfigRuleOutcomeCallable;
 typedef std::future<DeleteConfigurationAggregatorOutcome> DeleteConfigurationAggregatorOutcomeCallable;
 typedef std::future<DeleteConfigurationRecorderOutcome> DeleteConfigurationRecorderOutcomeCallable;
 typedef std::future<DeleteConformancePackOutcome> DeleteConformancePackOutcomeCallable;
+typedef std::future<DeleteConnectorOutcome> DeleteConnectorOutcomeCallable;
 typedef std::future<DeleteDeliveryChannelOutcome> DeleteDeliveryChannelOutcomeCallable;
 typedef std::future<DeleteEvaluationResultsOutcome> DeleteEvaluationResultsOutcomeCallable;
 typedef std::future<DeleteOrganizationConfigRuleOutcome> DeleteOrganizationConfigRuleOutcomeCallable;
@@ -426,6 +444,7 @@ typedef std::future<GetComplianceSummaryByConfigRuleOutcome> GetComplianceSummar
 typedef std::future<GetComplianceSummaryByResourceTypeOutcome> GetComplianceSummaryByResourceTypeOutcomeCallable;
 typedef std::future<GetConformancePackComplianceDetailsOutcome> GetConformancePackComplianceDetailsOutcomeCallable;
 typedef std::future<GetConformancePackComplianceSummaryOutcome> GetConformancePackComplianceSummaryOutcomeCallable;
+typedef std::future<GetConnectorOutcome> GetConnectorOutcomeCallable;
 typedef std::future<GetCustomRulePolicyOutcome> GetCustomRulePolicyOutcomeCallable;
 typedef std::future<GetDiscoveredResourceCountsOutcome> GetDiscoveredResourceCountsOutcomeCallable;
 typedef std::future<GetOrganizationConfigRuleDetailedStatusOutcome> GetOrganizationConfigRuleDetailedStatusOutcomeCallable;
@@ -437,6 +456,7 @@ typedef std::future<GetStoredQueryOutcome> GetStoredQueryOutcomeCallable;
 typedef std::future<ListAggregateDiscoveredResourcesOutcome> ListAggregateDiscoveredResourcesOutcomeCallable;
 typedef std::future<ListConfigurationRecordersOutcome> ListConfigurationRecordersOutcomeCallable;
 typedef std::future<ListConformancePackComplianceScoresOutcome> ListConformancePackComplianceScoresOutcomeCallable;
+typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
 typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
 typedef std::future<ListResourceEvaluationsOutcome> ListResourceEvaluationsOutcomeCallable;
 typedef std::future<ListStoredQueriesOutcome> ListStoredQueriesOutcomeCallable;
@@ -446,6 +466,7 @@ typedef std::future<PutConfigRuleOutcome> PutConfigRuleOutcomeCallable;
 typedef std::future<PutConfigurationAggregatorOutcome> PutConfigurationAggregatorOutcomeCallable;
 typedef std::future<PutConfigurationRecorderOutcome> PutConfigurationRecorderOutcomeCallable;
 typedef std::future<PutConformancePackOutcome> PutConformancePackOutcomeCallable;
+typedef std::future<PutConnectorOutcome> PutConnectorOutcomeCallable;
 typedef std::future<PutDeliveryChannelOutcome> PutDeliveryChannelOutcomeCallable;
 typedef std::future<PutEvaluationsOutcome> PutEvaluationsOutcomeCallable;
 typedef std::future<PutExternalEvaluationOutcome> PutExternalEvaluationOutcomeCallable;
@@ -457,6 +478,7 @@ typedef std::future<PutResourceConfigOutcome> PutResourceConfigOutcomeCallable;
 typedef std::future<PutRetentionConfigurationOutcome> PutRetentionConfigurationOutcomeCallable;
 typedef std::future<PutServiceLinkedConfigurationRecorderOutcome> PutServiceLinkedConfigurationRecorderOutcomeCallable;
 typedef std::future<PutStoredQueryOutcome> PutStoredQueryOutcomeCallable;
+typedef std::future<PutThirdPartyServiceLinkedConfigurationRecorderOutcome> PutThirdPartyServiceLinkedConfigurationRecorderOutcomeCallable;
 typedef std::future<SelectAggregateResourceConfigOutcome> SelectAggregateResourceConfigOutcomeCallable;
 typedef std::future<SelectResourceConfigOutcome> SelectResourceConfigOutcomeCallable;
 typedef std::future<StartConfigRulesEvaluationOutcome> StartConfigRulesEvaluationOutcomeCallable;
@@ -499,6 +521,9 @@ typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfig
 typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConformancePackRequest&,
                            const Model::DeleteConformancePackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteConformancePackResponseReceivedHandler;
+typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConnectorRequest&, const Model::DeleteConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteConnectorResponseReceivedHandler;
 typedef std::function<void(const ConfigServiceClient*, const Model::DeleteDeliveryChannelRequest&,
                            const Model::DeleteDeliveryChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteDeliveryChannelResponseReceivedHandler;
@@ -684,6 +709,9 @@ typedef std::function<void(const ConfigServiceClient*, const Model::GetConforman
                            const Model::GetConformancePackComplianceSummaryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetConformancePackComplianceSummaryResponseReceivedHandler;
+typedef std::function<void(const ConfigServiceClient*, const Model::GetConnectorRequest&, const Model::GetConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetConnectorResponseReceivedHandler;
 typedef std::function<void(const ConfigServiceClient*, const Model::GetCustomRulePolicyRequest&, const Model::GetCustomRulePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCustomRulePolicyResponseReceivedHandler;
@@ -723,6 +751,9 @@ typedef std::function<void(const ConfigServiceClient*, const Model::ListConforma
                            const Model::ListConformancePackComplianceScoresOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListConformancePackComplianceScoresResponseReceivedHandler;
+typedef std::function<void(const ConfigServiceClient*, const Model::ListConnectorsRequest&, const Model::ListConnectorsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListConnectorsResponseReceivedHandler;
 typedef std::function<void(const ConfigServiceClient*, const Model::ListDiscoveredResourcesRequest&,
                            const Model::ListDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDiscoveredResourcesResponseReceivedHandler;
@@ -750,6 +781,9 @@ typedef std::function<void(const ConfigServiceClient*, const Model::PutConfigura
 typedef std::function<void(const ConfigServiceClient*, const Model::PutConformancePackRequest&, const Model::PutConformancePackOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutConformancePackResponseReceivedHandler;
+typedef std::function<void(const ConfigServiceClient*, const Model::PutConnectorRequest&, const Model::PutConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutConnectorResponseReceivedHandler;
 typedef std::function<void(const ConfigServiceClient*, const Model::PutDeliveryChannelRequest&, const Model::PutDeliveryChannelOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutDeliveryChannelResponseReceivedHandler;
@@ -786,6 +820,10 @@ typedef std::function<void(const ConfigServiceClient*, const Model::PutServiceLi
 typedef std::function<void(const ConfigServiceClient*, const Model::PutStoredQueryRequest&, const Model::PutStoredQueryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutStoredQueryResponseReceivedHandler;
+typedef std::function<void(const ConfigServiceClient*, const Model::PutThirdPartyServiceLinkedConfigurationRecorderRequest&,
+                           const Model::PutThirdPartyServiceLinkedConfigurationRecorderOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutThirdPartyServiceLinkedConfigurationRecorderResponseReceivedHandler;
 typedef std::function<void(const ConfigServiceClient*, const Model::SelectAggregateResourceConfigRequest&,
                            const Model::SelectAggregateResourceConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

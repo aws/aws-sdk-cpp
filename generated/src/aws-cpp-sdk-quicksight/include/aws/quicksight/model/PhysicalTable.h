@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/CustomSql.h>
+#include <aws/quicksight/model/FileSource.h>
 #include <aws/quicksight/model/RelationalTable.h>
 #include <aws/quicksight/model/S3Source.h>
 #include <aws/quicksight/model/SaaSTable.h>
@@ -75,7 +76,7 @@ class PhysicalTable {
 
   ///@{
   /**
-   * <p>A physical table type for as S3 data source.</p>
+   * <p>A physical table type for an S3 data source.</p>
    */
   inline const S3Source& GetS3Source() const { return m_s3Source; }
   inline bool S3SourceHasBeenSet() const { return m_s3SourceHasBeenSet; }
@@ -108,6 +109,24 @@ class PhysicalTable {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A physical table type for a file data source.</p>
+   */
+  inline const FileSource& GetFileSource() const { return m_fileSource; }
+  inline bool FileSourceHasBeenSet() const { return m_fileSourceHasBeenSet; }
+  template <typename FileSourceT = FileSource>
+  void SetFileSource(FileSourceT&& value) {
+    m_fileSourceHasBeenSet = true;
+    m_fileSource = std::forward<FileSourceT>(value);
+  }
+  template <typename FileSourceT = FileSource>
+  PhysicalTable& WithFileSource(FileSourceT&& value) {
+    SetFileSource(std::forward<FileSourceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RelationalTable m_relationalTable;
 
@@ -116,10 +135,13 @@ class PhysicalTable {
   S3Source m_s3Source;
 
   SaaSTable m_saaSTable;
+
+  FileSource m_fileSource;
   bool m_relationalTableHasBeenSet = false;
   bool m_customSqlHasBeenSet = false;
   bool m_s3SourceHasBeenSet = false;
   bool m_saaSTableHasBeenSet = false;
+  bool m_fileSourceHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityHub {
 namespace Model {
-enum class ConnectorStatus { NOT_SET, CONNECTED, FAILED_TO_CONNECT, PENDING_CONFIGURATION, PENDING_AUTHORIZATION };
+enum class ConnectorStatus { NOT_SET, CONNECTED, DEGRADED, FAILED_TO_CONNECT, PENDING_AUTHORIZATION, PENDING_CONFIGURATION, UNKNOWN };
 
 namespace ConnectorStatusMapper {
 AWS_SECURITYHUB_API ConnectorStatus GetConnectorStatusForName(const Aws::String& name);

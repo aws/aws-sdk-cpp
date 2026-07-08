@@ -16,7 +16,13 @@ namespace Model {
 namespace ResourceGroupByFieldMapper {
 
 static const int AccountId_HASH = HashingUtils::HashString("AccountId");
+static const int AccountName_HASH = HashingUtils::HashString("AccountName");
 static const int Region_HASH = HashingUtils::HashString("Region");
+static const int ResourceProvider_HASH = HashingUtils::HashString("ResourceProvider");
+static const int ResourceOwnerAccountId_HASH = HashingUtils::HashString("ResourceOwnerAccountId");
+static const int ResourceOwnerOrgId_HASH = HashingUtils::HashString("ResourceOwnerOrgId");
+static const int ResourceCloudPartition_HASH = HashingUtils::HashString("ResourceCloudPartition");
+static const int ResourceRegion_HASH = HashingUtils::HashString("ResourceRegion");
 static const int ResourceCategory_HASH = HashingUtils::HashString("ResourceCategory");
 static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
 static const int ResourceName_HASH = HashingUtils::HashString("ResourceName");
@@ -26,8 +32,20 @@ ResourceGroupByField GetResourceGroupByFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == AccountId_HASH) {
     return ResourceGroupByField::AccountId;
+  } else if (hashCode == AccountName_HASH) {
+    return ResourceGroupByField::AccountName;
   } else if (hashCode == Region_HASH) {
     return ResourceGroupByField::Region;
+  } else if (hashCode == ResourceProvider_HASH) {
+    return ResourceGroupByField::ResourceProvider;
+  } else if (hashCode == ResourceOwnerAccountId_HASH) {
+    return ResourceGroupByField::ResourceOwnerAccountId;
+  } else if (hashCode == ResourceOwnerOrgId_HASH) {
+    return ResourceGroupByField::ResourceOwnerOrgId;
+  } else if (hashCode == ResourceCloudPartition_HASH) {
+    return ResourceGroupByField::ResourceCloudPartition;
+  } else if (hashCode == ResourceRegion_HASH) {
+    return ResourceGroupByField::ResourceRegion;
   } else if (hashCode == ResourceCategory_HASH) {
     return ResourceGroupByField::ResourceCategory;
   } else if (hashCode == ResourceType_HASH) {
@@ -52,8 +70,20 @@ Aws::String GetNameForResourceGroupByField(ResourceGroupByField enumValue) {
       return {};
     case ResourceGroupByField::AccountId:
       return "AccountId";
+    case ResourceGroupByField::AccountName:
+      return "AccountName";
     case ResourceGroupByField::Region:
       return "Region";
+    case ResourceGroupByField::ResourceProvider:
+      return "ResourceProvider";
+    case ResourceGroupByField::ResourceOwnerAccountId:
+      return "ResourceOwnerAccountId";
+    case ResourceGroupByField::ResourceOwnerOrgId:
+      return "ResourceOwnerOrgId";
+    case ResourceGroupByField::ResourceCloudPartition:
+      return "ResourceCloudPartition";
+    case ResourceGroupByField::ResourceRegion:
+      return "ResourceRegion";
     case ResourceGroupByField::ResourceCategory:
       return "ResourceCategory";
     case ResourceGroupByField::ResourceType:

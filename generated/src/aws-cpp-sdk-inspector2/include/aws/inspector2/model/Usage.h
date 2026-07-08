@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/inspector2/model/CloudProvider.h>
 #include <aws/inspector2/model/Currency.h>
 #include <aws/inspector2/model/UsageType.h>
 
@@ -96,6 +97,22 @@ class Usage {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider associated with the usage information.</p>
+   */
+  inline CloudProvider GetCloudProvider() const { return m_cloudProvider; }
+  inline bool CloudProviderHasBeenSet() const { return m_cloudProviderHasBeenSet; }
+  inline void SetCloudProvider(CloudProvider value) {
+    m_cloudProviderHasBeenSet = true;
+    m_cloudProvider = value;
+  }
+  inline Usage& WithCloudProvider(CloudProvider value) {
+    SetCloudProvider(value);
+    return *this;
+  }
+  ///@}
  private:
   UsageType m_type{UsageType::NOT_SET};
 
@@ -104,10 +121,13 @@ class Usage {
   double m_estimatedMonthlyCost{0.0};
 
   Currency m_currency{Currency::NOT_SET};
+
+  CloudProvider m_cloudProvider{CloudProvider::NOT_SET};
   bool m_typeHasBeenSet = false;
   bool m_totalHasBeenSet = false;
   bool m_estimatedMonthlyCostHasBeenSet = false;
   bool m_currencyHasBeenSet = false;
+  bool m_cloudProviderHasBeenSet = false;
 };
 
 }  // namespace Model

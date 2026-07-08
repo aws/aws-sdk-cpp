@@ -32,6 +32,7 @@
 #include <aws/ssm/model/DescribeMaintenanceWindowExecutionTaskInvocationsPaginationTraits.h>
 #include <aws/ssm/model/DescribeAssociationExecutionTargetsPaginationTraits.h>
 #include <aws/ssm/model/DescribePatchBaselinesPaginationTraits.h>
+#include <aws/ssm/model/ListCloudConnectorsPaginationTraits.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowTasksPaginationTraits.h>
 #include <aws/ssm/model/ListAssociationVersionsPaginationTraits.h>
 #include <aws/ssm/model/ListComplianceSummariesPaginationTraits.h>
@@ -42,6 +43,7 @@
 #include <aws/ssm/model/ListCommandsPaginationTraits.h>
 #include <aws/ssm/model/DescribePatchPropertiesPaginationTraits.h>
 #include <aws/ssm/model/GetInventorySchemaPaginationTraits.h>
+#include <aws/ssm/model/ValidateCloudConnectorPaginationTraits.h>
 #include <aws/ssm/model/DescribeEffectiveInstanceAssociationsPaginationTraits.h>
 #include <aws/ssm/model/DescribeInstancePatchesPaginationTraits.h>
 #include <aws/ssm/model/ListComplianceItemsPaginationTraits.h>

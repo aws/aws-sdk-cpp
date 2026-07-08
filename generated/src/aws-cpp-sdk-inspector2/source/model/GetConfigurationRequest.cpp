@@ -12,4 +12,12 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetConfigurationRequest::SerializePayload() const { return {}; }
+Aws::String GetConfigurationRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
+  }
+
+  return payload.View().WriteReadable();
+}

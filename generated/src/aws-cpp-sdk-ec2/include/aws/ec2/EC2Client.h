@@ -1774,23 +1774,27 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * and changes the Capacity Reservation's state to <code>cancelled</code>.</p>
    * <p>You can cancel a Capacity Reservation that is in the following states:</p>
    * <ul> <li> <p> <code>assessing</code> </p> </li> <li> <p> <code>scheduled</code>
-   * </p> </li> <li> <p> <code>active</code> and there is no commitment duration or
-   * the commitment duration has elapsed.</p> </li> <li> <p> <code>active</code>
-   * during the commitment duration, if you provide a cancellation quote ID and
-   * accept the cancellation charges. Use
-   * <code>CreateCapacityReservationCancellationQuote</code> to generate a quote. The
-   * Capacity Reservation transitions to <code>cancelling</code> while charges are
-   * applied.</p> </li> </ul>  <p>You can't modify or cancel a Capacity Block.
-   * For more information, see <a
+   * — requires a cancellation quote. Use
+   * <code>CreateCapacityReservationCancellationQuote</code> to generate a quote,
+   * then pass the quote ID with <code>ApplyCancellationCharges</code> set to
+   * <code>commitment-wind-down</code>. The cancellation charge depends on how close
+   * the reservation is to its start date.</p> </li> <li> <p> <code>active</code> and
+   * there is no commitment duration or the commitment duration has elapsed.</p>
+   * </li> <li> <p> <code>active</code> during the commitment duration — requires a
+   * cancellation quote. Use <code>CreateCapacityReservationCancellationQuote</code>
+   * to generate a quote, then pass the quote ID with
+   * <code>ApplyCancellationCharges</code> set to <code>commitment-wind-down</code>.
+   * The Capacity Reservation transitions to <code>cancelling</code> while charges
+   * are applied.</p> </li> <li> <p> <code>delayed</code> — the commitment duration
+   * is waived, so no cancellation charge applies.</p> </li> </ul>  <p>You
+   * can't modify or cancel a Capacity Block. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html">Capacity
-   * Blocks for ML</a>.</p>  <p>If a future-dated Capacity Reservation enters
-   * the <code>delayed</code> state, the commitment duration is waived, and you can
-   * cancel it as soon as it enters the <code>active</code> state.</p> <p>Instances
-   * running in the reserved capacity continue running until you stop them. Stopped
-   * instances that target the Capacity Reservation can no longer launch. Modify
-   * these instances to either target a different Capacity Reservation, launch
-   * On-Demand Instance capacity, or run in any open Capacity Reservation that has
-   * matching attributes and sufficient capacity.</p><p><h3>See Also:</h3>   <a
+   * Blocks for ML</a>.</p>  <p>Instances running in the reserved capacity
+   * continue running until you stop them. Stopped instances that target the Capacity
+   * Reservation can no longer launch. Modify these instances to either target a
+   * different Capacity Reservation, launch On-Demand Instance capacity, or run in
+   * any open Capacity Reservation that has matching attributes and sufficient
+   * capacity.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservation">AWS
    * API Reference</a></p>
    */
@@ -4128,8 +4132,8 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * groups of instances in different partitions, where instances in one partition do
    * not share the same hardware with instances in another partition. A
    * <code>precision-time</code> placement group places instances on supported
-   * hardware with direct access to high-precision time sources in AWS
-   * infrastructure.</p> <p>For more information, see <a
+   * hardware with direct access to high-precision time sources in Amazon Web
+   * Services infrastructure.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
    * groups</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">AWS
@@ -9131,6 +9135,41 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                       const DescribeAccountAttributesRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::DescribeAccountAttributes, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the account-level VPC Encryption Control configuration for your
+   * account. VPC Encryption Control enables you to enforce encryption for all data
+   * in transit within and between VPCs to meet compliance requirements.</p> <p>For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+   * VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountVpcEncryptionControl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAccountVpcEncryptionControlOutcome DescribeAccountVpcEncryptionControl(
+      const Model::DescribeAccountVpcEncryptionControlRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeAccountVpcEncryptionControl that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DescribeAccountVpcEncryptionControlRequestT = Model::DescribeAccountVpcEncryptionControlRequest>
+  Model::DescribeAccountVpcEncryptionControlOutcomeCallable DescribeAccountVpcEncryptionControlCallable(
+      const DescribeAccountVpcEncryptionControlRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeAccountVpcEncryptionControl, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAccountVpcEncryptionControl that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DescribeAccountVpcEncryptionControlRequestT = Model::DescribeAccountVpcEncryptionControlRequest>
+  void DescribeAccountVpcEncryptionControlAsync(const DescribeAccountVpcEncryptionControlResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                const DescribeAccountVpcEncryptionControlRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeAccountVpcEncryptionControl, request, handler, context);
   }
 
   /**
@@ -20378,6 +20417,42 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   void LockSnapshotAsync(const LockSnapshotRequestT& request, const LockSnapshotResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::LockSnapshot, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies the account-level VPC Encryption Control configuration. This sets
+   * the encryption control mode and resource exclusions that apply to the VPCs in
+   * your account. VPC Encryption Control enables you to enforce encryption for all
+   * data in transit within and between VPCs to meet compliance requirements.</p>
+   * <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+   * VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAccountVpcEncryptionControl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyAccountVpcEncryptionControlOutcome ModifyAccountVpcEncryptionControl(
+      const Model::ModifyAccountVpcEncryptionControlRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ModifyAccountVpcEncryptionControl that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ModifyAccountVpcEncryptionControlRequestT = Model::ModifyAccountVpcEncryptionControlRequest>
+  Model::ModifyAccountVpcEncryptionControlOutcomeCallable ModifyAccountVpcEncryptionControlCallable(
+      const ModifyAccountVpcEncryptionControlRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::ModifyAccountVpcEncryptionControl, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyAccountVpcEncryptionControl that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ModifyAccountVpcEncryptionControlRequestT = Model::ModifyAccountVpcEncryptionControlRequest>
+  void ModifyAccountVpcEncryptionControlAsync(const ModifyAccountVpcEncryptionControlResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                              const ModifyAccountVpcEncryptionControlRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::ModifyAccountVpcEncryptionControl, request, handler, context);
   }
 
   /**

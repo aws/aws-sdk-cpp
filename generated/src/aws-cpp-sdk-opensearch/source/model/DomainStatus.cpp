@@ -176,6 +176,14 @@ DomainStatus& DomainStatus::operator=(JsonView jsonValue) {
     m_automatedSnapshotPauseOptions = jsonValue.GetObject("AutomatedSnapshotPauseOptions");
     m_automatedSnapshotPauseOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UseCase")) {
+    m_useCase = DomainUseCaseMapper::GetDomainUseCaseForName(jsonValue.GetString("UseCase"));
+    m_useCaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EngineMode")) {
+    m_engineMode = EngineModeMapper::GetEngineModeForName(jsonValue.GetString("EngineMode"));
+    m_engineModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -343,6 +351,14 @@ JsonValue DomainStatus::Jsonize() const {
 
   if (m_automatedSnapshotPauseOptionsHasBeenSet) {
     payload.WithObject("AutomatedSnapshotPauseOptions", m_automatedSnapshotPauseOptions.Jsonize());
+  }
+
+  if (m_useCaseHasBeenSet) {
+    payload.WithString("UseCase", DomainUseCaseMapper::GetNameForDomainUseCase(m_useCase));
+  }
+
+  if (m_engineModeHasBeenSet) {
+    payload.WithString("EngineMode", EngineModeMapper::GetNameForEngineMode(m_engineMode));
   }
 
   return payload;
