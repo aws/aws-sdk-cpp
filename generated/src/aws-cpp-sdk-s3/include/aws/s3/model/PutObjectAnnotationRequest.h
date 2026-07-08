@@ -38,6 +38,7 @@ class PutObjectAnnotationRequest : public StreamingS3Request {
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
   AWS_S3_API Aws::String GetChecksumAlgorithmName() const override;
+  AWS_S3_API bool ChecksumAlgorithmIsSet() const override;
   AWS_S3_API bool IsStreaming() const override { return false; }
 
   /**

@@ -105,3 +105,5 @@ Aws::String PutBucketOwnershipControlsRequest::GetChecksumAlgorithmName() const 
     return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
   }
 }
+
+bool PutBucketOwnershipControlsRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }
