@@ -11,6 +11,7 @@ import software.amazon.smithy.model.traits.EnumTrait;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -35,11 +36,12 @@ public final class EnumRenderer {
      *
      * @param writer      the CppWriter to write to
      * @param enumShape   the enum shape (EnumShape or StringShape with @enum trait)
-     * @param serviceName the service name (e.g., "Kinesis")
+     * @param serviceName the service name / C++ namespace (e.g., "Kinesis")
      * @param exportMacro the export macro (e.g., "AWS_KINESIS_API")
+     * @param projectName the project directory name for include paths (e.g., "kinesis")
      */
     public static void renderHeader(CppWriter writer, Shape enumShape, String serviceName,
-                                    String exportMacro) {
+                                    String exportMacro, String projectName) {
         String enumName = enumShape.getId().getName();
         List<String> values = getEnumValues(enumShape);
 
@@ -51,7 +53,7 @@ public final class EnumRenderer {
         writer.write("#pragma once");
         writer.write("#include <aws/core/utils/memory/stl/AWSString.h>");
         writer.write("#include <aws/$1L/$2L_EXPORTS.h>",
-            serviceName.toLowerCase(), serviceName);
+            projectName, serviceName);
         writer.write("");
         writer.write("namespace Aws {");
         writer.write("namespace $L {", serviceName);
@@ -125,14 +127,14 @@ public final class EnumRenderer {
 
         // Hash constants
         for (int i = 0; i < values.size(); i++) {
-            writer.write("  static constexpr uint32_t $1L_HASH = HashingUtils::HashString(\"$2L\");",
+            writer.write("  static const int $1L_HASH = HashingUtils::HashString(\"$2L\");",
                 values.get(i), wireValues.get(i));
         }
         writer.write("");
 
         // GetForName
         writer.write("  $1L Get$1LForName(const Aws::String& name) {", enumName);
-        writer.write("    uint32_t hashCode = HashingUtils::HashString(name.c_str());");
+        writer.write("    int hashCode = HashingUtils::HashString(name.c_str());");
         for (int i = 0; i < values.size(); i++) {
             String prefix = i == 0 ? "    if" : "    else if";
             writer.write("$1L (hashCode == $2L_HASH) {", prefix, values.get(i));
@@ -204,8 +206,66 @@ public final class EnumRenderer {
             .collect(Collectors.toList());
     }
 
+    /**
+     * C++ reserved words and platform-specific macros that conflict with enum constant names.
+     * Matches C2J PlatformAndKeywordSanitizer.FORBIDDEN_WORDS.
+     */
+    private static final Set<String> FORBIDDEN_WORDS = Set.of(
+        "alignas", "alignof", "and", "and_eq", "asm",
+        "atomic_cancel", "atomic_commit", "atomic_noexcept", "auto",
+        "bitand", "bitor", "bool", "break", "case", "catch", "char",
+        "char16_t", "char32_t", "class", "compl", "concept", "const",
+        "constexpr", "const_cast", "continue", "co_await", "co_return", "co_yeild",
+        "decltype", "default", "delete", "do", "double", "dynamic_cast",
+        "else", "enum", "explicit", "export", "extern", "false", "float",
+        "for", "friend", "goto", "if", "import", "inline", "int", "long",
+        "moduel", "mutable", "namespace", "new", "noexcept", "not", "not_eq",
+        "nullptr", "operator", "or", "or_eq", "private", "protected", "public",
+        "reflexpr", "register", "reinterpret_cast", "requires", "return",
+        "short", "signed", "sizeof", "static", "static_assert", "static_cast",
+        "struct", "switch", "synchronized", "template", "this", "thread_local",
+        "throw", "true", "try", "typeid", "typename", "typeof", "union",
+        "unsigned", "using", "virtual", "void", "volatile", "wchar_t", "while",
+        "xor", "xor_eq",
+        // Platform macros
+        "ANDROID", "BOOL", "CHAR", "DEBUG", "DELETE", "Double", "ERROR",
+        "GET", "NEW", "NULL", "PRIVATE", "PUBLIC", "STATIC", "T_CHAR",
+        "DOMAIN", "OVERFLOW"
+    );
+
+    /**
+     * Sanitizes an enum wire value into a valid C++ identifier, matching C2J
+     * PlatformAndKeywordSanitizer.fixEnumValue() behavior.
+     */
     static String sanitizeEnumValue(String value) {
-        return value.replace("-", "_").replace(".", "_").replace(":", "_")
-            .replace(" ", "_").replace("/", "_").replace("*", "ALL");
+        if ("NOT_SET".equals(value)) {
+            return "NOT_SET_VALUE";
+        }
+
+        String result = value
+            .replace("-", "_")
+            .replace("+", "_")
+            .replace(":", "_")
+            .replace(".", "_")
+            .replace(",", "_COMMA_")
+            .replace("*", "_")
+            .replace("/", "_")
+            .replace("(", "_")
+            .replace(")", "_")
+            .replace(" ", "_");
+
+        // Collapse multiple underscores and strip trailing underscore
+        result = result.replaceAll("_{2,}", "_").replaceAll("_$", "");
+
+        if (FORBIDDEN_WORDS.contains(result)) {
+            result = result + "_";
+        }
+
+        // Leading digit: prepend underscore
+        if (!result.isEmpty() && Character.isDigit(result.charAt(0))) {
+            result = "_" + result;
+        }
+
+        return result;
     }
 }

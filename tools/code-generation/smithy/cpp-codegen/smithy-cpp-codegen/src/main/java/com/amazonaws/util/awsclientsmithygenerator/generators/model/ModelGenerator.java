@@ -105,7 +105,7 @@ public class ModelGenerator {
     private void generateEnumHeader(Shape enumShape) {
         String fileName = "include/aws/" + smithyServiceName + "/model/" + enumShape.getId().getName() + ".h";
         writerDelegator.useFileWriter(fileName, writer ->
-            EnumRenderer.renderHeader(writer, enumShape, namespace, exportMacro));
+            EnumRenderer.renderHeader(writer, enumShape, namespace, exportMacro, smithyServiceName));
     }
 
     private void generateEnumSource(Shape enumShape) {

@@ -25,7 +25,7 @@ class EnumRendererTest {
             .addMember("INACTIVE", "INACTIVE")
             .build();
         CppWriter writer = new CppWriter();
-        EnumRenderer.renderHeader(writer, enumShape, "TestService", "AWS_TESTSERVICE_API");
+        EnumRenderer.renderHeader(writer, enumShape, "TestService", "AWS_TESTSERVICE_API", "testservice");
         String output = writer.toString();
         assertTrue(output.contains("enum class Status {"),
             "Missing enum class opening: " + output);
@@ -48,7 +48,7 @@ class EnumRendererTest {
             .addMember("A", "A")
             .build();
         CppWriter writer = new CppWriter();
-        EnumRenderer.renderHeader(writer, enumShape, "Kinesis", "AWS_KINESIS_API");
+        EnumRenderer.renderHeader(writer, enumShape, "Kinesis", "AWS_KINESIS_API", "kinesis");
         String output = writer.toString();
         assertTrue(output.contains("#include <aws/kinesis/Kinesis_EXPORTS.h>"),
             "Missing exports header include: " + output);
@@ -62,7 +62,7 @@ class EnumRendererTest {
             .addMember("GREEN", "GREEN")
             .build();
         CppWriter writer = new CppWriter();
-        EnumRenderer.renderHeader(writer, enumShape, "Svc", "AWS_SVC_API");
+        EnumRenderer.renderHeader(writer, enumShape, "Svc", "AWS_SVC_API", "svc");
         String output = writer.toString();
         assertTrue(output.contains("namespace ColorMapper {"),
             "Missing mapper namespace: " + output);
@@ -182,15 +182,17 @@ class EnumRendererTest {
     }
 
     @Test
-    void getEnumValues_sanitizesAsteriskToALLViaLegacyTrait() {
+    void getEnumValues_sanitizesAsteriskPrefixViaLegacyTrait() {
+        // Real-world case: "*Other" (from partnercentral-selling CompetitorName)
         StringShape stringShape = StringShape.builder()
             .id("com.example#Wildcard")
             .addTrait(EnumTrait.builder()
-                .addEnum(EnumDefinition.builder().value("*").build())
+                .addEnum(EnumDefinition.builder().value("*Other").build())
                 .build())
             .build();
         List<String> values = EnumRenderer.getEnumValues(stringShape);
-        assertEquals(List.of("ALL"), values);
+        // "*" is replaced with "_", producing "_Other" (matches C2J output)
+        assertEquals(List.of("_Other"), values);
     }
 
     @Test
@@ -226,7 +228,7 @@ class EnumRendererTest {
                 .build())
             .build();
         CppWriter writer = new CppWriter();
-        EnumRenderer.renderHeader(writer, stringShape, "Svc", "AWS_SVC_API");
+        EnumRenderer.renderHeader(writer, stringShape, "Svc", "AWS_SVC_API", "svc");
         String output = writer.toString();
         assertTrue(output.contains("enum class LegacyStatus {"),
             "Legacy enum trait should produce enum class opening: " + output);
@@ -243,7 +245,41 @@ class EnumRendererTest {
         assertEquals("a_b", EnumRenderer.sanitizeEnumValue("a:b"));
         assertEquals("a_b", EnumRenderer.sanitizeEnumValue("a b"));
         assertEquals("a_b", EnumRenderer.sanitizeEnumValue("a/b"));
-        assertEquals("ALL", EnumRenderer.sanitizeEnumValue("*"));
-        assertEquals("ALLfoo", EnumRenderer.sanitizeEnumValue("*foo"));
+        assertEquals("_foo", EnumRenderer.sanitizeEnumValue("*foo"));
+        assertEquals("a_COMMA_b", EnumRenderer.sanitizeEnumValue("a,b"));
+        assertEquals("a_b", EnumRenderer.sanitizeEnumValue("a(b)"));
+        assertEquals("a_b", EnumRenderer.sanitizeEnumValue("a+b"));
+    }
+
+    @Test
+    void sanitizeEnumValue_collapsesMultipleUnderscores() {
+        assertEquals("a_b", EnumRenderer.sanitizeEnumValue("a--b"));
+        assertEquals("a_b", EnumRenderer.sanitizeEnumValue("a..b"));
+        assertEquals("a_b", EnumRenderer.sanitizeEnumValue("a- b"));
+    }
+
+    @Test
+    void sanitizeEnumValue_stripsTrailingUnderscore() {
+        assertEquals("foo", EnumRenderer.sanitizeEnumValue("foo-"));
+        assertEquals("foo", EnumRenderer.sanitizeEnumValue("foo."));
+    }
+
+    @Test
+    void sanitizeEnumValue_prependsUnderscoreForLeadingDigit() {
+        assertEquals("_123abc", EnumRenderer.sanitizeEnumValue("123abc"));
+        assertEquals("_0", EnumRenderer.sanitizeEnumValue("0"));
+    }
+
+    @Test
+    void sanitizeEnumValue_handlesNotSetCollision() {
+        assertEquals("NOT_SET_VALUE", EnumRenderer.sanitizeEnumValue("NOT_SET"));
+    }
+
+    @Test
+    void sanitizeEnumValue_handlesForbiddenWords() {
+        assertEquals("delete_", EnumRenderer.sanitizeEnumValue("delete"));
+        assertEquals("DELETE_", EnumRenderer.sanitizeEnumValue("DELETE"));
+        assertEquals("NULL_", EnumRenderer.sanitizeEnumValue("NULL"));
+        assertEquals("OVERFLOW_", EnumRenderer.sanitizeEnumValue("OVERFLOW"));
     }
 }
