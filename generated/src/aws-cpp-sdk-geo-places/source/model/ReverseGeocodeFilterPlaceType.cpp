@@ -20,6 +20,8 @@ static const int Intersection_HASH = HashingUtils::HashString("Intersection");
 static const int Street_HASH = HashingUtils::HashString("Street");
 static const int PointAddress_HASH = HashingUtils::HashString("PointAddress");
 static const int InterpolatedAddress_HASH = HashingUtils::HashString("InterpolatedAddress");
+static const int SecondaryAddress_HASH = HashingUtils::HashString("SecondaryAddress");
+static const int PointOfInterest_HASH = HashingUtils::HashString("PointOfInterest");
 
 ReverseGeocodeFilterPlaceType GetReverseGeocodeFilterPlaceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +35,10 @@ ReverseGeocodeFilterPlaceType GetReverseGeocodeFilterPlaceTypeForName(const Aws:
     return ReverseGeocodeFilterPlaceType::PointAddress;
   } else if (hashCode == InterpolatedAddress_HASH) {
     return ReverseGeocodeFilterPlaceType::InterpolatedAddress;
+  } else if (hashCode == SecondaryAddress_HASH) {
+    return ReverseGeocodeFilterPlaceType::SecondaryAddress;
+  } else if (hashCode == PointOfInterest_HASH) {
+    return ReverseGeocodeFilterPlaceType::PointOfInterest;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +63,10 @@ Aws::String GetNameForReverseGeocodeFilterPlaceType(ReverseGeocodeFilterPlaceTyp
       return "PointAddress";
     case ReverseGeocodeFilterPlaceType::InterpolatedAddress:
       return "InterpolatedAddress";
+    case ReverseGeocodeFilterPlaceType::SecondaryAddress:
+      return "SecondaryAddress";
+    case ReverseGeocodeFilterPlaceType::PointOfInterest:
+      return "PointOfInterest";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

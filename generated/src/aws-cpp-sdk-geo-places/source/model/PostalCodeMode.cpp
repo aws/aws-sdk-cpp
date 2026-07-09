@@ -17,6 +17,7 @@ namespace PostalCodeModeMapper {
 
 static const int MergeAllSpannedLocalities_HASH = HashingUtils::HashString("MergeAllSpannedLocalities");
 static const int EnumerateSpannedLocalities_HASH = HashingUtils::HashString("EnumerateSpannedLocalities");
+static const int EnumerateSpannedDistricts_HASH = HashingUtils::HashString("EnumerateSpannedDistricts");
 
 PostalCodeMode GetPostalCodeModeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ PostalCodeMode GetPostalCodeModeForName(const Aws::String& name) {
     return PostalCodeMode::MergeAllSpannedLocalities;
   } else if (hashCode == EnumerateSpannedLocalities_HASH) {
     return PostalCodeMode::EnumerateSpannedLocalities;
+  } else if (hashCode == EnumerateSpannedDistricts_HASH) {
+    return PostalCodeMode::EnumerateSpannedDistricts;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForPostalCodeMode(PostalCodeMode enumValue) {
       return "MergeAllSpannedLocalities";
     case PostalCodeMode::EnumerateSpannedLocalities:
       return "EnumerateSpannedLocalities";
+    case PostalCodeMode::EnumerateSpannedDistricts:
+      return "EnumerateSpannedDistricts";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

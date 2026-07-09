@@ -64,6 +64,10 @@ Aws::String SuggestRequest::SerializePayload() const {
     payload.WithString("IntendedUse", SuggestIntendedUseMapper::GetNameForSuggestIntendedUse(m_intendedUse));
   }
 
+  if (m_travelModeHasBeenSet) {
+    payload.WithString("TravelMode", SuggestTravelModeMapper::GetNameForSuggestTravelMode(m_travelMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

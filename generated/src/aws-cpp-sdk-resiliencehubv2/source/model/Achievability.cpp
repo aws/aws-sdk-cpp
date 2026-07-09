@@ -30,6 +30,11 @@ Achievability& Achievability::operator=(JsonView jsonValue) {
     m_multiRegionRtoRpo = AchievabilityStatusMapper::GetAchievabilityStatusForName(jsonValue.GetString("multiRegionRtoRpo"));
     m_multiRegionRtoRpoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dataRecoveryTimeBetweenBackups")) {
+    m_dataRecoveryTimeBetweenBackups =
+        AchievabilityStatusMapper::GetAchievabilityStatusForName(jsonValue.GetString("dataRecoveryTimeBetweenBackups"));
+    m_dataRecoveryTimeBetweenBackupsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +51,11 @@ JsonValue Achievability::Jsonize() const {
 
   if (m_multiRegionRtoRpoHasBeenSet) {
     payload.WithString("multiRegionRtoRpo", AchievabilityStatusMapper::GetNameForAchievabilityStatus(m_multiRegionRtoRpo));
+  }
+
+  if (m_dataRecoveryTimeBetweenBackupsHasBeenSet) {
+    payload.WithString("dataRecoveryTimeBetweenBackups",
+                       AchievabilityStatusMapper::GetNameForAchievabilityStatus(m_dataRecoveryTimeBetweenBackups));
   }
 
   return payload;

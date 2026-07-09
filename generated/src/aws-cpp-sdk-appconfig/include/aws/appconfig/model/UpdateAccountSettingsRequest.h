@@ -55,7 +55,7 @@ class UpdateAccountSettingsRequest : public AppConfigRequest {
 
   ///@{
   /**
-   * <p>Configuration for vended metrics in the account.</p>
+   * <p>The configuration for vended metrics in the account.</p>
    */
   inline const VendedMetricsSettings& GetVendedMetrics() const { return m_vendedMetrics; }
   inline bool VendedMetricsHasBeenSet() const { return m_vendedMetricsHasBeenSet; }

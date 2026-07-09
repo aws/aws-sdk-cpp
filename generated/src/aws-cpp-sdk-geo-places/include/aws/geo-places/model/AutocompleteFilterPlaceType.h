@@ -10,7 +10,17 @@
 namespace Aws {
 namespace GeoPlaces {
 namespace Model {
-enum class AutocompleteFilterPlaceType { NOT_SET, Locality, PostalCode };
+enum class AutocompleteFilterPlaceType {
+  NOT_SET,
+  Locality,
+  PostalCode,
+  Street,
+  Intersection,
+  PointAddress,
+  InterpolatedAddress,
+  Country,
+  Region
+};
 
 namespace AutocompleteFilterPlaceTypeMapper {
 AWS_GEOPLACES_API AutocompleteFilterPlaceType GetAutocompleteFilterPlaceTypeForName(const Aws::String& name);

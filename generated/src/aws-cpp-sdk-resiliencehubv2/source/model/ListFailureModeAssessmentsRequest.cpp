@@ -25,6 +25,38 @@ void ListFailureModeAssessmentsRequest::AddQueryStringParameters(URI& uri) const
     ss.str("");
   }
 
+  if (m_assessmentStatusesHasBeenSet) {
+    for (const auto& item : m_assessmentStatuses) {
+      ss << AssessmentStatusMapper::GetNameForAssessmentStatus(item);
+      uri.AddQueryStringParameter("assessmentStatuses", ss.str());
+      ss.str("");
+    }
+  }
+
+  if (m_startedAfterHasBeenSet) {
+    ss << m_startedAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("startedAfter", ss.str());
+    ss.str("");
+  }
+
+  if (m_endedBeforeHasBeenSet) {
+    ss << m_endedBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("endedBefore", ss.str());
+    ss.str("");
+  }
+
+  if (m_sortByHasBeenSet) {
+    ss << AssessmentSortFieldMapper::GetNameForAssessmentSortField(m_sortBy);
+    uri.AddQueryStringParameter("sortBy", ss.str());
+    ss.str("");
+  }
+
+  if (m_sortOrderHasBeenSet) {
+    ss << SortOrderMapper::GetNameForSortOrder(m_sortOrder);
+    uri.AddQueryStringParameter("sortOrder", ss.str());
+    ss.str("");
+  }
+
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());

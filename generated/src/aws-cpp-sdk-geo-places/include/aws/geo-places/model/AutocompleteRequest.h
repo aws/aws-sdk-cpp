@@ -129,7 +129,9 @@ class AutocompleteRequest : public GeoPlacesRequest {
    * district or locality information may be returned under a single postal code
    * result entry. If it's populated with the value
    * <code>EnumerateSpannedLocalities</code>, all cities in that postal code are
-   * returned.</p>
+   * returned. If it's populated with the value
+   * <code>EnumerateSpannedDistricts</code>, all combinations of the postal code with
+   * the corresponding district and city names are returned.</p>
    */
   inline PostalCodeMode GetPostalCodeMode() const { return m_postalCodeMode; }
   inline bool PostalCodeModeHasBeenSet() const { return m_postalCodeModeHasBeenSet; }
@@ -169,7 +171,8 @@ class AutocompleteRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP
+   * <p>A list of <a
+   * href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
    * 47</a> compliant language codes for the results to be rendered in. If there is
    * no data for the result in the requested language, data will be returned in the
    * default language for the entry.</p>

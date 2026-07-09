@@ -50,4 +50,10 @@ void GetPlaceRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("key", ss.str());
     ss.str("");
   }
+
+  if (m_addressNamesModeHasBeenSet) {
+    ss << GetPlaceAddressNamesModeMapper::GetNameForGetPlaceAddressNamesMode(m_addressNamesMode);
+    uri.AddQueryStringParameter("address-names-mode", ss.str());
+    ss.str("");
+  }
 }

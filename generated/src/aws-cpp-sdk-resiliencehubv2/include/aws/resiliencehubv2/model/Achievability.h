@@ -81,15 +81,35 @@ class Achievability {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The achievability status of the data recovery time between backups for the
+   * service.</p>
+   */
+  inline AchievabilityStatus GetDataRecoveryTimeBetweenBackups() const { return m_dataRecoveryTimeBetweenBackups; }
+  inline bool DataRecoveryTimeBetweenBackupsHasBeenSet() const { return m_dataRecoveryTimeBetweenBackupsHasBeenSet; }
+  inline void SetDataRecoveryTimeBetweenBackups(AchievabilityStatus value) {
+    m_dataRecoveryTimeBetweenBackupsHasBeenSet = true;
+    m_dataRecoveryTimeBetweenBackups = value;
+  }
+  inline Achievability& WithDataRecoveryTimeBetweenBackups(AchievabilityStatus value) {
+    SetDataRecoveryTimeBetweenBackups(value);
+    return *this;
+  }
+  ///@}
  private:
   AchievabilityStatus m_availabilitySlo{AchievabilityStatus::NOT_SET};
 
   AchievabilityStatus m_multiAzRtoRpo{AchievabilityStatus::NOT_SET};
 
   AchievabilityStatus m_multiRegionRtoRpo{AchievabilityStatus::NOT_SET};
+
+  AchievabilityStatus m_dataRecoveryTimeBetweenBackups{AchievabilityStatus::NOT_SET};
   bool m_availabilitySloHasBeenSet = false;
   bool m_multiAzRtoRpoHasBeenSet = false;
   bool m_multiRegionRtoRpoHasBeenSet = false;
+  bool m_dataRecoveryTimeBetweenBackupsHasBeenSet = false;
 };
 
 }  // namespace Model

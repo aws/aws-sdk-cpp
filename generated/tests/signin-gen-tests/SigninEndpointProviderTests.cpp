@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<SigninEndpointProviderEndpointTestCase>> SigninEndpointProviderTests::TEST_CASES;
-const size_t SigninEndpointProviderTests::TEST_CASES_SZ = 15;
+const size_t SigninEndpointProviderTests::TEST_CASES_SZ = 22;
 
 Aws::Vector<SigninEndpointProviderEndpointTestCase> SigninEndpointProviderTests::getTestCase() {
 
@@ -210,6 +210,57 @@ Aws::Vector<SigninEndpointProviderEndpointTestCase> SigninEndpointProviderTests:
     {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://us-isob-east-1.signin.sc2shome.sgov.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 15*/
+  {"OAuth endpoint in us-east-1 (aws partition)", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("IsOAuthEndpoint", true), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://us-east-1.oauth.signin.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 16*/
+  {"OAuth endpoint in us-west-2 (aws partition)", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("IsOAuthEndpoint", true), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://us-west-2.oauth.signin.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 17*/
+  {"OAuth endpoint with FIPS returns an error (no FIPS variant exists)", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("IsOAuthEndpoint", true), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"FIPS endpoints are not supported for OAuth operations. Disable FIPS or use a non-OAuth operation."} // expect
+  },
+  /*TEST CASE 18*/
+  {"OAuth endpoint with FIPS returns an error in us-west-2 (aws partition)", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-west-2"), EpParam("IsOAuthEndpoint", true), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"FIPS endpoints are not supported for OAuth operations. Disable FIPS or use a non-OAuth operation."} // expect
+  },
+  /*TEST CASE 19*/
+  {"OAuth endpoint with FIPS returns an error in cn-north-1 (non-aws partition, error is partition-agnostic)", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("IsOAuthEndpoint", true), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"FIPS endpoints are not supported for OAuth operations. Disable FIPS or use a non-OAuth operation."} // expect
+  },
+  /*TEST CASE 20*/
+  {"OAuth endpoint with FIPS returns an error even with a custom SDK endpoint override", // documentation
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://custom.signin.example.com"), EpParam("Region", "us-east-1"), EpParam("IsOAuthEndpoint", true), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"FIPS endpoints are not supported for OAuth operations. Disable FIPS or use a non-OAuth operation."} // expect
+  },
+  /*TEST CASE 21*/
+  {"OAuth operation with custom SDK endpoint override", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://custom.signin.example.com"), EpParam("Region", "us-east-1"), EpParam("IsOAuthEndpoint", true), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://custom.signin.example.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect

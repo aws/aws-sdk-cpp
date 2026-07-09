@@ -19,6 +19,7 @@ static const int Core_HASH = HashingUtils::HashString("Core");
 static const int TimeZone_HASH = HashingUtils::HashString("TimeZone");
 static const int Phonemes_HASH = HashingUtils::HashString("Phonemes");
 static const int Access_HASH = HashingUtils::HashString("Access");
+static const int CrossReferences_HASH = HashingUtils::HashString("CrossReferences");
 
 SuggestAdditionalFeature GetSuggestAdditionalFeatureForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ SuggestAdditionalFeature GetSuggestAdditionalFeatureForName(const Aws::String& n
     return SuggestAdditionalFeature::Phonemes;
   } else if (hashCode == Access_HASH) {
     return SuggestAdditionalFeature::Access;
+  } else if (hashCode == CrossReferences_HASH) {
+    return SuggestAdditionalFeature::CrossReferences;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForSuggestAdditionalFeature(SuggestAdditionalFeature enumValu
       return "Phonemes";
     case SuggestAdditionalFeature::Access:
       return "Access";
+    case SuggestAdditionalFeature::CrossReferences:
+      return "CrossReferences";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

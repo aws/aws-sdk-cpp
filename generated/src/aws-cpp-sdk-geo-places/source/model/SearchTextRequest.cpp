@@ -68,6 +68,10 @@ Aws::String SearchTextRequest::SerializePayload() const {
     payload.WithString("NextToken", m_nextToken);
   }
 
+  if (m_travelModeHasBeenSet) {
+    payload.WithString("TravelMode", SearchTextTravelModeMapper::GetNameForSearchTextTravelMode(m_travelMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

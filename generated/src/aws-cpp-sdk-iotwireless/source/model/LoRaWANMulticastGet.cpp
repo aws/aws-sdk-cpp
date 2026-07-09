@@ -38,6 +38,10 @@ LoRaWANMulticastGet& LoRaWANMulticastGet::operator=(JsonView jsonValue) {
     m_participatingGateways = jsonValue.GetObject("ParticipatingGateways");
     m_participatingGatewaysHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DefaultSessionParameters")) {
+    m_defaultSessionParameters = jsonValue.GetObject("DefaultSessionParameters");
+    m_defaultSessionParametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue LoRaWANMulticastGet::Jsonize() const {
 
   if (m_participatingGatewaysHasBeenSet) {
     payload.WithObject("ParticipatingGateways", m_participatingGateways.Jsonize());
+  }
+
+  if (m_defaultSessionParametersHasBeenSet) {
+    payload.WithObject("DefaultSessionParameters", m_defaultSessionParameters.Jsonize());
   }
 
   return payload;

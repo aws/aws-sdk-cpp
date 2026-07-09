@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GeoPlaces {
 namespace Model {
-enum class SearchTextAdditionalFeature { NOT_SET, TimeZone, Phonemes, Access, Contact };
+enum class SearchTextAdditionalFeature { NOT_SET, TimeZone, Phonemes, Access, Contact, CrossReferences };
 
 namespace SearchTextAdditionalFeatureMapper {
 AWS_GEOPLACES_API SearchTextAdditionalFeature GetSearchTextAdditionalFeatureForName(const Aws::String& name);

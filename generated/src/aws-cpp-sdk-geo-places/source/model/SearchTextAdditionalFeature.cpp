@@ -19,6 +19,7 @@ static const int TimeZone_HASH = HashingUtils::HashString("TimeZone");
 static const int Phonemes_HASH = HashingUtils::HashString("Phonemes");
 static const int Access_HASH = HashingUtils::HashString("Access");
 static const int Contact_HASH = HashingUtils::HashString("Contact");
+static const int CrossReferences_HASH = HashingUtils::HashString("CrossReferences");
 
 SearchTextAdditionalFeature GetSearchTextAdditionalFeatureForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ SearchTextAdditionalFeature GetSearchTextAdditionalFeatureForName(const Aws::Str
     return SearchTextAdditionalFeature::Access;
   } else if (hashCode == Contact_HASH) {
     return SearchTextAdditionalFeature::Contact;
+  } else if (hashCode == CrossReferences_HASH) {
+    return SearchTextAdditionalFeature::CrossReferences;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForSearchTextAdditionalFeature(SearchTextAdditionalFeature en
       return "Access";
     case SearchTextAdditionalFeature::Contact:
       return "Contact";
+    case SearchTextAdditionalFeature::CrossReferences:
+      return "CrossReferences";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

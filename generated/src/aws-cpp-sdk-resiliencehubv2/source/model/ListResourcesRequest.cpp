@@ -37,6 +37,20 @@ void ListResourcesRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
+  if (m_resourceTypesHasBeenSet) {
+    for (const auto& item : m_resourceTypes) {
+      ss << item;
+      uri.AddQueryStringParameter("resourceTypes", ss.str());
+      ss.str("");
+    }
+  }
+
+  if (m_billableHasBeenSet) {
+    ss << m_billable;
+    uri.AddQueryStringParameter("billable", ss.str());
+    ss.str("");
+  }
+
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());

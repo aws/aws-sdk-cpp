@@ -134,6 +134,24 @@ GetPlaceResult& GetPlaceResult::operator=(const Aws::AmazonWebServiceResult<Json
     }
     m_secondaryAddressesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PlaceAttributes")) {
+    Aws::Utils::Array<JsonView> placeAttributesJsonList = jsonValue.GetArray("PlaceAttributes");
+    for (unsigned placeAttributesIndex = 0; placeAttributesIndex < placeAttributesJsonList.GetLength(); ++placeAttributesIndex) {
+      m_placeAttributes.push_back(PlaceAttributeMapper::GetPlaceAttributeForName(placeAttributesJsonList[placeAttributesIndex].AsString()));
+    }
+    m_placeAttributesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EstimatedPointAddress")) {
+    m_estimatedPointAddress = jsonValue.GetBool("EstimatedPointAddress");
+    m_estimatedPointAddressHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CrossReferences")) {
+    Aws::Utils::Array<JsonView> crossReferencesJsonList = jsonValue.GetArray("CrossReferences");
+    for (unsigned crossReferencesIndex = 0; crossReferencesIndex < crossReferencesJsonList.GetLength(); ++crossReferencesIndex) {
+      m_crossReferences.push_back(crossReferencesJsonList[crossReferencesIndex].AsObject());
+    }
+    m_crossReferencesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& pricingBucketIter = headers.find("x-amz-geo-pricing-bucket");

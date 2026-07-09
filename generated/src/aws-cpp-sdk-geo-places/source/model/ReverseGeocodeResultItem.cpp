@@ -99,6 +99,14 @@ ReverseGeocodeResultItem& ReverseGeocodeResultItem::operator=(JsonView jsonValue
     }
     m_intersectionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MainAddress")) {
+    m_mainAddress = jsonValue.GetObject("MainAddress");
+    m_mainAddressHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EstimatedPointAddress")) {
+    m_estimatedPointAddress = jsonValue.GetBool("EstimatedPointAddress");
+    m_estimatedPointAddressHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -191,6 +199,14 @@ JsonValue ReverseGeocodeResultItem::Jsonize() const {
       intersectionsJsonList[intersectionsIndex].AsObject(m_intersections[intersectionsIndex].Jsonize());
     }
     payload.WithArray("Intersections", std::move(intersectionsJsonList));
+  }
+
+  if (m_mainAddressHasBeenSet) {
+    payload.WithObject("MainAddress", m_mainAddress.Jsonize());
+  }
+
+  if (m_estimatedPointAddressHasBeenSet) {
+    payload.WithBool("EstimatedPointAddress", m_estimatedPointAddress);
   }
 
   return payload;

@@ -21,6 +21,8 @@
 #include <aws/signin/model/CreateOAuth2TokenRequestBody.h>
 #include <aws/signin/model/CreateOAuth2TokenResponseBody.h>
 #include <aws/signin/model/CreateOAuth2TokenResult.h>
+#include <aws/signin/model/CreateOAuth2TokenWithIAMRequest.h>
+#include <aws/signin/model/CreateOAuth2TokenWithIAMResult.h>
 #include <aws/signin/model/DeleteConsoleAuthorizationConfigurationRequest.h>
 #include <aws/signin/model/DeleteConsoleAuthorizationConfigurationResult.h>
 #include <aws/signin/model/DeleteResourcePermissionStatementRequest.h>
@@ -30,6 +32,8 @@
 #include <aws/signin/model/GetResourcePolicyRequest.h>
 #include <aws/signin/model/GetResourcePolicyResult.h>
 #include <aws/signin/model/InternalServerException.h>
+#include <aws/signin/model/IntrospectOAuth2TokenWithIAMRequest.h>
+#include <aws/signin/model/IntrospectOAuth2TokenWithIAMResult.h>
 #include <aws/signin/model/ListResourcePermissionStatementsRequest.h>
 #include <aws/signin/model/ListResourcePermissionStatementsResult.h>
 #include <aws/signin/model/OAuth2ErrorCode.h>
@@ -40,6 +44,8 @@
 #include <aws/signin/model/PutResourcePermissionStatementRequest.h>
 #include <aws/signin/model/PutResourcePermissionStatementResult.h>
 #include <aws/signin/model/ResourceNotFoundException.h>
+#include <aws/signin/model/RevokeOAuth2TokenWithIAMRequest.h>
+#include <aws/signin/model/RevokeOAuth2TokenWithIAMResult.h>
 #include <aws/signin/model/ServiceQuotaExceededException.h>
 #include <aws/signin/model/SigninResourceBasedPolicy.h>
 #include <aws/signin/model/TooManyRequestsError.h>

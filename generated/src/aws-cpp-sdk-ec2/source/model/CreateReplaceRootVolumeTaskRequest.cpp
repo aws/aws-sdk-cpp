@@ -49,6 +49,10 @@ Aws::String CreateReplaceRootVolumeTaskRequest::SerializePayload() const {
     ss << "VolumeInitializationRate=" << m_volumeInitializationRate << "&";
   }
 
+  if (m_volumeIdHasBeenSet) {
+    ss << "VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
+#include <aws/iotwireless/model/DefaultSessionParametersMulticast.h>
 #include <aws/iotwireless/model/DlClass.h>
 #include <aws/iotwireless/model/ParticipatingGatewaysMulticast.h>
 #include <aws/iotwireless/model/SupportedRfRegion.h>
@@ -105,6 +106,24 @@ class LoRaWANMulticastGet {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The default session parameters for the multicast group.</p>
+   */
+  inline const DefaultSessionParametersMulticast& GetDefaultSessionParameters() const { return m_defaultSessionParameters; }
+  inline bool DefaultSessionParametersHasBeenSet() const { return m_defaultSessionParametersHasBeenSet; }
+  template <typename DefaultSessionParametersT = DefaultSessionParametersMulticast>
+  void SetDefaultSessionParameters(DefaultSessionParametersT&& value) {
+    m_defaultSessionParametersHasBeenSet = true;
+    m_defaultSessionParameters = std::forward<DefaultSessionParametersT>(value);
+  }
+  template <typename DefaultSessionParametersT = DefaultSessionParametersMulticast>
+  LoRaWANMulticastGet& WithDefaultSessionParameters(DefaultSessionParametersT&& value) {
+    SetDefaultSessionParameters(std::forward<DefaultSessionParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   SupportedRfRegion m_rfRegion{SupportedRfRegion::NOT_SET};
 
@@ -115,11 +134,14 @@ class LoRaWANMulticastGet {
   int m_numberOfDevicesInGroup{0};
 
   ParticipatingGatewaysMulticast m_participatingGateways;
+
+  DefaultSessionParametersMulticast m_defaultSessionParameters;
   bool m_rfRegionHasBeenSet = false;
   bool m_dlClassHasBeenSet = false;
   bool m_numberOfDevicesRequestedHasBeenSet = false;
   bool m_numberOfDevicesInGroupHasBeenSet = false;
   bool m_participatingGatewaysHasBeenSet = false;
+  bool m_defaultSessionParametersHasBeenSet = false;
 };
 
 }  // namespace Model

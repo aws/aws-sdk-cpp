@@ -81,10 +81,11 @@ class DeploymentCircuitBreaker {
 
   ///@{
   /**
-   * <p>Determines whether the deployment circuit breaker resets its failure count
-   * when a task reaches a healthy state. When set to <code>true</code>, a healthy
-   * task resets the failure count to <code>0</code>; when <code>false</code>, it
-   * doesn't.</p>
+   * <p>Specifies whether the deployment circuit breaker resets its failure count
+   * when a task reaches a healthy state. When set to <code>true</code>, a task that
+   * reaches a healthy state resets the failure count to <code>0</code>. When set to
+   * <code>false</code>, Amazon ECS does not reset the failure count. The default is
+   * <code>true</code>.</p>
    */
   inline bool GetResetOnHealthyTask() const { return m_resetOnHealthyTask; }
   inline bool ResetOnHealthyTaskHasBeenSet() const { return m_resetOnHealthyTaskHasBeenSet; }
@@ -101,7 +102,8 @@ class DeploymentCircuitBreaker {
   ///@{
   /**
    * <p>The threshold configuration that controls when the deployment circuit breaker
-   * triggers.</p>
+   * triggers. The <code>type</code> and <code>value</code> together determine how
+   * many task failures are tolerated before the circuit breaker activates.</p>
    */
   inline const ThresholdConfiguration& GetThresholdConfiguration() const { return m_thresholdConfiguration; }
   inline bool ThresholdConfigurationHasBeenSet() const { return m_thresholdConfigurationHasBeenSet; }

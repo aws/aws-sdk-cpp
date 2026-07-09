@@ -8,10 +8,13 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-places/GeoPlacesRequest.h>
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
+#include <aws/geo-places/model/AddressTranslationComponent.h>
 #include <aws/geo-places/model/GeocodeAdditionalFeature.h>
+#include <aws/geo-places/model/GeocodeAddressNamesMode.h>
 #include <aws/geo-places/model/GeocodeFilter.h>
 #include <aws/geo-places/model/GeocodeIntendedUse.h>
 #include <aws/geo-places/model/GeocodeQueryComponents.h>
+#include <aws/geo-places/model/PostalCodeMode.h>
 
 #include <utility>
 
@@ -160,7 +163,8 @@ class GeocodeRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP
+   * <p>A list of <a
+   * href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
    * 47</a> compliant language codes for the results to be rendered in. If there is
    * no data for the result in the requested language, data will be returned in the
    * default language for the entry.</p>
@@ -242,6 +246,76 @@ class GeocodeRequest : public GeoPlacesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The <code>PostalCodeMode</code> affects how postal code results are returned.
+   * If a postal code spans multiple localities and this value is empty, partial
+   * district or locality information may be returned under a single postal code
+   * result entry. If it's populated with the value
+   * <code>EnumerateSpannedLocalities</code>, all cities in that postal code are
+   * returned. If it's populated with the value
+   * <code>EnumerateSpannedDistricts</code>, all combinations of the postal code with
+   * the corresponding district and city names are returned.</p>
+   */
+  inline PostalCodeMode GetPostalCodeMode() const { return m_postalCodeMode; }
+  inline bool PostalCodeModeHasBeenSet() const { return m_postalCodeModeHasBeenSet; }
+  inline void SetPostalCodeMode(PostalCodeMode value) {
+    m_postalCodeModeHasBeenSet = true;
+    m_postalCodeMode = value;
+  }
+  inline GeocodeRequest& WithPostalCodeMode(PostalCodeMode value) {
+    SetPostalCodeMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies which address components to include translations for. Translations
+   * include all name variants and alternative names for the requested fields in all
+   * available languages. Valid values are <code>District</code>,
+   * <code>Locality</code>, <code>Region</code>, and <code>SubRegion</code>.</p>
+   */
+  inline const Aws::Vector<AddressTranslationComponent>& GetAddressTranslations() const { return m_addressTranslations; }
+  inline bool AddressTranslationsHasBeenSet() const { return m_addressTranslationsHasBeenSet; }
+  template <typename AddressTranslationsT = Aws::Vector<AddressTranslationComponent>>
+  void SetAddressTranslations(AddressTranslationsT&& value) {
+    m_addressTranslationsHasBeenSet = true;
+    m_addressTranslations = std::forward<AddressTranslationsT>(value);
+  }
+  template <typename AddressTranslationsT = Aws::Vector<AddressTranslationComponent>>
+  GeocodeRequest& WithAddressTranslations(AddressTranslationsT&& value) {
+    SetAddressTranslations(std::forward<AddressTranslationsT>(value));
+    return *this;
+  }
+  inline GeocodeRequest& AddAddressTranslations(AddressTranslationComponent value) {
+    m_addressTranslationsHasBeenSet = true;
+    m_addressTranslations.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies how address names are returned. If not set, the service returns
+   * normalized (official) names by default. When set to <code>Matched</code>,
+   * address names in the response are based on the input query rather than official
+   * names. When set to <code>Administrative</code>, the service returns the official
+   * administrative names for address components. <code>Administrative</code>
+   * currently applies only to addresses in the United States.</p>
+   */
+  inline GeocodeAddressNamesMode GetAddressNamesMode() const { return m_addressNamesMode; }
+  inline bool AddressNamesModeHasBeenSet() const { return m_addressNamesModeHasBeenSet; }
+  inline void SetAddressNamesMode(GeocodeAddressNamesMode value) {
+    m_addressNamesModeHasBeenSet = true;
+    m_addressNamesMode = value;
+  }
+  inline GeocodeRequest& WithAddressNamesMode(GeocodeAddressNamesMode value) {
+    SetAddressNamesMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_queryText;
 
@@ -262,6 +336,12 @@ class GeocodeRequest : public GeoPlacesRequest {
   GeocodeIntendedUse m_intendedUse{GeocodeIntendedUse::NOT_SET};
 
   Aws::String m_key;
+
+  PostalCodeMode m_postalCodeMode{PostalCodeMode::NOT_SET};
+
+  Aws::Vector<AddressTranslationComponent> m_addressTranslations;
+
+  GeocodeAddressNamesMode m_addressNamesMode{GeocodeAddressNamesMode::NOT_SET};
   bool m_queryTextHasBeenSet = false;
   bool m_queryComponentsHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
@@ -272,6 +352,9 @@ class GeocodeRequest : public GeoPlacesRequest {
   bool m_politicalViewHasBeenSet = false;
   bool m_intendedUseHasBeenSet = false;
   bool m_keyHasBeenSet = false;
+  bool m_postalCodeModeHasBeenSet = false;
+  bool m_addressTranslationsHasBeenSet = false;
+  bool m_addressNamesModeHasBeenSet = false;
 };
 
 }  // namespace Model
