@@ -506,6 +506,27 @@ class Canary {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the customer-managed AWS Key Management
+   * Service (AWS KMS) key used to encrypt the canary's AWS Lambda function
+   * environment variables at rest. If you don't specify a value, the service uses an
+   * AWS-managed key.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  Canary& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Returns the dry run configurations for a canary.</p>
    */
   inline const DryRunConfigOutput& GetDryRunConfig() const { return m_dryRunConfig; }
@@ -566,6 +587,8 @@ class Canary {
 
   ArtifactConfigOutput m_artifactConfig;
 
+  Aws::String m_kmsKeyArn;
+
   DryRunConfigOutput m_dryRunConfig;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -589,6 +612,7 @@ class Canary {
   bool m_multiLocationConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_artifactConfigHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_dryRunConfigHasBeenSet = false;
 };
 

@@ -21,7 +21,8 @@ enum class DetectorFeatureResult {
   RDS_LOGIN_EVENTS,
   LAMBDA_NETWORK_LOGS,
   EKS_RUNTIME_MONITORING,
-  RUNTIME_MONITORING
+  RUNTIME_MONITORING,
+  AI_ANALYST
 };
 
 namespace DetectorFeatureResultMapper {

@@ -6,6 +6,7 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/DeleteTrafficDistributionGroupRequest.h>
 #include <aws/connect/model/DeleteUseCaseRequest.h>
 #include <aws/connect/model/DeleteUserHierarchyGroupRequest.h>
 #include <aws/connect/model/DeleteUserRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/ListDataTableAttributesRequest.h>
 #include <aws/connect/model/ListDataTablePrimaryValuesRequest.h>
 #include <aws/connect/model/ListDataTableValuesRequest.h>
-#include <aws/connect/model/ListDataTablesRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -131,6 +131,25 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteTrafficDistributionGroupOutcome ConnectClient::DeleteTrafficDistributionGroup(
+    const DeleteTrafficDistributionGroupRequest& request) const {
+  if (!request.TrafficDistributionGroupIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteTrafficDistributionGroup", "Required field: TrafficDistributionGroupId, is not set");
+    return DeleteTrafficDistributionGroupOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrafficDistributionGroupId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/traffic-distribution-group/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrafficDistributionGroupId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTrafficDistributionGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteTrafficDistributionGroupOutcome(std::move(result.GetError()));
+}
 
 DeleteUseCaseOutcome ConnectClient::DeleteUseCase(const DeleteUseCaseRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
@@ -2495,21 +2514,4 @@ ListDataTableValuesOutcome ConnectClient::ListDataTableValues(const ListDataTabl
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListDataTableValuesOutcome(result.GetResultWithOwnership())
                             : ListDataTableValuesOutcome(std::move(result.GetError()));
-}
-
-ListDataTablesOutcome ConnectClient::ListDataTables(const ListDataTablesRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListDataTables", "Required field: InstanceId, is not set");
-    return ListDataTablesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                      "Missing required field [InstanceId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ListDataTablesOutcome(result.GetResultWithOwnership()) : ListDataTablesOutcome(std::move(result.GetError()));
 }

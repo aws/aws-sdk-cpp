@@ -102,6 +102,7 @@
 #include <aws/ivs/model/PlaybackKeyPairSummary.h>
 #include <aws/ivs/model/PlaybackRestrictionPolicy.h>
 #include <aws/ivs/model/PlaybackRestrictionPolicySummary.h>
+#include <aws/ivs/model/PostRollConfiguration.h>
 #include <aws/ivs/model/PutMetadataRequest.h>
 #include <aws/ivs/model/RecordingConfiguration.h>
 #include <aws/ivs/model/RecordingConfigurationState.h>

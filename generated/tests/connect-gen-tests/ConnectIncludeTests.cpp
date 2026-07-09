@@ -175,6 +175,7 @@
 #include <aws/connect/model/ContactEvaluationAttributeFilter.h>
 #include <aws/connect/model/ContactEvaluationAttributeKey.h>
 #include <aws/connect/model/ContactEvaluationAttributeValue.h>
+#include <aws/connect/model/ContactField.h>
 #include <aws/connect/model/ContactFilter.h>
 #include <aws/connect/model/ContactFlow.h>
 #include <aws/connect/model/ContactFlowAttributeAndCondition.h>
@@ -332,6 +333,8 @@
 #include <aws/connect/model/DefaultVocabulary.h>
 #include <aws/connect/model/DeleteAttachedFileRequest.h>
 #include <aws/connect/model/DeleteAttachedFileResult.h>
+#include <aws/connect/model/DeleteContactDataRequest.h>
+#include <aws/connect/model/DeleteContactDataResult.h>
 #include <aws/connect/model/DeleteContactEvaluationRequest.h>
 #include <aws/connect/model/DeleteContactFlowModuleAliasRequest.h>
 #include <aws/connect/model/DeleteContactFlowModuleAliasResult.h>

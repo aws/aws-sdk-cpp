@@ -20,7 +20,7 @@ namespace IVS {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p>Request was denied due to request throttling.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ThrottlingException">AWS
  * API Reference</a></p>
  */

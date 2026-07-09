@@ -457,6 +457,29 @@ class UpdateCanaryRequest : public SyntheticsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the customer-managed AWS Key Management
+   * Service (AWS KMS) key used to encrypt the canary's AWS Lambda function
+   * environment variables at rest. If you don't specify a value, the service uses an
+   * AWS-managed key. If you omit this parameter, the service retains the existing
+   * value. To revert to the AWS-managed key, set this parameter to an empty
+   * string.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  UpdateCanaryRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -493,6 +516,8 @@ class UpdateCanaryRequest : public SyntheticsRequest {
   Aws::Vector<AddReplicaLocationInput> m_addReplicaLocations;
 
   Aws::Vector<Aws::String> m_removeReplicaLocations;
+
+  Aws::String m_kmsKeyArn;
   bool m_nameHasBeenSet = false;
   bool m_codeHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
@@ -511,6 +536,7 @@ class UpdateCanaryRequest : public SyntheticsRequest {
   bool m_browserConfigsHasBeenSet = false;
   bool m_addReplicaLocationsHasBeenSet = false;
   bool m_removeReplicaLocationsHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

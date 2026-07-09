@@ -102,5 +102,9 @@ Aws::String UpdateCanaryRequest::SerializePayload() const {
     payload.WithArray("RemoveReplicaLocations", std::move(removeReplicaLocationsJsonList));
   }
 
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("KmsKeyArn", m_kmsKeyArn);
+  }
+
   return payload.View().WriteReadable();
 }

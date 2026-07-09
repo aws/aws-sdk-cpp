@@ -2450,6 +2450,41 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes the specified fields containing personally identifiable information
+   * (PII) from a contact in the specified Connect Customer instance. This operation
+   * redacts PII (such as customer endpoints, additional email recipients, and the
+   * email subject) from the contact and its associated contact trace record (CTR).
+   * The contact must be in a terminated state.</p>  <p>This operation
+   * performs a hard deletion of the specified PII and cannot be undone. There is no
+   * retention period; after the data is deleted, it cannot be recovered. Only fields
+   * that Connect Customer identifies and stores as PII are removed. Any PII that you
+   * place in fields outside the scope of this operation remains your responsibility
+   * to remove.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactData">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteContactDataOutcome DeleteContactData(const Model::DeleteContactDataRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteContactData that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteContactDataRequestT = Model::DeleteContactDataRequest>
+  Model::DeleteContactDataOutcomeCallable DeleteContactDataCallable(const DeleteContactDataRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteContactData, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteContactData that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteContactDataRequestT = Model::DeleteContactDataRequest>
+  void DeleteContactDataAsync(const DeleteContactDataRequestT& request, const DeleteContactDataResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteContactData, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a contact evaluation in the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactEvaluation">AWS

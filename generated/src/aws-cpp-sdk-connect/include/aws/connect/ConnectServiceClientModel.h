@@ -80,6 +80,7 @@
 #include <aws/connect/model/CreateWorkspaceResult.h>
 #include <aws/connect/model/DeactivateEvaluationFormResult.h>
 #include <aws/connect/model/DeleteAttachedFileResult.h>
+#include <aws/connect/model/DeleteContactDataResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleAliasResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleVersionResult.h>
@@ -431,6 +432,7 @@ class CreateWorkspaceRequest;
 class CreateWorkspacePageRequest;
 class DeactivateEvaluationFormRequest;
 class DeleteAttachedFileRequest;
+class DeleteContactDataRequest;
 class DeleteContactEvaluationRequest;
 class DeleteContactFlowRequest;
 class DeleteContactFlowModuleRequest;
@@ -811,6 +813,7 @@ typedef Aws::Utils::Outcome<CreateWorkspaceResult, ConnectError> CreateWorkspace
 typedef Aws::Utils::Outcome<CreateWorkspacePageResult, ConnectError> CreateWorkspacePageOutcome;
 typedef Aws::Utils::Outcome<DeactivateEvaluationFormResult, ConnectError> DeactivateEvaluationFormOutcome;
 typedef Aws::Utils::Outcome<DeleteAttachedFileResult, ConnectError> DeleteAttachedFileOutcome;
+typedef Aws::Utils::Outcome<DeleteContactDataResult, ConnectError> DeleteContactDataOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteContactEvaluationOutcome;
 typedef Aws::Utils::Outcome<DeleteContactFlowResult, ConnectError> DeleteContactFlowOutcome;
 typedef Aws::Utils::Outcome<DeleteContactFlowModuleResult, ConnectError> DeleteContactFlowModuleOutcome;
@@ -1191,6 +1194,7 @@ typedef std::future<CreateWorkspaceOutcome> CreateWorkspaceOutcomeCallable;
 typedef std::future<CreateWorkspacePageOutcome> CreateWorkspacePageOutcomeCallable;
 typedef std::future<DeactivateEvaluationFormOutcome> DeactivateEvaluationFormOutcomeCallable;
 typedef std::future<DeleteAttachedFileOutcome> DeleteAttachedFileOutcomeCallable;
+typedef std::future<DeleteContactDataOutcome> DeleteContactDataOutcomeCallable;
 typedef std::future<DeleteContactEvaluationOutcome> DeleteContactEvaluationOutcomeCallable;
 typedef std::future<DeleteContactFlowOutcome> DeleteContactFlowOutcomeCallable;
 typedef std::future<DeleteContactFlowModuleOutcome> DeleteContactFlowModuleOutcomeCallable;
@@ -1735,6 +1739,9 @@ typedef std::function<void(const ConnectClient*, const Model::DeactivateEvaluati
 typedef std::function<void(const ConnectClient*, const Model::DeleteAttachedFileRequest&, const Model::DeleteAttachedFileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAttachedFileResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DeleteContactDataRequest&, const Model::DeleteContactDataOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteContactDataResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DeleteContactEvaluationRequest&, const Model::DeleteContactEvaluationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteContactEvaluationResponseReceivedHandler;

@@ -22,6 +22,7 @@ static const int RDS_LOGIN_EVENTS_HASH = HashingUtils::HashString("RDS_LOGIN_EVE
 static const int LAMBDA_NETWORK_LOGS_HASH = HashingUtils::HashString("LAMBDA_NETWORK_LOGS");
 static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
 static const int RUNTIME_MONITORING_HASH = HashingUtils::HashString("RUNTIME_MONITORING");
+static const int AI_ANALYST_HASH = HashingUtils::HashString("AI_ANALYST");
 
 DetectorFeature GetDetectorFeatureForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ DetectorFeature GetDetectorFeatureForName(const Aws::String& name) {
     return DetectorFeature::EKS_RUNTIME_MONITORING;
   } else if (hashCode == RUNTIME_MONITORING_HASH) {
     return DetectorFeature::RUNTIME_MONITORING;
+  } else if (hashCode == AI_ANALYST_HASH) {
+    return DetectorFeature::AI_ANALYST;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForDetectorFeature(DetectorFeature enumValue) {
       return "EKS_RUNTIME_MONITORING";
     case DetectorFeature::RUNTIME_MONITORING:
       return "RUNTIME_MONITORING";
+    case DetectorFeature::AI_ANALYST:
+      return "AI_ANALYST";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

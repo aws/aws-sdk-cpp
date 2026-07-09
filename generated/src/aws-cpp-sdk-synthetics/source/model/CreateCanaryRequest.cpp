@@ -99,5 +99,9 @@ Aws::String CreateCanaryRequest::SerializePayload() const {
     payload.WithObject("ArtifactConfig", m_artifactConfig.Jsonize());
   }
 
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("KmsKeyArn", m_kmsKeyArn);
+  }
+
   return payload.View().WriteReadable();
 }

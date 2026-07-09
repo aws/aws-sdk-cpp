@@ -79,6 +79,7 @@
 #include <aws/connect/model/CreateWorkspaceRequest.h>
 #include <aws/connect/model/DeactivateEvaluationFormRequest.h>
 #include <aws/connect/model/DeleteAttachedFileRequest.h>
+#include <aws/connect/model/DeleteContactDataRequest.h>
 #include <aws/connect/model/DeleteContactEvaluationRequest.h>
 #include <aws/connect/model/DeleteContactFlowModuleAliasRequest.h>
 #include <aws/connect/model/DeleteContactFlowModuleRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/DeleteSessionRequest.h>
 #include <aws/connect/model/DeleteTaskTemplateRequest.h>
 #include <aws/connect/model/DeleteTestCaseRequest.h>
-#include <aws/connect/model/DeleteTrafficDistributionGroupRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -1767,6 +1767,30 @@ DeleteAttachedFileOutcome ConnectClient::DeleteAttachedFile(const DeleteAttached
                             : DeleteAttachedFileOutcome(std::move(result.GetError()));
 }
 
+DeleteContactDataOutcome ConnectClient::DeleteContactData(const DeleteContactDataRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteContactData", "Required field: InstanceId, is not set");
+    return DeleteContactDataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteContactData", "Required field: ContactId, is not set");
+    return DeleteContactDataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [ContactId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/delete/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteContactDataOutcome(result.GetResultWithOwnership())
+                            : DeleteContactDataOutcome(std::move(result.GetError()));
+}
+
 DeleteContactEvaluationOutcome ConnectClient::DeleteContactEvaluation(const DeleteContactEvaluationRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteContactEvaluation", "Required field: InstanceId, is not set");
@@ -2423,23 +2447,4 @@ DeleteTestCaseOutcome ConnectClient::DeleteTestCase(const DeleteTestCaseRequest&
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteTestCaseOutcome(result.GetResultWithOwnership()) : DeleteTestCaseOutcome(std::move(result.GetError()));
-}
-
-DeleteTrafficDistributionGroupOutcome ConnectClient::DeleteTrafficDistributionGroup(
-    const DeleteTrafficDistributionGroupRequest& request) const {
-  if (!request.TrafficDistributionGroupIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteTrafficDistributionGroup", "Required field: TrafficDistributionGroupId, is not set");
-    return DeleteTrafficDistributionGroupOutcome(Aws::Client::AWSError<ConnectErrors>(
-        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrafficDistributionGroupId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/traffic-distribution-group/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrafficDistributionGroupId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
-  return result.IsSuccess() ? DeleteTrafficDistributionGroupOutcome(result.GetResultWithOwnership())
-                            : DeleteTrafficDistributionGroupOutcome(std::move(result.GetError()));
 }
