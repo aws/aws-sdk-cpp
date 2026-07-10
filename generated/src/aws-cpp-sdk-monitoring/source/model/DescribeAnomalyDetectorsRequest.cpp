@@ -17,6 +17,9 @@ Aws::String DescribeAnomalyDetectorsRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
+  if (m_anomalyDetectorIdsHasBeenSet) {
+    mapSize++;
+  }
   if (m_nextTokenHasBeenSet) {
     mapSize++;
   }
@@ -37,6 +40,14 @@ Aws::String DescribeAnomalyDetectorsRequest::SerializePayload() const {
   }
 
   encoder.WriteMapStart(mapSize);
+
+  if (m_anomalyDetectorIdsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AnomalyDetectorIds"));
+    encoder.WriteArrayStart(m_anomalyDetectorIds.size());
+    for (const auto& item_0 : m_anomalyDetectorIds) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
+    }
+  }
 
   if (m_nextTokenHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));

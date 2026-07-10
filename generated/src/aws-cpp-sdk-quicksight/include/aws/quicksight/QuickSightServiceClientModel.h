@@ -40,6 +40,7 @@
 #include <aws/quicksight/model/CreateGroupResult.h>
 #include <aws/quicksight/model/CreateIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/CreateIngestionResult.h>
+#include <aws/quicksight/model/CreateKnowledgeBaseResult.h>
 #include <aws/quicksight/model/CreateNamespaceResult.h>
 #include <aws/quicksight/model/CreateOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/CreateRefreshScheduleResult.h>
@@ -262,6 +263,7 @@
 #include <aws/quicksight/model/UpdateIpRestrictionResult.h>
 #include <aws/quicksight/model/UpdateKeyRegistrationResult.h>
 #include <aws/quicksight/model/UpdateKnowledgeBasePermissionsResult.h>
+#include <aws/quicksight/model/UpdateKnowledgeBaseResult.h>
 #include <aws/quicksight/model/UpdateOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/UpdatePublicSharingSettingsResult.h>
 #include <aws/quicksight/model/UpdateQPersonalizationConfigurationResult.h>
@@ -340,6 +342,7 @@ class CreateGroupRequest;
 class CreateGroupMembershipRequest;
 class CreateIAMPolicyAssignmentRequest;
 class CreateIngestionRequest;
+class CreateKnowledgeBaseRequest;
 class CreateNamespaceRequest;
 class CreateOAuthClientApplicationRequest;
 class CreateRefreshScheduleRequest;
@@ -561,6 +564,7 @@ class UpdateIAMPolicyAssignmentRequest;
 class UpdateIdentityPropagationConfigRequest;
 class UpdateIpRestrictionRequest;
 class UpdateKeyRegistrationRequest;
+class UpdateKnowledgeBaseRequest;
 class UpdateKnowledgeBasePermissionsRequest;
 class UpdateOAuthClientApplicationRequest;
 class UpdatePublicSharingSettingsRequest;
@@ -610,6 +614,7 @@ typedef Aws::Utils::Outcome<CreateGroupResult, QuickSightError> CreateGroupOutco
 typedef Aws::Utils::Outcome<CreateGroupMembershipResult, QuickSightError> CreateGroupMembershipOutcome;
 typedef Aws::Utils::Outcome<CreateIAMPolicyAssignmentResult, QuickSightError> CreateIAMPolicyAssignmentOutcome;
 typedef Aws::Utils::Outcome<CreateIngestionResult, QuickSightError> CreateIngestionOutcome;
+typedef Aws::Utils::Outcome<CreateKnowledgeBaseResult, QuickSightError> CreateKnowledgeBaseOutcome;
 typedef Aws::Utils::Outcome<CreateNamespaceResult, QuickSightError> CreateNamespaceOutcome;
 typedef Aws::Utils::Outcome<CreateOAuthClientApplicationResult, QuickSightError> CreateOAuthClientApplicationOutcome;
 typedef Aws::Utils::Outcome<CreateRefreshScheduleResult, QuickSightError> CreateRefreshScheduleOutcome;
@@ -832,6 +837,7 @@ typedef Aws::Utils::Outcome<UpdateIAMPolicyAssignmentResult, QuickSightError> Up
 typedef Aws::Utils::Outcome<UpdateIdentityPropagationConfigResult, QuickSightError> UpdateIdentityPropagationConfigOutcome;
 typedef Aws::Utils::Outcome<UpdateIpRestrictionResult, QuickSightError> UpdateIpRestrictionOutcome;
 typedef Aws::Utils::Outcome<UpdateKeyRegistrationResult, QuickSightError> UpdateKeyRegistrationOutcome;
+typedef Aws::Utils::Outcome<UpdateKnowledgeBaseResult, QuickSightError> UpdateKnowledgeBaseOutcome;
 typedef Aws::Utils::Outcome<UpdateKnowledgeBasePermissionsResult, QuickSightError> UpdateKnowledgeBasePermissionsOutcome;
 typedef Aws::Utils::Outcome<UpdateOAuthClientApplicationResult, QuickSightError> UpdateOAuthClientApplicationOutcome;
 typedef Aws::Utils::Outcome<UpdatePublicSharingSettingsResult, QuickSightError> UpdatePublicSharingSettingsOutcome;
@@ -881,6 +887,7 @@ typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
 typedef std::future<CreateGroupMembershipOutcome> CreateGroupMembershipOutcomeCallable;
 typedef std::future<CreateIAMPolicyAssignmentOutcome> CreateIAMPolicyAssignmentOutcomeCallable;
 typedef std::future<CreateIngestionOutcome> CreateIngestionOutcomeCallable;
+typedef std::future<CreateKnowledgeBaseOutcome> CreateKnowledgeBaseOutcomeCallable;
 typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
 typedef std::future<CreateOAuthClientApplicationOutcome> CreateOAuthClientApplicationOutcomeCallable;
 typedef std::future<CreateRefreshScheduleOutcome> CreateRefreshScheduleOutcomeCallable;
@@ -1102,6 +1109,7 @@ typedef std::future<UpdateIAMPolicyAssignmentOutcome> UpdateIAMPolicyAssignmentO
 typedef std::future<UpdateIdentityPropagationConfigOutcome> UpdateIdentityPropagationConfigOutcomeCallable;
 typedef std::future<UpdateIpRestrictionOutcome> UpdateIpRestrictionOutcomeCallable;
 typedef std::future<UpdateKeyRegistrationOutcome> UpdateKeyRegistrationOutcomeCallable;
+typedef std::future<UpdateKnowledgeBaseOutcome> UpdateKnowledgeBaseOutcomeCallable;
 typedef std::future<UpdateKnowledgeBasePermissionsOutcome> UpdateKnowledgeBasePermissionsOutcomeCallable;
 typedef std::future<UpdateOAuthClientApplicationOutcome> UpdateOAuthClientApplicationOutcomeCallable;
 typedef std::future<UpdatePublicSharingSettingsOutcome> UpdatePublicSharingSettingsOutcomeCallable;
@@ -1198,6 +1206,9 @@ typedef std::function<void(const QuickSightClient*, const Model::CreateIAMPolicy
 typedef std::function<void(const QuickSightClient*, const Model::CreateIngestionRequest&, const Model::CreateIngestionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateIngestionResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::CreateKnowledgeBaseRequest&, const Model::CreateKnowledgeBaseOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateKnowledgeBaseResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::CreateNamespaceRequest&, const Model::CreateNamespaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateNamespaceResponseReceivedHandler;
@@ -1901,6 +1912,9 @@ typedef std::function<void(const QuickSightClient*, const Model::UpdateIpRestric
 typedef std::function<void(const QuickSightClient*, const Model::UpdateKeyRegistrationRequest&, const Model::UpdateKeyRegistrationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateKeyRegistrationResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::UpdateKnowledgeBaseRequest&, const Model::UpdateKnowledgeBaseOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateKnowledgeBaseResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::UpdateKnowledgeBasePermissionsRequest&,
                            const Model::UpdateKnowledgeBasePermissionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

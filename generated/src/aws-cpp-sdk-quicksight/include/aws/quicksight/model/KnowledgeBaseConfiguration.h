@@ -49,28 +49,9 @@ class KnowledgeBaseConfiguration {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Indicates whether event notifications are enabled for the knowledge base.</p>
-   */
-  inline bool GetEventEnabled() const { return m_eventEnabled; }
-  inline bool EventEnabledHasBeenSet() const { return m_eventEnabledHasBeenSet; }
-  inline void SetEventEnabled(bool value) {
-    m_eventEnabledHasBeenSet = true;
-    m_eventEnabled = value;
-  }
-  inline KnowledgeBaseConfiguration& WithEventEnabled(bool value) {
-    SetEventEnabled(value);
-    return *this;
-  }
-  ///@}
  private:
   KbTemplateConfiguration m_templateConfiguration;
-
-  bool m_eventEnabled{false};
   bool m_templateConfigurationHasBeenSet = false;
-  bool m_eventEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

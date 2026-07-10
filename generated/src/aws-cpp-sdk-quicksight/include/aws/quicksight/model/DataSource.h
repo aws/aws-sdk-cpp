@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/CredentialStatus.h>
 #include <aws/quicksight/model/DataSourceErrorInfo.h>
 #include <aws/quicksight/model/DataSourceParameters.h>
 #include <aws/quicksight/model/DataSourceType.h>
@@ -292,6 +293,44 @@ class DataSource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The credential verification status of the data source. Valid values
+   * include:</p> <ul> <li> <p> <code>CONNECTED</code> – Credential validation
+   * succeeded.</p> </li> <li> <p> <code>AUTH_FAILED</code> – Credential validation
+   * failed.</p> </li> <li> <p> <code>NOT_VERIFIED</code> – Credential validation has
+   * not been performed.</p> </li> </ul>
+   */
+  inline CredentialStatus GetCredentialStatus() const { return m_credentialStatus; }
+  inline bool CredentialStatusHasBeenSet() const { return m_credentialStatusHasBeenSet; }
+  inline void SetCredentialStatus(CredentialStatus value) {
+    m_credentialStatusHasBeenSet = true;
+    m_credentialStatus = value;
+  }
+  inline DataSource& WithCredentialStatus(CredentialStatus value) {
+    SetCredentialStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time that the credentials were last verified.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastCredentialVerifiedAt() const { return m_lastCredentialVerifiedAt; }
+  inline bool LastCredentialVerifiedAtHasBeenSet() const { return m_lastCredentialVerifiedAtHasBeenSet; }
+  template <typename LastCredentialVerifiedAtT = Aws::Utils::DateTime>
+  void SetLastCredentialVerifiedAt(LastCredentialVerifiedAtT&& value) {
+    m_lastCredentialVerifiedAtHasBeenSet = true;
+    m_lastCredentialVerifiedAt = std::forward<LastCredentialVerifiedAtT>(value);
+  }
+  template <typename LastCredentialVerifiedAtT = Aws::Utils::DateTime>
+  DataSource& WithLastCredentialVerifiedAt(LastCredentialVerifiedAtT&& value) {
+    SetLastCredentialVerifiedAt(std::forward<LastCredentialVerifiedAtT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -318,6 +357,10 @@ class DataSource {
   DataSourceErrorInfo m_errorInfo;
 
   Aws::String m_secretArn;
+
+  CredentialStatus m_credentialStatus{CredentialStatus::NOT_SET};
+
+  Aws::Utils::DateTime m_lastCredentialVerifiedAt{};
   bool m_arnHasBeenSet = false;
   bool m_dataSourceIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -331,6 +374,8 @@ class DataSource {
   bool m_sslPropertiesHasBeenSet = false;
   bool m_errorInfoHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
+  bool m_credentialStatusHasBeenSet = false;
+  bool m_lastCredentialVerifiedAtHasBeenSet = false;
 };
 
 }  // namespace Model

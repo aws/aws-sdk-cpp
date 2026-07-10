@@ -29,6 +29,24 @@ class PutAnomalyDetectorResult {
   AWS_CLOUDWATCH_API PutAnomalyDetectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
+  /**
+   * <p>The unique identifier of the anomaly detector that you created or
+   * updated.</p>
+   */
+  inline const Aws::String& GetAnomalyDetectorId() const { return m_anomalyDetectorId; }
+  template <typename AnomalyDetectorIdT = Aws::String>
+  void SetAnomalyDetectorId(AnomalyDetectorIdT&& value) {
+    m_anomalyDetectorIdHasBeenSet = true;
+    m_anomalyDetectorId = std::forward<AnomalyDetectorIdT>(value);
+  }
+  template <typename AnomalyDetectorIdT = Aws::String>
+  PutAnomalyDetectorResult& WithAnomalyDetectorId(AnomalyDetectorIdT&& value) {
+    SetAnomalyDetectorId(std::forward<AnomalyDetectorIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -60,10 +78,13 @@ class PutAnomalyDetectorResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_anomalyDetectorId;
+
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_anomalyDetectorIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

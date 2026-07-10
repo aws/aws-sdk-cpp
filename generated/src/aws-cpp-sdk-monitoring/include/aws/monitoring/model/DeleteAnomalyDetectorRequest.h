@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/monitoring/CloudWatchRequest.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/MetricMathAnomalyDetector.h>
@@ -30,6 +31,26 @@ class DeleteAnomalyDetectorRequest : public CloudWatchRequest {
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
   AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>Specifies the unique identifier of the anomaly detector to delete. If you
+   * specify this parameter, you do not need to specify a metric to identify the
+   * detector.</p>
+   */
+  inline const Aws::String& GetAnomalyDetectorId() const { return m_anomalyDetectorId; }
+  inline bool AnomalyDetectorIdHasBeenSet() const { return m_anomalyDetectorIdHasBeenSet; }
+  template <typename AnomalyDetectorIdT = Aws::String>
+  void SetAnomalyDetectorId(AnomalyDetectorIdT&& value) {
+    m_anomalyDetectorIdHasBeenSet = true;
+    m_anomalyDetectorId = std::forward<AnomalyDetectorIdT>(value);
+  }
+  template <typename AnomalyDetectorIdT = Aws::String>
+  DeleteAnomalyDetectorRequest& WithAnomalyDetectorId(AnomalyDetectorIdT&& value) {
+    SetAnomalyDetectorId(std::forward<AnomalyDetectorIdT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -83,9 +104,12 @@ class DeleteAnomalyDetectorRequest : public CloudWatchRequest {
   }
   ///@}
  private:
+  Aws::String m_anomalyDetectorId;
+
   SingleMetricAnomalyDetector m_singleMetricAnomalyDetector;
 
   MetricMathAnomalyDetector m_metricMathAnomalyDetector;
+  bool m_anomalyDetectorIdHasBeenSet = false;
   bool m_singleMetricAnomalyDetectorHasBeenSet = false;
   bool m_metricMathAnomalyDetectorHasBeenSet = false;
 };

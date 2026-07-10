@@ -8,6 +8,7 @@
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/CapacityProviderScalingConfig.h>
+#include <aws/lambda/model/CapacityProviderTelemetryConfig.h>
 #include <aws/lambda/model/PropagateTags.h>
 
 #include <utility>
@@ -81,15 +82,36 @@ class UpdateCapacityProviderRequest : public LambdaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated telemetry configuration for the capacity provider.</p>
+   */
+  inline const CapacityProviderTelemetryConfig& GetTelemetryConfig() const { return m_telemetryConfig; }
+  inline bool TelemetryConfigHasBeenSet() const { return m_telemetryConfigHasBeenSet; }
+  template <typename TelemetryConfigT = CapacityProviderTelemetryConfig>
+  void SetTelemetryConfig(TelemetryConfigT&& value) {
+    m_telemetryConfigHasBeenSet = true;
+    m_telemetryConfig = std::forward<TelemetryConfigT>(value);
+  }
+  template <typename TelemetryConfigT = CapacityProviderTelemetryConfig>
+  UpdateCapacityProviderRequest& WithTelemetryConfig(TelemetryConfigT&& value) {
+    SetTelemetryConfig(std::forward<TelemetryConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityProviderName;
 
   CapacityProviderScalingConfig m_capacityProviderScalingConfig;
 
   PropagateTags m_propagateTags;
+
+  CapacityProviderTelemetryConfig m_telemetryConfig;
   bool m_capacityProviderNameHasBeenSet = false;
   bool m_capacityProviderScalingConfigHasBeenSet = false;
   bool m_propagateTagsHasBeenSet = false;
+  bool m_telemetryConfigHasBeenSet = false;
 };
 
 }  // namespace Model

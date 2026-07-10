@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/AccessControlConfiguration.h>
 #include <aws/quicksight/model/DataSetStatus.h>
 #include <aws/quicksight/model/KnowledgeBaseConfiguration.h>
 #include <aws/quicksight/model/KnowledgeBaseIngestionSummary.h>
@@ -163,6 +164,24 @@ class KnowledgeBase {
 
   ///@{
   /**
+   * <p>The access control configuration for the knowledge base.</p>
+   */
+  inline const AccessControlConfiguration& GetAccessControlConfiguration() const { return m_accessControlConfiguration; }
+  inline bool AccessControlConfigurationHasBeenSet() const { return m_accessControlConfigurationHasBeenSet; }
+  template <typename AccessControlConfigurationT = AccessControlConfiguration>
+  void SetAccessControlConfiguration(AccessControlConfigurationT&& value) {
+    m_accessControlConfigurationHasBeenSet = true;
+    m_accessControlConfiguration = std::forward<AccessControlConfigurationT>(value);
+  }
+  template <typename AccessControlConfigurationT = AccessControlConfiguration>
+  KnowledgeBase& WithAccessControlConfiguration(AccessControlConfigurationT&& value) {
+    SetAccessControlConfiguration(std::forward<AccessControlConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The type of the knowledge base.</p>
    */
   inline const Aws::String& GetType() const { return m_type; }
@@ -235,7 +254,7 @@ class KnowledgeBase {
 
   ///@{
   /**
-   * <p>Indicates whether email notifications are enabled for ingestion failures.</p>
+   * <p>Specifies whether email notifications are enabled for ingestion failures.</p>
    */
   inline bool GetIsEmailNotificationOptedForIngestionFailures() const { return m_isEmailNotificationOptedForIngestionFailures; }
   inline bool IsEmailNotificationOptedForIngestionFailuresHasBeenSet() const {
@@ -387,6 +406,8 @@ class KnowledgeBase {
 
   MediaExtractionConfiguration m_mediaExtractionConfiguration;
 
+  AccessControlConfiguration m_accessControlConfiguration;
+
   Aws::String m_type;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -417,6 +438,7 @@ class KnowledgeBase {
   bool m_dataSourceArnHasBeenSet = false;
   bool m_knowledgeBaseConfigurationHasBeenSet = false;
   bool m_mediaExtractionConfigurationHasBeenSet = false;
+  bool m_accessControlConfigurationHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;

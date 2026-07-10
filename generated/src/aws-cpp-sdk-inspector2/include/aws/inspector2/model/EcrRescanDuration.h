@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Inspector2 {
 namespace Model {
-enum class EcrRescanDuration { NOT_SET, LIFETIME, DAYS_30, DAYS_180, DAYS_14, DAYS_60, DAYS_90 };
+enum class EcrRescanDuration { NOT_SET, LIFETIME, DAYS_30, DAYS_180, DAYS_14, DAYS_60, DAYS_90, DAYS_3, DAYS_7 };
 
 namespace EcrRescanDurationMapper {
 AWS_INSPECTOR2_API EcrRescanDuration GetEcrRescanDurationForName(const Aws::String& name);

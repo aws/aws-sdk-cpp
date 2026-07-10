@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/AnomalyDetectorConfiguration.h>
@@ -39,6 +40,27 @@ class AnomalyDetector {
   AWS_CLOUDWATCH_API AnomalyDetector(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
   AWS_CLOUDWATCH_API AnomalyDetector& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
   AWS_CLOUDWATCH_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
+
+  ///@{
+  /**
+   * <p>The unique identifier of the anomaly detector.</p>  <p>The identifier
+   * does not restrict access to a specific anomaly detector in an IAM policy.
+   * Permissions for anomaly detector operations apply to all anomaly detectors in
+   * the account.</p>
+   */
+  inline const Aws::String& GetAnomalyDetectorId() const { return m_anomalyDetectorId; }
+  inline bool AnomalyDetectorIdHasBeenSet() const { return m_anomalyDetectorIdHasBeenSet; }
+  template <typename AnomalyDetectorIdT = Aws::String>
+  void SetAnomalyDetectorId(AnomalyDetectorIdT&& value) {
+    m_anomalyDetectorIdHasBeenSet = true;
+    m_anomalyDetectorId = std::forward<AnomalyDetectorIdT>(value);
+  }
+  template <typename AnomalyDetectorIdT = Aws::String>
+  AnomalyDetector& WithAnomalyDetectorId(AnomalyDetectorIdT&& value) {
+    SetAnomalyDetectorId(std::forward<AnomalyDetectorIdT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -132,6 +154,8 @@ class AnomalyDetector {
   }
   ///@}
  private:
+  Aws::String m_anomalyDetectorId;
+
   AnomalyDetectorConfiguration m_configuration;
 
   AnomalyDetectorStateValue m_stateValue{AnomalyDetectorStateValue::NOT_SET};
@@ -141,6 +165,7 @@ class AnomalyDetector {
   SingleMetricAnomalyDetector m_singleMetricAnomalyDetector;
 
   MetricMathAnomalyDetector m_metricMathAnomalyDetector;
+  bool m_anomalyDetectorIdHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_stateValueHasBeenSet = false;
   bool m_metricCharacteristicsHasBeenSet = false;

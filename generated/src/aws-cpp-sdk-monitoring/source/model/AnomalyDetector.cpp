@@ -30,7 +30,37 @@ AnomalyDetector& AnomalyDetector::operator=(const std::shared_ptr<Aws::Crt::Cbor
             if (initialKey.has_value()) {
               Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
 
-              if (initialKeyStr == "Configuration") {
+              if (initialKeyStr == "AnomalyDetectorId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_anomalyDetectorId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_anomalyDetectorId = ss.str();
+                  }
+                }
+                m_anomalyDetectorIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Configuration") {
                 m_configuration = AnomalyDetectorConfiguration(decoder);
                 m_configurationHasBeenSet = true;
               }
@@ -84,7 +114,37 @@ AnomalyDetector& AnomalyDetector::operator=(const std::shared_ptr<Aws::Crt::Cbor
           if (initialKey.has_value()) {
             Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
 
-            if (initialKeyStr == "Configuration") {
+            if (initialKeyStr == "AnomalyDetectorId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_anomalyDetectorId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_anomalyDetectorId = ss.str();
+                }
+              }
+              m_anomalyDetectorIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Configuration") {
               m_configuration = AnomalyDetectorConfiguration(decoder);
               m_configurationHasBeenSet = true;
             }
@@ -127,6 +187,9 @@ AnomalyDetector& AnomalyDetector::operator=(const std::shared_ptr<Aws::Crt::Cbor
 void AnomalyDetector::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   // Calculate map size
   size_t mapSize = 0;
+  if (m_anomalyDetectorIdHasBeenSet) {
+    mapSize++;
+  }
   if (m_configurationHasBeenSet) {
     mapSize++;
   }
@@ -144,6 +207,11 @@ void AnomalyDetector::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   }
 
   encoder.WriteMapStart(mapSize);
+
+  if (m_anomalyDetectorIdHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AnomalyDetectorId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_anomalyDetectorId.c_str()));
+  }
 
   if (m_configurationHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("Configuration"));

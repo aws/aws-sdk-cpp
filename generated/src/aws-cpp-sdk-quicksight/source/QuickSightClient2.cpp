@@ -20,6 +20,7 @@
 #include <aws/quicksight/QuickSightClient.h>
 #include <aws/quicksight/QuickSightEndpointProvider.h>
 #include <aws/quicksight/QuickSightErrorMarshaller.h>
+#include <aws/quicksight/model/SearchKnowledgeBasesRequest.h>
 #include <aws/quicksight/model/SearchSpacesRequest.h>
 #include <aws/quicksight/model/SearchTopicsRequest.h>
 #include <aws/quicksight/model/StartAssetBundleExportJobRequest.h>
@@ -63,6 +64,7 @@
 #include <aws/quicksight/model/UpdateIpRestrictionRequest.h>
 #include <aws/quicksight/model/UpdateKeyRegistrationRequest.h>
 #include <aws/quicksight/model/UpdateKnowledgeBasePermissionsRequest.h>
+#include <aws/quicksight/model/UpdateKnowledgeBaseRequest.h>
 #include <aws/quicksight/model/UpdateOAuthClientApplicationRequest.h>
 #include <aws/quicksight/model/UpdatePublicSharingSettingsRequest.h>
 #include <aws/quicksight/model/UpdateQPersonalizationConfigurationRequest.h>
@@ -98,6 +100,25 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+SearchKnowledgeBasesOutcome QuickSightClient::SearchKnowledgeBases(const SearchKnowledgeBasesRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SearchKnowledgeBases", "Required field: AwsAccountId, is not set");
+    return SearchKnowledgeBasesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [AwsAccountId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/search/knowledge-bases");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchKnowledgeBasesOutcome(result.GetResultWithOwnership())
+                            : SearchKnowledgeBasesOutcome(std::move(result.GetError()));
+}
 
 SearchSpacesOutcome QuickSightClient::SearchSpaces(const SearchSpacesRequest& request) const {
   if (!request.AwsAccountIdHasBeenSet()) {
@@ -1111,6 +1132,31 @@ UpdateKeyRegistrationOutcome QuickSightClient::UpdateKeyRegistration(const Updat
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateKeyRegistrationOutcome(result.GetResultWithOwnership())
                             : UpdateKeyRegistrationOutcome(std::move(result.GetError()));
+}
+
+UpdateKnowledgeBaseOutcome QuickSightClient::UpdateKnowledgeBase(const UpdateKnowledgeBaseRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateKnowledgeBase", "Required field: AwsAccountId, is not set");
+    return UpdateKnowledgeBaseOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.KnowledgeBaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateKnowledgeBase", "Required field: KnowledgeBaseId, is not set");
+    return UpdateKnowledgeBaseOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [KnowledgeBaseId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/knowledge-bases/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKnowledgeBaseId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateKnowledgeBaseOutcome(result.GetResultWithOwnership())
+                            : UpdateKnowledgeBaseOutcome(std::move(result.GetError()));
 }
 
 UpdateKnowledgeBasePermissionsOutcome QuickSightClient::UpdateKnowledgeBasePermissions(
