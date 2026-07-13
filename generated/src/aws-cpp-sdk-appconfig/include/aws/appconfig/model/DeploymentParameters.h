@@ -21,7 +21,7 @@ namespace AppConfig {
 namespace Model {
 
 /**
- * <p>Optional deployment parameters for an experiment run, including extension
+ * <p>The deployment parameters for an experiment run, including dynamic extension
  * parameters and tags.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeploymentParameters">AWS
  * API Reference</a></p>

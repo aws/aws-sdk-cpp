@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
+#include <aws/lambda/model/DurableConfig.h>
 #include <aws/lambda/model/ErrorObject.h>
 #include <aws/lambda/model/ExecutionStatus.h>
 #include <aws/lambda/model/TraceHeader.h>
@@ -241,6 +242,44 @@ class GetDurableExecutionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Indicates whether execution data is included in this response. Returns
+   * <code>false</code> when <code>IncludeExecutionData</code> is set to
+   * <code>false</code> in the request.</p>
+   */
+  inline bool GetExecutionDataIncluded() const { return m_executionDataIncluded; }
+  inline void SetExecutionDataIncluded(bool value) {
+    m_executionDataIncludedHasBeenSet = true;
+    m_executionDataIncluded = value;
+  }
+  inline GetDurableExecutionResult& WithExecutionDataIncluded(bool value) {
+    SetExecutionDataIncluded(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings for the durable execution, including execution
+   * timeout, retention period for execution history, and an optional ARN of the Key
+   * Management Service (KMS) customer managed key that is used to encrypt your
+   * durable execution's payload data, including input, output, and error
+   * payloads.</p>
+   */
+  inline const DurableConfig& GetDurableConfig() const { return m_durableConfig; }
+  template <typename DurableConfigT = DurableConfig>
+  void SetDurableConfig(DurableConfigT&& value) {
+    m_durableConfigHasBeenSet = true;
+    m_durableConfig = std::forward<DurableConfigT>(value);
+  }
+  template <typename DurableConfigT = DurableConfig>
+  GetDurableExecutionResult& WithDurableConfig(DurableConfigT&& value) {
+    SetDurableConfig(std::forward<DurableConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -279,6 +318,10 @@ class GetDurableExecutionResult {
 
   TraceHeader m_traceHeader;
 
+  bool m_executionDataIncluded{false};
+
+  DurableConfig m_durableConfig;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_durableExecutionArnHasBeenSet = false;
@@ -292,6 +335,8 @@ class GetDurableExecutionResult {
   bool m_endTimestampHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_traceHeaderHasBeenSet = false;
+  bool m_executionDataIncludedHasBeenSet = false;
+  bool m_durableConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

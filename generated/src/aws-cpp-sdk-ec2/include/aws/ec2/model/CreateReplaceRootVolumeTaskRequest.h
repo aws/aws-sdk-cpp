@@ -58,8 +58,9 @@ class CreateReplaceRootVolumeTaskRequest : public EC2Request {
    * <p>The ID of the snapshot from which to restore the replacement root volume. The
    * specified snapshot must be a snapshot that you previously created from the
    * original root volume.</p> <p>If you want to restore the replacement root volume
-   * to the initial launch state, or if you want to restore the replacement root
-   * volume from an AMI, omit this parameter.</p>
+   * to the initial launch state, if you want to restore the replacement root volume
+   * from an AMI, or if you want to replace the root volume with a specified volume,
+   * omit this parameter.</p>
    */
   inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
   inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
@@ -145,8 +146,9 @@ class CreateReplaceRootVolumeTaskRequest : public EC2Request {
    * <p>The ID of the AMI to use to restore the root volume. The specified AMI must
    * have the same product code, billing information, architecture type, and
    * virtualization type as that of the instance.</p> <p>If you want to restore the
-   * replacement volume from a specific snapshot, or if you want to restore it to its
-   * launch state, omit this parameter.</p>
+   * replacement volume from a specific snapshot, if you want to restore it to its
+   * launch state, or if you want to replace the root volume with a specified volume,
+   * omit this parameter.</p>
    */
   inline const Aws::String& GetImageId() const { return m_imageId; }
   inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
@@ -212,6 +214,29 @@ class CreateReplaceRootVolumeTaskRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the volume to use as the replacement root volume. The specified
+   * volume must be in the same Availability Zone as the instance, must be in the
+   * <code>available</code> state, and must not be attached to an instance. If the
+   * original root volume is encrypted, the specified volume must also be
+   * encrypted.</p> <p>If you want to restore the replacement root volume from a
+   * specific snapshot, an AMI, or to its launch state, omit this parameter.</p>
+   */
+  inline const Aws::String& GetVolumeId() const { return m_volumeId; }
+  inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
+  template <typename VolumeIdT = Aws::String>
+  void SetVolumeId(VolumeIdT&& value) {
+    m_volumeIdHasBeenSet = true;
+    m_volumeId = std::forward<VolumeIdT>(value);
+  }
+  template <typename VolumeIdT = Aws::String>
+  CreateReplaceRootVolumeTaskRequest& WithVolumeId(VolumeIdT&& value) {
+    SetVolumeId(std::forward<VolumeIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
 
@@ -228,6 +253,8 @@ class CreateReplaceRootVolumeTaskRequest : public EC2Request {
   bool m_deleteReplacedRootVolume{false};
 
   long long m_volumeInitializationRate{0};
+
+  Aws::String m_volumeId;
   bool m_instanceIdHasBeenSet = false;
   bool m_snapshotIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
@@ -236,6 +263,7 @@ class CreateReplaceRootVolumeTaskRequest : public EC2Request {
   bool m_imageIdHasBeenSet = false;
   bool m_deleteReplacedRootVolumeHasBeenSet = false;
   bool m_volumeInitializationRateHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
 };
 
 }  // namespace Model

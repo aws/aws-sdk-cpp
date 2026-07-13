@@ -30,6 +30,13 @@ DescribeSecurityHubV2Result& DescribeSecurityHubV2Result::operator=(const Aws::A
     m_subscribedAt = jsonValue.GetString("SubscribedAt");
     m_subscribedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Features")) {
+    Aws::Map<Aws::String, JsonView> featuresJsonMap = jsonValue.GetObject("Features").GetAllObjects();
+    for (auto& featuresItem : featuresJsonMap) {
+      m_features[featuresItem.first] = featuresItem.second.AsObject();
+    }
+    m_featuresHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

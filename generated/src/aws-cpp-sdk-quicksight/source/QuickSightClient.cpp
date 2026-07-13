@@ -41,6 +41,7 @@
 #include <aws/quicksight/model/CreateGroupRequest.h>
 #include <aws/quicksight/model/CreateIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/CreateIngestionRequest.h>
+#include <aws/quicksight/model/CreateKnowledgeBaseRequest.h>
 #include <aws/quicksight/model/CreateNamespaceRequest.h>
 #include <aws/quicksight/model/CreateOAuthClientApplicationRequest.h>
 #include <aws/quicksight/model/CreateRefreshScheduleRequest.h>
@@ -118,7 +119,6 @@
 #include <aws/quicksight/model/DescribeDataSetPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeDataSetRefreshPropertiesRequest.h>
 #include <aws/quicksight/model/DescribeDataSetRequest.h>
-#include <aws/quicksight/model/DescribeDataSourcePermissionsRequest.h>
 #include <aws/quicksight/model/DescribeDataSourceRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -782,6 +782,25 @@ CreateIngestionOutcome QuickSightClient::CreateIngestion(const CreateIngestionRe
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? CreateIngestionOutcome(result.GetResultWithOwnership())
                             : CreateIngestionOutcome(std::move(result.GetError()));
+}
+
+CreateKnowledgeBaseOutcome QuickSightClient::CreateKnowledgeBase(const CreateKnowledgeBaseRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateKnowledgeBase", "Required field: AwsAccountId, is not set");
+    return CreateKnowledgeBaseOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [AwsAccountId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/knowledge-bases");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKnowledgeBaseOutcome(result.GetResultWithOwnership())
+                            : CreateKnowledgeBaseOutcome(std::move(result.GetError()));
 }
 
 CreateNamespaceOutcome QuickSightClient::CreateNamespace(const CreateNamespaceRequest& request) const {
@@ -2814,31 +2833,4 @@ DescribeDataSourceOutcome QuickSightClient::DescribeDataSource(const DescribeDat
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? DescribeDataSourceOutcome(result.GetResultWithOwnership())
                             : DescribeDataSourceOutcome(std::move(result.GetError()));
-}
-
-DescribeDataSourcePermissionsOutcome QuickSightClient::DescribeDataSourcePermissions(
-    const DescribeDataSourcePermissionsRequest& request) const {
-  if (!request.AwsAccountIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DescribeDataSourcePermissions", "Required field: AwsAccountId, is not set");
-    return DescribeDataSourcePermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(
-        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
-  }
-  if (!request.DataSourceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DescribeDataSourcePermissions", "Required field: DataSourceId, is not set");
-    return DescribeDataSourcePermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(
-        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/data-sources/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? DescribeDataSourcePermissionsOutcome(result.GetResultWithOwnership())
-                            : DescribeDataSourcePermissionsOutcome(std::move(result.GetError()));
 }

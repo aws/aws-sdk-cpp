@@ -559,6 +559,270 @@ class CoverageFilterCriteria {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider to filter coverage results by.</p>
+   */
+  inline const Aws::Vector<CoverageStringFilter>& GetCloudProvider() const { return m_cloudProvider; }
+  inline bool CloudProviderHasBeenSet() const { return m_cloudProviderHasBeenSet; }
+  template <typename CloudProviderT = Aws::Vector<CoverageStringFilter>>
+  void SetCloudProvider(CloudProviderT&& value) {
+    m_cloudProviderHasBeenSet = true;
+    m_cloudProvider = std::forward<CloudProviderT>(value);
+  }
+  template <typename CloudProviderT = Aws::Vector<CoverageStringFilter>>
+  CoverageFilterCriteria& WithCloudProvider(CloudProviderT&& value) {
+    SetCloudProvider(std::forward<CloudProviderT>(value));
+    return *this;
+  }
+  template <typename CloudProviderT = CoverageStringFilter>
+  CoverageFilterCriteria& AddCloudProvider(CloudProviderT&& value) {
+    m_cloudProviderHasBeenSet = true;
+    m_cloudProvider.emplace_back(std::forward<CloudProviderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider account ID to filter coverage results by.</p>
+   */
+  inline const Aws::Vector<CoverageStringFilter>& GetCloudProviderAccountId() const { return m_cloudProviderAccountId; }
+  inline bool CloudProviderAccountIdHasBeenSet() const { return m_cloudProviderAccountIdHasBeenSet; }
+  template <typename CloudProviderAccountIdT = Aws::Vector<CoverageStringFilter>>
+  void SetCloudProviderAccountId(CloudProviderAccountIdT&& value) {
+    m_cloudProviderAccountIdHasBeenSet = true;
+    m_cloudProviderAccountId = std::forward<CloudProviderAccountIdT>(value);
+  }
+  template <typename CloudProviderAccountIdT = Aws::Vector<CoverageStringFilter>>
+  CoverageFilterCriteria& WithCloudProviderAccountId(CloudProviderAccountIdT&& value) {
+    SetCloudProviderAccountId(std::forward<CloudProviderAccountIdT>(value));
+    return *this;
+  }
+  template <typename CloudProviderAccountIdT = CoverageStringFilter>
+  CoverageFilterCriteria& AddCloudProviderAccountId(CloudProviderAccountIdT&& value) {
+    m_cloudProviderAccountIdHasBeenSet = true;
+    m_cloudProviderAccountId.emplace_back(std::forward<CloudProviderAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider region to filter coverage results by.</p>
+   */
+  inline const Aws::Vector<CoverageStringFilter>& GetCloudProviderRegion() const { return m_cloudProviderRegion; }
+  inline bool CloudProviderRegionHasBeenSet() const { return m_cloudProviderRegionHasBeenSet; }
+  template <typename CloudProviderRegionT = Aws::Vector<CoverageStringFilter>>
+  void SetCloudProviderRegion(CloudProviderRegionT&& value) {
+    m_cloudProviderRegionHasBeenSet = true;
+    m_cloudProviderRegion = std::forward<CloudProviderRegionT>(value);
+  }
+  template <typename CloudProviderRegionT = Aws::Vector<CoverageStringFilter>>
+  CoverageFilterCriteria& WithCloudProviderRegion(CloudProviderRegionT&& value) {
+    SetCloudProviderRegion(std::forward<CloudProviderRegionT>(value));
+    return *this;
+  }
+  template <typename CloudProviderRegionT = CoverageStringFilter>
+  CoverageFilterCriteria& AddCloudProviderRegion(CloudProviderRegionT&& value) {
+    m_cloudProviderRegionHasBeenSet = true;
+    m_cloudProviderRegion.emplace_back(std::forward<CloudProviderRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud VM instance tags to filter coverage results by.</p>
+   */
+  inline const Aws::Vector<CoverageMapFilter>& GetCloudVmInstanceTags() const { return m_cloudVmInstanceTags; }
+  inline bool CloudVmInstanceTagsHasBeenSet() const { return m_cloudVmInstanceTagsHasBeenSet; }
+  template <typename CloudVmInstanceTagsT = Aws::Vector<CoverageMapFilter>>
+  void SetCloudVmInstanceTags(CloudVmInstanceTagsT&& value) {
+    m_cloudVmInstanceTagsHasBeenSet = true;
+    m_cloudVmInstanceTags = std::forward<CloudVmInstanceTagsT>(value);
+  }
+  template <typename CloudVmInstanceTagsT = Aws::Vector<CoverageMapFilter>>
+  CoverageFilterCriteria& WithCloudVmInstanceTags(CloudVmInstanceTagsT&& value) {
+    SetCloudVmInstanceTags(std::forward<CloudVmInstanceTagsT>(value));
+    return *this;
+  }
+  template <typename CloudVmInstanceTagsT = CoverageMapFilter>
+  CoverageFilterCriteria& AddCloudVmInstanceTags(CloudVmInstanceTagsT&& value) {
+    m_cloudVmInstanceTagsHasBeenSet = true;
+    m_cloudVmInstanceTags.emplace_back(std::forward<CloudVmInstanceTagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud container image tags to filter coverage results by.</p>
+   */
+  inline const Aws::Vector<CoverageStringFilter>& GetCloudContainerImageTags() const { return m_cloudContainerImageTags; }
+  inline bool CloudContainerImageTagsHasBeenSet() const { return m_cloudContainerImageTagsHasBeenSet; }
+  template <typename CloudContainerImageTagsT = Aws::Vector<CoverageStringFilter>>
+  void SetCloudContainerImageTags(CloudContainerImageTagsT&& value) {
+    m_cloudContainerImageTagsHasBeenSet = true;
+    m_cloudContainerImageTags = std::forward<CloudContainerImageTagsT>(value);
+  }
+  template <typename CloudContainerImageTagsT = Aws::Vector<CoverageStringFilter>>
+  CoverageFilterCriteria& WithCloudContainerImageTags(CloudContainerImageTagsT&& value) {
+    SetCloudContainerImageTags(std::forward<CloudContainerImageTagsT>(value));
+    return *this;
+  }
+  template <typename CloudContainerImageTagsT = CoverageStringFilter>
+  CoverageFilterCriteria& AddCloudContainerImageTags(CloudContainerImageTagsT&& value) {
+    m_cloudContainerImageTagsHasBeenSet = true;
+    m_cloudContainerImageTags.emplace_back(std::forward<CloudContainerImageTagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud container repository name to filter coverage results by.</p>
+   */
+  inline const Aws::Vector<CoverageStringFilter>& GetCloudContainerRepositoryName() const { return m_cloudContainerRepositoryName; }
+  inline bool CloudContainerRepositoryNameHasBeenSet() const { return m_cloudContainerRepositoryNameHasBeenSet; }
+  template <typename CloudContainerRepositoryNameT = Aws::Vector<CoverageStringFilter>>
+  void SetCloudContainerRepositoryName(CloudContainerRepositoryNameT&& value) {
+    m_cloudContainerRepositoryNameHasBeenSet = true;
+    m_cloudContainerRepositoryName = std::forward<CloudContainerRepositoryNameT>(value);
+  }
+  template <typename CloudContainerRepositoryNameT = Aws::Vector<CoverageStringFilter>>
+  CoverageFilterCriteria& WithCloudContainerRepositoryName(CloudContainerRepositoryNameT&& value) {
+    SetCloudContainerRepositoryName(std::forward<CloudContainerRepositoryNameT>(value));
+    return *this;
+  }
+  template <typename CloudContainerRepositoryNameT = CoverageStringFilter>
+  CoverageFilterCriteria& AddCloudContainerRepositoryName(CloudContainerRepositoryNameT&& value) {
+    m_cloudContainerRepositoryNameHasBeenSet = true;
+    m_cloudContainerRepositoryName.emplace_back(std::forward<CloudContainerRepositoryNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud container registry name to filter coverage results by.</p>
+   */
+  inline const Aws::Vector<CoverageStringFilter>& GetCloudContainerRegistryName() const { return m_cloudContainerRegistryName; }
+  inline bool CloudContainerRegistryNameHasBeenSet() const { return m_cloudContainerRegistryNameHasBeenSet; }
+  template <typename CloudContainerRegistryNameT = Aws::Vector<CoverageStringFilter>>
+  void SetCloudContainerRegistryName(CloudContainerRegistryNameT&& value) {
+    m_cloudContainerRegistryNameHasBeenSet = true;
+    m_cloudContainerRegistryName = std::forward<CloudContainerRegistryNameT>(value);
+  }
+  template <typename CloudContainerRegistryNameT = Aws::Vector<CoverageStringFilter>>
+  CoverageFilterCriteria& WithCloudContainerRegistryName(CloudContainerRegistryNameT&& value) {
+    SetCloudContainerRegistryName(std::forward<CloudContainerRegistryNameT>(value));
+    return *this;
+  }
+  template <typename CloudContainerRegistryNameT = CoverageStringFilter>
+  CoverageFilterCriteria& AddCloudContainerRegistryName(CloudContainerRegistryNameT&& value) {
+    m_cloudContainerRegistryNameHasBeenSet = true;
+    m_cloudContainerRegistryName.emplace_back(std::forward<CloudContainerRegistryNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud serverless function name to filter coverage results by.</p>
+   */
+  inline const Aws::Vector<CoverageStringFilter>& GetCloudServerlessFunctionName() const { return m_cloudServerlessFunctionName; }
+  inline bool CloudServerlessFunctionNameHasBeenSet() const { return m_cloudServerlessFunctionNameHasBeenSet; }
+  template <typename CloudServerlessFunctionNameT = Aws::Vector<CoverageStringFilter>>
+  void SetCloudServerlessFunctionName(CloudServerlessFunctionNameT&& value) {
+    m_cloudServerlessFunctionNameHasBeenSet = true;
+    m_cloudServerlessFunctionName = std::forward<CloudServerlessFunctionNameT>(value);
+  }
+  template <typename CloudServerlessFunctionNameT = Aws::Vector<CoverageStringFilter>>
+  CoverageFilterCriteria& WithCloudServerlessFunctionName(CloudServerlessFunctionNameT&& value) {
+    SetCloudServerlessFunctionName(std::forward<CloudServerlessFunctionNameT>(value));
+    return *this;
+  }
+  template <typename CloudServerlessFunctionNameT = CoverageStringFilter>
+  CoverageFilterCriteria& AddCloudServerlessFunctionName(CloudServerlessFunctionNameT&& value) {
+    m_cloudServerlessFunctionNameHasBeenSet = true;
+    m_cloudServerlessFunctionName.emplace_back(std::forward<CloudServerlessFunctionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud serverless function runtime to filter coverage results by.</p>
+   */
+  inline const Aws::Vector<CoverageStringFilter>& GetCloudServerlessFunctionRuntime() const { return m_cloudServerlessFunctionRuntime; }
+  inline bool CloudServerlessFunctionRuntimeHasBeenSet() const { return m_cloudServerlessFunctionRuntimeHasBeenSet; }
+  template <typename CloudServerlessFunctionRuntimeT = Aws::Vector<CoverageStringFilter>>
+  void SetCloudServerlessFunctionRuntime(CloudServerlessFunctionRuntimeT&& value) {
+    m_cloudServerlessFunctionRuntimeHasBeenSet = true;
+    m_cloudServerlessFunctionRuntime = std::forward<CloudServerlessFunctionRuntimeT>(value);
+  }
+  template <typename CloudServerlessFunctionRuntimeT = Aws::Vector<CoverageStringFilter>>
+  CoverageFilterCriteria& WithCloudServerlessFunctionRuntime(CloudServerlessFunctionRuntimeT&& value) {
+    SetCloudServerlessFunctionRuntime(std::forward<CloudServerlessFunctionRuntimeT>(value));
+    return *this;
+  }
+  template <typename CloudServerlessFunctionRuntimeT = CoverageStringFilter>
+  CoverageFilterCriteria& AddCloudServerlessFunctionRuntime(CloudServerlessFunctionRuntimeT&& value) {
+    m_cloudServerlessFunctionRuntimeHasBeenSet = true;
+    m_cloudServerlessFunctionRuntime.emplace_back(std::forward<CloudServerlessFunctionRuntimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud serverless function tags to filter coverage results by.</p>
+   */
+  inline const Aws::Vector<CoverageMapFilter>& GetCloudServerlessFunctionTags() const { return m_cloudServerlessFunctionTags; }
+  inline bool CloudServerlessFunctionTagsHasBeenSet() const { return m_cloudServerlessFunctionTagsHasBeenSet; }
+  template <typename CloudServerlessFunctionTagsT = Aws::Vector<CoverageMapFilter>>
+  void SetCloudServerlessFunctionTags(CloudServerlessFunctionTagsT&& value) {
+    m_cloudServerlessFunctionTagsHasBeenSet = true;
+    m_cloudServerlessFunctionTags = std::forward<CloudServerlessFunctionTagsT>(value);
+  }
+  template <typename CloudServerlessFunctionTagsT = Aws::Vector<CoverageMapFilter>>
+  CoverageFilterCriteria& WithCloudServerlessFunctionTags(CloudServerlessFunctionTagsT&& value) {
+    SetCloudServerlessFunctionTags(std::forward<CloudServerlessFunctionTagsT>(value));
+    return *this;
+  }
+  template <typename CloudServerlessFunctionTagsT = CoverageMapFilter>
+  CoverageFilterCriteria& AddCloudServerlessFunctionTags(CloudServerlessFunctionTagsT&& value) {
+    m_cloudServerlessFunctionTagsHasBeenSet = true;
+    m_cloudServerlessFunctionTags.emplace_back(std::forward<CloudServerlessFunctionTagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider organization ID to filter coverage results by.</p>
+   */
+  inline const Aws::Vector<CoverageStringFilter>& GetCloudProviderOrgId() const { return m_cloudProviderOrgId; }
+  inline bool CloudProviderOrgIdHasBeenSet() const { return m_cloudProviderOrgIdHasBeenSet; }
+  template <typename CloudProviderOrgIdT = Aws::Vector<CoverageStringFilter>>
+  void SetCloudProviderOrgId(CloudProviderOrgIdT&& value) {
+    m_cloudProviderOrgIdHasBeenSet = true;
+    m_cloudProviderOrgId = std::forward<CloudProviderOrgIdT>(value);
+  }
+  template <typename CloudProviderOrgIdT = Aws::Vector<CoverageStringFilter>>
+  CoverageFilterCriteria& WithCloudProviderOrgId(CloudProviderOrgIdT&& value) {
+    SetCloudProviderOrgId(std::forward<CloudProviderOrgIdT>(value));
+    return *this;
+  }
+  template <typename CloudProviderOrgIdT = CoverageStringFilter>
+  CoverageFilterCriteria& AddCloudProviderOrgId(CloudProviderOrgIdT&& value) {
+    m_cloudProviderOrgIdHasBeenSet = true;
+    m_cloudProviderOrgId.emplace_back(std::forward<CloudProviderOrgIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<CoverageStringFilter> m_scanStatusCode;
 
@@ -601,6 +865,28 @@ class CoverageFilterCriteria {
   Aws::Vector<CoverageStringFilter> m_codeRepositoryProviderTypeVisibility;
 
   Aws::Vector<CoverageStringFilter> m_lastScannedCommitId;
+
+  Aws::Vector<CoverageStringFilter> m_cloudProvider;
+
+  Aws::Vector<CoverageStringFilter> m_cloudProviderAccountId;
+
+  Aws::Vector<CoverageStringFilter> m_cloudProviderRegion;
+
+  Aws::Vector<CoverageMapFilter> m_cloudVmInstanceTags;
+
+  Aws::Vector<CoverageStringFilter> m_cloudContainerImageTags;
+
+  Aws::Vector<CoverageStringFilter> m_cloudContainerRepositoryName;
+
+  Aws::Vector<CoverageStringFilter> m_cloudContainerRegistryName;
+
+  Aws::Vector<CoverageStringFilter> m_cloudServerlessFunctionName;
+
+  Aws::Vector<CoverageStringFilter> m_cloudServerlessFunctionRuntime;
+
+  Aws::Vector<CoverageMapFilter> m_cloudServerlessFunctionTags;
+
+  Aws::Vector<CoverageStringFilter> m_cloudProviderOrgId;
   bool m_scanStatusCodeHasBeenSet = false;
   bool m_scanStatusReasonHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
@@ -622,6 +908,17 @@ class CoverageFilterCriteria {
   bool m_codeRepositoryProviderTypeHasBeenSet = false;
   bool m_codeRepositoryProviderTypeVisibilityHasBeenSet = false;
   bool m_lastScannedCommitIdHasBeenSet = false;
+  bool m_cloudProviderHasBeenSet = false;
+  bool m_cloudProviderAccountIdHasBeenSet = false;
+  bool m_cloudProviderRegionHasBeenSet = false;
+  bool m_cloudVmInstanceTagsHasBeenSet = false;
+  bool m_cloudContainerImageTagsHasBeenSet = false;
+  bool m_cloudContainerRepositoryNameHasBeenSet = false;
+  bool m_cloudContainerRegistryNameHasBeenSet = false;
+  bool m_cloudServerlessFunctionNameHasBeenSet = false;
+  bool m_cloudServerlessFunctionRuntimeHasBeenSet = false;
+  bool m_cloudServerlessFunctionTagsHasBeenSet = false;
+  bool m_cloudProviderOrgIdHasBeenSet = false;
 };
 
 }  // namespace Model

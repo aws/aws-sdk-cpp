@@ -421,6 +421,10 @@ ResourceDetails& ResourceDetails::operator=(JsonView jsonValue) {
     m_codeRepository = jsonValue.GetObject("CodeRepository");
     m_codeRepositoryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AzureResource")) {
+    m_azureResource = jsonValue.GetObject("AzureResource");
+    m_azureResourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -829,6 +833,12 @@ JsonValue ResourceDetails::Jsonize() const {
 
   if (m_codeRepositoryHasBeenSet) {
     payload.WithObject("CodeRepository", m_codeRepository.Jsonize());
+  }
+
+  if (m_azureResourceHasBeenSet) {
+    if (!m_azureResource.View().IsNull()) {
+      payload.WithObject("AzureResource", JsonValue(m_azureResource.View()));
+    }
   }
 
   return payload;

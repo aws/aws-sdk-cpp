@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/StandardsManagedBy.h>
+#include <aws/securityhub/model/StandardsProvider.h>
 
 #include <utility>
 
@@ -110,6 +111,23 @@ class Standard {
 
   ///@{
   /**
+   * <p>The cloud provider whose resources the standard evaluates. For example,
+   * <code>AWS</code> or <code>Azure</code>.</p>
+   */
+  inline StandardsProvider GetProvider() const { return m_provider; }
+  inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
+  inline void SetProvider(StandardsProvider value) {
+    m_providerHasBeenSet = true;
+    m_provider = value;
+  }
+  inline Standard& WithProvider(StandardsProvider value) {
+    SetProvider(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Provides details about the management of a standard. </p>
    */
   inline const StandardsManagedBy& GetStandardsManagedBy() const { return m_standardsManagedBy; }
@@ -134,11 +152,14 @@ class Standard {
 
   bool m_enabledByDefault{false};
 
+  StandardsProvider m_provider{StandardsProvider::NOT_SET};
+
   StandardsManagedBy m_standardsManagedBy;
   bool m_standardsArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_enabledByDefaultHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
   bool m_standardsManagedByHasBeenSet = false;
 };
 

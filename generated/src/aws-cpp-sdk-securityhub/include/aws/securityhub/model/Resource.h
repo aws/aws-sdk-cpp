@@ -7,9 +7,11 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/CloudProviderName.h>
 #include <aws/securityhub/model/DataClassificationDetails.h>
 #include <aws/securityhub/model/Partition.h>
 #include <aws/securityhub/model/ResourceDetails.h>
+#include <aws/securityhub/model/ResourceOwner.h>
 
 #include <utility>
 
@@ -109,6 +111,41 @@ class Resource {
   template <typename RegionT = Aws::String>
   Resource& WithRegion(RegionT&& value) {
     SetRegion(std::forward<RegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider that the resource belongs to. Valid values are
+   * <code>AWS</code> and <code>Azure</code>.</p>
+   */
+  inline CloudProviderName GetProvider() const { return m_provider; }
+  inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
+  inline void SetProvider(CloudProviderName value) {
+    m_providerHasBeenSet = true;
+    m_provider = value;
+  }
+  inline Resource& WithProvider(CloudProviderName value) {
+    SetProvider(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information about the account and organization that own the resource.</p>
+   */
+  inline const ResourceOwner& GetOwner() const { return m_owner; }
+  inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+  template <typename OwnerT = ResourceOwner>
+  void SetOwner(OwnerT&& value) {
+    m_ownerHasBeenSet = true;
+    m_owner = std::forward<OwnerT>(value);
+  }
+  template <typename OwnerT = ResourceOwner>
+  Resource& WithOwner(OwnerT&& value) {
+    SetOwner(std::forward<OwnerT>(value));
     return *this;
   }
   ///@}
@@ -241,6 +278,10 @@ class Resource {
 
   Aws::String m_region;
 
+  CloudProviderName m_provider{CloudProviderName::NOT_SET};
+
+  ResourceOwner m_owner;
+
   Aws::String m_resourceRole;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -256,6 +297,8 @@ class Resource {
   bool m_idHasBeenSet = false;
   bool m_partitionHasBeenSet = false;
   bool m_regionHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
   bool m_resourceRoleHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_dataClassificationHasBeenSet = false;

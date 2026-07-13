@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/FleetBlockDeviceMappingRequest.h>
+#include <aws/ec2/model/FleetIamInstanceProfileSpecificationRequest.h>
+#include <aws/ec2/model/FleetInstanceMetadataOptionsRequest.h>
 #include <aws/ec2/model/InstanceRequirementsRequest.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/Placement.h>
@@ -197,6 +199,27 @@ class FleetLaunchTemplateOverridesRequest {
 
   ///@{
   /**
+   * <p>The name of the key pair to use for the instances.</p> <p>Supported only for
+   * fleets of type <code>instant</code>.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+   * EC2 key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+   */
+  inline const Aws::String& GetKeyName() const { return m_keyName; }
+  inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
+  template <typename KeyNameT = Aws::String>
+  void SetKeyName(KeyNameT&& value) {
+    m_keyNameHasBeenSet = true;
+    m_keyName = std::forward<KeyNameT>(value);
+  }
+  template <typename KeyNameT = Aws::String>
+  FleetLaunchTemplateOverridesRequest& WithKeyName(KeyNameT&& value) {
+    SetKeyName(std::forward<KeyNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The block device mappings, which define the EBS volumes and instance store
    * volumes to attach to the instance at launch.</p> <p>Supported only for fleets of
    * type <code>instant</code>.</p> <p>For more information, see <a
@@ -220,6 +243,49 @@ class FleetLaunchTemplateOverridesRequest {
   FleetLaunchTemplateOverridesRequest& AddBlockDeviceMappings(BlockDeviceMappingsT&& value) {
     m_blockDeviceMappingsHasBeenSet = true;
     m_blockDeviceMappings.emplace_back(std::forward<BlockDeviceMappingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The IAM instance profile to associate with the instances.</p> <p>Supported
+   * only for fleets of type <code>instant</code>.</p> <p>For more information, see
+   * <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html">IAM
+   * roles for Amazon EC2</a> in the <i>Amazon EC2 User Guide</i>.</p>
+   */
+  inline const FleetIamInstanceProfileSpecificationRequest& GetIamInstanceProfile() const { return m_iamInstanceProfile; }
+  inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
+  template <typename IamInstanceProfileT = FleetIamInstanceProfileSpecificationRequest>
+  void SetIamInstanceProfile(IamInstanceProfileT&& value) {
+    m_iamInstanceProfileHasBeenSet = true;
+    m_iamInstanceProfile = std::forward<IamInstanceProfileT>(value);
+  }
+  template <typename IamInstanceProfileT = FleetIamInstanceProfileSpecificationRequest>
+  FleetLaunchTemplateOverridesRequest& WithIamInstanceProfile(IamInstanceProfileT&& value) {
+    SetIamInstanceProfile(std::forward<IamInstanceProfileT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The metadata options for the instances.</p> <p>Supported only for fleets of
+   * type <code>instant</code>.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html">Configure
+   * the instance metadata service</a> in the <i>Amazon EC2 User Guide</i>.</p>
+   */
+  inline const FleetInstanceMetadataOptionsRequest& GetMetadataOptions() const { return m_metadataOptions; }
+  inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
+  template <typename MetadataOptionsT = FleetInstanceMetadataOptionsRequest>
+  void SetMetadataOptions(MetadataOptionsT&& value) {
+    m_metadataOptionsHasBeenSet = true;
+    m_metadataOptions = std::forward<MetadataOptionsT>(value);
+  }
+  template <typename MetadataOptionsT = FleetInstanceMetadataOptionsRequest>
+  FleetLaunchTemplateOverridesRequest& WithMetadataOptions(MetadataOptionsT&& value) {
+    SetMetadataOptions(std::forward<MetadataOptionsT>(value));
     return *this;
   }
   ///@}
@@ -317,7 +383,13 @@ class FleetLaunchTemplateOverridesRequest {
 
   Placement m_placement;
 
+  Aws::String m_keyName;
+
   Aws::Vector<FleetBlockDeviceMappingRequest> m_blockDeviceMappings;
+
+  FleetIamInstanceProfileSpecificationRequest m_iamInstanceProfile;
+
+  FleetInstanceMetadataOptionsRequest m_metadataOptions;
 
   InstanceRequirementsRequest m_instanceRequirements;
 
@@ -331,7 +403,10 @@ class FleetLaunchTemplateOverridesRequest {
   bool m_weightedCapacityHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
   bool m_placementHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
   bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_iamInstanceProfileHasBeenSet = false;
+  bool m_metadataOptionsHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SSM {
 namespace Model {
-enum class SourceType { NOT_SET, AWS_EC2_Instance, AWS_IoT_Thing, AWS_SSM_ManagedInstance };
+enum class SourceType { NOT_SET, AWS_EC2_Instance, AWS_IoT_Thing, AWS_SSM_ManagedInstance, Microsoft_Compute_virtualMachines };
 
 namespace SourceTypeMapper {
 AWS_SSM_API SourceType GetSourceTypeForName(const Aws::String& name);

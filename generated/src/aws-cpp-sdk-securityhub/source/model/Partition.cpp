@@ -18,6 +18,9 @@ namespace PartitionMapper {
 static const int aws_HASH = HashingUtils::HashString("aws");
 static const int aws_cn_HASH = HashingUtils::HashString("aws-cn");
 static const int aws_us_gov_HASH = HashingUtils::HashString("aws-us-gov");
+static const int aws_us_iso_HASH = HashingUtils::HashString("aws-us-iso");
+static const int aws_us_iso_b_HASH = HashingUtils::HashString("aws-us-iso-b");
+static const int AzureCloud_HASH = HashingUtils::HashString("AzureCloud");
 
 Partition GetPartitionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +30,12 @@ Partition GetPartitionForName(const Aws::String& name) {
     return Partition::aws_cn;
   } else if (hashCode == aws_us_gov_HASH) {
     return Partition::aws_us_gov;
+  } else if (hashCode == aws_us_iso_HASH) {
+    return Partition::aws_us_iso;
+  } else if (hashCode == aws_us_iso_b_HASH) {
+    return Partition::aws_us_iso_b;
+  } else if (hashCode == AzureCloud_HASH) {
+    return Partition::AzureCloud;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +56,12 @@ Aws::String GetNameForPartition(Partition enumValue) {
       return "aws-cn";
     case Partition::aws_us_gov:
       return "aws-us-gov";
+    case Partition::aws_us_iso:
+      return "aws-us-iso";
+    case Partition::aws_us_iso_b:
+      return "aws-us-iso-b";
+    case Partition::AzureCloud:
+      return "AzureCloud";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

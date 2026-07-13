@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationResellerRoleString.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationStatusString.h>
 
 #include <utility>
@@ -228,6 +229,22 @@ class ResaleAuthorizationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The reseller role of the ResaleAuthorization.</p>
+   */
+  inline ResaleAuthorizationResellerRoleString GetResellerRole() const { return m_resellerRole; }
+  inline bool ResellerRoleHasBeenSet() const { return m_resellerRoleHasBeenSet; }
+  inline void SetResellerRole(ResaleAuthorizationResellerRoleString value) {
+    m_resellerRoleHasBeenSet = true;
+    m_resellerRole = value;
+  }
+  inline ResaleAuthorizationSummary& WithResellerRole(ResaleAuthorizationResellerRoleString value) {
+    SetResellerRole(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -250,6 +267,8 @@ class ResaleAuthorizationSummary {
   Aws::String m_createdDate;
 
   Aws::String m_availabilityEndDate;
+
+  ResaleAuthorizationResellerRoleString m_resellerRole{ResaleAuthorizationResellerRoleString::NOT_SET};
   bool m_nameHasBeenSet = false;
   bool m_productIdHasBeenSet = false;
   bool m_productNameHasBeenSet = false;
@@ -261,6 +280,7 @@ class ResaleAuthorizationSummary {
   bool m_offerExtendedStatusHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_availabilityEndDateHasBeenSet = false;
+  bool m_resellerRoleHasBeenSet = false;
 };
 
 }  // namespace Model

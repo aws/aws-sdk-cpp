@@ -4,8 +4,11 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/Inspector2Request.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Inspector2 {
@@ -24,6 +27,30 @@ class GetConfigurationRequest : public Inspector2Request {
   inline virtual const char* GetServiceRequestName() const override { return "GetConfiguration"; }
 
   AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>The 12-digit Amazon Web Services account ID of the member account whose scan
+   * configuration you want to retrieve. When specified, you must be the delegated
+   * administrator for this member account. If not specified, the operation returns
+   * your own configuration.</p>
+   */
+  inline const Aws::String& GetAccountId() const { return m_accountId; }
+  inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+  template <typename AccountIdT = Aws::String>
+  void SetAccountId(AccountIdT&& value) {
+    m_accountIdHasBeenSet = true;
+    m_accountId = std::forward<AccountIdT>(value);
+  }
+  template <typename AccountIdT = Aws::String>
+  GetConfigurationRequest& WithAccountId(AccountIdT&& value) {
+    SetAccountId(std::forward<AccountIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_accountId;
+  bool m_accountIdHasBeenSet = false;
 };
 
 }  // namespace Model

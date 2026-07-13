@@ -57,6 +57,21 @@ CreateFleetInstance& CreateFleetInstance::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()));
       m_platformHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if (!availabilityZoneIdNode.IsNull()) {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
+    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
+    if (!availabilityZoneNode.IsNull()) {
+      m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
+      m_availabilityZoneHasBeenSet = true;
+    }
+    XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
+    if (!subnetIdNode.IsNull()) {
+      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
+      m_subnetIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -91,6 +106,18 @@ void CreateFleetInstance::OutputToStream(Aws::OStream& oStream, const char* loca
     oStream << location << index << locationValue
             << ".Platform=" << StringUtils::URLEncode(PlatformValuesMapper::GetNameForPlatformValues(m_platform)) << "&";
   }
+
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
+  if (m_availabilityZoneHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if (m_subnetIdHasBeenSet) {
+    oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
 }
 
 void CreateFleetInstance::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -114,6 +141,15 @@ void CreateFleetInstance::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if (m_platformHasBeenSet) {
     oStream << location << ".Platform=" << StringUtils::URLEncode(PlatformValuesMapper::GetNameForPlatformValues(m_platform)) << "&";
+  }
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+  if (m_availabilityZoneHasBeenSet) {
+    oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if (m_subnetIdHasBeenSet) {
+    oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 }
 

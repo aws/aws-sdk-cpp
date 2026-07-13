@@ -35,12 +35,14 @@
 #include <aws/inspector2/model/CreateCisScanConfigurationResult.h>
 #include <aws/inspector2/model/CreateCodeSecurityIntegrationResult.h>
 #include <aws/inspector2/model/CreateCodeSecurityScanConfigurationResult.h>
+#include <aws/inspector2/model/CreateConnectorResult.h>
 #include <aws/inspector2/model/CreateFilterResult.h>
 #include <aws/inspector2/model/CreateFindingsReportResult.h>
 #include <aws/inspector2/model/CreateSbomExportResult.h>
 #include <aws/inspector2/model/DeleteCisScanConfigurationResult.h>
 #include <aws/inspector2/model/DeleteCodeSecurityIntegrationResult.h>
 #include <aws/inspector2/model/DeleteCodeSecurityScanConfigurationResult.h>
+#include <aws/inspector2/model/DeleteConnectorResult.h>
 #include <aws/inspector2/model/DeleteFilterResult.h>
 #include <aws/inspector2/model/DescribeOrganizationConfigurationRequest.h>
 #include <aws/inspector2/model/DescribeOrganizationConfigurationResult.h>
@@ -80,6 +82,10 @@
 #include <aws/inspector2/model/ListCodeSecurityScanConfigurationAssociationsResult.h>
 #include <aws/inspector2/model/ListCodeSecurityScanConfigurationsRequest.h>
 #include <aws/inspector2/model/ListCodeSecurityScanConfigurationsResult.h>
+#include <aws/inspector2/model/ListConnectorScanConfigurationsRequest.h>
+#include <aws/inspector2/model/ListConnectorScanConfigurationsResult.h>
+#include <aws/inspector2/model/ListConnectorsRequest.h>
+#include <aws/inspector2/model/ListConnectorsResult.h>
 #include <aws/inspector2/model/ListCoverageRequest.h>
 #include <aws/inspector2/model/ListCoverageResult.h>
 #include <aws/inspector2/model/ListCoverageStatisticsRequest.h>
@@ -110,6 +116,8 @@
 #include <aws/inspector2/model/UpdateCodeSecurityScanConfigurationResult.h>
 #include <aws/inspector2/model/UpdateConfigurationRequest.h>
 #include <aws/inspector2/model/UpdateConfigurationResult.h>
+#include <aws/inspector2/model/UpdateConnectorResult.h>
+#include <aws/inspector2/model/UpdateConnectorScanConfigurationResult.h>
 #include <aws/inspector2/model/UpdateEc2DeepInspectionConfigurationRequest.h>
 #include <aws/inspector2/model/UpdateEc2DeepInspectionConfigurationResult.h>
 #include <aws/inspector2/model/UpdateEncryptionKeyResult.h>
@@ -163,12 +171,14 @@ class CancelSbomExportRequest;
 class CreateCisScanConfigurationRequest;
 class CreateCodeSecurityIntegrationRequest;
 class CreateCodeSecurityScanConfigurationRequest;
+class CreateConnectorRequest;
 class CreateFilterRequest;
 class CreateFindingsReportRequest;
 class CreateSbomExportRequest;
 class DeleteCisScanConfigurationRequest;
 class DeleteCodeSecurityIntegrationRequest;
 class DeleteCodeSecurityScanConfigurationRequest;
+class DeleteConnectorRequest;
 class DeleteFilterRequest;
 class DescribeOrganizationConfigurationRequest;
 class DisableRequest;
@@ -197,6 +207,8 @@ class ListCisScansRequest;
 class ListCodeSecurityIntegrationsRequest;
 class ListCodeSecurityScanConfigurationAssociationsRequest;
 class ListCodeSecurityScanConfigurationsRequest;
+class ListConnectorScanConfigurationsRequest;
+class ListConnectorsRequest;
 class ListCoverageRequest;
 class ListCoverageStatisticsRequest;
 class ListDelegatedAdminAccountsRequest;
@@ -219,6 +231,8 @@ class UpdateCisScanConfigurationRequest;
 class UpdateCodeSecurityIntegrationRequest;
 class UpdateCodeSecurityScanConfigurationRequest;
 class UpdateConfigurationRequest;
+class UpdateConnectorRequest;
+class UpdateConnectorScanConfigurationRequest;
 class UpdateEc2DeepInspectionConfigurationRequest;
 class UpdateEncryptionKeyRequest;
 class UpdateFilterRequest;
@@ -244,12 +258,14 @@ typedef Aws::Utils::Outcome<CancelSbomExportResult, Inspector2Error> CancelSbomE
 typedef Aws::Utils::Outcome<CreateCisScanConfigurationResult, Inspector2Error> CreateCisScanConfigurationOutcome;
 typedef Aws::Utils::Outcome<CreateCodeSecurityIntegrationResult, Inspector2Error> CreateCodeSecurityIntegrationOutcome;
 typedef Aws::Utils::Outcome<CreateCodeSecurityScanConfigurationResult, Inspector2Error> CreateCodeSecurityScanConfigurationOutcome;
+typedef Aws::Utils::Outcome<CreateConnectorResult, Inspector2Error> CreateConnectorOutcome;
 typedef Aws::Utils::Outcome<CreateFilterResult, Inspector2Error> CreateFilterOutcome;
 typedef Aws::Utils::Outcome<CreateFindingsReportResult, Inspector2Error> CreateFindingsReportOutcome;
 typedef Aws::Utils::Outcome<CreateSbomExportResult, Inspector2Error> CreateSbomExportOutcome;
 typedef Aws::Utils::Outcome<DeleteCisScanConfigurationResult, Inspector2Error> DeleteCisScanConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeleteCodeSecurityIntegrationResult, Inspector2Error> DeleteCodeSecurityIntegrationOutcome;
 typedef Aws::Utils::Outcome<DeleteCodeSecurityScanConfigurationResult, Inspector2Error> DeleteCodeSecurityScanConfigurationOutcome;
+typedef Aws::Utils::Outcome<DeleteConnectorResult, Inspector2Error> DeleteConnectorOutcome;
 typedef Aws::Utils::Outcome<DeleteFilterResult, Inspector2Error> DeleteFilterOutcome;
 typedef Aws::Utils::Outcome<DescribeOrganizationConfigurationResult, Inspector2Error> DescribeOrganizationConfigurationOutcome;
 typedef Aws::Utils::Outcome<DisableResult, Inspector2Error> DisableOutcome;
@@ -280,6 +296,8 @@ typedef Aws::Utils::Outcome<ListCodeSecurityIntegrationsResult, Inspector2Error>
 typedef Aws::Utils::Outcome<ListCodeSecurityScanConfigurationAssociationsResult, Inspector2Error>
     ListCodeSecurityScanConfigurationAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListCodeSecurityScanConfigurationsResult, Inspector2Error> ListCodeSecurityScanConfigurationsOutcome;
+typedef Aws::Utils::Outcome<ListConnectorScanConfigurationsResult, Inspector2Error> ListConnectorScanConfigurationsOutcome;
+typedef Aws::Utils::Outcome<ListConnectorsResult, Inspector2Error> ListConnectorsOutcome;
 typedef Aws::Utils::Outcome<ListCoverageResult, Inspector2Error> ListCoverageOutcome;
 typedef Aws::Utils::Outcome<ListCoverageStatisticsResult, Inspector2Error> ListCoverageStatisticsOutcome;
 typedef Aws::Utils::Outcome<ListDelegatedAdminAccountsResult, Inspector2Error> ListDelegatedAdminAccountsOutcome;
@@ -302,6 +320,8 @@ typedef Aws::Utils::Outcome<UpdateCisScanConfigurationResult, Inspector2Error> U
 typedef Aws::Utils::Outcome<UpdateCodeSecurityIntegrationResult, Inspector2Error> UpdateCodeSecurityIntegrationOutcome;
 typedef Aws::Utils::Outcome<UpdateCodeSecurityScanConfigurationResult, Inspector2Error> UpdateCodeSecurityScanConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateConfigurationResult, Inspector2Error> UpdateConfigurationOutcome;
+typedef Aws::Utils::Outcome<UpdateConnectorResult, Inspector2Error> UpdateConnectorOutcome;
+typedef Aws::Utils::Outcome<UpdateConnectorScanConfigurationResult, Inspector2Error> UpdateConnectorScanConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateEc2DeepInspectionConfigurationResult, Inspector2Error> UpdateEc2DeepInspectionConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateEncryptionKeyResult, Inspector2Error> UpdateEncryptionKeyOutcome;
 typedef Aws::Utils::Outcome<UpdateFilterResult, Inspector2Error> UpdateFilterOutcome;
@@ -324,12 +344,14 @@ typedef std::future<CancelSbomExportOutcome> CancelSbomExportOutcomeCallable;
 typedef std::future<CreateCisScanConfigurationOutcome> CreateCisScanConfigurationOutcomeCallable;
 typedef std::future<CreateCodeSecurityIntegrationOutcome> CreateCodeSecurityIntegrationOutcomeCallable;
 typedef std::future<CreateCodeSecurityScanConfigurationOutcome> CreateCodeSecurityScanConfigurationOutcomeCallable;
+typedef std::future<CreateConnectorOutcome> CreateConnectorOutcomeCallable;
 typedef std::future<CreateFilterOutcome> CreateFilterOutcomeCallable;
 typedef std::future<CreateFindingsReportOutcome> CreateFindingsReportOutcomeCallable;
 typedef std::future<CreateSbomExportOutcome> CreateSbomExportOutcomeCallable;
 typedef std::future<DeleteCisScanConfigurationOutcome> DeleteCisScanConfigurationOutcomeCallable;
 typedef std::future<DeleteCodeSecurityIntegrationOutcome> DeleteCodeSecurityIntegrationOutcomeCallable;
 typedef std::future<DeleteCodeSecurityScanConfigurationOutcome> DeleteCodeSecurityScanConfigurationOutcomeCallable;
+typedef std::future<DeleteConnectorOutcome> DeleteConnectorOutcomeCallable;
 typedef std::future<DeleteFilterOutcome> DeleteFilterOutcomeCallable;
 typedef std::future<DescribeOrganizationConfigurationOutcome> DescribeOrganizationConfigurationOutcomeCallable;
 typedef std::future<DisableOutcome> DisableOutcomeCallable;
@@ -358,6 +380,8 @@ typedef std::future<ListCisScansOutcome> ListCisScansOutcomeCallable;
 typedef std::future<ListCodeSecurityIntegrationsOutcome> ListCodeSecurityIntegrationsOutcomeCallable;
 typedef std::future<ListCodeSecurityScanConfigurationAssociationsOutcome> ListCodeSecurityScanConfigurationAssociationsOutcomeCallable;
 typedef std::future<ListCodeSecurityScanConfigurationsOutcome> ListCodeSecurityScanConfigurationsOutcomeCallable;
+typedef std::future<ListConnectorScanConfigurationsOutcome> ListConnectorScanConfigurationsOutcomeCallable;
+typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
 typedef std::future<ListCoverageOutcome> ListCoverageOutcomeCallable;
 typedef std::future<ListCoverageStatisticsOutcome> ListCoverageStatisticsOutcomeCallable;
 typedef std::future<ListDelegatedAdminAccountsOutcome> ListDelegatedAdminAccountsOutcomeCallable;
@@ -380,6 +404,8 @@ typedef std::future<UpdateCisScanConfigurationOutcome> UpdateCisScanConfiguratio
 typedef std::future<UpdateCodeSecurityIntegrationOutcome> UpdateCodeSecurityIntegrationOutcomeCallable;
 typedef std::future<UpdateCodeSecurityScanConfigurationOutcome> UpdateCodeSecurityScanConfigurationOutcomeCallable;
 typedef std::future<UpdateConfigurationOutcome> UpdateConfigurationOutcomeCallable;
+typedef std::future<UpdateConnectorOutcome> UpdateConnectorOutcomeCallable;
+typedef std::future<UpdateConnectorScanConfigurationOutcome> UpdateConnectorScanConfigurationOutcomeCallable;
 typedef std::future<UpdateEc2DeepInspectionConfigurationOutcome> UpdateEc2DeepInspectionConfigurationOutcomeCallable;
 typedef std::future<UpdateEncryptionKeyOutcome> UpdateEncryptionKeyOutcomeCallable;
 typedef std::future<UpdateFilterOutcome> UpdateFilterOutcomeCallable;
@@ -439,6 +465,9 @@ typedef std::function<void(const Inspector2Client*, const Model::CreateCodeSecur
                            const Model::CreateCodeSecurityScanConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCodeSecurityScanConfigurationResponseReceivedHandler;
+typedef std::function<void(const Inspector2Client*, const Model::CreateConnectorRequest&, const Model::CreateConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateConnectorResponseReceivedHandler;
 typedef std::function<void(const Inspector2Client*, const Model::CreateFilterRequest&, const Model::CreateFilterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateFilterResponseReceivedHandler;
@@ -459,6 +488,9 @@ typedef std::function<void(const Inspector2Client*, const Model::DeleteCodeSecur
                            const Model::DeleteCodeSecurityScanConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteCodeSecurityScanConfigurationResponseReceivedHandler;
+typedef std::function<void(const Inspector2Client*, const Model::DeleteConnectorRequest&, const Model::DeleteConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteConnectorResponseReceivedHandler;
 typedef std::function<void(const Inspector2Client*, const Model::DeleteFilterRequest&, const Model::DeleteFilterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteFilterResponseReceivedHandler;
@@ -552,6 +584,13 @@ typedef std::function<void(const Inspector2Client*, const Model::ListCodeSecurit
                            const Model::ListCodeSecurityScanConfigurationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCodeSecurityScanConfigurationsResponseReceivedHandler;
+typedef std::function<void(const Inspector2Client*, const Model::ListConnectorScanConfigurationsRequest&,
+                           const Model::ListConnectorScanConfigurationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListConnectorScanConfigurationsResponseReceivedHandler;
+typedef std::function<void(const Inspector2Client*, const Model::ListConnectorsRequest&, const Model::ListConnectorsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListConnectorsResponseReceivedHandler;
 typedef std::function<void(const Inspector2Client*, const Model::ListCoverageRequest&, const Model::ListCoverageOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCoverageResponseReceivedHandler;
@@ -620,6 +659,13 @@ typedef std::function<void(const Inspector2Client*, const Model::UpdateCodeSecur
 typedef std::function<void(const Inspector2Client*, const Model::UpdateConfigurationRequest&, const Model::UpdateConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateConfigurationResponseReceivedHandler;
+typedef std::function<void(const Inspector2Client*, const Model::UpdateConnectorRequest&, const Model::UpdateConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateConnectorResponseReceivedHandler;
+typedef std::function<void(const Inspector2Client*, const Model::UpdateConnectorScanConfigurationRequest&,
+                           const Model::UpdateConnectorScanConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateConnectorScanConfigurationResponseReceivedHandler;
 typedef std::function<void(const Inspector2Client*, const Model::UpdateEc2DeepInspectionConfigurationRequest&,
                            const Model::UpdateEc2DeepInspectionConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

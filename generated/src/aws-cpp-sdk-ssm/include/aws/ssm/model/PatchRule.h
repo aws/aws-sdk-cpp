@@ -73,11 +73,11 @@ class PatchRule {
    * that the patch is marked as approved in the patch baseline. For example, a value
    * of <code>7</code> means that patches are approved seven days after they are
    * released.</p> <p>Patch Manager evaluates patch release dates using Coordinated
-   * Universal Time (UTC). If the day represented by <code>7</code> is
-   * <code>2025-11-16</code>, patches released between
-   * <code>2025-11-16T00:00:00Z</code> and <code>2025-11-16T23:59:59Z</code> will be
-   * included in the approval.</p> <p>This parameter is marked as <code>Required:
-   * No</code>, but your request must include a value for either
+   * Universal Time (UTC). If a patch is released at
+   * <code>2025-11-09T18:00:00Z</code> and <code>ApproveAfterDays</code> is set to
+   * <code>7</code>, the patch will be approved after
+   * <code>2025-11-16T18:00:00Z</code>.</p> <p>This parameter is marked as
+   * <code>Required: No</code>, but your request must include a value for either
    * <code>ApproveAfterDays</code> or <code>ApproveUntilDate</code>.</p> <p>Not
    * supported for Debian Server or Ubuntu Server.</p>  <p>Use caution
    * when setting this value for Windows Server patch baselines. Because patch

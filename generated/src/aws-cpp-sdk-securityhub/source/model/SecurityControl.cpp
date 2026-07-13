@@ -61,6 +61,10 @@ SecurityControl& SecurityControl::operator=(JsonView jsonValue) {
     m_lastUpdateReason = jsonValue.GetString("LastUpdateReason");
     m_lastUpdateReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Provider")) {
+    m_provider = SecurityControlsProviderMapper::GetSecurityControlsProviderForName(jsonValue.GetString("Provider"));
+    m_providerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -109,6 +113,10 @@ JsonValue SecurityControl::Jsonize() const {
 
   if (m_lastUpdateReasonHasBeenSet) {
     payload.WithString("LastUpdateReason", m_lastUpdateReason);
+  }
+
+  if (m_providerHasBeenSet) {
+    payload.WithString("Provider", SecurityControlsProviderMapper::GetNameForSecurityControlsProvider(m_provider));
   }
 
   return payload;

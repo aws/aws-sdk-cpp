@@ -70,6 +70,10 @@ ResaleAuthorizationFilters& ResaleAuthorizationFilters::operator=(JsonView jsonV
     m_lastModifiedDate = jsonValue.GetObject("LastModifiedDate");
     m_lastModifiedDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ResellerRole")) {
+    m_resellerRole = jsonValue.GetObject("ResellerRole");
+    m_resellerRoleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -126,6 +130,10 @@ JsonValue ResaleAuthorizationFilters::Jsonize() const {
 
   if (m_lastModifiedDateHasBeenSet) {
     payload.WithObject("LastModifiedDate", m_lastModifiedDate.Jsonize());
+  }
+
+  if (m_resellerRoleHasBeenSet) {
+    payload.WithObject("ResellerRole", m_resellerRole.Jsonize());
   }
 
   return payload;

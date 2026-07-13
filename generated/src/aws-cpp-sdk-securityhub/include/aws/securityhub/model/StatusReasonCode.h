@@ -10,7 +10,13 @@
 namespace Aws {
 namespace SecurityHub {
 namespace Model {
-enum class StatusReasonCode { NOT_SET, NO_AVAILABLE_CONFIGURATION_RECORDER, MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED, INTERNAL_ERROR };
+enum class StatusReasonCode {
+  NOT_SET,
+  NO_AVAILABLE_CONFIGURATION_RECORDER,
+  MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED,
+  NO_AVAILABLE_MULTICLOUD_CONNECTOR,
+  INTERNAL_ERROR
+};
 
 namespace StatusReasonCodeMapper {
 AWS_SECURITYHUB_API StatusReasonCode GetStatusReasonCodeForName(const Aws::String& name);

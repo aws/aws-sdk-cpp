@@ -54,6 +54,10 @@ CapacityProvider& CapacityProvider::operator=(JsonView jsonValue) {
     m_propagateTags = jsonValue.GetObject("PropagateTags");
     m_propagateTagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TelemetryConfig")) {
+    m_telemetryConfig = jsonValue.GetObject("TelemetryConfig");
+    m_telemetryConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue CapacityProvider::Jsonize() const {
 
   if (m_propagateTagsHasBeenSet) {
     payload.WithObject("PropagateTags", m_propagateTags.Jsonize());
+  }
+
+  if (m_telemetryConfigHasBeenSet) {
+    payload.WithObject("TelemetryConfig", m_telemetryConfig.Jsonize());
   }
 
   return payload;

@@ -61,6 +61,11 @@ FleetLaunchTemplateOverridesRequest& FleetLaunchTemplateOverridesRequest::operat
       m_placement = placementNode;
       m_placementHasBeenSet = true;
     }
+    XmlNode keyNameNode = resultNode.FirstChild("KeyName");
+    if (!keyNameNode.IsNull()) {
+      m_keyName = Aws::Utils::Xml::DecodeEscapedXmlText(keyNameNode.GetText());
+      m_keyNameHasBeenSet = true;
+    }
     XmlNode blockDeviceMappingsNode = resultNode.FirstChild("BlockDeviceMapping");
     if (!blockDeviceMappingsNode.IsNull()) {
       XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("BlockDeviceMapping");
@@ -71,6 +76,16 @@ FleetLaunchTemplateOverridesRequest& FleetLaunchTemplateOverridesRequest::operat
       }
 
       m_blockDeviceMappingsHasBeenSet = true;
+    }
+    XmlNode iamInstanceProfileNode = resultNode.FirstChild("IamInstanceProfile");
+    if (!iamInstanceProfileNode.IsNull()) {
+      m_iamInstanceProfile = iamInstanceProfileNode;
+      m_iamInstanceProfileHasBeenSet = true;
+    }
+    XmlNode metadataOptionsNode = resultNode.FirstChild("MetadataOptions");
+    if (!metadataOptionsNode.IsNull()) {
+      m_metadataOptions = metadataOptionsNode;
+      m_metadataOptionsHasBeenSet = true;
     }
     XmlNode instanceRequirementsNode = resultNode.FirstChild("InstanceRequirements");
     if (!instanceRequirementsNode.IsNull()) {
@@ -125,6 +140,10 @@ void FleetLaunchTemplateOverridesRequest::OutputToStream(Aws::OStream& oStream, 
     m_placement.OutputToStream(oStream, placementLocationAndMemberSs.str().c_str());
   }
 
+  if (m_keyNameHasBeenSet) {
+    oStream << location << index << locationValue << ".KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
+  }
+
   if (m_blockDeviceMappingsHasBeenSet) {
     unsigned blockDeviceMappingsIdx = 1;
     for (auto& item : m_blockDeviceMappings) {
@@ -132,6 +151,18 @@ void FleetLaunchTemplateOverridesRequest::OutputToStream(Aws::OStream& oStream, 
       blockDeviceMappingsSs << location << index << locationValue << ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
       item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
     }
+  }
+
+  if (m_iamInstanceProfileHasBeenSet) {
+    Aws::StringStream iamInstanceProfileLocationAndMemberSs;
+    iamInstanceProfileLocationAndMemberSs << location << index << locationValue << ".IamInstanceProfile";
+    m_iamInstanceProfile.OutputToStream(oStream, iamInstanceProfileLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_metadataOptionsHasBeenSet) {
+    Aws::StringStream metadataOptionsLocationAndMemberSs;
+    metadataOptionsLocationAndMemberSs << location << index << locationValue << ".MetadataOptions";
+    m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMemberSs.str().c_str());
   }
 
   if (m_instanceRequirementsHasBeenSet) {
@@ -173,6 +204,9 @@ void FleetLaunchTemplateOverridesRequest::OutputToStream(Aws::OStream& oStream, 
     placementLocationAndMember += ".Placement";
     m_placement.OutputToStream(oStream, placementLocationAndMember.c_str());
   }
+  if (m_keyNameHasBeenSet) {
+    oStream << location << ".KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
+  }
   if (m_blockDeviceMappingsHasBeenSet) {
     unsigned blockDeviceMappingsIdx = 1;
     for (auto& item : m_blockDeviceMappings) {
@@ -180,6 +214,16 @@ void FleetLaunchTemplateOverridesRequest::OutputToStream(Aws::OStream& oStream, 
       blockDeviceMappingsSs << location << ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
       item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
     }
+  }
+  if (m_iamInstanceProfileHasBeenSet) {
+    Aws::String iamInstanceProfileLocationAndMember(location);
+    iamInstanceProfileLocationAndMember += ".IamInstanceProfile";
+    m_iamInstanceProfile.OutputToStream(oStream, iamInstanceProfileLocationAndMember.c_str());
+  }
+  if (m_metadataOptionsHasBeenSet) {
+    Aws::String metadataOptionsLocationAndMember(location);
+    metadataOptionsLocationAndMember += ".MetadataOptions";
+    m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMember.c_str());
   }
   if (m_instanceRequirementsHasBeenSet) {
     Aws::String instanceRequirementsLocationAndMember(location);

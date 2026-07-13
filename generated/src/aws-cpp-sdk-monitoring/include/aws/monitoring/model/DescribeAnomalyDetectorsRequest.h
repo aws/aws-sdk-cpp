@@ -35,6 +35,34 @@ class DescribeAnomalyDetectorsRequest : public CloudWatchRequest {
 
   ///@{
   /**
+   * <p>Specifies the unique identifiers of the anomaly detectors to describe. You
+   * can specify up to 50 identifiers. If you specify this parameter, you cannot also
+   * specify the <code>Namespace</code>, <code>MetricName</code>,
+   * <code>Dimensions</code>, or <code>AnomalyDetectorTypes</code> metric
+   * filters.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAnomalyDetectorIds() const { return m_anomalyDetectorIds; }
+  inline bool AnomalyDetectorIdsHasBeenSet() const { return m_anomalyDetectorIdsHasBeenSet; }
+  template <typename AnomalyDetectorIdsT = Aws::Vector<Aws::String>>
+  void SetAnomalyDetectorIds(AnomalyDetectorIdsT&& value) {
+    m_anomalyDetectorIdsHasBeenSet = true;
+    m_anomalyDetectorIds = std::forward<AnomalyDetectorIdsT>(value);
+  }
+  template <typename AnomalyDetectorIdsT = Aws::Vector<Aws::String>>
+  DescribeAnomalyDetectorsRequest& WithAnomalyDetectorIds(AnomalyDetectorIdsT&& value) {
+    SetAnomalyDetectorIds(std::forward<AnomalyDetectorIdsT>(value));
+    return *this;
+  }
+  template <typename AnomalyDetectorIdsT = Aws::String>
+  DescribeAnomalyDetectorsRequest& AddAnomalyDetectorIds(AnomalyDetectorIdsT&& value) {
+    m_anomalyDetectorIdsHasBeenSet = true;
+    m_anomalyDetectorIds.emplace_back(std::forward<AnomalyDetectorIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Use the token returned by the previous operation to request the next page of
    * results.</p>
    */
@@ -162,6 +190,8 @@ class DescribeAnomalyDetectorsRequest : public CloudWatchRequest {
   }
   ///@}
  private:
+  Aws::Vector<Aws::String> m_anomalyDetectorIds;
+
   Aws::String m_nextToken;
 
   int m_maxResults{0};
@@ -173,6 +203,7 @@ class DescribeAnomalyDetectorsRequest : public CloudWatchRequest {
   Aws::Vector<Dimension> m_dimensions;
 
   Aws::Vector<AnomalyDetectorType> m_anomalyDetectorTypes;
+  bool m_anomalyDetectorIdsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;

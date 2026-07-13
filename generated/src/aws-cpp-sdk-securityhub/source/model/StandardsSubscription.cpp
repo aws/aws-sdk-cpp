@@ -46,6 +46,10 @@ StandardsSubscription& StandardsSubscription::operator=(JsonView jsonValue) {
     m_standardsStatusReason = jsonValue.GetObject("StandardsStatusReason");
     m_standardsStatusReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Provider")) {
+    m_provider = StandardsProviderMapper::GetStandardsProviderForName(jsonValue.GetString("Provider"));
+    m_providerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -79,6 +83,10 @@ JsonValue StandardsSubscription::Jsonize() const {
 
   if (m_standardsStatusReasonHasBeenSet) {
     payload.WithObject("StandardsStatusReason", m_standardsStatusReason.Jsonize());
+  }
+
+  if (m_providerHasBeenSet) {
+    payload.WithString("Provider", StandardsProviderMapper::GetNameForStandardsProvider(m_provider));
   }
 
   return payload;

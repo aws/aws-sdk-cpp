@@ -100,6 +100,107 @@ class FindingTypeAggregationResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The cloud service provider associated with this finding type aggregation.
+   * Valid values:</p> <ul> <li> <p> <code>AWS</code> – Findings from Amazon Web
+   * Services resources.</p> </li> <li> <p> <code>AZURE</code> – Findings from
+   * Microsoft Azure resources.</p> </li> </ul>
+   */
+  inline const Aws::String& GetCloudProvider() const { return m_cloudProvider; }
+  inline bool CloudProviderHasBeenSet() const { return m_cloudProviderHasBeenSet; }
+  template <typename CloudProviderT = Aws::String>
+  void SetCloudProvider(CloudProviderT&& value) {
+    m_cloudProviderHasBeenSet = true;
+    m_cloudProvider = std::forward<CloudProviderT>(value);
+  }
+  template <typename CloudProviderT = Aws::String>
+  FindingTypeAggregationResponse& WithCloudProvider(CloudProviderT&& value) {
+    SetCloudProvider(std::forward<CloudProviderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud account ID for the finding type aggregation.</p>
+   */
+  inline const Aws::String& GetCloudAccountId() const { return m_cloudAccountId; }
+  inline bool CloudAccountIdHasBeenSet() const { return m_cloudAccountIdHasBeenSet; }
+  template <typename CloudAccountIdT = Aws::String>
+  void SetCloudAccountId(CloudAccountIdT&& value) {
+    m_cloudAccountIdHasBeenSet = true;
+    m_cloudAccountId = std::forward<CloudAccountIdT>(value);
+  }
+  template <typename CloudAccountIdT = Aws::String>
+  FindingTypeAggregationResponse& WithCloudAccountId(CloudAccountIdT&& value) {
+    SetCloudAccountId(std::forward<CloudAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud organization ID for the finding type aggregation.</p>
+   */
+  inline const Aws::String& GetCloudOrgId() const { return m_cloudOrgId; }
+  inline bool CloudOrgIdHasBeenSet() const { return m_cloudOrgIdHasBeenSet; }
+  template <typename CloudOrgIdT = Aws::String>
+  void SetCloudOrgId(CloudOrgIdT&& value) {
+    m_cloudOrgIdHasBeenSet = true;
+    m_cloudOrgId = std::forward<CloudOrgIdT>(value);
+  }
+  template <typename CloudOrgIdT = Aws::String>
+  FindingTypeAggregationResponse& WithCloudOrgId(CloudOrgIdT&& value) {
+    SetCloudOrgId(std::forward<CloudOrgIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud Region associated with this finding type aggregation. The value
+   * format depends on the cloud provider:</p> <ul> <li> <p>An Amazon Web Services
+   * Region, such as <code>us-east-1</code>.</p> </li> <li> <p>An Azure region, such
+   * as <code>eastus</code>.</p> </li> </ul>
+   */
+  inline const Aws::String& GetCloudRegion() const { return m_cloudRegion; }
+  inline bool CloudRegionHasBeenSet() const { return m_cloudRegionHasBeenSet; }
+  template <typename CloudRegionT = Aws::String>
+  void SetCloudRegion(CloudRegionT&& value) {
+    m_cloudRegionHasBeenSet = true;
+    m_cloudRegion = std::forward<CloudRegionT>(value);
+  }
+  template <typename CloudRegionT = Aws::String>
+  FindingTypeAggregationResponse& WithCloudRegion(CloudRegionT&& value) {
+    SetCloudRegion(std::forward<CloudRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud infrastructure partition associated with this finding type
+   * aggregation. Valid values:</p> <ul> <li> <p> <code>aws</code> – Amazon Web
+   * Services commercial Regions.</p> </li> <li> <p> <code>aws-cn</code> – Amazon Web
+   * Services China Regions.</p> </li> <li> <p> <code>aws-us-gov</code> – Amazon Web
+   * Services GovCloud (US) Regions.</p> </li> <li> <p> <code>AzureCloud</code> –
+   * Azure commercial Regions.</p> </li> </ul>
+   */
+  inline const Aws::String& GetCloudPartition() const { return m_cloudPartition; }
+  inline bool CloudPartitionHasBeenSet() const { return m_cloudPartitionHasBeenSet; }
+  template <typename CloudPartitionT = Aws::String>
+  void SetCloudPartition(CloudPartitionT&& value) {
+    m_cloudPartitionHasBeenSet = true;
+    m_cloudPartition = std::forward<CloudPartitionT>(value);
+  }
+  template <typename CloudPartitionT = Aws::String>
+  FindingTypeAggregationResponse& WithCloudPartition(CloudPartitionT&& value) {
+    SetCloudPartition(std::forward<CloudPartitionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accountId;
 
@@ -108,10 +209,25 @@ class FindingTypeAggregationResponse {
   long long m_exploitAvailableCount{0};
 
   long long m_fixAvailableCount{0};
+
+  Aws::String m_cloudProvider;
+
+  Aws::String m_cloudAccountId;
+
+  Aws::String m_cloudOrgId;
+
+  Aws::String m_cloudRegion;
+
+  Aws::String m_cloudPartition;
   bool m_accountIdHasBeenSet = false;
   bool m_severityCountsHasBeenSet = false;
   bool m_exploitAvailableCountHasBeenSet = false;
   bool m_fixAvailableCountHasBeenSet = false;
+  bool m_cloudProviderHasBeenSet = false;
+  bool m_cloudAccountIdHasBeenSet = false;
+  bool m_cloudOrgIdHasBeenSet = false;
+  bool m_cloudRegionHasBeenSet = false;
+  bool m_cloudPartitionHasBeenSet = false;
 };
 
 }  // namespace Model

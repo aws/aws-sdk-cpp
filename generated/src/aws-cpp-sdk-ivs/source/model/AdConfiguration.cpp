@@ -36,6 +36,10 @@ AdConfiguration& AdConfiguration::operator=(JsonView jsonValue) {
     }
     m_mediaTailorPlaybackConfigurationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("postRollConfiguration")) {
+    m_postRollConfiguration = jsonValue.GetObject("postRollConfiguration");
+    m_postRollConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -66,6 +70,10 @@ JsonValue AdConfiguration::Jsonize() const {
           m_mediaTailorPlaybackConfigurations[mediaTailorPlaybackConfigurationsIndex].Jsonize());
     }
     payload.WithArray("mediaTailorPlaybackConfigurations", std::move(mediaTailorPlaybackConfigurationsJsonList));
+  }
+
+  if (m_postRollConfigurationHasBeenSet) {
+    payload.WithObject("postRollConfiguration", m_postRollConfiguration.Jsonize());
   }
 
   if (m_tagsHasBeenSet) {

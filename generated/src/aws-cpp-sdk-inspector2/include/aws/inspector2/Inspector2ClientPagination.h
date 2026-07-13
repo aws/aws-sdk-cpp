@@ -13,6 +13,8 @@
 #include <aws/inspector2/model/ListCisScanResultsAggregatedByChecksPaginationTraits.h>
 #include <aws/inspector2/model/ListCisScanResultsAggregatedByTargetResourcePaginationTraits.h>
 #include <aws/inspector2/model/ListCisScansPaginationTraits.h>
+#include <aws/inspector2/model/ListConnectorScanConfigurationsPaginationTraits.h>
+#include <aws/inspector2/model/ListConnectorsPaginationTraits.h>
 #include <aws/inspector2/model/ListCoveragePaginationTraits.h>
 #include <aws/inspector2/model/ListCoverageStatisticsPaginationTraits.h>
 #include <aws/inspector2/model/ListDelegatedAdminAccountsPaginationTraits.h>
@@ -45,6 +47,11 @@ using ListCisScanResultsAggregatedByTargetResourcePaginator =
                                       Pagination::ListCisScanResultsAggregatedByTargetResourcePaginationTraits<Inspector2Client>>;
 using ListCisScansPaginator = Aws::Utils::Pagination::Paginator<Inspector2Client, Model::ListCisScansRequest,
                                                                 Pagination::ListCisScansPaginationTraits<Inspector2Client>>;
+using ListConnectorsPaginator = Aws::Utils::Pagination::Paginator<Inspector2Client, Model::ListConnectorsRequest,
+                                                                  Pagination::ListConnectorsPaginationTraits<Inspector2Client>>;
+using ListConnectorScanConfigurationsPaginator =
+    Aws::Utils::Pagination::Paginator<Inspector2Client, Model::ListConnectorScanConfigurationsRequest,
+                                      Pagination::ListConnectorScanConfigurationsPaginationTraits<Inspector2Client>>;
 using ListCoveragePaginator = Aws::Utils::Pagination::Paginator<Inspector2Client, Model::ListCoverageRequest,
                                                                 Pagination::ListCoveragePaginationTraits<Inspector2Client>>;
 using ListCoverageStatisticsPaginator =

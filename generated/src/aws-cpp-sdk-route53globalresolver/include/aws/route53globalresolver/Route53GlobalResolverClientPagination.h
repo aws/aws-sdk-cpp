@@ -15,6 +15,7 @@
 #include <aws/route53globalresolver/model/ListGlobalResolversPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListHostedZoneAssociationsPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListManagedFirewallDomainListsPaginationTraits.h>
+#include <aws/route53globalresolver/model/ListSharedDNSViewsPaginationTraits.h>
 
 namespace Aws {
 namespace Route53GlobalResolver {
@@ -45,6 +46,9 @@ using ListHostedZoneAssociationsPaginator =
 using ListManagedFirewallDomainListsPaginator =
     Aws::Utils::Pagination::Paginator<Route53GlobalResolverClient, Model::ListManagedFirewallDomainListsRequest,
                                       Pagination::ListManagedFirewallDomainListsPaginationTraits<Route53GlobalResolverClient>>;
+using ListSharedDNSViewsPaginator =
+    Aws::Utils::Pagination::Paginator<Route53GlobalResolverClient, Model::ListSharedDNSViewsRequest,
+                                      Pagination::ListSharedDNSViewsPaginationTraits<Route53GlobalResolverClient>>;
 
 }  // namespace Route53GlobalResolver
 }  // namespace Aws

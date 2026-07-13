@@ -30,6 +30,40 @@ class GetFederationTokenResult {
 
   ///@{
   /**
+   * <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
+   */
+  inline const Aws::String& GetUserId() const { return m_userId; }
+  template <typename UserIdT = Aws::String>
+  void SetUserId(UserIdT&& value) {
+    m_userIdHasBeenSet = true;
+    m_userId = std::forward<UserIdT>(value);
+  }
+  template <typename UserIdT = Aws::String>
+  GetFederationTokenResult& WithUserId(UserIdT&& value) {
+    SetUserId(std::forward<UserIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the user.</p>
+   */
+  inline const Aws::String& GetUserArn() const { return m_userArn; }
+  template <typename UserArnT = Aws::String>
+  void SetUserArn(UserArnT&& value) {
+    m_userArnHasBeenSet = true;
+    m_userArn = std::forward<UserArnT>(value);
+  }
+  template <typename UserArnT = Aws::String>
+  GetFederationTokenResult& WithUserArn(UserArnT&& value) {
+    SetUserArn(std::forward<UserArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The credentials to use for federation.</p>
    */
   inline const Credentials& GetCredentials() const { return m_credentials; }
@@ -63,40 +97,6 @@ class GetFederationTokenResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) of the user.</p>
-   */
-  inline const Aws::String& GetUserArn() const { return m_userArn; }
-  template <typename UserArnT = Aws::String>
-  void SetUserArn(UserArnT&& value) {
-    m_userArnHasBeenSet = true;
-    m_userArn = std::forward<UserArnT>(value);
-  }
-  template <typename UserArnT = Aws::String>
-  GetFederationTokenResult& WithUserArn(UserArnT&& value) {
-    SetUserArn(std::forward<UserArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
-   */
-  inline const Aws::String& GetUserId() const { return m_userId; }
-  template <typename UserIdT = Aws::String>
-  void SetUserId(UserIdT&& value) {
-    m_userIdHasBeenSet = true;
-    m_userId = std::forward<UserIdT>(value);
-  }
-  template <typename UserIdT = Aws::String>
-  GetFederationTokenResult& WithUserId(UserIdT&& value) {
-    SetUserId(std::forward<UserIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -113,20 +113,20 @@ class GetFederationTokenResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_userId;
+
+  Aws::String m_userArn;
+
   Credentials m_credentials;
 
   Aws::String m_signInUrl;
 
-  Aws::String m_userArn;
-
-  Aws::String m_userId;
-
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_userIdHasBeenSet = false;
+  bool m_userArnHasBeenSet = false;
   bool m_credentialsHasBeenSet = false;
   bool m_signInUrlHasBeenSet = false;
-  bool m_userArnHasBeenSet = false;
-  bool m_userIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

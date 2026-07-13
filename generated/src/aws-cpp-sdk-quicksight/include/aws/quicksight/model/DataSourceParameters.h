@@ -16,10 +16,13 @@
 #include <aws/quicksight/model/CustomConnectionParameters.h>
 #include <aws/quicksight/model/DatabricksParameters.h>
 #include <aws/quicksight/model/ExasolParameters.h>
+#include <aws/quicksight/model/FMKBParameters.h>
+#include <aws/quicksight/model/GoogleDriveParameters.h>
 #include <aws/quicksight/model/ImpalaParameters.h>
 #include <aws/quicksight/model/JiraParameters.h>
 #include <aws/quicksight/model/MariaDbParameters.h>
 #include <aws/quicksight/model/MySqlParameters.h>
+#include <aws/quicksight/model/OneDriveParameters.h>
 #include <aws/quicksight/model/OracleParameters.h>
 #include <aws/quicksight/model/PostgreSqlParameters.h>
 #include <aws/quicksight/model/PrestoParameters.h>
@@ -30,6 +33,7 @@
 #include <aws/quicksight/model/S3Parameters.h>
 #include <aws/quicksight/model/S3TablesParameters.h>
 #include <aws/quicksight/model/ServiceNowParameters.h>
+#include <aws/quicksight/model/SharePointParameters.h>
 #include <aws/quicksight/model/SnowflakeParameters.h>
 #include <aws/quicksight/model/SparkParameters.h>
 #include <aws/quicksight/model/SqlServerParameters.h>
@@ -659,6 +663,78 @@ class DataSourceParameters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The parameters for a SharePoint data source.</p>
+   */
+  inline const SharePointParameters& GetSharePointParameters() const { return m_sharePointParameters; }
+  inline bool SharePointParametersHasBeenSet() const { return m_sharePointParametersHasBeenSet; }
+  template <typename SharePointParametersT = SharePointParameters>
+  void SetSharePointParameters(SharePointParametersT&& value) {
+    m_sharePointParametersHasBeenSet = true;
+    m_sharePointParameters = std::forward<SharePointParametersT>(value);
+  }
+  template <typename SharePointParametersT = SharePointParameters>
+  DataSourceParameters& WithSharePointParameters(SharePointParametersT&& value) {
+    SetSharePointParameters(std::forward<SharePointParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The parameters for a Google Drive data source.</p>
+   */
+  inline const GoogleDriveParameters& GetGoogleDriveParameters() const { return m_googleDriveParameters; }
+  inline bool GoogleDriveParametersHasBeenSet() const { return m_googleDriveParametersHasBeenSet; }
+  template <typename GoogleDriveParametersT = GoogleDriveParameters>
+  void SetGoogleDriveParameters(GoogleDriveParametersT&& value) {
+    m_googleDriveParametersHasBeenSet = true;
+    m_googleDriveParameters = std::forward<GoogleDriveParametersT>(value);
+  }
+  template <typename GoogleDriveParametersT = GoogleDriveParameters>
+  DataSourceParameters& WithGoogleDriveParameters(GoogleDriveParametersT&& value) {
+    SetGoogleDriveParameters(std::forward<GoogleDriveParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The parameters for an OneDrive data source.</p>
+   */
+  inline const OneDriveParameters& GetOneDriveParameters() const { return m_oneDriveParameters; }
+  inline bool OneDriveParametersHasBeenSet() const { return m_oneDriveParametersHasBeenSet; }
+  template <typename OneDriveParametersT = OneDriveParameters>
+  void SetOneDriveParameters(OneDriveParametersT&& value) {
+    m_oneDriveParametersHasBeenSet = true;
+    m_oneDriveParameters = std::forward<OneDriveParametersT>(value);
+  }
+  template <typename OneDriveParametersT = OneDriveParameters>
+  DataSourceParameters& WithOneDriveParameters(OneDriveParametersT&& value) {
+    SetOneDriveParameters(std::forward<OneDriveParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The parameters for a fully managed knowledge base data source.</p>
+   */
+  inline const FMKBParameters& GetFMKBParameters() const { return m_fMKBParameters; }
+  inline bool FMKBParametersHasBeenSet() const { return m_fMKBParametersHasBeenSet; }
+  template <typename FMKBParametersT = FMKBParameters>
+  void SetFMKBParameters(FMKBParametersT&& value) {
+    m_fMKBParametersHasBeenSet = true;
+    m_fMKBParameters = std::forward<FMKBParametersT>(value);
+  }
+  template <typename FMKBParametersT = FMKBParameters>
+  DataSourceParameters& WithFMKBParameters(FMKBParametersT&& value) {
+    SetFMKBParameters(std::forward<FMKBParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AmazonElasticsearchParameters m_amazonElasticsearchParameters;
 
@@ -725,6 +801,14 @@ class DataSourceParameters {
   ConfluenceParameters m_confluenceParameters;
 
   QBusinessParameters m_qBusinessParameters;
+
+  SharePointParameters m_sharePointParameters;
+
+  GoogleDriveParameters m_googleDriveParameters;
+
+  OneDriveParameters m_oneDriveParameters;
+
+  FMKBParameters m_fMKBParameters;
   bool m_amazonElasticsearchParametersHasBeenSet = false;
   bool m_athenaParametersHasBeenSet = false;
   bool m_auroraParametersHasBeenSet = false;
@@ -758,6 +842,10 @@ class DataSourceParameters {
   bool m_webCrawlerParametersHasBeenSet = false;
   bool m_confluenceParametersHasBeenSet = false;
   bool m_qBusinessParametersHasBeenSet = false;
+  bool m_sharePointParametersHasBeenSet = false;
+  bool m_googleDriveParametersHasBeenSet = false;
+  bool m_oneDriveParametersHasBeenSet = false;
+  bool m_fMKBParametersHasBeenSet = false;
 };
 
 }  // namespace Model

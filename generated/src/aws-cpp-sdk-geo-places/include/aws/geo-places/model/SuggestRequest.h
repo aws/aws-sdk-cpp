@@ -11,6 +11,7 @@
 #include <aws/geo-places/model/SuggestAdditionalFeature.h>
 #include <aws/geo-places/model/SuggestFilter.h>
 #include <aws/geo-places/model/SuggestIntendedUse.h>
+#include <aws/geo-places/model/SuggestTravelMode.h>
 
 #include <utility>
 
@@ -170,7 +171,8 @@ class SuggestRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p> A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP
+   * <p> A list of <a
+   * href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
    * 47</a> compliant language codes for the results to be rendered in. If there is
    * no data for the result in the requested language, data will be returned in the
    * default language for the entry. For <a
@@ -237,6 +239,24 @@ class SuggestRequest : public GeoPlacesRequest {
 
   ///@{
   /**
+   * <p>Indicates the mode of mobility used by the end user. This is used to improve
+   * the relevance of search results. Valid values are <code>Car</code>,
+   * <code>Scooter</code>, and <code>Truck</code>.</p>
+   */
+  inline SuggestTravelMode GetTravelMode() const { return m_travelMode; }
+  inline bool TravelModeHasBeenSet() const { return m_travelModeHasBeenSet; }
+  inline void SetTravelMode(SuggestTravelMode value) {
+    m_travelModeHasBeenSet = true;
+    m_travelMode = value;
+  }
+  inline SuggestRequest& WithTravelMode(SuggestTravelMode value) {
+    SetTravelMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Optional: The API key to be used for authorization. Either an API key or
    * valid SigV4 signature must be provided when making a request.</p>
    */
@@ -272,6 +292,8 @@ class SuggestRequest : public GeoPlacesRequest {
 
   SuggestIntendedUse m_intendedUse{SuggestIntendedUse::NOT_SET};
 
+  SuggestTravelMode m_travelMode{SuggestTravelMode::NOT_SET};
+
   Aws::String m_key;
   bool m_queryTextHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
@@ -282,6 +304,7 @@ class SuggestRequest : public GeoPlacesRequest {
   bool m_languageHasBeenSet = false;
   bool m_politicalViewHasBeenSet = false;
   bool m_intendedUseHasBeenSet = false;
+  bool m_travelModeHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

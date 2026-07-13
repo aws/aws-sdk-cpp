@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GeoPlaces {
 namespace Model {
-enum class PostalCodeMode { NOT_SET, MergeAllSpannedLocalities, EnumerateSpannedLocalities };
+enum class PostalCodeMode { NOT_SET, MergeAllSpannedLocalities, EnumerateSpannedLocalities, EnumerateSpannedDistricts };
 
 namespace PostalCodeModeMapper {
 AWS_GEOPLACES_API PostalCodeMode GetPostalCodeModeForName(const Aws::String& name);

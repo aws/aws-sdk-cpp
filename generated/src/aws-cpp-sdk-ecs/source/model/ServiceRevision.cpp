@@ -119,6 +119,10 @@ ServiceRevision& ServiceRevision::operator=(JsonView jsonValue) {
     m_ecsManagedResources = jsonValue.GetObject("ecsManagedResources");
     m_ecsManagedResourcesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("overrides")) {
+    m_overrides = jsonValue.GetObject("overrides");
+    m_overridesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("monitoring")) {
     m_monitoring = jsonValue.GetObject("monitoring");
     m_monitoringHasBeenSet = true;
@@ -236,6 +240,10 @@ JsonValue ServiceRevision::Jsonize() const {
 
   if (m_ecsManagedResourcesHasBeenSet) {
     payload.WithObject("ecsManagedResources", m_ecsManagedResources.Jsonize());
+  }
+
+  if (m_overridesHasBeenSet) {
+    payload.WithObject("overrides", m_overrides.Jsonize());
   }
 
   if (m_monitoringHasBeenSet) {

@@ -14,6 +14,7 @@
 #include <aws/geo-places/model/Intersection.h>
 #include <aws/geo-places/model/PlaceType.h>
 #include <aws/geo-places/model/PostalCodeDetails.h>
+#include <aws/geo-places/model/RelatedPlace.h>
 #include <aws/geo-places/model/TimeZone.h>
 
 #include <utility>
@@ -373,6 +374,41 @@ class ReverseGeocodeResultItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The main address corresponding to a place of type Secondary Address.</p>
+   */
+  inline const RelatedPlace& GetMainAddress() const { return m_mainAddress; }
+  inline bool MainAddressHasBeenSet() const { return m_mainAddressHasBeenSet; }
+  template <typename MainAddressT = RelatedPlace>
+  void SetMainAddress(MainAddressT&& value) {
+    m_mainAddressHasBeenSet = true;
+    m_mainAddress = std::forward<MainAddressT>(value);
+  }
+  template <typename MainAddressT = RelatedPlace>
+  ReverseGeocodeResultItem& WithMainAddress(MainAddressT&& value) {
+    SetMainAddress(std::forward<MainAddressT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>If <code>true</code>, indicates that the coordinates of the position and
+   * access points of the point address are estimated.</p>
+   */
+  inline bool GetEstimatedPointAddress() const { return m_estimatedPointAddress; }
+  inline bool EstimatedPointAddressHasBeenSet() const { return m_estimatedPointAddressHasBeenSet; }
+  inline void SetEstimatedPointAddress(bool value) {
+    m_estimatedPointAddressHasBeenSet = true;
+    m_estimatedPointAddress = value;
+  }
+  inline ReverseGeocodeResultItem& WithEstimatedPointAddress(bool value) {
+    SetEstimatedPointAddress(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_placeId;
 
@@ -403,6 +439,10 @@ class ReverseGeocodeResultItem {
   Aws::String m_politicalView;
 
   Aws::Vector<Intersection> m_intersections;
+
+  RelatedPlace m_mainAddress;
+
+  bool m_estimatedPointAddress{false};
   bool m_placeIdHasBeenSet = false;
   bool m_placeTypeHasBeenSet = false;
   bool m_titleHasBeenSet = false;
@@ -418,6 +458,8 @@ class ReverseGeocodeResultItem {
   bool m_timeZoneHasBeenSet = false;
   bool m_politicalViewHasBeenSet = false;
   bool m_intersectionsHasBeenSet = false;
+  bool m_mainAddressHasBeenSet = false;
+  bool m_estimatedPointAddressHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -15,10 +15,14 @@
 #include <aws/geo-places/GeoPlacesServiceClientModel.h>
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/geo-places/model/AccessPoint.h>
+#include <aws/geo-places/model/AccessPointType.h>
 #include <aws/geo-places/model/AccessRestriction.h>
 #include <aws/geo-places/model/Address.h>
 #include <aws/geo-places/model/AddressComponentMatchScores.h>
 #include <aws/geo-places/model/AddressComponentPhonemes.h>
+#include <aws/geo-places/model/AddressTranslationComponent.h>
+#include <aws/geo-places/model/AdminNames.h>
+#include <aws/geo-places/model/AdminNamesPreference.h>
 #include <aws/geo-places/model/AutocompleteAdditionalFeature.h>
 #include <aws/geo-places/model/AutocompleteAddressHighlights.h>
 #include <aws/geo-places/model/AutocompleteFilter.h>
@@ -35,9 +39,11 @@
 #include <aws/geo-places/model/Contacts.h>
 #include <aws/geo-places/model/Country.h>
 #include <aws/geo-places/model/CountryHighlights.h>
+#include <aws/geo-places/model/CrossReference.h>
 #include <aws/geo-places/model/FilterCircle.h>
 #include <aws/geo-places/model/FoodType.h>
 #include <aws/geo-places/model/GeocodeAdditionalFeature.h>
+#include <aws/geo-places/model/GeocodeAddressNamesMode.h>
 #include <aws/geo-places/model/GeocodeFilter.h>
 #include <aws/geo-places/model/GeocodeFilterPlaceType.h>
 #include <aws/geo-places/model/GeocodeIntendedUse.h>
@@ -48,6 +54,7 @@
 #include <aws/geo-places/model/GeocodeResult.h>
 #include <aws/geo-places/model/GeocodeResultItem.h>
 #include <aws/geo-places/model/GetPlaceAdditionalFeature.h>
+#include <aws/geo-places/model/GetPlaceAddressNamesMode.h>
 #include <aws/geo-places/model/GetPlaceIntendedUse.h>
 #include <aws/geo-places/model/GetPlaceRequest.h>
 #include <aws/geo-places/model/GetPlaceResult.h>
@@ -60,6 +67,7 @@
 #include <aws/geo-places/model/ParsedQuerySecondaryAddressComponent.h>
 #include <aws/geo-places/model/PhonemeDetails.h>
 #include <aws/geo-places/model/PhonemeTranscription.h>
+#include <aws/geo-places/model/PlaceAttribute.h>
 #include <aws/geo-places/model/PlaceType.h>
 #include <aws/geo-places/model/PostalAuthority.h>
 #include <aws/geo-places/model/PostalCodeDetails.h>
@@ -72,6 +80,7 @@
 #include <aws/geo-places/model/RegionHighlights.h>
 #include <aws/geo-places/model/RelatedPlace.h>
 #include <aws/geo-places/model/ReverseGeocodeAdditionalFeature.h>
+#include <aws/geo-places/model/ReverseGeocodeAddressNamesMode.h>
 #include <aws/geo-places/model/ReverseGeocodeFilter.h>
 #include <aws/geo-places/model/ReverseGeocodeFilterPlaceType.h>
 #include <aws/geo-places/model/ReverseGeocodeIntendedUse.h>
@@ -90,6 +99,7 @@
 #include <aws/geo-places/model/SearchTextRequest.h>
 #include <aws/geo-places/model/SearchTextResult.h>
 #include <aws/geo-places/model/SearchTextResultItem.h>
+#include <aws/geo-places/model/SearchTextTravelMode.h>
 #include <aws/geo-places/model/SecondaryAddressComponent.h>
 #include <aws/geo-places/model/SecondaryAddressComponentMatchScore.h>
 #include <aws/geo-places/model/StreetComponents.h>
@@ -106,7 +116,11 @@
 #include <aws/geo-places/model/SuggestResult.h>
 #include <aws/geo-places/model/SuggestResultItem.h>
 #include <aws/geo-places/model/SuggestResultItemType.h>
+#include <aws/geo-places/model/SuggestTravelMode.h>
 #include <aws/geo-places/model/TimeZone.h>
+#include <aws/geo-places/model/TranslationDetails.h>
+#include <aws/geo-places/model/TranslationName.h>
+#include <aws/geo-places/model/TranslationNameType.h>
 #include <aws/geo-places/model/TypePlacement.h>
 #include <aws/geo-places/model/UspsZip.h>
 #include <aws/geo-places/model/UspsZipPlus4.h>

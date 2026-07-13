@@ -20,6 +20,7 @@
 #include <aws/quicksight/QuickSightClient.h>
 #include <aws/quicksight/QuickSightEndpointProvider.h>
 #include <aws/quicksight/QuickSightErrorMarshaller.h>
+#include <aws/quicksight/model/DescribeDataSourcePermissionsRequest.h>
 #include <aws/quicksight/model/DescribeDefaultQBusinessApplicationRequest.h>
 #include <aws/quicksight/model/DescribeFlowRequest.h>
 #include <aws/quicksight/model/DescribeFolderPermissionsRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/quicksight/model/SearchFlowsRequest.h>
 #include <aws/quicksight/model/SearchFoldersRequest.h>
 #include <aws/quicksight/model/SearchGroupsRequest.h>
-#include <aws/quicksight/model/SearchKnowledgeBasesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,33 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeDataSourcePermissionsOutcome QuickSightClient::DescribeDataSourcePermissions(
+    const DescribeDataSourcePermissionsRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeDataSourcePermissions", "Required field: AwsAccountId, is not set");
+    return DescribeDataSourcePermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(
+        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.DataSourceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeDataSourcePermissions", "Required field: DataSourceId, is not set");
+    return DescribeDataSourcePermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(
+        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-sources/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDataSourcePermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeDataSourcePermissionsOutcome(std::move(result.GetError()));
+}
 
 DescribeDefaultQBusinessApplicationOutcome QuickSightClient::DescribeDefaultQBusinessApplication(
     const DescribeDefaultQBusinessApplicationRequest& request) const {
@@ -2495,23 +2522,4 @@ SearchGroupsOutcome QuickSightClient::SearchGroups(const SearchGroupsRequest& re
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SearchGroupsOutcome(result.GetResultWithOwnership()) : SearchGroupsOutcome(std::move(result.GetError()));
-}
-
-SearchKnowledgeBasesOutcome QuickSightClient::SearchKnowledgeBases(const SearchKnowledgeBasesRequest& request) const {
-  if (!request.AwsAccountIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("SearchKnowledgeBases", "Required field: AwsAccountId, is not set");
-    return SearchKnowledgeBasesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [AwsAccountId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/accounts/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/search/knowledge-bases");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? SearchKnowledgeBasesOutcome(result.GetResultWithOwnership())
-                            : SearchKnowledgeBasesOutcome(std::move(result.GetError()));
 }

@@ -17,6 +17,7 @@ namespace StatusReasonCodeMapper {
 
 static const int NO_AVAILABLE_CONFIGURATION_RECORDER_HASH = HashingUtils::HashString("NO_AVAILABLE_CONFIGURATION_RECORDER");
 static const int MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED_HASH = HashingUtils::HashString("MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED");
+static const int NO_AVAILABLE_MULTICLOUD_CONNECTOR_HASH = HashingUtils::HashString("NO_AVAILABLE_MULTICLOUD_CONNECTOR");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
 
 StatusReasonCode GetStatusReasonCodeForName(const Aws::String& name) {
@@ -25,6 +26,8 @@ StatusReasonCode GetStatusReasonCodeForName(const Aws::String& name) {
     return StatusReasonCode::NO_AVAILABLE_CONFIGURATION_RECORDER;
   } else if (hashCode == MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED_HASH) {
     return StatusReasonCode::MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED;
+  } else if (hashCode == NO_AVAILABLE_MULTICLOUD_CONNECTOR_HASH) {
+    return StatusReasonCode::NO_AVAILABLE_MULTICLOUD_CONNECTOR;
   } else if (hashCode == INTERNAL_ERROR_HASH) {
     return StatusReasonCode::INTERNAL_ERROR;
   }
@@ -45,6 +48,8 @@ Aws::String GetNameForStatusReasonCode(StatusReasonCode enumValue) {
       return "NO_AVAILABLE_CONFIGURATION_RECORDER";
     case StatusReasonCode::MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED:
       return "MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED";
+    case StatusReasonCode::NO_AVAILABLE_MULTICLOUD_CONNECTOR:
+      return "NO_AVAILABLE_MULTICLOUD_CONNECTOR";
     case StatusReasonCode::INTERNAL_ERROR:
       return "INTERNAL_ERROR";
     default:

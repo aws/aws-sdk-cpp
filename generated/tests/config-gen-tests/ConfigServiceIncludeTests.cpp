@@ -36,6 +36,7 @@
 #include <aws/config/model/AggregatorFilters.h>
 #include <aws/config/model/AssociateResourceTypesRequest.h>
 #include <aws/config/model/AssociateResourceTypesResult.h>
+#include <aws/config/model/AzureConnectorConfiguration.h>
 #include <aws/config/model/BaseConfigurationItem.h>
 #include <aws/config/model/BatchGetAggregateResourceConfigRequest.h>
 #include <aws/config/model/BatchGetAggregateResourceConfigResult.h>
@@ -78,12 +79,18 @@
 #include <aws/config/model/ConformancePackRuleCompliance.h>
 #include <aws/config/model/ConformancePackState.h>
 #include <aws/config/model/ConformancePackStatusDetail.h>
+#include <aws/config/model/Connector.h>
+#include <aws/config/model/ConnectorConfiguration.h>
+#include <aws/config/model/ConnectorFilter.h>
+#include <aws/config/model/ConnectorFilterName.h>
+#include <aws/config/model/ConnectorSummary.h>
 #include <aws/config/model/CustomPolicyDetails.h>
 #include <aws/config/model/DeleteAggregationAuthorizationRequest.h>
 #include <aws/config/model/DeleteConfigRuleRequest.h>
 #include <aws/config/model/DeleteConfigurationAggregatorRequest.h>
 #include <aws/config/model/DeleteConfigurationRecorderRequest.h>
 #include <aws/config/model/DeleteConformancePackRequest.h>
+#include <aws/config/model/DeleteConnectorRequest.h>
 #include <aws/config/model/DeleteDeliveryChannelRequest.h>
 #include <aws/config/model/DeleteEvaluationResultsRequest.h>
 #include <aws/config/model/DeleteEvaluationResultsResult.h>
@@ -196,6 +203,8 @@
 #include <aws/config/model/GetConformancePackComplianceDetailsResult.h>
 #include <aws/config/model/GetConformancePackComplianceSummaryRequest.h>
 #include <aws/config/model/GetConformancePackComplianceSummaryResult.h>
+#include <aws/config/model/GetConnectorRequest.h>
+#include <aws/config/model/GetConnectorResult.h>
 #include <aws/config/model/GetCustomRulePolicyRequest.h>
 #include <aws/config/model/GetCustomRulePolicyResult.h>
 #include <aws/config/model/GetDiscoveredResourceCountsRequest.h>
@@ -219,6 +228,8 @@
 #include <aws/config/model/ListConfigurationRecordersResult.h>
 #include <aws/config/model/ListConformancePackComplianceScoresRequest.h>
 #include <aws/config/model/ListConformancePackComplianceScoresResult.h>
+#include <aws/config/model/ListConnectorsRequest.h>
+#include <aws/config/model/ListConnectorsResult.h>
 #include <aws/config/model/ListDiscoveredResourcesRequest.h>
 #include <aws/config/model/ListDiscoveredResourcesResult.h>
 #include <aws/config/model/ListResourceEvaluationsRequest.h>
@@ -249,6 +260,7 @@
 #include <aws/config/model/OrganizationRuleStatus.h>
 #include <aws/config/model/Owner.h>
 #include <aws/config/model/PendingAggregationRequest.h>
+#include <aws/config/model/Provider.h>
 #include <aws/config/model/PutAggregationAuthorizationRequest.h>
 #include <aws/config/model/PutAggregationAuthorizationResult.h>
 #include <aws/config/model/PutConfigRuleRequest.h>
@@ -257,6 +269,8 @@
 #include <aws/config/model/PutConfigurationRecorderRequest.h>
 #include <aws/config/model/PutConformancePackRequest.h>
 #include <aws/config/model/PutConformancePackResult.h>
+#include <aws/config/model/PutConnectorRequest.h>
+#include <aws/config/model/PutConnectorResult.h>
 #include <aws/config/model/PutDeliveryChannelRequest.h>
 #include <aws/config/model/PutEvaluationsRequest.h>
 #include <aws/config/model/PutEvaluationsResult.h>
@@ -277,6 +291,8 @@
 #include <aws/config/model/PutServiceLinkedConfigurationRecorderResult.h>
 #include <aws/config/model/PutStoredQueryRequest.h>
 #include <aws/config/model/PutStoredQueryResult.h>
+#include <aws/config/model/PutThirdPartyServiceLinkedConfigurationRecorderRequest.h>
+#include <aws/config/model/PutThirdPartyServiceLinkedConfigurationRecorderResult.h>
 #include <aws/config/model/QueryInfo.h>
 #include <aws/config/model/RecorderStatus.h>
 #include <aws/config/model/RecordingFrequency.h>
@@ -313,6 +329,7 @@
 #include <aws/config/model/RetentionConfiguration.h>
 #include <aws/config/model/RuleEvaluationVisibility.h>
 #include <aws/config/model/Scope.h>
+#include <aws/config/model/ScopeConfiguration.h>
 #include <aws/config/model/SelectAggregateResourceConfigRequest.h>
 #include <aws/config/model/SelectAggregateResourceConfigResult.h>
 #include <aws/config/model/SelectResourceConfigRequest.h>

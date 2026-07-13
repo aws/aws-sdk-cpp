@@ -40,6 +40,7 @@
 #include <aws/config/model/ListAggregateDiscoveredResourcesPaginationTraits.h>
 #include <aws/config/model/ListConfigurationRecordersPaginationTraits.h>
 #include <aws/config/model/ListConformancePackComplianceScoresPaginationTraits.h>
+#include <aws/config/model/ListConnectorsPaginationTraits.h>
 #include <aws/config/model/ListDiscoveredResourcesPaginationTraits.h>
 #include <aws/config/model/ListResourceEvaluationsPaginationTraits.h>
 #include <aws/config/model/ListStoredQueriesPaginationTraits.h>
@@ -475,6 +476,17 @@ class ConfigServicePaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConformancePackComplianceScoresRequest,
                                              Pagination::ListConformancePackComplianceScoresPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListConnectors operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorsRequest, Pagination::ListConnectorsPaginationTraits<DerivedClient>>
+  ListConnectorsPaginator(const Model::ListConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorsRequest,
+                                             Pagination::ListConnectorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
   }
 
   /**

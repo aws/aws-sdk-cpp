@@ -58,6 +58,14 @@ GetConnectorV2Result& GetConnectorV2Result::operator=(const Aws::AmazonWebServic
     m_providerDetail = jsonValue.GetObject("ProviderDetail");
     m_providerDetailHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EnablementStatus")) {
+    m_enablementStatus = EnablementStatusMapper::GetEnablementStatusForName(jsonValue.GetString("EnablementStatus"));
+    m_enablementStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EnablementStatusReason")) {
+    m_enablementStatusReason = jsonValue.GetString("EnablementStatusReason");
+    m_enablementStatusReasonHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

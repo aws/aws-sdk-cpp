@@ -30,6 +30,10 @@ Aws::String CreateAdConfigurationRequest::SerializePayload() const {
     payload.WithArray("mediaTailorPlaybackConfigurations", std::move(mediaTailorPlaybackConfigurationsJsonList));
   }
 
+  if (m_postRollConfigurationHasBeenSet) {
+    payload.WithObject("postRollConfiguration", m_postRollConfiguration.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

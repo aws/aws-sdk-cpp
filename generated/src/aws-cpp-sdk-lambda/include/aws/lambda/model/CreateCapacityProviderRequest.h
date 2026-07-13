@@ -10,6 +10,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/CapacityProviderPermissionsConfig.h>
 #include <aws/lambda/model/CapacityProviderScalingConfig.h>
+#include <aws/lambda/model/CapacityProviderTelemetryConfig.h>
 #include <aws/lambda/model/CapacityProviderVpcConfig.h>
 #include <aws/lambda/model/InstanceRequirements.h>
 #include <aws/lambda/model/PropagateTags.h>
@@ -189,6 +190,25 @@ class CreateCapacityProviderRequest : public LambdaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The telemetry configuration for the capacity provider. Specifies logging
+   * settings for managed resources.</p>
+   */
+  inline const CapacityProviderTelemetryConfig& GetTelemetryConfig() const { return m_telemetryConfig; }
+  inline bool TelemetryConfigHasBeenSet() const { return m_telemetryConfigHasBeenSet; }
+  template <typename TelemetryConfigT = CapacityProviderTelemetryConfig>
+  void SetTelemetryConfig(TelemetryConfigT&& value) {
+    m_telemetryConfigHasBeenSet = true;
+    m_telemetryConfig = std::forward<TelemetryConfigT>(value);
+  }
+  template <typename TelemetryConfigT = CapacityProviderTelemetryConfig>
+  CreateCapacityProviderRequest& WithTelemetryConfig(TelemetryConfigT&& value) {
+    SetTelemetryConfig(std::forward<TelemetryConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityProviderName;
 
@@ -205,6 +225,8 @@ class CreateCapacityProviderRequest : public LambdaRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   PropagateTags m_propagateTags;
+
+  CapacityProviderTelemetryConfig m_telemetryConfig;
   bool m_capacityProviderNameHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
   bool m_permissionsConfigHasBeenSet = false;
@@ -213,6 +235,7 @@ class CreateCapacityProviderRequest : public LambdaRequest {
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_propagateTagsHasBeenSet = false;
+  bool m_telemetryConfigHasBeenSet = false;
 };
 
 }  // namespace Model

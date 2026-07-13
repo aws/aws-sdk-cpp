@@ -194,3 +194,5 @@ Aws::String UploadPartRequest::GetChecksumAlgorithmName() const {
     return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
   }
 }
+
+bool UploadPartRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }

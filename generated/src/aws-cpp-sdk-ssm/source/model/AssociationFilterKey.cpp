@@ -23,6 +23,7 @@ static const int LastExecutedBefore_HASH = HashingUtils::HashString("LastExecute
 static const int LastExecutedAfter_HASH = HashingUtils::HashString("LastExecutedAfter");
 static const int AssociationName_HASH = HashingUtils::HashString("AssociationName");
 static const int ResourceGroupName_HASH = HashingUtils::HashString("ResourceGroupName");
+static const int CloudConnectorId_HASH = HashingUtils::HashString("CloudConnectorId");
 
 AssociationFilterKey GetAssociationFilterKeyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +43,8 @@ AssociationFilterKey GetAssociationFilterKeyForName(const Aws::String& name) {
     return AssociationFilterKey::AssociationName;
   } else if (hashCode == ResourceGroupName_HASH) {
     return AssociationFilterKey::ResourceGroupName;
+  } else if (hashCode == CloudConnectorId_HASH) {
+    return AssociationFilterKey::CloudConnectorId;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +75,8 @@ Aws::String GetNameForAssociationFilterKey(AssociationFilterKey enumValue) {
       return "AssociationName";
     case AssociationFilterKey::ResourceGroupName:
       return "ResourceGroupName";
+    case AssociationFilterKey::CloudConnectorId:
+      return "CloudConnectorId";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -132,6 +132,65 @@ class CreateFleetInstance {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Availability Zone in which the instance was launched. For
+   * example, <code>use2-az1</code>.</p> <p>Supported only for fleets of type
+   * <code>instant</code>.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  CreateFleetInstance& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Availability Zone in which the instance was launched. For
+   * example, <code>us-east-2a</code>.</p> <p>Supported only for fleets of type
+   * <code>instant</code>.</p>
+   */
+  inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
+  inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+  template <typename AvailabilityZoneT = Aws::String>
+  void SetAvailabilityZone(AvailabilityZoneT&& value) {
+    m_availabilityZoneHasBeenSet = true;
+    m_availabilityZone = std::forward<AvailabilityZoneT>(value);
+  }
+  template <typename AvailabilityZoneT = Aws::String>
+  CreateFleetInstance& WithAvailabilityZone(AvailabilityZoneT&& value) {
+    SetAvailabilityZone(std::forward<AvailabilityZoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the subnet in which the instance was launched.</p> <p>Supported
+   * only for fleets of type <code>instant</code>.</p>
+   */
+  inline const Aws::String& GetSubnetId() const { return m_subnetId; }
+  inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+  template <typename SubnetIdT = Aws::String>
+  void SetSubnetId(SubnetIdT&& value) {
+    m_subnetIdHasBeenSet = true;
+    m_subnetId = std::forward<SubnetIdT>(value);
+  }
+  template <typename SubnetIdT = Aws::String>
+  CreateFleetInstance& WithSubnetId(SubnetIdT&& value) {
+    SetSubnetId(std::forward<SubnetIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   LaunchTemplateAndOverridesResponse m_launchTemplateAndOverrides;
 
@@ -142,11 +201,20 @@ class CreateFleetInstance {
   InstanceType m_instanceType{InstanceType::NOT_SET};
 
   PlatformValues m_platform{PlatformValues::NOT_SET};
+
+  Aws::String m_availabilityZoneId;
+
+  Aws::String m_availabilityZone;
+
+  Aws::String m_subnetId;
   bool m_launchTemplateAndOverridesHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
   bool m_instanceIdsHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
   bool m_platformHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
 };
 
 }  // namespace Model

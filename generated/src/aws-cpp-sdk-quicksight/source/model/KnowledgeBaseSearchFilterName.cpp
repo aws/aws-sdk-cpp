@@ -22,6 +22,7 @@ static const int DIRECT_QUICKSIGHT_VIEWER_OR_OWNER_HASH = HashingUtils::HashStri
 static const int DIRECT_QUICKSIGHT_SOLE_OWNER_HASH = HashingUtils::HashString("DIRECT_QUICKSIGHT_SOLE_OWNER");
 static const int KNOWLEDGE_BASE_SIZE_BYTES_HASH = HashingUtils::HashString("KNOWLEDGE_BASE_SIZE_BYTES");
 static const int PRIMARY_OWNER_HASH = HashingUtils::HashString("PRIMARY_OWNER");
+static const int DATASOURCE_ARN_HASH = HashingUtils::HashString("DATASOURCE_ARN");
 
 KnowledgeBaseSearchFilterName GetKnowledgeBaseSearchFilterNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ KnowledgeBaseSearchFilterName GetKnowledgeBaseSearchFilterNameForName(const Aws:
     return KnowledgeBaseSearchFilterName::KNOWLEDGE_BASE_SIZE_BYTES;
   } else if (hashCode == PRIMARY_OWNER_HASH) {
     return KnowledgeBaseSearchFilterName::PRIMARY_OWNER;
+  } else if (hashCode == DATASOURCE_ARN_HASH) {
+    return KnowledgeBaseSearchFilterName::DATASOURCE_ARN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForKnowledgeBaseSearchFilterName(KnowledgeBaseSearchFilterNam
       return "KNOWLEDGE_BASE_SIZE_BYTES";
     case KnowledgeBaseSearchFilterName::PRIMARY_OWNER:
       return "PRIMARY_OWNER";
+    case KnowledgeBaseSearchFilterName::DATASOURCE_ARN:
+      return "DATASOURCE_ARN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

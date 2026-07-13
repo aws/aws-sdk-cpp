@@ -4,8 +4,10 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
+#include <aws/geo-places/model/AccessPointType.h>
 
 #include <utility>
 
@@ -55,9 +57,71 @@ class AccessPoint {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of access point, indicating its intended use. Only applies to
+   * results of type place.</p>
+   */
+  inline AccessPointType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(AccessPointType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline AccessPoint& WithType(AccessPointType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Set to <code>true</code> for the primary access position when the place has
+   * more than one access point.</p>
+   */
+  inline bool GetPrimary() const { return m_primary; }
+  inline bool PrimaryHasBeenSet() const { return m_primaryHasBeenSet; }
+  inline void SetPrimary(bool value) {
+    m_primaryHasBeenSet = true;
+    m_primary = value;
+  }
+  inline AccessPoint& WithPrimary(bool value) {
+    SetPrimary(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A short textual description of the access point, such as <code>"North
+   * Entrance"</code>.</p>
+   */
+  inline const Aws::String& GetLabel() const { return m_label; }
+  inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
+  template <typename LabelT = Aws::String>
+  void SetLabel(LabelT&& value) {
+    m_labelHasBeenSet = true;
+    m_label = std::forward<LabelT>(value);
+  }
+  template <typename LabelT = Aws::String>
+  AccessPoint& WithLabel(LabelT&& value) {
+    SetLabel(std::forward<LabelT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<double> m_position;
+
+  AccessPointType m_type{AccessPointType::NOT_SET};
+
+  bool m_primary{false};
+
+  Aws::String m_label;
   bool m_positionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_primaryHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
 };
 
 }  // namespace Model

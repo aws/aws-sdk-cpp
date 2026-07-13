@@ -359,6 +359,157 @@ FilterCriteria& FilterCriteria::operator=(JsonView jsonValue) {
     }
     m_codeRepositoryProviderTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("cloudProvider")) {
+    Aws::Utils::Array<JsonView> cloudProviderJsonList = jsonValue.GetArray("cloudProvider");
+    for (unsigned cloudProviderIndex = 0; cloudProviderIndex < cloudProviderJsonList.GetLength(); ++cloudProviderIndex) {
+      m_cloudProvider.push_back(cloudProviderJsonList[cloudProviderIndex].AsObject());
+    }
+    m_cloudProviderHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudProviderRegion")) {
+    Aws::Utils::Array<JsonView> cloudProviderRegionJsonList = jsonValue.GetArray("cloudProviderRegion");
+    for (unsigned cloudProviderRegionIndex = 0; cloudProviderRegionIndex < cloudProviderRegionJsonList.GetLength();
+         ++cloudProviderRegionIndex) {
+      m_cloudProviderRegion.push_back(cloudProviderRegionJsonList[cloudProviderRegionIndex].AsObject());
+    }
+    m_cloudProviderRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudProviderAccountId")) {
+    Aws::Utils::Array<JsonView> cloudProviderAccountIdJsonList = jsonValue.GetArray("cloudProviderAccountId");
+    for (unsigned cloudProviderAccountIdIndex = 0; cloudProviderAccountIdIndex < cloudProviderAccountIdJsonList.GetLength();
+         ++cloudProviderAccountIdIndex) {
+      m_cloudProviderAccountId.push_back(cloudProviderAccountIdJsonList[cloudProviderAccountIdIndex].AsObject());
+    }
+    m_cloudProviderAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudProviderOrgId")) {
+    Aws::Utils::Array<JsonView> cloudProviderOrgIdJsonList = jsonValue.GetArray("cloudProviderOrgId");
+    for (unsigned cloudProviderOrgIdIndex = 0; cloudProviderOrgIdIndex < cloudProviderOrgIdJsonList.GetLength();
+         ++cloudProviderOrgIdIndex) {
+      m_cloudProviderOrgId.push_back(cloudProviderOrgIdJsonList[cloudProviderOrgIdIndex].AsObject());
+    }
+    m_cloudProviderOrgIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudVmImageReference")) {
+    Aws::Utils::Array<JsonView> cloudVmImageReferenceJsonList = jsonValue.GetArray("cloudVmImageReference");
+    for (unsigned cloudVmImageReferenceIndex = 0; cloudVmImageReferenceIndex < cloudVmImageReferenceJsonList.GetLength();
+         ++cloudVmImageReferenceIndex) {
+      m_cloudVmImageReference.push_back(cloudVmImageReferenceJsonList[cloudVmImageReferenceIndex].AsObject());
+    }
+    m_cloudVmImageReferenceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudVmNetworkId")) {
+    Aws::Utils::Array<JsonView> cloudVmNetworkIdJsonList = jsonValue.GetArray("cloudVmNetworkId");
+    for (unsigned cloudVmNetworkIdIndex = 0; cloudVmNetworkIdIndex < cloudVmNetworkIdJsonList.GetLength(); ++cloudVmNetworkIdIndex) {
+      m_cloudVmNetworkId.push_back(cloudVmNetworkIdJsonList[cloudVmNetworkIdIndex].AsObject());
+    }
+    m_cloudVmNetworkIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudVmSubnetIds")) {
+    Aws::Utils::Array<JsonView> cloudVmSubnetIdsJsonList = jsonValue.GetArray("cloudVmSubnetIds");
+    for (unsigned cloudVmSubnetIdsIndex = 0; cloudVmSubnetIdsIndex < cloudVmSubnetIdsJsonList.GetLength(); ++cloudVmSubnetIdsIndex) {
+      m_cloudVmSubnetIds.push_back(cloudVmSubnetIdsJsonList[cloudVmSubnetIdsIndex].AsObject());
+    }
+    m_cloudVmSubnetIdsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudImageRepositoryName")) {
+    Aws::Utils::Array<JsonView> cloudImageRepositoryNameJsonList = jsonValue.GetArray("cloudImageRepositoryName");
+    for (unsigned cloudImageRepositoryNameIndex = 0; cloudImageRepositoryNameIndex < cloudImageRepositoryNameJsonList.GetLength();
+         ++cloudImageRepositoryNameIndex) {
+      m_cloudImageRepositoryName.push_back(cloudImageRepositoryNameJsonList[cloudImageRepositoryNameIndex].AsObject());
+    }
+    m_cloudImageRepositoryNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudImageRegistry")) {
+    Aws::Utils::Array<JsonView> cloudImageRegistryJsonList = jsonValue.GetArray("cloudImageRegistry");
+    for (unsigned cloudImageRegistryIndex = 0; cloudImageRegistryIndex < cloudImageRegistryJsonList.GetLength();
+         ++cloudImageRegistryIndex) {
+      m_cloudImageRegistry.push_back(cloudImageRegistryJsonList[cloudImageRegistryIndex].AsObject());
+    }
+    m_cloudImageRegistryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudImageDigest")) {
+    Aws::Utils::Array<JsonView> cloudImageDigestJsonList = jsonValue.GetArray("cloudImageDigest");
+    for (unsigned cloudImageDigestIndex = 0; cloudImageDigestIndex < cloudImageDigestJsonList.GetLength(); ++cloudImageDigestIndex) {
+      m_cloudImageDigest.push_back(cloudImageDigestJsonList[cloudImageDigestIndex].AsObject());
+    }
+    m_cloudImageDigestHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudImageTags")) {
+    Aws::Utils::Array<JsonView> cloudImageTagsJsonList = jsonValue.GetArray("cloudImageTags");
+    for (unsigned cloudImageTagsIndex = 0; cloudImageTagsIndex < cloudImageTagsJsonList.GetLength(); ++cloudImageTagsIndex) {
+      m_cloudImageTags.push_back(cloudImageTagsJsonList[cloudImageTagsIndex].AsObject());
+    }
+    m_cloudImageTagsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudImagePushedAt")) {
+    Aws::Utils::Array<JsonView> cloudImagePushedAtJsonList = jsonValue.GetArray("cloudImagePushedAt");
+    for (unsigned cloudImagePushedAtIndex = 0; cloudImagePushedAtIndex < cloudImagePushedAtJsonList.GetLength();
+         ++cloudImagePushedAtIndex) {
+      m_cloudImagePushedAt.push_back(cloudImagePushedAtJsonList[cloudImagePushedAtIndex].AsObject());
+    }
+    m_cloudImagePushedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudImageArchitecture")) {
+    Aws::Utils::Array<JsonView> cloudImageArchitectureJsonList = jsonValue.GetArray("cloudImageArchitecture");
+    for (unsigned cloudImageArchitectureIndex = 0; cloudImageArchitectureIndex < cloudImageArchitectureJsonList.GetLength();
+         ++cloudImageArchitectureIndex) {
+      m_cloudImageArchitecture.push_back(cloudImageArchitectureJsonList[cloudImageArchitectureIndex].AsObject());
+    }
+    m_cloudImageArchitectureHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudImageLastInUseAt")) {
+    Aws::Utils::Array<JsonView> cloudImageLastInUseAtJsonList = jsonValue.GetArray("cloudImageLastInUseAt");
+    for (unsigned cloudImageLastInUseAtIndex = 0; cloudImageLastInUseAtIndex < cloudImageLastInUseAtJsonList.GetLength();
+         ++cloudImageLastInUseAtIndex) {
+      m_cloudImageLastInUseAt.push_back(cloudImageLastInUseAtJsonList[cloudImageLastInUseAtIndex].AsObject());
+    }
+    m_cloudImageLastInUseAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudImageInUseCount")) {
+    Aws::Utils::Array<JsonView> cloudImageInUseCountJsonList = jsonValue.GetArray("cloudImageInUseCount");
+    for (unsigned cloudImageInUseCountIndex = 0; cloudImageInUseCountIndex < cloudImageInUseCountJsonList.GetLength();
+         ++cloudImageInUseCountIndex) {
+      m_cloudImageInUseCount.push_back(cloudImageInUseCountJsonList[cloudImageInUseCountIndex].AsObject());
+    }
+    m_cloudImageInUseCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudServerlessFunctionName")) {
+    Aws::Utils::Array<JsonView> cloudServerlessFunctionNameJsonList = jsonValue.GetArray("cloudServerlessFunctionName");
+    for (unsigned cloudServerlessFunctionNameIndex = 0; cloudServerlessFunctionNameIndex < cloudServerlessFunctionNameJsonList.GetLength();
+         ++cloudServerlessFunctionNameIndex) {
+      m_cloudServerlessFunctionName.push_back(cloudServerlessFunctionNameJsonList[cloudServerlessFunctionNameIndex].AsObject());
+    }
+    m_cloudServerlessFunctionNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudServerlessFunctionRuntime")) {
+    Aws::Utils::Array<JsonView> cloudServerlessFunctionRuntimeJsonList = jsonValue.GetArray("cloudServerlessFunctionRuntime");
+    for (unsigned cloudServerlessFunctionRuntimeIndex = 0;
+         cloudServerlessFunctionRuntimeIndex < cloudServerlessFunctionRuntimeJsonList.GetLength(); ++cloudServerlessFunctionRuntimeIndex) {
+      m_cloudServerlessFunctionRuntime.push_back(cloudServerlessFunctionRuntimeJsonList[cloudServerlessFunctionRuntimeIndex].AsObject());
+    }
+    m_cloudServerlessFunctionRuntimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudServerlessFunctionLastModifiedAt")) {
+    Aws::Utils::Array<JsonView> cloudServerlessFunctionLastModifiedAtJsonList = jsonValue.GetArray("cloudServerlessFunctionLastModifiedAt");
+    for (unsigned cloudServerlessFunctionLastModifiedAtIndex = 0;
+         cloudServerlessFunctionLastModifiedAtIndex < cloudServerlessFunctionLastModifiedAtJsonList.GetLength();
+         ++cloudServerlessFunctionLastModifiedAtIndex) {
+      m_cloudServerlessFunctionLastModifiedAt.push_back(
+          cloudServerlessFunctionLastModifiedAtJsonList[cloudServerlessFunctionLastModifiedAtIndex].AsObject());
+    }
+    m_cloudServerlessFunctionLastModifiedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudServerlessFunctionExecutionRole")) {
+    Aws::Utils::Array<JsonView> cloudServerlessFunctionExecutionRoleJsonList = jsonValue.GetArray("cloudServerlessFunctionExecutionRole");
+    for (unsigned cloudServerlessFunctionExecutionRoleIndex = 0;
+         cloudServerlessFunctionExecutionRoleIndex < cloudServerlessFunctionExecutionRoleJsonList.GetLength();
+         ++cloudServerlessFunctionExecutionRoleIndex) {
+      m_cloudServerlessFunctionExecutionRole.push_back(
+          cloudServerlessFunctionExecutionRoleJsonList[cloudServerlessFunctionExecutionRoleIndex].AsObject());
+    }
+    m_cloudServerlessFunctionExecutionRoleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -757,6 +908,179 @@ JsonValue FilterCriteria::Jsonize() const {
           m_codeRepositoryProviderType[codeRepositoryProviderTypeIndex].Jsonize());
     }
     payload.WithArray("codeRepositoryProviderType", std::move(codeRepositoryProviderTypeJsonList));
+  }
+
+  if (m_cloudProviderHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudProviderJsonList(m_cloudProvider.size());
+    for (unsigned cloudProviderIndex = 0; cloudProviderIndex < cloudProviderJsonList.GetLength(); ++cloudProviderIndex) {
+      cloudProviderJsonList[cloudProviderIndex].AsObject(m_cloudProvider[cloudProviderIndex].Jsonize());
+    }
+    payload.WithArray("cloudProvider", std::move(cloudProviderJsonList));
+  }
+
+  if (m_cloudProviderRegionHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudProviderRegionJsonList(m_cloudProviderRegion.size());
+    for (unsigned cloudProviderRegionIndex = 0; cloudProviderRegionIndex < cloudProviderRegionJsonList.GetLength();
+         ++cloudProviderRegionIndex) {
+      cloudProviderRegionJsonList[cloudProviderRegionIndex].AsObject(m_cloudProviderRegion[cloudProviderRegionIndex].Jsonize());
+    }
+    payload.WithArray("cloudProviderRegion", std::move(cloudProviderRegionJsonList));
+  }
+
+  if (m_cloudProviderAccountIdHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudProviderAccountIdJsonList(m_cloudProviderAccountId.size());
+    for (unsigned cloudProviderAccountIdIndex = 0; cloudProviderAccountIdIndex < cloudProviderAccountIdJsonList.GetLength();
+         ++cloudProviderAccountIdIndex) {
+      cloudProviderAccountIdJsonList[cloudProviderAccountIdIndex].AsObject(m_cloudProviderAccountId[cloudProviderAccountIdIndex].Jsonize());
+    }
+    payload.WithArray("cloudProviderAccountId", std::move(cloudProviderAccountIdJsonList));
+  }
+
+  if (m_cloudProviderOrgIdHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudProviderOrgIdJsonList(m_cloudProviderOrgId.size());
+    for (unsigned cloudProviderOrgIdIndex = 0; cloudProviderOrgIdIndex < cloudProviderOrgIdJsonList.GetLength();
+         ++cloudProviderOrgIdIndex) {
+      cloudProviderOrgIdJsonList[cloudProviderOrgIdIndex].AsObject(m_cloudProviderOrgId[cloudProviderOrgIdIndex].Jsonize());
+    }
+    payload.WithArray("cloudProviderOrgId", std::move(cloudProviderOrgIdJsonList));
+  }
+
+  if (m_cloudVmImageReferenceHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudVmImageReferenceJsonList(m_cloudVmImageReference.size());
+    for (unsigned cloudVmImageReferenceIndex = 0; cloudVmImageReferenceIndex < cloudVmImageReferenceJsonList.GetLength();
+         ++cloudVmImageReferenceIndex) {
+      cloudVmImageReferenceJsonList[cloudVmImageReferenceIndex].AsObject(m_cloudVmImageReference[cloudVmImageReferenceIndex].Jsonize());
+    }
+    payload.WithArray("cloudVmImageReference", std::move(cloudVmImageReferenceJsonList));
+  }
+
+  if (m_cloudVmNetworkIdHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudVmNetworkIdJsonList(m_cloudVmNetworkId.size());
+    for (unsigned cloudVmNetworkIdIndex = 0; cloudVmNetworkIdIndex < cloudVmNetworkIdJsonList.GetLength(); ++cloudVmNetworkIdIndex) {
+      cloudVmNetworkIdJsonList[cloudVmNetworkIdIndex].AsObject(m_cloudVmNetworkId[cloudVmNetworkIdIndex].Jsonize());
+    }
+    payload.WithArray("cloudVmNetworkId", std::move(cloudVmNetworkIdJsonList));
+  }
+
+  if (m_cloudVmSubnetIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudVmSubnetIdsJsonList(m_cloudVmSubnetIds.size());
+    for (unsigned cloudVmSubnetIdsIndex = 0; cloudVmSubnetIdsIndex < cloudVmSubnetIdsJsonList.GetLength(); ++cloudVmSubnetIdsIndex) {
+      cloudVmSubnetIdsJsonList[cloudVmSubnetIdsIndex].AsObject(m_cloudVmSubnetIds[cloudVmSubnetIdsIndex].Jsonize());
+    }
+    payload.WithArray("cloudVmSubnetIds", std::move(cloudVmSubnetIdsJsonList));
+  }
+
+  if (m_cloudImageRepositoryNameHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudImageRepositoryNameJsonList(m_cloudImageRepositoryName.size());
+    for (unsigned cloudImageRepositoryNameIndex = 0; cloudImageRepositoryNameIndex < cloudImageRepositoryNameJsonList.GetLength();
+         ++cloudImageRepositoryNameIndex) {
+      cloudImageRepositoryNameJsonList[cloudImageRepositoryNameIndex].AsObject(
+          m_cloudImageRepositoryName[cloudImageRepositoryNameIndex].Jsonize());
+    }
+    payload.WithArray("cloudImageRepositoryName", std::move(cloudImageRepositoryNameJsonList));
+  }
+
+  if (m_cloudImageRegistryHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudImageRegistryJsonList(m_cloudImageRegistry.size());
+    for (unsigned cloudImageRegistryIndex = 0; cloudImageRegistryIndex < cloudImageRegistryJsonList.GetLength();
+         ++cloudImageRegistryIndex) {
+      cloudImageRegistryJsonList[cloudImageRegistryIndex].AsObject(m_cloudImageRegistry[cloudImageRegistryIndex].Jsonize());
+    }
+    payload.WithArray("cloudImageRegistry", std::move(cloudImageRegistryJsonList));
+  }
+
+  if (m_cloudImageDigestHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudImageDigestJsonList(m_cloudImageDigest.size());
+    for (unsigned cloudImageDigestIndex = 0; cloudImageDigestIndex < cloudImageDigestJsonList.GetLength(); ++cloudImageDigestIndex) {
+      cloudImageDigestJsonList[cloudImageDigestIndex].AsObject(m_cloudImageDigest[cloudImageDigestIndex].Jsonize());
+    }
+    payload.WithArray("cloudImageDigest", std::move(cloudImageDigestJsonList));
+  }
+
+  if (m_cloudImageTagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudImageTagsJsonList(m_cloudImageTags.size());
+    for (unsigned cloudImageTagsIndex = 0; cloudImageTagsIndex < cloudImageTagsJsonList.GetLength(); ++cloudImageTagsIndex) {
+      cloudImageTagsJsonList[cloudImageTagsIndex].AsObject(m_cloudImageTags[cloudImageTagsIndex].Jsonize());
+    }
+    payload.WithArray("cloudImageTags", std::move(cloudImageTagsJsonList));
+  }
+
+  if (m_cloudImagePushedAtHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudImagePushedAtJsonList(m_cloudImagePushedAt.size());
+    for (unsigned cloudImagePushedAtIndex = 0; cloudImagePushedAtIndex < cloudImagePushedAtJsonList.GetLength();
+         ++cloudImagePushedAtIndex) {
+      cloudImagePushedAtJsonList[cloudImagePushedAtIndex].AsObject(m_cloudImagePushedAt[cloudImagePushedAtIndex].Jsonize());
+    }
+    payload.WithArray("cloudImagePushedAt", std::move(cloudImagePushedAtJsonList));
+  }
+
+  if (m_cloudImageArchitectureHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudImageArchitectureJsonList(m_cloudImageArchitecture.size());
+    for (unsigned cloudImageArchitectureIndex = 0; cloudImageArchitectureIndex < cloudImageArchitectureJsonList.GetLength();
+         ++cloudImageArchitectureIndex) {
+      cloudImageArchitectureJsonList[cloudImageArchitectureIndex].AsObject(m_cloudImageArchitecture[cloudImageArchitectureIndex].Jsonize());
+    }
+    payload.WithArray("cloudImageArchitecture", std::move(cloudImageArchitectureJsonList));
+  }
+
+  if (m_cloudImageLastInUseAtHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudImageLastInUseAtJsonList(m_cloudImageLastInUseAt.size());
+    for (unsigned cloudImageLastInUseAtIndex = 0; cloudImageLastInUseAtIndex < cloudImageLastInUseAtJsonList.GetLength();
+         ++cloudImageLastInUseAtIndex) {
+      cloudImageLastInUseAtJsonList[cloudImageLastInUseAtIndex].AsObject(m_cloudImageLastInUseAt[cloudImageLastInUseAtIndex].Jsonize());
+    }
+    payload.WithArray("cloudImageLastInUseAt", std::move(cloudImageLastInUseAtJsonList));
+  }
+
+  if (m_cloudImageInUseCountHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudImageInUseCountJsonList(m_cloudImageInUseCount.size());
+    for (unsigned cloudImageInUseCountIndex = 0; cloudImageInUseCountIndex < cloudImageInUseCountJsonList.GetLength();
+         ++cloudImageInUseCountIndex) {
+      cloudImageInUseCountJsonList[cloudImageInUseCountIndex].AsObject(m_cloudImageInUseCount[cloudImageInUseCountIndex].Jsonize());
+    }
+    payload.WithArray("cloudImageInUseCount", std::move(cloudImageInUseCountJsonList));
+  }
+
+  if (m_cloudServerlessFunctionNameHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudServerlessFunctionNameJsonList(m_cloudServerlessFunctionName.size());
+    for (unsigned cloudServerlessFunctionNameIndex = 0; cloudServerlessFunctionNameIndex < cloudServerlessFunctionNameJsonList.GetLength();
+         ++cloudServerlessFunctionNameIndex) {
+      cloudServerlessFunctionNameJsonList[cloudServerlessFunctionNameIndex].AsObject(
+          m_cloudServerlessFunctionName[cloudServerlessFunctionNameIndex].Jsonize());
+    }
+    payload.WithArray("cloudServerlessFunctionName", std::move(cloudServerlessFunctionNameJsonList));
+  }
+
+  if (m_cloudServerlessFunctionRuntimeHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudServerlessFunctionRuntimeJsonList(m_cloudServerlessFunctionRuntime.size());
+    for (unsigned cloudServerlessFunctionRuntimeIndex = 0;
+         cloudServerlessFunctionRuntimeIndex < cloudServerlessFunctionRuntimeJsonList.GetLength(); ++cloudServerlessFunctionRuntimeIndex) {
+      cloudServerlessFunctionRuntimeJsonList[cloudServerlessFunctionRuntimeIndex].AsObject(
+          m_cloudServerlessFunctionRuntime[cloudServerlessFunctionRuntimeIndex].Jsonize());
+    }
+    payload.WithArray("cloudServerlessFunctionRuntime", std::move(cloudServerlessFunctionRuntimeJsonList));
+  }
+
+  if (m_cloudServerlessFunctionLastModifiedAtHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudServerlessFunctionLastModifiedAtJsonList(m_cloudServerlessFunctionLastModifiedAt.size());
+    for (unsigned cloudServerlessFunctionLastModifiedAtIndex = 0;
+         cloudServerlessFunctionLastModifiedAtIndex < cloudServerlessFunctionLastModifiedAtJsonList.GetLength();
+         ++cloudServerlessFunctionLastModifiedAtIndex) {
+      cloudServerlessFunctionLastModifiedAtJsonList[cloudServerlessFunctionLastModifiedAtIndex].AsObject(
+          m_cloudServerlessFunctionLastModifiedAt[cloudServerlessFunctionLastModifiedAtIndex].Jsonize());
+    }
+    payload.WithArray("cloudServerlessFunctionLastModifiedAt", std::move(cloudServerlessFunctionLastModifiedAtJsonList));
+  }
+
+  if (m_cloudServerlessFunctionExecutionRoleHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudServerlessFunctionExecutionRoleJsonList(m_cloudServerlessFunctionExecutionRole.size());
+    for (unsigned cloudServerlessFunctionExecutionRoleIndex = 0;
+         cloudServerlessFunctionExecutionRoleIndex < cloudServerlessFunctionExecutionRoleJsonList.GetLength();
+         ++cloudServerlessFunctionExecutionRoleIndex) {
+      cloudServerlessFunctionExecutionRoleJsonList[cloudServerlessFunctionExecutionRoleIndex].AsObject(
+          m_cloudServerlessFunctionExecutionRole[cloudServerlessFunctionExecutionRoleIndex].Jsonize());
+    }
+    payload.WithArray("cloudServerlessFunctionExecutionRole", std::move(cloudServerlessFunctionExecutionRoleJsonList));
   }
 
   return payload;

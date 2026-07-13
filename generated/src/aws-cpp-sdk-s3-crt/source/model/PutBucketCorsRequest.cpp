@@ -105,3 +105,5 @@ Aws::String PutBucketCorsRequest::GetChecksumAlgorithmName() const {
     return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
   }
 }
+
+bool PutBucketCorsRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }

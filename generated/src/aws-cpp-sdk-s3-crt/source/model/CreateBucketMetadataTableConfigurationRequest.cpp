@@ -89,3 +89,7 @@ Aws::String CreateBucketMetadataTableConfigurationRequest::GetChecksumAlgorithmN
     return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
   }
 }
+
+bool CreateBucketMetadataTableConfigurationRequest::ChecksumAlgorithmIsSet() const {
+  return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET;
+}

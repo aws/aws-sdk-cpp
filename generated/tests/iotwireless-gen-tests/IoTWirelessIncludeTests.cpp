@@ -69,6 +69,7 @@
 #include <aws/iotwireless/model/CreateWirelessGatewayTaskRequest.h>
 #include <aws/iotwireless/model/CreateWirelessGatewayTaskResult.h>
 #include <aws/iotwireless/model/DakCertificateMetadata.h>
+#include <aws/iotwireless/model/DefaultSessionParametersMulticast.h>
 #include <aws/iotwireless/model/DeleteDestinationRequest.h>
 #include <aws/iotwireless/model/DeleteDestinationResult.h>
 #include <aws/iotwireless/model/DeleteDeviceProfileRequest.h>

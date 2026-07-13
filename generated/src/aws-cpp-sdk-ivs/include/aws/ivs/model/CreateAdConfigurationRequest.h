@@ -10,6 +10,7 @@
 #include <aws/ivs/IVSRequest.h>
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/ivs/model/MediaTailorPlaybackConfiguration.h>
+#include <aws/ivs/model/PostRollConfiguration.h>
 
 #include <utility>
 
@@ -81,6 +82,26 @@ class CreateAdConfigurationRequest : public IVSRequest {
 
   ///@{
   /**
+   * <p>Configuration for the post-roll ad break to use for this ad configuration.
+   * Default: disabled (<code>enabled</code> set to false,
+   * <code>durationSeconds</code> set to 15).</p>
+   */
+  inline const PostRollConfiguration& GetPostRollConfiguration() const { return m_postRollConfiguration; }
+  inline bool PostRollConfigurationHasBeenSet() const { return m_postRollConfigurationHasBeenSet; }
+  template <typename PostRollConfigurationT = PostRollConfiguration>
+  void SetPostRollConfiguration(PostRollConfigurationT&& value) {
+    m_postRollConfigurationHasBeenSet = true;
+    m_postRollConfiguration = std::forward<PostRollConfigurationT>(value);
+  }
+  template <typename PostRollConfigurationT = PostRollConfiguration>
+  CreateAdConfigurationRequest& WithPostRollConfiguration(PostRollConfigurationT&& value) {
+    SetPostRollConfiguration(std::forward<PostRollConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
    * See <a
    * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best
@@ -113,9 +134,12 @@ class CreateAdConfigurationRequest : public IVSRequest {
 
   Aws::Vector<MediaTailorPlaybackConfiguration> m_mediaTailorPlaybackConfigurations;
 
+  PostRollConfiguration m_postRollConfiguration;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_nameHasBeenSet = false;
   bool m_mediaTailorPlaybackConfigurationsHasBeenSet = false;
+  bool m_postRollConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

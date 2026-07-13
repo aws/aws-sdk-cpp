@@ -21,13 +21,16 @@
 #include <aws/signin/SigninEndpointProvider.h>
 #include <aws/signin/SigninErrorMarshaller.h>
 #include <aws/signin/model/CreateOAuth2TokenRequest.h>
+#include <aws/signin/model/CreateOAuth2TokenWithIAMRequest.h>
 #include <aws/signin/model/DeleteConsoleAuthorizationConfigurationRequest.h>
 #include <aws/signin/model/DeleteResourcePermissionStatementRequest.h>
 #include <aws/signin/model/GetConsoleAuthorizationConfigurationRequest.h>
 #include <aws/signin/model/GetResourcePolicyRequest.h>
+#include <aws/signin/model/IntrospectOAuth2TokenWithIAMRequest.h>
 #include <aws/signin/model/ListResourcePermissionStatementsRequest.h>
 #include <aws/signin/model/PutConsoleAuthorizationConfigurationRequest.h>
 #include <aws/signin/model/PutResourcePermissionStatementRequest.h>
+#include <aws/signin/model/RevokeOAuth2TokenWithIAMRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -193,6 +196,20 @@ CreateOAuth2TokenOutcome SigninClient::CreateOAuth2Token(const CreateOAuth2Token
                             : CreateOAuth2TokenOutcome(std::move(result.GetError()));
 }
 
+CreateOAuth2TokenWithIAMOutcome SigninClient::CreateOAuth2TokenWithIAM(const CreateOAuth2TokenWithIAMRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    Aws::StringStream ss;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/token");
+    ss.str("?x-amz-client-auth-method=iam");
+    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOAuth2TokenWithIAMOutcome(result.GetResultWithOwnership())
+                            : CreateOAuth2TokenWithIAMOutcome(std::move(result.GetError()));
+}
+
 DeleteConsoleAuthorizationConfigurationOutcome SigninClient::DeleteConsoleAuthorizationConfiguration(
     const DeleteConsoleAuthorizationConfigurationRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -240,6 +257,20 @@ GetResourcePolicyOutcome SigninClient::GetResourcePolicy(const GetResourcePolicy
                             : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
+IntrospectOAuth2TokenWithIAMOutcome SigninClient::IntrospectOAuth2TokenWithIAM(const IntrospectOAuth2TokenWithIAMRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    Aws::StringStream ss;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/introspect");
+    ss.str("?x-amz-client-auth-method=iam");
+    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? IntrospectOAuth2TokenWithIAMOutcome(result.GetResultWithOwnership())
+                            : IntrospectOAuth2TokenWithIAMOutcome(std::move(result.GetError()));
+}
+
 ListResourcePermissionStatementsOutcome SigninClient::ListResourcePermissionStatements(
     const ListResourcePermissionStatementsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -274,4 +305,18 @@ PutResourcePermissionStatementOutcome SigninClient::PutResourcePermissionStateme
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutResourcePermissionStatementOutcome(result.GetResultWithOwnership())
                             : PutResourcePermissionStatementOutcome(std::move(result.GetError()));
+}
+
+RevokeOAuth2TokenWithIAMOutcome SigninClient::RevokeOAuth2TokenWithIAM(const RevokeOAuth2TokenWithIAMRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    Aws::StringStream ss;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/revoke");
+    ss.str("?x-amz-client-auth-method=iam");
+    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeOAuth2TokenWithIAMOutcome(result.GetResultWithOwnership())
+                            : RevokeOAuth2TokenWithIAMOutcome(std::move(result.GetError()));
 }

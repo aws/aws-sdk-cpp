@@ -20,7 +20,8 @@ namespace IVS {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p>The input fails to satisfy the constraints specified by an Amazon Web
+ * Services service.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ValidationException">AWS
  * API Reference</a></p>
  */

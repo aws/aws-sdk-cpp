@@ -22,10 +22,6 @@ KnowledgeBaseConfiguration& KnowledgeBaseConfiguration::operator=(JsonView jsonV
     m_templateConfiguration = jsonValue.GetObject("templateConfiguration");
     m_templateConfigurationHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("eventEnabled")) {
-    m_eventEnabled = jsonValue.GetBool("eventEnabled");
-    m_eventEnabledHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -34,10 +30,6 @@ JsonValue KnowledgeBaseConfiguration::Jsonize() const {
 
   if (m_templateConfigurationHasBeenSet) {
     payload.WithObject("templateConfiguration", m_templateConfiguration.Jsonize());
-  }
-
-  if (m_eventEnabledHasBeenSet) {
-    payload.WithBool("eventEnabled", m_eventEnabled);
   }
 
   return payload;

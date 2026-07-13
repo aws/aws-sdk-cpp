@@ -57,8 +57,11 @@
 #include <aws/route53globalresolver/model/ListFirewallRulesResult.h>
 #include <aws/route53globalresolver/model/ListGlobalResolversRequest.h>
 #include <aws/route53globalresolver/model/ListGlobalResolversResult.h>
+#include <aws/route53globalresolver/model/ListHostedZoneAssociationsRequest.h>
 #include <aws/route53globalresolver/model/ListHostedZoneAssociationsResult.h>
 #include <aws/route53globalresolver/model/ListManagedFirewallDomainListsResult.h>
+#include <aws/route53globalresolver/model/ListSharedDNSViewsRequest.h>
+#include <aws/route53globalresolver/model/ListSharedDNSViewsResult.h>
 #include <aws/route53globalresolver/model/ListTagsForResourceResult.h>
 #include <aws/route53globalresolver/model/TagResourceResult.h>
 #include <aws/route53globalresolver/model/UntagResourceResult.h>
@@ -139,6 +142,7 @@ class ListFirewallRulesRequest;
 class ListGlobalResolversRequest;
 class ListHostedZoneAssociationsRequest;
 class ListManagedFirewallDomainListsRequest;
+class ListSharedDNSViewsRequest;
 class ListTagsForResourceRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
@@ -189,6 +193,7 @@ typedef Aws::Utils::Outcome<ListFirewallRulesResult, Route53GlobalResolverError>
 typedef Aws::Utils::Outcome<ListGlobalResolversResult, Route53GlobalResolverError> ListGlobalResolversOutcome;
 typedef Aws::Utils::Outcome<ListHostedZoneAssociationsResult, Route53GlobalResolverError> ListHostedZoneAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListManagedFirewallDomainListsResult, Route53GlobalResolverError> ListManagedFirewallDomainListsOutcome;
+typedef Aws::Utils::Outcome<ListSharedDNSViewsResult, Route53GlobalResolverError> ListSharedDNSViewsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, Route53GlobalResolverError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, Route53GlobalResolverError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, Route53GlobalResolverError> UntagResourceOutcome;
@@ -239,6 +244,7 @@ typedef std::future<ListFirewallRulesOutcome> ListFirewallRulesOutcomeCallable;
 typedef std::future<ListGlobalResolversOutcome> ListGlobalResolversOutcomeCallable;
 typedef std::future<ListHostedZoneAssociationsOutcome> ListHostedZoneAssociationsOutcomeCallable;
 typedef std::future<ListManagedFirewallDomainListsOutcome> ListManagedFirewallDomainListsOutcomeCallable;
+typedef std::future<ListSharedDNSViewsOutcome> ListSharedDNSViewsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -368,6 +374,9 @@ typedef std::function<void(const Route53GlobalResolverClient*, const Model::List
                            const Model::ListManagedFirewallDomainListsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListManagedFirewallDomainListsResponseReceivedHandler;
+typedef std::function<void(const Route53GlobalResolverClient*, const Model::ListSharedDNSViewsRequest&,
+                           const Model::ListSharedDNSViewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSharedDNSViewsResponseReceivedHandler;
 typedef std::function<void(const Route53GlobalResolverClient*, const Model::ListTagsForResourceRequest&,
                            const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;

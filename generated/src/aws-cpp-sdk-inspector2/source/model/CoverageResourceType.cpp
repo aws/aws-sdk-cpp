@@ -20,6 +20,13 @@ static const int AWS_ECR_CONTAINER_IMAGE_HASH = HashingUtils::HashString("AWS_EC
 static const int AWS_ECR_REPOSITORY_HASH = HashingUtils::HashString("AWS_ECR_REPOSITORY");
 static const int AWS_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("AWS_LAMBDA_FUNCTION");
 static const int CODE_REPOSITORY_HASH = HashingUtils::HashString("CODE_REPOSITORY");
+static const int Microsoft_Compute_virtualMachines_HASH = HashingUtils::HashString("Microsoft.Compute/virtualMachines");
+static const int Microsoft_ContainerRegistry_registry_containerImage_HASH =
+    HashingUtils::HashString("Microsoft.ContainerRegistry/registry/containerImage");
+static const int Microsoft_ContainerRegistry_registry_containerRepository_HASH =
+    HashingUtils::HashString("Microsoft.ContainerRegistry/registry/containerRepository");
+static const int Microsoft_Web_sites_HASH = HashingUtils::HashString("Microsoft.Web/sites");
+static const int Microsoft_ContainerRegistry_registries_HASH = HashingUtils::HashString("Microsoft.ContainerRegistry/registries");
 
 CoverageResourceType GetCoverageResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +40,16 @@ CoverageResourceType GetCoverageResourceTypeForName(const Aws::String& name) {
     return CoverageResourceType::AWS_LAMBDA_FUNCTION;
   } else if (hashCode == CODE_REPOSITORY_HASH) {
     return CoverageResourceType::CODE_REPOSITORY;
+  } else if (hashCode == Microsoft_Compute_virtualMachines_HASH) {
+    return CoverageResourceType::Microsoft_Compute_virtualMachines;
+  } else if (hashCode == Microsoft_ContainerRegistry_registry_containerImage_HASH) {
+    return CoverageResourceType::Microsoft_ContainerRegistry_registry_containerImage;
+  } else if (hashCode == Microsoft_ContainerRegistry_registry_containerRepository_HASH) {
+    return CoverageResourceType::Microsoft_ContainerRegistry_registry_containerRepository;
+  } else if (hashCode == Microsoft_Web_sites_HASH) {
+    return CoverageResourceType::Microsoft_Web_sites;
+  } else if (hashCode == Microsoft_ContainerRegistry_registries_HASH) {
+    return CoverageResourceType::Microsoft_ContainerRegistry_registries;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +74,16 @@ Aws::String GetNameForCoverageResourceType(CoverageResourceType enumValue) {
       return "AWS_LAMBDA_FUNCTION";
     case CoverageResourceType::CODE_REPOSITORY:
       return "CODE_REPOSITORY";
+    case CoverageResourceType::Microsoft_Compute_virtualMachines:
+      return "Microsoft.Compute/virtualMachines";
+    case CoverageResourceType::Microsoft_ContainerRegistry_registry_containerImage:
+      return "Microsoft.ContainerRegistry/registry/containerImage";
+    case CoverageResourceType::Microsoft_ContainerRegistry_registry_containerRepository:
+      return "Microsoft.ContainerRegistry/registry/containerRepository";
+    case CoverageResourceType::Microsoft_Web_sites:
+      return "Microsoft.Web/sites";
+    case CoverageResourceType::Microsoft_ContainerRegistry_registries:
+      return "Microsoft.ContainerRegistry/registries";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -1429,7 +1429,11 @@
 #include <aws/ec2/model/FleetEbsBlockDeviceRequest.h>
 #include <aws/ec2/model/FleetEventType.h>
 #include <aws/ec2/model/FleetExcessCapacityTerminationPolicy.h>
+#include <aws/ec2/model/FleetHttpTokensState.h>
+#include <aws/ec2/model/FleetIamInstanceProfileSpecificationRequest.h>
 #include <aws/ec2/model/FleetInstanceMatchCriteria.h>
+#include <aws/ec2/model/FleetInstanceMetadataEndpointState.h>
+#include <aws/ec2/model/FleetInstanceMetadataOptionsRequest.h>
 #include <aws/ec2/model/FleetLaunchTemplateConfig.h>
 #include <aws/ec2/model/FleetLaunchTemplateConfigRequest.h>
 #include <aws/ec2/model/FleetLaunchTemplateOverrides.h>

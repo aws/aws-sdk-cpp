@@ -1,0 +1,258 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/CspmEnablementStatus.h>
+#include <aws/securityhub/model/CspmHealthCheck.h>
+#include <aws/securityhub/model/CspmProviderDetail.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SecurityHub {
+namespace Model {
+class GetConnectorResult {
+ public:
+  AWS_SECURITYHUB_API GetConnectorResult() = default;
+  AWS_SECURITYHUB_API GetConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SECURITYHUB_API GetConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the connector.</p>
+   */
+  inline const Aws::String& GetConnectorArn() const { return m_connectorArn; }
+  template <typename ConnectorArnT = Aws::String>
+  void SetConnectorArn(ConnectorArnT&& value) {
+    m_connectorArnHasBeenSet = true;
+    m_connectorArn = std::forward<ConnectorArnT>(value);
+  }
+  template <typename ConnectorArnT = Aws::String>
+  GetConnectorResult& WithConnectorArn(ConnectorArnT&& value) {
+    SetConnectorArn(std::forward<ConnectorArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the connector.</p>
+   */
+  inline const Aws::String& GetConnectorId() const { return m_connectorId; }
+  template <typename ConnectorIdT = Aws::String>
+  void SetConnectorId(ConnectorIdT&& value) {
+    m_connectorIdHasBeenSet = true;
+    m_connectorId = std::forward<ConnectorIdT>(value);
+  }
+  template <typename ConnectorIdT = Aws::String>
+  GetConnectorResult& WithConnectorId(ConnectorIdT&& value) {
+    SetConnectorId(std::forward<ConnectorIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the connector.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  GetConnectorResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the connector.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  GetConnectorResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ISO 8601 UTC timestamp indicating when the connector was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  GetConnectorResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ISO 8601 UTC timestamp indicating when the connector was last
+   * updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
+    m_lastUpdatedAtHasBeenSet = true;
+    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
+  }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  GetConnectorResult& WithLastUpdatedAt(LastUpdatedAtT&& value) {
+    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The health status of the connector, including connectivity status and last
+   * check time.</p>
+   */
+  inline const CspmHealthCheck& GetHealth() const { return m_health; }
+  template <typename HealthT = CspmHealthCheck>
+  void SetHealth(HealthT&& value) {
+    m_healthHasBeenSet = true;
+    m_health = std::forward<HealthT>(value);
+  }
+  template <typename HealthT = CspmHealthCheck>
+  GetConnectorResult& WithHealth(HealthT&& value) {
+    SetHealth(std::forward<HealthT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider configuration details for the connector.</p>
+   */
+  inline const CspmProviderDetail& GetProviderDetail() const { return m_providerDetail; }
+  template <typename ProviderDetailT = CspmProviderDetail>
+  void SetProviderDetail(ProviderDetailT&& value) {
+    m_providerDetailHasBeenSet = true;
+    m_providerDetail = std::forward<ProviderDetailT>(value);
+  }
+  template <typename ProviderDetailT = CspmProviderDetail>
+  GetConnectorResult& WithProviderDetail(ProviderDetailT&& value) {
+    SetProviderDetail(std::forward<ProviderDetailT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The service principal that created the connector.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  GetConnectorResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The enablement status of the connector.</p>
+   */
+  inline CspmEnablementStatus GetEnablementStatus() const { return m_enablementStatus; }
+  inline void SetEnablementStatus(CspmEnablementStatus value) {
+    m_enablementStatusHasBeenSet = true;
+    m_enablementStatus = value;
+  }
+  inline GetConnectorResult& WithEnablementStatus(CspmEnablementStatus value) {
+    SetEnablementStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetConnectorResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_connectorArn;
+
+  Aws::String m_connectorId;
+
+  Aws::String m_name;
+
+  Aws::String m_description;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_lastUpdatedAt{};
+
+  CspmHealthCheck m_health;
+
+  CspmProviderDetail m_providerDetail;
+
+  Aws::String m_createdBy;
+
+  CspmEnablementStatus m_enablementStatus{CspmEnablementStatus::NOT_SET};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_connectorArnHasBeenSet = false;
+  bool m_connectorIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_healthHasBeenSet = false;
+  bool m_providerDetailHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_enablementStatusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

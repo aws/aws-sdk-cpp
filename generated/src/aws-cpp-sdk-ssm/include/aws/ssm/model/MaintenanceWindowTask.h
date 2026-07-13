@@ -83,6 +83,9 @@ class MaintenanceWindowTask {
    * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
    * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
    * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
+   * <p>Maintenance Window does not validate the TaskArn when you register a task. A
+   * successful registration does not guarantee that the TaskArn is valid.</p>
+   *
    */
   inline const Aws::String& GetTaskArn() const { return m_taskArn; }
   inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }

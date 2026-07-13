@@ -7,6 +7,8 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/ConnectorStatus.h>
+#include <aws/securityhub/model/EnablementStatus.h>
 
 #include <utility>
 
@@ -28,6 +30,36 @@ class UpdateConnectorV2Result {
   AWS_SECURITYHUB_API UpdateConnectorV2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
+  /**
+   * <p>The status of the connector after the update.</p>
+   */
+  inline ConnectorStatus GetConnectorStatus() const { return m_connectorStatus; }
+  inline void SetConnectorStatus(ConnectorStatus value) {
+    m_connectorStatusHasBeenSet = true;
+    m_connectorStatus = value;
+  }
+  inline UpdateConnectorV2Result& WithConnectorStatus(ConnectorStatus value) {
+    SetConnectorStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The enablement status of the connector after the update.</p>
+   */
+  inline EnablementStatus GetEnablementStatus() const { return m_enablementStatus; }
+  inline void SetEnablementStatus(EnablementStatus value) {
+    m_enablementStatusHasBeenSet = true;
+    m_enablementStatus = value;
+  }
+  inline UpdateConnectorV2Result& WithEnablementStatus(EnablementStatus value) {
+    SetEnablementStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -44,8 +76,14 @@ class UpdateConnectorV2Result {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  ConnectorStatus m_connectorStatus{ConnectorStatus::NOT_SET};
+
+  EnablementStatus m_enablementStatus{EnablementStatus::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_connectorStatusHasBeenSet = false;
+  bool m_enablementStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

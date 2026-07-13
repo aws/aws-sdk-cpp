@@ -140,6 +140,8 @@
 #include <aws/marketplace-catalog/model/ResaleAuthorizationProductNameFilter.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationResellerAccountIDFilter.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationResellerLegalNameFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationResellerRoleFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationResellerRoleString.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationSort.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationSortBy.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationStatusFilter.h>

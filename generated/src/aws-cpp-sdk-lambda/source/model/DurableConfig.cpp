@@ -18,6 +18,10 @@ namespace Model {
 DurableConfig::DurableConfig(JsonView jsonValue) { *this = jsonValue; }
 
 DurableConfig& DurableConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KMSKeyArn")) {
+    m_kMSKeyArn = jsonValue.GetString("KMSKeyArn");
+    m_kMSKeyArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("RetentionPeriodInDays")) {
     m_retentionPeriodInDays = jsonValue.GetInteger("RetentionPeriodInDays");
     m_retentionPeriodInDaysHasBeenSet = true;
@@ -31,6 +35,10 @@ DurableConfig& DurableConfig::operator=(JsonView jsonValue) {
 
 JsonValue DurableConfig::Jsonize() const {
   JsonValue payload;
+
+  if (m_kMSKeyArnHasBeenSet) {
+    payload.WithString("KMSKeyArn", m_kMSKeyArn);
+  }
 
   if (m_retentionPeriodInDaysHasBeenSet) {
     payload.WithInteger("RetentionPeriodInDays", m_retentionPeriodInDays);

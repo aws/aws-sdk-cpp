@@ -51,5 +51,9 @@ Aws::String CreateCapacityProviderRequest::SerializePayload() const {
     payload.WithObject("PropagateTags", m_propagateTags.Jsonize());
   }
 
+  if (m_telemetryConfigHasBeenSet) {
+    payload.WithObject("TelemetryConfig", m_telemetryConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

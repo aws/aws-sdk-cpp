@@ -112,3 +112,5 @@ Aws::String PutObjectLockConfigurationRequest::GetChecksumAlgorithmName() const 
     return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
   }
 }
+
+bool PutObjectLockConfigurationRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }

@@ -18,7 +18,8 @@ enum class KnowledgeBaseSearchFilterName {
   DIRECT_QUICKSIGHT_VIEWER_OR_OWNER,
   DIRECT_QUICKSIGHT_SOLE_OWNER,
   KNOWLEDGE_BASE_SIZE_BYTES,
-  PRIMARY_OWNER
+  PRIMARY_OWNER,
+  DATASOURCE_ARN
 };
 
 namespace KnowledgeBaseSearchFilterNameMapper {

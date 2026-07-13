@@ -547,6 +547,25 @@ class Image {
 
   ///@{
   /**
+   * <p>The name of the public Systems Manager parameter that resolves to this AMI,
+   * under the <code>aws/service/</code> namespace.</p>
+   */
+  inline const Aws::String& GetPublicSsmParameterName() const { return m_publicSsmParameterName; }
+  inline bool PublicSsmParameterNameHasBeenSet() const { return m_publicSsmParameterNameHasBeenSet; }
+  template <typename PublicSsmParameterNameT = Aws::String>
+  void SetPublicSsmParameterName(PublicSsmParameterNameT&& value) {
+    m_publicSsmParameterNameHasBeenSet = true;
+    m_publicSsmParameterName = std::forward<PublicSsmParameterNameT>(value);
+  }
+  template <typename PublicSsmParameterNameT = Aws::String>
+  Image& WithPublicSsmParameterName(PublicSsmParameterNameT&& value) {
+    SetPublicSsmParameterName(std::forward<PublicSsmParameterNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The watermarks attached to the AMI.</p>
    */
   inline const Aws::Vector<ImageWatermark>& GetImageWatermarks() const { return m_imageWatermarks; }
@@ -837,6 +856,8 @@ class Image {
 
   bool m_freeTierEligible{false};
 
+  Aws::String m_publicSsmParameterName;
+
   Aws::Vector<ImageWatermark> m_imageWatermarks;
 
   Aws::String m_imageId;
@@ -887,6 +908,7 @@ class Image {
   bool m_sourceImageIdHasBeenSet = false;
   bool m_sourceImageRegionHasBeenSet = false;
   bool m_freeTierEligibleHasBeenSet = false;
+  bool m_publicSsmParameterNameHasBeenSet = false;
   bool m_imageWatermarksHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
   bool m_imageLocationHasBeenSet = false;

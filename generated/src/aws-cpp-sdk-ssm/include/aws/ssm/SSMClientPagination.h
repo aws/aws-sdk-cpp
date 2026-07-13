@@ -43,6 +43,7 @@
 #include <aws/ssm/model/GetResourcePoliciesPaginationTraits.h>
 #include <aws/ssm/model/ListAssociationVersionsPaginationTraits.h>
 #include <aws/ssm/model/ListAssociationsPaginationTraits.h>
+#include <aws/ssm/model/ListCloudConnectorsPaginationTraits.h>
 #include <aws/ssm/model/ListCommandInvocationsPaginationTraits.h>
 #include <aws/ssm/model/ListCommandsPaginationTraits.h>
 #include <aws/ssm/model/ListComplianceItemsPaginationTraits.h>
@@ -56,6 +57,7 @@
 #include <aws/ssm/model/ListOpsMetadataPaginationTraits.h>
 #include <aws/ssm/model/ListResourceComplianceSummariesPaginationTraits.h>
 #include <aws/ssm/model/ListResourceDataSyncPaginationTraits.h>
+#include <aws/ssm/model/ValidateCloudConnectorPaginationTraits.h>
 
 namespace Aws {
 namespace SSM {
@@ -155,6 +157,8 @@ using ListAssociationsPaginator =
     Aws::Utils::Pagination::Paginator<SSMClient, Model::ListAssociationsRequest, Pagination::ListAssociationsPaginationTraits<SSMClient>>;
 using ListAssociationVersionsPaginator = Aws::Utils::Pagination::Paginator<SSMClient, Model::ListAssociationVersionsRequest,
                                                                            Pagination::ListAssociationVersionsPaginationTraits<SSMClient>>;
+using ListCloudConnectorsPaginator = Aws::Utils::Pagination::Paginator<SSMClient, Model::ListCloudConnectorsRequest,
+                                                                       Pagination::ListCloudConnectorsPaginationTraits<SSMClient>>;
 using ListCommandInvocationsPaginator = Aws::Utils::Pagination::Paginator<SSMClient, Model::ListCommandInvocationsRequest,
                                                                           Pagination::ListCommandInvocationsPaginationTraits<SSMClient>>;
 using ListCommandsPaginator =
@@ -182,6 +186,8 @@ using ListResourceComplianceSummariesPaginator =
                                       Pagination::ListResourceComplianceSummariesPaginationTraits<SSMClient>>;
 using ListResourceDataSyncPaginator = Aws::Utils::Pagination::Paginator<SSMClient, Model::ListResourceDataSyncRequest,
                                                                         Pagination::ListResourceDataSyncPaginationTraits<SSMClient>>;
+using ValidateCloudConnectorPaginator = Aws::Utils::Pagination::Paginator<SSMClient, Model::ValidateCloudConnectorRequest,
+                                                                          Pagination::ValidateCloudConnectorPaginationTraits<SSMClient>>;
 
 }  // namespace SSM
 }  // namespace Aws

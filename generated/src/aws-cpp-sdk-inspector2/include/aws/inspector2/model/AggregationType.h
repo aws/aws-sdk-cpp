@@ -23,7 +23,10 @@ enum class AggregationType {
   ACCOUNT,
   AWS_LAMBDA_FUNCTION,
   LAMBDA_LAYER,
-  CODE_REPOSITORY
+  CODE_REPOSITORY,
+  VM_INSTANCE,
+  CONTAINER_IMAGE,
+  SERVERLESS_FUNCTION
 };
 
 namespace AggregationTypeMapper {

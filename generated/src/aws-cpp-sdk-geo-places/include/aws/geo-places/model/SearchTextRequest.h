@@ -11,6 +11,7 @@
 #include <aws/geo-places/model/SearchTextAdditionalFeature.h>
 #include <aws/geo-places/model/SearchTextFilter.h>
 #include <aws/geo-places/model/SearchTextIntendedUse.h>
+#include <aws/geo-places/model/SearchTextTravelMode.h>
 
 #include <utility>
 
@@ -174,7 +175,8 @@ class SearchTextRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP
+   * <p>A list of <a
+   * href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
    * 47</a> compliant language codes for the results to be rendered in. If there is
    * no data for the result in the requested language, data will be returned in the
    * default language for the entry. For <a
@@ -265,6 +267,24 @@ class SearchTextRequest : public GeoPlacesRequest {
 
   ///@{
   /**
+   * <p>Indicates the mode of mobility used by the end user. This is used to improve
+   * the relevance of search results. Valid values are <code>Car</code>,
+   * <code>Scooter</code>, and <code>Truck</code>.</p>
+   */
+  inline SearchTextTravelMode GetTravelMode() const { return m_travelMode; }
+  inline bool TravelModeHasBeenSet() const { return m_travelModeHasBeenSet; }
+  inline void SetTravelMode(SearchTextTravelMode value) {
+    m_travelModeHasBeenSet = true;
+    m_travelMode = value;
+  }
+  inline SearchTextRequest& WithTravelMode(SearchTextTravelMode value) {
+    SetTravelMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Optional: The API key to be used for authorization. Either an API key or
    * valid SigV4 signature must be provided when making a request.</p>
    */
@@ -302,6 +322,8 @@ class SearchTextRequest : public GeoPlacesRequest {
 
   Aws::String m_nextToken;
 
+  SearchTextTravelMode m_travelMode{SearchTextTravelMode::NOT_SET};
+
   Aws::String m_key;
   bool m_queryTextHasBeenSet = false;
   bool m_queryIdHasBeenSet = false;
@@ -313,6 +335,7 @@ class SearchTextRequest : public GeoPlacesRequest {
   bool m_politicalViewHasBeenSet = false;
   bool m_intendedUseHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_travelModeHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

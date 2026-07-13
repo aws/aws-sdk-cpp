@@ -29,11 +29,6 @@ void InvokeWithResponseStreamRequest::AddQueryStringParameters(URI& uri) const {
 Aws::Http::HeaderValueCollection InvokeWithResponseStreamRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if (m_invocationTypeHasBeenSet && m_invocationType != ResponseStreamingInvocationType::NOT_SET) {
-    headers.emplace("x-amz-invocation-type",
-                    ResponseStreamingInvocationTypeMapper::GetNameForResponseStreamingInvocationType(m_invocationType));
-  }
-
   if (m_logTypeHasBeenSet && m_logType != LogType::NOT_SET) {
     headers.emplace("x-amz-log-type", LogTypeMapper::GetNameForLogType(m_logType));
   }
@@ -48,6 +43,11 @@ Aws::Http::HeaderValueCollection InvokeWithResponseStreamRequest::GetRequestSpec
     ss << m_tenantId;
     headers.emplace("x-amz-tenant-id", ss.str());
     ss.str("");
+  }
+
+  if (m_invocationTypeHasBeenSet && m_invocationType != ResponseStreamingInvocationType::NOT_SET) {
+    headers.emplace("x-amz-invocation-type",
+                    ResponseStreamingInvocationTypeMapper::GetNameForResponseStreamingInvocationType(m_invocationType));
   }
 
   return headers;

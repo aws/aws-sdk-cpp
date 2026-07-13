@@ -17,6 +17,9 @@ Aws::String DeleteAnomalyDetectorRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
+  if (m_anomalyDetectorIdHasBeenSet) {
+    mapSize++;
+  }
   if (m_singleMetricAnomalyDetectorHasBeenSet) {
     mapSize++;
   }
@@ -25,6 +28,11 @@ Aws::String DeleteAnomalyDetectorRequest::SerializePayload() const {
   }
 
   encoder.WriteMapStart(mapSize);
+
+  if (m_anomalyDetectorIdHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AnomalyDetectorId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_anomalyDetectorId.c_str()));
+  }
 
   if (m_singleMetricAnomalyDetectorHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("SingleMetricAnomalyDetector"));

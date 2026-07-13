@@ -266,6 +266,23 @@ class CreateLicenseVersionRequest : public LicenseManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to reset the license usage for the new license version. If
+   * you don't specify a value, the license usage is not reset.</p>
+   */
+  inline bool GetResetUsage() const { return m_resetUsage; }
+  inline bool ResetUsageHasBeenSet() const { return m_resetUsageHasBeenSet; }
+  inline void SetResetUsage(bool value) {
+    m_resetUsageHasBeenSet = true;
+    m_resetUsage = value;
+  }
+  inline CreateLicenseVersionRequest& WithResetUsage(bool value) {
+    SetResetUsage(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_licenseArn;
 
@@ -290,6 +307,8 @@ class CreateLicenseVersionRequest : public LicenseManagerRequest {
   Aws::String m_clientToken;
 
   Aws::String m_sourceVersion;
+
+  bool m_resetUsage{false};
   bool m_licenseArnHasBeenSet = false;
   bool m_licenseNameHasBeenSet = false;
   bool m_productNameHasBeenSet = false;
@@ -302,6 +321,7 @@ class CreateLicenseVersionRequest : public LicenseManagerRequest {
   bool m_statusHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_sourceVersionHasBeenSet = false;
+  bool m_resetUsageHasBeenSet = false;
 };
 
 }  // namespace Model

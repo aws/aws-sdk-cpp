@@ -119,6 +119,10 @@ Canary& Canary::operator=(JsonView jsonValue) {
     m_artifactConfig = jsonValue.GetObject("ArtifactConfig");
     m_artifactConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("KmsKeyArn")) {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DryRunConfig")) {
     m_dryRunConfig = jsonValue.GetObject("DryRunConfig");
     m_dryRunConfigHasBeenSet = true;
@@ -232,6 +236,10 @@ JsonValue Canary::Jsonize() const {
 
   if (m_artifactConfigHasBeenSet) {
     payload.WithObject("ArtifactConfig", m_artifactConfig.Jsonize());
+  }
+
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("KmsKeyArn", m_kmsKeyArn);
   }
 
   if (m_dryRunConfigHasBeenSet) {

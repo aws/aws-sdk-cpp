@@ -93,6 +93,7 @@ namespace
     static std::string BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME = "largeeventstream";
     static std::string BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME = "errorsinevent";
     static std::string BASE_CHECKSUMS_BUCKET_NAME = "checksums";
+    static std::string BASE_CHECKSUMS_WHEN_REQUIRED_BUCKET_NAME = "checksumswhenrequired";
     static std::string BASE_CONTENT_ENCODING_BUCKET_NAME = "contentencoding";
     static std::string BASE_CROSS_REGION_BUCKET_NAME = "crossregion";
     static std::string BASE_ENDPOINT_OVERRIDE_BUCKET_NAME = "endpointoverride";
@@ -1919,6 +1920,43 @@ namespace
 
         auto getObjectOutcome = Client->GetObject(getObjectRequest);
         AWS_ASSERT_SUCCESS(getObjectOutcome);
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestFlexibleChecksumsWhenRequiredWithExplicitAlgorithm)
+    {
+        const Aws::String fullBucketName = CalculateBucketName(BASE_CHECKSUMS_WHEN_REQUIRED_BUCKET_NAME.c_str());
+        SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
+        WaitForBucketToPropagate(fullBucketName, Client);
+        TagTestBucket(fullBucketName, Client);
+
+        ClientConfiguration config;
+        config.region = Aws::Region::US_EAST_1;
+        config.checksumConfig.requestChecksumCalculation = RequestChecksumCalculation::WHEN_REQUIRED;
+        const S3Client whenRequiredClient{config};
+
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+        *objectStream << "it's coming football's coming home";
+
+        PutObjectRequest putObjectRequest{};
+        putObjectRequest.SetBucket(fullBucketName);
+        putObjectRequest.SetKey(TEST_OBJ_KEY);
+        putObjectRequest.SetBody(objectStream);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32);
+        const auto putObjectOutcome = whenRequiredClient.PutObject(putObjectRequest);
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
+
+        GetObjectRequest getObjectRequest{};
+        getObjectRequest.SetBucket(fullBucketName);
+        getObjectRequest.SetKey(TEST_OBJ_KEY);
+        const auto getOutcome = whenRequiredClient.GetObject(getObjectRequest);
+        AWS_ASSERT_SUCCESS(getOutcome);
+        EXPECT_STREQ(getOutcome.GetResult().GetChecksumCRC32().c_str(), "gR4VoA==");
     }
 
     TEST_F(BucketAndObjectOperationTest, TestMultipartFlexibleChecksums)

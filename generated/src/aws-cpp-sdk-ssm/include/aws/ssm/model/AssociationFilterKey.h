@@ -19,7 +19,8 @@ enum class AssociationFilterKey {
   LastExecutedBefore,
   LastExecutedAfter,
   AssociationName,
-  ResourceGroupName
+  ResourceGroupName,
+  CloudConnectorId
 };
 
 namespace AssociationFilterKeyMapper {
