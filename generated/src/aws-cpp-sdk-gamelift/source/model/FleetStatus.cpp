@@ -25,6 +25,7 @@ static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NOT_FOUND");
+static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
 
 FleetStatus GetFleetStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +49,8 @@ FleetStatus GetFleetStatusForName(const Aws::String& name) {
     return FleetStatus::TERMINATED;
   } else if (hashCode == NOT_FOUND_HASH) {
     return FleetStatus::NOT_FOUND;
+  } else if (hashCode == EXPIRED_HASH) {
+    return FleetStatus::EXPIRED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +85,8 @@ Aws::String GetNameForFleetStatus(FleetStatus enumValue) {
       return "TERMINATED";
     case FleetStatus::NOT_FOUND:
       return "NOT_FOUND";
+    case FleetStatus::EXPIRED:
+      return "EXPIRED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

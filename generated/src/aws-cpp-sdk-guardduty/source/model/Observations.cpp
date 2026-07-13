@@ -25,6 +25,13 @@ Observations& Observations::operator=(JsonView jsonValue) {
     }
     m_textHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("number")) {
+    Aws::Utils::Array<JsonView> numberJsonList = jsonValue.GetArray("number");
+    for (unsigned numberIndex = 0; numberIndex < numberJsonList.GetLength(); ++numberIndex) {
+      m_number.push_back(numberJsonList[numberIndex].AsInt64());
+    }
+    m_numberHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +44,14 @@ JsonValue Observations::Jsonize() const {
       textJsonList[textIndex].AsString(m_text[textIndex]);
     }
     payload.WithArray("text", std::move(textJsonList));
+  }
+
+  if (m_numberHasBeenSet) {
+    Aws::Utils::Array<JsonValue> numberJsonList(m_number.size());
+    for (unsigned numberIndex = 0; numberIndex < numberJsonList.GetLength(); ++numberIndex) {
+      numberJsonList[numberIndex].AsInt64(m_number[numberIndex]);
+    }
+    payload.WithArray("number", std::move(numberJsonList));
   }
 
   return payload;

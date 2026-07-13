@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GuardDuty {
 namespace Model {
-enum class ProfileSubtype { NOT_SET, FREQUENT, INFREQUENT, UNSEEN, RARE };
+enum class ProfileSubtype { NOT_SET, FREQUENT, INFREQUENT, UNSEEN, RARE, COUNT, AVERAGE };
 
 namespace ProfileSubtypeMapper {
 AWS_GUARDDUTY_API ProfileSubtype GetProfileSubtypeForName(const Aws::String& name);

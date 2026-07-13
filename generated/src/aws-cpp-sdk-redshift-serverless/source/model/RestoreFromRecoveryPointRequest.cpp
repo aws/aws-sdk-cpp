@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String RestoreFromRecoveryPointRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_maintainIntegrationHasBeenSet) {
+    payload.WithBool("maintainIntegration", m_maintainIntegration);
+  }
+
   if (m_namespaceNameHasBeenSet) {
     payload.WithString("namespaceName", m_namespaceName);
   }

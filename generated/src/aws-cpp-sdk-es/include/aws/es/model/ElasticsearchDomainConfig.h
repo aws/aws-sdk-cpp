@@ -19,10 +19,12 @@
 #include <aws/es/model/ElasticsearchClusterConfigStatus.h>
 #include <aws/es/model/ElasticsearchVersionStatus.h>
 #include <aws/es/model/EncryptionAtRestOptionsStatus.h>
+#include <aws/es/model/EngineModeStatus.h>
 #include <aws/es/model/LogPublishingOptionsStatus.h>
 #include <aws/es/model/ModifyingProperties.h>
 #include <aws/es/model/NodeToNodeEncryptionOptionsStatus.h>
 #include <aws/es/model/SnapshotOptionsStatus.h>
+#include <aws/es/model/UseCaseStatus.h>
 #include <aws/es/model/VPCDerivedInfoStatus.h>
 
 #include <utility>
@@ -391,6 +393,42 @@ class ElasticsearchDomainConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The use case configured for the domain.</p>
+   */
+  inline const UseCaseStatus& GetUseCase() const { return m_useCase; }
+  inline bool UseCaseHasBeenSet() const { return m_useCaseHasBeenSet; }
+  template <typename UseCaseT = UseCaseStatus>
+  void SetUseCase(UseCaseT&& value) {
+    m_useCaseHasBeenSet = true;
+    m_useCase = std::forward<UseCaseT>(value);
+  }
+  template <typename UseCaseT = UseCaseStatus>
+  ElasticsearchDomainConfig& WithUseCase(UseCaseT&& value) {
+    SetUseCase(std::forward<UseCaseT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The engine mode configured for the domain.</p>
+   */
+  inline const EngineModeStatus& GetEngineMode() const { return m_engineMode; }
+  inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
+  template <typename EngineModeT = EngineModeStatus>
+  void SetEngineMode(EngineModeT&& value) {
+    m_engineModeHasBeenSet = true;
+    m_engineMode = std::forward<EngineModeT>(value);
+  }
+  template <typename EngineModeT = EngineModeStatus>
+  ElasticsearchDomainConfig& WithEngineMode(EngineModeT&& value) {
+    SetEngineMode(std::forward<EngineModeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ElasticsearchVersionStatus m_elasticsearchVersion;
 
@@ -427,6 +465,10 @@ class ElasticsearchDomainConfig {
   DeploymentStrategyOptionsStatus m_deploymentStrategyOptions;
 
   AutomatedSnapshotPauseOptionsStatus m_automatedSnapshotPauseOptions;
+
+  UseCaseStatus m_useCase;
+
+  EngineModeStatus m_engineMode;
   bool m_elasticsearchVersionHasBeenSet = false;
   bool m_elasticsearchClusterConfigHasBeenSet = false;
   bool m_eBSOptionsHasBeenSet = false;
@@ -445,6 +487,8 @@ class ElasticsearchDomainConfig {
   bool m_modifyingPropertiesHasBeenSet = false;
   bool m_deploymentStrategyOptionsHasBeenSet = false;
   bool m_automatedSnapshotPauseOptionsHasBeenSet = false;
+  bool m_useCaseHasBeenSet = false;
+  bool m_engineModeHasBeenSet = false;
 };
 
 }  // namespace Model

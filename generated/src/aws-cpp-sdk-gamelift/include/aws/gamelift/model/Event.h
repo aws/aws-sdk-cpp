@@ -192,7 +192,9 @@ class Event {
    * A change was made to the fleet's game session protection policy setting. Event
    * messaging includes both the old and new policy setting. </p> </li> <li>
    * <p>FLEET_DELETED -- A request to delete a fleet was initiated.</p> </li> <li>
-   * <p> GENERIC_EVENT -- An unspecified event has occurred.</p> </li> </ul>
+   * <p>FLEET_EXPIRED -- The fleet has been expired. The fleet is scaled down to zero
+   * instances and can no longer host game sessions.</p> </li> <li> <p> GENERIC_EVENT
+   * -- An unspecified event has occurred.</p> </li> </ul>
    */
   inline EventCode GetEventCode() const { return m_eventCode; }
   inline bool EventCodeHasBeenSet() const { return m_eventCodeHasBeenSet; }

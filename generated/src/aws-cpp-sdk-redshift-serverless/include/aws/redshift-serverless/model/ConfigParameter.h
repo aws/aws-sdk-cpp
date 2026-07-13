@@ -43,8 +43,9 @@ class ConfigParameter {
    * monitoring metrics (such as <code>max_scan_row_count</code>,
    * <code>max_query_execution_time</code>) or use
    * <code>wlm_json_configuration</code> to define query queues with rules, but not
-   * both. For more information about query monitoring rules and available metrics,
-   * see <a
+   * both. If you're using <code>wlm_json_configuration</code>, the maximum size of
+   * <code>parameterValue</code> is 8000 characters. For more information about query
+   * monitoring rules and available metrics, see <a
    * href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">Query
    * monitoring metrics for Amazon Redshift Serverless</a>.</p>
    */

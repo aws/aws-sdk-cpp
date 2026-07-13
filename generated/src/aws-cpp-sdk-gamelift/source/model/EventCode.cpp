@@ -18,6 +18,7 @@ namespace EventCodeMapper {
 static const int GENERIC_EVENT_HASH = HashingUtils::HashString("GENERIC_EVENT");
 static const int FLEET_CREATED_HASH = HashingUtils::HashString("FLEET_CREATED");
 static const int FLEET_DELETED_HASH = HashingUtils::HashString("FLEET_DELETED");
+static const int FLEET_EXPIRED_HASH = HashingUtils::HashString("FLEET_EXPIRED");
 static const int FLEET_SCALING_EVENT_HASH = HashingUtils::HashString("FLEET_SCALING_EVENT");
 static const int FLEET_STATE_DOWNLOADING_HASH = HashingUtils::HashString("FLEET_STATE_DOWNLOADING");
 static const int FLEET_STATE_VALIDATING_HASH = HashingUtils::HashString("FLEET_STATE_VALIDATING");
@@ -82,6 +83,8 @@ EventCode GetEventCodeForName(const Aws::String& name) {
     return EventCode::FLEET_CREATED;
   } else if (hashCode == FLEET_DELETED_HASH) {
     return EventCode::FLEET_DELETED;
+  } else if (hashCode == FLEET_EXPIRED_HASH) {
+    return EventCode::FLEET_EXPIRED;
   } else if (hashCode == FLEET_SCALING_EVENT_HASH) {
     return EventCode::FLEET_SCALING_EVENT;
   } else if (hashCode == FLEET_STATE_DOWNLOADING_HASH) {
@@ -208,6 +211,8 @@ Aws::String GetNameForEventCode(EventCode enumValue) {
       return "FLEET_CREATED";
     case EventCode::FLEET_DELETED:
       return "FLEET_DELETED";
+    case EventCode::FLEET_EXPIRED:
+      return "FLEET_EXPIRED";
     case EventCode::FLEET_SCALING_EVENT:
       return "FLEET_SCALING_EVENT";
     case EventCode::FLEET_STATE_DOWNLOADING:

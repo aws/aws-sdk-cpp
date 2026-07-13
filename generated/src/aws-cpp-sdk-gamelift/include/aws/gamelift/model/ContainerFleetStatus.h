@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GameLift {
 namespace Model {
-enum class ContainerFleetStatus { NOT_SET, PENDING, CREATING, CREATED, ACTIVATING, ACTIVE, UPDATING, DELETING };
+enum class ContainerFleetStatus { NOT_SET, PENDING, CREATING, CREATED, ACTIVATING, ACTIVE, UPDATING, DELETING, EXPIRED };
 
 namespace ContainerFleetStatusMapper {
 AWS_GAMELIFT_API ContainerFleetStatus GetContainerFleetStatusForName(const Aws::String& name);
