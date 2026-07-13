@@ -1212,7 +1212,7 @@ CopyObjectOutcome S3CrtClient::CopyObject(const CopyObjectRequest& request) cons
   AWS_OPERATION_GUARD(CopyObject);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  AWS_OPERATION_CHECK_PTR(meter, CopyObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
   return TracingUtils::MakeCallWithTiming<CopyObjectOutcome>(
       [&]() -> CopyObjectOutcome {
         Aws::Utils::Threading::Semaphore sem(0, 1);
@@ -1532,7 +1532,7 @@ HeadObjectOutcome S3CrtClient::HeadObject(const HeadObjectRequest& request) cons
   AWS_OPERATION_GUARD(HeadObject);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  AWS_OPERATION_CHECK_PTR(meter, HeadObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
   return TracingUtils::MakeCallWithTiming<HeadObjectOutcome>(
       [&]() -> HeadObjectOutcome {
         Aws::Utils::Threading::Semaphore sem(0, 1);
@@ -1727,7 +1727,7 @@ PutObjectOutcome S3CrtClient::PutObject(const PutObjectRequest& request) const {
   AWS_OPERATION_GUARD(PutObject);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  AWS_OPERATION_CHECK_PTR(meter, PutObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
   return TracingUtils::MakeCallWithTiming<PutObjectOutcome>(
       [&]() -> PutObjectOutcome {
         Aws::Utils::Threading::Semaphore sem(0, 1);

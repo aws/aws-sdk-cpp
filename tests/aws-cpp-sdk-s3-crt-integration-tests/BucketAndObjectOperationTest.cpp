@@ -2028,4 +2028,68 @@ namespace
         .WithKey(objectKey));
       AWS_EXPECT_SUCCESS(getObjectResponse);
     }
+
+    TEST_F(BucketAndObjectOperationTest, TestHeadObjectViaCrt)
+    {
+        const Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str());
+        SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
+
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+        putObjectRequest.SetKey(TEST_OBJ_KEY);
+        putObjectRequest.SetContentType("text/plain");
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG, "HeadObject CRT test content");
+        putObjectRequest.SetBody(objectStream);
+        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
+        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY));
+
+        // Sync HeadObject
+        HeadObjectRequest headObjectRequest;
+        headObjectRequest.SetBucket(fullBucketName);
+        headObjectRequest.SetKey(TEST_OBJ_KEY);
+        HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
+        AWS_ASSERT_SUCCESS(headObjectOutcome);
+        ASSERT_STREQ("text/plain", headObjectOutcome.GetResult().GetContentType().c_str());
+        ASSERT_TRUE(headObjectOutcome.GetResult().GetContentLength() > 0);
+
+        // Async HeadObject
+        std::mutex mtx;
+        std::condition_variable cv;
+        bool handlerCalled = false;
+        HeadObjectOutcome asyncOutcome;
+        auto asyncHandler = [&](const S3CrtClient*,
+                                const Model::HeadObjectRequest&,
+                                const Model::HeadObjectOutcome& outcome,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)
+        {
+            std::unique_lock<std::mutex> lock(mtx);
+            asyncOutcome = outcome;
+            handlerCalled = true;
+            cv.notify_one();
+        };
+        Client->HeadObjectAsync(headObjectRequest, asyncHandler);
+        {
+            std::unique_lock<std::mutex> lock(mtx);
+            cv.wait_for(lock, std::chrono::seconds(60), [&handlerCalled]() { return handlerCalled; });
+        }
+        ASSERT_TRUE(handlerCalled) << "HeadObjectAsync handler was not called within 60 seconds";
+        AWS_ASSERT_SUCCESS(asyncOutcome);
+        ASSERT_STREQ("text/plain", asyncOutcome.GetResult().GetContentType().c_str());
+        ASSERT_TRUE(asyncOutcome.GetResult().GetContentLength() > 0);
+
+        // HeadObject on non-existent key should fail
+        HeadObjectRequest headMissingRequest;
+        headMissingRequest.SetBucket(fullBucketName);
+        headMissingRequest.SetKey("non-existent-key-that-does-not-exist");
+        HeadObjectOutcome headMissingOutcome = Client->HeadObject(headMissingRequest);
+        ASSERT_FALSE(headMissingOutcome.IsSuccess());
+    }
 }
