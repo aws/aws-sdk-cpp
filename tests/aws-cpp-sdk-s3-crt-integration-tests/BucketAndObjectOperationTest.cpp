@@ -47,6 +47,10 @@
 #include <aws/s3-crt/model/PutObjectTaggingRequest.h>
 #include <aws/s3-crt/model/MetadataDirective.h>
 #include <aws/s3-crt/model/TaggingDirective.h>
+#include <aws/s3-crt/model/PutBucketVersioningRequest.h>
+#include <aws/s3-crt/model/VersioningConfiguration.h>
+#include <aws/s3-crt/model/BucketVersioningStatus.h>
+#include <aws/s3-crt/model/ListObjectVersionsRequest.h>
 #include <aws/s3-crt/ClientConfiguration.h>
 #include <aws/testing/ProxyConfig.h>
 #include <aws/testing/platform/PlatformTesting.h>
@@ -89,6 +93,7 @@ namespace
     static std::string BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME = "errorsinevent";
     static std::string BASE_CHECKSUMS_BUCKET_NAME = "checksums-crt";
     static std::string BASE_CRT_CREDENTIALS_TEST_BUCKET_NAME = "crt-credentials-test";
+    static std::string BASE_VERSIONED_COPY_BUCKET_NAME = "versionedcopytest";
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
     static const char* TEST_NOT_MODIFIED_OBJ_KEY = "TestNotModifiedObjectKey";
@@ -129,7 +134,8 @@ namespace
               std::ref(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME),
               std::ref(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME),
               std::ref(BASE_CHECKSUMS_BUCKET_NAME),
-              std::ref(BASE_CRT_CREDENTIALS_TEST_BUCKET_NAME)
+              std::ref(BASE_CRT_CREDENTIALS_TEST_BUCKET_NAME),
+              std::ref(BASE_VERSIONED_COPY_BUCKET_NAME)
             };
 
         for (auto& testBucketName : TEST_BUCKETS)
@@ -1075,6 +1081,74 @@ namespace
             ASSERT_STREQ("test", tags["env"].c_str());
             ASSERT_STREQ("sdk", tags["team"].c_str());
         }
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestMultipartCopyOnVersionedBucketDoesNotRequireGetObjectVersion)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_VERSIONED_COPY_BUCKET_NAME.c_str());
+        SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
+
+        PutBucketVersioningRequest versioningRequest;
+        versioningRequest.SetBucket(fullBucketName);
+        VersioningConfiguration versioningConfig;
+        versioningConfig.SetStatus(BucketVersioningStatus::Enabled);
+        versioningRequest.SetVersioningConfiguration(versioningConfig);
+        auto versioningOutcome = Client->PutBucketVersioning(versioningRequest);
+        AWS_ASSERT_SUCCESS(versioningOutcome);
+
+        const char* sourceKey = "multipart-copy-versioned-source";
+        const char* destKey = "multipart-copy-versioned-dest";
+
+        // Upload an object larger than the multipart copy threshold (>64MB for CRT)
+        const size_t objectSize = 70 * 1024 * 1024;
+        auto objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+        std::string largePayload(objectSize, 'x');
+        *objectStream << largePayload;
+        objectStream->flush();
+
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+        putObjectRequest.SetKey(sourceKey);
+        putObjectRequest.SetBody(objectStream);
+        putObjectRequest.SetContentLength(static_cast<long>(objectSize));
+        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
+        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, sourceKey));
+
+        // Copy without specifying versionId. Should succeed without s3:GetObjectVersion.
+        CopyObjectRequest copyRequest;
+        copyRequest.WithBucket(fullBucketName)
+            .WithKey(destKey)
+            .WithCopySource(fullBucketName + "/" + sourceKey);
+        auto copyOutcome = Client->CopyObject(copyRequest);
+        AWS_ASSERT_SUCCESS(copyOutcome);
+
+        // Clean up: delete all object versions so the bucket can be deleted
+        ListObjectVersionsRequest listVersionsRequest;
+        listVersionsRequest.SetBucket(fullBucketName);
+        auto listVersionsOutcome = Client->ListObjectVersions(listVersionsRequest);
+        if (listVersionsOutcome.IsSuccess())
+        {
+            for (const auto& version : listVersionsOutcome.GetResult().GetVersions())
+            {
+                DeleteObjectRequest deleteRequest;
+                deleteRequest.SetBucket(fullBucketName);
+                deleteRequest.SetKey(version.GetKey());
+                deleteRequest.SetVersionId(version.GetVersionId());
+                Client->DeleteObject(deleteRequest);
+            }
+        }
+
+        DeleteBucketRequest deleteBucketRequest;
+        deleteBucketRequest.SetBucket(fullBucketName);
+        Client->DeleteBucket(deleteBucketRequest);
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationWithEventStream)
