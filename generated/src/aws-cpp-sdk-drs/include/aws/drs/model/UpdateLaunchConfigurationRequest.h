@@ -10,6 +10,7 @@
 #include <aws/drs/model/LaunchDisposition.h>
 #include <aws/drs/model/LaunchIntoInstanceProperties.h>
 #include <aws/drs/model/Licensing.h>
+#include <aws/drs/model/RecoveryMode.h>
 #include <aws/drs/model/TargetInstanceTypeRightSizingMethod.h>
 
 #include <utility>
@@ -189,6 +190,22 @@ class UpdateLaunchConfigurationRequest : public DrsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Recovery mode.</p>
+   */
+  inline RecoveryMode GetRecoveryMode() const { return m_recoveryMode; }
+  inline bool RecoveryModeHasBeenSet() const { return m_recoveryModeHasBeenSet; }
+  inline void SetRecoveryMode(RecoveryMode value) {
+    m_recoveryModeHasBeenSet = true;
+    m_recoveryMode = value;
+  }
+  inline UpdateLaunchConfigurationRequest& WithRecoveryMode(RecoveryMode value) {
+    SetRecoveryMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sourceServerID;
 
@@ -207,6 +224,8 @@ class UpdateLaunchConfigurationRequest : public DrsRequest {
   bool m_postLaunchEnabled{false};
 
   LaunchIntoInstanceProperties m_launchIntoInstanceProperties;
+
+  RecoveryMode m_recoveryMode{RecoveryMode::NOT_SET};
   bool m_sourceServerIDHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_launchDispositionHasBeenSet = false;
@@ -216,6 +235,7 @@ class UpdateLaunchConfigurationRequest : public DrsRequest {
   bool m_licensingHasBeenSet = false;
   bool m_postLaunchEnabledHasBeenSet = false;
   bool m_launchIntoInstancePropertiesHasBeenSet = false;
+  bool m_recoveryModeHasBeenSet = false;
 };
 
 }  // namespace Model

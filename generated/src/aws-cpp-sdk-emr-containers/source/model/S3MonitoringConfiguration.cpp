@@ -22,6 +22,10 @@ S3MonitoringConfiguration& S3MonitoringConfiguration::operator=(JsonView jsonVal
     m_logUri = jsonValue.GetString("logUri");
     m_logUriHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("encryptionKeyArn")) {
+    m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
+    m_encryptionKeyArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue S3MonitoringConfiguration::Jsonize() const {
 
   if (m_logUriHasBeenSet) {
     payload.WithString("logUri", m_logUri);
+  }
+
+  if (m_encryptionKeyArnHasBeenSet) {
+    payload.WithString("encryptionKeyArn", m_encryptionKeyArn);
   }
 
   return payload;

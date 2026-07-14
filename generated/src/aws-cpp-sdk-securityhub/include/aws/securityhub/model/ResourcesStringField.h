@@ -26,7 +26,12 @@ enum class ResourcesStringField {
   ResourceType,
   ResourceName,
   FindingsSummary_FindingType,
-  FindingsSummary_ProductName
+  FindingsSummary_ProductName,
+  ResourceSubCategory,
+  DiscoveryType,
+  ResourceInfo_AIDetails_HostResourceGuid,
+  ResourceInfo_AIDetails_HostResourceType,
+  ResourceInfo_AIDetails_CanonicalId
 };
 
 namespace ResourcesStringFieldMapper {

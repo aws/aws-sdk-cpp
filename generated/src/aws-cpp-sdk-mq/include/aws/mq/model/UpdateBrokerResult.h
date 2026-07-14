@@ -311,6 +311,21 @@ class UpdateBrokerResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The broker's storage size in GB.</p>
+   */
+  inline int GetStorageSize() const { return m_storageSize; }
+  inline void SetStorageSize(int value) {
+    m_storageSizeHasBeenSet = true;
+    m_storageSize = value;
+  }
+  inline UpdateBrokerResult& WithStorageSize(int value) {
+    SetStorageSize(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -357,6 +372,8 @@ class UpdateBrokerResult {
 
   DataReplicationMode m_pendingDataReplicationMode{DataReplicationMode::NOT_SET};
 
+  int m_storageSize{0};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authenticationStrategyHasBeenSet = false;
@@ -374,6 +391,7 @@ class UpdateBrokerResult {
   bool m_dataReplicationModeHasBeenSet = false;
   bool m_pendingDataReplicationMetadataHasBeenSet = false;
   bool m_pendingDataReplicationModeHasBeenSet = false;
+  bool m_storageSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

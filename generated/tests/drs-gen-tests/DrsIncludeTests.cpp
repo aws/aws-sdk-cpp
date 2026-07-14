@@ -154,6 +154,7 @@
 #include <aws/drs/model/RecoveryInstanceFailback.h>
 #include <aws/drs/model/RecoveryInstanceProperties.h>
 #include <aws/drs/model/RecoveryLifeCycle.h>
+#include <aws/drs/model/RecoveryMode.h>
 #include <aws/drs/model/RecoveryResult.h>
 #include <aws/drs/model/RecoverySnapshot.h>
 #include <aws/drs/model/RecoverySnapshotsOrder.h>

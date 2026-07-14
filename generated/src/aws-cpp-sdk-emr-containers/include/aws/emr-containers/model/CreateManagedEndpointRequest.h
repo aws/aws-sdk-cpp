@@ -181,6 +181,22 @@ class CreateManagedEndpointRequest : public EMRContainersRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The idle timeout in minutes for the managed endpoint session.</p>
+   */
+  inline int GetSessionIdleTimeoutInMinutes() const { return m_sessionIdleTimeoutInMinutes; }
+  inline bool SessionIdleTimeoutInMinutesHasBeenSet() const { return m_sessionIdleTimeoutInMinutesHasBeenSet; }
+  inline void SetSessionIdleTimeoutInMinutes(int value) {
+    m_sessionIdleTimeoutInMinutesHasBeenSet = true;
+    m_sessionIdleTimeoutInMinutes = value;
+  }
+  inline CreateManagedEndpointRequest& WithSessionIdleTimeoutInMinutes(int value) {
+    SetSessionIdleTimeoutInMinutes(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -197,6 +213,8 @@ class CreateManagedEndpointRequest : public EMRContainersRequest {
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  int m_sessionIdleTimeoutInMinutes{0};
   bool m_nameHasBeenSet = false;
   bool m_virtualClusterIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
@@ -205,6 +223,7 @@ class CreateManagedEndpointRequest : public EMRContainersRequest {
   bool m_configurationOverridesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
+  bool m_sessionIdleTimeoutInMinutesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -188,6 +188,22 @@ class VirtualCluster {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the virtual cluster has session support enabled. </p>
+   */
+  inline bool GetSessionEnabled() const { return m_sessionEnabled; }
+  inline bool SessionEnabledHasBeenSet() const { return m_sessionEnabledHasBeenSet; }
+  inline void SetSessionEnabled(bool value) {
+    m_sessionEnabledHasBeenSet = true;
+    m_sessionEnabled = value;
+  }
+  inline VirtualCluster& WithSessionEnabled(bool value) {
+    SetSessionEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -204,6 +220,8 @@ class VirtualCluster {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_securityConfigurationId;
+
+  bool m_sessionEnabled{false};
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -212,6 +230,7 @@ class VirtualCluster {
   bool m_createdAtHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_securityConfigurationIdHasBeenSet = false;
+  bool m_sessionEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

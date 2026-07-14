@@ -339,6 +339,22 @@ class CreateBrokerRequest : public MQRequest {
 
   ///@{
   /**
+   * <p>The broker's storage size in GB.</p>
+   */
+  inline int GetStorageSize() const { return m_storageSize; }
+  inline bool StorageSizeHasBeenSet() const { return m_storageSizeHasBeenSet; }
+  inline void SetStorageSize(int value) {
+    m_storageSizeHasBeenSet = true;
+    m_storageSize = value;
+  }
+  inline CreateBrokerRequest& WithStorageSize(int value) {
+    SetStorageSize(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The broker's storage type.</p>
    */
   inline BrokerStorageType GetStorageType() const { return m_storageType; }
@@ -511,6 +527,8 @@ class CreateBrokerRequest : public MQRequest {
 
   Aws::Vector<Aws::String> m_securityGroups;
 
+  int m_storageSize{0};
+
   BrokerStorageType m_storageType{BrokerStorageType::NOT_SET};
 
   Aws::Vector<Aws::String> m_subnetIds;
@@ -537,6 +555,7 @@ class CreateBrokerRequest : public MQRequest {
   bool m_maintenanceWindowStartTimeHasBeenSet = false;
   bool m_publiclyAccessibleHasBeenSet = false;
   bool m_securityGroupsHasBeenSet = false;
+  bool m_storageSizeHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

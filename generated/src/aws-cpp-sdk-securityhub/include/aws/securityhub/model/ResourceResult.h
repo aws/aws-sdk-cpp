@@ -8,8 +8,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/DiscoveryType.h>
 #include <aws/securityhub/model/ResourceCategory.h>
 #include <aws/securityhub/model/ResourceFindingsSummary.h>
+#include <aws/securityhub/model/ResourceInfo.h>
+#include <aws/securityhub/model/ResourceSubCategory.h>
 #include <aws/securityhub/model/ResourceTag.h>
 
 #include <utility>
@@ -384,6 +387,62 @@ class ResourceResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The AI/ML sub-grouping of the resource. Present only when
+   * <code>ResourceCategory</code> is <code>AI/ML</code>.</p>
+   */
+  inline ResourceSubCategory GetResourceSubCategory() const { return m_resourceSubCategory; }
+  inline bool ResourceSubCategoryHasBeenSet() const { return m_resourceSubCategoryHasBeenSet; }
+  inline void SetResourceSubCategory(ResourceSubCategory value) {
+    m_resourceSubCategoryHasBeenSet = true;
+    m_resourceSubCategory = value;
+  }
+  inline ResourceResult& WithResourceSubCategory(ResourceSubCategory value) {
+    SetResourceSubCategory(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies how the resource was discovered. If the value is
+   * <code>Managed</code>, the resource is natively provided by a cloud service
+   * provider. If the value is <code>SelfHosted</code>, the resource is hosted on
+   * customer-managed infrastructure, such as a compute instance or container
+   * image.</p>
+   */
+  inline DiscoveryType GetDiscoveryType() const { return m_discoveryType; }
+  inline bool DiscoveryTypeHasBeenSet() const { return m_discoveryTypeHasBeenSet; }
+  inline void SetDiscoveryType(DiscoveryType value) {
+    m_discoveryTypeHasBeenSet = true;
+    m_discoveryType = value;
+  }
+  inline ResourceResult& WithDiscoveryType(DiscoveryType value) {
+    SetDiscoveryType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Additional resource-type-specific details. For self-hosted AI resources and
+   * their host resources, contains an <code>AIDetails</code> structure.</p>
+   */
+  inline const ResourceInfo& GetResourceInfo() const { return m_resourceInfo; }
+  inline bool ResourceInfoHasBeenSet() const { return m_resourceInfoHasBeenSet; }
+  template <typename ResourceInfoT = ResourceInfo>
+  void SetResourceInfo(ResourceInfoT&& value) {
+    m_resourceInfoHasBeenSet = true;
+    m_resourceInfo = std::forward<ResourceInfoT>(value);
+  }
+  template <typename ResourceInfoT = ResourceInfo>
+  ResourceResult& WithResourceInfo(ResourceInfoT&& value) {
+    SetResourceInfo(std::forward<ResourceInfoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resourceGuid;
 
@@ -420,6 +479,12 @@ class ResourceResult {
   Aws::Vector<ResourceTag> m_resourceTags;
 
   Aws::Utils::Document m_resourceConfig;
+
+  ResourceSubCategory m_resourceSubCategory{ResourceSubCategory::NOT_SET};
+
+  DiscoveryType m_discoveryType{DiscoveryType::NOT_SET};
+
+  ResourceInfo m_resourceInfo;
   bool m_resourceGuidHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
@@ -438,6 +503,9 @@ class ResourceResult {
   bool m_findingsSummaryHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
   bool m_resourceConfigHasBeenSet = false;
+  bool m_resourceSubCategoryHasBeenSet = false;
+  bool m_discoveryTypeHasBeenSet = false;
+  bool m_resourceInfoHasBeenSet = false;
 };
 
 }  // namespace Model

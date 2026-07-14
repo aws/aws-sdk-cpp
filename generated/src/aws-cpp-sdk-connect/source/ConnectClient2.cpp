@@ -81,6 +81,7 @@
 #include <aws/connect/model/SearchQuickConnectsRequest.h>
 #include <aws/connect/model/SearchResourceTagsRequest.h>
 #include <aws/connect/model/SearchRoutingProfilesRequest.h>
+#include <aws/connect/model/SearchRulesRequest.h>
 #include <aws/connect/model/SearchSecurityProfilesRequest.h>
 #include <aws/connect/model/SearchTestCasesRequest.h>
 #include <aws/connect/model/SearchUserHierarchyGroupsRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/StartOutboundEmailContactRequest.h>
 #include <aws/connect/model/StartOutboundVoiceContactRequest.h>
 #include <aws/connect/model/StartScreenSharingRequest.h>
-#include <aws/connect/model/StartTaskContactRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -1441,6 +1441,16 @@ SearchRoutingProfilesOutcome ConnectClient::SearchRoutingProfiles(const SearchRo
                             : SearchRoutingProfilesOutcome(std::move(result.GetError()));
 }
 
+SearchRulesOutcome ConnectClient::SearchRules(const SearchRulesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/search-rules");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchRulesOutcome(result.GetResultWithOwnership()) : SearchRulesOutcome(std::move(result.GetError()));
+}
+
 SearchSecurityProfilesOutcome ConnectClient::SearchSecurityProfiles(const SearchSecurityProfilesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1772,15 +1782,4 @@ StartScreenSharingOutcome ConnectClient::StartScreenSharing(const StartScreenSha
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? StartScreenSharingOutcome(result.GetResultWithOwnership())
                             : StartScreenSharingOutcome(std::move(result.GetError()));
-}
-
-StartTaskContactOutcome ConnectClient::StartTaskContact(const StartTaskContactRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/task");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? StartTaskContactOutcome(result.GetResultWithOwnership())
-                            : StartTaskContactOutcome(std::move(result.GetError()));
 }

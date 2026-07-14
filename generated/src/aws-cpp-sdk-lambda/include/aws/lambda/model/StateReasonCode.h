@@ -50,7 +50,8 @@ enum class StateReasonCode {
   FunctionError_TooManyExtensions,
   FunctionError_InitResourceExhausted,
   DisallowedByVpcEncryptionControl,
-  DrainingDurableExecutions
+  DrainingDurableExecutions,
+  DependencyError
 };
 
 namespace StateReasonCodeMapper {

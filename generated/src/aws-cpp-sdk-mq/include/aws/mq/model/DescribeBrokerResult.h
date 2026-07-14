@@ -466,6 +466,21 @@ class DescribeBrokerResult {
 
   ///@{
   /**
+   * <p>The pending storage size in GB, to be applied on the next broker restart.</p>
+   */
+  inline int GetPendingStorageSize() const { return m_pendingStorageSize; }
+  inline void SetPendingStorageSize(int value) {
+    m_pendingStorageSizeHasBeenSet = true;
+    m_pendingStorageSize = value;
+  }
+  inline DescribeBrokerResult& WithPendingStorageSize(int value) {
+    SetPendingStorageSize(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Enables connections from applications outside of the VPC that hosts the
    * broker's subnets.</p>
    */
@@ -500,6 +515,21 @@ class DescribeBrokerResult {
   DescribeBrokerResult& AddSecurityGroups(SecurityGroupsT&& value) {
     m_securityGroupsHasBeenSet = true;
     m_securityGroups.emplace_back(std::forward<SecurityGroupsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The broker's storage size in GB.</p>
+   */
+  inline int GetStorageSize() const { return m_storageSize; }
+  inline void SetStorageSize(int value) {
+    m_storageSizeHasBeenSet = true;
+    m_storageSize = value;
+  }
+  inline DescribeBrokerResult& WithStorageSize(int value) {
+    SetStorageSize(value);
     return *this;
   }
   ///@}
@@ -719,9 +749,13 @@ class DescribeBrokerResult {
 
   Aws::Vector<Aws::String> m_pendingSecurityGroups;
 
+  int m_pendingStorageSize{0};
+
   bool m_publiclyAccessible{false};
 
   Aws::Vector<Aws::String> m_securityGroups;
+
+  int m_storageSize{0};
 
   BrokerStorageType m_storageType{BrokerStorageType::NOT_SET};
 
@@ -764,8 +798,10 @@ class DescribeBrokerResult {
   bool m_pendingHostInstanceTypeHasBeenSet = false;
   bool m_pendingLdapServerMetadataHasBeenSet = false;
   bool m_pendingSecurityGroupsHasBeenSet = false;
+  bool m_pendingStorageSizeHasBeenSet = false;
   bool m_publiclyAccessibleHasBeenSet = false;
   bool m_securityGroupsHasBeenSet = false;
+  bool m_storageSizeHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

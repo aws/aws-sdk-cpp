@@ -66,6 +66,23 @@ class GetManagedEndpointSessionCredentialsResult {
 
   ///@{
   /**
+   * <p>The structure containing the session token being returned.</p>
+   */
+  inline const Credentials& GetEndpointCredentials() const { return m_endpointCredentials; }
+  template <typename EndpointCredentialsT = Credentials>
+  void SetEndpointCredentials(EndpointCredentialsT&& value) {
+    m_endpointCredentialsHasBeenSet = true;
+    m_endpointCredentials = std::forward<EndpointCredentialsT>(value);
+  }
+  template <typename EndpointCredentialsT = Credentials>
+  GetManagedEndpointSessionCredentialsResult& WithEndpointCredentials(EndpointCredentialsT&& value) {
+    SetEndpointCredentials(std::forward<EndpointCredentialsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time when the session token will expire.</p>
    */
   inline const Aws::Utils::DateTime& GetExpiresAt() const { return m_expiresAt; }
@@ -102,12 +119,15 @@ class GetManagedEndpointSessionCredentialsResult {
 
   Credentials m_credentials;
 
+  Credentials m_endpointCredentials;
+
   Aws::Utils::DateTime m_expiresAt{};
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_credentialsHasBeenSet = false;
+  bool m_endpointCredentialsHasBeenSet = false;
   bool m_expiresAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

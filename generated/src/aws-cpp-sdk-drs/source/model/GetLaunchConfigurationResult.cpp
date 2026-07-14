@@ -63,6 +63,10 @@ GetLaunchConfigurationResult& GetLaunchConfigurationResult::operator=(const Aws:
     m_launchIntoInstanceProperties = jsonValue.GetObject("launchIntoInstanceProperties");
     m_launchIntoInstancePropertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("recoveryMode")) {
+    m_recoveryMode = RecoveryModeMapper::GetRecoveryModeForName(jsonValue.GetString("recoveryMode"));
+    m_recoveryModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -34,6 +34,15 @@ Rule& Rule::operator=(JsonView jsonValue) {
     m_triggerEventSource = jsonValue.GetObject("TriggerEventSource");
     m_triggerEventSourceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RuleCapabilityTiers")) {
+    Aws::Utils::Array<JsonView> ruleCapabilityTiersJsonList = jsonValue.GetArray("RuleCapabilityTiers");
+    for (unsigned ruleCapabilityTiersIndex = 0; ruleCapabilityTiersIndex < ruleCapabilityTiersJsonList.GetLength();
+         ++ruleCapabilityTiersIndex) {
+      m_ruleCapabilityTiers.push_back(
+          RuleCapabilityTierMapper::GetRuleCapabilityTierForName(ruleCapabilityTiersJsonList[ruleCapabilityTiersIndex].AsString()));
+    }
+    m_ruleCapabilityTiersHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Function")) {
     m_function = jsonValue.GetString("Function");
     m_functionHasBeenSet = true;
@@ -88,6 +97,16 @@ JsonValue Rule::Jsonize() const {
 
   if (m_triggerEventSourceHasBeenSet) {
     payload.WithObject("TriggerEventSource", m_triggerEventSource.Jsonize());
+  }
+
+  if (m_ruleCapabilityTiersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> ruleCapabilityTiersJsonList(m_ruleCapabilityTiers.size());
+    for (unsigned ruleCapabilityTiersIndex = 0; ruleCapabilityTiersIndex < ruleCapabilityTiersJsonList.GetLength();
+         ++ruleCapabilityTiersIndex) {
+      ruleCapabilityTiersJsonList[ruleCapabilityTiersIndex].AsString(
+          RuleCapabilityTierMapper::GetNameForRuleCapabilityTier(m_ruleCapabilityTiers[ruleCapabilityTiersIndex]));
+    }
+    payload.WithArray("RuleCapabilityTiers", std::move(ruleCapabilityTiersJsonList));
   }
 
   if (m_functionHasBeenSet) {

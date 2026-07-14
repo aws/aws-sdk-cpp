@@ -387,11 +387,12 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Associates a set of hours of operations with another hours of operation.
-   * Refer to Administrator Guide <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
-   * here </a> for more information on inheriting overrides from parent hours of
-   * operation(s).</p><p><h3>See Also:</h3>   <a
+   * <p>Associates a set of hours of operations with another hours of operation. For
+   * more information about inheriting overrides from parent hours of operation, see
+   * <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Hours
+   * of operation overrides</a> in the Administrator Guide.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateHoursOfOperations">AWS
    * API Reference</a></p>
    */
@@ -4738,10 +4739,11 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Disassociates a set of hours of operations with another hours of operation.
-   * Refer to Administrator Guide <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
-   * here </a> for more information on inheriting overrides from parent hours of
-   * operation(s).</p><p><h3>See Also:</h3>   <a
+   * For more information about inheriting overrides from parent hours of operation,
+   * see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Hours
+   * of operation overrides</a> in the Administrator Guide.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateHoursOfOperations">AWS
    * API Reference</a></p>
    */
@@ -6012,8 +6014,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Provides information about the child hours of operations for the specified
    * parent hours of operation.</p> <p>For more information about child hours of
    * operations, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/">Link overrides
-   * from different hours of operation</a> in the <i> Administrator
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Link
+   * overrides from different hours of operation</a> in the <i> Administrator
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListChildHoursOfOperations">AWS
    * API Reference</a></p>
@@ -8596,6 +8598,32 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   void SearchRoutingProfilesAsync(const SearchRoutingProfilesRequestT& request, const SearchRoutingProfilesResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::SearchRoutingProfiles, request, handler, context);
+  }
+
+  /**
+   * <p>Searches rules in an Connect Customer instance, with optional
+   * filtering.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchRulesOutcome SearchRules(const Model::SearchRulesRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchRules that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SearchRulesRequestT = Model::SearchRulesRequest>
+  Model::SearchRulesOutcomeCallable SearchRulesCallable(const SearchRulesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::SearchRules, request);
+  }
+
+  /**
+   * An Async wrapper for SearchRules that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SearchRulesRequestT = Model::SearchRulesRequest>
+  void SearchRulesAsync(const SearchRulesRequestT& request, const SearchRulesResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::SearchRules, request, handler, context);
   }
 
   /**

@@ -49,9 +49,30 @@ class S3MonitoringConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon resource name (ARN) of the encryption key for logs.</p>
+   */
+  inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
+  inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
+  template <typename EncryptionKeyArnT = Aws::String>
+  void SetEncryptionKeyArn(EncryptionKeyArnT&& value) {
+    m_encryptionKeyArnHasBeenSet = true;
+    m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value);
+  }
+  template <typename EncryptionKeyArnT = Aws::String>
+  S3MonitoringConfiguration& WithEncryptionKeyArn(EncryptionKeyArnT&& value) {
+    SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_logUri;
+
+  Aws::String m_encryptionKeyArn;
   bool m_logUriHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

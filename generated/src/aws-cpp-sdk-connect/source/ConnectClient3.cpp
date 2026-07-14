@@ -6,6 +6,7 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/StartTaskContactRequest.h>
 #include <aws/connect/model/StartTestCaseExecutionRequest.h>
 #include <aws/connect/model/StartWebRTCContactRequest.h>
 #include <aws/connect/model/StopContactMediaProcessingRequest.h>
@@ -109,6 +110,17 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+StartTaskContactOutcome ConnectClient::StartTaskContact(const StartTaskContactRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/task");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartTaskContactOutcome(result.GetResultWithOwnership())
+                            : StartTaskContactOutcome(std::move(result.GetError()));
+}
 
 StartTestCaseExecutionOutcome ConnectClient::StartTestCaseExecution(const StartTestCaseExecutionRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {

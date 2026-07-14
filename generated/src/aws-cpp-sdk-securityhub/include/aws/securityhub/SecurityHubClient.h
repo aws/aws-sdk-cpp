@@ -744,11 +744,10 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a cloud service provider management (CSPM) connector in Security Hub
-   * CSPM. A connector establishes a connection between Security Hub CSPM and a
-   * third-party cloud provider, enabling Security Hub CSPM to ingest security
-   * findings and resource data from the connected environment.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Creates a connector to a third-party cloud provider in Security Hub CSPM. A
+   * connector establishes a connection between Security Hub CSPM and a third-party
+   * cloud provider, enabling Security Hub CSPM to ingest security findings and
+   * resource data from the connected environment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConnector">AWS
    * API Reference</a></p>
    */
@@ -2498,7 +2497,13 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * <code>Scopes</code> supports <code>AwsOrganizations</code>, which lets you
    * aggregate resources from your entire organization or from specific
    * organizational units. Only the delegated administrator account can use
-   * <code>Scopes</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>Scopes</code>.</p> <p>If you set <code>GroupByField</code> to
+   * <code>ResourceSubCategory</code>,
+   * <code>ResourceInfo.AIDetails.HostResourceType</code>, or
+   * <code>ResourceInfo.AIDetails.CanonicalId</code>, you must include a
+   * <code>ResourceCategory</code> string filter with comparison set to
+   * <code>EQUALS</code> and value <code>AI/ML</code> in the corresponding
+   * <code>ResourceGroupByRule</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesStatisticsV2">AWS
    * API Reference</a></p>
    */
@@ -2562,7 +2567,18 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * resource attributes. You can use <code>Scopes</code> and <code>Filters</code>
    * independently or together. When both are provided, <code>Scopes</code> narrows
    * the data set first, and then <code>Filters</code> refines results within that
-   * scoped data set.</p><p><h3>See Also:</h3>   <a
+   * scoped data set.</p> <p>For AI/ML resources, the response includes the
+   * <code>ResourceSubCategory</code> field. For self-hosted AI resources and their
+   * host resources, the response also includes <code>ResourceInfo</code> with
+   * AI-specific details. Self-hosted AI resources use a <code>ResourceType</code>
+   * with the <code>SelfHosted::AI::</code> prefix, such as
+   * <code>SelfHosted::AI::Model</code>, <code>SelfHosted::AI::Agent</code>,
+   * <code>SelfHosted::AI::InferenceEndpoint</code>, and
+   * <code>SelfHosted::AI::ExternalEndpoint</code>.</p> <p>If you filter by
+   * <code>ResourceSubCategory</code>, you must also include a
+   * <code>ResourceCategory</code> string filter with comparison set to
+   * <code>EQUALS</code> and value <code>AI/ML</code> in the same
+   * request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesV2">AWS
    * API Reference</a></p>
    */

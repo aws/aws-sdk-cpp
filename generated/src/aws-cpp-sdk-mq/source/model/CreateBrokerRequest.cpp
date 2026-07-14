@@ -79,6 +79,10 @@ Aws::String CreateBrokerRequest::SerializePayload() const {
     payload.WithArray("securityGroups", std::move(securityGroupsJsonList));
   }
 
+  if (m_storageSizeHasBeenSet) {
+    payload.WithInteger("storageSize", m_storageSize);
+  }
+
   if (m_storageTypeHasBeenSet) {
     payload.WithString("storageType", BrokerStorageTypeMapper::GetNameForBrokerStorageType(m_storageType));
   }

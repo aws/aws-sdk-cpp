@@ -254,6 +254,7 @@
 #include <aws/connect/model/SearchQuickConnectsResult.h>
 #include <aws/connect/model/SearchResourceTagsResult.h>
 #include <aws/connect/model/SearchRoutingProfilesResult.h>
+#include <aws/connect/model/SearchRulesResult.h>
 #include <aws/connect/model/SearchSecurityProfilesResult.h>
 #include <aws/connect/model/SearchTestCasesResult.h>
 #include <aws/connect/model/SearchUserHierarchyGroupsResult.h>
@@ -634,6 +635,7 @@ class SearchQueuesRequest;
 class SearchQuickConnectsRequest;
 class SearchResourceTagsRequest;
 class SearchRoutingProfilesRequest;
+class SearchRulesRequest;
 class SearchSecurityProfilesRequest;
 class SearchTestCasesRequest;
 class SearchUserHierarchyGroupsRequest;
@@ -1015,6 +1017,7 @@ typedef Aws::Utils::Outcome<SearchQueuesResult, ConnectError> SearchQueuesOutcom
 typedef Aws::Utils::Outcome<SearchQuickConnectsResult, ConnectError> SearchQuickConnectsOutcome;
 typedef Aws::Utils::Outcome<SearchResourceTagsResult, ConnectError> SearchResourceTagsOutcome;
 typedef Aws::Utils::Outcome<SearchRoutingProfilesResult, ConnectError> SearchRoutingProfilesOutcome;
+typedef Aws::Utils::Outcome<SearchRulesResult, ConnectError> SearchRulesOutcome;
 typedef Aws::Utils::Outcome<SearchSecurityProfilesResult, ConnectError> SearchSecurityProfilesOutcome;
 typedef Aws::Utils::Outcome<SearchTestCasesResult, ConnectError> SearchTestCasesOutcome;
 typedef Aws::Utils::Outcome<SearchUserHierarchyGroupsResult, ConnectError> SearchUserHierarchyGroupsOutcome;
@@ -1396,6 +1399,7 @@ typedef std::future<SearchQueuesOutcome> SearchQueuesOutcomeCallable;
 typedef std::future<SearchQuickConnectsOutcome> SearchQuickConnectsOutcomeCallable;
 typedef std::future<SearchResourceTagsOutcome> SearchResourceTagsOutcomeCallable;
 typedef std::future<SearchRoutingProfilesOutcome> SearchRoutingProfilesOutcomeCallable;
+typedef std::future<SearchRulesOutcome> SearchRulesOutcomeCallable;
 typedef std::future<SearchSecurityProfilesOutcome> SearchSecurityProfilesOutcomeCallable;
 typedef std::future<SearchTestCasesOutcome> SearchTestCasesOutcomeCallable;
 typedef std::future<SearchUserHierarchyGroupsOutcome> SearchUserHierarchyGroupsOutcomeCallable;
@@ -2385,6 +2389,9 @@ typedef std::function<void(const ConnectClient*, const Model::SearchResourceTags
 typedef std::function<void(const ConnectClient*, const Model::SearchRoutingProfilesRequest&, const Model::SearchRoutingProfilesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchRoutingProfilesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::SearchRulesRequest&, const Model::SearchRulesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchRulesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::SearchSecurityProfilesRequest&, const Model::SearchSecurityProfilesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchSecurityProfilesResponseReceivedHandler;

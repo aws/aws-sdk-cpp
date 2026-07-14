@@ -47,5 +47,9 @@ Aws::String CreateManagedEndpointRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_sessionIdleTimeoutInMinutesHasBeenSet) {
+    payload.WithInteger("sessionIdleTimeoutInMinutes", m_sessionIdleTimeoutInMinutes);
+  }
+
   return payload.View().WriteReadable();
 }

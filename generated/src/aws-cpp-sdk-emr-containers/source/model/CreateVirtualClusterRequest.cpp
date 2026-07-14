@@ -39,5 +39,9 @@ Aws::String CreateVirtualClusterRequest::SerializePayload() const {
     payload.WithString("securityConfigurationId", m_securityConfigurationId);
   }
 
+  if (m_sessionEnabledHasBeenSet) {
+    payload.WithBool("sessionEnabled", m_sessionEnabled);
+  }
+
   return payload.View().WriteReadable();
 }

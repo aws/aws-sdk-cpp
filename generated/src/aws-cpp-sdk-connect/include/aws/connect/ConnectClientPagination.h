@@ -83,6 +83,7 @@
 #include <aws/connect/model/SearchQuickConnectsPaginationTraits.h>
 #include <aws/connect/model/SearchResourceTagsPaginationTraits.h>
 #include <aws/connect/model/SearchRoutingProfilesPaginationTraits.h>
+#include <aws/connect/model/SearchRulesPaginationTraits.h>
 #include <aws/connect/model/SearchSecurityProfilesPaginationTraits.h>
 #include <aws/connect/model/SearchTestCasesPaginationTraits.h>
 #include <aws/connect/model/SearchUserHierarchyGroupsPaginationTraits.h>
@@ -286,6 +287,8 @@ using SearchResourceTagsPaginator = Aws::Utils::Pagination::Paginator<ConnectCli
                                                                       Pagination::SearchResourceTagsPaginationTraits<ConnectClient>>;
 using SearchRoutingProfilesPaginator = Aws::Utils::Pagination::Paginator<ConnectClient, Model::SearchRoutingProfilesRequest,
                                                                          Pagination::SearchRoutingProfilesPaginationTraits<ConnectClient>>;
+using SearchRulesPaginator =
+    Aws::Utils::Pagination::Paginator<ConnectClient, Model::SearchRulesRequest, Pagination::SearchRulesPaginationTraits<ConnectClient>>;
 using SearchSecurityProfilesPaginator =
     Aws::Utils::Pagination::Paginator<ConnectClient, Model::SearchSecurityProfilesRequest,
                                       Pagination::SearchSecurityProfilesPaginationTraits<ConnectClient>>;

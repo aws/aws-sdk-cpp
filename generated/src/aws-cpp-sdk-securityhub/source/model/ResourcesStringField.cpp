@@ -30,6 +30,11 @@ static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
 static const int ResourceName_HASH = HashingUtils::HashString("ResourceName");
 static const int FindingsSummary_FindingType_HASH = HashingUtils::HashString("FindingsSummary.FindingType");
 static const int FindingsSummary_ProductName_HASH = HashingUtils::HashString("FindingsSummary.ProductName");
+static const int ResourceSubCategory_HASH = HashingUtils::HashString("ResourceSubCategory");
+static const int DiscoveryType_HASH = HashingUtils::HashString("DiscoveryType");
+static const int ResourceInfo_AIDetails_HostResourceGuid_HASH = HashingUtils::HashString("ResourceInfo.AIDetails.HostResourceGuid");
+static const int ResourceInfo_AIDetails_HostResourceType_HASH = HashingUtils::HashString("ResourceInfo.AIDetails.HostResourceType");
+static const int ResourceInfo_AIDetails_CanonicalId_HASH = HashingUtils::HashString("ResourceInfo.AIDetails.CanonicalId");
 
 ResourcesStringField GetResourcesStringFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -63,6 +68,16 @@ ResourcesStringField GetResourcesStringFieldForName(const Aws::String& name) {
     return ResourcesStringField::FindingsSummary_FindingType;
   } else if (hashCode == FindingsSummary_ProductName_HASH) {
     return ResourcesStringField::FindingsSummary_ProductName;
+  } else if (hashCode == ResourceSubCategory_HASH) {
+    return ResourcesStringField::ResourceSubCategory;
+  } else if (hashCode == DiscoveryType_HASH) {
+    return ResourcesStringField::DiscoveryType;
+  } else if (hashCode == ResourceInfo_AIDetails_HostResourceGuid_HASH) {
+    return ResourcesStringField::ResourceInfo_AIDetails_HostResourceGuid;
+  } else if (hashCode == ResourceInfo_AIDetails_HostResourceType_HASH) {
+    return ResourcesStringField::ResourceInfo_AIDetails_HostResourceType;
+  } else if (hashCode == ResourceInfo_AIDetails_CanonicalId_HASH) {
+    return ResourcesStringField::ResourceInfo_AIDetails_CanonicalId;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -107,6 +122,16 @@ Aws::String GetNameForResourcesStringField(ResourcesStringField enumValue) {
       return "FindingsSummary.FindingType";
     case ResourcesStringField::FindingsSummary_ProductName:
       return "FindingsSummary.ProductName";
+    case ResourcesStringField::ResourceSubCategory:
+      return "ResourceSubCategory";
+    case ResourcesStringField::DiscoveryType:
+      return "DiscoveryType";
+    case ResourcesStringField::ResourceInfo_AIDetails_HostResourceGuid:
+      return "ResourceInfo.AIDetails.HostResourceGuid";
+    case ResourcesStringField::ResourceInfo_AIDetails_HostResourceType:
+      return "ResourceInfo.AIDetails.HostResourceType";
+    case ResourcesStringField::ResourceInfo_AIDetails_CanonicalId:
+      return "ResourceInfo.AIDetails.CanonicalId";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

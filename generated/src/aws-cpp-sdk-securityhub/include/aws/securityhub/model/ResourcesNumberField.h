@@ -20,7 +20,15 @@ enum class ResourcesNumberField {
   FindingsSummary_Severities_Medium,
   FindingsSummary_Severities_Low,
   FindingsSummary_Severities_Informational,
-  FindingsSummary_Severities_Unknown
+  FindingsSummary_Severities_Unknown,
+  ResourceInfo_AIDetails_SelfHostedAIModelResourceCount,
+  ResourceInfo_AIDetails_SelfHostedAIAgentResourceCount,
+  ResourceInfo_AIDetails_SelfHostedAIModelServingResourceCount,
+  ResourceInfo_AIDetails_SelfHostedAIExternalEndpointResourceCount,
+  ResourceInfo_AIDetails_SelfHostedAIDevelopmentResourceCount,
+  ResourceInfo_AIDetails_SelfHostedAIAgentFrameworkResourceCount,
+  ResourceInfo_AIDetails_SelfHostedAIAgentToolsAndIdentityResourceCount,
+  ResourceInfo_AIDetails_SelfHostedTotalAIResourceCount
 };
 
 namespace ResourcesNumberFieldMapper {

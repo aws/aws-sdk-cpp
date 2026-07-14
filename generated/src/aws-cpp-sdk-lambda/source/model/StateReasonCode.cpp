@@ -54,6 +54,7 @@ static const int FunctionError_TooManyExtensions_HASH = HashingUtils::HashString
 static const int FunctionError_InitResourceExhausted_HASH = HashingUtils::HashString("FunctionError.InitResourceExhausted");
 static const int DisallowedByVpcEncryptionControl_HASH = HashingUtils::HashString("DisallowedByVpcEncryptionControl");
 static const int DrainingDurableExecutions_HASH = HashingUtils::HashString("DrainingDurableExecutions");
+static const int DependencyError_HASH = HashingUtils::HashString("DependencyError");
 
 StateReasonCode GetStateReasonCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -135,6 +136,8 @@ StateReasonCode GetStateReasonCodeForName(const Aws::String& name) {
     return StateReasonCode::DisallowedByVpcEncryptionControl;
   } else if (hashCode == DrainingDurableExecutions_HASH) {
     return StateReasonCode::DrainingDurableExecutions;
+  } else if (hashCode == DependencyError_HASH) {
+    return StateReasonCode::DependencyError;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -227,6 +230,8 @@ Aws::String GetNameForStateReasonCode(StateReasonCode enumValue) {
       return "DisallowedByVpcEncryptionControl";
     case StateReasonCode::DrainingDurableExecutions:
       return "DrainingDurableExecutions";
+    case StateReasonCode::DependencyError:
+      return "DependencyError";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

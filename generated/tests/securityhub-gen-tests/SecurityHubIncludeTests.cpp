@@ -14,6 +14,7 @@
 #include <aws/securityhub/SecurityHubRequest.h>
 #include <aws/securityhub/SecurityHubServiceClientModel.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/AIDetails.h>
 #include <aws/securityhub/model/AcceptAdministratorInvitationRequest.h>
 #include <aws/securityhub/model/AcceptAdministratorInvitationResult.h>
 #include <aws/securityhub/model/AccessDeniedException.h>
@@ -705,6 +706,7 @@
 #include <aws/securityhub/model/DisassociateFromAdministratorAccountResult.h>
 #include <aws/securityhub/model/DisassociateMembersRequest.h>
 #include <aws/securityhub/model/DisassociateMembersResult.h>
+#include <aws/securityhub/model/DiscoveryType.h>
 #include <aws/securityhub/model/DnsRequestAction.h>
 #include <aws/securityhub/model/DoubleConfigurationOptions.h>
 #include <aws/securityhub/model/EnableImportFindingsForProductRequest.h>
@@ -935,6 +937,7 @@
 #include <aws/securityhub/model/ResourceGroupByField.h>
 #include <aws/securityhub/model/ResourceGroupByRule.h>
 #include <aws/securityhub/model/ResourceInUseException.h>
+#include <aws/securityhub/model/ResourceInfo.h>
 #include <aws/securityhub/model/ResourceNotFoundException.h>
 #include <aws/securityhub/model/ResourceOwner.h>
 #include <aws/securityhub/model/ResourceOwnerAccount.h>
@@ -942,6 +945,7 @@
 #include <aws/securityhub/model/ResourceResult.h>
 #include <aws/securityhub/model/ResourceScopes.h>
 #include <aws/securityhub/model/ResourceSeverityBreakdown.h>
+#include <aws/securityhub/model/ResourceSubCategory.h>
 #include <aws/securityhub/model/ResourceTag.h>
 #include <aws/securityhub/model/ResourcesCompositeFilter.h>
 #include <aws/securityhub/model/ResourcesCount.h>

@@ -36,8 +36,8 @@ class AzureDetail {
 
   ///@{
   /**
-   * <p>The ARN of the AWS Config connector used to establish the connection to
-   * Azure.</p>
+   * <p>The ARN of the multi-cloud configuration connector used to establish the
+   * connection to Azure.</p>
    */
   inline const Aws::String& GetAWSConfigConnectorArn() const { return m_aWSConfigConnectorArn; }
   inline bool AWSConfigConnectorArnHasBeenSet() const { return m_aWSConfigConnectorArnHasBeenSet; }

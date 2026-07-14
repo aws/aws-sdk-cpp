@@ -53,5 +53,9 @@ Aws::String UpdateLaunchConfigurationTemplateRequest::SerializePayload() const {
     payload.WithBool("launchIntoSourceInstance", m_launchIntoSourceInstance);
   }
 
+  if (m_recoveryModeHasBeenSet) {
+    payload.WithString("recoveryMode", RecoveryModeMapper::GetNameForRecoveryMode(m_recoveryMode));
+  }
+
   return payload.View().WriteReadable();
 }

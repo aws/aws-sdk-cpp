@@ -23,7 +23,11 @@ enum class ResourceGroupByField {
   ResourceCategory,
   ResourceType,
   ResourceName,
-  FindingsSummary_FindingType
+  FindingsSummary_FindingType,
+  ResourceSubCategory,
+  DiscoveryType,
+  ResourceInfo_AIDetails_HostResourceType,
+  ResourceInfo_AIDetails_CanonicalId
 };
 
 namespace ResourceGroupByFieldMapper {

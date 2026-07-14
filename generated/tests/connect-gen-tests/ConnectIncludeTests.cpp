@@ -1071,10 +1071,16 @@
 #include <aws/connect/model/RoutingProfileSummary.h>
 #include <aws/connect/model/Rule.h>
 #include <aws/connect/model/RuleAction.h>
+#include <aws/connect/model/RuleAttributeAndCondition.h>
+#include <aws/connect/model/RuleAttributeFilter.h>
+#include <aws/connect/model/RuleCapabilityTier.h>
 #include <aws/connect/model/RulePublishStatus.h>
+#include <aws/connect/model/RuleSearchSummary.h>
 #include <aws/connect/model/RuleSummary.h>
 #include <aws/connect/model/RuleTriggerEventSource.h>
 #include <aws/connect/model/RulesConfiguration.h>
+#include <aws/connect/model/RulesSearchCriteria.h>
+#include <aws/connect/model/RulesSearchFilter.h>
 #include <aws/connect/model/S3Config.h>
 #include <aws/connect/model/ScreenShareCapability.h>
 #include <aws/connect/model/SearchAgentStatusesRequest.h>
@@ -1121,6 +1127,8 @@
 #include <aws/connect/model/SearchResourceTagsResult.h>
 #include <aws/connect/model/SearchRoutingProfilesRequest.h>
 #include <aws/connect/model/SearchRoutingProfilesResult.h>
+#include <aws/connect/model/SearchRulesRequest.h>
+#include <aws/connect/model/SearchRulesResult.h>
 #include <aws/connect/model/SearchSecurityProfilesRequest.h>
 #include <aws/connect/model/SearchSecurityProfilesResult.h>
 #include <aws/connect/model/SearchTestCasesRequest.h>

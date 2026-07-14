@@ -96,6 +96,18 @@ ResourceResult& ResourceResult::operator=(JsonView jsonValue) {
     m_resourceConfig = jsonValue.GetObject("ResourceConfig");
     m_resourceConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ResourceSubCategory")) {
+    m_resourceSubCategory = ResourceSubCategoryMapper::GetResourceSubCategoryForName(jsonValue.GetString("ResourceSubCategory"));
+    m_resourceSubCategoryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DiscoveryType")) {
+    m_discoveryType = DiscoveryTypeMapper::GetDiscoveryTypeForName(jsonValue.GetString("DiscoveryType"));
+    m_discoveryTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ResourceInfo")) {
+    m_resourceInfo = jsonValue.GetObject("ResourceInfo");
+    m_resourceInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -182,6 +194,18 @@ JsonValue ResourceResult::Jsonize() const {
     if (!m_resourceConfig.View().IsNull()) {
       payload.WithObject("ResourceConfig", JsonValue(m_resourceConfig.View()));
     }
+  }
+
+  if (m_resourceSubCategoryHasBeenSet) {
+    payload.WithString("ResourceSubCategory", ResourceSubCategoryMapper::GetNameForResourceSubCategory(m_resourceSubCategory));
+  }
+
+  if (m_discoveryTypeHasBeenSet) {
+    payload.WithString("DiscoveryType", DiscoveryTypeMapper::GetNameForDiscoveryType(m_discoveryType));
+  }
+
+  if (m_resourceInfoHasBeenSet) {
+    payload.WithObject("ResourceInfo", m_resourceInfo.Jsonize());
   }
 
   return payload;
