@@ -30,10 +30,8 @@ S3TransferManagerImpl::S3TransferManagerImpl(const S3TransferManagerConfiguratio
   Aws::Crt::S3::S3ClientConfig clientConfig(m_credentialsProvider);
   clientConfig.SetRegion(Aws::Crt::String(m_region.c_str()))
       .SetPartSize(config.partSize)
-      .SetMultipartUploadThreshold(config.multipartUploadThreshold);
-  if (config.throughputTargetGbps > 0.0) {
-    clientConfig.SetThroughputTargetGbps(config.throughputTargetGbps);
-  }
+      .SetMultipartUploadThreshold(config.multipartUploadThreshold)
+      .SetThroughputTargetGbps(config.throughputTargetGbps);
   if (config.tlsConnectionOptions) {
     clientConfig.SetTlsConnectionOptions(*config.tlsConnectionOptions);
   }

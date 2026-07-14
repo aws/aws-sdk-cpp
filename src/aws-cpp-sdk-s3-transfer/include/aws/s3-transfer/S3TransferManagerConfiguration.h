@@ -15,8 +15,8 @@ namespace Aws {
 namespace S3 {
 namespace Transfer {
 
-constexpr uint64_t SEP_DEFAULT_PART_SIZE_BYTES = 8ULL * 1024 * 1024;
-constexpr uint64_t SEP_DEFAULT_MULTIPART_UPLOAD_THRESHOLD_BYTES = 16ULL * 1024 * 1024;
+constexpr uint64_t DEFAULT_PART_SIZE_BYTES = 8ULL * 1024 * 1024;
+constexpr uint64_t DEFAULT_MULTIPART_UPLOAD_THRESHOLD_BYTES = 16ULL * 1024 * 1024;
 
 struct AWS_S3_TRANSFER_API S3TransferManagerConfiguration final : public Aws::Client::GenericClientConfiguration {
   using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
@@ -26,9 +26,9 @@ struct AWS_S3_TRANSFER_API S3TransferManagerConfiguration final : public Aws::Cl
   explicit S3TransferManagerConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
   S3TransferManagerConfiguration(const Aws::Client::ClientConfiguration& config);
 
-  uint64_t partSize = SEP_DEFAULT_PART_SIZE_BYTES;
+  uint64_t partSize = DEFAULT_PART_SIZE_BYTES;
   // Object size at or above which a multipart transfer is used. Must be >= partSize.
-  uint64_t multipartUploadThreshold = SEP_DEFAULT_MULTIPART_UPLOAD_THRESHOLD_BYTES;
+  uint64_t multipartUploadThreshold = DEFAULT_MULTIPART_UPLOAD_THRESHOLD_BYTES;
   // 0 means inherit the CRT's own default.
   double throughputTargetGbps = 0.0;
   Aws::Crt::Optional<Aws::Crt::Io::TlsConnectionOptions> tlsConnectionOptions;

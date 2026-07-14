@@ -238,7 +238,7 @@ bool TryMeasureSeekableStream(Aws::IOStream& stream, uint64_t& outLength) {
 void RunAsyncWriteDriver(std::shared_ptr<UploadTransferState> state,
                         std::shared_ptr<Aws::Crt::S3::S3MetaRequest> metaRequest,
                         std::shared_ptr<Aws::IOStream> body) {
-  Aws::Utils::Array<uint8_t> buffer(static_cast<size_t>(SEP_DEFAULT_PART_SIZE_BYTES));
+  Aws::Utils::Array<uint8_t> buffer(static_cast<size_t>(DEFAULT_PART_SIZE_BYTES));
   bool eof = false;
   while (!eof) {
     if (state->canceled.load()) {
