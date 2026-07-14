@@ -6,36 +6,39 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.ShapeUtil;
 import org.junit.jupiter.api.Test;
+
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShapeUtilExtensionsTest {
 
     @Test
     void hardcodedCollisionResolution_s3CopyObjectResult() {
-        assertEquals("CopyObjectResultDetails",
+        assertEquals(Optional.of("CopyObjectResultDetails"),
             ShapeUtil.getHardcodedResolution("s3", "CopyObjectResult"));
     }
 
     @Test
     void hardcodedCollisionResolution_accessAnalyzer() {
-        assertEquals("GeneratedPolicyResults",
+        assertEquals(Optional.of("GeneratedPolicyResults"),
             ShapeUtil.getHardcodedResolution("accessanalyzer", "GeneratedPolicyResult"));
     }
 
     @Test
     void hardcodedCollisionResolution_cloudSearchDomain() {
-        assertEquals("SearchResultDetails",
+        assertEquals(Optional.of("SearchResultDetails"),
             ShapeUtil.getHardcodedResolution("cloudsearchdomain", "SearchResult"));
     }
 
     @Test
-    void hardcodedCollisionResolution_noMatch_returnsNull() {
-        assertNull(ShapeUtil.getHardcodedResolution("kinesis", "SomeShape"));
+    void hardcodedCollisionResolution_noMatch_returnsEmpty() {
+        assertTrue(ShapeUtil.getHardcodedResolution("kinesis", "SomeShape").isEmpty());
     }
 
     @Test
     void hardcodedCollisionResolution_medialive_noEntry() {
-        assertNull(ShapeUtil.getHardcodedResolution("medialive", "BatchUpdateScheduleResult"));
+        assertTrue(ShapeUtil.getHardcodedResolution("medialive", "BatchUpdateScheduleResult").isEmpty());
     }
 
     @Test

@@ -12,8 +12,8 @@ import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StructureShape;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -78,34 +78,34 @@ public final class CppTypeMapper {
         if (shape.isDocumentShape()) {
             return "Aws::Utils::Document";
         }
-        // Fallback for unrecognized shapes
-        return "Aws::String";
+        throw new UnsupportedOperationException(
+            "Unsupported shape type " + shape.getType() + " for shape " + shape.getId());
     }
 
     /**
-     * Returns the C++ default initializer for a primitive shape, or null if no
-     * explicit default is needed (i.e., the type is default-constructed).
+     * Returns the C++ default initializer for a shape that needs one, or empty
+     * if the type is default-constructed (strings, vectors, maps, etc.).
      *
      * @param shape the shape to get a default value for
-     * @return the initializer string (e.g., {@code "0"}, {@code "false"}) or null
+     * @return the initializer string (e.g., {@code "0"}, {@code "false"}) or empty
      */
-    public static String getDefaultValue(Shape shape) {
+    public static Optional<String> getDefaultValue(Shape shape) {
         if (shape.isEnumShape()) {
-            return shape.getId().getName() + "::NOT_SET";
+            return Optional.of(shape.getId().getName() + "::NOT_SET");
         }
         if (shape.isIntegerShape() || shape.isLongShape()) {
-            return "0";
+            return Optional.of("0");
         }
         if (shape.isBooleanShape()) {
-            return "false";
+            return Optional.of("false");
         }
         if (shape.isDoubleShape() || shape.isFloatShape()) {
-            return "0.0";
+            return Optional.of("0.0");
         }
         if (shape.isTimestampShape() || shape.isBlobShape()) {
-            return "";  // produces Type m_field{};  (value-initialization)
+            return Optional.of("");  // produces Type m_field{};  (value-initialization)
         }
-        return null;
+        return Optional.empty();
     }
 
     /**
@@ -128,39 +128,41 @@ public final class CppTypeMapper {
      *
      * <p>Structure and enum shapes from the same service produce relative model includes.
      * Core types (string, blob, timestamp, etc.) produce aws/core/ includes.
+     * Primitives (int, bool, double) need no include and return empty.
      *
      * @param shape       the member's target shape
      * @param model       the model
      * @param projectName the service project name (e.g., "dynamodb") for model-relative includes
-     * @return the include path string (e.g., {@code "<aws/core/utils/memory/stl/AWSString.h>"}) or null
+     * @return the include path string, or empty for primitives that need no include
      */
-    public static String getIncludeForMemberType(Shape shape, Model model, String projectName) {
+    public static Optional<String> getIncludeForMemberType(Shape shape, Model model, String projectName) {
         // Check enum BEFORE string — EnumShape extends StringShape in Smithy
         if (shape.isEnumShape()) {
-            return "<aws/" + projectName + "/model/" + shape.getId().getName() + ".h>";
+            return Optional.of("<aws/" + projectName + "/model/" + shape.getId().getName() + ".h>");
         }
         if (shape.isStringShape()) {
-            return "<aws/core/utils/memory/stl/AWSString.h>";
+            return Optional.of("<aws/core/utils/memory/stl/AWSString.h>");
         }
         if (shape.isBlobShape()) {
-            return "<aws/core/utils/Array.h>";
+            return Optional.of("<aws/core/utils/Array.h>");
         }
         if (shape.isTimestampShape()) {
-            return "<aws/core/utils/DateTime.h>";
+            return Optional.of("<aws/core/utils/DateTime.h>");
         }
         if (shape.isListShape()) {
-            return "<aws/core/utils/memory/stl/AWSVector.h>";
+            return Optional.of("<aws/core/utils/memory/stl/AWSVector.h>");
         }
         if (shape.isMapShape()) {
-            return "<aws/core/utils/memory/stl/AWSMap.h>";
+            return Optional.of("<aws/core/utils/memory/stl/AWSMap.h>");
         }
         if (shape.isStructureShape() || shape.isUnionShape()) {
-            return "<aws/" + projectName + "/model/" + shape.getId().getName() + ".h>";
+            return Optional.of("<aws/" + projectName + "/model/" + shape.getId().getName() + ".h>");
         }
         if (shape.isDocumentShape()) {
-            return "<aws/core/utils/Document.h>";
+            return Optional.of("<aws/core/utils/Document.h>");
         }
-        return null;
+        // Primitives (int, bool, double, etc.) need no include
+        return Optional.empty();
     }
 
     /**
@@ -176,31 +178,19 @@ public final class CppTypeMapper {
         Set<String> includes = new TreeSet<>();
         for (MemberShape member : structureShape.getAllMembers().values()) {
             Shape target = model.expectShape(member.getTarget());
-            String include = getIncludeForMemberType(target, model, projectName);
-            if (include != null) {
-                includes.add(include);
-            }
+            getIncludeForMemberType(target, model, projectName).ifPresent(includes::add);
             // For list/map, also include the element/key/value types
             if (target.isListShape()) {
                 ListShape list = target.asListShape().get();
                 Shape elem = model.expectShape(list.getMember().getTarget());
-                String elemInclude = getIncludeForMemberType(elem, model, projectName);
-                if (elemInclude != null) {
-                    includes.add(elemInclude);
-                }
+                getIncludeForMemberType(elem, model, projectName).ifPresent(includes::add);
             }
             if (target.isMapShape()) {
                 MapShape map = target.asMapShape().get();
                 Shape key = model.expectShape(map.getKey().getTarget());
                 Shape value = model.expectShape(map.getValue().getTarget());
-                String keyInclude = getIncludeForMemberType(key, model, projectName);
-                if (keyInclude != null) {
-                    includes.add(keyInclude);
-                }
-                String valueInclude = getIncludeForMemberType(value, model, projectName);
-                if (valueInclude != null) {
-                    includes.add(valueInclude);
-                }
+                getIncludeForMemberType(key, model, projectName).ifPresent(includes::add);
+                getIncludeForMemberType(value, model, projectName).ifPresent(includes::add);
             }
         }
         return new ArrayList<>(includes);

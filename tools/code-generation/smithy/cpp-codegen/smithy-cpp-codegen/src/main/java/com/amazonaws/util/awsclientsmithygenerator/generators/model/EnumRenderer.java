@@ -227,10 +227,10 @@ public final class EnumRenderer {
         "throw", "true", "try", "typeid", "typename", "typeof", "union",
         "unsigned", "using", "virtual", "void", "volatile", "wchar_t", "while",
         "xor", "xor_eq",
-        // Platform macros
+        // Platform macros and min/max (defined as macros on Windows)
         "ANDROID", "BOOL", "CHAR", "DEBUG", "DELETE", "Double", "ERROR",
-        "GET", "NEW", "NULL", "PRIVATE", "PUBLIC", "STATIC", "T_CHAR",
-        "DOMAIN", "OVERFLOW"
+        "GET", "LINUX", "max", "min", "NEW", "NULL", "PRIVATE", "PUBLIC",
+        "STATIC", "T_CHAR", "DOMAIN", "OVERFLOW", "WINDOWS"
     );
 
     /**

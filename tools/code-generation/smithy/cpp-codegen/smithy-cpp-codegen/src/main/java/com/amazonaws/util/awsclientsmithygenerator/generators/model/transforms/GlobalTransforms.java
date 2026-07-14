@@ -17,6 +17,7 @@ import software.amazon.smithy.model.shapes.ShapeId;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -44,7 +45,7 @@ public final class GlobalTransforms {
     private GlobalTransforms() {}
 
     /**
-     * Returns the renamed C++ member name if this member is reserved, or null if no rename needed.
+     * Returns the renamed C++ member name if this member is reserved.
      * Only applies to request shape members (caller must filter).
      *
      * Reserved members and their renames:
@@ -54,22 +55,21 @@ public final class GlobalTransforms {
      *
      * @param memberName the original member name from the model
      * @param smithyServiceName the service name (lowercase hyphenated, e.g., "bedrock-runtime")
-     * @return renamed member name, or null if no rename is needed
+     * @return the renamed member name, or empty if no rename is needed
      */
-    public static String getReservedMemberRename(String memberName, String smithyServiceName) {
+    public static Optional<String> getReservedMemberRename(String memberName, String smithyServiceName) {
         if ("body".equals(memberName)) {
-            if (BODY_RENAME_SKIP_SERVICES.contains(smithyServiceName)) return null;
-            return "requestBody";
+            if (BODY_RENAME_SKIP_SERVICES.contains(smithyServiceName)) return Optional.empty();
+            return Optional.of("requestBody");
         }
         if ("headers".equals(memberName)) {
-            if (HEADERS_RENAME_SKIP_SERVICES.contains(smithyServiceName)) return null;
-            return "headerValues";
+            if (HEADERS_RENAME_SKIP_SERVICES.contains(smithyServiceName)) return Optional.empty();
+            return Optional.of("headerValues");
         }
         if ("Headers".equals(memberName)) {
-            // Capital "Headers" is always renamed (no service exclusions)
-            return "headerValues";
+            return Optional.of("headerValues");
         }
-        return null;
+        return Optional.empty();
     }
 
     /**

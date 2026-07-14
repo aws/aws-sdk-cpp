@@ -164,31 +164,31 @@ class CppTypeMapperTest {
     @Test
     void defaultValue_int_isZero() {
         IntegerShape shape = IntegerShape.builder().id("com.example#Foo").build();
-        assertEquals("0", CppTypeMapper.getDefaultValue(shape));
+        assertEquals(java.util.Optional.of("0"), CppTypeMapper.getDefaultValue(shape));
     }
 
     @Test
     void defaultValue_long_isZero() {
         LongShape shape = LongShape.builder().id("com.example#Foo").build();
-        assertEquals("0", CppTypeMapper.getDefaultValue(shape));
+        assertEquals(java.util.Optional.of("0"), CppTypeMapper.getDefaultValue(shape));
     }
 
     @Test
     void defaultValue_bool_isFalse() {
         BooleanShape shape = BooleanShape.builder().id("com.example#Foo").build();
-        assertEquals("false", CppTypeMapper.getDefaultValue(shape));
+        assertEquals(java.util.Optional.of("false"), CppTypeMapper.getDefaultValue(shape));
     }
 
     @Test
     void defaultValue_double_isZero() {
         DoubleShape shape = DoubleShape.builder().id("com.example#Foo").build();
-        assertEquals("0.0", CppTypeMapper.getDefaultValue(shape));
+        assertEquals(java.util.Optional.of("0.0"), CppTypeMapper.getDefaultValue(shape));
     }
 
     @Test
-    void defaultValue_string_isNull() {
+    void defaultValue_string_isEmpty() {
         StringShape shape = StringShape.builder().id("com.example#Foo").build();
-        assertNull(CppTypeMapper.getDefaultValue(shape));
+        assertTrue(CppTypeMapper.getDefaultValue(shape).isEmpty());
     }
 
     // --- needsHasBeenSetFlag tests ---
@@ -215,7 +215,7 @@ class CppTypeMapperTest {
     void includeForString() {
         StringShape shape = StringShape.builder().id("com.example#Str").build();
         Model model = Model.builder().addShape(shape).build();
-        assertEquals("<aws/core/utils/memory/stl/AWSString.h>",
+        assertEquals(java.util.Optional.of("<aws/core/utils/memory/stl/AWSString.h>"),
             CppTypeMapper.getIncludeForMemberType(shape, model, "myservice"));
     }
 
@@ -223,7 +223,7 @@ class CppTypeMapperTest {
     void includeForBlob() {
         BlobShape shape = BlobShape.builder().id("com.example#Blob").build();
         Model model = Model.builder().addShape(shape).build();
-        assertEquals("<aws/core/utils/Array.h>",
+        assertEquals(java.util.Optional.of("<aws/core/utils/Array.h>"),
             CppTypeMapper.getIncludeForMemberType(shape, model, "myservice"));
     }
 
@@ -231,7 +231,7 @@ class CppTypeMapperTest {
     void includeForTimestamp() {
         TimestampShape shape = TimestampShape.builder().id("com.example#Ts").build();
         Model model = Model.builder().addShape(shape).build();
-        assertEquals("<aws/core/utils/DateTime.h>",
+        assertEquals(java.util.Optional.of("<aws/core/utils/DateTime.h>"),
             CppTypeMapper.getIncludeForMemberType(shape, model, "myservice"));
     }
 
@@ -243,7 +243,7 @@ class CppTypeMapperTest {
             .member(MemberShape.builder().id("com.example#MyList$member").target("com.example#Str").build())
             .build();
         Model model = Model.builder().addShapes(str, list).build();
-        assertEquals("<aws/core/utils/memory/stl/AWSVector.h>",
+        assertEquals(java.util.Optional.of("<aws/core/utils/memory/stl/AWSVector.h>"),
             CppTypeMapper.getIncludeForMemberType(list, model, "myservice"));
     }
 
@@ -256,7 +256,7 @@ class CppTypeMapperTest {
             .value(MemberShape.builder().id("com.example#MyMap$value").target("com.example#Str").build())
             .build();
         Model model = Model.builder().addShapes(str, map).build();
-        assertEquals("<aws/core/utils/memory/stl/AWSMap.h>",
+        assertEquals(java.util.Optional.of("<aws/core/utils/memory/stl/AWSMap.h>"),
             CppTypeMapper.getIncludeForMemberType(map, model, "myservice"));
     }
 
@@ -264,7 +264,7 @@ class CppTypeMapperTest {
     void includeForStructure() {
         StructureShape struct = StructureShape.builder().id("com.example#Widget").build();
         Model model = Model.builder().addShape(struct).build();
-        assertEquals("<aws/myservice/model/Widget.h>",
+        assertEquals(java.util.Optional.of("<aws/myservice/model/Widget.h>"),
             CppTypeMapper.getIncludeForMemberType(struct, model, "myservice"));
     }
 
@@ -272,15 +272,15 @@ class CppTypeMapperTest {
     void includeForDocument() {
         DocumentShape doc = DocumentShape.builder().id("com.example#Doc").build();
         Model model = Model.builder().addShape(doc).build();
-        assertEquals("<aws/core/utils/Document.h>",
+        assertEquals(java.util.Optional.of("<aws/core/utils/Document.h>"),
             CppTypeMapper.getIncludeForMemberType(doc, model, "myservice"));
     }
 
     @Test
-    void includeForPrimitive_returnsNull() {
+    void includeForPrimitive_returnsEmpty() {
         IntegerShape shape = IntegerShape.builder().id("com.example#I").build();
         Model model = Model.builder().addShape(shape).build();
-        assertNull(CppTypeMapper.getIncludeForMemberType(shape, model, "myservice"));
+        assertTrue(CppTypeMapper.getIncludeForMemberType(shape, model, "myservice").isEmpty());
     }
 
     // --- getIncludesForShape tests ---

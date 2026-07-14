@@ -164,13 +164,11 @@ public final class MemberRenderer {
             Shape targetShape = model.expectShape(member.getTarget());
             String cppType = CppTypeMapper.getCppType(targetShape, model);
             String fieldName = "m_" + decapitalize(memberName);
-            String defaultVal = CppTypeMapper.getDefaultValue(targetShape);
 
-            if (defaultVal != null) {
-                writer.write("$L $L{$L};", cppType, fieldName, defaultVal);
-            } else {
-                writer.write("$L $L;", cppType, fieldName);
-            }
+            CppTypeMapper.getDefaultValue(targetShape).ifPresentOrElse(
+                defaultVal -> writer.write("$L $L{$L};", cppType, fieldName, defaultVal),
+                () -> writer.write("$L $L;", cppType, fieldName)
+            );
             // Blank line between data members, but not after the last one
             if (i < entries.size() - 1) {
                 writer.write("");

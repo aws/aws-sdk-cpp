@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.*;
 
+import java.util.Optional;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,84 +18,80 @@ class GlobalTransformsTest {
 
     @Test
     void reservedMemberRename_body_becomesRequestBody() {
-        // "body" -> "requestBody" for services NOT in skip list
-        String result = GlobalTransforms.getReservedMemberRename("body", "kinesis");
-        assertEquals("requestBody", result);
+        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "kinesis");
+        assertEquals(Optional.of("requestBody"), result);
     }
 
     @Test
     void reservedMemberRename_body_skippedForApiGateway() {
-        // apigateway is in the skip list for "body" rename
-        String result = GlobalTransforms.getReservedMemberRename("body", "apigateway");
-        assertNull(result);
+        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "apigateway");
+        assertTrue(result.isEmpty());
     }
 
     @Test
     void reservedMemberRename_body_skippedForBedrockRuntime() {
-        String result = GlobalTransforms.getReservedMemberRename("body", "bedrock-runtime");
-        assertNull(result);
+        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "bedrock-runtime");
+        assertTrue(result.isEmpty());
     }
 
     @Test
     void reservedMemberRename_body_skippedForAmplifyUiBuilder() {
-        String result = GlobalTransforms.getReservedMemberRename("body", "amplifyuibuilder");
-        assertNull(result);
+        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "amplifyuibuilder");
+        assertTrue(result.isEmpty());
     }
 
     @Test
     void reservedMemberRename_body_skippedForApiGateway2() {
-        String result = GlobalTransforms.getReservedMemberRename("body", "apigateway2");
-        assertNull(result);
+        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "apigateway2");
+        assertTrue(result.isEmpty());
     }
 
     @Test
     void reservedMemberRename_body_skippedForGlacier() {
-        String result = GlobalTransforms.getReservedMemberRename("body", "glacier");
-        assertNull(result);
+        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "glacier");
+        assertTrue(result.isEmpty());
     }
 
     @Test
     void reservedMemberRename_body_skippedForRepostSpace() {
-        String result = GlobalTransforms.getReservedMemberRename("body", "repostspace");
-        assertNull(result);
+        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "repostspace");
+        assertTrue(result.isEmpty());
     }
 
     @Test
     void reservedMemberRename_headers_becomesHeaderValues() {
-        String result = GlobalTransforms.getReservedMemberRename("headers", "kinesis");
-        assertEquals("headerValues", result);
+        Optional<String> result = GlobalTransforms.getReservedMemberRename("headers", "kinesis");
+        assertEquals(Optional.of("headerValues"), result);
     }
 
     @Test
     void reservedMemberRename_headers_skippedForApiGateway() {
-        String result = GlobalTransforms.getReservedMemberRename("headers", "apigateway");
-        assertNull(result);
+        Optional<String> result = GlobalTransforms.getReservedMemberRename("headers", "apigateway");
+        assertTrue(result.isEmpty());
     }
 
     @Test
     void reservedMemberRename_headers_notSkippedForBedrockRuntime() {
-        // bedrock-runtime is NOT in the headers skip list (only in body skip list)
-        String result = GlobalTransforms.getReservedMemberRename("headers", "bedrock-runtime");
-        assertEquals("headerValues", result);
+        Optional<String> result = GlobalTransforms.getReservedMemberRename("headers", "bedrock-runtime");
+        assertEquals(Optional.of("headerValues"), result);
     }
 
     @Test
     void reservedMemberRename_Headers_alwaysRenamed() {
-        // Capital "Headers" is always renamed (no skip list)
-        String result = GlobalTransforms.getReservedMemberRename("Headers", "apigateway");
-        assertEquals("headerValues", result);
+        Optional<String> result = GlobalTransforms.getReservedMemberRename("Headers", "apigateway");
+        assertEquals(Optional.of("headerValues"), result);
     }
 
     @Test
     void reservedMemberRename_Headers_alwaysRenamed_anyService() {
-        String result = GlobalTransforms.getReservedMemberRename("Headers", "kinesis");
-        assertEquals("headerValues", result);
+        Optional<String> result = GlobalTransforms.getReservedMemberRename("Headers", "kinesis");
+        assertEquals(Optional.of("headerValues"), result);
     }
 
     @Test
-    void reservedMemberRename_normalMember_returnsNull() {
-        String result = GlobalTransforms.getReservedMemberRename("name", "kinesis");
-        assertNull(result);
+    void reservedMemberRename_normalMember_returnsEmpty() {
+        Optional<String> result = GlobalTransforms.getReservedMemberRename("name", "kinesis");
+        assertTrue(result.isEmpty());
     }
 
     // --- computeReachableShapes tests ---

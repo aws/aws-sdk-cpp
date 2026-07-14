@@ -36,6 +36,8 @@ public final class SerdeStub {
             writer.write("$L $L& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);", exportMacro, className);
             writer.write("$L void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;", exportMacro);
             writer.write("$L void OutputToStream(Aws::OStream& ostream, const char* location) const;", exportMacro);
+        } else {
+            throw new UnsupportedOperationException("Unsupported protocol for serde header declarations: " + protocol);
         }
     }
 
@@ -47,8 +49,10 @@ public final class SerdeStub {
             renderJsonStub(writer, className);
         } else if (protocol == Protocol.REST_XML) {
             renderXmlStub(writer, className);
-        } else {
+        } else if (protocol == Protocol.QUERY_XML || protocol == Protocol.EC2) {
             renderQueryXmlStub(writer, className);
+        } else {
+            throw new UnsupportedOperationException("Unsupported protocol for serde source implementation: " + protocol);
         }
     }
 

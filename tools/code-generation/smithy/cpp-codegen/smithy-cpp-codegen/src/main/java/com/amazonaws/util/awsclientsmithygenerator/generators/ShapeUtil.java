@@ -92,20 +92,20 @@ public class ShapeUtil {
     );
 
     /**
-     * Returns the hardcoded collision resolution for a shape, or null if none.
+     * Returns the hardcoded collision resolution for a shape, if one exists.
      */
-    public static String getHardcodedResolution(String smithyServiceName, String shapeName) {
+    public static Optional<String> getHardcodedResolution(String smithyServiceName, String shapeName) {
         Map<String, String> serviceResolutions = HARDCODED_COLLISION_RESOLUTIONS.get(smithyServiceName);
-        if (serviceResolutions == null) return null;
-        return serviceResolutions.getOrDefault(shapeName, null);
+        if (serviceResolutions == null) return Optional.empty();
+        return Optional.ofNullable(serviceResolutions.get(shapeName));
     }
 
     /**
      * Returns the C++ class name for a shape, applying collision renames and numeric prefix rules.
      */
     public static String getShapeCppName(String shapeName, String smithyServiceName) {
-        String resolved = getHardcodedResolution(smithyServiceName, shapeName);
-        if (resolved != null) return resolved;
+        Optional<String> resolved = getHardcodedResolution(smithyServiceName, shapeName);
+        if (resolved.isPresent()) return resolved.get();
         if (!shapeName.isEmpty() && Character.isDigit(shapeName.charAt(0))) {
             return "The" + shapeName;
         }
