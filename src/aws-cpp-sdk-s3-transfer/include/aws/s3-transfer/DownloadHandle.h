@@ -21,6 +21,8 @@ class AWS_S3_TRANSFER_API DownloadHandle final {
 public:
   explicit DownloadHandle(Aws::UniquePtr<DownloadHandleImpl> impl);
   ~DownloadHandle();
+  DownloadHandle(const DownloadHandle&) = delete;
+  DownloadHandle& operator=(const DownloadHandle&) = delete;
   DownloadHandle(DownloadHandle&&) noexcept;
   DownloadHandle& operator=(DownloadHandle&&) noexcept;
 

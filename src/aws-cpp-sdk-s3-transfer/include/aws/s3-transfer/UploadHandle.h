@@ -21,6 +21,8 @@ class AWS_S3_TRANSFER_API UploadHandle final {
 public:
   explicit UploadHandle(Aws::UniquePtr<UploadHandleImpl> impl);
   ~UploadHandle();
+  UploadHandle(const UploadHandle&) = delete;
+  UploadHandle& operator=(const UploadHandle&) = delete;
   UploadHandle(UploadHandle&&) noexcept;
   UploadHandle& operator=(UploadHandle&&) noexcept;
 
