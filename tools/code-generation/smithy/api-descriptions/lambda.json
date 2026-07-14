@@ -13222,21 +13222,6 @@
                 "smithy.api#documentation": "<p>Retrieves the provisioned concurrency configuration for a function's alias or version.</p>",
                 "smithy.api#examples": [
                     {
-                        "documentation": "The following example displays details for the provisioned concurrency configuration for the BLUE alias of the specified function.",
-                        "input": {
-                            "FunctionName": "my-function",
-                            "Qualifier": "BLUE"
-                        },
-                        "output": {
-                            "AllocatedProvisionedConcurrentExecutions": 100,
-                            "AvailableProvisionedConcurrentExecutions": 100,
-                            "LastModified": "2019-12-31T20:28:49+0000",
-                            "RequestedProvisionedConcurrentExecutions": 100,
-                            "Status": "READY"
-                        },
-                        "title": "To view a provisioned concurrency configuration"
-                    },
-                    {
                         "documentation": "The following example returns details for the provisioned concurrency configuration for the BLUE alias of the specified function.",
                         "input": {
                             "FunctionName": "my-function",
@@ -13250,6 +13235,21 @@
                             "Status": "READY"
                         },
                         "title": "To get a provisioned concurrency configuration"
+                    },
+                    {
+                        "documentation": "The following example displays details for the provisioned concurrency configuration for the BLUE alias of the specified function.",
+                        "input": {
+                            "FunctionName": "my-function",
+                            "Qualifier": "BLUE"
+                        },
+                        "output": {
+                            "AllocatedProvisionedConcurrentExecutions": 100,
+                            "AvailableProvisionedConcurrentExecutions": 100,
+                            "LastModified": "2019-12-31T20:28:49+0000",
+                            "RequestedProvisionedConcurrentExecutions": 100,
+                            "Status": "READY"
+                        },
+                        "title": "To view a provisioned concurrency configuration"
                     }
                 ],
                 "smithy.api#http": {
@@ -15749,6 +15749,15 @@
                         "smithy.api#enumValue": "DisallowedByVpcEncryptionControl",
                         "smithy.api#tags": [
                             "feature:public"
+                        ]
+                    }
+                },
+                "DependencyError": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DependencyError",
+                        "smithy.api#tags": [
+                            "feature:dependency-error"
                         ]
                     }
                 }
@@ -24034,6 +24043,15 @@
                         "smithy.api#enumValue": "DrainingDurableExecutions",
                         "smithy.api#tags": [
                             "feature:public"
+                        ]
+                    }
+                },
+                "DependencyError": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DependencyError",
+                        "smithy.api#tags": [
+                            "feature:dependency-error"
                         ]
                     }
                 }
