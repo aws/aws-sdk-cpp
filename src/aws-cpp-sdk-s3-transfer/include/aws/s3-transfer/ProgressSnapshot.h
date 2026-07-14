@@ -12,11 +12,8 @@ namespace Aws {
 namespace S3 {
 namespace Transfer {
 
-/**
- * Immutable snapshot of transfer progress passed to ProgressListener callbacks. Captures
- * bytes transferred, total bytes, and the response once available. Specialized via the
- * UploadProgressSnapshot and DownloadProgressSnapshot type aliases.
- */
+// Immutable snapshot passed to ProgressListener callbacks. Specialized via UploadProgressSnapshot /
+// DownloadProgressSnapshot.
 template <typename ResponseT>
 class ProgressSnapshot {
  public:
