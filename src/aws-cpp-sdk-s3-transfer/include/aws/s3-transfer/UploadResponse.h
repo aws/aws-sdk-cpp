@@ -15,32 +15,29 @@ namespace S3 {
 namespace Transfer {
 
 /**
- * Response type returned via the UploadHandle's future once the transfer completes. Wraps
- * the underlying S3 PutObjectResult, populated from either the single PutObject response
- * or the CompleteMultipartUpload response depending on the path taken.
+ * Response type returned via the UploadHandle's future once the transfer completes. Wraps the
+ * underlying S3 PutObjectResult. The S3 result is set at construction time so an UploadResponse
+ * is never in a half-populated state; access it via GetS3Result().
  */
 class AWS_S3_TRANSFER_API UploadResponse final {
  public:
+  // Default constructor exists to satisfy Aws::Utils::Outcome<R, E>, which default-constructs
+  // its R on the error path. On the success path the S3 result is always provided via the
+  // constructor below; a default-constructed instance is unreachable through UploadOutcome
+  // because Outcome::GetResult() is only meaningful when IsSuccess() is true.
+  UploadResponse() = default;
+
+  explicit UploadResponse(Aws::S3::Model::PutObjectResult s3Result)
+    : m_s3Result(std::move(s3Result)) {}
+
   inline const Aws::S3::Model::PutObjectResult& GetS3Result() const { return m_s3Result; }
-  inline bool S3ResultHasBeenSet() const { return m_s3ResultHasBeenSet; }
-  template <typename S3ResultT = Aws::S3::Model::PutObjectResult>
-  void SetS3Result(S3ResultT&& s3Result) {
-    m_s3ResultHasBeenSet = true;
-    m_s3Result = std::forward<S3ResultT>(s3Result);
-  }
-  template <typename S3ResultT = Aws::S3::Model::PutObjectResult>
-  UploadResponse& WithS3Result(S3ResultT&& s3Result) {
-    SetS3Result(std::forward<S3ResultT>(s3Result));
-    return *this;
-  }
 
  private:
   Aws::S3::Model::PutObjectResult m_s3Result;
-  bool m_s3ResultHasBeenSet = false;
 };
 
 using UploadOutcome = Aws::Utils::Outcome<UploadResponse, Aws::Client::AWSError<Aws::S3::S3Errors>>;
 
-}
-}
-}
+}  // namespace Transfer
+}  // namespace S3
+}  // namespace Aws
