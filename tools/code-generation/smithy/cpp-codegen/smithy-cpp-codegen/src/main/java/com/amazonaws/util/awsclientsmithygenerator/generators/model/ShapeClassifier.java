@@ -119,25 +119,15 @@ public final class ShapeClassifier {
         // Walk all reachable shapes and classify remaining ones
         for (ShapeId id : reachable) {
             Shape shape = model.expectShape(id);
-            if (inputShapeIds.contains(id) || outputShapeIds.contains(id)) continue;
-            if (shape.isDocumentShape()) continue;
-
-            // Enum classification
-            if (shape.isEnumShape() || (shape.isStringShape() && shape.hasTrait(EnumTrait.class))) {
+            if (inputShapeIds.contains(id) || outputShapeIds.contains(id)) {
+                // Already classified as request/result above
+            } else if (shape.isEnumShape() || (shape.isStringShape() && shape.hasTrait(EnumTrait.class))) {
                 enums.add(shape);
-                continue;
-            }
-
-            // Error/exception classification
-            if (shape.hasTrait(ErrorTrait.class)) {
+            } else if (shape.hasTrait(ErrorTrait.class)) {
                 if (isModeledException(shape.asStructureShape().get(), protocol)) {
                     subObjects.add(shape);
                 }
-                continue;
-            }
-
-            // Structure/Union -> sub-object
-            if (shape.isStructureShape() || shape.isUnionShape()) {
+            } else if (shape.isStructureShape() || shape.isUnionShape()) {
                 subObjects.add(shape);
             }
         }
