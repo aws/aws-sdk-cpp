@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -29,6 +29,6 @@ class AppSyncPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSuit
 
 TEST_F(AppSyncPaginationCompilationTest, AppSyncPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

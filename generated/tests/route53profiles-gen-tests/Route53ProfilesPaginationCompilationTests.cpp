@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -20,6 +20,6 @@ class Route53ProfilesPaginationCompilationTest : public Aws::Testing::AwsCppSdkG
 
 TEST_F(Route53ProfilesPaginationCompilationTest, Route53ProfilesPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -21,6 +21,6 @@ class TimestreamInfluxDBPaginationCompilationTest : public Aws::Testing::AwsCppS
 
 TEST_F(TimestreamInfluxDBPaginationCompilationTest, TimestreamInfluxDBPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -31,6 +31,6 @@ class KafkaPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSuite
 
 TEST_F(KafkaPaginationCompilationTest, KafkaPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

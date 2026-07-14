@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -25,6 +25,6 @@ class AppMeshPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSuit
 
 TEST_F(AppMeshPaginationCompilationTest, AppMeshPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

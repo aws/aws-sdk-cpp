@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -26,6 +26,6 @@ class ElasticLoadBalancingv2PaginationCompilationTest : public Aws::Testing::Aws
 
 TEST_F(ElasticLoadBalancingv2PaginationCompilationTest, ElasticLoadBalancingv2PaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

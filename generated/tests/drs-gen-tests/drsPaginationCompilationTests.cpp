@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -28,6 +28,6 @@ class drsPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSuite
 
 TEST_F(drsPaginationCompilationTest, drsPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

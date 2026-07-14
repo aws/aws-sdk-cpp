@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -19,6 +19,6 @@ class ivschatPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSuit
 
 TEST_F(ivschatPaginationCompilationTest, ivschatPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

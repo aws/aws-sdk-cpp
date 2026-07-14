@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -30,6 +30,6 @@ class CustomerProfilesPaginationCompilationTest : public Aws::Testing::AwsCppSdk
 
 TEST_F(CustomerProfilesPaginationCompilationTest, CustomerProfilesPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

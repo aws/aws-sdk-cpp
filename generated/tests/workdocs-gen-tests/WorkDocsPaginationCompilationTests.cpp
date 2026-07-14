@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -27,6 +27,6 @@ class WorkDocsPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSui
 
 TEST_F(WorkDocsPaginationCompilationTest, WorkDocsPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

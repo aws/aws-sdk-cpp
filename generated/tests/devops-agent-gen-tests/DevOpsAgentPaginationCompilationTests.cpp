@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -29,6 +29,6 @@ class DevOpsAgentPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTest
 
 TEST_F(DevOpsAgentPaginationCompilationTest, DevOpsAgentPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

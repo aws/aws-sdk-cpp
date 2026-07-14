@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -36,6 +36,6 @@ class SESV2PaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSuite
 
 TEST_F(SESV2PaginationCompilationTest, SESV2PaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }
