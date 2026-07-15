@@ -7,6 +7,9 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/healthlake/model/ListDataTransformationJobsPaginationTraits.h>
+#include <aws/healthlake/model/ListDataTransformationProfileVersionsPaginationTraits.h>
+#include <aws/healthlake/model/ListDataTransformationProfilesPaginationTraits.h>
 #include <aws/healthlake/model/ListFHIRDatastoresPaginationTraits.h>
 #include <aws/healthlake/model/ListFHIRExportJobsPaginationTraits.h>
 #include <aws/healthlake/model/ListFHIRImportJobsPaginationTraits.h>
@@ -19,6 +22,42 @@ namespace HealthLake {
 template <typename DerivedClient>
 class HealthLakePaginationBase {
  public:
+  /**
+   * Create a paginator for ListDataTransformationJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataTransformationJobsRequest,
+                                    Pagination::ListDataTransformationJobsPaginationTraits<DerivedClient>>
+  ListDataTransformationJobsPaginator(const Model::ListDataTransformationJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataTransformationJobsRequest,
+                                             Pagination::ListDataTransformationJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListDataTransformationProfiles operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataTransformationProfilesRequest,
+                                    Pagination::ListDataTransformationProfilesPaginationTraits<DerivedClient>>
+  ListDataTransformationProfilesPaginator(const Model::ListDataTransformationProfilesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataTransformationProfilesRequest,
+                                             Pagination::ListDataTransformationProfilesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListDataTransformationProfileVersions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataTransformationProfileVersionsRequest,
+                                    Pagination::ListDataTransformationProfileVersionsPaginationTraits<DerivedClient>>
+  ListDataTransformationProfileVersionsPaginator(const Model::ListDataTransformationProfileVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataTransformationProfileVersionsRequest,
+                                             Pagination::ListDataTransformationProfileVersionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListFHIRDatastores operation
    */

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -132,6 +133,25 @@ class HarnessGeminiModelConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Provider-specific parameters passed through to the Gemini model provider
+   * unchanged.</p>
+   */
+  inline Aws::Utils::DocumentView GetAdditionalParams() const { return m_additionalParams; }
+  inline bool AdditionalParamsHasBeenSet() const { return m_additionalParamsHasBeenSet; }
+  template <typename AdditionalParamsT = Aws::Utils::Document>
+  void SetAdditionalParams(AdditionalParamsT&& value) {
+    m_additionalParamsHasBeenSet = true;
+    m_additionalParams = std::forward<AdditionalParamsT>(value);
+  }
+  template <typename AdditionalParamsT = Aws::Utils::Document>
+  HarnessGeminiModelConfig& WithAdditionalParams(AdditionalParamsT&& value) {
+    SetAdditionalParams(std::forward<AdditionalParamsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_modelId;
 
@@ -144,12 +164,15 @@ class HarnessGeminiModelConfig {
   double m_topP{0.0};
 
   int m_topK{0};
+
+  Aws::Utils::Document m_additionalParams;
   bool m_modelIdHasBeenSet = false;
   bool m_apiKeyArnHasBeenSet = false;
   bool m_maxTokensHasBeenSet = false;
   bool m_temperatureHasBeenSet = false;
   bool m_topPHasBeenSet = false;
   bool m_topKHasBeenSet = false;
+  bool m_additionalParamsHasBeenSet = false;
 };
 
 }  // namespace Model

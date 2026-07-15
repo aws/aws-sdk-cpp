@@ -44,8 +44,15 @@ enum class HealthLakeErrors {
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  INTERNAL_SERVER
+  AGENT_MESSAGE_OUT_OF_CONTEXT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
+  CONVERSATION_NOT_FOUND,
+  FAILED_DEPENDENCY,
+  INTERNAL_SERVER,
+  NOT_IMPLEMENTED_OPERATION,
+  SERVICE_QUOTA_EXCEEDED,
+  UNAUTHORIZED,
+  UNSUPPORTED_M_I_M_E_TYPE
 };
 
 class AWS_HEALTHLAKE_API HealthLakeError : public Aws::Client::AWSError<HealthLakeErrors> {

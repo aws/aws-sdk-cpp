@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
+#include <aws/elasticloadbalancingv2/model/SourceIpAddressTypeEnum.h>
 
 #include <utility>
 
@@ -69,9 +70,30 @@ class SourceIpConditionConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IP address type for Network Load Balancers.</p> <p>The valid values
+   * are:</p> <ul> <li> <p> <code>ipv4</code> – IPv4 addresses only.</p> </li> <li>
+   * <p> <code>ipv6</code> – IPv6 addresses only.</p> </li> </ul>
+   */
+  inline SourceIpAddressTypeEnum GetIpAddressType() const { return m_ipAddressType; }
+  inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+  inline void SetIpAddressType(SourceIpAddressTypeEnum value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline SourceIpConditionConfig& WithIpAddressType(SourceIpAddressTypeEnum value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_values;
+
+  SourceIpAddressTypeEnum m_ipAddressType{SourceIpAddressTypeEnum::NOT_SET};
   bool m_valuesHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
 };
 
 }  // namespace Model

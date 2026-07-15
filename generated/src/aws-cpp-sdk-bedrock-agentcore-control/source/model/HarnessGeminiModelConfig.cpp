@@ -42,6 +42,10 @@ HarnessGeminiModelConfig& HarnessGeminiModelConfig::operator=(JsonView jsonValue
     m_topK = jsonValue.GetInteger("topK");
     m_topKHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("additionalParams")) {
+    m_additionalParams = jsonValue.GetObject("additionalParams");
+    m_additionalParamsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,12 @@ JsonValue HarnessGeminiModelConfig::Jsonize() const {
 
   if (m_topKHasBeenSet) {
     payload.WithInteger("topK", m_topK);
+  }
+
+  if (m_additionalParamsHasBeenSet) {
+    if (!m_additionalParams.View().IsNull()) {
+      payload.WithObject("additionalParams", JsonValue(m_additionalParams.View()));
+    }
   }
 
   return payload;

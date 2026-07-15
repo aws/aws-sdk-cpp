@@ -38,6 +38,10 @@ SessionKeyDerivation& SessionKeyDerivation::operator=(JsonView jsonValue) {
     m_visa = jsonValue.GetObject("Visa");
     m_visaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UnionPay")) {
+    m_unionPay = jsonValue.GetObject("UnionPay");
+    m_unionPayHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue SessionKeyDerivation::Jsonize() const {
 
   if (m_visaHasBeenSet) {
     payload.WithObject("Visa", m_visa.Jsonize());
+  }
+
+  if (m_unionPayHasBeenSet) {
+    payload.WithObject("UnionPay", m_unionPay.Jsonize());
   }
 
   return payload;

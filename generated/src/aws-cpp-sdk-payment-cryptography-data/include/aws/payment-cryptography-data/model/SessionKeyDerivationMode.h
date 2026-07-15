@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PaymentCryptographyData {
 namespace Model {
-enum class SessionKeyDerivationMode { NOT_SET, EMV_COMMON_SESSION_KEY, EMV2000, AMEX, MASTERCARD_SESSION_KEY, VISA };
+enum class SessionKeyDerivationMode { NOT_SET, EMV_COMMON_SESSION_KEY, EMV2000, AMEX, MASTERCARD_SESSION_KEY, VISA, UNION_PAY };
 
 namespace SessionKeyDerivationModeMapper {
 AWS_PAYMENTCRYPTOGRAPHYDATA_API SessionKeyDerivationMode GetSessionKeyDerivationModeForName(const Aws::String& name);

@@ -143,6 +143,123 @@ class JobProgressReport {
 
   ///@{
   /**
+   * <p>The number of non-FHIR files scanned from the S3 input bucket.</p>
+   */
+  inline long long GetTotalNumberOfScannedNonFhirFiles() const { return m_totalNumberOfScannedNonFhirFiles; }
+  inline bool TotalNumberOfScannedNonFhirFilesHasBeenSet() const { return m_totalNumberOfScannedNonFhirFilesHasBeenSet; }
+  inline void SetTotalNumberOfScannedNonFhirFiles(long long value) {
+    m_totalNumberOfScannedNonFhirFilesHasBeenSet = true;
+    m_totalNumberOfScannedNonFhirFiles = value;
+  }
+  inline JobProgressReport& WithTotalNumberOfScannedNonFhirFiles(long long value) {
+    SetTotalNumberOfScannedNonFhirFiles(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The size (in MB) of non-FHIR files scanned from the S3 input bucket.</p>
+   */
+  inline double GetTotalSizeOfScannedNonFhirFilesInMB() const { return m_totalSizeOfScannedNonFhirFilesInMB; }
+  inline bool TotalSizeOfScannedNonFhirFilesInMBHasBeenSet() const { return m_totalSizeOfScannedNonFhirFilesInMBHasBeenSet; }
+  inline void SetTotalSizeOfScannedNonFhirFilesInMB(double value) {
+    m_totalSizeOfScannedNonFhirFilesInMBHasBeenSet = true;
+    m_totalSizeOfScannedNonFhirFilesInMB = value;
+  }
+  inline JobProgressReport& WithTotalSizeOfScannedNonFhirFilesInMB(double value) {
+    SetTotalSizeOfScannedNonFhirFilesInMB(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of non-FHIR files imported.</p>
+   */
+  inline long long GetTotalNumberOfImportedNonFhirFiles() const { return m_totalNumberOfImportedNonFhirFiles; }
+  inline bool TotalNumberOfImportedNonFhirFilesHasBeenSet() const { return m_totalNumberOfImportedNonFhirFilesHasBeenSet; }
+  inline void SetTotalNumberOfImportedNonFhirFiles(long long value) {
+    m_totalNumberOfImportedNonFhirFilesHasBeenSet = true;
+    m_totalNumberOfImportedNonFhirFiles = value;
+  }
+  inline JobProgressReport& WithTotalNumberOfImportedNonFhirFiles(long long value) {
+    SetTotalNumberOfImportedNonFhirFiles(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of non-FHIR resources scanned from the S3 input bucket.</p>
+   */
+  inline long long GetTotalNumberOfNonFhirResourcesScanned() const { return m_totalNumberOfNonFhirResourcesScanned; }
+  inline bool TotalNumberOfNonFhirResourcesScannedHasBeenSet() const { return m_totalNumberOfNonFhirResourcesScannedHasBeenSet; }
+  inline void SetTotalNumberOfNonFhirResourcesScanned(long long value) {
+    m_totalNumberOfNonFhirResourcesScannedHasBeenSet = true;
+    m_totalNumberOfNonFhirResourcesScanned = value;
+  }
+  inline JobProgressReport& WithTotalNumberOfNonFhirResourcesScanned(long long value) {
+    SetTotalNumberOfNonFhirResourcesScanned(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of non-FHIR resources imported.</p>
+   */
+  inline long long GetTotalNumberOfNonFhirResourcesImported() const { return m_totalNumberOfNonFhirResourcesImported; }
+  inline bool TotalNumberOfNonFhirResourcesImportedHasBeenSet() const { return m_totalNumberOfNonFhirResourcesImportedHasBeenSet; }
+  inline void SetTotalNumberOfNonFhirResourcesImported(long long value) {
+    m_totalNumberOfNonFhirResourcesImportedHasBeenSet = true;
+    m_totalNumberOfNonFhirResourcesImported = value;
+  }
+  inline JobProgressReport& WithTotalNumberOfNonFhirResourcesImported(long long value) {
+    SetTotalNumberOfNonFhirResourcesImported(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of non-FHIR resources that failed due to customer error.</p>
+   */
+  inline long long GetTotalNumberOfNonFhirResourcesWithCustomerError() const { return m_totalNumberOfNonFhirResourcesWithCustomerError; }
+  inline bool TotalNumberOfNonFhirResourcesWithCustomerErrorHasBeenSet() const {
+    return m_totalNumberOfNonFhirResourcesWithCustomerErrorHasBeenSet;
+  }
+  inline void SetTotalNumberOfNonFhirResourcesWithCustomerError(long long value) {
+    m_totalNumberOfNonFhirResourcesWithCustomerErrorHasBeenSet = true;
+    m_totalNumberOfNonFhirResourcesWithCustomerError = value;
+  }
+  inline JobProgressReport& WithTotalNumberOfNonFhirResourcesWithCustomerError(long long value) {
+    SetTotalNumberOfNonFhirResourcesWithCustomerError(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of non-FHIR files that failed to be read from the S3 input bucket
+   * due to customer error.</p>
+   */
+  inline long long GetTotalNumberOfNonFhirFilesReadWithCustomerError() const { return m_totalNumberOfNonFhirFilesReadWithCustomerError; }
+  inline bool TotalNumberOfNonFhirFilesReadWithCustomerErrorHasBeenSet() const {
+    return m_totalNumberOfNonFhirFilesReadWithCustomerErrorHasBeenSet;
+  }
+  inline void SetTotalNumberOfNonFhirFilesReadWithCustomerError(long long value) {
+    m_totalNumberOfNonFhirFilesReadWithCustomerErrorHasBeenSet = true;
+    m_totalNumberOfNonFhirFilesReadWithCustomerError = value;
+  }
+  inline JobProgressReport& WithTotalNumberOfNonFhirFilesReadWithCustomerError(long long value) {
+    SetTotalNumberOfNonFhirFilesReadWithCustomerError(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The transaction rate the import job is processed at.</p>
    */
   inline double GetThroughput() const { return m_throughput; }
@@ -153,6 +270,43 @@ class JobProgressReport {
   }
   inline JobProgressReport& WithThroughput(double value) {
     SetThroughput(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Number of CCDA files successfully transformed during the import's
+   * transformation phase. Populated only for import jobs that use the
+   * two-Step-Function (transformation + ingestion) flow; null for legacy single-SF
+   * imports and for pure FHIR imports that skip transformation.</p>
+   */
+  inline long long GetTotalFilesConverted() const { return m_totalFilesConverted; }
+  inline bool TotalFilesConvertedHasBeenSet() const { return m_totalFilesConvertedHasBeenSet; }
+  inline void SetTotalFilesConverted(long long value) {
+    m_totalFilesConvertedHasBeenSet = true;
+    m_totalFilesConverted = value;
+  }
+  inline JobProgressReport& WithTotalFilesConverted(long long value) {
+    SetTotalFilesConverted(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Number of FHIR resources produced by the transformation phase. Populated only
+   * for import jobs that use the two-Step-Function flow; null for legacy single-SF
+   * imports and for pure FHIR imports.</p>
+   */
+  inline long long GetTotalResourcesGenerated() const { return m_totalResourcesGenerated; }
+  inline bool TotalResourcesGeneratedHasBeenSet() const { return m_totalResourcesGeneratedHasBeenSet; }
+  inline void SetTotalResourcesGenerated(long long value) {
+    m_totalResourcesGeneratedHasBeenSet = true;
+    m_totalResourcesGenerated = value;
+  }
+  inline JobProgressReport& WithTotalResourcesGenerated(long long value) {
+    SetTotalResourcesGenerated(value);
     return *this;
   }
   ///@}
@@ -171,7 +325,25 @@ class JobProgressReport {
 
   long long m_totalNumberOfFilesReadWithCustomerError{0};
 
+  long long m_totalNumberOfScannedNonFhirFiles{0};
+
+  double m_totalSizeOfScannedNonFhirFilesInMB{0.0};
+
+  long long m_totalNumberOfImportedNonFhirFiles{0};
+
+  long long m_totalNumberOfNonFhirResourcesScanned{0};
+
+  long long m_totalNumberOfNonFhirResourcesImported{0};
+
+  long long m_totalNumberOfNonFhirResourcesWithCustomerError{0};
+
+  long long m_totalNumberOfNonFhirFilesReadWithCustomerError{0};
+
   double m_throughput{0.0};
+
+  long long m_totalFilesConverted{0};
+
+  long long m_totalResourcesGenerated{0};
   bool m_totalNumberOfScannedFilesHasBeenSet = false;
   bool m_totalSizeOfScannedFilesInMBHasBeenSet = false;
   bool m_totalNumberOfImportedFilesHasBeenSet = false;
@@ -179,7 +351,16 @@ class JobProgressReport {
   bool m_totalNumberOfResourcesImportedHasBeenSet = false;
   bool m_totalNumberOfResourcesWithCustomerErrorHasBeenSet = false;
   bool m_totalNumberOfFilesReadWithCustomerErrorHasBeenSet = false;
+  bool m_totalNumberOfScannedNonFhirFilesHasBeenSet = false;
+  bool m_totalSizeOfScannedNonFhirFilesInMBHasBeenSet = false;
+  bool m_totalNumberOfImportedNonFhirFilesHasBeenSet = false;
+  bool m_totalNumberOfNonFhirResourcesScannedHasBeenSet = false;
+  bool m_totalNumberOfNonFhirResourcesImportedHasBeenSet = false;
+  bool m_totalNumberOfNonFhirResourcesWithCustomerErrorHasBeenSet = false;
+  bool m_totalNumberOfNonFhirFilesReadWithCustomerErrorHasBeenSet = false;
   bool m_throughputHasBeenSet = false;
+  bool m_totalFilesConvertedHasBeenSet = false;
+  bool m_totalResourcesGeneratedHasBeenSet = false;
 };
 
 }  // namespace Model

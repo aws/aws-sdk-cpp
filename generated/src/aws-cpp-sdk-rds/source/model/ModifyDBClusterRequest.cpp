@@ -212,6 +212,10 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const {
        << "&";
   }
 
+  if (m_engineLifecycleSupportHasBeenSet) {
+    ss << "EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

@@ -82,6 +82,37 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
   virtual ~HealthLakeClient();
 
   /**
+   * <p>Creates a data transformation profile in DRAFT state. Specify a built-in
+   * starter profile, an existing profile version, raw profile content, or a sample
+   * data file as the source.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/CreateDataTransformationProfile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDataTransformationProfileOutcome CreateDataTransformationProfile(
+      const Model::CreateDataTransformationProfileRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDataTransformationProfile that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateDataTransformationProfileRequestT = Model::CreateDataTransformationProfileRequest>
+  Model::CreateDataTransformationProfileOutcomeCallable CreateDataTransformationProfileCallable(
+      const CreateDataTransformationProfileRequestT& request) const {
+    return SubmitCallable(&HealthLakeClient::CreateDataTransformationProfile, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDataTransformationProfile that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateDataTransformationProfileRequestT = Model::CreateDataTransformationProfileRequest>
+  void CreateDataTransformationProfileAsync(const CreateDataTransformationProfileRequestT& request,
+                                            const CreateDataTransformationProfileResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthLakeClient::CreateDataTransformationProfile, request, handler, context);
+  }
+
+  /**
    * <p>Create a FHIR-enabled data store.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/CreateFHIRDatastore">AWS
    * API Reference</a></p>
@@ -108,6 +139,36 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes a data transformation profile and all its versions, including the
+   * DRAFT and all published versions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DeleteDataTransformationProfile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDataTransformationProfileOutcome DeleteDataTransformationProfile(
+      const Model::DeleteDataTransformationProfileRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDataTransformationProfile that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteDataTransformationProfileRequestT = Model::DeleteDataTransformationProfileRequest>
+  Model::DeleteDataTransformationProfileOutcomeCallable DeleteDataTransformationProfileCallable(
+      const DeleteDataTransformationProfileRequestT& request) const {
+    return SubmitCallable(&HealthLakeClient::DeleteDataTransformationProfile, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDataTransformationProfile that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteDataTransformationProfileRequestT = Model::DeleteDataTransformationProfileRequest>
+  void DeleteDataTransformationProfileAsync(const DeleteDataTransformationProfileRequestT& request,
+                                            const DeleteDataTransformationProfileResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthLakeClient::DeleteDataTransformationProfile, request, handler, context);
+  }
+
+  /**
    * <p>Delete a FHIR-enabled data store.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DeleteFHIRDatastore">AWS
    * API Reference</a></p>
@@ -131,6 +192,36 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
   void DeleteFHIRDatastoreAsync(const DeleteFHIRDatastoreRequestT& request, const DeleteFHIRDatastoreResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&HealthLakeClient::DeleteFHIRDatastore, request, handler, context);
+  }
+
+  /**
+   * <p>Describes a data transformation job, including its current status,
+   * configuration, and progress information.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeDataTransformationJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeDataTransformationJobOutcome DescribeDataTransformationJob(
+      const Model::DescribeDataTransformationJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeDataTransformationJob that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeDataTransformationJobRequestT = Model::DescribeDataTransformationJobRequest>
+  Model::DescribeDataTransformationJobOutcomeCallable DescribeDataTransformationJobCallable(
+      const DescribeDataTransformationJobRequestT& request) const {
+    return SubmitCallable(&HealthLakeClient::DescribeDataTransformationJob, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeDataTransformationJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeDataTransformationJobRequestT = Model::DescribeDataTransformationJobRequest>
+  void DescribeDataTransformationJobAsync(const DescribeDataTransformationJobRequestT& request,
+                                          const DescribeDataTransformationJobResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthLakeClient::DescribeDataTransformationJob, request, handler, context);
   }
 
   /**
@@ -210,6 +301,135 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
   void DescribeFHIRImportJobAsync(const DescribeFHIRImportJobRequestT& request, const DescribeFHIRImportJobResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&HealthLakeClient::DescribeFHIRImportJob, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a data transformation profile's metadata and profile content at a
+   * specific version. Specify version 0 to retrieve the DRAFT, a version number
+   * between 1 and 99 to retrieve a specific published version, or omit the version
+   * to retrieve the latest published version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/GetDataTransformationProfile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDataTransformationProfileOutcome GetDataTransformationProfile(
+      const Model::GetDataTransformationProfileRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDataTransformationProfile that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetDataTransformationProfileRequestT = Model::GetDataTransformationProfileRequest>
+  Model::GetDataTransformationProfileOutcomeCallable GetDataTransformationProfileCallable(
+      const GetDataTransformationProfileRequestT& request) const {
+    return SubmitCallable(&HealthLakeClient::GetDataTransformationProfile, request);
+  }
+
+  /**
+   * An Async wrapper for GetDataTransformationProfile that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDataTransformationProfileRequestT = Model::GetDataTransformationProfileRequest>
+  void GetDataTransformationProfileAsync(const GetDataTransformationProfileRequestT& request,
+                                         const GetDataTransformationProfileResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthLakeClient::GetDataTransformationProfile, request, handler, context);
+  }
+
+  /**
+   * <p>Lists data transformation jobs for your AWS account. Results can be filtered
+   * by status, job name, and submit time window. Results are paginated. Use the
+   * <code>NextToken</code> parameter to retrieve additional results.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListDataTransformationJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDataTransformationJobsOutcome ListDataTransformationJobs(
+      const Model::ListDataTransformationJobsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListDataTransformationJobs that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListDataTransformationJobsRequestT = Model::ListDataTransformationJobsRequest>
+  Model::ListDataTransformationJobsOutcomeCallable ListDataTransformationJobsCallable(
+      const ListDataTransformationJobsRequestT& request = {}) const {
+    return SubmitCallable(&HealthLakeClient::ListDataTransformationJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListDataTransformationJobs that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDataTransformationJobsRequestT = Model::ListDataTransformationJobsRequest>
+  void ListDataTransformationJobsAsync(const ListDataTransformationJobsResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                       const ListDataTransformationJobsRequestT& request = {}) const {
+    return SubmitAsync(&HealthLakeClient::ListDataTransformationJobs, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all versions of a specific data transformation profile (DRAFT and
+   * published), in reverse chronological order (newest first). Use
+   * <code>GetDataTransformationProfile</code> to retrieve profile content. Results
+   * are paginated. Use the <code>NextToken</code> parameter to retrieve additional
+   * results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListDataTransformationProfileVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDataTransformationProfileVersionsOutcome ListDataTransformationProfileVersions(
+      const Model::ListDataTransformationProfileVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDataTransformationProfileVersions that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListDataTransformationProfileVersionsRequestT = Model::ListDataTransformationProfileVersionsRequest>
+  Model::ListDataTransformationProfileVersionsOutcomeCallable ListDataTransformationProfileVersionsCallable(
+      const ListDataTransformationProfileVersionsRequestT& request) const {
+    return SubmitCallable(&HealthLakeClient::ListDataTransformationProfileVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListDataTransformationProfileVersions that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListDataTransformationProfileVersionsRequestT = Model::ListDataTransformationProfileVersionsRequest>
+  void ListDataTransformationProfileVersionsAsync(const ListDataTransformationProfileVersionsRequestT& request,
+                                                  const ListDataTransformationProfileVersionsResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthLakeClient::ListDataTransformationProfileVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all data transformation profiles in your account, returning the latest
+   * version summary for each. Use <code>GetDataTransformationProfile</code> to
+   * retrieve profile content. Results are paginated. Use the <code>NextToken</code>
+   * parameter to retrieve additional results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListDataTransformationProfiles">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDataTransformationProfilesOutcome ListDataTransformationProfiles(
+      const Model::ListDataTransformationProfilesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDataTransformationProfiles that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListDataTransformationProfilesRequestT = Model::ListDataTransformationProfilesRequest>
+  Model::ListDataTransformationProfilesOutcomeCallable ListDataTransformationProfilesCallable(
+      const ListDataTransformationProfilesRequestT& request) const {
+    return SubmitCallable(&HealthLakeClient::ListDataTransformationProfiles, request);
+  }
+
+  /**
+   * An Async wrapper for ListDataTransformationProfiles that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListDataTransformationProfilesRequestT = Model::ListDataTransformationProfilesRequest>
+  void ListDataTransformationProfilesAsync(const ListDataTransformationProfilesRequestT& request,
+                                           const ListDataTransformationProfilesResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthLakeClient::ListDataTransformationProfiles, request, handler, context);
   }
 
   /**
@@ -322,6 +542,68 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Promotes the current DRAFT version of a data transformation profile to a new
+   * immutable published version. Also supports rollback by publishing from a
+   * previously published version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/PublishDataTransformationProfile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PublishDataTransformationProfileOutcome PublishDataTransformationProfile(
+      const Model::PublishDataTransformationProfileRequest& request) const;
+
+  /**
+   * A Callable wrapper for PublishDataTransformationProfile that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename PublishDataTransformationProfileRequestT = Model::PublishDataTransformationProfileRequest>
+  Model::PublishDataTransformationProfileOutcomeCallable PublishDataTransformationProfileCallable(
+      const PublishDataTransformationProfileRequestT& request) const {
+    return SubmitCallable(&HealthLakeClient::PublishDataTransformationProfile, request);
+  }
+
+  /**
+   * An Async wrapper for PublishDataTransformationProfile that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename PublishDataTransformationProfileRequestT = Model::PublishDataTransformationProfileRequest>
+  void PublishDataTransformationProfileAsync(const PublishDataTransformationProfileRequestT& request,
+                                             const PublishDataTransformationProfileResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthLakeClient::PublishDataTransformationProfile, request, handler, context);
+  }
+
+  /**
+   * <p>Starts an asynchronous data transformation job that converts source files
+   * from Amazon Simple Storage Service (Amazon S3) and writes the output to Amazon
+   * S3 or AWS HealthLake.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartDataTransformationJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartDataTransformationJobOutcome StartDataTransformationJob(
+      const Model::StartDataTransformationJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartDataTransformationJob that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartDataTransformationJobRequestT = Model::StartDataTransformationJobRequest>
+  Model::StartDataTransformationJobOutcomeCallable StartDataTransformationJobCallable(
+      const StartDataTransformationJobRequestT& request) const {
+    return SubmitCallable(&HealthLakeClient::StartDataTransformationJob, request);
+  }
+
+  /**
+   * An Async wrapper for StartDataTransformationJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartDataTransformationJobRequestT = Model::StartDataTransformationJobRequest>
+  void StartDataTransformationJobAsync(const StartDataTransformationJobRequestT& request,
+                                       const StartDataTransformationJobResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthLakeClient::StartDataTransformationJob, request, handler, context);
+  }
+
+  /**
    * <p>Start a FHIR export job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob">AWS
    * API Reference</a></p>
@@ -429,6 +711,37 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Updates the DRAFT version (version 0) of a data transformation profile with
+   * new profile content. The update replaces all existing DRAFT
+   * content.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UpdateDataTransformationProfile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDataTransformationProfileOutcome UpdateDataTransformationProfile(
+      const Model::UpdateDataTransformationProfileRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDataTransformationProfile that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateDataTransformationProfileRequestT = Model::UpdateDataTransformationProfileRequest>
+  Model::UpdateDataTransformationProfileOutcomeCallable UpdateDataTransformationProfileCallable(
+      const UpdateDataTransformationProfileRequestT& request) const {
+    return SubmitCallable(&HealthLakeClient::UpdateDataTransformationProfile, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDataTransformationProfile that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateDataTransformationProfileRequestT = Model::UpdateDataTransformationProfileRequest>
+  void UpdateDataTransformationProfileAsync(const UpdateDataTransformationProfileRequestT& request,
+                                            const UpdateDataTransformationProfileResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthLakeClient::UpdateDataTransformationProfile, request, handler, context);
+  }
+
+  /**
    * <p>Update the properties of a FHIR-enabled data store.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UpdateFHIRDatastore">AWS
@@ -453,6 +766,35 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
   void UpdateFHIRDatastoreAsync(const UpdateFHIRDatastoreRequestT& request, const UpdateFHIRDatastoreResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&HealthLakeClient::UpdateFHIRDatastore, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a data transformation profile using chat-based interaction with an
+   * agent. Supports multi-turn conversations for iteratively customizing
+   * profiles.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UpdateProfileWithAgent">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProfileWithAgentOutcome UpdateProfileWithAgent(const Model::UpdateProfileWithAgentRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateProfileWithAgent that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateProfileWithAgentRequestT = Model::UpdateProfileWithAgentRequest>
+  Model::UpdateProfileWithAgentOutcomeCallable UpdateProfileWithAgentCallable(const UpdateProfileWithAgentRequestT& request) const {
+    return SubmitCallable(&HealthLakeClient::UpdateProfileWithAgent, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProfileWithAgent that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateProfileWithAgentRequestT = Model::UpdateProfileWithAgentRequest>
+  void UpdateProfileWithAgentAsync(const UpdateProfileWithAgentRequestT& request,
+                                   const UpdateProfileWithAgentResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthLakeClient::UpdateProfileWithAgent, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);
