@@ -16,6 +16,10 @@ namespace Transfer {
 
 class S3TransferManagerImpl;
 
+/**
+ * Customers construct an instance directly. The manager owns the underlying CRT client; it is
+ * neither copyable nor movable.
+ */
 class AWS_S3_TRANSFER_API S3TransferManager final {
  public:
   explicit S3TransferManager(const S3TransferManagerConfiguration& config);
@@ -26,8 +30,16 @@ class AWS_S3_TRANSFER_API S3TransferManager final {
   S3TransferManager(S3TransferManager&&) noexcept = delete;
   S3TransferManager& operator=(S3TransferManager&&) noexcept = delete;
 
-  // Returns immediately with a handle bound to the in-flight transfer.
+  /**
+   * Begin uploading the object described by request. Returns immediately with a handle that can be
+   * used to wait for completion or to cancel the in-flight transfer.
+   */
   UploadHandle Upload(const UploadRequest& request);
+
+  /**
+   * Begin downloading the object described by request. Returns immediately with a handle that can
+   * be used to wait for completion or to cancel the in-flight transfer.
+   */
   DownloadHandle Download(const DownloadRequest& request);
 
  private:

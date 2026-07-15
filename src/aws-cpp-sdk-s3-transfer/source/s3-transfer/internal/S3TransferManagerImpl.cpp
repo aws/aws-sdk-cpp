@@ -48,6 +48,11 @@ S3TransferManagerImpl::S3TransferManagerImpl(const S3TransferManagerConfiguratio
   m_endpointProvider = Aws::MakeUnique<Aws::S3::Endpoint::S3EndpointProvider>(S3_TRANSFER_LOG_TAG);
   m_endpointProvider->AccessBuiltInParameters().SetStringParameter("Region", m_region);
 
+  // Honor endpointOverride like S3Client / S3CrtClient. Used for VPC endpoints, LocalStack, minio.
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  }
+
   if (config.executor) {
     m_executor = config.executor;
   } else {

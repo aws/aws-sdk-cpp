@@ -14,7 +14,11 @@ namespace Aws {
 namespace S3 {
 namespace Transfer {
 
-// Wraps the S3 PutObjectResult populated by either PutObject or CompleteMultipartUpload.
+/**
+ * Response type returned via the UploadHandle's future once the transfer completes. Wraps
+ * the underlying S3 PutObjectResult, populated from either the single PutObject response
+ * or the CompleteMultipartUpload response depending on the path taken.
+ */
 class AWS_S3_TRANSFER_API UploadResponse final {
  public:
   inline const Aws::S3::Model::PutObjectResult& GetS3Result() const { return m_s3Result; }

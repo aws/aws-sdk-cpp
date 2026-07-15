@@ -21,10 +21,10 @@ constexpr uint64_t DEFAULT_MULTIPART_UPLOAD_THRESHOLD_BYTES = 16ULL * 1024 * 102
 struct AWS_S3_TRANSFER_API S3TransferManagerConfiguration final : public Aws::Client::GenericClientConfiguration {
   using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
 
-  S3TransferManagerConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
-  S3TransferManagerConfiguration(const char* profileName, bool shouldDisableIMDS = false);
+  explicit S3TransferManagerConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
+  explicit S3TransferManagerConfiguration(const char* profileName, bool shouldDisableIMDS = false);
   explicit S3TransferManagerConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
-  S3TransferManagerConfiguration(const Aws::Client::ClientConfiguration& config);
+  explicit S3TransferManagerConfiguration(const Aws::Client::ClientConfiguration& config);
 
   uint64_t partSize = DEFAULT_PART_SIZE_BYTES;
   // Object size at or above which a multipart transfer is used. Must be >= partSize.
