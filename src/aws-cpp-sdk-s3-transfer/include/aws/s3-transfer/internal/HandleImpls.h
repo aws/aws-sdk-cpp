@@ -12,17 +12,23 @@ namespace Aws {
 namespace S3 {
 namespace Transfer {
 
-class UploadHandleImpl final {
+template <typename OutcomeT, typename StateT>
+class TransferHandleImpl {
  public:
-  std::future<UploadOutcome> future;
-  std::shared_ptr<UploadTransferState> state;
+  virtual ~TransferHandleImpl() = default;
+
+  std::future<OutcomeT> future;
+  std::shared_ptr<StateT> state;
+
+  TransferHandleImpl() = default;
+  TransferHandleImpl(const TransferHandleImpl&) = delete;
+  TransferHandleImpl& operator=(const TransferHandleImpl&) = delete;
+  TransferHandleImpl(TransferHandleImpl&&) noexcept = default;
+  TransferHandleImpl& operator=(TransferHandleImpl&&) noexcept = default;
 };
 
-class DownloadHandleImpl final {
- public:
-  std::future<DownloadOutcome> future;
-  std::shared_ptr<DownloadTransferState> state;
-};
+class UploadHandleImpl final : public TransferHandleImpl<UploadOutcome, UploadTransferState> {};
+class DownloadHandleImpl final : public TransferHandleImpl<DownloadOutcome, DownloadTransferState> {};
 
 }  // namespace Transfer
 }  // namespace S3

@@ -14,7 +14,11 @@ namespace Aws {
 namespace S3 {
 namespace Transfer {
 
-// Wraps the S3 GetObjectResult with whole-object metadata regardless of how many ranged GETs ran.
+/**
+ * Response type returned via the DownloadHandle's future once the transfer completes. Wraps
+ * the underlying S3 GetObjectResult with whole-object content length and range, regardless
+ * of how many ranged GETs were issued internally.
+ */
 class AWS_S3_TRANSFER_API DownloadResponse final {
  public:
   inline const Aws::S3::Model::GetObjectResult& GetS3Result() const { return m_s3Result; }

@@ -4,7 +4,6 @@
  */
 #include <aws/s3-transfer/UploadHandle.h>
 #include <aws/s3-transfer/internal/HandleImpls.h>
-#include <cassert>
 
 namespace Aws {
 namespace S3 {
@@ -18,7 +17,6 @@ UploadHandle::UploadHandle(UploadHandle&&) noexcept = default;
 UploadHandle& UploadHandle::operator=(UploadHandle&&) noexcept = default;
 
 std::future<UploadOutcome> UploadHandle::CompletionFuture() {
-  assert(m_impl && "CompletionFuture() called on a moved-from UploadHandle");
   if (!m_impl) {
     return {};
   }

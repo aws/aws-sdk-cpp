@@ -11,6 +11,11 @@ namespace Aws {
 namespace S3 {
 namespace Transfer {
 
+/**
+ * Immutable snapshot of download progress passed to DownloadProgressListener callbacks.
+ * Captures bytes transferred, total bytes (known after the GetObject response is received),
+ * and the response once available.
+ */
 class AWS_S3_TRANSFER_API DownloadProgressSnapshot final : public ProgressSnapshot<DownloadResponse> {
  public:
   using ProgressSnapshot<DownloadResponse>::ProgressSnapshot;

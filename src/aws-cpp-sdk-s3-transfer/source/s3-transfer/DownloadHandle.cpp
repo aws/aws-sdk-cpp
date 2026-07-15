@@ -4,7 +4,6 @@
  */
 #include <aws/s3-transfer/DownloadHandle.h>
 #include <aws/s3-transfer/internal/HandleImpls.h>
-#include <cassert>
 
 namespace Aws {
 namespace S3 {
@@ -18,7 +17,6 @@ DownloadHandle::DownloadHandle(DownloadHandle&&) noexcept = default;
 DownloadHandle& DownloadHandle::operator=(DownloadHandle&&) noexcept = default;
 
 std::future<DownloadOutcome> DownloadHandle::CompletionFuture() {
-  assert(m_impl && "CompletionFuture() called on a moved-from DownloadHandle");
   if (!m_impl) {
     return {};
   }
