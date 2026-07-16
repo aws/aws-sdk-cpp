@@ -643,6 +643,19 @@ void S3CrtClient::S3CrtRequestProgressCallback(struct aws_s3_meta_request* meta_
   return;
 }
 
+namespace {
+// evil enum name sfinae hacking
+template <typename E>
+constexpr auto PartSizeMismatchError(int) -> decltype(E::AWS_ERROR_S3_INTERNAL_BUFFER_SIZE_MISMATCH_RETRYING_WITH_RANGE) {
+  return E::AWS_ERROR_S3_INTERNAL_BUFFER_SIZE_MISMATCH_RETRYING_WITH_RANGE;
+}
+
+template <typename E>
+constexpr auto PartSizeMismatchError(long) -> decltype(E::AWS_ERROR_S3_INTERNAL_PART_SIZE_MISMATCH_RETRYING_WITH_RANGE) {
+  return E::AWS_ERROR_S3_INTERNAL_PART_SIZE_MISMATCH_RETRYING_WITH_RANGE;
+}
+}  // namespace
+
 CoreErrors MapCrtError(const int crtErrorCode) {
   switch (crtErrorCode) {
     case aws_s3_errors::AWS_ERROR_S3_REQUEST_HAS_COMPLETED:
@@ -674,7 +687,7 @@ CoreErrors MapCrtError(const int crtErrorCode) {
     case aws_s3_errors::AWS_ERROR_S3_LIST_PARTS_PARSE_FAILED:
     case aws_s3_errors::AWS_ERROR_S3_RESUMED_PART_CHECKSUM_MISMATCH:
     case aws_s3_errors::AWS_ERROR_S3_FILE_MODIFIED:
-    case aws_s3_errors::AWS_ERROR_S3_INTERNAL_PART_SIZE_MISMATCH_RETRYING_WITH_RANGE:
+    case PartSizeMismatchError<aws_s3_errors>(0):
     case aws_s3_errors::AWS_ERROR_S3_RECV_FILE_ALREADY_EXISTS:
     case aws_s3_errors::AWS_ERROR_S3_RECV_FILE_NOT_FOUND:
       return CoreErrors::VALIDATION;
