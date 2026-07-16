@@ -60,6 +60,8 @@ class SmithyCppGen(object):
             "-Pc2jMap=" + smithy_c2j_data,
             "-PnamespaceMappings=" + json.dumps(self.smithy_namespace_mappings)
         ]
+        if self.use_smithy_models:
+            smithy_codegen_command.append("-PgenerateModels=true")
         
         try:
             if self.debug:
