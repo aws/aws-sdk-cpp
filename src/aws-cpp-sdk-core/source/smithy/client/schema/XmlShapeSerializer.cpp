@@ -27,7 +27,7 @@ class XmlShapeSerializer::Impl {
     if (!name.empty()) {
       m_buf += '<';
       m_buf += name;
-      const auto* ns = schema.GetTrait(XmlNamespaceTrait::KEY());
+      const auto ns = schema.GetTrait(XmlNamespaceTrait::KEY());
       if (ns && !ns->GetUri().empty()) {
         if (ns->GetPrefix().empty()) {
           m_buf += " xmlns=\"";
@@ -342,7 +342,7 @@ class XmlShapeSerializer::Impl {
   }
 
   static Aws::String GetXmlName(const Schema& schema) {
-    const auto* trait = schema.GetTrait(XmlNameTrait::KEY());
+    const auto trait = schema.GetTrait(XmlNameTrait::KEY());
     if (trait) {
       return trait->GetValue();
     }
@@ -352,7 +352,7 @@ class XmlShapeSerializer::Impl {
   static bool IsFlattened(const Schema& schema) { return schema.HasTrait(XmlFlattenedTrait::KEY()); }
 
   static Aws::String GetListItemName(const Schema& schema) {
-    const auto* trait = schema.GetTrait(XmlListItemNameTrait::KEY());
+    const auto trait = schema.GetTrait(XmlListItemNameTrait::KEY());
     if (trait) {
       return trait->GetValue();
     }
@@ -360,7 +360,7 @@ class XmlShapeSerializer::Impl {
   }
 
   static Aws::String GetMapEntryName(const Schema& schema) {
-    const auto* trait = schema.GetTrait(XmlMapEntryNameTrait::KEY());
+    const auto trait = schema.GetTrait(XmlMapEntryNameTrait::KEY());
     if (trait) {
       return trait->GetValue();
     }
@@ -368,7 +368,7 @@ class XmlShapeSerializer::Impl {
   }
 
   static Aws::String GetMapKeyName(const Schema& schema) {
-    const auto* trait = schema.GetTrait(XmlMapKeyNameTrait::KEY());
+    const auto trait = schema.GetTrait(XmlMapKeyNameTrait::KEY());
     if (trait) {
       return trait->GetValue();
     }
@@ -376,7 +376,7 @@ class XmlShapeSerializer::Impl {
   }
 
   static Aws::String GetMapValueName(const Schema& schema) {
-    const auto* trait = schema.GetTrait(XmlMapValueNameTrait::KEY());
+    const auto trait = schema.GetTrait(XmlMapValueNameTrait::KEY());
     if (trait) {
       return trait->GetValue();
     }

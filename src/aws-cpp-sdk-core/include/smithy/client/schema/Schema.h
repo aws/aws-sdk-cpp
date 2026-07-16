@@ -4,6 +4,7 @@
 #include <smithy/client/schema/TraitMap.h>
 
 #include <cstdint>
+#include <memory>
 
 namespace smithy {
 namespace schema {
@@ -50,14 +51,14 @@ class Schema {
   uint16_t GetMemberCount() const { return m_memberCount; }
 
   template <typename T>
-  const T* GetTrait(const TraitKey<T>& key) const {
+  std::shared_ptr<const T> GetTrait(const TraitKey<T>& key) const {
     return m_traits.Get(key);
   }
 
   bool HasTrait(const TraitKeyBase& key) const { return m_traits.Has(key); }
 
-  Schema& SetTrait(const TraitKeyBase& key, const Trait* trait) {
-    m_traits.Set(key, trait);
+  Schema& SetTrait(const TraitKeyBase& key, std::shared_ptr<const Trait> trait) {
+    m_traits.Set(key, std::move(trait));
     return *this;
   }
 

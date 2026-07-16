@@ -194,7 +194,7 @@ class JsonShapeSerializer::Impl {
     if (m_depth > 0 && m_isMap[m_depth]) {
       WriteKey(m_currentMapKey);
     } else {
-      const auto* jsonName = schema.GetTrait(JsonNameTrait::KEY());
+      const auto jsonName = schema.GetTrait(JsonNameTrait::KEY());
       WriteKey(jsonName ? jsonName->GetValue() : schema.GetMemberName());
     }
   }

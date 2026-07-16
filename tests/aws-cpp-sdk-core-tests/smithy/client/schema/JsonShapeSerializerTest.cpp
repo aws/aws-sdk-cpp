@@ -447,8 +447,7 @@ TEST_F(JsonShapeSerializerTest, JsonNameOverridesMemberName) {
   JsonShapeSerializer s;
   Schema root;
   Schema member("internalName", ShapeType::String);
-  static const JsonNameTrait s_jsonName("ExternalName");
-  member.SetTrait(JsonNameTrait::KEY(), &s_jsonName);
+  member.SetTrait(JsonNameTrait::KEY(), Aws::MakeShared<JsonNameTrait>("Schema", "ExternalName"));
   s.BeginStructure(root);
   s.WriteString(member, "hello");
   s.EndStructure();

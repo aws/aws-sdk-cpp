@@ -390,8 +390,7 @@ TEST_F(XmlShapeSerializerTest, XmlNameOverridesMemberName) {
   XmlShapeSerializer s;
   Schema root("Root", ShapeType::Structure);
   Schema member("internalName", ShapeType::String);
-  static const XmlNameTrait s_extName("ExternalName");
-  member.SetTrait(XmlNameTrait::KEY(), &s_extName);
+  member.SetTrait(XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "ExternalName"));
   s.BeginStructure(root);
   s.WriteString(member, "hello");
   s.EndStructure();
@@ -403,8 +402,7 @@ TEST_F(XmlShapeSerializerTest, XmlNameOverridesMemberName) {
 TEST_F(XmlShapeSerializerTest, XmlNameOnStructure) {
   XmlShapeSerializer s;
   Schema root("MyStruct", ShapeType::Structure);
-  static const XmlNameTrait s_customRoot("CustomRoot");
-  root.SetTrait(XmlNameTrait::KEY(), &s_customRoot);
+  root.SetTrait(XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "CustomRoot"));
   Schema field("val", ShapeType::Integer);
   s.BeginStructure(root);
   s.WriteInteger(field, 42);
@@ -418,8 +416,7 @@ TEST_F(XmlShapeSerializerTest, FlattenedListOfStrings) {
   XmlShapeSerializer s;
   Schema root("Root", ShapeType::Structure);
   Schema listMember("item", ShapeType::List);
-  static const XmlFlattenedTrait s_flat1;
-  listMember.SetTrait(XmlFlattenedTrait::KEY(), &s_flat1);
+  listMember.SetTrait(XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Schema"));
   Schema elem("member", ShapeType::String);
   s.BeginStructure(root);
   s.BeginList(listMember, 3);
@@ -439,10 +436,8 @@ TEST_F(XmlShapeSerializerTest, FlattenedListWithXmlName) {
   XmlShapeSerializer s;
   Schema root("Root", ShapeType::Structure);
   Schema listMember("items", ShapeType::List);
-  static const XmlFlattenedTrait s_flat2;
-  static const XmlNameTrait s_tag("Tag");
-  listMember.SetTrait(XmlFlattenedTrait::KEY(), &s_flat2);
-  listMember.SetTrait(XmlNameTrait::KEY(), &s_tag);
+  listMember.SetTrait(XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Schema"));
+  listMember.SetTrait(XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Tag"));
   Schema elem("member", ShapeType::String);
   s.BeginStructure(root);
   s.BeginList(listMember, 2);
@@ -459,8 +454,7 @@ TEST_F(XmlShapeSerializerTest, CustomListItemName) {
   XmlShapeSerializer s;
   Schema root("Root", ShapeType::Structure);
   Schema listMember("things", ShapeType::List);
-  static const XmlListItemNameTrait s_itemName("item");
-  listMember.SetTrait(XmlListItemNameTrait::KEY(), &s_itemName);
+  listMember.SetTrait(XmlListItemNameTrait::KEY(), Aws::MakeShared<XmlListItemNameTrait>("Schema", "item"));
   Schema elem("member", ShapeType::String);
   s.BeginStructure(root);
   s.BeginList(listMember, 2);
@@ -477,12 +471,9 @@ TEST_F(XmlShapeSerializerTest, CustomMapNames) {
   XmlShapeSerializer s;
   Schema root("Root", ShapeType::Structure);
   Schema mapMember("tags", ShapeType::Map);
-  static const XmlMapEntryNameTrait s_entryName("item");
-  static const XmlMapKeyNameTrait s_keyName("tagKey");
-  static const XmlMapValueNameTrait s_valueName("tagValue");
-  mapMember.SetTrait(XmlMapEntryNameTrait::KEY(), &s_entryName);
-  mapMember.SetTrait(XmlMapKeyNameTrait::KEY(), &s_keyName);
-  mapMember.SetTrait(XmlMapValueNameTrait::KEY(), &s_valueName);
+  mapMember.SetTrait(XmlMapEntryNameTrait::KEY(), Aws::MakeShared<XmlMapEntryNameTrait>("Schema", "item"));
+  mapMember.SetTrait(XmlMapKeyNameTrait::KEY(), Aws::MakeShared<XmlMapKeyNameTrait>("Schema", "tagKey"));
+  mapMember.SetTrait(XmlMapValueNameTrait::KEY(), Aws::MakeShared<XmlMapValueNameTrait>("Schema", "tagValue"));
   Schema valSchema("value", ShapeType::String);
   s.BeginStructure(root);
   s.BeginMap(mapMember, 1);
@@ -497,8 +488,7 @@ TEST_F(XmlShapeSerializerTest, FlattenedMap) {
   XmlShapeSerializer s;
   Schema root("Root", ShapeType::Structure);
   Schema mapMember("tag", ShapeType::Map);
-  static const XmlFlattenedTrait s_flat3;
-  mapMember.SetTrait(XmlFlattenedTrait::KEY(), &s_flat3);
+  mapMember.SetTrait(XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Schema"));
   Schema valSchema("value", ShapeType::String);
   s.BeginStructure(root);
   s.BeginMap(mapMember, 2);

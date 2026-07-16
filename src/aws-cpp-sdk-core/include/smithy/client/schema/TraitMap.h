@@ -5,6 +5,8 @@
 #include <smithy/client/schema/Trait.h>
 #include <smithy/client/schema/TraitKey.h>
 
+#include <memory>
+
 namespace smithy {
 namespace schema {
 class SMITHY_API TraitMap {
@@ -12,28 +14,28 @@ class SMITHY_API TraitMap {
   TraitMap() = default;
 
   template <typename T>
-  const T* Get(const TraitKey<T>& key) const {
+  std::shared_ptr<const T> Get(const TraitKey<T>& key) const {
     int idx = key.GetId();
-    if (idx >= static_cast<int>(m_value.size())) return nullptr;
-    return static_cast<const T*>(m_value[idx]);
+    if (idx >= static_cast<int>(m_values.size())) return nullptr;
+    return std::static_pointer_cast<const T>(m_values[idx]);
   }
 
   bool Has(const TraitKeyBase& key) const {
     int idx = key.GetId();
-    if (idx >= static_cast<int>(m_value.size())) return false;
-    return m_value[idx] != nullptr;
+    if (idx >= static_cast<int>(m_values.size())) return false;
+    return m_values[idx] != nullptr;
   }
 
-  void Set(const TraitKeyBase& key, const Trait* trait) {
+  void Set(const TraitKeyBase& key, std::shared_ptr<const Trait> trait) {
     int idx = key.GetId();
-    if (idx >= static_cast<int>(m_value.size())) {
-      m_value.resize(idx + 1, nullptr);
+    if (idx >= static_cast<int>(m_values.size())) {
+      m_values.resize(idx + 1);
     }
-    m_value[idx] = trait;
+    m_values[idx] = std::move(trait);
   }
 
  private:
-  Aws::Vector<const Trait*> m_value;
+  Aws::Vector<std::shared_ptr<const Trait>> m_values;
 };
 }  // namespace schema
 }  // namespace smithy
