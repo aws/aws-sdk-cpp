@@ -86,6 +86,10 @@ GetRunTaskResult& GetRunTaskResult::operator=(const Aws::AmazonWebServiceResult<
     m_imageDetails = jsonValue.GetObject("imageDetails");
     m_imageDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("uuid")) {
+    m_uuid = jsonValue.GetString("uuid");
+    m_uuidHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -31,6 +31,7 @@ static const int Unprocessable_HASH = HashingUtils::HashString("Unprocessable");
 static const int VoiceConnectorGroupAssociationsExist_HASH = HashingUtils::HashString("VoiceConnectorGroupAssociationsExist");
 static const int PhoneNumberAssociationsExist_HASH = HashingUtils::HashString("PhoneNumberAssociationsExist");
 static const int Gone_HASH = HashingUtils::HashString("Gone");
+static const int Validation_HASH = HashingUtils::HashString("Validation");
 
 ErrorCode GetErrorCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -66,6 +67,8 @@ ErrorCode GetErrorCodeForName(const Aws::String& name) {
     return ErrorCode::PhoneNumberAssociationsExist;
   } else if (hashCode == Gone_HASH) {
     return ErrorCode::Gone;
+  } else if (hashCode == Validation_HASH) {
+    return ErrorCode::Validation;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -112,6 +115,8 @@ Aws::String GetNameForErrorCode(ErrorCode enumValue) {
       return "PhoneNumberAssociationsExist";
     case ErrorCode::Gone:
       return "Gone";
+    case ErrorCode::Validation:
+      return "Validation";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

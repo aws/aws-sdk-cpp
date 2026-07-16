@@ -8,7 +8,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
-#include <aws/elasticmapreduce/model/CertificateAuthority.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
 #include <aws/elasticmapreduce/model/SessionMonitoringConfiguration.h>
 #include <aws/elasticmapreduce/model/SessionState.h>
@@ -358,25 +357,6 @@ class Session {
 
   ///@{
   /**
-   * <p>The certificate authority used to establish an mTLS connection to the Spark
-   * Connect server when connecting directly over VPC peering.</p>
-   */
-  inline const CertificateAuthority& GetCertificateAuthority() const { return m_certificateAuthority; }
-  inline bool CertificateAuthorityHasBeenSet() const { return m_certificateAuthorityHasBeenSet; }
-  template <typename CertificateAuthorityT = CertificateAuthority>
-  void SetCertificateAuthority(CertificateAuthorityT&& value) {
-    m_certificateAuthorityHasBeenSet = true;
-    m_certificateAuthority = std::forward<CertificateAuthorityT>(value);
-  }
-  template <typename CertificateAuthorityT = CertificateAuthority>
-  Session& WithCertificateAuthority(CertificateAuthorityT&& value) {
-    SetCertificateAuthority(std::forward<CertificateAuthorityT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Spark Connect server URL for the session. Use this URL with the
    * <code>Credentials</code> returned by <code>GetSessionEndpoint</code> to connect
    * directly to the session over VPC peering.</p>
@@ -453,8 +433,6 @@ class Session {
 
   long long m_sessionIdleTimeoutInMinutes{0};
 
-  CertificateAuthority m_certificateAuthority;
-
   Aws::String m_serverUrl;
 
   Aws::Vector<Tag> m_tags;
@@ -475,7 +453,6 @@ class Session {
   bool m_engineConfigurationsHasBeenSet = false;
   bool m_monitoringConfigurationHasBeenSet = false;
   bool m_sessionIdleTimeoutInMinutesHasBeenSet = false;
-  bool m_certificateAuthorityHasBeenSet = false;
   bool m_serverUrlHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };

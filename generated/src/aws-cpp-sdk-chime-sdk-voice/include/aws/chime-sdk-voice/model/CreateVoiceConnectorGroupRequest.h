@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-voice/ChimeSDKVoiceRequest.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
+#include <aws/chime-sdk-voice/model/CallDistributionType.h>
 #include <aws/chime-sdk-voice/model/VoiceConnectorItem.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -71,12 +72,29 @@ class CreateVoiceConnectorGroupRequest : public ChimeSDKVoiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline CallDistributionType GetCallDistributionType() const { return m_callDistributionType; }
+  inline bool CallDistributionTypeHasBeenSet() const { return m_callDistributionTypeHasBeenSet; }
+  inline void SetCallDistributionType(CallDistributionType value) {
+    m_callDistributionTypeHasBeenSet = true;
+    m_callDistributionType = value;
+  }
+  inline CreateVoiceConnectorGroupRequest& WithCallDistributionType(CallDistributionType value) {
+    SetCallDistributionType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
   Aws::Vector<VoiceConnectorItem> m_voiceConnectorItems;
+
+  CallDistributionType m_callDistributionType{CallDistributionType::NOT_SET};
   bool m_nameHasBeenSet = false;
   bool m_voiceConnectorItemsHasBeenSet = false;
+  bool m_callDistributionTypeHasBeenSet = false;
 };
 
 }  // namespace Model

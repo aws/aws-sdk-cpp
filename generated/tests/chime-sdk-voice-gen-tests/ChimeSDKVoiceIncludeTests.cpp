@@ -25,6 +25,7 @@
 #include <aws/chime-sdk-voice/model/BatchUpdatePhoneNumberRequest.h>
 #include <aws/chime-sdk-voice/model/BatchUpdatePhoneNumberResult.h>
 #include <aws/chime-sdk-voice/model/CallDetails.h>
+#include <aws/chime-sdk-voice/model/CallDistributionType.h>
 #include <aws/chime-sdk-voice/model/CallLegType.h>
 #include <aws/chime-sdk-voice/model/CallingNameStatus.h>
 #include <aws/chime-sdk-voice/model/CandidateAddress.h>
@@ -32,8 +33,6 @@
 #include <aws/chime-sdk-voice/model/ContactCenterSystemType.h>
 #include <aws/chime-sdk-voice/model/CreatePhoneNumberOrderRequest.h>
 #include <aws/chime-sdk-voice/model/CreatePhoneNumberOrderResult.h>
-#include <aws/chime-sdk-voice/model/CreateProxySessionRequest.h>
-#include <aws/chime-sdk-voice/model/CreateProxySessionResult.h>
 #include <aws/chime-sdk-voice/model/CreateSipMediaApplicationCallRequest.h>
 #include <aws/chime-sdk-voice/model/CreateSipMediaApplicationCallResult.h>
 #include <aws/chime-sdk-voice/model/CreateSipMediaApplicationRequest.h>
@@ -51,14 +50,12 @@
 #include <aws/chime-sdk-voice/model/Credential.h>
 #include <aws/chime-sdk-voice/model/DNISEmergencyCallingConfiguration.h>
 #include <aws/chime-sdk-voice/model/DeletePhoneNumberRequest.h>
-#include <aws/chime-sdk-voice/model/DeleteProxySessionRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteSipMediaApplicationRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteSipRuleRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorEmergencyCallingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorExternalSystemsConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorGroupRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorOriginationRequest.h>
-#include <aws/chime-sdk-voice/model/DeleteVoiceConnectorProxyRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorStreamingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorTerminationCredentialsRequest.h>
@@ -82,8 +79,6 @@
 #include <aws/chime-sdk-voice/model/GetPhoneNumberResult.h>
 #include <aws/chime-sdk-voice/model/GetPhoneNumberSettingsRequest.h>
 #include <aws/chime-sdk-voice/model/GetPhoneNumberSettingsResult.h>
-#include <aws/chime-sdk-voice/model/GetProxySessionRequest.h>
-#include <aws/chime-sdk-voice/model/GetProxySessionResult.h>
 #include <aws/chime-sdk-voice/model/GetSipMediaApplicationLoggingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/GetSipMediaApplicationLoggingConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/GetSipMediaApplicationRequest.h>
@@ -102,8 +97,6 @@
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorLoggingConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorOriginationRequest.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorOriginationResult.h>
-#include <aws/chime-sdk-voice/model/GetVoiceConnectorProxyRequest.h>
-#include <aws/chime-sdk-voice/model/GetVoiceConnectorProxyResult.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorRequest.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorResult.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorStreamingConfigurationRequest.h>
@@ -125,8 +118,6 @@
 #include <aws/chime-sdk-voice/model/ListPhoneNumberOrdersResult.h>
 #include <aws/chime-sdk-voice/model/ListPhoneNumbersRequest.h>
 #include <aws/chime-sdk-voice/model/ListPhoneNumbersResult.h>
-#include <aws/chime-sdk-voice/model/ListProxySessionsRequest.h>
-#include <aws/chime-sdk-voice/model/ListProxySessionsResult.h>
 #include <aws/chime-sdk-voice/model/ListSipMediaApplicationsRequest.h>
 #include <aws/chime-sdk-voice/model/ListSipMediaApplicationsResult.h>
 #include <aws/chime-sdk-voice/model/ListSipRulesRequest.h>
@@ -181,8 +172,6 @@
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorLoggingConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorOriginationRequest.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorOriginationResult.h>
-#include <aws/chime-sdk-voice/model/PutVoiceConnectorProxyRequest.h>
-#include <aws/chime-sdk-voice/model/PutVoiceConnectorProxyResult.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorStreamingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorStreamingConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorTerminationCredentialsRequest.h>
@@ -223,8 +212,6 @@
 #include <aws/chime-sdk-voice/model/UpdatePhoneNumberRequestItem.h>
 #include <aws/chime-sdk-voice/model/UpdatePhoneNumberResult.h>
 #include <aws/chime-sdk-voice/model/UpdatePhoneNumberSettingsRequest.h>
-#include <aws/chime-sdk-voice/model/UpdateProxySessionRequest.h>
-#include <aws/chime-sdk-voice/model/UpdateProxySessionResult.h>
 #include <aws/chime-sdk-voice/model/UpdateSipMediaApplicationCallRequest.h>
 #include <aws/chime-sdk-voice/model/UpdateSipMediaApplicationCallResult.h>
 #include <aws/chime-sdk-voice/model/UpdateSipMediaApplicationRequest.h>

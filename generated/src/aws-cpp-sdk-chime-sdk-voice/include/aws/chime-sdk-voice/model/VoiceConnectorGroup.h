@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
+#include <aws/chime-sdk-voice/model/CallDistributionType.h>
 #include <aws/chime-sdk-voice/model/VoiceConnectorItem.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -150,6 +151,20 @@ class VoiceConnectorGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline CallDistributionType GetCallDistributionType() const { return m_callDistributionType; }
+  inline bool CallDistributionTypeHasBeenSet() const { return m_callDistributionTypeHasBeenSet; }
+  inline void SetCallDistributionType(CallDistributionType value) {
+    m_callDistributionTypeHasBeenSet = true;
+    m_callDistributionType = value;
+  }
+  inline VoiceConnectorGroup& WithCallDistributionType(CallDistributionType value) {
+    SetCallDistributionType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_voiceConnectorGroupId;
 
@@ -162,12 +177,15 @@ class VoiceConnectorGroup {
   Aws::Utils::DateTime m_updatedTimestamp{};
 
   Aws::String m_voiceConnectorGroupArn;
+
+  CallDistributionType m_callDistributionType{CallDistributionType::NOT_SET};
   bool m_voiceConnectorGroupIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_voiceConnectorItemsHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
   bool m_updatedTimestampHasBeenSet = false;
   bool m_voiceConnectorGroupArnHasBeenSet = false;
+  bool m_callDistributionTypeHasBeenSet = false;
 };
 
 }  // namespace Model

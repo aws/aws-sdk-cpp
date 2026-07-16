@@ -33,7 +33,9 @@ class GetEstimatedCarbonEmissionsDimensionValuesRequest : public SustainabilityR
 
   ///@{
   /**
-   * <p>The date range for fetching the dimension values.</p>
+   * <p> The date range for fetching the dimension values. The range must include the
+   * start date of a month for that month's dimensions to be included in the
+   * response. </p>
    */
   inline const TimePeriod& GetTimePeriod() const { return m_timePeriod; }
   inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
@@ -74,7 +76,8 @@ class GetEstimatedCarbonEmissionsDimensionValuesRequest : public SustainabilityR
 
   ///@{
   /**
-   * <p>The maximum number of results to return in a single call. Default is 40.</p>
+   * <p>The maximum number of results to return in a single call. Default is
+   * 1000.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

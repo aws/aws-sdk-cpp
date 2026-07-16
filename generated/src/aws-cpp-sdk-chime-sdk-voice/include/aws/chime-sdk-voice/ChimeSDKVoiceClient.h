@@ -236,33 +236,6 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Creates a proxy session for the specified Amazon Chime SDK Voice Connector
-   * for the specified participant phone numbers.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateProxySession">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::CreateProxySessionOutcome CreateProxySession(const Model::CreateProxySessionRequest& request) const;
-
-  /**
-   * A Callable wrapper for CreateProxySession that returns a future to the operation so that it can be executed in parallel to other
-   * requests.
-   */
-  template <typename CreateProxySessionRequestT = Model::CreateProxySessionRequest>
-  Model::CreateProxySessionOutcomeCallable CreateProxySessionCallable(const CreateProxySessionRequestT& request) const {
-    return SubmitCallable(&ChimeSDKVoiceClient::CreateProxySession, request);
-  }
-
-  /**
-   * An Async wrapper for CreateProxySession that queues the request into a thread executor and triggers associated callback when operation
-   * has finished.
-   */
-  template <typename CreateProxySessionRequestT = Model::CreateProxySessionRequest>
-  void CreateProxySessionAsync(const CreateProxySessionRequestT& request, const CreateProxySessionResponseReceivedHandler& handler,
-                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&ChimeSDKVoiceClient::CreateProxySession, request, handler, context);
-  }
-
-  /**
    * <p>Creates a SIP media application. For more information about SIP media
    * applications, see <a
    * href="https://docs.aws.amazon.com/chime-sdk/latest/ag/manage-sip-applications.html">Managing
@@ -519,33 +492,6 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Deletes the specified proxy session from the specified Amazon Chime SDK Voice
-   * Connector.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteProxySession">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::DeleteProxySessionOutcome DeleteProxySession(const Model::DeleteProxySessionRequest& request) const;
-
-  /**
-   * A Callable wrapper for DeleteProxySession that returns a future to the operation so that it can be executed in parallel to other
-   * requests.
-   */
-  template <typename DeleteProxySessionRequestT = Model::DeleteProxySessionRequest>
-  Model::DeleteProxySessionOutcomeCallable DeleteProxySessionCallable(const DeleteProxySessionRequestT& request) const {
-    return SubmitCallable(&ChimeSDKVoiceClient::DeleteProxySession, request);
-  }
-
-  /**
-   * An Async wrapper for DeleteProxySession that queues the request into a thread executor and triggers associated callback when operation
-   * has finished.
-   */
-  template <typename DeleteProxySessionRequestT = Model::DeleteProxySessionRequest>
-  void DeleteProxySessionAsync(const DeleteProxySessionRequestT& request, const DeleteProxySessionResponseReceivedHandler& handler,
-                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&ChimeSDKVoiceClient::DeleteProxySession, request, handler, context);
-  }
-
-  /**
    * <p>Deletes a SIP media application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteSipMediaApplication">AWS
    * API Reference</a></p>
@@ -752,35 +698,6 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonCli
                                             const DeleteVoiceConnectorOriginationResponseReceivedHandler& handler,
                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ChimeSDKVoiceClient::DeleteVoiceConnectorOrigination, request, handler, context);
-  }
-
-  /**
-   * <p>Deletes the proxy configuration from the specified Amazon Chime SDK Voice
-   * Connector.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorProxy">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::DeleteVoiceConnectorProxyOutcome DeleteVoiceConnectorProxy(const Model::DeleteVoiceConnectorProxyRequest& request) const;
-
-  /**
-   * A Callable wrapper for DeleteVoiceConnectorProxy that returns a future to the operation so that it can be executed in parallel to other
-   * requests.
-   */
-  template <typename DeleteVoiceConnectorProxyRequestT = Model::DeleteVoiceConnectorProxyRequest>
-  Model::DeleteVoiceConnectorProxyOutcomeCallable DeleteVoiceConnectorProxyCallable(
-      const DeleteVoiceConnectorProxyRequestT& request) const {
-    return SubmitCallable(&ChimeSDKVoiceClient::DeleteVoiceConnectorProxy, request);
-  }
-
-  /**
-   * An Async wrapper for DeleteVoiceConnectorProxy that queues the request into a thread executor and triggers associated callback when
-   * operation has finished.
-   */
-  template <typename DeleteVoiceConnectorProxyRequestT = Model::DeleteVoiceConnectorProxyRequest>
-  void DeleteVoiceConnectorProxyAsync(const DeleteVoiceConnectorProxyRequestT& request,
-                                      const DeleteVoiceConnectorProxyResponseReceivedHandler& handler,
-                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&ChimeSDKVoiceClient::DeleteVoiceConnectorProxy, request, handler, context);
   }
 
   /**
@@ -1107,32 +1024,6 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Retrieves the specified proxy session details for the specified Amazon Chime
-   * SDK Voice Connector.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetProxySession">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::GetProxySessionOutcome GetProxySession(const Model::GetProxySessionRequest& request) const;
-
-  /**
-   * A Callable wrapper for GetProxySession that returns a future to the operation so that it can be executed in parallel to other requests.
-   */
-  template <typename GetProxySessionRequestT = Model::GetProxySessionRequest>
-  Model::GetProxySessionOutcomeCallable GetProxySessionCallable(const GetProxySessionRequestT& request) const {
-    return SubmitCallable(&ChimeSDKVoiceClient::GetProxySession, request);
-  }
-
-  /**
-   * An Async wrapper for GetProxySession that queues the request into a thread executor and triggers associated callback when operation has
-   * finished.
-   */
-  template <typename GetProxySessionRequestT = Model::GetProxySessionRequest>
-  void GetProxySessionAsync(const GetProxySessionRequestT& request, const GetProxySessionResponseReceivedHandler& handler,
-                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&ChimeSDKVoiceClient::GetProxySession, request, handler, context);
-  }
-
-  /**
    * <p>Retrieves the information for a SIP media application, including name, AWS
    * Region, and endpoints.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplication">AWS
@@ -1425,34 +1316,6 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Retrieves the proxy configuration details for the specified Amazon Chime SDK
-   * Voice Connector.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorProxy">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::GetVoiceConnectorProxyOutcome GetVoiceConnectorProxy(const Model::GetVoiceConnectorProxyRequest& request) const;
-
-  /**
-   * A Callable wrapper for GetVoiceConnectorProxy that returns a future to the operation so that it can be executed in parallel to other
-   * requests.
-   */
-  template <typename GetVoiceConnectorProxyRequestT = Model::GetVoiceConnectorProxyRequest>
-  Model::GetVoiceConnectorProxyOutcomeCallable GetVoiceConnectorProxyCallable(const GetVoiceConnectorProxyRequestT& request) const {
-    return SubmitCallable(&ChimeSDKVoiceClient::GetVoiceConnectorProxy, request);
-  }
-
-  /**
-   * An Async wrapper for GetVoiceConnectorProxy that queues the request into a thread executor and triggers associated callback when
-   * operation has finished.
-   */
-  template <typename GetVoiceConnectorProxyRequestT = Model::GetVoiceConnectorProxyRequest>
-  void GetVoiceConnectorProxyAsync(const GetVoiceConnectorProxyRequestT& request,
-                                   const GetVoiceConnectorProxyResponseReceivedHandler& handler,
-                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&ChimeSDKVoiceClient::GetVoiceConnectorProxy, request, handler, context);
-  }
-
-  /**
    * <p>Retrieves the streaming configuration details for the specified Amazon Chime
    * SDK Voice Connector. Shows whether media streaming is enabled for sending to
    * Amazon Kinesis. It also shows the retention period, in hours, for the Amazon
@@ -1711,33 +1574,6 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonCli
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                              const ListPhoneNumbersRequestT& request = {}) const {
     return SubmitAsync(&ChimeSDKVoiceClient::ListPhoneNumbers, request, handler, context);
-  }
-
-  /**
-   * <p>Lists the proxy sessions for the specified Amazon Chime SDK Voice
-   * Connector.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListProxySessions">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::ListProxySessionsOutcome ListProxySessions(const Model::ListProxySessionsRequest& request) const;
-
-  /**
-   * A Callable wrapper for ListProxySessions that returns a future to the operation so that it can be executed in parallel to other
-   * requests.
-   */
-  template <typename ListProxySessionsRequestT = Model::ListProxySessionsRequest>
-  Model::ListProxySessionsOutcomeCallable ListProxySessionsCallable(const ListProxySessionsRequestT& request) const {
-    return SubmitCallable(&ChimeSDKVoiceClient::ListProxySessions, request);
-  }
-
-  /**
-   * An Async wrapper for ListProxySessions that queues the request into a thread executor and triggers associated callback when operation
-   * has finished.
-   */
-  template <typename ListProxySessionsRequestT = Model::ListProxySessionsRequest>
-  void ListProxySessionsAsync(const ListProxySessionsRequestT& request, const ListProxySessionsResponseReceivedHandler& handler,
-                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&ChimeSDKVoiceClient::ListProxySessions, request, handler, context);
   }
 
   /**
@@ -2149,34 +1985,6 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Puts the specified proxy configuration to the specified Amazon Chime SDK
-   * Voice Connector.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorProxy">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::PutVoiceConnectorProxyOutcome PutVoiceConnectorProxy(const Model::PutVoiceConnectorProxyRequest& request) const;
-
-  /**
-   * A Callable wrapper for PutVoiceConnectorProxy that returns a future to the operation so that it can be executed in parallel to other
-   * requests.
-   */
-  template <typename PutVoiceConnectorProxyRequestT = Model::PutVoiceConnectorProxyRequest>
-  Model::PutVoiceConnectorProxyOutcomeCallable PutVoiceConnectorProxyCallable(const PutVoiceConnectorProxyRequestT& request) const {
-    return SubmitCallable(&ChimeSDKVoiceClient::PutVoiceConnectorProxy, request);
-  }
-
-  /**
-   * An Async wrapper for PutVoiceConnectorProxy that queues the request into a thread executor and triggers associated callback when
-   * operation has finished.
-   */
-  template <typename PutVoiceConnectorProxyRequestT = Model::PutVoiceConnectorProxyRequest>
-  void PutVoiceConnectorProxyAsync(const PutVoiceConnectorProxyRequestT& request,
-                                   const PutVoiceConnectorProxyResponseReceivedHandler& handler,
-                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&ChimeSDKVoiceClient::PutVoiceConnectorProxy, request, handler, context);
-  }
-
-  /**
    * <p>Updates a Voice Connector's streaming configuration settings.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorStreamingConfiguration">AWS
@@ -2500,14 +2308,14 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonCli
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateGlobalSettings">AWS
    * API Reference</a></p>
    */
-  virtual Model::UpdateGlobalSettingsOutcome UpdateGlobalSettings(const Model::UpdateGlobalSettingsRequest& request = {}) const;
+  virtual Model::UpdateGlobalSettingsOutcome UpdateGlobalSettings(const Model::UpdateGlobalSettingsRequest& request) const;
 
   /**
    * A Callable wrapper for UpdateGlobalSettings that returns a future to the operation so that it can be executed in parallel to other
    * requests.
    */
   template <typename UpdateGlobalSettingsRequestT = Model::UpdateGlobalSettingsRequest>
-  Model::UpdateGlobalSettingsOutcomeCallable UpdateGlobalSettingsCallable(const UpdateGlobalSettingsRequestT& request = {}) const {
+  Model::UpdateGlobalSettingsOutcomeCallable UpdateGlobalSettingsCallable(const UpdateGlobalSettingsRequestT& request) const {
     return SubmitCallable(&ChimeSDKVoiceClient::UpdateGlobalSettings, request);
   }
 
@@ -2516,9 +2324,8 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonCli
    * operation has finished.
    */
   template <typename UpdateGlobalSettingsRequestT = Model::UpdateGlobalSettingsRequest>
-  void UpdateGlobalSettingsAsync(const UpdateGlobalSettingsResponseReceivedHandler& handler,
-                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
-                                 const UpdateGlobalSettingsRequestT& request = {}) const {
+  void UpdateGlobalSettingsAsync(const UpdateGlobalSettingsRequestT& request, const UpdateGlobalSettingsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ChimeSDKVoiceClient::UpdateGlobalSettings, request, handler, context);
   }
 
@@ -2584,33 +2391,6 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonCli
                                       const UpdatePhoneNumberSettingsResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ChimeSDKVoiceClient::UpdatePhoneNumberSettings, request, handler, context);
-  }
-
-  /**
-   * <p>Updates the specified proxy session details, such as voice or SMS
-   * capabilities.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateProxySession">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::UpdateProxySessionOutcome UpdateProxySession(const Model::UpdateProxySessionRequest& request) const;
-
-  /**
-   * A Callable wrapper for UpdateProxySession that returns a future to the operation so that it can be executed in parallel to other
-   * requests.
-   */
-  template <typename UpdateProxySessionRequestT = Model::UpdateProxySessionRequest>
-  Model::UpdateProxySessionOutcomeCallable UpdateProxySessionCallable(const UpdateProxySessionRequestT& request) const {
-    return SubmitCallable(&ChimeSDKVoiceClient::UpdateProxySession, request);
-  }
-
-  /**
-   * An Async wrapper for UpdateProxySession that queues the request into a thread executor and triggers associated callback when operation
-   * has finished.
-   */
-  template <typename UpdateProxySessionRequestT = Model::UpdateProxySessionRequest>
-  void UpdateProxySessionAsync(const UpdateProxySessionRequestT& request, const UpdateProxySessionResponseReceivedHandler& handler,
-                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&ChimeSDKVoiceClient::UpdateProxySession, request, handler, context);
   }
 
   /**

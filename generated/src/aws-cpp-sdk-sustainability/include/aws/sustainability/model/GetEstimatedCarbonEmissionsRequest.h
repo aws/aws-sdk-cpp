@@ -37,7 +37,9 @@ class GetEstimatedCarbonEmissionsRequest : public SustainabilityRequest {
 
   ///@{
   /**
-   * <p>The date range for fetching estimated carbon emissions.</p>
+   * <p> The date range for fetching estimated carbon emissions. The range must
+   * include the start date of a month for that month's data to be included in the
+   * response. </p>
    */
   inline const TimePeriod& GetTimePeriod() const { return m_timePeriod; }
   inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
@@ -78,7 +80,9 @@ class GetEstimatedCarbonEmissionsRequest : public SustainabilityRequest {
 
   ///@{
   /**
-   * <p>The criteria for filtering estimated carbon emissions.</p>
+   * <p> The criteria for filtering estimated carbon emissions. To determine which
+   * dimensions are available to be filtered by, you can first call
+   * <a>GetEstimatedCarbonEmissionsDimensionValues</a> </p>
    */
   inline const FilterExpression& GetFilterBy() const { return m_filterBy; }
   inline bool FilterByHasBeenSet() const { return m_filterByHasBeenSet; }
@@ -121,8 +125,13 @@ class GetEstimatedCarbonEmissionsRequest : public SustainabilityRequest {
 
   ///@{
   /**
-   * <p>The time granularity for the results. If absent, uses <code>MONTHLY</code>
-   * time granularity.</p>
+   * <p> The time granularity for the results. If absent, uses <code>MONTHLY</code>
+   * time granularity. The smallest supported granularity for carbon emissions is
+   * <code>MONTHLY</code>. </p> <p> If requesting partial time periods, data will be
+   * returned based on the smallest supported granularity. For example, requesting
+   * <code>2025-04-01T00:00:00Z</code> to <code>2026-04-01T00:00:00Z</code> with
+   * <code>YEARLY_CALENDAR</code> granularity will return the last 9 months for 2025
+   * and the first 3 months of 2026. </p>
    */
   inline TimeGranularity GetGranularity() const { return m_granularity; }
   inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
@@ -157,7 +166,8 @@ class GetEstimatedCarbonEmissionsRequest : public SustainabilityRequest {
 
   ///@{
   /**
-   * <p>The maximum number of results to return in a single call. Default is 40.</p>
+   * <p>The maximum number of results to return in a single call. Default is
+   * 1000.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

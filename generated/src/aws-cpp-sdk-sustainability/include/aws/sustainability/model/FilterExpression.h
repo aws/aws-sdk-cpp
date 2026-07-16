@@ -23,8 +23,8 @@ namespace Sustainability {
 namespace Model {
 
 /**
- * <p>Filters emission values by specific dimension values.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Filters environmental impact values by specific dimension
+ * values.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sustainability-2018-05-10/FilterExpression">AWS
  * API Reference</a></p>
  */
@@ -37,7 +37,7 @@ class FilterExpression {
 
   ///@{
   /**
-   * <p>Filters emission values by specific dimension values.</p>
+   * <p>Filters environmental impact values by specific dimension values.</p>
    */
   inline const Aws::Map<Dimension, Aws::Vector<Aws::String>>& GetDimensions() const { return m_dimensions; }
   inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }

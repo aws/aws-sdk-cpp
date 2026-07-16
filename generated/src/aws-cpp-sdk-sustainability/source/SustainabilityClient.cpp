@@ -22,6 +22,8 @@
 #include <aws/sustainability/SustainabilityErrorMarshaller.h>
 #include <aws/sustainability/model/GetEstimatedCarbonEmissionsDimensionValuesRequest.h>
 #include <aws/sustainability/model/GetEstimatedCarbonEmissionsRequest.h>
+#include <aws/sustainability/model/GetEstimatedWaterAllocationDimensionValuesRequest.h>
+#include <aws/sustainability/model/GetEstimatedWaterAllocationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -203,4 +205,28 @@ GetEstimatedCarbonEmissionsDimensionValuesOutcome SustainabilityClient::GetEstim
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetEstimatedCarbonEmissionsDimensionValuesOutcome(result.GetResultWithOwnership())
                             : GetEstimatedCarbonEmissionsDimensionValuesOutcome(std::move(result.GetError()));
+}
+
+GetEstimatedWaterAllocationOutcome SustainabilityClient::GetEstimatedWaterAllocation(
+    const GetEstimatedWaterAllocationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/estimated-water-allocation");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEstimatedWaterAllocationOutcome(result.GetResultWithOwnership())
+                            : GetEstimatedWaterAllocationOutcome(std::move(result.GetError()));
+}
+
+GetEstimatedWaterAllocationDimensionValuesOutcome SustainabilityClient::GetEstimatedWaterAllocationDimensionValues(
+    const GetEstimatedWaterAllocationDimensionValuesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/estimated-water-allocation-dimension-values");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEstimatedWaterAllocationDimensionValuesOutcome(result.GetResultWithOwnership())
+                            : GetEstimatedWaterAllocationDimensionValuesOutcome(std::move(result.GetError()));
 }

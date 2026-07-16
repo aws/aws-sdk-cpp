@@ -239,6 +239,24 @@ class TaskListItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The universally unique identifier (UUID) for the workflow task.</p>
+   */
+  inline const Aws::String& GetUuid() const { return m_uuid; }
+  inline bool UuidHasBeenSet() const { return m_uuidHasBeenSet; }
+  template <typename UuidT = Aws::String>
+  void SetUuid(UuidT&& value) {
+    m_uuidHasBeenSet = true;
+    m_uuid = std::forward<UuidT>(value);
+  }
+  template <typename UuidT = Aws::String>
+  TaskListItem& WithUuid(UuidT&& value) {
+    SetUuid(std::forward<UuidT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_taskId;
 
@@ -263,6 +281,8 @@ class TaskListItem {
   int m_gpus{0};
 
   Aws::String m_instanceType;
+
+  Aws::String m_uuid;
   bool m_taskIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -275,6 +295,7 @@ class TaskListItem {
   bool m_stopTimeHasBeenSet = false;
   bool m_gpusHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
+  bool m_uuidHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -94,7 +94,7 @@ JsonValue PhoneNumberOrder::Jsonize() const {
   }
 
   if (m_focDateHasBeenSet) {
-    payload.WithString("FocDate", m_focDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+    payload.WithString("FocDate", m_focDate);
   }
 
   return payload;

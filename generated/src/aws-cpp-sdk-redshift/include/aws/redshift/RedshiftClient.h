@@ -4265,11 +4265,12 @@ class AWS_REDSHIFT_API RedshiftClient : public Aws::Client::AWSXMLClient,
    * operations more quickly than with the classic resize method. </p> <p>Elastic
    * resize operations have the following restrictions:</p> <ul> <li> <p>You can only
    * resize clusters of the following types:</p> <ul> <li> <p>dc2.large</p> </li>
-   * <li> <p>dc2.8xlarge</p> </li> <li> <p>rg.xlarge</p> </li> <li> <p>rg.4xlarge</p>
-   * </li> <li> <p>ra3.large</p> </li> <li> <p>ra3.xlplus</p> </li> <li>
-   * <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The
-   * type of nodes that you add must match the node type for the cluster.</p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * <li> <p>dc2.8xlarge</p> </li> <li> <p>rg.large</p> </li> <li> <p>rg.xlarge</p>
+   * </li> <li> <p>rg.4xlarge</p> </li> <li> <p>rg.12xlarge</p> </li> <li>
+   * <p>ra3.large</p> </li> <li> <p>ra3.xlplus</p> </li> <li> <p>ra3.4xlarge</p>
+   * </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The type of nodes that
+   * you add must match the node type for the cluster.</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
    * API Reference</a></p>
    */

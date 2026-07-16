@@ -14,7 +14,6 @@
 #include <aws/chime-sdk-voice/model/ListSipMediaApplicationsPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/SearchAvailablePhoneNumbersPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/ListVoiceProfilesPaginationTraits.h>
-#include <aws/chime-sdk-voice/model/ListProxySessionsPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/ListVoiceConnectorsPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/ListPhoneNumberOrdersPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/ListVoiceProfileDomainsPaginationTraits.h>

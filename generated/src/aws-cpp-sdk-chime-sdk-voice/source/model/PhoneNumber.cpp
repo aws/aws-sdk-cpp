@@ -26,6 +26,10 @@ PhoneNumber& PhoneNumber::operator=(JsonView jsonValue) {
     m_e164PhoneNumber = jsonValue.GetString("E164PhoneNumber");
     m_e164PhoneNumberHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PhoneNumberArn")) {
+    m_phoneNumberArn = jsonValue.GetString("PhoneNumberArn");
+    m_phoneNumberArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Country")) {
     m_country = jsonValue.GetString("Country");
     m_countryHasBeenSet = true;
@@ -93,6 +97,10 @@ JsonValue PhoneNumber::Jsonize() const {
 
   if (m_e164PhoneNumberHasBeenSet) {
     payload.WithString("E164PhoneNumber", m_e164PhoneNumber);
+  }
+
+  if (m_phoneNumberArnHasBeenSet) {
+    payload.WithString("PhoneNumberArn", m_phoneNumberArn);
   }
 
   if (m_countryHasBeenSet) {

@@ -27,7 +27,8 @@ enum class ErrorCode {
   Unprocessable,
   VoiceConnectorGroupAssociationsExist,
   PhoneNumberAssociationsExist,
-  Gone
+  Gone,
+  Validation
 };
 
 namespace ErrorCodeMapper {

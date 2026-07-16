@@ -17,22 +17,20 @@ namespace Aws {
 namespace Sustainability {
 /**
  * <p>The AWS Sustainability service provides programmatic access to estimated
- * carbon emissions data for your Amazon Web Services usage. Use the AWS
- * Sustainability service to retrieve, analyze, and track the carbon footprint of
- * your cloud infrastructure over time. </p> <p>With the AWS Sustainability
- * service, you can:</p> <ul> <li> <p>Retrieve estimated carbon emissions for your
- * Amazon Web Services usage across different time periods </p> </li> <li> <p>Group
- * emissions data by dimensions such as account, region, and service</p> </li> <li>
- * <p>Filter emissions data to focus on specific accounts, regions, or services</p>
- * </li> <li> <p>Access multiple emissions calculation methodologies including
- * Location-based Method (LBM) and Market-based Method (MBM) </p> </li> <li>
- * <p>Aggregate emissions data at various time granularities including monthly,
- * quarterly, and yearly periods </p> </li> </ul> <p> The API supports pagination
- * for efficient data retrieval and provides dimension values to help you
- * understand the available grouping and filtering options for your account. </p>
- * <p> All emissions values are calculated using methodologies aligned with the
- * Greenhouse Gas (GHG) Protocol and are provided in metric tons of carbon
- * dioxide-equivalent (MTCO2e). </p>
+ * environmental impact data for your Amazon Web Services usage. Use the AWS
+ * Sustainability service to retrieve, analyze, and track the environmental impact
+ * of your cloud infrastructure over time. </p> <p>With the AWS Sustainability
+ * service, you can:</p> <ul> <li> <p>Retrieve estimated carbon emissions and water
+ * allocation for your Amazon Web Services usage across different time periods </p>
+ * </li> <li> <p>Group environmental impact data by dimensions such as account,
+ * region, and service</p> </li> <li> <p>Filter environmental impact data to focus
+ * on specific accounts, regions, or services</p> </li> <li> <p>Access multiple
+ * carbon emissions calculation methodologies including Location-based Method (LBM)
+ * and Market-based Method (MBM) </p> </li> <li> <p>Aggregate environmental impact
+ * data at various time granularities including monthly, quarterly, and yearly
+ * periods </p> </li> </ul> <p> The API supports pagination for efficient data
+ * retrieval and provides dimension values to help you understand the available
+ * grouping and filtering options for your account. </p>
  */
 class AWS_SUSTAINABILITY_API SustainabilityClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<SustainabilityClient>,
@@ -156,6 +154,69 @@ class AWS_SUSTAINABILITY_API SustainabilityClient : public Aws::Client::AWSJsonC
       const GetEstimatedCarbonEmissionsDimensionValuesResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SustainabilityClient::GetEstimatedCarbonEmissionsDimensionValues, request, handler, context);
+  }
+
+  /**
+   * <p>Returns estimated water allocation values based on customer grouping and
+   * filtering parameters. We recommend using pagination to ensure that the operation
+   * returns quickly and successfully. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sustainability-2018-05-10/GetEstimatedWaterAllocation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetEstimatedWaterAllocationOutcome GetEstimatedWaterAllocation(
+      const Model::GetEstimatedWaterAllocationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetEstimatedWaterAllocation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetEstimatedWaterAllocationRequestT = Model::GetEstimatedWaterAllocationRequest>
+  Model::GetEstimatedWaterAllocationOutcomeCallable GetEstimatedWaterAllocationCallable(
+      const GetEstimatedWaterAllocationRequestT& request) const {
+    return SubmitCallable(&SustainabilityClient::GetEstimatedWaterAllocation, request);
+  }
+
+  /**
+   * An Async wrapper for GetEstimatedWaterAllocation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetEstimatedWaterAllocationRequestT = Model::GetEstimatedWaterAllocationRequest>
+  void GetEstimatedWaterAllocationAsync(const GetEstimatedWaterAllocationRequestT& request,
+                                        const GetEstimatedWaterAllocationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SustainabilityClient::GetEstimatedWaterAllocation, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the possible dimension values available for a customer's account. We
+   * recommend using pagination to ensure that the operation returns quickly and
+   * successfully. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sustainability-2018-05-10/GetEstimatedWaterAllocationDimensionValues">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetEstimatedWaterAllocationDimensionValuesOutcome GetEstimatedWaterAllocationDimensionValues(
+      const Model::GetEstimatedWaterAllocationDimensionValuesRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetEstimatedWaterAllocationDimensionValues that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetEstimatedWaterAllocationDimensionValuesRequestT = Model::GetEstimatedWaterAllocationDimensionValuesRequest>
+  Model::GetEstimatedWaterAllocationDimensionValuesOutcomeCallable GetEstimatedWaterAllocationDimensionValuesCallable(
+      const GetEstimatedWaterAllocationDimensionValuesRequestT& request) const {
+    return SubmitCallable(&SustainabilityClient::GetEstimatedWaterAllocationDimensionValues, request);
+  }
+
+  /**
+   * An Async wrapper for GetEstimatedWaterAllocationDimensionValues that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetEstimatedWaterAllocationDimensionValuesRequestT = Model::GetEstimatedWaterAllocationDimensionValuesRequest>
+  void GetEstimatedWaterAllocationDimensionValuesAsync(
+      const GetEstimatedWaterAllocationDimensionValuesRequestT& request,
+      const GetEstimatedWaterAllocationDimensionValuesResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SustainabilityClient::GetEstimatedWaterAllocationDimensionValues, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

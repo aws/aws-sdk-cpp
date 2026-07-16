@@ -9,7 +9,9 @@
 #include <aws/sustainability/SustainabilityClientPagination.h>
 #include <aws/sustainability/SustainabilityPaginationBase.h>
 #include <aws/sustainability/model/GetEstimatedCarbonEmissionsDimensionValuesPaginationTraits.h>
+#include <aws/sustainability/model/GetEstimatedWaterAllocationPaginationTraits.h>
 #include <aws/sustainability/model/GetEstimatedCarbonEmissionsPaginationTraits.h>
+#include <aws/sustainability/model/GetEstimatedWaterAllocationDimensionValuesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

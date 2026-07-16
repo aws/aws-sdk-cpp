@@ -149,6 +149,12 @@ static const int ml_g7e_8xlarge_HASH = HashingUtils::HashString("ml.g7e.8xlarge"
 static const int ml_g7e_12xlarge_HASH = HashingUtils::HashString("ml.g7e.12xlarge");
 static const int ml_g7e_24xlarge_HASH = HashingUtils::HashString("ml.g7e.24xlarge");
 static const int ml_g7e_48xlarge_HASH = HashingUtils::HashString("ml.g7e.48xlarge");
+static const int ml_g7_2xlarge_HASH = HashingUtils::HashString("ml.g7.2xlarge");
+static const int ml_g7_4xlarge_HASH = HashingUtils::HashString("ml.g7.4xlarge");
+static const int ml_g7_8xlarge_HASH = HashingUtils::HashString("ml.g7.8xlarge");
+static const int ml_g7_12xlarge_HASH = HashingUtils::HashString("ml.g7.12xlarge");
+static const int ml_g7_24xlarge_HASH = HashingUtils::HashString("ml.g7.24xlarge");
+static const int ml_g7_48xlarge_HASH = HashingUtils::HashString("ml.g7.48xlarge");
 static const int ml_p4d_24xlarge_HASH = HashingUtils::HashString("ml.p4d.24xlarge");
 static const int ml_c7g_large_HASH = HashingUtils::HashString("ml.c7g.large");
 static const int ml_c7g_xlarge_HASH = HashingUtils::HashString("ml.c7g.xlarge");
@@ -699,6 +705,24 @@ static bool GetEnumForNameHelper1(int hashCode, ProductionVariantInstanceType& e
   } else if (hashCode == ml_g7e_48xlarge_HASH) {
     enumValue = ProductionVariantInstanceType::ml_g7e_48xlarge;
     return true;
+  } else if (hashCode == ml_g7_2xlarge_HASH) {
+    enumValue = ProductionVariantInstanceType::ml_g7_2xlarge;
+    return true;
+  } else if (hashCode == ml_g7_4xlarge_HASH) {
+    enumValue = ProductionVariantInstanceType::ml_g7_4xlarge;
+    return true;
+  } else if (hashCode == ml_g7_8xlarge_HASH) {
+    enumValue = ProductionVariantInstanceType::ml_g7_8xlarge;
+    return true;
+  } else if (hashCode == ml_g7_12xlarge_HASH) {
+    enumValue = ProductionVariantInstanceType::ml_g7_12xlarge;
+    return true;
+  } else if (hashCode == ml_g7_24xlarge_HASH) {
+    enumValue = ProductionVariantInstanceType::ml_g7_24xlarge;
+    return true;
+  } else if (hashCode == ml_g7_48xlarge_HASH) {
+    enumValue = ProductionVariantInstanceType::ml_g7_48xlarge;
+    return true;
   } else if (hashCode == ml_p4d_24xlarge_HASH) {
     enumValue = ProductionVariantInstanceType::ml_p4d_24xlarge;
     return true;
@@ -1011,7 +1035,11 @@ static bool GetEnumForNameHelper1(int hashCode, ProductionVariantInstanceType& e
   } else if (hashCode == ml_c8g_16xlarge_HASH) {
     enumValue = ProductionVariantInstanceType::ml_c8g_16xlarge;
     return true;
-  } else if (hashCode == ml_c8g_24xlarge_HASH) {
+  }
+  return false;
+}
+static bool GetEnumForNameHelper2(int hashCode, ProductionVariantInstanceType& enumValue) {
+  if (hashCode == ml_c8g_24xlarge_HASH) {
     enumValue = ProductionVariantInstanceType::ml_c8g_24xlarge;
     return true;
   } else if (hashCode == ml_c8g_48xlarge_HASH) {
@@ -1029,11 +1057,7 @@ static bool GetEnumForNameHelper1(int hashCode, ProductionVariantInstanceType& e
   } else if (hashCode == ml_r7gd_2xlarge_HASH) {
     enumValue = ProductionVariantInstanceType::ml_r7gd_2xlarge;
     return true;
-  }
-  return false;
-}
-static bool GetEnumForNameHelper2(int hashCode, ProductionVariantInstanceType& enumValue) {
-  if (hashCode == ml_r7gd_4xlarge_HASH) {
+  } else if (hashCode == ml_r7gd_4xlarge_HASH) {
     enumValue = ProductionVariantInstanceType::ml_r7gd_4xlarge;
     return true;
   } else if (hashCode == ml_r7gd_8xlarge_HASH) {
@@ -1528,6 +1552,24 @@ static bool GetNameForEnumHelper1(ProductionVariantInstanceType enumValue, Aws::
     case ProductionVariantInstanceType::ml_g7e_48xlarge:
       value = "ml.g7e.48xlarge";
       return true;
+    case ProductionVariantInstanceType::ml_g7_2xlarge:
+      value = "ml.g7.2xlarge";
+      return true;
+    case ProductionVariantInstanceType::ml_g7_4xlarge:
+      value = "ml.g7.4xlarge";
+      return true;
+    case ProductionVariantInstanceType::ml_g7_8xlarge:
+      value = "ml.g7.8xlarge";
+      return true;
+    case ProductionVariantInstanceType::ml_g7_12xlarge:
+      value = "ml.g7.12xlarge";
+      return true;
+    case ProductionVariantInstanceType::ml_g7_24xlarge:
+      value = "ml.g7.24xlarge";
+      return true;
+    case ProductionVariantInstanceType::ml_g7_48xlarge:
+      value = "ml.g7.48xlarge";
+      return true;
     case ProductionVariantInstanceType::ml_p4d_24xlarge:
       value = "ml.p4d.24xlarge";
       return true;
@@ -1840,6 +1882,12 @@ static bool GetNameForEnumHelper1(ProductionVariantInstanceType enumValue, Aws::
     case ProductionVariantInstanceType::ml_c8g_16xlarge:
       value = "ml.c8g.16xlarge";
       return true;
+    default:
+      return false;
+  }
+}
+static bool GetNameForEnumHelper2(ProductionVariantInstanceType enumValue, Aws::String& value) {
+  switch (enumValue) {
     case ProductionVariantInstanceType::ml_c8g_24xlarge:
       value = "ml.c8g.24xlarge";
       return true;
@@ -1858,12 +1906,6 @@ static bool GetNameForEnumHelper1(ProductionVariantInstanceType enumValue, Aws::
     case ProductionVariantInstanceType::ml_r7gd_2xlarge:
       value = "ml.r7gd.2xlarge";
       return true;
-    default:
-      return false;
-  }
-}
-static bool GetNameForEnumHelper2(ProductionVariantInstanceType enumValue, Aws::String& value) {
-  switch (enumValue) {
     case ProductionVariantInstanceType::ml_r7gd_4xlarge:
       value = "ml.r7gd.4xlarge";
       return true;
