@@ -721,6 +721,41 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a knowledge base from a specified data source. Supported data source
+   * connector types include:</p> <ul> <li> <p> <code>S3_KNOWLEDGE_BASE</code> – Uses
+   * an Amazon S3 bucket as the data source.</p> </li> <li> <p>
+   * <code>WEB_CRAWLER</code> – Uses web pages indexed by the built-in web crawler as
+   * the data source.</p> </li> <li> <p> <code>GOOGLE_DRIVE</code> – Uses Google
+   * Drive as the data source. Supports service account authentication only.</p>
+   * </li> <li> <p> <code>SHAREPOINT</code> – Uses SharePoint as the data source.
+   * Supports two-legged OAuth only.</p> </li> <li> <p> <code>ONE_DRIVE</code> – Uses
+   * OneDrive as the data source. Supports two-legged OAuth only.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateKnowledgeBase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateKnowledgeBaseOutcome CreateKnowledgeBase(const Model::CreateKnowledgeBaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateKnowledgeBase that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateKnowledgeBaseRequestT = Model::CreateKnowledgeBaseRequest>
+  Model::CreateKnowledgeBaseOutcomeCallable CreateKnowledgeBaseCallable(const CreateKnowledgeBaseRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::CreateKnowledgeBase, request);
+  }
+
+  /**
+   * An Async wrapper for CreateKnowledgeBase that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateKnowledgeBaseRequestT = Model::CreateKnowledgeBaseRequest>
+  void CreateKnowledgeBaseAsync(const CreateKnowledgeBaseRequestT& request, const CreateKnowledgeBaseResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::CreateKnowledgeBase, request, handler, context);
+  }
+
+  /**
    * <p>(Enterprise edition only) Creates a new namespace for you to use with Amazon
    * Quick Sight.</p> <p>A namespace allows you to isolate the Quick Sight users and
    * groups that are registered for that namespace. Users that access the namespace
@@ -7268,6 +7303,33 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void UpdateKeyRegistrationAsync(const UpdateKeyRegistrationRequestT& request, const UpdateKeyRegistrationResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::UpdateKeyRegistration, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the properties of an existing knowledge base.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKnowledgeBase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateKnowledgeBaseOutcome UpdateKnowledgeBase(const Model::UpdateKnowledgeBaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateKnowledgeBase that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateKnowledgeBaseRequestT = Model::UpdateKnowledgeBaseRequest>
+  Model::UpdateKnowledgeBaseOutcomeCallable UpdateKnowledgeBaseCallable(const UpdateKnowledgeBaseRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::UpdateKnowledgeBase, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateKnowledgeBase that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateKnowledgeBaseRequestT = Model::UpdateKnowledgeBaseRequest>
+  void UpdateKnowledgeBaseAsync(const UpdateKnowledgeBaseRequestT& request, const UpdateKnowledgeBaseResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::UpdateKnowledgeBase, request, handler, context);
   }
 
   /**

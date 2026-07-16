@@ -44,6 +44,7 @@
 #include <aws/ssm/model/GetResourcePoliciesPaginationTraits.h>
 #include <aws/ssm/model/ListAssociationVersionsPaginationTraits.h>
 #include <aws/ssm/model/ListAssociationsPaginationTraits.h>
+#include <aws/ssm/model/ListCloudConnectorsPaginationTraits.h>
 #include <aws/ssm/model/ListCommandInvocationsPaginationTraits.h>
 #include <aws/ssm/model/ListCommandsPaginationTraits.h>
 #include <aws/ssm/model/ListComplianceItemsPaginationTraits.h>
@@ -57,6 +58,7 @@
 #include <aws/ssm/model/ListOpsMetadataPaginationTraits.h>
 #include <aws/ssm/model/ListResourceComplianceSummariesPaginationTraits.h>
 #include <aws/ssm/model/ListResourceDataSyncPaginationTraits.h>
+#include <aws/ssm/model/ValidateCloudConnectorPaginationTraits.h>
 
 #include <memory>
 
@@ -510,6 +512,18 @@ class SSMPaginationBase {
   }
 
   /**
+   * Create a paginator for ListCloudConnectors operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCloudConnectorsRequest,
+                                    Pagination::ListCloudConnectorsPaginationTraits<DerivedClient>>
+  ListCloudConnectorsPaginator(const Model::ListCloudConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCloudConnectorsRequest,
+                                             Pagination::ListCloudConnectorsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListCommandInvocations operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCommandInvocationsRequest,
@@ -658,6 +672,18 @@ class SSMPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceDataSyncRequest,
                                              Pagination::ListResourceDataSyncPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ValidateCloudConnector operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ValidateCloudConnectorRequest,
+                                    Pagination::ValidateCloudConnectorPaginationTraits<DerivedClient>>
+  ValidateCloudConnectorPaginator(const Model::ValidateCloudConnectorRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ValidateCloudConnectorRequest,
+                                             Pagination::ValidateCloudConnectorPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 };

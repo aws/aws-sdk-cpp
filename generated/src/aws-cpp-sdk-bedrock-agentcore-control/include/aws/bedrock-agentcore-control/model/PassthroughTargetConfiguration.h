@@ -57,8 +57,12 @@ class PassthroughTargetConfiguration {
 
   ///@{
   /**
-   * <p>The application protocol the passthrough target implements. Required for
-   * passthrough targets.</p>
+   * <p>The application protocol that the passthrough target implements. This value
+   * is required for passthrough targets:</p> <ul> <li> <p> <code>MCP</code> - The
+   * Model Context Protocol.</p> </li> <li> <p> <code>A2A</code> - The Agent-to-Agent
+   * protocol.</p> </li> <li> <p> <code>INFERENCE</code> - The protocol for routing
+   * requests to a large language model (LLM) provider.</p> </li> <li> <p>
+   * <code>CUSTOM</code> - A custom application protocol.</p> </li> </ul>
    */
   inline PassthroughProtocolType GetProtocolType() const { return m_protocolType; }
   inline bool ProtocolTypeHasBeenSet() const { return m_protocolTypeHasBeenSet; }

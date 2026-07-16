@@ -22,6 +22,7 @@ static const int Code_HASH = HashingUtils::HashString("Code");
 static const int AI_ML_HASH = HashingUtils::HashString("AI/ML");
 static const int Identity_HASH = HashingUtils::HashString("Identity");
 static const int Network_HASH = HashingUtils::HashString("Network");
+static const int Messaging_HASH = HashingUtils::HashString("Messaging");
 static const int Other_HASH = HashingUtils::HashString("Other");
 
 ResourceCategory GetResourceCategoryForName(const Aws::String& name) {
@@ -40,6 +41,8 @@ ResourceCategory GetResourceCategoryForName(const Aws::String& name) {
     return ResourceCategory::Identity;
   } else if (hashCode == Network_HASH) {
     return ResourceCategory::Network;
+  } else if (hashCode == Messaging_HASH) {
+    return ResourceCategory::Messaging;
   } else if (hashCode == Other_HASH) {
     return ResourceCategory::Other;
   }
@@ -70,6 +73,8 @@ Aws::String GetNameForResourceCategory(ResourceCategory enumValue) {
       return "Identity";
     case ResourceCategory::Network:
       return "Network";
+    case ResourceCategory::Messaging:
+      return "Messaging";
     case ResourceCategory::Other:
       return "Other";
     default:

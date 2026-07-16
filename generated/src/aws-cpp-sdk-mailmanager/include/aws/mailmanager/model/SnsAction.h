@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/ActionFailurePolicy.h>
 #include <aws/mailmanager/model/SnsNotificationEncoding.h>
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MailManager {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class SnsAction {
  public:
   AWS_MAILMANAGER_API SnsAction() = default;
-  AWS_MAILMANAGER_API SnsAction(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MAILMANAGER_API SnsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MAILMANAGER_API SnsAction(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MAILMANAGER_API SnsAction& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MAILMANAGER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

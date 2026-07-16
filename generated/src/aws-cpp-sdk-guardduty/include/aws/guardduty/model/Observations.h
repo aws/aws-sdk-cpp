@@ -56,9 +56,35 @@ class Observations {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The numeric values that were unusual.</p>
+   */
+  inline const Aws::Vector<long long>& GetNumber() const { return m_number; }
+  inline bool NumberHasBeenSet() const { return m_numberHasBeenSet; }
+  template <typename NumberT = Aws::Vector<long long>>
+  void SetNumber(NumberT&& value) {
+    m_numberHasBeenSet = true;
+    m_number = std::forward<NumberT>(value);
+  }
+  template <typename NumberT = Aws::Vector<long long>>
+  Observations& WithNumber(NumberT&& value) {
+    SetNumber(std::forward<NumberT>(value));
+    return *this;
+  }
+  inline Observations& AddNumber(long long value) {
+    m_numberHasBeenSet = true;
+    m_number.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_text;
+
+  Aws::Vector<long long> m_number;
   bool m_textHasBeenSet = false;
+  bool m_numberHasBeenSet = false;
 };
 
 }  // namespace Model

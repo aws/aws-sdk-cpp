@@ -74,6 +74,14 @@ DataSource& DataSource::operator=(JsonView jsonValue) {
     m_secretArn = jsonValue.GetString("SecretArn");
     m_secretArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CredentialStatus")) {
+    m_credentialStatus = CredentialStatusMapper::GetCredentialStatusForName(jsonValue.GetString("CredentialStatus"));
+    m_credentialStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LastCredentialVerifiedAt")) {
+    m_lastCredentialVerifiedAt = jsonValue.GetDouble("LastCredentialVerifiedAt");
+    m_lastCredentialVerifiedAtHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -136,6 +144,14 @@ JsonValue DataSource::Jsonize() const {
 
   if (m_secretArnHasBeenSet) {
     payload.WithString("SecretArn", m_secretArn);
+  }
+
+  if (m_credentialStatusHasBeenSet) {
+    payload.WithString("CredentialStatus", CredentialStatusMapper::GetNameForCredentialStatus(m_credentialStatus));
+  }
+
+  if (m_lastCredentialVerifiedAtHasBeenSet) {
+    payload.WithDouble("LastCredentialVerifiedAt", m_lastCredentialVerifiedAt.SecondsWithMSPrecision());
   }
 
   return payload;

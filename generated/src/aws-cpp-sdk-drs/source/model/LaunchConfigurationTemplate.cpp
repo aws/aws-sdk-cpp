@@ -66,6 +66,10 @@ LaunchConfigurationTemplate& LaunchConfigurationTemplate::operator=(JsonView jso
     m_launchIntoSourceInstance = jsonValue.GetBool("launchIntoSourceInstance");
     m_launchIntoSourceInstanceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("recoveryMode")) {
+    m_recoveryMode = RecoveryModeMapper::GetRecoveryModeForName(jsonValue.GetString("recoveryMode"));
+    m_recoveryModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -120,6 +124,10 @@ JsonValue LaunchConfigurationTemplate::Jsonize() const {
 
   if (m_launchIntoSourceInstanceHasBeenSet) {
     payload.WithBool("launchIntoSourceInstance", m_launchIntoSourceInstance);
+  }
+
+  if (m_recoveryModeHasBeenSet) {
+    payload.WithString("recoveryMode", RecoveryModeMapper::GetNameForRecoveryMode(m_recoveryMode));
   }
 
   return payload;

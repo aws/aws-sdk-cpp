@@ -46,9 +46,45 @@ JobProgressReport& JobProgressReport::operator=(JsonView jsonValue) {
     m_totalNumberOfFilesReadWithCustomerError = jsonValue.GetInt64("TotalNumberOfFilesReadWithCustomerError");
     m_totalNumberOfFilesReadWithCustomerErrorHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TotalNumberOfScannedNonFhirFiles")) {
+    m_totalNumberOfScannedNonFhirFiles = jsonValue.GetInt64("TotalNumberOfScannedNonFhirFiles");
+    m_totalNumberOfScannedNonFhirFilesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TotalSizeOfScannedNonFhirFilesInMB")) {
+    m_totalSizeOfScannedNonFhirFilesInMB = jsonValue.GetDouble("TotalSizeOfScannedNonFhirFilesInMB");
+    m_totalSizeOfScannedNonFhirFilesInMBHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TotalNumberOfImportedNonFhirFiles")) {
+    m_totalNumberOfImportedNonFhirFiles = jsonValue.GetInt64("TotalNumberOfImportedNonFhirFiles");
+    m_totalNumberOfImportedNonFhirFilesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TotalNumberOfNonFhirResourcesScanned")) {
+    m_totalNumberOfNonFhirResourcesScanned = jsonValue.GetInt64("TotalNumberOfNonFhirResourcesScanned");
+    m_totalNumberOfNonFhirResourcesScannedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TotalNumberOfNonFhirResourcesImported")) {
+    m_totalNumberOfNonFhirResourcesImported = jsonValue.GetInt64("TotalNumberOfNonFhirResourcesImported");
+    m_totalNumberOfNonFhirResourcesImportedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TotalNumberOfNonFhirResourcesWithCustomerError")) {
+    m_totalNumberOfNonFhirResourcesWithCustomerError = jsonValue.GetInt64("TotalNumberOfNonFhirResourcesWithCustomerError");
+    m_totalNumberOfNonFhirResourcesWithCustomerErrorHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TotalNumberOfNonFhirFilesReadWithCustomerError")) {
+    m_totalNumberOfNonFhirFilesReadWithCustomerError = jsonValue.GetInt64("TotalNumberOfNonFhirFilesReadWithCustomerError");
+    m_totalNumberOfNonFhirFilesReadWithCustomerErrorHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Throughput")) {
     m_throughput = jsonValue.GetDouble("Throughput");
     m_throughputHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TotalFilesConverted")) {
+    m_totalFilesConverted = jsonValue.GetInt64("TotalFilesConverted");
+    m_totalFilesConvertedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TotalResourcesGenerated")) {
+    m_totalResourcesGenerated = jsonValue.GetInt64("TotalResourcesGenerated");
+    m_totalResourcesGeneratedHasBeenSet = true;
   }
   return *this;
 }
@@ -84,8 +120,44 @@ JsonValue JobProgressReport::Jsonize() const {
     payload.WithInt64("TotalNumberOfFilesReadWithCustomerError", m_totalNumberOfFilesReadWithCustomerError);
   }
 
+  if (m_totalNumberOfScannedNonFhirFilesHasBeenSet) {
+    payload.WithInt64("TotalNumberOfScannedNonFhirFiles", m_totalNumberOfScannedNonFhirFiles);
+  }
+
+  if (m_totalSizeOfScannedNonFhirFilesInMBHasBeenSet) {
+    payload.WithDouble("TotalSizeOfScannedNonFhirFilesInMB", m_totalSizeOfScannedNonFhirFilesInMB);
+  }
+
+  if (m_totalNumberOfImportedNonFhirFilesHasBeenSet) {
+    payload.WithInt64("TotalNumberOfImportedNonFhirFiles", m_totalNumberOfImportedNonFhirFiles);
+  }
+
+  if (m_totalNumberOfNonFhirResourcesScannedHasBeenSet) {
+    payload.WithInt64("TotalNumberOfNonFhirResourcesScanned", m_totalNumberOfNonFhirResourcesScanned);
+  }
+
+  if (m_totalNumberOfNonFhirResourcesImportedHasBeenSet) {
+    payload.WithInt64("TotalNumberOfNonFhirResourcesImported", m_totalNumberOfNonFhirResourcesImported);
+  }
+
+  if (m_totalNumberOfNonFhirResourcesWithCustomerErrorHasBeenSet) {
+    payload.WithInt64("TotalNumberOfNonFhirResourcesWithCustomerError", m_totalNumberOfNonFhirResourcesWithCustomerError);
+  }
+
+  if (m_totalNumberOfNonFhirFilesReadWithCustomerErrorHasBeenSet) {
+    payload.WithInt64("TotalNumberOfNonFhirFilesReadWithCustomerError", m_totalNumberOfNonFhirFilesReadWithCustomerError);
+  }
+
   if (m_throughputHasBeenSet) {
     payload.WithDouble("Throughput", m_throughput);
+  }
+
+  if (m_totalFilesConvertedHasBeenSet) {
+    payload.WithInt64("TotalFilesConverted", m_totalFilesConverted);
+  }
+
+  if (m_totalResourcesGeneratedHasBeenSet) {
+    payload.WithInt64("TotalResourcesGenerated", m_totalResourcesGenerated);
   }
 
   return payload;

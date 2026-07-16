@@ -70,12 +70,36 @@ class AddReplicaLocationInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the customer-managed AWS Key Management
+   * Service (AWS KMS) key used to encrypt the canary replica's AWS Lambda function
+   * environment variables at rest. If you don't specify a value, the service uses an
+   * AWS-managed key.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  AddReplicaLocationInput& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_location;
 
   VpcConfigInput m_vpcConfig;
+
+  Aws::String m_kmsKeyArn;
   bool m_locationHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

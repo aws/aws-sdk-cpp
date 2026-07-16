@@ -119,7 +119,8 @@ class UpdateExperimentRunRequest : public AppConfigRequest {
 
   ///@{
   /**
-   * <p>Updated treatment assignment overrides.</p>
+   * <p>The updated treatment assignment overrides that assign specific entity IDs to
+   * treatments, bypassing random assignment.</p>
    */
   inline const TreatmentOverrides& GetTreatmentOverrides() const { return m_treatmentOverrides; }
   inline bool TreatmentOverridesHasBeenSet() const { return m_treatmentOverridesHasBeenSet; }
@@ -137,7 +138,7 @@ class UpdateExperimentRunRequest : public AppConfigRequest {
 
   ///@{
   /**
-   * <p>Updated deployment parameters.</p>
+   * <p>The updated deployment parameters for the experiment run.</p>
    */
   inline const DeploymentParameters& GetDeploymentParameters() const { return m_deploymentParameters; }
   inline bool DeploymentParametersHasBeenSet() const { return m_deploymentParametersHasBeenSet; }

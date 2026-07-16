@@ -1710,6 +1710,35 @@ class ModifyDBInstanceRequest : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The lifecycle type for this DB instance.</p> <p>This setting applies only to
+   * RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora DB instances, the engine
+   * lifecycle support is managed by the DB cluster.</p> <p>You can use this setting
+   * to enroll your DB instance into Amazon RDS Extended Support or to opt out. With
+   * RDS Extended Support, you can run the selected major engine version on your DB
+   * instance past the end of standard support for that engine version. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Amazon
+   * RDS Extended Support with Amazon RDS</a> in the <i>Amazon RDS User
+   * Guide</i>.</p> <p>Valid Values: <code>open-source-rds-extended-support |
+   * open-source-rds-extended-support-disabled</code> </p> <p>This setting doesn't
+   * apply to RDS Custom DB instances.</p>
+   */
+  inline const Aws::String& GetEngineLifecycleSupport() const { return m_engineLifecycleSupport; }
+  inline bool EngineLifecycleSupportHasBeenSet() const { return m_engineLifecycleSupportHasBeenSet; }
+  template <typename EngineLifecycleSupportT = Aws::String>
+  void SetEngineLifecycleSupport(EngineLifecycleSupportT&& value) {
+    m_engineLifecycleSupportHasBeenSet = true;
+    m_engineLifecycleSupport = std::forward<EngineLifecycleSupportT>(value);
+  }
+  template <typename EngineLifecycleSupportT = Aws::String>
+  ModifyDBInstanceRequest& WithEngineLifecycleSupport(EngineLifecycleSupportT&& value) {
+    SetEngineLifecycleSupport(std::forward<EngineLifecycleSupportT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
 
@@ -1838,6 +1867,8 @@ class ModifyDBInstanceRequest : public RDSRequest {
   Aws::Vector<TagSpecification> m_tagSpecifications;
 
   MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
+
+  Aws::String m_engineLifecycleSupport;
   bool m_dBInstanceIdentifierHasBeenSet = false;
   bool m_allocatedStorageHasBeenSet = false;
   bool m_dBInstanceClassHasBeenSet = false;
@@ -1902,6 +1933,7 @@ class ModifyDBInstanceRequest : public RDSRequest {
   bool m_additionalStorageVolumesHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
   bool m_masterUserAuthenticationTypeHasBeenSet = false;
+  bool m_engineLifecycleSupportHasBeenSet = false;
 };
 
 }  // namespace Model

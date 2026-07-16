@@ -41,6 +41,10 @@ Aws::String DescribeVolumesModificationsRequest::SerializePayload() const {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
+  if (m_includeManagedResourcesHasBeenSet) {
+    ss << "IncludeManagedResources=" << std::boolalpha << m_includeManagedResources << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

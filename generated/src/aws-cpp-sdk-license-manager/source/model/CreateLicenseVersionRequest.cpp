@@ -71,6 +71,10 @@ Aws::String CreateLicenseVersionRequest::SerializePayload() const {
     payload.WithString("SourceVersion", m_sourceVersion);
   }
 
+  if (m_resetUsageHasBeenSet) {
+    payload.WithBool("ResetUsage", m_resetUsage);
+  }
+
   return payload.View().WriteReadable();
 }
 

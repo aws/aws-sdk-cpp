@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GeoPlaces {
 namespace Model {
-enum class GetPlaceAdditionalFeature { NOT_SET, TimeZone, Phonemes, Access, Contact, SecondaryAddresses };
+enum class GetPlaceAdditionalFeature { NOT_SET, TimeZone, Phonemes, Access, Contact, SecondaryAddresses, CrossReferences };
 
 namespace GetPlaceAdditionalFeatureMapper {
 AWS_GEOPLACES_API GetPlaceAdditionalFeature GetGetPlaceAdditionalFeatureForName(const Aws::String& name);

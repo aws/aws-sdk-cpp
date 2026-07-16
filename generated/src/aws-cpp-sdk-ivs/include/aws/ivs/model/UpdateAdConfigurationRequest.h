@@ -9,6 +9,7 @@
 #include <aws/ivs/IVSRequest.h>
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/ivs/model/MediaTailorPlaybackConfiguration.h>
+#include <aws/ivs/model/PostRollConfiguration.h>
 
 #include <utility>
 
@@ -95,15 +96,37 @@ class UpdateAdConfigurationRequest : public IVSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for the post-roll ad break to use for this ad
+   * configuration.</p>
+   */
+  inline const PostRollConfiguration& GetPostRollConfiguration() const { return m_postRollConfiguration; }
+  inline bool PostRollConfigurationHasBeenSet() const { return m_postRollConfigurationHasBeenSet; }
+  template <typename PostRollConfigurationT = PostRollConfiguration>
+  void SetPostRollConfiguration(PostRollConfigurationT&& value) {
+    m_postRollConfigurationHasBeenSet = true;
+    m_postRollConfiguration = std::forward<PostRollConfigurationT>(value);
+  }
+  template <typename PostRollConfigurationT = PostRollConfiguration>
+  UpdateAdConfigurationRequest& WithPostRollConfiguration(PostRollConfigurationT&& value) {
+    SetPostRollConfiguration(std::forward<PostRollConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
   Aws::String m_name;
 
   Aws::Vector<MediaTailorPlaybackConfiguration> m_mediaTailorPlaybackConfigurations;
+
+  PostRollConfiguration m_postRollConfiguration;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_mediaTailorPlaybackConfigurationsHasBeenSet = false;
+  bool m_postRollConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -9,6 +9,9 @@
 #include <aws/healthlake/HealthLakeClientPagination.h>
 #include <aws/healthlake/HealthLakePaginationBase.h>
 #include <aws/healthlake/model/ListFHIRImportJobsPaginationTraits.h>
+#include <aws/healthlake/model/ListDataTransformationJobsPaginationTraits.h>
+#include <aws/healthlake/model/ListDataTransformationProfilesPaginationTraits.h>
+#include <aws/healthlake/model/ListDataTransformationProfileVersionsPaginationTraits.h>
 #include <aws/healthlake/model/ListFHIRDatastoresPaginationTraits.h>
 #include <aws/healthlake/model/ListFHIRExportJobsPaginationTraits.h>
 

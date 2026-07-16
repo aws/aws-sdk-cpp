@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/ActionSummary.h>
 #include <aws/connect/model/EventSourceName.h>
+#include <aws/connect/model/RuleCapabilityTier.h>
 #include <aws/connect/model/RulePublishStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -125,6 +126,30 @@ class RuleSummary {
 
   ///@{
   /**
+   * <p>The list of capability tiers associated with the rule. Used for categorizing
+   * rules by capability (for example, <code>GenerativeAI</code>).</p>
+   */
+  inline const Aws::Vector<RuleCapabilityTier>& GetRuleCapabilityTiers() const { return m_ruleCapabilityTiers; }
+  inline bool RuleCapabilityTiersHasBeenSet() const { return m_ruleCapabilityTiersHasBeenSet; }
+  template <typename RuleCapabilityTiersT = Aws::Vector<RuleCapabilityTier>>
+  void SetRuleCapabilityTiers(RuleCapabilityTiersT&& value) {
+    m_ruleCapabilityTiersHasBeenSet = true;
+    m_ruleCapabilityTiers = std::forward<RuleCapabilityTiersT>(value);
+  }
+  template <typename RuleCapabilityTiersT = Aws::Vector<RuleCapabilityTier>>
+  RuleSummary& WithRuleCapabilityTiers(RuleCapabilityTiersT&& value) {
+    SetRuleCapabilityTiers(std::forward<RuleCapabilityTiersT>(value));
+    return *this;
+  }
+  inline RuleSummary& AddRuleCapabilityTiers(RuleCapabilityTier value) {
+    m_ruleCapabilityTiersHasBeenSet = true;
+    m_ruleCapabilityTiers.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of ActionTypes associated with a rule. </p>
    */
   inline const Aws::Vector<ActionSummary>& GetActionSummaries() const { return m_actionSummaries; }
@@ -193,6 +218,8 @@ class RuleSummary {
 
   RulePublishStatus m_publishStatus{RulePublishStatus::NOT_SET};
 
+  Aws::Vector<RuleCapabilityTier> m_ruleCapabilityTiers;
+
   Aws::Vector<ActionSummary> m_actionSummaries;
 
   Aws::Utils::DateTime m_createdTime{};
@@ -203,6 +230,7 @@ class RuleSummary {
   bool m_ruleArnHasBeenSet = false;
   bool m_eventSourceNameHasBeenSet = false;
   bool m_publishStatusHasBeenSet = false;
+  bool m_ruleCapabilityTiersHasBeenSet = false;
   bool m_actionSummariesHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;

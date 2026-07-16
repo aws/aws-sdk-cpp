@@ -58,7 +58,7 @@ class GetEffectiveHoursOfOperationsResult {
    * <p>Information about override configurations applied to the base hours of
    * operation to calculate the effective hours.</p> <p>For more information about
    * how override types are applied, see <a
-   * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Build
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Build
    * your list of overrides</a> in the <i> Administrator Guide</i>.</p>
    */
   inline const Aws::Vector<EffectiveOverrideHours>& GetEffectiveOverrideHoursList() const { return m_effectiveOverrideHoursList; }

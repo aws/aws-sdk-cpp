@@ -92,27 +92,6 @@ class InvokeWithResponseStreamRequest : public StreamingLambdaRequest {
 
   ///@{
   /**
-   * <p>Use one of the following options:</p> <ul> <li> <p>
-   * <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep
-   * the connection open until the function returns a response or times out. The API
-   * operation response includes the function response and additional data.</p> </li>
-   * <li> <p> <code>DryRun</code> – Validate parameter values and verify that the IAM
-   * user or role has permission to invoke the function.</p> </li> </ul>
-   */
-  inline ResponseStreamingInvocationType GetInvocationType() const { return m_invocationType; }
-  inline bool InvocationTypeHasBeenSet() const { return m_invocationTypeHasBeenSet; }
-  inline void SetInvocationType(ResponseStreamingInvocationType value) {
-    m_invocationTypeHasBeenSet = true;
-    m_invocationType = value;
-  }
-  inline InvokeWithResponseStreamRequest& WithInvocationType(ResponseStreamingInvocationType value) {
-    SetInvocationType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Set to <code>Tail</code> to include the execution log in the response.
    * Applies to synchronously invoked functions only.</p>
    */
@@ -182,10 +161,29 @@ class InvokeWithResponseStreamRequest : public StreamingLambdaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Use one of the following options:</p> <ul> <li> <p>
+   * <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep
+   * the connection open until the function returns a response or times out. The API
+   * operation response includes the function response and additional data.</p> </li>
+   * <li> <p> <code>DryRun</code> – Validate parameter values and verify that the IAM
+   * user or role has permission to invoke the function.</p> </li> </ul>
+   */
+  inline ResponseStreamingInvocationType GetInvocationType() const { return m_invocationType; }
+  inline bool InvocationTypeHasBeenSet() const { return m_invocationTypeHasBeenSet; }
+  inline void SetInvocationType(ResponseStreamingInvocationType value) {
+    m_invocationTypeHasBeenSet = true;
+    m_invocationType = value;
+  }
+  inline InvokeWithResponseStreamRequest& WithInvocationType(ResponseStreamingInvocationType value) {
+    SetInvocationType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_functionName;
-
-  ResponseStreamingInvocationType m_invocationType{ResponseStreamingInvocationType::NOT_SET};
 
   LogType m_logType{LogType::NOT_SET};
 
@@ -194,15 +192,17 @@ class InvokeWithResponseStreamRequest : public StreamingLambdaRequest {
   Aws::String m_qualifier;
 
   Aws::String m_tenantId;
+
+  ResponseStreamingInvocationType m_invocationType{ResponseStreamingInvocationType::NOT_SET};
   InvokeWithResponseStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   bool m_functionNameHasBeenSet = false;
-  bool m_invocationTypeHasBeenSet = false;
   bool m_logTypeHasBeenSet = false;
   bool m_clientContextHasBeenSet = false;
   bool m_qualifierHasBeenSet = false;
   bool m_tenantIdHasBeenSet = false;
+  bool m_invocationTypeHasBeenSet = false;
 };
 
 }  // namespace Model

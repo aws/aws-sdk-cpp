@@ -875,11 +875,6 @@ S3CrtClient::CopyObjectPropertiesOutcome S3CrtClient::PopulateCopyObjectProperti
   const auto& head = headOutcome.GetResult();
   const Aws::String sourceETag = head.GetETag();
 
-  // Pin the source version so UploadPartCopy reads a stable object.
-  if (sourceVersionId.empty() && !head.GetVersionId().empty()) {
-    sourceVersionId = head.GetVersionId();
-    httpRequest->SetHeaderValue("x-amz-copy-source", Aws::Http::URI::URLEncodePath(copySource) + "?versionId=" + sourceVersionId);
-  }
   if (!httpRequest->HasHeader("x-amz-copy-source-if-match") && !sourceETag.empty()) {
     httpRequest->SetHeaderValue("x-amz-copy-source-if-match", sourceETag);
   }

@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/MailManagerPaginationBase.h>
 #include <aws/mailmanager/MailManagerServiceClientModel.h>
 #include <aws/mailmanager/MailManagerWaiter.h>
@@ -26,12 +26,12 @@ namespace MailManager {
  * href="https://docs.aws.amazon.com/ses/latest/dg/eb.html">Mail Manager
  * chapter</a> in the <i>Amazon SES Developer Guide</i>.</p></p>
  */
-class AWS_MAILMANAGER_API MailManagerClient : public Aws::Client::AWSJsonClient,
+class AWS_MAILMANAGER_API MailManagerClient : public Aws::Client::AWSRpcV2CborClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<MailManagerClient>,
                                               public MailManagerPaginationBase<MailManagerClient>,
                                               public MailManagerWaiter<MailManagerClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

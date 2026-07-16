@@ -26,6 +26,22 @@ ServiceTopologyEdgeSummary& ServiceTopologyEdgeSummary::operator=(JsonView jsonV
     m_destinationResourceIdentifier = jsonValue.GetString("destinationResourceIdentifier");
     m_destinationResourceIdentifierHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sourceRegion")) {
+    m_sourceRegion = jsonValue.GetString("sourceRegion");
+    m_sourceRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("destinationRegion")) {
+    m_destinationRegion = jsonValue.GetString("destinationRegion");
+    m_destinationRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sourceAccount")) {
+    m_sourceAccount = jsonValue.GetString("sourceAccount");
+    m_sourceAccountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("destinationAccount")) {
+    m_destinationAccount = jsonValue.GetString("destinationAccount");
+    m_destinationAccountHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("properties")) {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
     for (unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex) {
@@ -45,6 +61,22 @@ JsonValue ServiceTopologyEdgeSummary::Jsonize() const {
 
   if (m_destinationResourceIdentifierHasBeenSet) {
     payload.WithString("destinationResourceIdentifier", m_destinationResourceIdentifier);
+  }
+
+  if (m_sourceRegionHasBeenSet) {
+    payload.WithString("sourceRegion", m_sourceRegion);
+  }
+
+  if (m_destinationRegionHasBeenSet) {
+    payload.WithString("destinationRegion", m_destinationRegion);
+  }
+
+  if (m_sourceAccountHasBeenSet) {
+    payload.WithString("sourceAccount", m_sourceAccount);
+  }
+
+  if (m_destinationAccountHasBeenSet) {
+    payload.WithString("destinationAccount", m_destinationAccount);
   }
 
   if (m_propertiesHasBeenSet) {

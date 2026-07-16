@@ -6,33 +6,153 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/model/GetArchiveMessageResult.h>
 
 #include <utility>
 
 using namespace Aws::MailManager::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
+using namespace Aws::Utils::Cbor;
 using namespace Aws;
 
-GetArchiveMessageResult::GetArchiveMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+GetArchiveMessageResult::GetArchiveMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) { *this = result; }
 
-GetArchiveMessageResult& GetArchiveMessageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+GetArchiveMessageResult& GetArchiveMessageResult::operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("MessageDownloadLink")) {
-    m_messageDownloadLink = jsonValue.GetString("MessageDownloadLink");
-    m_messageDownloadLinkHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Metadata")) {
-    m_metadata = jsonValue.GetObject("Metadata");
-    m_metadataHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Envelope")) {
-    m_envelope = jsonValue.GetObject("Envelope");
-    m_envelopeHasBeenSet = true;
+
+  const auto& cborValue = result.GetPayload();
+  const auto decoder = cborValue.GetDecoder();
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "MessageDownloadLink") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_messageDownloadLink = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_messageDownloadLink = ss.str();
+                  }
+                }
+                m_messageDownloadLinkHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Metadata") {
+                m_metadata = Metadata(decoder);
+                m_metadataHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Envelope") {
+                m_envelope = Envelope(decoder);
+                m_envelopeHasBeenSet = true;
+              }
+
+              else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("GetArchiveMessageResult", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "MessageDownloadLink") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_messageDownloadLink = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_messageDownloadLink = ss.str();
+                }
+              }
+              m_messageDownloadLinkHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Metadata") {
+              m_metadata = Metadata(decoder);
+              m_metadataHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Envelope") {
+              m_envelope = Envelope(decoder);
+              m_envelopeHasBeenSet = true;
+            }
+
+            else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -25,6 +25,18 @@ AccessPoint& AccessPoint::operator=(JsonView jsonValue) {
     }
     m_positionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Type")) {
+    m_type = AccessPointTypeMapper::GetAccessPointTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Primary")) {
+    m_primary = jsonValue.GetBool("Primary");
+    m_primaryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Label")) {
+    m_label = jsonValue.GetString("Label");
+    m_labelHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +49,18 @@ JsonValue AccessPoint::Jsonize() const {
       positionJsonList[positionIndex].AsDouble(m_position[positionIndex]);
     }
     payload.WithArray("Position", std::move(positionJsonList));
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", AccessPointTypeMapper::GetNameForAccessPointType(m_type));
+  }
+
+  if (m_primaryHasBeenSet) {
+    payload.WithBool("Primary", m_primary);
+  }
+
+  if (m_labelHasBeenSet) {
+    payload.WithString("Label", m_label);
   }
 
   return payload;

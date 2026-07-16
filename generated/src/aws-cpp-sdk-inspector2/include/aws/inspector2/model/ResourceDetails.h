@@ -9,6 +9,9 @@
 #include <aws/inspector2/model/AwsEcrContainerImageDetails.h>
 #include <aws/inspector2/model/AwsLambdaFunctionDetails.h>
 #include <aws/inspector2/model/CodeRepositoryDetails.h>
+#include <aws/inspector2/model/Image.h>
+#include <aws/inspector2/model/ServerlessFunction.h>
+#include <aws/inspector2/model/Vm.h>
 
 #include <utility>
 
@@ -110,6 +113,63 @@ class ResourceDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains details about a VM instance involved in the
+   * finding.</p>
+   */
+  inline const Vm& GetVm() const { return m_vm; }
+  inline bool VmHasBeenSet() const { return m_vmHasBeenSet; }
+  template <typename VmT = Vm>
+  void SetVm(VmT&& value) {
+    m_vmHasBeenSet = true;
+    m_vm = std::forward<VmT>(value);
+  }
+  template <typename VmT = Vm>
+  ResourceDetails& WithVm(VmT&& value) {
+    SetVm(std::forward<VmT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains details about a container image involved in the
+   * finding.</p>
+   */
+  inline const Image& GetImage() const { return m_image; }
+  inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+  template <typename ImageT = Image>
+  void SetImage(ImageT&& value) {
+    m_imageHasBeenSet = true;
+    m_image = std::forward<ImageT>(value);
+  }
+  template <typename ImageT = Image>
+  ResourceDetails& WithImage(ImageT&& value) {
+    SetImage(std::forward<ImageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains details about a serverless function involved in the
+   * finding.</p>
+   */
+  inline const ServerlessFunction& GetServerlessFunction() const { return m_serverlessFunction; }
+  inline bool ServerlessFunctionHasBeenSet() const { return m_serverlessFunctionHasBeenSet; }
+  template <typename ServerlessFunctionT = ServerlessFunction>
+  void SetServerlessFunction(ServerlessFunctionT&& value) {
+    m_serverlessFunctionHasBeenSet = true;
+    m_serverlessFunction = std::forward<ServerlessFunctionT>(value);
+  }
+  template <typename ServerlessFunctionT = ServerlessFunction>
+  ResourceDetails& WithServerlessFunction(ServerlessFunctionT&& value) {
+    SetServerlessFunction(std::forward<ServerlessFunctionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AwsEc2InstanceDetails m_awsEc2Instance;
 
@@ -118,10 +178,19 @@ class ResourceDetails {
   AwsLambdaFunctionDetails m_awsLambdaFunction;
 
   CodeRepositoryDetails m_codeRepository;
+
+  Vm m_vm;
+
+  Image m_image;
+
+  ServerlessFunction m_serverlessFunction;
   bool m_awsEc2InstanceHasBeenSet = false;
   bool m_awsEcrContainerImageHasBeenSet = false;
   bool m_awsLambdaFunctionHasBeenSet = false;
   bool m_codeRepositoryHasBeenSet = false;
+  bool m_vmHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_serverlessFunctionHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -20,6 +20,7 @@ static const int EMV2000_HASH = HashingUtils::HashString("EMV2000");
 static const int AMEX_HASH = HashingUtils::HashString("AMEX");
 static const int MASTERCARD_SESSION_KEY_HASH = HashingUtils::HashString("MASTERCARD_SESSION_KEY");
 static const int VISA_HASH = HashingUtils::HashString("VISA");
+static const int UNION_PAY_HASH = HashingUtils::HashString("UNION_PAY");
 
 SessionKeyDerivationMode GetSessionKeyDerivationModeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ SessionKeyDerivationMode GetSessionKeyDerivationModeForName(const Aws::String& n
     return SessionKeyDerivationMode::MASTERCARD_SESSION_KEY;
   } else if (hashCode == VISA_HASH) {
     return SessionKeyDerivationMode::VISA;
+  } else if (hashCode == UNION_PAY_HASH) {
+    return SessionKeyDerivationMode::UNION_PAY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForSessionKeyDerivationMode(SessionKeyDerivationMode enumValu
       return "MASTERCARD_SESSION_KEY";
     case SessionKeyDerivationMode::VISA:
       return "VISA";
+    case SessionKeyDerivationMode::UNION_PAY:
+      return "UNION_PAY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

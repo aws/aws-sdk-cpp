@@ -16,6 +16,7 @@
 #include <aws/route53globalresolver/model/ListGlobalResolversPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListHostedZoneAssociationsPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListManagedFirewallDomainListsPaginationTraits.h>
+#include <aws/route53globalresolver/model/ListSharedDNSViewsPaginationTraits.h>
 
 #include <memory>
 
@@ -129,6 +130,18 @@ class Route53GlobalResolverPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedFirewallDomainListsRequest,
                                              Pagination::ListManagedFirewallDomainListsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListSharedDNSViews operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSharedDNSViewsRequest,
+                                    Pagination::ListSharedDNSViewsPaginationTraits<DerivedClient>>
+  ListSharedDNSViewsPaginator(const Model::ListSharedDNSViewsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSharedDNSViewsRequest,
+                                             Pagination::ListSharedDNSViewsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 };

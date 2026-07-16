@@ -37,6 +37,7 @@ class PutBucketPolicyRequest : public StreamingS3CrtRequest {
 
   AWS_S3CRT_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
   AWS_S3CRT_API Aws::String GetChecksumAlgorithmName() const override;
+  AWS_S3CRT_API bool ChecksumAlgorithmIsSet() const override;
   inline bool RequestChecksumRequired() const override { return true; };
 
   AWS_S3CRT_API bool IsStreaming() const override { return false; }

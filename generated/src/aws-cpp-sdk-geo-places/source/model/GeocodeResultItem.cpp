@@ -119,6 +119,14 @@ GeocodeResultItem& GeocodeResultItem::operator=(JsonView jsonValue) {
     }
     m_secondaryAddressesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Translations")) {
+    m_translations = jsonValue.GetObject("Translations");
+    m_translationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EstimatedPointAddress")) {
+    m_estimatedPointAddress = jsonValue.GetBool("EstimatedPointAddress");
+    m_estimatedPointAddressHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -232,6 +240,14 @@ JsonValue GeocodeResultItem::Jsonize() const {
       secondaryAddressesJsonList[secondaryAddressesIndex].AsObject(m_secondaryAddresses[secondaryAddressesIndex].Jsonize());
     }
     payload.WithArray("SecondaryAddresses", std::move(secondaryAddressesJsonList));
+  }
+
+  if (m_translationsHasBeenSet) {
+    payload.WithObject("Translations", m_translations.Jsonize());
+  }
+
+  if (m_estimatedPointAddressHasBeenSet) {
+    payload.WithBool("EstimatedPointAddress", m_estimatedPointAddress);
   }
 
   return payload;

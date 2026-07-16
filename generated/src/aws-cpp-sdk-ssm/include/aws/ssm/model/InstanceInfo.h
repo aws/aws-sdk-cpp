@@ -9,6 +9,7 @@
 #include <aws/ssm/model/ManagedStatus.h>
 #include <aws/ssm/model/PlatformType.h>
 #include <aws/ssm/model/ResourceType.h>
+#include <aws/ssm/model/SourceType.h>
 
 #include <utility>
 
@@ -142,6 +143,24 @@ class InstanceInfo {
 
   ///@{
   /**
+   * <p>The name assigned to the managed node.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  InstanceInfo& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The operating system platform type of the managed node.</p>
    */
   inline PlatformType GetPlatformType() const { return m_platformType; }
@@ -208,6 +227,96 @@ class InstanceInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the source resource. For IoT Greengrass devices,
+   * <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+   */
+  inline SourceType GetSourceType() const { return m_sourceType; }
+  inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+  inline void SetSourceType(SourceType value) {
+    m_sourceTypeHasBeenSet = true;
+    m_sourceType = value;
+  }
+  inline InstanceInfo& WithSourceType(SourceType value) {
+    SetSourceType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the source resource. For IoT Greengrass devices,
+   * <code>SourceId</code> is the Thing name.</p>
+   */
+  inline const Aws::String& GetSourceId() const { return m_sourceId; }
+  inline bool SourceIdHasBeenSet() const { return m_sourceIdHasBeenSet; }
+  template <typename SourceIdT = Aws::String>
+  void SetSourceId(SourceIdT&& value) {
+    m_sourceIdHasBeenSet = true;
+    m_sourceId = std::forward<SourceIdT>(value);
+  }
+  template <typename SourceIdT = Aws::String>
+  InstanceInfo& WithSourceId(SourceIdT&& value) {
+    SetSourceId(std::forward<SourceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The location of the source resource in the third-party cloud environment.</p>
+   */
+  inline const Aws::String& GetSourceLocation() const { return m_sourceLocation; }
+  inline bool SourceLocationHasBeenSet() const { return m_sourceLocationHasBeenSet; }
+  template <typename SourceLocationT = Aws::String>
+  void SetSourceLocation(SourceLocationT&& value) {
+    m_sourceLocationHasBeenSet = true;
+    m_sourceLocation = std::forward<SourceLocationT>(value);
+  }
+  template <typename SourceLocationT = Aws::String>
+  InstanceInfo& WithSourceLocation(SourceLocationT&& value) {
+    SetSourceLocation(std::forward<SourceLocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Availability Zone where the managed node is located.</p>
+   */
+  inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
+  inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+  template <typename AvailabilityZoneT = Aws::String>
+  void SetAvailabilityZone(AvailabilityZoneT&& value) {
+    m_availabilityZoneHasBeenSet = true;
+    m_availabilityZone = std::forward<AvailabilityZoneT>(value);
+  }
+  template <typename AvailabilityZoneT = Aws::String>
+  InstanceInfo& WithAvailabilityZone(AvailabilityZoneT&& value) {
+    SetAvailabilityZone(std::forward<AvailabilityZoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Availability Zone ID where the managed node is located.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  InstanceInfo& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_agentType;
 
@@ -221,6 +330,8 @@ class InstanceInfo {
 
   ManagedStatus m_managedStatus{ManagedStatus::NOT_SET};
 
+  Aws::String m_name;
+
   PlatformType m_platformType{PlatformType::NOT_SET};
 
   Aws::String m_platformName;
@@ -228,16 +339,32 @@ class InstanceInfo {
   Aws::String m_platformVersion;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
+
+  SourceType m_sourceType{SourceType::NOT_SET};
+
+  Aws::String m_sourceId;
+
+  Aws::String m_sourceLocation;
+
+  Aws::String m_availabilityZone;
+
+  Aws::String m_availabilityZoneId;
   bool m_agentTypeHasBeenSet = false;
   bool m_agentVersionHasBeenSet = false;
   bool m_computerNameHasBeenSet = false;
   bool m_instanceStatusHasBeenSet = false;
   bool m_ipAddressHasBeenSet = false;
   bool m_managedStatusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_platformTypeHasBeenSet = false;
   bool m_platformNameHasBeenSet = false;
   bool m_platformVersionHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_sourceIdHasBeenSet = false;
+  bool m_sourceLocationHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
 };
 
 }  // namespace Model

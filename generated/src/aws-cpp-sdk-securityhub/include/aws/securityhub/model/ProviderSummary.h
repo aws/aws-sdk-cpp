@@ -7,6 +7,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/ConnectorProviderName.h>
 #include <aws/securityhub/model/ConnectorStatus.h>
+#include <aws/securityhub/model/ProviderDetail.h>
 
 #include <utility>
 
@@ -64,12 +65,31 @@ class ProviderSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const ProviderDetail& GetProviderConfiguration() const { return m_providerConfiguration; }
+  inline bool ProviderConfigurationHasBeenSet() const { return m_providerConfigurationHasBeenSet; }
+  template <typename ProviderConfigurationT = ProviderDetail>
+  void SetProviderConfiguration(ProviderConfigurationT&& value) {
+    m_providerConfigurationHasBeenSet = true;
+    m_providerConfiguration = std::forward<ProviderConfigurationT>(value);
+  }
+  template <typename ProviderConfigurationT = ProviderDetail>
+  ProviderSummary& WithProviderConfiguration(ProviderConfigurationT&& value) {
+    SetProviderConfiguration(std::forward<ProviderConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ConnectorProviderName m_providerName{ConnectorProviderName::NOT_SET};
 
   ConnectorStatus m_connectorStatus{ConnectorStatus::NOT_SET};
+
+  ProviderDetail m_providerConfiguration;
   bool m_providerNameHasBeenSet = false;
   bool m_connectorStatusHasBeenSet = false;
+  bool m_providerConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace HealthLake {
 namespace Model {
-enum class NlpStatus { NOT_SET, ENABLED, DISABLED, ENABLING, DISABLING };
+enum class NlpStatus { NOT_SET, ENABLED, ENABLING, DISABLED, DISABLING };
 
 namespace NlpStatusMapper {
 AWS_HEALTHLAKE_API NlpStatus GetNlpStatusForName(const Aws::String& name);

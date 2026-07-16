@@ -9,6 +9,7 @@
 #include <aws/geo-places/GeoPlacesRequest.h>
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/geo-places/model/GetPlaceAdditionalFeature.h>
+#include <aws/geo-places/model/GetPlaceAddressNamesMode.h>
 #include <aws/geo-places/model/GetPlaceIntendedUse.h>
 
 #include <utility>
@@ -84,7 +85,8 @@ class GetPlaceRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p> A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP
+   * <p> A list of <a
+   * href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
    * 47</a> compliant language codes for the results to be rendered in. If there is
    * no data for the result in the requested language, data will be returned in the
    * default language for the entry. For <a
@@ -174,6 +176,25 @@ class GetPlaceRequest : public GeoPlacesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies how address names are returned. When set to
+   * <code>Administrative</code>, the service returns the official administrative
+   * names for address components. <code>Administrative</code> currently applies only
+   * to addresses in the United States.</p>
+   */
+  inline GetPlaceAddressNamesMode GetAddressNamesMode() const { return m_addressNamesMode; }
+  inline bool AddressNamesModeHasBeenSet() const { return m_addressNamesModeHasBeenSet; }
+  inline void SetAddressNamesMode(GetPlaceAddressNamesMode value) {
+    m_addressNamesModeHasBeenSet = true;
+    m_addressNamesMode = value;
+  }
+  inline GetPlaceRequest& WithAddressNamesMode(GetPlaceAddressNamesMode value) {
+    SetAddressNamesMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_placeId;
 
@@ -186,12 +207,15 @@ class GetPlaceRequest : public GeoPlacesRequest {
   GetPlaceIntendedUse m_intendedUse{GetPlaceIntendedUse::NOT_SET};
 
   Aws::String m_key;
+
+  GetPlaceAddressNamesMode m_addressNamesMode{GetPlaceAddressNamesMode::NOT_SET};
   bool m_placeIdHasBeenSet = false;
   bool m_additionalFeaturesHasBeenSet = false;
   bool m_languageHasBeenSet = false;
   bool m_politicalViewHasBeenSet = false;
   bool m_intendedUseHasBeenSet = false;
   bool m_keyHasBeenSet = false;
+  bool m_addressNamesModeHasBeenSet = false;
 };
 
 }  // namespace Model

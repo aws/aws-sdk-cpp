@@ -37,11 +37,13 @@
 #include <aws/lambda/model/CapacityProvider.h>
 #include <aws/lambda/model/CapacityProviderConfig.h>
 #include <aws/lambda/model/CapacityProviderLimitExceededException.h>
+#include <aws/lambda/model/CapacityProviderLoggingConfig.h>
 #include <aws/lambda/model/CapacityProviderPermissionsConfig.h>
 #include <aws/lambda/model/CapacityProviderPredefinedMetricType.h>
 #include <aws/lambda/model/CapacityProviderScalingConfig.h>
 #include <aws/lambda/model/CapacityProviderScalingMode.h>
 #include <aws/lambda/model/CapacityProviderState.h>
+#include <aws/lambda/model/CapacityProviderTelemetryConfig.h>
 #include <aws/lambda/model/CapacityProviderVpcConfig.h>
 #include <aws/lambda/model/ChainedInvokeDetails.h>
 #include <aws/lambda/model/ChainedInvokeFailedDetails.h>

@@ -348,6 +348,33 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a cloud connector that establishes a connection between Systems
+   * Manager and a third-party cloud environment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateCloudConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCloudConnectorOutcome CreateCloudConnector(const Model::CreateCloudConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCloudConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateCloudConnectorRequestT = Model::CreateCloudConnectorRequest>
+  Model::CreateCloudConnectorOutcomeCallable CreateCloudConnectorCallable(const CreateCloudConnectorRequestT& request) const {
+    return SubmitCallable(&SSMClient::CreateCloudConnector, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCloudConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateCloudConnectorRequestT = Model::CreateCloudConnectorRequest>
+  void CreateCloudConnectorAsync(const CreateCloudConnectorRequestT& request, const CreateCloudConnectorResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SSMClient::CreateCloudConnector, request, handler, context);
+  }
+
+  /**
    * <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document
    * defines the actions that Systems Manager performs on your managed nodes. For
    * more information about SSM documents, including information about supported
@@ -616,6 +643,32 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                               const DeleteAssociationRequestT& request = {}) const {
     return SubmitAsync(&SSMClient::DeleteAssociation, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a cloud connector.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteCloudConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCloudConnectorOutcome DeleteCloudConnector(const Model::DeleteCloudConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCloudConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteCloudConnectorRequestT = Model::DeleteCloudConnectorRequest>
+  Model::DeleteCloudConnectorOutcomeCallable DeleteCloudConnectorCallable(const DeleteCloudConnectorRequestT& request) const {
+    return SubmitCallable(&SSMClient::DeleteCloudConnector, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCloudConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteCloudConnectorRequestT = Model::DeleteCloudConnectorRequest>
+  void DeleteCloudConnectorAsync(const DeleteCloudConnectorRequestT& request, const DeleteCloudConnectorResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SSMClient::DeleteCloudConnector, request, handler, context);
   }
 
   /**
@@ -2210,6 +2263,33 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns detailed information about a cloud connector.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCloudConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCloudConnectorOutcome GetCloudConnector(const Model::GetCloudConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCloudConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetCloudConnectorRequestT = Model::GetCloudConnectorRequest>
+  Model::GetCloudConnectorOutcomeCallable GetCloudConnectorCallable(const GetCloudConnectorRequestT& request) const {
+    return SubmitCallable(&SSMClient::GetCloudConnector, request);
+  }
+
+  /**
+   * An Async wrapper for GetCloudConnector that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetCloudConnectorRequestT = Model::GetCloudConnectorRequest>
+  void GetCloudConnectorAsync(const GetCloudConnectorRequestT& request, const GetCloudConnectorResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SSMClient::GetCloudConnector, request, handler, context);
+  }
+
+  /**
    * <p>Returns detailed information about command execution for an invocation or
    * plugin. The Run Command API follows an eventual consistency model, due to the
    * distributed nature of the system supporting the API. This means that the result
@@ -2704,7 +2784,21 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
    * name for a parameter contains spaces between characters, the request fails with
    * a <code>ValidationException</code> error.</p>  <p>To get information about
    * more than one parameter at a time, use the <a>GetParameters</a> operation.</p>
-   * <p><h3>See Also:</h3>   <a
+   *   <p>Parameter Store throughput defines the number of API
+   * transactions per second (TPS) that Systems Manager can process. This applies to
+   * <code>GetParameter</code>, <code>GetParameters</code>, and
+   * <code>PutParameter</code> API calls for your Amazon Web Services account and
+   * Amazon Web Services Region. By default, Parameter Store is configured with a
+   * standard throughput quota suitable for low- to moderate-volume workloads.
+   * Applications that retrieve configuration data infrequently or operate at smaller
+   * scale can use this default setting without additional cost.</p> <p>For
+   * higher-volume workloads, you can enable higher throughput. This increases the
+   * maximum number of supported transactions per second for your account and Region.
+   * Increased throughput supports applications and workloads that need concurrent
+   * access to multiple parameters. If you experience <code>ThrottlingException: Rate
+   * exceeded</code> errors, enable higher throughput. For more information, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
+   * Parameter Store throughput</a>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">AWS
    * API Reference</a></p>
    */
@@ -2769,7 +2863,21 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
    * contain spaces. The service removes any spaces specified for the beginning or
    * end of a parameter name. If the specified name for a parameter contains spaces
    * between characters, the request fails with a <code>ValidationException</code>
-   * error.</p><p><h3>See Also:</h3>   <a
+   * error.</p>  <p>Parameter Store throughput defines the number of API
+   * transactions per second (TPS) that Systems Manager can process. This applies to
+   * <code>GetParameter</code>, <code>GetParameters</code>, and
+   * <code>PutParameter</code> API calls for your Amazon Web Services account and
+   * Amazon Web Services Region. By default, Parameter Store is configured with a
+   * standard throughput quota suitable for low- to moderate-volume workloads.
+   * Applications that retrieve configuration data infrequently or operate at smaller
+   * scale can use this default setting without additional cost.</p> <p>For
+   * higher-volume workloads, you can enable higher throughput. This increases the
+   * maximum number of supported transactions per second for your account and Region.
+   * Increased throughput supports applications and workloads that need concurrent
+   * access to multiple parameters. If you experience <code>ThrottlingException: Rate
+   * exceeded</code> errors, enable higher throughput. For more information, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
+   * Parameter Store throughput</a>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
    * API Reference</a></p>
    */
@@ -3063,6 +3171,34 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                              const ListAssociationsRequestT& request = {}) const {
     return SubmitAsync(&SSMClient::ListAssociations, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of cloud connectors in the current Amazon Web Services account
+   * and Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCloudConnectors">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCloudConnectorsOutcome ListCloudConnectors(const Model::ListCloudConnectorsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListCloudConnectors that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListCloudConnectorsRequestT = Model::ListCloudConnectorsRequest>
+  Model::ListCloudConnectorsOutcomeCallable ListCloudConnectorsCallable(const ListCloudConnectorsRequestT& request = {}) const {
+    return SubmitCallable(&SSMClient::ListCloudConnectors, request);
+  }
+
+  /**
+   * An Async wrapper for ListCloudConnectors that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListCloudConnectorsRequestT = Model::ListCloudConnectorsRequest>
+  void ListCloudConnectorsAsync(const ListCloudConnectorsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const ListCloudConnectorsRequestT& request = {}) const {
+    return SubmitAsync(&SSMClient::ListCloudConnectors, request, handler, context);
   }
 
   /**
@@ -3653,8 +3789,23 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Create or update a parameter in Parameter Store.</p><p><h3>See Also:</h3>
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">AWS
+   * <p>Create or update a parameter in Parameter Store.</p>  <p>Parameter
+   * Store throughput defines the number of API transactions per second (TPS) that
+   * Systems Manager can process. This applies to <code>GetParameter</code>,
+   * <code>GetParameters</code>, and <code>PutParameter</code> API calls for your
+   * Amazon Web Services account and Amazon Web Services Region. By default,
+   * Parameter Store is configured with a standard throughput quota suitable for low-
+   * to moderate-volume workloads. Applications that retrieve configuration data
+   * infrequently or operate at smaller scale can use this default setting without
+   * additional cost.</p> <p>For higher-volume workloads, you can enable higher
+   * throughput. This increases the maximum number of supported transactions per
+   * second for your account and Region. Increased throughput supports applications
+   * and workloads that need concurrent access to multiple parameters. If you
+   * experience <code>ThrottlingException: Rate exceeded</code> errors, enable higher
+   * throughput. For more information, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
+   * Parameter Store throughput</a>.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">AWS
    * API Reference</a></p>
    */
   virtual Model::PutParameterOutcome PutParameter(const Model::PutParameterRequest& request) const;
@@ -4352,6 +4503,33 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Updates an existing cloud connector with new configuration
+   * details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateCloudConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCloudConnectorOutcome UpdateCloudConnector(const Model::UpdateCloudConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCloudConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateCloudConnectorRequestT = Model::UpdateCloudConnectorRequest>
+  Model::UpdateCloudConnectorOutcomeCallable UpdateCloudConnectorCallable(const UpdateCloudConnectorRequestT& request) const {
+    return SubmitCallable(&SSMClient::UpdateCloudConnector, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCloudConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateCloudConnectorRequestT = Model::UpdateCloudConnectorRequest>
+  void UpdateCloudConnectorAsync(const UpdateCloudConnectorRequestT& request, const UpdateCloudConnectorResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SSMClient::UpdateCloudConnector, request, handler, context);
+  }
+
+  /**
    * <p>Updates one or more values for an SSM document.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">AWS
    * API Reference</a></p>
@@ -4765,6 +4943,34 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
   void UpdateServiceSettingAsync(const UpdateServiceSettingRequestT& request, const UpdateServiceSettingResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SSMClient::UpdateServiceSetting, request, handler, context);
+  }
+
+  /**
+   * <p>Validates the configuration and connectivity of a cloud
+   * connector.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ValidateCloudConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ValidateCloudConnectorOutcome ValidateCloudConnector(const Model::ValidateCloudConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for ValidateCloudConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ValidateCloudConnectorRequestT = Model::ValidateCloudConnectorRequest>
+  Model::ValidateCloudConnectorOutcomeCallable ValidateCloudConnectorCallable(const ValidateCloudConnectorRequestT& request) const {
+    return SubmitCallable(&SSMClient::ValidateCloudConnector, request);
+  }
+
+  /**
+   * An Async wrapper for ValidateCloudConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ValidateCloudConnectorRequestT = Model::ValidateCloudConnectorRequest>
+  void ValidateCloudConnectorAsync(const ValidateCloudConnectorRequestT& request,
+                                   const ValidateCloudConnectorResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SSMClient::ValidateCloudConnector, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

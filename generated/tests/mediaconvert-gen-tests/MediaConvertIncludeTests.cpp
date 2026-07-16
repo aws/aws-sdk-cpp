@@ -230,6 +230,7 @@
 #include <aws/mediaconvert/model/DolbyVisionMapping.h>
 #include <aws/mediaconvert/model/DolbyVisionProfile.h>
 #include <aws/mediaconvert/model/DropFrameTimecode.h>
+#include <aws/mediaconvert/model/DurationControl.h>
 #include <aws/mediaconvert/model/DvbNitSettings.h>
 #include <aws/mediaconvert/model/DvbSdtSettings.h>
 #include <aws/mediaconvert/model/DvbSubDestinationSettings.h>
@@ -324,6 +325,7 @@
 #include <aws/mediaconvert/model/H264DynamicSubGop.h>
 #include <aws/mediaconvert/model/H264EndOfStreamMarkers.h>
 #include <aws/mediaconvert/model/H264EntropyEncoding.h>
+#include <aws/mediaconvert/model/H264ExplicitWeightedPrediction.h>
 #include <aws/mediaconvert/model/H264FieldEncoding.h>
 #include <aws/mediaconvert/model/H264FlickerAdaptiveQuantization.h>
 #include <aws/mediaconvert/model/H264FramerateControl.h>

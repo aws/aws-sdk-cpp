@@ -14,6 +14,7 @@
 #include <aws/mediaconvert/model/H264DynamicSubGop.h>
 #include <aws/mediaconvert/model/H264EndOfStreamMarkers.h>
 #include <aws/mediaconvert/model/H264EntropyEncoding.h>
+#include <aws/mediaconvert/model/H264ExplicitWeightedPrediction.h>
 #include <aws/mediaconvert/model/H264FieldEncoding.h>
 #include <aws/mediaconvert/model/H264FlickerAdaptiveQuantization.h>
 #include <aws/mediaconvert/model/H264FramerateControl.h>
@@ -215,6 +216,24 @@ class H264Settings {
   }
   inline H264Settings& WithEntropyEncoding(H264EntropyEncoding value) {
     SetEntropyEncoding(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Enable or disable explicit weighted prediction for the H.264 encoder. Weighted
+   * prediction improves compression efficiency for content with fading or brightness
+   * changes between frames.
+   */
+  inline H264ExplicitWeightedPrediction GetExplicitWeightedPrediction() const { return m_explicitWeightedPrediction; }
+  inline bool ExplicitWeightedPredictionHasBeenSet() const { return m_explicitWeightedPredictionHasBeenSet; }
+  inline void SetExplicitWeightedPrediction(H264ExplicitWeightedPrediction value) {
+    m_explicitWeightedPredictionHasBeenSet = true;
+    m_explicitWeightedPrediction = value;
+  }
+  inline H264Settings& WithExplicitWeightedPrediction(H264ExplicitWeightedPrediction value) {
+    SetExplicitWeightedPrediction(value);
     return *this;
   }
   ///@}
@@ -1084,6 +1103,8 @@ class H264Settings {
 
   H264EntropyEncoding m_entropyEncoding{H264EntropyEncoding::NOT_SET};
 
+  H264ExplicitWeightedPrediction m_explicitWeightedPrediction{H264ExplicitWeightedPrediction::NOT_SET};
+
   H264FieldEncoding m_fieldEncoding{H264FieldEncoding::NOT_SET};
 
   H264FlickerAdaptiveQuantization m_flickerAdaptiveQuantization{H264FlickerAdaptiveQuantization::NOT_SET};
@@ -1167,6 +1188,7 @@ class H264Settings {
   bool m_dynamicSubGopHasBeenSet = false;
   bool m_endOfStreamMarkersHasBeenSet = false;
   bool m_entropyEncodingHasBeenSet = false;
+  bool m_explicitWeightedPredictionHasBeenSet = false;
   bool m_fieldEncodingHasBeenSet = false;
   bool m_flickerAdaptiveQuantizationHasBeenSet = false;
   bool m_framerateControlHasBeenSet = false;

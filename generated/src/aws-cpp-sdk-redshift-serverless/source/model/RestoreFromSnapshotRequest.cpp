@@ -19,6 +19,10 @@ Aws::String RestoreFromSnapshotRequest::SerializePayload() const {
     payload.WithString("adminPasswordSecretKmsKeyId", m_adminPasswordSecretKmsKeyId);
   }
 
+  if (m_maintainIntegrationHasBeenSet) {
+    payload.WithBool("maintainIntegration", m_maintainIntegration);
+  }
+
   if (m_manageAdminPasswordHasBeenSet) {
     payload.WithBool("manageAdminPassword", m_manageAdminPassword);
   }

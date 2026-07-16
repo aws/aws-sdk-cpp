@@ -351,6 +351,7 @@
 #include <aws/ecs/model/RunTaskRequest.h>
 #include <aws/ecs/model/RunTaskResult.h>
 #include <aws/ecs/model/RuntimePlatform.h>
+#include <aws/ecs/model/RuntimePlatformOverride.h>
 #include <aws/ecs/model/S3FilesVolumeConfiguration.h>
 #include <aws/ecs/model/Scale.h>
 #include <aws/ecs/model/ScaleUnit.h>
@@ -384,6 +385,7 @@
 #include <aws/ecs/model/ServiceRegistry.h>
 #include <aws/ecs/model/ServiceRevision.h>
 #include <aws/ecs/model/ServiceRevisionLoadBalancer.h>
+#include <aws/ecs/model/ServiceRevisionOverrides.h>
 #include <aws/ecs/model/ServiceRevisionSummary.h>
 #include <aws/ecs/model/ServiceVolumeConfiguration.h>
 #include <aws/ecs/model/Session.h>

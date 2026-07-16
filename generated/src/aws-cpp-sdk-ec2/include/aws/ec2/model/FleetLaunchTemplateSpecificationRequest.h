@@ -100,15 +100,38 @@ class FleetLaunchTemplateSpecificationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The base64-encoded user data for instances launched by the fleet. User data
+   * is limited to 16 KB, in raw form, before it is base64-encoded.</p> <p>Supported
+   * only for fleets of type <code>instant</code>.</p>
+   */
+  inline const Aws::String& GetLaunchTemplateSpecificationUserData() const { return m_launchTemplateSpecificationUserData; }
+  inline bool LaunchTemplateSpecificationUserDataHasBeenSet() const { return m_launchTemplateSpecificationUserDataHasBeenSet; }
+  template <typename LaunchTemplateSpecificationUserDataT = Aws::String>
+  void SetLaunchTemplateSpecificationUserData(LaunchTemplateSpecificationUserDataT&& value) {
+    m_launchTemplateSpecificationUserDataHasBeenSet = true;
+    m_launchTemplateSpecificationUserData = std::forward<LaunchTemplateSpecificationUserDataT>(value);
+  }
+  template <typename LaunchTemplateSpecificationUserDataT = Aws::String>
+  FleetLaunchTemplateSpecificationRequest& WithLaunchTemplateSpecificationUserData(LaunchTemplateSpecificationUserDataT&& value) {
+    SetLaunchTemplateSpecificationUserData(std::forward<LaunchTemplateSpecificationUserDataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_launchTemplateId;
 
   Aws::String m_launchTemplateName;
 
   Aws::String m_version;
+
+  Aws::String m_launchTemplateSpecificationUserData;
   bool m_launchTemplateIdHasBeenSet = false;
   bool m_launchTemplateNameHasBeenSet = false;
   bool m_versionHasBeenSet = false;
+  bool m_launchTemplateSpecificationUserDataHasBeenSet = false;
 };
 
 }  // namespace Model

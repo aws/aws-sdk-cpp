@@ -46,7 +46,8 @@ enum class LastUpdateStatusReasonCode {
   FunctionError_PermissionDenied,
   FunctionError_TooManyExtensions,
   FunctionError_InitResourceExhausted,
-  DisallowedByVpcEncryptionControl
+  DisallowedByVpcEncryptionControl,
+  DependencyError
 };
 
 namespace LastUpdateStatusReasonCodeMapper {

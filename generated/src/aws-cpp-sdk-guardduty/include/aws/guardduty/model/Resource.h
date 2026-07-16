@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/AccessKeyDetails.h>
+#include <aws/guardduty/model/BedrockGuardrailDetails.h>
 #include <aws/guardduty/model/Container.h>
 #include <aws/guardduty/model/EbsSnapshotDetails.h>
 #include <aws/guardduty/model/EbsVolumeDetails.h>
@@ -17,6 +18,7 @@
 #include <aws/guardduty/model/InstanceDetails.h>
 #include <aws/guardduty/model/KubernetesDetails.h>
 #include <aws/guardduty/model/LambdaDetails.h>
+#include <aws/guardduty/model/ModelDetail.h>
 #include <aws/guardduty/model/RdsDbInstanceDetails.h>
 #include <aws/guardduty/model/RdsDbUserDetails.h>
 #include <aws/guardduty/model/RdsLimitlessDbDetails.h>
@@ -347,6 +349,49 @@ class Resource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains information about the Bedrock guardrail that was involved in a
+   * finding.</p>
+   */
+  inline const BedrockGuardrailDetails& GetBedrockGuardrailDetails() const { return m_bedrockGuardrailDetails; }
+  inline bool BedrockGuardrailDetailsHasBeenSet() const { return m_bedrockGuardrailDetailsHasBeenSet; }
+  template <typename BedrockGuardrailDetailsT = BedrockGuardrailDetails>
+  void SetBedrockGuardrailDetails(BedrockGuardrailDetailsT&& value) {
+    m_bedrockGuardrailDetailsHasBeenSet = true;
+    m_bedrockGuardrailDetails = std::forward<BedrockGuardrailDetailsT>(value);
+  }
+  template <typename BedrockGuardrailDetailsT = BedrockGuardrailDetails>
+  Resource& WithBedrockGuardrailDetails(BedrockGuardrailDetailsT&& value) {
+    SetBedrockGuardrailDetails(std::forward<BedrockGuardrailDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains information about the AI models involved in a finding.</p>
+   */
+  inline const Aws::Vector<ModelDetail>& GetModelDetails() const { return m_modelDetails; }
+  inline bool ModelDetailsHasBeenSet() const { return m_modelDetailsHasBeenSet; }
+  template <typename ModelDetailsT = Aws::Vector<ModelDetail>>
+  void SetModelDetails(ModelDetailsT&& value) {
+    m_modelDetailsHasBeenSet = true;
+    m_modelDetails = std::forward<ModelDetailsT>(value);
+  }
+  template <typename ModelDetailsT = Aws::Vector<ModelDetail>>
+  Resource& WithModelDetails(ModelDetailsT&& value) {
+    SetModelDetails(std::forward<ModelDetailsT>(value));
+    return *this;
+  }
+  template <typename ModelDetailsT = ModelDetail>
+  Resource& AddModelDetails(ModelDetailsT&& value) {
+    m_modelDetailsHasBeenSet = true;
+    m_modelDetails.emplace_back(std::forward<ModelDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AccessKeyDetails m_accessKeyDetails;
 
@@ -379,6 +424,10 @@ class Resource {
   Ec2ImageDetails m_ec2ImageDetails;
 
   RecoveryPointDetails m_recoveryPointDetails;
+
+  BedrockGuardrailDetails m_bedrockGuardrailDetails;
+
+  Aws::Vector<ModelDetail> m_modelDetails;
   bool m_accessKeyDetailsHasBeenSet = false;
   bool m_s3BucketDetailsHasBeenSet = false;
   bool m_instanceDetailsHasBeenSet = false;
@@ -395,6 +444,8 @@ class Resource {
   bool m_ebsSnapshotDetailsHasBeenSet = false;
   bool m_ec2ImageDetailsHasBeenSet = false;
   bool m_recoveryPointDetailsHasBeenSet = false;
+  bool m_bedrockGuardrailDetailsHasBeenSet = false;
+  bool m_modelDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

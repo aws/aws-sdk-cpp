@@ -7,6 +7,7 @@
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/ConformancePackInputParameter.h>
+#include <aws/config/model/Tag.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -182,6 +183,31 @@ class PutOrganizationConformancePackRequest : public ConfigServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tags for the organization conformance pack. Each tag consists of a key
+   * and an optional value, both of which you define.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  PutOrganizationConformancePackRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  PutOrganizationConformancePackRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_organizationConformancePackName;
 
@@ -196,6 +222,8 @@ class PutOrganizationConformancePackRequest : public ConfigServiceRequest {
   Aws::Vector<ConformancePackInputParameter> m_conformancePackInputParameters;
 
   Aws::Vector<Aws::String> m_excludedAccounts;
+
+  Aws::Vector<Tag> m_tags;
   bool m_organizationConformancePackNameHasBeenSet = false;
   bool m_templateS3UriHasBeenSet = false;
   bool m_templateBodyHasBeenSet = false;
@@ -203,6 +231,7 @@ class PutOrganizationConformancePackRequest : public ConfigServiceRequest {
   bool m_deliveryS3KeyPrefixHasBeenSet = false;
   bool m_conformancePackInputParametersHasBeenSet = false;
   bool m_excludedAccountsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

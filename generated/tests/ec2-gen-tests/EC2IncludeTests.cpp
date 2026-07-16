@@ -45,6 +45,10 @@
 #include <aws/ec2/model/AccountAttribute.h>
 #include <aws/ec2/model/AccountAttributeName.h>
 #include <aws/ec2/model/AccountAttributeValue.h>
+#include <aws/ec2/model/AccountVpcEncryptionControl.h>
+#include <aws/ec2/model/AccountVpcEncryptionControlExclusions.h>
+#include <aws/ec2/model/AccountVpcEncryptionControlMode.h>
+#include <aws/ec2/model/AccountVpcEncryptionControlState.h>
 #include <aws/ec2/model/ActiveInstance.h>
 #include <aws/ec2/model/ActiveVpnTunnelStatus.h>
 #include <aws/ec2/model/ActivityStatus.h>
@@ -76,6 +80,7 @@
 #include <aws/ec2/model/AllowedPrincipal.h>
 #include <aws/ec2/model/AllowsMultipleInstanceTypes.h>
 #include <aws/ec2/model/AlternatePathHint.h>
+#include <aws/ec2/model/AmdSevSnp.h>
 #include <aws/ec2/model/AmdSevSnpSpecification.h>
 #include <aws/ec2/model/AnalysisAclRule.h>
 #include <aws/ec2/model/AnalysisComponent.h>
@@ -791,6 +796,8 @@
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupSourcesResponse.h>
 #include <aws/ec2/model/DescribeAccountAttributesRequest.h>
 #include <aws/ec2/model/DescribeAccountAttributesResponse.h>
+#include <aws/ec2/model/DescribeAccountVpcEncryptionControlRequest.h>
+#include <aws/ec2/model/DescribeAccountVpcEncryptionControlResponse.h>
 #include <aws/ec2/model/DescribeAddressTransfersRequest.h>
 #include <aws/ec2/model/DescribeAddressTransfersResponse.h>
 #include <aws/ec2/model/DescribeAddressesAttributeRequest.h>
@@ -1422,7 +1429,11 @@
 #include <aws/ec2/model/FleetEbsBlockDeviceRequest.h>
 #include <aws/ec2/model/FleetEventType.h>
 #include <aws/ec2/model/FleetExcessCapacityTerminationPolicy.h>
+#include <aws/ec2/model/FleetHttpTokensState.h>
+#include <aws/ec2/model/FleetIamInstanceProfileSpecificationRequest.h>
 #include <aws/ec2/model/FleetInstanceMatchCriteria.h>
+#include <aws/ec2/model/FleetInstanceMetadataEndpointState.h>
+#include <aws/ec2/model/FleetInstanceMetadataOptionsRequest.h>
 #include <aws/ec2/model/FleetLaunchTemplateConfig.h>
 #include <aws/ec2/model/FleetLaunchTemplateConfigRequest.h>
 #include <aws/ec2/model/FleetLaunchTemplateOverrides.h>
@@ -1602,6 +1613,8 @@
 #include <aws/ec2/model/HistoryRecord.h>
 #include <aws/ec2/model/HistoryRecordEntry.h>
 #include <aws/ec2/model/Host.h>
+#include <aws/ec2/model/HostCpuOptions.h>
+#include <aws/ec2/model/HostCpuOptionsRequest.h>
 #include <aws/ec2/model/HostInstance.h>
 #include <aws/ec2/model/HostMaintenance.h>
 #include <aws/ec2/model/HostOffering.h>
@@ -1980,6 +1993,8 @@
 #include <aws/ec2/model/MetricPoint.h>
 #include <aws/ec2/model/MetricType.h>
 #include <aws/ec2/model/MetricValue.h>
+#include <aws/ec2/model/ModifyAccountVpcEncryptionControlRequest.h>
+#include <aws/ec2/model/ModifyAccountVpcEncryptionControlResponse.h>
 #include <aws/ec2/model/ModifyAddressAttributeRequest.h>
 #include <aws/ec2/model/ModifyAddressAttributeResponse.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupRequest.h>

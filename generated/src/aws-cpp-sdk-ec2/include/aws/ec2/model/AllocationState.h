@@ -10,7 +10,16 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class AllocationState { NOT_SET, available, under_assessment, permanent_failure, released, released_permanent_failure, pending };
+enum class AllocationState {
+  NOT_SET,
+  available,
+  under_assessment,
+  permanent_failure,
+  released,
+  released_permanent_failure,
+  pending,
+  configuring
+};
 
 namespace AllocationStateMapper {
 AWS_EC2_API AllocationState GetAllocationStateForName(const Aws::String& name);

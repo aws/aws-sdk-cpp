@@ -9,6 +9,7 @@
 #include <aws/inspector2/model/AmiAggregation.h>
 #include <aws/inspector2/model/AwsEcrContainerAggregation.h>
 #include <aws/inspector2/model/CodeRepositoryAggregation.h>
+#include <aws/inspector2/model/ContainerImageAggregation.h>
 #include <aws/inspector2/model/Ec2InstanceAggregation.h>
 #include <aws/inspector2/model/FindingTypeAggregation.h>
 #include <aws/inspector2/model/ImageLayerAggregation.h>
@@ -16,7 +17,9 @@
 #include <aws/inspector2/model/LambdaLayerAggregation.h>
 #include <aws/inspector2/model/PackageAggregation.h>
 #include <aws/inspector2/model/RepositoryAggregation.h>
+#include <aws/inspector2/model/ServerlessFunctionAggregation.h>
 #include <aws/inspector2/model/TitleAggregation.h>
+#include <aws/inspector2/model/VmInstanceAggregation.h>
 
 #include <utility>
 
@@ -269,6 +272,63 @@ class AggregationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains details about an aggregation request based on virtual
+   * machine (VM) instances.</p>
+   */
+  inline const VmInstanceAggregation& GetVmInstanceAggregation() const { return m_vmInstanceAggregation; }
+  inline bool VmInstanceAggregationHasBeenSet() const { return m_vmInstanceAggregationHasBeenSet; }
+  template <typename VmInstanceAggregationT = VmInstanceAggregation>
+  void SetVmInstanceAggregation(VmInstanceAggregationT&& value) {
+    m_vmInstanceAggregationHasBeenSet = true;
+    m_vmInstanceAggregation = std::forward<VmInstanceAggregationT>(value);
+  }
+  template <typename VmInstanceAggregationT = VmInstanceAggregation>
+  AggregationRequest& WithVmInstanceAggregation(VmInstanceAggregationT&& value) {
+    SetVmInstanceAggregation(std::forward<VmInstanceAggregationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains details about an aggregation request based on
+   * container images.</p>
+   */
+  inline const ContainerImageAggregation& GetContainerImageAggregation() const { return m_containerImageAggregation; }
+  inline bool ContainerImageAggregationHasBeenSet() const { return m_containerImageAggregationHasBeenSet; }
+  template <typename ContainerImageAggregationT = ContainerImageAggregation>
+  void SetContainerImageAggregation(ContainerImageAggregationT&& value) {
+    m_containerImageAggregationHasBeenSet = true;
+    m_containerImageAggregation = std::forward<ContainerImageAggregationT>(value);
+  }
+  template <typename ContainerImageAggregationT = ContainerImageAggregation>
+  AggregationRequest& WithContainerImageAggregation(ContainerImageAggregationT&& value) {
+    SetContainerImageAggregation(std::forward<ContainerImageAggregationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains details about an aggregation request based on
+   * serverless functions.</p>
+   */
+  inline const ServerlessFunctionAggregation& GetServerlessFunctionAggregation() const { return m_serverlessFunctionAggregation; }
+  inline bool ServerlessFunctionAggregationHasBeenSet() const { return m_serverlessFunctionAggregationHasBeenSet; }
+  template <typename ServerlessFunctionAggregationT = ServerlessFunctionAggregation>
+  void SetServerlessFunctionAggregation(ServerlessFunctionAggregationT&& value) {
+    m_serverlessFunctionAggregationHasBeenSet = true;
+    m_serverlessFunctionAggregation = std::forward<ServerlessFunctionAggregationT>(value);
+  }
+  template <typename ServerlessFunctionAggregationT = ServerlessFunctionAggregation>
+  AggregationRequest& WithServerlessFunctionAggregation(ServerlessFunctionAggregationT&& value) {
+    SetServerlessFunctionAggregation(std::forward<ServerlessFunctionAggregationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AccountAggregation m_accountAggregation;
 
@@ -293,6 +353,12 @@ class AggregationRequest {
   LambdaFunctionAggregation m_lambdaFunctionAggregation;
 
   CodeRepositoryAggregation m_codeRepositoryAggregation;
+
+  VmInstanceAggregation m_vmInstanceAggregation;
+
+  ContainerImageAggregation m_containerImageAggregation;
+
+  ServerlessFunctionAggregation m_serverlessFunctionAggregation;
   bool m_accountAggregationHasBeenSet = false;
   bool m_amiAggregationHasBeenSet = false;
   bool m_awsEcrContainerAggregationHasBeenSet = false;
@@ -305,6 +371,9 @@ class AggregationRequest {
   bool m_lambdaLayerAggregationHasBeenSet = false;
   bool m_lambdaFunctionAggregationHasBeenSet = false;
   bool m_codeRepositoryAggregationHasBeenSet = false;
+  bool m_vmInstanceAggregationHasBeenSet = false;
+  bool m_containerImageAggregationHasBeenSet = false;
+  bool m_serverlessFunctionAggregationHasBeenSet = false;
 };
 
 }  // namespace Model

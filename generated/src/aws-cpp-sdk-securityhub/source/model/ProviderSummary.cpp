@@ -26,6 +26,10 @@ ProviderSummary& ProviderSummary::operator=(JsonView jsonValue) {
     m_connectorStatus = ConnectorStatusMapper::GetConnectorStatusForName(jsonValue.GetString("ConnectorStatus"));
     m_connectorStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ProviderConfiguration")) {
+    m_providerConfiguration = jsonValue.GetObject("ProviderConfiguration");
+    m_providerConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ProviderSummary::Jsonize() const {
 
   if (m_connectorStatusHasBeenSet) {
     payload.WithString("ConnectorStatus", ConnectorStatusMapper::GetNameForConnectorStatus(m_connectorStatus));
+  }
+
+  if (m_providerConfigurationHasBeenSet) {
+    payload.WithObject("ProviderConfiguration", m_providerConfiguration.Jsonize());
   }
 
   return payload;

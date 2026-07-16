@@ -90,6 +90,10 @@ UpdateBrokerResult& UpdateBrokerResult::operator=(const Aws::AmazonWebServiceRes
         DataReplicationModeMapper::GetDataReplicationModeForName(jsonValue.GetString("pendingDataReplicationMode"));
     m_pendingDataReplicationModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("storageSize")) {
+    m_storageSize = jsonValue.GetInteger("storageSize");
+    m_storageSizeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

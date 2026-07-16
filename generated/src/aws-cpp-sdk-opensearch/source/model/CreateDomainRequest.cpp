@@ -120,5 +120,13 @@ Aws::String CreateDomainRequest::SerializePayload() const {
     payload.WithObject("AutomatedSnapshotPauseOptions", m_automatedSnapshotPauseOptions.Jsonize());
   }
 
+  if (m_useCaseHasBeenSet) {
+    payload.WithString("UseCase", DomainUseCaseMapper::GetNameForDomainUseCase(m_useCase));
+  }
+
+  if (m_engineModeHasBeenSet) {
+    payload.WithString("EngineMode", EngineModeMapper::GetNameForEngineMode(m_engineMode));
+  }
+
   return payload.View().WriteReadable();
 }

@@ -20,10 +20,9 @@ namespace Signin {
 namespace Model {
 
 /**
- * <p>AWS credentials structure containing temporary access credentials</p> <p>The
- * scoped-down, 15 minute duration AWS credentials. Scoping down will be based on
- * CLI policy (CLI team needs to create it). Similar to cloud shell
- * implementation.</p><p><h3>See Also:</h3>   <a
+ * <p>AWS credentials structure containing temporary access credentials</p>
+ * <p>Scoped, temporary AWS credentials with a 15-minute duration.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/AccessToken">AWS
  * API Reference</a></p>
  */

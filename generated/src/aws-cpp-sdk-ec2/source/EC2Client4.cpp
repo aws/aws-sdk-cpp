@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeServiceLinkVirtualInterfacesRequest.h>
 #include <aws/ec2/model/DescribeSnapshotAttributeRequest.h>
 #include <aws/ec2/model/DescribeSnapshotTierStatusRequest.h>
 #include <aws/ec2/model/DescribeSnapshotsRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/DisassociateSubnetCidrBlockRequest.h>
 #include <aws/ec2/model/DisassociateTransitGatewayMulticastDomainRequest.h>
 #include <aws/ec2/model/DisassociateTransitGatewayPolicyTableRequest.h>
-#include <aws/ec2/model/DisassociateTransitGatewayRouteTableRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,13 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeServiceLinkVirtualInterfacesOutcome EC2Client::DescribeServiceLinkVirtualInterfaces(
+    const DescribeServiceLinkVirtualInterfacesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServiceLinkVirtualInterfacesOutcome(result.GetResultWithOwnership())
+                            : DescribeServiceLinkVirtualInterfacesOutcome(std::move(result.GetError()));
+}
 
 DescribeSnapshotAttributeOutcome EC2Client::DescribeSnapshotAttribute(const DescribeSnapshotAttributeRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -762,11 +769,4 @@ DisassociateTransitGatewayPolicyTableOutcome EC2Client::DisassociateTransitGatew
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisassociateTransitGatewayPolicyTableOutcome(result.GetResultWithOwnership())
                             : DisassociateTransitGatewayPolicyTableOutcome(std::move(result.GetError()));
-}
-
-DisassociateTransitGatewayRouteTableOutcome EC2Client::DisassociateTransitGatewayRouteTable(
-    const DisassociateTransitGatewayRouteTableRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisassociateTransitGatewayRouteTableOutcome(result.GetResultWithOwnership())
-                            : DisassociateTransitGatewayRouteTableOutcome(std::move(result.GetError()));
 }

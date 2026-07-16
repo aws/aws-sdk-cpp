@@ -189,6 +189,35 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves billing preferences for the specified feature. Each feature
+   * controls a distinct billing capability: which accounts can share Reserved
+   * Instances or credits, whether billing alerts are enabled, the historical record
+   * of sharing changes, and per-credit options.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetBillingPreferences">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetBillingPreferencesOutcome GetBillingPreferences(const Model::GetBillingPreferencesRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetBillingPreferences that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetBillingPreferencesRequestT = Model::GetBillingPreferencesRequest>
+  Model::GetBillingPreferencesOutcomeCallable GetBillingPreferencesCallable(const GetBillingPreferencesRequestT& request) const {
+    return SubmitCallable(&BillingClient::GetBillingPreferences, request);
+  }
+
+  /**
+   * An Async wrapper for GetBillingPreferences that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetBillingPreferencesRequestT = Model::GetBillingPreferencesRequest>
+  void GetBillingPreferencesAsync(const GetBillingPreferencesRequestT& request, const GetBillingPreferencesResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BillingClient::GetBillingPreferences, request, handler, context);
+  }
+
+  /**
    * <p>Returns the metadata associated to the specified billing view ARN.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetBillingView">AWS
@@ -212,6 +241,70 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
   void GetBillingViewAsync(const GetBillingViewRequestT& request, const GetBillingViewResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BillingClient::GetBillingView, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the per-billing-month allocation history for credits applied to an
+   * Amazon Web Services account's bills. Traverses the consolidated billing family
+   * to capture cross-account credit applications. Supports pagination and optional
+   * filtering to a single credit.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetCreditAllocationHistory">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCreditAllocationHistoryOutcome GetCreditAllocationHistory(
+      const Model::GetCreditAllocationHistoryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCreditAllocationHistory that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetCreditAllocationHistoryRequestT = Model::GetCreditAllocationHistoryRequest>
+  Model::GetCreditAllocationHistoryOutcomeCallable GetCreditAllocationHistoryCallable(
+      const GetCreditAllocationHistoryRequestT& request) const {
+    return SubmitCallable(&BillingClient::GetCreditAllocationHistory, request);
+  }
+
+  /**
+   * An Async wrapper for GetCreditAllocationHistory that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetCreditAllocationHistoryRequestT = Model::GetCreditAllocationHistoryRequest>
+  void GetCreditAllocationHistoryAsync(const GetCreditAllocationHistoryRequestT& request,
+                                       const GetCreditAllocationHistoryResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BillingClient::GetCreditAllocationHistory, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the list of Amazon Web Services account credits for the specified
+   * account. Each credit includes its identifier, type, monetary amounts, applicable
+   * products, expiration, sharing configuration, and current enabled status.</p>
+   * <p>When the caller is the management account of a consolidated billing family
+   * and <code>payerAccountFlag</code> is <code>true</code>, the response aggregates
+   * credits across the entire family. Otherwise, the response includes only credits
+   * owned by the account specified in <code>accountId</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetCredits">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCreditsOutcome GetCredits(const Model::GetCreditsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCredits that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetCreditsRequestT = Model::GetCreditsRequest>
+  Model::GetCreditsOutcomeCallable GetCreditsCallable(const GetCreditsRequestT& request) const {
+    return SubmitCallable(&BillingClient::GetCredits, request);
+  }
+
+  /**
+   * An Async wrapper for GetCredits that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetCreditsRequestT = Model::GetCreditsRequest>
+  void GetCreditsAsync(const GetCreditsRequestT& request, const GetCreditsResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BillingClient::GetCredits, request, handler, context);
   }
 
   /**
@@ -331,6 +424,36 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Redeems an Amazon Web Services promotional credit code on behalf of the
+   * calling account. On success, a new credit is added to the account's credit
+   * ledger with the amount, validity period, and applicable products defined by the
+   * promotion. The credit is then automatically applied to subsequent bills
+   * according to the standard credit application order.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/RedeemCredits">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RedeemCreditsOutcome RedeemCredits(const Model::RedeemCreditsRequest& request) const;
+
+  /**
+   * A Callable wrapper for RedeemCredits that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename RedeemCreditsRequestT = Model::RedeemCreditsRequest>
+  Model::RedeemCreditsOutcomeCallable RedeemCreditsCallable(const RedeemCreditsRequestT& request) const {
+    return SubmitCallable(&BillingClient::RedeemCredits, request);
+  }
+
+  /**
+   * An Async wrapper for RedeemCredits that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename RedeemCreditsRequestT = Model::RedeemCreditsRequest>
+  void RedeemCreditsAsync(const RedeemCreditsRequestT& request, const RedeemCreditsResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BillingClient::RedeemCredits, request, handler, context);
+  }
+
+  /**
    * <p> An API operation for adding one or more tags (key-value pairs) to a
    * resource. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/TagResource">AWS
@@ -380,6 +503,42 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BillingClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates billing preferences for the specified feature. Each feature targets a
+   * distinct billing capability and has its own set of supported keys. The action
+   * sets the value for each provided key; keys not present in the request are
+   * unchanged.</p> <p>Sharing keys (<code>RI_SHARING</code>,
+   * <code>CREDIT_SHARING</code>, <code>CREDIT_LEVEL_SHARING</code>, and sharing keys
+   * under <code>CREDIT_PREFERENCE_OPTIONS</code>) may only be set by the management
+   * account of a consolidated billing family. The
+   * <code>credit/{creditId}/status</code> key may be set by member accounts for
+   * credits they own, or by the management account for any credit in the
+   * family.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/UpdateBillingPreferences">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateBillingPreferencesOutcome UpdateBillingPreferences(const Model::UpdateBillingPreferencesRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateBillingPreferences that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateBillingPreferencesRequestT = Model::UpdateBillingPreferencesRequest>
+  Model::UpdateBillingPreferencesOutcomeCallable UpdateBillingPreferencesCallable(const UpdateBillingPreferencesRequestT& request) const {
+    return SubmitCallable(&BillingClient::UpdateBillingPreferences, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateBillingPreferences that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateBillingPreferencesRequestT = Model::UpdateBillingPreferencesRequest>
+  void UpdateBillingPreferencesAsync(const UpdateBillingPreferencesRequestT& request,
+                                     const UpdateBillingPreferencesResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BillingClient::UpdateBillingPreferences, request, handler, context);
   }
 
   /**

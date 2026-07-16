@@ -3,55 +3,84 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/model/CreateTrafficPolicyRequest.h>
 
 #include <utility>
 
 using namespace Aws::MailManager::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateTrafficPolicyRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_clientTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_trafficPolicyNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_policyStatementsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_defaultActionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maxMessageSizeBytesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_clientTokenHasBeenSet) {
-    payload.WithString("ClientToken", m_clientToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ClientToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clientToken.c_str()));
   }
 
   if (m_trafficPolicyNameHasBeenSet) {
-    payload.WithString("TrafficPolicyName", m_trafficPolicyName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TrafficPolicyName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_trafficPolicyName.c_str()));
   }
 
   if (m_policyStatementsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> policyStatementsJsonList(m_policyStatements.size());
-    for (unsigned policyStatementsIndex = 0; policyStatementsIndex < policyStatementsJsonList.GetLength(); ++policyStatementsIndex) {
-      policyStatementsJsonList[policyStatementsIndex].AsObject(m_policyStatements[policyStatementsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PolicyStatements"));
+    encoder.WriteArrayStart(m_policyStatements.size());
+    for (const auto& item_0 : m_policyStatements) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("PolicyStatements", std::move(policyStatementsJsonList));
   }
 
   if (m_defaultActionHasBeenSet) {
-    payload.WithString("DefaultAction", AcceptActionMapper::GetNameForAcceptAction(m_defaultAction));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DefaultAction"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(AcceptActionMapper::GetNameForAcceptAction(m_defaultAction).c_str()));
   }
 
   if (m_maxMessageSizeBytesHasBeenSet) {
-    payload.WithInteger("MaxMessageSizeBytes", m_maxMessageSizeBytes);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MaxMessageSizeBytes"));
+    (m_maxMessageSizeBytes >= 0) ? encoder.WriteUInt(m_maxMessageSizeBytes) : encoder.WriteNegInt(m_maxMessageSizeBytes);
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateTrafficPolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MailManagerSvc.CreateTrafficPolicy"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -20,7 +20,8 @@ namespace IVS {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p>Updating or deleting a resource can cause an inconsistent
+ * state.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ConflictException">AWS
  * API Reference</a></p>
  */

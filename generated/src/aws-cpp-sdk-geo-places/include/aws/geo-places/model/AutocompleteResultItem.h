@@ -126,7 +126,8 @@ class AutocompleteResultItem {
 
   ///@{
   /**
-   * <p>A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP
+   * <p>A list of <a
+   * href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
    * 47</a> compliant language codes for the results to be rendered in. If there is
    * no data for the result in the requested language, data will be returned in the
    * default language for the entry.</p>
@@ -183,6 +184,23 @@ class AutocompleteResultItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If <code>true</code>, indicates that the coordinates of the position and
+   * access points of the point address are estimated.</p>
+   */
+  inline bool GetEstimatedPointAddress() const { return m_estimatedPointAddress; }
+  inline bool EstimatedPointAddressHasBeenSet() const { return m_estimatedPointAddressHasBeenSet; }
+  inline void SetEstimatedPointAddress(bool value) {
+    m_estimatedPointAddressHasBeenSet = true;
+    m_estimatedPointAddress = value;
+  }
+  inline AutocompleteResultItem& WithEstimatedPointAddress(bool value) {
+    SetEstimatedPointAddress(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_placeId;
 
@@ -199,6 +217,8 @@ class AutocompleteResultItem {
   Aws::String m_politicalView;
 
   AutocompleteHighlights m_highlights;
+
+  bool m_estimatedPointAddress{false};
   bool m_placeIdHasBeenSet = false;
   bool m_placeTypeHasBeenSet = false;
   bool m_titleHasBeenSet = false;
@@ -207,6 +227,7 @@ class AutocompleteResultItem {
   bool m_languageHasBeenSet = false;
   bool m_politicalViewHasBeenSet = false;
   bool m_highlightsHasBeenSet = false;
+  bool m_estimatedPointAddressHasBeenSet = false;
 };
 
 }  // namespace Model

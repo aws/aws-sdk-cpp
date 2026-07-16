@@ -36,4 +36,12 @@ void ListSecurityControlDefinitionsRequest::AddQueryStringParameters(URI& uri) c
     uri.AddQueryStringParameter("MaxResults", ss.str());
     ss.str("");
   }
+
+  if (m_providersHasBeenSet) {
+    for (const auto& item : m_providers) {
+      ss << SecurityControlsProviderMapper::GetNameForSecurityControlsProvider(item);
+      uri.AddQueryStringParameter("Providers", ss.str());
+      ss.str("");
+    }
+  }
 }

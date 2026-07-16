@@ -16,18 +16,18 @@ namespace Model {
 namespace NlpStatusMapper {
 
 static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 static const int ENABLING_HASH = HashingUtils::HashString("ENABLING");
+static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 static const int DISABLING_HASH = HashingUtils::HashString("DISABLING");
 
 NlpStatus GetNlpStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == ENABLED_HASH) {
     return NlpStatus::ENABLED;
-  } else if (hashCode == DISABLED_HASH) {
-    return NlpStatus::DISABLED;
   } else if (hashCode == ENABLING_HASH) {
     return NlpStatus::ENABLING;
+  } else if (hashCode == DISABLED_HASH) {
+    return NlpStatus::DISABLED;
   } else if (hashCode == DISABLING_HASH) {
     return NlpStatus::DISABLING;
   }
@@ -46,10 +46,10 @@ Aws::String GetNameForNlpStatus(NlpStatus enumValue) {
       return {};
     case NlpStatus::ENABLED:
       return "ENABLED";
-    case NlpStatus::DISABLED:
-      return "DISABLED";
     case NlpStatus::ENABLING:
       return "ENABLING";
+    case NlpStatus::DISABLED:
+      return "DISABLED";
     case NlpStatus::DISABLING:
       return "DISABLING";
     default:

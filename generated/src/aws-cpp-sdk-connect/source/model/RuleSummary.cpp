@@ -38,6 +38,15 @@ RuleSummary& RuleSummary::operator=(JsonView jsonValue) {
     m_publishStatus = RulePublishStatusMapper::GetRulePublishStatusForName(jsonValue.GetString("PublishStatus"));
     m_publishStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RuleCapabilityTiers")) {
+    Aws::Utils::Array<JsonView> ruleCapabilityTiersJsonList = jsonValue.GetArray("RuleCapabilityTiers");
+    for (unsigned ruleCapabilityTiersIndex = 0; ruleCapabilityTiersIndex < ruleCapabilityTiersJsonList.GetLength();
+         ++ruleCapabilityTiersIndex) {
+      m_ruleCapabilityTiers.push_back(
+          RuleCapabilityTierMapper::GetRuleCapabilityTierForName(ruleCapabilityTiersJsonList[ruleCapabilityTiersIndex].AsString()));
+    }
+    m_ruleCapabilityTiersHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ActionSummaries")) {
     Aws::Utils::Array<JsonView> actionSummariesJsonList = jsonValue.GetArray("ActionSummaries");
     for (unsigned actionSummariesIndex = 0; actionSummariesIndex < actionSummariesJsonList.GetLength(); ++actionSummariesIndex) {
@@ -77,6 +86,16 @@ JsonValue RuleSummary::Jsonize() const {
 
   if (m_publishStatusHasBeenSet) {
     payload.WithString("PublishStatus", RulePublishStatusMapper::GetNameForRulePublishStatus(m_publishStatus));
+  }
+
+  if (m_ruleCapabilityTiersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> ruleCapabilityTiersJsonList(m_ruleCapabilityTiers.size());
+    for (unsigned ruleCapabilityTiersIndex = 0; ruleCapabilityTiersIndex < ruleCapabilityTiersJsonList.GetLength();
+         ++ruleCapabilityTiersIndex) {
+      ruleCapabilityTiersJsonList[ruleCapabilityTiersIndex].AsString(
+          RuleCapabilityTierMapper::GetNameForRuleCapabilityTier(m_ruleCapabilityTiers[ruleCapabilityTiersIndex]));
+    }
+    payload.WithArray("RuleCapabilityTiers", std::move(ruleCapabilityTiersJsonList));
   }
 
   if (m_actionSummariesHasBeenSet) {

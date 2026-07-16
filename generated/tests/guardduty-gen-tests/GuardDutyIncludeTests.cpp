@@ -44,6 +44,8 @@
 #include <aws/guardduty/model/AutoscalingAutoScalingGroup.h>
 #include <aws/guardduty/model/AwsApiCallAction.h>
 #include <aws/guardduty/model/BadRequestException.h>
+#include <aws/guardduty/model/BedrockGuardrail.h>
+#include <aws/guardduty/model/BedrockGuardrailDetails.h>
 #include <aws/guardduty/model/BlockPublicAccess.h>
 #include <aws/guardduty/model/BucketLevelPermissions.h>
 #include <aws/guardduty/model/BucketPolicy.h>
@@ -55,10 +57,14 @@
 #include <aws/guardduty/model/ClusterStatus.h>
 #include <aws/guardduty/model/Condition.h>
 #include <aws/guardduty/model/Confidence.h>
+#include <aws/guardduty/model/ConfidenceLevel.h>
 #include <aws/guardduty/model/ConflictException.h>
 #include <aws/guardduty/model/Container.h>
 #include <aws/guardduty/model/ContainerFindingResource.h>
 #include <aws/guardduty/model/ContainerInstanceDetails.h>
+#include <aws/guardduty/model/ContentPolicyFilter.h>
+#include <aws/guardduty/model/ContentPolicyFilterAction.h>
+#include <aws/guardduty/model/ContentPolicyFilterType.h>
 #include <aws/guardduty/model/ContinuousScanDetails.h>
 #include <aws/guardduty/model/Country.h>
 #include <aws/guardduty/model/CoverageEc2InstanceDetails.h>
@@ -237,6 +243,8 @@
 #include <aws/guardduty/model/GetUsageStatisticsRequest.h>
 #include <aws/guardduty/model/GetUsageStatisticsResult.h>
 #include <aws/guardduty/model/GroupByType.h>
+#include <aws/guardduty/model/GuardrailAction.h>
+#include <aws/guardduty/model/GuardrailSource.h>
 #include <aws/guardduty/model/HighestSeverityThreatDetails.h>
 #include <aws/guardduty/model/HostPath.h>
 #include <aws/guardduty/model/IamInstanceProfile.h>
@@ -338,6 +346,7 @@
 #include <aws/guardduty/model/MemberFeaturesConfiguration.h>
 #include <aws/guardduty/model/MemberFeaturesConfigurationResult.h>
 #include <aws/guardduty/model/MfaStatus.h>
+#include <aws/guardduty/model/ModelDetail.h>
 #include <aws/guardduty/model/NetworkConnection.h>
 #include <aws/guardduty/model/NetworkConnectionAction.h>
 #include <aws/guardduty/model/NetworkDirection.h>

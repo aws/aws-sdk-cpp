@@ -42,6 +42,14 @@ ConnectorSummary& ConnectorSummary::operator=(JsonView jsonValue) {
     m_createdAt = jsonValue.GetString("CreatedAt");
     m_createdAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EnablementStatus")) {
+    m_enablementStatus = EnablementStatusMapper::GetEnablementStatusForName(jsonValue.GetString("EnablementStatus"));
+    m_enablementStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EnablementStatusReason")) {
+    m_enablementStatusReason = jsonValue.GetString("EnablementStatusReason");
+    m_enablementStatusReasonHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +78,14 @@ JsonValue ConnectorSummary::Jsonize() const {
 
   if (m_createdAtHasBeenSet) {
     payload.WithString("CreatedAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_enablementStatusHasBeenSet) {
+    payload.WithString("EnablementStatus", EnablementStatusMapper::GetNameForEnablementStatus(m_enablementStatus));
+  }
+
+  if (m_enablementStatusReasonHasBeenSet) {
+    payload.WithString("EnablementStatusReason", m_enablementStatusReason);
   }
 
   return payload;

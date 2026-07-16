@@ -86,9 +86,17 @@ PlaybackConfiguration& PlaybackConfiguration::operator=(JsonView jsonValue) {
     m_playbackEndpointPrefix = jsonValue.GetString("PlaybackEndpointPrefix");
     m_playbackEndpointPrefixHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DualStackPlaybackEndpointPrefix")) {
+    m_dualStackPlaybackEndpointPrefix = jsonValue.GetString("DualStackPlaybackEndpointPrefix");
+    m_dualStackPlaybackEndpointPrefixHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SessionInitializationEndpointPrefix")) {
     m_sessionInitializationEndpointPrefix = jsonValue.GetString("SessionInitializationEndpointPrefix");
     m_sessionInitializationEndpointPrefixHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DualStackSessionInitializationEndpointPrefix")) {
+    m_dualStackSessionInitializationEndpointPrefix = jsonValue.GetString("DualStackSessionInitializationEndpointPrefix");
+    m_dualStackSessionInitializationEndpointPrefixHasBeenSet = true;
   }
   if (jsonValue.ValueExists("SlateAdUrl")) {
     m_slateAdUrl = jsonValue.GetString("SlateAdUrl");
@@ -198,8 +206,16 @@ JsonValue PlaybackConfiguration::Jsonize() const {
     payload.WithString("PlaybackEndpointPrefix", m_playbackEndpointPrefix);
   }
 
+  if (m_dualStackPlaybackEndpointPrefixHasBeenSet) {
+    payload.WithString("DualStackPlaybackEndpointPrefix", m_dualStackPlaybackEndpointPrefix);
+  }
+
   if (m_sessionInitializationEndpointPrefixHasBeenSet) {
     payload.WithString("SessionInitializationEndpointPrefix", m_sessionInitializationEndpointPrefix);
+  }
+
+  if (m_dualStackSessionInitializationEndpointPrefixHasBeenSet) {
+    payload.WithString("DualStackSessionInitializationEndpointPrefix", m_dualStackSessionInitializationEndpointPrefix);
   }
 
   if (m_slateAdUrlHasBeenSet) {

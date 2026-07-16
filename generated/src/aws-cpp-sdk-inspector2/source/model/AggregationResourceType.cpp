@@ -19,6 +19,10 @@ static const int AWS_EC2_INSTANCE_HASH = HashingUtils::HashString("AWS_EC2_INSTA
 static const int AWS_ECR_CONTAINER_IMAGE_HASH = HashingUtils::HashString("AWS_ECR_CONTAINER_IMAGE");
 static const int AWS_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("AWS_LAMBDA_FUNCTION");
 static const int CODE_REPOSITORY_HASH = HashingUtils::HashString("CODE_REPOSITORY");
+static const int Microsoft_Compute_virtualMachines_HASH = HashingUtils::HashString("Microsoft.Compute/virtualMachines");
+static const int Microsoft_ContainerRegistry_registry_containerImage_HASH =
+    HashingUtils::HashString("Microsoft.ContainerRegistry/registry/containerImage");
+static const int Microsoft_Web_sites_HASH = HashingUtils::HashString("Microsoft.Web/sites");
 
 AggregationResourceType GetAggregationResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +34,12 @@ AggregationResourceType GetAggregationResourceTypeForName(const Aws::String& nam
     return AggregationResourceType::AWS_LAMBDA_FUNCTION;
   } else if (hashCode == CODE_REPOSITORY_HASH) {
     return AggregationResourceType::CODE_REPOSITORY;
+  } else if (hashCode == Microsoft_Compute_virtualMachines_HASH) {
+    return AggregationResourceType::Microsoft_Compute_virtualMachines;
+  } else if (hashCode == Microsoft_ContainerRegistry_registry_containerImage_HASH) {
+    return AggregationResourceType::Microsoft_ContainerRegistry_registry_containerImage;
+  } else if (hashCode == Microsoft_Web_sites_HASH) {
+    return AggregationResourceType::Microsoft_Web_sites;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +62,12 @@ Aws::String GetNameForAggregationResourceType(AggregationResourceType enumValue)
       return "AWS_LAMBDA_FUNCTION";
     case AggregationResourceType::CODE_REPOSITORY:
       return "CODE_REPOSITORY";
+    case AggregationResourceType::Microsoft_Compute_virtualMachines:
+      return "Microsoft.Compute/virtualMachines";
+    case AggregationResourceType::Microsoft_ContainerRegistry_registry_containerImage:
+      return "Microsoft.ContainerRegistry/registry/containerImage";
+    case AggregationResourceType::Microsoft_Web_sites:
+      return "Microsoft.Web/sites";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

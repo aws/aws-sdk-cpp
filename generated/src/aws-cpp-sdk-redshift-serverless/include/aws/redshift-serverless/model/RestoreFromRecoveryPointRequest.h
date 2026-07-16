@@ -32,6 +32,25 @@ class RestoreFromRecoveryPointRequest : public RedshiftServerlessRequest {
 
   ///@{
   /**
+   * <p>If <code>true</code>, maintain existing data sharing, zero-ETL and S3 event
+   * integrations when restoring. Otherwise, integrations will not be maintained
+   * after the restore operation. Integrations are only maintained when restored to
+   * the same serverless namespace.</p> <p>Default: true</p>
+   */
+  inline bool GetMaintainIntegration() const { return m_maintainIntegration; }
+  inline bool MaintainIntegrationHasBeenSet() const { return m_maintainIntegrationHasBeenSet; }
+  inline void SetMaintainIntegration(bool value) {
+    m_maintainIntegrationHasBeenSet = true;
+    m_maintainIntegration = value;
+  }
+  inline RestoreFromRecoveryPointRequest& WithMaintainIntegration(bool value) {
+    SetMaintainIntegration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the namespace to restore data into.</p>
    */
   inline const Aws::String& GetNamespaceName() const { return m_namespaceName; }
@@ -84,11 +103,14 @@ class RestoreFromRecoveryPointRequest : public RedshiftServerlessRequest {
   }
   ///@}
  private:
+  bool m_maintainIntegration{false};
+
   Aws::String m_namespaceName;
 
   Aws::String m_recoveryPointId;
 
   Aws::String m_workgroupName;
+  bool m_maintainIntegrationHasBeenSet = false;
   bool m_namespaceNameHasBeenSet = false;
   bool m_recoveryPointIdHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;

@@ -163,10 +163,11 @@ class StreetComponents {
 
   ///@{
   /**
-   * <p>A <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP 47</a>
-   * compliant language codes for the results to be rendered in. If there is no data
-   * for the result in the requested language, data will be returned in the default
-   * language for the entry.</p>
+   * <p>A <a
+   * href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
+   * 47</a> compliant language codes for the results to be rendered in. If there is
+   * no data for the result in the requested language, data will be returned in the
+   * default language for the entry.</p>
    */
   inline const Aws::String& GetLanguage() const { return m_language; }
   inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }

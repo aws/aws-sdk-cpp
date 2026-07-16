@@ -20,20 +20,31 @@
 #include <aws/healthlake/HealthLakeClient.h>
 #include <aws/healthlake/HealthLakeEndpointProvider.h>
 #include <aws/healthlake/HealthLakeErrorMarshaller.h>
+#include <aws/healthlake/model/CreateDataTransformationProfileRequest.h>
 #include <aws/healthlake/model/CreateFHIRDatastoreRequest.h>
+#include <aws/healthlake/model/DeleteDataTransformationProfileRequest.h>
 #include <aws/healthlake/model/DeleteFHIRDatastoreRequest.h>
+#include <aws/healthlake/model/DescribeDataTransformationJobRequest.h>
 #include <aws/healthlake/model/DescribeFHIRDatastoreRequest.h>
 #include <aws/healthlake/model/DescribeFHIRExportJobRequest.h>
 #include <aws/healthlake/model/DescribeFHIRImportJobRequest.h>
+#include <aws/healthlake/model/GetDataTransformationProfileRequest.h>
+#include <aws/healthlake/model/ListDataTransformationJobsRequest.h>
+#include <aws/healthlake/model/ListDataTransformationProfileVersionsRequest.h>
+#include <aws/healthlake/model/ListDataTransformationProfilesRequest.h>
 #include <aws/healthlake/model/ListFHIRDatastoresRequest.h>
 #include <aws/healthlake/model/ListFHIRExportJobsRequest.h>
 #include <aws/healthlake/model/ListFHIRImportJobsRequest.h>
 #include <aws/healthlake/model/ListTagsForResourceRequest.h>
+#include <aws/healthlake/model/PublishDataTransformationProfileRequest.h>
+#include <aws/healthlake/model/StartDataTransformationJobRequest.h>
 #include <aws/healthlake/model/StartFHIRExportJobRequest.h>
 #include <aws/healthlake/model/StartFHIRImportJobRequest.h>
 #include <aws/healthlake/model/TagResourceRequest.h>
 #include <aws/healthlake/model/UntagResourceRequest.h>
+#include <aws/healthlake/model/UpdateDataTransformationProfileRequest.h>
 #include <aws/healthlake/model/UpdateFHIRDatastoreRequest.h>
+#include <aws/healthlake/model/UpdateProfileWithAgentRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -185,16 +196,37 @@ HealthLakeClient::InvokeOperationOutcome HealthLakeClient::InvokeServiceOperatio
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+CreateDataTransformationProfileOutcome HealthLakeClient::CreateDataTransformationProfile(
+    const CreateDataTransformationProfileRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataTransformationProfileOutcome(result.GetResultWithOwnership())
+                            : CreateDataTransformationProfileOutcome(std::move(result.GetError()));
+}
+
 CreateFHIRDatastoreOutcome HealthLakeClient::CreateFHIRDatastore(const CreateFHIRDatastoreRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateFHIRDatastoreOutcome(result.GetResultWithOwnership())
                             : CreateFHIRDatastoreOutcome(std::move(result.GetError()));
 }
 
+DeleteDataTransformationProfileOutcome HealthLakeClient::DeleteDataTransformationProfile(
+    const DeleteDataTransformationProfileRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDataTransformationProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteDataTransformationProfileOutcome(std::move(result.GetError()));
+}
+
 DeleteFHIRDatastoreOutcome HealthLakeClient::DeleteFHIRDatastore(const DeleteFHIRDatastoreRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteFHIRDatastoreOutcome(result.GetResultWithOwnership())
                             : DeleteFHIRDatastoreOutcome(std::move(result.GetError()));
+}
+
+DescribeDataTransformationJobOutcome HealthLakeClient::DescribeDataTransformationJob(
+    const DescribeDataTransformationJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDataTransformationJobOutcome(result.GetResultWithOwnership())
+                            : DescribeDataTransformationJobOutcome(std::move(result.GetError()));
 }
 
 DescribeFHIRDatastoreOutcome HealthLakeClient::DescribeFHIRDatastore(const DescribeFHIRDatastoreRequest& request) const {
@@ -213,6 +245,33 @@ DescribeFHIRImportJobOutcome HealthLakeClient::DescribeFHIRImportJob(const Descr
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeFHIRImportJobOutcome(result.GetResultWithOwnership())
                             : DescribeFHIRImportJobOutcome(std::move(result.GetError()));
+}
+
+GetDataTransformationProfileOutcome HealthLakeClient::GetDataTransformationProfile(
+    const GetDataTransformationProfileRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDataTransformationProfileOutcome(result.GetResultWithOwnership())
+                            : GetDataTransformationProfileOutcome(std::move(result.GetError()));
+}
+
+ListDataTransformationJobsOutcome HealthLakeClient::ListDataTransformationJobs(const ListDataTransformationJobsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataTransformationJobsOutcome(result.GetResultWithOwnership())
+                            : ListDataTransformationJobsOutcome(std::move(result.GetError()));
+}
+
+ListDataTransformationProfileVersionsOutcome HealthLakeClient::ListDataTransformationProfileVersions(
+    const ListDataTransformationProfileVersionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataTransformationProfileVersionsOutcome(result.GetResultWithOwnership())
+                            : ListDataTransformationProfileVersionsOutcome(std::move(result.GetError()));
+}
+
+ListDataTransformationProfilesOutcome HealthLakeClient::ListDataTransformationProfiles(
+    const ListDataTransformationProfilesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataTransformationProfilesOutcome(result.GetResultWithOwnership())
+                            : ListDataTransformationProfilesOutcome(std::move(result.GetError()));
 }
 
 ListFHIRDatastoresOutcome HealthLakeClient::ListFHIRDatastores(const ListFHIRDatastoresRequest& request) const {
@@ -239,6 +298,19 @@ ListTagsForResourceOutcome HealthLakeClient::ListTagsForResource(const ListTagsF
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
+PublishDataTransformationProfileOutcome HealthLakeClient::PublishDataTransformationProfile(
+    const PublishDataTransformationProfileRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishDataTransformationProfileOutcome(result.GetResultWithOwnership())
+                            : PublishDataTransformationProfileOutcome(std::move(result.GetError()));
+}
+
+StartDataTransformationJobOutcome HealthLakeClient::StartDataTransformationJob(const StartDataTransformationJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDataTransformationJobOutcome(result.GetResultWithOwnership())
+                            : StartDataTransformationJobOutcome(std::move(result.GetError()));
+}
+
 StartFHIRExportJobOutcome HealthLakeClient::StartFHIRExportJob(const StartFHIRExportJobRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartFHIRExportJobOutcome(result.GetResultWithOwnership())
@@ -261,8 +333,21 @@ UntagResourceOutcome HealthLakeClient::UntagResource(const UntagResourceRequest&
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
+UpdateDataTransformationProfileOutcome HealthLakeClient::UpdateDataTransformationProfile(
+    const UpdateDataTransformationProfileRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDataTransformationProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateDataTransformationProfileOutcome(std::move(result.GetError()));
+}
+
 UpdateFHIRDatastoreOutcome HealthLakeClient::UpdateFHIRDatastore(const UpdateFHIRDatastoreRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateFHIRDatastoreOutcome(result.GetResultWithOwnership())
                             : UpdateFHIRDatastoreOutcome(std::move(result.GetError()));
+}
+
+UpdateProfileWithAgentOutcome HealthLakeClient::UpdateProfileWithAgent(const UpdateProfileWithAgentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProfileWithAgentOutcome(result.GetResultWithOwnership())
+                            : UpdateProfileWithAgentOutcome(std::move(result.GetError()));
 }

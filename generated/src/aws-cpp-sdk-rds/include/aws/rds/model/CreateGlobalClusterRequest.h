@@ -122,7 +122,7 @@ class CreateGlobalClusterRequest : public RDSRequest {
 
   ///@{
   /**
-   * <p>The life cycle type for this global database cluster.</p>  <p>By
+   * <p>The lifecycle type for this global database cluster.</p>  <p>By
    * default, this value is set to <code>open-source-rds-extended-support</code>,
    * which enrolls your global cluster into Amazon RDS Extended Support. At the end
    * of standard support, you can avoid charges for Extended Support by setting the

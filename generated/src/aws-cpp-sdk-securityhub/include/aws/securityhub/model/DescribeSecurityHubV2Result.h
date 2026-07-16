@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/FeatureDetail.h>
 
 #include <utility>
 
@@ -62,6 +64,30 @@ class DescribeSecurityHubV2Result {
   ///@}
 
   ///@{
+  /**
+   * <p>A map of opt-in features and their current status and metadata for the
+   * account in the current Region.</p>
+   */
+  inline const Aws::Map<Aws::String, FeatureDetail>& GetFeatures() const { return m_features; }
+  template <typename FeaturesT = Aws::Map<Aws::String, FeatureDetail>>
+  void SetFeatures(FeaturesT&& value) {
+    m_featuresHasBeenSet = true;
+    m_features = std::forward<FeaturesT>(value);
+  }
+  template <typename FeaturesT = Aws::Map<Aws::String, FeatureDetail>>
+  DescribeSecurityHubV2Result& WithFeatures(FeaturesT&& value) {
+    SetFeatures(std::forward<FeaturesT>(value));
+    return *this;
+  }
+  template <typename FeaturesKeyT = Aws::String, typename FeaturesValueT = FeatureDetail>
+  DescribeSecurityHubV2Result& AddFeatures(FeaturesKeyT&& key, FeaturesValueT&& value) {
+    m_featuresHasBeenSet = true;
+    m_features.emplace(std::forward<FeaturesKeyT>(key), std::forward<FeaturesValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -82,10 +108,13 @@ class DescribeSecurityHubV2Result {
 
   Aws::String m_subscribedAt;
 
+  Aws::Map<Aws::String, FeatureDetail> m_features;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hubV2ArnHasBeenSet = false;
   bool m_subscribedAtHasBeenSet = false;
+  bool m_featuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

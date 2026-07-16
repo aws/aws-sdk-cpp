@@ -1354,8 +1354,11 @@ class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Starts an experiment run for the specified experiment definition. An
    * experiment run delivers treatments to the target audience and collects metrics.
-   * You can start multiple experiment runs from the same experiment
-   * definition.</p><p><h3>See Also:</h3>   <a
+   * You can start multiple experiment runs from the same experiment definition.</p>
+   *  <p>Billing for this experiment begins when you call this operation and
+   * continues until the experiment is stopped. For pricing details, see <a
+   * href="https://aws.amazon.com/systems-manager/pricing/">AppConfig
+   * pricing</a>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StartExperimentRun">AWS
    * API Reference</a></p>
    */

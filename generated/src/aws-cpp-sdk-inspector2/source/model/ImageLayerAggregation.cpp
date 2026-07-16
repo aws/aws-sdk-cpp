@@ -39,6 +39,41 @@ ImageLayerAggregation& ImageLayerAggregation::operator=(JsonView jsonValue) {
     }
     m_layerHashesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("cloudProviders")) {
+    Aws::Utils::Array<JsonView> cloudProvidersJsonList = jsonValue.GetArray("cloudProviders");
+    for (unsigned cloudProvidersIndex = 0; cloudProvidersIndex < cloudProvidersJsonList.GetLength(); ++cloudProvidersIndex) {
+      m_cloudProviders.push_back(cloudProvidersJsonList[cloudProvidersIndex].AsObject());
+    }
+    m_cloudProvidersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudAccountIds")) {
+    Aws::Utils::Array<JsonView> cloudAccountIdsJsonList = jsonValue.GetArray("cloudAccountIds");
+    for (unsigned cloudAccountIdsIndex = 0; cloudAccountIdsIndex < cloudAccountIdsJsonList.GetLength(); ++cloudAccountIdsIndex) {
+      m_cloudAccountIds.push_back(cloudAccountIdsJsonList[cloudAccountIdsIndex].AsObject());
+    }
+    m_cloudAccountIdsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudOrgIds")) {
+    Aws::Utils::Array<JsonView> cloudOrgIdsJsonList = jsonValue.GetArray("cloudOrgIds");
+    for (unsigned cloudOrgIdsIndex = 0; cloudOrgIdsIndex < cloudOrgIdsJsonList.GetLength(); ++cloudOrgIdsIndex) {
+      m_cloudOrgIds.push_back(cloudOrgIdsJsonList[cloudOrgIdsIndex].AsObject());
+    }
+    m_cloudOrgIdsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudRegions")) {
+    Aws::Utils::Array<JsonView> cloudRegionsJsonList = jsonValue.GetArray("cloudRegions");
+    for (unsigned cloudRegionsIndex = 0; cloudRegionsIndex < cloudRegionsJsonList.GetLength(); ++cloudRegionsIndex) {
+      m_cloudRegions.push_back(cloudRegionsJsonList[cloudRegionsIndex].AsObject());
+    }
+    m_cloudRegionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudPartitions")) {
+    Aws::Utils::Array<JsonView> cloudPartitionsJsonList = jsonValue.GetArray("cloudPartitions");
+    for (unsigned cloudPartitionsIndex = 0; cloudPartitionsIndex < cloudPartitionsJsonList.GetLength(); ++cloudPartitionsIndex) {
+      m_cloudPartitions.push_back(cloudPartitionsJsonList[cloudPartitionsIndex].AsObject());
+    }
+    m_cloudPartitionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sortOrder")) {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
     m_sortOrderHasBeenSet = true;
@@ -75,6 +110,46 @@ JsonValue ImageLayerAggregation::Jsonize() const {
       layerHashesJsonList[layerHashesIndex].AsObject(m_layerHashes[layerHashesIndex].Jsonize());
     }
     payload.WithArray("layerHashes", std::move(layerHashesJsonList));
+  }
+
+  if (m_cloudProvidersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudProvidersJsonList(m_cloudProviders.size());
+    for (unsigned cloudProvidersIndex = 0; cloudProvidersIndex < cloudProvidersJsonList.GetLength(); ++cloudProvidersIndex) {
+      cloudProvidersJsonList[cloudProvidersIndex].AsObject(m_cloudProviders[cloudProvidersIndex].Jsonize());
+    }
+    payload.WithArray("cloudProviders", std::move(cloudProvidersJsonList));
+  }
+
+  if (m_cloudAccountIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudAccountIdsJsonList(m_cloudAccountIds.size());
+    for (unsigned cloudAccountIdsIndex = 0; cloudAccountIdsIndex < cloudAccountIdsJsonList.GetLength(); ++cloudAccountIdsIndex) {
+      cloudAccountIdsJsonList[cloudAccountIdsIndex].AsObject(m_cloudAccountIds[cloudAccountIdsIndex].Jsonize());
+    }
+    payload.WithArray("cloudAccountIds", std::move(cloudAccountIdsJsonList));
+  }
+
+  if (m_cloudOrgIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudOrgIdsJsonList(m_cloudOrgIds.size());
+    for (unsigned cloudOrgIdsIndex = 0; cloudOrgIdsIndex < cloudOrgIdsJsonList.GetLength(); ++cloudOrgIdsIndex) {
+      cloudOrgIdsJsonList[cloudOrgIdsIndex].AsObject(m_cloudOrgIds[cloudOrgIdsIndex].Jsonize());
+    }
+    payload.WithArray("cloudOrgIds", std::move(cloudOrgIdsJsonList));
+  }
+
+  if (m_cloudRegionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudRegionsJsonList(m_cloudRegions.size());
+    for (unsigned cloudRegionsIndex = 0; cloudRegionsIndex < cloudRegionsJsonList.GetLength(); ++cloudRegionsIndex) {
+      cloudRegionsJsonList[cloudRegionsIndex].AsObject(m_cloudRegions[cloudRegionsIndex].Jsonize());
+    }
+    payload.WithArray("cloudRegions", std::move(cloudRegionsJsonList));
+  }
+
+  if (m_cloudPartitionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudPartitionsJsonList(m_cloudPartitions.size());
+    for (unsigned cloudPartitionsIndex = 0; cloudPartitionsIndex < cloudPartitionsJsonList.GetLength(); ++cloudPartitionsIndex) {
+      cloudPartitionsJsonList[cloudPartitionsIndex].AsObject(m_cloudPartitions[cloudPartitionsIndex].Jsonize());
+    }
+    payload.WithArray("cloudPartitions", std::move(cloudPartitionsJsonList));
   }
 
   if (m_sortOrderHasBeenSet) {

@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/artifact/ArtifactClient.h>
+#include <aws/artifact/model/ListComplianceInquiriesPaginationTraits.h>
+#include <aws/artifact/model/ListComplianceInquiryQueriesPaginationTraits.h>
 #include <aws/artifact/model/ListCustomerAgreementsPaginationTraits.h>
 #include <aws/artifact/model/ListReportVersionsPaginationTraits.h>
 #include <aws/artifact/model/ListReportsPaginationTraits.h>
@@ -13,6 +15,12 @@
 namespace Aws {
 namespace Artifact {
 
+using ListComplianceInquiriesPaginator =
+    Aws::Utils::Pagination::Paginator<ArtifactClient, Model::ListComplianceInquiriesRequest,
+                                      Pagination::ListComplianceInquiriesPaginationTraits<ArtifactClient>>;
+using ListComplianceInquiryQueriesPaginator =
+    Aws::Utils::Pagination::Paginator<ArtifactClient, Model::ListComplianceInquiryQueriesRequest,
+                                      Pagination::ListComplianceInquiryQueriesPaginationTraits<ArtifactClient>>;
 using ListCustomerAgreementsPaginator =
     Aws::Utils::Pagination::Paginator<ArtifactClient, Model::ListCustomerAgreementsRequest,
                                       Pagination::ListCustomerAgreementsPaginationTraits<ArtifactClient>>;

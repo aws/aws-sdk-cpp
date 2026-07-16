@@ -26,7 +26,12 @@ enum class NodeFilterKey {
   OrganizationalUnitId,
   OrganizationalUnitPath,
   Region,
-  AccountId
+  AccountId,
+  SourceType,
+  SourceId,
+  SourceLocation,
+  AvailabilityZone,
+  AvailabilityZoneId
 };
 
 namespace NodeFilterKeyMapper {

@@ -20,7 +20,8 @@ namespace IVS {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p>Request references a resource which does not exist.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ResourceNotFoundException">AWS
  * API Reference</a></p>
  */

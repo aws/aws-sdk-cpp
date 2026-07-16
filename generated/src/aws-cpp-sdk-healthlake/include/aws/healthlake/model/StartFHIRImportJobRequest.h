@@ -156,6 +156,52 @@ class StartFHIRImportJobRequest : public HealthLakeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const Aws::String& GetProfileId() const { return m_profileId; }
+  inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
+  template <typename ProfileIdT = Aws::String>
+  void SetProfileId(ProfileIdT&& value) {
+    m_profileIdHasBeenSet = true;
+    m_profileId = std::forward<ProfileIdT>(value);
+  }
+  template <typename ProfileIdT = Aws::String>
+  StartFHIRImportJobRequest& WithProfileId(ProfileIdT&& value) {
+    SetProfileId(std::forward<ProfileIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetInputFormat() const { return m_inputFormat; }
+  inline bool InputFormatHasBeenSet() const { return m_inputFormatHasBeenSet; }
+  template <typename InputFormatT = Aws::String>
+  void SetInputFormat(InputFormatT&& value) {
+    m_inputFormatHasBeenSet = true;
+    m_inputFormat = std::forward<InputFormatT>(value);
+  }
+  template <typename InputFormatT = Aws::String>
+  StartFHIRImportJobRequest& WithInputFormat(InputFormatT&& value) {
+    SetInputFormat(std::forward<InputFormatT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline bool GetDriftDetectionEnabled() const { return m_driftDetectionEnabled; }
+  inline bool DriftDetectionEnabledHasBeenSet() const { return m_driftDetectionEnabledHasBeenSet; }
+  inline void SetDriftDetectionEnabled(bool value) {
+    m_driftDetectionEnabledHasBeenSet = true;
+    m_driftDetectionEnabled = value;
+  }
+  inline StartFHIRImportJobRequest& WithDriftDetectionEnabled(bool value) {
+    SetDriftDetectionEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_jobName;
 
@@ -170,6 +216,12 @@ class StartFHIRImportJobRequest : public HealthLakeRequest {
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   ValidationLevel m_validationLevel{ValidationLevel::NOT_SET};
+
+  Aws::String m_profileId;
+
+  Aws::String m_inputFormat;
+
+  bool m_driftDetectionEnabled{false};
   bool m_jobNameHasBeenSet = false;
   bool m_inputDataConfigHasBeenSet = false;
   bool m_jobOutputDataConfigHasBeenSet = false;
@@ -177,6 +229,9 @@ class StartFHIRImportJobRequest : public HealthLakeRequest {
   bool m_dataAccessRoleArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_validationLevelHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
+  bool m_inputFormatHasBeenSet = false;
+  bool m_driftDetectionEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

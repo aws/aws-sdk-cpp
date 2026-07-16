@@ -147,7 +147,8 @@ class StartExperimentRunRequest : public AppConfigRequest {
 
   ///@{
   /**
-   * <p>Optional deployment parameters including a KMS key for encryption.</p>
+   * <p>The deployment parameters for the experiment run, including a KMS key
+   * identifier for encryption.</p>
    */
   inline const DeploymentParameters& GetDeploymentParameters() const { return m_deploymentParameters; }
   inline bool DeploymentParametersHasBeenSet() const { return m_deploymentParametersHasBeenSet; }

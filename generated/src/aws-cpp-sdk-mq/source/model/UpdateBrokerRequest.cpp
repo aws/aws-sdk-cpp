@@ -63,6 +63,10 @@ Aws::String UpdateBrokerRequest::SerializePayload() const {
     payload.WithArray("securityGroups", std::move(securityGroupsJsonList));
   }
 
+  if (m_storageSizeHasBeenSet) {
+    payload.WithInteger("storageSize", m_storageSize);
+  }
+
   if (m_dataReplicationModeHasBeenSet) {
     payload.WithString("dataReplicationMode", DataReplicationModeMapper::GetNameForDataReplicationMode(m_dataReplicationMode));
   }

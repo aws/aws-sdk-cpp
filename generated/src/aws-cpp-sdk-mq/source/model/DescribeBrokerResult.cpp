@@ -126,6 +126,10 @@ DescribeBrokerResult& DescribeBrokerResult::operator=(const Aws::AmazonWebServic
     }
     m_pendingSecurityGroupsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("pendingStorageSize")) {
+    m_pendingStorageSize = jsonValue.GetInteger("pendingStorageSize");
+    m_pendingStorageSizeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("publiclyAccessible")) {
     m_publiclyAccessible = jsonValue.GetBool("publiclyAccessible");
     m_publiclyAccessibleHasBeenSet = true;
@@ -136,6 +140,10 @@ DescribeBrokerResult& DescribeBrokerResult::operator=(const Aws::AmazonWebServic
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
     }
     m_securityGroupsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("storageSize")) {
+    m_storageSize = jsonValue.GetInteger("storageSize");
+    m_storageSizeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("storageType")) {
     m_storageType = BrokerStorageTypeMapper::GetBrokerStorageTypeForName(jsonValue.GetString("storageType"));

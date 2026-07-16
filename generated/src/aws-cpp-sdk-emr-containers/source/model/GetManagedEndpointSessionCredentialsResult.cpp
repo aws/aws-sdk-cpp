@@ -34,6 +34,10 @@ GetManagedEndpointSessionCredentialsResult& GetManagedEndpointSessionCredentials
     m_credentials = jsonValue.GetObject("credentials");
     m_credentialsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("endpointCredentials")) {
+    m_endpointCredentials = jsonValue.GetObject("endpointCredentials");
+    m_endpointCredentialsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("expiresAt")) {
     m_expiresAt = jsonValue.GetString("expiresAt");
     m_expiresAtHasBeenSet = true;

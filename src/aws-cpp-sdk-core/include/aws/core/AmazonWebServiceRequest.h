@@ -240,6 +240,14 @@ namespace Aws
         void SetRetryContext(const RetryContext& context) const { m_retryContext = context; }
 
         virtual Aws::Vector<smithy::AuthSchemeOption> GetRequestSpecificSupportedAuth() const { return {}; }
+
+        /**
+         * A request can return a checksum name, this tells if if it is a user set checksum
+         * or if it was defaulted
+         *
+         * @return true of a request has a user set checksum
+         */
+        inline virtual bool ChecksumAlgorithmIsSet() const { return false; }
     protected:
         /**
          * Default does nothing. Override this to convert what would otherwise be the payload of the

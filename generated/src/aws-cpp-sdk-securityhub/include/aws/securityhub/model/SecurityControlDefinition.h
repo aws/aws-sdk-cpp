@@ -11,6 +11,7 @@
 #include <aws/securityhub/model/ParameterDefinition.h>
 #include <aws/securityhub/model/RegionAvailabilityStatus.h>
 #include <aws/securityhub/model/SecurityControlProperty.h>
+#include <aws/securityhub/model/SecurityControlsProvider.h>
 #include <aws/securityhub/model/SeverityRating.h>
 
 #include <utility>
@@ -209,6 +210,23 @@ class SecurityControlDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider whose resources the security control evaluates. For
+   * example, <code>AWS</code> or <code>Azure</code>.</p>
+   */
+  inline SecurityControlsProvider GetProvider() const { return m_provider; }
+  inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
+  inline void SetProvider(SecurityControlsProvider value) {
+    m_providerHasBeenSet = true;
+    m_provider = value;
+  }
+  inline SecurityControlDefinition& WithProvider(SecurityControlsProvider value) {
+    SetProvider(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_securityControlId;
 
@@ -225,6 +243,8 @@ class SecurityControlDefinition {
   Aws::Vector<SecurityControlProperty> m_customizableProperties;
 
   Aws::Map<Aws::String, ParameterDefinition> m_parameterDefinitions;
+
+  SecurityControlsProvider m_provider{SecurityControlsProvider::NOT_SET};
   bool m_securityControlIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -233,6 +253,7 @@ class SecurityControlDefinition {
   bool m_currentRegionAvailabilityHasBeenSet = false;
   bool m_customizablePropertiesHasBeenSet = false;
   bool m_parameterDefinitionsHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
 };
 
 }  // namespace Model

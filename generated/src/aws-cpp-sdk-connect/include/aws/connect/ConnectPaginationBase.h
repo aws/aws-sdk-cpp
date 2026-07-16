@@ -83,6 +83,7 @@
 #include <aws/connect/model/SearchQuickConnectsPaginationTraits.h>
 #include <aws/connect/model/SearchResourceTagsPaginationTraits.h>
 #include <aws/connect/model/SearchRoutingProfilesPaginationTraits.h>
+#include <aws/connect/model/SearchRulesPaginationTraits.h>
 #include <aws/connect/model/SearchSecurityProfilesPaginationTraits.h>
 #include <aws/connect/model/SearchTestCasesPaginationTraits.h>
 #include <aws/connect/model/SearchUserHierarchyGroupsPaginationTraits.h>
@@ -1016,6 +1017,17 @@ class ConnectPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchRoutingProfilesRequest,
                                              Pagination::SearchRoutingProfilesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for SearchRules operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchRulesRequest, Pagination::SearchRulesPaginationTraits<DerivedClient>>
+  SearchRulesPaginator(const Model::SearchRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchRulesRequest,
+                                             Pagination::SearchRulesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                     request};
   }
 
   /**

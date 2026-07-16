@@ -62,6 +62,10 @@ Endpoint& Endpoint::operator=(JsonView jsonValue) {
     m_serverUrl = jsonValue.GetString("serverUrl");
     m_serverUrlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("authProxyUrl")) {
+    m_authProxyUrl = jsonValue.GetString("authProxyUrl");
+    m_authProxyUrlHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -140,6 +144,10 @@ JsonValue Endpoint::Jsonize() const {
 
   if (m_serverUrlHasBeenSet) {
     payload.WithString("serverUrl", m_serverUrl);
+  }
+
+  if (m_authProxyUrlHasBeenSet) {
+    payload.WithString("authProxyUrl", m_authProxyUrl);
   }
 
   if (m_createdAtHasBeenSet) {

@@ -239,6 +239,24 @@ class Endpoint {
 
   ///@{
   /**
+   * <p>The auth proxy URL of the endpoint.</p>
+   */
+  inline const Aws::String& GetAuthProxyUrl() const { return m_authProxyUrl; }
+  inline bool AuthProxyUrlHasBeenSet() const { return m_authProxyUrlHasBeenSet; }
+  template <typename AuthProxyUrlT = Aws::String>
+  void SetAuthProxyUrl(AuthProxyUrlT&& value) {
+    m_authProxyUrlHasBeenSet = true;
+    m_authProxyUrl = std::forward<AuthProxyUrlT>(value);
+  }
+  template <typename AuthProxyUrlT = Aws::String>
+  Endpoint& WithAuthProxyUrl(AuthProxyUrlT&& value) {
+    SetAuthProxyUrl(std::forward<AuthProxyUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time when the endpoint was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -377,6 +395,8 @@ class Endpoint {
 
   Aws::String m_serverUrl;
 
+  Aws::String m_authProxyUrl;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_securityGroup;
@@ -399,6 +419,7 @@ class Endpoint {
   bool m_certificateAuthorityHasBeenSet = false;
   bool m_configurationOverridesHasBeenSet = false;
   bool m_serverUrlHasBeenSet = false;
+  bool m_authProxyUrlHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_securityGroupHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;

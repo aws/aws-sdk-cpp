@@ -23,12 +23,12 @@ Aws::String UpdateFHIRDatastoreRequest::SerializePayload() const {
     payload.WithString("DatastoreName", m_datastoreName);
   }
 
-  if (m_nlpConfigurationHasBeenSet) {
-    payload.WithObject("NlpConfiguration", m_nlpConfiguration.Jsonize());
-  }
-
   if (m_analyticsConfigurationHasBeenSet) {
     payload.WithObject("AnalyticsConfiguration", m_analyticsConfiguration.Jsonize());
+  }
+
+  if (m_nlpConfigurationHasBeenSet) {
+    payload.WithObject("NlpConfiguration", m_nlpConfiguration.Jsonize());
   }
 
   if (m_profileConfigurationHasBeenSet) {

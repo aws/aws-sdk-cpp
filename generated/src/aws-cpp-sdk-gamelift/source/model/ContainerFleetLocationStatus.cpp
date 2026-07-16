@@ -22,6 +22,7 @@ static const int ACTIVATING_HASH = HashingUtils::HashString("ACTIVATING");
 static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
 
 ContainerFleetLocationStatus GetContainerFleetLocationStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ ContainerFleetLocationStatus GetContainerFleetLocationStatusForName(const Aws::S
     return ContainerFleetLocationStatus::UPDATING;
   } else if (hashCode == DELETING_HASH) {
     return ContainerFleetLocationStatus::DELETING;
+  } else if (hashCode == EXPIRED_HASH) {
+    return ContainerFleetLocationStatus::EXPIRED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForContainerFleetLocationStatus(ContainerFleetLocationStatus 
       return "UPDATING";
     case ContainerFleetLocationStatus::DELETING:
       return "DELETING";
+    case ContainerFleetLocationStatus::EXPIRED:
+      return "EXPIRED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

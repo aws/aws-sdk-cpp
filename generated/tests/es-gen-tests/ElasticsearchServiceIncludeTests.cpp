@@ -108,11 +108,13 @@
 #include <aws/es/model/DissociatePackageResult.h>
 #include <aws/es/model/DomainEndpointOptions.h>
 #include <aws/es/model/DomainEndpointOptionsStatus.h>
+#include <aws/es/model/DomainEngineMode.h>
 #include <aws/es/model/DomainInfo.h>
 #include <aws/es/model/DomainInformation.h>
 #include <aws/es/model/DomainPackageDetails.h>
 #include <aws/es/model/DomainPackageStatus.h>
 #include <aws/es/model/DomainProcessingStatusType.h>
+#include <aws/es/model/DomainUseCase.h>
 #include <aws/es/model/DryRunResults.h>
 #include <aws/es/model/Duration.h>
 #include <aws/es/model/EBSOptions.h>
@@ -126,6 +128,7 @@
 #include <aws/es/model/ElasticsearchVersionStatus.h>
 #include <aws/es/model/EncryptionAtRestOptions.h>
 #include <aws/es/model/EncryptionAtRestOptionsStatus.h>
+#include <aws/es/model/EngineModeStatus.h>
 #include <aws/es/model/EngineType.h>
 #include <aws/es/model/ErrorDetails.h>
 #include <aws/es/model/Filter.h>
@@ -223,6 +226,7 @@
 #include <aws/es/model/UpgradeStatus.h>
 #include <aws/es/model/UpgradeStep.h>
 #include <aws/es/model/UpgradeStepItem.h>
+#include <aws/es/model/UseCaseStatus.h>
 #include <aws/es/model/VPCDerivedInfo.h>
 #include <aws/es/model/VPCDerivedInfoStatus.h>
 #include <aws/es/model/VPCOptions.h>

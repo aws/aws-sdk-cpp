@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resiliencehubv2/Resiliencehubv2_EXPORTS.h>
 #include <aws/resiliencehubv2/model/DependencyDiscoveryStatus.h>
 
@@ -66,12 +67,53 @@ class DependencyDiscoveryConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The count of resources eligible for dependency attribution.</p>
+   */
+  inline int GetEligibleResourceCount() const { return m_eligibleResourceCount; }
+  inline bool EligibleResourceCountHasBeenSet() const { return m_eligibleResourceCountHasBeenSet; }
+  inline void SetEligibleResourceCount(int value) {
+    m_eligibleResourceCountHasBeenSet = true;
+    m_eligibleResourceCount = value;
+  }
+  inline DependencyDiscoveryConfig& WithEligibleResourceCount(int value) {
+    SetEligibleResourceCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A status message for dependency discovery, displayed during the
+   * initialization state.</p>
+   */
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  DependencyDiscoveryConfig& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DependencyDiscoveryStatus m_status{DependencyDiscoveryStatus::NOT_SET};
 
   Aws::Utils::DateTime m_updatedAt{};
+
+  int m_eligibleResourceCount{0};
+
+  Aws::String m_message;
   bool m_statusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_eligibleResourceCountHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
 };
 
 }  // namespace Model

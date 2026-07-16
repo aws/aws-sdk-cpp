@@ -40,6 +40,7 @@
 #include <aws/config/model/ListAggregateDiscoveredResourcesPaginationTraits.h>
 #include <aws/config/model/ListConfigurationRecordersPaginationTraits.h>
 #include <aws/config/model/ListConformancePackComplianceScoresPaginationTraits.h>
+#include <aws/config/model/ListConnectorsPaginationTraits.h>
 #include <aws/config/model/ListDiscoveredResourcesPaginationTraits.h>
 #include <aws/config/model/ListResourceEvaluationsPaginationTraits.h>
 #include <aws/config/model/ListStoredQueriesPaginationTraits.h>
@@ -156,6 +157,8 @@ using ListConfigurationRecordersPaginator =
 using ListConformancePackComplianceScoresPaginator =
     Aws::Utils::Pagination::Paginator<ConfigServiceClient, Model::ListConformancePackComplianceScoresRequest,
                                       Pagination::ListConformancePackComplianceScoresPaginationTraits<ConfigServiceClient>>;
+using ListConnectorsPaginator = Aws::Utils::Pagination::Paginator<ConfigServiceClient, Model::ListConnectorsRequest,
+                                                                  Pagination::ListConnectorsPaginationTraits<ConfigServiceClient>>;
 using ListDiscoveredResourcesPaginator =
     Aws::Utils::Pagination::Paginator<ConfigServiceClient, Model::ListDiscoveredResourcesRequest,
                                       Pagination::ListDiscoveredResourcesPaginationTraits<ConfigServiceClient>>;

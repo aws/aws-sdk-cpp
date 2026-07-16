@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/AzureProviderConfiguration.h>
 #include <aws/securityhub/model/JiraCloudProviderConfiguration.h>
 #include <aws/securityhub/model/ServiceNowProviderConfiguration.h>
 
@@ -70,12 +71,34 @@ class ProviderConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration settings required to establish a CSPM integration with
+   * Microsoft Azure.</p>
+   */
+  inline const AzureProviderConfiguration& GetAzure() const { return m_azure; }
+  inline bool AzureHasBeenSet() const { return m_azureHasBeenSet; }
+  template <typename AzureT = AzureProviderConfiguration>
+  void SetAzure(AzureT&& value) {
+    m_azureHasBeenSet = true;
+    m_azure = std::forward<AzureT>(value);
+  }
+  template <typename AzureT = AzureProviderConfiguration>
+  ProviderConfiguration& WithAzure(AzureT&& value) {
+    SetAzure(std::forward<AzureT>(value));
+    return *this;
+  }
+  ///@}
  private:
   JiraCloudProviderConfiguration m_jiraCloud;
 
   ServiceNowProviderConfiguration m_serviceNow;
+
+  AzureProviderConfiguration m_azure;
   bool m_jiraCloudHasBeenSet = false;
   bool m_serviceNowHasBeenSet = false;
+  bool m_azureHasBeenSet = false;
 };
 
 }  // namespace Model

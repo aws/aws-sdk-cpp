@@ -18,6 +18,7 @@ namespace ScanModeMapper {
 static const int EC2_SSM_AGENT_BASED_HASH = HashingUtils::HashString("EC2_SSM_AGENT_BASED");
 static const int EC2_AGENTLESS_HASH = HashingUtils::HashString("EC2_AGENTLESS");
 static const int EC2_INSPECTOR_AGENT_BASED_HASH = HashingUtils::HashString("EC2_INSPECTOR_AGENT_BASED");
+static const int VM_INSPECTOR_AGENT_BASED_HASH = HashingUtils::HashString("VM_INSPECTOR_AGENT_BASED");
 
 ScanMode GetScanModeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ScanMode GetScanModeForName(const Aws::String& name) {
     return ScanMode::EC2_AGENTLESS;
   } else if (hashCode == EC2_INSPECTOR_AGENT_BASED_HASH) {
     return ScanMode::EC2_INSPECTOR_AGENT_BASED;
+  } else if (hashCode == VM_INSPECTOR_AGENT_BASED_HASH) {
+    return ScanMode::VM_INSPECTOR_AGENT_BASED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForScanMode(ScanMode enumValue) {
       return "EC2_AGENTLESS";
     case ScanMode::EC2_INSPECTOR_AGENT_BASED:
       return "EC2_INSPECTOR_AGENT_BASED";
+    case ScanMode::VM_INSPECTOR_AGENT_BASED:
+      return "VM_INSPECTOR_AGENT_BASED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

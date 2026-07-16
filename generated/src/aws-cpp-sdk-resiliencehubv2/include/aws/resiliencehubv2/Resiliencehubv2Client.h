@@ -1125,7 +1125,7 @@ class AWS_RESILIENCEHUBV2_API Resiliencehubv2Client : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Start a failure mode assessment.</p><p><h3>See Also:</h3>   <a
+   * <p>Starts a failure mode assessment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/StartFailureModeAssessment">AWS
    * API Reference</a></p>
    */

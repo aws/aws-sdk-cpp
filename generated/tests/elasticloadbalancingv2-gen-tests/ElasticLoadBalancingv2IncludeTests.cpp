@@ -175,6 +175,7 @@
 #include <aws/elasticloadbalancingv2/model/SetSecurityGroupsResult.h>
 #include <aws/elasticloadbalancingv2/model/SetSubnetsRequest.h>
 #include <aws/elasticloadbalancingv2/model/SetSubnetsResult.h>
+#include <aws/elasticloadbalancingv2/model/SourceIpAddressTypeEnum.h>
 #include <aws/elasticloadbalancingv2/model/SourceIpConditionConfig.h>
 #include <aws/elasticloadbalancingv2/model/SslPolicy.h>
 #include <aws/elasticloadbalancingv2/model/SubnetMapping.h>

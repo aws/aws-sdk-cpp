@@ -15,6 +15,8 @@
 #include <aws/es/model/CognitoOptions.h>
 #include <aws/es/model/DeploymentStrategyOptions.h>
 #include <aws/es/model/DomainEndpointOptions.h>
+#include <aws/es/model/DomainEngineMode.h>
+#include <aws/es/model/DomainUseCase.h>
 #include <aws/es/model/EBSOptions.h>
 #include <aws/es/model/ElasticsearchClusterConfig.h>
 #include <aws/es/model/EncryptionAtRestOptions.h>
@@ -412,6 +414,40 @@ class CreateElasticsearchDomainRequest : public ElasticsearchServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The primary use case for the domain. For valid values, see
+   * <code>DomainUseCase</code>.</p>
+   */
+  inline DomainUseCase GetUseCase() const { return m_useCase; }
+  inline bool UseCaseHasBeenSet() const { return m_useCaseHasBeenSet; }
+  inline void SetUseCase(DomainUseCase value) {
+    m_useCaseHasBeenSet = true;
+    m_useCase = value;
+  }
+  inline CreateElasticsearchDomainRequest& WithUseCase(DomainUseCase value) {
+    SetUseCase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The engine mode for the domain. For valid values and requirements, see
+   * <code>DomainEngineMode</code>.</p>
+   */
+  inline DomainEngineMode GetEngineMode() const { return m_engineMode; }
+  inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
+  inline void SetEngineMode(DomainEngineMode value) {
+    m_engineModeHasBeenSet = true;
+    m_engineMode = value;
+  }
+  inline CreateElasticsearchDomainRequest& WithEngineMode(DomainEngineMode value) {
+    SetEngineMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
@@ -448,6 +484,10 @@ class CreateElasticsearchDomainRequest : public ElasticsearchServiceRequest {
   DeploymentStrategyOptions m_deploymentStrategyOptions;
 
   AutomatedSnapshotPauseRequestOptions m_automatedSnapshotPauseOptions;
+
+  DomainUseCase m_useCase{DomainUseCase::NOT_SET};
+
+  DomainEngineMode m_engineMode{DomainEngineMode::NOT_SET};
   bool m_domainNameHasBeenSet = false;
   bool m_elasticsearchVersionHasBeenSet = false;
   bool m_elasticsearchClusterConfigHasBeenSet = false;
@@ -466,6 +506,8 @@ class CreateElasticsearchDomainRequest : public ElasticsearchServiceRequest {
   bool m_tagListHasBeenSet = false;
   bool m_deploymentStrategyOptionsHasBeenSet = false;
   bool m_automatedSnapshotPauseOptionsHasBeenSet = false;
+  bool m_useCaseHasBeenSet = false;
+  bool m_engineModeHasBeenSet = false;
 };
 
 }  // namespace Model

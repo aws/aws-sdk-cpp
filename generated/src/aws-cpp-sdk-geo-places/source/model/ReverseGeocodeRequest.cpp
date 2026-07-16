@@ -64,6 +64,11 @@ Aws::String ReverseGeocodeRequest::SerializePayload() const {
     payload.WithDouble("Heading", m_heading);
   }
 
+  if (m_addressNamesModeHasBeenSet) {
+    payload.WithString("AddressNamesMode",
+                       ReverseGeocodeAddressNamesModeMapper::GetNameForReverseGeocodeAddressNamesMode(m_addressNamesMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

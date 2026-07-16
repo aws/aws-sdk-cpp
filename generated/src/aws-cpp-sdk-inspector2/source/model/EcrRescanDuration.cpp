@@ -21,6 +21,8 @@ static const int DAYS_180_HASH = HashingUtils::HashString("DAYS_180");
 static const int DAYS_14_HASH = HashingUtils::HashString("DAYS_14");
 static const int DAYS_60_HASH = HashingUtils::HashString("DAYS_60");
 static const int DAYS_90_HASH = HashingUtils::HashString("DAYS_90");
+static const int DAYS_3_HASH = HashingUtils::HashString("DAYS_3");
+static const int DAYS_7_HASH = HashingUtils::HashString("DAYS_7");
 
 EcrRescanDuration GetEcrRescanDurationForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +38,10 @@ EcrRescanDuration GetEcrRescanDurationForName(const Aws::String& name) {
     return EcrRescanDuration::DAYS_60;
   } else if (hashCode == DAYS_90_HASH) {
     return EcrRescanDuration::DAYS_90;
+  } else if (hashCode == DAYS_3_HASH) {
+    return EcrRescanDuration::DAYS_3;
+  } else if (hashCode == DAYS_7_HASH) {
+    return EcrRescanDuration::DAYS_7;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +68,10 @@ Aws::String GetNameForEcrRescanDuration(EcrRescanDuration enumValue) {
       return "DAYS_60";
     case EcrRescanDuration::DAYS_90:
       return "DAYS_90";
+    case EcrRescanDuration::DAYS_3:
+      return "DAYS_3";
+    case EcrRescanDuration::DAYS_7:
+      return "DAYS_7";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

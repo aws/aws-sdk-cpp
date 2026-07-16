@@ -313,11 +313,14 @@ class CreateFleetRequest : public EC2Request {
    * information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
    * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
-   * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
-   * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
-   * or <code>request</code>, specify a resource type of <code>fleet</code> to tag
-   * the fleet. You cannot specify a resource type of <code>instance</code>. To tag
-   * instances at launch, specify the tags in a <a
+   * resource type of <code>fleet</code> to tag the fleet, <code>instance</code> to
+   * tag the instances at launch, <code>volume</code> to tag the volumes at launch,
+   * or <code>network-interface</code> to tag the network interfaces at launch.</p>
+   * <p>If the fleet type is <code>maintain</code> or <code>request</code>, specify a
+   * resource type of <code>fleet</code> to tag the fleet. You cannot specify a
+   * resource type of <code>instance</code>, <code>volume</code>, or
+   * <code>network-interface</code>. To tag instances at launch, specify the tags in
+   * a <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
    * template</a>.</p>
    */

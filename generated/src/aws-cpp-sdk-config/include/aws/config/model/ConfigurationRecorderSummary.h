@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
+#include <aws/config/model/Provider.h>
 #include <aws/config/model/RecordingScope.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -22,8 +23,8 @@ namespace Model {
 
 /**
  * <p>A summary of a configuration recorder, including the <code>arn</code>,
- * <code>name</code>, <code>servicePrincipal</code>, and
- * <code>recordingScope</code>.</p><p><h3>See Also:</h3>   <a
+ * <code>name</code>, <code>servicePrincipal</code>, <code>recordingScope</code>,
+ * and <code>provider</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigurationRecorderSummary">AWS
  * API Reference</a></p>
  */
@@ -108,6 +109,24 @@ class ConfigurationRecorderSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>For service-linked configuration recorders that record resources from a
+   * third-party cloud service provider, indicates the cloud service provider.
+   * Currently, <code>AZURE</code> is supported.</p>
+   */
+  inline Provider GetProvider() const { return m_provider; }
+  inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
+  inline void SetProvider(Provider value) {
+    m_providerHasBeenSet = true;
+    m_provider = value;
+  }
+  inline ConfigurationRecorderSummary& WithProvider(Provider value) {
+    SetProvider(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -116,10 +135,13 @@ class ConfigurationRecorderSummary {
   Aws::String m_servicePrincipal;
 
   RecordingScope m_recordingScope{RecordingScope::NOT_SET};
+
+  Provider m_provider{Provider::NOT_SET};
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_servicePrincipalHasBeenSet = false;
   bool m_recordingScopeHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/lambda/model/CapacityProviderPermissionsConfig.h>
 #include <aws/lambda/model/CapacityProviderScalingConfig.h>
 #include <aws/lambda/model/CapacityProviderState.h>
+#include <aws/lambda/model/CapacityProviderTelemetryConfig.h>
 #include <aws/lambda/model/CapacityProviderVpcConfig.h>
 #include <aws/lambda/model/InstanceRequirements.h>
 #include <aws/lambda/model/PropagateTags.h>
@@ -196,6 +197,25 @@ class CapacityProvider {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The telemetry configuration for the capacity provider, including logging
+   * settings.</p>
+   */
+  inline const CapacityProviderTelemetryConfig& GetTelemetryConfig() const { return m_telemetryConfig; }
+  inline bool TelemetryConfigHasBeenSet() const { return m_telemetryConfigHasBeenSet; }
+  template <typename TelemetryConfigT = CapacityProviderTelemetryConfig>
+  void SetTelemetryConfig(TelemetryConfigT&& value) {
+    m_telemetryConfigHasBeenSet = true;
+    m_telemetryConfig = std::forward<TelemetryConfigT>(value);
+  }
+  template <typename TelemetryConfigT = CapacityProviderTelemetryConfig>
+  CapacityProvider& WithTelemetryConfig(TelemetryConfigT&& value) {
+    SetTelemetryConfig(std::forward<TelemetryConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityProviderArn;
 
@@ -214,6 +234,8 @@ class CapacityProvider {
   Aws::String m_lastModified;
 
   PropagateTags m_propagateTags;
+
+  CapacityProviderTelemetryConfig m_telemetryConfig;
   bool m_capacityProviderArnHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
@@ -223,6 +245,7 @@ class CapacityProvider {
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
   bool m_propagateTagsHasBeenSet = false;
+  bool m_telemetryConfigHasBeenSet = false;
 };
 
 }  // namespace Model

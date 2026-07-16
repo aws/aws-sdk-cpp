@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityHub {
 namespace Model {
-enum class ResourceCategory { NOT_SET, Compute, Database, Storage, Code, AI_ML, Identity, Network, Other };
+enum class ResourceCategory { NOT_SET, Compute, Database, Storage, Code, AI_ML, Identity, Network, Messaging, Other };
 
 namespace ResourceCategoryMapper {
 AWS_SECURITYHUB_API ResourceCategory GetResourceCategoryForName(const Aws::String& name);

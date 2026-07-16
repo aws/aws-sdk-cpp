@@ -6,6 +6,9 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/ListDataTablesRequest.h>
+#include <aws/connect/model/ListDefaultVocabulariesRequest.h>
+#include <aws/connect/model/ListEntitySecurityProfilesRequest.h>
 #include <aws/connect/model/ListEvaluationFormVersionsRequest.h>
 #include <aws/connect/model/ListEvaluationFormsRequest.h>
 #include <aws/connect/model/ListFlowAssociationsRequest.h>
@@ -78,6 +81,7 @@
 #include <aws/connect/model/SearchQuickConnectsRequest.h>
 #include <aws/connect/model/SearchResourceTagsRequest.h>
 #include <aws/connect/model/SearchRoutingProfilesRequest.h>
+#include <aws/connect/model/SearchRulesRequest.h>
 #include <aws/connect/model/SearchSecurityProfilesRequest.h>
 #include <aws/connect/model/SearchTestCasesRequest.h>
 #include <aws/connect/model/SearchUserHierarchyGroupsRequest.h>
@@ -88,6 +92,7 @@
 #include <aws/connect/model/SearchWorkspacesRequest.h>
 #include <aws/connect/model/SendChatIntegrationEventRequest.h>
 #include <aws/connect/model/SendOutboundEmailRequest.h>
+#include <aws/connect/model/SendOutboundWebNotificationRequest.h>
 #include <aws/connect/model/StartAttachedFileUploadRequest.h>
 #include <aws/connect/model/StartChatContactRequest.h>
 #include <aws/connect/model/StartContactConversationalAnalyticsJobRequest.h>
@@ -101,11 +106,6 @@
 #include <aws/connect/model/StartOutboundEmailContactRequest.h>
 #include <aws/connect/model/StartOutboundVoiceContactRequest.h>
 #include <aws/connect/model/StartScreenSharingRequest.h>
-#include <aws/connect/model/StartTaskContactRequest.h>
-#include <aws/connect/model/StartTestCaseExecutionRequest.h>
-#include <aws/connect/model/StartWebRTCContactRequest.h>
-#include <aws/connect/model/StopContactMediaProcessingRequest.h>
-#include <aws/connect/model/StopContactRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -131,6 +131,59 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ListDataTablesOutcome ConnectClient::ListDataTables(const ListDataTablesRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTables", "Required field: InstanceId, is not set");
+    return ListDataTablesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [InstanceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataTablesOutcome(result.GetResultWithOwnership()) : ListDataTablesOutcome(std::move(result.GetError()));
+}
+
+ListDefaultVocabulariesOutcome ConnectClient::ListDefaultVocabularies(const ListDefaultVocabulariesRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDefaultVocabularies", "Required field: InstanceId, is not set");
+    return ListDefaultVocabulariesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [InstanceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/default-vocabulary-summary/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDefaultVocabulariesOutcome(result.GetResultWithOwnership())
+                            : ListDefaultVocabulariesOutcome(std::move(result.GetError()));
+}
+
+ListEntitySecurityProfilesOutcome ConnectClient::ListEntitySecurityProfiles(const ListEntitySecurityProfilesRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListEntitySecurityProfiles", "Required field: InstanceId, is not set");
+    return ListEntitySecurityProfilesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [InstanceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/entity-security-profiles-summary/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEntitySecurityProfilesOutcome(result.GetResultWithOwnership())
+                            : ListEntitySecurityProfilesOutcome(std::move(result.GetError()));
+}
 
 ListEvaluationFormVersionsOutcome ConnectClient::ListEvaluationFormVersions(const ListEvaluationFormVersionsRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
@@ -1388,6 +1441,16 @@ SearchRoutingProfilesOutcome ConnectClient::SearchRoutingProfiles(const SearchRo
                             : SearchRoutingProfilesOutcome(std::move(result.GetError()));
 }
 
+SearchRulesOutcome ConnectClient::SearchRules(const SearchRulesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/search-rules");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchRulesOutcome(result.GetResultWithOwnership()) : SearchRulesOutcome(std::move(result.GetError()));
+}
+
 SearchSecurityProfilesOutcome ConnectClient::SearchSecurityProfiles(const SearchSecurityProfilesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1509,6 +1572,25 @@ SendOutboundEmailOutcome ConnectClient::SendOutboundEmail(const SendOutboundEmai
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? SendOutboundEmailOutcome(result.GetResultWithOwnership())
                             : SendOutboundEmailOutcome(std::move(result.GetError()));
+}
+
+SendOutboundWebNotificationOutcome ConnectClient::SendOutboundWebNotification(const SendOutboundWebNotificationRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SendOutboundWebNotification", "Required field: InstanceId, is not set");
+    return SendOutboundWebNotificationOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [InstanceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/instance/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/outbound-web-notification");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendOutboundWebNotificationOutcome(result.GetResultWithOwnership())
+                            : SendOutboundWebNotificationOutcome(std::move(result.GetError()));
 }
 
 StartAttachedFileUploadOutcome ConnectClient::StartAttachedFileUpload(const StartAttachedFileUploadRequest& request) const {
@@ -1700,72 +1782,4 @@ StartScreenSharingOutcome ConnectClient::StartScreenSharing(const StartScreenSha
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? StartScreenSharingOutcome(result.GetResultWithOwnership())
                             : StartScreenSharingOutcome(std::move(result.GetError()));
-}
-
-StartTaskContactOutcome ConnectClient::StartTaskContact(const StartTaskContactRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/task");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? StartTaskContactOutcome(result.GetResultWithOwnership())
-                            : StartTaskContactOutcome(std::move(result.GetError()));
-}
-
-StartTestCaseExecutionOutcome ConnectClient::StartTestCaseExecution(const StartTestCaseExecutionRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("StartTestCaseExecution", "Required field: InstanceId, is not set");
-    return StartTestCaseExecutionOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                              "Missing required field [InstanceId]", false));
-  }
-  if (!request.TestCaseIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("StartTestCaseExecution", "Required field: TestCaseId, is not set");
-    return StartTestCaseExecutionOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                              "Missing required field [TestCaseId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/test-cases/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestCaseId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/start-execution");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? StartTestCaseExecutionOutcome(result.GetResultWithOwnership())
-                            : StartTestCaseExecutionOutcome(std::move(result.GetError()));
-}
-
-StartWebRTCContactOutcome ConnectClient::StartWebRTCContact(const StartWebRTCContactRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/webrtc");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? StartWebRTCContactOutcome(result.GetResultWithOwnership())
-                            : StartWebRTCContactOutcome(std::move(result.GetError()));
-}
-
-StopContactOutcome ConnectClient::StopContact(const StopContactRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/stop");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? StopContactOutcome(result.GetResultWithOwnership()) : StopContactOutcome(std::move(result.GetError()));
-}
-
-StopContactMediaProcessingOutcome ConnectClient::StopContactMediaProcessing(const StopContactMediaProcessingRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/stop-contact-media-processing");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? StopContactMediaProcessingOutcome(result.GetResultWithOwnership())
-                            : StopContactMediaProcessingOutcome(std::move(result.GetError()));
 }

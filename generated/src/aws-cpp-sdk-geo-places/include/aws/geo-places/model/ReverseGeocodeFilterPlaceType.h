@@ -10,7 +10,16 @@
 namespace Aws {
 namespace GeoPlaces {
 namespace Model {
-enum class ReverseGeocodeFilterPlaceType { NOT_SET, Locality, Intersection, Street, PointAddress, InterpolatedAddress };
+enum class ReverseGeocodeFilterPlaceType {
+  NOT_SET,
+  Locality,
+  Intersection,
+  Street,
+  PointAddress,
+  InterpolatedAddress,
+  SecondaryAddress,
+  PointOfInterest
+};
 
 namespace ReverseGeocodeFilterPlaceTypeMapper {
 AWS_GEOPLACES_API ReverseGeocodeFilterPlaceType GetReverseGeocodeFilterPlaceTypeForName(const Aws::String& name);

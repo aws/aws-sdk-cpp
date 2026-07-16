@@ -72,24 +72,6 @@ class UpdateFHIRDatastoreRequest : public HealthLakeRequest {
 
   ///@{
   /**
-   * <p>The natural language processing (NLP) configuration for the data store.</p>
-   */
-  inline const NlpConfiguration& GetNlpConfiguration() const { return m_nlpConfiguration; }
-  inline bool NlpConfigurationHasBeenSet() const { return m_nlpConfigurationHasBeenSet; }
-  template <typename NlpConfigurationT = NlpConfiguration>
-  void SetNlpConfiguration(NlpConfigurationT&& value) {
-    m_nlpConfigurationHasBeenSet = true;
-    m_nlpConfiguration = std::forward<NlpConfigurationT>(value);
-  }
-  template <typename NlpConfigurationT = NlpConfiguration>
-  UpdateFHIRDatastoreRequest& WithNlpConfiguration(NlpConfigurationT&& value) {
-    SetNlpConfiguration(std::forward<NlpConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The analytics configuration for the data store.</p>
    */
   inline const AnalyticsConfiguration& GetAnalyticsConfiguration() const { return m_analyticsConfiguration; }
@@ -102,6 +84,24 @@ class UpdateFHIRDatastoreRequest : public HealthLakeRequest {
   template <typename AnalyticsConfigurationT = AnalyticsConfiguration>
   UpdateFHIRDatastoreRequest& WithAnalyticsConfiguration(AnalyticsConfigurationT&& value) {
     SetAnalyticsConfiguration(std::forward<AnalyticsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The natural language processing (NLP) configuration for the data store.</p>
+   */
+  inline const NlpConfiguration& GetNlpConfiguration() const { return m_nlpConfiguration; }
+  inline bool NlpConfigurationHasBeenSet() const { return m_nlpConfigurationHasBeenSet; }
+  template <typename NlpConfigurationT = NlpConfiguration>
+  void SetNlpConfiguration(NlpConfigurationT&& value) {
+    m_nlpConfigurationHasBeenSet = true;
+    m_nlpConfiguration = std::forward<NlpConfigurationT>(value);
+  }
+  template <typename NlpConfigurationT = NlpConfiguration>
+  UpdateFHIRDatastoreRequest& WithNlpConfiguration(NlpConfigurationT&& value) {
+    SetNlpConfiguration(std::forward<NlpConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -146,17 +146,17 @@ class UpdateFHIRDatastoreRequest : public HealthLakeRequest {
 
   Aws::String m_datastoreName;
 
-  NlpConfiguration m_nlpConfiguration;
-
   AnalyticsConfiguration m_analyticsConfiguration;
+
+  NlpConfiguration m_nlpConfiguration;
 
   ProfileConfiguration m_profileConfiguration;
 
   IdentityProviderConfiguration m_identityProviderConfiguration;
   bool m_datastoreIdHasBeenSet = false;
   bool m_datastoreNameHasBeenSet = false;
-  bool m_nlpConfigurationHasBeenSet = false;
   bool m_analyticsConfigurationHasBeenSet = false;
+  bool m_nlpConfigurationHasBeenSet = false;
   bool m_profileConfigurationHasBeenSet = false;
   bool m_identityProviderConfigurationHasBeenSet = false;
 };

@@ -329,6 +329,24 @@ class PutPlaybackConfigurationResult {
 
   ///@{
   /**
+   * <p>The dual-stack (IPv4 and IPv6) playback endpoint prefix associated with the
+   * playback configuration.</p>
+   */
+  inline const Aws::String& GetDualStackPlaybackEndpointPrefix() const { return m_dualStackPlaybackEndpointPrefix; }
+  template <typename DualStackPlaybackEndpointPrefixT = Aws::String>
+  void SetDualStackPlaybackEndpointPrefix(DualStackPlaybackEndpointPrefixT&& value) {
+    m_dualStackPlaybackEndpointPrefixHasBeenSet = true;
+    m_dualStackPlaybackEndpointPrefix = std::forward<DualStackPlaybackEndpointPrefixT>(value);
+  }
+  template <typename DualStackPlaybackEndpointPrefixT = Aws::String>
+  PutPlaybackConfigurationResult& WithDualStackPlaybackEndpointPrefix(DualStackPlaybackEndpointPrefixT&& value) {
+    SetDualStackPlaybackEndpointPrefix(std::forward<DualStackPlaybackEndpointPrefixT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The session initialization endpoint prefix associated with the playback
    * configuration.</p>
    */
@@ -341,6 +359,26 @@ class PutPlaybackConfigurationResult {
   template <typename SessionInitializationEndpointPrefixT = Aws::String>
   PutPlaybackConfigurationResult& WithSessionInitializationEndpointPrefix(SessionInitializationEndpointPrefixT&& value) {
     SetSessionInitializationEndpointPrefix(std::forward<SessionInitializationEndpointPrefixT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The dual-stack (IPv4 and IPv6) session initialization endpoint prefix
+   * associated with the playback configuration.</p>
+   */
+  inline const Aws::String& GetDualStackSessionInitializationEndpointPrefix() const {
+    return m_dualStackSessionInitializationEndpointPrefix;
+  }
+  template <typename DualStackSessionInitializationEndpointPrefixT = Aws::String>
+  void SetDualStackSessionInitializationEndpointPrefix(DualStackSessionInitializationEndpointPrefixT&& value) {
+    m_dualStackSessionInitializationEndpointPrefixHasBeenSet = true;
+    m_dualStackSessionInitializationEndpointPrefix = std::forward<DualStackSessionInitializationEndpointPrefixT>(value);
+  }
+  template <typename DualStackSessionInitializationEndpointPrefixT = Aws::String>
+  PutPlaybackConfigurationResult& WithDualStackSessionInitializationEndpointPrefix(DualStackSessionInitializationEndpointPrefixT&& value) {
+    SetDualStackSessionInitializationEndpointPrefix(std::forward<DualStackSessionInitializationEndpointPrefixT>(value));
     return *this;
   }
   ///@}
@@ -544,7 +582,11 @@ class PutPlaybackConfigurationResult {
 
   Aws::String m_playbackEndpointPrefix;
 
+  Aws::String m_dualStackPlaybackEndpointPrefix;
+
   Aws::String m_sessionInitializationEndpointPrefix;
+
+  Aws::String m_dualStackSessionInitializationEndpointPrefix;
 
   Aws::String m_slateAdUrl;
 
@@ -577,7 +619,9 @@ class PutPlaybackConfigurationResult {
   bool m_personalizationThresholdSecondsHasBeenSet = false;
   bool m_playbackConfigurationArnHasBeenSet = false;
   bool m_playbackEndpointPrefixHasBeenSet = false;
+  bool m_dualStackPlaybackEndpointPrefixHasBeenSet = false;
   bool m_sessionInitializationEndpointPrefixHasBeenSet = false;
+  bool m_dualStackSessionInitializationEndpointPrefixHasBeenSet = false;
   bool m_slateAdUrlHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_transcodeProfileNameHasBeenSet = false;

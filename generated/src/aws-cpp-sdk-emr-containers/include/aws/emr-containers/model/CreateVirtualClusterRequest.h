@@ -126,6 +126,22 @@ class CreateVirtualClusterRequest : public EMRContainersRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the virtual cluster has session support enabled.</p>
+   */
+  inline bool GetSessionEnabled() const { return m_sessionEnabled; }
+  inline bool SessionEnabledHasBeenSet() const { return m_sessionEnabledHasBeenSet; }
+  inline void SetSessionEnabled(bool value) {
+    m_sessionEnabledHasBeenSet = true;
+    m_sessionEnabled = value;
+  }
+  inline CreateVirtualClusterRequest& WithSessionEnabled(bool value) {
+    SetSessionEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -136,11 +152,14 @@ class CreateVirtualClusterRequest : public EMRContainersRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_securityConfigurationId;
+
+  bool m_sessionEnabled{false};
   bool m_nameHasBeenSet = false;
   bool m_containerProviderHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
   bool m_securityConfigurationIdHasBeenSet = false;
+  bool m_sessionEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

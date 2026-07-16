@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resiliencehubv2/Resiliencehubv2Request.h>
 #include <aws/resiliencehubv2/Resiliencehubv2_EXPORTS.h>
 
@@ -86,6 +87,47 @@ class ListResourcesRequest : public Resiliencehubv2Request {
   ///@}
 
   ///@{
+  /**
+   * <p>The CloudFormation resource types to include in the response.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetResourceTypes() const { return m_resourceTypes; }
+  inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
+  template <typename ResourceTypesT = Aws::Vector<Aws::String>>
+  void SetResourceTypes(ResourceTypesT&& value) {
+    m_resourceTypesHasBeenSet = true;
+    m_resourceTypes = std::forward<ResourceTypesT>(value);
+  }
+  template <typename ResourceTypesT = Aws::Vector<Aws::String>>
+  ListResourcesRequest& WithResourceTypes(ResourceTypesT&& value) {
+    SetResourceTypes(std::forward<ResourceTypesT>(value));
+    return *this;
+  }
+  template <typename ResourceTypesT = Aws::String>
+  ListResourcesRequest& AddResourceTypes(ResourceTypesT&& value) {
+    m_resourceTypesHasBeenSet = true;
+    m_resourceTypes.emplace_back(std::forward<ResourceTypesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to filter non-billable resources. When true (the default),
+   * the operation returns only billable resources.</p>
+   */
+  inline bool GetBillable() const { return m_billable; }
+  inline bool BillableHasBeenSet() const { return m_billableHasBeenSet; }
+  inline void SetBillable(bool value) {
+    m_billableHasBeenSet = true;
+    m_billable = value;
+  }
+  inline ListResourcesRequest& WithBillable(bool value) {
+    SetBillable(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -121,12 +163,18 @@ class ListResourcesRequest : public Resiliencehubv2Request {
 
   Aws::String m_awsRegion;
 
+  Aws::Vector<Aws::String> m_resourceTypes;
+
+  bool m_billable{false};
+
   int m_maxResults{0};
 
   Aws::String m_nextToken;
   bool m_serviceArnHasBeenSet = false;
   bool m_serviceFunctionIdHasBeenSet = false;
   bool m_awsRegionHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_billableHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };

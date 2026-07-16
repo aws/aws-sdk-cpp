@@ -38,6 +38,10 @@ CreateConnectorV2Result& CreateConnectorV2Result::operator=(const Aws::AmazonWeb
     m_connectorStatus = ConnectorStatusMapper::GetConnectorStatusForName(jsonValue.GetString("ConnectorStatus"));
     m_connectorStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EnablementStatus")) {
+    m_enablementStatus = EnablementStatusMapper::GetEnablementStatusForName(jsonValue.GetString("EnablementStatus"));
+    m_enablementStatusHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

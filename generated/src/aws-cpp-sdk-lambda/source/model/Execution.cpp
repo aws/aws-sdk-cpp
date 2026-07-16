@@ -42,6 +42,10 @@ Execution& Execution::operator=(JsonView jsonValue) {
     m_endTimestamp = jsonValue.GetDouble("EndTimestamp");
     m_endTimestampHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("KMSKeyArn")) {
+    m_kMSKeyArn = jsonValue.GetString("KMSKeyArn");
+    m_kMSKeyArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue Execution::Jsonize() const {
 
   if (m_endTimestampHasBeenSet) {
     payload.WithDouble("EndTimestamp", m_endTimestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_kMSKeyArnHasBeenSet) {
+    payload.WithString("KMSKeyArn", m_kMSKeyArn);
   }
 
   return payload;

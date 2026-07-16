@@ -26,6 +26,7 @@ static const int LAMBDA_NETWORK_LOGS_HASH = HashingUtils::HashString("LAMBDA_NET
 static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
 static const int EC2_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EC2_RUNTIME_MONITORING");
 static const int FARGATE_RUNTIME_MONITORING_HASH = HashingUtils::HashString("FARGATE_RUNTIME_MONITORING");
+static const int AI_PROTECTION_HASH = HashingUtils::HashString("AI_PROTECTION");
 
 FreeTrialFeatureResult GetFreeTrialFeatureResultForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -51,6 +52,8 @@ FreeTrialFeatureResult GetFreeTrialFeatureResultForName(const Aws::String& name)
     return FreeTrialFeatureResult::EC2_RUNTIME_MONITORING;
   } else if (hashCode == FARGATE_RUNTIME_MONITORING_HASH) {
     return FreeTrialFeatureResult::FARGATE_RUNTIME_MONITORING;
+  } else if (hashCode == AI_PROTECTION_HASH) {
+    return FreeTrialFeatureResult::AI_PROTECTION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -87,6 +90,8 @@ Aws::String GetNameForFreeTrialFeatureResult(FreeTrialFeatureResult enumValue) {
       return "EC2_RUNTIME_MONITORING";
     case FreeTrialFeatureResult::FARGATE_RUNTIME_MONITORING:
       return "FARGATE_RUNTIME_MONITORING";
+    case FreeTrialFeatureResult::AI_PROTECTION:
+      return "AI_PROTECTION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -358,6 +358,31 @@ class GeocodeParsedQueryAddressComponents {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Additional information extracted from the query that does not correspond to
+   * standard address components.</p>
+   */
+  inline const Aws::Vector<ParsedQueryComponent>& GetOtherComponents() const { return m_otherComponents; }
+  inline bool OtherComponentsHasBeenSet() const { return m_otherComponentsHasBeenSet; }
+  template <typename OtherComponentsT = Aws::Vector<ParsedQueryComponent>>
+  void SetOtherComponents(OtherComponentsT&& value) {
+    m_otherComponentsHasBeenSet = true;
+    m_otherComponents = std::forward<OtherComponentsT>(value);
+  }
+  template <typename OtherComponentsT = Aws::Vector<ParsedQueryComponent>>
+  GeocodeParsedQueryAddressComponents& WithOtherComponents(OtherComponentsT&& value) {
+    SetOtherComponents(std::forward<OtherComponentsT>(value));
+    return *this;
+  }
+  template <typename OtherComponentsT = ParsedQueryComponent>
+  GeocodeParsedQueryAddressComponents& AddOtherComponents(OtherComponentsT&& value) {
+    m_otherComponentsHasBeenSet = true;
+    m_otherComponents.emplace_back(std::forward<OtherComponentsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<ParsedQueryComponent> m_country;
 
@@ -384,6 +409,8 @@ class GeocodeParsedQueryAddressComponents {
   Aws::Vector<ParsedQueryComponent> m_building;
 
   Aws::Vector<ParsedQuerySecondaryAddressComponent> m_secondaryAddressComponents;
+
+  Aws::Vector<ParsedQueryComponent> m_otherComponents;
   bool m_countryHasBeenSet = false;
   bool m_regionHasBeenSet = false;
   bool m_subRegionHasBeenSet = false;
@@ -397,6 +424,7 @@ class GeocodeParsedQueryAddressComponents {
   bool m_addressNumberHasBeenSet = false;
   bool m_buildingHasBeenSet = false;
   bool m_secondaryAddressComponentsHasBeenSet = false;
+  bool m_otherComponentsHasBeenSet = false;
 };
 
 }  // namespace Model

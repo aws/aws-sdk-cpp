@@ -34,6 +34,10 @@ Standard& Standard::operator=(JsonView jsonValue) {
     m_enabledByDefault = jsonValue.GetBool("EnabledByDefault");
     m_enabledByDefaultHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Provider")) {
+    m_provider = StandardsProviderMapper::GetStandardsProviderForName(jsonValue.GetString("Provider"));
+    m_providerHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("StandardsManagedBy")) {
     m_standardsManagedBy = jsonValue.GetObject("StandardsManagedBy");
     m_standardsManagedByHasBeenSet = true;
@@ -58,6 +62,10 @@ JsonValue Standard::Jsonize() const {
 
   if (m_enabledByDefaultHasBeenSet) {
     payload.WithBool("EnabledByDefault", m_enabledByDefault);
+  }
+
+  if (m_providerHasBeenSet) {
+    payload.WithString("Provider", StandardsProviderMapper::GetNameForStandardsProvider(m_provider));
   }
 
   if (m_standardsManagedByHasBeenSet) {

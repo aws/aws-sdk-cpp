@@ -13,6 +13,7 @@
 #include <aws/ec2/model/AllowsMultipleInstanceTypes.h>
 #include <aws/ec2/model/AutoPlacement.h>
 #include <aws/ec2/model/AvailableCapacity.h>
+#include <aws/ec2/model/HostCpuOptions.h>
 #include <aws/ec2/model/HostInstance.h>
 #include <aws/ec2/model/HostMaintenance.h>
 #include <aws/ec2/model/HostProperties.h>
@@ -417,6 +418,25 @@ class Host {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The CPU options for the Dedicated Host, including AMD Secure Encrypted
+   * Virtualization-Secure Nested Paging (AMD SEV-SNP) settings.</p>
+   */
+  inline const HostCpuOptions& GetCpuOptions() const { return m_cpuOptions; }
+  inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
+  template <typename CpuOptionsT = HostCpuOptions>
+  void SetCpuOptions(CpuOptionsT&& value) {
+    m_cpuOptionsHasBeenSet = true;
+    m_cpuOptions = std::forward<CpuOptionsT>(value);
+  }
+  template <typename CpuOptionsT = HostCpuOptions>
+  Host& WithCpuOptions(CpuOptionsT&& value) {
+    SetCpuOptions(std::forward<CpuOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AutoPlacement m_autoPlacement{AutoPlacement::NOT_SET};
 
@@ -457,6 +477,8 @@ class Host {
   HostMaintenance m_hostMaintenance{HostMaintenance::NOT_SET};
 
   Aws::String m_assetId;
+
+  HostCpuOptions m_cpuOptions;
   bool m_autoPlacementHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
   bool m_availableCapacityHasBeenSet = false;
@@ -477,6 +499,7 @@ class Host {
   bool m_outpostArnHasBeenSet = false;
   bool m_hostMaintenanceHasBeenSet = false;
   bool m_assetIdHasBeenSet = false;
+  bool m_cpuOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

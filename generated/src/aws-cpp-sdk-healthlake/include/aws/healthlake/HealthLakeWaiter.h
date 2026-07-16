@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/healthlake/HealthLakeClient.h>
 #include <aws/healthlake/model/DatastoreStatus.h>
+#include <aws/healthlake/model/DescribeDataTransformationJobRequest.h>
+#include <aws/healthlake/model/DescribeDataTransformationJobResult.h>
 #include <aws/healthlake/model/DescribeFHIRDatastoreRequest.h>
 #include <aws/healthlake/model/DescribeFHIRDatastoreResult.h>
 #include <aws/healthlake/model/DescribeFHIRExportJobRequest.h>
@@ -15,6 +17,7 @@
 #include <aws/healthlake/model/DescribeFHIRImportJobRequest.h>
 #include <aws/healthlake/model/DescribeFHIRImportJobResult.h>
 #include <aws/healthlake/model/JobStatus.h>
+#include <aws/healthlake/model/TransformationJobStatus.h>
 
 #include <algorithm>
 
@@ -24,6 +27,43 @@ namespace HealthLake {
 template <typename DerivedClient = HealthLakeClient>
 class HealthLakeWaiter {
  public:
+  Aws::Utils::WaiterOutcome<Model::DescribeDataTransformationJobOutcome> WaitUntilDataTransformationJobCompleted(
+      const Model::DescribeDataTransformationJobRequest& request) {
+    using OutcomeT = Model::DescribeDataTransformationJobOutcome;
+    using RequestT = Model::DescribeDataTransformationJobRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DataTransformationJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
+        [](const Model::DescribeDataTransformationJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TransformationJobStatusMapper::GetNameForTransformationJobStatus(
+                     result.GetTransformationJobProperties().GetJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DataTransformationJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED_WITH_ERRORS"),
+        [](const Model::DescribeDataTransformationJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TransformationJobStatusMapper::GetNameForTransformationJobStatus(
+                     result.GetTransformationJobProperties().GetJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DataTransformationJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::DescribeDataTransformationJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TransformationJobStatusMapper::GetNameForTransformationJobStatus(
+                     result.GetTransformationJobProperties().GetJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DataTransformationJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ResourceNotFoundException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeDataTransformationJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 4, std::move(acceptors), operation, "WaitUntilDataTransformationJobCompleted");
+    return waiter.Wait(request);
+  }
+
   Aws::Utils::WaiterOutcome<Model::DescribeFHIRDatastoreOutcome> WaitUntilFHIRDatastoreActive(
       const Model::DescribeFHIRDatastoreRequest& request) {
     using OutcomeT = Model::DescribeFHIRDatastoreOutcome;

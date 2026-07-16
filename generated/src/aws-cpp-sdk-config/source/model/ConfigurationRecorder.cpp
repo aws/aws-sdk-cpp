@@ -46,6 +46,14 @@ ConfigurationRecorder& ConfigurationRecorder::operator=(JsonView jsonValue) {
     m_servicePrincipal = jsonValue.GetString("servicePrincipal");
     m_servicePrincipalHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("connectorArn")) {
+    m_connectorArn = jsonValue.GetString("connectorArn");
+    m_connectorArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("scopeConfiguration")) {
+    m_scopeConfiguration = jsonValue.GetObject("scopeConfiguration");
+    m_scopeConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +86,14 @@ JsonValue ConfigurationRecorder::Jsonize() const {
 
   if (m_servicePrincipalHasBeenSet) {
     payload.WithString("servicePrincipal", m_servicePrincipal);
+  }
+
+  if (m_connectorArnHasBeenSet) {
+    payload.WithString("connectorArn", m_connectorArn);
+  }
+
+  if (m_scopeConfigurationHasBeenSet) {
+    payload.WithObject("scopeConfiguration", m_scopeConfiguration.Jsonize());
   }
 
   return payload;

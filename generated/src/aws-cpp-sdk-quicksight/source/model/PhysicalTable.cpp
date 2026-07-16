@@ -34,6 +34,10 @@ PhysicalTable& PhysicalTable::operator=(JsonView jsonValue) {
     m_saaSTable = jsonValue.GetObject("SaaSTable");
     m_saaSTableHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FileSource")) {
+    m_fileSource = jsonValue.GetObject("FileSource");
+    m_fileSourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue PhysicalTable::Jsonize() const {
 
   if (m_saaSTableHasBeenSet) {
     payload.WithObject("SaaSTable", m_saaSTable.Jsonize());
+  }
+
+  if (m_fileSourceHasBeenSet) {
+    payload.WithObject("FileSource", m_fileSource.Jsonize());
   }
 
   return payload;

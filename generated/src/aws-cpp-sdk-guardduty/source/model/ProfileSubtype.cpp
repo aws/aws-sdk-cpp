@@ -19,6 +19,8 @@ static const int FREQUENT_HASH = HashingUtils::HashString("FREQUENT");
 static const int INFREQUENT_HASH = HashingUtils::HashString("INFREQUENT");
 static const int UNSEEN_HASH = HashingUtils::HashString("UNSEEN");
 static const int RARE_HASH = HashingUtils::HashString("RARE");
+static const int COUNT_HASH = HashingUtils::HashString("COUNT");
+static const int AVERAGE_HASH = HashingUtils::HashString("AVERAGE");
 
 ProfileSubtype GetProfileSubtypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +32,10 @@ ProfileSubtype GetProfileSubtypeForName(const Aws::String& name) {
     return ProfileSubtype::UNSEEN;
   } else if (hashCode == RARE_HASH) {
     return ProfileSubtype::RARE;
+  } else if (hashCode == COUNT_HASH) {
+    return ProfileSubtype::COUNT;
+  } else if (hashCode == AVERAGE_HASH) {
+    return ProfileSubtype::AVERAGE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +58,10 @@ Aws::String GetNameForProfileSubtype(ProfileSubtype enumValue) {
       return "UNSEEN";
     case ProfileSubtype::RARE:
       return "RARE";
+    case ProfileSubtype::COUNT:
+      return "COUNT";
+    case ProfileSubtype::AVERAGE:
+      return "AVERAGE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

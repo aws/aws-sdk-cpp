@@ -94,6 +94,14 @@ ElasticsearchDomainConfig& ElasticsearchDomainConfig::operator=(JsonView jsonVal
     m_automatedSnapshotPauseOptions = jsonValue.GetObject("AutomatedSnapshotPauseOptions");
     m_automatedSnapshotPauseOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UseCase")) {
+    m_useCase = jsonValue.GetObject("UseCase");
+    m_useCaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EngineMode")) {
+    m_engineMode = jsonValue.GetObject("EngineMode");
+    m_engineModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -175,6 +183,14 @@ JsonValue ElasticsearchDomainConfig::Jsonize() const {
 
   if (m_automatedSnapshotPauseOptionsHasBeenSet) {
     payload.WithObject("AutomatedSnapshotPauseOptions", m_automatedSnapshotPauseOptions.Jsonize());
+  }
+
+  if (m_useCaseHasBeenSet) {
+    payload.WithObject("UseCase", m_useCase.Jsonize());
+  }
+
+  if (m_engineModeHasBeenSet) {
+    payload.WithObject("EngineMode", m_engineMode.Jsonize());
   }
 
   return payload;

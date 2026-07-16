@@ -150,6 +150,22 @@ DataSourceParameters& DataSourceParameters::operator=(JsonView jsonValue) {
     m_qBusinessParameters = jsonValue.GetObject("QBusinessParameters");
     m_qBusinessParametersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SharePointParameters")) {
+    m_sharePointParameters = jsonValue.GetObject("SharePointParameters");
+    m_sharePointParametersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GoogleDriveParameters")) {
+    m_googleDriveParameters = jsonValue.GetObject("GoogleDriveParameters");
+    m_googleDriveParametersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OneDriveParameters")) {
+    m_oneDriveParameters = jsonValue.GetObject("OneDriveParameters");
+    m_oneDriveParametersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FMKBParameters")) {
+    m_fMKBParameters = jsonValue.GetObject("FMKBParameters");
+    m_fMKBParametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -286,6 +302,22 @@ JsonValue DataSourceParameters::Jsonize() const {
 
   if (m_qBusinessParametersHasBeenSet) {
     payload.WithObject("QBusinessParameters", m_qBusinessParameters.Jsonize());
+  }
+
+  if (m_sharePointParametersHasBeenSet) {
+    payload.WithObject("SharePointParameters", m_sharePointParameters.Jsonize());
+  }
+
+  if (m_googleDriveParametersHasBeenSet) {
+    payload.WithObject("GoogleDriveParameters", m_googleDriveParameters.Jsonize());
+  }
+
+  if (m_oneDriveParametersHasBeenSet) {
+    payload.WithObject("OneDriveParameters", m_oneDriveParameters.Jsonize());
+  }
+
+  if (m_fMKBParametersHasBeenSet) {
+    payload.WithObject("FMKBParameters", m_fMKBParameters.Jsonize());
   }
 
   return payload;

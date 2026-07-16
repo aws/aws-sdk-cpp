@@ -52,7 +52,7 @@ class GetPatchBaselineForPatchGroupRequest : public SSMRequest {
   ///@{
   /**
    * <p>Returns the operating system rule specified for patch groups using the patch
-   * baseline.</p>
+   * baseline. The default value is <code>WINDOWS</code>. </p>
    */
   inline OperatingSystem GetOperatingSystem() const { return m_operatingSystem; }
   inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }

@@ -81,6 +81,7 @@
 #include <aws/cognito-idp/model/GetGroupResult.h>
 #include <aws/cognito-idp/model/GetIdentityProviderByIdentifierResult.h>
 #include <aws/cognito-idp/model/GetLogDeliveryConfigurationResult.h>
+#include <aws/cognito-idp/model/GetProvisionedLimitResult.h>
 #include <aws/cognito-idp/model/GetSigningCertificateResult.h>
 #include <aws/cognito-idp/model/GetTokensFromRefreshTokenResult.h>
 #include <aws/cognito-idp/model/GetUICustomizationResult.h>
@@ -125,6 +126,7 @@
 #include <aws/cognito-idp/model/UpdateIdentityProviderResult.h>
 #include <aws/cognito-idp/model/UpdateManagedLoginBrandingRequest.h>
 #include <aws/cognito-idp/model/UpdateManagedLoginBrandingResult.h>
+#include <aws/cognito-idp/model/UpdateProvisionedLimitResult.h>
 #include <aws/cognito-idp/model/UpdateResourceServerResult.h>
 #include <aws/cognito-idp/model/UpdateTermsResult.h>
 #include <aws/cognito-idp/model/UpdateUserAttributesResult.h>
@@ -242,6 +244,7 @@ class GetDeviceRequest;
 class GetGroupRequest;
 class GetIdentityProviderByIdentifierRequest;
 class GetLogDeliveryConfigurationRequest;
+class GetProvisionedLimitRequest;
 class GetSigningCertificateRequest;
 class GetTokensFromRefreshTokenRequest;
 class GetUICustomizationRequest;
@@ -285,6 +288,7 @@ class UpdateDeviceStatusRequest;
 class UpdateGroupRequest;
 class UpdateIdentityProviderRequest;
 class UpdateManagedLoginBrandingRequest;
+class UpdateProvisionedLimitRequest;
 class UpdateResourceServerRequest;
 class UpdateTermsRequest;
 class UpdateUserAttributesRequest;
@@ -372,6 +376,7 @@ typedef Aws::Utils::Outcome<GetDeviceResult, CognitoIdentityProviderError> GetDe
 typedef Aws::Utils::Outcome<GetGroupResult, CognitoIdentityProviderError> GetGroupOutcome;
 typedef Aws::Utils::Outcome<GetIdentityProviderByIdentifierResult, CognitoIdentityProviderError> GetIdentityProviderByIdentifierOutcome;
 typedef Aws::Utils::Outcome<GetLogDeliveryConfigurationResult, CognitoIdentityProviderError> GetLogDeliveryConfigurationOutcome;
+typedef Aws::Utils::Outcome<GetProvisionedLimitResult, CognitoIdentityProviderError> GetProvisionedLimitOutcome;
 typedef Aws::Utils::Outcome<GetSigningCertificateResult, CognitoIdentityProviderError> GetSigningCertificateOutcome;
 typedef Aws::Utils::Outcome<GetTokensFromRefreshTokenResult, CognitoIdentityProviderError> GetTokensFromRefreshTokenOutcome;
 typedef Aws::Utils::Outcome<GetUICustomizationResult, CognitoIdentityProviderError> GetUICustomizationOutcome;
@@ -415,6 +420,7 @@ typedef Aws::Utils::Outcome<UpdateDeviceStatusResult, CognitoIdentityProviderErr
 typedef Aws::Utils::Outcome<UpdateGroupResult, CognitoIdentityProviderError> UpdateGroupOutcome;
 typedef Aws::Utils::Outcome<UpdateIdentityProviderResult, CognitoIdentityProviderError> UpdateIdentityProviderOutcome;
 typedef Aws::Utils::Outcome<UpdateManagedLoginBrandingResult, CognitoIdentityProviderError> UpdateManagedLoginBrandingOutcome;
+typedef Aws::Utils::Outcome<UpdateProvisionedLimitResult, CognitoIdentityProviderError> UpdateProvisionedLimitOutcome;
 typedef Aws::Utils::Outcome<UpdateResourceServerResult, CognitoIdentityProviderError> UpdateResourceServerOutcome;
 typedef Aws::Utils::Outcome<UpdateTermsResult, CognitoIdentityProviderError> UpdateTermsOutcome;
 typedef Aws::Utils::Outcome<UpdateUserAttributesResult, CognitoIdentityProviderError> UpdateUserAttributesOutcome;
@@ -501,6 +507,7 @@ typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
 typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
 typedef std::future<GetIdentityProviderByIdentifierOutcome> GetIdentityProviderByIdentifierOutcomeCallable;
 typedef std::future<GetLogDeliveryConfigurationOutcome> GetLogDeliveryConfigurationOutcomeCallable;
+typedef std::future<GetProvisionedLimitOutcome> GetProvisionedLimitOutcomeCallable;
 typedef std::future<GetSigningCertificateOutcome> GetSigningCertificateOutcomeCallable;
 typedef std::future<GetTokensFromRefreshTokenOutcome> GetTokensFromRefreshTokenOutcomeCallable;
 typedef std::future<GetUICustomizationOutcome> GetUICustomizationOutcomeCallable;
@@ -544,6 +551,7 @@ typedef std::future<UpdateDeviceStatusOutcome> UpdateDeviceStatusOutcomeCallable
 typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
 typedef std::future<UpdateIdentityProviderOutcome> UpdateIdentityProviderOutcomeCallable;
 typedef std::future<UpdateManagedLoginBrandingOutcome> UpdateManagedLoginBrandingOutcomeCallable;
+typedef std::future<UpdateProvisionedLimitOutcome> UpdateProvisionedLimitOutcomeCallable;
 typedef std::future<UpdateResourceServerOutcome> UpdateResourceServerOutcomeCallable;
 typedef std::future<UpdateTermsOutcome> UpdateTermsOutcomeCallable;
 typedef std::future<UpdateUserAttributesOutcome> UpdateUserAttributesOutcomeCallable;
@@ -786,6 +794,9 @@ typedef std::function<void(const CognitoIdentityProviderClient*, const Model::Ge
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetLogDeliveryConfigurationRequest&,
                            const Model::GetLogDeliveryConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetLogDeliveryConfigurationResponseReceivedHandler;
+typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetProvisionedLimitRequest&,
+                           const Model::GetProvisionedLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetProvisionedLimitResponseReceivedHandler;
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetSigningCertificateRequest&,
                            const Model::GetSigningCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSigningCertificateResponseReceivedHandler;
@@ -916,6 +927,9 @@ typedef std::function<void(const CognitoIdentityProviderClient*, const Model::Up
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateManagedLoginBrandingRequest&,
                            const Model::UpdateManagedLoginBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateManagedLoginBrandingResponseReceivedHandler;
+typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateProvisionedLimitRequest&,
+                           const Model::UpdateProvisionedLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateProvisionedLimitResponseReceivedHandler;
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateResourceServerRequest&,
                            const Model::UpdateResourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateResourceServerResponseReceivedHandler;

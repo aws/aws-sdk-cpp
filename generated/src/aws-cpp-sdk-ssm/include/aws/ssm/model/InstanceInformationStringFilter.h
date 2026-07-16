@@ -37,16 +37,17 @@ class InstanceInformationStringFilter {
   /**
    * <p>The filter key name to describe your managed nodes.</p> <p>Valid filter key
    * values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds
-   * | PingStatus | PlatformType | ResourceType | SourceIds | SourceTypes | "tag-key"
-   * | "tag:<code>{keyname}</code> </p> <ul> <li> <p>Valid values for the
+   * | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes |
+   * "tag-key" | "tag:<code>{keyname}</code> </p> <ul> <li> <p>Valid values for the
    * <code>AssociationStatus</code> filter key: Success | Pending | Failed</p> </li>
    * <li> <p>Valid values for the <code>PingStatus</code> filter key: Online |
    * ConnectionLost | Inactive (deprecated)</p> </li> <li> <p>Valid values for the
-   * <code>PlatformType</code> filter key: Windows | Linux | MacOS</p> </li> <li>
+   * <code>PlatformTypes</code> filter key: Windows | Linux | MacOS</p> </li> <li>
    * <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance |
    * ManagedInstance</p> </li> <li> <p>Valid values for the <code>SourceType</code>
-   * filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p>
-   * </li> <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> |
+   * filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing |
+   * Microsoft.Compute/virtualMachines</p> </li> <li> <p>Valid tag examples:
+   * <code>Key=tag-key,Values=Purpose</code> |
    * <code>Key=tag:Purpose,Values=Test</code>.</p> </li> </ul>
    */
   inline const Aws::String& GetKey() const { return m_key; }

@@ -16,11 +16,14 @@ namespace Model {
 namespace ProfileTypeMapper {
 
 static const int FREQUENCY_HASH = HashingUtils::HashString("FREQUENCY");
+static const int VOLUME_HASH = HashingUtils::HashString("VOLUME");
 
 ProfileType GetProfileTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == FREQUENCY_HASH) {
     return ProfileType::FREQUENCY;
+  } else if (hashCode == VOLUME_HASH) {
+    return ProfileType::VOLUME;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForProfileType(ProfileType enumValue) {
       return {};
     case ProfileType::FREQUENCY:
       return "FREQUENCY";
+    case ProfileType::VOLUME:
+      return "VOLUME";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

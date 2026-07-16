@@ -26,6 +26,10 @@ RecoveryPointDetails& RecoveryPointDetails::operator=(JsonView jsonValue) {
     m_backupVaultName = jsonValue.GetString("backupVaultName");
     m_backupVaultNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("continuousScanDetails")) {
+    m_continuousScanDetails = jsonValue.GetObject("continuousScanDetails");
+    m_continuousScanDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue RecoveryPointDetails::Jsonize() const {
 
   if (m_backupVaultNameHasBeenSet) {
     payload.WithString("backupVaultName", m_backupVaultName);
+  }
+
+  if (m_continuousScanDetailsHasBeenSet) {
+    payload.WithObject("continuousScanDetails", m_continuousScanDetails.Jsonize());
   }
 
   return payload;

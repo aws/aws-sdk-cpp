@@ -53,6 +53,10 @@ VirtualCluster& VirtualCluster::operator=(JsonView jsonValue) {
     m_securityConfigurationId = jsonValue.GetString("securityConfigurationId");
     m_securityConfigurationIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sessionEnabled")) {
+    m_sessionEnabled = jsonValue.GetBool("sessionEnabled");
+    m_sessionEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +97,10 @@ JsonValue VirtualCluster::Jsonize() const {
 
   if (m_securityConfigurationIdHasBeenSet) {
     payload.WithString("securityConfigurationId", m_securityConfigurationId);
+  }
+
+  if (m_sessionEnabledHasBeenSet) {
+    payload.WithBool("sessionEnabled", m_sessionEnabled);
   }
 
   return payload;

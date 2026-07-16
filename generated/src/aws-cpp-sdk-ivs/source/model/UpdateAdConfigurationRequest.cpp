@@ -34,5 +34,9 @@ Aws::String UpdateAdConfigurationRequest::SerializePayload() const {
     payload.WithArray("mediaTailorPlaybackConfigurations", std::move(mediaTailorPlaybackConfigurationsJsonList));
   }
 
+  if (m_postRollConfigurationHasBeenSet) {
+    payload.WithObject("postRollConfiguration", m_postRollConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

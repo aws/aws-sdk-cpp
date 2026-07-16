@@ -38,6 +38,11 @@ FleetLaunchTemplateSpecificationRequest& FleetLaunchTemplateSpecificationRequest
       m_version = Aws::Utils::Xml::DecodeEscapedXmlText(versionNode.GetText());
       m_versionHasBeenSet = true;
     }
+    XmlNode launchTemplateSpecificationUserDataNode = resultNode.FirstChild("LaunchTemplateSpecificationUserData");
+    if (!launchTemplateSpecificationUserDataNode.IsNull()) {
+      m_launchTemplateSpecificationUserData = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateSpecificationUserDataNode.GetText());
+      m_launchTemplateSpecificationUserDataHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -56,6 +61,11 @@ void FleetLaunchTemplateSpecificationRequest::OutputToStream(Aws::OStream& oStre
   if (m_versionHasBeenSet) {
     oStream << location << index << locationValue << ".Version=" << StringUtils::URLEncode(m_version.c_str()) << "&";
   }
+
+  if (m_launchTemplateSpecificationUserDataHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".LaunchTemplateSpecificationUserData=" << StringUtils::URLEncode(m_launchTemplateSpecificationUserData.c_str()) << "&";
+  }
 }
 
 void FleetLaunchTemplateSpecificationRequest::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -67,6 +77,10 @@ void FleetLaunchTemplateSpecificationRequest::OutputToStream(Aws::OStream& oStre
   }
   if (m_versionHasBeenSet) {
     oStream << location << ".Version=" << StringUtils::URLEncode(m_version.c_str()) << "&";
+  }
+  if (m_launchTemplateSpecificationUserDataHasBeenSet) {
+    oStream << location << ".LaunchTemplateSpecificationUserData=" << StringUtils::URLEncode(m_launchTemplateSpecificationUserData.c_str())
+            << "&";
   }
 }
 

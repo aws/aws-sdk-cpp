@@ -49,6 +49,10 @@ Aws::String AllocateHostsRequest::SerializePayload() const {
     ss << "AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 
+  if (m_cpuOptionsHasBeenSet) {
+    m_cpuOptions.OutputToStream(ss, "CpuOptions");
+  }
+
   if (m_autoPlacementHasBeenSet) {
     ss << "AutoPlacement=" << StringUtils::URLEncode(AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement)) << "&";
   }

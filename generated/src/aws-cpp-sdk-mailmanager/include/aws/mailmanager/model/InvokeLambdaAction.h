@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/ActionFailurePolicy.h>
 #include <aws/mailmanager/model/LambdaInvocationType.h>
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MailManager {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class InvokeLambdaAction {
  public:
   AWS_MAILMANAGER_API InvokeLambdaAction() = default;
-  AWS_MAILMANAGER_API InvokeLambdaAction(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MAILMANAGER_API InvokeLambdaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MAILMANAGER_API InvokeLambdaAction(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MAILMANAGER_API InvokeLambdaAction& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MAILMANAGER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -111,13 +111,13 @@ class InvokeLambdaAction {
    * <p>The maximum time in minutes that the email processing can be retried if the
    * Lambda invocation fails. The maximum value is 2160 minutes (36 hours).</p>
    */
-  inline int GetRetryTimeMinutes() const { return m_retryTimeMinutes; }
+  inline int64_t GetRetryTimeMinutes() const { return m_retryTimeMinutes; }
   inline bool RetryTimeMinutesHasBeenSet() const { return m_retryTimeMinutesHasBeenSet; }
-  inline void SetRetryTimeMinutes(int value) {
+  inline void SetRetryTimeMinutes(int64_t value) {
     m_retryTimeMinutesHasBeenSet = true;
     m_retryTimeMinutes = value;
   }
-  inline InvokeLambdaAction& WithRetryTimeMinutes(int value) {
+  inline InvokeLambdaAction& WithRetryTimeMinutes(int64_t value) {
     SetRetryTimeMinutes(value);
     return *this;
   }
@@ -131,7 +131,7 @@ class InvokeLambdaAction {
 
   Aws::String m_roleArn;
 
-  int m_retryTimeMinutes{0};
+  int64_t m_retryTimeMinutes{0};
   bool m_actionFailurePolicyHasBeenSet = false;
   bool m_functionArnHasBeenSet = false;
   bool m_invocationTypeHasBeenSet = false;

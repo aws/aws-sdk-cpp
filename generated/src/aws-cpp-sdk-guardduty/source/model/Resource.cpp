@@ -85,6 +85,17 @@ Resource& Resource::operator=(JsonView jsonValue) {
     m_recoveryPointDetails = jsonValue.GetObject("recoveryPointDetails");
     m_recoveryPointDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("bedrockGuardrailDetails")) {
+    m_bedrockGuardrailDetails = jsonValue.GetObject("bedrockGuardrailDetails");
+    m_bedrockGuardrailDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("modelDetails")) {
+    Aws::Utils::Array<JsonView> modelDetailsJsonList = jsonValue.GetArray("modelDetails");
+    for (unsigned modelDetailsIndex = 0; modelDetailsIndex < modelDetailsJsonList.GetLength(); ++modelDetailsIndex) {
+      m_modelDetails.push_back(modelDetailsJsonList[modelDetailsIndex].AsObject());
+    }
+    m_modelDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -157,6 +168,18 @@ JsonValue Resource::Jsonize() const {
 
   if (m_recoveryPointDetailsHasBeenSet) {
     payload.WithObject("recoveryPointDetails", m_recoveryPointDetails.Jsonize());
+  }
+
+  if (m_bedrockGuardrailDetailsHasBeenSet) {
+    payload.WithObject("bedrockGuardrailDetails", m_bedrockGuardrailDetails.Jsonize());
+  }
+
+  if (m_modelDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> modelDetailsJsonList(m_modelDetails.size());
+    for (unsigned modelDetailsIndex = 0; modelDetailsIndex < modelDetailsJsonList.GetLength(); ++modelDetailsIndex) {
+      modelDetailsJsonList[modelDetailsIndex].AsObject(m_modelDetails[modelDetailsIndex].Jsonize());
+    }
+    payload.WithArray("modelDetails", std::move(modelDetailsJsonList));
   }
 
   return payload;

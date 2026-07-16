@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GuardDuty {
 namespace Model {
-enum class ProfileType { NOT_SET, FREQUENCY };
+enum class ProfileType { NOT_SET, FREQUENCY, VOLUME };
 
 namespace ProfileTypeMapper {
 AWS_GUARDDUTY_API ProfileType GetProfileTypeForName(const Aws::String& name);

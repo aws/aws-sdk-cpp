@@ -34,6 +34,10 @@ ConfigurationRecorderSummary& ConfigurationRecorderSummary::operator=(JsonView j
     m_recordingScope = RecordingScopeMapper::GetRecordingScopeForName(jsonValue.GetString("recordingScope"));
     m_recordingScopeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("provider")) {
+    m_provider = ProviderMapper::GetProviderForName(jsonValue.GetString("provider"));
+    m_providerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue ConfigurationRecorderSummary::Jsonize() const {
 
   if (m_recordingScopeHasBeenSet) {
     payload.WithString("recordingScope", RecordingScopeMapper::GetNameForRecordingScope(m_recordingScope));
+  }
+
+  if (m_providerHasBeenSet) {
+    payload.WithString("provider", ProviderMapper::GetNameForProvider(m_provider));
   }
 
   return payload;

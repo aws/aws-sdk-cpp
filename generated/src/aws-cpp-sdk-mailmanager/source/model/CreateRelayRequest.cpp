@@ -3,51 +3,81 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/model/CreateRelayRequest.h>
 
 #include <utility>
 
 using namespace Aws::MailManager::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateRelayRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_clientTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_relayNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_serverNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_serverPortHasBeenSet) {
+    mapSize++;
+  }
+  if (m_authenticationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_clientTokenHasBeenSet) {
-    payload.WithString("ClientToken", m_clientToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ClientToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clientToken.c_str()));
   }
 
   if (m_relayNameHasBeenSet) {
-    payload.WithString("RelayName", m_relayName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RelayName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_relayName.c_str()));
   }
 
   if (m_serverNameHasBeenSet) {
-    payload.WithString("ServerName", m_serverName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ServerName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_serverName.c_str()));
   }
 
   if (m_serverPortHasBeenSet) {
-    payload.WithInteger("ServerPort", m_serverPort);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ServerPort"));
+    (m_serverPort >= 0) ? encoder.WriteUInt(m_serverPort) : encoder.WriteNegInt(m_serverPort);
   }
 
   if (m_authenticationHasBeenSet) {
-    payload.WithObject("Authentication", m_authentication.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Authentication"));
+    m_authentication.CborEncode(encoder);
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateRelayRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MailManagerSvc.CreateRelay"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

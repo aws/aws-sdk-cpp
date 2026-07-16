@@ -59,6 +59,10 @@ SecurityControlDefinition& SecurityControlDefinition::operator=(JsonView jsonVal
     }
     m_parameterDefinitionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Provider")) {
+    m_provider = SecurityControlsProviderMapper::GetSecurityControlsProviderForName(jsonValue.GetString("Provider"));
+    m_providerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -106,6 +110,10 @@ JsonValue SecurityControlDefinition::Jsonize() const {
       parameterDefinitionsJsonMap.WithObject(parameterDefinitionsItem.first, parameterDefinitionsItem.second.Jsonize());
     }
     payload.WithObject("ParameterDefinitions", std::move(parameterDefinitionsJsonMap));
+  }
+
+  if (m_providerHasBeenSet) {
+    payload.WithString("Provider", SecurityControlsProviderMapper::GetNameForSecurityControlsProvider(m_provider));
   }
 
   return payload;

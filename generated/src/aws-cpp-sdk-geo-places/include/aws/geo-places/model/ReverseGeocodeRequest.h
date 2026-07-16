@@ -9,6 +9,7 @@
 #include <aws/geo-places/GeoPlacesRequest.h>
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/geo-places/model/ReverseGeocodeAdditionalFeature.h>
+#include <aws/geo-places/model/ReverseGeocodeAddressNamesMode.h>
 #include <aws/geo-places/model/ReverseGeocodeFilter.h>
 #include <aws/geo-places/model/ReverseGeocodeIntendedUse.h>
 
@@ -147,7 +148,8 @@ class ReverseGeocodeRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p> A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP
+   * <p> A list of <a
+   * href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
    * 47</a> compliant language codes for the results to be rendered in. If there is
    * no data for the result in the requested language, data will be returned in the
    * default language for the entry. For <a
@@ -254,6 +256,25 @@ class ReverseGeocodeRequest : public GeoPlacesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies how address names are returned. When set to
+   * <code>Administrative</code>, the service returns the official administrative
+   * names for address components. <code>Administrative</code> currently applies only
+   * to addresses in the United States.</p>
+   */
+  inline ReverseGeocodeAddressNamesMode GetAddressNamesMode() const { return m_addressNamesMode; }
+  inline bool AddressNamesModeHasBeenSet() const { return m_addressNamesModeHasBeenSet; }
+  inline void SetAddressNamesMode(ReverseGeocodeAddressNamesMode value) {
+    m_addressNamesModeHasBeenSet = true;
+    m_addressNamesMode = value;
+  }
+  inline ReverseGeocodeRequest& WithAddressNamesMode(ReverseGeocodeAddressNamesMode value) {
+    SetAddressNamesMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<double> m_queryPosition;
 
@@ -274,6 +295,8 @@ class ReverseGeocodeRequest : public GeoPlacesRequest {
   Aws::String m_key;
 
   double m_heading{0.0};
+
+  ReverseGeocodeAddressNamesMode m_addressNamesMode{ReverseGeocodeAddressNamesMode::NOT_SET};
   bool m_queryPositionHasBeenSet = false;
   bool m_queryRadiusHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
@@ -284,6 +307,7 @@ class ReverseGeocodeRequest : public GeoPlacesRequest {
   bool m_intendedUseHasBeenSet = false;
   bool m_keyHasBeenSet = false;
   bool m_headingHasBeenSet = false;
+  bool m_addressNamesModeHasBeenSet = false;
 };
 
 }  // namespace Model

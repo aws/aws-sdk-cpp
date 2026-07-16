@@ -20,6 +20,7 @@ static const int Phonemes_HASH = HashingUtils::HashString("Phonemes");
 static const int Access_HASH = HashingUtils::HashString("Access");
 static const int Contact_HASH = HashingUtils::HashString("Contact");
 static const int SecondaryAddresses_HASH = HashingUtils::HashString("SecondaryAddresses");
+static const int CrossReferences_HASH = HashingUtils::HashString("CrossReferences");
 
 GetPlaceAdditionalFeature GetGetPlaceAdditionalFeatureForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ GetPlaceAdditionalFeature GetGetPlaceAdditionalFeatureForName(const Aws::String&
     return GetPlaceAdditionalFeature::Contact;
   } else if (hashCode == SecondaryAddresses_HASH) {
     return GetPlaceAdditionalFeature::SecondaryAddresses;
+  } else if (hashCode == CrossReferences_HASH) {
+    return GetPlaceAdditionalFeature::CrossReferences;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForGetPlaceAdditionalFeature(GetPlaceAdditionalFeature enumVa
       return "Contact";
     case GetPlaceAdditionalFeature::SecondaryAddresses:
       return "SecondaryAddresses";
+    case GetPlaceAdditionalFeature::CrossReferences:
+      return "CrossReferences";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

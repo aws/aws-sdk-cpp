@@ -12,8 +12,10 @@
 #include <aws/geo-places/model/Address.h>
 #include <aws/geo-places/model/BusinessChain.h>
 #include <aws/geo-places/model/Category.h>
+#include <aws/geo-places/model/CrossReference.h>
 #include <aws/geo-places/model/FoodType.h>
 #include <aws/geo-places/model/PhonemeDetails.h>
+#include <aws/geo-places/model/PlaceAttribute.h>
 #include <aws/geo-places/model/PlaceType.h>
 #include <aws/geo-places/model/TimeZone.h>
 
@@ -359,6 +361,55 @@ class SuggestPlaceResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of place attributes for the result, such as whether the business
+   * offers drive-through service.</p>
+   */
+  inline const Aws::Vector<PlaceAttribute>& GetPlaceAttributes() const { return m_placeAttributes; }
+  inline bool PlaceAttributesHasBeenSet() const { return m_placeAttributesHasBeenSet; }
+  template <typename PlaceAttributesT = Aws::Vector<PlaceAttribute>>
+  void SetPlaceAttributes(PlaceAttributesT&& value) {
+    m_placeAttributesHasBeenSet = true;
+    m_placeAttributes = std::forward<PlaceAttributesT>(value);
+  }
+  template <typename PlaceAttributesT = Aws::Vector<PlaceAttribute>>
+  SuggestPlaceResult& WithPlaceAttributes(PlaceAttributesT&& value) {
+    SetPlaceAttributes(std::forward<PlaceAttributesT>(value));
+    return *this;
+  }
+  inline SuggestPlaceResult& AddPlaceAttributes(PlaceAttribute value) {
+    m_placeAttributesHasBeenSet = true;
+    m_placeAttributes.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of supplier references available for this place. Requires the
+   * <code>CrossReferences</code> additional feature to be enabled.</p>
+   */
+  inline const Aws::Vector<CrossReference>& GetCrossReferences() const { return m_crossReferences; }
+  inline bool CrossReferencesHasBeenSet() const { return m_crossReferencesHasBeenSet; }
+  template <typename CrossReferencesT = Aws::Vector<CrossReference>>
+  void SetCrossReferences(CrossReferencesT&& value) {
+    m_crossReferencesHasBeenSet = true;
+    m_crossReferences = std::forward<CrossReferencesT>(value);
+  }
+  template <typename CrossReferencesT = Aws::Vector<CrossReference>>
+  SuggestPlaceResult& WithCrossReferences(CrossReferencesT&& value) {
+    SetCrossReferences(std::forward<CrossReferencesT>(value));
+    return *this;
+  }
+  template <typename CrossReferencesT = CrossReference>
+  SuggestPlaceResult& AddCrossReferences(CrossReferencesT&& value) {
+    m_crossReferencesHasBeenSet = true;
+    m_crossReferences.emplace_back(std::forward<CrossReferencesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_placeId;
 
@@ -387,6 +438,10 @@ class SuggestPlaceResult {
   Aws::String m_politicalView;
 
   PhonemeDetails m_phonemes;
+
+  Aws::Vector<PlaceAttribute> m_placeAttributes;
+
+  Aws::Vector<CrossReference> m_crossReferences;
   bool m_placeIdHasBeenSet = false;
   bool m_placeTypeHasBeenSet = false;
   bool m_addressHasBeenSet = false;
@@ -401,6 +456,8 @@ class SuggestPlaceResult {
   bool m_timeZoneHasBeenSet = false;
   bool m_politicalViewHasBeenSet = false;
   bool m_phonemesHasBeenSet = false;
+  bool m_placeAttributesHasBeenSet = false;
+  bool m_crossReferencesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -51,6 +51,25 @@ class RestoreFromSnapshotRequest : public RedshiftServerlessRequest {
 
   ///@{
   /**
+   * <p>If <code>true</code>, maintain existing data sharing, zero-ETL and S3 event
+   * integrations when restoring. Otherwise, integrations will not be maintained
+   * after the restore operation. Integrations are only maintained when restored to
+   * the same serverless namespace.</p> <p>Default: true</p>
+   */
+  inline bool GetMaintainIntegration() const { return m_maintainIntegration; }
+  inline bool MaintainIntegrationHasBeenSet() const { return m_maintainIntegrationHasBeenSet; }
+  inline void SetMaintainIntegration(bool value) {
+    m_maintainIntegrationHasBeenSet = true;
+    m_maintainIntegration = value;
+  }
+  inline RestoreFromSnapshotRequest& WithMaintainIntegration(bool value) {
+    SetMaintainIntegration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
    * restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is
    * false or not set, Amazon Redshift uses the admin credentials that the namespace
@@ -165,6 +184,8 @@ class RestoreFromSnapshotRequest : public RedshiftServerlessRequest {
  private:
   Aws::String m_adminPasswordSecretKmsKeyId;
 
+  bool m_maintainIntegration{false};
+
   bool m_manageAdminPassword{false};
 
   Aws::String m_namespaceName;
@@ -177,6 +198,7 @@ class RestoreFromSnapshotRequest : public RedshiftServerlessRequest {
 
   Aws::String m_workgroupName;
   bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
+  bool m_maintainIntegrationHasBeenSet = false;
   bool m_manageAdminPasswordHasBeenSet = false;
   bool m_namespaceNameHasBeenSet = false;
   bool m_ownerAccountHasBeenSet = false;

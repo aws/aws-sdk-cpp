@@ -3,124 +3,290 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/model/RuleAction.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace MailManager {
 namespace Model {
 
-RuleAction::RuleAction(JsonView jsonValue) { *this = jsonValue; }
+RuleAction::RuleAction(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-RuleAction& RuleAction::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Drop")) {
-    m_drop = jsonValue.GetObject("Drop");
-    m_dropHasBeenSet = true;
+RuleAction& RuleAction::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "Drop") {
+                m_drop = DropAction(decoder);
+                m_dropHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Relay") {
+                m_relay = RelayAction(decoder);
+                m_relayHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Archive") {
+                m_archive = ArchiveAction(decoder);
+                m_archiveHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "WriteToS3") {
+                m_writeToS3 = S3Action(decoder);
+                m_writeToS3HasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Send") {
+                m_send = SendAction(decoder);
+                m_sendHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AddHeader") {
+                m_addHeader = AddHeaderAction(decoder);
+                m_addHeaderHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ReplaceRecipient") {
+                m_replaceRecipient = ReplaceRecipientAction(decoder);
+                m_replaceRecipientHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DeliverToMailbox") {
+                m_deliverToMailbox = DeliverToMailboxAction(decoder);
+                m_deliverToMailboxHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DeliverToQBusiness") {
+                m_deliverToQBusiness = DeliverToQBusinessAction(decoder);
+                m_deliverToQBusinessHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "PublishToSns") {
+                m_publishToSns = SnsAction(decoder);
+                m_publishToSnsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Bounce") {
+                m_bounce = BounceAction(decoder);
+                m_bounceHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "InvokeLambda") {
+                m_invokeLambda = InvokeLambdaAction(decoder);
+                m_invokeLambdaHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("RuleAction", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Drop") {
+              m_drop = DropAction(decoder);
+              m_dropHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Relay") {
+              m_relay = RelayAction(decoder);
+              m_relayHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Archive") {
+              m_archive = ArchiveAction(decoder);
+              m_archiveHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "WriteToS3") {
+              m_writeToS3 = S3Action(decoder);
+              m_writeToS3HasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Send") {
+              m_send = SendAction(decoder);
+              m_sendHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AddHeader") {
+              m_addHeader = AddHeaderAction(decoder);
+              m_addHeaderHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ReplaceRecipient") {
+              m_replaceRecipient = ReplaceRecipientAction(decoder);
+              m_replaceRecipientHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DeliverToMailbox") {
+              m_deliverToMailbox = DeliverToMailboxAction(decoder);
+              m_deliverToMailboxHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DeliverToQBusiness") {
+              m_deliverToQBusiness = DeliverToQBusinessAction(decoder);
+              m_deliverToQBusinessHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "PublishToSns") {
+              m_publishToSns = SnsAction(decoder);
+              m_publishToSnsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Bounce") {
+              m_bounce = BounceAction(decoder);
+              m_bounceHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "InvokeLambda") {
+              m_invokeLambda = InvokeLambdaAction(decoder);
+              m_invokeLambdaHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("Relay")) {
-    m_relay = jsonValue.GetObject("Relay");
-    m_relayHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Archive")) {
-    m_archive = jsonValue.GetObject("Archive");
-    m_archiveHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("WriteToS3")) {
-    m_writeToS3 = jsonValue.GetObject("WriteToS3");
-    m_writeToS3HasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Send")) {
-    m_send = jsonValue.GetObject("Send");
-    m_sendHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AddHeader")) {
-    m_addHeader = jsonValue.GetObject("AddHeader");
-    m_addHeaderHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ReplaceRecipient")) {
-    m_replaceRecipient = jsonValue.GetObject("ReplaceRecipient");
-    m_replaceRecipientHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DeliverToMailbox")) {
-    m_deliverToMailbox = jsonValue.GetObject("DeliverToMailbox");
-    m_deliverToMailboxHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DeliverToQBusiness")) {
-    m_deliverToQBusiness = jsonValue.GetObject("DeliverToQBusiness");
-    m_deliverToQBusinessHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("PublishToSns")) {
-    m_publishToSns = jsonValue.GetObject("PublishToSns");
-    m_publishToSnsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Bounce")) {
-    m_bounce = jsonValue.GetObject("Bounce");
-    m_bounceHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("InvokeLambda")) {
-    m_invokeLambda = jsonValue.GetObject("InvokeLambda");
-    m_invokeLambdaHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue RuleAction::Jsonize() const {
-  JsonValue payload;
+void RuleAction::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_dropHasBeenSet) {
+    mapSize++;
+  }
+  if (m_relayHasBeenSet) {
+    mapSize++;
+  }
+  if (m_archiveHasBeenSet) {
+    mapSize++;
+  }
+  if (m_writeToS3HasBeenSet) {
+    mapSize++;
+  }
+  if (m_sendHasBeenSet) {
+    mapSize++;
+  }
+  if (m_addHeaderHasBeenSet) {
+    mapSize++;
+  }
+  if (m_replaceRecipientHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deliverToMailboxHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deliverToQBusinessHasBeenSet) {
+    mapSize++;
+  }
+  if (m_publishToSnsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_bounceHasBeenSet) {
+    mapSize++;
+  }
+  if (m_invokeLambdaHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_dropHasBeenSet) {
-    payload.WithObject("Drop", m_drop.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Drop"));
+    m_drop.CborEncode(encoder);
   }
 
   if (m_relayHasBeenSet) {
-    payload.WithObject("Relay", m_relay.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Relay"));
+    m_relay.CborEncode(encoder);
   }
 
   if (m_archiveHasBeenSet) {
-    payload.WithObject("Archive", m_archive.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Archive"));
+    m_archive.CborEncode(encoder);
   }
 
   if (m_writeToS3HasBeenSet) {
-    payload.WithObject("WriteToS3", m_writeToS3.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("WriteToS3"));
+    m_writeToS3.CborEncode(encoder);
   }
 
   if (m_sendHasBeenSet) {
-    payload.WithObject("Send", m_send.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Send"));
+    m_send.CborEncode(encoder);
   }
 
   if (m_addHeaderHasBeenSet) {
-    payload.WithObject("AddHeader", m_addHeader.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AddHeader"));
+    m_addHeader.CborEncode(encoder);
   }
 
   if (m_replaceRecipientHasBeenSet) {
-    payload.WithObject("ReplaceRecipient", m_replaceRecipient.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ReplaceRecipient"));
+    m_replaceRecipient.CborEncode(encoder);
   }
 
   if (m_deliverToMailboxHasBeenSet) {
-    payload.WithObject("DeliverToMailbox", m_deliverToMailbox.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DeliverToMailbox"));
+    m_deliverToMailbox.CborEncode(encoder);
   }
 
   if (m_deliverToQBusinessHasBeenSet) {
-    payload.WithObject("DeliverToQBusiness", m_deliverToQBusiness.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DeliverToQBusiness"));
+    m_deliverToQBusiness.CborEncode(encoder);
   }
 
   if (m_publishToSnsHasBeenSet) {
-    payload.WithObject("PublishToSns", m_publishToSns.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PublishToSns"));
+    m_publishToSns.CborEncode(encoder);
   }
 
   if (m_bounceHasBeenSet) {
-    payload.WithObject("Bounce", m_bounce.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Bounce"));
+    m_bounce.CborEncode(encoder);
   }
 
   if (m_invokeLambdaHasBeenSet) {
-    payload.WithObject("InvokeLambda", m_invokeLambda.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InvokeLambda"));
+    m_invokeLambda.CborEncode(encoder);
   }
-
-  return payload;
 }
 
 }  // namespace Model

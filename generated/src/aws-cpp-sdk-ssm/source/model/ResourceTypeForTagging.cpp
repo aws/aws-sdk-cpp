@@ -24,6 +24,7 @@ static const int OpsItem_HASH = HashingUtils::HashString("OpsItem");
 static const int OpsMetadata_HASH = HashingUtils::HashString("OpsMetadata");
 static const int Automation_HASH = HashingUtils::HashString("Automation");
 static const int Association_HASH = HashingUtils::HashString("Association");
+static const int CloudConnector_HASH = HashingUtils::HashString("CloudConnector");
 
 ResourceTypeForTagging GetResourceTypeForTaggingForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +46,8 @@ ResourceTypeForTagging GetResourceTypeForTaggingForName(const Aws::String& name)
     return ResourceTypeForTagging::Automation;
   } else if (hashCode == Association_HASH) {
     return ResourceTypeForTagging::Association;
+  } else if (hashCode == CloudConnector_HASH) {
+    return ResourceTypeForTagging::CloudConnector;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +80,8 @@ Aws::String GetNameForResourceTypeForTagging(ResourceTypeForTagging enumValue) {
       return "Automation";
     case ResourceTypeForTagging::Association:
       return "Association";
+    case ResourceTypeForTagging::CloudConnector:
+      return "CloudConnector";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

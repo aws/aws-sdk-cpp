@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/customer-profiles/model/TrainingMetricName.h>
 
@@ -75,12 +76,33 @@ class TrainingMetrics {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the recommender version that produced these training metrics.</p>
+   */
+  inline const Aws::String& GetRecommenderVersionName() const { return m_recommenderVersionName; }
+  inline bool RecommenderVersionNameHasBeenSet() const { return m_recommenderVersionNameHasBeenSet; }
+  template <typename RecommenderVersionNameT = Aws::String>
+  void SetRecommenderVersionName(RecommenderVersionNameT&& value) {
+    m_recommenderVersionNameHasBeenSet = true;
+    m_recommenderVersionName = std::forward<RecommenderVersionNameT>(value);
+  }
+  template <typename RecommenderVersionNameT = Aws::String>
+  TrainingMetrics& WithRecommenderVersionName(RecommenderVersionNameT&& value) {
+    SetRecommenderVersionName(std::forward<RecommenderVersionNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Utils::DateTime m_time{};
 
   Aws::Map<TrainingMetricName, double> m_metrics;
+
+  Aws::String m_recommenderVersionName;
   bool m_timeHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
+  bool m_recommenderVersionNameHasBeenSet = false;
 };
 
 }  // namespace Model

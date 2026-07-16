@@ -37,6 +37,7 @@
 #include <aws/connect/model/ListContactFlowsPaginationTraits.h>
 #include <aws/connect/model/ListRulesPaginationTraits.h>
 #include <aws/connect/model/ListAuthenticationProfilesPaginationTraits.h>
+#include <aws/connect/model/SearchRulesPaginationTraits.h>
 #include <aws/connect/model/ListViewsPaginationTraits.h>
 #include <aws/connect/model/SearchPromptsPaginationTraits.h>
 #include <aws/connect/model/SearchRoutingProfilesPaginationTraits.h>

@@ -18,6 +18,7 @@ namespace GameLiftStreamsErrorMapper {
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int STREAM_SESSION_ACCESS_NOT_READY_HASH = HashingUtils::HashString("StreamSessionAccessNotReadyException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
@@ -28,6 +29,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftStreamsErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftStreamsErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
+  } else if (hashCode == STREAM_SESSION_ACCESS_NOT_READY_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftStreamsErrors::STREAM_SESSION_ACCESS_NOT_READY), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

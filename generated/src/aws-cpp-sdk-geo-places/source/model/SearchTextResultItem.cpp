@@ -115,6 +115,20 @@ SearchTextResultItem& SearchTextResultItem::operator=(JsonView jsonValue) {
     m_phonemes = jsonValue.GetObject("Phonemes");
     m_phonemesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PlaceAttributes")) {
+    Aws::Utils::Array<JsonView> placeAttributesJsonList = jsonValue.GetArray("PlaceAttributes");
+    for (unsigned placeAttributesIndex = 0; placeAttributesIndex < placeAttributesJsonList.GetLength(); ++placeAttributesIndex) {
+      m_placeAttributes.push_back(PlaceAttributeMapper::GetPlaceAttributeForName(placeAttributesJsonList[placeAttributesIndex].AsString()));
+    }
+    m_placeAttributesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CrossReferences")) {
+    Aws::Utils::Array<JsonView> crossReferencesJsonList = jsonValue.GetArray("CrossReferences");
+    for (unsigned crossReferencesIndex = 0; crossReferencesIndex < crossReferencesJsonList.GetLength(); ++crossReferencesIndex) {
+      m_crossReferences.push_back(crossReferencesJsonList[crossReferencesIndex].AsObject());
+    }
+    m_crossReferencesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -224,6 +238,23 @@ JsonValue SearchTextResultItem::Jsonize() const {
 
   if (m_phonemesHasBeenSet) {
     payload.WithObject("Phonemes", m_phonemes.Jsonize());
+  }
+
+  if (m_placeAttributesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> placeAttributesJsonList(m_placeAttributes.size());
+    for (unsigned placeAttributesIndex = 0; placeAttributesIndex < placeAttributesJsonList.GetLength(); ++placeAttributesIndex) {
+      placeAttributesJsonList[placeAttributesIndex].AsString(
+          PlaceAttributeMapper::GetNameForPlaceAttribute(m_placeAttributes[placeAttributesIndex]));
+    }
+    payload.WithArray("PlaceAttributes", std::move(placeAttributesJsonList));
+  }
+
+  if (m_crossReferencesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> crossReferencesJsonList(m_crossReferences.size());
+    for (unsigned crossReferencesIndex = 0; crossReferencesIndex < crossReferencesJsonList.GetLength(); ++crossReferencesIndex) {
+      crossReferencesJsonList[crossReferencesIndex].AsObject(m_crossReferences[crossReferencesIndex].Jsonize());
+    }
+    payload.WithArray("CrossReferences", std::move(crossReferencesJsonList));
   }
 
   return payload;

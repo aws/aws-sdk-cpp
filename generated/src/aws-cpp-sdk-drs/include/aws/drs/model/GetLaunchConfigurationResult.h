@@ -10,6 +10,7 @@
 #include <aws/drs/model/LaunchDisposition.h>
 #include <aws/drs/model/LaunchIntoInstanceProperties.h>
 #include <aws/drs/model/Licensing.h>
+#include <aws/drs/model/RecoveryMode.h>
 #include <aws/drs/model/TargetInstanceTypeRightSizingMethod.h>
 
 #include <utility>
@@ -197,6 +198,21 @@ class GetLaunchConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Recovery mode.</p>
+   */
+  inline RecoveryMode GetRecoveryMode() const { return m_recoveryMode; }
+  inline void SetRecoveryMode(RecoveryMode value) {
+    m_recoveryModeHasBeenSet = true;
+    m_recoveryMode = value;
+  }
+  inline GetLaunchConfigurationResult& WithRecoveryMode(RecoveryMode value) {
+    SetRecoveryMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -233,6 +249,8 @@ class GetLaunchConfigurationResult {
 
   LaunchIntoInstanceProperties m_launchIntoInstanceProperties;
 
+  RecoveryMode m_recoveryMode{RecoveryMode::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sourceServerIDHasBeenSet = false;
@@ -245,6 +263,7 @@ class GetLaunchConfigurationResult {
   bool m_licensingHasBeenSet = false;
   bool m_postLaunchEnabledHasBeenSet = false;
   bool m_launchIntoInstancePropertiesHasBeenSet = false;
+  bool m_recoveryModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

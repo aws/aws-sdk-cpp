@@ -264,6 +264,22 @@ class UpdateBrokerRequest : public MQRequest {
 
   ///@{
   /**
+   * <p>The broker's storage size in GB.</p>
+   */
+  inline int GetStorageSize() const { return m_storageSize; }
+  inline bool StorageSizeHasBeenSet() const { return m_storageSizeHasBeenSet; }
+  inline void SetStorageSize(int value) {
+    m_storageSizeHasBeenSet = true;
+    m_storageSize = value;
+  }
+  inline UpdateBrokerRequest& WithStorageSize(int value) {
+    SetStorageSize(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Defines whether this broker is a part of a data replication pair.</p>
    */
   inline DataReplicationMode GetDataReplicationMode() const { return m_dataReplicationMode; }
@@ -300,6 +316,8 @@ class UpdateBrokerRequest : public MQRequest {
 
   Aws::Vector<Aws::String> m_securityGroups;
 
+  int m_storageSize{0};
+
   DataReplicationMode m_dataReplicationMode{DataReplicationMode::NOT_SET};
   bool m_authenticationStrategyHasBeenSet = false;
   bool m_autoMinorVersionUpgradeHasBeenSet = false;
@@ -312,6 +330,7 @@ class UpdateBrokerRequest : public MQRequest {
   bool m_maintenanceWindowStartTimeHasBeenSet = false;
   bool m_resourceShareArnsHasBeenSet = false;
   bool m_securityGroupsHasBeenSet = false;
+  bool m_storageSizeHasBeenSet = false;
   bool m_dataReplicationModeHasBeenSet = false;
 };
 

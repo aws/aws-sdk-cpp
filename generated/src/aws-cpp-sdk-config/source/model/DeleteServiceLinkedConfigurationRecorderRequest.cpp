@@ -19,6 +19,10 @@ Aws::String DeleteServiceLinkedConfigurationRecorderRequest::SerializePayload() 
     payload.WithString("ServicePrincipal", m_servicePrincipal);
   }
 
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
+  }
+
   return payload.View().WriteReadable();
 }
 

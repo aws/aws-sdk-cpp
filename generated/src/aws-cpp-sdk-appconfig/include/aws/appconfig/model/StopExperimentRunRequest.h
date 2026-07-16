@@ -103,7 +103,7 @@ class StopExperimentRunRequest : public AppConfigRequest {
 
   ///@{
   /**
-   * <p>Optional deployment parameters for the stop operation.</p>
+   * <p>The deployment parameters for the stop operation.</p>
    */
   inline const DeploymentParameters& GetDeploymentParameters() const { return m_deploymentParameters; }
   inline bool DeploymentParametersHasBeenSet() const { return m_deploymentParametersHasBeenSet; }

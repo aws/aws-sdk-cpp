@@ -46,6 +46,10 @@ KnowledgeBase& KnowledgeBase::operator=(JsonView jsonValue) {
     m_mediaExtractionConfiguration = jsonValue.GetObject("MediaExtractionConfiguration");
     m_mediaExtractionConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AccessControlConfiguration")) {
+    m_accessControlConfiguration = jsonValue.GetObject("AccessControlConfiguration");
+    m_accessControlConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
@@ -126,6 +130,10 @@ JsonValue KnowledgeBase::Jsonize() const {
 
   if (m_mediaExtractionConfigurationHasBeenSet) {
     payload.WithObject("MediaExtractionConfiguration", m_mediaExtractionConfiguration.Jsonize());
+  }
+
+  if (m_accessControlConfigurationHasBeenSet) {
+    payload.WithObject("AccessControlConfiguration", m_accessControlConfiguration.Jsonize());
   }
 
   if (m_typeHasBeenSet) {

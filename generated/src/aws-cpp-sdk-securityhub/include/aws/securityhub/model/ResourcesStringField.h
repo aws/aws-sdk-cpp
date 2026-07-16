@@ -15,12 +15,23 @@ enum class ResourcesStringField {
   ResourceGuid,
   ResourceId,
   AccountId,
+  AccountName,
   Region,
+  ResourceProvider,
+  ResourceOwnerAccountId,
+  ResourceOwnerOrgId,
+  ResourceCloudPartition,
+  ResourceRegion,
   ResourceCategory,
   ResourceType,
   ResourceName,
   FindingsSummary_FindingType,
-  FindingsSummary_ProductName
+  FindingsSummary_ProductName,
+  ResourceSubCategory,
+  DiscoveryType,
+  ResourceInfo_AIDetails_HostResourceGuid,
+  ResourceInfo_AIDetails_HostResourceType,
+  ResourceInfo_AIDetails_CanonicalId
 };
 
 namespace ResourcesStringFieldMapper {

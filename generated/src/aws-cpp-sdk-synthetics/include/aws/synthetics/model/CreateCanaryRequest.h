@@ -410,6 +410,27 @@ class CreateCanaryRequest : public SyntheticsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the customer-managed AWS Key Management
+   * Service (AWS KMS) key used to encrypt the canary's AWS Lambda function
+   * environment variables at rest. If you don't specify a value, the service uses an
+   * AWS-managed key.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  CreateCanaryRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -442,6 +463,8 @@ class CreateCanaryRequest : public SyntheticsRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   ArtifactConfigInput m_artifactConfig;
+
+  Aws::String m_kmsKeyArn;
   bool m_nameHasBeenSet = false;
   bool m_codeHasBeenSet = false;
   bool m_artifactS3LocationHasBeenSet = false;
@@ -458,6 +481,7 @@ class CreateCanaryRequest : public SyntheticsRequest {
   bool m_addReplicaLocationsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_artifactConfigHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

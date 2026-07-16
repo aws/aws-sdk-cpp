@@ -34,6 +34,26 @@ FindingTypeAggregationResponse& FindingTypeAggregationResponse::operator=(JsonVi
     m_fixAvailableCount = jsonValue.GetInt64("fixAvailableCount");
     m_fixAvailableCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("cloudProvider")) {
+    m_cloudProvider = jsonValue.GetString("cloudProvider");
+    m_cloudProviderHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudAccountId")) {
+    m_cloudAccountId = jsonValue.GetString("cloudAccountId");
+    m_cloudAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudOrgId")) {
+    m_cloudOrgId = jsonValue.GetString("cloudOrgId");
+    m_cloudOrgIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudRegion")) {
+    m_cloudRegion = jsonValue.GetString("cloudRegion");
+    m_cloudRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudPartition")) {
+    m_cloudPartition = jsonValue.GetString("cloudPartition");
+    m_cloudPartitionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +74,26 @@ JsonValue FindingTypeAggregationResponse::Jsonize() const {
 
   if (m_fixAvailableCountHasBeenSet) {
     payload.WithInt64("fixAvailableCount", m_fixAvailableCount);
+  }
+
+  if (m_cloudProviderHasBeenSet) {
+    payload.WithString("cloudProvider", m_cloudProvider);
+  }
+
+  if (m_cloudAccountIdHasBeenSet) {
+    payload.WithString("cloudAccountId", m_cloudAccountId);
+  }
+
+  if (m_cloudOrgIdHasBeenSet) {
+    payload.WithString("cloudOrgId", m_cloudOrgId);
+  }
+
+  if (m_cloudRegionHasBeenSet) {
+    payload.WithString("cloudRegion", m_cloudRegion);
+  }
+
+  if (m_cloudPartitionHasBeenSet) {
+    payload.WithString("cloudPartition", m_cloudPartition);
   }
 
   return payload;

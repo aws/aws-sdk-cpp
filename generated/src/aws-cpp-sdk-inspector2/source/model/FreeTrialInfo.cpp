@@ -34,6 +34,10 @@ FreeTrialInfo& FreeTrialInfo::operator=(JsonView jsonValue) {
     m_status = FreeTrialStatusMapper::GetFreeTrialStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("cloudProvider")) {
+    m_cloudProvider = CloudProviderMapper::GetCloudProviderForName(jsonValue.GetString("cloudProvider"));
+    m_cloudProviderHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue FreeTrialInfo::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", FreeTrialStatusMapper::GetNameForFreeTrialStatus(m_status));
+  }
+
+  if (m_cloudProviderHasBeenSet) {
+    payload.WithString("cloudProvider", CloudProviderMapper::GetNameForCloudProvider(m_cloudProvider));
   }
 
   return payload;

@@ -744,6 +744,34 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a connector to a third-party cloud provider in Security Hub CSPM. A
+   * connector establishes a connection between Security Hub CSPM and a third-party
+   * cloud provider, enabling Security Hub CSPM to ingest security findings and
+   * resource data from the connected environment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateConnectorOutcome CreateConnector(const Model::CreateConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateConnectorRequestT = Model::CreateConnectorRequest>
+  Model::CreateConnectorOutcomeCallable CreateConnectorCallable(const CreateConnectorRequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::CreateConnector, request);
+  }
+
+  /**
+   * An Async wrapper for CreateConnector that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateConnectorRequestT = Model::CreateConnectorRequest>
+  void CreateConnectorAsync(const CreateConnectorRequestT& request, const CreateConnectorResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::CreateConnector, request, handler, context);
+  }
+
+  /**
    * <p>Grants permission to create a connectorV2 based on input
    * parameters.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConnectorV2">AWS
@@ -1060,6 +1088,33 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
                                       const DeleteConfigurationPolicyResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityHubClient::DeleteConfigurationPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a CSPM connector. When you delete a connector, Security Hub CSPM
+   * stops ingesting findings and resource data from the connected cloud provider
+   * environment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteConnectorOutcome DeleteConnector(const Model::DeleteConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteConnectorRequestT = Model::DeleteConnectorRequest>
+  Model::DeleteConnectorOutcomeCallable DeleteConnectorCallable(const DeleteConnectorRequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::DeleteConnector, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteConnector that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteConnectorRequestT = Model::DeleteConnectorRequest>
+  void DeleteConnectorAsync(const DeleteConnectorRequestT& request, const DeleteConnectorResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::DeleteConnector, request, handler, context);
   }
 
   /**
@@ -1544,8 +1599,42 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Disables an opt-in feature for the calling account in the current Amazon Web
+   * Services Region. The operation is idempotent. If the feature is already
+   * disabled, no changes are made. You cannot disable a feature that is managed by
+   * an organization policy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHubFeatureV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisableSecurityHubFeatureV2Outcome DisableSecurityHubFeatureV2(
+      const Model::DisableSecurityHubFeatureV2Request& request) const;
+
+  /**
+   * A Callable wrapper for DisableSecurityHubFeatureV2 that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DisableSecurityHubFeatureV2RequestT = Model::DisableSecurityHubFeatureV2Request>
+  Model::DisableSecurityHubFeatureV2OutcomeCallable DisableSecurityHubFeatureV2Callable(
+      const DisableSecurityHubFeatureV2RequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::DisableSecurityHubFeatureV2, request);
+  }
+
+  /**
+   * An Async wrapper for DisableSecurityHubFeatureV2 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisableSecurityHubFeatureV2RequestT = Model::DisableSecurityHubFeatureV2Request>
+  void DisableSecurityHubFeatureV2Async(const DisableSecurityHubFeatureV2RequestT& request,
+                                        const DisableSecurityHubFeatureV2ResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::DisableSecurityHubFeatureV2, request, handler, context);
+  }
+
+  /**
    * <p>Disable the service for the current Amazon Web Services Region or specified
-   * Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
+   * Amazon Web Services Region. Disabling the service also disables all opt-in
+   * features that are currently enabled in that Region.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHubV2">AWS
    * API Reference</a></p>
    */
@@ -1737,6 +1826,39 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                               const EnableSecurityHubRequestT& request = {}) const {
     return SubmitAsync(&SecurityHubClient::EnableSecurityHub, request, handler, context);
+  }
+
+  /**
+   * <p>Enables an opt-in feature for the calling account in the current Amazon Web
+   * Services Region. The service must be enabled before you can enable a feature.
+   * The operation is idempotent. If the feature is already enabled, no changes are
+   * made. You cannot enable a feature that is managed by an organization
+   * policy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHubFeatureV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::EnableSecurityHubFeatureV2Outcome EnableSecurityHubFeatureV2(
+      const Model::EnableSecurityHubFeatureV2Request& request) const;
+
+  /**
+   * A Callable wrapper for EnableSecurityHubFeatureV2 that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename EnableSecurityHubFeatureV2RequestT = Model::EnableSecurityHubFeatureV2Request>
+  Model::EnableSecurityHubFeatureV2OutcomeCallable EnableSecurityHubFeatureV2Callable(
+      const EnableSecurityHubFeatureV2RequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::EnableSecurityHubFeatureV2, request);
+  }
+
+  /**
+   * An Async wrapper for EnableSecurityHubFeatureV2 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename EnableSecurityHubFeatureV2RequestT = Model::EnableSecurityHubFeatureV2Request>
+  void EnableSecurityHubFeatureV2Async(const EnableSecurityHubFeatureV2RequestT& request,
+                                       const EnableSecurityHubFeatureV2ResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::EnableSecurityHubFeatureV2, request, handler, context);
   }
 
   /**
@@ -1940,6 +2062,32 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
                                               const GetConfigurationPolicyAssociationResponseReceivedHandler& handler,
                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityHubClient::GetConfigurationPolicyAssociation, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves details for a CSPM connector based on the connector
+   * ID.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetConnectorOutcome GetConnector(const Model::GetConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetConnectorRequestT = Model::GetConnectorRequest>
+  Model::GetConnectorOutcomeCallable GetConnectorCallable(const GetConnectorRequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::GetConnector, request);
+  }
+
+  /**
+   * An Async wrapper for GetConnector that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetConnectorRequestT = Model::GetConnectorRequest>
+  void GetConnectorAsync(const GetConnectorRequestT& request, const GetConnectorResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::GetConnector, request, handler, context);
   }
 
   /**
@@ -2349,7 +2497,13 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * <code>Scopes</code> supports <code>AwsOrganizations</code>, which lets you
    * aggregate resources from your entire organization or from specific
    * organizational units. Only the delegated administrator account can use
-   * <code>Scopes</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>Scopes</code>.</p> <p>If you set <code>GroupByField</code> to
+   * <code>ResourceSubCategory</code>,
+   * <code>ResourceInfo.AIDetails.HostResourceType</code>, or
+   * <code>ResourceInfo.AIDetails.CanonicalId</code>, you must include a
+   * <code>ResourceCategory</code> string filter with comparison set to
+   * <code>EQUALS</code> and value <code>AI/ML</code> in the corresponding
+   * <code>ResourceGroupByRule</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesStatisticsV2">AWS
    * API Reference</a></p>
    */
@@ -2413,7 +2567,18 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * resource attributes. You can use <code>Scopes</code> and <code>Filters</code>
    * independently or together. When both are provided, <code>Scopes</code> narrows
    * the data set first, and then <code>Filters</code> refines results within that
-   * scoped data set.</p><p><h3>See Also:</h3>   <a
+   * scoped data set.</p> <p>For AI/ML resources, the response includes the
+   * <code>ResourceSubCategory</code> field. For self-hosted AI resources and their
+   * host resources, the response also includes <code>ResourceInfo</code> with
+   * AI-specific details. Self-hosted AI resources use a <code>ResourceType</code>
+   * with the <code>SelfHosted::AI::</code> prefix, such as
+   * <code>SelfHosted::AI::Model</code>, <code>SelfHosted::AI::Agent</code>,
+   * <code>SelfHosted::AI::InferenceEndpoint</code>, and
+   * <code>SelfHosted::AI::ExternalEndpoint</code>.</p> <p>If you filter by
+   * <code>ResourceSubCategory</code>, you must also include a
+   * <code>ResourceCategory</code> string filter with comparison set to
+   * <code>EQUALS</code> and value <code>AI/ML</code> in the same
+   * request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesV2">AWS
    * API Reference</a></p>
    */
@@ -2651,6 +2816,33 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                                 const ListConfigurationPolicyAssociationsRequestT& request = {}) const {
     return SubmitAsync(&SecurityHubClient::ListConfigurationPolicyAssociations, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the CSPM connectors and their metadata for the calling
+   * account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConnectors">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListConnectorsRequestT = Model::ListConnectorsRequest>
+  Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const ListConnectorsRequestT& request = {}) const {
+    return SubmitCallable(&SecurityHubClient::ListConnectors, request);
+  }
+
+  /**
+   * An Async wrapper for ListConnectors that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListConnectorsRequestT = Model::ListConnectorsRequest>
+  void ListConnectorsAsync(const ListConnectorsResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const ListConnectorsRequestT& request = {}) const {
+    return SubmitAsync(&SecurityHubClient::ListConnectors, request, handler, context);
   }
 
   /**
@@ -3178,6 +3370,32 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
                                       const UpdateConfigurationPolicyResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityHubClient::UpdateConfigurationPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a CSPM connector's configuration, such as the scope or regions for
+   * the connected cloud provider.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateConnectorOutcome UpdateConnector(const Model::UpdateConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateConnectorRequestT = Model::UpdateConnectorRequest>
+  Model::UpdateConnectorOutcomeCallable UpdateConnectorCallable(const UpdateConnectorRequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::UpdateConnector, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateConnector that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateConnectorRequestT = Model::UpdateConnectorRequest>
+  void UpdateConnectorAsync(const UpdateConnectorRequestT& request, const UpdateConnectorResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::UpdateConnector, request, handler, context);
   }
 
   /**

@@ -14,9 +14,11 @@
 #include <aws/geo-places/model/BusinessChain.h>
 #include <aws/geo-places/model/Category.h>
 #include <aws/geo-places/model/Contacts.h>
+#include <aws/geo-places/model/CrossReference.h>
 #include <aws/geo-places/model/FoodType.h>
 #include <aws/geo-places/model/OpeningHours.h>
 #include <aws/geo-places/model/PhonemeDetails.h>
+#include <aws/geo-places/model/PlaceAttribute.h>
 #include <aws/geo-places/model/PlaceType.h>
 #include <aws/geo-places/model/PostalCodeDetails.h>
 #include <aws/geo-places/model/RelatedPlace.h>
@@ -507,6 +509,69 @@ class GetPlaceResult {
   ///@}
 
   ///@{
+  /**
+   * <p>A list of place attributes for the result, such as whether the business
+   * offers drive-through service.</p>
+   */
+  inline const Aws::Vector<PlaceAttribute>& GetPlaceAttributes() const { return m_placeAttributes; }
+  template <typename PlaceAttributesT = Aws::Vector<PlaceAttribute>>
+  void SetPlaceAttributes(PlaceAttributesT&& value) {
+    m_placeAttributesHasBeenSet = true;
+    m_placeAttributes = std::forward<PlaceAttributesT>(value);
+  }
+  template <typename PlaceAttributesT = Aws::Vector<PlaceAttribute>>
+  GetPlaceResult& WithPlaceAttributes(PlaceAttributesT&& value) {
+    SetPlaceAttributes(std::forward<PlaceAttributesT>(value));
+    return *this;
+  }
+  inline GetPlaceResult& AddPlaceAttributes(PlaceAttribute value) {
+    m_placeAttributesHasBeenSet = true;
+    m_placeAttributes.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>If <code>true</code>, indicates that the coordinates of the position and
+   * access points of the point address are estimated.</p>
+   */
+  inline bool GetEstimatedPointAddress() const { return m_estimatedPointAddress; }
+  inline void SetEstimatedPointAddress(bool value) {
+    m_estimatedPointAddressHasBeenSet = true;
+    m_estimatedPointAddress = value;
+  }
+  inline GetPlaceResult& WithEstimatedPointAddress(bool value) {
+    SetEstimatedPointAddress(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of supplier references available for this place. Requires the
+   * <code>CrossReferences</code> additional feature to be enabled.</p>
+   */
+  inline const Aws::Vector<CrossReference>& GetCrossReferences() const { return m_crossReferences; }
+  template <typename CrossReferencesT = Aws::Vector<CrossReference>>
+  void SetCrossReferences(CrossReferencesT&& value) {
+    m_crossReferencesHasBeenSet = true;
+    m_crossReferences = std::forward<CrossReferencesT>(value);
+  }
+  template <typename CrossReferencesT = Aws::Vector<CrossReference>>
+  GetPlaceResult& WithCrossReferences(CrossReferencesT&& value) {
+    SetCrossReferences(std::forward<CrossReferencesT>(value));
+    return *this;
+  }
+  template <typename CrossReferencesT = CrossReference>
+  GetPlaceResult& AddCrossReferences(CrossReferencesT&& value) {
+    m_crossReferencesHasBeenSet = true;
+    m_crossReferences.emplace_back(std::forward<CrossReferencesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -565,6 +630,12 @@ class GetPlaceResult {
 
   Aws::Vector<RelatedPlace> m_secondaryAddresses;
 
+  Aws::Vector<PlaceAttribute> m_placeAttributes;
+
+  bool m_estimatedPointAddress{false};
+
+  Aws::Vector<CrossReference> m_crossReferences;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_placeIdHasBeenSet = false;
@@ -588,6 +659,9 @@ class GetPlaceResult {
   bool m_phonemesHasBeenSet = false;
   bool m_mainAddressHasBeenSet = false;
   bool m_secondaryAddressesHasBeenSet = false;
+  bool m_placeAttributesHasBeenSet = false;
+  bool m_estimatedPointAddressHasBeenSet = false;
+  bool m_crossReferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

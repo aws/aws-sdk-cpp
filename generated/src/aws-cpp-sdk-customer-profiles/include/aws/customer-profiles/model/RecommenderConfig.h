@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
+#include <aws/customer-profiles/model/DiversityConfig.h>
 #include <aws/customer-profiles/model/EventsConfig.h>
 #include <aws/customer-profiles/model/InferenceConfig.h>
 
@@ -153,6 +154,26 @@ class RecommenderConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for diversity-aware recommendations. When set, the recommender
+   * applies diversity constraints defined per item column to reduce
+   * over-concentration of similar items in the results.</p>
+   */
+  inline const DiversityConfig& GetDiversityConfig() const { return m_diversityConfig; }
+  inline bool DiversityConfigHasBeenSet() const { return m_diversityConfigHasBeenSet; }
+  template <typename DiversityConfigT = DiversityConfig>
+  void SetDiversityConfig(DiversityConfigT&& value) {
+    m_diversityConfigHasBeenSet = true;
+    m_diversityConfig = std::forward<DiversityConfigT>(value);
+  }
+  template <typename DiversityConfigT = DiversityConfig>
+  RecommenderConfig& WithDiversityConfig(DiversityConfigT&& value) {
+    SetDiversityConfig(std::forward<DiversityConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EventsConfig m_eventsConfig;
 
@@ -163,11 +184,14 @@ class RecommenderConfig {
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_includedColumns;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_excludedColumns;
+
+  DiversityConfig m_diversityConfig;
   bool m_eventsConfigHasBeenSet = false;
   bool m_trainingFrequencyHasBeenSet = false;
   bool m_inferenceConfigHasBeenSet = false;
   bool m_includedColumnsHasBeenSet = false;
   bool m_excludedColumnsHasBeenSet = false;
+  bool m_diversityConfigHasBeenSet = false;
 };
 
 }  // namespace Model

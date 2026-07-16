@@ -45,6 +45,18 @@ Resource& Resource::operator=(JsonView jsonValue) {
     m_details = jsonValue.GetObject("details");
     m_detailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("provider")) {
+    m_provider = ProviderMapper::GetProviderForName(jsonValue.GetString("provider"));
+    m_providerHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("providerAccountId")) {
+    m_providerAccountId = jsonValue.GetString("providerAccountId");
+    m_providerAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("providerOrgId")) {
+    m_providerOrgId = jsonValue.GetString("providerOrgId");
+    m_providerOrgIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -77,6 +89,18 @@ JsonValue Resource::Jsonize() const {
 
   if (m_detailsHasBeenSet) {
     payload.WithObject("details", m_details.Jsonize());
+  }
+
+  if (m_providerHasBeenSet) {
+    payload.WithString("provider", ProviderMapper::GetNameForProvider(m_provider));
+  }
+
+  if (m_providerAccountIdHasBeenSet) {
+    payload.WithString("providerAccountId", m_providerAccountId);
+  }
+
+  if (m_providerOrgIdHasBeenSet) {
+    payload.WithString("providerOrgId", m_providerOrgId);
   }
 
   return payload;

@@ -387,11 +387,12 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Associates a set of hours of operations with another hours of operation.
-   * Refer to Administrator Guide <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
-   * here </a> for more information on inheriting overrides from parent hours of
-   * operation(s).</p><p><h3>See Also:</h3>   <a
+   * <p>Associates a set of hours of operations with another hours of operation. For
+   * more information about inheriting overrides from parent hours of operation, see
+   * <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Hours
+   * of operation overrides</a> in the Administrator Guide.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateHoursOfOperations">AWS
    * API Reference</a></p>
    */
@@ -1227,6 +1228,34 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   void CreateAttachedFileAsync(const CreateAttachedFileRequestT& request, const CreateAttachedFileResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::CreateAttachedFile, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an authorization code for the specified Connect Customer instance.
+   * The authorization code can be used to establish a session with scoped
+   * permissions defined by the specified scope parameters.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateAuthCode">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAuthCodeOutcome CreateAuthCode(const Model::CreateAuthCodeRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAuthCode that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateAuthCodeRequestT = Model::CreateAuthCodeRequest>
+  Model::CreateAuthCodeOutcomeCallable CreateAuthCodeCallable(const CreateAuthCodeRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateAuthCode, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAuthCode that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateAuthCodeRequestT = Model::CreateAuthCodeRequest>
+  void CreateAuthCodeAsync(const CreateAuthCodeRequestT& request, const CreateAuthCodeResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateAuthCode, request, handler, context);
   }
 
   /**
@@ -2422,6 +2451,41 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes the specified fields containing personally identifiable information
+   * (PII) from a contact in the specified Connect Customer instance. This operation
+   * redacts PII (such as customer endpoints, additional email recipients, and the
+   * email subject) from the contact and its associated contact trace record (CTR).
+   * The contact must be in a terminated state.</p>  <p>This operation
+   * performs a hard deletion of the specified PII and cannot be undone. There is no
+   * retention period; after the data is deleted, it cannot be recovered. Only fields
+   * that Connect Customer identifies and stores as PII are removed. Any PII that you
+   * place in fields outside the scope of this operation remains your responsibility
+   * to remove.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactData">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteContactDataOutcome DeleteContactData(const Model::DeleteContactDataRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteContactData that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteContactDataRequestT = Model::DeleteContactDataRequest>
+  Model::DeleteContactDataOutcomeCallable DeleteContactDataCallable(const DeleteContactDataRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteContactData, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteContactData that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteContactDataRequestT = Model::DeleteContactDataRequest>
+  void DeleteContactDataAsync(const DeleteContactDataRequestT& request, const DeleteContactDataResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteContactData, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a contact evaluation in the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactEvaluation">AWS
@@ -3080,6 +3144,32 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   void DeleteSecurityProfileAsync(const DeleteSecurityProfileRequestT& request, const DeleteSecurityProfileResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::DeleteSecurityProfile, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a session for the specified Connect Customer instance.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSessionOutcome DeleteSession(const Model::DeleteSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSession that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteSessionRequestT = Model::DeleteSessionRequest>
+  Model::DeleteSessionOutcomeCallable DeleteSessionCallable(const DeleteSessionRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteSession, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSession that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteSessionRequestT = Model::DeleteSessionRequest>
+  void DeleteSessionAsync(const DeleteSessionRequestT& request, const DeleteSessionResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteSession, request, handler, context);
   }
 
   /**
@@ -4649,10 +4739,11 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Disassociates a set of hours of operations with another hours of operation.
-   * Refer to Administrator Guide <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
-   * here </a> for more information on inheriting overrides from parent hours of
-   * operation(s).</p><p><h3>See Also:</h3>   <a
+   * For more information about inheriting overrides from parent hours of operation,
+   * see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Hours
+   * of operation overrides</a> in the Administrator Guide.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateHoursOfOperations">AWS
    * API Reference</a></p>
    */
@@ -5923,8 +6014,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Provides information about the child hours of operations for the specified
    * parent hours of operation.</p> <p>For more information about child hours of
    * operations, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/">Link overrides
-   * from different hours of operation</a> in the <i> Administrator
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Link
+   * overrides from different hours of operation</a> in the <i> Administrator
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListChildHoursOfOperations">AWS
    * API Reference</a></p>
@@ -8510,6 +8601,32 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Searches rules in an Connect Customer instance, with optional
+   * filtering.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchRulesOutcome SearchRules(const Model::SearchRulesRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchRules that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SearchRulesRequestT = Model::SearchRulesRequest>
+  Model::SearchRulesOutcomeCallable SearchRulesCallable(const SearchRulesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::SearchRules, request);
+  }
+
+  /**
+   * An Async wrapper for SearchRules that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SearchRulesRequestT = Model::SearchRulesRequest>
+  void SearchRulesAsync(const SearchRulesRequestT& request, const SearchRulesResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::SearchRules, request, handler, context);
+  }
+
+  /**
    * <p>Searches security profiles in an Connect Customer instance, with optional
    * filtering.</p> <p>For information about security profiles, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
@@ -8804,6 +8921,40 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   void SendOutboundEmailAsync(const SendOutboundEmailRequestT& request, const SendOutboundEmailResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::SendOutboundEmail, request, handler, context);
+  }
+
+  /**
+   * <p>Sends an outbound web notification to a customer's web browser for outbound
+   * campaigns. For more information about outbound campaigns, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html">Set
+   * up Connect Customer outbound campaigns</a>.</p>  <p>Only the Connect
+   * Customer outbound campaigns service principal is allowed to assume a role in
+   * your account and call this API.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendOutboundWebNotification">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendOutboundWebNotificationOutcome SendOutboundWebNotification(
+      const Model::SendOutboundWebNotificationRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendOutboundWebNotification that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename SendOutboundWebNotificationRequestT = Model::SendOutboundWebNotificationRequest>
+  Model::SendOutboundWebNotificationOutcomeCallable SendOutboundWebNotificationCallable(
+      const SendOutboundWebNotificationRequestT& request) const {
+    return SubmitCallable(&ConnectClient::SendOutboundWebNotification, request);
+  }
+
+  /**
+   * An Async wrapper for SendOutboundWebNotification that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SendOutboundWebNotificationRequestT = Model::SendOutboundWebNotificationRequest>
+  void SendOutboundWebNotificationAsync(const SendOutboundWebNotificationRequestT& request,
+                                        const SendOutboundWebNotificationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::SendOutboundWebNotification, request, handler, context);
   }
 
   /**

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/ImportDataType.h>
 
@@ -11,10 +12,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MailManager {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class ImportDataFormat {
  public:
   AWS_MAILMANAGER_API ImportDataFormat() = default;
-  AWS_MAILMANAGER_API ImportDataFormat(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MAILMANAGER_API ImportDataFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MAILMANAGER_API ImportDataFormat(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MAILMANAGER_API ImportDataFormat& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MAILMANAGER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

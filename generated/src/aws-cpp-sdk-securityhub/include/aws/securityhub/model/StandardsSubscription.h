@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/StandardsControlsUpdatable.h>
+#include <aws/securityhub/model/StandardsProvider.h>
 #include <aws/securityhub/model/StandardsStatus.h>
 #include <aws/securityhub/model/StandardsStatusReason.h>
 
@@ -160,6 +161,23 @@ class StandardsSubscription {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The cloud provider whose resources the standard evaluates. For example,
+   * <code>AWS</code> or <code>Azure</code>.</p>
+   */
+  inline StandardsProvider GetProvider() const { return m_provider; }
+  inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
+  inline void SetProvider(StandardsProvider value) {
+    m_providerHasBeenSet = true;
+    m_provider = value;
+  }
+  inline StandardsSubscription& WithProvider(StandardsProvider value) {
+    SetProvider(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_standardsSubscriptionArn;
 
@@ -172,12 +190,15 @@ class StandardsSubscription {
   StandardsControlsUpdatable m_standardsControlsUpdatable{StandardsControlsUpdatable::NOT_SET};
 
   StandardsStatusReason m_standardsStatusReason;
+
+  StandardsProvider m_provider{StandardsProvider::NOT_SET};
   bool m_standardsSubscriptionArnHasBeenSet = false;
   bool m_standardsArnHasBeenSet = false;
   bool m_standardsInputHasBeenSet = false;
   bool m_standardsStatusHasBeenSet = false;
   bool m_standardsControlsUpdatableHasBeenSet = false;
   bool m_standardsStatusReasonHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
 };
 
 }  // namespace Model

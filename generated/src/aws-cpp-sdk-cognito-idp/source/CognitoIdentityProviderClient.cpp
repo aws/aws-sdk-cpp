@@ -80,6 +80,7 @@
 #include <aws/cognito-idp/model/GetGroupRequest.h>
 #include <aws/cognito-idp/model/GetIdentityProviderByIdentifierRequest.h>
 #include <aws/cognito-idp/model/GetLogDeliveryConfigurationRequest.h>
+#include <aws/cognito-idp/model/GetProvisionedLimitRequest.h>
 #include <aws/cognito-idp/model/GetSigningCertificateRequest.h>
 #include <aws/cognito-idp/model/GetTokensFromRefreshTokenRequest.h>
 #include <aws/cognito-idp/model/GetUICustomizationRequest.h>
@@ -123,6 +124,7 @@
 #include <aws/cognito-idp/model/UpdateGroupRequest.h>
 #include <aws/cognito-idp/model/UpdateIdentityProviderRequest.h>
 #include <aws/cognito-idp/model/UpdateManagedLoginBrandingRequest.h>
+#include <aws/cognito-idp/model/UpdateProvisionedLimitRequest.h>
 #include <aws/cognito-idp/model/UpdateResourceServerRequest.h>
 #include <aws/cognito-idp/model/UpdateTermsRequest.h>
 #include <aws/cognito-idp/model/UpdateUserAttributesRequest.h>
@@ -751,6 +753,12 @@ GetLogDeliveryConfigurationOutcome CognitoIdentityProviderClient::GetLogDelivery
                             : GetLogDeliveryConfigurationOutcome(std::move(result.GetError()));
 }
 
+GetProvisionedLimitOutcome CognitoIdentityProviderClient::GetProvisionedLimit(const GetProvisionedLimitRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetProvisionedLimitOutcome(result.GetResultWithOwnership())
+                            : GetProvisionedLimitOutcome(std::move(result.GetError()));
+}
+
 GetSigningCertificateOutcome CognitoIdentityProviderClient::GetSigningCertificate(const GetSigningCertificateRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetSigningCertificateOutcome(result.GetResultWithOwnership())
@@ -1000,6 +1008,12 @@ UpdateManagedLoginBrandingOutcome CognitoIdentityProviderClient::UpdateManagedLo
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateManagedLoginBrandingOutcome(result.GetResultWithOwnership())
                             : UpdateManagedLoginBrandingOutcome(std::move(result.GetError()));
+}
+
+UpdateProvisionedLimitOutcome CognitoIdentityProviderClient::UpdateProvisionedLimit(const UpdateProvisionedLimitRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProvisionedLimitOutcome(result.GetResultWithOwnership())
+                            : UpdateProvisionedLimitOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceServerOutcome CognitoIdentityProviderClient::UpdateResourceServer(const UpdateResourceServerRequest& request) const {

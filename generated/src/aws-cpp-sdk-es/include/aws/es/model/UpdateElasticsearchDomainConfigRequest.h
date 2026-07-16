@@ -14,6 +14,8 @@
 #include <aws/es/model/CognitoOptions.h>
 #include <aws/es/model/DeploymentStrategyOptions.h>
 #include <aws/es/model/DomainEndpointOptions.h>
+#include <aws/es/model/DomainEngineMode.h>
+#include <aws/es/model/DomainUseCase.h>
 #include <aws/es/model/EBSOptions.h>
 #include <aws/es/model/ElasticsearchClusterConfig.h>
 #include <aws/es/model/EncryptionAtRestOptions.h>
@@ -384,6 +386,40 @@ class UpdateElasticsearchDomainConfigRequest : public ElasticsearchServiceReques
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The primary use case for the domain. For valid values, see
+   * <code>DomainUseCase</code>.</p>
+   */
+  inline DomainUseCase GetUseCase() const { return m_useCase; }
+  inline bool UseCaseHasBeenSet() const { return m_useCaseHasBeenSet; }
+  inline void SetUseCase(DomainUseCase value) {
+    m_useCaseHasBeenSet = true;
+    m_useCase = value;
+  }
+  inline UpdateElasticsearchDomainConfigRequest& WithUseCase(DomainUseCase value) {
+    SetUseCase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The engine mode for the domain. For valid values and requirements, see
+   * <code>DomainEngineMode</code>.</p>
+   */
+  inline DomainEngineMode GetEngineMode() const { return m_engineMode; }
+  inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
+  inline void SetEngineMode(DomainEngineMode value) {
+    m_engineModeHasBeenSet = true;
+    m_engineMode = value;
+  }
+  inline UpdateElasticsearchDomainConfigRequest& WithEngineMode(DomainEngineMode value) {
+    SetEngineMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
@@ -418,6 +454,10 @@ class UpdateElasticsearchDomainConfigRequest : public ElasticsearchServiceReques
   DeploymentStrategyOptions m_deploymentStrategyOptions;
 
   AutomatedSnapshotPauseRequestOptions m_automatedSnapshotPauseOptions;
+
+  DomainUseCase m_useCase{DomainUseCase::NOT_SET};
+
+  DomainEngineMode m_engineMode{DomainEngineMode::NOT_SET};
   bool m_domainNameHasBeenSet = false;
   bool m_elasticsearchClusterConfigHasBeenSet = false;
   bool m_eBSOptionsHasBeenSet = false;
@@ -435,6 +475,8 @@ class UpdateElasticsearchDomainConfigRequest : public ElasticsearchServiceReques
   bool m_dryRunHasBeenSet = false;
   bool m_deploymentStrategyOptionsHasBeenSet = false;
   bool m_automatedSnapshotPauseOptionsHasBeenSet = false;
+  bool m_useCaseHasBeenSet = false;
+  bool m_engineModeHasBeenSet = false;
 };
 
 }  // namespace Model

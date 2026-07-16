@@ -61,6 +61,9 @@ static const int ruby4_0_HASH = HashingUtils::HashString("ruby4.0");
 static const int provided_HASH = HashingUtils::HashString("provided");
 static const int provided_al2_HASH = HashingUtils::HashString("provided.al2");
 static const int provided_al2023_HASH = HashingUtils::HashString("provided.al2023");
+static const int java8_al2023_HASH = HashingUtils::HashString("java8.al2023");
+static const int java11_al2023_HASH = HashingUtils::HashString("java11.al2023");
+static const int java17_al2023_HASH = HashingUtils::HashString("java17.al2023");
 
 Runtime GetRuntimeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -156,6 +159,12 @@ Runtime GetRuntimeForName(const Aws::String& name) {
     return Runtime::provided_al2;
   } else if (hashCode == provided_al2023_HASH) {
     return Runtime::provided_al2023;
+  } else if (hashCode == java8_al2023_HASH) {
+    return Runtime::java8_al2023;
+  } else if (hashCode == java11_al2023_HASH) {
+    return Runtime::java11_al2023;
+  } else if (hashCode == java17_al2023_HASH) {
+    return Runtime::java17_al2023;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -262,6 +271,12 @@ Aws::String GetNameForRuntime(Runtime enumValue) {
       return "provided.al2";
     case Runtime::provided_al2023:
       return "provided.al2023";
+    case Runtime::java8_al2023:
+      return "java8.al2023";
+    case Runtime::java11_al2023:
+      return "java11.al2023";
+    case Runtime::java17_al2023:
+      return "java17.al2023";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

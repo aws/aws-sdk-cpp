@@ -10,7 +10,20 @@
 namespace Aws {
 namespace GameLift {
 namespace Model {
-enum class FleetStatus { NOT_SET, NEW_, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR_, TERMINATED, NOT_FOUND };
+enum class FleetStatus {
+  NOT_SET,
+  NEW_,
+  DOWNLOADING,
+  VALIDATING,
+  BUILDING,
+  ACTIVATING,
+  ACTIVE,
+  DELETING,
+  ERROR_,
+  TERMINATED,
+  NOT_FOUND,
+  EXPIRED
+};
 
 namespace FleetStatusMapper {
 AWS_GAMELIFT_API FleetStatus GetFleetStatusForName(const Aws::String& name);

@@ -90,6 +90,7 @@
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupMembersRequest.h>
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupSourcesRequest.h>
 #include <aws/ec2/model/DescribeAccountAttributesRequest.h>
+#include <aws/ec2/model/DescribeAccountVpcEncryptionControlRequest.h>
 #include <aws/ec2/model/DescribeAddressTransfersRequest.h>
 #include <aws/ec2/model/DescribeAddressesAttributeRequest.h>
 #include <aws/ec2/model/DescribeAddressesRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/DescribeCoipPoolsRequest.h>
 #include <aws/ec2/model/DescribeConversionTasksRequest.h>
 #include <aws/ec2/model/DescribeCustomerGatewaysRequest.h>
-#include <aws/ec2/model/DescribeDeclarativePoliciesReportsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -569,6 +569,13 @@ DescribeAccountAttributesOutcome EC2Client::DescribeAccountAttributes(const Desc
                             : DescribeAccountAttributesOutcome(std::move(result.GetError()));
 }
 
+DescribeAccountVpcEncryptionControlOutcome EC2Client::DescribeAccountVpcEncryptionControl(
+    const DescribeAccountVpcEncryptionControlRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountVpcEncryptionControlOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountVpcEncryptionControlOutcome(std::move(result.GetError()));
+}
+
 DescribeAddressTransfersOutcome EC2Client::DescribeAddressTransfers(const DescribeAddressTransfersRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeAddressTransfersOutcome(result.GetResultWithOwnership())
@@ -752,11 +759,4 @@ DescribeCustomerGatewaysOutcome EC2Client::DescribeCustomerGateways(const Descri
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeCustomerGatewaysOutcome(result.GetResultWithOwnership())
                             : DescribeCustomerGatewaysOutcome(std::move(result.GetError()));
-}
-
-DescribeDeclarativePoliciesReportsOutcome EC2Client::DescribeDeclarativePoliciesReports(
-    const DescribeDeclarativePoliciesReportsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeDeclarativePoliciesReportsOutcome(result.GetResultWithOwnership())
-                            : DescribeDeclarativePoliciesReportsOutcome(std::move(result.GetError()));
 }

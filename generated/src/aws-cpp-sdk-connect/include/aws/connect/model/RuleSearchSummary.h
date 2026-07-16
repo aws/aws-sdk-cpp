@@ -1,0 +1,293 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/ActionSummary.h>
+#include <aws/connect/model/RuleCapabilityTier.h>
+#include <aws/connect/model/RulePublishStatus.h>
+#include <aws/connect/model/RuleTriggerEventSource.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Connect {
+namespace Model {
+
+/**
+ * <p>A summary of information about a rule, returned as part of the response to a
+ * <code>SearchRules</code> operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RuleSearchSummary">AWS
+ * API Reference</a></p>
+ */
+class RuleSearchSummary {
+ public:
+  AWS_CONNECT_API RuleSearchSummary() = default;
+  AWS_CONNECT_API RuleSearchSummary(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECT_API RuleSearchSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The name of the rule.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  RuleSearchSummary& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique identifier for the rule.</p>
+   */
+  inline const Aws::String& GetRuleId() const { return m_ruleId; }
+  inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
+  template <typename RuleIdT = Aws::String>
+  void SetRuleId(RuleIdT&& value) {
+    m_ruleIdHasBeenSet = true;
+    m_ruleId = std::forward<RuleIdT>(value);
+  }
+  template <typename RuleIdT = Aws::String>
+  RuleSearchSummary& WithRuleId(RuleIdT&& value) {
+    SetRuleId(std::forward<RuleIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the rule.</p>
+   */
+  inline const Aws::String& GetRuleArn() const { return m_ruleArn; }
+  inline bool RuleArnHasBeenSet() const { return m_ruleArnHasBeenSet; }
+  template <typename RuleArnT = Aws::String>
+  void SetRuleArn(RuleArnT&& value) {
+    m_ruleArnHasBeenSet = true;
+    m_ruleArn = std::forward<RuleArnT>(value);
+  }
+  template <typename RuleArnT = Aws::String>
+  RuleSearchSummary& WithRuleArn(RuleArnT&& value) {
+    SetRuleArn(std::forward<RuleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The event source to trigger the rule.</p>
+   */
+  inline const RuleTriggerEventSource& GetTriggerEventSource() const { return m_triggerEventSource; }
+  inline bool TriggerEventSourceHasBeenSet() const { return m_triggerEventSourceHasBeenSet; }
+  template <typename TriggerEventSourceT = RuleTriggerEventSource>
+  void SetTriggerEventSource(TriggerEventSourceT&& value) {
+    m_triggerEventSourceHasBeenSet = true;
+    m_triggerEventSource = std::forward<TriggerEventSourceT>(value);
+  }
+  template <typename TriggerEventSourceT = RuleTriggerEventSource>
+  RuleSearchSummary& WithTriggerEventSource(TriggerEventSourceT&& value) {
+    SetTriggerEventSource(std::forward<TriggerEventSourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of <code>ActionTypes</code> associated with a rule.</p>
+   */
+  inline const Aws::Vector<ActionSummary>& GetActionSummaries() const { return m_actionSummaries; }
+  inline bool ActionSummariesHasBeenSet() const { return m_actionSummariesHasBeenSet; }
+  template <typename ActionSummariesT = Aws::Vector<ActionSummary>>
+  void SetActionSummaries(ActionSummariesT&& value) {
+    m_actionSummariesHasBeenSet = true;
+    m_actionSummaries = std::forward<ActionSummariesT>(value);
+  }
+  template <typename ActionSummariesT = Aws::Vector<ActionSummary>>
+  RuleSearchSummary& WithActionSummaries(ActionSummariesT&& value) {
+    SetActionSummaries(std::forward<ActionSummariesT>(value));
+    return *this;
+  }
+  template <typename ActionSummariesT = ActionSummary>
+  RuleSearchSummary& AddActionSummaries(ActionSummariesT&& value) {
+    m_actionSummariesHasBeenSet = true;
+    m_actionSummaries.emplace_back(std::forward<ActionSummariesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of capability tiers associated with the rule. Used for categorizing
+   * rules by capability (for example, <code>GenerativeAI</code>).</p>
+   */
+  inline const Aws::Vector<RuleCapabilityTier>& GetRuleCapabilityTiers() const { return m_ruleCapabilityTiers; }
+  inline bool RuleCapabilityTiersHasBeenSet() const { return m_ruleCapabilityTiersHasBeenSet; }
+  template <typename RuleCapabilityTiersT = Aws::Vector<RuleCapabilityTier>>
+  void SetRuleCapabilityTiers(RuleCapabilityTiersT&& value) {
+    m_ruleCapabilityTiersHasBeenSet = true;
+    m_ruleCapabilityTiers = std::forward<RuleCapabilityTiersT>(value);
+  }
+  template <typename RuleCapabilityTiersT = Aws::Vector<RuleCapabilityTier>>
+  RuleSearchSummary& WithRuleCapabilityTiers(RuleCapabilityTiersT&& value) {
+    SetRuleCapabilityTiers(std::forward<RuleCapabilityTiersT>(value));
+    return *this;
+  }
+  inline RuleSearchSummary& AddRuleCapabilityTiers(RuleCapabilityTier value) {
+    m_ruleCapabilityTiersHasBeenSet = true;
+    m_ruleCapabilityTiers.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The publish status of the rule.</p>
+   */
+  inline RulePublishStatus GetPublishStatus() const { return m_publishStatus; }
+  inline bool PublishStatusHasBeenSet() const { return m_publishStatusHasBeenSet; }
+  inline void SetPublishStatus(RulePublishStatus value) {
+    m_publishStatusHasBeenSet = true;
+    m_publishStatus = value;
+  }
+  inline RuleSearchSummary& WithPublishStatus(RulePublishStatus value) {
+    SetPublishStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp for when the rule was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
+  inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+  template <typename CreatedTimeT = Aws::Utils::DateTime>
+  void SetCreatedTime(CreatedTimeT&& value) {
+    m_createdTimeHasBeenSet = true;
+    m_createdTime = std::forward<CreatedTimeT>(value);
+  }
+  template <typename CreatedTimeT = Aws::Utils::DateTime>
+  RuleSearchSummary& WithCreatedTime(CreatedTimeT&& value) {
+    SetCreatedTime(std::forward<CreatedTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp for when the rule was last updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
+  inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
+  template <typename LastUpdatedTimeT = Aws::Utils::DateTime>
+  void SetLastUpdatedTime(LastUpdatedTimeT&& value) {
+    m_lastUpdatedTimeHasBeenSet = true;
+    m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value);
+  }
+  template <typename LastUpdatedTimeT = Aws::Utils::DateTime>
+  RuleSearchSummary& WithLastUpdatedTime(LastUpdatedTimeT&& value) {
+    SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
+   */
+  inline const Aws::String& GetLastUpdatedBy() const { return m_lastUpdatedBy; }
+  inline bool LastUpdatedByHasBeenSet() const { return m_lastUpdatedByHasBeenSet; }
+  template <typename LastUpdatedByT = Aws::String>
+  void SetLastUpdatedBy(LastUpdatedByT&& value) {
+    m_lastUpdatedByHasBeenSet = true;
+    m_lastUpdatedBy = std::forward<LastUpdatedByT>(value);
+  }
+  template <typename LastUpdatedByT = Aws::String>
+  RuleSearchSummary& WithLastUpdatedBy(LastUpdatedByT&& value) {
+    SetLastUpdatedBy(std::forward<LastUpdatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The tags used to organize, track, or control access for this resource. For
+   * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  RuleSearchSummary& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  RuleSearchSummary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_name;
+
+  Aws::String m_ruleId;
+
+  Aws::String m_ruleArn;
+
+  RuleTriggerEventSource m_triggerEventSource;
+
+  Aws::Vector<ActionSummary> m_actionSummaries;
+
+  Aws::Vector<RuleCapabilityTier> m_ruleCapabilityTiers;
+
+  RulePublishStatus m_publishStatus{RulePublishStatus::NOT_SET};
+
+  Aws::Utils::DateTime m_createdTime{};
+
+  Aws::Utils::DateTime m_lastUpdatedTime{};
+
+  Aws::String m_lastUpdatedBy;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
+  bool m_ruleArnHasBeenSet = false;
+  bool m_triggerEventSourceHasBeenSet = false;
+  bool m_actionSummariesHasBeenSet = false;
+  bool m_ruleCapabilityTiersHasBeenSet = false;
+  bool m_publishStatusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

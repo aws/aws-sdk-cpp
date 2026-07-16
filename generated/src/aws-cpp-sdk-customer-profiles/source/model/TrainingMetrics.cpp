@@ -29,6 +29,10 @@ TrainingMetrics& TrainingMetrics::operator=(JsonView jsonValue) {
     }
     m_metricsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RecommenderVersionName")) {
+    m_recommenderVersionName = jsonValue.GetString("RecommenderVersionName");
+    m_recommenderVersionNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +49,10 @@ JsonValue TrainingMetrics::Jsonize() const {
       metricsJsonMap.WithDouble(TrainingMetricNameMapper::GetNameForTrainingMetricName(metricsItem.first), metricsItem.second);
     }
     payload.WithObject("Metrics", std::move(metricsJsonMap));
+  }
+
+  if (m_recommenderVersionNameHasBeenSet) {
+    payload.WithString("RecommenderVersionName", m_recommenderVersionName);
   }
 
   return payload;

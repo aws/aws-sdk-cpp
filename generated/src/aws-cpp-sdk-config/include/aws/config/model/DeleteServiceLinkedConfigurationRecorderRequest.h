@@ -33,7 +33,9 @@ class DeleteServiceLinkedConfigurationRecorderRequest : public ConfigServiceRequ
   ///@{
   /**
    * <p>The service principal of the Amazon Web Services service for the
-   * service-linked configuration recorder that you want to delete.</p>
+   * service-linked configuration recorder that you want to delete. This field is
+   * only supported for Amazon Web Services service principals. For third-party
+   * service-linked configuration recorders, use <code>Arn</code> instead.</p>
    */
   inline const Aws::String& GetServicePrincipal() const { return m_servicePrincipal; }
   inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
@@ -48,9 +50,33 @@ class DeleteServiceLinkedConfigurationRecorderRequest : public ConfigServiceRequ
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the service-linked configuration recorder
+   * that you want to delete. For third-party service-linked configuration recorders,
+   * you must use <code>Arn</code>. You must specify exactly one of <code>Arn</code>
+   * or <code>ServicePrincipal</code>.</p>
+   */
+  inline const Aws::String& GetArn() const { return m_arn; }
+  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
+  }
+  template <typename ArnT = Aws::String>
+  DeleteServiceLinkedConfigurationRecorderRequest& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_servicePrincipal;
+
+  Aws::String m_arn;
   bool m_servicePrincipalHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -34,6 +34,12 @@ SourceIpConditionConfig& SourceIpConditionConfig::operator=(const XmlNode& xmlNo
 
       m_valuesHasBeenSet = true;
     }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
+    if (!ipAddressTypeNode.IsNull()) {
+      m_ipAddressType = SourceIpAddressTypeEnumMapper::GetSourceIpAddressTypeEnumForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
+      m_ipAddressTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -47,6 +53,11 @@ void SourceIpConditionConfig::OutputToStream(Aws::OStream& oStream, const char* 
               << "&";
     }
   }
+
+  if (m_ipAddressTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".IpAddressType="
+            << StringUtils::URLEncode(SourceIpAddressTypeEnumMapper::GetNameForSourceIpAddressTypeEnum(m_ipAddressType)) << "&";
+  }
 }
 
 void SourceIpConditionConfig::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -55,6 +66,10 @@ void SourceIpConditionConfig::OutputToStream(Aws::OStream& oStream, const char* 
     for (auto& item : m_values) {
       oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
     }
+  }
+  if (m_ipAddressTypeHasBeenSet) {
+    oStream << location << ".IpAddressType="
+            << StringUtils::URLEncode(SourceIpAddressTypeEnumMapper::GetNameForSourceIpAddressTypeEnum(m_ipAddressType)) << "&";
   }
 }
 

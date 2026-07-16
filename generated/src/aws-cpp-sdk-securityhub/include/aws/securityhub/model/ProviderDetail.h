@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/AzureDetail.h>
 #include <aws/securityhub/model/JiraCloudDetail.h>
 #include <aws/securityhub/model/ServiceNowDetail.h>
 
@@ -68,12 +69,33 @@ class ProviderDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Details about a Microsoft Azure CSPM integration.</p>
+   */
+  inline const AzureDetail& GetAzure() const { return m_azure; }
+  inline bool AzureHasBeenSet() const { return m_azureHasBeenSet; }
+  template <typename AzureT = AzureDetail>
+  void SetAzure(AzureT&& value) {
+    m_azureHasBeenSet = true;
+    m_azure = std::forward<AzureT>(value);
+  }
+  template <typename AzureT = AzureDetail>
+  ProviderDetail& WithAzure(AzureT&& value) {
+    SetAzure(std::forward<AzureT>(value));
+    return *this;
+  }
+  ///@}
  private:
   JiraCloudDetail m_jiraCloud;
 
   ServiceNowDetail m_serviceNow;
+
+  AzureDetail m_azure;
   bool m_jiraCloudHasBeenSet = false;
   bool m_serviceNowHasBeenSet = false;
+  bool m_azureHasBeenSet = false;
 };
 
 }  // namespace Model

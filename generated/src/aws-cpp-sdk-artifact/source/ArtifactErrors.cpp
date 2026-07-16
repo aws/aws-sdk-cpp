@@ -39,15 +39,15 @@ AWS_ARTIFACT_API ServiceQuotaExceededException ArtifactError::GetModeledError() 
 }
 
 template <>
-AWS_ARTIFACT_API ResourceNotFoundException ArtifactError::GetModeledError() {
-  assert(this->GetErrorType() == ArtifactErrors::RESOURCE_NOT_FOUND);
-  return ResourceNotFoundException(this->GetJsonPayload().View());
-}
-
-template <>
 AWS_ARTIFACT_API InternalServerException ArtifactError::GetModeledError() {
   assert(this->GetErrorType() == ArtifactErrors::INTERNAL_SERVER);
   return InternalServerException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_ARTIFACT_API ResourceNotFoundException ArtifactError::GetModeledError() {
+  assert(this->GetErrorType() == ArtifactErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
 }
 
 template <>

@@ -68,7 +68,8 @@ class UpdateExperimentDefinitionRequest : public AppConfigRequest {
 
   ///@{
   /**
-   * <p>An updated list of treatments.</p>
+   * <p>The updated list of treatments to evaluate during the experiment. Each
+   * treatment defines a distinct variation compared to the control.</p>
    */
   inline const Aws::Vector<TreatmentInput>& GetTreatments() const { return m_treatments; }
   inline bool TreatmentsHasBeenSet() const { return m_treatmentsHasBeenSet; }

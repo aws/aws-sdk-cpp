@@ -30,6 +30,13 @@ HealthCheck& HealthCheck::operator=(JsonView jsonValue) {
     m_lastCheckedAt = jsonValue.GetString("LastCheckedAt");
     m_lastCheckedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Issues")) {
+    Aws::Utils::Array<JsonView> issuesJsonList = jsonValue.GetArray("Issues");
+    for (unsigned issuesIndex = 0; issuesIndex < issuesJsonList.GetLength(); ++issuesIndex) {
+      m_issues.push_back(issuesJsonList[issuesIndex].AsObject());
+    }
+    m_issuesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +53,14 @@ JsonValue HealthCheck::Jsonize() const {
 
   if (m_lastCheckedAtHasBeenSet) {
     payload.WithString("LastCheckedAt", m_lastCheckedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_issuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> issuesJsonList(m_issues.size());
+    for (unsigned issuesIndex = 0; issuesIndex < issuesJsonList.GetLength(); ++issuesIndex) {
+      issuesJsonList[issuesIndex].AsObject(m_issues[issuesIndex].Jsonize());
+    }
+    payload.WithArray("Issues", std::move(issuesJsonList));
   }
 
   return payload;

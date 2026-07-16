@@ -67,6 +67,7 @@ namespace ConnectErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
+static const int CONTACT_NOT_TERMINATED_HASH = HashingUtils::HashString("ContactNotTerminatedException");
 static const int PROPERTY_VALIDATION_HASH = HashingUtils::HashString("PropertyValidationException");
 static const int INVALID_CONTACT_FLOW_HASH = HashingUtils::HashString("InvalidContactFlowException");
 static const int USER_NOT_FOUND_HASH = HashingUtils::HashString("UserNotFoundException");
@@ -98,6 +99,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_NOT_READY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::RESOURCE_NOT_READY), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CONTACT_NOT_TERMINATED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONTACT_NOT_TERMINATED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == PROPERTY_VALIDATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::PROPERTY_VALIDATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_CONTACT_FLOW_HASH) {

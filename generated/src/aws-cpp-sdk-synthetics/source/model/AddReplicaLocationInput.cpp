@@ -26,6 +26,10 @@ AddReplicaLocationInput& AddReplicaLocationInput::operator=(JsonView jsonValue) 
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
     m_vpcConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("KmsKeyArn")) {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue AddReplicaLocationInput::Jsonize() const {
 
   if (m_vpcConfigHasBeenSet) {
     payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+  }
+
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("KmsKeyArn", m_kmsKeyArn);
   }
 
   return payload;

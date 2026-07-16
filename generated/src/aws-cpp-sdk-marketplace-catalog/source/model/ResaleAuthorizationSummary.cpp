@@ -62,6 +62,11 @@ ResaleAuthorizationSummary& ResaleAuthorizationSummary::operator=(JsonView jsonV
     m_availabilityEndDate = jsonValue.GetString("AvailabilityEndDate");
     m_availabilityEndDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ResellerRole")) {
+    m_resellerRole =
+        ResaleAuthorizationResellerRoleStringMapper::GetResaleAuthorizationResellerRoleStringForName(jsonValue.GetString("ResellerRole"));
+    m_resellerRoleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +115,11 @@ JsonValue ResaleAuthorizationSummary::Jsonize() const {
 
   if (m_availabilityEndDateHasBeenSet) {
     payload.WithString("AvailabilityEndDate", m_availabilityEndDate);
+  }
+
+  if (m_resellerRoleHasBeenSet) {
+    payload.WithString("ResellerRole",
+                       ResaleAuthorizationResellerRoleStringMapper::GetNameForResaleAuthorizationResellerRoleString(m_resellerRole));
   }
 
   return payload;

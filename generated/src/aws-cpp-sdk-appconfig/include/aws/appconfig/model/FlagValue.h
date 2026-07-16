@@ -36,7 +36,7 @@ class FlagValue {
 
   ///@{
   /**
-   * <p>Whether the feature flag is enabled for this treatment.</p>
+   * <p>Specifies whether the feature flag is enabled for this treatment.</p>
    */
   inline bool GetEnabled() const { return m_enabled; }
   inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }

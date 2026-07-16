@@ -105,6 +105,7 @@
 #include <aws/payment-cryptography-data/model/SessionKeyEmv2000.h>
 #include <aws/payment-cryptography-data/model/SessionKeyEmvCommon.h>
 #include <aws/payment-cryptography-data/model/SessionKeyMastercard.h>
+#include <aws/payment-cryptography-data/model/SessionKeyUnionPay.h>
 #include <aws/payment-cryptography-data/model/SessionKeyVisa.h>
 #include <aws/payment-cryptography-data/model/SymmetricEncryptionAttributes.h>
 #include <aws/payment-cryptography-data/model/SymmetricKeyAlgorithm.h>

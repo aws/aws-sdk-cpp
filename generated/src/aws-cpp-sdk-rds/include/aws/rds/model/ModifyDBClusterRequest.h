@@ -1149,6 +1149,36 @@ class ModifyDBClusterRequest : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The lifecycle type for this DB cluster.</p> <p>You can use this setting to
+   * enroll your DB cluster into Amazon RDS Extended Support or to opt out. With RDS
+   * Extended Support, you can run the selected major engine version on your DB
+   * cluster past the end of standard support for that engine version. For more
+   * information, see the following sections:</p> <ul> <li> <p>Amazon Aurora - <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Amazon
+   * RDS Extended Support with Amazon Aurora</a> in the <i>Amazon Aurora User
+   * Guide</i> </p> </li> <li> <p>Amazon RDS - <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Amazon
+   * RDS Extended Support with Amazon RDS</a> in the <i>Amazon RDS User Guide</i>
+   * </p> </li> </ul> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
+   * clusters</p> <p>Valid Values: <code>open-source-rds-extended-support |
+   * open-source-rds-extended-support-disabled</code> </p>
+   */
+  inline const Aws::String& GetEngineLifecycleSupport() const { return m_engineLifecycleSupport; }
+  inline bool EngineLifecycleSupportHasBeenSet() const { return m_engineLifecycleSupportHasBeenSet; }
+  template <typename EngineLifecycleSupportT = Aws::String>
+  void SetEngineLifecycleSupport(EngineLifecycleSupportT&& value) {
+    m_engineLifecycleSupportHasBeenSet = true;
+    m_engineLifecycleSupport = std::forward<EngineLifecycleSupportT>(value);
+  }
+  template <typename EngineLifecycleSupportT = Aws::String>
+  ModifyDBClusterRequest& WithEngineLifecycleSupport(EngineLifecycleSupportT&& value) {
+    SetEngineLifecycleSupport(std::forward<EngineLifecycleSupportT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBClusterIdentifier;
 
@@ -1243,6 +1273,8 @@ class ModifyDBClusterRequest : public RDSRequest {
   Aws::String m_cACertificateIdentifier;
 
   MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
+
+  Aws::String m_engineLifecycleSupport;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_newDBClusterIdentifierHasBeenSet = false;
   bool m_applyImmediatelyHasBeenSet = false;
@@ -1290,6 +1322,7 @@ class ModifyDBClusterRequest : public RDSRequest {
   bool m_enableLimitlessDatabaseHasBeenSet = false;
   bool m_cACertificateIdentifierHasBeenSet = false;
   bool m_masterUserAuthenticationTypeHasBeenSet = false;
+  bool m_engineLifecycleSupportHasBeenSet = false;
 };
 
 }  // namespace Model

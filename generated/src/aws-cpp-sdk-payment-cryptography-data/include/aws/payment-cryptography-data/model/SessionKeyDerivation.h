@@ -9,6 +9,7 @@
 #include <aws/payment-cryptography-data/model/SessionKeyEmv2000.h>
 #include <aws/payment-cryptography-data/model/SessionKeyEmvCommon.h>
 #include <aws/payment-cryptography-data/model/SessionKeyMastercard.h>
+#include <aws/payment-cryptography-data/model/SessionKeyUnionPay.h>
 #include <aws/payment-cryptography-data/model/SessionKeyVisa.h>
 
 #include <utility>
@@ -130,6 +131,25 @@ class SessionKeyDerivation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Parameters to derive session key for a UnionPay payment card for
+   * Authorization Request Cryptogram (ARQC) generation and verification.</p>
+   */
+  inline const SessionKeyUnionPay& GetUnionPay() const { return m_unionPay; }
+  inline bool UnionPayHasBeenSet() const { return m_unionPayHasBeenSet; }
+  template <typename UnionPayT = SessionKeyUnionPay>
+  void SetUnionPay(UnionPayT&& value) {
+    m_unionPayHasBeenSet = true;
+    m_unionPay = std::forward<UnionPayT>(value);
+  }
+  template <typename UnionPayT = SessionKeyUnionPay>
+  SessionKeyDerivation& WithUnionPay(UnionPayT&& value) {
+    SetUnionPay(std::forward<UnionPayT>(value));
+    return *this;
+  }
+  ///@}
  private:
   SessionKeyEmvCommon m_emvCommon;
 
@@ -140,11 +160,14 @@ class SessionKeyDerivation {
   SessionKeyAmex m_amex;
 
   SessionKeyVisa m_visa;
+
+  SessionKeyUnionPay m_unionPay;
   bool m_emvCommonHasBeenSet = false;
   bool m_mastercardHasBeenSet = false;
   bool m_emv2000HasBeenSet = false;
   bool m_amexHasBeenSet = false;
   bool m_visaHasBeenSet = false;
+  bool m_unionPayHasBeenSet = false;
 };
 
 }  // namespace Model

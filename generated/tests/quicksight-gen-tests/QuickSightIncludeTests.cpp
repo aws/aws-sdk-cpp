@@ -15,6 +15,7 @@
 #include <aws/quicksight/QuickSightServiceClientModel.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/APIKeyConnectionMetadata.h>
+#include <aws/quicksight/model/AccessControlConfiguration.h>
 #include <aws/quicksight/model/AccessDeniedException.h>
 #include <aws/quicksight/model/AccountCustomization.h>
 #include <aws/quicksight/model/AccountInfo.h>
@@ -149,6 +150,7 @@
 #include <aws/quicksight/model/AuroraParameters.h>
 #include <aws/quicksight/model/AuroraPostgreSqlParameters.h>
 #include <aws/quicksight/model/AuthConfig.h>
+#include <aws/quicksight/model/AuthType.h>
 #include <aws/quicksight/model/AuthenticationMetadata.h>
 #include <aws/quicksight/model/AuthenticationMethodOption.h>
 #include <aws/quicksight/model/AuthenticationType.h>
@@ -355,6 +357,8 @@
 #include <aws/quicksight/model/CreateIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/CreateIngestionRequest.h>
 #include <aws/quicksight/model/CreateIngestionResult.h>
+#include <aws/quicksight/model/CreateKnowledgeBaseRequest.h>
+#include <aws/quicksight/model/CreateKnowledgeBaseResult.h>
 #include <aws/quicksight/model/CreateNamespaceRequest.h>
 #include <aws/quicksight/model/CreateNamespaceResult.h>
 #include <aws/quicksight/model/CreateOAuthClientApplicationRequest.h>
@@ -381,6 +385,7 @@
 #include <aws/quicksight/model/CreateVPCConnectionRequest.h>
 #include <aws/quicksight/model/CreateVPCConnectionResult.h>
 #include <aws/quicksight/model/CredentialPair.h>
+#include <aws/quicksight/model/CredentialStatus.h>
 #include <aws/quicksight/model/CrossDatasetTypes.h>
 #include <aws/quicksight/model/CurrencyDisplayFormatConfiguration.h>
 #include <aws/quicksight/model/CustomActionFilterOperation.h>
@@ -776,6 +781,7 @@
 #include <aws/quicksight/model/ExportHiddenFieldsOption.h>
 #include <aws/quicksight/model/ExportToCSVOption.h>
 #include <aws/quicksight/model/ExportWithHiddenFieldsOption.h>
+#include <aws/quicksight/model/FMKBParameters.h>
 #include <aws/quicksight/model/FailedKeyRegistrationEntry.h>
 #include <aws/quicksight/model/FailedSpaceResourceOperation.h>
 #include <aws/quicksight/model/FailedToUpdateAssociation.h>
@@ -790,6 +796,7 @@
 #include <aws/quicksight/model/FieldSortOptions.h>
 #include <aws/quicksight/model/FieldTooltipItem.h>
 #include <aws/quicksight/model/FileFormat.h>
+#include <aws/quicksight/model/FileSource.h>
 #include <aws/quicksight/model/FilledMapAggregatedFieldWells.h>
 #include <aws/quicksight/model/FilledMapConditionalFormatting.h>
 #include <aws/quicksight/model/FilledMapConditionalFormattingOption.h>
@@ -934,6 +941,7 @@
 #include <aws/quicksight/model/GetSessionEmbedUrlRequest.h>
 #include <aws/quicksight/model/GetSessionEmbedUrlResult.h>
 #include <aws/quicksight/model/GlobalTableBorderOptions.h>
+#include <aws/quicksight/model/GoogleDriveParameters.h>
 #include <aws/quicksight/model/GradientColor.h>
 #include <aws/quicksight/model/GradientStop.h>
 #include <aws/quicksight/model/GridLayoutCanvasSizeOptions.h>
@@ -1238,6 +1246,7 @@
 #include <aws/quicksight/model/OAuthClientAuthenticationType.h>
 #include <aws/quicksight/model/OAuthClientCredentials.h>
 #include <aws/quicksight/model/OAuthParameters.h>
+#include <aws/quicksight/model/OneDriveParameters.h>
 #include <aws/quicksight/model/OracleParameters.h>
 #include <aws/quicksight/model/OtherCategories.h>
 #include <aws/quicksight/model/OutputColumn.h>
@@ -1505,6 +1514,7 @@
 #include <aws/quicksight/model/SessionTag.h>
 #include <aws/quicksight/model/SetParameterValueConfiguration.h>
 #include <aws/quicksight/model/ShapeConditionalFormat.h>
+#include <aws/quicksight/model/SharePointParameters.h>
 #include <aws/quicksight/model/SharedColumnSemanticMetadata.h>
 #include <aws/quicksight/model/SharedViewConfigurations.h>
 #include <aws/quicksight/model/SharingModel.h>
@@ -1853,6 +1863,8 @@
 #include <aws/quicksight/model/UpdateKeyRegistrationResult.h>
 #include <aws/quicksight/model/UpdateKnowledgeBasePermissionsRequest.h>
 #include <aws/quicksight/model/UpdateKnowledgeBasePermissionsResult.h>
+#include <aws/quicksight/model/UpdateKnowledgeBaseRequest.h>
+#include <aws/quicksight/model/UpdateKnowledgeBaseResult.h>
 #include <aws/quicksight/model/UpdateOAuthClientApplicationRequest.h>
 #include <aws/quicksight/model/UpdateOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/UpdatePublicSharingSettingsRequest.h>

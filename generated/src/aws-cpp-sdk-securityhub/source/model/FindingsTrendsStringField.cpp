@@ -25,6 +25,10 @@ static const int finding_control_id_HASH = HashingUtils::HashString("finding_con
 static const int finding_class_name_HASH = HashingUtils::HashString("finding_class_name");
 static const int finding_provider_HASH = HashingUtils::HashString("finding_provider");
 static const int finding_activity_name_HASH = HashingUtils::HashString("finding_activity_name");
+static const int resource_cloud_providers_HASH = HashingUtils::HashString("resource_cloud_providers");
+static const int resource_regions_HASH = HashingUtils::HashString("resource_regions");
+static const int resource_owner_ids_HASH = HashingUtils::HashString("resource_owner_ids");
+static const int resource_owner_organization_ids_HASH = HashingUtils::HashString("resource_owner_organization_ids");
 
 FindingsTrendsStringField GetFindingsTrendsStringFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +52,14 @@ FindingsTrendsStringField GetFindingsTrendsStringFieldForName(const Aws::String&
     return FindingsTrendsStringField::finding_provider;
   } else if (hashCode == finding_activity_name_HASH) {
     return FindingsTrendsStringField::finding_activity_name;
+  } else if (hashCode == resource_cloud_providers_HASH) {
+    return FindingsTrendsStringField::resource_cloud_providers;
+  } else if (hashCode == resource_regions_HASH) {
+    return FindingsTrendsStringField::resource_regions;
+  } else if (hashCode == resource_owner_ids_HASH) {
+    return FindingsTrendsStringField::resource_owner_ids;
+  } else if (hashCode == resource_owner_organization_ids_HASH) {
+    return FindingsTrendsStringField::resource_owner_organization_ids;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +94,14 @@ Aws::String GetNameForFindingsTrendsStringField(FindingsTrendsStringField enumVa
       return "finding_provider";
     case FindingsTrendsStringField::finding_activity_name:
       return "finding_activity_name";
+    case FindingsTrendsStringField::resource_cloud_providers:
+      return "resource_cloud_providers";
+    case FindingsTrendsStringField::resource_regions:
+      return "resource_regions";
+    case FindingsTrendsStringField::resource_owner_ids:
+      return "resource_owner_ids";
+    case FindingsTrendsStringField::resource_owner_organization_ids:
+      return "resource_owner_organization_ids";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -156,12 +156,13 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> |
    * <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ALIAS</code> |
    * <code>BOT_ID</code> | <code>BOT_INTENT_NAME</code> | <code>BOT_LOCALE</code> |
-   * <code>BOT_VERSION</code> | <code>CAMPAIGN</code> |
+   * <code>BOT_VERSION</code> | <code>BROWSER_NAME</code> | <code>CAMPAIGN</code> |
    * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> |
    * <code>CAMPAIGN_EXCLUDED_EVENT_TYPE</code> | <code>CASE_STATUS</code> |
    * <code>CASE_TEMPLATE_ARN</code> | <code>CHANNEL</code> |
    * <code>contact/segmentAttributes/connect:Subtype</code> |
    * <code>contact/segmentAttributes/connect:ValidationTestType</code> |
+   * <code>DEVICE_MODEL</code> | <code>DEVICE_TYPE</code> |
    * <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> |
    * <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SECTION</code> |
    * <code>EVALUATION_SOURCE</code> | <code>EVALUATOR_ID</code> |
@@ -178,11 +179,12 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <code>SESSION_ID</code> | <code>TEST_CASE</code> |
    * <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> |
    * <code>TEST_CASE_EXECUTION_RESULT</code> | <code>TEST_CASE_EXECUTION_STATE</code>
-   * </p>  <p>The following filter keys correspond to Connect Customer
-   * resources and are used for authorizing requests. A <code>GetMetricDataV2</code>
-   * request requires at least one of these filters:</p> <p> <code>QUEUE</code>,
-   * <code>ROUTING_PROFILE</code>, <code>AGENT</code>,
-   * <code>AGENT_HIERARCHY_LEVEL_ONE</code>, <code>AGENT_HIERARCHY_LEVEL_TWO</code>,
+   * | <code>WEB_NOTIFICATION_TYPE</code> </p>  <p>The following filter keys
+   * correspond to Connect Customer resources and are used for authorizing requests.
+   * A <code>GetMetricDataV2</code> request requires at least one of these
+   * filters:</p> <p> <code>QUEUE</code>, <code>ROUTING_PROFILE</code>,
+   * <code>AGENT</code>, <code>AGENT_HIERARCHY_LEVEL_ONE</code>,
+   * <code>AGENT_HIERARCHY_LEVEL_TWO</code>,
    * <code>AGENT_HIERARCHY_LEVEL_THREE</code>,
    * <code>AGENT_HIERARCHY_LEVEL_FOUR</code>,
    * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>CAMPAIGN</code>,
@@ -259,12 +261,13 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> |
    * <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ID</code> |
    * <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> |
-   * <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> |
-   * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> |
+   * <code>BOT_INTENT_NAME</code> | <code>BROWSER_NAME</code> | <code>CAMPAIGN</code>
+   * | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> |
    * <code>CAMPAIGN_EXCLUDED_EVENT_TYPE</code> |
    * <code>CAMPAIGN_EXECUTION_TIMESTAMP</code> | <code>CASE_TEMPLATE_ARN</code> |
    * <code>CASE_STATUS</code> | <code>CHANNEL</code> |
    * <code>contact/segmentAttributes/connect:Subtype</code> |
+   * <code>DEVICE_MODEL</code> | <code>DEVICE_TYPE</code> |
    * <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> |
    * <code>EVALUATION_SECTION</code> | <code>EVALUATION_QUESTION</code> |
    * <code>EVALUATION_SOURCE</code> | <code>EVALUATOR_ID</code> |
@@ -279,14 +282,15 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> |
    * <code>ROUTING_STEP_EXPRESSION</code> | <code>SESSION_ID</code> |
    * <code>TEST_CASE</code> | <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> |
-   * <code>TEST_CASE_INVOCATION_METHOD</code> </p>  <p>
-   * <code>AI_AGENT_NAME_VERSION</code>, <code>AI_PROMPT_NAME_VERSION</code>, and
-   * <code>KNOWLEDGE_ARTICLE_NAME</code> are valid groupings but not valid
-   * filters.</p>  <p>API, SCHEDULE, and EVENT are the only valid filterValues
-   * for TEST_CASE_INVOCATION_METHOD.</p> <p>OBSERVE_EVENT, SEND_INSTRUCTION,
-   * ASSERT_DATA, and OVERRIDE_SYSTEM_BEHAVIOR are the only valid filterValues for
-   * TEST_CASE_EXECUTION_FAILURE_REASON</p> <p>Type: Array of strings</p> <p>Array
-   * Members: Maximum number of 4 items</p> <p>Required: No</p>
+   * <code>TEST_CASE_INVOCATION_METHOD</code> | <code>WEB_NOTIFICATION_TYPE</code>
+   * </p>  <p> <code>AI_AGENT_NAME_VERSION</code>,
+   * <code>AI_PROMPT_NAME_VERSION</code>, and <code>KNOWLEDGE_ARTICLE_NAME</code> are
+   * valid groupings but not valid filters.</p>  <p>API, SCHEDULE, and EVENT
+   * are the only valid filterValues for TEST_CASE_INVOCATION_METHOD.</p>
+   * <p>OBSERVE_EVENT, SEND_INSTRUCTION, ASSERT_DATA, and OVERRIDE_SYSTEM_BEHAVIOR
+   * are the only valid filterValues for TEST_CASE_EXECUTION_FAILURE_REASON</p>
+   * <p>Type: Array of strings</p> <p>Array Members: Maximum number of 4 items</p>
+   * <p>Required: No</p>
    */
   inline const Aws::Vector<Aws::String>& GetGroupings() const { return m_groupings; }
   inline bool GroupingsHasBeenSet() const { return m_groupingsHasBeenSet; }
@@ -839,10 +843,12 @@ class GetMetricDataV2Request : public ConnectRequest {
    * than</i>).</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-contacts-abandoned-after-x-rate">Campaign
    * contacts abandoned after X rate</a> </p> </dd> <dt>CAMPAIGN_INTERACTIONS</dt>
-   * <dd> <p>This metric is available only for outbound campaigns using the email
-   * delivery mode. </p> <p>Unit: Count</p> <p>Valid metric filter key:
-   * CAMPAIGN_INTERACTION_EVENT_TYPE</p> <p>Valid groupings and filters: Campaign</p>
-   * <p>UI name: <a
+   * <dd> <p>This metric is available only for outbound campaigns using the email,
+   * WhatsApp, and web notification delivery modes. </p> <p>Unit: Count</p> <p>Valid
+   * metric filter key: CAMPAIGN_INTERACTION_EVENT_TYPE</p> <p>Valid groupings and
+   * filters: Browser Name, Campaign, Channel,
+   * contact/segmentAttributes/connect:Subtype, Device Model, Device Type, Web
+   * Notification Type</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-interactions">Campaign
    * interactions</a> </p> </dd> <dt>CAMPAIGN_PROGRESS_RATE</dt> <dd> <p>This metric
    * is only available for outbound campaigns initiated using a customer segment. It
@@ -967,31 +973,34 @@ class GetMetricDataV2Request : public ConnectRequest {
    * filter key: <code>ANSWERING_MACHINE_DETECTION_STATUS</code>,
    * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code>, <code>DISCONNECT_REASON</code> </p>
    * <p>Valid groupings and filters: Agent, Answering Machine Detection Status,
-   * Campaign, Campaign Delivery EventType, Channel,
-   * contact/segmentAttributes/connect:Subtype, Disconnect Reason, Queue, Routing
-   * Profile</p> <p>UI name: <a
+   * Browser Name, Campaign, Campaign Delivery EventType, Channel,
+   * contact/segmentAttributes/connect:Subtype, Device Model, Device Type, Disconnect
+   * Reason, Queue, Routing Profile, Web Notification Type</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#delivery-attempts">Delivery
    * attempts</a> </p>  <p>Campaign Delivery EventType filter and grouping are
-   * only available for SMS and Email campaign delivery modes. Agent, Queue, Routing
-   * Profile, Answering Machine Detection Status and Disconnect Reason are only
-   * available for agent assisted voice and automated voice delivery modes. </p>
-   *  </dd> <dt>DELIVERY_ATTEMPT_DISPOSITION_RATE</dt> <dd> <p>This metric is
-   * available only for outbound campaigns. Dispositions for the agent assisted voice
-   * and automated voice delivery modes are only available with answering machine
-   * detection enabled.</p> <p>Unit: Percent</p> <p>Valid metric filter key:
+   * only available for SMS, Email, WhatsApp, and web notification campaign delivery
+   * modes. Agent, Queue, Routing Profile, Answering Machine Detection Status and
+   * Disconnect Reason are only available for agent assisted voice and automated
+   * voice delivery modes. </p>  </dd>
+   * <dt>DELIVERY_ATTEMPT_DISPOSITION_RATE</dt> <dd> <p>This metric is available only
+   * for outbound campaigns. Dispositions for the agent assisted voice and automated
+   * voice delivery modes are only available with answering machine detection
+   * enabled.</p> <p>Unit: Percent</p> <p>Valid metric filter key:
    * <code>ANSWERING_MACHINE_DETECTION_STATUS</code>,
    * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code>, <code>DISCONNECT_REASON</code> </p>
    * <p>Valid groupings and filters: Agent, Answering Machine Detection Status,
-   * Campaign, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason,
-   * Queue, Routing Profile</p> <p>UI name: <a
+   * Browser Name, Campaign, Channel, contact/segmentAttributes/connect:Subtype,
+   * Device Model, Device Type, Disconnect Reason, Queue, Routing Profile, Web
+   * Notification Type</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#delivery-attempt-disposition-rate">Delivery
    * attempt disposition rate</a> </p>  <p>Campaign Delivery Event Type filter
-   * and grouping are only available for SMS and Email campaign delivery modes.
-   * Agent, Queue, Routing Profile, Answering Machine Detection Status and Disconnect
-   * Reason are only available for agent assisted voice and automated voice delivery
-   * modes. </p>  </dd> <dt>EVALUATIONS_PERFORMED</dt> <dd> <p>Unit: Count</p>
-   * <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form
-   * ID, Evaluation Source, Form Version, Queue, Routing Profile</p> <p>UI name: <a
+   * and grouping are only available for SMS, Email, WhatsApp, and web notification
+   * campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine
+   * Detection Status and Disconnect Reason are only available for agent assisted
+   * voice and automated voice delivery modes. </p>  </dd>
+   * <dt>EVALUATIONS_PERFORMED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
+   * filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source,
+   * Form Version, Queue, Routing Profile</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluations-performed">Evaluations
    * performed</a> </p> </dd> <dt>FLOWS_OUTCOME</dt> <dd> <p>Unit: Count</p> <p>Valid
    * groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow

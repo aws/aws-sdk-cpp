@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/AzureUpdateConfiguration.h>
 #include <aws/securityhub/model/JiraCloudUpdateConfiguration.h>
 #include <aws/securityhub/model/ServiceNowUpdateConfiguration.h>
 
@@ -70,12 +71,34 @@ class ProviderUpdateConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The parameters required to update the configuration for a Microsoft Azure
+   * CSPM integration.</p>
+   */
+  inline const AzureUpdateConfiguration& GetAzure() const { return m_azure; }
+  inline bool AzureHasBeenSet() const { return m_azureHasBeenSet; }
+  template <typename AzureT = AzureUpdateConfiguration>
+  void SetAzure(AzureT&& value) {
+    m_azureHasBeenSet = true;
+    m_azure = std::forward<AzureT>(value);
+  }
+  template <typename AzureT = AzureUpdateConfiguration>
+  ProviderUpdateConfiguration& WithAzure(AzureT&& value) {
+    SetAzure(std::forward<AzureT>(value));
+    return *this;
+  }
+  ///@}
  private:
   JiraCloudUpdateConfiguration m_jiraCloud;
 
   ServiceNowUpdateConfiguration m_serviceNow;
+
+  AzureUpdateConfiguration m_azure;
   bool m_jiraCloudHasBeenSet = false;
   bool m_serviceNowHasBeenSet = false;
+  bool m_azureHasBeenSet = false;
 };
 
 }  // namespace Model
