@@ -139,10 +139,7 @@ TEST_F(S3ExpressTransferTests, DirectoryBucketSinglePartUpload) {
     body->write(chunk.data(), static_cast<std::streamsize>(std::min<uint64_t>(chunk.size(), size - written)));
   }
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_directoryBucket);
-  putRequest.SetKey(key);
-  UploadRequest request(putRequest, body);
+  UploadRequest request(s_directoryBucket, key, body);
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -184,10 +181,7 @@ TEST_F(S3ExpressTransferTests, DirectoryBucketSinglePartDownload) {
   };
   auto receiver = Aws::MakeShared<CountingReceiver>(ALLOCATION_TAG);
 
-  Aws::S3::Model::GetObjectRequest getRequest;
-  getRequest.SetBucket(s_directoryBucket);
-  getRequest.SetKey(key);
-  DownloadRequest request(getRequest, receiver);
+  DownloadRequest request(s_directoryBucket, key, receiver);
 
   S3TransferManager manager(MakeConfig());
   DownloadOutcome outcome = manager.Download(request).CompletionFuture().get();
@@ -207,10 +201,7 @@ TEST_F(S3ExpressTransferTests, DirectoryBucketMultipartUpload) {
     body->write(chunk.data(), static_cast<std::streamsize>(std::min<uint64_t>(chunk.size(), size - written)));
   }
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_directoryBucket);
-  putRequest.SetKey(key);
-  UploadRequest request(putRequest, body);
+  UploadRequest request(s_directoryBucket, key, body);
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();

@@ -6,8 +6,8 @@
  * cleanup), concurrent transfers on a shared manager, SSE-KMS round trip, and error surface
  * (parsed error types, RequestId presence, IfNoneMatch → 304).
  */
-#include "RecordingProgressListener.h"
-#include "S3TransferTestFixture.h"
+#include <RecordingProgressListener.h>
+#include <S3TransferTestFixture.h>
 
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/StringUtils.h>
@@ -42,10 +42,7 @@ TEST_F(TransferManagerTests, UploadCancelViaHandle) {
   Aws::String sourcePath = MakeLocalFileOfSize(size, "cancel-upload");
 
   auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  UploadRequest request(putRequest, sourcePath, {listener});
+  UploadRequest request(s_bucketName, key, sourcePath, {listener});
 
   S3TransferManager manager(MakeConfig());
   UploadHandle handle = manager.Upload(request);
@@ -53,12 +50,12 @@ TEST_F(TransferManagerTests, UploadCancelViaHandle) {
   UploadOutcome outcome = handle.CompletionFuture().get();
 
   if (!outcome.IsSuccess()) {
-    EXPECT_EQ(1, listener->failedCount.load());
-    EXPECT_EQ(0, listener->completeCount.load());
+    EXPECT_EQ(1u, listener->failedCount.load());
+    EXPECT_EQ(0u, listener->completeCount.load());
   } else {
     // The transfer beat the cancel — lifecycle must still be coherent.
-    EXPECT_EQ(1, listener->completeCount.load());
-    EXPECT_EQ(0, listener->failedCount.load());
+    EXPECT_EQ(1u, listener->completeCount.load());
+    EXPECT_EQ(0u, listener->failedCount.load());
   }
 
   Aws::FileSystem::RemoveFileIfExists(sourcePath.c_str());
@@ -79,10 +76,7 @@ TEST_F(TransferManagerTests, DownloadCancelViaHandle) {
 
   Aws::String destPath = LocalTempPath("cancel-download");
   auto listener = Aws::MakeShared<RecordingDownloadListener>(ALLOCATION_TAG);
-  Aws::S3::Model::GetObjectRequest getRequest;
-  getRequest.SetBucket(s_bucketName);
-  getRequest.SetKey(key);
-  DownloadRequest request(getRequest, destPath, {listener});
+  DownloadRequest request(s_bucketName, key, destPath, {listener});
 
   S3TransferManager manager(MakeConfig());
   DownloadHandle handle = manager.Download(request);
@@ -90,13 +84,13 @@ TEST_F(TransferManagerTests, DownloadCancelViaHandle) {
   DownloadOutcome outcome = handle.CompletionFuture().get();
 
   if (!outcome.IsSuccess()) {
-    EXPECT_EQ(1, listener->failedCount.load());
-    EXPECT_EQ(0, listener->completeCount.load());
+    EXPECT_EQ(1u, listener->failedCount.load());
+    EXPECT_EQ(0u, listener->completeCount.load());
     // Per SEP: destination file must not be left behind on failed download.
     EXPECT_FALSE(FileExists(destPath));
   } else {
-    EXPECT_EQ(1, listener->completeCount.load());
-    EXPECT_EQ(0, listener->failedCount.load());
+    EXPECT_EQ(1u, listener->completeCount.load());
+    EXPECT_EQ(0u, listener->failedCount.load());
   }
 
   Aws::FileSystem::RemoveFileIfExists(sourcePath.c_str());
@@ -110,10 +104,7 @@ TEST_F(TransferManagerTests, CancelAbortsServerSideMultipartUpload) {
   Aws::String sourcePath = MakeLocalFileOfSize(size, "cancel-orphan");
 
   auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  UploadRequest request(putRequest, sourcePath, {listener});
+  UploadRequest request(s_bucketName, key, sourcePath, {listener});
 
   S3TransferManager manager(MakeConfig());
   UploadHandle handle = manager.Upload(request);
@@ -185,10 +176,7 @@ TEST_F(TransferManagerTests, ParallelUploadsShareManagerCleanly) {
     keys[i] = UniqueKey();
     listeners[i] = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
 
-    Aws::S3::Model::PutObjectRequest putRequest;
-    putRequest.SetBucket(s_bucketName);
-    putRequest.SetKey(keys[i]);
-    UploadRequest request(putRequest, sourcePaths[i], {listeners[i]});
+    UploadRequest request(s_bucketName, keys[i], sourcePaths[i], {listeners[i]});
     handles.emplace_back(manager.Upload(request));
   }
 
@@ -203,9 +191,9 @@ TEST_F(TransferManagerTests, ParallelUploadsShareManagerCleanly) {
   for (size_t i = 0; i < kNumTransfers; ++i) {
     ASSERT_TRUE(outcomes[i].IsSuccess())
         << "transfer " << i << " failed: " << outcomes[i].GetError().GetMessage();
-    EXPECT_EQ(1, listeners[i]->initiatedCount.load()) << "transfer " << i;
-    EXPECT_EQ(1, listeners[i]->completeCount.load()) << "transfer " << i;
-    EXPECT_EQ(0, listeners[i]->failedCount.load()) << "transfer " << i;
+    EXPECT_EQ(1u, listeners[i]->initiatedCount.load()) << "transfer " << i;
+    EXPECT_EQ(1u, listeners[i]->completeCount.load()) << "transfer " << i;
+    EXPECT_EQ(0u, listeners[i]->failedCount.load()) << "transfer " << i;
     EXPECT_FALSE(listeners[i]->sawBytesBeforeInitiated.load()) << "transfer " << i;
     EXPECT_FALSE(listeners[i]->sawNonMonotonic.load()) << "transfer " << i;
     EXPECT_EQ(sizes[i], listeners[i]->maxTransferredBytes.load()) << "transfer " << i;
@@ -268,10 +256,7 @@ TEST_F(TransferManagerTests, ParallelDownloadsShareManagerCleanly) {
     destPaths[i] = LocalTempPath(tag.str());
     listeners[i] = Aws::MakeShared<RecordingDownloadListener>(ALLOCATION_TAG);
 
-    Aws::S3::Model::GetObjectRequest getRequest;
-    getRequest.SetBucket(s_bucketName);
-    getRequest.SetKey(keys[i]);
-    DownloadRequest request(getRequest, destPaths[i], {listeners[i]});
+    DownloadRequest request(s_bucketName, keys[i], destPaths[i], {listeners[i]});
     handles.emplace_back(manager.Download(request));
   }
 
@@ -284,9 +269,9 @@ TEST_F(TransferManagerTests, ParallelDownloadsShareManagerCleanly) {
   for (size_t i = 0; i < kNumTransfers; ++i) {
     ASSERT_TRUE(outcomes[i].IsSuccess())
         << "transfer " << i << " failed: " << outcomes[i].GetError().GetMessage();
-    EXPECT_EQ(1, listeners[i]->initiatedCount.load()) << "transfer " << i;
-    EXPECT_EQ(1, listeners[i]->completeCount.load()) << "transfer " << i;
-    EXPECT_EQ(0, listeners[i]->failedCount.load()) << "transfer " << i;
+    EXPECT_EQ(1u, listeners[i]->initiatedCount.load()) << "transfer " << i;
+    EXPECT_EQ(1u, listeners[i]->completeCount.load()) << "transfer " << i;
+    EXPECT_EQ(0u, listeners[i]->failedCount.load()) << "transfer " << i;
     EXPECT_EQ(sourceHashes[i], FileSha256(destPaths[i]))
         << "transfer " << i << " — downloaded body must match its source "
         << "(if this fails, the manager is routing bytes to the wrong destination)";
@@ -309,16 +294,12 @@ TEST_F(TransferManagerTests, SseKmsRoundTrip) {
   const Aws::String sourceHash = FileSha256(sourcePath);
 
   // Upload with SSE-KMS (aws_kms). No KMS key ID means S3 uses the account-default aws/s3 CMK.
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  putRequest.SetServerSideEncryption(Aws::S3::Model::ServerSideEncryption::aws_kms);
-  UploadRequest uploadRequest(putRequest, sourcePath);
+  UploadRequest uploadRequest(s_bucketName, key, sourcePath);
+  uploadRequest.SetServerSideEncryption(Aws::S3::Model::ServerSideEncryption::aws_kms);
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome uploadOutcome = manager.Upload(uploadRequest).CompletionFuture().get();
   AWS_ASSERT_SUCCESS(uploadOutcome);
-  ASSERT_TRUE(uploadOutcome.GetResult().S3ResultHasBeenSet());
   EXPECT_EQ(Aws::S3::Model::ServerSideEncryption::aws_kms, uploadOutcome.GetResult().GetS3Result().GetServerSideEncryption());
 
   // HeadObject via the plain S3 client (no SSE headers needed for SSE-KMS — S3 decrypts server-side).
@@ -331,10 +312,7 @@ TEST_F(TransferManagerTests, SseKmsRoundTrip) {
 
   // Download. Because SSE-KMS decrypts server-side, no encryption headers are needed on GetObject.
   Aws::String destPath = LocalTempPath("sse-kms-dest");
-  Aws::S3::Model::GetObjectRequest getRequest;
-  getRequest.SetBucket(s_bucketName);
-  getRequest.SetKey(key);
-  DownloadRequest downloadRequest(getRequest, destPath);
+  DownloadRequest downloadRequest(s_bucketName, key, destPath);
 
   DownloadOutcome downloadOutcome = manager.Download(downloadRequest).CompletionFuture().get();
   AWS_ASSERT_SUCCESS(downloadOutcome);
@@ -351,10 +329,7 @@ TEST_F(TransferManagerTests, UploadToNonexistentBucketSurfacesParsedError) {
       "tm2-nonexistent-" + Aws::Utils::StringUtils::ToLower(Aws::String(Aws::Utils::UUID::RandomUUID()).c_str());
   auto body = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG, "Test Object");
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(nonexistentBucket);
-  putRequest.SetKey("some-key");
-  UploadRequest request(putRequest, body);
+  UploadRequest request(nonexistentBucket, "some-key", body);
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -368,10 +343,7 @@ TEST_F(TransferManagerTests, DownloadOfNonexistentKeySurfacesParsedError) {
   const Aws::String key = UniqueKey();  // never uploaded
   const Aws::String destPath = LocalTempPath("nosuchkey");
 
-  Aws::S3::Model::GetObjectRequest getRequest;
-  getRequest.SetBucket(s_bucketName);
-  getRequest.SetKey(key);
-  DownloadRequest request(getRequest, destPath);
+  DownloadRequest request(s_bucketName, key, destPath);
 
   S3TransferManager manager(MakeConfig());
   DownloadOutcome outcome = manager.Download(request).CompletionFuture().get();
@@ -398,11 +370,8 @@ TEST_F(TransferManagerTests, DownloadWithIfNoneMatchReturns304) {
 
   // Conditional GET with the same ETag must produce HTTP 304 (as an error outcome).
   const Aws::String destPath = LocalTempPath("not-modified");
-  Aws::S3::Model::GetObjectRequest getRequest;
-  getRequest.SetBucket(s_bucketName);
-  getRequest.SetKey(key);
-  getRequest.SetIfNoneMatch(etag);
-  DownloadRequest request(getRequest, destPath);
+  DownloadRequest request(s_bucketName, key, destPath);
+  request.SetIfNoneMatch(etag);
 
   S3TransferManager manager(MakeConfig());
   DownloadOutcome outcome = manager.Download(request).CompletionFuture().get();

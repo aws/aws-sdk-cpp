@@ -4,8 +4,7 @@
  */
 #pragma once
 
-#include <aws/s3-transfer/UploadProgressListener.h>
-#include <aws/s3-transfer/DownloadProgressListener.h>
+#include <aws/s3-transfer/ProgressListener.h>
 
 #include <atomic>
 #include <cstdint>
@@ -21,10 +20,10 @@ namespace S3TransferIntegrationTests {
 template <typename ListenerBase, typename RequestT, typename SnapshotT>
 class RecordingProgressListenerT : public ListenerBase {
  public:
-  std::atomic<int> initiatedCount{0};
-  std::atomic<int> bytesTransferredCount{0};
-  std::atomic<int> completeCount{0};
-  std::atomic<int> failedCount{0};
+  std::atomic<size_t> initiatedCount{0};
+  std::atomic<size_t> bytesTransferredCount{0};
+  std::atomic<size_t> completeCount{0};
+  std::atomic<size_t> failedCount{0};
   std::atomic<uint64_t> lastTransferredBytes{0};
   std::atomic<uint64_t> maxTransferredBytes{0};
   std::atomic<bool> sawBytesBeforeInitiated{false};

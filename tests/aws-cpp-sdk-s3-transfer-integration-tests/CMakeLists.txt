@@ -14,6 +14,7 @@ set(S3_TRANSFER_TEST_APPLICATION_INCLUDES
     "${AWS_NATIVE_SDK_ROOT}/generated/src/aws-cpp-sdk-s3/include/"
     "${AWS_NATIVE_SDK_ROOT}/src/aws-cpp-sdk-s3-transfer/include/"
     "${AWS_NATIVE_SDK_ROOT}/tests/testing-resources/include/"
+    "${CMAKE_CURRENT_SOURCE_DIR}"
 )
 
 include_directories(${S3_TRANSFER_TEST_APPLICATION_INCLUDES})
