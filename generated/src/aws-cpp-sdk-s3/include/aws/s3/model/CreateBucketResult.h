@@ -29,7 +29,12 @@ class CreateBucketResult {
 
   ///@{
   /**
-   * <p>A forward slash followed by the name of the bucket.</p>
+   * <p>A forward slash followed by the name of the bucket for all account regional
+   * namespace buckets and all global general purpose buckets created in us-east-1.
+   * For example, <code>/amzn-s3-demo-bucket</code>. For global general purpose
+   * buckets created in other Amazon Web Services Regions, the Location field is the
+   * global endpoint URL. For example,
+   * <code>http://amzn-s3-demo-bucket.s3.amazonaws.com/</code>.</p>
    */
   inline const Aws::String& GetLocation() const { return m_location; }
   template <typename LocationT = Aws::String>

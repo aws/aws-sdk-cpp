@@ -20,14 +20,22 @@
 #include <aws/sustainability/model/EmissionsType.h>
 #include <aws/sustainability/model/EmissionsUnit.h>
 #include <aws/sustainability/model/EstimatedCarbonEmissions.h>
+#include <aws/sustainability/model/EstimatedWaterAllocation.h>
 #include <aws/sustainability/model/FilterExpression.h>
 #include <aws/sustainability/model/GetEstimatedCarbonEmissionsDimensionValuesRequest.h>
 #include <aws/sustainability/model/GetEstimatedCarbonEmissionsDimensionValuesResult.h>
 #include <aws/sustainability/model/GetEstimatedCarbonEmissionsRequest.h>
 #include <aws/sustainability/model/GetEstimatedCarbonEmissionsResult.h>
+#include <aws/sustainability/model/GetEstimatedWaterAllocationDimensionValuesRequest.h>
+#include <aws/sustainability/model/GetEstimatedWaterAllocationDimensionValuesResult.h>
+#include <aws/sustainability/model/GetEstimatedWaterAllocationRequest.h>
+#include <aws/sustainability/model/GetEstimatedWaterAllocationResult.h>
 #include <aws/sustainability/model/GranularityConfiguration.h>
 #include <aws/sustainability/model/TimeGranularity.h>
 #include <aws/sustainability/model/TimePeriod.h>
+#include <aws/sustainability/model/WaterAllocation.h>
+#include <aws/sustainability/model/WaterAllocationType.h>
+#include <aws/sustainability/model/WaterAllocationUnit.h>
 
 using SustainabilityIncludeTest = ::testing::Test;
 

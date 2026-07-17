@@ -7,7 +7,6 @@
 #include <aws/chime-sdk-voice/ChimeSDKVoiceClient.h>
 #include <aws/chime-sdk-voice/model/ListPhoneNumberOrdersPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/ListPhoneNumbersPaginationTraits.h>
-#include <aws/chime-sdk-voice/model/ListProxySessionsPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/ListSipMediaApplicationsPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/ListSipRulesPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/ListVoiceConnectorGroupsPaginationTraits.h>
@@ -25,8 +24,6 @@ using ListPhoneNumberOrdersPaginator =
                                       Pagination::ListPhoneNumberOrdersPaginationTraits<ChimeSDKVoiceClient>>;
 using ListPhoneNumbersPaginator = Aws::Utils::Pagination::Paginator<ChimeSDKVoiceClient, Model::ListPhoneNumbersRequest,
                                                                     Pagination::ListPhoneNumbersPaginationTraits<ChimeSDKVoiceClient>>;
-using ListProxySessionsPaginator = Aws::Utils::Pagination::Paginator<ChimeSDKVoiceClient, Model::ListProxySessionsRequest,
-                                                                     Pagination::ListProxySessionsPaginationTraits<ChimeSDKVoiceClient>>;
 using ListSipMediaApplicationsPaginator =
     Aws::Utils::Pagination::Paginator<ChimeSDKVoiceClient, Model::ListSipMediaApplicationsRequest,
                                       Pagination::ListSipMediaApplicationsPaginationTraits<ChimeSDKVoiceClient>>;

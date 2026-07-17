@@ -21,6 +21,8 @@
 /* Service model headers required in SustainabilityClient header */
 #include <aws/sustainability/model/GetEstimatedCarbonEmissionsDimensionValuesResult.h>
 #include <aws/sustainability/model/GetEstimatedCarbonEmissionsResult.h>
+#include <aws/sustainability/model/GetEstimatedWaterAllocationDimensionValuesResult.h>
+#include <aws/sustainability/model/GetEstimatedWaterAllocationResult.h>
 /* End of service model headers required in SustainabilityClient header */
 
 namespace Aws {
@@ -56,17 +58,24 @@ namespace Model {
 /* Service model forward declarations required in SustainabilityClient header */
 class GetEstimatedCarbonEmissionsRequest;
 class GetEstimatedCarbonEmissionsDimensionValuesRequest;
+class GetEstimatedWaterAllocationRequest;
+class GetEstimatedWaterAllocationDimensionValuesRequest;
 /* End of service model forward declarations required in SustainabilityClient header */
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<GetEstimatedCarbonEmissionsResult, SustainabilityError> GetEstimatedCarbonEmissionsOutcome;
 typedef Aws::Utils::Outcome<GetEstimatedCarbonEmissionsDimensionValuesResult, SustainabilityError>
     GetEstimatedCarbonEmissionsDimensionValuesOutcome;
+typedef Aws::Utils::Outcome<GetEstimatedWaterAllocationResult, SustainabilityError> GetEstimatedWaterAllocationOutcome;
+typedef Aws::Utils::Outcome<GetEstimatedWaterAllocationDimensionValuesResult, SustainabilityError>
+    GetEstimatedWaterAllocationDimensionValuesOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
 typedef std::future<GetEstimatedCarbonEmissionsOutcome> GetEstimatedCarbonEmissionsOutcomeCallable;
 typedef std::future<GetEstimatedCarbonEmissionsDimensionValuesOutcome> GetEstimatedCarbonEmissionsDimensionValuesOutcomeCallable;
+typedef std::future<GetEstimatedWaterAllocationOutcome> GetEstimatedWaterAllocationOutcomeCallable;
+typedef std::future<GetEstimatedWaterAllocationDimensionValuesOutcome> GetEstimatedWaterAllocationDimensionValuesOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -80,6 +89,13 @@ typedef std::function<void(const SustainabilityClient*, const Model::GetEstimate
                            const Model::GetEstimatedCarbonEmissionsDimensionValuesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetEstimatedCarbonEmissionsDimensionValuesResponseReceivedHandler;
+typedef std::function<void(const SustainabilityClient*, const Model::GetEstimatedWaterAllocationRequest&,
+                           const Model::GetEstimatedWaterAllocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetEstimatedWaterAllocationResponseReceivedHandler;
+typedef std::function<void(const SustainabilityClient*, const Model::GetEstimatedWaterAllocationDimensionValuesRequest&,
+                           const Model::GetEstimatedWaterAllocationDimensionValuesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetEstimatedWaterAllocationDimensionValuesResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace Sustainability
 }  // namespace Aws

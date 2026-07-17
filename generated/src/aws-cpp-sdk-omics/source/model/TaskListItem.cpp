@@ -66,6 +66,10 @@ TaskListItem& TaskListItem::operator=(JsonView jsonValue) {
     m_instanceType = jsonValue.GetString("instanceType");
     m_instanceTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("uuid")) {
+    m_uuid = jsonValue.GetString("uuid");
+    m_uuidHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -118,6 +122,10 @@ JsonValue TaskListItem::Jsonize() const {
 
   if (m_instanceTypeHasBeenSet) {
     payload.WithString("instanceType", m_instanceType);
+  }
+
+  if (m_uuidHasBeenSet) {
+    payload.WithString("uuid", m_uuid);
   }
 
   return payload;

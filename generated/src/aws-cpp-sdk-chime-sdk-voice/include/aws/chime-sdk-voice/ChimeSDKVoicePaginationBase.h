@@ -7,7 +7,6 @@
 
 #include <aws/chime-sdk-voice/model/ListPhoneNumberOrdersPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/ListPhoneNumbersPaginationTraits.h>
-#include <aws/chime-sdk-voice/model/ListProxySessionsPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/ListSipMediaApplicationsPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/ListSipRulesPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/ListVoiceConnectorGroupsPaginationTraits.h>
@@ -48,18 +47,6 @@ class ChimeSDKVoicePaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPhoneNumbersRequest,
                                              Pagination::ListPhoneNumbersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
-  }
-
-  /**
-   * Create a paginator for ListProxySessions operation
-   */
-  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProxySessionsRequest,
-                                    Pagination::ListProxySessionsPaginationTraits<DerivedClient>>
-  ListProxySessionsPaginator(const Model::ListProxySessionsRequest& request) {
-    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
-    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProxySessionsRequest,
-                                             Pagination::ListProxySessionsPaginationTraits<DerivedClient>>{
-        static_cast<DerivedClient*>(this), request};
   }
 
   /**

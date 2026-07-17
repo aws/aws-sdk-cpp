@@ -41,7 +41,6 @@
 #include <aws/elasticmapreduce/model/CancelStepsRequest.h>
 #include <aws/elasticmapreduce/model/CancelStepsRequestStatus.h>
 #include <aws/elasticmapreduce/model/CancelStepsResult.h>
-#include <aws/elasticmapreduce/model/CertificateAuthority.h>
 #include <aws/elasticmapreduce/model/CloudWatchAlarmDefinition.h>
 #include <aws/elasticmapreduce/model/CloudWatchLogConfiguration.h>
 #include <aws/elasticmapreduce/model/Cluster.h>

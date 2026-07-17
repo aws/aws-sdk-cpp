@@ -77,6 +77,22 @@ class PhoneNumber {
   ///@}
 
   ///@{
+
+  inline const Aws::String& GetPhoneNumberArn() const { return m_phoneNumberArn; }
+  inline bool PhoneNumberArnHasBeenSet() const { return m_phoneNumberArnHasBeenSet; }
+  template <typename PhoneNumberArnT = Aws::String>
+  void SetPhoneNumberArn(PhoneNumberArnT&& value) {
+    m_phoneNumberArnHasBeenSet = true;
+    m_phoneNumberArn = std::forward<PhoneNumberArnT>(value);
+  }
+  template <typename PhoneNumberArnT = Aws::String>
+  PhoneNumber& WithPhoneNumberArn(PhoneNumberArnT&& value) {
+    SetPhoneNumberArn(std::forward<PhoneNumberArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The phone number's country. Format: ISO 3166-1 alpha-2.</p>
    */
@@ -312,6 +328,8 @@ class PhoneNumber {
 
   Aws::String m_e164PhoneNumber;
 
+  Aws::String m_phoneNumberArn;
+
   Aws::String m_country;
 
   PhoneNumberType m_type{PhoneNumberType::NOT_SET};
@@ -339,6 +357,7 @@ class PhoneNumber {
   Aws::String m_name;
   bool m_phoneNumberIdHasBeenSet = false;
   bool m_e164PhoneNumberHasBeenSet = false;
+  bool m_phoneNumberArnHasBeenSet = false;
   bool m_countryHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_productTypeHasBeenSet = false;

@@ -90,10 +90,6 @@ Session& Session::operator=(JsonView jsonValue) {
     m_sessionIdleTimeoutInMinutes = jsonValue.GetInt64("SessionIdleTimeoutInMinutes");
     m_sessionIdleTimeoutInMinutesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("CertificateAuthority")) {
-    m_certificateAuthority = jsonValue.GetObject("CertificateAuthority");
-    m_certificateAuthorityHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("ServerUrl")) {
     m_serverUrl = jsonValue.GetString("ServerUrl");
     m_serverUrlHasBeenSet = true;
@@ -182,10 +178,6 @@ JsonValue Session::Jsonize() const {
 
   if (m_sessionIdleTimeoutInMinutesHasBeenSet) {
     payload.WithInt64("SessionIdleTimeoutInMinutes", m_sessionIdleTimeoutInMinutes);
-  }
-
-  if (m_certificateAuthorityHasBeenSet) {
-    payload.WithObject("CertificateAuthority", m_certificateAuthority.Jsonize());
   }
 
   if (m_serverUrlHasBeenSet) {

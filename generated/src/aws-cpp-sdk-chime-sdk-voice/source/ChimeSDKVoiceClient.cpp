@@ -11,7 +11,6 @@
 #include <aws/chime-sdk-voice/model/BatchDeletePhoneNumberRequest.h>
 #include <aws/chime-sdk-voice/model/BatchUpdatePhoneNumberRequest.h>
 #include <aws/chime-sdk-voice/model/CreatePhoneNumberOrderRequest.h>
-#include <aws/chime-sdk-voice/model/CreateProxySessionRequest.h>
 #include <aws/chime-sdk-voice/model/CreateSipMediaApplicationCallRequest.h>
 #include <aws/chime-sdk-voice/model/CreateSipMediaApplicationRequest.h>
 #include <aws/chime-sdk-voice/model/CreateSipRuleRequest.h>
@@ -20,14 +19,12 @@
 #include <aws/chime-sdk-voice/model/CreateVoiceProfileDomainRequest.h>
 #include <aws/chime-sdk-voice/model/CreateVoiceProfileRequest.h>
 #include <aws/chime-sdk-voice/model/DeletePhoneNumberRequest.h>
-#include <aws/chime-sdk-voice/model/DeleteProxySessionRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteSipMediaApplicationRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteSipRuleRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorEmergencyCallingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorExternalSystemsConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorGroupRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorOriginationRequest.h>
-#include <aws/chime-sdk-voice/model/DeleteVoiceConnectorProxyRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorStreamingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorTerminationCredentialsRequest.h>
@@ -40,7 +37,6 @@
 #include <aws/chime-sdk-voice/model/GetPhoneNumberOrderRequest.h>
 #include <aws/chime-sdk-voice/model/GetPhoneNumberRequest.h>
 #include <aws/chime-sdk-voice/model/GetPhoneNumberSettingsRequest.h>
-#include <aws/chime-sdk-voice/model/GetProxySessionRequest.h>
 #include <aws/chime-sdk-voice/model/GetSipMediaApplicationLoggingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/GetSipMediaApplicationRequest.h>
 #include <aws/chime-sdk-voice/model/GetSipRuleRequest.h>
@@ -50,7 +46,6 @@
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorGroupRequest.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorLoggingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorOriginationRequest.h>
-#include <aws/chime-sdk-voice/model/GetVoiceConnectorProxyRequest.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorRequest.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorStreamingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorTerminationHealthRequest.h>
@@ -61,7 +56,6 @@
 #include <aws/chime-sdk-voice/model/ListAvailableVoiceConnectorRegionsRequest.h>
 #include <aws/chime-sdk-voice/model/ListPhoneNumberOrdersRequest.h>
 #include <aws/chime-sdk-voice/model/ListPhoneNumbersRequest.h>
-#include <aws/chime-sdk-voice/model/ListProxySessionsRequest.h>
 #include <aws/chime-sdk-voice/model/ListSipMediaApplicationsRequest.h>
 #include <aws/chime-sdk-voice/model/ListSipRulesRequest.h>
 #include <aws/chime-sdk-voice/model/ListSupportedPhoneNumberCountriesRequest.h>
@@ -76,7 +70,6 @@
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorExternalSystemsConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorLoggingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorOriginationRequest.h>
-#include <aws/chime-sdk-voice/model/PutVoiceConnectorProxyRequest.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorStreamingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorTerminationCredentialsRequest.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorTerminationRequest.h>
@@ -91,7 +84,6 @@
 #include <aws/chime-sdk-voice/model/UpdateGlobalSettingsRequest.h>
 #include <aws/chime-sdk-voice/model/UpdatePhoneNumberRequest.h>
 #include <aws/chime-sdk-voice/model/UpdatePhoneNumberSettingsRequest.h>
-#include <aws/chime-sdk-voice/model/UpdateProxySessionRequest.h>
 #include <aws/chime-sdk-voice/model/UpdateSipMediaApplicationCallRequest.h>
 #include <aws/chime-sdk-voice/model/UpdateSipMediaApplicationRequest.h>
 #include <aws/chime-sdk-voice/model/UpdateSipRuleRequest.h>
@@ -352,25 +344,6 @@ CreatePhoneNumberOrderOutcome ChimeSDKVoiceClient::CreatePhoneNumberOrder(const 
                             : CreatePhoneNumberOrderOutcome(std::move(result.GetError()));
 }
 
-CreateProxySessionOutcome ChimeSDKVoiceClient::CreateProxySession(const CreateProxySessionRequest& request) const {
-  if (!request.VoiceConnectorIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("CreateProxySession", "Required field: VoiceConnectorId, is not set");
-    return CreateProxySessionOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                "Missing required field [VoiceConnectorId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connectors/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/proxy-sessions");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateProxySessionOutcome(result.GetResultWithOwnership())
-                            : CreateProxySessionOutcome(std::move(result.GetError()));
-}
-
 CreateSipMediaApplicationOutcome ChimeSDKVoiceClient::CreateSipMediaApplication(const CreateSipMediaApplicationRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -472,31 +445,6 @@ DeletePhoneNumberOutcome ChimeSDKVoiceClient::DeletePhoneNumber(const DeletePhon
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeletePhoneNumberOutcome(result.GetResultWithOwnership())
                             : DeletePhoneNumberOutcome(std::move(result.GetError()));
-}
-
-DeleteProxySessionOutcome ChimeSDKVoiceClient::DeleteProxySession(const DeleteProxySessionRequest& request) const {
-  if (!request.VoiceConnectorIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteProxySession", "Required field: VoiceConnectorId, is not set");
-    return DeleteProxySessionOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                "Missing required field [VoiceConnectorId]", false));
-  }
-  if (!request.ProxySessionIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteProxySession", "Required field: ProxySessionId, is not set");
-    return DeleteProxySessionOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                "Missing required field [ProxySessionId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connectors/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/proxy-sessions/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProxySessionId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
-  return result.IsSuccess() ? DeleteProxySessionOutcome(result.GetResultWithOwnership())
-                            : DeleteProxySessionOutcome(std::move(result.GetError()));
 }
 
 DeleteSipMediaApplicationOutcome ChimeSDKVoiceClient::DeleteSipMediaApplication(const DeleteSipMediaApplicationRequest& request) const {
@@ -628,25 +576,6 @@ DeleteVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::DeleteVoiceConnector
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteVoiceConnectorOriginationOutcome(result.GetResultWithOwnership())
                             : DeleteVoiceConnectorOriginationOutcome(std::move(result.GetError()));
-}
-
-DeleteVoiceConnectorProxyOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorProxy(const DeleteVoiceConnectorProxyRequest& request) const {
-  if (!request.VoiceConnectorIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteVoiceConnectorProxy", "Required field: VoiceConnectorId, is not set");
-    return DeleteVoiceConnectorProxyOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(
-        ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connectors/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/programmable-numbers/proxy");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
-  return result.IsSuccess() ? DeleteVoiceConnectorProxyOutcome(result.GetResultWithOwnership())
-                            : DeleteVoiceConnectorProxyOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorStreamingConfiguration(
@@ -849,31 +778,6 @@ GetPhoneNumberSettingsOutcome ChimeSDKVoiceClient::GetPhoneNumberSettings(const 
                             : GetPhoneNumberSettingsOutcome(std::move(result.GetError()));
 }
 
-GetProxySessionOutcome ChimeSDKVoiceClient::GetProxySession(const GetProxySessionRequest& request) const {
-  if (!request.VoiceConnectorIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("GetProxySession", "Required field: VoiceConnectorId, is not set");
-    return GetProxySessionOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                             "Missing required field [VoiceConnectorId]", false));
-  }
-  if (!request.ProxySessionIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("GetProxySession", "Required field: ProxySessionId, is not set");
-    return GetProxySessionOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                             "Missing required field [ProxySessionId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connectors/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/proxy-sessions/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProxySessionId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? GetProxySessionOutcome(result.GetResultWithOwnership())
-                            : GetProxySessionOutcome(std::move(result.GetError()));
-}
-
 GetSipMediaApplicationOutcome ChimeSDKVoiceClient::GetSipMediaApplication(const GetSipMediaApplicationRequest& request) const {
   if (!request.SipMediaApplicationIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetSipMediaApplication", "Required field: SipMediaApplicationId, is not set");
@@ -1070,25 +974,6 @@ GetVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::GetVoiceConnectorOrigin
                             : GetVoiceConnectorOriginationOutcome(std::move(result.GetError()));
 }
 
-GetVoiceConnectorProxyOutcome ChimeSDKVoiceClient::GetVoiceConnectorProxy(const GetVoiceConnectorProxyRequest& request) const {
-  if (!request.VoiceConnectorIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("GetVoiceConnectorProxy", "Required field: VoiceConnectorId, is not set");
-    return GetVoiceConnectorProxyOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(
-        ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connectors/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/programmable-numbers/proxy");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? GetVoiceConnectorProxyOutcome(result.GetResultWithOwnership())
-                            : GetVoiceConnectorProxyOutcome(std::move(result.GetError()));
-}
-
 GetVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::GetVoiceConnectorStreamingConfiguration(
     const GetVoiceConnectorStreamingConfigurationRequest& request) const {
   if (!request.VoiceConnectorIdHasBeenSet()) {
@@ -1247,25 +1132,6 @@ ListPhoneNumbersOutcome ChimeSDKVoiceClient::ListPhoneNumbers(const ListPhoneNum
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListPhoneNumbersOutcome(result.GetResultWithOwnership())
                             : ListPhoneNumbersOutcome(std::move(result.GetError()));
-}
-
-ListProxySessionsOutcome ChimeSDKVoiceClient::ListProxySessions(const ListProxySessionsRequest& request) const {
-  if (!request.VoiceConnectorIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListProxySessions", "Required field: VoiceConnectorId, is not set");
-    return ListProxySessionsOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [VoiceConnectorId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connectors/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/proxy-sessions");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ListProxySessionsOutcome(result.GetResultWithOwnership())
-                            : ListProxySessionsOutcome(std::move(result.GetError()));
 }
 
 ListSipMediaApplicationsOutcome ChimeSDKVoiceClient::ListSipMediaApplications(const ListSipMediaApplicationsRequest& request) const {
@@ -1492,25 +1358,6 @@ PutVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::PutVoiceConnectorOrigin
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutVoiceConnectorOriginationOutcome(result.GetResultWithOwnership())
                             : PutVoiceConnectorOriginationOutcome(std::move(result.GetError()));
-}
-
-PutVoiceConnectorProxyOutcome ChimeSDKVoiceClient::PutVoiceConnectorProxy(const PutVoiceConnectorProxyRequest& request) const {
-  if (!request.VoiceConnectorIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("PutVoiceConnectorProxy", "Required field: VoiceConnectorId, is not set");
-    return PutVoiceConnectorProxyOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(
-        ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connectors/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/programmable-numbers/proxy");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? PutVoiceConnectorProxyOutcome(result.GetResultWithOwnership())
-                            : PutVoiceConnectorProxyOutcome(std::move(result.GetError()));
 }
 
 PutVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::PutVoiceConnectorStreamingConfiguration(
@@ -1770,31 +1617,6 @@ UpdatePhoneNumberSettingsOutcome ChimeSDKVoiceClient::UpdatePhoneNumberSettings(
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdatePhoneNumberSettingsOutcome(result.GetResultWithOwnership())
                             : UpdatePhoneNumberSettingsOutcome(std::move(result.GetError()));
-}
-
-UpdateProxySessionOutcome ChimeSDKVoiceClient::UpdateProxySession(const UpdateProxySessionRequest& request) const {
-  if (!request.VoiceConnectorIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateProxySession", "Required field: VoiceConnectorId, is not set");
-    return UpdateProxySessionOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                "Missing required field [VoiceConnectorId]", false));
-  }
-  if (!request.ProxySessionIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateProxySession", "Required field: ProxySessionId, is not set");
-    return UpdateProxySessionOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                "Missing required field [ProxySessionId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connectors/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/proxy-sessions/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProxySessionId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateProxySessionOutcome(result.GetResultWithOwnership())
-                            : UpdateProxySessionOutcome(std::move(result.GetError()));
 }
 
 UpdateSipMediaApplicationOutcome ChimeSDKVoiceClient::UpdateSipMediaApplication(const UpdateSipMediaApplicationRequest& request) const {

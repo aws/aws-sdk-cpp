@@ -294,6 +294,23 @@ class GetRunTaskResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The universally unique identifier (UUID) for the workflow task.</p>
+   */
+  inline const Aws::String& GetUuid() const { return m_uuid; }
+  template <typename UuidT = Aws::String>
+  void SetUuid(UuidT&& value) {
+    m_uuidHasBeenSet = true;
+    m_uuid = std::forward<UuidT>(value);
+  }
+  template <typename UuidT = Aws::String>
+  GetRunTaskResult& WithUuid(UuidT&& value) {
+    SetUuid(std::forward<UuidT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -342,6 +359,8 @@ class GetRunTaskResult {
 
   ImageDetails m_imageDetails;
 
+  Aws::String m_uuid;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_taskIdHasBeenSet = false;
@@ -360,6 +379,7 @@ class GetRunTaskResult {
   bool m_instanceTypeHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
   bool m_imageDetailsHasBeenSet = false;
+  bool m_uuidHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -170,14 +170,14 @@ class PhoneNumberOrder {
    * <p>The Firm Order Commitment (FOC) date for phone number porting orders. This
    * field is null if a phone number order is not a porting order.</p>
    */
-  inline const Aws::Utils::DateTime& GetFocDate() const { return m_focDate; }
+  inline const Aws::String& GetFocDate() const { return m_focDate; }
   inline bool FocDateHasBeenSet() const { return m_focDateHasBeenSet; }
-  template <typename FocDateT = Aws::Utils::DateTime>
+  template <typename FocDateT = Aws::String>
   void SetFocDate(FocDateT&& value) {
     m_focDateHasBeenSet = true;
     m_focDate = std::forward<FocDateT>(value);
   }
-  template <typename FocDateT = Aws::Utils::DateTime>
+  template <typename FocDateT = Aws::String>
   PhoneNumberOrder& WithFocDate(FocDateT&& value) {
     SetFocDate(std::forward<FocDateT>(value));
     return *this;
@@ -198,7 +198,7 @@ class PhoneNumberOrder {
 
   Aws::Utils::DateTime m_updatedTimestamp{};
 
-  Aws::Utils::DateTime m_focDate{};
+  Aws::String m_focDate;
   bool m_phoneNumberOrderIdHasBeenSet = false;
   bool m_productTypeHasBeenSet = false;
   bool m_statusHasBeenSet = false;

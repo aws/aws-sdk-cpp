@@ -28,5 +28,9 @@ Aws::String CreateVoiceConnectorGroupRequest::SerializePayload() const {
     payload.WithArray("VoiceConnectorItems", std::move(voiceConnectorItemsJsonList));
   }
 
+  if (m_callDistributionTypeHasBeenSet) {
+    payload.WithString("CallDistributionType", CallDistributionTypeMapper::GetNameForCallDistributionType(m_callDistributionType));
+  }
+
   return payload.View().WriteReadable();
 }

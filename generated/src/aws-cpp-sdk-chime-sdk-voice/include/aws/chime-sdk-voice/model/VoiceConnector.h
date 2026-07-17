@@ -195,8 +195,7 @@ class VoiceConnector {
 
   ///@{
   /**
-   * <p>The type of network of the Voice Connector. Either IPv4 only or dual-stack
-   * (IPv4 and IPv6).</p>
+   * <p>The type of network for the Voice Connector.</p>
    */
   inline NetworkType GetNetworkType() const { return m_networkType; }
   inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }

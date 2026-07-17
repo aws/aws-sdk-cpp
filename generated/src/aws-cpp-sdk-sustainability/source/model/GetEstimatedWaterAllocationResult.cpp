@@ -3,31 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/chime-sdk-voice/model/ListProxySessionsResult.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sustainability/model/GetEstimatedWaterAllocationResult.h>
 
 #include <utility>
 
-using namespace Aws::ChimeSDKVoice::Model;
+using namespace Aws::Sustainability::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListProxySessionsResult::ListProxySessionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+GetEstimatedWaterAllocationResult::GetEstimatedWaterAllocationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  *this = result;
+}
 
-ListProxySessionsResult& ListProxySessionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+GetEstimatedWaterAllocationResult& GetEstimatedWaterAllocationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("ProxySessions")) {
-    Aws::Utils::Array<JsonView> proxySessionsJsonList = jsonValue.GetArray("ProxySessions");
-    for (unsigned proxySessionsIndex = 0; proxySessionsIndex < proxySessionsJsonList.GetLength(); ++proxySessionsIndex) {
-      m_proxySessions.push_back(proxySessionsJsonList[proxySessionsIndex].AsObject());
+  if (jsonValue.ValueExists("Results")) {
+    Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");
+    for (unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex) {
+      m_results.push_back(resultsJsonList[resultsIndex].AsObject());
     }
-    m_proxySessionsHasBeenSet = true;
+    m_resultsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");

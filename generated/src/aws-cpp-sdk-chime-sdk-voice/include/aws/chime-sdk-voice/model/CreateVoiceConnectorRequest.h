@@ -119,7 +119,9 @@ class CreateVoiceConnectorRequest : public ChimeSDKVoiceRequest {
    * existing contact center and their enterprise and branch voice systems.
    * Additionally, enterprises migrating their contact center to Connect Customer can
    * start with Connect telephony and IVR for immediate modernization ahead of agent
-   * migration.</p> </li> <li> <p> <code>CONNECT_ANALYTICS_CONNECTOR</code> - Enables
+   * migration.</p>  <p>This integration is a gated feature. Please reach out
+   * to your account team to discuss this feature with a Connect Specialist.</p>
+   *  </li> <li> <p> <code>CONNECT_ANALYTICS_CONNECTOR</code> - Enables
    * enterprises to integrate Connect Customer with other voice systems for real-time
    * and post-call analytics. They can use Connect Customer Contact Lens with their
    * existing voice systems to provides call recordings, conversational analytics
@@ -146,8 +148,7 @@ class CreateVoiceConnectorRequest : public ChimeSDKVoiceRequest {
 
   ///@{
   /**
-   * <p>The type of network for the Voice Connector. Either IPv4 only or dual-stack
-   * (IPv4 and IPv6).</p>
+   * <p>The type of network for the Voice Connector.</p>
    */
   inline NetworkType GetNetworkType() const { return m_networkType; }
   inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }

@@ -46,6 +46,10 @@ VoiceConnectorGroup& VoiceConnectorGroup::operator=(JsonView jsonValue) {
     m_voiceConnectorGroupArn = jsonValue.GetString("VoiceConnectorGroupArn");
     m_voiceConnectorGroupArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CallDistributionType")) {
+    m_callDistributionType = CallDistributionTypeMapper::GetCallDistributionTypeForName(jsonValue.GetString("CallDistributionType"));
+    m_callDistributionTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -79,6 +83,10 @@ JsonValue VoiceConnectorGroup::Jsonize() const {
 
   if (m_voiceConnectorGroupArnHasBeenSet) {
     payload.WithString("VoiceConnectorGroupArn", m_voiceConnectorGroupArn);
+  }
+
+  if (m_callDistributionTypeHasBeenSet) {
+    payload.WithString("CallDistributionType", CallDistributionTypeMapper::GetNameForCallDistributionType(m_callDistributionType));
   }
 
   return payload;

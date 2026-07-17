@@ -19,7 +19,11 @@ namespace S3Crt {
 namespace Model {
 
 /**
- * <p>Container for all error elements.</p><p><h3>See Also:</h3>   <a
+ *  <p>For information about using the Amazon S3 API—including error
+ * handling—see the <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/Welcome.html">Amazon
+ * S3 Developer Guide</a>.</p>  <p>Container for all error
+ * elements.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Error">AWS API
  * Reference</a></p>
  */
