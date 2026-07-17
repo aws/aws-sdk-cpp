@@ -6,6 +6,9 @@
 #pragma once
 #include <aws/odb/OdbRequest.h>
 #include <aws/odb/Odb_EXPORTS.h>
+#include <aws/odb/model/Access.h>
+
+#include <utility>
 
 namespace Aws {
 namespace odb {
@@ -43,9 +46,31 @@ class InitializeServiceRequest : public OdbRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to enable or disable the OCI service-account role for
+   * Amazon Web Services Secrets Manager integration with Autonomous Database.</p>
+   */
+  inline Access GetAutonomousDatabaseOciAwsSecretsManagerIntegration() const { return m_autonomousDatabaseOciAwsSecretsManagerIntegration; }
+  inline bool AutonomousDatabaseOciAwsSecretsManagerIntegrationHasBeenSet() const {
+    return m_autonomousDatabaseOciAwsSecretsManagerIntegrationHasBeenSet;
+  }
+  inline void SetAutonomousDatabaseOciAwsSecretsManagerIntegration(Access value) {
+    m_autonomousDatabaseOciAwsSecretsManagerIntegrationHasBeenSet = true;
+    m_autonomousDatabaseOciAwsSecretsManagerIntegration = value;
+  }
+  inline InitializeServiceRequest& WithAutonomousDatabaseOciAwsSecretsManagerIntegration(Access value) {
+    SetAutonomousDatabaseOciAwsSecretsManagerIntegration(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_ociIdentityDomain{false};
+
+  Access m_autonomousDatabaseOciAwsSecretsManagerIntegration{Access::NOT_SET};
   bool m_ociIdentityDomainHasBeenSet = false;
+  bool m_autonomousDatabaseOciAwsSecretsManagerIntegrationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -76,5 +76,9 @@ Aws::String StartStreamSessionRequest::SerializePayload() const {
     payload.WithObject("PerformanceStatsConfiguration", m_performanceStatsConfiguration.Jsonize());
   }
 
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
+  }
+
   return payload.View().WriteReadable();
 }

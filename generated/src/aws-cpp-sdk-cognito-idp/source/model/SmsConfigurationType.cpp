@@ -30,6 +30,10 @@ SmsConfigurationType& SmsConfigurationType::operator=(JsonView jsonValue) {
     m_snsRegion = jsonValue.GetString("SnsRegion");
     m_snsRegionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EumsSms")) {
+    m_eumsSms = jsonValue.GetObject("EumsSms");
+    m_eumsSmsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue SmsConfigurationType::Jsonize() const {
 
   if (m_snsRegionHasBeenSet) {
     payload.WithString("SnsRegion", m_snsRegion);
+  }
+
+  if (m_eumsSmsHasBeenSet) {
+    payload.WithObject("EumsSms", m_eumsSms.Jsonize());
   }
 
   return payload;

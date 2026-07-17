@@ -16,6 +16,7 @@ enum class StreamSessionStatusReason {
   invalidSignalRequest,
   placementTimeout,
   applicationLogS3DestinationError,
+  assumeRoleFailed,
   applicationExit,
   connectionTimeout,
   reconnectionTimeout,

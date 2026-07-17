@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
+#include <aws/cognito-idp/model/EumsSmsConfigurationType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -110,15 +111,40 @@ class SmsConfigurationType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for sending SMS messages through Amazon Web Services End
+   * User Messaging SMS, as an alternative to Amazon SNS. In a user pool, provide
+   * either the Amazon SNS configuration (<code>SnsCallerArn</code>) or this
+   * configuration, but not both. In Amazon Web Services Regions where Amazon SNS is
+   * not available, this configuration is required.</p>
+   */
+  inline const EumsSmsConfigurationType& GetEumsSms() const { return m_eumsSms; }
+  inline bool EumsSmsHasBeenSet() const { return m_eumsSmsHasBeenSet; }
+  template <typename EumsSmsT = EumsSmsConfigurationType>
+  void SetEumsSms(EumsSmsT&& value) {
+    m_eumsSmsHasBeenSet = true;
+    m_eumsSms = std::forward<EumsSmsT>(value);
+  }
+  template <typename EumsSmsT = EumsSmsConfigurationType>
+  SmsConfigurationType& WithEumsSms(EumsSmsT&& value) {
+    SetEumsSms(std::forward<EumsSmsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_snsCallerArn;
 
   Aws::String m_externalId;
 
   Aws::String m_snsRegion;
+
+  EumsSmsConfigurationType m_eumsSms;
   bool m_snsCallerArnHasBeenSet = false;
   bool m_externalIdHasBeenSet = false;
   bool m_snsRegionHasBeenSet = false;
+  bool m_eumsSmsHasBeenSet = false;
 };
 
 }  // namespace Model

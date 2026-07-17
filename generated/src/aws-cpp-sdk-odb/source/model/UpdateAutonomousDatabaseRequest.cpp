@@ -215,6 +215,14 @@ Aws::String UpdateAutonomousDatabaseRequest::SerializePayload() const {
     payload.WithObject("encryptionKeyConfiguration", m_encryptionKeyConfiguration.Jsonize());
   }
 
+  if (m_adminPasswordSourceHasBeenSet) {
+    payload.WithString("adminPasswordSource", AdminPasswordSourceMapper::GetNameForAdminPasswordSource(m_adminPasswordSource));
+  }
+
+  if (m_adminPasswordSourceConfigurationHasBeenSet) {
+    payload.WithObject("adminPasswordSourceConfiguration", m_adminPasswordSourceConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

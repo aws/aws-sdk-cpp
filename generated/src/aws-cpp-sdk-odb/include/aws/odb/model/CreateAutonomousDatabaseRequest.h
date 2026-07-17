@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/odb/OdbRequest.h>
 #include <aws/odb/Odb_EXPORTS.h>
+#include <aws/odb/model/AdminPasswordSource.h>
+#include <aws/odb/model/AdminPasswordSourceConfigurationInput.h>
 #include <aws/odb/model/AutonomousMaintenanceScheduleType.h>
 #include <aws/odb/model/CustomerContact.h>
 #include <aws/odb/model/DatabaseEdition.h>
@@ -734,6 +736,45 @@ class CreateAutonomousDatabaseRequest : public OdbRequest {
 
   ///@{
   /**
+   * <p>The source of the admin password for the Autonomous Database. When set to
+   * <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from
+   * an Amazon Web Services Secrets Manager secret.</p>
+   */
+  inline AdminPasswordSource GetAdminPasswordSource() const { return m_adminPasswordSource; }
+  inline bool AdminPasswordSourceHasBeenSet() const { return m_adminPasswordSourceHasBeenSet; }
+  inline void SetAdminPasswordSource(AdminPasswordSource value) {
+    m_adminPasswordSourceHasBeenSet = true;
+    m_adminPasswordSource = value;
+  }
+  inline CreateAutonomousDatabaseRequest& WithAdminPasswordSource(AdminPasswordSource value) {
+    SetAdminPasswordSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration of the admin password source for the Autonomous
+   * Database.</p>
+   */
+  inline const AdminPasswordSourceConfigurationInput& GetAdminPasswordSourceConfiguration() const {
+    return m_adminPasswordSourceConfiguration;
+  }
+  inline bool AdminPasswordSourceConfigurationHasBeenSet() const { return m_adminPasswordSourceConfigurationHasBeenSet; }
+  template <typename AdminPasswordSourceConfigurationT = AdminPasswordSourceConfigurationInput>
+  void SetAdminPasswordSourceConfiguration(AdminPasswordSourceConfigurationT&& value) {
+    m_adminPasswordSourceConfigurationHasBeenSet = true;
+    m_adminPasswordSourceConfiguration = std::forward<AdminPasswordSourceConfigurationT>(value);
+  }
+  template <typename AdminPasswordSourceConfigurationT = AdminPasswordSourceConfigurationInput>
+  CreateAutonomousDatabaseRequest& WithAdminPasswordSourceConfiguration(AdminPasswordSourceConfigurationT&& value) {
+    SetAdminPasswordSourceConfiguration(std::forward<AdminPasswordSourceConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A client-provided token to ensure the idempotency of the request.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -849,6 +890,10 @@ class CreateAutonomousDatabaseRequest : public OdbRequest {
 
   EncryptionKeyConfigurationInput m_encryptionKeyConfiguration;
 
+  AdminPasswordSource m_adminPasswordSource{AdminPasswordSource::NOT_SET};
+
+  AdminPasswordSourceConfigurationInput m_adminPasswordSourceConfiguration;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -889,6 +934,8 @@ class CreateAutonomousDatabaseRequest : public OdbRequest {
   bool m_sourceConfigurationHasBeenSet = false;
   bool m_encryptionKeyProviderHasBeenSet = false;
   bool m_encryptionKeyConfigurationHasBeenSet = false;
+  bool m_adminPasswordSourceHasBeenSet = false;
+  bool m_adminPasswordSourceConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };

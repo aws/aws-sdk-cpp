@@ -26,6 +26,10 @@ AutonomousDatabaseWalletDetails& AutonomousDatabaseWalletDetails::operator=(Json
     m_timeRotated = jsonValue.GetString("timeRotated");
     m_timeRotatedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("passwordSourceSummary")) {
+    m_passwordSourceSummary = jsonValue.GetObject("passwordSourceSummary");
+    m_passwordSourceSummaryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue AutonomousDatabaseWalletDetails::Jsonize() const {
 
   if (m_timeRotatedHasBeenSet) {
     payload.WithString("timeRotated", m_timeRotated.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_passwordSourceSummaryHasBeenSet) {
+    payload.WithObject("passwordSourceSummary", m_passwordSourceSummary.Jsonize());
   }
 
   return payload;

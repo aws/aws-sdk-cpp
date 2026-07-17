@@ -649,8 +649,12 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * use the <code>WithExpressConfiguration</code> parameter to create an Aurora DB
    * Cluster with express configuration and create cluster in seconds. Express
    * configuration provides a cluster with a writer instance and feature specific
-   * values set to all other input parameters of this API. </p><p><h3>See Also:</h3>
-   * <a
+   * values set to all other input parameters of this API. </p> <p>You can use the
+   * <code>AssociatedRoles</code> parameter to associate one or more Amazon Web
+   * Services Identity and Access Management (IAM) roles with an Aurora DB cluster.
+   * Each associated role lets the DB cluster access other Amazon Web Services on
+   * your behalf, such as Amazon S3 for data import and export, or Amazon Web
+   * Services Lambda for invoking functions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">AWS
    * API Reference</a></p>
    */
@@ -4955,7 +4959,10 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
    * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p>
    * <p>This operation only applies to Aurora DB clusters. The source DB engine must
-   * be MySQL.</p> <p><h3>See Also:</h3>   <a
+   * be MySQL.</p>  <p>You can use the <code>AssociatedRoles</code> parameter
+   * to associate one or more Amazon Web Services Identity and Access Management
+   * (IAM) roles with the Aurora DB cluster when you restore it from Amazon
+   * S3.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">AWS
    * API Reference</a></p>
    */
@@ -4996,10 +5003,13 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * must be enabled using <code>EnableIAMDatabaseAuthentication</code>. Once the
    * cluster is restored, you need to modify the DB cluster to update
    * <code>MasterUserAuthenticationType</code> to <code>iam-db-auth</code>. </p>
-   *  <p>This operation only restores the DB cluster, not the DB instances for
-   * that DB cluster. You must invoke the <code>CreateDBInstance</code> operation to
-   * create DB instances for the restored DB cluster, specifying the identifier of
-   * the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB
+   * <p>You can use the <code>AssociatedRoles</code> parameter to associate one or
+   * more Amazon Web Services Identity and Access Management (IAM) roles with an
+   * Aurora DB cluster when you restore it from a snapshot.</p>  <p>This
+   * operation only restores the DB cluster, not the DB instances for that DB
+   * cluster. You must invoke the <code>CreateDBInstance</code> operation to create
+   * DB instances for the restored DB cluster, specifying the identifier of the
+   * restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB
    * instances only after the <code>RestoreDBClusterFromSnapshot</code> operation has
    * completed and the DB cluster is available.</p>  <p>For more information
    * on Amazon Aurora DB clusters, see <a
@@ -5056,14 +5066,16 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * must be enabled using <code>EnableIAMDatabaseAuthentication</code>. Once the
    * cluster is restored, you need to modify the DB cluster to update
    * <code>MasterUserAuthenticationType</code> to <code>iam-db-auth</code>. </p>
-   *  <p>For Aurora, this operation only restores the DB cluster, not the DB
-   * instances for that DB cluster. You must invoke the <code>CreateDBInstance</code>
-   * operation to create DB instances for the restored DB cluster, specifying the
-   * identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You
-   * can create DB instances only after the
-   * <code>RestoreDBClusterToPointInTime</code> operation has completed and the DB
-   * cluster is available.</p>  <p>For more information on Amazon Aurora DB
-   * clusters, see <a
+   * <p>You can use the <code>AssociatedRoles</code> parameter to associate one or
+   * more Amazon Web Services Identity and Access Management (IAM) roles with an
+   * Aurora DB cluster when you restore it to a point in time.</p>  <p>For
+   * Aurora, this operation only restores the DB cluster, not the DB instances for
+   * that DB cluster. You must invoke the <code>CreateDBInstance</code> operation to
+   * create DB instances for the restored DB cluster, specifying the identifier of
+   * the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB
+   * instances only after the <code>RestoreDBClusterToPointInTime</code> operation
+   * has completed and the DB cluster is available.</p>  <p>For more
+   * information on Amazon Aurora DB clusters, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
    * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
    * more information on Multi-AZ DB clusters, see <a

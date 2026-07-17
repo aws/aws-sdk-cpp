@@ -24,7 +24,8 @@ enum class RuntimeEnvironment {
   FLINK_1_18,
   FLINK_1_19,
   FLINK_1_20,
-  FLINK_2_2
+  FLINK_2_2,
+  FLINK_2_3
 };
 
 namespace RuntimeEnvironmentMapper {

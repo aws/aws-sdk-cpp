@@ -1,0 +1,103 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/odb/Odb_EXPORTS.h>
+#include <aws/odb/model/ExternalIdType.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace odb {
+namespace Model {
+
+/**
+ * <p>The configuration of a customer-managed Amazon Web Services Secrets Manager
+ * secret used to supply a password.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CustomerManagedAwsSecretConfiguration">AWS
+ * API Reference</a></p>
+ */
+class CustomerManagedAwsSecretConfiguration {
+ public:
+  AWS_ODB_API CustomerManagedAwsSecretConfiguration() = default;
+  AWS_ODB_API CustomerManagedAwsSecretConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ODB_API CustomerManagedAwsSecretConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ODB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+   * Management (IAM) role that OCI assumes to retrieve the secret value.</p>
+   */
+  inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
+  inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
+  template <typename IamRoleArnT = Aws::String>
+  void SetIamRoleArn(IamRoleArnT&& value) {
+    m_iamRoleArnHasBeenSet = true;
+    m_iamRoleArn = std::forward<IamRoleArnT>(value);
+  }
+  template <typename IamRoleArnT = Aws::String>
+  CustomerManagedAwsSecretConfiguration& WithIamRoleArn(IamRoleArnT&& value) {
+    SetIamRoleArn(std::forward<IamRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier or ARN of the Amazon Web Services Secrets Manager secret that
+   * contains the password.</p>
+   */
+  inline const Aws::String& GetSecretId() const { return m_secretId; }
+  inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
+  template <typename SecretIdT = Aws::String>
+  void SetSecretId(SecretIdT&& value) {
+    m_secretIdHasBeenSet = true;
+    m_secretId = std::forward<SecretIdT>(value);
+  }
+  template <typename SecretIdT = Aws::String>
+  CustomerManagedAwsSecretConfiguration& WithSecretId(SecretIdT&& value) {
+    SetSecretId(std::forward<SecretIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of Oracle Cloud Identifier (OCID) used as the external ID when
+   * assuming the IAM role.</p>
+   */
+  inline ExternalIdType GetExternalIdType() const { return m_externalIdType; }
+  inline bool ExternalIdTypeHasBeenSet() const { return m_externalIdTypeHasBeenSet; }
+  inline void SetExternalIdType(ExternalIdType value) {
+    m_externalIdTypeHasBeenSet = true;
+    m_externalIdType = value;
+  }
+  inline CustomerManagedAwsSecretConfiguration& WithExternalIdType(ExternalIdType value) {
+    SetExternalIdType(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_iamRoleArn;
+
+  Aws::String m_secretId;
+
+  ExternalIdType m_externalIdType{ExternalIdType::NOT_SET};
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_secretIdHasBeenSet = false;
+  bool m_externalIdTypeHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace odb
+}  // namespace Aws

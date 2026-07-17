@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
+#include <aws/cognito-idp/model/PasswordHashingAlgorithmType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -88,15 +89,36 @@ class CreateUserImportJobRequest : public CognitoIdentityProviderRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The password hashing algorithm used to generate the hashes in the CSV file
+   * for this import job.</p> <p>Valid values: <code>BCRYPT</code> |
+   * <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code> </p>
+   */
+  inline PasswordHashingAlgorithmType GetPasswordHashingAlgorithm() const { return m_passwordHashingAlgorithm; }
+  inline bool PasswordHashingAlgorithmHasBeenSet() const { return m_passwordHashingAlgorithmHasBeenSet; }
+  inline void SetPasswordHashingAlgorithm(PasswordHashingAlgorithmType value) {
+    m_passwordHashingAlgorithmHasBeenSet = true;
+    m_passwordHashingAlgorithm = value;
+  }
+  inline CreateUserImportJobRequest& WithPasswordHashingAlgorithm(PasswordHashingAlgorithmType value) {
+    SetPasswordHashingAlgorithm(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_jobName;
 
   Aws::String m_userPoolId;
 
   Aws::String m_cloudWatchLogsRoleArn;
+
+  PasswordHashingAlgorithmType m_passwordHashingAlgorithm{PasswordHashingAlgorithmType::NOT_SET};
   bool m_jobNameHasBeenSet = false;
   bool m_userPoolIdHasBeenSet = false;
   bool m_cloudWatchLogsRoleArnHasBeenSet = false;
+  bool m_passwordHashingAlgorithmHasBeenSet = false;
 };
 
 }  // namespace Model

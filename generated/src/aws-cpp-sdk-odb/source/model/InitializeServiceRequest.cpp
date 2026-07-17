@@ -19,6 +19,11 @@ Aws::String InitializeServiceRequest::SerializePayload() const {
     payload.WithBool("ociIdentityDomain", m_ociIdentityDomain);
   }
 
+  if (m_autonomousDatabaseOciAwsSecretsManagerIntegrationHasBeenSet) {
+    payload.WithString("autonomousDatabaseOciAwsSecretsManagerIntegration",
+                       AccessMapper::GetNameForAccess(m_autonomousDatabaseOciAwsSecretsManagerIntegration));
+  }
+
   return payload.View().WriteReadable();
 }
 

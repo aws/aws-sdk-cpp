@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/odb/Odb_EXPORTS.h>
 #include <aws/odb/model/OciAwsIntegration.h>
+#include <aws/odb/model/OciIamRoleStatus.h>
 
 #include <utility>
 
@@ -69,12 +70,53 @@ class OciIamRole {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The current lifecycle status of the IAM service role.</p>
+   */
+  inline OciIamRoleStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(OciIamRoleStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline OciIamRole& WithStatus(OciIamRoleStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Additional information about the current status of the IAM service role, if
+   * applicable.</p>
+   */
+  inline const Aws::String& GetStatusReason() const { return m_statusReason; }
+  inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+  template <typename StatusReasonT = Aws::String>
+  void SetStatusReason(StatusReasonT&& value) {
+    m_statusReasonHasBeenSet = true;
+    m_statusReason = std::forward<StatusReasonT>(value);
+  }
+  template <typename StatusReasonT = Aws::String>
+  OciIamRole& WithStatusReason(StatusReasonT&& value) {
+    SetStatusReason(std::forward<StatusReasonT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_iamRoleArn;
 
   OciAwsIntegration m_awsIntegration{OciAwsIntegration::NOT_SET};
+
+  OciIamRoleStatus m_status{OciIamRoleStatus::NOT_SET};
+
+  Aws::String m_statusReason;
   bool m_iamRoleArnHasBeenSet = false;
   bool m_awsIntegrationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
 };
 
 }  // namespace Model

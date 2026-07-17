@@ -17,6 +17,10 @@
 #include <aws/odb/model/AcceptMarketplaceRegistrationRequest.h>
 #include <aws/odb/model/AcceptMarketplaceRegistrationResult.h>
 #include <aws/odb/model/Access.h>
+#include <aws/odb/model/AdminPasswordSource.h>
+#include <aws/odb/model/AdminPasswordSourceConfiguration.h>
+#include <aws/odb/model/AdminPasswordSourceConfigurationInput.h>
+#include <aws/odb/model/AdminPasswordSourceSummary.h>
 #include <aws/odb/model/AssociateIamRoleToResourceRequest.h>
 #include <aws/odb/model/AssociateIamRoleToResourceResult.h>
 #include <aws/odb/model/AutonomousDatabase.h>
@@ -71,6 +75,8 @@
 #include <aws/odb/model/CrossRegionDisasterRecoveryConfiguration.h>
 #include <aws/odb/model/CrossRegionS3RestoreSourcesAccess.h>
 #include <aws/odb/model/CustomerContact.h>
+#include <aws/odb/model/CustomerManagedAwsSecretConfiguration.h>
+#include <aws/odb/model/CustomerManagedAwsSecretConfigurationInput.h>
 #include <aws/odb/model/DataCollectionOptions.h>
 #include <aws/odb/model/DataGuardRole.h>
 #include <aws/odb/model/DataSafeStatus.h>
@@ -204,6 +210,7 @@
 #include <aws/odb/model/OciDnsForwardingConfig.h>
 #include <aws/odb/model/OciEncryptionKeyConfiguration.h>
 #include <aws/odb/model/OciIamRole.h>
+#include <aws/odb/model/OciIamRoleStatus.h>
 #include <aws/odb/model/OciIdentityDomain.h>
 #include <aws/odb/model/OciOnboardingStatus.h>
 #include <aws/odb/model/OdbNetwork.h>
@@ -274,6 +281,10 @@
 #include <aws/odb/model/ValidationExceptionField.h>
 #include <aws/odb/model/ValidationExceptionReason.h>
 #include <aws/odb/model/VpcEndpointType.h>
+#include <aws/odb/model/WalletPasswordSource.h>
+#include <aws/odb/model/WalletPasswordSourceConfiguration.h>
+#include <aws/odb/model/WalletPasswordSourceConfigurationInput.h>
+#include <aws/odb/model/WalletPasswordSourceSummary.h>
 #include <aws/odb/model/WalletType.h>
 #include <aws/odb/model/ZeroEtlAccess.h>
 

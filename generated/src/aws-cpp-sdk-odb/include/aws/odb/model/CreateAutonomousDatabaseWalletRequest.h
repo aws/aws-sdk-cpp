@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/odb/OdbRequest.h>
 #include <aws/odb/Odb_EXPORTS.h>
+#include <aws/odb/model/WalletPasswordSource.h>
+#include <aws/odb/model/WalletPasswordSourceConfigurationInput.h>
 #include <aws/odb/model/WalletType.h>
 
 #include <utility>
@@ -87,6 +89,43 @@ class CreateAutonomousDatabaseWalletRequest : public OdbRequest {
 
   ///@{
   /**
+   * <p>The source of the password for encrypting the wallet. When set to
+   * <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the password is retrieved from an
+   * Amazon Web Services Secrets Manager secret.</p>
+   */
+  inline WalletPasswordSource GetPasswordSource() const { return m_passwordSource; }
+  inline bool PasswordSourceHasBeenSet() const { return m_passwordSourceHasBeenSet; }
+  inline void SetPasswordSource(WalletPasswordSource value) {
+    m_passwordSourceHasBeenSet = true;
+    m_passwordSource = value;
+  }
+  inline CreateAutonomousDatabaseWalletRequest& WithPasswordSource(WalletPasswordSource value) {
+    SetPasswordSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration of the password source for the Autonomous Database
+   * wallet.</p>
+   */
+  inline const WalletPasswordSourceConfigurationInput& GetPasswordSourceConfiguration() const { return m_passwordSourceConfiguration; }
+  inline bool PasswordSourceConfigurationHasBeenSet() const { return m_passwordSourceConfigurationHasBeenSet; }
+  template <typename PasswordSourceConfigurationT = WalletPasswordSourceConfigurationInput>
+  void SetPasswordSourceConfiguration(PasswordSourceConfigurationT&& value) {
+    m_passwordSourceConfigurationHasBeenSet = true;
+    m_passwordSourceConfiguration = std::forward<PasswordSourceConfigurationT>(value);
+  }
+  template <typename PasswordSourceConfigurationT = WalletPasswordSourceConfigurationInput>
+  CreateAutonomousDatabaseWalletRequest& WithPasswordSourceConfiguration(PasswordSourceConfigurationT&& value) {
+    SetPasswordSourceConfiguration(std::forward<PasswordSourceConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A client-provided token to ensure the idempotency of the request.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -109,10 +148,16 @@ class CreateAutonomousDatabaseWalletRequest : public OdbRequest {
 
   Aws::String m_password;
 
+  WalletPasswordSource m_passwordSource{WalletPasswordSource::NOT_SET};
+
+  WalletPasswordSourceConfigurationInput m_passwordSourceConfiguration;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_autonomousDatabaseIdHasBeenSet = false;
   bool m_walletTypeHasBeenSet = false;
   bool m_passwordHasBeenSet = false;
+  bool m_passwordSourceHasBeenSet = false;
+  bool m_passwordSourceConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

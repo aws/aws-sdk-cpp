@@ -26,6 +26,14 @@ OciIamRole& OciIamRole::operator=(JsonView jsonValue) {
     m_awsIntegration = OciAwsIntegrationMapper::GetOciAwsIntegrationForName(jsonValue.GetString("awsIntegration"));
     m_awsIntegrationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("status")) {
+    m_status = OciIamRoleStatusMapper::GetOciIamRoleStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("statusReason")) {
+    m_statusReason = jsonValue.GetString("statusReason");
+    m_statusReasonHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue OciIamRole::Jsonize() const {
 
   if (m_awsIntegrationHasBeenSet) {
     payload.WithString("awsIntegration", OciAwsIntegrationMapper::GetNameForOciAwsIntegration(m_awsIntegration));
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", OciIamRoleStatusMapper::GetNameForOciIamRoleStatus(m_status));
+  }
+
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("statusReason", m_statusReason);
   }
 
   return payload;

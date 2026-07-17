@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/odb/Odb_EXPORTS.h>
 #include <aws/odb/model/AutonomousDatabaseWalletStatus.h>
+#include <aws/odb/model/WalletPasswordSourceSummary.h>
 
 #include <utility>
 
@@ -65,12 +66,34 @@ class AutonomousDatabaseWalletDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The summary of the password source configuration for the Autonomous Database
+   * wallet.</p>
+   */
+  inline const WalletPasswordSourceSummary& GetPasswordSourceSummary() const { return m_passwordSourceSummary; }
+  inline bool PasswordSourceSummaryHasBeenSet() const { return m_passwordSourceSummaryHasBeenSet; }
+  template <typename PasswordSourceSummaryT = WalletPasswordSourceSummary>
+  void SetPasswordSourceSummary(PasswordSourceSummaryT&& value) {
+    m_passwordSourceSummaryHasBeenSet = true;
+    m_passwordSourceSummary = std::forward<PasswordSourceSummaryT>(value);
+  }
+  template <typename PasswordSourceSummaryT = WalletPasswordSourceSummary>
+  AutonomousDatabaseWalletDetails& WithPasswordSourceSummary(PasswordSourceSummaryT&& value) {
+    SetPasswordSourceSummary(std::forward<PasswordSourceSummaryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AutonomousDatabaseWalletStatus m_status{AutonomousDatabaseWalletStatus::NOT_SET};
 
   Aws::Utils::DateTime m_timeRotated{};
+
+  WalletPasswordSourceSummary m_passwordSourceSummary;
   bool m_statusHasBeenSet = false;
   bool m_timeRotatedHasBeenSet = false;
+  bool m_passwordSourceSummaryHasBeenSet = false;
 };
 
 }  // namespace Model

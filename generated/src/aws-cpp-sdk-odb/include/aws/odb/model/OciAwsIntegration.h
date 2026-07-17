@@ -10,7 +10,7 @@
 namespace Aws {
 namespace odb {
 namespace Model {
-enum class OciAwsIntegration { NOT_SET, KmsTde };
+enum class OciAwsIntegration { NOT_SET, KmsTde, SecretsManager };
 
 namespace OciAwsIntegrationMapper {
 AWS_ODB_API OciAwsIntegration GetOciAwsIntegrationForName(const Aws::String& name);

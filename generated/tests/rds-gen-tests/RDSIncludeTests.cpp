@@ -105,6 +105,7 @@
 #include <aws/rds/model/CustomDBEngineVersionAMI.h>
 #include <aws/rds/model/CustomEngineVersionStatus.h>
 #include <aws/rds/model/DBCluster.h>
+#include <aws/rds/model/DBClusterAssociatedRole.h>
 #include <aws/rds/model/DBClusterAutomatedBackup.h>
 #include <aws/rds/model/DBClusterBacktrack.h>
 #include <aws/rds/model/DBClusterEndpoint.h>

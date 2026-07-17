@@ -114,6 +114,10 @@ StartStreamSessionResult& StartStreamSessionResult::operator=(const Aws::AmazonW
     m_exportFilesMetadata = jsonValue.GetObject("ExportFilesMetadata");
     m_exportFilesMetadataHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RoleArn")) {
+    m_roleArn = jsonValue.GetString("RoleArn");
+    m_roleArnHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -505,6 +505,25 @@ class GetStreamSessionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon
+   * GameLift Streams assumes on behalf of your application during the stream
+   * session.</p>
+   */
+  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+  template <typename RoleArnT = Aws::String>
+  void SetRoleArn(RoleArnT&& value) {
+    m_roleArnHasBeenSet = true;
+    m_roleArn = std::forward<RoleArnT>(value);
+  }
+  template <typename RoleArnT = Aws::String>
+  GetStreamSessionResult& WithRoleArn(RoleArnT&& value) {
+    SetRoleArn(std::forward<RoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -563,6 +582,8 @@ class GetStreamSessionResult {
 
   ExportFilesMetadata m_exportFilesMetadata;
 
+  Aws::String m_roleArn;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -586,6 +607,7 @@ class GetStreamSessionResult {
   bool m_createdAtHasBeenSet = false;
   bool m_applicationArnHasBeenSet = false;
   bool m_exportFilesMetadataHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

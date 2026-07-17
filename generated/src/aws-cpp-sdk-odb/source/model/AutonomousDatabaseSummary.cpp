@@ -467,6 +467,10 @@ AutonomousDatabaseSummary& AutonomousDatabaseSummary::operator=(JsonView jsonVal
     m_timeUndeleted = jsonValue.GetString("timeUndeleted");
     m_timeUndeletedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("adminPasswordSourceSummary")) {
+    m_adminPasswordSourceSummary = jsonValue.GetObject("adminPasswordSourceSummary");
+    m_adminPasswordSourceSummaryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -932,6 +936,10 @@ JsonValue AutonomousDatabaseSummary::Jsonize() const {
 
   if (m_timeUndeletedHasBeenSet) {
     payload.WithString("timeUndeleted", m_timeUndeleted.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_adminPasswordSourceSummaryHasBeenSet) {
+    payload.WithObject("adminPasswordSourceSummary", m_adminPasswordSourceSummary.Jsonize());
   }
 
   return payload;

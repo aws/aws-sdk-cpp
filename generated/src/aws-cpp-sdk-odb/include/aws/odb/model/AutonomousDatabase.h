@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/odb/Odb_EXPORTS.h>
+#include <aws/odb/model/AdminPasswordSourceSummary.h>
 #include <aws/odb/model/AutonomousDatabaseApex.h>
 #include <aws/odb/model/AutonomousDatabaseConnectionStrings.h>
 #include <aws/odb/model/AutonomousDatabaseConnectionUrls.h>
@@ -1948,6 +1949,25 @@ class AutonomousDatabase {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The summary of the admin password source configuration for the Autonomous
+   * Database.</p>
+   */
+  inline const AdminPasswordSourceSummary& GetAdminPasswordSourceSummary() const { return m_adminPasswordSourceSummary; }
+  inline bool AdminPasswordSourceSummaryHasBeenSet() const { return m_adminPasswordSourceSummaryHasBeenSet; }
+  template <typename AdminPasswordSourceSummaryT = AdminPasswordSourceSummary>
+  void SetAdminPasswordSourceSummary(AdminPasswordSourceSummaryT&& value) {
+    m_adminPasswordSourceSummaryHasBeenSet = true;
+    m_adminPasswordSourceSummary = std::forward<AdminPasswordSourceSummaryT>(value);
+  }
+  template <typename AdminPasswordSourceSummaryT = AdminPasswordSourceSummary>
+  AutonomousDatabase& WithAdminPasswordSourceSummary(AdminPasswordSourceSummaryT&& value) {
+    SetAdminPasswordSourceSummary(std::forward<AdminPasswordSourceSummaryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_autonomousDatabaseId;
 
@@ -2154,6 +2174,8 @@ class AutonomousDatabase {
   Aws::Utils::DateTime m_nextLongTermBackupTimeStamp{};
 
   Aws::Utils::DateTime m_timeUndeleted{};
+
+  AdminPasswordSourceSummary m_adminPasswordSourceSummary;
   bool m_autonomousDatabaseIdHasBeenSet = false;
   bool m_autonomousDatabaseArnHasBeenSet = false;
   bool m_ociResourceAnchorNameHasBeenSet = false;
@@ -2257,6 +2279,7 @@ class AutonomousDatabase {
   bool m_timeUntilReconnectCloneEnabledHasBeenSet = false;
   bool m_nextLongTermBackupTimeStampHasBeenSet = false;
   bool m_timeUndeletedHasBeenSet = false;
+  bool m_adminPasswordSourceSummaryHasBeenSet = false;
 };
 
 }  // namespace Model

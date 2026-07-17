@@ -188,6 +188,7 @@
 #include <aws/cognito-idp/model/EmailMfaSettingsType.h>
 #include <aws/cognito-idp/model/EmailSendingAccountType.h>
 #include <aws/cognito-idp/model/EncryptionKeyType.h>
+#include <aws/cognito-idp/model/EumsSmsConfigurationType.h>
 #include <aws/cognito-idp/model/EventContextDataType.h>
 #include <aws/cognito-idp/model/EventFeedbackType.h>
 #include <aws/cognito-idp/model/EventFilterType.h>
@@ -287,6 +288,7 @@
 #include <aws/cognito-idp/model/NotifyEmailType.h>
 #include <aws/cognito-idp/model/NumberAttributeConstraintsType.h>
 #include <aws/cognito-idp/model/OAuthFlowType.h>
+#include <aws/cognito-idp/model/PasswordHashingAlgorithmType.h>
 #include <aws/cognito-idp/model/PasswordPolicyType.h>
 #include <aws/cognito-idp/model/PreTokenGenerationLambdaVersionType.h>
 #include <aws/cognito-idp/model/PreTokenGenerationVersionConfigType.h>

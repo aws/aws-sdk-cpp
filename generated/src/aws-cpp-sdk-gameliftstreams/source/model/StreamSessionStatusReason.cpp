@@ -19,6 +19,7 @@ static const int internalError_HASH = HashingUtils::HashString("internalError");
 static const int invalidSignalRequest_HASH = HashingUtils::HashString("invalidSignalRequest");
 static const int placementTimeout_HASH = HashingUtils::HashString("placementTimeout");
 static const int applicationLogS3DestinationError_HASH = HashingUtils::HashString("applicationLogS3DestinationError");
+static const int assumeRoleFailed_HASH = HashingUtils::HashString("assumeRoleFailed");
 static const int applicationExit_HASH = HashingUtils::HashString("applicationExit");
 static const int connectionTimeout_HASH = HashingUtils::HashString("connectionTimeout");
 static const int reconnectionTimeout_HASH = HashingUtils::HashString("reconnectionTimeout");
@@ -36,6 +37,8 @@ StreamSessionStatusReason GetStreamSessionStatusReasonForName(const Aws::String&
     return StreamSessionStatusReason::placementTimeout;
   } else if (hashCode == applicationLogS3DestinationError_HASH) {
     return StreamSessionStatusReason::applicationLogS3DestinationError;
+  } else if (hashCode == assumeRoleFailed_HASH) {
+    return StreamSessionStatusReason::assumeRoleFailed;
   } else if (hashCode == applicationExit_HASH) {
     return StreamSessionStatusReason::applicationExit;
   } else if (hashCode == connectionTimeout_HASH) {
@@ -70,6 +73,8 @@ Aws::String GetNameForStreamSessionStatusReason(StreamSessionStatusReason enumVa
       return "placementTimeout";
     case StreamSessionStatusReason::applicationLogS3DestinationError:
       return "applicationLogS3DestinationError";
+    case StreamSessionStatusReason::assumeRoleFailed:
+      return "assumeRoleFailed";
     case StreamSessionStatusReason::applicationExit:
       return "applicationExit";
     case StreamSessionStatusReason::connectionTimeout:

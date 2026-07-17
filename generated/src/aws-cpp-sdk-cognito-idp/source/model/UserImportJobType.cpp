@@ -70,6 +70,11 @@ UserImportJobType& UserImportJobType::operator=(JsonView jsonValue) {
     m_completionMessage = jsonValue.GetString("CompletionMessage");
     m_completionMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PasswordHashingAlgorithm")) {
+    m_passwordHashingAlgorithm =
+        PasswordHashingAlgorithmTypeMapper::GetPasswordHashingAlgorithmTypeForName(jsonValue.GetString("PasswordHashingAlgorithm"));
+    m_passwordHashingAlgorithmHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -126,6 +131,11 @@ JsonValue UserImportJobType::Jsonize() const {
 
   if (m_completionMessageHasBeenSet) {
     payload.WithString("CompletionMessage", m_completionMessage);
+  }
+
+  if (m_passwordHashingAlgorithmHasBeenSet) {
+    payload.WithString("PasswordHashingAlgorithm",
+                       PasswordHashingAlgorithmTypeMapper::GetNameForPasswordHashingAlgorithmType(m_passwordHashingAlgorithm));
   }
 
   return payload;

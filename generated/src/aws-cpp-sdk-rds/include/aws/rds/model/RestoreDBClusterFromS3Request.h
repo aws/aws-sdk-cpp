@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/rds/RDS_EXPORTS.h>
+#include <aws/rds/model/DBClusterAssociatedRole.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/rds/model/Tag.h>
 #include <aws/rds/model/TagSpecification.h>
@@ -880,6 +881,35 @@ class RestoreDBClusterFromS3Request : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to
+   * associate with the DB cluster when it's restored from Amazon S3. Each role
+   * grants the DB cluster permission to access other Amazon Web Services on your
+   * behalf. For each role, specify a role ARN and, optionally, the feature name
+   * (such as <code>s3Import</code>, <code>s3Export</code>, or
+   * <code>Lambda</code>).</p>
+   */
+  inline const Aws::Vector<DBClusterAssociatedRole>& GetAssociatedRoles() const { return m_associatedRoles; }
+  inline bool AssociatedRolesHasBeenSet() const { return m_associatedRolesHasBeenSet; }
+  template <typename AssociatedRolesT = Aws::Vector<DBClusterAssociatedRole>>
+  void SetAssociatedRoles(AssociatedRolesT&& value) {
+    m_associatedRolesHasBeenSet = true;
+    m_associatedRoles = std::forward<AssociatedRolesT>(value);
+  }
+  template <typename AssociatedRolesT = Aws::Vector<DBClusterAssociatedRole>>
+  RestoreDBClusterFromS3Request& WithAssociatedRoles(AssociatedRolesT&& value) {
+    SetAssociatedRoles(std::forward<AssociatedRolesT>(value));
+    return *this;
+  }
+  template <typename AssociatedRolesT = DBClusterAssociatedRole>
+  RestoreDBClusterFromS3Request& AddAssociatedRoles(AssociatedRolesT&& value) {
+    m_associatedRolesHasBeenSet = true;
+    m_associatedRoles.emplace_back(std::forward<AssociatedRolesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
 
@@ -956,6 +986,8 @@ class RestoreDBClusterFromS3Request : public RDSRequest {
   Aws::String m_engineLifecycleSupport;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+
+  Aws::Vector<DBClusterAssociatedRole> m_associatedRoles;
   bool m_availabilityZonesHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
   bool m_characterSetNameHasBeenSet = false;
@@ -994,6 +1026,7 @@ class RestoreDBClusterFromS3Request : public RDSRequest {
   bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
   bool m_engineLifecycleSupportHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
+  bool m_associatedRolesHasBeenSet = false;
 };
 
 }  // namespace Model

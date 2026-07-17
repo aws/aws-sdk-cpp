@@ -16,11 +16,14 @@ namespace Model {
 namespace OciAwsIntegrationMapper {
 
 static const int KmsTde_HASH = HashingUtils::HashString("KmsTde");
+static const int SecretsManager_HASH = HashingUtils::HashString("SecretsManager");
 
 OciAwsIntegration GetOciAwsIntegrationForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == KmsTde_HASH) {
     return OciAwsIntegration::KmsTde;
+  } else if (hashCode == SecretsManager_HASH) {
+    return OciAwsIntegration::SecretsManager;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForOciAwsIntegration(OciAwsIntegration enumValue) {
       return {};
     case OciAwsIntegration::KmsTde:
       return "KmsTde";
+    case OciAwsIntegration::SecretsManager:
+      return "SecretsManager";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -294,6 +294,18 @@ Aws::String CreateDBClusterRequest::SerializePayload() const {
     ss << "WithExpressConfiguration=" << std::boolalpha << m_withExpressConfiguration << "&";
   }
 
+  if (m_associatedRolesHasBeenSet) {
+    if (m_associatedRoles.empty()) {
+      ss << "AssociatedRoles=&";
+    } else {
+      unsigned associatedRolesCount = 1;
+      for (auto& item : m_associatedRoles) {
+        item.OutputToStream(ss, "AssociatedRoles.DBClusterAssociatedRole.", associatedRolesCount, "");
+        associatedRolesCount++;
+      }
+    }
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

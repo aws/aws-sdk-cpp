@@ -27,6 +27,14 @@ Aws::String CreateAutonomousDatabaseWalletRequest::SerializePayload() const {
     payload.WithString("password", m_password);
   }
 
+  if (m_passwordSourceHasBeenSet) {
+    payload.WithString("passwordSource", WalletPasswordSourceMapper::GetNameForWalletPasswordSource(m_passwordSource));
+  }
+
+  if (m_passwordSourceConfigurationHasBeenSet) {
+    payload.WithObject("passwordSourceConfiguration", m_passwordSourceConfiguration.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

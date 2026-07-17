@@ -214,6 +214,18 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const {
     ss << "EnableInternetAccessGateway=" << std::boolalpha << m_enableInternetAccessGateway << "&";
   }
 
+  if (m_associatedRolesHasBeenSet) {
+    if (m_associatedRoles.empty()) {
+      ss << "AssociatedRoles=&";
+    } else {
+      unsigned associatedRolesCount = 1;
+      for (auto& item : m_associatedRoles) {
+        item.OutputToStream(ss, "AssociatedRoles.DBClusterAssociatedRole.", associatedRolesCount, "");
+        associatedRolesCount++;
+      }
+    }
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

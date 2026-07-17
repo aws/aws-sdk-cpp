@@ -58,6 +58,10 @@ StreamSessionSummary& StreamSessionSummary::operator=(JsonView jsonValue) {
     m_location = jsonValue.GetString("Location");
     m_locationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RoleArn")) {
+    m_roleArn = jsonValue.GetString("RoleArn");
+    m_roleArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue StreamSessionSummary::Jsonize() const {
 
   if (m_locationHasBeenSet) {
     payload.WithString("Location", m_location);
+  }
+
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
   return payload;

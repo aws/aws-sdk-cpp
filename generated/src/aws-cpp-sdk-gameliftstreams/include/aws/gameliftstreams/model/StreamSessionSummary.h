@@ -283,6 +283,26 @@ class StreamSessionSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon
+   * GameLift Streams assumes on behalf of your application during the stream
+   * session.</p>
+   */
+  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+  inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+  template <typename RoleArnT = Aws::String>
+  void SetRoleArn(RoleArnT&& value) {
+    m_roleArnHasBeenSet = true;
+    m_roleArn = std::forward<RoleArnT>(value);
+  }
+  template <typename RoleArnT = Aws::String>
+  StreamSessionSummary& WithRoleArn(RoleArnT&& value) {
+    SetRoleArn(std::forward<RoleArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -303,6 +323,8 @@ class StreamSessionSummary {
   ExportFilesMetadata m_exportFilesMetadata;
 
   Aws::String m_location;
+
+  Aws::String m_roleArn;
   bool m_arnHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -313,6 +335,7 @@ class StreamSessionSummary {
   bool m_applicationArnHasBeenSet = false;
   bool m_exportFilesMetadataHasBeenSet = false;
   bool m_locationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
 };
 
 }  // namespace Model

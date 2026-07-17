@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/rds/RDS_EXPORTS.h>
+#include <aws/rds/model/DBClusterAssociatedRole.h>
 #include <aws/rds/model/RdsCustomClusterConfiguration.h>
 #include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
@@ -974,6 +975,35 @@ class RestoreDBClusterToPointInTimeRequest : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to
+   * associate with the DB cluster when it's restored to a point in time. Each role
+   * grants the DB cluster permission to access other Amazon Web Services on your
+   * behalf. For each role, specify a role ARN and, optionally, the feature name
+   * (such as <code>s3Import</code>, <code>s3Export</code>, or
+   * <code>Lambda</code>).</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+   */
+  inline const Aws::Vector<DBClusterAssociatedRole>& GetAssociatedRoles() const { return m_associatedRoles; }
+  inline bool AssociatedRolesHasBeenSet() const { return m_associatedRolesHasBeenSet; }
+  template <typename AssociatedRolesT = Aws::Vector<DBClusterAssociatedRole>>
+  void SetAssociatedRoles(AssociatedRolesT&& value) {
+    m_associatedRolesHasBeenSet = true;
+    m_associatedRoles = std::forward<AssociatedRolesT>(value);
+  }
+  template <typename AssociatedRolesT = Aws::Vector<DBClusterAssociatedRole>>
+  RestoreDBClusterToPointInTimeRequest& WithAssociatedRoles(AssociatedRolesT&& value) {
+    SetAssociatedRoles(std::forward<AssociatedRolesT>(value));
+    return *this;
+  }
+  template <typename AssociatedRolesT = DBClusterAssociatedRole>
+  RestoreDBClusterToPointInTimeRequest& AddAssociatedRoles(AssociatedRolesT&& value) {
+    m_associatedRolesHasBeenSet = true;
+    m_associatedRoles.emplace_back(std::forward<AssociatedRolesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBClusterIdentifier;
 
@@ -1054,6 +1084,8 @@ class RestoreDBClusterToPointInTimeRequest : public RDSRequest {
   bool m_enableVPCNetworking{false};
 
   bool m_enableInternetAccessGateway{false};
+
+  Aws::Vector<DBClusterAssociatedRole> m_associatedRoles;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_restoreTypeHasBeenSet = false;
   bool m_sourceDBClusterIdentifierHasBeenSet = false;
@@ -1094,6 +1126,7 @@ class RestoreDBClusterToPointInTimeRequest : public RDSRequest {
   bool m_tagSpecificationsHasBeenSet = false;
   bool m_enableVPCNetworkingHasBeenSet = false;
   bool m_enableInternetAccessGatewayHasBeenSet = false;
+  bool m_associatedRolesHasBeenSet = false;
 };
 
 }  // namespace Model

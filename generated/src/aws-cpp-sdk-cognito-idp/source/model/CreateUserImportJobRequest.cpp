@@ -27,6 +27,11 @@ Aws::String CreateUserImportJobRequest::SerializePayload() const {
     payload.WithString("CloudWatchLogsRoleArn", m_cloudWatchLogsRoleArn);
   }
 
+  if (m_passwordHashingAlgorithmHasBeenSet) {
+    payload.WithString("PasswordHashingAlgorithm",
+                       PasswordHashingAlgorithmTypeMapper::GetNameForPasswordHashingAlgorithmType(m_passwordHashingAlgorithm));
+  }
+
   return payload.View().WriteReadable();
 }
 
