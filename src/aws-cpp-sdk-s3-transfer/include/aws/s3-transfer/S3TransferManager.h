@@ -9,7 +9,11 @@
 #include <aws/s3-transfer/DownloadRequest.h>
 #include <aws/s3-transfer/UploadHandle.h>
 #include <aws/s3-transfer/DownloadHandle.h>
+#include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/s3/S3EndpointProvider.h>
+#include <memory>
+
 namespace Aws {
 namespace S3 {
 namespace Transfer {
@@ -22,7 +26,27 @@ class S3TransferManagerImpl;
  */
 class AWS_S3_TRANSFER_API S3TransferManager final {
  public:
-  explicit S3TransferManager(const S3TransferManagerConfiguration& config);
+  /**
+   * Initializes the transfer manager with the DefaultCredentialProviderChain and an optional
+   * config. If config is not specified, it will be initialized to default values.
+   */
+  S3TransferManager(const S3TransferManagerConfiguration& config = S3TransferManagerConfiguration(),
+                    std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase> endpointProvider = nullptr);
+
+  /**
+   * Initializes the transfer manager with the supplied static credentials and an optional config.
+   */
+  S3TransferManager(const Aws::Auth::AWSCredentials& credentials,
+                    std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase> endpointProvider = nullptr,
+                    const S3TransferManagerConfiguration& config = S3TransferManagerConfiguration());
+
+  /**
+   * Initializes the transfer manager with the supplied credentials provider and an optional config.
+   */
+  S3TransferManager(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                    std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase> endpointProvider = nullptr,
+                    const S3TransferManagerConfiguration& config = S3TransferManagerConfiguration());
+
   ~S3TransferManager();
 
   S3TransferManager(const S3TransferManager&) = delete;

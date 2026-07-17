@@ -36,7 +36,6 @@ private:
   Aws::UniquePtr<DownloadHandleImpl> m_impl;
 };
 
-
-}
-}
-}
+}  // namespace Transfer
+}  // namespace S3
+}  // namespace Aws

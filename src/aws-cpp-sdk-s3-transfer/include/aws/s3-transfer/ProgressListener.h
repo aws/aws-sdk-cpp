@@ -4,16 +4,20 @@
  */
 #pragma once
 #include <aws/s3-transfer/S3Transfer_EXPORTS.h>
+#include <aws/s3-transfer/ProgressSnapshot.h>
 
 namespace Aws {
 namespace S3 {
 namespace Transfer {
 
+class UploadRequest;
+class DownloadRequest;
+
 /**
  * Callback interface for receiving event-driven updates throughout the lifecycle of a transfer.
  * Subclass and override the events of interest; default implementations are empty so unused
  * callbacks can be ignored. Listeners may be registered on the request or on the manager.
- * Specialized via the UploadProgressListener and DownloadProgressListener type aliases.
+ * Specialized via the UploadProgressListener and DownloadProgressListener subclasses below.
  */
 template <typename RequestT, typename SnapshotT>
 class ProgressListener {
@@ -42,6 +46,22 @@ class ProgressListener {
   virtual void OnTransferFailed(const RequestT& /*request*/, const SnapshotT& /*snapshot*/) {}
 };
 
-}
-}
-}
+/**
+ * Callback interface for receiving event-driven updates throughout the lifecycle of an upload.
+ * Subclass and override the events of interest; default implementations are empty so unused
+ * callbacks can be ignored. Listeners may be registered on the request or on the manager.
+ */
+class AWS_S3_TRANSFER_API UploadProgressListener
+    : public ProgressListener<UploadRequest, UploadProgressSnapshot> {};
+
+/**
+ * Callback interface for receiving event-driven updates throughout the lifecycle of a download.
+ * Subclass and override the events of interest; default implementations are empty so unused
+ * callbacks can be ignored. Listeners may be registered on the request or on the manager.
+ */
+class AWS_S3_TRANSFER_API DownloadProgressListener
+    : public ProgressListener<DownloadRequest, DownloadProgressSnapshot> {};
+
+}  // namespace Transfer
+}  // namespace S3
+}  // namespace Aws

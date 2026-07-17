@@ -11,8 +11,8 @@
  *  - DataReceiver zero-copy download (single-part + multipart delivery, ordering + integrity).
  *  - Large stream (32 MiB) MPU round trip.
  */
-#include "RecordingProgressListener.h"
-#include "S3TransferTestFixture.h"
+#include <RecordingProgressListener.h>
+#include <S3TransferTestFixture.h>
 
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/s3-transfer/DownloadDataReceiver.h>
@@ -158,10 +158,7 @@ class StreamTests : public S3TransferTestFixture {
     body->seekg(static_cast<std::streamoff>(offset), std::ios_base::beg);
     ASSERT_EQ(static_cast<std::streampos>(offset), body->tellg());
 
-    Aws::S3::Model::PutObjectRequest putRequest;
-    putRequest.SetBucket(s_bucketName);
-    putRequest.SetKey(key);
-    UploadRequest request(putRequest, body);
+    UploadRequest request(s_bucketName, key, body);
 
     S3TransferManager manager(MakeConfig());
     UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -202,11 +199,8 @@ TEST_F(StreamTests, SeekableStreamUploadBelowThreshold) {
   auto body = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
   body->write(payload.data(), static_cast<std::streamsize>(payload.size()));
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
   auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
-  UploadRequest request(putRequest, body, {listener});
+  UploadRequest request(s_bucketName, key, body, {listener});
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -237,11 +231,8 @@ TEST_F(StreamTests, SeekableStreamUploadAboveThreshold) {
   auto body = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
   body->write(payload.data(), static_cast<std::streamsize>(payload.size()));
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
   auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
-  UploadRequest request(putRequest, body, {listener});
+  UploadRequest request(s_bucketName, key, body, {listener});
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -273,11 +264,8 @@ TEST_F(StreamTests, NonSeekableStreamUploadWithExplicitContentLength) {
   }
   auto stream = Aws::MakeShared<NonSeekableIOStream>(ALLOCATION_TAG, std::string(body.c_str(), body.size()));
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
   auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
-  UploadRequest request(putRequest, stream, {listener});
+  UploadRequest request(s_bucketName, key, stream, {listener});
   request.SetContentLength(size);
   ASSERT_TRUE(request.ContentLengthHasBeenSet());
   ASSERT_EQ(size, request.GetContentLength());
@@ -323,10 +311,7 @@ TEST_F(StreamTests, PartiallyReadStreamUploadsOnlyRemainder) {
   body->read(&scratch[0], static_cast<std::streamsize>(prefixToConsume));
   ASSERT_EQ(static_cast<std::streamsize>(prefixToConsume), body->gcount());
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  UploadRequest request(putRequest, body);
+  UploadRequest request(s_bucketName, key, body);
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -364,10 +349,7 @@ TEST_F(StreamTests, LargeSeekableStreamMultipartRoundTrip) {
   body->write(payload.data(), static_cast<std::streamsize>(payload.size()));
 
   auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  UploadRequest request(putRequest, body, {listener});
+  UploadRequest request(s_bucketName, key, body, {listener});
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -408,10 +390,7 @@ TEST_F(StreamTests, DataReceiverDownloadSingle) {
 
   auto receiver = Aws::MakeShared<RecordingDataReceiver>(ALLOCATION_TAG);
   auto listener = Aws::MakeShared<RecordingDownloadListener>(ALLOCATION_TAG);
-  Aws::S3::Model::GetObjectRequest getRequest;
-  getRequest.SetBucket(s_bucketName);
-  getRequest.SetKey(key);
-  DownloadRequest request(getRequest, std::static_pointer_cast<DownloadDataReceiver>(receiver), {listener});
+  DownloadRequest request(s_bucketName, key, std::static_pointer_cast<DownloadDataReceiver>(receiver), {listener});
 
   S3TransferManager manager(MakeConfig());
   DownloadOutcome outcome = manager.Download(request).CompletionFuture().get();
@@ -435,10 +414,7 @@ TEST_F(StreamTests, DataReceiverDownloadMultipart) {
 
   auto receiver = Aws::MakeShared<RecordingDataReceiver>(ALLOCATION_TAG);
   auto listener = Aws::MakeShared<RecordingDownloadListener>(ALLOCATION_TAG);
-  Aws::S3::Model::GetObjectRequest getRequest;
-  getRequest.SetBucket(s_bucketName);
-  getRequest.SetKey(key);
-  DownloadRequest request(getRequest, std::static_pointer_cast<DownloadDataReceiver>(receiver), {listener});
+  DownloadRequest request(s_bucketName, key, std::static_pointer_cast<DownloadDataReceiver>(receiver), {listener});
 
   S3TransferManager manager(MakeConfig());
   DownloadOutcome outcome = manager.Download(request).CompletionFuture().get();
@@ -497,10 +473,7 @@ TEST_F(StreamTests, DataReceiverReassemblesMultipartInOrder) {
   };
   auto receiver = Aws::MakeShared<ReassemblingReceiver>(ALLOCATION_TAG, size);
 
-  Aws::S3::Model::GetObjectRequest getRequest;
-  getRequest.SetBucket(s_bucketName);
-  getRequest.SetKey(key);
-  DownloadRequest request(getRequest, receiver);
+  DownloadRequest request(s_bucketName, key, receiver);
 
   S3TransferManager manager(MakeConfig());
   DownloadOutcome outcome = manager.Download(request).CompletionFuture().get();

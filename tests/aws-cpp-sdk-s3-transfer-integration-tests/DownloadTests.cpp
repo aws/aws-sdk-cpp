@@ -11,8 +11,8 @@
  * NOTE: GetObjectResult (and therefore DownloadResponse / DownloadOutcome) is move-only. Never copy
  * the outcome; bind it by value from future::get() (which moves) and read GetResult() by reference.
  */
-#include "RecordingProgressListener.h"
-#include "S3TransferTestFixture.h"
+#include <RecordingProgressListener.h>
+#include <S3TransferTestFixture.h>
 
 #include <aws/s3-transfer/S3TransferManager.h>
 #include <aws/s3/model/GetObjectRequest.h>
@@ -48,17 +48,15 @@ class DownloadTests : public S3TransferTestFixture {
   DownloadRequest MakeDownloadRequest(const Aws::String& key, const Aws::String& destPath,
                                       const std::shared_ptr<RecordingDownloadListener>& listener,
                                       bool checksumEnabled = false) {
-    Aws::S3::Model::GetObjectRequest getRequest;
-    getRequest.SetBucket(s_bucketName);
-    getRequest.SetKey(key);
-    if (checksumEnabled) {
-      getRequest.SetChecksumMode(Aws::S3::Model::ChecksumMode::ENABLED);
-    }
     Aws::Vector<std::shared_ptr<DownloadProgressListener>> listeners;
     if (listener) {
       listeners.push_back(listener);
     }
-    return DownloadRequest(getRequest, destPath, listeners);
+    DownloadRequest request(s_bucketName, key, destPath, listeners);
+    if (checksumEnabled) {
+      request.SetChecksumMode(Aws::S3::Model::ChecksumMode::ENABLED);
+    }
+    return request;
   }
 };
 
@@ -172,10 +170,10 @@ TEST_F(DownloadTests, ProgressLifecycleOrdering) {
   DownloadOutcome outcome = manager.Download(MakeDownloadRequest(key, destPath, listener)).CompletionFuture().get();
 
   AWS_ASSERT_SUCCESS(outcome);
-  EXPECT_EQ(1, listener->initiatedCount.load());
-  EXPECT_GE(listener->bytesTransferredCount.load(), 1);
-  EXPECT_EQ(1, listener->completeCount.load());
-  EXPECT_EQ(0, listener->failedCount.load());
+  EXPECT_EQ(1u, listener->initiatedCount.load());
+  EXPECT_GE(listener->bytesTransferredCount.load(), 1u);
+  EXPECT_EQ(1u, listener->completeCount.load());
+  EXPECT_EQ(0u, listener->failedCount.load());
   EXPECT_FALSE(listener->sawBytesBeforeInitiated.load());
   EXPECT_FALSE(listener->sawNonMonotonic.load());
 
@@ -193,8 +191,8 @@ TEST_F(DownloadTests, DownloadNonexistentObjectFails) {
   DownloadOutcome outcome = manager.Download(MakeDownloadRequest(key, destPath, listener)).CompletionFuture().get();
 
   EXPECT_FALSE(outcome.IsSuccess());
-  EXPECT_EQ(1, listener->failedCount.load());
-  EXPECT_EQ(0, listener->completeCount.load());
+  EXPECT_EQ(1u, listener->failedCount.load());
+  EXPECT_EQ(0u, listener->completeCount.load());
   // On failure the destination must not be left as a successful file.
   EXPECT_FALSE(ObjectExists(key));
 
@@ -215,7 +213,6 @@ TEST_F(DownloadTests, DownloadResponseCarriesContentLengthAndETag) {
   DownloadOutcome outcome = manager.Download(MakeDownloadRequest(key, destPath, listener)).CompletionFuture().get();
 
   AWS_ASSERT_SUCCESS(outcome);
-  ASSERT_TRUE(outcome.GetResult().S3ResultHasBeenSet());
   const auto& s3Result = outcome.GetResult().GetS3Result();
   EXPECT_EQ(static_cast<int64_t>(size), s3Result.GetContentLength());
   EXPECT_FALSE(s3Result.GetETag().empty());
@@ -235,7 +232,7 @@ TEST_F(DownloadTests, DownloadFailureLeavesNoDestinationFile) {
   DownloadOutcome outcome = manager.Download(MakeDownloadRequest(key, destPath, listener)).CompletionFuture().get();
 
   EXPECT_FALSE(outcome.IsSuccess());
-  EXPECT_EQ(1, listener->failedCount.load());
+  EXPECT_EQ(1u, listener->failedCount.load());
   EXPECT_FALSE(FileExists(destPath)) << "Destination file must not be left behind on failed download";
 }
 
@@ -281,11 +278,8 @@ TEST_F(DownloadTests, DownloadWithByteRangeReturnsRangeSize) {
   AWS_ASSERT_SUCCESS(s_s3Client->PutObject(put));
 
   const Aws::String destPath = LocalTempPath("range-dest");
-  Aws::S3::Model::GetObjectRequest getRequest;
-  getRequest.SetBucket(s_bucketName);
-  getRequest.SetKey(key);
-  getRequest.SetRange("bytes=128-1024");
-  DownloadRequest request(getRequest, destPath);
+  DownloadRequest request(s_bucketName, key, destPath);
+  request.SetRange("bytes=128-1024");
 
   S3TransferManager manager(MakeConfig());
   DownloadOutcome outcome = manager.Download(request).CompletionFuture().get();

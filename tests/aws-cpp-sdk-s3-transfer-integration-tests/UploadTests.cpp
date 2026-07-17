@@ -11,8 +11,8 @@
  *  - Special/unicode/URI-escape key names, DNS-unfriendly bucket names
  *  - Empty/zero-byte body, 75 MiB big-file round trip, progress monotonicity
  */
-#include "RecordingProgressListener.h"
-#include "S3TransferTestFixture.h"
+#include <RecordingProgressListener.h>
+#include <S3TransferTestFixture.h>
 
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -49,7 +49,7 @@ constexpr const char* SPECIAL_CHARS_KEY = "foo;jsessionid=40+2";
 // Table row for the checksum-matrix test, ported from S3Crt
 // BucketAndObjectOperationTest.cpp:1526.
 struct ChecksumTestCase {
-  std::function<PutObjectRequest(PutObjectRequest)> checksumRequestMutator;
+  std::function<void(UploadRequest&)> checksumRequestMutator;
   HttpResponseCode responseCode;
   Aws::String body;
 };
@@ -67,15 +67,12 @@ class UploadTests : public S3TransferTestFixture {
                          const std::shared_ptr<RecordingUploadListener>& listener,
                          Aws::S3::Model::ChecksumAlgorithm checksum = Aws::S3::Model::ChecksumAlgorithm::NOT_SET) {
     Aws::String sourcePath = MakeLocalFileOfSize(fileSize, "upload");
-    Aws::S3::Model::PutObjectRequest putRequest;
-    putRequest.SetBucket(s_bucketName);
-    putRequest.SetKey(key);
-    if (checksum != Aws::S3::Model::ChecksumAlgorithm::NOT_SET) {
-      putRequest.SetChecksumAlgorithm(checksum);
-    }
     Aws::Vector<std::shared_ptr<UploadProgressListener>> listeners;
     if (listener) listeners.push_back(listener);
-    UploadRequest request(putRequest, sourcePath, listeners);
+    UploadRequest request(s_bucketName, key, sourcePath, listeners);
+    if (checksum != Aws::S3::Model::ChecksumAlgorithm::NOT_SET) {
+      request.SetChecksumAlgorithm(checksum);
+    }
 
     S3TransferManager manager(MakeConfig());
     UploadHandle handle = manager.Upload(request);
@@ -89,11 +86,8 @@ class UploadTests : public S3TransferTestFixture {
   // special-character-key tests.
   void UploadAndVerifyKey(const Aws::String& key) {
     auto body = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG, "Test Object");
-    Aws::S3::Model::PutObjectRequest putRequest;
-    putRequest.SetBucket(s_bucketName);
-    putRequest.SetKey(key);
-    putRequest.SetContentType("text/plain");
-    UploadRequest request(putRequest, body);
+    UploadRequest request(s_bucketName, key, body);
+    request.SetContentType("text/plain");
 
     S3TransferManager manager(MakeConfig());
     UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -136,10 +130,7 @@ TEST_F(UploadTests, MultipartUploadAboveThreshold) {
   Aws::String sourcePath = MakeLocalFileOfSize(size, "upload-mpu");
   Aws::String sourceHash = FileSha256(sourcePath);
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  UploadRequest request(putRequest, sourcePath, {listener});
+  UploadRequest request(s_bucketName, key, sourcePath, {listener});
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -191,10 +182,10 @@ TEST_F(UploadTests, ProgressLifecycleOrdering) {
   auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
   UploadOutcome outcome = DoUpload(size, key, listener);
   AWS_ASSERT_SUCCESS(outcome);
-  EXPECT_EQ(1, listener->initiatedCount.load());
-  EXPECT_GE(listener->bytesTransferredCount.load(), 1);
-  EXPECT_EQ(1, listener->completeCount.load());
-  EXPECT_EQ(0, listener->failedCount.load());
+  EXPECT_EQ(1u, listener->initiatedCount.load());
+  EXPECT_GE(listener->bytesTransferredCount.load(), 1u);
+  EXPECT_EQ(1u, listener->completeCount.load());
+  EXPECT_EQ(0u, listener->failedCount.load());
   EXPECT_FALSE(listener->sawBytesBeforeInitiated.load());
   EXPECT_FALSE(listener->sawNonMonotonic.load());
 }
@@ -207,10 +198,7 @@ TEST_F(UploadTests, ProgressMonotonicityOnMultipartUpload) {
   const Aws::String sourcePath = MakeLocalFileOfSize(size, "progress-monotonic");
 
   auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  UploadRequest request(putRequest, sourcePath, {listener});
+  UploadRequest request(s_bucketName, key, sourcePath, {listener});
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -218,7 +206,7 @@ TEST_F(UploadTests, ProgressMonotonicityOnMultipartUpload) {
 
   EXPECT_FALSE(listener->sawNonMonotonic.load());
   EXPECT_EQ(size, listener->maxTransferredBytes.load());
-  EXPECT_GE(listener->bytesTransferredCount.load(), 1);
+  EXPECT_GE(listener->bytesTransferredCount.load(), 1u);
 
   Aws::FileSystem::RemoveFileIfExists(sourcePath.c_str());
 }
@@ -230,20 +218,17 @@ TEST_F(UploadTests, UploadFanOutToMultipleListeners) {
 
   auto listenerA = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
   auto listenerB = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  UploadRequest request(putRequest, sourcePath, {listenerA, listenerB});
+  UploadRequest request(s_bucketName, key, sourcePath, {listenerA, listenerB});
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
   AWS_ASSERT_SUCCESS(outcome);
 
   for (const auto& listener : {listenerA, listenerB}) {
-    EXPECT_EQ(1, listener->initiatedCount.load());
-    EXPECT_GE(listener->bytesTransferredCount.load(), 1);
-    EXPECT_EQ(1, listener->completeCount.load());
-    EXPECT_EQ(0, listener->failedCount.load());
+    EXPECT_EQ(1u, listener->initiatedCount.load());
+    EXPECT_GE(listener->bytesTransferredCount.load(), 1u);
+    EXPECT_EQ(1u, listener->completeCount.load());
+    EXPECT_EQ(0u, listener->failedCount.load());
     EXPECT_EQ(size, listener->maxTransferredBytes.load());
   }
 
@@ -260,17 +245,14 @@ TEST_F(UploadTests, UploadToNonexistentBucketFails) {
   Aws::String sourcePath = MakeLocalFileOfSize(size, "upload-err");
   auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket("this-bucket-should-not-exist-" + Aws::Utils::StringUtils::ToLower(UniqueKey().c_str()));
-  putRequest.SetKey(key);
-  UploadRequest request(putRequest, sourcePath, {listener});
+  UploadRequest request("this-bucket-should-not-exist-" + Aws::Utils::StringUtils::ToLower(UniqueKey().c_str()), key, sourcePath, {listener});
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
 
   EXPECT_FALSE(outcome.IsSuccess());
-  EXPECT_EQ(1, listener->failedCount.load());
-  EXPECT_EQ(0, listener->completeCount.load());
+  EXPECT_EQ(1u, listener->failedCount.load());
+  EXPECT_EQ(0u, listener->completeCount.load());
 
   Aws::FileSystem::RemoveFileIfExists(sourcePath.c_str());
 }
@@ -282,18 +264,15 @@ TEST_F(UploadTests, UploadOfNonexistentSourceFileFails) {
   const Aws::String key = "UnicornKey";
 
   auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  putRequest.SetContentType("text/plain");
-  UploadRequest request(putRequest, nonexistentPath, {listener});
+  UploadRequest request(s_bucketName, key, nonexistentPath, {listener});
+  request.SetContentType("text/plain");
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
 
   EXPECT_FALSE(outcome.IsSuccess());
-  EXPECT_EQ(1, listener->failedCount.load());
-  EXPECT_EQ(0, listener->completeCount.load());
+  EXPECT_EQ(1u, listener->failedCount.load());
+  EXPECT_EQ(0u, listener->completeCount.load());
 }
 
 // SEP upload cases #6/#7 — a failed MPU-sized upload must not leave orphan multipart uploads. We
@@ -306,17 +285,14 @@ TEST_F(UploadTests, MultipartUploadFailureCleansUpOrphanedMpu) {
   const Aws::String sourcePath = MakeLocalFileOfSize(size, "mpu-error");
 
   auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(nonexistentBucket);
-  putRequest.SetKey(key);
-  UploadRequest request(putRequest, sourcePath, {listener});
+  UploadRequest request(nonexistentBucket, key, sourcePath, {listener});
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
 
   EXPECT_FALSE(outcome.IsSuccess());
-  EXPECT_EQ(1, listener->failedCount.load());
-  EXPECT_EQ(0, listener->completeCount.load());
+  EXPECT_EQ(1u, listener->failedCount.load());
+  EXPECT_EQ(0u, listener->completeCount.load());
   EXPECT_FALSE(outcome.GetError().GetMessage().empty());
 
   Aws::FileSystem::RemoveFileIfExists(sourcePath.c_str());
@@ -332,7 +308,6 @@ TEST_F(UploadTests, UploadResponseCarriesETag) {
   auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
   UploadOutcome outcome = DoUpload(size, key, listener);
   AWS_ASSERT_SUCCESS(outcome);
-  ASSERT_TRUE(outcome.GetResult().S3ResultHasBeenSet());
   EXPECT_FALSE(outcome.GetResult().GetS3Result().GetETag().empty());
 }
 
@@ -341,12 +316,9 @@ TEST_F(UploadTests, UploadPreservesContentTypeAndUserMetadata) {
   const Aws::String key = UniqueKey();
   Aws::String sourcePath = MakeLocalFileOfSize(size, "upload-meta");
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  putRequest.SetContentType("application/x-test-type");
-  putRequest.AddMetadata("test-key", "test-value");
-  UploadRequest request(putRequest, sourcePath, {});
+  UploadRequest request(s_bucketName, key, sourcePath, {});
+  request.SetContentType("application/x-test-type");
+  request.AddMetadata("test-key", "test-value");
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -372,13 +344,10 @@ TEST_F(UploadTests, MultipartUploadPreservesContentTypeAndUserMetadata) {
   const Aws::String key = UniqueKey();
   Aws::String sourcePath = MakeLocalFileOfSize(size, "mpu-meta");
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  putRequest.SetContentType("application/x-test-mpu");
-  putRequest.AddMetadata("test-key-one", "value-one");
-  putRequest.AddMetadata("test-key-two", "value-two");
-  UploadRequest request(putRequest, sourcePath);
+  UploadRequest request(s_bucketName, key, sourcePath);
+  request.SetContentType("application/x-test-mpu");
+  request.AddMetadata("test-key-one", "value-one");
+  request.AddMetadata("test-key-two", "value-two");
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -410,10 +379,7 @@ TEST_F(UploadTests, ZeroByteFileUpload) {
   const Aws::String sourcePath = MakeLocalFileOfSize(0, "empty-file");
   ASSERT_EQ(0u, FileSize(sourcePath));
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  UploadRequest request(putRequest, sourcePath);
+  UploadRequest request(s_bucketName, key, sourcePath);
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -433,10 +399,7 @@ TEST_F(UploadTests, EmptyStreamUpload) {
   const Aws::String key = UniqueKey();
   auto body = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG, "");
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  UploadRequest request(putRequest, body);
+  UploadRequest request(s_bucketName, key, body);
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -485,11 +448,8 @@ TEST_F(UploadTests, PutObjectSucceedsOnDnsUnfriendlyBucket) {
   auto body = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG,
                                                  "'A program that has not been tested does not work'-- Bjarne Stroustrup");
   const Aws::String key = "WhySoHostile";
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(bucketName);
-  putRequest.SetKey(key);
-  putRequest.SetContentType("text/plain");
-  UploadRequest request(putRequest, body);
+  UploadRequest request(bucketName, key, body);
+  request.SetContentType("text/plain");
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -513,71 +473,71 @@ TEST_F(UploadTests, PutObjectChecksum) {
 
   Aws::Vector<ChecksumTestCase> testCases{
       // Mismatched checksums → 400
-      {[](PutObjectRequest request) {
-         return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32).WithChecksumCRC32("Just runnin' scared each place we go");
+      {[](UploadRequest& r) {
+         r.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32).SetChecksumCRC32("Just runnin' scared each place we go");
        },
        HttpResponseCode::BAD_REQUEST, "Just runnin' scared each place we go"},
-      {[](PutObjectRequest request) {
-         return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1).WithChecksumSHA1("So afraid that he might show");
+      {[](UploadRequest& r) {
+         r.SetChecksumAlgorithm(ChecksumAlgorithm::SHA1).SetChecksumSHA1("So afraid that he might show");
        },
        HttpResponseCode::BAD_REQUEST, "So afraid that he might show"},
-      {[](PutObjectRequest request) {
-         return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256).WithChecksumSHA256("Yeah, runnin' scared, what would I do");
+      {[](UploadRequest& r) {
+         r.SetChecksumAlgorithm(ChecksumAlgorithm::SHA256).SetChecksumSHA256("Yeah, runnin' scared, what would I do");
        },
        HttpResponseCode::BAD_REQUEST, "Yeah, runnin' scared, what would I do"},
-      {[](PutObjectRequest request) {
-         return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C).WithChecksumCRC32C("If he came back and wanted you?");
+      {[](UploadRequest& r) {
+         r.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C).SetChecksumCRC32C("If he came back and wanted you?");
        },
        HttpResponseCode::BAD_REQUEST, "If he came back and wanted you?"},
-      {[](PutObjectRequest request) {
-         return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA512).WithChecksumSHA512("If he came back and wanted you?");
+      {[](UploadRequest& r) {
+         r.SetChecksumAlgorithm(ChecksumAlgorithm::SHA512).SetChecksumSHA512("If he came back and wanted you?");
        },
        HttpResponseCode::BAD_REQUEST, "If he came back and wanted you?"},
-      {[](PutObjectRequest request) { return request.WithContentMD5("Just runnin' scared, feelin' low"); },
+      {[](UploadRequest& r) { r.SetContentMD5("Just runnin' scared, feelin' low"); },
        HttpResponseCode::BAD_REQUEST, "Just runnin' scared, feelin' low"},
       // Correct checksums → OK
-      {[](PutObjectRequest request) {
-         return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32)
-             .WithChecksumCRC32(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32("Runnin' scared, you love him so")));
+      {[](UploadRequest& r) {
+         r.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32)
+             .SetChecksumCRC32(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32("Runnin' scared, you love him so")));
        },
        HttpResponseCode::OK, "Runnin' scared, you love him so"},
-      {[](PutObjectRequest request) {
-         return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1)
-             .WithChecksumSHA1(HashingUtils::Base64Encode(HashingUtils::CalculateSHA1("Just runnin' scared, afraid to lose")));
+      {[](UploadRequest& r) {
+         r.SetChecksumAlgorithm(ChecksumAlgorithm::SHA1)
+             .SetChecksumSHA1(HashingUtils::Base64Encode(HashingUtils::CalculateSHA1("Just runnin' scared, afraid to lose")));
        },
        HttpResponseCode::OK, "Just runnin' scared, afraid to lose"},
-      {[](PutObjectRequest request) {
-         return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256)
-             .WithChecksumSHA256(HashingUtils::Base64Encode(HashingUtils::CalculateSHA256("If he came back, which one would you choose?")));
+      {[](UploadRequest& r) {
+         r.SetChecksumAlgorithm(ChecksumAlgorithm::SHA256)
+             .SetChecksumSHA256(HashingUtils::Base64Encode(HashingUtils::CalculateSHA256("If he came back, which one would you choose?")));
        },
        HttpResponseCode::OK, "If he came back, which one would you choose?"},
-      {[](PutObjectRequest request) {
-         return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C)
-             .WithChecksumCRC32C(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C("Then all at once he was standing there")));
+      {[](UploadRequest& r) {
+         r.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C)
+             .SetChecksumCRC32C(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C("Then all at once he was standing there")));
        },
        HttpResponseCode::OK, "Then all at once he was standing there"},
-      {[](PutObjectRequest request) {
-         return request.WithContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5("So sure of himself, his head in the air")));
+      {[](UploadRequest& r) {
+         r.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5("So sure of himself, his head in the air")));
        },
        HttpResponseCode::OK, "So sure of himself, his head in the air"},
-      {[](PutObjectRequest request) {
-         return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA512)
-             .WithChecksumSHA512(HashingUtils::Base64Encode(HashingUtils::CalculateSHA512("If he came back, which one would you choose?")));
+      {[](UploadRequest& r) {
+         r.SetChecksumAlgorithm(ChecksumAlgorithm::SHA512)
+             .SetChecksumSHA512(HashingUtils::Base64Encode(HashingUtils::CalculateSHA512("If he came back, which one would you choose?")));
        },
        HttpResponseCode::OK, "If he came back, which one would you choose?"},
       // Algorithm-only → SDK computes → OK
-      {[](PutObjectRequest request) { return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA512); },
+      {[](UploadRequest& r) { r.SetChecksumAlgorithm(ChecksumAlgorithm::SHA512); },
        HttpResponseCode::OK, "If he came back, which one would you choose?"},
       // MD5 as ChecksumAlgorithm is invalid → 400
-      {[](PutObjectRequest request) { return request.WithChecksumAlgorithm(ChecksumAlgorithm::MD5); },
+      {[](UploadRequest& r) { r.SetChecksumAlgorithm(ChecksumAlgorithm::MD5); },
        HttpResponseCode::BAD_REQUEST, "If he came back, which one would you choose?"},
   };
 
   for (const auto& testCase : testCases) {
-    PutObjectRequest putRequest = testCase.checksumRequestMutator(PutObjectRequest().WithBucket(s_bucketName).WithKey(key));
     std::shared_ptr<Aws::IOStream> body =
         Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG, testCase.body, std::ios_base::in | std::ios_base::binary);
-    UploadRequest request(putRequest, body);
+    UploadRequest request(s_bucketName, key, body);
+    testCase.checksumRequestMutator(request);
 
     S3TransferManager manager(MakeConfig());
     UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -600,11 +560,8 @@ TEST_F(UploadTests, MultipartUploadWithCrc32ProducesCompositeChecksum) {
   const Aws::String key = UniqueKey();
   const Aws::String sourcePath = MakeLocalFileOfSize(size, "composite-crc");
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  putRequest.SetChecksumAlgorithm(Aws::S3::Model::ChecksumAlgorithm::CRC32);
-  UploadRequest request(putRequest, sourcePath);
+  UploadRequest request(s_bucketName, key, sourcePath);
+  request.SetChecksumAlgorithm(Aws::S3::Model::ChecksumAlgorithm::CRC32);
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -631,12 +588,9 @@ TEST_F(UploadTests, MultipartUploadWithPrecomputedFullObjectCrc32) {
   Aws::FStream fileStream(sourcePath.c_str(), std::ios_base::in | std::ios_base::binary);
   const Aws::String fullCrc32 = Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateCRC32(fileStream));
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  putRequest.SetChecksumAlgorithm(Aws::S3::Model::ChecksumAlgorithm::CRC32);
-  putRequest.SetChecksumCRC32(fullCrc32);
-  UploadRequest request(putRequest, sourcePath);
+  UploadRequest request(s_bucketName, key, sourcePath);
+  request.SetChecksumAlgorithm(Aws::S3::Model::ChecksumAlgorithm::CRC32);
+  request.SetChecksumCRC32(fullCrc32);
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
@@ -666,11 +620,8 @@ TEST_F(UploadTests, BigFileUploadDownloadRoundTrip) {
   const Aws::String sourcePath = MakeLocalFileOfSize(size, "big-upload");
   const Aws::String sourceHash = FileSha256(sourcePath);
 
-  Aws::S3::Model::PutObjectRequest putRequest;
-  putRequest.SetBucket(s_bucketName);
-  putRequest.SetKey(key);
-  putRequest.SetContentType("text/plain");
-  UploadRequest uploadRequest(putRequest, sourcePath);
+  UploadRequest uploadRequest(s_bucketName, key, sourcePath);
+  uploadRequest.SetContentType("text/plain");
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome uploadOutcome = manager.Upload(uploadRequest).CompletionFuture().get();
@@ -685,10 +636,7 @@ TEST_F(UploadTests, BigFileUploadDownloadRoundTrip) {
   EXPECT_EQ("text/plain", headOutcome.GetResult().GetContentType());
 
   const Aws::String destPath = LocalTempPath("big-download");
-  Aws::S3::Model::GetObjectRequest getRequest;
-  getRequest.SetBucket(s_bucketName);
-  getRequest.SetKey(key);
-  DownloadRequest downloadRequest(getRequest, destPath);
+  DownloadRequest downloadRequest(s_bucketName, key, destPath);
   DownloadOutcome downloadOutcome = manager.Download(downloadRequest).CompletionFuture().get();
   AWS_ASSERT_SUCCESS(downloadOutcome);
   EXPECT_EQ(size, FileSize(destPath));

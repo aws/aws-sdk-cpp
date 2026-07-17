@@ -4,8 +4,10 @@
  */
 #pragma once
 
+#include <aws/core/Core_EXPORTS.h>
 #include <aws/s3-transfer/S3Transfer_EXPORTS.h>
 #include <aws/s3-transfer/S3TransferManagerConfiguration.h>
+#include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/S3EndpointProvider.h>
@@ -22,9 +24,14 @@ namespace Transfer {
 constexpr size_t DEFAULT_EXECUTOR_POOL_SIZE = 8;
 
 // Precondition: Aws::InitAPI() must be called before construction.
-class S3TransferManagerImpl final {
+class AWS_CORE_LOCAL S3TransferManagerImpl final {
  public:
-  explicit S3TransferManagerImpl(const S3TransferManagerConfiguration& config);
+  // Sole real constructor; the public overloads adapt their credentials shape into the
+  // AWSCredentialsProvider taken here. A null endpointProvider means "use the default
+  // S3EndpointProvider", matching generated-client behavior.
+  S3TransferManagerImpl(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                        const std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase>& endpointProvider,
+                        const S3TransferManagerConfiguration& config);
   ~S3TransferManagerImpl();
 
   S3TransferManagerImpl(const S3TransferManagerImpl&) = delete;
@@ -33,7 +40,7 @@ class S3TransferManagerImpl final {
   S3TransferManagerImpl& operator=(S3TransferManagerImpl&&) = delete;
 
   Aws::Crt::S3::S3Client& GetCrtClient() const { return *m_crtClient; }
-  Aws::S3::Endpoint::S3EndpointProvider& GetEndpointProvider() const { return *m_endpointProvider; }
+  Aws::S3::Endpoint::S3EndpointProviderBase& GetEndpointProvider() const { return *m_endpointProvider; }
   const Aws::String& GetRegion() const { return m_region; }
   const std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>& GetCredentialsProvider() const {
     return m_credentialsProvider;
@@ -44,7 +51,7 @@ class S3TransferManagerImpl final {
  private:
   Aws::String m_region;
   std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
-  Aws::UniquePtr<Aws::S3::Endpoint::S3EndpointProvider> m_endpointProvider;
+  std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase> m_endpointProvider;
   Aws::UniquePtr<Aws::Crt::S3::S3Client> m_crtClient;
   std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
 };

@@ -21,6 +21,6 @@ class AWS_S3_TRANSFER_API DownloadDataReceiver {
   virtual void OnDataReceived(S3DownloadBuffer buffer) = 0;
 };
 
-}
-}
-}
+}  // namespace Transfer
+}  // namespace S3
+}  // namespace Aws

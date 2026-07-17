@@ -15,8 +15,6 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/URI.h>
-#include <aws/core/http/standard/StandardHttpRequest.h>
-#include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/UUID.h>
@@ -26,11 +24,11 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/crt/Api.h>
 #include <aws/crt/http/HttpRequestResponse.h>
 #include <aws/crt/io/Stream.h>
 #include <aws/s3/S3Errors.h>
 #include <aws/s3/S3ErrorMarshaller.h>
-#include <aws/s3/s3.h>
 
 #include <algorithm>
 #include <cassert>
@@ -47,46 +45,47 @@ static const char* const CRT_OPERATIONS_LOG_TAG = "CrtOperations";
 
 namespace {
 
-Aws::Client::CoreErrors MapCrtErrorCode(int crtErrorCode) {
+Aws::Client::CoreErrors MapCrtErrorCode(Aws::Crt::S3::S3ErrorCode crtErrorCode) {
+  using Aws::Crt::S3::S3ErrorCode;
   switch (crtErrorCode) {
-    case AWS_ERROR_S3_MISSING_CONTENT_RANGE_HEADER:
-    case AWS_ERROR_S3_MISSING_CONTENT_LENGTH_HEADER:
-    case AWS_ERROR_S3_MISSING_ETAG:
-    case AWS_ERROR_S3_MISSING_UPLOAD_ID:
+    case S3ErrorCode::MissingContentRangeHeader:
+    case S3ErrorCode::MissingContentLengthHeader:
+    case S3ErrorCode::MissingETag:
+    case S3ErrorCode::MissingUploadId:
       return Aws::Client::CoreErrors::MISSING_PARAMETER;
-    case AWS_ERROR_S3_INVALID_CONTENT_RANGE_HEADER:
-    case AWS_ERROR_S3_INVALID_CONTENT_LENGTH_HEADER:
-    case AWS_ERROR_S3_INVALID_RANGE_HEADER:
-    case AWS_ERROR_S3_MULTIRANGE_HEADER_UNSUPPORTED:
-    case AWS_ERROR_S3_INCORRECT_CONTENT_LENGTH:
-    case AWS_ERROR_S3_INVALID_MEMORY_LIMIT_CONFIG:
+    case S3ErrorCode::InvalidContentRangeHeader:
+    case S3ErrorCode::InvalidContentLengthHeader:
+    case S3ErrorCode::InvalidRangeHeader:
+    case S3ErrorCode::MultirangeHeaderUnsupported:
+    case S3ErrorCode::IncorrectContentLength:
+    case S3ErrorCode::InvalidMemoryLimitConfig:
       return Aws::Client::CoreErrors::INVALID_PARAMETER_VALUE;
-    case AWS_ERROR_S3_INTERNAL_ERROR:
-    case AWS_ERROR_S3_PROXY_PARSE_FAILED:
-    case AWS_ERROR_S3_UNSUPPORTED_PROXY_SCHEME:
-    case AWS_ERROR_S3_NON_RECOVERABLE_ASYNC_ERROR:
-    case AWS_ERROR_S3_METRIC_DATA_NOT_AVAILABLE:
-    case AWS_ERROR_S3_EXCEEDS_MEMORY_LIMIT:
+    case S3ErrorCode::InternalError:
+    case S3ErrorCode::ProxyParseFailed:
+    case S3ErrorCode::UnsupportedProxyScheme:
+    case S3ErrorCode::NonRecoverableAsyncError:
+    case S3ErrorCode::MetricDataNotAvailable:
+    case S3ErrorCode::ExceedsMemoryLimit:
       return Aws::Client::CoreErrors::INTERNAL_FAILURE;
-    case AWS_ERROR_S3_SLOW_DOWN:
+    case S3ErrorCode::SlowDown:
       return Aws::Client::CoreErrors::SLOW_DOWN;
-    case AWS_ERROR_S3_INVALID_RESPONSE_STATUS:
-    case AWS_ERROR_S3_RESPONSE_CHECKSUM_MISMATCH:
-    case AWS_ERROR_S3_CHECKSUM_CALCULATION_FAILED:
-    case AWS_ERROR_S3_LIST_PARTS_PARSE_FAILED:
-    case AWS_ERROR_S3_RESUMED_PART_CHECKSUM_MISMATCH:
-    case AWS_ERROR_S3_FILE_MODIFIED:
-    case AWS_ERROR_S3_INTERNAL_PART_SIZE_MISMATCH_RETRYING_WITH_RANGE:
-    case AWS_ERROR_S3_RECV_FILE_ALREADY_EXISTS:
-    case AWS_ERROR_S3_RECV_FILE_NOT_FOUND:
+    case S3ErrorCode::InvalidResponseStatus:
+    case S3ErrorCode::ResponseChecksumMismatch:
+    case S3ErrorCode::ChecksumCalculationFailed:
+    case S3ErrorCode::ListPartsParseFailed:
+    case S3ErrorCode::ResumedPartChecksumMismatch:
+    case S3ErrorCode::FileModified:
+    case S3ErrorCode::InternalPartSizeMismatchRetryingWithRange:
+    case S3ErrorCode::RecvFileAlreadyExists:
+    case S3ErrorCode::RecvFileNotFound:
       return Aws::Client::CoreErrors::VALIDATION;
-    case AWS_ERROR_S3_CANCELED:
+    case S3ErrorCode::Canceled:
       return Aws::Client::CoreErrors::USER_CANCELLED;
-    case AWS_ERROR_S3_REQUEST_TIME_TOO_SKEWED:
+    case S3ErrorCode::RequestTimeTooSkewed:
       return Aws::Client::CoreErrors::REQUEST_TIME_TOO_SKEWED;
-    case AWS_ERROR_S3EXPRESS_CREATE_SESSION_FAILED:
+    case S3ErrorCode::S3ExpressCreateSessionFailed:
       return Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE;
-    case AWS_ERROR_S3_REQUEST_TIMEOUT:
+    case S3ErrorCode::RequestTimeout:
       return Aws::Client::CoreErrors::REQUEST_TIMEOUT;
     default:
       return Aws::Client::CoreErrors::INTERNAL_FAILURE;
@@ -94,44 +93,75 @@ Aws::Client::CoreErrors MapCrtErrorCode(int crtErrorCode) {
 }
 
 Aws::Client::AWSError<Aws::S3::S3Errors> MapCrtError(const Aws::Crt::S3::S3MetaRequestResult& result) {
-  auto httpRequest = Aws::MakeShared<Aws::Http::Standard::StandardHttpRequest>(
-      CRT_OPERATIONS_LOG_TAG, Aws::Http::URI("/"), Aws::Http::HttpMethod::HTTP_GET);
-  // StandardHttpResponse's constructor eagerly invokes the request's response-stream factory to
-  // materialize its body stream; without this the factory is empty and aborts under -fno-exceptions.
-  httpRequest->SetResponseStreamFactory(Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-  std::shared_ptr<Aws::Http::HttpResponse> response =
-      Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(CRT_OPERATIONS_LOG_TAG, httpRequest);
+  const Aws::Crt::S3::S3ErrorCode crtErrorCode = result.GetErrorCode();
+  const bool crtFailed = crtErrorCode != Aws::Crt::S3::S3ErrorCode::Success;
+  const bool hasBody = result.errorResponseBody.ptr != nullptr && result.errorResponseBody.len > 0;
 
-  if (result.errorCode != AWS_ERROR_SUCCESS && result.responseStatus == 0) {
-    response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+  // Transport-layer failure: no HTTP response ever came back.
+  if (crtFailed && result.responseStatus == 0) {
     Aws::StringStream ss;
-    ss << "crtCode: " << result.errorCode << ", " << aws_error_name(result.errorCode) << " - "
-       << aws_error_str(result.errorCode);
-    response->SetClientErrorMessage(ss.str());
-    response->SetResponseCode(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE);
-  } else {
-    response->SetResponseCode(static_cast<Aws::Http::HttpResponseCode>(result.responseStatus));
+    ss << "crtCode: " << result.errorCode << ", " << Aws::Crt::ErrorDebugString(result.errorCode);
+    Aws::Client::AWSError<Aws::S3::S3Errors> error(
+        static_cast<Aws::S3::S3Errors>(Aws::Client::CoreErrors::NETWORK_CONNECTION), "", ss.str(), /*isRetryable*/ true);
+    error.SetResponseCode(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE);
+    return error;
   }
 
-  // Copy the borrowed error headers/body out of CRT memory (valid only during this callback).
+  // Bodyless CRT-side failure (e.g. response checksum mismatch on an otherwise-200 reply).
+  if (crtFailed && !hasBody) {
+    Aws::StringStream ss;
+    ss << Aws::Crt::ErrorDebugString(result.errorCode);
+    Aws::Client::AWSError<Aws::S3::S3Errors> error(
+        static_cast<Aws::S3::S3Errors>(MapCrtErrorCode(crtErrorCode)), "", ss.str(), /*isRetryable*/ false);
+    error.SetResponseCode(static_cast<Aws::Http::HttpResponseCode>(result.responseStatus));
+    return error;
+  }
+
+  // S3 replied with an XML error body. Parse it directly instead of stuffing bytes into a fake
+  // HttpResponse just to reuse S3ErrorMarshaller::BuildAWSError.
+  Aws::String bodyStr(reinterpret_cast<const char*>(result.errorResponseBody.ptr), result.errorResponseBody.len);
+  auto doc = Aws::Utils::Xml::XmlDocument::CreateFromXmlString(bodyStr);
+
+  Aws::String code;
+  Aws::String message;
+  Aws::String requestId;
+  if (doc.WasParseSuccessful()) {
+    auto root = doc.GetRootElement();
+    if (root.GetName() != "Error" && !root.FirstChild("Error").IsNull()) {
+      root = root.FirstChild("Error");
+    }
+    if (!root.IsNull()) {
+      if (!root.FirstChild("Code").IsNull()) {
+        code = Aws::Utils::StringUtils::Trim(root.FirstChild("Code").GetText().c_str());
+      }
+      if (!root.FirstChild("Message").IsNull()) {
+        message = Aws::Utils::StringUtils::Trim(root.FirstChild("Message").GetText().c_str());
+      }
+      if (!root.FirstChild("RequestId").IsNull()) {
+        requestId = root.FirstChild("RequestId").GetText();
+      } else if (!root.FirstChild("RequestID").IsNull()) {
+        requestId = root.FirstChild("RequestID").GetText();
+      }
+    }
+  }
+
+  Aws::Client::AWSError<Aws::S3::S3Errors> error = Aws::S3::S3ErrorMapper::GetErrorForName(code.c_str());
+  error.SetExceptionName(code);
+  error.SetMessage(message);
+  error.SetRequestId(requestId);
+  error.SetResponseCode(static_cast<Aws::Http::HttpResponseCode>(result.responseStatus));
+
+  // Preserve headers so S3ErrorMarshaller::ExtractRegion/ExtractEndpoint (used by region-redirect
+  // handling for HeadBucket-style flows) can still find x-amz-bucket-region / location on the
+  // returned error. SetXmlPayload is protected on AWSError so the <Region>/<Endpoint> XML-node
+  // fallback isn't preserved — TransferManager relies on the header path anyway.
+  Aws::Http::HeaderValueCollection headers;
   for (const auto& header : result.errorResponseHeaders) {
-    response->AddHeader(Aws::Utils::StringUtils::FromByteCursor(header.name),
-                        Aws::Utils::StringUtils::FromByteCursor(header.value));
+    headers.emplace(Aws::Utils::StringUtils::FromByteCursor(header.name),
+                    Aws::Utils::StringUtils::FromByteCursor(header.value));
   }
-  if (result.errorResponseBody.ptr != nullptr && result.errorResponseBody.len > 0) {
-    response->GetResponseBody().write(reinterpret_cast<const char*>(result.errorResponseBody.ptr),
-                                      static_cast<std::streamsize>(result.errorResponseBody.len));
-  } else if (result.errorCode != AWS_ERROR_SUCCESS) {
-    // Bodyless CRT-side failure (e.g. response checksum mismatch): supply a typed client error so
-    // the marshaller produces a precise error instead of "No response body".
-    Aws::StringStream ss;
-    ss << aws_error_str(result.errorCode) << " (" << aws_error_lib_name(result.errorCode) << ": "
-       << aws_error_name(result.errorCode) << ")";
-    response->SetClientErrorMessage(ss.str());
-    response->SetClientErrorType(MapCrtErrorCode(result.errorCode));
-  }
-
-  return Aws::Client::S3ErrorMarshaller().BuildAWSError(response);
+  error.SetResponseHeaders(headers);
+  return error;
 }
 
 struct ResolvedSigning {
@@ -142,7 +172,7 @@ struct ResolvedSigning {
 };
 
 template <typename RequestT>
-bool ResolveEndpointUri(Aws::S3::Endpoint::S3EndpointProvider& provider, const RequestT& s3Request,
+bool ResolveEndpointUri(Aws::S3::Endpoint::S3EndpointProviderBase& provider, const RequestT& s3Request,
                         const Aws::String& key, Aws::Http::URI& outUri, Aws::String& outError,
                         ResolvedSigning* outSigning = nullptr) {
   auto outcome = provider.ResolveEndpoint(s3Request.GetEndpointContextParams());
@@ -320,10 +350,10 @@ bool MapChecksumAlgorithm(Aws::S3::Model::ChecksumAlgorithm sdkAlgorithm,
 
 // Fires initiated -> failed on every listener and sets the promise. Used by pre-CRT early-return
 // paths so listeners see the same lifecycle they would for a CRT-async failure.
-template <typename ErrorT>
-void NotifyEarlyUploadFailure(std::shared_ptr<UploadTransferState> state, Aws::Client::AWSError<ErrorT> error) {
+void NotifyEarlyUploadFailure(std::shared_ptr<UploadTransferState> state,
+                              Aws::Client::AWSError<Aws::S3::S3Errors> error) {
   const auto snapshot =
-      UploadProgressSnapshot(0, state->totalBytes, nullptr, state->totalBytesHasBeenSet);
+      UploadProgressSnapshot(0, state->totalBytes.load(), nullptr, state->totalBytesHasBeenSet.load());
   for (const auto& listener : state->request.GetTransferListeners()) {
     if (!listener) continue;
     listener->OnTransferInitiated(state->request, snapshot);
@@ -332,8 +362,8 @@ void NotifyEarlyUploadFailure(std::shared_ptr<UploadTransferState> state, Aws::C
   state->promise.set_value(UploadOutcome(std::move(error)));
 }
 
-template <typename ErrorT>
-void NotifyEarlyDownloadFailure(std::shared_ptr<DownloadTransferState> state, Aws::Client::AWSError<ErrorT> error) {
+void NotifyEarlyDownloadFailure(std::shared_ptr<DownloadTransferState> state,
+                                Aws::Client::AWSError<Aws::S3::S3Errors> error) {
   const auto snapshot = DownloadProgressSnapshot(0, 0, nullptr, false);
   for (const auto& listener : state->request.GetTransferListeners()) {
     if (!listener) continue;
@@ -358,21 +388,21 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
   if (isFileUpload) {
     Aws::IFStream fileSizeStream(sourceFilePath.c_str(), std::ios_base::binary | std::ios_base::ate);
     if (fileSizeStream.good()) {
-      state->totalBytes = static_cast<uint64_t>(fileSizeStream.tellg());
-      state->totalBytesHasBeenSet = true;
+      state->totalBytes.store(static_cast<uint64_t>(fileSizeStream.tellg()));
+      state->totalBytesHasBeenSet.store(true);
     }
   } else if (body) {
     // Capture the stream's error state before measuring; TryMeasureSeekableStream calls clear(),
     // which would mask a pre-existing failure.
     bodyInBadState = body->fail();
     if (request.ContentLengthHasBeenSet()) {
-      state->totalBytes = request.GetContentLength();
-      state->totalBytesHasBeenSet = true;
+      state->totalBytes.store(request.GetContentLength());
+      state->totalBytesHasBeenSet.store(true);
     }
     uint64_t measured = 0;
-    if (TryMeasureSeekableStream(*body, measured) && !state->totalBytesHasBeenSet) {
-      state->totalBytes = measured;
-      state->totalBytesHasBeenSet = true;
+    if (TryMeasureSeekableStream(*body, measured) && !state->totalBytesHasBeenSet.load()) {
+      state->totalBytes.store(measured);
+      state->totalBytesHasBeenSet.store(true);
     }
   }
 
@@ -396,6 +426,15 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
     }
   }
 
+  // Body-source validation: the request's assert-guarded invariants also need a release-path
+  // failure so callers see a typed error via the future instead of a silently truncated upload.
+  if (!isFileUpload && !body) {
+    NotifyEarlyUploadFailure(state, Aws::Client::AWSError<Aws::S3::S3Errors>(
+        Aws::S3::S3Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE",
+        "UploadRequest stream body must not be null", false));
+    return UploadHandle(std::move(handleImpl));
+  }
+
   // Reject an already-failed body up front; reading from it would silently upload truncated data.
   if (bodyInBadState) {
     NotifyEarlyUploadFailure(state, Aws::Client::AWSError<Aws::S3::S3Errors>(
@@ -414,7 +453,7 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
   }
 
   // Async-writes is the unknown-length path; aws-c-s3 rejects it alongside a Content-Length header.
-  const bool useAsyncWrites = !isFileUpload && !state->totalBytesHasBeenSet;
+  const bool useAsyncWrites = !isFileUpload && !state->totalBytesHasBeenSet.load();
   std::shared_ptr<Aws::Crt::Io::InputStream> crtBody;
   if (!isFileUpload && !useAsyncWrites) {
     crtBody = Aws::MakeShared<Aws::Crt::Io::StdIOStreamInputStream>(CRT_OPERATIONS_LOG_TAG, body);
@@ -422,8 +461,8 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
   Aws::String explicitContentLength;
   if (request.ContentLengthHasBeenSet()) {
     explicitContentLength = Aws::Utils::StringUtils::to_string(request.GetContentLength());
-  } else if (!isFileUpload && state->totalBytesHasBeenSet) {
-    explicitContentLength = Aws::Utils::StringUtils::to_string(state->totalBytes);
+  } else if (!isFileUpload && state->totalBytesHasBeenSet.load()) {
+    explicitContentLength = Aws::Utils::StringUtils::to_string(state->totalBytes.load());
   }
   auto crtRequest = BuildCrtHttpRequest(s3Request, uri, Aws::Http::HttpMethod::HTTP_PUT, crtBody, explicitContentLength,
                                         s3Request.GetContentType());
@@ -431,7 +470,8 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
   for (const auto& listener : request.GetTransferListeners()) {
     if (listener) {
       listener->OnTransferInitiated(request,
-                                    UploadProgressSnapshot(0, state->totalBytes, nullptr, state->totalBytesHasBeenSet));
+                                    UploadProgressSnapshot(0, state->totalBytes.load(), nullptr,
+                                                           state->totalBytesHasBeenSet.load()));
     }
   }
 
@@ -446,7 +486,7 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
   if (!options) {
     // Initiated already fired above; only fire failed here.
     const auto snapshot =
-        UploadProgressSnapshot(0, state->totalBytes, nullptr, state->totalBytesHasBeenSet);
+        UploadProgressSnapshot(0, state->totalBytes.load(), nullptr, state->totalBytesHasBeenSet.load());
     for (const auto& listener : request.GetTransferListeners()) {
       if (listener) listener->OnTransferFailed(request, snapshot);
     }
@@ -479,33 +519,47 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
     }
   }
 
-  options->SetHeadersCallback([state](const Aws::Crt::Vector<Aws::Crt::Http::HttpHeader>& headers, int responseStatus) -> int {
+  // Callbacks hold weak_ptr<state>; state's only strong ref lives on UploadHandleImpl. This breaks
+  // the state <-> S3MetaRequest cycle: when the customer drops the handle, state dies, its dtor
+  // drops m_metaRequest, the wrapper's ScopedResource releases the last C-handle ref, and aws-c-s3
+  // fires shutdown_callback, which frees callbackData (and the closures inside it).
+  std::weak_ptr<UploadTransferState> stateWeak = state;
+  options->SetHeadersCallback([stateWeak](const Aws::Crt::Vector<Aws::Crt::Http::HttpHeader>& headers, int responseStatus) -> bool {
+    auto state = stateWeak.lock();
+    if (!state) return true;
     state->responseHeaders = ToHeaderValueCollection(headers);
     state->responseStatus = responseStatus;
-    return AWS_OP_SUCCESS;
+    return true;
   });
 
-  options->SetProgressCallback([state](uint64_t bytesTransferred, uint64_t /*contentLength*/) {
+  options->SetProgressCallback([stateWeak](uint64_t bytesTransferred, uint64_t /*contentLength*/) {
+    auto state = stateWeak.lock();
+    if (!state) return;
     const uint64_t soFar = (state->transferredBytes += bytesTransferred);
     for (const auto& listener : state->request.GetTransferListeners()) {
       if (listener) {
         listener->OnBytesTransferred(
-            state->request, UploadProgressSnapshot(soFar, state->totalBytes, nullptr, state->totalBytesHasBeenSet));
+            state->request, UploadProgressSnapshot(soFar, state->totalBytes.load(), nullptr,
+                                                   state->totalBytesHasBeenSet.load()));
       }
     }
   });
 
-  options->SetFinishCallback([state](const Aws::Crt::S3::S3MetaRequestResult& result) {
-    if (result.errorCode == AWS_ERROR_SUCCESS) {
-      auto response = Aws::MakeShared<UploadResponse>(CRT_OPERATIONS_LOG_TAG);
-      response->SetS3Result(Aws::S3::Model::PutObjectResult(
-          Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>(
-              Aws::Utils::Xml::XmlDocument(), state->responseHeaders,
-              static_cast<Aws::Http::HttpResponseCode>(state->responseStatus))));
+  options->SetFinishCallback([stateWeak](const Aws::Crt::S3::S3MetaRequestResult& result) {
+    auto state = stateWeak.lock();
+    if (!state) return;
+    if (result.GetErrorCode() == Aws::Crt::S3::S3ErrorCode::Success) {
+      auto response = Aws::MakeShared<UploadResponse>(
+          CRT_OPERATIONS_LOG_TAG,
+          Aws::S3::Model::PutObjectResult(
+              Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>(
+                  Aws::Utils::Xml::XmlDocument(), state->responseHeaders,
+                  static_cast<Aws::Http::HttpResponseCode>(state->responseStatus))));
       for (const auto& listener : state->request.GetTransferListeners()) {
         if (listener) {
+          const uint64_t total = state->totalBytes.load();
           listener->OnTransferComplete(state->request,
-                                       UploadProgressSnapshot(state->totalBytes, state->totalBytes, response, true));
+                                       UploadProgressSnapshot(total, total, response, true));
         }
       }
       state->promise.set_value(UploadOutcome(std::move(*response)));
@@ -514,8 +568,8 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
       for (const auto& listener : state->request.GetTransferListeners()) {
         if (listener) {
           listener->OnTransferFailed(state->request,
-                                     UploadProgressSnapshot(state->transferredBytes.load(), state->totalBytes, nullptr,
-                                                            state->totalBytesHasBeenSet));
+                                     UploadProgressSnapshot(state->transferredBytes.load(), state->totalBytes.load(),
+                                                            nullptr, state->totalBytesHasBeenSet.load()));
         }
       }
       state->promise.set_value(UploadOutcome(std::move(error)));
@@ -526,7 +580,7 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
   if (!metaRequest) {
     // Initiated already fired above; only fire failed here.
     const auto snapshot =
-        UploadProgressSnapshot(0, state->totalBytes, nullptr, state->totalBytesHasBeenSet);
+        UploadProgressSnapshot(0, state->totalBytes.load(), nullptr, state->totalBytesHasBeenSet.load());
     for (const auto& listener : request.GetTransferListeners()) {
       if (listener) listener->OnTransferFailed(request, snapshot);
     }
@@ -576,6 +630,22 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
     return DownloadHandle(std::move(handleImpl));
   }
 
+  // Destination validation: mirror the request's assert-guarded invariants on the release path
+  // so callers see a typed error instead of a silent no-op (empty path -> failed rename) or crash
+  // (null receiver -> deref in the body callback).
+  if (isStreamDownload && !receiver) {
+    NotifyEarlyDownloadFailure(state, Aws::Client::AWSError<Aws::S3::S3Errors>(
+        Aws::S3::S3Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE",
+        "DownloadRequest data receiver must not be null", false));
+    return DownloadHandle(std::move(handleImpl));
+  }
+  if (!isStreamDownload && state->destinationFilePath.empty()) {
+    NotifyEarlyDownloadFailure(state, Aws::Client::AWSError<Aws::S3::S3Errors>(
+        Aws::S3::S3Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE",
+        "DownloadRequest destination file path must not be empty", false));
+    return DownloadHandle(std::move(handleImpl));
+  }
+
   Aws::Http::URI uri;
   Aws::String endpointError;
   ResolvedSigning signing;
@@ -598,12 +668,12 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
     options = Aws::Crt::S3::S3GetObjectMetaRequestOptions::Create(
         crtRequest,
         Aws::Crt::S3::S3MetaRequestOptions::BodyCallbackEx(
-            [receiver](Aws::Crt::ByteCursor body, uint64_t rangeStart, Aws::Crt::S3::S3BufferTicket& ticket) -> int {
+            [receiver](Aws::Crt::ByteCursor body, uint64_t rangeStart, Aws::Crt::S3::S3BufferTicket& ticket) -> bool {
               // The ticket handed to the callback is borrowed; Acquire() an owning reference so the
               // buffer survives past the callback. The bytes come from the body cursor argument;
               // the ticket only owns lifetime.
               receiver->OnDataReceived(S3DownloadBuffer(ticket.Acquire(), body, rangeStart));
-              return AWS_OP_SUCCESS;
+              return true;
             }));
   } else {
     options = Aws::Crt::S3::S3GetObjectMetaRequestOptions::Create(
@@ -611,7 +681,8 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
   }
   if (!options) {
     // Initiated already fired above; only fire failed here.
-    const auto snapshot = DownloadProgressSnapshot(0, state->totalBytes, nullptr, state->totalBytesHasBeenSet);
+    const auto snapshot =
+        DownloadProgressSnapshot(0, state->totalBytes.load(), nullptr, state->totalBytesHasBeenSet.load());
     for (const auto& listener : request.GetTransferListeners()) {
       if (listener) listener->OnTransferFailed(request, snapshot);
     }
@@ -632,29 +703,38 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
     options->SetChecksumConfig(checksumConfig);
   }
 
-  options->SetHeadersCallback([state](const Aws::Crt::Vector<Aws::Crt::Http::HttpHeader>& headers, int responseStatus) -> int {
+  // See upload dispatch for why callbacks capture weak_ptr instead of shared_ptr.
+  std::weak_ptr<DownloadTransferState> stateWeak = state;
+  options->SetHeadersCallback([stateWeak](const Aws::Crt::Vector<Aws::Crt::Http::HttpHeader>& headers, int responseStatus) -> bool {
+    auto state = stateWeak.lock();
+    if (!state) return true;
     state->responseHeaders = ToHeaderValueCollection(headers);
     state->responseStatus = responseStatus;
-    return AWS_OP_SUCCESS;
+    return true;
   });
 
-  options->SetProgressCallback([state](uint64_t bytesTransferred, uint64_t contentLength) {
+  options->SetProgressCallback([stateWeak](uint64_t bytesTransferred, uint64_t contentLength) {
+    auto state = stateWeak.lock();
+    if (!state) return;
     // The whole-object size is learned here (not known up-front for downloads).
-    if (!state->totalBytesHasBeenSet && contentLength > 0) {
-      state->totalBytes = contentLength;
-      state->totalBytesHasBeenSet = true;
+    if (!state->totalBytesHasBeenSet.load() && contentLength > 0) {
+      state->totalBytes.store(contentLength);
+      state->totalBytesHasBeenSet.store(true);
     }
     const uint64_t soFar = (state->transferredBytes += bytesTransferred);
     for (const auto& listener : state->request.GetTransferListeners()) {
       if (listener) {
         listener->OnBytesTransferred(
-            state->request, DownloadProgressSnapshot(soFar, state->totalBytes, nullptr, state->totalBytesHasBeenSet));
+            state->request, DownloadProgressSnapshot(soFar, state->totalBytes.load(), nullptr,
+                                                    state->totalBytesHasBeenSet.load()));
       }
     }
   });
 
-  options->SetFinishCallback([state, isStreamDownload](const Aws::Crt::S3::S3MetaRequestResult& result) {
-    if (result.errorCode == AWS_ERROR_SUCCESS) {
+  options->SetFinishCallback([stateWeak, isStreamDownload](const Aws::Crt::S3::S3MetaRequestResult& result) {
+    auto state = stateWeak.lock();
+    if (!state) return;
+    if (result.GetErrorCode() == Aws::Crt::S3::S3ErrorCode::Success) {
       // File path only: promote the temp file to the customer's destination. On Windows, MoveFileW
       // won't overwrite, so remove an existing destination first (small non-atomic window); POSIX
       // rename is atomic.
@@ -668,8 +748,9 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
           for (const auto& listener : state->request.GetTransferListeners()) {
             if (listener) {
               listener->OnTransferFailed(state->request,
-                                         DownloadProgressSnapshot(state->transferredBytes.load(), state->totalBytes,
-                                                                  nullptr, state->totalBytesHasBeenSet));
+                                         DownloadProgressSnapshot(state->transferredBytes.load(),
+                                                                  state->totalBytes.load(), nullptr,
+                                                                  state->totalBytesHasBeenSet.load()));
             }
           }
           state->promise.set_value(DownloadOutcome(Aws::Client::AWSError<Aws::S3::S3Errors>(
@@ -679,16 +760,18 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
         }
       }
 
-      auto response = Aws::MakeShared<DownloadResponse>(CRT_OPERATIONS_LOG_TAG);
-      response->SetS3Result(Aws::S3::Model::GetObjectResult(
-          Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>(
-              Aws::Utils::Stream::ResponseStream(), Aws::Http::HeaderValueCollection(state->responseHeaders),
-              static_cast<Aws::Http::HttpResponseCode>(state->responseStatus))));
+      auto response = Aws::MakeShared<DownloadResponse>(
+          CRT_OPERATIONS_LOG_TAG,
+          Aws::S3::Model::GetObjectResult(
+              Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>(
+                  Aws::Utils::Stream::ResponseStream(), Aws::Http::HeaderValueCollection(state->responseHeaders),
+                  static_cast<Aws::Http::HttpResponseCode>(state->responseStatus))));
       for (const auto& listener : state->request.GetTransferListeners()) {
         if (listener) {
+          const uint64_t total = state->totalBytes.load();
           listener->OnTransferComplete(
               state->request,
-              DownloadProgressSnapshot(state->totalBytes, state->totalBytes, response, state->totalBytesHasBeenSet));
+              DownloadProgressSnapshot(total, total, response, state->totalBytesHasBeenSet.load()));
         }
       }
       state->promise.set_value(DownloadOutcome(std::move(*response)));
@@ -702,8 +785,9 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
       for (const auto& listener : state->request.GetTransferListeners()) {
         if (listener) {
           listener->OnTransferFailed(state->request,
-                                     DownloadProgressSnapshot(state->transferredBytes.load(), state->totalBytes,
-                                                              nullptr, state->totalBytesHasBeenSet));
+                                     DownloadProgressSnapshot(state->transferredBytes.load(),
+                                                              state->totalBytes.load(), nullptr,
+                                                              state->totalBytesHasBeenSet.load()));
         }
       }
       state->promise.set_value(DownloadOutcome(std::move(error)));
@@ -713,7 +797,8 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
   auto metaRequest = impl.GetCrtClient().MakeMetaRequest(*options);
   if (!metaRequest) {
     // Initiated already fired above; only fire failed here.
-    const auto snapshot = DownloadProgressSnapshot(0, state->totalBytes, nullptr, state->totalBytesHasBeenSet);
+    const auto snapshot =
+        DownloadProgressSnapshot(0, state->totalBytes.load(), nullptr, state->totalBytesHasBeenSet.load());
     for (const auto& listener : request.GetTransferListeners()) {
       if (listener) listener->OnTransferFailed(request, snapshot);
     }

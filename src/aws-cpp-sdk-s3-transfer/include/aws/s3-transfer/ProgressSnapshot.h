@@ -4,6 +4,8 @@
  */
 #pragma once
 #include <aws/s3-transfer/S3Transfer_EXPORTS.h>
+#include <aws/s3-transfer/DownloadResponse.h>
+#include <aws/s3-transfer/UploadResponse.h>
 #include <cstdint>
 #include <memory>
 #include <utility>
@@ -15,7 +17,7 @@ namespace Transfer {
 /**
  * Immutable snapshot of transfer progress passed to ProgressListener callbacks. Captures
  * bytes transferred, total bytes, and the response once available. Specialized via the
- * UploadProgressSnapshot and DownloadProgressSnapshot type aliases.
+ * UploadProgressSnapshot and DownloadProgressSnapshot subclasses below.
  */
 template <typename ResponseT>
 class ProgressSnapshot {
@@ -44,6 +46,25 @@ class ProgressSnapshot {
   bool m_totalBytesHasBeenSet = false;
 };
 
-}
-}
-}
+/**
+ * Immutable snapshot of upload progress passed to UploadProgressListener callbacks. Captures
+ * bytes transferred, total bytes (known up-front for uploads), and the response once available.
+ */
+class AWS_S3_TRANSFER_API UploadProgressSnapshot final : public ProgressSnapshot<UploadResponse> {
+ public:
+  using ProgressSnapshot<UploadResponse>::ProgressSnapshot;
+};
+
+/**
+ * Immutable snapshot of download progress passed to DownloadProgressListener callbacks.
+ * Captures bytes transferred, total bytes (known after the GetObject response is received),
+ * and the response once available.
+ */
+class AWS_S3_TRANSFER_API DownloadProgressSnapshot final : public ProgressSnapshot<DownloadResponse> {
+ public:
+  using ProgressSnapshot<DownloadResponse>::ProgressSnapshot;
+};
+
+}  // namespace Transfer
+}  // namespace S3
+}  // namespace Aws

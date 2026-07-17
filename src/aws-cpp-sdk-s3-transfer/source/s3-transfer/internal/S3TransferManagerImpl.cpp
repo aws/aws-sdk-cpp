@@ -14,14 +14,34 @@ namespace Transfer {
 
 static const char* const S3_TRANSFER_LOG_TAG = "S3TransferManagerImpl";
 
-S3TransferManagerImpl::S3TransferManagerImpl(const S3TransferManagerConfiguration& config)
+S3TransferManagerImpl::S3TransferManagerImpl(
+    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+    const std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase>& endpointProvider,
+    const S3TransferManagerConfiguration& config)
     : m_region(config.region) {
-  Aws::Crt::Auth::CredentialsProviderChainDefaultConfig providerConfig;
-  m_credentialsProvider =
-      Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderChainDefault(providerConfig,
-                                                                                  Aws::Crt::ApiAllocator());
+  // Bridge the SDK credentials provider into a CRT provider via a delegate that fetches
+  // credentials from the SDK side on demand; empty credentials become an anonymous CRT identity.
+  // Matches S3CrtClient's construction path.
+  m_credentialsProvider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderDelegate(
+      Aws::Crt::Auth::CredentialsProviderDelegateConfig{
+          [credentialsProvider]() -> std::shared_ptr<Aws::Crt::Auth::Credentials> {
+            if (credentialsProvider == nullptr) {
+              return Aws::MakeShared<Aws::Crt::Auth::Credentials>(S3_TRANSFER_LOG_TAG);
+            }
+            Aws::Auth::AWSCredentials sdkCreds = credentialsProvider->GetAWSCredentials();
+            if (sdkCreds.GetAWSAccessKeyId().empty() && sdkCreds.GetAWSSecretKey().empty()) {
+              return Aws::MakeShared<Aws::Crt::Auth::Credentials>(S3_TRANSFER_LOG_TAG);
+            }
+            return Aws::MakeShared<Aws::Crt::Auth::Credentials>(
+                S3_TRANSFER_LOG_TAG,
+                Aws::Crt::ByteCursorFromCString(sdkCreds.GetAWSAccessKeyId().c_str()),
+                Aws::Crt::ByteCursorFromCString(sdkCreds.GetAWSSecretKey().c_str()),
+                Aws::Crt::ByteCursorFromCString(sdkCreds.GetSessionToken().c_str()),
+                sdkCreds.GetExpiration().Millis());
+          }},
+      Aws::Crt::ApiAllocator());
   if (!m_credentialsProvider) {
-    AWS_LOGSTREAM_ERROR(S3_TRANSFER_LOG_TAG, "Failed to create CRT default credentials provider chain.");
+    AWS_LOGSTREAM_ERROR(S3_TRANSFER_LOG_TAG, "Failed to create CRT credentials provider delegate.");
     return;
   }
 
@@ -45,8 +65,16 @@ S3TransferManagerImpl::S3TransferManagerImpl(const S3TransferManagerConfiguratio
     return;
   }
 
-  m_endpointProvider = Aws::MakeUnique<Aws::S3::Endpoint::S3EndpointProvider>(S3_TRANSFER_LOG_TAG);
-  m_endpointProvider->AccessBuiltInParameters().SetStringParameter("Region", m_region);
+  // If the customer injected an endpoint provider, use it as-is; they are responsible for having
+  // configured it. Otherwise build a default S3EndpointProvider and seed it with the region built-in
+  // (mirrors S3Client's behavior).
+  if (endpointProvider) {
+    m_endpointProvider = endpointProvider;
+  } else {
+    auto defaultProvider = Aws::MakeShared<Aws::S3::Endpoint::S3EndpointProvider>(S3_TRANSFER_LOG_TAG);
+    defaultProvider->AccessBuiltInParameters().SetStringParameter("Region", m_region);
+    m_endpointProvider = defaultProvider;
+  }
 
   // Honor endpointOverride like S3Client / S3CrtClient. Used for VPC endpoints, LocalStack, minio.
   if (!config.endpointOverride.empty()) {
