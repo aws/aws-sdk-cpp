@@ -22,5 +22,7 @@ class TimestampFormatTrait : public Trait {
   Format m_format;
 };
 
+extern template class TraitKey<TimestampFormatTrait>;
+
 }  // namespace schema
 }  // namespace smithy

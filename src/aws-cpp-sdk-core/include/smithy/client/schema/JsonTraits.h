@@ -21,5 +21,7 @@ class JsonNameTrait : public Trait {
   Aws::String m_value;
 };
 
+extern template class TraitKey<JsonNameTrait>;
+
 }  // namespace schema
 }  // namespace smithy

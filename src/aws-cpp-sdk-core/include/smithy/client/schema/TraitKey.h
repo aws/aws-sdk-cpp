@@ -20,10 +20,7 @@ SMITHY_API int NextTraitKey();
 template <typename T>
 class TraitKey : public TraitKeyBase {
  public:
-  static const TraitKey& Instance() {
-    static const TraitKey instance(NextTraitKey());
-    return instance;
-  }
+  static const TraitKey& Instance();
 
  private:
   explicit TraitKey(int id) : TraitKeyBase(id) {}

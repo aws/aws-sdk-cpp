@@ -83,5 +83,14 @@ class XmlMapValueNameTrait : public Trait {
   Aws::String m_value;
 };
 
+extern template class TraitKey<XmlNameTrait>;
+extern template class TraitKey<XmlFlattenedTrait>;
+extern template class TraitKey<XmlAttributeTrait>;
+extern template class TraitKey<XmlNamespaceTrait>;
+extern template class TraitKey<XmlListItemNameTrait>;
+extern template class TraitKey<XmlMapEntryNameTrait>;
+extern template class TraitKey<XmlMapKeyNameTrait>;
+extern template class TraitKey<XmlMapValueNameTrait>;
+
 }  // namespace schema
 }  // namespace smithy
