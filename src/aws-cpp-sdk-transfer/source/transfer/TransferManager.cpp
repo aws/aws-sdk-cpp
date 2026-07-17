@@ -12,6 +12,7 @@
 #include <aws/core/utils/crypto/Sha1.h>
 #include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/stream/PreallocatedStreamBuf.h>
@@ -1662,7 +1663,7 @@ namespace Aws
         using SetChecksumFunc = std::function<void(Aws::S3::Model::CompletedPart&, const Aws::String& checksum)>;
         using ChecksumEnum = S3::Model::ChecksumAlgorithm;
         static constexpr size_t CHECKSUM_ALGS_SIZE = 5;
-        static std::array<std::pair<ChecksumEnum, SetChecksumFunc>, CHECKSUM_ALGS_SIZE> SET_CHECKSUM_METHODS = {{
+        static Aws::Array<std::pair<ChecksumEnum, SetChecksumFunc>, CHECKSUM_ALGS_SIZE> SET_CHECKSUM_METHODS = {{
             {ChecksumEnum::CRC64NVME,
              [](Aws::S3::Model::CompletedPart& part, const Aws::String& checksum) -> void { part.SetChecksumCRC64NVME(checksum); }},
             {ChecksumEnum::CRC32,

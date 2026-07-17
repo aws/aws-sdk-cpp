@@ -6,19 +6,9 @@
 
 #pragma once
 
-#include <aws/core/endpoint/AWSPartitions.h>
-#include <aws/core/endpoint/EndpointProviderBase.h>
-#include <aws/core/endpoint/EndpointParameter.h>
-#include <aws/core/endpoint/ClientContextParameters.h>
-#include <aws/core/endpoint/BuiltInParameters.h>
-#include <aws/core/utils/memory/stl/AWSArray.h>
+#include <aws/core/endpoint/internal/CrtEndpointProvider.h>
 
 #include <aws/crt/endpoints/RuleEngine.h>
-
-#include <aws/core/utils/Outcome.h>
-#include <aws/core/client/AWSError.h>
-#include <aws/core/client/CoreErrors.h>
-#include "aws/core/utils/logging/LogMacros.h"
 
 namespace Aws
 {
@@ -33,6 +23,7 @@ namespace Aws
          * @param clientContextParameters
          * @param endpointParameters
          * @return
+         * Resolves an endpoint using the JSON-ruleset CRT rule engine.
          */
         AWS_CORE_API ResolveEndpointOutcome
         ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
@@ -41,78 +32,19 @@ namespace Aws
                                    const EndpointParameters& endpointParameters);
 
         /**
-         * Default endpoint provider template used in this SDK.
+         * Resolves endpoints from a JSON ruleset blob via the CRT Aws::Crt::Endpoints::RuleEngine.
          */
         template<typename ClientConfigurationT = Aws::Client::GenericClientConfiguration,
                  typename BuiltInParametersT = Aws::Endpoint::BuiltInParameters,
                  typename ClientContextParametersT = Aws::Endpoint::ClientContextParameters>
-        class AWS_CORE_API DefaultEndpointProvider : public EndpointProviderBase<ClientConfigurationT, BuiltInParametersT, ClientContextParametersT>
+        class AWS_CORE_API DefaultEndpointProvider : public CrtEndpointProvider<Aws::Crt::Endpoints::RuleEngine,
+            ResolveEndpointDefaultImpl, ClientConfigurationT, BuiltInParametersT, ClientContextParametersT>
         {
         public:
-            DefaultEndpointProvider(const char* endpointRulesBlob, const size_t endpointRulesBlobSz)
-                : m_crtRuleEngine(Aws::Crt::ByteCursorFromArray((const uint8_t*) endpointRulesBlob, endpointRulesBlobSz),
-                                  Aws::Crt::ByteCursorFromArray((const uint8_t*) AWSPartitions::GetPartitionsBlob(), AWSPartitions::PartitionsBlobSize))
-            {
-                if(!m_crtRuleEngine) {
-                    AWS_LOGSTREAM_FATAL(DEFAULT_ENDPOINT_PROVIDER_TAG, "Invalid CRT Rule Engine state");
-                }
-            }
+            using CrtEndpointProvider<Aws::Crt::Endpoints::RuleEngine, ResolveEndpointDefaultImpl,
+                ClientConfigurationT, BuiltInParametersT, ClientContextParametersT>::CrtEndpointProvider;
 
-            virtual ~DefaultEndpointProvider()
-            {
-            }
-
-            void InitBuiltInParameters(const ClientConfigurationT& config) override
-            {
-                m_builtInParameters.SetFromClientConfiguration(config);
-            }
-
-            void InitBuiltInParameters(const ClientConfigurationT& config, const Aws::String& serviceName) override
-            {
-                m_builtInParameters.SetFromClientConfiguration(config, serviceName);
-            }
-
-            /**
-             * Default implementation of the ResolveEndpoint
-             */
-            ResolveEndpointOutcome ResolveEndpoint(const EndpointParameters& endpointParameters) const override
-            {
-                auto ResolveEndpointDefaultImpl = Aws::Endpoint::ResolveEndpointDefaultImpl;
-                return ResolveEndpointDefaultImpl(m_crtRuleEngine, m_builtInParameters.GetAllParameters(), m_clientContextParameters.GetAllParameters(), endpointParameters);
-            };
-
-            const ClientContextParametersT& GetClientContextParameters() const override
-            {
-                return m_clientContextParameters;
-            }
-            ClientContextParametersT& AccessClientContextParameters() override
-            {
-                return m_clientContextParameters;
-            }
-
-            const BuiltInParametersT& GetBuiltInParameters() const
-            {
-                return m_builtInParameters;
-            }
-            BuiltInParametersT& AccessBuiltInParameters()
-            {
-                return m_builtInParameters;
-            }
-
-            void OverrideEndpoint(const Aws::String& endpoint) override
-            {
-                m_builtInParameters.OverrideEndpoint(endpoint);
-            }
-
-        protected:
-            /* Crt RuleEngine evaluator built using the service's Rule engine */
-            Aws::Crt::Endpoints::RuleEngine m_crtRuleEngine;
-
-            /* Also known as a configurable parameters defined by the AWS Service in their c2j/smithy model definition */
-            ClientContextParametersT m_clientContextParameters;
-
-            /* Also known as parameters on the ClientConfiguration in this SDK */
-            BuiltInParametersT m_builtInParameters;
+            virtual ~DefaultEndpointProvider() = default;
         };
 
         /**
