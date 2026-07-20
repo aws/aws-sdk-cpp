@@ -96,6 +96,7 @@
 #include <aws/sesv2/model/ListTenantsRequest.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountDetailsRequest.h>
+#include <aws/sesv2/model/PutAccountPricingAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountSendingAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountSuppressionAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountVdmAttributesRequest.h>
@@ -1455,6 +1456,17 @@ PutAccountDetailsOutcome SESV2Client::PutAccountDetails(const PutAccountDetailsR
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutAccountDetailsOutcome(result.GetResultWithOwnership())
                             : PutAccountDetailsOutcome(std::move(result.GetError()));
+}
+
+PutAccountPricingAttributesOutcome SESV2Client::PutAccountPricingAttributes(const PutAccountPricingAttributesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/account/pricing-attributes");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccountPricingAttributesOutcome(result.GetResultWithOwnership())
+                            : PutAccountPricingAttributesOutcome(std::move(result.GetError()));
 }
 
 PutAccountSendingAttributesOutcome SESV2Client::PutAccountSendingAttributes(const PutAccountSendingAttributesRequest& request) const {

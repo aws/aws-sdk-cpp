@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/AccountDetails.h>
+#include <aws/sesv2/model/PricingAttributes.h>
 #include <aws/sesv2/model/SendQuota.h>
 #include <aws/sesv2/model/SuppressionAttributes.h>
 #include <aws/sesv2/model/VdmAttributes.h>
@@ -187,6 +188,24 @@ class GetAccountResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The pricing attributes that apply to your Amazon SES account, including the
+   * currently active pricing plan and any scheduled change.</p>
+   */
+  inline const PricingAttributes& GetPricingAttributes() const { return m_pricingAttributes; }
+  template <typename PricingAttributesT = PricingAttributes>
+  void SetPricingAttributes(PricingAttributesT&& value) {
+    m_pricingAttributesHasBeenSet = true;
+    m_pricingAttributes = std::forward<PricingAttributesT>(value);
+  }
+  template <typename PricingAttributesT = PricingAttributes>
+  GetAccountResult& WithPricingAttributes(PricingAttributesT&& value) {
+    SetPricingAttributes(std::forward<PricingAttributesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -219,6 +238,8 @@ class GetAccountResult {
 
   VdmAttributes m_vdmAttributes;
 
+  PricingAttributes m_pricingAttributes;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dedicatedIpAutoWarmupEnabledHasBeenSet = false;
@@ -229,6 +250,7 @@ class GetAccountResult {
   bool m_suppressionAttributesHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
   bool m_vdmAttributesHasBeenSet = false;
+  bool m_pricingAttributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

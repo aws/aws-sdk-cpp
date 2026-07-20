@@ -974,6 +974,22 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
     m_scenario = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Scenario"));
     m_scenarioHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Trigger")) {
+    m_trigger = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Trigger"));
+    m_triggerHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ScheduleTrigger")) {
+    m_scheduleTrigger = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ScheduleTrigger"));
+    m_scheduleTriggerHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("InboundEmailTrigger")) {
+    m_inboundEmailTrigger = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("InboundEmailTrigger"));
+    m_inboundEmailTriggerHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("QuickEventTrigger")) {
+    m_quickEventTrigger = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("QuickEventTrigger"));
+    m_quickEventTriggerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -1922,6 +1938,22 @@ JsonValue Capabilities::Jsonize() const {
 
   if (m_scenarioHasBeenSet) {
     payload.WithString("Scenario", CapabilityStateMapper::GetNameForCapabilityState(m_scenario));
+  }
+
+  if (m_triggerHasBeenSet) {
+    payload.WithString("Trigger", CapabilityStateMapper::GetNameForCapabilityState(m_trigger));
+  }
+
+  if (m_scheduleTriggerHasBeenSet) {
+    payload.WithString("ScheduleTrigger", CapabilityStateMapper::GetNameForCapabilityState(m_scheduleTrigger));
+  }
+
+  if (m_inboundEmailTriggerHasBeenSet) {
+    payload.WithString("InboundEmailTrigger", CapabilityStateMapper::GetNameForCapabilityState(m_inboundEmailTrigger));
+  }
+
+  if (m_quickEventTriggerHasBeenSet) {
+    payload.WithString("QuickEventTrigger", CapabilityStateMapper::GetNameForCapabilityState(m_quickEventTrigger));
   }
 
   return payload;

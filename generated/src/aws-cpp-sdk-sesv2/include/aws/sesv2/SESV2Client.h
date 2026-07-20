@@ -531,9 +531,8 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
    * is going to be the AWS-Region where the operation is executed. The secondary
    * region has to be provided in request's parameters. From the data flow standpoint
    * there is no difference between primary and secondary regions - sending traffic
-   * will be split equally between the two. The primary region is the region where
-   * the resource has been created and where it can be managed. </p><p><h3>See
-   * Also:</h3>   <a
+   * is divided between the two. The primary region is the region where the resource
+   * has been created and where it can be managed. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateMultiRegionEndpoint">AWS
    * API Reference</a></p>
    */
@@ -2379,6 +2378,37 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
   void PutAccountDetailsAsync(const PutAccountDetailsRequestT& request, const PutAccountDetailsResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SESV2Client::PutAccountDetails, request, handler, context);
+  }
+
+  /**
+   * <p>Set the pricing plan for your Amazon SES account. Use this operation to
+   * choose a billing plan that packages multiple Amazon SES features at a single
+   * rate.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountPricingAttributes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAccountPricingAttributesOutcome PutAccountPricingAttributes(
+      const Model::PutAccountPricingAttributesRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAccountPricingAttributes that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutAccountPricingAttributesRequestT = Model::PutAccountPricingAttributesRequest>
+  Model::PutAccountPricingAttributesOutcomeCallable PutAccountPricingAttributesCallable(
+      const PutAccountPricingAttributesRequestT& request) const {
+    return SubmitCallable(&SESV2Client::PutAccountPricingAttributes, request);
+  }
+
+  /**
+   * An Async wrapper for PutAccountPricingAttributes that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutAccountPricingAttributesRequestT = Model::PutAccountPricingAttributesRequest>
+  void PutAccountPricingAttributesAsync(const PutAccountPricingAttributesRequestT& request,
+                                        const PutAccountPricingAttributesResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SESV2Client::PutAccountPricingAttributes, request, handler, context);
   }
 
   /**

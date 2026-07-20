@@ -50,9 +50,31 @@ class ConnectorSource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The version of the connector to use (for example, <code>1.1.0</code>). If you
+   * don't specify a version, the service uses the latest available version.</p>
+   */
+  inline const Aws::String& GetVersion() const { return m_version; }
+  inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+  template <typename VersionT = Aws::String>
+  void SetVersion(VersionT&& value) {
+    m_versionHasBeenSet = true;
+    m_version = std::forward<VersionT>(value);
+  }
+  template <typename VersionT = Aws::String>
+  ConnectorSource& WithVersion(VersionT&& value) {
+    SetVersion(std::forward<VersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_connectorId;
+
+  Aws::String m_version;
   bool m_connectorIdHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -268,10 +268,14 @@
 #include <aws/sesv2/model/OverallVolume.h>
 #include <aws/sesv2/model/PinpointDestination.h>
 #include <aws/sesv2/model/PlacementStatistics.h>
+#include <aws/sesv2/model/PricingAttributes.h>
+#include <aws/sesv2/model/PricingPlan.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesResult.h>
 #include <aws/sesv2/model/PutAccountDetailsRequest.h>
 #include <aws/sesv2/model/PutAccountDetailsResult.h>
+#include <aws/sesv2/model/PutAccountPricingAttributesRequest.h>
+#include <aws/sesv2/model/PutAccountPricingAttributesResult.h>
 #include <aws/sesv2/model/PutAccountSendingAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountSendingAttributesResult.h>
 #include <aws/sesv2/model/PutAccountSuppressionAttributesRequest.h>

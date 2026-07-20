@@ -59,6 +59,18 @@ Aws::Http::HeaderValueCollection InvokeAgentRuntimeRequest::GetRequestSpecificHe
     ss.str("");
   }
 
+  if (m_mcpMethodHasBeenSet) {
+    ss << m_mcpMethod;
+    headers.emplace("mcp-method", ss.str());
+    ss.str("");
+  }
+
+  if (m_mcpNameHasBeenSet) {
+    ss << m_mcpName;
+    headers.emplace("mcp-name", ss.str());
+    ss.str("");
+  }
+
   if (m_runtimeUserIdHasBeenSet) {
     ss << m_runtimeUserId;
     headers.emplace("x-amzn-bedrock-agentcore-runtime-user-id", ss.str());

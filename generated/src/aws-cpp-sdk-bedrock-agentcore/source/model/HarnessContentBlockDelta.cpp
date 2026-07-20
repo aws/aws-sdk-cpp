@@ -37,6 +37,10 @@ HarnessContentBlockDelta& HarnessContentBlockDelta::operator=(JsonView jsonValue
     m_reasoningContent = jsonValue.GetObject("reasoningContent");
     m_reasoningContentHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("toolResultMetadata")) {
+    m_toolResultMetadata = jsonValue.GetObject("toolResultMetadata");
+    m_toolResultMetadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +65,10 @@ JsonValue HarnessContentBlockDelta::Jsonize() const {
 
   if (m_reasoningContentHasBeenSet) {
     payload.WithObject("reasoningContent", m_reasoningContent.Jsonize());
+  }
+
+  if (m_toolResultMetadataHasBeenSet) {
+    payload.WithObject("toolResultMetadata", m_toolResultMetadata.Jsonize());
   }
 
   return payload;

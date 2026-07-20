@@ -25,7 +25,12 @@ namespace MediaTailor {
 namespace Model {
 
 /**
- * <p>-- Define Mixin --</p><p><h3>See Also:</h3>   <a
+ * <p>Defines reusable logic that MediaTailor executes at lifecycle hooks during ad
+ * insertion. The <code>FunctionType</code> determines the function's runtime
+ * behavior. For more information about functions, see <a
+ * href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions.html">Working
+ * with functions</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/Function">AWS
  * API Reference</a></p>
  */

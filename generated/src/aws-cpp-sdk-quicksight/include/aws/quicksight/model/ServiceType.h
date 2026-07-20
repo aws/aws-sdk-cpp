@@ -10,7 +10,7 @@
 namespace Aws {
 namespace QuickSight {
 namespace Model {
-enum class ServiceType { NOT_SET, REDSHIFT, QBUSINESS, ATHENA };
+enum class ServiceType { NOT_SET, REDSHIFT, QBUSINESS, ATHENA, GLUE_DATA_CATALOG };
 
 namespace ServiceTypeMapper {
 AWS_QUICKSIGHT_API ServiceType GetServiceTypeForName(const Aws::String& name);

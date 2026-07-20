@@ -10,6 +10,8 @@
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/model/AdConditioningConfiguration.h>
 #include <aws/mediatailor/model/AdDecisionServerConfiguration.h>
+#include <aws/mediatailor/model/AdsPersonalizationConcurrency.h>
+#include <aws/mediatailor/model/AdsPersonalizationTimeouts.h>
 #include <aws/mediatailor/model/AvailSuppression.h>
 #include <aws/mediatailor/model/Bumper.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
@@ -425,6 +427,46 @@ class PutPlaybackConfigurationRequest : public MediaTailorRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timeout settings for ad decision server interactions. These settings
+   * control how long MediaTailor waits for ADS responses and the total time budget
+   * for ad personalization across live, VOD, and prefetch workflows.</p>
+   */
+  inline const AdsPersonalizationTimeouts& GetAdsPersonalizationTimeouts() const { return m_adsPersonalizationTimeouts; }
+  inline bool AdsPersonalizationTimeoutsHasBeenSet() const { return m_adsPersonalizationTimeoutsHasBeenSet; }
+  template <typename AdsPersonalizationTimeoutsT = AdsPersonalizationTimeouts>
+  void SetAdsPersonalizationTimeouts(AdsPersonalizationTimeoutsT&& value) {
+    m_adsPersonalizationTimeoutsHasBeenSet = true;
+    m_adsPersonalizationTimeouts = std::forward<AdsPersonalizationTimeoutsT>(value);
+  }
+  template <typename AdsPersonalizationTimeoutsT = AdsPersonalizationTimeouts>
+  PutPlaybackConfigurationRequest& WithAdsPersonalizationTimeouts(AdsPersonalizationTimeoutsT&& value) {
+    SetAdsPersonalizationTimeouts(std::forward<AdsPersonalizationTimeoutsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The concurrency settings for ad decision server interactions. These settings
+   * control how many simultaneous ADS requests MediaTailor makes per manifest
+   * request.</p>
+   */
+  inline const AdsPersonalizationConcurrency& GetAdsPersonalizationConcurrency() const { return m_adsPersonalizationConcurrency; }
+  inline bool AdsPersonalizationConcurrencyHasBeenSet() const { return m_adsPersonalizationConcurrencyHasBeenSet; }
+  template <typename AdsPersonalizationConcurrencyT = AdsPersonalizationConcurrency>
+  void SetAdsPersonalizationConcurrency(AdsPersonalizationConcurrencyT&& value) {
+    m_adsPersonalizationConcurrencyHasBeenSet = true;
+    m_adsPersonalizationConcurrency = std::forward<AdsPersonalizationConcurrencyT>(value);
+  }
+  template <typename AdsPersonalizationConcurrencyT = AdsPersonalizationConcurrency>
+  PutPlaybackConfigurationRequest& WithAdsPersonalizationConcurrency(AdsPersonalizationConcurrencyT&& value) {
+    SetAdsPersonalizationConcurrency(std::forward<AdsPersonalizationConcurrencyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_adDecisionServerUrl;
 
@@ -461,6 +503,10 @@ class PutPlaybackConfigurationRequest : public MediaTailorRequest {
   AdDecisionServerConfiguration m_adDecisionServerConfiguration;
 
   Aws::Map<EventName, Aws::String> m_functionMapping;
+
+  AdsPersonalizationTimeouts m_adsPersonalizationTimeouts;
+
+  AdsPersonalizationConcurrency m_adsPersonalizationConcurrency;
   bool m_adDecisionServerUrlHasBeenSet = false;
   bool m_availSuppressionHasBeenSet = false;
   bool m_bumperHasBeenSet = false;
@@ -479,6 +525,8 @@ class PutPlaybackConfigurationRequest : public MediaTailorRequest {
   bool m_adConditioningConfigurationHasBeenSet = false;
   bool m_adDecisionServerConfigurationHasBeenSet = false;
   bool m_functionMappingHasBeenSet = false;
+  bool m_adsPersonalizationTimeoutsHasBeenSet = false;
+  bool m_adsPersonalizationConcurrencyHasBeenSet = false;
 };
 
 }  // namespace Model
