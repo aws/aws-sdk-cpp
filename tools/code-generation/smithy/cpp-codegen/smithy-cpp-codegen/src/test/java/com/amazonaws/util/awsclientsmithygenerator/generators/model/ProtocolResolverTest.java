@@ -14,14 +14,21 @@ import static org.junit.jupiter.api.Assertions.*;
 class ProtocolResolverTest {
 
     @Test
-    void resolve_restJson1() {
+    void resolve_restJson1_mapsToRestJson() {
         ServiceShape service = ServiceShape.builder()
             .id("com.example#TestService")
             .version("2023-01-01")
             .addTrait(software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build())
             .build();
         Model model = Model.builder().addShape(service).build();
-        assertEquals(Protocol.JSON, ProtocolResolver.resolve(service, model));
+        assertEquals(Protocol.REST_JSON, ProtocolResolver.resolve(service, model));
+    }
+
+    @Test
+    void restJson_isJsonLike_andUsesJsonTraits() {
+        assertTrue(Protocol.REST_JSON.isJsonLike());
+        assertTrue(ProtocolResolver.traitsFor(Protocol.REST_JSON)
+            instanceof com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.JsonProtocolTraits);
     }
 
     @Test
@@ -112,12 +119,12 @@ class ProtocolResolverTest {
 
     @Test
     void protocol_cbor_serdeNamespace() {
-        assertEquals("Aws::Utils::Json", Protocol.CBOR.getSerdeNamespace());
+        assertEquals("Aws::Utils::Cbor", Protocol.CBOR.getSerdeNamespace());
     }
 
     @Test
     void protocol_cbor_viewType() {
-        assertEquals("Aws::Utils::Json::JsonView", Protocol.CBOR.getViewType());
+        assertEquals("Aws::Utils::Cbor::CborValue", Protocol.CBOR.getViewType());
     }
 
     @Test
@@ -152,8 +159,8 @@ class ProtocolResolverTest {
     }
 
     @Test
-    void protocol_cbor_isJsonLike() {
-        assertTrue(Protocol.CBOR.isJsonLike());
+    void protocol_cbor_isNeitherJsonNorXmlLike() {
+        assertFalse(Protocol.CBOR.isJsonLike());
         assertFalse(Protocol.CBOR.isXmlLike());
     }
 
@@ -178,11 +185,15 @@ class ProtocolResolverTest {
     // ---------- traitsFor: the single protocol -> strategy selection point ----------
 
     @Test
-    void traitsFor_jsonAndCbor_returnJsonTraits() {
+    void traitsFor_json_returnsJsonTraits() {
         assertInstanceOf(com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol
             .JsonProtocolTraits.class, ProtocolResolver.traitsFor(Protocol.JSON));
-        assertInstanceOf(com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol
-            .JsonProtocolTraits.class, ProtocolResolver.traitsFor(Protocol.CBOR));
+    }
+
+    @Test
+    void cbor_usesCborTraits() {
+        assertTrue(ProtocolResolver.traitsFor(Protocol.CBOR)
+            instanceof com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.CborProtocolTraits);
     }
 
     @Test

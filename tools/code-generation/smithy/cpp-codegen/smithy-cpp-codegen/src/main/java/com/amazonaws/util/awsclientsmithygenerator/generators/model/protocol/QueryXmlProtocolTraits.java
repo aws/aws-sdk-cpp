@@ -6,6 +6,10 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.ServiceShape;
+import software.amazon.smithy.model.shapes.StructureShape;
 
 /**
  * Query-XML serde rendering. Serves both {@link Protocol#QUERY_XML} and
@@ -32,6 +36,13 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
     @Override
     public String serdeNamespace() {
         return protocol.getSerdeNamespace();
+    }
+
+    @Override
+    public boolean resultHasTopLevelRequestId() {
+        // Query/EC2 results carry the request id inside the injected ResponseMetadata member,
+        // so there is no top-level GetRequestId / m_requestId.
+        return false;
     }
 
     @Override
@@ -75,14 +86,53 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public void writeSerdeInclude(CppWriter writer) {
-        writer.write("#include <aws/core/utils/xml/XmlSerializer.h>");
+    public java.util.List<String> serdeIncludes(FileKind kind) {
+        switch (kind) {
+            case SUBOBJECT_HEADER:
+                return java.util.List.of("aws/core/utils/memory/stl/AWSStreamFwd.h");
+            case RESULT_HEADER:
+                // Query/EC2 result headers forward-declare XmlDocument; no serde include.
+                return java.util.List.of();
+            case RESULT_SOURCE:
+                return java.util.List.of(
+                    "aws/core/utils/xml/XmlSerializer.h",
+                    "aws/core/utils/logging/LogMacros.h");
+            case INITIAL_RESPONSE_SOURCE:
+                return java.util.List.of(
+                    "aws/core/utils/xml/XmlSerializer.h",
+                    "aws/core/utils/UnreferencedParam.h");
+            case REQUEST_SOURCE:
+                return java.util.List.of(
+                    "aws/core/utils/StringUtils.h",
+                    "aws/core/utils/memory/stl/AWSStringStream.h");
+            case STREAMING_RESULT_SOURCE:
+                return java.util.List.of();
+            case SUBOBJECT_SOURCE:
+            case EVENT_HANDLER_SOURCE:
+                return java.util.List.of("aws/core/utils/xml/XmlSerializer.h");
+            default:
+                throw new UnsupportedOperationException(
+                    "No serde includes defined for FileKind " + kind + " in QueryXmlProtocolTraits");
+        }
     }
 
     @Override
-    public void writeSerdeUsingDeclarations(CppWriter writer) {
-        writer.write("using namespace Aws::Utils::Xml;");
-        writer.write("using namespace Aws::Utils;");
+    public java.util.List<String> serdeUsings(FileKind kind) {
+        switch (kind) {
+            case RESULT_SOURCE:
+                return java.util.List.of("Aws::Utils::Xml", "Aws::Utils::Logging", "Aws::Utils");
+            case INITIAL_RESPONSE_SOURCE:
+                return java.util.List.of("Aws::Utils::Xml", "Aws::Utils");
+            case REQUEST_SOURCE:
+                return java.util.List.of("Aws::Utils");
+            case EVENT_HANDLER_SOURCE:
+                return java.util.List.of(serdeNamespace());
+            case SUBOBJECT_SOURCE:
+                return java.util.List.of("Aws::Utils::Xml", "Aws::Utils");
+            default:
+                throw new UnsupportedOperationException(
+                    "No serde usings defined for FileKind " + kind + " in QueryXmlProtocolTraits");
+        }
     }
 
     @Override
@@ -103,11 +153,87 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public void writeResultSerdeImpls(CppWriter writer, String className) {
+    public void writeResultSerdeImpls(CppWriter writer, String className, StructureShape shape, Model model,
+                                      String namespace) {
         writer.openBlock("$L::$L(const Aws::AmazonWebServiceResult<XmlDocument>& result) {", "}",
             className, className, () -> writer.write("*this = result;"));
         writer.write("");
         writer.openBlock("$L& $L::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {", "}",
-            className, className, () -> writer.write("return *this;"));
+            className, className, () -> {
+            writer.write("m_HttpResponseCode = result.GetResponseCode();");
+            writer.write("const XmlDocument& xmlDocument = result.GetPayload();");
+            writer.write("XmlNode rootNode = xmlDocument.GetRootElement();");
+            writer.write("// TODO: protocol-specific body member deserialization");
+            // Query extracts <ResponseMetadata>; EC2 extracts a top-level <requestId>. Both
+            // populate m_responseMetadata; rest-xml/json/cbor do neither.
+            if (protocol == Protocol.EC2) {
+                writer.openBlock("if (!rootNode.IsNull()) {", "}", () -> {
+                    writer.write("XmlNode requestIdNode = rootNode.FirstChild(\"requestId\");");
+                    writer.openBlock("if (!requestIdNode.IsNull()) {", "}", () -> {
+                        writer.write("m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));");
+                        writer.write("m_responseMetadataHasBeenSet = true;");
+                    });
+                });
+            } else {
+                writer.openBlock("if (!rootNode.IsNull()) {", "}", () -> {
+                    writer.write("XmlNode responseMetadataNode = rootNode.FirstChild(\"ResponseMetadata\");");
+                    writer.write("m_responseMetadata = responseMetadataNode;");
+                    writer.write("m_responseMetadataHasBeenSet = true;");
+                    writer.write("AWS_LOGSTREAM_DEBUG(\"Aws::$L::Model::$L\", "
+                        + "\"x-amzn-request-id: \" << m_responseMetadata.GetRequestId());",
+                        namespace, className);
+                });
+            }
+            writeResultStatusCodeMembers(writer, shape, model);
+            writer.write("return *this;");
+        });
+    }
+
+    @Override
+    public void writeRequestMethodDecls(CppWriter writer, String exportMacro,
+                                        StructureShape shape, OperationShape operation, Model model) {
+        if (emitsSerializePayload(operation, model)) {
+            writer.write("$L Aws::String SerializePayload() const override;", exportMacro);
+        }
+        if (requestHasHeaderMembers(shape, model)) {
+            writer.write("");
+            writeGetRequestSpecificHeadersDecl(writer, exportMacro);
+        }
+        if (requestHasQueryStringMembers(shape, model)) {
+            writer.write("");
+            writeAddQueryStringParametersDecl(writer, exportMacro);
+        }
+        writer.write("");
+        // DumpBodyToUrl is a protected virtual in AmazonWebServiceRequest, so the override
+        // is bracketed under protected: and the section restored to public: afterwards,
+        // matching the legacy C2J layout.
+        writer.dedent();
+        writer.write("protected:");
+        writer.indent();
+        writer.write("$L void DumpBodyToUrl(Aws::Http::URI& uri) const override;", exportMacro);
+        writer.dedent();
+        writer.write("");
+        writer.write("public:");
+        writer.indent();
+    }
+
+    @Override
+    public void writeRequestMethodImpls(CppWriter writer, String className,
+                                        StructureShape shape, OperationShape operation,
+                                        ServiceShape service, Model model) {
+        if (emitsSerializePayload(operation, model)) {
+            writer.write("Aws::String $L::SerializePayload() const { return {}; }", className);
+        }
+        if (requestHasHeaderMembers(shape, model)) {
+            writer.write("");
+            writeGetRequestSpecificHeadersImpl(writer, className, shape, operation, service, model);
+        }
+        if (requestHasQueryStringMembers(shape, model)) {
+            writer.write("");
+            writeAddQueryStringParametersImpl(writer, className);
+        }
+        writer.write("");
+        writer.write("void $L::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }",
+            className);
     }
 }

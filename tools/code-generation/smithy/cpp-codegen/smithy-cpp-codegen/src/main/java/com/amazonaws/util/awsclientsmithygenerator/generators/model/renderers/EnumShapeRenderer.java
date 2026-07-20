@@ -5,6 +5,7 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.EnumRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import software.amazon.smithy.model.shapes.Shape;
@@ -32,7 +33,7 @@ public final class EnumShapeRenderer implements ShapeRenderer {
     @Override
     public void render(CppWriterDelegator writerDelegator) {
         for (Shape enumShape : enumShapes) {
-            String name = enumShape.getId().getName();
+            String name = CppTypeMapper.cppShapeName(enumShape);
             String headerFile = "include/aws/" + smithyServiceName + "/model/" + name + ".h";
             writerDelegator.useFileWriter(headerFile, writer ->
                 EnumRenderer.renderHeader(writer, enumShape, namespace, exportMacro, smithyServiceName));

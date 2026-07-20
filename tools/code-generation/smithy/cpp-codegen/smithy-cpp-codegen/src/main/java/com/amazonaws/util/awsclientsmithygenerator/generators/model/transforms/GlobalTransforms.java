@@ -5,6 +5,8 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ModelTransform;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.shapes.ListShape;
@@ -14,10 +16,14 @@ import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.ShapeId;
+import software.amazon.smithy.model.shapes.StructureShape;
+import software.amazon.smithy.model.traits.RequiredTrait;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -89,9 +95,12 @@ public final class GlobalTransforms {
         TopDownIndex index = TopDownIndex.of(model);
         Deque<ShapeId> queue = new ArrayDeque<>();
 
-        // Seed queue with all operation input/output/error shapes
+        // Seed queue with all operation input/output/error shapes. Use getInputShape()
+        // so no-input operations (input target smithy.api#Unit) stay reachable, keeping
+        // the classifier and reachability set in agreement. The BFS below null-guards via
+        // model.getShape(id).ifPresent(...), so a possibly-absent Unit id is safe to add.
         for (OperationShape op : index.getContainedOperations(service)) {
-            op.getInput().ifPresent(queue::add);
+            queue.add(op.getInputShape());
             op.getOutput().ifPresent(queue::add);
             op.getErrors().forEach(queue::add);
         }
@@ -119,13 +128,70 @@ public final class GlobalTransforms {
     }
 
     /**
-     * Returns this class as a no-op ModelTransform.
+     * Returns this class as a ModelTransform.
      *
-     * <p>GlobalTransforms currently operates at classification time (via computeReachableShapes),
-     * not at model-transform time. This factory exists to reserve a slot in the pipeline
-     * for future pre-generation model mutations (shape renaming, injection, etc.).
+     * <p>Currently the only pre-generation model mutation is {@link #injectResponseMetadata}.
      */
     public static ModelTransform asTransform() {
-        return (model, service) -> model;
+        return GlobalTransforms::injectResponseMetadata;
+    }
+
+    /**
+     * For awsQuery / ec2Query services, injects a {@code ResponseMetadata} structure (carrying
+     * a {@code RequestId} string member) and adds it as a {@code @required} member on every
+     * result (operation output) shape. This mirrors the legacy C2J
+     * {@code QueryCppClientGenerator.addRequestIdToResults} injection, so that Query/EC2 result
+     * classes expose {@code GetResponseMetadata()} and back the {@code m_responseMetadata}
+     * deserialization emitted by {@code QueryXmlProtocolTraits}. Other protocols are unchanged.
+     *
+     * @param model   the current model
+     * @param service the service being generated
+     * @return the model with ResponseMetadata injected, or the input model for non-query protocols
+     */
+    public static Model injectResponseMetadata(Model model, ServiceShape service) {
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        if (protocol != Protocol.QUERY_XML && protocol != Protocol.EC2) {
+            return model;
+        }
+
+        String namespace = service.getId().getNamespace();
+        ShapeId responseMetadataId = ShapeId.fromParts(namespace, "ResponseMetadata");
+
+        // ResponseMetadata { RequestId: String }
+        StructureShape responseMetadata = StructureShape.builder()
+            .id(responseMetadataId)
+            .addMember(MemberShape.builder()
+                .id(responseMetadataId.withMember("RequestId"))
+                .target("smithy.api#String")
+                .build())
+            .build();
+
+        // The @required ResponseMetadata member added to each result shape.
+        List<Shape> replacements = new ArrayList<>();
+        replacements.add(responseMetadata);
+
+        TopDownIndex index = TopDownIndex.of(model);
+        Set<ShapeId> outputIds = new HashSet<>();
+        for (OperationShape op : index.getContainedOperations(service)) {
+            op.getOutput().ifPresent(outputIds::add);
+        }
+
+        for (ShapeId outputId : outputIds) {
+            model.getShape(outputId).flatMap(Shape::asStructureShape).ifPresent(result -> {
+                if (result.getMember("ResponseMetadata").isPresent()) {
+                    return;
+                }
+                StructureShape withMetadata = result.toBuilder()
+                    .addMember(MemberShape.builder()
+                        .id(result.getId().withMember("ResponseMetadata"))
+                        .target(responseMetadataId)
+                        .addTrait(new RequiredTrait())
+                        .build())
+                    .build();
+                replacements.add(withMetadata);
+            });
+        }
+
+        return model.toBuilder().addShapes(replacements).build();
     }
 }

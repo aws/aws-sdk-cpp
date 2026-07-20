@@ -280,6 +280,26 @@ class ShapeClassifierTest {
     }
 
     @Test
+    void outgoingEventStreams_collectsInputBoundStreamingUnions() {
+        // A @streaming union bound to a request INPUT is an outgoing event stream (encoder),
+        // classified separately from output-bound streaming unions (which become handlers).
+        Model model = modelWithStreaming(true, false);
+        ServiceShape service = ServiceShape.builder().id("com.example#Svc").version("2024-01-01")
+            .addOperation(ShapeId.from("com.example#Op")).build();
+        // Re-assemble with a service so classify() has a root.
+        Model withSvc = model.toBuilder().addShape(service).build();
+        var classified = ShapeClassifier.classify(withSvc, service, ProtocolResolver.resolve(service, withSvc));
+        assertTrue(classified.outgoingEventStreams().stream()
+                .anyMatch(s -> s.getId().getName().equals("EventStream")),
+            "Input-bound @streaming union must be collected as an outgoing event stream: "
+                + classified.outgoingEventStreams());
+        // And it must NOT also land in subObjects (which would double-render it as a data union).
+        assertTrue(classified.subObjects().stream()
+                .noneMatch(s -> s.getId().getName().equals("EventStream")),
+            "Outgoing event stream must not also be a sub-object: " + classified.subObjects());
+    }
+
+    @Test
     void isEventStreamResponseOperation_trueWhenOutputStreams() {
         Model model = modelWithStreaming(false, true);
         OperationShape op = model.expectShape(ShapeId.from("com.example#Op"), OperationShape.class);
@@ -301,6 +321,107 @@ class ShapeClassifierTest {
         OperationShape op = model.expectShape(ShapeId.from("com.example#Op"), OperationShape.class);
         assertFalse(ShapeClassifier.isEventStreamResponseOperation(op, model));
         assertFalse(ShapeClassifier.isEventStreamRequestOperation(op, model));
+    }
+
+    private static Model streamingBlobOutputModel(boolean streaming) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        BlobShape.Builder blobBuilder = BlobShape.builder().id("com.example#StreamBlob");
+        if (streaming) {
+            blobBuilder.addTrait(new StreamingTrait());
+        }
+        BlobShape blob = blobBuilder.build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#GetBlobInput").addMember("name", str.getId()).build();
+        StructureShape.Builder outputBuilder = StructureShape.builder().id("com.example#GetBlobOutput");
+        if (streaming) {
+            outputBuilder.addMember(MemberShape.builder()
+                .id("com.example#GetBlobOutput$body").target(blob.getId())
+                .addTrait(new HttpPayloadTrait()).build());
+        } else {
+            outputBuilder.addMember("result", str.getId());
+        }
+        StructureShape output = outputBuilder.build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#GetBlob").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Svc").version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, blob, input, output, op, service).build();
+    }
+
+    @Test
+    void streamingBlobPayloadOutput_isClassifiedStreaming() {
+        Model model = streamingBlobOutputModel(true);
+        ServiceShape svc = model.expectShape(ShapeId.from("com.example#Svc"), ServiceShape.class);
+        var results = ShapeClassifier.classify(model, svc, ProtocolResolver.resolve(svc, model)).results();
+        assertTrue(results.stream().anyMatch(r -> r.operation().getId().getName().equals("GetBlob") && r.streaming()));
+    }
+
+    @Test
+    void plainOutput_isNotStreaming() {
+        Model model = streamingBlobOutputModel(false);
+        ServiceShape svc = model.expectShape(ShapeId.from("com.example#Svc"), ServiceShape.class);
+        var results = ShapeClassifier.classify(model, svc, ProtocolResolver.resolve(svc, model)).results();
+        assertTrue(results.stream().allMatch(r -> !r.streaming()));
+    }
+
+    /** An @httpPayload blob or string member (with or without @streaming) that is NOT an event stream. */
+    private static Model httpPayloadOutputModel(software.amazon.smithy.model.shapes.Shape payloadTarget) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#GetBlobInput").addMember("name", str.getId()).build();
+        StructureShape output = StructureShape.builder().id("com.example#GetBlobOutput")
+            .addMember(MemberShape.builder()
+                .id("com.example#GetBlobOutput$body").target(payloadTarget.getId())
+                .addTrait(new HttpPayloadTrait()).build())
+            .build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#GetBlob").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Svc").version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, payloadTarget, input, output, op, service).build();
+    }
+
+    @Test
+    void httpPayloadBlobOutput_withoutStreamingTrait_isClassifiedStreaming() {
+        // C2J treats an @httpPayload blob as a streaming ResponseStream even without @streaming
+        // (CppViewHelper.isStreamingPayloadMember: isStreaming() OR blob OR string).
+        BlobShape blob = BlobShape.builder().id("com.example#Body").build();
+        Model model = httpPayloadOutputModel(blob);
+        ServiceShape svc = model.expectShape(ShapeId.from("com.example#Svc"), ServiceShape.class);
+        var results = ShapeClassifier.classify(model, svc, ProtocolResolver.resolve(svc, model)).results();
+        assertTrue(results.stream().anyMatch(r -> r.operation().getId().getName().equals("GetBlob") && r.streaming()),
+            "An @httpPayload blob without @streaming must classify streaming");
+    }
+
+    @Test
+    void httpPayloadStringOutput_isClassifiedStreaming() {
+        StringShape body = StringShape.builder().id("com.example#Body").build();
+        Model model = httpPayloadOutputModel(body);
+        ServiceShape svc = model.expectShape(ShapeId.from("com.example#Svc"), ServiceShape.class);
+        var results = ShapeClassifier.classify(model, svc, ProtocolResolver.resolve(svc, model)).results();
+        assertTrue(results.stream().anyMatch(r -> r.operation().getId().getName().equals("GetBlob") && r.streaming()),
+            "An @httpPayload string must classify streaming");
+    }
+
+    @Test
+    void noInputOperation_stillProducesRequest() {
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#PingOutput").addMember("r", str.getId()).build();
+        // No .input(...) -> Smithy defaults the input target to smithy.api#Unit
+        OperationShape op = OperationShape.builder()
+            .id("com.example#Ping").output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Svc").version("2024-01-01").addOperation(op.getId()).build();
+        // Assemble with the prelude so smithy.api#Unit (the default no-input target) resolves.
+        Model model = Model.assembler()
+            .addShapes(str, output, op, service)
+            .assemble().unwrap();
+
+        var requests = ShapeClassifier.classify(model, service,
+            ProtocolResolver.resolve(service, model)).requests();
+        assertTrue(requests.stream().anyMatch(r -> r.operation().getId().getName().equals("Ping")),
+            "Expected a RequestInfo for the no-input operation Ping");
     }
 
     @Test

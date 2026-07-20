@@ -23,9 +23,51 @@ class XmlProtocolTraitsTest {
         return writer.toString();
     }
 
+    /**
+     * Renders inside a simulated class body (indent level 1), matching how request-method
+     * declarations are emitted by {@code RequestRenderer}. Query/EC2 decls open with a
+     * {@code dedent()} for the {@code protected:} sandwich, which requires a non-zero
+     * starting indent.
+     */
+    private static String renderInClassBody(java.util.function.Consumer<CppWriter> body) {
+        CppWriter writer = new CppWriter();
+        writer.indent();
+        body.accept(writer);
+        return writer.toString();
+    }
+
     private final ProtocolTraits restXml = new RestXmlProtocolTraits();
     private final ProtocolTraits queryXml = new QueryXmlProtocolTraits(Protocol.QUERY_XML);
     private final ProtocolTraits ec2 = new QueryXmlProtocolTraits(Protocol.EC2);
+
+    private static software.amazon.smithy.model.shapes.StructureShape reqWith(boolean header, boolean query) {
+        software.amazon.smithy.model.shapes.StructureShape.Builder b =
+            software.amazon.smithy.model.shapes.StructureShape.builder().id("com.example#DoThingRequest");
+        if (header) {
+            b.addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
+                .id("com.example#DoThingRequest$h").target("com.example#Str")
+                .addTrait(new software.amazon.smithy.model.traits.HttpHeaderTrait("X-H")).build());
+        }
+        if (query) {
+            b.addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
+                .id("com.example#DoThingRequest$q").target("com.example#Str")
+                .addTrait(new software.amazon.smithy.model.traits.HttpQueryTrait("q")).build());
+        }
+        return b.build();
+    }
+    private static software.amazon.smithy.model.shapes.OperationShape opDoThing() {
+        return software.amazon.smithy.model.shapes.OperationShape.builder().id("com.example#DoThing").build();
+    }
+    private static software.amazon.smithy.model.shapes.ServiceShape svcAthena() {
+        return software.amazon.smithy.model.shapes.ServiceShape.builder()
+            .id("com.example#AmazonAthena").version("2017-05-18").build();
+    }
+    private static software.amazon.smithy.model.Model modelWith(
+            software.amazon.smithy.model.shapes.StructureShape req) {
+        return software.amazon.smithy.model.Model.builder()
+            .addShapes(software.amazon.smithy.model.shapes.StringShape.builder().id("com.example#Str").build(), req)
+            .build();
+    }
 
     // ---------- identity ----------
 
@@ -133,12 +175,12 @@ class XmlProtocolTraitsTest {
             assertFalse(resultFwd.contains("class XmlNode;"),
                 "Result headers declare the document type, not the node type: " + resultFwd);
 
-            assertTrue(render(traits::writeSerdeInclude)
-                .contains("#include <aws/core/utils/xml/XmlSerializer.h>"));
+            assertTrue(traits.serdeIncludes(FileKind.SUBOBJECT_SOURCE)
+                .contains("aws/core/utils/xml/XmlSerializer.h"));
 
-            String usings = render(traits::writeSerdeUsingDeclarations);
-            assertTrue(usings.contains("using namespace Aws::Utils::Xml;"), usings);
-            assertTrue(usings.contains("using namespace Aws::Utils;"), usings);
+            var usings = traits.serdeUsings(FileKind.SUBOBJECT_SOURCE);
+            assertTrue(usings.contains("Aws::Utils::Xml"), usings.toString());
+            assertTrue(usings.contains("Aws::Utils"), usings.toString());
         }
     }
 
@@ -151,11 +193,100 @@ class XmlProtocolTraitsTest {
             assertTrue(decls.contains("AWS_EXAMPLE_API DoThingResult& operator=(const "
                 + "Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);"), decls);
 
-            String impls = render(w -> traits.writeResultSerdeImpls(w, "DoThingResult"));
+            var req = reqWith(false, false); var model = modelWith(req);
+            String impls = render(w -> traits.writeResultSerdeImpls(w, "DoThingResult", req, model, "Example"));
             assertTrue(impls.contains("DoThingResult::DoThingResult(const "
                 + "Aws::AmazonWebServiceResult<XmlDocument>& result) {"), impls);
             assertTrue(impls.contains("DoThingResult& DoThingResult::operator=(const "
                 + "Aws::AmazonWebServiceResult<XmlDocument>& result) {"), impls);
         }
+    }
+
+    // ---------- REST_XML request contract (Axis-1 gating) ----------
+
+    @Test
+    void restXml_noBindings_onlySerializePayload() {
+        var req = reqWith(false, false); var model = modelWith(req);
+        ProtocolTraits xml = new RestXmlProtocolTraits();
+        String d = render(w -> xml.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        assertTrue(d.contains("Aws::String SerializePayload() const override;"), d);
+        assertFalse(d.contains("GetRequestSpecificHeaders"), d);
+        assertFalse(d.contains("DumpBodyToUrl"), d);
+        assertFalse(d.contains("AddQueryStringParameters"), d);
+        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return {}; }"), i);
+    }
+
+    @Test
+    void restXml_withHeaderMember_emitsHeadersWithoutTarget() {
+        var req = reqWith(true, false); var model = modelWith(req);
+        ProtocolTraits xml = new RestXmlProtocolTraits();
+        String d = render(w -> xml.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        assertTrue(d.contains("GetRequestSpecificHeaders() const override;"), d);
+        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        assertFalse(i.contains("X-Amz-Target"), i);
+    }
+
+    @Test
+    void restXml_withQueryMember_emitsAddQueryStringParameters() {
+        var req = reqWith(false, true); var model = modelWith(req);
+        ProtocolTraits xml = new RestXmlProtocolTraits();
+        String d = render(w -> xml.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        assertTrue(d.contains("void AddQueryStringParameters(Aws::Http::URI& uri) const override;"), d);
+    }
+
+    // ---------- Query/EC2 request contract (Axis-1 gating + protected DumpBodyToUrl) ----------
+
+    @Test
+    void queryXml_serializePayloadAndProtectedDumpBodyToUrl() {
+        var req = reqWith(false, false); var model = modelWith(req);
+        ProtocolTraits q = new QueryXmlProtocolTraits(Protocol.QUERY_XML);
+        String d = renderInClassBody(w -> q.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        assertTrue(d.contains("Aws::String SerializePayload() const override;"), d);
+        assertTrue(d.contains("void DumpBodyToUrl(Aws::Http::URI& uri) const override;"), d);
+        assertTrue(d.contains("protected:"), d);
+        assertTrue(d.contains("public:"), d);
+        assertFalse(d.contains("GetRequestSpecificHeaders"), d);
+        String i = render(w -> q.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return {}; }"), i);
+        assertTrue(i.contains("void DoThingRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }"), i);
+    }
+
+    @Test
+    void queryXml_withHeaderMember_alsoEmitsHeaders_andStillDumpBodyToUrl() {
+        var req = reqWith(true, false); var model = modelWith(req);
+        ProtocolTraits q = new QueryXmlProtocolTraits(Protocol.QUERY_XML);
+        String d = renderInClassBody(w -> q.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        assertTrue(d.contains("GetRequestSpecificHeaders() const override;"), d);
+        assertTrue(d.contains("DumpBodyToUrl"), d);
+    }
+
+    // ---------- Query/EC2 result ResponseMetadata / requestId extraction ----------
+
+    @Test
+    void queryResult_extractsResponseMetadata() {
+        var req = reqWith(false, false); var model = modelWith(req);
+        String out = render(w -> new QueryXmlProtocolTraits(Protocol.QUERY_XML)
+            .writeResultSerdeImpls(w, "GetThingResult", req, model, "IAM"));
+        assertTrue(out.contains("FirstChild(\"ResponseMetadata\")"), out);
+        assertTrue(out.contains("m_responseMetadata"), out);
+    }
+
+    @Test
+    void queryResult_logTagIsFullyQualified() {
+        // C2J logs with the fully-qualified class name (Aws::<namespace>::Model::<class>).
+        var req = reqWith(false, false); var model = modelWith(req);
+        String out = render(w -> new QueryXmlProtocolTraits(Protocol.QUERY_XML)
+            .writeResultSerdeImpls(w, "GetThingResult", req, model, "IAM"));
+        assertTrue(out.contains("AWS_LOGSTREAM_DEBUG(\"Aws::IAM::Model::GetThingResult\""), out);
+    }
+
+    @Test
+    void ec2Result_extractsRequestIdChild() {
+        var req = reqWith(false, false); var model = modelWith(req);
+        String out = render(w -> new QueryXmlProtocolTraits(Protocol.EC2)
+            .writeResultSerdeImpls(w, "GetThingResult", req, model, "IAM"));
+        assertTrue(out.contains("FirstChild(\"requestId\")"), out);
+        assertTrue(out.contains("SetRequestId"), out);
     }
 }

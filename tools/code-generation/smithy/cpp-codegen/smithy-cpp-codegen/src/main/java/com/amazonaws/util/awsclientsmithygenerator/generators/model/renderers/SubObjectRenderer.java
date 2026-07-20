@@ -8,16 +8,15 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.FileKind;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.Shape;
-import software.amazon.smithy.model.shapes.StructureShape;
+import software.amazon.smithy.model.traits.StreamingTrait;
 
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * Renders C++ headers and sources for sub-object (intermediate structure) shapes.
@@ -49,28 +48,33 @@ public final class SubObjectRenderer implements ShapeRenderer {
     @Override
     public void render(CppWriterDelegator writerDelegator) {
         for (Shape shape : subObjects) {
-            if (shape.isStructureShape()) {
-                StructureShape struct = shape.asStructureShape().get();
-                renderHeader(writerDelegator, struct);
-                renderSource(writerDelegator, struct);
+            // C2J models a union as a structure with "union": true and emits it through the same
+            // ModelClass templates, so structures and (non-streaming) unions render identically.
+            // @streaming unions are the event-stream shapes rendered by EventStreamRenderer /
+            // the outgoing-event-stream path; skip them here to avoid a double-write.
+            boolean isStruct = shape.isStructureShape();
+            boolean isDataUnion = shape.isUnionShape() && !shape.hasTrait(StreamingTrait.class);
+            if (isStruct || isDataUnion) {
+                renderHeader(writerDelegator, shape);
+                renderSource(writerDelegator, shape);
             }
         }
     }
 
-    private void renderHeader(CppWriterDelegator writerDelegator, StructureShape shape) {
-        String className = shape.getId().getName();
+    private void renderHeader(CppWriterDelegator writerDelegator, Shape shape) {
+        String className = CppTypeMapper.cppShapeName(shape);
         String fileName = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("#pragma once");
 
             // Includes
-            Set<String> includes = new TreeSet<>();
-            includes.add("<aws/" + smithyServiceName + "/" + namespace + "_EXPORTS.h>");
-            List<String> memberIncludes = CppTypeMapper.getIncludesForShape(shape, model, smithyServiceName);
-            includes.addAll(memberIncludes);
-            for (String include : includes) {
-                writer.write("#include $L", include);
+            List<String> includes = new java.util.ArrayList<>();
+            includes.add("aws/" + smithyServiceName + "/" + namespace + "_EXPORTS.h");
+            for (String memberInc : CppTypeMapper.getIncludesForShape(shape, model, smithyServiceName)) {
+                includes.add(memberInc.replaceAll("^<|>$", ""));
             }
+            includes.addAll(protocolTraits.serdeIncludes(FileKind.SUBOBJECT_HEADER));
+            IncludeSets.emit(writer, includes);
 
             boolean allPrimitive = shape.getAllMembers().values().stream()
                 .map(m -> model.expectShape(m.getTarget()))
@@ -92,12 +96,18 @@ public final class SubObjectRenderer implements ShapeRenderer {
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
                 protocolTraits.writeSerdeMethodDecls(writer, exportMacro, className, null);
-                writer.write("");
-                MemberRenderer.renderPublicSection(writer, shape, model, exportMacro, className);
-                writer.dedent();
-                writer.write("private:");
-                writer.indent();
-                MemberRenderer.renderPrivateSection(writer, shape, model);
+                // A memberless shape ends right after its serde decls: C2J emits no accessors
+                // and no private: section (ModelClassMembersAndInlines.vm gates both on
+                // $shape.members.size() > 0).
+                if (!shape.getAllMembers().isEmpty()) {
+                    boolean wideIntegers = protocolTraits.widensIntegers();
+                    writer.write("");
+                    MemberRenderer.renderPublicSection(writer, shape, model, exportMacro, className, wideIntegers);
+                    writer.dedent();
+                    writer.write("private:");
+                    writer.indent();
+                    MemberRenderer.renderPrivateSection(writer, shape, model, wideIntegers);
+                }
             });
             writer.write("");
 
@@ -107,18 +117,21 @@ public final class SubObjectRenderer implements ShapeRenderer {
         });
     }
 
-    private void renderSource(CppWriterDelegator writerDelegator, StructureShape shape) {
-        String className = shape.getId().getName();
+    private void renderSource(CppWriterDelegator writerDelegator, Shape shape) {
+        String className = CppTypeMapper.cppShapeName(shape);
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
 
-            protocolTraits.writeSerdeInclude(writer);
-            writer.write("#include <aws/$L/model/$L.h>", smithyServiceName, className);
-            writer.write("");
-            writer.write("#include <utility>");
+            List<String> includes = new java.util.ArrayList<>(
+                IncludeSets.subObjectSourceBase(smithyServiceName, className));
+            includes.addAll(protocolTraits.serdeIncludes(FileKind.SUBOBJECT_SOURCE));
+            // Serde-implementation includes derived from members (e.g. HashingUtils.h for blob
+            // Base64 serde), matching C2J's computeSourceIncludes.
+            includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, model, smithyServiceName));
+            IncludeSets.emit(writer, includes);
             writer.write("");
 
-            protocolTraits.writeSerdeUsingDeclarations(writer);
+            IncludeSets.emitUsings(writer, protocolTraits.serdeUsings(FileKind.SUBOBJECT_SOURCE));
             writer.write("");
 
             writer.writeNamespaceOpen("Aws");

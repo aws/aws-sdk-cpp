@@ -8,7 +8,9 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.FileKind;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.EventStreamInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import software.amazon.smithy.model.Model;
@@ -70,7 +72,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
 
             renderHandlerHeader(writerDelegator, info.operationName(), events);
             renderHandlerSource(writerDelegator, info.operationName(), events);
-            renderInitialResponse(writerDelegator, info.operationName());
+            renderInitialResponse(writerDelegator, info.operationName(), info.resultShape());
             renderEventStreamUnion(writerDelegator, info.operationName(), union, events, exceptions);
         }
     }
@@ -101,6 +103,21 @@ public final class EventStreamRenderer implements ShapeRenderer {
     /** The C++ event type identifier (event shape name), e.g. "AlphaEvent". */
     private String eventShapeName(MemberShape member) {
         return member.getTarget().getName();
+    }
+
+    /**
+     * True if an exception member targets a modeled exception (members beyond the trivial
+     * message/code). C2J types modeled exceptions as their concrete shape (with a model include)
+     * and non-modeled ones as the generic {@code <namespace>Error} wrapper.
+     */
+    private boolean isModeledException(MemberShape exc) {
+        StructureShape target = model.expectShape(exc.getTarget(), StructureShape.class);
+        return ShapeClassifier.isModeledException(target, protocolTraits.protocol());
+    }
+
+    /** The C++ type for an exception member: concrete shape name if modeled, else {@code errorType}. */
+    private String exceptionType(MemberShape exc, String errorType) {
+        return isModeledException(exc) ? exc.getTarget().getName() : errorType;
     }
 
     /** The wire member key, e.g. "alpha". */
@@ -223,14 +240,19 @@ public final class EventStreamRenderer implements ShapeRenderer {
         String fileName = "source/model/" + className + ".cpp";
         String tag = opName.toUpperCase() + "_HANDLER_CLASS_TAG";
         writerDelegator.useFileWriter(fileName, writer -> {
-            writer.write("#include <aws/core/client/CoreErrors.h>");
-            writer.write("#include <aws/core/utils/event/EventStreamErrors.h>");
-            writer.write("#include <aws/core/utils/logging/LogMacros.h>");
-            writer.write("#include <aws/$1L/$2LErrorMarshaller.h>", smithyServiceName, namespace);
-            writer.write("#include <aws/$1L/model/$2LHandler.h>", smithyServiceName, opName);
+            // The handler parses event/exception payloads with the protocol's serializer.
+            List<String> includes = new java.util.ArrayList<>();
+            includes.add("aws/core/client/CoreErrors.h");
+            includes.add("aws/core/utils/event/EventStreamErrors.h");
+            includes.add("aws/core/utils/logging/LogMacros.h");
+            includes.add("aws/" + smithyServiceName + "/" + namespace + "ErrorMarshaller.h");
+            includes.add("aws/" + smithyServiceName + "/model/" + opName + "Handler.h");
+            includes.addAll(protocolTraits.serdeIncludes(FileKind.EVENT_HANDLER_SOURCE));
+            IncludeSets.emit(writer, includes);
             writer.write("");
             writer.write("using namespace Aws::$1L::Model;", namespace);
             writer.write("using namespace Aws::Utils::Event;");
+            IncludeSets.emitUsings(writer, protocolTraits.serdeUsings(FileKind.EVENT_HANDLER_SOURCE));
             writer.write("");
             writer.write("AWS_CORE_API extern const char MESSAGE_LOWER_CASE[];");
             writer.write("AWS_CORE_API extern const char MESSAGE_CAMEL_CASE[];");
@@ -410,14 +432,45 @@ public final class EventStreamRenderer implements ShapeRenderer {
 
     // ---- Initial response / event stream union ------------------------------
 
-    private void renderInitialResponse(CppWriterDelegator writerDelegator, String opName) {
+    /**
+     * Builds a synthetic {@code <op>InitialResponse} structure from the result's non-event-stream
+     * members, mirroring C2J's {@code addEventStreamInitialResponse} (CppClientGenerator). The
+     * {@code @streaming} union member (the event stream) is excluded.
+     */
+    private StructureShape initialResponseShape(String opName, StructureShape resultShape) {
+        StructureShape.Builder builder = StructureShape.builder()
+            .id("com.amazonaws.smithy.synthetic#" + opName + "InitialResponse");
+        for (MemberShape member : resultShape.getAllMembers().values()) {
+            Shape target = model.expectShape(member.getTarget());
+            if (target.isUnionShape() && target.hasTrait(StreamingTrait.class)) {
+                continue;
+            }
+            builder.addMember(member.getMemberName(), member.getTarget(),
+                b -> member.getAllTraits().values().forEach(b::addTrait));
+        }
+        return builder.build();
+    }
+
+    private void renderInitialResponse(CppWriterDelegator writerDelegator, String opName,
+                                       StructureShape resultShape) {
         String className = opName + "InitialResponse";
+        StructureShape shape = initialResponseShape(opName, resultShape);
+        boolean hasMembers = !shape.getAllMembers().isEmpty();
 
         String headerFile = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
         writerDelegator.useFileWriter(headerFile, writer -> {
             writer.write("#pragma once");
-            writer.write("#include <aws/core/http/HttpTypes.h>");
-            writer.write("#include <aws/$1L/$2L_EXPORTS.h>", smithyServiceName, namespace);
+            List<String> includes = new java.util.ArrayList<>();
+            includes.add("<aws/core/http/HttpTypes.h>");
+            includes.add("<aws/" + smithyServiceName + "/" + namespace + "_EXPORTS.h>");
+            includes.addAll(CppTypeMapper.getIncludesForShape(shape, model, smithyServiceName));
+            for (String include : new java.util.TreeSet<>(includes)) {
+                writer.write("#include $L", include);
+            }
+            if (hasMembers) {
+                writer.write("");
+                writer.write("#include <utility>");
+            }
             writer.write("");
             writer.writeNamespaceOpen("Aws");
             protocolTraits.writeShapeForwardDeclarations(writer);
@@ -429,6 +482,17 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 // The header-collection ctor sits before the serialize method (mainline ordering).
                 protocolTraits.writeSerdeMethodDecls(writer, exportMacro, className,
                     () -> writer.write("$1L $2L(const Http::HeaderValueCollection& responseHeaders);", exportMacro, className));
+                // Accessors + private section for the result's non-streaming members. A memberless
+                // InitialResponse ends right after its serde decls (no private:), matching C2J.
+                if (hasMembers) {
+                    boolean wideIntegers = protocolTraits.widensIntegers();
+                    writer.write("");
+                    MemberRenderer.renderPublicSection(writer, shape, model, exportMacro, className, wideIntegers);
+                    writer.dedent();
+                    writer.write("private:");
+                    writer.indent();
+                    MemberRenderer.renderPrivateSection(writer, shape, model, wideIntegers);
+                }
             });
             writer.write("");
             writer.writeNamespaceClose("Model");
@@ -438,18 +502,34 @@ public final class EventStreamRenderer implements ShapeRenderer {
 
         String sourceFile = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(sourceFile, writer -> {
-            protocolTraits.writeSerdeInclude(writer);
-            writer.write("#include <aws/core/utils/UnreferencedParam.h>");
-            writer.write("#include <aws/$1L/model/$2L.h>", smithyServiceName, className);
+            List<String> includes = new java.util.ArrayList<>();
+            includes.add("aws/core/utils/StringUtils.h");
+            includes.add("aws/" + smithyServiceName + "/model/" + className + ".h");
+            includes.add("utility");
+            includes.addAll(protocolTraits.serdeIncludes(FileKind.INITIAL_RESPONSE_SOURCE));
+            // Serde-implementation includes derived from the initial-response members (e.g.
+            // AWSStringStream.h for the header-bound members), matching C2J computeSourceIncludes.
+            includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, model, smithyServiceName));
+            IncludeSets.emit(writer, includes);
             writer.write("");
-            writer.write("using namespace Aws::$1L::Model;", namespace);
-            protocolTraits.writeSerdeUsingDeclarations(writer);
+            IncludeSets.emitUsings(writer, protocolTraits.serdeUsings(FileKind.INITIAL_RESPONSE_SOURCE));
+            writer.write("");
+            // The serde impls are wrapped in an explicit namespace block (not a `using`),
+            // matching C2J, which renders InitialResponse via the sub-object source template.
+            writer.writeNamespaceOpen("Aws");
+            writer.writeNamespaceOpen(namespace);
+            writer.writeNamespaceOpen("Model");
             writer.write("");
             protocolTraits.writeSerdeMethodImpls(writer, className);
             writer.write("");
-            writer.openBlock("$1L::$1L(const Http::HeaderValueCollection& responseHeaders) {", "}", className, () -> {
-                writer.write("AWS_UNREFERENCED_PARAM(responseHeaders);");
-            });
+            // Delegate to the default ctor so all members are value-initialized before the
+            // header-derived ones are set (matches C2J).
+            writer.openBlock("$1L::$1L(const Http::HeaderValueCollection& responseHeaders) : $1L() {", "}",
+                className, () -> writer.write("AWS_UNREFERENCED_PARAM(responseHeaders);"));
+            writer.write("");
+            writer.writeNamespaceClose("Model");
+            writer.writeNamespaceClose(namespace);
+            writer.writeNamespaceClose("Aws");
         });
     }
 
@@ -463,9 +543,17 @@ public final class EventStreamRenderer implements ShapeRenderer {
         writerDelegator.useFileWriter(headerFile, writer -> {
             writer.write("#pragma once");
             writer.write("#include <aws/$1L/$2L_EXPORTS.h>", smithyServiceName, namespace);
-            writer.write("#include <aws/$1L/$2LErrors.h>", smithyServiceName, namespace);
+            // C2J omits the service Errors include: its header-include computation skips non-modeled
+            // exception members (CppViewHelper: `if (next.isException() && !next.isModeledException())
+            // continue;`), which are the generic <namespace>Error wrapper and resolve transitively.
+            // Concrete event shapes AND modeled exceptions get their own model include.
             for (MemberShape event : events) {
                 writer.write("#include <aws/$1L/model/$2L.h>", smithyServiceName, eventShapeName(event));
+            }
+            for (MemberShape exc : exceptions) {
+                if (isModeledException(exc)) {
+                    writer.write("#include <aws/$1L/model/$2L.h>", smithyServiceName, exc.getTarget().getName());
+                }
             }
             writer.write("");
             writer.write("#include <utility>");
@@ -485,9 +573,9 @@ public final class EventStreamRenderer implements ShapeRenderer {
                     String cppType = CppTypeMapper.getCppType(model.expectShape(event.getTarget()), model);
                     renderShapeAccessor(writer, className, cppType, event.getMemberName(), event);
                 }
-                // Exception member accessors, typed as <namespace>Error.
+                // Exception member accessors: modeled -> concrete type; non-modeled -> <namespace>Error.
                 for (MemberShape exc : exceptions) {
-                    renderShapeAccessor(writer, className, errorType, exc.getMemberName(), exc);
+                    renderShapeAccessor(writer, className, exceptionType(exc, errorType), exc.getMemberName(), exc);
                 }
                 writer.dedent();
                 writer.write("private:");
@@ -498,7 +586,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
                     writer.write("$1L $2L;", cppType, "m_" + decapitalize(event.getMemberName()));
                 }
                 for (MemberShape exc : exceptions) {
-                    writer.write("$1L $2L;", errorType, "m_" + decapitalize(exc.getMemberName()));
+                    writer.write("$1L $2L;", exceptionType(exc, errorType), "m_" + decapitalize(exc.getMemberName()));
                 }
                 // HasBeenSet flags
                 for (MemberShape event : events) {

@@ -34,10 +34,18 @@ class EventStreamRendererTest {
             .id("com.example#BetaEvent")
             .addMember("data", str.getId())
             .build();
+        // Non-modeled exception: only a trivial "message" member -> generic ExampleError.
         StructureShape exc = StructureShape.builder()
             .id("com.example#BadException")
             .addTrait(new ErrorTrait("client"))
             .addMember("message", str.getId())
+            .build();
+        // Modeled exception: has a non-trivial member -> concrete type + model include.
+        StructureShape modeledExc = StructureShape.builder()
+            .id("com.example#DetailedException")
+            .addTrait(new ErrorTrait("client"))
+            .addMember("message", str.getId())
+            .addMember("detail", str.getId())
             .build();
         UnionShape stream = UnionShape.builder()
             .id("com.example#MyStreamEventStream")
@@ -47,14 +55,22 @@ class EventStreamRendererTest {
                 b -> b.addTrait(new DocumentationTrait("<p>Alpha event doc.</p>")))
             .addMember("beta", eventB.getId())
             .addMember("badException", exc.getId())
+            .addMember("detailedException", modeledExc.getId())
             .build();
         StructureShape input = StructureShape.builder()
             .id("com.example#DoStreamInput")
             .addMember("name", str.getId())
             .build();
+        // Output carries the streaming union member AND a non-streaming member: C2J synthesizes
+        // the InitialResponse from the result's non-event-stream members.
         StructureShape output = StructureShape.builder()
             .id("com.example#DoStreamOutput")
-            .addMember("stream", stream.getId())
+            .addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
+                .id("com.example#DoStreamOutput$stream").target(stream.getId())
+                .addTrait(new software.amazon.smithy.model.traits.HttpPayloadTrait()).build())
+            .addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
+                .id("com.example#DoStreamOutput$contentType").target(str.getId())
+                .addTrait(new software.amazon.smithy.model.traits.HttpHeaderTrait("X-Content-Type")).build())
             .build();
         software.amazon.smithy.model.shapes.OperationShape op =
             software.amazon.smithy.model.shapes.OperationShape.builder()
@@ -67,7 +83,7 @@ class EventStreamRendererTest {
             .version("2024-01-01")
             .addOperation(op.getId())
             .build();
-        return Model.builder().addShapes(str, stream, eventA, eventB, exc, input, output, op, service).build();
+        return Model.builder().addShapes(str, stream, eventA, eventB, exc, modeledExc, input, output, op, service).build();
     }
 
     private static String render(String fileSuffix) {
@@ -133,6 +149,34 @@ class EventStreamRendererTest {
     }
 
     @Test
+    void eventStreamUnionHeader_modeledExceptionUsesConcreteTypeAndInclude() {
+        // C2J types a modeled exception member (extra members beyond message/code) as its concrete
+        // shape and includes its model header, while a non-modeled exception stays the generic
+        // <namespace>Error (no include). Matches CppViewHelper's isException/isModeledException gate.
+        String h = render("MyStreamEventStream.h");
+        // Modeled exception -> concrete type + include.
+        assertTrue(h.contains("const DetailedException& GetDetailedException()"),
+            "Modeled exception must use its concrete type: " + h);
+        assertTrue(h.contains("#include <aws/example/model/DetailedException.h>"),
+            "Modeled exception must bring its model include: " + h);
+        // Non-modeled exception -> generic ExampleError.
+        assertTrue(h.contains("const ExampleError& GetBadException()"),
+            "Non-modeled exception must use the generic error type: " + h);
+    }
+
+    @Test
+    void eventStreamUnionHeader_omitsServiceErrorsInclude() {
+        // C2J's computeHeaderIncludes skips the model include for non-modeled exception members
+        // (CppViewHelper: `if (next.isException() && !next.isModeledException()) continue;`).
+        // The union's exception members are the generic ExampleError wrapper, so the union header
+        // must NOT include the service Errors header — it resolves transitively. The handler
+        // header (a separate file) still includes it.
+        String h = render("MyStreamEventStream.h");
+        assertFalse(h.contains("#include <aws/example/ExampleErrors.h>"),
+            "Union header must not include the service Errors header: " + h);
+    }
+
+    @Test
     void eventStreamUnionHeader_rendersClassAndMemberDocs() {
         String h = render("MyStreamEventStream.h");
         // Union class-level documentation + See Also link.
@@ -159,10 +203,68 @@ class EventStreamRendererTest {
     }
 
     @Test
+    void initialResponseHeader_rendersNonStreamingResultMembers() {
+        // C2J synthesizes <op>InitialResponse from the result's non-event-stream members, so the
+        // header must carry accessors for those members (here: contentType) plus a private section.
+        // The @httpPayload streaming union member (stream) must NOT appear.
+        String h = render("DoStreamInitialResponse.h");
+        assertTrue(h.contains("GetContentType") && h.contains("SetContentType") && h.contains("WithContentType"),
+            "InitialResponse must render accessors for non-streaming result members: " + h);
+        assertTrue(h.contains("bool m_contentTypeHasBeenSet = false;"),
+            "InitialResponse must render private members: " + h);
+        assertFalse(h.contains("GetStream"),
+            "InitialResponse must not render the streaming union member: " + h);
+    }
+
+    @Test
     void initialResponseSource_hasHeaderCtorDefinition() {
         String c = render("DoStreamInitialResponse.cpp");
         assertTrue(c.contains("DoStreamInitialResponse::DoStreamInitialResponse(const Http::HeaderValueCollection&"),
             "Missing header ctor definition: " + c);
+        // The header ctor must delegate to the default ctor so members are value-initialized
+        // before the header-derived ones are set (matches C2J).
+        assertTrue(c.contains(
+            "DoStreamInitialResponse::DoStreamInitialResponse(const Http::HeaderValueCollection& "
+            + "responseHeaders) : DoStreamInitialResponse() {"),
+            "Header ctor must delegate to the default ctor: " + c);
+    }
+
+    @Test
+    void initialResponseSource_hasJsonSerdeIncludesAndUsings() {
+        // The JSON InitialResponse source matches C2J: StringUtils + UnreferencedParam + the JSON
+        // serializer, the Json/Utils usings, and <utility>.
+        String c = render("DoStreamInitialResponse.cpp");
+        assertTrue(c.contains("#include <aws/core/utils/StringUtils.h>"), c);
+        assertTrue(c.contains("#include <aws/core/utils/UnreferencedParam.h>"), c);
+        assertTrue(c.contains("#include <aws/core/utils/json/JsonSerializer.h>"), c);
+        assertTrue(c.contains("#include <utility>"), c);
+        assertTrue(c.contains("using namespace Aws::Utils::Json;"), c);
+        assertTrue(c.contains("using namespace Aws::Utils;"), c);
+        // The header-bound member (contentType) pulls AWSStringStream.h into the source, matching
+        // C2J's computeSourceIncludes.
+        assertTrue(c.contains("#include <aws/core/utils/memory/stl/AWSStringStream.h>"), c);
+    }
+
+    @Test
+    void initialResponseSource_wrapsBodyInNamespaceBlockNotUsingModel() {
+        // C2J renders InitialResponse via the sub-object source template, which wraps the body in
+        // an explicit namespace block rather than a `using namespace ...Model;`.
+        String c = render("DoStreamInitialResponse.cpp");
+        assertTrue(c.contains("namespace Aws"), c);
+        assertTrue(c.contains("namespace Example"), c);
+        assertTrue(c.contains("namespace Model"), c);
+        assertTrue(c.contains("// namespace Model"), c);
+        assertFalse(c.contains("using namespace Aws::Example::Model;"),
+            "InitialResponse must use a namespace block, not using-Model: " + c);
+    }
+
+    @Test
+    void handlerSource_hasProtocolSerdeIncludeAndUsing() {
+        // The JSON handler parses event/exception payloads as JSON, so its source includes the
+        // JSON serializer and uses the Json namespace, matching C2J JsonEventStreamHandlerSource.vm.
+        String c = render("DoStreamHandler.cpp");
+        assertTrue(c.contains("#include <aws/core/utils/json/JsonSerializer.h>"), c);
+        assertTrue(c.contains("using namespace Aws::Utils::Json;"), c);
     }
 
     @Test

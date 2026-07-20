@@ -42,6 +42,23 @@ class CppTypeMapperTest {
     }
 
     @Test
+    void integerShape_wideIntegers_mapsToInt64() {
+        // C2J's CBOR type mapping widens integer -> int64_t (CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING),
+        // used in CBOR sub-object and result headers ($protocol == smithy-rpc-v2-cbor).
+        IntegerShape shape = IntegerShape.builder().id("com.example#Foo").build();
+        Model model = Model.builder().addShape(shape).build();
+        assertEquals("int64_t", CppTypeMapper.getCppType(shape, model, true));
+    }
+
+    @Test
+    void longShape_wideIntegers_staysLongLong() {
+        // Only integer widens under CBOR; long is long long in every mapping.
+        LongShape shape = LongShape.builder().id("com.example#Foo").build();
+        Model model = Model.builder().addShape(shape).build();
+        assertEquals("long long", CppTypeMapper.getCppType(shape, model, true));
+    }
+
+    @Test
     void longShape_mapsToLongLong() {
         LongShape shape = LongShape.builder().id("com.example#Foo").build();
         Model model = Model.builder().addShape(shape).build();
@@ -74,6 +91,17 @@ class CppTypeMapperTest {
         BlobShape shape = BlobShape.builder().id("com.example#Foo").build();
         Model model = Model.builder().addShape(shape).build();
         assertEquals("Aws::Utils::ByteBuffer", CppTypeMapper.getCppType(shape, model));
+    }
+
+    @Test
+    void sensitiveBlobShape_mapsToCryptoBuffer() {
+        // C2J maps a @sensitive blob to CryptoBuffer (the "sensitive_blob" type-mapping key in
+        // CppViewHelper), while a plain blob stays ByteBuffer.
+        BlobShape shape = BlobShape.builder().id("com.example#Foo")
+            .addTrait(new software.amazon.smithy.model.traits.SensitiveTrait())
+            .build();
+        Model model = Model.builder().addShape(shape).build();
+        assertEquals("Aws::Utils::CryptoBuffer", CppTypeMapper.getCppType(shape, model));
     }
 
     @Test
@@ -122,6 +150,27 @@ class CppTypeMapperTest {
         StringShape str = StringShape.builder().id("com.example#Str").build();
         Model model = Model.builder().addShapes(str, union).build();
         assertEquals("MyUnion", CppTypeMapper.getCppType(union, model));
+    }
+
+    @Test
+    void enumShape_lowerCamelName_mapsToUpperCamelType() {
+        // IAM-style lowerCamel enum shape names must map to UpperCamel C++ types, matching C2J.
+        software.amazon.smithy.model.shapes.EnumShape en = software.amazon.smithy.model.shapes.EnumShape.builder()
+            .id("com.example#statusType").addMember("Active", "Active").build();
+        Model model = Model.builder().addShape(en).build();
+        assertEquals("StatusType", CppTypeMapper.getCppType(en, model));
+        assertEquals(java.util.Optional.of("StatusType::NOT_SET"), CppTypeMapper.getDefaultValue(en));
+        assertEquals(java.util.Optional.of("<aws/iam/model/StatusType.h>"),
+            CppTypeMapper.getIncludeForMemberType(en, model, "iam"));
+    }
+
+    @Test
+    void structureShape_lowerCamelName_mapsToUpperCamelType() {
+        StructureShape struct = StructureShape.builder().id("com.example#nestedThing").build();
+        Model model = Model.builder().addShape(struct).build();
+        assertEquals("NestedThing", CppTypeMapper.getCppType(struct, model));
+        assertEquals(java.util.Optional.of("<aws/iam/model/NestedThing.h>"),
+            CppTypeMapper.getIncludeForMemberType(struct, model, "iam"));
     }
 
     @Test
@@ -324,6 +373,40 @@ class CppTypeMapperTest {
     }
 
     @Test
+    void getIncludesForShape_withIdempotencyTokenMember_includesUuidHeader() {
+        // C2J adds <aws/core/utils/UUID.h> to any shape carrying an @idempotencyToken member,
+        // because such members are brace-initialized with Aws::Utils::UUID::PseudoRandomUUID()
+        // (CppViewHelper.java). The include must be present for the initializer to compile.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember(MemberShape.builder()
+                .id("com.example#MyRequest$clientToken").target("com.example#Str")
+                .addTrait(new software.amazon.smithy.model.traits.IdempotencyTokenTrait())
+                .build())
+            .build();
+        Model model = Model.builder().addShapes(str, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertTrue(includes.contains("<aws/core/utils/UUID.h>"),
+            "Shape with idempotency-token member should include UUID.h: " + includes);
+    }
+
+    @Test
+    void getIncludesForShape_withoutIdempotencyToken_noUuidHeader() {
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember("name", str.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertFalse(includes.contains("<aws/core/utils/UUID.h>"),
+            "Shape without idempotency-token member should not include UUID.h: " + includes);
+    }
+
+    @Test
     void getIncludesForShape_withMapMember_includesMapKeyAndValue() {
         StringShape str = StringShape.builder().id("com.example#Str").build();
         StructureShape valueStruct = StructureShape.builder().id("com.example#Item").build();
@@ -342,5 +425,46 @@ class CppTypeMapperTest {
         assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSMap.h>"));
         assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSString.h>"));
         assertTrue(includes.contains("<aws/myservice/model/Item.h>"));
+    }
+
+    // --- getSourceIncludesForShape tests (serde-implementation includes) ---
+
+    @Test
+    void getSourceIncludesForShape_withBlobMember_includesHashingUtils() {
+        // C2J adds HashingUtils.h to the SOURCE of any shape with a blob member (or list/map of
+        // blobs) because blob serde uses Base64Encode/Decode (CppViewHelper.computeSourceIncludes).
+        BlobShape blob = BlobShape.builder().id("com.example#Body").build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#AudioSource").addMember("bytes", blob.getId()).build();
+        Model model = Model.builder().addShapes(blob, struct).build();
+
+        List<String> inc = CppTypeMapper.getSourceIncludesForShape(struct, model, "myservice");
+        assertTrue(inc.contains("aws/core/utils/HashingUtils.h"), inc.toString());
+    }
+
+    @Test
+    void getSourceIncludesForShape_withListOfBlobs_includesHashingUtils() {
+        BlobShape blob = BlobShape.builder().id("com.example#Body").build();
+        ListShape list = ListShape.builder()
+            .id("com.example#BodyList")
+            .member(MemberShape.builder().id("com.example#BodyList$member").target("com.example#Body").build())
+            .build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyShape").addMember("chunks", list.getId()).build();
+        Model model = Model.builder().addShapes(blob, list, struct).build();
+
+        List<String> inc = CppTypeMapper.getSourceIncludesForShape(struct, model, "myservice");
+        assertTrue(inc.contains("aws/core/utils/HashingUtils.h"), inc.toString());
+    }
+
+    @Test
+    void getSourceIncludesForShape_withoutBlob_noHashingUtils() {
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyShape").addMember("name", str.getId()).build();
+        Model model = Model.builder().addShapes(str, struct).build();
+
+        List<String> inc = CppTypeMapper.getSourceIncludesForShape(struct, model, "myservice");
+        assertFalse(inc.contains("aws/core/utils/HashingUtils.h"), inc.toString());
     }
 }

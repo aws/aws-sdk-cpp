@@ -373,4 +373,76 @@ class GlobalTransformsTest {
 
         assertTrue(reachable.contains(ShapeId.from("com.example#MyError")));
     }
+
+    // --- injectResponseMetadata tests ---
+
+    /** A single-operation service under the given protocol trait, output has one plain member. */
+    private static Model oneOutputModel(software.amazon.smithy.model.traits.Trait protocolTrait) {
+        StructureShape input = StructureShape.builder().id("com.example#DoThingInput").build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput")
+            .addMember(MemberShape.builder()
+                .id("com.example#DoThingOutput$name").target("smithy.api#String").build())
+            .build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoThing").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(protocolTrait).addOperation(op.getId()).build();
+        return Model.assembler().addShapes(input, output, op, service).assemble().unwrap();
+    }
+
+    private static ServiceShape serviceOf(Model model) {
+        return model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+    }
+
+    @Test
+    void injectResponseMetadata_awsQuery_addsResponseMetadataMemberToResult() {
+        Model model = oneOutputModel(new software.amazon.smithy.aws.traits.protocols.AwsQueryTrait());
+        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+
+        StructureShape result = out.expectShape(
+            ShapeId.from("com.example#DoThingOutput"), StructureShape.class);
+        assertTrue(result.getMember("ResponseMetadata").isPresent(),
+            "Query result should carry an injected ResponseMetadata member");
+        MemberShape rm = result.getMember("ResponseMetadata").get();
+        assertTrue(rm.hasTrait(software.amazon.smithy.model.traits.RequiredTrait.class),
+            "ResponseMetadata member should be @required, matching C2J");
+    }
+
+    @Test
+    void injectResponseMetadata_awsQuery_addsResponseMetadataStructureWithRequestId() {
+        Model model = oneOutputModel(new software.amazon.smithy.aws.traits.protocols.AwsQueryTrait());
+        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+
+        ShapeId rmId = out.expectShape(ShapeId.from("com.example#DoThingOutput"), StructureShape.class)
+            .getMember("ResponseMetadata").get().getTarget();
+        StructureShape rm = out.expectShape(rmId, StructureShape.class);
+        assertEquals("ResponseMetadata", rmId.getName());
+        assertTrue(rm.getMember("RequestId").isPresent(),
+            "ResponseMetadata should have a RequestId member");
+    }
+
+    @Test
+    void injectResponseMetadata_ec2_addsResponseMetadataMemberToResult() {
+        Model model = oneOutputModel(new software.amazon.smithy.aws.traits.protocols.Ec2QueryTrait());
+        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+
+        StructureShape result = out.expectShape(
+            ShapeId.from("com.example#DoThingOutput"), StructureShape.class);
+        assertTrue(result.getMember("ResponseMetadata").isPresent(),
+            "EC2 result should carry an injected ResponseMetadata member");
+    }
+
+    @Test
+    void injectResponseMetadata_restJson_leavesResultUnchanged() {
+        Model model = oneOutputModel(
+            software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build());
+        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+
+        StructureShape result = out.expectShape(
+            ShapeId.from("com.example#DoThingOutput"), StructureShape.class);
+        assertFalse(result.getMember("ResponseMetadata").isPresent(),
+            "Non-query protocols must not get ResponseMetadata injected");
+    }
 }

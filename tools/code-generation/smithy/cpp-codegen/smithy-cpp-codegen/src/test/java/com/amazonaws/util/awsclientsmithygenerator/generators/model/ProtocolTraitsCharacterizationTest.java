@@ -43,6 +43,8 @@ class ProtocolTraitsCharacterizationTest {
     private static Trait traitFor(Protocol p) {
         switch (p) {
             case JSON:
+                return software.amazon.smithy.aws.traits.protocols.AwsJson1_0Trait.builder().build();
+            case REST_JSON:
                 return software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build();
             case CBOR:
                 return software.amazon.smithy.protocol.traits.Rpcv2CborTrait.builder().build();
@@ -63,18 +65,32 @@ class ProtocolTraitsCharacterizationTest {
      */
     private static Model modelFor(Protocol p) {
         StringShape str = StringShape.builder().id("com.example#Str").build();
+        software.amazon.smithy.model.shapes.IntegerShape intShape =
+            software.amazon.smithy.model.shapes.IntegerShape.builder().id("com.example#Int").build();
         StructureShape nested = StructureShape.builder()
             .id("com.example#Nested")
             .addMember("value", str.getId())
             .build();
+        // Input carries a plain member, an httpHeader member, and an httpQuery member so
+        // both request Axis-1 predicates (header + query) fire.
         StructureShape input = StructureShape.builder()
             .id("com.example#DoThingInput")
             .addMember("name", str.getId())
             .addMember("nested", nested.getId())
+            .addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
+                .id("com.example#DoThingInput$hdr").target(str.getId())
+                .addTrait(new software.amazon.smithy.model.traits.HttpHeaderTrait("X-Thing")).build())
+            .addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
+                .id("com.example#DoThingInput$q").target(str.getId())
+                .addTrait(new software.amazon.smithy.model.traits.HttpQueryTrait("q")).build())
             .build();
+        // Output carries a plain member and an httpResponseCode member.
         StructureShape output = StructureShape.builder()
             .id("com.example#DoThingOutput")
             .addMember("nested", nested.getId())
+            .addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
+                .id("com.example#DoThingOutput$status").target(intShape.getId())
+                .addTrait(new software.amazon.smithy.model.traits.HttpResponseCodeTrait()).build())
             .build();
         OperationShape op = OperationShape.builder()
             .id("com.example#DoThing")
@@ -87,7 +103,7 @@ class ProtocolTraitsCharacterizationTest {
             .addTrait(traitFor(p))
             .addOperation(op.getId())
             .build();
-        return Model.builder().addShapes(str, nested, input, output, op, service).build();
+        return Model.builder().addShapes(str, intShape, nested, input, output, op, service).build();
     }
 
     private static ServiceShape serviceOf(Model model) {
@@ -147,7 +163,7 @@ class ProtocolTraitsCharacterizationTest {
     // ---------- sub-object: serde decls, includes, usings, fwd decls ----------
 
     @ParameterizedTest
-    @EnumSource(value = Protocol.class, names = {"JSON", "CBOR"})
+    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON"})
     void jsonLike_subObjectHeader_hasJsonSerdeDeclsAndFwdDecls(Protocol p) {
         String h = file(p, "Nested.h");
         assertTrue(h.contains("AWS_EXAMPLE_API Nested() = default;"), h);
@@ -160,6 +176,21 @@ class ProtocolTraitsCharacterizationTest {
     }
 
     @Test
+    void cbor_subObjectHeader_hasCborDecoderSerdeDeclsAndCborInclude() {
+        // CborSubObjectHeader.vm: streaming CborDecoder ctor/operator= + CborEncode, a hard
+        // <aws/crt/cbor/Cbor.h> include, and a CborValue forward declaration. NOT Jsonize/CborValue-arg.
+        String h = file(Protocol.CBOR, "Nested.h");
+        assertTrue(h.contains("#include <aws/crt/cbor/Cbor.h>"), h);
+        assertTrue(h.contains(
+            "AWS_EXAMPLE_API Nested(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);"), h);
+        assertTrue(h.contains(
+            "AWS_EXAMPLE_API Nested& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);"), h);
+        assertTrue(h.contains("AWS_EXAMPLE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;"), h);
+        assertTrue(h.contains("class CborValue;"), h);
+        assertFalse(h.contains("Jsonize"), "CBOR header must not mention Jsonize: " + h);
+    }
+
+    @Test
     void restXml_subObjectHeader_hasAddToNodeAndXmlNodeFwdDecl() {
         String h = file(Protocol.REST_XML, "Nested.h");
         assertTrue(h.contains("AWS_EXAMPLE_API Nested(const Aws::Utils::Xml::XmlNode& xmlNode);"), h);
@@ -167,6 +198,24 @@ class ProtocolTraitsCharacterizationTest {
         assertTrue(h.contains("AWS_EXAMPLE_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;"), h);
         assertTrue(h.contains("class XmlNode;"), h);
         assertFalse(h.contains("Jsonize"), "REST_XML header must not mention Jsonize: " + h);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
+    void queryLike_subObjectHeader_forwardDeclaresOStreamViaAWSStreamFwd(Protocol p) {
+        // Query/EC2 sub-objects declare OutputToStream(Aws::OStream&, ...), so the header must
+        // include AWSStreamFwd.h to forward-declare Aws::OStream, matching C2J.
+        String h = file(p, "Nested.h");
+        assertTrue(h.contains("#include <aws/core/utils/memory/stl/AWSStreamFwd.h>"), h);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON", "REST_XML", "CBOR"})
+    void nonQuery_subObjectHeader_omitsAWSStreamFwd(Protocol p) {
+        // Only Query/EC2 sub-objects emit OutputToStream; other protocols must not pull in
+        // AWSStreamFwd.h.
+        String h = file(p, "Nested.h");
+        assertFalse(h.contains("AWSStreamFwd.h"), h);
     }
 
     @ParameterizedTest
@@ -183,7 +232,7 @@ class ProtocolTraitsCharacterizationTest {
     }
 
     @ParameterizedTest
-    @EnumSource(value = Protocol.class, names = {"JSON", "CBOR"})
+    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON"})
     void jsonLike_subObjectSource_hasJsonIncludeUsingAndStubs(Protocol p) {
         String c = file(p, "Nested.cpp");
         assertTrue(c.contains("#include <aws/core/utils/json/JsonSerializer.h>"), c);
@@ -221,7 +270,7 @@ class ProtocolTraitsCharacterizationTest {
     // ---------- result: AmazonWebServiceResult<> payload type ----------
 
     @ParameterizedTest
-    @EnumSource(value = Protocol.class, names = {"JSON", "CBOR"})
+    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON"})
     void jsonLike_resultHeader_usesJsonValuePayloadAndForwardDeclaresJsonValue(Protocol p) {
         String h = file(p, "DoThingResult.h");
         assertTrue(h.contains("AWS_EXAMPLE_API DoThingResult(const "
@@ -248,7 +297,39 @@ class ProtocolTraitsCharacterizationTest {
     }
 
     @ParameterizedTest
-    @EnumSource(value = Protocol.class, names = {"JSON", "CBOR"})
+    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON", "CBOR"})
+    void jsonAndCbor_resultSource_includesUnreferencedParam(Protocol p) {
+        // C2J JSON/REST-JSON/CBOR result templates include UnreferencedParam.h; XML-family does not.
+        String c = file(p, "DoThingResult.cpp");
+        assertTrue(c.contains("#include <aws/core/utils/UnreferencedParam.h>"), c);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"REST_XML", "QUERY_XML", "EC2"})
+    void xmlLike_resultSource_omitsUnreferencedParam(Protocol p) {
+        // C2J XML-family result templates (rest-xml, query, ec2) do not include UnreferencedParam.h.
+        String c = file(p, "DoThingResult.cpp");
+        assertFalse(c.contains("UnreferencedParam.h"), c);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON", "REST_XML", "CBOR"})
+    void nonQuery_resultSource_includesAWSStringStream(Protocol p) {
+        // C2J emits AWSStringStream.h in JSON/REST-JSON/REST-XML/CBOR result sources.
+        String c = file(p, "DoThingResult.cpp");
+        assertTrue(c.contains("#include <aws/core/utils/memory/stl/AWSStringStream.h>"), c);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
+    void queryLike_resultSource_omitsAWSStringStream(Protocol p) {
+        // Query/EC2 result sources build no string stream, so they omit AWSStringStream.h.
+        String c = file(p, "DoThingResult.cpp");
+        assertFalse(c.contains("AWSStringStream.h"), c);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON"})
     void jsonLike_resultSource_hasJsonUsingsAndCtorImpls(Protocol p) {
         String c = file(p, "DoThingResult.cpp");
         assertTrue(c.contains("#include <aws/core/utils/json/JsonSerializer.h>"), c);
@@ -277,7 +358,7 @@ class ProtocolTraitsCharacterizationTest {
     // ---------- request: only the serde include + usings are protocol-specific ----------
 
     @ParameterizedTest
-    @EnumSource(value = Protocol.class, names = {"JSON", "CBOR"})
+    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON"})
     void jsonLike_requestSource_hasJsonIncludeAndUsings(Protocol p) {
         String c = file(p, "DoThingRequest.cpp");
         assertTrue(c.contains("#include <aws/core/utils/json/JsonSerializer.h>"), c);
@@ -287,22 +368,190 @@ class ProtocolTraitsCharacterizationTest {
         assertFalse(c.contains("XmlSerializer.h"), c);
     }
 
-    @ParameterizedTest
-    @EnumSource(value = Protocol.class, names = {"REST_XML", "QUERY_XML", "EC2"})
-    void xmlLike_requestSource_hasXmlIncludeAndUsings(Protocol p) {
-        String c = file(p, "DoThingRequest.cpp");
+    @Test
+    void restXml_requestSource_hasXmlIncludeAndUsings() {
+        String c = file(Protocol.REST_XML, "DoThingRequest.cpp");
         assertTrue(c.contains("#include <aws/core/utils/xml/XmlSerializer.h>"), c);
         assertTrue(c.contains("using namespace Aws::Utils::Xml;"), c);
         assertFalse(c.contains("JsonSerializer.h"), c);
     }
 
-    /** The request header is protocol-agnostic today; pin that so a regression is loud. */
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
+    void queryLike_requestSource_usesStringStreamNotXmlSerializer(Protocol p) {
+        // Query/EC2 request bodies serialize to a query string (Action=...&Version=...), so the
+        // source uses StringUtils + AWSStringStream and NOT the XML serializer, matching C2J
+        // (QueryRequestSource.vm). The XML serde headers belong to the result/sub-object files.
+        String c = file(p, "DoThingRequest.cpp");
+        assertTrue(c.contains("#include <aws/core/utils/StringUtils.h>"), c);
+        assertTrue(c.contains("#include <aws/core/utils/memory/stl/AWSStringStream.h>"), c);
+        assertFalse(c.contains("XmlSerializer.h"), c);
+        assertFalse(c.contains("using namespace Aws::Utils::Xml;"), c);
+        assertFalse(c.contains("JsonSerializer.h"), c);
+        // Query/EC2 request sources do not include <utility> (C2J QueryRequestSource.vm omits it).
+        assertFalse(c.contains("#include <utility>"), c);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON", "REST_XML", "CBOR"})
+    void nonQuery_requestSource_includesUtility(Protocol p) {
+        // JSON/REST-JSON/REST-XML/CBOR request sources include <utility> for std::forward/move.
+        String c = file(p, "DoThingRequest.cpp");
+        assertTrue(c.contains("#include <utility>"), c);
+    }
+
+    /** Every protocol's request emits SerializePayload and never leaks serde headers. */
     @ParameterizedTest
     @EnumSource(Protocol.class)
-    void requestHeader_isProtocolAgnostic(Protocol p) {
+    void requestHeader_alwaysHasSerializePayload_neverSerdeIncludes(Protocol p) {
         String h = file(p, "DoThingRequest.h");
         assertTrue(h.contains("Aws::String SerializePayload() const override;"), h);
         assertFalse(h.contains("JsonSerializer.h"), "Request header must not include serde headers: " + h);
         assertFalse(h.contains("XmlSerializer.h"), "Request header must not include serde headers: " + h);
+    }
+
+    // ---------- per-protocol request surface (fixture has header + query + status members) ----------
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"JSON"})
+    void awsJson_request_hasTargetHeaderAndQueryAndSerialize(Protocol p) {
+        String h = file(p, "DoThingRequest.h");
+        assertTrue(h.contains("SerializePayload() const override;"), h);
+        assertTrue(h.contains("GetRequestSpecificHeaders() const override;"), h);   // header member OR target
+        assertTrue(h.contains("AddQueryStringParameters(Aws::Http::URI& uri) const override;"), h);
+        assertFalse(h.contains("DumpBodyToUrl"), h);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"REST_JSON", "REST_XML"})
+    void restProtocols_request_headerFromMemberOnly_noTarget_noDump(Protocol p) {
+        String c = file(p, "DoThingRequest.cpp");
+        assertFalse(c.contains("X-Amz-Target"), c);            // rest protocols never target
+        String h = file(p, "DoThingRequest.h");
+        assertTrue(h.contains("GetRequestSpecificHeaders() const override;"), h);   // fixture has header member
+        assertTrue(h.contains("AddQueryStringParameters(Aws::Http::URI& uri) const override;"), h);
+        assertFalse(h.contains("DumpBodyToUrl"), h);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
+    void queryProtocols_request_haveProtectedDumpBodyToUrl(Protocol p) {
+        String h = file(p, "DoThingRequest.h");
+        assertTrue(h.contains("void DumpBodyToUrl(Aws::Http::URI& uri) const override;"), h);
+        assertTrue(h.contains("protected:"), h);
+        String c = file(p, "DoThingRequest.cpp");
+        assertTrue(c.contains("uri.SetQueryString(SerializePayload());"), c);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"CBOR"})
+    void cbor_request_noTargetHeader(Protocol p) {
+        String c = file(p, "DoThingRequest.cpp");
+        assertFalse(c.contains("X-Amz-Target"), c);
+    }
+
+    // ---------- per-protocol result surface ----------
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON"})
+    void jsonResults_useJsonValue(Protocol p) {
+        String h = file(p, "DoThingResult.h");
+        assertTrue(h.contains("AmazonWebServiceResult<Aws::Utils::Json::JsonValue>"), h);
+        assertFalse(h.contains("HasBeenSet() const"), h);   // JSON results hide HasBeenSet
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"CBOR"})
+    void cborResults_useCborValueAndHideHasBeenSet(Protocol p) {
+        String h = file(p, "DoThingResult.h");
+        assertTrue(h.contains("AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>"), h);
+        // CborResultHeader.vm sets useRequiredField=false, so CBOR results hide HasBeenSet too.
+        assertFalse(h.contains("HasBeenSet() const"), h);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"REST_XML", "QUERY_XML", "EC2"})
+    void xmlResults_useXmlDocument(Protocol p) {
+        String h = file(p, "DoThingResult.h");
+        assertTrue(h.contains("AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>"), h);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Protocol.class)
+    void allResults_setStatusCodeMemberFromResponseCode(Protocol p) {
+        String c = file(p, "DoThingResult.cpp");
+        assertTrue(c.contains("m_status = static_cast<int>(result.GetResponseCode());"), c);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON", "REST_XML", "CBOR"})
+    void nonQueryResultHeader_hasTopLevelRequestId(Protocol p) {
+        // JSON/REST-XML/CBOR results expose a top-level GetRequestId, matching C2J.
+        String h = file(p, "DoThingResult.h");
+        assertTrue(h.contains("inline const Aws::String& GetRequestId() const"), h);
+        assertTrue(h.contains("Aws::String m_requestId;"), h);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
+    void queryLikeResultHeader_omitsTopLevelRequestId(Protocol p) {
+        // Query/EC2 results carry RequestId inside ResponseMetadata, so they must NOT expose a
+        // top-level GetRequestId / m_requestId, matching C2J.
+        String h = file(p, "DoThingResult.h");
+        assertFalse(h.contains("GetRequestId"), h);
+        assertFalse(h.contains("m_requestId"), h);
+    }
+
+    /** Collapses each line to its trailing content, ignoring leading indentation. */
+    private static String stripIndent(String s) {
+        return s.replaceAll("(?m)^[ \\t]+", "");
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
+    void queryLikeResultHeader_noBlankBeforeHttpResponseCodeWhenNoRequestId(Protocol p) {
+        // Without a top-level m_requestId, the last data member is followed directly by
+        // m_HttpResponseCode (no intervening blank line), matching C2J. The fixture's last
+        // result member is the @httpResponseCode int "status".
+        String h = stripIndent(file(p, "DoThingResult.h"));
+        assertTrue(h.contains("int m_status{0};\nAws::Http::HttpResponseCode m_HttpResponseCode;"), h);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON", "REST_XML", "CBOR"})
+    void nonQueryResultHeader_blankLinePrecedesRequestId(Protocol p) {
+        // With a top-level m_requestId, a blank line separates the data members from the
+        // m_requestId / m_HttpResponseCode group, matching C2J.
+        String h = stripIndent(file(p, "DoThingResult.h"));
+        assertTrue(h.contains("\n\nAws::String m_requestId;\nAws::Http::HttpResponseCode m_HttpResponseCode;"), h);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
+    void queryLikeResultHeader_omitsAWSStringWhenNoStringMemberOrRequestId(Protocol p) {
+        // With no top-level m_requestId and no string-typed member, the Query/EC2 result header
+        // has no Aws::String use and must not include AWSString.h, matching C2J include hygiene.
+        // (The fixture DoThingOutput has only a nested struct + httpResponseCode int member.)
+        String h = file(p, "DoThingResult.h");
+        assertFalse(h.contains("AWSString.h"), h);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
+    void queryLikeResultSource_includesLogMacrosForResponseMetadataDebug(Protocol p) {
+        // Query/EC2 result operator= emits AWS_LOGSTREAM_DEBUG / ResponseMetadata handling,
+        // so the source must include LogMacros.h and use the Logging namespace, matching C2J.
+        String c = file(p, "DoThingResult.cpp");
+        assertTrue(c.contains("#include <aws/core/utils/logging/LogMacros.h>"), c);
+        assertTrue(c.contains("using namespace Aws::Utils::Logging;"), c);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON", "REST_XML", "CBOR"})
+    void nonQueryResultSource_omitsLogMacros(Protocol p) {
+        // Only Query/EC2 results reference the logging macros; other protocols must not
+        // pull in LogMacros.h.
+        String c = file(p, "DoThingResult.cpp");
+        assertFalse(c.contains("LogMacros.h"), c);
     }
 }

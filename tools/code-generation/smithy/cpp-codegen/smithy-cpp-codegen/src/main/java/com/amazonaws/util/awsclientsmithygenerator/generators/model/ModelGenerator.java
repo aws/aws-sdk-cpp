@@ -9,6 +9,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolReso
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.ClassifiedShapes;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.EnumShapeRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.EventStreamRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.OutgoingEventStreamRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.ResultRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.SubObjectRenderer;
@@ -80,6 +81,10 @@ public class ModelGenerator {
 
         renderers.add(new EventStreamRenderer(
             classified.eventStreamHandlers(), model, service, protocolTraits,
+            namespace, exportMacro, smithyServiceName));
+
+        renderers.add(new OutgoingEventStreamRenderer(
+            classified.outgoingEventStreams(), model, service, protocolTraits,
             namespace, exportMacro, smithyServiceName));
 
         return renderers;

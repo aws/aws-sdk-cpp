@@ -11,7 +11,9 @@ import java.util.Set;
 
 /**
  * CppImportContainer tracks symbols used in code generation.
- * For C++, we handle includes manually via writeInclude method.
+ * <p>For C++, includes are managed manually (see IncludeSets / ProtocolTraits.serdeIncludes);
+ * this container is intentionally a no-op sink so Smithy's SymbolWriter contract is satisfied
+ * without duplicating the manual include logic.
  */
 public class CppImportContainer implements ImportContainer {
     private final Set<String> imports = new HashSet<>();
