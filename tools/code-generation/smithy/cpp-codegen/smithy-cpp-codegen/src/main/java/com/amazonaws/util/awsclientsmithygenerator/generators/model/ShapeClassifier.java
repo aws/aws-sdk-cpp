@@ -32,6 +32,22 @@ public final class ShapeClassifier {
     }
 
     /**
+     * Associates an operation input shape with its parent operation.
+     *
+     * @param shape     the request structure shape
+     * @param operation the operation shape that uses this as input
+     */
+    public record RequestInfo(StructureShape shape, OperationShape operation) {}
+
+    /**
+     * Associates an operation output shape with its parent operation.
+     *
+     * @param shape     the result structure shape
+     * @param operation the operation shape that uses this as output
+     */
+    public record ResultInfo(StructureShape shape, OperationShape operation) {}
+
+    /**
      * Metadata about an operation whose output contains an event stream.
      *
      * @param operationName the operation name (e.g., "SubscribeToShard")
@@ -43,8 +59,8 @@ public final class ShapeClassifier {
     /**
      * The full classification result for a service.
      *
-     * @param requests            operation input shapes
-     * @param results             operation output shapes (excluding event-stream-bearing)
+     * @param requests            operation input shapes with their operations
+     * @param results             operation output shapes with their operations (excluding event-stream-bearing)
      * @param subObjects          remaining StructureShape/UnionShape reachable from operations
      * @param enums               EnumShape or StringShape with @enum trait
      * @param eventStreamHandlers operation + request/result shape tuples for event stream handlers
@@ -52,8 +68,8 @@ public final class ShapeClassifier {
      * @param outgoingEventStreams outgoing event stream shapes (header only)
      */
     public record ClassifiedShapes(
-        List<StructureShape> requests,
-        List<StructureShape> results,
+        List<RequestInfo> requests,
+        List<ResultInfo> results,
         List<Shape> subObjects,
         List<Shape> enums,
         List<EventStreamInfo> eventStreamHandlers,
@@ -78,8 +94,8 @@ public final class ShapeClassifier {
         Set<ShapeId> inputShapeIds = new HashSet<>();
         Set<ShapeId> outputShapeIds = new HashSet<>();
 
-        List<StructureShape> requests = new ArrayList<>();
-        List<StructureShape> results = new ArrayList<>();
+        List<RequestInfo> requests = new ArrayList<>();
+        List<ResultInfo> results = new ArrayList<>();
         List<Shape> subObjects = new ArrayList<>();
         List<Shape> enums = new ArrayList<>();
         List<EventStreamInfo> eventStreamHandlers = new ArrayList<>();
@@ -91,7 +107,7 @@ public final class ShapeClassifier {
             op.getInput().ifPresent(id -> {
                 inputShapeIds.add(id);
                 model.getShape(id).flatMap(Shape::asStructureShape).ifPresent(s -> {
-                    requests.add(s);
+                    requests.add(new RequestInfo(s, op));
 
                     // Check if operation has event-stream-bearing result
                     boolean resultHasEventStream = op.getOutput()
@@ -109,7 +125,7 @@ public final class ShapeClassifier {
                 outputShapeIds.add(id);
                 model.getShape(id).flatMap(Shape::asStructureShape).ifPresent(s -> {
                     if (!hasEventStreamMembers(s, model)) {
-                        results.add(s);
+                        results.add(new ResultInfo(s, op));
                     }
                     // If has event stream members, result is skipped (handler generated instead)
                 });

@@ -53,7 +53,7 @@ class ShapeClassifierTest {
         ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
         var classified = ShapeClassifier.classify(model, service);
         assertTrue(classified.requests().stream()
-            .anyMatch(s -> s.getId().getName().equals("GetItemRequest")));
+            .anyMatch(r -> r.shape().getId().getName().equals("GetItemRequest")));
     }
 
     @Test
@@ -62,7 +62,7 @@ class ShapeClassifierTest {
         ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
         var classified = ShapeClassifier.classify(model, service);
         assertTrue(classified.results().stream()
-            .anyMatch(s -> s.getId().getName().equals("GetItemResponse")));
+            .anyMatch(r -> r.shape().getId().getName().equals("GetItemResponse")));
     }
 
     @Test
@@ -239,11 +239,11 @@ class ShapeClassifierTest {
 
         // Result should NOT include the event-stream-bearing output
         assertTrue(classified.results().stream()
-            .noneMatch(s -> s.getId().getName().equals("SubscribeResponse")));
+            .noneMatch(r -> r.shape().getId().getName().equals("SubscribeResponse")));
 
         // Request should still be classified
         assertTrue(classified.requests().stream()
-            .anyMatch(s -> s.getId().getName().equals("SubscribeRequest")));
+            .anyMatch(r -> r.shape().getId().getName().equals("SubscribeRequest")));
     }
 
     @Test
