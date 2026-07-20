@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -28,6 +28,6 @@ class ResourceExplorer2PaginationCompilationTest : public Aws::Testing::AwsCppSd
 
 TEST_F(ResourceExplorer2PaginationCompilationTest, ResourceExplorer2PaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

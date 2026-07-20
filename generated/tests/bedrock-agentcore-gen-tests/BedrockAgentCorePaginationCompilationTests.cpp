@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -28,6 +28,6 @@ class BedrockAgentCorePaginationCompilationTest : public Aws::Testing::AwsCppSdk
 
 TEST_F(BedrockAgentCorePaginationCompilationTest, BedrockAgentCorePaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

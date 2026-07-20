@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -27,6 +27,6 @@ class Route53RecoveryReadinessPaginationCompilationTest : public Aws::Testing::A
 
 TEST_F(Route53RecoveryReadinessPaginationCompilationTest, Route53RecoveryReadinessPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -23,6 +23,6 @@ class ControlTowerPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTes
 
 TEST_F(ControlTowerPaginationCompilationTest, ControlTowerPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

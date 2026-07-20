@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -21,6 +21,6 @@ class KinesisAnalyticsV2PaginationCompilationTest : public Aws::Testing::AwsCppS
 
 TEST_F(KinesisAnalyticsV2PaginationCompilationTest, KinesisAnalyticsV2PaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

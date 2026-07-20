@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -38,6 +38,6 @@ class SSOAdminPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSui
 
 TEST_F(SSOAdminPaginationCompilationTest, SSOAdminPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

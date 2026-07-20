@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -34,6 +34,6 @@ class Macie2PaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSuite
 
 TEST_F(Macie2PaginationCompilationTest, Macie2PaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

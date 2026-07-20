@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -24,6 +24,6 @@ class ECRPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSuite
 
 TEST_F(ECRPaginationCompilationTest, ECRPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

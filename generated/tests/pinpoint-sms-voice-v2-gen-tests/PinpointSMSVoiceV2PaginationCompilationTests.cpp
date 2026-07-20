@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -44,6 +44,6 @@ class PinpointSMSVoiceV2PaginationCompilationTest : public Aws::Testing::AwsCppS
 
 TEST_F(PinpointSMSVoiceV2PaginationCompilationTest, PinpointSMSVoiceV2PaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

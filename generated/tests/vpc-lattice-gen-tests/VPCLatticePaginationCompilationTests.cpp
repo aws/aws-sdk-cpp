@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -32,6 +32,6 @@ class VPCLatticePaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestS
 
 TEST_F(VPCLatticePaginationCompilationTest, VPCLatticePaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

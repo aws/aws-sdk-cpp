@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -33,6 +33,6 @@ class AuditManagerPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTes
 
 TEST_F(AuditManagerPaginationCompilationTest, AuditManagerPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

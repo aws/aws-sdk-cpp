@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -34,6 +34,6 @@ class CloudFrontPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestS
 
 TEST_F(CloudFrontPaginationCompilationTest, CloudFrontPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

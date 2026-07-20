@@ -91,8 +91,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
         final Map<String, CppShapeInformation> shapeInformationCache = serviceModel.getShapes().values().stream()
             .map(shape -> Pair.of(shape.getName(), new CppShapeInformation(shape, serviceModel)))
             .collect(Collectors.toMap(Pair::getKey, Pair::getValue));
-        fileList.addAll(generateModelHeaderFiles(serviceModel, shapeInformationCache));
-        fileList.addAll(generateModelSourceFiles(serviceModel, shapeInformationCache));
+        if (!serviceModel.isSkipModelGeneration()) {
+            fileList.addAll(generateModelHeaderFiles(serviceModel, shapeInformationCache));
+            fileList.addAll(generateModelSourceFiles(serviceModel, shapeInformationCache));
+        }
         fileList.add(generateClientHeaderFile(serviceModel));
         fileList.add(generateServiceClientModelInclude(serviceModel));
 

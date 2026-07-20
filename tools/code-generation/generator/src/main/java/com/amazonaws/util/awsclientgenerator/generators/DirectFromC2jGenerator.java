@@ -44,7 +44,8 @@ public class DirectFromC2jGenerator {
     public ByteArrayOutputStream generateServiceSourceFromJson(String rawJson, String endpointRuleSet, String endpointRulesTests,
                                                                String languageBinding, String serviceName, String namespace,
                                                                String licenseText, boolean generateStandalonePackage,
-                                                               boolean enableVirtualOperations, boolean disableSmithyGeneration, boolean useSmithyClient) throws Exception {
+                                                               boolean enableVirtualOperations, boolean disableSmithyGeneration,
+                                                               boolean useSmithyClient, boolean skipModelGeneration) throws Exception {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(EndpointTests.EndpointTestParams.class, new EndpointTestParamsDeserializer());
         gsonBuilder.registerTypeAdapter(EndpointParameterValue.class, new EndpointParameterValueDeserializer());
@@ -61,7 +62,8 @@ public class DirectFromC2jGenerator {
             c2jServiceModel.setEndpointTests(endpointTestsModel);
         }
         return mainClientGenerator.generateSourceFromC2jModel(c2jServiceModel, serviceName, languageBinding, namespace,
-                licenseText, generateStandalonePackage, enableVirtualOperations, disableSmithyGeneration, useSmithyClient);
+                licenseText, generateStandalonePackage, enableVirtualOperations, disableSmithyGeneration, useSmithyClient,
+                skipModelGeneration);
     }
 
     /**

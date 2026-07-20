@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -21,6 +21,6 @@ class S3FilesPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSuit
 
 TEST_F(S3FilesPaginationCompilationTest, S3FilesPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

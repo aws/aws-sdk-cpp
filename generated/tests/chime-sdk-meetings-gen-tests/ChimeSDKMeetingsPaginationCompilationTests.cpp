@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -18,6 +18,6 @@ class ChimeSDKMeetingsPaginationCompilationTest : public Aws::Testing::AwsCppSdk
 
 TEST_F(ChimeSDKMeetingsPaginationCompilationTest, ChimeSDKMeetingsPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

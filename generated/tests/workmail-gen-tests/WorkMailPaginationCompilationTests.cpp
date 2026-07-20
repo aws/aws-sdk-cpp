@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -32,6 +32,6 @@ class WorkMailPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSui
 
 TEST_F(WorkMailPaginationCompilationTest, WorkMailPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

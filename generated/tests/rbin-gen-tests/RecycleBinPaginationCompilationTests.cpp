@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -18,6 +18,6 @@ class RecycleBinPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestS
 
 TEST_F(RecycleBinPaginationCompilationTest, RecycleBinPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

@@ -1,2 +1,3 @@
 com.amazonaws.util.awsclientsmithygenerator.generators.pagination.PaginationCodegenPlugin
 com.amazonaws.util.awsclientsmithygenerator.generators.waiters.WaiterCodegenPlugin
+com.amazonaws.util.awsclientsmithygenerator.generators.model.ModelCodegenPlugin

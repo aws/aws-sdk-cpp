@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -32,6 +32,6 @@ class EKSPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSuite
 
 TEST_F(EKSPaginationCompilationTest, EKSPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

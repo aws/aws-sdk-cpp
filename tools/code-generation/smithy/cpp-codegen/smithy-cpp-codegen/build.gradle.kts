@@ -2,6 +2,11 @@ plugins {
     `java-library`
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_16
+    targetCompatibility = JavaVersion.VERSION_16
+}
+
 repositories {
     mavenLocal()
     mavenCentral()
@@ -16,6 +21,7 @@ dependencies {
     implementation("software.amazon.smithy:smithy-rules-engine:1.70.0")
     implementation("software.amazon.smithy:smithy-aws-endpoints:1.70.0")
     implementation("software.amazon.smithy:smithy-aws-iam-traits:1.70.0")
+    implementation("software.amazon.smithy:smithy-protocol-traits:1.70.0")
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.10.2")
 }

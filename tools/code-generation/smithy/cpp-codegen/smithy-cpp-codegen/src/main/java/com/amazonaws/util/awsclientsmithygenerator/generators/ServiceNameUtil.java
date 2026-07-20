@@ -4,11 +4,8 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
-import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.aws.traits.ServiceTrait;
-import software.amazon.smithy.model.shapes.Shape;
-import software.amazon.smithy.model.transform.ModelTransformer;
 
 import java.util.Map;
 
@@ -153,6 +150,19 @@ public final class ServiceNameUtil {
             .replace(" ", "-");
         
         return serviceMap != null ? serviceMap.getOrDefault(sdkId, sdkId) : sdkId;
+    }
+
+    /**
+     * Returns the export macro for a service (e.g., "AWS_KINESIS_API").
+     * Follows C2J convention: AWS_{UPPERCASED_SERVICE_NAME}_API
+     *
+     * @param service The service shape to generate the macro for
+     * @param serviceMap Service ID mappings for namespace overrides (reserved for future consistency with getSmithyServiceName)
+     * @return The export macro in format AWS_{SERVICE_NAME}_API
+     */
+    public static String getExportMacro(ServiceShape service, Map<String, String> serviceMap) {
+        String serviceName = getServiceName(service);
+        return "AWS_" + serviceName.toUpperCase() + "_API";
     }
 
     public static boolean isS3CrtProjection(ServiceShape service) {

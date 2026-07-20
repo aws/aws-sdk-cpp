@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -22,6 +22,6 @@ class NeptuneGraphPaginationCompilationTest : public Aws::Testing::AwsCppSdkGTes
 
 TEST_F(NeptuneGraphPaginationCompilationTest, NeptuneGraphPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

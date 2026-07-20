@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -19,6 +19,6 @@ class CloudControlApiPaginationCompilationTest : public Aws::Testing::AwsCppSdkG
 
 TEST_F(CloudControlApiPaginationCompilationTest, CloudControlApiPaginationHeadersCompile)
 {
-        // Test passes if compilation succeeds
-        SUCCEED();
+      // Test passes if compilation succeeds
+      SUCCEED();
 }

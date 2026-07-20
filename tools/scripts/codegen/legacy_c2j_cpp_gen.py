@@ -56,9 +56,10 @@ class LegacyC2jCppGen(object):
     """
     GENERATOR_JAR = "target/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar"
 
-    def __init__(self, args: dict, c2j_models: dict):
+    def __init__(self, args: dict, c2j_models: dict, skip_model_services: set = None):
         self.debug = args.get("debug", False)
         self.c2j_models = c2j_models
+        self.skip_model_services = skip_model_services or set()
 
         generator_location = args["path_to_generator"] or DEFAULT_GENERATOR_LOCATION
         generator_location = str(Path(generator_location).absolute())
@@ -191,6 +192,11 @@ class LegacyC2jCppGen(object):
 
         if service_name in SMITHY_SUPPORTED_CLIENTS or model_files.use_smithy:
             run_command += ["--use-smithy-client"]
+
+        if service_name in self.skip_model_services:
+            run_command += ["--skip-model-generation"]
+            if self.debug:
+                print(f"  Skipping C2J model generation for {service_name} (using Smithy models)")
 
         for key, val in kwargs.items():
             run_command += [f"--{key}", val]

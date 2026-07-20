@@ -20,8 +20,11 @@ SMITHY_NAMPESPACE_MAPPING_FILE = "tools/code-generation/smithy/mapping/smithy-na
 class SmithyCppGen(object):
     """Wrapper for Smithy C++ code generator for C++ SDK"""
 
-    def __init__(self, debug: bool, **kwargs):
+    def __init__(self, debug: bool, use_smithy_models: bool = False,
+                 smithy_model_services: set = None, **kwargs):
         self.debug = debug
+        self.use_smithy_models = use_smithy_models
+        self.smithy_model_services = smithy_model_services or set()
         with open(os.path.abspath(SMITHY_TO_C2J_MAP_FILE), 'r') as file:
             self.smithy_c2j_data = json.load(file)
             self.c2j_smithy_data = {value: key for key, value in self.smithy_c2j_data.items()}
@@ -36,9 +39,14 @@ class SmithyCppGen(object):
         
         if self._generate_pagination(smithy_services, json.dumps(self.smithy_c2j_data)):
             target_dir = os.path.abspath("generated/src")
+            plugins_to_copy = ["smithy-cpp-codegen-paginators", "smithy-cpp-codegen-waiters"]
+            if self.use_smithy_models:
+                plugins_to_copy.append("smithy-cpp-codegen-models")
+                if self.debug:
+                    print(f"Including Smithy model files for: {sorted(self.smithy_model_services)}")
             self._copy_cpp_codegen_contents(
                 os.path.abspath("tools/code-generation/smithy/cpp-codegen"),
-                ["smithy-cpp-codegen-paginators", "smithy-cpp-codegen-waiters"],
+                plugins_to_copy,
                 target_dir
             )
             return 0
@@ -52,6 +60,8 @@ class SmithyCppGen(object):
             "-Pc2jMap=" + smithy_c2j_data,
             "-PnamespaceMappings=" + json.dumps(self.smithy_namespace_mappings)
         ]
+        if self.use_smithy_models:
+            smithy_codegen_command.append("-PgenerateModels=true")
         
         try:
             if self.debug:
@@ -96,7 +106,12 @@ class SmithyCppGen(object):
                 
                 # Map to c2j service name
                 c2j_service_name = self.smithy_c2j_data.get(smithy_service_name, smithy_service_name)
-                
+
+                # For model files, only copy if service is in the smithy_model_services set
+                if plugin_name == "smithy-cpp-codegen-models":
+                    if c2j_service_name not in self.smithy_model_services:
+                        continue
+
                 service_target_dir = os.path.join(target_dir, f"aws-cpp-sdk-{c2j_service_name}")
                 os.makedirs(service_target_dir, exist_ok=True)
                 
