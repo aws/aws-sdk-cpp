@@ -5,6 +5,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
+#include <smithy/client/schema/JsonTraits.h>
 #include <smithy/client/schema/JsonWriteUtils.h>
 
 #include <array>
@@ -193,7 +194,8 @@ class JsonShapeSerializer::Impl {
     if (m_depth > 0 && m_isMap[m_depth]) {
       WriteKey(m_currentMapKey);
     } else {
-      WriteKey(schema.GetMemberName());
+      const auto jsonName = schema.GetTrait(JsonNameTrait::KEY());
+      WriteKey(jsonName ? jsonName->GetValue() : schema.GetMemberName());
     }
   }
 };

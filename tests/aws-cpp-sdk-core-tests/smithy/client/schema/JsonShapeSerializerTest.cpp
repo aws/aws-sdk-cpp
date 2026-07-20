@@ -5,6 +5,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
+#include <smithy/client/schema/JsonTraits.h>
 
 using namespace smithy::schema;
 
@@ -438,4 +439,29 @@ TEST_F(JsonShapeSerializerTest, MaxDepthEnforcement) {
   auto outcome = s.GetPayload();
   ASSERT_FALSE(outcome.IsSuccess());
   EXPECT_NE(outcome.GetError().GetMessage().find("depth"), Aws::String::npos);
+}
+
+// --- JsonNameTrait ---
+
+TEST_F(JsonShapeSerializerTest, JsonNameOverridesMemberName) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("internalName", ShapeType::String);
+  member.SetTrait(JsonNameTrait::KEY(), Aws::MakeShared<JsonNameTrait>("Schema", "ExternalName"));
+  s.BeginStructure(root);
+  s.WriteString(member, "hello");
+  s.EndStructure();
+  auto payload = s.GetPayload().GetResult();
+  EXPECT_NE(payload.find("\"ExternalName\":\"hello\""), Aws::String::npos);
+  EXPECT_EQ(payload.find("\"internalName\""), Aws::String::npos);
+}
+
+TEST_F(JsonShapeSerializerTest, NoJsonNameUsesGetMemberName) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("fieldName", ShapeType::String);
+  s.BeginStructure(root);
+  s.WriteString(member, "value");
+  s.EndStructure();
+  EXPECT_NE(s.GetPayload().GetResult().find("\"fieldName\":\"value\""), Aws::String::npos);
 }

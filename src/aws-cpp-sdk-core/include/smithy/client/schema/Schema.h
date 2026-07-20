@@ -1,8 +1,10 @@
 #pragma once
 
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <smithy/client/schema/TraitMap.h>
 
 #include <cstdint>
+#include <memory>
 
 namespace smithy {
 namespace schema {
@@ -48,6 +50,18 @@ class Schema {
 
   uint16_t GetMemberCount() const { return m_memberCount; }
 
+  template <typename T>
+  std::shared_ptr<const T> GetTrait(const TraitKey<T>& key) const {
+    return m_traits.Get(key);
+  }
+
+  bool HasTrait(const TraitKeyBase& key) const { return m_traits.Has(key); }
+
+  Schema& SetTrait(const TraitKeyBase& key, std::shared_ptr<const Trait> trait) {
+    m_traits.Set(key, std::move(trait));
+    return *this;
+  }
+
  private:
   const char* m_id = nullptr;
   ShapeType m_type = ShapeType::Structure;
@@ -55,6 +69,7 @@ class Schema {
   int m_memberIndex = 0;
   const Schema* m_members = nullptr;
   uint16_t m_memberCount = 0;
+  TraitMap m_traits;
 };
 
 }  // namespace schema
