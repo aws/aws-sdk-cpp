@@ -414,7 +414,6 @@ typedef std::future<GetObjectTaggingOutcome> GetObjectTaggingOutcomeCallable;
 typedef std::future<GetObjectTorrentOutcome> GetObjectTorrentOutcomeCallable;
 typedef std::future<GetPublicAccessBlockOutcome> GetPublicAccessBlockOutcomeCallable;
 typedef std::future<HeadBucketOutcome> HeadBucketOutcomeCallable;
-typedef std::future<HeadObjectOutcome> HeadObjectOutcomeCallable;
 typedef std::future<ListBucketAnalyticsConfigurationsOutcome> ListBucketAnalyticsConfigurationsOutcomeCallable;
 typedef std::future<ListBucketIntelligentTieringConfigurationsOutcome> ListBucketIntelligentTieringConfigurationsOutcomeCallable;
 typedef std::future<ListBucketInventoryConfigurationsOutcome> ListBucketInventoryConfigurationsOutcomeCallable;

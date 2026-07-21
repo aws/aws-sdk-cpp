@@ -1207,7 +1207,7 @@ CopyObjectOutcome S3CrtClient::CopyObject(const CopyObjectRequest& request) cons
   AWS_OPERATION_GUARD(CopyObject);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  AWS_OPERATION_CHECK_PTR(meter, CopyObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
   return TracingUtils::MakeCallWithTiming<CopyObjectOutcome>(
       [&]() -> CopyObjectOutcome {
         Aws::Utils::Threading::Semaphore sem(0, 1);
@@ -1381,6 +1381,165 @@ GetObjectOutcome S3CrtClient::GetObject(const GetObjectRequest& request) const {
         }};
 
         S3CrtClient::GetObjectAsync(request, handler, handlerContext);
+        sem.WaitOne();
+        return res;
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+static void HeadObjectRequestShutdownCallback(void* user_data) {
+  if (!user_data) {
+    AWS_LOGSTREAM_ERROR("HeadObject", "user data passed is NULL ");
+    return;
+  }
+  auto* userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+
+  // call user callback and release user_data
+  S3Crt::Model::HeadObjectOutcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
+  // log into monitor
+  if (userData->asyncCallerContext) {
+    if (!outcome.IsSuccess()) {
+      userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request, userData->response);
+    } else {
+      userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
+    }
+  }
+  userData->headObjectResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const HeadObjectRequest*>(userData->originalRequest)),
+                                      std::move(outcome), userData->asyncCallerContext);
+
+  Aws::Delete(userData);
+}
+
+void S3CrtClient::HeadObjectAsync(const HeadObjectRequest& request, const HeadObjectResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const {
+  AWS_ASYNC_OPERATION_GUARD(HeadObject);
+  if (!m_endpointProvider) {
+    return handler(this, request,
+                   HeadObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE",
+                                                                        "Endpoint provider is not initialized", false)),
+                   handlerContext);
+  }
+  if (!request.BucketHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("HeadObject", "Required field: Bucket, is not set");
+    return handler(this, request,
+                   HeadObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [Bucket]", false)),
+                   handlerContext);
+  }
+  if (!request.KeyHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("HeadObject", "Required field: Key, is not set");
+    return handler(this, request,
+                   HeadObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [Key]", false)),
+                   handlerContext);
+  }
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+      [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+      TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  if (!endpointResolutionOutcome.IsSuccess()) {
+    handler(this, request,
+            HeadObjectOutcome(Aws::Client::AWSError<CoreErrors>(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE",
+                                                                endpointResolutionOutcome.GetError().GetMessage(), false)),
+            handlerContext);
+    return;
+  }
+  endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
+
+  request.SetServiceSpecificParameters([&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+    Aws::Map<Aws::String, Aws::String> params;
+    params.emplace("bucketName", request.GetBucket());
+    ServiceSpecificParameters serviceSpecificParameters{params};
+    return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+  }());
+
+  // make aws_s3_meta_request with callbacks
+  CrtRequestCallbackUserData* userData = Aws::New<CrtRequestCallbackUserData>(ALLOCATION_TAG);
+  aws_s3_meta_request_options options;
+  AWS_ZERO_STRUCT(options);
+  aws_uri endpoint;
+  InitCrtEndpointFromUri(endpoint, endpointResolutionOutcome.GetResult().GetURI());
+  options.endpoint = &endpoint;
+  std::unique_ptr<aws_uri, void (*)(aws_uri*)> endpointCleanup{&endpoint, &aws_uri_clean_up};
+
+  userData->headObjectResponseHandler = handler;
+  if (handlerContext) {
+    userData->asyncCallerContext = handlerContext;
+  }
+  InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(),
+                             Aws::Http::HttpMethod::HTTP_HEAD);
+  if (userData != nullptr && userData->request != nullptr && userData->request->GetContentBody() != nullptr &&
+      userData->request->GetContentBody()->fail()) {
+  }
+  if (handlerContext) {
+    handlerContext->GetMonitorContext().StartMonitorContext(Aws::String{"S3CrtClient"}, request.GetServiceRequestName(), userData->request);
+  }
+  options.shutdown_callback = HeadObjectRequestShutdownCallback;
+  options.type = AWS_S3_META_REQUEST_TYPE_DEFAULT;
+  options.operation_name = Aws::Crt::ByteCursorFromCString("HeadObject");
+  struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
+  if (endpointResolutionOutcome.GetResult().GetAttributes() &&
+      endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegion()) {
+    signing_config_override.region =
+        Aws::Crt::ByteCursorFromCString(endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegion()->c_str());
+  }
+  if (endpointResolutionOutcome.GetResult().GetAttributes() &&
+      endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegionSet()) {
+    signing_config_override.region =
+        Aws::Crt::ByteCursorFromCString(endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegionSet()->c_str());
+  }
+  if (endpointResolutionOutcome.GetResult().GetAttributes() &&
+      endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningName()) {
+    signing_config_override.service =
+        Aws::Crt::ByteCursorFromCString(endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningName()->c_str());
+  }
+  if (endpointResolutionOutcome.GetResult().GetAttributes() &&
+      endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetName() == "S3ExpressSigner") {
+    signing_config_override.algorithm = aws_signing_algorithm::AWS_SIGNING_ALGORITHM_V4_S3EXPRESS;
+  } else {
+    signing_config_override.algorithm = aws_signing_algorithm::AWS_SIGNING_ALGORITHM_V4;
+  }
+  options.signing_config = &signing_config_override;
+
+  std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
+  options.message = crtHttpRequest->GetUnderlyingMessage();
+  userData->crtHttpRequest = crtHttpRequest;
+
+  aws_s3_meta_request* meta_request = aws_s3_client_make_meta_request(m_s3CrtClient, &options);
+  if (meta_request == nullptr) {
+    return handler(this, request,
+                   HeadObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE",
+                                                                        "Unable to create s3 meta request", false)),
+                   handlerContext);
+  }
+  auto& shouldContinueFn = request.GetContinueRequestHandler();
+  const HttpRequest* httpRequest = userData->request ? userData->request.get() : nullptr;
+  if (shouldContinueFn && !shouldContinueFn(httpRequest)) {
+    aws_s3_meta_request_cancel(meta_request);
+  }
+}
+
+HeadObjectOutcome S3CrtClient::HeadObject(const HeadObjectRequest& request) const {
+  AWS_OPERATION_GUARD(HeadObject);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, HeadObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  return TracingUtils::MakeCallWithTiming<HeadObjectOutcome>(
+      [&]() -> HeadObjectOutcome {
+        Aws::Utils::Threading::Semaphore sem(0, 1);
+        HeadObjectOutcome res;
+        auto handlerContext = Aws::MakeShared<AsyncCallerContext>(ALLOCATION_TAG);
+        auto handler = HeadObjectResponseReceivedHandler{[&](const S3CrtClient*, const HeadObjectRequest&, const HeadObjectOutcome& outcome,
+                                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) {
+          res = std::move(outcome);
+          sem.ReleaseAll();
+        }};
+
+        S3CrtClient::HeadObjectAsync(request, handler, handlerContext);
         sem.WaitOne();
         return res;
       },
@@ -1563,7 +1722,7 @@ PutObjectOutcome S3CrtClient::PutObject(const PutObjectRequest& request) const {
   AWS_OPERATION_GUARD(PutObject);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  AWS_OPERATION_CHECK_PTR(meter, PutObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
   return TracingUtils::MakeCallWithTiming<PutObjectOutcome>(
       [&]() -> PutObjectOutcome {
         Aws::Utils::Threading::Semaphore sem(0, 1);
@@ -2922,27 +3081,6 @@ HeadBucketOutcome S3CrtClient::HeadBucket(const HeadBucketRequest& request) cons
 
   auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_HEAD);
   return result.IsSuccess() ? HeadBucketOutcome(result.GetResultWithOwnership()) : HeadBucketOutcome(std::move(result.GetError()));
-}
-
-HeadObjectOutcome S3CrtClient::HeadObject(const HeadObjectRequest& request) const {
-  if (!request.BucketHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("HeadObject", "Required field: Bucket, is not set");
-    return HeadObjectOutcome(
-        Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
-  }
-  if (!request.KeyHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("HeadObject", "Required field: Key, is not set");
-    return HeadObjectOutcome(
-        Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_HEAD);
-  return result.IsSuccess() ? HeadObjectOutcome(result.GetResultWithOwnership()) : HeadObjectOutcome(std::move(result.GetError()));
 }
 
 ListBucketAnalyticsConfigurationsOutcome S3CrtClient::ListBucketAnalyticsConfigurations(

@@ -4711,20 +4711,14 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   /**
    * A Callable wrapper for HeadObject that returns a future to the operation so that it can be executed in parallel to other requests.
    */
-  template <typename HeadObjectRequestT = Model::HeadObjectRequest>
-  Model::HeadObjectOutcomeCallable HeadObjectCallable(const HeadObjectRequestT& request) const {
-    return SubmitCallable(&S3Client::HeadObject, request);
-  }
+  virtual Model::HeadObjectOutcomeCallable HeadObjectCallable(const Model::HeadObjectRequest& request) const;
 
   /**
    * An Async wrapper for HeadObject that queues the request into a thread executor and triggers associated callback when operation has
    * finished.
    */
-  template <typename HeadObjectRequestT = Model::HeadObjectRequest>
-  void HeadObjectAsync(const HeadObjectRequestT& request, const HeadObjectResponseReceivedHandler& handler,
-                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&S3Client::HeadObject, request, handler, context);
-  }
+  virtual void HeadObjectAsync(const Model::HeadObjectRequest& request, const HeadObjectResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
   /**
    *  <p>This operation is not supported for directory buckets.</p>

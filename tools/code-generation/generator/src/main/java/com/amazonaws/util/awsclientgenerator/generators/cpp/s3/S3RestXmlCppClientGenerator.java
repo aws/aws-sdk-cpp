@@ -173,6 +173,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
         s3CrtEnabledOps.add("GetObject");
         s3CrtEnabledOps.add("PutObject");
         s3CrtEnabledOps.add("CopyObject");
+        s3CrtEnabledOps.add("HeadObject");
 
         bucketLocationConstraints.add("us-east-1");
         bucketLocationConstraints.add("us-east-2");
