@@ -21384,7 +21384,9 @@
                                     "StandardsArn": "arn:aws:securityhub:eu-central-1::standards/pci-dss/v/3.2.1",
                                     "StandardsInput": {},
                                     "StandardsStatus": "DELETING",
-                                    "StandardsSubscriptionArn": "arn:aws:securityhub:us-west-1:123456789012:subscription/pci-dss/v/3.2.1"
+                                    "StandardsSubscriptionArn": "arn:aws:securityhub:us-west-1:123456789012:subscription/pci-dss/v/3.2.1",
+                                    "StandardsControlsUpdatable": "NOT_READY_FOR_UPDATES",
+                                    "Provider": "AWS"
                                 }
                             ]
                         }
@@ -21471,7 +21473,9 @@
                                     "StandardsArn": "arn:aws:securityhub:us-west-1::standards/pci-dss/v/3.2.1",
                                     "StandardsInput": {},
                                     "StandardsStatus": "PENDING",
-                                    "StandardsSubscriptionArn": "arn:aws:securityhub:us-west-1:123456789012:subscription/pci-dss/v/3.2.1"
+                                    "StandardsSubscriptionArn": "arn:aws:securityhub:us-west-1:123456789012:subscription/pci-dss/v/3.2.1",
+                                    "StandardsControlsUpdatable": "NOT_READY_FOR_UPDATES",
+                                    "Provider": "AWS"
                                 }
                             ]
                         }
@@ -21849,7 +21853,8 @@
                                             }
                                         }
                                     },
-                                    "LastUpdateReason": "Stayed with default value"
+                                    "LastUpdateReason": "Stayed with default value",
+                                    "Provider": "AWS"
                                 },
                                 {
                                     "SecurityControlId": "APIGateway.1",
@@ -21868,7 +21873,8 @@
                                             }
                                         }
                                     },
-                                    "LastUpdateReason": "Updated control parameters to comply with internal requirements"
+                                    "LastUpdateReason": "Updated control parameters to comply with internal requirements",
+                                    "Provider": "AWS"
                                 }
                             ]
                         }
@@ -26892,6 +26898,30 @@
                 "smithy.api#documentation": "<p>Returns a list of the available standards in Security Hub CSPM.</p>\n         <p>For each standard, the results include the standard ARN, the name, and a description. </p>",
                 "smithy.api#examples": [
                     {
+                        "title": "To get available Azure security standards",
+                        "documentation": "The following example returns a list of available security standards from a specified provider.",
+                        "input": {
+                            "Providers": [
+                                "Azure"
+                            ]
+                        },
+                        "output": {
+                            "Standards": [
+                                {
+                                    "StandardsArn": "arn:aws:securityhub:us-west-1::standards/cis-azure-foundations-benchmark/v/4.0.0",
+                                    "Name": "CIS Azure Foundations Benchmark v4.0.0",
+                                    "Description": "The Center for Internet Security (CIS) Microsoft Azure Foundations Benchmark v4.0.0 is a set of security configuration best practices for Azure. This Security Hub standard automatically checks your compliance readiness against a subset of CIS requirements.",
+                                    "EnabledByDefault": false,
+                                    "StandardsManagedBy": {
+                                        "Company": "AWS",
+                                        "Product": "Security Hub"
+                                    },
+                                    "Provider": "Azure"
+                                }
+                            ]
+                        }
+                    },
+                    {
                         "title": "To get available Security Hub standards",
                         "documentation": "The following example returns a list of available security standards in Security Hub.",
                         "output": {
@@ -26900,25 +26930,56 @@
                                     "StandardsArn": "arn:aws:securityhub:us-west-1::standards/aws-foundational-security-best-practices/v/1.0.0",
                                     "Name": "AWS Foundational Security Best Practices v1.0.0",
                                     "Description": "The AWS Foundational Security Best Practices standard is a set of automated security checks that detect when AWS accounts and deployed resources do not align to security best practices. The standard is defined by AWS security experts. This curated set of controls helps improve your security posture in AWS, and cover AWS's most popular and foundational services.",
-                                    "EnabledByDefault": true
+                                    "EnabledByDefault": true,
+                                    "StandardsManagedBy": {
+                                        "Company": "AWS",
+                                        "Product": "Security Hub"
+                                    },
+                                    "Provider": "AWS"
                                 },
                                 {
                                     "StandardsArn": "arn:aws:securityhub:us-west-1::ruleset/cis-aws-foundations-benchmark/v/1.2.0",
                                     "Name": "CIS AWS Foundations Benchmark v1.2.0",
                                     "Description": "The Center for Internet Security (CIS) AWS Foundations Benchmark v1.2.0 is a set of security configuration best practices for AWS. This Security Hub standard automatically checks for your compliance readiness against a subset of CIS requirements.",
-                                    "EnabledByDefault": true
+                                    "EnabledByDefault": true,
+                                    "StandardsManagedBy": {
+                                        "Company": "AWS",
+                                        "Product": "Security Hub"
+                                    },
+                                    "Provider": "AWS"
                                 },
                                 {
                                     "StandardsArn": "arn:aws::securityhub:us-west-1::standards/cis-aws-foundations-benchmark/v/1.4.0",
                                     "Name": "CIS AWS Foundations Benchmark v1.4.0",
                                     "Description": "The Center for Internet Security (CIS) AWS Foundations Benchmark v1.4.0 is a set of security configuration best practices for AWS. This Security Hub standard automatically checks for your compliance readiness against a subset of CIS requirements.",
-                                    "EnabledByDefault": false
+                                    "EnabledByDefault": false,
+                                    "StandardsManagedBy": {
+                                        "Company": "AWS",
+                                        "Product": "Security Hub"
+                                    },
+                                    "Provider": "AWS"
                                 },
                                 {
                                     "StandardsArn": "arn:aws:securityhub:us-west-1::standards/pci-dss/v/3.2.1",
                                     "Name": "PCI DSS v3.2.1",
                                     "Description": "The Payment Card Industry Data Security Standard (PCI DSS) v3.2.1 is an information security standard for entities that store, process, and/or transmit cardholder data. This Security Hub standard automatically checks for your compliance readiness against a subset of PCI DSS requirements.",
-                                    "EnabledByDefault": false
+                                    "EnabledByDefault": false,
+                                    "StandardsManagedBy": {
+                                        "Company": "AWS",
+                                        "Product": "Security Hub"
+                                    },
+                                    "Provider": "AWS"
+                                },
+                                {
+                                    "StandardsArn": "arn:aws:securityhub:us-west-1::standards/cis-azure-foundations-benchmark/v/4.0.0",
+                                    "Name": "CIS Azure Foundations Benchmark v4.0.0",
+                                    "Description": "The Center for Internet Security (CIS) Microsoft Azure Foundations Benchmark v4.0.0 is a set of security configuration best practices for Azure. This Security Hub standard automatically checks your compliance readiness against a subset of CIS requirements.",
+                                    "EnabledByDefault": false,
+                                    "StandardsManagedBy": {
+                                        "Company": "AWS",
+                                        "Product": "Security Hub"
+                                    },
+                                    "Provider": "Azure"
                                 }
                             ]
                         }
@@ -29694,7 +29755,8 @@
                                     "StandardsArn": "arn:aws:securityhub:us-west-1::standards/pci-dss/v/3.2.1",
                                     "StandardsInput": {},
                                     "StandardsStatus": "READY",
-                                    "StandardsSubscriptionArn": "arn:aws:securityhub:us-west-1:123456789012:subscription/pci-dss/v/3.2.1"
+                                    "StandardsSubscriptionArn": "arn:aws:securityhub:us-west-1:123456789012:subscription/pci-dss/v/3.2.1",
+                                    "Provider": "AWS"
                                 }
                             ]
                         }
@@ -31346,7 +31408,8 @@
                                             }
                                         }
                                     }
-                                }
+                                },
+                                "Provider": "AWS"
                             }
                         }
                     }
@@ -33712,6 +33775,51 @@
                 "smithy.api#documentation": "<p>\n         Lists all of the security controls that apply to a specified standard.\n      </p>",
                 "smithy.api#examples": [
                     {
+                        "title": "To list Azure security control definitions",
+                        "documentation": "The following example lists security control definitions for a specified provider.",
+                        "input": {
+                            "Providers": [
+                                "Azure"
+                            ],
+                            "MaxResults": 3
+                        },
+                        "output": {
+                            "SecurityControlDefinitions": [
+                                {
+                                    "SecurityControlId": "Azure.App.1",
+                                    "Title": "Azure Container Apps with managed identity enabled should follow least privilege",
+                                    "Description": "This control checks whether Azure Container Apps have managed identity enabled. The control fails if the Container App has a system-assigned or user-assigned managed identity enabled.",
+                                    "RemediationUrl": "https://docs.aws.amazon.com/console/securityhub/Azure.App.1/remediation",
+                                    "SeverityRating": "MEDIUM",
+                                    "CurrentRegionAvailability": "AVAILABLE",
+                                    "CustomizableProperties": [],
+                                    "Provider": "Azure"
+                                },
+                                {
+                                    "SecurityControlId": "Azure.App.2",
+                                    "Title": "Azure Container Apps should not pass Azure SDK credentials as environment variables",
+                                    "Description": "This control checks whether an Azure Container App passes Azure SDK credentials as plain-text container environment variables. The control fails if any container (including initContainers) defines AZURE_CLIENT_SECRET, AZURE_CLIENT_CERTIFICATE_PASSWORD, or AZURE_PASSWORD as a plain-text environment variable instead of referencing a secret via secretRef.",
+                                    "RemediationUrl": "https://docs.aws.amazon.com/console/securityhub/Azure.App.2/remediation",
+                                    "SeverityRating": "CRITICAL",
+                                    "CurrentRegionAvailability": "AVAILABLE",
+                                    "CustomizableProperties": [],
+                                    "Provider": "Azure"
+                                },
+                                {
+                                    "SecurityControlId": "Azure.App.3",
+                                    "Title": "Azure Container Apps should not have external ingress enabled",
+                                    "Description": "This control checks whether Azure Container Apps have external ingress configured. The control fails if the Container App ingress is set to accept traffic from anywhere (external).",
+                                    "RemediationUrl": "https://docs.aws.amazon.com/console/securityhub/Azure.App.3/remediation",
+                                    "SeverityRating": "HIGH",
+                                    "CurrentRegionAvailability": "AVAILABLE",
+                                    "CustomizableProperties": [],
+                                    "Provider": "Azure"
+                                }
+                            ],
+                            "NextToken": "U2FsdGVkX1..."
+                        }
+                    },
+                    {
                         "title": "To list security controls that apply to a standard",
                         "documentation": "The following example lists security controls that apply to a specified Security Hub standard. ",
                         "input": {
@@ -33730,7 +33838,8 @@
                                     "CurrentRegionAvailability": "AVAILABLE",
                                     "CustomizableProperties": [
                                         "Parameters"
-                                    ]
+                                    ],
+                                    "Provider": "AWS"
                                 },
                                 {
                                     "SecurityControlId": "APIGateway.1",
@@ -33741,7 +33850,8 @@
                                     "CurrentRegionAvailability": "AVAILABLE",
                                     "CustomizableProperties": [
                                         "Parameters"
-                                    ]
+                                    ],
+                                    "Provider": "AWS"
                                 },
                                 {
                                     "SecurityControlId": "APIGateway.2",
@@ -33749,7 +33859,18 @@
                                     "Description": "This control checks whether Amazon API Gateway REST API stages have SSL certificates configured that backend systems can use to authenticate that incoming requests are from the API Gateway.",
                                     "RemediationUrl": "https://docs.aws.amazon.com/console/securityhub/APIGateway.2/remediation",
                                     "SeverityRating": "MEDIUM",
-                                    "CurrentRegionAvailability": "AVAILABLE"
+                                    "CurrentRegionAvailability": "AVAILABLE",
+                                    "Provider": "AWS"
+                                },
+                                {
+                                    "SecurityControlId": "Azure.App.1",
+                                    "Title": "Azure Container Apps with managed identity enabled should follow least privilege",
+                                    "Description": "This control checks whether Azure Container Apps have managed identity enabled. The control fails if the Container App has a system-assigned or user-assigned managed identity enabled.",
+                                    "RemediationUrl": "https://docs.aws.amazon.com/console/securityhub/Azure.App.1/remediation",
+                                    "SeverityRating": "MEDIUM",
+                                    "CurrentRegionAvailability": "AVAILABLE",
+                                    "CustomizableProperties": [],
+                                    "Provider": "Azure"
                                 }
                             ],
                             "NextToken": "U2FsdGVkX1..."

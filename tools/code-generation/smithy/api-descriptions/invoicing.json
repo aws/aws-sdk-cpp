@@ -2117,6 +2117,9 @@
                     "target": "com.amazonaws.invoicing#PutProcurementPortalPreference"
                 },
                 {
+                    "target": "com.amazonaws.invoicing#SendProcurementPortalValidation"
+                },
+                {
                     "target": "com.amazonaws.invoicing#TagResource"
                 },
                 {
@@ -2127,6 +2130,9 @@
                 },
                 {
                     "target": "com.amazonaws.invoicing#UpdateProcurementPortalPreferenceStatus"
+                },
+                {
+                    "target": "com.amazonaws.invoicing#VerifyProcurementPortalValidation"
                 }
             ],
             "traits": {
@@ -4049,6 +4055,12 @@
                         "smithy.api#enumValue": "PENDING_VERIFICATION"
                     }
                 },
+                "VALIDATED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "VALIDATED"
+                    }
+                },
                 "TEST_INITIALIZED": {
                     "target": "smithy.api#Unit",
                     "traits": {
@@ -4637,6 +4649,84 @@
                     "min": 0,
                     "max": 100
                 }
+            }
+        },
+        "com.amazonaws.invoicing#SendProcurementPortalValidation": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.invoicing#SendProcurementPortalValidationRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.invoicing#SendProcurementPortalValidationResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.invoicing#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.invoicing#InternalServerException"
+                },
+                {
+                    "target": "com.amazonaws.invoicing#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.invoicing#ThrottlingException"
+                },
+                {
+                    "target": "com.amazonaws.invoicing#ValidationException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p> <i> <b>This feature API is subject to changing at any time. For more information, see the <a href=\"https://aws.amazon.com/service-terms/\">Amazon Web Services Service Terms</a> (Betas and Previews).</b> </i> </p> <p>Sends a validation request for a procurement portal preference. This operation initiates the validation process by issuing a validation code that confirms ownership and connectivity of the configured procurement portal endpoint. Use <code>VerifyProcurementPortalValidation</code> to submit the received code and complete validation.</p>",
+                "smithy.api#examples": [
+                    {
+                        "title": "SendProcurementPortalValidation call",
+                        "input": {
+                            "ProcurementPortalPreferenceArn": "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd"
+                        },
+                        "output": {
+                            "ProcurementPortalPreferenceArn": "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd"
+                        }
+                    }
+                ],
+                "smithy.api#idempotent": {}
+            }
+        },
+        "com.amazonaws.invoicing#SendProcurementPortalValidationRequest": {
+            "type": "structure",
+            "members": {
+                "ProcurementPortalPreferenceArn": {
+                    "target": "com.amazonaws.invoicing#ProcurementPortalPreferenceArnString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the procurement portal preference to validate.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ClientToken": {
+                    "target": "com.amazonaws.invoicing#BasicStringWithoutSpace",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>",
+                        "smithy.api#idempotencyToken": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.invoicing#SendProcurementPortalValidationResponse": {
+            "type": "structure",
+            "members": {
+                "ProcurementPortalPreferenceArn": {
+                    "target": "com.amazonaws.invoicing#ProcurementPortalPreferenceArnString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the procurement portal preference for which the validation request was sent.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.invoicing#SensitiveBasicStringWithoutSpace": {
@@ -5487,6 +5577,92 @@
                         "smithy.api#enumValue": "other"
                     }
                 }
+            }
+        },
+        "com.amazonaws.invoicing#VerifyProcurementPortalValidation": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.invoicing#VerifyProcurementPortalValidationRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.invoicing#VerifyProcurementPortalValidationResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.invoicing#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.invoicing#InternalServerException"
+                },
+                {
+                    "target": "com.amazonaws.invoicing#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.invoicing#ThrottlingException"
+                },
+                {
+                    "target": "com.amazonaws.invoicing#ValidationException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p> <i> <b>This feature API is subject to changing at any time. For more information, see the <a href=\"https://aws.amazon.com/service-terms/\">Amazon Web Services Service Terms</a> (Betas and Previews).</b> </i> </p> <p>Submits a validation code to complete the validation of a procurement portal preference. Use this operation after calling <code>SendProcurementPortalValidation</code> to confirm ownership and connectivity of the configured procurement portal endpoint.</p>",
+                "smithy.api#examples": [
+                    {
+                        "title": "VerifyProcurementPortalValidation call",
+                        "input": {
+                            "ProcurementPortalPreferenceArn": "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd",
+                            "Code": "validation-code-123"
+                        },
+                        "output": {
+                            "ProcurementPortalPreferenceArn": "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd"
+                        }
+                    }
+                ],
+                "smithy.api#idempotent": {}
+            }
+        },
+        "com.amazonaws.invoicing#VerifyProcurementPortalValidationRequest": {
+            "type": "structure",
+            "members": {
+                "ProcurementPortalPreferenceArn": {
+                    "target": "com.amazonaws.invoicing#ProcurementPortalPreferenceArnString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the procurement portal preference to validate.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Code": {
+                    "target": "com.amazonaws.invoicing#BasicStringWithoutSpace",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The validation code received from the procurement portal in response to a previous <code>SendProcurementPortalValidation</code> request.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ClientToken": {
+                    "target": "com.amazonaws.invoicing#BasicStringWithoutSpace",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>",
+                        "smithy.api#idempotencyToken": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.invoicing#VerifyProcurementPortalValidationResponse": {
+            "type": "structure",
+            "members": {
+                "ProcurementPortalPreferenceArn": {
+                    "target": "com.amazonaws.invoicing#ProcurementPortalPreferenceArnString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the procurement portal preference for which validation was completed.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.invoicing#Year": {

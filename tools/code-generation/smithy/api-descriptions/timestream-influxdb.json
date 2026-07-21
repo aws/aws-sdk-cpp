@@ -3847,6 +3847,18 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Sets the default duration for hard deletion of data.</p>\n         <p>Default: 90d</p>"
                     }
+                },
+                "pluginRepositoryUrl": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the URL of the repository that InfluxDB downloads plugins from.</p>"
+                    }
+                },
+                "pluginRepositorySecretArn": {
+                    "target": "com.amazonaws.timestreaminfluxdb#PluginRepositorySecretArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the Secrets Manager secret that holds your repository access token.</p>"
+                    }
                 }
             },
             "traits": {
@@ -4161,6 +4173,18 @@
                     "target": "com.amazonaws.timestreaminfluxdb#Duration",
                     "traits": {
                         "smithy.api#documentation": "<p>Sets the default duration for hard deletion of data.</p>\n         <p>Default: 90d</p>"
+                    }
+                },
+                "pluginRepositoryUrl": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the URL of the repository that InfluxDB downloads plugins from.</p>"
+                    }
+                },
+                "pluginRepositorySecretArn": {
+                    "target": "com.amazonaws.timestreaminfluxdb#PluginRepositorySecretArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the Secrets Manager secret that holds your repository access token.</p>"
                     }
                 },
                 "ingestQueryInstances": {
@@ -4938,6 +4962,16 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Percent or Absolute Long for InfluxDB parameters</p>"
+            }
+        },
+        "com.amazonaws.timestreaminfluxdb#PluginRepositorySecretArn": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 20,
+                    "max": 2048
+                },
+                "smithy.api#pattern": "^arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9\\-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@\\-]+$"
             }
         },
         "com.amazonaws.timestreaminfluxdb#Port": {

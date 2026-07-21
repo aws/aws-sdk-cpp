@@ -3737,6 +3737,12 @@
                         "smithy.api#documentation": "<p>A message describing why an execution has failed, if the status is set to Failed.</p>"
                     }
                 },
+                "WarningMessage": {
+                    "target": "com.amazonaws.ssm#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A message that describes a non-critical issue that occurred during the automation execution.</p>"
+                    }
+                },
                 "Mode": {
                     "target": "com.amazonaws.ssm#ExecutionMode",
                     "traits": {
@@ -4171,7 +4177,13 @@
                 "FailureMessage": {
                     "target": "com.amazonaws.ssm#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The list of execution outputs as defined in the Automation runbook.</p>"
+                        "smithy.api#documentation": "<p>A message that describes a failure that occurred during the automation execution.</p>"
+                    }
+                },
+                "WarningMessage": {
+                    "target": "com.amazonaws.ssm#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A message that describes a non-critical issue that occurred during the automation execution.</p>"
                     }
                 },
                 "TargetParameterName": {
@@ -30652,6 +30664,12 @@
                     "target": "com.amazonaws.ssm#String",
                     "traits": {
                         "smithy.api#documentation": "<p>If a step failed, this message explains why the execution failed.</p>"
+                    }
+                },
+                "WarningMessage": {
+                    "target": "com.amazonaws.ssm#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A message that describes a non-critical issue that occurred during the step execution. Present only if the step status includes a warning.</p>"
                     }
                 },
                 "FailureDetails": {
