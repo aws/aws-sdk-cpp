@@ -3692,6 +3692,73 @@ class Capabilities {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ability to manage trigger-related settings for flows and automations.</p>
+   */
+  inline CapabilityState GetTrigger() const { return m_trigger; }
+  inline bool TriggerHasBeenSet() const { return m_triggerHasBeenSet; }
+  inline void SetTrigger(CapabilityState value) {
+    m_triggerHasBeenSet = true;
+    m_trigger = value;
+  }
+  inline Capabilities& WithTrigger(CapabilityState value) {
+    SetTrigger(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, view, edit, delete, and run schedule triggers for
+   * flows and automations.</p>
+   */
+  inline CapabilityState GetScheduleTrigger() const { return m_scheduleTrigger; }
+  inline bool ScheduleTriggerHasBeenSet() const { return m_scheduleTriggerHasBeenSet; }
+  inline void SetScheduleTrigger(CapabilityState value) {
+    m_scheduleTriggerHasBeenSet = true;
+    m_scheduleTrigger = value;
+  }
+  inline Capabilities& WithScheduleTrigger(CapabilityState value) {
+    SetScheduleTrigger(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, view, edit, delete, and run inbound email triggers for
+   * flows and automations.</p>
+   */
+  inline CapabilityState GetInboundEmailTrigger() const { return m_inboundEmailTrigger; }
+  inline bool InboundEmailTriggerHasBeenSet() const { return m_inboundEmailTriggerHasBeenSet; }
+  inline void SetInboundEmailTrigger(CapabilityState value) {
+    m_inboundEmailTriggerHasBeenSet = true;
+    m_inboundEmailTrigger = value;
+  }
+  inline Capabilities& WithInboundEmailTrigger(CapabilityState value) {
+    SetInboundEmailTrigger(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, view, edit, delete, and run Quick event triggers for
+   * flows and automations.</p>
+   */
+  inline CapabilityState GetQuickEventTrigger() const { return m_quickEventTrigger; }
+  inline bool QuickEventTriggerHasBeenSet() const { return m_quickEventTriggerHasBeenSet; }
+  inline void SetQuickEventTrigger(CapabilityState value) {
+    m_quickEventTriggerHasBeenSet = true;
+    m_quickEventTrigger = value;
+  }
+  inline Capabilities& WithQuickEventTrigger(CapabilityState value) {
+    SetQuickEventTrigger(value);
+    return *this;
+  }
+  ///@}
  private:
   CapabilityState m_exportToCsv{CapabilityState::NOT_SET};
 
@@ -4148,6 +4215,14 @@ class Capabilities {
   CapabilityState m_story{CapabilityState::NOT_SET};
 
   CapabilityState m_scenario{CapabilityState::NOT_SET};
+
+  CapabilityState m_trigger{CapabilityState::NOT_SET};
+
+  CapabilityState m_scheduleTrigger{CapabilityState::NOT_SET};
+
+  CapabilityState m_inboundEmailTrigger{CapabilityState::NOT_SET};
+
+  CapabilityState m_quickEventTrigger{CapabilityState::NOT_SET};
   bool m_exportToCsvHasBeenSet = false;
   bool m_exportToExcelHasBeenSet = false;
   bool m_exportToPdfHasBeenSet = false;
@@ -4376,6 +4451,10 @@ class Capabilities {
   bool m_generateAnalysesHasBeenSet = false;
   bool m_storyHasBeenSet = false;
   bool m_scenarioHasBeenSet = false;
+  bool m_triggerHasBeenSet = false;
+  bool m_scheduleTriggerHasBeenSet = false;
+  bool m_inboundEmailTriggerHasBeenSet = false;
+  bool m_quickEventTriggerHasBeenSet = false;
 };
 
 }  // namespace Model

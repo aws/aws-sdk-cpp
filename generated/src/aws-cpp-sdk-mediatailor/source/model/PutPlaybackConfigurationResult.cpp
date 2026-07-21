@@ -136,6 +136,14 @@ PutPlaybackConfigurationResult& PutPlaybackConfigurationResult::operator=(const 
     }
     m_functionMappingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AdsPersonalizationTimeouts")) {
+    m_adsPersonalizationTimeouts = jsonValue.GetObject("AdsPersonalizationTimeouts");
+    m_adsPersonalizationTimeoutsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AdsPersonalizationConcurrency")) {
+    m_adsPersonalizationConcurrency = jsonValue.GetObject("AdsPersonalizationConcurrency");
+    m_adsPersonalizationConcurrencyHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

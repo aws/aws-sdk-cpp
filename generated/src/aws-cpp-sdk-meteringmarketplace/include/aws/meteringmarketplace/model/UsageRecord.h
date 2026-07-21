@@ -64,7 +64,9 @@ class UsageRecord {
   /**
    * <p>The <code>CustomerIdentifier</code> is obtained through the
    * <code>ResolveCustomer</code> operation and represents an individual buyer in
-   * your application.</p>
+   * your application.</p>  <p> <code>CustomerIdentifier</code> is not
+   * supported for new SaaS product integrations. Use
+   * <code>CustomerAWSAccountId</code> to identify the buyer.</p>
    */
   inline const Aws::String& GetCustomerIdentifier() const { return m_customerIdentifier; }
   inline bool CustomerIdentifierHasBeenSet() const { return m_customerIdentifierHasBeenSet; }

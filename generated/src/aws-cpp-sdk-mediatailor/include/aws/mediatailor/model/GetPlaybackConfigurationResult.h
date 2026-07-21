@@ -10,6 +10,8 @@
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/model/AdConditioningConfiguration.h>
 #include <aws/mediatailor/model/AdDecisionServerConfiguration.h>
+#include <aws/mediatailor/model/AdsPersonalizationConcurrency.h>
+#include <aws/mediatailor/model/AdsPersonalizationTimeouts.h>
 #include <aws/mediatailor/model/AvailSuppression.h>
 #include <aws/mediatailor/model/Bumper.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
@@ -537,6 +539,44 @@ class GetPlaybackConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The timeout settings for ad decision server interactions. These settings
+   * control how long MediaTailor waits for ADS responses and the total time budget
+   * for ad personalization across live, VOD, and prefetch workflows.</p>
+   */
+  inline const AdsPersonalizationTimeouts& GetAdsPersonalizationTimeouts() const { return m_adsPersonalizationTimeouts; }
+  template <typename AdsPersonalizationTimeoutsT = AdsPersonalizationTimeouts>
+  void SetAdsPersonalizationTimeouts(AdsPersonalizationTimeoutsT&& value) {
+    m_adsPersonalizationTimeoutsHasBeenSet = true;
+    m_adsPersonalizationTimeouts = std::forward<AdsPersonalizationTimeoutsT>(value);
+  }
+  template <typename AdsPersonalizationTimeoutsT = AdsPersonalizationTimeouts>
+  GetPlaybackConfigurationResult& WithAdsPersonalizationTimeouts(AdsPersonalizationTimeoutsT&& value) {
+    SetAdsPersonalizationTimeouts(std::forward<AdsPersonalizationTimeoutsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The concurrency settings for ad decision server interactions. These settings
+   * control how many simultaneous ADS requests MediaTailor makes per manifest
+   * request.</p>
+   */
+  inline const AdsPersonalizationConcurrency& GetAdsPersonalizationConcurrency() const { return m_adsPersonalizationConcurrency; }
+  template <typename AdsPersonalizationConcurrencyT = AdsPersonalizationConcurrency>
+  void SetAdsPersonalizationConcurrency(AdsPersonalizationConcurrencyT&& value) {
+    m_adsPersonalizationConcurrencyHasBeenSet = true;
+    m_adsPersonalizationConcurrency = std::forward<AdsPersonalizationConcurrencyT>(value);
+  }
+  template <typename AdsPersonalizationConcurrencyT = AdsPersonalizationConcurrency>
+  GetPlaybackConfigurationResult& WithAdsPersonalizationConcurrency(AdsPersonalizationConcurrencyT&& value) {
+    SetAdsPersonalizationConcurrency(std::forward<AdsPersonalizationConcurrencyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -603,6 +643,10 @@ class GetPlaybackConfigurationResult {
 
   Aws::Map<EventName, Aws::String> m_functionMapping;
 
+  AdsPersonalizationTimeouts m_adsPersonalizationTimeouts;
+
+  AdsPersonalizationConcurrency m_adsPersonalizationConcurrency;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_adDecisionServerUrlHasBeenSet = false;
@@ -630,6 +674,8 @@ class GetPlaybackConfigurationResult {
   bool m_adConditioningConfigurationHasBeenSet = false;
   bool m_adDecisionServerConfigurationHasBeenSet = false;
   bool m_functionMappingHasBeenSet = false;
+  bool m_adsPersonalizationTimeoutsHasBeenSet = false;
+  bool m_adsPersonalizationConcurrencyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

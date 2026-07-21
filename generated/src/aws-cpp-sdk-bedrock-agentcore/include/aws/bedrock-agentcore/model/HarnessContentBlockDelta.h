@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/HarnessReasoningContentBlockDelta.h>
 #include <aws/bedrock-agentcore/model/HarnessToolResultBlockDelta.h>
+#include <aws/bedrock-agentcore/model/HarnessToolResultMetadataBlockDelta.h>
 #include <aws/bedrock-agentcore/model/HarnessToolUseBlockDelta.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -112,6 +113,24 @@ class HarnessContentBlockDelta {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A tool result metadata delta.</p>
+   */
+  inline const HarnessToolResultMetadataBlockDelta& GetToolResultMetadata() const { return m_toolResultMetadata; }
+  inline bool ToolResultMetadataHasBeenSet() const { return m_toolResultMetadataHasBeenSet; }
+  template <typename ToolResultMetadataT = HarnessToolResultMetadataBlockDelta>
+  void SetToolResultMetadata(ToolResultMetadataT&& value) {
+    m_toolResultMetadataHasBeenSet = true;
+    m_toolResultMetadata = std::forward<ToolResultMetadataT>(value);
+  }
+  template <typename ToolResultMetadataT = HarnessToolResultMetadataBlockDelta>
+  HarnessContentBlockDelta& WithToolResultMetadata(ToolResultMetadataT&& value) {
+    SetToolResultMetadata(std::forward<ToolResultMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_text;
 
@@ -120,10 +139,13 @@ class HarnessContentBlockDelta {
   Aws::Vector<HarnessToolResultBlockDelta> m_toolResult;
 
   HarnessReasoningContentBlockDelta m_reasoningContent;
+
+  HarnessToolResultMetadataBlockDelta m_toolResultMetadata;
   bool m_textHasBeenSet = false;
   bool m_toolUseHasBeenSet = false;
   bool m_toolResultHasBeenSet = false;
   bool m_reasoningContentHasBeenSet = false;
+  bool m_toolResultMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

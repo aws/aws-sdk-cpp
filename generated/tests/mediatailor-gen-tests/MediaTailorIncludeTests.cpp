@@ -25,6 +25,8 @@
 #include <aws/mediatailor/model/AdsInteractionExcludeEventType.h>
 #include <aws/mediatailor/model/AdsInteractionLog.h>
 #include <aws/mediatailor/model/AdsInteractionPublishOptInEventType.h>
+#include <aws/mediatailor/model/AdsPersonalizationConcurrency.h>
+#include <aws/mediatailor/model/AdsPersonalizationTimeouts.h>
 #include <aws/mediatailor/model/Alert.h>
 #include <aws/mediatailor/model/AlertCategory.h>
 #include <aws/mediatailor/model/AlternateMedia.h>

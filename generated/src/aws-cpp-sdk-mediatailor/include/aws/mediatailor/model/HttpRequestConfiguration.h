@@ -23,7 +23,11 @@ namespace MediaTailor {
 namespace Model {
 
 /**
- * <p>-- Function Configuration DataStructure</p><p><h3>See Also:</h3>   <a
+ * <p>The configuration for an <code>HTTP_REQUEST</code> function. Specifies the
+ * HTTP method, URL, headers, body, timeout, and output expressions for the
+ * request. For more information, see <a
+ * href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-types-http-request.html">HTTP_REQUEST</a>
+ * in the <i>MediaTailor User Guide</i>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/HttpRequestConfiguration">AWS
  * API Reference</a></p>
  */

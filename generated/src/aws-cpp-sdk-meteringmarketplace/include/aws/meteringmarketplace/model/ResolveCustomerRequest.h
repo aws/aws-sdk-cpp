@@ -40,7 +40,10 @@ class ResolveCustomerRequest : public MarketplaceMeteringRequest {
    * submits a registration token through the browser. The registration token is
    * resolved to obtain a <code>CustomerIdentifier</code> along with the
    * <code>CustomerAWSAccountId</code>, <code>ProductCode</code>, and
-   * <code>LicenseArn</code>.</p>
+   * <code>LicenseArn</code>.</p>  <p>For new SaaS product integrations, the
+   * <code>CustomerIdentifier</code> field is not populated. Use
+   * <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> for customer
+   * identification.</p>
    */
   inline const Aws::String& GetRegistrationToken() const { return m_registrationToken; }
   inline bool RegistrationTokenHasBeenSet() const { return m_registrationTokenHasBeenSet; }
