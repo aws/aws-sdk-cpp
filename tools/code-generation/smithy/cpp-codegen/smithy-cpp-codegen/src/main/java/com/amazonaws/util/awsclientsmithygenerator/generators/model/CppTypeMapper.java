@@ -109,6 +109,17 @@ public final class CppTypeMapper {
     }
 
     /**
+     * Returns true if the shape maps to a C++ primitive type (int, long long, bool, double).
+     *
+     * @param shape the shape to check
+     * @return true if the shape is a primitive type
+     */
+    public static boolean isPrimitive(Shape shape) {
+        return shape.isIntegerShape() || shape.isLongShape()
+            || shape.isBooleanShape() || shape.isDoubleShape() || shape.isFloatShape();
+    }
+
+    /**
      * Returns true if the shape type requires a "has been set" tracking flag.
      *
      * <p>Primitive types (int, long, bool, double, float) have meaningful default

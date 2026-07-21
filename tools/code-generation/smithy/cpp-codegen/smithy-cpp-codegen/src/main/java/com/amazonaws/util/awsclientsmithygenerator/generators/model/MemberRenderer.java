@@ -4,6 +4,8 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
+import static com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper.isPrimitive;
+
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ListShape;
@@ -310,11 +312,6 @@ public final class MemberRenderer {
         }
     }
 
-    private static boolean isPrimitive(Shape shape) {
-        return shape.isIntegerShape() || shape.isLongShape()
-            || shape.isBooleanShape() || shape.isDoubleShape() || shape.isFloatShape();
-    }
-
     private static String decapitalize(String name) {
         if (name.isEmpty()) return name;
         return Character.toLowerCase(name.charAt(0)) + name.substring(1);
@@ -324,7 +321,7 @@ public final class MemberRenderer {
         "<note>", "</note>", "<important>", "</important>"
     };
 
-    static void writeDocComment(CppWriter writer, String doc) {
+    public static void writeDocComment(CppWriter writer, String doc) {
         writer.write("/**");
         String formatted = formatDocumentation(doc);
         for (String line : formatted.split("\n")) {
@@ -333,7 +330,7 @@ public final class MemberRenderer {
         writer.write(" */");
     }
 
-    static String collapseWhitespace(String text) {
+    public static String collapseWhitespace(String text) {
         if (text == null) {
             return null;
         }
