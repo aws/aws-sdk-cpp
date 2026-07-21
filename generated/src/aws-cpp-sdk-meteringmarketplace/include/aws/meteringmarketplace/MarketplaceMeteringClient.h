@@ -149,8 +149,9 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client
    * account. Starting June 1, 2026, new SaaS products must use
    * <code>CustomerAWSAccountId</code> (instead of <code>CustomerIdentifier</code>),
    * <code>LicenseArn</code> (instead of <code>ProductCode</code>) to support this
-   * feature. Existing integrations will continue to work. Review the new integration
-   * for Concurrent Agreements <a
+   * feature. <code>BatchMeterUsage</code> does not support
+   * <code>CustomerIdentifier</code> for new integrations. Existing integrations
+   * continue to work. Review the new integration for Concurrent Agreements <a
    * href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.</p>
    *  <p>To post metering records for customers, SaaS applications call
    * <code>BatchMeterUsage</code>, which is used for metering SaaS flexible
@@ -159,12 +160,12 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client
    * request is for only one product. If you want to meter usage for multiple
    * products, you must make multiple <code>BatchMeterUsage</code> calls.</p>
    * <p>Usage records should be submitted in quick succession following a recorded
-   * event. Usage records aren't accepted 24 hours or more after an event.</p>
-   * <p>At the end of each billing cycle, a 6-hour grace period applies. We accept
-   * usage records for the previous billing month until 06:00 UTC on the first day of
-   * the next month. For example, you must submit March usage records before 06:00
-   * UTC on April 1. After this grace period, we return a
-   * <code>TimestampOutOfBoundsException</code> error.</p>  <p>
+   * event. Usage records aren't accepted 24 hours or more after an event. At the end
+   * of each billing cycle, a 6-hour grace period applies. We accept usage records
+   * for the previous billing month until 06:00 UTC on the first day of the next
+   * month. For example, you must submit March usage records before 06:00 UTC on
+   * April 1. After this grace period, we return a
+   * <code>TimestampOutOfBoundsException</code> error.</p> <p>
    * <code>BatchMeterUsage</code> can process up to 25 <code>UsageRecords</code> at a
    * time, and each request must be less than 1 MB in size. Optionally, you can have
    * multiple usage allocations for usage data that's split into buckets according to
@@ -352,9 +353,14 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client
    * registration token is resolved through this API to obtain a
    * <code>CustomerIdentifier</code> along with the
    * <code>CustomerAWSAccountId</code>, <code>ProductCode</code>, and
-   * <code>LicenseArn</code>.</p>  <p>To successfully resolve the token, the
-   * API must be called from the account that was used to publish the SaaS
-   * application. For an example of using <code>ResolveCustomer</code>, see <a
+   * <code>LicenseArn</code>.</p>  <p>For new SaaS product integrations,
+   * the <code>CustomerIdentifier</code> field is not populated in the
+   * <code>ResolveCustomer</code> API response. New integrations must use
+   * <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> to identify
+   * customers. Existing integrations continue to work unchanged.</p>
+   *  <p>To successfully resolve the token, the API must be called from the
+   * account that was used to publish the SaaS application. For an example of using
+   * <code>ResolveCustomer</code>, see <a
    * href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-resolvecustomer-example">
    * ResolveCustomer code example</a> in the <i>Amazon Web Services Marketplace
    * Seller Guide</i>.</p>  <p>Permission is required for this operation. Your

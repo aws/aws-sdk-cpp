@@ -111,6 +111,46 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
 
   ///@{
   /**
+   * <p>The MCP method being invoked. For example, <code>tools/call</code>,
+   * <code>resources/read</code>, or <code>prompts/get</code>.</p>
+   */
+  inline const Aws::String& GetMcpMethod() const { return m_mcpMethod; }
+  inline bool McpMethodHasBeenSet() const { return m_mcpMethodHasBeenSet; }
+  template <typename McpMethodT = Aws::String>
+  void SetMcpMethod(McpMethodT&& value) {
+    m_mcpMethodHasBeenSet = true;
+    m_mcpMethod = std::forward<McpMethodT>(value);
+  }
+  template <typename McpMethodT = Aws::String>
+  InvokeAgentRuntimeRequest& WithMcpMethod(McpMethodT&& value) {
+    SetMcpMethod(std::forward<McpMethodT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the MCP resource, tool, or prompt being accessed. The value
+   * depends on the method:</p> <ul> <li> <p> <code>tools/call</code> – The tool
+   * name.</p> </li> <li> <p> <code>resources/read</code> – The resource URI.</p>
+   * </li> <li> <p> <code>prompts/get</code> – The prompt name.</p> </li> </ul>
+   */
+  inline const Aws::String& GetMcpName() const { return m_mcpName; }
+  inline bool McpNameHasBeenSet() const { return m_mcpNameHasBeenSet; }
+  template <typename McpNameT = Aws::String>
+  void SetMcpName(McpNameT&& value) {
+    m_mcpNameHasBeenSet = true;
+    m_mcpName = std::forward<McpNameT>(value);
+  }
+  template <typename McpNameT = Aws::String>
+  InvokeAgentRuntimeRequest& WithMcpName(McpNameT&& value) {
+    SetMcpName(std::forward<McpNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier of the runtime user.</p>
    */
   inline const Aws::String& GetRuntimeUserId() const { return m_runtimeUserId; }
@@ -267,6 +307,10 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
 
   Aws::String m_mcpProtocolVersion;
 
+  Aws::String m_mcpMethod;
+
+  Aws::String m_mcpName;
+
   Aws::String m_runtimeUserId;
 
   Aws::String m_traceId;
@@ -287,6 +331,8 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
   bool m_mcpSessionIdHasBeenSet = false;
   bool m_runtimeSessionIdHasBeenSet = true;
   bool m_mcpProtocolVersionHasBeenSet = false;
+  bool m_mcpMethodHasBeenSet = false;
+  bool m_mcpNameHasBeenSet = false;
   bool m_runtimeUserIdHasBeenSet = false;
   bool m_traceIdHasBeenSet = false;
   bool m_traceParentHasBeenSet = false;

@@ -103,5 +103,13 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const {
     payload.WithObject("FunctionMapping", std::move(functionMappingJsonMap));
   }
 
+  if (m_adsPersonalizationTimeoutsHasBeenSet) {
+    payload.WithObject("AdsPersonalizationTimeouts", m_adsPersonalizationTimeouts.Jsonize());
+  }
+
+  if (m_adsPersonalizationConcurrencyHasBeenSet) {
+    payload.WithObject("AdsPersonalizationConcurrency", m_adsPersonalizationConcurrency.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

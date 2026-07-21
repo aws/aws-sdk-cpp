@@ -146,6 +146,80 @@ class InvokeHarnessRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
+   * <p>W3C trace context parent header containing version, trace ID, parent span ID,
+   * and trace flags.</p>
+   */
+  inline const Aws::String& GetTraceParent() const { return m_traceParent; }
+  inline bool TraceParentHasBeenSet() const { return m_traceParentHasBeenSet; }
+  template <typename TraceParentT = Aws::String>
+  void SetTraceParent(TraceParentT&& value) {
+    m_traceParentHasBeenSet = true;
+    m_traceParent = std::forward<TraceParentT>(value);
+  }
+  template <typename TraceParentT = Aws::String>
+  InvokeHarnessRequest& WithTraceParent(TraceParentT&& value) {
+    SetTraceParent(std::forward<TraceParentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>W3C trace context state header for vendor-specific trace information.</p>
+   */
+  inline const Aws::String& GetTraceState() const { return m_traceState; }
+  inline bool TraceStateHasBeenSet() const { return m_traceStateHasBeenSet; }
+  template <typename TraceStateT = Aws::String>
+  void SetTraceState(TraceStateT&& value) {
+    m_traceStateHasBeenSet = true;
+    m_traceState = std::forward<TraceStateT>(value);
+  }
+  template <typename TraceStateT = Aws::String>
+  InvokeHarnessRequest& WithTraceState(TraceStateT&& value) {
+    SetTraceState(std::forward<TraceStateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Trace ID for maintaining observability through the operation.</p>
+   */
+  inline const Aws::String& GetTraceId() const { return m_traceId; }
+  inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
+  template <typename TraceIdT = Aws::String>
+  void SetTraceId(TraceIdT&& value) {
+    m_traceIdHasBeenSet = true;
+    m_traceId = std::forward<TraceIdT>(value);
+  }
+  template <typename TraceIdT = Aws::String>
+  InvokeHarnessRequest& WithTraceId(TraceIdT&& value) {
+    SetTraceId(std::forward<TraceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>W3C Baggage header for user-defined context propagation. Format:
+   * key1=value1,key2=value2</p>
+   */
+  inline const Aws::String& GetBaggage() const { return m_baggage; }
+  inline bool BaggageHasBeenSet() const { return m_baggageHasBeenSet; }
+  template <typename BaggageT = Aws::String>
+  void SetBaggage(BaggageT&& value) {
+    m_baggageHasBeenSet = true;
+    m_baggage = std::forward<BaggageT>(value);
+  }
+  template <typename BaggageT = Aws::String>
+  InvokeHarnessRequest& WithBaggage(BaggageT&& value) {
+    SetBaggage(std::forward<BaggageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The messages to send to the agent.</p>
    */
   inline const Aws::Vector<HarnessMessage>& GetMessages() const { return m_messages; }
@@ -365,6 +439,14 @@ class InvokeHarnessRequest : public BedrockAgentCoreRequest {
 
   Aws::String m_runtimeUserId;
 
+  Aws::String m_traceParent;
+
+  Aws::String m_traceState;
+
+  Aws::String m_traceId;
+
+  Aws::String m_baggage;
+
   Aws::Vector<HarnessMessage> m_messages;
 
   HarnessModelConfiguration m_model;
@@ -391,6 +473,10 @@ class InvokeHarnessRequest : public BedrockAgentCoreRequest {
   bool m_qualifierHasBeenSet = false;
   bool m_runtimeSessionIdHasBeenSet = false;
   bool m_runtimeUserIdHasBeenSet = false;
+  bool m_traceParentHasBeenSet = false;
+  bool m_traceStateHasBeenSet = false;
+  bool m_traceIdHasBeenSet = false;
+  bool m_baggageHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
   bool m_modelHasBeenSet = false;
   bool m_systemPromptHasBeenSet = false;

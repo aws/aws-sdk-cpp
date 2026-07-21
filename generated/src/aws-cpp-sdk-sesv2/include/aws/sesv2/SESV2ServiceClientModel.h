@@ -113,6 +113,7 @@
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesResult.h>
 #include <aws/sesv2/model/PutAccountDetailsResult.h>
+#include <aws/sesv2/model/PutAccountPricingAttributesResult.h>
 #include <aws/sesv2/model/PutAccountSendingAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountSendingAttributesResult.h>
 #include <aws/sesv2/model/PutAccountSuppressionAttributesRequest.h>
@@ -259,6 +260,7 @@ class ListTenantResourcesRequest;
 class ListTenantsRequest;
 class PutAccountDedicatedIpWarmupAttributesRequest;
 class PutAccountDetailsRequest;
+class PutAccountPricingAttributesRequest;
 class PutAccountSendingAttributesRequest;
 class PutAccountSuppressionAttributesRequest;
 class PutAccountVdmAttributesRequest;
@@ -373,6 +375,7 @@ typedef Aws::Utils::Outcome<ListTenantResourcesResult, SESV2Error> ListTenantRes
 typedef Aws::Utils::Outcome<ListTenantsResult, SESV2Error> ListTenantsOutcome;
 typedef Aws::Utils::Outcome<PutAccountDedicatedIpWarmupAttributesResult, SESV2Error> PutAccountDedicatedIpWarmupAttributesOutcome;
 typedef Aws::Utils::Outcome<PutAccountDetailsResult, SESV2Error> PutAccountDetailsOutcome;
+typedef Aws::Utils::Outcome<PutAccountPricingAttributesResult, SESV2Error> PutAccountPricingAttributesOutcome;
 typedef Aws::Utils::Outcome<PutAccountSendingAttributesResult, SESV2Error> PutAccountSendingAttributesOutcome;
 typedef Aws::Utils::Outcome<PutAccountSuppressionAttributesResult, SESV2Error> PutAccountSuppressionAttributesOutcome;
 typedef Aws::Utils::Outcome<PutAccountVdmAttributesResult, SESV2Error> PutAccountVdmAttributesOutcome;
@@ -488,6 +491,7 @@ typedef std::future<ListTenantResourcesOutcome> ListTenantResourcesOutcomeCallab
 typedef std::future<ListTenantsOutcome> ListTenantsOutcomeCallable;
 typedef std::future<PutAccountDedicatedIpWarmupAttributesOutcome> PutAccountDedicatedIpWarmupAttributesOutcomeCallable;
 typedef std::future<PutAccountDetailsOutcome> PutAccountDetailsOutcomeCallable;
+typedef std::future<PutAccountPricingAttributesOutcome> PutAccountPricingAttributesOutcomeCallable;
 typedef std::future<PutAccountSendingAttributesOutcome> PutAccountSendingAttributesOutcomeCallable;
 typedef std::future<PutAccountSuppressionAttributesOutcome> PutAccountSuppressionAttributesOutcomeCallable;
 typedef std::future<PutAccountVdmAttributesOutcome> PutAccountVdmAttributesOutcomeCallable;
@@ -772,6 +776,9 @@ typedef std::function<void(const SESV2Client*, const Model::PutAccountDedicatedI
 typedef std::function<void(const SESV2Client*, const Model::PutAccountDetailsRequest&, const Model::PutAccountDetailsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutAccountDetailsResponseReceivedHandler;
+typedef std::function<void(const SESV2Client*, const Model::PutAccountPricingAttributesRequest&,
+                           const Model::PutAccountPricingAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutAccountPricingAttributesResponseReceivedHandler;
 typedef std::function<void(const SESV2Client*, const Model::PutAccountSendingAttributesRequest&,
                            const Model::PutAccountSendingAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutAccountSendingAttributesResponseReceivedHandler;

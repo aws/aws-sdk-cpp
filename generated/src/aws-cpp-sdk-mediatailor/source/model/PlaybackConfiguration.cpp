@@ -132,6 +132,14 @@ PlaybackConfiguration& PlaybackConfiguration::operator=(JsonView jsonValue) {
     }
     m_functionMappingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AdsPersonalizationTimeouts")) {
+    m_adsPersonalizationTimeouts = jsonValue.GetObject("AdsPersonalizationTimeouts");
+    m_adsPersonalizationTimeoutsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AdsPersonalizationConcurrency")) {
+    m_adsPersonalizationConcurrency = jsonValue.GetObject("AdsPersonalizationConcurrency");
+    m_adsPersonalizationConcurrencyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -252,6 +260,14 @@ JsonValue PlaybackConfiguration::Jsonize() const {
       functionMappingJsonMap.WithString(EventNameMapper::GetNameForEventName(functionMappingItem.first), functionMappingItem.second);
     }
     payload.WithObject("FunctionMapping", std::move(functionMappingJsonMap));
+  }
+
+  if (m_adsPersonalizationTimeoutsHasBeenSet) {
+    payload.WithObject("AdsPersonalizationTimeouts", m_adsPersonalizationTimeouts.Jsonize());
+  }
+
+  if (m_adsPersonalizationConcurrencyHasBeenSet) {
+    payload.WithObject("AdsPersonalizationConcurrency", m_adsPersonalizationConcurrency.Jsonize());
   }
 
   return payload;

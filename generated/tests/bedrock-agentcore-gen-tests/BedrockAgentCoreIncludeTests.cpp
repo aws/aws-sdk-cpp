@@ -227,6 +227,7 @@
 #include <aws/bedrock-agentcore/model/HarnessToolResultBlockDelta.h>
 #include <aws/bedrock-agentcore/model/HarnessToolResultBlockStart.h>
 #include <aws/bedrock-agentcore/model/HarnessToolResultContentBlock.h>
+#include <aws/bedrock-agentcore/model/HarnessToolResultMetadataBlockDelta.h>
 #include <aws/bedrock-agentcore/model/HarnessToolType.h>
 #include <aws/bedrock-agentcore/model/HarnessToolUseBlock.h>
 #include <aws/bedrock-agentcore/model/HarnessToolUseBlockDelta.h>

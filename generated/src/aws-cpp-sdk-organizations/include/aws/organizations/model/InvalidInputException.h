@@ -50,7 +50,9 @@ namespace Model {
  * parameter from the response to a previous call of the operation.</p> </li> <li>
  * <p>INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account,
  * organization, or email) as a party.</p> </li> <li> <p>INVALID_PATTERN: You
- * provided a value that doesn't match the required pattern.</p> </li> <li>
+ * provided a value that doesn't match the required pattern. The service also
+ * validates your free-text field values against common cross-site scripting (XSS)
+ * patterns and rejects requests that contain matching values.</p> </li> <li>
  * <p>INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't
  * match the required pattern.</p> </li> <li> <p>INVALID_PRINCIPAL: You specified
  * an invalid principal element in the policy.</p> </li> <li> <p>INVALID_ROLE_NAME:

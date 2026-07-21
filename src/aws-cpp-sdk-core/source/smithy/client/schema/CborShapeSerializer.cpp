@@ -38,7 +38,7 @@ class CborShapeSerializer::Impl {
 
   void WriteInteger(const Schema& schema, int value) {
     WriteFieldName(schema);
-    WriteIntValue(static_cast<int64_t>(value));
+    WriteIntValue(value);
   }
 
   void WriteLong(const Schema& schema, int64_t value) {
@@ -64,7 +64,7 @@ class CborShapeSerializer::Impl {
   void WriteTimestamp(const Schema& schema, const DateTime& value) {
     WriteFieldName(schema);
     m_encoder.WriteTag(1);
-    WriteIntValue(static_cast<int64_t>(value.Seconds()));
+    WriteIntValue(value.Seconds());
   }
 
   void WriteBlob(const Schema& schema, const ByteBuffer& value) {

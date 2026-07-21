@@ -18,6 +18,7 @@ namespace ServiceTypeMapper {
 static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
 static const int QBUSINESS_HASH = HashingUtils::HashString("QBUSINESS");
 static const int ATHENA_HASH = HashingUtils::HashString("ATHENA");
+static const int GLUE_DATA_CATALOG_HASH = HashingUtils::HashString("GLUE_DATA_CATALOG");
 
 ServiceType GetServiceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ServiceType GetServiceTypeForName(const Aws::String& name) {
     return ServiceType::QBUSINESS;
   } else if (hashCode == ATHENA_HASH) {
     return ServiceType::ATHENA;
+  } else if (hashCode == GLUE_DATA_CATALOG_HASH) {
+    return ServiceType::GLUE_DATA_CATALOG;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForServiceType(ServiceType enumValue) {
       return "QBUSINESS";
     case ServiceType::ATHENA:
       return "ATHENA";
+    case ServiceType::GLUE_DATA_CATALOG:
+      return "GLUE_DATA_CATALOG";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

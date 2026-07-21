@@ -22,6 +22,10 @@ ConnectorSource& ConnectorSource::operator=(JsonView jsonValue) {
     m_connectorId = jsonValue.GetString("connectorId");
     m_connectorIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("version")) {
+    m_version = jsonValue.GetString("version");
+    m_versionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ConnectorSource::Jsonize() const {
 
   if (m_connectorIdHasBeenSet) {
     payload.WithString("connectorId", m_connectorId);
+  }
+
+  if (m_versionHasBeenSet) {
+    payload.WithString("version", m_version);
   }
 
   return payload;

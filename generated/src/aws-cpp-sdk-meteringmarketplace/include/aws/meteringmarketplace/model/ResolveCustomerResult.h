@@ -38,7 +38,9 @@ class ResolveCustomerResult {
   ///@{
   /**
    * <p>The <code>CustomerIdentifier</code> is used to identify an individual
-   * customer in your application.</p>
+   * customer in your application.</p>  <p>For new SaaS product
+   * integrations, this field is not populated. Use <code>CustomerAWSAccountId</code>
+   * and <code>LicenseArn</code> to identify customers instead.</p>
    */
   inline const Aws::String& GetCustomerIdentifier() const { return m_customerIdentifier; }
   template <typename CustomerIdentifierT = Aws::String>
