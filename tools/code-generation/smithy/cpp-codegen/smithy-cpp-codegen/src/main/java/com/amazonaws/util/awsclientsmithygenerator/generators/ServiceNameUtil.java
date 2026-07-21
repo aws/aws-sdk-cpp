@@ -132,7 +132,7 @@ public final class ServiceNameUtil {
     }
     
     // Match C2jModelToGeneratorModelTransformer.sanitizeServiceAbbreviation() exactly
-    private static String sanitizeServiceAbbreviation(String serviceAbbreviation) {
+    public static String sanitizeServiceAbbreviation(String serviceAbbreviation) {
         return serviceAbbreviation.replace(" ", "").replace("-", "").replace("_", "").replace("Amazon", "").replace("AWS", "").replace("/", "");
     }
     

@@ -4,6 +4,7 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ModelTransform;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.shapes.ListShape;
@@ -115,5 +116,16 @@ public final class GlobalTransforms {
             });
         }
         return reachable;
+    }
+
+    /**
+     * Returns this class as a no-op ModelTransform.
+     *
+     * <p>GlobalTransforms currently operates at classification time (via computeReachableShapes),
+     * not at model-transform time. This factory exists to reserve a slot in the pipeline
+     * for future pre-generation model mutations (shape renaming, injection, etc.).
+     */
+    public static ModelTransform asTransform() {
+        return (model, service) -> model;
     }
 }

@@ -6,6 +6,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
 import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.build.SmithyBuildPlugin;
 import software.amazon.smithy.model.Model;
@@ -14,6 +15,7 @@ import software.amazon.smithy.model.node.ObjectNode;
 import software.amazon.smithy.model.shapes.ServiceShape;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -38,11 +40,20 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
         Map<String, String> serviceMap = parseMapSetting(settings, "c2jMap");
         Map<String, String> namespaceMap = parseNamespaceMap(settings);
 
+        // Build transform pipeline (service-level transforms will be registered here)
+        TransformPipeline pipeline = new TransformPipeline(List.of(
+            GlobalTransforms.asTransform()
+            // Future: S3Transforms.asTransform(), Ec2Transforms.asTransform(), etc.
+        ));
+
         CppWriterDelegator writerDelegator = new CppWriterDelegator(context.getFileManifest());
 
         for (ServiceShape service : model.getServiceShapes()) {
             ServiceShape processedService = ServiceNameUtil.processS3CrtProjection(
                 service, context.getProjectionName());
+
+            // Apply transforms for this service
+            Model transformedModel = pipeline.apply(model, processedService);
 
             String serviceName = ServiceNameUtil.getServiceName(processedService);
             String smithyServiceName = ServiceNameUtil.getSmithyServiceName(processedService, serviceMap);
@@ -52,7 +63,7 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
             String namespace = namespaceMap.getOrDefault(smithyServiceName, serviceName);
 
             ModelGenerator generator = new ModelGenerator(
-                model, processedService, writerDelegator,
+                transformedModel, processedService, writerDelegator,
                 serviceName, smithyServiceName, exportMacro, namespace);
             generator.generateAll();
         }
@@ -81,12 +92,8 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
             .map(node -> node.getMembers().entrySet().stream()
                 .collect(Collectors.toMap(
                     entry -> entry.getKey().getValue(),
-                    entry -> sanitize(entry.getValue().expectStringNode().getValue()))))
+                    entry -> ServiceNameUtil.sanitizeServiceAbbreviation(
+                        entry.getValue().expectStringNode().getValue()))))
             .orElse(Map.of());
-    }
-
-    private static String sanitize(String s) {
-        return s.replace(" ", "").replace("-", "").replace("_", "")
-            .replace("Amazon", "").replace("AWS", "").replace("/", "");
     }
 }
