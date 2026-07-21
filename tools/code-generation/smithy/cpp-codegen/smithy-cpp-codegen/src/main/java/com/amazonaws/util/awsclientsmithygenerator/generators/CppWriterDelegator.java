@@ -5,7 +5,6 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.build.FileManifest;
-import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -25,15 +24,9 @@ public class CppWriterDelegator {
     
     public void flushWriters() {
         writers.forEach((filename, writer) -> {
-            try {
-                Path outputPath = fileManifest.getBaseDir().resolve(filename);
-                java.nio.file.Files.createDirectories(outputPath.getParent());
-                // Add UTF-8 BOM to match C2J-generated file format
-                String content = "﻿" + writer.toString();
-                java.nio.file.Files.writeString(outputPath, content);
-            } catch (Exception e) {
-                throw new RuntimeException("Failed to write file: " + filename, e);
-            }
+            // Add UTF-8 BOM to match C2J-generated file format
+            String content = "﻿" + writer.toString();
+            fileManifest.writeFile(filename, content);
         });
     }
 }
