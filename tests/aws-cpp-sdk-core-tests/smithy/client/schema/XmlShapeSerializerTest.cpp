@@ -503,3 +503,25 @@ TEST_F(XmlShapeSerializerTest, FlattenedMap) {
   EXPECT_NE(payload.find("<tag><key>k1</key><value>v1</value></tag>"), Aws::String::npos);
   EXPECT_NE(payload.find("<tag><key>k2</key><value>v2</value></tag>"), Aws::String::npos);
 }
+
+TEST_F(XmlShapeSerializerTest, FloatValue) {
+  XmlShapeSerializer s;
+  Schema root("Root", ShapeType::Structure);
+  Schema member("temp", ShapeType::Float);
+  s.BeginStructure(root);
+  s.WriteFloat(member, 1.5f);
+  s.EndStructure();
+  auto payload = s.GetPayload().GetResult();
+  EXPECT_NE(payload.find("<temp>1.5</temp>"), Aws::String::npos);
+}
+
+TEST_F(XmlShapeSerializerTest, FloatNegativeValue) {
+  XmlShapeSerializer s;
+  Schema root("Root", ShapeType::Structure);
+  Schema member("val", ShapeType::Float);
+  s.BeginStructure(root);
+  s.WriteFloat(member, -2.25f);
+  s.EndStructure();
+  auto payload = s.GetPayload().GetResult();
+  EXPECT_NE(payload.find("<val>-2.25</val>"), Aws::String::npos);
+}

@@ -567,7 +567,7 @@ TEST_F(CborShapeSerializerTest, MapOfStrings) {
   expected += '\xBF';
   expected += '\x67';  // text "headers" length 7
   expected += "headers";
-  expected += '\xBF';  // inner indefinite map
+  expected += '\xA2';  // definite map of 2 entries
   expected += '\x63';  // text "foo" length 3
   expected += "foo";
   expected += '\x63';  // text "bar" length 3
@@ -576,7 +576,6 @@ TEST_F(CborShapeSerializerTest, MapOfStrings) {
   expected += "baz";
   expected += '\x63';  // text "qux"
   expected += "qux";
-  expected += '\xFF';  // inner map break
   expected += '\xFF';  // outer map break
   EXPECT_EQ(payload, expected);
 }
@@ -596,8 +595,7 @@ TEST_F(CborShapeSerializerTest, EmptyMap) {
   expected += '\xBF';
   expected += '\x64';  // text "tags" length 4
   expected += "tags";
-  expected += '\xBF';  // indefinite map (empty)
-  expected += '\xFF';  // break
+  expected += '\xA0';  // definite map of 0 entries
   expected += '\xFF';  // outer break
   EXPECT_EQ(payload, expected);
 }
@@ -623,15 +621,14 @@ TEST_F(CborShapeSerializerTest, MapOfStructures) {
   expected += '\xBF';
   expected += '\x65';  // "nodes"
   expected += "nodes";
-  expected += '\xBF';  // map start
+  expected += '\xA1';  // definite map of 1 entry
   expected += '\x61';  // key "a"
   expected += 'a';
-  expected += '\xBF';  // nested struct
+  expected += '\xBF';  // nested struct (indefinite)
   expected += '\x63';  // "val"
   expected += "val";
   expected += '\x01';  // integer 1
   expected += '\xFF';  // end nested struct
-  expected += '\xFF';  // end map
   expected += '\xFF';  // end outer map
   EXPECT_EQ(payload, expected);
 }
@@ -643,7 +640,7 @@ TEST_F(CborShapeSerializerTest, MaxDepthEnforcement) {
   Schema root;
   Schema nested("n", ShapeType::Structure);
   s.BeginStructure(root);
-  for (int i = 0; i < 500; i++) {
+  for (int i = 0; i < 1000; i++) {
     s.BeginNestedStructure(nested);
   }
   auto outcome = s.GetPayload();
@@ -724,11 +721,10 @@ TEST_F(CborShapeSerializerTest, StructureWithListAndMap) {
   expected += "t1";
   expected += '\x64';  // "meta"
   expected += "meta";
-  expected += '\xBF';  // map start
+  expected += '\xA1';  // definite map of 1 entry
   expected += '\x61';  // "k"
   expected += 'k';
   expected += '\x05';  // integer 5
-  expected += '\xFF';  // map end
   expected += '\xFF';  // outer end
   EXPECT_EQ(payload, expected);
 }
@@ -800,5 +796,331 @@ TEST_F(CborShapeSerializerTest, SparseList) {
   expected += '\x61';  // text "b"
   expected += 'b';
   expected += '\xFF';
+  EXPECT_EQ(payload, expected);
+}
+
+// --- Additional coverage ---
+
+TEST_F(CborShapeSerializerTest, IntegerFourByte) {
+  CborShapeSerializer s;
+  Schema root;
+  Schema member("n", ShapeType::Integer);
+  s.BeginStructure(root);
+  s.WriteInteger(member, 70000);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  const auto& payload = outcome.GetResult();
+  Aws::String expected;
+  expected += '\xBF';
+  expected += '\x61';  // "n"
+  expected += 'n';
+  expected += '\x1A';  // posint, four-byte follows
+  expected += '\x00';
+  expected += '\x01';
+  expected += '\x11';
+  expected += '\x70';  // 70000 = 0x00011170
+  expected += '\xFF';
+  EXPECT_EQ(payload, expected);
+}
+
+TEST_F(CborShapeSerializerTest, LongEightByte) {
+  CborShapeSerializer s;
+  Schema root;
+  Schema member("n", ShapeType::Long);
+  s.BeginStructure(root);
+  s.WriteLong(member, 5000000000LL);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  const auto& payload = outcome.GetResult();
+  Aws::String expected;
+  expected += '\xBF';
+  expected += '\x61';  // "n"
+  expected += 'n';
+  expected += '\x1B';  // posint, eight-byte follows
+  expected += '\x00';
+  expected += '\x00';
+  expected += '\x00';
+  expected += '\x01';
+  expected += '\x2A';
+  expected += '\x05';
+  expected += '\xF2';
+  expected += '\x00';  // 5000000000 = 0x000000012A05F200
+  expected += '\xFF';
+  EXPECT_EQ(payload, expected);
+}
+
+TEST_F(CborShapeSerializerTest, LargeNegativeInteger) {
+  CborShapeSerializer s;
+  Schema root;
+  Schema member("n", ShapeType::Long);
+  s.BeginStructure(root);
+  s.WriteLong(member, -1000000LL);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  const auto& payload = outcome.GetResult();
+  Aws::String expected;
+  expected += '\xBF';
+  expected += '\x61';  // "n"
+  expected += 'n';
+  expected += '\x3A';  // negint, four-byte follows
+  expected += '\x00';
+  expected += '\x0F';
+  expected += '\x42';
+  expected += '\x3F';  // -1000000 => negint encoding: -(n+1), so 999999 = 0x000F423F
+  expected += '\xFF';
+  EXPECT_EQ(payload, expected);
+}
+
+TEST_F(CborShapeSerializerTest, DoubleWholeNumberEncodedAsInt) {
+  // CRT encoder uses "smallest possible" — a double like 5.0 encodes as integer 5
+  CborShapeSerializer s;
+  Schema root;
+  Schema member("d", ShapeType::Double);
+  s.BeginStructure(root);
+  s.WriteDouble(member, 5.0);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  const auto& payload = outcome.GetResult();
+  // Expect integer encoding (0x05), not double encoding (0xFB + 8 bytes)
+  Aws::String expected;
+  expected += '\xBF';
+  expected += '\x61';  // "d"
+  expected += 'd';
+  expected += '\x05';  // integer 5 (smallest possible)
+  expected += '\xFF';
+  EXPECT_EQ(payload, expected);
+}
+
+TEST_F(CborShapeSerializerTest, DoubleNegativeWholeNumberEncodedAsNegInt) {
+  // CRT encoder: -3.0 encodes as negint 2 (meaning -(2+1) = -3)
+  CborShapeSerializer s;
+  Schema root;
+  Schema member("d", ShapeType::Double);
+  s.BeginStructure(root);
+  s.WriteDouble(member, -3.0);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  const auto& payload = outcome.GetResult();
+  Aws::String expected;
+  expected += '\xBF';
+  expected += '\x61';  // "d"
+  expected += 'd';
+  expected += '\x22';  // negint 2 => -3
+  expected += '\xFF';
+  EXPECT_EQ(payload, expected);
+}
+
+TEST_F(CborShapeSerializerTest, UnicodeString) {
+  CborShapeSerializer s;
+  Schema root;
+  Schema member("s", ShapeType::String);
+  s.BeginStructure(root);
+  s.WriteString(member, "\xC3\xA9\xC3\xA8");  // "éè" in UTF-8 (4 bytes)
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  const auto& payload = outcome.GetResult();
+  Aws::String expected;
+  expected += '\xBF';
+  expected += '\x61';  // "s"
+  expected += 's';
+  expected += '\x64';  // text length 4
+  expected += "\xC3\xA9\xC3\xA8";
+  expected += '\xFF';
+  EXPECT_EQ(payload, expected);
+}
+
+TEST_F(CborShapeSerializerTest, NestedListInList) {
+  CborShapeSerializer s;
+  Schema root;
+  Schema outerList("data", ShapeType::List);
+  Schema innerList("member", ShapeType::List);
+  Schema elem("member", ShapeType::Integer);
+  s.BeginStructure(root);
+  s.BeginList(outerList, 2);
+  s.BeginList(innerList, 2);
+  s.WriteInteger(elem, 1);
+  s.WriteInteger(elem, 2);
+  s.EndList();
+  s.BeginList(innerList, 1);
+  s.WriteInteger(elem, 3);
+  s.EndList();
+  s.EndList();
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  const auto& payload = outcome.GetResult();
+  Aws::String expected;
+  expected += '\xBF';
+  expected += '\x64';  // "data"
+  expected += "data";
+  expected += '\x82';  // outer array of 2
+  expected += '\x82';  // inner array of 2
+  expected += '\x01';  // 1
+  expected += '\x02';  // 2
+  expected += '\x81';  // inner array of 1
+  expected += '\x03';  // 3
+  expected += '\xFF';
+  EXPECT_EQ(payload, expected);
+}
+
+TEST_F(CborShapeSerializerTest, MapWithMultipleEntries) {
+  CborShapeSerializer s;
+  Schema root;
+  Schema mapMember("m", ShapeType::Map);
+  Schema valSchema("value", ShapeType::Integer);
+  s.BeginStructure(root);
+  s.BeginMap(mapMember, 3);
+  s.WriteMapKey("x");
+  s.WriteInteger(valSchema, 1);
+  s.WriteMapKey("y");
+  s.WriteInteger(valSchema, 2);
+  s.WriteMapKey("z");
+  s.WriteInteger(valSchema, 3);
+  s.EndMap();
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  const auto& payload = outcome.GetResult();
+  Aws::String expected;
+  expected += '\xBF';
+  expected += '\x61';  // "m"
+  expected += 'm';
+  expected += '\xA3';  // definite map of 3
+  expected += '\x61';  // "x"
+  expected += 'x';
+  expected += '\x01';  // 1
+  expected += '\x61';  // "y"
+  expected += 'y';
+  expected += '\x02';  // 2
+  expected += '\x61';  // "z"
+  expected += 'z';
+  expected += '\x03';  // 3
+  expected += '\xFF';
+  EXPECT_EQ(payload, expected);
+}
+
+TEST_F(CborShapeSerializerTest, FloatValue) {
+  CborShapeSerializer s;
+  Schema root;
+  Schema member("f", ShapeType::Float);
+  s.BeginStructure(root);
+  s.WriteFloat(member, 1.5f);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  const auto& payload = outcome.GetResult();
+  // 1.5 can be represented exactly as float32, CRT encodes as single float (0xFA)
+  Aws::String expected;
+  expected += '\xBF';
+  expected += '\x61';  // "f"
+  expected += 'f';
+  expected += '\xFA';  // single-precision float marker
+  expected += '\x3F';  // 1.5f IEEE 754: 0x3FC00000
+  expected += '\xC0';
+  expected += '\x00';
+  expected += '\x00';
+  expected += '\xFF';
+  EXPECT_EQ(payload, expected);
+}
+
+TEST_F(CborShapeSerializerTest, FloatWholeNumberEncodedAsInt) {
+  // CRT "smallest possible": 7.0f encodes as integer 7
+  CborShapeSerializer s;
+  Schema root;
+  Schema member("f", ShapeType::Float);
+  s.BeginStructure(root);
+  s.WriteFloat(member, 7.0f);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  const auto& payload = outcome.GetResult();
+  Aws::String expected;
+  expected += '\xBF';
+  expected += '\x61';  // "f"
+  expected += 'f';
+  expected += '\x07';  // integer 7
+  expected += '\xFF';
+  EXPECT_EQ(payload, expected);
+}
+
+TEST_F(CborShapeSerializerTest, TimestampEpochZero) {
+  CborShapeSerializer s;
+  Schema root;
+  Schema member("ts", ShapeType::Timestamp);
+  s.BeginStructure(root);
+  Aws::Utils::DateTime dt(0.0);
+  s.WriteTimestamp(member, dt);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  const auto& payload = outcome.GetResult();
+  // Tag 1 + integer 0
+  Aws::String expected;
+  expected += '\xBF';
+  expected += '\x62';  // "ts"
+  expected += "ts";
+  expected += '\xC1';  // tag 1
+  expected += '\x00';  // integer 0
+  expected += '\xFF';
+  EXPECT_EQ(payload, expected);
+}
+
+TEST_F(CborShapeSerializerTest, LargeBlob) {
+  CborShapeSerializer s;
+  Schema root;
+  Schema member("b", ShapeType::Blob);
+  s.BeginStructure(root);
+  Aws::Utils::ByteBuffer blob(300);
+  for (size_t i = 0; i < 300; i++) {
+    blob[i] = static_cast<unsigned char>(i % 256);
+  }
+  s.WriteBlob(member, blob);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  const auto& payload = outcome.GetResult();
+  // Verify: BF + key "b" + bytestring header (two-byte length for 300) + 300 bytes + FF
+  ASSERT_GE(payload.size(), 306u);
+  EXPECT_EQ(static_cast<unsigned char>(payload[0]), 0xBF);
+  EXPECT_EQ(static_cast<unsigned char>(payload[1]), 0x61);  // text len 1
+  EXPECT_EQ(payload[2], 'b');
+  EXPECT_EQ(static_cast<unsigned char>(payload[3]), 0x59);  // bytestring, two-byte length
+  EXPECT_EQ(static_cast<unsigned char>(payload[4]), 0x01);  // 300 = 0x012C
+  EXPECT_EQ(static_cast<unsigned char>(payload[5]), 0x2C);
+  EXPECT_EQ(static_cast<unsigned char>(payload[payload.size() - 1]), 0xFF);
+  EXPECT_EQ(payload.size(), 3 + 3 + 300 + 1u);  // key + header + blob + break
+}
+
+TEST_F(CborShapeSerializerTest, UnionAsStructure) {
+  // Unions serialize like a structure with exactly one field
+  CborShapeSerializer s;
+  Schema root;
+  Schema unionMember("result", ShapeType::Union);
+  Schema field("message", ShapeType::String);
+  s.BeginStructure(root);
+  s.BeginNestedStructure(unionMember);
+  s.WriteString(field, "ok");
+  s.EndNestedStructure();
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  const auto& payload = outcome.GetResult();
+  Aws::String expected;
+  expected += '\xBF';
+  expected += '\x66';  // "result"
+  expected += "result";
+  expected += '\xBF';  // nested indefinite map (union)
+  expected += '\x67';  // "message"
+  expected += "message";
+  expected += '\x62';  // "ok"
+  expected += "ok";
+  expected += '\xFF';  // end union
+  expected += '\xFF';  // end outer
   EXPECT_EQ(payload, expected);
 }
