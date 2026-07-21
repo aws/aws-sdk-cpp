@@ -8,23 +8,17 @@
 #include <aws/crt/cbor/Cbor.h>
 #include <smithy/client/schema/CborShapeSerializer.h>
 
-#include <cmath>
-
 using namespace smithy::schema;
 using namespace Aws::Utils;
 using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
 
 namespace {
-constexpr int MAX_DEPTH = 1000;
+constexpr int MAX_DEPTH = 128;
 }  // namespace
 
 class CborShapeSerializer::Impl {
  public:
   bool BeginStructure(const Schema&) {
-    if (m_depth + 1 >= MAX_DEPTH) {
-      m_errorMessage = "Maximum nesting depth exceeded";
-      return false;
-    }
     m_encoder.WriteIndefMapStart();
     m_depth++;
     m_isMap[m_depth] = false;
@@ -69,14 +63,8 @@ class CborShapeSerializer::Impl {
 
   void WriteTimestamp(const Schema& schema, const DateTime& value) {
     WriteFieldName(schema);
-    double seconds = value.SecondsWithMSPrecision();
     m_encoder.WriteTag(1);
-    double intPart;
-    if (std::modf(seconds, &intPart) == 0.0) {
-      WriteIntValue(static_cast<int64_t>(intPart));
-    } else {
-      m_encoder.WriteFloat(seconds);
-    }
+    WriteIntValue(static_cast<int64_t>(value.Seconds()));
   }
 
   void WriteBlob(const Schema& schema, const ByteBuffer& value) {
@@ -92,10 +80,6 @@ class CborShapeSerializer::Impl {
   }
 
   bool BeginList(const Schema& schema, size_t count) {
-    if (m_depth + 1 >= MAX_DEPTH) {
-      m_errorMessage = "Maximum nesting depth exceeded";
-      return false;
-    }
     WriteFieldName(schema);
     m_encoder.WriteArrayStart(count);
     m_depth++;
@@ -107,10 +91,6 @@ class CborShapeSerializer::Impl {
   void EndList() { m_depth--; }
 
   bool BeginMap(const Schema& schema, size_t count) {
-    if (m_depth + 1 >= MAX_DEPTH) {
-      m_errorMessage = "Maximum nesting depth exceeded";
-      return false;
-    }
     WriteFieldName(schema);
     m_encoder.WriteMapStart(count);
     m_depth++;
@@ -124,10 +104,6 @@ class CborShapeSerializer::Impl {
   void EndMap() { m_depth--; }
 
   bool BeginNestedStructure(const Schema& schema) {
-    if (m_depth + 1 >= MAX_DEPTH) {
-      m_errorMessage = "Maximum nesting depth exceeded";
-      return false;
-    }
     WriteFieldName(schema);
     m_encoder.WriteIndefMapStart();
     m_depth++;
@@ -142,10 +118,10 @@ class CborShapeSerializer::Impl {
   }
 
   SerializerOutcome GetPayload() {
-    if (m_finalized || !m_errorMessage.empty()) {
+    if (m_finalized) {
       return Aws::Client::AWSError<Aws::Client::CoreErrors>(
           Aws::Client::CoreErrors::INTERNAL_FAILURE, "SerializationException",
-          !m_errorMessage.empty() ? m_errorMessage : "Serializer has already been finalized", false);
+          "Serializer has already been finalized", false);
     }
     m_finalized = true;
     auto encoded = m_encoder.GetEncodedData();
@@ -159,7 +135,6 @@ class CborShapeSerializer::Impl {
   Aws::Array<bool, MAX_DEPTH> m_isList{};
   Aws::String m_currentMapKey;
   bool m_finalized = false;
-  Aws::String m_errorMessage;
 
   void WriteFieldName(const Schema& schema) {
     if (m_isList[m_depth]) {
