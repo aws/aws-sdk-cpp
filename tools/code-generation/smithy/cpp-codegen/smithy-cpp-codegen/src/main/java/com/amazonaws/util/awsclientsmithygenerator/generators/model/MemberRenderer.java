@@ -50,108 +50,7 @@ public final class MemberRenderer {
      */
     public static void renderPublicSection(CppWriter writer, StructureShape shape,
                                            Model model, String exportMacro, String className) {
-        java.util.List<Map.Entry<String, MemberShape>> members =
-            new java.util.ArrayList<>(shape.getAllMembers().entrySet());
-        for (int i = 0; i < members.size(); i++) {
-            Map.Entry<String, MemberShape> entry = members.get(i);
-            String memberName = entry.getKey();
-            MemberShape member = entry.getValue();
-            Shape targetShape = model.expectShape(member.getTarget());
-            String cppType = CppTypeMapper.getCppType(targetShape, model);
-            String fieldName = "m_" + decapitalize(memberName);
-            String templateParam = memberName + "T";
-
-            writer.write("///@{");
-
-            // Documentation comment
-            if (member.getTrait(DocumentationTrait.class).isPresent()) {
-                writeDocComment(writer, collapseWhitespace(member.getTrait(DocumentationTrait.class).get().getValue()));
-            } else {
-                writer.write("");
-            }
-
-            // Getter
-            if (isPrimitive(targetShape) || targetShape.isEnumShape()) {
-                writer.write("inline $L Get$L() const { return $L; }", cppType, memberName, fieldName);
-            } else {
-                writer.write("inline const $L& Get$L() const { return $L; }", cppType, memberName, fieldName);
-            }
-
-            // HasBeenSet
-            writer.write("inline bool $LHasBeenSet() const { return $LHasBeenSet; }", memberName, fieldName);
-
-            if (targetShape.isEnumShape() || isPrimitive(targetShape)) {
-                // Enum and primitive members use non-templated value setters
-                writer.openBlock("inline void Set$L($L value) {", "}", memberName, cppType, () -> {
-                    writer.write("$LHasBeenSet = true;", fieldName);
-                    writer.write("$L = value;", fieldName);
-                });
-
-                writer.openBlock("inline $L& With$L($L value) {", "}", className, memberName, cppType, () -> {
-                    writer.write("Set$L(value);", memberName);
-                    writer.write("return *this;");
-                });
-            } else {
-                // Templated Set
-                writer.write("template <typename $L = $L>", templateParam, cppType);
-                writer.openBlock("void Set$L($L&& value) {", "}", memberName, templateParam, () -> {
-                    writer.write("$LHasBeenSet = true;", fieldName);
-                    writer.write("$L = std::forward<$L>(value);", fieldName, templateParam);
-                });
-
-                // Templated With (fluent)
-                writer.write("template <typename $L = $L>", templateParam, cppType);
-                writer.openBlock("$L& With$L($L&& value) {", "}", className, memberName, templateParam, () -> {
-                    writer.write("Set$L(std::forward<$L>(value));", memberName, templateParam);
-                    writer.write("return *this;");
-                });
-
-                // Add method for list types
-                if (targetShape.isListShape()) {
-                    Shape elementShape = model.expectShape(
-                        targetShape.asListShape().get().getMember().getTarget());
-                    String elementType = CppTypeMapper.getCppType(elementShape, model);
-                    if (elementShape.isEnumShape()) {
-                        writer.openBlock("inline $L& Add$L($L value) {", "}", className, memberName, elementType, () -> {
-                            writer.write("$LHasBeenSet = true;", fieldName);
-                            writer.write("$L.push_back(value);", fieldName);
-                            writer.write("return *this;");
-                        });
-                    } else {
-                        writer.write("template <typename $L = $L>", templateParam, elementType);
-                        writer.openBlock("$L& Add$L($L&& value) {", "}", className, memberName, templateParam, () -> {
-                            writer.write("$LHasBeenSet = true;", fieldName);
-                            writer.write("$L.emplace_back(std::forward<$L>(value));", fieldName, templateParam);
-                            writer.write("return *this;");
-                        });
-                    }
-                }
-
-                // Add method for map types (two template params: key + value)
-                if (targetShape.isMapShape()) {
-                    Shape keyShape = model.expectShape(
-                        targetShape.asMapShape().get().getKey().getTarget());
-                    Shape valueShape = model.expectShape(
-                        targetShape.asMapShape().get().getValue().getTarget());
-                    String keyType = CppTypeMapper.getCppType(keyShape, model);
-                    String valueType = CppTypeMapper.getCppType(valueShape, model);
-                    String keyParam = memberName + "KeyT";
-                    String valueParam = memberName + "ValueT";
-                    writer.write("template <typename $L = $L, typename $L = $L>", keyParam, keyType, valueParam, valueType);
-                    writer.openBlock("$L& Add$L($L&& key, $L&& value) {", "}", className, memberName, keyParam, valueParam, () -> {
-                        writer.write("$LHasBeenSet = true;", fieldName);
-                        writer.write("$L.emplace(std::forward<$L>(key), std::forward<$L>(value));", fieldName, keyParam, valueParam);
-                        writer.write("return *this;");
-                    });
-                }
-            }
-
-            writer.write("///@}");
-            // Blank line between member blocks, but not after the last one
-            if (i < members.size() - 1) {
-                writer.write("");
-            }
-        }
+        renderMembers(writer, shape, model, exportMacro, className, true);
     }
 
     /**
@@ -165,6 +64,22 @@ public final class MemberRenderer {
      */
     public static void renderPublicSectionForResult(CppWriter writer, StructureShape shape,
                                                     Model model, String exportMacro, String className) {
+        renderMembers(writer, shape, model, exportMacro, className, false);
+    }
+
+    /**
+     * Shared implementation for rendering public accessor methods.
+     *
+     * @param writer         the CppWriter to write to
+     * @param shape          the structure shape whose members to render
+     * @param model          the model (for resolving member targets)
+     * @param exportMacro    the export macro (e.g., "AWS_KINESIS_API")
+     * @param className      the C++ class name (e.g., "ChildShard")
+     * @param emitHasBeenSet whether to emit HasBeenSet() accessor methods
+     */
+    private static void renderMembers(CppWriter writer, StructureShape shape,
+                                      Model model, String exportMacro, String className,
+                                      boolean emitHasBeenSet) {
         java.util.List<Map.Entry<String, MemberShape>> members =
             new java.util.ArrayList<>(shape.getAllMembers().entrySet());
         for (int i = 0; i < members.size(); i++) {
@@ -191,7 +106,10 @@ public final class MemberRenderer {
                 writer.write("inline const $L& Get$L() const { return $L; }", cppType, memberName, fieldName);
             }
 
-            // No HasBeenSet for results
+            // HasBeenSet (only for non-result shapes)
+            if (emitHasBeenSet) {
+                writer.write("inline bool $LHasBeenSet() const { return $LHasBeenSet; }", memberName, fieldName);
+            }
 
             if (targetShape.isEnumShape() || isPrimitive(targetShape)) {
                 writer.openBlock("inline void Set$L($L value) {", "}", memberName, cppType, () -> {
