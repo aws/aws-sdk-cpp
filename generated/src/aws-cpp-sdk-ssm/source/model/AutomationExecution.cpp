@@ -86,6 +86,10 @@ AutomationExecution& AutomationExecution::operator=(JsonView jsonValue) {
     m_failureMessage = jsonValue.GetString("FailureMessage");
     m_failureMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("WarningMessage")) {
+    m_warningMessage = jsonValue.GetString("WarningMessage");
+    m_warningMessageHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Mode")) {
     m_mode = ExecutionModeMapper::GetExecutionModeForName(jsonValue.GetString("Mode"));
     m_modeHasBeenSet = true;
@@ -292,6 +296,10 @@ JsonValue AutomationExecution::Jsonize() const {
 
   if (m_failureMessageHasBeenSet) {
     payload.WithString("FailureMessage", m_failureMessage);
+  }
+
+  if (m_warningMessageHasBeenSet) {
+    payload.WithString("WarningMessage", m_warningMessage);
   }
 
   if (m_modeHasBeenSet) {

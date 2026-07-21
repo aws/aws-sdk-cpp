@@ -61,13 +61,6 @@ CodeSecurityScanConfigurationSummary& CodeSecurityScanConfigurationSummary::oper
     m_scopeSettings = jsonValue.GetObject("scopeSettings");
     m_scopeSettingsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("tags")) {
-    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for (auto& tagsItem : tagsJsonMap) {
-      m_tags[tagsItem.first] = tagsItem.second.AsString();
-    }
-    m_tagsHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -117,14 +110,6 @@ JsonValue CodeSecurityScanConfigurationSummary::Jsonize() const {
 
   if (m_scopeSettingsHasBeenSet) {
     payload.WithObject("scopeSettings", m_scopeSettings.Jsonize());
-  }
-
-  if (m_tagsHasBeenSet) {
-    JsonValue tagsJsonMap;
-    for (auto& tagsItem : m_tags) {
-      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-    }
-    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;

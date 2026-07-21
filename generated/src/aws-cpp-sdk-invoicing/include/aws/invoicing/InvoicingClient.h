@@ -511,6 +511,42 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p> <i> <b>This feature API is subject to changing at any time. For more
+   * information, see the <a href="https://aws.amazon.com/service-terms/">Amazon Web
+   * Services Service Terms</a> (Betas and Previews).</b> </i> </p> <p>Sends a
+   * validation request for a procurement portal preference. This operation initiates
+   * the validation process by issuing a validation code that confirms ownership and
+   * connectivity of the configured procurement portal endpoint. Use
+   * <code>VerifyProcurementPortalValidation</code> to submit the received code and
+   * complete validation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/SendProcurementPortalValidation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendProcurementPortalValidationOutcome SendProcurementPortalValidation(
+      const Model::SendProcurementPortalValidationRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendProcurementPortalValidation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename SendProcurementPortalValidationRequestT = Model::SendProcurementPortalValidationRequest>
+  Model::SendProcurementPortalValidationOutcomeCallable SendProcurementPortalValidationCallable(
+      const SendProcurementPortalValidationRequestT& request) const {
+    return SubmitCallable(&InvoicingClient::SendProcurementPortalValidation, request);
+  }
+
+  /**
+   * An Async wrapper for SendProcurementPortalValidation that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename SendProcurementPortalValidationRequestT = Model::SendProcurementPortalValidationRequest>
+  void SendProcurementPortalValidationAsync(const SendProcurementPortalValidationRequestT& request,
+                                            const SendProcurementPortalValidationResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&InvoicingClient::SendProcurementPortalValidation, request, handler, context);
+  }
+
+  /**
    * <p>Adds a tag to a resource. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/TagResource">AWS
    * API Reference</a></p>
@@ -620,6 +656,41 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
                                                     const UpdateProcurementPortalPreferenceStatusResponseReceivedHandler& handler,
                                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&InvoicingClient::UpdateProcurementPortalPreferenceStatus, request, handler, context);
+  }
+
+  /**
+   * <p> <i> <b>This feature API is subject to changing at any time. For more
+   * information, see the <a href="https://aws.amazon.com/service-terms/">Amazon Web
+   * Services Service Terms</a> (Betas and Previews).</b> </i> </p> <p>Submits a
+   * validation code to complete the validation of a procurement portal preference.
+   * Use this operation after calling <code>SendProcurementPortalValidation</code> to
+   * confirm ownership and connectivity of the configured procurement portal
+   * endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/VerifyProcurementPortalValidation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::VerifyProcurementPortalValidationOutcome VerifyProcurementPortalValidation(
+      const Model::VerifyProcurementPortalValidationRequest& request) const;
+
+  /**
+   * A Callable wrapper for VerifyProcurementPortalValidation that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename VerifyProcurementPortalValidationRequestT = Model::VerifyProcurementPortalValidationRequest>
+  Model::VerifyProcurementPortalValidationOutcomeCallable VerifyProcurementPortalValidationCallable(
+      const VerifyProcurementPortalValidationRequestT& request) const {
+    return SubmitCallable(&InvoicingClient::VerifyProcurementPortalValidation, request);
+  }
+
+  /**
+   * An Async wrapper for VerifyProcurementPortalValidation that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename VerifyProcurementPortalValidationRequestT = Model::VerifyProcurementPortalValidationRequest>
+  void VerifyProcurementPortalValidationAsync(const VerifyProcurementPortalValidationRequestT& request,
+                                              const VerifyProcurementPortalValidationResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&InvoicingClient::VerifyProcurementPortalValidation, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

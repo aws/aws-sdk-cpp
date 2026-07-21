@@ -94,6 +94,24 @@ class ResolutionTechniques {
 
   ///@{
   /**
+   * <p>Specifies whether real-time matching is enabled for the rule-based matching
+   * workflow. When you enable real-time matching, you can use the
+   * <code>GenerateMatchId</code> operation with the workflow.</p>
+   */
+  inline bool GetEnableRealTimeMatching() const { return m_enableRealTimeMatching; }
+  inline bool EnableRealTimeMatchingHasBeenSet() const { return m_enableRealTimeMatchingHasBeenSet; }
+  inline void SetEnableRealTimeMatching(bool value) {
+    m_enableRealTimeMatchingHasBeenSet = true;
+    m_enableRealTimeMatching = value;
+  }
+  inline ResolutionTechniques& WithEnableRealTimeMatching(bool value) {
+    SetEnableRealTimeMatching(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The properties of the provider service.</p>
    */
   inline const ProviderProperties& GetProviderProperties() const { return m_providerProperties; }
@@ -116,10 +134,13 @@ class ResolutionTechniques {
 
   RuleConditionProperties m_ruleConditionProperties;
 
+  bool m_enableRealTimeMatching{false};
+
   ProviderProperties m_providerProperties;
   bool m_resolutionTypeHasBeenSet = false;
   bool m_ruleBasedPropertiesHasBeenSet = false;
   bool m_ruleConditionPropertiesHasBeenSet = false;
+  bool m_enableRealTimeMatchingHasBeenSet = false;
   bool m_providerPropertiesHasBeenSet = false;
 };
 

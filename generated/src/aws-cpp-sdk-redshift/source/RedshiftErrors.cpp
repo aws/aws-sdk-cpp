@@ -108,6 +108,7 @@ static const int INTEGRATION_TARGET_NOT_FOUND_FAULT_HASH = HashingUtils::HashStr
 static const int ENDPOINTS_PER_AUTHORIZATION_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EndpointsPerAuthorizationLimitExceeded");
 static const int SCHEDULED_ACTION_TYPE_UNSUPPORTED_FAULT_HASH = HashingUtils::HashString("ScheduledActionTypeUnsupported");
 static const int CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterQuotaExceeded");
+static const int QEV2_IDC_APPLICATION_NOT_EXISTS_FAULT_HASH = HashingUtils::HashString("Qev2IdcApplicationNotExists");
 static const int CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterSnapshotAlreadyExists");
 static const int INSUFFICIENT_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientClusterCapacity");
 static const int INTEGRATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("IntegrationQuotaExceededFault");
@@ -120,6 +121,7 @@ static const int SCHEDULED_ACTION_NOT_FOUND_FAULT_HASH = HashingUtils::HashStrin
 static const int INVALID_CLUSTER_SUBNET_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSubnetStateFault");
 static const int INVALID_SUBSCRIPTION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidSubscriptionStateFault");
 static const int INTEGRATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("IntegrationAlreadyExistsFault");
+static const int QEV2_IDC_APPLICATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("Qev2IdcApplicationAlreadyExists");
 static const int INVALID_AUTHORIZATION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidAuthorizationState");
 static const int CLUSTER_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterParameterGroupAlreadyExists");
 static const int INVALID_RESERVED_NODE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidReservedNodeState");
@@ -486,6 +488,10 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error) {
   } else if (hashCode == CLUSTER_QUOTA_EXCEEDED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
+  } else if (hashCode == QEV2_IDC_APPLICATION_NOT_EXISTS_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::QEV2_IDC_APPLICATION_NOT_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
   } else if (hashCode == CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH) {
     error =
         AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
@@ -528,6 +534,10 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error) {
     return true;
   } else if (hashCode == INTEGRATION_ALREADY_EXISTS_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  } else if (hashCode == QEV2_IDC_APPLICATION_ALREADY_EXISTS_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::QEV2_IDC_APPLICATION_ALREADY_EXISTS_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
   } else if (hashCode == INVALID_AUTHORIZATION_STATE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_AUTHORIZATION_STATE_FAULT), RetryableType::NOT_RETRYABLE);
@@ -585,19 +595,19 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error) {
   } else if (hashCode == USAGE_LIMIT_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::USAGE_LIMIT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  } else if (hashCode == CLUSTER_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH) {
+  }
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error) {
+  if (hashCode == CLUSTER_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT),
                                  RetryableType::NOT_RETRYABLE);
     return true;
   } else if (hashCode == COPY_TO_REGION_DISABLED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::COPY_TO_REGION_DISABLED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  return false;
-}
-
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error) {
-  if (hashCode == NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT_HASH) {
+  } else if (hashCode == NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT_HASH) {
     error =
         AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;

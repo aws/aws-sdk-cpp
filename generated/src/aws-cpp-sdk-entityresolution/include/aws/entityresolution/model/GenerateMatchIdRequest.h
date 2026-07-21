@@ -88,7 +88,8 @@ class GenerateMatchIdRequest : public EntityResolutionRequest {
    * <code>EVENTUAL_NO_LOOKUP</code> (shown as <i>Quick ID generation</i> in the
    * console): Generates new match IDs without checking existing matches, with
    * updates processed asynchronously. Provides fastest response time but should only
-   * be used for records known to be unique. </p>
+   * be used for records known to be unique. </p>  <p>Advanced matching
+   * workflows don't support the <code>processingType</code> field.</p>
    */
   inline ProcessingType GetProcessingType() const { return m_processingType; }
   inline bool ProcessingTypeHasBeenSet() const { return m_processingTypeHasBeenSet; }

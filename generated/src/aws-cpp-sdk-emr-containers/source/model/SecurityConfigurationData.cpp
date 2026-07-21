@@ -22,6 +22,10 @@ SecurityConfigurationData& SecurityConfigurationData::operator=(JsonView jsonVal
     m_authorizationConfiguration = jsonValue.GetObject("authorizationConfiguration");
     m_authorizationConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("authenticationConfiguration")) {
+    m_authenticationConfiguration = jsonValue.GetObject("authenticationConfiguration");
+    m_authenticationConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue SecurityConfigurationData::Jsonize() const {
 
   if (m_authorizationConfigurationHasBeenSet) {
     payload.WithObject("authorizationConfiguration", m_authorizationConfiguration.Jsonize());
+  }
+
+  if (m_authenticationConfigurationHasBeenSet) {
+    payload.WithObject("authenticationConfiguration", m_authenticationConfiguration.Jsonize());
   }
 
   return payload;

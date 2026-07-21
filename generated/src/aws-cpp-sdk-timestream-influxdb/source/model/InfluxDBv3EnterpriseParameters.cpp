@@ -174,6 +174,14 @@ InfluxDBv3EnterpriseParameters& InfluxDBv3EnterpriseParameters::operator=(JsonVi
     m_hardDeleteDefaultDuration = jsonValue.GetObject("hardDeleteDefaultDuration");
     m_hardDeleteDefaultDurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("pluginRepositoryUrl")) {
+    m_pluginRepositoryUrl = jsonValue.GetString("pluginRepositoryUrl");
+    m_pluginRepositoryUrlHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("pluginRepositorySecretArn")) {
+    m_pluginRepositorySecretArn = jsonValue.GetString("pluginRepositorySecretArn");
+    m_pluginRepositorySecretArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ingestQueryInstances")) {
     m_ingestQueryInstances = jsonValue.GetInteger("ingestQueryInstances");
     m_ingestQueryInstancesHasBeenSet = true;
@@ -386,6 +394,14 @@ JsonValue InfluxDBv3EnterpriseParameters::Jsonize() const {
 
   if (m_hardDeleteDefaultDurationHasBeenSet) {
     payload.WithObject("hardDeleteDefaultDuration", m_hardDeleteDefaultDuration.Jsonize());
+  }
+
+  if (m_pluginRepositoryUrlHasBeenSet) {
+    payload.WithString("pluginRepositoryUrl", m_pluginRepositoryUrl);
+  }
+
+  if (m_pluginRepositorySecretArnHasBeenSet) {
+    payload.WithString("pluginRepositorySecretArn", m_pluginRepositorySecretArn);
   }
 
   if (m_ingestQueryInstancesHasBeenSet) {

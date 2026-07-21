@@ -43,6 +43,7 @@
 #include <aws/redshift/model/CreateHsmClientCertificateRequest.h>
 #include <aws/redshift/model/CreateHsmConfigurationRequest.h>
 #include <aws/redshift/model/CreateIntegrationRequest.h>
+#include <aws/redshift/model/CreateQev2IdcApplicationRequest.h>
 #include <aws/redshift/model/CreateRedshiftIdcApplicationRequest.h>
 #include <aws/redshift/model/CreateScheduledActionRequest.h>
 #include <aws/redshift/model/CreateSnapshotCopyGrantRequest.h>
@@ -63,6 +64,7 @@
 #include <aws/redshift/model/DeleteHsmConfigurationRequest.h>
 #include <aws/redshift/model/DeleteIntegrationRequest.h>
 #include <aws/redshift/model/DeletePartnerRequest.h>
+#include <aws/redshift/model/DeleteQev2IdcApplicationRequest.h>
 #include <aws/redshift/model/DeleteRedshiftIdcApplicationRequest.h>
 #include <aws/redshift/model/DeleteResourcePolicyRequest.h>
 #include <aws/redshift/model/DeleteScheduledActionRequest.h>
@@ -100,6 +102,7 @@
 #include <aws/redshift/model/DescribeNodeConfigurationOptionsRequest.h>
 #include <aws/redshift/model/DescribeOrderableClusterOptionsRequest.h>
 #include <aws/redshift/model/DescribePartnersRequest.h>
+#include <aws/redshift/model/DescribeQev2IdcApplicationsRequest.h>
 #include <aws/redshift/model/DescribeRedshiftIdcApplicationsRequest.h>
 #include <aws/redshift/model/DescribeReservedNodeExchangeStatusRequest.h>
 #include <aws/redshift/model/DescribeReservedNodeOfferingsRequest.h>
@@ -140,6 +143,7 @@
 #include <aws/redshift/model/ModifyEventSubscriptionRequest.h>
 #include <aws/redshift/model/ModifyIntegrationRequest.h>
 #include <aws/redshift/model/ModifyLakehouseConfigurationRequest.h>
+#include <aws/redshift/model/ModifyQev2IdcApplicationRequest.h>
 #include <aws/redshift/model/ModifyRedshiftIdcApplicationRequest.h>
 #include <aws/redshift/model/ModifyScheduledActionRequest.h>
 #include <aws/redshift/model/ModifySnapshotCopyRetentionPeriodRequest.h>
@@ -469,6 +473,12 @@ CreateIntegrationOutcome RedshiftClient::CreateIntegration(const CreateIntegrati
                             : CreateIntegrationOutcome(std::move(result.GetError()));
 }
 
+CreateQev2IdcApplicationOutcome RedshiftClient::CreateQev2IdcApplication(const CreateQev2IdcApplicationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQev2IdcApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateQev2IdcApplicationOutcome(std::move(result.GetError()));
+}
+
 CreateRedshiftIdcApplicationOutcome RedshiftClient::CreateRedshiftIdcApplication(const CreateRedshiftIdcApplicationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateRedshiftIdcApplicationOutcome(result.GetResultWithOwnership())
@@ -585,6 +595,12 @@ DeleteIntegrationOutcome RedshiftClient::DeleteIntegration(const DeleteIntegrati
 DeletePartnerOutcome RedshiftClient::DeletePartner(const DeletePartnerRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeletePartnerOutcome(result.GetResultWithOwnership()) : DeletePartnerOutcome(std::move(result.GetError()));
+}
+
+DeleteQev2IdcApplicationOutcome RedshiftClient::DeleteQev2IdcApplication(const DeleteQev2IdcApplicationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteQev2IdcApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteQev2IdcApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteRedshiftIdcApplicationOutcome RedshiftClient::DeleteRedshiftIdcApplication(const DeleteRedshiftIdcApplicationRequest& request) const {
@@ -816,6 +832,12 @@ DescribePartnersOutcome RedshiftClient::DescribePartners(const DescribePartnersR
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribePartnersOutcome(result.GetResultWithOwnership())
                             : DescribePartnersOutcome(std::move(result.GetError()));
+}
+
+DescribeQev2IdcApplicationsOutcome RedshiftClient::DescribeQev2IdcApplications(const DescribeQev2IdcApplicationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeQev2IdcApplicationsOutcome(result.GetResultWithOwnership())
+                            : DescribeQev2IdcApplicationsOutcome(std::move(result.GetError()));
 }
 
 DescribeRedshiftIdcApplicationsOutcome RedshiftClient::DescribeRedshiftIdcApplications(
@@ -1059,6 +1081,12 @@ ModifyLakehouseConfigurationOutcome RedshiftClient::ModifyLakehouseConfiguration
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyLakehouseConfigurationOutcome(result.GetResultWithOwnership())
                             : ModifyLakehouseConfigurationOutcome(std::move(result.GetError()));
+}
+
+ModifyQev2IdcApplicationOutcome RedshiftClient::ModifyQev2IdcApplication(const ModifyQev2IdcApplicationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyQev2IdcApplicationOutcome(result.GetResultWithOwnership())
+                            : ModifyQev2IdcApplicationOutcome(std::move(result.GetError()));
 }
 
 ModifyRedshiftIdcApplicationOutcome RedshiftClient::ModifyRedshiftIdcApplication(const ModifyRedshiftIdcApplicationRequest& request) const {

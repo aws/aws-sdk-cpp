@@ -85,6 +85,8 @@
 #include <aws/invoicing/model/ReceiverRole.h>
 #include <aws/invoicing/model/ResourceNotFoundException.h>
 #include <aws/invoicing/model/ResourceTag.h>
+#include <aws/invoicing/model/SendProcurementPortalValidationRequest.h>
+#include <aws/invoicing/model/SendProcurementPortalValidationResult.h>
 #include <aws/invoicing/model/SupplementalDocument.h>
 #include <aws/invoicing/model/SupplementalDocumentType.h>
 #include <aws/invoicing/model/SupplierDomain.h>
@@ -104,6 +106,8 @@
 #include <aws/invoicing/model/ValidationException.h>
 #include <aws/invoicing/model/ValidationExceptionField.h>
 #include <aws/invoicing/model/ValidationExceptionReason.h>
+#include <aws/invoicing/model/VerifyProcurementPortalValidationRequest.h>
+#include <aws/invoicing/model/VerifyProcurementPortalValidationResult.h>
 
 using InvoicingIncludeTest = ::testing::Test;
 

@@ -16,6 +16,7 @@ namespace Model {
 namespace ProcurementPortalPreferenceStatusMapper {
 
 static const int PENDING_VERIFICATION_HASH = HashingUtils::HashString("PENDING_VERIFICATION");
+static const int VALIDATED_HASH = HashingUtils::HashString("VALIDATED");
 static const int TEST_INITIALIZED_HASH = HashingUtils::HashString("TEST_INITIALIZED");
 static const int TEST_INITIALIZATION_FAILED_HASH = HashingUtils::HashString("TEST_INITIALIZATION_FAILED");
 static const int TEST_FAILED_HASH = HashingUtils::HashString("TEST_FAILED");
@@ -26,6 +27,8 @@ ProcurementPortalPreferenceStatus GetProcurementPortalPreferenceStatusForName(co
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == PENDING_VERIFICATION_HASH) {
     return ProcurementPortalPreferenceStatus::PENDING_VERIFICATION;
+  } else if (hashCode == VALIDATED_HASH) {
+    return ProcurementPortalPreferenceStatus::VALIDATED;
   } else if (hashCode == TEST_INITIALIZED_HASH) {
     return ProcurementPortalPreferenceStatus::TEST_INITIALIZED;
   } else if (hashCode == TEST_INITIALIZATION_FAILED_HASH) {
@@ -52,6 +55,8 @@ Aws::String GetNameForProcurementPortalPreferenceStatus(ProcurementPortalPrefere
       return {};
     case ProcurementPortalPreferenceStatus::PENDING_VERIFICATION:
       return "PENDING_VERIFICATION";
+    case ProcurementPortalPreferenceStatus::VALIDATED:
+      return "VALIDATED";
     case ProcurementPortalPreferenceStatus::TEST_INITIALIZED:
       return "TEST_INITIALIZED";
     case ProcurementPortalPreferenceStatus::TEST_INITIALIZATION_FAILED:

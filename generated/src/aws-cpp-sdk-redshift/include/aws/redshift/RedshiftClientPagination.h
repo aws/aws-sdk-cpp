@@ -30,6 +30,7 @@
 #include <aws/redshift/model/DescribeIntegrationsPaginationTraits.h>
 #include <aws/redshift/model/DescribeNodeConfigurationOptionsPaginationTraits.h>
 #include <aws/redshift/model/DescribeOrderableClusterOptionsPaginationTraits.h>
+#include <aws/redshift/model/DescribeQev2IdcApplicationsPaginationTraits.h>
 #include <aws/redshift/model/DescribeRedshiftIdcApplicationsPaginationTraits.h>
 #include <aws/redshift/model/DescribeReservedNodeExchangeStatusPaginationTraits.h>
 #include <aws/redshift/model/DescribeReservedNodeOfferingsPaginationTraits.h>
@@ -114,6 +115,9 @@ using DescribeNodeConfigurationOptionsPaginator =
 using DescribeOrderableClusterOptionsPaginator =
     Aws::Utils::Pagination::Paginator<RedshiftClient, Model::DescribeOrderableClusterOptionsRequest,
                                       Pagination::DescribeOrderableClusterOptionsPaginationTraits<RedshiftClient>>;
+using DescribeQev2IdcApplicationsPaginator =
+    Aws::Utils::Pagination::Paginator<RedshiftClient, Model::DescribeQev2IdcApplicationsRequest,
+                                      Pagination::DescribeQev2IdcApplicationsPaginationTraits<RedshiftClient>>;
 using DescribeRedshiftIdcApplicationsPaginator =
     Aws::Utils::Pagination::Paginator<RedshiftClient, Model::DescribeRedshiftIdcApplicationsRequest,
                                       Pagination::DescribeRedshiftIdcApplicationsPaginationTraits<RedshiftClient>>;

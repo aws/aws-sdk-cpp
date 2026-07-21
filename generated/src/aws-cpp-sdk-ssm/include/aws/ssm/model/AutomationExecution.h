@@ -266,6 +266,25 @@ class AutomationExecution {
 
   ///@{
   /**
+   * <p>A message that describes a non-critical issue that occurred during the
+   * automation execution.</p>
+   */
+  inline const Aws::String& GetWarningMessage() const { return m_warningMessage; }
+  inline bool WarningMessageHasBeenSet() const { return m_warningMessageHasBeenSet; }
+  template <typename WarningMessageT = Aws::String>
+  void SetWarningMessage(WarningMessageT&& value) {
+    m_warningMessageHasBeenSet = true;
+    m_warningMessage = std::forward<WarningMessageT>(value);
+  }
+  template <typename WarningMessageT = Aws::String>
+  AutomationExecution& WithWarningMessage(WarningMessageT&& value) {
+    SetWarningMessage(std::forward<WarningMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The automation execution mode.</p>
    */
   inline ExecutionMode GetMode() const { return m_mode; }
@@ -762,6 +781,8 @@ class AutomationExecution {
 
   Aws::String m_failureMessage;
 
+  Aws::String m_warningMessage;
+
   ExecutionMode m_mode{ExecutionMode::NOT_SET};
 
   Aws::String m_parentAutomationExecutionId;
@@ -820,6 +841,7 @@ class AutomationExecution {
   bool m_parametersHasBeenSet = false;
   bool m_outputsHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
+  bool m_warningMessageHasBeenSet = false;
   bool m_modeHasBeenSet = false;
   bool m_parentAutomationExecutionIdHasBeenSet = false;
   bool m_executedByHasBeenSet = false;

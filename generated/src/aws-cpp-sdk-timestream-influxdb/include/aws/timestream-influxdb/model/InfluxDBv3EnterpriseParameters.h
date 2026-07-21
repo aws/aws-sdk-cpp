@@ -736,6 +736,43 @@ class InfluxDBv3EnterpriseParameters {
 
   ///@{
   /**
+   * <p>Specifies the URL of the repository that InfluxDB downloads plugins from.</p>
+   */
+  inline const Aws::String& GetPluginRepositoryUrl() const { return m_pluginRepositoryUrl; }
+  inline bool PluginRepositoryUrlHasBeenSet() const { return m_pluginRepositoryUrlHasBeenSet; }
+  template <typename PluginRepositoryUrlT = Aws::String>
+  void SetPluginRepositoryUrl(PluginRepositoryUrlT&& value) {
+    m_pluginRepositoryUrlHasBeenSet = true;
+    m_pluginRepositoryUrl = std::forward<PluginRepositoryUrlT>(value);
+  }
+  template <typename PluginRepositoryUrlT = Aws::String>
+  InfluxDBv3EnterpriseParameters& WithPluginRepositoryUrl(PluginRepositoryUrlT&& value) {
+    SetPluginRepositoryUrl(std::forward<PluginRepositoryUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that holds your
+   * repository access token.</p>
+   */
+  inline const Aws::String& GetPluginRepositorySecretArn() const { return m_pluginRepositorySecretArn; }
+  inline bool PluginRepositorySecretArnHasBeenSet() const { return m_pluginRepositorySecretArnHasBeenSet; }
+  template <typename PluginRepositorySecretArnT = Aws::String>
+  void SetPluginRepositorySecretArn(PluginRepositorySecretArnT&& value) {
+    m_pluginRepositorySecretArnHasBeenSet = true;
+    m_pluginRepositorySecretArn = std::forward<PluginRepositorySecretArnT>(value);
+  }
+  template <typename PluginRepositorySecretArnT = Aws::String>
+  InfluxDBv3EnterpriseParameters& WithPluginRepositorySecretArn(PluginRepositorySecretArnT&& value) {
+    SetPluginRepositorySecretArn(std::forward<PluginRepositorySecretArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies number of instances in the DbCluster which can both ingest and
    * query.</p>
    */
@@ -1051,6 +1088,10 @@ class InfluxDBv3EnterpriseParameters {
 
   Duration m_hardDeleteDefaultDuration;
 
+  Aws::String m_pluginRepositoryUrl;
+
+  Aws::String m_pluginRepositorySecretArn;
+
   int m_ingestQueryInstances{0};
 
   int m_queryOnlyInstances{0};
@@ -1115,6 +1156,8 @@ class InfluxDBv3EnterpriseParameters {
   bool m_retentionCheckIntervalHasBeenSet = false;
   bool m_deleteGracePeriodHasBeenSet = false;
   bool m_hardDeleteDefaultDurationHasBeenSet = false;
+  bool m_pluginRepositoryUrlHasBeenSet = false;
+  bool m_pluginRepositorySecretArnHasBeenSet = false;
   bool m_ingestQueryInstancesHasBeenSet = false;
   bool m_queryOnlyInstancesHasBeenSet = false;
   bool m_dedicatedCompactorHasBeenSet = false;

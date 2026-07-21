@@ -210,9 +210,9 @@ class AWS_ENTITYRESOLUTION_API EntityResolutionClient : public Aws::Client::AWSJ
    * <p>Creates a matching workflow that defines the configuration for a data
    * processing job. The workflow name must be unique. To modify an existing
    * workflow, use <code>UpdateMatchingWorkflow</code>. </p>  <p>For
-   * workflows where <code>resolutionType</code> is <code>ML_MATCHING</code> or
-   * <code>PROVIDER</code>, incremental processing is not supported. </p>
-   * <p><h3>See Also:</h3>   <a
+   * workflows where <code>resolutionType</code> is <code>PROVIDER</code>,
+   * incremental processing is not supported. </p> <p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateMatchingWorkflow">AWS
    * API Reference</a></p>
    */
@@ -1104,9 +1104,8 @@ class AWS_ENTITYRESOLUTION_API EntityResolutionClient : public Aws::Client::AWSJ
   /**
    * <p>Updates an existing matching workflow. The workflow must already exist for
    * this operation to succeed.</p>  <p>For workflows where
-   * <code>resolutionType</code> is <code>ML_MATCHING</code> or
-   * <code>PROVIDER</code>, incremental processing is not supported. </p>
-   * <p><h3>See Also:</h3>   <a
+   * <code>resolutionType</code> is <code>PROVIDER</code>, incremental processing is
+   * not supported. </p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateMatchingWorkflow">AWS
    * API Reference</a></p>
    */

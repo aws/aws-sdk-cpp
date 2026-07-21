@@ -83,6 +83,10 @@ StepExecution& StepExecution::operator=(JsonView jsonValue) {
     m_failureMessage = jsonValue.GetString("FailureMessage");
     m_failureMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("WarningMessage")) {
+    m_warningMessage = jsonValue.GetString("WarningMessage");
+    m_warningMessageHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("FailureDetails")) {
     m_failureDetails = jsonValue.GetObject("FailureDetails");
     m_failureDetailsHasBeenSet = true;
@@ -216,6 +220,10 @@ JsonValue StepExecution::Jsonize() const {
 
   if (m_failureMessageHasBeenSet) {
     payload.WithString("FailureMessage", m_failureMessage);
+  }
+
+  if (m_warningMessageHasBeenSet) {
+    payload.WithString("WarningMessage", m_warningMessage);
   }
 
   if (m_failureDetailsHasBeenSet) {

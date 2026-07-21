@@ -305,6 +305,35 @@ class AWS_EMRCONTAINERS_API EMRContainersClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Deletes a security configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteSecurityConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSecurityConfigurationOutcome DeleteSecurityConfiguration(
+      const Model::DeleteSecurityConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSecurityConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteSecurityConfigurationRequestT = Model::DeleteSecurityConfigurationRequest>
+  Model::DeleteSecurityConfigurationOutcomeCallable DeleteSecurityConfigurationCallable(
+      const DeleteSecurityConfigurationRequestT& request) const {
+    return SubmitCallable(&EMRContainersClient::DeleteSecurityConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSecurityConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteSecurityConfigurationRequestT = Model::DeleteSecurityConfigurationRequest>
+  void DeleteSecurityConfigurationAsync(const DeleteSecurityConfigurationRequestT& request,
+                                        const DeleteSecurityConfigurationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EMRContainersClient::DeleteSecurityConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a virtual cluster. Virtual cluster is a managed entity on Amazon EMR
    * on EKS. You can create, describe, list and delete virtual clusters. They do not
    * consume any additional resource in your system. A single virtual cluster maps to

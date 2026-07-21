@@ -30,6 +30,10 @@ ResolutionTechniques& ResolutionTechniques::operator=(JsonView jsonValue) {
     m_ruleConditionProperties = jsonValue.GetObject("ruleConditionProperties");
     m_ruleConditionPropertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("enableRealTimeMatching")) {
+    m_enableRealTimeMatching = jsonValue.GetBool("enableRealTimeMatching");
+    m_enableRealTimeMatchingHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("providerProperties")) {
     m_providerProperties = jsonValue.GetObject("providerProperties");
     m_providerPropertiesHasBeenSet = true;
@@ -50,6 +54,10 @@ JsonValue ResolutionTechniques::Jsonize() const {
 
   if (m_ruleConditionPropertiesHasBeenSet) {
     payload.WithObject("ruleConditionProperties", m_ruleConditionProperties.Jsonize());
+  }
+
+  if (m_enableRealTimeMatchingHasBeenSet) {
+    payload.WithBool("enableRealTimeMatching", m_enableRealTimeMatching);
   }
 
   if (m_providerPropertiesHasBeenSet) {

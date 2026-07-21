@@ -85,6 +85,10 @@ AutomationExecutionMetadata& AutomationExecutionMetadata::operator=(JsonView jso
     m_failureMessage = jsonValue.GetString("FailureMessage");
     m_failureMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("WarningMessage")) {
+    m_warningMessage = jsonValue.GetString("WarningMessage");
+    m_warningMessageHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("TargetParameterName")) {
     m_targetParameterName = jsonValue.GetString("TargetParameterName");
     m_targetParameterNameHasBeenSet = true;
@@ -248,6 +252,10 @@ JsonValue AutomationExecutionMetadata::Jsonize() const {
 
   if (m_failureMessageHasBeenSet) {
     payload.WithString("FailureMessage", m_failureMessage);
+  }
+
+  if (m_warningMessageHasBeenSet) {
+    payload.WithString("WarningMessage", m_warningMessage);
   }
 
   if (m_targetParameterNameHasBeenSet) {

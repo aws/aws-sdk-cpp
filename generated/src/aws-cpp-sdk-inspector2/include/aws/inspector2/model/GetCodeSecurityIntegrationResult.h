@@ -148,6 +148,25 @@ class GetCodeSecurityIntegrationResult {
 
   ///@{
   /**
+   * <p>The URL used to authorize the integration with the repository provider. This
+   * is only returned if reauthorization is required to fix a connection issue.
+   * Otherwise, it is null.</p>
+   */
+  inline const Aws::String& GetAuthorizationUrl() const { return m_authorizationUrl; }
+  template <typename AuthorizationUrlT = Aws::String>
+  void SetAuthorizationUrl(AuthorizationUrlT&& value) {
+    m_authorizationUrlHasBeenSet = true;
+    m_authorizationUrl = std::forward<AuthorizationUrlT>(value);
+  }
+  template <typename AuthorizationUrlT = Aws::String>
+  GetCodeSecurityIntegrationResult& WithAuthorizationUrl(AuthorizationUrlT&& value) {
+    SetAuthorizationUrl(std::forward<AuthorizationUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags associated with the code security integration.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -165,25 +184,6 @@ class GetCodeSecurityIntegrationResult {
   GetCodeSecurityIntegrationResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
     m_tagsHasBeenSet = true;
     m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The URL used to authorize the integration with the repository provider. This
-   * is only returned if reauthorization is required to fix a connection issue.
-   * Otherwise, it is null.</p>
-   */
-  inline const Aws::String& GetAuthorizationUrl() const { return m_authorizationUrl; }
-  template <typename AuthorizationUrlT = Aws::String>
-  void SetAuthorizationUrl(AuthorizationUrlT&& value) {
-    m_authorizationUrlHasBeenSet = true;
-    m_authorizationUrl = std::forward<AuthorizationUrlT>(value);
-  }
-  template <typename AuthorizationUrlT = Aws::String>
-  GetCodeSecurityIntegrationResult& WithAuthorizationUrl(AuthorizationUrlT&& value) {
-    SetAuthorizationUrl(std::forward<AuthorizationUrlT>(value));
     return *this;
   }
   ///@}
@@ -219,9 +219,9 @@ class GetCodeSecurityIntegrationResult {
 
   Aws::Utils::DateTime m_lastUpdateOn{};
 
-  Aws::Map<Aws::String, Aws::String> m_tags;
-
   Aws::String m_authorizationUrl;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
@@ -232,8 +232,8 @@ class GetCodeSecurityIntegrationResult {
   bool m_statusReasonHasBeenSet = false;
   bool m_createdOnHasBeenSet = false;
   bool m_lastUpdateOnHasBeenSet = false;
-  bool m_tagsHasBeenSet = false;
   bool m_authorizationUrlHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

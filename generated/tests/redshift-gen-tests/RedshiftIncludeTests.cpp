@@ -88,6 +88,8 @@
 #include <aws/redshift/model/CreateHsmConfigurationResult.h>
 #include <aws/redshift/model/CreateIntegrationRequest.h>
 #include <aws/redshift/model/CreateIntegrationResult.h>
+#include <aws/redshift/model/CreateQev2IdcApplicationRequest.h>
+#include <aws/redshift/model/CreateQev2IdcApplicationResult.h>
 #include <aws/redshift/model/CreateRedshiftIdcApplicationRequest.h>
 #include <aws/redshift/model/CreateRedshiftIdcApplicationResult.h>
 #include <aws/redshift/model/CreateScheduledActionRequest.h>
@@ -130,6 +132,7 @@
 #include <aws/redshift/model/DeleteIntegrationResult.h>
 #include <aws/redshift/model/DeletePartnerRequest.h>
 #include <aws/redshift/model/DeletePartnerResult.h>
+#include <aws/redshift/model/DeleteQev2IdcApplicationRequest.h>
 #include <aws/redshift/model/DeleteRedshiftIdcApplicationRequest.h>
 #include <aws/redshift/model/DeleteResourcePolicyRequest.h>
 #include <aws/redshift/model/DeleteScheduledActionRequest.h>
@@ -199,6 +202,8 @@
 #include <aws/redshift/model/DescribeOrderableClusterOptionsResult.h>
 #include <aws/redshift/model/DescribePartnersRequest.h>
 #include <aws/redshift/model/DescribePartnersResult.h>
+#include <aws/redshift/model/DescribeQev2IdcApplicationsRequest.h>
+#include <aws/redshift/model/DescribeQev2IdcApplicationsResult.h>
 #include <aws/redshift/model/DescribeRedshiftIdcApplicationsRequest.h>
 #include <aws/redshift/model/DescribeRedshiftIdcApplicationsResult.h>
 #include <aws/redshift/model/DescribeReservedNodeExchangeStatusRequest.h>
@@ -302,6 +307,8 @@
 #include <aws/redshift/model/ModifyIntegrationResult.h>
 #include <aws/redshift/model/ModifyLakehouseConfigurationRequest.h>
 #include <aws/redshift/model/ModifyLakehouseConfigurationResult.h>
+#include <aws/redshift/model/ModifyQev2IdcApplicationRequest.h>
+#include <aws/redshift/model/ModifyQev2IdcApplicationResult.h>
 #include <aws/redshift/model/ModifyRedshiftIdcApplicationRequest.h>
 #include <aws/redshift/model/ModifyRedshiftIdcApplicationResult.h>
 #include <aws/redshift/model/ModifyScheduledActionRequest.h>
@@ -333,6 +340,7 @@
 #include <aws/redshift/model/PurchaseReservedNodeOfferingResult.h>
 #include <aws/redshift/model/PutResourcePolicyRequest.h>
 #include <aws/redshift/model/PutResourcePolicyResult.h>
+#include <aws/redshift/model/Qev2IdcApplication.h>
 #include <aws/redshift/model/ReadWriteAccess.h>
 #include <aws/redshift/model/RebootClusterRequest.h>
 #include <aws/redshift/model/RebootClusterResult.h>

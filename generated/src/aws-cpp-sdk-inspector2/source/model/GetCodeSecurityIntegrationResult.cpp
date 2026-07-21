@@ -50,16 +50,16 @@ GetCodeSecurityIntegrationResult& GetCodeSecurityIntegrationResult::operator=(co
     m_lastUpdateOn = jsonValue.GetDouble("lastUpdateOn");
     m_lastUpdateOnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("authorizationUrl")) {
+    m_authorizationUrl = jsonValue.GetString("authorizationUrl");
+    m_authorizationUrlHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("authorizationUrl")) {
-    m_authorizationUrl = jsonValue.GetString("authorizationUrl");
-    m_authorizationUrlHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -31,6 +31,7 @@
 #include <aws/redshift/model/DescribeIntegrationsPaginationTraits.h>
 #include <aws/redshift/model/DescribeNodeConfigurationOptionsPaginationTraits.h>
 #include <aws/redshift/model/DescribeOrderableClusterOptionsPaginationTraits.h>
+#include <aws/redshift/model/DescribeQev2IdcApplicationsPaginationTraits.h>
 #include <aws/redshift/model/DescribeRedshiftIdcApplicationsPaginationTraits.h>
 #include <aws/redshift/model/DescribeReservedNodeExchangeStatusPaginationTraits.h>
 #include <aws/redshift/model/DescribeReservedNodeOfferingsPaginationTraits.h>
@@ -337,6 +338,18 @@ class RedshiftPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeOrderableClusterOptionsRequest,
                                              Pagination::DescribeOrderableClusterOptionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeQev2IdcApplications operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeQev2IdcApplicationsRequest,
+                                    Pagination::DescribeQev2IdcApplicationsPaginationTraits<DerivedClient>>
+  DescribeQev2IdcApplicationsPaginator(const Model::DescribeQev2IdcApplicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeQev2IdcApplicationsRequest,
+                                             Pagination::DescribeQev2IdcApplicationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

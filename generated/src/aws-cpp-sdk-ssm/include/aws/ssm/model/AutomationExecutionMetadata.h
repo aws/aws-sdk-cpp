@@ -282,7 +282,8 @@ class AutomationExecutionMetadata {
 
   ///@{
   /**
-   * <p>The list of execution outputs as defined in the Automation runbook.</p>
+   * <p>A message that describes a failure that occurred during the automation
+   * execution.</p>
    */
   inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
   inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
@@ -294,6 +295,25 @@ class AutomationExecutionMetadata {
   template <typename FailureMessageT = Aws::String>
   AutomationExecutionMetadata& WithFailureMessage(FailureMessageT&& value) {
     SetFailureMessage(std::forward<FailureMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A message that describes a non-critical issue that occurred during the
+   * automation execution.</p>
+   */
+  inline const Aws::String& GetWarningMessage() const { return m_warningMessage; }
+  inline bool WarningMessageHasBeenSet() const { return m_warningMessageHasBeenSet; }
+  template <typename WarningMessageT = Aws::String>
+  void SetWarningMessage(WarningMessageT&& value) {
+    m_warningMessageHasBeenSet = true;
+    m_warningMessage = std::forward<WarningMessageT>(value);
+  }
+  template <typename WarningMessageT = Aws::String>
+  AutomationExecutionMetadata& WithWarningMessage(WarningMessageT&& value) {
+    SetWarningMessage(std::forward<WarningMessageT>(value));
     return *this;
   }
   ///@}
@@ -668,6 +688,8 @@ class AutomationExecutionMetadata {
 
   Aws::String m_failureMessage;
 
+  Aws::String m_warningMessage;
+
   Aws::String m_targetParameterName;
 
   Aws::Vector<Target> m_targets;
@@ -715,6 +737,7 @@ class AutomationExecutionMetadata {
   bool m_currentStepNameHasBeenSet = false;
   bool m_currentActionHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
+  bool m_warningMessageHasBeenSet = false;
   bool m_targetParameterNameHasBeenSet = false;
   bool m_targetsHasBeenSet = false;
   bool m_targetMapsHasBeenSet = false;

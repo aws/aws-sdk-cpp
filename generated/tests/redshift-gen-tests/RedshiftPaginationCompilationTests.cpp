@@ -24,6 +24,7 @@
 #include <aws/redshift/model/DescribeReservedNodeOfferingsPaginationTraits.h>
 #include <aws/redshift/model/DescribeRedshiftIdcApplicationsPaginationTraits.h>
 #include <aws/redshift/model/DescribeSnapshotCopyGrantsPaginationTraits.h>
+#include <aws/redshift/model/DescribeQev2IdcApplicationsPaginationTraits.h>
 #include <aws/redshift/model/DescribeTableRestoreStatusPaginationTraits.h>
 #include <aws/redshift/model/DescribeNodeConfigurationOptionsPaginationTraits.h>
 #include <aws/redshift/model/GetReservedNodeExchangeConfigurationOptionsPaginationTraits.h>

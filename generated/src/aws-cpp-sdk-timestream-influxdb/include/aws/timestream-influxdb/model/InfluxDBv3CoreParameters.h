@@ -733,6 +733,43 @@ class InfluxDBv3CoreParameters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the URL of the repository that InfluxDB downloads plugins from.</p>
+   */
+  inline const Aws::String& GetPluginRepositoryUrl() const { return m_pluginRepositoryUrl; }
+  inline bool PluginRepositoryUrlHasBeenSet() const { return m_pluginRepositoryUrlHasBeenSet; }
+  template <typename PluginRepositoryUrlT = Aws::String>
+  void SetPluginRepositoryUrl(PluginRepositoryUrlT&& value) {
+    m_pluginRepositoryUrlHasBeenSet = true;
+    m_pluginRepositoryUrl = std::forward<PluginRepositoryUrlT>(value);
+  }
+  template <typename PluginRepositoryUrlT = Aws::String>
+  InfluxDBv3CoreParameters& WithPluginRepositoryUrl(PluginRepositoryUrlT&& value) {
+    SetPluginRepositoryUrl(std::forward<PluginRepositoryUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that holds your
+   * repository access token.</p>
+   */
+  inline const Aws::String& GetPluginRepositorySecretArn() const { return m_pluginRepositorySecretArn; }
+  inline bool PluginRepositorySecretArnHasBeenSet() const { return m_pluginRepositorySecretArnHasBeenSet; }
+  template <typename PluginRepositorySecretArnT = Aws::String>
+  void SetPluginRepositorySecretArn(PluginRepositorySecretArnT&& value) {
+    m_pluginRepositorySecretArnHasBeenSet = true;
+    m_pluginRepositorySecretArn = std::forward<PluginRepositorySecretArnT>(value);
+  }
+  template <typename PluginRepositorySecretArnT = Aws::String>
+  InfluxDBv3CoreParameters& WithPluginRepositorySecretArn(PluginRepositorySecretArnT&& value) {
+    SetPluginRepositorySecretArn(std::forward<PluginRepositorySecretArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_queryFileLimit{0};
 
@@ -811,6 +848,10 @@ class InfluxDBv3CoreParameters {
   Duration m_deleteGracePeriod;
 
   Duration m_hardDeleteDefaultDuration;
+
+  Aws::String m_pluginRepositoryUrl;
+
+  Aws::String m_pluginRepositorySecretArn;
   bool m_queryFileLimitHasBeenSet = false;
   bool m_queryLogSizeHasBeenSet = false;
   bool m_logFilterHasBeenSet = false;
@@ -850,6 +891,8 @@ class InfluxDBv3CoreParameters {
   bool m_retentionCheckIntervalHasBeenSet = false;
   bool m_deleteGracePeriodHasBeenSet = false;
   bool m_hardDeleteDefaultDurationHasBeenSet = false;
+  bool m_pluginRepositoryUrlHasBeenSet = false;
+  bool m_pluginRepositorySecretArnHasBeenSet = false;
 };
 
 }  // namespace Model

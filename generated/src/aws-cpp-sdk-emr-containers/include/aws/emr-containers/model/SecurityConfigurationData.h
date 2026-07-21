@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
+#include <aws/emr-containers/model/AuthenticationConfiguration.h>
 #include <aws/emr-containers/model/AuthorizationConfiguration.h>
 
 #include <utility>
@@ -49,9 +50,31 @@ class SecurityConfigurationData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Authentication-related configuration input for the security
+   * configuration.</p>
+   */
+  inline const AuthenticationConfiguration& GetAuthenticationConfiguration() const { return m_authenticationConfiguration; }
+  inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
+  template <typename AuthenticationConfigurationT = AuthenticationConfiguration>
+  void SetAuthenticationConfiguration(AuthenticationConfigurationT&& value) {
+    m_authenticationConfigurationHasBeenSet = true;
+    m_authenticationConfiguration = std::forward<AuthenticationConfigurationT>(value);
+  }
+  template <typename AuthenticationConfigurationT = AuthenticationConfiguration>
+  SecurityConfigurationData& WithAuthenticationConfiguration(AuthenticationConfigurationT&& value) {
+    SetAuthenticationConfiguration(std::forward<AuthenticationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AuthorizationConfiguration m_authorizationConfiguration;
+
+  AuthenticationConfiguration m_authenticationConfiguration;
   bool m_authorizationConfigurationHasBeenSet = false;
+  bool m_authenticationConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

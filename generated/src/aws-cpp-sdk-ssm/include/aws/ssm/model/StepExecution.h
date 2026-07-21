@@ -288,6 +288,25 @@ class StepExecution {
 
   ///@{
   /**
+   * <p>A message that describes a non-critical issue that occurred during the step
+   * execution. Present only if the step status includes a warning.</p>
+   */
+  inline const Aws::String& GetWarningMessage() const { return m_warningMessage; }
+  inline bool WarningMessageHasBeenSet() const { return m_warningMessageHasBeenSet; }
+  template <typename WarningMessageT = Aws::String>
+  void SetWarningMessage(WarningMessageT&& value) {
+    m_warningMessageHasBeenSet = true;
+    m_warningMessage = std::forward<WarningMessageT>(value);
+  }
+  template <typename WarningMessageT = Aws::String>
+  StepExecution& WithWarningMessage(WarningMessageT&& value) {
+    SetWarningMessage(std::forward<WarningMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Information about the Automation failure.</p>
    */
   inline const FailureDetails& GetFailureDetails() const { return m_failureDetails; }
@@ -537,6 +556,8 @@ class StepExecution {
 
   Aws::String m_failureMessage;
 
+  Aws::String m_warningMessage;
+
   FailureDetails m_failureDetails;
 
   Aws::String m_stepExecutionId;
@@ -571,6 +592,7 @@ class StepExecution {
   bool m_outputsHasBeenSet = false;
   bool m_responseHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
+  bool m_warningMessageHasBeenSet = false;
   bool m_failureDetailsHasBeenSet = false;
   bool m_stepExecutionIdHasBeenSet = false;
   bool m_overriddenParametersHasBeenSet = false;

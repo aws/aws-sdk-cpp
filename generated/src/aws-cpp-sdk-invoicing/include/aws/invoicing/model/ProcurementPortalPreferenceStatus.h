@@ -13,6 +13,7 @@ namespace Model {
 enum class ProcurementPortalPreferenceStatus {
   NOT_SET,
   PENDING_VERIFICATION,
+  VALIDATED,
   TEST_INITIALIZED,
   TEST_INITIALIZATION_FAILED,
   TEST_FAILED,

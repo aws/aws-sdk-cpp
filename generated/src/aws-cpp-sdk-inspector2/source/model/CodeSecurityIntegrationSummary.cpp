@@ -46,13 +46,6 @@ CodeSecurityIntegrationSummary& CodeSecurityIntegrationSummary::operator=(JsonVi
     m_lastUpdateOn = jsonValue.GetDouble("lastUpdateOn");
     m_lastUpdateOnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("tags")) {
-    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for (auto& tagsItem : tagsJsonMap) {
-      m_tags[tagsItem.first] = tagsItem.second.AsString();
-    }
-    m_tagsHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -85,14 +78,6 @@ JsonValue CodeSecurityIntegrationSummary::Jsonize() const {
 
   if (m_lastUpdateOnHasBeenSet) {
     payload.WithDouble("lastUpdateOn", m_lastUpdateOn.SecondsWithMSPrecision());
-  }
-
-  if (m_tagsHasBeenSet) {
-    JsonValue tagsJsonMap;
-    for (auto& tagsItem : m_tags) {
-      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-    }
-    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;

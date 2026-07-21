@@ -27,6 +27,7 @@
 #include <aws/emr-containers/model/CreateVirtualClusterRequest.h>
 #include <aws/emr-containers/model/DeleteJobTemplateRequest.h>
 #include <aws/emr-containers/model/DeleteManagedEndpointRequest.h>
+#include <aws/emr-containers/model/DeleteSecurityConfigurationRequest.h>
 #include <aws/emr-containers/model/DeleteVirtualClusterRequest.h>
 #include <aws/emr-containers/model/DescribeJobRunRequest.h>
 #include <aws/emr-containers/model/DescribeJobTemplateRequest.h>
@@ -316,6 +317,25 @@ DeleteManagedEndpointOutcome EMRContainersClient::DeleteManagedEndpoint(const De
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteManagedEndpointOutcome(result.GetResultWithOwnership())
                             : DeleteManagedEndpointOutcome(std::move(result.GetError()));
+}
+
+DeleteSecurityConfigurationOutcome EMRContainersClient::DeleteSecurityConfiguration(
+    const DeleteSecurityConfigurationRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteSecurityConfiguration", "Required field: Id, is not set");
+    return DeleteSecurityConfigurationOutcome(Aws::Client::AWSError<EMRContainersErrors>(
+        EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/securityconfigurations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSecurityConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteSecurityConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteVirtualClusterOutcome EMRContainersClient::DeleteVirtualCluster(const DeleteVirtualClusterRequest& request) const {

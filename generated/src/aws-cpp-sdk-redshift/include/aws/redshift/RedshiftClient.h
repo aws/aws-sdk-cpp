@@ -860,6 +860,34 @@ class AWS_REDSHIFT_API RedshiftClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Creates an Amazon Redshift Query Editor (QEV2) IAM Identity Center
+   * application.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateQev2IdcApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateQev2IdcApplicationOutcome CreateQev2IdcApplication(const Model::CreateQev2IdcApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateQev2IdcApplication that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateQev2IdcApplicationRequestT = Model::CreateQev2IdcApplicationRequest>
+  Model::CreateQev2IdcApplicationOutcomeCallable CreateQev2IdcApplicationCallable(const CreateQev2IdcApplicationRequestT& request) const {
+    return SubmitCallable(&RedshiftClient::CreateQev2IdcApplication, request);
+  }
+
+  /**
+   * An Async wrapper for CreateQev2IdcApplication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateQev2IdcApplicationRequestT = Model::CreateQev2IdcApplicationRequest>
+  void CreateQev2IdcApplicationAsync(const CreateQev2IdcApplicationRequestT& request,
+                                     const CreateQev2IdcApplicationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RedshiftClient::CreateQev2IdcApplication, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Amazon Redshift application for use with IAM Identity
    * Center.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateRedshiftIdcApplication">AWS
@@ -1451,6 +1479,34 @@ class AWS_REDSHIFT_API RedshiftClient : public Aws::Client::AWSXMLClient,
   void DeletePartnerAsync(const DeletePartnerRequestT& request, const DeletePartnerResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&RedshiftClient::DeletePartner, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an Amazon Redshift Query Editor (QEV2) IAM Identity Center
+   * application.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteQev2IdcApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteQev2IdcApplicationOutcome DeleteQev2IdcApplication(const Model::DeleteQev2IdcApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteQev2IdcApplication that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteQev2IdcApplicationRequestT = Model::DeleteQev2IdcApplicationRequest>
+  Model::DeleteQev2IdcApplicationOutcomeCallable DeleteQev2IdcApplicationCallable(const DeleteQev2IdcApplicationRequestT& request) const {
+    return SubmitCallable(&RedshiftClient::DeleteQev2IdcApplication, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteQev2IdcApplication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteQev2IdcApplicationRequestT = Model::DeleteQev2IdcApplicationRequest>
+  void DeleteQev2IdcApplicationAsync(const DeleteQev2IdcApplicationRequestT& request,
+                                     const DeleteQev2IdcApplicationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RedshiftClient::DeleteQev2IdcApplication, request, handler, context);
   }
 
   /**
@@ -2630,6 +2686,37 @@ class AWS_REDSHIFT_API RedshiftClient : public Aws::Client::AWSXMLClient,
   void DescribePartnersAsync(const DescribePartnersRequestT& request, const DescribePartnersResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&RedshiftClient::DescribePartners, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the Amazon Redshift Query Editor (QEV2) IAM Identity Center
+   * applications. To retrieve additional results, use the MaxRecords and Marker
+   * parameters.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeQev2IdcApplications">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeQev2IdcApplicationsOutcome DescribeQev2IdcApplications(
+      const Model::DescribeQev2IdcApplicationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeQev2IdcApplications that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeQev2IdcApplicationsRequestT = Model::DescribeQev2IdcApplicationsRequest>
+  Model::DescribeQev2IdcApplicationsOutcomeCallable DescribeQev2IdcApplicationsCallable(
+      const DescribeQev2IdcApplicationsRequestT& request = {}) const {
+    return SubmitCallable(&RedshiftClient::DescribeQev2IdcApplications, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeQev2IdcApplications that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeQev2IdcApplicationsRequestT = Model::DescribeQev2IdcApplicationsRequest>
+  void DescribeQev2IdcApplicationsAsync(const DescribeQev2IdcApplicationsResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const DescribeQev2IdcApplicationsRequestT& request = {}) const {
+    return SubmitAsync(&RedshiftClient::DescribeQev2IdcApplications, request, handler, context);
   }
 
   /**
@@ -3902,6 +3989,34 @@ class AWS_REDSHIFT_API RedshiftClient : public Aws::Client::AWSXMLClient,
                                          const ModifyLakehouseConfigurationResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&RedshiftClient::ModifyLakehouseConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies an Amazon Redshift Query Editor (QEV2) IAM Identity Center
+   * application.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyQev2IdcApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyQev2IdcApplicationOutcome ModifyQev2IdcApplication(const Model::ModifyQev2IdcApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyQev2IdcApplication that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ModifyQev2IdcApplicationRequestT = Model::ModifyQev2IdcApplicationRequest>
+  Model::ModifyQev2IdcApplicationOutcomeCallable ModifyQev2IdcApplicationCallable(const ModifyQev2IdcApplicationRequestT& request) const {
+    return SubmitCallable(&RedshiftClient::ModifyQev2IdcApplication, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyQev2IdcApplication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ModifyQev2IdcApplicationRequestT = Model::ModifyQev2IdcApplicationRequest>
+  void ModifyQev2IdcApplicationAsync(const ModifyQev2IdcApplicationRequestT& request,
+                                     const ModifyQev2IdcApplicationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RedshiftClient::ModifyQev2IdcApplication, request, handler, context);
   }
 
   /**
