@@ -282,4 +282,12 @@ class EnumRendererTest {
         assertEquals("NULL_", EnumRenderer.sanitizeEnumValue("NULL"));
         assertEquals("OVERFLOW_", EnumRenderer.sanitizeEnumValue("OVERFLOW"));
     }
+
+    @Test
+    void sanitizeEnumValue_handlesCorrectedForbiddenWords() {
+        // Verify co_yield (was misspelled as co_yeild) is now correctly forbidden
+        assertEquals("co_yield_", EnumRenderer.sanitizeEnumValue("co_yield"));
+        // Verify module (was misspelled as moduel) is now correctly forbidden
+        assertEquals("module_", EnumRenderer.sanitizeEnumValue("module"));
+    }
 }

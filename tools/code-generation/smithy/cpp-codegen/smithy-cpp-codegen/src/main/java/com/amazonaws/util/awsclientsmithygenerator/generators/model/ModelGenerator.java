@@ -325,12 +325,8 @@ public class ModelGenerator {
             writer.write("template <typename RESULT_TYPE>");
             writer.write("class AmazonWebServiceResult;");
             writer.write("");
-            // Forward-declare JsonValue only (not JsonView)
-            writer.writeNamespaceOpen("Utils");
-            writer.writeNamespaceOpen("Json");
-            writer.write("class JsonValue;");
-            writer.writeNamespaceClose("Json");
-            writer.writeNamespaceClose("Utils");
+            // Forward-declare serde types based on protocol
+            renderForwardDeclarations(writer);
 
             // Service namespace
             writer.writeNamespaceOpen(namespace);
@@ -347,8 +343,13 @@ public class ModelGenerator {
 
                 // Export macro + constructors
                 writer.write("$L $L() = default;", exportMacro, className);
-                writer.write("$L $L(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);", exportMacro, className);
-                writer.write("$L $L& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);", exportMacro, className);
+                if (protocol.isJsonLike()) {
+                    writer.write("$L $L(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);", exportMacro, className);
+                    writer.write("$L $L& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);", exportMacro, className);
+                } else {
+                    writer.write("$L $L(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);", exportMacro, className);
+                    writer.write("$L $L& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);", exportMacro, className);
+                }
                 writer.write("");
 
                 // Member accessors (NO HasBeenSet for results)
@@ -402,32 +403,51 @@ public class ModelGenerator {
         writerDelegator.useFileWriter(fileName, writer -> {
             writeCopyright(writer);
 
-            // Result-specific includes (matching C2J)
+            // Result-specific includes (protocol-aware)
             writer.write("#include <aws/core/AmazonWebServiceResult.h>");
             writer.write("#include <aws/core/utils/StringUtils.h>");
             writer.write("#include <aws/core/utils/UnreferencedParam.h>");
-            writer.write("#include <aws/core/utils/json/JsonSerializer.h>");
+            if (protocol.isJsonLike()) {
+                writer.write("#include <aws/core/utils/json/JsonSerializer.h>");
+            } else {
+                writer.write("#include <aws/core/utils/xml/XmlSerializer.h>");
+            }
             writer.write("#include <aws/core/utils/memory/stl/AWSStringStream.h>");
             writer.write("#include <aws/$L/model/$L.h>", smithyServiceName, className);
             writer.write("");
             writer.write("#include <utility>");
             writer.write("");
-            writer.write("using namespace Aws::$L::Model;", namespace);
-            writer.write("using namespace Aws::Utils::Json;");
-            writer.write("using namespace Aws::Utils;");
-            writer.write("using namespace Aws;");
+            if (protocol.isJsonLike()) {
+                writer.write("using namespace Aws::$L::Model;", namespace);
+                writer.write("using namespace Aws::Utils::Json;");
+                writer.write("using namespace Aws::Utils;");
+                writer.write("using namespace Aws;");
+            } else {
+                writer.write("using namespace Aws::$L::Model;", namespace);
+                writer.write("using namespace Aws::Utils::Xml;");
+                writer.write("using namespace Aws::Utils;");
+                writer.write("using namespace Aws;");
+            }
             writer.write("");
 
             // AmazonWebServiceResult constructor stub
-            writer.openBlock("$L::$L(const Aws::AmazonWebServiceResult<JsonValue>& result) {", "}", className, className, () -> {
-                writer.write("*this = result;");
-            });
-            writer.write("");
-
-            // operator= stub
-            writer.openBlock("$L& $L::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {", "}", className, className, () -> {
-                writer.write("return *this;");
-            });
+            if (protocol.isJsonLike()) {
+                writer.openBlock("$L::$L(const Aws::AmazonWebServiceResult<JsonValue>& result) {", "}", className, className, () -> {
+                    writer.write("*this = result;");
+                });
+                writer.write("");
+                writer.openBlock("$L& $L::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {", "}", className, className, () -> {
+                    writer.write("return *this;");
+                });
+            } else {
+                writer.openBlock("$L::$L(const Aws::AmazonWebServiceResult<XmlDocument>& result) {", "}", className, className, () -> {
+                    writer.write("*this = result;");
+                });
+                writer.write("");
+                writer.openBlock("$L& $L::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {", "}", className, className, () -> {
+                    writer.write("return *this;");
+                });
+            }
             writer.write("");
         });
     }
@@ -604,9 +624,10 @@ public class ModelGenerator {
                         ContextParamTrait contextParam = member.expectTrait(ContextParamTrait.class);
                         String paramName = contextParam.getName();
                         String memberName = entry.getKey();
-                        writer.openBlock("if ($LHasBeenSet()) {", "}", memberName, () -> {
+                        String capitalizedMember = memberName.substring(0, 1).toUpperCase() + memberName.substring(1);
+                        writer.openBlock("if ($LHasBeenSet()) {", "}", capitalizedMember, () -> {
                             writer.write("parameters.emplace_back(Aws::String(\"$L\"), this->Get$L(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);",
-                                paramName, memberName);
+                                paramName, capitalizedMember);
                         });
                     }
                 }
