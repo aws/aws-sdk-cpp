@@ -4,9 +4,15 @@
  */
 
 #include <aws/es/ElasticsearchServiceEndpointProvider.h>
+#include <aws/es/internal/ElasticsearchServiceEndpointRules.h>
 
 namespace Aws {
 namespace ElasticsearchService {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ElasticsearchServiceEndpointProvider::ElasticsearchServiceEndpointProvider()
+    : ElasticsearchServiceDefaultEpProviderBase(Aws::ElasticsearchService::ElasticsearchServiceEndpointRules::GetRulesBlob(),
+                                                Aws::ElasticsearchService::ElasticsearchServiceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ElasticsearchService
 }  // namespace Aws

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/snow-device-management/SnowDeviceManagementEndpointRules.h>
 #include <aws/snow-device-management/SnowDeviceManagement_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_SNOWDEVICEMANAGEMENT_API SnowDeviceManagementEndpointProvider : public
  public:
   using SnowDeviceManagementResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SnowDeviceManagementEndpointProvider()
-      : SnowDeviceManagementDefaultEpProviderBase(Aws::SnowDeviceManagement::SnowDeviceManagementEndpointRules::GetRulesBlob(),
-                                                  Aws::SnowDeviceManagement::SnowDeviceManagementEndpointRules::RulesBlobSize) {}
+  SnowDeviceManagementEndpointProvider();
 
   ~SnowDeviceManagementEndpointProvider() {}
 };

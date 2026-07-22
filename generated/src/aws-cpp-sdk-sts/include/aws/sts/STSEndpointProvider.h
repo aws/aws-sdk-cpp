@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sts/STSEndpointRules.h>
 #include <aws/sts/STS_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_STS_API STSEndpointProvider : public STSDefaultEpProviderBase {
  public:
   using STSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  STSEndpointProvider() : STSDefaultEpProviderBase(Aws::STS::STSEndpointRules::GetRulesBlob(), Aws::STS::STSEndpointRules::RulesBlobSize) {}
+  STSEndpointProvider();
 
   ~STSEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/workspaces-thin-client/WorkSpacesThinClientClient.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClientEndpointProvider.h>
-#include <aws/workspaces-thin-client/WorkSpacesThinClientEndpointRules.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClientErrorMarshaller.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClientErrors.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClientRequest.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClientServiceClientModel.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
+#include <aws/workspaces-thin-client/internal/WorkSpacesThinClientEndpointRules.h>
 #include <aws/workspaces-thin-client/model/ApplyTimeOf.h>
 #include <aws/workspaces-thin-client/model/ConflictException.h>
 #include <aws/workspaces-thin-client/model/CreateEnvironmentRequest.h>

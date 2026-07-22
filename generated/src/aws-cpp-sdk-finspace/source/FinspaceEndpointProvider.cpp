@@ -4,9 +4,15 @@
  */
 
 #include <aws/finspace/FinspaceEndpointProvider.h>
+#include <aws/finspace/internal/FinspaceEndpointRules.h>
 
 namespace Aws {
 namespace finspace {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+FinspaceEndpointProvider::FinspaceEndpointProvider()
+    : FinspaceDefaultEpProviderBase(Aws::finspace::FinspaceEndpointRules::GetRulesBlob(),
+                                    Aws::finspace::FinspaceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace finspace
 }  // namespace Aws

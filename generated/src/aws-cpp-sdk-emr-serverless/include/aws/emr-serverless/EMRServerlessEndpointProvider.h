@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/emr-serverless/EMRServerlessEndpointRules.h>
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_EMRSERVERLESS_API EMRServerlessEndpointProvider : public EMRServerless
  public:
   using EMRServerlessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  EMRServerlessEndpointProvider()
-      : EMRServerlessDefaultEpProviderBase(Aws::EMRServerless::EMRServerlessEndpointRules::GetRulesBlob(),
-                                           Aws::EMRServerless::EMRServerlessEndpointRules::RulesBlobSize) {}
+  EMRServerlessEndpointProvider();
 
   ~EMRServerlessEndpointProvider() {}
 };

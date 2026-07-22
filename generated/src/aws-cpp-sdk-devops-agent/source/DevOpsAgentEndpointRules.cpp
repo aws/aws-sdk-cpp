@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/devops-agent/DevOpsAgentEndpointRules.h>
+#include <aws/devops-agent/internal/DevOpsAgentEndpointRules.h>
 
 namespace Aws {
 namespace DevOpsAgent {

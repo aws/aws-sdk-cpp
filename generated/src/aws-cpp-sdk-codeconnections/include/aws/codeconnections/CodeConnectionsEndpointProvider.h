@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/codeconnections/CodeConnectionsEndpointRules.h>
 #include <aws/codeconnections/CodeConnections_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CODECONNECTIONS_API CodeConnectionsEndpointProvider : public CodeConne
  public:
   using CodeConnectionsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CodeConnectionsEndpointProvider()
-      : CodeConnectionsDefaultEpProviderBase(Aws::CodeConnections::CodeConnectionsEndpointRules::GetRulesBlob(),
-                                             Aws::CodeConnections::CodeConnectionsEndpointRules::RulesBlobSize) {}
+  CodeConnectionsEndpointProvider();
 
   ~CodeConnectionsEndpointProvider() {}
 };

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreEndpointRules.h>
+#include <aws/cloudfront-keyvaluestore/internal/CloudFrontKeyValueStoreEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

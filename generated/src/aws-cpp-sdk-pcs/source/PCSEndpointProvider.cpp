@@ -4,9 +4,14 @@
  */
 
 #include <aws/pcs/PCSEndpointProvider.h>
+#include <aws/pcs/internal/PCSEndpointRules.h>
 
 namespace Aws {
 namespace PCS {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+PCSEndpointProvider::PCSEndpointProvider()
+    : PCSDefaultEpProviderBase(Aws::PCS::PCSEndpointRules::GetRulesBlob(), Aws::PCS::PCSEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace PCS
 }  // namespace Aws

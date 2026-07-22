@@ -8,12 +8,12 @@
 
 #include <aws/braket/BraketClient.h>
 #include <aws/braket/BraketEndpointProvider.h>
-#include <aws/braket/BraketEndpointRules.h>
 #include <aws/braket/BraketErrorMarshaller.h>
 #include <aws/braket/BraketErrors.h>
 #include <aws/braket/BraketRequest.h>
 #include <aws/braket/BraketServiceClientModel.h>
 #include <aws/braket/Braket_EXPORTS.h>
+#include <aws/braket/internal/BraketEndpointRules.h>
 #include <aws/braket/model/ActionMetadata.h>
 #include <aws/braket/model/AlgorithmSpecification.h>
 #include <aws/braket/model/Association.h>

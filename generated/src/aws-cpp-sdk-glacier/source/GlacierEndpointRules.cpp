@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/glacier/GlacierEndpointRules.h>
+#include <aws/glacier/internal/GlacierEndpointRules.h>
 
 namespace Aws {
 namespace Glacier {

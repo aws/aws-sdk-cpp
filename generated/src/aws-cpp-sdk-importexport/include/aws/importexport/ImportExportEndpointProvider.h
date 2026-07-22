@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/importexport/ImportExportEndpointRules.h>
 #include <aws/importexport/ImportExport_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_IMPORTEXPORT_API ImportExportEndpointProvider : public ImportExportDef
  public:
   using ImportExportResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ImportExportEndpointProvider()
-      : ImportExportDefaultEpProviderBase(Aws::ImportExport::ImportExportEndpointRules::GetRulesBlob(),
-                                          Aws::ImportExport::ImportExportEndpointRules::RulesBlobSize) {}
+  ImportExportEndpointProvider();
 
   ~ImportExportEndpointProvider() {}
 };

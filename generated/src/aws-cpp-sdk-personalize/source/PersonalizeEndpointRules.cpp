@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/personalize/PersonalizeEndpointRules.h>
+#include <aws/personalize/internal/PersonalizeEndpointRules.h>
 
 namespace Aws {
 namespace Personalize {

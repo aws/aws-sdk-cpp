@@ -4,9 +4,15 @@
  */
 
 #include <aws/marketplace-agreement/AgreementServiceEndpointProvider.h>
+#include <aws/marketplace-agreement/internal/AgreementServiceEndpointRules.h>
 
 namespace Aws {
 namespace AgreementService {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+AgreementServiceEndpointProvider::AgreementServiceEndpointProvider()
+    : AgreementServiceDefaultEpProviderBase(Aws::AgreementService::AgreementServiceEndpointRules::GetRulesBlob(),
+                                            Aws::AgreementService::AgreementServiceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace AgreementService
 }  // namespace Aws

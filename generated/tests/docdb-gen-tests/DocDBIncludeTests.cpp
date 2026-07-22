@@ -8,12 +8,12 @@
 
 #include <aws/docdb/DocDBClient.h>
 #include <aws/docdb/DocDBEndpointProvider.h>
-#include <aws/docdb/DocDBEndpointRules.h>
 #include <aws/docdb/DocDBErrorMarshaller.h>
 #include <aws/docdb/DocDBErrors.h>
 #include <aws/docdb/DocDBRequest.h>
 #include <aws/docdb/DocDBServiceClientModel.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
+#include <aws/docdb/internal/DocDBEndpointRules.h>
 #include <aws/docdb/model/AddSourceIdentifierToSubscriptionRequest.h>
 #include <aws/docdb/model/AddSourceIdentifierToSubscriptionResult.h>
 #include <aws/docdb/model/AddTagsToResourceRequest.h>

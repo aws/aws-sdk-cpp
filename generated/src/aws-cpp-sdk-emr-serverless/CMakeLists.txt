@@ -8,6 +8,10 @@ file(GLOB AWS_EMR-SERVERLESS_MODEL_HEADERS
     "include/aws/emr-serverless/model/*.h"
 )
 
+file(GLOB AWS_EMR-SERVERLESS_INTERNAL_HEADERS
+    "include/aws/emr-serverless/internal/*.h"
+)
+
 file(GLOB AWS_EMR-SERVERLESS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_EMR-SERVERLESS_MODEL_SOURCE
 
 file(GLOB EMR-SERVERLESS_UNIFIED_HEADERS
     ${AWS_EMR-SERVERLESS_HEADERS}
+    ${AWS_EMR-SERVERLESS_INTERNAL_HEADERS}
     ${AWS_EMR-SERVERLESS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\emr-serverless" FILES ${AWS_EMR-SERVERLESS_HEADERS})
+        source_group("Header Files\\aws\\emr-serverless\\internal" FILES ${AWS_EMR-SERVERLESS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\emr-serverless\\model" FILES ${AWS_EMR-SERVERLESS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_EMR-SERVERLESS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_EMR-SERVERLESS_MODEL_SOURCE})

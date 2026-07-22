@@ -8,12 +8,12 @@
 
 #include <aws/signer-data/SignerDataClient.h>
 #include <aws/signer-data/SignerDataEndpointProvider.h>
-#include <aws/signer-data/SignerDataEndpointRules.h>
 #include <aws/signer-data/SignerDataErrorMarshaller.h>
 #include <aws/signer-data/SignerDataErrors.h>
 #include <aws/signer-data/SignerDataRequest.h>
 #include <aws/signer-data/SignerDataServiceClientModel.h>
 #include <aws/signer-data/SignerData_EXPORTS.h>
+#include <aws/signer-data/internal/SignerDataEndpointRules.h>
 #include <aws/signer-data/model/AccessDeniedException.h>
 #include <aws/signer-data/model/GetRevocationStatusRequest.h>
 #include <aws/signer-data/model/GetRevocationStatusResult.h>

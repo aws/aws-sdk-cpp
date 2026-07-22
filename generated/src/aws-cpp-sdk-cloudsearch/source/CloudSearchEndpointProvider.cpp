@@ -4,9 +4,15 @@
  */
 
 #include <aws/cloudsearch/CloudSearchEndpointProvider.h>
+#include <aws/cloudsearch/internal/CloudSearchEndpointRules.h>
 
 namespace Aws {
 namespace CloudSearch {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+CloudSearchEndpointProvider::CloudSearchEndpointProvider()
+    : CloudSearchDefaultEpProviderBase(Aws::CloudSearch::CloudSearchEndpointRules::GetRulesBlob(),
+                                       Aws::CloudSearch::CloudSearchEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace CloudSearch
 }  // namespace Aws

@@ -8,12 +8,12 @@
 
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementClient.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementEndpointProvider.h>
-#include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementEndpointRules.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementErrorMarshaller.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementErrors.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementRequest.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementServiceClientModel.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurement_EXPORTS.h>
+#include <aws/partnercentral-revenue-measurement/internal/PartnerCentralRevenueMeasurementEndpointRules.h>
 #include <aws/partnercentral-revenue-measurement/model/AccessDeniedException.h>
 #include <aws/partnercentral-revenue-measurement/model/AccessDeniedExceptionReason.h>
 #include <aws/partnercentral-revenue-measurement/model/AllocationStatus.h>

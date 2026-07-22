@@ -9,7 +9,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/S3ClientConfiguration.h>
-#include <aws/s3/S3EndpointRules.h>
 #include <aws/s3/S3_EXPORTS.h>
 
 namespace Aws {
@@ -99,7 +98,7 @@ class AWS_S3_API S3EndpointProvider : public S3DefaultEpProviderBase {
  public:
   using S3ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  S3EndpointProvider() : S3DefaultEpProviderBase(Aws::S3::S3EndpointRules::GetRulesBlob(), Aws::S3::S3EndpointRules::RulesBlobSize) {}
+  S3EndpointProvider();
 
   ~S3EndpointProvider() {}
 };

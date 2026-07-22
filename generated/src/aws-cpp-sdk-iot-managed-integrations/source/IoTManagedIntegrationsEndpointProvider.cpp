@@ -4,9 +4,15 @@
  */
 
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsEndpointProvider.h>
+#include <aws/iot-managed-integrations/internal/IoTManagedIntegrationsEndpointRules.h>
 
 namespace Aws {
 namespace IoTManagedIntegrations {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+IoTManagedIntegrationsEndpointProvider::IoTManagedIntegrationsEndpointProvider()
+    : IoTManagedIntegrationsDefaultEpProviderBase(Aws::IoTManagedIntegrations::IoTManagedIntegrationsEndpointRules::GetRulesBlob(),
+                                                  Aws::IoTManagedIntegrations::IoTManagedIntegrationsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace IoTManagedIntegrations
 }  // namespace Aws

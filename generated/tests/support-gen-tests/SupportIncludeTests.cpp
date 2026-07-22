@@ -8,12 +8,12 @@
 
 #include <aws/support/SupportClient.h>
 #include <aws/support/SupportEndpointProvider.h>
-#include <aws/support/SupportEndpointRules.h>
 #include <aws/support/SupportErrorMarshaller.h>
 #include <aws/support/SupportErrors.h>
 #include <aws/support/SupportRequest.h>
 #include <aws/support/SupportServiceClientModel.h>
 #include <aws/support/Support_EXPORTS.h>
+#include <aws/support/internal/SupportEndpointRules.h>
 #include <aws/support/model/AddAttachmentsToSetRequest.h>
 #include <aws/support/model/AddAttachmentsToSetResult.h>
 #include <aws/support/model/AddCommunicationToCaseRequest.h>

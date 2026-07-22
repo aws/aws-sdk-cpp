@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/geo-places/GeoPlacesEndpointRules.h>
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_GEOPLACES_API GeoPlacesEndpointProvider : public GeoPlacesDefaultEpPro
  public:
   using GeoPlacesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  GeoPlacesEndpointProvider()
-      : GeoPlacesDefaultEpProviderBase(Aws::GeoPlaces::GeoPlacesEndpointRules::GetRulesBlob(),
-                                       Aws::GeoPlaces::GeoPlacesEndpointRules::RulesBlobSize) {}
+  GeoPlacesEndpointProvider();
 
   ~GeoPlacesEndpointProvider() {}
 };

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/mgn/MgnEndpointRules.h>
+#include <aws/mgn/internal/MgnEndpointRules.h>
 
 namespace Aws {
 namespace mgn {

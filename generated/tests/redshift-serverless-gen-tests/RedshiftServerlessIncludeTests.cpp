@@ -8,12 +8,12 @@
 
 #include <aws/redshift-serverless/RedshiftServerlessClient.h>
 #include <aws/redshift-serverless/RedshiftServerlessEndpointProvider.h>
-#include <aws/redshift-serverless/RedshiftServerlessEndpointRules.h>
 #include <aws/redshift-serverless/RedshiftServerlessErrorMarshaller.h>
 #include <aws/redshift-serverless/RedshiftServerlessErrors.h>
 #include <aws/redshift-serverless/RedshiftServerlessRequest.h>
 #include <aws/redshift-serverless/RedshiftServerlessServiceClientModel.h>
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
+#include <aws/redshift-serverless/internal/RedshiftServerlessEndpointRules.h>
 #include <aws/redshift-serverless/model/AccessDeniedException.h>
 #include <aws/redshift-serverless/model/Association.h>
 #include <aws/redshift-serverless/model/ConfigParameter.h>

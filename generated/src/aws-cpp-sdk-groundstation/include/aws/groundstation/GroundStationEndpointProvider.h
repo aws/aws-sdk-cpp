@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/groundstation/GroundStationEndpointRules.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_GROUNDSTATION_API GroundStationEndpointProvider : public GroundStation
  public:
   using GroundStationResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  GroundStationEndpointProvider()
-      : GroundStationDefaultEpProviderBase(Aws::GroundStation::GroundStationEndpointRules::GetRulesBlob(),
-                                           Aws::GroundStation::GroundStationEndpointRules::RulesBlobSize) {}
+  GroundStationEndpointProvider();
 
   ~GroundStationEndpointProvider() {}
 };

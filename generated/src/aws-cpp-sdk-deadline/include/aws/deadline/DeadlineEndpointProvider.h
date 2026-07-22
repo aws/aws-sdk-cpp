@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/deadline/DeadlineEndpointRules.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_DEADLINE_API DeadlineEndpointProvider : public DeadlineDefaultEpProvid
  public:
   using DeadlineResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DeadlineEndpointProvider()
-      : DeadlineDefaultEpProviderBase(Aws::deadline::DeadlineEndpointRules::GetRulesBlob(),
-                                      Aws::deadline::DeadlineEndpointRules::RulesBlobSize) {}
+  DeadlineEndpointProvider();
 
   ~DeadlineEndpointProvider() {}
 };

@@ -4,9 +4,14 @@
  */
 
 #include <aws/ivschat/IvschatEndpointProvider.h>
+#include <aws/ivschat/internal/IvschatEndpointRules.h>
 
 namespace Aws {
 namespace ivschat {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+IvschatEndpointProvider::IvschatEndpointProvider()
+    : IvschatDefaultEpProviderBase(Aws::ivschat::IvschatEndpointRules::GetRulesBlob(), Aws::ivschat::IvschatEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ivschat
 }  // namespace Aws

@@ -8,12 +8,12 @@
 
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryClient.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryEndpointProvider.h>
-#include <aws/serverlessrepo/ServerlessApplicationRepositoryEndpointRules.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryErrorMarshaller.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryErrors.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryRequest.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryServiceClientModel.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepository_EXPORTS.h>
+#include <aws/serverlessrepo/internal/ServerlessApplicationRepositoryEndpointRules.h>
 #include <aws/serverlessrepo/model/ApplicationDependencySummary.h>
 #include <aws/serverlessrepo/model/ApplicationPolicyStatement.h>
 #include <aws/serverlessrepo/model/ApplicationSummary.h>

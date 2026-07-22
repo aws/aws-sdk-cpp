@@ -8,12 +8,12 @@
 
 #include <aws/iot/IoTClient.h>
 #include <aws/iot/IoTEndpointProvider.h>
-#include <aws/iot/IoTEndpointRules.h>
 #include <aws/iot/IoTErrorMarshaller.h>
 #include <aws/iot/IoTErrors.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/iot/IoTServiceClientModel.h>
 #include <aws/iot/IoT_EXPORTS.h>
+#include <aws/iot/internal/IoTEndpointRules.h>
 #include <aws/iot/model/AbortAction.h>
 #include <aws/iot/model/AbortConfig.h>
 #include <aws/iot/model/AbortCriteria.h>

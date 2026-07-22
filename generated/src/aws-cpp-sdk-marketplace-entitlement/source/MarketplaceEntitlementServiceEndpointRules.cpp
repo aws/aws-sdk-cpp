@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/marketplace-entitlement/MarketplaceEntitlementServiceEndpointRules.h>
+#include <aws/marketplace-entitlement/internal/MarketplaceEntitlementServiceEndpointRules.h>
 
 namespace Aws {
 namespace MarketplaceEntitlementService {

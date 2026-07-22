@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/devicefarm/DeviceFarmEndpointRules.h>
+#include <aws/devicefarm/internal/DeviceFarmEndpointRules.h>
 
 namespace Aws {
 namespace DeviceFarm {

@@ -8,6 +8,10 @@ file(GLOB AWS_SIGNIN_MODEL_HEADERS
     "include/aws/signin/model/*.h"
 )
 
+file(GLOB AWS_SIGNIN_INTERNAL_HEADERS
+    "include/aws/signin/internal/*.h"
+)
+
 file(GLOB AWS_SIGNIN_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SIGNIN_MODEL_SOURCE
 
 file(GLOB SIGNIN_UNIFIED_HEADERS
     ${AWS_SIGNIN_HEADERS}
+    ${AWS_SIGNIN_INTERNAL_HEADERS}
     ${AWS_SIGNIN_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\signin" FILES ${AWS_SIGNIN_HEADERS})
+        source_group("Header Files\\aws\\signin\\internal" FILES ${AWS_SIGNIN_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\signin\\model" FILES ${AWS_SIGNIN_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SIGNIN_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SIGNIN_MODEL_SOURCE})

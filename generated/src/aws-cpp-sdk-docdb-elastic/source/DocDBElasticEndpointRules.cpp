@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/docdb-elastic/DocDBElasticEndpointRules.h>
+#include <aws/docdb-elastic/internal/DocDBElasticEndpointRules.h>
 
 namespace Aws {
 namespace DocDBElastic {

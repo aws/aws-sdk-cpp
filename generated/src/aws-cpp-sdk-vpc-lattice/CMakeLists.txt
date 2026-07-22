@@ -8,6 +8,10 @@ file(GLOB AWS_VPC-LATTICE_MODEL_HEADERS
     "include/aws/vpc-lattice/model/*.h"
 )
 
+file(GLOB AWS_VPC-LATTICE_INTERNAL_HEADERS
+    "include/aws/vpc-lattice/internal/*.h"
+)
+
 file(GLOB AWS_VPC-LATTICE_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_VPC-LATTICE_MODEL_SOURCE
 
 file(GLOB VPC-LATTICE_UNIFIED_HEADERS
     ${AWS_VPC-LATTICE_HEADERS}
+    ${AWS_VPC-LATTICE_INTERNAL_HEADERS}
     ${AWS_VPC-LATTICE_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\vpc-lattice" FILES ${AWS_VPC-LATTICE_HEADERS})
+        source_group("Header Files\\aws\\vpc-lattice\\internal" FILES ${AWS_VPC-LATTICE_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\vpc-lattice\\model" FILES ${AWS_VPC-LATTICE_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_VPC-LATTICE_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_VPC-LATTICE_MODEL_SOURCE})

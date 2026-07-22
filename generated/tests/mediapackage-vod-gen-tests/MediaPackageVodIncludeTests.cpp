@@ -8,12 +8,12 @@
 
 #include <aws/mediapackage-vod/MediaPackageVodClient.h>
 #include <aws/mediapackage-vod/MediaPackageVodEndpointProvider.h>
-#include <aws/mediapackage-vod/MediaPackageVodEndpointRules.h>
 #include <aws/mediapackage-vod/MediaPackageVodErrorMarshaller.h>
 #include <aws/mediapackage-vod/MediaPackageVodErrors.h>
 #include <aws/mediapackage-vod/MediaPackageVodRequest.h>
 #include <aws/mediapackage-vod/MediaPackageVodServiceClientModel.h>
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
+#include <aws/mediapackage-vod/internal/MediaPackageVodEndpointRules.h>
 #include <aws/mediapackage-vod/model/AdMarkers.h>
 #include <aws/mediapackage-vod/model/AssetShallow.h>
 #include <aws/mediapackage-vod/model/Authorization.h>

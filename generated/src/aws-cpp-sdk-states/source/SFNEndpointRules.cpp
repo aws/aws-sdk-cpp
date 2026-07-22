@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/states/SFNEndpointRules.h>
+#include <aws/states/internal/SFNEndpointRules.h>
 
 namespace Aws {
 namespace SFN {

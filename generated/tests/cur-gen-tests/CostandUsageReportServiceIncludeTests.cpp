@@ -8,12 +8,12 @@
 
 #include <aws/cur/CostandUsageReportServiceClient.h>
 #include <aws/cur/CostandUsageReportServiceEndpointProvider.h>
-#include <aws/cur/CostandUsageReportServiceEndpointRules.h>
 #include <aws/cur/CostandUsageReportServiceErrorMarshaller.h>
 #include <aws/cur/CostandUsageReportServiceErrors.h>
 #include <aws/cur/CostandUsageReportServiceRequest.h>
 #include <aws/cur/CostandUsageReportServiceServiceClientModel.h>
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
+#include <aws/cur/internal/CostandUsageReportServiceEndpointRules.h>
 #include <aws/cur/model/AWSRegion.h>
 #include <aws/cur/model/AdditionalArtifact.h>
 #include <aws/cur/model/CompressionFormat.h>

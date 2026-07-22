@@ -8,12 +8,12 @@
 
 #include <aws/appconfigdata/AppConfigDataClient.h>
 #include <aws/appconfigdata/AppConfigDataEndpointProvider.h>
-#include <aws/appconfigdata/AppConfigDataEndpointRules.h>
 #include <aws/appconfigdata/AppConfigDataErrorMarshaller.h>
 #include <aws/appconfigdata/AppConfigDataErrors.h>
 #include <aws/appconfigdata/AppConfigDataRequest.h>
 #include <aws/appconfigdata/AppConfigDataServiceClientModel.h>
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
+#include <aws/appconfigdata/internal/AppConfigDataEndpointRules.h>
 #include <aws/appconfigdata/model/BadRequestDetails.h>
 #include <aws/appconfigdata/model/BadRequestException.h>
 #include <aws/appconfigdata/model/BadRequestReason.h>

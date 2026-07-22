@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/inspector-scan/InspectorscanEndpointRules.h>
+#include <aws/inspector-scan/internal/InspectorscanEndpointRules.h>
 
 namespace Aws {
 namespace inspectorscan {

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/waf-regional/WAFRegionalEndpointRules.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_WAFREGIONAL_API WAFRegionalEndpointProvider : public WAFRegionalDefaul
  public:
   using WAFRegionalResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  WAFRegionalEndpointProvider()
-      : WAFRegionalDefaultEpProviderBase(Aws::WAFRegional::WAFRegionalEndpointRules::GetRulesBlob(),
-                                         Aws::WAFRegional::WAFRegionalEndpointRules::RulesBlobSize) {}
+  WAFRegionalEndpointProvider();
 
   ~WAFRegionalEndpointProvider() {}
 };

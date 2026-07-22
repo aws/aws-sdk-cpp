@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/cloudfront/CloudFrontEndpointRules.h>
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CLOUDFRONT_API CloudFrontEndpointProvider : public CloudFrontDefaultEp
  public:
   using CloudFrontResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CloudFrontEndpointProvider()
-      : CloudFrontDefaultEpProviderBase(Aws::CloudFront::CloudFrontEndpointRules::GetRulesBlob(),
-                                        Aws::CloudFront::CloudFrontEndpointRules::RulesBlobSize) {}
+  CloudFrontEndpointProvider();
 
   ~CloudFrontEndpointProvider() {}
 };

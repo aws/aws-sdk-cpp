@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/compute-optimizer-automation/ComputeOptimizerAutomationEndpointRules.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -45,10 +44,7 @@ class AWS_COMPUTEOPTIMIZERAUTOMATION_API ComputeOptimizerAutomationEndpointProvi
  public:
   using ComputeOptimizerAutomationResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ComputeOptimizerAutomationEndpointProvider()
-      : ComputeOptimizerAutomationDefaultEpProviderBase(
-            Aws::ComputeOptimizerAutomation::ComputeOptimizerAutomationEndpointRules::GetRulesBlob(),
-            Aws::ComputeOptimizerAutomation::ComputeOptimizerAutomationEndpointRules::RulesBlobSize) {}
+  ComputeOptimizerAutomationEndpointProvider();
 
   ~ComputeOptimizerAutomationEndpointProvider() {}
 };

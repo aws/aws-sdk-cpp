@@ -8,12 +8,12 @@
 
 #include <aws/ssm-incidents/SSMIncidentsClient.h>
 #include <aws/ssm-incidents/SSMIncidentsEndpointProvider.h>
-#include <aws/ssm-incidents/SSMIncidentsEndpointRules.h>
 #include <aws/ssm-incidents/SSMIncidentsErrorMarshaller.h>
 #include <aws/ssm-incidents/SSMIncidentsErrors.h>
 #include <aws/ssm-incidents/SSMIncidentsRequest.h>
 #include <aws/ssm-incidents/SSMIncidentsServiceClientModel.h>
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
+#include <aws/ssm-incidents/internal/SSMIncidentsEndpointRules.h>
 #include <aws/ssm-incidents/model/Action.h>
 #include <aws/ssm-incidents/model/AddRegionAction.h>
 #include <aws/ssm-incidents/model/AttributeValueList.h>

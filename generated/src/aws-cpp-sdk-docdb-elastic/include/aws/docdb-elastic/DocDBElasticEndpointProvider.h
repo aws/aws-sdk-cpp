@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/docdb-elastic/DocDBElasticEndpointRules.h>
 #include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_DOCDBELASTIC_API DocDBElasticEndpointProvider : public DocDBElasticDef
  public:
   using DocDBElasticResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DocDBElasticEndpointProvider()
-      : DocDBElasticDefaultEpProviderBase(Aws::DocDBElastic::DocDBElasticEndpointRules::GetRulesBlob(),
-                                          Aws::DocDBElastic::DocDBElasticEndpointRules::RulesBlobSize) {}
+  DocDBElasticEndpointProvider();
 
   ~DocDBElasticEndpointProvider() {}
 };

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/bcm-data-exports/BCMDataExportsEndpointRules.h>
+#include <aws/bcm-data-exports/internal/BCMDataExportsEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

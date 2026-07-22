@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/batch/BatchEndpointRules.h>
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -40,8 +39,7 @@ class AWS_BATCH_API BatchEndpointProvider : public BatchDefaultEpProviderBase {
  public:
   using BatchResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BatchEndpointProvider()
-      : BatchDefaultEpProviderBase(Aws::Batch::BatchEndpointRules::GetRulesBlob(), Aws::Batch::BatchEndpointRules::RulesBlobSize) {}
+  BatchEndpointProvider();
 
   ~BatchEndpointProvider() {}
 };

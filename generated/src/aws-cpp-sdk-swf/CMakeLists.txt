@@ -8,6 +8,10 @@ file(GLOB AWS_SWF_MODEL_HEADERS
     "include/aws/swf/model/*.h"
 )
 
+file(GLOB AWS_SWF_INTERNAL_HEADERS
+    "include/aws/swf/internal/*.h"
+)
+
 file(GLOB AWS_SWF_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SWF_MODEL_SOURCE
 
 file(GLOB SWF_UNIFIED_HEADERS
     ${AWS_SWF_HEADERS}
+    ${AWS_SWF_INTERNAL_HEADERS}
     ${AWS_SWF_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\swf" FILES ${AWS_SWF_HEADERS})
+        source_group("Header Files\\aws\\swf\\internal" FILES ${AWS_SWF_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\swf\\model" FILES ${AWS_SWF_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SWF_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SWF_MODEL_SOURCE})

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/migrationhub-config/MigrationHubConfigEndpointRules.h>
+#include <aws/migrationhub-config/internal/MigrationHubConfigEndpointRules.h>
 
 namespace Aws {
 namespace MigrationHubConfig {

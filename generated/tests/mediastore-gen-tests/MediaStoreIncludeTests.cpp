@@ -8,12 +8,12 @@
 
 #include <aws/mediastore/MediaStoreClient.h>
 #include <aws/mediastore/MediaStoreEndpointProvider.h>
-#include <aws/mediastore/MediaStoreEndpointRules.h>
 #include <aws/mediastore/MediaStoreErrorMarshaller.h>
 #include <aws/mediastore/MediaStoreErrors.h>
 #include <aws/mediastore/MediaStoreRequest.h>
 #include <aws/mediastore/MediaStoreServiceClientModel.h>
 #include <aws/mediastore/MediaStore_EXPORTS.h>
+#include <aws/mediastore/internal/MediaStoreEndpointRules.h>
 #include <aws/mediastore/model/Container.h>
 #include <aws/mediastore/model/ContainerLevelMetrics.h>
 #include <aws/mediastore/model/ContainerStatus.h>

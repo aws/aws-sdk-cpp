@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/lex/LexRuntimeServiceEndpointRules.h>
+#include <aws/lex/internal/LexRuntimeServiceEndpointRules.h>
 
 namespace Aws {
 namespace LexRuntimeService {

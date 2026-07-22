@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/imagebuilder/ImagebuilderEndpointRules.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderEndpointProvider : public ImagebuilderDef
  public:
   using ImagebuilderResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ImagebuilderEndpointProvider()
-      : ImagebuilderDefaultEpProviderBase(Aws::imagebuilder::ImagebuilderEndpointRules::GetRulesBlob(),
-                                          Aws::imagebuilder::ImagebuilderEndpointRules::RulesBlobSize) {}
+  ImagebuilderEndpointProvider();
 
   ~ImagebuilderEndpointProvider() {}
 };

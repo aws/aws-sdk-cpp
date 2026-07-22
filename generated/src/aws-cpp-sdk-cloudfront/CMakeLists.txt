@@ -8,6 +8,10 @@ file(GLOB AWS_CLOUDFRONT_MODEL_HEADERS
     "include/aws/cloudfront/model/*.h"
 )
 
+file(GLOB AWS_CLOUDFRONT_INTERNAL_HEADERS
+    "include/aws/cloudfront/internal/*.h"
+)
+
 file(GLOB AWS_CLOUDFRONT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CLOUDFRONT_MODEL_SOURCE
 
 file(GLOB CLOUDFRONT_UNIFIED_HEADERS
     ${AWS_CLOUDFRONT_HEADERS}
+    ${AWS_CLOUDFRONT_INTERNAL_HEADERS}
     ${AWS_CLOUDFRONT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\cloudfront" FILES ${AWS_CLOUDFRONT_HEADERS})
+        source_group("Header Files\\aws\\cloudfront\\internal" FILES ${AWS_CLOUDFRONT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\cloudfront\\model" FILES ${AWS_CLOUDFRONT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CLOUDFRONT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CLOUDFRONT_MODEL_SOURCE})

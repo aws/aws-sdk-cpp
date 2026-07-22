@@ -8,12 +8,12 @@
 
 #include <aws/chatbot/ChatbotClient.h>
 #include <aws/chatbot/ChatbotEndpointProvider.h>
-#include <aws/chatbot/ChatbotEndpointRules.h>
 #include <aws/chatbot/ChatbotErrorMarshaller.h>
 #include <aws/chatbot/ChatbotErrors.h>
 #include <aws/chatbot/ChatbotRequest.h>
 #include <aws/chatbot/ChatbotServiceClientModel.h>
 #include <aws/chatbot/Chatbot_EXPORTS.h>
+#include <aws/chatbot/internal/ChatbotEndpointRules.h>
 #include <aws/chatbot/model/AccountPreferences.h>
 #include <aws/chatbot/model/AssociateToConfigurationRequest.h>
 #include <aws/chatbot/model/AssociateToConfigurationResult.h>

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/personalize-events/PersonalizeEventsEndpointRules.h>
+#include <aws/personalize-events/internal/PersonalizeEventsEndpointRules.h>
 
 namespace Aws {
 namespace PersonalizeEvents {

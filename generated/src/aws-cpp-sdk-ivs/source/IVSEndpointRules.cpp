@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ivs/IVSEndpointRules.h>
+#include <aws/ivs/internal/IVSEndpointRules.h>
 
 namespace Aws {
 namespace IVS {

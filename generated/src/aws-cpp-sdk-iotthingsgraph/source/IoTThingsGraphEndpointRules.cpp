@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/iotthingsgraph/IoTThingsGraphEndpointRules.h>
+#include <aws/iotthingsgraph/internal/IoTThingsGraphEndpointRules.h>
 
 namespace Aws {
 namespace IoTThingsGraph {

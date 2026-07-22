@@ -8,6 +8,10 @@ file(GLOB AWS_ACM-PCA_MODEL_HEADERS
     "include/aws/acm-pca/model/*.h"
 )
 
+file(GLOB AWS_ACM-PCA_INTERNAL_HEADERS
+    "include/aws/acm-pca/internal/*.h"
+)
+
 file(GLOB AWS_ACM-PCA_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_ACM-PCA_MODEL_SOURCE
 
 file(GLOB ACM-PCA_UNIFIED_HEADERS
     ${AWS_ACM-PCA_HEADERS}
+    ${AWS_ACM-PCA_INTERNAL_HEADERS}
     ${AWS_ACM-PCA_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\acm-pca" FILES ${AWS_ACM-PCA_HEADERS})
+        source_group("Header Files\\aws\\acm-pca\\internal" FILES ${AWS_ACM-PCA_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\acm-pca\\model" FILES ${AWS_ACM-PCA_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_ACM-PCA_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_ACM-PCA_MODEL_SOURCE})

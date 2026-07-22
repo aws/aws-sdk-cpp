@@ -8,12 +8,12 @@
 
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesClient.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesEndpointProvider.h>
-#include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesEndpointRules.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesErrorMarshaller.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesErrors.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesRequest.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesServiceClientModel.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
+#include <aws/chime-sdk-media-pipelines/internal/ChimeSDKMediaPipelinesEndpointRules.h>
 #include <aws/chime-sdk-media-pipelines/model/ActiveSpeakerOnlyConfiguration.h>
 #include <aws/chime-sdk-media-pipelines/model/ActiveSpeakerPosition.h>
 #include <aws/chime-sdk-media-pipelines/model/AmazonTranscribeCallAnalyticsProcessorConfiguration.h>

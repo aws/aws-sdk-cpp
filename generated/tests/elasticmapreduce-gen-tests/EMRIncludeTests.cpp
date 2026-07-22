@@ -8,12 +8,12 @@
 
 #include <aws/elasticmapreduce/EMRClient.h>
 #include <aws/elasticmapreduce/EMREndpointProvider.h>
-#include <aws/elasticmapreduce/EMREndpointRules.h>
 #include <aws/elasticmapreduce/EMRErrorMarshaller.h>
 #include <aws/elasticmapreduce/EMRErrors.h>
 #include <aws/elasticmapreduce/EMRRequest.h>
 #include <aws/elasticmapreduce/EMRServiceClientModel.h>
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
+#include <aws/elasticmapreduce/internal/EMREndpointRules.h>
 #include <aws/elasticmapreduce/model/ActionOnFailure.h>
 #include <aws/elasticmapreduce/model/AddInstanceFleetRequest.h>
 #include <aws/elasticmapreduce/model/AddInstanceFleetResult.h>

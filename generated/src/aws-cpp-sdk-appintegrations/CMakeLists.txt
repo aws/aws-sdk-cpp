@@ -8,6 +8,10 @@ file(GLOB AWS_APPINTEGRATIONS_MODEL_HEADERS
     "include/aws/appintegrations/model/*.h"
 )
 
+file(GLOB AWS_APPINTEGRATIONS_INTERNAL_HEADERS
+    "include/aws/appintegrations/internal/*.h"
+)
+
 file(GLOB AWS_APPINTEGRATIONS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_APPINTEGRATIONS_MODEL_SOURCE
 
 file(GLOB APPINTEGRATIONS_UNIFIED_HEADERS
     ${AWS_APPINTEGRATIONS_HEADERS}
+    ${AWS_APPINTEGRATIONS_INTERNAL_HEADERS}
     ${AWS_APPINTEGRATIONS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\appintegrations" FILES ${AWS_APPINTEGRATIONS_HEADERS})
+        source_group("Header Files\\aws\\appintegrations\\internal" FILES ${AWS_APPINTEGRATIONS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\appintegrations\\model" FILES ${AWS_APPINTEGRATIONS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_APPINTEGRATIONS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_APPINTEGRATIONS_MODEL_SOURCE})

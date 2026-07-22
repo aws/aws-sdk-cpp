@@ -4,9 +4,15 @@
  */
 
 #include <aws/elementalinference/ElementalInferenceEndpointProvider.h>
+#include <aws/elementalinference/internal/ElementalInferenceEndpointRules.h>
 
 namespace Aws {
 namespace ElementalInference {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ElementalInferenceEndpointProvider::ElementalInferenceEndpointProvider()
+    : ElementalInferenceDefaultEpProviderBase(Aws::ElementalInference::ElementalInferenceEndpointRules::GetRulesBlob(),
+                                              Aws::ElementalInference::ElementalInferenceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ElementalInference
 }  // namespace Aws

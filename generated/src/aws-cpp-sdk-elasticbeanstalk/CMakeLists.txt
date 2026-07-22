@@ -8,6 +8,10 @@ file(GLOB AWS_ELASTICBEANSTALK_MODEL_HEADERS
     "include/aws/elasticbeanstalk/model/*.h"
 )
 
+file(GLOB AWS_ELASTICBEANSTALK_INTERNAL_HEADERS
+    "include/aws/elasticbeanstalk/internal/*.h"
+)
+
 file(GLOB AWS_ELASTICBEANSTALK_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_ELASTICBEANSTALK_MODEL_SOURCE
 
 file(GLOB ELASTICBEANSTALK_UNIFIED_HEADERS
     ${AWS_ELASTICBEANSTALK_HEADERS}
+    ${AWS_ELASTICBEANSTALK_INTERNAL_HEADERS}
     ${AWS_ELASTICBEANSTALK_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\elasticbeanstalk" FILES ${AWS_ELASTICBEANSTALK_HEADERS})
+        source_group("Header Files\\aws\\elasticbeanstalk\\internal" FILES ${AWS_ELASTICBEANSTALK_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\elasticbeanstalk\\model" FILES ${AWS_ELASTICBEANSTALK_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_ELASTICBEANSTALK_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_ELASTICBEANSTALK_MODEL_SOURCE})

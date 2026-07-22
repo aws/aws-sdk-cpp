@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/oam/OAMEndpointRules.h>
 #include <aws/oam/OAM_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_OAM_API OAMEndpointProvider : public OAMDefaultEpProviderBase {
  public:
   using OAMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  OAMEndpointProvider() : OAMDefaultEpProviderBase(Aws::OAM::OAMEndpointRules::GetRulesBlob(), Aws::OAM::OAMEndpointRules::RulesBlobSize) {}
+  OAMEndpointProvider();
 
   ~OAMEndpointProvider() {}
 };

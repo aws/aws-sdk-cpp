@@ -4,9 +4,15 @@
  */
 
 #include <aws/scheduler/SchedulerEndpointProvider.h>
+#include <aws/scheduler/internal/SchedulerEndpointRules.h>
 
 namespace Aws {
 namespace Scheduler {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SchedulerEndpointProvider::SchedulerEndpointProvider()
+    : SchedulerDefaultEpProviderBase(Aws::Scheduler::SchedulerEndpointRules::GetRulesBlob(),
+                                     Aws::Scheduler::SchedulerEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Scheduler
 }  // namespace Aws

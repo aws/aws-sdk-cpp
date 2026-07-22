@@ -4,9 +4,15 @@
  */
 
 #include <aws/autoscaling-plans/AutoScalingPlansEndpointProvider.h>
+#include <aws/autoscaling-plans/internal/AutoScalingPlansEndpointRules.h>
 
 namespace Aws {
 namespace AutoScalingPlans {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+AutoScalingPlansEndpointProvider::AutoScalingPlansEndpointProvider()
+    : AutoScalingPlansDefaultEpProviderBase(Aws::AutoScalingPlans::AutoScalingPlansEndpointRules::GetRulesBlob(),
+                                            Aws::AutoScalingPlans::AutoScalingPlansEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace AutoScalingPlans
 }  // namespace Aws

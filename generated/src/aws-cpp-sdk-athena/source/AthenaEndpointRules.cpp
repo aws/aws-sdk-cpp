@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/athena/AthenaEndpointRules.h>
+#include <aws/athena/internal/AthenaEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

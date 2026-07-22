@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/comprehend/ComprehendEndpointRules.h>
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_COMPREHEND_API ComprehendEndpointProvider : public ComprehendDefaultEp
  public:
   using ComprehendResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ComprehendEndpointProvider()
-      : ComprehendDefaultEpProviderBase(Aws::Comprehend::ComprehendEndpointRules::GetRulesBlob(),
-                                        Aws::Comprehend::ComprehendEndpointRules::RulesBlobSize) {}
+  ComprehendEndpointProvider();
 
   ~ComprehendEndpointProvider() {}
 };

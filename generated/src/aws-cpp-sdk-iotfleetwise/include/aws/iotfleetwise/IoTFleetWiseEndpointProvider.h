@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iotfleetwise/IoTFleetWiseEndpointRules.h>
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_IOTFLEETWISE_API IoTFleetWiseEndpointProvider : public IoTFleetWiseDef
  public:
   using IoTFleetWiseResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IoTFleetWiseEndpointProvider()
-      : IoTFleetWiseDefaultEpProviderBase(Aws::IoTFleetWise::IoTFleetWiseEndpointRules::GetRulesBlob(),
-                                          Aws::IoTFleetWise::IoTFleetWiseEndpointRules::RulesBlobSize) {}
+  IoTFleetWiseEndpointProvider();
 
   ~IoTFleetWiseEndpointProvider() {}
 };

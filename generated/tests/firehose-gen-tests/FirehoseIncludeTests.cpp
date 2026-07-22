@@ -8,12 +8,12 @@
 
 #include <aws/firehose/FirehoseClient.h>
 #include <aws/firehose/FirehoseEndpointProvider.h>
-#include <aws/firehose/FirehoseEndpointRules.h>
 #include <aws/firehose/FirehoseErrorMarshaller.h>
 #include <aws/firehose/FirehoseErrors.h>
 #include <aws/firehose/FirehoseRequest.h>
 #include <aws/firehose/FirehoseServiceClientModel.h>
 #include <aws/firehose/Firehose_EXPORTS.h>
+#include <aws/firehose/internal/FirehoseEndpointRules.h>
 #include <aws/firehose/model/AmazonOpenSearchServerlessBufferingHints.h>
 #include <aws/firehose/model/AmazonOpenSearchServerlessDestinationConfiguration.h>
 #include <aws/firehose/model/AmazonOpenSearchServerlessDestinationDescription.h>

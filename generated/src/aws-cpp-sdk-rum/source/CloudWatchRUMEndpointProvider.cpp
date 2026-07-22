@@ -4,9 +4,15 @@
  */
 
 #include <aws/rum/CloudWatchRUMEndpointProvider.h>
+#include <aws/rum/internal/CloudWatchRUMEndpointRules.h>
 
 namespace Aws {
 namespace CloudWatchRUM {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+CloudWatchRUMEndpointProvider::CloudWatchRUMEndpointProvider()
+    : CloudWatchRUMDefaultEpProviderBase(Aws::CloudWatchRUM::CloudWatchRUMEndpointRules::GetRulesBlob(),
+                                         Aws::CloudWatchRUM::CloudWatchRUMEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace CloudWatchRUM
 }  // namespace Aws

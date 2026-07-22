@@ -8,12 +8,12 @@
 
 #include <aws/socialmessaging/SocialMessagingClient.h>
 #include <aws/socialmessaging/SocialMessagingEndpointProvider.h>
-#include <aws/socialmessaging/SocialMessagingEndpointRules.h>
 #include <aws/socialmessaging/SocialMessagingErrorMarshaller.h>
 #include <aws/socialmessaging/SocialMessagingErrors.h>
 #include <aws/socialmessaging/SocialMessagingRequest.h>
 #include <aws/socialmessaging/SocialMessagingServiceClientModel.h>
 #include <aws/socialmessaging/SocialMessaging_EXPORTS.h>
+#include <aws/socialmessaging/internal/SocialMessagingEndpointRules.h>
 #include <aws/socialmessaging/model/AssociateWhatsAppBusinessAccountRequest.h>
 #include <aws/socialmessaging/model/AssociateWhatsAppBusinessAccountResult.h>
 #include <aws/socialmessaging/model/CreateWhatsAppFlowRequest.h>

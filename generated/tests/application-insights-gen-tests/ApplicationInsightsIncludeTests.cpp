@@ -8,12 +8,12 @@
 
 #include <aws/application-insights/ApplicationInsightsClient.h>
 #include <aws/application-insights/ApplicationInsightsEndpointProvider.h>
-#include <aws/application-insights/ApplicationInsightsEndpointRules.h>
 #include <aws/application-insights/ApplicationInsightsErrorMarshaller.h>
 #include <aws/application-insights/ApplicationInsightsErrors.h>
 #include <aws/application-insights/ApplicationInsightsRequest.h>
 #include <aws/application-insights/ApplicationInsightsServiceClientModel.h>
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
+#include <aws/application-insights/internal/ApplicationInsightsEndpointRules.h>
 #include <aws/application-insights/model/AddWorkloadRequest.h>
 #include <aws/application-insights/model/AddWorkloadResult.h>
 #include <aws/application-insights/model/ApplicationComponent.h>

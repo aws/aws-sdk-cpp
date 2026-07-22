@@ -8,12 +8,12 @@
 
 #include <aws/migrationhub-config/MigrationHubConfigClient.h>
 #include <aws/migrationhub-config/MigrationHubConfigEndpointProvider.h>
-#include <aws/migrationhub-config/MigrationHubConfigEndpointRules.h>
 #include <aws/migrationhub-config/MigrationHubConfigErrorMarshaller.h>
 #include <aws/migrationhub-config/MigrationHubConfigErrors.h>
 #include <aws/migrationhub-config/MigrationHubConfigRequest.h>
 #include <aws/migrationhub-config/MigrationHubConfigServiceClientModel.h>
 #include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
+#include <aws/migrationhub-config/internal/MigrationHubConfigEndpointRules.h>
 #include <aws/migrationhub-config/model/CreateHomeRegionControlRequest.h>
 #include <aws/migrationhub-config/model/CreateHomeRegionControlResult.h>
 #include <aws/migrationhub-config/model/DeleteHomeRegionControlRequest.h>

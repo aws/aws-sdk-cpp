@@ -4,9 +4,15 @@
  */
 
 #include <aws/network-firewall/NetworkFirewallEndpointProvider.h>
+#include <aws/network-firewall/internal/NetworkFirewallEndpointRules.h>
 
 namespace Aws {
 namespace NetworkFirewall {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+NetworkFirewallEndpointProvider::NetworkFirewallEndpointProvider()
+    : NetworkFirewallDefaultEpProviderBase(Aws::NetworkFirewall::NetworkFirewallEndpointRules::GetRulesBlob(),
+                                           Aws::NetworkFirewall::NetworkFirewallEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace NetworkFirewall
 }  // namespace Aws

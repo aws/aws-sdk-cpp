@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rekognition/RekognitionEndpointRules.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_REKOGNITION_API RekognitionEndpointProvider : public RekognitionDefaul
  public:
   using RekognitionResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  RekognitionEndpointProvider()
-      : RekognitionDefaultEpProviderBase(Aws::Rekognition::RekognitionEndpointRules::GetRulesBlob(),
-                                         Aws::Rekognition::RekognitionEndpointRules::RulesBlobSize) {}
+  RekognitionEndpointProvider();
 
   ~RekognitionEndpointProvider() {}
 };

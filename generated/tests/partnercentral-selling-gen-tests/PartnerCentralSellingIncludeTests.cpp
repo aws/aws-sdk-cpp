@@ -8,12 +8,12 @@
 
 #include <aws/partnercentral-selling/PartnerCentralSellingClient.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingEndpointProvider.h>
-#include <aws/partnercentral-selling/PartnerCentralSellingEndpointRules.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingErrorMarshaller.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingErrors.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingRequest.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingServiceClientModel.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/internal/PartnerCentralSellingEndpointRules.h>
 #include <aws/partnercentral-selling/model/AcceptEngagementInvitationRequest.h>
 #include <aws/partnercentral-selling/model/AccessDeniedException.h>
 #include <aws/partnercentral-selling/model/AccessDeniedExceptionErrorCode.h>

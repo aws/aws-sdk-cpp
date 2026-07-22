@@ -4,9 +4,15 @@
  */
 
 #include <aws/opensearch/OpenSearchServiceEndpointProvider.h>
+#include <aws/opensearch/internal/OpenSearchServiceEndpointRules.h>
 
 namespace Aws {
 namespace OpenSearchService {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+OpenSearchServiceEndpointProvider::OpenSearchServiceEndpointProvider()
+    : OpenSearchServiceDefaultEpProviderBase(Aws::OpenSearchService::OpenSearchServiceEndpointRules::GetRulesBlob(),
+                                             Aws::OpenSearchService::OpenSearchServiceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace OpenSearchService
 }  // namespace Aws

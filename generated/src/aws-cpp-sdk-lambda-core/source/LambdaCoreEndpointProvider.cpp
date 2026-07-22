@@ -4,9 +4,15 @@
  */
 
 #include <aws/lambda-core/LambdaCoreEndpointProvider.h>
+#include <aws/lambda-core/internal/LambdaCoreEndpointRules.h>
 
 namespace Aws {
 namespace LambdaCore {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+LambdaCoreEndpointProvider::LambdaCoreEndpointProvider()
+    : LambdaCoreDefaultEpProviderBase(Aws::LambdaCore::LambdaCoreEndpointRules::GetRulesBlob(),
+                                      Aws::LambdaCore::LambdaCoreEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace LambdaCore
 }  // namespace Aws

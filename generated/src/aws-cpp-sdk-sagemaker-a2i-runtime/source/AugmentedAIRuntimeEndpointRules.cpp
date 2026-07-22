@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeEndpointRules.h>
+#include <aws/sagemaker-a2i-runtime/internal/AugmentedAIRuntimeEndpointRules.h>
 
 namespace Aws {
 namespace AugmentedAIRuntime {

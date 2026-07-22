@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/cloudhsm/CloudHSMEndpointRules.h>
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CLOUDHSM_API CloudHSMEndpointProvider : public CloudHSMDefaultEpProvid
  public:
   using CloudHSMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CloudHSMEndpointProvider()
-      : CloudHSMDefaultEpProviderBase(Aws::CloudHSM::CloudHSMEndpointRules::GetRulesBlob(),
-                                      Aws::CloudHSM::CloudHSMEndpointRules::RulesBlobSize) {}
+  CloudHSMEndpointProvider();
 
   ~CloudHSMEndpointProvider() {}
 };

@@ -9,12 +9,12 @@
 #include <aws/s3control/S3ControlClient.h>
 #include <aws/s3control/S3ControlClientConfiguration.h>
 #include <aws/s3control/S3ControlEndpointProvider.h>
-#include <aws/s3control/S3ControlEndpointRules.h>
 #include <aws/s3control/S3ControlErrorMarshaller.h>
 #include <aws/s3control/S3ControlErrors.h>
 #include <aws/s3control/S3ControlRequest.h>
 #include <aws/s3control/S3ControlServiceClientModel.h>
 #include <aws/s3control/S3Control_EXPORTS.h>
+#include <aws/s3control/internal/S3ControlEndpointRules.h>
 #include <aws/s3control/model/AbortIncompleteMultipartUpload.h>
 #include <aws/s3control/model/AccessControlTranslation.h>
 #include <aws/s3control/model/AccessGrantsLocationConfiguration.h>

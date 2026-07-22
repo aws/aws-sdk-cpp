@@ -4,9 +4,15 @@
  */
 
 #include <aws/ssm-contacts/SSMContactsEndpointProvider.h>
+#include <aws/ssm-contacts/internal/SSMContactsEndpointRules.h>
 
 namespace Aws {
 namespace SSMContacts {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SSMContactsEndpointProvider::SSMContactsEndpointProvider()
+    : SSMContactsDefaultEpProviderBase(Aws::SSMContacts::SSMContactsEndpointRules::GetRulesBlob(),
+                                       Aws::SSMContacts::SSMContactsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SSMContacts
 }  // namespace Aws

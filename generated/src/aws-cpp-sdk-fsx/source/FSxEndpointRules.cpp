@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/fsx/FSxEndpointRules.h>
+#include <aws/fsx/internal/FSxEndpointRules.h>
 
 namespace Aws {
 namespace FSx {

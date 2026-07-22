@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/AWSMigrationHub/MigrationHubEndpointRules.h>
 #include <aws/AWSMigrationHub/MigrationHub_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_MIGRATIONHUB_API MigrationHubEndpointProvider : public MigrationHubDef
  public:
   using MigrationHubResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MigrationHubEndpointProvider()
-      : MigrationHubDefaultEpProviderBase(Aws::MigrationHub::MigrationHubEndpointRules::GetRulesBlob(),
-                                          Aws::MigrationHub::MigrationHubEndpointRules::RulesBlobSize) {}
+  MigrationHubEndpointProvider();
 
   ~MigrationHubEndpointProvider() {}
 };

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/mailmanager/MailManagerEndpointRules.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_MAILMANAGER_API MailManagerEndpointProvider : public MailManagerDefaul
  public:
   using MailManagerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MailManagerEndpointProvider()
-      : MailManagerDefaultEpProviderBase(Aws::MailManager::MailManagerEndpointRules::GetRulesBlob(),
-                                         Aws::MailManager::MailManagerEndpointRules::RulesBlobSize) {}
+  MailManagerEndpointProvider();
 
   ~MailManagerEndpointProvider() {}
 };

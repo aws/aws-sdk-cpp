@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/migrationhub-config/MigrationHubConfigEndpointRules.h>
 #include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_MIGRATIONHUBCONFIG_API MigrationHubConfigEndpointProvider : public Mig
  public:
   using MigrationHubConfigResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MigrationHubConfigEndpointProvider()
-      : MigrationHubConfigDefaultEpProviderBase(Aws::MigrationHubConfig::MigrationHubConfigEndpointRules::GetRulesBlob(),
-                                                Aws::MigrationHubConfig::MigrationHubConfigEndpointRules::RulesBlobSize) {}
+  MigrationHubConfigEndpointProvider();
 
   ~MigrationHubConfigEndpointProvider() {}
 };

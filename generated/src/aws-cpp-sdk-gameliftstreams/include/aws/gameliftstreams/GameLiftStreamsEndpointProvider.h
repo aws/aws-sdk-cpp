@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/gameliftstreams/GameLiftStreamsEndpointRules.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_GAMELIFTSTREAMS_API GameLiftStreamsEndpointProvider : public GameLiftS
  public:
   using GameLiftStreamsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  GameLiftStreamsEndpointProvider()
-      : GameLiftStreamsDefaultEpProviderBase(Aws::GameLiftStreams::GameLiftStreamsEndpointRules::GetRulesBlob(),
-                                             Aws::GameLiftStreams::GameLiftStreamsEndpointRules::RulesBlobSize) {}
+  GameLiftStreamsEndpointProvider();
 
   ~GameLiftStreamsEndpointProvider() {}
 };

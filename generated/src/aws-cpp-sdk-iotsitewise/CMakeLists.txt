@@ -8,6 +8,10 @@ file(GLOB AWS_IOTSITEWISE_MODEL_HEADERS
     "include/aws/iotsitewise/model/*.h"
 )
 
+file(GLOB AWS_IOTSITEWISE_INTERNAL_HEADERS
+    "include/aws/iotsitewise/internal/*.h"
+)
+
 file(GLOB AWS_IOTSITEWISE_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_IOTSITEWISE_MODEL_SOURCE
 
 file(GLOB IOTSITEWISE_UNIFIED_HEADERS
     ${AWS_IOTSITEWISE_HEADERS}
+    ${AWS_IOTSITEWISE_INTERNAL_HEADERS}
     ${AWS_IOTSITEWISE_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\iotsitewise" FILES ${AWS_IOTSITEWISE_HEADERS})
+        source_group("Header Files\\aws\\iotsitewise\\internal" FILES ${AWS_IOTSITEWISE_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\iotsitewise\\model" FILES ${AWS_IOTSITEWISE_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_IOTSITEWISE_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_IOTSITEWISE_MODEL_SOURCE})

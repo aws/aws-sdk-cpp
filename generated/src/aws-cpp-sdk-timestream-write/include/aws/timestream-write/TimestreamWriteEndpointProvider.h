@@ -9,7 +9,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-write/TimestreamWriteClientConfiguration.h>
-#include <aws/timestream-write/TimestreamWriteEndpointRules.h>
 #include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
 
 namespace Aws {
@@ -65,9 +64,7 @@ class AWS_TIMESTREAMWRITE_API TimestreamWriteEndpointProvider : public Timestrea
  public:
   using TimestreamWriteResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  TimestreamWriteEndpointProvider()
-      : TimestreamWriteDefaultEpProviderBase(Aws::TimestreamWrite::TimestreamWriteEndpointRules::GetRulesBlob(),
-                                             Aws::TimestreamWrite::TimestreamWriteEndpointRules::RulesBlobSize) {}
+  TimestreamWriteEndpointProvider();
 
   ~TimestreamWriteEndpointProvider() {}
 };

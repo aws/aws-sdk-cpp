@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iottwinmaker/IoTTwinMakerEndpointRules.h>
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_IOTTWINMAKER_API IoTTwinMakerEndpointProvider : public IoTTwinMakerDef
  public:
   using IoTTwinMakerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IoTTwinMakerEndpointProvider()
-      : IoTTwinMakerDefaultEpProviderBase(Aws::IoTTwinMaker::IoTTwinMakerEndpointRules::GetRulesBlob(),
-                                          Aws::IoTTwinMaker::IoTTwinMakerEndpointRules::RulesBlobSize) {}
+  IoTTwinMakerEndpointProvider();
 
   ~IoTTwinMakerEndpointProvider() {}
 };

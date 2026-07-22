@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/memorydb/MemoryDBEndpointRules.h>
+#include <aws/memorydb/internal/MemoryDBEndpointRules.h>
 
 namespace Aws {
 namespace MemoryDB {

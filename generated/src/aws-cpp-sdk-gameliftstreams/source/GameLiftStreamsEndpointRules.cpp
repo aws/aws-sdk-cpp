@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/gameliftstreams/GameLiftStreamsEndpointRules.h>
+#include <aws/gameliftstreams/internal/GameLiftStreamsEndpointRules.h>
 
 namespace Aws {
 namespace GameLiftStreams {

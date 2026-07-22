@@ -8,12 +8,12 @@
 
 #include <aws/sns/SNSClient.h>
 #include <aws/sns/SNSEndpointProvider.h>
-#include <aws/sns/SNSEndpointRules.h>
 #include <aws/sns/SNSErrorMarshaller.h>
 #include <aws/sns/SNSErrors.h>
 #include <aws/sns/SNSRequest.h>
 #include <aws/sns/SNSServiceClientModel.h>
 #include <aws/sns/SNS_EXPORTS.h>
+#include <aws/sns/internal/SNSEndpointRules.h>
 #include <aws/sns/model/AddPermissionRequest.h>
 #include <aws/sns/model/BatchResultErrorEntry.h>
 #include <aws/sns/model/CheckIfPhoneNumberIsOptedOutRequest.h>

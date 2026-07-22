@@ -8,6 +8,10 @@ file(GLOB AWS_AMPLIFYBACKEND_MODEL_HEADERS
     "include/aws/amplifybackend/model/*.h"
 )
 
+file(GLOB AWS_AMPLIFYBACKEND_INTERNAL_HEADERS
+    "include/aws/amplifybackend/internal/*.h"
+)
+
 file(GLOB AWS_AMPLIFYBACKEND_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_AMPLIFYBACKEND_MODEL_SOURCE
 
 file(GLOB AMPLIFYBACKEND_UNIFIED_HEADERS
     ${AWS_AMPLIFYBACKEND_HEADERS}
+    ${AWS_AMPLIFYBACKEND_INTERNAL_HEADERS}
     ${AWS_AMPLIFYBACKEND_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\amplifybackend" FILES ${AWS_AMPLIFYBACKEND_HEADERS})
+        source_group("Header Files\\aws\\amplifybackend\\internal" FILES ${AWS_AMPLIFYBACKEND_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\amplifybackend\\model" FILES ${AWS_AMPLIFYBACKEND_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_AMPLIFYBACKEND_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_AMPLIFYBACKEND_MODEL_SOURCE})

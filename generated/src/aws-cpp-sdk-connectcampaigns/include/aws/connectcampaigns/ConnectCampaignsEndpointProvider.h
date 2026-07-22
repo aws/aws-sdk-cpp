@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/connectcampaigns/ConnectCampaignsEndpointRules.h>
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -43,9 +42,7 @@ class AWS_CONNECTCAMPAIGNS_API ConnectCampaignsEndpointProvider : public Connect
  public:
   using ConnectCampaignsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ConnectCampaignsEndpointProvider()
-      : ConnectCampaignsDefaultEpProviderBase(Aws::ConnectCampaigns::ConnectCampaignsEndpointRules::GetRulesBlob(),
-                                              Aws::ConnectCampaigns::ConnectCampaignsEndpointRules::RulesBlobSize) {}
+  ConnectCampaignsEndpointProvider();
 
   ~ConnectCampaignsEndpointProvider() {}
 };

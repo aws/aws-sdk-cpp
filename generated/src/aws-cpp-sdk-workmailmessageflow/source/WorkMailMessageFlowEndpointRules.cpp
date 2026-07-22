@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/workmailmessageflow/WorkMailMessageFlowEndpointRules.h>
+#include <aws/workmailmessageflow/internal/WorkMailMessageFlowEndpointRules.h>
 
 namespace Aws {
 namespace WorkMailMessageFlow {

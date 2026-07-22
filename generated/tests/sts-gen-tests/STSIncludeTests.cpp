@@ -8,12 +8,12 @@
 
 #include <aws/sts/STSClient.h>
 #include <aws/sts/STSEndpointProvider.h>
-#include <aws/sts/STSEndpointRules.h>
 #include <aws/sts/STSErrorMarshaller.h>
 #include <aws/sts/STSErrors.h>
 #include <aws/sts/STSRequest.h>
 #include <aws/sts/STSServiceClientModel.h>
 #include <aws/sts/STS_EXPORTS.h>
+#include <aws/sts/internal/STSEndpointRules.h>
 #include <aws/sts/model/AssumeRoleRequest.h>
 #include <aws/sts/model/AssumeRoleResult.h>
 #include <aws/sts/model/AssumeRoleWithSAMLRequest.h>

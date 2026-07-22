@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ram/RAMEndpointRules.h>
+#include <aws/ram/internal/RAMEndpointRules.h>
 
 namespace Aws {
 namespace RAM {

@@ -4,9 +4,15 @@
  */
 
 #include <aws/amp/PrometheusServiceEndpointProvider.h>
+#include <aws/amp/internal/PrometheusServiceEndpointRules.h>
 
 namespace Aws {
 namespace PrometheusService {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+PrometheusServiceEndpointProvider::PrometheusServiceEndpointProvider()
+    : PrometheusServiceDefaultEpProviderBase(Aws::PrometheusService::PrometheusServiceEndpointRules::GetRulesBlob(),
+                                             Aws::PrometheusService::PrometheusServiceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace PrometheusService
 }  // namespace Aws

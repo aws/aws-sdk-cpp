@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/cloudtrail-data/CloudTrailDataEndpointRules.h>
 #include <aws/cloudtrail-data/CloudTrailData_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CLOUDTRAILDATA_API CloudTrailDataEndpointProvider : public CloudTrailD
  public:
   using CloudTrailDataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CloudTrailDataEndpointProvider()
-      : CloudTrailDataDefaultEpProviderBase(Aws::CloudTrailData::CloudTrailDataEndpointRules::GetRulesBlob(),
-                                            Aws::CloudTrailData::CloudTrailDataEndpointRules::RulesBlobSize) {}
+  CloudTrailDataEndpointProvider();
 
   ~CloudTrailDataEndpointProvider() {}
 };

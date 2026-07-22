@@ -4,9 +4,15 @@
  */
 
 #include <aws/iot-jobs-data/IoTJobsDataPlaneEndpointProvider.h>
+#include <aws/iot-jobs-data/internal/IoTJobsDataPlaneEndpointRules.h>
 
 namespace Aws {
 namespace IoTJobsDataPlane {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+IoTJobsDataPlaneEndpointProvider::IoTJobsDataPlaneEndpointProvider()
+    : IoTJobsDataPlaneDefaultEpProviderBase(Aws::IoTJobsDataPlane::IoTJobsDataPlaneEndpointRules::GetRulesBlob(),
+                                            Aws::IoTJobsDataPlane::IoTJobsDataPlaneEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace IoTJobsDataPlane
 }  // namespace Aws

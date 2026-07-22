@@ -8,6 +8,10 @@ file(GLOB AWS_HEALTHLAKE_MODEL_HEADERS
     "include/aws/healthlake/model/*.h"
 )
 
+file(GLOB AWS_HEALTHLAKE_INTERNAL_HEADERS
+    "include/aws/healthlake/internal/*.h"
+)
+
 file(GLOB AWS_HEALTHLAKE_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_HEALTHLAKE_MODEL_SOURCE
 
 file(GLOB HEALTHLAKE_UNIFIED_HEADERS
     ${AWS_HEALTHLAKE_HEADERS}
+    ${AWS_HEALTHLAKE_INTERNAL_HEADERS}
     ${AWS_HEALTHLAKE_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\healthlake" FILES ${AWS_HEALTHLAKE_HEADERS})
+        source_group("Header Files\\aws\\healthlake\\internal" FILES ${AWS_HEALTHLAKE_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\healthlake\\model" FILES ${AWS_HEALTHLAKE_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_HEALTHLAKE_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_HEALTHLAKE_MODEL_SOURCE})

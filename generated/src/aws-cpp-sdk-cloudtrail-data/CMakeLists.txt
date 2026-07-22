@@ -8,6 +8,10 @@ file(GLOB AWS_CLOUDTRAIL-DATA_MODEL_HEADERS
     "include/aws/cloudtrail-data/model/*.h"
 )
 
+file(GLOB AWS_CLOUDTRAIL-DATA_INTERNAL_HEADERS
+    "include/aws/cloudtrail-data/internal/*.h"
+)
+
 file(GLOB AWS_CLOUDTRAIL-DATA_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CLOUDTRAIL-DATA_MODEL_SOURCE
 
 file(GLOB CLOUDTRAIL-DATA_UNIFIED_HEADERS
     ${AWS_CLOUDTRAIL-DATA_HEADERS}
+    ${AWS_CLOUDTRAIL-DATA_INTERNAL_HEADERS}
     ${AWS_CLOUDTRAIL-DATA_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\cloudtrail-data" FILES ${AWS_CLOUDTRAIL-DATA_HEADERS})
+        source_group("Header Files\\aws\\cloudtrail-data\\internal" FILES ${AWS_CLOUDTRAIL-DATA_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\cloudtrail-data\\model" FILES ${AWS_CLOUDTRAIL-DATA_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CLOUDTRAIL-DATA_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CLOUDTRAIL-DATA_MODEL_SOURCE})

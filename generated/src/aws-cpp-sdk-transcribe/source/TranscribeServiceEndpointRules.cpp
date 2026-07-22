@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/transcribe/TranscribeServiceEndpointRules.h>
+#include <aws/transcribe/internal/TranscribeServiceEndpointRules.h>
 
 namespace Aws {
 namespace TranscribeService {

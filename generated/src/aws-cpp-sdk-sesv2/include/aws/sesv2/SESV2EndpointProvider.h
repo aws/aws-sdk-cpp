@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sesv2/SESV2EndpointRules.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 
 namespace Aws {
@@ -40,8 +39,7 @@ class AWS_SESV2_API SESV2EndpointProvider : public SESV2DefaultEpProviderBase {
  public:
   using SESV2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SESV2EndpointProvider()
-      : SESV2DefaultEpProviderBase(Aws::SESV2::SESV2EndpointRules::GetRulesBlob(), Aws::SESV2::SESV2EndpointRules::RulesBlobSize) {}
+  SESV2EndpointProvider();
 
   ~SESV2EndpointProvider() {}
 };

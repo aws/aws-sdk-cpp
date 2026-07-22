@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/bcm-dashboards/BCMDashboardsEndpointRules.h>
 #include <aws/bcm-dashboards/BCMDashboards_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_BCMDASHBOARDS_API BCMDashboardsEndpointProvider : public BCMDashboards
  public:
   using BCMDashboardsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BCMDashboardsEndpointProvider()
-      : BCMDashboardsDefaultEpProviderBase(Aws::BCMDashboards::BCMDashboardsEndpointRules::GetRulesBlob(),
-                                           Aws::BCMDashboards::BCMDashboardsEndpointRules::RulesBlobSize) {}
+  BCMDashboardsEndpointProvider();
 
   ~BCMDashboardsEndpointProvider() {}
 };

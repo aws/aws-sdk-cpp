@@ -8,6 +8,10 @@ file(GLOB AWS_MARKETPLACE-AGREEMENT_MODEL_HEADERS
     "include/aws/marketplace-agreement/model/*.h"
 )
 
+file(GLOB AWS_MARKETPLACE-AGREEMENT_INTERNAL_HEADERS
+    "include/aws/marketplace-agreement/internal/*.h"
+)
+
 file(GLOB AWS_MARKETPLACE-AGREEMENT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MARKETPLACE-AGREEMENT_MODEL_SOURCE
 
 file(GLOB MARKETPLACE-AGREEMENT_UNIFIED_HEADERS
     ${AWS_MARKETPLACE-AGREEMENT_HEADERS}
+    ${AWS_MARKETPLACE-AGREEMENT_INTERNAL_HEADERS}
     ${AWS_MARKETPLACE-AGREEMENT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\marketplace-agreement" FILES ${AWS_MARKETPLACE-AGREEMENT_HEADERS})
+        source_group("Header Files\\aws\\marketplace-agreement\\internal" FILES ${AWS_MARKETPLACE-AGREEMENT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\marketplace-agreement\\model" FILES ${AWS_MARKETPLACE-AGREEMENT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MARKETPLACE-AGREEMENT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MARKETPLACE-AGREEMENT_MODEL_SOURCE})

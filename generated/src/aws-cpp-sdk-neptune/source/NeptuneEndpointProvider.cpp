@@ -4,9 +4,14 @@
  */
 
 #include <aws/neptune/NeptuneEndpointProvider.h>
+#include <aws/neptune/internal/NeptuneEndpointRules.h>
 
 namespace Aws {
 namespace Neptune {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+NeptuneEndpointProvider::NeptuneEndpointProvider()
+    : NeptuneDefaultEpProviderBase(Aws::Neptune::NeptuneEndpointRules::GetRulesBlob(), Aws::Neptune::NeptuneEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Neptune
 }  // namespace Aws

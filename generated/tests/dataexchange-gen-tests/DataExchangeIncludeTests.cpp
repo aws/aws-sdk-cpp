@@ -8,12 +8,12 @@
 
 #include <aws/dataexchange/DataExchangeClient.h>
 #include <aws/dataexchange/DataExchangeEndpointProvider.h>
-#include <aws/dataexchange/DataExchangeEndpointRules.h>
 #include <aws/dataexchange/DataExchangeErrorMarshaller.h>
 #include <aws/dataexchange/DataExchangeErrors.h>
 #include <aws/dataexchange/DataExchangeRequest.h>
 #include <aws/dataexchange/DataExchangeServiceClientModel.h>
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
+#include <aws/dataexchange/internal/DataExchangeEndpointRules.h>
 #include <aws/dataexchange/model/AcceptDataGrantRequest.h>
 #include <aws/dataexchange/model/AcceptDataGrantResult.h>
 #include <aws/dataexchange/model/AcceptanceStateFilterValue.h>

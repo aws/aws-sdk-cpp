@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/signer-data/SignerDataEndpointRules.h>
 #include <aws/signer-data/SignerData_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SIGNERDATA_API SignerDataEndpointProvider : public SignerDataDefaultEp
  public:
   using SignerDataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SignerDataEndpointProvider()
-      : SignerDataDefaultEpProviderBase(Aws::SignerData::SignerDataEndpointRules::GetRulesBlob(),
-                                        Aws::SignerData::SignerDataEndpointRules::RulesBlobSize) {}
+  SignerDataEndpointProvider();
 
   ~SignerDataEndpointProvider() {}
 };

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/service-quotas/ServiceQuotasEndpointRules.h>
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SERVICEQUOTAS_API ServiceQuotasEndpointProvider : public ServiceQuotas
  public:
   using ServiceQuotasResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ServiceQuotasEndpointProvider()
-      : ServiceQuotasDefaultEpProviderBase(Aws::ServiceQuotas::ServiceQuotasEndpointRules::GetRulesBlob(),
-                                           Aws::ServiceQuotas::ServiceQuotasEndpointRules::RulesBlobSize) {}
+  ServiceQuotasEndpointProvider();
 
   ~ServiceQuotasEndpointProvider() {}
 };

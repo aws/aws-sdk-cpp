@@ -8,12 +8,12 @@
 
 #include <aws/uxc/UxcClient.h>
 #include <aws/uxc/UxcEndpointProvider.h>
-#include <aws/uxc/UxcEndpointRules.h>
 #include <aws/uxc/UxcErrorMarshaller.h>
 #include <aws/uxc/UxcErrors.h>
 #include <aws/uxc/UxcRequest.h>
 #include <aws/uxc/UxcServiceClientModel.h>
 #include <aws/uxc/Uxc_EXPORTS.h>
+#include <aws/uxc/internal/UxcEndpointRules.h>
 #include <aws/uxc/model/AccountColor.h>
 #include <aws/uxc/model/GetAccountCustomizationsRequest.h>
 #include <aws/uxc/model/GetAccountCustomizationsResult.h>

@@ -4,6 +4,7 @@
  */
 
 #include <aws/s3control/S3ControlEndpointProvider.h>
+#include <aws/s3control/internal/S3ControlEndpointRules.h>
 
 namespace Aws {
 #ifndef AWS_S3CONTROL_EXPORTS  // Except for Windows DLL
@@ -23,6 +24,10 @@ template class Aws::Endpoint::DefaultEndpointProvider<S3Control::Endpoint::S3Con
 
 namespace S3Control {
 namespace Endpoint {
+S3ControlEndpointProvider::S3ControlEndpointProvider()
+    : S3ControlDefaultEpProviderBase(Aws::S3Control::S3ControlEndpointRules::GetRulesBlob(),
+                                     Aws::S3Control::S3ControlEndpointRules::RulesBlobSize) {}
+
 void S3ControlClientContextParameters::SetUseArnRegion(bool value) { return SetBooleanParameter(Aws::String("UseArnRegion"), value); }
 const S3ControlClientContextParameters::ClientContextParameters::EndpointParameter& S3ControlClientContextParameters::GetUseArnRegion()
     const {

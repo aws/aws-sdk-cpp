@@ -8,12 +8,12 @@
 
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsClient.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsEndpointProvider.h>
-#include <aws/iot-managed-integrations/IoTManagedIntegrationsEndpointRules.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsErrorMarshaller.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsErrors.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsRequest.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsServiceClientModel.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
+#include <aws/iot-managed-integrations/internal/IoTManagedIntegrationsEndpointRules.h>
 #include <aws/iot-managed-integrations/model/AbortConfigCriteria.h>
 #include <aws/iot-managed-integrations/model/AbortCriteriaAction.h>
 #include <aws/iot-managed-integrations/model/AbortCriteriaFailureType.h>

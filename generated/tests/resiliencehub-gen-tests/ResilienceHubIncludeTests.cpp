@@ -8,12 +8,12 @@
 
 #include <aws/resiliencehub/ResilienceHubClient.h>
 #include <aws/resiliencehub/ResilienceHubEndpointProvider.h>
-#include <aws/resiliencehub/ResilienceHubEndpointRules.h>
 #include <aws/resiliencehub/ResilienceHubErrorMarshaller.h>
 #include <aws/resiliencehub/ResilienceHubErrors.h>
 #include <aws/resiliencehub/ResilienceHubRequest.h>
 #include <aws/resiliencehub/ResilienceHubServiceClientModel.h>
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
+#include <aws/resiliencehub/internal/ResilienceHubEndpointRules.h>
 #include <aws/resiliencehub/model/AcceptGroupingRecommendationEntry.h>
 #include <aws/resiliencehub/model/AcceptResourceGroupingRecommendationsRequest.h>
 #include <aws/resiliencehub/model/AcceptResourceGroupingRecommendationsResult.h>

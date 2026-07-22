@@ -8,12 +8,12 @@
 
 #include <aws/launch-wizard/LaunchWizardClient.h>
 #include <aws/launch-wizard/LaunchWizardEndpointProvider.h>
-#include <aws/launch-wizard/LaunchWizardEndpointRules.h>
 #include <aws/launch-wizard/LaunchWizardErrorMarshaller.h>
 #include <aws/launch-wizard/LaunchWizardErrors.h>
 #include <aws/launch-wizard/LaunchWizardRequest.h>
 #include <aws/launch-wizard/LaunchWizardServiceClientModel.h>
 #include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
+#include <aws/launch-wizard/internal/LaunchWizardEndpointRules.h>
 #include <aws/launch-wizard/model/CreateDeploymentRequest.h>
 #include <aws/launch-wizard/model/CreateDeploymentResult.h>
 #include <aws/launch-wizard/model/DeleteDeploymentRequest.h>

@@ -4,9 +4,15 @@
  */
 
 #include <aws/bedrock-agentcore/BedrockAgentCoreEndpointProvider.h>
+#include <aws/bedrock-agentcore/internal/BedrockAgentCoreEndpointRules.h>
 
 namespace Aws {
 namespace BedrockAgentCore {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+BedrockAgentCoreEndpointProvider::BedrockAgentCoreEndpointProvider()
+    : BedrockAgentCoreDefaultEpProviderBase(Aws::BedrockAgentCore::BedrockAgentCoreEndpointRules::GetRulesBlob(),
+                                            Aws::BedrockAgentCore::BedrockAgentCoreEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace BedrockAgentCore
 }  // namespace Aws

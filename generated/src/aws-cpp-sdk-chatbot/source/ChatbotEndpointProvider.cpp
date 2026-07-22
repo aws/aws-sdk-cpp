@@ -4,9 +4,14 @@
  */
 
 #include <aws/chatbot/ChatbotEndpointProvider.h>
+#include <aws/chatbot/internal/ChatbotEndpointRules.h>
 
 namespace Aws {
 namespace chatbot {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ChatbotEndpointProvider::ChatbotEndpointProvider()
+    : ChatbotDefaultEpProviderBase(Aws::chatbot::ChatbotEndpointRules::GetRulesBlob(), Aws::chatbot::ChatbotEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace chatbot
 }  // namespace Aws

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/dlm/DLMEndpointRules.h>
+#include <aws/dlm/internal/DLMEndpointRules.h>
 
 namespace Aws {
 namespace DLM {

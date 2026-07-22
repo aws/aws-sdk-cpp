@@ -8,6 +8,10 @@ file(GLOB AWS_CLOUDHSM_MODEL_HEADERS
     "include/aws/cloudhsm/model/*.h"
 )
 
+file(GLOB AWS_CLOUDHSM_INTERNAL_HEADERS
+    "include/aws/cloudhsm/internal/*.h"
+)
+
 file(GLOB AWS_CLOUDHSM_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CLOUDHSM_MODEL_SOURCE
 
 file(GLOB CLOUDHSM_UNIFIED_HEADERS
     ${AWS_CLOUDHSM_HEADERS}
+    ${AWS_CLOUDHSM_INTERNAL_HEADERS}
     ${AWS_CLOUDHSM_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\cloudhsm" FILES ${AWS_CLOUDHSM_HEADERS})
+        source_group("Header Files\\aws\\cloudhsm\\internal" FILES ${AWS_CLOUDHSM_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\cloudhsm\\model" FILES ${AWS_CLOUDHSM_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CLOUDHSM_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CLOUDHSM_MODEL_SOURCE})

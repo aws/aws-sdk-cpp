@@ -8,12 +8,12 @@
 
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessClient.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessEndpointProvider.h>
-#include <aws/route53-recovery-readiness/Route53RecoveryReadinessEndpointRules.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessErrorMarshaller.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessErrors.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessRequest.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessServiceClientModel.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadiness_EXPORTS.h>
+#include <aws/route53-recovery-readiness/internal/Route53RecoveryReadinessEndpointRules.h>
 #include <aws/route53-recovery-readiness/model/CellOutput.h>
 #include <aws/route53-recovery-readiness/model/CreateCellRequest.h>
 #include <aws/route53-recovery-readiness/model/CreateCellResult.h>

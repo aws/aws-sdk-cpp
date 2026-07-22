@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/dsql/DSQLEndpointRules.h>
+#include <aws/dsql/internal/DSQLEndpointRules.h>
 
 namespace Aws {
 namespace DSQL {

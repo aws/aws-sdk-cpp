@@ -4,9 +4,14 @@
  */
 
 #include <aws/sns/SNSEndpointProvider.h>
+#include <aws/sns/internal/SNSEndpointRules.h>
 
 namespace Aws {
 namespace SNS {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SNSEndpointProvider::SNSEndpointProvider()
+    : SNSDefaultEpProviderBase(Aws::SNS::SNSEndpointRules::GetRulesBlob(), Aws::SNS::SNSEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SNS
 }  // namespace Aws

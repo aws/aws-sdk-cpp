@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/config/ConfigServiceEndpointRules.h>
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CONFIGSERVICE_API ConfigServiceEndpointProvider : public ConfigService
  public:
   using ConfigServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ConfigServiceEndpointProvider()
-      : ConfigServiceDefaultEpProviderBase(Aws::ConfigService::ConfigServiceEndpointRules::GetRulesBlob(),
-                                           Aws::ConfigService::ConfigServiceEndpointRules::RulesBlobSize) {}
+  ConfigServiceEndpointProvider();
 
   ~ConfigServiceEndpointProvider() {}
 };

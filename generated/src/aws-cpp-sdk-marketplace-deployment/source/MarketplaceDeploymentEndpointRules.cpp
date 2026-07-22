@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/marketplace-deployment/MarketplaceDeploymentEndpointRules.h>
+#include <aws/marketplace-deployment/internal/MarketplaceDeploymentEndpointRules.h>
 
 namespace Aws {
 namespace MarketplaceDeployment {

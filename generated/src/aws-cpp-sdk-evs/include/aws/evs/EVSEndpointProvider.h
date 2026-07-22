@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/evs/EVSEndpointRules.h>
 #include <aws/evs/EVS_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_EVS_API EVSEndpointProvider : public EVSDefaultEpProviderBase {
  public:
   using EVSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  EVSEndpointProvider() : EVSDefaultEpProviderBase(Aws::EVS::EVSEndpointRules::GetRulesBlob(), Aws::EVS::EVSEndpointRules::RulesBlobSize) {}
+  EVSEndpointProvider();
 
   ~EVSEndpointProvider() {}
 };

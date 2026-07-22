@@ -8,6 +8,10 @@ file(GLOB AWS_RESILIENCEHUB_MODEL_HEADERS
     "include/aws/resiliencehub/model/*.h"
 )
 
+file(GLOB AWS_RESILIENCEHUB_INTERNAL_HEADERS
+    "include/aws/resiliencehub/internal/*.h"
+)
+
 file(GLOB AWS_RESILIENCEHUB_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_RESILIENCEHUB_MODEL_SOURCE
 
 file(GLOB RESILIENCEHUB_UNIFIED_HEADERS
     ${AWS_RESILIENCEHUB_HEADERS}
+    ${AWS_RESILIENCEHUB_INTERNAL_HEADERS}
     ${AWS_RESILIENCEHUB_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\resiliencehub" FILES ${AWS_RESILIENCEHUB_HEADERS})
+        source_group("Header Files\\aws\\resiliencehub\\internal" FILES ${AWS_RESILIENCEHUB_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\resiliencehub\\model" FILES ${AWS_RESILIENCEHUB_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_RESILIENCEHUB_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_RESILIENCEHUB_MODEL_SOURCE})

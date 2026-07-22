@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesEndpointRules.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
 
 namespace Aws {
@@ -45,10 +44,7 @@ class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesEndpointProvi
  public:
   using MigrationHubRefactorSpacesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MigrationHubRefactorSpacesEndpointProvider()
-      : MigrationHubRefactorSpacesDefaultEpProviderBase(
-            Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesEndpointRules::GetRulesBlob(),
-            Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesEndpointRules::RulesBlobSize) {}
+  MigrationHubRefactorSpacesEndpointProvider();
 
   ~MigrationHubRefactorSpacesEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/rds-data/RDSDataServiceClient.h>
 #include <aws/rds-data/RDSDataServiceEndpointProvider.h>
-#include <aws/rds-data/RDSDataServiceEndpointRules.h>
 #include <aws/rds-data/RDSDataServiceErrorMarshaller.h>
 #include <aws/rds-data/RDSDataServiceErrors.h>
 #include <aws/rds-data/RDSDataServiceRequest.h>
 #include <aws/rds-data/RDSDataServiceServiceClientModel.h>
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
+#include <aws/rds-data/internal/RDSDataServiceEndpointRules.h>
 #include <aws/rds-data/model/ArrayValue.h>
 #include <aws/rds-data/model/BatchExecuteStatementRequest.h>
 #include <aws/rds-data/model/BatchExecuteStatementResult.h>

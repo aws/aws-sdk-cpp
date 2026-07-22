@@ -8,12 +8,12 @@
 
 #include <aws/ssm/SSMClient.h>
 #include <aws/ssm/SSMEndpointProvider.h>
-#include <aws/ssm/SSMEndpointRules.h>
 #include <aws/ssm/SSMErrorMarshaller.h>
 #include <aws/ssm/SSMErrors.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/ssm/SSMServiceClientModel.h>
 #include <aws/ssm/SSM_EXPORTS.h>
+#include <aws/ssm/internal/SSMEndpointRules.h>
 #include <aws/ssm/model/AccessRequestStatus.h>
 #include <aws/ssm/model/AccessType.h>
 #include <aws/ssm/model/AccountSharingInfo.h>

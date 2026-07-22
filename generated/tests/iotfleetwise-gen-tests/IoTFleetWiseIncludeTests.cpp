@@ -8,12 +8,12 @@
 
 #include <aws/iotfleetwise/IoTFleetWiseClient.h>
 #include <aws/iotfleetwise/IoTFleetWiseEndpointProvider.h>
-#include <aws/iotfleetwise/IoTFleetWiseEndpointRules.h>
 #include <aws/iotfleetwise/IoTFleetWiseErrorMarshaller.h>
 #include <aws/iotfleetwise/IoTFleetWiseErrors.h>
 #include <aws/iotfleetwise/IoTFleetWiseRequest.h>
 #include <aws/iotfleetwise/IoTFleetWiseServiceClientModel.h>
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
+#include <aws/iotfleetwise/internal/IoTFleetWiseEndpointRules.h>
 #include <aws/iotfleetwise/model/Actuator.h>
 #include <aws/iotfleetwise/model/AssociateVehicleFleetRequest.h>
 #include <aws/iotfleetwise/model/AssociateVehicleFleetResult.h>

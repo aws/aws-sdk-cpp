@@ -4,9 +4,15 @@
  */
 
 #include <aws/networkmanager/NetworkManagerEndpointProvider.h>
+#include <aws/networkmanager/internal/NetworkManagerEndpointRules.h>
 
 namespace Aws {
 namespace NetworkManager {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+NetworkManagerEndpointProvider::NetworkManagerEndpointProvider()
+    : NetworkManagerDefaultEpProviderBase(Aws::NetworkManager::NetworkManagerEndpointRules::GetRulesBlob(),
+                                          Aws::NetworkManager::NetworkManagerEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace NetworkManager
 }  // namespace Aws

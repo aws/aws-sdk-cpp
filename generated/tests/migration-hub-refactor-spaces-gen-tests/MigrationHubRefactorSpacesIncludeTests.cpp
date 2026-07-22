@@ -8,12 +8,12 @@
 
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesClient.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesEndpointProvider.h>
-#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesEndpointRules.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesErrorMarshaller.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesErrors.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesRequest.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesServiceClientModel.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
+#include <aws/migration-hub-refactor-spaces/internal/MigrationHubRefactorSpacesEndpointRules.h>
 #include <aws/migration-hub-refactor-spaces/model/ApiGatewayEndpointType.h>
 #include <aws/migration-hub-refactor-spaces/model/ApiGatewayProxyConfig.h>
 #include <aws/migration-hub-refactor-spaces/model/ApiGatewayProxyInput.h>

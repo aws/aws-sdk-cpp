@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/apprunner/AppRunnerEndpointRules.h>
 #include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_APPRUNNER_API AppRunnerEndpointProvider : public AppRunnerDefaultEpPro
  public:
   using AppRunnerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AppRunnerEndpointProvider()
-      : AppRunnerDefaultEpProviderBase(Aws::AppRunner::AppRunnerEndpointRules::GetRulesBlob(),
-                                       Aws::AppRunner::AppRunnerEndpointRules::RulesBlobSize) {}
+  AppRunnerEndpointProvider();
 
   ~AppRunnerEndpointProvider() {}
 };

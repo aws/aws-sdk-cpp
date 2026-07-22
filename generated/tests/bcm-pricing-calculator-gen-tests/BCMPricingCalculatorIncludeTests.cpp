@@ -8,12 +8,12 @@
 
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorClient.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorEndpointProvider.h>
-#include <aws/bcm-pricing-calculator/BCMPricingCalculatorEndpointRules.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorErrorMarshaller.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorErrors.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorRequest.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorServiceClientModel.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
+#include <aws/bcm-pricing-calculator/internal/BCMPricingCalculatorEndpointRules.h>
 #include <aws/bcm-pricing-calculator/model/AddReservedInstanceAction.h>
 #include <aws/bcm-pricing-calculator/model/AddSavingsPlanAction.h>
 #include <aws/bcm-pricing-calculator/model/BatchCreateBillScenarioCommitmentModificationEntry.h>

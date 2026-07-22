@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/bcm-recommended-actions/BCMRecommendedActionsEndpointRules.h>
+#include <aws/bcm-recommended-actions/internal/BCMRecommendedActionsEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

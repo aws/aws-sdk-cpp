@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/acm/ACMEndpointRules.h>
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -65,7 +64,7 @@ class AWS_ACM_API ACMEndpointProvider : public ACMDefaultEpProviderBase {
  public:
   using ACMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ACMEndpointProvider() : ACMDefaultEpProviderBase(Aws::ACM::ACMEndpointRules::GetRulesBlob(), Aws::ACM::ACMEndpointRules::RulesBlobSize) {}
+  ACMEndpointProvider();
 
   ~ACMEndpointProvider() {}
 };

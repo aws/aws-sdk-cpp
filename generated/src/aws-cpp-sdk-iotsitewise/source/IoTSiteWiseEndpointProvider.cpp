@@ -4,9 +4,15 @@
  */
 
 #include <aws/iotsitewise/IoTSiteWiseEndpointProvider.h>
+#include <aws/iotsitewise/internal/IoTSiteWiseEndpointRules.h>
 
 namespace Aws {
 namespace IoTSiteWise {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+IoTSiteWiseEndpointProvider::IoTSiteWiseEndpointProvider()
+    : IoTSiteWiseDefaultEpProviderBase(Aws::IoTSiteWise::IoTSiteWiseEndpointRules::GetRulesBlob(),
+                                       Aws::IoTSiteWise::IoTSiteWiseEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace IoTSiteWise
 }  // namespace Aws

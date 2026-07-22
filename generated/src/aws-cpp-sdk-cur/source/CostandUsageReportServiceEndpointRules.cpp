@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/cur/CostandUsageReportServiceEndpointRules.h>
+#include <aws/cur/internal/CostandUsageReportServiceEndpointRules.h>
 
 namespace Aws {
 namespace CostandUsageReportService {

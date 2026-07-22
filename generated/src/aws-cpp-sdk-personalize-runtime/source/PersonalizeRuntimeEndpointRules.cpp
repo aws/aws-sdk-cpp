@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/personalize-runtime/PersonalizeRuntimeEndpointRules.h>
+#include <aws/personalize-runtime/internal/PersonalizeRuntimeEndpointRules.h>
 
 namespace Aws {
 namespace PersonalizeRuntime {

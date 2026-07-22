@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/pi/PIEndpointRules.h>
+#include <aws/pi/internal/PIEndpointRules.h>
 
 namespace Aws {
 namespace PI {

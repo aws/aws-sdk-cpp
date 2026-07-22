@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/athena/AthenaEndpointRules.h>
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -41,8 +40,7 @@ class AWS_ATHENA_API AthenaEndpointProvider : public AthenaDefaultEpProviderBase
  public:
   using AthenaResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AthenaEndpointProvider()
-      : AthenaDefaultEpProviderBase(Aws::Athena::AthenaEndpointRules::GetRulesBlob(), Aws::Athena::AthenaEndpointRules::RulesBlobSize) {}
+  AthenaEndpointProvider();
 
   ~AthenaEndpointProvider() {}
 };

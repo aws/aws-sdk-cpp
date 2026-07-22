@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/qapps/QAppsEndpointRules.h>
+#include <aws/qapps/internal/QAppsEndpointRules.h>
 
 namespace Aws {
 namespace QApps {

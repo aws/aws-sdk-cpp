@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/braket/BraketEndpointRules.h>
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -41,8 +40,7 @@ class AWS_BRAKET_API BraketEndpointProvider : public BraketDefaultEpProviderBase
  public:
   using BraketResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BraketEndpointProvider()
-      : BraketDefaultEpProviderBase(Aws::Braket::BraketEndpointRules::GetRulesBlob(), Aws::Braket::BraketEndpointRules::RulesBlobSize) {}
+  BraketEndpointProvider();
 
   ~BraketEndpointProvider() {}
 };

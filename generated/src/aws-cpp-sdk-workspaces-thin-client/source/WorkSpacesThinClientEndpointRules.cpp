@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/workspaces-thin-client/WorkSpacesThinClientEndpointRules.h>
+#include <aws/workspaces-thin-client/internal/WorkSpacesThinClientEndpointRules.h>
 
 namespace Aws {
 namespace WorkSpacesThinClient {

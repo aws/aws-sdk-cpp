@@ -4,9 +4,14 @@
  */
 
 #include <aws/oam/OAMEndpointProvider.h>
+#include <aws/oam/internal/OAMEndpointRules.h>
 
 namespace Aws {
 namespace OAM {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+OAMEndpointProvider::OAMEndpointProvider()
+    : OAMDefaultEpProviderBase(Aws::OAM::OAMEndpointRules::GetRulesBlob(), Aws::OAM::OAMEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace OAM
 }  // namespace Aws

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsEndpointRules.h>
+#include <aws/migrationhubstrategy/internal/MigrationHubStrategyRecommendationsEndpointRules.h>
 
 namespace Aws {
 namespace MigrationHubStrategyRecommendations {

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/kendra-ranking/KendraRankingEndpointRules.h>
+#include <aws/kendra-ranking/internal/KendraRankingEndpointRules.h>
 
 namespace Aws {
 namespace KendraRanking {

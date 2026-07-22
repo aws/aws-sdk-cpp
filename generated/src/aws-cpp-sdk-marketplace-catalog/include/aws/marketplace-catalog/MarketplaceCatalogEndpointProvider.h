@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/marketplace-catalog/MarketplaceCatalogEndpointRules.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_MARKETPLACECATALOG_API MarketplaceCatalogEndpointProvider : public Mar
  public:
   using MarketplaceCatalogResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MarketplaceCatalogEndpointProvider()
-      : MarketplaceCatalogDefaultEpProviderBase(Aws::MarketplaceCatalog::MarketplaceCatalogEndpointRules::GetRulesBlob(),
-                                                Aws::MarketplaceCatalog::MarketplaceCatalogEndpointRules::RulesBlobSize) {}
+  MarketplaceCatalogEndpointProvider();
 
   ~MarketplaceCatalogEndpointProvider() {}
 };

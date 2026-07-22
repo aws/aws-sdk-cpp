@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesEndpointRules.h>
+#include <aws/migration-hub-refactor-spaces/internal/MigrationHubRefactorSpacesEndpointRules.h>
 
 namespace Aws {
 namespace MigrationHubRefactorSpaces {

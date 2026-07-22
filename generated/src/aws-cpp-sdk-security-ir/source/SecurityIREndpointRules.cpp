@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/security-ir/SecurityIREndpointRules.h>
+#include <aws/security-ir/internal/SecurityIREndpointRules.h>
 
 namespace Aws {
 namespace SecurityIR {

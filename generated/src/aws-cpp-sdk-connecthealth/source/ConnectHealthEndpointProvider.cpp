@@ -4,9 +4,15 @@
  */
 
 #include <aws/connecthealth/ConnectHealthEndpointProvider.h>
+#include <aws/connecthealth/internal/ConnectHealthEndpointRules.h>
 
 namespace Aws {
 namespace ConnectHealth {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ConnectHealthEndpointProvider::ConnectHealthEndpointProvider()
+    : ConnectHealthDefaultEpProviderBase(Aws::ConnectHealth::ConnectHealthEndpointRules::GetRulesBlob(),
+                                         Aws::ConnectHealth::ConnectHealthEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ConnectHealth
 }  // namespace Aws

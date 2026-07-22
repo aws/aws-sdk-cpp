@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/socialmessaging/SocialMessagingEndpointRules.h>
 #include <aws/socialmessaging/SocialMessaging_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SOCIALMESSAGING_API SocialMessagingEndpointProvider : public SocialMes
  public:
   using SocialMessagingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SocialMessagingEndpointProvider()
-      : SocialMessagingDefaultEpProviderBase(Aws::SocialMessaging::SocialMessagingEndpointRules::GetRulesBlob(),
-                                             Aws::SocialMessaging::SocialMessagingEndpointRules::RulesBlobSize) {}
+  SocialMessagingEndpointProvider();
 
   ~SocialMessagingEndpointProvider() {}
 };

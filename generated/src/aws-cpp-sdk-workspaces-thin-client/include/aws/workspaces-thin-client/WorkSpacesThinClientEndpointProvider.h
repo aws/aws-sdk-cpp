@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/workspaces-thin-client/WorkSpacesThinClientEndpointRules.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_WORKSPACESTHINCLIENT_API WorkSpacesThinClientEndpointProvider : public
  public:
   using WorkSpacesThinClientResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  WorkSpacesThinClientEndpointProvider()
-      : WorkSpacesThinClientDefaultEpProviderBase(Aws::WorkSpacesThinClient::WorkSpacesThinClientEndpointRules::GetRulesBlob(),
-                                                  Aws::WorkSpacesThinClient::WorkSpacesThinClientEndpointRules::RulesBlobSize) {}
+  WorkSpacesThinClientEndpointProvider();
 
   ~WorkSpacesThinClientEndpointProvider() {}
 };

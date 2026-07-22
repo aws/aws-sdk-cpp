@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/observabilityadmin/ObservabilityAdminEndpointRules.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminEndpointProvider : public Obs
  public:
   using ObservabilityAdminResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ObservabilityAdminEndpointProvider()
-      : ObservabilityAdminDefaultEpProviderBase(Aws::ObservabilityAdmin::ObservabilityAdminEndpointRules::GetRulesBlob(),
-                                                Aws::ObservabilityAdmin::ObservabilityAdminEndpointRules::RulesBlobSize) {}
+  ObservabilityAdminEndpointProvider();
 
   ~ObservabilityAdminEndpointProvider() {}
 };

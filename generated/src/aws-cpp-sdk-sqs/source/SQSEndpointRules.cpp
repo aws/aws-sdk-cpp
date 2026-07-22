@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sqs/SQSEndpointRules.h>
+#include <aws/sqs/internal/SQSEndpointRules.h>
 
 namespace Aws {
 namespace SQS {

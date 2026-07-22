@@ -8,6 +8,10 @@ file(GLOB AWS_MIGRATION-HUB-REFACTOR-SPACES_MODEL_HEADERS
     "include/aws/migration-hub-refactor-spaces/model/*.h"
 )
 
+file(GLOB AWS_MIGRATION-HUB-REFACTOR-SPACES_INTERNAL_HEADERS
+    "include/aws/migration-hub-refactor-spaces/internal/*.h"
+)
+
 file(GLOB AWS_MIGRATION-HUB-REFACTOR-SPACES_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MIGRATION-HUB-REFACTOR-SPACES_MODEL_SOURCE
 
 file(GLOB MIGRATION-HUB-REFACTOR-SPACES_UNIFIED_HEADERS
     ${AWS_MIGRATION-HUB-REFACTOR-SPACES_HEADERS}
+    ${AWS_MIGRATION-HUB-REFACTOR-SPACES_INTERNAL_HEADERS}
     ${AWS_MIGRATION-HUB-REFACTOR-SPACES_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\migration-hub-refactor-spaces" FILES ${AWS_MIGRATION-HUB-REFACTOR-SPACES_HEADERS})
+        source_group("Header Files\\aws\\migration-hub-refactor-spaces\\internal" FILES ${AWS_MIGRATION-HUB-REFACTOR-SPACES_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\migration-hub-refactor-spaces\\model" FILES ${AWS_MIGRATION-HUB-REFACTOR-SPACES_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MIGRATION-HUB-REFACTOR-SPACES_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MIGRATION-HUB-REFACTOR-SPACES_MODEL_SOURCE})

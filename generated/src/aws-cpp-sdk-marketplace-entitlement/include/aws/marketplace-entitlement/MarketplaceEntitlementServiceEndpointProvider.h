@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/marketplace-entitlement/MarketplaceEntitlementServiceEndpointRules.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementService_EXPORTS.h>
 
 namespace Aws {
@@ -45,10 +44,7 @@ class AWS_MARKETPLACEENTITLEMENTSERVICE_API MarketplaceEntitlementServiceEndpoin
  public:
   using MarketplaceEntitlementServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MarketplaceEntitlementServiceEndpointProvider()
-      : MarketplaceEntitlementServiceDefaultEpProviderBase(
-            Aws::MarketplaceEntitlementService::MarketplaceEntitlementServiceEndpointRules::GetRulesBlob(),
-            Aws::MarketplaceEntitlementService::MarketplaceEntitlementServiceEndpointRules::RulesBlobSize) {}
+  MarketplaceEntitlementServiceEndpointProvider();
 
   ~MarketplaceEntitlementServiceEndpointProvider() {}
 };

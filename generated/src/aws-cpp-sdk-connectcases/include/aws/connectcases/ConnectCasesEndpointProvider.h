@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/connectcases/ConnectCasesEndpointRules.h>
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CONNECTCASES_API ConnectCasesEndpointProvider : public ConnectCasesDef
  public:
   using ConnectCasesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ConnectCasesEndpointProvider()
-      : ConnectCasesDefaultEpProviderBase(Aws::ConnectCases::ConnectCasesEndpointRules::GetRulesBlob(),
-                                          Aws::ConnectCases::ConnectCasesEndpointRules::RulesBlobSize) {}
+  ConnectCasesEndpointProvider();
 
   ~ConnectCasesEndpointProvider() {}
 };

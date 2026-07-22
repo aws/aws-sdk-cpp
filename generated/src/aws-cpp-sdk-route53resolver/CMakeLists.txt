@@ -8,6 +8,10 @@ file(GLOB AWS_ROUTE53RESOLVER_MODEL_HEADERS
     "include/aws/route53resolver/model/*.h"
 )
 
+file(GLOB AWS_ROUTE53RESOLVER_INTERNAL_HEADERS
+    "include/aws/route53resolver/internal/*.h"
+)
+
 file(GLOB AWS_ROUTE53RESOLVER_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_ROUTE53RESOLVER_MODEL_SOURCE
 
 file(GLOB ROUTE53RESOLVER_UNIFIED_HEADERS
     ${AWS_ROUTE53RESOLVER_HEADERS}
+    ${AWS_ROUTE53RESOLVER_INTERNAL_HEADERS}
     ${AWS_ROUTE53RESOLVER_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\route53resolver" FILES ${AWS_ROUTE53RESOLVER_HEADERS})
+        source_group("Header Files\\aws\\route53resolver\\internal" FILES ${AWS_ROUTE53RESOLVER_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\route53resolver\\model" FILES ${AWS_ROUTE53RESOLVER_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_ROUTE53RESOLVER_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_ROUTE53RESOLVER_MODEL_SOURCE})

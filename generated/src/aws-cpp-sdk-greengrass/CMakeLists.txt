@@ -8,6 +8,10 @@ file(GLOB AWS_GREENGRASS_MODEL_HEADERS
     "include/aws/greengrass/model/*.h"
 )
 
+file(GLOB AWS_GREENGRASS_INTERNAL_HEADERS
+    "include/aws/greengrass/internal/*.h"
+)
+
 file(GLOB AWS_GREENGRASS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_GREENGRASS_MODEL_SOURCE
 
 file(GLOB GREENGRASS_UNIFIED_HEADERS
     ${AWS_GREENGRASS_HEADERS}
+    ${AWS_GREENGRASS_INTERNAL_HEADERS}
     ${AWS_GREENGRASS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\greengrass" FILES ${AWS_GREENGRASS_HEADERS})
+        source_group("Header Files\\aws\\greengrass\\internal" FILES ${AWS_GREENGRASS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\greengrass\\model" FILES ${AWS_GREENGRASS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_GREENGRASS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_GREENGRASS_MODEL_SOURCE})

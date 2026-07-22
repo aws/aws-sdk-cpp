@@ -8,12 +8,12 @@
 
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
-#include <aws/ec2/EC2EndpointRules.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
 #include <aws/ec2/EC2Errors.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2ServiceClientModel.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/internal/EC2EndpointRules.h>
 #include <aws/ec2/model/AcceleratorCount.h>
 #include <aws/ec2/model/AcceleratorCountRequest.h>
 #include <aws/ec2/model/AcceleratorManufacturer.h>

@@ -8,12 +8,12 @@
 
 #include <aws/apigateway/APIGatewayClient.h>
 #include <aws/apigateway/APIGatewayEndpointProvider.h>
-#include <aws/apigateway/APIGatewayEndpointRules.h>
 #include <aws/apigateway/APIGatewayErrorMarshaller.h>
 #include <aws/apigateway/APIGatewayErrors.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/apigateway/APIGatewayServiceClientModel.h>
 #include <aws/apigateway/APIGateway_EXPORTS.h>
+#include <aws/apigateway/internal/APIGatewayEndpointRules.h>
 #include <aws/apigateway/model/AccessAssociationSourceType.h>
 #include <aws/apigateway/model/AccessLogSettings.h>
 #include <aws/apigateway/model/ApiKey.h>

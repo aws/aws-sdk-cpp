@@ -8,12 +8,12 @@
 
 #include <aws/codeguru-reviewer/CodeGuruReviewerClient.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerEndpointProvider.h>
-#include <aws/codeguru-reviewer/CodeGuruReviewerEndpointRules.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerErrorMarshaller.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerErrors.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerRequest.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerServiceClientModel.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
+#include <aws/codeguru-reviewer/internal/CodeGuruReviewerEndpointRules.h>
 #include <aws/codeguru-reviewer/model/AnalysisType.h>
 #include <aws/codeguru-reviewer/model/AssociateRepositoryRequest.h>
 #include <aws/codeguru-reviewer/model/AssociateRepositoryResult.h>

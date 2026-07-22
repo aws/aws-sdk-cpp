@@ -8,12 +8,12 @@
 
 #include <aws/finspace-data/FinSpaceDataClient.h>
 #include <aws/finspace-data/FinSpaceDataEndpointProvider.h>
-#include <aws/finspace-data/FinSpaceDataEndpointRules.h>
 #include <aws/finspace-data/FinSpaceDataErrorMarshaller.h>
 #include <aws/finspace-data/FinSpaceDataErrors.h>
 #include <aws/finspace-data/FinSpaceDataRequest.h>
 #include <aws/finspace-data/FinSpaceDataServiceClientModel.h>
 #include <aws/finspace-data/FinSpaceData_EXPORTS.h>
+#include <aws/finspace-data/internal/FinSpaceDataEndpointRules.h>
 #include <aws/finspace-data/model/ApiAccess.h>
 #include <aws/finspace-data/model/ApplicationPermission.h>
 #include <aws/finspace-data/model/AwsCredentials.h>

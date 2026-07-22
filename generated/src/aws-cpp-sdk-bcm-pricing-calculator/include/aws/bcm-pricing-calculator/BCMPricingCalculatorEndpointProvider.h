@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/bcm-pricing-calculator/BCMPricingCalculatorEndpointRules.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -44,9 +43,7 @@ class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorEndpointProvider : public
  public:
   using BCMPricingCalculatorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BCMPricingCalculatorEndpointProvider()
-      : BCMPricingCalculatorDefaultEpProviderBase(Aws::BCMPricingCalculator::BCMPricingCalculatorEndpointRules::GetRulesBlob(),
-                                                  Aws::BCMPricingCalculator::BCMPricingCalculatorEndpointRules::RulesBlobSize) {}
+  BCMPricingCalculatorEndpointProvider();
 
   ~BCMPricingCalculatorEndpointProvider() {}
 };

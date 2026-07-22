@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/wafv2/WAFV2EndpointRules.h>
+#include <aws/wafv2/internal/WAFV2EndpointRules.h>
 
 namespace Aws {
 namespace WAFV2 {

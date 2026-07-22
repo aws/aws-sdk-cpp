@@ -9,7 +9,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3-crt/S3CrtClientConfiguration.h>
-#include <aws/s3-crt/S3CrtEndpointRules.h>
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 
 namespace Aws {
@@ -99,8 +98,7 @@ class AWS_S3CRT_API S3CrtEndpointProvider : public S3CrtDefaultEpProviderBase {
  public:
   using S3CrtResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  S3CrtEndpointProvider()
-      : S3CrtDefaultEpProviderBase(Aws::S3Crt::S3CrtEndpointRules::GetRulesBlob(), Aws::S3Crt::S3CrtEndpointRules::RulesBlobSize) {}
+  S3CrtEndpointProvider();
 
   ~S3CrtEndpointProvider() {}
 };

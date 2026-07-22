@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/dynamodb/DynamoDBEndpointRules.h>
+#include <aws/dynamodb/internal/DynamoDBEndpointRules.h>
 
 namespace Aws {
 namespace DynamoDB {

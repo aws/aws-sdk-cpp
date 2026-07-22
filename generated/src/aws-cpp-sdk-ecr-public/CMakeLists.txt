@@ -8,6 +8,10 @@ file(GLOB AWS_ECR-PUBLIC_MODEL_HEADERS
     "include/aws/ecr-public/model/*.h"
 )
 
+file(GLOB AWS_ECR-PUBLIC_INTERNAL_HEADERS
+    "include/aws/ecr-public/internal/*.h"
+)
+
 file(GLOB AWS_ECR-PUBLIC_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_ECR-PUBLIC_MODEL_SOURCE
 
 file(GLOB ECR-PUBLIC_UNIFIED_HEADERS
     ${AWS_ECR-PUBLIC_HEADERS}
+    ${AWS_ECR-PUBLIC_INTERNAL_HEADERS}
     ${AWS_ECR-PUBLIC_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\ecr-public" FILES ${AWS_ECR-PUBLIC_HEADERS})
+        source_group("Header Files\\aws\\ecr-public\\internal" FILES ${AWS_ECR-PUBLIC_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\ecr-public\\model" FILES ${AWS_ECR-PUBLIC_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_ECR-PUBLIC_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_ECR-PUBLIC_MODEL_SOURCE})

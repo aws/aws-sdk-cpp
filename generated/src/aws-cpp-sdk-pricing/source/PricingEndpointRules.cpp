@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/pricing/PricingEndpointRules.h>
+#include <aws/pricing/internal/PricingEndpointRules.h>
 
 namespace Aws {
 namespace Pricing {

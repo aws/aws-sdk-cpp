@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/simpledbv2/SimpleDBv2EndpointRules.h>
 #include <aws/simpledbv2/SimpleDBv2_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SIMPLEDBV2_API SimpleDBv2EndpointProvider : public SimpleDBv2DefaultEp
  public:
   using SimpleDBv2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SimpleDBv2EndpointProvider()
-      : SimpleDBv2DefaultEpProviderBase(Aws::SimpleDBv2::SimpleDBv2EndpointRules::GetRulesBlob(),
-                                        Aws::SimpleDBv2::SimpleDBv2EndpointRules::RulesBlobSize) {}
+  SimpleDBv2EndpointProvider();
 
   ~SimpleDBv2EndpointProvider() {}
 };

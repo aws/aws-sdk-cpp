@@ -8,6 +8,10 @@ file(GLOB AWS_ROUTE53-RECOVERY-CLUSTER_MODEL_HEADERS
     "include/aws/route53-recovery-cluster/model/*.h"
 )
 
+file(GLOB AWS_ROUTE53-RECOVERY-CLUSTER_INTERNAL_HEADERS
+    "include/aws/route53-recovery-cluster/internal/*.h"
+)
+
 file(GLOB AWS_ROUTE53-RECOVERY-CLUSTER_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_ROUTE53-RECOVERY-CLUSTER_MODEL_SOURCE
 
 file(GLOB ROUTE53-RECOVERY-CLUSTER_UNIFIED_HEADERS
     ${AWS_ROUTE53-RECOVERY-CLUSTER_HEADERS}
+    ${AWS_ROUTE53-RECOVERY-CLUSTER_INTERNAL_HEADERS}
     ${AWS_ROUTE53-RECOVERY-CLUSTER_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\route53-recovery-cluster" FILES ${AWS_ROUTE53-RECOVERY-CLUSTER_HEADERS})
+        source_group("Header Files\\aws\\route53-recovery-cluster\\internal" FILES ${AWS_ROUTE53-RECOVERY-CLUSTER_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\route53-recovery-cluster\\model" FILES ${AWS_ROUTE53-RECOVERY-CLUSTER_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_ROUTE53-RECOVERY-CLUSTER_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_ROUTE53-RECOVERY-CLUSTER_MODEL_SOURCE})

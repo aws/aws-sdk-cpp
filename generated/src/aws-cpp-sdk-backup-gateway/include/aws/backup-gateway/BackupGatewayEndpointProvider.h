@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/backup-gateway/BackupGatewayEndpointRules.h>
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_BACKUPGATEWAY_API BackupGatewayEndpointProvider : public BackupGateway
  public:
   using BackupGatewayResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BackupGatewayEndpointProvider()
-      : BackupGatewayDefaultEpProviderBase(Aws::BackupGateway::BackupGatewayEndpointRules::GetRulesBlob(),
-                                           Aws::BackupGateway::BackupGatewayEndpointRules::RulesBlobSize) {}
+  BackupGatewayEndpointProvider();
 
   ~BackupGatewayEndpointProvider() {}
 };

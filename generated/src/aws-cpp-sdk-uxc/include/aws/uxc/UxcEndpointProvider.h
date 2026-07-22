@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/uxc/UxcEndpointRules.h>
 #include <aws/uxc/Uxc_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_UXC_API UxcEndpointProvider : public UxcDefaultEpProviderBase {
  public:
   using UxcResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  UxcEndpointProvider() : UxcDefaultEpProviderBase(Aws::uxc::UxcEndpointRules::GetRulesBlob(), Aws::uxc::UxcEndpointRules::RulesBlobSize) {}
+  UxcEndpointProvider();
 
   ~UxcEndpointProvider() {}
 };

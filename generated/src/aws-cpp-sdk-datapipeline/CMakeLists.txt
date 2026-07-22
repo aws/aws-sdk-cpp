@@ -8,6 +8,10 @@ file(GLOB AWS_DATAPIPELINE_MODEL_HEADERS
     "include/aws/datapipeline/model/*.h"
 )
 
+file(GLOB AWS_DATAPIPELINE_INTERNAL_HEADERS
+    "include/aws/datapipeline/internal/*.h"
+)
+
 file(GLOB AWS_DATAPIPELINE_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_DATAPIPELINE_MODEL_SOURCE
 
 file(GLOB DATAPIPELINE_UNIFIED_HEADERS
     ${AWS_DATAPIPELINE_HEADERS}
+    ${AWS_DATAPIPELINE_INTERNAL_HEADERS}
     ${AWS_DATAPIPELINE_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\datapipeline" FILES ${AWS_DATAPIPELINE_HEADERS})
+        source_group("Header Files\\aws\\datapipeline\\internal" FILES ${AWS_DATAPIPELINE_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\datapipeline\\model" FILES ${AWS_DATAPIPELINE_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_DATAPIPELINE_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_DATAPIPELINE_MODEL_SOURCE})

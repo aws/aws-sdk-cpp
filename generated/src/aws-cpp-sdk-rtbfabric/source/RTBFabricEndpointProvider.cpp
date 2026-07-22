@@ -4,9 +4,15 @@
  */
 
 #include <aws/rtbfabric/RTBFabricEndpointProvider.h>
+#include <aws/rtbfabric/internal/RTBFabricEndpointRules.h>
 
 namespace Aws {
 namespace RTBFabric {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+RTBFabricEndpointProvider::RTBFabricEndpointProvider()
+    : RTBFabricDefaultEpProviderBase(Aws::RTBFabric::RTBFabricEndpointRules::GetRulesBlob(),
+                                     Aws::RTBFabric::RTBFabricEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace RTBFabric
 }  // namespace Aws

@@ -8,6 +8,10 @@ file(GLOB AWS_HEALTH_MODEL_HEADERS
     "include/aws/health/model/*.h"
 )
 
+file(GLOB AWS_HEALTH_INTERNAL_HEADERS
+    "include/aws/health/internal/*.h"
+)
+
 file(GLOB AWS_HEALTH_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_HEALTH_MODEL_SOURCE
 
 file(GLOB HEALTH_UNIFIED_HEADERS
     ${AWS_HEALTH_HEADERS}
+    ${AWS_HEALTH_INTERNAL_HEADERS}
     ${AWS_HEALTH_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\health" FILES ${AWS_HEALTH_HEADERS})
+        source_group("Header Files\\aws\\health\\internal" FILES ${AWS_HEALTH_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\health\\model" FILES ${AWS_HEALTH_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_HEALTH_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_HEALTH_MODEL_SOURCE})

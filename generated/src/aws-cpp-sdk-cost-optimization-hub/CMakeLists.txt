@@ -8,6 +8,10 @@ file(GLOB AWS_COST-OPTIMIZATION-HUB_MODEL_HEADERS
     "include/aws/cost-optimization-hub/model/*.h"
 )
 
+file(GLOB AWS_COST-OPTIMIZATION-HUB_INTERNAL_HEADERS
+    "include/aws/cost-optimization-hub/internal/*.h"
+)
+
 file(GLOB AWS_COST-OPTIMIZATION-HUB_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_COST-OPTIMIZATION-HUB_MODEL_SOURCE
 
 file(GLOB COST-OPTIMIZATION-HUB_UNIFIED_HEADERS
     ${AWS_COST-OPTIMIZATION-HUB_HEADERS}
+    ${AWS_COST-OPTIMIZATION-HUB_INTERNAL_HEADERS}
     ${AWS_COST-OPTIMIZATION-HUB_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\cost-optimization-hub" FILES ${AWS_COST-OPTIMIZATION-HUB_HEADERS})
+        source_group("Header Files\\aws\\cost-optimization-hub\\internal" FILES ${AWS_COST-OPTIMIZATION-HUB_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\cost-optimization-hub\\model" FILES ${AWS_COST-OPTIMIZATION-HUB_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_COST-OPTIMIZATION-HUB_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_COST-OPTIMIZATION-HUB_MODEL_SOURCE})

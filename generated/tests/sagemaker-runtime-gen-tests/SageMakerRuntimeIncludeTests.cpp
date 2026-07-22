@@ -8,12 +8,12 @@
 
 #include <aws/sagemaker-runtime/SageMakerRuntimeClient.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeEndpointProvider.h>
-#include <aws/sagemaker-runtime/SageMakerRuntimeEndpointRules.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeErrorMarshaller.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeErrors.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeRequest.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeServiceClientModel.h>
 #include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
+#include <aws/sagemaker-runtime/internal/SageMakerRuntimeEndpointRules.h>
 #include <aws/sagemaker-runtime/model/InvokeEndpointAsyncRequest.h>
 #include <aws/sagemaker-runtime/model/InvokeEndpointAsyncResult.h>
 #include <aws/sagemaker-runtime/model/InvokeEndpointRequest.h>

@@ -26,7 +26,13 @@
 #define AWS_MARKETPLACEDEPLOYMENT_API
 #define AWS_MARKETPLACEDEPLOYMENT_EXTERN extern
 #endif  // USE_IMPORT_EXPORT
-#else   // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+#define AWS_MARKETPLACEDEPLOYMENT_LOCAL
+#else  // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
 #define AWS_MARKETPLACEDEPLOYMENT_API
 #define AWS_MARKETPLACEDEPLOYMENT_EXTERN extern
+#if __GNUC__ >= 4
+#define AWS_MARKETPLACEDEPLOYMENT_LOCAL __attribute__((visibility("hidden")))
+#else
+#define AWS_MARKETPLACEDEPLOYMENT_LOCAL
+#endif
 #endif  // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

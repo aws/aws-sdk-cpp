@@ -8,6 +8,10 @@ file(GLOB AWS_IMAGEBUILDER_MODEL_HEADERS
     "include/aws/imagebuilder/model/*.h"
 )
 
+file(GLOB AWS_IMAGEBUILDER_INTERNAL_HEADERS
+    "include/aws/imagebuilder/internal/*.h"
+)
+
 file(GLOB AWS_IMAGEBUILDER_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_IMAGEBUILDER_MODEL_SOURCE
 
 file(GLOB IMAGEBUILDER_UNIFIED_HEADERS
     ${AWS_IMAGEBUILDER_HEADERS}
+    ${AWS_IMAGEBUILDER_INTERNAL_HEADERS}
     ${AWS_IMAGEBUILDER_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\imagebuilder" FILES ${AWS_IMAGEBUILDER_HEADERS})
+        source_group("Header Files\\aws\\imagebuilder\\internal" FILES ${AWS_IMAGEBUILDER_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\imagebuilder\\model" FILES ${AWS_IMAGEBUILDER_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_IMAGEBUILDER_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_IMAGEBUILDER_MODEL_SOURCE})

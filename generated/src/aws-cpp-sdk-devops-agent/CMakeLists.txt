@@ -8,6 +8,10 @@ file(GLOB AWS_DEVOPS-AGENT_MODEL_HEADERS
     "include/aws/devops-agent/model/*.h"
 )
 
+file(GLOB AWS_DEVOPS-AGENT_INTERNAL_HEADERS
+    "include/aws/devops-agent/internal/*.h"
+)
+
 file(GLOB AWS_DEVOPS-AGENT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_DEVOPS-AGENT_MODEL_SOURCE
 
 file(GLOB DEVOPS-AGENT_UNIFIED_HEADERS
     ${AWS_DEVOPS-AGENT_HEADERS}
+    ${AWS_DEVOPS-AGENT_INTERNAL_HEADERS}
     ${AWS_DEVOPS-AGENT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\devops-agent" FILES ${AWS_DEVOPS-AGENT_HEADERS})
+        source_group("Header Files\\aws\\devops-agent\\internal" FILES ${AWS_DEVOPS-AGENT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\devops-agent\\model" FILES ${AWS_DEVOPS-AGENT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_DEVOPS-AGENT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_DEVOPS-AGENT_MODEL_SOURCE})

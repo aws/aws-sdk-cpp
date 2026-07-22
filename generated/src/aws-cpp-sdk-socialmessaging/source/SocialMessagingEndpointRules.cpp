@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/socialmessaging/SocialMessagingEndpointRules.h>
+#include <aws/socialmessaging/internal/SocialMessagingEndpointRules.h>
 
 namespace Aws {
 namespace SocialMessaging {

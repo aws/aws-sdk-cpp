@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/waf/WAFEndpointRules.h>
 #include <aws/waf/WAF_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_WAF_API WAFEndpointProvider : public WAFDefaultEpProviderBase {
  public:
   using WAFResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  WAFEndpointProvider() : WAFDefaultEpProviderBase(Aws::WAF::WAFEndpointRules::GetRulesBlob(), Aws::WAF::WAFEndpointRules::RulesBlobSize) {}
+  WAFEndpointProvider();
 
   ~WAFEndpointProvider() {}
 };

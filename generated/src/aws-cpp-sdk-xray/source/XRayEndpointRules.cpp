@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/xray/XRayEndpointRules.h>
+#include <aws/xray/internal/XRayEndpointRules.h>
 
 namespace Aws {
 namespace XRay {

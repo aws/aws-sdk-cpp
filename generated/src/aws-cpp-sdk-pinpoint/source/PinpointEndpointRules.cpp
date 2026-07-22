@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/pinpoint/PinpointEndpointRules.h>
+#include <aws/pinpoint/internal/PinpointEndpointRules.h>
 
 namespace Aws {
 namespace Pinpoint {

@@ -8,6 +8,10 @@ file(GLOB AWS_APPMESH_MODEL_HEADERS
     "include/aws/appmesh/model/*.h"
 )
 
+file(GLOB AWS_APPMESH_INTERNAL_HEADERS
+    "include/aws/appmesh/internal/*.h"
+)
+
 file(GLOB AWS_APPMESH_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_APPMESH_MODEL_SOURCE
 
 file(GLOB APPMESH_UNIFIED_HEADERS
     ${AWS_APPMESH_HEADERS}
+    ${AWS_APPMESH_INTERNAL_HEADERS}
     ${AWS_APPMESH_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\appmesh" FILES ${AWS_APPMESH_HEADERS})
+        source_group("Header Files\\aws\\appmesh\\internal" FILES ${AWS_APPMESH_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\appmesh\\model" FILES ${AWS_APPMESH_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_APPMESH_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_APPMESH_MODEL_SOURCE})

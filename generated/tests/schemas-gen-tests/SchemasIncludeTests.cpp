@@ -8,12 +8,12 @@
 
 #include <aws/schemas/SchemasClient.h>
 #include <aws/schemas/SchemasEndpointProvider.h>
-#include <aws/schemas/SchemasEndpointRules.h>
 #include <aws/schemas/SchemasErrorMarshaller.h>
 #include <aws/schemas/SchemasErrors.h>
 #include <aws/schemas/SchemasRequest.h>
 #include <aws/schemas/SchemasServiceClientModel.h>
 #include <aws/schemas/Schemas_EXPORTS.h>
+#include <aws/schemas/internal/SchemasEndpointRules.h>
 #include <aws/schemas/model/BadRequestException.h>
 #include <aws/schemas/model/CodeGenerationStatus.h>
 #include <aws/schemas/model/ConflictException.h>

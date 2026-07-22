@@ -4,9 +4,14 @@
  */
 
 #include <aws/account/AccountEndpointProvider.h>
+#include <aws/account/internal/AccountEndpointRules.h>
 
 namespace Aws {
 namespace Account {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+AccountEndpointProvider::AccountEndpointProvider()
+    : AccountDefaultEpProviderBase(Aws::Account::AccountEndpointRules::GetRulesBlob(), Aws::Account::AccountEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Account
 }  // namespace Aws

@@ -4,9 +4,14 @@
  */
 
 #include <aws/signin/SigninEndpointProvider.h>
+#include <aws/signin/internal/SigninEndpointRules.h>
 
 namespace Aws {
 namespace Signin {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SigninEndpointProvider::SigninEndpointProvider()
+    : SigninDefaultEpProviderBase(Aws::Signin::SigninEndpointRules::GetRulesBlob(), Aws::Signin::SigninEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Signin
 }  // namespace Aws

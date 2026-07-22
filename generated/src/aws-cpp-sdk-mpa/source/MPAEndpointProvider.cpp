@@ -4,9 +4,14 @@
  */
 
 #include <aws/mpa/MPAEndpointProvider.h>
+#include <aws/mpa/internal/MPAEndpointRules.h>
 
 namespace Aws {
 namespace MPA {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MPAEndpointProvider::MPAEndpointProvider()
+    : MPADefaultEpProviderBase(Aws::MPA::MPAEndpointRules::GetRulesBlob(), Aws::MPA::MPAEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MPA
 }  // namespace Aws

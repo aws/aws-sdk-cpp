@@ -4,6 +4,7 @@
  */
 
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeEndpointProvider.h>
+#include <aws/bedrock-agent-runtime/internal/BedrockAgentRuntimeEndpointRules.h>
 
 namespace Aws {
 #ifndef AWS_BEDROCKAGENTRUNTIME_EXPORTS  // Except for Windows DLL
@@ -23,6 +24,10 @@ template class Aws::Endpoint::DefaultEndpointProvider<BedrockAgentRuntime::Endpo
 
 namespace BedrockAgentRuntime {
 namespace Endpoint {
+BedrockAgentRuntimeEndpointProvider::BedrockAgentRuntimeEndpointProvider()
+    : BedrockAgentRuntimeDefaultEpProviderBase(Aws::BedrockAgentRuntime::BedrockAgentRuntimeEndpointRules::GetRulesBlob(),
+                                               Aws::BedrockAgentRuntime::BedrockAgentRuntimeEndpointRules::RulesBlobSize) {}
+
 void BedrockAgentRuntimeBuiltInParameters::SetFromClientConfiguration(const BedrockAgentRuntimeClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const BedrockAgentRuntimeClientConfiguration::BaseClientConfigClass&>(config));
 }

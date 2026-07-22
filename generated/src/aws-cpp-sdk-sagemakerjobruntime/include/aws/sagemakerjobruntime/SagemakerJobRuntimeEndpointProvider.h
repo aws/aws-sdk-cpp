@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sagemakerjobruntime/SagemakerJobRuntimeEndpointRules.h>
 #include <aws/sagemakerjobruntime/SagemakerJobRuntime_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_SAGEMAKERJOBRUNTIME_API SagemakerJobRuntimeEndpointProvider : public S
  public:
   using SagemakerJobRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SagemakerJobRuntimeEndpointProvider()
-      : SagemakerJobRuntimeDefaultEpProviderBase(Aws::SagemakerJobRuntime::SagemakerJobRuntimeEndpointRules::GetRulesBlob(),
-                                                 Aws::SagemakerJobRuntime::SagemakerJobRuntimeEndpointRules::RulesBlobSize) {}
+  SagemakerJobRuntimeEndpointProvider();
 
   ~SagemakerJobRuntimeEndpointProvider() {}
 };

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ecr/ECREndpointRules.h>
+#include <aws/ecr/internal/ECREndpointRules.h>
 
 namespace Aws {
 namespace ECR {

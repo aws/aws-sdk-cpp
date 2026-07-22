@@ -8,12 +8,12 @@
 
 #include <aws/backup/BackupClient.h>
 #include <aws/backup/BackupEndpointProvider.h>
-#include <aws/backup/BackupEndpointRules.h>
 #include <aws/backup/BackupErrorMarshaller.h>
 #include <aws/backup/BackupErrors.h>
 #include <aws/backup/BackupRequest.h>
 #include <aws/backup/BackupServiceClientModel.h>
 #include <aws/backup/Backup_EXPORTS.h>
+#include <aws/backup/internal/BackupEndpointRules.h>
 #include <aws/backup/model/AdvancedBackupSetting.h>
 #include <aws/backup/model/AggregatedScanResult.h>
 #include <aws/backup/model/AggregationPeriod.h>

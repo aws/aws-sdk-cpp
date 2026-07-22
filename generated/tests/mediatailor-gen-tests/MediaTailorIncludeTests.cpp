@@ -8,12 +8,12 @@
 
 #include <aws/mediatailor/MediaTailorClient.h>
 #include <aws/mediatailor/MediaTailorEndpointProvider.h>
-#include <aws/mediatailor/MediaTailorEndpointRules.h>
 #include <aws/mediatailor/MediaTailorErrorMarshaller.h>
 #include <aws/mediatailor/MediaTailorErrors.h>
 #include <aws/mediatailor/MediaTailorRequest.h>
 #include <aws/mediatailor/MediaTailorServiceClientModel.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
+#include <aws/mediatailor/internal/MediaTailorEndpointRules.h>
 #include <aws/mediatailor/model/AccessConfiguration.h>
 #include <aws/mediatailor/model/AccessType.h>
 #include <aws/mediatailor/model/AdBreak.h>

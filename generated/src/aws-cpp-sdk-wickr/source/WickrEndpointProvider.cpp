@@ -4,9 +4,14 @@
  */
 
 #include <aws/wickr/WickrEndpointProvider.h>
+#include <aws/wickr/internal/WickrEndpointRules.h>
 
 namespace Aws {
 namespace Wickr {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+WickrEndpointProvider::WickrEndpointProvider()
+    : WickrDefaultEpProviderBase(Aws::Wickr::WickrEndpointRules::GetRulesBlob(), Aws::Wickr::WickrEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Wickr
 }  // namespace Aws

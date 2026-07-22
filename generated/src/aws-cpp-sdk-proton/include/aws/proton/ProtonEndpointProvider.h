@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/proton/ProtonEndpointRules.h>
 #include <aws/proton/Proton_EXPORTS.h>
 
 namespace Aws {
@@ -41,8 +40,7 @@ class AWS_PROTON_API ProtonEndpointProvider : public ProtonDefaultEpProviderBase
  public:
   using ProtonResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ProtonEndpointProvider()
-      : ProtonDefaultEpProviderBase(Aws::Proton::ProtonEndpointRules::GetRulesBlob(), Aws::Proton::ProtonEndpointRules::RulesBlobSize) {}
+  ProtonEndpointProvider();
 
   ~ProtonEndpointProvider() {}
 };

@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/aiops/AIOpsEndpointRules.h>
 #include <aws/aiops/AIOps_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -40,8 +39,7 @@ class AWS_AIOPS_API AIOpsEndpointProvider : public AIOpsDefaultEpProviderBase {
  public:
   using AIOpsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AIOpsEndpointProvider()
-      : AIOpsDefaultEpProviderBase(Aws::AIOps::AIOpsEndpointRules::GetRulesBlob(), Aws::AIOps::AIOpsEndpointRules::RulesBlobSize) {}
+  AIOpsEndpointProvider();
 
   ~AIOpsEndpointProvider() {}
 };

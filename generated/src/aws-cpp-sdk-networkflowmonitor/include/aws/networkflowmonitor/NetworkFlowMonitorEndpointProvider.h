@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/networkflowmonitor/NetworkFlowMonitorEndpointRules.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorEndpointProvider : public Net
  public:
   using NetworkFlowMonitorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  NetworkFlowMonitorEndpointProvider()
-      : NetworkFlowMonitorDefaultEpProviderBase(Aws::NetworkFlowMonitor::NetworkFlowMonitorEndpointRules::GetRulesBlob(),
-                                                Aws::NetworkFlowMonitor::NetworkFlowMonitorEndpointRules::RulesBlobSize) {}
+  NetworkFlowMonitorEndpointProvider();
 
   ~NetworkFlowMonitorEndpointProvider() {}
 };

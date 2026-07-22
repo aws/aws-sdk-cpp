@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/amp/PrometheusServiceEndpointRules.h>
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -43,9 +42,7 @@ class AWS_PROMETHEUSSERVICE_API PrometheusServiceEndpointProvider : public Prome
  public:
   using PrometheusServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PrometheusServiceEndpointProvider()
-      : PrometheusServiceDefaultEpProviderBase(Aws::PrometheusService::PrometheusServiceEndpointRules::GetRulesBlob(),
-                                               Aws::PrometheusService::PrometheusServiceEndpointRules::RulesBlobSize) {}
+  PrometheusServiceEndpointProvider();
 
   ~PrometheusServiceEndpointProvider() {}
 };

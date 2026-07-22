@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/states/SFNEndpointRules.h>
 #include <aws/states/SFN_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_SFN_API SFNEndpointProvider : public SFNDefaultEpProviderBase {
  public:
   using SFNResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SFNEndpointProvider() : SFNDefaultEpProviderBase(Aws::SFN::SFNEndpointRules::GetRulesBlob(), Aws::SFN::SFNEndpointRules::RulesBlobSize) {}
+  SFNEndpointProvider();
 
   ~SFNEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/security-ir/SecurityIRClient.h>
 #include <aws/security-ir/SecurityIREndpointProvider.h>
-#include <aws/security-ir/SecurityIREndpointRules.h>
 #include <aws/security-ir/SecurityIRErrorMarshaller.h>
 #include <aws/security-ir/SecurityIRErrors.h>
 #include <aws/security-ir/SecurityIRRequest.h>
 #include <aws/security-ir/SecurityIRServiceClientModel.h>
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
+#include <aws/security-ir/internal/SecurityIREndpointRules.h>
 #include <aws/security-ir/model/ActionType.h>
 #include <aws/security-ir/model/AwsRegion.h>
 #include <aws/security-ir/model/BatchGetMemberAccountDetailsRequest.h>

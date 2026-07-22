@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ssm-incidents/SSMIncidentsEndpointRules.h>
+#include <aws/ssm-incidents/internal/SSMIncidentsEndpointRules.h>
 
 namespace Aws {
 namespace SSMIncidents {

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/workmail/WorkMailEndpointRules.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_WORKMAIL_API WorkMailEndpointProvider : public WorkMailDefaultEpProvid
  public:
   using WorkMailResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  WorkMailEndpointProvider()
-      : WorkMailDefaultEpProviderBase(Aws::WorkMail::WorkMailEndpointRules::GetRulesBlob(),
-                                      Aws::WorkMail::WorkMailEndpointRules::RulesBlobSize) {}
+  WorkMailEndpointProvider();
 
   ~WorkMailEndpointProvider() {}
 };

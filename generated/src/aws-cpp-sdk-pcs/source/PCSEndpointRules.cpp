@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/pcs/PCSEndpointRules.h>
+#include <aws/pcs/internal/PCSEndpointRules.h>
 
 namespace Aws {
 namespace PCS {

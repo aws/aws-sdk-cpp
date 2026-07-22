@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/iot-jobs-data/IoTJobsDataPlaneEndpointRules.h>
+#include <aws/iot-jobs-data/internal/IoTJobsDataPlaneEndpointRules.h>
 
 namespace Aws {
 namespace IoTJobsDataPlane {

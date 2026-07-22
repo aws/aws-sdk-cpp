@@ -4,9 +4,15 @@
  */
 
 #include <aws/devicefarm/DeviceFarmEndpointProvider.h>
+#include <aws/devicefarm/internal/DeviceFarmEndpointRules.h>
 
 namespace Aws {
 namespace DeviceFarm {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+DeviceFarmEndpointProvider::DeviceFarmEndpointProvider()
+    : DeviceFarmDefaultEpProviderBase(Aws::DeviceFarm::DeviceFarmEndpointRules::GetRulesBlob(),
+                                      Aws::DeviceFarm::DeviceFarmEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace DeviceFarm
 }  // namespace Aws

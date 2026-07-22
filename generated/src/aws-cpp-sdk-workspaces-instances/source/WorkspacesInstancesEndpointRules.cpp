@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/workspaces-instances/WorkspacesInstancesEndpointRules.h>
+#include <aws/workspaces-instances/internal/WorkspacesInstancesEndpointRules.h>
 
 namespace Aws {
 namespace WorkspacesInstances {

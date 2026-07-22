@@ -8,12 +8,12 @@
 
 #include <aws/storagegateway/StorageGatewayClient.h>
 #include <aws/storagegateway/StorageGatewayEndpointProvider.h>
-#include <aws/storagegateway/StorageGatewayEndpointRules.h>
 #include <aws/storagegateway/StorageGatewayErrorMarshaller.h>
 #include <aws/storagegateway/StorageGatewayErrors.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/storagegateway/StorageGatewayServiceClientModel.h>
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
+#include <aws/storagegateway/internal/StorageGatewayEndpointRules.h>
 #include <aws/storagegateway/model/ActivateGatewayRequest.h>
 #include <aws/storagegateway/model/ActivateGatewayResult.h>
 #include <aws/storagegateway/model/ActiveDirectoryStatus.h>

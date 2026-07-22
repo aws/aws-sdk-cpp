@@ -8,12 +8,12 @@
 
 #include <aws/amplify/AmplifyClient.h>
 #include <aws/amplify/AmplifyEndpointProvider.h>
-#include <aws/amplify/AmplifyEndpointRules.h>
 #include <aws/amplify/AmplifyErrorMarshaller.h>
 #include <aws/amplify/AmplifyErrors.h>
 #include <aws/amplify/AmplifyRequest.h>
 #include <aws/amplify/AmplifyServiceClientModel.h>
 #include <aws/amplify/Amplify_EXPORTS.h>
+#include <aws/amplify/internal/AmplifyEndpointRules.h>
 #include <aws/amplify/model/App.h>
 #include <aws/amplify/model/Artifact.h>
 #include <aws/amplify/model/AutoBranchCreationConfig.h>

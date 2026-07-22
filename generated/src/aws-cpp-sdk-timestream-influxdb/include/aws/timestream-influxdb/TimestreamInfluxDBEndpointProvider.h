@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/timestream-influxdb/TimestreamInfluxDBEndpointRules.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBEndpointProvider : public Tim
  public:
   using TimestreamInfluxDBResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  TimestreamInfluxDBEndpointProvider()
-      : TimestreamInfluxDBDefaultEpProviderBase(Aws::TimestreamInfluxDB::TimestreamInfluxDBEndpointRules::GetRulesBlob(),
-                                                Aws::TimestreamInfluxDB::TimestreamInfluxDBEndpointRules::RulesBlobSize) {}
+  TimestreamInfluxDBEndpointProvider();
 
   ~TimestreamInfluxDBEndpointProvider() {}
 };

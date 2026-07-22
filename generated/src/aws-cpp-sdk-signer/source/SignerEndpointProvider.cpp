@@ -4,9 +4,14 @@
  */
 
 #include <aws/signer/SignerEndpointProvider.h>
+#include <aws/signer/internal/SignerEndpointRules.h>
 
 namespace Aws {
 namespace signer {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SignerEndpointProvider::SignerEndpointProvider()
+    : SignerDefaultEpProviderBase(Aws::signer::SignerEndpointRules::GetRulesBlob(), Aws::signer::SignerEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace signer
 }  // namespace Aws

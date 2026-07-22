@@ -8,12 +8,12 @@
 
 #include <aws/managedblockchain/ManagedBlockchainClient.h>
 #include <aws/managedblockchain/ManagedBlockchainEndpointProvider.h>
-#include <aws/managedblockchain/ManagedBlockchainEndpointRules.h>
 #include <aws/managedblockchain/ManagedBlockchainErrorMarshaller.h>
 #include <aws/managedblockchain/ManagedBlockchainErrors.h>
 #include <aws/managedblockchain/ManagedBlockchainRequest.h>
 #include <aws/managedblockchain/ManagedBlockchainServiceClientModel.h>
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
+#include <aws/managedblockchain/internal/ManagedBlockchainEndpointRules.h>
 #include <aws/managedblockchain/model/Accessor.h>
 #include <aws/managedblockchain/model/AccessorNetworkType.h>
 #include <aws/managedblockchain/model/AccessorStatus.h>

@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/bedrock-agentcore/BedrockAgentCoreEndpointRules.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -43,9 +42,7 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreEndpointProvider : public Bedrock
  public:
   using BedrockAgentCoreResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BedrockAgentCoreEndpointProvider()
-      : BedrockAgentCoreDefaultEpProviderBase(Aws::BedrockAgentCore::BedrockAgentCoreEndpointRules::GetRulesBlob(),
-                                              Aws::BedrockAgentCore::BedrockAgentCoreEndpointRules::RulesBlobSize) {}
+  BedrockAgentCoreEndpointProvider();
 
   ~BedrockAgentCoreEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/controltower/ControlTowerClient.h>
 #include <aws/controltower/ControlTowerEndpointProvider.h>
-#include <aws/controltower/ControlTowerEndpointRules.h>
 #include <aws/controltower/ControlTowerErrorMarshaller.h>
 #include <aws/controltower/ControlTowerErrors.h>
 #include <aws/controltower/ControlTowerRequest.h>
 #include <aws/controltower/ControlTowerServiceClientModel.h>
 #include <aws/controltower/ControlTower_EXPORTS.h>
+#include <aws/controltower/internal/ControlTowerEndpointRules.h>
 #include <aws/controltower/model/BaselineOperation.h>
 #include <aws/controltower/model/BaselineOperationStatus.h>
 #include <aws/controltower/model/BaselineOperationType.h>

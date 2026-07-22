@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/shield/ShieldEndpointRules.h>
 #include <aws/shield/Shield_EXPORTS.h>
 
 namespace Aws {
@@ -41,8 +40,7 @@ class AWS_SHIELD_API ShieldEndpointProvider : public ShieldDefaultEpProviderBase
  public:
   using ShieldResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ShieldEndpointProvider()
-      : ShieldDefaultEpProviderBase(Aws::Shield::ShieldEndpointRules::GetRulesBlob(), Aws::Shield::ShieldEndpointRules::RulesBlobSize) {}
+  ShieldEndpointProvider();
 
   ~ShieldEndpointProvider() {}
 };

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/marketplace-reporting/MarketplaceReportingEndpointRules.h>
+#include <aws/marketplace-reporting/internal/MarketplaceReportingEndpointRules.h>
 
 namespace Aws {
 namespace MarketplaceReporting {

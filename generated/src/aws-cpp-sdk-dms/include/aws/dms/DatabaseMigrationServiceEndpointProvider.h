@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/dms/DatabaseMigrationServiceEndpointRules.h>
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
 namespace Aws {
@@ -44,10 +43,7 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceEndpointProvider 
  public:
   using DatabaseMigrationServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DatabaseMigrationServiceEndpointProvider()
-      : DatabaseMigrationServiceDefaultEpProviderBase(Aws::DatabaseMigrationService::DatabaseMigrationServiceEndpointRules::GetRulesBlob(),
-                                                      Aws::DatabaseMigrationService::DatabaseMigrationServiceEndpointRules::RulesBlobSize) {
-  }
+  DatabaseMigrationServiceEndpointProvider();
 
   ~DatabaseMigrationServiceEndpointProvider() {}
 };

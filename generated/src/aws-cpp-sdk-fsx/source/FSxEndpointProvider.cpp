@@ -4,9 +4,14 @@
  */
 
 #include <aws/fsx/FSxEndpointProvider.h>
+#include <aws/fsx/internal/FSxEndpointRules.h>
 
 namespace Aws {
 namespace FSx {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+FSxEndpointProvider::FSxEndpointProvider()
+    : FSxDefaultEpProviderBase(Aws::FSx::FSxEndpointRules::GetRulesBlob(), Aws::FSx::FSxEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace FSx
 }  // namespace Aws

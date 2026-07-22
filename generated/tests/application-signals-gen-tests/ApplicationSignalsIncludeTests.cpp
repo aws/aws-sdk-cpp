@@ -8,12 +8,12 @@
 
 #include <aws/application-signals/ApplicationSignalsClient.h>
 #include <aws/application-signals/ApplicationSignalsEndpointProvider.h>
-#include <aws/application-signals/ApplicationSignalsEndpointRules.h>
 #include <aws/application-signals/ApplicationSignalsErrorMarshaller.h>
 #include <aws/application-signals/ApplicationSignalsErrors.h>
 #include <aws/application-signals/ApplicationSignalsRequest.h>
 #include <aws/application-signals/ApplicationSignalsServiceClientModel.h>
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
+#include <aws/application-signals/internal/ApplicationSignalsEndpointRules.h>
 #include <aws/application-signals/model/AttributeFilter.h>
 #include <aws/application-signals/model/AuditFinding.h>
 #include <aws/application-signals/model/AuditTarget.h>

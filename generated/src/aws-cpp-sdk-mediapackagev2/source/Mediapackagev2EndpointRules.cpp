@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/mediapackagev2/Mediapackagev2EndpointRules.h>
+#include <aws/mediapackagev2/internal/Mediapackagev2EndpointRules.h>
 
 namespace Aws {
 namespace mediapackagev2 {

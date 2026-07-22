@@ -8,12 +8,12 @@
 
 #include <aws/amp/PrometheusServiceClient.h>
 #include <aws/amp/PrometheusServiceEndpointProvider.h>
-#include <aws/amp/PrometheusServiceEndpointRules.h>
 #include <aws/amp/PrometheusServiceErrorMarshaller.h>
 #include <aws/amp/PrometheusServiceErrors.h>
 #include <aws/amp/PrometheusServiceRequest.h>
 #include <aws/amp/PrometheusServiceServiceClientModel.h>
 #include <aws/amp/PrometheusService_EXPORTS.h>
+#include <aws/amp/internal/PrometheusServiceEndpointRules.h>
 #include <aws/amp/model/AlertManagerDefinitionDescription.h>
 #include <aws/amp/model/AlertManagerDefinitionStatus.h>
 #include <aws/amp/model/AlertManagerDefinitionStatusCode.h>

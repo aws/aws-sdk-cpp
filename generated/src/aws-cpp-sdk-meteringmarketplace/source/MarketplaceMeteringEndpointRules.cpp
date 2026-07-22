@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/meteringmarketplace/MarketplaceMeteringEndpointRules.h>
+#include <aws/meteringmarketplace/internal/MarketplaceMeteringEndpointRules.h>
 
 namespace Aws {
 namespace MarketplaceMetering {

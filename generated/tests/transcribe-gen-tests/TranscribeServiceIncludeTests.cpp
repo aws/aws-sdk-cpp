@@ -8,12 +8,12 @@
 
 #include <aws/transcribe/TranscribeServiceClient.h>
 #include <aws/transcribe/TranscribeServiceEndpointProvider.h>
-#include <aws/transcribe/TranscribeServiceEndpointRules.h>
 #include <aws/transcribe/TranscribeServiceErrorMarshaller.h>
 #include <aws/transcribe/TranscribeServiceErrors.h>
 #include <aws/transcribe/TranscribeServiceRequest.h>
 #include <aws/transcribe/TranscribeServiceServiceClientModel.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
+#include <aws/transcribe/internal/TranscribeServiceEndpointRules.h>
 #include <aws/transcribe/model/AbsoluteTimeRange.h>
 #include <aws/transcribe/model/BaseModelName.h>
 #include <aws/transcribe/model/CLMLanguageCode.h>

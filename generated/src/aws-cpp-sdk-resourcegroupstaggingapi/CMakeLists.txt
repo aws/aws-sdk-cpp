@@ -8,6 +8,10 @@ file(GLOB AWS_RESOURCEGROUPSTAGGINGAPI_MODEL_HEADERS
     "include/aws/resourcegroupstaggingapi/model/*.h"
 )
 
+file(GLOB AWS_RESOURCEGROUPSTAGGINGAPI_INTERNAL_HEADERS
+    "include/aws/resourcegroupstaggingapi/internal/*.h"
+)
+
 file(GLOB AWS_RESOURCEGROUPSTAGGINGAPI_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_RESOURCEGROUPSTAGGINGAPI_MODEL_SOURCE
 
 file(GLOB RESOURCEGROUPSTAGGINGAPI_UNIFIED_HEADERS
     ${AWS_RESOURCEGROUPSTAGGINGAPI_HEADERS}
+    ${AWS_RESOURCEGROUPSTAGGINGAPI_INTERNAL_HEADERS}
     ${AWS_RESOURCEGROUPSTAGGINGAPI_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\resourcegroupstaggingapi" FILES ${AWS_RESOURCEGROUPSTAGGINGAPI_HEADERS})
+        source_group("Header Files\\aws\\resourcegroupstaggingapi\\internal" FILES ${AWS_RESOURCEGROUPSTAGGINGAPI_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\resourcegroupstaggingapi\\model" FILES ${AWS_RESOURCEGROUPSTAGGINGAPI_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_RESOURCEGROUPSTAGGINGAPI_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_RESOURCEGROUPSTAGGINGAPI_MODEL_SOURCE})

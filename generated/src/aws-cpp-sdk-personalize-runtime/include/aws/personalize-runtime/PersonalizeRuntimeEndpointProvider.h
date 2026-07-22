@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/personalize-runtime/PersonalizeRuntimeEndpointRules.h>
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_PERSONALIZERUNTIME_API PersonalizeRuntimeEndpointProvider : public Per
  public:
   using PersonalizeRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PersonalizeRuntimeEndpointProvider()
-      : PersonalizeRuntimeDefaultEpProviderBase(Aws::PersonalizeRuntime::PersonalizeRuntimeEndpointRules::GetRulesBlob(),
-                                                Aws::PersonalizeRuntime::PersonalizeRuntimeEndpointRules::RulesBlobSize) {}
+  PersonalizeRuntimeEndpointProvider();
 
   ~PersonalizeRuntimeEndpointProvider() {}
 };

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/timestream-influxdb/TimestreamInfluxDBEndpointRules.h>
+#include <aws/timestream-influxdb/internal/TimestreamInfluxDBEndpointRules.h>
 
 namespace Aws {
 namespace TimestreamInfluxDB {

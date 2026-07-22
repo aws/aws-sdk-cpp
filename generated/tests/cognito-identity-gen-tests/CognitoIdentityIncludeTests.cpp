@@ -8,12 +8,12 @@
 
 #include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/cognito-identity/CognitoIdentityEndpointProvider.h>
-#include <aws/cognito-identity/CognitoIdentityEndpointRules.h>
 #include <aws/cognito-identity/CognitoIdentityErrorMarshaller.h>
 #include <aws/cognito-identity/CognitoIdentityErrors.h>
 #include <aws/cognito-identity/CognitoIdentityRequest.h>
 #include <aws/cognito-identity/CognitoIdentityServiceClientModel.h>
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
+#include <aws/cognito-identity/internal/CognitoIdentityEndpointRules.h>
 #include <aws/cognito-identity/model/AmbiguousRoleResolutionType.h>
 #include <aws/cognito-identity/model/CognitoIdentityProvider.h>
 #include <aws/cognito-identity/model/CreateIdentityPoolRequest.h>

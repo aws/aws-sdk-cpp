@@ -8,12 +8,12 @@
 
 #include <aws/resiliencehubv2/Resiliencehubv2Client.h>
 #include <aws/resiliencehubv2/Resiliencehubv2EndpointProvider.h>
-#include <aws/resiliencehubv2/Resiliencehubv2EndpointRules.h>
 #include <aws/resiliencehubv2/Resiliencehubv2ErrorMarshaller.h>
 #include <aws/resiliencehubv2/Resiliencehubv2Errors.h>
 #include <aws/resiliencehubv2/Resiliencehubv2Request.h>
 #include <aws/resiliencehubv2/Resiliencehubv2ServiceClientModel.h>
 #include <aws/resiliencehubv2/Resiliencehubv2_EXPORTS.h>
+#include <aws/resiliencehubv2/internal/Resiliencehubv2EndpointRules.h>
 #include <aws/resiliencehubv2/model/Achievability.h>
 #include <aws/resiliencehubv2/model/AchievabilityStatus.h>
 #include <aws/resiliencehubv2/model/ActorType.h>

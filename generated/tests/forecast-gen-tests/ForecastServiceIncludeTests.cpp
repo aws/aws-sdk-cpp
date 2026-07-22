@@ -8,12 +8,12 @@
 
 #include <aws/forecast/ForecastServiceClient.h>
 #include <aws/forecast/ForecastServiceEndpointProvider.h>
-#include <aws/forecast/ForecastServiceEndpointRules.h>
 #include <aws/forecast/ForecastServiceErrorMarshaller.h>
 #include <aws/forecast/ForecastServiceErrors.h>
 #include <aws/forecast/ForecastServiceRequest.h>
 #include <aws/forecast/ForecastServiceServiceClientModel.h>
 #include <aws/forecast/ForecastService_EXPORTS.h>
+#include <aws/forecast/internal/ForecastServiceEndpointRules.h>
 #include <aws/forecast/model/Action.h>
 #include <aws/forecast/model/AdditionalDataset.h>
 #include <aws/forecast/model/AttributeConfig.h>

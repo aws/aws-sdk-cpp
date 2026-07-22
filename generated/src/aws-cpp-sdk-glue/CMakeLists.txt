@@ -8,6 +8,10 @@ file(GLOB AWS_GLUE_MODEL_HEADERS
     "include/aws/glue/model/*.h"
 )
 
+file(GLOB AWS_GLUE_INTERNAL_HEADERS
+    "include/aws/glue/internal/*.h"
+)
+
 file(GLOB AWS_GLUE_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_GLUE_MODEL_SOURCE
 
 file(GLOB GLUE_UNIFIED_HEADERS
     ${AWS_GLUE_HEADERS}
+    ${AWS_GLUE_INTERNAL_HEADERS}
     ${AWS_GLUE_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\glue" FILES ${AWS_GLUE_HEADERS})
+        source_group("Header Files\\aws\\glue\\internal" FILES ${AWS_GLUE_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\glue\\model" FILES ${AWS_GLUE_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_GLUE_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_GLUE_MODEL_SOURCE})

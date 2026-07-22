@@ -8,12 +8,12 @@
 
 #include <aws/controlcatalog/ControlCatalogClient.h>
 #include <aws/controlcatalog/ControlCatalogEndpointProvider.h>
-#include <aws/controlcatalog/ControlCatalogEndpointRules.h>
 #include <aws/controlcatalog/ControlCatalogErrorMarshaller.h>
 #include <aws/controlcatalog/ControlCatalogErrors.h>
 #include <aws/controlcatalog/ControlCatalogRequest.h>
 #include <aws/controlcatalog/ControlCatalogServiceClientModel.h>
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
+#include <aws/controlcatalog/internal/ControlCatalogEndpointRules.h>
 #include <aws/controlcatalog/model/AssociatedDomainSummary.h>
 #include <aws/controlcatalog/model/AssociatedObjectiveSummary.h>
 #include <aws/controlcatalog/model/CommonControlFilter.h>

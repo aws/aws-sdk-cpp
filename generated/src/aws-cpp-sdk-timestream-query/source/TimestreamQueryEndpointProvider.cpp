@@ -4,6 +4,7 @@
  */
 
 #include <aws/timestream-query/TimestreamQueryEndpointProvider.h>
+#include <aws/timestream-query/internal/TimestreamQueryEndpointRules.h>
 
 namespace Aws {
 #ifndef AWS_TIMESTREAMQUERY_EXPORTS  // Except for Windows DLL
@@ -23,6 +24,10 @@ template class Aws::Endpoint::DefaultEndpointProvider<TimestreamQuery::Endpoint:
 
 namespace TimestreamQuery {
 namespace Endpoint {
+TimestreamQueryEndpointProvider::TimestreamQueryEndpointProvider()
+    : TimestreamQueryDefaultEpProviderBase(Aws::TimestreamQuery::TimestreamQueryEndpointRules::GetRulesBlob(),
+                                           Aws::TimestreamQuery::TimestreamQueryEndpointRules::RulesBlobSize) {}
+
 void TimestreamQueryBuiltInParameters::SetFromClientConfiguration(const TimestreamQueryClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const TimestreamQueryClientConfiguration::BaseClientConfigClass&>(config));
 }

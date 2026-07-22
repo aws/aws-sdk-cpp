@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/grafana/ManagedGrafanaEndpointRules.h>
+#include <aws/grafana/internal/ManagedGrafanaEndpointRules.h>
 
 namespace Aws {
 namespace ManagedGrafana {

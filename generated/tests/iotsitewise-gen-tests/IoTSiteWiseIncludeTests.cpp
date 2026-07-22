@@ -8,12 +8,12 @@
 
 #include <aws/iotsitewise/IoTSiteWiseClient.h>
 #include <aws/iotsitewise/IoTSiteWiseEndpointProvider.h>
-#include <aws/iotsitewise/IoTSiteWiseEndpointRules.h>
 #include <aws/iotsitewise/IoTSiteWiseErrorMarshaller.h>
 #include <aws/iotsitewise/IoTSiteWiseErrors.h>
 #include <aws/iotsitewise/IoTSiteWiseRequest.h>
 #include <aws/iotsitewise/IoTSiteWiseServiceClientModel.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
+#include <aws/iotsitewise/internal/IoTSiteWiseEndpointRules.h>
 #include <aws/iotsitewise/model/AccessPolicySummary.h>
 #include <aws/iotsitewise/model/ActionDefinition.h>
 #include <aws/iotsitewise/model/ActionPayload.h>

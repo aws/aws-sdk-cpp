@@ -4,9 +4,15 @@
  */
 
 #include <aws/snowball/SnowballEndpointProvider.h>
+#include <aws/snowball/internal/SnowballEndpointRules.h>
 
 namespace Aws {
 namespace Snowball {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SnowballEndpointProvider::SnowballEndpointProvider()
+    : SnowballDefaultEpProviderBase(Aws::Snowball::SnowballEndpointRules::GetRulesBlob(),
+                                    Aws::Snowball::SnowballEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Snowball
 }  // namespace Aws

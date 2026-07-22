@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/supplychain/SupplyChainEndpointRules.h>
 #include <aws/supplychain/SupplyChain_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SUPPLYCHAIN_API SupplyChainEndpointProvider : public SupplyChainDefaul
  public:
   using SupplyChainResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SupplyChainEndpointProvider()
-      : SupplyChainDefaultEpProviderBase(Aws::SupplyChain::SupplyChainEndpointRules::GetRulesBlob(),
-                                         Aws::SupplyChain::SupplyChainEndpointRules::RulesBlobSize) {}
+  SupplyChainEndpointProvider();
 
   ~SupplyChainEndpointProvider() {}
 };

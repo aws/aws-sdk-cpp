@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsEndpointRules.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalytics_EXPORTS.h>
 
 namespace Aws {
@@ -45,10 +44,7 @@ class AWS_MARKETPLACECOMMERCEANALYTICS_API MarketplaceCommerceAnalyticsEndpointP
  public:
   using MarketplaceCommerceAnalyticsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MarketplaceCommerceAnalyticsEndpointProvider()
-      : MarketplaceCommerceAnalyticsDefaultEpProviderBase(
-            Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsEndpointRules::GetRulesBlob(),
-            Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsEndpointRules::RulesBlobSize) {}
+  MarketplaceCommerceAnalyticsEndpointProvider();
 
   ~MarketplaceCommerceAnalyticsEndpointProvider() {}
 };

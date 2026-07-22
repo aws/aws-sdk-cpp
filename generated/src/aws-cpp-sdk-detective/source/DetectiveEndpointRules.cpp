@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/detective/DetectiveEndpointRules.h>
+#include <aws/detective/internal/DetectiveEndpointRules.h>
 
 namespace Aws {
 namespace Detective {

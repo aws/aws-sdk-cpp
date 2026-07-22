@@ -8,12 +8,12 @@
 
 #include <aws/route53/Route53Client.h>
 #include <aws/route53/Route53EndpointProvider.h>
-#include <aws/route53/Route53EndpointRules.h>
 #include <aws/route53/Route53ErrorMarshaller.h>
 #include <aws/route53/Route53Errors.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/route53/Route53ServiceClientModel.h>
 #include <aws/route53/Route53_EXPORTS.h>
+#include <aws/route53/internal/Route53EndpointRules.h>
 #include <aws/route53/model/AcceleratedRecoveryStatus.h>
 #include <aws/route53/model/AccountLimit.h>
 #include <aws/route53/model/AccountLimitType.h>

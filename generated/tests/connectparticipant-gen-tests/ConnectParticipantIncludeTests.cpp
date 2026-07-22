@@ -8,12 +8,12 @@
 
 #include <aws/connectparticipant/ConnectParticipantClient.h>
 #include <aws/connectparticipant/ConnectParticipantEndpointProvider.h>
-#include <aws/connectparticipant/ConnectParticipantEndpointRules.h>
 #include <aws/connectparticipant/ConnectParticipantErrorMarshaller.h>
 #include <aws/connectparticipant/ConnectParticipantErrors.h>
 #include <aws/connectparticipant/ConnectParticipantRequest.h>
 #include <aws/connectparticipant/ConnectParticipantServiceClientModel.h>
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
+#include <aws/connectparticipant/internal/ConnectParticipantEndpointRules.h>
 #include <aws/connectparticipant/model/ArtifactStatus.h>
 #include <aws/connectparticipant/model/AttachmentItem.h>
 #include <aws/connectparticipant/model/Attendee.h>

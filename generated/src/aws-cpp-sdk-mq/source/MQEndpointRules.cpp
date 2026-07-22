@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/mq/MQEndpointRules.h>
+#include <aws/mq/internal/MQEndpointRules.h>
 
 namespace Aws {
 namespace MQ {

@@ -4,9 +4,15 @@
  */
 
 #include <aws/connect-contact-lens/ConnectContactLensEndpointProvider.h>
+#include <aws/connect-contact-lens/internal/ConnectContactLensEndpointRules.h>
 
 namespace Aws {
 namespace ConnectContactLens {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ConnectContactLensEndpointProvider::ConnectContactLensEndpointProvider()
+    : ConnectContactLensDefaultEpProviderBase(Aws::ConnectContactLens::ConnectContactLensEndpointRules::GetRulesBlob(),
+                                              Aws::ConnectContactLens::ConnectContactLensEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ConnectContactLens
 }  // namespace Aws

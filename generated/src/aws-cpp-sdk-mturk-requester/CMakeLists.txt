@@ -8,6 +8,10 @@ file(GLOB AWS_MTURK-REQUESTER_MODEL_HEADERS
     "include/aws/mturk-requester/model/*.h"
 )
 
+file(GLOB AWS_MTURK-REQUESTER_INTERNAL_HEADERS
+    "include/aws/mturk-requester/internal/*.h"
+)
+
 file(GLOB AWS_MTURK-REQUESTER_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MTURK-REQUESTER_MODEL_SOURCE
 
 file(GLOB MTURK-REQUESTER_UNIFIED_HEADERS
     ${AWS_MTURK-REQUESTER_HEADERS}
+    ${AWS_MTURK-REQUESTER_INTERNAL_HEADERS}
     ${AWS_MTURK-REQUESTER_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\mturk-requester" FILES ${AWS_MTURK-REQUESTER_HEADERS})
+        source_group("Header Files\\aws\\mturk-requester\\internal" FILES ${AWS_MTURK-REQUESTER_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\mturk-requester\\model" FILES ${AWS_MTURK-REQUESTER_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MTURK-REQUESTER_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MTURK-REQUESTER_MODEL_SOURCE})

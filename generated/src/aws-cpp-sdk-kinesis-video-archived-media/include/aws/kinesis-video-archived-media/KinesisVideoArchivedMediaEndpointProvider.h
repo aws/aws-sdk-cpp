@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaEndpointRules.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 
 namespace Aws {
@@ -44,10 +43,7 @@ class AWS_KINESISVIDEOARCHIVEDMEDIA_API KinesisVideoArchivedMediaEndpointProvide
  public:
   using KinesisVideoArchivedMediaResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  KinesisVideoArchivedMediaEndpointProvider()
-      : KinesisVideoArchivedMediaDefaultEpProviderBase(
-            Aws::KinesisVideoArchivedMedia::KinesisVideoArchivedMediaEndpointRules::GetRulesBlob(),
-            Aws::KinesisVideoArchivedMedia::KinesisVideoArchivedMediaEndpointRules::RulesBlobSize) {}
+  KinesisVideoArchivedMediaEndpointProvider();
 
   ~KinesisVideoArchivedMediaEndpointProvider() {}
 };

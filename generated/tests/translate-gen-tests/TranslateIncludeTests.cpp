@@ -8,12 +8,12 @@
 
 #include <aws/translate/TranslateClient.h>
 #include <aws/translate/TranslateEndpointProvider.h>
-#include <aws/translate/TranslateEndpointRules.h>
 #include <aws/translate/TranslateErrorMarshaller.h>
 #include <aws/translate/TranslateErrors.h>
 #include <aws/translate/TranslateRequest.h>
 #include <aws/translate/TranslateServiceClientModel.h>
 #include <aws/translate/Translate_EXPORTS.h>
+#include <aws/translate/internal/TranslateEndpointRules.h>
 #include <aws/translate/model/AppliedTerminology.h>
 #include <aws/translate/model/Brevity.h>
 #include <aws/translate/model/CreateParallelDataRequest.h>

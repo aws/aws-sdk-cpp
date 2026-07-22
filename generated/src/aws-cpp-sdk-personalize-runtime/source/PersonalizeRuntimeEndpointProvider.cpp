@@ -4,9 +4,15 @@
  */
 
 #include <aws/personalize-runtime/PersonalizeRuntimeEndpointProvider.h>
+#include <aws/personalize-runtime/internal/PersonalizeRuntimeEndpointRules.h>
 
 namespace Aws {
 namespace PersonalizeRuntime {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+PersonalizeRuntimeEndpointProvider::PersonalizeRuntimeEndpointProvider()
+    : PersonalizeRuntimeDefaultEpProviderBase(Aws::PersonalizeRuntime::PersonalizeRuntimeEndpointRules::GetRulesBlob(),
+                                              Aws::PersonalizeRuntime::PersonalizeRuntimeEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace PersonalizeRuntime
 }  // namespace Aws

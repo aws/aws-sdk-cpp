@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/macie2/Macie2EndpointRules.h>
 #include <aws/macie2/Macie2_EXPORTS.h>
 
 namespace Aws {
@@ -41,8 +40,7 @@ class AWS_MACIE2_API Macie2EndpointProvider : public Macie2DefaultEpProviderBase
  public:
   using Macie2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  Macie2EndpointProvider()
-      : Macie2DefaultEpProviderBase(Aws::Macie2::Macie2EndpointRules::GetRulesBlob(), Aws::Macie2::Macie2EndpointRules::RulesBlobSize) {}
+  Macie2EndpointProvider();
 
   ~Macie2EndpointProvider() {}
 };

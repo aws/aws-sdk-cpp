@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sso-oidc/SSOOIDCEndpointRules.h>
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SSOOIDC_API SSOOIDCEndpointProvider : public SSOOIDCDefaultEpProviderB
  public:
   using SSOOIDCResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SSOOIDCEndpointProvider()
-      : SSOOIDCDefaultEpProviderBase(Aws::SSOOIDC::SSOOIDCEndpointRules::GetRulesBlob(),
-                                     Aws::SSOOIDC::SSOOIDCEndpointRules::RulesBlobSize) {}
+  SSOOIDCEndpointProvider();
 
   ~SSOOIDCEndpointProvider() {}
 };

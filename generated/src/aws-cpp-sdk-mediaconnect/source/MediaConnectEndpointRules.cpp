@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/mediaconnect/MediaConnectEndpointRules.h>
+#include <aws/mediaconnect/internal/MediaConnectEndpointRules.h>
 
 namespace Aws {
 namespace MediaConnect {

@@ -8,6 +8,10 @@ file(GLOB AWS_CHATBOT_MODEL_HEADERS
     "include/aws/chatbot/model/*.h"
 )
 
+file(GLOB AWS_CHATBOT_INTERNAL_HEADERS
+    "include/aws/chatbot/internal/*.h"
+)
+
 file(GLOB AWS_CHATBOT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CHATBOT_MODEL_SOURCE
 
 file(GLOB CHATBOT_UNIFIED_HEADERS
     ${AWS_CHATBOT_HEADERS}
+    ${AWS_CHATBOT_INTERNAL_HEADERS}
     ${AWS_CHATBOT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\chatbot" FILES ${AWS_CHATBOT_HEADERS})
+        source_group("Header Files\\aws\\chatbot\\internal" FILES ${AWS_CHATBOT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\chatbot\\model" FILES ${AWS_CHATBOT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CHATBOT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CHATBOT_MODEL_SOURCE})

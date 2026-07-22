@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/glacier/GlacierEndpointRules.h>
 #include <aws/glacier/Glacier_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_GLACIER_API GlacierEndpointProvider : public GlacierDefaultEpProviderB
  public:
   using GlacierResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  GlacierEndpointProvider()
-      : GlacierDefaultEpProviderBase(Aws::Glacier::GlacierEndpointRules::GetRulesBlob(),
-                                     Aws::Glacier::GlacierEndpointRules::RulesBlobSize) {}
+  GlacierEndpointProvider();
 
   ~GlacierEndpointProvider() {}
 };

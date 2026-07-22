@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/iottwinmaker/IoTTwinMakerEndpointRules.h>
+#include <aws/iottwinmaker/internal/IoTTwinMakerEndpointRules.h>
 
 namespace Aws {
 namespace IoTTwinMaker {

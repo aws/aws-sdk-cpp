@@ -8,6 +8,10 @@ file(GLOB AWS_PRICING_MODEL_HEADERS
     "include/aws/pricing/model/*.h"
 )
 
+file(GLOB AWS_PRICING_INTERNAL_HEADERS
+    "include/aws/pricing/internal/*.h"
+)
+
 file(GLOB AWS_PRICING_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_PRICING_MODEL_SOURCE
 
 file(GLOB PRICING_UNIFIED_HEADERS
     ${AWS_PRICING_HEADERS}
+    ${AWS_PRICING_INTERNAL_HEADERS}
     ${AWS_PRICING_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\pricing" FILES ${AWS_PRICING_HEADERS})
+        source_group("Header Files\\aws\\pricing\\internal" FILES ${AWS_PRICING_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\pricing\\model" FILES ${AWS_PRICING_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_PRICING_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_PRICING_MODEL_SOURCE})

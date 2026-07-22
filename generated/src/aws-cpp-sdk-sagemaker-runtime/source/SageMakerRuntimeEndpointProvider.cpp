@@ -4,9 +4,15 @@
  */
 
 #include <aws/sagemaker-runtime/SageMakerRuntimeEndpointProvider.h>
+#include <aws/sagemaker-runtime/internal/SageMakerRuntimeEndpointRules.h>
 
 namespace Aws {
 namespace SageMakerRuntime {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SageMakerRuntimeEndpointProvider::SageMakerRuntimeEndpointProvider()
+    : SageMakerRuntimeDefaultEpProviderBase(Aws::SageMakerRuntime::SageMakerRuntimeEndpointRules::GetRulesBlob(),
+                                            Aws::SageMakerRuntime::SageMakerRuntimeEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SageMakerRuntime
 }  // namespace Aws

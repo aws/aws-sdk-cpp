@@ -4,9 +4,14 @@
  */
 
 #include <aws/evs/EVSEndpointProvider.h>
+#include <aws/evs/internal/EVSEndpointRules.h>
 
 namespace Aws {
 namespace EVS {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+EVSEndpointProvider::EVSEndpointProvider()
+    : EVSDefaultEpProviderBase(Aws::EVS::EVSEndpointRules::GetRulesBlob(), Aws::EVS::EVSEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace EVS
 }  // namespace Aws

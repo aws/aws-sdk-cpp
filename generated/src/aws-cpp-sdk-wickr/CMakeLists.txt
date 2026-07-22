@@ -8,6 +8,10 @@ file(GLOB AWS_WICKR_MODEL_HEADERS
     "include/aws/wickr/model/*.h"
 )
 
+file(GLOB AWS_WICKR_INTERNAL_HEADERS
+    "include/aws/wickr/internal/*.h"
+)
+
 file(GLOB AWS_WICKR_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_WICKR_MODEL_SOURCE
 
 file(GLOB WICKR_UNIFIED_HEADERS
     ${AWS_WICKR_HEADERS}
+    ${AWS_WICKR_INTERNAL_HEADERS}
     ${AWS_WICKR_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\wickr" FILES ${AWS_WICKR_HEADERS})
+        source_group("Header Files\\aws\\wickr\\internal" FILES ${AWS_WICKR_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\wickr\\model" FILES ${AWS_WICKR_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_WICKR_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_WICKR_MODEL_SOURCE})

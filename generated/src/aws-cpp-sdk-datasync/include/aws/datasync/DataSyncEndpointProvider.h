@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/datasync/DataSyncEndpointRules.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_DATASYNC_API DataSyncEndpointProvider : public DataSyncDefaultEpProvid
  public:
   using DataSyncResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DataSyncEndpointProvider()
-      : DataSyncDefaultEpProviderBase(Aws::DataSync::DataSyncEndpointRules::GetRulesBlob(),
-                                      Aws::DataSync::DataSyncEndpointRules::RulesBlobSize) {}
+  DataSyncEndpointProvider();
 
   ~DataSyncEndpointProvider() {}
 };

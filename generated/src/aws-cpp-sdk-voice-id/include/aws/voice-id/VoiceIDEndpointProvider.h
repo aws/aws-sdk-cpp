@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/voice-id/VoiceIDEndpointRules.h>
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_VOICEID_API VoiceIDEndpointProvider : public VoiceIDDefaultEpProviderB
  public:
   using VoiceIDResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  VoiceIDEndpointProvider()
-      : VoiceIDDefaultEpProviderBase(Aws::VoiceID::VoiceIDEndpointRules::GetRulesBlob(),
-                                     Aws::VoiceID::VoiceIDEndpointRules::RulesBlobSize) {}
+  VoiceIDEndpointProvider();
 
   ~VoiceIDEndpointProvider() {}
 };

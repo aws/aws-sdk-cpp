@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/entityresolution/EntityResolutionEndpointRules.h>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_ENTITYRESOLUTION_API EntityResolutionEndpointProvider : public EntityR
  public:
   using EntityResolutionResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  EntityResolutionEndpointProvider()
-      : EntityResolutionDefaultEpProviderBase(Aws::EntityResolution::EntityResolutionEndpointRules::GetRulesBlob(),
-                                              Aws::EntityResolution::EntityResolutionEndpointRules::RulesBlobSize) {}
+  EntityResolutionEndpointProvider();
 
   ~EntityResolutionEndpointProvider() {}
 };

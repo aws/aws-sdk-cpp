@@ -8,6 +8,10 @@ file(GLOB AWS_NOVA-ACT_MODEL_HEADERS
     "include/aws/nova-act/model/*.h"
 )
 
+file(GLOB AWS_NOVA-ACT_INTERNAL_HEADERS
+    "include/aws/nova-act/internal/*.h"
+)
+
 file(GLOB AWS_NOVA-ACT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_NOVA-ACT_MODEL_SOURCE
 
 file(GLOB NOVA-ACT_UNIFIED_HEADERS
     ${AWS_NOVA-ACT_HEADERS}
+    ${AWS_NOVA-ACT_INTERNAL_HEADERS}
     ${AWS_NOVA-ACT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\nova-act" FILES ${AWS_NOVA-ACT_HEADERS})
+        source_group("Header Files\\aws\\nova-act\\internal" FILES ${AWS_NOVA-ACT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\nova-act\\model" FILES ${AWS_NOVA-ACT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_NOVA-ACT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_NOVA-ACT_MODEL_SOURCE})

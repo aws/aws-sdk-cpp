@@ -8,12 +8,12 @@
 
 #include <aws/opensearch/OpenSearchServiceClient.h>
 #include <aws/opensearch/OpenSearchServiceEndpointProvider.h>
-#include <aws/opensearch/OpenSearchServiceEndpointRules.h>
 #include <aws/opensearch/OpenSearchServiceErrorMarshaller.h>
 #include <aws/opensearch/OpenSearchServiceErrors.h>
 #include <aws/opensearch/OpenSearchServiceRequest.h>
 #include <aws/opensearch/OpenSearchServiceServiceClientModel.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
+#include <aws/opensearch/internal/OpenSearchServiceEndpointRules.h>
 #include <aws/opensearch/model/AIConfig.h>
 #include <aws/opensearch/model/AIMLOptionsInput.h>
 #include <aws/opensearch/model/AIMLOptionsOutput.h>

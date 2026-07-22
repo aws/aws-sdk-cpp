@@ -8,12 +8,12 @@
 
 #include <aws/datasync/DataSyncClient.h>
 #include <aws/datasync/DataSyncEndpointProvider.h>
-#include <aws/datasync/DataSyncEndpointRules.h>
 #include <aws/datasync/DataSyncErrorMarshaller.h>
 #include <aws/datasync/DataSyncErrors.h>
 #include <aws/datasync/DataSyncRequest.h>
 #include <aws/datasync/DataSyncServiceClientModel.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
+#include <aws/datasync/internal/DataSyncEndpointRules.h>
 #include <aws/datasync/model/AgentListEntry.h>
 #include <aws/datasync/model/AgentStatus.h>
 #include <aws/datasync/model/Atime.h>

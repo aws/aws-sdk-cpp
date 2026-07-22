@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/pinpoint-email/PinpointEmailEndpointRules.h>
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_PINPOINTEMAIL_API PinpointEmailEndpointProvider : public PinpointEmail
  public:
   using PinpointEmailResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PinpointEmailEndpointProvider()
-      : PinpointEmailDefaultEpProviderBase(Aws::PinpointEmail::PinpointEmailEndpointRules::GetRulesBlob(),
-                                           Aws::PinpointEmail::PinpointEmailEndpointRules::RulesBlobSize) {}
+  PinpointEmailEndpointProvider();
 
   ~PinpointEmailEndpointProvider() {}
 };

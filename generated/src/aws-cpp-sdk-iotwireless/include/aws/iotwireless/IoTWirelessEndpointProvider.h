@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iotwireless/IoTWirelessEndpointRules.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_IOTWIRELESS_API IoTWirelessEndpointProvider : public IoTWirelessDefaul
  public:
   using IoTWirelessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IoTWirelessEndpointProvider()
-      : IoTWirelessDefaultEpProviderBase(Aws::IoTWireless::IoTWirelessEndpointRules::GetRulesBlob(),
-                                         Aws::IoTWireless::IoTWirelessEndpointRules::RulesBlobSize) {}
+  IoTWirelessEndpointProvider();
 
   ~IoTWirelessEndpointProvider() {}
 };

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iot-jobs-data/IoTJobsDataPlaneEndpointRules.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneEndpointProvider : public IoTJobs
  public:
   using IoTJobsDataPlaneResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IoTJobsDataPlaneEndpointProvider()
-      : IoTJobsDataPlaneDefaultEpProviderBase(Aws::IoTJobsDataPlane::IoTJobsDataPlaneEndpointRules::GetRulesBlob(),
-                                              Aws::IoTJobsDataPlane::IoTJobsDataPlaneEndpointRules::RulesBlobSize) {}
+  IoTJobsDataPlaneEndpointProvider();
 
   ~IoTJobsDataPlaneEndpointProvider() {}
 };

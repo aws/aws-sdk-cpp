@@ -4,9 +4,15 @@
  */
 
 #include <aws/deadline/DeadlineEndpointProvider.h>
+#include <aws/deadline/internal/DeadlineEndpointRules.h>
 
 namespace Aws {
 namespace deadline {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+DeadlineEndpointProvider::DeadlineEndpointProvider()
+    : DeadlineDefaultEpProviderBase(Aws::deadline::DeadlineEndpointRules::GetRulesBlob(),
+                                    Aws::deadline::DeadlineEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace deadline
 }  // namespace Aws

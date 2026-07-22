@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/networkmanager/NetworkManagerEndpointRules.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_NETWORKMANAGER_API NetworkManagerEndpointProvider : public NetworkMana
  public:
   using NetworkManagerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  NetworkManagerEndpointProvider()
-      : NetworkManagerDefaultEpProviderBase(Aws::NetworkManager::NetworkManagerEndpointRules::GetRulesBlob(),
-                                            Aws::NetworkManager::NetworkManagerEndpointRules::RulesBlobSize) {}
+  NetworkManagerEndpointProvider();
 
   ~NetworkManagerEndpointProvider() {}
 };

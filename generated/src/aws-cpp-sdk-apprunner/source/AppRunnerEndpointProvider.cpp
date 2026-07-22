@@ -4,9 +4,15 @@
  */
 
 #include <aws/apprunner/AppRunnerEndpointProvider.h>
+#include <aws/apprunner/internal/AppRunnerEndpointRules.h>
 
 namespace Aws {
 namespace AppRunner {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+AppRunnerEndpointProvider::AppRunnerEndpointProvider()
+    : AppRunnerDefaultEpProviderBase(Aws::AppRunner::AppRunnerEndpointRules::GetRulesBlob(),
+                                     Aws::AppRunner::AppRunnerEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace AppRunner
 }  // namespace Aws

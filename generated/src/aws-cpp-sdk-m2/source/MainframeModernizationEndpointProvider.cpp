@@ -4,9 +4,15 @@
  */
 
 #include <aws/m2/MainframeModernizationEndpointProvider.h>
+#include <aws/m2/internal/MainframeModernizationEndpointRules.h>
 
 namespace Aws {
 namespace MainframeModernization {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MainframeModernizationEndpointProvider::MainframeModernizationEndpointProvider()
+    : MainframeModernizationDefaultEpProviderBase(Aws::MainframeModernization::MainframeModernizationEndpointRules::GetRulesBlob(),
+                                                  Aws::MainframeModernization::MainframeModernizationEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MainframeModernization
 }  // namespace Aws

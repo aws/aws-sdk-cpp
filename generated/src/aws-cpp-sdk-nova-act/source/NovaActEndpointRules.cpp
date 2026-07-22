@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/nova-act/NovaActEndpointRules.h>
+#include <aws/nova-act/internal/NovaActEndpointRules.h>
 
 namespace Aws {
 namespace NovaAct {

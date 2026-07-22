@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/serverlessrepo/ServerlessApplicationRepositoryEndpointRules.h>
+#include <aws/serverlessrepo/internal/ServerlessApplicationRepositoryEndpointRules.h>
 
 namespace Aws {
 namespace ServerlessApplicationRepository {

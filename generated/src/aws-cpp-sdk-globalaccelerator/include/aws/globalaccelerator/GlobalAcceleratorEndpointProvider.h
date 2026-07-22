@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/globalaccelerator/GlobalAcceleratorEndpointRules.h>
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_GLOBALACCELERATOR_API GlobalAcceleratorEndpointProvider : public Globa
  public:
   using GlobalAcceleratorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  GlobalAcceleratorEndpointProvider()
-      : GlobalAcceleratorDefaultEpProviderBase(Aws::GlobalAccelerator::GlobalAcceleratorEndpointRules::GetRulesBlob(),
-                                               Aws::GlobalAccelerator::GlobalAcceleratorEndpointRules::RulesBlobSize) {}
+  GlobalAcceleratorEndpointProvider();
 
   ~GlobalAcceleratorEndpointProvider() {}
 };

@@ -4,9 +4,14 @@
  */
 
 #include <aws/osis/OSISEndpointProvider.h>
+#include <aws/osis/internal/OSISEndpointRules.h>
 
 namespace Aws {
 namespace OSIS {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+OSISEndpointProvider::OSISEndpointProvider()
+    : OSISDefaultEpProviderBase(Aws::OSIS::OSISEndpointRules::GetRulesBlob(), Aws::OSIS::OSISEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace OSIS
 }  // namespace Aws

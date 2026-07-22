@@ -4,9 +4,14 @@
  */
 
 #include <aws/proton/ProtonEndpointProvider.h>
+#include <aws/proton/internal/ProtonEndpointRules.h>
 
 namespace Aws {
 namespace Proton {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ProtonEndpointProvider::ProtonEndpointProvider()
+    : ProtonDefaultEpProviderBase(Aws::Proton::ProtonEndpointRules::GetRulesBlob(), Aws::Proton::ProtonEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Proton
 }  // namespace Aws

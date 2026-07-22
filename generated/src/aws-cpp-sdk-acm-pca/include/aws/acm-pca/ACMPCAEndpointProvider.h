@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/acm-pca/ACMPCAEndpointRules.h>
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -41,8 +40,7 @@ class AWS_ACMPCA_API ACMPCAEndpointProvider : public ACMPCADefaultEpProviderBase
  public:
   using ACMPCAResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ACMPCAEndpointProvider()
-      : ACMPCADefaultEpProviderBase(Aws::ACMPCA::ACMPCAEndpointRules::GetRulesBlob(), Aws::ACMPCA::ACMPCAEndpointRules::RulesBlobSize) {}
+  ACMPCAEndpointProvider();
 
   ~ACMPCAEndpointProvider() {}
 };

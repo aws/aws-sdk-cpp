@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/fis/FISEndpointRules.h>
 #include <aws/fis/FIS_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_FIS_API FISEndpointProvider : public FISDefaultEpProviderBase {
  public:
   using FISResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  FISEndpointProvider() : FISDefaultEpProviderBase(Aws::FIS::FISEndpointRules::GetRulesBlob(), Aws::FIS::FISEndpointRules::RulesBlobSize) {}
+  FISEndpointProvider();
 
   ~FISEndpointProvider() {}
 };

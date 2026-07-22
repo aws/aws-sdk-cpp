@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/eks-auth/EKSAuthEndpointRules.h>
+#include <aws/eks-auth/internal/EKSAuthEndpointRules.h>
 
 namespace Aws {
 namespace EKSAuth {

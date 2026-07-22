@@ -4,9 +4,14 @@
  */
 
 #include <aws/uxc/UxcEndpointProvider.h>
+#include <aws/uxc/internal/UxcEndpointRules.h>
 
 namespace Aws {
 namespace uxc {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+UxcEndpointProvider::UxcEndpointProvider()
+    : UxcDefaultEpProviderBase(Aws::uxc::UxcEndpointRules::GetRulesBlob(), Aws::uxc::UxcEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace uxc
 }  // namespace Aws
