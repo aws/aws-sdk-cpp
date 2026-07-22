@@ -4,7 +4,6 @@
  */
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/Outcome.h>
-#include <aws/core/utils/memory/stl/AWSArray.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <smithy/client/schema/CborShapeSerializer.h>
 
@@ -12,110 +11,62 @@ using namespace smithy::schema;
 using namespace Aws::Utils;
 using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
 
-namespace {
-constexpr int MAX_DEPTH = 128;
-}  // namespace
-
 class CborShapeSerializer::Impl {
  public:
   bool BeginStructure(const Schema&) {
     m_encoder.WriteIndefMapStart();
-    m_depth++;
-    m_isMap[m_depth] = false;
-    m_isList[m_depth] = false;
     return true;
   }
 
-  void EndStructure() {
-    m_encoder.WriteBreak();
-    m_depth--;
-  }
+  void EndStructure() { m_encoder.WriteBreak(); }
 
-  void WriteBoolean(const Schema& schema, bool value) {
-    WriteFieldName(schema);
-    m_encoder.WriteBool(value);
-  }
+  void WriteBoolean(const Schema&, bool value) { m_encoder.WriteBool(value); }
 
-  void WriteInteger(const Schema& schema, int value) {
-    WriteFieldName(schema);
-    WriteIntValue(value);
-  }
+  void WriteInteger(const Schema&, int value) { WriteIntValue(value); }
 
-  void WriteLong(const Schema& schema, int64_t value) {
-    WriteFieldName(schema);
-    WriteIntValue(value);
-  }
+  void WriteLong(const Schema&, int64_t value) { WriteIntValue(value); }
 
-  void WriteFloat(const Schema& schema, float value) {
-    WriteFieldName(schema);
-    m_encoder.WriteFloat(value);
-  }
+  void WriteFloat(const Schema&, float value) { m_encoder.WriteFloat(value); }
 
-  void WriteDouble(const Schema& schema, double value) {
-    WriteFieldName(schema);
-    m_encoder.WriteFloat(value);
-  }
+  void WriteDouble(const Schema&, double value) { m_encoder.WriteFloat(value); }
 
-  void WriteString(const Schema& schema, const Aws::String& value) {
-    WriteFieldName(schema);
-    m_encoder.WriteText(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(value.data()), value.size()));
-  }
+  void WriteString(const Schema&, const Aws::String& value) { WriteText(value); }
 
-  void WriteTimestamp(const Schema& schema, const DateTime& value) {
-    WriteFieldName(schema);
+  void WriteTimestamp(const Schema&, const DateTime& value) {
     m_encoder.WriteTag(1);
     WriteIntValue(value.Seconds());
   }
 
-  void WriteBlob(const Schema& schema, const ByteBuffer& value) {
-    WriteFieldName(schema);
+  void WriteBlob(const Schema&, const ByteBuffer& value) {
     m_encoder.WriteBytes(Aws::Crt::ByteCursorFromArray(value.GetUnderlyingData(), value.GetLength()));
   }
 
   void WriteEnum(const Schema& schema, int value) { WriteInteger(schema, value); }
 
-  void WriteNull(const Schema& schema) {
-    WriteFieldName(schema);
-    m_encoder.WriteNull();
-  }
+  void WriteNull(const Schema&) { m_encoder.WriteNull(); }
 
-  bool BeginList(const Schema& schema, size_t count) {
-    WriteFieldName(schema);
+  bool BeginList(const Schema&, size_t count) {
     m_encoder.WriteArrayStart(count);
-    m_depth++;
-    m_isMap[m_depth] = false;
-    m_isList[m_depth] = true;
     return true;
   }
 
-  void EndList() { m_depth--; }
+  void EndList() {}
 
-  bool BeginMap(const Schema& schema, size_t count) {
-    WriteFieldName(schema);
+  bool BeginMap(const Schema&, size_t count) {
     m_encoder.WriteMapStart(count);
-    m_depth++;
-    m_isMap[m_depth] = true;
-    m_isList[m_depth] = false;
     return true;
   }
 
-  void WriteMapKey(const Aws::String& key) { m_currentMapKey = key; }
+  void WriteMapKey(const Aws::String& key) { WriteText(key); }
 
-  void EndMap() { m_depth--; }
+  void EndMap() {}
 
-  bool BeginNestedStructure(const Schema& schema) {
-    WriteFieldName(schema);
+  bool BeginNestedStructure(const Schema&) {
     m_encoder.WriteIndefMapStart();
-    m_depth++;
-    m_isMap[m_depth] = false;
-    m_isList[m_depth] = false;
     return true;
   }
 
-  void EndNestedStructure() {
-    m_encoder.WriteBreak();
-    m_depth--;
-  }
+  void EndNestedStructure() { m_encoder.WriteBreak(); }
 
   SerializerOutcome GetPayload() {
     if (m_finalized) {
@@ -130,22 +81,7 @@ class CborShapeSerializer::Impl {
 
  private:
   Aws::Crt::Cbor::CborEncoder m_encoder;
-  int m_depth = 0;
-  Aws::Array<bool, MAX_DEPTH> m_isMap{};
-  Aws::Array<bool, MAX_DEPTH> m_isList{};
-  Aws::String m_currentMapKey;
   bool m_finalized = false;
-
-  void WriteFieldName(const Schema& schema) {
-    if (m_isList[m_depth]) {
-      return;
-    }
-    if (m_depth > 0 && m_isMap[m_depth]) {
-      WriteText(m_currentMapKey);
-    } else {
-      WriteText(schema.GetMemberName());
-    }
-  }
 
   void WriteText(const Aws::String& str) {
     m_encoder.WriteText(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(str.data()), str.size()));
