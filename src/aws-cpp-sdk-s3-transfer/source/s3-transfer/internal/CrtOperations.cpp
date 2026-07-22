@@ -92,6 +92,30 @@ Aws::Client::CoreErrors MapCrtErrorCode(Aws::Crt::S3::S3ErrorCode crtErrorCode) 
   }
 }
 
+// SEP-mandated response-checksum validation (WHEN_SUPPORTED) causes aws-c-s3 to drop the error
+// response body on non-2xx replies to GET, so MapCrtError can't XML-parse Code/Message/RequestId.
+// Recover what we can from the headers aws-c-s3 does preserve on the same path: RequestId from
+// x-amz-request-id, typed error from the HTTP status via CoreErrorsMapper — matching the
+// fallback shape AWSErrorMarshaller and AWSHttpResourceClient use when a response body is empty.
+Aws::String ExtractHeader(const Aws::Crt::Vector<Aws::Crt::Http::HttpHeader>& headers, const char* name) {
+  for (const auto& header : headers) {
+    const Aws::String key = Aws::Utils::StringUtils::FromByteCursor(header.name);
+    if (Aws::Utils::StringUtils::CaselessCompare(key.c_str(), name)) {
+      return Aws::Utils::StringUtils::FromByteCursor(header.value);
+    }
+  }
+  return {};
+}
+
+Aws::Http::HeaderValueCollection ToHeaderCollection(const Aws::Crt::Vector<Aws::Crt::Http::HttpHeader>& headers) {
+  Aws::Http::HeaderValueCollection out;
+  for (const auto& header : headers) {
+    out.emplace(Aws::Utils::StringUtils::FromByteCursor(header.name),
+                Aws::Utils::StringUtils::FromByteCursor(header.value));
+  }
+  return out;
+}
+
 Aws::Client::AWSError<Aws::S3::S3Errors> MapCrtError(const Aws::Crt::S3::S3MetaRequestResult& result) {
   const Aws::Crt::S3::S3ErrorCode crtErrorCode = result.GetErrorCode();
   const bool crtFailed = crtErrorCode != Aws::Crt::S3::S3ErrorCode::Success;
@@ -107,13 +131,36 @@ Aws::Client::AWSError<Aws::S3::S3Errors> MapCrtError(const Aws::Crt::S3::S3MetaR
     return error;
   }
 
-  // Bodyless CRT-side failure (e.g. response checksum mismatch on an otherwise-200 reply).
+  // Bodyless CRT-side failure — either a genuine bodyless CRT-side failure (response checksum
+  // mismatch on a 200 reply) or a 4xx GET whose body aws-c-s3 discarded because SetChecksumConfig
+  // was on (SEP-mandated WHEN_SUPPORTED path). Prefer HTTP-status → typed S3 error when we have a
+  // recognised 4xx/5xx; fall through to the CRT error code otherwise.
   if (crtFailed && !hasBody) {
     Aws::StringStream ss;
     ss << Aws::Crt::ErrorDebugString(result.errorCode);
-    Aws::Client::AWSError<Aws::S3::S3Errors> error(
-        static_cast<Aws::S3::S3Errors>(MapCrtErrorCode(crtErrorCode)), "", ss.str(), /*isRetryable*/ false);
+
+    // Two shapes of bodyless failure need different mappers:
+    //   - InvalidResponseStatus: server returned a non-2xx that aws-c-s3 discarded the body for
+    //     (SEP-mandated checksum validation on GET). HTTP status is the authoritative signal —
+    //     use CoreErrorsMapper (matches AWSErrorMarshaller's empty-body fallback).
+    //   - Anything else: a CRT-side condition (ResponseChecksumMismatch on a 200, Canceled,
+    //     RequestTimeout, etc.) where the HTTP status is irrelevant. Use MapCrtErrorCode.
+    Aws::Client::AWSError<Aws::S3::S3Errors> error;
+    if (crtErrorCode == Aws::Crt::S3::S3ErrorCode::InvalidResponseStatus) {
+      const Aws::Client::AWSError<Aws::Client::CoreErrors> coreError =
+          Aws::Client::CoreErrorsMapper::GetErrorForHttpResponseCode(
+              static_cast<Aws::Http::HttpResponseCode>(result.responseStatus));
+      error = Aws::Client::AWSError<Aws::S3::S3Errors>(
+          static_cast<Aws::S3::S3Errors>(coreError.GetErrorType()), "", ss.str(),
+          coreError.ShouldRetry());
+    } else {
+      error = Aws::Client::AWSError<Aws::S3::S3Errors>(
+          static_cast<Aws::S3::S3Errors>(MapCrtErrorCode(crtErrorCode)), "", ss.str(),
+          /*isRetryable*/ false);
+    }
     error.SetResponseCode(static_cast<Aws::Http::HttpResponseCode>(result.responseStatus));
+    error.SetRequestId(ExtractHeader(result.errorResponseHeaders, "x-amz-request-id"));
+    error.SetResponseHeaders(ToHeaderCollection(result.errorResponseHeaders));
     return error;
   }
 
@@ -208,7 +255,7 @@ void ConfigureEndpointSigning(Aws::Crt::S3::S3MetaRequestOptions& options, const
     return;
   }
   options.SetSigningConfigFromEndpoint(
-      Aws::Crt::String(impl.GetRegion().c_str()), Aws::Crt::String(signing.signingRegion.c_str()),
+      Aws::Crt::String(impl.GetConfig().region.c_str()), Aws::Crt::String(signing.signingRegion.c_str()),
       Aws::Crt::String(signing.signingName.c_str()), signing.isS3Express, impl.GetCredentialsProvider());
 }
 
@@ -219,6 +266,7 @@ void ConfigureEndpointSigning(Aws::Crt::S3::S3MetaRequestOptions& options, const
 template <typename RequestT>
 std::shared_ptr<Aws::Crt::Http::HttpRequest> BuildCrtHttpRequest(
     const RequestT& s3Request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method,
+    const Aws::String& userAgent,
     const std::shared_ptr<Aws::Crt::Io::InputStream>& body = nullptr, const Aws::String& contentLength = {},
     const Aws::String& contentType = {}) {
   auto httpRequest = Aws::Http::CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
@@ -233,6 +281,9 @@ std::shared_ptr<Aws::Crt::Http::HttpRequest> BuildCrtHttpRequest(
   }
   if (!contentLength.empty()) {
     httpRequest->SetContentLength(contentLength);
+  }
+  if (!userAgent.empty()) {
+    httpRequest->SetUserAgent(userAgent);
   }
   s3Request.AddQueryStringParameters(httpRequest->GetUri());
 
@@ -378,6 +429,16 @@ void NotifyEarlyDownloadFailure(std::shared_ptr<DownloadTransferState> state,
 UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const UploadRequest& request) {
   auto state = Aws::MakeShared<UploadTransferState>(CRT_OPERATIONS_LOG_TAG, request);
 
+  // Fail fast if the manager never initialized (e.g. CRT client failed to build at ctor time).
+  // The caller gets the specific ctor-time error via the returned handle's future.
+  if (!impl.IsInitialized()) {
+    auto handleImpl = Aws::MakeUnique<UploadHandleImpl>(CRT_OPERATIONS_LOG_TAG);
+    handleImpl->future = state->promise.get_future();
+    handleImpl->state = state;
+    NotifyEarlyUploadFailure(state, impl.GetInitializationError());
+    return UploadHandle(std::move(handleImpl));
+  }
+
   // Body source is file path (CRT reads via send_filepath), seekable stream (CRT reads attached
   // body), or non-seekable stream (we push chunks via async writes on a background thread).
   const Aws::String& sourceFilePath = request.GetSourceFilePath();
@@ -457,6 +518,12 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
   std::shared_ptr<Aws::Crt::Io::InputStream> crtBody;
   if (!isFileUpload && !useAsyncWrites) {
     crtBody = Aws::MakeShared<Aws::Crt::Io::StdIOStreamInputStream>(CRT_OPERATIONS_LOG_TAG, body);
+    if (!crtBody) {
+      NotifyEarlyUploadFailure(state, Aws::Client::AWSError<Aws::S3::S3Errors>(
+          Aws::S3::S3Errors::INTERNAL_FAILURE, "INTERNAL_FAILURE",
+          "Failed to allocate CRT input stream adapter for upload body", false));
+      return UploadHandle(std::move(handleImpl));
+    }
   }
   Aws::String explicitContentLength;
   if (request.ContentLengthHasBeenSet()) {
@@ -464,8 +531,14 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
   } else if (!isFileUpload && state->totalBytesHasBeenSet.load()) {
     explicitContentLength = Aws::Utils::StringUtils::to_string(state->totalBytes.load());
   }
-  auto crtRequest = BuildCrtHttpRequest(s3Request, uri, Aws::Http::HttpMethod::HTTP_PUT, crtBody, explicitContentLength,
-                                        s3Request.GetContentType());
+  auto crtRequest = BuildCrtHttpRequest(s3Request, uri, Aws::Http::HttpMethod::HTTP_PUT, impl.GetUserAgentString(),
+                                        crtBody, explicitContentLength, s3Request.GetContentType());
+  if (!crtRequest) {
+    NotifyEarlyUploadFailure(state, Aws::Client::AWSError<Aws::S3::S3Errors>(
+        Aws::S3::S3Errors::INTERNAL_FAILURE, "INTERNAL_FAILURE",
+        "Failed to build CRT HTTP request for upload", false));
+    return UploadHandle(std::move(handleImpl));
+  }
 
   for (const auto& listener : request.GetTransferListeners()) {
     if (listener) {
@@ -601,6 +674,16 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
 DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, const DownloadRequest& request) {
   auto state = Aws::MakeShared<DownloadTransferState>(CRT_OPERATIONS_LOG_TAG, request);
 
+  // Fail fast if the manager never initialized (e.g. CRT client failed to build at ctor time).
+  // The caller gets the specific ctor-time error via the returned handle's future.
+  if (!impl.IsInitialized()) {
+    auto handleImpl = Aws::MakeUnique<DownloadHandleImpl>(CRT_OPERATIONS_LOG_TAG);
+    handleImpl->future = state->promise.get_future();
+    handleImpl->state = state;
+    NotifyEarlyDownloadFailure(state, impl.GetInitializationError());
+    return DownloadHandle(std::move(handleImpl));
+  }
+
   // A DownloadDataReceiver selects the zero-copy stream path: the CRT delivers each part via a body
   // callback and the receiver reads it in place, so there is no destination file to write or rename.
   const std::shared_ptr<DownloadDataReceiver>& receiver = request.GetDownloadDataReceiver();
@@ -609,8 +692,9 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
   if (!isStreamDownload) {
     state->destinationFilePath = request.GetDestinationFilePath();
     // Temp file is a sibling of the destination (same filesystem) so the final rename is atomic.
-    state->tempFilePath =
-        state->destinationFilePath + ".s3tmp." + Aws::String(Aws::Utils::UUID::RandomUUID());
+    // SEP caps the unique identifier at 8 chars; take the leading segment of a GUID (pre-dash).
+    Aws::String suffix = Aws::String(Aws::Utils::UUID::RandomUUID()).substr(0, 8);
+    state->tempFilePath = state->destinationFilePath + ".s3tmp." + suffix;
   }
 
   auto handleImpl = Aws::MakeUnique<DownloadHandleImpl>(CRT_OPERATIONS_LOG_TAG);
@@ -655,7 +739,13 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
     return DownloadHandle(std::move(handleImpl));
   }
 
-  auto crtRequest = BuildCrtHttpRequest(s3Request, uri, Aws::Http::HttpMethod::HTTP_GET);
+  auto crtRequest = BuildCrtHttpRequest(s3Request, uri, Aws::Http::HttpMethod::HTTP_GET, impl.GetUserAgentString());
+  if (!crtRequest) {
+    NotifyEarlyDownloadFailure(state, Aws::Client::AWSError<Aws::S3::S3Errors>(
+        Aws::S3::S3Errors::INTERNAL_FAILURE, "INTERNAL_FAILURE",
+        "Failed to build CRT HTTP request for download", false));
+    return DownloadHandle(std::move(handleImpl));
+  }
 
   for (const auto& listener : request.GetTransferListeners()) {
     if (listener) {
@@ -697,7 +787,11 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
   // location MUST be None for a GET: leaving it Trailer (the S3ChecksumConfig default) causes
   // aws-c-s3 to sign the bodyless GET with x-amz-content-sha256: STREAMING-UNSIGNED-PAYLOAD-TRAILER,
   // which S3 rejects as invalid.
-  if (s3Request.ChecksumModeHasBeenSet() && s3Request.GetChecksumMode() == Aws::S3::Model::ChecksumMode::ENABLED) {
+  const bool perRequestEnabled = s3Request.ChecksumModeHasBeenSet() &&
+                                 s3Request.GetChecksumMode() == Aws::S3::Model::ChecksumMode::ENABLED;
+  const bool clientLevelEnabled = impl.GetConfig().checksumConfig.responseChecksumValidation ==
+                                  Aws::Client::ResponseChecksumValidation::WHEN_SUPPORTED;
+  if (perRequestEnabled || clientLevelEnabled) {
     Aws::Crt::S3::S3ChecksumConfig checksumConfig;
     checksumConfig.SetLocation(Aws::Crt::S3::S3ChecksumLocation::None).SetValidateResponseChecksum(true);
     options->SetChecksumConfig(checksumConfig);

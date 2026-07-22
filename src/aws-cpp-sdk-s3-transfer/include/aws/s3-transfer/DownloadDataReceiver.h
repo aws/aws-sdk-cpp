@@ -12,8 +12,8 @@ namespace Transfer {
 
 /**
  * Callback interface for zero-copy downloads. The transfer manager delivers each part of the
- * object to OnDataReceived as it arrives, in object order. Keep a copy of the buffer to retain
- * the bytes past this call.
+ * object to OnDataReceived as it arrives, in object order. The buffer is move-only; move it out
+ * (e.g. auto held = std::move(buffer)) to retain the bytes past this call.
  */
 class AWS_S3_TRANSFER_API DownloadDataReceiver {
  public:
