@@ -26,7 +26,13 @@
         $define ${api}
         $define AWS_${metadata.classNamePrefix.toUpperCase()}_EXTERN extern
     #endif // USE_IMPORT_EXPORT
+    $define AWS_${metadata.classNamePrefix.toUpperCase()}_LOCAL
 \#else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     $define ${api}
     $define AWS_${metadata.classNamePrefix.toUpperCase()}_EXTERN extern
+    \#if __GNUC__ >= 4
+        $define AWS_${metadata.classNamePrefix.toUpperCase()}_LOCAL __attribute__((visibility("hidden")))
+    \#else
+        $define AWS_${metadata.classNamePrefix.toUpperCase()}_LOCAL
+    #endif
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

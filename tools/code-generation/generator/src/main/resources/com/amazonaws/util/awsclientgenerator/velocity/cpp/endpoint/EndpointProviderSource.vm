@@ -7,6 +7,9 @@
 #set($epContextClassName = "${metadata.classNamePrefix}ClientContextParameters")
 #set($epBuiltInClassName = "${metadata.classNamePrefix}BuiltInParameters")
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
+#if ($serviceModel.endpointRules)
+\#include <aws/${metadata.projectName}/internal/${metadata.classNamePrefix}EndpointRules.h>
+#end
 
 namespace ${rootNamespace}
 {
@@ -33,6 +36,10 @@ namespace ${serviceNamespace}
 namespace Endpoint
 {
 #if ($serviceModel.endpointRules)
+${metadata.classNamePrefix}EndpointProvider::${metadata.classNamePrefix}EndpointProvider()
+  : ${metadata.classNamePrefix}DefaultEpProviderBase(${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}EndpointRules::GetRulesBlob(), ${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}EndpointRules::RulesBlobSize)
+{}
+
 #if ($serviceModel.clientContextParams)
 #foreach($memberEntry in $serviceModel.clientContextParams.entrySet())
 #if(${memberEntry.value.type} == "boolean")

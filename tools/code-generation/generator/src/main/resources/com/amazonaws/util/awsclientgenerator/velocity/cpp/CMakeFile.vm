@@ -34,6 +34,10 @@ file(GLOB AWS_${projectNameCaps}_MODEL_HEADERS
     "include/aws/${metadata.projectName}/model/*.h"
 )
 
+file(GLOB AWS_${projectNameCaps}_INTERNAL_HEADERS
+    "include/aws/${metadata.projectName}/internal/*.h"
+)
+
 file(GLOB AWS_${projectNameCaps}_SOURCE
     "source/*.cpp"
 )
@@ -45,6 +49,7 @@ file(GLOB AWS_${projectNameCaps}_MODEL_SOURCE
 #set($cmakeVarStart = "${")
 file(GLOB ${projectNameCaps}_UNIFIED_HEADERS
     ${cmakeVarStart}AWS_${projectNameCaps}_HEADERS}
+    ${cmakeVarStart}AWS_${projectNameCaps}_INTERNAL_HEADERS}
     ${cmakeVarStart}AWS_${projectNameCaps}_MODEL_HEADERS}
 )
 
@@ -67,6 +72,7 @@ if(WIN32)
     \#if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files${dirDelim}aws${dirDelim}${metadata.projectName}" FILES ${cmakeVarStart}AWS_${projectNameCaps}_HEADERS})
+        source_group("Header Files${dirDelim}aws${dirDelim}${metadata.projectName}${dirDelim}internal" FILES ${cmakeVarStart}AWS_${projectNameCaps}_INTERNAL_HEADERS})
         source_group("Header Files${dirDelim}aws${dirDelim}${metadata.projectName}${dirDelim}model" FILES ${cmakeVarStart}AWS_${projectNameCaps}_MODEL_HEADERS})
         source_group("Source Files" FILES ${cmakeVarStart}AWS_${projectNameCaps}_SOURCE})
         source_group("Source Files${dirDelim}model" FILES ${cmakeVarStart}AWS_${projectNameCaps}_MODEL_SOURCE})
