@@ -61,7 +61,7 @@ struct AWS_CORE_LOCAL TransferStateBase {
   }
 
  private:
-  mutable std::mutex m_metaRequestLock;
+  std::mutex m_metaRequestLock;
   std::shared_ptr<Aws::Crt::S3::S3MetaRequest> m_metaRequest;
 };
 

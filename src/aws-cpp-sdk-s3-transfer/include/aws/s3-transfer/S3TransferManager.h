@@ -10,8 +10,9 @@
 #include <aws/s3-transfer/UploadHandle.h>
 #include <aws/s3-transfer/DownloadHandle.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
-#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/client/AWSError.h>
 #include <aws/s3/S3EndpointProvider.h>
+#include <aws/s3/S3Errors.h>
 #include <memory>
 
 namespace Aws {
@@ -22,7 +23,10 @@ class S3TransferManagerImpl;
 
 /**
  * Customers construct an instance directly. The manager owns the underlying CRT client; it is
- * neither copyable nor movable.
+ * neither copyable nor movable. If construction cannot produce a usable manager (e.g. the CRT
+ * S3 client fails to build), the instance enters an error state: IsInitialized() returns false
+ * and Upload()/Download() fail immediately via the returned handle with the specific init
+ * error. Customers can check IsInitialized() up-front, or rely on the per-call failure path.
  */
 class AWS_S3_TRANSFER_API S3TransferManager final {
  public:
@@ -31,20 +35,23 @@ class AWS_S3_TRANSFER_API S3TransferManager final {
    * config. If config is not specified, it will be initialized to default values.
    */
   S3TransferManager(const S3TransferManagerConfiguration& config = S3TransferManagerConfiguration(),
-                    std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase> endpointProvider = nullptr);
+                    std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase> endpointProvider =
+                        Aws::MakeShared<Aws::S3::Endpoint::S3EndpointProvider>("S3TransferManager"));
 
   /**
    * Initializes the transfer manager with the supplied static credentials and an optional config.
    */
   S3TransferManager(const Aws::Auth::AWSCredentials& credentials,
-                    std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase> endpointProvider = nullptr,
+                    std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase> endpointProvider =
+                        Aws::MakeShared<Aws::S3::Endpoint::S3EndpointProvider>("S3TransferManager"),
                     const S3TransferManagerConfiguration& config = S3TransferManagerConfiguration());
 
   /**
    * Initializes the transfer manager with the supplied credentials provider and an optional config.
    */
   S3TransferManager(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase> endpointProvider = nullptr,
+                    std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase> endpointProvider =
+                        Aws::MakeShared<Aws::S3::Endpoint::S3EndpointProvider>("S3TransferManager"),
                     const S3TransferManagerConfiguration& config = S3TransferManagerConfiguration());
 
   ~S3TransferManager();
@@ -53,6 +60,18 @@ class AWS_S3_TRANSFER_API S3TransferManager final {
   S3TransferManager& operator=(const S3TransferManager&) = delete;
   S3TransferManager(S3TransferManager&&) noexcept = delete;
   S3TransferManager& operator=(S3TransferManager&&) noexcept = delete;
+
+  /**
+   * True if construction succeeded. If false, Upload()/Download() will fail immediately via
+   * the returned handle with the error reported by GetInitializationError().
+   */
+  bool IsInitialized() const;
+
+  /**
+   * The specific error captured during construction. Only meaningful when IsInitialized() is
+   * false; on a successfully-initialized manager the returned error is default-constructed.
+   */
+  const Aws::Client::AWSError<Aws::S3::S3Errors>& GetInitializationError() const;
 
   /**
    * Begin uploading the object described by request. Returns immediately with a handle that can be
@@ -73,6 +92,3 @@ class AWS_S3_TRANSFER_API S3TransferManager final {
 }  // namespace Transfer
 }  // namespace S3
 }  // namespace Aws
-
-
-

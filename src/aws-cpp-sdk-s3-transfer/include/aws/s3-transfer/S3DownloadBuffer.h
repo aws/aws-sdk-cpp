@@ -24,8 +24,8 @@ class AWS_S3_TRANSFER_API S3DownloadBuffer final {
   explicit S3DownloadBuffer(std::shared_ptr<Aws::Crt::S3::S3BufferTicket> ticket,
                             Aws::Crt::ByteCursor bytes, uint64_t rangeStart) noexcept;
 
-  S3DownloadBuffer(const S3DownloadBuffer&) = default;
-  S3DownloadBuffer& operator=(const S3DownloadBuffer&) = default;
+  S3DownloadBuffer(const S3DownloadBuffer&) = delete;
+  S3DownloadBuffer& operator=(const S3DownloadBuffer&) = delete;
   S3DownloadBuffer(S3DownloadBuffer&& other) noexcept;
   S3DownloadBuffer& operator=(S3DownloadBuffer&& other) noexcept;
   ~S3DownloadBuffer() = default;
