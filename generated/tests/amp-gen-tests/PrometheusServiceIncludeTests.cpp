@@ -24,6 +24,7 @@
 #include <aws/amp/model/AnomalyDetectorStatus.h>
 #include <aws/amp/model/AnomalyDetectorStatusCode.h>
 #include <aws/amp/model/AnomalyDetectorSummary.h>
+#include <aws/amp/model/CloudWatchConfiguration.h>
 #include <aws/amp/model/CloudWatchLogDestination.h>
 #include <aws/amp/model/ComponentConfig.h>
 #include <aws/amp/model/ConflictException.h>

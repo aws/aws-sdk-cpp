@@ -35,6 +35,9 @@
 #include <aws/partnercentral-account/model/GetPartnerRequest.h>
 #include <aws/partnercentral-account/model/GetProfileUpdateTaskRequest.h>
 #include <aws/partnercentral-account/model/GetProfileVisibilityRequest.h>
+#include <aws/partnercentral-account/model/GetQualificationsAssociationDetailsRequest.h>
+#include <aws/partnercentral-account/model/GetQualificationsAssociationTaskRequest.h>
+#include <aws/partnercentral-account/model/GetQualificationsDisassociationTaskRequest.h>
 #include <aws/partnercentral-account/model/GetVerificationRequest.h>
 #include <aws/partnercentral-account/model/ListConnectionInvitationsRequest.h>
 #include <aws/partnercentral-account/model/ListConnectionsRequest.h>
@@ -45,6 +48,8 @@
 #include <aws/partnercentral-account/model/RejectConnectionInvitationRequest.h>
 #include <aws/partnercentral-account/model/SendEmailVerificationCodeRequest.h>
 #include <aws/partnercentral-account/model/StartProfileUpdateTaskRequest.h>
+#include <aws/partnercentral-account/model/StartQualificationsAssociationTaskRequest.h>
+#include <aws/partnercentral-account/model/StartQualificationsDisassociationTaskRequest.h>
 #include <aws/partnercentral-account/model/StartVerificationRequest.h>
 #include <aws/partnercentral-account/model/TagResourceRequest.h>
 #include <aws/partnercentral-account/model/UntagResourceRequest.h>
@@ -302,6 +307,27 @@ GetProfileVisibilityOutcome PartnerCentralAccountClient::GetProfileVisibility(co
                             : GetProfileVisibilityOutcome(std::move(result.GetError()));
 }
 
+GetQualificationsAssociationDetailsOutcome PartnerCentralAccountClient::GetQualificationsAssociationDetails(
+    const GetQualificationsAssociationDetailsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQualificationsAssociationDetailsOutcome(result.GetResultWithOwnership())
+                            : GetQualificationsAssociationDetailsOutcome(std::move(result.GetError()));
+}
+
+GetQualificationsAssociationTaskOutcome PartnerCentralAccountClient::GetQualificationsAssociationTask(
+    const GetQualificationsAssociationTaskRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQualificationsAssociationTaskOutcome(result.GetResultWithOwnership())
+                            : GetQualificationsAssociationTaskOutcome(std::move(result.GetError()));
+}
+
+GetQualificationsDisassociationTaskOutcome PartnerCentralAccountClient::GetQualificationsDisassociationTask(
+    const GetQualificationsDisassociationTaskRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQualificationsDisassociationTaskOutcome(result.GetResultWithOwnership())
+                            : GetQualificationsDisassociationTaskOutcome(std::move(result.GetError()));
+}
+
 GetVerificationOutcome PartnerCentralAccountClient::GetVerification(const GetVerificationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetVerificationOutcome(result.GetResultWithOwnership())
@@ -362,6 +388,20 @@ StartProfileUpdateTaskOutcome PartnerCentralAccountClient::StartProfileUpdateTas
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartProfileUpdateTaskOutcome(result.GetResultWithOwnership())
                             : StartProfileUpdateTaskOutcome(std::move(result.GetError()));
+}
+
+StartQualificationsAssociationTaskOutcome PartnerCentralAccountClient::StartQualificationsAssociationTask(
+    const StartQualificationsAssociationTaskRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQualificationsAssociationTaskOutcome(result.GetResultWithOwnership())
+                            : StartQualificationsAssociationTaskOutcome(std::move(result.GetError()));
+}
+
+StartQualificationsDisassociationTaskOutcome PartnerCentralAccountClient::StartQualificationsDisassociationTask(
+    const StartQualificationsDisassociationTaskRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQualificationsDisassociationTaskOutcome(result.GetResultWithOwnership())
+                            : StartQualificationsDisassociationTaskOutcome(std::move(result.GetError()));
 }
 
 StartVerificationOutcome PartnerCentralAccountClient::StartVerification(const StartVerificationRequest& request) const {

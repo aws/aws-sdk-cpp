@@ -43,6 +43,10 @@ Aws::String StartPlanExecutionRequest::SerializePayload() const {
     payload.WithString("recoveryExecutionId", m_recoveryExecutionId);
   }
 
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
+  }
+
   return payload.View().WriteReadable();
 }
 

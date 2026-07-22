@@ -8,6 +8,7 @@
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/arc-region-switch/model/ExecutionAction.h>
 #include <aws/arc-region-switch/model/ExecutionMode.h>
+#include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -161,6 +162,30 @@ class StartPlanExecutionRequest : public ARCRegionswitchRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier to ensure that the operation completes no
+   * more than one time. If this token matches a previous request, the service
+   * ignores the request and returns the result of the original successful request.
+   * If you don't provide a client token, the service automatically generates one.
+   * For more information about idempotency, see <a
+   * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+   * retries safe with idempotent APIs</a>.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  StartPlanExecutionRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_planArn;
 
@@ -175,6 +200,8 @@ class StartPlanExecutionRequest : public ARCRegionswitchRequest {
   Aws::String m_latestVersion;
 
   Aws::String m_recoveryExecutionId;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_planArnHasBeenSet = false;
   bool m_targetRegionHasBeenSet = false;
   bool m_actionHasBeenSet = false;
@@ -182,6 +209,7 @@ class StartPlanExecutionRequest : public ARCRegionswitchRequest {
   bool m_commentHasBeenSet = false;
   bool m_latestVersionHasBeenSet = false;
   bool m_recoveryExecutionIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

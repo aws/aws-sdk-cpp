@@ -255,17 +255,16 @@ class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AW
   }
 
   /**
-   * <p>The <code>CreateScraper</code> operation creates a scraper to collect
-   * metrics. A scraper pulls metrics from Prometheus-compatible sources and sends
-   * them to your Amazon Managed Service for Prometheus workspace. You can configure
-   * scrapers to collect metrics from Amazon EKS clusters, Amazon MSK clusters, or
-   * from VPC-based sources that support DNS-based service discovery. Scrapers are
-   * flexible, and can be configured to control what metrics are collected, the
-   * frequency of collection, what transformations are applied to the metrics, and
-   * more.</p> <p>An IAM role will be created for you that Amazon Managed Service for
-   * Prometheus uses to access the metrics in your source. You must configure this
-   * role with a policy that allows it to scrape metrics from your source. For Amazon
-   * EKS sources, see <a
+   * <p>Creates a scraper to collect metrics from Prometheus-compatible sources. The
+   * scraper sends the collected metrics to Amazon Managed Service for Prometheus
+   * workspaces or CloudWatch datasets. You can configure scrapers to collect metrics
+   * from Amazon EKS clusters, Amazon MSK clusters, or from VPC-based sources that
+   * support DNS-based service discovery. Scrapers are flexible. You can configure a
+   * scraper to control which metrics to collect, the frequency of collection, which
+   * transformations to apply to the metrics, and more.</p> <p>An IAM role will be
+   * created for you that Amazon Managed Service for Prometheus uses to access the
+   * metrics in your source. You must configure this role with a policy that allows
+   * it to scrape metrics from your source. For Amazon EKS sources, see <a
    * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
    * your Amazon EKS cluster</a> in the <i>Amazon Managed Service for Prometheus User
    * Guide</i>.</p> <p>The <code>scrapeConfiguration</code> parameter contains the

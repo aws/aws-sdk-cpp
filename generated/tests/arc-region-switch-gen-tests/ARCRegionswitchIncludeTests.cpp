@@ -29,6 +29,7 @@
 #include <aws/arc-region-switch/model/AuroraServerlessScalingConfiguration.h>
 #include <aws/arc-region-switch/model/CancelPlanExecutionRequest.h>
 #include <aws/arc-region-switch/model/CancelPlanExecutionResult.h>
+#include <aws/arc-region-switch/model/ConflictException.h>
 #include <aws/arc-region-switch/model/CreatePlanRequest.h>
 #include <aws/arc-region-switch/model/CreatePlanResult.h>
 #include <aws/arc-region-switch/model/CustomActionLambdaConfiguration.h>

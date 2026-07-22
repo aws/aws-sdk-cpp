@@ -65,6 +65,12 @@
 #include <aws/partnercentral-account/model/GetProfileUpdateTaskResult.h>
 #include <aws/partnercentral-account/model/GetProfileVisibilityRequest.h>
 #include <aws/partnercentral-account/model/GetProfileVisibilityResult.h>
+#include <aws/partnercentral-account/model/GetQualificationsAssociationDetailsRequest.h>
+#include <aws/partnercentral-account/model/GetQualificationsAssociationDetailsResult.h>
+#include <aws/partnercentral-account/model/GetQualificationsAssociationTaskRequest.h>
+#include <aws/partnercentral-account/model/GetQualificationsAssociationTaskResult.h>
+#include <aws/partnercentral-account/model/GetQualificationsDisassociationTaskRequest.h>
+#include <aws/partnercentral-account/model/GetQualificationsDisassociationTaskResult.h>
 #include <aws/partnercentral-account/model/GetVerificationRequest.h>
 #include <aws/partnercentral-account/model/GetVerificationResult.h>
 #include <aws/partnercentral-account/model/IndustrySegment.h>
@@ -92,6 +98,10 @@
 #include <aws/partnercentral-account/model/PutAllianceLeadContactResult.h>
 #include <aws/partnercentral-account/model/PutProfileVisibilityRequest.h>
 #include <aws/partnercentral-account/model/PutProfileVisibilityResult.h>
+#include <aws/partnercentral-account/model/QualificationsAssociationPartner.h>
+#include <aws/partnercentral-account/model/QualificationsAssociationStatus.h>
+#include <aws/partnercentral-account/model/QualificationsAssociationTaskStatus.h>
+#include <aws/partnercentral-account/model/QualificationsDisassociationTaskStatus.h>
 #include <aws/partnercentral-account/model/RegistrantVerificationDetails.h>
 #include <aws/partnercentral-account/model/RegistrantVerificationResponse.h>
 #include <aws/partnercentral-account/model/RejectConnectionInvitationRequest.h>
@@ -105,6 +115,10 @@
 #include <aws/partnercentral-account/model/ServiceQuotaExceededExceptionReason.h>
 #include <aws/partnercentral-account/model/StartProfileUpdateTaskRequest.h>
 #include <aws/partnercentral-account/model/StartProfileUpdateTaskResult.h>
+#include <aws/partnercentral-account/model/StartQualificationsAssociationTaskRequest.h>
+#include <aws/partnercentral-account/model/StartQualificationsAssociationTaskResult.h>
+#include <aws/partnercentral-account/model/StartQualificationsDisassociationTaskRequest.h>
+#include <aws/partnercentral-account/model/StartQualificationsDisassociationTaskResult.h>
 #include <aws/partnercentral-account/model/StartVerificationRequest.h>
 #include <aws/partnercentral-account/model/StartVerificationResult.h>
 #include <aws/partnercentral-account/model/Tag.h>

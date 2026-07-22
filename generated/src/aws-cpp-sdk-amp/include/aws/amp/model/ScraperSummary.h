@@ -227,8 +227,8 @@ class ScraperSummary {
 
   ///@{
   /**
-   * <p>The Amazon Managed Service for Prometheus workspace the scraper sends metrics
-   * to.</p>
+   * <p>The destination where the scraper sends metrics. Valid destinations are
+   * Amazon Managed Service for Prometheus workspaces and CloudWatch datasets.</p>
    */
   inline const Destination& GetDestination() const { return m_destination; }
   inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }

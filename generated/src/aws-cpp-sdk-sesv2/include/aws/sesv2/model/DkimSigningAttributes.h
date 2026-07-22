@@ -175,7 +175,12 @@ class DkimSigningAttributes {
    * region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
    * <code>AWS_SES_US_WEST_2</code> – Configure DKIM for the identity by replicating
    * from a parent identity in US West (Oregon) region using Deterministic Easy-DKIM
-   * (DEED). </p> </li> </ul>
+   * (DEED). </p> </li> <li> <p> <code>AWS_SES_US_GOV_EAST_1</code> – Configure DKIM
+   * for the identity by replicating from a parent identity in AWS GovCloud (US-East)
+   * region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
+   * <code>AWS_SES_US_GOV_WEST_1</code> – Configure DKIM for the identity by
+   * replicating from a parent identity in AWS GovCloud (US-West) region using
+   * Deterministic Easy-DKIM (DEED). </p> </li> </ul>
    */
   inline DkimSigningAttributesOrigin GetDomainSigningAttributesOrigin() const { return m_domainSigningAttributesOrigin; }
   inline bool DomainSigningAttributesOriginHasBeenSet() const { return m_domainSigningAttributesOriginHasBeenSet; }

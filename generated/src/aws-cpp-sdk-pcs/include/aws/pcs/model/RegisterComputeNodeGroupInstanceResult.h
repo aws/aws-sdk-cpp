@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pcs/PCS_EXPORTS.h>
 #include <aws/pcs/model/Endpoint.h>
+#include <aws/pcs/model/NodeLifecycleActions.h>
 
 #include <utility>
 
@@ -88,6 +89,76 @@ class RegisterComputeNodeGroupInstanceResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The name of the cluster that the compute node registered into.</p>
+   */
+  inline const Aws::String& GetClusterName() const { return m_clusterName; }
+  template <typename ClusterNameT = Aws::String>
+  void SetClusterName(ClusterNameT&& value) {
+    m_clusterNameHasBeenSet = true;
+    m_clusterName = std::forward<ClusterNameT>(value);
+  }
+  template <typename ClusterNameT = Aws::String>
+  RegisterComputeNodeGroupInstanceResult& WithClusterName(ClusterNameT&& value) {
+    SetClusterName(std::forward<ClusterNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the compute node group that the compute node registered into.</p>
+   */
+  inline const Aws::String& GetComputeNodeGroupId() const { return m_computeNodeGroupId; }
+  template <typename ComputeNodeGroupIdT = Aws::String>
+  void SetComputeNodeGroupId(ComputeNodeGroupIdT&& value) {
+    m_computeNodeGroupIdHasBeenSet = true;
+    m_computeNodeGroupId = std::forward<ComputeNodeGroupIdT>(value);
+  }
+  template <typename ComputeNodeGroupIdT = Aws::String>
+  RegisterComputeNodeGroupInstanceResult& WithComputeNodeGroupId(ComputeNodeGroupIdT&& value) {
+    SetComputeNodeGroupId(std::forward<ComputeNodeGroupIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the compute node group that the compute node registered into.</p>
+   */
+  inline const Aws::String& GetComputeNodeGroupName() const { return m_computeNodeGroupName; }
+  template <typename ComputeNodeGroupNameT = Aws::String>
+  void SetComputeNodeGroupName(ComputeNodeGroupNameT&& value) {
+    m_computeNodeGroupNameHasBeenSet = true;
+    m_computeNodeGroupName = std::forward<ComputeNodeGroupNameT>(value);
+  }
+  template <typename ComputeNodeGroupNameT = Aws::String>
+  RegisterComputeNodeGroupInstanceResult& WithComputeNodeGroupName(ComputeNodeGroupNameT&& value) {
+    SetComputeNodeGroupName(std::forward<ComputeNodeGroupNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The node lifecycle actions configured for the node group, including scripts
+   * to run when a compute node finishes bootstrapping or becomes ready to accept
+   * jobs.</p>
+   */
+  inline const NodeLifecycleActions& GetNodeLifecycleActions() const { return m_nodeLifecycleActions; }
+  template <typename NodeLifecycleActionsT = NodeLifecycleActions>
+  void SetNodeLifecycleActions(NodeLifecycleActionsT&& value) {
+    m_nodeLifecycleActionsHasBeenSet = true;
+    m_nodeLifecycleActions = std::forward<NodeLifecycleActionsT>(value);
+  }
+  template <typename NodeLifecycleActionsT = NodeLifecycleActions>
+  RegisterComputeNodeGroupInstanceResult& WithNodeLifecycleActions(NodeLifecycleActionsT&& value) {
+    SetNodeLifecycleActions(std::forward<NodeLifecycleActionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -110,11 +181,23 @@ class RegisterComputeNodeGroupInstanceResult {
 
   Aws::Vector<Endpoint> m_endpoints;
 
+  Aws::String m_clusterName;
+
+  Aws::String m_computeNodeGroupId;
+
+  Aws::String m_computeNodeGroupName;
+
+  NodeLifecycleActions m_nodeLifecycleActions;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nodeIDHasBeenSet = false;
   bool m_sharedSecretHasBeenSet = false;
   bool m_endpointsHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_computeNodeGroupIdHasBeenSet = false;
+  bool m_computeNodeGroupNameHasBeenSet = false;
+  bool m_nodeLifecycleActionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

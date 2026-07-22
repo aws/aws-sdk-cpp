@@ -510,6 +510,102 @@ class AWS_PARTNERCENTRALACCOUNT_API PartnerCentralAccountClient
   }
 
   /**
+   * <p>Returns your current qualifications association status, the primary partner,
+   * and the full list of partners associated under the primary
+   * partner.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/GetQualificationsAssociationDetails">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetQualificationsAssociationDetailsOutcome GetQualificationsAssociationDetails(
+      const Model::GetQualificationsAssociationDetailsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetQualificationsAssociationDetails that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetQualificationsAssociationDetailsRequestT = Model::GetQualificationsAssociationDetailsRequest>
+  Model::GetQualificationsAssociationDetailsOutcomeCallable GetQualificationsAssociationDetailsCallable(
+      const GetQualificationsAssociationDetailsRequestT& request) const {
+    return SubmitCallable(&PartnerCentralAccountClient::GetQualificationsAssociationDetails, request);
+  }
+
+  /**
+   * An Async wrapper for GetQualificationsAssociationDetails that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetQualificationsAssociationDetailsRequestT = Model::GetQualificationsAssociationDetailsRequest>
+  void GetQualificationsAssociationDetailsAsync(const GetQualificationsAssociationDetailsRequestT& request,
+                                                const GetQualificationsAssociationDetailsResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralAccountClient::GetQualificationsAssociationDetails, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the status and details of the most recent qualifications
+   * association task for your partner account. Use this operation to poll the
+   * progress of an association task initiated by
+   * <code>StartQualificationsAssociationTask</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/GetQualificationsAssociationTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetQualificationsAssociationTaskOutcome GetQualificationsAssociationTask(
+      const Model::GetQualificationsAssociationTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetQualificationsAssociationTask that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetQualificationsAssociationTaskRequestT = Model::GetQualificationsAssociationTaskRequest>
+  Model::GetQualificationsAssociationTaskOutcomeCallable GetQualificationsAssociationTaskCallable(
+      const GetQualificationsAssociationTaskRequestT& request) const {
+    return SubmitCallable(&PartnerCentralAccountClient::GetQualificationsAssociationTask, request);
+  }
+
+  /**
+   * An Async wrapper for GetQualificationsAssociationTask that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetQualificationsAssociationTaskRequestT = Model::GetQualificationsAssociationTaskRequest>
+  void GetQualificationsAssociationTaskAsync(const GetQualificationsAssociationTaskRequestT& request,
+                                             const GetQualificationsAssociationTaskResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralAccountClient::GetQualificationsAssociationTask, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the status and details of the most recent qualifications
+   * disassociation task for your partner account. Use this operation to poll the
+   * progress of a disassociation task initiated by
+   * <code>StartQualificationsDisassociationTask</code>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/GetQualificationsDisassociationTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetQualificationsDisassociationTaskOutcome GetQualificationsDisassociationTask(
+      const Model::GetQualificationsDisassociationTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetQualificationsDisassociationTask that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetQualificationsDisassociationTaskRequestT = Model::GetQualificationsDisassociationTaskRequest>
+  Model::GetQualificationsDisassociationTaskOutcomeCallable GetQualificationsDisassociationTaskCallable(
+      const GetQualificationsDisassociationTaskRequestT& request) const {
+    return SubmitCallable(&PartnerCentralAccountClient::GetQualificationsDisassociationTask, request);
+  }
+
+  /**
+   * An Async wrapper for GetQualificationsDisassociationTask that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetQualificationsDisassociationTaskRequestT = Model::GetQualificationsDisassociationTaskRequest>
+  void GetQualificationsDisassociationTaskAsync(const GetQualificationsDisassociationTaskRequestT& request,
+                                                const GetQualificationsDisassociationTaskResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralAccountClient::GetQualificationsDisassociationTask, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the current status and details of a verification process for a
    * partner account. This operation allows partners to check the progress and
    * results of business or registrant verification processes.</p><p><h3>See
@@ -785,6 +881,71 @@ class AWS_PARTNERCENTRALACCOUNT_API PartnerCentralAccountClient
                                    const StartProfileUpdateTaskResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PartnerCentralAccountClient::StartProfileUpdateTask, request, handler, context);
+  }
+
+  /**
+   * <p>Initiates an asynchronous task to associate your partner qualifications with
+   * a primary account. You must be a subsidiary of the primary account with an
+   * active subsidiary connection. Use <code>GetQualificationsAssociationTask</code>
+   * to monitor task progress.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/StartQualificationsAssociationTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartQualificationsAssociationTaskOutcome StartQualificationsAssociationTask(
+      const Model::StartQualificationsAssociationTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartQualificationsAssociationTask that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename StartQualificationsAssociationTaskRequestT = Model::StartQualificationsAssociationTaskRequest>
+  Model::StartQualificationsAssociationTaskOutcomeCallable StartQualificationsAssociationTaskCallable(
+      const StartQualificationsAssociationTaskRequestT& request) const {
+    return SubmitCallable(&PartnerCentralAccountClient::StartQualificationsAssociationTask, request);
+  }
+
+  /**
+   * An Async wrapper for StartQualificationsAssociationTask that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename StartQualificationsAssociationTaskRequestT = Model::StartQualificationsAssociationTaskRequest>
+  void StartQualificationsAssociationTaskAsync(const StartQualificationsAssociationTaskRequestT& request,
+                                               const StartQualificationsAssociationTaskResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralAccountClient::StartQualificationsAssociationTask, request, handler, context);
+  }
+
+  /**
+   * <p>Initiates an asynchronous task to disassociate your partner qualifications
+   * from a primary account. You must currently be associated and cannot disassociate
+   * if you are the primary partner. Use
+   * <code>GetQualificationsDisassociationTask</code> to monitor task
+   * progress.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/StartQualificationsDisassociationTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartQualificationsDisassociationTaskOutcome StartQualificationsDisassociationTask(
+      const Model::StartQualificationsDisassociationTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartQualificationsDisassociationTask that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename StartQualificationsDisassociationTaskRequestT = Model::StartQualificationsDisassociationTaskRequest>
+  Model::StartQualificationsDisassociationTaskOutcomeCallable StartQualificationsDisassociationTaskCallable(
+      const StartQualificationsDisassociationTaskRequestT& request) const {
+    return SubmitCallable(&PartnerCentralAccountClient::StartQualificationsDisassociationTask, request);
+  }
+
+  /**
+   * An Async wrapper for StartQualificationsDisassociationTask that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename StartQualificationsDisassociationTaskRequestT = Model::StartQualificationsDisassociationTaskRequest>
+  void StartQualificationsDisassociationTaskAsync(const StartQualificationsDisassociationTaskRequestT& request,
+                                                  const StartQualificationsDisassociationTaskResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralAccountClient::StartQualificationsDisassociationTask, request, handler, context);
   }
 
   /**

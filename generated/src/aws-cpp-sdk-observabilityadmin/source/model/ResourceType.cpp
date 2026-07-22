@@ -35,6 +35,7 @@ static const int AWS_SecurityHub_HubV2_HASH = HashingUtils::HashString("AWS::Sec
 static const int AWS_CloudWatch_OTelEnrichment_HASH = HashingUtils::HashString("AWS::CloudWatch::OTelEnrichment");
 static const int AWS_MSK_Cluster_HASH = HashingUtils::HashString("AWS::MSK::Cluster");
 static const int AWS_S3_Bucket_HASH = HashingUtils::HashString("AWS::S3::Bucket");
+static const int AWS_Bedrock_KnowledgeBase_HASH = HashingUtils::HashString("AWS::Bedrock::KnowledgeBase");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -78,6 +79,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::AWS_MSK_Cluster;
   } else if (hashCode == AWS_S3_Bucket_HASH) {
     return ResourceType::AWS_S3_Bucket;
+  } else if (hashCode == AWS_Bedrock_KnowledgeBase_HASH) {
+    return ResourceType::AWS_Bedrock_KnowledgeBase;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -132,6 +135,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "AWS::MSK::Cluster";
     case ResourceType::AWS_S3_Bucket:
       return "AWS::S3::Bucket";
+    case ResourceType::AWS_Bedrock_KnowledgeBase:
+      return "AWS::Bedrock::KnowledgeBase";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

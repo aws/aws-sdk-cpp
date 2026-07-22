@@ -100,7 +100,9 @@ class CreateScraperRequest : public PrometheusServiceRequest {
 
   ///@{
   /**
-   * <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
+   * <p>The destination where the scraper sends the collected metrics. Valid
+   * destinations are Amazon Managed Service for Prometheus workspaces and CloudWatch
+   * datasets.</p>
    */
   inline const Destination& GetDestination() const { return m_destination; }
   inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }

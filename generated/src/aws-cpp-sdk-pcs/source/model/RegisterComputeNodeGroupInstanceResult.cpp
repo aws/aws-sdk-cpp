@@ -40,6 +40,22 @@ RegisterComputeNodeGroupInstanceResult& RegisterComputeNodeGroupInstanceResult::
     }
     m_endpointsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("clusterName")) {
+    m_clusterName = jsonValue.GetString("clusterName");
+    m_clusterNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("computeNodeGroupId")) {
+    m_computeNodeGroupId = jsonValue.GetString("computeNodeGroupId");
+    m_computeNodeGroupIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("computeNodeGroupName")) {
+    m_computeNodeGroupName = jsonValue.GetString("computeNodeGroupName");
+    m_computeNodeGroupNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nodeLifecycleActions")) {
+    m_nodeLifecycleActions = jsonValue.GetObject("nodeLifecycleActions");
+    m_nodeLifecycleActionsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

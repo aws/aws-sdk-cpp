@@ -59,6 +59,10 @@ Aws::String UpdateComputeNodeGroupRequest::SerializePayload() const {
     payload.WithObject("slurmConfiguration", m_slurmConfiguration.Jsonize());
   }
 
+  if (m_nodeLifecycleActionsHasBeenSet) {
+    payload.WithObject("nodeLifecycleActions", m_nodeLifecycleActions.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

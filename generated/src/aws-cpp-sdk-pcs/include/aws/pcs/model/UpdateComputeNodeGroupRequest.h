@@ -14,6 +14,7 @@
 #include <aws/pcs/model/ScalingConfigurationRequest.h>
 #include <aws/pcs/model/SpotOptions.h>
 #include <aws/pcs/model/UpdateComputeNodeGroupSlurmConfigurationRequest.h>
+#include <aws/pcs/model/UpdateNodeLifecycleActionsRequest.h>
 
 #include <utility>
 
@@ -245,6 +246,27 @@ class UpdateComputeNodeGroupRequest : public PCSRequest {
 
   ///@{
   /**
+   * <p>The lifecycle actions to run on compute nodes in the compute node group. Use
+   * lifecycle actions to run custom scripts at defined stages of a compute node's
+   * lifecycle, such as when a compute node finishes bootstrapping or becomes ready
+   * to accept jobs.</p>
+   */
+  inline const UpdateNodeLifecycleActionsRequest& GetNodeLifecycleActions() const { return m_nodeLifecycleActions; }
+  inline bool NodeLifecycleActionsHasBeenSet() const { return m_nodeLifecycleActionsHasBeenSet; }
+  template <typename NodeLifecycleActionsT = UpdateNodeLifecycleActionsRequest>
+  void SetNodeLifecycleActions(NodeLifecycleActionsT&& value) {
+    m_nodeLifecycleActionsHasBeenSet = true;
+    m_nodeLifecycleActions = std::forward<NodeLifecycleActionsT>(value);
+  }
+  template <typename NodeLifecycleActionsT = UpdateNodeLifecycleActionsRequest>
+  UpdateComputeNodeGroupRequest& WithNodeLifecycleActions(NodeLifecycleActionsT&& value) {
+    SetNodeLifecycleActions(std::forward<NodeLifecycleActionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request. Idempotency ensures that an API request completes
    * only once. With an idempotent request, if the original request completes
@@ -287,6 +309,8 @@ class UpdateComputeNodeGroupRequest : public PCSRequest {
 
   UpdateComputeNodeGroupSlurmConfigurationRequest m_slurmConfiguration;
 
+  UpdateNodeLifecycleActionsRequest m_nodeLifecycleActions;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_computeNodeGroupIdentifierHasBeenSet = false;
@@ -298,6 +322,7 @@ class UpdateComputeNodeGroupRequest : public PCSRequest {
   bool m_scalingConfigurationHasBeenSet = false;
   bool m_iamInstanceProfileArnHasBeenSet = false;
   bool m_slurmConfigurationHasBeenSet = false;
+  bool m_nodeLifecycleActionsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

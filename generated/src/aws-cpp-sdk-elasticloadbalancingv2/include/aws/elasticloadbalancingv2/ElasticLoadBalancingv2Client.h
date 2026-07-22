@@ -274,15 +274,17 @@ class AWS_ELASTICLOADBALANCINGV2_API ElasticLoadBalancingv2Client
 
   /**
    * <p>Creates a rule for the specified listener. The listener must be associated
-   * with an Application Load Balancer.</p> <p>Each rule consists of a priority, one
-   * or more actions, one or more conditions, and up to two optional transforms.
-   * Rules are evaluated in priority order, from the lowest value to the highest
-   * value. When the conditions for a rule are met, its actions are performed. If the
-   * conditions for no rules are met, the actions for the default rule are performed.
-   * For more information, see <a
+   * with an Application Load Balancer or a dual-stack Network Load Balancer.</p>
+   * <p>Each rule consists of a priority, one or more actions, and one or more
+   * conditions. Rules are evaluated in priority order, from the lowest value to the
+   * highest value. When the conditions for a rule are met, its actions are
+   * performed. If the conditions for no rules are met, the actions for the default
+   * rule are performed. For more information, see <a
    * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
-   * rules</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * rules</a> in the <i>Application Load Balancers Guide</i> or <a
+   * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html#listener-rules">Listener
+   * rules</a> in the <i>Network Load Balancers Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule">AWS
    * API Reference</a></p>
    */

@@ -46,6 +46,7 @@
 #include <aws/pcs/model/Endpoint.h>
 #include <aws/pcs/model/EndpointType.h>
 #include <aws/pcs/model/ErrorInfo.h>
+#include <aws/pcs/model/ExecutionPolicy.h>
 #include <aws/pcs/model/GetClusterRequest.h>
 #include <aws/pcs/model/GetClusterResult.h>
 #include <aws/pcs/model/GetComputeNodeGroupRequest.h>
@@ -66,6 +67,11 @@
 #include <aws/pcs/model/NetworkType.h>
 #include <aws/pcs/model/Networking.h>
 #include <aws/pcs/model/NetworkingRequest.h>
+#include <aws/pcs/model/NodeLifecycleActions.h>
+#include <aws/pcs/model/NodeLifecycleActionsRequest.h>
+#include <aws/pcs/model/NodeLifecycleScript.h>
+#include <aws/pcs/model/NodeLifecycleStages.h>
+#include <aws/pcs/model/OnError.h>
 #include <aws/pcs/model/PurchaseOption.h>
 #include <aws/pcs/model/Queue.h>
 #include <aws/pcs/model/QueueSlurmConfiguration.h>
@@ -80,6 +86,8 @@
 #include <aws/pcs/model/Scheduler.h>
 #include <aws/pcs/model/SchedulerRequest.h>
 #include <aws/pcs/model/SchedulerType.h>
+#include <aws/pcs/model/ScriptCachingPolicy.h>
+#include <aws/pcs/model/ScriptSource.h>
 #include <aws/pcs/model/ServiceQuotaExceededException.h>
 #include <aws/pcs/model/Size.h>
 #include <aws/pcs/model/SlurmAuthKey.h>
@@ -102,6 +110,7 @@
 #include <aws/pcs/model/UpdateComputeNodeGroupRequest.h>
 #include <aws/pcs/model/UpdateComputeNodeGroupResult.h>
 #include <aws/pcs/model/UpdateComputeNodeGroupSlurmConfigurationRequest.h>
+#include <aws/pcs/model/UpdateNodeLifecycleActionsRequest.h>
 #include <aws/pcs/model/UpdateQueueRequest.h>
 #include <aws/pcs/model/UpdateQueueResult.h>
 #include <aws/pcs/model/UpdateQueueSlurmConfigurationRequest.h>

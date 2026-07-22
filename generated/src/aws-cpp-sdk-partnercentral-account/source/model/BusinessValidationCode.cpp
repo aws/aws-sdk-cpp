@@ -23,6 +23,12 @@ static const int INVALID_ACCOUNT_LINKING_STATUS_HASH = HashingUtils::HashString(
 static const int INVALID_ACCOUNT_STATE_HASH = HashingUtils::HashString("INVALID_ACCOUNT_STATE");
 static const int INCOMPATIBLE_DOMAIN_HASH = HashingUtils::HashString("INCOMPATIBLE_DOMAIN");
 static const int INELIGIBLE_ACCOUNT_TIER_HASH = HashingUtils::HashString("INELIGIBLE_ACCOUNT_TIER");
+static const int MISSING_ACTIVE_SUBSIDIARY_CONNECTION_HASH = HashingUtils::HashString("MISSING_ACTIVE_SUBSIDIARY_CONNECTION");
+static const int INCOMPATIBLE_SUBSIDIARY_CONNECTION_HASH = HashingUtils::HashString("INCOMPATIBLE_SUBSIDIARY_CONNECTION");
+static const int INCOMPATIBLE_PRIMARY_PARTNER_HASH = HashingUtils::HashString("INCOMPATIBLE_PRIMARY_PARTNER");
+static const int QUALIFICATIONS_ASSOCIATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("QUALIFICATIONS_ASSOCIATION_LIMIT_EXCEEDED");
+static const int QUALIFICATIONS_ASSOCIATION_NOT_FOUND_HASH = HashingUtils::HashString("QUALIFICATIONS_ASSOCIATION_NOT_FOUND");
+static const int QUALIFICATIONS_ASSOCIATION_EXISTS_HASH = HashingUtils::HashString("QUALIFICATIONS_ASSOCIATION_EXISTS");
 
 BusinessValidationCode GetBusinessValidationCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +48,18 @@ BusinessValidationCode GetBusinessValidationCodeForName(const Aws::String& name)
     return BusinessValidationCode::INCOMPATIBLE_DOMAIN;
   } else if (hashCode == INELIGIBLE_ACCOUNT_TIER_HASH) {
     return BusinessValidationCode::INELIGIBLE_ACCOUNT_TIER;
+  } else if (hashCode == MISSING_ACTIVE_SUBSIDIARY_CONNECTION_HASH) {
+    return BusinessValidationCode::MISSING_ACTIVE_SUBSIDIARY_CONNECTION;
+  } else if (hashCode == INCOMPATIBLE_SUBSIDIARY_CONNECTION_HASH) {
+    return BusinessValidationCode::INCOMPATIBLE_SUBSIDIARY_CONNECTION;
+  } else if (hashCode == INCOMPATIBLE_PRIMARY_PARTNER_HASH) {
+    return BusinessValidationCode::INCOMPATIBLE_PRIMARY_PARTNER;
+  } else if (hashCode == QUALIFICATIONS_ASSOCIATION_LIMIT_EXCEEDED_HASH) {
+    return BusinessValidationCode::QUALIFICATIONS_ASSOCIATION_LIMIT_EXCEEDED;
+  } else if (hashCode == QUALIFICATIONS_ASSOCIATION_NOT_FOUND_HASH) {
+    return BusinessValidationCode::QUALIFICATIONS_ASSOCIATION_NOT_FOUND;
+  } else if (hashCode == QUALIFICATIONS_ASSOCIATION_EXISTS_HASH) {
+    return BusinessValidationCode::QUALIFICATIONS_ASSOCIATION_EXISTS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +90,18 @@ Aws::String GetNameForBusinessValidationCode(BusinessValidationCode enumValue) {
       return "INCOMPATIBLE_DOMAIN";
     case BusinessValidationCode::INELIGIBLE_ACCOUNT_TIER:
       return "INELIGIBLE_ACCOUNT_TIER";
+    case BusinessValidationCode::MISSING_ACTIVE_SUBSIDIARY_CONNECTION:
+      return "MISSING_ACTIVE_SUBSIDIARY_CONNECTION";
+    case BusinessValidationCode::INCOMPATIBLE_SUBSIDIARY_CONNECTION:
+      return "INCOMPATIBLE_SUBSIDIARY_CONNECTION";
+    case BusinessValidationCode::INCOMPATIBLE_PRIMARY_PARTNER:
+      return "INCOMPATIBLE_PRIMARY_PARTNER";
+    case BusinessValidationCode::QUALIFICATIONS_ASSOCIATION_LIMIT_EXCEEDED:
+      return "QUALIFICATIONS_ASSOCIATION_LIMIT_EXCEEDED";
+    case BusinessValidationCode::QUALIFICATIONS_ASSOCIATION_NOT_FOUND:
+      return "QUALIFICATIONS_ASSOCIATION_NOT_FOUND";
+    case BusinessValidationCode::QUALIFICATIONS_ASSOCIATION_EXISTS:
+      return "QUALIFICATIONS_ASSOCIATION_EXISTS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -13,6 +13,7 @@
 #include <aws/pcs/model/CustomLaunchTemplate.h>
 #include <aws/pcs/model/ErrorInfo.h>
 #include <aws/pcs/model/InstanceConfig.h>
+#include <aws/pcs/model/NodeLifecycleActions.h>
 #include <aws/pcs/model/PurchaseOption.h>
 #include <aws/pcs/model/ScalingConfiguration.h>
 #include <aws/pcs/model/SpotOptions.h>
@@ -369,6 +370,27 @@ class ComputeNodeGroup {
 
   ///@{
   /**
+   * <p>The lifecycle actions to run on compute nodes in the compute node group. Use
+   * lifecycle actions to run custom scripts at defined stages of a compute node's
+   * lifecycle, such as when a compute node finishes bootstrapping or becomes ready
+   * to accept jobs.</p>
+   */
+  inline const NodeLifecycleActions& GetNodeLifecycleActions() const { return m_nodeLifecycleActions; }
+  inline bool NodeLifecycleActionsHasBeenSet() const { return m_nodeLifecycleActionsHasBeenSet; }
+  template <typename NodeLifecycleActionsT = NodeLifecycleActions>
+  void SetNodeLifecycleActions(NodeLifecycleActionsT&& value) {
+    m_nodeLifecycleActionsHasBeenSet = true;
+    m_nodeLifecycleActions = std::forward<NodeLifecycleActionsT>(value);
+  }
+  template <typename NodeLifecycleActionsT = NodeLifecycleActions>
+  ComputeNodeGroup& WithNodeLifecycleActions(NodeLifecycleActionsT&& value) {
+    SetNodeLifecycleActions(std::forward<NodeLifecycleActionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of errors that occurred during compute node group provisioning.</p>
    */
   inline const Aws::Vector<ErrorInfo>& GetErrorInfo() const { return m_errorInfo; }
@@ -423,6 +445,8 @@ class ComputeNodeGroup {
 
   ComputeNodeGroupSlurmConfiguration m_slurmConfiguration;
 
+  NodeLifecycleActions m_nodeLifecycleActions;
+
   Aws::Vector<ErrorInfo> m_errorInfo;
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;
@@ -440,6 +464,7 @@ class ComputeNodeGroup {
   bool m_instanceConfigsHasBeenSet = false;
   bool m_spotOptionsHasBeenSet = false;
   bool m_slurmConfigurationHasBeenSet = false;
+  bool m_nodeLifecycleActionsHasBeenSet = false;
   bool m_errorInfoHasBeenSet = false;
 };
 

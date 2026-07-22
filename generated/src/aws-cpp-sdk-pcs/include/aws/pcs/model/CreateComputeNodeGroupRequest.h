@@ -13,6 +13,7 @@
 #include <aws/pcs/model/ComputeNodeGroupSlurmConfigurationRequest.h>
 #include <aws/pcs/model/CustomLaunchTemplate.h>
 #include <aws/pcs/model/InstanceConfig.h>
+#include <aws/pcs/model/NodeLifecycleActionsRequest.h>
 #include <aws/pcs/model/PurchaseOption.h>
 #include <aws/pcs/model/ScalingConfigurationRequest.h>
 #include <aws/pcs/model/SpotOptions.h>
@@ -272,6 +273,27 @@ class CreateComputeNodeGroupRequest : public PCSRequest {
 
   ///@{
   /**
+   * <p>The lifecycle actions to run on compute nodes in the compute node group. Use
+   * lifecycle actions to run custom scripts at defined stages of a compute node's
+   * lifecycle, such as when a compute node finishes bootstrapping or becomes ready
+   * to accept jobs.</p>
+   */
+  inline const NodeLifecycleActionsRequest& GetNodeLifecycleActions() const { return m_nodeLifecycleActions; }
+  inline bool NodeLifecycleActionsHasBeenSet() const { return m_nodeLifecycleActionsHasBeenSet; }
+  template <typename NodeLifecycleActionsT = NodeLifecycleActionsRequest>
+  void SetNodeLifecycleActions(NodeLifecycleActionsT&& value) {
+    m_nodeLifecycleActionsHasBeenSet = true;
+    m_nodeLifecycleActions = std::forward<NodeLifecycleActionsT>(value);
+  }
+  template <typename NodeLifecycleActionsT = NodeLifecycleActionsRequest>
+  CreateComputeNodeGroupRequest& WithNodeLifecycleActions(NodeLifecycleActionsT&& value) {
+    SetNodeLifecycleActions(std::forward<NodeLifecycleActionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request. Idempotency ensures that an API request completes
    * only once. With an idempotent request, if the original request completes
@@ -341,6 +363,8 @@ class CreateComputeNodeGroupRequest : public PCSRequest {
 
   ComputeNodeGroupSlurmConfigurationRequest m_slurmConfiguration;
 
+  NodeLifecycleActionsRequest m_nodeLifecycleActions;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -355,6 +379,7 @@ class CreateComputeNodeGroupRequest : public PCSRequest {
   bool m_instanceConfigsHasBeenSet = false;
   bool m_spotOptionsHasBeenSet = false;
   bool m_slurmConfigurationHasBeenSet = false;
+  bool m_nodeLifecycleActionsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };

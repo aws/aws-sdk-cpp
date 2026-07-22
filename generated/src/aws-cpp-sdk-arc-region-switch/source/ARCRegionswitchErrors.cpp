@@ -15,6 +15,7 @@ namespace Aws {
 namespace ARCRegionswitch {
 namespace ARCRegionswitchErrorMapper {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int ILLEGAL_ARGUMENT_HASH = HashingUtils::HashString("IllegalArgumentException");
 static const int ILLEGAL_STATE_HASH = HashingUtils::HashString("IllegalStateException");
@@ -22,7 +23,9 @@ static const int ILLEGAL_STATE_HASH = HashingUtils::HashString("IllegalStateExce
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_SERVER_HASH) {
+  if (hashCode == CONFLICT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ARCRegionswitchErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ARCRegionswitchErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == ILLEGAL_ARGUMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ARCRegionswitchErrors::ILLEGAL_ARGUMENT), RetryableType::NOT_RETRYABLE);

@@ -10,7 +10,18 @@
 namespace Aws {
 namespace ObservabilityAdmin {
 namespace Model {
-enum class LogType { NOT_SET, APPLICATION_LOGS, USAGE_LOGS, SECURITY_FINDING_LOGS, ACCESS_LOGS, CONNECTION_LOGS, S3_SERVER_ACCESS_LOGS };
+enum class LogType {
+  NOT_SET,
+  APPLICATION_LOGS,
+  USAGE_LOGS,
+  SECURITY_FINDING_LOGS,
+  ACCESS_LOGS,
+  CONNECTION_LOGS,
+  S3_SERVER_ACCESS_LOGS,
+  ALB_ACCESS_LOGS,
+  ALB_CONNECTION_LOGS,
+  ALB_HEALTH_CHECK_LOGS
+};
 
 namespace LogTypeMapper {
 AWS_OBSERVABILITYADMIN_API LogType GetLogTypeForName(const Aws::String& name);

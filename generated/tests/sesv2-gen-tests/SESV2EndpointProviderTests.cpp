@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<SESV2EndpointProviderEndpointTestCase>> SESV2EndpointProviderTests::TEST_CASES;
-const size_t SESV2EndpointProviderTests::TEST_CASES_SZ = 52;
+const size_t SESV2EndpointProviderTests::TEST_CASES_SZ = 62;
 
 Aws::Vector<SESV2EndpointProviderEndpointTestCase> SESV2EndpointProviderTests::getTestCase() {
 
@@ -522,6 +522,87 @@ Aws::Vector<SESV2EndpointProviderEndpointTestCase> SESV2EndpointProviderTests::g
     {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS is not supported with multi-region endpoints"} // expect
+  },
+  /*TEST CASE 52*/
+  {"Gov IPv4 only: us-gov-west-1 primary, dualstack and FIPS disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://abc123.456def.endpoints.email.us-gov.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 53*/
+  {"Gov IPv4 only: us-gov-east-1, dualstack and FIPS disabled (proves both gov regions resolve identically)", // documentation
+    {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://abc123.456def.endpoints.email.us-gov.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 54*/
+  {"Gov dualstack: us-gov-west-1, dualstack enabled, FIPS disabled (no global. prefix; api.aws not global.api.aws)", // documentation
+    {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://abc123.456def.endpoints.email.us-gov.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 55*/
+  {"Gov FIPS: us-gov-west-1, FIPS enabled, dualstack disabled — FIPS not supported with multi-region endpoints", // documentation
+    {EpParam("UseFIPS", true), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS is not supported with multi-region endpoints"} // expect
+  },
+  /*TEST CASE 56*/
+  {"Gov FIPS+dualstack: us-gov-west-1, both FIPS and dualstack enabled — FIPS check precedes dualstack branch selection", // documentation
+    {EpParam("UseFIPS", true), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS is not supported with multi-region endpoints"} // expect
+  },
+  /*TEST CASE 57*/
+  {"Gov custom SDK endpoint: us-gov-west-1, EndpointId set, custom Endpoint — passes through unchanged with SigV4a", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 58*/
+  {"China IPv4 regression: cn-north-1, dualstack disabled — endpoint uses aws-cn dnsSuffix (amazonaws.com.cn)", // documentation
+    {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://abc123.456def.endpoints.email.amazonaws.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 59*/
+  {"China dualstack regression: cn-north-1, dualstack enabled — uses global. prefix with aws-cn dualStackDnsSuffix (api.amazonwebservices.com.cn)", // documentation
+    {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://abc123.456def.endpoints.email.global.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 60*/
+  {"Gov custom SDK endpoint with FIPS: FIPS guard sits above the SDK passthrough, so error wins", // documentation
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS is not supported with multi-region endpoints"} // expect
+  },
+  /*TEST CASE 61*/
+  {"Gov dualstack OSU (us-gov-east-1) matches PDT dualstack output (us-gov.api.aws, no global. prefix)", // documentation
+    {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://abc123.456def.endpoints.email.us-gov.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
   }
   };
   return test_cases;

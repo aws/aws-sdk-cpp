@@ -44,6 +44,8 @@ static const int AWS_SES_AP_SOUTH_2_HASH = HashingUtils::HashString("AWS_SES_AP_
 static const int AWS_SES_EU_CENTRAL_2_HASH = HashingUtils::HashString("AWS_SES_EU_CENTRAL_2");
 static const int AWS_SES_AP_SOUTHEAST_5_HASH = HashingUtils::HashString("AWS_SES_AP_SOUTHEAST_5");
 static const int AWS_SES_CA_WEST_1_HASH = HashingUtils::HashString("AWS_SES_CA_WEST_1");
+static const int AWS_SES_US_GOV_EAST_1_HASH = HashingUtils::HashString("AWS_SES_US_GOV_EAST_1");
+static const int AWS_SES_US_GOV_WEST_1_HASH = HashingUtils::HashString("AWS_SES_US_GOV_WEST_1");
 
 DkimSigningAttributesOrigin GetDkimSigningAttributesOriginForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -105,6 +107,10 @@ DkimSigningAttributesOrigin GetDkimSigningAttributesOriginForName(const Aws::Str
     return DkimSigningAttributesOrigin::AWS_SES_AP_SOUTHEAST_5;
   } else if (hashCode == AWS_SES_CA_WEST_1_HASH) {
     return DkimSigningAttributesOrigin::AWS_SES_CA_WEST_1;
+  } else if (hashCode == AWS_SES_US_GOV_EAST_1_HASH) {
+    return DkimSigningAttributesOrigin::AWS_SES_US_GOV_EAST_1;
+  } else if (hashCode == AWS_SES_US_GOV_WEST_1_HASH) {
+    return DkimSigningAttributesOrigin::AWS_SES_US_GOV_WEST_1;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -177,6 +183,10 @@ Aws::String GetNameForDkimSigningAttributesOrigin(DkimSigningAttributesOrigin en
       return "AWS_SES_AP_SOUTHEAST_5";
     case DkimSigningAttributesOrigin::AWS_SES_CA_WEST_1:
       return "AWS_SES_CA_WEST_1";
+    case DkimSigningAttributesOrigin::AWS_SES_US_GOV_EAST_1:
+      return "AWS_SES_US_GOV_EAST_1";
+    case DkimSigningAttributesOrigin::AWS_SES_US_GOV_WEST_1:
+      return "AWS_SES_US_GOV_WEST_1";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -31,7 +31,8 @@ enum class ResourceType {
   AWS_SecurityHub_HubV2,
   AWS_CloudWatch_OTelEnrichment,
   AWS_MSK_Cluster,
-  AWS_S3_Bucket
+  AWS_S3_Bucket,
+  AWS_Bedrock_KnowledgeBase
 };
 
 namespace ResourceTypeMapper {

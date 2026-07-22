@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/amp/model/AmpConfiguration.h>
+#include <aws/amp/model/CloudWatchConfiguration.h>
 
 #include <utility>
 
@@ -48,9 +49,30 @@ class Destination {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The CloudWatch dataset to send metrics to.</p>
+   */
+  inline const CloudWatchConfiguration& GetCloudWatchConfiguration() const { return m_cloudWatchConfiguration; }
+  inline bool CloudWatchConfigurationHasBeenSet() const { return m_cloudWatchConfigurationHasBeenSet; }
+  template <typename CloudWatchConfigurationT = CloudWatchConfiguration>
+  void SetCloudWatchConfiguration(CloudWatchConfigurationT&& value) {
+    m_cloudWatchConfigurationHasBeenSet = true;
+    m_cloudWatchConfiguration = std::forward<CloudWatchConfigurationT>(value);
+  }
+  template <typename CloudWatchConfigurationT = CloudWatchConfiguration>
+  Destination& WithCloudWatchConfiguration(CloudWatchConfigurationT&& value) {
+    SetCloudWatchConfiguration(std::forward<CloudWatchConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AmpConfiguration m_ampConfiguration;
+
+  CloudWatchConfiguration m_cloudWatchConfiguration;
   bool m_ampConfigurationHasBeenSet = false;
+  bool m_cloudWatchConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

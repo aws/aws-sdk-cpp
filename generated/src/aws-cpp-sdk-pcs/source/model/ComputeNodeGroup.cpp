@@ -88,6 +88,10 @@ ComputeNodeGroup& ComputeNodeGroup::operator=(JsonView jsonValue) {
     m_slurmConfiguration = jsonValue.GetObject("slurmConfiguration");
     m_slurmConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("nodeLifecycleActions")) {
+    m_nodeLifecycleActions = jsonValue.GetObject("nodeLifecycleActions");
+    m_nodeLifecycleActionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("errorInfo")) {
     Aws::Utils::Array<JsonView> errorInfoJsonList = jsonValue.GetArray("errorInfo");
     for (unsigned errorInfoIndex = 0; errorInfoIndex < errorInfoJsonList.GetLength(); ++errorInfoIndex) {
@@ -171,6 +175,10 @@ JsonValue ComputeNodeGroup::Jsonize() const {
 
   if (m_slurmConfigurationHasBeenSet) {
     payload.WithObject("slurmConfiguration", m_slurmConfiguration.Jsonize());
+  }
+
+  if (m_nodeLifecycleActionsHasBeenSet) {
+    payload.WithObject("nodeLifecycleActions", m_nodeLifecycleActions.Jsonize());
   }
 
   if (m_errorInfoHasBeenSet) {

@@ -22,6 +22,10 @@ Destination& Destination::operator=(JsonView jsonValue) {
     m_ampConfiguration = jsonValue.GetObject("ampConfiguration");
     m_ampConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("cloudWatchConfiguration")) {
+    m_cloudWatchConfiguration = jsonValue.GetObject("cloudWatchConfiguration");
+    m_cloudWatchConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue Destination::Jsonize() const {
 
   if (m_ampConfigurationHasBeenSet) {
     payload.WithObject("ampConfiguration", m_ampConfiguration.Jsonize());
+  }
+
+  if (m_cloudWatchConfigurationHasBeenSet) {
+    payload.WithObject("cloudWatchConfiguration", m_cloudWatchConfiguration.Jsonize());
   }
 
   return payload;
