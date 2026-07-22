@@ -24,9 +24,8 @@ class S3TransferManagerImpl;
 /**
  * Customers construct an instance directly. The manager owns the underlying CRT client; it is
  * neither copyable nor movable. If construction cannot produce a usable manager (e.g. the CRT
- * S3 client fails to build), the instance enters an error state: IsInitialized() returns false
- * and Upload()/Download() fail immediately via the returned handle with the specific init
- * error. Customers can check IsInitialized() up-front, or rely on the per-call failure path.
+ * S3 client fails to build), Upload()/Download() fail immediately via the returned handle,
+ * whose future carries the specific initialization error.
  */
 class AWS_S3_TRANSFER_API S3TransferManager final {
  public:
@@ -60,18 +59,6 @@ class AWS_S3_TRANSFER_API S3TransferManager final {
   S3TransferManager& operator=(const S3TransferManager&) = delete;
   S3TransferManager(S3TransferManager&&) noexcept = delete;
   S3TransferManager& operator=(S3TransferManager&&) noexcept = delete;
-
-  /**
-   * True if construction succeeded. If false, Upload()/Download() will fail immediately via
-   * the returned handle with the error reported by GetInitializationError().
-   */
-  bool IsInitialized() const;
-
-  /**
-   * The specific error captured during construction. Only meaningful when IsInitialized() is
-   * false; on a successfully-initialized manager the returned error is default-constructed.
-   */
-  const Aws::Client::AWSError<Aws::S3::S3Errors>& GetInitializationError() const;
 
   /**
    * Begin uploading the object described by request. Returns immediately with a handle that can be

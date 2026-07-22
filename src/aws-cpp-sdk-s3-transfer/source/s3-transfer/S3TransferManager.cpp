@@ -37,12 +37,6 @@ S3TransferManager::S3TransferManager(const std::shared_ptr<Aws::Auth::AWSCredent
     : m_impl(Aws::MakeUnique<S3TransferManagerImpl>(
           S3_TRANSFER_MANAGER_ALLOCATION_TAG, config, credentialsProvider, endpointProvider)) {}
 
-bool S3TransferManager::IsInitialized() const { return m_impl->IsInitialized(); }
-
-const Aws::Client::AWSError<Aws::S3::S3Errors>& S3TransferManager::GetInitializationError() const {
-  return m_impl->GetInitializationError();
-}
-
 UploadHandle S3TransferManager::Upload(const UploadRequest& request) {
   return Internal::CrtOperations::DispatchUpload(*m_impl, request);
 }
