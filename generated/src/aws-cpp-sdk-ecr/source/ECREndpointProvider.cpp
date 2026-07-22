@@ -4,9 +4,14 @@
  */
 
 #include <aws/ecr/ECREndpointProvider.h>
+#include <aws/ecr/internal/ECREndpointRules.h>
 
 namespace Aws {
 namespace ECR {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ECREndpointProvider::ECREndpointProvider()
+    : ECRDefaultEpProviderBase(Aws::ECR::ECREndpointRules::GetRulesBlob(), Aws::ECR::ECREndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ECR
 }  // namespace Aws

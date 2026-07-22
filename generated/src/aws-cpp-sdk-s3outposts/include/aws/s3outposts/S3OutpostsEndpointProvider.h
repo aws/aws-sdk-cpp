@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/s3outposts/S3OutpostsEndpointRules.h>
 #include <aws/s3outposts/S3Outposts_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_S3OUTPOSTS_API S3OutpostsEndpointProvider : public S3OutpostsDefaultEp
  public:
   using S3OutpostsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  S3OutpostsEndpointProvider()
-      : S3OutpostsDefaultEpProviderBase(Aws::S3Outposts::S3OutpostsEndpointRules::GetRulesBlob(),
-                                        Aws::S3Outposts::S3OutpostsEndpointRules::RulesBlobSize) {}
+  S3OutpostsEndpointProvider();
 
   ~S3OutpostsEndpointProvider() {}
 };

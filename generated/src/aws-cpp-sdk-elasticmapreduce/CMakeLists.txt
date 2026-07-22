@@ -8,6 +8,10 @@ file(GLOB AWS_ELASTICMAPREDUCE_MODEL_HEADERS
     "include/aws/elasticmapreduce/model/*.h"
 )
 
+file(GLOB AWS_ELASTICMAPREDUCE_INTERNAL_HEADERS
+    "include/aws/elasticmapreduce/internal/*.h"
+)
+
 file(GLOB AWS_ELASTICMAPREDUCE_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_ELASTICMAPREDUCE_MODEL_SOURCE
 
 file(GLOB ELASTICMAPREDUCE_UNIFIED_HEADERS
     ${AWS_ELASTICMAPREDUCE_HEADERS}
+    ${AWS_ELASTICMAPREDUCE_INTERNAL_HEADERS}
     ${AWS_ELASTICMAPREDUCE_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\elasticmapreduce" FILES ${AWS_ELASTICMAPREDUCE_HEADERS})
+        source_group("Header Files\\aws\\elasticmapreduce\\internal" FILES ${AWS_ELASTICMAPREDUCE_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\elasticmapreduce\\model" FILES ${AWS_ELASTICMAPREDUCE_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_ELASTICMAPREDUCE_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_ELASTICMAPREDUCE_MODEL_SOURCE})

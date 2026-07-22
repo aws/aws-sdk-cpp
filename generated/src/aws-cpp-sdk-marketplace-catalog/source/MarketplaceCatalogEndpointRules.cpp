@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/marketplace-catalog/MarketplaceCatalogEndpointRules.h>
+#include <aws/marketplace-catalog/internal/MarketplaceCatalogEndpointRules.h>
 
 namespace Aws {
 namespace MarketplaceCatalog {

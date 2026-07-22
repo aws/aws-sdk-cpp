@@ -8,6 +8,10 @@ file(GLOB AWS_KINESISANALYTICS_MODEL_HEADERS
     "include/aws/kinesisanalytics/model/*.h"
 )
 
+file(GLOB AWS_KINESISANALYTICS_INTERNAL_HEADERS
+    "include/aws/kinesisanalytics/internal/*.h"
+)
+
 file(GLOB AWS_KINESISANALYTICS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_KINESISANALYTICS_MODEL_SOURCE
 
 file(GLOB KINESISANALYTICS_UNIFIED_HEADERS
     ${AWS_KINESISANALYTICS_HEADERS}
+    ${AWS_KINESISANALYTICS_INTERNAL_HEADERS}
     ${AWS_KINESISANALYTICS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\kinesisanalytics" FILES ${AWS_KINESISANALYTICS_HEADERS})
+        source_group("Header Files\\aws\\kinesisanalytics\\internal" FILES ${AWS_KINESISANALYTICS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\kinesisanalytics\\model" FILES ${AWS_KINESISANALYTICS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_KINESISANALYTICS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_KINESISANALYTICS_MODEL_SOURCE})

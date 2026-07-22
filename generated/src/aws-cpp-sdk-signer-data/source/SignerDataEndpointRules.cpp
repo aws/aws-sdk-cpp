@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/signer-data/SignerDataEndpointRules.h>
+#include <aws/signer-data/internal/SignerDataEndpointRules.h>
 
 namespace Aws {
 namespace SignerData {

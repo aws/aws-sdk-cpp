@@ -8,12 +8,12 @@
 
 #include <aws/awstransfer/TransferClient.h>
 #include <aws/awstransfer/TransferEndpointProvider.h>
-#include <aws/awstransfer/TransferEndpointRules.h>
 #include <aws/awstransfer/TransferErrorMarshaller.h>
 #include <aws/awstransfer/TransferErrors.h>
 #include <aws/awstransfer/TransferRequest.h>
 #include <aws/awstransfer/TransferServiceClientModel.h>
 #include <aws/awstransfer/Transfer_EXPORTS.h>
+#include <aws/awstransfer/internal/TransferEndpointRules.h>
 #include <aws/awstransfer/model/AgreementStatusType.h>
 #include <aws/awstransfer/model/As2AsyncMdnConnectorConfig.h>
 #include <aws/awstransfer/model/As2ConnectorConfig.h>

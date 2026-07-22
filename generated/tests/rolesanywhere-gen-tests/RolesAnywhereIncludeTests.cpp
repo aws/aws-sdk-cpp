@@ -8,12 +8,12 @@
 
 #include <aws/rolesanywhere/RolesAnywhereClient.h>
 #include <aws/rolesanywhere/RolesAnywhereEndpointProvider.h>
-#include <aws/rolesanywhere/RolesAnywhereEndpointRules.h>
 #include <aws/rolesanywhere/RolesAnywhereErrorMarshaller.h>
 #include <aws/rolesanywhere/RolesAnywhereErrors.h>
 #include <aws/rolesanywhere/RolesAnywhereRequest.h>
 #include <aws/rolesanywhere/RolesAnywhereServiceClientModel.h>
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
+#include <aws/rolesanywhere/internal/RolesAnywhereEndpointRules.h>
 #include <aws/rolesanywhere/model/AttributeMapping.h>
 #include <aws/rolesanywhere/model/CertificateField.h>
 #include <aws/rolesanywhere/model/CreateProfileRequest.h>

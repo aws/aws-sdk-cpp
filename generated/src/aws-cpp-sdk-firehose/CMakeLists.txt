@@ -8,6 +8,10 @@ file(GLOB AWS_FIREHOSE_MODEL_HEADERS
     "include/aws/firehose/model/*.h"
 )
 
+file(GLOB AWS_FIREHOSE_INTERNAL_HEADERS
+    "include/aws/firehose/internal/*.h"
+)
+
 file(GLOB AWS_FIREHOSE_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_FIREHOSE_MODEL_SOURCE
 
 file(GLOB FIREHOSE_UNIFIED_HEADERS
     ${AWS_FIREHOSE_HEADERS}
+    ${AWS_FIREHOSE_INTERNAL_HEADERS}
     ${AWS_FIREHOSE_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\firehose" FILES ${AWS_FIREHOSE_HEADERS})
+        source_group("Header Files\\aws\\firehose\\internal" FILES ${AWS_FIREHOSE_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\firehose\\model" FILES ${AWS_FIREHOSE_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_FIREHOSE_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_FIREHOSE_MODEL_SOURCE})

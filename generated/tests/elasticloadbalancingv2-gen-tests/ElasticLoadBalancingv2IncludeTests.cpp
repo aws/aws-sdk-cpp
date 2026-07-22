@@ -8,12 +8,12 @@
 
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Client.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2EndpointProvider.h>
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2EndpointRules.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2ErrorMarshaller.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Errors.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Request.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2ServiceClientModel.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
+#include <aws/elasticloadbalancingv2/internal/ElasticLoadBalancingv2EndpointRules.h>
 #include <aws/elasticloadbalancingv2/model/Action.h>
 #include <aws/elasticloadbalancingv2/model/ActionTypeEnum.h>
 #include <aws/elasticloadbalancingv2/model/AddListenerCertificatesRequest.h>

@@ -9,12 +9,12 @@
 #include <aws/timestream-query/TimestreamQueryClient.h>
 #include <aws/timestream-query/TimestreamQueryClientConfiguration.h>
 #include <aws/timestream-query/TimestreamQueryEndpointProvider.h>
-#include <aws/timestream-query/TimestreamQueryEndpointRules.h>
 #include <aws/timestream-query/TimestreamQueryErrorMarshaller.h>
 #include <aws/timestream-query/TimestreamQueryErrors.h>
 #include <aws/timestream-query/TimestreamQueryRequest.h>
 #include <aws/timestream-query/TimestreamQueryServiceClientModel.h>
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
+#include <aws/timestream-query/internal/TimestreamQueryEndpointRules.h>
 #include <aws/timestream-query/model/AccountSettingsNotificationConfiguration.h>
 #include <aws/timestream-query/model/CancelQueryRequest.h>
 #include <aws/timestream-query/model/CancelQueryResult.h>

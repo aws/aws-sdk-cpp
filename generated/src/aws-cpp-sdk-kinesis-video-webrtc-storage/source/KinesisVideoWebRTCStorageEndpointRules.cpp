@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageEndpointRules.h>
+#include <aws/kinesis-video-webrtc-storage/internal/KinesisVideoWebRTCStorageEndpointRules.h>
 
 namespace Aws {
 namespace KinesisVideoWebRTCStorage {

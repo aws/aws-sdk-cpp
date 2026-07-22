@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/greengrassv2/GreengrassV2EndpointRules.h>
 #include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_GREENGRASSV2_API GreengrassV2EndpointProvider : public GreengrassV2Def
  public:
   using GreengrassV2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  GreengrassV2EndpointProvider()
-      : GreengrassV2DefaultEpProviderBase(Aws::GreengrassV2::GreengrassV2EndpointRules::GetRulesBlob(),
-                                          Aws::GreengrassV2::GreengrassV2EndpointRules::RulesBlobSize) {}
+  GreengrassV2EndpointProvider();
 
   ~GreengrassV2EndpointProvider() {}
 };

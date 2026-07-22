@@ -8,12 +8,12 @@
 
 #include <aws/emr-serverless/EMRServerlessClient.h>
 #include <aws/emr-serverless/EMRServerlessEndpointProvider.h>
-#include <aws/emr-serverless/EMRServerlessEndpointRules.h>
 #include <aws/emr-serverless/EMRServerlessErrorMarshaller.h>
 #include <aws/emr-serverless/EMRServerlessErrors.h>
 #include <aws/emr-serverless/EMRServerlessRequest.h>
 #include <aws/emr-serverless/EMRServerlessServiceClientModel.h>
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
+#include <aws/emr-serverless/internal/EMRServerlessEndpointRules.h>
 #include <aws/emr-serverless/model/Application.h>
 #include <aws/emr-serverless/model/ApplicationState.h>
 #include <aws/emr-serverless/model/ApplicationSummary.h>

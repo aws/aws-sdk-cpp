@@ -8,6 +8,10 @@ file(GLOB AWS_M2_MODEL_HEADERS
     "include/aws/m2/model/*.h"
 )
 
+file(GLOB AWS_M2_INTERNAL_HEADERS
+    "include/aws/m2/internal/*.h"
+)
+
 file(GLOB AWS_M2_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_M2_MODEL_SOURCE
 
 file(GLOB M2_UNIFIED_HEADERS
     ${AWS_M2_HEADERS}
+    ${AWS_M2_INTERNAL_HEADERS}
     ${AWS_M2_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\m2" FILES ${AWS_M2_HEADERS})
+        source_group("Header Files\\aws\\m2\\internal" FILES ${AWS_M2_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\m2\\model" FILES ${AWS_M2_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_M2_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_M2_MODEL_SOURCE})

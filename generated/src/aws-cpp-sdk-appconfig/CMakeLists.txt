@@ -8,6 +8,10 @@ file(GLOB AWS_APPCONFIG_MODEL_HEADERS
     "include/aws/appconfig/model/*.h"
 )
 
+file(GLOB AWS_APPCONFIG_INTERNAL_HEADERS
+    "include/aws/appconfig/internal/*.h"
+)
+
 file(GLOB AWS_APPCONFIG_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_APPCONFIG_MODEL_SOURCE
 
 file(GLOB APPCONFIG_UNIFIED_HEADERS
     ${AWS_APPCONFIG_HEADERS}
+    ${AWS_APPCONFIG_INTERNAL_HEADERS}
     ${AWS_APPCONFIG_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\appconfig" FILES ${AWS_APPCONFIG_HEADERS})
+        source_group("Header Files\\aws\\appconfig\\internal" FILES ${AWS_APPCONFIG_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\appconfig\\model" FILES ${AWS_APPCONFIG_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_APPCONFIG_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_APPCONFIG_MODEL_SOURCE})

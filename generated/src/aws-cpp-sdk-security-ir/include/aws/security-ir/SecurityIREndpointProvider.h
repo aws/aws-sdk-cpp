@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/security-ir/SecurityIREndpointRules.h>
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SECURITYIR_API SecurityIREndpointProvider : public SecurityIRDefaultEp
  public:
   using SecurityIRResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SecurityIREndpointProvider()
-      : SecurityIRDefaultEpProviderBase(Aws::SecurityIR::SecurityIREndpointRules::GetRulesBlob(),
-                                        Aws::SecurityIR::SecurityIREndpointRules::RulesBlobSize) {}
+  SecurityIREndpointProvider();
 
   ~SecurityIREndpointProvider() {}
 };

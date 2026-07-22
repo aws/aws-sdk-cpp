@@ -8,6 +8,10 @@ file(GLOB AWS_GEO-ROUTES_MODEL_HEADERS
     "include/aws/geo-routes/model/*.h"
 )
 
+file(GLOB AWS_GEO-ROUTES_INTERNAL_HEADERS
+    "include/aws/geo-routes/internal/*.h"
+)
+
 file(GLOB AWS_GEO-ROUTES_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_GEO-ROUTES_MODEL_SOURCE
 
 file(GLOB GEO-ROUTES_UNIFIED_HEADERS
     ${AWS_GEO-ROUTES_HEADERS}
+    ${AWS_GEO-ROUTES_INTERNAL_HEADERS}
     ${AWS_GEO-ROUTES_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\geo-routes" FILES ${AWS_GEO-ROUTES_HEADERS})
+        source_group("Header Files\\aws\\geo-routes\\internal" FILES ${AWS_GEO-ROUTES_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\geo-routes\\model" FILES ${AWS_GEO-ROUTES_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_GEO-ROUTES_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_GEO-ROUTES_MODEL_SOURCE})

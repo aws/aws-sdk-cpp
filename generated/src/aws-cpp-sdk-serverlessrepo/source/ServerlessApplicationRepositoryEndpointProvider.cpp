@@ -4,9 +4,16 @@
  */
 
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryEndpointProvider.h>
+#include <aws/serverlessrepo/internal/ServerlessApplicationRepositoryEndpointRules.h>
 
 namespace Aws {
 namespace ServerlessApplicationRepository {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ServerlessApplicationRepositoryEndpointProvider::ServerlessApplicationRepositoryEndpointProvider()
+    : ServerlessApplicationRepositoryDefaultEpProviderBase(
+          Aws::ServerlessApplicationRepository::ServerlessApplicationRepositoryEndpointRules::GetRulesBlob(),
+          Aws::ServerlessApplicationRepository::ServerlessApplicationRepositoryEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ServerlessApplicationRepository
 }  // namespace Aws

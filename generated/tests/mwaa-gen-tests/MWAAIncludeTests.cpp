@@ -8,12 +8,12 @@
 
 #include <aws/mwaa/MWAAClient.h>
 #include <aws/mwaa/MWAAEndpointProvider.h>
-#include <aws/mwaa/MWAAEndpointRules.h>
 #include <aws/mwaa/MWAAErrorMarshaller.h>
 #include <aws/mwaa/MWAAErrors.h>
 #include <aws/mwaa/MWAARequest.h>
 #include <aws/mwaa/MWAAServiceClientModel.h>
 #include <aws/mwaa/MWAA_EXPORTS.h>
+#include <aws/mwaa/internal/MWAAEndpointRules.h>
 #include <aws/mwaa/model/CreateCliTokenRequest.h>
 #include <aws/mwaa/model/CreateCliTokenResult.h>
 #include <aws/mwaa/model/CreateEnvironmentRequest.h>

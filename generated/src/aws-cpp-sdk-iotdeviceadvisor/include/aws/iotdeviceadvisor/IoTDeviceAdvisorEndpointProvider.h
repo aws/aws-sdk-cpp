@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iotdeviceadvisor/IoTDeviceAdvisorEndpointRules.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisor_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_IOTDEVICEADVISOR_API IoTDeviceAdvisorEndpointProvider : public IoTDevi
  public:
   using IoTDeviceAdvisorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IoTDeviceAdvisorEndpointProvider()
-      : IoTDeviceAdvisorDefaultEpProviderBase(Aws::IoTDeviceAdvisor::IoTDeviceAdvisorEndpointRules::GetRulesBlob(),
-                                              Aws::IoTDeviceAdvisor::IoTDeviceAdvisorEndpointRules::RulesBlobSize) {}
+  IoTDeviceAdvisorEndpointProvider();
 
   ~IoTDeviceAdvisorEndpointProvider() {}
 };

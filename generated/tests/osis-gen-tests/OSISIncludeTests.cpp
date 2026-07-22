@@ -8,12 +8,12 @@
 
 #include <aws/osis/OSISClient.h>
 #include <aws/osis/OSISEndpointProvider.h>
-#include <aws/osis/OSISEndpointRules.h>
 #include <aws/osis/OSISErrorMarshaller.h>
 #include <aws/osis/OSISErrors.h>
 #include <aws/osis/OSISRequest.h>
 #include <aws/osis/OSISServiceClientModel.h>
 #include <aws/osis/OSIS_EXPORTS.h>
+#include <aws/osis/internal/OSISEndpointRules.h>
 #include <aws/osis/model/BufferOptions.h>
 #include <aws/osis/model/ChangeProgressStage.h>
 #include <aws/osis/model/ChangeProgressStageStatuses.h>

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/opensearch/OpenSearchServiceEndpointRules.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceEndpointProvider : public OpenS
  public:
   using OpenSearchServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  OpenSearchServiceEndpointProvider()
-      : OpenSearchServiceDefaultEpProviderBase(Aws::OpenSearchService::OpenSearchServiceEndpointRules::GetRulesBlob(),
-                                               Aws::OpenSearchService::OpenSearchServiceEndpointRules::RulesBlobSize) {}
+  OpenSearchServiceEndpointProvider();
 
   ~OpenSearchServiceEndpointProvider() {}
 };

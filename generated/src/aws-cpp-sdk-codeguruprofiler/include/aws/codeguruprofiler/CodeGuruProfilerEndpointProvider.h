@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/codeguruprofiler/CodeGuruProfilerEndpointRules.h>
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -43,9 +42,7 @@ class AWS_CODEGURUPROFILER_API CodeGuruProfilerEndpointProvider : public CodeGur
  public:
   using CodeGuruProfilerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CodeGuruProfilerEndpointProvider()
-      : CodeGuruProfilerDefaultEpProviderBase(Aws::CodeGuruProfiler::CodeGuruProfilerEndpointRules::GetRulesBlob(),
-                                              Aws::CodeGuruProfiler::CodeGuruProfilerEndpointRules::RulesBlobSize) {}
+  CodeGuruProfilerEndpointProvider();
 
   ~CodeGuruProfilerEndpointProvider() {}
 };

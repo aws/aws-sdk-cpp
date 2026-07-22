@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/storagegateway/StorageGatewayEndpointRules.h>
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_STORAGEGATEWAY_API StorageGatewayEndpointProvider : public StorageGate
  public:
   using StorageGatewayResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  StorageGatewayEndpointProvider()
-      : StorageGatewayDefaultEpProviderBase(Aws::StorageGateway::StorageGatewayEndpointRules::GetRulesBlob(),
-                                            Aws::StorageGateway::StorageGatewayEndpointRules::RulesBlobSize) {}
+  StorageGatewayEndpointProvider();
 
   ~StorageGatewayEndpointProvider() {}
 };

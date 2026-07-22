@@ -8,12 +8,12 @@
 
 #include <aws/comprehend/ComprehendClient.h>
 #include <aws/comprehend/ComprehendEndpointProvider.h>
-#include <aws/comprehend/ComprehendEndpointRules.h>
 #include <aws/comprehend/ComprehendErrorMarshaller.h>
 #include <aws/comprehend/ComprehendErrors.h>
 #include <aws/comprehend/ComprehendRequest.h>
 #include <aws/comprehend/ComprehendServiceClientModel.h>
 #include <aws/comprehend/Comprehend_EXPORTS.h>
+#include <aws/comprehend/internal/ComprehendEndpointRules.h>
 #include <aws/comprehend/model/AugmentedManifestsDocumentTypeFormat.h>
 #include <aws/comprehend/model/AugmentedManifestsListItem.h>
 #include <aws/comprehend/model/BatchDetectDominantLanguageItemResult.h>

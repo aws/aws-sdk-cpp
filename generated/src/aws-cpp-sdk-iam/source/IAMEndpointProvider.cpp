@@ -4,9 +4,14 @@
  */
 
 #include <aws/iam/IAMEndpointProvider.h>
+#include <aws/iam/internal/IAMEndpointRules.h>
 
 namespace Aws {
 namespace IAM {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+IAMEndpointProvider::IAMEndpointProvider()
+    : IAMDefaultEpProviderBase(Aws::IAM::IAMEndpointRules::GetRulesBlob(), Aws::IAM::IAMEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace IAM
 }  // namespace Aws

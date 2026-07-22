@@ -8,12 +8,12 @@
 
 #include <aws/codebuild/CodeBuildClient.h>
 #include <aws/codebuild/CodeBuildEndpointProvider.h>
-#include <aws/codebuild/CodeBuildEndpointRules.h>
 #include <aws/codebuild/CodeBuildErrorMarshaller.h>
 #include <aws/codebuild/CodeBuildErrors.h>
 #include <aws/codebuild/CodeBuildRequest.h>
 #include <aws/codebuild/CodeBuildServiceClientModel.h>
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
+#include <aws/codebuild/internal/CodeBuildEndpointRules.h>
 #include <aws/codebuild/model/ArtifactNamespace.h>
 #include <aws/codebuild/model/ArtifactPackaging.h>
 #include <aws/codebuild/model/ArtifactsType.h>

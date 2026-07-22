@@ -8,6 +8,10 @@ file(GLOB AWS_DEADLINE_MODEL_HEADERS
     "include/aws/deadline/model/*.h"
 )
 
+file(GLOB AWS_DEADLINE_INTERNAL_HEADERS
+    "include/aws/deadline/internal/*.h"
+)
+
 file(GLOB AWS_DEADLINE_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_DEADLINE_MODEL_SOURCE
 
 file(GLOB DEADLINE_UNIFIED_HEADERS
     ${AWS_DEADLINE_HEADERS}
+    ${AWS_DEADLINE_INTERNAL_HEADERS}
     ${AWS_DEADLINE_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\deadline" FILES ${AWS_DEADLINE_HEADERS})
+        source_group("Header Files\\aws\\deadline\\internal" FILES ${AWS_DEADLINE_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\deadline\\model" FILES ${AWS_DEADLINE_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_DEADLINE_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_DEADLINE_MODEL_SOURCE})

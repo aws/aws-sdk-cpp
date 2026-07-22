@@ -4,6 +4,7 @@
  */
 
 #include <aws/timestream-write/TimestreamWriteEndpointProvider.h>
+#include <aws/timestream-write/internal/TimestreamWriteEndpointRules.h>
 
 namespace Aws {
 #ifndef AWS_TIMESTREAMWRITE_EXPORTS  // Except for Windows DLL
@@ -23,6 +24,10 @@ template class Aws::Endpoint::DefaultEndpointProvider<TimestreamWrite::Endpoint:
 
 namespace TimestreamWrite {
 namespace Endpoint {
+TimestreamWriteEndpointProvider::TimestreamWriteEndpointProvider()
+    : TimestreamWriteDefaultEpProviderBase(Aws::TimestreamWrite::TimestreamWriteEndpointRules::GetRulesBlob(),
+                                           Aws::TimestreamWrite::TimestreamWriteEndpointRules::RulesBlobSize) {}
+
 void TimestreamWriteBuiltInParameters::SetFromClientConfiguration(const TimestreamWriteClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const TimestreamWriteClientConfiguration::BaseClientConfigClass&>(config));
 }

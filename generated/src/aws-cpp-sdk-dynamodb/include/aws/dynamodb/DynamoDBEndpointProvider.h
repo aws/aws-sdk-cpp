@@ -9,7 +9,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/DynamoDBClientConfiguration.h>
-#include <aws/dynamodb/DynamoDBEndpointRules.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
 namespace Aws {
@@ -65,9 +64,7 @@ class AWS_DYNAMODB_API DynamoDBEndpointProvider : public DynamoDBDefaultEpProvid
  public:
   using DynamoDBResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DynamoDBEndpointProvider()
-      : DynamoDBDefaultEpProviderBase(Aws::DynamoDB::DynamoDBEndpointRules::GetRulesBlob(),
-                                      Aws::DynamoDB::DynamoDBEndpointRules::RulesBlobSize) {}
+  DynamoDBEndpointProvider();
 
   ~DynamoDBEndpointProvider() {}
 };

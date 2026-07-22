@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/route53-recovery-cluster/Route53RecoveryClusterEndpointRules.h>
+#include <aws/route53-recovery-cluster/internal/Route53RecoveryClusterEndpointRules.h>
 
 namespace Aws {
 namespace Route53RecoveryCluster {

@@ -8,12 +8,12 @@
 
 #include <aws/geo-places/GeoPlacesClient.h>
 #include <aws/geo-places/GeoPlacesEndpointProvider.h>
-#include <aws/geo-places/GeoPlacesEndpointRules.h>
 #include <aws/geo-places/GeoPlacesErrorMarshaller.h>
 #include <aws/geo-places/GeoPlacesErrors.h>
 #include <aws/geo-places/GeoPlacesRequest.h>
 #include <aws/geo-places/GeoPlacesServiceClientModel.h>
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
+#include <aws/geo-places/internal/GeoPlacesEndpointRules.h>
 #include <aws/geo-places/model/AccessPoint.h>
 #include <aws/geo-places/model/AccessPointType.h>
 #include <aws/geo-places/model/AccessRestriction.h>

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/notifications/NotificationsEndpointRules.h>
+#include <aws/notifications/internal/NotificationsEndpointRules.h>
 
 namespace Aws {
 namespace Notifications {

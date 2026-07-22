@@ -8,6 +8,10 @@ file(GLOB AWS_NEPTUNE-GRAPH_MODEL_HEADERS
     "include/aws/neptune-graph/model/*.h"
 )
 
+file(GLOB AWS_NEPTUNE-GRAPH_INTERNAL_HEADERS
+    "include/aws/neptune-graph/internal/*.h"
+)
+
 file(GLOB AWS_NEPTUNE-GRAPH_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_NEPTUNE-GRAPH_MODEL_SOURCE
 
 file(GLOB NEPTUNE-GRAPH_UNIFIED_HEADERS
     ${AWS_NEPTUNE-GRAPH_HEADERS}
+    ${AWS_NEPTUNE-GRAPH_INTERNAL_HEADERS}
     ${AWS_NEPTUNE-GRAPH_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\neptune-graph" FILES ${AWS_NEPTUNE-GRAPH_HEADERS})
+        source_group("Header Files\\aws\\neptune-graph\\internal" FILES ${AWS_NEPTUNE-GRAPH_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\neptune-graph\\model" FILES ${AWS_NEPTUNE-GRAPH_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_NEPTUNE-GRAPH_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_NEPTUNE-GRAPH_MODEL_SOURCE})

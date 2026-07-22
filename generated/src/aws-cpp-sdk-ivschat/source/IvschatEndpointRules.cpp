@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ivschat/IvschatEndpointRules.h>
+#include <aws/ivschat/internal/IvschatEndpointRules.h>
 
 namespace Aws {
 namespace ivschat {

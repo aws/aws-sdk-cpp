@@ -8,6 +8,10 @@ file(GLOB AWS_KENDRA-RANKING_MODEL_HEADERS
     "include/aws/kendra-ranking/model/*.h"
 )
 
+file(GLOB AWS_KENDRA-RANKING_INTERNAL_HEADERS
+    "include/aws/kendra-ranking/internal/*.h"
+)
+
 file(GLOB AWS_KENDRA-RANKING_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_KENDRA-RANKING_MODEL_SOURCE
 
 file(GLOB KENDRA-RANKING_UNIFIED_HEADERS
     ${AWS_KENDRA-RANKING_HEADERS}
+    ${AWS_KENDRA-RANKING_INTERNAL_HEADERS}
     ${AWS_KENDRA-RANKING_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\kendra-ranking" FILES ${AWS_KENDRA-RANKING_HEADERS})
+        source_group("Header Files\\aws\\kendra-ranking\\internal" FILES ${AWS_KENDRA-RANKING_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\kendra-ranking\\model" FILES ${AWS_KENDRA-RANKING_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_KENDRA-RANKING_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_KENDRA-RANKING_MODEL_SOURCE})

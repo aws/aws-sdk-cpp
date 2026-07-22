@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/mediatailor/MediaTailorEndpointRules.h>
+#include <aws/mediatailor/internal/MediaTailorEndpointRules.h>
 
 namespace Aws {
 namespace MediaTailor {

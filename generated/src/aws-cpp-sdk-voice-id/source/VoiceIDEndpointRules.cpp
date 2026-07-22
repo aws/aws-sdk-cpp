@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/voice-id/VoiceIDEndpointRules.h>
+#include <aws/voice-id/internal/VoiceIDEndpointRules.h>
 
 namespace Aws {
 namespace VoiceID {

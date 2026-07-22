@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/application-signals/ApplicationSignalsEndpointRules.h>
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -44,9 +43,7 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsEndpointProvider : public App
  public:
   using ApplicationSignalsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ApplicationSignalsEndpointProvider()
-      : ApplicationSignalsDefaultEpProviderBase(Aws::ApplicationSignals::ApplicationSignalsEndpointRules::GetRulesBlob(),
-                                                Aws::ApplicationSignals::ApplicationSignalsEndpointRules::RulesBlobSize) {}
+  ApplicationSignalsEndpointProvider();
 
   ~ApplicationSignalsEndpointProvider() {}
 };

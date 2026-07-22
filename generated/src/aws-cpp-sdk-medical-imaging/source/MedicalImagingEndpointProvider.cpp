@@ -4,9 +4,15 @@
  */
 
 #include <aws/medical-imaging/MedicalImagingEndpointProvider.h>
+#include <aws/medical-imaging/internal/MedicalImagingEndpointRules.h>
 
 namespace Aws {
 namespace MedicalImaging {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MedicalImagingEndpointProvider::MedicalImagingEndpointProvider()
+    : MedicalImagingDefaultEpProviderBase(Aws::MedicalImaging::MedicalImagingEndpointRules::GetRulesBlob(),
+                                          Aws::MedicalImaging::MedicalImagingEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MedicalImaging
 }  // namespace Aws

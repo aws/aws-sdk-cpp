@@ -8,12 +8,12 @@
 
 #include <aws/batch/BatchClient.h>
 #include <aws/batch/BatchEndpointProvider.h>
-#include <aws/batch/BatchEndpointRules.h>
 #include <aws/batch/BatchErrorMarshaller.h>
 #include <aws/batch/BatchErrors.h>
 #include <aws/batch/BatchRequest.h>
 #include <aws/batch/BatchServiceClientModel.h>
 #include <aws/batch/Batch_EXPORTS.h>
+#include <aws/batch/internal/BatchEndpointRules.h>
 #include <aws/batch/model/ArrayJobDependency.h>
 #include <aws/batch/model/ArrayProperties.h>
 #include <aws/batch/model/ArrayPropertiesDetail.h>

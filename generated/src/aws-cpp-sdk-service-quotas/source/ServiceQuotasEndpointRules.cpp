@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/service-quotas/ServiceQuotasEndpointRules.h>
+#include <aws/service-quotas/internal/ServiceQuotasEndpointRules.h>
 
 namespace Aws {
 namespace ServiceQuotas {

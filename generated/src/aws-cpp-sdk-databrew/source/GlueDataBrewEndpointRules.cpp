@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/databrew/GlueDataBrewEndpointRules.h>
+#include <aws/databrew/internal/GlueDataBrewEndpointRules.h>
 
 namespace Aws {
 namespace GlueDataBrew {

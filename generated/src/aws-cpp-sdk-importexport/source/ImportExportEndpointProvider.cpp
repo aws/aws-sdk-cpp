@@ -4,9 +4,15 @@
  */
 
 #include <aws/importexport/ImportExportEndpointProvider.h>
+#include <aws/importexport/internal/ImportExportEndpointRules.h>
 
 namespace Aws {
 namespace ImportExport {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ImportExportEndpointProvider::ImportExportEndpointProvider()
+    : ImportExportDefaultEpProviderBase(Aws::ImportExport::ImportExportEndpointRules::GetRulesBlob(),
+                                        Aws::ImportExport::ImportExportEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ImportExport
 }  // namespace Aws

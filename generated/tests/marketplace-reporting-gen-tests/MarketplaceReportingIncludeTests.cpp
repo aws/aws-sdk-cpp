@@ -8,12 +8,12 @@
 
 #include <aws/marketplace-reporting/MarketplaceReportingClient.h>
 #include <aws/marketplace-reporting/MarketplaceReportingEndpointProvider.h>
-#include <aws/marketplace-reporting/MarketplaceReportingEndpointRules.h>
 #include <aws/marketplace-reporting/MarketplaceReportingErrorMarshaller.h>
 #include <aws/marketplace-reporting/MarketplaceReportingErrors.h>
 #include <aws/marketplace-reporting/MarketplaceReportingRequest.h>
 #include <aws/marketplace-reporting/MarketplaceReportingServiceClientModel.h>
 #include <aws/marketplace-reporting/MarketplaceReporting_EXPORTS.h>
+#include <aws/marketplace-reporting/internal/MarketplaceReportingEndpointRules.h>
 #include <aws/marketplace-reporting/model/GetBuyerDashboardRequest.h>
 #include <aws/marketplace-reporting/model/GetBuyerDashboardResult.h>
 

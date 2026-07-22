@@ -8,6 +8,10 @@ file(GLOB AWS_DOCDB_MODEL_HEADERS
     "include/aws/docdb/model/*.h"
 )
 
+file(GLOB AWS_DOCDB_INTERNAL_HEADERS
+    "include/aws/docdb/internal/*.h"
+)
+
 file(GLOB AWS_DOCDB_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_DOCDB_MODEL_SOURCE
 
 file(GLOB DOCDB_UNIFIED_HEADERS
     ${AWS_DOCDB_HEADERS}
+    ${AWS_DOCDB_INTERNAL_HEADERS}
     ${AWS_DOCDB_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\docdb" FILES ${AWS_DOCDB_HEADERS})
+        source_group("Header Files\\aws\\docdb\\internal" FILES ${AWS_DOCDB_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\docdb\\model" FILES ${AWS_DOCDB_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_DOCDB_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_DOCDB_MODEL_SOURCE})

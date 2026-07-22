@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/synthetics/SyntheticsEndpointRules.h>
+#include <aws/synthetics/internal/SyntheticsEndpointRules.h>
 
 namespace Aws {
 namespace Synthetics {

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ivs-realtime/IvsrealtimeEndpointRules.h>
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_IVSREALTIME_API IvsrealtimeEndpointProvider : public IvsrealtimeDefaul
  public:
   using IvsrealtimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IvsrealtimeEndpointProvider()
-      : IvsrealtimeDefaultEpProviderBase(Aws::ivsrealtime::IvsrealtimeEndpointRules::GetRulesBlob(),
-                                         Aws::ivsrealtime::IvsrealtimeEndpointRules::RulesBlobSize) {}
+  IvsrealtimeEndpointProvider();
 
   ~IvsrealtimeEndpointProvider() {}
 };

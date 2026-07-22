@@ -4,9 +4,15 @@
  */
 
 #include <aws/synthetics/SyntheticsEndpointProvider.h>
+#include <aws/synthetics/internal/SyntheticsEndpointRules.h>
 
 namespace Aws {
 namespace Synthetics {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SyntheticsEndpointProvider::SyntheticsEndpointProvider()
+    : SyntheticsDefaultEpProviderBase(Aws::Synthetics::SyntheticsEndpointRules::GetRulesBlob(),
+                                      Aws::Synthetics::SyntheticsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Synthetics
 }  // namespace Aws

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sagemaker/SageMakerEndpointRules.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SAGEMAKER_API SageMakerEndpointProvider : public SageMakerDefaultEpPro
  public:
   using SageMakerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SageMakerEndpointProvider()
-      : SageMakerDefaultEpProviderBase(Aws::SageMaker::SageMakerEndpointRules::GetRulesBlob(),
-                                       Aws::SageMaker::SageMakerEndpointRules::RulesBlobSize) {}
+  SageMakerEndpointProvider();
 
   ~SageMakerEndpointProvider() {}
 };

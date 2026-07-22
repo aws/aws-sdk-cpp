@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/servicediscovery/ServiceDiscoveryEndpointRules.h>
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_SERVICEDISCOVERY_API ServiceDiscoveryEndpointProvider : public Service
  public:
   using ServiceDiscoveryResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ServiceDiscoveryEndpointProvider()
-      : ServiceDiscoveryDefaultEpProviderBase(Aws::ServiceDiscovery::ServiceDiscoveryEndpointRules::GetRulesBlob(),
-                                              Aws::ServiceDiscovery::ServiceDiscoveryEndpointRules::RulesBlobSize) {}
+  ServiceDiscoveryEndpointProvider();
 
   ~ServiceDiscoveryEndpointProvider() {}
 };

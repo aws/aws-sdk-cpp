@@ -8,6 +8,10 @@ file(GLOB AWS_SNOWBALL_MODEL_HEADERS
     "include/aws/snowball/model/*.h"
 )
 
+file(GLOB AWS_SNOWBALL_INTERNAL_HEADERS
+    "include/aws/snowball/internal/*.h"
+)
+
 file(GLOB AWS_SNOWBALL_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SNOWBALL_MODEL_SOURCE
 
 file(GLOB SNOWBALL_UNIFIED_HEADERS
     ${AWS_SNOWBALL_HEADERS}
+    ${AWS_SNOWBALL_INTERNAL_HEADERS}
     ${AWS_SNOWBALL_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\snowball" FILES ${AWS_SNOWBALL_HEADERS})
+        source_group("Header Files\\aws\\snowball\\internal" FILES ${AWS_SNOWBALL_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\snowball\\model" FILES ${AWS_SNOWBALL_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SNOWBALL_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SNOWBALL_MODEL_SOURCE})

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rum/CloudWatchRUMEndpointRules.h>
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_CLOUDWATCHRUM_API CloudWatchRUMEndpointProvider : public CloudWatchRUM
  public:
   using CloudWatchRUMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CloudWatchRUMEndpointProvider()
-      : CloudWatchRUMDefaultEpProviderBase(Aws::CloudWatchRUM::CloudWatchRUMEndpointRules::GetRulesBlob(),
-                                           Aws::CloudWatchRUM::CloudWatchRUMEndpointRules::RulesBlobSize) {}
+  CloudWatchRUMEndpointProvider();
 
   ~CloudWatchRUMEndpointProvider() {}
 };

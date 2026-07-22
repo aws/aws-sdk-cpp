@@ -10,7 +10,6 @@
 #include <aws/s3-crt/S3CrtClient.h>
 #include <aws/s3-crt/S3CrtClientConfiguration.h>
 #include <aws/s3-crt/S3CrtEndpointProvider.h>
-#include <aws/s3-crt/S3CrtEndpointRules.h>
 #include <aws/s3-crt/S3CrtErrorMarshaller.h>
 #include <aws/s3-crt/S3CrtErrors.h>
 #include <aws/s3-crt/S3CrtIdentityProviderAdapter.h>
@@ -21,6 +20,7 @@
 #include <aws/s3-crt/S3ExpressIdentityProvider.h>
 #include <aws/s3-crt/S3ExpressSigner.h>
 #include <aws/s3-crt/S3ExpressSignerProvider.h>
+#include <aws/s3-crt/internal/S3CrtEndpointRules.h>
 #include <aws/s3-crt/model/AbacStatus.h>
 #include <aws/s3-crt/model/AbortIncompleteMultipartUpload.h>
 #include <aws/s3-crt/model/AbortMultipartUploadRequest.h>

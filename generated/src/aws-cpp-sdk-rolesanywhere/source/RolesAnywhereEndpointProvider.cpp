@@ -4,9 +4,15 @@
  */
 
 #include <aws/rolesanywhere/RolesAnywhereEndpointProvider.h>
+#include <aws/rolesanywhere/internal/RolesAnywhereEndpointRules.h>
 
 namespace Aws {
 namespace RolesAnywhere {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+RolesAnywhereEndpointProvider::RolesAnywhereEndpointProvider()
+    : RolesAnywhereDefaultEpProviderBase(Aws::RolesAnywhere::RolesAnywhereEndpointRules::GetRulesBlob(),
+                                         Aws::RolesAnywhere::RolesAnywhereEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace RolesAnywhere
 }  // namespace Aws

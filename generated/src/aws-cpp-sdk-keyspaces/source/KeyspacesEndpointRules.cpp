@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/keyspaces/KeyspacesEndpointRules.h>
+#include <aws/keyspaces/internal/KeyspacesEndpointRules.h>
 
 namespace Aws {
 namespace Keyspaces {

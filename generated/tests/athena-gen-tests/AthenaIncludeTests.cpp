@@ -8,12 +8,12 @@
 
 #include <aws/athena/AthenaClient.h>
 #include <aws/athena/AthenaEndpointProvider.h>
-#include <aws/athena/AthenaEndpointRules.h>
 #include <aws/athena/AthenaErrorMarshaller.h>
 #include <aws/athena/AthenaErrors.h>
 #include <aws/athena/AthenaRequest.h>
 #include <aws/athena/AthenaServiceClientModel.h>
 #include <aws/athena/Athena_EXPORTS.h>
+#include <aws/athena/internal/AthenaEndpointRules.h>
 #include <aws/athena/model/AclConfiguration.h>
 #include <aws/athena/model/ApplicationDPUSizes.h>
 #include <aws/athena/model/AthenaError.h>

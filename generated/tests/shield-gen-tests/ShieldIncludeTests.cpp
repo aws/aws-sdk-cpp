@@ -8,12 +8,12 @@
 
 #include <aws/shield/ShieldClient.h>
 #include <aws/shield/ShieldEndpointProvider.h>
-#include <aws/shield/ShieldEndpointRules.h>
 #include <aws/shield/ShieldErrorMarshaller.h>
 #include <aws/shield/ShieldErrors.h>
 #include <aws/shield/ShieldRequest.h>
 #include <aws/shield/ShieldServiceClientModel.h>
 #include <aws/shield/Shield_EXPORTS.h>
+#include <aws/shield/internal/ShieldEndpointRules.h>
 #include <aws/shield/model/ApplicationLayerAutomaticResponseConfiguration.h>
 #include <aws/shield/model/ApplicationLayerAutomaticResponseStatus.h>
 #include <aws/shield/model/AssociateDRTLogBucketRequest.h>

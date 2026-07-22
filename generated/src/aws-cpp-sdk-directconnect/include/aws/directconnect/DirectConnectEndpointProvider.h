@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/directconnect/DirectConnectEndpointRules.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_DIRECTCONNECT_API DirectConnectEndpointProvider : public DirectConnect
  public:
   using DirectConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DirectConnectEndpointProvider()
-      : DirectConnectDefaultEpProviderBase(Aws::DirectConnect::DirectConnectEndpointRules::GetRulesBlob(),
-                                           Aws::DirectConnect::DirectConnectEndpointRules::RulesBlobSize) {}
+  DirectConnectEndpointProvider();
 
   ~DirectConnectEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/workdocs/WorkDocsClient.h>
 #include <aws/workdocs/WorkDocsEndpointProvider.h>
-#include <aws/workdocs/WorkDocsEndpointRules.h>
 #include <aws/workdocs/WorkDocsErrorMarshaller.h>
 #include <aws/workdocs/WorkDocsErrors.h>
 #include <aws/workdocs/WorkDocsRequest.h>
 #include <aws/workdocs/WorkDocsServiceClientModel.h>
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
+#include <aws/workdocs/internal/WorkDocsEndpointRules.h>
 #include <aws/workdocs/model/AbortDocumentVersionUploadRequest.h>
 #include <aws/workdocs/model/ActivateUserRequest.h>
 #include <aws/workdocs/model/ActivateUserResult.h>

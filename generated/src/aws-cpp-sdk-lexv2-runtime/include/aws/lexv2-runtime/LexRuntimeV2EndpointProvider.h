@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/lexv2-runtime/LexRuntimeV2EndpointRules.h>
 #include <aws/lexv2-runtime/LexRuntimeV2_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_LEXRUNTIMEV2_API LexRuntimeV2EndpointProvider : public LexRuntimeV2Def
  public:
   using LexRuntimeV2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  LexRuntimeV2EndpointProvider()
-      : LexRuntimeV2DefaultEpProviderBase(Aws::LexRuntimeV2::LexRuntimeV2EndpointRules::GetRulesBlob(),
-                                          Aws::LexRuntimeV2::LexRuntimeV2EndpointRules::RulesBlobSize) {}
+  LexRuntimeV2EndpointProvider();
 
   ~LexRuntimeV2EndpointProvider() {}
 };

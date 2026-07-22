@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/cloudsearchdomain/CloudSearchDomainEndpointRules.h>
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -43,9 +42,7 @@ class AWS_CLOUDSEARCHDOMAIN_API CloudSearchDomainEndpointProvider : public Cloud
  public:
   using CloudSearchDomainResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CloudSearchDomainEndpointProvider()
-      : CloudSearchDomainDefaultEpProviderBase(Aws::CloudSearchDomain::CloudSearchDomainEndpointRules::GetRulesBlob(),
-                                               Aws::CloudSearchDomain::CloudSearchDomainEndpointRules::RulesBlobSize) {}
+  CloudSearchDomainEndpointProvider();
 
   ~CloudSearchDomainEndpointProvider() {}
 };

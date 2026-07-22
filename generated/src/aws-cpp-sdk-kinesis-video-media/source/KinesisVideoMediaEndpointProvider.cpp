@@ -4,9 +4,15 @@
  */
 
 #include <aws/kinesis-video-media/KinesisVideoMediaEndpointProvider.h>
+#include <aws/kinesis-video-media/internal/KinesisVideoMediaEndpointRules.h>
 
 namespace Aws {
 namespace KinesisVideoMedia {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+KinesisVideoMediaEndpointProvider::KinesisVideoMediaEndpointProvider()
+    : KinesisVideoMediaDefaultEpProviderBase(Aws::KinesisVideoMedia::KinesisVideoMediaEndpointRules::GetRulesBlob(),
+                                             Aws::KinesisVideoMedia::KinesisVideoMediaEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace KinesisVideoMedia
 }  // namespace Aws

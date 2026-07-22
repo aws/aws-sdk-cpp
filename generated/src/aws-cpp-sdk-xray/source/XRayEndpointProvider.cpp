@@ -4,9 +4,14 @@
  */
 
 #include <aws/xray/XRayEndpointProvider.h>
+#include <aws/xray/internal/XRayEndpointRules.h>
 
 namespace Aws {
 namespace XRay {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+XRayEndpointProvider::XRayEndpointProvider()
+    : XRayDefaultEpProviderBase(Aws::XRay::XRayEndpointRules::GetRulesBlob(), Aws::XRay::XRayEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace XRay
 }  // namespace Aws

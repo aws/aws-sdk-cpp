@@ -4,9 +4,15 @@
  */
 
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorEndpointProvider.h>
+#include <aws/migrationhuborchestrator/internal/MigrationHubOrchestratorEndpointRules.h>
 
 namespace Aws {
 namespace MigrationHubOrchestrator {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MigrationHubOrchestratorEndpointProvider::MigrationHubOrchestratorEndpointProvider()
+    : MigrationHubOrchestratorDefaultEpProviderBase(Aws::MigrationHubOrchestrator::MigrationHubOrchestratorEndpointRules::GetRulesBlob(),
+                                                    Aws::MigrationHubOrchestrator::MigrationHubOrchestratorEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MigrationHubOrchestrator
 }  // namespace Aws

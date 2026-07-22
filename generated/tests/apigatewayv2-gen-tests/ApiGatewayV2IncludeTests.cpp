@@ -8,12 +8,12 @@
 
 #include <aws/apigatewayv2/ApiGatewayV2Client.h>
 #include <aws/apigatewayv2/ApiGatewayV2EndpointProvider.h>
-#include <aws/apigatewayv2/ApiGatewayV2EndpointRules.h>
 #include <aws/apigatewayv2/ApiGatewayV2ErrorMarshaller.h>
 #include <aws/apigatewayv2/ApiGatewayV2Errors.h>
 #include <aws/apigatewayv2/ApiGatewayV2Request.h>
 #include <aws/apigatewayv2/ApiGatewayV2ServiceClientModel.h>
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
+#include <aws/apigatewayv2/internal/ApiGatewayV2EndpointRules.h>
 #include <aws/apigatewayv2/model/ACMManaged.h>
 #include <aws/apigatewayv2/model/AccessLogSettings.h>
 #include <aws/apigatewayv2/model/Api.h>

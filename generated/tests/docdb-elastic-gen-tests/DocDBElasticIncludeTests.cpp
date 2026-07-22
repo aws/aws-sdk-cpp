@@ -8,12 +8,12 @@
 
 #include <aws/docdb-elastic/DocDBElasticClient.h>
 #include <aws/docdb-elastic/DocDBElasticEndpointProvider.h>
-#include <aws/docdb-elastic/DocDBElasticEndpointRules.h>
 #include <aws/docdb-elastic/DocDBElasticErrorMarshaller.h>
 #include <aws/docdb-elastic/DocDBElasticErrors.h>
 #include <aws/docdb-elastic/DocDBElasticRequest.h>
 #include <aws/docdb-elastic/DocDBElasticServiceClientModel.h>
 #include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
+#include <aws/docdb-elastic/internal/DocDBElasticEndpointRules.h>
 #include <aws/docdb-elastic/model/ApplyPendingMaintenanceActionRequest.h>
 #include <aws/docdb-elastic/model/ApplyPendingMaintenanceActionResult.h>
 #include <aws/docdb-elastic/model/Auth.h>

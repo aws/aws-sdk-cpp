@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/mwaa/MWAAEndpointRules.h>
 #include <aws/mwaa/MWAA_EXPORTS.h>
 
 namespace Aws {
@@ -40,8 +39,7 @@ class AWS_MWAA_API MWAAEndpointProvider : public MWAADefaultEpProviderBase {
  public:
   using MWAAResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MWAAEndpointProvider()
-      : MWAADefaultEpProviderBase(Aws::MWAA::MWAAEndpointRules::GetRulesBlob(), Aws::MWAA::MWAAEndpointRules::RulesBlobSize) {}
+  MWAAEndpointProvider();
 
   ~MWAAEndpointProvider() {}
 };

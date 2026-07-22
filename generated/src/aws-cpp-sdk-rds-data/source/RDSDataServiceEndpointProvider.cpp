@@ -4,9 +4,15 @@
  */
 
 #include <aws/rds-data/RDSDataServiceEndpointProvider.h>
+#include <aws/rds-data/internal/RDSDataServiceEndpointRules.h>
 
 namespace Aws {
 namespace RDSDataService {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+RDSDataServiceEndpointProvider::RDSDataServiceEndpointProvider()
+    : RDSDataServiceDefaultEpProviderBase(Aws::RDSDataService::RDSDataServiceEndpointRules::GetRulesBlob(),
+                                          Aws::RDSDataService::RDSDataServiceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace RDSDataService
 }  // namespace Aws

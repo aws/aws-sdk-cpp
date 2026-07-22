@@ -4,9 +4,16 @@
  */
 
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceEndpointProvider.h>
+#include <aws/marketplace-entitlement/internal/MarketplaceEntitlementServiceEndpointRules.h>
 
 namespace Aws {
 namespace MarketplaceEntitlementService {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MarketplaceEntitlementServiceEndpointProvider::MarketplaceEntitlementServiceEndpointProvider()
+    : MarketplaceEntitlementServiceDefaultEpProviderBase(
+          Aws::MarketplaceEntitlementService::MarketplaceEntitlementServiceEndpointRules::GetRulesBlob(),
+          Aws::MarketplaceEntitlementService::MarketplaceEntitlementServiceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MarketplaceEntitlementService
 }  // namespace Aws

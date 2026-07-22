@@ -4,9 +4,14 @@
  */
 
 #include <aws/qapps/QAppsEndpointProvider.h>
+#include <aws/qapps/internal/QAppsEndpointRules.h>
 
 namespace Aws {
 namespace QApps {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+QAppsEndpointProvider::QAppsEndpointProvider()
+    : QAppsDefaultEpProviderBase(Aws::QApps::QAppsEndpointRules::GetRulesBlob(), Aws::QApps::QAppsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace QApps
 }  // namespace Aws

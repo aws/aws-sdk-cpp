@@ -4,6 +4,7 @@
  */
 
 #include <aws/bedrock-runtime/BedrockRuntimeEndpointProvider.h>
+#include <aws/bedrock-runtime/internal/BedrockRuntimeEndpointRules.h>
 
 namespace Aws {
 #ifndef AWS_BEDROCKRUNTIME_EXPORTS  // Except for Windows DLL
@@ -23,6 +24,10 @@ template class Aws::Endpoint::DefaultEndpointProvider<BedrockRuntime::Endpoint::
 
 namespace BedrockRuntime {
 namespace Endpoint {
+BedrockRuntimeEndpointProvider::BedrockRuntimeEndpointProvider()
+    : BedrockRuntimeDefaultEpProviderBase(Aws::BedrockRuntime::BedrockRuntimeEndpointRules::GetRulesBlob(),
+                                          Aws::BedrockRuntime::BedrockRuntimeEndpointRules::RulesBlobSize) {}
+
 void BedrockRuntimeBuiltInParameters::SetFromClientConfiguration(const BedrockRuntimeClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const BedrockRuntimeClientConfiguration::BaseClientConfigClass&>(config));
 }

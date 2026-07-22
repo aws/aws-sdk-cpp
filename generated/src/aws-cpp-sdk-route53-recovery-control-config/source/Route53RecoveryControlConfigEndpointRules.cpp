@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/route53-recovery-control-config/Route53RecoveryControlConfigEndpointRules.h>
+#include <aws/route53-recovery-control-config/internal/Route53RecoveryControlConfigEndpointRules.h>
 
 namespace Aws {
 namespace Route53RecoveryControlConfig {

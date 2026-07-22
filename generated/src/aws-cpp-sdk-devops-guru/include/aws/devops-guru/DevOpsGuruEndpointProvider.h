@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/devops-guru/DevOpsGuruEndpointRules.h>
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_DEVOPSGURU_API DevOpsGuruEndpointProvider : public DevOpsGuruDefaultEp
  public:
   using DevOpsGuruResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DevOpsGuruEndpointProvider()
-      : DevOpsGuruDefaultEpProviderBase(Aws::DevOpsGuru::DevOpsGuruEndpointRules::GetRulesBlob(),
-                                        Aws::DevOpsGuru::DevOpsGuruEndpointRules::RulesBlobSize) {}
+  DevOpsGuruEndpointProvider();
 
   ~DevOpsGuruEndpointProvider() {}
 };

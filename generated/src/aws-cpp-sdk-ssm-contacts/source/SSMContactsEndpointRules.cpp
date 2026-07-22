@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ssm-contacts/SSMContactsEndpointRules.h>
+#include <aws/ssm-contacts/internal/SSMContactsEndpointRules.h>
 
 namespace Aws {
 namespace SSMContacts {

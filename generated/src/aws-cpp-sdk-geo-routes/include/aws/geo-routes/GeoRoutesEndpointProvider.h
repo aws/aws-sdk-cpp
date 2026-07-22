@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/geo-routes/GeoRoutesEndpointRules.h>
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_GEOROUTES_API GeoRoutesEndpointProvider : public GeoRoutesDefaultEpPro
  public:
   using GeoRoutesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  GeoRoutesEndpointProvider()
-      : GeoRoutesDefaultEpProviderBase(Aws::GeoRoutes::GeoRoutesEndpointRules::GetRulesBlob(),
-                                       Aws::GeoRoutes::GeoRoutesEndpointRules::RulesBlobSize) {}
+  GeoRoutesEndpointProvider();
 
   ~GeoRoutesEndpointProvider() {}
 };

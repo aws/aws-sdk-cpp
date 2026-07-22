@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iot-data/IoTDataPlaneEndpointRules.h>
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_IOTDATAPLANE_API IoTDataPlaneEndpointProvider : public IoTDataPlaneDef
  public:
   using IoTDataPlaneResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IoTDataPlaneEndpointProvider()
-      : IoTDataPlaneDefaultEpProviderBase(Aws::IoTDataPlane::IoTDataPlaneEndpointRules::GetRulesBlob(),
-                                          Aws::IoTDataPlane::IoTDataPlaneEndpointRules::RulesBlobSize) {}
+  IoTDataPlaneEndpointProvider();
 
   ~IoTDataPlaneEndpointProvider() {}
 };

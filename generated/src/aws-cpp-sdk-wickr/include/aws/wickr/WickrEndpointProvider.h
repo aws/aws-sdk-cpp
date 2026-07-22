@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/wickr/WickrEndpointRules.h>
 #include <aws/wickr/Wickr_EXPORTS.h>
 
 namespace Aws {
@@ -40,8 +39,7 @@ class AWS_WICKR_API WickrEndpointProvider : public WickrDefaultEpProviderBase {
  public:
   using WickrResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  WickrEndpointProvider()
-      : WickrDefaultEpProviderBase(Aws::Wickr::WickrEndpointRules::GetRulesBlob(), Aws::Wickr::WickrEndpointRules::RulesBlobSize) {}
+  WickrEndpointProvider();
 
   ~WickrEndpointProvider() {}
 };

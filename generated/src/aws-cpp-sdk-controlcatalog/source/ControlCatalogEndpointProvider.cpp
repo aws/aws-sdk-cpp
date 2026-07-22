@@ -4,9 +4,15 @@
  */
 
 #include <aws/controlcatalog/ControlCatalogEndpointProvider.h>
+#include <aws/controlcatalog/internal/ControlCatalogEndpointRules.h>
 
 namespace Aws {
 namespace ControlCatalog {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ControlCatalogEndpointProvider::ControlCatalogEndpointProvider()
+    : ControlCatalogDefaultEpProviderBase(Aws::ControlCatalog::ControlCatalogEndpointRules::GetRulesBlob(),
+                                          Aws::ControlCatalog::ControlCatalogEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ControlCatalog
 }  // namespace Aws

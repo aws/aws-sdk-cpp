@@ -8,6 +8,10 @@ file(GLOB AWS_CODEBUILD_MODEL_HEADERS
     "include/aws/codebuild/model/*.h"
 )
 
+file(GLOB AWS_CODEBUILD_INTERNAL_HEADERS
+    "include/aws/codebuild/internal/*.h"
+)
+
 file(GLOB AWS_CODEBUILD_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CODEBUILD_MODEL_SOURCE
 
 file(GLOB CODEBUILD_UNIFIED_HEADERS
     ${AWS_CODEBUILD_HEADERS}
+    ${AWS_CODEBUILD_INTERNAL_HEADERS}
     ${AWS_CODEBUILD_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\codebuild" FILES ${AWS_CODEBUILD_HEADERS})
+        source_group("Header Files\\aws\\codebuild\\internal" FILES ${AWS_CODEBUILD_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\codebuild\\model" FILES ${AWS_CODEBUILD_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CODEBUILD_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CODEBUILD_MODEL_SOURCE})

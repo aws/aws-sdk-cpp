@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/support-app/SupportAppEndpointRules.h>
+#include <aws/support-app/internal/SupportAppEndpointRules.h>
 
 namespace Aws {
 namespace SupportApp {

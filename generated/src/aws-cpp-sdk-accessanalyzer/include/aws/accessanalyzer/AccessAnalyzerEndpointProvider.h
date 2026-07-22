@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/accessanalyzer/AccessAnalyzerEndpointRules.h>
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_ACCESSANALYZER_API AccessAnalyzerEndpointProvider : public AccessAnaly
  public:
   using AccessAnalyzerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AccessAnalyzerEndpointProvider()
-      : AccessAnalyzerDefaultEpProviderBase(Aws::AccessAnalyzer::AccessAnalyzerEndpointRules::GetRulesBlob(),
-                                            Aws::AccessAnalyzer::AccessAnalyzerEndpointRules::RulesBlobSize) {}
+  AccessAnalyzerEndpointProvider();
 
   ~AccessAnalyzerEndpointProvider() {}
 };

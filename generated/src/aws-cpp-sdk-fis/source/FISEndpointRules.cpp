@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/fis/FISEndpointRules.h>
+#include <aws/fis/internal/FISEndpointRules.h>
 
 namespace Aws {
 namespace FIS {

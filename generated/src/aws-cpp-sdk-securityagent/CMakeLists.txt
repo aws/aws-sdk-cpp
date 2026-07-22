@@ -8,6 +8,10 @@ file(GLOB AWS_SECURITYAGENT_MODEL_HEADERS
     "include/aws/securityagent/model/*.h"
 )
 
+file(GLOB AWS_SECURITYAGENT_INTERNAL_HEADERS
+    "include/aws/securityagent/internal/*.h"
+)
+
 file(GLOB AWS_SECURITYAGENT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SECURITYAGENT_MODEL_SOURCE
 
 file(GLOB SECURITYAGENT_UNIFIED_HEADERS
     ${AWS_SECURITYAGENT_HEADERS}
+    ${AWS_SECURITYAGENT_INTERNAL_HEADERS}
     ${AWS_SECURITYAGENT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\securityagent" FILES ${AWS_SECURITYAGENT_HEADERS})
+        source_group("Header Files\\aws\\securityagent\\internal" FILES ${AWS_SECURITYAGENT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\securityagent\\model" FILES ${AWS_SECURITYAGENT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SECURITYAGENT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SECURITYAGENT_MODEL_SOURCE})

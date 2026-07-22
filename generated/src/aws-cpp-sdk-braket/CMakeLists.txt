@@ -8,6 +8,10 @@ file(GLOB AWS_BRAKET_MODEL_HEADERS
     "include/aws/braket/model/*.h"
 )
 
+file(GLOB AWS_BRAKET_INTERNAL_HEADERS
+    "include/aws/braket/internal/*.h"
+)
+
 file(GLOB AWS_BRAKET_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_BRAKET_MODEL_SOURCE
 
 file(GLOB BRAKET_UNIFIED_HEADERS
     ${AWS_BRAKET_HEADERS}
+    ${AWS_BRAKET_INTERNAL_HEADERS}
     ${AWS_BRAKET_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\braket" FILES ${AWS_BRAKET_HEADERS})
+        source_group("Header Files\\aws\\braket\\internal" FILES ${AWS_BRAKET_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\braket\\model" FILES ${AWS_BRAKET_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_BRAKET_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_BRAKET_MODEL_SOURCE})

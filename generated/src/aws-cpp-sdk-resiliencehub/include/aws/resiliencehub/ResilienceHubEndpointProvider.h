@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/resiliencehub/ResilienceHubEndpointRules.h>
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_RESILIENCEHUB_API ResilienceHubEndpointProvider : public ResilienceHub
  public:
   using ResilienceHubResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ResilienceHubEndpointProvider()
-      : ResilienceHubDefaultEpProviderBase(Aws::ResilienceHub::ResilienceHubEndpointRules::GetRulesBlob(),
-                                           Aws::ResilienceHub::ResilienceHubEndpointRules::RulesBlobSize) {}
+  ResilienceHubEndpointProvider();
 
   ~ResilienceHubEndpointProvider() {}
 };

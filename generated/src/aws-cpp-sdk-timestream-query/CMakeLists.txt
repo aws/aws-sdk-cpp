@@ -8,6 +8,10 @@ file(GLOB AWS_TIMESTREAM-QUERY_MODEL_HEADERS
     "include/aws/timestream-query/model/*.h"
 )
 
+file(GLOB AWS_TIMESTREAM-QUERY_INTERNAL_HEADERS
+    "include/aws/timestream-query/internal/*.h"
+)
+
 file(GLOB AWS_TIMESTREAM-QUERY_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_TIMESTREAM-QUERY_MODEL_SOURCE
 
 file(GLOB TIMESTREAM-QUERY_UNIFIED_HEADERS
     ${AWS_TIMESTREAM-QUERY_HEADERS}
+    ${AWS_TIMESTREAM-QUERY_INTERNAL_HEADERS}
     ${AWS_TIMESTREAM-QUERY_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\timestream-query" FILES ${AWS_TIMESTREAM-QUERY_HEADERS})
+        source_group("Header Files\\aws\\timestream-query\\internal" FILES ${AWS_TIMESTREAM-QUERY_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\timestream-query\\model" FILES ${AWS_TIMESTREAM-QUERY_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_TIMESTREAM-QUERY_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_TIMESTREAM-QUERY_MODEL_SOURCE})

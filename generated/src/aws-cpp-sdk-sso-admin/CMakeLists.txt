@@ -8,6 +8,10 @@ file(GLOB AWS_SSO-ADMIN_MODEL_HEADERS
     "include/aws/sso-admin/model/*.h"
 )
 
+file(GLOB AWS_SSO-ADMIN_INTERNAL_HEADERS
+    "include/aws/sso-admin/internal/*.h"
+)
+
 file(GLOB AWS_SSO-ADMIN_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SSO-ADMIN_MODEL_SOURCE
 
 file(GLOB SSO-ADMIN_UNIFIED_HEADERS
     ${AWS_SSO-ADMIN_HEADERS}
+    ${AWS_SSO-ADMIN_INTERNAL_HEADERS}
     ${AWS_SSO-ADMIN_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\sso-admin" FILES ${AWS_SSO-ADMIN_HEADERS})
+        source_group("Header Files\\aws\\sso-admin\\internal" FILES ${AWS_SSO-ADMIN_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\sso-admin\\model" FILES ${AWS_SSO-ADMIN_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SSO-ADMIN_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SSO-ADMIN_MODEL_SOURCE})

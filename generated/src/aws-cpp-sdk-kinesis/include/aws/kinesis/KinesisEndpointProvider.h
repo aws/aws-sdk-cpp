@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/kinesis/KinesisEndpointRules.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_KINESIS_API KinesisEndpointProvider : public KinesisDefaultEpProviderB
  public:
   using KinesisResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  KinesisEndpointProvider()
-      : KinesisDefaultEpProviderBase(Aws::Kinesis::KinesisEndpointRules::GetRulesBlob(),
-                                     Aws::Kinesis::KinesisEndpointRules::RulesBlobSize) {}
+  KinesisEndpointProvider();
 
   ~KinesisEndpointProvider() {}
 };

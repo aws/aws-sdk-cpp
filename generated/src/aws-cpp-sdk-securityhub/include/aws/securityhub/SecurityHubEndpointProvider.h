@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/securityhub/SecurityHubEndpointRules.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SECURITYHUB_API SecurityHubEndpointProvider : public SecurityHubDefaul
  public:
   using SecurityHubResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SecurityHubEndpointProvider()
-      : SecurityHubDefaultEpProviderBase(Aws::SecurityHub::SecurityHubEndpointRules::GetRulesBlob(),
-                                         Aws::SecurityHub::SecurityHubEndpointRules::RulesBlobSize) {}
+  SecurityHubEndpointProvider();
 
   ~SecurityHubEndpointProvider() {}
 };

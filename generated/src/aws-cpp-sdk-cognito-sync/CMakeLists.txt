@@ -8,6 +8,10 @@ file(GLOB AWS_COGNITO-SYNC_MODEL_HEADERS
     "include/aws/cognito-sync/model/*.h"
 )
 
+file(GLOB AWS_COGNITO-SYNC_INTERNAL_HEADERS
+    "include/aws/cognito-sync/internal/*.h"
+)
+
 file(GLOB AWS_COGNITO-SYNC_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_COGNITO-SYNC_MODEL_SOURCE
 
 file(GLOB COGNITO-SYNC_UNIFIED_HEADERS
     ${AWS_COGNITO-SYNC_HEADERS}
+    ${AWS_COGNITO-SYNC_INTERNAL_HEADERS}
     ${AWS_COGNITO-SYNC_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\cognito-sync" FILES ${AWS_COGNITO-SYNC_HEADERS})
+        source_group("Header Files\\aws\\cognito-sync\\internal" FILES ${AWS_COGNITO-SYNC_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\cognito-sync\\model" FILES ${AWS_COGNITO-SYNC_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_COGNITO-SYNC_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_COGNITO-SYNC_MODEL_SOURCE})

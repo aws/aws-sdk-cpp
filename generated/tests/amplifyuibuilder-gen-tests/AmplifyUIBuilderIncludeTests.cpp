@@ -8,12 +8,12 @@
 
 #include <aws/amplifyuibuilder/AmplifyUIBuilderClient.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderEndpointProvider.h>
-#include <aws/amplifyuibuilder/AmplifyUIBuilderEndpointRules.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderErrorMarshaller.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderErrors.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderRequest.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderServiceClientModel.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
+#include <aws/amplifyuibuilder/internal/AmplifyUIBuilderEndpointRules.h>
 #include <aws/amplifyuibuilder/model/ActionParameters.h>
 #include <aws/amplifyuibuilder/model/ApiConfiguration.h>
 #include <aws/amplifyuibuilder/model/CodegenDependency.h>

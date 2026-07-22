@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sns/SNSEndpointRules.h>
+#include <aws/sns/internal/SNSEndpointRules.h>
 
 namespace Aws {
 namespace SNS {

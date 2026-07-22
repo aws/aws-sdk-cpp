@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/appsync/AppSyncEndpointRules.h>
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_APPSYNC_API AppSyncEndpointProvider : public AppSyncDefaultEpProviderB
  public:
   using AppSyncResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AppSyncEndpointProvider()
-      : AppSyncDefaultEpProviderBase(Aws::AppSync::AppSyncEndpointRules::GetRulesBlob(),
-                                     Aws::AppSync::AppSyncEndpointRules::RulesBlobSize) {}
+  AppSyncEndpointProvider();
 
   ~AppSyncEndpointProvider() {}
 };

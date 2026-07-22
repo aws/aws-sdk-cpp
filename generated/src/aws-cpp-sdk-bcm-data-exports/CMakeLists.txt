@@ -8,6 +8,10 @@ file(GLOB AWS_BCM-DATA-EXPORTS_MODEL_HEADERS
     "include/aws/bcm-data-exports/model/*.h"
 )
 
+file(GLOB AWS_BCM-DATA-EXPORTS_INTERNAL_HEADERS
+    "include/aws/bcm-data-exports/internal/*.h"
+)
+
 file(GLOB AWS_BCM-DATA-EXPORTS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_BCM-DATA-EXPORTS_MODEL_SOURCE
 
 file(GLOB BCM-DATA-EXPORTS_UNIFIED_HEADERS
     ${AWS_BCM-DATA-EXPORTS_HEADERS}
+    ${AWS_BCM-DATA-EXPORTS_INTERNAL_HEADERS}
     ${AWS_BCM-DATA-EXPORTS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\bcm-data-exports" FILES ${AWS_BCM-DATA-EXPORTS_HEADERS})
+        source_group("Header Files\\aws\\bcm-data-exports\\internal" FILES ${AWS_BCM-DATA-EXPORTS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\bcm-data-exports\\model" FILES ${AWS_BCM-DATA-EXPORTS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_BCM-DATA-EXPORTS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_BCM-DATA-EXPORTS_MODEL_SOURCE})

@@ -8,12 +8,12 @@
 
 #include <aws/mgn/MgnClient.h>
 #include <aws/mgn/MgnEndpointProvider.h>
-#include <aws/mgn/MgnEndpointRules.h>
 #include <aws/mgn/MgnErrorMarshaller.h>
 #include <aws/mgn/MgnErrors.h>
 #include <aws/mgn/MgnRequest.h>
 #include <aws/mgn/MgnServiceClientModel.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
+#include <aws/mgn/internal/MgnEndpointRules.h>
 #include <aws/mgn/model/AccessDeniedException.h>
 #include <aws/mgn/model/ActionCategory.h>
 #include <aws/mgn/model/AnalyzerType.h>

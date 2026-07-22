@@ -8,6 +8,10 @@ file(GLOB AWS_WORKMAIL_MODEL_HEADERS
     "include/aws/workmail/model/*.h"
 )
 
+file(GLOB AWS_WORKMAIL_INTERNAL_HEADERS
+    "include/aws/workmail/internal/*.h"
+)
+
 file(GLOB AWS_WORKMAIL_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_WORKMAIL_MODEL_SOURCE
 
 file(GLOB WORKMAIL_UNIFIED_HEADERS
     ${AWS_WORKMAIL_HEADERS}
+    ${AWS_WORKMAIL_INTERNAL_HEADERS}
     ${AWS_WORKMAIL_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\workmail" FILES ${AWS_WORKMAIL_HEADERS})
+        source_group("Header Files\\aws\\workmail\\internal" FILES ${AWS_WORKMAIL_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\workmail\\model" FILES ${AWS_WORKMAIL_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_WORKMAIL_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_WORKMAIL_MODEL_SOURCE})

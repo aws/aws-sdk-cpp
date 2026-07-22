@@ -8,12 +8,12 @@
 
 #include <aws/pca-connector-scep/PcaConnectorScepClient.h>
 #include <aws/pca-connector-scep/PcaConnectorScepEndpointProvider.h>
-#include <aws/pca-connector-scep/PcaConnectorScepEndpointRules.h>
 #include <aws/pca-connector-scep/PcaConnectorScepErrorMarshaller.h>
 #include <aws/pca-connector-scep/PcaConnectorScepErrors.h>
 #include <aws/pca-connector-scep/PcaConnectorScepRequest.h>
 #include <aws/pca-connector-scep/PcaConnectorScepServiceClientModel.h>
 #include <aws/pca-connector-scep/PcaConnectorScep_EXPORTS.h>
+#include <aws/pca-connector-scep/internal/PcaConnectorScepEndpointRules.h>
 #include <aws/pca-connector-scep/model/Challenge.h>
 #include <aws/pca-connector-scep/model/ChallengeMetadata.h>
 #include <aws/pca-connector-scep/model/ChallengeMetadataSummary.h>

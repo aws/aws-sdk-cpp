@@ -8,6 +8,10 @@ file(GLOB AWS_MARKETPLACE-DISCOVERY_MODEL_HEADERS
     "include/aws/marketplace-discovery/model/*.h"
 )
 
+file(GLOB AWS_MARKETPLACE-DISCOVERY_INTERNAL_HEADERS
+    "include/aws/marketplace-discovery/internal/*.h"
+)
+
 file(GLOB AWS_MARKETPLACE-DISCOVERY_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MARKETPLACE-DISCOVERY_MODEL_SOURCE
 
 file(GLOB MARKETPLACE-DISCOVERY_UNIFIED_HEADERS
     ${AWS_MARKETPLACE-DISCOVERY_HEADERS}
+    ${AWS_MARKETPLACE-DISCOVERY_INTERNAL_HEADERS}
     ${AWS_MARKETPLACE-DISCOVERY_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\marketplace-discovery" FILES ${AWS_MARKETPLACE-DISCOVERY_HEADERS})
+        source_group("Header Files\\aws\\marketplace-discovery\\internal" FILES ${AWS_MARKETPLACE-DISCOVERY_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\marketplace-discovery\\model" FILES ${AWS_MARKETPLACE-DISCOVERY_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MARKETPLACE-DISCOVERY_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MARKETPLACE-DISCOVERY_MODEL_SOURCE})

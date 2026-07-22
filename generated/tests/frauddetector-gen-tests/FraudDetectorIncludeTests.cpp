@@ -8,12 +8,12 @@
 
 #include <aws/frauddetector/FraudDetectorClient.h>
 #include <aws/frauddetector/FraudDetectorEndpointProvider.h>
-#include <aws/frauddetector/FraudDetectorEndpointRules.h>
 #include <aws/frauddetector/FraudDetectorErrorMarshaller.h>
 #include <aws/frauddetector/FraudDetectorErrors.h>
 #include <aws/frauddetector/FraudDetectorRequest.h>
 #include <aws/frauddetector/FraudDetectorServiceClientModel.h>
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
+#include <aws/frauddetector/internal/FraudDetectorEndpointRules.h>
 #include <aws/frauddetector/model/ATIMetricDataPoint.h>
 #include <aws/frauddetector/model/ATIModelPerformance.h>
 #include <aws/frauddetector/model/ATITrainingMetricsValue.h>

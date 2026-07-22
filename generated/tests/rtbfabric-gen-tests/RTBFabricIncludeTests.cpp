@@ -8,12 +8,12 @@
 
 #include <aws/rtbfabric/RTBFabricClient.h>
 #include <aws/rtbfabric/RTBFabricEndpointProvider.h>
-#include <aws/rtbfabric/RTBFabricEndpointRules.h>
 #include <aws/rtbfabric/RTBFabricErrorMarshaller.h>
 #include <aws/rtbfabric/RTBFabricErrors.h>
 #include <aws/rtbfabric/RTBFabricRequest.h>
 #include <aws/rtbfabric/RTBFabricServiceClientModel.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/internal/RTBFabricEndpointRules.h>
 #include <aws/rtbfabric/model/AcceptLinkRequest.h>
 #include <aws/rtbfabric/model/AcceptLinkResult.h>
 #include <aws/rtbfabric/model/Action.h>

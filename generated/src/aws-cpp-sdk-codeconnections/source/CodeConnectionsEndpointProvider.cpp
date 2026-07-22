@@ -4,9 +4,15 @@
  */
 
 #include <aws/codeconnections/CodeConnectionsEndpointProvider.h>
+#include <aws/codeconnections/internal/CodeConnectionsEndpointRules.h>
 
 namespace Aws {
 namespace CodeConnections {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+CodeConnectionsEndpointProvider::CodeConnectionsEndpointProvider()
+    : CodeConnectionsDefaultEpProviderBase(Aws::CodeConnections::CodeConnectionsEndpointRules::GetRulesBlob(),
+                                           Aws::CodeConnections::CodeConnectionsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace CodeConnections
 }  // namespace Aws

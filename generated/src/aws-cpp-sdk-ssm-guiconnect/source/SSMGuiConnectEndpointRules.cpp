@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ssm-guiconnect/SSMGuiConnectEndpointRules.h>
+#include <aws/ssm-guiconnect/internal/SSMGuiConnectEndpointRules.h>
 
 namespace Aws {
 namespace SSMGuiConnect {

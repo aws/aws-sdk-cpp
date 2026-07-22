@@ -8,12 +8,12 @@
 
 #include <aws/workspaces/WorkSpacesClient.h>
 #include <aws/workspaces/WorkSpacesEndpointProvider.h>
-#include <aws/workspaces/WorkSpacesEndpointRules.h>
 #include <aws/workspaces/WorkSpacesErrorMarshaller.h>
 #include <aws/workspaces/WorkSpacesErrors.h>
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/workspaces/WorkSpacesServiceClientModel.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
+#include <aws/workspaces/internal/WorkSpacesEndpointRules.h>
 #include <aws/workspaces/model/AGAModeForDirectoryEnum.h>
 #include <aws/workspaces/model/AGAModeForWorkSpaceEnum.h>
 #include <aws/workspaces/model/AGAPreferredProtocolForDirectory.h>

@@ -8,12 +8,12 @@
 
 #include <aws/mediapackage/MediaPackageClient.h>
 #include <aws/mediapackage/MediaPackageEndpointProvider.h>
-#include <aws/mediapackage/MediaPackageEndpointRules.h>
 #include <aws/mediapackage/MediaPackageErrorMarshaller.h>
 #include <aws/mediapackage/MediaPackageErrors.h>
 #include <aws/mediapackage/MediaPackageRequest.h>
 #include <aws/mediapackage/MediaPackageServiceClientModel.h>
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
+#include <aws/mediapackage/internal/MediaPackageEndpointRules.h>
 #include <aws/mediapackage/model/AdMarkers.h>
 #include <aws/mediapackage/model/AdsOnDeliveryRestrictions.h>
 #include <aws/mediapackage/model/Authorization.h>

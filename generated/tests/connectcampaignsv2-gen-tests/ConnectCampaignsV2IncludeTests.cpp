@@ -8,12 +8,12 @@
 
 #include <aws/connectcampaignsv2/ConnectCampaignsV2Client.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2EndpointProvider.h>
-#include <aws/connectcampaignsv2/ConnectCampaignsV2EndpointRules.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2ErrorMarshaller.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2Errors.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2Request.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2ServiceClientModel.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
+#include <aws/connectcampaignsv2/internal/ConnectCampaignsV2EndpointRules.h>
 #include <aws/connectcampaignsv2/model/AccessDeniedException.h>
 #include <aws/connectcampaignsv2/model/AgentAction.h>
 #include <aws/connectcampaignsv2/model/AgentlessConfig.h>

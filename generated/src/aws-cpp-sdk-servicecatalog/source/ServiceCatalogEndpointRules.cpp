@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/servicecatalog/ServiceCatalogEndpointRules.h>
+#include <aws/servicecatalog/internal/ServiceCatalogEndpointRules.h>
 
 namespace Aws {
 namespace ServiceCatalog {

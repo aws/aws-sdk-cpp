@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/odb/OdbEndpointRules.h>
+#include <aws/odb/internal/OdbEndpointRules.h>
 
 namespace Aws {
 namespace odb {

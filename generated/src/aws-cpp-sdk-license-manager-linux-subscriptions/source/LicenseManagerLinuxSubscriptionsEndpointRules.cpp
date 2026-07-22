@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsEndpointRules.h>
+#include <aws/license-manager-linux-subscriptions/internal/LicenseManagerLinuxSubscriptionsEndpointRules.h>
 
 namespace Aws {
 namespace LicenseManagerLinuxSubscriptions {

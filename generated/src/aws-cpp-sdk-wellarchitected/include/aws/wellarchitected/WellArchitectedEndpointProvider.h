@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/wellarchitected/WellArchitectedEndpointRules.h>
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_WELLARCHITECTED_API WellArchitectedEndpointProvider : public WellArchi
  public:
   using WellArchitectedResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  WellArchitectedEndpointProvider()
-      : WellArchitectedDefaultEpProviderBase(Aws::WellArchitected::WellArchitectedEndpointRules::GetRulesBlob(),
-                                             Aws::WellArchitected::WellArchitectedEndpointRules::RulesBlobSize) {}
+  WellArchitectedEndpointProvider();
 
   ~WellArchitectedEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/neptune/NeptuneClient.h>
 #include <aws/neptune/NeptuneEndpointProvider.h>
-#include <aws/neptune/NeptuneEndpointRules.h>
 #include <aws/neptune/NeptuneErrorMarshaller.h>
 #include <aws/neptune/NeptuneErrors.h>
 #include <aws/neptune/NeptuneRequest.h>
 #include <aws/neptune/NeptuneServiceClientModel.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
+#include <aws/neptune/internal/NeptuneEndpointRules.h>
 #include <aws/neptune/model/AddRoleToDBClusterRequest.h>
 #include <aws/neptune/model/AddSourceIdentifierToSubscriptionRequest.h>
 #include <aws/neptune/model/AddSourceIdentifierToSubscriptionResult.h>

@@ -8,6 +8,10 @@ file(GLOB AWS_PARTNERCENTRAL-BENEFITS_MODEL_HEADERS
     "include/aws/partnercentral-benefits/model/*.h"
 )
 
+file(GLOB AWS_PARTNERCENTRAL-BENEFITS_INTERNAL_HEADERS
+    "include/aws/partnercentral-benefits/internal/*.h"
+)
+
 file(GLOB AWS_PARTNERCENTRAL-BENEFITS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_PARTNERCENTRAL-BENEFITS_MODEL_SOURCE
 
 file(GLOB PARTNERCENTRAL-BENEFITS_UNIFIED_HEADERS
     ${AWS_PARTNERCENTRAL-BENEFITS_HEADERS}
+    ${AWS_PARTNERCENTRAL-BENEFITS_INTERNAL_HEADERS}
     ${AWS_PARTNERCENTRAL-BENEFITS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\partnercentral-benefits" FILES ${AWS_PARTNERCENTRAL-BENEFITS_HEADERS})
+        source_group("Header Files\\aws\\partnercentral-benefits\\internal" FILES ${AWS_PARTNERCENTRAL-BENEFITS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\partnercentral-benefits\\model" FILES ${AWS_PARTNERCENTRAL-BENEFITS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_PARTNERCENTRAL-BENEFITS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_PARTNERCENTRAL-BENEFITS_MODEL_SOURCE})

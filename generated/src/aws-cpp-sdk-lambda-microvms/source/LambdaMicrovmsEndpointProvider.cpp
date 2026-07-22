@@ -4,9 +4,15 @@
  */
 
 #include <aws/lambda-microvms/LambdaMicrovmsEndpointProvider.h>
+#include <aws/lambda-microvms/internal/LambdaMicrovmsEndpointRules.h>
 
 namespace Aws {
 namespace LambdaMicrovms {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+LambdaMicrovmsEndpointProvider::LambdaMicrovmsEndpointProvider()
+    : LambdaMicrovmsDefaultEpProviderBase(Aws::LambdaMicrovms::LambdaMicrovmsEndpointRules::GetRulesBlob(),
+                                          Aws::LambdaMicrovms::LambdaMicrovmsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace LambdaMicrovms
 }  // namespace Aws

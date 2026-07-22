@@ -4,9 +4,15 @@
  */
 
 #include <aws/outposts/OutpostsEndpointProvider.h>
+#include <aws/outposts/internal/OutpostsEndpointRules.h>
 
 namespace Aws {
 namespace Outposts {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+OutpostsEndpointProvider::OutpostsEndpointProvider()
+    : OutpostsDefaultEpProviderBase(Aws::Outposts::OutpostsEndpointRules::GetRulesBlob(),
+                                    Aws::Outposts::OutpostsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Outposts
 }  // namespace Aws

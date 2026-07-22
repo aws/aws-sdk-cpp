@@ -4,9 +4,14 @@
  */
 
 #include <aws/waf/WAFEndpointProvider.h>
+#include <aws/waf/internal/WAFEndpointRules.h>
 
 namespace Aws {
 namespace WAF {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+WAFEndpointProvider::WAFEndpointProvider()
+    : WAFDefaultEpProviderBase(Aws::WAF::WAFEndpointRules::GetRulesBlob(), Aws::WAF::WAFEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace WAF
 }  // namespace Aws

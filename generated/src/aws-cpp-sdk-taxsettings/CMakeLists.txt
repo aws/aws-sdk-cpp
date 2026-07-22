@@ -8,6 +8,10 @@ file(GLOB AWS_TAXSETTINGS_MODEL_HEADERS
     "include/aws/taxsettings/model/*.h"
 )
 
+file(GLOB AWS_TAXSETTINGS_INTERNAL_HEADERS
+    "include/aws/taxsettings/internal/*.h"
+)
+
 file(GLOB AWS_TAXSETTINGS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_TAXSETTINGS_MODEL_SOURCE
 
 file(GLOB TAXSETTINGS_UNIFIED_HEADERS
     ${AWS_TAXSETTINGS_HEADERS}
+    ${AWS_TAXSETTINGS_INTERNAL_HEADERS}
     ${AWS_TAXSETTINGS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\taxsettings" FILES ${AWS_TAXSETTINGS_HEADERS})
+        source_group("Header Files\\aws\\taxsettings\\internal" FILES ${AWS_TAXSETTINGS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\taxsettings\\model" FILES ${AWS_TAXSETTINGS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_TAXSETTINGS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_TAXSETTINGS_MODEL_SOURCE})

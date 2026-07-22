@@ -4,9 +4,15 @@
  */
 
 #include <aws/codedeploy/CodeDeployEndpointProvider.h>
+#include <aws/codedeploy/internal/CodeDeployEndpointRules.h>
 
 namespace Aws {
 namespace CodeDeploy {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+CodeDeployEndpointProvider::CodeDeployEndpointProvider()
+    : CodeDeployDefaultEpProviderBase(Aws::CodeDeploy::CodeDeployEndpointRules::GetRulesBlob(),
+                                      Aws::CodeDeploy::CodeDeployEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace CodeDeploy
 }  // namespace Aws

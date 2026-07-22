@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/oam/OAMEndpointRules.h>
+#include <aws/oam/internal/OAMEndpointRules.h>
 
 namespace Aws {
 namespace OAM {

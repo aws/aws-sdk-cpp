@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/appmesh/AppMeshEndpointRules.h>
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_APPMESH_API AppMeshEndpointProvider : public AppMeshDefaultEpProviderB
  public:
   using AppMeshResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AppMeshEndpointProvider()
-      : AppMeshDefaultEpProviderBase(Aws::AppMesh::AppMeshEndpointRules::GetRulesBlob(),
-                                     Aws::AppMesh::AppMeshEndpointRules::RulesBlobSize) {}
+  AppMeshEndpointProvider();
 
   ~AppMeshEndpointProvider() {}
 };

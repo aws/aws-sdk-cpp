@@ -4,9 +4,15 @@
  */
 
 #include <aws/gamelift/GameLiftEndpointProvider.h>
+#include <aws/gamelift/internal/GameLiftEndpointRules.h>
 
 namespace Aws {
 namespace GameLift {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+GameLiftEndpointProvider::GameLiftEndpointProvider()
+    : GameLiftDefaultEpProviderBase(Aws::GameLift::GameLiftEndpointRules::GetRulesBlob(),
+                                    Aws::GameLift::GameLiftEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace GameLift
 }  // namespace Aws

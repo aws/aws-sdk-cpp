@@ -8,12 +8,12 @@
 
 #include <aws/acm-pca/ACMPCAClient.h>
 #include <aws/acm-pca/ACMPCAEndpointProvider.h>
-#include <aws/acm-pca/ACMPCAEndpointRules.h>
 #include <aws/acm-pca/ACMPCAErrorMarshaller.h>
 #include <aws/acm-pca/ACMPCAErrors.h>
 #include <aws/acm-pca/ACMPCARequest.h>
 #include <aws/acm-pca/ACMPCAServiceClientModel.h>
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
+#include <aws/acm-pca/internal/ACMPCAEndpointRules.h>
 #include <aws/acm-pca/model/ASN1Subject.h>
 #include <aws/acm-pca/model/AccessDescription.h>
 #include <aws/acm-pca/model/AccessMethod.h>

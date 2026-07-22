@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/guardduty/GuardDutyEndpointRules.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_GUARDDUTY_API GuardDutyEndpointProvider : public GuardDutyDefaultEpPro
  public:
   using GuardDutyResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  GuardDutyEndpointProvider()
-      : GuardDutyDefaultEpProviderBase(Aws::GuardDuty::GuardDutyEndpointRules::GetRulesBlob(),
-                                       Aws::GuardDuty::GuardDutyEndpointRules::RulesBlobSize) {}
+  GuardDutyEndpointProvider();
 
   ~GuardDutyEndpointProvider() {}
 };

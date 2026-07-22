@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/mediatailor/MediaTailorEndpointRules.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_MEDIATAILOR_API MediaTailorEndpointProvider : public MediaTailorDefaul
  public:
   using MediaTailorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MediaTailorEndpointProvider()
-      : MediaTailorDefaultEpProviderBase(Aws::MediaTailor::MediaTailorEndpointRules::GetRulesBlob(),
-                                         Aws::MediaTailor::MediaTailorEndpointRules::RulesBlobSize) {}
+  MediaTailorEndpointProvider();
 
   ~MediaTailorEndpointProvider() {}
 };

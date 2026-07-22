@@ -8,6 +8,10 @@ file(GLOB AWS_EBS_MODEL_HEADERS
     "include/aws/ebs/model/*.h"
 )
 
+file(GLOB AWS_EBS_INTERNAL_HEADERS
+    "include/aws/ebs/internal/*.h"
+)
+
 file(GLOB AWS_EBS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_EBS_MODEL_SOURCE
 
 file(GLOB EBS_UNIFIED_HEADERS
     ${AWS_EBS_HEADERS}
+    ${AWS_EBS_INTERNAL_HEADERS}
     ${AWS_EBS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\ebs" FILES ${AWS_EBS_HEADERS})
+        source_group("Header Files\\aws\\ebs\\internal" FILES ${AWS_EBS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\ebs\\model" FILES ${AWS_EBS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_EBS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_EBS_MODEL_SOURCE})

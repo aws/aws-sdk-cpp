@@ -4,9 +4,15 @@
  */
 
 #include <aws/ssm-guiconnect/SSMGuiConnectEndpointProvider.h>
+#include <aws/ssm-guiconnect/internal/SSMGuiConnectEndpointRules.h>
 
 namespace Aws {
 namespace SSMGuiConnect {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SSMGuiConnectEndpointProvider::SSMGuiConnectEndpointProvider()
+    : SSMGuiConnectDefaultEpProviderBase(Aws::SSMGuiConnect::SSMGuiConnectEndpointRules::GetRulesBlob(),
+                                         Aws::SSMGuiConnect::SSMGuiConnectEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SSMGuiConnect
 }  // namespace Aws

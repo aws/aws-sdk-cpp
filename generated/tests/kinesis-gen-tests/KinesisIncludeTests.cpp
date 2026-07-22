@@ -8,12 +8,12 @@
 
 #include <aws/kinesis/KinesisClient.h>
 #include <aws/kinesis/KinesisEndpointProvider.h>
-#include <aws/kinesis/KinesisEndpointRules.h>
 #include <aws/kinesis/KinesisErrorMarshaller.h>
 #include <aws/kinesis/KinesisErrors.h>
 #include <aws/kinesis/KinesisRequest.h>
 #include <aws/kinesis/KinesisServiceClientModel.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
+#include <aws/kinesis/internal/KinesisEndpointRules.h>
 #include <aws/kinesis/model/AddTagsToStreamRequest.h>
 #include <aws/kinesis/model/ChildShard.h>
 #include <aws/kinesis/model/Consumer.h>

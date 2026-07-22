@@ -8,12 +8,12 @@
 
 #include <aws/redshift/RedshiftClient.h>
 #include <aws/redshift/RedshiftEndpointProvider.h>
-#include <aws/redshift/RedshiftEndpointRules.h>
 #include <aws/redshift/RedshiftErrorMarshaller.h>
 #include <aws/redshift/RedshiftErrors.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/redshift/RedshiftServiceClientModel.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
+#include <aws/redshift/internal/RedshiftEndpointRules.h>
 #include <aws/redshift/model/AcceptReservedNodeExchangeRequest.h>
 #include <aws/redshift/model/AcceptReservedNodeExchangeResult.h>
 #include <aws/redshift/model/AccountAttribute.h>

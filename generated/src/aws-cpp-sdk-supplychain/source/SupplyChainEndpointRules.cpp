@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/supplychain/SupplyChainEndpointRules.h>
+#include <aws/supplychain/internal/SupplyChainEndpointRules.h>
 
 namespace Aws {
 namespace SupplyChain {

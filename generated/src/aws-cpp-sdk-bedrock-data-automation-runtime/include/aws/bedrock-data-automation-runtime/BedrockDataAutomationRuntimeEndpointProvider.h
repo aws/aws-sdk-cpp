@@ -5,7 +5,6 @@
 
 #pragma once
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeClientConfiguration.h>
-#include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeEndpointRules.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
@@ -70,10 +69,7 @@ class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeEndpointP
  public:
   using BedrockDataAutomationRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BedrockDataAutomationRuntimeEndpointProvider()
-      : BedrockDataAutomationRuntimeDefaultEpProviderBase(
-            Aws::BedrockDataAutomationRuntime::BedrockDataAutomationRuntimeEndpointRules::GetRulesBlob(),
-            Aws::BedrockDataAutomationRuntime::BedrockDataAutomationRuntimeEndpointRules::RulesBlobSize) {}
+  BedrockDataAutomationRuntimeEndpointProvider();
 
   ~BedrockDataAutomationRuntimeEndpointProvider() {}
 };

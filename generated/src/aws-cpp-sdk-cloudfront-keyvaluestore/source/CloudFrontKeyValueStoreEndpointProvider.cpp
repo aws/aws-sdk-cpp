@@ -4,9 +4,15 @@
  */
 
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreEndpointProvider.h>
+#include <aws/cloudfront-keyvaluestore/internal/CloudFrontKeyValueStoreEndpointRules.h>
 
 namespace Aws {
 namespace CloudFrontKeyValueStore {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+CloudFrontKeyValueStoreEndpointProvider::CloudFrontKeyValueStoreEndpointProvider()
+    : CloudFrontKeyValueStoreDefaultEpProviderBase(Aws::CloudFrontKeyValueStore::CloudFrontKeyValueStoreEndpointRules::GetRulesBlob(),
+                                                   Aws::CloudFrontKeyValueStore::CloudFrontKeyValueStoreEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace CloudFrontKeyValueStore
 }  // namespace Aws

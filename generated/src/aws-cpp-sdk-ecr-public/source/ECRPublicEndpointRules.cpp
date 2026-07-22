@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ecr-public/ECRPublicEndpointRules.h>
+#include <aws/ecr-public/internal/ECRPublicEndpointRules.h>
 
 namespace Aws {
 namespace ECRPublic {

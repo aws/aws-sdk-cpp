@@ -8,12 +8,12 @@
 
 #include <aws/drs/DrsClient.h>
 #include <aws/drs/DrsEndpointProvider.h>
-#include <aws/drs/DrsEndpointRules.h>
 #include <aws/drs/DrsErrorMarshaller.h>
 #include <aws/drs/DrsErrors.h>
 #include <aws/drs/DrsRequest.h>
 #include <aws/drs/DrsServiceClientModel.h>
 #include <aws/drs/Drs_EXPORTS.h>
+#include <aws/drs/internal/DrsEndpointRules.h>
 #include <aws/drs/model/AccessDeniedException.h>
 #include <aws/drs/model/Account.h>
 #include <aws/drs/model/AssociateSourceNetworkStackRequest.h>

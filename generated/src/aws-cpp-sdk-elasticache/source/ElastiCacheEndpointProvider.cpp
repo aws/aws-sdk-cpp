@@ -4,9 +4,15 @@
  */
 
 #include <aws/elasticache/ElastiCacheEndpointProvider.h>
+#include <aws/elasticache/internal/ElastiCacheEndpointRules.h>
 
 namespace Aws {
 namespace ElastiCache {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ElastiCacheEndpointProvider::ElastiCacheEndpointProvider()
+    : ElastiCacheDefaultEpProviderBase(Aws::ElastiCache::ElastiCacheEndpointRules::GetRulesBlob(),
+                                       Aws::ElastiCache::ElastiCacheEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ElastiCache
 }  // namespace Aws

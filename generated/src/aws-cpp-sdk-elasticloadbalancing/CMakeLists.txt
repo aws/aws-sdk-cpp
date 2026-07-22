@@ -8,6 +8,10 @@ file(GLOB AWS_ELASTICLOADBALANCING_MODEL_HEADERS
     "include/aws/elasticloadbalancing/model/*.h"
 )
 
+file(GLOB AWS_ELASTICLOADBALANCING_INTERNAL_HEADERS
+    "include/aws/elasticloadbalancing/internal/*.h"
+)
+
 file(GLOB AWS_ELASTICLOADBALANCING_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_ELASTICLOADBALANCING_MODEL_SOURCE
 
 file(GLOB ELASTICLOADBALANCING_UNIFIED_HEADERS
     ${AWS_ELASTICLOADBALANCING_HEADERS}
+    ${AWS_ELASTICLOADBALANCING_INTERNAL_HEADERS}
     ${AWS_ELASTICLOADBALANCING_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\elasticloadbalancing" FILES ${AWS_ELASTICLOADBALANCING_HEADERS})
+        source_group("Header Files\\aws\\elasticloadbalancing\\internal" FILES ${AWS_ELASTICLOADBALANCING_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\elasticloadbalancing\\model" FILES ${AWS_ELASTICLOADBALANCING_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_ELASTICLOADBALANCING_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_ELASTICLOADBALANCING_MODEL_SOURCE})

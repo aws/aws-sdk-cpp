@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ssm-contacts/SSMContactsEndpointRules.h>
 #include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SSMCONTACTS_API SSMContactsEndpointProvider : public SSMContactsDefaul
  public:
   using SSMContactsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SSMContactsEndpointProvider()
-      : SSMContactsDefaultEpProviderBase(Aws::SSMContacts::SSMContactsEndpointRules::GetRulesBlob(),
-                                         Aws::SSMContacts::SSMContactsEndpointRules::RulesBlobSize) {}
+  SSMContactsEndpointProvider();
 
   ~SSMContactsEndpointProvider() {}
 };

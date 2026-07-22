@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/launch-wizard/LaunchWizardEndpointRules.h>
+#include <aws/launch-wizard/internal/LaunchWizardEndpointRules.h>
 
 namespace Aws {
 namespace LaunchWizard {

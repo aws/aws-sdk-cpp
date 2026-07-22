@@ -4,9 +4,15 @@
  */
 
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsEndpointProvider.h>
+#include <aws/chime-sdk-meetings/internal/ChimeSDKMeetingsEndpointRules.h>
 
 namespace Aws {
 namespace ChimeSDKMeetings {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ChimeSDKMeetingsEndpointProvider::ChimeSDKMeetingsEndpointProvider()
+    : ChimeSDKMeetingsDefaultEpProviderBase(Aws::ChimeSDKMeetings::ChimeSDKMeetingsEndpointRules::GetRulesBlob(),
+                                            Aws::ChimeSDKMeetings::ChimeSDKMeetingsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ChimeSDKMeetings
 }  // namespace Aws

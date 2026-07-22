@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/kms/KMSEndpointRules.h>
+#include <aws/kms/internal/KMSEndpointRules.h>
 
 namespace Aws {
 namespace KMS {

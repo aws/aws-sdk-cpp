@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/finspace/FinspaceEndpointRules.h>
 #include <aws/finspace/Finspace_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_FINSPACE_API FinspaceEndpointProvider : public FinspaceDefaultEpProvid
  public:
   using FinspaceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  FinspaceEndpointProvider()
-      : FinspaceDefaultEpProviderBase(Aws::finspace::FinspaceEndpointRules::GetRulesBlob(),
-                                      Aws::finspace::FinspaceEndpointRules::RulesBlobSize) {}
+  FinspaceEndpointProvider();
 
   ~FinspaceEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/auditmanager/AuditManagerClient.h>
 #include <aws/auditmanager/AuditManagerEndpointProvider.h>
-#include <aws/auditmanager/AuditManagerEndpointRules.h>
 #include <aws/auditmanager/AuditManagerErrorMarshaller.h>
 #include <aws/auditmanager/AuditManagerErrors.h>
 #include <aws/auditmanager/AuditManagerRequest.h>
 #include <aws/auditmanager/AuditManagerServiceClientModel.h>
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
+#include <aws/auditmanager/internal/AuditManagerEndpointRules.h>
 #include <aws/auditmanager/model/AWSAccount.h>
 #include <aws/auditmanager/model/AWSService.h>
 #include <aws/auditmanager/model/AccountStatus.h>

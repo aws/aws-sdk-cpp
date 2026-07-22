@@ -4,6 +4,7 @@
  */
 
 #include <aws/s3/S3EndpointProvider.h>
+#include <aws/s3/internal/S3EndpointRules.h>
 
 namespace Aws {
 #ifndef AWS_S3_EXPORTS  // Except for Windows DLL
@@ -21,6 +22,9 @@ template class Aws::Endpoint::DefaultEndpointProvider<S3::Endpoint::S3ClientConf
 
 namespace S3 {
 namespace Endpoint {
+S3EndpointProvider::S3EndpointProvider()
+    : S3DefaultEpProviderBase(Aws::S3::S3EndpointRules::GetRulesBlob(), Aws::S3::S3EndpointRules::RulesBlobSize) {}
+
 void S3ClientContextParameters::SetForcePathStyle(bool value) { return SetBooleanParameter(Aws::String("ForcePathStyle"), value); }
 const S3ClientContextParameters::ClientContextParameters::EndpointParameter& S3ClientContextParameters::GetForcePathStyle() const {
   return GetParameter("ForcePathStyle");

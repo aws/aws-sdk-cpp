@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/mwaa-serverless/MWAAServerlessEndpointRules.h>
+#include <aws/mwaa-serverless/internal/MWAAServerlessEndpointRules.h>
 
 namespace Aws {
 namespace MWAAServerless {

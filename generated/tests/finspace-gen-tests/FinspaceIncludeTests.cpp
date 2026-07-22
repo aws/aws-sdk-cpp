@@ -8,12 +8,12 @@
 
 #include <aws/finspace/FinspaceClient.h>
 #include <aws/finspace/FinspaceEndpointProvider.h>
-#include <aws/finspace/FinspaceEndpointRules.h>
 #include <aws/finspace/FinspaceErrorMarshaller.h>
 #include <aws/finspace/FinspaceErrors.h>
 #include <aws/finspace/FinspaceRequest.h>
 #include <aws/finspace/FinspaceServiceClientModel.h>
 #include <aws/finspace/Finspace_EXPORTS.h>
+#include <aws/finspace/internal/FinspaceEndpointRules.h>
 #include <aws/finspace/model/AutoScalingConfiguration.h>
 #include <aws/finspace/model/AutoScalingMetric.h>
 #include <aws/finspace/model/CapacityConfiguration.h>

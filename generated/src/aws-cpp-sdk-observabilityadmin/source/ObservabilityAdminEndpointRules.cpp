@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/observabilityadmin/ObservabilityAdminEndpointRules.h>
+#include <aws/observabilityadmin/internal/ObservabilityAdminEndpointRules.h>
 
 namespace Aws {
 namespace ObservabilityAdmin {

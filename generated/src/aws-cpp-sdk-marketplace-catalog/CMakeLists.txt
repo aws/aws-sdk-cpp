@@ -8,6 +8,10 @@ file(GLOB AWS_MARKETPLACE-CATALOG_MODEL_HEADERS
     "include/aws/marketplace-catalog/model/*.h"
 )
 
+file(GLOB AWS_MARKETPLACE-CATALOG_INTERNAL_HEADERS
+    "include/aws/marketplace-catalog/internal/*.h"
+)
+
 file(GLOB AWS_MARKETPLACE-CATALOG_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MARKETPLACE-CATALOG_MODEL_SOURCE
 
 file(GLOB MARKETPLACE-CATALOG_UNIFIED_HEADERS
     ${AWS_MARKETPLACE-CATALOG_HEADERS}
+    ${AWS_MARKETPLACE-CATALOG_INTERNAL_HEADERS}
     ${AWS_MARKETPLACE-CATALOG_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\marketplace-catalog" FILES ${AWS_MARKETPLACE-CATALOG_HEADERS})
+        source_group("Header Files\\aws\\marketplace-catalog\\internal" FILES ${AWS_MARKETPLACE-CATALOG_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\marketplace-catalog\\model" FILES ${AWS_MARKETPLACE-CATALOG_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MARKETPLACE-CATALOG_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MARKETPLACE-CATALOG_MODEL_SOURCE})

@@ -8,12 +8,12 @@
 
 #include <aws/waf/WAFClient.h>
 #include <aws/waf/WAFEndpointProvider.h>
-#include <aws/waf/WAFEndpointRules.h>
 #include <aws/waf/WAFErrorMarshaller.h>
 #include <aws/waf/WAFErrors.h>
 #include <aws/waf/WAFRequest.h>
 #include <aws/waf/WAFServiceClientModel.h>
 #include <aws/waf/WAF_EXPORTS.h>
+#include <aws/waf/internal/WAFEndpointRules.h>
 #include <aws/waf/model/ActivatedRule.h>
 #include <aws/waf/model/ByteMatchSet.h>
 #include <aws/waf/model/ByteMatchSetSummary.h>

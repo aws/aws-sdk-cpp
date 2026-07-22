@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/workmail/WorkMailEndpointRules.h>
+#include <aws/workmail/internal/WorkMailEndpointRules.h>
 
 namespace Aws {
 namespace WorkMail {

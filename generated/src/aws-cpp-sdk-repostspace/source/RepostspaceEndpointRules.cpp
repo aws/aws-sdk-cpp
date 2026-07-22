@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/repostspace/RepostspaceEndpointRules.h>
+#include <aws/repostspace/internal/RepostspaceEndpointRules.h>
 
 namespace Aws {
 namespace repostspace {

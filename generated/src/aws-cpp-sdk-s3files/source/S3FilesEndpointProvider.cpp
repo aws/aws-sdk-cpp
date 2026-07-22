@@ -4,9 +4,14 @@
  */
 
 #include <aws/s3files/S3FilesEndpointProvider.h>
+#include <aws/s3files/internal/S3FilesEndpointRules.h>
 
 namespace Aws {
 namespace S3Files {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+S3FilesEndpointProvider::S3FilesEndpointProvider()
+    : S3FilesDefaultEpProviderBase(Aws::S3Files::S3FilesEndpointRules::GetRulesBlob(), Aws::S3Files::S3FilesEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace S3Files
 }  // namespace Aws

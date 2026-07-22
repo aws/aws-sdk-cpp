@@ -4,9 +4,15 @@
  */
 
 #include <aws/chime-sdk-identity/ChimeSDKIdentityEndpointProvider.h>
+#include <aws/chime-sdk-identity/internal/ChimeSDKIdentityEndpointRules.h>
 
 namespace Aws {
 namespace ChimeSDKIdentity {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ChimeSDKIdentityEndpointProvider::ChimeSDKIdentityEndpointProvider()
+    : ChimeSDKIdentityDefaultEpProviderBase(Aws::ChimeSDKIdentity::ChimeSDKIdentityEndpointRules::GetRulesBlob(),
+                                            Aws::ChimeSDKIdentity::ChimeSDKIdentityEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ChimeSDKIdentity
 }  // namespace Aws

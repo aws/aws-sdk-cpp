@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/scheduler/SchedulerEndpointRules.h>
+#include <aws/scheduler/internal/SchedulerEndpointRules.h>
 
 namespace Aws {
 namespace Scheduler {

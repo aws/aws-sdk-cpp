@@ -4,9 +4,15 @@
  */
 
 #include <aws/ivs-realtime/IvsrealtimeEndpointProvider.h>
+#include <aws/ivs-realtime/internal/IvsrealtimeEndpointRules.h>
 
 namespace Aws {
 namespace ivsrealtime {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+IvsrealtimeEndpointProvider::IvsrealtimeEndpointProvider()
+    : IvsrealtimeDefaultEpProviderBase(Aws::ivsrealtime::IvsrealtimeEndpointRules::GetRulesBlob(),
+                                       Aws::ivsrealtime::IvsrealtimeEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ivsrealtime
 }  // namespace Aws

@@ -8,12 +8,12 @@
 
 #include <aws/sustainability/SustainabilityClient.h>
 #include <aws/sustainability/SustainabilityEndpointProvider.h>
-#include <aws/sustainability/SustainabilityEndpointRules.h>
 #include <aws/sustainability/SustainabilityErrorMarshaller.h>
 #include <aws/sustainability/SustainabilityErrors.h>
 #include <aws/sustainability/SustainabilityRequest.h>
 #include <aws/sustainability/SustainabilityServiceClientModel.h>
 #include <aws/sustainability/Sustainability_EXPORTS.h>
+#include <aws/sustainability/internal/SustainabilityEndpointRules.h>
 #include <aws/sustainability/model/Dimension.h>
 #include <aws/sustainability/model/DimensionEntry.h>
 #include <aws/sustainability/model/Emissions.h>

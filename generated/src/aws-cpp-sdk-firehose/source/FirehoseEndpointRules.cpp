@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/firehose/FirehoseEndpointRules.h>
+#include <aws/firehose/internal/FirehoseEndpointRules.h>
 
 namespace Aws {
 namespace Firehose {

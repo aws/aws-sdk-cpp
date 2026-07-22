@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/appfabric/AppFabricEndpointRules.h>
 #include <aws/appfabric/AppFabric_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_APPFABRIC_API AppFabricEndpointProvider : public AppFabricDefaultEpPro
  public:
   using AppFabricResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AppFabricEndpointProvider()
-      : AppFabricDefaultEpProviderBase(Aws::AppFabric::AppFabricEndpointRules::GetRulesBlob(),
-                                       Aws::AppFabric::AppFabricEndpointRules::RulesBlobSize) {}
+  AppFabricEndpointProvider();
 
   ~AppFabricEndpointProvider() {}
 };

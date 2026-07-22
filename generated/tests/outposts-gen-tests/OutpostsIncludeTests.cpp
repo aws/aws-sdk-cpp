@@ -8,12 +8,12 @@
 
 #include <aws/outposts/OutpostsClient.h>
 #include <aws/outposts/OutpostsEndpointProvider.h>
-#include <aws/outposts/OutpostsEndpointRules.h>
 #include <aws/outposts/OutpostsErrorMarshaller.h>
 #include <aws/outposts/OutpostsErrors.h>
 #include <aws/outposts/OutpostsRequest.h>
 #include <aws/outposts/OutpostsServiceClientModel.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
+#include <aws/outposts/internal/OutpostsEndpointRules.h>
 #include <aws/outposts/model/AWSServiceName.h>
 #include <aws/outposts/model/Address.h>
 #include <aws/outposts/model/AddressType.h>

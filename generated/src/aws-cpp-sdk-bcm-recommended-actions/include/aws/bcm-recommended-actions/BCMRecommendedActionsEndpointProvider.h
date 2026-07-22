@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/bcm-recommended-actions/BCMRecommendedActionsEndpointRules.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActions_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -44,9 +43,7 @@ class AWS_BCMRECOMMENDEDACTIONS_API BCMRecommendedActionsEndpointProvider : publ
  public:
   using BCMRecommendedActionsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BCMRecommendedActionsEndpointProvider()
-      : BCMRecommendedActionsDefaultEpProviderBase(Aws::BCMRecommendedActions::BCMRecommendedActionsEndpointRules::GetRulesBlob(),
-                                                   Aws::BCMRecommendedActions::BCMRecommendedActionsEndpointRules::RulesBlobSize) {}
+  BCMRecommendedActionsEndpointProvider();
 
   ~BCMRecommendedActionsEndpointProvider() {}
 };

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/medialive/MediaLiveEndpointRules.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_MEDIALIVE_API MediaLiveEndpointProvider : public MediaLiveDefaultEpPro
  public:
   using MediaLiveResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MediaLiveEndpointProvider()
-      : MediaLiveDefaultEpProviderBase(Aws::MediaLive::MediaLiveEndpointRules::GetRulesBlob(),
-                                       Aws::MediaLive::MediaLiveEndpointRules::RulesBlobSize) {}
+  MediaLiveEndpointProvider();
 
   ~MediaLiveEndpointProvider() {}
 };

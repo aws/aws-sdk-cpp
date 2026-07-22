@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/mwaa-serverless/MWAAServerlessEndpointRules.h>
 #include <aws/mwaa-serverless/MWAAServerless_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_MWAASERVERLESS_API MWAAServerlessEndpointProvider : public MWAAServerl
  public:
   using MWAAServerlessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MWAAServerlessEndpointProvider()
-      : MWAAServerlessDefaultEpProviderBase(Aws::MWAAServerless::MWAAServerlessEndpointRules::GetRulesBlob(),
-                                            Aws::MWAAServerless::MWAAServerlessEndpointRules::RulesBlobSize) {}
+  MWAAServerlessEndpointProvider();
 
   ~MWAAServerlessEndpointProvider() {}
 };

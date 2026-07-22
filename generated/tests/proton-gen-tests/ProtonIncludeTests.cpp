@@ -8,12 +8,12 @@
 
 #include <aws/proton/ProtonClient.h>
 #include <aws/proton/ProtonEndpointProvider.h>
-#include <aws/proton/ProtonEndpointRules.h>
 #include <aws/proton/ProtonErrorMarshaller.h>
 #include <aws/proton/ProtonErrors.h>
 #include <aws/proton/ProtonRequest.h>
 #include <aws/proton/ProtonServiceClientModel.h>
 #include <aws/proton/Proton_EXPORTS.h>
+#include <aws/proton/internal/ProtonEndpointRules.h>
 #include <aws/proton/model/AccountSettings.h>
 #include <aws/proton/model/BlockerStatus.h>
 #include <aws/proton/model/BlockerType.h>

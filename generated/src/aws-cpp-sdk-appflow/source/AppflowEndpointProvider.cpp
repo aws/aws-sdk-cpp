@@ -4,9 +4,14 @@
  */
 
 #include <aws/appflow/AppflowEndpointProvider.h>
+#include <aws/appflow/internal/AppflowEndpointRules.h>
 
 namespace Aws {
 namespace Appflow {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+AppflowEndpointProvider::AppflowEndpointProvider()
+    : AppflowDefaultEpProviderBase(Aws::Appflow::AppflowEndpointRules::GetRulesBlob(), Aws::Appflow::AppflowEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Appflow
 }  // namespace Aws

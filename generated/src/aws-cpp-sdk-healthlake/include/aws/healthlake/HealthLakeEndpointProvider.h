@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/healthlake/HealthLakeEndpointRules.h>
 #include <aws/healthlake/HealthLake_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_HEALTHLAKE_API HealthLakeEndpointProvider : public HealthLakeDefaultEp
  public:
   using HealthLakeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  HealthLakeEndpointProvider()
-      : HealthLakeDefaultEpProviderBase(Aws::HealthLake::HealthLakeEndpointRules::GetRulesBlob(),
-                                        Aws::HealthLake::HealthLakeEndpointRules::RulesBlobSize) {}
+  HealthLakeEndpointProvider();
 
   ~HealthLakeEndpointProvider() {}
 };

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/marketplace-agreement/AgreementServiceEndpointRules.h>
+#include <aws/marketplace-agreement/internal/AgreementServiceEndpointRules.h>
 
 namespace Aws {
 namespace AgreementService {

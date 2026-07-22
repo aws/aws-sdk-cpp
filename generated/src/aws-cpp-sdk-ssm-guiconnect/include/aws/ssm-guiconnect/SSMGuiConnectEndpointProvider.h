@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ssm-guiconnect/SSMGuiConnectEndpointRules.h>
 #include <aws/ssm-guiconnect/SSMGuiConnect_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SSMGUICONNECT_API SSMGuiConnectEndpointProvider : public SSMGuiConnect
  public:
   using SSMGuiConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SSMGuiConnectEndpointProvider()
-      : SSMGuiConnectDefaultEpProviderBase(Aws::SSMGuiConnect::SSMGuiConnectEndpointRules::GetRulesBlob(),
-                                           Aws::SSMGuiConnect::SSMGuiConnectEndpointRules::RulesBlobSize) {}
+  SSMGuiConnectEndpointProvider();
 
   ~SSMGuiConnectEndpointProvider() {}
 };

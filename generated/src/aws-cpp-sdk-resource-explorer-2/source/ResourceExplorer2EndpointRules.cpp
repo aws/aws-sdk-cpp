@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/resource-explorer-2/ResourceExplorer2EndpointRules.h>
+#include <aws/resource-explorer-2/internal/ResourceExplorer2EndpointRules.h>
 
 namespace Aws {
 namespace ResourceExplorer2 {

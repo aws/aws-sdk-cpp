@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/trustedadvisor/TrustedAdvisorEndpointRules.h>
 #include <aws/trustedadvisor/TrustedAdvisor_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorEndpointProvider : public TrustedAdvi
  public:
   using TrustedAdvisorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  TrustedAdvisorEndpointProvider()
-      : TrustedAdvisorDefaultEpProviderBase(Aws::TrustedAdvisor::TrustedAdvisorEndpointRules::GetRulesBlob(),
-                                            Aws::TrustedAdvisor::TrustedAdvisorEndpointRules::RulesBlobSize) {}
+  TrustedAdvisorEndpointProvider();
 
   ~TrustedAdvisorEndpointProvider() {}
 };

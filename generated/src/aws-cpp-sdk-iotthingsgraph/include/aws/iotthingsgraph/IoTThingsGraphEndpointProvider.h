@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iotthingsgraph/IoTThingsGraphEndpointRules.h>
 #include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_IOTTHINGSGRAPH_API IoTThingsGraphEndpointProvider : public IoTThingsGr
  public:
   using IoTThingsGraphResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IoTThingsGraphEndpointProvider()
-      : IoTThingsGraphDefaultEpProviderBase(Aws::IoTThingsGraph::IoTThingsGraphEndpointRules::GetRulesBlob(),
-                                            Aws::IoTThingsGraph::IoTThingsGraphEndpointRules::RulesBlobSize) {}
+  IoTThingsGraphEndpointProvider();
 
   ~IoTThingsGraphEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/tnb/TnbClient.h>
 #include <aws/tnb/TnbEndpointProvider.h>
-#include <aws/tnb/TnbEndpointRules.h>
 #include <aws/tnb/TnbErrorMarshaller.h>
 #include <aws/tnb/TnbErrors.h>
 #include <aws/tnb/TnbRequest.h>
 #include <aws/tnb/TnbServiceClientModel.h>
 #include <aws/tnb/Tnb_EXPORTS.h>
+#include <aws/tnb/internal/TnbEndpointRules.h>
 #include <aws/tnb/model/CancelSolNetworkOperationRequest.h>
 #include <aws/tnb/model/CreateSolFunctionPackageRequest.h>
 #include <aws/tnb/model/CreateSolFunctionPackageResult.h>

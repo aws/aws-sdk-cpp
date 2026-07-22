@@ -8,12 +8,12 @@
 
 #include <aws/signin/SigninClient.h>
 #include <aws/signin/SigninEndpointProvider.h>
-#include <aws/signin/SigninEndpointRules.h>
 #include <aws/signin/SigninErrorMarshaller.h>
 #include <aws/signin/SigninErrors.h>
 #include <aws/signin/SigninRequest.h>
 #include <aws/signin/SigninServiceClientModel.h>
 #include <aws/signin/Signin_EXPORTS.h>
+#include <aws/signin/internal/SigninEndpointRules.h>
 #include <aws/signin/model/AccessDeniedException.h>
 #include <aws/signin/model/AccessToken.h>
 #include <aws/signin/model/ConflictException.h>

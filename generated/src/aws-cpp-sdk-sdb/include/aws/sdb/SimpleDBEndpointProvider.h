@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sdb/SimpleDBEndpointRules.h>
 #include <aws/sdb/SimpleDB_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SIMPLEDB_API SimpleDBEndpointProvider : public SimpleDBDefaultEpProvid
  public:
   using SimpleDBResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SimpleDBEndpointProvider()
-      : SimpleDBDefaultEpProviderBase(Aws::SimpleDB::SimpleDBEndpointRules::GetRulesBlob(),
-                                      Aws::SimpleDB::SimpleDBEndpointRules::RulesBlobSize) {}
+  SimpleDBEndpointProvider();
 
   ~SimpleDBEndpointProvider() {}
 };

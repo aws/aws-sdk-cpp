@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/route53-recovery-readiness/Route53RecoveryReadinessEndpointRules.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadiness_EXPORTS.h>
 
 namespace Aws {
@@ -44,10 +43,7 @@ class AWS_ROUTE53RECOVERYREADINESS_API Route53RecoveryReadinessEndpointProvider 
  public:
   using Route53RecoveryReadinessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  Route53RecoveryReadinessEndpointProvider()
-      : Route53RecoveryReadinessDefaultEpProviderBase(Aws::Route53RecoveryReadiness::Route53RecoveryReadinessEndpointRules::GetRulesBlob(),
-                                                      Aws::Route53RecoveryReadiness::Route53RecoveryReadinessEndpointRules::RulesBlobSize) {
-  }
+  Route53RecoveryReadinessEndpointProvider();
 
   ~Route53RecoveryReadinessEndpointProvider() {}
 };

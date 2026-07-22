@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/freetier/FreeTierEndpointRules.h>
+#include <aws/freetier/internal/FreeTierEndpointRules.h>
 
 namespace Aws {
 namespace FreeTier {

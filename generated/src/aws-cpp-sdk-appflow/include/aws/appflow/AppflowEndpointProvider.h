@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/appflow/AppflowEndpointRules.h>
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_APPFLOW_API AppflowEndpointProvider : public AppflowDefaultEpProviderB
  public:
   using AppflowResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AppflowEndpointProvider()
-      : AppflowDefaultEpProviderBase(Aws::Appflow::AppflowEndpointRules::GetRulesBlob(),
-                                     Aws::Appflow::AppflowEndpointRules::RulesBlobSize) {}
+  AppflowEndpointProvider();
 
   ~AppflowEndpointProvider() {}
 };

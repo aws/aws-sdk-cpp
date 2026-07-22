@@ -8,12 +8,12 @@
 
 #include <aws/inspector/InspectorClient.h>
 #include <aws/inspector/InspectorEndpointProvider.h>
-#include <aws/inspector/InspectorEndpointRules.h>
 #include <aws/inspector/InspectorErrorMarshaller.h>
 #include <aws/inspector/InspectorErrors.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/inspector/InspectorServiceClientModel.h>
 #include <aws/inspector/Inspector_EXPORTS.h>
+#include <aws/inspector/internal/InspectorEndpointRules.h>
 #include <aws/inspector/model/AccessDeniedErrorCode.h>
 #include <aws/inspector/model/AccessDeniedException.h>
 #include <aws/inspector/model/AddAttributesToFindingsRequest.h>

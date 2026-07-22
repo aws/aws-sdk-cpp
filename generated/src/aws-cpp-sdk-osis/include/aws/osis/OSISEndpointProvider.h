@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/osis/OSISEndpointRules.h>
 #include <aws/osis/OSIS_EXPORTS.h>
 
 namespace Aws {
@@ -40,8 +39,7 @@ class AWS_OSIS_API OSISEndpointProvider : public OSISDefaultEpProviderBase {
  public:
   using OSISResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  OSISEndpointProvider()
-      : OSISDefaultEpProviderBase(Aws::OSIS::OSISEndpointRules::GetRulesBlob(), Aws::OSIS::OSISEndpointRules::RulesBlobSize) {}
+  OSISEndpointProvider();
 
   ~OSISEndpointProvider() {}
 };

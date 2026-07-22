@@ -8,12 +8,12 @@
 
 #include <aws/devops-agent/DevOpsAgentClient.h>
 #include <aws/devops-agent/DevOpsAgentEndpointProvider.h>
-#include <aws/devops-agent/DevOpsAgentEndpointRules.h>
 #include <aws/devops-agent/DevOpsAgentErrorMarshaller.h>
 #include <aws/devops-agent/DevOpsAgentErrors.h>
 #include <aws/devops-agent/DevOpsAgentRequest.h>
 #include <aws/devops-agent/DevOpsAgentServiceClientModel.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/internal/DevOpsAgentEndpointRules.h>
 #include <aws/devops-agent/model/AWSConfiguration.h>
 #include <aws/devops-agent/model/AdditionalServiceDetails.h>
 #include <aws/devops-agent/model/AdditionalServiceRegistrationStep.h>

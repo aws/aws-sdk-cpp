@@ -8,6 +8,10 @@ file(GLOB AWS_ACCESSANALYZER_MODEL_HEADERS
     "include/aws/accessanalyzer/model/*.h"
 )
 
+file(GLOB AWS_ACCESSANALYZER_INTERNAL_HEADERS
+    "include/aws/accessanalyzer/internal/*.h"
+)
+
 file(GLOB AWS_ACCESSANALYZER_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_ACCESSANALYZER_MODEL_SOURCE
 
 file(GLOB ACCESSANALYZER_UNIFIED_HEADERS
     ${AWS_ACCESSANALYZER_HEADERS}
+    ${AWS_ACCESSANALYZER_INTERNAL_HEADERS}
     ${AWS_ACCESSANALYZER_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\accessanalyzer" FILES ${AWS_ACCESSANALYZER_HEADERS})
+        source_group("Header Files\\aws\\accessanalyzer\\internal" FILES ${AWS_ACCESSANALYZER_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\accessanalyzer\\model" FILES ${AWS_ACCESSANALYZER_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_ACCESSANALYZER_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_ACCESSANALYZER_MODEL_SOURCE})

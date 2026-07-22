@@ -8,12 +8,12 @@
 
 #include <aws/sqs/SQSClient.h>
 #include <aws/sqs/SQSEndpointProvider.h>
-#include <aws/sqs/SQSEndpointRules.h>
 #include <aws/sqs/SQSErrorMarshaller.h>
 #include <aws/sqs/SQSErrors.h>
 #include <aws/sqs/SQSRequest.h>
 #include <aws/sqs/SQSServiceClientModel.h>
 #include <aws/sqs/SQS_EXPORTS.h>
+#include <aws/sqs/internal/SQSEndpointRules.h>
 #include <aws/sqs/model/AddPermissionRequest.h>
 #include <aws/sqs/model/BatchResultErrorEntry.h>
 #include <aws/sqs/model/CancelMessageMoveTaskRequest.h>

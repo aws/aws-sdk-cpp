@@ -4,9 +4,15 @@
  */
 
 #include <aws/securityagent/SecurityAgentEndpointProvider.h>
+#include <aws/securityagent/internal/SecurityAgentEndpointRules.h>
 
 namespace Aws {
 namespace SecurityAgent {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SecurityAgentEndpointProvider::SecurityAgentEndpointProvider()
+    : SecurityAgentDefaultEpProviderBase(Aws::SecurityAgent::SecurityAgentEndpointRules::GetRulesBlob(),
+                                         Aws::SecurityAgent::SecurityAgentEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SecurityAgent
 }  // namespace Aws

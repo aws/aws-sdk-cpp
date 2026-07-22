@@ -4,9 +4,15 @@
  */
 
 #include <aws/rbin/RecycleBinEndpointProvider.h>
+#include <aws/rbin/internal/RecycleBinEndpointRules.h>
 
 namespace Aws {
 namespace RecycleBin {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+RecycleBinEndpointProvider::RecycleBinEndpointProvider()
+    : RecycleBinDefaultEpProviderBase(Aws::RecycleBin::RecycleBinEndpointRules::GetRulesBlob(),
+                                      Aws::RecycleBin::RecycleBinEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace RecycleBin
 }  // namespace Aws

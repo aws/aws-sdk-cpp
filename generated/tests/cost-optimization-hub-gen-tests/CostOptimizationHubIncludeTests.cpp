@@ -8,12 +8,12 @@
 
 #include <aws/cost-optimization-hub/CostOptimizationHubClient.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubEndpointProvider.h>
-#include <aws/cost-optimization-hub/CostOptimizationHubEndpointRules.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubErrorMarshaller.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubErrors.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubRequest.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubServiceClientModel.h>
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
+#include <aws/cost-optimization-hub/internal/CostOptimizationHubEndpointRules.h>
 #include <aws/cost-optimization-hub/model/AccountEnrollmentStatus.h>
 #include <aws/cost-optimization-hub/model/ActionType.h>
 #include <aws/cost-optimization-hub/model/AllocationStrategy.h>

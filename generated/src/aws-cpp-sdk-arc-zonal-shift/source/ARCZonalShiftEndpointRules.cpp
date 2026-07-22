@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/arc-zonal-shift/ARCZonalShiftEndpointRules.h>
+#include <aws/arc-zonal-shift/internal/ARCZonalShiftEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

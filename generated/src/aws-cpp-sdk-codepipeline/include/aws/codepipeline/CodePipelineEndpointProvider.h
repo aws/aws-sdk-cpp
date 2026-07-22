@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/codepipeline/CodePipelineEndpointRules.h>
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CODEPIPELINE_API CodePipelineEndpointProvider : public CodePipelineDef
  public:
   using CodePipelineResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CodePipelineEndpointProvider()
-      : CodePipelineDefaultEpProviderBase(Aws::CodePipeline::CodePipelineEndpointRules::GetRulesBlob(),
-                                          Aws::CodePipeline::CodePipelineEndpointRules::RulesBlobSize) {}
+  CodePipelineEndpointProvider();
 
   ~CodePipelineEndpointProvider() {}
 };

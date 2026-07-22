@@ -4,9 +4,15 @@
  */
 
 #include <aws/secretsmanager/SecretsManagerEndpointProvider.h>
+#include <aws/secretsmanager/internal/SecretsManagerEndpointRules.h>
 
 namespace Aws {
 namespace SecretsManager {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SecretsManagerEndpointProvider::SecretsManagerEndpointProvider()
+    : SecretsManagerDefaultEpProviderBase(Aws::SecretsManager::SecretsManagerEndpointRules::GetRulesBlob(),
+                                          Aws::SecretsManager::SecretsManagerEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SecretsManager
 }  // namespace Aws

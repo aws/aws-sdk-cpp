@@ -4,9 +4,15 @@
  */
 
 #include <aws/codestar-connections/CodeStarconnectionsEndpointProvider.h>
+#include <aws/codestar-connections/internal/CodeStarconnectionsEndpointRules.h>
 
 namespace Aws {
 namespace CodeStarconnections {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+CodeStarconnectionsEndpointProvider::CodeStarconnectionsEndpointProvider()
+    : CodeStarconnectionsDefaultEpProviderBase(Aws::CodeStarconnections::CodeStarconnectionsEndpointRules::GetRulesBlob(),
+                                               Aws::CodeStarconnections::CodeStarconnectionsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace CodeStarconnections
 }  // namespace Aws

@@ -8,12 +8,12 @@
 
 #include <aws/arc-region-switch/ARCRegionswitchClient.h>
 #include <aws/arc-region-switch/ARCRegionswitchEndpointProvider.h>
-#include <aws/arc-region-switch/ARCRegionswitchEndpointRules.h>
 #include <aws/arc-region-switch/ARCRegionswitchErrorMarshaller.h>
 #include <aws/arc-region-switch/ARCRegionswitchErrors.h>
 #include <aws/arc-region-switch/ARCRegionswitchRequest.h>
 #include <aws/arc-region-switch/ARCRegionswitchServiceClientModel.h>
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
+#include <aws/arc-region-switch/internal/ARCRegionswitchEndpointRules.h>
 #include <aws/arc-region-switch/model/AbbreviatedExecution.h>
 #include <aws/arc-region-switch/model/AbbreviatedPlan.h>
 #include <aws/arc-region-switch/model/AlarmCondition.h>

@@ -8,12 +8,12 @@
 
 #include <aws/rum/CloudWatchRUMClient.h>
 #include <aws/rum/CloudWatchRUMEndpointProvider.h>
-#include <aws/rum/CloudWatchRUMEndpointRules.h>
 #include <aws/rum/CloudWatchRUMErrorMarshaller.h>
 #include <aws/rum/CloudWatchRUMErrors.h>
 #include <aws/rum/CloudWatchRUMRequest.h>
 #include <aws/rum/CloudWatchRUMServiceClientModel.h>
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
+#include <aws/rum/internal/CloudWatchRUMEndpointRules.h>
 #include <aws/rum/model/AppMonitor.h>
 #include <aws/rum/model/AppMonitorConfiguration.h>
 #include <aws/rum/model/AppMonitorDetails.h>

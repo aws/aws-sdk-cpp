@@ -4,9 +4,15 @@
  */
 
 #include <aws/sagemaker-metrics/SageMakerMetricsEndpointProvider.h>
+#include <aws/sagemaker-metrics/internal/SageMakerMetricsEndpointRules.h>
 
 namespace Aws {
 namespace SageMakerMetrics {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SageMakerMetricsEndpointProvider::SageMakerMetricsEndpointProvider()
+    : SageMakerMetricsDefaultEpProviderBase(Aws::SageMakerMetrics::SageMakerMetricsEndpointRules::GetRulesBlob(),
+                                            Aws::SageMakerMetrics::SageMakerMetricsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SageMakerMetrics
 }  // namespace Aws

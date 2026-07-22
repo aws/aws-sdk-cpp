@@ -8,6 +8,10 @@ file(GLOB AWS_MANAGEDBLOCKCHAIN-QUERY_MODEL_HEADERS
     "include/aws/managedblockchain-query/model/*.h"
 )
 
+file(GLOB AWS_MANAGEDBLOCKCHAIN-QUERY_INTERNAL_HEADERS
+    "include/aws/managedblockchain-query/internal/*.h"
+)
+
 file(GLOB AWS_MANAGEDBLOCKCHAIN-QUERY_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MANAGEDBLOCKCHAIN-QUERY_MODEL_SOURCE
 
 file(GLOB MANAGEDBLOCKCHAIN-QUERY_UNIFIED_HEADERS
     ${AWS_MANAGEDBLOCKCHAIN-QUERY_HEADERS}
+    ${AWS_MANAGEDBLOCKCHAIN-QUERY_INTERNAL_HEADERS}
     ${AWS_MANAGEDBLOCKCHAIN-QUERY_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\managedblockchain-query" FILES ${AWS_MANAGEDBLOCKCHAIN-QUERY_HEADERS})
+        source_group("Header Files\\aws\\managedblockchain-query\\internal" FILES ${AWS_MANAGEDBLOCKCHAIN-QUERY_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\managedblockchain-query\\model" FILES ${AWS_MANAGEDBLOCKCHAIN-QUERY_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MANAGEDBLOCKCHAIN-QUERY_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MANAGEDBLOCKCHAIN-QUERY_MODEL_SOURCE})

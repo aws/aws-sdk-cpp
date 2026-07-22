@@ -8,6 +8,10 @@ file(GLOB AWS_MEDIATAILOR_MODEL_HEADERS
     "include/aws/mediatailor/model/*.h"
 )
 
+file(GLOB AWS_MEDIATAILOR_INTERNAL_HEADERS
+    "include/aws/mediatailor/internal/*.h"
+)
+
 file(GLOB AWS_MEDIATAILOR_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MEDIATAILOR_MODEL_SOURCE
 
 file(GLOB MEDIATAILOR_UNIFIED_HEADERS
     ${AWS_MEDIATAILOR_HEADERS}
+    ${AWS_MEDIATAILOR_INTERNAL_HEADERS}
     ${AWS_MEDIATAILOR_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\mediatailor" FILES ${AWS_MEDIATAILOR_HEADERS})
+        source_group("Header Files\\aws\\mediatailor\\internal" FILES ${AWS_MEDIATAILOR_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\mediatailor\\model" FILES ${AWS_MEDIATAILOR_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MEDIATAILOR_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MEDIATAILOR_MODEL_SOURCE})

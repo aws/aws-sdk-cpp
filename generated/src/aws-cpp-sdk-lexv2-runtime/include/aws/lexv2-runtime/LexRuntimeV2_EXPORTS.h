@@ -26,7 +26,13 @@
 #define AWS_LEXRUNTIMEV2_API
 #define AWS_LEXRUNTIMEV2_EXTERN extern
 #endif  // USE_IMPORT_EXPORT
-#else   // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+#define AWS_LEXRUNTIMEV2_LOCAL
+#else  // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
 #define AWS_LEXRUNTIMEV2_API
 #define AWS_LEXRUNTIMEV2_EXTERN extern
+#if __GNUC__ >= 4
+#define AWS_LEXRUNTIMEV2_LOCAL __attribute__((visibility("hidden")))
+#else
+#define AWS_LEXRUNTIMEV2_LOCAL
+#endif
 #endif  // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

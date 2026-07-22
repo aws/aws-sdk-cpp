@@ -4,9 +4,15 @@
  */
 
 #include <aws/devops-guru/DevOpsGuruEndpointProvider.h>
+#include <aws/devops-guru/internal/DevOpsGuruEndpointRules.h>
 
 namespace Aws {
 namespace DevOpsGuru {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+DevOpsGuruEndpointProvider::DevOpsGuruEndpointProvider()
+    : DevOpsGuruDefaultEpProviderBase(Aws::DevOpsGuru::DevOpsGuruEndpointRules::GetRulesBlob(),
+                                      Aws::DevOpsGuru::DevOpsGuruEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace DevOpsGuru
 }  // namespace Aws

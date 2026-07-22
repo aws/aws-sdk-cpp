@@ -8,12 +8,12 @@
 
 #include <aws/machinelearning/MachineLearningClient.h>
 #include <aws/machinelearning/MachineLearningEndpointProvider.h>
-#include <aws/machinelearning/MachineLearningEndpointRules.h>
 #include <aws/machinelearning/MachineLearningErrorMarshaller.h>
 #include <aws/machinelearning/MachineLearningErrors.h>
 #include <aws/machinelearning/MachineLearningRequest.h>
 #include <aws/machinelearning/MachineLearningServiceClientModel.h>
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
+#include <aws/machinelearning/internal/MachineLearningEndpointRules.h>
 #include <aws/machinelearning/model/AddTagsRequest.h>
 #include <aws/machinelearning/model/AddTagsResult.h>
 #include <aws/machinelearning/model/Algorithm.h>

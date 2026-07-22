@@ -8,6 +8,10 @@ file(GLOB AWS_KMS_MODEL_HEADERS
     "include/aws/kms/model/*.h"
 )
 
+file(GLOB AWS_KMS_INTERNAL_HEADERS
+    "include/aws/kms/internal/*.h"
+)
+
 file(GLOB AWS_KMS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_KMS_MODEL_SOURCE
 
 file(GLOB KMS_UNIFIED_HEADERS
     ${AWS_KMS_HEADERS}
+    ${AWS_KMS_INTERNAL_HEADERS}
     ${AWS_KMS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\kms" FILES ${AWS_KMS_HEADERS})
+        source_group("Header Files\\aws\\kms\\internal" FILES ${AWS_KMS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\kms\\model" FILES ${AWS_KMS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_KMS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_KMS_MODEL_SOURCE})

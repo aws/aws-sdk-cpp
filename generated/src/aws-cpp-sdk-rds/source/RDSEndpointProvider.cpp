@@ -4,9 +4,14 @@
  */
 
 #include <aws/rds/RDSEndpointProvider.h>
+#include <aws/rds/internal/RDSEndpointRules.h>
 
 namespace Aws {
 namespace RDS {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+RDSEndpointProvider::RDSEndpointProvider()
+    : RDSDefaultEpProviderBase(Aws::RDS::RDSEndpointRules::GetRulesBlob(), Aws::RDS::RDSEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace RDS
 }  // namespace Aws

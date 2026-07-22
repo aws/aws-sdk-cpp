@@ -8,12 +8,12 @@
 
 #include <aws/groundstation/GroundStationClient.h>
 #include <aws/groundstation/GroundStationEndpointProvider.h>
-#include <aws/groundstation/GroundStationEndpointRules.h>
 #include <aws/groundstation/GroundStationErrorMarshaller.h>
 #include <aws/groundstation/GroundStationErrors.h>
 #include <aws/groundstation/GroundStationRequest.h>
 #include <aws/groundstation/GroundStationServiceClientModel.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
+#include <aws/groundstation/internal/GroundStationEndpointRules.h>
 #include <aws/groundstation/model/AgentDetails.h>
 #include <aws/groundstation/model/AgentStatus.h>
 #include <aws/groundstation/model/AggregateStatus.h>

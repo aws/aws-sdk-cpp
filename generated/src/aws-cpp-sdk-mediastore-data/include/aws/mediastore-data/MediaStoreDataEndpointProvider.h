@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/mediastore-data/MediaStoreDataEndpointRules.h>
 #include <aws/mediastore-data/MediaStoreData_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_MEDIASTOREDATA_API MediaStoreDataEndpointProvider : public MediaStoreD
  public:
   using MediaStoreDataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MediaStoreDataEndpointProvider()
-      : MediaStoreDataDefaultEpProviderBase(Aws::MediaStoreData::MediaStoreDataEndpointRules::GetRulesBlob(),
-                                            Aws::MediaStoreData::MediaStoreDataEndpointRules::RulesBlobSize) {}
+  MediaStoreDataEndpointProvider();
 
   ~MediaStoreDataEndpointProvider() {}
 };

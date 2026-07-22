@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/redshift/RedshiftEndpointRules.h>
+#include <aws/redshift/internal/RedshiftEndpointRules.h>
 
 namespace Aws {
 namespace Redshift {

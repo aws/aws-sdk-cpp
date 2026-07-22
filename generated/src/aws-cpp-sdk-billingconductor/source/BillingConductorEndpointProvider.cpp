@@ -4,9 +4,15 @@
  */
 
 #include <aws/billingconductor/BillingConductorEndpointProvider.h>
+#include <aws/billingconductor/internal/BillingConductorEndpointRules.h>
 
 namespace Aws {
 namespace BillingConductor {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+BillingConductorEndpointProvider::BillingConductorEndpointProvider()
+    : BillingConductorDefaultEpProviderBase(Aws::BillingConductor::BillingConductorEndpointRules::GetRulesBlob(),
+                                            Aws::BillingConductor::BillingConductorEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace BillingConductor
 }  // namespace Aws

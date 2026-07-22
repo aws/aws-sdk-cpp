@@ -4,9 +4,15 @@
  */
 
 #include <aws/compute-optimizer/ComputeOptimizerEndpointProvider.h>
+#include <aws/compute-optimizer/internal/ComputeOptimizerEndpointRules.h>
 
 namespace Aws {
 namespace ComputeOptimizer {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ComputeOptimizerEndpointProvider::ComputeOptimizerEndpointProvider()
+    : ComputeOptimizerDefaultEpProviderBase(Aws::ComputeOptimizer::ComputeOptimizerEndpointRules::GetRulesBlob(),
+                                            Aws::ComputeOptimizer::ComputeOptimizerEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ComputeOptimizer
 }  // namespace Aws

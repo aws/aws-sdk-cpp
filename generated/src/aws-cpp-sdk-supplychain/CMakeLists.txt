@@ -8,6 +8,10 @@ file(GLOB AWS_SUPPLYCHAIN_MODEL_HEADERS
     "include/aws/supplychain/model/*.h"
 )
 
+file(GLOB AWS_SUPPLYCHAIN_INTERNAL_HEADERS
+    "include/aws/supplychain/internal/*.h"
+)
+
 file(GLOB AWS_SUPPLYCHAIN_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SUPPLYCHAIN_MODEL_SOURCE
 
 file(GLOB SUPPLYCHAIN_UNIFIED_HEADERS
     ${AWS_SUPPLYCHAIN_HEADERS}
+    ${AWS_SUPPLYCHAIN_INTERNAL_HEADERS}
     ${AWS_SUPPLYCHAIN_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\supplychain" FILES ${AWS_SUPPLYCHAIN_HEADERS})
+        source_group("Header Files\\aws\\supplychain\\internal" FILES ${AWS_SUPPLYCHAIN_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\supplychain\\model" FILES ${AWS_SUPPLYCHAIN_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SUPPLYCHAIN_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SUPPLYCHAIN_MODEL_SOURCE})

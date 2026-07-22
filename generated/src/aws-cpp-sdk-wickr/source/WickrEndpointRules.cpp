@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/wickr/WickrEndpointRules.h>
+#include <aws/wickr/internal/WickrEndpointRules.h>
 
 namespace Aws {
 namespace Wickr {

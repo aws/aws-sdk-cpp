@@ -8,6 +8,10 @@ file(GLOB AWS_APPLICATIONCOSTPROFILER_MODEL_HEADERS
     "include/aws/applicationcostprofiler/model/*.h"
 )
 
+file(GLOB AWS_APPLICATIONCOSTPROFILER_INTERNAL_HEADERS
+    "include/aws/applicationcostprofiler/internal/*.h"
+)
+
 file(GLOB AWS_APPLICATIONCOSTPROFILER_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_APPLICATIONCOSTPROFILER_MODEL_SOURCE
 
 file(GLOB APPLICATIONCOSTPROFILER_UNIFIED_HEADERS
     ${AWS_APPLICATIONCOSTPROFILER_HEADERS}
+    ${AWS_APPLICATIONCOSTPROFILER_INTERNAL_HEADERS}
     ${AWS_APPLICATIONCOSTPROFILER_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\applicationcostprofiler" FILES ${AWS_APPLICATIONCOSTPROFILER_HEADERS})
+        source_group("Header Files\\aws\\applicationcostprofiler\\internal" FILES ${AWS_APPLICATIONCOSTPROFILER_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\applicationcostprofiler\\model" FILES ${AWS_APPLICATIONCOSTPROFILER_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_APPLICATIONCOSTPROFILER_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_APPLICATIONCOSTPROFILER_MODEL_SOURCE})

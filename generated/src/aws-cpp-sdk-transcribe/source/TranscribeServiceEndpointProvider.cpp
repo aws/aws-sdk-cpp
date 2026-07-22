@@ -4,9 +4,15 @@
  */
 
 #include <aws/transcribe/TranscribeServiceEndpointProvider.h>
+#include <aws/transcribe/internal/TranscribeServiceEndpointRules.h>
 
 namespace Aws {
 namespace TranscribeService {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+TranscribeServiceEndpointProvider::TranscribeServiceEndpointProvider()
+    : TranscribeServiceDefaultEpProviderBase(Aws::TranscribeService::TranscribeServiceEndpointRules::GetRulesBlob(),
+                                             Aws::TranscribeService::TranscribeServiceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace TranscribeService
 }  // namespace Aws

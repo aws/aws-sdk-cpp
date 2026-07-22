@@ -4,9 +4,15 @@
  */
 
 #include <aws/payment-cryptography-data/PaymentCryptographyDataEndpointProvider.h>
+#include <aws/payment-cryptography-data/internal/PaymentCryptographyDataEndpointRules.h>
 
 namespace Aws {
 namespace PaymentCryptographyData {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+PaymentCryptographyDataEndpointProvider::PaymentCryptographyDataEndpointProvider()
+    : PaymentCryptographyDataDefaultEpProviderBase(Aws::PaymentCryptographyData::PaymentCryptographyDataEndpointRules::GetRulesBlob(),
+                                                   Aws::PaymentCryptographyData::PaymentCryptographyDataEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace PaymentCryptographyData
 }  // namespace Aws

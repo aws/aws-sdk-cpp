@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/payment-cryptography/PaymentCryptographyEndpointRules.h>
+#include <aws/payment-cryptography/internal/PaymentCryptographyEndpointRules.h>
 
 namespace Aws {
 namespace PaymentCryptography {

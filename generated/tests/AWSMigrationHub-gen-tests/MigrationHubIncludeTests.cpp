@@ -8,12 +8,12 @@
 
 #include <aws/AWSMigrationHub/MigrationHubClient.h>
 #include <aws/AWSMigrationHub/MigrationHubEndpointProvider.h>
-#include <aws/AWSMigrationHub/MigrationHubEndpointRules.h>
 #include <aws/AWSMigrationHub/MigrationHubErrorMarshaller.h>
 #include <aws/AWSMigrationHub/MigrationHubErrors.h>
 #include <aws/AWSMigrationHub/MigrationHubRequest.h>
 #include <aws/AWSMigrationHub/MigrationHubServiceClientModel.h>
 #include <aws/AWSMigrationHub/MigrationHub_EXPORTS.h>
+#include <aws/AWSMigrationHub/internal/MigrationHubEndpointRules.h>
 #include <aws/AWSMigrationHub/model/ApplicationState.h>
 #include <aws/AWSMigrationHub/model/ApplicationStatus.h>
 #include <aws/AWSMigrationHub/model/AssociateCreatedArtifactRequest.h>

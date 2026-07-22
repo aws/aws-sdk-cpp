@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/interconnect/InterconnectEndpointRules.h>
 #include <aws/interconnect/Interconnect_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_INTERCONNECT_API InterconnectEndpointProvider : public InterconnectDef
  public:
   using InterconnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  InterconnectEndpointProvider()
-      : InterconnectDefaultEpProviderBase(Aws::Interconnect::InterconnectEndpointRules::GetRulesBlob(),
-                                          Aws::Interconnect::InterconnectEndpointRules::RulesBlobSize) {}
+  InterconnectEndpointProvider();
 
   ~InterconnectEndpointProvider() {}
 };

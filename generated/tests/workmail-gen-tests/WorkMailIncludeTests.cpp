@@ -8,12 +8,12 @@
 
 #include <aws/workmail/WorkMailClient.h>
 #include <aws/workmail/WorkMailEndpointProvider.h>
-#include <aws/workmail/WorkMailEndpointRules.h>
 #include <aws/workmail/WorkMailErrorMarshaller.h>
 #include <aws/workmail/WorkMailErrors.h>
 #include <aws/workmail/WorkMailRequest.h>
 #include <aws/workmail/WorkMailServiceClientModel.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
+#include <aws/workmail/internal/WorkMailEndpointRules.h>
 #include <aws/workmail/model/AccessControlRule.h>
 #include <aws/workmail/model/AccessControlRuleEffect.h>
 #include <aws/workmail/model/AccessEffect.h>

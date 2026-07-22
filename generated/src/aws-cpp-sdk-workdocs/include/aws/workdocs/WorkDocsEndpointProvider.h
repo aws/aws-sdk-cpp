@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/workdocs/WorkDocsEndpointRules.h>
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_WORKDOCS_API WorkDocsEndpointProvider : public WorkDocsDefaultEpProvid
  public:
   using WorkDocsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  WorkDocsEndpointProvider()
-      : WorkDocsDefaultEpProviderBase(Aws::WorkDocs::WorkDocsEndpointRules::GetRulesBlob(),
-                                      Aws::WorkDocs::WorkDocsEndpointRules::RulesBlobSize) {}
+  WorkDocsEndpointProvider();
 
   ~WorkDocsEndpointProvider() {}
 };

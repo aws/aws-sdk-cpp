@@ -8,6 +8,10 @@ file(GLOB AWS_DIRECTCONNECT_MODEL_HEADERS
     "include/aws/directconnect/model/*.h"
 )
 
+file(GLOB AWS_DIRECTCONNECT_INTERNAL_HEADERS
+    "include/aws/directconnect/internal/*.h"
+)
+
 file(GLOB AWS_DIRECTCONNECT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_DIRECTCONNECT_MODEL_SOURCE
 
 file(GLOB DIRECTCONNECT_UNIFIED_HEADERS
     ${AWS_DIRECTCONNECT_HEADERS}
+    ${AWS_DIRECTCONNECT_INTERNAL_HEADERS}
     ${AWS_DIRECTCONNECT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\directconnect" FILES ${AWS_DIRECTCONNECT_HEADERS})
+        source_group("Header Files\\aws\\directconnect\\internal" FILES ${AWS_DIRECTCONNECT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\directconnect\\model" FILES ${AWS_DIRECTCONNECT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_DIRECTCONNECT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_DIRECTCONNECT_MODEL_SOURCE})

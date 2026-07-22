@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/glue/GlueEndpointRules.h>
 #include <aws/glue/Glue_EXPORTS.h>
 
 namespace Aws {
@@ -40,8 +39,7 @@ class AWS_GLUE_API GlueEndpointProvider : public GlueDefaultEpProviderBase {
  public:
   using GlueResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  GlueEndpointProvider()
-      : GlueDefaultEpProviderBase(Aws::Glue::GlueEndpointRules::GetRulesBlob(), Aws::Glue::GlueEndpointRules::RulesBlobSize) {}
+  GlueEndpointProvider();
 
   ~GlueEndpointProvider() {}
 };

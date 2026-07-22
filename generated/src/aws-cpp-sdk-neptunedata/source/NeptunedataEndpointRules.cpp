@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/neptunedata/NeptunedataEndpointRules.h>
+#include <aws/neptunedata/internal/NeptunedataEndpointRules.h>
 
 namespace Aws {
 namespace neptunedata {

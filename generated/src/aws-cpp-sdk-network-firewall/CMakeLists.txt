@@ -8,6 +8,10 @@ file(GLOB AWS_NETWORK-FIREWALL_MODEL_HEADERS
     "include/aws/network-firewall/model/*.h"
 )
 
+file(GLOB AWS_NETWORK-FIREWALL_INTERNAL_HEADERS
+    "include/aws/network-firewall/internal/*.h"
+)
+
 file(GLOB AWS_NETWORK-FIREWALL_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_NETWORK-FIREWALL_MODEL_SOURCE
 
 file(GLOB NETWORK-FIREWALL_UNIFIED_HEADERS
     ${AWS_NETWORK-FIREWALL_HEADERS}
+    ${AWS_NETWORK-FIREWALL_INTERNAL_HEADERS}
     ${AWS_NETWORK-FIREWALL_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\network-firewall" FILES ${AWS_NETWORK-FIREWALL_HEADERS})
+        source_group("Header Files\\aws\\network-firewall\\internal" FILES ${AWS_NETWORK-FIREWALL_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\network-firewall\\model" FILES ${AWS_NETWORK-FIREWALL_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_NETWORK-FIREWALL_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_NETWORK-FIREWALL_MODEL_SOURCE})

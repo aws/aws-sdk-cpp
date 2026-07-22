@@ -4,9 +4,15 @@
  */
 
 #include <aws/comprehendmedical/ComprehendMedicalEndpointProvider.h>
+#include <aws/comprehendmedical/internal/ComprehendMedicalEndpointRules.h>
 
 namespace Aws {
 namespace ComprehendMedical {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ComprehendMedicalEndpointProvider::ComprehendMedicalEndpointProvider()
+    : ComprehendMedicalDefaultEpProviderBase(Aws::ComprehendMedical::ComprehendMedicalEndpointRules::GetRulesBlob(),
+                                             Aws::ComprehendMedical::ComprehendMedicalEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ComprehendMedical
 }  // namespace Aws

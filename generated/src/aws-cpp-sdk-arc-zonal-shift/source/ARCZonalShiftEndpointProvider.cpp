@@ -4,9 +4,15 @@
  */
 
 #include <aws/arc-zonal-shift/ARCZonalShiftEndpointProvider.h>
+#include <aws/arc-zonal-shift/internal/ARCZonalShiftEndpointRules.h>
 
 namespace Aws {
 namespace ARCZonalShift {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ARCZonalShiftEndpointProvider::ARCZonalShiftEndpointProvider()
+    : ARCZonalShiftDefaultEpProviderBase(Aws::ARCZonalShift::ARCZonalShiftEndpointRules::GetRulesBlob(),
+                                         Aws::ARCZonalShift::ARCZonalShiftEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ARCZonalShift
 }  // namespace Aws

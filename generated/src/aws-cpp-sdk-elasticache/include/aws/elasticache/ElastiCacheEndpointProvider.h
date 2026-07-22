@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/elasticache/ElastiCacheEndpointRules.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_ELASTICACHE_API ElastiCacheEndpointProvider : public ElastiCacheDefaul
  public:
   using ElastiCacheResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ElastiCacheEndpointProvider()
-      : ElastiCacheDefaultEpProviderBase(Aws::ElastiCache::ElastiCacheEndpointRules::GetRulesBlob(),
-                                         Aws::ElastiCache::ElastiCacheEndpointRules::RulesBlobSize) {}
+  ElastiCacheEndpointProvider();
 
   ~ElastiCacheEndpointProvider() {}
 };

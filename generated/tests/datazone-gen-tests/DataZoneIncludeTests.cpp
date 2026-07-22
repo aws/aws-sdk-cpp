@@ -8,12 +8,12 @@
 
 #include <aws/datazone/DataZoneClient.h>
 #include <aws/datazone/DataZoneEndpointProvider.h>
-#include <aws/datazone/DataZoneEndpointRules.h>
 #include <aws/datazone/DataZoneErrorMarshaller.h>
 #include <aws/datazone/DataZoneErrors.h>
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZoneServiceClientModel.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/internal/DataZoneEndpointRules.h>
 #include <aws/datazone/model/AcceptChoice.h>
 #include <aws/datazone/model/AcceptPredictionsRequest.h>
 #include <aws/datazone/model/AcceptPredictionsResult.h>

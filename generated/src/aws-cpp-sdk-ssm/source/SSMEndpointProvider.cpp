@@ -4,9 +4,14 @@
  */
 
 #include <aws/ssm/SSMEndpointProvider.h>
+#include <aws/ssm/internal/SSMEndpointRules.h>
 
 namespace Aws {
 namespace SSM {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SSMEndpointProvider::SSMEndpointProvider()
+    : SSMDefaultEpProviderBase(Aws::SSM::SSMEndpointRules::GetRulesBlob(), Aws::SSM::SSMEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SSM
 }  // namespace Aws

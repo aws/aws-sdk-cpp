@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/qbusiness/QBusinessEndpointRules.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_QBUSINESS_API QBusinessEndpointProvider : public QBusinessDefaultEpPro
  public:
   using QBusinessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  QBusinessEndpointProvider()
-      : QBusinessDefaultEpProviderBase(Aws::QBusiness::QBusinessEndpointRules::GetRulesBlob(),
-                                       Aws::QBusiness::QBusinessEndpointRules::RulesBlobSize) {}
+  QBusinessEndpointProvider();
 
   ~QBusinessEndpointProvider() {}
 };

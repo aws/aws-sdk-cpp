@@ -8,12 +8,12 @@
 
 #include <aws/kms/KMSClient.h>
 #include <aws/kms/KMSEndpointProvider.h>
-#include <aws/kms/KMSEndpointRules.h>
 #include <aws/kms/KMSErrorMarshaller.h>
 #include <aws/kms/KMSErrors.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/kms/KMSServiceClientModel.h>
 #include <aws/kms/KMS_EXPORTS.h>
+#include <aws/kms/internal/KMSEndpointRules.h>
 #include <aws/kms/model/AlgorithmSpec.h>
 #include <aws/kms/model/AliasListEntry.h>
 #include <aws/kms/model/CancelKeyDeletionRequest.h>

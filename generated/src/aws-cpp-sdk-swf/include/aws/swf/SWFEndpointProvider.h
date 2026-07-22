@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/swf/SWFEndpointRules.h>
 #include <aws/swf/SWF_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_SWF_API SWFEndpointProvider : public SWFDefaultEpProviderBase {
  public:
   using SWFResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SWFEndpointProvider() : SWFDefaultEpProviderBase(Aws::SWF::SWFEndpointRules::GetRulesBlob(), Aws::SWF::SWFEndpointRules::RulesBlobSize) {}
+  SWFEndpointProvider();
 
   ~SWFEndpointProvider() {}
 };

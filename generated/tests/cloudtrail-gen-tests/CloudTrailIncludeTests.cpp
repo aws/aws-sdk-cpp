@@ -8,12 +8,12 @@
 
 #include <aws/cloudtrail/CloudTrailClient.h>
 #include <aws/cloudtrail/CloudTrailEndpointProvider.h>
-#include <aws/cloudtrail/CloudTrailEndpointRules.h>
 #include <aws/cloudtrail/CloudTrailErrorMarshaller.h>
 #include <aws/cloudtrail/CloudTrailErrors.h>
 #include <aws/cloudtrail/CloudTrailRequest.h>
 #include <aws/cloudtrail/CloudTrailServiceClientModel.h>
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
+#include <aws/cloudtrail/internal/CloudTrailEndpointRules.h>
 #include <aws/cloudtrail/model/AddTagsRequest.h>
 #include <aws/cloudtrail/model/AddTagsResult.h>
 #include <aws/cloudtrail/model/AdvancedEventSelector.h>

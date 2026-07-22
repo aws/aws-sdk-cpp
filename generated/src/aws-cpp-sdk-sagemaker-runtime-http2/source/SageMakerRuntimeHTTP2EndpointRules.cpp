@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2EndpointRules.h>
+#include <aws/sagemaker-runtime-http2/internal/SageMakerRuntimeHTTP2EndpointRules.h>
 
 namespace Aws {
 namespace SageMakerRuntimeHTTP2 {

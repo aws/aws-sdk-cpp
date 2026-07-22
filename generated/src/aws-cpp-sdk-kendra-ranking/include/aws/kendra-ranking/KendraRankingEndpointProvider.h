@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/kendra-ranking/KendraRankingEndpointRules.h>
 #include <aws/kendra-ranking/KendraRanking_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_KENDRARANKING_API KendraRankingEndpointProvider : public KendraRanking
  public:
   using KendraRankingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  KendraRankingEndpointProvider()
-      : KendraRankingDefaultEpProviderBase(Aws::KendraRanking::KendraRankingEndpointRules::GetRulesBlob(),
-                                           Aws::KendraRanking::KendraRankingEndpointRules::RulesBlobSize) {}
+  KendraRankingEndpointProvider();
 
   ~KendraRankingEndpointProvider() {}
 };

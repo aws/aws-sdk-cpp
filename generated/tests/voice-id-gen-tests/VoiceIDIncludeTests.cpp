@@ -8,12 +8,12 @@
 
 #include <aws/voice-id/VoiceIDClient.h>
 #include <aws/voice-id/VoiceIDEndpointProvider.h>
-#include <aws/voice-id/VoiceIDEndpointRules.h>
 #include <aws/voice-id/VoiceIDErrorMarshaller.h>
 #include <aws/voice-id/VoiceIDErrors.h>
 #include <aws/voice-id/VoiceIDRequest.h>
 #include <aws/voice-id/VoiceIDServiceClientModel.h>
 #include <aws/voice-id/VoiceID_EXPORTS.h>
+#include <aws/voice-id/internal/VoiceIDEndpointRules.h>
 #include <aws/voice-id/model/AssociateFraudsterRequest.h>
 #include <aws/voice-id/model/AssociateFraudsterResult.h>
 #include <aws/voice-id/model/AuthenticationConfiguration.h>

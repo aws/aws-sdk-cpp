@@ -4,9 +4,15 @@
  */
 
 #include <aws/healthlake/HealthLakeEndpointProvider.h>
+#include <aws/healthlake/internal/HealthLakeEndpointRules.h>
 
 namespace Aws {
 namespace HealthLake {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+HealthLakeEndpointProvider::HealthLakeEndpointProvider()
+    : HealthLakeDefaultEpProviderBase(Aws::HealthLake::HealthLakeEndpointRules::GetRulesBlob(),
+                                      Aws::HealthLake::HealthLakeEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace HealthLake
 }  // namespace Aws

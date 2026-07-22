@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/kafkaconnect/KafkaConnectEndpointRules.h>
+#include <aws/kafkaconnect/internal/KafkaConnectEndpointRules.h>
 
 namespace Aws {
 namespace KafkaConnect {

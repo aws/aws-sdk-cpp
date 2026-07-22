@@ -8,12 +8,12 @@
 
 #include <aws/networkflowmonitor/NetworkFlowMonitorClient.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorEndpointProvider.h>
-#include <aws/networkflowmonitor/NetworkFlowMonitorEndpointRules.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorErrorMarshaller.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorErrors.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorRequest.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorServiceClientModel.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
+#include <aws/networkflowmonitor/internal/NetworkFlowMonitorEndpointRules.h>
 #include <aws/networkflowmonitor/model/CreateMonitorRequest.h>
 #include <aws/networkflowmonitor/model/CreateMonitorResult.h>
 #include <aws/networkflowmonitor/model/CreateScopeRequest.h>

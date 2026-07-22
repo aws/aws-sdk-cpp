@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/emr-containers/EMRContainersEndpointRules.h>
+#include <aws/emr-containers/internal/EMRContainersEndpointRules.h>
 
 namespace Aws {
 namespace EMRContainers {

@@ -4,9 +4,15 @@
  */
 
 #include <aws/mediaconnect/MediaConnectEndpointProvider.h>
+#include <aws/mediaconnect/internal/MediaConnectEndpointRules.h>
 
 namespace Aws {
 namespace MediaConnect {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MediaConnectEndpointProvider::MediaConnectEndpointProvider()
+    : MediaConnectDefaultEpProviderBase(Aws::MediaConnect::MediaConnectEndpointRules::GetRulesBlob(),
+                                        Aws::MediaConnect::MediaConnectEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MediaConnect
 }  // namespace Aws

@@ -8,6 +8,10 @@ file(GLOB AWS_POLLY_MODEL_HEADERS
     "include/aws/polly/model/*.h"
 )
 
+file(GLOB AWS_POLLY_INTERNAL_HEADERS
+    "include/aws/polly/internal/*.h"
+)
+
 file(GLOB AWS_POLLY_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_POLLY_MODEL_SOURCE
 
 file(GLOB POLLY_UNIFIED_HEADERS
     ${AWS_POLLY_HEADERS}
+    ${AWS_POLLY_INTERNAL_HEADERS}
     ${AWS_POLLY_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\polly" FILES ${AWS_POLLY_HEADERS})
+        source_group("Header Files\\aws\\polly\\internal" FILES ${AWS_POLLY_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\polly\\model" FILES ${AWS_POLLY_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_POLLY_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_POLLY_MODEL_SOURCE})

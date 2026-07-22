@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/osis/OSISEndpointRules.h>
+#include <aws/osis/internal/OSISEndpointRules.h>
 
 namespace Aws {
 namespace OSIS {

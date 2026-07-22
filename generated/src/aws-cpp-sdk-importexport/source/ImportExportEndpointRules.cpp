@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/importexport/ImportExportEndpointRules.h>
+#include <aws/importexport/internal/ImportExportEndpointRules.h>
 
 namespace Aws {
 namespace ImportExport {

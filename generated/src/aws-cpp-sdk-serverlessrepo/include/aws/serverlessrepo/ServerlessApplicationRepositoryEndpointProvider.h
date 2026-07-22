@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/serverlessrepo/ServerlessApplicationRepositoryEndpointRules.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepository_EXPORTS.h>
 
 namespace Aws {
@@ -45,10 +44,7 @@ class AWS_SERVERLESSAPPLICATIONREPOSITORY_API ServerlessApplicationRepositoryEnd
  public:
   using ServerlessApplicationRepositoryResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ServerlessApplicationRepositoryEndpointProvider()
-      : ServerlessApplicationRepositoryDefaultEpProviderBase(
-            Aws::ServerlessApplicationRepository::ServerlessApplicationRepositoryEndpointRules::GetRulesBlob(),
-            Aws::ServerlessApplicationRepository::ServerlessApplicationRepositoryEndpointRules::RulesBlobSize) {}
+  ServerlessApplicationRepositoryEndpointProvider();
 
   ~ServerlessApplicationRepositoryEndpointProvider() {}
 };

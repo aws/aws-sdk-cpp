@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/storagegateway/StorageGatewayEndpointRules.h>
+#include <aws/storagegateway/internal/StorageGatewayEndpointRules.h>
 
 namespace Aws {
 namespace StorageGateway {

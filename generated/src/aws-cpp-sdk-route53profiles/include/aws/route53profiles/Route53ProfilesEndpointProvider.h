@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/route53profiles/Route53ProfilesEndpointRules.h>
 #include <aws/route53profiles/Route53Profiles_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_ROUTE53PROFILES_API Route53ProfilesEndpointProvider : public Route53Pr
  public:
   using Route53ProfilesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  Route53ProfilesEndpointProvider()
-      : Route53ProfilesDefaultEpProviderBase(Aws::Route53Profiles::Route53ProfilesEndpointRules::GetRulesBlob(),
-                                             Aws::Route53Profiles::Route53ProfilesEndpointRules::RulesBlobSize) {}
+  Route53ProfilesEndpointProvider();
 
   ~Route53ProfilesEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorClient.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorEndpointProvider.h>
-#include <aws/migrationhuborchestrator/MigrationHubOrchestratorEndpointRules.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorErrorMarshaller.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorErrors.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorRequest.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorServiceClientModel.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
+#include <aws/migrationhuborchestrator/internal/MigrationHubOrchestratorEndpointRules.h>
 #include <aws/migrationhuborchestrator/model/CreateTemplateRequest.h>
 #include <aws/migrationhuborchestrator/model/CreateTemplateResult.h>
 #include <aws/migrationhuborchestrator/model/CreateWorkflowRequest.h>

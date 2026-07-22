@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/trustedadvisor/TrustedAdvisorEndpointRules.h>
+#include <aws/trustedadvisor/internal/TrustedAdvisorEndpointRules.h>
 
 namespace Aws {
 namespace TrustedAdvisor {

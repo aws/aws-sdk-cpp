@@ -4,6 +4,7 @@
  */
 
 #include <aws/dynamodbstreams/DynamoDBStreamsEndpointProvider.h>
+#include <aws/dynamodbstreams/internal/DynamoDBStreamsEndpointRules.h>
 
 namespace Aws {
 #ifndef AWS_DYNAMODBSTREAMS_EXPORTS  // Except for Windows DLL
@@ -23,6 +24,10 @@ template class Aws::Endpoint::DefaultEndpointProvider<DynamoDBStreams::Endpoint:
 
 namespace DynamoDBStreams {
 namespace Endpoint {
+DynamoDBStreamsEndpointProvider::DynamoDBStreamsEndpointProvider()
+    : DynamoDBStreamsDefaultEpProviderBase(Aws::DynamoDBStreams::DynamoDBStreamsEndpointRules::GetRulesBlob(),
+                                           Aws::DynamoDBStreams::DynamoDBStreamsEndpointRules::RulesBlobSize) {}
+
 void DynamoDBStreamsBuiltInParameters::SetFromClientConfiguration(const DynamoDBStreamsClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const DynamoDBStreamsClientConfiguration::BaseClientConfigClass&>(config));
 }

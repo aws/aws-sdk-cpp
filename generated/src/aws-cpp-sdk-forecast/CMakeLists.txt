@@ -8,6 +8,10 @@ file(GLOB AWS_FORECAST_MODEL_HEADERS
     "include/aws/forecast/model/*.h"
 )
 
+file(GLOB AWS_FORECAST_INTERNAL_HEADERS
+    "include/aws/forecast/internal/*.h"
+)
+
 file(GLOB AWS_FORECAST_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_FORECAST_MODEL_SOURCE
 
 file(GLOB FORECAST_UNIFIED_HEADERS
     ${AWS_FORECAST_HEADERS}
+    ${AWS_FORECAST_INTERNAL_HEADERS}
     ${AWS_FORECAST_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\forecast" FILES ${AWS_FORECAST_HEADERS})
+        source_group("Header Files\\aws\\forecast\\internal" FILES ${AWS_FORECAST_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\forecast\\model" FILES ${AWS_FORECAST_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_FORECAST_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_FORECAST_MODEL_SOURCE})

@@ -8,12 +8,12 @@
 
 #include <aws/cloud9/Cloud9Client.h>
 #include <aws/cloud9/Cloud9EndpointProvider.h>
-#include <aws/cloud9/Cloud9EndpointRules.h>
 #include <aws/cloud9/Cloud9ErrorMarshaller.h>
 #include <aws/cloud9/Cloud9Errors.h>
 #include <aws/cloud9/Cloud9Request.h>
 #include <aws/cloud9/Cloud9ServiceClientModel.h>
 #include <aws/cloud9/Cloud9_EXPORTS.h>
+#include <aws/cloud9/internal/Cloud9EndpointRules.h>
 #include <aws/cloud9/model/ConnectionType.h>
 #include <aws/cloud9/model/CreateEnvironmentEC2Request.h>
 #include <aws/cloud9/model/CreateEnvironmentEC2Result.h>

@@ -8,6 +8,10 @@ file(GLOB AWS_MWAA_MODEL_HEADERS
     "include/aws/mwaa/model/*.h"
 )
 
+file(GLOB AWS_MWAA_INTERNAL_HEADERS
+    "include/aws/mwaa/internal/*.h"
+)
+
 file(GLOB AWS_MWAA_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MWAA_MODEL_SOURCE
 
 file(GLOB MWAA_UNIFIED_HEADERS
     ${AWS_MWAA_HEADERS}
+    ${AWS_MWAA_INTERNAL_HEADERS}
     ${AWS_MWAA_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\mwaa" FILES ${AWS_MWAA_HEADERS})
+        source_group("Header Files\\aws\\mwaa\\internal" FILES ${AWS_MWAA_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\mwaa\\model" FILES ${AWS_MWAA_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MWAA_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MWAA_MODEL_SOURCE})

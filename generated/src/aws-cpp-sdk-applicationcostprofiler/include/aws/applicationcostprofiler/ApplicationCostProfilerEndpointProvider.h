@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/applicationcostprofiler/ApplicationCostProfilerEndpointRules.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfiler_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -44,9 +43,7 @@ class AWS_APPLICATIONCOSTPROFILER_API ApplicationCostProfilerEndpointProvider : 
  public:
   using ApplicationCostProfilerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ApplicationCostProfilerEndpointProvider()
-      : ApplicationCostProfilerDefaultEpProviderBase(Aws::ApplicationCostProfiler::ApplicationCostProfilerEndpointRules::GetRulesBlob(),
-                                                     Aws::ApplicationCostProfiler::ApplicationCostProfilerEndpointRules::RulesBlobSize) {}
+  ApplicationCostProfilerEndpointProvider();
 
   ~ApplicationCostProfilerEndpointProvider() {}
 };

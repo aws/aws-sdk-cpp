@@ -8,12 +8,12 @@
 
 #include <aws/grafana/ManagedGrafanaClient.h>
 #include <aws/grafana/ManagedGrafanaEndpointProvider.h>
-#include <aws/grafana/ManagedGrafanaEndpointRules.h>
 #include <aws/grafana/ManagedGrafanaErrorMarshaller.h>
 #include <aws/grafana/ManagedGrafanaErrors.h>
 #include <aws/grafana/ManagedGrafanaRequest.h>
 #include <aws/grafana/ManagedGrafanaServiceClientModel.h>
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
+#include <aws/grafana/internal/ManagedGrafanaEndpointRules.h>
 #include <aws/grafana/model/AccountAccessType.h>
 #include <aws/grafana/model/AssertionAttributes.h>
 #include <aws/grafana/model/AssociateLicenseRequest.h>

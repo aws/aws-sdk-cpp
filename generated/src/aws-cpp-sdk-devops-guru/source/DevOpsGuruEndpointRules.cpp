@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/devops-guru/DevOpsGuruEndpointRules.h>
+#include <aws/devops-guru/internal/DevOpsGuruEndpointRules.h>
 
 namespace Aws {
 namespace DevOpsGuru {

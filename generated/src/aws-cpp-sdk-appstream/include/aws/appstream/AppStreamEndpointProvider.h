@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/appstream/AppStreamEndpointRules.h>
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_APPSTREAM_API AppStreamEndpointProvider : public AppStreamDefaultEpPro
  public:
   using AppStreamResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AppStreamEndpointProvider()
-      : AppStreamDefaultEpProviderBase(Aws::AppStream::AppStreamEndpointRules::GetRulesBlob(),
-                                       Aws::AppStream::AppStreamEndpointRules::RulesBlobSize) {}
+  AppStreamEndpointProvider();
 
   ~AppStreamEndpointProvider() {}
 };

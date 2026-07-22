@@ -8,12 +8,12 @@
 
 #include <aws/sso-admin/SSOAdminClient.h>
 #include <aws/sso-admin/SSOAdminEndpointProvider.h>
-#include <aws/sso-admin/SSOAdminEndpointRules.h>
 #include <aws/sso-admin/SSOAdminErrorMarshaller.h>
 #include <aws/sso-admin/SSOAdminErrors.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
 #include <aws/sso-admin/SSOAdminServiceClientModel.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
+#include <aws/sso-admin/internal/SSOAdminEndpointRules.h>
 #include <aws/sso-admin/model/AccessControlAttribute.h>
 #include <aws/sso-admin/model/AccessControlAttributeValue.h>
 #include <aws/sso-admin/model/AccessDeniedException.h>

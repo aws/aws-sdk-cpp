@@ -8,12 +8,12 @@
 
 #include <aws/kendra/KendraClient.h>
 #include <aws/kendra/KendraEndpointProvider.h>
-#include <aws/kendra/KendraEndpointRules.h>
 #include <aws/kendra/KendraErrorMarshaller.h>
 #include <aws/kendra/KendraErrors.h>
 #include <aws/kendra/KendraRequest.h>
 #include <aws/kendra/KendraServiceClientModel.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
+#include <aws/kendra/internal/KendraEndpointRules.h>
 #include <aws/kendra/model/AccessControlConfigurationSummary.h>
 #include <aws/kendra/model/AccessControlListConfiguration.h>
 #include <aws/kendra/model/AclConfiguration.h>

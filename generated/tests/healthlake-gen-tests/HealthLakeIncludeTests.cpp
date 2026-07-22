@@ -8,12 +8,12 @@
 
 #include <aws/healthlake/HealthLakeClient.h>
 #include <aws/healthlake/HealthLakeEndpointProvider.h>
-#include <aws/healthlake/HealthLakeEndpointRules.h>
 #include <aws/healthlake/HealthLakeErrorMarshaller.h>
 #include <aws/healthlake/HealthLakeErrors.h>
 #include <aws/healthlake/HealthLakeRequest.h>
 #include <aws/healthlake/HealthLakeServiceClientModel.h>
 #include <aws/healthlake/HealthLake_EXPORTS.h>
+#include <aws/healthlake/internal/HealthLakeEndpointRules.h>
 #include <aws/healthlake/model/AgentInputMessage.h>
 #include <aws/healthlake/model/AgentInputMessageType.h>
 #include <aws/healthlake/model/AgentOutputMessage.h>

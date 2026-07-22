@@ -8,6 +8,10 @@ file(GLOB AWS_COMPREHENDMEDICAL_MODEL_HEADERS
     "include/aws/comprehendmedical/model/*.h"
 )
 
+file(GLOB AWS_COMPREHENDMEDICAL_INTERNAL_HEADERS
+    "include/aws/comprehendmedical/internal/*.h"
+)
+
 file(GLOB AWS_COMPREHENDMEDICAL_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_COMPREHENDMEDICAL_MODEL_SOURCE
 
 file(GLOB COMPREHENDMEDICAL_UNIFIED_HEADERS
     ${AWS_COMPREHENDMEDICAL_HEADERS}
+    ${AWS_COMPREHENDMEDICAL_INTERNAL_HEADERS}
     ${AWS_COMPREHENDMEDICAL_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\comprehendmedical" FILES ${AWS_COMPREHENDMEDICAL_HEADERS})
+        source_group("Header Files\\aws\\comprehendmedical\\internal" FILES ${AWS_COMPREHENDMEDICAL_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\comprehendmedical\\model" FILES ${AWS_COMPREHENDMEDICAL_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_COMPREHENDMEDICAL_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_COMPREHENDMEDICAL_MODEL_SOURCE})

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/omics/OmicsEndpointRules.h>
+#include <aws/omics/internal/OmicsEndpointRules.h>
 
 namespace Aws {
 namespace Omics {

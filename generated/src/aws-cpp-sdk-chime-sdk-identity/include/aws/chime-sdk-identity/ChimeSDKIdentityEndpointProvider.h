@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/chime-sdk-identity/ChimeSDKIdentityEndpointRules.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -43,9 +42,7 @@ class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityEndpointProvider : public ChimeSD
  public:
   using ChimeSDKIdentityResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ChimeSDKIdentityEndpointProvider()
-      : ChimeSDKIdentityDefaultEpProviderBase(Aws::ChimeSDKIdentity::ChimeSDKIdentityEndpointRules::GetRulesBlob(),
-                                              Aws::ChimeSDKIdentity::ChimeSDKIdentityEndpointRules::RulesBlobSize) {}
+  ChimeSDKIdentityEndpointProvider();
 
   ~ChimeSDKIdentityEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/qbusiness/QBusinessClient.h>
 #include <aws/qbusiness/QBusinessEndpointProvider.h>
-#include <aws/qbusiness/QBusinessEndpointRules.h>
 #include <aws/qbusiness/QBusinessErrorMarshaller.h>
 #include <aws/qbusiness/QBusinessErrors.h>
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/qbusiness/QBusinessServiceClientModel.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
+#include <aws/qbusiness/internal/QBusinessEndpointRules.h>
 #include <aws/qbusiness/model/APISchema.h>
 #include <aws/qbusiness/model/APISchemaType.h>
 #include <aws/qbusiness/model/AccessConfiguration.h>

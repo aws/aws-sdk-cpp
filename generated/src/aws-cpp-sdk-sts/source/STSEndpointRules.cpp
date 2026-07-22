@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sts/STSEndpointRules.h>
+#include <aws/sts/internal/STSEndpointRules.h>
 
 namespace Aws {
 namespace STS {

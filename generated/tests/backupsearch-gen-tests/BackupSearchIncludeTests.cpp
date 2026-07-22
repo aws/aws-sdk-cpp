@@ -8,12 +8,12 @@
 
 #include <aws/backupsearch/BackupSearchClient.h>
 #include <aws/backupsearch/BackupSearchEndpointProvider.h>
-#include <aws/backupsearch/BackupSearchEndpointRules.h>
 #include <aws/backupsearch/BackupSearchErrorMarshaller.h>
 #include <aws/backupsearch/BackupSearchErrors.h>
 #include <aws/backupsearch/BackupSearchRequest.h>
 #include <aws/backupsearch/BackupSearchServiceClientModel.h>
 #include <aws/backupsearch/BackupSearch_EXPORTS.h>
+#include <aws/backupsearch/internal/BackupSearchEndpointRules.h>
 #include <aws/backupsearch/model/BackupCreationTimeFilter.h>
 #include <aws/backupsearch/model/ConflictException.h>
 #include <aws/backupsearch/model/CurrentSearchProgress.h>

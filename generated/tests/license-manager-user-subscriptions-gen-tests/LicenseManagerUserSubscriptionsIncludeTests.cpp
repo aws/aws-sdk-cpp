@@ -8,12 +8,12 @@
 
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsClient.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsEndpointProvider.h>
-#include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsEndpointRules.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsErrorMarshaller.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsErrors.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsRequest.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsServiceClientModel.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
+#include <aws/license-manager-user-subscriptions/internal/LicenseManagerUserSubscriptionsEndpointRules.h>
 #include <aws/license-manager-user-subscriptions/model/ActiveDirectoryIdentityProvider.h>
 #include <aws/license-manager-user-subscriptions/model/ActiveDirectorySettings.h>
 #include <aws/license-manager-user-subscriptions/model/ActiveDirectoryType.h>

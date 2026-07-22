@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/mwaa/MWAAEndpointRules.h>
+#include <aws/mwaa/internal/MWAAEndpointRules.h>
 
 namespace Aws {
 namespace MWAA {

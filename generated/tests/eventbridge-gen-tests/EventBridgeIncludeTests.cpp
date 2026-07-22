@@ -8,12 +8,12 @@
 
 #include <aws/eventbridge/EventBridgeClient.h>
 #include <aws/eventbridge/EventBridgeEndpointProvider.h>
-#include <aws/eventbridge/EventBridgeEndpointRules.h>
 #include <aws/eventbridge/EventBridgeErrorMarshaller.h>
 #include <aws/eventbridge/EventBridgeErrors.h>
 #include <aws/eventbridge/EventBridgeRequest.h>
 #include <aws/eventbridge/EventBridgeServiceClientModel.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
+#include <aws/eventbridge/internal/EventBridgeEndpointRules.h>
 #include <aws/eventbridge/model/ActivateEventSourceRequest.h>
 #include <aws/eventbridge/model/ApiDestination.h>
 #include <aws/eventbridge/model/ApiDestinationHttpMethod.h>

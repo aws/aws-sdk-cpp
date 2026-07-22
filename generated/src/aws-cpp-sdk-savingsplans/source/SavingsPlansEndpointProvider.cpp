@@ -4,9 +4,15 @@
  */
 
 #include <aws/savingsplans/SavingsPlansEndpointProvider.h>
+#include <aws/savingsplans/internal/SavingsPlansEndpointRules.h>
 
 namespace Aws {
 namespace SavingsPlans {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SavingsPlansEndpointProvider::SavingsPlansEndpointProvider()
+    : SavingsPlansDefaultEpProviderBase(Aws::SavingsPlans::SavingsPlansEndpointRules::GetRulesBlob(),
+                                        Aws::SavingsPlans::SavingsPlansEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SavingsPlans
 }  // namespace Aws

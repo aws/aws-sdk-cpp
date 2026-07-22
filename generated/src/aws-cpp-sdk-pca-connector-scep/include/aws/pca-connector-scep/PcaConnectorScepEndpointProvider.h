@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/pca-connector-scep/PcaConnectorScepEndpointRules.h>
 #include <aws/pca-connector-scep/PcaConnectorScep_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_PCACONNECTORSCEP_API PcaConnectorScepEndpointProvider : public PcaConn
  public:
   using PcaConnectorScepResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PcaConnectorScepEndpointProvider()
-      : PcaConnectorScepDefaultEpProviderBase(Aws::PcaConnectorScep::PcaConnectorScepEndpointRules::GetRulesBlob(),
-                                              Aws::PcaConnectorScep::PcaConnectorScepEndpointRules::RulesBlobSize) {}
+  PcaConnectorScepEndpointProvider();
 
   ~PcaConnectorScepEndpointProvider() {}
 };

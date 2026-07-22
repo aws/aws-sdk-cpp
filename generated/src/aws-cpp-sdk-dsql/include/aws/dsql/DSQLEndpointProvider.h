@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/dsql/DSQLEndpointRules.h>
 #include <aws/dsql/DSQL_EXPORTS.h>
 
 namespace Aws {
@@ -40,8 +39,7 @@ class AWS_DSQL_API DSQLEndpointProvider : public DSQLDefaultEpProviderBase {
  public:
   using DSQLResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DSQLEndpointProvider()
-      : DSQLDefaultEpProviderBase(Aws::DSQL::DSQLEndpointRules::GetRulesBlob(), Aws::DSQL::DSQLEndpointRules::RulesBlobSize) {}
+  DSQLEndpointProvider();
 
   ~DSQLEndpointProvider() {}
 };

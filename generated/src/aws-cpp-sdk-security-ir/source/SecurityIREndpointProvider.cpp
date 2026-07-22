@@ -4,9 +4,15 @@
  */
 
 #include <aws/security-ir/SecurityIREndpointProvider.h>
+#include <aws/security-ir/internal/SecurityIREndpointRules.h>
 
 namespace Aws {
 namespace SecurityIR {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SecurityIREndpointProvider::SecurityIREndpointProvider()
+    : SecurityIRDefaultEpProviderBase(Aws::SecurityIR::SecurityIREndpointRules::GetRulesBlob(),
+                                      Aws::SecurityIR::SecurityIREndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SecurityIR
 }  // namespace Aws

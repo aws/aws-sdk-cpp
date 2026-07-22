@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/cloudcontrol/CloudControlApiEndpointRules.h>
 #include <aws/cloudcontrol/CloudControlApi_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CLOUDCONTROLAPI_API CloudControlApiEndpointProvider : public CloudCont
  public:
   using CloudControlApiResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CloudControlApiEndpointProvider()
-      : CloudControlApiDefaultEpProviderBase(Aws::CloudControlApi::CloudControlApiEndpointRules::GetRulesBlob(),
-                                             Aws::CloudControlApi::CloudControlApiEndpointRules::RulesBlobSize) {}
+  CloudControlApiEndpointProvider();
 
   ~CloudControlApiEndpointProvider() {}
 };

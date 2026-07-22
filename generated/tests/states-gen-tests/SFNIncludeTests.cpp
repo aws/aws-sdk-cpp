@@ -8,12 +8,12 @@
 
 #include <aws/states/SFNClient.h>
 #include <aws/states/SFNEndpointProvider.h>
-#include <aws/states/SFNEndpointRules.h>
 #include <aws/states/SFNErrorMarshaller.h>
 #include <aws/states/SFNErrors.h>
 #include <aws/states/SFNRequest.h>
 #include <aws/states/SFNServiceClientModel.h>
 #include <aws/states/SFN_EXPORTS.h>
+#include <aws/states/internal/SFNEndpointRules.h>
 #include <aws/states/model/ActivityFailedEventDetails.h>
 #include <aws/states/model/ActivityListItem.h>
 #include <aws/states/model/ActivityScheduleFailedEventDetails.h>

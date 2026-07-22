@@ -8,6 +8,10 @@ file(GLOB AWS_STORAGEGATEWAY_MODEL_HEADERS
     "include/aws/storagegateway/model/*.h"
 )
 
+file(GLOB AWS_STORAGEGATEWAY_INTERNAL_HEADERS
+    "include/aws/storagegateway/internal/*.h"
+)
+
 file(GLOB AWS_STORAGEGATEWAY_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_STORAGEGATEWAY_MODEL_SOURCE
 
 file(GLOB STORAGEGATEWAY_UNIFIED_HEADERS
     ${AWS_STORAGEGATEWAY_HEADERS}
+    ${AWS_STORAGEGATEWAY_INTERNAL_HEADERS}
     ${AWS_STORAGEGATEWAY_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\storagegateway" FILES ${AWS_STORAGEGATEWAY_HEADERS})
+        source_group("Header Files\\aws\\storagegateway\\internal" FILES ${AWS_STORAGEGATEWAY_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\storagegateway\\model" FILES ${AWS_STORAGEGATEWAY_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_STORAGEGATEWAY_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_STORAGEGATEWAY_MODEL_SOURCE})

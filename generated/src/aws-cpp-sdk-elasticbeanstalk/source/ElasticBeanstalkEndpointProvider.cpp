@@ -4,9 +4,15 @@
  */
 
 #include <aws/elasticbeanstalk/ElasticBeanstalkEndpointProvider.h>
+#include <aws/elasticbeanstalk/internal/ElasticBeanstalkEndpointRules.h>
 
 namespace Aws {
 namespace ElasticBeanstalk {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ElasticBeanstalkEndpointProvider::ElasticBeanstalkEndpointProvider()
+    : ElasticBeanstalkDefaultEpProviderBase(Aws::ElasticBeanstalk::ElasticBeanstalkEndpointRules::GetRulesBlob(),
+                                            Aws::ElasticBeanstalk::ElasticBeanstalkEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ElasticBeanstalk
 }  // namespace Aws

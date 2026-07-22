@@ -8,12 +8,12 @@
 
 #include <aws/apprunner/AppRunnerClient.h>
 #include <aws/apprunner/AppRunnerEndpointProvider.h>
-#include <aws/apprunner/AppRunnerEndpointRules.h>
 #include <aws/apprunner/AppRunnerErrorMarshaller.h>
 #include <aws/apprunner/AppRunnerErrors.h>
 #include <aws/apprunner/AppRunnerRequest.h>
 #include <aws/apprunner/AppRunnerServiceClientModel.h>
 #include <aws/apprunner/AppRunner_EXPORTS.h>
+#include <aws/apprunner/internal/AppRunnerEndpointRules.h>
 #include <aws/apprunner/model/AssociateCustomDomainRequest.h>
 #include <aws/apprunner/model/AssociateCustomDomainResult.h>
 #include <aws/apprunner/model/AuthenticationConfiguration.h>

@@ -8,12 +8,12 @@
 
 #include <aws/workspaces-web/WorkSpacesWebClient.h>
 #include <aws/workspaces-web/WorkSpacesWebEndpointProvider.h>
-#include <aws/workspaces-web/WorkSpacesWebEndpointRules.h>
 #include <aws/workspaces-web/WorkSpacesWebErrorMarshaller.h>
 #include <aws/workspaces-web/WorkSpacesWebErrors.h>
 #include <aws/workspaces-web/WorkSpacesWebRequest.h>
 #include <aws/workspaces-web/WorkSpacesWebServiceClientModel.h>
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
+#include <aws/workspaces-web/internal/WorkSpacesWebEndpointRules.h>
 #include <aws/workspaces-web/model/AssociateBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateBrowserSettingsResult.h>
 #include <aws/workspaces-web/model/AssociateDataProtectionSettingsRequest.h>

@@ -8,6 +8,10 @@ file(GLOB AWS_IOTDEVICEADVISOR_MODEL_HEADERS
     "include/aws/iotdeviceadvisor/model/*.h"
 )
 
+file(GLOB AWS_IOTDEVICEADVISOR_INTERNAL_HEADERS
+    "include/aws/iotdeviceadvisor/internal/*.h"
+)
+
 file(GLOB AWS_IOTDEVICEADVISOR_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_IOTDEVICEADVISOR_MODEL_SOURCE
 
 file(GLOB IOTDEVICEADVISOR_UNIFIED_HEADERS
     ${AWS_IOTDEVICEADVISOR_HEADERS}
+    ${AWS_IOTDEVICEADVISOR_INTERNAL_HEADERS}
     ${AWS_IOTDEVICEADVISOR_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\iotdeviceadvisor" FILES ${AWS_IOTDEVICEADVISOR_HEADERS})
+        source_group("Header Files\\aws\\iotdeviceadvisor\\internal" FILES ${AWS_IOTDEVICEADVISOR_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\iotdeviceadvisor\\model" FILES ${AWS_IOTDEVICEADVISOR_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_IOTDEVICEADVISOR_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_IOTDEVICEADVISOR_MODEL_SOURCE})

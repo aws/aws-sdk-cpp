@@ -4,9 +4,15 @@
  */
 
 #include <aws/appconfig/AppConfigEndpointProvider.h>
+#include <aws/appconfig/internal/AppConfigEndpointRules.h>
 
 namespace Aws {
 namespace AppConfig {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+AppConfigEndpointProvider::AppConfigEndpointProvider()
+    : AppConfigDefaultEpProviderBase(Aws::AppConfig::AppConfigEndpointRules::GetRulesBlob(),
+                                     Aws::AppConfig::AppConfigEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace AppConfig
 }  // namespace Aws

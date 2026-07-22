@@ -8,12 +8,12 @@
 
 #include <aws/eks/EKSClient.h>
 #include <aws/eks/EKSEndpointProvider.h>
-#include <aws/eks/EKSEndpointRules.h>
 #include <aws/eks/EKSErrorMarshaller.h>
 #include <aws/eks/EKSErrors.h>
 #include <aws/eks/EKSRequest.h>
 #include <aws/eks/EKSServiceClientModel.h>
 #include <aws/eks/EKS_EXPORTS.h>
+#include <aws/eks/internal/EKSEndpointRules.h>
 #include <aws/eks/model/AMITypes.h>
 #include <aws/eks/model/AccessConfigResponse.h>
 #include <aws/eks/model/AccessEntry.h>

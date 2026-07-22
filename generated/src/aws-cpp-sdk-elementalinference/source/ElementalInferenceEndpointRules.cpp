@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/elementalinference/ElementalInferenceEndpointRules.h>
+#include <aws/elementalinference/internal/ElementalInferenceEndpointRules.h>
 
 namespace Aws {
 namespace ElementalInference {

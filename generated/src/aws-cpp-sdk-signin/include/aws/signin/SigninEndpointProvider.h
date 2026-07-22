@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/signin/SigninEndpointRules.h>
 #include <aws/signin/Signin_EXPORTS.h>
 
 namespace Aws {
@@ -41,8 +40,7 @@ class AWS_SIGNIN_API SigninEndpointProvider : public SigninDefaultEpProviderBase
  public:
   using SigninResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SigninEndpointProvider()
-      : SigninDefaultEpProviderBase(Aws::Signin::SigninEndpointRules::GetRulesBlob(), Aws::Signin::SigninEndpointRules::RulesBlobSize) {}
+  SigninEndpointProvider();
 
   ~SigninEndpointProvider() {}
 };

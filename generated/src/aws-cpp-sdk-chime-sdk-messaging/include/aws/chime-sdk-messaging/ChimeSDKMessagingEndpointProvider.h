@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/chime-sdk-messaging/ChimeSDKMessagingEndpointRules.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -43,9 +42,7 @@ class AWS_CHIMESDKMESSAGING_API ChimeSDKMessagingEndpointProvider : public Chime
  public:
   using ChimeSDKMessagingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ChimeSDKMessagingEndpointProvider()
-      : ChimeSDKMessagingDefaultEpProviderBase(Aws::ChimeSDKMessaging::ChimeSDKMessagingEndpointRules::GetRulesBlob(),
-                                               Aws::ChimeSDKMessaging::ChimeSDKMessagingEndpointRules::RulesBlobSize) {}
+  ChimeSDKMessagingEndpointProvider();
 
   ~ChimeSDKMessagingEndpointProvider() {}
 };

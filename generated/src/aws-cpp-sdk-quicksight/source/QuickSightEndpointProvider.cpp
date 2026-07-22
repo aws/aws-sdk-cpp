@@ -4,9 +4,15 @@
  */
 
 #include <aws/quicksight/QuickSightEndpointProvider.h>
+#include <aws/quicksight/internal/QuickSightEndpointRules.h>
 
 namespace Aws {
 namespace QuickSight {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+QuickSightEndpointProvider::QuickSightEndpointProvider()
+    : QuickSightDefaultEpProviderBase(Aws::QuickSight::QuickSightEndpointRules::GetRulesBlob(),
+                                      Aws::QuickSight::QuickSightEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace QuickSight
 }  // namespace Aws

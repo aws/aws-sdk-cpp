@@ -8,12 +8,12 @@
 
 #include <aws/networkmonitor/NetworkMonitorClient.h>
 #include <aws/networkmonitor/NetworkMonitorEndpointProvider.h>
-#include <aws/networkmonitor/NetworkMonitorEndpointRules.h>
 #include <aws/networkmonitor/NetworkMonitorErrorMarshaller.h>
 #include <aws/networkmonitor/NetworkMonitorErrors.h>
 #include <aws/networkmonitor/NetworkMonitorRequest.h>
 #include <aws/networkmonitor/NetworkMonitorServiceClientModel.h>
 #include <aws/networkmonitor/NetworkMonitor_EXPORTS.h>
+#include <aws/networkmonitor/internal/NetworkMonitorEndpointRules.h>
 #include <aws/networkmonitor/model/AddressFamily.h>
 #include <aws/networkmonitor/model/CreateMonitorProbeInput.h>
 #include <aws/networkmonitor/model/CreateMonitorRequest.h>

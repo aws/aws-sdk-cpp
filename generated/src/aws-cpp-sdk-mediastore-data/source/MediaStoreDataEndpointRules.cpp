@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/mediastore-data/MediaStoreDataEndpointRules.h>
+#include <aws/mediastore-data/internal/MediaStoreDataEndpointRules.h>
 
 namespace Aws {
 namespace MediaStoreData {

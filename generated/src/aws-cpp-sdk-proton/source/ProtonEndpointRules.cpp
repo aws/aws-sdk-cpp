@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/proton/ProtonEndpointRules.h>
+#include <aws/proton/internal/ProtonEndpointRules.h>
 
 namespace Aws {
 namespace Proton {

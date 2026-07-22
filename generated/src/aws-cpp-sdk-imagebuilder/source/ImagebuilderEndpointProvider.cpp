@@ -4,9 +4,15 @@
  */
 
 #include <aws/imagebuilder/ImagebuilderEndpointProvider.h>
+#include <aws/imagebuilder/internal/ImagebuilderEndpointRules.h>
 
 namespace Aws {
 namespace imagebuilder {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ImagebuilderEndpointProvider::ImagebuilderEndpointProvider()
+    : ImagebuilderDefaultEpProviderBase(Aws::imagebuilder::ImagebuilderEndpointRules::GetRulesBlob(),
+                                        Aws::imagebuilder::ImagebuilderEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace imagebuilder
 }  // namespace Aws

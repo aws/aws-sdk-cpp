@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/cloud9/Cloud9EndpointRules.h>
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -41,8 +40,7 @@ class AWS_CLOUD9_API Cloud9EndpointProvider : public Cloud9DefaultEpProviderBase
  public:
   using Cloud9ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  Cloud9EndpointProvider()
-      : Cloud9DefaultEpProviderBase(Aws::Cloud9::Cloud9EndpointRules::GetRulesBlob(), Aws::Cloud9::Cloud9EndpointRules::RulesBlobSize) {}
+  Cloud9EndpointProvider();
 
   ~Cloud9EndpointProvider() {}
 };

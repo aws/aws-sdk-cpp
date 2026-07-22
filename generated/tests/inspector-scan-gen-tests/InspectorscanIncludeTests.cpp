@@ -8,12 +8,12 @@
 
 #include <aws/inspector-scan/InspectorscanClient.h>
 #include <aws/inspector-scan/InspectorscanEndpointProvider.h>
-#include <aws/inspector-scan/InspectorscanEndpointRules.h>
 #include <aws/inspector-scan/InspectorscanErrorMarshaller.h>
 #include <aws/inspector-scan/InspectorscanErrors.h>
 #include <aws/inspector-scan/InspectorscanRequest.h>
 #include <aws/inspector-scan/InspectorscanServiceClientModel.h>
 #include <aws/inspector-scan/Inspectorscan_EXPORTS.h>
+#include <aws/inspector-scan/internal/InspectorscanEndpointRules.h>
 #include <aws/inspector-scan/model/InternalServerException.h>
 #include <aws/inspector-scan/model/InternalServerExceptionReason.h>
 #include <aws/inspector-scan/model/OutputFormat.h>

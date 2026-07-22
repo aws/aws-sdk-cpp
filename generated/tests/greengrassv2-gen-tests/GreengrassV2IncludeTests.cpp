@@ -8,12 +8,12 @@
 
 #include <aws/greengrassv2/GreengrassV2Client.h>
 #include <aws/greengrassv2/GreengrassV2EndpointProvider.h>
-#include <aws/greengrassv2/GreengrassV2EndpointRules.h>
 #include <aws/greengrassv2/GreengrassV2ErrorMarshaller.h>
 #include <aws/greengrassv2/GreengrassV2Errors.h>
 #include <aws/greengrassv2/GreengrassV2Request.h>
 #include <aws/greengrassv2/GreengrassV2ServiceClientModel.h>
 #include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
+#include <aws/greengrassv2/internal/GreengrassV2EndpointRules.h>
 #include <aws/greengrassv2/model/AssociateClientDeviceWithCoreDeviceEntry.h>
 #include <aws/greengrassv2/model/AssociateClientDeviceWithCoreDeviceErrorEntry.h>
 #include <aws/greengrassv2/model/AssociateServiceRoleToAccountRequest.h>

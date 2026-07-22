@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/pca-connector-scep/PcaConnectorScepEndpointRules.h>
+#include <aws/pca-connector-scep/internal/PcaConnectorScepEndpointRules.h>
 
 namespace Aws {
 namespace PcaConnectorScep {

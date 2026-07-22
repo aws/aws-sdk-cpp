@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/resource-groups/ResourceGroupsEndpointRules.h>
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_RESOURCEGROUPS_API ResourceGroupsEndpointProvider : public ResourceGro
  public:
   using ResourceGroupsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ResourceGroupsEndpointProvider()
-      : ResourceGroupsDefaultEpProviderBase(Aws::ResourceGroups::ResourceGroupsEndpointRules::GetRulesBlob(),
-                                            Aws::ResourceGroups::ResourceGroupsEndpointRules::RulesBlobSize) {}
+  ResourceGroupsEndpointProvider();
 
   ~ResourceGroupsEndpointProvider() {}
 };

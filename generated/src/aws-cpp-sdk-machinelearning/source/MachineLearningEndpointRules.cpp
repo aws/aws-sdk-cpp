@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/machinelearning/MachineLearningEndpointRules.h>
+#include <aws/machinelearning/internal/MachineLearningEndpointRules.h>
 
 namespace Aws {
 namespace MachineLearning {

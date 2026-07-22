@@ -4,9 +4,14 @@
  */
 
 #include <aws/swf/SWFEndpointProvider.h>
+#include <aws/swf/internal/SWFEndpointRules.h>
 
 namespace Aws {
 namespace SWF {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SWFEndpointProvider::SWFEndpointProvider()
+    : SWFDefaultEpProviderBase(Aws::SWF::SWFEndpointRules::GetRulesBlob(), Aws::SWF::SWFEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SWF
 }  // namespace Aws

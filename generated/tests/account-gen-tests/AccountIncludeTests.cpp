@@ -8,12 +8,12 @@
 
 #include <aws/account/AccountClient.h>
 #include <aws/account/AccountEndpointProvider.h>
-#include <aws/account/AccountEndpointRules.h>
 #include <aws/account/AccountErrorMarshaller.h>
 #include <aws/account/AccountErrors.h>
 #include <aws/account/AccountRequest.h>
 #include <aws/account/AccountServiceClientModel.h>
 #include <aws/account/Account_EXPORTS.h>
+#include <aws/account/internal/AccountEndpointRules.h>
 #include <aws/account/model/AcceptPrimaryEmailUpdateRequest.h>
 #include <aws/account/model/AcceptPrimaryEmailUpdateResult.h>
 #include <aws/account/model/AccessDeniedException.h>

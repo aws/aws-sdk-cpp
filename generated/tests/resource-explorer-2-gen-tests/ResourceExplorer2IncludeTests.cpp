@@ -8,12 +8,12 @@
 
 #include <aws/resource-explorer-2/ResourceExplorer2Client.h>
 #include <aws/resource-explorer-2/ResourceExplorer2EndpointProvider.h>
-#include <aws/resource-explorer-2/ResourceExplorer2EndpointRules.h>
 #include <aws/resource-explorer-2/ResourceExplorer2ErrorMarshaller.h>
 #include <aws/resource-explorer-2/ResourceExplorer2Errors.h>
 #include <aws/resource-explorer-2/ResourceExplorer2Request.h>
 #include <aws/resource-explorer-2/ResourceExplorer2ServiceClientModel.h>
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
+#include <aws/resource-explorer-2/internal/ResourceExplorer2EndpointRules.h>
 #include <aws/resource-explorer-2/model/AWSServiceAccessStatus.h>
 #include <aws/resource-explorer-2/model/AssociateDefaultViewRequest.h>
 #include <aws/resource-explorer-2/model/AssociateDefaultViewResult.h>

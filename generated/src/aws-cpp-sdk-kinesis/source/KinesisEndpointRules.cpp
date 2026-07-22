@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/kinesis/KinesisEndpointRules.h>
+#include <aws/kinesis/internal/KinesisEndpointRules.h>
 
 namespace Aws {
 namespace Kinesis {

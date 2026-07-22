@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/outposts/OutpostsEndpointRules.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_OUTPOSTS_API OutpostsEndpointProvider : public OutpostsDefaultEpProvid
  public:
   using OutpostsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  OutpostsEndpointProvider()
-      : OutpostsDefaultEpProviderBase(Aws::Outposts::OutpostsEndpointRules::GetRulesBlob(),
-                                      Aws::Outposts::OutpostsEndpointRules::RulesBlobSize) {}
+  OutpostsEndpointProvider();
 
   ~OutpostsEndpointProvider() {}
 };

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/schemas/SchemasEndpointRules.h>
 #include <aws/schemas/Schemas_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SCHEMAS_API SchemasEndpointProvider : public SchemasDefaultEpProviderB
  public:
   using SchemasResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SchemasEndpointProvider()
-      : SchemasDefaultEpProviderBase(Aws::Schemas::SchemasEndpointRules::GetRulesBlob(),
-                                     Aws::Schemas::SchemasEndpointRules::RulesBlobSize) {}
+  SchemasEndpointProvider();
 
   ~SchemasEndpointProvider() {}
 };

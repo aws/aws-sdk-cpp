@@ -8,6 +8,10 @@ file(GLOB AWS_MEDICAL-IMAGING_MODEL_HEADERS
     "include/aws/medical-imaging/model/*.h"
 )
 
+file(GLOB AWS_MEDICAL-IMAGING_INTERNAL_HEADERS
+    "include/aws/medical-imaging/internal/*.h"
+)
+
 file(GLOB AWS_MEDICAL-IMAGING_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MEDICAL-IMAGING_MODEL_SOURCE
 
 file(GLOB MEDICAL-IMAGING_UNIFIED_HEADERS
     ${AWS_MEDICAL-IMAGING_HEADERS}
+    ${AWS_MEDICAL-IMAGING_INTERNAL_HEADERS}
     ${AWS_MEDICAL-IMAGING_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\medical-imaging" FILES ${AWS_MEDICAL-IMAGING_HEADERS})
+        source_group("Header Files\\aws\\medical-imaging\\internal" FILES ${AWS_MEDICAL-IMAGING_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\medical-imaging\\model" FILES ${AWS_MEDICAL-IMAGING_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MEDICAL-IMAGING_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MEDICAL-IMAGING_MODEL_SOURCE})

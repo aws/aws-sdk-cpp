@@ -4,9 +4,14 @@
  */
 
 #include <aws/connect/ConnectEndpointProvider.h>
+#include <aws/connect/internal/ConnectEndpointRules.h>
 
 namespace Aws {
 namespace Connect {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ConnectEndpointProvider::ConnectEndpointProvider()
+    : ConnectDefaultEpProviderBase(Aws::Connect::ConnectEndpointRules::GetRulesBlob(), Aws::Connect::ConnectEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Connect
 }  // namespace Aws

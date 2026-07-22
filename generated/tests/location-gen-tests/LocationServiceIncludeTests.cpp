@@ -8,12 +8,12 @@
 
 #include <aws/location/LocationServiceClient.h>
 #include <aws/location/LocationServiceEndpointProvider.h>
-#include <aws/location/LocationServiceEndpointRules.h>
 #include <aws/location/LocationServiceErrorMarshaller.h>
 #include <aws/location/LocationServiceErrors.h>
 #include <aws/location/LocationServiceRequest.h>
 #include <aws/location/LocationServiceServiceClientModel.h>
 #include <aws/location/LocationService_EXPORTS.h>
+#include <aws/location/internal/LocationServiceEndpointRules.h>
 #include <aws/location/model/AndroidApp.h>
 #include <aws/location/model/ApiKeyFilter.h>
 #include <aws/location/model/ApiKeyRestrictions.h>

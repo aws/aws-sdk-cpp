@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/managedblockchain/ManagedBlockchainEndpointRules.h>
+#include <aws/managedblockchain/internal/ManagedBlockchainEndpointRules.h>
 
 namespace Aws {
 namespace ManagedBlockchain {

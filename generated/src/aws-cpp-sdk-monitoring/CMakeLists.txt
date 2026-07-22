@@ -8,6 +8,10 @@ file(GLOB AWS_MONITORING_MODEL_HEADERS
     "include/aws/monitoring/model/*.h"
 )
 
+file(GLOB AWS_MONITORING_INTERNAL_HEADERS
+    "include/aws/monitoring/internal/*.h"
+)
+
 file(GLOB AWS_MONITORING_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MONITORING_MODEL_SOURCE
 
 file(GLOB MONITORING_UNIFIED_HEADERS
     ${AWS_MONITORING_HEADERS}
+    ${AWS_MONITORING_INTERNAL_HEADERS}
     ${AWS_MONITORING_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\monitoring" FILES ${AWS_MONITORING_HEADERS})
+        source_group("Header Files\\aws\\monitoring\\internal" FILES ${AWS_MONITORING_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\monitoring\\model" FILES ${AWS_MONITORING_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MONITORING_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MONITORING_MODEL_SOURCE})

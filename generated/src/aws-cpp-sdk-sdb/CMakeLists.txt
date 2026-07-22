@@ -8,6 +8,10 @@ file(GLOB AWS_SDB_MODEL_HEADERS
     "include/aws/sdb/model/*.h"
 )
 
+file(GLOB AWS_SDB_INTERNAL_HEADERS
+    "include/aws/sdb/internal/*.h"
+)
+
 file(GLOB AWS_SDB_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SDB_MODEL_SOURCE
 
 file(GLOB SDB_UNIFIED_HEADERS
     ${AWS_SDB_HEADERS}
+    ${AWS_SDB_INTERNAL_HEADERS}
     ${AWS_SDB_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\sdb" FILES ${AWS_SDB_HEADERS})
+        source_group("Header Files\\aws\\sdb\\internal" FILES ${AWS_SDB_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\sdb\\model" FILES ${AWS_SDB_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SDB_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SDB_MODEL_SOURCE})

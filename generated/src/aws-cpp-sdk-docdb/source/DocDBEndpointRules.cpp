@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/docdb/DocDBEndpointRules.h>
+#include <aws/docdb/internal/DocDBEndpointRules.h>
 
 namespace Aws {
 namespace DocDB {

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/snowball/SnowballEndpointRules.h>
+#include <aws/snowball/internal/SnowballEndpointRules.h>
 
 namespace Aws {
 namespace Snowball {

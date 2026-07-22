@@ -8,12 +8,12 @@
 
 #include <aws/freetier/FreeTierClient.h>
 #include <aws/freetier/FreeTierEndpointProvider.h>
-#include <aws/freetier/FreeTierEndpointRules.h>
 #include <aws/freetier/FreeTierErrorMarshaller.h>
 #include <aws/freetier/FreeTierErrors.h>
 #include <aws/freetier/FreeTierRequest.h>
 #include <aws/freetier/FreeTierServiceClientModel.h>
 #include <aws/freetier/FreeTier_EXPORTS.h>
+#include <aws/freetier/internal/FreeTierEndpointRules.h>
 #include <aws/freetier/model/AccountPlanStatus.h>
 #include <aws/freetier/model/AccountPlanType.h>
 #include <aws/freetier/model/ActivityReward.h>

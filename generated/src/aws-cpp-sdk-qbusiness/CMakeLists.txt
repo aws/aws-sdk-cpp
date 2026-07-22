@@ -8,6 +8,10 @@ file(GLOB AWS_QBUSINESS_MODEL_HEADERS
     "include/aws/qbusiness/model/*.h"
 )
 
+file(GLOB AWS_QBUSINESS_INTERNAL_HEADERS
+    "include/aws/qbusiness/internal/*.h"
+)
+
 file(GLOB AWS_QBUSINESS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_QBUSINESS_MODEL_SOURCE
 
 file(GLOB QBUSINESS_UNIFIED_HEADERS
     ${AWS_QBUSINESS_HEADERS}
+    ${AWS_QBUSINESS_INTERNAL_HEADERS}
     ${AWS_QBUSINESS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\qbusiness" FILES ${AWS_QBUSINESS_HEADERS})
+        source_group("Header Files\\aws\\qbusiness\\internal" FILES ${AWS_QBUSINESS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\qbusiness\\model" FILES ${AWS_QBUSINESS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_QBUSINESS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_QBUSINESS_MODEL_SOURCE})

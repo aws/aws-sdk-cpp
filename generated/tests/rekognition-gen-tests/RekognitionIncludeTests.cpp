@@ -8,12 +8,12 @@
 
 #include <aws/rekognition/RekognitionClient.h>
 #include <aws/rekognition/RekognitionEndpointProvider.h>
-#include <aws/rekognition/RekognitionEndpointRules.h>
 #include <aws/rekognition/RekognitionErrorMarshaller.h>
 #include <aws/rekognition/RekognitionErrors.h>
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/rekognition/RekognitionServiceClientModel.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
+#include <aws/rekognition/internal/RekognitionEndpointRules.h>
 #include <aws/rekognition/model/AgeRange.h>
 #include <aws/rekognition/model/Asset.h>
 #include <aws/rekognition/model/AssociateFacesRequest.h>

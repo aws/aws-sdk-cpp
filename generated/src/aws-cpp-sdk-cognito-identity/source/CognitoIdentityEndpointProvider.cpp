@@ -4,9 +4,15 @@
  */
 
 #include <aws/cognito-identity/CognitoIdentityEndpointProvider.h>
+#include <aws/cognito-identity/internal/CognitoIdentityEndpointRules.h>
 
 namespace Aws {
 namespace CognitoIdentity {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+CognitoIdentityEndpointProvider::CognitoIdentityEndpointProvider()
+    : CognitoIdentityDefaultEpProviderBase(Aws::CognitoIdentity::CognitoIdentityEndpointRules::GetRulesBlob(),
+                                           Aws::CognitoIdentity::CognitoIdentityEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace CognitoIdentity
 }  // namespace Aws

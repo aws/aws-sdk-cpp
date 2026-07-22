@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/dlm/DLMEndpointRules.h>
 #include <aws/dlm/DLM_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_DLM_API DLMEndpointProvider : public DLMDefaultEpProviderBase {
  public:
   using DLMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DLMEndpointProvider() : DLMDefaultEpProviderBase(Aws::DLM::DLMEndpointRules::GetRulesBlob(), Aws::DLM::DLMEndpointRules::RulesBlobSize) {}
+  DLMEndpointProvider();
 
   ~DLMEndpointProvider() {}
 };

@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/account/AccountEndpointRules.h>
 #include <aws/account/Account_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_ACCOUNT_API AccountEndpointProvider : public AccountDefaultEpProviderB
  public:
   using AccountResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AccountEndpointProvider()
-      : AccountDefaultEpProviderBase(Aws::Account::AccountEndpointRules::GetRulesBlob(),
-                                     Aws::Account::AccountEndpointRules::RulesBlobSize) {}
+  AccountEndpointProvider();
 
   ~AccountEndpointProvider() {}
 };

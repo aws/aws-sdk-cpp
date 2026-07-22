@@ -8,6 +8,10 @@ file(GLOB AWS_ECS_MODEL_HEADERS
     "include/aws/ecs/model/*.h"
 )
 
+file(GLOB AWS_ECS_INTERNAL_HEADERS
+    "include/aws/ecs/internal/*.h"
+)
+
 file(GLOB AWS_ECS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_ECS_MODEL_SOURCE
 
 file(GLOB ECS_UNIFIED_HEADERS
     ${AWS_ECS_HEADERS}
+    ${AWS_ECS_INTERNAL_HEADERS}
     ${AWS_ECS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\ecs" FILES ${AWS_ECS_HEADERS})
+        source_group("Header Files\\aws\\ecs\\internal" FILES ${AWS_ECS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\ecs\\model" FILES ${AWS_ECS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_ECS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_ECS_MODEL_SOURCE})

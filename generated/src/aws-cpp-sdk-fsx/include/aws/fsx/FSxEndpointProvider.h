@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/fsx/FSxEndpointRules.h>
 #include <aws/fsx/FSx_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_FSX_API FSxEndpointProvider : public FSxDefaultEpProviderBase {
  public:
   using FSxResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  FSxEndpointProvider() : FSxDefaultEpProviderBase(Aws::FSx::FSxEndpointRules::GetRulesBlob(), Aws::FSx::FSxEndpointRules::RulesBlobSize) {}
+  FSxEndpointProvider();
 
   ~FSxEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/marketplace-discovery/MarketplaceDiscoveryClient.h>
 #include <aws/marketplace-discovery/MarketplaceDiscoveryEndpointProvider.h>
-#include <aws/marketplace-discovery/MarketplaceDiscoveryEndpointRules.h>
 #include <aws/marketplace-discovery/MarketplaceDiscoveryErrorMarshaller.h>
 #include <aws/marketplace-discovery/MarketplaceDiscoveryErrors.h>
 #include <aws/marketplace-discovery/MarketplaceDiscoveryRequest.h>
 #include <aws/marketplace-discovery/MarketplaceDiscoveryServiceClientModel.h>
 #include <aws/marketplace-discovery/MarketplaceDiscovery_EXPORTS.h>
+#include <aws/marketplace-discovery/internal/MarketplaceDiscoveryEndpointRules.h>
 #include <aws/marketplace-discovery/model/AmazonMachineImageFulfillmentOption.h>
 #include <aws/marketplace-discovery/model/AmazonMachineImageOperatingSystem.h>
 #include <aws/marketplace-discovery/model/AmazonMachineImageRecommendation.h>

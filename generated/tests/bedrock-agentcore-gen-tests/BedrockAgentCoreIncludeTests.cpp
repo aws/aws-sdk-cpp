@@ -8,12 +8,12 @@
 
 #include <aws/bedrock-agentcore/BedrockAgentCoreClient.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreEndpointProvider.h>
-#include <aws/bedrock-agentcore/BedrockAgentCoreEndpointRules.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreErrorMarshaller.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreErrors.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreServiceClientModel.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/internal/BedrockAgentCoreEndpointRules.h>
 #include <aws/bedrock-agentcore/model/A2aDescriptor.h>
 #include <aws/bedrock-agentcore/model/ABTestEvaluationConfig.h>
 #include <aws/bedrock-agentcore/model/ABTestExecutionStatus.h>

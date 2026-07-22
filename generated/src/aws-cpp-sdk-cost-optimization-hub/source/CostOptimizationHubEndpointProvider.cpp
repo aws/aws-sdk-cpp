@@ -4,9 +4,15 @@
  */
 
 #include <aws/cost-optimization-hub/CostOptimizationHubEndpointProvider.h>
+#include <aws/cost-optimization-hub/internal/CostOptimizationHubEndpointRules.h>
 
 namespace Aws {
 namespace CostOptimizationHub {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+CostOptimizationHubEndpointProvider::CostOptimizationHubEndpointProvider()
+    : CostOptimizationHubDefaultEpProviderBase(Aws::CostOptimizationHub::CostOptimizationHubEndpointRules::GetRulesBlob(),
+                                               Aws::CostOptimizationHub::CostOptimizationHubEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace CostOptimizationHub
 }  // namespace Aws

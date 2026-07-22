@@ -8,6 +8,10 @@ file(GLOB AWS_VOICE-ID_MODEL_HEADERS
     "include/aws/voice-id/model/*.h"
 )
 
+file(GLOB AWS_VOICE-ID_INTERNAL_HEADERS
+    "include/aws/voice-id/internal/*.h"
+)
+
 file(GLOB AWS_VOICE-ID_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_VOICE-ID_MODEL_SOURCE
 
 file(GLOB VOICE-ID_UNIFIED_HEADERS
     ${AWS_VOICE-ID_HEADERS}
+    ${AWS_VOICE-ID_INTERNAL_HEADERS}
     ${AWS_VOICE-ID_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\voice-id" FILES ${AWS_VOICE-ID_HEADERS})
+        source_group("Header Files\\aws\\voice-id\\internal" FILES ${AWS_VOICE-ID_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\voice-id\\model" FILES ${AWS_VOICE-ID_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_VOICE-ID_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_VOICE-ID_MODEL_SOURCE})

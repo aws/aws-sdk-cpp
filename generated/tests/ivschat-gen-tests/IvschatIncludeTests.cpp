@@ -8,12 +8,12 @@
 
 #include <aws/ivschat/IvschatClient.h>
 #include <aws/ivschat/IvschatEndpointProvider.h>
-#include <aws/ivschat/IvschatEndpointRules.h>
 #include <aws/ivschat/IvschatErrorMarshaller.h>
 #include <aws/ivschat/IvschatErrors.h>
 #include <aws/ivschat/IvschatRequest.h>
 #include <aws/ivschat/IvschatServiceClientModel.h>
 #include <aws/ivschat/Ivschat_EXPORTS.h>
+#include <aws/ivschat/internal/IvschatEndpointRules.h>
 #include <aws/ivschat/model/ChatTokenCapability.h>
 #include <aws/ivschat/model/CloudWatchLogsDestinationConfiguration.h>
 #include <aws/ivschat/model/ConflictException.h>

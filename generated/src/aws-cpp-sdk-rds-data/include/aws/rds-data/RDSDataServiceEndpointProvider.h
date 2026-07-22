@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rds-data/RDSDataServiceEndpointRules.h>
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_RDSDATASERVICE_API RDSDataServiceEndpointProvider : public RDSDataServ
  public:
   using RDSDataServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  RDSDataServiceEndpointProvider()
-      : RDSDataServiceDefaultEpProviderBase(Aws::RDSDataService::RDSDataServiceEndpointRules::GetRulesBlob(),
-                                            Aws::RDSDataService::RDSDataServiceEndpointRules::RulesBlobSize) {}
+  RDSDataServiceEndpointProvider();
 
   ~RDSDataServiceEndpointProvider() {}
 };

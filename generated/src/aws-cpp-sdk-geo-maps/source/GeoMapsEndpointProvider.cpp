@@ -4,9 +4,14 @@
  */
 
 #include <aws/geo-maps/GeoMapsEndpointProvider.h>
+#include <aws/geo-maps/internal/GeoMapsEndpointRules.h>
 
 namespace Aws {
 namespace GeoMaps {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+GeoMapsEndpointProvider::GeoMapsEndpointProvider()
+    : GeoMapsDefaultEpProviderBase(Aws::GeoMaps::GeoMapsEndpointRules::GetRulesBlob(), Aws::GeoMaps::GeoMapsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace GeoMaps
 }  // namespace Aws

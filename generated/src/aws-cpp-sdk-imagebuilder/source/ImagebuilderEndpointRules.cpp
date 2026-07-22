@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/imagebuilder/ImagebuilderEndpointRules.h>
+#include <aws/imagebuilder/internal/ImagebuilderEndpointRules.h>
 
 namespace Aws {
 namespace imagebuilder {

@@ -8,12 +8,12 @@
 
 #include <aws/sdb/SimpleDBClient.h>
 #include <aws/sdb/SimpleDBEndpointProvider.h>
-#include <aws/sdb/SimpleDBEndpointRules.h>
 #include <aws/sdb/SimpleDBErrorMarshaller.h>
 #include <aws/sdb/SimpleDBErrors.h>
 #include <aws/sdb/SimpleDBRequest.h>
 #include <aws/sdb/SimpleDBServiceClientModel.h>
 #include <aws/sdb/SimpleDB_EXPORTS.h>
+#include <aws/sdb/internal/SimpleDBEndpointRules.h>
 #include <aws/sdb/model/Attribute.h>
 #include <aws/sdb/model/AttributeDoesNotExist.h>
 #include <aws/sdb/model/BatchDeleteAttributesRequest.h>

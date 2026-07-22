@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/monitoring/CloudWatchEndpointRules.h>
+#include <aws/monitoring/internal/CloudWatchEndpointRules.h>
 
 namespace Aws {
 namespace CloudWatch {

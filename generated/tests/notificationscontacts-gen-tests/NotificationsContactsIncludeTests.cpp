@@ -8,12 +8,12 @@
 
 #include <aws/notificationscontacts/NotificationsContactsClient.h>
 #include <aws/notificationscontacts/NotificationsContactsEndpointProvider.h>
-#include <aws/notificationscontacts/NotificationsContactsEndpointRules.h>
 #include <aws/notificationscontacts/NotificationsContactsErrorMarshaller.h>
 #include <aws/notificationscontacts/NotificationsContactsErrors.h>
 #include <aws/notificationscontacts/NotificationsContactsRequest.h>
 #include <aws/notificationscontacts/NotificationsContactsServiceClientModel.h>
 #include <aws/notificationscontacts/NotificationsContacts_EXPORTS.h>
+#include <aws/notificationscontacts/internal/NotificationsContactsEndpointRules.h>
 #include <aws/notificationscontacts/model/ActivateEmailContactRequest.h>
 #include <aws/notificationscontacts/model/ActivateEmailContactResult.h>
 #include <aws/notificationscontacts/model/ConflictException.h>

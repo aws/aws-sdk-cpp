@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/connect-contact-lens/ConnectContactLensEndpointRules.h>
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -44,9 +43,7 @@ class AWS_CONNECTCONTACTLENS_API ConnectContactLensEndpointProvider : public Con
  public:
   using ConnectContactLensResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ConnectContactLensEndpointProvider()
-      : ConnectContactLensDefaultEpProviderBase(Aws::ConnectContactLens::ConnectContactLensEndpointRules::GetRulesBlob(),
-                                                Aws::ConnectContactLens::ConnectContactLensEndpointRules::RulesBlobSize) {}
+  ConnectContactLensEndpointProvider();
 
   ~ConnectContactLensEndpointProvider() {}
 };

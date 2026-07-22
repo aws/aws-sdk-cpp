@@ -4,9 +4,15 @@
  */
 
 #include <aws/sdb/SimpleDBEndpointProvider.h>
+#include <aws/sdb/internal/SimpleDBEndpointRules.h>
 
 namespace Aws {
 namespace SimpleDB {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SimpleDBEndpointProvider::SimpleDBEndpointProvider()
+    : SimpleDBDefaultEpProviderBase(Aws::SimpleDB::SimpleDBEndpointRules::GetRulesBlob(),
+                                    Aws::SimpleDB::SimpleDBEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SimpleDB
 }  // namespace Aws

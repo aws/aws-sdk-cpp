@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/dataexchange/DataExchangeEndpointRules.h>
+#include <aws/dataexchange/internal/DataExchangeEndpointRules.h>
 
 namespace Aws {
 namespace DataExchange {

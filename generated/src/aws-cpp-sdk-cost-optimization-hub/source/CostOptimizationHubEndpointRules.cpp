@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/cost-optimization-hub/CostOptimizationHubEndpointRules.h>
+#include <aws/cost-optimization-hub/internal/CostOptimizationHubEndpointRules.h>
 
 namespace Aws {
 namespace CostOptimizationHub {

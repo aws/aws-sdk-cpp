@@ -8,12 +8,12 @@
 
 #include <aws/supplychain/SupplyChainClient.h>
 #include <aws/supplychain/SupplyChainEndpointProvider.h>
-#include <aws/supplychain/SupplyChainEndpointRules.h>
 #include <aws/supplychain/SupplyChainErrorMarshaller.h>
 #include <aws/supplychain/SupplyChainErrors.h>
 #include <aws/supplychain/SupplyChainRequest.h>
 #include <aws/supplychain/SupplyChainServiceClientModel.h>
 #include <aws/supplychain/SupplyChain_EXPORTS.h>
+#include <aws/supplychain/internal/SupplyChainEndpointRules.h>
 #include <aws/supplychain/model/BillOfMaterialsImportJob.h>
 #include <aws/supplychain/model/ConfigurationJobStatus.h>
 #include <aws/supplychain/model/CreateBillOfMaterialsImportJobRequest.h>

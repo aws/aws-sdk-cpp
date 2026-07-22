@@ -8,6 +8,10 @@ file(GLOB AWS_APPSYNC_MODEL_HEADERS
     "include/aws/appsync/model/*.h"
 )
 
+file(GLOB AWS_APPSYNC_INTERNAL_HEADERS
+    "include/aws/appsync/internal/*.h"
+)
+
 file(GLOB AWS_APPSYNC_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_APPSYNC_MODEL_SOURCE
 
 file(GLOB APPSYNC_UNIFIED_HEADERS
     ${AWS_APPSYNC_HEADERS}
+    ${AWS_APPSYNC_INTERNAL_HEADERS}
     ${AWS_APPSYNC_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\appsync" FILES ${AWS_APPSYNC_HEADERS})
+        source_group("Header Files\\aws\\appsync\\internal" FILES ${AWS_APPSYNC_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\appsync\\model" FILES ${AWS_APPSYNC_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_APPSYNC_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_APPSYNC_MODEL_SOURCE})

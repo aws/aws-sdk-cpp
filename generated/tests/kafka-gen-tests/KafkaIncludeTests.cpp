@@ -8,12 +8,12 @@
 
 #include <aws/kafka/KafkaClient.h>
 #include <aws/kafka/KafkaEndpointProvider.h>
-#include <aws/kafka/KafkaEndpointRules.h>
 #include <aws/kafka/KafkaErrorMarshaller.h>
 #include <aws/kafka/KafkaErrors.h>
 #include <aws/kafka/KafkaRequest.h>
 #include <aws/kafka/KafkaServiceClientModel.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/internal/KafkaEndpointRules.h>
 #include <aws/kafka/model/AmazonMskCluster.h>
 #include <aws/kafka/model/ApacheKafkaCluster.h>
 #include <aws/kafka/model/BadRequestException.h>

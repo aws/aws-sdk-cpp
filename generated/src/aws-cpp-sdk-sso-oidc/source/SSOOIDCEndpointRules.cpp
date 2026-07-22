@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sso-oidc/SSOOIDCEndpointRules.h>
+#include <aws/sso-oidc/internal/SSOOIDCEndpointRules.h>
 
 namespace Aws {
 namespace SSOOIDC {

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/codeguru-security/CodeGuruSecurityEndpointRules.h>
+#include <aws/codeguru-security/internal/CodeGuruSecurityEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

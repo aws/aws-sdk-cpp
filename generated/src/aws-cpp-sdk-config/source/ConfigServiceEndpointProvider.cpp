@@ -4,9 +4,15 @@
  */
 
 #include <aws/config/ConfigServiceEndpointProvider.h>
+#include <aws/config/internal/ConfigServiceEndpointRules.h>
 
 namespace Aws {
 namespace ConfigService {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ConfigServiceEndpointProvider::ConfigServiceEndpointProvider()
+    : ConfigServiceDefaultEpProviderBase(Aws::ConfigService::ConfigServiceEndpointRules::GetRulesBlob(),
+                                         Aws::ConfigService::ConfigServiceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ConfigService
 }  // namespace Aws
