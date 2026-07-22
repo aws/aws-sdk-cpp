@@ -92,11 +92,9 @@ Aws::Client::CoreErrors MapCrtErrorCode(Aws::Crt::S3::S3ErrorCode crtErrorCode) 
   }
 }
 
-// SEP-mandated response-checksum validation (WHEN_SUPPORTED) causes aws-c-s3 to drop the error
-// response body on non-2xx replies to GET, so MapCrtError can't XML-parse Code/Message/RequestId.
-// Recover what we can from the headers aws-c-s3 does preserve on the same path: RequestId from
-// x-amz-request-id, typed error from the HTTP status via CoreErrorsMapper — matching the
-// fallback shape AWSErrorMarshaller and AWSHttpResourceClient use when a response body is empty.
+// SEP-mandated response-checksum validation drops the error body on non-2xx GETs; these helpers
+// recover what aws-c-s3 does preserve (headers, HTTP status) so MapCrtError can still surface
+// RequestId and a typed error.
 Aws::String ExtractHeader(const Aws::Crt::Vector<Aws::Crt::Http::HttpHeader>& headers, const char* name) {
   for (const auto& header : headers) {
     const Aws::String key = Aws::Utils::StringUtils::FromByteCursor(header.name);
@@ -131,28 +129,22 @@ Aws::Client::AWSError<Aws::S3::S3Errors> MapCrtError(const Aws::Crt::S3::S3MetaR
     return error;
   }
 
-  // Bodyless CRT-side failure — either a genuine bodyless CRT-side failure (response checksum
-  // mismatch on a 200 reply) or a 4xx GET whose body aws-c-s3 discarded because SetChecksumConfig
-  // was on (SEP-mandated WHEN_SUPPORTED path). Prefer HTTP-status → typed S3 error when we have a
-  // recognised 4xx/5xx; fall through to the CRT error code otherwise.
+  // Bodyless failure: two shapes, two mappers.
+  //   - InvalidResponseStatus: server returned non-2xx; SEP checksum validation caused
+  //     aws-c-s3 to drop the body. HTTP status is authoritative → CoreErrorsMapper.
+  //   - Anything else: CRT-side condition (checksum mismatch on 200, Canceled, timeout,
+  //     etc.) where HTTP status is irrelevant → MapCrtErrorCode.
   if (crtFailed && !hasBody) {
     Aws::StringStream ss;
     ss << Aws::Crt::ErrorDebugString(result.errorCode);
 
-    // Two shapes of bodyless failure need different mappers:
-    //   - InvalidResponseStatus: server returned a non-2xx that aws-c-s3 discarded the body for
-    //     (SEP-mandated checksum validation on GET). HTTP status is the authoritative signal —
-    //     use CoreErrorsMapper (matches AWSErrorMarshaller's empty-body fallback).
-    //   - Anything else: a CRT-side condition (ResponseChecksumMismatch on a 200, Canceled,
-    //     RequestTimeout, etc.) where the HTTP status is irrelevant. Use MapCrtErrorCode.
     Aws::Client::AWSError<Aws::S3::S3Errors> error;
     if (crtErrorCode == Aws::Crt::S3::S3ErrorCode::InvalidResponseStatus) {
-      const Aws::Client::AWSError<Aws::Client::CoreErrors> coreError =
-          Aws::Client::CoreErrorsMapper::GetErrorForHttpResponseCode(
-              static_cast<Aws::Http::HttpResponseCode>(result.responseStatus));
-      error = Aws::Client::AWSError<Aws::S3::S3Errors>(
-          static_cast<Aws::S3::S3Errors>(coreError.GetErrorType()), "", ss.str(),
-          coreError.ShouldRetry());
+      // AWSError's templated conversion ctor casts the enum and preserves retryability, response
+      // code, and any other fields CoreErrorsMapper populated.
+      error = Aws::Client::CoreErrorsMapper::GetErrorForHttpResponseCode(
+          static_cast<Aws::Http::HttpResponseCode>(result.responseStatus));
+      error.SetMessage(ss.str());
     } else {
       error = Aws::Client::AWSError<Aws::S3::S3Errors>(
           static_cast<Aws::S3::S3Errors>(MapCrtErrorCode(crtErrorCode)), "", ss.str(),
