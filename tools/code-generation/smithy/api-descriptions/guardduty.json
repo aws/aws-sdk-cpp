@@ -6610,6 +6610,14 @@
                 }
             }
         },
+        "com.amazonaws.guardduty#FilterVersion": {
+            "type": "long",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 1
+                }
+            }
+        },
         "com.amazonaws.guardduty#Finding": {
             "type": "structure",
             "members": {
@@ -7536,6 +7544,27 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The tags of the filter resource.</p>",
                         "smithy.api#jsonName": "tags"
+                    }
+                },
+                "CreatedAt": {
+                    "target": "com.amazonaws.guardduty#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The timestamp when the filter was created. This field is not available for filters that were created before the lifecycle metadata feature was enabled (legacy filters).</p>",
+                        "smithy.api#jsonName": "createdAt"
+                    }
+                },
+                "UpdatedAt": {
+                    "target": "com.amazonaws.guardduty#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The timestamp when the filter was last updated. For legacy filters, this field is present only after the filter has been updated at least once since the lifecycle metadata feature was enabled.</p>",
+                        "smithy.api#jsonName": "updatedAt"
+                    }
+                },
+                "Version": {
+                    "target": "com.amazonaws.guardduty#FilterVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The version of the filter. Every time the filter is updated, the version increments by 1. This field is not available for legacy filters that were created before the lifecycle metadata feature was enabled.</p>",
+                        "smithy.api#jsonName": "version"
                     }
                 }
             },

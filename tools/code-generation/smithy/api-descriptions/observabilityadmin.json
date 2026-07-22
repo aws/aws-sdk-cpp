@@ -3095,6 +3095,24 @@
                     "traits": {
                         "smithy.api#enumValue": "S3_SERVER_ACCESS_LOGS"
                     }
+                },
+                "ALB_ACCESS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ALB_ACCESS_LOGS"
+                    }
+                },
+                "ALB_CONNECTION": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ALB_CONNECTION_LOGS"
+                    }
+                },
+                "ALB_HEALTH_CHECK": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ALB_HEALTH_CHECK_LOGS"
+                    }
                 }
             }
         },
@@ -4557,6 +4575,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "AWS::S3::Bucket"
+                    }
+                },
+                "AWS_BEDROCK_KNOWLEDGEBASE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AWS::Bedrock::KnowledgeBase"
                     }
                 }
             }
