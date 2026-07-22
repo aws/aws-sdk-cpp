@@ -4,6 +4,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/base64/Base64.h>
 #include <aws/core/utils/crypto/CRC64.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/S3ErrorMarshaller.h>
 #include <aws/s3/model/CopyObjectRequest.h>
