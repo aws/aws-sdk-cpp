@@ -1,5 +1,6 @@
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/ShapeSerializer.h>
@@ -7,8 +8,9 @@
 namespace smithy {
 namespace schema {
 
-class SMITHY_API CborShapeSerialize final : public ShapeSerializer {
+class SMITHY_API CborShapeSerializer final : public ShapeSerializer {
  public:
+  using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
   CborShapeSerializer();
   ~CborShapeSerializer();
 
@@ -18,6 +20,7 @@ class SMITHY_API CborShapeSerialize final : public ShapeSerializer {
   void WriteBoolean(const Schema& schema, bool value) override;
   void WriteInteger(const Schema& schema, int value) override;
   void WriteLong(const Schema& schema, int64_t value) override;
+  void WriteFloat(const Schema& schema, float value) override;
   void WriteDouble(const Schema& schema, double value) override;
   void WriteString(const Schema& schema, const Aws::String& value) override;
   void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) override;
@@ -35,7 +38,7 @@ class SMITHY_API CborShapeSerialize final : public ShapeSerializer {
   bool BeginNestedStructure(const Schema& schema) override;
   void EndNestedStructure() override;
 
-  Aws::String GetPayload() const;
+  SerializerOutcome GetPayload();
 
  private:
   class Impl;

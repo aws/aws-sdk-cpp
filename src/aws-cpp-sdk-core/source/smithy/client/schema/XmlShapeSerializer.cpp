@@ -71,6 +71,8 @@ class XmlShapeSerializer::Impl {
 
   void WriteLong(const Schema& schema, int64_t value) { WrapValue(GetXmlName(schema), StringUtils::to_string(value)); }
 
+  void WriteFloat(const Schema& schema, float value) { WrapValue(GetXmlName(schema), StringUtils::to_string(value)); }
+
   void WriteDouble(const Schema& schema, double value) { WrapValue(GetXmlName(schema), StringUtils::to_string(value)); }
 
   void WriteString(const Schema& schema, const Aws::String& value) { WrapEscapedValue(GetXmlName(schema), value); }
@@ -392,6 +394,7 @@ void XmlShapeSerializer::EndStructure() { m_impl->EndStructure(); }
 void XmlShapeSerializer::WriteBoolean(const Schema& schema, bool value) { m_impl->WriteBoolean(schema, value); }
 void XmlShapeSerializer::WriteInteger(const Schema& schema, int value) { m_impl->WriteInteger(schema, value); }
 void XmlShapeSerializer::WriteLong(const Schema& schema, int64_t value) { m_impl->WriteLong(schema, value); }
+void XmlShapeSerializer::WriteFloat(const Schema& schema, float value) { m_impl->WriteFloat(schema, value); }
 void XmlShapeSerializer::WriteDouble(const Schema& schema, double value) { m_impl->WriteDouble(schema, value); }
 void XmlShapeSerializer::WriteString(const Schema& schema, const Aws::String& value) { m_impl->WriteString(schema, value); }
 void XmlShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& value) { m_impl->WriteTimestamp(schema, value); }

@@ -465,3 +465,27 @@ TEST_F(JsonShapeSerializerTest, NoJsonNameUsesGetMemberName) {
   s.EndStructure();
   EXPECT_NE(s.GetPayload().GetResult().find("\"fieldName\":\"value\""), Aws::String::npos);
 }
+
+TEST_F(JsonShapeSerializerTest, FloatValue) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("f", ShapeType::Float);
+  s.BeginStructure(root);
+  s.WriteFloat(member, 1.5f);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "{\"f\":1.5}");
+}
+
+TEST_F(JsonShapeSerializerTest, FloatNegativeValue) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("f", ShapeType::Float);
+  s.BeginStructure(root);
+  s.WriteFloat(member, -2.25f);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "{\"f\":-2.25}");
+}
