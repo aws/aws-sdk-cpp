@@ -60,6 +60,16 @@ Code contributions to the SDK are done through [Pull Requests][pull-requests]. P
   If you are thinking about adding entirely new functionality, open a [Feature Request](#feature-requests) first before beginning work; again this is to make sure that no one else is already working on it, and also that it makes sense to be included in the SDK.
 * All code contributions must be accompanied with new or modified tests that verify that the code works as expected; i.e. that the issue has been fixed or that the functionality works as intended.
 
+## Changelog
+
+Every PR that changes SDK behavior should include a changelog fragment. Run `tools/scripts/new-change` to generate one interactively, or use `tools/scripts/new-change --auto` to auto-detect from your branch. Commit the generated file in `.changelog/` with your changes.
+
+Valid fragment types:
+- `feature` - new functionality
+- `bugfix` - a bug fix
+- `dependency` - dependency update (e.g. CRT bump)
+- `breaking-change` - ABI/API breaking change
+
 ## Your First Code Change
 Before submitting your pull request, refer to the pull request readiness
 checklist below:
@@ -68,6 +78,7 @@ checklist below:
 * [ ] Code is documented, especially public and user-facing constructs
 * [ ] Git commit message is detailed and includes context behind the change
 * [ ] If the change is related to an existing Bug Report or Feature Request, the issue number is referenced
+* [ ] Includes a changelog fragment (run `tools/scripts/new-change`)
 
 __Note__: Some changes have additional requirements. Refer to the section below
 to see if your change will require additional work to be accepted.
