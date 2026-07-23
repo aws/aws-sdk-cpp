@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 #include <aws/workspaces-instances/model/TenancyEnum.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkspacesInstances {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class Placement {
  public:
   AWS_WORKSPACESINSTANCES_API Placement() = default;
-  AWS_WORKSPACESINSTANCES_API Placement(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API Placement& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACESINSTANCES_API Placement(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API Placement& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -145,13 +145,13 @@ class Placement {
   /**
    * <p>Specifies partition number for partition placement groups.</p>
    */
-  inline int GetPartitionNumber() const { return m_partitionNumber; }
+  inline int64_t GetPartitionNumber() const { return m_partitionNumber; }
   inline bool PartitionNumberHasBeenSet() const { return m_partitionNumberHasBeenSet; }
-  inline void SetPartitionNumber(int value) {
+  inline void SetPartitionNumber(int64_t value) {
     m_partitionNumberHasBeenSet = true;
     m_partitionNumber = value;
   }
-  inline Placement& WithPartitionNumber(int value) {
+  inline Placement& WithPartitionNumber(int64_t value) {
     SetPartitionNumber(value);
     return *this;
   }
@@ -185,7 +185,7 @@ class Placement {
 
   Aws::String m_hostResourceGroupArn;
 
-  int m_partitionNumber{0};
+  int64_t m_partitionNumber{0};
 
   TenancyEnum m_tenancy{TenancyEnum::NOT_SET};
   bool m_affinityHasBeenSet = false;

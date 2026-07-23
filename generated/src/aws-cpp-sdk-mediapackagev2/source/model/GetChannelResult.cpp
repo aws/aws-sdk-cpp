@@ -80,6 +80,10 @@ GetChannelResult& GetChannelResult::operator=(const Aws::AmazonWebServiceResult<
     m_outputHeaderConfiguration = jsonValue.GetObject("OutputHeaderConfiguration");
     m_outputHeaderConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OutputLockingMode")) {
+    m_outputLockingMode = OutputLockingModeMapper::GetOutputLockingModeForName(jsonValue.GetString("OutputLockingMode"));
+    m_outputLockingModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -80,5 +80,9 @@ Aws::String StartStreamSessionRequest::SerializePayload() const {
     payload.WithString("RoleArn", m_roleArn);
   }
 
+  if (m_displayConfigurationHasBeenSet) {
+    payload.WithObject("DisplayConfiguration", m_displayConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

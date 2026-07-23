@@ -3,52 +3,155 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/model/SupportedInstanceConfiguration.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace WorkspacesInstances {
 namespace Model {
 
-SupportedInstanceConfiguration::SupportedInstanceConfiguration(JsonView jsonValue) { *this = jsonValue; }
+SupportedInstanceConfiguration::SupportedInstanceConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  *this = decoder;
+}
 
-SupportedInstanceConfiguration& SupportedInstanceConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("BillingMode")) {
-    m_billingMode = BillingModeMapper::GetBillingModeForName(jsonValue.GetString("BillingMode"));
-    m_billingModeHasBeenSet = true;
+SupportedInstanceConfiguration& SupportedInstanceConfiguration::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "BillingMode") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_billingMode = BillingModeMapper::GetBillingModeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_billingModeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "PlatformType") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_platformType = PlatformTypeEnumMapper::GetPlatformTypeEnumForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_platformTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Tenancy") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_tenancy = InstanceConfigurationTenancyEnumMapper::GetInstanceConfigurationTenancyEnumForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_tenancyHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("SupportedInstanceConfiguration", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "BillingMode") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_billingMode =
+                    BillingModeMapper::GetBillingModeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_billingModeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "PlatformType") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_platformType = PlatformTypeEnumMapper::GetPlatformTypeEnumForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_platformTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Tenancy") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_tenancy = InstanceConfigurationTenancyEnumMapper::GetInstanceConfigurationTenancyEnumForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_tenancyHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("PlatformType")) {
-    m_platformType = PlatformTypeEnumMapper::GetPlatformTypeEnumForName(jsonValue.GetString("PlatformType"));
-    m_platformTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Tenancy")) {
-    m_tenancy = InstanceConfigurationTenancyEnumMapper::GetInstanceConfigurationTenancyEnumForName(jsonValue.GetString("Tenancy"));
-    m_tenancyHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue SupportedInstanceConfiguration::Jsonize() const {
-  JsonValue payload;
+void SupportedInstanceConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_billingModeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_platformTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tenancyHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_billingModeHasBeenSet) {
-    payload.WithString("BillingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("BillingMode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(BillingModeMapper::GetNameForBillingMode(m_billingMode).c_str()));
   }
 
   if (m_platformTypeHasBeenSet) {
-    payload.WithString("PlatformType", PlatformTypeEnumMapper::GetNameForPlatformTypeEnum(m_platformType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PlatformType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(PlatformTypeEnumMapper::GetNameForPlatformTypeEnum(m_platformType).c_str()));
   }
 
   if (m_tenancyHasBeenSet) {
-    payload.WithString("Tenancy", InstanceConfigurationTenancyEnumMapper::GetNameForInstanceConfigurationTenancyEnum(m_tenancy));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tenancy"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        InstanceConfigurationTenancyEnumMapper::GetNameForInstanceConfigurationTenancyEnum(m_tenancy).c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

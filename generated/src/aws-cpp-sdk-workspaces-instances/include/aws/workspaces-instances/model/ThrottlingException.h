@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkspacesInstances {
 namespace Model {
@@ -27,9 +27,9 @@ namespace Model {
 class ThrottlingException {
  public:
   AWS_WORKSPACESINSTANCES_API ThrottlingException() = default;
-  AWS_WORKSPACESINSTANCES_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACESINSTANCES_API ThrottlingException(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API ThrottlingException& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -89,13 +89,13 @@ class ThrottlingException {
   /**
    * <p>Recommended wait time before retrying the request.</p>
    */
-  inline int GetRetryAfterSeconds() const { return m_retryAfterSeconds; }
+  inline int64_t GetRetryAfterSeconds() const { return m_retryAfterSeconds; }
   inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
-  inline void SetRetryAfterSeconds(int value) {
+  inline void SetRetryAfterSeconds(int64_t value) {
     m_retryAfterSecondsHasBeenSet = true;
     m_retryAfterSeconds = value;
   }
-  inline ThrottlingException& WithRetryAfterSeconds(int value) {
+  inline ThrottlingException& WithRetryAfterSeconds(int64_t value) {
     SetRetryAfterSeconds(value);
     return *this;
   }
@@ -107,7 +107,7 @@ class ThrottlingException {
 
   Aws::String m_quotaCode;
 
-  int m_retryAfterSeconds{0};
+  int64_t m_retryAfterSeconds{0};
   bool m_messageHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
   bool m_quotaCodeHasBeenSet = false;

@@ -3627,6 +3627,87 @@ class Capabilities {
 
   ///@{
   /**
+   * <p>The ability to use Amazon Quick through the browser extension for Chrome,
+   * Firefox, and Edge.</p>
+   */
+  inline CapabilityState GetUseBrowserExtension() const { return m_useBrowserExtension; }
+  inline bool UseBrowserExtensionHasBeenSet() const { return m_useBrowserExtensionHasBeenSet; }
+  inline void SetUseBrowserExtension(CapabilityState value) {
+    m_useBrowserExtensionHasBeenSet = true;
+    m_useBrowserExtension = value;
+  }
+  inline Capabilities& WithUseBrowserExtension(CapabilityState value) {
+    SetUseBrowserExtension(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Amazon Quick through the Microsoft Word add-in.</p>
+   */
+  inline CapabilityState GetUseWordAddInExtension() const { return m_useWordAddInExtension; }
+  inline bool UseWordAddInExtensionHasBeenSet() const { return m_useWordAddInExtensionHasBeenSet; }
+  inline void SetUseWordAddInExtension(CapabilityState value) {
+    m_useWordAddInExtensionHasBeenSet = true;
+    m_useWordAddInExtension = value;
+  }
+  inline Capabilities& WithUseWordAddInExtension(CapabilityState value) {
+    SetUseWordAddInExtension(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Amazon Quick through the Microsoft Outlook add-in.</p>
+   */
+  inline CapabilityState GetUseOutlookAddInExtension() const { return m_useOutlookAddInExtension; }
+  inline bool UseOutlookAddInExtensionHasBeenSet() const { return m_useOutlookAddInExtensionHasBeenSet; }
+  inline void SetUseOutlookAddInExtension(CapabilityState value) {
+    m_useOutlookAddInExtensionHasBeenSet = true;
+    m_useOutlookAddInExtension = value;
+  }
+  inline Capabilities& WithUseOutlookAddInExtension(CapabilityState value) {
+    SetUseOutlookAddInExtension(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Amazon Quick through the Microsoft Excel add-in.</p>
+   */
+  inline CapabilityState GetUseExcelAddInExtension() const { return m_useExcelAddInExtension; }
+  inline bool UseExcelAddInExtensionHasBeenSet() const { return m_useExcelAddInExtensionHasBeenSet; }
+  inline void SetUseExcelAddInExtension(CapabilityState value) {
+    m_useExcelAddInExtensionHasBeenSet = true;
+    m_useExcelAddInExtension = value;
+  }
+  inline Capabilities& WithUseExcelAddInExtension(CapabilityState value) {
+    SetUseExcelAddInExtension(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Amazon Quick through the Microsoft PowerPoint add-in.</p>
+   */
+  inline CapabilityState GetUsePowerpointAddInExtension() const { return m_usePowerpointAddInExtension; }
+  inline bool UsePowerpointAddInExtensionHasBeenSet() const { return m_usePowerpointAddInExtensionHasBeenSet; }
+  inline void SetUsePowerpointAddInExtension(CapabilityState value) {
+    m_usePowerpointAddInExtensionHasBeenSet = true;
+    m_usePowerpointAddInExtension = value;
+  }
+  inline Capabilities& WithUsePowerpointAddInExtension(CapabilityState value) {
+    SetUsePowerpointAddInExtension(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ability to create, update, delete and view shared folders (both
    * restricted and unrestricted), ability to add any asset to shared folders, and
    * ability to share the folders.</p> <p> <b>Note:</b> This does <i>not</i> prevent
@@ -4208,6 +4289,16 @@ class Capabilities {
 
   CapabilityState m_extension{CapabilityState::NOT_SET};
 
+  CapabilityState m_useBrowserExtension{CapabilityState::NOT_SET};
+
+  CapabilityState m_useWordAddInExtension{CapabilityState::NOT_SET};
+
+  CapabilityState m_useOutlookAddInExtension{CapabilityState::NOT_SET};
+
+  CapabilityState m_useExcelAddInExtension{CapabilityState::NOT_SET};
+
+  CapabilityState m_usePowerpointAddInExtension{CapabilityState::NOT_SET};
+
   CapabilityState m_manageSharedFolders{CapabilityState::NOT_SET};
 
   CapabilityState m_generateAnalyses{CapabilityState::NOT_SET};
@@ -4447,6 +4538,11 @@ class Capabilities {
   bool m_researchHasBeenSet = false;
   bool m_selfUpgradeUserRoleHasBeenSet = false;
   bool m_extensionHasBeenSet = false;
+  bool m_useBrowserExtensionHasBeenSet = false;
+  bool m_useWordAddInExtensionHasBeenSet = false;
+  bool m_useOutlookAddInExtensionHasBeenSet = false;
+  bool m_useExcelAddInExtensionHasBeenSet = false;
+  bool m_usePowerpointAddInExtensionHasBeenSet = false;
   bool m_manageSharedFoldersHasBeenSet = false;
   bool m_generateAnalysesHasBeenSet = false;
   bool m_storyHasBeenSet = false;

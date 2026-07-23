@@ -17,6 +17,8 @@ namespace NotebookStatusMapper {
 
 static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 static const int ARCHIVED_HASH = HashingUtils::HashString("ARCHIVED");
+static const int SYNC_IN_PROGRESS_HASH = HashingUtils::HashString("SYNC_IN_PROGRESS");
+static const int SYNC_FAILED_HASH = HashingUtils::HashString("SYNC_FAILED");
 
 NotebookStatus GetNotebookStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ NotebookStatus GetNotebookStatusForName(const Aws::String& name) {
     return NotebookStatus::ACTIVE;
   } else if (hashCode == ARCHIVED_HASH) {
     return NotebookStatus::ARCHIVED;
+  } else if (hashCode == SYNC_IN_PROGRESS_HASH) {
+    return NotebookStatus::SYNC_IN_PROGRESS;
+  } else if (hashCode == SYNC_FAILED_HASH) {
+    return NotebookStatus::SYNC_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForNotebookStatus(NotebookStatus enumValue) {
       return "ACTIVE";
     case NotebookStatus::ARCHIVED:
       return "ARCHIVED";
+    case NotebookStatus::SYNC_IN_PROGRESS:
+      return "SYNC_IN_PROGRESS";
+    case NotebookStatus::SYNC_FAILED:
+      return "SYNC_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

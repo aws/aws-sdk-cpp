@@ -383,6 +383,7 @@
 #include <aws/datazone/model/GetTimeSeriesDataPointResult.h>
 #include <aws/datazone/model/GetUserProfileRequest.h>
 #include <aws/datazone/model/GetUserProfileResult.h>
+#include <aws/datazone/model/GitMetadata.h>
 #include <aws/datazone/model/GlossaryItem.h>
 #include <aws/datazone/model/GlossaryItemAdditionalAttributes.h>
 #include <aws/datazone/model/GlossaryStatus.h>
@@ -722,6 +723,8 @@
 #include <aws/datazone/model/StartNotebookImportResult.h>
 #include <aws/datazone/model/StartNotebookRunRequest.h>
 #include <aws/datazone/model/StartNotebookRunResult.h>
+#include <aws/datazone/model/StartNotebookSyncRequest.h>
+#include <aws/datazone/model/StartNotebookSyncResult.h>
 #include <aws/datazone/model/Status.h>
 #include <aws/datazone/model/StopNotebookRunRequest.h>
 #include <aws/datazone/model/StopNotebookRunResult.h>

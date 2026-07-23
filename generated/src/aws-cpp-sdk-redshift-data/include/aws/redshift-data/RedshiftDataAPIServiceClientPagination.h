@@ -11,6 +11,7 @@
 #include <aws/redshift-data/model/GetStatementResultV2PaginationTraits.h>
 #include <aws/redshift-data/model/ListDatabasesPaginationTraits.h>
 #include <aws/redshift-data/model/ListSchemasPaginationTraits.h>
+#include <aws/redshift-data/model/ListSessionsPaginationTraits.h>
 #include <aws/redshift-data/model/ListStatementsPaginationTraits.h>
 #include <aws/redshift-data/model/ListTablesPaginationTraits.h>
 
@@ -29,6 +30,8 @@ using ListDatabasesPaginator = Aws::Utils::Pagination::Paginator<RedshiftDataAPI
                                                                  Pagination::ListDatabasesPaginationTraits<RedshiftDataAPIServiceClient>>;
 using ListSchemasPaginator = Aws::Utils::Pagination::Paginator<RedshiftDataAPIServiceClient, Model::ListSchemasRequest,
                                                                Pagination::ListSchemasPaginationTraits<RedshiftDataAPIServiceClient>>;
+using ListSessionsPaginator = Aws::Utils::Pagination::Paginator<RedshiftDataAPIServiceClient, Model::ListSessionsRequest,
+                                                                Pagination::ListSessionsPaginationTraits<RedshiftDataAPIServiceClient>>;
 using ListStatementsPaginator = Aws::Utils::Pagination::Paginator<RedshiftDataAPIServiceClient, Model::ListStatementsRequest,
                                                                   Pagination::ListStatementsPaginationTraits<RedshiftDataAPIServiceClient>>;
 using ListTablesPaginator = Aws::Utils::Pagination::Paginator<RedshiftDataAPIServiceClient, Model::ListTablesRequest,

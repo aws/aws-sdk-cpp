@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/WorkspacesInstancesPaginationBase.h>
 #include <aws/workspaces-instances/WorkspacesInstancesServiceClientModel.h>
 #include <aws/workspaces-instances/WorkspacesInstancesWaiter.h>
@@ -20,12 +20,12 @@ namespace WorkspacesInstances {
  * workspace environments across multiple AWS regions, enabling programmatic
  * creation and configuration of desktop infrastructure.</p>
  */
-class AWS_WORKSPACESINSTANCES_API WorkspacesInstancesClient : public Aws::Client::AWSJsonClient,
+class AWS_WORKSPACESINSTANCES_API WorkspacesInstancesClient : public Aws::Client::AWSRpcV2CborClient,
                                                               public Aws::Client::ClientWithAsyncTemplateMethods<WorkspacesInstancesClient>,
                                                               public WorkspacesInstancesPaginationBase<WorkspacesInstancesClient>,
                                                               public WorkspacesInstancesWaiter<WorkspacesInstancesClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

@@ -75,6 +75,14 @@ Aws::String BatchExecuteStatementRequest::SerializePayload() const {
     payload.WithString("SessionId", m_sessionId);
   }
 
+  if (m_executionModeHasBeenSet) {
+    payload.WithString("ExecutionMode", ExecutionModeMapper::GetNameForExecutionMode(m_executionMode));
+  }
+
+  if (m_waitTimeSecondsHasBeenSet) {
+    payload.WithInteger("WaitTimeSeconds", m_waitTimeSeconds);
+  }
+
   return payload.View().WriteReadable();
 }
 

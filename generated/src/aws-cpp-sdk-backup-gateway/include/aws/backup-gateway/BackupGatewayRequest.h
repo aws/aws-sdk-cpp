@@ -25,7 +25,6 @@ class AWS_BACKUPGATEWAY_API BackupGatewayRequest : public Aws::AmazonSerializabl
     auto headers = GetRequestSpecificHeaders();
 
     if (headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0)) {
-      headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_JSON_CONTENT_TYPE_1_0));
     }
     headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::API_VERSION_HEADER, "2021-01-01"));
     return headers;

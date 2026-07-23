@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/Certificate.h>
+#include <aws/bedrock-agentcore/model/ToolsFileSystemConfiguration.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -153,6 +154,34 @@ class StartCodeInterpreterSessionRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
+   * <p>The file system configurations to mount into the code interpreter session.
+   * Use these configurations to mount your own Amazon Simple Storage Service (Amazon
+   * S3) Files or Amazon Elastic File System (Amazon EFS) access points. Your session
+   * can then read and write your data. If you don't specify this field, no
+   * additional file systems are mounted.</p>
+   */
+  inline const Aws::Vector<ToolsFileSystemConfiguration>& GetFilesystemConfigurations() const { return m_filesystemConfigurations; }
+  inline bool FilesystemConfigurationsHasBeenSet() const { return m_filesystemConfigurationsHasBeenSet; }
+  template <typename FilesystemConfigurationsT = Aws::Vector<ToolsFileSystemConfiguration>>
+  void SetFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations = std::forward<FilesystemConfigurationsT>(value);
+  }
+  template <typename FilesystemConfigurationsT = Aws::Vector<ToolsFileSystemConfiguration>>
+  StartCodeInterpreterSessionRequest& WithFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    SetFilesystemConfigurations(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  template <typename FilesystemConfigurationsT = ToolsFileSystemConfiguration>
+  StartCodeInterpreterSessionRequest& AddFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations.emplace_back(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure that the API request completes
    * no more than one time. If this token matches a previous request, Amazon Bedrock
    * AgentCore ignores the request, but does not return an error. This parameter
@@ -185,6 +214,8 @@ class StartCodeInterpreterSessionRequest : public BedrockAgentCoreRequest {
 
   Aws::Vector<Certificate> m_certificates;
 
+  Aws::Vector<ToolsFileSystemConfiguration> m_filesystemConfigurations;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_traceIdHasBeenSet = false;
   bool m_traceParentHasBeenSet = false;
@@ -192,6 +223,7 @@ class StartCodeInterpreterSessionRequest : public BedrockAgentCoreRequest {
   bool m_nameHasBeenSet = false;
   bool m_sessionTimeoutSecondsHasBeenSet = false;
   bool m_certificatesHasBeenSet = false;
+  bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -227,6 +227,7 @@
 #include <aws/bedrock-agentcore-control/model/Descriptors.h>
 #include <aws/bedrock-agentcore-control/model/DraftStatus.h>
 #include <aws/bedrock-agentcore-control/model/EfsAccessPointConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/EfsConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/EndpointIpAddressType.h>
 #include <aws/bedrock-agentcore-control/model/EnforcementMode.h>
 #include <aws/bedrock-agentcore-control/model/EpisodicConsolidationOverride.h>
@@ -604,6 +605,7 @@
 #include <aws/bedrock-agentcore-control/model/RuntimeTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/S3Configuration.h>
 #include <aws/bedrock-agentcore-control/model/S3FilesAccessPointConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/S3FilesConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/S3Location.h>
 #include <aws/bedrock-agentcore-control/model/S3Source.h>
 #include <aws/bedrock-agentcore-control/model/SalesforceOauth2ProviderConfigInput.h>
@@ -677,6 +679,7 @@
 #include <aws/bedrock-agentcore-control/model/ToolDefinition.h>
 #include <aws/bedrock-agentcore-control/model/ToolSchema.h>
 #include <aws/bedrock-agentcore-control/model/ToolsDefinition.h>
+#include <aws/bedrock-agentcore-control/model/ToolsFileSystemConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/TrafficSplitEntry.h>
 #include <aws/bedrock-agentcore-control/model/TriggerCondition.h>
 #include <aws/bedrock-agentcore-control/model/TriggerConditionInput.h>

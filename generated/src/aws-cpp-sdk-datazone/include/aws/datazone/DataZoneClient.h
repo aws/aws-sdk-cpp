@@ -4833,6 +4833,34 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Starts a notebook sync in Amazon SageMaker Unified Studio. This operation
+   * syncs a notebook from a Git repository into a project.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartNotebookSync">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartNotebookSyncOutcome StartNotebookSync(const Model::StartNotebookSyncRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartNotebookSync that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartNotebookSyncRequestT = Model::StartNotebookSyncRequest>
+  Model::StartNotebookSyncOutcomeCallable StartNotebookSyncCallable(const StartNotebookSyncRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::StartNotebookSync, request);
+  }
+
+  /**
+   * An Async wrapper for StartNotebookSync that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartNotebookSyncRequestT = Model::StartNotebookSyncRequest>
+  void StartNotebookSyncAsync(const StartNotebookSyncRequestT& request, const StartNotebookSyncResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::StartNotebookSync, request, handler, context);
+  }
+
+  /**
    * <p>Stops a running <a
    * href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook
    * run</a> in Amazon SageMaker Unified Studio.</p><p><h3>See Also:</h3>   <a

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
+#include <aws/redshift-data/model/StatementStatusString.h>
 
 #include <utility>
 
@@ -194,6 +195,58 @@ class BatchExecuteStatementResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The status of the SQL statement. Status values are defined as follows: </p>
+   * <ul> <li> <p>ABORTED - The query run was stopped by the user. </p> </li> <li>
+   * <p>FAILED - The query run failed. </p> </li> <li> <p>FINISHED - The query has
+   * finished running. </p> </li> <li> <p>PICKED - The query has been chosen to be
+   * run. </p> </li> <li> <p>STARTED - The query run has started. </p> </li> <li>
+   * <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li> </ul>
+   */
+  inline StatementStatusString GetStatus() const { return m_status; }
+  inline void SetStatus(StatementStatusString value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline BatchExecuteStatementResult& WithStatus(StatementStatusString value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The process identifier from Amazon Redshift. </p>
+   */
+  inline long long GetRedshiftPid() const { return m_redshiftPid; }
+  inline void SetRedshiftPid(long long value) {
+    m_redshiftPidHasBeenSet = true;
+    m_redshiftPid = value;
+  }
+  inline BatchExecuteStatementResult& WithRedshiftPid(long long value) {
+    SetRedshiftPid(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A value that indicates whether the statement has a result set. The result set
+   * can be empty. The value is true for an empty result set. The value is true if
+   * any substatement returns a result set.</p>
+   */
+  inline bool GetHasResultSet() const { return m_hasResultSet; }
+  inline void SetHasResultSet(bool value) {
+    m_hasResultSetHasBeenSet = true;
+    m_hasResultSet = value;
+  }
+  inline BatchExecuteStatementResult& WithHasResultSet(bool value) {
+    SetHasResultSet(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -228,6 +281,12 @@ class BatchExecuteStatementResult {
 
   Aws::String m_sessionId;
 
+  StatementStatusString m_status{StatementStatusString::NOT_SET};
+
+  long long m_redshiftPid{0};
+
+  bool m_hasResultSet{false};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
@@ -239,6 +298,9 @@ class BatchExecuteStatementResult {
   bool m_secretArnHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_redshiftPidHasBeenSet = false;
+  bool m_hasResultSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

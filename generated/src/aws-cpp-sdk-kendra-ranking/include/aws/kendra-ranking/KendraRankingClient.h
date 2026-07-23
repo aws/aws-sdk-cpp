@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/kendra-ranking/KendraRankingPaginationBase.h>
 #include <aws/kendra-ranking/KendraRankingServiceClientModel.h>
 #include <aws/kendra-ranking/KendraRankingWaiter.h>
@@ -19,12 +19,12 @@ namespace KendraRanking {
  * <p>Amazon Kendra Intelligent Ranking uses Amazon Kendra semantic search
  * capabilities to intelligently re-rank a search service's results.</p>
  */
-class AWS_KENDRARANKING_API KendraRankingClient : public Aws::Client::AWSJsonClient,
+class AWS_KENDRARANKING_API KendraRankingClient : public Aws::Client::AWSRpcV2CborClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<KendraRankingClient>,
                                                   public KendraRankingPaginationBase<KendraRankingClient>,
                                                   public KendraRankingWaiter<KendraRankingClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

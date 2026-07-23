@@ -4,42 +4,69 @@
  */
 
 #include <aws/backup-gateway/model/PutMaintenanceStartTimeRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::BackupGateway::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String PutMaintenanceStartTimeRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_gatewayArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_hourOfDayHasBeenSet) {
+    mapSize++;
+  }
+  if (m_minuteOfHourHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dayOfWeekHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dayOfMonthHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_gatewayArnHasBeenSet) {
-    payload.WithString("GatewayArn", m_gatewayArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("GatewayArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_gatewayArn.c_str()));
   }
 
   if (m_hourOfDayHasBeenSet) {
-    payload.WithInteger("HourOfDay", m_hourOfDay);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("HourOfDay"));
+    (m_hourOfDay >= 0) ? encoder.WriteUInt(m_hourOfDay) : encoder.WriteNegInt(m_hourOfDay);
   }
 
   if (m_minuteOfHourHasBeenSet) {
-    payload.WithInteger("MinuteOfHour", m_minuteOfHour);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MinuteOfHour"));
+    (m_minuteOfHour >= 0) ? encoder.WriteUInt(m_minuteOfHour) : encoder.WriteNegInt(m_minuteOfHour);
   }
 
   if (m_dayOfWeekHasBeenSet) {
-    payload.WithInteger("DayOfWeek", m_dayOfWeek);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DayOfWeek"));
+    (m_dayOfWeek >= 0) ? encoder.WriteUInt(m_dayOfWeek) : encoder.WriteNegInt(m_dayOfWeek);
   }
 
   if (m_dayOfMonthHasBeenSet) {
-    payload.WithInteger("DayOfMonth", m_dayOfMonth);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DayOfMonth"));
+    (m_dayOfMonth >= 0) ? encoder.WriteUInt(m_dayOfMonth) : encoder.WriteNegInt(m_dayOfMonth);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection PutMaintenanceStartTimeRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BackupOnPremises_v20210101.PutMaintenanceStartTime"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

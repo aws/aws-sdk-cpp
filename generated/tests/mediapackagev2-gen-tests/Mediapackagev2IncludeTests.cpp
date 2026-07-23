@@ -117,6 +117,8 @@
 #include <aws/mediapackagev2/model/MssManifestLayout.h>
 #include <aws/mediapackagev2/model/OriginEndpointListConfiguration.h>
 #include <aws/mediapackagev2/model/OutputHeaderConfiguration.h>
+#include <aws/mediapackagev2/model/OutputLockingMode.h>
+#include <aws/mediapackagev2/model/OutputTimestampMode.h>
 #include <aws/mediapackagev2/model/PresetSpeke20Audio.h>
 #include <aws/mediapackagev2/model/PresetSpeke20Video.h>
 #include <aws/mediapackagev2/model/PutChannelPolicyRequest.h>

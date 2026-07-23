@@ -4,34 +4,48 @@
  */
 
 #include <aws/bcm-pricing-calculator/model/BatchDeleteBillScenarioCommitmentModificationRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::BCMPricingCalculator::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String BatchDeleteBillScenarioCommitmentModificationRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_billScenarioIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_idsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_billScenarioIdHasBeenSet) {
-    payload.WithString("billScenarioId", m_billScenarioId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("billScenarioId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_billScenarioId.c_str()));
   }
 
   if (m_idsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> idsJsonList(m_ids.size());
-    for (unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex) {
-      idsJsonList[idsIndex].AsString(m_ids[idsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ids"));
+    encoder.WriteArrayStart(m_ids.size());
+    for (const auto& item_0 : m_ids) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("ids", std::move(idsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection BatchDeleteBillScenarioCommitmentModificationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBCMPricingCalculator.BatchDeleteBillScenarioCommitmentModification"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

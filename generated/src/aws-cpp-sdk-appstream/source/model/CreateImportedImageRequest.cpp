@@ -4,74 +4,125 @@
  */
 
 #include <aws/appstream/model/CreateImportedImageRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::AppStream::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateImportedImageRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourceAmiIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_workspaceImageIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_iamRoleArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_displayNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_runtimeValidationConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_agentSoftwareVersionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_appCatalogConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dryRunHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_sourceAmiIdHasBeenSet) {
-    payload.WithString("SourceAmiId", m_sourceAmiId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SourceAmiId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sourceAmiId.c_str()));
   }
 
   if (m_workspaceImageIdHasBeenSet) {
-    payload.WithString("WorkspaceImageId", m_workspaceImageId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("WorkspaceImageId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_workspaceImageId.c_str()));
   }
 
   if (m_iamRoleArnHasBeenSet) {
-    payload.WithString("IamRoleArn", m_iamRoleArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("IamRoleArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_iamRoleArn.c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_displayNameHasBeenSet) {
-    payload.WithString("DisplayName", m_displayName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DisplayName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_displayName.c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    JsonValue tagsJsonMap;
-    for (auto& tagsItem : m_tags) {
-      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteMapStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.second.c_str()));
     }
-    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   if (m_runtimeValidationConfigHasBeenSet) {
-    payload.WithObject("RuntimeValidationConfig", m_runtimeValidationConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RuntimeValidationConfig"));
+    m_runtimeValidationConfig.CborEncode(encoder);
   }
 
   if (m_agentSoftwareVersionHasBeenSet) {
-    payload.WithString("AgentSoftwareVersion", AgentSoftwareVersionMapper::GetNameForAgentSoftwareVersion(m_agentSoftwareVersion));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AgentSoftwareVersion"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(AgentSoftwareVersionMapper::GetNameForAgentSoftwareVersion(m_agentSoftwareVersion).c_str()));
   }
 
   if (m_appCatalogConfigHasBeenSet) {
-    Aws::Utils::Array<JsonValue> appCatalogConfigJsonList(m_appCatalogConfig.size());
-    for (unsigned appCatalogConfigIndex = 0; appCatalogConfigIndex < appCatalogConfigJsonList.GetLength(); ++appCatalogConfigIndex) {
-      appCatalogConfigJsonList[appCatalogConfigIndex].AsObject(m_appCatalogConfig[appCatalogConfigIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AppCatalogConfig"));
+    encoder.WriteArrayStart(m_appCatalogConfig.size());
+    for (const auto& item_0 : m_appCatalogConfig) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("AppCatalogConfig", std::move(appCatalogConfigJsonList));
   }
 
   if (m_dryRunHasBeenSet) {
-    payload.WithBool("DryRun", m_dryRun);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DryRun"));
+    encoder.WriteBool(m_dryRun);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateImportedImageRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.CreateImportedImage"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

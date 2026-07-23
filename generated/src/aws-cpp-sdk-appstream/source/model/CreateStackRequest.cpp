@@ -4,98 +4,157 @@
  */
 
 #include <aws/appstream/model/CreateStackRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::AppStream::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateStackRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_displayNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_storageConnectorsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_redirectURLHasBeenSet) {
+    mapSize++;
+  }
+  if (m_feedbackURLHasBeenSet) {
+    mapSize++;
+  }
+  if (m_userSettingsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_applicationSettingsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_accessEndpointsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_embedHostDomainsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_streamingExperienceSettingsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_contentRedirectionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_agentAccessConfigHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_displayNameHasBeenSet) {
-    payload.WithString("DisplayName", m_displayName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DisplayName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_displayName.c_str()));
   }
 
   if (m_storageConnectorsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> storageConnectorsJsonList(m_storageConnectors.size());
-    for (unsigned storageConnectorsIndex = 0; storageConnectorsIndex < storageConnectorsJsonList.GetLength(); ++storageConnectorsIndex) {
-      storageConnectorsJsonList[storageConnectorsIndex].AsObject(m_storageConnectors[storageConnectorsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StorageConnectors"));
+    encoder.WriteArrayStart(m_storageConnectors.size());
+    for (const auto& item_0 : m_storageConnectors) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("StorageConnectors", std::move(storageConnectorsJsonList));
   }
 
   if (m_redirectURLHasBeenSet) {
-    payload.WithString("RedirectURL", m_redirectURL);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RedirectURL"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_redirectURL.c_str()));
   }
 
   if (m_feedbackURLHasBeenSet) {
-    payload.WithString("FeedbackURL", m_feedbackURL);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FeedbackURL"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_feedbackURL.c_str()));
   }
 
   if (m_userSettingsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> userSettingsJsonList(m_userSettings.size());
-    for (unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex) {
-      userSettingsJsonList[userSettingsIndex].AsObject(m_userSettings[userSettingsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UserSettings"));
+    encoder.WriteArrayStart(m_userSettings.size());
+    for (const auto& item_0 : m_userSettings) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("UserSettings", std::move(userSettingsJsonList));
   }
 
   if (m_applicationSettingsHasBeenSet) {
-    payload.WithObject("ApplicationSettings", m_applicationSettings.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ApplicationSettings"));
+    m_applicationSettings.CborEncode(encoder);
   }
 
   if (m_tagsHasBeenSet) {
-    JsonValue tagsJsonMap;
-    for (auto& tagsItem : m_tags) {
-      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteMapStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.second.c_str()));
     }
-    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   if (m_accessEndpointsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> accessEndpointsJsonList(m_accessEndpoints.size());
-    for (unsigned accessEndpointsIndex = 0; accessEndpointsIndex < accessEndpointsJsonList.GetLength(); ++accessEndpointsIndex) {
-      accessEndpointsJsonList[accessEndpointsIndex].AsObject(m_accessEndpoints[accessEndpointsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AccessEndpoints"));
+    encoder.WriteArrayStart(m_accessEndpoints.size());
+    for (const auto& item_0 : m_accessEndpoints) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("AccessEndpoints", std::move(accessEndpointsJsonList));
   }
 
   if (m_embedHostDomainsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> embedHostDomainsJsonList(m_embedHostDomains.size());
-    for (unsigned embedHostDomainsIndex = 0; embedHostDomainsIndex < embedHostDomainsJsonList.GetLength(); ++embedHostDomainsIndex) {
-      embedHostDomainsJsonList[embedHostDomainsIndex].AsString(m_embedHostDomains[embedHostDomainsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EmbedHostDomains"));
+    encoder.WriteArrayStart(m_embedHostDomains.size());
+    for (const auto& item_0 : m_embedHostDomains) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("EmbedHostDomains", std::move(embedHostDomainsJsonList));
   }
 
   if (m_streamingExperienceSettingsHasBeenSet) {
-    payload.WithObject("StreamingExperienceSettings", m_streamingExperienceSettings.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StreamingExperienceSettings"));
+    m_streamingExperienceSettings.CborEncode(encoder);
   }
 
   if (m_contentRedirectionHasBeenSet) {
-    payload.WithObject("ContentRedirection", m_contentRedirection.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ContentRedirection"));
+    m_contentRedirection.CborEncode(encoder);
   }
 
   if (m_agentAccessConfigHasBeenSet) {
-    payload.WithObject("AgentAccessConfig", m_agentAccessConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AgentAccessConfig"));
+    m_agentAccessConfig.CborEncode(encoder);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateStackRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.CreateStack"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

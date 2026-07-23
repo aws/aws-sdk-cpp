@@ -4,34 +4,48 @@
  */
 
 #include <aws/appstream/model/AssociateSoftwareToImageBuilderRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::AppStream::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String AssociateSoftwareToImageBuilderRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_imageBuilderNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_softwareNamesHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_imageBuilderNameHasBeenSet) {
-    payload.WithString("ImageBuilderName", m_imageBuilderName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ImageBuilderName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_imageBuilderName.c_str()));
   }
 
   if (m_softwareNamesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> softwareNamesJsonList(m_softwareNames.size());
-    for (unsigned softwareNamesIndex = 0; softwareNamesIndex < softwareNamesJsonList.GetLength(); ++softwareNamesIndex) {
-      softwareNamesJsonList[softwareNamesIndex].AsString(m_softwareNames[softwareNamesIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SoftwareNames"));
+    encoder.WriteArrayStart(m_softwareNames.size());
+    for (const auto& item_0 : m_softwareNames) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("SoftwareNames", std::move(softwareNamesJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection AssociateSoftwareToImageBuilderRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.AssociateSoftwareToImageBuilder"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

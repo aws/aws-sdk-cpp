@@ -61,6 +61,18 @@ ExecuteStatementResult& ExecuteStatementResult::operator=(const Aws::AmazonWebSe
     m_sessionId = jsonValue.GetString("SessionId");
     m_sessionIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Status")) {
+    m_status = StatementStatusStringMapper::GetStatementStatusStringForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RedshiftPid")) {
+    m_redshiftPid = jsonValue.GetInt64("RedshiftPid");
+    m_redshiftPidHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("HasResultSet")) {
+    m_hasResultSet = jsonValue.GetBool("HasResultSet");
+    m_hasResultSetHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

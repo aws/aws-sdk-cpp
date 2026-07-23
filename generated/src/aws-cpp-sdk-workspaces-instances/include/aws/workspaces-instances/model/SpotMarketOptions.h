@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 #include <aws/workspaces-instances/model/InstanceInterruptionBehaviorEnum.h>
 #include <aws/workspaces-instances/model/SpotInstanceTypeEnum.h>
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkspacesInstances {
 namespace Model {
@@ -31,21 +31,21 @@ namespace Model {
 class SpotMarketOptions {
  public:
   AWS_WORKSPACESINSTANCES_API SpotMarketOptions() = default;
-  AWS_WORKSPACESINSTANCES_API SpotMarketOptions(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API SpotMarketOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACESINSTANCES_API SpotMarketOptions(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API SpotMarketOptions& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>Duration of spot instance block reservation.</p>
    */
-  inline int GetBlockDurationMinutes() const { return m_blockDurationMinutes; }
+  inline int64_t GetBlockDurationMinutes() const { return m_blockDurationMinutes; }
   inline bool BlockDurationMinutesHasBeenSet() const { return m_blockDurationMinutesHasBeenSet; }
-  inline void SetBlockDurationMinutes(int value) {
+  inline void SetBlockDurationMinutes(int64_t value) {
     m_blockDurationMinutesHasBeenSet = true;
     m_blockDurationMinutes = value;
   }
-  inline SpotMarketOptions& WithBlockDurationMinutes(int value) {
+  inline SpotMarketOptions& WithBlockDurationMinutes(int64_t value) {
     SetBlockDurationMinutes(value);
     return *this;
   }
@@ -119,7 +119,7 @@ class SpotMarketOptions {
   }
   ///@}
  private:
-  int m_blockDurationMinutes{0};
+  int64_t m_blockDurationMinutes{0};
 
   InstanceInterruptionBehaviorEnum m_instanceInterruptionBehavior{InstanceInterruptionBehaviorEnum::NOT_SET};
 

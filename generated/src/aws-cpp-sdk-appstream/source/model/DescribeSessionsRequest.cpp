@@ -4,50 +4,86 @@
  */
 
 #include <aws/appstream/model/DescribeSessionsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::AppStream::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DescribeSessionsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_stackNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_fleetNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_userIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_limitHasBeenSet) {
+    mapSize++;
+  }
+  if (m_authenticationTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_instanceIdHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_stackNameHasBeenSet) {
-    payload.WithString("StackName", m_stackName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StackName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_stackName.c_str()));
   }
 
   if (m_fleetNameHasBeenSet) {
-    payload.WithString("FleetName", m_fleetName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FleetName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_fleetName.c_str()));
   }
 
   if (m_userIdHasBeenSet) {
-    payload.WithString("UserId", m_userId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UserId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_userId.c_str()));
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
 
   if (m_limitHasBeenSet) {
-    payload.WithInteger("Limit", m_limit);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Limit"));
+    (m_limit >= 0) ? encoder.WriteUInt(m_limit) : encoder.WriteNegInt(m_limit);
   }
 
   if (m_authenticationTypeHasBeenSet) {
-    payload.WithString("AuthenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AuthenticationType"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType).c_str()));
   }
 
   if (m_instanceIdHasBeenSet) {
-    payload.WithString("InstanceId", m_instanceId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InstanceId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_instanceId.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DescribeSessionsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.DescribeSessions"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

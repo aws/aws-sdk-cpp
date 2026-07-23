@@ -8,15 +8,15 @@
 #include <aws/backup-gateway/model/GatewayType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace BackupGateway {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class Gateway {
  public:
   AWS_BACKUPGATEWAY_API Gateway() = default;
-  AWS_BACKUPGATEWAY_API Gateway(Aws::Utils::Json::JsonView jsonValue);
-  AWS_BACKUPGATEWAY_API Gateway& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_BACKUPGATEWAY_API Gateway(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_BACKUPGATEWAY_API Gateway& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_BACKUPGATEWAY_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

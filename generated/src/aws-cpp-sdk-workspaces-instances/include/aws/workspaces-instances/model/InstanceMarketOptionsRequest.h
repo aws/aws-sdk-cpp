@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 #include <aws/workspaces-instances/model/MarketTypeEnum.h>
 #include <aws/workspaces-instances/model/SpotMarketOptions.h>
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkspacesInstances {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class InstanceMarketOptionsRequest {
  public:
   AWS_WORKSPACESINSTANCES_API InstanceMarketOptionsRequest() = default;
-  AWS_WORKSPACESINSTANCES_API InstanceMarketOptionsRequest(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API InstanceMarketOptionsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACESINSTANCES_API InstanceMarketOptionsRequest(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API InstanceMarketOptionsRequest& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

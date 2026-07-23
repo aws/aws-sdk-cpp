@@ -12,6 +12,7 @@
 #include <aws/mediapackagev2/model/InputSwitchConfiguration.h>
 #include <aws/mediapackagev2/model/InputType.h>
 #include <aws/mediapackagev2/model/OutputHeaderConfiguration.h>
+#include <aws/mediapackagev2/model/OutputLockingMode.h>
 
 #include <utility>
 
@@ -176,6 +177,32 @@ class CreateChannelRequest : public Mediapackagev2Request {
 
   ///@{
   /**
+   * <p>The output locking mode for the channel. This setting is only valid when
+   * <code>InputType</code> is <code>CMAF</code>. This value is immutable after
+   * channel creation. If you don't specify a value, the default is
+   * <code>EPOCH_LOCKED</code>.</p> <p>The allowed values are:</p> <ul> <li> <p>
+   * <code>EPOCH_LOCKED</code> - The channel uses epoch-locked behavior with
+   * deterministic sequence numbering and fixed segment boundaries aligned to epoch
+   * time. This mode supports cross-region synchronization and failover.</p> </li>
+   * <li> <p> <code>NON_EPOCH_LOCKED</code> - The channel uses non-epoch-locked
+   * behavior with duration-based segment combining and monotonically increasing
+   * sequence numbers starting from 0. This mode does not support cross-region
+   * synchronization or failover.</p> </li> </ul>
+   */
+  inline OutputLockingMode GetOutputLockingMode() const { return m_outputLockingMode; }
+  inline bool OutputLockingModeHasBeenSet() const { return m_outputLockingModeHasBeenSet; }
+  inline void SetOutputLockingMode(OutputLockingMode value) {
+    m_outputLockingModeHasBeenSet = true;
+    m_outputLockingMode = value;
+  }
+  inline CreateChannelRequest& WithOutputLockingMode(OutputLockingMode value) {
+    SetOutputLockingMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A comma-separated list of tag key:value pairs that you define. For
    * example:</p> <p> <code>"Key1": "Value1",</code> </p> <p> <code>"Key2":
    * "Value2"</code> </p>
@@ -214,6 +241,8 @@ class CreateChannelRequest : public Mediapackagev2Request {
 
   OutputHeaderConfiguration m_outputHeaderConfiguration;
 
+  OutputLockingMode m_outputLockingMode{OutputLockingMode::NOT_SET};
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_channelGroupNameHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
@@ -222,6 +251,7 @@ class CreateChannelRequest : public Mediapackagev2Request {
   bool m_descriptionHasBeenSet = false;
   bool m_inputSwitchConfigurationHasBeenSet = false;
   bool m_outputHeaderConfigurationHasBeenSet = false;
+  bool m_outputLockingModeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

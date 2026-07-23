@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkspacesInstances {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class InternalServerException {
  public:
   AWS_WORKSPACESINSTANCES_API InternalServerException() = default;
-  AWS_WORKSPACESINSTANCES_API InternalServerException(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACESINSTANCES_API InternalServerException(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API InternalServerException& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -54,13 +54,13 @@ class InternalServerException {
   /**
    * <p>Recommended wait time before retrying the request.</p>
    */
-  inline int GetRetryAfterSeconds() const { return m_retryAfterSeconds; }
+  inline int64_t GetRetryAfterSeconds() const { return m_retryAfterSeconds; }
   inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
-  inline void SetRetryAfterSeconds(int value) {
+  inline void SetRetryAfterSeconds(int64_t value) {
     m_retryAfterSecondsHasBeenSet = true;
     m_retryAfterSeconds = value;
   }
-  inline InternalServerException& WithRetryAfterSeconds(int value) {
+  inline InternalServerException& WithRetryAfterSeconds(int64_t value) {
     SetRetryAfterSeconds(value);
     return *this;
   }
@@ -68,7 +68,7 @@ class InternalServerException {
  private:
   Aws::String m_message;
 
-  int m_retryAfterSeconds{0};
+  int64_t m_retryAfterSeconds{0};
   bool m_messageHasBeenSet = false;
   bool m_retryAfterSecondsHasBeenSet = false;
 };

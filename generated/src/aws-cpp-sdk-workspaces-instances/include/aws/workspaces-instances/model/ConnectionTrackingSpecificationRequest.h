@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkspacesInstances {
 namespace Model {
@@ -25,21 +25,22 @@ namespace Model {
 class ConnectionTrackingSpecificationRequest {
  public:
   AWS_WORKSPACESINSTANCES_API ConnectionTrackingSpecificationRequest() = default;
-  AWS_WORKSPACESINSTANCES_API ConnectionTrackingSpecificationRequest(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API ConnectionTrackingSpecificationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACESINSTANCES_API ConnectionTrackingSpecificationRequest(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API ConnectionTrackingSpecificationRequest& operator=(
+      const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>Timeout for established TCP connections.</p>
    */
-  inline int GetTcpEstablishedTimeout() const { return m_tcpEstablishedTimeout; }
+  inline int64_t GetTcpEstablishedTimeout() const { return m_tcpEstablishedTimeout; }
   inline bool TcpEstablishedTimeoutHasBeenSet() const { return m_tcpEstablishedTimeoutHasBeenSet; }
-  inline void SetTcpEstablishedTimeout(int value) {
+  inline void SetTcpEstablishedTimeout(int64_t value) {
     m_tcpEstablishedTimeoutHasBeenSet = true;
     m_tcpEstablishedTimeout = value;
   }
-  inline ConnectionTrackingSpecificationRequest& WithTcpEstablishedTimeout(int value) {
+  inline ConnectionTrackingSpecificationRequest& WithTcpEstablishedTimeout(int64_t value) {
     SetTcpEstablishedTimeout(value);
     return *this;
   }
@@ -49,13 +50,13 @@ class ConnectionTrackingSpecificationRequest {
   /**
    * <p>Timeout for UDP stream connections.</p>
    */
-  inline int GetUdpStreamTimeout() const { return m_udpStreamTimeout; }
+  inline int64_t GetUdpStreamTimeout() const { return m_udpStreamTimeout; }
   inline bool UdpStreamTimeoutHasBeenSet() const { return m_udpStreamTimeoutHasBeenSet; }
-  inline void SetUdpStreamTimeout(int value) {
+  inline void SetUdpStreamTimeout(int64_t value) {
     m_udpStreamTimeoutHasBeenSet = true;
     m_udpStreamTimeout = value;
   }
-  inline ConnectionTrackingSpecificationRequest& WithUdpStreamTimeout(int value) {
+  inline ConnectionTrackingSpecificationRequest& WithUdpStreamTimeout(int64_t value) {
     SetUdpStreamTimeout(value);
     return *this;
   }
@@ -65,23 +66,23 @@ class ConnectionTrackingSpecificationRequest {
   /**
    * <p>General timeout for UDP connections.</p>
    */
-  inline int GetUdpTimeout() const { return m_udpTimeout; }
+  inline int64_t GetUdpTimeout() const { return m_udpTimeout; }
   inline bool UdpTimeoutHasBeenSet() const { return m_udpTimeoutHasBeenSet; }
-  inline void SetUdpTimeout(int value) {
+  inline void SetUdpTimeout(int64_t value) {
     m_udpTimeoutHasBeenSet = true;
     m_udpTimeout = value;
   }
-  inline ConnectionTrackingSpecificationRequest& WithUdpTimeout(int value) {
+  inline ConnectionTrackingSpecificationRequest& WithUdpTimeout(int64_t value) {
     SetUdpTimeout(value);
     return *this;
   }
   ///@}
  private:
-  int m_tcpEstablishedTimeout{0};
+  int64_t m_tcpEstablishedTimeout{0};
 
-  int m_udpStreamTimeout{0};
+  int64_t m_udpStreamTimeout{0};
 
-  int m_udpTimeout{0};
+  int64_t m_udpTimeout{0};
   bool m_tcpEstablishedTimeoutHasBeenSet = false;
   bool m_udpStreamTimeoutHasBeenSet = false;
   bool m_udpTimeoutHasBeenSet = false;

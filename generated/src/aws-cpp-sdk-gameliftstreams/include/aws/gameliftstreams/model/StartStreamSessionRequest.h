@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gameliftstreams/GameLiftStreamsRequest.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
+#include <aws/gameliftstreams/model/DisplayConfiguration.h>
 #include <aws/gameliftstreams/model/PerformanceStatsConfiguration.h>
 #include <aws/gameliftstreams/model/Protocol.h>
 
@@ -357,6 +358,26 @@ class StartStreamSessionRequest : public GameLiftStreamsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for the stream session's virtual monitor, including the
+   * resolution settings.</p> <p>If not specified, Amazon GameLift Streams uses the
+   * default resolution of 1920 × 1080.</p>
+   */
+  inline const DisplayConfiguration& GetDisplayConfiguration() const { return m_displayConfiguration; }
+  inline bool DisplayConfigurationHasBeenSet() const { return m_displayConfigurationHasBeenSet; }
+  template <typename DisplayConfigurationT = DisplayConfiguration>
+  void SetDisplayConfiguration(DisplayConfigurationT&& value) {
+    m_displayConfigurationHasBeenSet = true;
+    m_displayConfiguration = std::forward<DisplayConfigurationT>(value);
+  }
+  template <typename DisplayConfigurationT = DisplayConfiguration>
+  StartStreamSessionRequest& WithDisplayConfiguration(DisplayConfigurationT&& value) {
+    SetDisplayConfiguration(std::forward<DisplayConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
@@ -385,6 +406,8 @@ class StartStreamSessionRequest : public GameLiftStreamsRequest {
   PerformanceStatsConfiguration m_performanceStatsConfiguration;
 
   Aws::String m_roleArn;
+
+  DisplayConfiguration m_displayConfiguration;
   bool m_clientTokenHasBeenSet = true;
   bool m_descriptionHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
@@ -399,6 +422,7 @@ class StartStreamSessionRequest : public GameLiftStreamsRequest {
   bool m_additionalEnvironmentVariablesHasBeenSet = false;
   bool m_performanceStatsConfigurationHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
+  bool m_displayConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

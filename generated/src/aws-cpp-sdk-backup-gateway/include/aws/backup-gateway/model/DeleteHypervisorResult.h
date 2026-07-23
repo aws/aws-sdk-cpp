@@ -7,25 +7,25 @@
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace BackupGateway {
 namespace Model {
 class DeleteHypervisorResult {
  public:
   AWS_BACKUPGATEWAY_API DeleteHypervisorResult() = default;
-  AWS_BACKUPGATEWAY_API DeleteHypervisorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_BACKUPGATEWAY_API DeleteHypervisorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_BACKUPGATEWAY_API DeleteHypervisorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_BACKUPGATEWAY_API DeleteHypervisorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**

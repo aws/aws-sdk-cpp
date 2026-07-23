@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DataZone {
 namespace Model {
-enum class NotebookStatus { NOT_SET, ACTIVE, ARCHIVED };
+enum class NotebookStatus { NOT_SET, ACTIVE, ARCHIVED, SYNC_IN_PROGRESS, SYNC_FAILED };
 
 namespace NotebookStatusMapper {
 AWS_DATAZONE_API NotebookStatus GetNotebookStatusForName(const Aws::String& name);

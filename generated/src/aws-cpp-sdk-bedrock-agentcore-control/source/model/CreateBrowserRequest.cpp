@@ -56,6 +56,16 @@ Aws::String CreateBrowserRequest::SerializePayload() const {
     payload.WithArray("certificates", std::move(certificatesJsonList));
   }
 
+  if (m_filesystemConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> filesystemConfigurationsJsonList(m_filesystemConfigurations.size());
+    for (unsigned filesystemConfigurationsIndex = 0; filesystemConfigurationsIndex < filesystemConfigurationsJsonList.GetLength();
+         ++filesystemConfigurationsIndex) {
+      filesystemConfigurationsJsonList[filesystemConfigurationsIndex].AsObject(
+          m_filesystemConfigurations[filesystemConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("filesystemConfigurations", std::move(filesystemConfigurationsJsonList));
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

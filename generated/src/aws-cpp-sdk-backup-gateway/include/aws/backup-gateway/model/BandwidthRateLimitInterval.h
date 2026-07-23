@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace BackupGateway {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class BandwidthRateLimitInterval {
  public:
   AWS_BACKUPGATEWAY_API BandwidthRateLimitInterval() = default;
-  AWS_BACKUPGATEWAY_API BandwidthRateLimitInterval(Aws::Utils::Json::JsonView jsonValue);
-  AWS_BACKUPGATEWAY_API BandwidthRateLimitInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_BACKUPGATEWAY_API BandwidthRateLimitInterval(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_BACKUPGATEWAY_API BandwidthRateLimitInterval& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_BACKUPGATEWAY_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -57,13 +57,13 @@ class BandwidthRateLimitInterval {
   /**
    * <p>The hour of the day to start the bandwidth rate limit interval.</p>
    */
-  inline int GetStartHourOfDay() const { return m_startHourOfDay; }
+  inline int64_t GetStartHourOfDay() const { return m_startHourOfDay; }
   inline bool StartHourOfDayHasBeenSet() const { return m_startHourOfDayHasBeenSet; }
-  inline void SetStartHourOfDay(int value) {
+  inline void SetStartHourOfDay(int64_t value) {
     m_startHourOfDayHasBeenSet = true;
     m_startHourOfDay = value;
   }
-  inline BandwidthRateLimitInterval& WithStartHourOfDay(int value) {
+  inline BandwidthRateLimitInterval& WithStartHourOfDay(int64_t value) {
     SetStartHourOfDay(value);
     return *this;
   }
@@ -73,13 +73,13 @@ class BandwidthRateLimitInterval {
   /**
    * <p>The hour of the day to end the bandwidth rate limit interval.</p>
    */
-  inline int GetEndHourOfDay() const { return m_endHourOfDay; }
+  inline int64_t GetEndHourOfDay() const { return m_endHourOfDay; }
   inline bool EndHourOfDayHasBeenSet() const { return m_endHourOfDayHasBeenSet; }
-  inline void SetEndHourOfDay(int value) {
+  inline void SetEndHourOfDay(int64_t value) {
     m_endHourOfDayHasBeenSet = true;
     m_endHourOfDay = value;
   }
-  inline BandwidthRateLimitInterval& WithEndHourOfDay(int value) {
+  inline BandwidthRateLimitInterval& WithEndHourOfDay(int64_t value) {
     SetEndHourOfDay(value);
     return *this;
   }
@@ -91,13 +91,13 @@ class BandwidthRateLimitInterval {
    * interval begins at the start of that minute. To begin an interval exactly at the
    * start of the hour, use the value <code>0</code>.</p>
    */
-  inline int GetStartMinuteOfHour() const { return m_startMinuteOfHour; }
+  inline int64_t GetStartMinuteOfHour() const { return m_startMinuteOfHour; }
   inline bool StartMinuteOfHourHasBeenSet() const { return m_startMinuteOfHourHasBeenSet; }
-  inline void SetStartMinuteOfHour(int value) {
+  inline void SetStartMinuteOfHour(int64_t value) {
     m_startMinuteOfHourHasBeenSet = true;
     m_startMinuteOfHour = value;
   }
-  inline BandwidthRateLimitInterval& WithStartMinuteOfHour(int value) {
+  inline BandwidthRateLimitInterval& WithStartMinuteOfHour(int64_t value) {
     SetStartMinuteOfHour(value);
     return *this;
   }
@@ -110,13 +110,13 @@ class BandwidthRateLimitInterval {
    * To end an interval at the end of an hour, use the value <code>59</code>.</p>
    *
    */
-  inline int GetEndMinuteOfHour() const { return m_endMinuteOfHour; }
+  inline int64_t GetEndMinuteOfHour() const { return m_endMinuteOfHour; }
   inline bool EndMinuteOfHourHasBeenSet() const { return m_endMinuteOfHourHasBeenSet; }
-  inline void SetEndMinuteOfHour(int value) {
+  inline void SetEndMinuteOfHour(int64_t value) {
     m_endMinuteOfHourHasBeenSet = true;
     m_endMinuteOfHour = value;
   }
-  inline BandwidthRateLimitInterval& WithEndMinuteOfHour(int value) {
+  inline BandwidthRateLimitInterval& WithEndMinuteOfHour(int64_t value) {
     SetEndMinuteOfHour(value);
     return *this;
   }
@@ -128,19 +128,19 @@ class BandwidthRateLimitInterval {
    * represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6
    * represents Saturday.</p>
    */
-  inline const Aws::Vector<int>& GetDaysOfWeek() const { return m_daysOfWeek; }
+  inline const Aws::Vector<int64_t>& GetDaysOfWeek() const { return m_daysOfWeek; }
   inline bool DaysOfWeekHasBeenSet() const { return m_daysOfWeekHasBeenSet; }
-  template <typename DaysOfWeekT = Aws::Vector<int>>
+  template <typename DaysOfWeekT = Aws::Vector<int64_t>>
   void SetDaysOfWeek(DaysOfWeekT&& value) {
     m_daysOfWeekHasBeenSet = true;
     m_daysOfWeek = std::forward<DaysOfWeekT>(value);
   }
-  template <typename DaysOfWeekT = Aws::Vector<int>>
+  template <typename DaysOfWeekT = Aws::Vector<int64_t>>
   BandwidthRateLimitInterval& WithDaysOfWeek(DaysOfWeekT&& value) {
     SetDaysOfWeek(std::forward<DaysOfWeekT>(value));
     return *this;
   }
-  inline BandwidthRateLimitInterval& AddDaysOfWeek(int value) {
+  inline BandwidthRateLimitInterval& AddDaysOfWeek(int64_t value) {
     m_daysOfWeekHasBeenSet = true;
     m_daysOfWeek.push_back(value);
     return *this;
@@ -149,15 +149,15 @@ class BandwidthRateLimitInterval {
  private:
   long long m_averageUploadRateLimitInBitsPerSec{0};
 
-  int m_startHourOfDay{0};
+  int64_t m_startHourOfDay{0};
 
-  int m_endHourOfDay{0};
+  int64_t m_endHourOfDay{0};
 
-  int m_startMinuteOfHour{0};
+  int64_t m_startMinuteOfHour{0};
 
-  int m_endMinuteOfHour{0};
+  int64_t m_endMinuteOfHour{0};
 
-  Aws::Vector<int> m_daysOfWeek;
+  Aws::Vector<int64_t> m_daysOfWeek;
   bool m_averageUploadRateLimitInBitsPerSecHasBeenSet = false;
   bool m_startHourOfDayHasBeenSet = false;
   bool m_endHourOfDayHasBeenSet = false;

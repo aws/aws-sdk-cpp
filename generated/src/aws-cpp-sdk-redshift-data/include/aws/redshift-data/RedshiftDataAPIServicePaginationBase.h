@@ -12,6 +12,7 @@
 #include <aws/redshift-data/model/GetStatementResultV2PaginationTraits.h>
 #include <aws/redshift-data/model/ListDatabasesPaginationTraits.h>
 #include <aws/redshift-data/model/ListSchemasPaginationTraits.h>
+#include <aws/redshift-data/model/ListSessionsPaginationTraits.h>
 #include <aws/redshift-data/model/ListStatementsPaginationTraits.h>
 #include <aws/redshift-data/model/ListTablesPaginationTraits.h>
 
@@ -78,6 +79,17 @@ class RedshiftDataAPIServicePaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSchemasRequest,
                                              Pagination::ListSchemasPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
+  }
+
+  /**
+   * Create a paginator for ListSessions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest, Pagination::ListSessionsPaginationTraits<DerivedClient>>
+  ListSessionsPaginator(const Model::ListSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest,
+                                             Pagination::ListSessionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                      request};
   }
 
   /**

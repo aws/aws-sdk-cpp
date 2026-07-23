@@ -46,6 +46,10 @@ ChannelListConfiguration& ChannelListConfiguration::operator=(JsonView jsonValue
     m_inputType = InputTypeMapper::GetInputTypeForName(jsonValue.GetString("InputType"));
     m_inputTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OutputLockingMode")) {
+    m_outputLockingMode = OutputLockingModeMapper::GetOutputLockingModeForName(jsonValue.GetString("OutputLockingMode"));
+    m_outputLockingModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue ChannelListConfiguration::Jsonize() const {
 
   if (m_inputTypeHasBeenSet) {
     payload.WithString("InputType", InputTypeMapper::GetNameForInputType(m_inputType));
+  }
+
+  if (m_outputLockingModeHasBeenSet) {
+    payload.WithString("OutputLockingMode", OutputLockingModeMapper::GetNameForOutputLockingMode(m_outputLockingMode));
   }
 
   return payload;

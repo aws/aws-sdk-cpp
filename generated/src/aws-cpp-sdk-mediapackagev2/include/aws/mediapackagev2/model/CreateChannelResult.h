@@ -14,6 +14,7 @@
 #include <aws/mediapackagev2/model/InputSwitchConfiguration.h>
 #include <aws/mediapackagev2/model/InputType.h>
 #include <aws/mediapackagev2/model/OutputHeaderConfiguration.h>
+#include <aws/mediapackagev2/model/OutputLockingMode.h>
 
 #include <utility>
 
@@ -262,6 +263,26 @@ class CreateChannelResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The output locking mode configured for the channel.</p> <p>The allowed values
+   * are:</p> <ul> <li> <p> <code>EPOCH_LOCKED</code> - The channel uses epoch-locked
+   * behavior with deterministic sequence numbering and fixed segment boundaries
+   * aligned to epoch time.</p> </li> <li> <p> <code>NON_EPOCH_LOCKED</code> - The
+   * channel uses non-epoch-locked behavior with duration-based segment combining and
+   * monotonically increasing sequence numbers starting from 0.</p> </li> </ul>
+   */
+  inline OutputLockingMode GetOutputLockingMode() const { return m_outputLockingMode; }
+  inline void SetOutputLockingMode(OutputLockingMode value) {
+    m_outputLockingModeHasBeenSet = true;
+    m_outputLockingMode = value;
+  }
+  inline CreateChannelResult& WithOutputLockingMode(OutputLockingMode value) {
+    SetOutputLockingMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -302,6 +323,8 @@ class CreateChannelResult {
 
   OutputHeaderConfiguration m_outputHeaderConfiguration;
 
+  OutputLockingMode m_outputLockingMode{OutputLockingMode::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -316,6 +339,7 @@ class CreateChannelResult {
   bool m_tagsHasBeenSet = false;
   bool m_inputSwitchConfigurationHasBeenSet = false;
   bool m_outputHeaderConfigurationHasBeenSet = false;
+  bool m_outputLockingModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 #include <aws/workspaces-instances/model/VolumeTypeEnum.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkspacesInstances {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class EbsBlockDevice {
  public:
   AWS_WORKSPACESINSTANCES_API EbsBlockDevice() = default;
-  AWS_WORKSPACESINSTANCES_API EbsBlockDevice(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API EbsBlockDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACESINSTANCES_API EbsBlockDevice(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API EbsBlockDevice& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -87,13 +87,13 @@ class EbsBlockDevice {
   /**
    * <p>Input/output operations per second for the volume.</p>
    */
-  inline int GetIops() const { return m_iops; }
+  inline int64_t GetIops() const { return m_iops; }
   inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
-  inline void SetIops(int value) {
+  inline void SetIops(int64_t value) {
     m_iopsHasBeenSet = true;
     m_iops = value;
   }
-  inline EbsBlockDevice& WithIops(int value) {
+  inline EbsBlockDevice& WithIops(int64_t value) {
     SetIops(value);
     return *this;
   }
@@ -103,13 +103,13 @@ class EbsBlockDevice {
   /**
    * <p>Volume data transfer rate.</p>
    */
-  inline int GetThroughput() const { return m_throughput; }
+  inline int64_t GetThroughput() const { return m_throughput; }
   inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
-  inline void SetThroughput(int value) {
+  inline void SetThroughput(int64_t value) {
     m_throughputHasBeenSet = true;
     m_throughput = value;
   }
-  inline EbsBlockDevice& WithThroughput(int value) {
+  inline EbsBlockDevice& WithThroughput(int64_t value) {
     SetThroughput(value);
     return *this;
   }
@@ -119,13 +119,13 @@ class EbsBlockDevice {
   /**
    * <p>Size of the EBS volume in gigabytes.</p>
    */
-  inline int GetVolumeSize() const { return m_volumeSize; }
+  inline int64_t GetVolumeSize() const { return m_volumeSize; }
   inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
-  inline void SetVolumeSize(int value) {
+  inline void SetVolumeSize(int64_t value) {
     m_volumeSizeHasBeenSet = true;
     m_volumeSize = value;
   }
-  inline EbsBlockDevice& WithVolumeSize(int value) {
+  inline EbsBlockDevice& WithVolumeSize(int64_t value) {
     SetVolumeSize(value);
     return *this;
   }
@@ -137,11 +137,11 @@ class EbsBlockDevice {
 
   Aws::String m_kmsKeyId;
 
-  int m_iops{0};
+  int64_t m_iops{0};
 
-  int m_throughput{0};
+  int64_t m_throughput{0};
 
-  int m_volumeSize{0};
+  int64_t m_volumeSize{0};
   bool m_volumeTypeHasBeenSet = false;
   bool m_encryptedHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;

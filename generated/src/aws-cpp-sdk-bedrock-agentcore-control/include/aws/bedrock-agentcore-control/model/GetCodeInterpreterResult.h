@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/Certificate.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterNetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterStatus.h>
+#include <aws/bedrock-agentcore-control/model/ToolsFileSystemConfiguration.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -173,6 +174,30 @@ class GetCodeInterpreterResult {
 
   ///@{
   /**
+   * <p>The file system configurations mounted into the code interpreter. Each entry
+   * describes an access point and its mount path.</p>
+   */
+  inline const Aws::Vector<ToolsFileSystemConfiguration>& GetFilesystemConfigurations() const { return m_filesystemConfigurations; }
+  template <typename FilesystemConfigurationsT = Aws::Vector<ToolsFileSystemConfiguration>>
+  void SetFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations = std::forward<FilesystemConfigurationsT>(value);
+  }
+  template <typename FilesystemConfigurationsT = Aws::Vector<ToolsFileSystemConfiguration>>
+  GetCodeInterpreterResult& WithFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    SetFilesystemConfigurations(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  template <typename FilesystemConfigurationsT = ToolsFileSystemConfiguration>
+  GetCodeInterpreterResult& AddFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations.emplace_back(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The reason for failure if the code interpreter is in a failed state.</p>
    */
   inline const Aws::String& GetFailureReason() const { return m_failureReason; }
@@ -255,6 +280,8 @@ class GetCodeInterpreterResult {
 
   Aws::Vector<Certificate> m_certificates;
 
+  Aws::Vector<ToolsFileSystemConfiguration> m_filesystemConfigurations;
+
   Aws::String m_failureReason;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -271,6 +298,7 @@ class GetCodeInterpreterResult {
   bool m_networkConfigurationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_certificatesHasBeenSet = false;
+  bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;

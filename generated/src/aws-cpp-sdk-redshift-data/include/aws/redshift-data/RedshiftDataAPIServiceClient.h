@@ -491,6 +491,44 @@ class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient
   }
 
   /**
+   * <p>Lists the sessions that the caller created in the last 24 hours. By default,
+   * only sessions with a status of <code>AVAILABLE</code> or <code>BUSY</code> are
+   * returned. You can filter the results by session status, compute target (cluster
+   * or serverless workgroup), or database. To retrieve the metadata for a single
+   * session, provide the <code>SessionId</code> parameter. Use
+   * <code>NextToken</code> to page through the session list.</p> <p>Returns only the
+   * sessions that the caller created. When identity-enhanced role sessions are used,
+   * you must provide either the <code>ClusterIdentifier</code> or
+   * <code>WorkgroupName</code> parameter to ensure that the AWS IAM Identity Center
+   * user can only access the Amazon Redshift IAM Identity Center applications they
+   * are assigned. For more information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html">
+   * Trusted identity propagation overview</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSessions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSessionsOutcome ListSessions(const Model::ListSessionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListSessions that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListSessionsRequestT = Model::ListSessionsRequest>
+  Model::ListSessionsOutcomeCallable ListSessionsCallable(const ListSessionsRequestT& request = {}) const {
+    return SubmitCallable(&RedshiftDataAPIServiceClient::ListSessions, request);
+  }
+
+  /**
+   * An Async wrapper for ListSessions that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListSessionsRequestT = Model::ListSessionsRequest>
+  void ListSessionsAsync(const ListSessionsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                         const ListSessionsRequestT& request = {}) const {
+    return SubmitAsync(&RedshiftDataAPIServiceClient::ListSessions, request, handler, context);
+  }
+
+  /**
    * <p>List of SQL statements. By default, only finished statements are shown. A
    * token is returned to page through the statement list. </p> <p>When you use
    * identity-enhanced role sessions to list statements, you must provide either the

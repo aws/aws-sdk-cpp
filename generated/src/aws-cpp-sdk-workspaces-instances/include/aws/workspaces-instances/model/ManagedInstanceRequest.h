@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 #include <aws/workspaces-instances/model/BlockDeviceMappingRequest.h>
 #include <aws/workspaces-instances/model/CapacityReservationSpecification.h>
@@ -30,10 +31,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkspacesInstances {
 namespace Model {
@@ -47,9 +47,9 @@ namespace Model {
 class ManagedInstanceRequest {
  public:
   AWS_WORKSPACESINSTANCES_API ManagedInstanceRequest() = default;
-  AWS_WORKSPACESINSTANCES_API ManagedInstanceRequest(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API ManagedInstanceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACESINSTANCES_API ManagedInstanceRequest(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API ManagedInstanceRequest& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -313,13 +313,13 @@ class ManagedInstanceRequest {
   /**
    * <p>Specifies number of IPv6 addresses to assign.</p>
    */
-  inline int GetIpv6AddressCount() const { return m_ipv6AddressCount; }
+  inline int64_t GetIpv6AddressCount() const { return m_ipv6AddressCount; }
   inline bool Ipv6AddressCountHasBeenSet() const { return m_ipv6AddressCountHasBeenSet; }
-  inline void SetIpv6AddressCount(int value) {
+  inline void SetIpv6AddressCount(int64_t value) {
     m_ipv6AddressCountHasBeenSet = true;
     m_ipv6AddressCount = value;
   }
-  inline ManagedInstanceRequest& WithIpv6AddressCount(int value) {
+  inline ManagedInstanceRequest& WithIpv6AddressCount(int64_t value) {
     SetIpv6AddressCount(value);
     return *this;
   }
@@ -689,7 +689,7 @@ class ManagedInstanceRequest {
 
   Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
 
-  int m_ipv6AddressCount{0};
+  int64_t m_ipv6AddressCount{0};
 
   Aws::String m_kernelId;
 

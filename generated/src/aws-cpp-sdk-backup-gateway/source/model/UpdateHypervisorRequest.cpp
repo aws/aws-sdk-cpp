@@ -4,46 +4,77 @@
  */
 
 #include <aws/backup-gateway/model/UpdateHypervisorRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::BackupGateway::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateHypervisorRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_hypervisorArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_hostHasBeenSet) {
+    mapSize++;
+  }
+  if (m_usernameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_passwordHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_logGroupArnHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_hypervisorArnHasBeenSet) {
-    payload.WithString("HypervisorArn", m_hypervisorArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("HypervisorArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_hypervisorArn.c_str()));
   }
 
   if (m_hostHasBeenSet) {
-    payload.WithString("Host", m_host);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Host"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_host.c_str()));
   }
 
   if (m_usernameHasBeenSet) {
-    payload.WithString("Username", m_username);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Username"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_username.c_str()));
   }
 
   if (m_passwordHasBeenSet) {
-    payload.WithString("Password", m_password);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Password"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_password.c_str()));
   }
 
   if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_logGroupArnHasBeenSet) {
-    payload.WithString("LogGroupArn", m_logGroupArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LogGroupArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_logGroupArn.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateHypervisorRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BackupOnPremises_v20210101.UpdateHypervisor"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

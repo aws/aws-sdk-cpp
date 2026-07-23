@@ -19,6 +19,10 @@ Aws::String DescribeStatementRequest::SerializePayload() const {
     payload.WithString("Id", m_id);
   }
 
+  if (m_waitTimeSecondsHasBeenSet) {
+    payload.WithInteger("WaitTimeSeconds", m_waitTimeSeconds);
+  }
+
   return payload.View().WriteReadable();
 }
 

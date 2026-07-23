@@ -4,42 +4,66 @@
  */
 
 #include <aws/bcm-pricing-calculator/model/CreateWorkloadEstimateRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::BCMPricingCalculator::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateWorkloadEstimateRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_clientTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_rateTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("clientToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clientToken.c_str()));
   }
 
   if (m_rateTypeHasBeenSet) {
-    payload.WithString("rateType", WorkloadEstimateRateTypeMapper::GetNameForWorkloadEstimateRateType(m_rateType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("rateType"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(WorkloadEstimateRateTypeMapper::GetNameForWorkloadEstimateRateType(m_rateType).c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    JsonValue tagsJsonMap;
-    for (auto& tagsItem : m_tags) {
-      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("tags"));
+    encoder.WriteMapStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.second.c_str()));
     }
-    payload.WithObject("tags", std::move(tagsJsonMap));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateWorkloadEstimateRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBCMPricingCalculator.CreateWorkloadEstimate"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

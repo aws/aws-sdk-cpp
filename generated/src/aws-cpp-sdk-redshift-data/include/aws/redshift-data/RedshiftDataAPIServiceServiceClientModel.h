@@ -28,6 +28,8 @@
 #include <aws/redshift-data/model/GetStatementResultV2Result.h>
 #include <aws/redshift-data/model/ListDatabasesResult.h>
 #include <aws/redshift-data/model/ListSchemasResult.h>
+#include <aws/redshift-data/model/ListSessionsRequest.h>
+#include <aws/redshift-data/model/ListSessionsResult.h>
 #include <aws/redshift-data/model/ListStatementsRequest.h>
 #include <aws/redshift-data/model/ListStatementsResult.h>
 #include <aws/redshift-data/model/ListTablesResult.h>
@@ -73,6 +75,7 @@ class GetStatementResultRequest;
 class GetStatementResultV2Request;
 class ListDatabasesRequest;
 class ListSchemasRequest;
+class ListSessionsRequest;
 class ListStatementsRequest;
 class ListTablesRequest;
 /* End of service model forward declarations required in RedshiftDataAPIServiceClient header */
@@ -87,6 +90,7 @@ typedef Aws::Utils::Outcome<GetStatementResultResult, RedshiftDataAPIServiceErro
 typedef Aws::Utils::Outcome<GetStatementResultV2Result, RedshiftDataAPIServiceError> GetStatementResultV2Outcome;
 typedef Aws::Utils::Outcome<ListDatabasesResult, RedshiftDataAPIServiceError> ListDatabasesOutcome;
 typedef Aws::Utils::Outcome<ListSchemasResult, RedshiftDataAPIServiceError> ListSchemasOutcome;
+typedef Aws::Utils::Outcome<ListSessionsResult, RedshiftDataAPIServiceError> ListSessionsOutcome;
 typedef Aws::Utils::Outcome<ListStatementsResult, RedshiftDataAPIServiceError> ListStatementsOutcome;
 typedef Aws::Utils::Outcome<ListTablesResult, RedshiftDataAPIServiceError> ListTablesOutcome;
 /* End of service model Outcome class definitions */
@@ -101,6 +105,7 @@ typedef std::future<GetStatementResultOutcome> GetStatementResultOutcomeCallable
 typedef std::future<GetStatementResultV2Outcome> GetStatementResultV2OutcomeCallable;
 typedef std::future<ListDatabasesOutcome> ListDatabasesOutcomeCallable;
 typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
+typedef std::future<ListSessionsOutcome> ListSessionsOutcomeCallable;
 typedef std::future<ListStatementsOutcome> ListStatementsOutcomeCallable;
 typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -136,6 +141,9 @@ typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::Lis
 typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::ListSchemasRequest&, const Model::ListSchemasOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSchemasResponseReceivedHandler;
+typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::ListSessionsRequest&, const Model::ListSessionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSessionsResponseReceivedHandler;
 typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::ListStatementsRequest&, const Model::ListStatementsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListStatementsResponseReceivedHandler;

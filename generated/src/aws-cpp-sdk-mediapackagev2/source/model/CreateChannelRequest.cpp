@@ -36,6 +36,10 @@ Aws::String CreateChannelRequest::SerializePayload() const {
     payload.WithObject("OutputHeaderConfiguration", m_outputHeaderConfiguration.Jsonize());
   }
 
+  if (m_outputLockingModeHasBeenSet) {
+    payload.WithString("OutputLockingMode", OutputLockingModeMapper::GetNameForOutputLockingMode(m_outputLockingMode));
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

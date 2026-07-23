@@ -3,47 +3,121 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/model/CapacityReservationSpecification.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace WorkspacesInstances {
 namespace Model {
 
-CapacityReservationSpecification::CapacityReservationSpecification(JsonView jsonValue) { *this = jsonValue; }
+CapacityReservationSpecification::CapacityReservationSpecification(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  *this = decoder;
+}
 
-CapacityReservationSpecification& CapacityReservationSpecification::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("CapacityReservationPreference")) {
-    m_capacityReservationPreference = CapacityReservationPreferenceEnumMapper::GetCapacityReservationPreferenceEnumForName(
-        jsonValue.GetString("CapacityReservationPreference"));
-    m_capacityReservationPreferenceHasBeenSet = true;
+CapacityReservationSpecification& CapacityReservationSpecification::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "CapacityReservationPreference") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_capacityReservationPreference = CapacityReservationPreferenceEnumMapper::GetCapacityReservationPreferenceEnumForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_capacityReservationPreferenceHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "CapacityReservationTarget") {
+                m_capacityReservationTarget = CapacityReservationTarget(decoder);
+                m_capacityReservationTargetHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("CapacityReservationSpecification", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "CapacityReservationPreference") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_capacityReservationPreference = CapacityReservationPreferenceEnumMapper::GetCapacityReservationPreferenceEnumForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_capacityReservationPreferenceHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "CapacityReservationTarget") {
+              m_capacityReservationTarget = CapacityReservationTarget(decoder);
+              m_capacityReservationTargetHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("CapacityReservationTarget")) {
-    m_capacityReservationTarget = jsonValue.GetObject("CapacityReservationTarget");
-    m_capacityReservationTargetHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue CapacityReservationSpecification::Jsonize() const {
-  JsonValue payload;
+void CapacityReservationSpecification::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_capacityReservationPreferenceHasBeenSet) {
+    mapSize++;
+  }
+  if (m_capacityReservationTargetHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_capacityReservationPreferenceHasBeenSet) {
-    payload.WithString(
-        "CapacityReservationPreference",
-        CapacityReservationPreferenceEnumMapper::GetNameForCapacityReservationPreferenceEnum(m_capacityReservationPreference));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CapacityReservationPreference"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        CapacityReservationPreferenceEnumMapper::GetNameForCapacityReservationPreferenceEnum(m_capacityReservationPreference).c_str()));
   }
 
   if (m_capacityReservationTargetHasBeenSet) {
-    payload.WithObject("CapacityReservationTarget", m_capacityReservationTarget.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CapacityReservationTarget"));
+    m_capacityReservationTarget.CborEncode(encoder);
   }
-
-  return payload;
 }
 
 }  // namespace Model

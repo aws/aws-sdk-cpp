@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace AppStream {
 namespace Model {
@@ -26,9 +26,9 @@ namespace Model {
 class VolumeConfig {
  public:
   AWS_APPSTREAM_API VolumeConfig() = default;
-  AWS_APPSTREAM_API VolumeConfig(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPSTREAM_API VolumeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_APPSTREAM_API VolumeConfig(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPSTREAM_API VolumeConfig& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPSTREAM_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -37,19 +37,19 @@ class VolumeConfig {
    * 200 GB incurs extra charges and applies to instances regardless of their running
    * state.</p>
    */
-  inline int GetVolumeSizeInGb() const { return m_volumeSizeInGb; }
+  inline int64_t GetVolumeSizeInGb() const { return m_volumeSizeInGb; }
   inline bool VolumeSizeInGbHasBeenSet() const { return m_volumeSizeInGbHasBeenSet; }
-  inline void SetVolumeSizeInGb(int value) {
+  inline void SetVolumeSizeInGb(int64_t value) {
     m_volumeSizeInGbHasBeenSet = true;
     m_volumeSizeInGb = value;
   }
-  inline VolumeConfig& WithVolumeSizeInGb(int value) {
+  inline VolumeConfig& WithVolumeSizeInGb(int64_t value) {
     SetVolumeSizeInGb(value);
     return *this;
   }
   ///@}
  private:
-  int m_volumeSizeInGb{0};
+  int64_t m_volumeSizeInGb{0};
   bool m_volumeSizeInGbHasBeenSet = false;
 };
 

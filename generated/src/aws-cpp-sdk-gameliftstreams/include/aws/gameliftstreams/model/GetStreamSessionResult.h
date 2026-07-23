@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
+#include <aws/gameliftstreams/model/DisplayConfiguration.h>
 #include <aws/gameliftstreams/model/ExportFilesMetadata.h>
 #include <aws/gameliftstreams/model/PerformanceStatsConfiguration.h>
 #include <aws/gameliftstreams/model/Protocol.h>
@@ -524,6 +525,23 @@ class GetStreamSessionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The configuration for the stream session's virtual monitor.</p>
+   */
+  inline const DisplayConfiguration& GetDisplayConfiguration() const { return m_displayConfiguration; }
+  template <typename DisplayConfigurationT = DisplayConfiguration>
+  void SetDisplayConfiguration(DisplayConfigurationT&& value) {
+    m_displayConfigurationHasBeenSet = true;
+    m_displayConfiguration = std::forward<DisplayConfigurationT>(value);
+  }
+  template <typename DisplayConfigurationT = DisplayConfiguration>
+  GetStreamSessionResult& WithDisplayConfiguration(DisplayConfigurationT&& value) {
+    SetDisplayConfiguration(std::forward<DisplayConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -584,6 +602,8 @@ class GetStreamSessionResult {
 
   Aws::String m_roleArn;
 
+  DisplayConfiguration m_displayConfiguration;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -608,6 +628,7 @@ class GetStreamSessionResult {
   bool m_applicationArnHasBeenSet = false;
   bool m_exportFilesMetadataHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
+  bool m_displayConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

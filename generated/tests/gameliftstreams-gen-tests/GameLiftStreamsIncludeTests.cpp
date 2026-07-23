@@ -34,6 +34,7 @@
 #include <aws/gameliftstreams/model/DeleteStreamGroupRequest.h>
 #include <aws/gameliftstreams/model/DisassociateApplicationsRequest.h>
 #include <aws/gameliftstreams/model/DisassociateApplicationsResult.h>
+#include <aws/gameliftstreams/model/DisplayConfiguration.h>
 #include <aws/gameliftstreams/model/ExportFilesMetadata.h>
 #include <aws/gameliftstreams/model/ExportFilesStatus.h>
 #include <aws/gameliftstreams/model/ExportStreamSessionFilesRequest.h>
@@ -61,6 +62,7 @@
 #include <aws/gameliftstreams/model/RemoveStreamGroupLocationsRequest.h>
 #include <aws/gameliftstreams/model/ReplicationStatus.h>
 #include <aws/gameliftstreams/model/ReplicationStatusType.h>
+#include <aws/gameliftstreams/model/Resolution.h>
 #include <aws/gameliftstreams/model/RuntimeEnvironment.h>
 #include <aws/gameliftstreams/model/RuntimeEnvironmentType.h>
 #include <aws/gameliftstreams/model/StartStreamSessionRequest.h>

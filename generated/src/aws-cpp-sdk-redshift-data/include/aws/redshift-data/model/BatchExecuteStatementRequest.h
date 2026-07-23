@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceRequest.h>
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
+#include <aws/redshift-data/model/ExecutionMode.h>
 #include <aws/redshift-data/model/ResultFormatString.h>
 #include <aws/redshift-data/model/SqlParameter.h>
 
@@ -36,11 +37,11 @@ class BatchExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>One or more SQL statements to run. The SQL statements are run as a single
-   * transaction. They run serially in the order of the array. Subsequent SQL
-   * statements don't start until the previous statement in the array completes. If
-   * any SQL statement fails, then because they are run as one transaction, all work
-   * is rolled back.</p>
+   * <p>One or more SQL statements to run. The SQL statements run serially in the
+   * order of the array. Subsequent SQL statements don't start until the previous
+   * statement in the array completes. By default, the SQL statements are run as a
+   * single transaction. If any SQL statement fails, all work is rolled back. To
+   * change this behavior, see the <code>ExecutionMode</code> parameter.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSqls() const { return m_sqls; }
   inline bool SqlsHasBeenSet() const { return m_sqlsHasBeenSet; }
@@ -177,8 +178,10 @@ class BatchExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>The parameters for the SQL statements. The parameters are shared across all
-   * SQL statements in the batch.</p>
+   * <p>The parameters for the SQL statements. The parameters are available to all
+   * SQL statements in the batch. Each statement can reference any subset of the
+   * provided parameters. Each provided parameter must be referenced by at least one
+   * SQL statement in the batch.</p>
    */
   inline const Aws::Vector<SqlParameter>& GetParameters() const { return m_parameters; }
   inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
@@ -291,6 +294,45 @@ class BatchExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Determines how the SQL statements in the batch are run. If set to
+   * <code>TRANSACTION</code> (the default), all SQL statements are run as a single
+   * transaction and they are committed or rolled back together. If set to
+   * <code>AUTO_COMMIT</code>, each SQL statement is committed individually, and a
+   * failure of one statement does not affect the others.</p>
+   */
+  inline ExecutionMode GetExecutionMode() const { return m_executionMode; }
+  inline bool ExecutionModeHasBeenSet() const { return m_executionModeHasBeenSet; }
+  inline void SetExecutionMode(ExecutionMode value) {
+    m_executionModeHasBeenSet = true;
+    m_executionMode = value;
+  }
+  inline BatchExecuteStatementRequest& WithExecutionMode(ExecutionMode value) {
+    SetExecutionMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of seconds to wait for all SQL statements in the batch to complete
+   * execution before returning the response. If the SQL statements do not complete
+   * within the specified time, the response returns the current status. The maximum
+   * value is 30 seconds.</p>
+   */
+  inline int GetWaitTimeSeconds() const { return m_waitTimeSeconds; }
+  inline bool WaitTimeSecondsHasBeenSet() const { return m_waitTimeSecondsHasBeenSet; }
+  inline void SetWaitTimeSeconds(int value) {
+    m_waitTimeSecondsHasBeenSet = true;
+    m_waitTimeSeconds = value;
+  }
+  inline BatchExecuteStatementRequest& WithWaitTimeSeconds(int value) {
+    SetWaitTimeSeconds(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_sqls;
 
@@ -317,6 +359,10 @@ class BatchExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
   int m_sessionKeepAliveSeconds{0};
 
   Aws::String m_sessionId;
+
+  ExecutionMode m_executionMode{ExecutionMode::NOT_SET};
+
+  int m_waitTimeSeconds{0};
   bool m_sqlsHasBeenSet = false;
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
@@ -330,6 +376,8 @@ class BatchExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
   bool m_resultFormatHasBeenSet = false;
   bool m_sessionKeepAliveSecondsHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
+  bool m_executionModeHasBeenSet = false;
+  bool m_waitTimeSecondsHasBeenSet = false;
 };
 
 }  // namespace Model

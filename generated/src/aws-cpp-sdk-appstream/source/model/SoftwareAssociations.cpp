@@ -4,58 +4,237 @@
  */
 
 #include <aws/appstream/model/SoftwareAssociations.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace AppStream {
 namespace Model {
 
-SoftwareAssociations::SoftwareAssociations(JsonView jsonValue) { *this = jsonValue; }
+SoftwareAssociations::SoftwareAssociations(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-SoftwareAssociations& SoftwareAssociations::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("SoftwareName")) {
-    m_softwareName = jsonValue.GetString("SoftwareName");
-    m_softwareNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Status")) {
-    m_status = SoftwareDeploymentStatusMapper::GetSoftwareDeploymentStatusForName(jsonValue.GetString("Status"));
-    m_statusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DeploymentError")) {
-    Aws::Utils::Array<JsonView> deploymentErrorJsonList = jsonValue.GetArray("DeploymentError");
-    for (unsigned deploymentErrorIndex = 0; deploymentErrorIndex < deploymentErrorJsonList.GetLength(); ++deploymentErrorIndex) {
-      m_deploymentError.push_back(deploymentErrorJsonList[deploymentErrorIndex].AsObject());
+SoftwareAssociations& SoftwareAssociations::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "SoftwareName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_softwareName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_softwareName = ss.str();
+                  }
+                }
+                m_softwareNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Status") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_status = SoftwareDeploymentStatusMapper::GetSoftwareDeploymentStatusForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_statusHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DeploymentError") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_deploymentError.push_back(ErrorDetails(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_deploymentError.push_back(ErrorDetails(decoder));
+                    }
+                  }
+                }
+                m_deploymentErrorHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("SoftwareAssociations", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "SoftwareName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_softwareName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_softwareName = ss.str();
+                }
+              }
+              m_softwareNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Status") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_status = SoftwareDeploymentStatusMapper::GetSoftwareDeploymentStatusForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_statusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DeploymentError") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_deploymentError.push_back(ErrorDetails(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_deploymentError.push_back(ErrorDetails(decoder));
+                  }
+                }
+              }
+              m_deploymentErrorHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_deploymentErrorHasBeenSet = true;
   }
+
   return *this;
 }
 
-JsonValue SoftwareAssociations::Jsonize() const {
-  JsonValue payload;
+void SoftwareAssociations::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_softwareNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_statusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deploymentErrorHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_softwareNameHasBeenSet) {
-    payload.WithString("SoftwareName", m_softwareName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SoftwareName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_softwareName.c_str()));
   }
 
   if (m_statusHasBeenSet) {
-    payload.WithString("Status", SoftwareDeploymentStatusMapper::GetNameForSoftwareDeploymentStatus(m_status));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Status"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(SoftwareDeploymentStatusMapper::GetNameForSoftwareDeploymentStatus(m_status).c_str()));
   }
 
   if (m_deploymentErrorHasBeenSet) {
-    Aws::Utils::Array<JsonValue> deploymentErrorJsonList(m_deploymentError.size());
-    for (unsigned deploymentErrorIndex = 0; deploymentErrorIndex < deploymentErrorJsonList.GetLength(); ++deploymentErrorIndex) {
-      deploymentErrorJsonList[deploymentErrorIndex].AsObject(m_deploymentError[deploymentErrorIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DeploymentError"));
+    encoder.WriteArrayStart(m_deploymentError.size());
+    for (const auto& item_0 : m_deploymentError) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("DeploymentError", std::move(deploymentErrorJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

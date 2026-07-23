@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/mediapackagev2/model/InputType.h>
+#include <aws/mediapackagev2/model/OutputLockingMode.h>
 
 #include <utility>
 
@@ -167,6 +168,27 @@ class ChannelListConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The output locking mode configured for the channel.</p> <p>The allowed values
+   * are:</p> <ul> <li> <p> <code>EPOCH_LOCKED</code> - The channel uses epoch-locked
+   * behavior with deterministic sequence numbering and fixed segment boundaries
+   * aligned to epoch time.</p> </li> <li> <p> <code>NON_EPOCH_LOCKED</code> - The
+   * channel uses non-epoch-locked behavior with duration-based segment combining and
+   * monotonically increasing sequence numbers starting from 0.</p> </li> </ul>
+   */
+  inline OutputLockingMode GetOutputLockingMode() const { return m_outputLockingMode; }
+  inline bool OutputLockingModeHasBeenSet() const { return m_outputLockingModeHasBeenSet; }
+  inline void SetOutputLockingMode(OutputLockingMode value) {
+    m_outputLockingModeHasBeenSet = true;
+    m_outputLockingMode = value;
+  }
+  inline ChannelListConfiguration& WithOutputLockingMode(OutputLockingMode value) {
+    SetOutputLockingMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -181,6 +203,8 @@ class ChannelListConfiguration {
   Aws::String m_description;
 
   InputType m_inputType{InputType::NOT_SET};
+
+  OutputLockingMode m_outputLockingMode{OutputLockingMode::NOT_SET};
   bool m_arnHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
   bool m_channelGroupNameHasBeenSet = false;
@@ -188,6 +212,7 @@ class ChannelListConfiguration {
   bool m_modifiedAtHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_inputTypeHasBeenSet = false;
+  bool m_outputLockingModeHasBeenSet = false;
 };
 
 }  // namespace Model

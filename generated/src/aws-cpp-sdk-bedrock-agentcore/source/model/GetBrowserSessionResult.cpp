@@ -84,6 +84,14 @@ GetBrowserSessionResult& GetBrowserSessionResult::operator=(const Aws::AmazonWeb
     }
     m_certificatesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("filesystemConfigurations")) {
+    Aws::Utils::Array<JsonView> filesystemConfigurationsJsonList = jsonValue.GetArray("filesystemConfigurations");
+    for (unsigned filesystemConfigurationsIndex = 0; filesystemConfigurationsIndex < filesystemConfigurationsJsonList.GetLength();
+         ++filesystemConfigurationsIndex) {
+      m_filesystemConfigurations.push_back(filesystemConfigurationsJsonList[filesystemConfigurationsIndex].AsObject());
+    }
+    m_filesystemConfigurationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sessionReplayArtifact")) {
     m_sessionReplayArtifact = jsonValue.GetString("sessionReplayArtifact");
     m_sessionReplayArtifactHasBeenSet = true;

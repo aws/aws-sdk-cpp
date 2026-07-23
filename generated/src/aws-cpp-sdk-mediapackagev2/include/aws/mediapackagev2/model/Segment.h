@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/mediapackagev2/model/Encryption.h>
+#include <aws/mediapackagev2/model/OutputTimestampMode.h>
 #include <aws/mediapackagev2/model/Scte.h>
 
 #include <utility>
@@ -163,6 +164,29 @@ class Segment {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The output timestamp mode for the origin endpoint's segments. This setting is
+   * only configurable on channels with <code>OutputLockingMode</code> set to
+   * <code>NON_EPOCH_LOCKED</code>. This value is immutable after endpoint creation.
+   * If you don't specify a value, the default is <code>PASSTHROUGH</code>.</p>
+   * <p>The allowed values are:</p> <ul> <li> <p> <code>PASSTHROUGH</code> - Output
+   * PTS (Presentation Timestamp) values pass through unchanged from the input.</p>
+   * </li> <li> <p> <code>REBASED_TO_CHANNEL_START</code> - Output PTS is rebased
+   * relative to the channel start time.</p> </li> </ul>
+   */
+  inline OutputTimestampMode GetOutputTimestampMode() const { return m_outputTimestampMode; }
+  inline bool OutputTimestampModeHasBeenSet() const { return m_outputTimestampModeHasBeenSet; }
+  inline void SetOutputTimestampMode(OutputTimestampMode value) {
+    m_outputTimestampModeHasBeenSet = true;
+    m_outputTimestampMode = value;
+  }
+  inline Segment& WithOutputTimestampMode(OutputTimestampMode value) {
+    SetOutputTimestampMode(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_segmentDurationSeconds{0};
 
@@ -177,6 +201,8 @@ class Segment {
   Scte m_scte;
 
   Encryption m_encryption;
+
+  OutputTimestampMode m_outputTimestampMode{OutputTimestampMode::NOT_SET};
   bool m_segmentDurationSecondsHasBeenSet = false;
   bool m_segmentNameHasBeenSet = false;
   bool m_tsUseAudioRenditionGroupHasBeenSet = false;
@@ -184,6 +210,7 @@ class Segment {
   bool m_tsIncludeDvbSubtitlesHasBeenSet = false;
   bool m_scteHasBeenSet = false;
   bool m_encryptionHasBeenSet = false;
+  bool m_outputTimestampModeHasBeenSet = false;
 };
 
 }  // namespace Model

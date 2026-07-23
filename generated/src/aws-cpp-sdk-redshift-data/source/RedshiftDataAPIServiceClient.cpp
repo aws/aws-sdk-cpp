@@ -29,6 +29,7 @@
 #include <aws/redshift-data/model/GetStatementResultV2Request.h>
 #include <aws/redshift-data/model/ListDatabasesRequest.h>
 #include <aws/redshift-data/model/ListSchemasRequest.h>
+#include <aws/redshift-data/model/ListSessionsRequest.h>
 #include <aws/redshift-data/model/ListStatementsRequest.h>
 #include <aws/redshift-data/model/ListTablesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -240,6 +241,11 @@ ListDatabasesOutcome RedshiftDataAPIServiceClient::ListDatabases(const ListDatab
 ListSchemasOutcome RedshiftDataAPIServiceClient::ListSchemas(const ListSchemasRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListSchemasOutcome(result.GetResultWithOwnership()) : ListSchemasOutcome(std::move(result.GetError()));
+}
+
+ListSessionsOutcome RedshiftDataAPIServiceClient::ListSessions(const ListSessionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSessionsOutcome(result.GetResultWithOwnership()) : ListSessionsOutcome(std::move(result.GetError()));
 }
 
 ListStatementsOutcome RedshiftDataAPIServiceClient::ListStatements(const ListStatementsRequest& request) const {

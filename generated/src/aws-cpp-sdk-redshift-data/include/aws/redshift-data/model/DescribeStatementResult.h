@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
+#include <aws/redshift-data/model/ExecutionMode.h>
 #include <aws/redshift-data/model/ResultFormatString.h>
 #include <aws/redshift-data/model/SqlParameter.h>
 #include <aws/redshift-data/model/StatusString.h>
@@ -406,6 +407,23 @@ class DescribeStatementResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The execution mode of the batch request. <code>TRANSACTION</code> indicates
+   * all SQL statements are run as a single transaction. <code>AUTO_COMMIT</code>
+   * indicates each SQL statement is committed individually.</p>
+   */
+  inline ExecutionMode GetExecutionMode() const { return m_executionMode; }
+  inline void SetExecutionMode(ExecutionMode value) {
+    m_executionModeHasBeenSet = true;
+    m_executionMode = value;
+  }
+  inline DescribeStatementResult& WithExecutionMode(ExecutionMode value) {
+    SetExecutionMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -464,6 +482,8 @@ class DescribeStatementResult {
 
   Aws::String m_sessionId;
 
+  ExecutionMode m_executionMode{ExecutionMode::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
@@ -487,6 +507,7 @@ class DescribeStatementResult {
   bool m_workgroupNameHasBeenSet = false;
   bool m_resultFormatHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
+  bool m_executionModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

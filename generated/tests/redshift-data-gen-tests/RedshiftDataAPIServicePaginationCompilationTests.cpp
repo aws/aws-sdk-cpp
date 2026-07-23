@@ -13,6 +13,7 @@
 #include <aws/redshift-data/model/ListDatabasesPaginationTraits.h>
 #include <aws/redshift-data/model/DescribeTablePaginationTraits.h>
 #include <aws/redshift-data/model/GetStatementResultPaginationTraits.h>
+#include <aws/redshift-data/model/ListSessionsPaginationTraits.h>
 #include <aws/redshift-data/model/ListSchemasPaginationTraits.h>
 #include <aws/redshift-data/model/ListTablesPaginationTraits.h>
 

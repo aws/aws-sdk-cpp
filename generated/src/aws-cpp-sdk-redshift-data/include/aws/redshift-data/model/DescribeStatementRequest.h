@@ -53,9 +53,29 @@ class DescribeStatementRequest : public RedshiftDataAPIServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of seconds to wait for the SQL statement to complete execution
+   * before returning the description. The maximum value is 30 seconds.</p>
+   */
+  inline int GetWaitTimeSeconds() const { return m_waitTimeSeconds; }
+  inline bool WaitTimeSecondsHasBeenSet() const { return m_waitTimeSecondsHasBeenSet; }
+  inline void SetWaitTimeSeconds(int value) {
+    m_waitTimeSecondsHasBeenSet = true;
+    m_waitTimeSeconds = value;
+  }
+  inline DescribeStatementRequest& WithWaitTimeSeconds(int value) {
+    SetWaitTimeSeconds(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
+
+  int m_waitTimeSeconds{0};
   bool m_idHasBeenSet = false;
+  bool m_waitTimeSecondsHasBeenSet = false;
 };
 
 }  // namespace Model

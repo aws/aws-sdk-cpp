@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 #include <aws/workspaces-instances/model/ConnectionTrackingSpecificationRequest.h>
 #include <aws/workspaces-instances/model/EnaSrdSpecificationRequest.h>
@@ -19,10 +20,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkspacesInstances {
 namespace Model {
@@ -36,9 +36,9 @@ namespace Model {
 class InstanceNetworkInterfaceSpecification {
  public:
   AWS_WORKSPACESINSTANCES_API InstanceNetworkInterfaceSpecification() = default;
-  AWS_WORKSPACESINSTANCES_API InstanceNetworkInterfaceSpecification(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API InstanceNetworkInterfaceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACESINSTANCES_API InstanceNetworkInterfaceSpecification(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API InstanceNetworkInterfaceSpecification& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -114,13 +114,13 @@ class InstanceNetworkInterfaceSpecification {
   /**
    * <p>Unique index for the network interface.</p>
    */
-  inline int GetDeviceIndex() const { return m_deviceIndex; }
+  inline int64_t GetDeviceIndex() const { return m_deviceIndex; }
   inline bool DeviceIndexHasBeenSet() const { return m_deviceIndexHasBeenSet; }
-  inline void SetDeviceIndex(int value) {
+  inline void SetDeviceIndex(int64_t value) {
     m_deviceIndexHasBeenSet = true;
     m_deviceIndex = value;
   }
-  inline InstanceNetworkInterfaceSpecification& WithDeviceIndex(int value) {
+  inline InstanceNetworkInterfaceSpecification& WithDeviceIndex(int64_t value) {
     SetDeviceIndex(value);
     return *this;
   }
@@ -188,13 +188,13 @@ class InstanceNetworkInterfaceSpecification {
   /**
    * <p>Number of IPv4 prefixes to assign.</p>
    */
-  inline int GetIpv4PrefixCount() const { return m_ipv4PrefixCount; }
+  inline int64_t GetIpv4PrefixCount() const { return m_ipv4PrefixCount; }
   inline bool Ipv4PrefixCountHasBeenSet() const { return m_ipv4PrefixCountHasBeenSet; }
-  inline void SetIpv4PrefixCount(int value) {
+  inline void SetIpv4PrefixCount(int64_t value) {
     m_ipv4PrefixCountHasBeenSet = true;
     m_ipv4PrefixCount = value;
   }
-  inline InstanceNetworkInterfaceSpecification& WithIpv4PrefixCount(int value) {
+  inline InstanceNetworkInterfaceSpecification& WithIpv4PrefixCount(int64_t value) {
     SetIpv4PrefixCount(value);
     return *this;
   }
@@ -204,13 +204,13 @@ class InstanceNetworkInterfaceSpecification {
   /**
    * <p>Number of IPv6 addresses to assign.</p>
    */
-  inline int GetIpv6AddressCount() const { return m_ipv6AddressCount; }
+  inline int64_t GetIpv6AddressCount() const { return m_ipv6AddressCount; }
   inline bool Ipv6AddressCountHasBeenSet() const { return m_ipv6AddressCountHasBeenSet; }
-  inline void SetIpv6AddressCount(int value) {
+  inline void SetIpv6AddressCount(int64_t value) {
     m_ipv6AddressCountHasBeenSet = true;
     m_ipv6AddressCount = value;
   }
-  inline InstanceNetworkInterfaceSpecification& WithIpv6AddressCount(int value) {
+  inline InstanceNetworkInterfaceSpecification& WithIpv6AddressCount(int64_t value) {
     SetIpv6AddressCount(value);
     return *this;
   }
@@ -268,13 +268,13 @@ class InstanceNetworkInterfaceSpecification {
   /**
    * <p>Number of IPv6 prefixes to assign.</p>
    */
-  inline int GetIpv6PrefixCount() const { return m_ipv6PrefixCount; }
+  inline int64_t GetIpv6PrefixCount() const { return m_ipv6PrefixCount; }
   inline bool Ipv6PrefixCountHasBeenSet() const { return m_ipv6PrefixCountHasBeenSet; }
-  inline void SetIpv6PrefixCount(int value) {
+  inline void SetIpv6PrefixCount(int64_t value) {
     m_ipv6PrefixCountHasBeenSet = true;
     m_ipv6PrefixCount = value;
   }
-  inline InstanceNetworkInterfaceSpecification& WithIpv6PrefixCount(int value) {
+  inline InstanceNetworkInterfaceSpecification& WithIpv6PrefixCount(int64_t value) {
     SetIpv6PrefixCount(value);
     return *this;
   }
@@ -284,13 +284,13 @@ class InstanceNetworkInterfaceSpecification {
   /**
    * <p>Index of the network card for multiple network interfaces.</p>
    */
-  inline int GetNetworkCardIndex() const { return m_networkCardIndex; }
+  inline int64_t GetNetworkCardIndex() const { return m_networkCardIndex; }
   inline bool NetworkCardIndexHasBeenSet() const { return m_networkCardIndexHasBeenSet; }
-  inline void SetNetworkCardIndex(int value) {
+  inline void SetNetworkCardIndex(int64_t value) {
     m_networkCardIndexHasBeenSet = true;
     m_networkCardIndex = value;
   }
-  inline InstanceNetworkInterfaceSpecification& WithNetworkCardIndex(int value) {
+  inline InstanceNetworkInterfaceSpecification& WithNetworkCardIndex(int64_t value) {
     SetNetworkCardIndex(value);
     return *this;
   }
@@ -376,13 +376,13 @@ class InstanceNetworkInterfaceSpecification {
   /**
    * <p>Number of additional private IP addresses to assign.</p>
    */
-  inline int GetSecondaryPrivateIpAddressCount() const { return m_secondaryPrivateIpAddressCount; }
+  inline int64_t GetSecondaryPrivateIpAddressCount() const { return m_secondaryPrivateIpAddressCount; }
   inline bool SecondaryPrivateIpAddressCountHasBeenSet() const { return m_secondaryPrivateIpAddressCountHasBeenSet; }
-  inline void SetSecondaryPrivateIpAddressCount(int value) {
+  inline void SetSecondaryPrivateIpAddressCount(int64_t value) {
     m_secondaryPrivateIpAddressCountHasBeenSet = true;
     m_secondaryPrivateIpAddressCount = value;
   }
-  inline InstanceNetworkInterfaceSpecification& WithSecondaryPrivateIpAddressCount(int value) {
+  inline InstanceNetworkInterfaceSpecification& WithSecondaryPrivateIpAddressCount(int64_t value) {
     SetSecondaryPrivateIpAddressCount(value);
     return *this;
   }
@@ -438,7 +438,7 @@ class InstanceNetworkInterfaceSpecification {
 
   Aws::String m_description;
 
-  int m_deviceIndex{0};
+  int64_t m_deviceIndex{0};
 
   EnaSrdSpecificationRequest m_enaSrdSpecification;
 
@@ -446,17 +446,17 @@ class InstanceNetworkInterfaceSpecification {
 
   Aws::Vector<Ipv4PrefixSpecificationRequest> m_ipv4Prefixes;
 
-  int m_ipv4PrefixCount{0};
+  int64_t m_ipv4PrefixCount{0};
 
-  int m_ipv6AddressCount{0};
+  int64_t m_ipv6AddressCount{0};
 
   Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
 
   Aws::Vector<Ipv6PrefixSpecificationRequest> m_ipv6Prefixes;
 
-  int m_ipv6PrefixCount{0};
+  int64_t m_ipv6PrefixCount{0};
 
-  int m_networkCardIndex{0};
+  int64_t m_networkCardIndex{0};
 
   Aws::String m_networkInterfaceId;
 
@@ -466,7 +466,7 @@ class InstanceNetworkInterfaceSpecification {
 
   Aws::Vector<PrivateIpAddressSpecification> m_privateIpAddresses;
 
-  int m_secondaryPrivateIpAddressCount{0};
+  int64_t m_secondaryPrivateIpAddressCount{0};
 
   Aws::Vector<Aws::String> m_groups;
 

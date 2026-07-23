@@ -184,6 +184,7 @@
 #include <aws/datazone/model/StartNotebookExportRequest.h>
 #include <aws/datazone/model/StartNotebookImportRequest.h>
 #include <aws/datazone/model/StartNotebookRunRequest.h>
+#include <aws/datazone/model/StartNotebookSyncRequest.h>
 #include <aws/datazone/model/StopNotebookRunRequest.h>
 #include <aws/datazone/model/TagResourceRequest.h>
 #include <aws/datazone/model/UntagResourceRequest.h>
@@ -4317,6 +4318,25 @@ StartNotebookRunOutcome DataZoneClient::StartNotebookRun(const StartNotebookRunR
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartNotebookRunOutcome(result.GetResultWithOwnership())
                             : StartNotebookRunOutcome(std::move(result.GetError()));
+}
+
+StartNotebookSyncOutcome DataZoneClient::StartNotebookSync(const StartNotebookSyncRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartNotebookSync", "Required field: DomainIdentifier, is not set");
+    return StartNotebookSyncOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [DomainIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/notebook-syncs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartNotebookSyncOutcome(result.GetResultWithOwnership())
+                            : StartNotebookSyncOutcome(std::move(result.GetError()));
 }
 
 StopNotebookRunOutcome DataZoneClient::StopNotebookRun(const StopNotebookRunRequest& request) const {

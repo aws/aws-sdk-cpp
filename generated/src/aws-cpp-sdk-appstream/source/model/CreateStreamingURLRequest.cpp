@@ -4,46 +4,77 @@
  */
 
 #include <aws/appstream/model/CreateStreamingURLRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::AppStream::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateStreamingURLRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_stackNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_fleetNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_userIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_applicationIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_validityHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sessionContextHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_stackNameHasBeenSet) {
-    payload.WithString("StackName", m_stackName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StackName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_stackName.c_str()));
   }
 
   if (m_fleetNameHasBeenSet) {
-    payload.WithString("FleetName", m_fleetName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FleetName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_fleetName.c_str()));
   }
 
   if (m_userIdHasBeenSet) {
-    payload.WithString("UserId", m_userId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UserId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_userId.c_str()));
   }
 
   if (m_applicationIdHasBeenSet) {
-    payload.WithString("ApplicationId", m_applicationId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ApplicationId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_applicationId.c_str()));
   }
 
   if (m_validityHasBeenSet) {
-    payload.WithInt64("Validity", m_validity);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Validity"));
+    (m_validity >= 0) ? encoder.WriteUInt(m_validity) : encoder.WriteNegInt(m_validity);
   }
 
   if (m_sessionContextHasBeenSet) {
-    payload.WithString("SessionContext", m_sessionContext);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SessionContext"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sessionContext.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateStreamingURLRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.CreateStreamingURL"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

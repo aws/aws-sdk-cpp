@@ -280,6 +280,25 @@ class ExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of seconds to wait for the SQL statement to complete execution
+   * before returning the response. If the SQL statement does not complete within the
+   * specified time, the response returns the current status. The maximum value is 30
+   * seconds.</p>
+   */
+  inline int GetWaitTimeSeconds() const { return m_waitTimeSeconds; }
+  inline bool WaitTimeSecondsHasBeenSet() const { return m_waitTimeSecondsHasBeenSet; }
+  inline void SetWaitTimeSeconds(int value) {
+    m_waitTimeSecondsHasBeenSet = true;
+    m_waitTimeSeconds = value;
+  }
+  inline ExecuteStatementRequest& WithWaitTimeSeconds(int value) {
+    SetWaitTimeSeconds(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sql;
 
@@ -306,6 +325,8 @@ class ExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
   int m_sessionKeepAliveSeconds{0};
 
   Aws::String m_sessionId;
+
+  int m_waitTimeSeconds{0};
   bool m_sqlHasBeenSet = false;
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
@@ -319,6 +340,7 @@ class ExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
   bool m_resultFormatHasBeenSet = false;
   bool m_sessionKeepAliveSecondsHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
+  bool m_waitTimeSecondsHasBeenSet = false;
 };
 
 }  // namespace Model

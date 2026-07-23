@@ -11,7 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace AppStream {
@@ -36,12 +36,12 @@ namespace AppStream {
  * href="http://aws.amazon.com/documentation/appstream2">Amazon WorkSpaces
  * Applications documentation</a> </p> </li> </ul>
  */
-class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
+class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSRpcV2CborClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<AppStreamClient>,
                                           public AppStreamPaginationBase<AppStreamClient>,
                                           public AppStreamWaiter<AppStreamClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

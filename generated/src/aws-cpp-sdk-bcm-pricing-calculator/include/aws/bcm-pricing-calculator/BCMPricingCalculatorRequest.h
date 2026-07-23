@@ -25,7 +25,6 @@ class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorRequest : public Aws::Ama
     auto headers = GetRequestSpecificHeaders();
 
     if (headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0)) {
-      headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_JSON_CONTENT_TYPE_1_0));
     }
     headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::API_VERSION_HEADER, "2024-06-19"));
     return headers;

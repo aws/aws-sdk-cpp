@@ -118,6 +118,10 @@ GetStreamSessionResult& GetStreamSessionResult::operator=(const Aws::AmazonWebSe
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DisplayConfiguration")) {
+    m_displayConfiguration = jsonValue.GetObject("DisplayConfiguration");
+    m_displayConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

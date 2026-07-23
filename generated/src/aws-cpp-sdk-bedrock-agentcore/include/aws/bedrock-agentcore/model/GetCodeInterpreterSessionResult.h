@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/Certificate.h>
 #include <aws/bedrock-agentcore/model/CodeInterpreterSessionStatus.h>
+#include <aws/bedrock-agentcore/model/ToolsFileSystemConfiguration.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -155,6 +156,30 @@ class GetCodeInterpreterSessionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The file system configurations for the code interpreter session. Each entry
+   * describes an access point and its mount path.</p>
+   */
+  inline const Aws::Vector<ToolsFileSystemConfiguration>& GetFilesystemConfigurations() const { return m_filesystemConfigurations; }
+  template <typename FilesystemConfigurationsT = Aws::Vector<ToolsFileSystemConfiguration>>
+  void SetFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations = std::forward<FilesystemConfigurationsT>(value);
+  }
+  template <typename FilesystemConfigurationsT = Aws::Vector<ToolsFileSystemConfiguration>>
+  GetCodeInterpreterSessionResult& WithFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    SetFilesystemConfigurations(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  template <typename FilesystemConfigurationsT = ToolsFileSystemConfiguration>
+  GetCodeInterpreterSessionResult& AddFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations.emplace_back(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -185,6 +210,8 @@ class GetCodeInterpreterSessionResult {
 
   Aws::Vector<Certificate> m_certificates;
 
+  Aws::Vector<ToolsFileSystemConfiguration> m_filesystemConfigurations;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_codeInterpreterIdentifierHasBeenSet = false;
@@ -194,6 +221,7 @@ class GetCodeInterpreterSessionResult {
   bool m_sessionTimeoutSecondsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_certificatesHasBeenSet = false;
+  bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

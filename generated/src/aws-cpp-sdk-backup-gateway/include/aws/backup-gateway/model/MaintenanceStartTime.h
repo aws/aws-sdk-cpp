@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace BackupGateway {
 namespace Model {
@@ -26,9 +26,9 @@ namespace Model {
 class MaintenanceStartTime {
  public:
   AWS_BACKUPGATEWAY_API MaintenanceStartTime() = default;
-  AWS_BACKUPGATEWAY_API MaintenanceStartTime(Aws::Utils::Json::JsonView jsonValue);
-  AWS_BACKUPGATEWAY_API MaintenanceStartTime& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_BACKUPGATEWAY_API MaintenanceStartTime(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_BACKUPGATEWAY_API MaintenanceStartTime& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_BACKUPGATEWAY_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -36,13 +36,13 @@ class MaintenanceStartTime {
    * an ordinal number from 1 to 28, where 1 represents the first day of the month
    * and 28 represents the last day of the month.</p>
    */
-  inline int GetDayOfMonth() const { return m_dayOfMonth; }
+  inline int64_t GetDayOfMonth() const { return m_dayOfMonth; }
   inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
-  inline void SetDayOfMonth(int value) {
+  inline void SetDayOfMonth(int64_t value) {
     m_dayOfMonthHasBeenSet = true;
     m_dayOfMonth = value;
   }
-  inline MaintenanceStartTime& WithDayOfMonth(int value) {
+  inline MaintenanceStartTime& WithDayOfMonth(int64_t value) {
     SetDayOfMonth(value);
     return *this;
   }
@@ -54,13 +54,13 @@ class MaintenanceStartTime {
    * 0 represents Sunday and 6 represents Saturday. The day of week is in the time
    * zone of the gateway.</p>
    */
-  inline int GetDayOfWeek() const { return m_dayOfWeek; }
+  inline int64_t GetDayOfWeek() const { return m_dayOfWeek; }
   inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
-  inline void SetDayOfWeek(int value) {
+  inline void SetDayOfWeek(int64_t value) {
     m_dayOfWeekHasBeenSet = true;
     m_dayOfWeek = value;
   }
-  inline MaintenanceStartTime& WithDayOfWeek(int value) {
+  inline MaintenanceStartTime& WithDayOfWeek(int64_t value) {
     SetDayOfWeek(value);
     return *this;
   }
@@ -72,13 +72,13 @@ class MaintenanceStartTime {
    * where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone
    * of the gateway.</p>
    */
-  inline int GetHourOfDay() const { return m_hourOfDay; }
+  inline int64_t GetHourOfDay() const { return m_hourOfDay; }
   inline bool HourOfDayHasBeenSet() const { return m_hourOfDayHasBeenSet; }
-  inline void SetHourOfDay(int value) {
+  inline void SetHourOfDay(int64_t value) {
     m_hourOfDayHasBeenSet = true;
     m_hourOfDay = value;
   }
-  inline MaintenanceStartTime& WithHourOfDay(int value) {
+  inline MaintenanceStartTime& WithHourOfDay(int64_t value) {
     SetHourOfDay(value);
     return *this;
   }
@@ -90,25 +90,25 @@ class MaintenanceStartTime {
    * where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time
    * zone of the gateway.</p>
    */
-  inline int GetMinuteOfHour() const { return m_minuteOfHour; }
+  inline int64_t GetMinuteOfHour() const { return m_minuteOfHour; }
   inline bool MinuteOfHourHasBeenSet() const { return m_minuteOfHourHasBeenSet; }
-  inline void SetMinuteOfHour(int value) {
+  inline void SetMinuteOfHour(int64_t value) {
     m_minuteOfHourHasBeenSet = true;
     m_minuteOfHour = value;
   }
-  inline MaintenanceStartTime& WithMinuteOfHour(int value) {
+  inline MaintenanceStartTime& WithMinuteOfHour(int64_t value) {
     SetMinuteOfHour(value);
     return *this;
   }
   ///@}
  private:
-  int m_dayOfMonth{0};
+  int64_t m_dayOfMonth{0};
 
-  int m_dayOfWeek{0};
+  int64_t m_dayOfWeek{0};
 
-  int m_hourOfDay{0};
+  int64_t m_hourOfDay{0};
 
-  int m_minuteOfHour{0};
+  int64_t m_minuteOfHour{0};
   bool m_dayOfMonthHasBeenSet = false;
   bool m_dayOfWeekHasBeenSet = false;
   bool m_hourOfDayHasBeenSet = false;

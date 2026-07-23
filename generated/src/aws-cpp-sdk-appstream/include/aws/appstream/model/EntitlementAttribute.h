@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace AppStream {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class EntitlementAttribute {
  public:
   AWS_APPSTREAM_API EntitlementAttribute() = default;
-  AWS_APPSTREAM_API EntitlementAttribute(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPSTREAM_API EntitlementAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_APPSTREAM_API EntitlementAttribute(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPSTREAM_API EntitlementAttribute& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPSTREAM_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

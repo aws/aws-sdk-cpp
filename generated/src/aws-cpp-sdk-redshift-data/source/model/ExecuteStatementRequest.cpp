@@ -71,6 +71,10 @@ Aws::String ExecuteStatementRequest::SerializePayload() const {
     payload.WithString("SessionId", m_sessionId);
   }
 
+  if (m_waitTimeSecondsHasBeenSet) {
+    payload.WithInteger("WaitTimeSeconds", m_waitTimeSeconds);
+  }
+
   return payload.View().WriteReadable();
 }
 

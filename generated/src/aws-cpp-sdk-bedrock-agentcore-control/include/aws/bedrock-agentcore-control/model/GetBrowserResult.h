@@ -11,6 +11,7 @@
 #include <aws/bedrock-agentcore-control/model/BrowserStatus.h>
 #include <aws/bedrock-agentcore-control/model/Certificate.h>
 #include <aws/bedrock-agentcore-control/model/RecordingConfig.h>
+#include <aws/bedrock-agentcore-control/model/ToolsFileSystemConfiguration.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -216,6 +217,30 @@ class GetBrowserResult {
 
   ///@{
   /**
+   * <p>The file system configurations mounted into the browser. Each entry describes
+   * an access point and its mount path.</p>
+   */
+  inline const Aws::Vector<ToolsFileSystemConfiguration>& GetFilesystemConfigurations() const { return m_filesystemConfigurations; }
+  template <typename FilesystemConfigurationsT = Aws::Vector<ToolsFileSystemConfiguration>>
+  void SetFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations = std::forward<FilesystemConfigurationsT>(value);
+  }
+  template <typename FilesystemConfigurationsT = Aws::Vector<ToolsFileSystemConfiguration>>
+  GetBrowserResult& WithFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    SetFilesystemConfigurations(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  template <typename FilesystemConfigurationsT = ToolsFileSystemConfiguration>
+  GetBrowserResult& AddFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations.emplace_back(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current status of the browser.</p>
    */
   inline BrowserStatus GetStatus() const { return m_status; }
@@ -317,6 +342,8 @@ class GetBrowserResult {
 
   Aws::Vector<Certificate> m_certificates;
 
+  Aws::Vector<ToolsFileSystemConfiguration> m_filesystemConfigurations;
+
   BrowserStatus m_status{BrowserStatus::NOT_SET};
 
   Aws::String m_failureReason;
@@ -337,6 +364,7 @@ class GetBrowserResult {
   bool m_browserSigningHasBeenSet = false;
   bool m_enterprisePoliciesHasBeenSet = false;
   bool m_certificatesHasBeenSet = false;
+  bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

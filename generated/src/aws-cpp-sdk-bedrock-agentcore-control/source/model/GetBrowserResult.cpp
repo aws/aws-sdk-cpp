@@ -69,6 +69,14 @@ GetBrowserResult& GetBrowserResult::operator=(const Aws::AmazonWebServiceResult<
     }
     m_certificatesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("filesystemConfigurations")) {
+    Aws::Utils::Array<JsonView> filesystemConfigurationsJsonList = jsonValue.GetArray("filesystemConfigurations");
+    for (unsigned filesystemConfigurationsIndex = 0; filesystemConfigurationsIndex < filesystemConfigurationsJsonList.GetLength();
+         ++filesystemConfigurationsIndex) {
+      m_filesystemConfigurations.push_back(filesystemConfigurationsJsonList[filesystemConfigurationsIndex].AsObject());
+    }
+    m_filesystemConfigurationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = BrowserStatusMapper::GetBrowserStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;

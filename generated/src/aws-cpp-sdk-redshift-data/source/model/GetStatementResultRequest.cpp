@@ -23,6 +23,10 @@ Aws::String GetStatementResultRequest::SerializePayload() const {
     payload.WithString("NextToken", m_nextToken);
   }
 
+  if (m_waitTimeSecondsHasBeenSet) {
+    payload.WithInteger("WaitTimeSeconds", m_waitTimeSeconds);
+  }
+
   return payload.View().WriteReadable();
 }
 

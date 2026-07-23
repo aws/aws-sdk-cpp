@@ -12,6 +12,7 @@
 #include <aws/bedrock-agentcore/model/BrowserSessionStream.h>
 #include <aws/bedrock-agentcore/model/Certificate.h>
 #include <aws/bedrock-agentcore/model/ProxyConfiguration.h>
+#include <aws/bedrock-agentcore/model/ToolsFileSystemConfiguration.h>
 #include <aws/bedrock-agentcore/model/ViewPort.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
@@ -280,6 +281,30 @@ class GetBrowserSessionResult {
 
   ///@{
   /**
+   * <p>The file system configurations for the browser session. Each entry describes
+   * an access point and its mount path.</p>
+   */
+  inline const Aws::Vector<ToolsFileSystemConfiguration>& GetFilesystemConfigurations() const { return m_filesystemConfigurations; }
+  template <typename FilesystemConfigurationsT = Aws::Vector<ToolsFileSystemConfiguration>>
+  void SetFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations = std::forward<FilesystemConfigurationsT>(value);
+  }
+  template <typename FilesystemConfigurationsT = Aws::Vector<ToolsFileSystemConfiguration>>
+  GetBrowserSessionResult& WithFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    SetFilesystemConfigurations(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  template <typename FilesystemConfigurationsT = ToolsFileSystemConfiguration>
+  GetBrowserSessionResult& AddFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations.emplace_back(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The artifact containing the session replay information.</p>
    */
   inline const Aws::String& GetSessionReplayArtifact() const { return m_sessionReplayArtifact; }
@@ -355,6 +380,8 @@ class GetBrowserSessionResult {
 
   Aws::Vector<Certificate> m_certificates;
 
+  Aws::Vector<ToolsFileSystemConfiguration> m_filesystemConfigurations;
+
   Aws::String m_sessionReplayArtifact;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
@@ -374,6 +401,7 @@ class GetBrowserSessionResult {
   bool m_streamsHasBeenSet = false;
   bool m_proxyConfigurationHasBeenSet = false;
   bool m_certificatesHasBeenSet = false;
+  bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_sessionReplayArtifactHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -178,6 +178,7 @@
 #include <aws/datazone/model/StartNotebookExportResult.h>
 #include <aws/datazone/model/StartNotebookImportResult.h>
 #include <aws/datazone/model/StartNotebookRunResult.h>
+#include <aws/datazone/model/StartNotebookSyncResult.h>
 #include <aws/datazone/model/StopNotebookRunResult.h>
 #include <aws/datazone/model/TagResourceResult.h>
 #include <aws/datazone/model/UntagResourceResult.h>
@@ -400,6 +401,7 @@ class StartMetadataGenerationRunRequest;
 class StartNotebookExportRequest;
 class StartNotebookImportRequest;
 class StartNotebookRunRequest;
+class StartNotebookSyncRequest;
 class StopNotebookRunRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
@@ -592,6 +594,7 @@ typedef Aws::Utils::Outcome<StartMetadataGenerationRunResult, DataZoneError> Sta
 typedef Aws::Utils::Outcome<StartNotebookExportResult, DataZoneError> StartNotebookExportOutcome;
 typedef Aws::Utils::Outcome<StartNotebookImportResult, DataZoneError> StartNotebookImportOutcome;
 typedef Aws::Utils::Outcome<StartNotebookRunResult, DataZoneError> StartNotebookRunOutcome;
+typedef Aws::Utils::Outcome<StartNotebookSyncResult, DataZoneError> StartNotebookSyncOutcome;
 typedef Aws::Utils::Outcome<StopNotebookRunResult, DataZoneError> StopNotebookRunOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, DataZoneError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, DataZoneError> UntagResourceOutcome;
@@ -784,6 +787,7 @@ typedef std::future<StartMetadataGenerationRunOutcome> StartMetadataGenerationRu
 typedef std::future<StartNotebookExportOutcome> StartNotebookExportOutcomeCallable;
 typedef std::future<StartNotebookImportOutcome> StartNotebookImportOutcomeCallable;
 typedef std::future<StartNotebookRunOutcome> StartNotebookRunOutcomeCallable;
+typedef std::future<StartNotebookSyncOutcome> StartNotebookSyncOutcomeCallable;
 typedef std::future<StopNotebookRunOutcome> StopNotebookRunOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -1313,6 +1317,9 @@ typedef std::function<void(const DataZoneClient*, const Model::StartNotebookImpo
 typedef std::function<void(const DataZoneClient*, const Model::StartNotebookRunRequest&, const Model::StartNotebookRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartNotebookRunResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::StartNotebookSyncRequest&, const Model::StartNotebookSyncOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartNotebookSyncResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::StopNotebookRunRequest&, const Model::StopNotebookRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopNotebookRunResponseReceivedHandler;

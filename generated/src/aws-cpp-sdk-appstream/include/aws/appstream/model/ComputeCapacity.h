@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace AppStream {
 namespace Model {
@@ -24,21 +24,21 @@ namespace Model {
 class ComputeCapacity {
  public:
   AWS_APPSTREAM_API ComputeCapacity() = default;
-  AWS_APPSTREAM_API ComputeCapacity(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPSTREAM_API ComputeCapacity& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_APPSTREAM_API ComputeCapacity(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPSTREAM_API ComputeCapacity& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPSTREAM_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The desired number of streaming instances.</p>
    */
-  inline int GetDesiredInstances() const { return m_desiredInstances; }
+  inline int64_t GetDesiredInstances() const { return m_desiredInstances; }
   inline bool DesiredInstancesHasBeenSet() const { return m_desiredInstancesHasBeenSet; }
-  inline void SetDesiredInstances(int value) {
+  inline void SetDesiredInstances(int64_t value) {
     m_desiredInstancesHasBeenSet = true;
     m_desiredInstances = value;
   }
-  inline ComputeCapacity& WithDesiredInstances(int value) {
+  inline ComputeCapacity& WithDesiredInstances(int64_t value) {
     SetDesiredInstances(value);
     return *this;
   }
@@ -52,21 +52,21 @@ class ComputeCapacity {
    * fleet you create. You can’t define both attributes or leave both attributes
    * blank.</p>
    */
-  inline int GetDesiredSessions() const { return m_desiredSessions; }
+  inline int64_t GetDesiredSessions() const { return m_desiredSessions; }
   inline bool DesiredSessionsHasBeenSet() const { return m_desiredSessionsHasBeenSet; }
-  inline void SetDesiredSessions(int value) {
+  inline void SetDesiredSessions(int64_t value) {
     m_desiredSessionsHasBeenSet = true;
     m_desiredSessions = value;
   }
-  inline ComputeCapacity& WithDesiredSessions(int value) {
+  inline ComputeCapacity& WithDesiredSessions(int64_t value) {
     SetDesiredSessions(value);
     return *this;
   }
   ///@}
  private:
-  int m_desiredInstances{0};
+  int64_t m_desiredInstances{0};
 
-  int m_desiredSessions{0};
+  int64_t m_desiredSessions{0};
   bool m_desiredInstancesHasBeenSet = false;
   bool m_desiredSessionsHasBeenSet = false;
 };

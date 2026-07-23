@@ -958,6 +958,26 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
     m_extension = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Extension"));
     m_extensionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UseBrowserExtension")) {
+    m_useBrowserExtension = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseBrowserExtension"));
+    m_useBrowserExtensionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseWordAddInExtension")) {
+    m_useWordAddInExtension = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseWordAddInExtension"));
+    m_useWordAddInExtensionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseOutlookAddInExtension")) {
+    m_useOutlookAddInExtension = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseOutlookAddInExtension"));
+    m_useOutlookAddInExtensionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseExcelAddInExtension")) {
+    m_useExcelAddInExtension = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseExcelAddInExtension"));
+    m_useExcelAddInExtensionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UsePowerpointAddInExtension")) {
+    m_usePowerpointAddInExtension = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UsePowerpointAddInExtension"));
+    m_usePowerpointAddInExtensionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ManageSharedFolders")) {
     m_manageSharedFolders = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ManageSharedFolders"));
     m_manageSharedFoldersHasBeenSet = true;
@@ -1922,6 +1942,26 @@ JsonValue Capabilities::Jsonize() const {
 
   if (m_extensionHasBeenSet) {
     payload.WithString("Extension", CapabilityStateMapper::GetNameForCapabilityState(m_extension));
+  }
+
+  if (m_useBrowserExtensionHasBeenSet) {
+    payload.WithString("UseBrowserExtension", CapabilityStateMapper::GetNameForCapabilityState(m_useBrowserExtension));
+  }
+
+  if (m_useWordAddInExtensionHasBeenSet) {
+    payload.WithString("UseWordAddInExtension", CapabilityStateMapper::GetNameForCapabilityState(m_useWordAddInExtension));
+  }
+
+  if (m_useOutlookAddInExtensionHasBeenSet) {
+    payload.WithString("UseOutlookAddInExtension", CapabilityStateMapper::GetNameForCapabilityState(m_useOutlookAddInExtension));
+  }
+
+  if (m_useExcelAddInExtensionHasBeenSet) {
+    payload.WithString("UseExcelAddInExtension", CapabilityStateMapper::GetNameForCapabilityState(m_useExcelAddInExtension));
+  }
+
+  if (m_usePowerpointAddInExtensionHasBeenSet) {
+    payload.WithString("UsePowerpointAddInExtension", CapabilityStateMapper::GetNameForCapabilityState(m_usePowerpointAddInExtension));
   }
 
   if (m_manageSharedFoldersHasBeenSet) {

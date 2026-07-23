@@ -46,6 +46,10 @@ Segment& Segment::operator=(JsonView jsonValue) {
     m_encryption = jsonValue.GetObject("Encryption");
     m_encryptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OutputTimestampMode")) {
+    m_outputTimestampMode = OutputTimestampModeMapper::GetOutputTimestampModeForName(jsonValue.GetString("OutputTimestampMode"));
+    m_outputTimestampModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue Segment::Jsonize() const {
 
   if (m_encryptionHasBeenSet) {
     payload.WithObject("Encryption", m_encryption.Jsonize());
+  }
+
+  if (m_outputTimestampModeHasBeenSet) {
+    payload.WithString("OutputTimestampMode", OutputTimestampModeMapper::GetNameForOutputTimestampMode(m_outputTimestampMode));
   }
 
   return payload;

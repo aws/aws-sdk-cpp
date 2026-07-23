@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 #include <aws/workspaces-instances/model/HttpEndpointEnum.h>
 #include <aws/workspaces-instances/model/HttpProtocolIpv6Enum.h>
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkspacesInstances {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class InstanceMetadataOptionsRequest {
  public:
   AWS_WORKSPACESINSTANCES_API InstanceMetadataOptionsRequest() = default;
-  AWS_WORKSPACESINSTANCES_API InstanceMetadataOptionsRequest(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API InstanceMetadataOptionsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACESINSTANCES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACESINSTANCES_API InstanceMetadataOptionsRequest(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API InstanceMetadataOptionsRequest& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACESINSTANCES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -71,13 +71,13 @@ class InstanceMetadataOptionsRequest {
   /**
    * <p>Sets maximum number of network hops for metadata PUT responses.</p>
    */
-  inline int GetHttpPutResponseHopLimit() const { return m_httpPutResponseHopLimit; }
+  inline int64_t GetHttpPutResponseHopLimit() const { return m_httpPutResponseHopLimit; }
   inline bool HttpPutResponseHopLimitHasBeenSet() const { return m_httpPutResponseHopLimitHasBeenSet; }
-  inline void SetHttpPutResponseHopLimit(int value) {
+  inline void SetHttpPutResponseHopLimit(int64_t value) {
     m_httpPutResponseHopLimitHasBeenSet = true;
     m_httpPutResponseHopLimit = value;
   }
-  inline InstanceMetadataOptionsRequest& WithHttpPutResponseHopLimit(int value) {
+  inline InstanceMetadataOptionsRequest& WithHttpPutResponseHopLimit(int64_t value) {
     SetHttpPutResponseHopLimit(value);
     return *this;
   }
@@ -119,7 +119,7 @@ class InstanceMetadataOptionsRequest {
 
   HttpProtocolIpv6Enum m_httpProtocolIpv6{HttpProtocolIpv6Enum::NOT_SET};
 
-  int m_httpPutResponseHopLimit{0};
+  int64_t m_httpPutResponseHopLimit{0};
 
   HttpTokensEnum m_httpTokens{HttpTokensEnum::NOT_SET};
 

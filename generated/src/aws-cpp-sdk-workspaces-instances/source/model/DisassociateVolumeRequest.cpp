@@ -3,39 +3,63 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/model/DisassociateVolumeRequest.h>
 
 #include <utility>
 
 using namespace Aws::WorkspacesInstances::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DisassociateVolumeRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_workspaceInstanceIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_volumeIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deviceHasBeenSet) {
+    mapSize++;
+  }
+  if (m_disassociateModeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_workspaceInstanceIdHasBeenSet) {
-    payload.WithString("WorkspaceInstanceId", m_workspaceInstanceId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("WorkspaceInstanceId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_workspaceInstanceId.c_str()));
   }
 
   if (m_volumeIdHasBeenSet) {
-    payload.WithString("VolumeId", m_volumeId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VolumeId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_volumeId.c_str()));
   }
 
   if (m_deviceHasBeenSet) {
-    payload.WithString("Device", m_device);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Device"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_device.c_str()));
   }
 
   if (m_disassociateModeHasBeenSet) {
-    payload.WithString("DisassociateMode", DisassociateModeEnumMapper::GetNameForDisassociateModeEnum(m_disassociateMode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DisassociateMode"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(DisassociateModeEnumMapper::GetNameForDisassociateModeEnum(m_disassociateMode).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DisassociateVolumeRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EUCMIFrontendAPIService.DisassociateVolume"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

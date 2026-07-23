@@ -27,6 +27,7 @@
 #include <aws/redshift-data/model/ExecuteStatementException.h>
 #include <aws/redshift-data/model/ExecuteStatementRequest.h>
 #include <aws/redshift-data/model/ExecuteStatementResult.h>
+#include <aws/redshift-data/model/ExecutionMode.h>
 #include <aws/redshift-data/model/Field.h>
 #include <aws/redshift-data/model/GetStatementResultRequest.h>
 #include <aws/redshift-data/model/GetStatementResultResult.h>
@@ -36,6 +37,8 @@
 #include <aws/redshift-data/model/ListDatabasesResult.h>
 #include <aws/redshift-data/model/ListSchemasRequest.h>
 #include <aws/redshift-data/model/ListSchemasResult.h>
+#include <aws/redshift-data/model/ListSessionsRequest.h>
+#include <aws/redshift-data/model/ListSessionsResult.h>
 #include <aws/redshift-data/model/ListStatementsRequest.h>
 #include <aws/redshift-data/model/ListStatementsResult.h>
 #include <aws/redshift-data/model/ListTablesRequest.h>
@@ -43,6 +46,8 @@
 #include <aws/redshift-data/model/QueryRecords.h>
 #include <aws/redshift-data/model/ResourceNotFoundException.h>
 #include <aws/redshift-data/model/ResultFormatString.h>
+#include <aws/redshift-data/model/SessionData.h>
+#include <aws/redshift-data/model/SessionStatusString.h>
 #include <aws/redshift-data/model/SqlParameter.h>
 #include <aws/redshift-data/model/StatementData.h>
 #include <aws/redshift-data/model/StatementStatusString.h>

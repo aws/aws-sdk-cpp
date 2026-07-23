@@ -107,6 +107,10 @@ CreateNotebookResult& CreateNotebookResult::operator=(const Aws::AmazonWebServic
     m_error = jsonValue.GetObject("error");
     m_errorHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("gitMetadata")) {
+    m_gitMetadata = jsonValue.GetObject("gitMetadata");
+    m_gitMetadataHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

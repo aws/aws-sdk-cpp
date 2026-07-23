@@ -112,6 +112,10 @@ DescribeStatementResult& DescribeStatementResult::operator=(const Aws::AmazonWeb
     m_sessionId = jsonValue.GetString("SessionId");
     m_sessionIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ExecutionMode")) {
+    m_executionMode = ExecutionModeMapper::GetExecutionModeForName(jsonValue.GetString("ExecutionMode"));
+    m_executionModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

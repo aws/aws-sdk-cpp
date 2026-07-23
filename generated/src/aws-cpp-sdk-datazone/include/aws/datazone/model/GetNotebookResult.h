@@ -12,6 +12,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/CellInformation.h>
 #include <aws/datazone/model/EnvironmentConfig.h>
+#include <aws/datazone/model/GitMetadata.h>
 #include <aws/datazone/model/NotebookError.h>
 #include <aws/datazone/model/NotebookStatus.h>
 
@@ -374,6 +375,23 @@ class GetNotebookResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The Git metadata associated with the notebook.</p>
+   */
+  inline const GitMetadata& GetGitMetadata() const { return m_gitMetadata; }
+  template <typename GitMetadataT = GitMetadata>
+  void SetGitMetadata(GitMetadataT&& value) {
+    m_gitMetadataHasBeenSet = true;
+    m_gitMetadata = std::forward<GitMetadataT>(value);
+  }
+  template <typename GitMetadataT = GitMetadata>
+  GetNotebookResult& WithGitMetadata(GitMetadataT&& value) {
+    SetGitMetadata(std::forward<GitMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -428,6 +446,8 @@ class GetNotebookResult {
 
   NotebookError m_error;
 
+  GitMetadata m_gitMetadata;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
@@ -449,6 +469,7 @@ class GetNotebookResult {
   bool m_parametersHasBeenSet = false;
   bool m_environmentConfigurationHasBeenSet = false;
   bool m_errorHasBeenSet = false;
+  bool m_gitMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

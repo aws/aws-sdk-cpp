@@ -18,15 +18,15 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace AppStream {
 namespace Model {
@@ -39,9 +39,9 @@ namespace Model {
 class Fleet {
  public:
   AWS_APPSTREAM_API Fleet() = default;
-  AWS_APPSTREAM_API Fleet(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPSTREAM_API Fleet& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_APPSTREAM_API Fleet(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPSTREAM_API Fleet& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPSTREAM_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -249,13 +249,13 @@ class Fleet {
    * and replaced by a new instance. </p> <p>Specify a value between 600 and
    * 360000.</p>
    */
-  inline int GetMaxUserDurationInSeconds() const { return m_maxUserDurationInSeconds; }
+  inline int64_t GetMaxUserDurationInSeconds() const { return m_maxUserDurationInSeconds; }
   inline bool MaxUserDurationInSecondsHasBeenSet() const { return m_maxUserDurationInSecondsHasBeenSet; }
-  inline void SetMaxUserDurationInSeconds(int value) {
+  inline void SetMaxUserDurationInSeconds(int64_t value) {
     m_maxUserDurationInSecondsHasBeenSet = true;
     m_maxUserDurationInSeconds = value;
   }
-  inline Fleet& WithMaxUserDurationInSeconds(int value) {
+  inline Fleet& WithMaxUserDurationInSeconds(int64_t value) {
     SetMaxUserDurationInSeconds(value);
     return *this;
   }
@@ -270,13 +270,13 @@ class Fleet {
    * session with a new streaming instance.</p> <p>Specify a value between 60 and
    * 36000.</p>
    */
-  inline int GetDisconnectTimeoutInSeconds() const { return m_disconnectTimeoutInSeconds; }
+  inline int64_t GetDisconnectTimeoutInSeconds() const { return m_disconnectTimeoutInSeconds; }
   inline bool DisconnectTimeoutInSecondsHasBeenSet() const { return m_disconnectTimeoutInSecondsHasBeenSet; }
-  inline void SetDisconnectTimeoutInSeconds(int value) {
+  inline void SetDisconnectTimeoutInSeconds(int64_t value) {
     m_disconnectTimeoutInSecondsHasBeenSet = true;
     m_disconnectTimeoutInSeconds = value;
   }
-  inline Fleet& WithDisconnectTimeoutInSeconds(int value) {
+  inline Fleet& WithDisconnectTimeoutInSeconds(int64_t value) {
     SetDisconnectTimeoutInSeconds(value);
     return *this;
   }
@@ -416,13 +416,13 @@ class Fleet {
    * different minutes, the value is rounded up. For example, if you specify a value
    * of 90, users are disconnected after 2 minutes of inactivity. </p>
    */
-  inline int GetIdleDisconnectTimeoutInSeconds() const { return m_idleDisconnectTimeoutInSeconds; }
+  inline int64_t GetIdleDisconnectTimeoutInSeconds() const { return m_idleDisconnectTimeoutInSeconds; }
   inline bool IdleDisconnectTimeoutInSecondsHasBeenSet() const { return m_idleDisconnectTimeoutInSecondsHasBeenSet; }
-  inline void SetIdleDisconnectTimeoutInSeconds(int value) {
+  inline void SetIdleDisconnectTimeoutInSeconds(int64_t value) {
     m_idleDisconnectTimeoutInSecondsHasBeenSet = true;
     m_idleDisconnectTimeoutInSeconds = value;
   }
-  inline Fleet& WithIdleDisconnectTimeoutInSeconds(int value) {
+  inline Fleet& WithIdleDisconnectTimeoutInSeconds(int64_t value) {
     SetIdleDisconnectTimeoutInSeconds(value);
     return *this;
   }
@@ -496,13 +496,13 @@ class Fleet {
   /**
    * <p>The maximum number of concurrent sessions for the fleet.</p>
    */
-  inline int GetMaxConcurrentSessions() const { return m_maxConcurrentSessions; }
+  inline int64_t GetMaxConcurrentSessions() const { return m_maxConcurrentSessions; }
   inline bool MaxConcurrentSessionsHasBeenSet() const { return m_maxConcurrentSessionsHasBeenSet; }
-  inline void SetMaxConcurrentSessions(int value) {
+  inline void SetMaxConcurrentSessions(int64_t value) {
     m_maxConcurrentSessionsHasBeenSet = true;
     m_maxConcurrentSessions = value;
   }
-  inline Fleet& WithMaxConcurrentSessions(int value) {
+  inline Fleet& WithMaxConcurrentSessions(int64_t value) {
     SetMaxConcurrentSessions(value);
     return *this;
   }
@@ -556,13 +556,13 @@ class Fleet {
    * <p>The maximum number of user sessions on an instance. This only applies to
    * multi-session fleets.</p>
    */
-  inline int GetMaxSessionsPerInstance() const { return m_maxSessionsPerInstance; }
+  inline int64_t GetMaxSessionsPerInstance() const { return m_maxSessionsPerInstance; }
   inline bool MaxSessionsPerInstanceHasBeenSet() const { return m_maxSessionsPerInstanceHasBeenSet; }
-  inline void SetMaxSessionsPerInstance(int value) {
+  inline void SetMaxSessionsPerInstance(int64_t value) {
     m_maxSessionsPerInstanceHasBeenSet = true;
     m_maxSessionsPerInstance = value;
   }
-  inline Fleet& WithMaxSessionsPerInstance(int value) {
+  inline Fleet& WithMaxSessionsPerInstance(int64_t value) {
     SetMaxSessionsPerInstance(value);
     return *this;
   }
@@ -622,9 +622,9 @@ class Fleet {
 
   ComputeCapacityStatus m_computeCapacityStatus;
 
-  int m_maxUserDurationInSeconds{0};
+  int64_t m_maxUserDurationInSeconds{0};
 
-  int m_disconnectTimeoutInSeconds{0};
+  int64_t m_disconnectTimeoutInSeconds{0};
 
   FleetState m_state{FleetState::NOT_SET};
 
@@ -638,7 +638,7 @@ class Fleet {
 
   DomainJoinInfo m_domainJoinInfo;
 
-  int m_idleDisconnectTimeoutInSeconds{0};
+  int64_t m_idleDisconnectTimeoutInSeconds{0};
 
   Aws::String m_iamRoleArn;
 
@@ -646,13 +646,13 @@ class Fleet {
 
   PlatformType m_platform{PlatformType::NOT_SET};
 
-  int m_maxConcurrentSessions{0};
+  int64_t m_maxConcurrentSessions{0};
 
   Aws::Vector<Aws::String> m_usbDeviceFilterStrings;
 
   S3Location m_sessionScriptS3Location;
 
-  int m_maxSessionsPerInstance{0};
+  int64_t m_maxSessionsPerInstance{0};
 
   VolumeConfig m_rootVolumeConfig;
 

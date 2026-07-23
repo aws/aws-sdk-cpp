@@ -42,6 +42,7 @@ static const int EXECUTE_STATEMENT_HASH = HashingUtils::HashString("ExecuteState
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int DATABASE_CONNECTION_HASH = HashingUtils::HashString("DatabaseConnectionException");
 static const int QUERY_TIMEOUT_HASH = HashingUtils::HashString("QueryTimeoutException");
+static const int ACTIVE_WAITING_REQUESTS_EXCEEDED_HASH = HashingUtils::HashString("ActiveWaitingRequestsExceededException");
 static const int ACTIVE_SESSIONS_EXCEEDED_HASH = HashingUtils::HashString("ActiveSessionsExceededException");
 static const int ACTIVE_STATEMENTS_EXCEEDED_HASH = HashingUtils::HashString("ActiveStatementsExceededException");
 
@@ -59,6 +60,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::DATABASE_CONNECTION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == QUERY_TIMEOUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::QUERY_TIMEOUT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ACTIVE_WAITING_REQUESTS_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::ACTIVE_WAITING_REQUESTS_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
   } else if (hashCode == ACTIVE_SESSIONS_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::ACTIVE_SESSIONS_EXCEEDED),
                                 RetryableType::NOT_RETRYABLE);

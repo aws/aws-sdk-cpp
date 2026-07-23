@@ -113,6 +113,7 @@
 #include <aws/bedrock-agentcore/model/DeleteRecommendationResult.h>
 #include <aws/bedrock-agentcore/model/DescriptorType.h>
 #include <aws/bedrock-agentcore/model/Descriptors.h>
+#include <aws/bedrock-agentcore/model/EfsConfiguration.h>
 #include <aws/bedrock-agentcore/model/EmbeddedCryptoWallet.h>
 #include <aws/bedrock-agentcore/model/EvaluateRequest.h>
 #include <aws/bedrock-agentcore/model/EvaluateResult.h>
@@ -369,6 +370,7 @@
 #include <aws/bedrock-agentcore/model/RightExpression.h>
 #include <aws/bedrock-agentcore/model/Role.h>
 #include <aws/bedrock-agentcore/model/RootCauseCluster.h>
+#include <aws/bedrock-agentcore/model/S3FilesConfiguration.h>
 #include <aws/bedrock-agentcore/model/S3Location.h>
 #include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileRequest.h>
 #include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileResult.h>
@@ -430,6 +432,7 @@
 #include <aws/bedrock-agentcore/model/ToolName.h>
 #include <aws/bedrock-agentcore/model/ToolResultStructuredContent.h>
 #include <aws/bedrock-agentcore/model/ToolsDefinition.h>
+#include <aws/bedrock-agentcore/model/ToolsFileSystemConfiguration.h>
 #include <aws/bedrock-agentcore/model/Unit.h>
 #include <aws/bedrock-agentcore/model/UpdateABTestRequest.h>
 #include <aws/bedrock-agentcore/model/UpdateABTestResult.h>
