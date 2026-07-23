@@ -8,6 +8,10 @@ file(GLOB AWS_APPFLOW_MODEL_HEADERS
     "include/aws/appflow/model/*.h"
 )
 
+file(GLOB AWS_APPFLOW_INTERNAL_HEADERS
+    "include/aws/appflow/internal/*.h"
+)
+
 file(GLOB AWS_APPFLOW_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_APPFLOW_MODEL_SOURCE
 
 file(GLOB APPFLOW_UNIFIED_HEADERS
     ${AWS_APPFLOW_HEADERS}
+    ${AWS_APPFLOW_INTERNAL_HEADERS}
     ${AWS_APPFLOW_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\appflow" FILES ${AWS_APPFLOW_HEADERS})
+        source_group("Header Files\\aws\\appflow\\internal" FILES ${AWS_APPFLOW_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\appflow\\model" FILES ${AWS_APPFLOW_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_APPFLOW_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_APPFLOW_MODEL_SOURCE})

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iot-managed-integrations/IoTManagedIntegrationsEndpointRules.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsEndpointProvider : pu
  public:
   using IoTManagedIntegrationsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IoTManagedIntegrationsEndpointProvider()
-      : IoTManagedIntegrationsDefaultEpProviderBase(Aws::IoTManagedIntegrations::IoTManagedIntegrationsEndpointRules::GetRulesBlob(),
-                                                    Aws::IoTManagedIntegrations::IoTManagedIntegrationsEndpointRules::RulesBlobSize) {}
+  IoTManagedIntegrationsEndpointProvider();
 
   ~IoTManagedIntegrationsEndpointProvider() {}
 };

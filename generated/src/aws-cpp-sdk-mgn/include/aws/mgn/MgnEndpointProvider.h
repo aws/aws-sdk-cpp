@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/mgn/MgnEndpointRules.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_MGN_API MgnEndpointProvider : public MgnDefaultEpProviderBase {
  public:
   using MgnResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MgnEndpointProvider() : MgnDefaultEpProviderBase(Aws::mgn::MgnEndpointRules::GetRulesBlob(), Aws::mgn::MgnEndpointRules::RulesBlobSize) {}
+  MgnEndpointProvider();
 
   ~MgnEndpointProvider() {}
 };

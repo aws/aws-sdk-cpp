@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/identitystore/IdentityStoreEndpointRules.h>
+#include <aws/identitystore/internal/IdentityStoreEndpointRules.h>
 
 namespace Aws {
 namespace IdentityStore {

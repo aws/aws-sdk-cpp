@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/globalaccelerator/GlobalAcceleratorEndpointRules.h>
+#include <aws/globalaccelerator/internal/GlobalAcceleratorEndpointRules.h>
 
 namespace Aws {
 namespace GlobalAccelerator {

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/taxsettings/TaxSettingsEndpointRules.h>
 #include <aws/taxsettings/TaxSettings_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_TAXSETTINGS_API TaxSettingsEndpointProvider : public TaxSettingsDefaul
  public:
   using TaxSettingsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  TaxSettingsEndpointProvider()
-      : TaxSettingsDefaultEpProviderBase(Aws::TaxSettings::TaxSettingsEndpointRules::GetRulesBlob(),
-                                         Aws::TaxSettings::TaxSettingsEndpointRules::RulesBlobSize) {}
+  TaxSettingsEndpointProvider();
 
   ~TaxSettingsEndpointProvider() {}
 };

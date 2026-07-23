@@ -8,6 +8,10 @@ file(GLOB AWS_AUDITMANAGER_MODEL_HEADERS
     "include/aws/auditmanager/model/*.h"
 )
 
+file(GLOB AWS_AUDITMANAGER_INTERNAL_HEADERS
+    "include/aws/auditmanager/internal/*.h"
+)
+
 file(GLOB AWS_AUDITMANAGER_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_AUDITMANAGER_MODEL_SOURCE
 
 file(GLOB AUDITMANAGER_UNIFIED_HEADERS
     ${AWS_AUDITMANAGER_HEADERS}
+    ${AWS_AUDITMANAGER_INTERNAL_HEADERS}
     ${AWS_AUDITMANAGER_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\auditmanager" FILES ${AWS_AUDITMANAGER_HEADERS})
+        source_group("Header Files\\aws\\auditmanager\\internal" FILES ${AWS_AUDITMANAGER_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\auditmanager\\model" FILES ${AWS_AUDITMANAGER_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_AUDITMANAGER_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_AUDITMANAGER_MODEL_SOURCE})

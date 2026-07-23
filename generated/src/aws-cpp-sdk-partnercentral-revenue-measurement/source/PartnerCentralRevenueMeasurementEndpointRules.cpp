@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementEndpointRules.h>
+#include <aws/partnercentral-revenue-measurement/internal/PartnerCentralRevenueMeasurementEndpointRules.h>
 
 namespace Aws {
 namespace PartnerCentralRevenueMeasurement {

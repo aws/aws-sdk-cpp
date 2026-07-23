@@ -8,6 +8,10 @@ file(GLOB AWS_DMS_MODEL_HEADERS
     "include/aws/dms/model/*.h"
 )
 
+file(GLOB AWS_DMS_INTERNAL_HEADERS
+    "include/aws/dms/internal/*.h"
+)
+
 file(GLOB AWS_DMS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_DMS_MODEL_SOURCE
 
 file(GLOB DMS_UNIFIED_HEADERS
     ${AWS_DMS_HEADERS}
+    ${AWS_DMS_INTERNAL_HEADERS}
     ${AWS_DMS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\dms" FILES ${AWS_DMS_HEADERS})
+        source_group("Header Files\\aws\\dms\\internal" FILES ${AWS_DMS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\dms\\model" FILES ${AWS_DMS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_DMS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_DMS_MODEL_SOURCE})

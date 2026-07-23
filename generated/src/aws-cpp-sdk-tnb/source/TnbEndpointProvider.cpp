@@ -4,9 +4,14 @@
  */
 
 #include <aws/tnb/TnbEndpointProvider.h>
+#include <aws/tnb/internal/TnbEndpointRules.h>
 
 namespace Aws {
 namespace tnb {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+TnbEndpointProvider::TnbEndpointProvider()
+    : TnbDefaultEpProviderBase(Aws::tnb::TnbEndpointRules::GetRulesBlob(), Aws::tnb::TnbEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace tnb
 }  // namespace Aws

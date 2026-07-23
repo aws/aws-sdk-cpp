@@ -36,7 +36,8 @@ public class MainGenerator {
                                                             String serviceName, String languageBinding,
                                                             String namespace, String licenseText, boolean generateStandalonePackage,
                                                             boolean enableVirtualOperations, boolean disableSmithyGeneration,
-                                                            boolean useSmithyClient, boolean skipModelGeneration) throws Exception {
+                                                            boolean useSmithyClient, boolean skipModelGeneration,
+                                                            boolean skipEndpointRulesBlob) throws Exception {
 
         SdkSpec spec = new SdkSpec(languageBinding, serviceName, null);
         // Transform to ServiceModel
@@ -51,6 +52,7 @@ public class MainGenerator {
         serviceModel.setDisableSmithyGeneration(disableSmithyGeneration);
         serviceModel.setUseSmithyClient(useSmithyClient);
         serviceModel.setSkipModelGeneration(skipModelGeneration);
+        serviceModel.setSkipEndpointRulesBlob(skipEndpointRulesBlob);
 
         spec.setVersion(serviceModel.getMetadata().getApiVersion());
 

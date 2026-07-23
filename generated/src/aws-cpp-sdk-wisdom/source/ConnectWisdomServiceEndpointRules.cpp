@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/wisdom/ConnectWisdomServiceEndpointRules.h>
+#include <aws/wisdom/internal/ConnectWisdomServiceEndpointRules.h>
 
 namespace Aws {
 namespace ConnectWisdomService {

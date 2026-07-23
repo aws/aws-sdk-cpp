@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/connect-contact-lens/ConnectContactLensEndpointRules.h>
+#include <aws/connect-contact-lens/internal/ConnectContactLensEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

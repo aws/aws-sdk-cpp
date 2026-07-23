@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/codedeploy/CodeDeployEndpointRules.h>
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CODEDEPLOY_API CodeDeployEndpointProvider : public CodeDeployDefaultEp
  public:
   using CodeDeployResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CodeDeployEndpointProvider()
-      : CodeDeployDefaultEpProviderBase(Aws::CodeDeploy::CodeDeployEndpointRules::GetRulesBlob(),
-                                        Aws::CodeDeploy::CodeDeployEndpointRules::RulesBlobSize) {}
+  CodeDeployEndpointProvider();
 
   ~CodeDeployEndpointProvider() {}
 };

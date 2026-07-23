@@ -4,9 +4,15 @@
  */
 
 #include <aws/resiliencehub/ResilienceHubEndpointProvider.h>
+#include <aws/resiliencehub/internal/ResilienceHubEndpointRules.h>
 
 namespace Aws {
 namespace ResilienceHub {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ResilienceHubEndpointProvider::ResilienceHubEndpointProvider()
+    : ResilienceHubDefaultEpProviderBase(Aws::ResilienceHub::ResilienceHubEndpointRules::GetRulesBlob(),
+                                         Aws::ResilienceHub::ResilienceHubEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ResilienceHub
 }  // namespace Aws

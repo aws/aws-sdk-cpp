@@ -4,6 +4,7 @@
  */
 
 #include <aws/bedrock-agent/BedrockAgentEndpointProvider.h>
+#include <aws/bedrock-agent/internal/BedrockAgentEndpointRules.h>
 
 namespace Aws {
 #ifndef AWS_BEDROCKAGENT_EXPORTS  // Except for Windows DLL
@@ -23,6 +24,10 @@ template class Aws::Endpoint::DefaultEndpointProvider<BedrockAgent::Endpoint::Be
 
 namespace BedrockAgent {
 namespace Endpoint {
+BedrockAgentEndpointProvider::BedrockAgentEndpointProvider()
+    : BedrockAgentDefaultEpProviderBase(Aws::BedrockAgent::BedrockAgentEndpointRules::GetRulesBlob(),
+                                        Aws::BedrockAgent::BedrockAgentEndpointRules::RulesBlobSize) {}
+
 void BedrockAgentBuiltInParameters::SetFromClientConfiguration(const BedrockAgentClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const BedrockAgentClientConfiguration::BaseClientConfigClass&>(config));
 }

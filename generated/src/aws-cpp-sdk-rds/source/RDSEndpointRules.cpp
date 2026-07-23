@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/rds/RDSEndpointRules.h>
+#include <aws/rds/internal/RDSEndpointRules.h>
 
 namespace Aws {
 namespace RDS {

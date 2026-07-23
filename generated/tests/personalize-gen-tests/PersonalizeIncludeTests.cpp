@@ -8,12 +8,12 @@
 
 #include <aws/personalize/PersonalizeClient.h>
 #include <aws/personalize/PersonalizeEndpointProvider.h>
-#include <aws/personalize/PersonalizeEndpointRules.h>
 #include <aws/personalize/PersonalizeErrorMarshaller.h>
 #include <aws/personalize/PersonalizeErrors.h>
 #include <aws/personalize/PersonalizeRequest.h>
 #include <aws/personalize/PersonalizeServiceClientModel.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
+#include <aws/personalize/internal/PersonalizeEndpointRules.h>
 #include <aws/personalize/model/Algorithm.h>
 #include <aws/personalize/model/AlgorithmImage.h>
 #include <aws/personalize/model/AutoMLConfig.h>

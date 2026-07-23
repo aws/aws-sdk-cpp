@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/email/SESEndpointRules.h>
 #include <aws/email/SES_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_SES_API SESEndpointProvider : public SESDefaultEpProviderBase {
  public:
   using SESResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SESEndpointProvider() : SESDefaultEpProviderBase(Aws::SES::SESEndpointRules::GetRulesBlob(), Aws::SES::SESEndpointRules::RulesBlobSize) {}
+  SESEndpointProvider();
 
   ~SESEndpointProvider() {}
 };

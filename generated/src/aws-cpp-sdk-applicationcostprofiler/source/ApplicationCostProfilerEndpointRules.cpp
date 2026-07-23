@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/applicationcostprofiler/ApplicationCostProfilerEndpointRules.h>
+#include <aws/applicationcostprofiler/internal/ApplicationCostProfilerEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

@@ -4,9 +4,15 @@
  */
 
 #include <aws/amplifyuibuilder/AmplifyUIBuilderEndpointProvider.h>
+#include <aws/amplifyuibuilder/internal/AmplifyUIBuilderEndpointRules.h>
 
 namespace Aws {
 namespace AmplifyUIBuilder {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+AmplifyUIBuilderEndpointProvider::AmplifyUIBuilderEndpointProvider()
+    : AmplifyUIBuilderDefaultEpProviderBase(Aws::AmplifyUIBuilder::AmplifyUIBuilderEndpointRules::GetRulesBlob(),
+                                            Aws::AmplifyUIBuilder::AmplifyUIBuilderEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace AmplifyUIBuilder
 }  // namespace Aws

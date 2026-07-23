@@ -4,9 +4,15 @@
  */
 
 #include <aws/kendra-ranking/KendraRankingEndpointProvider.h>
+#include <aws/kendra-ranking/internal/KendraRankingEndpointRules.h>
 
 namespace Aws {
 namespace KendraRanking {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+KendraRankingEndpointProvider::KendraRankingEndpointProvider()
+    : KendraRankingDefaultEpProviderBase(Aws::KendraRanking::KendraRankingEndpointRules::GetRulesBlob(),
+                                         Aws::KendraRanking::KendraRankingEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace KendraRanking
 }  // namespace Aws

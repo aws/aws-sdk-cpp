@@ -8,12 +8,12 @@
 
 #include <aws/personalize-runtime/PersonalizeRuntimeClient.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeEndpointProvider.h>
-#include <aws/personalize-runtime/PersonalizeRuntimeEndpointRules.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeErrorMarshaller.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeErrors.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeRequest.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeServiceClientModel.h>
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
+#include <aws/personalize-runtime/internal/PersonalizeRuntimeEndpointRules.h>
 #include <aws/personalize-runtime/model/GetActionRecommendationsRequest.h>
 #include <aws/personalize-runtime/model/GetActionRecommendationsResult.h>
 #include <aws/personalize-runtime/model/GetPersonalizedRankingRequest.h>

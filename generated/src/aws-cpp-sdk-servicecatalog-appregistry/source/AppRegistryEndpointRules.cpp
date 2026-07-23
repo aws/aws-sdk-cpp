@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/servicecatalog-appregistry/AppRegistryEndpointRules.h>
+#include <aws/servicecatalog-appregistry/internal/AppRegistryEndpointRules.h>
 
 namespace Aws {
 namespace AppRegistry {

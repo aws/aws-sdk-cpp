@@ -4,9 +4,15 @@
  */
 
 #include <aws/sustainability/SustainabilityEndpointProvider.h>
+#include <aws/sustainability/internal/SustainabilityEndpointRules.h>
 
 namespace Aws {
 namespace Sustainability {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SustainabilityEndpointProvider::SustainabilityEndpointProvider()
+    : SustainabilityDefaultEpProviderBase(Aws::Sustainability::SustainabilityEndpointRules::GetRulesBlob(),
+                                          Aws::Sustainability::SustainabilityEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Sustainability
 }  // namespace Aws

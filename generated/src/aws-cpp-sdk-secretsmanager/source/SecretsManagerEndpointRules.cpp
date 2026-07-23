@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/secretsmanager/SecretsManagerEndpointRules.h>
+#include <aws/secretsmanager/internal/SecretsManagerEndpointRules.h>
 
 namespace Aws {
 namespace SecretsManager {

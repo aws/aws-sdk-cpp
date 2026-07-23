@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/controltower/ControlTowerEndpointRules.h>
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CONTROLTOWER_API ControlTowerEndpointProvider : public ControlTowerDef
  public:
   using ControlTowerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ControlTowerEndpointProvider()
-      : ControlTowerDefaultEpProviderBase(Aws::ControlTower::ControlTowerEndpointRules::GetRulesBlob(),
-                                          Aws::ControlTower::ControlTowerEndpointRules::RulesBlobSize) {}
+  ControlTowerEndpointProvider();
 
   ~ControlTowerEndpointProvider() {}
 };

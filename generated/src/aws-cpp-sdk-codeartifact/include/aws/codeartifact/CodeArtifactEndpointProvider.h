@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/codeartifact/CodeArtifactEndpointRules.h>
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CODEARTIFACT_API CodeArtifactEndpointProvider : public CodeArtifactDef
  public:
   using CodeArtifactResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CodeArtifactEndpointProvider()
-      : CodeArtifactDefaultEpProviderBase(Aws::CodeArtifact::CodeArtifactEndpointRules::GetRulesBlob(),
-                                          Aws::CodeArtifact::CodeArtifactEndpointRules::RulesBlobSize) {}
+  CodeArtifactEndpointProvider();
 
   ~CodeArtifactEndpointProvider() {}
 };

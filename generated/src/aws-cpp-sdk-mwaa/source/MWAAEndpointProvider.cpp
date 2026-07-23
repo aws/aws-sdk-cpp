@@ -4,9 +4,14 @@
  */
 
 #include <aws/mwaa/MWAAEndpointProvider.h>
+#include <aws/mwaa/internal/MWAAEndpointRules.h>
 
 namespace Aws {
 namespace MWAA {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MWAAEndpointProvider::MWAAEndpointProvider()
+    : MWAADefaultEpProviderBase(Aws::MWAA::MWAAEndpointRules::GetRulesBlob(), Aws::MWAA::MWAAEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MWAA
 }  // namespace Aws

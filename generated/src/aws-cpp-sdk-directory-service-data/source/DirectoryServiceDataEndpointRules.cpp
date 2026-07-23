@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/directory-service-data/DirectoryServiceDataEndpointRules.h>
+#include <aws/directory-service-data/internal/DirectoryServiceDataEndpointRules.h>
 
 namespace Aws {
 namespace DirectoryServiceData {

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/iotwireless/IoTWirelessEndpointRules.h>
+#include <aws/iotwireless/internal/IoTWirelessEndpointRules.h>
 
 namespace Aws {
 namespace IoTWireless {

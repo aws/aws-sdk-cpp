@@ -8,6 +8,10 @@ file(GLOB AWS_CLOUDDIRECTORY_MODEL_HEADERS
     "include/aws/clouddirectory/model/*.h"
 )
 
+file(GLOB AWS_CLOUDDIRECTORY_INTERNAL_HEADERS
+    "include/aws/clouddirectory/internal/*.h"
+)
+
 file(GLOB AWS_CLOUDDIRECTORY_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CLOUDDIRECTORY_MODEL_SOURCE
 
 file(GLOB CLOUDDIRECTORY_UNIFIED_HEADERS
     ${AWS_CLOUDDIRECTORY_HEADERS}
+    ${AWS_CLOUDDIRECTORY_INTERNAL_HEADERS}
     ${AWS_CLOUDDIRECTORY_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\clouddirectory" FILES ${AWS_CLOUDDIRECTORY_HEADERS})
+        source_group("Header Files\\aws\\clouddirectory\\internal" FILES ${AWS_CLOUDDIRECTORY_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\clouddirectory\\model" FILES ${AWS_CLOUDDIRECTORY_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CLOUDDIRECTORY_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CLOUDDIRECTORY_MODEL_SOURCE})

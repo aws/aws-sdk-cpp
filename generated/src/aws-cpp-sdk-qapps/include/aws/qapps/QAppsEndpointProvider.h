@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/qapps/QAppsEndpointRules.h>
 #include <aws/qapps/QApps_EXPORTS.h>
 
 namespace Aws {
@@ -40,8 +39,7 @@ class AWS_QAPPS_API QAppsEndpointProvider : public QAppsDefaultEpProviderBase {
  public:
   using QAppsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  QAppsEndpointProvider()
-      : QAppsDefaultEpProviderBase(Aws::QApps::QAppsEndpointRules::GetRulesBlob(), Aws::QApps::QAppsEndpointRules::RulesBlobSize) {}
+  QAppsEndpointProvider();
 
   ~QAppsEndpointProvider() {}
 };

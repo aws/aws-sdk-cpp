@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/chime-sdk-voice/ChimeSDKVoiceEndpointRules.h>
+#include <aws/chime-sdk-voice/internal/ChimeSDKVoiceEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

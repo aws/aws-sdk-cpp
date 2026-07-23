@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/textract/TextractEndpointRules.h>
 #include <aws/textract/Textract_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_TEXTRACT_API TextractEndpointProvider : public TextractDefaultEpProvid
  public:
   using TextractResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  TextractEndpointProvider()
-      : TextractDefaultEpProviderBase(Aws::Textract::TextractEndpointRules::GetRulesBlob(),
-                                      Aws::Textract::TextractEndpointRules::RulesBlobSize) {}
+  TextractEndpointProvider();
 
   ~TextractEndpointProvider() {}
 };

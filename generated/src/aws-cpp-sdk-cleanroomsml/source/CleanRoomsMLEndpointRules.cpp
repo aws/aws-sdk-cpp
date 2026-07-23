@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cleanroomsml/CleanRoomsMLEndpointRules.h>
+#include <aws/cleanroomsml/internal/CleanRoomsMLEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/application-autoscaling/ApplicationAutoScalingEndpointRules.h>
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -44,9 +43,7 @@ class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingEndpointProvider : pu
  public:
   using ApplicationAutoScalingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ApplicationAutoScalingEndpointProvider()
-      : ApplicationAutoScalingDefaultEpProviderBase(Aws::ApplicationAutoScaling::ApplicationAutoScalingEndpointRules::GetRulesBlob(),
-                                                    Aws::ApplicationAutoScaling::ApplicationAutoScalingEndpointRules::RulesBlobSize) {}
+  ApplicationAutoScalingEndpointProvider();
 
   ~ApplicationAutoScalingEndpointProvider() {}
 };

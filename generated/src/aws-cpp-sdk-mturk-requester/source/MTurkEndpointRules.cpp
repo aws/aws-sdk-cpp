@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/mturk-requester/MTurkEndpointRules.h>
+#include <aws/mturk-requester/internal/MTurkEndpointRules.h>
 
 namespace Aws {
 namespace MTurk {

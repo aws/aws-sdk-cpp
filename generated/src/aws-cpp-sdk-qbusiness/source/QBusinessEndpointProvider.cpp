@@ -4,9 +4,15 @@
  */
 
 #include <aws/qbusiness/QBusinessEndpointProvider.h>
+#include <aws/qbusiness/internal/QBusinessEndpointRules.h>
 
 namespace Aws {
 namespace QBusiness {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+QBusinessEndpointProvider::QBusinessEndpointProvider()
+    : QBusinessDefaultEpProviderBase(Aws::QBusiness::QBusinessEndpointRules::GetRulesBlob(),
+                                     Aws::QBusiness::QBusinessEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace QBusiness
 }  // namespace Aws

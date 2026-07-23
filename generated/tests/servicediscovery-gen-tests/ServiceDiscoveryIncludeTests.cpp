@@ -8,12 +8,12 @@
 
 #include <aws/servicediscovery/ServiceDiscoveryClient.h>
 #include <aws/servicediscovery/ServiceDiscoveryEndpointProvider.h>
-#include <aws/servicediscovery/ServiceDiscoveryEndpointRules.h>
 #include <aws/servicediscovery/ServiceDiscoveryErrorMarshaller.h>
 #include <aws/servicediscovery/ServiceDiscoveryErrors.h>
 #include <aws/servicediscovery/ServiceDiscoveryRequest.h>
 #include <aws/servicediscovery/ServiceDiscoveryServiceClientModel.h>
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
+#include <aws/servicediscovery/internal/ServiceDiscoveryEndpointRules.h>
 #include <aws/servicediscovery/model/CreateHttpNamespaceRequest.h>
 #include <aws/servicediscovery/model/CreateHttpNamespaceResult.h>
 #include <aws/servicediscovery/model/CreatePrivateDnsNamespaceRequest.h>

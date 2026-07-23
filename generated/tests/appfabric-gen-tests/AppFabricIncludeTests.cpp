@@ -8,12 +8,12 @@
 
 #include <aws/appfabric/AppFabricClient.h>
 #include <aws/appfabric/AppFabricEndpointProvider.h>
-#include <aws/appfabric/AppFabricEndpointRules.h>
 #include <aws/appfabric/AppFabricErrorMarshaller.h>
 #include <aws/appfabric/AppFabricErrors.h>
 #include <aws/appfabric/AppFabricRequest.h>
 #include <aws/appfabric/AppFabricServiceClientModel.h>
 #include <aws/appfabric/AppFabric_EXPORTS.h>
+#include <aws/appfabric/internal/AppFabricEndpointRules.h>
 #include <aws/appfabric/model/ApiKeyCredential.h>
 #include <aws/appfabric/model/AppAuthorization.h>
 #include <aws/appfabric/model/AppAuthorizationStatus.h>

@@ -8,12 +8,12 @@
 
 #include <aws/mediapackagev2/Mediapackagev2Client.h>
 #include <aws/mediapackagev2/Mediapackagev2EndpointProvider.h>
-#include <aws/mediapackagev2/Mediapackagev2EndpointRules.h>
 #include <aws/mediapackagev2/Mediapackagev2ErrorMarshaller.h>
 #include <aws/mediapackagev2/Mediapackagev2Errors.h>
 #include <aws/mediapackagev2/Mediapackagev2Request.h>
 #include <aws/mediapackagev2/Mediapackagev2ServiceClientModel.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
+#include <aws/mediapackagev2/internal/Mediapackagev2EndpointRules.h>
 #include <aws/mediapackagev2/model/AdMarkerDash.h>
 #include <aws/mediapackagev2/model/AdMarkerHls.h>
 #include <aws/mediapackagev2/model/CancelHarvestJobRequest.h>

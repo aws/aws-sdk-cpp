@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/fms/FMSEndpointRules.h>
+#include <aws/fms/internal/FMSEndpointRules.h>
 
 namespace Aws {
 namespace FMS {

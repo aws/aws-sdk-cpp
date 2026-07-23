@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/iotsecuretunneling/IoTSecureTunnelingEndpointRules.h>
+#include <aws/iotsecuretunneling/internal/IoTSecureTunnelingEndpointRules.h>
 
 namespace Aws {
 namespace IoTSecureTunneling {

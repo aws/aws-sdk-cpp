@@ -8,6 +8,10 @@ file(GLOB AWS_SUPPORT_MODEL_HEADERS
     "include/aws/support/model/*.h"
 )
 
+file(GLOB AWS_SUPPORT_INTERNAL_HEADERS
+    "include/aws/support/internal/*.h"
+)
+
 file(GLOB AWS_SUPPORT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SUPPORT_MODEL_SOURCE
 
 file(GLOB SUPPORT_UNIFIED_HEADERS
     ${AWS_SUPPORT_HEADERS}
+    ${AWS_SUPPORT_INTERNAL_HEADERS}
     ${AWS_SUPPORT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\support" FILES ${AWS_SUPPORT_HEADERS})
+        source_group("Header Files\\aws\\support\\internal" FILES ${AWS_SUPPORT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\support\\model" FILES ${AWS_SUPPORT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SUPPORT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SUPPORT_MODEL_SOURCE})

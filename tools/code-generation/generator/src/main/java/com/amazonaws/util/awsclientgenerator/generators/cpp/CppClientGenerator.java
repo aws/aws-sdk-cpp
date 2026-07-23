@@ -121,8 +121,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
         }
         fileList.add(generateClientConfigurationFile(serviceModel));
         if (serviceModel.getEndpointRules() != null) {
-            fileList.add(generateEndpointRulesHeaderFile(serviceModel));
-            fileList.add(generateEndpointRulesSourceFile(serviceModel));
+            if (!serviceModel.isSkipEndpointRulesBlob()) {
+                fileList.add(generateEndpointRulesHeaderFile(serviceModel));
+                fileList.add(generateEndpointRulesSourceFile(serviceModel));
+            }
             fileList.add(generateEndpointProviderHeaderFile(serviceModel));
             fileList.add(generateEndpointProviderSourceFile(serviceModel));
 
@@ -585,7 +587,8 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     protected SdkFileEntry generateEndpointRulesHeaderFile(ServiceModel serviceModel) throws Exception {
         String templateName = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointRulesHeader.vm";
-        String fileName = String.format("include/aws/%s/%sEndpointRules.h", serviceModel.getMetadata().getProjectName(),
+        String fileName = String.format("include/aws/%s/internal/%sEndpointRules.h",
+                serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
         return generateSingleSourceFile(serviceModel, templateName, fileName);
     }

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/lakeformation/LakeFormationEndpointRules.h>
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_LAKEFORMATION_API LakeFormationEndpointProvider : public LakeFormation
  public:
   using LakeFormationResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  LakeFormationEndpointProvider()
-      : LakeFormationDefaultEpProviderBase(Aws::LakeFormation::LakeFormationEndpointRules::GetRulesBlob(),
-                                           Aws::LakeFormation::LakeFormationEndpointRules::RulesBlobSize) {}
+  LakeFormationEndpointProvider();
 
   ~LakeFormationEndpointProvider() {}
 };

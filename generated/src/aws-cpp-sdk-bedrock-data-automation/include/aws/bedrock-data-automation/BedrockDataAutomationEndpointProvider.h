@@ -5,7 +5,6 @@
 
 #pragma once
 #include <aws/bedrock-data-automation/BedrockDataAutomationClientConfiguration.h>
-#include <aws/bedrock-data-automation/BedrockDataAutomationEndpointRules.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
@@ -69,9 +68,7 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationEndpointProvider : publ
  public:
   using BedrockDataAutomationResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BedrockDataAutomationEndpointProvider()
-      : BedrockDataAutomationDefaultEpProviderBase(Aws::BedrockDataAutomation::BedrockDataAutomationEndpointRules::GetRulesBlob(),
-                                                   Aws::BedrockDataAutomation::BedrockDataAutomationEndpointRules::RulesBlobSize) {}
+  BedrockDataAutomationEndpointProvider();
 
   ~BedrockDataAutomationEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/mturk-requester/MTurkClient.h>
 #include <aws/mturk-requester/MTurkEndpointProvider.h>
-#include <aws/mturk-requester/MTurkEndpointRules.h>
 #include <aws/mturk-requester/MTurkErrorMarshaller.h>
 #include <aws/mturk-requester/MTurkErrors.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/mturk-requester/MTurkServiceClientModel.h>
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
+#include <aws/mturk-requester/internal/MTurkEndpointRules.h>
 #include <aws/mturk-requester/model/AcceptQualificationRequestRequest.h>
 #include <aws/mturk-requester/model/AcceptQualificationRequestResult.h>
 #include <aws/mturk-requester/model/ApproveAssignmentRequest.h>

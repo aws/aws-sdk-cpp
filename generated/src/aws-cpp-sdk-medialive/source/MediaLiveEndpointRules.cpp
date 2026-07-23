@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/medialive/MediaLiveEndpointRules.h>
+#include <aws/medialive/internal/MediaLiveEndpointRules.h>
 
 namespace Aws {
 namespace MediaLive {

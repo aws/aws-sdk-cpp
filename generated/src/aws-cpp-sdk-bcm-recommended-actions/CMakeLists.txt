@@ -8,6 +8,10 @@ file(GLOB AWS_BCM-RECOMMENDED-ACTIONS_MODEL_HEADERS
     "include/aws/bcm-recommended-actions/model/*.h"
 )
 
+file(GLOB AWS_BCM-RECOMMENDED-ACTIONS_INTERNAL_HEADERS
+    "include/aws/bcm-recommended-actions/internal/*.h"
+)
+
 file(GLOB AWS_BCM-RECOMMENDED-ACTIONS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_BCM-RECOMMENDED-ACTIONS_MODEL_SOURCE
 
 file(GLOB BCM-RECOMMENDED-ACTIONS_UNIFIED_HEADERS
     ${AWS_BCM-RECOMMENDED-ACTIONS_HEADERS}
+    ${AWS_BCM-RECOMMENDED-ACTIONS_INTERNAL_HEADERS}
     ${AWS_BCM-RECOMMENDED-ACTIONS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\bcm-recommended-actions" FILES ${AWS_BCM-RECOMMENDED-ACTIONS_HEADERS})
+        source_group("Header Files\\aws\\bcm-recommended-actions\\internal" FILES ${AWS_BCM-RECOMMENDED-ACTIONS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\bcm-recommended-actions\\model" FILES ${AWS_BCM-RECOMMENDED-ACTIONS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_BCM-RECOMMENDED-ACTIONS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_BCM-RECOMMENDED-ACTIONS_MODEL_SOURCE})

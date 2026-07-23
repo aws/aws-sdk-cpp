@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/personalize/PersonalizeEndpointRules.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_PERSONALIZE_API PersonalizeEndpointProvider : public PersonalizeDefaul
  public:
   using PersonalizeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PersonalizeEndpointProvider()
-      : PersonalizeDefaultEpProviderBase(Aws::Personalize::PersonalizeEndpointRules::GetRulesBlob(),
-                                         Aws::Personalize::PersonalizeEndpointRules::RulesBlobSize) {}
+  PersonalizeEndpointProvider();
 
   ~PersonalizeEndpointProvider() {}
 };

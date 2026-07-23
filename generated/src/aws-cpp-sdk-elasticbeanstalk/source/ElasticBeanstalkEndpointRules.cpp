@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/elasticbeanstalk/ElasticBeanstalkEndpointRules.h>
+#include <aws/elasticbeanstalk/internal/ElasticBeanstalkEndpointRules.h>
 
 namespace Aws {
 namespace ElasticBeanstalk {

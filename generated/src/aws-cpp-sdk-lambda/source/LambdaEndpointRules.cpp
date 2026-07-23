@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/lambda/LambdaEndpointRules.h>
+#include <aws/lambda/internal/LambdaEndpointRules.h>
 
 namespace Aws {
 namespace Lambda {

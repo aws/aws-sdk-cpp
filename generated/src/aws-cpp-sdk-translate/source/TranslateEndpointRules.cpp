@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/translate/TranslateEndpointRules.h>
+#include <aws/translate/internal/TranslateEndpointRules.h>
 
 namespace Aws {
 namespace Translate {

@@ -8,12 +8,12 @@
 
 #include <aws/chime-sdk-voice/ChimeSDKVoiceClient.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceEndpointProvider.h>
-#include <aws/chime-sdk-voice/ChimeSDKVoiceEndpointRules.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceErrorMarshaller.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceErrors.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceRequest.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceServiceClientModel.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
+#include <aws/chime-sdk-voice/internal/ChimeSDKVoiceEndpointRules.h>
 #include <aws/chime-sdk-voice/model/Address.h>
 #include <aws/chime-sdk-voice/model/AlexaSkillStatus.h>
 #include <aws/chime-sdk-voice/model/AssociatePhoneNumbersWithVoiceConnectorGroupRequest.h>

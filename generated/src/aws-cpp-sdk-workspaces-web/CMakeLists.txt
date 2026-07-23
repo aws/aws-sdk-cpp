@@ -8,6 +8,10 @@ file(GLOB AWS_WORKSPACES-WEB_MODEL_HEADERS
     "include/aws/workspaces-web/model/*.h"
 )
 
+file(GLOB AWS_WORKSPACES-WEB_INTERNAL_HEADERS
+    "include/aws/workspaces-web/internal/*.h"
+)
+
 file(GLOB AWS_WORKSPACES-WEB_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_WORKSPACES-WEB_MODEL_SOURCE
 
 file(GLOB WORKSPACES-WEB_UNIFIED_HEADERS
     ${AWS_WORKSPACES-WEB_HEADERS}
+    ${AWS_WORKSPACES-WEB_INTERNAL_HEADERS}
     ${AWS_WORKSPACES-WEB_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\workspaces-web" FILES ${AWS_WORKSPACES-WEB_HEADERS})
+        source_group("Header Files\\aws\\workspaces-web\\internal" FILES ${AWS_WORKSPACES-WEB_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\workspaces-web\\model" FILES ${AWS_WORKSPACES-WEB_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_WORKSPACES-WEB_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_WORKSPACES-WEB_MODEL_SOURCE})

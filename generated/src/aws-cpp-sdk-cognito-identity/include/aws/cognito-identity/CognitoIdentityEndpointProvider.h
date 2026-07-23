@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/cognito-identity/CognitoIdentityEndpointRules.h>
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_COGNITOIDENTITY_API CognitoIdentityEndpointProvider : public CognitoId
  public:
   using CognitoIdentityResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CognitoIdentityEndpointProvider()
-      : CognitoIdentityDefaultEpProviderBase(Aws::CognitoIdentity::CognitoIdentityEndpointRules::GetRulesBlob(),
-                                             Aws::CognitoIdentity::CognitoIdentityEndpointRules::RulesBlobSize) {}
+  CognitoIdentityEndpointProvider();
 
   ~CognitoIdentityEndpointProvider() {}
 };

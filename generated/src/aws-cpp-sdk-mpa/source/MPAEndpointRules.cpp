@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/mpa/MPAEndpointRules.h>
+#include <aws/mpa/internal/MPAEndpointRules.h>
 
 namespace Aws {
 namespace MPA {

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/route53globalresolver/Route53GlobalResolverEndpointRules.h>
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_ROUTE53GLOBALRESOLVER_API Route53GlobalResolverEndpointProvider : publ
  public:
   using Route53GlobalResolverResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  Route53GlobalResolverEndpointProvider()
-      : Route53GlobalResolverDefaultEpProviderBase(Aws::Route53GlobalResolver::Route53GlobalResolverEndpointRules::GetRulesBlob(),
-                                                   Aws::Route53GlobalResolver::Route53GlobalResolverEndpointRules::RulesBlobSize) {}
+  Route53GlobalResolverEndpointProvider();
 
   ~Route53GlobalResolverEndpointProvider() {}
 };

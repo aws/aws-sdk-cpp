@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/geo-places/GeoPlacesEndpointRules.h>
+#include <aws/geo-places/internal/GeoPlacesEndpointRules.h>
 
 namespace Aws {
 namespace GeoPlaces {

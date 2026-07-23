@@ -8,12 +8,12 @@
 
 #include <aws/pricing/PricingClient.h>
 #include <aws/pricing/PricingEndpointProvider.h>
-#include <aws/pricing/PricingEndpointRules.h>
 #include <aws/pricing/PricingErrorMarshaller.h>
 #include <aws/pricing/PricingErrors.h>
 #include <aws/pricing/PricingRequest.h>
 #include <aws/pricing/PricingServiceClientModel.h>
 #include <aws/pricing/Pricing_EXPORTS.h>
+#include <aws/pricing/internal/PricingEndpointRules.h>
 #include <aws/pricing/model/AttributeValue.h>
 #include <aws/pricing/model/DescribeServicesRequest.h>
 #include <aws/pricing/model/DescribeServicesResult.h>

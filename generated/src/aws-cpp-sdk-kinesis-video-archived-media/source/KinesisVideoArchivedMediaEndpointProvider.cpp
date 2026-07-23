@@ -4,9 +4,16 @@
  */
 
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaEndpointProvider.h>
+#include <aws/kinesis-video-archived-media/internal/KinesisVideoArchivedMediaEndpointRules.h>
 
 namespace Aws {
 namespace KinesisVideoArchivedMedia {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+KinesisVideoArchivedMediaEndpointProvider::KinesisVideoArchivedMediaEndpointProvider()
+    : KinesisVideoArchivedMediaDefaultEpProviderBase(
+          Aws::KinesisVideoArchivedMedia::KinesisVideoArchivedMediaEndpointRules::GetRulesBlob(),
+          Aws::KinesisVideoArchivedMedia::KinesisVideoArchivedMediaEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace KinesisVideoArchivedMedia
 }  // namespace Aws

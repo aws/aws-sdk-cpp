@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/elasticfilesystem/EFSEndpointRules.h>
+#include <aws/elasticfilesystem/internal/EFSEndpointRules.h>
 
 namespace Aws {
 namespace EFS {

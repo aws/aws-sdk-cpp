@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/firehose/FirehoseEndpointRules.h>
 #include <aws/firehose/Firehose_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_FIREHOSE_API FirehoseEndpointProvider : public FirehoseDefaultEpProvid
  public:
   using FirehoseResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  FirehoseEndpointProvider()
-      : FirehoseDefaultEpProviderBase(Aws::Firehose::FirehoseEndpointRules::GetRulesBlob(),
-                                      Aws::Firehose::FirehoseEndpointRules::RulesBlobSize) {}
+  FirehoseEndpointProvider();
 
   ~FirehoseEndpointProvider() {}
 };

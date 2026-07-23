@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/iotsitewise/IoTSiteWiseEndpointRules.h>
+#include <aws/iotsitewise/internal/IoTSiteWiseEndpointRules.h>
 
 namespace Aws {
 namespace IoTSiteWise {

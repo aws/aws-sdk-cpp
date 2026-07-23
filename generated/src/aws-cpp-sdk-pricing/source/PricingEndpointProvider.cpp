@@ -4,9 +4,14 @@
  */
 
 #include <aws/pricing/PricingEndpointProvider.h>
+#include <aws/pricing/internal/PricingEndpointRules.h>
 
 namespace Aws {
 namespace Pricing {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+PricingEndpointProvider::PricingEndpointProvider()
+    : PricingDefaultEpProviderBase(Aws::Pricing::PricingEndpointRules::GetRulesBlob(), Aws::Pricing::PricingEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Pricing
 }  // namespace Aws

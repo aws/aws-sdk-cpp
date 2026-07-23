@@ -10,12 +10,12 @@
 #include <aws/bedrock-data-automation/BedrockDataAutomationClient.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationClientConfiguration.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationEndpointProvider.h>
-#include <aws/bedrock-data-automation/BedrockDataAutomationEndpointRules.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationErrorMarshaller.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationErrors.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationRequest.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationServiceClientModel.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
+#include <aws/bedrock-data-automation/internal/BedrockDataAutomationEndpointRules.h>
 #include <aws/bedrock-data-automation/model/AudioExtractionCategory.h>
 #include <aws/bedrock-data-automation/model/AudioExtractionCategoryType.h>
 #include <aws/bedrock-data-automation/model/AudioExtractionCategoryTypeConfiguration.h>

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/detective/DetectiveEndpointRules.h>
 #include <aws/detective/Detective_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_DETECTIVE_API DetectiveEndpointProvider : public DetectiveDefaultEpPro
  public:
   using DetectiveResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DetectiveEndpointProvider()
-      : DetectiveDefaultEpProviderBase(Aws::Detective::DetectiveEndpointRules::GetRulesBlob(),
-                                       Aws::Detective::DetectiveEndpointRules::RulesBlobSize) {}
+  DetectiveEndpointProvider();
 
   ~DetectiveEndpointProvider() {}
 };

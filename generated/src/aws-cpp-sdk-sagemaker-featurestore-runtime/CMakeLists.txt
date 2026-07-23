@@ -8,6 +8,10 @@ file(GLOB AWS_SAGEMAKER-FEATURESTORE-RUNTIME_MODEL_HEADERS
     "include/aws/sagemaker-featurestore-runtime/model/*.h"
 )
 
+file(GLOB AWS_SAGEMAKER-FEATURESTORE-RUNTIME_INTERNAL_HEADERS
+    "include/aws/sagemaker-featurestore-runtime/internal/*.h"
+)
+
 file(GLOB AWS_SAGEMAKER-FEATURESTORE-RUNTIME_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SAGEMAKER-FEATURESTORE-RUNTIME_MODEL_SOURCE
 
 file(GLOB SAGEMAKER-FEATURESTORE-RUNTIME_UNIFIED_HEADERS
     ${AWS_SAGEMAKER-FEATURESTORE-RUNTIME_HEADERS}
+    ${AWS_SAGEMAKER-FEATURESTORE-RUNTIME_INTERNAL_HEADERS}
     ${AWS_SAGEMAKER-FEATURESTORE-RUNTIME_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\sagemaker-featurestore-runtime" FILES ${AWS_SAGEMAKER-FEATURESTORE-RUNTIME_HEADERS})
+        source_group("Header Files\\aws\\sagemaker-featurestore-runtime\\internal" FILES ${AWS_SAGEMAKER-FEATURESTORE-RUNTIME_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\sagemaker-featurestore-runtime\\model" FILES ${AWS_SAGEMAKER-FEATURESTORE-RUNTIME_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SAGEMAKER-FEATURESTORE-RUNTIME_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SAGEMAKER-FEATURESTORE-RUNTIME_MODEL_SOURCE})

@@ -8,6 +8,10 @@ file(GLOB AWS_BEDROCK-AGENTCORE-CONTROL_MODEL_HEADERS
     "include/aws/bedrock-agentcore-control/model/*.h"
 )
 
+file(GLOB AWS_BEDROCK-AGENTCORE-CONTROL_INTERNAL_HEADERS
+    "include/aws/bedrock-agentcore-control/internal/*.h"
+)
+
 file(GLOB AWS_BEDROCK-AGENTCORE-CONTROL_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_BEDROCK-AGENTCORE-CONTROL_MODEL_SOURCE
 
 file(GLOB BEDROCK-AGENTCORE-CONTROL_UNIFIED_HEADERS
     ${AWS_BEDROCK-AGENTCORE-CONTROL_HEADERS}
+    ${AWS_BEDROCK-AGENTCORE-CONTROL_INTERNAL_HEADERS}
     ${AWS_BEDROCK-AGENTCORE-CONTROL_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\bedrock-agentcore-control" FILES ${AWS_BEDROCK-AGENTCORE-CONTROL_HEADERS})
+        source_group("Header Files\\aws\\bedrock-agentcore-control\\internal" FILES ${AWS_BEDROCK-AGENTCORE-CONTROL_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\bedrock-agentcore-control\\model" FILES ${AWS_BEDROCK-AGENTCORE-CONTROL_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_BEDROCK-AGENTCORE-CONTROL_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_BEDROCK-AGENTCORE-CONTROL_MODEL_SOURCE})

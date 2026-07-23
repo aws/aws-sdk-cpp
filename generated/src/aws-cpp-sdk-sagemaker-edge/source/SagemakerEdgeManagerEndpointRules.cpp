@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sagemaker-edge/SagemakerEdgeManagerEndpointRules.h>
+#include <aws/sagemaker-edge/internal/SagemakerEdgeManagerEndpointRules.h>
 
 namespace Aws {
 namespace SagemakerEdgeManager {

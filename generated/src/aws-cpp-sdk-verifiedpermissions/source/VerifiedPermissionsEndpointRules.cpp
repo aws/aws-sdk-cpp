@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/verifiedpermissions/VerifiedPermissionsEndpointRules.h>
+#include <aws/verifiedpermissions/internal/VerifiedPermissionsEndpointRules.h>
 
 namespace Aws {
 namespace VerifiedPermissions {

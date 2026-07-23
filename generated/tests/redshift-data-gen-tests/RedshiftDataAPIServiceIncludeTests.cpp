@@ -8,12 +8,12 @@
 
 #include <aws/redshift-data/RedshiftDataAPIServiceClient.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceEndpointProvider.h>
-#include <aws/redshift-data/RedshiftDataAPIServiceEndpointRules.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceErrorMarshaller.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceErrors.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceRequest.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceServiceClientModel.h>
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
+#include <aws/redshift-data/internal/RedshiftDataAPIServiceEndpointRules.h>
 #include <aws/redshift-data/model/BatchExecuteStatementException.h>
 #include <aws/redshift-data/model/BatchExecuteStatementRequest.h>
 #include <aws/redshift-data/model/BatchExecuteStatementResult.h>

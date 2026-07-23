@@ -8,12 +8,12 @@
 
 #include <aws/organizations/OrganizationsClient.h>
 #include <aws/organizations/OrganizationsEndpointProvider.h>
-#include <aws/organizations/OrganizationsEndpointRules.h>
 #include <aws/organizations/OrganizationsErrorMarshaller.h>
 #include <aws/organizations/OrganizationsErrors.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/organizations/OrganizationsServiceClientModel.h>
 #include <aws/organizations/Organizations_EXPORTS.h>
+#include <aws/organizations/internal/OrganizationsEndpointRules.h>
 #include <aws/organizations/model/AcceptHandshakeRequest.h>
 #include <aws/organizations/model/AcceptHandshakeResult.h>
 #include <aws/organizations/model/AccessDeniedForDependencyException.h>

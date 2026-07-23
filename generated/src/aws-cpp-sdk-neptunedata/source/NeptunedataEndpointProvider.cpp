@@ -4,9 +4,15 @@
  */
 
 #include <aws/neptunedata/NeptunedataEndpointProvider.h>
+#include <aws/neptunedata/internal/NeptunedataEndpointRules.h>
 
 namespace Aws {
 namespace neptunedata {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+NeptunedataEndpointProvider::NeptunedataEndpointProvider()
+    : NeptunedataDefaultEpProviderBase(Aws::neptunedata::NeptunedataEndpointRules::GetRulesBlob(),
+                                       Aws::neptunedata::NeptunedataEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace neptunedata
 }  // namespace Aws

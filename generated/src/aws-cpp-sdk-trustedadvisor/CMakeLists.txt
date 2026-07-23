@@ -8,6 +8,10 @@ file(GLOB AWS_TRUSTEDADVISOR_MODEL_HEADERS
     "include/aws/trustedadvisor/model/*.h"
 )
 
+file(GLOB AWS_TRUSTEDADVISOR_INTERNAL_HEADERS
+    "include/aws/trustedadvisor/internal/*.h"
+)
+
 file(GLOB AWS_TRUSTEDADVISOR_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_TRUSTEDADVISOR_MODEL_SOURCE
 
 file(GLOB TRUSTEDADVISOR_UNIFIED_HEADERS
     ${AWS_TRUSTEDADVISOR_HEADERS}
+    ${AWS_TRUSTEDADVISOR_INTERNAL_HEADERS}
     ${AWS_TRUSTEDADVISOR_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\trustedadvisor" FILES ${AWS_TRUSTEDADVISOR_HEADERS})
+        source_group("Header Files\\aws\\trustedadvisor\\internal" FILES ${AWS_TRUSTEDADVISOR_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\trustedadvisor\\model" FILES ${AWS_TRUSTEDADVISOR_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_TRUSTEDADVISOR_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_TRUSTEDADVISOR_MODEL_SOURCE})

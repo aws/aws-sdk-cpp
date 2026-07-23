@@ -4,9 +4,15 @@
  */
 
 #include <aws/wisdom/ConnectWisdomServiceEndpointProvider.h>
+#include <aws/wisdom/internal/ConnectWisdomServiceEndpointRules.h>
 
 namespace Aws {
 namespace ConnectWisdomService {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ConnectWisdomServiceEndpointProvider::ConnectWisdomServiceEndpointProvider()
+    : ConnectWisdomServiceDefaultEpProviderBase(Aws::ConnectWisdomService::ConnectWisdomServiceEndpointRules::GetRulesBlob(),
+                                                Aws::ConnectWisdomService::ConnectWisdomServiceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ConnectWisdomService
 }  // namespace Aws

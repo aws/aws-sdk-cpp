@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/workspaces-web/WorkSpacesWebEndpointRules.h>
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_WORKSPACESWEB_API WorkSpacesWebEndpointProvider : public WorkSpacesWeb
  public:
   using WorkSpacesWebResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  WorkSpacesWebEndpointProvider()
-      : WorkSpacesWebDefaultEpProviderBase(Aws::WorkSpacesWeb::WorkSpacesWebEndpointRules::GetRulesBlob(),
-                                           Aws::WorkSpacesWeb::WorkSpacesWebEndpointRules::RulesBlobSize) {}
+  WorkSpacesWebEndpointProvider();
 
   ~WorkSpacesWebEndpointProvider() {}
 };

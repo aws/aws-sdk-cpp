@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/es/ElasticsearchServiceEndpointRules.h>
+#include <aws/es/internal/ElasticsearchServiceEndpointRules.h>
 
 namespace Aws {
 namespace ElasticsearchService {

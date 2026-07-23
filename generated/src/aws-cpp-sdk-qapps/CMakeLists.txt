@@ -8,6 +8,10 @@ file(GLOB AWS_QAPPS_MODEL_HEADERS
     "include/aws/qapps/model/*.h"
 )
 
+file(GLOB AWS_QAPPS_INTERNAL_HEADERS
+    "include/aws/qapps/internal/*.h"
+)
+
 file(GLOB AWS_QAPPS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_QAPPS_MODEL_SOURCE
 
 file(GLOB QAPPS_UNIFIED_HEADERS
     ${AWS_QAPPS_HEADERS}
+    ${AWS_QAPPS_INTERNAL_HEADERS}
     ${AWS_QAPPS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\qapps" FILES ${AWS_QAPPS_HEADERS})
+        source_group("Header Files\\aws\\qapps\\internal" FILES ${AWS_QAPPS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\qapps\\model" FILES ${AWS_QAPPS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_QAPPS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_QAPPS_MODEL_SOURCE})

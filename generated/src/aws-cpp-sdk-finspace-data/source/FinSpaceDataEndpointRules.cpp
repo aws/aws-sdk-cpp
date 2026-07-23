@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/finspace-data/FinSpaceDataEndpointRules.h>
+#include <aws/finspace-data/internal/FinSpaceDataEndpointRules.h>
 
 namespace Aws {
 namespace FinSpaceData {

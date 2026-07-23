@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/eks-auth/EKSAuthEndpointRules.h>
 #include <aws/eks-auth/EKSAuth_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_EKSAUTH_API EKSAuthEndpointProvider : public EKSAuthDefaultEpProviderB
  public:
   using EKSAuthResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  EKSAuthEndpointProvider()
-      : EKSAuthDefaultEpProviderBase(Aws::EKSAuth::EKSAuthEndpointRules::GetRulesBlob(),
-                                     Aws::EKSAuth::EKSAuthEndpointRules::RulesBlobSize) {}
+  EKSAuthEndpointProvider();
 
   ~EKSAuthEndpointProvider() {}
 };

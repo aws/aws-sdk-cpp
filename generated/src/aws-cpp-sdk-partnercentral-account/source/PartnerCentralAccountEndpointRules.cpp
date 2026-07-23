@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/partnercentral-account/PartnerCentralAccountEndpointRules.h>
+#include <aws/partnercentral-account/internal/PartnerCentralAccountEndpointRules.h>
 
 namespace Aws {
 namespace PartnerCentralAccount {

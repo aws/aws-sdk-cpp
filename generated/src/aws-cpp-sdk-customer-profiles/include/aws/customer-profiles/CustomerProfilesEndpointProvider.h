@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/customer-profiles/CustomerProfilesEndpointRules.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesEndpointProvider : public Custome
  public:
   using CustomerProfilesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CustomerProfilesEndpointProvider()
-      : CustomerProfilesDefaultEpProviderBase(Aws::CustomerProfiles::CustomerProfilesEndpointRules::GetRulesBlob(),
-                                              Aws::CustomerProfiles::CustomerProfilesEndpointRules::RulesBlobSize) {}
+  CustomerProfilesEndpointProvider();
 
   ~CustomerProfilesEndpointProvider() {}
 };

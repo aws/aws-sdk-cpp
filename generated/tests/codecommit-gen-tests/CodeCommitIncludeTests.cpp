@@ -8,12 +8,12 @@
 
 #include <aws/codecommit/CodeCommitClient.h>
 #include <aws/codecommit/CodeCommitEndpointProvider.h>
-#include <aws/codecommit/CodeCommitEndpointRules.h>
 #include <aws/codecommit/CodeCommitErrorMarshaller.h>
 #include <aws/codecommit/CodeCommitErrors.h>
 #include <aws/codecommit/CodeCommitRequest.h>
 #include <aws/codecommit/CodeCommitServiceClientModel.h>
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
+#include <aws/codecommit/internal/CodeCommitEndpointRules.h>
 #include <aws/codecommit/model/Approval.h>
 #include <aws/codecommit/model/ApprovalRule.h>
 #include <aws/codecommit/model/ApprovalRuleEventMetadata.h>

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ssm-quicksetup/SSMQuickSetupEndpointRules.h>
+#include <aws/ssm-quicksetup/internal/SSMQuickSetupEndpointRules.h>
 
 namespace Aws {
 namespace SSMQuickSetup {

@@ -8,12 +8,12 @@
 
 #include <aws/codecatalyst/CodeCatalystClient.h>
 #include <aws/codecatalyst/CodeCatalystEndpointProvider.h>
-#include <aws/codecatalyst/CodeCatalystEndpointRules.h>
 #include <aws/codecatalyst/CodeCatalystErrorMarshaller.h>
 #include <aws/codecatalyst/CodeCatalystErrors.h>
 #include <aws/codecatalyst/CodeCatalystRequest.h>
 #include <aws/codecatalyst/CodeCatalystServiceClientModel.h>
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
+#include <aws/codecatalyst/internal/CodeCatalystEndpointRules.h>
 #include <aws/codecatalyst/model/AccessTokenSummary.h>
 #include <aws/codecatalyst/model/ComparisonOperator.h>
 #include <aws/codecatalyst/model/CreateAccessTokenRequest.h>

@@ -8,12 +8,12 @@
 
 #include <aws/mediaconvert/MediaConvertClient.h>
 #include <aws/mediaconvert/MediaConvertEndpointProvider.h>
-#include <aws/mediaconvert/MediaConvertEndpointRules.h>
 #include <aws/mediaconvert/MediaConvertErrorMarshaller.h>
 #include <aws/mediaconvert/MediaConvertErrors.h>
 #include <aws/mediaconvert/MediaConvertRequest.h>
 #include <aws/mediaconvert/MediaConvertServiceClientModel.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/internal/MediaConvertEndpointRules.h>
 #include <aws/mediaconvert/model/AacAudioDescriptionBroadcasterMix.h>
 #include <aws/mediaconvert/model/AacCodecProfile.h>
 #include <aws/mediaconvert/model/AacCodingMode.h>

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sesv2/SESV2EndpointRules.h>
+#include <aws/sesv2/internal/SESV2EndpointRules.h>
 
 namespace Aws {
 namespace SESV2 {

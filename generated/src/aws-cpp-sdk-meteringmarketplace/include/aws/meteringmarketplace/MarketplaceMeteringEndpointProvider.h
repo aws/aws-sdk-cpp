@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/meteringmarketplace/MarketplaceMeteringEndpointRules.h>
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringEndpointProvider : public M
  public:
   using MarketplaceMeteringResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MarketplaceMeteringEndpointProvider()
-      : MarketplaceMeteringDefaultEpProviderBase(Aws::MarketplaceMetering::MarketplaceMeteringEndpointRules::GetRulesBlob(),
-                                                 Aws::MarketplaceMetering::MarketplaceMeteringEndpointRules::RulesBlobSize) {}
+  MarketplaceMeteringEndpointProvider();
 
   ~MarketplaceMeteringEndpointProvider() {}
 };

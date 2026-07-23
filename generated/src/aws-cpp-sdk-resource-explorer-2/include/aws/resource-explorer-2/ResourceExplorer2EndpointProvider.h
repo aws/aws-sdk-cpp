@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/resource-explorer-2/ResourceExplorer2EndpointRules.h>
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_RESOURCEEXPLORER2_API ResourceExplorer2EndpointProvider : public Resou
  public:
   using ResourceExplorer2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ResourceExplorer2EndpointProvider()
-      : ResourceExplorer2DefaultEpProviderBase(Aws::ResourceExplorer2::ResourceExplorer2EndpointRules::GetRulesBlob(),
-                                               Aws::ResourceExplorer2::ResourceExplorer2EndpointRules::RulesBlobSize) {}
+  ResourceExplorer2EndpointProvider();
 
   ~ResourceExplorer2EndpointProvider() {}
 };

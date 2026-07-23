@@ -8,12 +8,12 @@
 
 #include <aws/application-autoscaling/ApplicationAutoScalingClient.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingEndpointProvider.h>
-#include <aws/application-autoscaling/ApplicationAutoScalingEndpointRules.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingErrorMarshaller.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingErrors.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingRequest.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingServiceClientModel.h>
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
+#include <aws/application-autoscaling/internal/ApplicationAutoScalingEndpointRules.h>
 #include <aws/application-autoscaling/model/AdjustmentType.h>
 #include <aws/application-autoscaling/model/Alarm.h>
 #include <aws/application-autoscaling/model/CapacityForecast.h>

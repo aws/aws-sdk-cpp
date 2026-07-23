@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/route53globalresolver/Route53GlobalResolverEndpointRules.h>
+#include <aws/route53globalresolver/internal/Route53GlobalResolverEndpointRules.h>
 
 namespace Aws {
 namespace Route53GlobalResolver {

@@ -8,12 +8,12 @@
 
 #include <aws/logs/CloudWatchLogsClient.h>
 #include <aws/logs/CloudWatchLogsEndpointProvider.h>
-#include <aws/logs/CloudWatchLogsEndpointRules.h>
 #include <aws/logs/CloudWatchLogsErrorMarshaller.h>
 #include <aws/logs/CloudWatchLogsErrors.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/logs/CloudWatchLogsServiceClientModel.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
+#include <aws/logs/internal/CloudWatchLogsEndpointRules.h>
 #include <aws/logs/model/AccountPolicy.h>
 #include <aws/logs/model/ActionStatus.h>
 #include <aws/logs/model/AddKeyEntry.h>

@@ -4,9 +4,15 @@
  */
 
 #include <aws/workspaces-instances/WorkspacesInstancesEndpointProvider.h>
+#include <aws/workspaces-instances/internal/WorkspacesInstancesEndpointRules.h>
 
 namespace Aws {
 namespace WorkspacesInstances {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+WorkspacesInstancesEndpointProvider::WorkspacesInstancesEndpointProvider()
+    : WorkspacesInstancesDefaultEpProviderBase(Aws::WorkspacesInstances::WorkspacesInstancesEndpointRules::GetRulesBlob(),
+                                               Aws::WorkspacesInstances::WorkspacesInstancesEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace WorkspacesInstances
 }  // namespace Aws

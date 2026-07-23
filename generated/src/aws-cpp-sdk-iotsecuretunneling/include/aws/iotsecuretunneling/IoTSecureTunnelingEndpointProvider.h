@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iotsecuretunneling/IoTSecureTunnelingEndpointRules.h>
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingEndpointProvider : public IoT
  public:
   using IoTSecureTunnelingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IoTSecureTunnelingEndpointProvider()
-      : IoTSecureTunnelingDefaultEpProviderBase(Aws::IoTSecureTunneling::IoTSecureTunnelingEndpointRules::GetRulesBlob(),
-                                                Aws::IoTSecureTunneling::IoTSecureTunnelingEndpointRules::RulesBlobSize) {}
+  IoTSecureTunnelingEndpointProvider();
 
   ~IoTSecureTunnelingEndpointProvider() {}
 };

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/marketplace-discovery/MarketplaceDiscoveryEndpointRules.h>
+#include <aws/marketplace-discovery/internal/MarketplaceDiscoveryEndpointRules.h>
 
 namespace Aws {
 namespace MarketplaceDiscovery {

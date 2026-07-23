@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sms-voice/PinpointSMSVoiceEndpointRules.h>
+#include <aws/sms-voice/internal/PinpointSMSVoiceEndpointRules.h>
 
 namespace Aws {
 namespace PinpointSMSVoice {

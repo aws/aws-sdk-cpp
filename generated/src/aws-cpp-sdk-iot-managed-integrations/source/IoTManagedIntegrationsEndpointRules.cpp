@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/iot-managed-integrations/IoTManagedIntegrationsEndpointRules.h>
+#include <aws/iot-managed-integrations/internal/IoTManagedIntegrationsEndpointRules.h>
 
 namespace Aws {
 namespace IoTManagedIntegrations {

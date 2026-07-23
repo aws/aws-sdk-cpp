@@ -8,12 +8,12 @@
 
 #include <aws/s3files/S3FilesClient.h>
 #include <aws/s3files/S3FilesEndpointProvider.h>
-#include <aws/s3files/S3FilesEndpointRules.h>
 #include <aws/s3files/S3FilesErrorMarshaller.h>
 #include <aws/s3files/S3FilesErrors.h>
 #include <aws/s3files/S3FilesRequest.h>
 #include <aws/s3files/S3FilesServiceClientModel.h>
 #include <aws/s3files/S3Files_EXPORTS.h>
+#include <aws/s3files/internal/S3FilesEndpointRules.h>
 #include <aws/s3files/model/ConflictException.h>
 #include <aws/s3files/model/CreateAccessPointRequest.h>
 #include <aws/s3files/model/CreateAccessPointResult.h>

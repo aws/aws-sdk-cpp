@@ -4,9 +4,14 @@
  */
 
 #include <aws/mq/MQEndpointProvider.h>
+#include <aws/mq/internal/MQEndpointRules.h>
 
 namespace Aws {
 namespace MQ {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MQEndpointProvider::MQEndpointProvider()
+    : MQDefaultEpProviderBase(Aws::MQ::MQEndpointRules::GetRulesBlob(), Aws::MQ::MQEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MQ
 }  // namespace Aws

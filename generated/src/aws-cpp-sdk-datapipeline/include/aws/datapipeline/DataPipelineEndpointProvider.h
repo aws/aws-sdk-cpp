@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/datapipeline/DataPipelineEndpointRules.h>
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_DATAPIPELINE_API DataPipelineEndpointProvider : public DataPipelineDef
  public:
   using DataPipelineResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DataPipelineEndpointProvider()
-      : DataPipelineDefaultEpProviderBase(Aws::DataPipeline::DataPipelineEndpointRules::GetRulesBlob(),
-                                          Aws::DataPipeline::DataPipelineEndpointRules::RulesBlobSize) {}
+  DataPipelineEndpointProvider();
 
   ~DataPipelineEndpointProvider() {}
 };

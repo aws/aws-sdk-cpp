@@ -8,6 +8,10 @@ file(GLOB AWS_CUSTOMER-PROFILES_MODEL_HEADERS
     "include/aws/customer-profiles/model/*.h"
 )
 
+file(GLOB AWS_CUSTOMER-PROFILES_INTERNAL_HEADERS
+    "include/aws/customer-profiles/internal/*.h"
+)
+
 file(GLOB AWS_CUSTOMER-PROFILES_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CUSTOMER-PROFILES_MODEL_SOURCE
 
 file(GLOB CUSTOMER-PROFILES_UNIFIED_HEADERS
     ${AWS_CUSTOMER-PROFILES_HEADERS}
+    ${AWS_CUSTOMER-PROFILES_INTERNAL_HEADERS}
     ${AWS_CUSTOMER-PROFILES_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\customer-profiles" FILES ${AWS_CUSTOMER-PROFILES_HEADERS})
+        source_group("Header Files\\aws\\customer-profiles\\internal" FILES ${AWS_CUSTOMER-PROFILES_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\customer-profiles\\model" FILES ${AWS_CUSTOMER-PROFILES_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CUSTOMER-PROFILES_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CUSTOMER-PROFILES_MODEL_SOURCE})

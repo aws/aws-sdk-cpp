@@ -8,12 +8,12 @@
 
 #include <aws/rbin/RecycleBinClient.h>
 #include <aws/rbin/RecycleBinEndpointProvider.h>
-#include <aws/rbin/RecycleBinEndpointRules.h>
 #include <aws/rbin/RecycleBinErrorMarshaller.h>
 #include <aws/rbin/RecycleBinErrors.h>
 #include <aws/rbin/RecycleBinRequest.h>
 #include <aws/rbin/RecycleBinServiceClientModel.h>
 #include <aws/rbin/RecycleBin_EXPORTS.h>
+#include <aws/rbin/internal/RecycleBinEndpointRules.h>
 #include <aws/rbin/model/ConflictException.h>
 #include <aws/rbin/model/ConflictExceptionReason.h>
 #include <aws/rbin/model/CreateRuleRequest.h>

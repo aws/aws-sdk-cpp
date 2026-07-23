@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ecs/ECSEndpointRules.h>
+#include <aws/ecs/internal/ECSEndpointRules.h>
 
 namespace Aws {
 namespace ECS {

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/marketplace-agreement/AgreementServiceEndpointRules.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceEndpointProvider : public Agreeme
  public:
   using AgreementServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AgreementServiceEndpointProvider()
-      : AgreementServiceDefaultEpProviderBase(Aws::AgreementService::AgreementServiceEndpointRules::GetRulesBlob(),
-                                              Aws::AgreementService::AgreementServiceEndpointRules::RulesBlobSize) {}
+  AgreementServiceEndpointProvider();
 
   ~AgreementServiceEndpointProvider() {}
 };

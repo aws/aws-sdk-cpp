@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/s3files/S3FilesEndpointRules.h>
 #include <aws/s3files/S3Files_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_S3FILES_API S3FilesEndpointProvider : public S3FilesDefaultEpProviderB
  public:
   using S3FilesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  S3FilesEndpointProvider()
-      : S3FilesDefaultEpProviderBase(Aws::S3Files::S3FilesEndpointRules::GetRulesBlob(),
-                                     Aws::S3Files::S3FilesEndpointRules::RulesBlobSize) {}
+  S3FilesEndpointProvider();
 
   ~S3FilesEndpointProvider() {}
 };

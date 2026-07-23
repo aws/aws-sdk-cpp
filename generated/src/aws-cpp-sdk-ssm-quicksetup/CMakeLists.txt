@@ -8,6 +8,10 @@ file(GLOB AWS_SSM-QUICKSETUP_MODEL_HEADERS
     "include/aws/ssm-quicksetup/model/*.h"
 )
 
+file(GLOB AWS_SSM-QUICKSETUP_INTERNAL_HEADERS
+    "include/aws/ssm-quicksetup/internal/*.h"
+)
+
 file(GLOB AWS_SSM-QUICKSETUP_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SSM-QUICKSETUP_MODEL_SOURCE
 
 file(GLOB SSM-QUICKSETUP_UNIFIED_HEADERS
     ${AWS_SSM-QUICKSETUP_HEADERS}
+    ${AWS_SSM-QUICKSETUP_INTERNAL_HEADERS}
     ${AWS_SSM-QUICKSETUP_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\ssm-quicksetup" FILES ${AWS_SSM-QUICKSETUP_HEADERS})
+        source_group("Header Files\\aws\\ssm-quicksetup\\internal" FILES ${AWS_SSM-QUICKSETUP_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\ssm-quicksetup\\model" FILES ${AWS_SSM-QUICKSETUP_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SSM-QUICKSETUP_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SSM-QUICKSETUP_MODEL_SOURCE})

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sagemaker-geospatial/SageMakerGeospatialEndpointRules.h>
+#include <aws/sagemaker-geospatial/internal/SageMakerGeospatialEndpointRules.h>
 
 namespace Aws {
 namespace SageMakerGeospatial {

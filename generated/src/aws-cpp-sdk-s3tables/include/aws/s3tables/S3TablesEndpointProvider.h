@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/s3tables/S3TablesEndpointRules.h>
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_S3TABLES_API S3TablesEndpointProvider : public S3TablesDefaultEpProvid
  public:
   using S3TablesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  S3TablesEndpointProvider()
-      : S3TablesDefaultEpProviderBase(Aws::S3Tables::S3TablesEndpointRules::GetRulesBlob(),
-                                      Aws::S3Tables::S3TablesEndpointRules::RulesBlobSize) {}
+  S3TablesEndpointProvider();
 
   ~S3TablesEndpointProvider() {}
 };

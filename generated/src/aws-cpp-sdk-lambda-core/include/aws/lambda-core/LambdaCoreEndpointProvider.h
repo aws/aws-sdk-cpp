@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/lambda-core/LambdaCoreEndpointRules.h>
 #include <aws/lambda-core/LambdaCore_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_LAMBDACORE_API LambdaCoreEndpointProvider : public LambdaCoreDefaultEp
  public:
   using LambdaCoreResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  LambdaCoreEndpointProvider()
-      : LambdaCoreDefaultEpProviderBase(Aws::LambdaCore::LambdaCoreEndpointRules::GetRulesBlob(),
-                                        Aws::LambdaCore::LambdaCoreEndpointRules::RulesBlobSize) {}
+  LambdaCoreEndpointProvider();
 
   ~LambdaCoreEndpointProvider() {}
 };

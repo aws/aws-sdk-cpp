@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/s3/S3EndpointRules.h>
+#include <aws/s3/internal/S3EndpointRules.h>
 
 namespace Aws {
 namespace S3 {

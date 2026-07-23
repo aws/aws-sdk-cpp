@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/compute-optimizer/ComputeOptimizerEndpointRules.h>
+#include <aws/compute-optimizer/internal/ComputeOptimizerEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

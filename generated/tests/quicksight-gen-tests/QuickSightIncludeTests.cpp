@@ -8,12 +8,12 @@
 
 #include <aws/quicksight/QuickSightClient.h>
 #include <aws/quicksight/QuickSightEndpointProvider.h>
-#include <aws/quicksight/QuickSightEndpointRules.h>
 #include <aws/quicksight/QuickSightErrorMarshaller.h>
 #include <aws/quicksight/QuickSightErrors.h>
 #include <aws/quicksight/QuickSightRequest.h>
 #include <aws/quicksight/QuickSightServiceClientModel.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/internal/QuickSightEndpointRules.h>
 #include <aws/quicksight/model/APIKeyConnectionMetadata.h>
 #include <aws/quicksight/model/AccessControlConfiguration.h>
 #include <aws/quicksight/model/AccessDeniedException.h>

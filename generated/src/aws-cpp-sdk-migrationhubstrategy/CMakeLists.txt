@@ -8,6 +8,10 @@ file(GLOB AWS_MIGRATIONHUBSTRATEGY_MODEL_HEADERS
     "include/aws/migrationhubstrategy/model/*.h"
 )
 
+file(GLOB AWS_MIGRATIONHUBSTRATEGY_INTERNAL_HEADERS
+    "include/aws/migrationhubstrategy/internal/*.h"
+)
+
 file(GLOB AWS_MIGRATIONHUBSTRATEGY_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MIGRATIONHUBSTRATEGY_MODEL_SOURCE
 
 file(GLOB MIGRATIONHUBSTRATEGY_UNIFIED_HEADERS
     ${AWS_MIGRATIONHUBSTRATEGY_HEADERS}
+    ${AWS_MIGRATIONHUBSTRATEGY_INTERNAL_HEADERS}
     ${AWS_MIGRATIONHUBSTRATEGY_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\migrationhubstrategy" FILES ${AWS_MIGRATIONHUBSTRATEGY_HEADERS})
+        source_group("Header Files\\aws\\migrationhubstrategy\\internal" FILES ${AWS_MIGRATIONHUBSTRATEGY_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\migrationhubstrategy\\model" FILES ${AWS_MIGRATIONHUBSTRATEGY_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MIGRATIONHUBSTRATEGY_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MIGRATIONHUBSTRATEGY_MODEL_SOURCE})

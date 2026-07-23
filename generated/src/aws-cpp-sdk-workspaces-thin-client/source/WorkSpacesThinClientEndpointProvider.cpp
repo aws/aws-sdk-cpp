@@ -4,9 +4,15 @@
  */
 
 #include <aws/workspaces-thin-client/WorkSpacesThinClientEndpointProvider.h>
+#include <aws/workspaces-thin-client/internal/WorkSpacesThinClientEndpointRules.h>
 
 namespace Aws {
 namespace WorkSpacesThinClient {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+WorkSpacesThinClientEndpointProvider::WorkSpacesThinClientEndpointProvider()
+    : WorkSpacesThinClientDefaultEpProviderBase(Aws::WorkSpacesThinClient::WorkSpacesThinClientEndpointRules::GetRulesBlob(),
+                                                Aws::WorkSpacesThinClient::WorkSpacesThinClientEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace WorkSpacesThinClient
 }  // namespace Aws

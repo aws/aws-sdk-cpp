@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/quicksight/QuickSightEndpointRules.h>
+#include <aws/quicksight/internal/QuickSightEndpointRules.h>
 
 namespace Aws {
 namespace QuickSight {

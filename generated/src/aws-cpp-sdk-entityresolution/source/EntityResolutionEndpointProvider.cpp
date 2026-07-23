@@ -4,9 +4,15 @@
  */
 
 #include <aws/entityresolution/EntityResolutionEndpointProvider.h>
+#include <aws/entityresolution/internal/EntityResolutionEndpointRules.h>
 
 namespace Aws {
 namespace EntityResolution {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+EntityResolutionEndpointProvider::EntityResolutionEndpointProvider()
+    : EntityResolutionDefaultEpProviderBase(Aws::EntityResolution::EntityResolutionEndpointRules::GetRulesBlob(),
+                                            Aws::EntityResolution::EntityResolutionEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace EntityResolution
 }  // namespace Aws

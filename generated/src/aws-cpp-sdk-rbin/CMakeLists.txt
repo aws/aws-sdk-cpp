@@ -8,6 +8,10 @@ file(GLOB AWS_RBIN_MODEL_HEADERS
     "include/aws/rbin/model/*.h"
 )
 
+file(GLOB AWS_RBIN_INTERNAL_HEADERS
+    "include/aws/rbin/internal/*.h"
+)
+
 file(GLOB AWS_RBIN_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_RBIN_MODEL_SOURCE
 
 file(GLOB RBIN_UNIFIED_HEADERS
     ${AWS_RBIN_HEADERS}
+    ${AWS_RBIN_INTERNAL_HEADERS}
     ${AWS_RBIN_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\rbin" FILES ${AWS_RBIN_HEADERS})
+        source_group("Header Files\\aws\\rbin\\internal" FILES ${AWS_RBIN_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\rbin\\model" FILES ${AWS_RBIN_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_RBIN_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_RBIN_MODEL_SOURCE})

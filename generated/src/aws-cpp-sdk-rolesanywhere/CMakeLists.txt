@@ -8,6 +8,10 @@ file(GLOB AWS_ROLESANYWHERE_MODEL_HEADERS
     "include/aws/rolesanywhere/model/*.h"
 )
 
+file(GLOB AWS_ROLESANYWHERE_INTERNAL_HEADERS
+    "include/aws/rolesanywhere/internal/*.h"
+)
+
 file(GLOB AWS_ROLESANYWHERE_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_ROLESANYWHERE_MODEL_SOURCE
 
 file(GLOB ROLESANYWHERE_UNIFIED_HEADERS
     ${AWS_ROLESANYWHERE_HEADERS}
+    ${AWS_ROLESANYWHERE_INTERNAL_HEADERS}
     ${AWS_ROLESANYWHERE_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\rolesanywhere" FILES ${AWS_ROLESANYWHERE_HEADERS})
+        source_group("Header Files\\aws\\rolesanywhere\\internal" FILES ${AWS_ROLESANYWHERE_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\rolesanywhere\\model" FILES ${AWS_ROLESANYWHERE_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_ROLESANYWHERE_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_ROLESANYWHERE_MODEL_SOURCE})

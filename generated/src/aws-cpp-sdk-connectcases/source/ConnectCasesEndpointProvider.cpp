@@ -4,9 +4,15 @@
  */
 
 #include <aws/connectcases/ConnectCasesEndpointProvider.h>
+#include <aws/connectcases/internal/ConnectCasesEndpointRules.h>
 
 namespace Aws {
 namespace ConnectCases {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ConnectCasesEndpointProvider::ConnectCasesEndpointProvider()
+    : ConnectCasesDefaultEpProviderBase(Aws::ConnectCases::ConnectCasesEndpointRules::GetRulesBlob(),
+                                        Aws::ConnectCases::ConnectCasesEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ConnectCases
 }  // namespace Aws

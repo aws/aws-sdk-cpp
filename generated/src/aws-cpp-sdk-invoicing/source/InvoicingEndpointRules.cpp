@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/invoicing/InvoicingEndpointRules.h>
+#include <aws/invoicing/internal/InvoicingEndpointRules.h>
 
 namespace Aws {
 namespace Invoicing {

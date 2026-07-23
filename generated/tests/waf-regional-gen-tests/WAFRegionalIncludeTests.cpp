@@ -8,12 +8,12 @@
 
 #include <aws/waf-regional/WAFRegionalClient.h>
 #include <aws/waf-regional/WAFRegionalEndpointProvider.h>
-#include <aws/waf-regional/WAFRegionalEndpointRules.h>
 #include <aws/waf-regional/WAFRegionalErrorMarshaller.h>
 #include <aws/waf-regional/WAFRegionalErrors.h>
 #include <aws/waf-regional/WAFRegionalRequest.h>
 #include <aws/waf-regional/WAFRegionalServiceClientModel.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
+#include <aws/waf-regional/internal/WAFRegionalEndpointRules.h>
 #include <aws/waf-regional/model/ActivatedRule.h>
 #include <aws/waf-regional/model/AssociateWebACLRequest.h>
 #include <aws/waf-regional/model/AssociateWebACLResult.h>

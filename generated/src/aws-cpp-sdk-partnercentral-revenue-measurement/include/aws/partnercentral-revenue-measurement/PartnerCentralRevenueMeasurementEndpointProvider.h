@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementEndpointRules.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurement_EXPORTS.h>
 
 namespace Aws {
@@ -45,10 +44,7 @@ class AWS_PARTNERCENTRALREVENUEMEASUREMENT_API PartnerCentralRevenueMeasurementE
  public:
   using PartnerCentralRevenueMeasurementResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PartnerCentralRevenueMeasurementEndpointProvider()
-      : PartnerCentralRevenueMeasurementDefaultEpProviderBase(
-            Aws::PartnerCentralRevenueMeasurement::PartnerCentralRevenueMeasurementEndpointRules::GetRulesBlob(),
-            Aws::PartnerCentralRevenueMeasurement::PartnerCentralRevenueMeasurementEndpointRules::RulesBlobSize) {}
+  PartnerCentralRevenueMeasurementEndpointProvider();
 
   ~PartnerCentralRevenueMeasurementEndpointProvider() {}
 };

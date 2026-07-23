@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ssm-quicksetup/SSMQuickSetupEndpointRules.h>
 #include <aws/ssm-quicksetup/SSMQuickSetup_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SSMQUICKSETUP_API SSMQuickSetupEndpointProvider : public SSMQuickSetup
  public:
   using SSMQuickSetupResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SSMQuickSetupEndpointProvider()
-      : SSMQuickSetupDefaultEpProviderBase(Aws::SSMQuickSetup::SSMQuickSetupEndpointRules::GetRulesBlob(),
-                                           Aws::SSMQuickSetup::SSMQuickSetupEndpointRules::RulesBlobSize) {}
+  SSMQuickSetupEndpointProvider();
 
   ~SSMQuickSetupEndpointProvider() {}
 };

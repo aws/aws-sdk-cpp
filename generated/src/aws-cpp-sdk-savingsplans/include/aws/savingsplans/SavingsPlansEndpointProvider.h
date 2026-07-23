@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/savingsplans/SavingsPlansEndpointRules.h>
 #include <aws/savingsplans/SavingsPlans_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SAVINGSPLANS_API SavingsPlansEndpointProvider : public SavingsPlansDef
  public:
   using SavingsPlansResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SavingsPlansEndpointProvider()
-      : SavingsPlansDefaultEpProviderBase(Aws::SavingsPlans::SavingsPlansEndpointRules::GetRulesBlob(),
-                                          Aws::SavingsPlans::SavingsPlansEndpointRules::RulesBlobSize) {}
+  SavingsPlansEndpointProvider();
 
   ~SavingsPlansEndpointProvider() {}
 };

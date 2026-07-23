@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/s3vectors/S3VectorsEndpointRules.h>
+#include <aws/s3vectors/internal/S3VectorsEndpointRules.h>
 
 namespace Aws {
 namespace S3Vectors {

@@ -8,6 +8,10 @@ file(GLOB AWS_SERVICE-QUOTAS_MODEL_HEADERS
     "include/aws/service-quotas/model/*.h"
 )
 
+file(GLOB AWS_SERVICE-QUOTAS_INTERNAL_HEADERS
+    "include/aws/service-quotas/internal/*.h"
+)
+
 file(GLOB AWS_SERVICE-QUOTAS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SERVICE-QUOTAS_MODEL_SOURCE
 
 file(GLOB SERVICE-QUOTAS_UNIFIED_HEADERS
     ${AWS_SERVICE-QUOTAS_HEADERS}
+    ${AWS_SERVICE-QUOTAS_INTERNAL_HEADERS}
     ${AWS_SERVICE-QUOTAS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\service-quotas" FILES ${AWS_SERVICE-QUOTAS_HEADERS})
+        source_group("Header Files\\aws\\service-quotas\\internal" FILES ${AWS_SERVICE-QUOTAS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\service-quotas\\model" FILES ${AWS_SERVICE-QUOTAS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SERVICE-QUOTAS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SERVICE-QUOTAS_MODEL_SOURCE})

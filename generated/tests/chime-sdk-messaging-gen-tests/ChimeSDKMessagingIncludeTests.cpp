@@ -8,12 +8,12 @@
 
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingClient.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingEndpointProvider.h>
-#include <aws/chime-sdk-messaging/ChimeSDKMessagingEndpointRules.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingErrorMarshaller.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingErrors.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingRequest.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingServiceClientModel.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
+#include <aws/chime-sdk-messaging/internal/ChimeSDKMessagingEndpointRules.h>
 #include <aws/chime-sdk-messaging/model/AllowNotifications.h>
 #include <aws/chime-sdk-messaging/model/AppInstanceUserMembershipSummary.h>
 #include <aws/chime-sdk-messaging/model/AssociateChannelFlowRequest.h>

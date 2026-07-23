@@ -8,6 +8,10 @@ file(GLOB AWS_OMICS_MODEL_HEADERS
     "include/aws/omics/model/*.h"
 )
 
+file(GLOB AWS_OMICS_INTERNAL_HEADERS
+    "include/aws/omics/internal/*.h"
+)
+
 file(GLOB AWS_OMICS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_OMICS_MODEL_SOURCE
 
 file(GLOB OMICS_UNIFIED_HEADERS
     ${AWS_OMICS_HEADERS}
+    ${AWS_OMICS_INTERNAL_HEADERS}
     ${AWS_OMICS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\omics" FILES ${AWS_OMICS_HEADERS})
+        source_group("Header Files\\aws\\omics\\internal" FILES ${AWS_OMICS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\omics\\model" FILES ${AWS_OMICS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_OMICS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_OMICS_MODEL_SOURCE})

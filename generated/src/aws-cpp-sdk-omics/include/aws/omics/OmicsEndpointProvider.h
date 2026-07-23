@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/omics/OmicsEndpointRules.h>
 #include <aws/omics/Omics_EXPORTS.h>
 
 namespace Aws {
@@ -40,8 +39,7 @@ class AWS_OMICS_API OmicsEndpointProvider : public OmicsDefaultEpProviderBase {
  public:
   using OmicsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  OmicsEndpointProvider()
-      : OmicsDefaultEpProviderBase(Aws::Omics::OmicsEndpointRules::GetRulesBlob(), Aws::Omics::OmicsEndpointRules::RulesBlobSize) {}
+  OmicsEndpointProvider();
 
   ~OmicsEndpointProvider() {}
 };

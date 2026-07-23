@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/rekognition/RekognitionEndpointRules.h>
+#include <aws/rekognition/internal/RekognitionEndpointRules.h>
 
 namespace Aws {
 namespace Rekognition {

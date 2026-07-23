@@ -4,9 +4,15 @@
  */
 
 #include <aws/forecast/ForecastServiceEndpointProvider.h>
+#include <aws/forecast/internal/ForecastServiceEndpointRules.h>
 
 namespace Aws {
 namespace ForecastService {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ForecastServiceEndpointProvider::ForecastServiceEndpointProvider()
+    : ForecastServiceDefaultEpProviderBase(Aws::ForecastService::ForecastServiceEndpointRules::GetRulesBlob(),
+                                           Aws::ForecastService::ForecastServiceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ForecastService
 }  // namespace Aws

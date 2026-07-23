@@ -4,9 +4,15 @@
  */
 
 #include <aws/comprehend/ComprehendEndpointProvider.h>
+#include <aws/comprehend/internal/ComprehendEndpointRules.h>
 
 namespace Aws {
 namespace Comprehend {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ComprehendEndpointProvider::ComprehendEndpointProvider()
+    : ComprehendDefaultEpProviderBase(Aws::Comprehend::ComprehendEndpointRules::GetRulesBlob(),
+                                      Aws::Comprehend::ComprehendEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Comprehend
 }  // namespace Aws

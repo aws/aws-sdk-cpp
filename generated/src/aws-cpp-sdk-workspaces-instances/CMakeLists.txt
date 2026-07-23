@@ -8,6 +8,10 @@ file(GLOB AWS_WORKSPACES-INSTANCES_MODEL_HEADERS
     "include/aws/workspaces-instances/model/*.h"
 )
 
+file(GLOB AWS_WORKSPACES-INSTANCES_INTERNAL_HEADERS
+    "include/aws/workspaces-instances/internal/*.h"
+)
+
 file(GLOB AWS_WORKSPACES-INSTANCES_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_WORKSPACES-INSTANCES_MODEL_SOURCE
 
 file(GLOB WORKSPACES-INSTANCES_UNIFIED_HEADERS
     ${AWS_WORKSPACES-INSTANCES_HEADERS}
+    ${AWS_WORKSPACES-INSTANCES_INTERNAL_HEADERS}
     ${AWS_WORKSPACES-INSTANCES_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\workspaces-instances" FILES ${AWS_WORKSPACES-INSTANCES_HEADERS})
+        source_group("Header Files\\aws\\workspaces-instances\\internal" FILES ${AWS_WORKSPACES-INSTANCES_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\workspaces-instances\\model" FILES ${AWS_WORKSPACES-INSTANCES_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_WORKSPACES-INSTANCES_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_WORKSPACES-INSTANCES_MODEL_SOURCE})

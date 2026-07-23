@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/drs/DrsEndpointRules.h>
+#include <aws/drs/internal/DrsEndpointRules.h>
 
 namespace Aws {
 namespace drs {

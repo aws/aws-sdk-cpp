@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/partnercentral-benefits/PartnerCentralBenefitsEndpointRules.h>
+#include <aws/partnercentral-benefits/internal/PartnerCentralBenefitsEndpointRules.h>
 
 namespace Aws {
 namespace PartnerCentralBenefits {

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/qbusiness/QBusinessEndpointRules.h>
+#include <aws/qbusiness/internal/QBusinessEndpointRules.h>
 
 namespace Aws {
 namespace QBusiness {

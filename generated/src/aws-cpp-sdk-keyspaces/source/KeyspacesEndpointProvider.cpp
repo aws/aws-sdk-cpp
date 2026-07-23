@@ -4,9 +4,15 @@
  */
 
 #include <aws/keyspaces/KeyspacesEndpointProvider.h>
+#include <aws/keyspaces/internal/KeyspacesEndpointRules.h>
 
 namespace Aws {
 namespace Keyspaces {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+KeyspacesEndpointProvider::KeyspacesEndpointProvider()
+    : KeyspacesDefaultEpProviderBase(Aws::Keyspaces::KeyspacesEndpointRules::GetRulesBlob(),
+                                     Aws::Keyspaces::KeyspacesEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Keyspaces
 }  // namespace Aws

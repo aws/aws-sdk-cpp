@@ -8,6 +8,10 @@ file(GLOB AWS_CODEGURU-SECURITY_MODEL_HEADERS
     "include/aws/codeguru-security/model/*.h"
 )
 
+file(GLOB AWS_CODEGURU-SECURITY_INTERNAL_HEADERS
+    "include/aws/codeguru-security/internal/*.h"
+)
+
 file(GLOB AWS_CODEGURU-SECURITY_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CODEGURU-SECURITY_MODEL_SOURCE
 
 file(GLOB CODEGURU-SECURITY_UNIFIED_HEADERS
     ${AWS_CODEGURU-SECURITY_HEADERS}
+    ${AWS_CODEGURU-SECURITY_INTERNAL_HEADERS}
     ${AWS_CODEGURU-SECURITY_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\codeguru-security" FILES ${AWS_CODEGURU-SECURITY_HEADERS})
+        source_group("Header Files\\aws\\codeguru-security\\internal" FILES ${AWS_CODEGURU-SECURITY_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\codeguru-security\\model" FILES ${AWS_CODEGURU-SECURITY_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CODEGURU-SECURITY_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CODEGURU-SECURITY_MODEL_SOURCE})

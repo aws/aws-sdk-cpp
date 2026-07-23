@@ -8,12 +8,12 @@
 
 #include <aws/codeguru-security/CodeGuruSecurityClient.h>
 #include <aws/codeguru-security/CodeGuruSecurityEndpointProvider.h>
-#include <aws/codeguru-security/CodeGuruSecurityEndpointRules.h>
 #include <aws/codeguru-security/CodeGuruSecurityErrorMarshaller.h>
 #include <aws/codeguru-security/CodeGuruSecurityErrors.h>
 #include <aws/codeguru-security/CodeGuruSecurityRequest.h>
 #include <aws/codeguru-security/CodeGuruSecurityServiceClientModel.h>
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
+#include <aws/codeguru-security/internal/CodeGuruSecurityEndpointRules.h>
 #include <aws/codeguru-security/model/AccessDeniedException.h>
 #include <aws/codeguru-security/model/AccountFindingsMetric.h>
 #include <aws/codeguru-security/model/AnalysisType.h>

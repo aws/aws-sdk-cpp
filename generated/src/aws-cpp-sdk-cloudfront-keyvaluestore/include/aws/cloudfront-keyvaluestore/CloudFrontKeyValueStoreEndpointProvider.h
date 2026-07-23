@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreEndpointRules.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStore_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -44,9 +43,7 @@ class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreEndpointProvider : 
  public:
   using CloudFrontKeyValueStoreResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CloudFrontKeyValueStoreEndpointProvider()
-      : CloudFrontKeyValueStoreDefaultEpProviderBase(Aws::CloudFrontKeyValueStore::CloudFrontKeyValueStoreEndpointRules::GetRulesBlob(),
-                                                     Aws::CloudFrontKeyValueStore::CloudFrontKeyValueStoreEndpointRules::RulesBlobSize) {}
+  CloudFrontKeyValueStoreEndpointProvider();
 
   ~CloudFrontKeyValueStoreEndpointProvider() {}
 };

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ec2-instance-connect/EC2InstanceConnectEndpointRules.h>
+#include <aws/ec2-instance-connect/internal/EC2InstanceConnectEndpointRules.h>
 
 namespace Aws {
 namespace EC2InstanceConnect {

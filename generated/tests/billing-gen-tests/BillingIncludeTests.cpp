@@ -8,12 +8,12 @@
 
 #include <aws/billing/BillingClient.h>
 #include <aws/billing/BillingEndpointProvider.h>
-#include <aws/billing/BillingEndpointRules.h>
 #include <aws/billing/BillingErrorMarshaller.h>
 #include <aws/billing/BillingErrors.h>
 #include <aws/billing/BillingRequest.h>
 #include <aws/billing/BillingServiceClientModel.h>
 #include <aws/billing/Billing_EXPORTS.h>
+#include <aws/billing/internal/BillingEndpointRules.h>
 #include <aws/billing/model/ActiveTimeRange.h>
 #include <aws/billing/model/Amount.h>
 #include <aws/billing/model/ApplicationType.h>

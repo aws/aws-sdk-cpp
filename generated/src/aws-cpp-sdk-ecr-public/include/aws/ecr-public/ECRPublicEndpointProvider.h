@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ecr-public/ECRPublicEndpointRules.h>
 #include <aws/ecr-public/ECRPublic_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_ECRPUBLIC_API ECRPublicEndpointProvider : public ECRPublicDefaultEpPro
  public:
   using ECRPublicResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ECRPublicEndpointProvider()
-      : ECRPublicDefaultEpProviderBase(Aws::ECRPublic::ECRPublicEndpointRules::GetRulesBlob(),
-                                       Aws::ECRPublic::ECRPublicEndpointRules::RulesBlobSize) {}
+  ECRPublicEndpointProvider();
 
   ~ECRPublicEndpointProvider() {}
 };

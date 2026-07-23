@@ -4,9 +4,15 @@
  */
 
 #include <aws/iot-data/IoTDataPlaneEndpointProvider.h>
+#include <aws/iot-data/internal/IoTDataPlaneEndpointRules.h>
 
 namespace Aws {
 namespace IoTDataPlane {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+IoTDataPlaneEndpointProvider::IoTDataPlaneEndpointProvider()
+    : IoTDataPlaneDefaultEpProviderBase(Aws::IoTDataPlane::IoTDataPlaneEndpointRules::GetRulesBlob(),
+                                        Aws::IoTDataPlane::IoTDataPlaneEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace IoTDataPlane
 }  // namespace Aws

@@ -8,12 +8,12 @@
 
 #include <aws/lookoutequipment/LookoutEquipmentClient.h>
 #include <aws/lookoutequipment/LookoutEquipmentEndpointProvider.h>
-#include <aws/lookoutequipment/LookoutEquipmentEndpointRules.h>
 #include <aws/lookoutequipment/LookoutEquipmentErrorMarshaller.h>
 #include <aws/lookoutequipment/LookoutEquipmentErrors.h>
 #include <aws/lookoutequipment/LookoutEquipmentRequest.h>
 #include <aws/lookoutequipment/LookoutEquipmentServiceClientModel.h>
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
+#include <aws/lookoutequipment/internal/LookoutEquipmentEndpointRules.h>
 #include <aws/lookoutequipment/model/AutoPromotionResult.h>
 #include <aws/lookoutequipment/model/CategoricalValues.h>
 #include <aws/lookoutequipment/model/CountPercent.h>

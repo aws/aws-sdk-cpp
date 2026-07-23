@@ -8,12 +8,12 @@
 
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeClient.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeEndpointProvider.h>
-#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeEndpointRules.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeErrorMarshaller.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeErrors.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeRequest.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeServiceClientModel.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
+#include <aws/sagemaker-a2i-runtime/internal/AugmentedAIRuntimeEndpointRules.h>
 #include <aws/sagemaker-a2i-runtime/model/ContentClassifier.h>
 #include <aws/sagemaker-a2i-runtime/model/DeleteHumanLoopRequest.h>
 #include <aws/sagemaker-a2i-runtime/model/DeleteHumanLoopResult.h>

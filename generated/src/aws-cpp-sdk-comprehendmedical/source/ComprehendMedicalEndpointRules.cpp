@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/comprehendmedical/ComprehendMedicalEndpointRules.h>
+#include <aws/comprehendmedical/internal/ComprehendMedicalEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

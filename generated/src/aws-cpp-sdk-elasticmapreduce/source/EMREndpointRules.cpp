@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/elasticmapreduce/EMREndpointRules.h>
+#include <aws/elasticmapreduce/internal/EMREndpointRules.h>
 
 namespace Aws {
 namespace EMR {

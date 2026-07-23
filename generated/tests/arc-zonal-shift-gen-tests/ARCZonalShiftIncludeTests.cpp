@@ -8,12 +8,12 @@
 
 #include <aws/arc-zonal-shift/ARCZonalShiftClient.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftEndpointProvider.h>
-#include <aws/arc-zonal-shift/ARCZonalShiftEndpointRules.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftErrorMarshaller.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftErrors.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftRequest.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftServiceClientModel.h>
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
+#include <aws/arc-zonal-shift/internal/ARCZonalShiftEndpointRules.h>
 #include <aws/arc-zonal-shift/model/AppliedStatus.h>
 #include <aws/arc-zonal-shift/model/AutoshiftAppliedStatus.h>
 #include <aws/arc-zonal-shift/model/AutoshiftExecutionStatus.h>

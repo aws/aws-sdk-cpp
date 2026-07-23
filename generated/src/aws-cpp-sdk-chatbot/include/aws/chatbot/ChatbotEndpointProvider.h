@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/chatbot/ChatbotEndpointRules.h>
 #include <aws/chatbot/Chatbot_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CHATBOT_API ChatbotEndpointProvider : public ChatbotDefaultEpProviderB
  public:
   using ChatbotResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ChatbotEndpointProvider()
-      : ChatbotDefaultEpProviderBase(Aws::chatbot::ChatbotEndpointRules::GetRulesBlob(),
-                                     Aws::chatbot::ChatbotEndpointRules::RulesBlobSize) {}
+  ChatbotEndpointProvider();
 
   ~ChatbotEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigClient.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigEndpointProvider.h>
-#include <aws/route53-recovery-control-config/Route53RecoveryControlConfigEndpointRules.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigErrorMarshaller.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigErrors.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigRequest.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigServiceClientModel.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfig_EXPORTS.h>
+#include <aws/route53-recovery-control-config/internal/Route53RecoveryControlConfigEndpointRules.h>
 #include <aws/route53-recovery-control-config/model/AssertionRule.h>
 #include <aws/route53-recovery-control-config/model/AssertionRuleUpdate.h>
 #include <aws/route53-recovery-control-config/model/Cluster.h>

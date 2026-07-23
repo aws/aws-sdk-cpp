@@ -8,12 +8,12 @@
 
 #include <aws/signer/SignerClient.h>
 #include <aws/signer/SignerEndpointProvider.h>
-#include <aws/signer/SignerEndpointRules.h>
 #include <aws/signer/SignerErrorMarshaller.h>
 #include <aws/signer/SignerErrors.h>
 #include <aws/signer/SignerRequest.h>
 #include <aws/signer/SignerServiceClientModel.h>
 #include <aws/signer/Signer_EXPORTS.h>
+#include <aws/signer/internal/SignerEndpointRules.h>
 #include <aws/signer/model/AccessDeniedException.h>
 #include <aws/signer/model/AddProfilePermissionRequest.h>
 #include <aws/signer/model/AddProfilePermissionResult.h>

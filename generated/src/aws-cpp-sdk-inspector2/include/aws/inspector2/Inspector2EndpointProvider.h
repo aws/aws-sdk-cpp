@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/inspector2/Inspector2EndpointRules.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_INSPECTOR2_API Inspector2EndpointProvider : public Inspector2DefaultEp
  public:
   using Inspector2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  Inspector2EndpointProvider()
-      : Inspector2DefaultEpProviderBase(Aws::Inspector2::Inspector2EndpointRules::GetRulesBlob(),
-                                        Aws::Inspector2::Inspector2EndpointRules::RulesBlobSize) {}
+  Inspector2EndpointProvider();
 
   ~Inspector2EndpointProvider() {}
 };

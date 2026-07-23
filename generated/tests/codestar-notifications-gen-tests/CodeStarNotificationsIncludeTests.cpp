@@ -8,12 +8,12 @@
 
 #include <aws/codestar-notifications/CodeStarNotificationsClient.h>
 #include <aws/codestar-notifications/CodeStarNotificationsEndpointProvider.h>
-#include <aws/codestar-notifications/CodeStarNotificationsEndpointRules.h>
 #include <aws/codestar-notifications/CodeStarNotificationsErrorMarshaller.h>
 #include <aws/codestar-notifications/CodeStarNotificationsErrors.h>
 #include <aws/codestar-notifications/CodeStarNotificationsRequest.h>
 #include <aws/codestar-notifications/CodeStarNotificationsServiceClientModel.h>
 #include <aws/codestar-notifications/CodeStarNotifications_EXPORTS.h>
+#include <aws/codestar-notifications/internal/CodeStarNotificationsEndpointRules.h>
 #include <aws/codestar-notifications/model/CreateNotificationRuleRequest.h>
 #include <aws/codestar-notifications/model/CreateNotificationRuleResult.h>
 #include <aws/codestar-notifications/model/DeleteNotificationRuleRequest.h>

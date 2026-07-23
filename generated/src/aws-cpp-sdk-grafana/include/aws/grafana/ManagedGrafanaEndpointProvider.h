@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/grafana/ManagedGrafanaEndpointRules.h>
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_MANAGEDGRAFANA_API ManagedGrafanaEndpointProvider : public ManagedGraf
  public:
   using ManagedGrafanaResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ManagedGrafanaEndpointProvider()
-      : ManagedGrafanaDefaultEpProviderBase(Aws::ManagedGrafana::ManagedGrafanaEndpointRules::GetRulesBlob(),
-                                            Aws::ManagedGrafana::ManagedGrafanaEndpointRules::RulesBlobSize) {}
+  ManagedGrafanaEndpointProvider();
 
   ~ManagedGrafanaEndpointProvider() {}
 };

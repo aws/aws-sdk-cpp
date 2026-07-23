@@ -8,12 +8,12 @@
 
 #include <aws/observabilityadmin/ObservabilityAdminClient.h>
 #include <aws/observabilityadmin/ObservabilityAdminEndpointProvider.h>
-#include <aws/observabilityadmin/ObservabilityAdminEndpointRules.h>
 #include <aws/observabilityadmin/ObservabilityAdminErrorMarshaller.h>
 #include <aws/observabilityadmin/ObservabilityAdminErrors.h>
 #include <aws/observabilityadmin/ObservabilityAdminRequest.h>
 #include <aws/observabilityadmin/ObservabilityAdminServiceClientModel.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
+#include <aws/observabilityadmin/internal/ObservabilityAdminEndpointRules.h>
 #include <aws/observabilityadmin/model/AccessDeniedException.h>
 #include <aws/observabilityadmin/model/Action.h>
 #include <aws/observabilityadmin/model/ActionCondition.h>

@@ -8,12 +8,12 @@
 
 #include <aws/appintegrations/AppIntegrationsServiceClient.h>
 #include <aws/appintegrations/AppIntegrationsServiceEndpointProvider.h>
-#include <aws/appintegrations/AppIntegrationsServiceEndpointRules.h>
 #include <aws/appintegrations/AppIntegrationsServiceErrorMarshaller.h>
 #include <aws/appintegrations/AppIntegrationsServiceErrors.h>
 #include <aws/appintegrations/AppIntegrationsServiceRequest.h>
 #include <aws/appintegrations/AppIntegrationsServiceServiceClientModel.h>
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
+#include <aws/appintegrations/internal/AppIntegrationsServiceEndpointRules.h>
 #include <aws/appintegrations/model/ApplicationAssociationSummary.h>
 #include <aws/appintegrations/model/ApplicationConfig.h>
 #include <aws/appintegrations/model/ApplicationSourceConfig.h>

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/rtbfabric/RTBFabricEndpointRules.h>
+#include <aws/rtbfabric/internal/RTBFabricEndpointRules.h>
 
 namespace Aws {
 namespace RTBFabric {

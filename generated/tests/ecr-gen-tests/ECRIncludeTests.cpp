@@ -8,12 +8,12 @@
 
 #include <aws/ecr/ECRClient.h>
 #include <aws/ecr/ECREndpointProvider.h>
-#include <aws/ecr/ECREndpointRules.h>
 #include <aws/ecr/ECRErrorMarshaller.h>
 #include <aws/ecr/ECRErrors.h>
 #include <aws/ecr/ECRRequest.h>
 #include <aws/ecr/ECRServiceClientModel.h>
 #include <aws/ecr/ECR_EXPORTS.h>
+#include <aws/ecr/internal/ECREndpointRules.h>
 #include <aws/ecr/model/ArtifactStatus.h>
 #include <aws/ecr/model/ArtifactStatusFilter.h>
 #include <aws/ecr/model/Attribute.h>

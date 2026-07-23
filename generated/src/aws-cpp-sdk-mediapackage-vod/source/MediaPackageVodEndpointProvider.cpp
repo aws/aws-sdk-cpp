@@ -4,9 +4,15 @@
  */
 
 #include <aws/mediapackage-vod/MediaPackageVodEndpointProvider.h>
+#include <aws/mediapackage-vod/internal/MediaPackageVodEndpointRules.h>
 
 namespace Aws {
 namespace MediaPackageVod {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MediaPackageVodEndpointProvider::MediaPackageVodEndpointProvider()
+    : MediaPackageVodDefaultEpProviderBase(Aws::MediaPackageVod::MediaPackageVodEndpointRules::GetRulesBlob(),
+                                           Aws::MediaPackageVod::MediaPackageVodEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MediaPackageVod
 }  // namespace Aws

@@ -8,12 +8,12 @@
 
 #include <aws/managedblockchain-query/ManagedBlockchainQueryClient.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQueryEndpointProvider.h>
-#include <aws/managedblockchain-query/ManagedBlockchainQueryEndpointRules.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQueryErrorMarshaller.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQueryErrors.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQueryRequest.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQueryServiceClientModel.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQuery_EXPORTS.h>
+#include <aws/managedblockchain-query/internal/ManagedBlockchainQueryEndpointRules.h>
 #include <aws/managedblockchain-query/model/AddressIdentifierFilter.h>
 #include <aws/managedblockchain-query/model/AssetContract.h>
 #include <aws/managedblockchain-query/model/BatchGetTokenBalanceErrorItem.h>

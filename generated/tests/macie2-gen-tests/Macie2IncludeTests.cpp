@@ -8,12 +8,12 @@
 
 #include <aws/macie2/Macie2Client.h>
 #include <aws/macie2/Macie2EndpointProvider.h>
-#include <aws/macie2/Macie2EndpointRules.h>
 #include <aws/macie2/Macie2ErrorMarshaller.h>
 #include <aws/macie2/Macie2Errors.h>
 #include <aws/macie2/Macie2Request.h>
 #include <aws/macie2/Macie2ServiceClientModel.h>
 #include <aws/macie2/Macie2_EXPORTS.h>
+#include <aws/macie2/internal/Macie2EndpointRules.h>
 #include <aws/macie2/model/AcceptInvitationRequest.h>
 #include <aws/macie2/model/AcceptInvitationResult.h>
 #include <aws/macie2/model/AccessControlList.h>

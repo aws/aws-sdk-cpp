@@ -8,12 +8,12 @@
 
 #include <aws/securityhub/SecurityHubClient.h>
 #include <aws/securityhub/SecurityHubEndpointProvider.h>
-#include <aws/securityhub/SecurityHubEndpointRules.h>
 #include <aws/securityhub/SecurityHubErrorMarshaller.h>
 #include <aws/securityhub/SecurityHubErrors.h>
 #include <aws/securityhub/SecurityHubRequest.h>
 #include <aws/securityhub/SecurityHubServiceClientModel.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/internal/SecurityHubEndpointRules.h>
 #include <aws/securityhub/model/AIDetails.h>
 #include <aws/securityhub/model/AcceptAdministratorInvitationRequest.h>
 #include <aws/securityhub/model/AcceptAdministratorInvitationResult.h>

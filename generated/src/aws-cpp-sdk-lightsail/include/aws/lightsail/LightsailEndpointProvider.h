@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/lightsail/LightsailEndpointRules.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_LIGHTSAIL_API LightsailEndpointProvider : public LightsailDefaultEpPro
  public:
   using LightsailResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  LightsailEndpointProvider()
-      : LightsailDefaultEpProviderBase(Aws::Lightsail::LightsailEndpointRules::GetRulesBlob(),
-                                       Aws::Lightsail::LightsailEndpointRules::RulesBlobSize) {}
+  LightsailEndpointProvider();
 
   ~LightsailEndpointProvider() {}
 };

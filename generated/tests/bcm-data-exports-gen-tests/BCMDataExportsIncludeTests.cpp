@@ -8,12 +8,12 @@
 
 #include <aws/bcm-data-exports/BCMDataExportsClient.h>
 #include <aws/bcm-data-exports/BCMDataExportsEndpointProvider.h>
-#include <aws/bcm-data-exports/BCMDataExportsEndpointRules.h>
 #include <aws/bcm-data-exports/BCMDataExportsErrorMarshaller.h>
 #include <aws/bcm-data-exports/BCMDataExportsErrors.h>
 #include <aws/bcm-data-exports/BCMDataExportsRequest.h>
 #include <aws/bcm-data-exports/BCMDataExportsServiceClientModel.h>
 #include <aws/bcm-data-exports/BCMDataExports_EXPORTS.h>
+#include <aws/bcm-data-exports/internal/BCMDataExportsEndpointRules.h>
 #include <aws/bcm-data-exports/model/Column.h>
 #include <aws/bcm-data-exports/model/CompressionOption.h>
 #include <aws/bcm-data-exports/model/CreateExportRequest.h>

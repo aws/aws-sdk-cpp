@@ -4,9 +4,15 @@
  */
 
 #include <aws/securitylake/SecurityLakeEndpointProvider.h>
+#include <aws/securitylake/internal/SecurityLakeEndpointRules.h>
 
 namespace Aws {
 namespace SecurityLake {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SecurityLakeEndpointProvider::SecurityLakeEndpointProvider()
+    : SecurityLakeDefaultEpProviderBase(Aws::SecurityLake::SecurityLakeEndpointRules::GetRulesBlob(),
+                                        Aws::SecurityLake::SecurityLakeEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SecurityLake
 }  // namespace Aws

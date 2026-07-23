@@ -8,6 +8,10 @@ file(GLOB AWS_IOTSECURETUNNELING_MODEL_HEADERS
     "include/aws/iotsecuretunneling/model/*.h"
 )
 
+file(GLOB AWS_IOTSECURETUNNELING_INTERNAL_HEADERS
+    "include/aws/iotsecuretunneling/internal/*.h"
+)
+
 file(GLOB AWS_IOTSECURETUNNELING_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_IOTSECURETUNNELING_MODEL_SOURCE
 
 file(GLOB IOTSECURETUNNELING_UNIFIED_HEADERS
     ${AWS_IOTSECURETUNNELING_HEADERS}
+    ${AWS_IOTSECURETUNNELING_INTERNAL_HEADERS}
     ${AWS_IOTSECURETUNNELING_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\iotsecuretunneling" FILES ${AWS_IOTSECURETUNNELING_HEADERS})
+        source_group("Header Files\\aws\\iotsecuretunneling\\internal" FILES ${AWS_IOTSECURETUNNELING_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\iotsecuretunneling\\model" FILES ${AWS_IOTSECURETUNNELING_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_IOTSECURETUNNELING_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_IOTSECURETUNNELING_MODEL_SOURCE})

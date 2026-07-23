@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/kendra/KendraEndpointRules.h>
+#include <aws/kendra/internal/KendraEndpointRules.h>
 
 namespace Aws {
 namespace kendra {

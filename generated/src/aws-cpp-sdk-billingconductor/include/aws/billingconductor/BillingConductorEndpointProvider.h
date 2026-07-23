@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/billingconductor/BillingConductorEndpointRules.h>
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -43,9 +42,7 @@ class AWS_BILLINGCONDUCTOR_API BillingConductorEndpointProvider : public Billing
  public:
   using BillingConductorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BillingConductorEndpointProvider()
-      : BillingConductorDefaultEpProviderBase(Aws::BillingConductor::BillingConductorEndpointRules::GetRulesBlob(),
-                                              Aws::BillingConductor::BillingConductorEndpointRules::RulesBlobSize) {}
+  BillingConductorEndpointProvider();
 
   ~BillingConductorEndpointProvider() {}
 };

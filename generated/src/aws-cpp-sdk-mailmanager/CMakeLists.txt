@@ -8,6 +8,10 @@ file(GLOB AWS_MAILMANAGER_MODEL_HEADERS
     "include/aws/mailmanager/model/*.h"
 )
 
+file(GLOB AWS_MAILMANAGER_INTERNAL_HEADERS
+    "include/aws/mailmanager/internal/*.h"
+)
+
 file(GLOB AWS_MAILMANAGER_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MAILMANAGER_MODEL_SOURCE
 
 file(GLOB MAILMANAGER_UNIFIED_HEADERS
     ${AWS_MAILMANAGER_HEADERS}
+    ${AWS_MAILMANAGER_INTERNAL_HEADERS}
     ${AWS_MAILMANAGER_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\mailmanager" FILES ${AWS_MAILMANAGER_HEADERS})
+        source_group("Header Files\\aws\\mailmanager\\internal" FILES ${AWS_MAILMANAGER_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\mailmanager\\model" FILES ${AWS_MAILMANAGER_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MAILMANAGER_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MAILMANAGER_MODEL_SOURCE})

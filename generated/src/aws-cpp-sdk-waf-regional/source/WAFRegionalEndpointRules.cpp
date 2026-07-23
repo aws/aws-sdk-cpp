@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/waf-regional/WAFRegionalEndpointRules.h>
+#include <aws/waf-regional/internal/WAFRegionalEndpointRules.h>
 
 namespace Aws {
 namespace WAFRegional {

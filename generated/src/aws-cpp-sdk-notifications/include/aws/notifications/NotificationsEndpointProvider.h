@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/notifications/NotificationsEndpointRules.h>
 #include <aws/notifications/Notifications_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_NOTIFICATIONS_API NotificationsEndpointProvider : public Notifications
  public:
   using NotificationsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  NotificationsEndpointProvider()
-      : NotificationsDefaultEpProviderBase(Aws::Notifications::NotificationsEndpointRules::GetRulesBlob(),
-                                           Aws::Notifications::NotificationsEndpointRules::RulesBlobSize) {}
+  NotificationsEndpointProvider();
 
   ~NotificationsEndpointProvider() {}
 };

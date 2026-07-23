@@ -4,9 +4,15 @@
  */
 
 #include <aws/events/CloudWatchEventsEndpointProvider.h>
+#include <aws/events/internal/CloudWatchEventsEndpointRules.h>
 
 namespace Aws {
 namespace CloudWatchEvents {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+CloudWatchEventsEndpointProvider::CloudWatchEventsEndpointProvider()
+    : CloudWatchEventsDefaultEpProviderBase(Aws::CloudWatchEvents::CloudWatchEventsEndpointRules::GetRulesBlob(),
+                                            Aws::CloudWatchEvents::CloudWatchEventsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace CloudWatchEvents
 }  // namespace Aws

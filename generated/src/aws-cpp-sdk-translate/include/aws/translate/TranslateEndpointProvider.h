@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/translate/TranslateEndpointRules.h>
 #include <aws/translate/Translate_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_TRANSLATE_API TranslateEndpointProvider : public TranslateDefaultEpPro
  public:
   using TranslateResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  TranslateEndpointProvider()
-      : TranslateDefaultEpProviderBase(Aws::Translate::TranslateEndpointRules::GetRulesBlob(),
-                                       Aws::Translate::TranslateEndpointRules::RulesBlobSize) {}
+  TranslateEndpointProvider();
 
   ~TranslateEndpointProvider() {}
 };

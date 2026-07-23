@@ -8,12 +8,12 @@
 
 #include <aws/s3tables/S3TablesClient.h>
 #include <aws/s3tables/S3TablesEndpointProvider.h>
-#include <aws/s3tables/S3TablesEndpointRules.h>
 #include <aws/s3tables/S3TablesErrorMarshaller.h>
 #include <aws/s3tables/S3TablesErrors.h>
 #include <aws/s3tables/S3TablesRequest.h>
 #include <aws/s3tables/S3TablesServiceClientModel.h>
 #include <aws/s3tables/S3Tables_EXPORTS.h>
+#include <aws/s3tables/internal/S3TablesEndpointRules.h>
 #include <aws/s3tables/model/CreateNamespaceRequest.h>
 #include <aws/s3tables/model/CreateNamespaceResult.h>
 #include <aws/s3tables/model/CreateTableBucketRequest.h>

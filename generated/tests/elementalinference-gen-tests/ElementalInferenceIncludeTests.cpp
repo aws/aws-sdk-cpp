@@ -8,12 +8,12 @@
 
 #include <aws/elementalinference/ElementalInferenceClient.h>
 #include <aws/elementalinference/ElementalInferenceEndpointProvider.h>
-#include <aws/elementalinference/ElementalInferenceEndpointRules.h>
 #include <aws/elementalinference/ElementalInferenceErrorMarshaller.h>
 #include <aws/elementalinference/ElementalInferenceErrors.h>
 #include <aws/elementalinference/ElementalInferenceRequest.h>
 #include <aws/elementalinference/ElementalInferenceServiceClientModel.h>
 #include <aws/elementalinference/ElementalInference_EXPORTS.h>
+#include <aws/elementalinference/internal/ElementalInferenceEndpointRules.h>
 #include <aws/elementalinference/model/AspectRatio.h>
 #include <aws/elementalinference/model/AssociateFeedRequest.h>
 #include <aws/elementalinference/model/AssociateFeedResult.h>

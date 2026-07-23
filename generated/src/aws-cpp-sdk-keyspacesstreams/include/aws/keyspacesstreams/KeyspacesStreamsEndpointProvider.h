@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/keyspacesstreams/KeyspacesStreamsEndpointRules.h>
 #include <aws/keyspacesstreams/KeyspacesStreams_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_KEYSPACESSTREAMS_API KeyspacesStreamsEndpointProvider : public Keyspac
  public:
   using KeyspacesStreamsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  KeyspacesStreamsEndpointProvider()
-      : KeyspacesStreamsDefaultEpProviderBase(Aws::KeyspacesStreams::KeyspacesStreamsEndpointRules::GetRulesBlob(),
-                                              Aws::KeyspacesStreams::KeyspacesStreamsEndpointRules::RulesBlobSize) {}
+  KeyspacesStreamsEndpointProvider();
 
   ~KeyspacesStreamsEndpointProvider() {}
 };

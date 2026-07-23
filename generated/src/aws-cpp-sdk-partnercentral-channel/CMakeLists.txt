@@ -8,6 +8,10 @@ file(GLOB AWS_PARTNERCENTRAL-CHANNEL_MODEL_HEADERS
     "include/aws/partnercentral-channel/model/*.h"
 )
 
+file(GLOB AWS_PARTNERCENTRAL-CHANNEL_INTERNAL_HEADERS
+    "include/aws/partnercentral-channel/internal/*.h"
+)
+
 file(GLOB AWS_PARTNERCENTRAL-CHANNEL_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_PARTNERCENTRAL-CHANNEL_MODEL_SOURCE
 
 file(GLOB PARTNERCENTRAL-CHANNEL_UNIFIED_HEADERS
     ${AWS_PARTNERCENTRAL-CHANNEL_HEADERS}
+    ${AWS_PARTNERCENTRAL-CHANNEL_INTERNAL_HEADERS}
     ${AWS_PARTNERCENTRAL-CHANNEL_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\partnercentral-channel" FILES ${AWS_PARTNERCENTRAL-CHANNEL_HEADERS})
+        source_group("Header Files\\aws\\partnercentral-channel\\internal" FILES ${AWS_PARTNERCENTRAL-CHANNEL_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\partnercentral-channel\\model" FILES ${AWS_PARTNERCENTRAL-CHANNEL_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_PARTNERCENTRAL-CHANNEL_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_PARTNERCENTRAL-CHANNEL_MODEL_SOURCE})

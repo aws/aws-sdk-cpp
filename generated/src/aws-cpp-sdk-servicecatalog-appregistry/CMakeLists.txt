@@ -8,6 +8,10 @@ file(GLOB AWS_SERVICECATALOG-APPREGISTRY_MODEL_HEADERS
     "include/aws/servicecatalog-appregistry/model/*.h"
 )
 
+file(GLOB AWS_SERVICECATALOG-APPREGISTRY_INTERNAL_HEADERS
+    "include/aws/servicecatalog-appregistry/internal/*.h"
+)
+
 file(GLOB AWS_SERVICECATALOG-APPREGISTRY_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SERVICECATALOG-APPREGISTRY_MODEL_SOURCE
 
 file(GLOB SERVICECATALOG-APPREGISTRY_UNIFIED_HEADERS
     ${AWS_SERVICECATALOG-APPREGISTRY_HEADERS}
+    ${AWS_SERVICECATALOG-APPREGISTRY_INTERNAL_HEADERS}
     ${AWS_SERVICECATALOG-APPREGISTRY_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\servicecatalog-appregistry" FILES ${AWS_SERVICECATALOG-APPREGISTRY_HEADERS})
+        source_group("Header Files\\aws\\servicecatalog-appregistry\\internal" FILES ${AWS_SERVICECATALOG-APPREGISTRY_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\servicecatalog-appregistry\\model" FILES ${AWS_SERVICECATALOG-APPREGISTRY_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SERVICECATALOG-APPREGISTRY_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SERVICECATALOG-APPREGISTRY_MODEL_SOURCE})

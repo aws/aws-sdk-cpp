@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/dax/DAXEndpointRules.h>
 #include <aws/dax/DAX_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_DAX_API DAXEndpointProvider : public DAXDefaultEpProviderBase {
  public:
   using DAXResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DAXEndpointProvider() : DAXDefaultEpProviderBase(Aws::DAX::DAXEndpointRules::GetRulesBlob(), Aws::DAX::DAXEndpointRules::RulesBlobSize) {}
+  DAXEndpointProvider();
 
   ~DAXEndpointProvider() {}
 };

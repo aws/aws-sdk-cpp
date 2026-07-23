@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/pinpoint/PinpointEndpointRules.h>
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_PINPOINT_API PinpointEndpointProvider : public PinpointDefaultEpProvid
  public:
   using PinpointResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PinpointEndpointProvider()
-      : PinpointDefaultEpProviderBase(Aws::Pinpoint::PinpointEndpointRules::GetRulesBlob(),
-                                      Aws::Pinpoint::PinpointEndpointRules::RulesBlobSize) {}
+  PinpointEndpointProvider();
 
   ~PinpointEndpointProvider() {}
 };

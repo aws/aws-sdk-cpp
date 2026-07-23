@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/pcs/PCSEndpointRules.h>
 #include <aws/pcs/PCS_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_PCS_API PCSEndpointProvider : public PCSDefaultEpProviderBase {
  public:
   using PCSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PCSEndpointProvider() : PCSDefaultEpProviderBase(Aws::PCS::PCSEndpointRules::GetRulesBlob(), Aws::PCS::PCSEndpointRules::RulesBlobSize) {}
+  PCSEndpointProvider();
 
   ~PCSEndpointProvider() {}
 };

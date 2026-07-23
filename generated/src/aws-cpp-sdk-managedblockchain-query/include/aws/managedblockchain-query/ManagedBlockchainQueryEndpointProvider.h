@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/managedblockchain-query/ManagedBlockchainQueryEndpointRules.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQuery_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_MANAGEDBLOCKCHAINQUERY_API ManagedBlockchainQueryEndpointProvider : pu
  public:
   using ManagedBlockchainQueryResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ManagedBlockchainQueryEndpointProvider()
-      : ManagedBlockchainQueryDefaultEpProviderBase(Aws::ManagedBlockchainQuery::ManagedBlockchainQueryEndpointRules::GetRulesBlob(),
-                                                    Aws::ManagedBlockchainQuery::ManagedBlockchainQueryEndpointRules::RulesBlobSize) {}
+  ManagedBlockchainQueryEndpointProvider();
 
   ~ManagedBlockchainQueryEndpointProvider() {}
 };

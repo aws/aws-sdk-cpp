@@ -4,9 +4,15 @@
  */
 
 #include <aws/interconnect/InterconnectEndpointProvider.h>
+#include <aws/interconnect/internal/InterconnectEndpointRules.h>
 
 namespace Aws {
 namespace Interconnect {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+InterconnectEndpointProvider::InterconnectEndpointProvider()
+    : InterconnectDefaultEpProviderBase(Aws::Interconnect::InterconnectEndpointRules::GetRulesBlob(),
+                                        Aws::Interconnect::InterconnectEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Interconnect
 }  // namespace Aws

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/datazone/DataZoneEndpointRules.h>
+#include <aws/datazone/internal/DataZoneEndpointRules.h>
 
 namespace Aws {
 namespace DataZone {

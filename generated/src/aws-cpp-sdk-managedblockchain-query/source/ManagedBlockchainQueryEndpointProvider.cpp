@@ -4,9 +4,15 @@
  */
 
 #include <aws/managedblockchain-query/ManagedBlockchainQueryEndpointProvider.h>
+#include <aws/managedblockchain-query/internal/ManagedBlockchainQueryEndpointRules.h>
 
 namespace Aws {
 namespace ManagedBlockchainQuery {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ManagedBlockchainQueryEndpointProvider::ManagedBlockchainQueryEndpointProvider()
+    : ManagedBlockchainQueryDefaultEpProviderBase(Aws::ManagedBlockchainQuery::ManagedBlockchainQueryEndpointRules::GetRulesBlob(),
+                                                  Aws::ManagedBlockchainQuery::ManagedBlockchainQueryEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ManagedBlockchainQuery
 }  // namespace Aws

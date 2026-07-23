@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rbin/RecycleBinEndpointRules.h>
 #include <aws/rbin/RecycleBin_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_RECYCLEBIN_API RecycleBinEndpointProvider : public RecycleBinDefaultEp
  public:
   using RecycleBinResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  RecycleBinEndpointProvider()
-      : RecycleBinDefaultEpProviderBase(Aws::RecycleBin::RecycleBinEndpointRules::GetRulesBlob(),
-                                        Aws::RecycleBin::RecycleBinEndpointRules::RulesBlobSize) {}
+  RecycleBinEndpointProvider();
 
   ~RecycleBinEndpointProvider() {}
 };

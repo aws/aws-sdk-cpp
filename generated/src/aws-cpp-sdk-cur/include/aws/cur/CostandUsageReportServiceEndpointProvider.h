@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/cur/CostandUsageReportServiceEndpointRules.h>
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
 
 namespace Aws {
@@ -44,10 +43,7 @@ class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceEndpointProvide
  public:
   using CostandUsageReportServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CostandUsageReportServiceEndpointProvider()
-      : CostandUsageReportServiceDefaultEpProviderBase(
-            Aws::CostandUsageReportService::CostandUsageReportServiceEndpointRules::GetRulesBlob(),
-            Aws::CostandUsageReportService::CostandUsageReportServiceEndpointRules::RulesBlobSize) {}
+  CostandUsageReportServiceEndpointProvider();
 
   ~CostandUsageReportServiceEndpointProvider() {}
 };

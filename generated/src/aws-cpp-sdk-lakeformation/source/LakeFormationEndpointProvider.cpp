@@ -4,9 +4,15 @@
  */
 
 #include <aws/lakeformation/LakeFormationEndpointProvider.h>
+#include <aws/lakeformation/internal/LakeFormationEndpointRules.h>
 
 namespace Aws {
 namespace LakeFormation {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+LakeFormationEndpointProvider::LakeFormationEndpointProvider()
+    : LakeFormationDefaultEpProviderBase(Aws::LakeFormation::LakeFormationEndpointRules::GetRulesBlob(),
+                                         Aws::LakeFormation::LakeFormationEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace LakeFormation
 }  // namespace Aws

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2EndpointRules.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_ELASTICLOADBALANCINGV2_API ElasticLoadBalancingv2EndpointProvider : pu
  public:
   using ElasticLoadBalancingv2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ElasticLoadBalancingv2EndpointProvider()
-      : ElasticLoadBalancingv2DefaultEpProviderBase(Aws::ElasticLoadBalancingv2::ElasticLoadBalancingv2EndpointRules::GetRulesBlob(),
-                                                    Aws::ElasticLoadBalancingv2::ElasticLoadBalancingv2EndpointRules::RulesBlobSize) {}
+  ElasticLoadBalancingv2EndpointProvider();
 
   ~ElasticLoadBalancingv2EndpointProvider() {}
 };

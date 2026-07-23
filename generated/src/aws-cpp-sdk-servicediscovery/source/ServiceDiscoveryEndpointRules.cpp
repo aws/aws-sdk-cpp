@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/servicediscovery/ServiceDiscoveryEndpointRules.h>
+#include <aws/servicediscovery/internal/ServiceDiscoveryEndpointRules.h>
 
 namespace Aws {
 namespace ServiceDiscovery {

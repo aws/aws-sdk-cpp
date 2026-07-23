@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/mq/MQEndpointRules.h>
 #include <aws/mq/MQ_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_MQ_API MQEndpointProvider : public MQDefaultEpProviderBase {
  public:
   using MQResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MQEndpointProvider() : MQDefaultEpProviderBase(Aws::MQ::MQEndpointRules::GetRulesBlob(), Aws::MQ::MQEndpointRules::RulesBlobSize) {}
+  MQEndpointProvider();
 
   ~MQEndpointProvider() {}
 };

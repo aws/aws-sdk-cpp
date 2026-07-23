@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/taxsettings/TaxSettingsEndpointRules.h>
+#include <aws/taxsettings/internal/TaxSettingsEndpointRules.h>
 
 namespace Aws {
 namespace TaxSettings {

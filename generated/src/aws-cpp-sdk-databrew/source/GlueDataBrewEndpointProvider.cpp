@@ -4,9 +4,15 @@
  */
 
 #include <aws/databrew/GlueDataBrewEndpointProvider.h>
+#include <aws/databrew/internal/GlueDataBrewEndpointRules.h>
 
 namespace Aws {
 namespace GlueDataBrew {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+GlueDataBrewEndpointProvider::GlueDataBrewEndpointProvider()
+    : GlueDataBrewDefaultEpProviderBase(Aws::GlueDataBrew::GlueDataBrewEndpointRules::GetRulesBlob(),
+                                        Aws::GlueDataBrew::GlueDataBrewEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace GlueDataBrew
 }  // namespace Aws

@@ -4,9 +4,15 @@
  */
 
 #include <aws/codepipeline/CodePipelineEndpointProvider.h>
+#include <aws/codepipeline/internal/CodePipelineEndpointRules.h>
 
 namespace Aws {
 namespace CodePipeline {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+CodePipelineEndpointProvider::CodePipelineEndpointProvider()
+    : CodePipelineDefaultEpProviderBase(Aws::CodePipeline::CodePipelineEndpointRules::GetRulesBlob(),
+                                        Aws::CodePipeline::CodePipelineEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace CodePipeline
 }  // namespace Aws

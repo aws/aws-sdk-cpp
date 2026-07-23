@@ -8,6 +8,10 @@ file(GLOB AWS_AUTOSCALING_MODEL_HEADERS
     "include/aws/autoscaling/model/*.h"
 )
 
+file(GLOB AWS_AUTOSCALING_INTERNAL_HEADERS
+    "include/aws/autoscaling/internal/*.h"
+)
+
 file(GLOB AWS_AUTOSCALING_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_AUTOSCALING_MODEL_SOURCE
 
 file(GLOB AUTOSCALING_UNIFIED_HEADERS
     ${AWS_AUTOSCALING_HEADERS}
+    ${AWS_AUTOSCALING_INTERNAL_HEADERS}
     ${AWS_AUTOSCALING_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\autoscaling" FILES ${AWS_AUTOSCALING_HEADERS})
+        source_group("Header Files\\aws\\autoscaling\\internal" FILES ${AWS_AUTOSCALING_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\autoscaling\\model" FILES ${AWS_AUTOSCALING_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_AUTOSCALING_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_AUTOSCALING_MODEL_SOURCE})

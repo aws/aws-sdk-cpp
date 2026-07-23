@@ -8,6 +8,10 @@ file(GLOB AWS_SYNTHETICS_MODEL_HEADERS
     "include/aws/synthetics/model/*.h"
 )
 
+file(GLOB AWS_SYNTHETICS_INTERNAL_HEADERS
+    "include/aws/synthetics/internal/*.h"
+)
+
 file(GLOB AWS_SYNTHETICS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SYNTHETICS_MODEL_SOURCE
 
 file(GLOB SYNTHETICS_UNIFIED_HEADERS
     ${AWS_SYNTHETICS_HEADERS}
+    ${AWS_SYNTHETICS_INTERNAL_HEADERS}
     ${AWS_SYNTHETICS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\synthetics" FILES ${AWS_SYNTHETICS_HEADERS})
+        source_group("Header Files\\aws\\synthetics\\internal" FILES ${AWS_SYNTHETICS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\synthetics\\model" FILES ${AWS_SYNTHETICS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SYNTHETICS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SYNTHETICS_MODEL_SOURCE})

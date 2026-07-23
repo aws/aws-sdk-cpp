@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/timestream-query/TimestreamQueryEndpointRules.h>
+#include <aws/timestream-query/internal/TimestreamQueryEndpointRules.h>
 
 namespace Aws {
 namespace TimestreamQuery {

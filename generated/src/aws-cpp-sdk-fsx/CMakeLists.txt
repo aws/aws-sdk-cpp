@@ -8,6 +8,10 @@ file(GLOB AWS_FSX_MODEL_HEADERS
     "include/aws/fsx/model/*.h"
 )
 
+file(GLOB AWS_FSX_INTERNAL_HEADERS
+    "include/aws/fsx/internal/*.h"
+)
+
 file(GLOB AWS_FSX_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_FSX_MODEL_SOURCE
 
 file(GLOB FSX_UNIFIED_HEADERS
     ${AWS_FSX_HEADERS}
+    ${AWS_FSX_INTERNAL_HEADERS}
     ${AWS_FSX_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\fsx" FILES ${AWS_FSX_HEADERS})
+        source_group("Header Files\\aws\\fsx\\internal" FILES ${AWS_FSX_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\fsx\\model" FILES ${AWS_FSX_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_FSX_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_FSX_MODEL_SOURCE})

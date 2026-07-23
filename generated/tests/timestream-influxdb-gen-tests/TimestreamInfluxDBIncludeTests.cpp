@@ -8,12 +8,12 @@
 
 #include <aws/timestream-influxdb/TimestreamInfluxDBClient.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBEndpointProvider.h>
-#include <aws/timestream-influxdb/TimestreamInfluxDBEndpointRules.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBErrorMarshaller.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBErrors.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBRequest.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBServiceClientModel.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
+#include <aws/timestream-influxdb/internal/TimestreamInfluxDBEndpointRules.h>
 #include <aws/timestream-influxdb/model/ClusterConfiguration.h>
 #include <aws/timestream-influxdb/model/ClusterDeploymentType.h>
 #include <aws/timestream-influxdb/model/ClusterStatus.h>

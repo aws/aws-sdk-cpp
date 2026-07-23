@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIEndpointRules.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 
 namespace Aws {
@@ -44,10 +43,7 @@ class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIEndpointProvider 
  public:
   using ResourceGroupsTaggingAPIResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ResourceGroupsTaggingAPIEndpointProvider()
-      : ResourceGroupsTaggingAPIDefaultEpProviderBase(Aws::ResourceGroupsTaggingAPI::ResourceGroupsTaggingAPIEndpointRules::GetRulesBlob(),
-                                                      Aws::ResourceGroupsTaggingAPI::ResourceGroupsTaggingAPIEndpointRules::RulesBlobSize) {
-  }
+  ResourceGroupsTaggingAPIEndpointProvider();
 
   ~ResourceGroupsTaggingAPIEndpointProvider() {}
 };

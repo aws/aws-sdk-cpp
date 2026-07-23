@@ -8,12 +8,12 @@
 
 #include <aws/workmailmessageflow/WorkMailMessageFlowClient.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowEndpointProvider.h>
-#include <aws/workmailmessageflow/WorkMailMessageFlowEndpointRules.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowErrorMarshaller.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowErrors.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowRequest.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowServiceClientModel.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlow_EXPORTS.h>
+#include <aws/workmailmessageflow/internal/WorkMailMessageFlowEndpointRules.h>
 #include <aws/workmailmessageflow/model/GetRawMessageContentRequest.h>
 #include <aws/workmailmessageflow/model/GetRawMessageContentResult.h>
 #include <aws/workmailmessageflow/model/PutRawMessageContentRequest.h>

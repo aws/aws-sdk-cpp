@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeEndpointRules.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_AUGMENTEDAIRUNTIME_API AugmentedAIRuntimeEndpointProvider : public Aug
  public:
   using AugmentedAIRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AugmentedAIRuntimeEndpointProvider()
-      : AugmentedAIRuntimeDefaultEpProviderBase(Aws::AugmentedAIRuntime::AugmentedAIRuntimeEndpointRules::GetRulesBlob(),
-                                                Aws::AugmentedAIRuntime::AugmentedAIRuntimeEndpointRules::RulesBlobSize) {}
+  AugmentedAIRuntimeEndpointProvider();
 
   ~AugmentedAIRuntimeEndpointProvider() {}
 };

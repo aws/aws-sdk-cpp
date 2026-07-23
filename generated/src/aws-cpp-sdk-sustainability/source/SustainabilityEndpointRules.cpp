@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sustainability/SustainabilityEndpointRules.h>
+#include <aws/sustainability/internal/SustainabilityEndpointRules.h>
 
 namespace Aws {
 namespace Sustainability {

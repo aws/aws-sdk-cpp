@@ -4,9 +4,15 @@
  */
 
 #include <aws/support-app/SupportAppEndpointProvider.h>
+#include <aws/support-app/internal/SupportAppEndpointRules.h>
 
 namespace Aws {
 namespace SupportApp {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SupportAppEndpointProvider::SupportAppEndpointProvider()
+    : SupportAppDefaultEpProviderBase(Aws::SupportApp::SupportAppEndpointRules::GetRulesBlob(),
+                                      Aws::SupportApp::SupportAppEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SupportApp
 }  // namespace Aws

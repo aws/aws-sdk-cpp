@@ -8,6 +8,10 @@ file(GLOB AWS_TNB_MODEL_HEADERS
     "include/aws/tnb/model/*.h"
 )
 
+file(GLOB AWS_TNB_INTERNAL_HEADERS
+    "include/aws/tnb/internal/*.h"
+)
+
 file(GLOB AWS_TNB_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_TNB_MODEL_SOURCE
 
 file(GLOB TNB_UNIFIED_HEADERS
     ${AWS_TNB_HEADERS}
+    ${AWS_TNB_INTERNAL_HEADERS}
     ${AWS_TNB_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\tnb" FILES ${AWS_TNB_HEADERS})
+        source_group("Header Files\\aws\\tnb\\internal" FILES ${AWS_TNB_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\tnb\\model" FILES ${AWS_TNB_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_TNB_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_TNB_MODEL_SOURCE})

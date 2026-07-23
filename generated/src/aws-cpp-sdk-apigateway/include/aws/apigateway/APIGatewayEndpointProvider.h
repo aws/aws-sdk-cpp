@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/apigateway/APIGatewayEndpointRules.h>
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_APIGATEWAY_API APIGatewayEndpointProvider : public APIGatewayDefaultEp
  public:
   using APIGatewayResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  APIGatewayEndpointProvider()
-      : APIGatewayDefaultEpProviderBase(Aws::APIGateway::APIGatewayEndpointRules::GetRulesBlob(),
-                                        Aws::APIGateway::APIGatewayEndpointRules::RulesBlobSize) {}
+  APIGatewayEndpointProvider();
 
   ~APIGatewayEndpointProvider() {}
 };

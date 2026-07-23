@@ -8,6 +8,10 @@ file(GLOB AWS_CONNECTCAMPAIGNS_MODEL_HEADERS
     "include/aws/connectcampaigns/model/*.h"
 )
 
+file(GLOB AWS_CONNECTCAMPAIGNS_INTERNAL_HEADERS
+    "include/aws/connectcampaigns/internal/*.h"
+)
+
 file(GLOB AWS_CONNECTCAMPAIGNS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CONNECTCAMPAIGNS_MODEL_SOURCE
 
 file(GLOB CONNECTCAMPAIGNS_UNIFIED_HEADERS
     ${AWS_CONNECTCAMPAIGNS_HEADERS}
+    ${AWS_CONNECTCAMPAIGNS_INTERNAL_HEADERS}
     ${AWS_CONNECTCAMPAIGNS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\connectcampaigns" FILES ${AWS_CONNECTCAMPAIGNS_HEADERS})
+        source_group("Header Files\\aws\\connectcampaigns\\internal" FILES ${AWS_CONNECTCAMPAIGNS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\connectcampaigns\\model" FILES ${AWS_CONNECTCAMPAIGNS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CONNECTCAMPAIGNS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CONNECTCAMPAIGNS_MODEL_SOURCE})

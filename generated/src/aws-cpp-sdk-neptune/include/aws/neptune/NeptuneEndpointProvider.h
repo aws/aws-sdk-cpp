@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/neptune/NeptuneEndpointRules.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_NEPTUNE_API NeptuneEndpointProvider : public NeptuneDefaultEpProviderB
  public:
   using NeptuneResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  NeptuneEndpointProvider()
-      : NeptuneDefaultEpProviderBase(Aws::Neptune::NeptuneEndpointRules::GetRulesBlob(),
-                                     Aws::Neptune::NeptuneEndpointRules::RulesBlobSize) {}
+  NeptuneEndpointProvider();
 
   ~NeptuneEndpointProvider() {}
 };

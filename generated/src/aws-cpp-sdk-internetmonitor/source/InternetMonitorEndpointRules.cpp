@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/internetmonitor/InternetMonitorEndpointRules.h>
+#include <aws/internetmonitor/internal/InternetMonitorEndpointRules.h>
 
 namespace Aws {
 namespace InternetMonitor {

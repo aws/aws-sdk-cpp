@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/invoicing/InvoicingEndpointRules.h>
 #include <aws/invoicing/Invoicing_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_INVOICING_API InvoicingEndpointProvider : public InvoicingDefaultEpPro
  public:
   using InvoicingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  InvoicingEndpointProvider()
-      : InvoicingDefaultEpProviderBase(Aws::Invoicing::InvoicingEndpointRules::GetRulesBlob(),
-                                       Aws::Invoicing::InvoicingEndpointRules::RulesBlobSize) {}
+  InvoicingEndpointProvider();
 
   ~InvoicingEndpointProvider() {}
 };

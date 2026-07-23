@@ -8,12 +8,12 @@
 
 #include <aws/pinpoint-email/PinpointEmailClient.h>
 #include <aws/pinpoint-email/PinpointEmailEndpointProvider.h>
-#include <aws/pinpoint-email/PinpointEmailEndpointRules.h>
 #include <aws/pinpoint-email/PinpointEmailErrorMarshaller.h>
 #include <aws/pinpoint-email/PinpointEmailErrors.h>
 #include <aws/pinpoint-email/PinpointEmailRequest.h>
 #include <aws/pinpoint-email/PinpointEmailServiceClientModel.h>
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
+#include <aws/pinpoint-email/internal/PinpointEmailEndpointRules.h>
 #include <aws/pinpoint-email/model/BehaviorOnMxFailure.h>
 #include <aws/pinpoint-email/model/BlacklistEntry.h>
 #include <aws/pinpoint-email/model/Body.h>

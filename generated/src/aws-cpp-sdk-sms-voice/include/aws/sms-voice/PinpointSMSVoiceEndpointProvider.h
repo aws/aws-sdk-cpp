@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sms-voice/PinpointSMSVoiceEndpointRules.h>
 #include <aws/sms-voice/PinpointSMSVoice_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_PINPOINTSMSVOICE_API PinpointSMSVoiceEndpointProvider : public Pinpoin
  public:
   using PinpointSMSVoiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PinpointSMSVoiceEndpointProvider()
-      : PinpointSMSVoiceDefaultEpProviderBase(Aws::PinpointSMSVoice::PinpointSMSVoiceEndpointRules::GetRulesBlob(),
-                                              Aws::PinpointSMSVoice::PinpointSMSVoiceEndpointRules::RulesBlobSize) {}
+  PinpointSMSVoiceEndpointProvider();
 
   ~PinpointSMSVoiceEndpointProvider() {}
 };

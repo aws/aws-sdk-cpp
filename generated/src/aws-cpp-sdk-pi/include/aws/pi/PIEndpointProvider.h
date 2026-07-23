@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/pi/PIEndpointRules.h>
 #include <aws/pi/PI_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_PI_API PIEndpointProvider : public PIDefaultEpProviderBase {
  public:
   using PIResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PIEndpointProvider() : PIDefaultEpProviderBase(Aws::PI::PIEndpointRules::GetRulesBlob(), Aws::PI::PIEndpointRules::RulesBlobSize) {}
+  PIEndpointProvider();
 
   ~PIEndpointProvider() {}
 };

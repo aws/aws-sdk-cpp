@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rtbfabric/RTBFabricEndpointRules.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_RTBFABRIC_API RTBFabricEndpointProvider : public RTBFabricDefaultEpPro
  public:
   using RTBFabricResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  RTBFabricEndpointProvider()
-      : RTBFabricDefaultEpProviderBase(Aws::RTBFabric::RTBFabricEndpointRules::GetRulesBlob(),
-                                       Aws::RTBFabric::RTBFabricEndpointRules::RulesBlobSize) {}
+  RTBFabricEndpointProvider();
 
   ~RTBFabricEndpointProvider() {}
 };

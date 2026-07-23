@@ -8,12 +8,12 @@
 
 #include <aws/cleanrooms/CleanRoomsClient.h>
 #include <aws/cleanrooms/CleanRoomsEndpointProvider.h>
-#include <aws/cleanrooms/CleanRoomsEndpointRules.h>
 #include <aws/cleanrooms/CleanRoomsErrorMarshaller.h>
 #include <aws/cleanrooms/CleanRoomsErrors.h>
 #include <aws/cleanrooms/CleanRoomsRequest.h>
 #include <aws/cleanrooms/CleanRoomsServiceClientModel.h>
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/internal/CleanRoomsEndpointRules.h>
 #include <aws/cleanrooms/model/AccessBudget.h>
 #include <aws/cleanrooms/model/AccessBudgetDetails.h>
 #include <aws/cleanrooms/model/AccessBudgetType.h>

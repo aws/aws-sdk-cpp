@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/neptune-graph/NeptuneGraphEndpointRules.h>
+#include <aws/neptune-graph/internal/NeptuneGraphEndpointRules.h>
 
 namespace Aws {
 namespace NeptuneGraph {

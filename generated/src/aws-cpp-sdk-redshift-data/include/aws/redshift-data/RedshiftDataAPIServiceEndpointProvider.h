@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/redshift-data/RedshiftDataAPIServiceEndpointRules.h>
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceEndpointProvider : pu
  public:
   using RedshiftDataAPIServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  RedshiftDataAPIServiceEndpointProvider()
-      : RedshiftDataAPIServiceDefaultEpProviderBase(Aws::RedshiftDataAPIService::RedshiftDataAPIServiceEndpointRules::GetRulesBlob(),
-                                                    Aws::RedshiftDataAPIService::RedshiftDataAPIServiceEndpointRules::RulesBlobSize) {}
+  RedshiftDataAPIServiceEndpointProvider();
 
   ~RedshiftDataAPIServiceEndpointProvider() {}
 };

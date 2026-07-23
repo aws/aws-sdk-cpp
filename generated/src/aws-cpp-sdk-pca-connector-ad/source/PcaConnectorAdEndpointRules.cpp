@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/pca-connector-ad/PcaConnectorAdEndpointRules.h>
+#include <aws/pca-connector-ad/internal/PcaConnectorAdEndpointRules.h>
 
 namespace Aws {
 namespace PcaConnectorAd {

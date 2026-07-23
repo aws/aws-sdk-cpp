@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/devops-agent/DevOpsAgentEndpointRules.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_DEVOPSAGENT_API DevOpsAgentEndpointProvider : public DevOpsAgentDefaul
  public:
   using DevOpsAgentResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DevOpsAgentEndpointProvider()
-      : DevOpsAgentDefaultEpProviderBase(Aws::DevOpsAgent::DevOpsAgentEndpointRules::GetRulesBlob(),
-                                         Aws::DevOpsAgent::DevOpsAgentEndpointRules::RulesBlobSize) {}
+  DevOpsAgentEndpointProvider();
 
   ~DevOpsAgentEndpointProvider() {}
 };

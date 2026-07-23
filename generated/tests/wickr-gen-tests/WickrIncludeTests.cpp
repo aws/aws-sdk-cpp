@@ -8,12 +8,12 @@
 
 #include <aws/wickr/WickrClient.h>
 #include <aws/wickr/WickrEndpointProvider.h>
-#include <aws/wickr/WickrEndpointRules.h>
 #include <aws/wickr/WickrErrorMarshaller.h>
 #include <aws/wickr/WickrErrors.h>
 #include <aws/wickr/WickrRequest.h>
 #include <aws/wickr/WickrServiceClientModel.h>
 #include <aws/wickr/Wickr_EXPORTS.h>
+#include <aws/wickr/internal/WickrEndpointRules.h>
 #include <aws/wickr/model/AccessLevel.h>
 #include <aws/wickr/model/BasicDeviceObject.h>
 #include <aws/wickr/model/BatchCreateUserRequest.h>

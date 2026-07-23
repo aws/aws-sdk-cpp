@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/es/ElasticsearchServiceEndpointRules.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceEndpointProvider : public
  public:
   using ElasticsearchServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ElasticsearchServiceEndpointProvider()
-      : ElasticsearchServiceDefaultEpProviderBase(Aws::ElasticsearchService::ElasticsearchServiceEndpointRules::GetRulesBlob(),
-                                                  Aws::ElasticsearchService::ElasticsearchServiceEndpointRules::RulesBlobSize) {}
+  ElasticsearchServiceEndpointProvider();
 
   ~ElasticsearchServiceEndpointProvider() {}
 };

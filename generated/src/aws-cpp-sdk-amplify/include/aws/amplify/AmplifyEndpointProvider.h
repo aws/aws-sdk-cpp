@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/amplify/AmplifyEndpointRules.h>
 #include <aws/amplify/Amplify_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_AMPLIFY_API AmplifyEndpointProvider : public AmplifyDefaultEpProviderB
  public:
   using AmplifyResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AmplifyEndpointProvider()
-      : AmplifyDefaultEpProviderBase(Aws::Amplify::AmplifyEndpointRules::GetRulesBlob(),
-                                     Aws::Amplify::AmplifyEndpointRules::RulesBlobSize) {}
+  AmplifyEndpointProvider();
 
   ~AmplifyEndpointProvider() {}
 };

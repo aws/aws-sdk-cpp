@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ivs/IVSEndpointRules.h>
 #include <aws/ivs/IVS_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_IVS_API IVSEndpointProvider : public IVSDefaultEpProviderBase {
  public:
   using IVSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IVSEndpointProvider() : IVSDefaultEpProviderBase(Aws::IVS::IVSEndpointRules::GetRulesBlob(), Aws::IVS::IVSEndpointRules::RulesBlobSize) {}
+  IVSEndpointProvider();
 
   ~IVSEndpointProvider() {}
 };

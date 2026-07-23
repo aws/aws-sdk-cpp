@@ -8,12 +8,12 @@
 
 #include <aws/detective/DetectiveClient.h>
 #include <aws/detective/DetectiveEndpointProvider.h>
-#include <aws/detective/DetectiveEndpointRules.h>
 #include <aws/detective/DetectiveErrorMarshaller.h>
 #include <aws/detective/DetectiveErrors.h>
 #include <aws/detective/DetectiveRequest.h>
 #include <aws/detective/DetectiveServiceClientModel.h>
 #include <aws/detective/Detective_EXPORTS.h>
+#include <aws/detective/internal/DetectiveEndpointRules.h>
 #include <aws/detective/model/AcceptInvitationRequest.h>
 #include <aws/detective/model/AccessDeniedException.h>
 #include <aws/detective/model/Account.h>

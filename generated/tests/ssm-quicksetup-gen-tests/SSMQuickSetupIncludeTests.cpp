@@ -8,12 +8,12 @@
 
 #include <aws/ssm-quicksetup/SSMQuickSetupClient.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupEndpointProvider.h>
-#include <aws/ssm-quicksetup/SSMQuickSetupEndpointRules.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupErrorMarshaller.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupErrors.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupRequest.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupServiceClientModel.h>
 #include <aws/ssm-quicksetup/SSMQuickSetup_EXPORTS.h>
+#include <aws/ssm-quicksetup/internal/SSMQuickSetupEndpointRules.h>
 #include <aws/ssm-quicksetup/model/ConfigurationDefinition.h>
 #include <aws/ssm-quicksetup/model/ConfigurationDefinitionInput.h>
 #include <aws/ssm-quicksetup/model/ConfigurationDefinitionSummary.h>

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/codeconnections/CodeConnectionsEndpointRules.h>
+#include <aws/codeconnections/internal/CodeConnectionsEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

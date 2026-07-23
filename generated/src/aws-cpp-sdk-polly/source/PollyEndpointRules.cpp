@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/polly/PollyEndpointRules.h>
+#include <aws/polly/internal/PollyEndpointRules.h>
 
 namespace Aws {
 namespace Polly {

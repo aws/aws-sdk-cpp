@@ -4,9 +4,14 @@
  */
 
 #include <aws/states/SFNEndpointProvider.h>
+#include <aws/states/internal/SFNEndpointRules.h>
 
 namespace Aws {
 namespace SFN {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SFNEndpointProvider::SFNEndpointProvider()
+    : SFNDefaultEpProviderBase(Aws::SFN::SFNEndpointRules::GetRulesBlob(), Aws::SFN::SFNEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SFN
 }  // namespace Aws

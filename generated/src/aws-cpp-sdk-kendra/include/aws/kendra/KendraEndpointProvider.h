@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/kendra/KendraEndpointRules.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
 
 namespace Aws {
@@ -41,8 +40,7 @@ class AWS_KENDRA_API KendraEndpointProvider : public KendraDefaultEpProviderBase
  public:
   using KendraResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  KendraEndpointProvider()
-      : KendraDefaultEpProviderBase(Aws::kendra::KendraEndpointRules::GetRulesBlob(), Aws::kendra::KendraEndpointRules::RulesBlobSize) {}
+  KendraEndpointProvider();
 
   ~KendraEndpointProvider() {}
 };

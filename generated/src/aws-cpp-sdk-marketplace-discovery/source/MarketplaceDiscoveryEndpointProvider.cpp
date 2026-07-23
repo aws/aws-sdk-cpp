@@ -4,9 +4,15 @@
  */
 
 #include <aws/marketplace-discovery/MarketplaceDiscoveryEndpointProvider.h>
+#include <aws/marketplace-discovery/internal/MarketplaceDiscoveryEndpointRules.h>
 
 namespace Aws {
 namespace MarketplaceDiscovery {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MarketplaceDiscoveryEndpointProvider::MarketplaceDiscoveryEndpointProvider()
+    : MarketplaceDiscoveryDefaultEpProviderBase(Aws::MarketplaceDiscovery::MarketplaceDiscoveryEndpointRules::GetRulesBlob(),
+                                                Aws::MarketplaceDiscovery::MarketplaceDiscoveryEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MarketplaceDiscovery
 }  // namespace Aws

@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/controlcatalog/ControlCatalogEndpointRules.h>
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CONTROLCATALOG_API ControlCatalogEndpointProvider : public ControlCata
  public:
   using ControlCatalogResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ControlCatalogEndpointProvider()
-      : ControlCatalogDefaultEpProviderBase(Aws::ControlCatalog::ControlCatalogEndpointRules::GetRulesBlob(),
-                                            Aws::ControlCatalog::ControlCatalogEndpointRules::RulesBlobSize) {}
+  ControlCatalogEndpointProvider();
 
   ~ControlCatalogEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/sms-voice/PinpointSMSVoiceClient.h>
 #include <aws/sms-voice/PinpointSMSVoiceEndpointProvider.h>
-#include <aws/sms-voice/PinpointSMSVoiceEndpointRules.h>
 #include <aws/sms-voice/PinpointSMSVoiceErrorMarshaller.h>
 #include <aws/sms-voice/PinpointSMSVoiceErrors.h>
 #include <aws/sms-voice/PinpointSMSVoiceRequest.h>
 #include <aws/sms-voice/PinpointSMSVoiceServiceClientModel.h>
 #include <aws/sms-voice/PinpointSMSVoice_EXPORTS.h>
+#include <aws/sms-voice/internal/PinpointSMSVoiceEndpointRules.h>
 #include <aws/sms-voice/model/CallInstructionsMessageType.h>
 #include <aws/sms-voice/model/CloudWatchLogsDestination.h>
 #include <aws/sms-voice/model/CreateConfigurationSetEventDestinationRequest.h>

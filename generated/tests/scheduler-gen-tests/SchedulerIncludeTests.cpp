@@ -8,12 +8,12 @@
 
 #include <aws/scheduler/SchedulerClient.h>
 #include <aws/scheduler/SchedulerEndpointProvider.h>
-#include <aws/scheduler/SchedulerEndpointRules.h>
 #include <aws/scheduler/SchedulerErrorMarshaller.h>
 #include <aws/scheduler/SchedulerErrors.h>
 #include <aws/scheduler/SchedulerRequest.h>
 #include <aws/scheduler/SchedulerServiceClientModel.h>
 #include <aws/scheduler/Scheduler_EXPORTS.h>
+#include <aws/scheduler/internal/SchedulerEndpointRules.h>
 #include <aws/scheduler/model/ActionAfterCompletion.h>
 #include <aws/scheduler/model/AssignPublicIp.h>
 #include <aws/scheduler/model/AwsVpcConfiguration.h>

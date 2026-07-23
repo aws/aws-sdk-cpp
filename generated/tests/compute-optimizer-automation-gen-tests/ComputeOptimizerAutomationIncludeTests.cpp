@@ -8,12 +8,12 @@
 
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationClient.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationEndpointProvider.h>
-#include <aws/compute-optimizer-automation/ComputeOptimizerAutomationEndpointRules.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationErrorMarshaller.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationErrors.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationRequest.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationServiceClientModel.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
+#include <aws/compute-optimizer-automation/internal/ComputeOptimizerAutomationEndpointRules.h>
 #include <aws/compute-optimizer-automation/model/AccountInfo.h>
 #include <aws/compute-optimizer-automation/model/AssociateAccountsRequest.h>
 #include <aws/compute-optimizer-automation/model/AssociateAccountsResult.h>

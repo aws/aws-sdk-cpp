@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/lambda-microvms/LambdaMicrovmsEndpointRules.h>
 #include <aws/lambda-microvms/LambdaMicrovms_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_LAMBDAMICROVMS_API LambdaMicrovmsEndpointProvider : public LambdaMicro
  public:
   using LambdaMicrovmsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  LambdaMicrovmsEndpointProvider()
-      : LambdaMicrovmsDefaultEpProviderBase(Aws::LambdaMicrovms::LambdaMicrovmsEndpointRules::GetRulesBlob(),
-                                            Aws::LambdaMicrovms::LambdaMicrovmsEndpointRules::RulesBlobSize) {}
+  LambdaMicrovmsEndpointProvider();
 
   ~LambdaMicrovmsEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/artifact/ArtifactClient.h>
 #include <aws/artifact/ArtifactEndpointProvider.h>
-#include <aws/artifact/ArtifactEndpointRules.h>
 #include <aws/artifact/ArtifactErrorMarshaller.h>
 #include <aws/artifact/ArtifactErrors.h>
 #include <aws/artifact/ArtifactRequest.h>
 #include <aws/artifact/ArtifactServiceClientModel.h>
 #include <aws/artifact/Artifact_EXPORTS.h>
+#include <aws/artifact/internal/ArtifactEndpointRules.h>
 #include <aws/artifact/model/AcceptanceType.h>
 #include <aws/artifact/model/AccountSettings.h>
 #include <aws/artifact/model/AgreementType.h>

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cloudhsm/CloudHSMEndpointRules.h>
+#include <aws/cloudhsm/internal/CloudHSMEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

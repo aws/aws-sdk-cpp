@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/connect/ConnectEndpointRules.h>
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CONNECT_API ConnectEndpointProvider : public ConnectDefaultEpProviderB
  public:
   using ConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ConnectEndpointProvider()
-      : ConnectDefaultEpProviderBase(Aws::Connect::ConnectEndpointRules::GetRulesBlob(),
-                                     Aws::Connect::ConnectEndpointRules::RulesBlobSize) {}
+  ConnectEndpointProvider();
 
   ~ConnectEndpointProvider() {}
 };

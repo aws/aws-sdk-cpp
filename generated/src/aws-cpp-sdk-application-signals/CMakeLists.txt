@@ -8,6 +8,10 @@ file(GLOB AWS_APPLICATION-SIGNALS_MODEL_HEADERS
     "include/aws/application-signals/model/*.h"
 )
 
+file(GLOB AWS_APPLICATION-SIGNALS_INTERNAL_HEADERS
+    "include/aws/application-signals/internal/*.h"
+)
+
 file(GLOB AWS_APPLICATION-SIGNALS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_APPLICATION-SIGNALS_MODEL_SOURCE
 
 file(GLOB APPLICATION-SIGNALS_UNIFIED_HEADERS
     ${AWS_APPLICATION-SIGNALS_HEADERS}
+    ${AWS_APPLICATION-SIGNALS_INTERNAL_HEADERS}
     ${AWS_APPLICATION-SIGNALS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\application-signals" FILES ${AWS_APPLICATION-SIGNALS_HEADERS})
+        source_group("Header Files\\aws\\application-signals\\internal" FILES ${AWS_APPLICATION-SIGNALS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\application-signals\\model" FILES ${AWS_APPLICATION-SIGNALS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_APPLICATION-SIGNALS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_APPLICATION-SIGNALS_MODEL_SOURCE})

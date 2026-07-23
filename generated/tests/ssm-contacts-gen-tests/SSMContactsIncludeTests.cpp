@@ -8,12 +8,12 @@
 
 #include <aws/ssm-contacts/SSMContactsClient.h>
 #include <aws/ssm-contacts/SSMContactsEndpointProvider.h>
-#include <aws/ssm-contacts/SSMContactsEndpointRules.h>
 #include <aws/ssm-contacts/SSMContactsErrorMarshaller.h>
 #include <aws/ssm-contacts/SSMContactsErrors.h>
 #include <aws/ssm-contacts/SSMContactsRequest.h>
 #include <aws/ssm-contacts/SSMContactsServiceClientModel.h>
 #include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
+#include <aws/ssm-contacts/internal/SSMContactsEndpointRules.h>
 #include <aws/ssm-contacts/model/AcceptCodeValidation.h>
 #include <aws/ssm-contacts/model/AcceptPageRequest.h>
 #include <aws/ssm-contacts/model/AcceptPageResult.h>

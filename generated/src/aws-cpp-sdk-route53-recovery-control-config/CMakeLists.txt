@@ -8,6 +8,10 @@ file(GLOB AWS_ROUTE53-RECOVERY-CONTROL-CONFIG_MODEL_HEADERS
     "include/aws/route53-recovery-control-config/model/*.h"
 )
 
+file(GLOB AWS_ROUTE53-RECOVERY-CONTROL-CONFIG_INTERNAL_HEADERS
+    "include/aws/route53-recovery-control-config/internal/*.h"
+)
+
 file(GLOB AWS_ROUTE53-RECOVERY-CONTROL-CONFIG_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_ROUTE53-RECOVERY-CONTROL-CONFIG_MODEL_SOURCE
 
 file(GLOB ROUTE53-RECOVERY-CONTROL-CONFIG_UNIFIED_HEADERS
     ${AWS_ROUTE53-RECOVERY-CONTROL-CONFIG_HEADERS}
+    ${AWS_ROUTE53-RECOVERY-CONTROL-CONFIG_INTERNAL_HEADERS}
     ${AWS_ROUTE53-RECOVERY-CONTROL-CONFIG_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\route53-recovery-control-config" FILES ${AWS_ROUTE53-RECOVERY-CONTROL-CONFIG_HEADERS})
+        source_group("Header Files\\aws\\route53-recovery-control-config\\internal" FILES ${AWS_ROUTE53-RECOVERY-CONTROL-CONFIG_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\route53-recovery-control-config\\model" FILES ${AWS_ROUTE53-RECOVERY-CONTROL-CONFIG_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_ROUTE53-RECOVERY-CONTROL-CONFIG_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_ROUTE53-RECOVERY-CONTROL-CONFIG_MODEL_SOURCE})

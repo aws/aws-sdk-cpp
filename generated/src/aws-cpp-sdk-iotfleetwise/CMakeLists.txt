@@ -8,6 +8,10 @@ file(GLOB AWS_IOTFLEETWISE_MODEL_HEADERS
     "include/aws/iotfleetwise/model/*.h"
 )
 
+file(GLOB AWS_IOTFLEETWISE_INTERNAL_HEADERS
+    "include/aws/iotfleetwise/internal/*.h"
+)
+
 file(GLOB AWS_IOTFLEETWISE_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_IOTFLEETWISE_MODEL_SOURCE
 
 file(GLOB IOTFLEETWISE_UNIFIED_HEADERS
     ${AWS_IOTFLEETWISE_HEADERS}
+    ${AWS_IOTFLEETWISE_INTERNAL_HEADERS}
     ${AWS_IOTFLEETWISE_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\iotfleetwise" FILES ${AWS_IOTFLEETWISE_HEADERS})
+        source_group("Header Files\\aws\\iotfleetwise\\internal" FILES ${AWS_IOTFLEETWISE_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\iotfleetwise\\model" FILES ${AWS_IOTFLEETWISE_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_IOTFLEETWISE_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_IOTFLEETWISE_MODEL_SOURCE})

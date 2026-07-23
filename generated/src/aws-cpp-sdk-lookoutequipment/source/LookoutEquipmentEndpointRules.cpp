@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/lookoutequipment/LookoutEquipmentEndpointRules.h>
+#include <aws/lookoutequipment/internal/LookoutEquipmentEndpointRules.h>
 
 namespace Aws {
 namespace LookoutEquipment {

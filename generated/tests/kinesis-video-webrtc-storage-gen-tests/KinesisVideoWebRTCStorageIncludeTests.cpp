@@ -8,12 +8,12 @@
 
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageClient.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageEndpointProvider.h>
-#include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageEndpointRules.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageErrorMarshaller.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageErrors.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageRequest.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageServiceClientModel.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorage_EXPORTS.h>
+#include <aws/kinesis-video-webrtc-storage/internal/KinesisVideoWebRTCStorageEndpointRules.h>
 #include <aws/kinesis-video-webrtc-storage/model/JoinStorageSessionAsViewerRequest.h>
 #include <aws/kinesis-video-webrtc-storage/model/JoinStorageSessionRequest.h>
 

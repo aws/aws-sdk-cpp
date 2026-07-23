@@ -4,9 +4,15 @@
  */
 
 #include <aws/sagemaker-geospatial/SageMakerGeospatialEndpointProvider.h>
+#include <aws/sagemaker-geospatial/internal/SageMakerGeospatialEndpointRules.h>
 
 namespace Aws {
 namespace SageMakerGeospatial {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SageMakerGeospatialEndpointProvider::SageMakerGeospatialEndpointProvider()
+    : SageMakerGeospatialDefaultEpProviderBase(Aws::SageMakerGeospatial::SageMakerGeospatialEndpointRules::GetRulesBlob(),
+                                               Aws::SageMakerGeospatial::SageMakerGeospatialEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SageMakerGeospatial
 }  // namespace Aws

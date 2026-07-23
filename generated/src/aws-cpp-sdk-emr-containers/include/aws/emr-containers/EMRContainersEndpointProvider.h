@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/emr-containers/EMRContainersEndpointRules.h>
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_EMRCONTAINERS_API EMRContainersEndpointProvider : public EMRContainers
  public:
   using EMRContainersResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  EMRContainersEndpointProvider()
-      : EMRContainersDefaultEpProviderBase(Aws::EMRContainers::EMRContainersEndpointRules::GetRulesBlob(),
-                                           Aws::EMRContainers::EMRContainersEndpointRules::RulesBlobSize) {}
+  EMRContainersEndpointProvider();
 
   ~EMRContainersEndpointProvider() {}
 };

@@ -8,6 +8,10 @@ file(GLOB AWS_WAF-REGIONAL_MODEL_HEADERS
     "include/aws/waf-regional/model/*.h"
 )
 
+file(GLOB AWS_WAF-REGIONAL_INTERNAL_HEADERS
+    "include/aws/waf-regional/internal/*.h"
+)
+
 file(GLOB AWS_WAF-REGIONAL_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_WAF-REGIONAL_MODEL_SOURCE
 
 file(GLOB WAF-REGIONAL_UNIFIED_HEADERS
     ${AWS_WAF-REGIONAL_HEADERS}
+    ${AWS_WAF-REGIONAL_INTERNAL_HEADERS}
     ${AWS_WAF-REGIONAL_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\waf-regional" FILES ${AWS_WAF-REGIONAL_HEADERS})
+        source_group("Header Files\\aws\\waf-regional\\internal" FILES ${AWS_WAF-REGIONAL_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\waf-regional\\model" FILES ${AWS_WAF-REGIONAL_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_WAF-REGIONAL_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_WAF-REGIONAL_MODEL_SOURCE})

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/synthetics/SyntheticsEndpointRules.h>
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SYNTHETICS_API SyntheticsEndpointProvider : public SyntheticsDefaultEp
  public:
   using SyntheticsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SyntheticsEndpointProvider()
-      : SyntheticsDefaultEpProviderBase(Aws::Synthetics::SyntheticsEndpointRules::GetRulesBlob(),
-                                        Aws::Synthetics::SyntheticsEndpointRules::RulesBlobSize) {}
+  SyntheticsEndpointProvider();
 
   ~SyntheticsEndpointProvider() {}
 };

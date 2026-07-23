@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/tnb/TnbEndpointRules.h>
+#include <aws/tnb/internal/TnbEndpointRules.h>
 
 namespace Aws {
 namespace tnb {

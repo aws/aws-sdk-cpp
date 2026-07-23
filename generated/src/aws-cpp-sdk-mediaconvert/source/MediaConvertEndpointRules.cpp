@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/mediaconvert/MediaConvertEndpointRules.h>
+#include <aws/mediaconvert/internal/MediaConvertEndpointRules.h>
 
 namespace Aws {
 namespace MediaConvert {

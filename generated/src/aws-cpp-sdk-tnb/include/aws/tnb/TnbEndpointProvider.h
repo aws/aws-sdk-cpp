@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/tnb/TnbEndpointRules.h>
 #include <aws/tnb/Tnb_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_TNB_API TnbEndpointProvider : public TnbDefaultEpProviderBase {
  public:
   using TnbResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  TnbEndpointProvider() : TnbDefaultEpProviderBase(Aws::tnb::TnbEndpointRules::GetRulesBlob(), Aws::tnb::TnbEndpointRules::RulesBlobSize) {}
+  TnbEndpointProvider();
 
   ~TnbEndpointProvider() {}
 };

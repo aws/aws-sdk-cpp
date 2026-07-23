@@ -4,9 +4,14 @@
  */
 
 #include <aws/ssm-sap/SsmSapEndpointProvider.h>
+#include <aws/ssm-sap/internal/SsmSapEndpointRules.h>
 
 namespace Aws {
 namespace SsmSap {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SsmSapEndpointProvider::SsmSapEndpointProvider()
+    : SsmSapDefaultEpProviderBase(Aws::SsmSap::SsmSapEndpointRules::GetRulesBlob(), Aws::SsmSap::SsmSapEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SsmSap
 }  // namespace Aws

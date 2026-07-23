@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rolesanywhere/RolesAnywhereEndpointRules.h>
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_ROLESANYWHERE_API RolesAnywhereEndpointProvider : public RolesAnywhere
  public:
   using RolesAnywhereResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  RolesAnywhereEndpointProvider()
-      : RolesAnywhereDefaultEpProviderBase(Aws::RolesAnywhere::RolesAnywhereEndpointRules::GetRulesBlob(),
-                                           Aws::RolesAnywhere::RolesAnywhereEndpointRules::RulesBlobSize) {}
+  RolesAnywhereEndpointProvider();
 
   ~RolesAnywhereEndpointProvider() {}
 };

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/quicksight/QuickSightEndpointRules.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_QUICKSIGHT_API QuickSightEndpointProvider : public QuickSightDefaultEp
  public:
   using QuickSightResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  QuickSightEndpointProvider()
-      : QuickSightDefaultEpProviderBase(Aws::QuickSight::QuickSightEndpointRules::GetRulesBlob(),
-                                        Aws::QuickSight::QuickSightEndpointRules::RulesBlobSize) {}
+  QuickSightEndpointProvider();
 
   ~QuickSightEndpointProvider() {}
 };

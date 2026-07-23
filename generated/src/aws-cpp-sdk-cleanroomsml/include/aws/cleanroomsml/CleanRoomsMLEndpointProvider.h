@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/cleanroomsml/CleanRoomsMLEndpointRules.h>
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CLEANROOMSML_API CleanRoomsMLEndpointProvider : public CleanRoomsMLDef
  public:
   using CleanRoomsMLResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CleanRoomsMLEndpointProvider()
-      : CleanRoomsMLDefaultEpProviderBase(Aws::CleanRoomsML::CleanRoomsMLEndpointRules::GetRulesBlob(),
-                                          Aws::CleanRoomsML::CleanRoomsMLEndpointRules::RulesBlobSize) {}
+  CleanRoomsMLEndpointProvider();
 
   ~CleanRoomsMLEndpointProvider() {}
 };

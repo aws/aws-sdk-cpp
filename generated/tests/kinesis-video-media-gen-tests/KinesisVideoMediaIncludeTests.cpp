@@ -8,12 +8,12 @@
 
 #include <aws/kinesis-video-media/KinesisVideoMediaClient.h>
 #include <aws/kinesis-video-media/KinesisVideoMediaEndpointProvider.h>
-#include <aws/kinesis-video-media/KinesisVideoMediaEndpointRules.h>
 #include <aws/kinesis-video-media/KinesisVideoMediaErrorMarshaller.h>
 #include <aws/kinesis-video-media/KinesisVideoMediaErrors.h>
 #include <aws/kinesis-video-media/KinesisVideoMediaRequest.h>
 #include <aws/kinesis-video-media/KinesisVideoMediaServiceClientModel.h>
 #include <aws/kinesis-video-media/KinesisVideoMedia_EXPORTS.h>
+#include <aws/kinesis-video-media/internal/KinesisVideoMediaEndpointRules.h>
 #include <aws/kinesis-video-media/model/GetMediaRequest.h>
 #include <aws/kinesis-video-media/model/GetMediaResult.h>
 #include <aws/kinesis-video-media/model/StartSelector.h>

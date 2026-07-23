@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/entityresolution/EntityResolutionEndpointRules.h>
+#include <aws/entityresolution/internal/EntityResolutionEndpointRules.h>
 
 namespace Aws {
 namespace EntityResolution {

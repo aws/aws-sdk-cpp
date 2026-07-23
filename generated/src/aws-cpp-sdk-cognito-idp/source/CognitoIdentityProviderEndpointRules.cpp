@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cognito-idp/CognitoIdentityProviderEndpointRules.h>
+#include <aws/cognito-idp/internal/CognitoIdentityProviderEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

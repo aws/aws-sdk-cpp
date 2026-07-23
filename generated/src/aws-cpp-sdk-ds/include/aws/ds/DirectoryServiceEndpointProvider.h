@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ds/DirectoryServiceEndpointRules.h>
 #include <aws/ds/DirectoryService_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_DIRECTORYSERVICE_API DirectoryServiceEndpointProvider : public Directo
  public:
   using DirectoryServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DirectoryServiceEndpointProvider()
-      : DirectoryServiceDefaultEpProviderBase(Aws::DirectoryService::DirectoryServiceEndpointRules::GetRulesBlob(),
-                                              Aws::DirectoryService::DirectoryServiceEndpointRules::RulesBlobSize) {}
+  DirectoryServiceEndpointProvider();
 
   ~DirectoryServiceEndpointProvider() {}
 };

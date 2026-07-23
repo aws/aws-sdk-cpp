@@ -8,12 +8,12 @@
 
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsClient.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsEndpointProvider.h>
-#include <aws/bcm-recommended-actions/BCMRecommendedActionsEndpointRules.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsErrorMarshaller.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsErrors.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsRequest.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsServiceClientModel.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActions_EXPORTS.h>
+#include <aws/bcm-recommended-actions/internal/BCMRecommendedActionsEndpointRules.h>
 #include <aws/bcm-recommended-actions/model/ActionFilter.h>
 #include <aws/bcm-recommended-actions/model/ActionType.h>
 #include <aws/bcm-recommended-actions/model/Feature.h>

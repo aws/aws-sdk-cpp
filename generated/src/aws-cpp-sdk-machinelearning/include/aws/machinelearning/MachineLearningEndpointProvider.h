@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/machinelearning/MachineLearningEndpointRules.h>
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_MACHINELEARNING_API MachineLearningEndpointProvider : public MachineLe
  public:
   using MachineLearningResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MachineLearningEndpointProvider()
-      : MachineLearningDefaultEpProviderBase(Aws::MachineLearning::MachineLearningEndpointRules::GetRulesBlob(),
-                                             Aws::MachineLearning::MachineLearningEndpointRules::RulesBlobSize) {}
+  MachineLearningEndpointProvider();
 
   ~MachineLearningEndpointProvider() {}
 };

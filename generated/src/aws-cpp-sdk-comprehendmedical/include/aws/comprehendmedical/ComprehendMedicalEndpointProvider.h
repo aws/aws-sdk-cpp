@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/comprehendmedical/ComprehendMedicalEndpointRules.h>
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -43,9 +42,7 @@ class AWS_COMPREHENDMEDICAL_API ComprehendMedicalEndpointProvider : public Compr
  public:
   using ComprehendMedicalResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ComprehendMedicalEndpointProvider()
-      : ComprehendMedicalDefaultEpProviderBase(Aws::ComprehendMedical::ComprehendMedicalEndpointRules::GetRulesBlob(),
-                                               Aws::ComprehendMedical::ComprehendMedicalEndpointRules::RulesBlobSize) {}
+  ComprehendMedicalEndpointProvider();
 
   ~ComprehendMedicalEndpointProvider() {}
 };

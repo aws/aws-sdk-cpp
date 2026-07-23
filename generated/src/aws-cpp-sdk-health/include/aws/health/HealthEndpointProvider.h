@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/health/HealthEndpointRules.h>
 #include <aws/health/Health_EXPORTS.h>
 
 namespace Aws {
@@ -41,8 +40,7 @@ class AWS_HEALTH_API HealthEndpointProvider : public HealthDefaultEpProviderBase
  public:
   using HealthResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  HealthEndpointProvider()
-      : HealthDefaultEpProviderBase(Aws::Health::HealthEndpointRules::GetRulesBlob(), Aws::Health::HealthEndpointRules::RulesBlobSize) {}
+  HealthEndpointProvider();
 
   ~HealthEndpointProvider() {}
 };

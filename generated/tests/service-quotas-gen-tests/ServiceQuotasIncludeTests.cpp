@@ -8,12 +8,12 @@
 
 #include <aws/service-quotas/ServiceQuotasClient.h>
 #include <aws/service-quotas/ServiceQuotasEndpointProvider.h>
-#include <aws/service-quotas/ServiceQuotasEndpointRules.h>
 #include <aws/service-quotas/ServiceQuotasErrorMarshaller.h>
 #include <aws/service-quotas/ServiceQuotasErrors.h>
 #include <aws/service-quotas/ServiceQuotasRequest.h>
 #include <aws/service-quotas/ServiceQuotasServiceClientModel.h>
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
+#include <aws/service-quotas/internal/ServiceQuotasEndpointRules.h>
 #include <aws/service-quotas/model/AppliedLevelEnum.h>
 #include <aws/service-quotas/model/AssociateServiceQuotaTemplateRequest.h>
 #include <aws/service-quotas/model/AssociateServiceQuotaTemplateResult.h>

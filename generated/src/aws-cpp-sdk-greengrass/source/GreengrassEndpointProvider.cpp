@@ -4,9 +4,15 @@
  */
 
 #include <aws/greengrass/GreengrassEndpointProvider.h>
+#include <aws/greengrass/internal/GreengrassEndpointRules.h>
 
 namespace Aws {
 namespace Greengrass {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+GreengrassEndpointProvider::GreengrassEndpointProvider()
+    : GreengrassDefaultEpProviderBase(Aws::Greengrass::GreengrassEndpointRules::GetRulesBlob(),
+                                      Aws::Greengrass::GreengrassEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Greengrass
 }  // namespace Aws

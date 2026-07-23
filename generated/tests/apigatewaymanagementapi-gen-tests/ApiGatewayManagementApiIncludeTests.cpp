@@ -8,12 +8,12 @@
 
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiClient.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiEndpointProvider.h>
-#include <aws/apigatewaymanagementapi/ApiGatewayManagementApiEndpointRules.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiErrorMarshaller.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiErrors.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiRequest.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiServiceClientModel.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApi_EXPORTS.h>
+#include <aws/apigatewaymanagementapi/internal/ApiGatewayManagementApiEndpointRules.h>
 #include <aws/apigatewaymanagementapi/model/DeleteConnectionRequest.h>
 #include <aws/apigatewaymanagementapi/model/GetConnectionRequest.h>
 #include <aws/apigatewaymanagementapi/model/GetConnectionResult.h>

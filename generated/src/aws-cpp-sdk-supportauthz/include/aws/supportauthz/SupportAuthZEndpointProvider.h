@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/supportauthz/SupportAuthZEndpointRules.h>
 #include <aws/supportauthz/SupportAuthZ_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SUPPORTAUTHZ_API SupportAuthZEndpointProvider : public SupportAuthZDef
  public:
   using SupportAuthZResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SupportAuthZEndpointProvider()
-      : SupportAuthZDefaultEpProviderBase(Aws::SupportAuthZ::SupportAuthZEndpointRules::GetRulesBlob(),
-                                          Aws::SupportAuthZ::SupportAuthZEndpointRules::RulesBlobSize) {}
+  SupportAuthZEndpointProvider();
 
   ~SupportAuthZEndpointProvider() {}
 };

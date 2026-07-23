@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/arc-zonal-shift/ARCZonalShiftEndpointRules.h>
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_ARCZONALSHIFT_API ARCZonalShiftEndpointProvider : public ARCZonalShift
  public:
   using ARCZonalShiftResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ARCZonalShiftEndpointProvider()
-      : ARCZonalShiftDefaultEpProviderBase(Aws::ARCZonalShift::ARCZonalShiftEndpointRules::GetRulesBlob(),
-                                           Aws::ARCZonalShift::ARCZonalShiftEndpointRules::RulesBlobSize) {}
+  ARCZonalShiftEndpointProvider();
 
   ~ARCZonalShiftEndpointProvider() {}
 };

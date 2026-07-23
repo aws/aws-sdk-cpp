@@ -4,9 +4,15 @@
  */
 
 #include <aws/grafana/ManagedGrafanaEndpointProvider.h>
+#include <aws/grafana/internal/ManagedGrafanaEndpointRules.h>
 
 namespace Aws {
 namespace ManagedGrafana {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ManagedGrafanaEndpointProvider::ManagedGrafanaEndpointProvider()
+    : ManagedGrafanaDefaultEpProviderBase(Aws::ManagedGrafana::ManagedGrafanaEndpointRules::GetRulesBlob(),
+                                          Aws::ManagedGrafana::ManagedGrafanaEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ManagedGrafana
 }  // namespace Aws

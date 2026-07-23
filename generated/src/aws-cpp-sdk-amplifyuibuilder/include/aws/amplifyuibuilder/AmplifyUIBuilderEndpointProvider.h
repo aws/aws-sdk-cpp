@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/amplifyuibuilder/AmplifyUIBuilderEndpointRules.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -43,9 +42,7 @@ class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderEndpointProvider : public Amplify
  public:
   using AmplifyUIBuilderResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AmplifyUIBuilderEndpointProvider()
-      : AmplifyUIBuilderDefaultEpProviderBase(Aws::AmplifyUIBuilder::AmplifyUIBuilderEndpointRules::GetRulesBlob(),
-                                              Aws::AmplifyUIBuilder::AmplifyUIBuilderEndpointRules::RulesBlobSize) {}
+  AmplifyUIBuilderEndpointProvider();
 
   ~AmplifyUIBuilderEndpointProvider() {}
 };

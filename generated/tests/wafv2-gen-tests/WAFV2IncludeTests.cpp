@@ -8,12 +8,12 @@
 
 #include <aws/wafv2/WAFV2Client.h>
 #include <aws/wafv2/WAFV2EndpointProvider.h>
-#include <aws/wafv2/WAFV2EndpointRules.h>
 #include <aws/wafv2/WAFV2ErrorMarshaller.h>
 #include <aws/wafv2/WAFV2Errors.h>
 #include <aws/wafv2/WAFV2Request.h>
 #include <aws/wafv2/WAFV2ServiceClientModel.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
+#include <aws/wafv2/internal/WAFV2EndpointRules.h>
 #include <aws/wafv2/model/APIKeySummary.h>
 #include <aws/wafv2/model/AWSManagedRulesACFPRuleSet.h>
 #include <aws/wafv2/model/AWSManagedRulesATPRuleSet.h>

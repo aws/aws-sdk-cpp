@@ -8,12 +8,12 @@
 
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
-#include <aws/sagemaker/SageMakerEndpointRules.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
 #include <aws/sagemaker/SageMakerErrors.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/sagemaker/SageMakerServiceClientModel.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/internal/SageMakerEndpointRules.h>
 #include <aws/sagemaker/model/AIBenchmarkEndpoint.h>
 #include <aws/sagemaker/model/AIBenchmarkInferenceComponent.h>
 #include <aws/sagemaker/model/AIBenchmarkJobStatus.h>

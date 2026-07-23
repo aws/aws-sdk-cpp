@@ -4,9 +4,15 @@
  */
 
 #include <aws/servicediscovery/ServiceDiscoveryEndpointProvider.h>
+#include <aws/servicediscovery/internal/ServiceDiscoveryEndpointRules.h>
 
 namespace Aws {
 namespace ServiceDiscovery {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ServiceDiscoveryEndpointProvider::ServiceDiscoveryEndpointProvider()
+    : ServiceDiscoveryDefaultEpProviderBase(Aws::ServiceDiscovery::ServiceDiscoveryEndpointRules::GetRulesBlob(),
+                                            Aws::ServiceDiscovery::ServiceDiscoveryEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ServiceDiscovery
 }  // namespace Aws

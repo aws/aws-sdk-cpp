@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/interconnect/InterconnectEndpointRules.h>
+#include <aws/interconnect/internal/InterconnectEndpointRules.h>
 
 namespace Aws {
 namespace Interconnect {

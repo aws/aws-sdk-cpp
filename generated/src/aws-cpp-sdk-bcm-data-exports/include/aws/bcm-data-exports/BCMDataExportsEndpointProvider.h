@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/bcm-data-exports/BCMDataExportsEndpointRules.h>
 #include <aws/bcm-data-exports/BCMDataExports_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_BCMDATAEXPORTS_API BCMDataExportsEndpointProvider : public BCMDataExpo
  public:
   using BCMDataExportsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BCMDataExportsEndpointProvider()
-      : BCMDataExportsDefaultEpProviderBase(Aws::BCMDataExports::BCMDataExportsEndpointRules::GetRulesBlob(),
-                                            Aws::BCMDataExports::BCMDataExportsEndpointRules::RulesBlobSize) {}
+  BCMDataExportsEndpointProvider();
 
   ~BCMDataExportsEndpointProvider() {}
 };

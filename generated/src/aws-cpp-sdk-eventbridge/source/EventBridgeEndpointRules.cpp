@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/eventbridge/EventBridgeEndpointRules.h>
+#include <aws/eventbridge/internal/EventBridgeEndpointRules.h>
 
 namespace Aws {
 namespace EventBridge {

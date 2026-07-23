@@ -4,9 +4,15 @@
  */
 
 #include <aws/mediastore-data/MediaStoreDataEndpointProvider.h>
+#include <aws/mediastore-data/internal/MediaStoreDataEndpointRules.h>
 
 namespace Aws {
 namespace MediaStoreData {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MediaStoreDataEndpointProvider::MediaStoreDataEndpointProvider()
+    : MediaStoreDataDefaultEpProviderBase(Aws::MediaStoreData::MediaStoreDataEndpointRules::GetRulesBlob(),
+                                          Aws::MediaStoreData::MediaStoreDataEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MediaStoreData
 }  // namespace Aws

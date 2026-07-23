@@ -8,6 +8,10 @@ file(GLOB AWS_ARC-REGION-SWITCH_MODEL_HEADERS
     "include/aws/arc-region-switch/model/*.h"
 )
 
+file(GLOB AWS_ARC-REGION-SWITCH_INTERNAL_HEADERS
+    "include/aws/arc-region-switch/internal/*.h"
+)
+
 file(GLOB AWS_ARC-REGION-SWITCH_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_ARC-REGION-SWITCH_MODEL_SOURCE
 
 file(GLOB ARC-REGION-SWITCH_UNIFIED_HEADERS
     ${AWS_ARC-REGION-SWITCH_HEADERS}
+    ${AWS_ARC-REGION-SWITCH_INTERNAL_HEADERS}
     ${AWS_ARC-REGION-SWITCH_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\arc-region-switch" FILES ${AWS_ARC-REGION-SWITCH_HEADERS})
+        source_group("Header Files\\aws\\arc-region-switch\\internal" FILES ${AWS_ARC-REGION-SWITCH_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\arc-region-switch\\model" FILES ${AWS_ARC-REGION-SWITCH_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_ARC-REGION-SWITCH_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_ARC-REGION-SWITCH_MODEL_SOURCE})

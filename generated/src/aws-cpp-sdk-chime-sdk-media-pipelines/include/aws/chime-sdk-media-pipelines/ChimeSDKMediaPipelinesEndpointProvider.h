@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesEndpointRules.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -44,9 +43,7 @@ class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSDKMediaPipelinesEndpointProvider : pu
  public:
   using ChimeSDKMediaPipelinesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ChimeSDKMediaPipelinesEndpointProvider()
-      : ChimeSDKMediaPipelinesDefaultEpProviderBase(Aws::ChimeSDKMediaPipelines::ChimeSDKMediaPipelinesEndpointRules::GetRulesBlob(),
-                                                    Aws::ChimeSDKMediaPipelines::ChimeSDKMediaPipelinesEndpointRules::RulesBlobSize) {}
+  ChimeSDKMediaPipelinesEndpointProvider();
 
   ~ChimeSDKMediaPipelinesEndpointProvider() {}
 };

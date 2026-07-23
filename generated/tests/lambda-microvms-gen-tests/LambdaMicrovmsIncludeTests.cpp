@@ -8,12 +8,12 @@
 
 #include <aws/lambda-microvms/LambdaMicrovmsClient.h>
 #include <aws/lambda-microvms/LambdaMicrovmsEndpointProvider.h>
-#include <aws/lambda-microvms/LambdaMicrovmsEndpointRules.h>
 #include <aws/lambda-microvms/LambdaMicrovmsErrorMarshaller.h>
 #include <aws/lambda-microvms/LambdaMicrovmsErrors.h>
 #include <aws/lambda-microvms/LambdaMicrovmsRequest.h>
 #include <aws/lambda-microvms/LambdaMicrovmsServiceClientModel.h>
 #include <aws/lambda-microvms/LambdaMicrovms_EXPORTS.h>
+#include <aws/lambda-microvms/internal/LambdaMicrovmsEndpointRules.h>
 #include <aws/lambda-microvms/model/Architecture.h>
 #include <aws/lambda-microvms/model/BuildState.h>
 #include <aws/lambda-microvms/model/Capability.h>

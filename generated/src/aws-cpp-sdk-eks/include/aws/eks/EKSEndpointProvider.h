@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/eks/EKSEndpointRules.h>
 #include <aws/eks/EKS_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_EKS_API EKSEndpointProvider : public EKSDefaultEpProviderBase {
  public:
   using EKSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  EKSEndpointProvider() : EKSDefaultEpProviderBase(Aws::EKS::EKSEndpointRules::GetRulesBlob(), Aws::EKS::EKSEndpointRules::RulesBlobSize) {}
+  EKSEndpointProvider();
 
   ~EKSEndpointProvider() {}
 };

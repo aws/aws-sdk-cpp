@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeEndpointRules.h>
+#include <aws/sagemaker-featurestore-runtime/internal/SageMakerFeatureStoreRuntimeEndpointRules.h>
 
 namespace Aws {
 namespace SageMakerFeatureStoreRuntime {

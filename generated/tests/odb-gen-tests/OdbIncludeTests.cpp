@@ -8,12 +8,12 @@
 
 #include <aws/odb/OdbClient.h>
 #include <aws/odb/OdbEndpointProvider.h>
-#include <aws/odb/OdbEndpointRules.h>
 #include <aws/odb/OdbErrorMarshaller.h>
 #include <aws/odb/OdbErrors.h>
 #include <aws/odb/OdbRequest.h>
 #include <aws/odb/OdbServiceClientModel.h>
 #include <aws/odb/Odb_EXPORTS.h>
+#include <aws/odb/internal/OdbEndpointRules.h>
 #include <aws/odb/model/AcceptMarketplaceRegistrationRequest.h>
 #include <aws/odb/model/AcceptMarketplaceRegistrationResult.h>
 #include <aws/odb/model/Access.h>

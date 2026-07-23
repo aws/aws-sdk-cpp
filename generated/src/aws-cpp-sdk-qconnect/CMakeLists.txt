@@ -8,6 +8,10 @@ file(GLOB AWS_QCONNECT_MODEL_HEADERS
     "include/aws/qconnect/model/*.h"
 )
 
+file(GLOB AWS_QCONNECT_INTERNAL_HEADERS
+    "include/aws/qconnect/internal/*.h"
+)
+
 file(GLOB AWS_QCONNECT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_QCONNECT_MODEL_SOURCE
 
 file(GLOB QCONNECT_UNIFIED_HEADERS
     ${AWS_QCONNECT_HEADERS}
+    ${AWS_QCONNECT_INTERNAL_HEADERS}
     ${AWS_QCONNECT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\qconnect" FILES ${AWS_QCONNECT_HEADERS})
+        source_group("Header Files\\aws\\qconnect\\internal" FILES ${AWS_QCONNECT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\qconnect\\model" FILES ${AWS_QCONNECT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_QCONNECT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_QCONNECT_MODEL_SOURCE})

@@ -8,12 +8,12 @@
 
 #include <aws/route53-recovery-cluster/Route53RecoveryClusterClient.h>
 #include <aws/route53-recovery-cluster/Route53RecoveryClusterEndpointProvider.h>
-#include <aws/route53-recovery-cluster/Route53RecoveryClusterEndpointRules.h>
 #include <aws/route53-recovery-cluster/Route53RecoveryClusterErrorMarshaller.h>
 #include <aws/route53-recovery-cluster/Route53RecoveryClusterErrors.h>
 #include <aws/route53-recovery-cluster/Route53RecoveryClusterRequest.h>
 #include <aws/route53-recovery-cluster/Route53RecoveryClusterServiceClientModel.h>
 #include <aws/route53-recovery-cluster/Route53RecoveryCluster_EXPORTS.h>
+#include <aws/route53-recovery-cluster/internal/Route53RecoveryClusterEndpointRules.h>
 #include <aws/route53-recovery-cluster/model/ConflictException.h>
 #include <aws/route53-recovery-cluster/model/GetRoutingControlStateRequest.h>
 #include <aws/route53-recovery-cluster/model/GetRoutingControlStateResult.h>

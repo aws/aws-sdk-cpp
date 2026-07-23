@@ -8,12 +8,12 @@
 
 #include <aws/ecs/ECSClient.h>
 #include <aws/ecs/ECSEndpointProvider.h>
-#include <aws/ecs/ECSEndpointRules.h>
 #include <aws/ecs/ECSErrorMarshaller.h>
 #include <aws/ecs/ECSErrors.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/ecs/ECSServiceClientModel.h>
 #include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/internal/ECSEndpointRules.h>
 #include <aws/ecs/model/AcceleratorCountRequest.h>
 #include <aws/ecs/model/AcceleratorManufacturer.h>
 #include <aws/ecs/model/AcceleratorName.h>

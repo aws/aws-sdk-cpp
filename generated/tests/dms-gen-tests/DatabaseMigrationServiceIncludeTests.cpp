@@ -8,12 +8,12 @@
 
 #include <aws/dms/DatabaseMigrationServiceClient.h>
 #include <aws/dms/DatabaseMigrationServiceEndpointProvider.h>
-#include <aws/dms/DatabaseMigrationServiceEndpointRules.h>
 #include <aws/dms/DatabaseMigrationServiceErrorMarshaller.h>
 #include <aws/dms/DatabaseMigrationServiceErrors.h>
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/dms/DatabaseMigrationServiceServiceClientModel.h>
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
+#include <aws/dms/internal/DatabaseMigrationServiceEndpointRules.h>
 #include <aws/dms/model/AccountQuota.h>
 #include <aws/dms/model/AddTagsToResourceRequest.h>
 #include <aws/dms/model/AddTagsToResourceResult.h>

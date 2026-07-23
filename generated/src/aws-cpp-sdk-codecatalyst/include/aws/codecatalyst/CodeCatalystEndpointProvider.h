@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/codecatalyst/CodeCatalystEndpointRules.h>
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CODECATALYST_API CodeCatalystEndpointProvider : public CodeCatalystDef
  public:
   using CodeCatalystResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CodeCatalystEndpointProvider()
-      : CodeCatalystDefaultEpProviderBase(Aws::CodeCatalyst::CodeCatalystEndpointRules::GetRulesBlob(),
-                                          Aws::CodeCatalyst::CodeCatalystEndpointRules::RulesBlobSize) {}
+  CodeCatalystEndpointProvider();
 
   ~CodeCatalystEndpointProvider() {}
 };

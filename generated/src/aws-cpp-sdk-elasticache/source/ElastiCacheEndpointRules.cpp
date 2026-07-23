@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/elasticache/ElastiCacheEndpointRules.h>
+#include <aws/elasticache/internal/ElastiCacheEndpointRules.h>
 
 namespace Aws {
 namespace ElastiCache {

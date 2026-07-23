@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/bedrock-agentcore-control/BedrockAgentCoreControlEndpointRules.h>
+#include <aws/bedrock-agentcore-control/internal/BedrockAgentCoreControlEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

@@ -8,12 +8,12 @@
 
 #include <aws/repostspace/RepostspaceClient.h>
 #include <aws/repostspace/RepostspaceEndpointProvider.h>
-#include <aws/repostspace/RepostspaceEndpointRules.h>
 #include <aws/repostspace/RepostspaceErrorMarshaller.h>
 #include <aws/repostspace/RepostspaceErrors.h>
 #include <aws/repostspace/RepostspaceRequest.h>
 #include <aws/repostspace/RepostspaceServiceClientModel.h>
 #include <aws/repostspace/Repostspace_EXPORTS.h>
+#include <aws/repostspace/internal/RepostspaceEndpointRules.h>
 #include <aws/repostspace/model/BatchAddChannelRoleToAccessorsRequest.h>
 #include <aws/repostspace/model/BatchAddChannelRoleToAccessorsResult.h>
 #include <aws/repostspace/model/BatchAddRoleRequest.h>

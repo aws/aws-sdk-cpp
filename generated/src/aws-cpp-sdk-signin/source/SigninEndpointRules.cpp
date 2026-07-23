@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/signin/SigninEndpointRules.h>
+#include <aws/signin/internal/SigninEndpointRules.h>
 
 namespace Aws {
 namespace Signin {

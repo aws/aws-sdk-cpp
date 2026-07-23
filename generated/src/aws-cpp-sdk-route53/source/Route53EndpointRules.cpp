@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/route53/Route53EndpointRules.h>
+#include <aws/route53/internal/Route53EndpointRules.h>
 
 namespace Aws {
 namespace Route53 {

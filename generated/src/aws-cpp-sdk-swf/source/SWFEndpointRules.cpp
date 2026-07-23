@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/swf/SWFEndpointRules.h>
+#include <aws/swf/internal/SWFEndpointRules.h>
 
 namespace Aws {
 namespace SWF {

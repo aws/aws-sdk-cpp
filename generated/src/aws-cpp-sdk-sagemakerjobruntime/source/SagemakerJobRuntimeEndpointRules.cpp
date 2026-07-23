@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sagemakerjobruntime/SagemakerJobRuntimeEndpointRules.h>
+#include <aws/sagemakerjobruntime/internal/SagemakerJobRuntimeEndpointRules.h>
 
 namespace Aws {
 namespace SagemakerJobRuntime {

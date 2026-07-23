@@ -8,12 +8,12 @@
 
 #include <aws/oam/OAMClient.h>
 #include <aws/oam/OAMEndpointProvider.h>
-#include <aws/oam/OAMEndpointRules.h>
 #include <aws/oam/OAMErrorMarshaller.h>
 #include <aws/oam/OAMErrors.h>
 #include <aws/oam/OAMRequest.h>
 #include <aws/oam/OAMServiceClientModel.h>
 #include <aws/oam/OAM_EXPORTS.h>
+#include <aws/oam/internal/OAMEndpointRules.h>
 #include <aws/oam/model/ConflictException.h>
 #include <aws/oam/model/CreateLinkRequest.h>
 #include <aws/oam/model/CreateLinkResult.h>

@@ -4,9 +4,15 @@
  */
 
 #include <aws/internetmonitor/InternetMonitorEndpointProvider.h>
+#include <aws/internetmonitor/internal/InternetMonitorEndpointRules.h>
 
 namespace Aws {
 namespace InternetMonitor {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+InternetMonitorEndpointProvider::InternetMonitorEndpointProvider()
+    : InternetMonitorDefaultEpProviderBase(Aws::InternetMonitor::InternetMonitorEndpointRules::GetRulesBlob(),
+                                           Aws::InternetMonitor::InternetMonitorEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace InternetMonitor
 }  // namespace Aws

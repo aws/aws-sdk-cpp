@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/deadline/DeadlineEndpointRules.h>
+#include <aws/deadline/internal/DeadlineEndpointRules.h>
 
 namespace Aws {
 namespace deadline {

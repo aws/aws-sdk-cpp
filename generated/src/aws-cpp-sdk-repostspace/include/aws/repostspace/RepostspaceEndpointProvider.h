@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/repostspace/RepostspaceEndpointRules.h>
 #include <aws/repostspace/Repostspace_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_REPOSTSPACE_API RepostspaceEndpointProvider : public RepostspaceDefaul
  public:
   using RepostspaceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  RepostspaceEndpointProvider()
-      : RepostspaceDefaultEpProviderBase(Aws::repostspace::RepostspaceEndpointRules::GetRulesBlob(),
-                                         Aws::repostspace::RepostspaceEndpointRules::RulesBlobSize) {}
+  RepostspaceEndpointProvider();
 
   ~RepostspaceEndpointProvider() {}
 };

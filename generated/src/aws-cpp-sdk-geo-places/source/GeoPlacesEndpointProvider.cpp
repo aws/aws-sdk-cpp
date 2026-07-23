@@ -4,9 +4,15 @@
  */
 
 #include <aws/geo-places/GeoPlacesEndpointProvider.h>
+#include <aws/geo-places/internal/GeoPlacesEndpointRules.h>
 
 namespace Aws {
 namespace GeoPlaces {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+GeoPlacesEndpointProvider::GeoPlacesEndpointProvider()
+    : GeoPlacesDefaultEpProviderBase(Aws::GeoPlaces::GeoPlacesEndpointRules::GetRulesBlob(),
+                                     Aws::GeoPlaces::GeoPlacesEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace GeoPlaces
 }  // namespace Aws

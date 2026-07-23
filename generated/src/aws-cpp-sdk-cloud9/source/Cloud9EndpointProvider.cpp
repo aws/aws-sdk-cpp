@@ -4,9 +4,14 @@
  */
 
 #include <aws/cloud9/Cloud9EndpointProvider.h>
+#include <aws/cloud9/internal/Cloud9EndpointRules.h>
 
 namespace Aws {
 namespace Cloud9 {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+Cloud9EndpointProvider::Cloud9EndpointProvider()
+    : Cloud9DefaultEpProviderBase(Aws::Cloud9::Cloud9EndpointRules::GetRulesBlob(), Aws::Cloud9::Cloud9EndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Cloud9
 }  // namespace Aws

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ivschat/IvschatEndpointRules.h>
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_IVSCHAT_API IvschatEndpointProvider : public IvschatDefaultEpProviderB
  public:
   using IvschatResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IvschatEndpointProvider()
-      : IvschatDefaultEpProviderBase(Aws::ivschat::IvschatEndpointRules::GetRulesBlob(),
-                                     Aws::ivschat::IvschatEndpointRules::RulesBlobSize) {}
+  IvschatEndpointProvider();
 
   ~IvschatEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/interconnect/InterconnectClient.h>
 #include <aws/interconnect/InterconnectEndpointProvider.h>
-#include <aws/interconnect/InterconnectEndpointRules.h>
 #include <aws/interconnect/InterconnectErrorMarshaller.h>
 #include <aws/interconnect/InterconnectErrors.h>
 #include <aws/interconnect/InterconnectRequest.h>
 #include <aws/interconnect/InterconnectServiceClientModel.h>
 #include <aws/interconnect/Interconnect_EXPORTS.h>
+#include <aws/interconnect/internal/InterconnectEndpointRules.h>
 #include <aws/interconnect/model/AcceptConnectionProposalRequest.h>
 #include <aws/interconnect/model/AcceptConnectionProposalResult.h>
 #include <aws/interconnect/model/AttachPoint.h>

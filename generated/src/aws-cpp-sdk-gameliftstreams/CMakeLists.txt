@@ -8,6 +8,10 @@ file(GLOB AWS_GAMELIFTSTREAMS_MODEL_HEADERS
     "include/aws/gameliftstreams/model/*.h"
 )
 
+file(GLOB AWS_GAMELIFTSTREAMS_INTERNAL_HEADERS
+    "include/aws/gameliftstreams/internal/*.h"
+)
+
 file(GLOB AWS_GAMELIFTSTREAMS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_GAMELIFTSTREAMS_MODEL_SOURCE
 
 file(GLOB GAMELIFTSTREAMS_UNIFIED_HEADERS
     ${AWS_GAMELIFTSTREAMS_HEADERS}
+    ${AWS_GAMELIFTSTREAMS_INTERNAL_HEADERS}
     ${AWS_GAMELIFTSTREAMS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\gameliftstreams" FILES ${AWS_GAMELIFTSTREAMS_HEADERS})
+        source_group("Header Files\\aws\\gameliftstreams\\internal" FILES ${AWS_GAMELIFTSTREAMS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\gameliftstreams\\model" FILES ${AWS_GAMELIFTSTREAMS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_GAMELIFTSTREAMS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_GAMELIFTSTREAMS_MODEL_SOURCE})

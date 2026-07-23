@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIEndpointRules.h>
+#include <aws/resourcegroupstaggingapi/internal/ResourceGroupsTaggingAPIEndpointRules.h>
 
 namespace Aws {
 namespace ResourceGroupsTaggingAPI {

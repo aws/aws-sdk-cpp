@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/qconnect/QConnectEndpointRules.h>
+#include <aws/qconnect/internal/QConnectEndpointRules.h>
 
 namespace Aws {
 namespace QConnect {

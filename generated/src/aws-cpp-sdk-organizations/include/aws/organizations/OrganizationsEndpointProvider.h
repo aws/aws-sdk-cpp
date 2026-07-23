@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/organizations/OrganizationsEndpointRules.h>
 #include <aws/organizations/Organizations_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_ORGANIZATIONS_API OrganizationsEndpointProvider : public Organizations
  public:
   using OrganizationsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  OrganizationsEndpointProvider()
-      : OrganizationsDefaultEpProviderBase(Aws::Organizations::OrganizationsEndpointRules::GetRulesBlob(),
-                                           Aws::Organizations::OrganizationsEndpointRules::RulesBlobSize) {}
+  OrganizationsEndpointProvider();
 
   ~OrganizationsEndpointProvider() {}
 };

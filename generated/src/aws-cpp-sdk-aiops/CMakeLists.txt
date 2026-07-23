@@ -8,6 +8,10 @@ file(GLOB AWS_AIOPS_MODEL_HEADERS
     "include/aws/aiops/model/*.h"
 )
 
+file(GLOB AWS_AIOPS_INTERNAL_HEADERS
+    "include/aws/aiops/internal/*.h"
+)
+
 file(GLOB AWS_AIOPS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_AIOPS_MODEL_SOURCE
 
 file(GLOB AIOPS_UNIFIED_HEADERS
     ${AWS_AIOPS_HEADERS}
+    ${AWS_AIOPS_INTERNAL_HEADERS}
     ${AWS_AIOPS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\aiops" FILES ${AWS_AIOPS_HEADERS})
+        source_group("Header Files\\aws\\aiops\\internal" FILES ${AWS_AIOPS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\aiops\\model" FILES ${AWS_AIOPS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_AIOPS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_AIOPS_MODEL_SOURCE})

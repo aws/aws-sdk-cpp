@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/elasticmapreduce/EMREndpointRules.h>
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_EMR_API EMREndpointProvider : public EMRDefaultEpProviderBase {
  public:
   using EMRResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  EMREndpointProvider() : EMRDefaultEpProviderBase(Aws::EMR::EMREndpointRules::GetRulesBlob(), Aws::EMR::EMREndpointRules::RulesBlobSize) {}
+  EMREndpointProvider();
 
   ~EMREndpointProvider() {}
 };

@@ -4,6 +4,7 @@
  */
 
 #include <aws/acm/ACMEndpointProvider.h>
+#include <aws/acm/internal/ACMEndpointRules.h>
 
 namespace Aws {
 #ifndef AWS_ACM_EXPORTS  // Except for Windows DLL
@@ -21,6 +22,9 @@ template class Aws::Endpoint::DefaultEndpointProvider<ACM::Endpoint::ACMClientCo
 
 namespace ACM {
 namespace Endpoint {
+ACMEndpointProvider::ACMEndpointProvider()
+    : ACMDefaultEpProviderBase(Aws::ACM::ACMEndpointRules::GetRulesBlob(), Aws::ACM::ACMEndpointRules::RulesBlobSize) {}
+
 void ACMClientContextParameters::SetServiceType(Aws::String value) {
   return SetStringParameter(Aws::String("ServiceType"), std::move(value));
 }

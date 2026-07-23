@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sagemaker-geospatial/SageMakerGeospatialEndpointRules.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_SAGEMAKERGEOSPATIAL_API SageMakerGeospatialEndpointProvider : public S
  public:
   using SageMakerGeospatialResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SageMakerGeospatialEndpointProvider()
-      : SageMakerGeospatialDefaultEpProviderBase(Aws::SageMakerGeospatial::SageMakerGeospatialEndpointRules::GetRulesBlob(),
-                                                 Aws::SageMakerGeospatial::SageMakerGeospatialEndpointRules::RulesBlobSize) {}
+  SageMakerGeospatialEndpointProvider();
 
   ~SageMakerGeospatialEndpointProvider() {}
 };

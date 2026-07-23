@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sagemaker-metrics/SageMakerMetricsEndpointRules.h>
+#include <aws/sagemaker-metrics/internal/SageMakerMetricsEndpointRules.h>
 
 namespace Aws {
 namespace SageMakerMetrics {

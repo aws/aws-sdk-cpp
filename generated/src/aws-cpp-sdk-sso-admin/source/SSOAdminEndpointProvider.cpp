@@ -4,9 +4,15 @@
  */
 
 #include <aws/sso-admin/SSOAdminEndpointProvider.h>
+#include <aws/sso-admin/internal/SSOAdminEndpointRules.h>
 
 namespace Aws {
 namespace SSOAdmin {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SSOAdminEndpointProvider::SSOAdminEndpointProvider()
+    : SSOAdminDefaultEpProviderBase(Aws::SSOAdmin::SSOAdminEndpointRules::GetRulesBlob(),
+                                    Aws::SSOAdmin::SSOAdminEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SSOAdmin
 }  // namespace Aws

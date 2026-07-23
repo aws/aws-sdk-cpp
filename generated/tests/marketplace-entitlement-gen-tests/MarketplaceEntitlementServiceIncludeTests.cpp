@@ -8,12 +8,12 @@
 
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceClient.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceEndpointProvider.h>
-#include <aws/marketplace-entitlement/MarketplaceEntitlementServiceEndpointRules.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceErrorMarshaller.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceErrors.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceRequest.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceServiceClientModel.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementService_EXPORTS.h>
+#include <aws/marketplace-entitlement/internal/MarketplaceEntitlementServiceEndpointRules.h>
 #include <aws/marketplace-entitlement/model/Entitlement.h>
 #include <aws/marketplace-entitlement/model/EntitlementValue.h>
 #include <aws/marketplace-entitlement/model/GetEntitlementFilterName.h>

@@ -8,12 +8,12 @@
 
 #include <aws/clouddirectory/CloudDirectoryClient.h>
 #include <aws/clouddirectory/CloudDirectoryEndpointProvider.h>
-#include <aws/clouddirectory/CloudDirectoryEndpointRules.h>
 #include <aws/clouddirectory/CloudDirectoryErrorMarshaller.h>
 #include <aws/clouddirectory/CloudDirectoryErrors.h>
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/clouddirectory/CloudDirectoryServiceClientModel.h>
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
+#include <aws/clouddirectory/internal/CloudDirectoryEndpointRules.h>
 #include <aws/clouddirectory/model/AddFacetToObjectRequest.h>
 #include <aws/clouddirectory/model/AddFacetToObjectResult.h>
 #include <aws/clouddirectory/model/ApplySchemaRequest.h>

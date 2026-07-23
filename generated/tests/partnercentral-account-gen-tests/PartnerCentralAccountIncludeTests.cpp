@@ -8,12 +8,12 @@
 
 #include <aws/partnercentral-account/PartnerCentralAccountClient.h>
 #include <aws/partnercentral-account/PartnerCentralAccountEndpointProvider.h>
-#include <aws/partnercentral-account/PartnerCentralAccountEndpointRules.h>
 #include <aws/partnercentral-account/PartnerCentralAccountErrorMarshaller.h>
 #include <aws/partnercentral-account/PartnerCentralAccountErrors.h>
 #include <aws/partnercentral-account/PartnerCentralAccountRequest.h>
 #include <aws/partnercentral-account/PartnerCentralAccountServiceClientModel.h>
 #include <aws/partnercentral-account/PartnerCentralAccount_EXPORTS.h>
+#include <aws/partnercentral-account/internal/PartnerCentralAccountEndpointRules.h>
 #include <aws/partnercentral-account/model/AcceptConnectionInvitationRequest.h>
 #include <aws/partnercentral-account/model/AcceptConnectionInvitationResult.h>
 #include <aws/partnercentral-account/model/AccessDeniedException.h>

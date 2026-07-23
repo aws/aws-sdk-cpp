@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/supportauthz/SupportAuthZEndpointRules.h>
+#include <aws/supportauthz/internal/SupportAuthZEndpointRules.h>
 
 namespace Aws {
 namespace SupportAuthZ {

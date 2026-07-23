@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/dataexchange/DataExchangeEndpointRules.h>
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_DATAEXCHANGE_API DataExchangeEndpointProvider : public DataExchangeDef
  public:
   using DataExchangeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DataExchangeEndpointProvider()
-      : DataExchangeDefaultEpProviderBase(Aws::DataExchange::DataExchangeEndpointRules::GetRulesBlob(),
-                                          Aws::DataExchange::DataExchangeEndpointRules::RulesBlobSize) {}
+  DataExchangeEndpointProvider();
 
   ~DataExchangeEndpointProvider() {}
 };
