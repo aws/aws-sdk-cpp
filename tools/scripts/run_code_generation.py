@@ -81,6 +81,10 @@ def parse_arguments() -> dict:
                         help="Comma-separated list of services to generate models from Smithy. "
                              "Only effective with --use-smithy-models. "
                              "Defaults to all services in --client_list if omitted.")
+    parser.add_argument("--generate-endpoint-rules",
+                        help="Generate the endpoint-rules blob (compiled BDD bytecode) via Smithy instead "
+                             "of the C2J JSON blob. Pair with the C2J --skip-endpoint-rules-blob flag.",
+                        action="store_true")
 
     args = vars(parser.parse_args())
     arg_map = {"debug": args.get("debug", False)}
@@ -142,6 +146,7 @@ def parse_arguments() -> dict:
     arg_map["generate_protocol_tests"] = args.get("generate_protocol_tests", None)
     arg_map["generate_install_tests"] = args.get("generate_install_tests", None)
     arg_map["use_smithy_models"] = args.get("use_smithy_models", False)
+    arg_map["generate_endpoint_rules"] = args.get("generate_endpoint_rules", False)
     smithy_model_services_raw = args.get("smithy_model_services", None)
     if smithy_model_services_raw:
         arg_map["smithy_model_services"] = set(smithy_model_services_raw.replace(";", ",").split(","))
@@ -205,7 +210,8 @@ def main():
     if clients_to_build:
         smithy_cpp_gen = SmithyCppGen(args["debug"],
                                       use_smithy_models=bool(smithy_model_services),
-                                      smithy_model_services=smithy_model_services)
+                                      smithy_model_services=smithy_model_services,
+                                      generate_endpoint_rules=args.get("generate_endpoint_rules", False))
         if smithy_cpp_gen.generate(clients_to_build) != 0:
             print("ERROR: Failed to generate Smithy code!")
             return -1

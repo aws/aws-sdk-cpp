@@ -10,21 +10,25 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 from typing import List
 
 SMITHY_GENERATOR_LOCATION = "tools/code-generation/smithy/cpp-codegen"
 SMITHY_TO_C2J_MAP_FILE = "tools/code-generation/smithy/cpp-codegen/smithy2c2j_service_map.json"
 SMITHY_NAMPESPACE_MAPPING_FILE = "tools/code-generation/smithy/mapping/smithy-namespace-mapping.json"
+BDD_BYTECODER_FILE = "crt/aws-crt-cpp/crt/aws-c-sdkutils/compiler/bdd-bytecoder.py"
 
 
 class SmithyCppGen(object):
     """Wrapper for Smithy C++ code generator for C++ SDK"""
 
     def __init__(self, debug: bool, use_smithy_models: bool = False,
-                 smithy_model_services: set = None, **kwargs):
+                 smithy_model_services: set = None, generate_endpoint_rules: bool = False,
+                 **kwargs):
         self.debug = debug
         self.use_smithy_models = use_smithy_models
         self.smithy_model_services = smithy_model_services or set()
+        self.generate_endpoint_rules = generate_endpoint_rules
         with open(os.path.abspath(SMITHY_TO_C2J_MAP_FILE), 'r') as file:
             self.smithy_c2j_data = json.load(file)
             self.c2j_smithy_data = {value: key for key, value in self.smithy_c2j_data.items()}
@@ -44,6 +48,10 @@ class SmithyCppGen(object):
                 plugins_to_copy.append("smithy-cpp-codegen-models")
                 if self.debug:
                     print(f"Including Smithy model files for: {sorted(self.smithy_model_services)}")
+            if self.generate_endpoint_rules:
+                plugins_to_copy.append("smithy-cpp-codegen-endpoint-rules")
+                if self.debug:
+                    print("Including Smithy-generated BDD endpoint-rules blob files")
             self._copy_cpp_codegen_contents(
                 os.path.abspath("tools/code-generation/smithy/cpp-codegen"),
                 plugins_to_copy,
@@ -62,6 +70,10 @@ class SmithyCppGen(object):
         ]
         if self.use_smithy_models:
             smithy_codegen_command.append("-PgenerateModels=true")
+        if self.generate_endpoint_rules:
+            smithy_codegen_command.append("-PgenerateEndpointRules=true")
+            smithy_codegen_command.append("-PbddBytecoderPath=" + os.path.abspath(BDD_BYTECODER_FILE))
+            smithy_codegen_command.append("-PpythonExecutable=" + sys.executable)
         
         try:
             if self.debug:

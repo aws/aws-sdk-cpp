@@ -198,6 +198,8 @@ class LegacyC2jCppGen(object):
             if self.debug:
                 print(f"  Skipping C2J model generation for {service_name} (using Smithy models)")
 
+        run_command += ["--skip-endpoint-rules-blob"]  # TEST: hardcoded to test Smithy BDD blob path
+
         for key, val in kwargs.items():
             run_command += [f"--{key}", val]
 
