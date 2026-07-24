@@ -19,6 +19,7 @@ from pathlib import Path
 
 from codegen.include_tests_util import IncludeTestsUtil
 from codegen.model_utils import ServiceModel
+from codegen.smithy_cpp_gen import bdd_endpoint_services
 
 SMITHY_SUPPORTED_CLIENTS = [
     "dynamodb",
@@ -60,6 +61,8 @@ class LegacyC2jCppGen(object):
         self.debug = args.get("debug", False)
         self.c2j_models = c2j_models
         self.skip_model_services = skip_model_services or set()
+        self.use_smithy_bdd_endpoints = args.get("use_smithy_bdd_endpoints", False)
+        self.bdd_endpoint_services = bdd_endpoint_services() if self.use_smithy_bdd_endpoints else set()
 
         generator_location = args["path_to_generator"] or DEFAULT_GENERATOR_LOCATION
         generator_location = str(Path(generator_location).absolute())
@@ -197,6 +200,11 @@ class LegacyC2jCppGen(object):
             run_command += ["--skip-model-generation"]
             if self.debug:
                 print(f"  Skipping C2J model generation for {service_name} (using Smithy models)")
+
+        if service_name in self.bdd_endpoint_services:
+            run_command += ["--skip-endpoint-rules-blob"]
+            if self.debug:
+                print(f"  Skipping C2J endpoint-rules blob for {service_name} (using Smithy BDD endpoints)")
 
         for key, val in kwargs.items():
             run_command += [f"--{key}", val]

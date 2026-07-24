@@ -8,6 +8,11 @@
 #set($epBuiltInClassName = "${metadata.classNamePrefix}BuiltInParameters")
 #set($exportMacro = "${CppViewHelper.computeExportValue($metadata.classNamePrefix)}")
 #set($externMacro = "AWS_${metadata.classNamePrefix.toUpperCase()}_EXTERN")
+#if($serviceModel.skipEndpointRulesBlob)
+#set($epProviderType = "BDDEndpointProvider")
+#else
+#set($epProviderType = "DefaultEndpointProvider")
+#end
 #pragma once
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 #if($serviceModel.hasServiceSpecificClientConfig())
@@ -15,7 +20,7 @@
 #else
 \#include <aws/core/client/GenericClientConfiguration.h>
 #end
-\#include <aws/core/endpoint/DefaultEndpointProvider.h>
+\#include <aws/core/endpoint/${epProviderType}.h>
 \#include <aws/core/endpoint/EndpointParameter.h>
 \#include <aws/core/utils/memory/stl/AWSString.h>
 \#include <aws/core/utils/memory/stl/AWSVector.h>
@@ -33,7 +38,7 @@ using ${metadata.classNamePrefix}ClientConfiguration = Aws::${serviceNamespace}:
 #end
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::EndpointProviderBase;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::${epProviderType};
 
 #if ($serviceModel.endpointRules)
 #if ($serviceModel.clientContextParams)
@@ -92,7 +97,7 @@ using ${metadata.classNamePrefix}EndpointProviderBase =
     EndpointProviderBase<${metadata.classNamePrefix}ClientConfiguration, ${epBuiltInClassName}, ${epContextClassName}>;
 
 using ${metadata.classNamePrefix}DefaultEpProviderBase =
-    DefaultEndpointProvider<${metadata.classNamePrefix}ClientConfiguration, ${epBuiltInClassName}, ${epContextClassName}>;
+    ${epProviderType}<${metadata.classNamePrefix}ClientConfiguration, ${epBuiltInClassName}, ${epContextClassName}>;
 
 #if($serviceModel.hasServiceSpecificClientConfig() || $serviceModel.clientContextParams)
 } // namespace Endpoint
@@ -107,7 +112,7 @@ ${externMacro} template class ${exportMacro}
     Aws::Endpoint::EndpointProviderBase<${serviceNamespace}::Endpoint::${metadata.classNamePrefix}ClientConfiguration, ${serviceNamespace}::Endpoint::${epBuiltInClassName}, ${serviceNamespace}::Endpoint::${epContextClassName}>;
 
 ${externMacro} template class ${exportMacro}
-    Aws::Endpoint::DefaultEndpointProvider<${serviceNamespace}::Endpoint::${metadata.classNamePrefix}ClientConfiguration, ${serviceNamespace}::Endpoint::${epBuiltInClassName}, ${serviceNamespace}::Endpoint::${epContextClassName}>;
+    Aws::Endpoint::${epProviderType}<${serviceNamespace}::Endpoint::${metadata.classNamePrefix}ClientConfiguration, ${serviceNamespace}::Endpoint::${epBuiltInClassName}, ${serviceNamespace}::Endpoint::${epContextClassName}>;
 } // namespace Endpoint
 
 namespace ${serviceNamespace}
