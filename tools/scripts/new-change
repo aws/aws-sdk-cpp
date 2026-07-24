@@ -1,0 +1,279 @@
+#!/usr/bin/env python3
+# Adapted from aws/aws-sdk-java-v2 scripts/new-change
+"""Generate a new changelog fragment.
+
+Usage
+=====
+
+Interactively (opens editor)::
+
+    tools/scripts/new-change
+
+Non-interactively (for CI)::
+
+    tools/scripts/new-change --type bugfix --category aws-cpp-sdk-core --description "Fix timeout"
+
+Auto-detect from git (infers type, category, description, contributor from branch)::
+
+    tools/scripts/new-change --auto
+
+"""
+import argparse
+import hashlib
+import json
+import os
+import re
+import subprocess
+import sys
+import tempfile
+
+VALID_TYPES = ['feature', 'bugfix', 'deprecation', 'removal', 'documentation', 'dependency', 'breaking-change']
+CHANGELOG_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    '.changelog'
+)
+TEMPLATE = """\
+# Type should be one of: feature, bugfix, deprecation, removal, documentation, dependency, breaking-change
+type: {change_type}
+
+# The category of the change (e.g. aws-cpp-sdk-core, aws-cpp-sdk-s3)
+category: {category}
+
+# Your GitHub username (without '@') to be included in the CHANGELOG.
+# Leave empty if you would prefer not to be mentioned.
+contributor: {contributor}
+
+# The description of the change.
+description: {description}
+"""
+
+
+def new_changelog_entry(args):
+    if args.auto:
+        parsed_values = auto_detect()
+        if not parsed_values:
+            sys.stderr.write("Could not auto-detect changelog entry. Use interactive mode or pass flags.\n")
+            return 1
+    elif all_values_provided(args):
+        parsed_values = {
+            'type': args.change_type,
+            'category': args.category,
+            'contributor': args.contributor,
+            'description': args.description,
+        }
+    else:
+        parsed_values = get_values_from_editor(args)
+        if not parsed_values:
+            sys.stderr.write("Empty file, skipping entry creation.\n")
+            return 1
+        missing = [p for p in ['type', 'category', 'description'] if not parsed_values.get(p)]
+        if missing:
+            sys.stderr.write(
+                "No values provided for: %s. Skipping entry creation.\n" % ', '.join(missing))
+            return 1
+
+    if parsed_values['type'] not in VALID_TYPES:
+        sys.stderr.write(
+            "Invalid type '%s'. Must be one of: %s\n" % (parsed_values['type'], ', '.join(VALID_TYPES)))
+        return 1
+
+    replace_issue_references(parsed_values)
+    filename = write_new_change(parsed_values)
+    print("Created changelog fragment: %s" % filename)
+    return 0
+
+
+def auto_detect():
+    """Infer type, category, description, and contributor from git branch state."""
+    # Get description from the first commit message on this branch
+    description = git('log', 'main..HEAD', '--format=%s', '--reverse').strip().split('\n')[0]
+    if not description:
+        # Fallback to last commit
+        description = git('log', '-1', '--format=%s').strip()
+    if not description:
+        return None
+
+    # Get contributor from git config
+    contributor = git('config', 'user.name').strip()
+
+    # Get all committed changed files on this branch vs main
+    changed_files = git('diff', '--name-only', 'main..HEAD').strip().split('\n')
+    changed_files = [f for f in changed_files if f]
+
+    # Infer category from changed files
+    category = infer_category(changed_files)
+
+    # Infer type from description
+    change_type = infer_type(description)
+
+    print("Auto-detected:")
+    print("  type: %s" % change_type)
+    print("  category: %s" % category)
+    print("  contributor: %s" % contributor)
+    print("  description: %s" % description)
+
+    return {
+        'type': change_type,
+        'category': category,
+        'contributor': contributor,
+        'description': description,
+    }
+
+
+def infer_category(changed_files):
+    """Infer the category from changed file paths."""
+    packages = set()
+    has_generated = False
+    for f in changed_files:
+        if f.startswith('generated/'):
+            has_generated = True
+            continue
+        parts = f.split('/')
+        for part in parts:
+            if part.startswith('aws-cpp-sdk-'):
+                packages.add(part)
+                break
+        else:
+            # Detect top-level directories as categories
+            if parts[0] in ('tools', 'src', 'tests', 'crt', 'cmake'):
+                packages.add(parts[0])
+
+    scopes = sorted(packages)
+    if has_generated:
+        scopes.append('generated/src')
+
+    if len(scopes) == 1:
+        return scopes[0]
+    elif len(scopes) > 1:
+        return ', '.join(scopes)
+    return ''
+
+
+def infer_type(description):
+    """Infer the change type from the commit message."""
+    lower = description.lower()
+    if any(word in lower for word in ['fix', 'bug', 'crash', 'segfault', 'leak']):
+        return 'bugfix'
+    elif any(word in lower for word in ['deprecat']):
+        return 'deprecation'
+    elif any(word in lower for word in ['remove', 'delete']):
+        return 'removal'
+    elif any(word in lower for word in ['doc', 'readme', 'comment']):
+        return 'documentation'
+    elif any(word in lower for word in ['break', 'abi']):
+        return 'breaking-change'
+    elif any(word in lower for word in ['bump', 'crt', 'dependency', 'update.*version']):
+        return 'dependency'
+    return 'feature'
+
+
+def git(*args):
+    """Run a git command and return stdout."""
+    try:
+        result = subprocess.run(
+            ['git'] + list(args),
+            capture_output=True, text=True, timeout=30)
+        return result.stdout
+    except (subprocess.TimeoutExpired, FileNotFoundError):
+        return ''
+
+
+def all_values_provided(args):
+    return args.change_type and args.category and args.description
+
+
+def get_values_from_editor(args):
+    with tempfile.NamedTemporaryFile('w', suffix='.txt', delete=False) as f:
+        contents = TEMPLATE.format(
+            change_type=args.change_type or '',
+            category=args.category or '',
+            contributor=args.contributor or '',
+            description=args.description or '',
+        )
+        f.write(contents)
+        f.flush()
+        tmpname = f.name
+
+    try:
+        env = os.environ
+        editor = env.get('VISUAL', env.get('EDITOR', 'vim'))
+        p = subprocess.Popen('%s %s' % (editor, tmpname), shell=True)
+        p.communicate()
+        with open(tmpname) as f:
+            filled_in = f.read()
+            return parse_filled_in_contents(filled_in)
+    finally:
+        os.unlink(tmpname)
+
+
+def replace_issue_references(parsed):
+    description = parsed['description']
+
+    def linkify(match):
+        number = match.group()[1:]
+        return '[%s](https://github.com/aws/aws-sdk-cpp/issues/%s)' % (match.group(), number)
+
+    parsed['description'] = re.sub(r'(?<!\[)#\d+', linkify, description)
+
+
+def write_new_change(parsed_values):
+    if not os.path.isdir(CHANGELOG_DIR):
+        os.makedirs(CHANGELOG_DIR)
+
+    contents = json.dumps(parsed_values, indent=2) + "\n"
+    contents_digest = hashlib.sha1(contents.encode('utf-8')).hexdigest()
+
+    # Use branch name as filename if available, otherwise fall back to category slug
+    branch = git('rev-parse', '--abbrev-ref', 'HEAD').strip()
+    if branch and branch != 'main' and branch != 'HEAD':
+        name_slug = ''.join(c for c in branch if c.isalnum() or c == '-')
+    else:
+        name_slug = ''.join(c for c in parsed_values['category'] if c.isalnum() or c == '-')
+    if len(name_slug) > 60:
+        name_slug = name_slug[:60]
+    filename = '%s-%s.json' % (parsed_values['type'], name_slug)
+    filepath = os.path.join(CHANGELOG_DIR, filename)
+
+    with open(filepath, 'w') as f:
+        f.write(contents)
+    return filepath
+
+
+def parse_filled_in_contents(contents):
+    if not contents.strip():
+        return {}
+    parsed = {}
+    lines = iter(contents.splitlines())
+    for line in lines:
+        line = line.strip()
+        if line.startswith('#'):
+            continue
+        if 'type' not in parsed and line.startswith('type:'):
+            parsed['type'] = line[len('type:'):].strip()
+        elif 'category' not in parsed and line.startswith('category:'):
+            parsed['category'] = line[len('category:'):].strip()
+        elif 'contributor' not in parsed and line.startswith('contributor:'):
+            parsed['contributor'] = line[len('contributor:'):].strip()
+        elif 'description' not in parsed and line.startswith('description:'):
+            first_line = line[len('description:'):].strip()
+            full_description = '\n'.join([first_line] + list(lines))
+            parsed['description'] = full_description.strip()
+            break
+    return parsed
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Generate a new changelog fragment')
+    parser.add_argument('-t', '--type', dest='change_type', default='',
+                        choices=VALID_TYPES)
+    parser.add_argument('-c', '--category', dest='category', default='')
+    parser.add_argument('-u', '--contributor', dest='contributor', default='')
+    parser.add_argument('-d', '--description', dest='description', default='')
+    parser.add_argument('--auto', action='store_true',
+                        help='Auto-detect type, category, description, and contributor from git')
+    args = parser.parse_args()
+    sys.exit(new_changelog_entry(args))
+
+
+if __name__ == '__main__':
+    main()
