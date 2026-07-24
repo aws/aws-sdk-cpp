@@ -9,15 +9,15 @@
 #include <aws/application-insights/model/LogFilter.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ApplicationInsights {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class Observation {
  public:
   AWS_APPLICATIONINSIGHTS_API Observation() = default;
-  AWS_APPLICATIONINSIGHTS_API Observation(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPLICATIONINSIGHTS_API Observation& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_APPLICATIONINSIGHTS_API Observation(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPLICATIONINSIGHTS_API Observation& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPLICATIONINSIGHTS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -728,13 +728,13 @@ class Observation {
   /**
    * <p> The X-Ray request fault percentage for this node. </p>
    */
-  inline int GetXRayFaultPercent() const { return m_xRayFaultPercent; }
+  inline int64_t GetXRayFaultPercent() const { return m_xRayFaultPercent; }
   inline bool XRayFaultPercentHasBeenSet() const { return m_xRayFaultPercentHasBeenSet; }
-  inline void SetXRayFaultPercent(int value) {
+  inline void SetXRayFaultPercent(int64_t value) {
     m_xRayFaultPercentHasBeenSet = true;
     m_xRayFaultPercent = value;
   }
-  inline Observation& WithXRayFaultPercent(int value) {
+  inline Observation& WithXRayFaultPercent(int64_t value) {
     SetXRayFaultPercent(value);
     return *this;
   }
@@ -744,13 +744,13 @@ class Observation {
   /**
    * <p> The X-Ray request throttle percentage for this node. </p>
    */
-  inline int GetXRayThrottlePercent() const { return m_xRayThrottlePercent; }
+  inline int64_t GetXRayThrottlePercent() const { return m_xRayThrottlePercent; }
   inline bool XRayThrottlePercentHasBeenSet() const { return m_xRayThrottlePercentHasBeenSet; }
-  inline void SetXRayThrottlePercent(int value) {
+  inline void SetXRayThrottlePercent(int64_t value) {
     m_xRayThrottlePercentHasBeenSet = true;
     m_xRayThrottlePercent = value;
   }
-  inline Observation& WithXRayThrottlePercent(int value) {
+  inline Observation& WithXRayThrottlePercent(int64_t value) {
     SetXRayThrottlePercent(value);
     return *this;
   }
@@ -760,13 +760,13 @@ class Observation {
   /**
    * <p> The X-Ray request error percentage for this node. </p>
    */
-  inline int GetXRayErrorPercent() const { return m_xRayErrorPercent; }
+  inline int64_t GetXRayErrorPercent() const { return m_xRayErrorPercent; }
   inline bool XRayErrorPercentHasBeenSet() const { return m_xRayErrorPercentHasBeenSet; }
-  inline void SetXRayErrorPercent(int value) {
+  inline void SetXRayErrorPercent(int64_t value) {
     m_xRayErrorPercentHasBeenSet = true;
     m_xRayErrorPercent = value;
   }
-  inline Observation& WithXRayErrorPercent(int value) {
+  inline Observation& WithXRayErrorPercent(int64_t value) {
     SetXRayErrorPercent(value);
     return *this;
   }
@@ -776,13 +776,13 @@ class Observation {
   /**
    * <p> The X-Ray request count for this node. </p>
    */
-  inline int GetXRayRequestCount() const { return m_xRayRequestCount; }
+  inline int64_t GetXRayRequestCount() const { return m_xRayRequestCount; }
   inline bool XRayRequestCountHasBeenSet() const { return m_xRayRequestCountHasBeenSet; }
-  inline void SetXRayRequestCount(int value) {
+  inline void SetXRayRequestCount(int64_t value) {
     m_xRayRequestCountHasBeenSet = true;
     m_xRayRequestCount = value;
   }
-  inline Observation& WithXRayRequestCount(int value) {
+  inline Observation& WithXRayRequestCount(int64_t value) {
     SetXRayRequestCount(value);
     return *this;
   }
@@ -916,13 +916,13 @@ class Observation {
 
   Aws::String m_ebsRequestId;
 
-  int m_xRayFaultPercent{0};
+  int64_t m_xRayFaultPercent{0};
 
-  int m_xRayThrottlePercent{0};
+  int64_t m_xRayThrottlePercent{0};
 
-  int m_xRayErrorPercent{0};
+  int64_t m_xRayErrorPercent{0};
 
-  int m_xRayRequestCount{0};
+  int64_t m_xRayRequestCount{0};
 
   long long m_xRayRequestAverageLatency{0};
 

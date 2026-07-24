@@ -95,7 +95,12 @@ class GetUserAuthFactorsResult {
   /**
    * <p>The authentication types that are available to the user with
    * <code>USER_AUTH</code> sign-in, for example <code>["PASSWORD",
-   * "WEB_AUTHN"]</code>.</p>
+   * "WEB_AUTHN"]</code>.</p> <p> <code>PASSWORD</code> can only be used as a first
+   * authentication factor. <code>SOFTWARE_TOKEN</code> can only be used as an MFA
+   * factor. <code>EMAIL_OTP</code>, <code>SMS_OTP</code>, and <code>WEB_AUTHN</code>
+   * can be used as either a first authentication factor or an MFA factor.
+   * <code>WEB_AUTHN</code> is available as an MFA factor only when passkey MFA is
+   * enabled at the user pool level.</p>
    */
   inline const Aws::Vector<AuthFactorType>& GetConfiguredUserAuthFactors() const { return m_configuredUserAuthFactors; }
   template <typename ConfiguredUserAuthFactorsT = Aws::Vector<AuthFactorType>>

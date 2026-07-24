@@ -456,6 +456,36 @@ class AWS_ARTIFACT_API ArtifactClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Submits feedback on a compliance inquiry response.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/PutComplianceInquiryFeedback">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutComplianceInquiryFeedbackOutcome PutComplianceInquiryFeedback(
+      const Model::PutComplianceInquiryFeedbackRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutComplianceInquiryFeedback that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutComplianceInquiryFeedbackRequestT = Model::PutComplianceInquiryFeedbackRequest>
+  Model::PutComplianceInquiryFeedbackOutcomeCallable PutComplianceInquiryFeedbackCallable(
+      const PutComplianceInquiryFeedbackRequestT& request) const {
+    return SubmitCallable(&ArtifactClient::PutComplianceInquiryFeedback, request);
+  }
+
+  /**
+   * An Async wrapper for PutComplianceInquiryFeedback that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutComplianceInquiryFeedbackRequestT = Model::PutComplianceInquiryFeedbackRequest>
+  void PutComplianceInquiryFeedbackAsync(const PutComplianceInquiryFeedbackRequestT& request,
+                                         const PutComplianceInquiryFeedbackResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ArtifactClient::PutComplianceInquiryFeedback, request, handler, context);
+  }
+
+  /**
    * <p>Add tags to a resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/TagResource">AWS
    * API Reference</a></p>

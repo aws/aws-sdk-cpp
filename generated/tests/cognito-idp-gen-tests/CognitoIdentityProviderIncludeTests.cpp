@@ -41,6 +41,8 @@
 #include <aws/cognito-idp/model/AdminForgetDeviceRequest.h>
 #include <aws/cognito-idp/model/AdminGetDeviceRequest.h>
 #include <aws/cognito-idp/model/AdminGetDeviceResult.h>
+#include <aws/cognito-idp/model/AdminGetUserAuthFactorsRequest.h>
+#include <aws/cognito-idp/model/AdminGetUserAuthFactorsResult.h>
 #include <aws/cognito-idp/model/AdminGetUserRequest.h>
 #include <aws/cognito-idp/model/AdminGetUserResult.h>
 #include <aws/cognito-idp/model/AdminInitiateAuthRequest.h>

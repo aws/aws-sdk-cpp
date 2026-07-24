@@ -4,115 +4,603 @@
  */
 
 #include <aws/application-insights/model/ApplicationInfo.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace ApplicationInsights {
 namespace Model {
 
-ApplicationInfo::ApplicationInfo(JsonView jsonValue) { *this = jsonValue; }
+ApplicationInfo::ApplicationInfo(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-ApplicationInfo& ApplicationInfo::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("AccountId")) {
-    m_accountId = jsonValue.GetString("AccountId");
-    m_accountIdHasBeenSet = true;
+ApplicationInfo& ApplicationInfo::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "AccountId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_accountId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_accountId = ss.str();
+                  }
+                }
+                m_accountIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ResourceGroupName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_resourceGroupName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_resourceGroupName = ss.str();
+                  }
+                }
+                m_resourceGroupNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LifeCycle") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_lifeCycle = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_lifeCycle = ss.str();
+                  }
+                }
+                m_lifeCycleHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "OpsItemSNSTopicArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_opsItemSNSTopicArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_opsItemSNSTopicArn = ss.str();
+                  }
+                }
+                m_opsItemSNSTopicArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SNSNotificationArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_sNSNotificationArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_sNSNotificationArn = ss.str();
+                  }
+                }
+                m_sNSNotificationArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "OpsCenterEnabled") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_opsCenterEnabled = val.value();
+                }
+                m_opsCenterEnabledHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "CWEMonitorEnabled") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_cWEMonitorEnabled = val.value();
+                }
+                m_cWEMonitorEnabledHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Remarks") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_remarks = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_remarks = ss.str();
+                  }
+                }
+                m_remarksHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AutoConfigEnabled") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_autoConfigEnabled = val.value();
+                }
+                m_autoConfigEnabledHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DiscoveryType") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_discoveryType = DiscoveryTypeMapper::GetDiscoveryTypeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_discoveryTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AttachMissingPermission") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_attachMissingPermission = val.value();
+                }
+                m_attachMissingPermissionHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ApplicationInfo", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "AccountId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_accountId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_accountId = ss.str();
+                }
+              }
+              m_accountIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ResourceGroupName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_resourceGroupName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_resourceGroupName = ss.str();
+                }
+              }
+              m_resourceGroupNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LifeCycle") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_lifeCycle = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_lifeCycle = ss.str();
+                }
+              }
+              m_lifeCycleHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "OpsItemSNSTopicArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_opsItemSNSTopicArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_opsItemSNSTopicArn = ss.str();
+                }
+              }
+              m_opsItemSNSTopicArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SNSNotificationArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_sNSNotificationArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_sNSNotificationArn = ss.str();
+                }
+              }
+              m_sNSNotificationArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "OpsCenterEnabled") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_opsCenterEnabled = val.value();
+              }
+              m_opsCenterEnabledHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "CWEMonitorEnabled") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_cWEMonitorEnabled = val.value();
+              }
+              m_cWEMonitorEnabledHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Remarks") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_remarks = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_remarks = ss.str();
+                }
+              }
+              m_remarksHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AutoConfigEnabled") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_autoConfigEnabled = val.value();
+              }
+              m_autoConfigEnabledHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DiscoveryType") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_discoveryType = DiscoveryTypeMapper::GetDiscoveryTypeForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_discoveryTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AttachMissingPermission") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_attachMissingPermission = val.value();
+              }
+              m_attachMissingPermissionHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("ResourceGroupName")) {
-    m_resourceGroupName = jsonValue.GetString("ResourceGroupName");
-    m_resourceGroupNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LifeCycle")) {
-    m_lifeCycle = jsonValue.GetString("LifeCycle");
-    m_lifeCycleHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("OpsItemSNSTopicArn")) {
-    m_opsItemSNSTopicArn = jsonValue.GetString("OpsItemSNSTopicArn");
-    m_opsItemSNSTopicArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SNSNotificationArn")) {
-    m_sNSNotificationArn = jsonValue.GetString("SNSNotificationArn");
-    m_sNSNotificationArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("OpsCenterEnabled")) {
-    m_opsCenterEnabled = jsonValue.GetBool("OpsCenterEnabled");
-    m_opsCenterEnabledHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CWEMonitorEnabled")) {
-    m_cWEMonitorEnabled = jsonValue.GetBool("CWEMonitorEnabled");
-    m_cWEMonitorEnabledHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Remarks")) {
-    m_remarks = jsonValue.GetString("Remarks");
-    m_remarksHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AutoConfigEnabled")) {
-    m_autoConfigEnabled = jsonValue.GetBool("AutoConfigEnabled");
-    m_autoConfigEnabledHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DiscoveryType")) {
-    m_discoveryType = DiscoveryTypeMapper::GetDiscoveryTypeForName(jsonValue.GetString("DiscoveryType"));
-    m_discoveryTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AttachMissingPermission")) {
-    m_attachMissingPermission = jsonValue.GetBool("AttachMissingPermission");
-    m_attachMissingPermissionHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue ApplicationInfo::Jsonize() const {
-  JsonValue payload;
+void ApplicationInfo::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_accountIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_resourceGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lifeCycleHasBeenSet) {
+    mapSize++;
+  }
+  if (m_opsItemSNSTopicArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sNSNotificationArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_opsCenterEnabledHasBeenSet) {
+    mapSize++;
+  }
+  if (m_cWEMonitorEnabledHasBeenSet) {
+    mapSize++;
+  }
+  if (m_remarksHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoConfigEnabledHasBeenSet) {
+    mapSize++;
+  }
+  if (m_discoveryTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_attachMissingPermissionHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_accountIdHasBeenSet) {
-    payload.WithString("AccountId", m_accountId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AccountId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_accountId.c_str()));
   }
 
   if (m_resourceGroupNameHasBeenSet) {
-    payload.WithString("ResourceGroupName", m_resourceGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ResourceGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_resourceGroupName.c_str()));
   }
 
   if (m_lifeCycleHasBeenSet) {
-    payload.WithString("LifeCycle", m_lifeCycle);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LifeCycle"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_lifeCycle.c_str()));
   }
 
   if (m_opsItemSNSTopicArnHasBeenSet) {
-    payload.WithString("OpsItemSNSTopicArn", m_opsItemSNSTopicArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OpsItemSNSTopicArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_opsItemSNSTopicArn.c_str()));
   }
 
   if (m_sNSNotificationArnHasBeenSet) {
-    payload.WithString("SNSNotificationArn", m_sNSNotificationArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SNSNotificationArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sNSNotificationArn.c_str()));
   }
 
   if (m_opsCenterEnabledHasBeenSet) {
-    payload.WithBool("OpsCenterEnabled", m_opsCenterEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OpsCenterEnabled"));
+    encoder.WriteBool(m_opsCenterEnabled);
   }
 
   if (m_cWEMonitorEnabledHasBeenSet) {
-    payload.WithBool("CWEMonitorEnabled", m_cWEMonitorEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CWEMonitorEnabled"));
+    encoder.WriteBool(m_cWEMonitorEnabled);
   }
 
   if (m_remarksHasBeenSet) {
-    payload.WithString("Remarks", m_remarks);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Remarks"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_remarks.c_str()));
   }
 
   if (m_autoConfigEnabledHasBeenSet) {
-    payload.WithBool("AutoConfigEnabled", m_autoConfigEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AutoConfigEnabled"));
+    encoder.WriteBool(m_autoConfigEnabled);
   }
 
   if (m_discoveryTypeHasBeenSet) {
-    payload.WithString("DiscoveryType", DiscoveryTypeMapper::GetNameForDiscoveryType(m_discoveryType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DiscoveryType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(DiscoveryTypeMapper::GetNameForDiscoveryType(m_discoveryType).c_str()));
   }
 
   if (m_attachMissingPermissionHasBeenSet) {
-    payload.WithBool("AttachMissingPermission", m_attachMissingPermission);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AttachMissingPermission"));
+    encoder.WriteBool(m_attachMissingPermission);
   }
-
-  return payload;
 }
 
 }  // namespace Model

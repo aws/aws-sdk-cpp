@@ -39,7 +39,9 @@ class SignInPolicyType {
   /**
    * <p>The sign-in methods that a user pool supports as the first factor. You can
    * permit users to start authentication with a standard username and password, or
-   * with other one-time password and hardware factors.</p>
+   * with other one-time password and hardware factors.</p>  <p>
+   * <code>SOFTWARE_TOKEN</code> is not currently supported as a first auth factor.
+   * Do not include this value in <code>AllowedFirstAuthFactors</code>.</p>
    */
   inline const Aws::Vector<AuthFactorType>& GetAllowedFirstAuthFactors() const { return m_allowedFirstAuthFactors; }
   inline bool AllowedFirstAuthFactorsHasBeenSet() const { return m_allowedFirstAuthFactorsHasBeenSet; }

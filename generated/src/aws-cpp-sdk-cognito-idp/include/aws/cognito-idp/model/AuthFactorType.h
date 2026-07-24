@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CognitoIdentityProvider {
 namespace Model {
-enum class AuthFactorType { NOT_SET, PASSWORD, EMAIL_OTP, SMS_OTP, WEB_AUTHN };
+enum class AuthFactorType { NOT_SET, PASSWORD, EMAIL_OTP, SMS_OTP, WEB_AUTHN, SOFTWARE_TOKEN };
 
 namespace AuthFactorTypeMapper {
 AWS_COGNITOIDENTITYPROVIDER_API AuthFactorType GetAuthFactorTypeForName(const Aws::String& name);

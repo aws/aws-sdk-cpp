@@ -18,6 +18,7 @@
 #include <aws/cognito-idp/model/AdminEnableUserRequest.h>
 #include <aws/cognito-idp/model/AdminForgetDeviceRequest.h>
 #include <aws/cognito-idp/model/AdminGetDeviceRequest.h>
+#include <aws/cognito-idp/model/AdminGetUserAuthFactorsRequest.h>
 #include <aws/cognito-idp/model/AdminGetUserRequest.h>
 #include <aws/cognito-idp/model/AdminInitiateAuthRequest.h>
 #include <aws/cognito-idp/model/AdminLinkProviderForUserRequest.h>
@@ -384,6 +385,12 @@ AdminGetDeviceOutcome CognitoIdentityProviderClient::AdminGetDevice(const AdminG
 AdminGetUserOutcome CognitoIdentityProviderClient::AdminGetUser(const AdminGetUserRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AdminGetUserOutcome(result.GetResultWithOwnership()) : AdminGetUserOutcome(std::move(result.GetError()));
+}
+
+AdminGetUserAuthFactorsOutcome CognitoIdentityProviderClient::AdminGetUserAuthFactors(const AdminGetUserAuthFactorsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AdminGetUserAuthFactorsOutcome(result.GetResultWithOwnership())
+                            : AdminGetUserAuthFactorsOutcome(std::move(result.GetError()));
 }
 
 AdminInitiateAuthOutcome CognitoIdentityProviderClient::AdminInitiateAuth(const AdminInitiateAuthRequest& request) const {

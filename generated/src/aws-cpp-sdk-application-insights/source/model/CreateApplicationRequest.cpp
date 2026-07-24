@@ -4,66 +4,112 @@
  */
 
 #include <aws/application-insights/model/CreateApplicationRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::ApplicationInsights::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateApplicationRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_resourceGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_opsCenterEnabledHasBeenSet) {
+    mapSize++;
+  }
+  if (m_cWEMonitorEnabledHasBeenSet) {
+    mapSize++;
+  }
+  if (m_opsItemSNSTopicArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sNSNotificationArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoConfigEnabledHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoCreateHasBeenSet) {
+    mapSize++;
+  }
+  if (m_groupingTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_attachMissingPermissionHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_resourceGroupNameHasBeenSet) {
-    payload.WithString("ResourceGroupName", m_resourceGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ResourceGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_resourceGroupName.c_str()));
   }
 
   if (m_opsCenterEnabledHasBeenSet) {
-    payload.WithBool("OpsCenterEnabled", m_opsCenterEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OpsCenterEnabled"));
+    encoder.WriteBool(m_opsCenterEnabled);
   }
 
   if (m_cWEMonitorEnabledHasBeenSet) {
-    payload.WithBool("CWEMonitorEnabled", m_cWEMonitorEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CWEMonitorEnabled"));
+    encoder.WriteBool(m_cWEMonitorEnabled);
   }
 
   if (m_opsItemSNSTopicArnHasBeenSet) {
-    payload.WithString("OpsItemSNSTopicArn", m_opsItemSNSTopicArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OpsItemSNSTopicArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_opsItemSNSTopicArn.c_str()));
   }
 
   if (m_sNSNotificationArnHasBeenSet) {
-    payload.WithString("SNSNotificationArn", m_sNSNotificationArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SNSNotificationArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sNSNotificationArn.c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   if (m_autoConfigEnabledHasBeenSet) {
-    payload.WithBool("AutoConfigEnabled", m_autoConfigEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AutoConfigEnabled"));
+    encoder.WriteBool(m_autoConfigEnabled);
   }
 
   if (m_autoCreateHasBeenSet) {
-    payload.WithBool("AutoCreate", m_autoCreate);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AutoCreate"));
+    encoder.WriteBool(m_autoCreate);
   }
 
   if (m_groupingTypeHasBeenSet) {
-    payload.WithString("GroupingType", GroupingTypeMapper::GetNameForGroupingType(m_groupingType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("GroupingType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(GroupingTypeMapper::GetNameForGroupingType(m_groupingType).c_str()));
   }
 
   if (m_attachMissingPermissionHasBeenSet) {
-    payload.WithBool("AttachMissingPermission", m_attachMissingPermission);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AttachMissingPermission"));
+    encoder.WriteBool(m_attachMissingPermission);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateApplicationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EC2WindowsBarleyService.CreateApplication"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

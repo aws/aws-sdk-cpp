@@ -4,46 +4,77 @@
  */
 
 #include <aws/application-insights/model/UpdateComponentConfigurationRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::ApplicationInsights::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateComponentConfigurationRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_resourceGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_componentNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_monitorHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tierHasBeenSet) {
+    mapSize++;
+  }
+  if (m_componentConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoConfigEnabledHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_resourceGroupNameHasBeenSet) {
-    payload.WithString("ResourceGroupName", m_resourceGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ResourceGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_resourceGroupName.c_str()));
   }
 
   if (m_componentNameHasBeenSet) {
-    payload.WithString("ComponentName", m_componentName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ComponentName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_componentName.c_str()));
   }
 
   if (m_monitorHasBeenSet) {
-    payload.WithBool("Monitor", m_monitor);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Monitor"));
+    encoder.WriteBool(m_monitor);
   }
 
   if (m_tierHasBeenSet) {
-    payload.WithString("Tier", TierMapper::GetNameForTier(m_tier));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tier"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(TierMapper::GetNameForTier(m_tier).c_str()));
   }
 
   if (m_componentConfigurationHasBeenSet) {
-    payload.WithString("ComponentConfiguration", m_componentConfiguration);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ComponentConfiguration"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_componentConfiguration.c_str()));
   }
 
   if (m_autoConfigEnabledHasBeenSet) {
-    payload.WithBool("AutoConfigEnabled", m_autoConfigEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AutoConfigEnabled"));
+    encoder.WriteBool(m_autoConfigEnabled);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateComponentConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EC2WindowsBarleyService.UpdateComponentConfiguration"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

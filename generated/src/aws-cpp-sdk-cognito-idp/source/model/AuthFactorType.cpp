@@ -19,6 +19,7 @@ static const int PASSWORD_HASH = HashingUtils::HashString("PASSWORD");
 static const int EMAIL_OTP_HASH = HashingUtils::HashString("EMAIL_OTP");
 static const int SMS_OTP_HASH = HashingUtils::HashString("SMS_OTP");
 static const int WEB_AUTHN_HASH = HashingUtils::HashString("WEB_AUTHN");
+static const int SOFTWARE_TOKEN_HASH = HashingUtils::HashString("SOFTWARE_TOKEN");
 
 AuthFactorType GetAuthFactorTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ AuthFactorType GetAuthFactorTypeForName(const Aws::String& name) {
     return AuthFactorType::SMS_OTP;
   } else if (hashCode == WEB_AUTHN_HASH) {
     return AuthFactorType::WEB_AUTHN;
+  } else if (hashCode == SOFTWARE_TOKEN_HASH) {
+    return AuthFactorType::SOFTWARE_TOKEN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForAuthFactorType(AuthFactorType enumValue) {
       return "SMS_OTP";
     case AuthFactorType::WEB_AUTHN:
       return "WEB_AUTHN";
+    case AuthFactorType::SOFTWARE_TOKEN:
+      return "SOFTWARE_TOKEN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ApplicationInsights {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class TooManyTagsException {
  public:
   AWS_APPLICATIONINSIGHTS_API TooManyTagsException() = default;
-  AWS_APPLICATIONINSIGHTS_API TooManyTagsException(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPLICATIONINSIGHTS_API TooManyTagsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_APPLICATIONINSIGHTS_API TooManyTagsException(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPLICATIONINSIGHTS_API TooManyTagsException& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPLICATIONINSIGHTS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
 

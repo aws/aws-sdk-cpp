@@ -8,26 +8,26 @@
 #include <aws/application-insights/model/RelatedObservations.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ApplicationInsights {
 namespace Model {
 class DescribeProblemObservationsResult {
  public:
   AWS_APPLICATIONINSIGHTS_API DescribeProblemObservationsResult() = default;
-  AWS_APPLICATIONINSIGHTS_API DescribeProblemObservationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_APPLICATIONINSIGHTS_API DescribeProblemObservationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
   AWS_APPLICATIONINSIGHTS_API DescribeProblemObservationsResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**

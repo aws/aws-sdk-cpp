@@ -25,6 +25,8 @@
 #include <aws/artifact/model/CustomerAgreementSummary.h>
 #include <aws/artifact/model/ExportComplianceInquiryRequest.h>
 #include <aws/artifact/model/ExportComplianceInquiryResult.h>
+#include <aws/artifact/model/FeedbackRating.h>
+#include <aws/artifact/model/FeedbackReasonCode.h>
 #include <aws/artifact/model/GetAccountSettingsRequest.h>
 #include <aws/artifact/model/GetAccountSettingsResult.h>
 #include <aws/artifact/model/GetComplianceInquiryMetadataRequest.h>
@@ -60,6 +62,8 @@
 #include <aws/artifact/model/PublishedState.h>
 #include <aws/artifact/model/PutAccountSettingsRequest.h>
 #include <aws/artifact/model/PutAccountSettingsResult.h>
+#include <aws/artifact/model/PutComplianceInquiryFeedbackRequest.h>
+#include <aws/artifact/model/PutComplianceInquiryFeedbackResult.h>
 #include <aws/artifact/model/QueryStatus.h>
 #include <aws/artifact/model/QueryStatusMessage.h>
 #include <aws/artifact/model/QuerySummary.h>

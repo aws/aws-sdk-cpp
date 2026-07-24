@@ -38,6 +38,7 @@
 #include <aws/artifact/model/ListTagsForResourceResult.h>
 #include <aws/artifact/model/PutAccountSettingsRequest.h>
 #include <aws/artifact/model/PutAccountSettingsResult.h>
+#include <aws/artifact/model/PutComplianceInquiryFeedbackResult.h>
 #include <aws/artifact/model/TagResourceResult.h>
 #include <aws/artifact/model/UntagResourceResult.h>
 /* End of service model headers required in ArtifactClient header */
@@ -87,6 +88,7 @@ class ListReportVersionsRequest;
 class ListReportsRequest;
 class ListTagsForResourceRequest;
 class PutAccountSettingsRequest;
+class PutComplianceInquiryFeedbackRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 /* End of service model forward declarations required in ArtifactClient header */
@@ -106,6 +108,7 @@ typedef Aws::Utils::Outcome<ListReportVersionsResult, ArtifactError> ListReportV
 typedef Aws::Utils::Outcome<ListReportsResult, ArtifactError> ListReportsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, ArtifactError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutAccountSettingsResult, ArtifactError> PutAccountSettingsOutcome;
+typedef Aws::Utils::Outcome<PutComplianceInquiryFeedbackResult, ArtifactError> PutComplianceInquiryFeedbackOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, ArtifactError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, ArtifactError> UntagResourceOutcome;
 /* End of service model Outcome class definitions */
@@ -125,6 +128,7 @@ typedef std::future<ListReportVersionsOutcome> ListReportVersionsOutcomeCallable
 typedef std::future<ListReportsOutcome> ListReportsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutAccountSettingsOutcome> PutAccountSettingsOutcomeCallable;
+typedef std::future<PutComplianceInquiryFeedbackOutcome> PutComplianceInquiryFeedbackOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -177,6 +181,10 @@ typedef std::function<void(const ArtifactClient*, const Model::ListTagsForResour
 typedef std::function<void(const ArtifactClient*, const Model::PutAccountSettingsRequest&, const Model::PutAccountSettingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutAccountSettingsResponseReceivedHandler;
+typedef std::function<void(const ArtifactClient*, const Model::PutComplianceInquiryFeedbackRequest&,
+                           const Model::PutComplianceInquiryFeedbackOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutComplianceInquiryFeedbackResponseReceivedHandler;
 typedef std::function<void(const ArtifactClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

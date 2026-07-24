@@ -7,17 +7,17 @@
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ApplicationInsights {
 namespace Model {
@@ -25,9 +25,9 @@ class DescribeComponentConfigurationRecommendationResult {
  public:
   AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationRecommendationResult() = default;
   AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationRecommendationResult(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
   AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationRecommendationResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**

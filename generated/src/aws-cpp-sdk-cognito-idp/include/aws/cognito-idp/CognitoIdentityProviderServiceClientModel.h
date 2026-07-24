@@ -28,6 +28,7 @@
 #include <aws/cognito-idp/model/AdminDisableUserResult.h>
 #include <aws/cognito-idp/model/AdminEnableUserResult.h>
 #include <aws/cognito-idp/model/AdminGetDeviceResult.h>
+#include <aws/cognito-idp/model/AdminGetUserAuthFactorsResult.h>
 #include <aws/cognito-idp/model/AdminGetUserResult.h>
 #include <aws/cognito-idp/model/AdminInitiateAuthResult.h>
 #include <aws/cognito-idp/model/AdminLinkProviderForUserResult.h>
@@ -183,6 +184,7 @@ class AdminEnableUserRequest;
 class AdminForgetDeviceRequest;
 class AdminGetDeviceRequest;
 class AdminGetUserRequest;
+class AdminGetUserAuthFactorsRequest;
 class AdminInitiateAuthRequest;
 class AdminLinkProviderForUserRequest;
 class AdminListDevicesRequest;
@@ -314,6 +316,7 @@ typedef Aws::Utils::Outcome<AdminEnableUserResult, CognitoIdentityProviderError>
 typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> AdminForgetDeviceOutcome;
 typedef Aws::Utils::Outcome<AdminGetDeviceResult, CognitoIdentityProviderError> AdminGetDeviceOutcome;
 typedef Aws::Utils::Outcome<AdminGetUserResult, CognitoIdentityProviderError> AdminGetUserOutcome;
+typedef Aws::Utils::Outcome<AdminGetUserAuthFactorsResult, CognitoIdentityProviderError> AdminGetUserAuthFactorsOutcome;
 typedef Aws::Utils::Outcome<AdminInitiateAuthResult, CognitoIdentityProviderError> AdminInitiateAuthOutcome;
 typedef Aws::Utils::Outcome<AdminLinkProviderForUserResult, CognitoIdentityProviderError> AdminLinkProviderForUserOutcome;
 typedef Aws::Utils::Outcome<AdminListDevicesResult, CognitoIdentityProviderError> AdminListDevicesOutcome;
@@ -446,6 +449,7 @@ typedef std::future<AdminEnableUserOutcome> AdminEnableUserOutcomeCallable;
 typedef std::future<AdminForgetDeviceOutcome> AdminForgetDeviceOutcomeCallable;
 typedef std::future<AdminGetDeviceOutcome> AdminGetDeviceOutcomeCallable;
 typedef std::future<AdminGetUserOutcome> AdminGetUserOutcomeCallable;
+typedef std::future<AdminGetUserAuthFactorsOutcome> AdminGetUserAuthFactorsOutcomeCallable;
 typedef std::future<AdminInitiateAuthOutcome> AdminInitiateAuthOutcomeCallable;
 typedef std::future<AdminLinkProviderForUserOutcome> AdminLinkProviderForUserOutcomeCallable;
 typedef std::future<AdminListDevicesOutcome> AdminListDevicesOutcomeCallable;
@@ -606,6 +610,9 @@ typedef std::function<void(const CognitoIdentityProviderClient*, const Model::Ad
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminGetUserRequest&, const Model::AdminGetUserOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AdminGetUserResponseReceivedHandler;
+typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminGetUserAuthFactorsRequest&,
+                           const Model::AdminGetUserAuthFactorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AdminGetUserAuthFactorsResponseReceivedHandler;
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminInitiateAuthRequest&,
                            const Model::AdminInitiateAuthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AdminInitiateAuthResponseReceivedHandler;

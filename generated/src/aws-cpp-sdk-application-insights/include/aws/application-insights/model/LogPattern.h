@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ApplicationInsights {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class LogPattern {
  public:
   AWS_APPLICATIONINSIGHTS_API LogPattern() = default;
-  AWS_APPLICATIONINSIGHTS_API LogPattern(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPLICATIONINSIGHTS_API LogPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_APPLICATIONINSIGHTS_API LogPattern(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPLICATIONINSIGHTS_API LogPattern& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_APPLICATIONINSIGHTS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -107,13 +107,13 @@ class LogPattern {
    * or greater than <code>1,000,000</code> are reserved for Amazon Web Services
    * provided patterns. </p>
    */
-  inline int GetRank() const { return m_rank; }
+  inline int64_t GetRank() const { return m_rank; }
   inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
-  inline void SetRank(int value) {
+  inline void SetRank(int64_t value) {
     m_rankHasBeenSet = true;
     m_rank = value;
   }
-  inline LogPattern& WithRank(int value) {
+  inline LogPattern& WithRank(int64_t value) {
     SetRank(value);
     return *this;
   }
@@ -125,7 +125,7 @@ class LogPattern {
 
   Aws::String m_pattern;
 
-  int m_rank{0};
+  int64_t m_rank{0};
   bool m_patternSetNameHasBeenSet = false;
   bool m_patternNameHasBeenSet = false;
   bool m_patternHasBeenSet = false;

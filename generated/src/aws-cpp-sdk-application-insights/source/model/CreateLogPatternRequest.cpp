@@ -4,42 +4,69 @@
  */
 
 #include <aws/application-insights/model/CreateLogPatternRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::ApplicationInsights::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateLogPatternRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_resourceGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_patternSetNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_patternNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_patternHasBeenSet) {
+    mapSize++;
+  }
+  if (m_rankHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_resourceGroupNameHasBeenSet) {
-    payload.WithString("ResourceGroupName", m_resourceGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ResourceGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_resourceGroupName.c_str()));
   }
 
   if (m_patternSetNameHasBeenSet) {
-    payload.WithString("PatternSetName", m_patternSetName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PatternSetName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_patternSetName.c_str()));
   }
 
   if (m_patternNameHasBeenSet) {
-    payload.WithString("PatternName", m_patternName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PatternName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_patternName.c_str()));
   }
 
   if (m_patternHasBeenSet) {
-    payload.WithString("Pattern", m_pattern);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Pattern"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_pattern.c_str()));
   }
 
   if (m_rankHasBeenSet) {
-    payload.WithInteger("Rank", m_rank);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Rank"));
+    (m_rank >= 0) ? encoder.WriteUInt(m_rank) : encoder.WriteNegInt(m_rank);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateLogPatternRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EC2WindowsBarleyService.CreateLogPattern"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

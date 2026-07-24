@@ -650,6 +650,46 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Lists the authentication options for a user in a user pool. Returns the
+   * following:</p> <ol> <li> <p>The user's multi-factor authentication (MFA)
+   * preferences.</p> </li> <li> <p>The user's options for choice-based
+   * authentication with the <code>USER_AUTH</code> flow.</p> </li> </ol>
+   * <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in
+   * requests for this API operation. For this operation, you must use IAM
+   * credentials to authorize requests, and you must grant yourself the corresponding
+   * IAM permission in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUserAuthFactors">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AdminGetUserAuthFactorsOutcome AdminGetUserAuthFactors(const Model::AdminGetUserAuthFactorsRequest& request) const;
+
+  /**
+   * A Callable wrapper for AdminGetUserAuthFactors that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AdminGetUserAuthFactorsRequestT = Model::AdminGetUserAuthFactorsRequest>
+  Model::AdminGetUserAuthFactorsOutcomeCallable AdminGetUserAuthFactorsCallable(const AdminGetUserAuthFactorsRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::AdminGetUserAuthFactors, request);
+  }
+
+  /**
+   * An Async wrapper for AdminGetUserAuthFactors that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AdminGetUserAuthFactorsRequestT = Model::AdminGetUserAuthFactorsRequest>
+  void AdminGetUserAuthFactorsAsync(const AdminGetUserAuthFactorsRequestT& request,
+                                    const AdminGetUserAuthFactorsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::AdminGetUserAuthFactors, request, handler, context);
+  }
+
+  /**
    * <p>Starts sign-in for applications with a server-side component, for example a
    * traditional web application. This operation specifies the authentication flow
    * that you'd like to begin. The authentication flow that you specify must be

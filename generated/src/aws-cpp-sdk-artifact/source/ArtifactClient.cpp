@@ -20,6 +20,7 @@
 #include <aws/artifact/model/ListReportsRequest.h>
 #include <aws/artifact/model/ListTagsForResourceRequest.h>
 #include <aws/artifact/model/PutAccountSettingsRequest.h>
+#include <aws/artifact/model/PutComplianceInquiryFeedbackRequest.h>
 #include <aws/artifact/model/TagResourceRequest.h>
 #include <aws/artifact/model/UntagResourceRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -388,6 +389,17 @@ PutAccountSettingsOutcome ArtifactClient::PutAccountSettings(const PutAccountSet
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutAccountSettingsOutcome(result.GetResultWithOwnership())
                             : PutAccountSettingsOutcome(std::move(result.GetError()));
+}
+
+PutComplianceInquiryFeedbackOutcome ArtifactClient::PutComplianceInquiryFeedback(const PutComplianceInquiryFeedbackRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/compliance-inquiry/putFeedback");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutComplianceInquiryFeedbackOutcome(result.GetResultWithOwnership())
+                            : PutComplianceInquiryFeedbackOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ArtifactClient::TagResource(const TagResourceRequest& request) const {

@@ -7,25 +7,25 @@
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ApplicationInsights {
 namespace Model {
 class RemoveWorkloadResult {
  public:
   AWS_APPLICATIONINSIGHTS_API RemoveWorkloadResult() = default;
-  AWS_APPLICATIONINSIGHTS_API RemoveWorkloadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_APPLICATIONINSIGHTS_API RemoveWorkloadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_APPLICATIONINSIGHTS_API RemoveWorkloadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_APPLICATIONINSIGHTS_API RemoveWorkloadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
 
