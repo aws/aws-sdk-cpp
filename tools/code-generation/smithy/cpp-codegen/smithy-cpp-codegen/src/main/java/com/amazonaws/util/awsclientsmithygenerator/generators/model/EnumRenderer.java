@@ -151,8 +151,10 @@ public final class EnumRenderer {
         writer.write("");
 
         // GetNameFor
-        writer.write("  Aws::String GetNameFor$1L($1L value) {", enumName);
-        writer.write("    switch (value) {");
+        writer.write("  Aws::String GetNameFor$1L($1L enumValue) {", enumName);
+        writer.write("    switch (enumValue) {");
+        writer.write("    case $1L::NOT_SET:", enumName);
+        writer.write("      return {};");
         for (int i = 0; i < values.size(); i++) {
             writer.write("    case $1L::$2L:", enumName, values.get(i));
             writer.write("      return \"$L\";", wireValues.get(i));
@@ -160,7 +162,7 @@ public final class EnumRenderer {
         writer.write("    default:");
         writer.write("      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();");
         writer.write("      if (overflowContainer) {");
-        writer.write("        return overflowContainer->RetrieveOverflow(static_cast<int>(value));");
+        writer.write("        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));");
         writer.write("      }");
         writer.write("      return {};");
         writer.write("    }");
