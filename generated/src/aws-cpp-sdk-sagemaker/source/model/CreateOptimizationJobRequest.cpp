@@ -74,6 +74,14 @@ Aws::String CreateOptimizationJobRequest::SerializePayload() const {
     payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
   }
 
+  if (m_trainingPlanArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> trainingPlanArnsJsonList(m_trainingPlanArns.size());
+    for (unsigned trainingPlanArnsIndex = 0; trainingPlanArnsIndex < trainingPlanArnsJsonList.GetLength(); ++trainingPlanArnsIndex) {
+      trainingPlanArnsJsonList[trainingPlanArnsIndex].AsString(m_trainingPlanArns[trainingPlanArnsIndex]);
+    }
+    payload.WithArray("TrainingPlanArns", std::move(trainingPlanArnsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

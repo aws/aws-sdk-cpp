@@ -46,6 +46,7 @@
 #include <aws/emr-containers/model/StartJobRunResult.h>
 #include <aws/emr-containers/model/TagResourceResult.h>
 #include <aws/emr-containers/model/UntagResourceResult.h>
+#include <aws/emr-containers/model/UpdateVirtualClusterResult.h>
 /* End of service model headers required in EMRContainersClient header */
 
 namespace Aws {
@@ -103,6 +104,7 @@ class ListVirtualClustersRequest;
 class StartJobRunRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateVirtualClusterRequest;
 /* End of service model forward declarations required in EMRContainersClient header */
 
 /* Service model Outcome class definitions */
@@ -130,6 +132,7 @@ typedef Aws::Utils::Outcome<ListVirtualClustersResult, EMRContainersError> ListV
 typedef Aws::Utils::Outcome<StartJobRunResult, EMRContainersError> StartJobRunOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, EMRContainersError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, EMRContainersError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateVirtualClusterResult, EMRContainersError> UpdateVirtualClusterOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -157,6 +160,7 @@ typedef std::future<ListVirtualClustersOutcome> ListVirtualClustersOutcomeCallab
 typedef std::future<StartJobRunOutcome> StartJobRunOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateVirtualClusterOutcome> UpdateVirtualClusterOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -237,6 +241,9 @@ typedef std::function<void(const EMRContainersClient*, const Model::TagResourceR
 typedef std::function<void(const EMRContainersClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const EMRContainersClient*, const Model::UpdateVirtualClusterRequest&, const Model::UpdateVirtualClusterOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateVirtualClusterResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace EMRContainers
 }  // namespace Aws

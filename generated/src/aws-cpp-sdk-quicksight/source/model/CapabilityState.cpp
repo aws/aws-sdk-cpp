@@ -16,11 +16,14 @@ namespace Model {
 namespace CapabilityStateMapper {
 
 static const int DENY_HASH = HashingUtils::HashString("DENY");
+static const int ALLOW_HASH = HashingUtils::HashString("ALLOW");
 
 CapabilityState GetCapabilityStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == DENY_HASH) {
     return CapabilityState::DENY;
+  } else if (hashCode == ALLOW_HASH) {
+    return CapabilityState::ALLOW;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForCapabilityState(CapabilityState enumValue) {
       return {};
     case CapabilityState::DENY:
       return "DENY";
+    case CapabilityState::ALLOW:
+      return "ALLOW";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

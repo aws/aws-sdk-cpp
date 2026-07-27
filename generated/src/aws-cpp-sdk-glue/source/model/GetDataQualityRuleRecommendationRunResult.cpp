@@ -81,6 +81,10 @@ GetDataQualityRuleRecommendationRunResult& GetDataQualityRuleRecommendationRunRe
     m_dataQualitySecurityConfiguration = jsonValue.GetString("DataQualitySecurityConfiguration");
     m_dataQualitySecurityConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AdditionalRunOptions")) {
+    m_additionalRunOptions = jsonValue.GetObject("AdditionalRunOptions");
+    m_additionalRunOptionsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

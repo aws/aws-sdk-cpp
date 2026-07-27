@@ -15,6 +15,7 @@
 #include <aws/account/model/GetContactInformationRequest.h>
 #include <aws/account/model/GetGovCloudAccountInformationRequest.h>
 #include <aws/account/model/GetPrimaryEmailRequest.h>
+#include <aws/account/model/GetPrimaryEmailUpdateStatusRequest.h>
 #include <aws/account/model/GetRegionOptStatusRequest.h>
 #include <aws/account/model/ListRegionsRequest.h>
 #include <aws/account/model/PutAccountNameRequest.h>
@@ -285,6 +286,17 @@ GetPrimaryEmailOutcome AccountClient::GetPrimaryEmail(const GetPrimaryEmailReque
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetPrimaryEmailOutcome(result.GetResultWithOwnership())
                             : GetPrimaryEmailOutcome(std::move(result.GetError()));
+}
+
+GetPrimaryEmailUpdateStatusOutcome AccountClient::GetPrimaryEmailUpdateStatus(const GetPrimaryEmailUpdateStatusRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/getPrimaryEmailUpdateStatus");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPrimaryEmailUpdateStatusOutcome(result.GetResultWithOwnership())
+                            : GetPrimaryEmailUpdateStatusOutcome(std::move(result.GetError()));
 }
 
 GetRegionOptStatusOutcome AccountClient::GetRegionOptStatus(const GetRegionOptStatusRequest& request) const {

@@ -19,5 +19,9 @@ Aws::String UpdateCustomPermissionsRequest::SerializePayload() const {
     payload.WithObject("Capabilities", m_capabilities.Jsonize());
   }
 
+  if (m_governanceHasBeenSet) {
+    payload.WithObject("Governance", m_governance.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

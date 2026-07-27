@@ -54,8 +54,8 @@ class S3Destination {
 
   ///@{
   /**
-   * <p>The AWS Account ID that owns the S3 bucket used as the destination for the
-   * data export.</p>
+   * <p>The Amazon Web Services account ID that owns the S3 bucket used as the
+   * destination for the data export.</p>
    */
   inline const Aws::String& GetS3BucketOwner() const { return m_s3BucketOwner; }
   inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }

@@ -35,6 +35,30 @@ DataQualityEvaluationRunAdditionalRunOptions& DataQualityEvaluationRunAdditional
     m_customLogGroupPrefix = jsonValue.GetString("CustomLogGroupPrefix");
     m_customLogGroupPrefixHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RowLevelResults")) {
+    m_rowLevelResults = jsonValue.GetObject("RowLevelResults");
+    m_rowLevelResultsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ProfilingResults")) {
+    m_profilingResults = jsonValue.GetObject("ProfilingResults");
+    m_profilingResultsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ObservationScope")) {
+    m_observationScope = ObservationConfigurationMapper::GetObservationConfigurationForName(jsonValue.GetString("ObservationScope"));
+    m_observationScopeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ObservationMode")) {
+    m_observationMode = ObservationModeMapper::GetObservationModeForName(jsonValue.GetString("ObservationMode"));
+    m_observationModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DataQualityRuleResults")) {
+    m_dataQualityRuleResults = jsonValue.GetObject("DataQualityRuleResults");
+    m_dataQualityRuleResultsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ObservationResults")) {
+    m_observationResults = jsonValue.GetObject("ObservationResults");
+    m_observationResultsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -56,6 +80,30 @@ JsonValue DataQualityEvaluationRunAdditionalRunOptions::Jsonize() const {
 
   if (m_customLogGroupPrefixHasBeenSet) {
     payload.WithString("CustomLogGroupPrefix", m_customLogGroupPrefix);
+  }
+
+  if (m_rowLevelResultsHasBeenSet) {
+    payload.WithObject("RowLevelResults", m_rowLevelResults.Jsonize());
+  }
+
+  if (m_profilingResultsHasBeenSet) {
+    payload.WithObject("ProfilingResults", m_profilingResults.Jsonize());
+  }
+
+  if (m_observationScopeHasBeenSet) {
+    payload.WithString("ObservationScope", ObservationConfigurationMapper::GetNameForObservationConfiguration(m_observationScope));
+  }
+
+  if (m_observationModeHasBeenSet) {
+    payload.WithString("ObservationMode", ObservationModeMapper::GetNameForObservationMode(m_observationMode));
+  }
+
+  if (m_dataQualityRuleResultsHasBeenSet) {
+    payload.WithObject("DataQualityRuleResults", m_dataQualityRuleResults.Jsonize());
+  }
+
+  if (m_observationResultsHasBeenSet) {
+    payload.WithObject("ObservationResults", m_observationResults.Jsonize());
   }
 
   return payload;

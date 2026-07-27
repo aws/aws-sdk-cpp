@@ -73,6 +73,7 @@
 #include <aws/partnercentral-account/model/GetQualificationsDisassociationTaskResult.h>
 #include <aws/partnercentral-account/model/GetVerificationRequest.h>
 #include <aws/partnercentral-account/model/GetVerificationResult.h>
+#include <aws/partnercentral-account/model/Headquarters.h>
 #include <aws/partnercentral-account/model/IndustrySegment.h>
 #include <aws/partnercentral-account/model/InvitationStatus.h>
 #include <aws/partnercentral-account/model/ListConnectionInvitationsRequest.h>

@@ -36,6 +36,8 @@
 #include <aws/account/model/GetGovCloudAccountInformationResult.h>
 #include <aws/account/model/GetPrimaryEmailRequest.h>
 #include <aws/account/model/GetPrimaryEmailResult.h>
+#include <aws/account/model/GetPrimaryEmailUpdateStatusRequest.h>
+#include <aws/account/model/GetPrimaryEmailUpdateStatusResult.h>
 #include <aws/account/model/GetRegionOptStatusRequest.h>
 #include <aws/account/model/GetRegionOptStatusResult.h>
 #include <aws/account/model/InternalServerException.h>

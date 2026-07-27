@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BCMDataExports {
 namespace Model {
-enum class CompressionOption { NOT_SET, GZIP, PARQUET };
+enum class CompressionOption { NOT_SET, GZIP, PARQUET, ZIP };
 
 namespace CompressionOptionMapper {
 AWS_BCMDATAEXPORTS_API CompressionOption GetCompressionOptionForName(const Aws::String& name);

@@ -51,6 +51,10 @@ Aws::String CreateAIRecommendationJobRequest::SerializePayload() const {
     payload.WithObject("ComputeSpec", m_computeSpec.Jsonize());
   }
 
+  if (m_adapterSourceHasBeenSet) {
+    payload.WithObject("AdapterSource", m_adapterSource.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {

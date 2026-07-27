@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/DistributionData.h>
 
 #include <utility>
 
@@ -109,6 +110,31 @@ class DataQualityAnalyzerResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A map of distribution metrics associated with the evaluation of the
+   * analyzer.</p>
+   */
+  inline const Aws::Map<Aws::String, DistributionData>& GetEvaluatedDistributions() const { return m_evaluatedDistributions; }
+  inline bool EvaluatedDistributionsHasBeenSet() const { return m_evaluatedDistributionsHasBeenSet; }
+  template <typename EvaluatedDistributionsT = Aws::Map<Aws::String, DistributionData>>
+  void SetEvaluatedDistributions(EvaluatedDistributionsT&& value) {
+    m_evaluatedDistributionsHasBeenSet = true;
+    m_evaluatedDistributions = std::forward<EvaluatedDistributionsT>(value);
+  }
+  template <typename EvaluatedDistributionsT = Aws::Map<Aws::String, DistributionData>>
+  DataQualityAnalyzerResult& WithEvaluatedDistributions(EvaluatedDistributionsT&& value) {
+    SetEvaluatedDistributions(std::forward<EvaluatedDistributionsT>(value));
+    return *this;
+  }
+  template <typename EvaluatedDistributionsKeyT = Aws::String, typename EvaluatedDistributionsValueT = DistributionData>
+  DataQualityAnalyzerResult& AddEvaluatedDistributions(EvaluatedDistributionsKeyT&& key, EvaluatedDistributionsValueT&& value) {
+    m_evaluatedDistributionsHasBeenSet = true;
+    m_evaluatedDistributions.emplace(std::forward<EvaluatedDistributionsKeyT>(key), std::forward<EvaluatedDistributionsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -117,10 +143,13 @@ class DataQualityAnalyzerResult {
   Aws::String m_evaluationMessage;
 
   Aws::Map<Aws::String, double> m_evaluatedMetrics;
+
+  Aws::Map<Aws::String, DistributionData> m_evaluatedDistributions;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_evaluationMessageHasBeenSet = false;
   bool m_evaluatedMetricsHasBeenSet = false;
+  bool m_evaluatedDistributionsHasBeenSet = false;
 };
 
 }  // namespace Model

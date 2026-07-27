@@ -363,6 +363,36 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the details of multiple evaluation runs in a single
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDataQualityRulesetEvaluationRun">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetDataQualityRulesetEvaluationRunOutcome BatchGetDataQualityRulesetEvaluationRun(
+      const Model::BatchGetDataQualityRulesetEvaluationRunRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetDataQualityRulesetEvaluationRun that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename BatchGetDataQualityRulesetEvaluationRunRequestT = Model::BatchGetDataQualityRulesetEvaluationRunRequest>
+  Model::BatchGetDataQualityRulesetEvaluationRunOutcomeCallable BatchGetDataQualityRulesetEvaluationRunCallable(
+      const BatchGetDataQualityRulesetEvaluationRunRequestT& request) const {
+    return SubmitCallable(&GlueClient::BatchGetDataQualityRulesetEvaluationRun, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetDataQualityRulesetEvaluationRun that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename BatchGetDataQualityRulesetEvaluationRunRequestT = Model::BatchGetDataQualityRulesetEvaluationRunRequest>
+  void BatchGetDataQualityRulesetEvaluationRunAsync(const BatchGetDataQualityRulesetEvaluationRunRequestT& request,
+                                                    const BatchGetDataQualityRulesetEvaluationRunResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::BatchGetDataQualityRulesetEvaluationRun, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of resource metadata for a given list of development endpoint
    * names. After calling the <code>ListDevEndpoints</code> operation, you can call
    * this operation to access the data to which you have been granted permissions.

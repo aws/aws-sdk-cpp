@@ -184,7 +184,7 @@ class CreateManagedEndpointRequest : public EMRContainersRequest {
 
   ///@{
   /**
-   * <p>The idle timeout in minutes for the managed endpoint session.</p>
+   * <p>The number of idle minutes before the managed endpoint session times out.</p>
    */
   inline int GetSessionIdleTimeoutInMinutes() const { return m_sessionIdleTimeoutInMinutes; }
   inline bool SessionIdleTimeoutInMinutesHasBeenSet() const { return m_sessionIdleTimeoutInMinutesHasBeenSet; }

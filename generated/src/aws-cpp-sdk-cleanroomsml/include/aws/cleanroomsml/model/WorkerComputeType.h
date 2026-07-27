@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CleanRoomsML {
 namespace Model {
-enum class WorkerComputeType { NOT_SET, CR_1X, CR_4X };
+enum class WorkerComputeType { NOT_SET, CR_1X, CR_4X, CR_8X };
 
 namespace WorkerComputeTypeMapper {
 AWS_CLEANROOMSML_API WorkerComputeType GetWorkerComputeTypeForName(const Aws::String& name);

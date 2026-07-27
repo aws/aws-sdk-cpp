@@ -218,10 +218,10 @@ class AWS_EMRCONTAINERS_API EMRContainersClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR
-   * on EKS. You can create, describe, list and delete virtual clusters. They do not
-   * consume any additional resource in your system. A single virtual cluster maps to
-   * a single Kubernetes namespace. Given this relationship, you can model virtual
-   * clusters the same way you model Kubernetes namespaces to meet your
+   * on EKS. You can create, update, describe, list and delete virtual clusters. They
+   * do not consume any additional resource in your system. A single virtual cluster
+   * maps to a single Kubernetes namespace. Given this relationship, you can model
+   * virtual clusters the same way you model Kubernetes namespaces to meet your
    * requirements.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateVirtualCluster">AWS
    * API Reference</a></p>
@@ -335,10 +335,10 @@ class AWS_EMRCONTAINERS_API EMRContainersClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Deletes a virtual cluster. Virtual cluster is a managed entity on Amazon EMR
-   * on EKS. You can create, describe, list and delete virtual clusters. They do not
-   * consume any additional resource in your system. A single virtual cluster maps to
-   * a single Kubernetes namespace. Given this relationship, you can model virtual
-   * clusters the same way you model Kubernetes namespaces to meet your
+   * on EKS. You can create, update, describe, list and delete virtual clusters. They
+   * do not consume any additional resource in your system. A single virtual cluster
+   * maps to a single Kubernetes namespace. Given this relationship, you can model
+   * virtual clusters the same way you model Kubernetes namespaces to meet your
    * requirements.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteVirtualCluster">AWS
    * API Reference</a></p>
@@ -487,11 +487,12 @@ class AWS_EMRCONTAINERS_API EMRContainersClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Displays detailed information about a specified virtual cluster. Virtual
-   * cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list
-   * and delete virtual clusters. They do not consume any additional resource in your
-   * system. A single virtual cluster maps to a single Kubernetes namespace. Given
-   * this relationship, you can model virtual clusters the same way you model
-   * Kubernetes namespaces to meet your requirements.</p><p><h3>See Also:</h3>   <a
+   * cluster is a managed entity on Amazon EMR on EKS. You can create, update,
+   * describe, list and delete virtual clusters. They do not consume any additional
+   * resource in your system. A single virtual cluster maps to a single Kubernetes
+   * namespace. Given this relationship, you can model virtual clusters the same way
+   * you model Kubernetes namespaces to meet your requirements.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeVirtualCluster">AWS
    * API Reference</a></p>
    */
@@ -694,11 +695,11 @@ class AWS_EMRCONTAINERS_API EMRContainersClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Lists information about the specified virtual cluster. Virtual cluster is a
-   * managed entity on Amazon EMR on EKS. You can create, describe, list and delete
-   * virtual clusters. They do not consume any additional resource in your system. A
-   * single virtual cluster maps to a single Kubernetes namespace. Given this
-   * relationship, you can model virtual clusters the same way you model Kubernetes
-   * namespaces to meet your requirements.</p><p><h3>See Also:</h3>   <a
+   * managed entity on Amazon EMR on EKS. You can create, update, describe, list and
+   * delete virtual clusters. They do not consume any additional resource in your
+   * system. A single virtual cluster maps to a single Kubernetes namespace. Given
+   * this relationship, you can model virtual clusters the same way you model
+   * Kubernetes namespaces to meet your requirements.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListVirtualClusters">AWS
    * API Reference</a></p>
    */
@@ -808,6 +809,37 @@ class AWS_EMRCONTAINERS_API EMRContainersClient : public Aws::Client::AWSJsonCli
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EMRContainersClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR
+   * on EKS. You can create, update, describe, list and delete virtual clusters. They
+   * do not consume any additional resource in your system. A single virtual cluster
+   * maps to a single Kubernetes namespace. Given this relationship, you can model
+   * virtual clusters the same way you model Kubernetes namespaces to meet your
+   * requirements.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/UpdateVirtualCluster">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateVirtualClusterOutcome UpdateVirtualCluster(const Model::UpdateVirtualClusterRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateVirtualCluster that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateVirtualClusterRequestT = Model::UpdateVirtualClusterRequest>
+  Model::UpdateVirtualClusterOutcomeCallable UpdateVirtualClusterCallable(const UpdateVirtualClusterRequestT& request) const {
+    return SubmitCallable(&EMRContainersClient::UpdateVirtualCluster, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateVirtualCluster that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateVirtualClusterRequestT = Model::UpdateVirtualClusterRequest>
+  void UpdateVirtualClusterAsync(const UpdateVirtualClusterRequestT& request, const UpdateVirtualClusterResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EMRContainersClient::UpdateVirtualCluster, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

@@ -20,6 +20,7 @@
 #include <aws/glue/GlueClient.h>
 #include <aws/glue/GlueEndpointProvider.h>
 #include <aws/glue/GlueErrorMarshaller.h>
+#include <aws/glue/model/DescribeIntegrationsRequest.h>
 #include <aws/glue/model/DisassociateGlossaryTermsRequest.h>
 #include <aws/glue/model/GetAssetRequest.h>
 #include <aws/glue/model/GetAssetTypeRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/glue/model/ListDataQualityRuleRecommendationRunsRequest.h>
 #include <aws/glue/model/ListDataQualityRulesetEvaluationRunsRequest.h>
 #include <aws/glue/model/ListDataQualityRulesetsRequest.h>
-#include <aws/glue/model/ListDataQualityStatisticAnnotationsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeIntegrationsOutcome GlueClient::DescribeIntegrations(const DescribeIntegrationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeIntegrationsOutcome(result.GetResultWithOwnership())
+                            : DescribeIntegrationsOutcome(std::move(result.GetError()));
+}
 
 DisassociateGlossaryTermsOutcome GlueClient::DisassociateGlossaryTerms(const DisassociateGlossaryTermsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -693,11 +699,4 @@ ListDataQualityRulesetsOutcome GlueClient::ListDataQualityRulesets(const ListDat
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListDataQualityRulesetsOutcome(result.GetResultWithOwnership())
                             : ListDataQualityRulesetsOutcome(std::move(result.GetError()));
-}
-
-ListDataQualityStatisticAnnotationsOutcome GlueClient::ListDataQualityStatisticAnnotations(
-    const ListDataQualityStatisticAnnotationsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListDataQualityStatisticAnnotationsOutcome(result.GetResultWithOwnership())
-                            : ListDataQualityStatisticAnnotationsOutcome(std::move(result.GetError()));
 }

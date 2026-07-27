@@ -534,6 +534,7 @@
 #include <aws/quicksight/model/DecimalPlacesConfiguration.h>
 #include <aws/quicksight/model/DecimalValueWhenUnsetConfiguration.h>
 #include <aws/quicksight/model/DefaultAggregation.h>
+#include <aws/quicksight/model/DefaultCategoryEffect.h>
 #include <aws/quicksight/model/DefaultDateTimePickerControlOptions.h>
 #include <aws/quicksight/model/DefaultFilterControlConfiguration.h>
 #include <aws/quicksight/model/DefaultFilterControlOptions.h>
@@ -942,6 +943,7 @@
 #include <aws/quicksight/model/GetSessionEmbedUrlResult.h>
 #include <aws/quicksight/model/GlobalTableBorderOptions.h>
 #include <aws/quicksight/model/GoogleDriveParameters.h>
+#include <aws/quicksight/model/Governance.h>
 #include <aws/quicksight/model/GradientColor.h>
 #include <aws/quicksight/model/GradientStop.h>
 #include <aws/quicksight/model/GridLayoutCanvasSizeOptions.h>

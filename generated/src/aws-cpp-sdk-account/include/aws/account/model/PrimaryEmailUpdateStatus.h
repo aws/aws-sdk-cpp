@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Account {
 namespace Model {
-enum class PrimaryEmailUpdateStatus { NOT_SET, PENDING, ACCEPTED };
+enum class PrimaryEmailUpdateStatus { NOT_SET, PENDING, ACCEPTED, COMPLETED, FAILED };
 
 namespace PrimaryEmailUpdateStatusMapper {
 AWS_ACCOUNT_API PrimaryEmailUpdateStatus GetPrimaryEmailUpdateStatusForName(const Aws::String& name);

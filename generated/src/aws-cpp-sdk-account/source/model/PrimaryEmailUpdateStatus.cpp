@@ -17,6 +17,8 @@ namespace PrimaryEmailUpdateStatusMapper {
 
 static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 static const int ACCEPTED_HASH = HashingUtils::HashString("ACCEPTED");
+static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 PrimaryEmailUpdateStatus GetPrimaryEmailUpdateStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ PrimaryEmailUpdateStatus GetPrimaryEmailUpdateStatusForName(const Aws::String& n
     return PrimaryEmailUpdateStatus::PENDING;
   } else if (hashCode == ACCEPTED_HASH) {
     return PrimaryEmailUpdateStatus::ACCEPTED;
+  } else if (hashCode == COMPLETED_HASH) {
+    return PrimaryEmailUpdateStatus::COMPLETED;
+  } else if (hashCode == FAILED_HASH) {
+    return PrimaryEmailUpdateStatus::FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForPrimaryEmailUpdateStatus(PrimaryEmailUpdateStatus enumValu
       return "PENDING";
     case PrimaryEmailUpdateStatus::ACCEPTED:
       return "ACCEPTED";
+    case PrimaryEmailUpdateStatus::COMPLETED:
+      return "COMPLETED";
+    case PrimaryEmailUpdateStatus::FAILED:
+      return "FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

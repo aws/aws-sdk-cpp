@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BCMDataExports {
 namespace Model {
-enum class ExecutionStatusReason { NOT_SET, INSUFFICIENT_PERMISSION, BILL_OWNER_CHANGED, INTERNAL_FAILURE };
+enum class ExecutionStatusReason { NOT_SET, INSUFFICIENT_PERMISSION, BILL_OWNER_CHANGED, INTERNAL_FAILURE, DEPRECATED };
 
 namespace ExecutionStatusReasonMapper {
 AWS_BCMDATAEXPORTS_API ExecutionStatusReason GetExecutionStatusReasonForName(const Aws::String& name);

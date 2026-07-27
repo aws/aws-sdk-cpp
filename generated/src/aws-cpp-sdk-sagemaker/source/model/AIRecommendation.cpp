@@ -50,6 +50,10 @@ AIRecommendation& AIRecommendation::operator=(JsonView jsonValue) {
     }
     m_expectedPerformanceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AdapterDetails")) {
+    m_adapterDetails = jsonValue.GetObject("AdapterDetails");
+    m_adapterDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -88,6 +92,10 @@ JsonValue AIRecommendation::Jsonize() const {
       expectedPerformanceJsonList[expectedPerformanceIndex].AsObject(m_expectedPerformance[expectedPerformanceIndex].Jsonize());
     }
     payload.WithArray("ExpectedPerformance", std::move(expectedPerformanceJsonList));
+  }
+
+  if (m_adapterDetailsHasBeenSet) {
+    payload.WithObject("AdapterDetails", m_adapterDetails.Jsonize());
   }
 
   return payload;

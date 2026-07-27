@@ -17,6 +17,7 @@ namespace CompressionOptionMapper {
 
 static const int GZIP_HASH = HashingUtils::HashString("GZIP");
 static const int PARQUET_HASH = HashingUtils::HashString("PARQUET");
+static const int ZIP_HASH = HashingUtils::HashString("ZIP");
 
 CompressionOption GetCompressionOptionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ CompressionOption GetCompressionOptionForName(const Aws::String& name) {
     return CompressionOption::GZIP;
   } else if (hashCode == PARQUET_HASH) {
     return CompressionOption::PARQUET;
+  } else if (hashCode == ZIP_HASH) {
+    return CompressionOption::ZIP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForCompressionOption(CompressionOption enumValue) {
       return "GZIP";
     case CompressionOption::PARQUET:
       return "PARQUET";
+    case CompressionOption::ZIP:
+      return "ZIP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

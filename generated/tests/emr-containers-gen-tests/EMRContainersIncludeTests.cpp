@@ -93,6 +93,8 @@
 #include <aws/emr-containers/model/RetryPolicyConfiguration.h>
 #include <aws/emr-containers/model/RetryPolicyExecution.h>
 #include <aws/emr-containers/model/S3MonitoringConfiguration.h>
+#include <aws/emr-containers/model/SchedulerConfiguration.h>
+#include <aws/emr-containers/model/SchedulerStatus.h>
 #include <aws/emr-containers/model/SecureNamespaceInfo.h>
 #include <aws/emr-containers/model/SecurityConfiguration.h>
 #include <aws/emr-containers/model/SecurityConfigurationData.h>
@@ -107,6 +109,8 @@
 #include <aws/emr-containers/model/TemplateParameterDataType.h>
 #include <aws/emr-containers/model/UntagResourceRequest.h>
 #include <aws/emr-containers/model/UntagResourceResult.h>
+#include <aws/emr-containers/model/UpdateVirtualClusterRequest.h>
+#include <aws/emr-containers/model/UpdateVirtualClusterResult.h>
 #include <aws/emr-containers/model/VirtualCluster.h>
 #include <aws/emr-containers/model/VirtualClusterState.h>
 

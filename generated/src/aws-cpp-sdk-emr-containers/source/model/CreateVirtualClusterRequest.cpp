@@ -43,5 +43,9 @@ Aws::String CreateVirtualClusterRequest::SerializePayload() const {
     payload.WithBool("sessionEnabled", m_sessionEnabled);
   }
 
+  if (m_schedulerConfigurationHasBeenSet) {
+    payload.WithObject("schedulerConfiguration", m_schedulerConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

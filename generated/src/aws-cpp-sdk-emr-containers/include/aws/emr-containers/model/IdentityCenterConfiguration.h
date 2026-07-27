@@ -20,8 +20,9 @@ namespace EMRContainers {
 namespace Model {
 
 /**
- * <p>Identity Center related configuration for the security
- * configuration.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains the IAM Identity Center settings for a security configuration,
+ * including instance ARN, application assignment requirements, and application
+ * ARN.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/IdentityCenterConfiguration">AWS
  * API Reference</a></p>
  */
@@ -34,7 +35,7 @@ class IdentityCenterConfiguration {
 
   ///@{
   /**
-   * <p>Determines whether Identity Center is enabled for the security
+   * <p>Specifies whether Identity Center is enabled for the security
    * configuration.</p>
    */
   inline bool GetEnableIdentityCenter() const { return m_enableIdentityCenter; }
@@ -51,7 +52,7 @@ class IdentityCenterConfiguration {
 
   ///@{
   /**
-   * <p>Determines whether user assignment is required for the Identity Center
+   * <p>Specifies whether user assignment is required for the Identity Center
    * application.</p>
    */
   inline bool GetIdentityCenterApplicationAssignmentRequired() const { return m_identityCenterApplicationAssignmentRequired; }
@@ -70,7 +71,7 @@ class IdentityCenterConfiguration {
 
   ///@{
   /**
-   * <p>The ARN of the Identity Center instance.</p>
+   * <p>The Amazon Resource Name (ARN) of the Identity Center instance.</p>
    */
   inline const Aws::String& GetIdentityCenterInstanceARN() const { return m_identityCenterInstanceARN; }
   inline bool IdentityCenterInstanceARNHasBeenSet() const { return m_identityCenterInstanceARNHasBeenSet; }
@@ -88,7 +89,8 @@ class IdentityCenterConfiguration {
 
   ///@{
   /**
-   * <p>The ARN of the EMR Identity Center application.</p>
+   * <p>The Amazon Resource Name (ARN) of the Amazon EMR Identity Center
+   * application.</p>
    */
   inline const Aws::String& GetEmrIdentityCenterApplicationARN() const { return m_emrIdentityCenterApplicationARN; }
   inline bool EmrIdentityCenterApplicationARNHasBeenSet() const { return m_emrIdentityCenterApplicationARNHasBeenSet; }

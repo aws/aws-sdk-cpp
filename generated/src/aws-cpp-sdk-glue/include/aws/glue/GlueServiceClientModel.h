@@ -29,6 +29,7 @@
 #include <aws/glue/model/BatchGetCrawlersResult.h>
 #include <aws/glue/model/BatchGetCustomEntityTypesResult.h>
 #include <aws/glue/model/BatchGetDataQualityResultResult.h>
+#include <aws/glue/model/BatchGetDataQualityRulesetEvaluationRunResult.h>
 #include <aws/glue/model/BatchGetDevEndpointsResult.h>
 #include <aws/glue/model/BatchGetIterableFormsResult.h>
 #include <aws/glue/model/BatchGetJobsResult.h>
@@ -416,6 +417,7 @@ class BatchGetBlueprintsRequest;
 class BatchGetCrawlersRequest;
 class BatchGetCustomEntityTypesRequest;
 class BatchGetDataQualityResultRequest;
+class BatchGetDataQualityRulesetEvaluationRunRequest;
 class BatchGetDevEndpointsRequest;
 class BatchGetIterableFormsRequest;
 class BatchGetJobsRequest;
@@ -715,6 +717,7 @@ typedef Aws::Utils::Outcome<BatchGetBlueprintsResult, GlueError> BatchGetBluepri
 typedef Aws::Utils::Outcome<BatchGetCrawlersResult, GlueError> BatchGetCrawlersOutcome;
 typedef Aws::Utils::Outcome<BatchGetCustomEntityTypesResult, GlueError> BatchGetCustomEntityTypesOutcome;
 typedef Aws::Utils::Outcome<BatchGetDataQualityResultResult, GlueError> BatchGetDataQualityResultOutcome;
+typedef Aws::Utils::Outcome<BatchGetDataQualityRulesetEvaluationRunResult, GlueError> BatchGetDataQualityRulesetEvaluationRunOutcome;
 typedef Aws::Utils::Outcome<BatchGetDevEndpointsResult, GlueError> BatchGetDevEndpointsOutcome;
 typedef Aws::Utils::Outcome<BatchGetIterableFormsResult, GlueError> BatchGetIterableFormsOutcome;
 typedef Aws::Utils::Outcome<BatchGetJobsResult, GlueError> BatchGetJobsOutcome;
@@ -1014,6 +1017,7 @@ typedef std::future<BatchGetBlueprintsOutcome> BatchGetBlueprintsOutcomeCallable
 typedef std::future<BatchGetCrawlersOutcome> BatchGetCrawlersOutcomeCallable;
 typedef std::future<BatchGetCustomEntityTypesOutcome> BatchGetCustomEntityTypesOutcomeCallable;
 typedef std::future<BatchGetDataQualityResultOutcome> BatchGetDataQualityResultOutcomeCallable;
+typedef std::future<BatchGetDataQualityRulesetEvaluationRunOutcome> BatchGetDataQualityRulesetEvaluationRunOutcomeCallable;
 typedef std::future<BatchGetDevEndpointsOutcome> BatchGetDevEndpointsOutcomeCallable;
 typedef std::future<BatchGetIterableFormsOutcome> BatchGetIterableFormsOutcomeCallable;
 typedef std::future<BatchGetJobsOutcome> BatchGetJobsOutcomeCallable;
@@ -1336,6 +1340,10 @@ typedef std::function<void(const GlueClient*, const Model::BatchGetCustomEntityT
 typedef std::function<void(const GlueClient*, const Model::BatchGetDataQualityResultRequest&,
                            const Model::BatchGetDataQualityResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchGetDataQualityResultResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::BatchGetDataQualityRulesetEvaluationRunRequest&,
+                           const Model::BatchGetDataQualityRulesetEvaluationRunOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetDataQualityRulesetEvaluationRunResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::BatchGetDevEndpointsRequest&, const Model::BatchGetDevEndpointsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchGetDevEndpointsResponseReceivedHandler;

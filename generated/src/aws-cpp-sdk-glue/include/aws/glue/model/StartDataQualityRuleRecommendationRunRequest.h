@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/DataQualityRuleRecommendationRunAdditionalRunOptions.h>
 #include <aws/glue/model/DataSource.h>
 
 #include <utility>
@@ -161,6 +162,24 @@ class StartDataQualityRuleRecommendationRunRequest : public GlueRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Additional run options you can specify for a recommendation run.</p>
+   */
+  inline const DataQualityRuleRecommendationRunAdditionalRunOptions& GetAdditionalRunOptions() const { return m_additionalRunOptions; }
+  inline bool AdditionalRunOptionsHasBeenSet() const { return m_additionalRunOptionsHasBeenSet; }
+  template <typename AdditionalRunOptionsT = DataQualityRuleRecommendationRunAdditionalRunOptions>
+  void SetAdditionalRunOptions(AdditionalRunOptionsT&& value) {
+    m_additionalRunOptionsHasBeenSet = true;
+    m_additionalRunOptions = std::forward<AdditionalRunOptionsT>(value);
+  }
+  template <typename AdditionalRunOptionsT = DataQualityRuleRecommendationRunAdditionalRunOptions>
+  StartDataQualityRuleRecommendationRunRequest& WithAdditionalRunOptions(AdditionalRunOptionsT&& value) {
+    SetAdditionalRunOptions(std::forward<AdditionalRunOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DataSource m_dataSource;
 
@@ -175,6 +194,8 @@ class StartDataQualityRuleRecommendationRunRequest : public GlueRequest {
   Aws::String m_dataQualitySecurityConfiguration;
 
   Aws::String m_clientToken;
+
+  DataQualityRuleRecommendationRunAdditionalRunOptions m_additionalRunOptions;
   bool m_dataSourceHasBeenSet = false;
   bool m_roleHasBeenSet = false;
   bool m_numberOfWorkersHasBeenSet = false;
@@ -182,6 +203,7 @@ class StartDataQualityRuleRecommendationRunRequest : public GlueRequest {
   bool m_createdRulesetNameHasBeenSet = false;
   bool m_dataQualitySecurityConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
+  bool m_additionalRunOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

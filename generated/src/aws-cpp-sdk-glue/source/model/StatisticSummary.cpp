@@ -38,6 +38,10 @@ StatisticSummary& StatisticSummary::operator=(JsonView jsonValue) {
     m_doubleValue = jsonValue.GetDouble("DoubleValue");
     m_doubleValueHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DistributionValue")) {
+    m_distributionValue = jsonValue.GetObject("DistributionValue");
+    m_distributionValueHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("EvaluationLevel")) {
     m_evaluationLevel = StatisticEvaluationLevelMapper::GetStatisticEvaluationLevelForName(jsonValue.GetString("EvaluationLevel"));
     m_evaluationLevelHasBeenSet = true;
@@ -96,6 +100,10 @@ JsonValue StatisticSummary::Jsonize() const {
 
   if (m_doubleValueHasBeenSet) {
     payload.WithDouble("DoubleValue", m_doubleValue);
+  }
+
+  if (m_distributionValueHasBeenSet) {
+    payload.WithObject("DistributionValue", m_distributionValue.Jsonize());
   }
 
   if (m_evaluationLevelHasBeenSet) {

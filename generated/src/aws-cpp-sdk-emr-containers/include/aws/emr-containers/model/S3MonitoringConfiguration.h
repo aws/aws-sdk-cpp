@@ -52,7 +52,7 @@ class S3MonitoringConfiguration {
 
   ///@{
   /**
-   * <p>The Amazon resource name (ARN) of the encryption key for logs.</p>
+   * <p>The Amazon Resource Name (ARN) of the encryption key for logs.</p>
    */
   inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
   inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }

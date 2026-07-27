@@ -37,6 +37,13 @@ DataQualityAnalyzerResult& DataQualityAnalyzerResult::operator=(JsonView jsonVal
     }
     m_evaluatedMetricsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EvaluatedDistributions")) {
+    Aws::Map<Aws::String, JsonView> evaluatedDistributionsJsonMap = jsonValue.GetObject("EvaluatedDistributions").GetAllObjects();
+    for (auto& evaluatedDistributionsItem : evaluatedDistributionsJsonMap) {
+      m_evaluatedDistributions[evaluatedDistributionsItem.first] = evaluatedDistributionsItem.second.AsObject();
+    }
+    m_evaluatedDistributionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +68,14 @@ JsonValue DataQualityAnalyzerResult::Jsonize() const {
       evaluatedMetricsJsonMap.WithDouble(evaluatedMetricsItem.first, evaluatedMetricsItem.second);
     }
     payload.WithObject("EvaluatedMetrics", std::move(evaluatedMetricsJsonMap));
+  }
+
+  if (m_evaluatedDistributionsHasBeenSet) {
+    JsonValue evaluatedDistributionsJsonMap;
+    for (auto& evaluatedDistributionsItem : m_evaluatedDistributions) {
+      evaluatedDistributionsJsonMap.WithObject(evaluatedDistributionsItem.first, evaluatedDistributionsItem.second.Jsonize());
+    }
+    payload.WithObject("EvaluatedDistributions", std::move(evaluatedDistributionsJsonMap));
   }
 
   return payload;

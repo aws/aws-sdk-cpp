@@ -104,6 +104,24 @@ class DataQualityRuleRecommendationRunDescription {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the ruleset that was created by the recommendation run.</p>
+   */
+  inline const Aws::String& GetCreatedRulesetName() const { return m_createdRulesetName; }
+  inline bool CreatedRulesetNameHasBeenSet() const { return m_createdRulesetNameHasBeenSet; }
+  template <typename CreatedRulesetNameT = Aws::String>
+  void SetCreatedRulesetName(CreatedRulesetNameT&& value) {
+    m_createdRulesetNameHasBeenSet = true;
+    m_createdRulesetName = std::forward<CreatedRulesetNameT>(value);
+  }
+  template <typename CreatedRulesetNameT = Aws::String>
+  DataQualityRuleRecommendationRunDescription& WithCreatedRulesetName(CreatedRulesetNameT&& value) {
+    SetCreatedRulesetName(std::forward<CreatedRulesetNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_runId;
 
@@ -112,10 +130,13 @@ class DataQualityRuleRecommendationRunDescription {
   Aws::Utils::DateTime m_startedOn{};
 
   DataSource m_dataSource;
+
+  Aws::String m_createdRulesetName;
   bool m_runIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_startedOnHasBeenSet = false;
   bool m_dataSourceHasBeenSet = false;
+  bool m_createdRulesetNameHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -7,6 +7,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/DQCompositeRuleEvaluationMethod.h>
+#include <aws/glue/model/DataQualityRuleResultsOptions.h>
+#include <aws/glue/model/ObservationConfiguration.h>
+#include <aws/glue/model/ObservationMode.h>
+#include <aws/glue/model/ObservationResultsOptions.h>
+#include <aws/glue/model/ProfilingResultsOptions.h>
+#include <aws/glue/model/RowLevelResultsOptions.h>
 
 #include <utility>
 
@@ -106,6 +112,115 @@ class DataQualityEvaluationRunAdditionalRunOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for writing row-level evaluation results to a Glue Data
+   * Catalog table.</p>
+   */
+  inline const RowLevelResultsOptions& GetRowLevelResults() const { return m_rowLevelResults; }
+  inline bool RowLevelResultsHasBeenSet() const { return m_rowLevelResultsHasBeenSet; }
+  template <typename RowLevelResultsT = RowLevelResultsOptions>
+  void SetRowLevelResults(RowLevelResultsT&& value) {
+    m_rowLevelResultsHasBeenSet = true;
+    m_rowLevelResults = std::forward<RowLevelResultsT>(value);
+  }
+  template <typename RowLevelResultsT = RowLevelResultsOptions>
+  DataQualityEvaluationRunAdditionalRunOptions& WithRowLevelResults(RowLevelResultsT&& value) {
+    SetRowLevelResults(std::forward<RowLevelResultsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for writing profiling results to a Glue Data Catalog
+   * table.</p>
+   */
+  inline const ProfilingResultsOptions& GetProfilingResults() const { return m_profilingResults; }
+  inline bool ProfilingResultsHasBeenSet() const { return m_profilingResultsHasBeenSet; }
+  template <typename ProfilingResultsT = ProfilingResultsOptions>
+  void SetProfilingResults(ProfilingResultsT&& value) {
+    m_profilingResultsHasBeenSet = true;
+    m_profilingResults = std::forward<ProfilingResultsT>(value);
+  }
+  template <typename ProfilingResultsT = ProfilingResultsOptions>
+  DataQualityEvaluationRunAdditionalRunOptions& WithProfilingResults(ProfilingResultsT&& value) {
+    SetProfilingResults(std::forward<ProfilingResultsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The scope of the observation for the evaluation run. Specifies whether
+   * anomaly detection is enabled or disabled.</p>
+   */
+  inline ObservationConfiguration GetObservationScope() const { return m_observationScope; }
+  inline bool ObservationScopeHasBeenSet() const { return m_observationScopeHasBeenSet; }
+  inline void SetObservationScope(ObservationConfiguration value) {
+    m_observationScopeHasBeenSet = true;
+    m_observationScope = value;
+  }
+  inline DataQualityEvaluationRunAdditionalRunOptions& WithObservationScope(ObservationConfiguration value) {
+    SetObservationScope(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The observation mode for the evaluation run. Specifies how anomaly detection
+   * bounds are calculated.</p>
+   */
+  inline ObservationMode GetObservationMode() const { return m_observationMode; }
+  inline bool ObservationModeHasBeenSet() const { return m_observationModeHasBeenSet; }
+  inline void SetObservationMode(ObservationMode value) {
+    m_observationModeHasBeenSet = true;
+    m_observationMode = value;
+  }
+  inline DataQualityEvaluationRunAdditionalRunOptions& WithObservationMode(ObservationMode value) {
+    SetObservationMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for writing rule results to a Glue Data Catalog table.</p>
+   */
+  inline const DataQualityRuleResultsOptions& GetDataQualityRuleResults() const { return m_dataQualityRuleResults; }
+  inline bool DataQualityRuleResultsHasBeenSet() const { return m_dataQualityRuleResultsHasBeenSet; }
+  template <typename DataQualityRuleResultsT = DataQualityRuleResultsOptions>
+  void SetDataQualityRuleResults(DataQualityRuleResultsT&& value) {
+    m_dataQualityRuleResultsHasBeenSet = true;
+    m_dataQualityRuleResults = std::forward<DataQualityRuleResultsT>(value);
+  }
+  template <typename DataQualityRuleResultsT = DataQualityRuleResultsOptions>
+  DataQualityEvaluationRunAdditionalRunOptions& WithDataQualityRuleResults(DataQualityRuleResultsT&& value) {
+    SetDataQualityRuleResults(std::forward<DataQualityRuleResultsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for writing observation results to a Glue Data Catalog
+   * table.</p>
+   */
+  inline const ObservationResultsOptions& GetObservationResults() const { return m_observationResults; }
+  inline bool ObservationResultsHasBeenSet() const { return m_observationResultsHasBeenSet; }
+  template <typename ObservationResultsT = ObservationResultsOptions>
+  void SetObservationResults(ObservationResultsT&& value) {
+    m_observationResultsHasBeenSet = true;
+    m_observationResults = std::forward<ObservationResultsT>(value);
+  }
+  template <typename ObservationResultsT = ObservationResultsOptions>
+  DataQualityEvaluationRunAdditionalRunOptions& WithObservationResults(ObservationResultsT&& value) {
+    SetObservationResults(std::forward<ObservationResultsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_cloudWatchMetricsEnabled{false};
 
@@ -114,10 +229,28 @@ class DataQualityEvaluationRunAdditionalRunOptions {
   DQCompositeRuleEvaluationMethod m_compositeRuleEvaluationMethod{DQCompositeRuleEvaluationMethod::NOT_SET};
 
   Aws::String m_customLogGroupPrefix;
+
+  RowLevelResultsOptions m_rowLevelResults;
+
+  ProfilingResultsOptions m_profilingResults;
+
+  ObservationConfiguration m_observationScope{ObservationConfiguration::NOT_SET};
+
+  ObservationMode m_observationMode{ObservationMode::NOT_SET};
+
+  DataQualityRuleResultsOptions m_dataQualityRuleResults;
+
+  ObservationResultsOptions m_observationResults;
   bool m_cloudWatchMetricsEnabledHasBeenSet = false;
   bool m_resultsS3PrefixHasBeenSet = false;
   bool m_compositeRuleEvaluationMethodHasBeenSet = false;
   bool m_customLogGroupPrefixHasBeenSet = false;
+  bool m_rowLevelResultsHasBeenSet = false;
+  bool m_profilingResultsHasBeenSet = false;
+  bool m_observationScopeHasBeenSet = false;
+  bool m_observationModeHasBeenSet = false;
+  bool m_dataQualityRuleResultsHasBeenSet = false;
+  bool m_observationResultsHasBeenSet = false;
 };
 
 }  // namespace Model

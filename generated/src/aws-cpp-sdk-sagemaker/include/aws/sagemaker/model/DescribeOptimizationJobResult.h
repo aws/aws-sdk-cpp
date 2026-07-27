@@ -352,6 +352,32 @@ class DescribeOptimizationJobResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the training plan associated with this
+   * optimization job. This field appears only when you specified a training plan
+   * when you created the job. Optimization jobs that use on-demand capacity don't
+   * return this field.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetTrainingPlanArns() const { return m_trainingPlanArns; }
+  template <typename TrainingPlanArnsT = Aws::Vector<Aws::String>>
+  void SetTrainingPlanArns(TrainingPlanArnsT&& value) {
+    m_trainingPlanArnsHasBeenSet = true;
+    m_trainingPlanArns = std::forward<TrainingPlanArnsT>(value);
+  }
+  template <typename TrainingPlanArnsT = Aws::Vector<Aws::String>>
+  DescribeOptimizationJobResult& WithTrainingPlanArns(TrainingPlanArnsT&& value) {
+    SetTrainingPlanArns(std::forward<TrainingPlanArnsT>(value));
+    return *this;
+  }
+  template <typename TrainingPlanArnsT = Aws::String>
+  DescribeOptimizationJobResult& AddTrainingPlanArns(TrainingPlanArnsT&& value) {
+    m_trainingPlanArnsHasBeenSet = true;
+    m_trainingPlanArns.emplace_back(std::forward<TrainingPlanArnsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -404,6 +430,8 @@ class DescribeOptimizationJobResult {
 
   OptimizationVpcConfig m_vpcConfig;
 
+  Aws::Vector<Aws::String> m_trainingPlanArns;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_optimizationJobArnHasBeenSet = false;
@@ -424,6 +452,7 @@ class DescribeOptimizationJobResult {
   bool m_roleArnHasBeenSet = false;
   bool m_stoppingConditionHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
+  bool m_trainingPlanArnsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -30,7 +30,7 @@ class DeleteSecurityConfigurationResult {
 
   ///@{
   /**
-   * <p>The ID of the security configuration that was deleted.</p>
+   * <p>The ID of the deleted security configuration.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
   template <typename IdT = Aws::String>

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace QuickSight {
 namespace Model {
-enum class CapabilityState { NOT_SET, DENY };
+enum class CapabilityState { NOT_SET, DENY, ALLOW };
 
 namespace CapabilityStateMapper {
 AWS_QUICKSIGHT_API CapabilityState GetCapabilityStateForName(const Aws::String& name);

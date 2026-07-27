@@ -17,6 +17,7 @@ namespace WorkerComputeTypeMapper {
 
 static const int CR_1X_HASH = HashingUtils::HashString("CR.1X");
 static const int CR_4X_HASH = HashingUtils::HashString("CR.4X");
+static const int CR_8X_HASH = HashingUtils::HashString("CR.8X");
 
 WorkerComputeType GetWorkerComputeTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ WorkerComputeType GetWorkerComputeTypeForName(const Aws::String& name) {
     return WorkerComputeType::CR_1X;
   } else if (hashCode == CR_4X_HASH) {
     return WorkerComputeType::CR_4X;
+  } else if (hashCode == CR_8X_HASH) {
+    return WorkerComputeType::CR_8X;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForWorkerComputeType(WorkerComputeType enumValue) {
       return "CR.1X";
     case WorkerComputeType::CR_4X:
       return "CR.4X";
+    case WorkerComputeType::CR_8X:
+      return "CR.8X";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

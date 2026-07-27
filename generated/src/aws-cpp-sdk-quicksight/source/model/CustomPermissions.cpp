@@ -30,6 +30,10 @@ CustomPermissions& CustomPermissions::operator=(JsonView jsonValue) {
     m_capabilities = jsonValue.GetObject("Capabilities");
     m_capabilitiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Governance")) {
+    m_governance = jsonValue.GetObject("Governance");
+    m_governanceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue CustomPermissions::Jsonize() const {
 
   if (m_capabilitiesHasBeenSet) {
     payload.WithObject("Capabilities", m_capabilities.Jsonize());
+  }
+
+  if (m_governanceHasBeenSet) {
+    payload.WithObject("Governance", m_governance.Jsonize());
   }
 
   return payload;

@@ -57,6 +57,10 @@ PartnerProfile& PartnerProfile::operator=(JsonView jsonValue) {
     }
     m_localizedContentsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Headquarters")) {
+    m_headquarters = jsonValue.GetObject("Headquarters");
+    m_headquartersHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ProfileId")) {
     m_profileId = jsonValue.GetString("ProfileId");
     m_profileIdHasBeenSet = true;
@@ -106,6 +110,10 @@ JsonValue PartnerProfile::Jsonize() const {
       localizedContentsJsonList[localizedContentsIndex].AsObject(m_localizedContents[localizedContentsIndex].Jsonize());
     }
     payload.WithArray("LocalizedContents", std::move(localizedContentsJsonList));
+  }
+
+  if (m_headquartersHasBeenSet) {
+    payload.WithObject("Headquarters", m_headquarters.Jsonize());
   }
 
   if (m_profileIdHasBeenSet) {

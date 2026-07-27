@@ -9,6 +9,7 @@
 #include <aws/quicksight/QuickSightRequest.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/Capabilities.h>
+#include <aws/quicksight/model/Governance.h>
 #include <aws/quicksight/model/Tag.h>
 
 #include <utility>
@@ -88,6 +89,28 @@ class CreateCustomPermissionsRequest : public QuickSightRequest {
 
   ///@{
   /**
+   * <p>The governance configuration for the custom permissions profile. When
+   * governance controls are defined for a category, any capabilities in that
+   * category not explicitly set to <code>ALLOW</code> in <code>Capabilities</code>
+   * are denied. Even newly added capabilities in the category are implicitly
+   * disabled when Amazon Quick releases them.</p>
+   */
+  inline const Governance& GetGovernance() const { return m_governance; }
+  inline bool GovernanceHasBeenSet() const { return m_governanceHasBeenSet; }
+  template <typename GovernanceT = Governance>
+  void SetGovernance(GovernanceT&& value) {
+    m_governanceHasBeenSet = true;
+    m_governance = std::forward<GovernanceT>(value);
+  }
+  template <typename GovernanceT = Governance>
+  CreateCustomPermissionsRequest& WithGovernance(GovernanceT&& value) {
+    SetGovernance(std::forward<GovernanceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags to associate with the custom permissions profile.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -116,10 +139,13 @@ class CreateCustomPermissionsRequest : public QuickSightRequest {
 
   Capabilities m_capabilities;
 
+  Governance m_governance;
+
   Aws::Vector<Tag> m_tags;
   bool m_awsAccountIdHasBeenSet = false;
   bool m_customPermissionsNameHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;
+  bool m_governanceHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

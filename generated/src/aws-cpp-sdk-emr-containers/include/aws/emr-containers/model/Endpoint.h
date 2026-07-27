@@ -239,7 +239,7 @@ class Endpoint {
 
   ///@{
   /**
-   * <p>The auth proxy URL of the endpoint.</p>
+   * <p>The authentication proxy URL of the endpoint.</p>
    */
   inline const Aws::String& GetAuthProxyUrl() const { return m_authProxyUrl; }
   inline bool AuthProxyUrlHasBeenSet() const { return m_authProxyUrlHasBeenSet; }

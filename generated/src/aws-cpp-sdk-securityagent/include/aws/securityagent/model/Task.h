@@ -242,6 +242,22 @@ class Task {
 
   ///@{
   /**
+   * <p>The number of active work hours consumed by the task during execution.</p>
+   */
+  inline double GetTaskHours() const { return m_taskHours; }
+  inline bool TaskHoursHasBeenSet() const { return m_taskHoursHasBeenSet; }
+  inline void SetTaskHours(double value) {
+    m_taskHoursHasBeenSet = true;
+    m_taskHours = value;
+  }
+  inline Task& WithTaskHours(double value) {
+    SetTaskHours(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the task was created, in UTC format.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -298,6 +314,8 @@ class Task {
 
   LogLocation m_logsLocation;
 
+  double m_taskHours{0.0};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -312,6 +330,7 @@ class Task {
   bool m_targetEndpointHasBeenSet = false;
   bool m_executionStatusHasBeenSet = false;
   bool m_logsLocationHasBeenSet = false;
+  bool m_taskHoursHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

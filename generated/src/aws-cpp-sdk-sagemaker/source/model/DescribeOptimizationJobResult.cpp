@@ -102,6 +102,13 @@ DescribeOptimizationJobResult& DescribeOptimizationJobResult::operator=(const Aw
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
     m_vpcConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TrainingPlanArns")) {
+    Aws::Utils::Array<JsonView> trainingPlanArnsJsonList = jsonValue.GetArray("TrainingPlanArns");
+    for (unsigned trainingPlanArnsIndex = 0; trainingPlanArnsIndex < trainingPlanArnsJsonList.GetLength(); ++trainingPlanArnsIndex) {
+      m_trainingPlanArns.push_back(trainingPlanArnsJsonList[trainingPlanArnsIndex].AsString());
+    }
+    m_trainingPlanArnsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

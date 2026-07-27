@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/AIAdapterSource.h>
 #include <aws/sagemaker/model/AIModelSource.h>
 #include <aws/sagemaker/model/AIRecommendationComputeSpec.h>
 #include <aws/sagemaker/model/AIRecommendationInferenceSpecification.h>
@@ -211,6 +212,26 @@ class CreateAIRecommendationJobRequest : public SageMakerRequest {
 
   ///@{
   /**
+   * <p>The LoRA adapter source for the recommendation job. Specify either a list of
+   * model package ARNs or Amazon S3 URIs for your LoRA adapters. When this parameter
+   * is absent, the recommendation job runs without LoRA adapter support.</p>
+   */
+  inline const AIAdapterSource& GetAdapterSource() const { return m_adapterSource; }
+  inline bool AdapterSourceHasBeenSet() const { return m_adapterSourceHasBeenSet; }
+  template <typename AdapterSourceT = AIAdapterSource>
+  void SetAdapterSource(AdapterSourceT&& value) {
+    m_adapterSourceHasBeenSet = true;
+    m_adapterSource = std::forward<AdapterSourceT>(value);
+  }
+  template <typename AdapterSourceT = AIAdapterSource>
+  CreateAIRecommendationJobRequest& WithAdapterSource(AdapterSourceT&& value) {
+    SetAdapterSource(std::forward<AdapterSourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The metadata that you apply to Amazon Web Services resources to help you
    * categorize and organize them.</p>
    */
@@ -252,6 +273,8 @@ class CreateAIRecommendationJobRequest : public SageMakerRequest {
 
   AIRecommendationComputeSpec m_computeSpec;
 
+  AIAdapterSource m_adapterSource;
+
   Aws::Vector<Tag> m_tags;
   bool m_aIRecommendationJobNameHasBeenSet = false;
   bool m_modelSourceHasBeenSet = false;
@@ -262,6 +285,7 @@ class CreateAIRecommendationJobRequest : public SageMakerRequest {
   bool m_inferenceSpecificationHasBeenSet = false;
   bool m_optimizeModelHasBeenSet = false;
   bool m_computeSpecHasBeenSet = false;
+  bool m_adapterSourceHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

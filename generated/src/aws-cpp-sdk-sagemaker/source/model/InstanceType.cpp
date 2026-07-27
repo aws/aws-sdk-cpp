@@ -188,6 +188,12 @@ static const int ml_g6_12xlarge_HASH = HashingUtils::HashString("ml.g6.12xlarge"
 static const int ml_g6_16xlarge_HASH = HashingUtils::HashString("ml.g6.16xlarge");
 static const int ml_g6_24xlarge_HASH = HashingUtils::HashString("ml.g6.24xlarge");
 static const int ml_g6_48xlarge_HASH = HashingUtils::HashString("ml.g6.48xlarge");
+static const int ml_g7e_2xlarge_HASH = HashingUtils::HashString("ml.g7e.2xlarge");
+static const int ml_g7e_4xlarge_HASH = HashingUtils::HashString("ml.g7e.4xlarge");
+static const int ml_g7e_8xlarge_HASH = HashingUtils::HashString("ml.g7e.8xlarge");
+static const int ml_g7e_12xlarge_HASH = HashingUtils::HashString("ml.g7e.12xlarge");
+static const int ml_g7e_24xlarge_HASH = HashingUtils::HashString("ml.g7e.24xlarge");
+static const int ml_g7e_48xlarge_HASH = HashingUtils::HashString("ml.g7e.48xlarge");
 static const int ml_p5_4xlarge_HASH = HashingUtils::HashString("ml.p5.4xlarge");
 static const int ml_p5en_48xlarge_HASH = HashingUtils::HashString("ml.p5en.48xlarge");
 static const int ml_g6e_xlarge_HASH = HashingUtils::HashString("ml.g6e.xlarge");
@@ -727,6 +733,24 @@ static bool GetEnumForNameHelper1(int hashCode, InstanceType& enumValue) {
     return true;
   } else if (hashCode == ml_g6_48xlarge_HASH) {
     enumValue = InstanceType::ml_g6_48xlarge;
+    return true;
+  } else if (hashCode == ml_g7e_2xlarge_HASH) {
+    enumValue = InstanceType::ml_g7e_2xlarge;
+    return true;
+  } else if (hashCode == ml_g7e_4xlarge_HASH) {
+    enumValue = InstanceType::ml_g7e_4xlarge;
+    return true;
+  } else if (hashCode == ml_g7e_8xlarge_HASH) {
+    enumValue = InstanceType::ml_g7e_8xlarge;
+    return true;
+  } else if (hashCode == ml_g7e_12xlarge_HASH) {
+    enumValue = InstanceType::ml_g7e_12xlarge;
+    return true;
+  } else if (hashCode == ml_g7e_24xlarge_HASH) {
+    enumValue = InstanceType::ml_g7e_24xlarge;
+    return true;
+  } else if (hashCode == ml_g7e_48xlarge_HASH) {
+    enumValue = InstanceType::ml_g7e_48xlarge;
     return true;
   } else if (hashCode == ml_p5_4xlarge_HASH) {
     enumValue = InstanceType::ml_p5_4xlarge;
@@ -1288,6 +1312,24 @@ static bool GetNameForEnumHelper1(InstanceType enumValue, Aws::String& value) {
       return true;
     case InstanceType::ml_g6_48xlarge:
       value = "ml.g6.48xlarge";
+      return true;
+    case InstanceType::ml_g7e_2xlarge:
+      value = "ml.g7e.2xlarge";
+      return true;
+    case InstanceType::ml_g7e_4xlarge:
+      value = "ml.g7e.4xlarge";
+      return true;
+    case InstanceType::ml_g7e_8xlarge:
+      value = "ml.g7e.8xlarge";
+      return true;
+    case InstanceType::ml_g7e_12xlarge:
+      value = "ml.g7e.12xlarge";
+      return true;
+    case InstanceType::ml_g7e_24xlarge:
+      value = "ml.g7e.24xlarge";
+      return true;
+    case InstanceType::ml_g7e_48xlarge:
+      value = "ml.g7e.48xlarge";
       return true;
     case InstanceType::ml_p5_4xlarge:
       value = "ml.p5.4xlarge";

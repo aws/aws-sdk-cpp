@@ -23,6 +23,10 @@ Aws::String CreateCustomPermissionsRequest::SerializePayload() const {
     payload.WithObject("Capabilities", m_capabilities.Jsonize());
   }
 
+  if (m_governanceHasBeenSet) {
+    payload.WithObject("Governance", m_governance.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {

@@ -158,6 +158,22 @@ class TaskSummary {
 
   ///@{
   /**
+   * <p>The number of active work hours consumed by the task during execution.</p>
+   */
+  inline double GetTaskHours() const { return m_taskHours; }
+  inline bool TaskHoursHasBeenSet() const { return m_taskHoursHasBeenSet; }
+  inline void SetTaskHours(double value) {
+    m_taskHoursHasBeenSet = true;
+    m_taskHours = value;
+  }
+  inline TaskSummary& WithTaskHours(double value) {
+    SetTaskHours(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the task was created, in UTC format.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -206,6 +222,8 @@ class TaskSummary {
 
   TaskExecutionStatus m_executionStatus{TaskExecutionStatus::NOT_SET};
 
+  double m_taskHours{0.0};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -216,6 +234,7 @@ class TaskSummary {
   bool m_titleHasBeenSet = false;
   bool m_riskTypeHasBeenSet = false;
   bool m_executionStatusHasBeenSet = false;
+  bool m_taskHoursHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

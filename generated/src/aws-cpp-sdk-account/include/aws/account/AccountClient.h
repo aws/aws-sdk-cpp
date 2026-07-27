@@ -354,6 +354,40 @@ class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the status of the most recent primary email update for the
+   * specified account. For complete details about how to update the primary email
+   * address, see <a
+   * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-root-user-email.html">Update
+   * the primary email address for your AWS account</a>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetPrimaryEmailUpdateStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPrimaryEmailUpdateStatusOutcome GetPrimaryEmailUpdateStatus(
+      const Model::GetPrimaryEmailUpdateStatusRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetPrimaryEmailUpdateStatus that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetPrimaryEmailUpdateStatusRequestT = Model::GetPrimaryEmailUpdateStatusRequest>
+  Model::GetPrimaryEmailUpdateStatusOutcomeCallable GetPrimaryEmailUpdateStatusCallable(
+      const GetPrimaryEmailUpdateStatusRequestT& request = {}) const {
+    return SubmitCallable(&AccountClient::GetPrimaryEmailUpdateStatus, request);
+  }
+
+  /**
+   * An Async wrapper for GetPrimaryEmailUpdateStatus that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetPrimaryEmailUpdateStatusRequestT = Model::GetPrimaryEmailUpdateStatusRequest>
+  void GetPrimaryEmailUpdateStatusAsync(const GetPrimaryEmailUpdateStatusResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const GetPrimaryEmailUpdateStatusRequestT& request = {}) const {
+    return SubmitAsync(&AccountClient::GetPrimaryEmailUpdateStatus, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the opt-in status of a particular Region.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetRegionOptStatus">AWS

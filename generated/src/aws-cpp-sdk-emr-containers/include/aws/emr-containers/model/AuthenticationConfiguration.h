@@ -21,8 +21,8 @@ namespace EMRContainers {
 namespace Model {
 
 /**
- * <p>Authentication configuration for the security configuration.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Contains the authentication settings for a security configuration, including
+ * Identity Center and IAM configuration options.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/AuthenticationConfiguration">AWS
  * API Reference</a></p>
  */
@@ -35,8 +35,7 @@ class AuthenticationConfiguration {
 
   ///@{
   /**
-   * <p>Identity Center configuration for authentication in the security
-   * configuration.</p>
+   * <p>The IAM Identity Center configuration to use for authentication.</p>
    */
   inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const { return m_identityCenterConfiguration; }
   inline bool IdentityCenterConfigurationHasBeenSet() const { return m_identityCenterConfigurationHasBeenSet; }
@@ -54,7 +53,7 @@ class AuthenticationConfiguration {
 
   ///@{
   /**
-   * <p>IAM configuration for authentication in the security configuration.</p>
+   * <p>The IAM configuration to use for authentication.</p>
    */
   inline const IAMConfiguration& GetIamConfiguration() const { return m_iamConfiguration; }
   inline bool IamConfigurationHasBeenSet() const { return m_iamConfigurationHasBeenSet; }

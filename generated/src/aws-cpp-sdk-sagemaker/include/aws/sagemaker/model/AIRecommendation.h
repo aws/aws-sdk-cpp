@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/AIRecommendationAdapterDetails.h>
 #include <aws/sagemaker/model/AIRecommendationDeploymentConfiguration.h>
 #include <aws/sagemaker/model/AIRecommendationModelDetails.h>
 #include <aws/sagemaker/model/AIRecommendationOptimizationDetail.h>
@@ -158,6 +159,27 @@ class AIRecommendation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The LoRA adapter details for this recommendation. This field contains both
+   * the model package ARNs and Amazon S3 URIs for each adapter, regardless of which
+   * form was originally supplied. This field is absent when the job was created
+   * without LoRA adapters.</p>
+   */
+  inline const AIRecommendationAdapterDetails& GetAdapterDetails() const { return m_adapterDetails; }
+  inline bool AdapterDetailsHasBeenSet() const { return m_adapterDetailsHasBeenSet; }
+  template <typename AdapterDetailsT = AIRecommendationAdapterDetails>
+  void SetAdapterDetails(AdapterDetailsT&& value) {
+    m_adapterDetailsHasBeenSet = true;
+    m_adapterDetails = std::forward<AdapterDetailsT>(value);
+  }
+  template <typename AdapterDetailsT = AIRecommendationAdapterDetails>
+  AIRecommendation& WithAdapterDetails(AdapterDetailsT&& value) {
+    SetAdapterDetails(std::forward<AdapterDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_recommendationDescription;
 
@@ -170,12 +192,15 @@ class AIRecommendation {
   Aws::String m_aIBenchmarkJobArn;
 
   Aws::Vector<AIRecommendationPerformanceMetric> m_expectedPerformance;
+
+  AIRecommendationAdapterDetails m_adapterDetails;
   bool m_recommendationDescriptionHasBeenSet = false;
   bool m_optimizationDetailsHasBeenSet = false;
   bool m_modelDetailsHasBeenSet = false;
   bool m_deploymentConfigurationHasBeenSet = false;
   bool m_aIBenchmarkJobArnHasBeenSet = false;
   bool m_expectedPerformanceHasBeenSet = false;
+  bool m_adapterDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

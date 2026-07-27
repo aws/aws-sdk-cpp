@@ -57,6 +57,14 @@ VirtualCluster& VirtualCluster::operator=(JsonView jsonValue) {
     m_sessionEnabled = jsonValue.GetBool("sessionEnabled");
     m_sessionEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("schedulerConfiguration")) {
+    m_schedulerConfiguration = jsonValue.GetObject("schedulerConfiguration");
+    m_schedulerConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("schedulerStatus")) {
+    m_schedulerStatus = jsonValue.GetObject("schedulerStatus");
+    m_schedulerStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -101,6 +109,14 @@ JsonValue VirtualCluster::Jsonize() const {
 
   if (m_sessionEnabledHasBeenSet) {
     payload.WithBool("sessionEnabled", m_sessionEnabled);
+  }
+
+  if (m_schedulerConfigurationHasBeenSet) {
+    payload.WithObject("schedulerConfiguration", m_schedulerConfiguration.Jsonize());
+  }
+
+  if (m_schedulerStatusHasBeenSet) {
+    payload.WithObject("schedulerStatus", m_schedulerStatus.Jsonize());
   }
 
   return payload;

@@ -8,6 +8,7 @@
 #include <aws/quicksight/QuickSightRequest.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/Capabilities.h>
+#include <aws/quicksight/model/Governance.h>
 
 #include <utility>
 
@@ -83,15 +84,40 @@ class UpdateCustomPermissionsRequest : public QuickSightRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The governance configuration for the custom permissions profile. The
+   * <code>UpdateCustomPermissions</code> operation replaces all existing
+   * <code>Capabilities</code> and <code>Governance</code> values. If you omit this
+   * parameter, Amazon Quick removes governance from the profile and the existing
+   * custom permission behavior applies.</p>
+   */
+  inline const Governance& GetGovernance() const { return m_governance; }
+  inline bool GovernanceHasBeenSet() const { return m_governanceHasBeenSet; }
+  template <typename GovernanceT = Governance>
+  void SetGovernance(GovernanceT&& value) {
+    m_governanceHasBeenSet = true;
+    m_governance = std::forward<GovernanceT>(value);
+  }
+  template <typename GovernanceT = Governance>
+  UpdateCustomPermissionsRequest& WithGovernance(GovernanceT&& value) {
+    SetGovernance(std::forward<GovernanceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_awsAccountId;
 
   Aws::String m_customPermissionsName;
 
   Capabilities m_capabilities;
+
+  Governance m_governance;
   bool m_awsAccountIdHasBeenSet = false;
   bool m_customPermissionsNameHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;
+  bool m_governanceHasBeenSet = false;
 };
 
 }  // namespace Model

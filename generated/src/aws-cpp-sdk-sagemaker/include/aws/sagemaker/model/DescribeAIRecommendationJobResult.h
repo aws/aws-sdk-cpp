@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/AIAdapterSource.h>
 #include <aws/sagemaker/model/AIModelSource.h>
 #include <aws/sagemaker/model/AIRecommendation.h>
 #include <aws/sagemaker/model/AIRecommendationComputeSpec.h>
@@ -266,6 +267,25 @@ class DescribeAIRecommendationJobResult {
 
   ///@{
   /**
+   * <p>The LoRA adapter source that was specified when the recommendation job was
+   * created. This field is absent when the job was created without LoRA
+   * adapters.</p>
+   */
+  inline const AIAdapterSource& GetAdapterSource() const { return m_adapterSource; }
+  template <typename AdapterSourceT = AIAdapterSource>
+  void SetAdapterSource(AdapterSourceT&& value) {
+    m_adapterSourceHasBeenSet = true;
+    m_adapterSource = std::forward<AdapterSourceT>(value);
+  }
+  template <typename AdapterSourceT = AIAdapterSource>
+  DescribeAIRecommendationJobResult& WithAdapterSource(AdapterSourceT&& value) {
+    SetAdapterSource(std::forward<AdapterSourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A timestamp that indicates when the recommendation job was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
@@ -381,6 +401,8 @@ class DescribeAIRecommendationJobResult {
 
   AIRecommendationComputeSpec m_computeSpec;
 
+  AIAdapterSource m_adapterSource;
+
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::Utils::DateTime m_startTime{};
@@ -404,6 +426,7 @@ class DescribeAIRecommendationJobResult {
   bool m_recommendationsHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_computeSpecHasBeenSet = false;
+  bool m_adapterSourceHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;

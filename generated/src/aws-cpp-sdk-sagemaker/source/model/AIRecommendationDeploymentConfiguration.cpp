@@ -48,6 +48,10 @@ AIRecommendationDeploymentConfiguration& AIRecommendationDeploymentConfiguration
     }
     m_environmentVariablesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MinCpuMemoryRequiredInMb")) {
+    m_minCpuMemoryRequiredInMb = jsonValue.GetInteger("MinCpuMemoryRequiredInMb");
+    m_minCpuMemoryRequiredInMbHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -84,6 +88,10 @@ JsonValue AIRecommendationDeploymentConfiguration::Jsonize() const {
       environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
     }
     payload.WithObject("EnvironmentVariables", std::move(environmentVariablesJsonMap));
+  }
+
+  if (m_minCpuMemoryRequiredInMbHasBeenSet) {
+    payload.WithInteger("MinCpuMemoryRequiredInMb", m_minCpuMemoryRequiredInMb);
   }
 
   return payload;

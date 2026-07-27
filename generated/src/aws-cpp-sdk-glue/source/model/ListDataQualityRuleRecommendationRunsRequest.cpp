@@ -27,6 +27,14 @@ Aws::String ListDataQualityRuleRecommendationRunsRequest::SerializePayload() con
     payload.WithInteger("MaxResults", m_maxResults);
   }
 
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }
 

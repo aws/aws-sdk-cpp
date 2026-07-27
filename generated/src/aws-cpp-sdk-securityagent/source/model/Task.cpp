@@ -65,6 +65,10 @@ Task& Task::operator=(JsonView jsonValue) {
     m_logsLocation = jsonValue.GetObject("logsLocation");
     m_logsLocationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("taskHours")) {
+    m_taskHours = jsonValue.GetDouble("taskHours");
+    m_taskHoursHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -125,6 +129,10 @@ JsonValue Task::Jsonize() const {
 
   if (m_logsLocationHasBeenSet) {
     payload.WithObject("logsLocation", m_logsLocation.Jsonize());
+  }
+
+  if (m_taskHoursHasBeenSet) {
+    payload.WithDouble("taskHours", m_taskHours);
   }
 
   if (m_createdAtHasBeenSet) {

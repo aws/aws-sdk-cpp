@@ -63,6 +63,8 @@
 #include <aws/glue/model/BatchGetCustomEntityTypesResult.h>
 #include <aws/glue/model/BatchGetDataQualityResultRequest.h>
 #include <aws/glue/model/BatchGetDataQualityResultResult.h>
+#include <aws/glue/model/BatchGetDataQualityRulesetEvaluationRunRequest.h>
+#include <aws/glue/model/BatchGetDataQualityRulesetEvaluationRunResult.h>
 #include <aws/glue/model/BatchGetDevEndpointsRequest.h>
 #include <aws/glue/model/BatchGetDevEndpointsResult.h>
 #include <aws/glue/model/BatchGetIterableFormsRequest.h>
@@ -120,6 +122,7 @@
 #include <aws/glue/model/CatalogPropertiesOutput.h>
 #include <aws/glue/model/CatalogSchemaChangePolicy.h>
 #include <aws/glue/model/CatalogSource.h>
+#include <aws/glue/model/CatalogTableConfigOptions.h>
 #include <aws/glue/model/CatalogTarget.h>
 #include <aws/glue/model/CheckSchemaVersionValidityRequest.h>
 #include <aws/glue/model/CheckSchemaVersionValidityResult.h>
@@ -284,10 +287,13 @@
 #include <aws/glue/model/DataQualityResult.h>
 #include <aws/glue/model/DataQualityResultDescription.h>
 #include <aws/glue/model/DataQualityResultFilterCriteria.h>
+#include <aws/glue/model/DataQualityRuleRecommendationRunAdditionalRunOptions.h>
 #include <aws/glue/model/DataQualityRuleRecommendationRunDescription.h>
 #include <aws/glue/model/DataQualityRuleRecommendationRunFilter.h>
 #include <aws/glue/model/DataQualityRuleResult.h>
 #include <aws/glue/model/DataQualityRuleResultStatus.h>
+#include <aws/glue/model/DataQualityRuleResultsOptions.h>
+#include <aws/glue/model/DataQualityRulesetEvaluationRun.h>
 #include <aws/glue/model/DataQualityRulesetEvaluationRunDescription.h>
 #include <aws/glue/model/DataQualityRulesetEvaluationRunFilter.h>
 #include <aws/glue/model/DataQualityRulesetFilterCriteria.h>
@@ -403,6 +409,8 @@
 #include <aws/glue/model/DirectSchemaChangePolicy.h>
 #include <aws/glue/model/DisassociateGlossaryTermsRequest.h>
 #include <aws/glue/model/DisassociateGlossaryTermsResult.h>
+#include <aws/glue/model/DistributionData.h>
+#include <aws/glue/model/DistributionResultsOptions.h>
 #include <aws/glue/model/DoubleColumnStatisticsData.h>
 #include <aws/glue/model/DropDuplicates.h>
 #include <aws/glue/model/DropFields.h>
@@ -818,6 +826,9 @@
 #include <aws/glue/model/OAuth2GrantType.h>
 #include <aws/glue/model/OAuth2Properties.h>
 #include <aws/glue/model/OAuth2PropertiesInput.h>
+#include <aws/glue/model/ObservationConfiguration.h>
+#include <aws/glue/model/ObservationMode.h>
+#include <aws/glue/model/ObservationResultsOptions.h>
 #include <aws/glue/model/OffsetConfiguration.h>
 #include <aws/glue/model/OpenTableFormatInput.h>
 #include <aws/glue/model/Option.h>
@@ -850,6 +861,7 @@
 #include <aws/glue/model/PrincipalPermissions.h>
 #include <aws/glue/model/PrincipalType.h>
 #include <aws/glue/model/ProfileConfiguration.h>
+#include <aws/glue/model/ProfilingResultsOptions.h>
 #include <aws/glue/model/Property.h>
 #include <aws/glue/model/PropertyLocation.h>
 #include <aws/glue/model/PropertyPredicate.h>
@@ -905,11 +917,13 @@
 #include <aws/glue/model/ResponseConfiguration.h>
 #include <aws/glue/model/ResponseExtractionMapping.h>
 #include <aws/glue/model/RestConfiguration.h>
+#include <aws/glue/model/ResultTypeEnum.h>
 #include <aws/glue/model/ResumeWorkflowRunRequest.h>
 #include <aws/glue/model/ResumeWorkflowRunResult.h>
 #include <aws/glue/model/RetentionConfiguration.h>
 #include <aws/glue/model/RetentionMetrics.h>
 #include <aws/glue/model/Route.h>
+#include <aws/glue/model/RowLevelResultsOptions.h>
 #include <aws/glue/model/RunIdentifier.h>
 #include <aws/glue/model/RunStatementRequest.h>
 #include <aws/glue/model/RunStatementResult.h>

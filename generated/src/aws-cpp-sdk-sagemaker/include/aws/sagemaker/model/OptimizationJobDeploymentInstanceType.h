@@ -53,7 +53,14 @@ enum class OptimizationJobDeploymentInstanceType {
   ml_inf2_48xlarge,
   ml_trn1_2xlarge,
   ml_trn1_32xlarge,
-  ml_trn1n_32xlarge
+  ml_trn1n_32xlarge,
+  ml_p6_b200_48xlarge,
+  ml_g7e_2xlarge,
+  ml_g7e_4xlarge,
+  ml_g7e_8xlarge,
+  ml_g7e_12xlarge,
+  ml_g7e_24xlarge,
+  ml_g7e_48xlarge
 };
 
 namespace OptimizationJobDeploymentInstanceTypeMapper {

@@ -14,6 +14,9 @@
 #include <aws/sagemaker/SageMakerServiceClientModel.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/internal/SageMakerEndpointRules.h>
+#include <aws/sagemaker/model/AIAdapterModelPackageEntry.h>
+#include <aws/sagemaker/model/AIAdapterS3Entry.h>
+#include <aws/sagemaker/model/AIAdapterSource.h>
 #include <aws/sagemaker/model/AIBenchmarkEndpoint.h>
 #include <aws/sagemaker/model/AIBenchmarkInferenceComponent.h>
 #include <aws/sagemaker/model/AIBenchmarkJobStatus.h>
@@ -30,6 +33,7 @@
 #include <aws/sagemaker/model/AIModelSource.h>
 #include <aws/sagemaker/model/AIModelSourceS3.h>
 #include <aws/sagemaker/model/AIRecommendation.h>
+#include <aws/sagemaker/model/AIRecommendationAdapterDetails.h>
 #include <aws/sagemaker/model/AIRecommendationComputeSpec.h>
 #include <aws/sagemaker/model/AIRecommendationConstraint.h>
 #include <aws/sagemaker/model/AIRecommendationDeploymentConfiguration.h>

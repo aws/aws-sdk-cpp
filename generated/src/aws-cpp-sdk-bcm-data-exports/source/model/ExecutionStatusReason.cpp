@@ -18,6 +18,7 @@ namespace ExecutionStatusReasonMapper {
 static const int INSUFFICIENT_PERMISSION_HASH = HashingUtils::HashString("INSUFFICIENT_PERMISSION");
 static const int BILL_OWNER_CHANGED_HASH = HashingUtils::HashString("BILL_OWNER_CHANGED");
 static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
+static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
 
 ExecutionStatusReason GetExecutionStatusReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ExecutionStatusReason GetExecutionStatusReasonForName(const Aws::String& name) {
     return ExecutionStatusReason::BILL_OWNER_CHANGED;
   } else if (hashCode == INTERNAL_FAILURE_HASH) {
     return ExecutionStatusReason::INTERNAL_FAILURE;
+  } else if (hashCode == DEPRECATED_HASH) {
+    return ExecutionStatusReason::DEPRECATED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForExecutionStatusReason(ExecutionStatusReason enumValue) {
       return "BILL_OWNER_CHANGED";
     case ExecutionStatusReason::INTERNAL_FAILURE:
       return "INTERNAL_FAILURE";
+    case ExecutionStatusReason::DEPRECATED:
+      return "DEPRECATED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -46,6 +46,10 @@ TaskSummary& TaskSummary::operator=(JsonView jsonValue) {
     m_executionStatus = TaskExecutionStatusMapper::GetTaskExecutionStatusForName(jsonValue.GetString("executionStatus"));
     m_executionStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("taskHours")) {
+    m_taskHours = jsonValue.GetDouble("taskHours");
+    m_taskHoursHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -86,6 +90,10 @@ JsonValue TaskSummary::Jsonize() const {
 
   if (m_executionStatusHasBeenSet) {
     payload.WithString("executionStatus", TaskExecutionStatusMapper::GetNameForTaskExecutionStatus(m_executionStatus));
+  }
+
+  if (m_taskHoursHasBeenSet) {
+    payload.WithDouble("taskHours", m_taskHours);
   }
 
   if (m_createdAtHasBeenSet) {

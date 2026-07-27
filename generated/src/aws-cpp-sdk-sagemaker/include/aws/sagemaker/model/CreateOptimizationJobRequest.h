@@ -264,6 +264,38 @@ class CreateOptimizationJobRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the training plan to use for this
+   * optimization job.</p> <p>When you use reserved capacity from a training plan,
+   * the optimization job runs on that reserved capacity instead of on-demand
+   * capacity. If you omit this field, the job uses on-demand capacity. Currently,
+   * you can specify at most one training plan.</p> <p>For more information about how
+   * to reserve GPU capacity for your optimization jobs using Amazon SageMaker
+   * Training Plans, see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html">Reserve
+   * capacity with training plans</a>.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetTrainingPlanArns() const { return m_trainingPlanArns; }
+  inline bool TrainingPlanArnsHasBeenSet() const { return m_trainingPlanArnsHasBeenSet; }
+  template <typename TrainingPlanArnsT = Aws::Vector<Aws::String>>
+  void SetTrainingPlanArns(TrainingPlanArnsT&& value) {
+    m_trainingPlanArnsHasBeenSet = true;
+    m_trainingPlanArns = std::forward<TrainingPlanArnsT>(value);
+  }
+  template <typename TrainingPlanArnsT = Aws::Vector<Aws::String>>
+  CreateOptimizationJobRequest& WithTrainingPlanArns(TrainingPlanArnsT&& value) {
+    SetTrainingPlanArns(std::forward<TrainingPlanArnsT>(value));
+    return *this;
+  }
+  template <typename TrainingPlanArnsT = Aws::String>
+  CreateOptimizationJobRequest& AddTrainingPlanArns(TrainingPlanArnsT&& value) {
+    m_trainingPlanArnsHasBeenSet = true;
+    m_trainingPlanArns.emplace_back(std::forward<TrainingPlanArnsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_optimizationJobName;
 
@@ -286,6 +318,8 @@ class CreateOptimizationJobRequest : public SageMakerRequest {
   Aws::Vector<Tag> m_tags;
 
   OptimizationVpcConfig m_vpcConfig;
+
+  Aws::Vector<Aws::String> m_trainingPlanArns;
   bool m_optimizationJobNameHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_modelSourceHasBeenSet = false;
@@ -297,6 +331,7 @@ class CreateOptimizationJobRequest : public SageMakerRequest {
   bool m_stoppingConditionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
+  bool m_trainingPlanArnsHasBeenSet = false;
 };
 
 }  // namespace Model

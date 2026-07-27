@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/DistributionData.h>
 #include <aws/glue/model/RunIdentifier.h>
 #include <aws/glue/model/StatisticEvaluationLevel.h>
 #include <aws/glue/model/TimestampedInclusionAnnotation.h>
@@ -121,6 +122,24 @@ class StatisticSummary {
   }
   inline StatisticSummary& WithDoubleValue(double value) {
     SetDoubleValue(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The distribution value for the statistic.</p>
+   */
+  inline const DistributionData& GetDistributionValue() const { return m_distributionValue; }
+  inline bool DistributionValueHasBeenSet() const { return m_distributionValueHasBeenSet; }
+  template <typename DistributionValueT = DistributionData>
+  void SetDistributionValue(DistributionValueT&& value) {
+    m_distributionValueHasBeenSet = true;
+    m_distributionValue = std::forward<DistributionValueT>(value);
+  }
+  template <typename DistributionValueT = DistributionData>
+  StatisticSummary& WithDistributionValue(DistributionValueT&& value) {
+    SetDistributionValue(std::forward<DistributionValueT>(value));
     return *this;
   }
   ///@}
@@ -261,6 +280,8 @@ class StatisticSummary {
 
   double m_doubleValue{0.0};
 
+  DistributionData m_distributionValue;
+
   StatisticEvaluationLevel m_evaluationLevel{StatisticEvaluationLevel::NOT_SET};
 
   Aws::Vector<Aws::String> m_columnsReferenced;
@@ -277,6 +298,7 @@ class StatisticSummary {
   bool m_runIdentifierHasBeenSet = false;
   bool m_statisticNameHasBeenSet = false;
   bool m_doubleValueHasBeenSet = false;
+  bool m_distributionValueHasBeenSet = false;
   bool m_evaluationLevelHasBeenSet = false;
   bool m_columnsReferencedHasBeenSet = false;
   bool m_referencedDatasetsHasBeenSet = false;

@@ -44,6 +44,7 @@
 #include <aws/emr-containers/model/StartJobRunRequest.h>
 #include <aws/emr-containers/model/TagResourceRequest.h>
 #include <aws/emr-containers/model/UntagResourceRequest.h>
+#include <aws/emr-containers/model/UpdateVirtualClusterRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -630,4 +631,22 @@ UntagResourceOutcome EMRContainersClient::UntagResource(const UntagResourceReque
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateVirtualClusterOutcome EMRContainersClient::UpdateVirtualCluster(const UpdateVirtualClusterRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateVirtualCluster", "Required field: Id, is not set");
+    return UpdateVirtualClusterOutcome(Aws::Client::AWSError<EMRContainersErrors>(
+        EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/virtualclusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateVirtualClusterOutcome(result.GetResultWithOwnership())
+                            : UpdateVirtualClusterOutcome(std::move(result.GetError()));
 }

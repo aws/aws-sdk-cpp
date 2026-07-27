@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-account/PartnerCentralAccount_EXPORTS.h>
+#include <aws/partnercentral-account/model/Headquarters.h>
 #include <aws/partnercentral-account/model/IndustrySegment.h>
 #include <aws/partnercentral-account/model/LocalizedContent.h>
 #include <aws/partnercentral-account/model/PrimarySolutionType.h>
@@ -191,6 +192,26 @@ class PartnerProfile {
 
   ///@{
   /**
+   * <p>The ISO 3166 country and subdivision codes for the partner's headquarters
+   * location. If no headquarters location is set, this field is not included in the
+   * response.</p>
+   */
+  inline const Headquarters& GetHeadquarters() const { return m_headquarters; }
+  inline bool HeadquartersHasBeenSet() const { return m_headquartersHasBeenSet; }
+  template <typename HeadquartersT = Headquarters>
+  void SetHeadquarters(HeadquartersT&& value) {
+    m_headquartersHasBeenSet = true;
+    m_headquarters = std::forward<HeadquartersT>(value);
+  }
+  template <typename HeadquartersT = Headquarters>
+  PartnerProfile& WithHeadquarters(HeadquartersT&& value) {
+    SetHeadquarters(std::forward<HeadquartersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique identifier of the partner profile.</p>
    */
   inline const Aws::String& GetProfileId() const { return m_profileId; }
@@ -223,6 +244,8 @@ class PartnerProfile {
 
   Aws::Vector<LocalizedContent> m_localizedContents;
 
+  Headquarters m_headquarters;
+
   Aws::String m_profileId;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -232,6 +255,7 @@ class PartnerProfile {
   bool m_industrySegmentsHasBeenSet = false;
   bool m_translationSourceLocaleHasBeenSet = false;
   bool m_localizedContentsHasBeenSet = false;
+  bool m_headquartersHasBeenSet = false;
   bool m_profileIdHasBeenSet = false;
 };
 

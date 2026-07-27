@@ -66,7 +66,7 @@ class GetManagedEndpointSessionCredentialsResult {
 
   ///@{
   /**
-   * <p>The structure containing the session token being returned.</p>
+   * <p>The session credentials that the operation returns.</p>
    */
   inline const Credentials& GetEndpointCredentials() const { return m_endpointCredentials; }
   template <typename EndpointCredentialsT = Credentials>

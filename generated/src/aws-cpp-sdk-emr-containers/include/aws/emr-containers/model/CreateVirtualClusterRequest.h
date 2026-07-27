@@ -10,6 +10,7 @@
 #include <aws/emr-containers/EMRContainersRequest.h>
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
 #include <aws/emr-containers/model/ContainerProvider.h>
+#include <aws/emr-containers/model/SchedulerConfiguration.h>
 
 #include <utility>
 
@@ -142,6 +143,25 @@ class CreateVirtualClusterRequest : public EMRContainersRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The scheduler configuration (concurrency and queue limits) to apply to the
+   * virtual cluster at creation time. When omitted, no limits are applied.</p>
+   */
+  inline const SchedulerConfiguration& GetSchedulerConfiguration() const { return m_schedulerConfiguration; }
+  inline bool SchedulerConfigurationHasBeenSet() const { return m_schedulerConfigurationHasBeenSet; }
+  template <typename SchedulerConfigurationT = SchedulerConfiguration>
+  void SetSchedulerConfiguration(SchedulerConfigurationT&& value) {
+    m_schedulerConfigurationHasBeenSet = true;
+    m_schedulerConfiguration = std::forward<SchedulerConfigurationT>(value);
+  }
+  template <typename SchedulerConfigurationT = SchedulerConfiguration>
+  CreateVirtualClusterRequest& WithSchedulerConfiguration(SchedulerConfigurationT&& value) {
+    SetSchedulerConfiguration(std::forward<SchedulerConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -154,12 +174,15 @@ class CreateVirtualClusterRequest : public EMRContainersRequest {
   Aws::String m_securityConfigurationId;
 
   bool m_sessionEnabled{false};
+
+  SchedulerConfiguration m_schedulerConfiguration;
   bool m_nameHasBeenSet = false;
   bool m_containerProviderHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
   bool m_securityConfigurationIdHasBeenSet = false;
   bool m_sessionEnabledHasBeenSet = false;
+  bool m_schedulerConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -80,6 +80,10 @@ DescribeAIRecommendationJobResult& DescribeAIRecommendationJobResult::operator=(
     m_computeSpec = jsonValue.GetObject("ComputeSpec");
     m_computeSpecHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AdapterSource")) {
+    m_adapterSource = jsonValue.GetObject("AdapterSource");
+    m_adapterSourceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;

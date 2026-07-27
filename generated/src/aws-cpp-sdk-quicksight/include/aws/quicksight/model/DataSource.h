@@ -299,8 +299,8 @@ class DataSource {
    * <p>The credential verification status of the data source. Valid values
    * include:</p> <ul> <li> <p> <code>CONNECTED</code> – Credential validation
    * succeeded.</p> </li> <li> <p> <code>AUTH_FAILED</code> – Credential validation
-   * failed.</p> </li> <li> <p> <code>NOT_VERIFIED</code> – Credential validation has
-   * not been performed.</p> </li> </ul>
+   * failed.</p> </li> <li> <p> <code>NOT_VERIFIED</code> ��� Credential validation
+   * has not been performed.</p> </li> </ul>
    */
   inline CredentialStatus GetCredentialStatus() const { return m_credentialStatus; }
   inline bool CredentialStatusHasBeenSet() const { return m_credentialStatusHasBeenSet; }

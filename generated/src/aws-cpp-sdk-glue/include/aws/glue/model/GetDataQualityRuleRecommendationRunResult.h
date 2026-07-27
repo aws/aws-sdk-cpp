@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/DataQualityRuleRecommendationRunAdditionalRunOptions.h>
 #include <aws/glue/model/DataSource.h>
 #include <aws/glue/model/TaskStatusType.h>
 
@@ -274,6 +275,23 @@ class GetDataQualityRuleRecommendationRunResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Additional run options you can specify for a recommendation run.</p>
+   */
+  inline const DataQualityRuleRecommendationRunAdditionalRunOptions& GetAdditionalRunOptions() const { return m_additionalRunOptions; }
+  template <typename AdditionalRunOptionsT = DataQualityRuleRecommendationRunAdditionalRunOptions>
+  void SetAdditionalRunOptions(AdditionalRunOptionsT&& value) {
+    m_additionalRunOptionsHasBeenSet = true;
+    m_additionalRunOptions = std::forward<AdditionalRunOptionsT>(value);
+  }
+  template <typename AdditionalRunOptionsT = DataQualityRuleRecommendationRunAdditionalRunOptions>
+  GetDataQualityRuleRecommendationRunResult& WithAdditionalRunOptions(AdditionalRunOptionsT&& value) {
+    SetAdditionalRunOptions(std::forward<AdditionalRunOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -318,6 +336,8 @@ class GetDataQualityRuleRecommendationRunResult {
 
   Aws::String m_dataQualitySecurityConfiguration;
 
+  DataQualityRuleRecommendationRunAdditionalRunOptions m_additionalRunOptions;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_runIdHasBeenSet = false;
@@ -334,6 +354,7 @@ class GetDataQualityRuleRecommendationRunResult {
   bool m_recommendedRulesetHasBeenSet = false;
   bool m_createdRulesetNameHasBeenSet = false;
   bool m_dataQualitySecurityConfigurationHasBeenSet = false;
+  bool m_additionalRunOptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -43,6 +43,10 @@ Aws::String StartDataQualityRuleRecommendationRunRequest::SerializePayload() con
     payload.WithString("ClientToken", m_clientToken);
   }
 
+  if (m_additionalRunOptionsHasBeenSet) {
+    payload.WithObject("AdditionalRunOptions", m_additionalRunOptions.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

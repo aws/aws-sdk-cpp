@@ -57,6 +57,10 @@ TaskDetails& TaskDetails::operator=(JsonView jsonValue) {
     }
     m_localizedContentsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Headquarters")) {
+    m_headquarters = jsonValue.GetObject("Headquarters");
+    m_headquartersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue TaskDetails::Jsonize() const {
       localizedContentsJsonList[localizedContentsIndex].AsObject(m_localizedContents[localizedContentsIndex].Jsonize());
     }
     payload.WithArray("LocalizedContents", std::move(localizedContentsJsonList));
+  }
+
+  if (m_headquartersHasBeenSet) {
+    payload.WithObject("Headquarters", m_headquarters.Jsonize());
   }
 
   return payload;

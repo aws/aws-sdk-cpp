@@ -20,8 +20,8 @@ namespace EMRContainers {
 namespace Model {
 
 /**
- * <p>IAM configuration for the security configuration.</p><p><h3>See Also:</h3>
- * <a
+ * <p>Contains the IAM settings for a security configuration, including the system
+ * role used for authentication.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/IAMConfiguration">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,8 @@ class IAMConfiguration {
 
   ///@{
   /**
-   * <p>The ARN of the system role used by the security configuration.</p>
+   * <p>The Amazon Resource Name (ARN) of the system role used by the security
+   * configuration.</p>
    */
   inline const Aws::String& GetSystemRole() const { return m_systemRole; }
   inline bool SystemRoleHasBeenSet() const { return m_systemRoleHasBeenSet; }

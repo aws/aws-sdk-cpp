@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-account/PartnerCentralAccount_EXPORTS.h>
+#include <aws/partnercentral-account/model/Headquarters.h>
 #include <aws/partnercentral-account/model/IndustrySegment.h>
 #include <aws/partnercentral-account/model/LocalizedContent.h>
 #include <aws/partnercentral-account/model/PrimarySolutionType.h>
@@ -188,6 +189,26 @@ class TaskDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ISO 3166 country and subdivision codes for the partner's headquarters
+   * location. If you omit this field, the service retains the existing headquarters
+   * value.</p>
+   */
+  inline const Headquarters& GetHeadquarters() const { return m_headquarters; }
+  inline bool HeadquartersHasBeenSet() const { return m_headquartersHasBeenSet; }
+  template <typename HeadquartersT = Headquarters>
+  void SetHeadquarters(HeadquartersT&& value) {
+    m_headquartersHasBeenSet = true;
+    m_headquarters = std::forward<HeadquartersT>(value);
+  }
+  template <typename HeadquartersT = Headquarters>
+  TaskDetails& WithHeadquarters(HeadquartersT&& value) {
+    SetHeadquarters(std::forward<HeadquartersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_displayName;
 
@@ -204,6 +225,8 @@ class TaskDetails {
   Aws::String m_translationSourceLocale;
 
   Aws::Vector<LocalizedContent> m_localizedContents;
+
+  Headquarters m_headquarters;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_websiteUrlHasBeenSet = false;
@@ -212,6 +235,7 @@ class TaskDetails {
   bool m_industrySegmentsHasBeenSet = false;
   bool m_translationSourceLocaleHasBeenSet = false;
   bool m_localizedContentsHasBeenSet = false;
+  bool m_headquartersHasBeenSet = false;
 };
 
 }  // namespace Model

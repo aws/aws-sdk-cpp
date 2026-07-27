@@ -34,6 +34,10 @@ DataQualityRuleRecommendationRunDescription& DataQualityRuleRecommendationRunDes
     m_dataSource = jsonValue.GetObject("DataSource");
     m_dataSourceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CreatedRulesetName")) {
+    m_createdRulesetName = jsonValue.GetString("CreatedRulesetName");
+    m_createdRulesetNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue DataQualityRuleRecommendationRunDescription::Jsonize() const {
 
   if (m_dataSourceHasBeenSet) {
     payload.WithObject("DataSource", m_dataSource.Jsonize());
+  }
+
+  if (m_createdRulesetNameHasBeenSet) {
+    payload.WithString("CreatedRulesetName", m_createdRulesetName);
   }
 
   return payload;
