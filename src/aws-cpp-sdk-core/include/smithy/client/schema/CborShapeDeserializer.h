@@ -12,15 +12,15 @@ class SMITHY_API CborShapeDeserializer final : public ShapeDeserializer {
   CborShapeDeserializer(const unsigned char* data, size_t length);
   ~CborShapeDeserializer();
 
-  bool ReadBoolean() override;
-  int ReadInteger() override;
-  int64_t ReadLong() override;
-  float ReadFloat() override;
-  double ReadDouble() override;
-  Aws::String ReadString() override;
-  Aws::Utils::DateTime ReadTimestamp() override;
-  Aws::Utils::ByteBuffer ReadBlob() override;
-  int ReadEnum() override;
+  Aws::Crt::Optional<bool> ReadBoolean() override;
+  Aws::Crt::Optional<int> ReadInteger() override;
+  Aws::Crt::Optional<int64_t> ReadLong() override;
+  Aws::Crt::Optional<float> ReadFloat() override;
+  Aws::Crt::Optional<double> ReadDouble() override;
+  Aws::Crt::Optional<Aws::String> ReadString() override;
+  Aws::Crt::Optional<Aws::Utils::DateTime> ReadTimestamp() override;
+  Aws::Crt::Optional<Aws::Utils::ByteBuffer> ReadBlob() override;
+  Aws::Crt::Optional<int> ReadEnum() override;
 
   size_t BeginStruct() override;
   void EndStruct() override;
@@ -31,14 +31,11 @@ class SMITHY_API CborShapeDeserializer final : public ShapeDeserializer {
   size_t BeginMap() override;
   void EndMap() override;
 
-  Aws::String ReadKey() override;
+  Aws::Crt::Optional<Aws::String> ReadKey() override;
   bool IsBreak() override;
   bool IsNull() override;
   void ReadNull() override;
   void SkipValue() override;
-
-  bool HasError() const override;
-  int GetLastError() const override;
 
  private:
   class Impl;

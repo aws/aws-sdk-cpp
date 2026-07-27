@@ -26,8 +26,12 @@ TEST_F(CborShapeDeserializerTest, BooleanTrue) {
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
   ASSERT_FALSE(d.IsBreak());
-  EXPECT_EQ(d.ReadKey(), "enabled");
-  EXPECT_TRUE(d.ReadBoolean());
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "enabled");
+  auto val = d.ReadBoolean();
+  ASSERT_TRUE(val.has_value());
+  EXPECT_TRUE(val.value());
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
@@ -43,8 +47,12 @@ TEST_F(CborShapeDeserializerTest, BooleanFalse) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "ok");
-  EXPECT_FALSE(d.ReadBoolean());
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "ok");
+  auto val = d.ReadBoolean();
+  ASSERT_TRUE(val.has_value());
+  EXPECT_FALSE(val.value());
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
@@ -60,8 +68,12 @@ TEST_F(CborShapeDeserializerTest, IntegerSmall) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "n");
-  EXPECT_EQ(d.ReadInteger(), 7);
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "n");
+  auto val = d.ReadInteger();
+  ASSERT_TRUE(val.has_value());
+  EXPECT_EQ(val.value(), 7);
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
@@ -77,8 +89,12 @@ TEST_F(CborShapeDeserializerTest, IntegerNegative) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "n");
-  EXPECT_EQ(d.ReadInteger(), -42);
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "n");
+  auto val = d.ReadInteger();
+  ASSERT_TRUE(val.has_value());
+  EXPECT_EQ(val.value(), -42);
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
@@ -94,8 +110,12 @@ TEST_F(CborShapeDeserializerTest, LongValue) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "big");
-  EXPECT_EQ(d.ReadLong(), 5000000000LL);
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "big");
+  auto val = d.ReadLong();
+  ASSERT_TRUE(val.has_value());
+  EXPECT_EQ(val.value(), 5000000000LL);
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
@@ -111,8 +131,12 @@ TEST_F(CborShapeDeserializerTest, DoubleValue) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "d");
-  EXPECT_DOUBLE_EQ(d.ReadDouble(), 3.14);
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "d");
+  auto val = d.ReadDouble();
+  ASSERT_TRUE(val.has_value());
+  EXPECT_DOUBLE_EQ(val.value(), 3.14);
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
@@ -129,8 +153,12 @@ TEST_F(CborShapeDeserializerTest, DoubleWholeNumber) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "d");
-  EXPECT_DOUBLE_EQ(d.ReadDouble(), 5.0);
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "d");
+  auto val = d.ReadDouble();
+  ASSERT_TRUE(val.has_value());
+  EXPECT_DOUBLE_EQ(val.value(), 5.0);
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
@@ -146,8 +174,12 @@ TEST_F(CborShapeDeserializerTest, FloatValue) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "f");
-  EXPECT_FLOAT_EQ(d.ReadFloat(), 1.5f);
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "f");
+  auto val = d.ReadFloat();
+  ASSERT_TRUE(val.has_value());
+  EXPECT_FLOAT_EQ(val.value(), 1.5f);
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
@@ -163,8 +195,12 @@ TEST_F(CborShapeDeserializerTest, StringValue) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "name");
-  EXPECT_EQ(d.ReadString(), "hello");
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "name");
+  auto val = d.ReadString();
+  ASSERT_TRUE(val.has_value());
+  EXPECT_EQ(val.value(), "hello");
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
@@ -173,7 +209,10 @@ TEST_F(CborShapeDeserializerTest, BlobValue) {
   CborShapeSerializer s;
   Schema root;
   Aws::Utils::ByteBuffer blob(4);
-  blob[0] = 0xDE; blob[1] = 0xAD; blob[2] = 0xBE; blob[3] = 0xEF;
+  blob[0] = 0xDE;
+  blob[1] = 0xAD;
+  blob[2] = 0xBE;
+  blob[3] = 0xEF;
   s.BeginStructure(root);
   s.WriteMapKey("data");
   s.WriteBlob(root, blob);
@@ -182,13 +221,16 @@ TEST_F(CborShapeDeserializerTest, BlobValue) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "data");
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "data");
   auto result = d.ReadBlob();
-  ASSERT_EQ(result.GetLength(), 4u);
-  EXPECT_EQ(result[0], 0xDE);
-  EXPECT_EQ(result[1], 0xAD);
-  EXPECT_EQ(result[2], 0xBE);
-  EXPECT_EQ(result[3], 0xEF);
+  ASSERT_TRUE(result.has_value());
+  ASSERT_EQ(result.value().GetLength(), 4u);
+  EXPECT_EQ(result.value()[0], 0xDE);
+  EXPECT_EQ(result.value()[1], 0xAD);
+  EXPECT_EQ(result.value()[2], 0xBE);
+  EXPECT_EQ(result.value()[3], 0xEF);
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
@@ -205,9 +247,12 @@ TEST_F(CborShapeDeserializerTest, TimestampValue) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "ts");
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "ts");
   auto result = d.ReadTimestamp();
-  EXPECT_EQ(result.Seconds(), 1234567890);
+  ASSERT_TRUE(result.has_value());
+  EXPECT_EQ(result.value().Seconds(), 1234567890);
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
@@ -223,7 +268,9 @@ TEST_F(CborShapeDeserializerTest, NullValue) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "item");
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "item");
   EXPECT_TRUE(d.IsNull());
   d.ReadNull();
   EXPECT_TRUE(d.IsBreak());
@@ -247,12 +294,20 @@ TEST_F(CborShapeDeserializerTest, ListOfIntegers) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "nums");
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "nums");
   size_t count = d.BeginList();
   EXPECT_EQ(count, 3u);
-  EXPECT_EQ(d.ReadInteger(), 10);
-  EXPECT_EQ(d.ReadInteger(), 20);
-  EXPECT_EQ(d.ReadInteger(), 30);
+  auto v1 = d.ReadInteger();
+  ASSERT_TRUE(v1.has_value());
+  EXPECT_EQ(v1.value(), 10);
+  auto v2 = d.ReadInteger();
+  ASSERT_TRUE(v2.has_value());
+  EXPECT_EQ(v2.value(), 20);
+  auto v3 = d.ReadInteger();
+  ASSERT_TRUE(v3.has_value());
+  EXPECT_EQ(v3.value(), 30);
   d.EndList();
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
@@ -274,13 +329,23 @@ TEST_F(CborShapeDeserializerTest, MapOfStrings) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "headers");
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "headers");
   size_t count = d.BeginMap();
   EXPECT_EQ(count, 2u);
-  EXPECT_EQ(d.ReadKey(), "foo");
-  EXPECT_EQ(d.ReadString(), "bar");
-  EXPECT_EQ(d.ReadKey(), "baz");
-  EXPECT_EQ(d.ReadString(), "qux");
+  auto k1 = d.ReadKey();
+  ASSERT_TRUE(k1.has_value());
+  EXPECT_EQ(k1.value(), "foo");
+  auto v1 = d.ReadString();
+  ASSERT_TRUE(v1.has_value());
+  EXPECT_EQ(v1.value(), "bar");
+  auto k2 = d.ReadKey();
+  ASSERT_TRUE(k2.has_value());
+  EXPECT_EQ(k2.value(), "baz");
+  auto v2 = d.ReadString();
+  ASSERT_TRUE(v2.has_value());
+  EXPECT_EQ(v2.value(), "qux");
   d.EndMap();
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
@@ -300,10 +365,16 @@ TEST_F(CborShapeDeserializerTest, NestedStructure) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "meta");
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "meta");
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "key");
-  EXPECT_EQ(d.ReadString(), "val");
+  auto innerKey = d.ReadKey();
+  ASSERT_TRUE(innerKey.has_value());
+  EXPECT_EQ(innerKey.value(), "key");
+  auto val = d.ReadString();
+  ASSERT_TRUE(val.has_value());
+  EXPECT_EQ(val.value(), "val");
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
   EXPECT_TRUE(d.IsBreak());
@@ -327,12 +398,22 @@ TEST_F(CborShapeDeserializerTest, SkipUnknownField) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "known");
-  EXPECT_EQ(d.ReadInteger(), 1);
-  EXPECT_EQ(d.ReadKey(), "unknown");
+  auto k1 = d.ReadKey();
+  ASSERT_TRUE(k1.has_value());
+  EXPECT_EQ(k1.value(), "known");
+  auto v1 = d.ReadInteger();
+  ASSERT_TRUE(v1.has_value());
+  EXPECT_EQ(v1.value(), 1);
+  auto k2 = d.ReadKey();
+  ASSERT_TRUE(k2.has_value());
+  EXPECT_EQ(k2.value(), "unknown");
   d.SkipValue();
-  EXPECT_EQ(d.ReadKey(), "also_known");
-  EXPECT_EQ(d.ReadInteger(), 2);
+  auto k3 = d.ReadKey();
+  ASSERT_TRUE(k3.has_value());
+  EXPECT_EQ(k3.value(), "also_known");
+  auto v3 = d.ReadInteger();
+  ASSERT_TRUE(v3.has_value());
+  EXPECT_EQ(v3.value(), 2);
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
@@ -355,10 +436,16 @@ TEST_F(CborShapeDeserializerTest, SkipNestedUnknown) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "unknown_struct");
+  auto k1 = d.ReadKey();
+  ASSERT_TRUE(k1.has_value());
+  EXPECT_EQ(k1.value(), "unknown_struct");
   d.SkipValue();
-  EXPECT_EQ(d.ReadKey(), "known");
-  EXPECT_EQ(d.ReadInteger(), 42);
+  auto k2 = d.ReadKey();
+  ASSERT_TRUE(k2.has_value());
+  EXPECT_EQ(k2.value(), "known");
+  auto val = d.ReadInteger();
+  ASSERT_TRUE(val.has_value());
+  EXPECT_EQ(val.value(), 42);
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
@@ -380,28 +467,38 @@ TEST_F(CborShapeDeserializerTest, MultipleScalars) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "a");
-  EXPECT_TRUE(d.ReadBoolean());
-  EXPECT_EQ(d.ReadKey(), "b");
-  EXPECT_EQ(d.ReadInteger(), 7);
-  EXPECT_EQ(d.ReadKey(), "c");
-  EXPECT_EQ(d.ReadString(), "x");
+  auto k1 = d.ReadKey();
+  ASSERT_TRUE(k1.has_value());
+  EXPECT_EQ(k1.value(), "a");
+  auto v1 = d.ReadBoolean();
+  ASSERT_TRUE(v1.has_value());
+  EXPECT_TRUE(v1.value());
+  auto k2 = d.ReadKey();
+  ASSERT_TRUE(k2.has_value());
+  EXPECT_EQ(k2.value(), "b");
+  auto v2 = d.ReadInteger();
+  ASSERT_TRUE(v2.has_value());
+  EXPECT_EQ(v2.value(), 7);
+  auto k3 = d.ReadKey();
+  ASSERT_TRUE(k3.has_value());
+  EXPECT_EQ(k3.value(), "c");
+  auto v3 = d.ReadString();
+  ASSERT_TRUE(v3.has_value());
+  EXPECT_EQ(v3.value(), "x");
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
 
-// --- Error handling ---
+// --- Error handling (Optional returns empty on failure) ---
 
-TEST_F(CborShapeDeserializerTest, ErrorOnEmptyPayload) {
+TEST_F(CborShapeDeserializerTest, EmptyOptionalOnEmptyPayload) {
   const unsigned char empty[1] = {0};
   CborShapeDeserializer d(empty, 0);
-  EXPECT_FALSE(d.HasError());
-  d.ReadBoolean();
-  EXPECT_TRUE(d.HasError());
-  EXPECT_NE(d.GetLastError(), 0);
+  auto val = d.ReadBoolean();
+  EXPECT_FALSE(val.has_value());
 }
 
-TEST_F(CborShapeDeserializerTest, ErrorOnTypeMismatch) {
+TEST_F(CborShapeDeserializerTest, EmptyOptionalOnTypeMismatch) {
   CborShapeSerializer s;
   Schema root;
   s.BeginStructure(root);
@@ -412,12 +509,14 @@ TEST_F(CborShapeDeserializerTest, ErrorOnTypeMismatch) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "val");
-  d.ReadInteger();
-  EXPECT_TRUE(d.HasError());
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "val");
+  auto val = d.ReadInteger();
+  EXPECT_FALSE(val.has_value());
 }
 
-TEST_F(CborShapeDeserializerTest, NoErrorOnValidPayload) {
+TEST_F(CborShapeDeserializerTest, ValidOptionalOnSuccess) {
   CborShapeSerializer s;
   Schema root;
   s.BeginStructure(root);
@@ -428,9 +527,12 @@ TEST_F(CborShapeDeserializerTest, NoErrorOnValidPayload) {
 
   CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
   d.BeginStruct();
-  EXPECT_EQ(d.ReadKey(), "n");
-  EXPECT_EQ(d.ReadInteger(), 42);
-  EXPECT_FALSE(d.HasError());
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "n");
+  auto val = d.ReadInteger();
+  ASSERT_TRUE(val.has_value());
+  EXPECT_EQ(val.value(), 42);
 }
 
 // --- BeginStruct returns size for definite-length maps ---
@@ -446,12 +548,19 @@ TEST_F(CborShapeDeserializerTest, BeginStructDefiniteLengthMap) {
   CborShapeDeserializer d(data, sizeof(data));
   size_t count = d.BeginStruct();
   EXPECT_EQ(count, 2u);
-  EXPECT_EQ(d.ReadKey(), "a");
-  EXPECT_EQ(d.ReadInteger(), 1);
-  EXPECT_EQ(d.ReadKey(), "b");
-  EXPECT_EQ(d.ReadInteger(), 2);
+  auto k1 = d.ReadKey();
+  ASSERT_TRUE(k1.has_value());
+  EXPECT_EQ(k1.value(), "a");
+  auto v1 = d.ReadInteger();
+  ASSERT_TRUE(v1.has_value());
+  EXPECT_EQ(v1.value(), 1);
+  auto k2 = d.ReadKey();
+  ASSERT_TRUE(k2.has_value());
+  EXPECT_EQ(k2.value(), "b");
+  auto v2 = d.ReadInteger();
+  ASSERT_TRUE(v2.has_value());
+  EXPECT_EQ(v2.value(), 2);
   d.EndStruct();
-  EXPECT_FALSE(d.HasError());
 }
 
 TEST_F(CborShapeDeserializerTest, BeginStructIndefiniteLengthMap) {
@@ -467,11 +576,14 @@ TEST_F(CborShapeDeserializerTest, BeginStructIndefiniteLengthMap) {
   size_t count = d.BeginStruct();
   EXPECT_EQ(count, 0u);
   EXPECT_FALSE(d.IsBreak());
-  EXPECT_EQ(d.ReadKey(), "x");
-  EXPECT_EQ(d.ReadInteger(), 99);
+  auto key = d.ReadKey();
+  ASSERT_TRUE(key.has_value());
+  EXPECT_EQ(key.value(), "x");
+  auto val = d.ReadInteger();
+  ASSERT_TRUE(val.has_value());
+  EXPECT_EQ(val.value(), 99);
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
-  EXPECT_FALSE(d.HasError());
 }
 
 // --- Timestamp handling ---
@@ -479,28 +591,44 @@ TEST_F(CborShapeDeserializerTest, BeginStructIndefiniteLengthMap) {
 TEST_F(CborShapeDeserializerTest, TimestampFromFloat) {
   // tag(1) followed by float64 1234567890.5
   // C1 = tag(1), FB = float64, 41D26580B4A00000 = IEEE 754 1234567890.5
-  const unsigned char data[] = {
-      0xC1, 0xFB, 0x41, 0xD2, 0x65, 0x80, 0xB4, 0xA0, 0x00, 0x00};
+  const unsigned char data[] = {0xC1, 0xFB, 0x41, 0xD2, 0x65, 0x80, 0xB4, 0xA0, 0x00, 0x00};
   CborShapeDeserializer d(data, sizeof(data));
   auto ts = d.ReadTimestamp();
-  EXPECT_FALSE(d.HasError());
-  EXPECT_DOUBLE_EQ(ts.SecondsWithMSPrecision(), 1234567890.5);
+  ASSERT_TRUE(ts.has_value());
+  EXPECT_DOUBLE_EQ(ts.value().SecondsWithMSPrecision(), 1234567890.5);
 }
 
-TEST_F(CborShapeDeserializerTest, TimestampNegativeIntSetsError) {
+TEST_F(CborShapeDeserializerTest, TimestampNegativeIntReturnsEmpty) {
   // tag(1) followed by negative int: C1 = tag(1), 20 = negint(0) meaning -1
   const unsigned char data[] = {0xC1, 0x20};
   CborShapeDeserializer d(data, sizeof(data));
-  d.ReadTimestamp();
-  EXPECT_TRUE(d.HasError());
+  auto ts = d.ReadTimestamp();
+  EXPECT_FALSE(ts.has_value());
 }
 
-TEST_F(CborShapeDeserializerTest, TimestampNegativeFloatSetsError) {
+TEST_F(CborShapeDeserializerTest, TimestampNegativeFloatReturnsEmpty) {
   // tag(1) followed by float64 -1.0
   // C1 = tag(1), FB = float64, BFF0000000000000 = IEEE 754 -1.0
-  const unsigned char data[] = {
-      0xC1, 0xFB, 0xBF, 0xF0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+  const unsigned char data[] = {0xC1, 0xFB, 0xBF, 0xF0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
   CborShapeDeserializer d(data, sizeof(data));
-  d.ReadTimestamp();
-  EXPECT_TRUE(d.HasError());
+  auto ts = d.ReadTimestamp();
+  EXPECT_FALSE(ts.has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, TimestampInvalidTagReturnsEmpty) {
+  // tag(2) followed by uint 100 — tag 2 is not epoch timestamp
+  // C2 = tag(2), 18 64 = uint(100)
+  const unsigned char data[] = {0xC2, 0x18, 0x64};
+  CborShapeDeserializer d(data, sizeof(data));
+  auto ts = d.ReadTimestamp();
+  EXPECT_FALSE(ts.has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, ReadKeyOnNonStringReturnsEmpty) {
+  // Raw uint 42 — not a text string
+  // 18 2A = uint(42)
+  const unsigned char data[] = {0x18, 0x2A};
+  CborShapeDeserializer d(data, sizeof(data));
+  auto key = d.ReadKey();
+  EXPECT_FALSE(key.has_value());
 }
