@@ -17,7 +17,6 @@
 #include <aws/s3/S3Errors.h>
 #include <aws/crt/s3/S3.h>
 #include <aws/crt/auth/Credentials.h>
-#include <aws/core/utils/threading/Executor.h>
 #include <atomic>
 #include <cstdint>
 #include <memory>
@@ -25,8 +24,6 @@
 namespace Aws {
 namespace S3 {
 namespace Transfer {
-
-constexpr size_t DEFAULT_EXECUTOR_POOL_SIZE = 8;
 
 // Precondition: Aws::InitAPI() must be called before construction.
 class AWS_CORE_LOCAL S3TransferManagerImpl final {
@@ -45,19 +42,17 @@ class AWS_CORE_LOCAL S3TransferManagerImpl final {
   S3TransferManagerImpl(S3TransferManagerImpl&&) = delete;
   S3TransferManagerImpl& operator=(S3TransferManagerImpl&&) = delete;
 
-  Aws::Crt::S3::S3Client& GetCrtClient() const { return *m_crtClient; }
-  Aws::S3::Endpoint::S3EndpointProviderBase& GetEndpointProvider() const { return *m_endpointProvider; }
+  const std::shared_ptr<Aws::Crt::S3::S3Client>& GetCrtClient() const { return m_crtClient; }
+  const std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase>& GetEndpointProvider() const { return m_endpointProvider; }
   const S3TransferManagerConfiguration& GetConfig() const { return m_config; }
   const std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>& GetCredentialsProvider() const {
     return m_credentialsProvider;
   }
-  bool IsCustomerSuppliedCrtClient() const { return m_customerSuppliedCrtClient; }
   // Ctor sets to false on any construction failure and stashes the specific reason in
   // m_initError. S3TransferManager::Create() inspects this to gate object handoff — a customer
   // never receives a borked S3TransferManager.
   bool IsInitialized() const { return m_isInitialized.load(); }
   const Aws::Client::AWSError<Aws::S3::S3Errors>& GetInitializationError() const { return m_initError; }
-  Aws::Utils::Threading::Executor& GetExecutor() const { return *m_executor; }
   const Aws::String& GetUserAgentString() const { return m_userAgent; }
 
  private:
@@ -65,10 +60,8 @@ class AWS_CORE_LOCAL S3TransferManagerImpl final {
   std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
   std::shared_ptr<Aws::S3::Endpoint::S3EndpointProviderBase> m_endpointProvider;
   std::shared_ptr<Aws::Crt::S3::S3Client> m_crtClient;
-  std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   std::atomic<bool> m_isInitialized{true};
   Aws::Client::AWSError<Aws::S3::S3Errors> m_initError;
-  bool m_customerSuppliedCrtClient = false;
   Aws::String m_userAgent;
 };
 

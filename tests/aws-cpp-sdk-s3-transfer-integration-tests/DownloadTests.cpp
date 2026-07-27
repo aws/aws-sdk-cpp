@@ -18,6 +18,8 @@
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
 
+#include <future>
+
 using namespace Aws::S3::Transfer;
 using namespace S3TransferIntegrationTests;
 
@@ -286,6 +288,45 @@ TEST_F(DownloadTests, DownloadWithByteRangeReturnsRangeSize) {
 
   AWS_ASSERT_SUCCESS(outcome);
   EXPECT_EQ(897u, FileSize(destPath));
+
+  Aws::FileSystem::RemoveFileIfExists(sourcePath.c_str());
+  Aws::FileSystem::RemoveFileIfExists(destPath.c_str());
+}
+
+// ============================================================================================
+// Handle lifetime — a future outlives the handle it came from
+// ============================================================================================
+
+// Dropping the handle mid-transfer must not strand the future: the in-flight CRT callbacks are the
+// only thing keeping the transfer state alive at that point, and if the state dies with the handle
+// the promise is destroyed unfulfilled and get() aborts the process (broken_promise cannot be thrown
+// under -fno-exceptions). Every other test holds its handle until the future resolves, so this is the
+// only coverage of that split. See the upload counterpart in UploadTests.cpp.
+TEST_F(DownloadTests, DownloadCompletesAfterHandleIsDestroyed) {
+  const uint64_t size = 25165824;  // multipart, so the transfer is still running when the handle dies
+  const Aws::String key = UniqueKey();
+  const Aws::String sourcePath = SeedObject(size, key);
+  const Aws::String sourceHash = FileSha256(sourcePath);
+  auto listener = Aws::MakeShared<RecordingDownloadListener>(ALLOCATION_TAG);
+
+  const Aws::String destPath = LocalTempPath("orphaned-handle-dest");
+  S3TransferManager manager(MakeConfig());
+
+  std::future<DownloadOutcome> future;
+  {
+    DownloadRequest request = MakeDownloadRequest(key, destPath, listener);
+    DownloadHandle handle = manager.Download(request);
+    future = handle.CompletionFuture();
+  }  // handle destroyed here, while the download is still in flight
+
+  ASSERT_TRUE(future.valid());
+  DownloadOutcome outcome = future.get();
+  AWS_ASSERT_SUCCESS(outcome);
+  EXPECT_EQ(size, FileSize(destPath));
+  EXPECT_EQ(sourceHash, FileSha256(destPath));
+  // The listener kept receiving events after the handle went away.
+  EXPECT_EQ(size, listener->maxTransferredBytes.load());
+  EXPECT_EQ(1u, listener->completeCount.load());
 
   Aws::FileSystem::RemoveFileIfExists(sourcePath.c_str());
   Aws::FileSystem::RemoveFileIfExists(destPath.c_str());

@@ -8,7 +8,6 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/threading/PooledThreadExecutor.h>
 
 namespace Aws {
 namespace S3 {
@@ -31,7 +30,18 @@ S3TransferManagerImpl::S3TransferManagerImpl(
 
   if (m_config.crtClient) {
     m_crtClient = m_config.crtClient;
-    m_customerSuppliedCrtClient = true;
+    // An already-built client cannot be reconfigured, so adopt its settings: endpoint resolution
+    // below must agree with the region it signs for. Zero means the client set nothing.
+    m_config.region = m_crtClient->GetRegion().c_str();
+    if (m_crtClient->GetPartSize() > 0) {
+      m_config.partSize = m_crtClient->GetPartSize();
+    }
+    if (m_crtClient->GetMultipartUploadThreshold() > 0) {
+      m_config.multipartUploadThreshold = m_crtClient->GetMultipartUploadThreshold();
+    }
+    if (m_crtClient->GetThroughputTargetGbps() > 0.0) {
+      m_config.throughputTargetGbps = m_crtClient->GetThroughputTargetGbps();
+    }
   } else {
     // Bridge the SDK credentials provider into a CRT provider via a delegate that fetches
     // credentials from the SDK side on demand; empty credentials become an anonymous CRT identity.
@@ -97,13 +107,6 @@ S3TransferManagerImpl::S3TransferManagerImpl(
   // base-class init path. Propagates region, dual-stack, FIPS, endpoint override, and every S3-
   // specific knob (useVirtualAddressing, useArnRegion, disableMultiRegionAccessPoints, etc.).
   m_endpointProvider->InitBuiltInParameters(m_config);
-
-  if (m_config.executor) {
-    m_executor = m_config.executor;
-  } else {
-    m_executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(S3_TRANSFER_LOG_TAG,
-                                                                              DEFAULT_EXECUTOR_POOL_SIZE);
-  }
 
   Aws::Client::UserAgent userAgent(m_config, "", "S3TransferManager");
   m_userAgent = userAgent.SerializeWithFeatures({Aws::Client::UserAgentFeature::S3_TRANSFER});

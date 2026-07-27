@@ -6,6 +6,7 @@
 
 #include <aws/s3-transfer/internal/TransferState.h>
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/crt/s3/S3.h>
 #include <future>
 #include <memory>
 
@@ -20,6 +21,9 @@ class AWS_CORE_LOCAL TransferHandleImpl {
 
   std::future<OutcomeT> future;
   std::shared_ptr<StateT> state;
+  // Set before the handle is handed out and never reassigned, so Cancel() needs no lock. Null when
+  // the transfer failed before a meta request existed.
+  std::shared_ptr<Aws::Crt::S3::S3MetaRequest> metaRequest;
 
   TransferHandleImpl() = default;
   TransferHandleImpl(const TransferHandleImpl&) = delete;

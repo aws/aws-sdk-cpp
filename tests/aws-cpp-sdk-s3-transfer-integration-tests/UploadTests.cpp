@@ -28,6 +28,8 @@
 #include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
 
+#include <future>
+
 using namespace Aws::S3::Transfer;
 using namespace S3TransferIntegrationTests;
 using Aws::Http::HttpResponseCode;
@@ -493,7 +495,13 @@ TEST_F(UploadTests, PutObjectChecksum) {
          r.SetChecksumAlgorithm(ChecksumAlgorithm::SHA512).SetChecksumSHA512("If he came back and wanted you?");
        },
        HttpResponseCode::BAD_REQUEST, "If he came back and wanted you?"},
-      {[](UploadRequest& r) { r.SetContentMD5("Just runnin' scared, feelin' low"); },
+      // Cases below declare a content length to stay on the single-object path. Without one the
+      // upload is multipart, where Content-MD5 never reaches S3 and a precomputed checksum is sent
+      // as a full-object checksum — which S3 only accepts for CRC algorithms.
+      {[](UploadRequest& r) {
+         r.SetContentMD5("Just runnin' scared, feelin' low")
+             .SetContentLength(Aws::String("Just runnin' scared, feelin' low").size());
+       },
        HttpResponseCode::BAD_REQUEST, "Just runnin' scared, feelin' low"},
       // Correct checksums → OK
       {[](UploadRequest& r) {
@@ -503,12 +511,14 @@ TEST_F(UploadTests, PutObjectChecksum) {
        HttpResponseCode::OK, "Runnin' scared, you love him so"},
       {[](UploadRequest& r) {
          r.SetChecksumAlgorithm(ChecksumAlgorithm::SHA1)
-             .SetChecksumSHA1(HashingUtils::Base64Encode(HashingUtils::CalculateSHA1("Just runnin' scared, afraid to lose")));
+             .SetChecksumSHA1(HashingUtils::Base64Encode(HashingUtils::CalculateSHA1("Just runnin' scared, afraid to lose")))
+             .SetContentLength(Aws::String("Just runnin' scared, afraid to lose").size());
        },
        HttpResponseCode::OK, "Just runnin' scared, afraid to lose"},
       {[](UploadRequest& r) {
          r.SetChecksumAlgorithm(ChecksumAlgorithm::SHA256)
-             .SetChecksumSHA256(HashingUtils::Base64Encode(HashingUtils::CalculateSHA256("If he came back, which one would you choose?")));
+             .SetChecksumSHA256(HashingUtils::Base64Encode(HashingUtils::CalculateSHA256("If he came back, which one would you choose?")))
+             .SetContentLength(Aws::String("If he came back, which one would you choose?").size());
        },
        HttpResponseCode::OK, "If he came back, which one would you choose?"},
       {[](UploadRequest& r) {
@@ -517,12 +527,14 @@ TEST_F(UploadTests, PutObjectChecksum) {
        },
        HttpResponseCode::OK, "Then all at once he was standing there"},
       {[](UploadRequest& r) {
-         r.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5("So sure of himself, his head in the air")));
+         r.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5("So sure of himself, his head in the air")))
+             .SetContentLength(Aws::String("So sure of himself, his head in the air").size());
        },
        HttpResponseCode::OK, "So sure of himself, his head in the air"},
       {[](UploadRequest& r) {
          r.SetChecksumAlgorithm(ChecksumAlgorithm::SHA512)
-             .SetChecksumSHA512(HashingUtils::Base64Encode(HashingUtils::CalculateSHA512("If he came back, which one would you choose?")));
+             .SetChecksumSHA512(HashingUtils::Base64Encode(HashingUtils::CalculateSHA512("If he came back, which one would you choose?")))
+             .SetContentLength(Aws::String("If he came back, which one would you choose?").size());
        },
        HttpResponseCode::OK, "If he came back, which one would you choose?"},
       // Algorithm-only → SDK computes → OK
@@ -644,6 +656,56 @@ TEST_F(UploadTests, BigFileUploadDownloadRoundTrip) {
 
   Aws::FileSystem::RemoveFileIfExists(sourcePath.c_str());
   Aws::FileSystem::RemoveFileIfExists(destPath.c_str());
+}
+
+// ============================================================================================
+// Handle lifetime — a future outlives the handle it came from
+// ============================================================================================
+
+// Dropping the handle mid-transfer must not strand the future: the in-flight CRT callbacks are the
+// only thing keeping the transfer state alive at that point, and if the state dies with the handle
+// the promise is destroyed unfulfilled and get() aborts the process (broken_promise cannot be thrown
+// under -fno-exceptions). Every other test holds its handle until the future resolves, so this is the
+// only coverage of that split. See the download counterpart in DownloadTests.cpp.
+TEST_F(UploadTests, UploadCompletesAfterHandleIsDestroyed) {
+  const uint64_t size = 25165824;  // multipart, so the transfer is still running when the handle dies
+  const Aws::String key = UniqueKey();
+  const Aws::String sourcePath = MakeLocalFileOfSize(size, "upload-orphaned-handle");
+  const Aws::String sourceHash = FileSha256(sourcePath);
+  auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
+
+  S3TransferManager manager(MakeConfig());
+
+  std::future<UploadOutcome> future;
+  {
+    UploadRequest request(s_bucketName, key, sourcePath, {listener});
+    UploadHandle handle = manager.Upload(request);
+    future = handle.CompletionFuture();
+  }  // handle destroyed here, while the upload is still in flight
+
+  ASSERT_TRUE(future.valid());
+  UploadOutcome outcome = future.get();
+  AWS_ASSERT_SUCCESS(outcome);
+  EXPECT_TRUE(ObjectExists(key));
+  // The listener kept receiving events after the handle went away.
+  EXPECT_EQ(size, listener->maxTransferredBytes.load());
+  EXPECT_EQ(1u, listener->completeCount.load());
+
+  // Read back through plain S3 rather than TM, so this stays an upload test.
+  const Aws::String verifyPath = LocalTempPath("orphaned-handle-verify");
+  Aws::S3::Model::GetObjectRequest getRequest;
+  getRequest.SetBucket(s_bucketName);
+  getRequest.SetKey(key);
+  getRequest.SetResponseStreamFactory([verifyPath]() {
+    return Aws::New<Aws::FStream>(ALLOCATION_TAG, verifyPath.c_str(),
+                                  std::ios_base::out | std::ios_base::binary | std::ios_base::trunc);
+  });
+  auto getOutcome = s_s3Client->GetObject(getRequest);
+  AWS_ASSERT_SUCCESS(getOutcome);
+  EXPECT_EQ(sourceHash, FileSha256(verifyPath));
+
+  Aws::FileSystem::RemoveFileIfExists(sourcePath.c_str());
+  Aws::FileSystem::RemoveFileIfExists(verifyPath.c_str());
 }
 
 }  // namespace

@@ -36,9 +36,10 @@ std::future<DownloadOutcome> DownloadHandle::CompletionFuture() {
 // Precondition: this handle has not been moved from.
 void DownloadHandle::Cancel() {
   AWS_CHECK_PTR(DOWNLOAD_HANDLE_LOG_TAG, m_impl);
-  AWS_CHECK_PTR(DOWNLOAD_HANDLE_LOG_TAG, m_impl->state);
-  m_impl->state->canceled.store(true);
-  m_impl->state->CancelMetaRequest();
+  // Null when the transfer already failed before dispatch; the promise carries that failure.
+  if (m_impl->metaRequest) {
+    m_impl->metaRequest->Cancel();
+  }
 }
 
 }  // namespace Transfer

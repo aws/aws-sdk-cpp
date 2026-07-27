@@ -267,8 +267,8 @@ TEST_F(StreamTests, NonSeekableStreamUploadWithExplicitContentLength) {
   auto listener = Aws::MakeShared<RecordingUploadListener>(ALLOCATION_TAG);
   UploadRequest request(s_bucketName, key, stream, {listener});
   request.SetContentLength(size);
-  ASSERT_TRUE(request.ContentLengthHasBeenSet());
-  ASSERT_EQ(size, request.GetContentLength());
+  ASSERT_TRUE(request.GetContentLength().has_value());
+  ASSERT_EQ(size, *request.GetContentLength());
 
   S3TransferManager manager(MakeConfig());
   UploadOutcome outcome = manager.Upload(request).CompletionFuture().get();
