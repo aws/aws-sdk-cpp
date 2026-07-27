@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/s3vectors/S3VectorsEndpointRules.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_S3VECTORS_API S3VectorsEndpointProvider : public S3VectorsDefaultEpPro
  public:
   using S3VectorsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  S3VectorsEndpointProvider()
-      : S3VectorsDefaultEpProviderBase(Aws::S3Vectors::S3VectorsEndpointRules::GetRulesBlob(),
-                                       Aws::S3Vectors::S3VectorsEndpointRules::RulesBlobSize) {}
+  S3VectorsEndpointProvider();
 
   ~S3VectorsEndpointProvider() {}
 };

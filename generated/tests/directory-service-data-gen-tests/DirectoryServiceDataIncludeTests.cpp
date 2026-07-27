@@ -8,12 +8,12 @@
 
 #include <aws/directory-service-data/DirectoryServiceDataClient.h>
 #include <aws/directory-service-data/DirectoryServiceDataEndpointProvider.h>
-#include <aws/directory-service-data/DirectoryServiceDataEndpointRules.h>
 #include <aws/directory-service-data/DirectoryServiceDataErrorMarshaller.h>
 #include <aws/directory-service-data/DirectoryServiceDataErrors.h>
 #include <aws/directory-service-data/DirectoryServiceDataRequest.h>
 #include <aws/directory-service-data/DirectoryServiceDataServiceClientModel.h>
 #include <aws/directory-service-data/DirectoryServiceData_EXPORTS.h>
+#include <aws/directory-service-data/internal/DirectoryServiceDataEndpointRules.h>
 #include <aws/directory-service-data/model/AccessDeniedException.h>
 #include <aws/directory-service-data/model/AccessDeniedReason.h>
 #include <aws/directory-service-data/model/AddGroupMemberRequest.h>

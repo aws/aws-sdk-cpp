@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/macie2/Macie2EndpointRules.h>
+#include <aws/macie2/internal/Macie2EndpointRules.h>
 
 namespace Aws {
 namespace Macie2 {

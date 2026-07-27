@@ -8,12 +8,12 @@
 
 #include <aws/marketplace-catalog/MarketplaceCatalogClient.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogEndpointProvider.h>
-#include <aws/marketplace-catalog/MarketplaceCatalogEndpointRules.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogErrorMarshaller.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogErrors.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogRequest.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogServiceClientModel.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
+#include <aws/marketplace-catalog/internal/MarketplaceCatalogEndpointRules.h>
 #include <aws/marketplace-catalog/model/AmiProductEntityIdFilter.h>
 #include <aws/marketplace-catalog/model/AmiProductFilters.h>
 #include <aws/marketplace-catalog/model/AmiProductLastModifiedDateFilter.h>

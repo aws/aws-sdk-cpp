@@ -5,7 +5,6 @@
 
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntimeClientConfiguration.h>
-#include <aws/bedrock-runtime/BedrockRuntimeEndpointRules.h>
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
@@ -65,9 +64,7 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeEndpointProvider : public BedrockRunt
  public:
   using BedrockRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BedrockRuntimeEndpointProvider()
-      : BedrockRuntimeDefaultEpProviderBase(Aws::BedrockRuntime::BedrockRuntimeEndpointRules::GetRulesBlob(),
-                                            Aws::BedrockRuntime::BedrockRuntimeEndpointRules::RulesBlobSize) {}
+  BedrockRuntimeEndpointProvider();
 
   ~BedrockRuntimeEndpointProvider() {}
 };

@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/awstransfer/TransferEndpointRules.h>
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_TRANSFER_API TransferEndpointProvider : public TransferDefaultEpProvid
  public:
   using TransferResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  TransferEndpointProvider()
-      : TransferDefaultEpProviderBase(Aws::Transfer::TransferEndpointRules::GetRulesBlob(),
-                                      Aws::Transfer::TransferEndpointRules::RulesBlobSize) {}
+  TransferEndpointProvider();
 
   ~TransferEndpointProvider() {}
 };

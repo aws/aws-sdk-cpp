@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/mediapackage-vod/MediaPackageVodEndpointRules.h>
+#include <aws/mediapackage-vod/internal/MediaPackageVodEndpointRules.h>
 
 namespace Aws {
 namespace MediaPackageVod {

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/resource-groups/ResourceGroupsEndpointRules.h>
+#include <aws/resource-groups/internal/ResourceGroupsEndpointRules.h>
 
 namespace Aws {
 namespace ResourceGroups {

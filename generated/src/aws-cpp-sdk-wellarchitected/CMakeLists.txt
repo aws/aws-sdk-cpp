@@ -8,6 +8,10 @@ file(GLOB AWS_WELLARCHITECTED_MODEL_HEADERS
     "include/aws/wellarchitected/model/*.h"
 )
 
+file(GLOB AWS_WELLARCHITECTED_INTERNAL_HEADERS
+    "include/aws/wellarchitected/internal/*.h"
+)
+
 file(GLOB AWS_WELLARCHITECTED_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_WELLARCHITECTED_MODEL_SOURCE
 
 file(GLOB WELLARCHITECTED_UNIFIED_HEADERS
     ${AWS_WELLARCHITECTED_HEADERS}
+    ${AWS_WELLARCHITECTED_INTERNAL_HEADERS}
     ${AWS_WELLARCHITECTED_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\wellarchitected" FILES ${AWS_WELLARCHITECTED_HEADERS})
+        source_group("Header Files\\aws\\wellarchitected\\internal" FILES ${AWS_WELLARCHITECTED_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\wellarchitected\\model" FILES ${AWS_WELLARCHITECTED_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_WELLARCHITECTED_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_WELLARCHITECTED_MODEL_SOURCE})

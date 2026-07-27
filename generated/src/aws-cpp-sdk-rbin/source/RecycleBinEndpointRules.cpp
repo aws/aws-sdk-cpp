@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/rbin/RecycleBinEndpointRules.h>
+#include <aws/rbin/internal/RecycleBinEndpointRules.h>
 
 namespace Aws {
 namespace RecycleBin {

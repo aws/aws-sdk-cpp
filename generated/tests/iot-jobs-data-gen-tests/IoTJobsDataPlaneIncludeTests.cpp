@@ -8,12 +8,12 @@
 
 #include <aws/iot-jobs-data/IoTJobsDataPlaneClient.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneEndpointProvider.h>
-#include <aws/iot-jobs-data/IoTJobsDataPlaneEndpointRules.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneErrorMarshaller.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneErrors.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneRequest.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneServiceClientModel.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
+#include <aws/iot-jobs-data/internal/IoTJobsDataPlaneEndpointRules.h>
 #include <aws/iot-jobs-data/model/CommandParameterValue.h>
 #include <aws/iot-jobs-data/model/ConflictException.h>
 #include <aws/iot-jobs-data/model/DescribeJobExecutionRequest.h>

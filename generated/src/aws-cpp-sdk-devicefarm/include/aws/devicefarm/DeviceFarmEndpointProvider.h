@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/devicefarm/DeviceFarmEndpointRules.h>
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_DEVICEFARM_API DeviceFarmEndpointProvider : public DeviceFarmDefaultEp
  public:
   using DeviceFarmResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DeviceFarmEndpointProvider()
-      : DeviceFarmDefaultEpProviderBase(Aws::DeviceFarm::DeviceFarmEndpointRules::GetRulesBlob(),
-                                        Aws::DeviceFarm::DeviceFarmEndpointRules::RulesBlobSize) {}
+  DeviceFarmEndpointProvider();
 
   ~DeviceFarmEndpointProvider() {}
 };

@@ -8,6 +8,10 @@ file(GLOB AWS_NOTIFICATIONS_MODEL_HEADERS
     "include/aws/notifications/model/*.h"
 )
 
+file(GLOB AWS_NOTIFICATIONS_INTERNAL_HEADERS
+    "include/aws/notifications/internal/*.h"
+)
+
 file(GLOB AWS_NOTIFICATIONS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_NOTIFICATIONS_MODEL_SOURCE
 
 file(GLOB NOTIFICATIONS_UNIFIED_HEADERS
     ${AWS_NOTIFICATIONS_HEADERS}
+    ${AWS_NOTIFICATIONS_INTERNAL_HEADERS}
     ${AWS_NOTIFICATIONS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\notifications" FILES ${AWS_NOTIFICATIONS_HEADERS})
+        source_group("Header Files\\aws\\notifications\\internal" FILES ${AWS_NOTIFICATIONS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\notifications\\model" FILES ${AWS_NOTIFICATIONS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_NOTIFICATIONS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_NOTIFICATIONS_MODEL_SOURCE})

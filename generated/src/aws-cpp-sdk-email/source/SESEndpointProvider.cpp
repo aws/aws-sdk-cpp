@@ -4,9 +4,14 @@
  */
 
 #include <aws/email/SESEndpointProvider.h>
+#include <aws/email/internal/SESEndpointRules.h>
 
 namespace Aws {
 namespace SES {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SESEndpointProvider::SESEndpointProvider()
+    : SESDefaultEpProviderBase(Aws::SES::SESEndpointRules::GetRulesBlob(), Aws::SES::SESEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SES
 }  // namespace Aws

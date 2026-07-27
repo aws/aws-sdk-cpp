@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/cloudformation/CloudFormationEndpointRules.h>
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CLOUDFORMATION_API CloudFormationEndpointProvider : public CloudFormat
  public:
   using CloudFormationResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CloudFormationEndpointProvider()
-      : CloudFormationDefaultEpProviderBase(Aws::CloudFormation::CloudFormationEndpointRules::GetRulesBlob(),
-                                            Aws::CloudFormation::CloudFormationEndpointRules::RulesBlobSize) {}
+  CloudFormationEndpointProvider();
 
   ~CloudFormationEndpointProvider() {}
 };

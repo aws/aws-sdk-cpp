@@ -8,12 +8,12 @@
 
 #include <aws/securityagent/SecurityAgentClient.h>
 #include <aws/securityagent/SecurityAgentEndpointProvider.h>
-#include <aws/securityagent/SecurityAgentEndpointRules.h>
 #include <aws/securityagent/SecurityAgentErrorMarshaller.h>
 #include <aws/securityagent/SecurityAgentErrors.h>
 #include <aws/securityagent/SecurityAgentRequest.h>
 #include <aws/securityagent/SecurityAgentServiceClientModel.h>
 #include <aws/securityagent/SecurityAgent_EXPORTS.h>
+#include <aws/securityagent/internal/SecurityAgentEndpointRules.h>
 #include <aws/securityagent/model/AWSResources.h>
 #include <aws/securityagent/model/AccessType.h>
 #include <aws/securityagent/model/Actor.h>

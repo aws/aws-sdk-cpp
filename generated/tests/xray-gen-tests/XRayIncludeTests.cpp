@@ -8,12 +8,12 @@
 
 #include <aws/xray/XRayClient.h>
 #include <aws/xray/XRayEndpointProvider.h>
-#include <aws/xray/XRayEndpointRules.h>
 #include <aws/xray/XRayErrorMarshaller.h>
 #include <aws/xray/XRayErrors.h>
 #include <aws/xray/XRayRequest.h>
 #include <aws/xray/XRayServiceClientModel.h>
 #include <aws/xray/XRay_EXPORTS.h>
+#include <aws/xray/internal/XRayEndpointRules.h>
 #include <aws/xray/model/Alias.h>
 #include <aws/xray/model/AnnotationValue.h>
 #include <aws/xray/model/AnomalousService.h>

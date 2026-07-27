@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/keyspacesstreams/KeyspacesStreamsEndpointRules.h>
+#include <aws/keyspacesstreams/internal/KeyspacesStreamsEndpointRules.h>
 
 namespace Aws {
 namespace KeyspacesStreams {

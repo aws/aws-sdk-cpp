@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/pricing/PricingEndpointRules.h>
 #include <aws/pricing/Pricing_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_PRICING_API PricingEndpointProvider : public PricingDefaultEpProviderB
  public:
   using PricingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PricingEndpointProvider()
-      : PricingDefaultEpProviderBase(Aws::Pricing::PricingEndpointRules::GetRulesBlob(),
-                                     Aws::Pricing::PricingEndpointRules::RulesBlobSize) {}
+  PricingEndpointProvider();
 
   ~PricingEndpointProvider() {}
 };

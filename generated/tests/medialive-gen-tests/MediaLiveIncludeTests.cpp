@@ -8,12 +8,12 @@
 
 #include <aws/medialive/MediaLiveClient.h>
 #include <aws/medialive/MediaLiveEndpointProvider.h>
-#include <aws/medialive/MediaLiveEndpointRules.h>
 #include <aws/medialive/MediaLiveErrorMarshaller.h>
 #include <aws/medialive/MediaLiveErrors.h>
 #include <aws/medialive/MediaLiveRequest.h>
 #include <aws/medialive/MediaLiveServiceClientModel.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/internal/MediaLiveEndpointRules.h>
 #include <aws/medialive/model/AacCodingMode.h>
 #include <aws/medialive/model/AacInputType.h>
 #include <aws/medialive/model/AacProfile.h>

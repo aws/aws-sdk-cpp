@@ -8,6 +8,10 @@ file(GLOB AWS_LAUNCH-WIZARD_MODEL_HEADERS
     "include/aws/launch-wizard/model/*.h"
 )
 
+file(GLOB AWS_LAUNCH-WIZARD_INTERNAL_HEADERS
+    "include/aws/launch-wizard/internal/*.h"
+)
+
 file(GLOB AWS_LAUNCH-WIZARD_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_LAUNCH-WIZARD_MODEL_SOURCE
 
 file(GLOB LAUNCH-WIZARD_UNIFIED_HEADERS
     ${AWS_LAUNCH-WIZARD_HEADERS}
+    ${AWS_LAUNCH-WIZARD_INTERNAL_HEADERS}
     ${AWS_LAUNCH-WIZARD_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\launch-wizard" FILES ${AWS_LAUNCH-WIZARD_HEADERS})
+        source_group("Header Files\\aws\\launch-wizard\\internal" FILES ${AWS_LAUNCH-WIZARD_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\launch-wizard\\model" FILES ${AWS_LAUNCH-WIZARD_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_LAUNCH-WIZARD_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_LAUNCH-WIZARD_MODEL_SOURCE})

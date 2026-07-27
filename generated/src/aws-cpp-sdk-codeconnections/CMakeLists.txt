@@ -8,6 +8,10 @@ file(GLOB AWS_CODECONNECTIONS_MODEL_HEADERS
     "include/aws/codeconnections/model/*.h"
 )
 
+file(GLOB AWS_CODECONNECTIONS_INTERNAL_HEADERS
+    "include/aws/codeconnections/internal/*.h"
+)
+
 file(GLOB AWS_CODECONNECTIONS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CODECONNECTIONS_MODEL_SOURCE
 
 file(GLOB CODECONNECTIONS_UNIFIED_HEADERS
     ${AWS_CODECONNECTIONS_HEADERS}
+    ${AWS_CODECONNECTIONS_INTERNAL_HEADERS}
     ${AWS_CODECONNECTIONS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\codeconnections" FILES ${AWS_CODECONNECTIONS_HEADERS})
+        source_group("Header Files\\aws\\codeconnections\\internal" FILES ${AWS_CODECONNECTIONS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\codeconnections\\model" FILES ${AWS_CODECONNECTIONS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CODECONNECTIONS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CODECONNECTIONS_MODEL_SOURCE})

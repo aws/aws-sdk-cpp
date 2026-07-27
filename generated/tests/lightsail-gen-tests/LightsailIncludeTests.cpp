@@ -8,12 +8,12 @@
 
 #include <aws/lightsail/LightsailClient.h>
 #include <aws/lightsail/LightsailEndpointProvider.h>
-#include <aws/lightsail/LightsailEndpointRules.h>
 #include <aws/lightsail/LightsailErrorMarshaller.h>
 #include <aws/lightsail/LightsailErrors.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/lightsail/LightsailServiceClientModel.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
+#include <aws/lightsail/internal/LightsailEndpointRules.h>
 #include <aws/lightsail/model/AccessDeniedException.h>
 #include <aws/lightsail/model/AccessDirection.h>
 #include <aws/lightsail/model/AccessKey.h>

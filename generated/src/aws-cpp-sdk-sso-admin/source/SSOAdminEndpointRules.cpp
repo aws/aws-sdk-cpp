@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sso-admin/SSOAdminEndpointRules.h>
+#include <aws/sso-admin/internal/SSOAdminEndpointRules.h>
 
 namespace Aws {
 namespace SSOAdmin {

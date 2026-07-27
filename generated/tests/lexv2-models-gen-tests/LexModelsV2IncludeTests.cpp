@@ -8,12 +8,12 @@
 
 #include <aws/lexv2-models/LexModelsV2Client.h>
 #include <aws/lexv2-models/LexModelsV2EndpointProvider.h>
-#include <aws/lexv2-models/LexModelsV2EndpointRules.h>
 #include <aws/lexv2-models/LexModelsV2ErrorMarshaller.h>
 #include <aws/lexv2-models/LexModelsV2Errors.h>
 #include <aws/lexv2-models/LexModelsV2Request.h>
 #include <aws/lexv2-models/LexModelsV2ServiceClientModel.h>
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
+#include <aws/lexv2-models/internal/LexModelsV2EndpointRules.h>
 #include <aws/lexv2-models/model/ActiveContext.h>
 #include <aws/lexv2-models/model/AdvancedRecognitionSetting.h>
 #include <aws/lexv2-models/model/AgentTurnResult.h>

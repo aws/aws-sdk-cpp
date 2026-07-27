@@ -4,9 +4,15 @@
  */
 
 #include <aws/artifact/ArtifactEndpointProvider.h>
+#include <aws/artifact/internal/ArtifactEndpointRules.h>
 
 namespace Aws {
 namespace Artifact {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ArtifactEndpointProvider::ArtifactEndpointProvider()
+    : ArtifactDefaultEpProviderBase(Aws::Artifact::ArtifactEndpointRules::GetRulesBlob(),
+                                    Aws::Artifact::ArtifactEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Artifact
 }  // namespace Aws

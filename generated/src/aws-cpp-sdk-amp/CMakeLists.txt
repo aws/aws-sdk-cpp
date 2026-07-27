@@ -8,6 +8,10 @@ file(GLOB AWS_AMP_MODEL_HEADERS
     "include/aws/amp/model/*.h"
 )
 
+file(GLOB AWS_AMP_INTERNAL_HEADERS
+    "include/aws/amp/internal/*.h"
+)
+
 file(GLOB AWS_AMP_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_AMP_MODEL_SOURCE
 
 file(GLOB AMP_UNIFIED_HEADERS
     ${AWS_AMP_HEADERS}
+    ${AWS_AMP_INTERNAL_HEADERS}
     ${AWS_AMP_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\amp" FILES ${AWS_AMP_HEADERS})
+        source_group("Header Files\\aws\\amp\\internal" FILES ${AWS_AMP_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\amp\\model" FILES ${AWS_AMP_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_AMP_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_AMP_MODEL_SOURCE})

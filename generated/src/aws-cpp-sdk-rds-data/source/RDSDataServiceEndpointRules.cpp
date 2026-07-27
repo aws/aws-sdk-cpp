@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/rds-data/RDSDataServiceEndpointRules.h>
+#include <aws/rds-data/internal/RDSDataServiceEndpointRules.h>
 
 namespace Aws {
 namespace RDSDataService {

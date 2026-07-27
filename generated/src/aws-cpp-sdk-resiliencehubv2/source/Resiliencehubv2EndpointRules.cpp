@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/resiliencehubv2/Resiliencehubv2EndpointRules.h>
+#include <aws/resiliencehubv2/internal/Resiliencehubv2EndpointRules.h>
 
 namespace Aws {
 namespace resiliencehubv2 {

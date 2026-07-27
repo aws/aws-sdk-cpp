@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/securitylake/SecurityLakeEndpointRules.h>
 #include <aws/securitylake/SecurityLake_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SECURITYLAKE_API SecurityLakeEndpointProvider : public SecurityLakeDef
  public:
   using SecurityLakeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SecurityLakeEndpointProvider()
-      : SecurityLakeDefaultEpProviderBase(Aws::SecurityLake::SecurityLakeEndpointRules::GetRulesBlob(),
-                                          Aws::SecurityLake::SecurityLakeEndpointRules::RulesBlobSize) {}
+  SecurityLakeEndpointProvider();
 
   ~SecurityLakeEndpointProvider() {}
 };

@@ -8,6 +8,10 @@ file(GLOB AWS_INSPECTOR-SCAN_MODEL_HEADERS
     "include/aws/inspector-scan/model/*.h"
 )
 
+file(GLOB AWS_INSPECTOR-SCAN_INTERNAL_HEADERS
+    "include/aws/inspector-scan/internal/*.h"
+)
+
 file(GLOB AWS_INSPECTOR-SCAN_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_INSPECTOR-SCAN_MODEL_SOURCE
 
 file(GLOB INSPECTOR-SCAN_UNIFIED_HEADERS
     ${AWS_INSPECTOR-SCAN_HEADERS}
+    ${AWS_INSPECTOR-SCAN_INTERNAL_HEADERS}
     ${AWS_INSPECTOR-SCAN_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\inspector-scan" FILES ${AWS_INSPECTOR-SCAN_HEADERS})
+        source_group("Header Files\\aws\\inspector-scan\\internal" FILES ${AWS_INSPECTOR-SCAN_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\inspector-scan\\model" FILES ${AWS_INSPECTOR-SCAN_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_INSPECTOR-SCAN_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_INSPECTOR-SCAN_MODEL_SOURCE})

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/personalize-events/PersonalizeEventsEndpointRules.h>
 #include <aws/personalize-events/PersonalizeEvents_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_PERSONALIZEEVENTS_API PersonalizeEventsEndpointProvider : public Perso
  public:
   using PersonalizeEventsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PersonalizeEventsEndpointProvider()
-      : PersonalizeEventsDefaultEpProviderBase(Aws::PersonalizeEvents::PersonalizeEventsEndpointRules::GetRulesBlob(),
-                                               Aws::PersonalizeEvents::PersonalizeEventsEndpointRules::RulesBlobSize) {}
+  PersonalizeEventsEndpointProvider();
 
   ~PersonalizeEventsEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/appsync/AppSyncClient.h>
 #include <aws/appsync/AppSyncEndpointProvider.h>
-#include <aws/appsync/AppSyncEndpointRules.h>
 #include <aws/appsync/AppSyncErrorMarshaller.h>
 #include <aws/appsync/AppSyncErrors.h>
 #include <aws/appsync/AppSyncRequest.h>
 #include <aws/appsync/AppSyncServiceClientModel.h>
 #include <aws/appsync/AppSync_EXPORTS.h>
+#include <aws/appsync/internal/AppSyncEndpointRules.h>
 #include <aws/appsync/model/AdditionalAuthenticationProvider.h>
 #include <aws/appsync/model/Api.h>
 #include <aws/appsync/model/ApiAssociation.h>

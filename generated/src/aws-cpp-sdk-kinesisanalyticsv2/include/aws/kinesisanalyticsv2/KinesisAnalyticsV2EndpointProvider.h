@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2EndpointRules.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2EndpointProvider : public Kin
  public:
   using KinesisAnalyticsV2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  KinesisAnalyticsV2EndpointProvider()
-      : KinesisAnalyticsV2DefaultEpProviderBase(Aws::KinesisAnalyticsV2::KinesisAnalyticsV2EndpointRules::GetRulesBlob(),
-                                                Aws::KinesisAnalyticsV2::KinesisAnalyticsV2EndpointRules::RulesBlobSize) {}
+  KinesisAnalyticsV2EndpointProvider();
 
   ~KinesisAnalyticsV2EndpointProvider() {}
 };

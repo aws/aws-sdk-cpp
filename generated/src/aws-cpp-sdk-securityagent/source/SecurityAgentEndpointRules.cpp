@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/securityagent/SecurityAgentEndpointRules.h>
+#include <aws/securityagent/internal/SecurityAgentEndpointRules.h>
 
 namespace Aws {
 namespace SecurityAgent {

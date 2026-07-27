@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cloudsearchdomain/CloudSearchDomainEndpointRules.h>
+#include <aws/cloudsearchdomain/internal/CloudSearchDomainEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/marketplace-reporting/MarketplaceReportingEndpointRules.h>
 #include <aws/marketplace-reporting/MarketplaceReporting_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_MARKETPLACEREPORTING_API MarketplaceReportingEndpointProvider : public
  public:
   using MarketplaceReportingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MarketplaceReportingEndpointProvider()
-      : MarketplaceReportingDefaultEpProviderBase(Aws::MarketplaceReporting::MarketplaceReportingEndpointRules::GetRulesBlob(),
-                                                  Aws::MarketplaceReporting::MarketplaceReportingEndpointRules::RulesBlobSize) {}
+  MarketplaceReportingEndpointProvider();
 
   ~MarketplaceReportingEndpointProvider() {}
 };

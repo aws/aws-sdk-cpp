@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/cloudhsmv2/CloudHSMV2EndpointRules.h>
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CLOUDHSMV2_API CloudHSMV2EndpointProvider : public CloudHSMV2DefaultEp
  public:
   using CloudHSMV2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CloudHSMV2EndpointProvider()
-      : CloudHSMV2DefaultEpProviderBase(Aws::CloudHSMV2::CloudHSMV2EndpointRules::GetRulesBlob(),
-                                        Aws::CloudHSMV2::CloudHSMV2EndpointRules::RulesBlobSize) {}
+  CloudHSMV2EndpointProvider();
 
   ~CloudHSMV2EndpointProvider() {}
 };

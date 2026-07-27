@@ -8,12 +8,12 @@
 
 #include <aws/entityresolution/EntityResolutionClient.h>
 #include <aws/entityresolution/EntityResolutionEndpointProvider.h>
-#include <aws/entityresolution/EntityResolutionEndpointRules.h>
 #include <aws/entityresolution/EntityResolutionErrorMarshaller.h>
 #include <aws/entityresolution/EntityResolutionErrors.h>
 #include <aws/entityresolution/EntityResolutionRequest.h>
 #include <aws/entityresolution/EntityResolutionServiceClientModel.h>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
+#include <aws/entityresolution/internal/EntityResolutionEndpointRules.h>
 #include <aws/entityresolution/model/AddPolicyStatementRequest.h>
 #include <aws/entityresolution/model/AddPolicyStatementResult.h>
 #include <aws/entityresolution/model/AttributeMatchingModel.h>

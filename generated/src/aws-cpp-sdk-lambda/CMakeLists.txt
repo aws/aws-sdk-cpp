@@ -8,6 +8,10 @@ file(GLOB AWS_LAMBDA_MODEL_HEADERS
     "include/aws/lambda/model/*.h"
 )
 
+file(GLOB AWS_LAMBDA_INTERNAL_HEADERS
+    "include/aws/lambda/internal/*.h"
+)
+
 file(GLOB AWS_LAMBDA_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_LAMBDA_MODEL_SOURCE
 
 file(GLOB LAMBDA_UNIFIED_HEADERS
     ${AWS_LAMBDA_HEADERS}
+    ${AWS_LAMBDA_INTERNAL_HEADERS}
     ${AWS_LAMBDA_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\lambda" FILES ${AWS_LAMBDA_HEADERS})
+        source_group("Header Files\\aws\\lambda\\internal" FILES ${AWS_LAMBDA_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\lambda\\model" FILES ${AWS_LAMBDA_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_LAMBDA_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_LAMBDA_MODEL_SOURCE})

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/customer-profiles/CustomerProfilesEndpointRules.h>
+#include <aws/customer-profiles/internal/CustomerProfilesEndpointRules.h>
 
 namespace Aws {
 namespace CustomerProfiles {

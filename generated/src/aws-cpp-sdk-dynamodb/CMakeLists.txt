@@ -8,6 +8,10 @@ file(GLOB AWS_DYNAMODB_MODEL_HEADERS
     "include/aws/dynamodb/model/*.h"
 )
 
+file(GLOB AWS_DYNAMODB_INTERNAL_HEADERS
+    "include/aws/dynamodb/internal/*.h"
+)
+
 file(GLOB AWS_DYNAMODB_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_DYNAMODB_MODEL_SOURCE
 
 file(GLOB DYNAMODB_UNIFIED_HEADERS
     ${AWS_DYNAMODB_HEADERS}
+    ${AWS_DYNAMODB_INTERNAL_HEADERS}
     ${AWS_DYNAMODB_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\dynamodb" FILES ${AWS_DYNAMODB_HEADERS})
+        source_group("Header Files\\aws\\dynamodb\\internal" FILES ${AWS_DYNAMODB_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\dynamodb\\model" FILES ${AWS_DYNAMODB_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_DYNAMODB_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_DYNAMODB_MODEL_SOURCE})

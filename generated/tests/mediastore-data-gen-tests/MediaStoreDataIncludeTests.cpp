@@ -8,12 +8,12 @@
 
 #include <aws/mediastore-data/MediaStoreDataClient.h>
 #include <aws/mediastore-data/MediaStoreDataEndpointProvider.h>
-#include <aws/mediastore-data/MediaStoreDataEndpointRules.h>
 #include <aws/mediastore-data/MediaStoreDataErrorMarshaller.h>
 #include <aws/mediastore-data/MediaStoreDataErrors.h>
 #include <aws/mediastore-data/MediaStoreDataRequest.h>
 #include <aws/mediastore-data/MediaStoreDataServiceClientModel.h>
 #include <aws/mediastore-data/MediaStoreData_EXPORTS.h>
+#include <aws/mediastore-data/internal/MediaStoreDataEndpointRules.h>
 #include <aws/mediastore-data/model/DeleteObjectRequest.h>
 #include <aws/mediastore-data/model/DeleteObjectResult.h>
 #include <aws/mediastore-data/model/DescribeObjectRequest.h>

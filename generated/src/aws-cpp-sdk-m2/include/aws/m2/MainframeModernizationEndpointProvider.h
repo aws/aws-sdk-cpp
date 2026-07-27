@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/m2/MainframeModernizationEndpointRules.h>
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationEndpointProvider : pu
  public:
   using MainframeModernizationResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MainframeModernizationEndpointProvider()
-      : MainframeModernizationDefaultEpProviderBase(Aws::MainframeModernization::MainframeModernizationEndpointRules::GetRulesBlob(),
-                                                    Aws::MainframeModernization::MainframeModernizationEndpointRules::RulesBlobSize) {}
+  MainframeModernizationEndpointProvider();
 
   ~MainframeModernizationEndpointProvider() {}
 };

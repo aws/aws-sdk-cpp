@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/partnercentral-channel/PartnerCentralChannelEndpointRules.h>
 #include <aws/partnercentral-channel/PartnerCentralChannel_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_PARTNERCENTRALCHANNEL_API PartnerCentralChannelEndpointProvider : publ
  public:
   using PartnerCentralChannelResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PartnerCentralChannelEndpointProvider()
-      : PartnerCentralChannelDefaultEpProviderBase(Aws::PartnerCentralChannel::PartnerCentralChannelEndpointRules::GetRulesBlob(),
-                                                   Aws::PartnerCentralChannel::PartnerCentralChannelEndpointRules::RulesBlobSize) {}
+  PartnerCentralChannelEndpointProvider();
 
   ~PartnerCentralChannelEndpointProvider() {}
 };

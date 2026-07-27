@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/marketplace-discovery/MarketplaceDiscoveryEndpointRules.h>
 #include <aws/marketplace-discovery/MarketplaceDiscovery_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_MARKETPLACEDISCOVERY_API MarketplaceDiscoveryEndpointProvider : public
  public:
   using MarketplaceDiscoveryResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MarketplaceDiscoveryEndpointProvider()
-      : MarketplaceDiscoveryDefaultEpProviderBase(Aws::MarketplaceDiscovery::MarketplaceDiscoveryEndpointRules::GetRulesBlob(),
-                                                  Aws::MarketplaceDiscovery::MarketplaceDiscoveryEndpointRules::RulesBlobSize) {}
+  MarketplaceDiscoveryEndpointProvider();
 
   ~MarketplaceDiscoveryEndpointProvider() {}
 };

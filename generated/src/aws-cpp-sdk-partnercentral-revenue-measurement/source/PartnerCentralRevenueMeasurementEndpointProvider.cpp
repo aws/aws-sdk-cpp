@@ -4,9 +4,16 @@
  */
 
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementEndpointProvider.h>
+#include <aws/partnercentral-revenue-measurement/internal/PartnerCentralRevenueMeasurementEndpointRules.h>
 
 namespace Aws {
 namespace PartnerCentralRevenueMeasurement {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+PartnerCentralRevenueMeasurementEndpointProvider::PartnerCentralRevenueMeasurementEndpointProvider()
+    : PartnerCentralRevenueMeasurementDefaultEpProviderBase(
+          Aws::PartnerCentralRevenueMeasurement::PartnerCentralRevenueMeasurementEndpointRules::GetRulesBlob(),
+          Aws::PartnerCentralRevenueMeasurement::PartnerCentralRevenueMeasurementEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace PartnerCentralRevenueMeasurement
 }  // namespace Aws

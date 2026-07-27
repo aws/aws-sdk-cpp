@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ssm-sap/SsmSapEndpointRules.h>
+#include <aws/ssm-sap/internal/SsmSapEndpointRules.h>
 
 namespace Aws {
 namespace SsmSap {

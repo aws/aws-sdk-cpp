@@ -8,12 +8,12 @@
 
 #include <aws/omics/OmicsClient.h>
 #include <aws/omics/OmicsEndpointProvider.h>
-#include <aws/omics/OmicsEndpointRules.h>
 #include <aws/omics/OmicsErrorMarshaller.h>
 #include <aws/omics/OmicsErrors.h>
 #include <aws/omics/OmicsRequest.h>
 #include <aws/omics/OmicsServiceClientModel.h>
 #include <aws/omics/Omics_EXPORTS.h>
+#include <aws/omics/internal/OmicsEndpointRules.h>
 #include <aws/omics/model/AbortMultipartReadSetUploadRequest.h>
 #include <aws/omics/model/AbortMultipartReadSetUploadResult.h>
 #include <aws/omics/model/Accelerators.h>

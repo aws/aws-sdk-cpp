@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/kafkaconnect/KafkaConnectEndpointRules.h>
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_KAFKACONNECT_API KafkaConnectEndpointProvider : public KafkaConnectDef
  public:
   using KafkaConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  KafkaConnectEndpointProvider()
-      : KafkaConnectDefaultEpProviderBase(Aws::KafkaConnect::KafkaConnectEndpointRules::GetRulesBlob(),
-                                          Aws::KafkaConnect::KafkaConnectEndpointRules::RulesBlobSize) {}
+  KafkaConnectEndpointProvider();
 
   ~KafkaConnectEndpointProvider() {}
 };

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ivs-realtime/IvsrealtimeEndpointRules.h>
+#include <aws/ivs-realtime/internal/IvsrealtimeEndpointRules.h>
 
 namespace Aws {
 namespace ivsrealtime {

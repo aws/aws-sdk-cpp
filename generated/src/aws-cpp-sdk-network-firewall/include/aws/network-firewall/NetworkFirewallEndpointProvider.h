@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/network-firewall/NetworkFirewallEndpointRules.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallEndpointProvider : public NetworkFi
  public:
   using NetworkFirewallResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  NetworkFirewallEndpointProvider()
-      : NetworkFirewallDefaultEpProviderBase(Aws::NetworkFirewall::NetworkFirewallEndpointRules::GetRulesBlob(),
-                                             Aws::NetworkFirewall::NetworkFirewallEndpointRules::RulesBlobSize) {}
+  NetworkFirewallEndpointProvider();
 
   ~NetworkFirewallEndpointProvider() {}
 };

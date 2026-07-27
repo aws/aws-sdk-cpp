@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsEndpointRules.h>
+#include <aws/marketplacecommerceanalytics/internal/MarketplaceCommerceAnalyticsEndpointRules.h>
 
 namespace Aws {
 namespace MarketplaceCommerceAnalytics {

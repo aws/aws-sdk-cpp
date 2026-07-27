@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/lightsail/LightsailEndpointRules.h>
+#include <aws/lightsail/internal/LightsailEndpointRules.h>
 
 namespace Aws {
 namespace Lightsail {

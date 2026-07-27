@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/geo-routes/GeoRoutesEndpointRules.h>
+#include <aws/geo-routes/internal/GeoRoutesEndpointRules.h>
 
 namespace Aws {
 namespace GeoRoutes {

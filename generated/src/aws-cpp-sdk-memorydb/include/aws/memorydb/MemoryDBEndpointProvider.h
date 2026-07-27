@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/memorydb/MemoryDBEndpointRules.h>
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_MEMORYDB_API MemoryDBEndpointProvider : public MemoryDBDefaultEpProvid
  public:
   using MemoryDBResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MemoryDBEndpointProvider()
-      : MemoryDBDefaultEpProviderBase(Aws::MemoryDB::MemoryDBEndpointRules::GetRulesBlob(),
-                                      Aws::MemoryDB::MemoryDBEndpointRules::RulesBlobSize) {}
+  MemoryDBEndpointProvider();
 
   ~MemoryDBEndpointProvider() {}
 };

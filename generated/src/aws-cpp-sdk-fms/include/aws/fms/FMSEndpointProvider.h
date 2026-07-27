@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/fms/FMSEndpointRules.h>
 #include <aws/fms/FMS_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_FMS_API FMSEndpointProvider : public FMSDefaultEpProviderBase {
  public:
   using FMSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  FMSEndpointProvider() : FMSDefaultEpProviderBase(Aws::FMS::FMSEndpointRules::GetRulesBlob(), Aws::FMS::FMSEndpointRules::RulesBlobSize) {}
+  FMSEndpointProvider();
 
   ~FMSEndpointProvider() {}
 };

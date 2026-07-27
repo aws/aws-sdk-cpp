@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/wisdom/ConnectWisdomServiceEndpointRules.h>
 #include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_CONNECTWISDOMSERVICE_API ConnectWisdomServiceEndpointProvider : public
  public:
   using ConnectWisdomServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ConnectWisdomServiceEndpointProvider()
-      : ConnectWisdomServiceDefaultEpProviderBase(Aws::ConnectWisdomService::ConnectWisdomServiceEndpointRules::GetRulesBlob(),
-                                                  Aws::ConnectWisdomService::ConnectWisdomServiceEndpointRules::RulesBlobSize) {}
+  ConnectWisdomServiceEndpointProvider();
 
   ~ConnectWisdomServiceEndpointProvider() {}
 };

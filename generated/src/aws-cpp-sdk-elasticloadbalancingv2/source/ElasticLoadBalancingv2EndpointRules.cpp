@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2EndpointRules.h>
+#include <aws/elasticloadbalancingv2/internal/ElasticLoadBalancingv2EndpointRules.h>
 
 namespace Aws {
 namespace ElasticLoadBalancingv2 {

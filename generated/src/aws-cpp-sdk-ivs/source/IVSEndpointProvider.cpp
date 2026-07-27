@@ -4,9 +4,14 @@
  */
 
 #include <aws/ivs/IVSEndpointProvider.h>
+#include <aws/ivs/internal/IVSEndpointRules.h>
 
 namespace Aws {
 namespace IVS {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+IVSEndpointProvider::IVSEndpointProvider()
+    : IVSDefaultEpProviderBase(Aws::IVS::IVSEndpointRules::GetRulesBlob(), Aws::IVS::IVSEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace IVS
 }  // namespace Aws

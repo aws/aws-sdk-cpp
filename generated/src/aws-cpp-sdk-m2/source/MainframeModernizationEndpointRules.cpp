@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/m2/MainframeModernizationEndpointRules.h>
+#include <aws/m2/internal/MainframeModernizationEndpointRules.h>
 
 namespace Aws {
 namespace MainframeModernization {

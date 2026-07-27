@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/healthlake/HealthLakeEndpointRules.h>
+#include <aws/healthlake/internal/HealthLakeEndpointRules.h>
 
 namespace Aws {
 namespace HealthLake {

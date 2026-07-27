@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/codestar-notifications/CodeStarNotificationsEndpointRules.h>
 #include <aws/codestar-notifications/CodeStarNotifications_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -44,9 +43,7 @@ class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsEndpointProvider : publ
  public:
   using CodeStarNotificationsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CodeStarNotificationsEndpointProvider()
-      : CodeStarNotificationsDefaultEpProviderBase(Aws::CodeStarNotifications::CodeStarNotificationsEndpointRules::GetRulesBlob(),
-                                                   Aws::CodeStarNotifications::CodeStarNotificationsEndpointRules::RulesBlobSize) {}
+  CodeStarNotificationsEndpointProvider();
 
   ~CodeStarNotificationsEndpointProvider() {}
 };

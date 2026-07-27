@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/timestream-write/TimestreamWriteEndpointRules.h>
+#include <aws/timestream-write/internal/TimestreamWriteEndpointRules.h>
 
 namespace Aws {
 namespace TimestreamWrite {

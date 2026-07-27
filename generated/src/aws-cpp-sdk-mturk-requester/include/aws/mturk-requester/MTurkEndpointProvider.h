@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/mturk-requester/MTurkEndpointRules.h>
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 
 namespace Aws {
@@ -40,8 +39,7 @@ class AWS_MTURK_API MTurkEndpointProvider : public MTurkDefaultEpProviderBase {
  public:
   using MTurkResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MTurkEndpointProvider()
-      : MTurkDefaultEpProviderBase(Aws::MTurk::MTurkEndpointRules::GetRulesBlob(), Aws::MTurk::MTurkEndpointRules::RulesBlobSize) {}
+  MTurkEndpointProvider();
 
   ~MTurkEndpointProvider() {}
 };

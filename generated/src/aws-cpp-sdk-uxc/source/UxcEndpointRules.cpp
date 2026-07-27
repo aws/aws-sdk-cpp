@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/uxc/UxcEndpointRules.h>
+#include <aws/uxc/internal/UxcEndpointRules.h>
 
 namespace Aws {
 namespace uxc {

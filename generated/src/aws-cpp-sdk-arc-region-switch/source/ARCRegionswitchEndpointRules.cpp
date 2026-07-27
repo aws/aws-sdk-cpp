@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/arc-region-switch/ARCRegionswitchEndpointRules.h>
+#include <aws/arc-region-switch/internal/ARCRegionswitchEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

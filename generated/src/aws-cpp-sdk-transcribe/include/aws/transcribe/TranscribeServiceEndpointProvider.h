@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/transcribe/TranscribeServiceEndpointRules.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_TRANSCRIBESERVICE_API TranscribeServiceEndpointProvider : public Trans
  public:
   using TranscribeServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  TranscribeServiceEndpointProvider()
-      : TranscribeServiceDefaultEpProviderBase(Aws::TranscribeService::TranscribeServiceEndpointRules::GetRulesBlob(),
-                                               Aws::TranscribeService::TranscribeServiceEndpointRules::RulesBlobSize) {}
+  TranscribeServiceEndpointProvider();
 
   ~TranscribeServiceEndpointProvider() {}
 };

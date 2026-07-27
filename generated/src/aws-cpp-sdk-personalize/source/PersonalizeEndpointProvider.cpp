@@ -4,9 +4,15 @@
  */
 
 #include <aws/personalize/PersonalizeEndpointProvider.h>
+#include <aws/personalize/internal/PersonalizeEndpointRules.h>
 
 namespace Aws {
 namespace Personalize {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+PersonalizeEndpointProvider::PersonalizeEndpointProvider()
+    : PersonalizeDefaultEpProviderBase(Aws::Personalize::PersonalizeEndpointRules::GetRulesBlob(),
+                                       Aws::Personalize::PersonalizeEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Personalize
 }  // namespace Aws

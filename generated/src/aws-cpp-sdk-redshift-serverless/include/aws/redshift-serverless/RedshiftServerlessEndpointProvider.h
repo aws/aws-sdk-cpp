@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/redshift-serverless/RedshiftServerlessEndpointRules.h>
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessEndpointProvider : public Red
  public:
   using RedshiftServerlessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  RedshiftServerlessEndpointProvider()
-      : RedshiftServerlessDefaultEpProviderBase(Aws::RedshiftServerless::RedshiftServerlessEndpointRules::GetRulesBlob(),
-                                                Aws::RedshiftServerless::RedshiftServerlessEndpointRules::RulesBlobSize) {}
+  RedshiftServerlessEndpointProvider();
 
   ~RedshiftServerlessEndpointProvider() {}
 };

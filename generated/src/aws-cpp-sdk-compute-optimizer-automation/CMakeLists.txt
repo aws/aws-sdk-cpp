@@ -8,6 +8,10 @@ file(GLOB AWS_COMPUTE-OPTIMIZER-AUTOMATION_MODEL_HEADERS
     "include/aws/compute-optimizer-automation/model/*.h"
 )
 
+file(GLOB AWS_COMPUTE-OPTIMIZER-AUTOMATION_INTERNAL_HEADERS
+    "include/aws/compute-optimizer-automation/internal/*.h"
+)
+
 file(GLOB AWS_COMPUTE-OPTIMIZER-AUTOMATION_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_COMPUTE-OPTIMIZER-AUTOMATION_MODEL_SOURCE
 
 file(GLOB COMPUTE-OPTIMIZER-AUTOMATION_UNIFIED_HEADERS
     ${AWS_COMPUTE-OPTIMIZER-AUTOMATION_HEADERS}
+    ${AWS_COMPUTE-OPTIMIZER-AUTOMATION_INTERNAL_HEADERS}
     ${AWS_COMPUTE-OPTIMIZER-AUTOMATION_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\compute-optimizer-automation" FILES ${AWS_COMPUTE-OPTIMIZER-AUTOMATION_HEADERS})
+        source_group("Header Files\\aws\\compute-optimizer-automation\\internal" FILES ${AWS_COMPUTE-OPTIMIZER-AUTOMATION_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\compute-optimizer-automation\\model" FILES ${AWS_COMPUTE-OPTIMIZER-AUTOMATION_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_COMPUTE-OPTIMIZER-AUTOMATION_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_COMPUTE-OPTIMIZER-AUTOMATION_MODEL_SOURCE})

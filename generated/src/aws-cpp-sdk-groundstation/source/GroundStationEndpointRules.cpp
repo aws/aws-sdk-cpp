@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/groundstation/GroundStationEndpointRules.h>
+#include <aws/groundstation/internal/GroundStationEndpointRules.h>
 
 namespace Aws {
 namespace GroundStation {

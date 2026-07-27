@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageEndpointRules.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorage_EXPORTS.h>
 
 namespace Aws {
@@ -44,10 +43,7 @@ class AWS_KINESISVIDEOWEBRTCSTORAGE_API KinesisVideoWebRTCStorageEndpointProvide
  public:
   using KinesisVideoWebRTCStorageResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  KinesisVideoWebRTCStorageEndpointProvider()
-      : KinesisVideoWebRTCStorageDefaultEpProviderBase(
-            Aws::KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageEndpointRules::GetRulesBlob(),
-            Aws::KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageEndpointRules::RulesBlobSize) {}
+  KinesisVideoWebRTCStorageEndpointProvider();
 
   ~KinesisVideoWebRTCStorageEndpointProvider() {}
 };

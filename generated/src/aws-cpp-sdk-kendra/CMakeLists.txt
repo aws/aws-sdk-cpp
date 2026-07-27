@@ -8,6 +8,10 @@ file(GLOB AWS_KENDRA_MODEL_HEADERS
     "include/aws/kendra/model/*.h"
 )
 
+file(GLOB AWS_KENDRA_INTERNAL_HEADERS
+    "include/aws/kendra/internal/*.h"
+)
+
 file(GLOB AWS_KENDRA_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_KENDRA_MODEL_SOURCE
 
 file(GLOB KENDRA_UNIFIED_HEADERS
     ${AWS_KENDRA_HEADERS}
+    ${AWS_KENDRA_INTERNAL_HEADERS}
     ${AWS_KENDRA_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\kendra" FILES ${AWS_KENDRA_HEADERS})
+        source_group("Header Files\\aws\\kendra\\internal" FILES ${AWS_KENDRA_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\kendra\\model" FILES ${AWS_KENDRA_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_KENDRA_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_KENDRA_MODEL_SOURCE})

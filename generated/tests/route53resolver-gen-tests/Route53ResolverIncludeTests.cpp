@@ -8,12 +8,12 @@
 
 #include <aws/route53resolver/Route53ResolverClient.h>
 #include <aws/route53resolver/Route53ResolverEndpointProvider.h>
-#include <aws/route53resolver/Route53ResolverEndpointRules.h>
 #include <aws/route53resolver/Route53ResolverErrorMarshaller.h>
 #include <aws/route53resolver/Route53ResolverErrors.h>
 #include <aws/route53resolver/Route53ResolverRequest.h>
 #include <aws/route53resolver/Route53ResolverServiceClientModel.h>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
+#include <aws/route53resolver/internal/Route53ResolverEndpointRules.h>
 #include <aws/route53resolver/model/Action.h>
 #include <aws/route53resolver/model/AssociateFirewallRuleGroupRequest.h>
 #include <aws/route53resolver/model/AssociateFirewallRuleGroupResult.h>

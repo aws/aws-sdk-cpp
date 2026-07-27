@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/guardduty/GuardDutyEndpointRules.h>
+#include <aws/guardduty/internal/GuardDutyEndpointRules.h>
 
 namespace Aws {
 namespace GuardDuty {

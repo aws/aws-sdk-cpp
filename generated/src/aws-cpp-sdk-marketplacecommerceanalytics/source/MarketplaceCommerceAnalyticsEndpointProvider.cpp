@@ -4,9 +4,16 @@
  */
 
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsEndpointProvider.h>
+#include <aws/marketplacecommerceanalytics/internal/MarketplaceCommerceAnalyticsEndpointRules.h>
 
 namespace Aws {
 namespace MarketplaceCommerceAnalytics {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MarketplaceCommerceAnalyticsEndpointProvider::MarketplaceCommerceAnalyticsEndpointProvider()
+    : MarketplaceCommerceAnalyticsDefaultEpProviderBase(
+          Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsEndpointRules::GetRulesBlob(),
+          Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MarketplaceCommerceAnalytics
 }  // namespace Aws

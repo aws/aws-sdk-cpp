@@ -9,7 +9,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-query/TimestreamQueryClientConfiguration.h>
-#include <aws/timestream-query/TimestreamQueryEndpointRules.h>
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 
 namespace Aws {
@@ -65,9 +64,7 @@ class AWS_TIMESTREAMQUERY_API TimestreamQueryEndpointProvider : public Timestrea
  public:
   using TimestreamQueryResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  TimestreamQueryEndpointProvider()
-      : TimestreamQueryDefaultEpProviderBase(Aws::TimestreamQuery::TimestreamQueryEndpointRules::GetRulesBlob(),
-                                             Aws::TimestreamQuery::TimestreamQueryEndpointRules::RulesBlobSize) {}
+  TimestreamQueryEndpointProvider();
 
   ~TimestreamQueryEndpointProvider() {}
 };

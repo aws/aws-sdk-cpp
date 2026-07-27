@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/shield/ShieldEndpointRules.h>
+#include <aws/shield/internal/ShieldEndpointRules.h>
 
 namespace Aws {
 namespace Shield {

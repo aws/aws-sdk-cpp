@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/chime/ChimeEndpointRules.h>
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -40,8 +39,7 @@ class AWS_CHIME_API ChimeEndpointProvider : public ChimeDefaultEpProviderBase {
  public:
   using ChimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ChimeEndpointProvider()
-      : ChimeDefaultEpProviderBase(Aws::Chime::ChimeEndpointRules::GetRulesBlob(), Aws::Chime::ChimeEndpointRules::RulesBlobSize) {}
+  ChimeEndpointProvider();
 
   ~ChimeEndpointProvider() {}
 };

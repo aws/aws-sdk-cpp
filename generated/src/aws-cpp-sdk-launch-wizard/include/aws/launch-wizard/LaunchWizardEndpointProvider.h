@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/launch-wizard/LaunchWizardEndpointRules.h>
 #include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_LAUNCHWIZARD_API LaunchWizardEndpointProvider : public LaunchWizardDef
  public:
   using LaunchWizardResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  LaunchWizardEndpointProvider()
-      : LaunchWizardDefaultEpProviderBase(Aws::LaunchWizard::LaunchWizardEndpointRules::GetRulesBlob(),
-                                          Aws::LaunchWizard::LaunchWizardEndpointRules::RulesBlobSize) {}
+  LaunchWizardEndpointProvider();
 
   ~LaunchWizardEndpointProvider() {}
 };

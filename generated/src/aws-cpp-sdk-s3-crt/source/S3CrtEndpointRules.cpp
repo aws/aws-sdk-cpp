@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/s3-crt/S3CrtEndpointRules.h>
+#include <aws/s3-crt/internal/S3CrtEndpointRules.h>
 
 namespace Aws {
 namespace S3Crt {

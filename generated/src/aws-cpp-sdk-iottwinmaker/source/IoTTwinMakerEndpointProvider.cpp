@@ -4,9 +4,15 @@
  */
 
 #include <aws/iottwinmaker/IoTTwinMakerEndpointProvider.h>
+#include <aws/iottwinmaker/internal/IoTTwinMakerEndpointRules.h>
 
 namespace Aws {
 namespace IoTTwinMaker {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+IoTTwinMakerEndpointProvider::IoTTwinMakerEndpointProvider()
+    : IoTTwinMakerDefaultEpProviderBase(Aws::IoTTwinMaker::IoTTwinMakerEndpointRules::GetRulesBlob(),
+                                        Aws::IoTTwinMaker::IoTTwinMakerEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace IoTTwinMaker
 }  // namespace Aws

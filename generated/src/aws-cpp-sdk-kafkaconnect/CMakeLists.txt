@@ -8,6 +8,10 @@ file(GLOB AWS_KAFKACONNECT_MODEL_HEADERS
     "include/aws/kafkaconnect/model/*.h"
 )
 
+file(GLOB AWS_KAFKACONNECT_INTERNAL_HEADERS
+    "include/aws/kafkaconnect/internal/*.h"
+)
+
 file(GLOB AWS_KAFKACONNECT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_KAFKACONNECT_MODEL_SOURCE
 
 file(GLOB KAFKACONNECT_UNIFIED_HEADERS
     ${AWS_KAFKACONNECT_HEADERS}
+    ${AWS_KAFKACONNECT_INTERNAL_HEADERS}
     ${AWS_KAFKACONNECT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\kafkaconnect" FILES ${AWS_KAFKACONNECT_HEADERS})
+        source_group("Header Files\\aws\\kafkaconnect\\internal" FILES ${AWS_KAFKACONNECT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\kafkaconnect\\model" FILES ${AWS_KAFKACONNECT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_KAFKACONNECT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_KAFKACONNECT_MODEL_SOURCE})

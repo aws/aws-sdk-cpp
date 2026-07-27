@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/datasync/DataSyncEndpointRules.h>
+#include <aws/datasync/internal/DataSyncEndpointRules.h>
 
 namespace Aws {
 namespace DataSync {

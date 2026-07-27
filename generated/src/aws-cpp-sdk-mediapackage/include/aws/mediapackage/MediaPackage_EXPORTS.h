@@ -26,7 +26,13 @@
 #define AWS_MEDIAPACKAGE_API
 #define AWS_MEDIAPACKAGE_EXTERN extern
 #endif  // USE_IMPORT_EXPORT
-#else   // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+#define AWS_MEDIAPACKAGE_LOCAL
+#else  // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
 #define AWS_MEDIAPACKAGE_API
 #define AWS_MEDIAPACKAGE_EXTERN extern
+#if __GNUC__ >= 4
+#define AWS_MEDIAPACKAGE_LOCAL __attribute__((visibility("hidden")))
+#else
+#define AWS_MEDIAPACKAGE_LOCAL
+#endif
 #endif  // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

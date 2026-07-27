@@ -8,12 +8,12 @@
 
 #include <aws/qconnect/QConnectClient.h>
 #include <aws/qconnect/QConnectEndpointProvider.h>
-#include <aws/qconnect/QConnectEndpointRules.h>
 #include <aws/qconnect/QConnectErrorMarshaller.h>
 #include <aws/qconnect/QConnectErrors.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/qconnect/QConnectServiceClientModel.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/internal/QConnectEndpointRules.h>
 #include <aws/qconnect/model/AIAgentAssociationConfigurationType.h>
 #include <aws/qconnect/model/AIAgentConfiguration.h>
 #include <aws/qconnect/model/AIAgentConfigurationData.h>

@@ -4,9 +4,15 @@
  */
 
 #include <aws/servicecatalog/ServiceCatalogEndpointProvider.h>
+#include <aws/servicecatalog/internal/ServiceCatalogEndpointRules.h>
 
 namespace Aws {
 namespace ServiceCatalog {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ServiceCatalogEndpointProvider::ServiceCatalogEndpointProvider()
+    : ServiceCatalogDefaultEpProviderBase(Aws::ServiceCatalog::ServiceCatalogEndpointRules::GetRulesBlob(),
+                                          Aws::ServiceCatalog::ServiceCatalogEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ServiceCatalog
 }  // namespace Aws

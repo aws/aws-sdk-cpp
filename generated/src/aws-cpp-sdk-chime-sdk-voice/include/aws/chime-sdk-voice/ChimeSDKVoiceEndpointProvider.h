@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/chime-sdk-voice/ChimeSDKVoiceEndpointRules.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceEndpointProvider : public ChimeSDKVoice
  public:
   using ChimeSDKVoiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ChimeSDKVoiceEndpointProvider()
-      : ChimeSDKVoiceDefaultEpProviderBase(Aws::ChimeSDKVoice::ChimeSDKVoiceEndpointRules::GetRulesBlob(),
-                                           Aws::ChimeSDKVoice::ChimeSDKVoiceEndpointRules::RulesBlobSize) {}
+  ChimeSDKVoiceEndpointProvider();
 
   ~ChimeSDKVoiceEndpointProvider() {}
 };

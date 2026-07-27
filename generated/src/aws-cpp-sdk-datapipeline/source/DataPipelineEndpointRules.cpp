@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/datapipeline/DataPipelineEndpointRules.h>
+#include <aws/datapipeline/internal/DataPipelineEndpointRules.h>
 
 namespace Aws {
 namespace DataPipeline {

@@ -4,9 +4,15 @@
  */
 
 #include <aws/cognito-sync/CognitoSyncEndpointProvider.h>
+#include <aws/cognito-sync/internal/CognitoSyncEndpointRules.h>
 
 namespace Aws {
 namespace CognitoSync {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+CognitoSyncEndpointProvider::CognitoSyncEndpointProvider()
+    : CognitoSyncDefaultEpProviderBase(Aws::CognitoSync::CognitoSyncEndpointRules::GetRulesBlob(),
+                                       Aws::CognitoSync::CognitoSyncEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace CognitoSync
 }  // namespace Aws

@@ -8,12 +8,12 @@
 
 #include <aws/iottwinmaker/IoTTwinMakerClient.h>
 #include <aws/iottwinmaker/IoTTwinMakerEndpointProvider.h>
-#include <aws/iottwinmaker/IoTTwinMakerEndpointRules.h>
 #include <aws/iottwinmaker/IoTTwinMakerErrorMarshaller.h>
 #include <aws/iottwinmaker/IoTTwinMakerErrors.h>
 #include <aws/iottwinmaker/IoTTwinMakerRequest.h>
 #include <aws/iottwinmaker/IoTTwinMakerServiceClientModel.h>
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
+#include <aws/iottwinmaker/internal/IoTTwinMakerEndpointRules.h>
 #include <aws/iottwinmaker/model/BatchPutPropertyError.h>
 #include <aws/iottwinmaker/model/BatchPutPropertyErrorEntry.h>
 #include <aws/iottwinmaker/model/BatchPutPropertyValuesRequest.h>

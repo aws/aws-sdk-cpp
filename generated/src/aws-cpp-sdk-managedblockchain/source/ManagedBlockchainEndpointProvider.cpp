@@ -4,9 +4,15 @@
  */
 
 #include <aws/managedblockchain/ManagedBlockchainEndpointProvider.h>
+#include <aws/managedblockchain/internal/ManagedBlockchainEndpointRules.h>
 
 namespace Aws {
 namespace ManagedBlockchain {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ManagedBlockchainEndpointProvider::ManagedBlockchainEndpointProvider()
+    : ManagedBlockchainDefaultEpProviderBase(Aws::ManagedBlockchain::ManagedBlockchainEndpointRules::GetRulesBlob(),
+                                             Aws::ManagedBlockchain::ManagedBlockchainEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ManagedBlockchain
 }  // namespace Aws

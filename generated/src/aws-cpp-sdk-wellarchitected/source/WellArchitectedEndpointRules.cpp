@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/wellarchitected/WellArchitectedEndpointRules.h>
+#include <aws/wellarchitected/internal/WellArchitectedEndpointRules.h>
 
 namespace Aws {
 namespace WellArchitected {

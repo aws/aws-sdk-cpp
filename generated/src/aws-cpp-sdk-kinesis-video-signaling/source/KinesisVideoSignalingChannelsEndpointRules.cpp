@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsEndpointRules.h>
+#include <aws/kinesis-video-signaling/internal/KinesisVideoSignalingChannelsEndpointRules.h>
 
 namespace Aws {
 namespace KinesisVideoSignalingChannels {

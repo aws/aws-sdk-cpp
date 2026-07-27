@@ -8,12 +8,12 @@
 
 #include <aws/verifiedpermissions/VerifiedPermissionsClient.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsEndpointProvider.h>
-#include <aws/verifiedpermissions/VerifiedPermissionsEndpointRules.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsErrorMarshaller.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsErrors.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsRequest.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsServiceClientModel.h>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
+#include <aws/verifiedpermissions/internal/VerifiedPermissionsEndpointRules.h>
 #include <aws/verifiedpermissions/model/ActionIdentifier.h>
 #include <aws/verifiedpermissions/model/AliasState.h>
 #include <aws/verifiedpermissions/model/AttributeValue.h>

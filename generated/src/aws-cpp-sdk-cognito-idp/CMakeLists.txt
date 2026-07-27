@@ -8,6 +8,10 @@ file(GLOB AWS_COGNITO-IDP_MODEL_HEADERS
     "include/aws/cognito-idp/model/*.h"
 )
 
+file(GLOB AWS_COGNITO-IDP_INTERNAL_HEADERS
+    "include/aws/cognito-idp/internal/*.h"
+)
+
 file(GLOB AWS_COGNITO-IDP_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_COGNITO-IDP_MODEL_SOURCE
 
 file(GLOB COGNITO-IDP_UNIFIED_HEADERS
     ${AWS_COGNITO-IDP_HEADERS}
+    ${AWS_COGNITO-IDP_INTERNAL_HEADERS}
     ${AWS_COGNITO-IDP_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\cognito-idp" FILES ${AWS_COGNITO-IDP_HEADERS})
+        source_group("Header Files\\aws\\cognito-idp\\internal" FILES ${AWS_COGNITO-IDP_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\cognito-idp\\model" FILES ${AWS_COGNITO-IDP_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_COGNITO-IDP_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_COGNITO-IDP_MODEL_SOURCE})

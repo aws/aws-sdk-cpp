@@ -8,6 +8,10 @@ file(GLOB AWS_PINPOINT_MODEL_HEADERS
     "include/aws/pinpoint/model/*.h"
 )
 
+file(GLOB AWS_PINPOINT_INTERNAL_HEADERS
+    "include/aws/pinpoint/internal/*.h"
+)
+
 file(GLOB AWS_PINPOINT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_PINPOINT_MODEL_SOURCE
 
 file(GLOB PINPOINT_UNIFIED_HEADERS
     ${AWS_PINPOINT_HEADERS}
+    ${AWS_PINPOINT_INTERNAL_HEADERS}
     ${AWS_PINPOINT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\pinpoint" FILES ${AWS_PINPOINT_HEADERS})
+        source_group("Header Files\\aws\\pinpoint\\internal" FILES ${AWS_PINPOINT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\pinpoint\\model" FILES ${AWS_PINPOINT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_PINPOINT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_PINPOINT_MODEL_SOURCE})

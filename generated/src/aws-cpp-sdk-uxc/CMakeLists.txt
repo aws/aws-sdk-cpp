@@ -8,6 +8,10 @@ file(GLOB AWS_UXC_MODEL_HEADERS
     "include/aws/uxc/model/*.h"
 )
 
+file(GLOB AWS_UXC_INTERNAL_HEADERS
+    "include/aws/uxc/internal/*.h"
+)
+
 file(GLOB AWS_UXC_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_UXC_MODEL_SOURCE
 
 file(GLOB UXC_UNIFIED_HEADERS
     ${AWS_UXC_HEADERS}
+    ${AWS_UXC_INTERNAL_HEADERS}
     ${AWS_UXC_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\uxc" FILES ${AWS_UXC_HEADERS})
+        source_group("Header Files\\aws\\uxc\\internal" FILES ${AWS_UXC_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\uxc\\model" FILES ${AWS_UXC_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_UXC_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_UXC_MODEL_SOURCE})

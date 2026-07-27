@@ -8,6 +8,10 @@ file(GLOB AWS_SAGEMAKER-METRICS_MODEL_HEADERS
     "include/aws/sagemaker-metrics/model/*.h"
 )
 
+file(GLOB AWS_SAGEMAKER-METRICS_INTERNAL_HEADERS
+    "include/aws/sagemaker-metrics/internal/*.h"
+)
+
 file(GLOB AWS_SAGEMAKER-METRICS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SAGEMAKER-METRICS_MODEL_SOURCE
 
 file(GLOB SAGEMAKER-METRICS_UNIFIED_HEADERS
     ${AWS_SAGEMAKER-METRICS_HEADERS}
+    ${AWS_SAGEMAKER-METRICS_INTERNAL_HEADERS}
     ${AWS_SAGEMAKER-METRICS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\sagemaker-metrics" FILES ${AWS_SAGEMAKER-METRICS_HEADERS})
+        source_group("Header Files\\aws\\sagemaker-metrics\\internal" FILES ${AWS_SAGEMAKER-METRICS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\sagemaker-metrics\\model" FILES ${AWS_SAGEMAKER-METRICS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SAGEMAKER-METRICS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SAGEMAKER-METRICS_MODEL_SOURCE})

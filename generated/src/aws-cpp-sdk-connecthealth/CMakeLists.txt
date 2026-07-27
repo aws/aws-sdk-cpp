@@ -8,6 +8,10 @@ file(GLOB AWS_CONNECTHEALTH_MODEL_HEADERS
     "include/aws/connecthealth/model/*.h"
 )
 
+file(GLOB AWS_CONNECTHEALTH_INTERNAL_HEADERS
+    "include/aws/connecthealth/internal/*.h"
+)
+
 file(GLOB AWS_CONNECTHEALTH_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CONNECTHEALTH_MODEL_SOURCE
 
 file(GLOB CONNECTHEALTH_UNIFIED_HEADERS
     ${AWS_CONNECTHEALTH_HEADERS}
+    ${AWS_CONNECTHEALTH_INTERNAL_HEADERS}
     ${AWS_CONNECTHEALTH_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\connecthealth" FILES ${AWS_CONNECTHEALTH_HEADERS})
+        source_group("Header Files\\aws\\connecthealth\\internal" FILES ${AWS_CONNECTHEALTH_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\connecthealth\\model" FILES ${AWS_CONNECTHEALTH_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CONNECTHEALTH_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CONNECTHEALTH_MODEL_SOURCE})

@@ -8,12 +8,12 @@
 
 #include <aws/pca-connector-ad/PcaConnectorAdClient.h>
 #include <aws/pca-connector-ad/PcaConnectorAdEndpointProvider.h>
-#include <aws/pca-connector-ad/PcaConnectorAdEndpointRules.h>
 #include <aws/pca-connector-ad/PcaConnectorAdErrorMarshaller.h>
 #include <aws/pca-connector-ad/PcaConnectorAdErrors.h>
 #include <aws/pca-connector-ad/PcaConnectorAdRequest.h>
 #include <aws/pca-connector-ad/PcaConnectorAdServiceClientModel.h>
 #include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
+#include <aws/pca-connector-ad/internal/PcaConnectorAdEndpointRules.h>
 #include <aws/pca-connector-ad/model/AccessControlEntry.h>
 #include <aws/pca-connector-ad/model/AccessControlEntrySummary.h>
 #include <aws/pca-connector-ad/model/AccessRight.h>

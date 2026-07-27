@@ -8,6 +8,10 @@ file(GLOB AWS_FRAUDDETECTOR_MODEL_HEADERS
     "include/aws/frauddetector/model/*.h"
 )
 
+file(GLOB AWS_FRAUDDETECTOR_INTERNAL_HEADERS
+    "include/aws/frauddetector/internal/*.h"
+)
+
 file(GLOB AWS_FRAUDDETECTOR_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_FRAUDDETECTOR_MODEL_SOURCE
 
 file(GLOB FRAUDDETECTOR_UNIFIED_HEADERS
     ${AWS_FRAUDDETECTOR_HEADERS}
+    ${AWS_FRAUDDETECTOR_INTERNAL_HEADERS}
     ${AWS_FRAUDDETECTOR_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\frauddetector" FILES ${AWS_FRAUDDETECTOR_HEADERS})
+        source_group("Header Files\\aws\\frauddetector\\internal" FILES ${AWS_FRAUDDETECTOR_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\frauddetector\\model" FILES ${AWS_FRAUDDETECTOR_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_FRAUDDETECTOR_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_FRAUDDETECTOR_MODEL_SOURCE})

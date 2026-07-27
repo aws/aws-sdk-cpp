@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ssm/SSMEndpointRules.h>
 #include <aws/ssm/SSM_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_SSM_API SSMEndpointProvider : public SSMDefaultEpProviderBase {
  public:
   using SSMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SSMEndpointProvider() : SSMDefaultEpProviderBase(Aws::SSM::SSMEndpointRules::GetRulesBlob(), Aws::SSM::SSMEndpointRules::RulesBlobSize) {}
+  SSMEndpointProvider();
 
   ~SSMEndpointProvider() {}
 };

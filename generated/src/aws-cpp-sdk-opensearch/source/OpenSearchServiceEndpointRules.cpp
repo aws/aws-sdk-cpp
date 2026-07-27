@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/opensearch/OpenSearchServiceEndpointRules.h>
+#include <aws/opensearch/internal/OpenSearchServiceEndpointRules.h>
 
 namespace Aws {
 namespace OpenSearchService {

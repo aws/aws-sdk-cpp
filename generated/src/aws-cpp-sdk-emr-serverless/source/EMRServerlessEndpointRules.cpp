@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/emr-serverless/EMRServerlessEndpointRules.h>
+#include <aws/emr-serverless/internal/EMRServerlessEndpointRules.h>
 
 namespace Aws {
 namespace EMRServerless {

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/appintegrations/AppIntegrationsServiceEndpointRules.h>
+#include <aws/appintegrations/internal/AppIntegrationsServiceEndpointRules.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws {

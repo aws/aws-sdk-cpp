@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/elasticbeanstalk/ElasticBeanstalkEndpointRules.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkEndpointProvider : public Elastic
  public:
   using ElasticBeanstalkResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ElasticBeanstalkEndpointProvider()
-      : ElasticBeanstalkDefaultEpProviderBase(Aws::ElasticBeanstalk::ElasticBeanstalkEndpointRules::GetRulesBlob(),
-                                              Aws::ElasticBeanstalk::ElasticBeanstalkEndpointRules::RulesBlobSize) {}
+  ElasticBeanstalkEndpointProvider();
 
   ~ElasticBeanstalkEndpointProvider() {}
 };

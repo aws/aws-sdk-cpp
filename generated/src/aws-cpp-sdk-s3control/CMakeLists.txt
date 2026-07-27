@@ -8,6 +8,10 @@ file(GLOB AWS_S3CONTROL_MODEL_HEADERS
     "include/aws/s3control/model/*.h"
 )
 
+file(GLOB AWS_S3CONTROL_INTERNAL_HEADERS
+    "include/aws/s3control/internal/*.h"
+)
+
 file(GLOB AWS_S3CONTROL_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_S3CONTROL_MODEL_SOURCE
 
 file(GLOB S3CONTROL_UNIFIED_HEADERS
     ${AWS_S3CONTROL_HEADERS}
+    ${AWS_S3CONTROL_INTERNAL_HEADERS}
     ${AWS_S3CONTROL_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\s3control" FILES ${AWS_S3CONTROL_HEADERS})
+        source_group("Header Files\\aws\\s3control\\internal" FILES ${AWS_S3CONTROL_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\s3control\\model" FILES ${AWS_S3CONTROL_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_S3CONTROL_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_S3CONTROL_MODEL_SOURCE})

@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/codeguru-security/CodeGuruSecurityEndpointRules.h>
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -43,9 +42,7 @@ class AWS_CODEGURUSECURITY_API CodeGuruSecurityEndpointProvider : public CodeGur
  public:
   using CodeGuruSecurityResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CodeGuruSecurityEndpointProvider()
-      : CodeGuruSecurityDefaultEpProviderBase(Aws::CodeGuruSecurity::CodeGuruSecurityEndpointRules::GetRulesBlob(),
-                                              Aws::CodeGuruSecurity::CodeGuruSecurityEndpointRules::RulesBlobSize) {}
+  CodeGuruSecurityEndpointProvider();
 
   ~CodeGuruSecurityEndpointProvider() {}
 };

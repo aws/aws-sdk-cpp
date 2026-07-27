@@ -4,9 +4,14 @@
  */
 
 #include <aws/glacier/GlacierEndpointProvider.h>
+#include <aws/glacier/internal/GlacierEndpointRules.h>
 
 namespace Aws {
 namespace Glacier {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+GlacierEndpointProvider::GlacierEndpointProvider()
+    : GlacierDefaultEpProviderBase(Aws::Glacier::GlacierEndpointRules::GetRulesBlob(), Aws::Glacier::GlacierEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Glacier
 }  // namespace Aws

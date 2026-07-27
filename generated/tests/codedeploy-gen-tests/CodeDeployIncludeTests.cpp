@@ -8,12 +8,12 @@
 
 #include <aws/codedeploy/CodeDeployClient.h>
 #include <aws/codedeploy/CodeDeployEndpointProvider.h>
-#include <aws/codedeploy/CodeDeployEndpointRules.h>
 #include <aws/codedeploy/CodeDeployErrorMarshaller.h>
 #include <aws/codedeploy/CodeDeployErrors.h>
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/codedeploy/CodeDeployServiceClientModel.h>
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/codedeploy/internal/CodeDeployEndpointRules.h>
 #include <aws/codedeploy/model/AddTagsToOnPremisesInstancesRequest.h>
 #include <aws/codedeploy/model/Alarm.h>
 #include <aws/codedeploy/model/AlarmConfiguration.h>

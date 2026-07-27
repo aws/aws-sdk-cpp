@@ -8,12 +8,12 @@
 
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsClient.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsEndpointProvider.h>
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsEndpointRules.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsErrorMarshaller.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsErrors.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsRequest.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsServiceClientModel.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
+#include <aws/migrationhubstrategy/internal/MigrationHubStrategyRecommendationsEndpointRules.h>
 #include <aws/migrationhubstrategy/model/AnalysisStatusUnion.h>
 #include <aws/migrationhubstrategy/model/AnalysisType.h>
 #include <aws/migrationhubstrategy/model/AnalyzableServerSummary.h>

@@ -8,6 +8,10 @@ file(GLOB AWS_MEDIAPACKAGEV2_MODEL_HEADERS
     "include/aws/mediapackagev2/model/*.h"
 )
 
+file(GLOB AWS_MEDIAPACKAGEV2_INTERNAL_HEADERS
+    "include/aws/mediapackagev2/internal/*.h"
+)
+
 file(GLOB AWS_MEDIAPACKAGEV2_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MEDIAPACKAGEV2_MODEL_SOURCE
 
 file(GLOB MEDIAPACKAGEV2_UNIFIED_HEADERS
     ${AWS_MEDIAPACKAGEV2_HEADERS}
+    ${AWS_MEDIAPACKAGEV2_INTERNAL_HEADERS}
     ${AWS_MEDIAPACKAGEV2_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\mediapackagev2" FILES ${AWS_MEDIAPACKAGEV2_HEADERS})
+        source_group("Header Files\\aws\\mediapackagev2\\internal" FILES ${AWS_MEDIAPACKAGEV2_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\mediapackagev2\\model" FILES ${AWS_MEDIAPACKAGEV2_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MEDIAPACKAGEV2_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MEDIAPACKAGEV2_MODEL_SOURCE})

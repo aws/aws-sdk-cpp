@@ -8,6 +8,10 @@ file(GLOB AWS_RAM_MODEL_HEADERS
     "include/aws/ram/model/*.h"
 )
 
+file(GLOB AWS_RAM_INTERNAL_HEADERS
+    "include/aws/ram/internal/*.h"
+)
+
 file(GLOB AWS_RAM_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_RAM_MODEL_SOURCE
 
 file(GLOB RAM_UNIFIED_HEADERS
     ${AWS_RAM_HEADERS}
+    ${AWS_RAM_INTERNAL_HEADERS}
     ${AWS_RAM_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\ram" FILES ${AWS_RAM_HEADERS})
+        source_group("Header Files\\aws\\ram\\internal" FILES ${AWS_RAM_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\ram\\model" FILES ${AWS_RAM_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_RAM_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_RAM_MODEL_SOURCE})

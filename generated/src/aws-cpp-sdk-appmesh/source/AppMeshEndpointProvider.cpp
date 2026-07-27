@@ -4,9 +4,14 @@
  */
 
 #include <aws/appmesh/AppMeshEndpointProvider.h>
+#include <aws/appmesh/internal/AppMeshEndpointRules.h>
 
 namespace Aws {
 namespace AppMesh {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+AppMeshEndpointProvider::AppMeshEndpointProvider()
+    : AppMeshDefaultEpProviderBase(Aws::AppMesh::AppMeshEndpointRules::GetRulesBlob(), Aws::AppMesh::AppMeshEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace AppMesh
 }  // namespace Aws

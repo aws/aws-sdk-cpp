@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsEndpointRules.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
 
 namespace Aws {
@@ -45,10 +44,7 @@ class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseManagerUserSubscriptionsEnd
  public:
   using LicenseManagerUserSubscriptionsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  LicenseManagerUserSubscriptionsEndpointProvider()
-      : LicenseManagerUserSubscriptionsDefaultEpProviderBase(
-            Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsEndpointRules::GetRulesBlob(),
-            Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsEndpointRules::RulesBlobSize) {}
+  LicenseManagerUserSubscriptionsEndpointProvider();
 
   ~LicenseManagerUserSubscriptionsEndpointProvider() {}
 };

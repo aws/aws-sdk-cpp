@@ -8,12 +8,12 @@
 
 #include <aws/fis/FISClient.h>
 #include <aws/fis/FISEndpointProvider.h>
-#include <aws/fis/FISEndpointRules.h>
 #include <aws/fis/FISErrorMarshaller.h>
 #include <aws/fis/FISErrors.h>
 #include <aws/fis/FISRequest.h>
 #include <aws/fis/FISServiceClientModel.h>
 #include <aws/fis/FIS_EXPORTS.h>
+#include <aws/fis/internal/FISEndpointRules.h>
 #include <aws/fis/model/AccountTargeting.h>
 #include <aws/fis/model/Action.h>
 #include <aws/fis/model/ActionParameter.h>

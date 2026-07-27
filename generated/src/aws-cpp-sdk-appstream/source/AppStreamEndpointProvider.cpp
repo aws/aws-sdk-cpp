@@ -4,9 +4,15 @@
  */
 
 #include <aws/appstream/AppStreamEndpointProvider.h>
+#include <aws/appstream/internal/AppStreamEndpointRules.h>
 
 namespace Aws {
 namespace AppStream {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+AppStreamEndpointProvider::AppStreamEndpointProvider()
+    : AppStreamDefaultEpProviderBase(Aws::AppStream::AppStreamEndpointRules::GetRulesBlob(),
+                                     Aws::AppStream::AppStreamEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace AppStream
 }  // namespace Aws

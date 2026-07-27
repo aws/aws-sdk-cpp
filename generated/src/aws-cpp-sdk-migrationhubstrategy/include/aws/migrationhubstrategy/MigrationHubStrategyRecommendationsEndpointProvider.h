@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsEndpointRules.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
 namespace Aws {
@@ -45,10 +44,7 @@ class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommenda
  public:
   using MigrationHubStrategyRecommendationsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MigrationHubStrategyRecommendationsEndpointProvider()
-      : MigrationHubStrategyRecommendationsDefaultEpProviderBase(
-            Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsEndpointRules::GetRulesBlob(),
-            Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsEndpointRules::RulesBlobSize) {}
+  MigrationHubStrategyRecommendationsEndpointProvider();
 
   ~MigrationHubStrategyRecommendationsEndpointProvider() {}
 };

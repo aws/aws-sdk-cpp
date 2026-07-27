@@ -8,12 +8,12 @@
 
 #include <aws/lambda/LambdaClient.h>
 #include <aws/lambda/LambdaEndpointProvider.h>
-#include <aws/lambda/LambdaEndpointRules.h>
 #include <aws/lambda/LambdaErrorMarshaller.h>
 #include <aws/lambda/LambdaErrors.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/lambda/LambdaServiceClientModel.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
+#include <aws/lambda/internal/LambdaEndpointRules.h>
 #include <aws/lambda/model/AccountLimit.h>
 #include <aws/lambda/model/AccountUsage.h>
 #include <aws/lambda/model/AddLayerVersionPermissionRequest.h>

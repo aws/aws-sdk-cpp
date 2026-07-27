@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/dax/DAXEndpointRules.h>
+#include <aws/dax/internal/DAXEndpointRules.h>
 
 namespace Aws {
 namespace DAX {

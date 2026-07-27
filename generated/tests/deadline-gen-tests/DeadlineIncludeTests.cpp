@@ -8,12 +8,12 @@
 
 #include <aws/deadline/DeadlineClient.h>
 #include <aws/deadline/DeadlineEndpointProvider.h>
-#include <aws/deadline/DeadlineEndpointRules.h>
 #include <aws/deadline/DeadlineErrorMarshaller.h>
 #include <aws/deadline/DeadlineErrors.h>
 #include <aws/deadline/DeadlineRequest.h>
 #include <aws/deadline/DeadlineServiceClientModel.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
+#include <aws/deadline/internal/DeadlineEndpointRules.h>
 #include <aws/deadline/model/AcceleratorCapabilities.h>
 #include <aws/deadline/model/AcceleratorCountRange.h>
 #include <aws/deadline/model/AcceleratorName.h>

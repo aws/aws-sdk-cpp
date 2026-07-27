@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/arc-region-switch/ARCRegionswitchEndpointRules.h>
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_ARCREGIONSWITCH_API ARCRegionswitchEndpointProvider : public ARCRegion
  public:
   using ARCRegionswitchResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ARCRegionswitchEndpointProvider()
-      : ARCRegionswitchDefaultEpProviderBase(Aws::ARCRegionswitch::ARCRegionswitchEndpointRules::GetRulesBlob(),
-                                             Aws::ARCRegionswitch::ARCRegionswitchEndpointRules::RulesBlobSize) {}
+  ARCRegionswitchEndpointProvider();
 
   ~ARCRegionswitchEndpointProvider() {}
 };

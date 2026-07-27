@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/appintegrations/AppIntegrationsServiceEndpointRules.h>
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -44,9 +43,7 @@ class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceEndpointProvider : pu
  public:
   using AppIntegrationsServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AppIntegrationsServiceEndpointProvider()
-      : AppIntegrationsServiceDefaultEpProviderBase(Aws::AppIntegrationsService::AppIntegrationsServiceEndpointRules::GetRulesBlob(),
-                                                    Aws::AppIntegrationsService::AppIntegrationsServiceEndpointRules::RulesBlobSize) {}
+  AppIntegrationsServiceEndpointProvider();
 
   ~AppIntegrationsServiceEndpointProvider() {}
 };

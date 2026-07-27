@@ -8,6 +8,10 @@ file(GLOB AWS_LEXV2-RUNTIME_MODEL_HEADERS
     "include/aws/lexv2-runtime/model/*.h"
 )
 
+file(GLOB AWS_LEXV2-RUNTIME_INTERNAL_HEADERS
+    "include/aws/lexv2-runtime/internal/*.h"
+)
+
 file(GLOB AWS_LEXV2-RUNTIME_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_LEXV2-RUNTIME_MODEL_SOURCE
 
 file(GLOB LEXV2-RUNTIME_UNIFIED_HEADERS
     ${AWS_LEXV2-RUNTIME_HEADERS}
+    ${AWS_LEXV2-RUNTIME_INTERNAL_HEADERS}
     ${AWS_LEXV2-RUNTIME_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\lexv2-runtime" FILES ${AWS_LEXV2-RUNTIME_HEADERS})
+        source_group("Header Files\\aws\\lexv2-runtime\\internal" FILES ${AWS_LEXV2-RUNTIME_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\lexv2-runtime\\model" FILES ${AWS_LEXV2-RUNTIME_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_LEXV2-RUNTIME_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_LEXV2-RUNTIME_MODEL_SOURCE})

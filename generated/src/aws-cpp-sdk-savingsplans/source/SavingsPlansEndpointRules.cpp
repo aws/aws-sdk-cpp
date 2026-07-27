@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/savingsplans/SavingsPlansEndpointRules.h>
+#include <aws/savingsplans/internal/SavingsPlansEndpointRules.h>
 
 namespace Aws {
 namespace SavingsPlans {

@@ -4,9 +4,14 @@
  */
 
 #include <aws/kafka/KafkaEndpointProvider.h>
+#include <aws/kafka/internal/KafkaEndpointRules.h>
 
 namespace Aws {
 namespace Kafka {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+KafkaEndpointProvider::KafkaEndpointProvider()
+    : KafkaDefaultEpProviderBase(Aws::Kafka::KafkaEndpointRules::GetRulesBlob(), Aws::Kafka::KafkaEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Kafka
 }  // namespace Aws

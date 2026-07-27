@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/geo-maps/GeoMapsEndpointRules.h>
 #include <aws/geo-maps/GeoMaps_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_GEOMAPS_API GeoMapsEndpointProvider : public GeoMapsDefaultEpProviderB
  public:
   using GeoMapsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  GeoMapsEndpointProvider()
-      : GeoMapsDefaultEpProviderBase(Aws::GeoMaps::GeoMapsEndpointRules::GetRulesBlob(),
-                                     Aws::GeoMaps::GeoMapsEndpointRules::RulesBlobSize) {}
+  GeoMapsEndpointProvider();
 
   ~GeoMapsEndpointProvider() {}
 };

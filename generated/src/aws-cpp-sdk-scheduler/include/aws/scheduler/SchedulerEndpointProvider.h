@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/scheduler/SchedulerEndpointRules.h>
 #include <aws/scheduler/Scheduler_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SCHEDULER_API SchedulerEndpointProvider : public SchedulerDefaultEpPro
  public:
   using SchedulerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SchedulerEndpointProvider()
-      : SchedulerDefaultEpProviderBase(Aws::Scheduler::SchedulerEndpointRules::GetRulesBlob(),
-                                       Aws::Scheduler::SchedulerEndpointRules::RulesBlobSize) {}
+  SchedulerEndpointProvider();
 
   ~SchedulerEndpointProvider() {}
 };

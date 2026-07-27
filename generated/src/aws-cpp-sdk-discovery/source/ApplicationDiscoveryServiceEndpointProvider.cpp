@@ -4,9 +4,16 @@
  */
 
 #include <aws/discovery/ApplicationDiscoveryServiceEndpointProvider.h>
+#include <aws/discovery/internal/ApplicationDiscoveryServiceEndpointRules.h>
 
 namespace Aws {
 namespace ApplicationDiscoveryService {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ApplicationDiscoveryServiceEndpointProvider::ApplicationDiscoveryServiceEndpointProvider()
+    : ApplicationDiscoveryServiceDefaultEpProviderBase(
+          Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceEndpointRules::GetRulesBlob(),
+          Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ApplicationDiscoveryService
 }  // namespace Aws

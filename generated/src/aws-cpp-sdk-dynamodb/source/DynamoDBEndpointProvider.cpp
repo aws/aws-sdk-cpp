@@ -4,6 +4,7 @@
  */
 
 #include <aws/dynamodb/DynamoDBEndpointProvider.h>
+#include <aws/dynamodb/internal/DynamoDBEndpointRules.h>
 
 namespace Aws {
 #ifndef AWS_DYNAMODB_EXPORTS  // Except for Windows DLL
@@ -23,6 +24,10 @@ template class Aws::Endpoint::DefaultEndpointProvider<DynamoDB::Endpoint::Dynamo
 
 namespace DynamoDB {
 namespace Endpoint {
+DynamoDBEndpointProvider::DynamoDBEndpointProvider()
+    : DynamoDBDefaultEpProviderBase(Aws::DynamoDB::DynamoDBEndpointRules::GetRulesBlob(),
+                                    Aws::DynamoDB::DynamoDBEndpointRules::RulesBlobSize) {}
+
 void DynamoDBBuiltInParameters::SetFromClientConfiguration(const DynamoDBClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const DynamoDBClientConfiguration::BaseClientConfigClass&>(config));
 

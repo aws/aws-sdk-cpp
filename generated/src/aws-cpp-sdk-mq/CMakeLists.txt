@@ -8,6 +8,10 @@ file(GLOB AWS_MQ_MODEL_HEADERS
     "include/aws/mq/model/*.h"
 )
 
+file(GLOB AWS_MQ_INTERNAL_HEADERS
+    "include/aws/mq/internal/*.h"
+)
+
 file(GLOB AWS_MQ_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MQ_MODEL_SOURCE
 
 file(GLOB MQ_UNIFIED_HEADERS
     ${AWS_MQ_HEADERS}
+    ${AWS_MQ_INTERNAL_HEADERS}
     ${AWS_MQ_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\mq" FILES ${AWS_MQ_HEADERS})
+        source_group("Header Files\\aws\\mq\\internal" FILES ${AWS_MQ_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\mq\\model" FILES ${AWS_MQ_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MQ_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MQ_MODEL_SOURCE})

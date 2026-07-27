@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/artifact/ArtifactEndpointRules.h>
 #include <aws/artifact/Artifact_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_ARTIFACT_API ArtifactEndpointProvider : public ArtifactDefaultEpProvid
  public:
   using ArtifactResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ArtifactEndpointProvider()
-      : ArtifactDefaultEpProviderBase(Aws::Artifact::ArtifactEndpointRules::GetRulesBlob(),
-                                      Aws::Artifact::ArtifactEndpointRules::RulesBlobSize) {}
+  ArtifactEndpointProvider();
 
   ~ArtifactEndpointProvider() {}
 };

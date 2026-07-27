@@ -8,12 +8,12 @@
 
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreClient.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreEndpointProvider.h>
-#include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreEndpointRules.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreErrorMarshaller.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreErrors.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreRequest.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreServiceClientModel.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStore_EXPORTS.h>
+#include <aws/cloudfront-keyvaluestore/internal/CloudFrontKeyValueStoreEndpointRules.h>
 #include <aws/cloudfront-keyvaluestore/model/DeleteKeyRequest.h>
 #include <aws/cloudfront-keyvaluestore/model/DeleteKeyRequestListItem.h>
 #include <aws/cloudfront-keyvaluestore/model/DeleteKeyResult.h>

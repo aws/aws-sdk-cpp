@@ -8,6 +8,10 @@ file(GLOB AWS_IMPORTEXPORT_MODEL_HEADERS
     "include/aws/importexport/model/*.h"
 )
 
+file(GLOB AWS_IMPORTEXPORT_INTERNAL_HEADERS
+    "include/aws/importexport/internal/*.h"
+)
+
 file(GLOB AWS_IMPORTEXPORT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_IMPORTEXPORT_MODEL_SOURCE
 
 file(GLOB IMPORTEXPORT_UNIFIED_HEADERS
     ${AWS_IMPORTEXPORT_HEADERS}
+    ${AWS_IMPORTEXPORT_INTERNAL_HEADERS}
     ${AWS_IMPORTEXPORT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\importexport" FILES ${AWS_IMPORTEXPORT_HEADERS})
+        source_group("Header Files\\aws\\importexport\\internal" FILES ${AWS_IMPORTEXPORT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\importexport\\model" FILES ${AWS_IMPORTEXPORT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_IMPORTEXPORT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_IMPORTEXPORT_MODEL_SOURCE})

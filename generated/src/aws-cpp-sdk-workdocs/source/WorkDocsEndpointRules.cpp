@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/workdocs/WorkDocsEndpointRules.h>
+#include <aws/workdocs/internal/WorkDocsEndpointRules.h>
 
 namespace Aws {
 namespace WorkDocs {

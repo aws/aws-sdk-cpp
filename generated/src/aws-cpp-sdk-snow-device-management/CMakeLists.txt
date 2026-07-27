@@ -8,6 +8,10 @@ file(GLOB AWS_SNOW-DEVICE-MANAGEMENT_MODEL_HEADERS
     "include/aws/snow-device-management/model/*.h"
 )
 
+file(GLOB AWS_SNOW-DEVICE-MANAGEMENT_INTERNAL_HEADERS
+    "include/aws/snow-device-management/internal/*.h"
+)
+
 file(GLOB AWS_SNOW-DEVICE-MANAGEMENT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SNOW-DEVICE-MANAGEMENT_MODEL_SOURCE
 
 file(GLOB SNOW-DEVICE-MANAGEMENT_UNIFIED_HEADERS
     ${AWS_SNOW-DEVICE-MANAGEMENT_HEADERS}
+    ${AWS_SNOW-DEVICE-MANAGEMENT_INTERNAL_HEADERS}
     ${AWS_SNOW-DEVICE-MANAGEMENT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\snow-device-management" FILES ${AWS_SNOW-DEVICE-MANAGEMENT_HEADERS})
+        source_group("Header Files\\aws\\snow-device-management\\internal" FILES ${AWS_SNOW-DEVICE-MANAGEMENT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\snow-device-management\\model" FILES ${AWS_SNOW-DEVICE-MANAGEMENT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SNOW-DEVICE-MANAGEMENT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SNOW-DEVICE-MANAGEMENT_MODEL_SOURCE})

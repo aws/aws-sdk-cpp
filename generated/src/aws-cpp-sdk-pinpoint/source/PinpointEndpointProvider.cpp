@@ -4,9 +4,15 @@
  */
 
 #include <aws/pinpoint/PinpointEndpointProvider.h>
+#include <aws/pinpoint/internal/PinpointEndpointRules.h>
 
 namespace Aws {
 namespace Pinpoint {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+PinpointEndpointProvider::PinpointEndpointProvider()
+    : PinpointDefaultEpProviderBase(Aws::Pinpoint::PinpointEndpointRules::GetRulesBlob(),
+                                    Aws::Pinpoint::PinpointEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Pinpoint
 }  // namespace Aws

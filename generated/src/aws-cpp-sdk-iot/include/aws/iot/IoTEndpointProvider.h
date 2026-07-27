@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iot/IoTEndpointRules.h>
 #include <aws/iot/IoT_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_IOT_API IoTEndpointProvider : public IoTDefaultEpProviderBase {
  public:
   using IoTResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IoTEndpointProvider() : IoTDefaultEpProviderBase(Aws::IoT::IoTEndpointRules::GetRulesBlob(), Aws::IoT::IoTEndpointRules::RulesBlobSize) {}
+  IoTEndpointProvider();
 
   ~IoTEndpointProvider() {}
 };

@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/ce/CostExplorerEndpointRules.h>
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_COSTEXPLORER_API CostExplorerEndpointProvider : public CostExplorerDef
  public:
   using CostExplorerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CostExplorerEndpointProvider()
-      : CostExplorerDefaultEpProviderBase(Aws::CostExplorer::CostExplorerEndpointRules::GetRulesBlob(),
-                                          Aws::CostExplorer::CostExplorerEndpointRules::RulesBlobSize) {}
+  CostExplorerEndpointProvider();
 
   ~CostExplorerEndpointProvider() {}
 };

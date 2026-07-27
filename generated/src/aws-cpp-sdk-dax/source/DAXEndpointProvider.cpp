@@ -4,9 +4,14 @@
  */
 
 #include <aws/dax/DAXEndpointProvider.h>
+#include <aws/dax/internal/DAXEndpointRules.h>
 
 namespace Aws {
 namespace DAX {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+DAXEndpointProvider::DAXEndpointProvider()
+    : DAXDefaultEpProviderBase(Aws::DAX::DAXEndpointRules::GetRulesBlob(), Aws::DAX::DAXEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace DAX
 }  // namespace Aws

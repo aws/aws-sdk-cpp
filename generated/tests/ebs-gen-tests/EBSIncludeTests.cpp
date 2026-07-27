@@ -8,12 +8,12 @@
 
 #include <aws/ebs/EBSClient.h>
 #include <aws/ebs/EBSEndpointProvider.h>
-#include <aws/ebs/EBSEndpointRules.h>
 #include <aws/ebs/EBSErrorMarshaller.h>
 #include <aws/ebs/EBSErrors.h>
 #include <aws/ebs/EBSRequest.h>
 #include <aws/ebs/EBSServiceClientModel.h>
 #include <aws/ebs/EBS_EXPORTS.h>
+#include <aws/ebs/internal/EBSEndpointRules.h>
 #include <aws/ebs/model/AccessDeniedException.h>
 #include <aws/ebs/model/AccessDeniedExceptionReason.h>
 #include <aws/ebs/model/Block.h>

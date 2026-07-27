@@ -8,6 +8,10 @@ file(GLOB AWS_WAF_MODEL_HEADERS
     "include/aws/waf/model/*.h"
 )
 
+file(GLOB AWS_WAF_INTERNAL_HEADERS
+    "include/aws/waf/internal/*.h"
+)
+
 file(GLOB AWS_WAF_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_WAF_MODEL_SOURCE
 
 file(GLOB WAF_UNIFIED_HEADERS
     ${AWS_WAF_HEADERS}
+    ${AWS_WAF_INTERNAL_HEADERS}
     ${AWS_WAF_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\waf" FILES ${AWS_WAF_HEADERS})
+        source_group("Header Files\\aws\\waf\\internal" FILES ${AWS_WAF_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\waf\\model" FILES ${AWS_WAF_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_WAF_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_WAF_MODEL_SOURCE})

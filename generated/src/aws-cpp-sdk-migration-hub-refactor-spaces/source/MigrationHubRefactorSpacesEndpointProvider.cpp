@@ -4,9 +4,16 @@
  */
 
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesEndpointProvider.h>
+#include <aws/migration-hub-refactor-spaces/internal/MigrationHubRefactorSpacesEndpointRules.h>
 
 namespace Aws {
 namespace MigrationHubRefactorSpaces {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MigrationHubRefactorSpacesEndpointProvider::MigrationHubRefactorSpacesEndpointProvider()
+    : MigrationHubRefactorSpacesDefaultEpProviderBase(
+          Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesEndpointRules::GetRulesBlob(),
+          Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MigrationHubRefactorSpaces
 }  // namespace Aws

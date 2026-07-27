@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/iotdeviceadvisor/IoTDeviceAdvisorEndpointRules.h>
+#include <aws/iotdeviceadvisor/internal/IoTDeviceAdvisorEndpointRules.h>
 
 namespace Aws {
 namespace IoTDeviceAdvisor {

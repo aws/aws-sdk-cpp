@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/frauddetector/FraudDetectorEndpointRules.h>
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_FRAUDDETECTOR_API FraudDetectorEndpointProvider : public FraudDetector
  public:
   using FraudDetectorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  FraudDetectorEndpointProvider()
-      : FraudDetectorDefaultEpProviderBase(Aws::FraudDetector::FraudDetectorEndpointRules::GetRulesBlob(),
-                                           Aws::FraudDetector::FraudDetectorEndpointRules::RulesBlobSize) {}
+  FraudDetectorEndpointProvider();
 
   ~FraudDetectorEndpointProvider() {}
 };

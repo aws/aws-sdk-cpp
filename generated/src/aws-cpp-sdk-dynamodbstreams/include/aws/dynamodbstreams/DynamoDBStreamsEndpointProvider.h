@@ -9,7 +9,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsClientConfiguration.h>
-#include <aws/dynamodbstreams/DynamoDBStreamsEndpointRules.h>
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
 
 namespace Aws {
@@ -65,9 +64,7 @@ class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsEndpointProvider : public DynamoDBS
  public:
   using DynamoDBStreamsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DynamoDBStreamsEndpointProvider()
-      : DynamoDBStreamsDefaultEpProviderBase(Aws::DynamoDBStreams::DynamoDBStreamsEndpointRules::GetRulesBlob(),
-                                             Aws::DynamoDBStreams::DynamoDBStreamsEndpointRules::RulesBlobSize) {}
+  DynamoDBStreamsEndpointProvider();
 
   ~DynamoDBStreamsEndpointProvider() {}
 };

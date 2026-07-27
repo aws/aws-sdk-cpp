@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/apigatewaymanagementapi/ApiGatewayManagementApiEndpointRules.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApi_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -44,9 +43,7 @@ class AWS_APIGATEWAYMANAGEMENTAPI_API ApiGatewayManagementApiEndpointProvider : 
  public:
   using ApiGatewayManagementApiResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ApiGatewayManagementApiEndpointProvider()
-      : ApiGatewayManagementApiDefaultEpProviderBase(Aws::ApiGatewayManagementApi::ApiGatewayManagementApiEndpointRules::GetRulesBlob(),
-                                                     Aws::ApiGatewayManagementApi::ApiGatewayManagementApiEndpointRules::RulesBlobSize) {}
+  ApiGatewayManagementApiEndpointProvider();
 
   ~ApiGatewayManagementApiEndpointProvider() {}
 };

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/support-app/SupportAppEndpointRules.h>
 #include <aws/support-app/SupportApp_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SUPPORTAPP_API SupportAppEndpointProvider : public SupportAppDefaultEp
  public:
   using SupportAppResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SupportAppEndpointProvider()
-      : SupportAppDefaultEpProviderBase(Aws::SupportApp::SupportAppEndpointRules::GetRulesBlob(),
-                                        Aws::SupportApp::SupportAppEndpointRules::RulesBlobSize) {}
+  SupportAppEndpointProvider();
 
   ~SupportAppEndpointProvider() {}
 };

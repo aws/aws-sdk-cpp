@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/forecast/ForecastServiceEndpointRules.h>
 #include <aws/forecast/ForecastService_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_FORECASTSERVICE_API ForecastServiceEndpointProvider : public ForecastS
  public:
   using ForecastServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ForecastServiceEndpointProvider()
-      : ForecastServiceDefaultEpProviderBase(Aws::ForecastService::ForecastServiceEndpointRules::GetRulesBlob(),
-                                             Aws::ForecastService::ForecastServiceEndpointRules::RulesBlobSize) {}
+  ForecastServiceEndpointProvider();
 
   ~ForecastServiceEndpointProvider() {}
 };

@@ -8,6 +8,10 @@ file(GLOB AWS_GEO-PLACES_MODEL_HEADERS
     "include/aws/geo-places/model/*.h"
 )
 
+file(GLOB AWS_GEO-PLACES_INTERNAL_HEADERS
+    "include/aws/geo-places/internal/*.h"
+)
+
 file(GLOB AWS_GEO-PLACES_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_GEO-PLACES_MODEL_SOURCE
 
 file(GLOB GEO-PLACES_UNIFIED_HEADERS
     ${AWS_GEO-PLACES_HEADERS}
+    ${AWS_GEO-PLACES_INTERNAL_HEADERS}
     ${AWS_GEO-PLACES_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\geo-places" FILES ${AWS_GEO-PLACES_HEADERS})
+        source_group("Header Files\\aws\\geo-places\\internal" FILES ${AWS_GEO-PLACES_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\geo-places\\model" FILES ${AWS_GEO-PLACES_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_GEO-PLACES_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_GEO-PLACES_MODEL_SOURCE})

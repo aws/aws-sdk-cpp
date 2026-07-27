@@ -4,9 +4,15 @@
  */
 
 #include <aws/ce/CostExplorerEndpointProvider.h>
+#include <aws/ce/internal/CostExplorerEndpointRules.h>
 
 namespace Aws {
 namespace CostExplorer {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+CostExplorerEndpointProvider::CostExplorerEndpointProvider()
+    : CostExplorerDefaultEpProviderBase(Aws::CostExplorer::CostExplorerEndpointRules::GetRulesBlob(),
+                                        Aws::CostExplorer::CostExplorerEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace CostExplorer
 }  // namespace Aws

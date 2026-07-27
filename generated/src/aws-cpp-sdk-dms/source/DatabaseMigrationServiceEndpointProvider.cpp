@@ -4,9 +4,15 @@
  */
 
 #include <aws/dms/DatabaseMigrationServiceEndpointProvider.h>
+#include <aws/dms/internal/DatabaseMigrationServiceEndpointRules.h>
 
 namespace Aws {
 namespace DatabaseMigrationService {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+DatabaseMigrationServiceEndpointProvider::DatabaseMigrationServiceEndpointProvider()
+    : DatabaseMigrationServiceDefaultEpProviderBase(Aws::DatabaseMigrationService::DatabaseMigrationServiceEndpointRules::GetRulesBlob(),
+                                                    Aws::DatabaseMigrationService::DatabaseMigrationServiceEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace DatabaseMigrationService
 }  // namespace Aws

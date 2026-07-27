@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/outposts/OutpostsEndpointRules.h>
+#include <aws/outposts/internal/OutpostsEndpointRules.h>
 
 namespace Aws {
 namespace Outposts {

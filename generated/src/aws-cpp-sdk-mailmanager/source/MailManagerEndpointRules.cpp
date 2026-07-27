@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/mailmanager/MailManagerEndpointRules.h>
+#include <aws/mailmanager/internal/MailManagerEndpointRules.h>
 
 namespace Aws {
 namespace MailManager {

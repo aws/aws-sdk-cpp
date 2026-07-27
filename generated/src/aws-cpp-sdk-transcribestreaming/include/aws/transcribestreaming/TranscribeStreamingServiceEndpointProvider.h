@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/transcribestreaming/TranscribeStreamingServiceEndpointRules.h>
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 
 namespace Aws {
@@ -45,10 +44,7 @@ class AWS_TRANSCRIBESTREAMINGSERVICE_API TranscribeStreamingServiceEndpointProvi
  public:
   using TranscribeStreamingServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  TranscribeStreamingServiceEndpointProvider()
-      : TranscribeStreamingServiceDefaultEpProviderBase(
-            Aws::TranscribeStreamingService::TranscribeStreamingServiceEndpointRules::GetRulesBlob(),
-            Aws::TranscribeStreamingService::TranscribeStreamingServiceEndpointRules::RulesBlobSize) {}
+  TranscribeStreamingServiceEndpointProvider();
 
   ~TranscribeStreamingServiceEndpointProvider() {}
 };

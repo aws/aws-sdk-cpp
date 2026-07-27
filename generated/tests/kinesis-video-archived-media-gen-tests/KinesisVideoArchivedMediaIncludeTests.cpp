@@ -8,12 +8,12 @@
 
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaClient.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaEndpointProvider.h>
-#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaEndpointRules.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaErrorMarshaller.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaErrors.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaRequest.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaServiceClientModel.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
+#include <aws/kinesis-video-archived-media/internal/KinesisVideoArchivedMediaEndpointRules.h>
 #include <aws/kinesis-video-archived-media/model/ClipFragmentSelector.h>
 #include <aws/kinesis-video-archived-media/model/ClipFragmentSelectorType.h>
 #include <aws/kinesis-video-archived-media/model/ClipTimestampRange.h>

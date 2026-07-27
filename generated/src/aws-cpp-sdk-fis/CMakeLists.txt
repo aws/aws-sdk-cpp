@@ -8,6 +8,10 @@ file(GLOB AWS_FIS_MODEL_HEADERS
     "include/aws/fis/model/*.h"
 )
 
+file(GLOB AWS_FIS_INTERNAL_HEADERS
+    "include/aws/fis/internal/*.h"
+)
+
 file(GLOB AWS_FIS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_FIS_MODEL_SOURCE
 
 file(GLOB FIS_UNIFIED_HEADERS
     ${AWS_FIS_HEADERS}
+    ${AWS_FIS_INTERNAL_HEADERS}
     ${AWS_FIS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\fis" FILES ${AWS_FIS_HEADERS})
+        source_group("Header Files\\aws\\fis\\internal" FILES ${AWS_FIS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\fis\\model" FILES ${AWS_FIS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_FIS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_FIS_MODEL_SOURCE})

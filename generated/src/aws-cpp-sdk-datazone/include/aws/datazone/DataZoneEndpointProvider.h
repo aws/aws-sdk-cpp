@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/datazone/DataZoneEndpointRules.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_DATAZONE_API DataZoneEndpointProvider : public DataZoneDefaultEpProvid
  public:
   using DataZoneResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DataZoneEndpointProvider()
-      : DataZoneDefaultEpProviderBase(Aws::DataZone::DataZoneEndpointRules::GetRulesBlob(),
-                                      Aws::DataZone::DataZoneEndpointRules::RulesBlobSize) {}
+  DataZoneEndpointProvider();
 
   ~DataZoneEndpointProvider() {}
 };

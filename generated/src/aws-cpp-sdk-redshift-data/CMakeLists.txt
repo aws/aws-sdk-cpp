@@ -8,6 +8,10 @@ file(GLOB AWS_REDSHIFT-DATA_MODEL_HEADERS
     "include/aws/redshift-data/model/*.h"
 )
 
+file(GLOB AWS_REDSHIFT-DATA_INTERNAL_HEADERS
+    "include/aws/redshift-data/internal/*.h"
+)
+
 file(GLOB AWS_REDSHIFT-DATA_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_REDSHIFT-DATA_MODEL_SOURCE
 
 file(GLOB REDSHIFT-DATA_UNIFIED_HEADERS
     ${AWS_REDSHIFT-DATA_HEADERS}
+    ${AWS_REDSHIFT-DATA_INTERNAL_HEADERS}
     ${AWS_REDSHIFT-DATA_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\redshift-data" FILES ${AWS_REDSHIFT-DATA_HEADERS})
+        source_group("Header Files\\aws\\redshift-data\\internal" FILES ${AWS_REDSHIFT-DATA_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\redshift-data\\model" FILES ${AWS_REDSHIFT-DATA_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_REDSHIFT-DATA_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_REDSHIFT-DATA_MODEL_SOURCE})

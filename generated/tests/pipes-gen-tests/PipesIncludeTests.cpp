@@ -8,12 +8,12 @@
 
 #include <aws/pipes/PipesClient.h>
 #include <aws/pipes/PipesEndpointProvider.h>
-#include <aws/pipes/PipesEndpointRules.h>
 #include <aws/pipes/PipesErrorMarshaller.h>
 #include <aws/pipes/PipesErrors.h>
 #include <aws/pipes/PipesRequest.h>
 #include <aws/pipes/PipesServiceClientModel.h>
 #include <aws/pipes/Pipes_EXPORTS.h>
+#include <aws/pipes/internal/PipesEndpointRules.h>
 #include <aws/pipes/model/AssignPublicIp.h>
 #include <aws/pipes/model/AwsVpcConfiguration.h>
 #include <aws/pipes/model/BatchArrayProperties.h>

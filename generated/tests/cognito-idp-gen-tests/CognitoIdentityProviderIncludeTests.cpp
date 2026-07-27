@@ -8,12 +8,12 @@
 
 #include <aws/cognito-idp/CognitoIdentityProviderClient.h>
 #include <aws/cognito-idp/CognitoIdentityProviderEndpointProvider.h>
-#include <aws/cognito-idp/CognitoIdentityProviderEndpointRules.h>
 #include <aws/cognito-idp/CognitoIdentityProviderErrorMarshaller.h>
 #include <aws/cognito-idp/CognitoIdentityProviderErrors.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/cognito-idp/CognitoIdentityProviderServiceClientModel.h>
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
+#include <aws/cognito-idp/internal/CognitoIdentityProviderEndpointRules.h>
 #include <aws/cognito-idp/model/AccountRecoverySettingType.h>
 #include <aws/cognito-idp/model/AccountTakeoverActionType.h>
 #include <aws/cognito-idp/model/AccountTakeoverActionsType.h>

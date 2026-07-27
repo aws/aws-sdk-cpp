@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/notificationscontacts/NotificationsContactsEndpointRules.h>
 #include <aws/notificationscontacts/NotificationsContacts_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_NOTIFICATIONSCONTACTS_API NotificationsContactsEndpointProvider : publ
  public:
   using NotificationsContactsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  NotificationsContactsEndpointProvider()
-      : NotificationsContactsDefaultEpProviderBase(Aws::NotificationsContacts::NotificationsContactsEndpointRules::GetRulesBlob(),
-                                                   Aws::NotificationsContacts::NotificationsContactsEndpointRules::RulesBlobSize) {}
+  NotificationsContactsEndpointProvider();
 
   ~NotificationsContactsEndpointProvider() {}
 };

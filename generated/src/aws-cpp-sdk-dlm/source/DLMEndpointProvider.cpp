@@ -4,9 +4,14 @@
  */
 
 #include <aws/dlm/DLMEndpointProvider.h>
+#include <aws/dlm/internal/DLMEndpointRules.h>
 
 namespace Aws {
 namespace DLM {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+DLMEndpointProvider::DLMEndpointProvider()
+    : DLMDefaultEpProviderBase(Aws::DLM::DLMEndpointRules::GetRulesBlob(), Aws::DLM::DLMEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace DLM
 }  // namespace Aws

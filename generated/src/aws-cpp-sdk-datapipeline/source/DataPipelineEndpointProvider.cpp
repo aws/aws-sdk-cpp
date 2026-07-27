@@ -4,9 +4,15 @@
  */
 
 #include <aws/datapipeline/DataPipelineEndpointProvider.h>
+#include <aws/datapipeline/internal/DataPipelineEndpointRules.h>
 
 namespace Aws {
 namespace DataPipeline {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+DataPipelineEndpointProvider::DataPipelineEndpointProvider()
+    : DataPipelineDefaultEpProviderBase(Aws::DataPipeline::DataPipelineEndpointRules::GetRulesBlob(),
+                                        Aws::DataPipeline::DataPipelineEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace DataPipeline
 }  // namespace Aws

@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/organizations/OrganizationsEndpointRules.h>
+#include <aws/organizations/internal/OrganizationsEndpointRules.h>
 
 namespace Aws {
 namespace Organizations {

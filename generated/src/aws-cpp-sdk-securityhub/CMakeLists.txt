@@ -8,6 +8,10 @@ file(GLOB AWS_SECURITYHUB_MODEL_HEADERS
     "include/aws/securityhub/model/*.h"
 )
 
+file(GLOB AWS_SECURITYHUB_INTERNAL_HEADERS
+    "include/aws/securityhub/internal/*.h"
+)
+
 file(GLOB AWS_SECURITYHUB_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SECURITYHUB_MODEL_SOURCE
 
 file(GLOB SECURITYHUB_UNIFIED_HEADERS
     ${AWS_SECURITYHUB_HEADERS}
+    ${AWS_SECURITYHUB_INTERNAL_HEADERS}
     ${AWS_SECURITYHUB_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\securityhub" FILES ${AWS_SECURITYHUB_HEADERS})
+        source_group("Header Files\\aws\\securityhub\\internal" FILES ${AWS_SECURITYHUB_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\securityhub\\model" FILES ${AWS_SECURITYHUB_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SECURITYHUB_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SECURITYHUB_MODEL_SOURCE})

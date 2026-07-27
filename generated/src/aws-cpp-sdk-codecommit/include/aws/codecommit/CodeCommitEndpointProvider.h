@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/codecommit/CodeCommitEndpointRules.h>
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CODECOMMIT_API CodeCommitEndpointProvider : public CodeCommitDefaultEp
  public:
   using CodeCommitResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CodeCommitEndpointProvider()
-      : CodeCommitDefaultEpProviderBase(Aws::CodeCommit::CodeCommitEndpointRules::GetRulesBlob(),
-                                        Aws::CodeCommit::CodeCommitEndpointRules::RulesBlobSize) {}
+  CodeCommitEndpointProvider();
 
   ~CodeCommitEndpointProvider() {}
 };

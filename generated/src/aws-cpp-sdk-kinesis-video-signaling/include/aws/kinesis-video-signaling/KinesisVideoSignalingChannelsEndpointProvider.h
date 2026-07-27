@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsEndpointRules.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannels_EXPORTS.h>
 
 namespace Aws {
@@ -45,10 +44,7 @@ class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsEndpoin
  public:
   using KinesisVideoSignalingChannelsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  KinesisVideoSignalingChannelsEndpointProvider()
-      : KinesisVideoSignalingChannelsDefaultEpProviderBase(
-            Aws::KinesisVideoSignalingChannels::KinesisVideoSignalingChannelsEndpointRules::GetRulesBlob(),
-            Aws::KinesisVideoSignalingChannels::KinesisVideoSignalingChannelsEndpointRules::RulesBlobSize) {}
+  KinesisVideoSignalingChannelsEndpointProvider();
 
   ~KinesisVideoSignalingChannelsEndpointProvider() {}
 };

@@ -8,12 +8,12 @@
 
 #include <aws/networkmanager/NetworkManagerClient.h>
 #include <aws/networkmanager/NetworkManagerEndpointProvider.h>
-#include <aws/networkmanager/NetworkManagerEndpointRules.h>
 #include <aws/networkmanager/NetworkManagerErrorMarshaller.h>
 #include <aws/networkmanager/NetworkManagerErrors.h>
 #include <aws/networkmanager/NetworkManagerRequest.h>
 #include <aws/networkmanager/NetworkManagerServiceClientModel.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
+#include <aws/networkmanager/internal/NetworkManagerEndpointRules.h>
 #include <aws/networkmanager/model/AWSLocation.h>
 #include <aws/networkmanager/model/AcceptAttachmentRequest.h>
 #include <aws/networkmanager/model/AcceptAttachmentResult.h>

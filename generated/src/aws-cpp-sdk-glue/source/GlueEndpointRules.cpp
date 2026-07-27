@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/glue/GlueEndpointRules.h>
+#include <aws/glue/internal/GlueEndpointRules.h>
 
 namespace Aws {
 namespace Glue {

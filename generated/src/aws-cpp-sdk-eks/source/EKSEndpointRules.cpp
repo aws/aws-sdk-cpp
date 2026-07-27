@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/eks/EKSEndpointRules.h>
+#include <aws/eks/internal/EKSEndpointRules.h>
 
 namespace Aws {
 namespace EKS {

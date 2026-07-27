@@ -10,12 +10,12 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeClient.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeClientConfiguration.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeEndpointProvider.h>
-#include <aws/bedrock-agent-runtime/BedrockAgentRuntimeEndpointRules.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeErrorMarshaller.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeErrors.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeRequest.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeServiceClientModel.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/internal/BedrockAgentRuntimeEndpointRules.h>
 #include <aws/bedrock-agent-runtime/model/APISchema.h>
 #include <aws/bedrock-agent-runtime/model/ActionGroupExecutor.h>
 #include <aws/bedrock-agent-runtime/model/ActionGroupInvocationInput.h>

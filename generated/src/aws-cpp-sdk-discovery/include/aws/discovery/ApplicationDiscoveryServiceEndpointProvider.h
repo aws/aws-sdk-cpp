@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/discovery/ApplicationDiscoveryServiceEndpointRules.h>
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 
 namespace Aws {
@@ -45,10 +44,7 @@ class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceEndpointPro
  public:
   using ApplicationDiscoveryServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ApplicationDiscoveryServiceEndpointProvider()
-      : ApplicationDiscoveryServiceDefaultEpProviderBase(
-            Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceEndpointRules::GetRulesBlob(),
-            Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceEndpointRules::RulesBlobSize) {}
+  ApplicationDiscoveryServiceEndpointProvider();
 
   ~ApplicationDiscoveryServiceEndpointProvider() {}
 };

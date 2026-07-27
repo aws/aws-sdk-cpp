@@ -4,9 +4,15 @@
  */
 
 #include <aws/taxsettings/TaxSettingsEndpointProvider.h>
+#include <aws/taxsettings/internal/TaxSettingsEndpointRules.h>
 
 namespace Aws {
 namespace TaxSettings {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+TaxSettingsEndpointProvider::TaxSettingsEndpointProvider()
+    : TaxSettingsDefaultEpProviderBase(Aws::TaxSettings::TaxSettingsEndpointRules::GetRulesBlob(),
+                                       Aws::TaxSettings::TaxSettingsEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace TaxSettings
 }  // namespace Aws

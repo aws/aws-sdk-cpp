@@ -8,6 +8,10 @@ file(GLOB AWS_WORKMAILMESSAGEFLOW_MODEL_HEADERS
     "include/aws/workmailmessageflow/model/*.h"
 )
 
+file(GLOB AWS_WORKMAILMESSAGEFLOW_INTERNAL_HEADERS
+    "include/aws/workmailmessageflow/internal/*.h"
+)
+
 file(GLOB AWS_WORKMAILMESSAGEFLOW_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_WORKMAILMESSAGEFLOW_MODEL_SOURCE
 
 file(GLOB WORKMAILMESSAGEFLOW_UNIFIED_HEADERS
     ${AWS_WORKMAILMESSAGEFLOW_HEADERS}
+    ${AWS_WORKMAILMESSAGEFLOW_INTERNAL_HEADERS}
     ${AWS_WORKMAILMESSAGEFLOW_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\workmailmessageflow" FILES ${AWS_WORKMAILMESSAGEFLOW_HEADERS})
+        source_group("Header Files\\aws\\workmailmessageflow\\internal" FILES ${AWS_WORKMAILMESSAGEFLOW_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\workmailmessageflow\\model" FILES ${AWS_WORKMAILMESSAGEFLOW_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_WORKMAILMESSAGEFLOW_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_WORKMAILMESSAGEFLOW_MODEL_SOURCE})

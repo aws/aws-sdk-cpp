@@ -4,9 +4,14 @@
  */
 
 #include <aws/sqs/SQSEndpointProvider.h>
+#include <aws/sqs/internal/SQSEndpointRules.h>
 
 namespace Aws {
 namespace SQS {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SQSEndpointProvider::SQSEndpointProvider()
+    : SQSDefaultEpProviderBase(Aws::SQS::SQSEndpointRules::GetRulesBlob(), Aws::SQS::SQSEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SQS
 }  // namespace Aws

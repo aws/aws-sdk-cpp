@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/vpc-lattice/VPCLatticeEndpointRules.h>
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_VPCLATTICE_API VPCLatticeEndpointProvider : public VPCLatticeDefaultEp
  public:
   using VPCLatticeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  VPCLatticeEndpointProvider()
-      : VPCLatticeDefaultEpProviderBase(Aws::VPCLattice::VPCLatticeEndpointRules::GetRulesBlob(),
-                                        Aws::VPCLattice::VPCLatticeEndpointRules::RulesBlobSize) {}
+  VPCLatticeEndpointProvider();
 
   ~VPCLatticeEndpointProvider() {}
 };

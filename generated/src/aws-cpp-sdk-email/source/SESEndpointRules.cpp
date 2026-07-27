@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/email/SESEndpointRules.h>
+#include <aws/email/internal/SESEndpointRules.h>
 
 namespace Aws {
 namespace SES {

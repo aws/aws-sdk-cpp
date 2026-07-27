@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/medical-imaging/MedicalImagingEndpointRules.h>
+#include <aws/medical-imaging/internal/MedicalImagingEndpointRules.h>
 
 namespace Aws {
 namespace MedicalImaging {

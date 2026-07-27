@@ -8,12 +8,12 @@
 
 #include <aws/applicationcostprofiler/ApplicationCostProfilerClient.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerEndpointProvider.h>
-#include <aws/applicationcostprofiler/ApplicationCostProfilerEndpointRules.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerErrorMarshaller.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerErrors.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerRequest.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerServiceClientModel.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfiler_EXPORTS.h>
+#include <aws/applicationcostprofiler/internal/ApplicationCostProfilerEndpointRules.h>
 #include <aws/applicationcostprofiler/model/DeleteReportDefinitionRequest.h>
 #include <aws/applicationcostprofiler/model/DeleteReportDefinitionResult.h>
 #include <aws/applicationcostprofiler/model/Format.h>

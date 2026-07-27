@@ -8,6 +8,10 @@ file(GLOB AWS_SERVERLESSREPO_MODEL_HEADERS
     "include/aws/serverlessrepo/model/*.h"
 )
 
+file(GLOB AWS_SERVERLESSREPO_INTERNAL_HEADERS
+    "include/aws/serverlessrepo/internal/*.h"
+)
+
 file(GLOB AWS_SERVERLESSREPO_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SERVERLESSREPO_MODEL_SOURCE
 
 file(GLOB SERVERLESSREPO_UNIFIED_HEADERS
     ${AWS_SERVERLESSREPO_HEADERS}
+    ${AWS_SERVERLESSREPO_INTERNAL_HEADERS}
     ${AWS_SERVERLESSREPO_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\serverlessrepo" FILES ${AWS_SERVERLESSREPO_HEADERS})
+        source_group("Header Files\\aws\\serverlessrepo\\internal" FILES ${AWS_SERVERLESSREPO_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\serverlessrepo\\model" FILES ${AWS_SERVERLESSREPO_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SERVERLESSREPO_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SERVERLESSREPO_MODEL_SOURCE})

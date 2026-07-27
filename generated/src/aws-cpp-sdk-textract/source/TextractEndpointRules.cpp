@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/textract/TextractEndpointRules.h>
+#include <aws/textract/internal/TextractEndpointRules.h>
 
 namespace Aws {
 namespace Textract {

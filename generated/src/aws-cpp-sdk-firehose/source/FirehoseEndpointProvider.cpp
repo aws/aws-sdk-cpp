@@ -4,9 +4,15 @@
  */
 
 #include <aws/firehose/FirehoseEndpointProvider.h>
+#include <aws/firehose/internal/FirehoseEndpointRules.h>
 
 namespace Aws {
 namespace Firehose {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+FirehoseEndpointProvider::FirehoseEndpointProvider()
+    : FirehoseDefaultEpProviderBase(Aws::Firehose::FirehoseEndpointRules::GetRulesBlob(),
+                                    Aws::Firehose::FirehoseEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Firehose
 }  // namespace Aws

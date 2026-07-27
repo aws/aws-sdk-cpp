@@ -8,12 +8,12 @@
 
 #include <aws/glue/GlueClient.h>
 #include <aws/glue/GlueEndpointProvider.h>
-#include <aws/glue/GlueEndpointRules.h>
 #include <aws/glue/GlueErrorMarshaller.h>
 #include <aws/glue/GlueErrors.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/glue/GlueServiceClientModel.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/internal/GlueEndpointRules.h>
 #include <aws/glue/model/Action.h>
 #include <aws/glue/model/AdditionalOptionKeys.h>
 #include <aws/glue/model/AggFunction.h>

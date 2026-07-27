@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/schemas/SchemasEndpointRules.h>
+#include <aws/schemas/internal/SchemasEndpointRules.h>
 
 namespace Aws {
 namespace Schemas {

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/monitoring/CloudWatchEndpointRules.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_CLOUDWATCH_API CloudWatchEndpointProvider : public CloudWatchDefaultEp
  public:
   using CloudWatchResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CloudWatchEndpointProvider()
-      : CloudWatchDefaultEpProviderBase(Aws::CloudWatch::CloudWatchEndpointRules::GetRulesBlob(),
-                                        Aws::CloudWatch::CloudWatchEndpointRules::RulesBlobSize) {}
+  CloudWatchEndpointProvider();
 
   ~CloudWatchEndpointProvider() {}
 };

@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/auditmanager/AuditManagerEndpointRules.h>
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_AUDITMANAGER_API AuditManagerEndpointProvider : public AuditManagerDef
  public:
   using AuditManagerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AuditManagerEndpointProvider()
-      : AuditManagerDefaultEpProviderBase(Aws::AuditManager::AuditManagerEndpointRules::GetRulesBlob(),
-                                          Aws::AuditManager::AuditManagerEndpointRules::RulesBlobSize) {}
+  AuditManagerEndpointProvider();
 
   ~AuditManagerEndpointProvider() {}
 };

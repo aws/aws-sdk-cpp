@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/nova-act/NovaActEndpointRules.h>
 #include <aws/nova-act/NovaAct_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_NOVAACT_API NovaActEndpointProvider : public NovaActDefaultEpProviderB
  public:
   using NovaActResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  NovaActEndpointProvider()
-      : NovaActDefaultEpProviderBase(Aws::NovaAct::NovaActEndpointRules::GetRulesBlob(),
-                                     Aws::NovaAct::NovaActEndpointRules::RulesBlobSize) {}
+  NovaActEndpointProvider();
 
   ~NovaActEndpointProvider() {}
 };

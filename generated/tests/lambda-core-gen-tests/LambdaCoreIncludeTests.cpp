@@ -8,12 +8,12 @@
 
 #include <aws/lambda-core/LambdaCoreClient.h>
 #include <aws/lambda-core/LambdaCoreEndpointProvider.h>
-#include <aws/lambda-core/LambdaCoreEndpointRules.h>
 #include <aws/lambda-core/LambdaCoreErrorMarshaller.h>
 #include <aws/lambda-core/LambdaCoreErrors.h>
 #include <aws/lambda-core/LambdaCoreRequest.h>
 #include <aws/lambda-core/LambdaCoreServiceClientModel.h>
 #include <aws/lambda-core/LambdaCore_EXPORTS.h>
+#include <aws/lambda-core/internal/LambdaCoreEndpointRules.h>
 #include <aws/lambda-core/model/ComputeResourceType.h>
 #include <aws/lambda-core/model/CreateNetworkConnectorRequest.h>
 #include <aws/lambda-core/model/CreateNetworkConnectorResult.h>

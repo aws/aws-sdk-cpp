@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/freetier/FreeTierEndpointRules.h>
 #include <aws/freetier/FreeTier_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_FREETIER_API FreeTierEndpointProvider : public FreeTierDefaultEpProvid
  public:
   using FreeTierResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  FreeTierEndpointProvider()
-      : FreeTierDefaultEpProviderBase(Aws::FreeTier::FreeTierEndpointRules::GetRulesBlob(),
-                                      Aws::FreeTier::FreeTierEndpointRules::RulesBlobSize) {}
+  FreeTierEndpointProvider();
 
   ~FreeTierEndpointProvider() {}
 };

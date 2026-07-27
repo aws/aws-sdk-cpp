@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/vpc-lattice/VPCLatticeEndpointRules.h>
+#include <aws/vpc-lattice/internal/VPCLatticeEndpointRules.h>
 
 namespace Aws {
 namespace VPCLattice {

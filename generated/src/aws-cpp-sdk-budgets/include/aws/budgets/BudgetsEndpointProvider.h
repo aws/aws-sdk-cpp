@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/budgets/BudgetsEndpointRules.h>
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_BUDGETS_API BudgetsEndpointProvider : public BudgetsDefaultEpProviderB
  public:
   using BudgetsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BudgetsEndpointProvider()
-      : BudgetsDefaultEpProviderBase(Aws::Budgets::BudgetsEndpointRules::GetRulesBlob(),
-                                     Aws::Budgets::BudgetsEndpointRules::RulesBlobSize) {}
+  BudgetsEndpointProvider();
 
   ~BudgetsEndpointProvider() {}
 };

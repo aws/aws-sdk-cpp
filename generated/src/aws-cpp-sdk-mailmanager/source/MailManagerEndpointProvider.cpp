@@ -4,9 +4,15 @@
  */
 
 #include <aws/mailmanager/MailManagerEndpointProvider.h>
+#include <aws/mailmanager/internal/MailManagerEndpointRules.h>
 
 namespace Aws {
 namespace MailManager {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+MailManagerEndpointProvider::MailManagerEndpointProvider()
+    : MailManagerDefaultEpProviderBase(Aws::MailManager::MailManagerEndpointRules::GetRulesBlob(),
+                                       Aws::MailManager::MailManagerEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace MailManager
 }  // namespace Aws

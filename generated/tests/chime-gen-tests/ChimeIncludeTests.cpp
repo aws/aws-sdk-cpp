@@ -8,12 +8,12 @@
 
 #include <aws/chime/ChimeClient.h>
 #include <aws/chime/ChimeEndpointProvider.h>
-#include <aws/chime/ChimeEndpointRules.h>
 #include <aws/chime/ChimeErrorMarshaller.h>
 #include <aws/chime/ChimeErrors.h>
 #include <aws/chime/ChimeRequest.h>
 #include <aws/chime/ChimeServiceClientModel.h>
 #include <aws/chime/Chime_EXPORTS.h>
+#include <aws/chime/internal/ChimeEndpointRules.h>
 #include <aws/chime/model/AccessDeniedException.h>
 #include <aws/chime/model/Account.h>
 #include <aws/chime/model/AccountSettings.h>

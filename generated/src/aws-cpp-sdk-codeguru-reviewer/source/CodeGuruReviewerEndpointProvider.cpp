@@ -4,9 +4,15 @@
  */
 
 #include <aws/codeguru-reviewer/CodeGuruReviewerEndpointProvider.h>
+#include <aws/codeguru-reviewer/internal/CodeGuruReviewerEndpointRules.h>
 
 namespace Aws {
 namespace CodeGuruReviewer {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+CodeGuruReviewerEndpointProvider::CodeGuruReviewerEndpointProvider()
+    : CodeGuruReviewerDefaultEpProviderBase(Aws::CodeGuruReviewer::CodeGuruReviewerEndpointRules::GetRulesBlob(),
+                                            Aws::CodeGuruReviewer::CodeGuruReviewerEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace CodeGuruReviewer
 }  // namespace Aws

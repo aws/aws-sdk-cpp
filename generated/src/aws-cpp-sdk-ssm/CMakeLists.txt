@@ -8,6 +8,10 @@ file(GLOB AWS_SSM_MODEL_HEADERS
     "include/aws/ssm/model/*.h"
 )
 
+file(GLOB AWS_SSM_INTERNAL_HEADERS
+    "include/aws/ssm/internal/*.h"
+)
+
 file(GLOB AWS_SSM_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SSM_MODEL_SOURCE
 
 file(GLOB SSM_UNIFIED_HEADERS
     ${AWS_SSM_HEADERS}
+    ${AWS_SSM_INTERNAL_HEADERS}
     ${AWS_SSM_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\ssm" FILES ${AWS_SSM_HEADERS})
+        source_group("Header Files\\aws\\ssm\\internal" FILES ${AWS_SSM_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\ssm\\model" FILES ${AWS_SSM_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SSM_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SSM_MODEL_SOURCE})

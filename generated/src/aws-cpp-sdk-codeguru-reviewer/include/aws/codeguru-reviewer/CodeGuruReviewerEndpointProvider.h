@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/codeguru-reviewer/CodeGuruReviewerEndpointRules.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -43,9 +42,7 @@ class AWS_CODEGURUREVIEWER_API CodeGuruReviewerEndpointProvider : public CodeGur
  public:
   using CodeGuruReviewerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CodeGuruReviewerEndpointProvider()
-      : CodeGuruReviewerDefaultEpProviderBase(Aws::CodeGuruReviewer::CodeGuruReviewerEndpointRules::GetRulesBlob(),
-                                              Aws::CodeGuruReviewer::CodeGuruReviewerEndpointRules::RulesBlobSize) {}
+  CodeGuruReviewerEndpointProvider();
 
   ~CodeGuruReviewerEndpointProvider() {}
 };

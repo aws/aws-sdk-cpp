@@ -8,12 +8,12 @@
 
 #include <aws/backup-gateway/BackupGatewayClient.h>
 #include <aws/backup-gateway/BackupGatewayEndpointProvider.h>
-#include <aws/backup-gateway/BackupGatewayEndpointRules.h>
 #include <aws/backup-gateway/BackupGatewayErrorMarshaller.h>
 #include <aws/backup-gateway/BackupGatewayErrors.h>
 #include <aws/backup-gateway/BackupGatewayRequest.h>
 #include <aws/backup-gateway/BackupGatewayServiceClientModel.h>
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
+#include <aws/backup-gateway/internal/BackupGatewayEndpointRules.h>
 #include <aws/backup-gateway/model/AccessDeniedException.h>
 #include <aws/backup-gateway/model/AssociateGatewayToServerRequest.h>
 #include <aws/backup-gateway/model/AssociateGatewayToServerResult.h>

@@ -8,12 +8,12 @@
 
 #include <aws/autoscaling/AutoScalingClient.h>
 #include <aws/autoscaling/AutoScalingEndpointProvider.h>
-#include <aws/autoscaling/AutoScalingEndpointRules.h>
 #include <aws/autoscaling/AutoScalingErrorMarshaller.h>
 #include <aws/autoscaling/AutoScalingErrors.h>
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/autoscaling/AutoScalingServiceClientModel.h>
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
+#include <aws/autoscaling/internal/AutoScalingEndpointRules.h>
 #include <aws/autoscaling/model/AcceleratorCountRequest.h>
 #include <aws/autoscaling/model/AcceleratorManufacturer.h>
 #include <aws/autoscaling/model/AcceleratorName.h>

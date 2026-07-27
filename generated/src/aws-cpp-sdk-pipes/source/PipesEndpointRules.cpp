@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/pipes/PipesEndpointRules.h>
+#include <aws/pipes/internal/PipesEndpointRules.h>
 
 namespace Aws {
 namespace Pipes {

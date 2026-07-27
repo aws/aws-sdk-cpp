@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/lakeformation/LakeFormationEndpointRules.h>
+#include <aws/lakeformation/internal/LakeFormationEndpointRules.h>
 
 namespace Aws {
 namespace LakeFormation {

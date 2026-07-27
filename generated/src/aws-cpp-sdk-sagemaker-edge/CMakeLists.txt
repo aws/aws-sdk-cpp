@@ -8,6 +8,10 @@ file(GLOB AWS_SAGEMAKER-EDGE_MODEL_HEADERS
     "include/aws/sagemaker-edge/model/*.h"
 )
 
+file(GLOB AWS_SAGEMAKER-EDGE_INTERNAL_HEADERS
+    "include/aws/sagemaker-edge/internal/*.h"
+)
+
 file(GLOB AWS_SAGEMAKER-EDGE_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_SAGEMAKER-EDGE_MODEL_SOURCE
 
 file(GLOB SAGEMAKER-EDGE_UNIFIED_HEADERS
     ${AWS_SAGEMAKER-EDGE_HEADERS}
+    ${AWS_SAGEMAKER-EDGE_INTERNAL_HEADERS}
     ${AWS_SAGEMAKER-EDGE_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\sagemaker-edge" FILES ${AWS_SAGEMAKER-EDGE_HEADERS})
+        source_group("Header Files\\aws\\sagemaker-edge\\internal" FILES ${AWS_SAGEMAKER-EDGE_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\sagemaker-edge\\model" FILES ${AWS_SAGEMAKER-EDGE_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_SAGEMAKER-EDGE_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_SAGEMAKER-EDGE_MODEL_SOURCE})

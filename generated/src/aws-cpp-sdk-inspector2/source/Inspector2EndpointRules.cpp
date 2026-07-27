@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/inspector2/Inspector2EndpointRules.h>
+#include <aws/inspector2/internal/Inspector2EndpointRules.h>
 
 namespace Aws {
 namespace Inspector2 {

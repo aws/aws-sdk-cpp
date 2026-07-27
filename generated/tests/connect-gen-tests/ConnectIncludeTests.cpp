@@ -8,12 +8,12 @@
 
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
-#include <aws/connect/ConnectEndpointRules.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
 #include <aws/connect/ConnectErrors.h>
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/ConnectServiceClientModel.h>
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/internal/ConnectEndpointRules.h>
 #include <aws/connect/model/AccessType.h>
 #include <aws/connect/model/ActionSummary.h>
 #include <aws/connect/model/ActionType.h>

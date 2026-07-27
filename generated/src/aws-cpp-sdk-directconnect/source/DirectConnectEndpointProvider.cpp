@@ -4,9 +4,15 @@
  */
 
 #include <aws/directconnect/DirectConnectEndpointProvider.h>
+#include <aws/directconnect/internal/DirectConnectEndpointRules.h>
 
 namespace Aws {
 namespace DirectConnect {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+DirectConnectEndpointProvider::DirectConnectEndpointProvider()
+    : DirectConnectDefaultEpProviderBase(Aws::DirectConnect::DirectConnectEndpointRules::GetRulesBlob(),
+                                         Aws::DirectConnect::DirectConnectEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace DirectConnect
 }  // namespace Aws

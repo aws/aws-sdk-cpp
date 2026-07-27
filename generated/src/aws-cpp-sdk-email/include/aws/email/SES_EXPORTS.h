@@ -26,7 +26,13 @@
 #define AWS_SES_API
 #define AWS_SES_EXTERN extern
 #endif  // USE_IMPORT_EXPORT
-#else   // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+#define AWS_SES_LOCAL
+#else  // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
 #define AWS_SES_API
 #define AWS_SES_EXTERN extern
+#if __GNUC__ >= 4
+#define AWS_SES_LOCAL __attribute__((visibility("hidden")))
+#else
+#define AWS_SES_LOCAL
+#endif
 #endif  // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

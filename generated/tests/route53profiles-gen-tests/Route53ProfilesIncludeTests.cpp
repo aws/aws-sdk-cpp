@@ -8,12 +8,12 @@
 
 #include <aws/route53profiles/Route53ProfilesClient.h>
 #include <aws/route53profiles/Route53ProfilesEndpointProvider.h>
-#include <aws/route53profiles/Route53ProfilesEndpointRules.h>
 #include <aws/route53profiles/Route53ProfilesErrorMarshaller.h>
 #include <aws/route53profiles/Route53ProfilesErrors.h>
 #include <aws/route53profiles/Route53ProfilesRequest.h>
 #include <aws/route53profiles/Route53ProfilesServiceClientModel.h>
 #include <aws/route53profiles/Route53Profiles_EXPORTS.h>
+#include <aws/route53profiles/internal/Route53ProfilesEndpointRules.h>
 #include <aws/route53profiles/model/AssociateProfileRequest.h>
 #include <aws/route53profiles/model/AssociateProfileResult.h>
 #include <aws/route53profiles/model/AssociateResourceToProfileRequest.h>

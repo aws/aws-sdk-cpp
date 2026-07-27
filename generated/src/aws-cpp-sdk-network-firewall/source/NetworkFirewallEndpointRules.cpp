@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/network-firewall/NetworkFirewallEndpointRules.h>
+#include <aws/network-firewall/internal/NetworkFirewallEndpointRules.h>
 
 namespace Aws {
 namespace NetworkFirewall {

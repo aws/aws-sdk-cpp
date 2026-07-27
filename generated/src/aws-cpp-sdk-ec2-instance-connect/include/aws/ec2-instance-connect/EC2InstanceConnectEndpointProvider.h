@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2-instance-connect/EC2InstanceConnectEndpointRules.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnect_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_EC2INSTANCECONNECT_API EC2InstanceConnectEndpointProvider : public EC2
  public:
   using EC2InstanceConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  EC2InstanceConnectEndpointProvider()
-      : EC2InstanceConnectDefaultEpProviderBase(Aws::EC2InstanceConnect::EC2InstanceConnectEndpointRules::GetRulesBlob(),
-                                                Aws::EC2InstanceConnect::EC2InstanceConnectEndpointRules::RulesBlobSize) {}
+  EC2InstanceConnectEndpointProvider();
 
   ~EC2InstanceConnectEndpointProvider() {}
 };

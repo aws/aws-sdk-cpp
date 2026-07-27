@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/dms/DatabaseMigrationServiceEndpointRules.h>
+#include <aws/dms/internal/DatabaseMigrationServiceEndpointRules.h>
 
 namespace Aws {
 namespace DatabaseMigrationService {

@@ -4,9 +4,14 @@
  */
 
 #include <aws/health/HealthEndpointProvider.h>
+#include <aws/health/internal/HealthEndpointRules.h>
 
 namespace Aws {
 namespace Health {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+HealthEndpointProvider::HealthEndpointProvider()
+    : HealthDefaultEpProviderBase(Aws::Health::HealthEndpointRules::GetRulesBlob(), Aws::Health::HealthEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Health
 }  // namespace Aws

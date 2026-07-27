@@ -8,12 +8,12 @@
 
 #include <aws/accessanalyzer/AccessAnalyzerClient.h>
 #include <aws/accessanalyzer/AccessAnalyzerEndpointProvider.h>
-#include <aws/accessanalyzer/AccessAnalyzerEndpointRules.h>
 #include <aws/accessanalyzer/AccessAnalyzerErrorMarshaller.h>
 #include <aws/accessanalyzer/AccessAnalyzerErrors.h>
 #include <aws/accessanalyzer/AccessAnalyzerRequest.h>
 #include <aws/accessanalyzer/AccessAnalyzerServiceClientModel.h>
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
+#include <aws/accessanalyzer/internal/AccessAnalyzerEndpointRules.h>
 #include <aws/accessanalyzer/model/Access.h>
 #include <aws/accessanalyzer/model/AccessCheckPolicyType.h>
 #include <aws/accessanalyzer/model/AccessCheckResourceType.h>

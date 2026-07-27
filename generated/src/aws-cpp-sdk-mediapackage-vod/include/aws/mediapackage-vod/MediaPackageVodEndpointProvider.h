@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/mediapackage-vod/MediaPackageVodEndpointRules.h>
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_MEDIAPACKAGEVOD_API MediaPackageVodEndpointProvider : public MediaPack
  public:
   using MediaPackageVodResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  MediaPackageVodEndpointProvider()
-      : MediaPackageVodDefaultEpProviderBase(Aws::MediaPackageVod::MediaPackageVodEndpointRules::GetRulesBlob(),
-                                             Aws::MediaPackageVod::MediaPackageVodEndpointRules::RulesBlobSize) {}
+  MediaPackageVodEndpointProvider();
 
   ~MediaPackageVodEndpointProvider() {}
 };

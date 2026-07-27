@@ -4,9 +4,15 @@
  */
 
 #include <aws/applicationcostprofiler/ApplicationCostProfilerEndpointProvider.h>
+#include <aws/applicationcostprofiler/internal/ApplicationCostProfilerEndpointRules.h>
 
 namespace Aws {
 namespace ApplicationCostProfiler {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ApplicationCostProfilerEndpointProvider::ApplicationCostProfilerEndpointProvider()
+    : ApplicationCostProfilerDefaultEpProviderBase(Aws::ApplicationCostProfiler::ApplicationCostProfilerEndpointRules::GetRulesBlob(),
+                                                   Aws::ApplicationCostProfiler::ApplicationCostProfilerEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ApplicationCostProfiler
 }  // namespace Aws

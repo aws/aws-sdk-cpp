@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/cost-optimization-hub/CostOptimizationHubEndpointRules.h>
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_COSTOPTIMIZATIONHUB_API CostOptimizationHubEndpointProvider : public C
  public:
   using CostOptimizationHubResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CostOptimizationHubEndpointProvider()
-      : CostOptimizationHubDefaultEpProviderBase(Aws::CostOptimizationHub::CostOptimizationHubEndpointRules::GetRulesBlob(),
-                                                 Aws::CostOptimizationHub::CostOptimizationHubEndpointRules::RulesBlobSize) {}
+  CostOptimizationHubEndpointProvider();
 
   ~CostOptimizationHubEndpointProvider() {}
 };

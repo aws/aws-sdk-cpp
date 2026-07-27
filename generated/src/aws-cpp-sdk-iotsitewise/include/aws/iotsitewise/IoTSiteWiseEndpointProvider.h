@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iotsitewise/IoTSiteWiseEndpointRules.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_IOTSITEWISE_API IoTSiteWiseEndpointProvider : public IoTSiteWiseDefaul
  public:
   using IoTSiteWiseResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  IoTSiteWiseEndpointProvider()
-      : IoTSiteWiseDefaultEpProviderBase(Aws::IoTSiteWise::IoTSiteWiseEndpointRules::GetRulesBlob(),
-                                         Aws::IoTSiteWise::IoTSiteWiseEndpointRules::RulesBlobSize) {}
+  IoTSiteWiseEndpointProvider();
 
   ~IoTSiteWiseEndpointProvider() {}
 };

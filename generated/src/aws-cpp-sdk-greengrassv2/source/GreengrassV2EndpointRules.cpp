@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/greengrassv2/GreengrassV2EndpointRules.h>
+#include <aws/greengrassv2/internal/GreengrassV2EndpointRules.h>
 
 namespace Aws {
 namespace GreengrassV2 {

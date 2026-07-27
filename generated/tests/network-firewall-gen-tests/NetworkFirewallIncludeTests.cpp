@@ -8,12 +8,12 @@
 
 #include <aws/network-firewall/NetworkFirewallClient.h>
 #include <aws/network-firewall/NetworkFirewallEndpointProvider.h>
-#include <aws/network-firewall/NetworkFirewallEndpointRules.h>
 #include <aws/network-firewall/NetworkFirewallErrorMarshaller.h>
 #include <aws/network-firewall/NetworkFirewallErrors.h>
 #include <aws/network-firewall/NetworkFirewallRequest.h>
 #include <aws/network-firewall/NetworkFirewallServiceClientModel.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
+#include <aws/network-firewall/internal/NetworkFirewallEndpointRules.h>
 #include <aws/network-firewall/model/AZSyncState.h>
 #include <aws/network-firewall/model/AcceptNetworkFirewallTransitGatewayAttachmentRequest.h>
 #include <aws/network-firewall/model/AcceptNetworkFirewallTransitGatewayAttachmentResult.h>

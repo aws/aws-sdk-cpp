@@ -8,12 +8,12 @@
 
 #include <aws/codeconnections/CodeConnectionsClient.h>
 #include <aws/codeconnections/CodeConnectionsEndpointProvider.h>
-#include <aws/codeconnections/CodeConnectionsEndpointRules.h>
 #include <aws/codeconnections/CodeConnectionsErrorMarshaller.h>
 #include <aws/codeconnections/CodeConnectionsErrors.h>
 #include <aws/codeconnections/CodeConnectionsRequest.h>
 #include <aws/codeconnections/CodeConnectionsServiceClientModel.h>
 #include <aws/codeconnections/CodeConnections_EXPORTS.h>
+#include <aws/codeconnections/internal/CodeConnectionsEndpointRules.h>
 #include <aws/codeconnections/model/BlockerStatus.h>
 #include <aws/codeconnections/model/BlockerType.h>
 #include <aws/codeconnections/model/Connection.h>

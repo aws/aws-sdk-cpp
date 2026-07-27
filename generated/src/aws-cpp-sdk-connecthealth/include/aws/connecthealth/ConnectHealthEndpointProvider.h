@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/connecthealth/ConnectHealthEndpointRules.h>
 #include <aws/connecthealth/ConnectHealth_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CONNECTHEALTH_API ConnectHealthEndpointProvider : public ConnectHealth
  public:
   using ConnectHealthResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ConnectHealthEndpointProvider()
-      : ConnectHealthDefaultEpProviderBase(Aws::ConnectHealth::ConnectHealthEndpointRules::GetRulesBlob(),
-                                           Aws::ConnectHealth::ConnectHealthEndpointRules::RulesBlobSize) {}
+  ConnectHealthEndpointProvider();
 
   ~ConnectHealthEndpointProvider() {}
 };

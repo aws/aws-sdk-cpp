@@ -8,6 +8,10 @@ file(GLOB AWS_XRAY_MODEL_HEADERS
     "include/aws/xray/model/*.h"
 )
 
+file(GLOB AWS_XRAY_INTERNAL_HEADERS
+    "include/aws/xray/internal/*.h"
+)
+
 file(GLOB AWS_XRAY_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_XRAY_MODEL_SOURCE
 
 file(GLOB XRAY_UNIFIED_HEADERS
     ${AWS_XRAY_HEADERS}
+    ${AWS_XRAY_INTERNAL_HEADERS}
     ${AWS_XRAY_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\xray" FILES ${AWS_XRAY_HEADERS})
+        source_group("Header Files\\aws\\xray\\internal" FILES ${AWS_XRAY_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\xray\\model" FILES ${AWS_XRAY_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_XRAY_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_XRAY_MODEL_SOURCE})

@@ -4,9 +4,15 @@
  */
 
 #include <aws/trustedadvisor/TrustedAdvisorEndpointProvider.h>
+#include <aws/trustedadvisor/internal/TrustedAdvisorEndpointRules.h>
 
 namespace Aws {
 namespace TrustedAdvisor {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+TrustedAdvisorEndpointProvider::TrustedAdvisorEndpointProvider()
+    : TrustedAdvisorDefaultEpProviderBase(Aws::TrustedAdvisor::TrustedAdvisorEndpointRules::GetRulesBlob(),
+                                          Aws::TrustedAdvisor::TrustedAdvisorEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace TrustedAdvisor
 }  // namespace Aws

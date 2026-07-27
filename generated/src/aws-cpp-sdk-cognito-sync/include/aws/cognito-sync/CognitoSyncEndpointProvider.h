@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/cognito-sync/CognitoSyncEndpointRules.h>
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_COGNITOSYNC_API CognitoSyncEndpointProvider : public CognitoSyncDefaul
  public:
   using CognitoSyncResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CognitoSyncEndpointProvider()
-      : CognitoSyncDefaultEpProviderBase(Aws::CognitoSync::CognitoSyncEndpointRules::GetRulesBlob(),
-                                         Aws::CognitoSync::CognitoSyncEndpointRules::RulesBlobSize) {}
+  CognitoSyncEndpointProvider();
 
   ~CognitoSyncEndpointProvider() {}
 };

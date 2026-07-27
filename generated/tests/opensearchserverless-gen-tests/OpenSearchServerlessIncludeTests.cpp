@@ -8,12 +8,12 @@
 
 #include <aws/opensearchserverless/OpenSearchServerlessClient.h>
 #include <aws/opensearchserverless/OpenSearchServerlessEndpointProvider.h>
-#include <aws/opensearchserverless/OpenSearchServerlessEndpointRules.h>
 #include <aws/opensearchserverless/OpenSearchServerlessErrorMarshaller.h>
 #include <aws/opensearchserverless/OpenSearchServerlessErrors.h>
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
 #include <aws/opensearchserverless/OpenSearchServerlessServiceClientModel.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
+#include <aws/opensearchserverless/internal/OpenSearchServerlessEndpointRules.h>
 #include <aws/opensearchserverless/model/AccessPolicyDetail.h>
 #include <aws/opensearchserverless/model/AccessPolicyStats.h>
 #include <aws/opensearchserverless/model/AccessPolicySummary.h>

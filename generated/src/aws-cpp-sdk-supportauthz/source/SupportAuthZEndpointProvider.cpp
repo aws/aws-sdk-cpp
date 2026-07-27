@@ -4,9 +4,15 @@
  */
 
 #include <aws/supportauthz/SupportAuthZEndpointProvider.h>
+#include <aws/supportauthz/internal/SupportAuthZEndpointRules.h>
 
 namespace Aws {
 namespace SupportAuthZ {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SupportAuthZEndpointProvider::SupportAuthZEndpointProvider()
+    : SupportAuthZDefaultEpProviderBase(Aws::SupportAuthZ::SupportAuthZEndpointRules::GetRulesBlob(),
+                                        Aws::SupportAuthZ::SupportAuthZEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SupportAuthZ
 }  // namespace Aws

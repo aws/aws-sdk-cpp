@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/pinpoint-email/PinpointEmailEndpointRules.h>
+#include <aws/pinpoint-email/internal/PinpointEmailEndpointRules.h>
 
 namespace Aws {
 namespace PinpointEmail {

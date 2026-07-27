@@ -9,12 +9,12 @@
 #include <aws/timestream-write/TimestreamWriteClient.h>
 #include <aws/timestream-write/TimestreamWriteClientConfiguration.h>
 #include <aws/timestream-write/TimestreamWriteEndpointProvider.h>
-#include <aws/timestream-write/TimestreamWriteEndpointRules.h>
 #include <aws/timestream-write/TimestreamWriteErrorMarshaller.h>
 #include <aws/timestream-write/TimestreamWriteErrors.h>
 #include <aws/timestream-write/TimestreamWriteRequest.h>
 #include <aws/timestream-write/TimestreamWriteServiceClientModel.h>
 #include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
+#include <aws/timestream-write/internal/TimestreamWriteEndpointRules.h>
 #include <aws/timestream-write/model/BatchLoadDataFormat.h>
 #include <aws/timestream-write/model/BatchLoadProgressReport.h>
 #include <aws/timestream-write/model/BatchLoadStatus.h>

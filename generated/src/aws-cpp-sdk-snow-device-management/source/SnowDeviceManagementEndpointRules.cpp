@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/snow-device-management/SnowDeviceManagementEndpointRules.h>
+#include <aws/snow-device-management/internal/SnowDeviceManagementEndpointRules.h>
 
 namespace Aws {
 namespace SnowDeviceManagement {

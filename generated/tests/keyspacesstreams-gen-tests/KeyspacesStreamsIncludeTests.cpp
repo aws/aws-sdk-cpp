@@ -8,12 +8,12 @@
 
 #include <aws/keyspacesstreams/KeyspacesStreamsClient.h>
 #include <aws/keyspacesstreams/KeyspacesStreamsEndpointProvider.h>
-#include <aws/keyspacesstreams/KeyspacesStreamsEndpointRules.h>
 #include <aws/keyspacesstreams/KeyspacesStreamsErrorMarshaller.h>
 #include <aws/keyspacesstreams/KeyspacesStreamsErrors.h>
 #include <aws/keyspacesstreams/KeyspacesStreamsRequest.h>
 #include <aws/keyspacesstreams/KeyspacesStreamsServiceClientModel.h>
 #include <aws/keyspacesstreams/KeyspacesStreams_EXPORTS.h>
+#include <aws/keyspacesstreams/internal/KeyspacesStreamsEndpointRules.h>
 #include <aws/keyspacesstreams/model/GetRecordsRequest.h>
 #include <aws/keyspacesstreams/model/GetRecordsResult.h>
 #include <aws/keyspacesstreams/model/GetShardIteratorRequest.h>

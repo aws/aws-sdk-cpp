@@ -8,6 +8,10 @@ file(GLOB AWS_MEDIASTORE-DATA_MODEL_HEADERS
     "include/aws/mediastore-data/model/*.h"
 )
 
+file(GLOB AWS_MEDIASTORE-DATA_INTERNAL_HEADERS
+    "include/aws/mediastore-data/internal/*.h"
+)
+
 file(GLOB AWS_MEDIASTORE-DATA_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_MEDIASTORE-DATA_MODEL_SOURCE
 
 file(GLOB MEDIASTORE-DATA_UNIFIED_HEADERS
     ${AWS_MEDIASTORE-DATA_HEADERS}
+    ${AWS_MEDIASTORE-DATA_INTERNAL_HEADERS}
     ${AWS_MEDIASTORE-DATA_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\mediastore-data" FILES ${AWS_MEDIASTORE-DATA_HEADERS})
+        source_group("Header Files\\aws\\mediastore-data\\internal" FILES ${AWS_MEDIASTORE-DATA_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\mediastore-data\\model" FILES ${AWS_MEDIASTORE-DATA_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_MEDIASTORE-DATA_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_MEDIASTORE-DATA_MODEL_SOURCE})

@@ -4,9 +4,14 @@
  */
 
 #include <aws/athena/AthenaEndpointProvider.h>
+#include <aws/athena/internal/AthenaEndpointRules.h>
 
 namespace Aws {
 namespace Athena {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+AthenaEndpointProvider::AthenaEndpointProvider()
+    : AthenaDefaultEpProviderBase(Aws::Athena::AthenaEndpointRules::GetRulesBlob(), Aws::Athena::AthenaEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Athena
 }  // namespace Aws

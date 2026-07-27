@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/keyspaces/KeyspacesEndpointRules.h>
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_KEYSPACES_API KeyspacesEndpointProvider : public KeyspacesDefaultEpPro
  public:
   using KeyspacesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  KeyspacesEndpointProvider()
-      : KeyspacesDefaultEpProviderBase(Aws::Keyspaces::KeyspacesEndpointRules::GetRulesBlob(),
-                                       Aws::Keyspaces::KeyspacesEndpointRules::RulesBlobSize) {}
+  KeyspacesEndpointProvider();
 
   ~KeyspacesEndpointProvider() {}
 };

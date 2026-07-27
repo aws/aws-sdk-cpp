@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sns/SNSEndpointRules.h>
 #include <aws/sns/SNS_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_SNS_API SNSEndpointProvider : public SNSDefaultEpProviderBase {
  public:
   using SNSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SNSEndpointProvider() : SNSDefaultEpProviderBase(Aws::SNS::SNSEndpointRules::GetRulesBlob(), Aws::SNS::SNSEndpointRules::RulesBlobSize) {}
+  SNSEndpointProvider();
 
   ~SNSEndpointProvider() {}
 };

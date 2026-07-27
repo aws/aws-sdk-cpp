@@ -4,6 +4,7 @@
  */
 
 #include <aws/bedrock-data-automation/BedrockDataAutomationEndpointProvider.h>
+#include <aws/bedrock-data-automation/internal/BedrockDataAutomationEndpointRules.h>
 
 namespace Aws {
 #ifndef AWS_BEDROCKDATAAUTOMATION_EXPORTS  // Except for Windows DLL
@@ -23,6 +24,10 @@ template class Aws::Endpoint::DefaultEndpointProvider<BedrockDataAutomation::End
 
 namespace BedrockDataAutomation {
 namespace Endpoint {
+BedrockDataAutomationEndpointProvider::BedrockDataAutomationEndpointProvider()
+    : BedrockDataAutomationDefaultEpProviderBase(Aws::BedrockDataAutomation::BedrockDataAutomationEndpointRules::GetRulesBlob(),
+                                                 Aws::BedrockDataAutomation::BedrockDataAutomationEndpointRules::RulesBlobSize) {}
+
 void BedrockDataAutomationBuiltInParameters::SetFromClientConfiguration(const BedrockDataAutomationClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const BedrockDataAutomationClientConfiguration::BaseClientConfigClass&>(config));
 }

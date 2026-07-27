@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/s3outposts/S3OutpostsEndpointRules.h>
+#include <aws/s3outposts/internal/S3OutpostsEndpointRules.h>
 
 namespace Aws {
 namespace S3Outposts {

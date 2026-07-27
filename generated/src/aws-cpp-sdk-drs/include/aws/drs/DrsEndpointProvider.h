@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/drs/DrsEndpointRules.h>
 #include <aws/drs/Drs_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_DRS_API DrsEndpointProvider : public DrsDefaultEpProviderBase {
  public:
   using DrsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DrsEndpointProvider() : DrsDefaultEpProviderBase(Aws::drs::DrsEndpointRules::GetRulesBlob(), Aws::drs::DrsEndpointRules::RulesBlobSize) {}
+  DrsEndpointProvider();
 
   ~DrsEndpointProvider() {}
 };

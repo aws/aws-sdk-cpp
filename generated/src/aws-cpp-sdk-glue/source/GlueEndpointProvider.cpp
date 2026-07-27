@@ -4,9 +4,14 @@
  */
 
 #include <aws/glue/GlueEndpointProvider.h>
+#include <aws/glue/internal/GlueEndpointRules.h>
 
 namespace Aws {
 namespace Glue {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+GlueEndpointProvider::GlueEndpointProvider()
+    : GlueDefaultEpProviderBase(Aws::Glue::GlueEndpointRules::GetRulesBlob(), Aws::Glue::GlueEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Glue
 }  // namespace Aws

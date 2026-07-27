@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/internetmonitor/InternetMonitorEndpointRules.h>
 #include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_INTERNETMONITOR_API InternetMonitorEndpointProvider : public InternetM
  public:
   using InternetMonitorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  InternetMonitorEndpointProvider()
-      : InternetMonitorDefaultEpProviderBase(Aws::InternetMonitor::InternetMonitorEndpointRules::GetRulesBlob(),
-                                             Aws::InternetMonitor::InternetMonitorEndpointRules::RulesBlobSize) {}
+  InternetMonitorEndpointProvider();
 
   ~InternetMonitorEndpointProvider() {}
 };

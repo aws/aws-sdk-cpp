@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/verifiedpermissions/VerifiedPermissionsEndpointRules.h>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsEndpointProvider : public V
  public:
   using VerifiedPermissionsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  VerifiedPermissionsEndpointProvider()
-      : VerifiedPermissionsDefaultEpProviderBase(Aws::VerifiedPermissions::VerifiedPermissionsEndpointRules::GetRulesBlob(),
-                                                 Aws::VerifiedPermissions::VerifiedPermissionsEndpointRules::RulesBlobSize) {}
+  VerifiedPermissionsEndpointProvider();
 
   ~VerifiedPermissionsEndpointProvider() {}
 };

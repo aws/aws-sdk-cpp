@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/securityhub/SecurityHubEndpointRules.h>
+#include <aws/securityhub/internal/SecurityHubEndpointRules.h>
 
 namespace Aws {
 namespace SecurityHub {

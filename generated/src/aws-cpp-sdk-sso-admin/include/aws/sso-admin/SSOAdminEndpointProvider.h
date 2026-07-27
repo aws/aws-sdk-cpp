@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sso-admin/SSOAdminEndpointRules.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SSOADMIN_API SSOAdminEndpointProvider : public SSOAdminDefaultEpProvid
  public:
   using SSOAdminResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SSOAdminEndpointProvider()
-      : SSOAdminDefaultEpProviderBase(Aws::SSOAdmin::SSOAdminEndpointRules::GetRulesBlob(),
-                                      Aws::SSOAdmin::SSOAdminEndpointRules::RulesBlobSize) {}
+  SSOAdminEndpointProvider();
 
   ~SSOAdminEndpointProvider() {}
 };

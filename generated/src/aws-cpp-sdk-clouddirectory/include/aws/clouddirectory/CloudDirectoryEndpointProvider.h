@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/clouddirectory/CloudDirectoryEndpointRules.h>
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CLOUDDIRECTORY_API CloudDirectoryEndpointProvider : public CloudDirect
  public:
   using CloudDirectoryResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CloudDirectoryEndpointProvider()
-      : CloudDirectoryDefaultEpProviderBase(Aws::CloudDirectory::CloudDirectoryEndpointRules::GetRulesBlob(),
-                                            Aws::CloudDirectory::CloudDirectoryEndpointRules::RulesBlobSize) {}
+  CloudDirectoryEndpointProvider();
 
   ~CloudDirectoryEndpointProvider() {}
 };

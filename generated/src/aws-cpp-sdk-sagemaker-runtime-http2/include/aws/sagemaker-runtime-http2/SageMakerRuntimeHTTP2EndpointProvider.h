@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2EndpointRules.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_SAGEMAKERRUNTIMEHTTP2_API SageMakerRuntimeHTTP2EndpointProvider : publ
  public:
   using SageMakerRuntimeHTTP2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SageMakerRuntimeHTTP2EndpointProvider()
-      : SageMakerRuntimeHTTP2DefaultEpProviderBase(Aws::SageMakerRuntimeHTTP2::SageMakerRuntimeHTTP2EndpointRules::GetRulesBlob(),
-                                                   Aws::SageMakerRuntimeHTTP2::SageMakerRuntimeHTTP2EndpointRules::RulesBlobSize) {}
+  SageMakerRuntimeHTTP2EndpointProvider();
 
   ~SageMakerRuntimeHTTP2EndpointProvider() {}
 };

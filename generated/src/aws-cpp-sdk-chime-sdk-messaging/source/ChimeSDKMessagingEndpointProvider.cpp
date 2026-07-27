@@ -4,9 +4,15 @@
  */
 
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingEndpointProvider.h>
+#include <aws/chime-sdk-messaging/internal/ChimeSDKMessagingEndpointRules.h>
 
 namespace Aws {
 namespace ChimeSDKMessaging {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ChimeSDKMessagingEndpointProvider::ChimeSDKMessagingEndpointProvider()
+    : ChimeSDKMessagingDefaultEpProviderBase(Aws::ChimeSDKMessaging::ChimeSDKMessagingEndpointRules::GetRulesBlob(),
+                                             Aws::ChimeSDKMessaging::ChimeSDKMessagingEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ChimeSDKMessaging
 }  // namespace Aws

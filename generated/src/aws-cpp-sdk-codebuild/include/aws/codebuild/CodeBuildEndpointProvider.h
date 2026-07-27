@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/codebuild/CodeBuildEndpointRules.h>
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_CODEBUILD_API CodeBuildEndpointProvider : public CodeBuildDefaultEpPro
  public:
   using CodeBuildResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CodeBuildEndpointProvider()
-      : CodeBuildDefaultEpProviderBase(Aws::CodeBuild::CodeBuildEndpointRules::GetRulesBlob(),
-                                       Aws::CodeBuild::CodeBuildEndpointRules::RulesBlobSize) {}
+  CodeBuildEndpointProvider();
 
   ~CodeBuildEndpointProvider() {}
 };

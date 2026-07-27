@@ -4,9 +4,15 @@
  */
 
 #include <aws/directory-service-data/DirectoryServiceDataEndpointProvider.h>
+#include <aws/directory-service-data/internal/DirectoryServiceDataEndpointRules.h>
 
 namespace Aws {
 namespace DirectoryServiceData {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+DirectoryServiceDataEndpointProvider::DirectoryServiceDataEndpointProvider()
+    : DirectoryServiceDataDefaultEpProviderBase(Aws::DirectoryServiceData::DirectoryServiceDataEndpointRules::GetRulesBlob(),
+                                                Aws::DirectoryServiceData::DirectoryServiceDataEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace DirectoryServiceData
 }  // namespace Aws

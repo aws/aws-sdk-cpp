@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/iotfleetwise/IoTFleetWiseEndpointRules.h>
+#include <aws/iotfleetwise/internal/IoTFleetWiseEndpointRules.h>
 
 namespace Aws {
 namespace IoTFleetWise {

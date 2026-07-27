@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/directory-service-data/DirectoryServiceDataEndpointRules.h>
 #include <aws/directory-service-data/DirectoryServiceData_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_DIRECTORYSERVICEDATA_API DirectoryServiceDataEndpointProvider : public
  public:
   using DirectoryServiceDataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  DirectoryServiceDataEndpointProvider()
-      : DirectoryServiceDataDefaultEpProviderBase(Aws::DirectoryServiceData::DirectoryServiceDataEndpointRules::GetRulesBlob(),
-                                                  Aws::DirectoryServiceData::DirectoryServiceDataEndpointRules::RulesBlobSize) {}
+  DirectoryServiceDataEndpointProvider();
 
   ~DirectoryServiceDataEndpointProvider() {}
 };

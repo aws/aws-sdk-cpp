@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/backup/BackupEndpointRules.h>
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -41,8 +40,7 @@ class AWS_BACKUP_API BackupEndpointProvider : public BackupDefaultEpProviderBase
  public:
   using BackupResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BackupEndpointProvider()
-      : BackupDefaultEpProviderBase(Aws::Backup::BackupEndpointRules::GetRulesBlob(), Aws::Backup::BackupEndpointRules::RulesBlobSize) {}
+  BackupEndpointProvider();
 
   ~BackupEndpointProvider() {}
 };

@@ -4,9 +4,15 @@
  */
 
 #include <aws/detective/DetectiveEndpointProvider.h>
+#include <aws/detective/internal/DetectiveEndpointRules.h>
 
 namespace Aws {
 namespace Detective {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+DetectiveEndpointProvider::DetectiveEndpointProvider()
+    : DetectiveDefaultEpProviderBase(Aws::Detective::DetectiveEndpointRules::GetRulesBlob(),
+                                     Aws::Detective::DetectiveEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Detective
 }  // namespace Aws

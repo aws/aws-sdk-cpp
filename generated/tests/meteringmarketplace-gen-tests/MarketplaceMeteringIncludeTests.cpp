@@ -8,12 +8,12 @@
 
 #include <aws/meteringmarketplace/MarketplaceMeteringClient.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringEndpointProvider.h>
-#include <aws/meteringmarketplace/MarketplaceMeteringEndpointRules.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringErrorMarshaller.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringErrors.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringRequest.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringServiceClientModel.h>
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
+#include <aws/meteringmarketplace/internal/MarketplaceMeteringEndpointRules.h>
 #include <aws/meteringmarketplace/model/BatchMeterUsageRequest.h>
 #include <aws/meteringmarketplace/model/BatchMeterUsageResult.h>
 #include <aws/meteringmarketplace/model/MeterUsageRequest.h>

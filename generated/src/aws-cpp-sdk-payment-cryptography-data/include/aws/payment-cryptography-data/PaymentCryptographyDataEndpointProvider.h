@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/payment-cryptography-data/PaymentCryptographyDataEndpointRules.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 
 namespace Aws {
@@ -44,9 +43,7 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataEndpointProvider : 
  public:
   using PaymentCryptographyDataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PaymentCryptographyDataEndpointProvider()
-      : PaymentCryptographyDataDefaultEpProviderBase(Aws::PaymentCryptographyData::PaymentCryptographyDataEndpointRules::GetRulesBlob(),
-                                                     Aws::PaymentCryptographyData::PaymentCryptographyDataEndpointRules::RulesBlobSize) {}
+  PaymentCryptographyDataEndpointProvider();
 
   ~PaymentCryptographyDataEndpointProvider() {}
 };

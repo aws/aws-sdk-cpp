@@ -8,12 +8,12 @@
 
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIClient.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIEndpointProvider.h>
-#include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIEndpointRules.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIErrorMarshaller.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIErrors.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIRequest.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIServiceClientModel.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
+#include <aws/resourcegroupstaggingapi/internal/ResourceGroupsTaggingAPIEndpointRules.h>
 #include <aws/resourcegroupstaggingapi/model/ComplianceDetails.h>
 #include <aws/resourcegroupstaggingapi/model/DescribeReportCreationRequest.h>
 #include <aws/resourcegroupstaggingapi/model/DescribeReportCreationResult.h>

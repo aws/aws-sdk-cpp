@@ -4,9 +4,14 @@
  */
 
 #include <aws/macie2/Macie2EndpointProvider.h>
+#include <aws/macie2/internal/Macie2EndpointRules.h>
 
 namespace Aws {
 namespace Macie2 {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+Macie2EndpointProvider::Macie2EndpointProvider()
+    : Macie2DefaultEpProviderBase(Aws::Macie2::Macie2EndpointRules::GetRulesBlob(), Aws::Macie2::Macie2EndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Macie2
 }  // namespace Aws

@@ -4,9 +4,15 @@
  */
 
 #include <aws/datazone/DataZoneEndpointProvider.h>
+#include <aws/datazone/internal/DataZoneEndpointRules.h>
 
 namespace Aws {
 namespace DataZone {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+DataZoneEndpointProvider::DataZoneEndpointProvider()
+    : DataZoneDefaultEpProviderBase(Aws::DataZone::DataZoneEndpointRules::GetRulesBlob(),
+                                    Aws::DataZone::DataZoneEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace DataZone
 }  // namespace Aws

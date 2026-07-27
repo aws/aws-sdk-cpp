@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/location/LocationServiceEndpointRules.h>
 #include <aws/location/LocationService_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_LOCATIONSERVICE_API LocationServiceEndpointProvider : public LocationS
  public:
   using LocationServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  LocationServiceEndpointProvider()
-      : LocationServiceDefaultEpProviderBase(Aws::LocationService::LocationServiceEndpointRules::GetRulesBlob(),
-                                             Aws::LocationService::LocationServiceEndpointRules::RulesBlobSize) {}
+  LocationServiceEndpointProvider();
 
   ~LocationServiceEndpointProvider() {}
 };

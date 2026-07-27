@@ -8,12 +8,12 @@
 
 #include <aws/emr-containers/EMRContainersClient.h>
 #include <aws/emr-containers/EMRContainersEndpointProvider.h>
-#include <aws/emr-containers/EMRContainersEndpointRules.h>
 #include <aws/emr-containers/EMRContainersErrorMarshaller.h>
 #include <aws/emr-containers/EMRContainersErrors.h>
 #include <aws/emr-containers/EMRContainersRequest.h>
 #include <aws/emr-containers/EMRContainersServiceClientModel.h>
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
+#include <aws/emr-containers/internal/EMRContainersEndpointRules.h>
 #include <aws/emr-containers/model/AllowAWSToRetainLogs.h>
 #include <aws/emr-containers/model/AuthenticationConfiguration.h>
 #include <aws/emr-containers/model/AuthorizationConfiguration.h>

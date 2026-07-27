@@ -8,6 +8,10 @@ file(GLOB AWS_CODEGURU-REVIEWER_MODEL_HEADERS
     "include/aws/codeguru-reviewer/model/*.h"
 )
 
+file(GLOB AWS_CODEGURU-REVIEWER_INTERNAL_HEADERS
+    "include/aws/codeguru-reviewer/internal/*.h"
+)
+
 file(GLOB AWS_CODEGURU-REVIEWER_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CODEGURU-REVIEWER_MODEL_SOURCE
 
 file(GLOB CODEGURU-REVIEWER_UNIFIED_HEADERS
     ${AWS_CODEGURU-REVIEWER_HEADERS}
+    ${AWS_CODEGURU-REVIEWER_INTERNAL_HEADERS}
     ${AWS_CODEGURU-REVIEWER_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\codeguru-reviewer" FILES ${AWS_CODEGURU-REVIEWER_HEADERS})
+        source_group("Header Files\\aws\\codeguru-reviewer\\internal" FILES ${AWS_CODEGURU-REVIEWER_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\codeguru-reviewer\\model" FILES ${AWS_CODEGURU-REVIEWER_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CODEGURU-REVIEWER_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CODEGURU-REVIEWER_MODEL_SOURCE})

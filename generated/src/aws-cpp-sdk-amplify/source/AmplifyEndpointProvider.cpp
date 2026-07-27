@@ -4,9 +4,14 @@
  */
 
 #include <aws/amplify/AmplifyEndpointProvider.h>
+#include <aws/amplify/internal/AmplifyEndpointRules.h>
 
 namespace Aws {
 namespace Amplify {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+AmplifyEndpointProvider::AmplifyEndpointProvider()
+    : AmplifyDefaultEpProviderBase(Aws::Amplify::AmplifyEndpointRules::GetRulesBlob(), Aws::Amplify::AmplifyEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Amplify
 }  // namespace Aws

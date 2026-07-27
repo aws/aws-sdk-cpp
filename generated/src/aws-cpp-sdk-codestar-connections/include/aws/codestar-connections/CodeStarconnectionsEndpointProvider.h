@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/codestar-connections/CodeStarconnectionsEndpointRules.h>
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -44,9 +43,7 @@ class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsEndpointProvider : public C
  public:
   using CodeStarconnectionsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  CodeStarconnectionsEndpointProvider()
-      : CodeStarconnectionsDefaultEpProviderBase(Aws::CodeStarconnections::CodeStarconnectionsEndpointRules::GetRulesBlob(),
-                                                 Aws::CodeStarconnections::CodeStarconnectionsEndpointRules::RulesBlobSize) {}
+  CodeStarconnectionsEndpointProvider();
 
   ~CodeStarconnectionsEndpointProvider() {}
 };

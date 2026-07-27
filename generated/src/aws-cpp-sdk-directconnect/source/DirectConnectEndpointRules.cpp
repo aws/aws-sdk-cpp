@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/directconnect/DirectConnectEndpointRules.h>
+#include <aws/directconnect/internal/DirectConnectEndpointRules.h>
 
 namespace Aws {
 namespace DirectConnect {

@@ -8,12 +8,12 @@
 
 #include <aws/identitystore/IdentityStoreClient.h>
 #include <aws/identitystore/IdentityStoreEndpointProvider.h>
-#include <aws/identitystore/IdentityStoreEndpointRules.h>
 #include <aws/identitystore/IdentityStoreErrorMarshaller.h>
 #include <aws/identitystore/IdentityStoreErrors.h>
 #include <aws/identitystore/IdentityStoreRequest.h>
 #include <aws/identitystore/IdentityStoreServiceClientModel.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
+#include <aws/identitystore/internal/IdentityStoreEndpointRules.h>
 #include <aws/identitystore/model/AccessDeniedException.h>
 #include <aws/identitystore/model/AccessDeniedExceptionReason.h>
 #include <aws/identitystore/model/Address.h>

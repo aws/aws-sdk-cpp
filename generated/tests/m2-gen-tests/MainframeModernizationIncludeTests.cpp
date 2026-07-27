@@ -8,12 +8,12 @@
 
 #include <aws/m2/MainframeModernizationClient.h>
 #include <aws/m2/MainframeModernizationEndpointProvider.h>
-#include <aws/m2/MainframeModernizationEndpointRules.h>
 #include <aws/m2/MainframeModernizationErrorMarshaller.h>
 #include <aws/m2/MainframeModernizationErrors.h>
 #include <aws/m2/MainframeModernizationRequest.h>
 #include <aws/m2/MainframeModernizationServiceClientModel.h>
 #include <aws/m2/MainframeModernization_EXPORTS.h>
+#include <aws/m2/internal/MainframeModernizationEndpointRules.h>
 #include <aws/m2/model/AlternateKey.h>
 #include <aws/m2/model/ApplicationDeploymentLifecycle.h>
 #include <aws/m2/model/ApplicationLifecycle.h>

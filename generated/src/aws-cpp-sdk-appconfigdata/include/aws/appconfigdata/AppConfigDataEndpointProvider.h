@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/appconfigdata/AppConfigDataEndpointRules.h>
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_APPCONFIGDATA_API AppConfigDataEndpointProvider : public AppConfigData
  public:
   using AppConfigDataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  AppConfigDataEndpointProvider()
-      : AppConfigDataDefaultEpProviderBase(Aws::AppConfigData::AppConfigDataEndpointRules::GetRulesBlob(),
-                                           Aws::AppConfigData::AppConfigDataEndpointRules::RulesBlobSize) {}
+  AppConfigDataEndpointProvider();
 
   ~AppConfigDataEndpointProvider() {}
 };

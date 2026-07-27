@@ -4,6 +4,7 @@
  */
 
 #include <aws/s3-crt/S3CrtEndpointProvider.h>
+#include <aws/s3-crt/internal/S3CrtEndpointRules.h>
 
 namespace Aws {
 #ifndef AWS_S3CRT_EXPORTS  // Except for Windows DLL
@@ -21,6 +22,9 @@ template class Aws::Endpoint::DefaultEndpointProvider<S3Crt::Endpoint::S3CrtClie
 
 namespace S3Crt {
 namespace Endpoint {
+S3CrtEndpointProvider::S3CrtEndpointProvider()
+    : S3CrtDefaultEpProviderBase(Aws::S3Crt::S3CrtEndpointRules::GetRulesBlob(), Aws::S3Crt::S3CrtEndpointRules::RulesBlobSize) {}
+
 void S3CrtClientContextParameters::SetForcePathStyle(bool value) { return SetBooleanParameter(Aws::String("ForcePathStyle"), value); }
 const S3CrtClientContextParameters::ClientContextParameters::EndpointParameter& S3CrtClientContextParameters::GetForcePathStyle() const {
   return GetParameter("ForcePathStyle");

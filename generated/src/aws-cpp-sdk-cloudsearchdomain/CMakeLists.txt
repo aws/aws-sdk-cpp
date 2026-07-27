@@ -8,6 +8,10 @@ file(GLOB AWS_CLOUDSEARCHDOMAIN_MODEL_HEADERS
     "include/aws/cloudsearchdomain/model/*.h"
 )
 
+file(GLOB AWS_CLOUDSEARCHDOMAIN_INTERNAL_HEADERS
+    "include/aws/cloudsearchdomain/internal/*.h"
+)
+
 file(GLOB AWS_CLOUDSEARCHDOMAIN_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CLOUDSEARCHDOMAIN_MODEL_SOURCE
 
 file(GLOB CLOUDSEARCHDOMAIN_UNIFIED_HEADERS
     ${AWS_CLOUDSEARCHDOMAIN_HEADERS}
+    ${AWS_CLOUDSEARCHDOMAIN_INTERNAL_HEADERS}
     ${AWS_CLOUDSEARCHDOMAIN_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\cloudsearchdomain" FILES ${AWS_CLOUDSEARCHDOMAIN_HEADERS})
+        source_group("Header Files\\aws\\cloudsearchdomain\\internal" FILES ${AWS_CLOUDSEARCHDOMAIN_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\cloudsearchdomain\\model" FILES ${AWS_CLOUDSEARCHDOMAIN_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CLOUDSEARCHDOMAIN_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CLOUDSEARCHDOMAIN_MODEL_SOURCE})

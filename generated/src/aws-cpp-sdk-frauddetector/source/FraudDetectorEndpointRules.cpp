@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/frauddetector/FraudDetectorEndpointRules.h>
+#include <aws/frauddetector/internal/FraudDetectorEndpointRules.h>
 
 namespace Aws {
 namespace FraudDetector {

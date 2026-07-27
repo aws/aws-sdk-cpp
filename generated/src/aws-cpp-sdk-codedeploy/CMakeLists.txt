@@ -8,6 +8,10 @@ file(GLOB AWS_CODEDEPLOY_MODEL_HEADERS
     "include/aws/codedeploy/model/*.h"
 )
 
+file(GLOB AWS_CODEDEPLOY_INTERNAL_HEADERS
+    "include/aws/codedeploy/internal/*.h"
+)
+
 file(GLOB AWS_CODEDEPLOY_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CODEDEPLOY_MODEL_SOURCE
 
 file(GLOB CODEDEPLOY_UNIFIED_HEADERS
     ${AWS_CODEDEPLOY_HEADERS}
+    ${AWS_CODEDEPLOY_INTERNAL_HEADERS}
     ${AWS_CODEDEPLOY_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\codedeploy" FILES ${AWS_CODEDEPLOY_HEADERS})
+        source_group("Header Files\\aws\\codedeploy\\internal" FILES ${AWS_CODEDEPLOY_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\codedeploy\\model" FILES ${AWS_CODEDEPLOY_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CODEDEPLOY_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CODEDEPLOY_MODEL_SOURCE})

@@ -8,6 +8,10 @@ file(GLOB AWS_CHIME-SDK-MEETINGS_MODEL_HEADERS
     "include/aws/chime-sdk-meetings/model/*.h"
 )
 
+file(GLOB AWS_CHIME-SDK-MEETINGS_INTERNAL_HEADERS
+    "include/aws/chime-sdk-meetings/internal/*.h"
+)
+
 file(GLOB AWS_CHIME-SDK-MEETINGS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CHIME-SDK-MEETINGS_MODEL_SOURCE
 
 file(GLOB CHIME-SDK-MEETINGS_UNIFIED_HEADERS
     ${AWS_CHIME-SDK-MEETINGS_HEADERS}
+    ${AWS_CHIME-SDK-MEETINGS_INTERNAL_HEADERS}
     ${AWS_CHIME-SDK-MEETINGS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\chime-sdk-meetings" FILES ${AWS_CHIME-SDK-MEETINGS_HEADERS})
+        source_group("Header Files\\aws\\chime-sdk-meetings\\internal" FILES ${AWS_CHIME-SDK-MEETINGS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\chime-sdk-meetings\\model" FILES ${AWS_CHIME-SDK-MEETINGS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CHIME-SDK-MEETINGS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CHIME-SDK-MEETINGS_MODEL_SOURCE})

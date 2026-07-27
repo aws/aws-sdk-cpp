@@ -4,9 +4,14 @@
  */
 
 #include <aws/braket/BraketEndpointProvider.h>
+#include <aws/braket/internal/BraketEndpointRules.h>
 
 namespace Aws {
 namespace Braket {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+BraketEndpointProvider::BraketEndpointProvider()
+    : BraketDefaultEpProviderBase(Aws::Braket::BraketEndpointRules::GetRulesBlob(), Aws::Braket::BraketEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace Braket
 }  // namespace Aws

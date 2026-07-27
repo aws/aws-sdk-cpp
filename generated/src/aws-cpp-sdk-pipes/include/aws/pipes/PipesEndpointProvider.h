@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/pipes/PipesEndpointRules.h>
 #include <aws/pipes/Pipes_EXPORTS.h>
 
 namespace Aws {
@@ -40,8 +39,7 @@ class AWS_PIPES_API PipesEndpointProvider : public PipesDefaultEpProviderBase {
  public:
   using PipesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  PipesEndpointProvider()
-      : PipesDefaultEpProviderBase(Aws::Pipes::PipesEndpointRules::GetRulesBlob(), Aws::Pipes::PipesEndpointRules::RulesBlobSize) {}
+  PipesEndpointProvider();
 
   ~PipesEndpointProvider() {}
 };

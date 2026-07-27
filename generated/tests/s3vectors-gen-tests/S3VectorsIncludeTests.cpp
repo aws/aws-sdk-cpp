@@ -8,12 +8,12 @@
 
 #include <aws/s3vectors/S3VectorsClient.h>
 #include <aws/s3vectors/S3VectorsEndpointProvider.h>
-#include <aws/s3vectors/S3VectorsEndpointRules.h>
 #include <aws/s3vectors/S3VectorsErrorMarshaller.h>
 #include <aws/s3vectors/S3VectorsErrors.h>
 #include <aws/s3vectors/S3VectorsRequest.h>
 #include <aws/s3vectors/S3VectorsServiceClientModel.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
+#include <aws/s3vectors/internal/S3VectorsEndpointRules.h>
 #include <aws/s3vectors/model/CreateIndexRequest.h>
 #include <aws/s3vectors/model/CreateIndexResult.h>
 #include <aws/s3vectors/model/CreateVectorBucketRequest.h>

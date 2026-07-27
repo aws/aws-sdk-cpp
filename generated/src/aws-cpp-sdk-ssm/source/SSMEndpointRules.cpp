@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ssm/SSMEndpointRules.h>
+#include <aws/ssm/internal/SSMEndpointRules.h>
 
 namespace Aws {
 namespace SSM {

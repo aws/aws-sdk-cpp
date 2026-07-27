@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/lambda-microvms/LambdaMicrovmsEndpointRules.h>
+#include <aws/lambda-microvms/internal/LambdaMicrovmsEndpointRules.h>
 
 namespace Aws {
 namespace LambdaMicrovms {

@@ -4,9 +4,15 @@
  */
 
 #include <aws/kafkaconnect/KafkaConnectEndpointProvider.h>
+#include <aws/kafkaconnect/internal/KafkaConnectEndpointRules.h>
 
 namespace Aws {
 namespace KafkaConnect {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+KafkaConnectEndpointProvider::KafkaConnectEndpointProvider()
+    : KafkaConnectDefaultEpProviderBase(Aws::KafkaConnect::KafkaConnectEndpointRules::GetRulesBlob(),
+                                        Aws::KafkaConnect::KafkaConnectEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace KafkaConnect
 }  // namespace Aws

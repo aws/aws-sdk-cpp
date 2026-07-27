@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/sdb/SimpleDBEndpointRules.h>
+#include <aws/sdb/internal/SimpleDBEndpointRules.h>
 
 namespace Aws {
 namespace SimpleDB {

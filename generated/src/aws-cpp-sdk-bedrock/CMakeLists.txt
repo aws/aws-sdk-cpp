@@ -8,6 +8,10 @@ file(GLOB AWS_BEDROCK_MODEL_HEADERS
     "include/aws/bedrock/model/*.h"
 )
 
+file(GLOB AWS_BEDROCK_INTERNAL_HEADERS
+    "include/aws/bedrock/internal/*.h"
+)
+
 file(GLOB AWS_BEDROCK_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_BEDROCK_MODEL_SOURCE
 
 file(GLOB BEDROCK_UNIFIED_HEADERS
     ${AWS_BEDROCK_HEADERS}
+    ${AWS_BEDROCK_INTERNAL_HEADERS}
     ${AWS_BEDROCK_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\bedrock" FILES ${AWS_BEDROCK_HEADERS})
+        source_group("Header Files\\aws\\bedrock\\internal" FILES ${AWS_BEDROCK_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\bedrock\\model" FILES ${AWS_BEDROCK_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_BEDROCK_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_BEDROCK_MODEL_SOURCE})

@@ -8,6 +8,10 @@ file(GLOB AWS_INSPECTOR_MODEL_HEADERS
     "include/aws/inspector/model/*.h"
 )
 
+file(GLOB AWS_INSPECTOR_INTERNAL_HEADERS
+    "include/aws/inspector/internal/*.h"
+)
+
 file(GLOB AWS_INSPECTOR_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_INSPECTOR_MODEL_SOURCE
 
 file(GLOB INSPECTOR_UNIFIED_HEADERS
     ${AWS_INSPECTOR_HEADERS}
+    ${AWS_INSPECTOR_INTERNAL_HEADERS}
     ${AWS_INSPECTOR_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\inspector" FILES ${AWS_INSPECTOR_HEADERS})
+        source_group("Header Files\\aws\\inspector\\internal" FILES ${AWS_INSPECTOR_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\inspector\\model" FILES ${AWS_INSPECTOR_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_INSPECTOR_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_INSPECTOR_MODEL_SOURCE})

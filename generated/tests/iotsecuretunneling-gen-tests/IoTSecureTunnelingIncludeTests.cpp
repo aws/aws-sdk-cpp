@@ -8,12 +8,12 @@
 
 #include <aws/iotsecuretunneling/IoTSecureTunnelingClient.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingEndpointProvider.h>
-#include <aws/iotsecuretunneling/IoTSecureTunnelingEndpointRules.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingErrorMarshaller.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingErrors.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingRequest.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingServiceClientModel.h>
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
+#include <aws/iotsecuretunneling/internal/IoTSecureTunnelingEndpointRules.h>
 #include <aws/iotsecuretunneling/model/ClientMode.h>
 #include <aws/iotsecuretunneling/model/CloseTunnelRequest.h>
 #include <aws/iotsecuretunneling/model/CloseTunnelResult.h>

@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/kms/KMSEndpointRules.h>
 #include <aws/kms/KMS_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_KMS_API KMSEndpointProvider : public KMSDefaultEpProviderBase {
  public:
   using KMSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  KMSEndpointProvider() : KMSDefaultEpProviderBase(Aws::KMS::KMSEndpointRules::GetRulesBlob(), Aws::KMS::KMSEndpointRules::RulesBlobSize) {}
+  KMSEndpointProvider();
 
   ~KMSEndpointProvider() {}
 };

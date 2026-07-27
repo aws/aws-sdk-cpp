@@ -8,6 +8,10 @@ file(GLOB AWS_ELASTICFILESYSTEM_MODEL_HEADERS
     "include/aws/elasticfilesystem/model/*.h"
 )
 
+file(GLOB AWS_ELASTICFILESYSTEM_INTERNAL_HEADERS
+    "include/aws/elasticfilesystem/internal/*.h"
+)
+
 file(GLOB AWS_ELASTICFILESYSTEM_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_ELASTICFILESYSTEM_MODEL_SOURCE
 
 file(GLOB ELASTICFILESYSTEM_UNIFIED_HEADERS
     ${AWS_ELASTICFILESYSTEM_HEADERS}
+    ${AWS_ELASTICFILESYSTEM_INTERNAL_HEADERS}
     ${AWS_ELASTICFILESYSTEM_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\elasticfilesystem" FILES ${AWS_ELASTICFILESYSTEM_HEADERS})
+        source_group("Header Files\\aws\\elasticfilesystem\\internal" FILES ${AWS_ELASTICFILESYSTEM_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\elasticfilesystem\\model" FILES ${AWS_ELASTICFILESYSTEM_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_ELASTICFILESYSTEM_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_ELASTICFILESYSTEM_MODEL_SOURCE})

@@ -8,6 +8,10 @@ file(GLOB AWS_NETWORKMONITOR_MODEL_HEADERS
     "include/aws/networkmonitor/model/*.h"
 )
 
+file(GLOB AWS_NETWORKMONITOR_INTERNAL_HEADERS
+    "include/aws/networkmonitor/internal/*.h"
+)
+
 file(GLOB AWS_NETWORKMONITOR_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_NETWORKMONITOR_MODEL_SOURCE
 
 file(GLOB NETWORKMONITOR_UNIFIED_HEADERS
     ${AWS_NETWORKMONITOR_HEADERS}
+    ${AWS_NETWORKMONITOR_INTERNAL_HEADERS}
     ${AWS_NETWORKMONITOR_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\networkmonitor" FILES ${AWS_NETWORKMONITOR_HEADERS})
+        source_group("Header Files\\aws\\networkmonitor\\internal" FILES ${AWS_NETWORKMONITOR_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\networkmonitor\\model" FILES ${AWS_NETWORKMONITOR_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_NETWORKMONITOR_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_NETWORKMONITOR_MODEL_SOURCE})

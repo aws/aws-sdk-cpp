@@ -8,6 +8,10 @@ file(GLOB AWS_BEDROCK-AGENT_MODEL_HEADERS
     "include/aws/bedrock-agent/model/*.h"
 )
 
+file(GLOB AWS_BEDROCK-AGENT_INTERNAL_HEADERS
+    "include/aws/bedrock-agent/internal/*.h"
+)
+
 file(GLOB AWS_BEDROCK-AGENT_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_BEDROCK-AGENT_MODEL_SOURCE
 
 file(GLOB BEDROCK-AGENT_UNIFIED_HEADERS
     ${AWS_BEDROCK-AGENT_HEADERS}
+    ${AWS_BEDROCK-AGENT_INTERNAL_HEADERS}
     ${AWS_BEDROCK-AGENT_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\bedrock-agent" FILES ${AWS_BEDROCK-AGENT_HEADERS})
+        source_group("Header Files\\aws\\bedrock-agent\\internal" FILES ${AWS_BEDROCK-AGENT_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\bedrock-agent\\model" FILES ${AWS_BEDROCK-AGENT_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_BEDROCK-AGENT_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_BEDROCK-AGENT_MODEL_SOURCE})

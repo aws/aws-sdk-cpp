@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/eventbridge/EventBridgeEndpointRules.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_EVENTBRIDGE_API EventBridgeEndpointProvider : public EventBridgeDefaul
  public:
   using EventBridgeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  EventBridgeEndpointProvider()
-      : EventBridgeDefaultEpProviderBase(Aws::EventBridge::EventBridgeEndpointRules::GetRulesBlob(),
-                                         Aws::EventBridge::EventBridgeEndpointRules::RulesBlobSize) {}
+  EventBridgeEndpointProvider();
 
   ~EventBridgeEndpointProvider() {}
 };

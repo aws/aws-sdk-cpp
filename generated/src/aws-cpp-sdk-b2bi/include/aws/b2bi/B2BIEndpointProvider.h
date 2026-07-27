@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/b2bi/B2BIEndpointRules.h>
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -40,8 +39,7 @@ class AWS_B2BI_API B2BIEndpointProvider : public B2BIDefaultEpProviderBase {
  public:
   using B2BIResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  B2BIEndpointProvider()
-      : B2BIDefaultEpProviderBase(Aws::B2BI::B2BIEndpointRules::GetRulesBlob(), Aws::B2BI::B2BIEndpointRules::RulesBlobSize) {}
+  B2BIEndpointProvider();
 
   ~B2BIEndpointProvider() {}
 };

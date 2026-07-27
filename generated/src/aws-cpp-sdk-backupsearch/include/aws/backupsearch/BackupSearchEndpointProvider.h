@@ -4,7 +4,6 @@
  */
 
 #pragma once
-#include <aws/backupsearch/BackupSearchEndpointRules.h>
 #include <aws/backupsearch/BackupSearch_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -42,9 +41,7 @@ class AWS_BACKUPSEARCH_API BackupSearchEndpointProvider : public BackupSearchDef
  public:
   using BackupSearchResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  BackupSearchEndpointProvider()
-      : BackupSearchDefaultEpProviderBase(Aws::BackupSearch::BackupSearchEndpointRules::GetRulesBlob(),
-                                          Aws::BackupSearch::BackupSearchEndpointRules::RulesBlobSize) {}
+  BackupSearchEndpointProvider();
 
   ~BackupSearchEndpointProvider() {}
 };

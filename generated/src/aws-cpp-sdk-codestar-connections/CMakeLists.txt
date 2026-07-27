@@ -8,6 +8,10 @@ file(GLOB AWS_CODESTAR-CONNECTIONS_MODEL_HEADERS
     "include/aws/codestar-connections/model/*.h"
 )
 
+file(GLOB AWS_CODESTAR-CONNECTIONS_INTERNAL_HEADERS
+    "include/aws/codestar-connections/internal/*.h"
+)
+
 file(GLOB AWS_CODESTAR-CONNECTIONS_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_CODESTAR-CONNECTIONS_MODEL_SOURCE
 
 file(GLOB CODESTAR-CONNECTIONS_UNIFIED_HEADERS
     ${AWS_CODESTAR-CONNECTIONS_HEADERS}
+    ${AWS_CODESTAR-CONNECTIONS_INTERNAL_HEADERS}
     ${AWS_CODESTAR-CONNECTIONS_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\codestar-connections" FILES ${AWS_CODESTAR-CONNECTIONS_HEADERS})
+        source_group("Header Files\\aws\\codestar-connections\\internal" FILES ${AWS_CODESTAR-CONNECTIONS_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\codestar-connections\\model" FILES ${AWS_CODESTAR-CONNECTIONS_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_CODESTAR-CONNECTIONS_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_CODESTAR-CONNECTIONS_MODEL_SOURCE})

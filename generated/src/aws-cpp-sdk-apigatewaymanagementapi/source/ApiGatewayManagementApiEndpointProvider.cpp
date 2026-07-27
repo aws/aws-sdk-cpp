@@ -4,9 +4,15 @@
  */
 
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiEndpointProvider.h>
+#include <aws/apigatewaymanagementapi/internal/ApiGatewayManagementApiEndpointRules.h>
 
 namespace Aws {
 namespace ApiGatewayManagementApi {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ApiGatewayManagementApiEndpointProvider::ApiGatewayManagementApiEndpointProvider()
+    : ApiGatewayManagementApiDefaultEpProviderBase(Aws::ApiGatewayManagementApi::ApiGatewayManagementApiEndpointRules::GetRulesBlob(),
+                                                   Aws::ApiGatewayManagementApi::ApiGatewayManagementApiEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ApiGatewayManagementApi
 }  // namespace Aws

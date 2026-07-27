@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/geo-maps/GeoMapsEndpointRules.h>
+#include <aws/geo-maps/internal/GeoMapsEndpointRules.h>
 
 namespace Aws {
 namespace GeoMaps {

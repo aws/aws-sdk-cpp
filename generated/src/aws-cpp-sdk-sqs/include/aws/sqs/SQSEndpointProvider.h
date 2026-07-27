@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sqs/SQSEndpointRules.h>
 #include <aws/sqs/SQS_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +39,7 @@ class AWS_SQS_API SQSEndpointProvider : public SQSDefaultEpProviderBase {
  public:
   using SQSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SQSEndpointProvider() : SQSDefaultEpProviderBase(Aws::SQS::SQSEndpointRules::GetRulesBlob(), Aws::SQS::SQSEndpointRules::RulesBlobSize) {}
+  SQSEndpointProvider();
 
   ~SQSEndpointProvider() {}
 };

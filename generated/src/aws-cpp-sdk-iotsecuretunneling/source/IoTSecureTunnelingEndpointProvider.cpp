@@ -4,9 +4,15 @@
  */
 
 #include <aws/iotsecuretunneling/IoTSecureTunnelingEndpointProvider.h>
+#include <aws/iotsecuretunneling/internal/IoTSecureTunnelingEndpointRules.h>
 
 namespace Aws {
 namespace IoTSecureTunneling {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+IoTSecureTunnelingEndpointProvider::IoTSecureTunnelingEndpointProvider()
+    : IoTSecureTunnelingDefaultEpProviderBase(Aws::IoTSecureTunneling::IoTSecureTunnelingEndpointRules::GetRulesBlob(),
+                                              Aws::IoTSecureTunneling::IoTSecureTunnelingEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace IoTSecureTunneling
 }  // namespace Aws

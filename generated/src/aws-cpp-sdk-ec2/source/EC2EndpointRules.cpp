@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/ec2/EC2EndpointRules.h>
+#include <aws/ec2/internal/EC2EndpointRules.h>
 
 namespace Aws {
 namespace EC2 {

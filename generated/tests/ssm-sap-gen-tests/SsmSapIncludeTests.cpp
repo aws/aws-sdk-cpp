@@ -8,12 +8,12 @@
 
 #include <aws/ssm-sap/SsmSapClient.h>
 #include <aws/ssm-sap/SsmSapEndpointProvider.h>
-#include <aws/ssm-sap/SsmSapEndpointRules.h>
 #include <aws/ssm-sap/SsmSapErrorMarshaller.h>
 #include <aws/ssm-sap/SsmSapErrors.h>
 #include <aws/ssm-sap/SsmSapRequest.h>
 #include <aws/ssm-sap/SsmSapServiceClientModel.h>
 #include <aws/ssm-sap/SsmSap_EXPORTS.h>
+#include <aws/ssm-sap/internal/SsmSapEndpointRules.h>
 #include <aws/ssm-sap/model/AllocationType.h>
 #include <aws/ssm-sap/model/Application.h>
 #include <aws/ssm-sap/model/ApplicationCredential.h>

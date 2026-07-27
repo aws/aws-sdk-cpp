@@ -8,12 +8,12 @@
 
 #include <aws/es/ElasticsearchServiceClient.h>
 #include <aws/es/ElasticsearchServiceEndpointProvider.h>
-#include <aws/es/ElasticsearchServiceEndpointRules.h>
 #include <aws/es/ElasticsearchServiceErrorMarshaller.h>
 #include <aws/es/ElasticsearchServiceErrors.h>
 #include <aws/es/ElasticsearchServiceRequest.h>
 #include <aws/es/ElasticsearchServiceServiceClientModel.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
+#include <aws/es/internal/ElasticsearchServiceEndpointRules.h>
 #include <aws/es/model/AcceptInboundCrossClusterSearchConnectionRequest.h>
 #include <aws/es/model/AcceptInboundCrossClusterSearchConnectionResult.h>
 #include <aws/es/model/AccessPoliciesStatus.h>

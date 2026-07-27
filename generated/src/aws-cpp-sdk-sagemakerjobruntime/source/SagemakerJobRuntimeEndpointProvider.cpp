@@ -4,9 +4,15 @@
  */
 
 #include <aws/sagemakerjobruntime/SagemakerJobRuntimeEndpointProvider.h>
+#include <aws/sagemakerjobruntime/internal/SagemakerJobRuntimeEndpointRules.h>
 
 namespace Aws {
 namespace SagemakerJobRuntime {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+SagemakerJobRuntimeEndpointProvider::SagemakerJobRuntimeEndpointProvider()
+    : SagemakerJobRuntimeDefaultEpProviderBase(Aws::SagemakerJobRuntime::SagemakerJobRuntimeEndpointRules::GetRulesBlob(),
+                                               Aws::SagemakerJobRuntime::SagemakerJobRuntimeEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace SagemakerJobRuntime
 }  // namespace Aws

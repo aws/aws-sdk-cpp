@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/snowball/SnowballEndpointRules.h>
 #include <aws/snowball/Snowball_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_SNOWBALL_API SnowballEndpointProvider : public SnowballDefaultEpProvid
  public:
   using SnowballResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  SnowballEndpointProvider()
-      : SnowballDefaultEpProviderBase(Aws::Snowball::SnowballEndpointRules::GetRulesBlob(),
-                                      Aws::Snowball::SnowballEndpointRules::RulesBlobSize) {}
+  SnowballEndpointProvider();
 
   ~SnowballEndpointProvider() {}
 };

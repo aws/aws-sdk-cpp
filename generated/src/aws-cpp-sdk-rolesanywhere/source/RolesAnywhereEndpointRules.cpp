@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/rolesanywhere/RolesAnywhereEndpointRules.h>
+#include <aws/rolesanywhere/internal/RolesAnywhereEndpointRules.h>
 
 namespace Aws {
 namespace RolesAnywhere {

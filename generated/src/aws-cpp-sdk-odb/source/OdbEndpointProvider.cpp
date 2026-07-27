@@ -4,9 +4,14 @@
  */
 
 #include <aws/odb/OdbEndpointProvider.h>
+#include <aws/odb/internal/OdbEndpointRules.h>
 
 namespace Aws {
 namespace odb {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+OdbEndpointProvider::OdbEndpointProvider()
+    : OdbDefaultEpProviderBase(Aws::odb::OdbEndpointRules::GetRulesBlob(), Aws::odb::OdbEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace odb
 }  // namespace Aws

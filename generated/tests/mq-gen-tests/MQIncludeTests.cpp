@@ -8,12 +8,12 @@
 
 #include <aws/mq/MQClient.h>
 #include <aws/mq/MQEndpointProvider.h>
-#include <aws/mq/MQEndpointRules.h>
 #include <aws/mq/MQErrorMarshaller.h>
 #include <aws/mq/MQErrors.h>
 #include <aws/mq/MQRequest.h>
 #include <aws/mq/MQServiceClientModel.h>
 #include <aws/mq/MQ_EXPORTS.h>
+#include <aws/mq/internal/MQEndpointRules.h>
 #include <aws/mq/model/ActionRequired.h>
 #include <aws/mq/model/AuthenticationStrategy.h>
 #include <aws/mq/model/AvailabilityZone.h>

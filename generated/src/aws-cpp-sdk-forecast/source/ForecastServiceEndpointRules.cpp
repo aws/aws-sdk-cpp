@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/forecast/ForecastServiceEndpointRules.h>
+#include <aws/forecast/internal/ForecastServiceEndpointRules.h>
 
 namespace Aws {
 namespace ForecastService {

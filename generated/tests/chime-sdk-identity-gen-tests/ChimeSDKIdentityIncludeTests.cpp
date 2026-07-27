@@ -8,12 +8,12 @@
 
 #include <aws/chime-sdk-identity/ChimeSDKIdentityClient.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityEndpointProvider.h>
-#include <aws/chime-sdk-identity/ChimeSDKIdentityEndpointRules.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityErrorMarshaller.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityErrors.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityRequest.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityServiceClientModel.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
+#include <aws/chime-sdk-identity/internal/ChimeSDKIdentityEndpointRules.h>
 #include <aws/chime-sdk-identity/model/AllowMessages.h>
 #include <aws/chime-sdk-identity/model/AppInstance.h>
 #include <aws/chime-sdk-identity/model/AppInstanceAdmin.h>
