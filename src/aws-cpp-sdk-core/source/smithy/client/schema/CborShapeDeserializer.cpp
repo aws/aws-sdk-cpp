@@ -12,11 +12,16 @@ using namespace Aws::Crt::Cbor;
 class CborShapeDeserializer::Impl {
  public:
   Impl(const unsigned char* data, size_t length)
-      : m_decoder(Aws::Crt::ByteCursorFromArray(data, length)) {}
+      : m_decoder(Aws::Crt::ByteCursorFromArray(data, length)),
+        m_errorCode(0) {}
 
   bool ReadBoolean() {
     auto val = m_decoder.PopNextBooleanVal();
-    return val.has_value() ? val.value() : false;
+    if (!val.has_value()) {
+      SetError();
+      return false;
+    }
+    return val.value();
   }
 
   int ReadInteger() { return static_cast<int>(ReadLong()); }
@@ -24,16 +29,26 @@ class CborShapeDeserializer::Impl {
   int64_t ReadLong() {
     auto type = m_decoder.PeekType();
     if (!type.has_value()) {
+      SetError();
       return 0;
     }
     if (*type == CborType::UInt) {
       auto val = m_decoder.PopNextUnsignedIntVal();
-      return val.has_value() ? static_cast<int64_t>(val.value()) : 0;
+      if (!val.has_value()) {
+        SetError();
+        return 0;
+      }
+      return static_cast<int64_t>(val.value());
     }
     if (*type == CborType::NegInt) {
       auto val = m_decoder.PopNextNegativeIntVal();
-      return val.has_value() ? static_cast<int64_t>(-(static_cast<int64_t>(val.value()) + 1)) : 0;
+      if (!val.has_value()) {
+        SetError();
+        return 0;
+      }
+      return static_cast<int64_t>(-(static_cast<int64_t>(val.value()) + 1));
     }
+    SetError();
     return 0;
   }
 
@@ -42,19 +57,24 @@ class CborShapeDeserializer::Impl {
   double ReadDouble() {
     auto type = m_decoder.PeekType();
     if (!type.has_value()) {
+      SetError();
       return 0.0;
     }
     if (*type == CborType::Float) {
       auto val = m_decoder.PopNextFloatVal();
-      return val.has_value() ? val.value() : 0.0;
+      if (!val.has_value()) {
+        SetError();
+        return 0.0;
+      }
+      return val.value();
     }
-    // CRT "smallest possible" may encode doubles as integers
     return static_cast<double>(ReadLong());
   }
 
   Aws::String ReadString() {
     auto val = m_decoder.PopNextTextVal();
     if (!val.has_value()) {
+      SetError();
       return {};
     }
     return Aws::String(reinterpret_cast<const char*>(val->ptr), val->len);
@@ -62,13 +82,38 @@ class CborShapeDeserializer::Impl {
 
   DateTime ReadTimestamp() {
     auto tag = m_decoder.PopNextTagVal();
-    (void)tag;
-    return DateTime(static_cast<double>(ReadLong()));
+    if (!tag.has_value() || tag.value() != 1) {
+      SetError();
+      return {};
+    }
+    auto type = m_decoder.PeekType();
+    if (!type.has_value()) {
+      SetError();
+      return {};
+    }
+    if (*type == CborType::Float) {
+      auto val = m_decoder.PopNextFloatVal();
+      if (!val.has_value() || val.value() < 0.0) {
+        SetError();
+        return {};
+      }
+      return DateTime(val.value());
+    }
+    if (*type == CborType::NegInt) {
+      SetError();
+      return {};
+    }
+    auto val = ReadLong();
+    if (m_errorCode != 0) {
+      return {};
+    }
+    return DateTime(static_cast<double>(val));
   }
 
   ByteBuffer ReadBlob() {
     auto val = m_decoder.PopNextBytesVal();
     if (!val.has_value()) {
+      SetError();
       return {};
     }
     return ByteBuffer(val->ptr, val->len);
@@ -76,18 +121,21 @@ class CborShapeDeserializer::Impl {
 
   int ReadEnum() { return ReadInteger(); }
 
-  void BeginStruct() {
+  size_t BeginStruct() {
     auto type = m_decoder.PeekType();
     if (type.has_value() && *type == CborType::IndefMapStart) {
       m_decoder.ConsumeNextSingleElement();
-    } else {
-      m_decoder.PopNextMapStart();
+      return 0;
     }
+    auto size = m_decoder.PopNextMapStart();
+    if (!size.has_value()) {
+      SetError();
+      return 0;
+    }
+    return static_cast<size_t>(size.value());
   }
 
-  void EndStruct() {
-    // For indefinite maps, the break is consumed by the IsBreak/read loop
-  }
+  void EndStruct() {}
 
   size_t BeginList() {
     auto type = m_decoder.PeekType();
@@ -96,7 +144,11 @@ class CborShapeDeserializer::Impl {
       return 0;
     }
     auto size = m_decoder.PopNextArrayStart();
-    return size.has_value() ? static_cast<size_t>(size.value()) : 0;
+    if (!size.has_value()) {
+      SetError();
+      return 0;
+    }
+    return static_cast<size_t>(size.value());
   }
 
   void EndList() {}
@@ -108,7 +160,11 @@ class CborShapeDeserializer::Impl {
       return 0;
     }
     auto size = m_decoder.PopNextMapStart();
-    return size.has_value() ? static_cast<size_t>(size.value()) : 0;
+    if (!size.has_value()) {
+      SetError();
+      return 0;
+    }
+    return static_cast<size_t>(size.value());
   }
 
   void EndMap() {}
@@ -129,8 +185,14 @@ class CborShapeDeserializer::Impl {
 
   void SkipValue() { m_decoder.ConsumeNextWholeDataItem(); }
 
+  bool HasError() const { return m_errorCode != 0; }
+  int GetLastError() const { return m_errorCode; }
+
  private:
+  void SetError() { m_errorCode = m_decoder.LastError(); }
+
   CborDecoder m_decoder;
+  int m_errorCode;
 };
 
 CborShapeDeserializer::CborShapeDeserializer(const unsigned char* data, size_t length)
@@ -146,7 +208,7 @@ Aws::String CborShapeDeserializer::ReadString() { return m_impl->ReadString(); }
 DateTime CborShapeDeserializer::ReadTimestamp() { return m_impl->ReadTimestamp(); }
 ByteBuffer CborShapeDeserializer::ReadBlob() { return m_impl->ReadBlob(); }
 int CborShapeDeserializer::ReadEnum() { return m_impl->ReadEnum(); }
-void CborShapeDeserializer::BeginStruct() { m_impl->BeginStruct(); }
+size_t CborShapeDeserializer::BeginStruct() { return m_impl->BeginStruct(); }
 void CborShapeDeserializer::EndStruct() { m_impl->EndStruct(); }
 size_t CborShapeDeserializer::BeginList() { return m_impl->BeginList(); }
 void CborShapeDeserializer::EndList() { m_impl->EndList(); }
@@ -157,3 +219,5 @@ bool CborShapeDeserializer::IsBreak() { return m_impl->IsBreak(); }
 bool CborShapeDeserializer::IsNull() { return m_impl->IsNull(); }
 void CborShapeDeserializer::ReadNull() { m_impl->ReadNull(); }
 void CborShapeDeserializer::SkipValue() { m_impl->SkipValue(); }
+bool CborShapeDeserializer::HasError() const { return m_impl->HasError(); }
+int CborShapeDeserializer::GetLastError() const { return m_impl->GetLastError(); }

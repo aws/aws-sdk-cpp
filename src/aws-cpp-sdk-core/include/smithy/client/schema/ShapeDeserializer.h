@@ -24,7 +24,7 @@ class SMITHY_API ShapeDeserializer {
   virtual Aws::Utils::ByteBuffer ReadBlob() = 0;
   virtual int ReadEnum() = 0;
 
-  virtual void BeginStruct() = 0;
+  virtual size_t BeginStruct() = 0;
   virtual void EndStruct() = 0;
 
   virtual size_t BeginList() = 0;
@@ -38,6 +38,9 @@ class SMITHY_API ShapeDeserializer {
   virtual bool IsNull() = 0;
   virtual void ReadNull() = 0;
   virtual void SkipValue() = 0;
+
+  virtual bool HasError() const = 0;
+  virtual int GetLastError() const = 0;
 };
 
 }  // namespace schema

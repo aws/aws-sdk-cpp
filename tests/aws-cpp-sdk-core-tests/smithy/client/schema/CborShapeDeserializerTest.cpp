@@ -389,3 +389,118 @@ TEST_F(CborShapeDeserializerTest, MultipleScalars) {
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
+
+// --- Error handling ---
+
+TEST_F(CborShapeDeserializerTest, ErrorOnEmptyPayload) {
+  const unsigned char empty[1] = {0};
+  CborShapeDeserializer d(empty, 0);
+  EXPECT_FALSE(d.HasError());
+  d.ReadBoolean();
+  EXPECT_TRUE(d.HasError());
+  EXPECT_NE(d.GetLastError(), 0);
+}
+
+TEST_F(CborShapeDeserializerTest, ErrorOnTypeMismatch) {
+  CborShapeSerializer s;
+  Schema root;
+  s.BeginStructure(root);
+  s.WriteMapKey("val");
+  s.WriteString(root, "hello");
+  s.EndStructure();
+  auto payload = s.GetPayload().GetResult();
+
+  CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  d.BeginStruct();
+  EXPECT_EQ(d.ReadKey(), "val");
+  d.ReadInteger();
+  EXPECT_TRUE(d.HasError());
+}
+
+TEST_F(CborShapeDeserializerTest, NoErrorOnValidPayload) {
+  CborShapeSerializer s;
+  Schema root;
+  s.BeginStructure(root);
+  s.WriteMapKey("n");
+  s.WriteInteger(root, 42);
+  s.EndStructure();
+  auto payload = s.GetPayload().GetResult();
+
+  CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  d.BeginStruct();
+  EXPECT_EQ(d.ReadKey(), "n");
+  EXPECT_EQ(d.ReadInteger(), 42);
+  EXPECT_FALSE(d.HasError());
+}
+
+// --- BeginStruct returns size for definite-length maps ---
+
+TEST_F(CborShapeDeserializerTest, BeginStructDefiniteLengthMap) {
+  // Definite-length map with 2 entries:
+  // A2             -- map(2)
+  //   61 61        -- text(1) "a"
+  //   01           -- unsigned(1)
+  //   61 62        -- text(1) "b"
+  //   02           -- unsigned(2)
+  const unsigned char data[] = {0xA2, 0x61, 0x61, 0x01, 0x61, 0x62, 0x02};
+  CborShapeDeserializer d(data, sizeof(data));
+  size_t count = d.BeginStruct();
+  EXPECT_EQ(count, 2u);
+  EXPECT_EQ(d.ReadKey(), "a");
+  EXPECT_EQ(d.ReadInteger(), 1);
+  EXPECT_EQ(d.ReadKey(), "b");
+  EXPECT_EQ(d.ReadInteger(), 2);
+  d.EndStruct();
+  EXPECT_FALSE(d.HasError());
+}
+
+TEST_F(CborShapeDeserializerTest, BeginStructIndefiniteLengthMap) {
+  CborShapeSerializer s;
+  Schema root;
+  s.BeginStructure(root);
+  s.WriteMapKey("x");
+  s.WriteInteger(root, 99);
+  s.EndStructure();
+  auto payload = s.GetPayload().GetResult();
+
+  CborShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  size_t count = d.BeginStruct();
+  EXPECT_EQ(count, 0u);
+  EXPECT_FALSE(d.IsBreak());
+  EXPECT_EQ(d.ReadKey(), "x");
+  EXPECT_EQ(d.ReadInteger(), 99);
+  EXPECT_TRUE(d.IsBreak());
+  d.EndStruct();
+  EXPECT_FALSE(d.HasError());
+}
+
+// --- Timestamp handling ---
+
+TEST_F(CborShapeDeserializerTest, TimestampFromFloat) {
+  // tag(1) followed by float64 1234567890.5
+  // C1 = tag(1), FB = float64, 41D26580B4A00000 = IEEE 754 1234567890.5
+  const unsigned char data[] = {
+      0xC1, 0xFB, 0x41, 0xD2, 0x65, 0x80, 0xB4, 0xA0, 0x00, 0x00};
+  CborShapeDeserializer d(data, sizeof(data));
+  auto ts = d.ReadTimestamp();
+  EXPECT_FALSE(d.HasError());
+  EXPECT_DOUBLE_EQ(ts.SecondsWithMSPrecision(), 1234567890.5);
+}
+
+TEST_F(CborShapeDeserializerTest, TimestampNegativeIntSetsError) {
+  // tag(1) followed by negative int: C1 = tag(1), 20 = negint(0) meaning -1
+  const unsigned char data[] = {0xC1, 0x20};
+  CborShapeDeserializer d(data, sizeof(data));
+  d.ReadTimestamp();
+  EXPECT_TRUE(d.HasError());
+}
+
+TEST_F(CborShapeDeserializerTest, TimestampNegativeFloatSetsError) {
+  // tag(1) followed by float64 -1.0
+  // C1 = tag(1), FB = float64, BFF0000000000000 = IEEE 754 -1.0
+  const unsigned char data[] = {
+      0xC1, 0xFB, 0xBF, 0xF0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+  CborShapeDeserializer d(data, sizeof(data));
+  d.ReadTimestamp();
+  EXPECT_TRUE(d.HasError());
+}

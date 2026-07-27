@@ -22,7 +22,7 @@ class SMITHY_API CborShapeDeserializer final : public ShapeDeserializer {
   Aws::Utils::ByteBuffer ReadBlob() override;
   int ReadEnum() override;
 
-  void BeginStruct() override;
+  size_t BeginStruct() override;
   void EndStruct() override;
 
   size_t BeginList() override;
@@ -36,6 +36,9 @@ class SMITHY_API CborShapeDeserializer final : public ShapeDeserializer {
   bool IsNull() override;
   void ReadNull() override;
   void SkipValue() override;
+
+  bool HasError() const override;
+  int GetLastError() const override;
 
  private:
   class Impl;
