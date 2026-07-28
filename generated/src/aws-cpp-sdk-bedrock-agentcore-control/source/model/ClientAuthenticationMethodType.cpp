@@ -18,6 +18,7 @@ namespace ClientAuthenticationMethodTypeMapper {
 static const int CLIENT_SECRET_BASIC_HASH = HashingUtils::HashString("CLIENT_SECRET_BASIC");
 static const int CLIENT_SECRET_POST_HASH = HashingUtils::HashString("CLIENT_SECRET_POST");
 static const int AWS_IAM_ID_TOKEN_JWT_HASH = HashingUtils::HashString("AWS_IAM_ID_TOKEN_JWT");
+static const int PRIVATE_KEY_JWT_HASH = HashingUtils::HashString("PRIVATE_KEY_JWT");
 
 ClientAuthenticationMethodType GetClientAuthenticationMethodTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ClientAuthenticationMethodType GetClientAuthenticationMethodTypeForName(const Aw
     return ClientAuthenticationMethodType::CLIENT_SECRET_POST;
   } else if (hashCode == AWS_IAM_ID_TOKEN_JWT_HASH) {
     return ClientAuthenticationMethodType::AWS_IAM_ID_TOKEN_JWT;
+  } else if (hashCode == PRIVATE_KEY_JWT_HASH) {
+    return ClientAuthenticationMethodType::PRIVATE_KEY_JWT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForClientAuthenticationMethodType(ClientAuthenticationMethodT
       return "CLIENT_SECRET_POST";
     case ClientAuthenticationMethodType::AWS_IAM_ID_TOKEN_JWT:
       return "AWS_IAM_ID_TOKEN_JWT";
+    case ClientAuthenticationMethodType::PRIVATE_KEY_JWT:
+      return "PRIVATE_KEY_JWT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -158,7 +158,12 @@ class UpdateTaskTemplateResult {
 
   ///@{
   /**
-   * <p>Constraints that are applicable to the fields listed.</p>
+   * <p>Constraints that are applicable to the fields listed. Although this parameter
+   * is marked as optional in the API model, the service requires it when calling
+   * <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The
+   * <code>RequiredFields</code> array must contain at least one element, and the
+   * field of type <code>NAME</code> must be included in
+   * <code>RequiredFields</code>.</p>
    */
   inline const TaskTemplateConstraints& GetConstraints() const { return m_constraints; }
   template <typename ConstraintsT = TaskTemplateConstraints>

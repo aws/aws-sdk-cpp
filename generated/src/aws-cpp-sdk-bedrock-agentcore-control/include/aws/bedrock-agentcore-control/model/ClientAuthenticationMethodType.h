@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class ClientAuthenticationMethodType { NOT_SET, CLIENT_SECRET_BASIC, CLIENT_SECRET_POST, AWS_IAM_ID_TOKEN_JWT };
+enum class ClientAuthenticationMethodType { NOT_SET, CLIENT_SECRET_BASIC, CLIENT_SECRET_POST, AWS_IAM_ID_TOKEN_JWT, PRIVATE_KEY_JWT };
 
 namespace ClientAuthenticationMethodTypeMapper {
 AWS_BEDROCKAGENTCORECONTROL_API ClientAuthenticationMethodType GetClientAuthenticationMethodTypeForName(const Aws::String& name);

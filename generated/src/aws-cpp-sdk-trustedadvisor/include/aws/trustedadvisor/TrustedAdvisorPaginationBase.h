@@ -12,6 +12,7 @@
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationResourcesPaginationTraits.h>
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationsPaginationTraits.h>
 #include <aws/trustedadvisor/model/ListRecommendationResourcesPaginationTraits.h>
+#include <aws/trustedadvisor/model/ListRecommendationsForResourcePaginationTraits.h>
 #include <aws/trustedadvisor/model/ListRecommendationsPaginationTraits.h>
 
 #include <memory>
@@ -90,6 +91,18 @@ class TrustedAdvisorPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationsRequest,
                                              Pagination::ListRecommendationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRecommendationsForResource operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationsForResourceRequest,
+                                    Pagination::ListRecommendationsForResourcePaginationTraits<DerivedClient>>
+  ListRecommendationsForResourcePaginator(const Model::ListRecommendationsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationsForResourceRequest,
+                                             Pagination::ListRecommendationsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 };

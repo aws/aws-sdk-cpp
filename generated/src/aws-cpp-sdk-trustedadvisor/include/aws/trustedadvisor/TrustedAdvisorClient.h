@@ -360,6 +360,36 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>List all Trusted Advisor recommendations for a given AWS resource
+   * ARN.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendationsForResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRecommendationsForResourceOutcome ListRecommendationsForResource(
+      const Model::ListRecommendationsForResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRecommendationsForResource that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListRecommendationsForResourceRequestT = Model::ListRecommendationsForResourceRequest>
+  Model::ListRecommendationsForResourceOutcomeCallable ListRecommendationsForResourceCallable(
+      const ListRecommendationsForResourceRequestT& request) const {
+    return SubmitCallable(&TrustedAdvisorClient::ListRecommendationsForResource, request);
+  }
+
+  /**
+   * An Async wrapper for ListRecommendationsForResource that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListRecommendationsForResourceRequestT = Model::ListRecommendationsForResourceRequest>
+  void ListRecommendationsForResourceAsync(const ListRecommendationsForResourceRequestT& request,
+                                           const ListRecommendationsForResourceResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TrustedAdvisorClient::ListRecommendationsForResource, request, handler, context);
+  }
+
+  /**
    * <p>Update the lifecycle of a Recommendation within an Organization. This API
    * only supports prioritized recommendations and updates global priority
    * recommendations, eliminating the need to call the API in each AWS Region.

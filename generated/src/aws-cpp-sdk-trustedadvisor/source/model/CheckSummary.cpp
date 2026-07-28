@@ -59,6 +59,25 @@ CheckSummary& CheckSummary::operator=(JsonView jsonValue) {
     }
     m_metadataHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("resourceArnQueryable")) {
+    m_resourceArnQueryable = jsonValue.GetBool("resourceArnQueryable");
+    m_resourceArnQueryableHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("awsResourceTypes")) {
+    Aws::Utils::Array<JsonView> awsResourceTypesJsonList = jsonValue.GetArray("awsResourceTypes");
+    for (unsigned awsResourceTypesIndex = 0; awsResourceTypesIndex < awsResourceTypesJsonList.GetLength(); ++awsResourceTypesIndex) {
+      m_awsResourceTypes.push_back(awsResourceTypesJsonList[awsResourceTypesIndex].AsString());
+    }
+    m_awsResourceTypesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("checkGranularity")) {
+    m_checkGranularity = jsonValue.GetString("checkGranularity");
+    m_checkGranularityHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("recommendationId")) {
+    m_recommendationId = jsonValue.GetString("recommendationId");
+    m_recommendationIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -107,6 +126,26 @@ JsonValue CheckSummary::Jsonize() const {
       metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
     }
     payload.WithObject("metadata", std::move(metadataJsonMap));
+  }
+
+  if (m_resourceArnQueryableHasBeenSet) {
+    payload.WithBool("resourceArnQueryable", m_resourceArnQueryable);
+  }
+
+  if (m_awsResourceTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> awsResourceTypesJsonList(m_awsResourceTypes.size());
+    for (unsigned awsResourceTypesIndex = 0; awsResourceTypesIndex < awsResourceTypesJsonList.GetLength(); ++awsResourceTypesIndex) {
+      awsResourceTypesJsonList[awsResourceTypesIndex].AsString(m_awsResourceTypes[awsResourceTypesIndex]);
+    }
+    payload.WithArray("awsResourceTypes", std::move(awsResourceTypesJsonList));
+  }
+
+  if (m_checkGranularityHasBeenSet) {
+    payload.WithString("checkGranularity", m_checkGranularity);
+  }
+
+  if (m_recommendationIdHasBeenSet) {
+    payload.WithString("recommendationId", m_recommendationId);
   }
 
   return payload;

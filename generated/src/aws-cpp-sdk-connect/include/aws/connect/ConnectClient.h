@@ -216,13 +216,15 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Leverage the IAM context key <code>connect:PreferredUserArn</code> to
    * restrict contact association to specific preferred user.</p> </li> </ul> <p>
    * <b>Important things to know</b> </p> <ul> <li> <p>Use this API with chat, email,
-   * and task contacts. It does not support voice contacts.</p> </li> <li> <p>Use it
-   * to associate contacts with users regardless of their current state, including
-   * custom states. Ensure your application logic accounts for user availability
-   * before making associations.</p> </li> <li> <p>It honors the IAM context key
-   * <code>connect:PreferredUserArn</code> to prevent unauthorized contact
-   * associations.</p> </li> <li> <p>It respects the IAM context key
-   * <code>connect:PreferredUserArn</code> to enforce authorization controls and
+   * task, and voice contacts. For voice callbacks, this API does not support
+   * customer-first mode.</p> </li> <li> <p>This API can be used to offer a contact
+   * to an agent even if the agent is currently at maximum concurrency for the
+   * channel.</p> </li> <li> <p>Use it to associate contacts with users regardless of
+   * their current state, including custom states. Ensure your application logic
+   * accounts for user availability before making associations.</p> </li> <li> <p>It
+   * honors the IAM context key <code>connect:PreferredUserArn</code> to prevent
+   * unauthorized contact associations.</p> </li> <li> <p>It respects the IAM context
+   * key <code>connect:PreferredUserArn</code> to enforce authorization controls and
    * prevent unauthorized contact associations. Verify that your IAM policies are
    * properly configured to support your intended use cases.</p> </li> <li> <p>The
    * service quota <i>Queues per routing profile per instance</i> applies to manually

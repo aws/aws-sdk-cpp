@@ -10,6 +10,7 @@
 #include <aws/bedrock-agentcore-control/model/OnBehalfOfTokenExchangeConfigType.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpointOverride.h>
+#include <aws/bedrock-agentcore-control/model/PrivateKeyJwtConfig.h>
 #include <aws/bedrock-agentcore-control/model/SecretReference.h>
 #include <aws/bedrock-agentcore-control/model/SecretSourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -171,6 +172,22 @@ class CustomOauth2ProviderConfigInput {
   ///@}
 
   ///@{
+
+  inline const PrivateKeyJwtConfig& GetPrivateKeyJwtConfig() const { return m_privateKeyJwtConfig; }
+  inline bool PrivateKeyJwtConfigHasBeenSet() const { return m_privateKeyJwtConfigHasBeenSet; }
+  template <typename PrivateKeyJwtConfigT = PrivateKeyJwtConfig>
+  void SetPrivateKeyJwtConfig(PrivateKeyJwtConfigT&& value) {
+    m_privateKeyJwtConfigHasBeenSet = true;
+    m_privateKeyJwtConfig = std::forward<PrivateKeyJwtConfigT>(value);
+  }
+  template <typename PrivateKeyJwtConfigT = PrivateKeyJwtConfig>
+  CustomOauth2ProviderConfigInput& WithPrivateKeyJwtConfig(PrivateKeyJwtConfigT&& value) {
+    SetPrivateKeyJwtConfig(std::forward<PrivateKeyJwtConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The default private endpoint for the custom OAuth2 provider, enabling secure
    * connectivity through a VPC Lattice resource configuration.</p>
@@ -228,6 +245,8 @@ class CustomOauth2ProviderConfigInput {
 
   ClientAuthenticationMethodType m_clientAuthenticationMethod{ClientAuthenticationMethodType::NOT_SET};
 
+  PrivateKeyJwtConfig m_privateKeyJwtConfig;
+
   PrivateEndpoint m_privateEndpoint;
 
   Aws::Vector<PrivateEndpointOverride> m_privateEndpointOverrides;
@@ -238,6 +257,7 @@ class CustomOauth2ProviderConfigInput {
   bool m_clientSecretSourceHasBeenSet = false;
   bool m_onBehalfOfTokenExchangeConfigHasBeenSet = false;
   bool m_clientAuthenticationMethodHasBeenSet = false;
+  bool m_privateKeyJwtConfigHasBeenSet = false;
   bool m_privateEndpointHasBeenSet = false;
   bool m_privateEndpointOverridesHasBeenSet = false;
 };

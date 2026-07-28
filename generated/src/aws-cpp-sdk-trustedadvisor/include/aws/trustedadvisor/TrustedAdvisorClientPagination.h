@@ -11,6 +11,7 @@
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationResourcesPaginationTraits.h>
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationsPaginationTraits.h>
 #include <aws/trustedadvisor/model/ListRecommendationResourcesPaginationTraits.h>
+#include <aws/trustedadvisor/model/ListRecommendationsForResourcePaginationTraits.h>
 #include <aws/trustedadvisor/model/ListRecommendationsPaginationTraits.h>
 
 namespace Aws {
@@ -33,6 +34,9 @@ using ListRecommendationResourcesPaginator =
 using ListRecommendationsPaginator =
     Aws::Utils::Pagination::Paginator<TrustedAdvisorClient, Model::ListRecommendationsRequest,
                                       Pagination::ListRecommendationsPaginationTraits<TrustedAdvisorClient>>;
+using ListRecommendationsForResourcePaginator =
+    Aws::Utils::Pagination::Paginator<TrustedAdvisorClient, Model::ListRecommendationsForResourceRequest,
+                                      Pagination::ListRecommendationsForResourcePaginationTraits<TrustedAdvisorClient>>;
 
 }  // namespace TrustedAdvisor
 }  // namespace Aws

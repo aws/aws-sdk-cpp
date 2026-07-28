@@ -193,6 +193,85 @@ class CheckSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether this check is supported by the
+   * ListRecommendationsForResource API.</p>
+   */
+  inline bool GetResourceArnQueryable() const { return m_resourceArnQueryable; }
+  inline bool ResourceArnQueryableHasBeenSet() const { return m_resourceArnQueryableHasBeenSet; }
+  inline void SetResourceArnQueryable(bool value) {
+    m_resourceArnQueryableHasBeenSet = true;
+    m_resourceArnQueryable = value;
+  }
+  inline CheckSummary& WithResourceArnQueryable(bool value) {
+    SetResourceArnQueryable(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The AWS resource types that this check evaluates (for example,
+   * AWS::EC2::Instance).</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAwsResourceTypes() const { return m_awsResourceTypes; }
+  inline bool AwsResourceTypesHasBeenSet() const { return m_awsResourceTypesHasBeenSet; }
+  template <typename AwsResourceTypesT = Aws::Vector<Aws::String>>
+  void SetAwsResourceTypes(AwsResourceTypesT&& value) {
+    m_awsResourceTypesHasBeenSet = true;
+    m_awsResourceTypes = std::forward<AwsResourceTypesT>(value);
+  }
+  template <typename AwsResourceTypesT = Aws::Vector<Aws::String>>
+  CheckSummary& WithAwsResourceTypes(AwsResourceTypesT&& value) {
+    SetAwsResourceTypes(std::forward<AwsResourceTypesT>(value));
+    return *this;
+  }
+  template <typename AwsResourceTypesT = Aws::String>
+  CheckSummary& AddAwsResourceTypes(AwsResourceTypesT&& value) {
+    m_awsResourceTypesHasBeenSet = true;
+    m_awsResourceTypes.emplace_back(std::forward<AwsResourceTypesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The granularity level at which the check operates: resource, account, or
+   * account_region.</p>
+   */
+  inline const Aws::String& GetCheckGranularity() const { return m_checkGranularity; }
+  inline bool CheckGranularityHasBeenSet() const { return m_checkGranularityHasBeenSet; }
+  template <typename CheckGranularityT = Aws::String>
+  void SetCheckGranularity(CheckGranularityT&& value) {
+    m_checkGranularityHasBeenSet = true;
+    m_checkGranularity = std::forward<CheckGranularityT>(value);
+  }
+  template <typename CheckGranularityT = Aws::String>
+  CheckSummary& WithCheckGranularity(CheckGranularityT&& value) {
+    SetCheckGranularity(std::forward<CheckGranularityT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The recommendation identifier associated with the check.</p>
+   */
+  inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
+  inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
+  template <typename RecommendationIdT = Aws::String>
+  void SetRecommendationId(RecommendationIdT&& value) {
+    m_recommendationIdHasBeenSet = true;
+    m_recommendationId = std::forward<RecommendationIdT>(value);
+  }
+  template <typename RecommendationIdT = Aws::String>
+  CheckSummary& WithRecommendationId(RecommendationIdT&& value) {
+    SetRecommendationId(std::forward<RecommendationIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -209,6 +288,14 @@ class CheckSummary {
   RecommendationSource m_source{RecommendationSource::NOT_SET};
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
+
+  bool m_resourceArnQueryable{false};
+
+  Aws::Vector<Aws::String> m_awsResourceTypes;
+
+  Aws::String m_checkGranularity;
+
+  Aws::String m_recommendationId;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -217,6 +304,10 @@ class CheckSummary {
   bool m_awsServicesHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
+  bool m_resourceArnQueryableHasBeenSet = false;
+  bool m_awsResourceTypesHasBeenSet = false;
+  bool m_checkGranularityHasBeenSet = false;
+  bool m_recommendationIdHasBeenSet = false;
 };
 
 }  // namespace Model

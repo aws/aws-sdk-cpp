@@ -28,6 +28,7 @@
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationResourcesRequest.h>
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationsRequest.h>
 #include <aws/trustedadvisor/model/ListRecommendationResourcesRequest.h>
+#include <aws/trustedadvisor/model/ListRecommendationsForResourceRequest.h>
 #include <aws/trustedadvisor/model/ListRecommendationsRequest.h>
 #include <aws/trustedadvisor/model/UpdateOrganizationRecommendationLifecycleRequest.h>
 #include <aws/trustedadvisor/model/UpdateRecommendationLifecycleRequest.h>
@@ -329,6 +330,25 @@ ListRecommendationsOutcome TrustedAdvisorClient::ListRecommendations(const ListR
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListRecommendationsOutcome(result.GetResultWithOwnership())
                             : ListRecommendationsOutcome(std::move(result.GetError()));
+}
+
+ListRecommendationsForResourceOutcome TrustedAdvisorClient::ListRecommendationsForResource(
+    const ListRecommendationsForResourceRequest& request) const {
+  if (!request.AwsResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListRecommendationsForResource", "Required field: AwsResourceArn, is not set");
+    return ListRecommendationsForResourceOutcome(Aws::Client::AWSError<TrustedAdvisorErrors>(
+        TrustedAdvisorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsResourceArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/recommendations-for-resource/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsResourceArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecommendationsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationsForResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateOrganizationRecommendationLifecycleOutcome TrustedAdvisorClient::UpdateOrganizationRecommendationLifecycle(

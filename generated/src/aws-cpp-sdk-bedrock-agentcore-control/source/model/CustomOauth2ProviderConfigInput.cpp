@@ -47,6 +47,10 @@ CustomOauth2ProviderConfigInput& CustomOauth2ProviderConfigInput::operator=(Json
         ClientAuthenticationMethodTypeMapper::GetClientAuthenticationMethodTypeForName(jsonValue.GetString("clientAuthenticationMethod"));
     m_clientAuthenticationMethodHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("privateKeyJwtConfig")) {
+    m_privateKeyJwtConfig = jsonValue.GetObject("privateKeyJwtConfig");
+    m_privateKeyJwtConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("privateEndpoint")) {
     m_privateEndpoint = jsonValue.GetObject("privateEndpoint");
     m_privateEndpointHasBeenSet = true;
@@ -92,6 +96,10 @@ JsonValue CustomOauth2ProviderConfigInput::Jsonize() const {
   if (m_clientAuthenticationMethodHasBeenSet) {
     payload.WithString("clientAuthenticationMethod",
                        ClientAuthenticationMethodTypeMapper::GetNameForClientAuthenticationMethodType(m_clientAuthenticationMethod));
+  }
+
+  if (m_privateKeyJwtConfigHasBeenSet) {
+    payload.WithObject("privateKeyJwtConfig", m_privateKeyJwtConfig.Jsonize());
   }
 
   if (m_privateEndpointHasBeenSet) {

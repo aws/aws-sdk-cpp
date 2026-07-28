@@ -130,11 +130,13 @@ class Options {
    * attempts to preserve the original <code>Atime</code> attribute on all source
    * files (that is, the version before the <code>PREPARING</code> steps of the task
    * execution). This option is recommended.</p> </li> <li> <p> <code>NONE</code> -
-   * Ignores <code>Atime</code>.</p> </li> </ul>  <p>If <code>Atime</code> is
-   * set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to
+   * Ignores <code>Atime</code>.</p> </li> </ul>  <p>The following applies only
+   * to Basic mode tasks:</p> <p>If <code>Atime</code> is set to
+   * <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to
    * <code>PRESERVE</code>. </p> <p>If <code>Atime</code> is set to
    * <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>. </p>
-   *
+   * <p>Enhanced mode tasks support configuring <code>Atime</code> independently of
+   * <code>Mtime</code>.</p>
    */
   inline Atime GetAtime() const { return m_atime; }
   inline bool AtimeHasBeenSet() const { return m_atimeHasBeenSet; }
@@ -155,11 +157,13 @@ class Options {
    * This option is required when you need to run the a task more than once.</p> <ul>
    * <li> <p> <code>PRESERVE</code> (default) - Preserves original
    * <code>Mtime</code>, which is recommended.</p> </li> <li> <p> <code>NONE</code> -
-   * Ignores <code>Mtime</code>.</p> </li> </ul>  <p>If <code>Mtime</code> is
-   * set to <code>PRESERVE</code>, <code>Atime</code> must be set to
+   * Ignores <code>Mtime</code>.</p> </li> </ul>  <p>The following applies only
+   * to Basic mode tasks:</p> <p>If <code>Mtime</code> is set to
+   * <code>PRESERVE</code>, <code>Atime</code> must be set to
    * <code>BEST_EFFORT</code>.</p> <p>If <code>Mtime</code> is set to
    * <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.
-   * </p>
+   * </p> <p>Enhanced mode tasks don't support <code>Mtime</code> set to
+   * <code>NONE</code>.</p>
    */
   inline Mtime GetMtime() const { return m_mtime; }
   inline bool MtimeHasBeenSet() const { return m_mtimeHasBeenSet; }

@@ -30,6 +30,7 @@
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationsRequest.h>
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationsResult.h>
 #include <aws/trustedadvisor/model/ListRecommendationResourcesResult.h>
+#include <aws/trustedadvisor/model/ListRecommendationsForResourceResult.h>
 #include <aws/trustedadvisor/model/ListRecommendationsRequest.h>
 #include <aws/trustedadvisor/model/ListRecommendationsResult.h>
 /* End of service model headers required in TrustedAdvisorClient header */
@@ -74,6 +75,7 @@ class ListOrganizationRecommendationResourcesRequest;
 class ListOrganizationRecommendationsRequest;
 class ListRecommendationResourcesRequest;
 class ListRecommendationsRequest;
+class ListRecommendationsForResourceRequest;
 class UpdateOrganizationRecommendationLifecycleRequest;
 class UpdateRecommendationLifecycleRequest;
 /* End of service model forward declarations required in TrustedAdvisorClient header */
@@ -91,6 +93,7 @@ typedef Aws::Utils::Outcome<ListOrganizationRecommendationResourcesResult, Trust
 typedef Aws::Utils::Outcome<ListOrganizationRecommendationsResult, TrustedAdvisorError> ListOrganizationRecommendationsOutcome;
 typedef Aws::Utils::Outcome<ListRecommendationResourcesResult, TrustedAdvisorError> ListRecommendationResourcesOutcome;
 typedef Aws::Utils::Outcome<ListRecommendationsResult, TrustedAdvisorError> ListRecommendationsOutcome;
+typedef Aws::Utils::Outcome<ListRecommendationsForResourceResult, TrustedAdvisorError> ListRecommendationsForResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, TrustedAdvisorError> UpdateOrganizationRecommendationLifecycleOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, TrustedAdvisorError> UpdateRecommendationLifecycleOutcome;
 /* End of service model Outcome class definitions */
@@ -105,6 +108,7 @@ typedef std::future<ListOrganizationRecommendationResourcesOutcome> ListOrganiza
 typedef std::future<ListOrganizationRecommendationsOutcome> ListOrganizationRecommendationsOutcomeCallable;
 typedef std::future<ListRecommendationResourcesOutcome> ListRecommendationResourcesOutcomeCallable;
 typedef std::future<ListRecommendationsOutcome> ListRecommendationsOutcomeCallable;
+typedef std::future<ListRecommendationsForResourceOutcome> ListRecommendationsForResourceOutcomeCallable;
 typedef std::future<UpdateOrganizationRecommendationLifecycleOutcome> UpdateOrganizationRecommendationLifecycleOutcomeCallable;
 typedef std::future<UpdateRecommendationLifecycleOutcome> UpdateRecommendationLifecycleOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -145,6 +149,10 @@ typedef std::function<void(const TrustedAdvisorClient*, const Model::ListRecomme
 typedef std::function<void(const TrustedAdvisorClient*, const Model::ListRecommendationsRequest&, const Model::ListRecommendationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRecommendationsResponseReceivedHandler;
+typedef std::function<void(const TrustedAdvisorClient*, const Model::ListRecommendationsForResourceRequest&,
+                           const Model::ListRecommendationsForResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRecommendationsForResourceResponseReceivedHandler;
 typedef std::function<void(const TrustedAdvisorClient*, const Model::UpdateOrganizationRecommendationLifecycleRequest&,
                            const Model::UpdateOrganizationRecommendationLifecycleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

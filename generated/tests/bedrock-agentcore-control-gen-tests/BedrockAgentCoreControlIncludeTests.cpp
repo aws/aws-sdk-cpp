@@ -409,6 +409,7 @@
 #include <aws/bedrock-agentcore-control/model/KeyType.h>
 #include <aws/bedrock-agentcore-control/model/KinesisResource.h>
 #include <aws/bedrock-agentcore-control/model/KmsConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/KmsKeySourceType.h>
 #include <aws/bedrock-agentcore-control/model/LambdaEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/LambdaInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LambdaTransformConfiguration.h>
@@ -576,6 +577,8 @@
 #include <aws/bedrock-agentcore-control/model/PrincipalMatchOperator.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpointOverride.h>
+#include <aws/bedrock-agentcore-control/model/PrivateKeyJwtConfig.h>
+#include <aws/bedrock-agentcore-control/model/PrivateKeySource.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ProviderPrefix.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyRequest.h>
@@ -634,6 +637,7 @@
 #include <aws/bedrock-agentcore-control/model/SessionStorageConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/SetTokenVaultCMKRequest.h>
 #include <aws/bedrock-agentcore-control/model/SetTokenVaultCMKResult.h>
+#include <aws/bedrock-agentcore-control/model/SigningAlgorithm.h>
 #include <aws/bedrock-agentcore-control/model/SkillDefinition.h>
 #include <aws/bedrock-agentcore-control/model/SkillMdDefinition.h>
 #include <aws/bedrock-agentcore-control/model/SlackOauth2ProviderConfigInput.h>

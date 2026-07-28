@@ -12,6 +12,7 @@
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationAccountsPaginationTraits.h>
 #include <aws/trustedadvisor/model/ListRecommendationResourcesPaginationTraits.h>
 #include <aws/trustedadvisor/model/ListChecksPaginationTraits.h>
+#include <aws/trustedadvisor/model/ListRecommendationsForResourcePaginationTraits.h>
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationResourcesPaginationTraits.h>
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationsPaginationTraits.h>
 

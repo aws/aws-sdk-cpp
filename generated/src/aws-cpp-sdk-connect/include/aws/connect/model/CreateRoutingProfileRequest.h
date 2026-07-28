@@ -147,8 +147,9 @@ class CreateRoutingProfileRequest : public ConnectRequest {
    * RoutingProfileManualAssignmentQueueConfig objects that can be passed during a
    * CreateRoutingProfile API request. It is different from the quota of 50 queues
    * per routing profile per instance that is listed in Connect Customer service
-   * quotas.</p> <p>Note: Use this config for chat, email, and task contacts. It does
-   * not support voice contacts.</p>
+   * quotas.</p>  <p>For voice contacts, manual assignment supports only
+   * agent-first callback contacts. Chat, email, and task contacts are fully
+   * supported.</p>
    */
   inline const Aws::Vector<RoutingProfileManualAssignmentQueueConfig>& GetManualAssignmentQueueConfigs() const {
     return m_manualAssignmentQueueConfigs;

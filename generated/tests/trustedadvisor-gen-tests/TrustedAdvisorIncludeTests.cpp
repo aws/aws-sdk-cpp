@@ -33,6 +33,8 @@
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationsResult.h>
 #include <aws/trustedadvisor/model/ListRecommendationResourcesRequest.h>
 #include <aws/trustedadvisor/model/ListRecommendationResourcesResult.h>
+#include <aws/trustedadvisor/model/ListRecommendationsForResourceRequest.h>
+#include <aws/trustedadvisor/model/ListRecommendationsForResourceResult.h>
 #include <aws/trustedadvisor/model/ListRecommendationsRequest.h>
 #include <aws/trustedadvisor/model/ListRecommendationsResult.h>
 #include <aws/trustedadvisor/model/OrganizationRecommendation.h>
@@ -40,6 +42,7 @@
 #include <aws/trustedadvisor/model/OrganizationRecommendationSummary.h>
 #include <aws/trustedadvisor/model/Recommendation.h>
 #include <aws/trustedadvisor/model/RecommendationCostOptimizingAggregates.h>
+#include <aws/trustedadvisor/model/RecommendationForResourceSummary.h>
 #include <aws/trustedadvisor/model/RecommendationLanguage.h>
 #include <aws/trustedadvisor/model/RecommendationLifecycleStage.h>
 #include <aws/trustedadvisor/model/RecommendationPillar.h>
