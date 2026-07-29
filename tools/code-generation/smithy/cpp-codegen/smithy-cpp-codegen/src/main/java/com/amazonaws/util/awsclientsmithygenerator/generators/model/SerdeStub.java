@@ -56,6 +56,46 @@ public final class SerdeStub {
         }
     }
 
+    /**
+     * Emits the empty per-protocol serde source bodies for a class that has no backing
+     * StructureShape (event stream union / initial response). Mirrors
+     * {@link #renderSourceImplementation} but keyed only on the class name.
+     */
+    public static void renderSerdeSourceStub(CppWriter writer, Protocol protocol, String className) {
+        if (protocol.isJsonLike()) {
+            renderJsonStub(writer, className);
+        } else if (protocol == Protocol.REST_XML) {
+            renderXmlStub(writer, className);
+        } else if (protocol == Protocol.QUERY_XML || protocol == Protocol.EC2) {
+            renderQueryXmlStub(writer, className);
+        } else {
+            throw new UnsupportedOperationException("Unsupported protocol for serde source stub: " + protocol);
+        }
+    }
+
+    /**
+     * Emits a protocol-agnostic stub for an event-stream event case body: a TODO marker
+     * and a minimal, compilable callback invocation with a default-constructed event.
+     * No protocol-specific deserialization is emitted.
+     *
+     * @param writer         the CppWriter
+     * @param eventShapeName the C++ event shape type (e.g. "SubscribeToShardEvent")
+     * @param callbackMember the handler callback member (e.g. "m_onSubscribeToShardEvent")
+     */
+    public static void renderEventPayloadDecodeStub(CppWriter writer, String eventShapeName,
+                                                    String callbackMember) {
+        writer.write("// TODO: protocol-specific event payload deserialization");
+        writer.write("$L($L{});", callbackMember, eventShapeName);
+    }
+
+    /**
+     * Emits a protocol-agnostic stub in place of the protocol-specific error-payload parse.
+     * The header-derived error code/message still flow to MarshallError at the call site.
+     */
+    public static void renderErrorPayloadParseStub(CppWriter writer) {
+        writer.write("// TODO: protocol-specific error payload deserialization");
+    }
+
     private static void renderJsonStub(CppWriter writer, String className) {
         writer.write("$L::$L(JsonView jsonValue) { *this = jsonValue; }", className, className);
         writer.write("");
