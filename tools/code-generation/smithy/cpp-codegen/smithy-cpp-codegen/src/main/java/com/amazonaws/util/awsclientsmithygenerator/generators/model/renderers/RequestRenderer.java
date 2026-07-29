@@ -9,6 +9,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.RequestInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import software.amazon.smithy.model.Model;
@@ -82,6 +83,13 @@ public final class RequestRenderer implements ShapeRenderer {
                 writer.write("");
                 writer.write("#include <utility>");
             }
+
+            boolean streamingResponse = ShapeClassifier.isEventStreamResponseOperation(operation, model);
+            boolean streamingRequest = ShapeClassifier.isEventStreamRequestOperation(operation, model);
+            if (streamingResponse) {
+                writer.write("#include <aws/core/utils/event/EventStreamDecoder.h>");
+                writer.write("#include <aws/$1L/model/$2LHandler.h>", smithyServiceName, operation.getId().getName());
+            }
             writer.write("");
 
             writer.writeNamespaceOpen("Aws");
@@ -104,9 +112,46 @@ public final class RequestRenderer implements ShapeRenderer {
                 writer.write("inline virtual const char* GetServiceRequestName() const override { return \"$L\"; }",
                     operation.getId().getName());
                 writer.write("");
+                if (streamingRequest) {
+                    writer.write("inline virtual bool IsEventStreamRequest() const override { return true; }");
+                }
+                if (streamingResponse) {
+                    writer.write("inline virtual bool HasEventStreamResponse() const override { return true; }");
+                }
                 writer.write("$L Aws::String SerializePayload() const override;", exportMacro);
                 writer.write("");
                 writer.write("$L Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;", exportMacro);
+
+                if (streamingResponse) {
+                    String handlerType = operation.getId().getName() + "Handler";
+                    writer.write("");
+                    writer.write("/**");
+                    writer.write(" * Underlying Event Stream Decoder.");
+                    writer.write(" */");
+                    writer.write("inline Aws::Utils::Event::EventStreamDecoder& GetEventStreamDecoder() { return m_decoder; }");
+                    writer.write("");
+                    writer.write("/**");
+                    writer.write(" * Underlying Event Stream Handler which is used to define callback functions.");
+                    writer.write(" */");
+                    writer.write("inline $1L& GetEventStreamHandler() { return m_handler; }", handlerType);
+                    writer.write("");
+                    writer.write("/**");
+                    writer.write(" * Underlying Event Stream Handler which is used to define callback functions.");
+                    writer.write(" */");
+                    writer.openBlock("inline void SetEventStreamHandler(const $1L& value) {", "}", handlerType, () -> {
+                        writer.write("m_handler = value;");
+                        writer.write("m_decoder.ResetEventStreamHandler(&m_handler);");
+                    });
+                    writer.write("");
+                    writer.write("/**");
+                    writer.write(" * Underlying Event Stream Handler which is used to define callback functions.");
+                    writer.write(" */");
+                    writer.openBlock("inline $1LRequest& WithEventStreamHandler(const $2L& value) {", "}",
+                        operation.getId().getName(), handlerType, () -> {
+                        writer.write("SetEventStreamHandler(value);");
+                        writer.write("return *this;");
+                    });
+                }
 
                 if (hasEndpointContextParams(operation, shape)) {
                     writer.write("");
@@ -123,6 +168,11 @@ public final class RequestRenderer implements ShapeRenderer {
                     writer.dedent();
                     writer.write("private:");
                     writer.indent();
+                    if (streamingResponse) {
+                        String handlerType = operation.getId().getName() + "Handler";
+                        writer.write("$1L m_handler;", handlerType);
+                        writer.write("Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};");
+                    }
                     MemberRenderer.renderPrivateSection(writer, shape, model);
                 }
             });
