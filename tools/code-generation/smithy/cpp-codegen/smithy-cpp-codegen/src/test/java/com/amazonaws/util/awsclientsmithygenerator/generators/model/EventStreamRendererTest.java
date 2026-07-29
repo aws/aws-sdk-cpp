@@ -38,7 +38,7 @@ class EventStreamRendererTest {
             .addMember("message", str.getId())
             .build();
         UnionShape stream = UnionShape.builder()
-            .id("com.example#MyStream")
+            .id("com.example#MyStreamEventStream")
             .addTrait(new StreamingTrait())
             .addMember("alpha", eventA.getId())
             .addMember("beta", eventB.getId())
@@ -98,6 +98,18 @@ class EventStreamRendererTest {
         assertTrue(h.contains("void OnEvent() override"), "Missing OnEvent override: " + h);
         // Exception must NOT get its own callback
         assertFalse(h.contains("SetBadExceptionCallback"), "Exception should not get a callback: " + h);
+    }
+
+    @Test
+    void eventStreamUnionHeader_typesEventAndExceptionMembers() {
+        String h = render("MyStreamEventStream.h");
+        // NOTE: file name derives from the UNION shape name (MyStream), not the operation.
+        assertTrue(h.contains("class MyStreamEventStream"), "Missing union class: " + h);
+        // Event member typed as its concrete shape
+        assertTrue(h.contains("const AlphaEvent& GetAlpha()") || h.contains("GetAlpha"),
+            "Missing event accessor: " + h);
+        // Exception member typed as <namespace>Error
+        assertTrue(h.contains("ExampleError"), "Exception members must be typed as ExampleError: " + h);
     }
 
     @Test

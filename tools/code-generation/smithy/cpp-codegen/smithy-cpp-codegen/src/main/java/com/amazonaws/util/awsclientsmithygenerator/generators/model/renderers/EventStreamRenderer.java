@@ -471,7 +471,119 @@ public final class EventStreamRenderer implements ShapeRenderer {
     private void renderEventStreamUnion(CppWriterDelegator writerDelegator, String opName,
                                         UnionShape union, List<MemberShape> events,
                                         List<MemberShape> exceptions) {
-        // Implemented in Task 5.
+        String className = union.getId().getName();
+        String errorType = namespace + "Error";
+
+        String headerFile = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
+        writerDelegator.useFileWriter(headerFile, writer -> {
+            writeCopyright(writer);
+            writer.write("#pragma once");
+            writer.write("#include <aws/$1L/$2L_EXPORTS.h>", smithyServiceName, namespace);
+            writer.write("#include <aws/$1L/$2LErrors.h>", smithyServiceName, namespace);
+            for (MemberShape event : events) {
+                writer.write("#include <aws/$1L/model/$2L.h>", smithyServiceName, eventShapeName(event));
+            }
+            writer.write("");
+            writer.write("#include <utility>");
+            writer.write("");
+            writer.writeNamespaceOpen("Aws");
+            renderSerdeForwardDeclarations(writer);
+            writer.writeNamespaceOpen(namespace);
+            writer.writeNamespaceOpen("Model");
+            writer.write("");
+            writer.openBlock("class $L {", "};", className, () -> {
+                writer.write("public:");
+                SerdeStub.renderHeaderDeclarations(writer, protocol, exportMacro, className);
+                writer.write("");
+                // Event member accessors, typed as their concrete shape.
+                for (MemberShape event : events) {
+                    String cppType = CppTypeMapper.getCppType(model.expectShape(event.getTarget()), model);
+                    renderShapeAccessor(writer, className, cppType, event.getMemberName());
+                }
+                // Exception member accessors, typed as <namespace>Error.
+                for (MemberShape exc : exceptions) {
+                    renderShapeAccessor(writer, className, errorType, exc.getMemberName());
+                }
+                writer.dedent();
+                writer.write("private:");
+                writer.indent();
+                // Data members
+                for (MemberShape event : events) {
+                    String cppType = CppTypeMapper.getCppType(model.expectShape(event.getTarget()), model);
+                    writer.write("$1L $2L;", cppType, "m_" + decapitalize(event.getMemberName()));
+                }
+                for (MemberShape exc : exceptions) {
+                    writer.write("$1L $2L;", errorType, "m_" + decapitalize(exc.getMemberName()));
+                }
+                // HasBeenSet flags
+                for (MemberShape event : events) {
+                    writer.write("bool $1LHasBeenSet = false;", "m_" + decapitalize(event.getMemberName()));
+                }
+                for (MemberShape exc : exceptions) {
+                    writer.write("bool $1LHasBeenSet = false;", "m_" + decapitalize(exc.getMemberName()));
+                }
+            });
+            writer.write("");
+            writer.writeNamespaceClose("Model");
+            writer.writeNamespaceClose(namespace);
+            writer.writeNamespaceClose("Aws");
+        });
+
+        String sourceFile = "source/model/" + className + ".cpp";
+        writerDelegator.useFileWriter(sourceFile, writer -> {
+            writeCopyright(writer);
+            if (protocol.isJsonLike()) {
+                writer.write("#include <aws/core/utils/json/JsonSerializer.h>");
+            } else {
+                writer.write("#include <aws/core/utils/xml/XmlSerializer.h>");
+            }
+            writer.write("#include <aws/$1L/model/$2L.h>", smithyServiceName, className);
+            writer.write("");
+            writer.write("using namespace Aws::$1L::Model;", namespace);
+            if (protocol.isJsonLike()) {
+                writer.write("using namespace Aws::Utils::Json;");
+            } else {
+                writer.write("using namespace Aws::Utils::Xml;");
+            }
+            writer.write("using namespace Aws::Utils;");
+            writer.write("");
+            SerdeStub.renderSerdeSourceStub(writer, protocol, className);
+        });
+    }
+
+    /**
+     * Renders a Get/HasBeenSet/Set/With accessor block for a union member, typed by the
+     * given C++ type string. Used for both event members (concrete shape type) and
+     * exception members (the service error wrapper). Mirrors the templated setter style
+     * used by MemberRenderer.
+     */
+    private void renderShapeAccessor(CppWriter writer, String className, String cppType, String memberName) {
+        String getter = capitalize(memberName);
+        String field = "m_" + decapitalize(memberName);
+        String templateParam = getter + "T";
+        writer.write("///@{");
+        writer.write("");
+        writer.write("inline const $1L& Get$2L() const { return $3L; }", cppType, getter, field);
+        writer.write("inline bool $1LHasBeenSet() const { return $2LHasBeenSet; }", getter, field);
+        writer.write("template <typename $1L = $2L>", templateParam, cppType);
+        writer.openBlock("void Set$1L($2L&& value) {", "}", getter, templateParam, () -> {
+            writer.write("$1LHasBeenSet = true;", field);
+            writer.write("$1L = std::forward<$2L>(value);", field, templateParam);
+        });
+        writer.write("template <typename $1L = $2L>", templateParam, cppType);
+        writer.openBlock("$1L& With$2L($3L&& value) {", "}", className, getter, templateParam, () -> {
+            writer.write("Set$1L(std::forward<$2L>(value));", getter, templateParam);
+            writer.write("return *this;");
+        });
+        writer.write("///@}");
+    }
+
+    private static String capitalize(String s) {
+        return s.substring(0, 1).toUpperCase() + s.substring(1);
+    }
+
+    private static String decapitalize(String s) {
+        return s.substring(0, 1).toLowerCase() + s.substring(1);
     }
 
     private void writeCopyright(CppWriter writer) {
