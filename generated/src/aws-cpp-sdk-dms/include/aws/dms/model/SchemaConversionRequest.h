@@ -37,7 +37,15 @@ class SchemaConversionRequest {
 
   ///@{
   /**
-   * <p>The schema conversion action status.</p>
+   * <p>The schema conversion operation status. Possible values:</p> <ul> <li> <p>
+   * <code>RECEIVED</code> – The operation is received but not yet queued for
+   * processing.</p> </li> <li> <p> <code>IN_PROGRESS</code> – The operation is
+   * queued or actively running.</p> </li> <li> <p> <code>SUCCESS</code> – The
+   * operation completed successfully.</p> </li> <li> <p> <code>FAILED</code> – The
+   * operation did not complete.</p> </li> <li> <p> <code>CANCELING</code> – The
+   * operation is being canceled. The operation might still succeed or fail before
+   * cancellation takes effect.</p> </li> <li> <p> <code>CANCELED</code> – The
+   * operation was canceled before completion.</p> </li> </ul>
    */
   inline const Aws::String& GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -106,7 +114,11 @@ class SchemaConversionRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The Amazon S3 location of the ZIP archive that contains the exported data
+   * definition language (DDL) scripts.</p>  <p>DMS populates this field only
+   * for the <code>DescribeMetadataModelExportsAsScript</code> operation.</p>
+   */
   inline const ExportSqlDetails& GetExportSqlDetails() const { return m_exportSqlDetails; }
   inline bool ExportSqlDetailsHasBeenSet() const { return m_exportSqlDetailsHasBeenSet; }
   template <typename ExportSqlDetailsT = ExportSqlDetails>

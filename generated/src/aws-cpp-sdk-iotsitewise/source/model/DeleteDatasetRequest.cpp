@@ -19,6 +19,12 @@ Aws::String DeleteDatasetRequest::SerializePayload() const { return {}; }
 
 void DeleteDatasetRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
+  if (m_workspaceNameHasBeenSet) {
+    ss << m_workspaceName;
+    uri.AddQueryStringParameter("workspaceName", ss.str());
+    ss.str("");
+  }
+
   if (m_clientTokenHasBeenSet) {
     ss << m_clientToken;
     uri.AddQueryStringParameter("clientToken", ss.str());

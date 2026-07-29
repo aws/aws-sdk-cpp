@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeConversionTasksRequest.h>
+#include <aws/ec2/model/DescribeCustomerGatewaysRequest.h>
 #include <aws/ec2/model/DescribeDeclarativePoliciesReportsRequest.h>
 #include <aws/ec2/model/DescribeDhcpOptionsRequest.h>
 #include <aws/ec2/model/DescribeEgressOnlyInternetGatewaysRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/DescribeSecondarySubnetsRequest.h>
 #include <aws/ec2/model/DescribeSecurityGroupReferencesRequest.h>
 #include <aws/ec2/model/DescribeSecurityGroupRulesRequest.h>
-#include <aws/ec2/model/DescribeSecurityGroupVpcAssociationsRequest.h>
-#include <aws/ec2/model/DescribeSecurityGroupsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,18 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeConversionTasksOutcome EC2Client::DescribeConversionTasks(const DescribeConversionTasksRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConversionTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeConversionTasksOutcome(std::move(result.GetError()));
+}
+
+DescribeCustomerGatewaysOutcome EC2Client::DescribeCustomerGateways(const DescribeCustomerGatewaysRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCustomerGatewaysOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomerGatewaysOutcome(std::move(result.GetError()));
+}
 
 DescribeDeclarativePoliciesReportsOutcome EC2Client::DescribeDeclarativePoliciesReports(
     const DescribeDeclarativePoliciesReportsRequest& request) const {
@@ -746,17 +758,4 @@ DescribeSecurityGroupRulesOutcome EC2Client::DescribeSecurityGroupRules(const De
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeSecurityGroupRulesOutcome(result.GetResultWithOwnership())
                             : DescribeSecurityGroupRulesOutcome(std::move(result.GetError()));
-}
-
-DescribeSecurityGroupVpcAssociationsOutcome EC2Client::DescribeSecurityGroupVpcAssociations(
-    const DescribeSecurityGroupVpcAssociationsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSecurityGroupVpcAssociationsOutcome(result.GetResultWithOwnership())
-                            : DescribeSecurityGroupVpcAssociationsOutcome(std::move(result.GetError()));
-}
-
-DescribeSecurityGroupsOutcome EC2Client::DescribeSecurityGroups(const DescribeSecurityGroupsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSecurityGroupsOutcome(result.GetResultWithOwnership())
-                            : DescribeSecurityGroupsOutcome(std::move(result.GetError()));
 }

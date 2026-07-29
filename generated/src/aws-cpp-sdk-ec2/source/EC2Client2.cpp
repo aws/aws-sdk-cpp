@@ -21,6 +21,7 @@
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
 #include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceGroupRequest.h>
+#include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceRequest.h>
 #include <aws/ec2/model/DeleteManagedPrefixListRequest.h>
 #include <aws/ec2/model/DeleteNatGatewayRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclEntryRequest.h>
@@ -58,6 +59,7 @@
 #include <aws/ec2/model/DeleteTransitGatewayMeteringPolicyRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayMulticastDomainRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayPeeringAttachmentRequest.h>
+#include <aws/ec2/model/DeleteTransitGatewayPolicyTableEntryRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayPolicyTableRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayPrefixListReferenceRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/DescribeClientVpnRoutesRequest.h>
 #include <aws/ec2/model/DescribeClientVpnTargetNetworksRequest.h>
 #include <aws/ec2/model/DescribeCoipPoolsRequest.h>
-#include <aws/ec2/model/DescribeConversionTasksRequest.h>
-#include <aws/ec2/model/DescribeCustomerGatewaysRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,13 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteLocalGatewayVirtualInterfaceOutcome EC2Client::DeleteLocalGatewayVirtualInterface(
+    const DeleteLocalGatewayVirtualInterfaceRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLocalGatewayVirtualInterfaceOutcome(result.GetResultWithOwnership())
+                            : DeleteLocalGatewayVirtualInterfaceOutcome(std::move(result.GetError()));
+}
 
 DeleteLocalGatewayVirtualInterfaceGroupOutcome EC2Client::DeleteLocalGatewayVirtualInterfaceGroup(
     const DeleteLocalGatewayVirtualInterfaceGroupRequest& request) const {
@@ -378,6 +385,13 @@ DeleteTransitGatewayPolicyTableOutcome EC2Client::DeleteTransitGatewayPolicyTabl
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteTransitGatewayPolicyTableOutcome(result.GetResultWithOwnership())
                             : DeleteTransitGatewayPolicyTableOutcome(std::move(result.GetError()));
+}
+
+DeleteTransitGatewayPolicyTableEntryOutcome EC2Client::DeleteTransitGatewayPolicyTableEntry(
+    const DeleteTransitGatewayPolicyTableEntryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayPolicyTableEntryOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayPolicyTableEntryOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayPrefixListReferenceOutcome EC2Client::DeleteTransitGatewayPrefixListReference(
@@ -747,16 +761,4 @@ DescribeCoipPoolsOutcome EC2Client::DescribeCoipPools(const DescribeCoipPoolsReq
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeCoipPoolsOutcome(result.GetResultWithOwnership())
                             : DescribeCoipPoolsOutcome(std::move(result.GetError()));
-}
-
-DescribeConversionTasksOutcome EC2Client::DescribeConversionTasks(const DescribeConversionTasksRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeConversionTasksOutcome(result.GetResultWithOwnership())
-                            : DescribeConversionTasksOutcome(std::move(result.GetError()));
-}
-
-DescribeCustomerGatewaysOutcome EC2Client::DescribeCustomerGateways(const DescribeCustomerGatewaysRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCustomerGatewaysOutcome(result.GetResultWithOwnership())
-                            : DescribeCustomerGatewaysOutcome(std::move(result.GetError()));
 }

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace IoTSiteWise {
 namespace Model {
-enum class DatasetSourceFormat { NOT_SET, KNOWLEDGE_BASE };
+enum class DatasetSourceFormat { NOT_SET, KNOWLEDGE_BASE, TIMESERIES };
 
 namespace DatasetSourceFormatMapper {
 AWS_IOTSITEWISE_API DatasetSourceFormat GetDatasetSourceFormatForName(const Aws::String& name);

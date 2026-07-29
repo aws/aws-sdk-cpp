@@ -20,8 +20,7 @@ namespace DatabaseMigrationService {
 namespace Model {
 
 /**
- * <p>The properties of the statement for metadata model creation.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>The properties of the SQL statement.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StatementProperties">AWS
  * API Reference</a></p>
  */

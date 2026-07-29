@@ -35,7 +35,10 @@ class Regex {
 
   ///@{
   /**
-   * <p>The string representing the regular expression.</p>
+   * <p>The string representing the regular expression. WAF enforces a quota on the
+   * maximum number of characters in a regex pattern. For the current limit, see <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+   * quotas</a> in the <i>WAF Developer Guide</i>.</p>
    */
   inline const Aws::String& GetRegexString() const { return m_regexString; }
   inline bool RegexStringHasBeenSet() const { return m_regexStringHasBeenSet; }

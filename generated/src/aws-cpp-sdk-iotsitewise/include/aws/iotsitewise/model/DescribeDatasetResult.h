@@ -6,10 +6,14 @@
 #pragma once
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
+#include <aws/iotsitewise/model/DatasetConfig.h>
+#include <aws/iotsitewise/model/DatasetEnrichment.h>
 #include <aws/iotsitewise/model/DatasetSource.h>
 #include <aws/iotsitewise/model/DatasetStatus.h>
+#include <aws/iotsitewise/model/DatasetTypeEnum.h>
 
 #include <utility>
 
@@ -103,6 +107,79 @@ class DescribeDatasetResult {
 
   ///@{
   /**
+   * <p>The type of dataset: a session dataset, a curated dataset, or a connection to
+   * an external datasource.</p>
+   */
+  inline DatasetTypeEnum GetDatasetType() const { return m_datasetType; }
+  inline void SetDatasetType(DatasetTypeEnum value) {
+    m_datasetTypeHasBeenSet = true;
+    m_datasetType = value;
+  }
+  inline DescribeDatasetResult& WithDatasetType(DatasetTypeEnum value) {
+    SetDatasetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for the dataset.</p>
+   */
+  inline const DatasetConfig& GetDatasetConfig() const { return m_datasetConfig; }
+  template <typename DatasetConfigT = DatasetConfig>
+  void SetDatasetConfig(DatasetConfigT&& value) {
+    m_datasetConfigHasBeenSet = true;
+    m_datasetConfig = std::forward<DatasetConfigT>(value);
+  }
+  template <typename DatasetConfigT = DatasetConfig>
+  DescribeDatasetResult& WithDatasetConfig(DatasetConfigT&& value) {
+    SetDatasetConfig(std::forward<DatasetConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the workspace that contains the dataset.</p>
+   */
+  inline const Aws::String& GetWorkspaceName() const { return m_workspaceName; }
+  template <typename WorkspaceNameT = Aws::String>
+  void SetWorkspaceName(WorkspaceNameT&& value) {
+    m_workspaceNameHasBeenSet = true;
+    m_workspaceName = std::forward<WorkspaceNameT>(value);
+  }
+  template <typename WorkspaceNameT = Aws::String>
+  DescribeDatasetResult& WithWorkspaceName(WorkspaceNameT&& value) {
+    SetWorkspaceName(std::forward<WorkspaceNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The metadata for the dataset.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
+  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+  void SetMetadata(MetadataT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = std::forward<MetadataT>(value);
+  }
+  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+  DescribeDatasetResult& WithMetadata(MetadataT&& value) {
+    SetMetadata(std::forward<MetadataT>(value));
+    return *this;
+  }
+  template <typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+  DescribeDatasetResult& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The data source for the dataset.</p>
    */
   inline const DatasetSource& GetDatasetSource() const { return m_datasetSource; }
@@ -190,6 +267,23 @@ class DescribeDatasetResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The enrichment status of the dataset.</p>
+   */
+  inline const DatasetEnrichment& GetEnrichmentStatus() const { return m_enrichmentStatus; }
+  template <typename EnrichmentStatusT = DatasetEnrichment>
+  void SetEnrichmentStatus(EnrichmentStatusT&& value) {
+    m_enrichmentStatusHasBeenSet = true;
+    m_enrichmentStatus = std::forward<EnrichmentStatusT>(value);
+  }
+  template <typename EnrichmentStatusT = DatasetEnrichment>
+  DescribeDatasetResult& WithEnrichmentStatus(EnrichmentStatusT&& value) {
+    SetEnrichmentStatus(std::forward<EnrichmentStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -214,6 +308,14 @@ class DescribeDatasetResult {
 
   Aws::String m_datasetDescription;
 
+  DatasetTypeEnum m_datasetType{DatasetTypeEnum::NOT_SET};
+
+  DatasetConfig m_datasetConfig;
+
+  Aws::String m_workspaceName;
+
+  Aws::Map<Aws::String, Aws::String> m_metadata;
+
   DatasetSource m_datasetSource;
 
   DatasetStatus m_datasetStatus;
@@ -224,17 +326,24 @@ class DescribeDatasetResult {
 
   Aws::String m_datasetVersion;
 
+  DatasetEnrichment m_enrichmentStatus;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_datasetIdHasBeenSet = false;
   bool m_datasetArnHasBeenSet = false;
   bool m_datasetNameHasBeenSet = false;
   bool m_datasetDescriptionHasBeenSet = false;
+  bool m_datasetTypeHasBeenSet = false;
+  bool m_datasetConfigHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_datasetSourceHasBeenSet = false;
   bool m_datasetStatusHasBeenSet = false;
   bool m_datasetCreationDateHasBeenSet = false;
   bool m_datasetLastUpdateDateHasBeenSet = false;
   bool m_datasetVersionHasBeenSet = false;
+  bool m_enrichmentStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

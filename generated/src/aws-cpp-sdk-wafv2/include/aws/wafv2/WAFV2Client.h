@@ -329,8 +329,8 @@ class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient,
    * ACL with one or more Amazon Web Services resources to protect. The resource
    * types include Amazon CloudFront distribution, Amazon API Gateway REST API,
    * Application Load Balancer, AppSync GraphQL API, Amazon Cognito user pool, App
-   * Runner service, Amplify application, and Amazon Web Services Verified Access
-   * instance. </p><p><h3>See Also:</h3>   <a
+   * Runner service, Amplify application, Amazon Web Services Verified Access
+   * instance, and Amazon Bedrock AgentCore Gateway. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL">AWS
    * API Reference</a></p>
    */
@@ -2059,22 +2059,22 @@ class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient,
    * rule group. You can associate a web ACL with one or more Amazon Web Services
    * resources to protect. The resource types include Amazon CloudFront distribution,
    * Amazon API Gateway REST API, Application Load Balancer, AppSync GraphQL API,
-   * Amazon Cognito user pool, App Runner service, Amplify application, and Amazon
-   * Web Services Verified Access instance. </p> <p> <b>Temporary inconsistencies
-   * during updates</b> </p> <p>When you create or change a web ACL or other WAF
-   * resources, the changes take a small amount of time to propagate to all areas
-   * where the resources are stored. The propagation time can be from a few seconds
-   * to a number of minutes. </p> <p>The following are examples of the temporary
-   * inconsistencies that you might notice during change propagation: </p> <ul> <li>
-   * <p>After you create a web ACL, if you try to associate it with a resource, you
-   * might get an exception indicating that the web ACL is unavailable. </p> </li>
-   * <li> <p>After you add a rule group to a web ACL, the new rule group rules might
-   * be in effect in one area where the web ACL is used and not in another.</p> </li>
-   * <li> <p>After you change a rule action setting, you might see the old action in
-   * some places and the new action in others. </p> </li> <li> <p>After you add an IP
-   * address to an IP set that is in use in a blocking rule, the new address might be
-   * blocked in one area while still allowed in another.</p> </li> </ul><p><h3>See
-   * Also:</h3>   <a
+   * Amazon Cognito user pool, App Runner service, Amplify application, Amazon Web
+   * Services Verified Access instance, and Amazon Bedrock AgentCore Gateway. </p>
+   * <p> <b>Temporary inconsistencies during updates</b> </p> <p>When you create or
+   * change a web ACL or other WAF resources, the changes take a small amount of time
+   * to propagate to all areas where the resources are stored. The propagation time
+   * can be from a few seconds to a number of minutes. </p> <p>The following are
+   * examples of the temporary inconsistencies that you might notice during change
+   * propagation: </p> <ul> <li> <p>After you create a web ACL, if you try to
+   * associate it with a resource, you might get an exception indicating that the web
+   * ACL is unavailable. </p> </li> <li> <p>After you add a rule group to a web ACL,
+   * the new rule group rules might be in effect in one area where the web ACL is
+   * used and not in another.</p> </li> <li> <p>After you change a rule action
+   * setting, you might see the old action in some places and the new action in
+   * others. </p> </li> <li> <p>After you add an IP address to an IP set that is in
+   * use in a blocking rule, the new address might be blocked in one area while still
+   * allowed in another.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL">AWS
    * API Reference</a></p>
    */

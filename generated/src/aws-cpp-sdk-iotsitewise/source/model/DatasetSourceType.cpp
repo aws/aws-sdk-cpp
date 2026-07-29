@@ -16,11 +16,14 @@ namespace Model {
 namespace DatasetSourceTypeMapper {
 
 static const int KENDRA_HASH = HashingUtils::HashString("KENDRA");
+static const int SITEWISE_HASH = HashingUtils::HashString("SITEWISE");
 
 DatasetSourceType GetDatasetSourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == KENDRA_HASH) {
     return DatasetSourceType::KENDRA;
+  } else if (hashCode == SITEWISE_HASH) {
+    return DatasetSourceType::SITEWISE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForDatasetSourceType(DatasetSourceType enumValue) {
       return {};
     case DatasetSourceType::KENDRA:
       return "KENDRA";
+    case DatasetSourceType::SITEWISE:
+      return "SITEWISE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

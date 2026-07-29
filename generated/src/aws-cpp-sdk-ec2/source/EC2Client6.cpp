@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/GetVpnConnectionDeviceSampleConfigurationRequest.h>
+#include <aws/ec2/model/GetVpnConnectionDeviceTypesRequest.h>
 #include <aws/ec2/model/GetVpnTunnelReplacementStatusRequest.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListRequest.h>
 #include <aws/ec2/model/ImportImageRequest.h>
@@ -84,6 +86,7 @@
 #include <aws/ec2/model/ModifyTrafficMirrorFilterRuleRequest.h>
 #include <aws/ec2/model/ModifyTrafficMirrorSessionRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyRequest.h>
+#include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayVpcAttachmentRequest.h>
@@ -117,9 +120,6 @@
 #include <aws/ec2/model/MoveByoipCidrToIpamRequest.h>
 #include <aws/ec2/model/MoveCapacityReservationInstancesRequest.h>
 #include <aws/ec2/model/ProvisionByoipCidrRequest.h>
-#include <aws/ec2/model/ProvisionIpamByoasnRequest.h>
-#include <aws/ec2/model/ProvisionIpamPoolCidrRequest.h>
-#include <aws/ec2/model/ProvisionPublicIpv4PoolCidrRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,19 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+GetVpnConnectionDeviceSampleConfigurationOutcome EC2Client::GetVpnConnectionDeviceSampleConfiguration(
+    const GetVpnConnectionDeviceSampleConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVpnConnectionDeviceSampleConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetVpnConnectionDeviceSampleConfigurationOutcome(std::move(result.GetError()));
+}
+
+GetVpnConnectionDeviceTypesOutcome EC2Client::GetVpnConnectionDeviceTypes(const GetVpnConnectionDeviceTypesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVpnConnectionDeviceTypesOutcome(result.GetResultWithOwnership())
+                            : GetVpnConnectionDeviceTypesOutcome(std::move(result.GetError()));
+}
 
 GetVpnTunnelReplacementStatusOutcome EC2Client::GetVpnTunnelReplacementStatus(const GetVpnTunnelReplacementStatusRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -526,6 +539,13 @@ ModifyTransitGatewayMeteringPolicyOutcome EC2Client::ModifyTransitGatewayMeterin
                             : ModifyTransitGatewayMeteringPolicyOutcome(std::move(result.GetError()));
 }
 
+ModifyTransitGatewayPolicyTableEntryOutcome EC2Client::ModifyTransitGatewayPolicyTableEntry(
+    const ModifyTransitGatewayPolicyTableEntryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyTransitGatewayPolicyTableEntryOutcome(result.GetResultWithOwnership())
+                            : ModifyTransitGatewayPolicyTableEntryOutcome(std::move(result.GetError()));
+}
+
 ModifyTransitGatewayPrefixListReferenceOutcome EC2Client::ModifyTransitGatewayPrefixListReference(
     const ModifyTransitGatewayPrefixListReferenceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -730,22 +750,4 @@ ProvisionByoipCidrOutcome EC2Client::ProvisionByoipCidr(const ProvisionByoipCidr
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ProvisionByoipCidrOutcome(result.GetResultWithOwnership())
                             : ProvisionByoipCidrOutcome(std::move(result.GetError()));
-}
-
-ProvisionIpamByoasnOutcome EC2Client::ProvisionIpamByoasn(const ProvisionIpamByoasnRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ProvisionIpamByoasnOutcome(result.GetResultWithOwnership())
-                            : ProvisionIpamByoasnOutcome(std::move(result.GetError()));
-}
-
-ProvisionIpamPoolCidrOutcome EC2Client::ProvisionIpamPoolCidr(const ProvisionIpamPoolCidrRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ProvisionIpamPoolCidrOutcome(result.GetResultWithOwnership())
-                            : ProvisionIpamPoolCidrOutcome(std::move(result.GetError()));
-}
-
-ProvisionPublicIpv4PoolCidrOutcome EC2Client::ProvisionPublicIpv4PoolCidr(const ProvisionPublicIpv4PoolCidrRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ProvisionPublicIpv4PoolCidrOutcome(result.GetResultWithOwnership())
-                            : ProvisionPublicIpv4PoolCidrOutcome(std::move(result.GetError()));
 }

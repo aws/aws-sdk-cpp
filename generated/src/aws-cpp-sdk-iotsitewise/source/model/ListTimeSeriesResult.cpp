@@ -34,6 +34,10 @@ ListTimeSeriesResult& ListTimeSeriesResult::operator=(const Aws::AmazonWebServic
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("workspaceName")) {
+    m_workspaceName = jsonValue.GetString("workspaceName");
+    m_workspaceNameHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

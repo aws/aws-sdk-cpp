@@ -52,7 +52,13 @@ class ExportMetadataModelAssessmentRequest : public DatabaseMigrationServiceRequ
 
   ///@{
   /**
-   * <p>A value that specifies the database objects to assess.</p>
+   * <p>A JSON string that identifies the metadata models to export a conversion
+   * assessment report for. For the selection rule format and examples, see <a
+   * href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection
+   * rules in DMS Schema Conversion</a>.</p> <p>Usage:</p> <ul> <li> <p>Accepts only
+   * source selection rules, where <code>server-name</code> in the object locator
+   * matches the source data provider.</p> </li> <li> <p>Supports only
+   * <code>explicit</code> rule actions.</p> </li> </ul>
    */
   inline const Aws::String& GetSelectionRules() const { return m_selectionRules; }
   inline bool SelectionRulesHasBeenSet() const { return m_selectionRulesHasBeenSet; }

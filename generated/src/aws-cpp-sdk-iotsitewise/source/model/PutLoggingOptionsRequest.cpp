@@ -19,5 +19,9 @@ Aws::String PutLoggingOptionsRequest::SerializePayload() const {
     payload.WithObject("loggingOptions", m_loggingOptions.Jsonize());
   }
 
+  if (m_workspaceNameHasBeenSet) {
+    payload.WithString("workspaceName", m_workspaceName);
+  }
+
   return payload.View().WriteReadable();
 }

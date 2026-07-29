@@ -525,6 +525,8 @@
 #include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentRequestOptions.h>
 #include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentResponse.h>
+#include <aws/ec2/model/CreateTransitGatewayPolicyTableEntryRequest.h>
+#include <aws/ec2/model/CreateTransitGatewayPolicyTableEntryResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayPolicyTableRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayPolicyTableResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayPrefixListReferenceRequest.h>
@@ -734,6 +736,8 @@
 #include <aws/ec2/model/DeleteTransitGatewayMulticastDomainResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPeeringAttachmentRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayPeeringAttachmentResponse.h>
+#include <aws/ec2/model/DeleteTransitGatewayPolicyTableEntryRequest.h>
+#include <aws/ec2/model/DeleteTransitGatewayPolicyTableEntryResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPolicyTableRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayPolicyTableResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPrefixListReferenceRequest.h>
@@ -2094,6 +2098,8 @@
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayOptions.h>
+#include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryRequest.h>
+#include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayRequest.h>
@@ -2718,6 +2724,7 @@
 #include <aws/ec2/model/TransitGatewayPolicyTable.h>
 #include <aws/ec2/model/TransitGatewayPolicyTableAssociation.h>
 #include <aws/ec2/model/TransitGatewayPolicyTableEntry.h>
+#include <aws/ec2/model/TransitGatewayPolicyTableEntryState.h>
 #include <aws/ec2/model/TransitGatewayPolicyTableState.h>
 #include <aws/ec2/model/TransitGatewayPrefixListAttachment.h>
 #include <aws/ec2/model/TransitGatewayPrefixListReference.h>
@@ -2725,6 +2732,8 @@
 #include <aws/ec2/model/TransitGatewayPropagation.h>
 #include <aws/ec2/model/TransitGatewayPropagationState.h>
 #include <aws/ec2/model/TransitGatewayRequestOptions.h>
+#include <aws/ec2/model/TransitGatewayRequestPolicyRule.h>
+#include <aws/ec2/model/TransitGatewayRequestPolicyRuleMetaData.h>
 #include <aws/ec2/model/TransitGatewayRoute.h>
 #include <aws/ec2/model/TransitGatewayRouteAttachment.h>
 #include <aws/ec2/model/TransitGatewayRouteState.h>

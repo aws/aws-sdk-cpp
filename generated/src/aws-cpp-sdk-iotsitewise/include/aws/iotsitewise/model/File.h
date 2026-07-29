@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
+#include <aws/iotsitewise/model/FileFormat.h>
+#include <aws/iotsitewise/model/TimeInNanos.h>
 
 #include <utility>
 
@@ -86,15 +88,78 @@ class File {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The alias associated with the file's time series.</p>
+   */
+  inline const Aws::String& GetAlias() const { return m_alias; }
+  inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
+  template <typename AliasT = Aws::String>
+  void SetAlias(AliasT&& value) {
+    m_aliasHasBeenSet = true;
+    m_alias = std::forward<AliasT>(value);
+  }
+  template <typename AliasT = Aws::String>
+  File& WithAlias(AliasT&& value) {
+    SetAlias(std::forward<AliasT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The nanosecond-precision start time for the file data.</p>
+   */
+  inline const TimeInNanos& GetStartTime() const { return m_startTime; }
+  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+  template <typename StartTimeT = TimeInNanos>
+  void SetStartTime(StartTimeT&& value) {
+    m_startTimeHasBeenSet = true;
+    m_startTime = std::forward<StartTimeT>(value);
+  }
+  template <typename StartTimeT = TimeInNanos>
+  File& WithStartTime(StartTimeT&& value) {
+    SetStartTime(std::forward<StartTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The file format of the data in S3.</p>
+   */
+  inline const FileFormat& GetFileFormat() const { return m_fileFormat; }
+  inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
+  template <typename FileFormatT = FileFormat>
+  void SetFileFormat(FileFormatT&& value) {
+    m_fileFormatHasBeenSet = true;
+    m_fileFormat = std::forward<FileFormatT>(value);
+  }
+  template <typename FileFormatT = FileFormat>
+  File& WithFileFormat(FileFormatT&& value) {
+    SetFileFormat(std::forward<FileFormatT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_bucket;
 
   Aws::String m_key;
 
   Aws::String m_versionId;
+
+  Aws::String m_alias;
+
+  TimeInNanos m_startTime;
+
+  FileFormat m_fileFormat;
   bool m_bucketHasBeenSet = false;
   bool m_keyHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_fileFormatHasBeenSet = false;
 };
 
 }  // namespace Model

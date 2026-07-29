@@ -20,8 +20,8 @@ namespace DatabaseMigrationService {
 namespace Model {
 
 /**
- * <p>Provides information about a metadata model assessment exported to
- * SQL.</p><p><h3>See Also:</h3>   <a
+ * <p>The Amazon S3 location of the ZIP archive that contains the exported data
+ * definition language (DDL) scripts.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ExportSqlDetails">AWS
  * API Reference</a></p>
  */
@@ -34,8 +34,8 @@ class ExportSqlDetails {
 
   ///@{
   /**
-   * <p>The Amazon S3 object key for the object containing the exported metadata
-   * model assessment.</p>
+   * <p>The Amazon S3 URI of the object that contains the ZIP archive with exported
+   * DDL scripts.</p>
    */
   inline const Aws::String& GetS3ObjectKey() const { return m_s3ObjectKey; }
   inline bool S3ObjectKeyHasBeenSet() const { return m_s3ObjectKeyHasBeenSet; }
@@ -53,7 +53,8 @@ class ExportSqlDetails {
 
   ///@{
   /**
-   * <p>The URL for the object containing the exported metadata model assessment.</p>
+   * <p>The URL of the Amazon S3 object that contains the ZIP archive with exported
+   * DDL scripts.</p>
    */
   inline const Aws::String& GetObjectURL() const { return m_objectURL; }
   inline bool ObjectURLHasBeenSet() const { return m_objectURLHasBeenSet; }

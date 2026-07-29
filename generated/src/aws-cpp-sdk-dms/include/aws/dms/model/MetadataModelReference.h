@@ -52,7 +52,13 @@ class MetadataModelReference {
 
   ///@{
   /**
-   * <p>The JSON string representing metadata model location.</p>
+   * <p>A JSON string that identifies this metadata model in the metadata tree. For
+   * the selection rule format, see <a
+   * href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection
+   * rules in DMS Schema Conversion</a>.</p> <p>Usage:</p> <ul> <li> <p>You can pass
+   * this value as the <code>SelectionRules</code> parameter to any operation that
+   * accepts selection rules, such as <code>DescribeMetadataModel</code>,
+   * <code>StartMetadataModelConversion</code>, and others.</p> </li> </ul>
    */
   inline const Aws::String& GetSelectionRules() const { return m_selectionRules; }
   inline bool SelectionRulesHasBeenSet() const { return m_selectionRulesHasBeenSet; }

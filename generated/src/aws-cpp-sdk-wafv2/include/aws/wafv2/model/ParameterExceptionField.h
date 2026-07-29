@@ -87,7 +87,8 @@ enum class ParameterExceptionField {
   MONETIZATION_CONFIG,
   WALLET_ADDRESS,
   PRICE_AMOUNT,
-  PAYMENT_NETWORK
+  PAYMENT_NETWORK,
+  PRE_PARSE_TEXT_TRANSFORMATION
 };
 
 namespace ParameterExceptionFieldMapper {

@@ -5,9 +5,11 @@
 
 #pragma once
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWiseRequest.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
+#include <aws/iotsitewise/model/DatasetConfig.h>
 #include <aws/iotsitewise/model/DatasetSource.h>
 
 #include <utility>
@@ -50,6 +52,24 @@ class UpdateDatasetRequest : public IoTSiteWiseRequest {
 
   ///@{
   /**
+   * <p>The name of the workspace that contains the dataset.</p>
+   */
+  inline const Aws::String& GetWorkspaceName() const { return m_workspaceName; }
+  inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
+  template <typename WorkspaceNameT = Aws::String>
+  void SetWorkspaceName(WorkspaceNameT&& value) {
+    m_workspaceNameHasBeenSet = true;
+    m_workspaceName = std::forward<WorkspaceNameT>(value);
+  }
+  template <typename WorkspaceNameT = Aws::String>
+  UpdateDatasetRequest& WithWorkspaceName(WorkspaceNameT&& value) {
+    SetWorkspaceName(std::forward<WorkspaceNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the dataset.</p>
    */
   inline const Aws::String& GetDatasetName() const { return m_datasetName; }
@@ -80,6 +100,48 @@ class UpdateDatasetRequest : public IoTSiteWiseRequest {
   template <typename DatasetDescriptionT = Aws::String>
   UpdateDatasetRequest& WithDatasetDescription(DatasetDescriptionT&& value) {
     SetDatasetDescription(std::forward<DatasetDescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated configuration for the dataset.</p>
+   */
+  inline const DatasetConfig& GetDatasetConfig() const { return m_datasetConfig; }
+  inline bool DatasetConfigHasBeenSet() const { return m_datasetConfigHasBeenSet; }
+  template <typename DatasetConfigT = DatasetConfig>
+  void SetDatasetConfig(DatasetConfigT&& value) {
+    m_datasetConfigHasBeenSet = true;
+    m_datasetConfig = std::forward<DatasetConfigT>(value);
+  }
+  template <typename DatasetConfigT = DatasetConfig>
+  UpdateDatasetRequest& WithDatasetConfig(DatasetConfigT&& value) {
+    SetDatasetConfig(std::forward<DatasetConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated metadata for the dataset.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
+  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+  void SetMetadata(MetadataT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = std::forward<MetadataT>(value);
+  }
+  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+  UpdateDatasetRequest& WithMetadata(MetadataT&& value) {
+    SetMetadata(std::forward<MetadataT>(value));
+    return *this;
+  }
+  template <typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+  UpdateDatasetRequest& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value));
     return *this;
   }
   ///@}
@@ -124,16 +186,25 @@ class UpdateDatasetRequest : public IoTSiteWiseRequest {
  private:
   Aws::String m_datasetId;
 
+  Aws::String m_workspaceName;
+
   Aws::String m_datasetName;
 
   Aws::String m_datasetDescription;
+
+  DatasetConfig m_datasetConfig;
+
+  Aws::Map<Aws::String, Aws::String> m_metadata;
 
   DatasetSource m_datasetSource;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_datasetIdHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
   bool m_datasetNameHasBeenSet = false;
   bool m_datasetDescriptionHasBeenSet = false;
+  bool m_datasetConfigHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_datasetSourceHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };

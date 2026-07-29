@@ -30,6 +30,18 @@ File& File::operator=(JsonView jsonValue) {
     m_versionId = jsonValue.GetString("versionId");
     m_versionIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("alias")) {
+    m_alias = jsonValue.GetString("alias");
+    m_aliasHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("startTime")) {
+    m_startTime = jsonValue.GetObject("startTime");
+    m_startTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("fileFormat")) {
+    m_fileFormat = jsonValue.GetObject("fileFormat");
+    m_fileFormatHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +58,18 @@ JsonValue File::Jsonize() const {
 
   if (m_versionIdHasBeenSet) {
     payload.WithString("versionId", m_versionId);
+  }
+
+  if (m_aliasHasBeenSet) {
+    payload.WithString("alias", m_alias);
+  }
+
+  if (m_startTimeHasBeenSet) {
+    payload.WithObject("startTime", m_startTime.Jsonize());
+  }
+
+  if (m_fileFormatHasBeenSet) {
+    payload.WithObject("fileFormat", m_fileFormat.Jsonize());
   }
 
   return payload;

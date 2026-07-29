@@ -36,6 +36,16 @@ static const int REPLACE_NULLS_HASH = HashingUtils::HashString("REPLACE_NULLS");
 static const int BASE64_DECODE_EXT_HASH = HashingUtils::HashString("BASE64_DECODE_EXT");
 static const int URL_DECODE_UNI_HASH = HashingUtils::HashString("URL_DECODE_UNI");
 static const int UTF8_TO_UNICODE_HASH = HashingUtils::HashString("UTF8_TO_UNICODE");
+static const int REMOVE_WHITESPACE_HASH = HashingUtils::HashString("REMOVE_WHITESPACE");
+static const int TRIM_HASH = HashingUtils::HashString("TRIM");
+static const int TRIM_LEFT_HASH = HashingUtils::HashString("TRIM_LEFT");
+static const int TRIM_RIGHT_HASH = HashingUtils::HashString("TRIM_RIGHT");
+static const int REMOVE_COMMENTS_CHAR_HASH = HashingUtils::HashString("REMOVE_COMMENTS_CHAR");
+static const int UPPERCASE_HASH = HashingUtils::HashString("UPPERCASE");
+static const int CMD_LINE_WIN_HASH = HashingUtils::HashString("CMD_LINE_WIN");
+static const int CMD_LINE_UNIX_HASH = HashingUtils::HashString("CMD_LINE_UNIX");
+static const int JS_DECODE_EXT_HASH = HashingUtils::HashString("JS_DECODE_EXT");
+static const int SHA256_HASH = HashingUtils::HashString("SHA256");
 
 TextTransformationType GetTextTransformationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -81,6 +91,26 @@ TextTransformationType GetTextTransformationTypeForName(const Aws::String& name)
     return TextTransformationType::URL_DECODE_UNI;
   } else if (hashCode == UTF8_TO_UNICODE_HASH) {
     return TextTransformationType::UTF8_TO_UNICODE;
+  } else if (hashCode == REMOVE_WHITESPACE_HASH) {
+    return TextTransformationType::REMOVE_WHITESPACE;
+  } else if (hashCode == TRIM_HASH) {
+    return TextTransformationType::TRIM;
+  } else if (hashCode == TRIM_LEFT_HASH) {
+    return TextTransformationType::TRIM_LEFT;
+  } else if (hashCode == TRIM_RIGHT_HASH) {
+    return TextTransformationType::TRIM_RIGHT;
+  } else if (hashCode == REMOVE_COMMENTS_CHAR_HASH) {
+    return TextTransformationType::REMOVE_COMMENTS_CHAR;
+  } else if (hashCode == UPPERCASE_HASH) {
+    return TextTransformationType::UPPERCASE;
+  } else if (hashCode == CMD_LINE_WIN_HASH) {
+    return TextTransformationType::CMD_LINE_WIN;
+  } else if (hashCode == CMD_LINE_UNIX_HASH) {
+    return TextTransformationType::CMD_LINE_UNIX;
+  } else if (hashCode == JS_DECODE_EXT_HASH) {
+    return TextTransformationType::JS_DECODE_EXT;
+  } else if (hashCode == SHA256_HASH) {
+    return TextTransformationType::SHA256;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -137,6 +167,26 @@ Aws::String GetNameForTextTransformationType(TextTransformationType enumValue) {
       return "URL_DECODE_UNI";
     case TextTransformationType::UTF8_TO_UNICODE:
       return "UTF8_TO_UNICODE";
+    case TextTransformationType::REMOVE_WHITESPACE:
+      return "REMOVE_WHITESPACE";
+    case TextTransformationType::TRIM:
+      return "TRIM";
+    case TextTransformationType::TRIM_LEFT:
+      return "TRIM_LEFT";
+    case TextTransformationType::TRIM_RIGHT:
+      return "TRIM_RIGHT";
+    case TextTransformationType::REMOVE_COMMENTS_CHAR:
+      return "REMOVE_COMMENTS_CHAR";
+    case TextTransformationType::UPPERCASE:
+      return "UPPERCASE";
+    case TextTransformationType::CMD_LINE_WIN:
+      return "CMD_LINE_WIN";
+    case TextTransformationType::CMD_LINE_UNIX:
+      return "CMD_LINE_UNIX";
+    case TextTransformationType::JS_DECODE_EXT:
+      return "JS_DECODE_EXT";
+    case TextTransformationType::SHA256:
+      return "SHA256";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

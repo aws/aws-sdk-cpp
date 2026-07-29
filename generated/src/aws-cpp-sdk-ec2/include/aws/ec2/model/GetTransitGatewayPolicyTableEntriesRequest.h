@@ -54,7 +54,20 @@ class GetTransitGatewayPolicyTableEntriesRequest : public EC2Request {
 
   ///@{
   /**
-   * <p>The filters associated with the transit gateway policy table.</p>
+   * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
+   * <code>policy-rule-number</code> - The rule number for the transit gateway policy
+   * table entry.</p> </li> <li> <p> <code>target-route-table-id</code> - The ID of
+   * the target route table.</p> </li> <li> <p> <code>policy-rule.source-ip</code> -
+   * The source CIDR block for the policy rule.</p> </li> <li> <p>
+   * <code>policy-rule.destination-ip</code> - The destination CIDR block for the
+   * policy rule.</p> </li> <li> <p> <code>policy-rule.source-port</code> - The
+   * source port or port range for the policy rule.</p> </li> <li> <p>
+   * <code>policy-rule.destination-port</code> - The destination port or port range
+   * for the policy rule.</p> </li> <li> <p> <code>policy-rule.protocol</code> - The
+   * protocol for the policy rule.</p> </li> <li> <p>
+   * <code>policy-rule.meta-data.key</code> - The metadata key for the policy
+   * rule.</p> </li> <li> <p> <code>policy-rule.meta-data.value</code> - The metadata
+   * value for the policy rule.</p> </li> </ul>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

@@ -57,8 +57,9 @@ class DescribeMetadataModelAssessmentsResult {
 
   ///@{
   /**
-   * <p>A paginated list of metadata model assessments for the specified migration
-   * project.</p>
+   * <p>A paginated list of metadata model assessment requests.</p>  <p>DMS
+   * never populates the <code>ExportSqlDetails</code> field for this operation.</p>
+   *
    */
   inline const Aws::Vector<SchemaConversionRequest>& GetRequests() const { return m_requests; }
   template <typename RequestsT = Aws::Vector<SchemaConversionRequest>>

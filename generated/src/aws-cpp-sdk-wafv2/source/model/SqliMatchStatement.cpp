@@ -30,6 +30,14 @@ SqliMatchStatement& SqliMatchStatement::operator=(JsonView jsonValue) {
     }
     m_textTransformationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PreParseTextTransformations")) {
+    Aws::Utils::Array<JsonView> preParseTextTransformationsJsonList = jsonValue.GetArray("PreParseTextTransformations");
+    for (unsigned preParseTextTransformationsIndex = 0; preParseTextTransformationsIndex < preParseTextTransformationsJsonList.GetLength();
+         ++preParseTextTransformationsIndex) {
+      m_preParseTextTransformations.push_back(preParseTextTransformationsJsonList[preParseTextTransformationsIndex].AsObject());
+    }
+    m_preParseTextTransformationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SensitivityLevel")) {
     m_sensitivityLevel = SensitivityLevelMapper::GetSensitivityLevelForName(jsonValue.GetString("SensitivityLevel"));
     m_sensitivityLevelHasBeenSet = true;
@@ -51,6 +59,16 @@ JsonValue SqliMatchStatement::Jsonize() const {
       textTransformationsJsonList[textTransformationsIndex].AsObject(m_textTransformations[textTransformationsIndex].Jsonize());
     }
     payload.WithArray("TextTransformations", std::move(textTransformationsJsonList));
+  }
+
+  if (m_preParseTextTransformationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> preParseTextTransformationsJsonList(m_preParseTextTransformations.size());
+    for (unsigned preParseTextTransformationsIndex = 0; preParseTextTransformationsIndex < preParseTextTransformationsJsonList.GetLength();
+         ++preParseTextTransformationsIndex) {
+      preParseTextTransformationsJsonList[preParseTextTransformationsIndex].AsObject(
+          m_preParseTextTransformations[preParseTextTransformationsIndex].Jsonize());
+    }
+    payload.WithArray("PreParseTextTransformations", std::move(preParseTextTransformationsJsonList));
   }
 
   if (m_sensitivityLevelHasBeenSet) {

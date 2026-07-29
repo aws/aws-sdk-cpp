@@ -30,7 +30,7 @@ class StartMetadataModelImportResult {
 
   ///@{
   /**
-   * <p>The identifier for the import operation.</p>
+   * <p>The identifier for the import request.</p>
    */
   inline const Aws::String& GetRequestIdentifier() const { return m_requestIdentifier; }
   template <typename RequestIdentifierT = Aws::String>

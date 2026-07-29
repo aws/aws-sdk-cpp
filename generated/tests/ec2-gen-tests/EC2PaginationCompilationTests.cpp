@@ -35,6 +35,7 @@
 #include <aws/ec2/model/SearchTransitGatewayMulticastGroupsPaginationTraits.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeAnalysisFindingsPaginationTraits.h>
 #include <aws/ec2/model/DescribeImportImageTasksPaginationTraits.h>
+#include <aws/ec2/model/GetTransitGatewayPolicyTableEntriesPaginationTraits.h>
 #include <aws/ec2/model/DescribeLaunchTemplateVersionsPaginationTraits.h>
 #include <aws/ec2/model/GetIpamAddressHistoryPaginationTraits.h>
 #include <aws/ec2/model/DescribeClientVpnRoutesPaginationTraits.h>

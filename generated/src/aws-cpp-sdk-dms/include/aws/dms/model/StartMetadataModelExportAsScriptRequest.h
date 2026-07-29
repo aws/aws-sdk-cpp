@@ -51,7 +51,14 @@ class StartMetadataModelExportAsScriptRequest : public DatabaseMigrationServiceR
 
   ///@{
   /**
-   * <p>A value that specifies the database objects to export.</p>
+   * <p>A JSON string that identifies the metadata models to export as a SQL script.
+   * For the selection rule format and examples, see <a
+   * href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection
+   * rules in DMS Schema Conversion</a>.</p> <p>Usage:</p> <ul> <li> <p>Accepts
+   * source or target selection rules depending on the <code>Origin</code> parameter.
+   * The <code>server-name</code> in the object locator must match the corresponding
+   * data provider.</p> </li> <li> <p>Supports <code>explicit</code>,
+   * <code>include</code>, and <code>exclude</code> rule actions.</p> </li> </ul>
    */
   inline const Aws::String& GetSelectionRules() const { return m_selectionRules; }
   inline bool SelectionRulesHasBeenSet() const { return m_selectionRulesHasBeenSet; }
@@ -69,7 +76,7 @@ class StartMetadataModelExportAsScriptRequest : public DatabaseMigrationServiceR
 
   ///@{
   /**
-   * <p>Whether to export the metadata model from the source or the target.</p>
+   * <p>Specifies the metadata tree to export from.</p>
    */
   inline OriginTypeValue GetOrigin() const { return m_origin; }
   inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
@@ -85,7 +92,8 @@ class StartMetadataModelExportAsScriptRequest : public DatabaseMigrationServiceR
 
   ///@{
   /**
-   * <p>The name of the model file to create in the Amazon S3 bucket.</p>
+   * <p>The name for the exported file. When you omit this parameter, the service
+   * generates a name from the data provider engine name and an export timestamp.</p>
    */
   inline const Aws::String& GetFileName() const { return m_fileName; }
   inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }

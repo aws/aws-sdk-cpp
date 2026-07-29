@@ -22,6 +22,10 @@ UpdateAssetResult::UpdateAssetResult(const Aws::AmazonWebServiceResult<JsonValue
 UpdateAssetResult& UpdateAssetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("assetId")) {
+    m_assetId = jsonValue.GetString("assetId");
+    m_assetIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("assetStatus")) {
     m_assetStatus = jsonValue.GetObject("assetStatus");
     m_assetStatusHasBeenSet = true;

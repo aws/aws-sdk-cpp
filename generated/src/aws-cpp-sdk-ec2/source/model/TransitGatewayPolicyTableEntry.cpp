@@ -38,6 +38,12 @@ TransitGatewayPolicyTableEntry& TransitGatewayPolicyTableEntry::operator=(const 
       m_targetRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(targetRouteTableIdNode.GetText());
       m_targetRouteTableIdHasBeenSet = true;
     }
+    XmlNode stateNode = resultNode.FirstChild("state");
+    if (!stateNode.IsNull()) {
+      m_state = TransitGatewayPolicyTableEntryStateMapper::GetTransitGatewayPolicyTableEntryStateForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
+      m_stateHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -58,6 +64,12 @@ void TransitGatewayPolicyTableEntry::OutputToStream(Aws::OStream& oStream, const
   if (m_targetRouteTableIdHasBeenSet) {
     oStream << location << index << locationValue << ".TargetRouteTableId=" << StringUtils::URLEncode(m_targetRouteTableId.c_str()) << "&";
   }
+
+  if (m_stateHasBeenSet) {
+    oStream << location << index << locationValue << ".State="
+            << StringUtils::URLEncode(TransitGatewayPolicyTableEntryStateMapper::GetNameForTransitGatewayPolicyTableEntryState(m_state))
+            << "&";
+  }
 }
 
 void TransitGatewayPolicyTableEntry::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -71,6 +83,11 @@ void TransitGatewayPolicyTableEntry::OutputToStream(Aws::OStream& oStream, const
   }
   if (m_targetRouteTableIdHasBeenSet) {
     oStream << location << ".TargetRouteTableId=" << StringUtils::URLEncode(m_targetRouteTableId.c_str()) << "&";
+  }
+  if (m_stateHasBeenSet) {
+    oStream << location << ".State="
+            << StringUtils::URLEncode(TransitGatewayPolicyTableEntryStateMapper::GetNameForTransitGatewayPolicyTableEntryState(m_state))
+            << "&";
   }
 }
 

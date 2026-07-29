@@ -72,7 +72,10 @@ class CreateBulkImportJobRequest : public IoTSiteWiseRequest {
 
   ///@{
   /**
-   * <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+   * <p>The files in the specified Amazon S3 bucket that contain your data. You can
+   * specify up to 100 files for each bulk import job. Each file supports the
+   * following size limits:</p> <ul> <li> <p>Parquet files – Up to 256 MiB.</p> </li>
+   * <li> <p>Other file formats – Up to 5 GiB.</p> </li> </ul>
    */
   inline const Aws::Vector<File>& GetFiles() const { return m_files; }
   inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
@@ -166,6 +169,45 @@ class CreateBulkImportJobRequest : public IoTSiteWiseRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the session dataset to ingest data into. Specify this field,
+   * together with <code>workspaceName</code>, to ingest data into a session dataset
+   * in a workspace.</p>
+   */
+  inline const Aws::String& GetDatasetId() const { return m_datasetId; }
+  inline bool DatasetIdHasBeenSet() const { return m_datasetIdHasBeenSet; }
+  template <typename DatasetIdT = Aws::String>
+  void SetDatasetId(DatasetIdT&& value) {
+    m_datasetIdHasBeenSet = true;
+    m_datasetId = std::forward<DatasetIdT>(value);
+  }
+  template <typename DatasetIdT = Aws::String>
+  CreateBulkImportJobRequest& WithDatasetId(DatasetIdT&& value) {
+    SetDatasetId(std::forward<DatasetIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the workspace that contains the session dataset. Specify this
+   * field together with <code>datasetId</code>.</p>
+   */
+  inline const Aws::String& GetWorkspaceName() const { return m_workspaceName; }
+  inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
+  template <typename WorkspaceNameT = Aws::String>
+  void SetWorkspaceName(WorkspaceNameT&& value) {
+    m_workspaceNameHasBeenSet = true;
+    m_workspaceName = std::forward<WorkspaceNameT>(value);
+  }
+  template <typename WorkspaceNameT = Aws::String>
+  CreateBulkImportJobRequest& WithWorkspaceName(WorkspaceNameT&& value) {
+    SetWorkspaceName(std::forward<WorkspaceNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_jobName;
 
@@ -180,6 +222,10 @@ class CreateBulkImportJobRequest : public IoTSiteWiseRequest {
   bool m_adaptiveIngestion{false};
 
   bool m_deleteFilesAfterImport{false};
+
+  Aws::String m_datasetId;
+
+  Aws::String m_workspaceName;
   bool m_jobNameHasBeenSet = false;
   bool m_jobRoleArnHasBeenSet = false;
   bool m_filesHasBeenSet = false;
@@ -187,6 +233,8 @@ class CreateBulkImportJobRequest : public IoTSiteWiseRequest {
   bool m_jobConfigurationHasBeenSet = false;
   bool m_adaptiveIngestionHasBeenSet = false;
   bool m_deleteFilesAfterImportHasBeenSet = false;
+  bool m_datasetIdHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
 };
 
 }  // namespace Model

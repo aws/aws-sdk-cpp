@@ -176,6 +176,7 @@
 #include <aws/ec2/model/CreateTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayMulticastDomainResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentResponse.h>
+#include <aws/ec2/model/CreateTransitGatewayPolicyTableEntryResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayPolicyTableResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayPrefixListReferenceResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayRequest.h>
@@ -264,6 +265,7 @@
 #include <aws/ec2/model/DeleteTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayMulticastDomainResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPeeringAttachmentResponse.h>
+#include <aws/ec2/model/DeleteTransitGatewayPolicyTableEntryResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPolicyTableResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPrefixListReferenceResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayResponse.h>
@@ -871,6 +873,7 @@
 #include <aws/ec2/model/ModifyTrafficMirrorFilterRuleResponse.h>
 #include <aws/ec2/model/ModifyTrafficMirrorSessionResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyResponse.h>
+#include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayVpcAttachmentResponse.h>
@@ -1155,6 +1158,7 @@ class CreateTransitGatewayMeteringPolicyEntryRequest;
 class CreateTransitGatewayMulticastDomainRequest;
 class CreateTransitGatewayPeeringAttachmentRequest;
 class CreateTransitGatewayPolicyTableRequest;
+class CreateTransitGatewayPolicyTableEntryRequest;
 class CreateTransitGatewayPrefixListReferenceRequest;
 class CreateTransitGatewayRouteRequest;
 class CreateTransitGatewayRouteTableRequest;
@@ -1248,6 +1252,7 @@ class DeleteTransitGatewayMeteringPolicyEntryRequest;
 class DeleteTransitGatewayMulticastDomainRequest;
 class DeleteTransitGatewayPeeringAttachmentRequest;
 class DeleteTransitGatewayPolicyTableRequest;
+class DeleteTransitGatewayPolicyTableEntryRequest;
 class DeleteTransitGatewayPrefixListReferenceRequest;
 class DeleteTransitGatewayRouteRequest;
 class DeleteTransitGatewayRouteTableRequest;
@@ -1673,6 +1678,7 @@ class ModifyTrafficMirrorFilterRuleRequest;
 class ModifyTrafficMirrorSessionRequest;
 class ModifyTransitGatewayRequest;
 class ModifyTransitGatewayMeteringPolicyRequest;
+class ModifyTransitGatewayPolicyTableEntryRequest;
 class ModifyTransitGatewayPrefixListReferenceRequest;
 class ModifyTransitGatewayVpcAttachmentRequest;
 class ModifyVerifiedAccessEndpointRequest;
@@ -1936,6 +1942,7 @@ typedef Aws::Utils::Outcome<CreateTransitGatewayMeteringPolicyEntryResponse, EC2
 typedef Aws::Utils::Outcome<CreateTransitGatewayMulticastDomainResponse, EC2Error> CreateTransitGatewayMulticastDomainOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayPeeringAttachmentResponse, EC2Error> CreateTransitGatewayPeeringAttachmentOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayPolicyTableResponse, EC2Error> CreateTransitGatewayPolicyTableOutcome;
+typedef Aws::Utils::Outcome<CreateTransitGatewayPolicyTableEntryResponse, EC2Error> CreateTransitGatewayPolicyTableEntryOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayPrefixListReferenceResponse, EC2Error> CreateTransitGatewayPrefixListReferenceOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayRouteResponse, EC2Error> CreateTransitGatewayRouteOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayRouteTableResponse, EC2Error> CreateTransitGatewayRouteTableOutcome;
@@ -2031,6 +2038,7 @@ typedef Aws::Utils::Outcome<DeleteTransitGatewayMeteringPolicyEntryResponse, EC2
 typedef Aws::Utils::Outcome<DeleteTransitGatewayMulticastDomainResponse, EC2Error> DeleteTransitGatewayMulticastDomainOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayPeeringAttachmentResponse, EC2Error> DeleteTransitGatewayPeeringAttachmentOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayPolicyTableResponse, EC2Error> DeleteTransitGatewayPolicyTableOutcome;
+typedef Aws::Utils::Outcome<DeleteTransitGatewayPolicyTableEntryResponse, EC2Error> DeleteTransitGatewayPolicyTableEntryOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayPrefixListReferenceResponse, EC2Error> DeleteTransitGatewayPrefixListReferenceOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayRouteResponse, EC2Error> DeleteTransitGatewayRouteOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayRouteTableResponse, EC2Error> DeleteTransitGatewayRouteTableOutcome;
@@ -2478,6 +2486,7 @@ typedef Aws::Utils::Outcome<ModifyTrafficMirrorFilterRuleResponse, EC2Error> Mod
 typedef Aws::Utils::Outcome<ModifyTrafficMirrorSessionResponse, EC2Error> ModifyTrafficMirrorSessionOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayResponse, EC2Error> ModifyTransitGatewayOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayMeteringPolicyResponse, EC2Error> ModifyTransitGatewayMeteringPolicyOutcome;
+typedef Aws::Utils::Outcome<ModifyTransitGatewayPolicyTableEntryResponse, EC2Error> ModifyTransitGatewayPolicyTableEntryOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayPrefixListReferenceResponse, EC2Error> ModifyTransitGatewayPrefixListReferenceOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayVpcAttachmentResponse, EC2Error> ModifyTransitGatewayVpcAttachmentOutcome;
 typedef Aws::Utils::Outcome<ModifyVerifiedAccessEndpointResponse, EC2Error> ModifyVerifiedAccessEndpointOutcome;
@@ -2747,6 +2756,7 @@ typedef std::future<CreateTransitGatewayMeteringPolicyEntryOutcome> CreateTransi
 typedef std::future<CreateTransitGatewayMulticastDomainOutcome> CreateTransitGatewayMulticastDomainOutcomeCallable;
 typedef std::future<CreateTransitGatewayPeeringAttachmentOutcome> CreateTransitGatewayPeeringAttachmentOutcomeCallable;
 typedef std::future<CreateTransitGatewayPolicyTableOutcome> CreateTransitGatewayPolicyTableOutcomeCallable;
+typedef std::future<CreateTransitGatewayPolicyTableEntryOutcome> CreateTransitGatewayPolicyTableEntryOutcomeCallable;
 typedef std::future<CreateTransitGatewayPrefixListReferenceOutcome> CreateTransitGatewayPrefixListReferenceOutcomeCallable;
 typedef std::future<CreateTransitGatewayRouteOutcome> CreateTransitGatewayRouteOutcomeCallable;
 typedef std::future<CreateTransitGatewayRouteTableOutcome> CreateTransitGatewayRouteTableOutcomeCallable;
@@ -2841,6 +2851,7 @@ typedef std::future<DeleteTransitGatewayMeteringPolicyEntryOutcome> DeleteTransi
 typedef std::future<DeleteTransitGatewayMulticastDomainOutcome> DeleteTransitGatewayMulticastDomainOutcomeCallable;
 typedef std::future<DeleteTransitGatewayPeeringAttachmentOutcome> DeleteTransitGatewayPeeringAttachmentOutcomeCallable;
 typedef std::future<DeleteTransitGatewayPolicyTableOutcome> DeleteTransitGatewayPolicyTableOutcomeCallable;
+typedef std::future<DeleteTransitGatewayPolicyTableEntryOutcome> DeleteTransitGatewayPolicyTableEntryOutcomeCallable;
 typedef std::future<DeleteTransitGatewayPrefixListReferenceOutcome> DeleteTransitGatewayPrefixListReferenceOutcomeCallable;
 typedef std::future<DeleteTransitGatewayRouteOutcome> DeleteTransitGatewayRouteOutcomeCallable;
 typedef std::future<DeleteTransitGatewayRouteTableOutcome> DeleteTransitGatewayRouteTableOutcomeCallable;
@@ -3269,6 +3280,7 @@ typedef std::future<ModifyTrafficMirrorFilterRuleOutcome> ModifyTrafficMirrorFil
 typedef std::future<ModifyTrafficMirrorSessionOutcome> ModifyTrafficMirrorSessionOutcomeCallable;
 typedef std::future<ModifyTransitGatewayOutcome> ModifyTransitGatewayOutcomeCallable;
 typedef std::future<ModifyTransitGatewayMeteringPolicyOutcome> ModifyTransitGatewayMeteringPolicyOutcomeCallable;
+typedef std::future<ModifyTransitGatewayPolicyTableEntryOutcome> ModifyTransitGatewayPolicyTableEntryOutcomeCallable;
 typedef std::future<ModifyTransitGatewayPrefixListReferenceOutcome> ModifyTransitGatewayPrefixListReferenceOutcomeCallable;
 typedef std::future<ModifyTransitGatewayVpcAttachmentOutcome> ModifyTransitGatewayVpcAttachmentOutcomeCallable;
 typedef std::future<ModifyVerifiedAccessEndpointOutcome> ModifyVerifiedAccessEndpointOutcomeCallable;
@@ -3876,6 +3888,10 @@ typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayPo
                            const Model::CreateTransitGatewayPolicyTableOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateTransitGatewayPolicyTableResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayPolicyTableEntryRequest&,
+                           const Model::CreateTransitGatewayPolicyTableEntryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateTransitGatewayPolicyTableEntryResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayPrefixListReferenceRequest&,
                            const Model::CreateTransitGatewayPrefixListReferenceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -4191,6 +4207,10 @@ typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayPo
                            const Model::DeleteTransitGatewayPolicyTableOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTransitGatewayPolicyTableResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayPolicyTableEntryRequest&,
+                           const Model::DeleteTransitGatewayPolicyTableEntryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteTransitGatewayPolicyTableEntryResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayPrefixListReferenceRequest&,
                            const Model::DeleteTransitGatewayPrefixListReferenceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -5669,6 +5689,10 @@ typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayMe
                            const Model::ModifyTransitGatewayMeteringPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyTransitGatewayMeteringPolicyResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayPolicyTableEntryRequest&,
+                           const Model::ModifyTransitGatewayPolicyTableEntryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyTransitGatewayPolicyTableEntryResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayPrefixListReferenceRequest&,
                            const Model::ModifyTransitGatewayPrefixListReferenceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

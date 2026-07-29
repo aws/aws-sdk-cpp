@@ -34,8 +34,12 @@ class DescribeMetadataModelCreationsRequest : public DatabaseMigrationServiceReq
 
   ///@{
   /**
-   * <p>Filters applied to the metadata model creation requests described in the form
-   * of key-value pairs. The supported filters are request-id and status.</p>
+   * <p>The filters to apply to the metadata model creation requests.</p> <p>The
+   * following filter names are supported:</p> <ul> <li> <p> <code>request-id</code>
+   * – The request identifier.</p> </li> <li> <p> <code>status</code> – The request
+   * status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>,
+   * <code>SUCCESS</code>, <code>FAILED</code>, <code>CANCELING</code>,
+   * <code>CANCELED</code>.</p> </li> </ul>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
@@ -60,9 +64,13 @@ class DescribeMetadataModelCreationsRequest : public DatabaseMigrationServiceReq
   ///@{
   /**
    * <p>Specifies the unique pagination token that makes it possible to display the
-   * next page of metadata model creation requests. If Marker is returned by a
-   * previous response, there are more metadata model creation requests
-   * available.</p>
+   * next page of results. If this parameter is specified, the response includes only
+   * records beyond the marker, up to the value specified by
+   * <code>MaxRecords</code>.</p> <p>If <code>Marker</code> is returned by a previous
+   * response, there are more results available. The value of <code>Marker</code> is
+   * a unique pagination token for each page. To retrieve the next page, make the
+   * call again using the returned token and keeping all other arguments
+   * unchanged.</p>
    */
   inline const Aws::String& GetMarker() const { return m_marker; }
   inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
@@ -80,10 +88,10 @@ class DescribeMetadataModelCreationsRequest : public DatabaseMigrationServiceReq
 
   ///@{
   /**
-   * <p>The maximum number of metadata model creation requests to include in the
-   * response. If more requests exist than the specified MaxRecords value, a
-   * pagination token is provided in the response so that you can retrieve the
-   * remaining results.</p>
+   * <p>The maximum number of records to include in the response. If more records
+   * exist than the specified <code>MaxRecords</code> value, DMS includes a
+   * pagination token in the response so that you can retrieve the remaining
+   * results.</p>
    */
   inline int GetMaxRecords() const { return m_maxRecords; }
   inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }

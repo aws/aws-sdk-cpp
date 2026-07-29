@@ -30,6 +30,23 @@ class DeleteAssetResult {
 
   ///@{
   /**
+   * <p>The ID of the asset.</p>
+   */
+  inline const Aws::String& GetAssetId() const { return m_assetId; }
+  template <typename AssetIdT = Aws::String>
+  void SetAssetId(AssetIdT&& value) {
+    m_assetIdHasBeenSet = true;
+    m_assetId = std::forward<AssetIdT>(value);
+  }
+  template <typename AssetIdT = Aws::String>
+  DeleteAssetResult& WithAssetId(AssetIdT&& value) {
+    SetAssetId(std::forward<AssetIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the asset, which contains a state (<code>DELETING</code> after
    * successfully calling this operation) and any error message.</p>
    */
@@ -63,10 +80,13 @@ class DeleteAssetResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_assetId;
+
   AssetStatus m_assetStatus;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_assetIdHasBeenSet = false;
   bool m_assetStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

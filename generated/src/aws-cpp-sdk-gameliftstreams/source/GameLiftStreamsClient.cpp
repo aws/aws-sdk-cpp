@@ -26,6 +26,7 @@
 #include <aws/gameliftstreams/model/CreateStreamGroupRequest.h>
 #include <aws/gameliftstreams/model/CreateStreamSessionAdminShellRequest.h>
 #include <aws/gameliftstreams/model/CreateStreamSessionConnectionRequest.h>
+#include <aws/gameliftstreams/model/CreateStreamUrlRequest.h>
 #include <aws/gameliftstreams/model/DeleteApplicationRequest.h>
 #include <aws/gameliftstreams/model/DeleteStreamGroupRequest.h>
 #include <aws/gameliftstreams/model/DisassociateApplicationsRequest.h>
@@ -33,12 +34,16 @@
 #include <aws/gameliftstreams/model/GetApplicationRequest.h>
 #include <aws/gameliftstreams/model/GetStreamGroupRequest.h>
 #include <aws/gameliftstreams/model/GetStreamSessionRequest.h>
+#include <aws/gameliftstreams/model/GetStreamUrlRequest.h>
+#include <aws/gameliftstreams/model/ListApplicationShaderCachesRequest.h>
 #include <aws/gameliftstreams/model/ListApplicationsRequest.h>
 #include <aws/gameliftstreams/model/ListStreamGroupsRequest.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsByAccountRequest.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsRequest.h>
+#include <aws/gameliftstreams/model/ListStreamUrlsRequest.h>
 #include <aws/gameliftstreams/model/ListTagsForResourceRequest.h>
 #include <aws/gameliftstreams/model/RemoveStreamGroupLocationsRequest.h>
+#include <aws/gameliftstreams/model/RevokeStreamUrlRequest.h>
 #include <aws/gameliftstreams/model/StartStreamSessionRequest.h>
 #include <aws/gameliftstreams/model/TagResourceRequest.h>
 #include <aws/gameliftstreams/model/TerminateStreamSessionRequest.h>
@@ -317,6 +322,25 @@ CreateStreamSessionConnectionOutcome GameLiftStreamsClient::CreateStreamSessionC
                             : CreateStreamSessionConnectionOutcome(std::move(result.GetError()));
 }
 
+CreateStreamUrlOutcome GameLiftStreamsClient::CreateStreamUrl(const CreateStreamUrlRequest& request) const {
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateStreamUrl", "Required field: Identifier, is not set");
+    return CreateStreamUrlOutcome(Aws::Client::AWSError<GameLiftStreamsErrors>(
+        GameLiftStreamsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/streamgroups/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/streamurls");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStreamUrlOutcome(result.GetResultWithOwnership())
+                            : CreateStreamUrlOutcome(std::move(result.GetError()));
+}
+
 DeleteApplicationOutcome GameLiftStreamsClient::DeleteApplication(const DeleteApplicationRequest& request) const {
   if (!request.IdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteApplication", "Required field: Identifier, is not set");
@@ -457,6 +481,50 @@ GetStreamSessionOutcome GameLiftStreamsClient::GetStreamSession(const GetStreamS
                             : GetStreamSessionOutcome(std::move(result.GetError()));
 }
 
+GetStreamUrlOutcome GameLiftStreamsClient::GetStreamUrl(const GetStreamUrlRequest& request) const {
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetStreamUrl", "Required field: Identifier, is not set");
+    return GetStreamUrlOutcome(Aws::Client::AWSError<GameLiftStreamsErrors>(GameLiftStreamsErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [Identifier]", false));
+  }
+  if (!request.StreamUrlIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetStreamUrl", "Required field: StreamUrlIdentifier, is not set");
+    return GetStreamUrlOutcome(Aws::Client::AWSError<GameLiftStreamsErrors>(GameLiftStreamsErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [StreamUrlIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/streamgroups/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/streamurls/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStreamUrlIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStreamUrlOutcome(result.GetResultWithOwnership()) : GetStreamUrlOutcome(std::move(result.GetError()));
+}
+
+ListApplicationShaderCachesOutcome GameLiftStreamsClient::ListApplicationShaderCaches(
+    const ListApplicationShaderCachesRequest& request) const {
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListApplicationShaderCaches", "Required field: Identifier, is not set");
+    return ListApplicationShaderCachesOutcome(Aws::Client::AWSError<GameLiftStreamsErrors>(
+        GameLiftStreamsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/shadercaches");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationShaderCachesOutcome(result.GetResultWithOwnership())
+                            : ListApplicationShaderCachesOutcome(std::move(result.GetError()));
+}
+
 ListApplicationsOutcome GameLiftStreamsClient::ListApplications(const ListApplicationsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -510,6 +578,16 @@ ListStreamSessionsByAccountOutcome GameLiftStreamsClient::ListStreamSessionsByAc
                             : ListStreamSessionsByAccountOutcome(std::move(result.GetError()));
 }
 
+ListStreamUrlsOutcome GameLiftStreamsClient::ListStreamUrls(const ListStreamUrlsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/streamurls");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStreamUrlsOutcome(result.GetResultWithOwnership()) : ListStreamUrlsOutcome(std::move(result.GetError()));
+}
+
 ListTagsForResourceOutcome GameLiftStreamsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
   if (!request.ResourceArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
@@ -551,6 +629,32 @@ RemoveStreamGroupLocationsOutcome GameLiftStreamsClient::RemoveStreamGroupLocati
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? RemoveStreamGroupLocationsOutcome(result.GetResultWithOwnership())
                             : RemoveStreamGroupLocationsOutcome(std::move(result.GetError()));
+}
+
+RevokeStreamUrlOutcome GameLiftStreamsClient::RevokeStreamUrl(const RevokeStreamUrlRequest& request) const {
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("RevokeStreamUrl", "Required field: Identifier, is not set");
+    return RevokeStreamUrlOutcome(Aws::Client::AWSError<GameLiftStreamsErrors>(
+        GameLiftStreamsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  if (!request.StreamUrlIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("RevokeStreamUrl", "Required field: StreamUrlIdentifier, is not set");
+    return RevokeStreamUrlOutcome(Aws::Client::AWSError<GameLiftStreamsErrors>(
+        GameLiftStreamsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StreamUrlIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/streamgroups/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/streamurls/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStreamUrlIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/revoke");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeStreamUrlOutcome(result.GetResultWithOwnership())
+                            : RevokeStreamUrlOutcome(std::move(result.GetError()));
 }
 
 StartStreamSessionOutcome GameLiftStreamsClient::StartStreamSession(const StartStreamSessionRequest& request) const {

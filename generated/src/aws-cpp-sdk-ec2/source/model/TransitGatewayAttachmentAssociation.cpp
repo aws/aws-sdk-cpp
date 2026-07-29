@@ -28,6 +28,11 @@ TransitGatewayAttachmentAssociation& TransitGatewayAttachmentAssociation::operat
       m_transitGatewayRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayRouteTableIdNode.GetText());
       m_transitGatewayRouteTableIdHasBeenSet = true;
     }
+    XmlNode transitGatewayPolicyTableIdNode = resultNode.FirstChild("transitGatewayPolicyTableId");
+    if (!transitGatewayPolicyTableIdNode.IsNull()) {
+      m_transitGatewayPolicyTableId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayPolicyTableIdNode.GetText());
+      m_transitGatewayPolicyTableIdHasBeenSet = true;
+    }
     XmlNode stateNode = resultNode.FirstChild("state");
     if (!stateNode.IsNull()) {
       m_state = TransitGatewayAssociationStateMapper::GetTransitGatewayAssociationStateForName(
@@ -46,6 +51,11 @@ void TransitGatewayAttachmentAssociation::OutputToStream(Aws::OStream& oStream, 
             << ".TransitGatewayRouteTableId=" << StringUtils::URLEncode(m_transitGatewayRouteTableId.c_str()) << "&";
   }
 
+  if (m_transitGatewayPolicyTableIdHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".TransitGatewayPolicyTableId=" << StringUtils::URLEncode(m_transitGatewayPolicyTableId.c_str()) << "&";
+  }
+
   if (m_stateHasBeenSet) {
     oStream << location << index << locationValue
             << ".State=" << StringUtils::URLEncode(TransitGatewayAssociationStateMapper::GetNameForTransitGatewayAssociationState(m_state))
@@ -56,6 +66,9 @@ void TransitGatewayAttachmentAssociation::OutputToStream(Aws::OStream& oStream, 
 void TransitGatewayAttachmentAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const {
   if (m_transitGatewayRouteTableIdHasBeenSet) {
     oStream << location << ".TransitGatewayRouteTableId=" << StringUtils::URLEncode(m_transitGatewayRouteTableId.c_str()) << "&";
+  }
+  if (m_transitGatewayPolicyTableIdHasBeenSet) {
+    oStream << location << ".TransitGatewayPolicyTableId=" << StringUtils::URLEncode(m_transitGatewayPolicyTableId.c_str()) << "&";
   }
   if (m_stateHasBeenSet) {
     oStream << location

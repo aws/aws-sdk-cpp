@@ -364,6 +364,37 @@ class AWS_GAMELIFTSTREAMS_API GameLiftStreamsClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Creates a stream URL that grants temporary access to a stream session in a
+   * web browser without requiring an Amazon Web Services account or client
+   * integration.</p> <p>You can use the stream URL to start a stream session up to
+   * the number of times set by <code>UsageLimit</code>, until it expires after
+   * <code>UrlExpiresAfterMinutes</code>. Each successful use starts a new stream
+   * session.</p> <p>To make the request idempotent, provide a
+   * <code>ClientToken</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateStreamUrl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateStreamUrlOutcome CreateStreamUrl(const Model::CreateStreamUrlRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateStreamUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateStreamUrlRequestT = Model::CreateStreamUrlRequest>
+  Model::CreateStreamUrlOutcomeCallable CreateStreamUrlCallable(const CreateStreamUrlRequestT& request) const {
+    return SubmitCallable(&GameLiftStreamsClient::CreateStreamUrl, request);
+  }
+
+  /**
+   * An Async wrapper for CreateStreamUrl that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateStreamUrlRequestT = Model::CreateStreamUrlRequest>
+  void CreateStreamUrlAsync(const CreateStreamUrlRequestT& request, const CreateStreamUrlResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GameLiftStreamsClient::CreateStreamUrl, request, handler, context);
+  }
+
+  /**
    * <p>Permanently deletes an Amazon GameLift Streams application resource. This
    * also deletes the application content files stored with Amazon GameLift Streams.
    * However, this does not delete the original files that you uploaded to your
@@ -617,6 +648,67 @@ class AWS_GAMELIFTSTREAMS_API GameLiftStreamsClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Retrieves properties for a stream URL, including its current status, usage,
+   * and the stream sessions started through it.</p> <p>If you delete the stream
+   * group or application that backs the stream URL, this operation updates the
+   * status of the stream URL to <code>REVOKED</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/GetStreamUrl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetStreamUrlOutcome GetStreamUrl(const Model::GetStreamUrlRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetStreamUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetStreamUrlRequestT = Model::GetStreamUrlRequest>
+  Model::GetStreamUrlOutcomeCallable GetStreamUrlCallable(const GetStreamUrlRequestT& request) const {
+    return SubmitCallable(&GameLiftStreamsClient::GetStreamUrl, request);
+  }
+
+  /**
+   * An Async wrapper for GetStreamUrl that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetStreamUrlRequestT = Model::GetStreamUrlRequest>
+  void GetStreamUrlAsync(const GetStreamUrlRequestT& request, const GetStreamUrlResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GameLiftStreamsClient::GetStreamUrl, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the shader caches associated with an Amazon GameLift Streams
+   * application. Each shader cache entry includes its status, associated stream
+   * groups, and size in bytes.</p> <p>Returns shader caches associated with the
+   * specified Amazon GameLift Streams application in all statuses.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListApplicationShaderCaches">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListApplicationShaderCachesOutcome ListApplicationShaderCaches(
+      const Model::ListApplicationShaderCachesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListApplicationShaderCaches that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListApplicationShaderCachesRequestT = Model::ListApplicationShaderCachesRequest>
+  Model::ListApplicationShaderCachesOutcomeCallable ListApplicationShaderCachesCallable(
+      const ListApplicationShaderCachesRequestT& request) const {
+    return SubmitCallable(&GameLiftStreamsClient::ListApplicationShaderCaches, request);
+  }
+
+  /**
+   * An Async wrapper for ListApplicationShaderCaches that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListApplicationShaderCachesRequestT = Model::ListApplicationShaderCachesRequest>
+  void ListApplicationShaderCachesAsync(const ListApplicationShaderCachesRequestT& request,
+                                        const ListApplicationShaderCachesResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GameLiftStreamsClient::ListApplicationShaderCaches, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves a list of all Amazon GameLift Streams applications that are
    * associated with the Amazon Web Services account in use. This operation returns
    * applications in all statuses, in no particular order. You can paginate the
@@ -746,6 +838,37 @@ class AWS_GAMELIFTSTREAMS_API GameLiftStreamsClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Retrieves a list of the stream URLs in the current Amazon Web Services Region
+   * for your Amazon Web Services account. You can filter the results by status or by
+   * stream group. Use the pagination parameters to retrieve results as a set of
+   * sequential pages. If you delete the stream group or application that backs a
+   * stream URL, this operation updates that stream URL's status to
+   * <code>REVOKED</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListStreamUrls">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListStreamUrlsOutcome ListStreamUrls(const Model::ListStreamUrlsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListStreamUrls that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListStreamUrlsRequestT = Model::ListStreamUrlsRequest>
+  Model::ListStreamUrlsOutcomeCallable ListStreamUrlsCallable(const ListStreamUrlsRequestT& request = {}) const {
+    return SubmitCallable(&GameLiftStreamsClient::ListStreamUrls, request);
+  }
+
+  /**
+   * An Async wrapper for ListStreamUrls that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListStreamUrlsRequestT = Model::ListStreamUrlsRequest>
+  void ListStreamUrlsAsync(const ListStreamUrlsResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const ListStreamUrlsRequestT& request = {}) const {
+    return SubmitAsync(&GameLiftStreamsClient::ListStreamUrls, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves all tags assigned to a Amazon GameLift Streams resource. To list
    * tags for a resource, specify the ARN value for the resource.</p> <p> <b>Learn
    * more</b> </p> <p> <a
@@ -815,6 +938,36 @@ class AWS_GAMELIFTSTREAMS_API GameLiftStreamsClient : public Aws::Client::AWSJso
                                        const RemoveStreamGroupLocationsResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GameLiftStreamsClient::RemoveStreamGroupLocations, request, handler, context);
+  }
+
+  /**
+   * <p>Revokes a stream URL so that it can no longer start new stream sessions. By
+   * default, stream sessions that are already running continue until they end on
+   * their own. To also end running sessions, set <code>RevocationMode</code> to
+   * <code>REVOKE_AND_TERMINATE_SESSIONS</code>.</p> <p>Revoking a stream URL is
+   * permanent. The status of the stream URL changes to
+   * <code>REVOKED</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/RevokeStreamUrl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RevokeStreamUrlOutcome RevokeStreamUrl(const Model::RevokeStreamUrlRequest& request) const;
+
+  /**
+   * A Callable wrapper for RevokeStreamUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename RevokeStreamUrlRequestT = Model::RevokeStreamUrlRequest>
+  Model::RevokeStreamUrlOutcomeCallable RevokeStreamUrlCallable(const RevokeStreamUrlRequestT& request) const {
+    return SubmitCallable(&GameLiftStreamsClient::RevokeStreamUrl, request);
+  }
+
+  /**
+   * An Async wrapper for RevokeStreamUrl that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename RevokeStreamUrlRequestT = Model::RevokeStreamUrlRequest>
+  void RevokeStreamUrlAsync(const RevokeStreamUrlRequestT& request, const RevokeStreamUrlResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GameLiftStreamsClient::RevokeStreamUrl, request, handler, context);
   }
 
   /**

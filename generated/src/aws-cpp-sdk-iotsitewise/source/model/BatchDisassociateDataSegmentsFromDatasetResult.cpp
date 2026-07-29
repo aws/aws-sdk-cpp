@@ -1,0 +1,54 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotsitewise/model/BatchDisassociateDataSegmentsFromDatasetResult.h>
+
+#include <utility>
+
+using namespace Aws::IoTSiteWise::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+BatchDisassociateDataSegmentsFromDatasetResult::BatchDisassociateDataSegmentsFromDatasetResult(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  *this = result;
+}
+
+BatchDisassociateDataSegmentsFromDatasetResult& BatchDisassociateDataSegmentsFromDatasetResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("datasetId")) {
+    m_datasetId = jsonValue.GetString("datasetId");
+    m_datasetIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("datasetVersion")) {
+    m_datasetVersion = jsonValue.GetString("datasetVersion");
+    m_datasetVersionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failedDisassociations")) {
+    Aws::Utils::Array<JsonView> failedDisassociationsJsonList = jsonValue.GetArray("failedDisassociations");
+    for (unsigned failedDisassociationsIndex = 0; failedDisassociationsIndex < failedDisassociationsJsonList.GetLength();
+         ++failedDisassociationsIndex) {
+      m_failedDisassociations.push_back(failedDisassociationsJsonList[failedDisassociationsIndex].AsObject());
+    }
+    m_failedDisassociationsHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

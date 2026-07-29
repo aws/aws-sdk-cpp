@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/FieldToMatch.h>
+#include <aws/wafv2/model/PreParseTextTransformation.h>
 #include <aws/wafv2/model/TextTransformation.h>
 
 #include <utility>
@@ -84,12 +85,44 @@ class XssMatchStatement {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Pre-parse text transformations normalize the raw query string before WAF
+   * parses it into individual query arguments. They are applied before the standard
+   * text transformations. Pre-parse text transformations are only supported when
+   * <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or
+   * <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text
+   * transformations per rule statement.</p>
+   */
+  inline const Aws::Vector<PreParseTextTransformation>& GetPreParseTextTransformations() const { return m_preParseTextTransformations; }
+  inline bool PreParseTextTransformationsHasBeenSet() const { return m_preParseTextTransformationsHasBeenSet; }
+  template <typename PreParseTextTransformationsT = Aws::Vector<PreParseTextTransformation>>
+  void SetPreParseTextTransformations(PreParseTextTransformationsT&& value) {
+    m_preParseTextTransformationsHasBeenSet = true;
+    m_preParseTextTransformations = std::forward<PreParseTextTransformationsT>(value);
+  }
+  template <typename PreParseTextTransformationsT = Aws::Vector<PreParseTextTransformation>>
+  XssMatchStatement& WithPreParseTextTransformations(PreParseTextTransformationsT&& value) {
+    SetPreParseTextTransformations(std::forward<PreParseTextTransformationsT>(value));
+    return *this;
+  }
+  template <typename PreParseTextTransformationsT = PreParseTextTransformation>
+  XssMatchStatement& AddPreParseTextTransformations(PreParseTextTransformationsT&& value) {
+    m_preParseTextTransformationsHasBeenSet = true;
+    m_preParseTextTransformations.emplace_back(std::forward<PreParseTextTransformationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   FieldToMatch m_fieldToMatch;
 
   Aws::Vector<TextTransformation> m_textTransformations;
+
+  Aws::Vector<PreParseTextTransformation> m_preParseTextTransformations;
   bool m_fieldToMatchHasBeenSet = false;
   bool m_textTransformationsHasBeenSet = false;
+  bool m_preParseTextTransformationsHasBeenSet = false;
 };
 
 }  // namespace Model

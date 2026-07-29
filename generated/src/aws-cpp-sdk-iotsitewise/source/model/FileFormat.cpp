@@ -26,6 +26,14 @@ FileFormat& FileFormat::operator=(JsonView jsonValue) {
     m_parquet = jsonValue.GetObject("parquet");
     m_parquetHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mp4")) {
+    m_mp4 = jsonValue.GetObject("mp4");
+    m_mp4HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("annotation")) {
+    m_annotation = jsonValue.GetObject("annotation");
+    m_annotationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue FileFormat::Jsonize() const {
 
   if (m_parquetHasBeenSet) {
     payload.WithObject("parquet", m_parquet.Jsonize());
+  }
+
+  if (m_mp4HasBeenSet) {
+    payload.WithObject("mp4", m_mp4.Jsonize());
+  }
+
+  if (m_annotationHasBeenSet) {
+    payload.WithObject("annotation", m_annotation.Jsonize());
   }
 
   return payload;

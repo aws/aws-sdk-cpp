@@ -26,6 +26,30 @@ FieldDefinition& FieldDefinition::operator=(JsonView jsonValue) {
     m_fieldDataType = FieldDataTypeMapper::GetFieldDataTypeForName(jsonValue.GetString("FieldDataType"));
     m_fieldDataTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ResponseDateFormat")) {
+    m_responseDateFormat = jsonValue.GetString("ResponseDateFormat");
+    m_responseDateFormatHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IsPartitionable")) {
+    m_isPartitionable = jsonValue.GetBool("IsPartitionable");
+    m_isPartitionableHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IsNullable")) {
+    m_isNullable = jsonValue.GetBool("IsNullable");
+    m_isNullableHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IsQueryable")) {
+    m_isQueryable = jsonValue.GetBool("IsQueryable");
+    m_isQueryableHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IsOrderable")) {
+    m_isOrderable = jsonValue.GetBool("IsOrderable");
+    m_isOrderableHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FilterOverrides")) {
+    m_filterOverrides = jsonValue.GetObject("FilterOverrides");
+    m_filterOverridesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +62,30 @@ JsonValue FieldDefinition::Jsonize() const {
 
   if (m_fieldDataTypeHasBeenSet) {
     payload.WithString("FieldDataType", FieldDataTypeMapper::GetNameForFieldDataType(m_fieldDataType));
+  }
+
+  if (m_responseDateFormatHasBeenSet) {
+    payload.WithString("ResponseDateFormat", m_responseDateFormat);
+  }
+
+  if (m_isPartitionableHasBeenSet) {
+    payload.WithBool("IsPartitionable", m_isPartitionable);
+  }
+
+  if (m_isNullableHasBeenSet) {
+    payload.WithBool("IsNullable", m_isNullable);
+  }
+
+  if (m_isQueryableHasBeenSet) {
+    payload.WithBool("IsQueryable", m_isQueryable);
+  }
+
+  if (m_isOrderableHasBeenSet) {
+    payload.WithBool("IsOrderable", m_isOrderable);
+  }
+
+  if (m_filterOverridesHasBeenSet) {
+    payload.WithObject("FilterOverrides", m_filterOverrides.Jsonize());
   }
 
   return payload;

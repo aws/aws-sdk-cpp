@@ -30,7 +30,7 @@ class StartMetadataModelCreationResult {
 
   ///@{
   /**
-   * <p>The identifier for the metadata model creation operation.</p>
+   * <p>The identifier for the creation request.</p>
    */
   inline const Aws::String& GetRequestIdentifier() const { return m_requestIdentifier; }
   template <typename RequestIdentifierT = Aws::String>

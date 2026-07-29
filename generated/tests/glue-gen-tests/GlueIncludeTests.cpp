@@ -92,6 +92,7 @@
 #include <aws/glue/model/BatchUpdatePartitionRequest.h>
 #include <aws/glue/model/BatchUpdatePartitionRequestEntry.h>
 #include <aws/glue/model/BatchUpdatePartitionResult.h>
+#include <aws/glue/model/BetweenConfiguration.h>
 #include <aws/glue/model/BinaryColumnStatisticsData.h>
 #include <aws/glue/model/Blueprint.h>
 #include <aws/glue/model/BlueprintDetails.h>
@@ -452,10 +453,14 @@
 #include <aws/glue/model/FieldName.h>
 #include <aws/glue/model/FillMissingValues.h>
 #include <aws/glue/model/Filter.h>
+#include <aws/glue/model/FilterConfiguration.h>
 #include <aws/glue/model/FilterExpression.h>
 #include <aws/glue/model/FilterLogicalOperator.h>
+#include <aws/glue/model/FilterMode.h>
 #include <aws/glue/model/FilterOperation.h>
 #include <aws/glue/model/FilterOperator.h>
+#include <aws/glue/model/FilterOverrides.h>
+#include <aws/glue/model/FilterStringConfiguration.h>
 #include <aws/glue/model/FilterValue.h>
 #include <aws/glue/model/FilterValueType.h>
 #include <aws/glue/model/FindMatchesMetrics.h>

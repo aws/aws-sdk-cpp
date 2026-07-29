@@ -34,9 +34,9 @@ class DescribeDataProvidersRequest : public DatabaseMigrationServiceRequest {
 
   ///@{
   /**
-   * <p>Filters applied to the data providers described in the form of key-value
-   * pairs.</p> <p>Valid filter names and values: data-provider-identifier, data
-   * provider arn or name</p>
+   * <p>The filters to apply to the data providers.</p> <p>The following filter names
+   * are supported:</p> <ul> <li> <p> <code>data-provider-identifier</code> – The
+   * data provider name or ARN.</p> </li> </ul>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

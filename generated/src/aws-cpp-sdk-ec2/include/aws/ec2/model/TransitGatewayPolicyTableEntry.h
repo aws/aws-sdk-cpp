@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/TransitGatewayPolicyRule.h>
+#include <aws/ec2/model/TransitGatewayPolicyTableEntryState.h>
 
 #include <utility>
 
@@ -87,15 +88,34 @@ class TransitGatewayPolicyTableEntry {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The state of the transit gateway policy table entry.</p>
+   */
+  inline TransitGatewayPolicyTableEntryState GetState() const { return m_state; }
+  inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+  inline void SetState(TransitGatewayPolicyTableEntryState value) {
+    m_stateHasBeenSet = true;
+    m_state = value;
+  }
+  inline TransitGatewayPolicyTableEntry& WithState(TransitGatewayPolicyTableEntryState value) {
+    SetState(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_policyRuleNumber;
 
   TransitGatewayPolicyRule m_policyRule;
 
   Aws::String m_targetRouteTableId;
+
+  TransitGatewayPolicyTableEntryState m_state{TransitGatewayPolicyTableEntryState::NOT_SET};
   bool m_policyRuleNumberHasBeenSet = false;
   bool m_policyRuleHasBeenSet = false;
   bool m_targetRouteTableIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
 };
 
 }  // namespace Model

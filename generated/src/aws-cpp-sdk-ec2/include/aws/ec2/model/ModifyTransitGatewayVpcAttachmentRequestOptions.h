@@ -75,7 +75,11 @@ class ModifyTransitGatewayVpcAttachmentRequestOptions {
 
   ///@{
   /**
-   * <p>Enable or disable IPv6 support. The default is <code>enable</code>.</p>
+   * <p>Specifies whether IPv6 support is enabled for the attachment. When enabled,
+   * the transit gateway network interface receives an IPv6 address. When you enable
+   * route propagation, IPv6 VPC CIDRs propagate to the transit gateway route tables.
+   * When disabled, the network interface does not receive an IPv6 address, and IPv6
+   * routes do not propagate. The setting does not filter IPv6 traffic.</p>
    */
   inline Ipv6SupportValue GetIpv6Support() const { return m_ipv6Support; }
   inline bool Ipv6SupportHasBeenSet() const { return m_ipv6SupportHasBeenSet; }

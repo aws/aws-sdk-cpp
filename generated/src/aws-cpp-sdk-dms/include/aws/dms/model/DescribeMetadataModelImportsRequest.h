@@ -52,8 +52,11 @@ class DescribeMetadataModelImportsRequest : public DatabaseMigrationServiceReque
 
   ///@{
   /**
-   * <p>Filters applied to the metadata model imports described in the form of
-   * key-value pairs.</p>
+   * <p>The filters to apply to the metadata model import requests.</p> <p>The
+   * following filter names are supported:</p> <ul> <li> <p> <code>request-id</code>
+   * – The request identifier.</p> </li> <li> <p> <code>status</code> – The request
+   * status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>,
+   * <code>SUCCESS</code>, <code>FAILED</code>.</p> </li> </ul>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
@@ -102,7 +105,10 @@ class DescribeMetadataModelImportsRequest : public DatabaseMigrationServiceReque
 
   ///@{
   /**
-   * <p>A paginated list of metadata model imports.</p>
+   * <p>The maximum number of records to include in the response. If more records
+   * exist than the specified <code>MaxRecords</code> value, DMS includes a
+   * pagination token in the response so that you can retrieve the remaining
+   * results.</p>
    */
   inline int GetMaxRecords() const { return m_maxRecords; }
   inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }

@@ -36,4 +36,10 @@ void ListBulkImportJobsRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("filter", ss.str());
     ss.str("");
   }
+
+  if (m_workspaceNameHasBeenSet) {
+    ss << m_workspaceName;
+    uri.AddQueryStringParameter("workspaceName", ss.str());
+    ss.str("");
+  }
 }

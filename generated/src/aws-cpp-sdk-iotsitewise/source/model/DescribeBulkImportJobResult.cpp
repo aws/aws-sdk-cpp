@@ -69,6 +69,14 @@ DescribeBulkImportJobResult& DescribeBulkImportJobResult::operator=(const Aws::A
     m_deleteFilesAfterImport = jsonValue.GetBool("deleteFilesAfterImport");
     m_deleteFilesAfterImportHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("datasetId")) {
+    m_datasetId = jsonValue.GetString("datasetId");
+    m_datasetIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("workspaceName")) {
+    m_workspaceName = jsonValue.GetString("workspaceName");
+    m_workspaceNameHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

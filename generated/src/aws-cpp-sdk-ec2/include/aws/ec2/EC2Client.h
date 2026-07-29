@@ -5283,6 +5283,36 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Creates an entry in a transit gateway policy table to route matching traffic
+   * to a specified route table.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPolicyTableEntry">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateTransitGatewayPolicyTableEntryOutcome CreateTransitGatewayPolicyTableEntry(
+      const Model::CreateTransitGatewayPolicyTableEntryRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateTransitGatewayPolicyTableEntry that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename CreateTransitGatewayPolicyTableEntryRequestT = Model::CreateTransitGatewayPolicyTableEntryRequest>
+  Model::CreateTransitGatewayPolicyTableEntryOutcomeCallable CreateTransitGatewayPolicyTableEntryCallable(
+      const CreateTransitGatewayPolicyTableEntryRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateTransitGatewayPolicyTableEntry, request);
+  }
+
+  /**
+   * An Async wrapper for CreateTransitGatewayPolicyTableEntry that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename CreateTransitGatewayPolicyTableEntryRequestT = Model::CreateTransitGatewayPolicyTableEntryRequest>
+  void CreateTransitGatewayPolicyTableEntryAsync(const CreateTransitGatewayPolicyTableEntryRequestT& request,
+                                                 const CreateTransitGatewayPolicyTableEntryResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateTransitGatewayPolicyTableEntry, request, handler, context);
+  }
+
+  /**
    * <p>Creates a reference (route) to a prefix list in a specified transit gateway
    * route table.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPrefixListReference">AWS
@@ -8170,6 +8200,36 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                             const DeleteTransitGatewayPolicyTableResponseReceivedHandler& handler,
                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DeleteTransitGatewayPolicyTable, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified transit gateway policy table entry.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPolicyTableEntry">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTransitGatewayPolicyTableEntryOutcome DeleteTransitGatewayPolicyTableEntry(
+      const Model::DeleteTransitGatewayPolicyTableEntryRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTransitGatewayPolicyTableEntry that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteTransitGatewayPolicyTableEntryRequestT = Model::DeleteTransitGatewayPolicyTableEntryRequest>
+  Model::DeleteTransitGatewayPolicyTableEntryOutcomeCallable DeleteTransitGatewayPolicyTableEntryCallable(
+      const DeleteTransitGatewayPolicyTableEntryRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteTransitGatewayPolicyTableEntry, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTransitGatewayPolicyTableEntry that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteTransitGatewayPolicyTableEntryRequestT = Model::DeleteTransitGatewayPolicyTableEntryRequest>
+  void DeleteTransitGatewayPolicyTableEntryAsync(const DeleteTransitGatewayPolicyTableEntryRequestT& request,
+                                                 const DeleteTransitGatewayPolicyTableEntryResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteTransitGatewayPolicyTableEntry, request, handler, context);
   }
 
   /**
@@ -22286,6 +22346,36 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                                const ModifyTransitGatewayMeteringPolicyResponseReceivedHandler& handler,
                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::ModifyTransitGatewayMeteringPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies the specified transit gateway policy table entry.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPolicyTableEntry">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyTransitGatewayPolicyTableEntryOutcome ModifyTransitGatewayPolicyTableEntry(
+      const Model::ModifyTransitGatewayPolicyTableEntryRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyTransitGatewayPolicyTableEntry that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ModifyTransitGatewayPolicyTableEntryRequestT = Model::ModifyTransitGatewayPolicyTableEntryRequest>
+  Model::ModifyTransitGatewayPolicyTableEntryOutcomeCallable ModifyTransitGatewayPolicyTableEntryCallable(
+      const ModifyTransitGatewayPolicyTableEntryRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyTransitGatewayPolicyTableEntry, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyTransitGatewayPolicyTableEntry that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ModifyTransitGatewayPolicyTableEntryRequestT = Model::ModifyTransitGatewayPolicyTableEntryRequest>
+  void ModifyTransitGatewayPolicyTableEntryAsync(const ModifyTransitGatewayPolicyTableEntryRequestT& request,
+                                                 const ModifyTransitGatewayPolicyTableEntryResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyTransitGatewayPolicyTableEntry, request, handler, context);
   }
 
   /**

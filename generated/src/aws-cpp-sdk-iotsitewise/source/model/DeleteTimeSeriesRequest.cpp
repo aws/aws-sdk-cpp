@@ -44,4 +44,10 @@ void DeleteTimeSeriesRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("propertyId", ss.str());
     ss.str("");
   }
+
+  if (m_workspaceNameHasBeenSet) {
+    ss << m_workspaceName;
+    uri.AddQueryStringParameter("workspaceName", ss.str());
+    ss.str("");
+  }
 }

@@ -44,6 +44,11 @@ GetTransitGatewayPolicyTableEntriesResponse& GetTransitGatewayPolicyTableEntries
 
       m_transitGatewayPolicyTableEntriesHasBeenSet = true;
     }
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if (!nextTokenNode.IsNull()) {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

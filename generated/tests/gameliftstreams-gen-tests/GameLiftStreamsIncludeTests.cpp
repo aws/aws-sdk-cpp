@@ -29,6 +29,8 @@
 #include <aws/gameliftstreams/model/CreateStreamSessionAdminShellResult.h>
 #include <aws/gameliftstreams/model/CreateStreamSessionConnectionRequest.h>
 #include <aws/gameliftstreams/model/CreateStreamSessionConnectionResult.h>
+#include <aws/gameliftstreams/model/CreateStreamUrlRequest.h>
+#include <aws/gameliftstreams/model/CreateStreamUrlResult.h>
 #include <aws/gameliftstreams/model/DefaultApplication.h>
 #include <aws/gameliftstreams/model/DeleteApplicationRequest.h>
 #include <aws/gameliftstreams/model/DeleteStreamGroupRequest.h>
@@ -45,6 +47,10 @@
 #include <aws/gameliftstreams/model/GetStreamGroupResult.h>
 #include <aws/gameliftstreams/model/GetStreamSessionRequest.h>
 #include <aws/gameliftstreams/model/GetStreamSessionResult.h>
+#include <aws/gameliftstreams/model/GetStreamUrlRequest.h>
+#include <aws/gameliftstreams/model/GetStreamUrlResult.h>
+#include <aws/gameliftstreams/model/ListApplicationShaderCachesRequest.h>
+#include <aws/gameliftstreams/model/ListApplicationShaderCachesResult.h>
 #include <aws/gameliftstreams/model/ListApplicationsRequest.h>
 #include <aws/gameliftstreams/model/ListApplicationsResult.h>
 #include <aws/gameliftstreams/model/ListStreamGroupsRequest.h>
@@ -53,6 +59,8 @@
 #include <aws/gameliftstreams/model/ListStreamSessionsByAccountResult.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsRequest.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsResult.h>
+#include <aws/gameliftstreams/model/ListStreamUrlsRequest.h>
+#include <aws/gameliftstreams/model/ListStreamUrlsResult.h>
 #include <aws/gameliftstreams/model/ListTagsForResourceRequest.h>
 #include <aws/gameliftstreams/model/ListTagsForResourceResult.h>
 #include <aws/gameliftstreams/model/LocationConfiguration.h>
@@ -63,8 +71,12 @@
 #include <aws/gameliftstreams/model/ReplicationStatus.h>
 #include <aws/gameliftstreams/model/ReplicationStatusType.h>
 #include <aws/gameliftstreams/model/Resolution.h>
+#include <aws/gameliftstreams/model/RevocationMode.h>
+#include <aws/gameliftstreams/model/RevokeStreamUrlRequest.h>
 #include <aws/gameliftstreams/model/RuntimeEnvironment.h>
 #include <aws/gameliftstreams/model/RuntimeEnvironmentType.h>
+#include <aws/gameliftstreams/model/ShaderCacheStatus.h>
+#include <aws/gameliftstreams/model/ShaderCacheSummary.h>
 #include <aws/gameliftstreams/model/StartStreamSessionRequest.h>
 #include <aws/gameliftstreams/model/StartStreamSessionResult.h>
 #include <aws/gameliftstreams/model/StreamClass.h>
@@ -75,6 +87,9 @@
 #include <aws/gameliftstreams/model/StreamSessionStatus.h>
 #include <aws/gameliftstreams/model/StreamSessionStatusReason.h>
 #include <aws/gameliftstreams/model/StreamSessionSummary.h>
+#include <aws/gameliftstreams/model/StreamUrlStatus.h>
+#include <aws/gameliftstreams/model/StreamUrlStatusReason.h>
+#include <aws/gameliftstreams/model/StreamUrlSummary.h>
 #include <aws/gameliftstreams/model/TagResourceRequest.h>
 #include <aws/gameliftstreams/model/TagResourceResult.h>
 #include <aws/gameliftstreams/model/TerminateStreamSessionRequest.h>

@@ -33,11 +33,14 @@ class DescribeMetadataModelChildrenRequest : public DatabaseMigrationServiceRequ
 
   ///@{
   /**
-   * <p>The JSON string that specifies which metadata model's children to retrieve.
-   * Only one selection rule with "rule-action": "explicit" can be provided. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.Selections.html">Selection
-   * Rules</a> in the DMS User Guide.</p>
+   * <p>A JSON string that identifies the metadata model whose children to retrieve.
+   * For the selection rule format and examples, see <a
+   * href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection
+   * rules in DMS Schema Conversion</a>.</p> <p>Usage:</p> <ul> <li> <p>Accepts
+   * source or target selection rules depending on the <code>Origin</code> parameter.
+   * The <code>server-name</code> in the object locator must match the corresponding
+   * data provider.</p> </li> <li> <p>Supports only <code>explicit</code> rule
+   * actions.</p> </li> <li> <p>Exactly one rule is allowed.</p> </li> </ul>
    */
   inline const Aws::String& GetSelectionRules() const { return m_selectionRules; }
   inline bool SelectionRulesHasBeenSet() const { return m_selectionRulesHasBeenSet; }

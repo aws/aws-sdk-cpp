@@ -50,9 +50,15 @@ class GetTargetSelectionRulesRequest : public DatabaseMigrationServiceRequest {
 
   ///@{
   /**
-   * <p>The JSON string representing the source selection rules for conversion.
-   * Selection rules must contain only supported metadata model types. For more
-   * information, see Selection Rules in the DMS User Guide.</p>
+   * <p>A JSON string that contains the source selection rules to convert into their
+   * target counterparts. For the selection rule format and examples, see <a
+   * href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection
+   * rules in DMS Schema Conversion</a>.</p> <p>Usage:</p> <ul> <li> <p>Accepts only
+   * source selection rules, where <code>server-name</code> in the object locator
+   * matches the source data provider.</p> </li> <li> <p>Supports only
+   * <code>explicit</code> rule actions.</p> </li> <li> <p>Does not support
+   * <code>category-name</code> in the object locator.</p> </li> <li> <p>Up to 10
+   * rules are allowed.</p> </li> </ul>
    */
   inline const Aws::String& GetSelectionRules() const { return m_selectionRules; }
   inline bool SelectionRulesHasBeenSet() const { return m_selectionRulesHasBeenSet; }

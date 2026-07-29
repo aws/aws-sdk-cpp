@@ -32,7 +32,17 @@ enum class TextTransformationType {
   REPLACE_NULLS,
   BASE64_DECODE_EXT,
   URL_DECODE_UNI,
-  UTF8_TO_UNICODE
+  UTF8_TO_UNICODE,
+  REMOVE_WHITESPACE,
+  TRIM,
+  TRIM_LEFT,
+  TRIM_RIGHT,
+  REMOVE_COMMENTS_CHAR,
+  UPPERCASE,
+  CMD_LINE_WIN,
+  CMD_LINE_UNIX,
+  JS_DECODE_EXT,
+  SHA256
 };
 
 namespace TextTransformationTypeMapper {

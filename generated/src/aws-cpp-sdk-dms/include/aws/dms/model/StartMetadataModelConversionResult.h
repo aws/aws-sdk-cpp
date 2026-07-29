@@ -31,7 +31,7 @@ class StartMetadataModelConversionResult {
 
   ///@{
   /**
-   * <p>The identifier for the conversion operation.</p>
+   * <p>The identifier for the conversion request.</p>
    */
   inline const Aws::String& GetRequestIdentifier() const { return m_requestIdentifier; }
   template <typename RequestIdentifierT = Aws::String>

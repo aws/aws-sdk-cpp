@@ -37,6 +37,10 @@ UpdateAssetModelCompositeModelResult& UpdateAssetModelCompositeModelResult::oper
     m_assetModelStatus = jsonValue.GetObject("assetModelStatus");
     m_assetModelStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("assetModelId")) {
+    m_assetModelId = jsonValue.GetString("assetModelId");
+    m_assetModelIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

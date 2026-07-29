@@ -20,6 +20,9 @@ static const int INTEGER_HASH = HashingUtils::HashString("INTEGER");
 static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
 static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
 static const int STRUCT_HASH = HashingUtils::HashString("STRUCT");
+static const int VIDEO_HASH = HashingUtils::HashString("VIDEO");
+static const int ANNOTATION_HASH = HashingUtils::HashString("ANNOTATION");
+static const int JSON_HASH = HashingUtils::HashString("JSON");
 
 PropertyDataType GetPropertyDataTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +36,12 @@ PropertyDataType GetPropertyDataTypeForName(const Aws::String& name) {
     return PropertyDataType::BOOLEAN;
   } else if (hashCode == STRUCT_HASH) {
     return PropertyDataType::STRUCT;
+  } else if (hashCode == VIDEO_HASH) {
+    return PropertyDataType::VIDEO;
+  } else if (hashCode == ANNOTATION_HASH) {
+    return PropertyDataType::ANNOTATION;
+  } else if (hashCode == JSON_HASH) {
+    return PropertyDataType::JSON;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +66,12 @@ Aws::String GetNameForPropertyDataType(PropertyDataType enumValue) {
       return "BOOLEAN";
     case PropertyDataType::STRUCT:
       return "STRUCT";
+    case PropertyDataType::VIDEO:
+      return "VIDEO";
+    case PropertyDataType::ANNOTATION:
+      return "ANNOTATION";
+    case PropertyDataType::JSON:
+      return "JSON";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

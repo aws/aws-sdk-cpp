@@ -16,11 +16,14 @@ namespace Model {
 namespace DatasetSourceFormatMapper {
 
 static const int KNOWLEDGE_BASE_HASH = HashingUtils::HashString("KNOWLEDGE_BASE");
+static const int TIMESERIES_HASH = HashingUtils::HashString("TIMESERIES");
 
 DatasetSourceFormat GetDatasetSourceFormatForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == KNOWLEDGE_BASE_HASH) {
     return DatasetSourceFormat::KNOWLEDGE_BASE;
+  } else if (hashCode == TIMESERIES_HASH) {
+    return DatasetSourceFormat::TIMESERIES;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForDatasetSourceFormat(DatasetSourceFormat enumValue) {
       return {};
     case DatasetSourceFormat::KNOWLEDGE_BASE:
       return "KNOWLEDGE_BASE";
+    case DatasetSourceFormat::TIMESERIES:
+      return "TIMESERIES";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

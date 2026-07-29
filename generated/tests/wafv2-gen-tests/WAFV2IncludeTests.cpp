@@ -236,6 +236,8 @@
 #include <aws/wafv2/model/PhoneNumberField.h>
 #include <aws/wafv2/model/Platform.h>
 #include <aws/wafv2/model/PositionalConstraint.h>
+#include <aws/wafv2/model/PreParseTextTransformation.h>
+#include <aws/wafv2/model/PreParseTextTransformationType.h>
 #include <aws/wafv2/model/Price.h>
 #include <aws/wafv2/model/PutLoggingConfigurationRequest.h>
 #include <aws/wafv2/model/PutLoggingConfigurationResult.h>

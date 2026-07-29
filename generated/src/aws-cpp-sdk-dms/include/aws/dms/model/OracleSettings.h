@@ -584,12 +584,11 @@ class OracleSettings {
   ///@{
   /**
    * <p>For an Oracle source endpoint, the transparent data encryption (TDE) password
-   * required by AWM DMS to access Oracle redo logs encrypted by TDE using Binary
-   * Reader. It is also the <code> <i>TDE_Password</i> </code> part of the
-   * comma-separated value you set to the <code>Password</code> request parameter
-   * when you create the endpoint. The <code>SecurityDbEncryptian</code> setting is
-   * related to this <code>SecurityDbEncryptionName</code> setting. For more
-   * information, see <a
+   * required by DMS to access Oracle redo logs encrypted by TDE using Binary Reader.
+   * It is also the <code> <i>TDE_Password</i> </code> part of the comma-separated
+   * value you set to the <code>Password</code> request parameter when you create the
+   * endpoint. The <code>SecurityDbEncryption</code> setting is related to this
+   * <code>SecurityDbEncryptionName</code> setting. For more information, see <a
    * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
    * Supported encryption methods for using Oracle as a source for DMS </a> in the
    * <i>Database Migration Service User Guide</i>. </p>

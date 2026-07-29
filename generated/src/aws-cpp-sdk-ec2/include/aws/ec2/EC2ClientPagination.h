@@ -166,6 +166,7 @@
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayPolicyTableAssociationsPaginationTraits.h>
+#include <aws/ec2/model/GetTransitGatewayPolicyTableEntriesPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayPrefixListReferencesPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTableAssociationsPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTablePropagationsPaginationTraits.h>
@@ -614,6 +615,9 @@ using GetTransitGatewayMulticastDomainAssociationsPaginator =
 using GetTransitGatewayPolicyTableAssociationsPaginator =
     Aws::Utils::Pagination::Paginator<EC2Client, Model::GetTransitGatewayPolicyTableAssociationsRequest,
                                       Pagination::GetTransitGatewayPolicyTableAssociationsPaginationTraits<EC2Client>>;
+using GetTransitGatewayPolicyTableEntriesPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetTransitGatewayPolicyTableEntriesRequest,
+                                      Pagination::GetTransitGatewayPolicyTableEntriesPaginationTraits<EC2Client>>;
 using GetTransitGatewayPrefixListReferencesPaginator =
     Aws::Utils::Pagination::Paginator<EC2Client, Model::GetTransitGatewayPrefixListReferencesRequest,
                                       Pagination::GetTransitGatewayPrefixListReferencesPaginationTraits<EC2Client>>;

@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
+#include <aws/iotsitewise/model/Annotation.h>
 #include <aws/iotsitewise/model/Csv.h>
+#include <aws/iotsitewise/model/Mp4.h>
 #include <aws/iotsitewise/model/Parquet.h>
 
 #include <utility>
@@ -67,12 +69,54 @@ class FileFormat {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The MP4 format configuration.</p>
+   */
+  inline const Mp4& GetMp4() const { return m_mp4; }
+  inline bool Mp4HasBeenSet() const { return m_mp4HasBeenSet; }
+  template <typename Mp4T = Mp4>
+  void SetMp4(Mp4T&& value) {
+    m_mp4HasBeenSet = true;
+    m_mp4 = std::forward<Mp4T>(value);
+  }
+  template <typename Mp4T = Mp4>
+  FileFormat& WithMp4(Mp4T&& value) {
+    SetMp4(std::forward<Mp4T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The annotation format configuration.</p>
+   */
+  inline const Annotation& GetAnnotation() const { return m_annotation; }
+  inline bool AnnotationHasBeenSet() const { return m_annotationHasBeenSet; }
+  template <typename AnnotationT = Annotation>
+  void SetAnnotation(AnnotationT&& value) {
+    m_annotationHasBeenSet = true;
+    m_annotation = std::forward<AnnotationT>(value);
+  }
+  template <typename AnnotationT = Annotation>
+  FileFormat& WithAnnotation(AnnotationT&& value) {
+    SetAnnotation(std::forward<AnnotationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Csv m_csv;
 
   Parquet m_parquet;
+
+  Mp4 m_mp4;
+
+  Annotation m_annotation;
   bool m_csvHasBeenSet = false;
   bool m_parquetHasBeenSet = false;
+  bool m_mp4HasBeenSet = false;
+  bool m_annotationHasBeenSet = false;
 };
 
 }  // namespace Model

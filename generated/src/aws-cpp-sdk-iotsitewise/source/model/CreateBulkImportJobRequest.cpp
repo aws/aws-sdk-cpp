@@ -47,5 +47,13 @@ Aws::String CreateBulkImportJobRequest::SerializePayload() const {
     payload.WithBool("deleteFilesAfterImport", m_deleteFilesAfterImport);
   }
 
+  if (m_datasetIdHasBeenSet) {
+    payload.WithString("datasetId", m_datasetId);
+  }
+
+  if (m_workspaceNameHasBeenSet) {
+    payload.WithString("workspaceName", m_workspaceName);
+  }
+
   return payload.View().WriteReadable();
 }

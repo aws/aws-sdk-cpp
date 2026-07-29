@@ -11,6 +11,9 @@
 #include <utility>
 
 namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
 namespace IoTSiteWise {
 namespace Model {
 
@@ -27,6 +30,8 @@ class DescribeDatasetRequest : public IoTSiteWiseRequest {
   inline virtual const char* GetServiceRequestName() const override { return "DescribeDataset"; }
 
   AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
+
+  AWS_IOTSITEWISE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
   /**
@@ -45,9 +50,51 @@ class DescribeDatasetRequest : public IoTSiteWiseRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the workspace that contains the dataset.</p>
+   */
+  inline const Aws::String& GetWorkspaceName() const { return m_workspaceName; }
+  inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
+  template <typename WorkspaceNameT = Aws::String>
+  void SetWorkspaceName(WorkspaceNameT&& value) {
+    m_workspaceNameHasBeenSet = true;
+    m_workspaceName = std::forward<WorkspaceNameT>(value);
+  }
+  template <typename WorkspaceNameT = Aws::String>
+  DescribeDatasetRequest& WithWorkspaceName(WorkspaceNameT&& value) {
+    SetWorkspaceName(std::forward<WorkspaceNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version of the dataset.</p>
+   */
+  inline const Aws::String& GetDatasetVersion() const { return m_datasetVersion; }
+  inline bool DatasetVersionHasBeenSet() const { return m_datasetVersionHasBeenSet; }
+  template <typename DatasetVersionT = Aws::String>
+  void SetDatasetVersion(DatasetVersionT&& value) {
+    m_datasetVersionHasBeenSet = true;
+    m_datasetVersion = std::forward<DatasetVersionT>(value);
+  }
+  template <typename DatasetVersionT = Aws::String>
+  DescribeDatasetRequest& WithDatasetVersion(DatasetVersionT&& value) {
+    SetDatasetVersion(std::forward<DatasetVersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_datasetId;
+
+  Aws::String m_workspaceName;
+
+  Aws::String m_datasetVersion;
   bool m_datasetIdHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
+  bool m_datasetVersionHasBeenSet = false;
 };
 
 }  // namespace Model

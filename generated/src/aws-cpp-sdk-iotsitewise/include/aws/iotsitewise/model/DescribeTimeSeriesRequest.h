@@ -94,15 +94,36 @@ class DescribeTimeSeriesRequest : public IoTSiteWiseRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the workspace.</p>
+   */
+  inline const Aws::String& GetWorkspaceName() const { return m_workspaceName; }
+  inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
+  template <typename WorkspaceNameT = Aws::String>
+  void SetWorkspaceName(WorkspaceNameT&& value) {
+    m_workspaceNameHasBeenSet = true;
+    m_workspaceName = std::forward<WorkspaceNameT>(value);
+  }
+  template <typename WorkspaceNameT = Aws::String>
+  DescribeTimeSeriesRequest& WithWorkspaceName(WorkspaceNameT&& value) {
+    SetWorkspaceName(std::forward<WorkspaceNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_alias;
 
   Aws::String m_assetId;
 
   Aws::String m_propertyId;
+
+  Aws::String m_workspaceName;
   bool m_aliasHasBeenSet = false;
   bool m_assetIdHasBeenSet = false;
   bool m_propertyIdHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
 };
 
 }  // namespace Model

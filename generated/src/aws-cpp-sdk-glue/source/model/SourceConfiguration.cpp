@@ -41,6 +41,10 @@ SourceConfiguration& SourceConfiguration::operator=(JsonView jsonValue) {
     m_paginationConfiguration = jsonValue.GetObject("PaginationConfiguration");
     m_paginationConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FilterConfiguration")) {
+    m_filterConfiguration = jsonValue.GetObject("FilterConfiguration");
+    m_filterConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,6 +73,10 @@ JsonValue SourceConfiguration::Jsonize() const {
 
   if (m_paginationConfigurationHasBeenSet) {
     payload.WithObject("PaginationConfiguration", m_paginationConfiguration.Jsonize());
+  }
+
+  if (m_filterConfigurationHasBeenSet) {
+    payload.WithObject("FilterConfiguration", m_filterConfiguration.Jsonize());
   }
 
   return payload;

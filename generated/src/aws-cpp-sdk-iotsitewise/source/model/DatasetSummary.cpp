@@ -34,6 +34,14 @@ DatasetSummary& DatasetSummary::operator=(JsonView jsonValue) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sourceType")) {
+    m_sourceType = DatasetSourceTypeMapper::GetDatasetSourceTypeForName(jsonValue.GetString("sourceType"));
+    m_sourceTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("datasetType")) {
+    m_datasetType = DatasetTypeEnumMapper::GetDatasetTypeEnumForName(jsonValue.GetString("datasetType"));
+    m_datasetTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("creationDate")) {
     m_creationDate = jsonValue.GetDouble("creationDate");
     m_creationDateHasBeenSet = true;
@@ -45,6 +53,10 @@ DatasetSummary& DatasetSummary::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetObject("status");
     m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("enrichmentStatus")) {
+    m_enrichmentStatus = jsonValue.GetObject("enrichmentStatus");
+    m_enrichmentStatusHasBeenSet = true;
   }
   return *this;
 }
@@ -68,6 +80,14 @@ JsonValue DatasetSummary::Jsonize() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_sourceTypeHasBeenSet) {
+    payload.WithString("sourceType", DatasetSourceTypeMapper::GetNameForDatasetSourceType(m_sourceType));
+  }
+
+  if (m_datasetTypeHasBeenSet) {
+    payload.WithString("datasetType", DatasetTypeEnumMapper::GetNameForDatasetTypeEnum(m_datasetType));
+  }
+
   if (m_creationDateHasBeenSet) {
     payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
   }
@@ -78,6 +98,10 @@ JsonValue DatasetSummary::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithObject("status", m_status.Jsonize());
+  }
+
+  if (m_enrichmentStatusHasBeenSet) {
+    payload.WithObject("enrichmentStatus", m_enrichmentStatus.Jsonize());
   }
 
   return payload;

@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeSecurityGroupVpcAssociationsRequest.h>
+#include <aws/ec2/model/DescribeSecurityGroupsRequest.h>
 #include <aws/ec2/model/DescribeServiceLinkVirtualInterfacesRequest.h>
 #include <aws/ec2/model/DescribeSnapshotAttributeRequest.h>
 #include <aws/ec2/model/DescribeSnapshotTierStatusRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/DisassociateRouteTableRequest.h>
 #include <aws/ec2/model/DisassociateSecurityGroupVpcRequest.h>
 #include <aws/ec2/model/DisassociateSubnetCidrBlockRequest.h>
-#include <aws/ec2/model/DisassociateTransitGatewayMulticastDomainRequest.h>
-#include <aws/ec2/model/DisassociateTransitGatewayPolicyTableRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,19 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeSecurityGroupVpcAssociationsOutcome EC2Client::DescribeSecurityGroupVpcAssociations(
+    const DescribeSecurityGroupVpcAssociationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSecurityGroupVpcAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeSecurityGroupVpcAssociationsOutcome(std::move(result.GetError()));
+}
+
+DescribeSecurityGroupsOutcome EC2Client::DescribeSecurityGroups(const DescribeSecurityGroupsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSecurityGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeSecurityGroupsOutcome(std::move(result.GetError()));
+}
 
 DescribeServiceLinkVirtualInterfacesOutcome EC2Client::DescribeServiceLinkVirtualInterfaces(
     const DescribeServiceLinkVirtualInterfacesRequest& request) const {
@@ -755,18 +768,4 @@ DisassociateSubnetCidrBlockOutcome EC2Client::DisassociateSubnetCidrBlock(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisassociateSubnetCidrBlockOutcome(result.GetResultWithOwnership())
                             : DisassociateSubnetCidrBlockOutcome(std::move(result.GetError()));
-}
-
-DisassociateTransitGatewayMulticastDomainOutcome EC2Client::DisassociateTransitGatewayMulticastDomain(
-    const DisassociateTransitGatewayMulticastDomainRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisassociateTransitGatewayMulticastDomainOutcome(result.GetResultWithOwnership())
-                            : DisassociateTransitGatewayMulticastDomainOutcome(std::move(result.GetError()));
-}
-
-DisassociateTransitGatewayPolicyTableOutcome EC2Client::DisassociateTransitGatewayPolicyTable(
-    const DisassociateTransitGatewayPolicyTableRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisassociateTransitGatewayPolicyTableOutcome(result.GetResultWithOwnership())
-                            : DisassociateTransitGatewayPolicyTableOutcome(std::move(result.GetError()));
 }

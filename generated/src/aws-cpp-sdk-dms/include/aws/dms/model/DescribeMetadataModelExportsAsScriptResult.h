@@ -57,7 +57,7 @@ class DescribeMetadataModelExportsAsScriptResult {
 
   ///@{
   /**
-   * <p>A paginated list of metadata model exports.</p>
+   * <p>A paginated list of metadata model export requests.</p>
    */
   inline const Aws::Vector<SchemaConversionRequest>& GetRequests() const { return m_requests; }
   template <typename RequestsT = Aws::Vector<SchemaConversionRequest>>

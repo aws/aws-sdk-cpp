@@ -196,7 +196,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
 
   /**
    * <p>Cancels a single metadata model conversion operation that was started with
-   * <code>StartMetadataModelConversion</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>StartMetadataModelConversion</code>.</p> <p> <b>Required permissions:</b>
+   * <code>dms:CancelMetadataModelConversion</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelConversion">AWS
    * API Reference</a></p>
    */
@@ -226,7 +230,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
 
   /**
    * <p>Cancels a single metadata model creation operation that was started with
-   * <code>StartMetadataModelCreation</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>StartMetadataModelCreation</code>.</p> <p> <b>Required permissions:</b>
+   * <code>dms:CancelMetadataModelCreation</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelCreation">AWS
    * API Reference</a></p>
    */
@@ -315,7 +323,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
 
   /**
    * <p>Creates a data provider using the provided settings. A data provider stores a
-   * data store type and location information about your database. </p><p><h3>See
+   * data store type and location information about your database. </p> <p>
+   * <b>Required permissions:</b> <code>dms:CreateDataProvider</code>. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateDataProvider">AWS
    * API Reference</a></p>
@@ -453,7 +465,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Creates the instance profile using the specified parameters.</p><p><h3>See
+   * <p>Creates the instance profile using the specified parameters.</p> <p>
+   * <b>Required permissions:</b> <code>dms:CreateInstanceProfile</code>. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateInstanceProfile">AWS
    * API Reference</a></p>
@@ -486,7 +502,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
    * using <a
    * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateInstanceProfile.html">CreateInstanceProfile</a>
    * and <a
-   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateDataProvider.html">CreateDataProvider</a>.</p><p><h3>See
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateDataProvider.html">CreateDataProvider</a>.</p>
+   * <p> <b>Required permissions:</b> <code>dms:CreateMigrationProject</code>. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateMigrationProject">AWS
    * API Reference</a></p>
@@ -729,9 +749,13 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Deletes the specified data provider.</p>  <p>All migration projects
-   * associated with the data provider must be deleted or modified before you can
-   * delete the data provider.</p> <p><h3>See Also:</h3>   <a
+   * <p>Deletes the specified data provider.</p> <p> <b>Required permissions:</b>
+   * <code>dms:DeleteDataProvider</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p>
+   * <p>All migration projects associated with the data provider must be deleted or
+   * modified before you can delete the data provider.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteDataProvider">AWS
    * API Reference</a></p>
    */
@@ -883,9 +907,13 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Deletes the specified instance profile.</p>  <p>All migration projects
-   * associated with the instance profile must be deleted or modified before you can
-   * delete the instance profile.</p> <p><h3>See Also:</h3>   <a
+   * <p>Deletes the specified instance profile.</p> <p> <b>Required permissions:</b>
+   * <code>dms:DeleteInstanceProfile</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p>
+   * <p>All migration projects associated with the instance profile must be deleted
+   * or modified before you can delete the instance profile.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteInstanceProfile">AWS
    * API Reference</a></p>
    */
@@ -911,8 +939,12 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Deletes the specified migration project.</p>  <p>The migration project
-   * must be closed before you can delete it.</p> <p><h3>See Also:</h3>   <a
+   * <p>Deletes the specified migration project.</p> <p> <b>Required permissions:</b>
+   * <code>dms:DeleteMigrationProject</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p>
+   * <p>The migration project must be closed before you can delete it.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteMigrationProject">AWS
    * API Reference</a></p>
    */
@@ -1224,8 +1256,12 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Returns configuration parameters for a schema conversion
-   * project.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns configuration parameters for a schema conversion project.</p> <p>
+   * <b>Required permissions:</b> <code>dms:DescribeConversionConfiguration</code>.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConversionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -1282,7 +1318,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
 
   /**
    * <p>Returns a paginated list of data providers for your account in the current
-   * region.</p><p><h3>See Also:</h3>   <a
+   * region.</p> <p> <b>Required permissions:</b> <code>dms:ListDataProviders</code>.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeDataProviders">AWS
    * API Reference</a></p>
    */
@@ -1517,10 +1557,14 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Returns a paginated list of extension pack associations for the specified
-   * migration project. An extension pack is an add-on module that emulates functions
-   * present in a source database that are required when converting objects to the
-   * target database.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns a paginated list of extension pack installation requests for a
+   * migration project, initiated by <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartExtensionPackAssociation.html">StartExtensionPackAssociation</a>.</p>
+   * <p> <b>Required permissions:</b> <code>dms:ListExtensionPacks</code>. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeExtensionPackAssociations">AWS
    * API Reference</a></p>
    */
@@ -1734,7 +1778,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
 
   /**
    * <p>Returns a paginated list of instance profiles for your account in the current
-   * region.</p><p><h3>See Also:</h3>   <a
+   * region.</p> <p> <b>Required permissions:</b>
+   * <code>dms:ListInstanceProfiles</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeInstanceProfiles">AWS
    * API Reference</a></p>
    */
@@ -1764,7 +1812,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   /**
    * <p>Gets detailed information about the specified metadata model, including its
    * definition and corresponding converted objects in the target database if
-   * applicable.</p><p><h3>See Also:</h3>   <a
+   * applicable.</p> <p> <b>Required permissions:</b>
+   * <code>dms:DescribeMetadataModel</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModel">AWS
    * API Reference</a></p>
    */
@@ -1790,8 +1842,14 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Returns a paginated list of metadata model assessments for your account in
-   * the current region.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns a paginated list of metadata model assessment requests for a
+   * migration project, initiated by <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelAssessment.html">StartMetadataModelAssessment</a>.</p>
+   * <p> <b>Required permissions:</b> <code>dms:ListMetadataModelAssessments</code>.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelAssessments">AWS
    * API Reference</a></p>
    */
@@ -1821,7 +1879,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
 
   /**
    * <p>Gets a list of child metadata models for the specified metadata model in the
-   * database hierarchy.</p><p><h3>See Also:</h3>   <a
+   * database hierarchy.</p> <p> <b>Required permissions:</b>
+   * <code>dms:DescribeMetadataModelChildren</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelChildren">AWS
    * API Reference</a></p>
    */
@@ -1850,8 +1912,16 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Returns a paginated list of metadata model conversions for a migration
-   * project.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns a paginated list of metadata model conversion requests for a
+   * migration project, initiated by <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelConversion.html">StartMetadataModelConversion</a>.</p>
+   * <p>To cancel a queued or in-progress request, call <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CancelMetadataModelConversion.html">CancelMetadataModelConversion</a>.</p>
+   * <p> <b>Required permissions:</b> <code>dms:ListMetadataModelConversions</code>.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelConversions">AWS
    * API Reference</a></p>
    */
@@ -1881,7 +1951,15 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
 
   /**
    * <p>Returns a paginated list of metadata model creation requests for a migration
-   * project.</p><p><h3>See Also:</h3>   <a
+   * project, initiated by <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelCreation.html">StartMetadataModelCreation</a>.</p>
+   * <p>To cancel a queued or in-progress request, call <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CancelMetadataModelCreation.html">CancelMetadataModelCreation</a>.</p>
+   * <p> <b>Required permissions:</b>
+   * <code>dms:DescribeMetadataModelCreations</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelCreations">AWS
    * API Reference</a></p>
    */
@@ -1910,8 +1988,14 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Returns a paginated list of metadata model exports.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Returns a paginated list of metadata model export requests for a migration
+   * project, initiated by <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportAsScript.html">StartMetadataModelExportAsScript</a>.</p>
+   * <p> <b>Required permissions:</b> <code>dms:ListMetadataModelExports</code>. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsAsScript">AWS
    * API Reference</a></p>
    */
@@ -1940,8 +2024,14 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Returns a paginated list of metadata model exports.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Returns a paginated list of metadata model export requests for a migration
+   * project, initiated by <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportToTarget.html">StartMetadataModelExportToTarget</a>.</p>
+   * <p> <b>Required permissions:</b> <code>dms:ListMetadataModelExports</code>. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsToTarget">AWS
    * API Reference</a></p>
    */
@@ -1970,8 +2060,14 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Returns a paginated list of metadata model imports.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Returns a paginated list of metadata model import requests for a migration
+   * project, initiated by <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelImport.html">StartMetadataModelImport</a>.</p>
+   * <p> <b>Required permissions:</b> <code>dms:DescribeMetadataModelImports</code>.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelImports">AWS
    * API Reference</a></p>
    */
@@ -2001,7 +2097,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
 
   /**
    * <p>Returns a paginated list of migration projects for your account in the
-   * current region.</p><p><h3>See Also:</h3>   <a
+   * current region.</p> <p> <b>Required permissions:</b>
+   * <code>dms:ListMigrationProjects</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMigrationProjects">AWS
    * API Reference</a></p>
    */
@@ -2561,7 +2661,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   /**
    * <p>Saves a copy of a database migration assessment report to your Amazon S3
    * bucket. DMS can save your assessment report as a comma-separated value (CSV) or
-   * a PDF file. </p><p><h3>See Also:</h3>   <a
+   * a PDF file. </p> <p> <b>Required permissions:</b>
+   * <code>dms:ExportMetadataModelAssessment</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ExportMetadataModelAssessment">AWS
    * API Reference</a></p>
    */
@@ -2591,7 +2695,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
 
   /**
    * <p>Converts source selection rules into their target counterparts for schema
-   * conversion operations.</p><p><h3>See Also:</h3>   <a
+   * conversion operations.</p> <p> <b>Required permissions:</b>
+   * <code>dms:GetTargetSelectionRules</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/GetTargetSelectionRules">AWS
    * API Reference</a></p>
    */
@@ -2675,7 +2783,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
 
   /**
    * <p>Modifies the specified schema conversion configuration using the provided
-   * parameters. </p><p><h3>See Also:</h3>   <a
+   * parameters. </p> <p> <b>Required permissions:</b>
+   * <code>dms:UpdateConversionConfiguration</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyConversionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2730,7 +2842,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Modifies the specified data provider using the provided settings.</p>
+   * <p>Modifies the specified data provider using the provided settings.</p> <p>
+   * <b>Required permissions:</b> <code>dms:UpdateDataProvider</code>. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p>
    * <p>You must remove the data provider from all migration projects before you can
    * modify it.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyDataProvider">AWS
@@ -2818,9 +2934,13 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
 
   /**
    * <p>Modifies the specified instance profile using the provided parameters.</p>
-   *  <p>All migration projects associated with the instance profile must be
-   * deleted or modified before you can modify the instance profile.</p>
-   * <p><h3>See Also:</h3>   <a
+   * <p> <b>Required permissions:</b> <code>dms:UpdateInstanceProfile</code>. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p>
+   * <p>All migration projects associated with the instance profile must be deleted
+   * or modified before you can modify the instance profile.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyInstanceProfile">AWS
    * API Reference</a></p>
    */
@@ -2847,7 +2967,11 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
 
   /**
    * <p>Modifies the specified migration project using the provided parameters.</p>
-   *  <p>The migration project must be closed before you can modify it.</p>
+   * <p> <b>Required permissions:</b> <code>dms:UpdateMigrationProject</code>. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p>
+   * <p>The migration project must be closed before you can modify it.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyMigrationProject">AWS
    * API Reference</a></p>
@@ -3240,9 +3364,22 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Applies the extension pack to your target database. An extension pack is an
-   * add-on module that emulates functions present in a source database that are
-   * required when converting objects to the target database. </p><p><h3>See
+   * <p>Queues the installation of the extension pack on your target database. If
+   * other requests created by <code>Start*</code> operations are already in the
+   * migration project's queue, the installation begins after they complete.</p>
+   * <p>This operation requires a non-virtual target data provider.</p> <p>If the
+   * extension pack already exists, the operation reinstalls it. To ensure
+   * compatibility, reconvert your database objects if the version has changed since
+   * your last conversion. For more information, see <a
+   * href="https://docs.aws.amazon.com/dms/latest/userguide/extension-pack.html">Using
+   * extension packs in DMS Schema Conversion</a>.</p> <p>To check the status of the
+   * request, call <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeExtensionPackAssociations.html">DescribeExtensionPackAssociations</a>
+   * using the returned <code>RequestIdentifier</code> as a filter.</p> <p>
+   * <b>Required permissions:</b> <code>dms:AssociateExtensionPack</code>. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartExtensionPackAssociation">AWS
    * API Reference</a></p>
@@ -3272,11 +3409,27 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Creates a database migration assessment report by assessing the migration
-   * complexity for your source database. A database migration assessment report
-   * summarizes all of the schema conversion tasks. It also details the action items
-   * for database objects that can't be converted to the database engine of your
-   * target database instance. </p><p><h3>See Also:</h3>   <a
+   * <p>Queues an assessment of the selected source metadata models (database objects
+   * such as tables, views, and procedures) to evaluate conversion complexity to the
+   * target database format. If other requests created by <code>Start*</code>
+   * operations are already in the migration project's queue, the assessment begins
+   * after they complete.</p> <p>The assessment request loads metadata models that
+   * are not yet in the metadata tree, but does not reload metadata models that are
+   * already present. If your source database has changed since the metadata was
+   * loaded, refresh the affected metadata models with <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelImport.html">StartMetadataModelImport</a>
+   * before calling this operation.</p> <p>To check the status of the assessment
+   * request, call <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelAssessments.html">DescribeMetadataModelAssessments</a>
+   * using the returned <code>RequestIdentifier</code> as a filter.</p> <p>To export
+   * the conversion assessment report after the request completes successfully, call
+   * <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ExportMetadataModelAssessment.html">ExportMetadataModelAssessment</a>.</p>
+   * <p> <b>Required permissions:</b> <code>dms:StartMetadataModelAssessment</code>.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelAssessment">AWS
    * API Reference</a></p>
    */
@@ -3305,8 +3458,44 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Converts your source database objects to a format compatible with the target
-   * database. </p><p><h3>See Also:</h3>   <a
+   * <p>Queues a conversion of the selected source metadata models (database objects
+   * such as tables, views, and procedures) to the target database format. If other
+   * requests created by <code>Start*</code> operations are already in the migration
+   * project's queue, the conversion begins after they complete.</p> <p>The
+   * conversion request loads metadata models that are not yet in the metadata tree,
+   * but does not reload metadata models that are already present. If your source
+   * database has changed since the metadata was loaded, refresh the affected
+   * metadata models with <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelImport.html">StartMetadataModelImport</a>
+   * before calling this operation.</p>  <p>If converted objects already exist
+   * in the target metadata tree, the conversion overwrites them, including any
+   * manual edits.</p>  <p>To check the status of the conversion request, call
+   * <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelConversions.html">DescribeMetadataModelConversions</a>
+   * using the returned <code>RequestIdentifier</code> as a filter.</p> <p>To cancel
+   * a queued or in-progress request, call <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CancelMetadataModelConversion.html">CancelMetadataModelConversion</a>
+   * with the returned <code>RequestIdentifier</code>.</p> <p>After the conversion
+   * completes successfully:</p> <ul> <li> <p>To export a post-conversion assessment
+   * report, call <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ExportMetadataModelAssessment.html">ExportMetadataModelAssessment</a>.</p>
+   * </li> <li> <p>To retrieve converted code, use any of the following options:</p>
+   * <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModel.html">DescribeMetadataModel</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelChildren.html">DescribeMetadataModelChildren</a>
+   * – navigate the target metadata tree and retrieve converted definitions.</p>
+   * </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportAsScript.html">StartMetadataModelExportAsScript</a>
+   * – export as data definition language (DDL) scripts to your Amazon S3 bucket.</p>
+   * </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportToTarget.html">StartMetadataModelExportToTarget</a>
+   * – apply directly to your target database.</p> </li> </ul> </li> </ul> <p>
+   * <b>Required permissions:</b> <code>dms:StartMetadataModelConversion</code>. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelConversion">AWS
    * API Reference</a></p>
    */
@@ -3335,10 +3524,29 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Creates source metadata model of the given type with the specified properties
-   * for schema conversion operations.</p>  <p>This action supports only these
-   * directions: from SQL Server to Aurora PostgreSQL, or from SQL Server to RDS for
-   * PostgreSQL.</p> <p><h3>See Also:</h3>   <a
+   * <p>Queues the creation of a metadata model in the source metadata tree. If other
+   * requests created by <code>Start*</code> operations are already in the migration
+   * project's queue, the creation begins after they complete.</p>  <p>This
+   * operation supports only Microsoft SQL Server to Aurora PostgreSQL and Microsoft
+   * SQL Server to Amazon RDS for PostgreSQL conversion paths.</p>  <p>To
+   * check the status of the creation request, call <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelCreations.html">DescribeMetadataModelCreations</a>
+   * using the returned <code>RequestIdentifier</code> as a filter.</p> <p>To cancel
+   * a queued or in-progress request, call <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CancelMetadataModelCreation.html">CancelMetadataModelCreation</a>
+   * with the returned <code>RequestIdentifier</code>.</p>  <p>Calling <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelImport.html">StartMetadataModelImport</a>
+   * with <code>Refresh</code> deletes metadata models created by this operation.</p>
+   *  <p>After the creation completes successfully:</p> <ul> <li> <p>To
+   * evaluate conversion complexity, call <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelAssessment.html">StartMetadataModelAssessment</a>.</p>
+   * </li> <li> <p>To convert to the target database format, call <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelConversion.html">StartMetadataModelConversion</a>.</p>
+   * </li> </ul> <p> <b>Required permissions:</b>
+   * <code>dms:StartMetadataModelCreation</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelCreation">AWS
    * API Reference</a></p>
    */
@@ -3367,8 +3575,21 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Saves your converted code to a file as a SQL script, and stores this file on
-   * your Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+   * <p>Queues an export of metadata models (database objects such as tables, views,
+   * and procedures) as a data definition language (DDL) script. The script is stored
+   * as a ZIP archive in the Amazon S3 bucket associated with the migration project.
+   * If other requests created by <code>Start*</code> operations are already in the
+   * migration project's queue, the export begins after they complete.</p> <p>When
+   * exporting from the target metadata tree, the export applies only to metadata
+   * models created by conversion. Metadata models imported from the database are
+   * skipped.</p> <p>To check the status of the export request, call <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelExportsAsScript.html">DescribeMetadataModelExportsAsScript</a>
+   * using the returned <code>RequestIdentifier</code> as a filter.</p> <p>
+   * <b>Required permissions:</b> <code>dms:StartMetadataModelExportAsScripts</code>.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportAsScript">AWS
    * API Reference</a></p>
    */
@@ -3397,7 +3618,24 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Applies converted database objects to your target database. </p><p><h3>See
+   * <p>Queues an export of the selected converted metadata models (database objects
+   * such as tables, views, and procedures) to your target database. If other
+   * requests created by <code>Start*</code> operations are already in the migration
+   * project's queue, the export begins after they complete.</p> <p>This operation
+   * requires a non-virtual target data provider.</p> <p>The export applies only
+   * metadata models created by conversion. Metadata models imported from the
+   * database are skipped.</p>  <p>If objects with the same name already exist
+   * on the target database, the export overwrites them.</p>  <p>The operation
+   * installs the extension pack on the target database. For more information, see <a
+   * href="https://docs.aws.amazon.com/dms/latest/userguide/extension-pack.html">Using
+   * extension packs in DMS Schema Conversion</a>.</p> <p>To check the status of the
+   * export request, call <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelExportsToTarget.html">DescribeMetadataModelExportsToTarget</a>
+   * using the returned <code>RequestIdentifier</code> as a filter.</p> <p>
+   * <b>Required permissions:</b> <code>dms:StartMetadataModelExportToTarget</code>.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportToTarget">AWS
    * API Reference</a></p>
@@ -3427,9 +3665,18 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
-   * <p>Loads the metadata for all the dependent database objects of the parent
-   * object.</p> <p>This operation uses your project's Amazon S3 bucket as a metadata
-   * cache to improve performance.</p><p><h3>See Also:</h3>   <a
+   * <p>Queues an import of metadata models (database objects such as tables, views,
+   * and procedures) from your data provider into the metadata tree. If other
+   * requests created by <code>Start*</code> operations are already in the migration
+   * project's queue, the import begins after they complete.</p> <p>To check the
+   * status of the import request, call <a
+   * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelImports.html">DescribeMetadataModelImports</a>
+   * using the returned <code>RequestIdentifier</code> as a filter.</p> <p>
+   * <b>Required permissions:</b> <code>dms:StartMetadataModelImport</code>. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+   * resources, and condition keys for Database Migration Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelImport">AWS
    * API Reference</a></p>
    */

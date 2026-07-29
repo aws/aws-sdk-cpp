@@ -9,6 +9,7 @@
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/FieldToMatch.h>
 #include <aws/wafv2/model/PositionalConstraint.h>
+#include <aws/wafv2/model/PreParseTextTransformation.h>
 #include <aws/wafv2/model/TextTransformation.h>
 
 #include <utility>
@@ -143,6 +144,35 @@ class ByteMatchStatement {
 
   ///@{
   /**
+   * <p>Pre-parse text transformations normalize the raw query string before WAF
+   * parses it into individual query arguments. They are applied before the standard
+   * text transformations. Pre-parse text transformations are only supported when
+   * <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or
+   * <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text
+   * transformations per rule statement.</p>
+   */
+  inline const Aws::Vector<PreParseTextTransformation>& GetPreParseTextTransformations() const { return m_preParseTextTransformations; }
+  inline bool PreParseTextTransformationsHasBeenSet() const { return m_preParseTextTransformationsHasBeenSet; }
+  template <typename PreParseTextTransformationsT = Aws::Vector<PreParseTextTransformation>>
+  void SetPreParseTextTransformations(PreParseTextTransformationsT&& value) {
+    m_preParseTextTransformationsHasBeenSet = true;
+    m_preParseTextTransformations = std::forward<PreParseTextTransformationsT>(value);
+  }
+  template <typename PreParseTextTransformationsT = Aws::Vector<PreParseTextTransformation>>
+  ByteMatchStatement& WithPreParseTextTransformations(PreParseTextTransformationsT&& value) {
+    SetPreParseTextTransformations(std::forward<PreParseTextTransformationsT>(value));
+    return *this;
+  }
+  template <typename PreParseTextTransformationsT = PreParseTextTransformation>
+  ByteMatchStatement& AddPreParseTextTransformations(PreParseTextTransformationsT&& value) {
+    m_preParseTextTransformationsHasBeenSet = true;
+    m_preParseTextTransformations.emplace_back(std::forward<PreParseTextTransformationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The area within the portion of the web request that you want WAF to search
    * for <code>SearchString</code>. Valid values include the following:</p> <p>
    * <b>CONTAINS</b> </p> <p>The specified part of the web request must include the
@@ -183,10 +213,13 @@ class ByteMatchStatement {
 
   Aws::Vector<TextTransformation> m_textTransformations;
 
+  Aws::Vector<PreParseTextTransformation> m_preParseTextTransformations;
+
   PositionalConstraint m_positionalConstraint{PositionalConstraint::NOT_SET};
   bool m_searchStringHasBeenSet = false;
   bool m_fieldToMatchHasBeenSet = false;
   bool m_textTransformationsHasBeenSet = false;
+  bool m_preParseTextTransformationsHasBeenSet = false;
   bool m_positionalConstraintHasBeenSet = false;
 };
 

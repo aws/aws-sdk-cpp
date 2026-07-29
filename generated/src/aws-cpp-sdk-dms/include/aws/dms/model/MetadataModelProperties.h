@@ -20,9 +20,7 @@ namespace DatabaseMigrationService {
 namespace Model {
 
 /**
- * <p>The properties of metadata model in JSON format. This object is a Union. Only
- * one member of this object can be specified or returned.</p><p><h3>See Also:</h3>
- * <a
+ * <p>The properties of the metadata model.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MetadataModelProperties">AWS
  * API Reference</a></p>
  */
@@ -35,7 +33,7 @@ class MetadataModelProperties {
 
   ///@{
   /**
-   * <p>The properties of the statement.</p>
+   * <p>The properties of the SQL statement.</p>
    */
   inline const StatementProperties& GetStatementProperties() const { return m_statementProperties; }
   inline bool StatementPropertiesHasBeenSet() const { return m_statementPropertiesHasBeenSet; }

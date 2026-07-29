@@ -50,7 +50,14 @@ class StartMetadataModelExportToTargetRequest : public DatabaseMigrationServiceR
 
   ///@{
   /**
-   * <p>A value that specifies the database objects to export.</p>
+   * <p>A JSON string that identifies the metadata models to export to the target
+   * database. For the selection rule format and examples, see <a
+   * href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection
+   * rules in DMS Schema Conversion</a>.</p> <p>Usage:</p> <ul> <li> <p>Accepts only
+   * target selection rules, where <code>server-name</code> in the object locator
+   * matches the target data provider.</p> </li> <li> <p>Supports
+   * <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule
+   * actions.</p> </li> </ul>
    */
   inline const Aws::String& GetSelectionRules() const { return m_selectionRules; }
   inline bool SelectionRulesHasBeenSet() const { return m_selectionRulesHasBeenSet; }
@@ -68,9 +75,8 @@ class StartMetadataModelExportToTargetRequest : public DatabaseMigrationServiceR
 
   ///@{
   /**
-   * <p>Whether to overwrite the migration project extension pack. An extension pack
-   * is an add-on module that emulates functions present in a source database that
-   * are required when converting objects to the target database.</p>
+   * <p>Specifies whether to overwrite the extension pack if one already exists on
+   * the target database. The default value is <code>true</code>.</p>
    */
   inline bool GetOverwriteExtensionPack() const { return m_overwriteExtensionPack; }
   inline bool OverwriteExtensionPackHasBeenSet() const { return m_overwriteExtensionPackHasBeenSet; }

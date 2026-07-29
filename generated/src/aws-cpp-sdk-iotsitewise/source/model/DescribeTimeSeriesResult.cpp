@@ -58,6 +58,10 @@ DescribeTimeSeriesResult& DescribeTimeSeriesResult::operator=(const Aws::AmazonW
     m_timeSeriesArn = jsonValue.GetString("timeSeriesArn");
     m_timeSeriesArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("workspaceName")) {
+    m_workspaceName = jsonValue.GetString("workspaceName");
+    m_workspaceNameHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

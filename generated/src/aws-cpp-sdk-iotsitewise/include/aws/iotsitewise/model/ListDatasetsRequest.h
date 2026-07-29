@@ -8,6 +8,7 @@
 #include <aws/iotsitewise/IoTSiteWiseRequest.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/DatasetSourceType.h>
+#include <aws/iotsitewise/model/DatasetTypeEnum.h>
 
 #include <utility>
 
@@ -52,6 +53,41 @@ class ListDatasetsRequest : public IoTSiteWiseRequest {
 
   ///@{
   /**
+   * <p>The name of the workspace to filter datasets by.</p>
+   */
+  inline const Aws::String& GetWorkspaceName() const { return m_workspaceName; }
+  inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
+  template <typename WorkspaceNameT = Aws::String>
+  void SetWorkspaceName(WorkspaceNameT&& value) {
+    m_workspaceNameHasBeenSet = true;
+    m_workspaceName = std::forward<WorkspaceNameT>(value);
+  }
+  template <typename WorkspaceNameT = Aws::String>
+  ListDatasetsRequest& WithWorkspaceName(WorkspaceNameT&& value) {
+    SetWorkspaceName(std::forward<WorkspaceNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of dataset to filter by: a session dataset, a curated dataset, or a
+   * connection to an external datasource.</p>
+   */
+  inline DatasetTypeEnum GetDatasetType() const { return m_datasetType; }
+  inline bool DatasetTypeHasBeenSet() const { return m_datasetTypeHasBeenSet; }
+  inline void SetDatasetType(DatasetTypeEnum value) {
+    m_datasetTypeHasBeenSet = true;
+    m_datasetType = value;
+  }
+  inline ListDatasetsRequest& WithDatasetType(DatasetTypeEnum value) {
+    SetDatasetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The token for the next set of results, or null if there are no additional
    * results.</p>
    */
@@ -87,10 +123,16 @@ class ListDatasetsRequest : public IoTSiteWiseRequest {
  private:
   DatasetSourceType m_sourceType{DatasetSourceType::NOT_SET};
 
+  Aws::String m_workspaceName;
+
+  DatasetTypeEnum m_datasetType{DatasetTypeEnum::NOT_SET};
+
   Aws::String m_nextToken;
 
   int m_maxResults{0};
   bool m_sourceTypeHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
+  bool m_datasetTypeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };

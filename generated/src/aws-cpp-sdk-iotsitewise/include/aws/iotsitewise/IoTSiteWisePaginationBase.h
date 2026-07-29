@@ -10,12 +10,16 @@
 #include <aws/iotsitewise/model/BatchGetAssetPropertyAggregatesPaginationTraits.h>
 #include <aws/iotsitewise/model/BatchGetAssetPropertyValueHistoryPaginationTraits.h>
 #include <aws/iotsitewise/model/BatchGetAssetPropertyValuePaginationTraits.h>
+#include <aws/iotsitewise/model/DescribePipelineExecutionPaginationTraits.h>
 #include <aws/iotsitewise/model/ExecuteQueryPaginationTraits.h>
 #include <aws/iotsitewise/model/GetAssetPropertyAggregatesPaginationTraits.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueHistoryPaginationTraits.h>
 #include <aws/iotsitewise/model/GetInterpolatedAssetPropertyValuesPaginationTraits.h>
+#include <aws/iotsitewise/model/GetQueryResultsPaginationTraits.h>
+#include <aws/iotsitewise/model/GetSearchResultsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListAccessPoliciesPaginationTraits.h>
 #include <aws/iotsitewise/model/ListActionsPaginationTraits.h>
+#include <aws/iotsitewise/model/ListApplicationsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListAssetModelCompositeModelsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListAssetModelPropertiesPaginationTraits.h>
 #include <aws/iotsitewise/model/ListAssetModelsPaginationTraits.h>
@@ -29,14 +33,24 @@
 #include <aws/iotsitewise/model/ListComputationModelResolveToResourcesPaginationTraits.h>
 #include <aws/iotsitewise/model/ListComputationModelsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListDashboardsPaginationTraits.h>
+#include <aws/iotsitewise/model/ListDatasetDataSegmentRelationshipsPaginationTraits.h>
+#include <aws/iotsitewise/model/ListDatasetDataSegmentsPaginationTraits.h>
+#include <aws/iotsitewise/model/ListDatasetExportJobsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListDatasetsPaginationTraits.h>
+#include <aws/iotsitewise/model/ListEnrichmentJobsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListExecutionsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListGatewaysPaginationTraits.h>
 #include <aws/iotsitewise/model/ListInterfaceRelationshipsPaginationTraits.h>
+#include <aws/iotsitewise/model/ListPipelineExecutionsPaginationTraits.h>
+#include <aws/iotsitewise/model/ListPipelinesPaginationTraits.h>
 #include <aws/iotsitewise/model/ListPortalsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListProjectAssetsPaginationTraits.h>
 #include <aws/iotsitewise/model/ListProjectsPaginationTraits.h>
+#include <aws/iotsitewise/model/ListQueriesPaginationTraits.h>
+#include <aws/iotsitewise/model/ListSearchesPaginationTraits.h>
+#include <aws/iotsitewise/model/ListTasksPaginationTraits.h>
 #include <aws/iotsitewise/model/ListTimeSeriesPaginationTraits.h>
+#include <aws/iotsitewise/model/ListWorkspacesPaginationTraits.h>
 
 #include <memory>
 
@@ -79,6 +93,18 @@ class IoTSiteWisePaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::BatchGetAssetPropertyValueHistoryRequest,
                                              Pagination::BatchGetAssetPropertyValueHistoryPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribePipelineExecution operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePipelineExecutionRequest,
+                                    Pagination::DescribePipelineExecutionPaginationTraits<DerivedClient>>
+  DescribePipelineExecutionPaginator(const Model::DescribePipelineExecutionRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePipelineExecutionRequest,
+                                             Pagination::DescribePipelineExecutionPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 
@@ -130,6 +156,30 @@ class IoTSiteWisePaginationBase {
   }
 
   /**
+   * Create a paginator for GetQueryResults operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetQueryResultsRequest,
+                                    Pagination::GetQueryResultsPaginationTraits<DerivedClient>>
+  GetQueryResultsPaginator(const Model::GetQueryResultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetQueryResultsRequest,
+                                             Pagination::GetQueryResultsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                         request};
+  }
+
+  /**
+   * Create a paginator for GetSearchResults operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSearchResultsRequest,
+                                    Pagination::GetSearchResultsPaginationTraits<DerivedClient>>
+  GetSearchResultsPaginator(const Model::GetSearchResultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSearchResultsRequest,
+                                             Pagination::GetSearchResultsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                          request};
+  }
+
+  /**
    * Create a paginator for ListAccessPolicies operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessPoliciesRequest,
@@ -150,6 +200,18 @@ class IoTSiteWisePaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActionsRequest,
                                              Pagination::ListActionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
+  }
+
+  /**
+   * Create a paginator for ListApplications operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationsRequest,
+                                    Pagination::ListApplicationsPaginationTraits<DerivedClient>>
+  ListApplicationsPaginator(const Model::ListApplicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationsRequest,
+                                             Pagination::ListApplicationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                          request};
   }
 
   /**
@@ -307,6 +369,42 @@ class IoTSiteWisePaginationBase {
   }
 
   /**
+   * Create a paginator for ListDatasetDataSegmentRelationships operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetDataSegmentRelationshipsRequest,
+                                    Pagination::ListDatasetDataSegmentRelationshipsPaginationTraits<DerivedClient>>
+  ListDatasetDataSegmentRelationshipsPaginator(const Model::ListDatasetDataSegmentRelationshipsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetDataSegmentRelationshipsRequest,
+                                             Pagination::ListDatasetDataSegmentRelationshipsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListDatasetDataSegments operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetDataSegmentsRequest,
+                                    Pagination::ListDatasetDataSegmentsPaginationTraits<DerivedClient>>
+  ListDatasetDataSegmentsPaginator(const Model::ListDatasetDataSegmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetDataSegmentsRequest,
+                                             Pagination::ListDatasetDataSegmentsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListDatasetExportJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetExportJobsRequest,
+                                    Pagination::ListDatasetExportJobsPaginationTraits<DerivedClient>>
+  ListDatasetExportJobsPaginator(const Model::ListDatasetExportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetExportJobsRequest,
+                                             Pagination::ListDatasetExportJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListDatasets operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetsRequest, Pagination::ListDatasetsPaginationTraits<DerivedClient>>
@@ -315,6 +413,18 @@ class IoTSiteWisePaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetsRequest,
                                              Pagination::ListDatasetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
+  }
+
+  /**
+   * Create a paginator for ListEnrichmentJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnrichmentJobsRequest,
+                                    Pagination::ListEnrichmentJobsPaginationTraits<DerivedClient>>
+  ListEnrichmentJobsPaginator(const Model::ListEnrichmentJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnrichmentJobsRequest,
+                                             Pagination::ListEnrichmentJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -352,6 +462,29 @@ class IoTSiteWisePaginationBase {
   }
 
   /**
+   * Create a paginator for ListPipelineExecutions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelineExecutionsRequest,
+                                    Pagination::ListPipelineExecutionsPaginationTraits<DerivedClient>>
+  ListPipelineExecutionsPaginator(const Model::ListPipelineExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelineExecutionsRequest,
+                                             Pagination::ListPipelineExecutionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListPipelines operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelinesRequest, Pagination::ListPipelinesPaginationTraits<DerivedClient>>
+  ListPipelinesPaginator(const Model::ListPipelinesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelinesRequest,
+                                             Pagination::ListPipelinesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                       request};
+  }
+
+  /**
    * Create a paginator for ListPortals operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPortalsRequest, Pagination::ListPortalsPaginationTraits<DerivedClient>>
@@ -386,6 +519,38 @@ class IoTSiteWisePaginationBase {
   }
 
   /**
+   * Create a paginator for ListQueries operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueriesRequest, Pagination::ListQueriesPaginationTraits<DerivedClient>>
+  ListQueriesPaginator(const Model::ListQueriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueriesRequest,
+                                             Pagination::ListQueriesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                     request};
+  }
+
+  /**
+   * Create a paginator for ListSearches operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSearchesRequest, Pagination::ListSearchesPaginationTraits<DerivedClient>>
+  ListSearchesPaginator(const Model::ListSearchesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSearchesRequest,
+                                             Pagination::ListSearchesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                      request};
+  }
+
+  /**
+   * Create a paginator for ListTasks operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTasksRequest, Pagination::ListTasksPaginationTraits<DerivedClient>>
+  ListTasksPaginator(const Model::ListTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTasksRequest, Pagination::ListTasksPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListTimeSeries operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTimeSeriesRequest, Pagination::ListTimeSeriesPaginationTraits<DerivedClient>>
@@ -393,6 +558,17 @@ class IoTSiteWisePaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTimeSeriesRequest,
                                              Pagination::ListTimeSeriesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for ListWorkspaces operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkspacesRequest, Pagination::ListWorkspacesPaginationTraits<DerivedClient>>
+  ListWorkspacesPaginator(const Model::ListWorkspacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkspacesRequest,
+                                             Pagination::ListWorkspacesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
   }
 };

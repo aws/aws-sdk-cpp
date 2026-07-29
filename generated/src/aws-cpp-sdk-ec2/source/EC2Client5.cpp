@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DisassociateTransitGatewayMulticastDomainRequest.h>
+#include <aws/ec2/model/DisassociateTransitGatewayPolicyTableRequest.h>
 #include <aws/ec2/model/DisassociateTransitGatewayRouteTableRequest.h>
 #include <aws/ec2/model/DisassociateTrunkInterfaceRequest.h>
 #include <aws/ec2/model/DisassociateVpcCidrBlockRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/GetVerifiedAccessEndpointTargetsRequest.h>
 #include <aws/ec2/model/GetVerifiedAccessGroupPolicyRequest.h>
 #include <aws/ec2/model/GetVpcResourcesBlockingEncryptionEnforcementRequest.h>
-#include <aws/ec2/model/GetVpnConnectionDeviceSampleConfigurationRequest.h>
-#include <aws/ec2/model/GetVpnConnectionDeviceTypesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,20 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DisassociateTransitGatewayMulticastDomainOutcome EC2Client::DisassociateTransitGatewayMulticastDomain(
+    const DisassociateTransitGatewayMulticastDomainRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateTransitGatewayMulticastDomainOutcome(result.GetResultWithOwnership())
+                            : DisassociateTransitGatewayMulticastDomainOutcome(std::move(result.GetError()));
+}
+
+DisassociateTransitGatewayPolicyTableOutcome EC2Client::DisassociateTransitGatewayPolicyTable(
+    const DisassociateTransitGatewayPolicyTableRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateTransitGatewayPolicyTableOutcome(result.GetResultWithOwnership())
+                            : DisassociateTransitGatewayPolicyTableOutcome(std::move(result.GetError()));
+}
 
 DisassociateTransitGatewayRouteTableOutcome EC2Client::DisassociateTransitGatewayRouteTable(
     const DisassociateTransitGatewayRouteTableRequest& request) const {
@@ -758,17 +772,4 @@ GetVpcResourcesBlockingEncryptionEnforcementOutcome EC2Client::GetVpcResourcesBl
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetVpcResourcesBlockingEncryptionEnforcementOutcome(result.GetResultWithOwnership())
                             : GetVpcResourcesBlockingEncryptionEnforcementOutcome(std::move(result.GetError()));
-}
-
-GetVpnConnectionDeviceSampleConfigurationOutcome EC2Client::GetVpnConnectionDeviceSampleConfiguration(
-    const GetVpnConnectionDeviceSampleConfigurationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetVpnConnectionDeviceSampleConfigurationOutcome(result.GetResultWithOwnership())
-                            : GetVpnConnectionDeviceSampleConfigurationOutcome(std::move(result.GetError()));
-}
-
-GetVpnConnectionDeviceTypesOutcome EC2Client::GetVpnConnectionDeviceTypes(const GetVpnConnectionDeviceTypesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetVpnConnectionDeviceTypesOutcome(result.GetResultWithOwnership())
-                            : GetVpnConnectionDeviceTypesOutcome(std::move(result.GetError()));
 }

@@ -26,11 +26,14 @@
 #include <aws/gameliftstreams/model/CreateStreamGroupResult.h>
 #include <aws/gameliftstreams/model/CreateStreamSessionAdminShellResult.h>
 #include <aws/gameliftstreams/model/CreateStreamSessionConnectionResult.h>
+#include <aws/gameliftstreams/model/CreateStreamUrlResult.h>
 #include <aws/gameliftstreams/model/DisassociateApplicationsResult.h>
 #include <aws/gameliftstreams/model/ExportStreamSessionFilesResult.h>
 #include <aws/gameliftstreams/model/GetApplicationResult.h>
 #include <aws/gameliftstreams/model/GetStreamGroupResult.h>
 #include <aws/gameliftstreams/model/GetStreamSessionResult.h>
+#include <aws/gameliftstreams/model/GetStreamUrlResult.h>
+#include <aws/gameliftstreams/model/ListApplicationShaderCachesResult.h>
 #include <aws/gameliftstreams/model/ListApplicationsRequest.h>
 #include <aws/gameliftstreams/model/ListApplicationsResult.h>
 #include <aws/gameliftstreams/model/ListStreamGroupsRequest.h>
@@ -38,6 +41,8 @@
 #include <aws/gameliftstreams/model/ListStreamSessionsByAccountRequest.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsByAccountResult.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsResult.h>
+#include <aws/gameliftstreams/model/ListStreamUrlsRequest.h>
+#include <aws/gameliftstreams/model/ListStreamUrlsResult.h>
 #include <aws/gameliftstreams/model/ListTagsForResourceResult.h>
 #include <aws/gameliftstreams/model/StartStreamSessionResult.h>
 #include <aws/gameliftstreams/model/TagResourceResult.h>
@@ -83,6 +88,7 @@ class CreateApplicationRequest;
 class CreateStreamGroupRequest;
 class CreateStreamSessionAdminShellRequest;
 class CreateStreamSessionConnectionRequest;
+class CreateStreamUrlRequest;
 class DeleteApplicationRequest;
 class DeleteStreamGroupRequest;
 class DisassociateApplicationsRequest;
@@ -90,12 +96,16 @@ class ExportStreamSessionFilesRequest;
 class GetApplicationRequest;
 class GetStreamGroupRequest;
 class GetStreamSessionRequest;
+class GetStreamUrlRequest;
+class ListApplicationShaderCachesRequest;
 class ListApplicationsRequest;
 class ListStreamGroupsRequest;
 class ListStreamSessionsRequest;
 class ListStreamSessionsByAccountRequest;
+class ListStreamUrlsRequest;
 class ListTagsForResourceRequest;
 class RemoveStreamGroupLocationsRequest;
+class RevokeStreamUrlRequest;
 class StartStreamSessionRequest;
 class TagResourceRequest;
 class TerminateStreamSessionRequest;
@@ -111,6 +121,7 @@ typedef Aws::Utils::Outcome<CreateApplicationResult, GameLiftStreamsError> Creat
 typedef Aws::Utils::Outcome<CreateStreamGroupResult, GameLiftStreamsError> CreateStreamGroupOutcome;
 typedef Aws::Utils::Outcome<CreateStreamSessionAdminShellResult, GameLiftStreamsError> CreateStreamSessionAdminShellOutcome;
 typedef Aws::Utils::Outcome<CreateStreamSessionConnectionResult, GameLiftStreamsError> CreateStreamSessionConnectionOutcome;
+typedef Aws::Utils::Outcome<CreateStreamUrlResult, GameLiftStreamsError> CreateStreamUrlOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftStreamsError> DeleteApplicationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftStreamsError> DeleteStreamGroupOutcome;
 typedef Aws::Utils::Outcome<DisassociateApplicationsResult, GameLiftStreamsError> DisassociateApplicationsOutcome;
@@ -118,12 +129,16 @@ typedef Aws::Utils::Outcome<ExportStreamSessionFilesResult, GameLiftStreamsError
 typedef Aws::Utils::Outcome<GetApplicationResult, GameLiftStreamsError> GetApplicationOutcome;
 typedef Aws::Utils::Outcome<GetStreamGroupResult, GameLiftStreamsError> GetStreamGroupOutcome;
 typedef Aws::Utils::Outcome<GetStreamSessionResult, GameLiftStreamsError> GetStreamSessionOutcome;
+typedef Aws::Utils::Outcome<GetStreamUrlResult, GameLiftStreamsError> GetStreamUrlOutcome;
+typedef Aws::Utils::Outcome<ListApplicationShaderCachesResult, GameLiftStreamsError> ListApplicationShaderCachesOutcome;
 typedef Aws::Utils::Outcome<ListApplicationsResult, GameLiftStreamsError> ListApplicationsOutcome;
 typedef Aws::Utils::Outcome<ListStreamGroupsResult, GameLiftStreamsError> ListStreamGroupsOutcome;
 typedef Aws::Utils::Outcome<ListStreamSessionsResult, GameLiftStreamsError> ListStreamSessionsOutcome;
 typedef Aws::Utils::Outcome<ListStreamSessionsByAccountResult, GameLiftStreamsError> ListStreamSessionsByAccountOutcome;
+typedef Aws::Utils::Outcome<ListStreamUrlsResult, GameLiftStreamsError> ListStreamUrlsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, GameLiftStreamsError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftStreamsError> RemoveStreamGroupLocationsOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftStreamsError> RevokeStreamUrlOutcome;
 typedef Aws::Utils::Outcome<StartStreamSessionResult, GameLiftStreamsError> StartStreamSessionOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, GameLiftStreamsError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftStreamsError> TerminateStreamSessionOutcome;
@@ -139,6 +154,7 @@ typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
 typedef std::future<CreateStreamGroupOutcome> CreateStreamGroupOutcomeCallable;
 typedef std::future<CreateStreamSessionAdminShellOutcome> CreateStreamSessionAdminShellOutcomeCallable;
 typedef std::future<CreateStreamSessionConnectionOutcome> CreateStreamSessionConnectionOutcomeCallable;
+typedef std::future<CreateStreamUrlOutcome> CreateStreamUrlOutcomeCallable;
 typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
 typedef std::future<DeleteStreamGroupOutcome> DeleteStreamGroupOutcomeCallable;
 typedef std::future<DisassociateApplicationsOutcome> DisassociateApplicationsOutcomeCallable;
@@ -146,12 +162,16 @@ typedef std::future<ExportStreamSessionFilesOutcome> ExportStreamSessionFilesOut
 typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
 typedef std::future<GetStreamGroupOutcome> GetStreamGroupOutcomeCallable;
 typedef std::future<GetStreamSessionOutcome> GetStreamSessionOutcomeCallable;
+typedef std::future<GetStreamUrlOutcome> GetStreamUrlOutcomeCallable;
+typedef std::future<ListApplicationShaderCachesOutcome> ListApplicationShaderCachesOutcomeCallable;
 typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
 typedef std::future<ListStreamGroupsOutcome> ListStreamGroupsOutcomeCallable;
 typedef std::future<ListStreamSessionsOutcome> ListStreamSessionsOutcomeCallable;
 typedef std::future<ListStreamSessionsByAccountOutcome> ListStreamSessionsByAccountOutcomeCallable;
+typedef std::future<ListStreamUrlsOutcome> ListStreamUrlsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<RemoveStreamGroupLocationsOutcome> RemoveStreamGroupLocationsOutcomeCallable;
+typedef std::future<RevokeStreamUrlOutcome> RevokeStreamUrlOutcomeCallable;
 typedef std::future<StartStreamSessionOutcome> StartStreamSessionOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<TerminateStreamSessionOutcome> TerminateStreamSessionOutcomeCallable;
@@ -184,6 +204,9 @@ typedef std::function<void(const GameLiftStreamsClient*, const Model::CreateStre
                            const Model::CreateStreamSessionConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateStreamSessionConnectionResponseReceivedHandler;
+typedef std::function<void(const GameLiftStreamsClient*, const Model::CreateStreamUrlRequest&, const Model::CreateStreamUrlOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateStreamUrlResponseReceivedHandler;
 typedef std::function<void(const GameLiftStreamsClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteApplicationResponseReceivedHandler;
@@ -205,6 +228,12 @@ typedef std::function<void(const GameLiftStreamsClient*, const Model::GetStreamG
 typedef std::function<void(const GameLiftStreamsClient*, const Model::GetStreamSessionRequest&, const Model::GetStreamSessionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetStreamSessionResponseReceivedHandler;
+typedef std::function<void(const GameLiftStreamsClient*, const Model::GetStreamUrlRequest&, const Model::GetStreamUrlOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetStreamUrlResponseReceivedHandler;
+typedef std::function<void(const GameLiftStreamsClient*, const Model::ListApplicationShaderCachesRequest&,
+                           const Model::ListApplicationShaderCachesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListApplicationShaderCachesResponseReceivedHandler;
 typedef std::function<void(const GameLiftStreamsClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListApplicationsResponseReceivedHandler;
@@ -217,12 +246,18 @@ typedef std::function<void(const GameLiftStreamsClient*, const Model::ListStream
 typedef std::function<void(const GameLiftStreamsClient*, const Model::ListStreamSessionsByAccountRequest&,
                            const Model::ListStreamSessionsByAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListStreamSessionsByAccountResponseReceivedHandler;
+typedef std::function<void(const GameLiftStreamsClient*, const Model::ListStreamUrlsRequest&, const Model::ListStreamUrlsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListStreamUrlsResponseReceivedHandler;
 typedef std::function<void(const GameLiftStreamsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
 typedef std::function<void(const GameLiftStreamsClient*, const Model::RemoveStreamGroupLocationsRequest&,
                            const Model::RemoveStreamGroupLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RemoveStreamGroupLocationsResponseReceivedHandler;
+typedef std::function<void(const GameLiftStreamsClient*, const Model::RevokeStreamUrlRequest&, const Model::RevokeStreamUrlOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RevokeStreamUrlResponseReceivedHandler;
 typedef std::function<void(const GameLiftStreamsClient*, const Model::StartStreamSessionRequest&, const Model::StartStreamSessionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartStreamSessionResponseReceivedHandler;

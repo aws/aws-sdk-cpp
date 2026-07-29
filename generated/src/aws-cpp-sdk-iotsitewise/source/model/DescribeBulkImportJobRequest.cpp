@@ -3,7 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/iotsitewise/model/DescribeBulkImportJobRequest.h>
 
 #include <utility>
@@ -11,5 +13,15 @@
 using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
 Aws::String DescribeBulkImportJobRequest::SerializePayload() const { return {}; }
+
+void DescribeBulkImportJobRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_workspaceNameHasBeenSet) {
+    ss << m_workspaceName;
+    uri.AddQueryStringParameter("workspaceName", ss.str());
+    ss.str("");
+  }
+}

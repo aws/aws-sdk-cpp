@@ -115,7 +115,10 @@ class DescribeBulkImportJobResult {
 
   ///@{
   /**
-   * <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+   * <p>The files in the specified Amazon S3 bucket that contain your data. You can
+   * specify up to 100 files for each bulk import job. Each file supports the
+   * following size limits:</p> <ul> <li> <p>Parquet files – Up to 256 MiB.</p> </li>
+   * <li> <p>Other file formats – Up to 5 GiB.</p> </li> </ul>
    */
   inline const Aws::Vector<File>& GetFiles() const { return m_files; }
   template <typename FilesT = Aws::Vector<File>>
@@ -240,6 +243,40 @@ class DescribeBulkImportJobResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The ID of the dataset.</p>
+   */
+  inline const Aws::String& GetDatasetId() const { return m_datasetId; }
+  template <typename DatasetIdT = Aws::String>
+  void SetDatasetId(DatasetIdT&& value) {
+    m_datasetIdHasBeenSet = true;
+    m_datasetId = std::forward<DatasetIdT>(value);
+  }
+  template <typename DatasetIdT = Aws::String>
+  DescribeBulkImportJobResult& WithDatasetId(DatasetIdT&& value) {
+    SetDatasetId(std::forward<DatasetIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the workspace.</p>
+   */
+  inline const Aws::String& GetWorkspaceName() const { return m_workspaceName; }
+  template <typename WorkspaceNameT = Aws::String>
+  void SetWorkspaceName(WorkspaceNameT&& value) {
+    m_workspaceNameHasBeenSet = true;
+    m_workspaceName = std::forward<WorkspaceNameT>(value);
+  }
+  template <typename WorkspaceNameT = Aws::String>
+  DescribeBulkImportJobResult& WithWorkspaceName(WorkspaceNameT&& value) {
+    SetWorkspaceName(std::forward<WorkspaceNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -278,6 +315,10 @@ class DescribeBulkImportJobResult {
 
   bool m_deleteFilesAfterImport{false};
 
+  Aws::String m_datasetId;
+
+  Aws::String m_workspaceName;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobIdHasBeenSet = false;
@@ -291,6 +332,8 @@ class DescribeBulkImportJobResult {
   bool m_jobLastUpdateDateHasBeenSet = false;
   bool m_adaptiveIngestionHasBeenSet = false;
   bool m_deleteFilesAfterImportHasBeenSet = false;
+  bool m_datasetIdHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

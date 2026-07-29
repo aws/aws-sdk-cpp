@@ -31,7 +31,7 @@ class StartMetadataModelExportAsScriptResult {
 
   ///@{
   /**
-   * <p>The identifier for the export operation.</p>
+   * <p>The identifier for the export request.</p>
    */
   inline const Aws::String& GetRequestIdentifier() const { return m_requestIdentifier; }
   template <typename RequestIdentifierT = Aws::String>

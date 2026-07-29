@@ -31,7 +31,7 @@ class StartMetadataModelAssessmentResult {
 
   ///@{
   /**
-   * <p>The identifier for the assessment operation.</p>
+   * <p>The identifier for the assessment request.</p>
    */
   inline const Aws::String& GetRequestIdentifier() const { return m_requestIdentifier; }
   template <typename RequestIdentifierT = Aws::String>

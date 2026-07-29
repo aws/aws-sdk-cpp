@@ -31,7 +31,7 @@ class StartExtensionPackAssociationResult {
 
   ///@{
   /**
-   * <p>The identifier for the request operation.</p>
+   * <p>The identifier for the installation request.</p>
    */
   inline const Aws::String& GetRequestIdentifier() const { return m_requestIdentifier; }
   template <typename RequestIdentifierT = Aws::String>

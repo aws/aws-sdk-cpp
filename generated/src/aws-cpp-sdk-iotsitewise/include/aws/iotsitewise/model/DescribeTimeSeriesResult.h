@@ -191,6 +191,23 @@ class DescribeTimeSeriesResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The name of the workspace.</p>
+   */
+  inline const Aws::String& GetWorkspaceName() const { return m_workspaceName; }
+  template <typename WorkspaceNameT = Aws::String>
+  void SetWorkspaceName(WorkspaceNameT&& value) {
+    m_workspaceNameHasBeenSet = true;
+    m_workspaceName = std::forward<WorkspaceNameT>(value);
+  }
+  template <typename WorkspaceNameT = Aws::String>
+  DescribeTimeSeriesResult& WithWorkspaceName(WorkspaceNameT&& value) {
+    SetWorkspaceName(std::forward<WorkspaceNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -225,6 +242,8 @@ class DescribeTimeSeriesResult {
 
   Aws::String m_timeSeriesArn;
 
+  Aws::String m_workspaceName;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_assetIdHasBeenSet = false;
@@ -236,6 +255,7 @@ class DescribeTimeSeriesResult {
   bool m_timeSeriesCreationDateHasBeenSet = false;
   bool m_timeSeriesLastUpdateDateHasBeenSet = false;
   bool m_timeSeriesArnHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

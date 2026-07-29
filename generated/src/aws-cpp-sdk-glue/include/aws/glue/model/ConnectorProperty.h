@@ -163,6 +163,27 @@ class ConnectorProperty {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A format template for the property value that defines how the value should be
+   * formatted before sending it in API requests. Use <code>{value}</code> as a
+   * placeholder for the actual property value (for example, <code>SSWS
+   * {value}</code>).</p>
+   */
+  inline const Aws::String& GetFormat() const { return m_format; }
+  inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+  template <typename FormatT = Aws::String>
+  void SetFormat(FormatT&& value) {
+    m_formatHasBeenSet = true;
+    m_format = std::forward<FormatT>(value);
+  }
+  template <typename FormatT = Aws::String>
+  ConnectorProperty& WithFormat(FormatT&& value) {
+    SetFormat(std::forward<FormatT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -177,6 +198,8 @@ class ConnectorProperty {
   PropertyLocation m_propertyLocation{PropertyLocation::NOT_SET};
 
   PropertyType m_propertyType{PropertyType::NOT_SET};
+
+  Aws::String m_format;
   bool m_nameHasBeenSet = false;
   bool m_keyOverrideHasBeenSet = false;
   bool m_requiredHasBeenSet = false;
@@ -184,6 +207,7 @@ class ConnectorProperty {
   bool m_allowedValuesHasBeenSet = false;
   bool m_propertyLocationHasBeenSet = false;
   bool m_propertyTypeHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
 };
 
 }  // namespace Model

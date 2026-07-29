@@ -54,6 +54,25 @@ class TransitGatewayAttachmentAssociation {
 
   ///@{
   /**
+   * <p>The ID of the transit gateway policy table associated with the
+   * attachment.</p>
+   */
+  inline const Aws::String& GetTransitGatewayPolicyTableId() const { return m_transitGatewayPolicyTableId; }
+  inline bool TransitGatewayPolicyTableIdHasBeenSet() const { return m_transitGatewayPolicyTableIdHasBeenSet; }
+  template <typename TransitGatewayPolicyTableIdT = Aws::String>
+  void SetTransitGatewayPolicyTableId(TransitGatewayPolicyTableIdT&& value) {
+    m_transitGatewayPolicyTableIdHasBeenSet = true;
+    m_transitGatewayPolicyTableId = std::forward<TransitGatewayPolicyTableIdT>(value);
+  }
+  template <typename TransitGatewayPolicyTableIdT = Aws::String>
+  TransitGatewayAttachmentAssociation& WithTransitGatewayPolicyTableId(TransitGatewayPolicyTableIdT&& value) {
+    SetTransitGatewayPolicyTableId(std::forward<TransitGatewayPolicyTableIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The state of the association.</p>
    */
   inline TransitGatewayAssociationState GetState() const { return m_state; }
@@ -70,8 +89,11 @@ class TransitGatewayAttachmentAssociation {
  private:
   Aws::String m_transitGatewayRouteTableId;
 
+  Aws::String m_transitGatewayPolicyTableId;
+
   TransitGatewayAssociationState m_state{TransitGatewayAssociationState::NOT_SET};
   bool m_transitGatewayRouteTableIdHasBeenSet = false;
+  bool m_transitGatewayPolicyTableIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

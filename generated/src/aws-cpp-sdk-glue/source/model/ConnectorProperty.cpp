@@ -49,6 +49,10 @@ ConnectorProperty& ConnectorProperty::operator=(JsonView jsonValue) {
     m_propertyType = PropertyTypeMapper::GetPropertyTypeForName(jsonValue.GetString("PropertyType"));
     m_propertyTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Format")) {
+    m_format = jsonValue.GetString("Format");
+    m_formatHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -85,6 +89,10 @@ JsonValue ConnectorProperty::Jsonize() const {
 
   if (m_propertyTypeHasBeenSet) {
     payload.WithString("PropertyType", PropertyTypeMapper::GetNameForPropertyType(m_propertyType));
+  }
+
+  if (m_formatHasBeenSet) {
+    payload.WithString("Format", m_format);
   }
 
   return payload;

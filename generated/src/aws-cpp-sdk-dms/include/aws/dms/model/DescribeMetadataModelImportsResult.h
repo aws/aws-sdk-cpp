@@ -57,7 +57,9 @@ class DescribeMetadataModelImportsResult {
 
   ///@{
   /**
-   * <p>A paginated list of metadata model imports.</p>
+   * <p>A paginated list of metadata model import requests.</p>  <p>DMS never
+   * populates the <code>ExportSqlDetails</code> field for this operation.</p>
+   *
    */
   inline const Aws::Vector<SchemaConversionRequest>& GetRequests() const { return m_requests; }
   template <typename RequestsT = Aws::Vector<SchemaConversionRequest>>

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/FieldToMatch.h>
+#include <aws/wafv2/model/PreParseTextTransformation.h>
 #include <aws/wafv2/model/TextTransformation.h>
 
 #include <utility>
@@ -37,7 +38,10 @@ class RegexMatchStatement {
 
   ///@{
   /**
-   * <p>The string representing the regular expression.</p>
+   * <p>The string representing the regular expression. WAF enforces a quota on the
+   * maximum number of characters in a regex pattern. For the current limit, see <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+   * quotas</a> in the <i>WAF Developer Guide</i>.</p>
    */
   inline const Aws::String& GetRegexString() const { return m_regexString; }
   inline bool RegexStringHasBeenSet() const { return m_regexStringHasBeenSet; }
@@ -101,15 +105,47 @@ class RegexMatchStatement {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Pre-parse text transformations normalize the raw query string before WAF
+   * parses it into individual query arguments. They are applied before the standard
+   * text transformations. Pre-parse text transformations are only supported when
+   * <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or
+   * <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text
+   * transformations per rule statement.</p>
+   */
+  inline const Aws::Vector<PreParseTextTransformation>& GetPreParseTextTransformations() const { return m_preParseTextTransformations; }
+  inline bool PreParseTextTransformationsHasBeenSet() const { return m_preParseTextTransformationsHasBeenSet; }
+  template <typename PreParseTextTransformationsT = Aws::Vector<PreParseTextTransformation>>
+  void SetPreParseTextTransformations(PreParseTextTransformationsT&& value) {
+    m_preParseTextTransformationsHasBeenSet = true;
+    m_preParseTextTransformations = std::forward<PreParseTextTransformationsT>(value);
+  }
+  template <typename PreParseTextTransformationsT = Aws::Vector<PreParseTextTransformation>>
+  RegexMatchStatement& WithPreParseTextTransformations(PreParseTextTransformationsT&& value) {
+    SetPreParseTextTransformations(std::forward<PreParseTextTransformationsT>(value));
+    return *this;
+  }
+  template <typename PreParseTextTransformationsT = PreParseTextTransformation>
+  RegexMatchStatement& AddPreParseTextTransformations(PreParseTextTransformationsT&& value) {
+    m_preParseTextTransformationsHasBeenSet = true;
+    m_preParseTextTransformations.emplace_back(std::forward<PreParseTextTransformationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_regexString;
 
   FieldToMatch m_fieldToMatch;
 
   Aws::Vector<TextTransformation> m_textTransformations;
+
+  Aws::Vector<PreParseTextTransformation> m_preParseTextTransformations;
   bool m_regexStringHasBeenSet = false;
   bool m_fieldToMatchHasBeenSet = false;
   bool m_textTransformationsHasBeenSet = false;
+  bool m_preParseTextTransformationsHasBeenSet = false;
 };
 
 }  // namespace Model

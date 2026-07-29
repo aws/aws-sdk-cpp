@@ -65,6 +65,7 @@
 #include <aws/ec2/model/CreateTransitGatewayMeteringPolicyRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayMulticastDomainRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentRequest.h>
+#include <aws/ec2/model/CreateTransitGatewayPolicyTableEntryRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayPolicyTableRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayPrefixListReferenceRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationRequest.h>
-#include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -423,6 +423,13 @@ CreateTransitGatewayPolicyTableOutcome EC2Client::CreateTransitGatewayPolicyTabl
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateTransitGatewayPolicyTableOutcome(result.GetResultWithOwnership())
                             : CreateTransitGatewayPolicyTableOutcome(std::move(result.GetError()));
+}
+
+CreateTransitGatewayPolicyTableEntryOutcome EC2Client::CreateTransitGatewayPolicyTableEntry(
+    const CreateTransitGatewayPolicyTableEntryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTransitGatewayPolicyTableEntryOutcome(result.GetResultWithOwnership())
+                            : CreateTransitGatewayPolicyTableEntryOutcome(std::move(result.GetError()));
 }
 
 CreateTransitGatewayPrefixListReferenceOutcome EC2Client::CreateTransitGatewayPrefixListReference(
@@ -740,11 +747,4 @@ DeleteLocalGatewayRouteTableVpcAssociationOutcome EC2Client::DeleteLocalGatewayR
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteLocalGatewayRouteTableVpcAssociationOutcome(result.GetResultWithOwnership())
                             : DeleteLocalGatewayRouteTableVpcAssociationOutcome(std::move(result.GetError()));
-}
-
-DeleteLocalGatewayVirtualInterfaceOutcome EC2Client::DeleteLocalGatewayVirtualInterface(
-    const DeleteLocalGatewayVirtualInterfaceRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteLocalGatewayVirtualInterfaceOutcome(result.GetResultWithOwnership())
-                            : DeleteLocalGatewayVirtualInterfaceOutcome(std::move(result.GetError()));
 }

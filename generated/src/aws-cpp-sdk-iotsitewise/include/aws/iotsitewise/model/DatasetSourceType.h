@@ -10,7 +10,7 @@
 namespace Aws {
 namespace IoTSiteWise {
 namespace Model {
-enum class DatasetSourceType { NOT_SET, KENDRA };
+enum class DatasetSourceType { NOT_SET, KENDRA, SITEWISE };
 
 namespace DatasetSourceTypeMapper {
 AWS_IOTSITEWISE_API DatasetSourceType GetDatasetSourceTypeForName(const Aws::String& name);

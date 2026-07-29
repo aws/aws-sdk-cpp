@@ -84,15 +84,36 @@ class ListBulkImportJobsRequest : public IoTSiteWiseRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the workspace.</p>
+   */
+  inline const Aws::String& GetWorkspaceName() const { return m_workspaceName; }
+  inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
+  template <typename WorkspaceNameT = Aws::String>
+  void SetWorkspaceName(WorkspaceNameT&& value) {
+    m_workspaceNameHasBeenSet = true;
+    m_workspaceName = std::forward<WorkspaceNameT>(value);
+  }
+  template <typename WorkspaceNameT = Aws::String>
+  ListBulkImportJobsRequest& WithWorkspaceName(WorkspaceNameT&& value) {
+    SetWorkspaceName(std::forward<WorkspaceNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nextToken;
 
   int m_maxResults{0};
 
   ListBulkImportJobsFilter m_filter{ListBulkImportJobsFilter::NOT_SET};
+
+  Aws::String m_workspaceName;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_filterHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
 };
 
 }  // namespace Model

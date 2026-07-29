@@ -52,8 +52,11 @@ class DescribeMetadataModelExportsAsScriptRequest : public DatabaseMigrationServ
 
   ///@{
   /**
-   * <p>Filters applied to the metadata model exports described in the form of
-   * key-value pairs.</p>
+   * <p>The filters to apply to the metadata model export requests.</p> <p>The
+   * following filter names are supported:</p> <ul> <li> <p> <code>request-id</code>
+   * – The request identifier.</p> </li> <li> <p> <code>status</code> – The request
+   * status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>,
+   * <code>SUCCESS</code>, <code>FAILED</code>.</p> </li> </ul>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

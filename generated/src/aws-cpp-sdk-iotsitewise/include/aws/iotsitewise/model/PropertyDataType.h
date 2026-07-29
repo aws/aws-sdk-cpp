@@ -10,7 +10,7 @@
 namespace Aws {
 namespace IoTSiteWise {
 namespace Model {
-enum class PropertyDataType { NOT_SET, STRING, INTEGER, DOUBLE, BOOLEAN, STRUCT };
+enum class PropertyDataType { NOT_SET, STRING, INTEGER, DOUBLE, BOOLEAN, STRUCT, VIDEO, ANNOTATION, JSON };
 
 namespace PropertyDataTypeMapper {
 AWS_IOTSITEWISE_API PropertyDataType GetPropertyDataTypeForName(const Aws::String& name);

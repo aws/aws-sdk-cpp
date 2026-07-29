@@ -25,6 +25,18 @@ void ListDatasetsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
+  if (m_workspaceNameHasBeenSet) {
+    ss << m_workspaceName;
+    uri.AddQueryStringParameter("workspaceName", ss.str());
+    ss.str("");
+  }
+
+  if (m_datasetTypeHasBeenSet) {
+    ss << DatasetTypeEnumMapper::GetNameForDatasetTypeEnum(m_datasetType);
+    uri.AddQueryStringParameter("datasetType", ss.str());
+    ss.str("");
+  }
+
   if (m_nextTokenHasBeenSet) {
     ss << m_nextToken;
     uri.AddQueryStringParameter("nextToken", ss.str());

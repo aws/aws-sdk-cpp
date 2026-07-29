@@ -9,6 +9,7 @@
 #include <aws/gameliftstreams/GameLiftStreamsClientPagination.h>
 #include <aws/gameliftstreams/GameLiftStreamsPaginationBase.h>
 #include <aws/gameliftstreams/model/ListApplicationsPaginationTraits.h>
+#include <aws/gameliftstreams/model/ListStreamUrlsPaginationTraits.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsByAccountPaginationTraits.h>
 #include <aws/gameliftstreams/model/ListStreamGroupsPaginationTraits.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsPaginationTraits.h>

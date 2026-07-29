@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/ConnectorProperty.h>
+#include <aws/glue/model/FilterConfiguration.h>
 #include <aws/glue/model/HTTPMethod.h>
 #include <aws/glue/model/PaginationConfiguration.h>
 #include <aws/glue/model/ResponseConfiguration.h>
@@ -135,6 +136,25 @@ class SourceConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for applying filter pushdown to REST API requests, defining how
+   * filter predicates are translated into query parameters or filter strings.</p>
+   */
+  inline const FilterConfiguration& GetFilterConfiguration() const { return m_filterConfiguration; }
+  inline bool FilterConfigurationHasBeenSet() const { return m_filterConfigurationHasBeenSet; }
+  template <typename FilterConfigurationT = FilterConfiguration>
+  void SetFilterConfiguration(FilterConfigurationT&& value) {
+    m_filterConfigurationHasBeenSet = true;
+    m_filterConfiguration = std::forward<FilterConfigurationT>(value);
+  }
+  template <typename FilterConfigurationT = FilterConfiguration>
+  SourceConfiguration& WithFilterConfiguration(FilterConfigurationT&& value) {
+    SetFilterConfiguration(std::forward<FilterConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   HTTPMethod m_requestMethod{HTTPMethod::NOT_SET};
 
@@ -145,11 +165,14 @@ class SourceConfiguration {
   ResponseConfiguration m_responseConfiguration;
 
   PaginationConfiguration m_paginationConfiguration;
+
+  FilterConfiguration m_filterConfiguration;
   bool m_requestMethodHasBeenSet = false;
   bool m_requestPathHasBeenSet = false;
   bool m_requestParametersHasBeenSet = false;
   bool m_responseConfigurationHasBeenSet = false;
   bool m_paginationConfigurationHasBeenSet = false;
+  bool m_filterConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

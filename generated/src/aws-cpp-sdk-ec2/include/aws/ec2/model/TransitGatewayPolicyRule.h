@@ -55,8 +55,7 @@ class TransitGatewayPolicyRule {
 
   ///@{
   /**
-   * <p>The port range for the transit gateway policy rule. Currently this is set to
-   * * (all).</p>
+   * <p>The source port or port range for the transit gateway policy rule.</p>
    */
   inline const Aws::String& GetSourcePortRange() const { return m_sourcePortRange; }
   inline bool SourcePortRangeHasBeenSet() const { return m_sourcePortRangeHasBeenSet; }
@@ -92,8 +91,7 @@ class TransitGatewayPolicyRule {
 
   ///@{
   /**
-   * <p>The port range for the transit gateway policy rule. Currently this is set to
-   * * (all).</p>
+   * <p>The destination port or port range for the transit gateway policy rule.</p>
    */
   inline const Aws::String& GetDestinationPortRange() const { return m_destinationPortRange; }
   inline bool DestinationPortRangeHasBeenSet() const { return m_destinationPortRangeHasBeenSet; }

@@ -167,6 +167,7 @@
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayPolicyTableAssociationsPaginationTraits.h>
+#include <aws/ec2/model/GetTransitGatewayPolicyTableEntriesPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayPrefixListReferencesPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTableAssociationsPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTablePropagationsPaginationTraits.h>
@@ -2101,6 +2102,18 @@ class EC2PaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayPolicyTableAssociationsRequest,
                                              Pagination::GetTransitGatewayPolicyTableAssociationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for GetTransitGatewayPolicyTableEntries operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayPolicyTableEntriesRequest,
+                                    Pagination::GetTransitGatewayPolicyTableEntriesPaginationTraits<DerivedClient>>
+  GetTransitGatewayPolicyTableEntriesPaginator(const Model::GetTransitGatewayPolicyTableEntriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayPolicyTableEntriesRequest,
+                                             Pagination::GetTransitGatewayPolicyTableEntriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

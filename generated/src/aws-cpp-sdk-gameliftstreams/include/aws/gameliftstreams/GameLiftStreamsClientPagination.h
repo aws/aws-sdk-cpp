@@ -10,6 +10,7 @@
 #include <aws/gameliftstreams/model/ListStreamGroupsPaginationTraits.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsByAccountPaginationTraits.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsPaginationTraits.h>
+#include <aws/gameliftstreams/model/ListStreamUrlsPaginationTraits.h>
 
 namespace Aws {
 namespace GameLiftStreams {
@@ -24,6 +25,8 @@ using ListStreamSessionsPaginator =
 using ListStreamSessionsByAccountPaginator =
     Aws::Utils::Pagination::Paginator<GameLiftStreamsClient, Model::ListStreamSessionsByAccountRequest,
                                       Pagination::ListStreamSessionsByAccountPaginationTraits<GameLiftStreamsClient>>;
+using ListStreamUrlsPaginator = Aws::Utils::Pagination::Paginator<GameLiftStreamsClient, Model::ListStreamUrlsRequest,
+                                                                  Pagination::ListStreamUrlsPaginationTraits<GameLiftStreamsClient>>;
 
 }  // namespace GameLiftStreams
 }  // namespace Aws

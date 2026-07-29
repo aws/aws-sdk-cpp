@@ -11,6 +11,7 @@
 #include <aws/gameliftstreams/model/ListStreamGroupsPaginationTraits.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsByAccountPaginationTraits.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsPaginationTraits.h>
+#include <aws/gameliftstreams/model/ListStreamUrlsPaginationTraits.h>
 
 #include <memory>
 
@@ -66,6 +67,17 @@ class GameLiftStreamsPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamSessionsByAccountRequest,
                                              Pagination::ListStreamSessionsByAccountPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListStreamUrls operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamUrlsRequest, Pagination::ListStreamUrlsPaginationTraits<DerivedClient>>
+  ListStreamUrlsPaginator(const Model::ListStreamUrlsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamUrlsRequest,
+                                             Pagination::ListStreamUrlsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
   }
 };
 }  // namespace GameLiftStreams

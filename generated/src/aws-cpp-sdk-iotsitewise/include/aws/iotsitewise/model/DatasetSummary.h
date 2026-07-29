@@ -7,7 +7,10 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
+#include <aws/iotsitewise/model/DatasetEnrichment.h>
+#include <aws/iotsitewise/model/DatasetSourceType.h>
 #include <aws/iotsitewise/model/DatasetStatus.h>
+#include <aws/iotsitewise/model/DatasetTypeEnum.h>
 
 #include <utility>
 
@@ -110,6 +113,39 @@ class DatasetSummary {
 
   ///@{
   /**
+   * <p>The data source type of the dataset.</p>
+   */
+  inline DatasetSourceType GetSourceType() const { return m_sourceType; }
+  inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+  inline void SetSourceType(DatasetSourceType value) {
+    m_sourceTypeHasBeenSet = true;
+    m_sourceType = value;
+  }
+  inline DatasetSummary& WithSourceType(DatasetSourceType value) {
+    SetSourceType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of dataset: a session dataset, a curated dataset, or a connection to
+   * an external datasource.</p>
+   */
+  inline DatasetTypeEnum GetDatasetType() const { return m_datasetType; }
+  inline bool DatasetTypeHasBeenSet() const { return m_datasetTypeHasBeenSet; }
+  inline void SetDatasetType(DatasetTypeEnum value) {
+    m_datasetTypeHasBeenSet = true;
+    m_datasetType = value;
+  }
+  inline DatasetSummary& WithDatasetType(DatasetTypeEnum value) {
+    SetDatasetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The dataset creation date, in Unix epoch time.</p>
    */
   inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
@@ -162,6 +198,24 @@ class DatasetSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The enrichment status of the dataset.</p>
+   */
+  inline const DatasetEnrichment& GetEnrichmentStatus() const { return m_enrichmentStatus; }
+  inline bool EnrichmentStatusHasBeenSet() const { return m_enrichmentStatusHasBeenSet; }
+  template <typename EnrichmentStatusT = DatasetEnrichment>
+  void SetEnrichmentStatus(EnrichmentStatusT&& value) {
+    m_enrichmentStatusHasBeenSet = true;
+    m_enrichmentStatus = std::forward<EnrichmentStatusT>(value);
+  }
+  template <typename EnrichmentStatusT = DatasetEnrichment>
+  DatasetSummary& WithEnrichmentStatus(EnrichmentStatusT&& value) {
+    SetEnrichmentStatus(std::forward<EnrichmentStatusT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -171,18 +225,27 @@ class DatasetSummary {
 
   Aws::String m_description;
 
+  DatasetSourceType m_sourceType{DatasetSourceType::NOT_SET};
+
+  DatasetTypeEnum m_datasetType{DatasetTypeEnum::NOT_SET};
+
   Aws::Utils::DateTime m_creationDate{};
 
   Aws::Utils::DateTime m_lastUpdateDate{};
 
   DatasetStatus m_status;
+
+  DatasetEnrichment m_enrichmentStatus;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_datasetTypeHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
   bool m_lastUpdateDateHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_enrichmentStatusHasBeenSet = false;
 };
 
 }  // namespace Model

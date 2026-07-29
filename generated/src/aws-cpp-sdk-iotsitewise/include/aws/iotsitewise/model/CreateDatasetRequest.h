@@ -9,7 +9,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWiseRequest.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
+#include <aws/iotsitewise/model/DatasetConfig.h>
 #include <aws/iotsitewise/model/DatasetSource.h>
+#include <aws/iotsitewise/model/DatasetTypeEnum.h>
 
 #include <utility>
 
@@ -87,6 +89,85 @@ class CreateDatasetRequest : public IoTSiteWiseRequest {
 
   ///@{
   /**
+   * <p>The type of dataset: a session dataset, a curated dataset, or a connection to
+   * an external datasource.</p>
+   */
+  inline DatasetTypeEnum GetDatasetType() const { return m_datasetType; }
+  inline bool DatasetTypeHasBeenSet() const { return m_datasetTypeHasBeenSet; }
+  inline void SetDatasetType(DatasetTypeEnum value) {
+    m_datasetTypeHasBeenSet = true;
+    m_datasetType = value;
+  }
+  inline CreateDatasetRequest& WithDatasetType(DatasetTypeEnum value) {
+    SetDatasetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for the dataset.</p>
+   */
+  inline const DatasetConfig& GetDatasetConfig() const { return m_datasetConfig; }
+  inline bool DatasetConfigHasBeenSet() const { return m_datasetConfigHasBeenSet; }
+  template <typename DatasetConfigT = DatasetConfig>
+  void SetDatasetConfig(DatasetConfigT&& value) {
+    m_datasetConfigHasBeenSet = true;
+    m_datasetConfig = std::forward<DatasetConfigT>(value);
+  }
+  template <typename DatasetConfigT = DatasetConfig>
+  CreateDatasetRequest& WithDatasetConfig(DatasetConfigT&& value) {
+    SetDatasetConfig(std::forward<DatasetConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the workspace that contains the dataset. Required for session and
+   * curated datasets. Omit this field for datasets that connect to an external
+   * datasource.</p>
+   */
+  inline const Aws::String& GetWorkspaceName() const { return m_workspaceName; }
+  inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
+  template <typename WorkspaceNameT = Aws::String>
+  void SetWorkspaceName(WorkspaceNameT&& value) {
+    m_workspaceNameHasBeenSet = true;
+    m_workspaceName = std::forward<WorkspaceNameT>(value);
+  }
+  template <typename WorkspaceNameT = Aws::String>
+  CreateDatasetRequest& WithWorkspaceName(WorkspaceNameT&& value) {
+    SetWorkspaceName(std::forward<WorkspaceNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The metadata for the dataset, provided as key-value pairs.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
+  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+  void SetMetadata(MetadataT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = std::forward<MetadataT>(value);
+  }
+  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+  CreateDatasetRequest& WithMetadata(MetadataT&& value) {
+    SetMetadata(std::forward<MetadataT>(value));
+    return *this;
+  }
+  template <typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+  CreateDatasetRequest& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The data source for the dataset.</p>
    */
   inline const DatasetSource& GetDatasetSource() const { return m_datasetSource; }
@@ -156,6 +237,14 @@ class CreateDatasetRequest : public IoTSiteWiseRequest {
 
   Aws::String m_datasetDescription;
 
+  DatasetTypeEnum m_datasetType{DatasetTypeEnum::NOT_SET};
+
+  DatasetConfig m_datasetConfig;
+
+  Aws::String m_workspaceName;
+
+  Aws::Map<Aws::String, Aws::String> m_metadata;
+
   DatasetSource m_datasetSource;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -164,6 +253,10 @@ class CreateDatasetRequest : public IoTSiteWiseRequest {
   bool m_datasetIdHasBeenSet = false;
   bool m_datasetNameHasBeenSet = false;
   bool m_datasetDescriptionHasBeenSet = false;
+  bool m_datasetTypeHasBeenSet = false;
+  bool m_datasetConfigHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_datasetSourceHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;

@@ -38,6 +38,25 @@ DescribeDatasetResult& DescribeDatasetResult::operator=(const Aws::AmazonWebServ
     m_datasetDescription = jsonValue.GetString("datasetDescription");
     m_datasetDescriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("datasetType")) {
+    m_datasetType = DatasetTypeEnumMapper::GetDatasetTypeEnumForName(jsonValue.GetString("datasetType"));
+    m_datasetTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("datasetConfig")) {
+    m_datasetConfig = jsonValue.GetObject("datasetConfig");
+    m_datasetConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("workspaceName")) {
+    m_workspaceName = jsonValue.GetString("workspaceName");
+    m_workspaceNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("metadata")) {
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
+    for (auto& metadataItem : metadataJsonMap) {
+      m_metadata[metadataItem.first] = metadataItem.second.AsString();
+    }
+    m_metadataHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("datasetSource")) {
     m_datasetSource = jsonValue.GetObject("datasetSource");
     m_datasetSourceHasBeenSet = true;
@@ -57,6 +76,10 @@ DescribeDatasetResult& DescribeDatasetResult::operator=(const Aws::AmazonWebServ
   if (jsonValue.ValueExists("datasetVersion")) {
     m_datasetVersion = jsonValue.GetString("datasetVersion");
     m_datasetVersionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("enrichmentStatus")) {
+    m_enrichmentStatus = jsonValue.GetObject("enrichmentStatus");
+    m_enrichmentStatusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

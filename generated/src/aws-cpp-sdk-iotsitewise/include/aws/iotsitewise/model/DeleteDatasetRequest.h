@@ -54,6 +54,24 @@ class DeleteDatasetRequest : public IoTSiteWiseRequest {
 
   ///@{
   /**
+   * <p>The name of the workspace that contains the dataset.</p>
+   */
+  inline const Aws::String& GetWorkspaceName() const { return m_workspaceName; }
+  inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
+  template <typename WorkspaceNameT = Aws::String>
+  void SetWorkspaceName(WorkspaceNameT&& value) {
+    m_workspaceNameHasBeenSet = true;
+    m_workspaceName = std::forward<WorkspaceNameT>(value);
+  }
+  template <typename WorkspaceNameT = Aws::String>
+  DeleteDatasetRequest& WithWorkspaceName(WorkspaceNameT&& value) {
+    SetWorkspaceName(std::forward<WorkspaceNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique case-sensitive identifier that you can provide to ensure the
    * idempotency of the request. Don't reuse this client token if a new idempotent
    * request is required.</p>
@@ -74,8 +92,11 @@ class DeleteDatasetRequest : public IoTSiteWiseRequest {
  private:
   Aws::String m_datasetId;
 
+  Aws::String m_workspaceName;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_datasetIdHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

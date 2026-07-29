@@ -23,24 +23,37 @@
 #include <aws/iotsitewise/IoTSiteWiseErrorMarshaller.h>
 #include <aws/iotsitewise/model/AssociateAssetsRequest.h>
 #include <aws/iotsitewise/model/AssociateTimeSeriesToAssetPropertyRequest.h>
+#include <aws/iotsitewise/model/BatchAssociateDataSegmentsToDatasetRequest.h>
 #include <aws/iotsitewise/model/BatchAssociateProjectAssetsRequest.h>
+#include <aws/iotsitewise/model/BatchDeleteDatasetDataSegmentsRequest.h>
+#include <aws/iotsitewise/model/BatchDisassociateDataSegmentsFromDatasetRequest.h>
 #include <aws/iotsitewise/model/BatchDisassociateProjectAssetsRequest.h>
 #include <aws/iotsitewise/model/BatchGetAssetPropertyAggregatesRequest.h>
 #include <aws/iotsitewise/model/BatchGetAssetPropertyValueHistoryRequest.h>
 #include <aws/iotsitewise/model/BatchGetAssetPropertyValueRequest.h>
 #include <aws/iotsitewise/model/BatchPutAssetPropertyValueRequest.h>
+#include <aws/iotsitewise/model/CancelEnrichmentJobRequest.h>
+#include <aws/iotsitewise/model/CancelPipelineExecutionRequest.h>
+#include <aws/iotsitewise/model/CancelQueryRequest.h>
 #include <aws/iotsitewise/model/CreateAccessPolicyRequest.h>
+#include <aws/iotsitewise/model/CreateApplicationRequest.h>
 #include <aws/iotsitewise/model/CreateAssetModelCompositeModelRequest.h>
 #include <aws/iotsitewise/model/CreateAssetModelRequest.h>
 #include <aws/iotsitewise/model/CreateAssetRequest.h>
 #include <aws/iotsitewise/model/CreateBulkImportJobRequest.h>
 #include <aws/iotsitewise/model/CreateComputationModelRequest.h>
 #include <aws/iotsitewise/model/CreateDashboardRequest.h>
+#include <aws/iotsitewise/model/CreateDatasetExportJobRequest.h>
 #include <aws/iotsitewise/model/CreateDatasetRequest.h>
+#include <aws/iotsitewise/model/CreateEnrichmentJobRequest.h>
 #include <aws/iotsitewise/model/CreateGatewayRequest.h>
+#include <aws/iotsitewise/model/CreatePipelineRequest.h>
 #include <aws/iotsitewise/model/CreatePortalRequest.h>
 #include <aws/iotsitewise/model/CreateProjectRequest.h>
+#include <aws/iotsitewise/model/CreateTaskRequest.h>
+#include <aws/iotsitewise/model/CreateWorkspaceRequest.h>
 #include <aws/iotsitewise/model/DeleteAccessPolicyRequest.h>
+#include <aws/iotsitewise/model/DeleteApplicationRequest.h>
 #include <aws/iotsitewise/model/DeleteAssetModelCompositeModelRequest.h>
 #include <aws/iotsitewise/model/DeleteAssetModelInterfaceRelationshipRequest.h>
 #include <aws/iotsitewise/model/DeleteAssetModelRequest.h>
@@ -49,11 +62,15 @@
 #include <aws/iotsitewise/model/DeleteDashboardRequest.h>
 #include <aws/iotsitewise/model/DeleteDatasetRequest.h>
 #include <aws/iotsitewise/model/DeleteGatewayRequest.h>
+#include <aws/iotsitewise/model/DeletePipelineRequest.h>
 #include <aws/iotsitewise/model/DeletePortalRequest.h>
 #include <aws/iotsitewise/model/DeleteProjectRequest.h>
+#include <aws/iotsitewise/model/DeleteTaskRequest.h>
 #include <aws/iotsitewise/model/DeleteTimeSeriesRequest.h>
+#include <aws/iotsitewise/model/DeleteWorkspaceRequest.h>
 #include <aws/iotsitewise/model/DescribeAccessPolicyRequest.h>
 #include <aws/iotsitewise/model/DescribeActionRequest.h>
+#include <aws/iotsitewise/model/DescribeApplicationRequest.h>
 #include <aws/iotsitewise/model/DescribeAssetCompositeModelRequest.h>
 #include <aws/iotsitewise/model/DescribeAssetModelCompositeModelRequest.h>
 #include <aws/iotsitewise/model/DescribeAssetModelInterfaceRelationshipRequest.h>
@@ -64,16 +81,24 @@
 #include <aws/iotsitewise/model/DescribeComputationModelExecutionSummaryRequest.h>
 #include <aws/iotsitewise/model/DescribeComputationModelRequest.h>
 #include <aws/iotsitewise/model/DescribeDashboardRequest.h>
+#include <aws/iotsitewise/model/DescribeDatasetExportJobRequest.h>
 #include <aws/iotsitewise/model/DescribeDatasetRequest.h>
 #include <aws/iotsitewise/model/DescribeDefaultEncryptionConfigurationRequest.h>
+#include <aws/iotsitewise/model/DescribeEnrichmentJobRequest.h>
 #include <aws/iotsitewise/model/DescribeExecutionRequest.h>
 #include <aws/iotsitewise/model/DescribeGatewayCapabilityConfigurationRequest.h>
 #include <aws/iotsitewise/model/DescribeGatewayRequest.h>
 #include <aws/iotsitewise/model/DescribeLoggingOptionsRequest.h>
+#include <aws/iotsitewise/model/DescribePipelineExecutionRequest.h>
+#include <aws/iotsitewise/model/DescribePipelineRequest.h>
 #include <aws/iotsitewise/model/DescribePortalRequest.h>
 #include <aws/iotsitewise/model/DescribeProjectRequest.h>
+#include <aws/iotsitewise/model/DescribeQueryRequest.h>
+#include <aws/iotsitewise/model/DescribeSearchRequest.h>
 #include <aws/iotsitewise/model/DescribeStorageConfigurationRequest.h>
+#include <aws/iotsitewise/model/DescribeTaskRequest.h>
 #include <aws/iotsitewise/model/DescribeTimeSeriesRequest.h>
+#include <aws/iotsitewise/model/DescribeWorkspaceRequest.h>
 #include <aws/iotsitewise/model/DisassociateAssetsRequest.h>
 #include <aws/iotsitewise/model/DisassociateTimeSeriesFromAssetPropertyRequest.h>
 #include <aws/iotsitewise/model/ExecuteActionRequest.h>
@@ -81,10 +106,14 @@
 #include <aws/iotsitewise/model/GetAssetPropertyAggregatesRequest.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueHistoryRequest.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueRequest.h>
+#include <aws/iotsitewise/model/GetCaptureDataRequest.h>
 #include <aws/iotsitewise/model/GetInterpolatedAssetPropertyValuesRequest.h>
+#include <aws/iotsitewise/model/GetQueryResultsRequest.h>
+#include <aws/iotsitewise/model/GetSearchResultsRequest.h>
 #include <aws/iotsitewise/model/InvokeAssistantRequest.h>
 #include <aws/iotsitewise/model/ListAccessPoliciesRequest.h>
 #include <aws/iotsitewise/model/ListActionsRequest.h>
+#include <aws/iotsitewise/model/ListApplicationsRequest.h>
 #include <aws/iotsitewise/model/ListAssetModelCompositeModelsRequest.h>
 #include <aws/iotsitewise/model/ListAssetModelPropertiesRequest.h>
 #include <aws/iotsitewise/model/ListAssetModelsRequest.h>
@@ -98,19 +127,32 @@
 #include <aws/iotsitewise/model/ListComputationModelResolveToResourcesRequest.h>
 #include <aws/iotsitewise/model/ListComputationModelsRequest.h>
 #include <aws/iotsitewise/model/ListDashboardsRequest.h>
+#include <aws/iotsitewise/model/ListDatasetDataSegmentRelationshipsRequest.h>
+#include <aws/iotsitewise/model/ListDatasetDataSegmentsRequest.h>
+#include <aws/iotsitewise/model/ListDatasetExportJobsRequest.h>
 #include <aws/iotsitewise/model/ListDatasetsRequest.h>
+#include <aws/iotsitewise/model/ListEnrichmentJobsRequest.h>
 #include <aws/iotsitewise/model/ListExecutionsRequest.h>
 #include <aws/iotsitewise/model/ListGatewaysRequest.h>
 #include <aws/iotsitewise/model/ListInterfaceRelationshipsRequest.h>
+#include <aws/iotsitewise/model/ListPipelineExecutionsRequest.h>
+#include <aws/iotsitewise/model/ListPipelinesRequest.h>
 #include <aws/iotsitewise/model/ListPortalsRequest.h>
 #include <aws/iotsitewise/model/ListProjectAssetsRequest.h>
 #include <aws/iotsitewise/model/ListProjectsRequest.h>
+#include <aws/iotsitewise/model/ListQueriesRequest.h>
+#include <aws/iotsitewise/model/ListSearchesRequest.h>
 #include <aws/iotsitewise/model/ListTagsForResourceRequest.h>
+#include <aws/iotsitewise/model/ListTasksRequest.h>
 #include <aws/iotsitewise/model/ListTimeSeriesRequest.h>
+#include <aws/iotsitewise/model/ListWorkspacesRequest.h>
 #include <aws/iotsitewise/model/PutAssetModelInterfaceRelationshipRequest.h>
 #include <aws/iotsitewise/model/PutDefaultEncryptionConfigurationRequest.h>
 #include <aws/iotsitewise/model/PutLoggingOptionsRequest.h>
 #include <aws/iotsitewise/model/PutStorageConfigurationRequest.h>
+#include <aws/iotsitewise/model/StartPipelineExecutionRequest.h>
+#include <aws/iotsitewise/model/StartQueryRequest.h>
+#include <aws/iotsitewise/model/StartSearchRequest.h>
 #include <aws/iotsitewise/model/TagResourceRequest.h>
 #include <aws/iotsitewise/model/UntagResourceRequest.h>
 #include <aws/iotsitewise/model/UpdateAccessPolicyRequest.h>
@@ -123,8 +165,11 @@
 #include <aws/iotsitewise/model/UpdateDatasetRequest.h>
 #include <aws/iotsitewise/model/UpdateGatewayCapabilityConfigurationRequest.h>
 #include <aws/iotsitewise/model/UpdateGatewayRequest.h>
+#include <aws/iotsitewise/model/UpdatePipelineRequest.h>
 #include <aws/iotsitewise/model/UpdatePortalRequest.h>
 #include <aws/iotsitewise/model/UpdateProjectRequest.h>
+#include <aws/iotsitewise/model/UpdateTaskRequest.h>
+#include <aws/iotsitewise/model/UpdateWorkspaceRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -326,6 +371,26 @@ AssociateTimeSeriesToAssetPropertyOutcome IoTSiteWiseClient::AssociateTimeSeries
                             : AssociateTimeSeriesToAssetPropertyOutcome(std::move(result.GetError()));
 }
 
+BatchAssociateDataSegmentsToDatasetOutcome IoTSiteWiseClient::BatchAssociateDataSegmentsToDataset(
+    const BatchAssociateDataSegmentsToDatasetRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchAssociateDataSegmentsToDataset", "Required field: DatasetId, is not set");
+    return BatchAssociateDataSegmentsToDatasetOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-segments/associate");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchAssociateDataSegmentsToDatasetOutcome(result.GetResultWithOwnership())
+                            : BatchAssociateDataSegmentsToDatasetOutcome(std::move(result.GetError()));
+}
+
 BatchAssociateProjectAssetsOutcome IoTSiteWiseClient::BatchAssociateProjectAssets(const BatchAssociateProjectAssetsRequest& request) const {
   if (!request.ProjectIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchAssociateProjectAssets", "Required field: ProjectId, is not set");
@@ -343,6 +408,46 @@ BatchAssociateProjectAssetsOutcome IoTSiteWiseClient::BatchAssociateProjectAsset
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? BatchAssociateProjectAssetsOutcome(result.GetResultWithOwnership())
                             : BatchAssociateProjectAssetsOutcome(std::move(result.GetError()));
+}
+
+BatchDeleteDatasetDataSegmentsOutcome IoTSiteWiseClient::BatchDeleteDatasetDataSegments(
+    const BatchDeleteDatasetDataSegmentsRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchDeleteDatasetDataSegments", "Required field: DatasetId, is not set");
+    return BatchDeleteDatasetDataSegmentsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-segments/batch-delete");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteDatasetDataSegmentsOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteDatasetDataSegmentsOutcome(std::move(result.GetError()));
+}
+
+BatchDisassociateDataSegmentsFromDatasetOutcome IoTSiteWiseClient::BatchDisassociateDataSegmentsFromDataset(
+    const BatchDisassociateDataSegmentsFromDatasetRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchDisassociateDataSegmentsFromDataset", "Required field: DatasetId, is not set");
+    return BatchDisassociateDataSegmentsFromDatasetOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-segments/disassociate");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDisassociateDataSegmentsFromDatasetOutcome(result.GetResultWithOwnership())
+                            : BatchDisassociateDataSegmentsFromDatasetOutcome(std::move(result.GetError()));
 }
 
 BatchDisassociateProjectAssetsOutcome IoTSiteWiseClient::BatchDisassociateProjectAssets(
@@ -411,6 +516,90 @@ BatchPutAssetPropertyValueOutcome IoTSiteWiseClient::BatchPutAssetPropertyValue(
                             : BatchPutAssetPropertyValueOutcome(std::move(result.GetError()));
 }
 
+CancelEnrichmentJobOutcome IoTSiteWiseClient::CancelEnrichmentJob(const CancelEnrichmentJobRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CancelEnrichmentJob", "Required field: WorkspaceName, is not set");
+    return CancelEnrichmentJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.JobIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CancelEnrichmentJob", "Required field: JobId, is not set");
+    return CancelEnrichmentJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [JobId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/enrichment-jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelEnrichmentJobOutcome(result.GetResultWithOwnership())
+                            : CancelEnrichmentJobOutcome(std::move(result.GetError()));
+}
+
+CancelPipelineExecutionOutcome IoTSiteWiseClient::CancelPipelineExecution(const CancelPipelineExecutionRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CancelPipelineExecution", "Required field: WorkspaceName, is not set");
+    return CancelPipelineExecutionOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.PipelineNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CancelPipelineExecution", "Required field: PipelineName, is not set");
+    return CancelPipelineExecutionOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineName]", false));
+  }
+  if (!request.PipelineExecutionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CancelPipelineExecution", "Required field: PipelineExecutionId, is not set");
+    return CancelPipelineExecutionOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineExecutionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/pipelines/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/executions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineExecutionId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelPipelineExecutionOutcome(result.GetResultWithOwnership())
+                            : CancelPipelineExecutionOutcome(std::move(result.GetError()));
+}
+
+CancelQueryOutcome IoTSiteWiseClient::CancelQuery(const CancelQueryRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CancelQuery", "Required field: WorkspaceName, is not set");
+    return CancelQueryOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.QueryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CancelQuery", "Required field: QueryId, is not set");
+    return CancelQueryOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [QueryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelQueryOutcome(result.GetResultWithOwnership()) : CancelQueryOutcome(std::move(result.GetError()));
+}
+
 CreateAccessPolicyOutcome IoTSiteWiseClient::CreateAccessPolicy(const CreateAccessPolicyRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -420,6 +609,17 @@ CreateAccessPolicyOutcome IoTSiteWiseClient::CreateAccessPolicy(const CreateAcce
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateAccessPolicyOutcome(result.GetResultWithOwnership())
                             : CreateAccessPolicyOutcome(std::move(result.GetError()));
+}
+
+CreateApplicationOutcome IoTSiteWiseClient::CreateApplication(const CreateApplicationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateAssetOutcome IoTSiteWiseClient::CreateAsset(const CreateAssetRequest& request) const {
@@ -506,6 +706,44 @@ CreateDatasetOutcome IoTSiteWiseClient::CreateDataset(const CreateDatasetRequest
   return result.IsSuccess() ? CreateDatasetOutcome(result.GetResultWithOwnership()) : CreateDatasetOutcome(std::move(result.GetError()));
 }
 
+CreateDatasetExportJobOutcome IoTSiteWiseClient::CreateDatasetExportJob(const CreateDatasetExportJobRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateDatasetExportJob", "Required field: WorkspaceName, is not set");
+    return CreateDatasetExportJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/dataset-export-jobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetExportJobOutcome(result.GetResultWithOwnership())
+                            : CreateDatasetExportJobOutcome(std::move(result.GetError()));
+}
+
+CreateEnrichmentJobOutcome IoTSiteWiseClient::CreateEnrichmentJob(const CreateEnrichmentJobRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateEnrichmentJob", "Required field: WorkspaceName, is not set");
+    return CreateEnrichmentJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/enrichment-jobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEnrichmentJobOutcome(result.GetResultWithOwnership())
+                            : CreateEnrichmentJobOutcome(std::move(result.GetError()));
+}
+
 CreateGatewayOutcome IoTSiteWiseClient::CreateGateway(const CreateGatewayRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -514,6 +752,24 @@ CreateGatewayOutcome IoTSiteWiseClient::CreateGateway(const CreateGatewayRequest
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateGatewayOutcome(result.GetResultWithOwnership()) : CreateGatewayOutcome(std::move(result.GetError()));
+}
+
+CreatePipelineOutcome IoTSiteWiseClient::CreatePipeline(const CreatePipelineRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreatePipeline", "Required field: WorkspaceName, is not set");
+    return CreatePipelineOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/pipelines");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePipelineOutcome(result.GetResultWithOwnership()) : CreatePipelineOutcome(std::move(result.GetError()));
 }
 
 CreatePortalOutcome IoTSiteWiseClient::CreatePortal(const CreatePortalRequest& request) const {
@@ -536,6 +792,35 @@ CreateProjectOutcome IoTSiteWiseClient::CreateProject(const CreateProjectRequest
   return result.IsSuccess() ? CreateProjectOutcome(result.GetResultWithOwnership()) : CreateProjectOutcome(std::move(result.GetError()));
 }
 
+CreateTaskOutcome IoTSiteWiseClient::CreateTask(const CreateTaskRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateTask", "Required field: WorkspaceName, is not set");
+    return CreateTaskOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tasks");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTaskOutcome(result.GetResultWithOwnership()) : CreateTaskOutcome(std::move(result.GetError()));
+}
+
+CreateWorkspaceOutcome IoTSiteWiseClient::CreateWorkspace(const CreateWorkspaceRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkspaceOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspaceOutcome(std::move(result.GetError()));
+}
+
 DeleteAccessPolicyOutcome IoTSiteWiseClient::DeleteAccessPolicy(const DeleteAccessPolicyRequest& request) const {
   if (!request.AccessPolicyIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteAccessPolicy", "Required field: AccessPolicyId, is not set");
@@ -552,6 +837,31 @@ DeleteAccessPolicyOutcome IoTSiteWiseClient::DeleteAccessPolicy(const DeleteAcce
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteAccessPolicyOutcome(result.GetResultWithOwnership())
                             : DeleteAccessPolicyOutcome(std::move(result.GetError()));
+}
+
+DeleteApplicationOutcome IoTSiteWiseClient::DeleteApplication(const DeleteApplicationRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteApplication", "Required field: WorkspaceName, is not set");
+    return DeleteApplicationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteApplication", "Required field: Id, is not set");
+    return DeleteApplicationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteAssetOutcome IoTSiteWiseClient::DeleteAsset(const DeleteAssetRequest& request) const {
@@ -712,6 +1022,30 @@ DeleteGatewayOutcome IoTSiteWiseClient::DeleteGateway(const DeleteGatewayRequest
   return result.IsSuccess() ? DeleteGatewayOutcome(result.GetResultWithOwnership()) : DeleteGatewayOutcome(std::move(result.GetError()));
 }
 
+DeletePipelineOutcome IoTSiteWiseClient::DeletePipeline(const DeletePipelineRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeletePipeline", "Required field: WorkspaceName, is not set");
+    return DeletePipelineOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.PipelineNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeletePipeline", "Required field: PipelineName, is not set");
+    return DeletePipelineOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [PipelineName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/pipelines/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePipelineOutcome(result.GetResultWithOwnership()) : DeletePipelineOutcome(std::move(result.GetError()));
+}
+
 DeletePortalOutcome IoTSiteWiseClient::DeletePortal(const DeletePortalRequest& request) const {
   if (!request.PortalIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeletePortal", "Required field: PortalId, is not set");
@@ -746,6 +1080,30 @@ DeleteProjectOutcome IoTSiteWiseClient::DeleteProject(const DeleteProjectRequest
   return result.IsSuccess() ? DeleteProjectOutcome(result.GetResultWithOwnership()) : DeleteProjectOutcome(std::move(result.GetError()));
 }
 
+DeleteTaskOutcome IoTSiteWiseClient::DeleteTask(const DeleteTaskRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteTask", "Required field: WorkspaceName, is not set");
+    return DeleteTaskOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.TaskNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteTask", "Required field: TaskName, is not set");
+    return DeleteTaskOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [TaskName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tasks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTaskOutcome(result.GetResultWithOwnership()) : DeleteTaskOutcome(std::move(result.GetError()));
+}
+
 DeleteTimeSeriesOutcome IoTSiteWiseClient::DeleteTimeSeries(const DeleteTimeSeriesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -755,6 +1113,24 @@ DeleteTimeSeriesOutcome IoTSiteWiseClient::DeleteTimeSeries(const DeleteTimeSeri
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteTimeSeriesOutcome(result.GetResultWithOwnership())
                             : DeleteTimeSeriesOutcome(std::move(result.GetError()));
+}
+
+DeleteWorkspaceOutcome IoTSiteWiseClient::DeleteWorkspace(const DeleteWorkspaceRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteWorkspace", "Required field: WorkspaceName, is not set");
+    return DeleteWorkspaceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkspaceOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkspaceOutcome(std::move(result.GetError()));
 }
 
 DescribeAccessPolicyOutcome IoTSiteWiseClient::DescribeAccessPolicy(const DescribeAccessPolicyRequest& request) const {
@@ -790,6 +1166,31 @@ DescribeActionOutcome IoTSiteWiseClient::DescribeAction(const DescribeActionRequ
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? DescribeActionOutcome(result.GetResultWithOwnership()) : DescribeActionOutcome(std::move(result.GetError()));
+}
+
+DescribeApplicationOutcome IoTSiteWiseClient::DescribeApplication(const DescribeApplicationRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeApplication", "Required field: WorkspaceName, is not set");
+    return DescribeApplicationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeApplication", "Required field: Id, is not set");
+    return DescribeApplicationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeApplicationOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationOutcome(std::move(result.GetError()));
 }
 
 DescribeAssetOutcome IoTSiteWiseClient::DescribeAsset(const DescribeAssetRequest& request) const {
@@ -1022,6 +1423,31 @@ DescribeDatasetOutcome IoTSiteWiseClient::DescribeDataset(const DescribeDatasetR
                             : DescribeDatasetOutcome(std::move(result.GetError()));
 }
 
+DescribeDatasetExportJobOutcome IoTSiteWiseClient::DescribeDatasetExportJob(const DescribeDatasetExportJobRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeDatasetExportJob", "Required field: WorkspaceName, is not set");
+    return DescribeDatasetExportJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.JobIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeDatasetExportJob", "Required field: JobId, is not set");
+    return DescribeDatasetExportJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/dataset-export-jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDatasetExportJobOutcome(result.GetResultWithOwnership())
+                            : DescribeDatasetExportJobOutcome(std::move(result.GetError()));
+}
+
 DescribeDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::DescribeDefaultEncryptionConfiguration(
     const DescribeDefaultEncryptionConfigurationRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -1032,6 +1458,31 @@ DescribeDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::DescribeDefault
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? DescribeDefaultEncryptionConfigurationOutcome(result.GetResultWithOwnership())
                             : DescribeDefaultEncryptionConfigurationOutcome(std::move(result.GetError()));
+}
+
+DescribeEnrichmentJobOutcome IoTSiteWiseClient::DescribeEnrichmentJob(const DescribeEnrichmentJobRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeEnrichmentJob", "Required field: WorkspaceName, is not set");
+    return DescribeEnrichmentJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.JobIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeEnrichmentJob", "Required field: JobId, is not set");
+    return DescribeEnrichmentJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [JobId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/enrichment-jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeEnrichmentJobOutcome(result.GetResultWithOwnership())
+                            : DescribeEnrichmentJobOutcome(std::move(result.GetError()));
 }
 
 DescribeExecutionOutcome IoTSiteWiseClient::DescribeExecution(const DescribeExecutionRequest& request) const {
@@ -1107,6 +1558,63 @@ DescribeLoggingOptionsOutcome IoTSiteWiseClient::DescribeLoggingOptions(const De
                             : DescribeLoggingOptionsOutcome(std::move(result.GetError()));
 }
 
+DescribePipelineOutcome IoTSiteWiseClient::DescribePipeline(const DescribePipelineRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribePipeline", "Required field: WorkspaceName, is not set");
+    return DescribePipelineOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.PipelineNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribePipeline", "Required field: PipelineName, is not set");
+    return DescribePipelineOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [PipelineName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/pipelines/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePipelineOutcome(result.GetResultWithOwnership())
+                            : DescribePipelineOutcome(std::move(result.GetError()));
+}
+
+DescribePipelineExecutionOutcome IoTSiteWiseClient::DescribePipelineExecution(const DescribePipelineExecutionRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribePipelineExecution", "Required field: WorkspaceName, is not set");
+    return DescribePipelineExecutionOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.PipelineNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribePipelineExecution", "Required field: PipelineName, is not set");
+    return DescribePipelineExecutionOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineName]", false));
+  }
+  if (!request.PipelineExecutionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribePipelineExecution", "Required field: PipelineExecutionId, is not set");
+    return DescribePipelineExecutionOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineExecutionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/pipelines/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/executions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineExecutionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePipelineExecutionOutcome(result.GetResultWithOwnership())
+                            : DescribePipelineExecutionOutcome(std::move(result.GetError()));
+}
+
 DescribePortalOutcome IoTSiteWiseClient::DescribePortal(const DescribePortalRequest& request) const {
   if (!request.PortalIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DescribePortal", "Required field: PortalId, is not set");
@@ -1142,6 +1650,54 @@ DescribeProjectOutcome IoTSiteWiseClient::DescribeProject(const DescribeProjectR
                             : DescribeProjectOutcome(std::move(result.GetError()));
 }
 
+DescribeQueryOutcome IoTSiteWiseClient::DescribeQuery(const DescribeQueryRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeQuery", "Required field: WorkspaceName, is not set");
+    return DescribeQueryOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.QueryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeQuery", "Required field: QueryId, is not set");
+    return DescribeQueryOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [QueryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeQueryOutcome(result.GetResultWithOwnership()) : DescribeQueryOutcome(std::move(result.GetError()));
+}
+
+DescribeSearchOutcome IoTSiteWiseClient::DescribeSearch(const DescribeSearchRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeSearch", "Required field: WorkspaceName, is not set");
+    return DescribeSearchOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.SearchIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeSearch", "Required field: SearchId, is not set");
+    return DescribeSearchOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [SearchId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/searches/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSearchId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeSearchOutcome(result.GetResultWithOwnership()) : DescribeSearchOutcome(std::move(result.GetError()));
+}
+
 DescribeStorageConfigurationOutcome IoTSiteWiseClient::DescribeStorageConfiguration(
     const DescribeStorageConfigurationRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -1154,6 +1710,30 @@ DescribeStorageConfigurationOutcome IoTSiteWiseClient::DescribeStorageConfigurat
                             : DescribeStorageConfigurationOutcome(std::move(result.GetError()));
 }
 
+DescribeTaskOutcome IoTSiteWiseClient::DescribeTask(const DescribeTaskRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeTask", "Required field: WorkspaceName, is not set");
+    return DescribeTaskOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.TaskNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeTask", "Required field: TaskName, is not set");
+    return DescribeTaskOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [TaskName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tasks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeTaskOutcome(result.GetResultWithOwnership()) : DescribeTaskOutcome(std::move(result.GetError()));
+}
+
 DescribeTimeSeriesOutcome IoTSiteWiseClient::DescribeTimeSeries(const DescribeTimeSeriesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1163,6 +1743,24 @@ DescribeTimeSeriesOutcome IoTSiteWiseClient::DescribeTimeSeries(const DescribeTi
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? DescribeTimeSeriesOutcome(result.GetResultWithOwnership())
                             : DescribeTimeSeriesOutcome(std::move(result.GetError()));
+}
+
+DescribeWorkspaceOutcome IoTSiteWiseClient::DescribeWorkspace(const DescribeWorkspaceRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeWorkspace", "Required field: WorkspaceName, is not set");
+    return DescribeWorkspaceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeWorkspaceOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspaceOutcome(std::move(result.GetError()));
 }
 
 DisassociateAssetsOutcome IoTSiteWiseClient::DisassociateAssets(const DisassociateAssetsRequest& request) const {
@@ -1287,6 +1885,24 @@ GetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::GetAssetPropertyValueHist
                             : GetAssetPropertyValueHistoryOutcome(std::move(result.GetError()));
 }
 
+GetCaptureDataOutcome IoTSiteWiseClient::GetCaptureData(const GetCaptureDataRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetCaptureData", "Required field: WorkspaceName, is not set");
+    return GetCaptureDataOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/get-capture-data");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCaptureDataOutcome(result.GetResultWithOwnership()) : GetCaptureDataOutcome(std::move(result.GetError()));
+}
+
 GetInterpolatedAssetPropertyValuesOutcome IoTSiteWiseClient::GetInterpolatedAssetPropertyValues(
     const GetInterpolatedAssetPropertyValuesRequest& request) const {
   if (!request.StartTimeInSecondsHasBeenSet()) {
@@ -1323,6 +1939,58 @@ GetInterpolatedAssetPropertyValuesOutcome IoTSiteWiseClient::GetInterpolatedAsse
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetInterpolatedAssetPropertyValuesOutcome(result.GetResultWithOwnership())
                             : GetInterpolatedAssetPropertyValuesOutcome(std::move(result.GetError()));
+}
+
+GetQueryResultsOutcome IoTSiteWiseClient::GetQueryResults(const GetQueryResultsRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetQueryResults", "Required field: WorkspaceName, is not set");
+    return GetQueryResultsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.QueryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetQueryResults", "Required field: QueryId, is not set");
+    return GetQueryResultsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [QueryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/results");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueryResultsOutcome(result.GetResultWithOwnership())
+                            : GetQueryResultsOutcome(std::move(result.GetError()));
+}
+
+GetSearchResultsOutcome IoTSiteWiseClient::GetSearchResults(const GetSearchResultsRequest& request) const {
+  if (!request.SearchIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetSearchResults", "Required field: SearchId, is not set");
+    return GetSearchResultsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [SearchId]", false));
+  }
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetSearchResults", "Required field: WorkspaceName, is not set");
+    return GetSearchResultsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/searches/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSearchId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/results");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSearchResultsOutcome(result.GetResultWithOwnership())
+                            : GetSearchResultsOutcome(std::move(result.GetError()));
 }
 
 InvokeAssistantOutcome IoTSiteWiseClient::InvokeAssistant(InvokeAssistantRequest& request) const {
@@ -1400,6 +2068,17 @@ ListActionsOutcome IoTSiteWiseClient::ListActions(const ListActionsRequest& requ
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListActionsOutcome(result.GetResultWithOwnership()) : ListActionsOutcome(std::move(result.GetError()));
+}
+
+ListApplicationsOutcome IoTSiteWiseClient::ListApplications(const ListApplicationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListAssetModelCompositeModelsOutcome IoTSiteWiseClient::ListAssetModelCompositeModels(
@@ -1614,6 +2293,74 @@ ListDashboardsOutcome IoTSiteWiseClient::ListDashboards(const ListDashboardsRequ
   return result.IsSuccess() ? ListDashboardsOutcome(result.GetResultWithOwnership()) : ListDashboardsOutcome(std::move(result.GetError()));
 }
 
+ListDatasetDataSegmentRelationshipsOutcome IoTSiteWiseClient::ListDatasetDataSegmentRelationships(
+    const ListDatasetDataSegmentRelationshipsRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDatasetDataSegmentRelationships", "Required field: DatasetId, is not set");
+    return ListDatasetDataSegmentRelationshipsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDatasetDataSegmentRelationships", "Required field: WorkspaceName, is not set");
+    return ListDatasetDataSegmentRelationshipsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-segment-relationships");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDatasetDataSegmentRelationshipsOutcome(result.GetResultWithOwnership())
+                            : ListDatasetDataSegmentRelationshipsOutcome(std::move(result.GetError()));
+}
+
+ListDatasetDataSegmentsOutcome IoTSiteWiseClient::ListDatasetDataSegments(const ListDatasetDataSegmentsRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDatasetDataSegments", "Required field: DatasetId, is not set");
+    return ListDatasetDataSegmentsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDatasetDataSegments", "Required field: WorkspaceName, is not set");
+    return ListDatasetDataSegmentsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(
+        IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-segments");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDatasetDataSegmentsOutcome(result.GetResultWithOwnership())
+                            : ListDatasetDataSegmentsOutcome(std::move(result.GetError()));
+}
+
+ListDatasetExportJobsOutcome IoTSiteWiseClient::ListDatasetExportJobs(const ListDatasetExportJobsRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDatasetExportJobs", "Required field: WorkspaceName, is not set");
+    return ListDatasetExportJobsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/dataset-export-jobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDatasetExportJobsOutcome(result.GetResultWithOwnership())
+                            : ListDatasetExportJobsOutcome(std::move(result.GetError()));
+}
+
 ListDatasetsOutcome IoTSiteWiseClient::ListDatasets(const ListDatasetsRequest& request) const {
   if (!request.SourceTypeHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListDatasets", "Required field: SourceType, is not set");
@@ -1628,6 +2375,25 @@ ListDatasetsOutcome IoTSiteWiseClient::ListDatasets(const ListDatasetsRequest& r
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListDatasetsOutcome(result.GetResultWithOwnership()) : ListDatasetsOutcome(std::move(result.GetError()));
+}
+
+ListEnrichmentJobsOutcome IoTSiteWiseClient::ListEnrichmentJobs(const ListEnrichmentJobsRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListEnrichmentJobs", "Required field: WorkspaceName, is not set");
+    return ListEnrichmentJobsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/enrichment-jobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEnrichmentJobsOutcome(result.GetResultWithOwnership())
+                            : ListEnrichmentJobsOutcome(std::move(result.GetError()));
 }
 
 ListExecutionsOutcome IoTSiteWiseClient::ListExecutions(const ListExecutionsRequest& request) const {
@@ -1680,6 +2446,50 @@ ListInterfaceRelationshipsOutcome IoTSiteWiseClient::ListInterfaceRelationships(
                             : ListInterfaceRelationshipsOutcome(std::move(result.GetError()));
 }
 
+ListPipelineExecutionsOutcome IoTSiteWiseClient::ListPipelineExecutions(const ListPipelineExecutionsRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListPipelineExecutions", "Required field: WorkspaceName, is not set");
+    return ListPipelineExecutionsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.PipelineNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListPipelineExecutions", "Required field: PipelineName, is not set");
+    return ListPipelineExecutionsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [PipelineName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/pipelines/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/executions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPipelineExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListPipelineExecutionsOutcome(std::move(result.GetError()));
+}
+
+ListPipelinesOutcome IoTSiteWiseClient::ListPipelines(const ListPipelinesRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListPipelines", "Required field: WorkspaceName, is not set");
+    return ListPipelinesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/pipelines");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPipelinesOutcome(result.GetResultWithOwnership()) : ListPipelinesOutcome(std::move(result.GetError()));
+}
+
 ListPortalsOutcome IoTSiteWiseClient::ListPortals(const ListPortalsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1725,6 +2535,42 @@ ListProjectsOutcome IoTSiteWiseClient::ListProjects(const ListProjectsRequest& r
   return result.IsSuccess() ? ListProjectsOutcome(result.GetResultWithOwnership()) : ListProjectsOutcome(std::move(result.GetError()));
 }
 
+ListQueriesOutcome IoTSiteWiseClient::ListQueries(const ListQueriesRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListQueries", "Required field: WorkspaceName, is not set");
+    return ListQueriesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queries");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueriesOutcome(result.GetResultWithOwnership()) : ListQueriesOutcome(std::move(result.GetError()));
+}
+
+ListSearchesOutcome IoTSiteWiseClient::ListSearches(const ListSearchesRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListSearches", "Required field: WorkspaceName, is not set");
+    return ListSearchesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/searches/list");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSearchesOutcome(result.GetResultWithOwnership()) : ListSearchesOutcome(std::move(result.GetError()));
+}
+
 ListTagsForResourceOutcome IoTSiteWiseClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
   if (!request.ResourceArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
@@ -1742,6 +2588,24 @@ ListTagsForResourceOutcome IoTSiteWiseClient::ListTagsForResource(const ListTags
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
+ListTasksOutcome IoTSiteWiseClient::ListTasks(const ListTasksRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListTasks", "Required field: WorkspaceName, is not set");
+    return ListTasksOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                     "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tasks");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTasksOutcome(result.GetResultWithOwnership()) : ListTasksOutcome(std::move(result.GetError()));
+}
+
 ListTimeSeriesOutcome IoTSiteWiseClient::ListTimeSeries(const ListTimeSeriesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1750,6 +2614,16 @@ ListTimeSeriesOutcome IoTSiteWiseClient::ListTimeSeries(const ListTimeSeriesRequ
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListTimeSeriesOutcome(result.GetResultWithOwnership()) : ListTimeSeriesOutcome(std::move(result.GetError()));
+}
+
+ListWorkspacesOutcome IoTSiteWiseClient::ListWorkspaces(const ListWorkspacesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkspacesOutcome(result.GetResultWithOwnership()) : ListWorkspacesOutcome(std::move(result.GetError()));
 }
 
 PutAssetModelInterfaceRelationshipOutcome IoTSiteWiseClient::PutAssetModelInterfaceRelationship(
@@ -1811,6 +2685,68 @@ PutStorageConfigurationOutcome IoTSiteWiseClient::PutStorageConfiguration(const 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutStorageConfigurationOutcome(result.GetResultWithOwnership())
                             : PutStorageConfigurationOutcome(std::move(result.GetError()));
+}
+
+StartPipelineExecutionOutcome IoTSiteWiseClient::StartPipelineExecution(const StartPipelineExecutionRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartPipelineExecution", "Required field: WorkspaceName, is not set");
+    return StartPipelineExecutionOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.PipelineNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartPipelineExecution", "Required field: PipelineName, is not set");
+    return StartPipelineExecutionOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [PipelineName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/pipelines/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/executions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartPipelineExecutionOutcome(result.GetResultWithOwnership())
+                            : StartPipelineExecutionOutcome(std::move(result.GetError()));
+}
+
+StartQueryOutcome IoTSiteWiseClient::StartQuery(const StartQueryRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartQuery", "Required field: WorkspaceName, is not set");
+    return StartQueryOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queries");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQueryOutcome(result.GetResultWithOwnership()) : StartQueryOutcome(std::move(result.GetError()));
+}
+
+StartSearchOutcome IoTSiteWiseClient::StartSearch(const StartSearchRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartSearch", "Required field: WorkspaceName, is not set");
+    return StartSearchOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/searches");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSearchOutcome(result.GetResultWithOwnership()) : StartSearchOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome IoTSiteWiseClient::TagResource(const TagResourceRequest& request) const {
@@ -2044,6 +2980,30 @@ UpdateGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::UpdateGatewayCapa
                             : UpdateGatewayCapabilityConfigurationOutcome(std::move(result.GetError()));
 }
 
+UpdatePipelineOutcome IoTSiteWiseClient::UpdatePipeline(const UpdatePipelineRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdatePipeline", "Required field: WorkspaceName, is not set");
+    return UpdatePipelineOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.PipelineNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdatePipeline", "Required field: PipelineName, is not set");
+    return UpdatePipelineOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [PipelineName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/pipelines/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePipelineOutcome(result.GetResultWithOwnership()) : UpdatePipelineOutcome(std::move(result.GetError()));
+}
+
 UpdatePortalOutcome IoTSiteWiseClient::UpdatePortal(const UpdatePortalRequest& request) const {
   if (!request.PortalIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdatePortal", "Required field: PortalId, is not set");
@@ -2076,4 +3036,46 @@ UpdateProjectOutcome IoTSiteWiseClient::UpdateProject(const UpdateProjectRequest
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateProjectOutcome(result.GetResultWithOwnership()) : UpdateProjectOutcome(std::move(result.GetError()));
+}
+
+UpdateTaskOutcome IoTSiteWiseClient::UpdateTask(const UpdateTaskRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateTask", "Required field: WorkspaceName, is not set");
+    return UpdateTaskOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [WorkspaceName]", false));
+  }
+  if (!request.TaskNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateTask", "Required field: TaskName, is not set");
+    return UpdateTaskOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [TaskName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tasks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTaskOutcome(result.GetResultWithOwnership()) : UpdateTaskOutcome(std::move(result.GetError()));
+}
+
+UpdateWorkspaceOutcome IoTSiteWiseClient::UpdateWorkspace(const UpdateWorkspaceRequest& request) const {
+  if (!request.WorkspaceNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateWorkspace", "Required field: WorkspaceName, is not set");
+    return UpdateWorkspaceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [WorkspaceName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateWorkspaceOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspaceOutcome(std::move(result.GetError()));
 }

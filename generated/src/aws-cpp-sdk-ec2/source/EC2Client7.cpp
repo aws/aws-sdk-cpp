@@ -20,6 +20,9 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/ProvisionIpamByoasnRequest.h>
+#include <aws/ec2/model/ProvisionIpamPoolCidrRequest.h>
+#include <aws/ec2/model/ProvisionPublicIpv4PoolCidrRequest.h>
 #include <aws/ec2/model/PurchaseCapacityBlockExtensionRequest.h>
 #include <aws/ec2/model/PurchaseCapacityBlockRequest.h>
 #include <aws/ec2/model/PurchaseHostReservationRequest.h>
@@ -103,6 +106,24 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ProvisionIpamByoasnOutcome EC2Client::ProvisionIpamByoasn(const ProvisionIpamByoasnRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ProvisionIpamByoasnOutcome(result.GetResultWithOwnership())
+                            : ProvisionIpamByoasnOutcome(std::move(result.GetError()));
+}
+
+ProvisionIpamPoolCidrOutcome EC2Client::ProvisionIpamPoolCidr(const ProvisionIpamPoolCidrRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ProvisionIpamPoolCidrOutcome(result.GetResultWithOwnership())
+                            : ProvisionIpamPoolCidrOutcome(std::move(result.GetError()));
+}
+
+ProvisionPublicIpv4PoolCidrOutcome EC2Client::ProvisionPublicIpv4PoolCidr(const ProvisionPublicIpv4PoolCidrRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ProvisionPublicIpv4PoolCidrOutcome(result.GetResultWithOwnership())
+                            : ProvisionPublicIpv4PoolCidrOutcome(std::move(result.GetError()));
+}
 
 PurchaseCapacityBlockOutcome EC2Client::PurchaseCapacityBlock(const PurchaseCapacityBlockRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

@@ -31,7 +31,10 @@ class CancelMetadataModelConversionResult {
       const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
-
+  /**
+   * <p>The metadata model conversion request.</p>  <p>DMS never populates the
+   * <code>ExportSqlDetails</code> field for this operation.</p>
+   */
   inline const SchemaConversionRequest& GetRequest() const { return m_request; }
   template <typename RequestT = SchemaConversionRequest>
   void SetRequest(RequestT&& value) {

@@ -34,9 +34,9 @@ class DescribeInstanceProfilesRequest : public DatabaseMigrationServiceRequest {
 
   ///@{
   /**
-   * <p>Filters applied to the instance profiles described in the form of key-value
-   * pairs.</p> <p>Valid filter names and values: instance-profile-identifier,
-   * instance profile arn or name</p>
+   * <p>The filters to apply to the instance profiles.</p> <p>The following filter
+   * names are supported:</p> <ul> <li> <p> <code>instance-profile-identifier</code>
+   * – The instance profile name or ARN.</p> </li> </ul>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
