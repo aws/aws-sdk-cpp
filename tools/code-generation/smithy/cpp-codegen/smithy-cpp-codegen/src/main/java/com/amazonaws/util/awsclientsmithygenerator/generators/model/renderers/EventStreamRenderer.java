@@ -398,7 +398,74 @@ public final class EventStreamRenderer implements ShapeRenderer {
     // ---- Placeholders filled in by Tasks 4 and 5 ----------------------------
 
     private void renderInitialResponse(CppWriterDelegator writerDelegator, String opName) {
-        // Implemented in Task 4.
+        String className = opName + "InitialResponse";
+
+        String headerFile = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
+        writerDelegator.useFileWriter(headerFile, writer -> {
+            writeCopyright(writer);
+            writer.write("#pragma once");
+            writer.write("#include <aws/core/http/HttpTypes.h>");
+            writer.write("#include <aws/$1L/$2L_EXPORTS.h>", smithyServiceName, namespace);
+            writer.write("");
+            writer.writeNamespaceOpen("Aws");
+            renderSerdeForwardDeclarations(writer);
+            writer.writeNamespaceOpen(namespace);
+            writer.writeNamespaceOpen("Model");
+            writer.write("");
+            writer.openBlock("class $L {", "};", className, () -> {
+                writer.write("public:");
+                SerdeStub.renderHeaderDeclarations(writer, protocol, exportMacro, className);
+                writer.write("$1L $2L(const Http::HeaderValueCollection& responseHeaders);", exportMacro, className);
+            });
+            writer.write("");
+            writer.writeNamespaceClose("Model");
+            writer.writeNamespaceClose(namespace);
+            writer.writeNamespaceClose("Aws");
+        });
+
+        String sourceFile = "source/model/" + className + ".cpp";
+        writerDelegator.useFileWriter(sourceFile, writer -> {
+            writeCopyright(writer);
+            if (protocol.isJsonLike()) {
+                writer.write("#include <aws/core/utils/json/JsonSerializer.h>");
+            } else {
+                writer.write("#include <aws/core/utils/xml/XmlSerializer.h>");
+            }
+            writer.write("#include <aws/core/utils/UnreferencedParam.h>");
+            writer.write("#include <aws/$1L/model/$2L.h>", smithyServiceName, className);
+            writer.write("");
+            writer.write("using namespace Aws::$1L::Model;", namespace);
+            if (protocol.isJsonLike()) {
+                writer.write("using namespace Aws::Utils::Json;");
+            } else {
+                writer.write("using namespace Aws::Utils::Xml;");
+            }
+            writer.write("using namespace Aws::Utils;");
+            writer.write("");
+            SerdeStub.renderSerdeSourceStub(writer, protocol, className);
+            writer.write("");
+            writer.openBlock("$1L::$1L(const Http::HeaderValueCollection& responseHeaders) {", "}", className, () -> {
+                writer.write("AWS_UNREFERENCED_PARAM(responseHeaders);");
+            });
+        });
+    }
+
+    /** Forward-declares the protocol serde types under Aws:: for header use. */
+    private void renderSerdeForwardDeclarations(CppWriter writer) {
+        if (protocol.isJsonLike()) {
+            writer.writeNamespaceOpen("Utils");
+            writer.writeNamespaceOpen("Json");
+            writer.write("class JsonValue;");
+            writer.write("class JsonView;");
+            writer.writeNamespaceClose("Json");
+            writer.writeNamespaceClose("Utils");
+        } else {
+            writer.writeNamespaceOpen("Utils");
+            writer.writeNamespaceOpen("Xml");
+            writer.write("class XmlNode;");
+            writer.writeNamespaceClose("Xml");
+            writer.writeNamespaceClose("Utils");
+        }
     }
 
     private void renderEventStreamUnion(CppWriterDelegator writerDelegator, String opName,

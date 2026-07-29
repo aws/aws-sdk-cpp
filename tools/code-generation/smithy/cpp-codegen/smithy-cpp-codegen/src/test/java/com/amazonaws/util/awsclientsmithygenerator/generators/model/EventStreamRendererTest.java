@@ -101,6 +101,24 @@ class EventStreamRendererTest {
     }
 
     @Test
+    void initialResponseHeader_hasHeaderCollectionCtorAndSerdeDecls() {
+        String h = render("DoStreamInitialResponse.h");
+        assertTrue(h.contains("class DoStreamInitialResponse"), "Missing class: " + h);
+        assertTrue(h.contains("DoStreamInitialResponse(const Http::HeaderValueCollection& responseHeaders)"),
+            "Missing header-collection ctor: " + h);
+        // JSON serde declaration present (test model resolves to a JSON-like protocol)
+        assertTrue(h.contains("Jsonize") || h.contains("XmlNode") || h.contains("OutputToStream"),
+            "Missing serde declarations: " + h);
+    }
+
+    @Test
+    void initialResponseSource_hasHeaderCtorAndSerdeStub() {
+        String c = render("DoStreamInitialResponse.cpp");
+        assertTrue(c.contains("DoStreamInitialResponse::DoStreamInitialResponse(const Http::HeaderValueCollection&"),
+            "Missing header ctor definition: " + c);
+    }
+
+    @Test
     void handlerSource_eventCasesUseStubNoProtocolTokens() {
         String c = render("DoStreamHandler.cpp");
         assertTrue(c.contains("// TODO: protocol-specific event payload deserialization"),
