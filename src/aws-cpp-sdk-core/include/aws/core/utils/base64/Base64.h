@@ -57,11 +57,6 @@ namespace Aws
                 * Calculates the length of an encoded base64 string based on the buffer being encoded
                 */
                 static size_t CalculateBase64EncodedLength(const ByteBuffer& buffer);
-
-            private:
-                char m_mimeBase64EncodingTable[64];
-                uint8_t m_mimeBase64DecodingTable[256];
-
             };
 
         } // namespace Base64

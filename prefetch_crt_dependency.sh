@@ -3,21 +3,21 @@
 # SPDX-License-Identifier: Apache-2.0.
 
 CRT_URI_PREFIX=https://codeload.github.com/awslabs
-CRT_URI=${CRT_URI_PREFIX}/aws-crt-cpp/zip/72f84bc327462f405c4994228fffe1eeb16cca72  # v0.42.2
+CRT_URI=${CRT_URI_PREFIX}/aws-crt-cpp/zip/0463563f9f656a493ec22ca962c2464bc8b831ab  # v0.43.2
 
 AWS_C_AUTH_URI=${CRT_URI_PREFIX}/aws-c-auth/zip/4b5d524bf1a511b05e0fffe5bdc51800770b9427  # v0.10.4
-AWS_C_CAL_URI=${CRT_URI_PREFIX}/aws-c-cal/zip/9edd8eac2b21ca6a04535b91d60d361c2f1bb60f  # v0.9.14
+AWS_C_CAL_URI=${CRT_URI_PREFIX}/aws-c-cal/zip/8aa2a48a09f93c65d4cf06388e143a6584de6321  # v0.9.15
 AWS_C_COMMON_URI=${CRT_URI_PREFIX}/aws-c-common/zip/3c69b871dfa1815231802febf1bb6899f84cccdb  # v0.14.3
 AWS_C_COMPRESSION_URI=${CRT_URI_PREFIX}/aws-c-compression/zip/d8264e64f698341eb03039b96b4f44702a9b3f83  # v0.3.2
 AWS_C_EVENT_STREAM_URI=${CRT_URI_PREFIX}/aws-c-event-stream/zip/51bef3c44e1058b1689751539170b2e0f589ccdb  # v0.7.1
 AWS_C_HTTP_URI=${CRT_URI_PREFIX}/aws-c-http/zip/8aefd899fc3210bfd0e3fd414011a3cb708bf6e4  # v0.11.0
-AWS_C_IO_URI=${CRT_URI_PREFIX}/aws-c-io/zip/54350963b64dfc6c4b0ea623b08aa252aae3d7d7  # v0.27.4
+AWS_C_IO_URI=${CRT_URI_PREFIX}/aws-c-io/zip/e2946c99521fa12d285c9a0829c92b1bf713922b  # v0.27.5
 AWS_C_MQTT_URI=${CRT_URI_PREFIX}/aws-c-mqtt/zip/2ef9605ec9c50bea3f921e08022ddd57eed70901  # v0.16.0
-AWS_C_S3_URI=${CRT_URI_PREFIX}/aws-c-s3/zip/1f29ef8871a27dc8b90325418780659bac534d71  # v0.13.1
-AWS_C_SDKUTILS_URI=${CRT_URI_PREFIX}/aws-c-sdkutils/zip/cb14fea362c82c995eebd34e2e96590ab4e0ed58  # v0.2.7
+AWS_C_S3_URI=${CRT_URI_PREFIX}/aws-c-s3/zip/a852faa2df3ab2b31fb4cfd64fd3379a2f4ae22e  # v0.13.2
+AWS_C_SDKUTILS_URI=${CRT_URI_PREFIX}/aws-c-sdkutils/zip/528b9dfff4a804b334875ecf8a0471f7d1366f24  # v0.2.8
 AWS_CHECKSUMS_URI=${CRT_URI_PREFIX}/aws-checksums/zip/1d5f2f1f3e5d013aae8810878ceb5b3f6f258c4e  # v0.2.10
-AWS_LC_URI=${CRT_URI_PREFIX}/aws-lc/zip/683ebde4bf3bcc016a9a710ad6b49c0c91b59161  # v5.2.0
-S2N_URI=${CRT_URI_PREFIX}/s2n/zip/f5f6c6c2ce2370de1aa3ade6899a7321d1127bb8  # v1.7.5
+AWS_LC_URI=${CRT_URI_PREFIX}/aws-lc/zip/f6acf748df0ea6157d55e640730b38d21a7751cd  # v5.4.0
+S2N_URI=${CRT_URI_PREFIX}/s2n/zip/66b1c94d1dfc99b237427cbde230eca63bb8b89c  # v1.7.6
 
 
 echo "Removing CRT"

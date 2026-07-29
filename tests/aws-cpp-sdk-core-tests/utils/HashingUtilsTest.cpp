@@ -6,6 +6,7 @@
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/base64/Base64.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 
@@ -66,6 +67,24 @@ TEST_F(HashingUtilsTest, TestBase64Decoding)
 
     ByteBuffer test7 = HashingUtils::Base64Decode("Zm9vYmFy");
     ASSERT_EQ(ByteBuffer((unsigned char*) "foobar", 6), test7);
+}
+
+TEST_F(HashingUtilsTest, TestBase64DecodeNeverWritesMoreThanCalculatedLength)
+{
+    Aws::Vector<Aws::String> inputs = {"", "X", "Zg==", "Zm8=", "Zm9v", "Zm9vYg==", "Zm9vYmE=", "Zm9vYmFy",
+                                       "AAAA=", "AAAAA=", "AAAAAA=", "AAAAAAA=", "AB=D", "=", "==", "===", "====",
+                                       "A===", "AA==", "AAA=", "//++", "AAAA"};
+    for (int byte = 0x80; byte <= 0xFF; ++byte)
+    {
+        inputs.emplace_back(Aws::String{static_cast<char>(byte)} + "AAA");
+    }
+
+    for (const auto& input : inputs)
+    {
+        ASSERT_LE(HashingUtils::Base64Decode(input).GetLength(),
+                  Aws::Utils::Base64::Base64::CalculateBase64DecodedLength(input))
+            << "input: " << input;
+    }
 }
 
 TEST_F(HashingUtilsTest, TestHexEncodingDecoding)
