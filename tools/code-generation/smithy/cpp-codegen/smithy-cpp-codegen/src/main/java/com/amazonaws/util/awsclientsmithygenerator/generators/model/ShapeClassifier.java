@@ -192,4 +192,38 @@ public final class ShapeClassifier {
             return target.isUnionShape() && target.hasTrait(StreamingTrait.class);
         });
     }
+
+    /**
+     * Returns true if the operation's output structure has an event stream (a member
+     * targeting a {@code @streaming} union). This is the response-side (read) test.
+     *
+     * @param op    the operation
+     * @param model the Smithy model
+     * @return true if the operation produces an event stream response
+     */
+    public static boolean isEventStreamResponseOperation(OperationShape op, Model model) {
+        return op.getOutput()
+            .flatMap(model::getShape)
+            .flatMap(Shape::asStructureShape)
+            .map(out -> hasEventStreamMembers(out, model))
+            .orElse(false);
+    }
+
+    /**
+     * Returns true if the operation's input structure has an event stream (a member
+     * targeting a {@code @streaming} union). This is the request-side (write) test,
+     * used only to flag bidirectional requests; input-stream encoder generation is
+     * out of scope.
+     *
+     * @param op    the operation
+     * @param model the Smithy model
+     * @return true if the operation consumes an event stream request
+     */
+    public static boolean isEventStreamRequestOperation(OperationShape op, Model model) {
+        return op.getInput()
+            .flatMap(model::getShape)
+            .flatMap(Shape::asStructureShape)
+            .map(in -> hasEventStreamMembers(in, model))
+            .orElse(false);
+    }
 }

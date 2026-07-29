@@ -246,6 +246,63 @@ class ShapeClassifierTest {
             .anyMatch(r -> r.shape().getId().getName().equals("SubscribeRequest")));
     }
 
+    private static Model modelWithStreaming(boolean inputStreams, boolean outputStreams) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        UnionShape eventStream = UnionShape.builder()
+            .id("com.example#EventStream")
+            .addTrait(new StreamingTrait())
+            .addMember("event", str.getId())
+            .build();
+
+        StructureShape.Builder inputBuilder = StructureShape.builder().id("com.example#OpInput");
+        if (inputStreams) {
+            inputBuilder.addMember("body", eventStream.getId());
+        } else {
+            inputBuilder.addMember("name", str.getId());
+        }
+        StructureShape input = inputBuilder.build();
+
+        StructureShape.Builder outputBuilder = StructureShape.builder().id("com.example#OpOutput");
+        if (outputStreams) {
+            outputBuilder.addMember("stream", eventStream.getId());
+        } else {
+            outputBuilder.addMember("result", str.getId());
+        }
+        StructureShape output = outputBuilder.build();
+
+        OperationShape op = OperationShape.builder()
+            .id("com.example#Op")
+            .input(input.getId())
+            .output(output.getId())
+            .build();
+
+        return Model.builder().addShapes(str, eventStream, input, output, op).build();
+    }
+
+    @Test
+    void isEventStreamResponseOperation_trueWhenOutputStreams() {
+        Model model = modelWithStreaming(false, true);
+        OperationShape op = model.expectShape(ShapeId.from("com.example#Op"), OperationShape.class);
+        assertTrue(ShapeClassifier.isEventStreamResponseOperation(op, model));
+        assertFalse(ShapeClassifier.isEventStreamRequestOperation(op, model));
+    }
+
+    @Test
+    void isEventStreamRequestOperation_trueWhenInputStreams() {
+        Model model = modelWithStreaming(true, true);
+        OperationShape op = model.expectShape(ShapeId.from("com.example#Op"), OperationShape.class);
+        assertTrue(ShapeClassifier.isEventStreamRequestOperation(op, model));
+        assertTrue(ShapeClassifier.isEventStreamResponseOperation(op, model));
+    }
+
+    @Test
+    void isEventStreamResponseOperation_falseWhenNeitherStreams() {
+        Model model = modelWithStreaming(false, false);
+        OperationShape op = model.expectShape(ShapeId.from("com.example#Op"), OperationShape.class);
+        assertFalse(ShapeClassifier.isEventStreamResponseOperation(op, model));
+        assertFalse(ShapeClassifier.isEventStreamRequestOperation(op, model));
+    }
+
     @Test
     void classifiesEnumShape() {
         // StringShape with @enum trait -> classified as enum
