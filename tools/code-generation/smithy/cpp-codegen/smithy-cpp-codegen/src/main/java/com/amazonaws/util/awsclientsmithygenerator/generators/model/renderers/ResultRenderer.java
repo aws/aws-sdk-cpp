@@ -59,7 +59,6 @@ public final class ResultRenderer implements ShapeRenderer {
         String className = operation.getId().getName() + "Result";
         String fileName = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
-            writeCopyright(writer);
             writer.write("#pragma once");
 
             Set<String> includes = new TreeSet<>();
@@ -86,7 +85,7 @@ public final class ResultRenderer implements ShapeRenderer {
             writer.writeNamespaceOpen("Model");
 
             if (shape.getTrait(DocumentationTrait.class).isPresent()) {
-                renderClassDocComment(writer, shape);
+                MemberRenderer.renderClassDocComment(writer, shape, smithyServiceName, service.getVersion());
             }
 
             writer.openBlock("class $L {", "};", className, () -> {
@@ -145,7 +144,6 @@ public final class ResultRenderer implements ShapeRenderer {
         String className = operation.getId().getName() + "Result";
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
-            writeCopyright(writer);
 
             writer.write("#include <aws/core/AmazonWebServiceResult.h>");
             writer.write("#include <aws/core/utils/StringUtils.h>");
@@ -204,28 +202,5 @@ public final class ResultRenderer implements ShapeRenderer {
             writer.writeNamespaceClose("Xml");
             writer.writeNamespaceClose("Utils");
         }
-    }
-
-    private void renderClassDocComment(CppWriter writer, StructureShape shape) {
-        if (shape.getTrait(DocumentationTrait.class).isPresent()) {
-            String docText = MemberRenderer.collapseWhitespace(
-                shape.getTrait(DocumentationTrait.class).get().getValue());
-            String version = service.getVersion();
-            String seeAlso = String.format(
-                "<p><h3>See Also:</h3>   <a href=\"http://docs.aws.amazon.com/goto/WebAPI/%s-%s/%s\">AWS API Reference</a></p>",
-                smithyServiceName, version, shape.getId().getName());
-            MemberRenderer.writeDocComment(writer, docText + seeAlso);
-        } else {
-            writer.write("/**");
-            writer.write(" */");
-        }
-    }
-
-    private void writeCopyright(CppWriter writer) {
-        writer.write("/**");
-        writer.write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
-        writer.write(" * SPDX-License-Identifier: Apache-2.0.");
-        writer.write(" */");
-        writer.write("");
     }
 }

@@ -7,6 +7,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.SerdeStub;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.EventStreamInfo;
@@ -17,6 +18,7 @@ import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.UnionShape;
+import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.traits.ErrorTrait;
 import software.amazon.smithy.model.traits.StreamingTrait;
 
@@ -117,7 +119,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
         String className = opName + "Handler";
         String fileName = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
-            writeCopyright(writer);
             writer.write("#pragma once");
             writer.write("#include <aws/core/client/AWSError.h>");
             writer.write("#include <aws/core/utils/HashingUtils.h>");
@@ -162,12 +163,23 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 writer.write("");
                 writer.write("$1L virtual void OnEvent() override;", exportMacro);
                 writer.write("");
+                writer.write("///@{");
+                writer.write("/**");
+                writer.write(" * Sets an initial response callback. This callback gets called on the initial $1L Operation response.", opName);
+                writer.write(" *   This can be either \"initial-response\" decoded event frame or decoded HTTP headers received on connection.");
+                writer.write(" *   This callback may get called more than once (i.e. on connection headers received and then on the initial-response event received).");
+                writer.write(" * @param callback");
+                writer.write(" */");
                 writer.write("inline void SetInitialResponseCallbackEx(const $1LInitialResponseCallbackEx& callback) { m_onInitialResponse = callback; }", opName);
+                writer.write("/**");
+                writer.write(" * Sets an initial response callback (a legacy one that does not distinguish whether response originates from headers or from the event).");
+                writer.write(" */");
                 writer.openBlock("inline void SetInitialResponseCallback(const $1LInitialResponseCallback& noArgCallback) {", "}", opName, () -> {
                     writer.write("m_onInitialResponse = [noArgCallback](const $1LInitialResponse& rs, const Utils::Event::InitialResponseType) {", opName);
                     writer.write("return noArgCallback(rs);");
                     writer.write("};");
                 });
+                writer.write("///@}");
                 for (MemberShape event : events) {
                     String ev = eventShapeName(event);
                     writer.write("inline void Set$1LCallback(const $1LCallback& callback) { m_on$1L = callback; }", ev);
@@ -210,7 +222,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
         String fileName = "source/model/" + className + ".cpp";
         String tag = opName.toUpperCase() + "_HANDLER_CLASS_TAG";
         writerDelegator.useFileWriter(fileName, writer -> {
-            writeCopyright(writer);
             writer.write("#include <aws/core/client/CoreErrors.h>");
             writer.write("#include <aws/core/utils/event/EventStreamErrors.h>");
             writer.write("#include <aws/core/utils/logging/LogMacros.h>");
@@ -402,7 +413,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
 
         String headerFile = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
         writerDelegator.useFileWriter(headerFile, writer -> {
-            writeCopyright(writer);
             writer.write("#pragma once");
             writer.write("#include <aws/core/http/HttpTypes.h>");
             writer.write("#include <aws/$1L/$2L_EXPORTS.h>", smithyServiceName, namespace);
@@ -414,8 +424,9 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("");
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
-                SerdeStub.renderHeaderDeclarations(writer, protocol, exportMacro, className);
-                writer.write("$1L $2L(const Http::HeaderValueCollection& responseHeaders);", exportMacro, className);
+                // The header-collection ctor sits before the serialize method (mainline ordering).
+                SerdeStub.renderHeaderDeclarations(writer, protocol, exportMacro, className,
+                    () -> writer.write("$1L $2L(const Http::HeaderValueCollection& responseHeaders);", exportMacro, className));
             });
             writer.write("");
             writer.writeNamespaceClose("Model");
@@ -425,7 +436,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
 
         String sourceFile = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(sourceFile, writer -> {
-            writeCopyright(writer);
             if (protocol.isJsonLike()) {
                 writer.write("#include <aws/core/utils/json/JsonSerializer.h>");
             } else {
@@ -476,7 +486,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
 
         String headerFile = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
         writerDelegator.useFileWriter(headerFile, writer -> {
-            writeCopyright(writer);
             writer.write("#pragma once");
             writer.write("#include <aws/$1L/$2L_EXPORTS.h>", smithyServiceName, namespace);
             writer.write("#include <aws/$1L/$2LErrors.h>", smithyServiceName, namespace);
@@ -491,6 +500,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.writeNamespaceOpen(namespace);
             writer.writeNamespaceOpen("Model");
             writer.write("");
+            MemberRenderer.renderClassDocComment(writer, union, smithyServiceName, service.getVersion());
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
                 SerdeStub.renderHeaderDeclarations(writer, protocol, exportMacro, className);
@@ -498,11 +508,11 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 // Event member accessors, typed as their concrete shape.
                 for (MemberShape event : events) {
                     String cppType = CppTypeMapper.getCppType(model.expectShape(event.getTarget()), model);
-                    renderShapeAccessor(writer, className, cppType, event.getMemberName());
+                    renderShapeAccessor(writer, className, cppType, event.getMemberName(), event);
                 }
                 // Exception member accessors, typed as <namespace>Error.
                 for (MemberShape exc : exceptions) {
-                    renderShapeAccessor(writer, className, errorType, exc.getMemberName());
+                    renderShapeAccessor(writer, className, errorType, exc.getMemberName(), exc);
                 }
                 writer.dedent();
                 writer.write("private:");
@@ -529,26 +539,9 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.writeNamespaceClose("Aws");
         });
 
-        String sourceFile = "source/model/" + className + ".cpp";
-        writerDelegator.useFileWriter(sourceFile, writer -> {
-            writeCopyright(writer);
-            if (protocol.isJsonLike()) {
-                writer.write("#include <aws/core/utils/json/JsonSerializer.h>");
-            } else {
-                writer.write("#include <aws/core/utils/xml/XmlSerializer.h>");
-            }
-            writer.write("#include <aws/$1L/model/$2L.h>", smithyServiceName, className);
-            writer.write("");
-            writer.write("using namespace Aws::$1L::Model;", namespace);
-            if (protocol.isJsonLike()) {
-                writer.write("using namespace Aws::Utils::Json;");
-            } else {
-                writer.write("using namespace Aws::Utils::Xml;");
-            }
-            writer.write("using namespace Aws::Utils;");
-            writer.write("");
-            SerdeStub.renderSerdeSourceStub(writer, protocol, className);
-        });
+        // C2J generates the event stream union as a header-only type: the serde methods are
+        // declared but never defined or referenced (the handler dispatches on the concrete
+        // event shape, not the union). No .cpp is emitted, to match mainline parity.
     }
 
     /**
@@ -557,12 +550,18 @@ public final class EventStreamRenderer implements ShapeRenderer {
      * exception members (the service error wrapper). Mirrors the templated setter style
      * used by MemberRenderer.
      */
-    private void renderShapeAccessor(CppWriter writer, String className, String cppType, String memberName) {
+    private void renderShapeAccessor(CppWriter writer, String className, String cppType, String memberName,
+                                     MemberShape member) {
         String getter = capitalize(memberName);
         String field = "m_" + decapitalize(memberName);
         String templateParam = getter + "T";
         writer.write("///@{");
-        writer.write("");
+        if (member.getTrait(DocumentationTrait.class).isPresent()) {
+            MemberRenderer.writeDocComment(writer,
+                MemberRenderer.collapseWhitespace(member.getTrait(DocumentationTrait.class).get().getValue()));
+        } else {
+            writer.write("");
+        }
         writer.write("inline const $1L& Get$2L() const { return $3L; }", cppType, getter, field);
         writer.write("inline bool $1LHasBeenSet() const { return $2LHasBeenSet; }", getter, field);
         writer.write("template <typename $1L = $2L>", templateParam, cppType);
@@ -586,11 +585,4 @@ public final class EventStreamRenderer implements ShapeRenderer {
         return s.substring(0, 1).toLowerCase() + s.substring(1);
     }
 
-    private void writeCopyright(CppWriter writer) {
-        writer.write("/**");
-        writer.write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
-        writer.write(" * SPDX-License-Identifier: Apache-2.0.");
-        writer.write(" */");
-        writer.write("");
-    }
 }

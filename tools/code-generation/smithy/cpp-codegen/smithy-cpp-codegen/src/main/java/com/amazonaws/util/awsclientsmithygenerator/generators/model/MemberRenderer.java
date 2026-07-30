@@ -248,6 +248,31 @@ public final class MemberRenderer {
         writer.write(" */");
     }
 
+    /**
+     * Renders the class-level documentation comment for a shape: its {@code @documentation}
+     * text followed by a "See Also" link to the AWS API reference. Emits an empty doc comment
+     * ({@code /** *}{@code /}) when the shape carries no documentation. Shared by the
+     * request, result, sub-object, and event-stream union renderers.
+     *
+     * @param writer            the CppWriter to write to
+     * @param shape             the shape whose class doc to render (structure or union)
+     * @param smithyServiceName the service name used in the reference URL (e.g. "kinesis")
+     * @param version           the service API version used in the reference URL
+     */
+    public static void renderClassDocComment(CppWriter writer, Shape shape,
+                                             String smithyServiceName, String version) {
+        if (shape.getTrait(DocumentationTrait.class).isPresent()) {
+            String docText = collapseWhitespace(shape.getTrait(DocumentationTrait.class).get().getValue());
+            String seeAlso = String.format(
+                "<p><h3>See Also:</h3>   <a href=\"http://docs.aws.amazon.com/goto/WebAPI/%s-%s/%s\">AWS API Reference</a></p>",
+                smithyServiceName, version, shape.getId().getName());
+            writeDocComment(writer, docText + seeAlso);
+        } else {
+            writer.write("/**");
+            writer.write(" */");
+        }
+    }
+
     public static String collapseWhitespace(String text) {
         if (text == null) {
             return null;

@@ -97,6 +97,16 @@ class RequestRendererTest {
             "Missing decoder include: " + h);
         assertFalse(h.contains("IsEventStreamRequest"),
             "Response-only op must not declare IsEventStreamRequest: " + h);
+        // Mainline ordering: handler/decoder sit AFTER the data members and BEFORE the
+        // HasBeenSet flags (not at the top of the private block). Target the member
+        // DECLARATION ("DoStreamHandler m_handler;"), not the public getter body.
+        int dataMember = h.indexOf("Aws::String m_name;");
+        int handlerDecl = h.indexOf("DoStreamHandler m_handler;");
+        int firstFlag = h.indexOf("HasBeenSet = false;");
+        assertTrue(dataMember >= 0 && handlerDecl > dataMember,
+            "m_handler declaration must come after data members: " + h);
+        assertTrue(firstFlag >= 0 && handlerDecl < firstFlag,
+            "m_handler declaration must come before HasBeenSet flags: " + h);
     }
 
     @Test

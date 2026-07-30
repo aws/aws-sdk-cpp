@@ -17,7 +17,6 @@ import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.StructureShape;
-import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.rulesengine.traits.ContextParamTrait;
 import software.amazon.smithy.rulesengine.traits.StaticContextParamsTrait;
 
@@ -64,7 +63,6 @@ public final class RequestRenderer implements ShapeRenderer {
         String className = operation.getId().getName() + "Request";
         String fileName = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
-            writeCopyright(writer);
             writer.write("#pragma once");
 
             Set<String> includes = new TreeSet<>();
@@ -97,7 +95,7 @@ public final class RequestRenderer implements ShapeRenderer {
             writer.writeNamespaceOpen("Model");
             writer.write("");
 
-            renderClassDocComment(writer, shape);
+            MemberRenderer.renderClassDocComment(writer, shape, smithyServiceName, service.getVersion());
 
             String baseClass = namespace + "Request";
             writer.openBlock("class $L : public $L {", "};", className, baseClass, () -> {
@@ -169,11 +167,17 @@ public final class RequestRenderer implements ShapeRenderer {
                     writer.write("private:");
                     writer.indent();
                     if (streamingResponse) {
+                        // Mainline places the handler/decoder after the data members and
+                        // before the HasBeenSet flags.
+                        MemberRenderer.renderPrivateDataMembers(writer, shape, model);
                         String handlerType = operation.getId().getName() + "Handler";
                         writer.write("$1L m_handler;", handlerType);
                         writer.write("Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};");
+                        writer.write("");
+                        MemberRenderer.renderPrivateHasBeenSetFlags(writer, shape, model);
+                    } else {
+                        MemberRenderer.renderPrivateSection(writer, shape, model);
                     }
-                    MemberRenderer.renderPrivateSection(writer, shape, model);
                 }
             });
             writer.write("");
@@ -189,7 +193,6 @@ public final class RequestRenderer implements ShapeRenderer {
         String className = operation.getId().getName() + "Request";
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
-            writeCopyright(writer);
 
             if (protocol.isJsonLike()) {
                 writer.write("#include <aws/core/utils/json/JsonSerializer.h>");
@@ -289,26 +292,4 @@ public final class RequestRenderer implements ShapeRenderer {
         });
     }
 
-    private void renderClassDocComment(CppWriter writer, StructureShape shape) {
-        if (shape.getTrait(DocumentationTrait.class).isPresent()) {
-            String docText = MemberRenderer.collapseWhitespace(
-                shape.getTrait(DocumentationTrait.class).get().getValue());
-            String version = service.getVersion();
-            String seeAlso = String.format(
-                "<p><h3>See Also:</h3>   <a href=\"http://docs.aws.amazon.com/goto/WebAPI/%s-%s/%s\">AWS API Reference</a></p>",
-                smithyServiceName, version, shape.getId().getName());
-            MemberRenderer.writeDocComment(writer, docText + seeAlso);
-        } else {
-            writer.write("/**");
-            writer.write(" */");
-        }
-    }
-
-    private void writeCopyright(CppWriter writer) {
-        writer.write("/**");
-        writer.write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
-        writer.write(" * SPDX-License-Identifier: Apache-2.0.");
-        writer.write(" */");
-        writer.write("");
-    }
 }

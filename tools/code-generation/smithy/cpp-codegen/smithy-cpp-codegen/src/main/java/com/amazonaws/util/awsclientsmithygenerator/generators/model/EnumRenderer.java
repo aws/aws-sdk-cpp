@@ -45,11 +45,6 @@ public final class EnumRenderer {
         String enumName = enumShape.getId().getName();
         List<String> values = getEnumValues(enumShape);
 
-        writer.write("/**");
-        writer.write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
-        writer.write(" * SPDX-License-Identifier: Apache-2.0.");
-        writer.write(" */");
-        writer.write("");
         writer.write("#pragma once");
         writer.write("#include <aws/core/utils/memory/stl/AWSString.h>");
         writer.write("#include <aws/$1L/$2L_EXPORTS.h>",
@@ -107,11 +102,6 @@ public final class EnumRenderer {
         List<String> values = getEnumValues(enumShape);
         List<String> wireValues = getEnumWireValues(enumShape);
 
-        writer.write("/**");
-        writer.write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
-        writer.write(" * SPDX-License-Identifier: Apache-2.0.");
-        writer.write(" */");
-        writer.write("");
         writer.write("#include <aws/$1L/model/$2L.h>", projectName, enumName);
         writer.write("#include <aws/core/utils/HashingUtils.h>");
         writer.write("#include <aws/core/Globals.h>");

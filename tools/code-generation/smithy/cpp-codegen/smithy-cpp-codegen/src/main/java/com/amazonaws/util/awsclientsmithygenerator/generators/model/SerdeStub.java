@@ -20,20 +20,44 @@ public final class SerdeStub {
 
     public static void renderHeaderDeclarations(CppWriter writer, Protocol protocol,
                                                 String exportMacro, String className) {
+        renderHeaderDeclarations(writer, protocol, exportMacro, className, null);
+    }
+
+    /**
+     * Emits the protocol-specific serde method declarations for a class.
+     *
+     * @param beforeSerializeMethod optional hook run after the (de)serialization constructor
+     *        and {@code operator=} declarations but before the serialize method
+     *        ({@code Jsonize}/{@code AddToNode}/{@code OutputToStream}). Used to inject
+     *        additional constructors (e.g. the event-stream initial-response header ctor)
+     *        at the mainline position. Ignored when {@code null}.
+     */
+    public static void renderHeaderDeclarations(CppWriter writer, Protocol protocol,
+                                                String exportMacro, String className,
+                                                Runnable beforeSerializeMethod) {
         if (protocol.isJsonLike()) {
             writer.write("$L $L() = default;", exportMacro, className);
             writer.write("$L $L(Aws::Utils::Json::JsonView jsonValue);", exportMacro, className);
             writer.write("$L $L& operator=(Aws::Utils::Json::JsonView jsonValue);", exportMacro, className);
+            if (beforeSerializeMethod != null) {
+                beforeSerializeMethod.run();
+            }
             writer.write("$L Aws::Utils::Json::JsonValue Jsonize() const;", exportMacro);
         } else if (protocol == Protocol.REST_XML) {
             writer.write("$L $L() = default;", exportMacro, className);
             writer.write("$L $L(const Aws::Utils::Xml::XmlNode& xmlNode);", exportMacro, className);
             writer.write("$L $L& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);", exportMacro, className);
+            if (beforeSerializeMethod != null) {
+                beforeSerializeMethod.run();
+            }
             writer.write("$L void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;", exportMacro);
         } else if (protocol == Protocol.QUERY_XML || protocol == Protocol.EC2) {
             writer.write("$L $L() = default;", exportMacro, className);
             writer.write("$L $L(const Aws::Utils::Xml::XmlNode& xmlNode);", exportMacro, className);
             writer.write("$L $L& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);", exportMacro, className);
+            if (beforeSerializeMethod != null) {
+                beforeSerializeMethod.run();
+            }
             writer.write("$L void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;", exportMacro);
             writer.write("$L void OutputToStream(Aws::OStream& ostream, const char* location) const;", exportMacro);
         } else {

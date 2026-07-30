@@ -36,11 +36,6 @@ public class WaiterEmptyHeaderGenerator {
         CppWriterDelegator writers = new CppWriterDelegator(context.getFileManifest());
 
         writers.useFileWriter("include/aws/" + c2jName + "/" + serviceName + "Waiter.h", writer -> {
-            writer.write("/**");
-            writer.write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
-            writer.write(" * SPDX-License-Identifier: Apache-2.0.");
-            writer.write(" */");
-            writer.write("");
             writer.write("#pragma once");
             writer.write("");
             writer.writeNamespaceOpen("Aws");

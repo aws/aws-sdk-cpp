@@ -14,6 +14,7 @@ import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.UnionShape;
+import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.traits.ErrorTrait;
 import software.amazon.smithy.model.traits.StreamingTrait;
 
@@ -40,7 +41,9 @@ class EventStreamRendererTest {
         UnionShape stream = UnionShape.builder()
             .id("com.example#MyStreamEventStream")
             .addTrait(new StreamingTrait())
-            .addMember("alpha", eventA.getId())
+            .addTrait(new DocumentationTrait("<p>Tagged union of stream events.</p>"))
+            .addMember("alpha", eventA.getId(),
+                b -> b.addTrait(new DocumentationTrait("<p>Alpha event doc.</p>")))
             .addMember("beta", eventB.getId())
             .addMember("badException", exc.getId())
             .build();
@@ -101,6 +104,21 @@ class EventStreamRendererTest {
     }
 
     @Test
+    void handlerHeader_wrapsInitialResponseSettersInDocGroup() {
+        String h = render("DoStreamHandler.h");
+        assertTrue(h.contains("Sets an initial response callback."),
+            "Missing initial-response setter doc: " + h);
+        assertTrue(h.contains("a legacy one that does not distinguish"),
+            "Missing legacy initial-response setter doc: " + h);
+        // The two initial-response setters must be inside a ///@{ ... ///@} group.
+        int groupOpen = h.indexOf("///@{");
+        int exSetter = h.indexOf("SetInitialResponseCallbackEx");
+        int groupClose = h.indexOf("///@}", exSetter);
+        assertTrue(groupOpen >= 0 && groupOpen < exSetter && groupClose > exSetter,
+            "Initial-response setters must be wrapped in a ///@{ ... ///@} group: " + h);
+    }
+
+    @Test
     void eventStreamUnionHeader_typesEventAndExceptionMembers() {
         String h = render("MyStreamEventStream.h");
         // NOTE: file name derives from the UNION shape name (MyStream), not the operation.
@@ -113,6 +131,16 @@ class EventStreamRendererTest {
     }
 
     @Test
+    void eventStreamUnionHeader_rendersClassAndMemberDocs() {
+        String h = render("MyStreamEventStream.h");
+        // Union class-level documentation + See Also link.
+        assertTrue(h.contains("Tagged union of stream events."), "Missing union class doc: " + h);
+        assertTrue(h.contains("See Also:"), "Missing See Also block on union class: " + h);
+        // Member-level doc flows to the accessor for the member that has one.
+        assertTrue(h.contains("Alpha event doc."), "Missing alpha member doc: " + h);
+    }
+
+    @Test
     void initialResponseHeader_hasHeaderCollectionCtorAndSerdeDecls() {
         String h = render("DoStreamInitialResponse.h");
         assertTrue(h.contains("class DoStreamInitialResponse"), "Missing class: " + h);
@@ -121,6 +149,11 @@ class EventStreamRendererTest {
         // JSON serde declaration present (test model resolves to a JSON-like protocol)
         assertTrue(h.contains("Jsonize") || h.contains("XmlNode") || h.contains("OutputToStream"),
             "Missing serde declarations: " + h);
+        // The HeaderValueCollection ctor must precede Jsonize (mainline ordering).
+        int headerCtor = h.indexOf("const Http::HeaderValueCollection& responseHeaders");
+        int jsonize = h.indexOf("Jsonize");
+        assertTrue(headerCtor >= 0 && jsonize >= 0 && headerCtor < jsonize,
+            "HeaderValueCollection ctor must come before Jsonize: " + h);
     }
 
     @Test

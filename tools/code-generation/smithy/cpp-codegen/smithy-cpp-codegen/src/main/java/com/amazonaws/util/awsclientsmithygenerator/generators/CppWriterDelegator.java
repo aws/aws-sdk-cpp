@@ -18,7 +18,10 @@ public class CppWriterDelegator {
     }
     
     public void useFileWriter(String filename, Consumer<CppWriter> writerConsumer) {
-        CppWriter writer = writers.computeIfAbsent(filename, k -> new CppWriter());
+        // Every generated file begins with the standard copyright/SPDX header. Emit it once,
+        // when the writer is first created, so callers don't repeat it (and reopening a file
+        // for appending does not duplicate it).
+        CppWriter writer = writers.computeIfAbsent(filename, k -> new CppWriter().writeCopyright());
         writerConsumer.accept(writer);
     }
     

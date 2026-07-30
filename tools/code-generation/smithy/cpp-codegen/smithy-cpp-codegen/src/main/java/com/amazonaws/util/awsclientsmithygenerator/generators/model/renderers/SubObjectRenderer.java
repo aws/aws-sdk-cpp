@@ -15,7 +15,6 @@ import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StructureShape;
-import software.amazon.smithy.model.traits.DocumentationTrait;
 
 import java.util.List;
 import java.util.Set;
@@ -63,7 +62,6 @@ public final class SubObjectRenderer implements ShapeRenderer {
         String className = shape.getId().getName();
         String fileName = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
-            writeCopyright(writer);
             writer.write("#pragma once");
 
             // Includes
@@ -90,7 +88,7 @@ public final class SubObjectRenderer implements ShapeRenderer {
             writer.writeNamespaceOpen("Model");
             writer.write("");
 
-            renderClassDocComment(writer, shape);
+            MemberRenderer.renderClassDocComment(writer, shape, smithyServiceName, service.getVersion());
 
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
@@ -114,7 +112,6 @@ public final class SubObjectRenderer implements ShapeRenderer {
         String className = shape.getId().getName();
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
-            writeCopyright(writer);
 
             if (protocol.isJsonLike()) {
                 writer.write("#include <aws/core/utils/json/JsonSerializer.h>");
@@ -167,26 +164,4 @@ public final class SubObjectRenderer implements ShapeRenderer {
         }
     }
 
-    private void renderClassDocComment(CppWriter writer, StructureShape shape) {
-        if (shape.getTrait(DocumentationTrait.class).isPresent()) {
-            String docText = MemberRenderer.collapseWhitespace(
-                shape.getTrait(DocumentationTrait.class).get().getValue());
-            String version = service.getVersion();
-            String seeAlso = String.format(
-                "<p><h3>See Also:</h3>   <a href=\"http://docs.aws.amazon.com/goto/WebAPI/%s-%s/%s\">AWS API Reference</a></p>",
-                smithyServiceName, version, shape.getId().getName());
-            MemberRenderer.writeDocComment(writer, docText + seeAlso);
-        } else {
-            writer.write("/**");
-            writer.write(" */");
-        }
-    }
-
-    private void writeCopyright(CppWriter writer) {
-        writer.write("/**");
-        writer.write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
-        writer.write(" * SPDX-License-Identifier: Apache-2.0.");
-        writer.write(" */");
-        writer.write("");
-    }
 }
