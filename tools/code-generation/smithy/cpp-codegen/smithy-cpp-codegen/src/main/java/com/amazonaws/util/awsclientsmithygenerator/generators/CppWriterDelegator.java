@@ -10,6 +10,9 @@ import java.util.Map;
 import java.util.function.Consumer;
 
 public class CppWriterDelegator {
+    /** UTF-8 byte order mark (U+FEFF), prepended to every file to match C2J-generated output. */
+    private static final String UTF8_BOM = "\uFEFF";
+
     private final FileManifest fileManifest;
     private final Map<String, CppWriter> writers = new HashMap<>();
     
@@ -28,7 +31,7 @@ public class CppWriterDelegator {
     public void flushWriters() {
         writers.forEach((filename, writer) -> {
             // Add UTF-8 BOM to match C2J-generated file format
-            String content = "﻿" + writer.toString();
+            String content = UTF8_BOM + writer.toString();
             fileManifest.writeFile(filename, content);
         });
     }
