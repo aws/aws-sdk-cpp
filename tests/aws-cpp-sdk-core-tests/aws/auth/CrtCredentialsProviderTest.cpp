@@ -7,6 +7,10 @@
 #include <aws/crt/auth/Credentials.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 
+#include <chrono>
+#include <memory>
+#include <thread>
+
 namespace {
 const char* CRT_CREDS_TEST_LOG = "CrtCredentialsProviderTest";
 }
@@ -56,7 +60,64 @@ class MockedCredsProvider : public Aws::Auth::CrtCredentialsProvider {
   std::shared_ptr<MockCrtCredentialsProvider> m_provider;
 };
 
+class AsyncMockCrtCredentialsProvider : public Aws::Crt::Auth::ICredentialsProvider {
+ public:
+  explicit AsyncMockCrtCredentialsProvider(std::chrono::milliseconds callbackDelay,
+                                           std::shared_ptr<Aws::Crt::Auth::Credentials> credentials)
+      : m_callbackDelay{callbackDelay}, m_credentials{std::move(credentials)} {}
+
+  ~AsyncMockCrtCredentialsProvider() override {
+    if (m_worker.joinable()) {
+      m_worker.join();
+    }
+  }
+
+  bool GetCredentials(const Aws::Crt::Auth::OnCredentialsResolved& onCredentialsResolved) const override {
+    const std::chrono::milliseconds delay = m_callbackDelay;
+    const std::shared_ptr<Aws::Crt::Auth::Credentials> creds = m_credentials;
+    m_worker = std::thread([delay, creds, onCredentialsResolved]() {
+      std::this_thread::sleep_for(delay);
+      onCredentialsResolved(creds, AWS_OP_SUCCESS);
+    });
+    return true;
+  }
+
+  aws_credentials_provider* GetUnderlyingHandle() const noexcept override { return nullptr; }
+  bool IsValid() const noexcept override { return true; }
+
+ private:
+  std::chrono::milliseconds m_callbackDelay;
+  std::shared_ptr<Aws::Crt::Auth::Credentials> m_credentials;
+  mutable std::thread m_worker;
+};
+
+class AsyncMockedCredsProvider : public Aws::Auth::CrtCredentialsProvider {
+ public:
+  AsyncMockedCredsProvider(std::shared_ptr<AsyncMockCrtCredentialsProvider> provider, std::chrono::milliseconds timeout)
+      : Aws::Auth::CrtCredentialsProvider([provider]() -> std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> { return provider; },
+                                          timeout, Aws::Client::UserAgentFeature::CREDENTIALS_LOGIN, "AsyncMockedCredsProvider"),
+        m_provider{provider} {}
+
+ private:
+  std::shared_ptr<AsyncMockCrtCredentialsProvider> m_provider;
+};
+
 class CrtCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite {};
+
+TEST_F(CrtCredentialsProviderTest, ShouldNotUseFreedStateWhenRefreshOutlivesTimeout) {
+  auto crtCreds = Aws::MakeShared<Aws::Crt::Auth::Credentials>(
+      CRT_CREDS_TEST_LOG, Aws::Crt::ByteCursorFromCString("access"), Aws::Crt::ByteCursorFromCString("secret"),
+      Aws::Crt::ByteCursorFromCString("token"), static_cast<uint64_t>((Aws::Utils::DateTime::Now() + std::chrono::minutes(100)).Seconds()));
+
+  auto underlying_mock = Aws::MakeShared<AsyncMockCrtCredentialsProvider>(CRT_CREDS_TEST_LOG, std::chrono::milliseconds(300), crtCreds);
+
+  {
+    AsyncMockedCredsProvider provider(underlying_mock, std::chrono::milliseconds(50));
+    EXPECT_TRUE(provider.GetAWSCredentials().IsExpiredOrEmpty());
+  }
+
+  std::this_thread::sleep_for(std::chrono::milliseconds(400));
+}
 
 TEST_F(CrtCredentialsProviderTest, ShouldCache) {
   auto underlying_mock = Aws::MakeShared<MockCrtCredentialsProvider>(CRT_CREDS_TEST_LOG);

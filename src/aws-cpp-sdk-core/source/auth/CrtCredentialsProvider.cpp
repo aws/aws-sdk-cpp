@@ -4,8 +4,12 @@
  */
 #include <aws/core/auth/CrtCredentialsProvider.h>
 #include <aws/core/client/UserAgent.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/crt/auth/Credentials.h>
+
+#include <condition_variable>
+#include <mutex>
 
 using namespace Aws::Auth;
 using namespace Aws::Utils;
@@ -13,7 +17,15 @@ using namespace Aws::Utils::Threading;
 
 namespace {
 const int FIVE_MINUTES_IN_MILLIS = 5 * 60 * 1000;
-}
+const char* CRT_CREDS_PROVIDER_TAG = "CrtCredentialsProvider";
+
+struct RefreshState {
+  std::mutex mutex;
+  std::condition_variable condition;
+  bool complete{false};
+  AWSCredentials credentials;
+};
+}  // namespace
 
 CrtCredentialsProvider::CrtCredentialsProvider(
     const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
@@ -39,27 +51,31 @@ AWSCredentials CrtCredentialsProvider::GetAWSCredentials() {
 }
 
 void CrtCredentialsProvider::Reload() {
-  AWSCredentials credentials{};
-  std::mutex refresh_mutex{};
-  std::condition_variable refresh_condition;
-  bool refresh_complete{false};
-  m_credentialsProvider->GetCredentials([&credentials, &refresh_mutex, &refresh_complete, &refresh_condition](
-                                            const std::shared_ptr<Crt::Auth::Credentials>& crtCredentials, int errorCode) -> void {
+  auto state = Aws::MakeShared<RefreshState>(CRT_CREDS_PROVIDER_TAG);
+
+  m_credentialsProvider->GetCredentials([state](const std::shared_ptr<Crt::Auth::Credentials>& crtCredentials, int errorCode) -> void {
+    (void)errorCode;
     {
-      const std::unique_lock<std::mutex> lock(refresh_mutex);
-      (void)errorCode;
-      credentials = ExtractCredentialsFromCrt(*crtCredentials);
-      refresh_complete = true;
+      const std::unique_lock<std::mutex> lock(state->mutex);
+      if (crtCredentials) {
+        state->credentials = ExtractCredentialsFromCrt(*crtCredentials);
+      }
+      state->complete = true;
+      state->condition.notify_all();
     }
-    refresh_condition.notify_all();
   });
 
-  std::unique_lock<std::mutex> lock(refresh_mutex);
-  refresh_condition.wait_for(lock, m_providerFuturesTimeoutMs, [&refresh_complete]() -> bool { return refresh_complete; });
+  AWSCredentials credentials{};
+  {
+    std::unique_lock<std::mutex> lock(state->mutex);
+    state->condition.wait_for(lock, m_providerFuturesTimeoutMs, [&state]() -> bool { return state->complete; });
+    credentials = state->credentials;
+  }
+
   if (!credentials.IsEmpty()) {
     credentials.AddUserAgentFeature(m_userAgentFeature);
   }
-  m_credentials = credentials;
+  m_credentials = std::move(credentials);
 }
 
 void CrtCredentialsProvider::RefreshIfExpired() {
