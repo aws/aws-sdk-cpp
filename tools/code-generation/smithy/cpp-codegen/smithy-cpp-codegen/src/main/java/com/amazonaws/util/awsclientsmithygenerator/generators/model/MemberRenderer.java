@@ -273,10 +273,13 @@ public final class MemberRenderer {
         }
     }
 
+    /**
+     * Collapses all runs of whitespace in {@code text} to single spaces and trims the result.
+     *
+     * @param text the documentation text to normalize; must not be null
+     * @return the whitespace-collapsed text
+     */
     public static String collapseWhitespace(String text) {
-        if (text == null) {
-            return null;
-        }
         return text.replaceAll("\\s+", " ").trim();
     }
 

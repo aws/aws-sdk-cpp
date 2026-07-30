@@ -24,6 +24,7 @@ import software.amazon.smithy.model.traits.StreamingTrait;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Renders C++ event stream artifacts for response-side (simplex) streaming operations:
@@ -59,10 +60,11 @@ public final class EventStreamRenderer implements ShapeRenderer {
     @Override
     public void render(CppWriterDelegator writerDelegator) {
         for (EventStreamInfo info : eventStreams) {
-            UnionShape union = findStreamingUnion(info.resultShape());
-            if (union == null) {
+            Optional<UnionShape> streamingUnion = findStreamingUnion(info.resultShape());
+            if (streamingUnion.isEmpty()) {
                 continue;
             }
+            UnionShape union = streamingUnion.get();
             List<MemberShape> events = new ArrayList<>();
             List<MemberShape> exceptions = new ArrayList<>();
             partitionMembers(union, events, exceptions);
@@ -74,15 +76,15 @@ public final class EventStreamRenderer implements ShapeRenderer {
         }
     }
 
-    /** Finds the @streaming union targeted by a member of the result structure. */
-    private UnionShape findStreamingUnion(StructureShape resultShape) {
+    /** Finds the @streaming union targeted by a member of the result structure, if any. */
+    private Optional<UnionShape> findStreamingUnion(StructureShape resultShape) {
         for (MemberShape member : resultShape.getAllMembers().values()) {
             Shape target = model.expectShape(member.getTarget());
             if (target.isUnionShape() && target.hasTrait(StreamingTrait.class)) {
-                return target.asUnionShape().get();
+                return target.asUnionShape();
             }
         }
-        return null;
+        return Optional.empty();
     }
 
     /** Splits union members into events (non-exception) and exceptions, preserving order. */
