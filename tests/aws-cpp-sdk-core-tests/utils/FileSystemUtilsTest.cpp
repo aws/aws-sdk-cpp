@@ -3,11 +3,15 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/platform/Environment.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <fstream>
+#ifdef _MSC_VER
+#include <stdlib.h> // _wputenv_s
+#endif
 #if defined(HAS_PATHCONF)
 #include <unistd.h>
 #include <climits>
@@ -30,6 +34,22 @@ TEST_F(FileTest, HomeDirectory)
 
     ASSERT_TRUE(homeDirectory.size() > 0);
     ASSERT_EQ(Aws::FileSystem::PATH_DELIM, homeDirectory.back());
+}
+
+TEST_F(FileTest, GetEnvReturnsNonAsciiValueAsUtf8)
+{
+#ifdef _MSC_VER
+    const char* varName = "AWS_SDK_TEST_NONASCII";
+    // Set via the wide CRT API so the true Unicode value is stored, not a pre-mangled narrow one.
+    ASSERT_EQ(0, _wputenv_s(L"AWS_SDK_TEST_NONASCII", L"José"));
+
+    const auto value = Aws::Environment::GetEnv(varName);
+    _wputenv_s(L"AWS_SDK_TEST_NONASCII", L"");
+
+    ASSERT_EQ(Aws::String("Jos\xC3\xA9"), value); // "José" in UTF-8
+#else
+    GTEST_SKIP() << "Non-ASCII environment encoding fix is Windows-specific.";
+#endif
 }
 
 TEST_F(FileTest, TestInvalidDirectoryPath)
