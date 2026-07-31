@@ -11,7 +11,7 @@
 namespace Aws {
 namespace Client {
 
-class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorErrorMarshaller : public Aws::Client::RpcV2ErrorMarshaller {
+class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
  public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };

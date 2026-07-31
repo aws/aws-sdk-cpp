@@ -22,6 +22,10 @@ EvaluatorModelConfig& EvaluatorModelConfig::operator=(JsonView jsonValue) {
     m_bedrockEvaluatorModelConfig = jsonValue.GetObject("bedrockEvaluatorModelConfig");
     m_bedrockEvaluatorModelConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("responsesEvaluatorModelConfig")) {
+    m_responsesEvaluatorModelConfig = jsonValue.GetObject("responsesEvaluatorModelConfig");
+    m_responsesEvaluatorModelConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue EvaluatorModelConfig::Jsonize() const {
 
   if (m_bedrockEvaluatorModelConfigHasBeenSet) {
     payload.WithObject("bedrockEvaluatorModelConfig", m_bedrockEvaluatorModelConfig.Jsonize());
+  }
+
+  if (m_responsesEvaluatorModelConfigHasBeenSet) {
+    payload.WithObject("responsesEvaluatorModelConfig", m_responsesEvaluatorModelConfig.Jsonize());
   }
 
   return payload;

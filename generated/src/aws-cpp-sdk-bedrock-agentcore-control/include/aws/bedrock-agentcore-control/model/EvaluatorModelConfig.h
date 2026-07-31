@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/BedrockEvaluatorModelConfig.h>
+#include <aws/bedrock-agentcore-control/model/OpenResponsesEvaluatorModelConfig.h>
 
 #include <utility>
 
@@ -49,9 +50,30 @@ class EvaluatorModelConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The OpenResponses model configuration for evaluation. </p>
+   */
+  inline const OpenResponsesEvaluatorModelConfig& GetResponsesEvaluatorModelConfig() const { return m_responsesEvaluatorModelConfig; }
+  inline bool ResponsesEvaluatorModelConfigHasBeenSet() const { return m_responsesEvaluatorModelConfigHasBeenSet; }
+  template <typename ResponsesEvaluatorModelConfigT = OpenResponsesEvaluatorModelConfig>
+  void SetResponsesEvaluatorModelConfig(ResponsesEvaluatorModelConfigT&& value) {
+    m_responsesEvaluatorModelConfigHasBeenSet = true;
+    m_responsesEvaluatorModelConfig = std::forward<ResponsesEvaluatorModelConfigT>(value);
+  }
+  template <typename ResponsesEvaluatorModelConfigT = OpenResponsesEvaluatorModelConfig>
+  EvaluatorModelConfig& WithResponsesEvaluatorModelConfig(ResponsesEvaluatorModelConfigT&& value) {
+    SetResponsesEvaluatorModelConfig(std::forward<ResponsesEvaluatorModelConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   BedrockEvaluatorModelConfig m_bedrockEvaluatorModelConfig;
+
+  OpenResponsesEvaluatorModelConfig m_responsesEvaluatorModelConfig;
   bool m_bedrockEvaluatorModelConfigHasBeenSet = false;
+  bool m_responsesEvaluatorModelConfigHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/ContextEntry.h>
+#include <aws/iam/model/OrderedOrganizationPolicyType.h>
 
 #include <utility>
 
@@ -121,6 +122,40 @@ class SimulateCustomPolicyRequest : public IAMRequest {
   SimulateCustomPolicyRequest& AddPermissionsBoundaryPolicyInputList(PermissionsBoundaryPolicyInputListT&& value) {
     m_permissionsBoundaryPolicyInputListHasBeenSet = true;
     m_permissionsBoundaryPolicyInputList.emplace_back(std::forward<PermissionsBoundaryPolicyInputListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An ordered list of service control policies (SCPs) to include in the
+   * simulation. Each element represents one level of an Organizations hierarchy,
+   * from the organization root to the account.</p> <p>The simulator evaluates SCPs
+   * in the order that you provide, consistent with how Organizations enforces SCPs.
+   * The first element must represent the organization root, and the last element
+   * must represent the account. Any elements between them represent organizational
+   * units (OUs) in descending order.</p> <p>Use this parameter to simulate the
+   * effect of an SCP hierarchy without calling <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.</p>
+   */
+  inline const Aws::Vector<OrderedOrganizationPolicyType>& GetOrderedOrganizationPolicyInputList() const {
+    return m_orderedOrganizationPolicyInputList;
+  }
+  inline bool OrderedOrganizationPolicyInputListHasBeenSet() const { return m_orderedOrganizationPolicyInputListHasBeenSet; }
+  template <typename OrderedOrganizationPolicyInputListT = Aws::Vector<OrderedOrganizationPolicyType>>
+  void SetOrderedOrganizationPolicyInputList(OrderedOrganizationPolicyInputListT&& value) {
+    m_orderedOrganizationPolicyInputListHasBeenSet = true;
+    m_orderedOrganizationPolicyInputList = std::forward<OrderedOrganizationPolicyInputListT>(value);
+  }
+  template <typename OrderedOrganizationPolicyInputListT = Aws::Vector<OrderedOrganizationPolicyType>>
+  SimulateCustomPolicyRequest& WithOrderedOrganizationPolicyInputList(OrderedOrganizationPolicyInputListT&& value) {
+    SetOrderedOrganizationPolicyInputList(std::forward<OrderedOrganizationPolicyInputListT>(value));
+    return *this;
+  }
+  template <typename OrderedOrganizationPolicyInputListT = OrderedOrganizationPolicyType>
+  SimulateCustomPolicyRequest& AddOrderedOrganizationPolicyInputList(OrderedOrganizationPolicyInputListT&& value) {
+    m_orderedOrganizationPolicyInputListHasBeenSet = true;
+    m_orderedOrganizationPolicyInputList.emplace_back(std::forward<OrderedOrganizationPolicyInputListT>(value));
     return *this;
   }
   ///@}
@@ -258,12 +293,11 @@ class SimulateCustomPolicyRequest : public IAMRequest {
 
   ///@{
   /**
-   * <p>The ARN of the IAM user that you want to use as the simulated caller of the
-   * API operations. <code>CallerArn</code> is required if you include a
-   * <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element
-   * has a value to use in evaluating the policy.</p> <p>You can specify only the ARN
-   * of an IAM user. You cannot specify the ARN of an assumed role, federated user,
-   * or a service principal.</p>
+   * <p>The ARN of the IAM user, group, or role that you want to use as the simulated
+   * caller of the API operations. <code>CallerArn</code> is required if you include
+   * a <code>ResourcePolicy</code> so that the policy's <code>Principal</code>
+   * element has a value to use in evaluating the policy.</p> <p>You cannot specify
+   * the ARN of an assumed role, federated user, or a service principal.</p>
    */
   inline const Aws::String& GetCallerArn() const { return m_callerArn; }
   inline bool CallerArnHasBeenSet() const { return m_callerArnHasBeenSet; }
@@ -391,6 +425,8 @@ class SimulateCustomPolicyRequest : public IAMRequest {
 
   Aws::Vector<Aws::String> m_permissionsBoundaryPolicyInputList;
 
+  Aws::Vector<OrderedOrganizationPolicyType> m_orderedOrganizationPolicyInputList;
+
   Aws::Vector<Aws::String> m_actionNames;
 
   Aws::Vector<Aws::String> m_resourceArns;
@@ -410,6 +446,7 @@ class SimulateCustomPolicyRequest : public IAMRequest {
   Aws::String m_marker;
   bool m_policyInputListHasBeenSet = false;
   bool m_permissionsBoundaryPolicyInputListHasBeenSet = false;
+  bool m_orderedOrganizationPolicyInputListHasBeenSet = false;
   bool m_actionNamesHasBeenSet = false;
   bool m_resourceArnsHasBeenSet = false;
   bool m_resourcePolicyHasBeenSet = false;

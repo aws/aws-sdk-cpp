@@ -31,6 +31,7 @@
 #include <aws/iam/model/AttachUserPolicyRequest.h>
 #include <aws/iam/model/AttachedPermissionsBoundary.h>
 #include <aws/iam/model/AttachedPolicy.h>
+#include <aws/iam/model/AttachmentType.h>
 #include <aws/iam/model/ChangePasswordRequest.h>
 #include <aws/iam/model/ContextEntry.h>
 #include <aws/iam/model/ContextKeyTypeEnum.h>
@@ -181,6 +182,7 @@
 #include <aws/iam/model/GlobalEndpointTokenVersion.h>
 #include <aws/iam/model/Group.h>
 #include <aws/iam/model/GroupDetail.h>
+#include <aws/iam/model/InlinePolicyIdentifierType.h>
 #include <aws/iam/model/InstanceProfile.h>
 #include <aws/iam/model/JobStatusType.h>
 #include <aws/iam/model/ListAccessKeysRequest.h>
@@ -260,6 +262,7 @@
 #include <aws/iam/model/MFADevice.h>
 #include <aws/iam/model/ManagedPolicyDetail.h>
 #include <aws/iam/model/OpenIDConnectProviderListEntry.h>
+#include <aws/iam/model/OrderedOrganizationPolicyType.h>
 #include <aws/iam/model/OrganizationsDecisionDetail.h>
 #include <aws/iam/model/PasswordPolicy.h>
 #include <aws/iam/model/PermissionCheckResultType.h>
@@ -271,6 +274,8 @@
 #include <aws/iam/model/PolicyEvaluationDecisionType.h>
 #include <aws/iam/model/PolicyGrantingServiceAccess.h>
 #include <aws/iam/model/PolicyGroup.h>
+#include <aws/iam/model/PolicyIdentifier.h>
+#include <aws/iam/model/PolicyIdentifierPolicyType.h>
 #include <aws/iam/model/PolicyOwnerEntityType.h>
 #include <aws/iam/model/PolicyParameter.h>
 #include <aws/iam/model/PolicyParameterTypeEnum.h>

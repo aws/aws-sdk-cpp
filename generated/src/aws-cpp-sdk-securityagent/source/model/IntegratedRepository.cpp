@@ -26,6 +26,10 @@ IntegratedRepository& IntegratedRepository::operator=(JsonView jsonValue) {
     m_providerResourceId = jsonValue.GetString("providerResourceId");
     m_providerResourceIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("branch")) {
+    m_branch = jsonValue.GetString("branch");
+    m_branchHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue IntegratedRepository::Jsonize() const {
 
   if (m_providerResourceIdHasBeenSet) {
     payload.WithString("providerResourceId", m_providerResourceId);
+  }
+
+  if (m_branchHasBeenSet) {
+    payload.WithString("branch", m_branch);
   }
 
   return payload;

@@ -4,71 +4,43 @@
  */
 
 #include <aws/bcm-pricing-calculator/model/UpdateBillScenarioRequest.h>
-#include <aws/crt/cbor/Cbor.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
 
 using namespace Aws::BCMPricingCalculator::Model;
-using namespace Aws::Crt::Cbor;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 Aws::String UpdateBillScenarioRequest::SerializePayload() const {
-  Aws::Crt::Cbor::CborEncoder encoder;
-
-  // Calculate map size
-  size_t mapSize = 0;
-  if (m_identifierHasBeenSet) {
-    mapSize++;
-  }
-  if (m_nameHasBeenSet) {
-    mapSize++;
-  }
-  if (m_expiresAtHasBeenSet) {
-    mapSize++;
-  }
-  if (m_groupSharingPreferenceHasBeenSet) {
-    mapSize++;
-  }
-  if (m_costCategoryGroupSharingPreferenceArnHasBeenSet) {
-    mapSize++;
-  }
-
-  encoder.WriteMapStart(mapSize);
+  JsonValue payload;
 
   if (m_identifierHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("identifier"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_identifier.c_str()));
+    payload.WithString("identifier", m_identifier);
   }
 
   if (m_nameHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("name"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
+    payload.WithString("name", m_name);
   }
 
   if (m_expiresAtHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("expiresAt"));
-    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
-    encoder.WriteUInt(m_expiresAt.Seconds());
+    payload.WithDouble("expiresAt", m_expiresAt.SecondsWithMSPrecision());
   }
 
   if (m_groupSharingPreferenceHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("groupSharingPreference"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
-        GroupSharingPreferenceEnumMapper::GetNameForGroupSharingPreferenceEnum(m_groupSharingPreference).c_str()));
+    payload.WithString("groupSharingPreference",
+                       GroupSharingPreferenceEnumMapper::GetNameForGroupSharingPreferenceEnum(m_groupSharingPreference));
   }
 
   if (m_costCategoryGroupSharingPreferenceArnHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("costCategoryGroupSharingPreferenceArn"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_costCategoryGroupSharingPreferenceArn.c_str()));
+    payload.WithString("costCategoryGroupSharingPreferenceArn", m_costCategoryGroupSharingPreferenceArn);
   }
-  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
-  return str;
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateBillScenarioRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
-  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
-  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBCMPricingCalculator.UpdateBillScenario"));
   return headers;
 }

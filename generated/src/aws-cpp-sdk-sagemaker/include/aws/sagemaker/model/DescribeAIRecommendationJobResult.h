@@ -267,8 +267,8 @@ class DescribeAIRecommendationJobResult {
 
   ///@{
   /**
-   * <p>The LoRA adapter source that was specified when the recommendation job was
-   * created. This field is absent when the job was created without LoRA
+   * <p>The LoRA adapter source that you specified when you created the
+   * recommendation job. This field is absent when you created the job without LoRA
    * adapters.</p>
    */
   inline const AIAdapterSource& GetAdapterSource() const { return m_adapterSource; }

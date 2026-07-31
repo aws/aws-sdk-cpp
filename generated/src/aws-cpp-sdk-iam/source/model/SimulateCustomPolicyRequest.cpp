@@ -38,6 +38,18 @@ Aws::String SimulateCustomPolicyRequest::SerializePayload() const {
     }
   }
 
+  if (m_orderedOrganizationPolicyInputListHasBeenSet) {
+    if (m_orderedOrganizationPolicyInputList.empty()) {
+      ss << "OrderedOrganizationPolicyInputList=&";
+    } else {
+      unsigned orderedOrganizationPolicyInputListCount = 1;
+      for (auto& item : m_orderedOrganizationPolicyInputList) {
+        item.OutputToStream(ss, "OrderedOrganizationPolicyInputList.member.", orderedOrganizationPolicyInputListCount, "");
+        orderedOrganizationPolicyInputListCount++;
+      }
+    }
+  }
+
   if (m_actionNamesHasBeenSet) {
     if (m_actionNames.empty()) {
       ss << "ActionNames=&";

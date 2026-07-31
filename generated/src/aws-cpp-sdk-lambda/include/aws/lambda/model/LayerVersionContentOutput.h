@@ -123,7 +123,9 @@ class LayerVersionContentOutput {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The resolved Amazon S3 object that contains the layer archive.</p>
+   */
   inline const ResolvedS3Object& GetResolvedS3Object() const { return m_resolvedS3Object; }
   inline bool ResolvedS3ObjectHasBeenSet() const { return m_resolvedS3ObjectHasBeenSet; }
   template <typename ResolvedS3ObjectT = ResolvedS3Object>

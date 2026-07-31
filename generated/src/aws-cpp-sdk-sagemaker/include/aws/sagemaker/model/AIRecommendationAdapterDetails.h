@@ -24,9 +24,9 @@ namespace Model {
 /**
  * <p>The per-recommendation LoRA adapter details. Contains both the model package
  * ARNs and Amazon S3 URIs for each adapter, regardless of which form was
- * originally supplied in the request. When the customer supplies only Amazon S3
- * URIs, Amazon SageMaker AI creates model packages on their behalf.</p><p><h3>See
- * Also:</h3>   <a
+ * originally supplied in the request. When you supply only Amazon S3 URIs, Amazon
+ * SageMaker AI creates model packages on your behalf.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AIRecommendationAdapterDetails">AWS
  * API Reference</a></p>
  */

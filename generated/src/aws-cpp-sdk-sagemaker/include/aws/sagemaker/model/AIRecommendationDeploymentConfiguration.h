@@ -152,12 +152,10 @@ class AIRecommendationDeploymentConfiguration {
 
   ///@{
   /**
-   * <p>The minimum host (CPU) memory, in MiB, to reserve per model copy when
+   * <p>The minimum host (CPU) memory, in MiB, to reserve for each model copy when
    * deploying the recommendation as an Inference Component. This value maps to the
-   * base Inference Component's
-   * <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> and is sized so
-   * that <code>CopyCountPerInstance</code> copies co-place within the instance's
-   * allocatable host memory.</p>
+   * Inference Component's
+   * <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> field.</p>
    */
   inline int GetMinCpuMemoryRequiredInMb() const { return m_minCpuMemoryRequiredInMb; }
   inline bool MinCpuMemoryRequiredInMbHasBeenSet() const { return m_minCpuMemoryRequiredInMbHasBeenSet; }

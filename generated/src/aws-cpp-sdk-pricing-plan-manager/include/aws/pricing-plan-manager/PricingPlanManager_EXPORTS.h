@@ -1,0 +1,38 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+
+#ifdef _MSC_VER
+// disable windows complaining about max template size.
+#pragma warning(disable : 4503)
+#endif  // _MSC_VER
+
+#if defined(USE_WINDOWS_DLL_SEMANTICS) || defined(_WIN32)
+#ifdef _MSC_VER
+#pragma warning(disable : 4251)
+#endif  // _MSC_VER
+
+#ifdef USE_IMPORT_EXPORT
+#ifdef AWS_PRICINGPLANMANAGER_EXPORTS
+#define AWS_PRICINGPLANMANAGER_API __declspec(dllexport)
+#else
+#define AWS_PRICINGPLANMANAGER_API __declspec(dllimport)
+#endif /* AWS_PRICINGPLANMANAGER_EXPORTS */
+#define AWS_PRICINGPLANMANAGER_EXTERN
+#else
+#define AWS_PRICINGPLANMANAGER_API
+#define AWS_PRICINGPLANMANAGER_EXTERN extern
+#endif  // USE_IMPORT_EXPORT
+#define AWS_PRICINGPLANMANAGER_LOCAL
+#else  // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+#define AWS_PRICINGPLANMANAGER_API
+#define AWS_PRICINGPLANMANAGER_EXTERN extern
+#if __GNUC__ >= 4
+#define AWS_PRICINGPLANMANAGER_LOCAL __attribute__((visibility("hidden")))
+#else
+#define AWS_PRICINGPLANMANAGER_LOCAL
+#endif
+#endif  // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

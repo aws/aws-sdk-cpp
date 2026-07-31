@@ -91,7 +91,12 @@ class LayerVersionContentInput {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Specifies how the layer archive is stored. Valid values:</p> <ul> <li> <p>
+   * <code>COPY</code> (default) – Uploads a copy of your layer archive to
+   * Lambda.</p> </li> <li> <p> <code>REFERENCE</code> – Lambda references the layer
+   * archive from the specified Amazon S3 bucket.</p> </li> </ul>
+   */
   inline S3ObjectStorageMode GetS3ObjectStorageMode() const { return m_s3ObjectStorageMode; }
   inline bool S3ObjectStorageModeHasBeenSet() const { return m_s3ObjectStorageModeHasBeenSet; }
   inline void SetS3ObjectStorageMode(S3ObjectStorageMode value) {

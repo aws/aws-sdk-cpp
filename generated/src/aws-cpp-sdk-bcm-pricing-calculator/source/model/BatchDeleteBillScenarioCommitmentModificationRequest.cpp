@@ -4,48 +4,34 @@
  */
 
 #include <aws/bcm-pricing-calculator/model/BatchDeleteBillScenarioCommitmentModificationRequest.h>
-#include <aws/crt/cbor/Cbor.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
 
 using namespace Aws::BCMPricingCalculator::Model;
-using namespace Aws::Crt::Cbor;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 Aws::String BatchDeleteBillScenarioCommitmentModificationRequest::SerializePayload() const {
-  Aws::Crt::Cbor::CborEncoder encoder;
-
-  // Calculate map size
-  size_t mapSize = 0;
-  if (m_billScenarioIdHasBeenSet) {
-    mapSize++;
-  }
-  if (m_idsHasBeenSet) {
-    mapSize++;
-  }
-
-  encoder.WriteMapStart(mapSize);
+  JsonValue payload;
 
   if (m_billScenarioIdHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("billScenarioId"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_billScenarioId.c_str()));
+    payload.WithString("billScenarioId", m_billScenarioId);
   }
 
   if (m_idsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ids"));
-    encoder.WriteArrayStart(m_ids.size());
-    for (const auto& item_0 : m_ids) {
-      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
+    Aws::Utils::Array<JsonValue> idsJsonList(m_ids.size());
+    for (unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex) {
+      idsJsonList[idsIndex].AsString(m_ids[idsIndex]);
     }
+    payload.WithArray("ids", std::move(idsJsonList));
   }
-  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
-  return str;
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchDeleteBillScenarioCommitmentModificationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
-  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
-  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBCMPricingCalculator.BatchDeleteBillScenarioCommitmentModification"));
   return headers;
 }

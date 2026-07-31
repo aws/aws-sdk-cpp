@@ -9,6 +9,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/ContextEntry.h>
+#include <aws/iam/model/PolicyIdentifier.h>
 
 #include <utility>
 
@@ -147,6 +148,41 @@ class SimulatePrincipalPolicyRequest : public IAMRequest {
 
   ///@{
   /**
+   * <p>A list of policies to exclude from the simulation. Use this parameter to test
+   * what the simulation result would be if a policy were removed, without changing
+   * which policies are actually attached to the principal identified by
+   * <code>PolicySourceArn</code>.</p> <p>Each entry is a <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PolicyIdentifier.html">PolicyIdentifier</a>
+   * that identifies one or more policies to exclude by policy type, by Amazon
+   * Resource Name (ARN), or by the name of an inline policy and the entity it is
+   * attached to.</p> <p>Syntactically invalid identifiers, such as malformed ARNs or
+   * wildcards in disallowed positions, cause the request to fail with an
+   * <code>InvalidInput</code> error. Syntactically valid identifiers that don't
+   * match any attached policy are ignored. Resource control policies (RCPs) are not
+   * supported in this release; identifiers that target RCPs are also ignored.</p>
+   */
+  inline const Aws::Vector<PolicyIdentifier>& GetPolicyExclusionList() const { return m_policyExclusionList; }
+  inline bool PolicyExclusionListHasBeenSet() const { return m_policyExclusionListHasBeenSet; }
+  template <typename PolicyExclusionListT = Aws::Vector<PolicyIdentifier>>
+  void SetPolicyExclusionList(PolicyExclusionListT&& value) {
+    m_policyExclusionListHasBeenSet = true;
+    m_policyExclusionList = std::forward<PolicyExclusionListT>(value);
+  }
+  template <typename PolicyExclusionListT = Aws::Vector<PolicyIdentifier>>
+  SimulatePrincipalPolicyRequest& WithPolicyExclusionList(PolicyExclusionListT&& value) {
+    SetPolicyExclusionList(std::forward<PolicyExclusionListT>(value));
+    return *this;
+  }
+  template <typename PolicyExclusionListT = PolicyIdentifier>
+  SimulatePrincipalPolicyRequest& AddPolicyExclusionList(PolicyExclusionListT&& value) {
+    m_policyExclusionListHasBeenSet = true;
+    m_policyExclusionList.emplace_back(std::forward<PolicyExclusionListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of names of API operations to evaluate in the simulation. Each
    * operation is evaluated for each resource. Each operation must include the
    * service identifier, such as <code>iam:CreateUser</code>.</p>
@@ -272,21 +308,21 @@ class SimulatePrincipalPolicyRequest : public IAMRequest {
 
   ///@{
   /**
-   * <p>The ARN of the IAM user that you want to specify as the simulated caller of
-   * the API operations. If you do not specify a <code>CallerArn</code>, it defaults
-   * to the ARN of the user that you specify in <code>PolicySourceArn</code>, if you
-   * specified a user. If you include both a <code>PolicySourceArn</code> (for
-   * example, <code>arn:aws:iam::123456789012:user/David</code>) and a
-   * <code>CallerArn</code> (for example,
-   * <code>arn:aws:iam::123456789012:user/Bob</code>), the result is that you
-   * simulate calling the API operations as Bob, as if Bob had David's policies.</p>
-   * <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an
-   * assumed role, federated user, or a service principal.</p> <p>
-   * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
-   * and the <code>PolicySourceArn</code> is not the ARN for an IAM user. This is
-   * required so that the resource-based policy's <code>Principal</code> element has
-   * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
-   * see <a
+   * <p>The ARN of the IAM user, group, or role that you want to specify as the
+   * simulated caller of the API operations. If you do not specify a
+   * <code>CallerArn</code>, it defaults to the ARN of the user, group, or role that
+   * you specify in <code>PolicySourceArn</code>. If you include both a
+   * <code>PolicySourceArn</code> (for example,
+   * <code>arn:aws:iam::123456789012:user/David</code>) and a <code>CallerArn</code>
+   * (for example, <code>arn:aws:iam::123456789012:user/Bob</code>), the result is
+   * that you simulate calling the API operations as Bob, as if Bob had David's
+   * policies.</p> <p>You can specify the ARN of an IAM user, group, or role. You
+   * cannot specify the ARN of an assumed role, federated user, or a service
+   * principal.</p> <p> <code>CallerArn</code> is required if you include a
+   * <code>ResourcePolicy</code> and the <code>PolicySourceArn</code> is not the ARN
+   * for an IAM user, group, or role. This is required so that the resource-based
+   * policy's <code>Principal</code> element has a value to use in evaluating the
+   * policy.</p> <p>For more information about ARNs, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
    * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
    * Reference</i>.</p>
@@ -419,6 +455,8 @@ class SimulatePrincipalPolicyRequest : public IAMRequest {
 
   Aws::Vector<Aws::String> m_permissionsBoundaryPolicyInputList;
 
+  Aws::Vector<PolicyIdentifier> m_policyExclusionList;
+
   Aws::Vector<Aws::String> m_actionNames;
 
   Aws::Vector<Aws::String> m_resourceArns;
@@ -439,6 +477,7 @@ class SimulatePrincipalPolicyRequest : public IAMRequest {
   bool m_policySourceArnHasBeenSet = false;
   bool m_policyInputListHasBeenSet = false;
   bool m_permissionsBoundaryPolicyInputListHasBeenSet = false;
+  bool m_policyExclusionListHasBeenSet = false;
   bool m_actionNamesHasBeenSet = false;
   bool m_resourceArnsHasBeenSet = false;
   bool m_resourcePolicyHasBeenSet = false;

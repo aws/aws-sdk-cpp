@@ -142,6 +142,32 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a Channel that streams records from an Amazon MSK Express cluster
+   * topic to Amazon S3 or Apache Iceberg.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateChannel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateChannelOutcome CreateChannel(const Model::CreateChannelRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateChannelRequestT = Model::CreateChannelRequest>
+  Model::CreateChannelOutcomeCallable CreateChannelCallable(const CreateChannelRequestT& request) const {
+    return SubmitCallable(&KafkaClient::CreateChannel, request);
+  }
+
+  /**
+   * An Async wrapper for CreateChannel that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateChannelRequestT = Model::CreateChannelRequest>
+  void CreateChannelAsync(const CreateChannelRequestT& request, const CreateChannelResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::CreateChannel, request, handler, context);
+  }
+
+  /**
    *
       <p>Creates a new MSK cluster.</p>
    <p><h3>See Also:</h3>
@@ -307,6 +333,33 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
   void CreateVpcConnectionAsync(const CreateVpcConnectionRequestT& request, const CreateVpcConnectionResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KafkaClient::CreateVpcConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the channel specified by channelArn from the cluster specified by
+   * clusterArn. The channel transitions through DELETING and is removed when the
+   * asynchronous delete completes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteChannel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteChannelOutcome DeleteChannel(const Model::DeleteChannelRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteChannelRequestT = Model::DeleteChannelRequest>
+  Model::DeleteChannelOutcomeCallable DeleteChannelCallable(const DeleteChannelRequestT& request) const {
+    return SubmitCallable(&KafkaClient::DeleteChannel, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteChannel that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteChannelRequestT = Model::DeleteChannelRequest>
+  void DeleteChannelAsync(const DeleteChannelRequestT& request, const DeleteChannelResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::DeleteChannel, request, handler, context);
   }
 
   /**
@@ -476,6 +529,32 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
   void DeleteVpcConnectionAsync(const DeleteVpcConnectionRequestT& request, const DeleteVpcConnectionResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KafkaClient::DeleteVpcConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the current configuration and state of a channel.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeChannel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeChannelOutcome DescribeChannel(const Model::DescribeChannelRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeChannelRequestT = Model::DescribeChannelRequest>
+  Model::DescribeChannelOutcomeCallable DescribeChannelCallable(const DescribeChannelRequestT& request) const {
+    return SubmitCallable(&KafkaClient::DescribeChannel, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeChannel that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeChannelRequestT = Model::DescribeChannelRequest>
+  void DescribeChannelAsync(const DescribeChannelRequestT& request, const DescribeChannelResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::DescribeChannel, request, handler, context);
   }
 
   /**
@@ -864,6 +943,31 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                        const GetCompatibleKafkaVersionsRequestT& request = {}) const {
     return SubmitAsync(&KafkaClient::GetCompatibleKafkaVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the list of channels in a cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListChannels">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListChannels that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListChannelsRequestT = Model::ListChannelsRequest>
+  Model::ListChannelsOutcomeCallable ListChannelsCallable(const ListChannelsRequestT& request) const {
+    return SubmitCallable(&KafkaClient::ListChannels, request);
+  }
+
+  /**
+   * An Async wrapper for ListChannels that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListChannelsRequestT = Model::ListChannelsRequest>
+  void ListChannelsAsync(const ListChannelsRequestT& request, const ListChannelsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::ListChannels, request, handler, context);
   }
 
   /**
@@ -1500,6 +1604,33 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
   void UpdateBrokerTypeAsync(const UpdateBrokerTypeRequestT& request, const UpdateBrokerTypeResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KafkaClient::UpdateBrokerType, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the destination configuration of an existing channel. Exactly one of
+   * icebergDestinationUpdate or s3DestinationUpdate must be supplied.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateChannel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateChannelOutcome UpdateChannel(const Model::UpdateChannelRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateChannelRequestT = Model::UpdateChannelRequest>
+  Model::UpdateChannelOutcomeCallable UpdateChannelCallable(const UpdateChannelRequestT& request) const {
+    return SubmitCallable(&KafkaClient::UpdateChannel, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateChannel that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateChannelRequestT = Model::UpdateChannelRequest>
+  void UpdateChannelAsync(const UpdateChannelRequestT& request, const UpdateChannelResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::UpdateChannel, request, handler, context);
   }
 
   /**

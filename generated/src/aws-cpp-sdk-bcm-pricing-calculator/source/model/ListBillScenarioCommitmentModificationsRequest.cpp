@@ -4,53 +4,34 @@
  */
 
 #include <aws/bcm-pricing-calculator/model/ListBillScenarioCommitmentModificationsRequest.h>
-#include <aws/crt/cbor/Cbor.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
 
 using namespace Aws::BCMPricingCalculator::Model;
-using namespace Aws::Crt::Cbor;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 Aws::String ListBillScenarioCommitmentModificationsRequest::SerializePayload() const {
-  Aws::Crt::Cbor::CborEncoder encoder;
-
-  // Calculate map size
-  size_t mapSize = 0;
-  if (m_billScenarioIdHasBeenSet) {
-    mapSize++;
-  }
-  if (m_nextTokenHasBeenSet) {
-    mapSize++;
-  }
-  if (m_maxResultsHasBeenSet) {
-    mapSize++;
-  }
-
-  encoder.WriteMapStart(mapSize);
+  JsonValue payload;
 
   if (m_billScenarioIdHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("billScenarioId"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_billScenarioId.c_str()));
+    payload.WithString("billScenarioId", m_billScenarioId);
   }
 
   if (m_nextTokenHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("nextToken"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
+    payload.WithString("nextToken", m_nextToken);
   }
 
   if (m_maxResultsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("maxResults"));
-    (m_maxResults >= 0) ? encoder.WriteUInt(m_maxResults) : encoder.WriteNegInt(m_maxResults);
+    payload.WithInteger("maxResults", m_maxResults);
   }
-  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
-  return str;
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListBillScenarioCommitmentModificationsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
-  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
-  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBCMPricingCalculator.ListBillScenarioCommitmentModifications"));
   return headers;
 }
